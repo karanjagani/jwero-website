@@ -48,7 +48,7 @@ ${L.section(
         <li>Inventory ageing & dead-stock visibility</li>
         <li>Loyalty & campaigns</li>
       </ul>
-      <a class="btn btn-gold" href="#" data-wa="default">Ask the Approve price</a>
+      <a class="btn btn-primary" href="#" data-wa="default">Ask the Approve price</a>
     </div>
     <div class="card tier">
       <p class="tier-flag">Earned</p>
@@ -135,7 +135,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('FOUNDING COHORT', 'Become a Lighthouse Partner.', 'The first jewellers in each region get concierge onboarding, a direct line to the product team, preferred terms — and their verified numbers on this page, if they choose. Limited seats per region and segment, because concierge does not scale.')}
-  <div class="cta-row"><a class="btn btn-gold" href="#" data-wa="default">Apply on WhatsApp</a><a class="btn btn-ghost" href="/book-demo.html">Book a conversation</a></div>`
+  <div class="cta-row"><a class="btn btn-primary" href="#" data-wa="default">Apply on WhatsApp</a><a class="btn btn-ghost" href="/book-demo.html">Book a conversation</a></div>`
 )}
 
 ${L.ctaBand('Judge us on your own numbers.', 'The honest pitch: run a pilot, read your Growth Report in 30 days, then decide.', 'default')}
@@ -209,7 +209,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('THE COMPANY', '', 'Jwero is built by a team across product, jewellery retail and AI engineering — working daily with jewellers from single family stores to multi-branch chains. We measure ourselves on one number: the revenue our customers’ Growth Reports attribute to the system.')}
   <div class="cta-row">
-    <a class="btn btn-gold" href="/book-demo.html">Talk to us</a>
+    <a class="btn btn-primary" href="/book-demo.html">Talk to us</a>
     <a class="btn btn-ghost" href="#" data-wa="default">WhatsApp the founders’ desk</a>
   </div>`
 , { tone: 'tint' })}
@@ -246,7 +246,7 @@ ${L.section(
       </select>
       <label for="f-city">City & country</label>
       <input id="f-city" name="city" type="text" autocomplete="address-level2">
-      <button class="btn btn-gold" type="submit">Request my demo slot</button>
+      <button class="btn btn-primary" type="submit">Request my demo slot</button>
       <p class="form-ok">Thank you — we will confirm your slot on WhatsApp within business hours. Faster route: message us directly from the button above.</p>
       <p class="cta-note">No spam, no drip campaigns. One confirmation, one demo, your decision.</p>
     </form>

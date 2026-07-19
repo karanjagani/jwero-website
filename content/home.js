@@ -62,7 +62,7 @@ ${L.section(
   `<div class="grid grid-2" style="align-items:center; gap:48px;">
     <div>
       ${L.sectionHead('PROOF, WEEKLY', 'The Growth Report: what came back this week.', 'Every week, Jwero sends the owner a plain-language report: how many past customers returned, how many appointments were booked, how much revenue the system brought back. Not a dashboard you must remember to open — an answer that arrives.')}
-      <a class="btn btn-gold" href="/book-demo.html">Get your first report in 30 days</a>
+      <a class="btn btn-primary" href="/book-demo.html">Get your first report in 30 days</a>
     </div>
     <div class="report" data-report>
       <div class="report-head"><strong>Your Growth Report</strong><span class="badge-sample">Sample</span></div>

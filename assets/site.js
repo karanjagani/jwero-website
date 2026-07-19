@@ -30,10 +30,9 @@
   });
 
   // --- theme -------------------------------------------------------
+  // Light is the brand default; an inline head script applies any saved choice
+  // before first paint. Here we only wire the toggle.
   var root = document.documentElement;
-  var saved = localStorage.getItem('jwero-theme');
-  if (saved) root.setAttribute('data-theme', saved);
-  else if (window.matchMedia('(prefers-color-scheme: dark)').matches) root.setAttribute('data-theme', 'dark');
   document.querySelectorAll('.theme-toggle').forEach(function (b) {
     b.addEventListener('click', function () {
       var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';

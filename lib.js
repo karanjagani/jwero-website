@@ -15,7 +15,7 @@ function hero({ eyebrow, h1, sub, primary, secondary, note, mock }) {
       <h1>${h1}</h1>
       <p class="sub">${sub}</p>
       <div class="cta-row">
-        ${primary ? `<a class="btn btn-gold" href="${primary.href}" ${primary.wa ? `data-wa="${esc(primary.wa)}"` : ''}>${primary.label}</a>` : ''}
+        ${primary ? `<a class="btn btn-primary" href="${primary.href}" ${primary.wa ? `data-wa="${esc(primary.wa)}"` : ''}>${primary.label}</a>` : ''}
         ${secondary ? `<a class="btn btn-ghost" href="${secondary.href}">${secondary.label}</a>` : ''}
       </div>
       ${note ? `<p class="cta-note">${note}</p>` : ''}
@@ -150,7 +150,7 @@ function ctaBand(title, sub, waContext) {
     <h2>${title}</h2>
     <p>${sub}</p>
     <div class="cta-row center">
-      <a class="btn btn-gold" href="#" data-wa="${esc(waContext)}">See it on WhatsApp</a>
+      <a class="btn btn-primary" href="#" data-wa="${esc(waContext)}">See it on WhatsApp</a>
       <a class="btn btn-ghost-light" href="/book-demo.html">Book a demo</a>
     </div>
     <p class="cta-note">We reply on WhatsApp within minutes during business hours. Test us.</p>

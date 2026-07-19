@@ -97,12 +97,12 @@ function navHTML() {
 <div class="ann-bar"><div class="container">${TAGLINE} — <a href="#" data-wa="announce">see it live on WhatsApp →</a></div></div>
 <header class="site-header">
   <div class="container header-row">
-    <a class="logo" href="/" aria-label="Jwero home">Jwero<span class="logo-dot">.</span></a>
+    <a class="logo" href="/" aria-label="Jwero home"><img src="/assets/jwero-mark.png" alt="" width="282" height="423"><span class="logo-word">Jwero</span></a>
     <nav class="main-nav" aria-label="Main">${NAV.map(dd).join('')}</nav>
     <div class="header-cta">
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
       <a class="btn btn-wa" href="#" data-wa="header">WhatsApp</a>
-      <a class="btn btn-gold" href="/book-demo.html">Book demo</a>
+      <a class="btn btn-primary" href="/book-demo.html">Book demo</a>
       <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -117,7 +117,7 @@ function footerHTML() {
   <div class="container">
     <div class="f-grid">
       <div class="f-brand">
-        <p class="logo">Jwero<span class="logo-dot">.</span></p>
+        <p class="logo"><img src="/assets/jwero-mark.png" alt="" width="282" height="423"><span class="logo-word">Jwero</span></p>
         <p class="f-tag">${TAGLINE}.</p>
         <p class="f-enemy">“Your software keeps records.<br>It doesn’t bring customers back.”</p>
       </div>
@@ -140,9 +140,7 @@ function footerHTML() {
 }
 
 // ---------------------------------------------------------------- layout
-const FAVICON =
-  "data:image/svg+xml," +
-  encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2316130e'/><text x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23c9a227' text-anchor='middle'>J</text></svg>`);
+const FAVICON = '/assets/favicon.png';
 
 function orgSchema() {
   return {
@@ -180,8 +178,12 @@ function layout(page) {
 <meta property="og:description" content="${page.description}">
 <meta property="og:url" content="${canonical}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="${FAVICON}">
+<link rel="icon" type="image/png" href="${FAVICON}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;550;600;650;700;750&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('jwero-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}
 </head>
 <body>
