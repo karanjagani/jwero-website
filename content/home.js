@@ -22,8 +22,8 @@ const home = {
   body: `
 ${L.hero({
   eyebrow: 'THE AI GROWTH ENGINE FOR JEWELLERY BUSINESS',
-  h1: 'Chains have systems.<br>Now you have one.',
-  sub: 'Jwero remembers every customer, answers every enquiry in minutes, and brings people back for every occasion — across WhatsApp, Instagram, your store and your website. And nothing goes out without your approval.',
+  h1: 'Every customer remembered.<br>Every customer brought back.',
+  sub: 'One growth engine for any jewellery business — single store, chain or manufacturer. Jwero answers every enquiry in minutes, sells on WhatsApp, Instagram and the web, runs gold schemes and digital gold, and brings customers back for every occasion. Nothing goes out without your approval.',
   primary: { href: '#', label: 'See Jwero on WhatsApp', wa: 'home' },
   secondary: { href: '/book-demo.html', label: 'Book a demo' },
   note: 'A two-minute demo on your own phone. No form, no download.',
@@ -44,7 +44,7 @@ ${L.section(
     <div class="stack-item"><strong>Scheme spreadsheets</strong>Savings plans tracked on paper and Excel — leakage and disputes built in.</div>
     <div class="stack-item"><strong>Marketing agency</strong>Festival blasts into the void. No memory, no attribution.</div>
   </div>
-  <div class="stack-verdict"><strong>The chains didn’t out-love your customers. They out-remembered them.</strong> Their systems know every customer, every occasion, every balance — at scale. Jwero gives you the same memory, without the head office.</div>`
+  <div class="stack-verdict"><strong>The sale you lose is rarely lost to a rival. It is lost to forgetting.</strong> Jwero replaces the pile of tools with one system that knows every customer, every occasion, every balance — at one counter or a hundred.</div>`
 )}
 
 ${L.section(
@@ -127,7 +127,7 @@ ${L.section(`${L.sectionHead('QUESTIONS JEWELLERS ASK', 'Straight answers, befor
 ])}`)}
 
 ${L.ctaBand(
-  'See your shop with a memory.',
+  'See your business with a memory.',
   'A two-minute demo on your own WhatsApp — or a 15-minute call with someone who knows the trade.',
   'home'
 )}

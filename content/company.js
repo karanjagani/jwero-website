@@ -200,7 +200,7 @@ ${L.hero({
 ${L.section(
   `${L.sectionHead('WHAT WE BELIEVE', 'Three convictions behind every feature.', '')}
   ${L.cards([
-    { title: 'Memory is the moat', text: 'Chains beat family jewellers with systems that remember customers at scale. We industrialise the jeweller’s own superpower and hand it back.' },
+    { title: 'Memory is the moat', text: 'Jewellery is a relationship trade, and relationships run on memory. We industrialise that superpower so it works at any scale — one counter or a hundred branches.' },
     { title: 'AI must ask first', text: 'In a trust-first trade, ungoverned automation is a liability. Approval queues, caps and kill switches are not features — they are the product philosophy.' },
     { title: 'Honesty compounds', text: 'We publish what is not built yet on a public roadmap. A customer won by overpromise is a churn statistic waiting to happen.' },
   ])}`
