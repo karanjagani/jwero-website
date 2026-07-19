@@ -1,0 +1,9 @@
+{
+  "name": "jwero-website",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --serve"
+  }
+}
