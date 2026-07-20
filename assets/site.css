@@ -156,8 +156,6 @@ main:focus-visible { outline: none; }
 [data-theme="dark"] .nav-link:hover { color: var(--brand-strong); }
 .nav-dd { position: relative; }
 .nav-dd summary::-webkit-details-marker { display: none; }
-.nav-dd summary::after { content: ''; display: inline-block; width: 7px; height: 7px; margin-left: 7px; border-right: 1.7px solid currentColor; border-bottom: 1.7px solid currentColor; transform: rotate(45deg) translateY(-3px); opacity: .55; }
-.nav-dd[open] summary::after { transform: rotate(225deg) translate(-1px, -1px); }
 .dd-panel {
   position: absolute; top: calc(100% + 10px); left: 0; min-width: 300px;
   background: var(--bg); border: 1px solid var(--line); border-radius: var(--r);

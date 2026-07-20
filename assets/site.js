@@ -147,6 +147,15 @@
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.nav-dd')) dds.forEach(function (d) { d.open = false; });
   });
+  // desktop: open on hover, not just click (closed <details> content can't be
+  // reliably forced visible with a CSS display override, so toggle the real
+  // `open` property on mouseenter/mouseleave instead)
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    dds.forEach(function (d) {
+      d.addEventListener('mouseenter', function () { d.open = true; });
+      d.addEventListener('mouseleave', function () { d.open = false; });
+    });
+  }
 
   // --- misc --------------------------------------------------------
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
