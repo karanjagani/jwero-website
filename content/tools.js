@@ -1,9 +1,30 @@
 const L = require('../lib');
 
+const toolsIndex = {
+  slug: 'tools',
+  title: 'Tools & Calculators for Jewellery Business | Jwero',
+  description: 'Free calculators that turn a felt pain into a number — dead stock, gold scheme value and more. Results delivered on WhatsApp, no email gate.',
+  breadcrumbs: [['Home', '/'], ['Tools & Calculators']],
+  body: `
+${L.hero({
+  eyebrow: 'TOOLS & CALCULATORS',
+  h1: 'Turn a felt pain into a number.',
+  sub: 'No email gate, no signup — sliders, a result, and the option to get it on WhatsApp. Assumptions are published so the math is yours to check.',
+})}
+${L.section(
+  `${L.cards([
+    { title: 'Dead Stock Calculator', text: 'What idle inventory is really costing your business every month.', link: { href: '/tools/dead-stock-calculator', label: 'Run it' } },
+    { title: 'Gold Scheme Calculator', text: 'What your enrolment rate is worth in locked-in future revenue.', link: { href: '/tools/gold-scheme-calculator', label: 'Run it' } },
+  ])}`
+)}
+`,
+};
+
 const deadStockCalc = {
   slug: 'tools/dead-stock-calculator',
-  title: 'Dead Stock Calculator for Jewellers — What Idle Inventory Costs | Jwero',
+  title: 'Dead Stock Calculator for Jewellery Business — What Idle Inventory Costs | Jwero',
   description: 'Free calculator: enter your inventory value, dead-stock percentage and financing rate to see the monthly cost of idle jewellery stock. Results delivered on WhatsApp.',
+  breadcrumbs: [['Home', '/'], ['Tools', '/tools'], ['Dead Stock Calculator']],
   faqs: [
     { q: 'What counts as dead stock in jewellery?', a: 'A common working definition: pieces unsold after 180 days. Many businesses find 15–30% of inventory value sits in this band. Ageing analysis makes the real number visible.' },
     { q: 'How is the carrying cost calculated?', a: 'Dead value × (your financing rate + ~2.5% for insurance, storage and handling), per year. It excludes the opportunity cost of capital not invested in fast movers — so the true cost is higher than this estimate.' },
@@ -49,7 +70,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('AFTER THE NUMBER', 'Visibility is step one. Memory is step two.', 'Knowing the cost changes the conversation; moving the stock changes the balance sheet. Jwero exposes ageing by piece and branch, then matches idle designs to customers whose taste fits — so clearance happens by invitation, not desperation.')}
-  <p><a class="btn btn-ghost" href="/solutions/dead-stock.html">Read the dead-stock playbook</a></p>`
+  <p><a class="btn btn-ghost" href="/solutions/pain/dead-stock">Read the dead-stock playbook</a></p>`
 , { tone: 'tint' })}
 `,
 };
@@ -58,6 +79,7 @@ const schemeCalc = {
   slug: 'tools/gold-scheme-calculator',
   title: 'Gold Scheme Calculator — What a Digital Scheme Book Is Worth | Jwero',
   description: 'Free calculator: see the yearly corpus and locked-in future revenue your gold savings scheme generates — and what digital collection discipline adds.',
+  breadcrumbs: [['Home', '/'], ['Tools', '/tools'], ['Gold Scheme Calculator']],
   faqs: [
     { q: 'How does a savings scheme lock in revenue?', a: 'Members redeem their corpus at your counter — and typically spend more than the corpus when they do. The scheme book you build this year is next year’s guaranteed showcase traffic.' },
     { q: 'Why does digital collection increase completion?', a: 'Most scheme dropouts are drift, not decisions: a missed month nobody chased. Automated reminders on WhatsApp with payment links, plus AI voice follow-ups, catch the drift in week one instead of month four.' },
@@ -102,9 +124,9 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('AFTER THE NUMBER', 'Run the promise properly.', 'Enrolment with KYC, reminders before every due date, transparent balances, OTP-verified maturity — the discipline that turns a leaky register into a compounding book.')}
-  <p><a class="btn btn-ghost" href="/products/gold-schemes.html">See schemes in Jwero</a></p>`
+  <p><a class="btn btn-ghost" href="/products/gold-schemes">See schemes in Jwero</a></p>`
 , { tone: 'tint' })}
 `,
 };
 
-module.exports = [deadStockCalc, schemeCalc];
+module.exports = [toolsIndex, deadStockCalc, schemeCalc];

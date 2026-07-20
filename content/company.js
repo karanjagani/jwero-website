@@ -3,20 +3,22 @@ const L = require('../lib');
 const pricing = {
   slug: 'pricing',
   title: 'Pricing — Assist, Approve, Autopilot | Jwero',
-  description: 'Transparent tiers named after how trust is earned: Assist (AI drafts, you send), Approve (one-tap approvals), Autopilot (earned autonomy) — plus Chain plans for networks.',
+  description: 'Transparent tiers named after how trust is earned: Assist (AI drafts, you send), Approve (one-tap approvals), Autopilot (earned autonomy) — plus plans for multi-store networks.',
+  breadcrumbs: [['Home', '/'], ['Pricing']],
   faqs: [
-    { q: 'Why don’t I see numbers on this page?', a: 'Pricing is being finalised per region ahead of general availability and will be published here — a number you can see before you talk to anyone. Until then, ask on WhatsApp and you will get a straight answer with no “discovery call” required.' },
+    { q: 'Why don’t I see numbers on this page?', a: 'Pricing is being finalised per region ahead of general availability and will be published here — a number you can see before you talk to anyone. Until then, ask on WhatsApp and you will get a straight answer with no "discovery call" required.' },
     { q: 'Is there a lock-in contract?', a: 'Entry tiers offer monthly billing. Annual plans are discounted — a choice, not handcuffs. Your data exports any time you ask.' },
     { q: 'What does implementation include?', a: 'Human-led onboarding: your customer list imported for you, WhatsApp number connected, catalogue set up, and your team trained by role. The scope is written down before you pay.' },
     { q: 'How should I think about the cost?', a: 'Against one recovered customer, not against your billing software’s maintenance fee. One returning bridal customer typically pays for years of Jwero. Run the calculators and use your own numbers.' },
+    { q: 'Is there a free trial?', a: 'Self-serve trial mechanics are being finalised — talk to us about starting a pilot with your own data instead, which is how most businesses actually begin.' },
   ],
   body: `
 ${L.hero({
   eyebrow: 'PRICING',
-  h1: 'Priced like growth.<br>Not like software maintenance.',
+  h1: 'Priced like growth. Not like software maintenance.',
   sub: 'Three tiers, named after how the AI earns your trust. Start where you are comfortable; move up when the results say so. No hidden costs, no hostage clauses, export-anytime.',
-  primary: { href: '#', label: 'Get a straight price on WhatsApp', wa: 'default' },
-  secondary: { href: '/book-demo.html', label: 'Book a demo' },
+  primary: { href: '#', label: 'Get a straight price on WhatsApp', wa: 'pricing' },
+  secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
 ${L.section(
@@ -33,22 +35,22 @@ ${L.section(
         <li>Occasion greetings with approval queue</li>
         <li>Tally / Zoho Books bridge</li>
       </ul>
-      <a class="btn btn-ghost" href="#" data-wa="default">Ask the Assist price</a>
+      <a class="btn btn-ghost" href="#" data-wa="tier-assist">Ask the Assist price</a>
     </div>
     <div class="card tier tier-hot">
       <p class="tier-flag">Most chosen</p>
       <h3>Approve</h3>
-      <p>The growth engine. AI proposes everything; you approve with one tap.</p>
+      <p>The whole operating system. AI proposes everything; you approve with one tap.</p>
       <ul>
         <li>Everything in Assist</li>
-        <li>AI staff: follow-ups, win-back, festival journeys</li>
+        <li>AI workforce: follow-ups, win-back, festival journeys</li>
         <li>Gold schemes: enrolment → reminders → maturity</li>
         <li>Digital gold</li>
-        <li>Weekly Growth Report to the owner</li>
+        <li>Weekly growth report to the owner</li>
         <li>Inventory ageing & dead-stock visibility</li>
         <li>Loyalty & campaigns</li>
       </ul>
-      <a class="btn btn-primary" href="#" data-wa="default">Ask the Approve price</a>
+      <a class="btn btn-primary" href="#" data-wa="tier-approve">Ask the Approve price</a>
     </div>
     <div class="card tier">
       <p class="tier-flag">Earned</p>
@@ -62,139 +64,40 @@ ${L.section(
         <li>Advanced analytics & ask-in-plain-language reports</li>
         <li>Priority support</li>
       </ul>
-      <a class="btn btn-ghost" href="#" data-wa="default">Ask the Autopilot price</a>
+      <a class="btn btn-ghost" href="#" data-wa="tier-autopilot">Ask the Autopilot price</a>
     </div>
   </div>
-  <div class="stack-verdict" style="margin-top:26px"><strong>Chains & franchise networks:</strong> multi-branch structure, role-based control, staged rollout and an evaluation kit for your committee. <a href="/book-demo.html">Talk to a specialist</a>.</div>`
+  <div class="stack-verdict" style="margin-top:26px"><strong>Multi-store & franchise networks:</strong> branch structure, role-based control, staged rollout and an evaluation kit for your committee. <a href="/enterprise">Talk to a specialist</a>.</div>`
 )}
 
 ${L.section(
-  `${L.sectionHead('THE HONEST FRAME', 'What this replaces.', 'Most jewellers pay for five or six disconnected tools — a messaging tool, a catalogue app, a website, scheme spreadsheets, an agency retainer — plus the invisible cost: customers lost to silence. One system, one bill, one owner of the customer record.')}
+  `${L.sectionHead('THE HONEST FRAME', 'What this replaces.', 'Most jewellery businesses pay for five or six disconnected tools — a messaging tool, a catalogue app, a website, scheme spreadsheets, an agency retainer — plus the invisible cost: customers lost to silence. One system, one bill, one owner of the customer record.')}
   ${L.stats([
-    { n: '5–6', l: 'tools a typical store pays for today' },
+    { n: '5–6', l: 'tools a typical business pays for today' },
     { n: '1', l: 'system that holds the whole customer' },
     { n: '0', l: 'hostage clauses — export anytime' },
-    { n: '30 days', l: 'to your first Growth Report' },
-  ])}`
-, { tone: 'tint' })}
-`,
-};
-
-const customers = {
-  slug: 'customers',
-  title: 'Proof — Verified in the Product, Not Written by Marketing | Jwero',
-  description: 'Jwero’s proof policy: product-verified capabilities, sample reports labelled as samples, and founding-partner stories published only with verified numbers.',
-  faqs: [
-    { q: 'Where are the customer logos and testimonials?', a: 'Coming — with names, numbers and dates, or not at all. We publish stories only after the owner verifies the figures on record. What you will never see here: stock-photo testimonials or unverifiable claims.' },
-    { q: 'What is the Lighthouse Partner program?', a: 'A founding cohort of jewellers who get concierge onboarding, direct influence on the roadmap, and preferred terms — in exchange for measured, publishable results. Limited seats per region and segment.' },
-  ],
-  body: `
-${L.hero({
-  eyebrow: 'PROOF',
-  h1: 'We would rather show you<br>than tell you.',
-  sub: 'Jewellery is a trade that trusts hallmarks, not adjectives. So this page holds itself to the same rule: every claim below is verified in the product, every sample is labelled a sample, and customer stories ship with names, numbers and dates — or they don’t ship.',
-  primary: { href: '#', label: 'Get a live demo instead', wa: 'default' },
-  secondary: { href: '/book-demo.html', label: 'Book a demo' },
-})}
-
-${L.section(
-  `${L.sectionHead('VERIFIED IN THE PRODUCT', 'Claims an engineer can check.', '')}
-  ${L.stats([
-    { n: '90+', l: 'intelligence fields on every customer record' },
-    { n: '240+', l: 'AI-executable business actions, individually permissioned' },
-    { n: '14', l: 'languages the AI voice assistant speaks' },
-    { n: '5', l: 'scopes of AI kill switch' },
-  ])}
-  ${L.cards([
-    { title: 'Explainable scores', text: 'Ask why any customer is scored “at risk” or “high intent” and the record shows its factors. No black boxes.' },
-    { title: 'Governance that is real', text: 'Approval queues, daily caps and kill switches are enforced in code — bring a technical evaluator and inspect them.' },
-    { title: 'Jewellery-native depth', text: 'Purity, certificates, live-rate pricing, scheme lifecycles, gold-loss ledgers — the details only a jewellery-first platform bothers to build.' },
-  ])}`
-)}
-
-${L.section(
-  `<div class="grid grid-2" style="align-items:center; gap:48px;">
-    <div>
-      ${L.sectionHead('THE WEEKLY ANSWER', 'The Growth Report.', 'This is the artifact our customers judge us by: a weekly, plain-language accounting of who came back, what was booked, and what revenue the system brought home. The sample here is illustrative; yours would be real.')}
-    </div>
-    <div class="report" data-report>
-      <div class="report-head"><strong>Your Growth Report</strong><span class="badge-sample">Sample</span></div>
-      <div class="report-tabs" role="tablist">
-        <button type="button" data-tab="week" aria-selected="true">This week</button>
-        <button type="button" data-tab="month" aria-selected="false">This month</button>
-      </div>
-      <div class="report-body">
-        <div class="report-line"><span>Past customers who returned</span><strong data-r="back">14</strong></div>
-        <div class="report-line"><span>Appointments booked</span><strong data-r="appt">9</strong></div>
-        <div class="report-line"><span>Revenue attributed to Jwero</span><strong data-r="rev">38,400</strong></div>
-        <div class="report-line"><span>Enquiries answered in under 5 min</span><strong data-r="msg">212</strong></div>
-      </div>
-    </div>
-  </div>`
-, { tone: 'tint' })}
-
-${L.section(
-  `${L.sectionHead('FOUNDING COHORT', 'Become a Lighthouse Partner.', 'The first jewellers in each region get concierge onboarding, a direct line to the product team, preferred terms — and their verified numbers on this page, if they choose. Limited seats per region and segment, because concierge does not scale.')}
-  <div class="cta-row"><a class="btn btn-primary" href="#" data-wa="default">Apply on WhatsApp</a><a class="btn btn-ghost" href="/book-demo.html">Book a conversation</a></div>`
-)}
-
-${L.ctaBand('Judge us on your own numbers.', 'The honest pitch: run a pilot, read your Growth Report in 30 days, then decide.', 'default')}
-`,
-};
-
-const migration = {
-  slug: 'migration',
-  title: 'Migration Centre — Switch Without Fear | Jwero',
-  description: 'Keep your books, keep your WhatsApp number, keep your season. We import your data for you, freeze changes during peak season, and guarantee export-anytime.',
-  faqs: [
-    { q: 'Do I have to stop using my current software?', a: 'No. Day one touches nothing: your billing software stays, your ledger stays, your WhatsApp number stays. Jwero lands alongside and takes the revenue side — customers, channels, schemes, follow-up.' },
-    { q: 'Who does the data import?', a: 'We do — customers, catalogue and scheme members, from Excel, CSV or exports of practically any jewellery software, deduplicated and verified with you before go-live.' },
-    { q: 'What if we are in wedding season?', a: 'We operate a season change-freeze: no disruptive changes during your peak weeks. Go-lives are scheduled around your calendar, not our quarter.' },
-    { q: 'What if I want to leave Jwero later?', a: 'Your data exports in standard formats, any time, no questions. A platform that holds customers hostage does not deserve them.' },
-  ],
-  body: `
-${L.hero({
-  eyebrow: 'MIGRATION CENTRE',
-  h1: 'Keep your books.<br>Change your growth.',
-  sub: 'The riskiest software decision is a rip-out — so we designed the opposite. Jwero lands in days without touching your ledger, proves itself with a weekly report, and expands only as fast as the results earn it.',
-  primary: { href: '#', label: 'Plan my migration on WhatsApp', wa: 'default' },
-  secondary: { href: '/book-demo.html', label: 'Book a migration call' },
-})}
-
-${L.section(
-  `${L.sectionHead('THE LAND–PROVE–EXPAND PLAN', 'Nothing breaks. Everything is measured.', '')}
-  ${L.steps([
-    { title: 'Land (week 1)', text: 'Customers imported for you. Your existing WhatsApp number connected. Catalogue published. Greetings on, approvals on. Your current software untouched.' },
-    { title: 'Prove (days 30–90)', text: 'The weekly Growth Report tells you what came back: returning customers, appointments, attributed revenue. Judge the system on evidence.' },
-    { title: 'Expand (when ready)', text: 'Schemes go digital, journeys switch on, more branches join — each step because the last one paid for itself.' },
-  ])}`
-)}
-
-${L.section(
-  `${L.sectionHead('THE DE-RISKING PROMISES', 'Written here so you can hold us to them.', '')}
-  ${L.cards([
-    { title: 'We import for you', text: 'Customers, catalogue, scheme members — from any spreadsheet or software export, deduplicated, verified with you.' },
-    { title: 'Your number stays', text: 'Your WhatsApp number is part of your reputation. It moves onto the official API; customers notice only faster answers.' },
-    { title: 'Season change-freeze', text: 'No disruptive changes during your peak season. The calendar is yours.' },
-    { title: 'Keep your ledger', text: 'Tally and Zoho Books bridges are built. Your accountant’s world does not change.' },
-    { title: 'Pilot first', text: 'Chains start with one branch and written exit criteria. Rollout is earned.' },
-    { title: 'Export anytime', text: 'Your data leaves with you in standard formats whenever you ask. This is a design decision, not a favour.' },
+    { n: '30 days', l: 'to your first growth report' },
   ])}`
 , { tone: 'tint' })}
 
-${L.ctaBand('Tell us what you run today.', 'Name your current software and we will send the exact migration plan — what stays, what bridges, what improves.', 'default')}
+${L.section(`${L.sectionHead('PRICING QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'Why don’t I see numbers on this page?', a: 'Pricing is being finalised per region ahead of general availability. Ask on WhatsApp and you will get a straight answer with no "discovery call" required.' },
+  { q: 'Is there a lock-in contract?', a: 'Entry tiers offer monthly billing. Annual plans are discounted — a choice, not handcuffs.' },
+  { q: 'Is there a free trial?', a: 'Self-serve trial mechanics are being finalised — talk to us about starting a pilot with your own data instead.' },
+])}`)}
 `,
 };
 
 const company = {
   slug: 'company',
-  title: 'About Jwero — Why We Build for Jewellers | Jwero',
-  description: 'Jwero exists because the world’s most relationship-driven retail trade was left with software that only keeps records. We build the growth engine jewellers deserve.',
+  title: 'About Jwero — Why We Build for Jewellery Business | Jwero',
+  description: 'Jwero exists because the world’s most relationship-driven retail trade was left with software that only keeps records. We build the operating system it deserves.',
+  breadcrumbs: [['Home', '/'], ['Company']],
   body: `
 ${L.hero({
   eyebrow: 'ABOUT',
-  h1: 'The most personal trade on earth<br>deserved better software.',
-  sub: 'Jewellery is bought for weddings, births and promises — and sold, everywhere on earth, through relationships. Yet the industry’s software only ever learned to keep records. We started Jwero to build the other half: the system that remembers people, not just transactions.',
+  h1: 'The most personal trade on earth deserved better software.',
+  sub: 'Jewellery is bought for weddings, births and promises — and sold, everywhere on earth, through relationships. Yet the industry’s software only ever learned to keep records. We started Jwero to build the operating system that remembers people, not just transactions.',
 })}
 
 ${L.section(
@@ -207,12 +110,67 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('THE COMPANY', '', 'Jwero is built by a team across product, jewellery retail and AI engineering — working daily with jewellers from single family stores to multi-branch chains. We measure ourselves on one number: the revenue our customers’ Growth Reports attribute to the system.')}
+  `${L.sectionHead('THE COMPANY', '', 'Jwero is built by a team across product, jewellery retail and AI engineering — working daily with jewellery businesses from single family stores to multi-branch chains. We measure ourselves on one number: the revenue our customers’ growth reports attribute to the system.')}
   <div class="cta-row">
-    <a class="btn btn-primary" href="/book-demo.html">Talk to us</a>
-    <a class="btn btn-ghost" href="#" data-wa="default">WhatsApp the founders’ desk</a>
+    <a class="btn btn-primary" href="/book-demo">Talk to us</a>
+    <a class="btn btn-ghost" href="#" data-wa="company">WhatsApp the founders’ desk</a>
   </div>`
 , { tone: 'tint' })}
+`,
+};
+
+const contact = {
+  slug: 'contact',
+  title: 'Contact Jwero | Jwero',
+  description: 'WhatsApp, phone, email or a booked demo — every way to reach Jwero, on one page.',
+  breadcrumbs: [['Home', '/'], ['Contact']],
+  body: `
+${L.hero({
+  eyebrow: 'CONTACT',
+  h1: 'Talk to us however suits you.',
+  sub: 'For most questions, WhatsApp is genuinely the fastest route — it lands in the same inbox our product runs on.',
+})}
+${L.section(
+  `${L.cards([
+    { title: 'WhatsApp', text: 'The fastest way to reach us — usually a reply within minutes during business hours.', link: { href: '#', label: 'Chat now' } },
+    { title: 'Phone', text: '+91 00000 00000 — for a call instead of a chat.' },
+    { title: 'Email', text: 'hello@jwero.ai — for anything that needs an attachment.' },
+    { title: 'Book a demo', text: 'A 15-minute slot with someone who knows the trade.', link: { href: '/book-demo', label: 'Book now' } },
+  ], 4)}
+  <div class="cta-row" style="margin-top:10px"><a class="btn btn-primary" href="#" data-wa="contact">Chat with us on WhatsApp</a></div>`
+)}
+`,
+};
+
+const enterprise = {
+  slug: 'enterprise',
+  title: 'Enterprise — Multi-store, Wholesale & Manufacturing | Jwero',
+  description: 'For chains, franchise networks, wholesalers and manufacturers: a specialist evaluation track, a buying-committee kit, and a staged rollout plan.',
+  breadcrumbs: [['Home', '/'], ['Enterprise']],
+  faqs: [
+    { q: 'What’s different about the enterprise track?', a: 'A named specialist instead of a self-serve funnel, a buying-committee kit addressed to each stakeholder, and a staged pilot-branch rollout with exit criteria you set.' },
+    { q: 'What do you need from us to start?', a: 'Roughly: number of branches, current systems (billing/ERP/WhatsApp tools), and your evaluation timeline. We’ll come back with a specific plan, not a generic deck.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'ENTERPRISE',
+  h1: 'For networks, not just counters.',
+  sub: 'Multi-store chains, franchise networks, wholesalers and manufacturers get a specialist evaluation track: a named contact, a buying-committee kit, and a staged rollout that starts with one pilot branch.',
+  primary: { href: '/book-demo', label: 'Talk to a specialist' },
+  secondary: { href: '#', label: 'Or start on WhatsApp', wa: 'enterprise' },
+})}
+
+${L.section(
+  `${L.sectionHead('THE BUYING-COMMITTEE KIT', 'One artifact per stakeholder.', '')}
+  ${L.cards([
+    { title: 'For the MD / owner', text: 'ROI framing against your own numbers, and the case for one system over five.' },
+    { title: 'For IT / operations', text: 'Security overview, migration plan, pilot-branch rollout with exit criteria.', link: { href: '/trust/security', label: 'Security overview' } },
+    { title: 'For finance', text: 'The Tally/Zoho coexistence note — nothing about the ledger changes.', link: { href: '/platform/integrations/tally', label: 'Coexistence note' } },
+    { title: 'For branch managers', text: 'A day-in-the-life walkthrough of what actually changes at the counter.' },
+  ], 4)}`
+)}
+
+${L.ctaBand('Start with one branch.', 'Tell us your network size and current systems — we’ll come back with a specific plan.', 'enterprise')}
 `,
 };
 
@@ -220,12 +178,13 @@ const bookDemo = {
   slug: 'book-demo',
   title: 'Book a Demo — 15 Minutes, Your Numbers | Jwero',
   description: 'Book a 15-minute demo with someone who knows the jewellery trade — or get the two-minute version on your own WhatsApp right now.',
+  breadcrumbs: [['Home', '/'], ['Book a Demo']],
   body: `
 ${L.hero({
   eyebrow: 'BOOK A DEMO',
-  h1: 'Fifteen minutes.<br>Your scenario, not our script.',
+  h1: 'Fifteen minutes. Your scenario, not our script.',
   sub: 'Bring one real situation — a quiet customer list, a leaking scheme book, a flooded Instagram inbox — and we will run it through Jwero live. If we cannot help, we will say so in the first five minutes.',
-  primary: { href: '#', label: 'Skip the form — WhatsApp us', wa: 'default' },
+  primary: { href: '#', label: 'Skip the form — WhatsApp us', wa: 'bookdemo' },
 })}
 
 ${L.section(
@@ -263,4 +222,70 @@ ${L.section(
 `,
 };
 
-module.exports = [pricing, customers, migration, company, bookDemo];
+const legalPrivacy = {
+  slug: 'legal/privacy',
+  title: 'Privacy Policy | Jwero',
+  description: 'How Jwero collects, uses, stores and protects your data.',
+  breadcrumbs: [['Home', '/'], ['Legal', '/legal/privacy'], ['Privacy Policy']],
+  body: `
+${L.section(
+  `<h1>Privacy Policy</h1>
+  <p style="max-width:64em; margin-top:18px;">Jwero (“we”, “us”) provides jewellery business software. This policy explains what data we collect through this website and our product, why, and the choices you have.</p>
+  <div style="max-width:64em; margin-top:26px; font-size:.95rem; color:var(--ink-2); line-height:1.8;">
+    <h3 style="margin-top:24px; color:var(--ink);">What we collect</h3>
+    <p>Contact details you provide via forms or WhatsApp (name, phone, business details), and standard website analytics (pages viewed, approximate location, device type).</p>
+    <h3 style="margin-top:24px; color:var(--ink);">How we use it</h3>
+    <p>To respond to enquiries, run demos, provide the product to customers, and improve this website. We do not sell personal data.</p>
+    <h3 style="margin-top:24px; color:var(--ink);">Customer data inside the product</h3>
+    <p>For businesses using Jwero, each business’s data is isolated in its own database and remains that business’s property. See <a href="/trust/security">Security & Data Ownership</a> for detail.</p>
+    <h3 style="margin-top:24px; color:var(--ink);">Your choices</h3>
+    <p>You may ask us to access, correct, or delete your personal data by writing to us via <a href="/contact">Contact</a>. See also our <a href="/legal/dpdp">DPDP statement</a>.</p>
+  </div>
+  <p style="margin-top:24px; font-size:.85rem; color:var(--ink-2);">[VERIFY: full legal review required before this policy is relied upon for compliance purposes.]</p>`
+)}
+`,
+};
+
+const legalTerms = {
+  slug: 'legal/terms',
+  title: 'Terms of Service | Jwero',
+  description: 'The terms governing use of the Jwero website and product.',
+  breadcrumbs: [['Home', '/'], ['Legal', '/legal/privacy'], ['Terms of Service']],
+  body: `
+${L.section(
+  `<h1>Terms of Service</h1>
+  <div style="max-width:64em; margin-top:22px; font-size:.95rem; color:var(--ink-2); line-height:1.8;">
+    <p>These terms govern your use of this website and, for customers, the Jwero product under a separate order/subscription agreement.</p>
+    <h3 style="margin-top:24px; color:var(--ink);">Use of this website</h3>
+    <p>Content here is for informational purposes. Pricing shown, where present, is indicative pending your specific quote.</p>
+    <h3 style="margin-top:24px; color:var(--ink);">Product terms</h3>
+    <p>Customer subscriptions are governed by a separate agreement signed at onboarding, covering scope, data ownership and export rights described on <a href="/trust/security">our security page</a>.</p>
+  </div>
+  <p style="margin-top:24px; font-size:.85rem; color:var(--ink-2);">[VERIFY: full legal review required before publishing as binding terms.]</p>`
+)}
+`,
+};
+
+const legalDpdp = {
+  slug: 'legal/dpdp',
+  title: 'DPDP Statement | Jwero',
+  description: 'Jwero’s statement on data protection practices relevant to jewellery business customers and their customers’ data.',
+  breadcrumbs: [['Home', '/'], ['Legal', '/legal/privacy'], ['DPDP Statement']],
+  body: `
+${L.section(
+  `<h1>DPDP Statement</h1>
+  <div style="max-width:64em; margin-top:22px; font-size:.95rem; color:var(--ink-2); line-height:1.8;">
+    <p>This statement describes how Jwero approaches data protection for personal data processed on behalf of our customers, including their end customers’ data (e.g. names, contact details, purchase and scheme records).</p>
+    <h3 style="margin-top:24px; color:var(--ink);">Data isolation</h3>
+    <p>Each customer business’s data is held in an isolated database. See <a href="/trust/security">Security & Data Ownership</a>.</p>
+    <h3 style="margin-top:24px; color:var(--ink);">Data principal rights</h3>
+    <p>Requests relating to an individual’s personal data held within a customer’s Jwero account should be directed to that business in the first instance; Jwero supports businesses in fulfilling such requests.</p>
+    <h3 style="margin-top:24px; color:var(--ink);">Export & deletion</h3>
+    <p>Customers can export their data at any time. Deletion requests are honoured per the terms of the customer agreement.</p>
+  </div>
+  <p style="margin-top:24px; font-size:.85rem; color:var(--ink-2);">[VERIFY: this statement requires legal review against applicable data-protection law (e.g. India’s DPDP Act) before external reliance.]</p>`
+)}
+`,
+};
+
+module.exports = [pricing, company, contact, enterprise, bookDemo, legalPrivacy, legalTerms, legalDpdp];

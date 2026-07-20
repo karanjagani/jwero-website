@@ -2,67 +2,105 @@ const L = require('../lib');
 
 const home = {
   slug: 'index',
-  title: 'Jwero — The AI Growth Engine for Jewellery Business',
+  title: 'Jwero — The AI Operating System for Jewellery Business',
   description:
-    'Jwero gives jewellers one system that remembers every customer, sells on WhatsApp and Instagram, runs gold schemes and digital gold, and puts AI staff to work — with your approval on everything.',
+    'Jwero is the AI operating system for jewellery business: one customer record, one catalogue, one inventory truth and one inbox — with WhatsApp commerce, gold schemes and an AI workforce that waits for your yes.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'AI growth engine for jewellery business: customer memory, WhatsApp and Instagram commerce, gold savings schemes, digital gold, and governed AI staff.',
+    description: 'The AI operating system for jewellery business: one customer record, one catalogue, one inventory truth, WhatsApp and Instagram commerce, gold savings schemes, digital gold and a governed AI workforce.',
     url: 'https://jwero.ai',
   },
   faqs: [
-    { q: 'What is Jwero?', a: 'Jwero is the AI growth engine for jewellery business — one system that holds your customer memory, your catalogue and your selling channels (WhatsApp, Instagram, Facebook, web, video), runs gold savings schemes and digital gold, and puts AI staff to work under your approval.' },
-    { q: 'Is Jwero a CRM or an ERP?', a: 'Neither word fits. ERPs record transactions; messaging tools send messages. Jwero is the layer that brings customers back: it remembers every customer, sells on the channels they actually use, and automates follow-up with your approval. It works alongside your existing accounting software — Tally and Zoho Books bridges are built in.' },
-    { q: 'Will AI message my customers without asking?', a: 'No. Every AI-drafted message waits in an approval queue until you or your team clears it. Daily caps limit volume, quiet hours are respected, and a kill switch can pause any agent — or all AI activity — instantly. Autonomy is earned step by step, and only if you choose it.' },
-    { q: 'Do I have to replace my current billing or accounting software?', a: 'No. Keep your books where they are — Jwero bridges to Tally and Zoho Books, and connects to Shopify, WooCommerce and Unicommerce. Jwero takes over the revenue side first: customers, channels, schemes, follow-up. Most jewellers change nothing else on day one.' },
-    { q: 'How long does it take to go live?', a: 'The first stage takes days, not months: we import your customers from Excel or your current software, connect your existing WhatsApp number, and publish your catalogue. Greetings and follow-ups switch on with approvals enabled from day one.' },
-    { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time. Your customer list never becomes anyone else’s asset.' },
+    { q: 'What is Jwero?', a: 'Jwero is the AI operating system for jewellery business — one system where your customer record, catalogue, inventory and every selling channel (WhatsApp, Instagram, storefront, video) share one truth, and an AI workforce drafts the work under your approval.' },
+    { q: 'Is Jwero a CRM, an ERP, or something else?', a: 'It is the operating system that sits above both. A CRM only remembers; an ERP only records. Jwero is the one place where the customer, the catalogue and the operation all live — so AI can actually act, not just log.' },
+    { q: 'Do I have to replace my current billing or accounting software?', a: 'No. Keep your books exactly where your accountant likes them — Jwero bridges to Tally and Zoho Books. Most businesses change nothing on the accounting side on day one.' },
+    { q: 'Will AI message my customers without asking?', a: 'No. Every AI-drafted action waits in an approval queue until your team clears it, inside daily caps and quiet hours you set — with a kill switch at five scopes. Autonomy is earned action by action, never assumed.' },
+    { q: 'How long does it take to go live?', a: 'Days, not months, for the first stage: we import your customers, connect your existing WhatsApp number, and publish your catalogue — with approvals switched on from day one.' },
+    { q: 'Is Jwero built only for large jewellery chains?', a: 'No — the same system runs a single counter and a hundred-branch chain. A single-store jeweller gets the whole operating system from day one; a chain gets the same one, with governance and structure that scale to every branch.' },
+    { q: 'Can multiple stores or a franchise network use it?', a: 'Yes. Multi-store and franchise structure — shared brand, per-branch data, central control — is built in, not bolted on.' },
+    { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time.' },
   ],
   body: `
+${L.section(
+  `<div class="ticker-row"><span class="ticker-rate">24k gold ₹XX,XXX / 10g ▲</span><a href="/tools">calculators for your business →</a></div>`,
+  { tone: 'tint', id: 'rate-strip' }
+)}
+
 ${L.hero({
-  eyebrow: 'THE AI GROWTH ENGINE FOR JEWELLERY BUSINESS',
-  h1: 'Every customer remembered.<br>Every customer brought back.',
-  sub: 'One growth engine for any jewellery business — single store, chain or manufacturer. Jwero answers every enquiry in minutes, sells on WhatsApp, Instagram and the web, runs gold schemes and digital gold, and brings customers back for every occasion. Nothing goes out without your approval.',
-  primary: { href: '#', label: 'See Jwero on WhatsApp', wa: 'home' },
-  secondary: { href: '/book-demo.html', label: 'Book a demo' },
-  note: 'A two-minute demo on your own phone. No form, no download.',
+  eyebrow: 'THE AI OPERATING SYSTEM FOR JEWELLERY BUSINESS',
+  h1: 'Run your whole jewellery business on one system — with an AI staff that waits for your yes.',
+  sub: 'One customer record. One catalogue. One inventory truth. One inbox for WhatsApp, Instagram and your storefront. Every AI action drafted, never sent, until you approve it.',
+  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'home' },
+  secondary: { href: '/book-demo', label: 'Book a demo' },
+  note: 'A real person + our AI reply within minutes — that’s the product.',
   mock: L.mockChat,
 })}
 
 ${L.section(
   `${L.sectionHead(
-    'THE PROBLEM',
-    'Your software keeps records. It doesn’t bring customers back.',
+    'THE ENEMY',
+    'Your software keeps accounts. It doesn’t remember customers.',
     'The average jewellery business runs on five or six disconnected tools — and the customer exists as a whole person in none of them.'
   )}
   <div class="stack-grid">
-    <div class="stack-item"><strong>Billing software</strong>Knows what she bought. Not why, or when she will buy again.</div>
-    <div class="stack-item"><strong>Messaging apps</strong>On a salesperson’s personal phone. When they leave, your customers leave with them.</div>
-    <div class="stack-item"><strong>Catalogue PDFs</strong>Shared manually. No live prices, no stock, no follow-through.</div>
-    <div class="stack-item"><strong>Website</strong>A ghost town that doesn’t understand gold-rate pricing.</div>
-    <div class="stack-item"><strong>Scheme spreadsheets</strong>Savings plans tracked on paper and Excel — leakage and disputes built in.</div>
-    <div class="stack-item"><strong>Marketing agency</strong>Festival blasts into the void. No memory, no attribution.</div>
+    <div class="stack-item"><strong>Billing software</strong>Knows what she bought. Not why, or when she’ll buy again.</div>
+    <div class="stack-item"><strong>Personal WhatsApp</strong>On a salesperson’s phone. When they leave, her history leaves too.</div>
+    <div class="stack-item"><strong>Catalogue PDFs</strong>Shared manually, with no live prices and no follow-through.</div>
+    <div class="stack-item"><strong>Scheme register</strong>A savings plan tracked on paper — leakage and disputes built in.</div>
+    <div class="stack-item"><strong>Website, if any</strong>A ghost town that doesn’t understand gold-rate pricing.</div>
+    <div class="stack-item"><strong>Marketing agency</strong>Festival blasts into the void — no memory, no attribution.</div>
   </div>
-  <div class="stack-verdict"><strong>The sale you lose is rarely lost to a rival. It is lost to forgetting.</strong> Jwero replaces the pile of tools with one system that knows every customer, every occasion, every balance — at one counter or a hundred.</div>`
+  <div class="stack-verdict">Every day on disconnected tools, an occasion passes silently, dead stock ages, a follow-up dies — and the business’s most valuable asset, who its customers are, walks out the door with whoever’s holding the phone.</div>`
 )}
 
 ${L.section(
-  `${L.sectionHead('ONE SYSTEM, THREE JOBS', 'Everything a growth engine needs. Nothing a ledger does better.', '')}
-  ${L.cards([
-    { icon: '◆', title: 'Customer Memory', text: 'A living record of every customer: purchases, gold-plan balance, family occasions, taste, best time to reach — 90+ fields, each with a “why” you can inspect.', link: { href: '/customer-memory.html', label: 'See the memory' } },
-    { icon: '◇', title: 'The Digital Counter', text: 'Sell where your customers already are: WhatsApp, Instagram, Facebook, your own online store and live video — with real prices at today’s gold rate.', link: { href: '/products/whatsapp.html', label: 'See the counter' } },
-    { icon: '❖', title: 'AI Staff', text: 'Tireless staff that answer in minutes, follow up on every enquiry, remember every birthday and invite customers before every festival — and wait for your approval.', link: { href: '/ai-staff.html', label: 'Meet the AI staff' } },
-  ])}`
+  `${L.sectionHead('THE SOLUTION', 'One record. Every channel. Your approval.', 'That’s one row in one database, not a metaphor. Every module below reads and writes the same customer card.')}
+  <div class="grid grid-2" style="align-items:center; gap:44px;">
+    <div>
+      <p style="font-size:1.02rem; color:var(--ink); line-height:1.7;">When Meera messages on WhatsApp, the reply drafts from her record — her taste, her scheme balance, today’s gold rate. When she buys, the catalogue share, the invoice and the scheme instalment all write back to the same card. No integration. No sync. One system.</p>
+      <a class="btn btn-ghost" style="margin-top:22px" href="/platform">See the full platform →</a>
+    </div>
+    ${L.mockOneRecord}
+  </div>`
+, { tone: 'tint' })}
+
+${L.section(
+  `${L.sectionHead('THE THREE PILLARS', 'What an operating system for jewellery actually does.', '')}
+  ${L.pillarConstellation()}`
+)}
+
+${L.section(
+  `${L.sectionHead('FIND YOUR FIT', 'Which jeweller are you?', 'Every segment gets the same operating system — built to speak its own language.')}
+  <div class="router-grid">
+    <a class="router-card" href="/solutions/single-store"><div class="r-icon">◆</div><h3>Single store</h3><p>Run the whole shop from one screen, and never lose a customer when staff leave.</p></a>
+    <a class="router-card" href="/solutions/multi-store-chains"><div class="r-icon">◇</div><h3>Multi-store &amp; chains</h3><p>Every branch consistent, every customer one record, one owner’s view across it all.</p></a>
+    <a class="router-card" href="/industries/retail"><div class="r-icon">✦</div><h3>Luxury &amp; boutique</h3><p>Clienteling worthy of what you sell — memory, not a mailing list.</p></a>
+    <a class="router-card" href="/industries/retail"><div class="r-icon">♥</div><h3>Bridal &amp; wedding</h3><p>Track the whole family journey — trials, quotes, dates — in one thread.</p></a>
+    <a class="router-card" href="/solutions/manufacturers"><div class="r-icon">⚒</div><h3>Manufacturers</h3><p>Gold in, gold out, and loss at every stage — on one ledger.</p></a>
+    <a class="router-card" href="/industries/retail"><div class="r-icon">⇄</div><h3>Wholesale &amp; B2B</h3><p>Every buyer, every memo, every order — in one B2B thread.</p></a>
+    <a class="router-card" href="/industries/retail"><div class="r-icon">▲</div><h3>D2C &amp; ecommerce-first</h3><p>Keep Shopify. Add the channels and live-rate pricing it can’t do.</p></a>
+    <a class="router-card" href="/solutions"><div class="r-icon">…</div><h3>More segments</h3><p>Diamond, gold, silver, lab-grown, franchise networks and more.</p></a>
+  </div>`
 , { tone: 'tint' })}
 
 ${L.governanceStrip()}
 
 ${L.section(
+  `${L.sectionHead('PROOF, BUILT NOT PROMISED', 'The numbers below are counted in the product, not written by marketing.', '')}
+  ${L.proofStrip()}
+  <div class="card" style="margin-top:24px; text-align:center;">
+    <h3>This website’s chat runs on Jwero.</h3>
+    <p>The WhatsApp button above isn’t a form — it’s our own inbox, answered by our own AI staff, with approvals on. Test it before you take our word for anything else.</p>
+    <a class="card-link" href="#" data-wa="proof">Test our own inbox →</a>
+  </div>`
+)}
+
+${L.section(
   `<div class="grid grid-2" style="align-items:center; gap:48px;">
     <div>
-      ${L.sectionHead('PROOF, WEEKLY', 'The Growth Report: what came back this week.', 'Every week, Jwero sends the owner a plain-language report: how many past customers returned, how many appointments were booked, how much revenue the system brought back. Not a dashboard you must remember to open — an answer that arrives.')}
-      <a class="btn btn-primary" href="/book-demo.html">Get your first report in 30 days</a>
+      ${L.sectionHead('WHAT CAME BACK THIS WEEK?', 'The growth report: the product’s weekly voice.', 'Every week, the owner gets a plain-language report: how many past customers returned, how many appointments were booked, how much revenue the system brought back. Not a dashboard you must remember to open — an answer that arrives.')}
+      <a class="btn btn-primary" href="#" data-wa="report">Get a sample report on WhatsApp</a>
     </div>
     <div class="report" data-report>
       <div class="report-head"><strong>Your Growth Report</strong><span class="badge-sample">Sample</span></div>
@@ -78,59 +116,45 @@ ${L.section(
       </div>
     </div>
   </div>`
-)}
-
-${L.section(
-  `${L.sectionHead('BUILT, NOT PROMISED', 'The numbers below are counted in the product, not written by marketing.', '')}
-  ${L.stats([
-    { n: '90+', l: 'fields remembered on every customer record' },
-    { n: '240+', l: 'business actions AI staff can perform — with approval' },
-    { n: '14', l: 'languages the AI voice assistant speaks' },
-    { n: '5', l: 'levels of kill switch over all AI activity' },
-  ])}`
-, { tone: 'ink' })}
-
-${L.section(
-  `${L.sectionHead('FIND YOUR FIT', 'Which jeweller are you?', '')}
-  ${L.cards([
-    { title: 'Single-store jeweller', text: 'Your reputation is your moat. Give it a memory that never leaves with a salesperson.', link: { href: '/solutions/single-store.html', label: 'For single stores' } },
-    { title: 'Multi-store & chains', text: 'Every branch consistent. Every customer known everywhere. One report for the owner.', link: { href: '/solutions/multi-store-chains.html', label: 'For chains' } },
-    { title: 'Manufacturers & wholesalers', text: 'Job-work, gold-loss control and B2B ordering — in the language of the workshop.', link: { href: '/solutions/manufacturers.html', label: 'For manufacturers' } },
-  ])}`
-)}
-
-${L.section(
-  `${L.sectionHead('THE MONEY PRODUCTS', 'Savings schemes and digital gold — run digitally, finally.', 'The two products that lock in tomorrow’s revenue are the two products still run on paper. Jwero runs enrolment, instalments, reminders and maturity — with compliance controls and a full audit trail.')}
-  <div class="grid grid-2">
-    <div class="card"><h3>Gold savings schemes</h3><p>Digital enrolment and KYC, automated instalment reminders, transparent balances customers can check themselves, and disciplined maturity — no more disputes over a paper register.</p><a class="card-link" href="/products/gold-schemes.html">Explore schemes →</a></div>
-    <div class="card"><h3>Digital gold</h3><p>Let customers buy gold in grams from their phone, watch it grow, and convert it into jewellery at your counter. Their savings, your future sale.</p><a class="card-link" href="/products/digital-gold.html">Explore digital gold →</a></div>
-  </div>`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('PLAYS WELL WITH OTHERS', 'Keep what works. Jwero joins your business — it doesn’t hold it hostage.', 'Built-in bridges keep your existing stack running while Jwero takes the growth side.')}
+  `${L.sectionHead('KEEP WHAT WORKS', 'Jwero joins your business. It doesn’t hold it hostage.', '')}
   ${L.cards([
     { title: 'Accounting', text: 'Tally and Zoho Books bridges keep your ledger exactly where your accountant wants it.' },
     { title: 'Ecommerce', text: 'Shopify, WooCommerce and Unicommerce connectors sync stock and orders both ways.' },
     { title: 'Payments & Meta', text: 'Razorpay and Cashfree for collections; the official WhatsApp Business API and Meta channels for selling.' },
   ])}
-  <p style="margin-top:18px"><a class="card-link" href="/integrations.html">See all integrations →</a></p>`
+  <p style="margin-top:18px"><a class="card-link" href="/platform/integrations">See all integrations →</a></p>`
 )}
 
-${L.section(`${L.sectionHead('QUESTIONS JEWELLERS ASK', 'Straight answers, before the sales call.', '')}${L.faqBlock([
-  { q: 'What is Jwero?', a: 'Jwero is the AI growth engine for jewellery business — one system that holds your customer memory, your catalogue and your selling channels (WhatsApp, Instagram, Facebook, web, video), runs gold savings schemes and digital gold, and puts AI staff to work under your approval.' },
-  { q: 'Is Jwero a CRM or an ERP?', a: 'Neither word fits. ERPs record transactions; messaging tools send messages. Jwero is the layer that brings customers back. It works alongside your existing accounting software — Tally and Zoho Books bridges are built in.' },
-  { q: 'Will AI message my customers without asking?', a: 'No. Every AI-drafted message waits in an approval queue until your team clears it. Daily caps limit volume, and a kill switch can pause any agent — or everything — instantly. Autonomy is earned step by step, and only if you choose it.' },
-  { q: 'Do I have to replace my billing or accounting software?', a: 'No. Keep your books where they are. Jwero takes over the revenue side first: customers, channels, schemes, follow-up. Most jewellers change nothing else on day one. <a href="/migration.html">See the Migration Centre</a>.' },
-  { q: 'How long does it take to go live?', a: 'Days, not months. We import your customers, connect your existing WhatsApp number, and publish your catalogue — with approvals on from day one.' },
-  { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time. <a href="/security.html">Read about security</a>.' },
-])}`)}
+${L.section(`${L.sectionHead('QUESTIONS BUSINESSES ASK', 'Straight answers, before the sales call.', '')}${L.faqBlock([
+  { q: 'What is Jwero?', a: 'Jwero is the AI operating system for jewellery business — one system where your customer record, catalogue, inventory and every selling channel share one truth, and an AI workforce drafts the work under your approval.' },
+  { q: 'Do I have to replace my billing or accounting software?', a: 'No. Keep your books exactly where your accountant likes them — Jwero bridges to Tally and Zoho Books. <a href="/migration">See the Migration Centre</a>.' },
+  { q: 'Will AI message my customers without asking?', a: 'No. Every AI-drafted action waits in an approval queue, inside daily caps and quiet hours, with a kill switch at five scopes. <a href="/platform/ai-workforce">See how governance works</a>.' },
+  { q: 'How long does it take to go live?', a: 'Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published — approvals on from day one.' },
+  { q: 'Is this only for large chains?', a: 'No — a single counter and a hundred-branch chain run the same operating system. <a href="/solutions">Find your segment</a>.' },
+  { q: 'Does it support Hindi, Gujarati or Tamil?', a: 'The AI voice assistant speaks 14 languages today. The product interface itself is English — vernacular UI is on the public roadmap, and we say so plainly rather than pretend otherwise.' },
+  { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time. <a href="/trust/security">Read about security</a>.' },
+  { q: 'Can I integrate this with my existing ERP or website?', a: 'Yes — Tally, Zoho Books, Shopify, WooCommerce, Unicommerce and Meta connectors are built in. <a href="/platform/integrations">See integrations</a>.' },
+])}
+<p class="cta-note" style="margin-top:18px">More questions? <a href="#" data-wa="faq">Ask on WhatsApp</a>.</p>`)}
 
-${L.ctaBand(
-  'See your business with a memory.',
-  'A two-minute demo on your own WhatsApp — or a 15-minute call with someone who knows the trade.',
-  'home'
-)}
+${L.section(
+  `<div class="close-plan">
+    <h2>The business that never forgets a customer.</h2>
+    <ol class="plan-steps">
+      <li><strong>1.</strong> Chat with us on WhatsApp</li>
+      <li><strong>2.</strong> See it running on your own data</li>
+      <li><strong>3.</strong> Go live before the season</li>
+    </ol>
+    <div class="cta-row center">
+      <a class="btn btn-primary" href="#" data-wa="close">Chat with us on WhatsApp</a>
+      <a class="btn btn-ghost-light" href="/book-demo">Book a demo</a>
+      <a class="btn-text-light" href="#" data-wa="pilot">or start a pilot with your own data</a>
+    </div>
+  </div>`
+, { tone: 'ink' })}
 `,
 };
 

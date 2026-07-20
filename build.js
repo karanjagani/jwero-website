@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 // Jwero marketing site — static build + dev server.
-// Usage: node website/build.js [--serve] [--port 4173]
+// Usage: node build.js [--serve] [--port 4173]
+// URL convention: extensionless canonical paths. Every page renders to <slug>/index.html
+// and is linked internally as "/<slug>" (no trailing slash, no .html) — standard "clean URLs"
+// behaviour on Netlify/Vercel/Cloudflare Pages/Azure SWA; the dev server below replicates it.
 
 const fs = require('fs');
 const path = require('path');
@@ -9,77 +12,93 @@ const ROOT = __dirname;
 const DIST = path.join(ROOT, 'dist');
 const SITE = 'https://jwero.ai';
 const BRAND = 'Jwero';
-const TAGLINE = 'The AI Growth Engine for Jewellery Business';
+const TAGLINE = 'The AI Operating System for Jewellery Business';
+const SIGNATURE = 'One system that remembers every customer.';
+const ORG_DESCRIPTION =
+  'Jwero is the AI operating system for jewellery business: one customer record, one catalogue, one inventory truth and one inbox — with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and governed AI staff, in one place.';
 
 // ---------------------------------------------------------------- pages
 const pages = [
   ...require('./content/home'),
   ...require('./content/platform'),
+  ...require('./content/products'),
   ...require('./content/products-sell'),
   ...require('./content/products-run'),
   ...require('./content/products-grow'),
+  ...require('./content/industries'),
   ...require('./content/solutions'),
+  ...require('./content/pain'),
+  ...require('./content/trust'),
   ...require('./content/tools'),
   ...require('./content/company'),
 ];
 
 // ---------------------------------------------------------------- nav
+// Matches Blueprint v2 §3.2.1 — 6 top-level items, Products as the 4-pillar "app grid" mega-menu.
 const NAV = [
   {
     label: 'Platform',
     items: [
-      ['/platform.html', 'The Growth Engine', 'How it all runs on one customer record'],
-      ['/ai-staff.html', 'AI Staff & Governance', 'Approval queues, caps, kill switch'],
-      ['/customer-memory.html', 'Customer Memory', 'The 90-field customer record'],
-      ['/integrations.html', 'Integrations', 'Tally, Shopify, Meta and more'],
-      ['/security.html', 'Security & Trust', 'Your data, your rules'],
-      ['/roadmap.html', 'Roadmap', 'Shipped, building, not yet'],
+      ['/platform', 'The OS tour', 'One record, one catalogue, one truth'],
+      ['/platform/customer-memory', 'Customer Memory', '90+ fields on every customer'],
+      ['/platform/ai-workforce', 'AI Workforce & Governance', '240+ governed actions, approvals, kill switches'],
+      ['/platform/integrations', 'Integrations', 'Tally, Zoho Books, Shopify, Meta and more'],
+      ['/trust/security', 'Security & Data Ownership', 'Your data, exportable anytime'],
+      ['/platform/onboarding', 'Onboarding & Support', 'Live in days, trained in your language'],
+      ['/roadmap', 'Roadmap & Changelog', "What's shipped, what's next — in public"],
     ],
   },
   {
     label: 'Products',
     groups: [
       { title: 'Sell', items: [
-        ['/products/whatsapp.html', 'WhatsApp Commerce'],
-        ['/products/instagram-facebook.html', 'Instagram & Facebook'],
-        ['/products/ai-sales-agents.html', 'AI Sales Agents & Voice'],
+        ['/products/whatsapp', 'WhatsApp Commerce'],
+        ['/products/instagram-facebook', 'Instagram & Facebook'],
+        ['/products/ai-sales-agents', 'AI Sales Agents & Voice'],
       ]},
       { title: 'Know', items: [
-        ['/products/crm.html', 'Jewellery CRM & Customer 360'],
+        ['/products/crm', 'Jewellery CRM'],
       ]},
       { title: 'Run', items: [
-        ['/products/catalog.html', 'Catalogue (Jewellery PIM)'],
-        ['/products/inventory.html', 'Inventory & Dead Stock'],
+        ['/products/catalog', 'Catalogue (PIM)'],
+        ['/products/inventory', 'Inventory'],
+        ['/products/billing-finance', 'Billing & Finance'],
+        ['/products/erp', 'ERP, reconsidered'],
       ]},
       { title: 'Grow', items: [
-        ['/products/gold-schemes.html', 'Gold Savings Schemes'],
-        ['/products/digital-gold.html', 'Digital Gold'],
-        ['/products/multi-store.html', 'Multi-store & Franchise'],
+        ['/products/gold-schemes', 'Gold Savings Schemes'],
+        ['/products/digital-gold', 'Digital Gold'],
+        ['/products/multi-store', 'Multi-store & Franchise'],
       ]},
     ],
+    footer: ['Every module reads the same customer record. That’s the OS.', '/platform'],
   },
   {
     label: 'Solutions',
     groups: [
       { title: 'By business', items: [
-        ['/solutions/single-store.html', 'Single-store jewellers'],
-        ['/solutions/multi-store-chains.html', 'Multi-store & chains'],
-        ['/solutions/manufacturers.html', 'Manufacturers & wholesalers'],
+        ['/solutions', 'All solutions'],
+        ['/industries/retail', 'Retail (hub)'],
+        ['/solutions/single-store', 'Single store'],
+        ['/solutions/multi-store-chains', 'Multi-store & chains'],
+        ['/solutions/manufacturers', 'Manufacturers'],
       ]},
       { title: 'By pain', items: [
-        ['/solutions/dead-stock.html', 'Dead stock'],
-        ['/solutions/lead-leakage.html', 'Lead leakage'],
+        ['/solutions/pain', 'All pains'],
+        ['/solutions/pain/dead-stock', 'Dead stock'],
+        ['/solutions/pain/lead-leakage', 'Lead leakage'],
       ]},
     ],
   },
-  { label: 'Pricing', href: '/pricing.html' },
-  { label: 'Proof', href: '/customers.html' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Customers', href: '/customers' },
   {
-    label: 'Tools',
+    label: 'Resources',
     items: [
-      ['/tools/dead-stock-calculator.html', 'Dead Stock Calculator', 'What idle inventory really costs'],
-      ['/tools/gold-scheme-calculator.html', 'Gold Scheme Calculator', 'The revenue a digital scheme locks in'],
-      ['/migration.html', 'Migration Centre', 'Switch without fear'],
+      ['/tools', 'Tools & Calculators', 'Dead stock, gold scheme and more'],
+      ['/compare/whatsapp-tools-vs-jewellery-os', 'Compare Alternatives', 'Point tools vs one system'],
+      ['/migration', 'Migration Centre', 'Switch without fear'],
+      ['/roadmap', 'Roadmap', 'Shipped, building, not yet'],
     ],
   },
 ];
@@ -89,12 +108,13 @@ function navHTML() {
     if (m.href) return `<a class="nav-link" href="${m.href}">${m.label}</a>`;
     const inner = m.groups
       ? m.groups.map((g) => `<div class="dd-group"><p class="dd-title">${g.title}</p>${g.items
-          .map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</div>`).join('')
+          .map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</div>`).join('') +
+          (m.footer ? `<a class="dd-footer" href="${m.footer[1]}">${m.footer[0]} →</a>` : '')
       : m.items.map(([h, l, d]) => `<a href="${h}"><strong>${l}</strong>${d ? `<span>${d}</span>` : ''}</a>`).join('');
     return `<details class="nav-dd"><summary class="nav-link">${m.label}</summary><div class="dd-panel${m.groups ? ' dd-cols' : ''}">${inner}</div></details>`;
   };
   return `
-<div class="ann-bar"><div class="container">${TAGLINE} — <a href="#" data-wa="announce">see it live on WhatsApp →</a></div></div>
+<div class="ann-bar"><div class="container">${TAGLINE} — <a href="#" data-wa="announce">chat with us on WhatsApp →</a></div></div>
 <header class="site-header">
   <div class="container header-row">
     <a class="logo" href="/" aria-label="Jwero home"><img src="/assets/jwero-mark.png" alt="" width="282" height="423"><span class="logo-word">Jwero</span></a>
@@ -102,7 +122,7 @@ function navHTML() {
     <div class="header-cta">
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
       <a class="btn btn-wa" href="#" data-wa="header">WhatsApp</a>
-      <a class="btn btn-primary" href="/book-demo.html">Book demo</a>
+      <a class="btn btn-primary" href="/book-demo">Book a demo</a>
       <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -118,24 +138,26 @@ function footerHTML() {
     <div class="f-grid">
       <div class="f-brand">
         <p class="logo"><img src="/assets/jwero-mark.png" alt="" width="282" height="423"><span class="logo-word">Jwero</span></p>
-        <p class="f-tag">${TAGLINE}.</p>
-        <p class="f-enemy">“Your software keeps records.<br>It doesn’t bring customers back.”</p>
+        <p class="f-tag">${SIGNATURE}<br>${TAGLINE}.</p>
+        <p class="f-enemy">“Your software keeps accounts.<br>It doesn’t remember customers.”</p>
       </div>
-      ${col('Platform', [['/platform.html','The Growth Engine'],['/ai-staff.html','AI Staff & Governance'],['/customer-memory.html','Customer Memory'],['/integrations.html','Integrations'],['/security.html','Security & Trust'],['/roadmap.html','Roadmap']])}
-      ${col('Products', [['/products/whatsapp.html','WhatsApp Commerce'],['/products/instagram-facebook.html','Instagram & Facebook'],['/products/ai-sales-agents.html','AI Sales Agents'],['/products/crm.html','Jewellery CRM'],['/products/catalog.html','Catalogue (PIM)'],['/products/inventory.html','Inventory'],['/products/gold-schemes.html','Gold Schemes'],['/products/digital-gold.html','Digital Gold'],['/products/multi-store.html','Multi-store']])}
-      ${col('Solutions', [['/solutions/single-store.html','Single store'],['/solutions/multi-store-chains.html','Multi-store & chains'],['/solutions/manufacturers.html','Manufacturers'],['/solutions/dead-stock.html','Dead stock'],['/solutions/lead-leakage.html','Lead leakage'],['/migration.html','Migration Centre']])}
-      ${col('Company', [['/customers.html','Proof'],['/pricing.html','Pricing'],['/company.html','About'],['/book-demo.html','Book a demo'],['/tools/dead-stock-calculator.html','Dead Stock Calculator'],['/tools/gold-scheme-calculator.html','Gold Scheme Calculator']])}
+      ${col('Products', [['/products','App grid'],['/products/whatsapp','WhatsApp Commerce'],['/products/instagram-facebook','Instagram & Facebook'],['/products/ai-sales-agents','AI Sales Agents'],['/products/crm','Jewellery CRM'],['/products/catalog','Catalogue (PIM)'],['/products/inventory','Inventory'],['/products/billing-finance','Billing & Finance (roadmap)'],['/products/gold-schemes','Gold Schemes'],['/products/digital-gold','Digital Gold'],['/products/multi-store','Multi-store']])}
+      ${col('Solutions', [['/solutions','All solutions'],['/industries/retail','Retail'],['/solutions/single-store','Single store'],['/solutions/multi-store-chains','Multi-store & chains'],['/solutions/manufacturers','Manufacturers'],['/solutions/pain/dead-stock','Dead stock'],['/solutions/pain/lead-leakage','Lead leakage']])}
+      ${col('Resources', [['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/compare/whatsapp-tools-vs-jewellery-os','Compare alternatives'],['/migration','Migration Centre'],['/customers','Customer proof']])}
+      ${col('Company', [['/company','About'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
+      ${col('Trust', [['/trust/security','Security'],['/roadmap','Roadmap'],['/legal/privacy','Privacy'],['/legal/terms','Terms'],['/legal/dpdp','DPDP statement']])}
     </div>
+    <div class="f-proof">90+ customer-record fields · 240+ governed AI actions · AI voice in 14 languages · 5 kill-switch scopes · Tally, Zoho Books, Shopify, WooCommerce, Unicommerce &amp; Meta connectors built in.</div>
     <div class="f-bottom">
       <p>© <span data-year></span> Jwero. All rights reserved.</p>
-      <p>Made for jewellers, everywhere.</p>
+      <p>This site runs on Jwero — the chat button is the product.</p>
     </div>
   </div>
 </footer>
 <div class="sticky-bar" role="navigation" aria-label="Quick actions">
   <a href="tel:+910000000000">Call</a>
   <a class="sb-wa" href="#" data-wa="sticky">WhatsApp</a>
-  <a class="sb-demo" href="/book-demo.html">Book demo</a>
+  <a class="sb-demo" href="/book-demo">Book demo</a>
 </div>`;
 }
 
@@ -145,14 +167,14 @@ const FAVICON = '/assets/favicon.png';
 function orgSchema() {
   return {
     '@context': 'https://schema.org', '@type': 'Organization',
-    name: BRAND, url: SITE, slogan: TAGLINE,
-    description: 'Jwero is the AI growth engine for jewellery business: customer memory, WhatsApp and Instagram commerce, gold savings schemes, digital gold and governed AI staff on one platform.',
-    contactPoint: { '@type': 'ContactPoint', contactType: 'sales', url: SITE + '/book-demo.html' },
+    name: BRAND, url: SITE, slogan: TAGLINE, description: ORG_DESCRIPTION,
+    contactPoint: { '@type': 'ContactPoint', contactType: 'sales', url: SITE + '/book-demo' },
   };
 }
 
 function layout(page) {
-  const canonical = SITE + (page.slug === 'index' ? '/' : `/${page.out}`);
+  const urlPath = page.slug === 'index' ? '' : `/${page.slug}`;
+  const canonical = SITE + (urlPath || '/');
   const schemas = [orgSchema(), { '@context': 'https://schema.org', '@type': 'WebSite', name: BRAND, url: SITE }];
   if (page.faqs) {
     schemas.push({
@@ -163,7 +185,9 @@ function layout(page) {
       })),
     });
   }
+  if (page.breadcrumbs) schemas.push(require('./lib').breadcrumbSchema(page.breadcrumbs, SITE));
   if (page.schema) schemas.push(page.schema);
+  const robotsMeta = page.noindex ? `<meta name="robots" content="noindex,follow">` : '';
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -171,6 +195,7 @@ function layout(page) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${page.title}</title>
 <meta name="description" content="${page.description}">
+${robotsMeta}
 <link rel="canonical" href="${canonical}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${BRAND}">
@@ -188,11 +213,42 @@ ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</s
 </head>
 <body>
 ${navHTML()}
+${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
 <main id="main">
 ${page.body}
 </main>
 ${footerHTML()}
 <script src="/assets/site.js" defer></script>
+</body>
+</html>`;
+}
+
+// ---------------------------------------------------------------- whatsapp redirect (special, no chrome)
+function whatsappRedirectPage() {
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opening WhatsApp… | Jwero</title>
+<meta name="robots" content="noindex,nofollow">
+<style>body{font-family:-apple-system,Inter,sans-serif;background:#0013b7;color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px}a{color:#fff}</style>
+</head>
+<body>
+<div>
+  <p>Opening WhatsApp…</p>
+  <p><a id="wa-fallback" href="https://wa.me/910000000000">Tap here if it doesn't open automatically</a></p>
+</div>
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  var ref = params.get('ref') || 'whatsapp-redirect/qr';
+  var msg = params.get('msg') || 'Hi Jwero — I scanned your code and would like to see a quick demo.';
+  var url = 'https://wa.me/910000000000?text=' + encodeURIComponent(msg + ' [ref:' + ref + ']');
+  document.getElementById('wa-fallback').href = url;
+  location.replace(url);
+})();
+</script>
 </body>
 </html>`;
 }
@@ -203,13 +259,16 @@ function build() {
   fs.mkdirSync(DIST, { recursive: true });
   // assets
   fs.cpSync(path.join(ROOT, 'assets'), path.join(DIST, 'assets'), { recursive: true });
-  // pages
+  // pages — extensionless clean-URL output: <slug>/index.html (home -> index.html)
   for (const p of pages) {
-    p.out = p.slug === 'index' ? 'index.html' : `${p.slug}.html`;
-    const file = path.join(DIST, p.out);
-    fs.mkdirSync(path.dirname(file), { recursive: true });
-    fs.writeFileSync(file, layout(p));
+    const dir = p.slug === 'index' ? DIST : path.join(DIST, p.slug);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'index.html'), layout(p));
   }
+  // /whatsapp special redirect (offline QR / print codes)
+  fs.mkdirSync(path.join(DIST, 'whatsapp'), { recursive: true });
+  fs.writeFileSync(path.join(DIST, 'whatsapp', 'index.html'), whatsappRedirectPage());
+
   // robots — AI crawlers explicitly welcome (GEO policy).
   fs.writeFileSync(path.join(DIST, 'robots.txt'),
 `User-agent: *
@@ -224,48 +283,68 @@ User-agent: Google-Extended
 Allow: /
 Sitemap: ${SITE}/sitemap.xml
 `);
-  // llms.txt — curated machine-readable truth.
+  // llms.txt — curated machine-readable truth (GEO/AIO).
   fs.writeFileSync(path.join(DIST, 'llms.txt'),
 `# Jwero — ${TAGLINE}
 
-> Jwero is the AI growth engine for jewellery business. It gives jewellers one system that
-> remembers every customer (90+ fields per customer record, including gold-plan balances and
-> family occasions), sells on the channels customers use (WhatsApp, Instagram, Facebook, web,
-> video), runs gold savings schemes and digital gold, and puts AI staff to work under human
-> approval — approval queues, daily caps and kill switches are enforced in the product.
+> Jwero is the AI operating system for jewellery business. One customer record (90+ fields,
+> including gold-plan balances and family occasions), one catalogue, one inventory truth and one
+> inbox — with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and an AI
+> workforce that acts only inside approval queues, daily caps, quiet hours and a five-scope kill
+> switch enforced in the product ("AI that waits for your yes").
+
+## Category
+Jwero calls this category the Jewellery Business OS / AI Operating System for Jewellery Business.
+It serves single stores, multi-store chains, luxury/boutique/bridal retailers, diamond/gold/silver/
+platinum/lab-grown/gemstone retailers, wholesalers, manufacturers (gold, diamond, casting, CAD, OEM,
+export), and jewellery brands, D2C startups and franchise networks alike.
 
 ## What Jwero is not (honesty)
-- Not a replacement for your accounting ledger: Jwero bridges to Tally and Zoho Books.
-- POS counter billing, payroll and offline mode are on the public roadmap, not shipped: ${SITE}/roadmap.html
+- Not a replacement for statutory accounting: Jwero bridges to Tally and Zoho Books; books stay there.
+- POS counter cash/day-close billing, payroll & karigar wage settlement, offline mode, a vernacular
+  product interface, public API/SSO and predictive ML forecasting are on the public roadmap, not
+  shipped today: ${SITE}/roadmap
 
 ## Key pages
-- Platform: ${SITE}/platform.html
-- AI staff & governance: ${SITE}/ai-staff.html
-- Customer memory: ${SITE}/customer-memory.html
-- WhatsApp commerce: ${SITE}/products/whatsapp.html
-- Gold schemes: ${SITE}/products/gold-schemes.html
-- Pricing: ${SITE}/pricing.html
-- Migration: ${SITE}/migration.html
-- Proof: ${SITE}/customers.html
+- Platform (the OS tour): ${SITE}/platform
+- Customer memory: ${SITE}/platform/customer-memory
+- AI workforce & governance: ${SITE}/platform/ai-workforce
+- WhatsApp commerce: ${SITE}/products/whatsapp
+- Gold schemes: ${SITE}/products/gold-schemes
+- Pricing: ${SITE}/pricing
+- Migration Centre: ${SITE}/migration
+- Customer proof: ${SITE}/customers
+- Public roadmap: ${SITE}/roadmap
 `);
   // sitemap
-  const urls = pages.map((p) => `<url><loc>${SITE}/${p.out === 'index.html' ? '' : p.out}</loc></url>`).join('\n');
+  const urls = pages
+    .filter((p) => !p.noindex)
+    .map((p) => `<url><loc>${SITE}/${p.slug === 'index' ? '' : p.slug}</loc></url>`)
+    .join('\n');
   fs.writeFileSync(path.join(DIST, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`);
-  console.log(`Built ${pages.length} pages → ${DIST}`);
+  console.log(`Built ${pages.length} pages (+ /whatsapp redirect) → ${DIST}`);
 }
 
 // ---------------------------------------------------------------- serve
 function serve(port) {
   const http = require('http');
-  const MIME = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.txt': 'text/plain', '.xml': 'application/xml' };
+  const MIME = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.txt': 'text/plain', '.xml': 'application/xml' };
   http.createServer((req, res) => {
     let p = decodeURIComponent(req.url.split('?')[0]);
-    if (p.endsWith('/')) p += 'index.html';
-    const file = path.join(DIST, path.normalize(p).replace(/^([.][.][/\\])+/, ''));
+    let file;
+    if (p === '/' || p === '') {
+      file = path.join(DIST, 'index.html');
+    } else if (path.extname(p)) {
+      file = path.join(DIST, path.normalize(p));
+    } else {
+      // clean-URL resolution: /foo -> dist/foo/index.html
+      file = path.join(DIST, path.normalize(p), 'index.html');
+    }
+    file = file.replace(/^([.][.][/\\])+/, '');
     if (!file.startsWith(DIST)) { res.writeHead(403); return res.end(); }
     fs.readFile(file, (err, data) => {
-      if (err) { res.writeHead(404, { 'Content-Type': 'text/plain' }); return res.end('404'); }
+      if (err) { res.writeHead(404, { 'Content-Type': 'text/plain' }); return res.end('404 — ' + p); }
       res.writeHead(200, { 'Content-Type': MIME[path.extname(file)] || 'application/octet-stream' });
       res.end(data);
     });

@@ -1,9 +1,11 @@
 const L = require('../lib');
+const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 const schemes = {
   slug: 'products/gold-schemes',
   title: 'Gold Savings Schemes — Digital Enrolment to Maturity | Jwero',
   description: 'Run gold savings plans digitally: enrolment with KYC, instalment reminders, transparent balances, disciplined maturity and closure — no more paper registers and disputes.',
+  breadcrumbs: BC('Gold Savings Schemes'),
   faqs: [
     { q: 'Can I run my traditional 11+1 monthly scheme on Jwero?', a: 'Yes — fixed monthly-amount plans with a bonus month are the default plan shape, alongside gram-accumulation plans. Duration, grace days and maturity benefits are configurable per plan.' },
     { q: 'How do customers pay instalments?', a: 'Customers get reminders on WhatsApp with payment links, can check their balance anytime, and your staff can record counter payments — every entry on an auditable trail.' },
@@ -13,17 +15,17 @@ const schemes = {
   body: `
 ${L.hero({
   eyebrow: 'GOLD SAVINGS SCHEMES',
-  h1: 'The oldest loyalty program<br>in the world. Finally digital.',
-  sub: 'A savings plan is a promise held for eleven months. Paper registers break that promise: missed entries, disputed balances, silent dropouts. Jwero runs enrolment, reminders, balances and maturity with bank-grade discipline — and turns every maturity into your next big sale.',
+  h1: 'The oldest loyalty program in jewellery. Finally digital.',
+  sub: 'A savings plan is a promise held for eleven months. Paper registers break that promise: missed entries, disputed balances, silent dropouts. Jwero runs enrolment, reminders, balances and maturity with bank-grade discipline — and turns every maturity into your next sale.',
   primary: { href: '#', label: 'See a scheme run live', wa: 'schemes' },
-  secondary: { href: '/tools/gold-scheme-calculator.html', label: 'Try the Scheme Calculator' },
+  secondary: { href: '/tools/gold-scheme-calculator', label: 'Try the Scheme Calculator' },
 })}
 
 ${L.section(
   `${L.sectionHead('WHY SCHEMES LEAK', 'The paper register is the problem.', '')}
   ${L.cards([
     { title: 'Silent dropouts', text: 'A member misses month four. Nobody notices until month eight. The plan dies quietly, and so does the future sale it carried.' },
-    { title: 'Disputed balances', text: '“I paid that month.” Without a shared, verifiable record, every dispute costs you either money or a relationship.' },
+    { title: 'Disputed balances', text: '"I paid that month." Without a shared, verifiable record, every dispute costs you either money or a relationship.' },
     { title: 'Invisible economics', text: 'How many active members? How much corpus? How many maturities next quarter? On paper, nobody truly knows.' },
   ])}`
 )}
@@ -43,8 +45,13 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
+${L.oneSystemBlock([
+  'A scheme balance shown to the customer on WhatsApp is the same field the AI workforce checks before sending a reminder — never a stale copy.',
+  'A matured scheme automatically becomes a lead in the CRM, with the redemption conversation ready to go.',
+])}
+
 ${L.section(
-  `<div class="stack-verdict"><strong>The lock-in nobody resents:</strong> a healthy scheme book is next year’s revenue, banked this year. Run the <a href="/tools/gold-scheme-calculator.html">Gold Scheme Calculator</a> to see what your enrolment rate is worth in locked-in future sales.</div>`
+  `<div class="stack-verdict"><strong>The lock-in nobody resents:</strong> a healthy scheme book is next year’s revenue, banked this year. Run the <a href="/tools/gold-scheme-calculator">Gold Scheme Calculator</a> to see what your enrolment rate is worth in locked-in future sales.</div>`
 )}
 
 ${L.ctaBand('Digitise the promise.', 'Bring your current scheme rules to a demo — we will show them running digitally, mid-cycle members included.', 'schemes')}
@@ -55,6 +62,7 @@ const digitalGold = {
   slug: 'products/digital-gold',
   title: 'Digital Gold — Customers Save in Grams, You Bank the Relationship | Jwero',
   description: 'Let customers buy gold in grams from their phone with live rates, watch savings grow, and convert to jewellery at your counter.',
+  breadcrumbs: BC('Digital Gold'),
   faqs: [
     { q: 'How does digital gold work for my customers?', a: 'They buy gold in small amounts from their phone at live rates. Their gram balance grows over time, and when they are ready, it converts to jewellery at your counter — a savings habit that ends in your showcase.' },
     { q: 'How do rates stay current?', a: 'Live rate feeds keep buy prices honest and current, and every transaction is recorded on the customer’s ledger with a full history.' },
@@ -63,10 +71,10 @@ const digitalGold = {
   body: `
 ${L.hero({
   eyebrow: 'DIGITAL GOLD',
-  h1: 'Their savings habit.<br>Your future showcase visit.',
-  sub: 'The fintech apps discovered what jewellers always knew: people love saving in gold. Jwero gives you your own digital gold offering — live rates, gram balances, clean records — so the savings habit that starts on a phone ends at your counter, not a stranger’s app.',
-  primary: { href: '#', label: 'See digital gold live', wa: 'default' },
-  secondary: { href: '/book-demo.html', label: 'Book a demo' },
+  h1: 'Their savings habit. Your future showcase visit.',
+  sub: 'The fintech apps discovered what jewellery businesses always knew: people love saving in gold. Jwero gives you your own digital gold offering — live rates, gram balances, clean records — so the savings habit that starts on a phone ends at your counter, not a stranger’s app.',
+  primary: { href: '#', label: 'See digital gold live', wa: 'digitalgold' },
+  secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
 ${L.section(
@@ -75,12 +83,16 @@ ${L.section(
     { title: 'Transparent balances', text: 'Gram holdings visible to the customer at all times — trust through transparency.' },
     { title: 'KYC & records', text: 'Identity capture, transaction ledgers and OTP-verified redemptions keep everything auditable.' },
     { title: 'Redemption at your counter', text: 'Balances convert into jewellery purchases — the digital habit becomes a physical visit.' },
-    { title: 'On the customer record', text: 'Digital gold balances live on the same Customer 360 — so AI staff know who is quietly saving toward something big.' },
+    { title: 'On the customer record', text: 'Digital gold balances live on the same Customer 360 — so the AI workforce knows who is quietly saving toward something big.' },
     { title: 'Runs with your schemes', text: 'Offer classic monthly plans and modern gram savings side by side; different customers, same discipline.' },
   ])}`
 )}
 
-${L.ctaBand('Compete with the apps — as yourself.', 'Your name, your gold, your customers. See a digital gold journey from first gram to showcase visit.', 'default')}
+${L.oneSystemBlock([
+  'A digital gold balance nearing a milestone is visible to the same AI workforce that drafts occasion invitations — the redemption conversation starts itself.',
+])}
+
+${L.ctaBand('Compete with the apps — as yourself.', 'Your name, your gold, your customers. See a digital gold journey from first gram to showcase visit.', 'digitalgold')}
 `,
 };
 
@@ -88,6 +100,7 @@ const multiStore = {
   slug: 'products/multi-store',
   title: 'Multi-store & Franchise — Every Branch Consistent, Every Customer Known | Jwero',
   description: 'Holdings, brands and branches on one platform: branch-consistent pricing, role-based access, central campaigns, and customers recognised at every counter.',
+  breadcrumbs: BC('Multi-store & Franchise'),
   faqs: [
     { q: 'Can each branch have different prices and stock?', a: 'Yes. Branch-level stock, transfer tracking and price rules with central control — consistency where you want it, local flexibility where you allow it.' },
     { q: 'Can franchise partners use it without seeing everything?', a: 'Yes. Role-based access with ~150 fine-grained permissions controls exactly what each role, branch and partner can see and do.' },
@@ -96,10 +109,10 @@ const multiStore = {
   body: `
 ${L.hero({
   eyebrow: 'MULTI-STORE & FRANCHISE',
-  h1: 'Grow to ten stores<br>without losing the one-store touch.',
+  h1: 'Grow to ten stores without losing the one-store touch.',
   sub: 'Chains win because every branch runs the same system and every customer is known everywhere. Jwero gives your network the same spine: holdings, brands and branches, consistent pricing, central campaigns — and one report the owner actually reads.',
-  primary: { href: '#', label: 'Talk to a specialist', wa: 'default' },
-  secondary: { href: '/solutions/multi-store-chains.html', label: 'The chain playbook' },
+  primary: { href: '#', label: 'Talk to a specialist', wa: 'multistore' },
+  secondary: { href: '/solutions/multi-store-chains', label: 'The multi-store playbook' },
 })}
 
 ${L.section(
@@ -113,7 +126,12 @@ ${L.section(
   ])}`
 )}
 
-${L.ctaBand('Bring chain discipline to your network.', 'Multi-store deployments get staged rollouts: one pilot branch, then the network. Ask how.', 'default')}
+${L.oneSystemBlock([
+  'A customer who buys at branch A is recognised at branch B on the same record — there’s only one Meera in the system, not one per branch.',
+  'Branch-level performance data feeds the same reports the owner’s rollup reads from — no separate export per store.',
+])}
+
+${L.ctaBand('Bring network discipline to your business.', 'Multi-store deployments get staged rollouts: one pilot branch, then the network. Ask how.', 'multistore', { enterprise: true })}
 `,
 };
 
