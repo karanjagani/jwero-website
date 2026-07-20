@@ -62,6 +62,8 @@ ${L.section(`${L.sectionHead('SCHEME QUESTIONS', '', '')}${L.faqBlock([
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="schemes">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Digitise the promise.', 'Bring your current scheme rules to a demo — we will show them running digitally, mid-cycle members included.', 'schemes')}
 `,
 };
@@ -107,6 +109,8 @@ ${L.section(`${L.sectionHead('DIGITAL GOLD QUESTIONS', '', '')}${L.faqBlock([
   { q: 'What if a customer disputes their gram balance?', a: 'Balances are transparent and checkable by the customer at any time, which prevents most disputes before they start.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="digitalgold">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Compete with the apps — as yourself.', 'Your name, your gold, your customers. See a digital gold journey from first gram to showcase visit.', 'digitalgold')}
 `,
@@ -154,6 +158,8 @@ ${L.section(`${L.sectionHead('MULTI-STORE QUESTIONS', '', '')}${L.faqBlock([
   { q: 'What if one branch genuinely needs different rules?', a: 'Controlled local exceptions route through approvals rather than silently drifting into inconsistency.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#segments">See every multi-store question →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="multistore">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring network discipline to your business.', 'Multi-store deployments get staged rollouts: one pilot branch, then the network. Ask how.', 'multistore', { enterprise: true })}
 `,

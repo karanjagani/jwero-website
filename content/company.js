@@ -172,7 +172,7 @@ const enterprise = {
     { q: 'What do you need from us to start?', a: 'Roughly: number of branches, current systems (billing/ERP/WhatsApp tools), and your evaluation timeline. We’ll come back with a specific plan, not a generic deck.' },
     { q: 'Our evaluation committee will ask about SSO and audit trails. What do we tell them?', a: 'Tell them the truth: enterprise SSO/SCIM is in active development, not shipped; per-module activity logging exists today with a unified immutable audit trail being consolidated. See <a href="/trust/security">the security page</a> for the full honest list — we’d rather you find gaps here than in an audit.' },
     { q: 'How do we roll out across many branches without a chaotic big-bang migration?', a: 'You don’t — one pilot branch first, with exit criteria you define, then a staged rollout with per-branch configuration and training. No branch goes live without the previous one proving itself.' },
-    { q: 'Can we get a security overview document for our IT committee?', a: 'Yes — ask on WhatsApp and we’ll send the security overview PDF alongside the buying-committee kit below.' },
+    { q: 'Can we get a security overview document for our IT committee?', a: 'Yes — both the security overview and the full buying-committee kit are downloadable directly on this page, no request needed.' },
     { q: 'What if different branches want different price rules or catalogues?', a: 'Central price rules under owner control, with per-branch exceptions that route through approvals — consistency where you want it, flexibility where you grant it.' },
   ],
   body: `
@@ -191,13 +191,17 @@ ${L.section(
     { title: 'For IT / operations', text: 'Security overview, migration plan, pilot-branch rollout with exit criteria.', link: { href: '/trust/security', label: 'Security overview' } },
     { title: 'For finance', text: 'The Tally/Zoho coexistence note — nothing about the ledger changes.', link: { href: '/platform/integrations/tally', label: 'Coexistence note' } },
     { title: 'For branch managers', text: 'A day-in-the-life walkthrough of what actually changes at the counter.' },
-  ], 4)}`
+  ], 4)}
+  <div class="cta-row" style="margin-top:22px">
+    <a class="btn btn-primary" href="/assets/downloads/jwero-buying-committee-kit.pdf" download>Download the buying-committee kit (PDF)</a>
+    <a class="btn btn-ghost" href="/assets/downloads/jwero-security-overview.pdf" download>Download the security overview (PDF)</a>
+  </div>`
 )}
 
 ${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', '', '')}${L.faqBlock([
   { q: 'Our evaluation committee will ask about SSO and audit trails. What do we tell them?', a: 'Tell them the truth: enterprise SSO/SCIM is in active development, not shipped; per-module activity logging exists today with a unified audit trail being consolidated. <a href="/trust/security">See the full honest list</a>.' },
   { q: 'How do we roll out across many branches without chaos?', a: 'One pilot branch first, with exit criteria you define, then a staged rollout. No branch goes live without the previous one proving itself.' },
-  { q: 'Can we get a security overview document?', a: 'Yes — ask on WhatsApp and we’ll send it alongside the buying-committee kit.' },
+  { q: 'Can we get a security overview document?', a: 'Yes — download it directly above, alongside the buying-committee kit.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 

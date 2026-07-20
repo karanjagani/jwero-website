@@ -29,6 +29,8 @@ ${L.section(
   <p style="margin-top:18px; font-size:.85rem; color:var(--ink-2);">Not seeing your pain listed? <a href="#" data-wa="pain-index">Tell us on WhatsApp</a> — it becomes the next page we write.</p>`
 )}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="pain-index">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Get your own number.', 'Two calculators turn your pain into a monthly cost you can act on.', 'pain-index')}
 `,
 };
@@ -78,6 +80,8 @@ ${L.section(`${L.sectionHead('QUESTIONS ABOUT DEAD STOCK', '', '')}${L.faqBlock(
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="deadstock">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Wake up the sleeping capital.', 'Calculate your dead-stock cost, then see how memory-driven selling moves what discounting cannot.', 'deadstock')}
 `,
 };
@@ -115,6 +119,8 @@ ${L.section(`${L.sectionHead('QUESTIONS ABOUT LEAD LEAKAGE', '', '')}${L.faqBloc
   { q: 'We already have a WhatsApp tool. Isn’t this already solved?', a: 'A messaging tool answers faster but doesn’t know her history or follow up on schedule after she goes quiet — that’s where most enquiries actually die.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="leadleak">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Plug the leak this week.', 'Connect your number, and every enquiry from tomorrow onward gets caught, answered and followed. See it live.', 'leadleak')}
 `,

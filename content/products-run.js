@@ -46,6 +46,8 @@ ${L.section(`${L.sectionHead('CRM QUESTIONS', '', '')}${L.faqBlock([
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="crm">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Own your customer list. Finally.', 'We import your customers for you — from any software, any spreadsheet, any phone.', 'crm')}
 `,
 };
@@ -92,6 +94,8 @@ ${L.section(`${L.sectionHead('CATALOGUE QUESTIONS', '', '')}${L.faqBlock([
   { q: 'Can it handle unique, one-of-a-kind pieces?', a: 'Yes — custom fields record provenance and story details per piece where a standard template doesn’t fit.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="catalog">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Retire the PDF catalogue.', 'See a live catalogue share — with prices that update while you watch.', 'catalog')}
 `,
@@ -144,6 +148,8 @@ ${L.section(`${L.sectionHead('INVENTORY QUESTIONS', '', '')}${L.faqBlock([
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="inventory">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Find the sleeping capital.', 'Bring last year’s stock summary to a demo — we will show you what a memory-driven system sees in it.', 'inventory')}
 `,
 };
@@ -188,6 +194,8 @@ ${L.section(`${L.sectionHead('BILLING QUESTIONS', '', '')}${L.faqBlock([
   { q: 'Is GST computation compliant, or an approximation?', a: 'It’s data-driven, not hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="billing">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See invoicing at today’s rate.', 'Change the rate live in a demo and watch a draft invoice reprice.', 'billing')}
 `,
@@ -234,6 +242,8 @@ ${L.section(`${L.sectionHead('OPERATIONS QUESTIONS', '', '')}${L.faqBlock([
   { q: 'Our process is unusual — can it be configured to match?', a: 'Custom fields and approval rules exist for this. We’ll also tell you plainly what isn’t configurable, before you commit.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="erp">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See operations on one record.', 'Bring one real order and follow it end to end — advance to delivery, on one screen.', 'erp')}
 `,

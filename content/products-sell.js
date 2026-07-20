@@ -70,6 +70,8 @@ ${L.section(`${L.sectionHead('WHATSAPP QUESTIONS', '', '')}${L.faqBlock([
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#whatsapp">See every WhatsApp & Meta question →</a></p>`)}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="whatsapp">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Message us. Seriously.', 'The best demo of WhatsApp selling is a WhatsApp conversation. Send one message and watch the machine work.', 'whatsapp')}
 `,
 };
@@ -125,6 +127,8 @@ ${L.section(`${L.sectionHead('INSTAGRAM & FACEBOOK QUESTIONS', '', '')}${L.faqBl
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="instagram">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Stop losing the DMs you paid for.', 'Your reels already create demand. See how much of it a system with memory can catch.', 'instagram')}
 `,
 };
@@ -172,6 +176,8 @@ ${L.section(`${L.sectionHead('THE STAFF QUESTION', '', '')}${L.faqBlock([
   { q: 'Can it give a discount without me knowing?', a: 'No — pricing and discounts follow your price rules and staff permissions, always.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#ai-trust">See every AI trust question →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="aiagents">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Hire staff that scale like software.', 'Start with one agent on Assist mode — drafts only, approvals on. Promote it when it earns your trust.', 'aiagents')}
 `,

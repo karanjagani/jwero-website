@@ -60,7 +60,7 @@ ${L.honestGapsBlock([
 ${L.section(
   `${L.sectionHead('COMPLIANCE', '', '')}
   <p style="font-size:.95rem;">Jwero maintains a data-processing summary and privacy statement aligned to applicable data-protection law. See our <a href="/legal/privacy">Privacy Policy</a> and <a href="/legal/dpdp">DPDP statement</a>. [VERIFY: full sub-processor list and legal review before this page is used in a regulated procurement process.]</p>
-  <p style="margin-top:14px;"><a class="btn btn-ghost" href="#" data-wa="security-pdf">Request the security overview PDF</a></p>`
+  <p style="margin-top:14px;"><a class="btn btn-primary" href="/assets/downloads/jwero-security-overview.pdf" download>Download the security overview (PDF)</a> <a class="btn btn-ghost" href="#" data-wa="security-pdf" style="margin-left:10px">Ask a follow-up on WhatsApp</a></p>`
 )}
 
 ${L.section(`${L.sectionHead('THE FEARS OWNERS DON’T ALWAYS SAY OUT LOUD', '', '')}${L.faqBlock([

@@ -29,6 +29,8 @@ ${L.section(
 )}
 ${L.honestGapsBlock(['Girvi / gold-loan functionality is on the long-term roadmap, not shipped today.'])}
 ${L.section(`${L.sectionHead('QUESTIONS TRADERS ASK', '', '')}${L.faqBlock(bullionFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="bullion">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('See a deal, captured properly.', 'Bring one recent trade — we’ll show how it would sit on the record.', 'bullion', { enterprise: true })}
 `,
 };
@@ -60,6 +62,8 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS BRAND TEAMS ASK', '', '')}${L.faqBlock(brandsFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="brands">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Bring your channel map.', 'Show us how your brand sells today — we’ll map it to one central system.', 'brands', { enterprise: true })}
 `,
 };
@@ -92,6 +96,8 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS D2C BRANDS ASK', '', '')}${L.faqBlock(d2cFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/compare/jwero-vs-shopify">See Jwero vs Shopify</a> or <a href="/faq">the full FAQ →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="d2c">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Add what Shopify can’t do.', 'Tell us your current stack — we’ll show exactly what Jwero adds on top.', 'd2c')}
 `,
 };
@@ -124,6 +130,8 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS FIRST-TIME FOUNDERS ASK', '', '')}${L.faqBlock(startupsFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="startups">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Start where you are.', 'Tell us about your first store — we’ll tell you honestly what matters first.', 'startups')}
 `,
 };
@@ -156,6 +164,8 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS FRANCHISORS ASK', '', '')}${L.faqBlock(franchiseFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="franchise">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Start with one franchise location.', 'Pick your newest or your toughest location as the pilot.', 'franchise', { enterprise: true })}
 `,
 };

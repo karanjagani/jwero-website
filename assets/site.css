@@ -426,6 +426,10 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: .92rem; backgroun
 .crumbs .crumb-sep { margin: 0 8px; color: var(--line); }
 .crumbs [aria-current] { color: var(--ink); font-weight: 600; }
 
+.live-demo-note { text-align: center; font-size: .88rem; color: var(--ink-2); margin-top: 20px; }
+.live-demo-note a { color: var(--brand); font-weight: 600; text-decoration: underline; }
+[data-theme="dark"] .live-demo-note a { color: var(--brand-strong); }
+
 /* ---------- proof strip ---------- */
 .proof-strip .stat-link { text-decoration: none; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
 .proof-strip .stat-link:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--brand) 30%, var(--line)); }

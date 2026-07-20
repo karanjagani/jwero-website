@@ -36,6 +36,8 @@ ${L.jtbdBlock([
   { when: 'a client visits after months away', want: 'have her full taste and history on screen', so: 'the visit feels remembered, not restarted' },
 ])}
 ${L.section(`${L.sectionHead('QUESTIONS BOUTIQUE OWNERS ASK', '', '')}${L.faqBlock(luxuryBoutiqueFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="luxury">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('See white-glove memory in action.', 'Bring one client relationship to a demo — we’ll show the record, the preview, and the approval queue.', 'luxury', { enterprise: true })}
 `,
 };
@@ -73,6 +75,8 @@ ${L.section(
   `${L.sectionHead('AFTER THE WEDDING', 'The relationship doesn’t end at the altar.', 'Anniversaries, first-child occasions and family referrals are the second half of a bridal relationship — captured on the same record as the trousseau order, and surfaced automatically when the date arrives.')}`
 , { tone: 'tint' })}
 ${L.section(`${L.sectionHead('QUESTIONS BRIDAL BUSINESSES ASK', '', '')}${L.faqBlock(bridalFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="bridal">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Bring one wedding order.', 'Show us a real trousseau journey — we’ll show you how it stays as one thread from enquiry to delivery.', 'bridal')}
 `,
 };
@@ -107,6 +111,8 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS DIAMOND RETAILERS ASK', '', '')}${L.faqBlock(diamondRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="diamond">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('See a certified stone, sold end to end.', 'Bring one solitaire enquiry to a demo — catalogue, reply, approval, quote.', 'diamond')}
 `,
 };
@@ -141,6 +147,8 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS GOLD RETAILERS ASK', '', '')}${L.faqBlock(goldRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="gold">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Change the rate. Watch it update.', 'In a demo, we change today’s rate live and watch a catalogue and invoice reprice instantly.', 'gold')}
 `,
 };
@@ -174,6 +182,8 @@ ${L.section(
 )}
 ${L.honestGapsBlock(['POS counter billing with cash day-close — on the roadmap; today Billing & Finance handles GST invoicing at the live rate and works alongside your existing counter.'])}
 ${L.section(`${L.sectionHead('QUESTIONS SILVER RETAILERS ASK', '', '')}${L.faqBlock(silverRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="silver">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('See volume selling, simplified.', 'Bring your SKU count to a demo — we’ll show the bulk catalogue and ageing tools in action.', 'silver')}
 `,
 };
@@ -207,6 +217,8 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS LAB-GROWN BRANDS ASK', '', '')}${L.faqBlock(labGrownFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/compare/jwero-vs-shopify">See Jwero vs Shopify</a> or <a href="/faq">the full FAQ →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="labgrown">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Sell to the online-first buyer.', 'See a lab-grown enquiry go from Instagram comment to educated, priced reply.', 'labgrown')}
 `,
 };
@@ -239,6 +251,8 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS GEMSTONE RETAILERS ASK', '', '')}${L.faqBlock(gemstoneRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="gemstone">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Show us one stone.', 'Bring one piece with real provenance — we’ll show you the catalogue entry and the customer match.', 'gemstone')}
 `,
 };

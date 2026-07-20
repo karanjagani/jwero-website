@@ -74,6 +74,8 @@ ${L.section(
   </div>`
 )}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="solutions">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Not sure which page is yours?', 'Tell us what you sell and how — we’ll route you in one message.', 'solutions')}
 `,
 };
@@ -140,6 +142,8 @@ ${L.section(`${L.sectionHead('QUESTIONS SINGLE-STORE OWNERS ASK', '', '')}${L.fa
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="single-store">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('One store. One system. One month to proof.', 'Show us the store and we will show you the plan — on WhatsApp, tonight if you like.', 'single-store')}
 `,
 };
@@ -194,6 +198,8 @@ ${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', '', '')}${L.
   { q: 'Won’t staff at different branches resist differently?', a: 'Training is role-based and staged with the rollout — each branch gets the same onboarding as the pilot.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="chains">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Start with one branch.', 'Pick your toughest store. If the pilot doesn’t earn the rollout, it doesn’t deserve one.', 'chains', { enterprise: true })}
 `,
@@ -251,6 +257,8 @@ ${L.section(`${L.sectionHead('QUESTIONS MANUFACTURERS ASK', '', '')}${L.faqBlock
   { q: 'Our process is unusual — casting, CAD, export-specific. Does this fit?', a: 'See <a href="/solutions/casting-units">casting units</a>, <a href="/solutions/cad-services">CAD services</a> or <a href="/solutions/export-houses">export houses</a> for your exact fit.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="manufacturers">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring one order, follow the grams.', 'In a demo, we track one production order end to end — issue, stages, loss, receipt. Your numbers, your call.', 'manufacturers', { enterprise: true })}
 `,
