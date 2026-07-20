@@ -183,4 +183,73 @@ ${L.ctaBand('Hire staff that scale like software.', 'Start with one agent on Ass
 `,
 };
 
-module.exports = [whatsapp, instagram, aiAgents];
+const optimize = {
+  slug: 'products/optimize',
+  title: 'Optimize — Website CRO Suite for Jewellery Business | Jwero',
+  description: 'A Hotjar + VWO + OneSignal class CRO suite built into Jwero: analytics, funnels, heatmaps, session recordings, A/B experiments, personalization, popups, web push and an AI webchat — all on the same customer record.',
+  breadcrumbs: BC('Optimize (Website CRO)'),
+  faqs: [
+    { q: 'What is Optimize?', a: 'A conversion-rate-optimization suite built into the Jwero platform: visitor analytics, funnels, heatmaps, session recordings, A/B experiments, personalization rules, popups and lead forms, web push, and an AI webchat widget — the class of stack you’d otherwise stitch together from Hotjar, VWO and OneSignal.' },
+    { q: 'Do I need to install anything extra?', a: 'No separate tools or contracts. One pixel on your website turns on analytics, heatmaps, recordings, experiments, popups, push and webchat together.' },
+    { q: 'How is this different from just installing Hotjar or VWO?', a: 'Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your WhatsApp, scheme and billing modules already use — not a separate export you have to reconcile.' },
+    { q: 'Can the AI actually answer webchat questions?', a: 'Yes — AIVA drafts and sends replies on the webchat widget using your catalogue and knowledge base, and marks a conversation for human takeover the moment it needs a person.' },
+    { q: 'What can I personalize?', a: 'Personalization rules can target by behaviour tracked on your site — pages viewed, funnel stage — and, because it shares the customer record, by data like scheme or loyalty membership, so a returning scheme member can see different content than a first-time visitor.' },
+    { q: 'What does this replace, work with, and cost?', a: 'It replaces the need for separate analytics, heatmap, A/B testing and push tools. It works alongside your existing website — one pixel, no rebuild. Pricing sits inside Jwero’s tiers — see /pricing for the structure.' },
+    { q: 'Is visitor data handled with consent?', a: 'Yes — consent settings, a domain guard and a CSS sanitizer are built into the suite, so tracking and on-site widgets respect visitor consent and stay scoped to domains you approve.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'OPTIMIZE',
+  h1: 'Your website stops being a brochure.',
+  sub: 'Visitors arrive, look around, and leave — and until now you had no idea where. Optimize is a full CRO suite built into Jwero: analytics, heatmaps, recordings, A/B experiments, personalization, popups, push and an AI webchat — reading and writing the same customer record as everything else.',
+  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'optimize' },
+  secondary: { href: '/book-demo', label: 'Book a demo' },
+})}
+
+${L.section(
+  `${L.sectionHead('SEE WHERE VISITORS DROP OFF', 'You cannot fix a leak you cannot see.', '')}
+  ${L.cards([
+    { title: 'Visitor analytics', text: 'Traffic, retention and geo on every visit — who’s coming back, and from where.' },
+    { title: 'Events, goals & funnels', text: 'Define the path — browse, enquire, checkout — and see exactly which step loses people.' },
+    { title: 'Heatmaps & session recordings', text: 'Grid-based heatmaps and full session recordings with snapshots show what visitors actually do on a product page, not what you assume they do.' },
+  ])}`
+)}
+
+${L.section(
+  `${L.sectionHead('TEST WHAT ACTUALLY WORKS', 'Stop guessing which page wins.', '')}
+  ${L.steps([
+    { title: 'Run an experiment', text: 'A/B experiments use deterministic bucketing so every visitor sees a consistent variant, with results computed for you — no spreadsheet needed.' },
+    { title: 'Personalize by who they are', text: 'Personalization rules show different content to different segments — a returning scheme member sees a different message than a first-time browser.' },
+    { title: 'Read the uplift', text: 'Metrics on every rule and experiment tell you what to keep, what to kill, and what to try next.' },
+  ])}`
+, { tone: 'tint' })}
+
+${L.section(
+  `${L.sectionHead('CATCH THE VISITOR BEFORE THEY LEAVE', 'Anonymous traffic becomes a lead, not a lost tab.', '')}
+  ${L.cards([
+    { title: 'Popups & lead forms', text: 'A visual editor with design presets — exit-intent offers, lead capture and polls, built without a developer.' },
+    { title: 'Web push', text: 'Visitors who decline chat can still opt into push — so a new collection or a scheme update can bring them back without ad spend.' },
+    { title: 'Webchat with AIVA', text: 'AIVA answers on the webchat widget instantly and marks the conversation for human takeover the moment a person is needed — after-hours leads no longer wait until morning.' },
+  ])}`
+)}
+
+${L.oneSystemBlock([
+  'A lead captured through a webchat conversation or a popup becomes a CRM contact instantly — no export, no re-entry.',
+  'Personalization rules can key off scheme or loyalty membership from the same customer record your WhatsApp and billing modules already update.',
+  'The visitor an A/B experiment bucketed and the customer who eventually buys are the same record, start to finish.',
+])}
+
+${L.section(`${L.sectionHead('OPTIMIZE QUESTIONS', 'Consent, AI webchat, and what this replaces.', '')}${L.faqBlock([
+  { q: 'How is this different from installing Hotjar or VWO myself?', a: 'Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your other modules use.' },
+  { q: 'Can the AI actually answer webchat questions?', a: 'Yes — AIVA drafts and sends replies using your catalogue and knowledge base, and marks a conversation for human takeover the moment it needs a person.' },
+  { q: 'Is visitor data handled with consent?', a: 'Yes — consent settings, a domain guard and a CSS sanitizer are built into the suite.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="optimize">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('See where your own visitors drop off.', 'One pixel turns on analytics, heatmaps, experiments, popups, push and webchat together — on your existing website.', 'optimize')}
+`,
+};
+
+module.exports = [whatsapp, instagram, aiAgents, optimize];

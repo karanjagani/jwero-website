@@ -63,6 +63,7 @@ const NAV = [
         ['/products/whatsapp', 'WhatsApp Commerce'],
         ['/products/instagram-facebook', 'Instagram & Facebook'],
         ['/products/ai-sales-agents', 'AI Sales Agents & Voice'],
+        ['/products/optimize', 'Optimize (Website CRO)'],
       ]},
       { title: 'Know', items: [
         ['/products/crm', 'Jewellery CRM'],

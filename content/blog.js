@@ -35,6 +35,16 @@ ${L.section(
     { title: 'Gold Savings Schemes: A Practical Guide to Running One Digitally', text: 'Why schemes lock in revenue, why most leak members through drift, and what digital collection actually fixes.', link: { href: '/blog/gold-savings-scheme-guide', label: 'Read the guide' } },
   ])}`
 )}
+${L.section(
+  `${L.sectionHead('MORE GUIDES', 'For the accountant, the factory floor and the counter.', '')}
+  ${L.cards([
+    { title: 'Jewellery Software and Tally: What Should and Shouldn’t Move', text: 'What actually syncs automatically, what still needs a manual voucher, and how to talk to your CA about it.', link: { href: '/blog/jewellery-software-and-tally', label: 'Read the guide' } },
+    { title: 'Gold Loss (Wastage) Control in Jewellery Manufacturing', text: 'A working ledger: per-movement, per-karigar weight tracking, the old-gold chain, and what it does and doesn’t fix.', link: { href: '/blog/gold-loss-wastage-control-jewellery-manufacturing', label: 'Read the guide' } },
+    { title: 'Jewellery Repair Management: The Custody-Chain Method', text: 'Why repair intake needs a documented custody chain — condition notes, a stone chart and a weight record.', link: { href: '/blog/jewellery-repair-management-custody-chain', label: 'Read the guide' } },
+    { title: 'HUID and Hallmarking Records: The Audit-Day Checklist', text: 'Keep hallmarking and HUID records organized so a compliance check is a retrieval, not a scramble.', link: { href: '/blog/huid-hallmarking-records-audit-checklist', label: 'Read the guide' } },
+    { title: 'Digital Catalog vs PDF: Why Shareable Checkout Links Sell More', text: 'A PDF catalogue is wrong the moment gold rates move. A live catalogue never is — and it can take the payment.', link: { href: '/blog/digital-catalog-vs-pdf-jewellery', label: 'Read the guide' } },
+  ], 4)}`
+, { tone: 'tint' })}
 ${L.section(`<p style="font-size:.85rem; color:var(--ink-2);">More guides are coming — starting with the topics jewellers ask us about most on WhatsApp. <a href="#" data-wa="blog-hub">Tell us what you’d want covered</a>.</p>`)}
 `,
 };
@@ -236,4 +246,331 @@ ${L.ctaBand('Digitise your existing scheme book.', 'Bring your current paper reg
 `,
 };
 
-module.exports = [blogHub, whatsappGuide, deadStockGuide, schemeGuide];
+// ---------------------------------------------------------------- Article 4: Tally coexistence
+const tallyGuideFaqs = [
+  { q: 'Does Jwero auto-post my invoices to Tally?', a: 'No — not yet. Customer and item master data sync both ways automatically between Jwero and Tally Prime. Transactions — invoices, sales, payments — still need a manual voucher entry in Tally today. Auto-posting transactions is on our roadmap, not something we claim is shipped.' },
+  { q: 'Do I need to migrate my Tally data into Jwero?', a: 'No. Tally stays exactly as it is — same file, same login, same place your CA already works. Jwero connects alongside it through a local connector agent and keeps masters in sync; nothing gets moved out of Tally.' },
+  { q: 'What if my CA or muneem refuses to use anything new?', a: 'They don’t have to. Nothing changes about how they work inside Tally — the same voucher entry, the same GST filing, the same reports. The only difference is that customer and item records arrive already matched instead of being typed in from a register.' },
+];
+
+const tallyGuide = {
+  slug: 'blog/jewellery-software-and-tally',
+  title: 'Jewellery Software and Tally: What Should and Shouldn’t Move | Jwero',
+  description: 'A plain guide to what actually syncs between jewellery software and Tally Prime, what still needs a manual voucher, and how to have this conversation with your accountant.',
+  breadcrumbs: BC('Jewellery Software and Tally'),
+  schema: postSchema('Jewellery Software and Tally: What Should and Shouldn’t Move', 'What syncs automatically between jewellery software and Tally, what still needs a manual voucher, and how to talk to your CA about it.'),
+  faqs: tallyGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · JEWELLERY SOFTWARE AND TALLY',
+  h1: 'Jewellery Software and Tally: What Should and Shouldn’t Move',
+  sub: 'Every conversation about new software in a jewellery business eventually reaches the same wall: "what does the accountant say?" Here’s exactly what syncs, what doesn’t, and how to have that conversation without guessing.',
+  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-tally' },
+  secondary: { href: '/platform/integrations/tally', label: 'See the Tally integration' },
+})}
+${L.section(postMeta(7, 'Jewellery Software and Tally'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>Why the accountant is the real gatekeeper</h2>
+  <p>The owner usually decides they want better software faster than anyone else in the business. What actually determines whether that decision survives is a much quieter conversation with the muneem or the CA — the person who has spent years keeping the books consistent and has no reason to trust a new system near them. That hesitation is rarely about the technology itself. It’s about job security, and about whether the numbers they’re accountable for stay reliable.</p>
+  <p>Treating that concern as an obstacle to route around is a mistake. It’s the actual decision point, and it deserves a straight answer rather than a sales pitch.</p>
+
+  <h2>What actually syncs automatically</h2>
+  <p>Jwero connects to Tally Prime through a local connector agent — a small piece of software that runs alongside Tally, pairs with a one-time code, and authenticates with a hashed token after that. It checks in on a regular heartbeat so the connection can be trusted to actually be live, not just configured once and forgotten.</p>
+  <p>What moves through that connection is customer and item master data, both ways, kept aligned by a fuzzy mapping-rules engine that matches records even when names or codes don’t line up exactly between the two systems. If a customer exists in Tally under a slightly different spelling than in Jwero, the mapping engine is built to catch that rather than create a duplicate.</p>
+  <p>For businesses that run on Zoho Books instead of, or alongside, Tally, the same idea applies through a Zoho connection made over OAuth.</p>
+
+  <h2>What still needs a manual voucher, and why that’s fine for now</h2>
+  <p>Here’s the part worth stating plainly rather than glossing over: transactions do not auto-post to Tally today. An invoice raised in Jwero does not turn into a Tally voucher by itself. The masters sync automatically — the transaction itself still needs to be entered as a voucher in Tally, by hand, the same way it always has been.</p>
+  <p>That’s a real limitation, not a small print footnote, and it’s on our roadmap to close. Until it is, the honest description of where things stand is: masters sync both ways, transactions are manual. Anyone who tells a jeweller otherwise is describing a future version, not the current one.</p>
+
+  <h2>GST invoicing: who does what</h2>
+  <p>Jwero generates GST-compliant invoices at the live gold rate, with the CGST/SGST/IGST breakup calculated at the point of sale. That part happens inside Jwero, at the counter, at the moment the rate matters.</p>
+  <p>Statutory GST filing, and e-invoice or IRN generation, stay exactly where they are today — inside Tally, or with your CA. E-invoice automation is a roadmap item, not something shipped, and this guide isn’t going to pretend otherwise. The line is simple: Jwero handles the invoice at the point of sale; Tally and your CA handle the statutory filing that follows.</p>
+
+  <h2>How to have this conversation with your CA</h2>
+  <p>The version of this conversation that actually works is narrow and specific, not a broad pitch about "modernising the business." Show them three things: the books don’t move — Tally stays exactly where it is, same file, same login. Master data arrives pre-matched instead of retyped from a paper register or a WhatsApp message, which is fewer manual entry errors, not more risk. And transactions are still their entry, in their voucher format, until auto-posting ships — nothing is being taken out of their hands today.</p>
+  <p>That’s a conversation about reducing their typing, not replacing their judgment. It tends to land very differently than "we’re bringing in new software."</p>
+
+  <h2>What changes for the accountant, in one sentence</h2>
+  <p>Nothing changes about their statutory workflow — the only thing that changes is where the reference data comes from.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('KEEP YOUR BOOKS, CHANGE YOUR EARNINGS', 'Jwero isn’t an accounting replacement — it’s the revenue layer Tally never had.', 'The full technical detail on the connector, pairing, and mapping rules lives on the integration page built for this exact conversation with your accountant.')}
+  <p><a class="btn btn-ghost" href="/platform/integrations/tally">See the Tally integration in detail</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about the Tally connection.', '')}${L.faqBlock(tallyGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-tally">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Bring your CA into the conversation directly.', 'We’ll walk through the connector, the mapping rules, and exactly what stays manual — with them in the room.', 'blog-tally')}
+`,
+};
+
+// ---------------------------------------------------------------- Article 5: Gold-loss control
+const goldLossGuideFaqs = [
+  { q: 'What’s a normal wastage percentage?', a: 'There isn’t one number that applies across the trade — it varies enormously by product type, casting method and finishing process. A commonly cited illustrative range is 0.5–2% of metal processed, but that’s a rough guide, not a benchmark to chase. The point of a working ledger isn’t to hit an industry average — it’s to know your own number, per stage and per karigar, and manage against that.' },
+  { q: 'Does this stop karigars from taking gold?', a: 'No system replaces trust entirely, and no ledger claims to. What a per-movement weight chain plus per-karigar variance tracking does is make discrepancies visible immediately — at the next weighing, not at year-end — rather than eliminate the possibility of loss outright.' },
+  { q: 'Do you predict wastage with AI?', a: 'No. What’s described here is measurement and ledger-based — recording every movement, attributing it, and surfacing variance — not a predictive or forecasting model. If a tool claims to predict wastage before it happens, ask exactly what it’s measured against, because today’s tooling in this space is about visibility, not prediction.' },
+];
+
+const goldLossGuide = {
+  slug: 'blog/gold-loss-wastage-control-jewellery-manufacturing',
+  title: 'Gold Loss (Wastage) Control in Jewellery Manufacturing: A Working Ledger | Jwero',
+  description: 'A practical guide to measuring and controlling gold loss in jewellery manufacturing — per-movement weight tracking, per-karigar attribution, the old-gold chain, and what a working ledger does and doesn’t fix.',
+  breadcrumbs: BC('Gold Loss Control Guide'),
+  schema: postSchema('Gold Loss (Wastage) Control in Jewellery Manufacturing: A Working Ledger', 'How to measure and control gold loss in jewellery manufacturing with per-movement, per-karigar weight tracking — and what it does and doesn’t fix.'),
+  faqs: goldLossGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · MANUFACTURING',
+  h1: 'Gold Loss (Wastage) Control in Jewellery Manufacturing: A Working Ledger',
+  sub: 'Wastage has always happened at every stage of manufacturing. The question that actually matters isn’t whether it happens — it’s whether anyone can see where, and with whom.',
+  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-goldloss' },
+  secondary: { href: '/solutions/manufacturers', label: 'See it for manufacturers' },
+})}
+${L.section(postMeta(8, 'Manufacturing'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>The oldest trust problem in the trade</h2>
+  <p>Gold loss — wastage — happens at every stage a piece passes through on its way from raw metal to finished jewellery: issue to a karigar, casting, filing and polishing, setting. Some of it is physical and unavoidable — metal genuinely lost as dust, scrap and process loss. Some of it is simply never accounted for, because the traditional way of tracking it is memory, or a paper register kept per karigar, updated when someone remembers to.</p>
+  <p>An illustrative range often cited in the trade is 0.5–2% of metal processed — worth treating as a rough guide, not a guarantee, since it varies by product type and process. The real problem isn’t the existence of that range. It’s that most businesses have no way of knowing where inside that range they actually sit, or whether one workshop, one karigar, or one process is running consistently higher than the rest.</p>
+
+  <h2>Why wastage hides in an annual number</h2>
+  <p>Most manufacturing operations only see wastage as a single figure at the end of a job, or worse, at an annual stocktake — the difference between metal issued and metal returned across an entire year of production. That single number is almost useless for control, because it collapses dozens of stages, dozens of karigars and hundreds of individual jobs into one figure with no way to trace back where the loss actually occurred.</p>
+  <p>A pattern — one karigar consistently running high wastage on filigree work, or one casting batch losing more than the others — is real information. Buried inside an annual average, it’s invisible. By the time it surfaces, months of the same pattern have already repeated.</p>
+
+  <h2>What "per movement, per karigar" actually means</h2>
+  <p>A working system computes wastage at every point metal moves, not just at the end of a job: issued to a karigar, returned from a karigar, moved between production stages. Each movement is weighed and logged, and the difference between what went out and what came back is attributed — to a karigar, to a stage, to a job.</p>
+  <p>That attribution is what turns wastage from a single opaque number into a set of comparable figures: this karigar on this type of work, this stage across all jobs, this month against last month. None of that changes what happened physically — it changes whether anyone can see it happened, and act on it while the job is still fresh rather than after twelve months have passed.</p>
+
+  <h2>The old-gold and exchange chain</h2>
+  <p>Old-gold and exchange transactions carry their own version of the same risk, because metal changes form multiple times before it re-enters usable stock: buyback intake, a melt lot, refining, and recovered metal valued back into raw-material inventory. Each of those steps is a point where weight can be under-recorded or simply not tracked at all.</p>
+  <p>A working chain records weight at every one of those steps — what came in at intake, what went into the melt lot, what came back from refining, what was valued into stock — so the whole path from a customer’s old piece to usable raw material is traceable, not a black box between "customer handed it over" and "stock went up."</p>
+
+  <h2>The recovery desk, and the outside-karigar problem</h2>
+  <p>Scrap and filings generated during production are real recoverable metal, not a rounding error — and if there’s no dedicated place to book that recovery, it tends to just disappear into "shrinkage," indistinguishable from genuine loss. A recovery desk that books scrap and recovered metal as its own step closes that gap.</p>
+  <p>The same discipline matters most with outside karigars — job-work sent beyond the workshop’s own walls, where oversight is naturally lighter. Production orders moving through a multi-stage routing, tracked on a WIP board so every piece’s location is known, combined with karigar allocation scored to match the right artisan to the job, and job-work issue and receive reconciled by weight on both ends — that’s what keeps outside work held to the same standard as work done in-house.</p>
+
+  <h2>What a working ledger changes, and what it doesn’t</h2>
+  <p>Said plainly: a ledger like this doesn’t reduce physical wastage on its own. Weighing metal more carefully at more points doesn’t make less of it disappear in the process — the filing, the casting sprues, the polishing loss all still happen exactly as before. What changes is visibility: wastage attributed per stage and per karigar, instead of buried in a number nobody can trace.</p>
+  <p>That visibility is what actually drives wastage down over time — not because the ledger fixes anything by itself, but because a karigar who knows their numbers are watched works differently than one who knows the register only gets checked once a year, and a manager who can see a stage running high can actually investigate it instead of guessing.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('FOR MANUFACTURERS', 'Built for the shop floor, not just the ledger.', 'Production routing, WIP tracking, karigar allocation and job-work reconciliation, alongside the weight chain described above.')}
+  <p><a class="btn btn-ghost" href="/solutions/manufacturers">See the manufacturing workflow in Jwero</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about wastage and control.', '')}${L.faqBlock(goldLossGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-goldloss">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('See your own wastage, per stage and per karigar.', 'Bring your current issue-and-return register — we’ll show what it looks like tracked per movement instead of per year.', 'blog-goldloss')}
+`,
+};
+
+// ---------------------------------------------------------------- Article 6: Repair custody chain
+const repairGuideFaqs = [
+  { q: 'What’s the single most important thing to record at intake?', a: 'Weight and a stone description, together. Neither alone is airtight — weight can shift slightly with cleaning, and a stone description alone doesn’t catch a swap — but recorded together at the moment the piece is handed over, they make a later dispute nearly impossible to argue either way.' },
+  { q: 'Do I need software to do this?', a: 'No. The discipline works on paper — an intake slip with a weight, a stone chart and a condition note, filed against a job number. Software doesn’t create the discipline, it just makes it faster to apply consistently and much harder to lose a slip in a drawer.' },
+  { q: 'Does Jwero have a repairs module today?', a: 'This discipline — intake, custody logging, QC reconciliation, re-hallmark gates and warranty tracking — is built and tested in the product. It isn’t yet a self-serve toggle every customer can switch on; ask us directly about availability for your business rather than assuming it’s live for everyone today.' },
+];
+
+const repairGuide = {
+  slug: 'blog/jewellery-repair-management-custody-chain',
+  title: 'Jewellery Repair Management: The Custody-Chain Method | Jwero',
+  description: 'Why jewellery repair intake needs a documented custody chain — condition notes, a stone chart and a weight record — to prevent disputes, and how to run it with or without software.',
+  breadcrumbs: BC('Repair Management Guide'),
+  schema: postSchema('Jewellery Repair Management: The Custody-Chain Method', 'Why repair intake needs a documented custody chain to prevent disputes, and what it should capture at every stage.'),
+  faqs: repairGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · REPAIR MANAGEMENT',
+  h1: 'Jewellery Repair Management: The Custody-Chain Method',
+  sub: 'A repair job is the one moment a customer hands you their gold and walks away with nothing but trust. Here’s the discipline that makes that trust provable, not just assumed.',
+  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-repair' },
+  secondary: { href: '/products/crm', label: 'See the customer record in Jwero' },
+})}
+${L.section(postMeta(7, 'Repair Management'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>Why "where is my ring?" is the most dangerous question in the business</h2>
+  <p>Most disputes in a jewellery business don't happen at the point of sale — they happen at the point of return. A customer drops off a ring for resizing, and three weeks later asks a version of "where is my ring?" that really means: prove to me this is the same ring, with the same stone, the same weight, that I handed you. If the honest answer is "we're fairly sure," the business has already lost the argument, even when nothing actually went wrong.</p>
+  <p>The problem isn't usually dishonesty on either side. It's that most repair workflows don't produce a record precise enough to settle the question either way — so it comes down to whoever argues more confidently.</p>
+
+  <h2>What custody chain actually means</h2>
+  <p>A custody chain is a documented answer, at every point in time, to "who is holding this specific piece, and what condition was it in when they took it." It starts the moment the piece is handed over at the counter and doesn't end until it's handed back — every stage in between logged, not remembered.</p>
+  <p>The point isn't paperwork for its own sake. It's that a dispute becomes a five-minute lookup instead of a he-said-she-said conversation that damages a relationship no matter how it ends.</p>
+
+  <h2>Intake: the three things that prevent a dispute</h2>
+  <p>Everything downstream depends on what gets captured at the moment the customer hands the piece over. Three things matter, and skipping any one of them leaves a gap a dispute can live in.</p>
+  <p><strong>Condition notes and photos.</strong> Existing scratches, a slightly bent prong, a scuffed band — recorded before any work starts, so nobody has to guess later whether damage was pre-existing or happened in-house.</p>
+  <p><strong>A stone chart.</strong> What stones are present, and a plain description of each — approximate size, colour, cut. Not a full gemological certificate, just enough that a stone can be recognised as the same stone on return.</p>
+  <p><strong>A weight chain.</strong> The piece's weight, recorded at intake, before it goes anywhere near a workbench. Weight is the hardest thing to argue with — it's a number, not an impression.</p>
+
+  <h2>Every handoff, logged</h2>
+  <p>A repair isn't one step, it's a lifecycle: create the job, intake the piece, work in progress, mark it ready, deliver it back — with an estimate and the customer's approval sitting before any work begins, not after. Along the way, the piece itself moves: counter to factory, factory to counter, sometimes counter to counter between branches.</p>
+  <p>Each of those movements is a moment where custody changes hands, and each one should be logged against the job — not assumed. A piece that spent two days at a factory with no logged handoff is a piece nobody can vouch for during those two days, even if nothing went wrong.</p>
+
+  <h2>QC before it goes back</h2>
+  <p>Before a repaired piece reaches the counter for delivery, it should go through a reconciliation step: the same stones, described the same way, and the same weight recorded at intake, checked against what's now in hand. This is the step that actually prevents "you swapped my stone" — not because it stops a genuine mistake from happening, but because it catches the mistake before the customer does, and gives the business a record either way.</p>
+  <p>If the piece's hallmarking status needs to change — after resizing, or repair work that alters the metal — that's a separate gate before delivery too, not something folded quietly into "the job's done."</p>
+
+  <h2>Warranty as a reason to see them again</h2>
+  <p>A repair job doesn't have to end at delivery. A warranty or annual maintenance plan attached to the piece — with a defined entitlement and an inspection schedule — gives the business a structured, non-awkward reason to bring the customer back in six or twelve months, rather than hoping they remember to come in on their own.</p>
+  <p>It also means the next time that piece needs work, there's already a record of its condition, its stones and its weight from the last visit — the custody chain compounds instead of starting from zero each time.</p>
+
+  <h2>Starting simple, before software</h2>
+  <p>None of this requires a system to begin. An intake slip with a weight, a short stone description and a couple of photos, filed against a job number, is the custody chain in its simplest form — and it's enough to settle most disputes before they escalate. Software doesn't create this discipline; it just makes it faster to apply on every job and much harder for a slip to go missing in a drawer.</p>
+  <p>That discipline — intake through custody logging through QC reconciliation — is what we're building into Jwero. It's real and it's been tested, but it isn't a self-serve screen every customer can switch on today. If repair volume is a real part of your business, it's worth asking us directly where that stands rather than assuming either way.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('ONE CUSTOMER RECORD', 'A repair job should live on the same record as everything else.', 'Intake notes, stone charts and weight history mean more when they sit next to the same customer’s purchase history and scheme balances — not in a separate paper file.')}
+  <p><a class="btn btn-ghost" href="/products/crm">See the customer record in Jwero</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about running this properly.', '')}${L.faqBlock(repairGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-repair">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Ask us about repair tracking.', 'Tell us how repair volume moves through your shop today — we’ll tell you honestly where the custody-chain discipline stands in the product.', 'blog-repair')}
+`,
+};
+
+// ---------------------------------------------------------------- Article 7: HUID & hallmarking
+const huidGuideFaqs = [
+  { q: 'Does this replace BIS registration or hallmarking itself?', a: 'No. This is about record-keeping discipline for pieces that already go through hallmarking, not the hallmarking process or BIS registration itself — confirm specific regulatory requirements directly with BIS rather than from this guide.' },
+  { q: 'What happens if a piece’s HUID isn’t recorded?', a: 'It becomes a piece with no traceable link back to its hallmarking, which turns a routine audit question into a search — through paper registers, memory, or the hallmarking centre’s own records, none of which are fast when someone is standing at the counter asking.' },
+  { q: 'How does this help if we get an actual audit visit?', a: 'The hallmark/HUID register per piece, the custody chain for anything on the premises, and activity logs for sensitive changes are pulled directly — they’re retrieved, not reconstructed from scattered paper or whoever happens to remember.' },
+];
+
+const huidGuide = {
+  slug: 'blog/huid-hallmarking-records-audit-checklist',
+  title: 'HUID and Hallmarking Records: The Audit-Day Checklist | Jwero',
+  description: 'A practical guide to keeping hallmarking and HUID records organized — so a BIS audit or compliance check is a quick retrieval, not a scramble through paper registers.',
+  breadcrumbs: BC('HUID & Hallmarking Records'),
+  schema: postSchema('HUID and Hallmarking Records: The Audit-Day Checklist', 'How to keep hallmarking and HUID records organized so a compliance check is a retrieval, not a scramble.'),
+  faqs: huidGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · HUID & HALLMARKING',
+  h1: 'HUID and Hallmarking Records: The Audit-Day Checklist',
+  sub: 'A hallmarking audit shouldn’t be a scramble through drawers and old registers. Here’s what actually needs to be retrievable, and how to keep it that way every day, not just before an inspection.',
+  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-huid' },
+  secondary: { href: '/products/inventory', label: 'See inventory tracking in Jwero' },
+})}
+${L.section(postMeta(7, 'Compliance & Records'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>Why audit day is stressful for most jewellery businesses</h2>
+  <p>The stress of a compliance check rarely comes from having done anything wrong. It comes from not being able to prove, quickly, that things were done right. A hallmarking record that exists but is scattered across a physical register, a courier receipt, and someone's memory of which lot went to the hallmarking centre in March is functionally the same as no record at all when someone is standing at the counter asking for it now.</p>
+  <p>This guide isn't about hallmarking law — the specifics of what BIS requires should be confirmed directly with BIS guidance, not taken from a marketing page. It's about the much narrower, much more fixable problem: keeping the records you already generate organized enough that an audit is a retrieval exercise, not a research project.</p>
+
+  <h2>What actually gets asked for</h2>
+  <p>In practice, a compliance check tends to circle around the same few things: which pieces carry a HUID and what it is, where a piece was between leaving the showcase and returning hallmarked, who touched a record and what they changed, and — occasionally — a specific customer's data if a data-subject request applies. None of these are exotic asks. They're the kind of thing that should already exist somewhere in the business. The question is whether "somewhere" means a searchable field or a stack of paper.</p>
+
+  <h2>The hallmark batch workflow, in order</h2>
+  <p>Unhallmarked stock is easiest to lose track of at exactly the point it leaves the shop. A workable version of the workflow looks like this: an unhallmarked lot gets flagged in inventory, it's batched together for the trip to the hallmarking centre, custody is recorded on the way out and again on the way back in, each piece's HUID is captured individually once the lot returns, and labels are reprinted before that stock is activated for sale. Every step in that chain is a place where a record either gets created or doesn't — and the ones that don't get created are the ones that turn into gaps later.</p>
+  <p>The value of doing this consistently isn't just tidiness. It's that a lot sent out and a lot returned can be reconciled piece by piece, rather than trusted on the basis that it "should all be there."</p>
+
+  <h2>Labels that carry the HUID, not just a price</h2>
+  <p>A HUID that lives only on a screen is one query away from being findable — but a HUID printed on the piece's own label, alongside the usual price and weight information, means the identifying detail is sitting at the counter with the piece itself, not somewhere back-office staff have to look it up. Barcode and label printing built from configurable templates makes this a formatting choice rather than a separate process: the same print run that puts a price tag on a piece can put its HUID on there too.</p>
+  <p>This matters most in the moment a customer or an inspector picks up a specific piece and asks about it directly — the answer shouldn't require walking to a terminal.</p>
+
+  <h2>Activity logs: proving who changed what, when</h2>
+  <p>Records only hold up under scrutiny if they can't be quietly edited after the fact without a trace. An activity log that captures sensitive changes as value diffs — what a field was, what it was changed to, and by whom — turns "I'm fairly sure that's right" into something that can actually be shown. This applies as much to a corrected HUID entry as to a custody update or a stock status change; the point isn't to prevent corrections, it's to make sure every correction is itself part of the record.</p>
+
+  <h2>The five-minute retrieval test</h2>
+  <p>A simple way to check where a business actually stands, before an inspector or auditor asks: pick one piece at random and see how long it takes to produce its hallmark and HUID record, its custody chain if it went out for hallmarking, and the activity log showing any changes made to it since. If a specific customer's data needs to be pulled — a DSR export — that should be retrievable too, not reconstructed from memory across systems.</p>
+  <p>If that takes five minutes because it's a search across a register, a courier slip and someone's recollection, the records exist but aren't organized. If it takes five minutes because it's a lookup, the discipline is already in place — audit day just becomes a slightly more formal version of a normal Tuesday.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('SEE THE TRACKING', 'This isn’t a separate compliance module — it’s inventory tracking, applied consistently.', 'Hallmark batch workflows, per-piece HUID fields, custody logs and activity diffs are part of how inventory is tracked in Jwero day to day, not a bolt-on for audit season.')}
+  <p><a class="btn btn-ghost" href="/products/inventory">See inventory tracking in Jwero</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about records and audits.', '')}${L.faqBlock(huidGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-huid">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Make audit day a retrieval, not a scramble.', 'Bring your current hallmarking register — we’ll show what it looks like as a searchable record instead.', 'blog-huid')}
+`,
+};
+
+// ---------------------------------------------------------------- Article 8: Digital catalogue vs PDF
+const catalogGuideFaqs = [
+  { q: 'Can a customer actually pay through a shared catalogue?', a: 'Yes. Catalogue pages support real checkout — Razorpay and Cashfree integration take the payment directly on the page, and the resulting order syncs into the order-management system rather than landing as a message someone has to key in by hand.' },
+  { q: 'Does the price update automatically when gold rates change?', a: 'Yes. With formula pricing — rate × weight + making + stones + wastage — the catalogue resolves the price live, at the moment it’s opened, against the current rate. A link sent this morning shows the correct price this evening too.' },
+  { q: 'Is this the same as a full online store?', a: 'Not quite. A catalogue is a curated link sent to one customer — closer to a tray shown to them than a public storefront. Jwero also has a fuller D2C storefront with cart, wishlist, coupons and express checkout for businesses that want a generic online store on top of this.' },
+];
+
+const catalogGuide = {
+  slug: 'blog/digital-catalog-vs-pdf-jewellery',
+  title: 'Digital Catalog vs PDF: Why Shareable Checkout Links Sell More | Jwero',
+  description: 'Why a live digital catalogue outsells a static PDF or screenshot catalogue for jewellery — live pricing, tracking, and checkout links that turn a share into a sale.',
+  breadcrumbs: BC('Digital Catalog vs PDF'),
+  schema: postSchema('Digital Catalog vs PDF: Why Shareable Checkout Links Sell More', 'Why a live digital catalogue outsells a static PDF or screenshot catalogue for jewellery — live pricing, tracking, and checkout links.'),
+  faqs: catalogGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · DIGITAL CATALOGUE',
+  h1: 'Digital Catalog vs PDF: Why Shareable Checkout Links Sell More',
+  sub: 'A PDF catalogue is a snapshot that starts going wrong the moment it’s saved. A digital catalogue is a live page — priced correctly whenever it’s opened, and able to take the payment right there. Here’s the actual difference.',
+  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-catalog' },
+  secondary: { href: '/products/whatsapp', label: 'See WhatsApp Commerce in Jwero' },
+})}
+${L.section(postMeta(7, 'Digital Catalogue'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>The PDF that's already wrong</h2>
+  <p>A PDF or screenshot catalogue is accurate exactly once — at the moment it's made. Gold and silver rates move, often twice a day, and every price printed into that file is a snapshot of a rate that no longer applies by the time the customer reopens it, whether that's an hour later or a week later.</p>
+  <p>The awkward part isn't the price change itself — rates move, customers understand that. It's finding out mid-conversation that the number they were quoting back has been wrong for days, because nothing about a PDF tells them so.</p>
+
+  <h2>What "live" actually means for a jewellery catalogue</h2>
+  <p>A digital catalogue doesn't store a price — it stores a formula: rate × weight + making + stones + wastage. The price shown is resolved at the moment the page is viewed, against the rate live at that moment, whether that's five minutes after the link was sent or three days later. There's no version of a live catalogue that goes stale, because it was never storing a static number to begin with.</p>
+  <p>It's shared the way jewellery already gets discussed — a link, a WhatsApp message, or a QR code at the counter — and can sit on a custom domain, built from templates, so it looks like the business's own catalogue rather than a generic page.</p>
+
+  <h2>Sent, not searched for</h2>
+  <p>A PDF catalogue and a public online store both share a limitation: the customer has to look through everything to find what they actually want. A catalogue link works differently — it's curated by a staff member for one customer, built around what that specific person asked about, and sent directly to them. It's closer to a tray of pieces pulled for a customer than a shelf they're left to browse alone.</p>
+  <p>That distinction matters because it changes what the customer does next. A generic browse-everything page invites scrolling; a personal link invites a decision.</p>
+
+  <h2>Tracking that tells you what a customer actually wants</h2>
+  <p>A PDF, once sent, is a black box — there's no way to know if it was opened, skimmed, or ignored. A digital catalogue link can be tracked: who viewed it, and which pieces they actually looked at. That's information a follow-up message can use directly — "I noticed you looked at the second necklace twice" is a far better opener than a generic check-in, and it only exists because the catalogue was live and trackable instead of a file sitting in a chat thread.</p>
+
+  <h2>When a catalogue becomes a sale, not just a look</h2>
+  <p>The bigger shift is that a shared catalogue doesn't have to end in a message back to the shop asking "how do I pay." Catalogue pages can take the actual payment — Razorpay and Cashfree integration lets a customer check out on the same link they were browsing — and that order syncs straight into the order-management system, the same way any other order would. The catalogue isn't a brochure that leads to a sale elsewhere; it can be the point of sale itself.</p>
+  <p>This is narrower than a full storefront on purpose. A catalogue is one curated link for one customer's conversation. For businesses that want a broader, generic online store — cart, wishlist, coupons, express checkout — that's a separate, fuller capability sitting alongside this, not a replacement for it.</p>
+
+  <h2>Who this replaces</h2>
+  <p>In practice, a live catalogue link replaces three habits: the screenshot of a price list forwarded from an old chat, the printed lookbook that's out of date the season it's handed out, and the static PDF that has to be remade every time rates move or stock changes. None of those were ever wrong on purpose — they were just built for a world where the price didn't need to change between the moment something was sent and the moment it was opened.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('SEE IT WORKING', 'A link, sent on WhatsApp, that can take the payment.', 'This is the same mechanism behind the button on this page — a live-priced catalogue link, shared directly, that a customer can check out on without a website in between.')}
+  <p><a class="btn btn-ghost" href="/products/whatsapp">See WhatsApp Commerce in Jwero</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about catalogues and checkout.', '')}${L.faqBlock(catalogGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-catalog">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Send a catalogue that can close the sale itself.', 'Bring a design you’d normally screenshot — we’ll show it as a live, trackable link with checkout built in.', 'blog-catalog')}
+`,
+};
+
+module.exports = [blogHub, whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide];

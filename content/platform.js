@@ -49,7 +49,7 @@ ${L.governanceStrip()}
 ${L.section(
   `${L.sectionHead('INTEGRATIONS & COEXISTENCE', 'Keep your Tally. Books stay where your CA likes them.', '')}
   ${L.cards([
-    { title: 'Tally', text: 'Sales flow to the ledger automatically. Your accountant’s world doesn’t change.', link: { href: '/platform/integrations/tally', label: 'The accountant page' } },
+    { title: 'Tally', text: 'Customer and item masters sync both ways automatically. Your accountant’s world doesn’t change.', link: { href: '/platform/integrations/tally', label: 'The accountant page' } },
     { title: 'Zoho Books', text: 'Full accounting bridge for Zoho-first businesses.' },
     { title: 'Shopify / WooCommerce / Unicommerce', text: 'Two-way product and order sync — keep your storefront, add the channels around it.' },
     { title: 'Razorpay & Cashfree', text: 'Payment collection, verified end to end.' },
@@ -239,10 +239,10 @@ const tally = {
   description: 'Jwero bridges to Tally so your books stay exactly where your CA likes them. Jwero runs the revenue side; Tally keeps the ledger.',
   breadcrumbs: [['Home', '/'], ['Platform', '/platform'], ['Integrations', '/platform/integrations'], ['Tally']],
   faqs: [
-    { q: 'Will switching to Jwero disrupt my accountant’s workflow?', a: 'No. That is the point of the bridge — sales data flows from Jwero to Tally automatically, in the shape your accountant already expects.' },
-    { q: 'What exactly syncs to Tally?', a: 'Sales and invoicing data flows through the bridge, keeping your ledger current without manual re-entry. [VERIFY exact sync scope with product before publishing to enterprise buyers.]' },
+    { q: 'Will switching to Jwero disrupt my accountant’s workflow?', a: 'No. That is the point of the bridge — customer and item masters sync both ways automatically, in the shape your accountant already expects. Invoice and payment entries are a manual voucher today; automatic transaction posting is on the roadmap, and we say so plainly.' },
+    { q: 'What exactly syncs to Tally?', a: 'Customer and item masters sync both ways automatically, keeping your ledger’s reference data current without manual re-entry. Sales and payment transactions still need a manual voucher in Tally today — automatic transaction posting is on the roadmap, not shipped.' },
     { q: 'Do I have to stop using Tally to start using Jwero?', a: 'No — this is the entire design. Keep Tally as your ledger of record; Jwero takes over customers, channels, schemes and follow-up alongside it.' },
-    { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes. They keep filing GST the way they always have, in Tally, from data that now arrives automatically instead of being re-typed. Invite them to the demo — most objections dissolve once they see the bridge, not the sales pitch.' },
+    { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes. They keep filing GST exactly as they do today, in Tally — with customer and item masters arriving already synced instead of re-typed. Invite them to the demo — most objections dissolve once they see the bridge, not the sales pitch.' },
     { q: 'Does this replace GST filing or e-invoicing?', a: 'No — GST invoicing at the live gold rate happens in Jwero, but statutory filing and e-invoice/IRN stay Tally’s job (e-invoice automation is on our roadmap, not shipped). Two systems, one clean line.' },
     { q: 'What if our CA wants to keep using their own workflow entirely?', a: 'They can. The bridge changes what arrives in Tally, not how your CA works once it’s there.' },
   ],
@@ -261,11 +261,11 @@ ${L.section(
     <div class="card"><h3>Tally keeps</h3><p>Statutory books, GST filings, the ledger of record — everything your accountant already trusts, unchanged.</p></div>
     <div class="card"><h3>Jwero runs</h3><p>Customer memory, WhatsApp and Instagram selling, gold schemes, catalogue, follow-up and the AI workforce — the revenue side.</p></div>
   </div>
-  <p style="margin-top:20px; font-size:.95rem; color:var(--ink-2);">Sales data flows from Jwero to Tally through the built-in bridge — nothing about your accountant’s month-end changes.</p>`
+  <p style="margin-top:20px; font-size:.95rem; color:var(--ink-2);">Customer and item masters sync both ways through the built-in bridge, automatically. Transaction posting is a manual voucher in Tally today — auto-posting is on the roadmap, not shipped yet — so nothing about your accountant’s month-end changes without their knowledge.</p>`
 )}
 
 ${L.section(`${L.sectionHead('QUESTIONS ACCOUNTANTS ASK', 'What to tell your CA.', '')}${L.faqBlock([
-  { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes — they keep filing in Tally, from data that now arrives automatically instead of being re-typed.' },
+  { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes — masters arrive already synced instead of re-typed, and they still enter sales and payment vouchers in Tally exactly as before.' },
   { q: 'Does this replace GST filing or e-invoicing?', a: 'No — GST invoicing at the live rate happens in Jwero; statutory filing and e-invoice/IRN stay Tally’s job. Two systems, one clean line.' },
   { q: 'Can our CA keep their own workflow?', a: 'Yes — the bridge changes what arrives in Tally, not how your CA works once it’s there.' },
 ])}`)}

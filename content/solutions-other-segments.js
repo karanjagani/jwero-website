@@ -108,6 +108,15 @@ ${L.jtbdBlock([
   { when: 'an ad-driven DM comes in after hours', want: 'get an accurate, on-brand reply immediately', so: 'the click doesn’t go cold before your team wakes up' },
   { when: 'a customer buys on Shopify after chatting on WhatsApp', want: 'have both touchpoints on one record', so: 'the relationship isn’t split across two disconnected tools' },
 ])}
+${L.section(
+  `${L.sectionHead('ILLUSTRATIVE IMPACT MODEL', 'What this could be worth on top of your storefront.', 'Illustrative model on a D2C/lab-grown brand doing ₹4cr/year online revenue — not a measured result. Run your own numbers, or ask for a 30-day growth report once you’re live.')}
+  ${L.stats([
+    { n: '~₹16L/yr', l: 'modelled from a +0.4pt conversion lift on a ₹4cr traffic-driven revenue base' },
+    { n: '~₹6.4L/yr', l: 'modelled recovered-cart revenue — 8% of an estimated 20% cart-abandonment pool' },
+    { n: '~₹6L/yr', l: 'modelled platform-fee avoidance — ~1.5% of ₹4cr GMV' },
+    { n: '~₹4L/yr', l: 'modelled ad-spend saved by shifting 10% of retargeting spend to owned channels' },
+  ])}`
+, { tone: 'tint' })}
 ${L.section(`${L.sectionHead('QUESTIONS D2C BRANDS ASK', 'Shopify, trials and the stack you keep — answered.', '')}${L.faqBlock(d2cFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/compare/jwero-vs-shopify">See Jwero vs Shopify</a> or <a href="/faq">the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="d2c">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 

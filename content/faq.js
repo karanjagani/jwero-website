@@ -21,6 +21,8 @@ const CATEGORIES = [
       { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time, in standard formats. That is a design decision, not a support favour.' },
       { q: 'Is there a mobile app?', a: 'Yes — running the business from your phone (approvals, enquiries, sales, stock) is part of the product. Confirm exact app-store availability for your case on a demo before assuming a specific platform.' },
       { q: 'What is the weekly growth report?', a: 'A plain-language WhatsApp report to the owner: how many past customers came back, how many appointments were booked, how much revenue the system brought back. Proof, delivered weekly, not a dashboard you have to remember to open.' },
+      { q: 'Is a gold savings scheme even legal to run — isn’t that an NBFC or interest product?', a: 'Every plan is framed and operated as an advance against a future purchase — benefits are paid as bonus gold or a discount, never as interest. That’s a framing discipline the product enforces, not a legal opinion; confirm your specific scheme structure with your own counsel. See <a href="/products/gold-schemes">gold schemes</a>.' },
+      { q: 'My competitors don’t use anything like this — why be first?', a: 'Regional chains already run on systems like this; independent jewellers have been the ones without one. Being early on the revenue side — WhatsApp commerce, digital catalogues, gold schemes — is a customer-facing advantage today, not a future one.' },
       { q: 'What does Jwero NOT do yet — honestly?', a: 'POS counter cash/day-close billing, girvi, karigar payroll, offline mode, a vernacular product interface, a public developer API, and e-invoice/GSTR automation. All on the <a href="/roadmap">public roadmap</a>, none shipped — we say so before you buy, not after.' },
     ],
   },
@@ -28,7 +30,7 @@ const CATEGORIES = [
     id: 'whatsapp', label: 'WhatsApp & Meta',
     items: [
       { q: 'Can customers actually buy on WhatsApp?', a: 'Yes — browse the catalogue at live prices, ask questions, book appointments, and order inside the chat.' },
-      { q: 'Will my WhatsApp number get banned?', a: 'Jwero uses the official WhatsApp Business API with approved templates, consent handling and opt-outs. Ban risk comes from unofficial bulk-messaging tools — that is specifically what this isn’t.' },
+      { q: 'Will my WhatsApp number get banned?', a: 'Jwero uses the official WhatsApp Business API: Meta’s template approval lifecycle, compliance checks before anything sends, and a test-broadcast simulator to catch problems before customers see them. Ban risk comes from unofficial bulk-messaging tools — that is specifically what this isn’t.' },
       { q: 'Can I keep my existing WhatsApp number?', a: 'Yes — your number moves onto the official Business API and keeps working. Customers notice faster answers, not a new number.' },
       { q: 'What’s the difference between normal WhatsApp and the Business API?', a: 'Normal WhatsApp lives on one phone. The official API lets your whole team — and the AI workforce — answer from one shared inbox, with records, automation, and none of the ban-risk grey zone of bulk tools.' },
       { q: 'Can AI reply to customers automatically?', a: 'Within limits you set: approval mode by default, daily caps, quiet hours, and a kill switch that stops it instantly at five scopes.' },
@@ -40,7 +42,7 @@ const CATEGORIES = [
       { q: 'What happens when the AI doesn’t know an answer?', a: 'It hands the thread to your team and says so — it does not invent answers about your stock, your prices, or your policies.' },
       { q: 'Can I see every conversation my staff has with customers?', a: 'Yes — the inbox is shared and logged. Nothing about a customer relationship lives only on a personal phone.' },
       { q: 'Can customers send photos of designs they want?', a: 'Yes — photos attach to the enquiry and the customer record, visible to whoever handles the conversation next.' },
-      { q: 'What if Meta changes WhatsApp’s rules?', a: 'Your customer records, catalogue and history live in Jwero, not inside the channel. Channels can change; your data and relationships stay put — this is exactly why the one-record architecture matters.' },
+      { q: 'What if Meta shuts down or changes the WhatsApp Business API?', a: 'WhatsApp is one of several channels in the same shared inbox — Instagram, Messenger, Email, SMS and webchat also live there. Your customer records, catalogue, schemes and journeys live in Jwero, not inside any one channel. That said, platform risk on WhatsApp itself is real and industry-wide — we’re not claiming immunity, only that a channel change wouldn’t take your data with it.' },
     ],
   },
   {
@@ -61,8 +63,8 @@ const CATEGORIES = [
     id: 'migration', label: 'Migration & setup',
     items: [
       { q: 'How long does it take to go live?', a: 'Days, not months, for the Assist scope: customers imported, WhatsApp connected, catalogue published, approvals on. Larger scopes are phased and discussed upfront.' },
-      { q: 'Can you import from Excel?', a: 'Yes — customer lists, stock sheets, scheme registers. We do the import for you, messy files included.' },
-      { q: 'Do I have to leave my current ERP or Tally?', a: 'No. Keep your books exactly where they are — Jwero bridges to Tally and Zoho Books and runs the customer and sales side alongside them. See <a href="/platform/integrations/tally">the accountant page</a>.' },
+      { q: 'Can you import from Excel?', a: 'Yes — bulk import ships with sample files and column-mapping tools, and onboarding includes a dedicated migration period where contacts are deduped and merged and top SKUs are imported with their pricing formulas. We do the heavy lifting, messy files included.' },
+      { q: 'Do I have to leave my current ERP or Tally?', a: 'No — Jwero isn’t an accounting replacement, it’s the revenue layer Tally never had. Customer and item masters sync both ways with Tally and Zoho Books; your statutory books stay exactly where they are. See <a href="/platform/integrations/tally">the accountant page</a>.' },
       { q: 'What happens to my data if I leave Jwero later?', a: 'You export everything in standard formats, any time, no questions asked. That is a written promise, not a footnote.' },
       { q: 'Can we start with just one branch?', a: 'Yes — prove it in one branch with written exit criteria, then roll out. Most multi-store businesses start exactly this way.' },
       { q: 'Do you migrate during wedding or festival season?', a: 'No — a season change-freeze policy means we do not touch a live system during your peak weeks. We go live before the season or after it, never during.' },
@@ -84,6 +86,7 @@ const CATEGORIES = [
       { q: 'Is there two-factor login?', a: 'Yes — multi-factor authentication and passkeys are supported.' },
       { q: 'What happens if the internet goes down at my shop?', a: 'Honestly: Jwero is cloud software and needs a connection; offline mode is on the roadmap, not shipped today. Mobile data works as a practical backup in the meantime.' },
       { q: 'Are you ISO or SOC 2 certified?', a: 'Not yet. Formal certifications are planned as the company scales, and we will publish them when they’re earned rather than claim a badge we don’t hold.' },
+      { q: 'I don’t trust the cloud with my customer data — why should I?', a: 'Role-based access with role presets, activity logs (per-module today, with a unified audit trail being consolidated), and DPDP-compliant data-subject export/erase workflows are real product features, not marketing lines. We are not ISO or SOC 2 certified yet, and we don’t claim specific uptime or backup guarantees — see <a href="/trust/security">Security & Data Ownership</a> for the full honest list.' },
       { q: 'Do you sell or share my customer data?', a: 'Never. Your customers are your asset; our privacy approach is built around that. See the <a href="/legal/privacy">Privacy Policy</a> and <a href="/legal/dpdp">DPDP statement</a>.' },
       { q: 'Can the owner see everything across every branch?', a: 'Yes — owner-level visibility spans all branches by default; branch staff see only what their role and branch permit.' },
       { q: 'Do you support SSO for company logins?', a: 'Not yet — enterprise SSO/SCIM is in active development, not shipped. Today: per-user logins with MFA and role-based permissions.' },
@@ -98,7 +101,7 @@ const CATEGORIES = [
       { q: 'Are there hidden costs?', a: 'No — implementation scope, what’s included and what’s extra are stated plainly before you commit. Any pass-through WhatsApp messaging costs from Meta are explained upfront, not buried.' },
       { q: 'Is there a lock-in contract?', a: 'Monthly billing is available at entry tiers. Annual pricing is a discount, not handcuffs — and the export-anytime promise applies regardless of contract term.' },
       { q: 'What’s included in implementation?', a: 'Data import, WhatsApp connection, catalogue setup and role-based team training — the full checklist is confirmed with you before you pay.' },
-      { q: 'Is it cheaper than the tools I already pay for combined?', a: 'Usually — count your WhatsApp tool, your catalogue app, your website, and the staff hours spent on Excel. See the honest frame on the <a href="/pricing">pricing page</a>.' },
+      { q: 'Is it cheaper than the tools I already pay for combined?', a: 'A biller stops at the invoice — it can’t touch repeat-purchase lift, scheme float, WhatsApp-attributed revenue or gold-loss control, which is where the real ROI lives. Compare it against the "Frankenstack" it replaces — WhatsApp tool, catalogue app, website, staff hours on Excel — not against sticker price alone. See the honest frame on the <a href="/pricing">pricing page</a>.' },
       { q: 'Can I upgrade or downgrade tiers later?', a: 'Yes — Assist, Approve and Autopilot are a deliberate ladder. Most businesses start on Assist and move up once their own growth reports justify it.' },
       { q: 'Why should I trust an ROI claim from the company selling the product?', a: 'You shouldn’t take our word for it — that’s why the growth report exists. It’s a weekly, plain-language account of what actually happened, generated from your own data, not a projection from a sales deck.' },
     ],
@@ -142,7 +145,7 @@ const CATEGORIES = [
   {
     id: 'support', label: 'Implementation, training & support',
     items: [
-      { q: 'Can my staff actually learn this?', a: 'If they can use WhatsApp, they can use Jwero. Role-based training is included, and the daily screens are deliberately simple.' },
+      { q: 'Can my staff actually learn this?', a: 'Yes — staff get a daily worklist telling them what to do next, not a blank system to figure out, plus an in-app copilot with guided tours trained on your store’s own policies. Training is journey-based and included by role.' },
       { q: 'Is training included in the price?', a: 'Yes — included in implementation, delivered per role, with refreshers when you add new staff.' },
       { q: 'What if my older or more senior staff resist?', a: 'Start them on one thing: the shared inbox with AI-drafted replies. It makes their day easier immediately and usually converts sceptics faster than any pitch.' },
       { q: 'What support do I get after going live?', a: 'WhatsApp-first support with a named onboarding contact from day one — not a ticket queue you shout into.' },

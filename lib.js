@@ -187,7 +187,7 @@ function jtbdBlock(items) {
     .map(
       (j) => `
     <div class="jtbd-item">
-      <h3>When ${j.when}, I want to ${j.want}, so I can ${j.so}.</h3>
+      <h3>When ${j.when}, I want to ${j.want} — so ${j.so}.</h3>
     </div>`
     )
     .join('')}</div>`;

@@ -96,7 +96,13 @@
     'blog-hub': 'Hi Jwero — I’d like to see a topic covered on the blog: ',
     'blog-whatsapp': 'Hi Jwero — I read the WhatsApp guide, show me how it works for my business.',
     'blog-deadstock': 'Hi Jwero — I read the dead stock guide, show me matched selling and rotation.',
-    'blog-scheme': 'Hi Jwero — I read the gold scheme guide, show me digital collection for my scheme book.'
+    'blog-scheme': 'Hi Jwero — I read the gold scheme guide, show me digital collection for my scheme book.',
+    optimize: 'Hi Jwero — show me the Optimize suite: heatmaps, A/B tests, popups and webchat for my website.',
+    'blog-tally': 'Hi Jwero — I read the Tally guide, tell me exactly what moves and what stays in Tally.',
+    'blog-goldloss': 'Hi Jwero — I read the gold-loss guide, show me the wastage ledger and recovery desk.',
+    'blog-repair': 'Hi Jwero — I read the repair custody-chain guide, show me how it works for my business.',
+    'blog-huid': 'Hi Jwero — I read the HUID/hallmarking guide, show me compliance tracking.',
+    'blog-catalog': 'Hi Jwero — I read the digital catalogue guide, show me a live-price catalogue.'
   };
 
   function waLink(ctx, extra) {

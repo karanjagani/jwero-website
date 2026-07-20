@@ -136,6 +136,16 @@ ${L.section(
   ])}`
 )}
 
+${L.section(
+  `${L.sectionHead('ILLUSTRATIVE IMPACT MODEL', 'What this could be worth in a store like yours.', 'Illustrative model on a ₹6cr/year single store with ~1,500 active customers — not a measured result. Run your own numbers, or ask for a 30-day growth report once you’re live.')}
+  ${L.stats([
+    { n: '~₹30L/yr', l: 'modelled extra revenue from a repeat-rate lift of 22%→27% (+5pt)' },
+    { n: '~₹1.2cr', l: 'modelled scheme float locked in — plus ~₹25L in top-up purchases — from 200 members at ₹5k/month' },
+    { n: '~₹40L/yr', l: 'modelled WhatsApp-channel revenue from 2 attributed orders/week at a ₹40k average ticket' },
+    { n: '~₹15L', l: 'modelled working capital freed by releasing 10% of a ₹1.5cr aged inventory' },
+  ])}`
+, { tone: 'tint' })}
+
 ${L.section(`${L.sectionHead('QUESTIONS SINGLE-STORE OWNERS ASK', 'What single-store owners ask before they switch.', '')}${L.faqBlock([
   { q: 'I need my family or partner to agree first. What do I show them?', a: 'Bring them into the WhatsApp demo directly, or share the growth report sample — easier to evaluate than a sales pitch.' },
   { q: 'What if it doesn’t work for my shop?', a: 'You’ve changed nothing that can’t be undone — your billing software stays untouched, and your data exports any time.' },
@@ -183,6 +193,16 @@ ${L.jtbdBlock([
   { when: 'a new branch opens', want: 'launch it on the same system, not a fresh implementation', so: 'growth doesn’t mean starting from zero every time' },
   { when: 'the owner is travelling', want: 'see every branch’s numbers from one phone', so: 'distance doesn’t mean losing control' },
 ])}
+
+${L.section(
+  `${L.sectionHead('ILLUSTRATIVE IMPACT MODEL', 'Chains have systems. Now every jeweller has one.', 'Illustrative model on a 5-store regional chain doing ₹35cr/year combined, ~7,500 active customers — not a measured result. Run your own numbers, or ask for a 30-day growth report once you’re live.')}
+  ${L.stats([
+    { n: '~₹1.1cr/yr', l: 'modelled revenue from a +4pt same-store repeat-rate lift across 7,500 customers' },
+    { n: '~₹4.8cr', l: 'modelled scheme float locked in — plus ~₹1cr in top-up purchases — from 800 members chain-wide at ₹5k/month' },
+    { n: '~₹45L/yr', l: 'modelled shrinkage saving from cutting count variance 0.4%→0.15% on ₹18cr average stock' },
+    { n: '~₹18L/yr', l: 'modelled value of recovering 15 lost leads/month chain-wide at a 25% close rate' },
+  ])}`
+)}
 
 ${L.section(
   `${L.sectionHead('BUILT FOR THE EVALUATION', 'What your committee will ask. What we hand them.', '')}
@@ -253,6 +273,16 @@ ${L.section(
 , { tone: 'ink' })}
 
 ${L.honestGapsBlock(['Karigar wage and payroll settlement is on the roadmap — job-work issue/receipt tracking itself is shipped today.'])}
+
+${L.section(
+  `${L.sectionHead('ILLUSTRATIVE IMPACT MODEL', 'What this could be worth on your factory floor.', 'Illustrative model on a ₹15cr/year manufacturer with a 40-karigar network — not a measured result. Run your own numbers, or ask for a 30-day growth report once you’re live.')}
+  ${L.stats([
+    { n: '~₹13L', l: 'modelled gold-loss saving from cutting loss by 0.4% on ₹8cr of metal through the factory' },
+    { n: '~₹12L/yr', l: 'modelled from a +2pt design→order conversion on 500 B2B design views/year' },
+    { n: '~₹8L/yr', l: 'modelled rush-job-work premiums avoided from a 15% faster average WIP cycle time' },
+    { n: '~₹7.5L', l: 'modelled saving from cutting receiving discrepancies 2%→0.5% on ₹5cr of purchases' },
+  ])}`
+, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('QUESTIONS MANUFACTURERS ASK', 'What manufacturers ask about job-work and loss.', '')}${L.faqBlock([
   { q: 'Will karigars resist being tracked more closely?', a: 'Frame it as job cards, not surveillance — the same records that catch abnormal loss also settle disputes in the karigar’s favour. It protects both sides.' },

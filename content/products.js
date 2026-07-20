@@ -20,7 +20,8 @@ ${L.section(
     { title: 'WhatsApp Commerce', text: 'Your full catalogue, checkout and payment reminders — inside the app your customers already open 50 times a day.', link: { href: '/products/whatsapp', label: 'Explore' } },
     { title: 'Instagram & Facebook', text: 'Turn DMs and story replies into orders without leaving Instagram.', link: { href: '/products/instagram-facebook', label: 'Explore' } },
     { title: 'AI Sales Agents & Voice', text: 'An AI workforce that drafts follow-ups, birthday invites and win-backs — every action waits in your approval queue.', link: { href: '/products/ai-sales-agents', label: 'Explore' } },
-  ])}`
+    { title: 'Optimize (Website CRO)', text: 'Analytics, heatmaps, A/B experiments, personalization, popups, push and an AI webchat — built into your website, on the same customer record.', link: { href: '/products/optimize', label: 'Explore' } },
+  ], 4)}`
 )}
 
 ${L.section(
