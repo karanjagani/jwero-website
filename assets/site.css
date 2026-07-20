@@ -485,6 +485,9 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: .92rem; backgroun
 /* ---------- compare table ---------- */
 .compare-tbl th:nth-child(2) { color: var(--brand); }
 [data-theme="dark"] .compare-tbl th:nth-child(2) { color: var(--brand-strong); }
+.compare-disclaimer { font-size: .8rem; color: var(--ink-2); margin-top: 12px; }
+.compare-disclaimer a { color: var(--brand); text-decoration: underline; }
+[data-theme="dark"] .compare-disclaimer a { color: var(--brand-strong); }
 .verdict-box { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 8px; }
 .verdict-box .v-cell { border: 1px solid var(--line); border-radius: var(--r); padding: 20px 22px; }
 .verdict-box .v-cell.v-jwero { border-color: color-mix(in srgb, var(--brand) 35%, var(--line)); background: var(--brand-soft); }
@@ -494,6 +497,7 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: .92rem; backgroun
 .filter-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
 .filter-chips a { display: inline-block; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); font-size: .85rem; font-weight: 600; text-decoration: none; color: var(--ink-2); background: var(--card); }
 .filter-chips a:hover, .filter-chips a.active { background: var(--brand); color: #fff; border-color: transparent; }
+.router-grid[id] { scroll-margin-top: 96px; }
 
 /* ---------- roadmap tabs (mobile) ---------- */
 .road-tabs { display: none; }

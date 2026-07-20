@@ -32,14 +32,17 @@ ${L.section(
   <div class="router-grid">
     <a class="router-card" id="single" href="/solutions/single-store"><div class="r-icon">◆</div><h3>Single store</h3><p>Run the whole shop from one screen — never lose a customer when staff leave.</p></a>
     <a class="router-card" id="chains" href="/solutions/multi-store-chains"><div class="r-icon">◇</div><h3>Multi-store & chains</h3><p>Every branch consistent, every customer one record.</p></a>
-    <a class="router-card" id="luxury" href="/solutions/single-store"><div class="r-icon">✦</div><h3>Luxury & boutique</h3><p>Clienteling worthy of what you sell — memory, not a mailing list.</p></a>
-    <a class="router-card" id="bridal" href="/solutions/single-store"><div class="r-icon">♥</div><h3>Bridal & wedding</h3><p>Track the whole family journey — trials, quotes, dates — in one thread.</p></a>
-    <a class="router-card" href="/solutions/single-store"><div class="r-icon">◈</div><h3>Diamond, gold & silver</h3><p>Certificate-aware catalogue and live-rate pricing, whatever the material.</p></a>
-    <a class="router-card" href="/solutions/single-store"><div class="r-icon">◉</div><h3>Lab-grown diamond</h3><p>Educate, convert and retain the fastest-growing segment in jewellery.</p></a>
-    <a class="router-card" id="d2c" href="/solutions/single-store"><div class="r-icon">▲</div><h3>D2C & ecommerce-first</h3><p>Keep Shopify. Add the channels and live-rate pricing it can’t do.</p></a>
-    <a class="router-card" id="wholesale" href="/solutions/manufacturers"><div class="r-icon">⇄</div><h3>Wholesale</h3><p>Every buyer, every memo, every order — in one B2B thread.</p></a>
+    <a class="router-card" id="luxury" href="/solutions/luxury-boutique"><div class="r-icon">✦</div><h3>Luxury & boutique</h3><p>Clienteling worthy of what you sell — memory, not a mailing list.</p></a>
+    <a class="router-card" id="bridal" href="/solutions/bridal"><div class="r-icon">♥</div><h3>Bridal & wedding</h3><p>Track the whole family journey — trials, quotes, dates — in one thread.</p></a>
+    <a class="router-card" href="/solutions/diamond-retail"><div class="r-icon">◈</div><h3>Diamond retail</h3><p>Certificate-aware catalogue and instant answers on solitaire queries.</p></a>
+    <a class="router-card" href="/solutions/gold-retail"><div class="r-icon">●</div><h3>Gold retail</h3><p>Live-rate pricing, scheme enrolment and exchange in one flow.</p></a>
+    <a class="router-card" href="/solutions/silver-retail"><div class="r-icon">○</div><h3>Silver retail</h3><p>High volume, low margin — automated.</p></a>
+    <a class="router-card" href="/solutions/lab-grown-diamond"><div class="r-icon">◉</div><h3>Lab-grown diamond</h3><p>Educate, convert and retain the fastest-growing segment in jewellery.</p></a>
+    <a class="router-card" href="/solutions/gemstone-retail"><div class="r-icon">◆</div><h3>Gemstone retail</h3><p>Every stone has a story. Keep both.</p></a>
+    <a class="router-card" id="d2c" href="/solutions/d2c-brands"><div class="r-icon">▲</div><h3>D2C & ecommerce-first</h3><p>Keep Shopify. Add the channels and live-rate pricing it can’t do.</p></a>
+    <a class="router-card" id="wholesale" href="/solutions/b2b-jewellery"><div class="r-icon">⇄</div><h3>Wholesale</h3><p>Every buyer, every memo, every order — in one B2B thread.</p></a>
   </div>
-  <p style="margin-top:16px; font-size:.85rem; color:var(--ink-2);">Segment pages ship as their proof and copy earn a standalone page — until then, each segment above is covered inside our core solution pages. <a href="/solutions">See all solutions →</a></p>`
+  <p style="margin-top:16px; font-size:.85rem; color:var(--ink-2);">Don’t see your exact material or format above? <a href="/solutions">See all 22 solutions →</a> or <a href="#" data-wa="industries-retail">ask us on WhatsApp</a>.</p>`
 , { tone: 'tint' })}
 
 ${L.section(

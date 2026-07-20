@@ -75,11 +75,11 @@ ${L.section(
   <div class="router-grid">
     <a class="router-card" href="/solutions/single-store"><div class="r-icon">◆</div><h3>Single store</h3><p>Run the whole shop from one screen, and never lose a customer when staff leave.</p></a>
     <a class="router-card" href="/solutions/multi-store-chains"><div class="r-icon">◇</div><h3>Multi-store &amp; chains</h3><p>Every branch consistent, every customer one record, one owner’s view across it all.</p></a>
-    <a class="router-card" href="/industries/retail"><div class="r-icon">✦</div><h3>Luxury &amp; boutique</h3><p>Clienteling worthy of what you sell — memory, not a mailing list.</p></a>
-    <a class="router-card" href="/industries/retail"><div class="r-icon">♥</div><h3>Bridal &amp; wedding</h3><p>Track the whole family journey — trials, quotes, dates — in one thread.</p></a>
+    <a class="router-card" href="/solutions/luxury-boutique"><div class="r-icon">✦</div><h3>Luxury &amp; boutique</h3><p>Clienteling worthy of what you sell — memory, not a mailing list.</p></a>
+    <a class="router-card" href="/solutions/bridal"><div class="r-icon">♥</div><h3>Bridal &amp; wedding</h3><p>Track the whole family journey — trials, quotes, dates — in one thread.</p></a>
     <a class="router-card" href="/solutions/manufacturers"><div class="r-icon">⚒</div><h3>Manufacturers</h3><p>Gold in, gold out, and loss at every stage — on one ledger.</p></a>
-    <a class="router-card" href="/industries/retail"><div class="r-icon">⇄</div><h3>Wholesale &amp; B2B</h3><p>Every buyer, every memo, every order — in one B2B thread.</p></a>
-    <a class="router-card" href="/industries/retail"><div class="r-icon">▲</div><h3>D2C &amp; ecommerce-first</h3><p>Keep Shopify. Add the channels and live-rate pricing it can’t do.</p></a>
+    <a class="router-card" href="/solutions/b2b-jewellery"><div class="r-icon">⇄</div><h3>Wholesale &amp; B2B</h3><p>Every buyer, every memo, every order — in one B2B thread.</p></a>
+    <a class="router-card" href="/solutions/d2c-brands"><div class="r-icon">▲</div><h3>D2C &amp; ecommerce-first</h3><p>Keep Shopify. Add the channels and live-rate pricing it can’t do.</p></a>
     <a class="router-card" href="/solutions"><div class="r-icon">…</div><h3>More segments</h3><p>Diamond, gold, silver, lab-grown, franchise networks and more.</p></a>
   </div>`
 , { tone: 'tint' })}

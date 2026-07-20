@@ -194,6 +194,8 @@ function jtbdBlock(items) {
 }
 
 // Comparison matrix — T6 pages. rows: [{label, jwero, other}]; jwero/other can carry a "roadmap" flag.
+// Cells marked "[VERIFY]" are unconfirmed rather than asserted (D3) — never state a specific unverified
+// fact about a named third party as settled.
 function compareTable(theirName, rows) {
   return `<div class="tbl-wrap"><table class="tbl compare-tbl">
     <thead><tr><th>Capability</th><th>Jwero</th><th>${esc(theirName)}</th></tr></thead>
@@ -204,7 +206,25 @@ function compareTable(theirName, rows) {
           <td>${r.other}</td></tr>`
       )
       .join('')}</tbody>
-  </table></div>`;
+  </table></div>
+  <p class="compare-disclaimer">Claims about Jwero above are product-verified. Claims about ${esc(theirName)} are based on its public positioning; anything marked <strong>[VERIFY]</strong> is unconfirmed rather than asserted — <a href="/contact">tell us if something here is wrong</a> and we’ll correct it.</p>`;
+}
+
+// Verdict box — T6 pages' signature block: concede honestly, then state the fit.
+function verdictBox(chooseThemLabel, chooseThemText, chooseJweroText) {
+  return `<div class="verdict-box">
+    <div class="v-cell"><p class="v-tag">CHOOSE ${esc(chooseThemLabel).toUpperCase()} IF</p><p>${chooseThemText}</p></div>
+    <div class="v-cell v-jwero"><p class="v-tag">CHOOSE JWERO IF</p><p>${chooseJweroText}</p></div>
+  </div>`;
+}
+
+// "What switchers switch for" — the fixed 3-mechanism block reused across every comparison page.
+function switchForBlock() {
+  return cards([
+    { title: 'Memory', text: 'A reply, a price and a follow-up that already know the customer — not a blank thread or a record nobody else can see.' },
+    { title: 'Governed AI', text: 'Approval queues, daily caps, quiet hours and a five-scope kill switch — not a bot that fires without oversight, or none at all.' },
+    { title: 'One system', text: 'The catalogue, the CRM, the inbox and the operation share state — no exporting between tools to answer a simple question.' },
+  ]);
 }
 
 // "What we don't do yet" — the trust block, reusable on /platform, comparisons, product pages.
@@ -302,5 +322,5 @@ module.exports = {
   esc, hero, section, sectionHead, cards, steps, stats, faqBlock,
   governanceStrip, ctaBand, painRows, mockApproval, mockChat, mockMemory, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, PILLARS,
-  jtbdBlock, compareTable, honestGapsBlock,
+  jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock,
 };
