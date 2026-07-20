@@ -2,8 +2,8 @@
 (function () {
   'use strict';
 
-  // --- CONFIG (TODO: replace with production values before launch) ---
-  var WA_NUMBER = '910000000000'; // WhatsApp Business number, digits only
+  // --- CONFIG ---
+  var WA_NUMBER = '919967160916'; // WhatsApp Business number, digits only
   var WA_MESSAGES = {
     default: 'Hi Jwero — I would like to see a quick demo.',
     announce: 'Hi Jwero — saw the site, show me the live WhatsApp demo.',
@@ -150,6 +150,23 @@
   // --- misc --------------------------------------------------------
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+  // --- scroll reveal -------------------------------------------------
+  var revealTargets = document.querySelectorAll(
+    '.section .card, .section .stat, .router-card, .pillar, .impact-card, .jtbd-item, .section .mock, .onerecord-grid, .verdict-box .v-cell, .tier'
+  );
+  if (revealTargets.length && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealTargets.forEach(function (el, i) {
+      el.classList.add('reveal');
+      el.style.transitionDelay = (i % 4) * 60 + 'ms';
+      io.observe(el);
+    });
+  }
+
   // Growth report sample tabs
   var report = document.querySelector('[data-report]');
   if (report) {
@@ -171,7 +188,7 @@
   }
 
   // --- calculators ---------------------------------------------------
-  var CUR = { INR: '₹', USD: '$', GBP: '£', AED: 'AED ' };
+  var CUR = { INR: '₹', USD: '$', GBP: '£', AED: 'AED ', EUR: '€' };
   function fmt(n, cur) {
     var loc = cur === 'INR' ? 'en-IN' : 'en-US';
     return (CUR[cur] || '') + Math.round(n).toLocaleString(loc);

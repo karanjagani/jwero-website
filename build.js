@@ -173,7 +173,7 @@ function footerHTML() {
   </div>
 </footer>
 <div class="sticky-bar" role="navigation" aria-label="Quick actions">
-  <a href="tel:+910000000000">Call</a>
+  <a href="tel:+919967160916">Call</a>
   <a class="sb-wa" href="#" data-wa="sticky">WhatsApp</a>
   <a class="sb-demo" href="/book-demo">Book demo</a>
 </div>`;

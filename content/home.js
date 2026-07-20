@@ -24,7 +24,7 @@ const home = {
   ],
   body: `
 ${L.section(
-  `<div class="ticker-row"><span class="ticker-rate">24k gold ₹XX,XXX / 10g ▲</span><a href="/tools">calculators for your business →</a></div>`,
+  `<div class="ticker-row"><span class="ticker-rate">24k gold ₹1,43,460 / 10g — as of 20 Jul 2026</span><a href="/tools">calculators for your business →</a></div>`,
   { tone: 'tint', id: 'rate-strip' }
 )}
 
@@ -34,7 +34,7 @@ ${L.hero({
   sub: 'More repeat customers. Faster replies. Less dead stock. All from one customer record, one catalogue and one inbox — with an AI staff that drafts everything and sends nothing without your approval.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'home' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
-  note: 'A real person + our AI reply within minutes — that’s the product.',
+  note: 'A real person + our AI reply within minutes — that’s the product. Prefer email? <a href="/contact">hello@jwero.ai</a>.',
   mock: L.mockChat,
 })}
 

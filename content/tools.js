@@ -43,7 +43,7 @@ ${L.section(
   `<div class="calc" id="calc-deadstock">
     <div class="calc-panel">
       <label for="ds-cur">Currency</label>
-      <select id="ds-cur"><option value="INR" selected>₹ INR</option><option value="USD">$ USD</option><option value="GBP">£ GBP</option><option value="AED">AED</option></select>
+      <select id="ds-cur"><option value="INR" selected>₹ INR</option><option value="USD">$ USD</option><option value="GBP">£ GBP</option><option value="AED">AED</option><option value="EUR">€ EUR</option></select>
 
       <label for="ds-value">Total inventory value <span class="calc-val"><span id="ds-value-out"></span> thousand</span></label>
       <input type="range" id="ds-value" min="500" max="500000" step="500" value="30000">
@@ -104,7 +104,7 @@ ${L.section(
   `<div class="calc" id="calc-scheme">
     <div class="calc-panel">
       <label for="gs-cur">Currency</label>
-      <select id="gs-cur"><option value="INR" selected>₹ INR</option><option value="USD">$ USD</option><option value="GBP">£ GBP</option><option value="AED">AED</option></select>
+      <select id="gs-cur"><option value="INR" selected>₹ INR</option><option value="USD">$ USD</option><option value="GBP">£ GBP</option><option value="AED">AED</option><option value="EUR">€ EUR</option></select>
 
       <label for="gs-enrol">New members enrolled per month <span class="calc-val" id="gs-enrol-out"></span></label>
       <input type="range" id="gs-enrol" min="5" max="500" step="5" value="40">
@@ -164,7 +164,7 @@ ${L.section(
   `<div class="calc" id="calc-warevenue">
     <div class="calc-panel">
       <label for="wr-cur">Currency</label>
-      <select id="wr-cur"><option value="INR" selected>₹ INR</option><option value="USD">$ USD</option><option value="GBP">£ GBP</option><option value="AED">AED</option></select>
+      <select id="wr-cur"><option value="INR" selected>₹ INR</option><option value="USD">$ USD</option><option value="GBP">£ GBP</option><option value="AED">AED</option><option value="EUR">€ EUR</option></select>
 
       <label for="wr-enq">WhatsApp enquiries per month <span class="calc-val" id="wr-enq-out"></span></label>
       <input type="range" id="wr-enq" min="20" max="3000" step="10" value="200">
@@ -225,7 +225,7 @@ ${L.section(
   `<div class="calc" id="calc-goldloss">
     <div class="calc-panel">
       <label for="gl-cur">Currency</label>
-      <select id="gl-cur"><option value="INR" selected>₹ INR</option><option value="USD">$ USD</option><option value="GBP">£ GBP</option><option value="AED">AED</option></select>
+      <select id="gl-cur"><option value="INR" selected>₹ INR</option><option value="USD">$ USD</option><option value="GBP">£ GBP</option><option value="AED">AED</option><option value="EUR">€ EUR</option></select>
 
       <label for="gl-vol">Monthly production / job-work volume (grams) <span class="calc-val" id="gl-vol-out"></span></label>
       <input type="range" id="gl-vol" min="100" max="100000" step="100" value="8000">

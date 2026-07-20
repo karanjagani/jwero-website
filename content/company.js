@@ -24,6 +24,7 @@ ${L.hero({
   sub: 'Three tiers, named after how the AI earns your trust. Start where you are comfortable; move up when the results say so. No hidden costs, no hostage clauses, export-anytime.',
   primary: { href: '#', label: 'Get a straight price on WhatsApp', wa: 'pricing' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
+  note: 'Prefer email? <a href="/contact">hello@jwero.ai</a>.',
 })}
 
 ${L.section(
