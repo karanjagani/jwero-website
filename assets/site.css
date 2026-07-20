@@ -430,6 +430,18 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: .92rem; backgroun
 .live-demo-note a { color: var(--brand); font-weight: 600; text-decoration: underline; }
 [data-theme="dark"] .live-demo-note a { color: var(--brand-strong); }
 
+/* ---------- blog / long-form articles ---------- */
+.post-meta { font-size: .85rem; color: var(--ink-2); }
+.post-meta span:first-child { color: var(--brand); font-weight: 600; }
+[data-theme="dark"] .post-meta span:first-child { color: var(--brand-strong); }
+.post-body { max-width: 68ch; font-size: 1rem; line-height: 1.8; color: var(--ink-2); }
+.post-body h2 { margin-top: 40px; margin-bottom: 12px; color: var(--ink); font-size: 1.35rem; }
+.post-body h2:first-child { margin-top: 0; }
+.post-body p { margin-bottom: 16px; }
+.post-body strong { color: var(--ink); }
+.post-body a { color: var(--brand); text-decoration: underline; }
+[data-theme="dark"] .post-body a { color: var(--brand-strong); }
+
 /* ---------- proof strip ---------- */
 .proof-strip .stat-link { text-decoration: none; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
 .proof-strip .stat-link:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--brand) 30%, var(--line)); }

@@ -38,6 +38,7 @@ const pages = [
   ...require('./content/faq'),
   ...require('./content/company'),
   ...require('./content/partners'),
+  ...require('./content/blog'),
 ];
 
 // ---------------------------------------------------------------- nav
@@ -109,6 +110,7 @@ const NAV = [
     label: 'Resources',
     items: [
       ['/faq', 'FAQ', 'Every objection, answered honestly'],
+      ['/blog', 'Blog', 'Practical guides, not filler'],
       ['/tools', 'Tools & Calculators', 'Dead stock, gold scheme, WhatsApp revenue, gold loss'],
       ['/compare', 'Compare Alternatives', 'ERPs, WhatsApp tools, ecommerce & more'],
       ['/migration', 'Migration Centre', 'Switch without fear'],
@@ -158,7 +160,7 @@ function footerHTML() {
       </div>
       ${col('Products', [['/products','App grid'],['/products/whatsapp','WhatsApp Commerce'],['/products/instagram-facebook','Instagram & Facebook'],['/products/ai-sales-agents','AI Sales Agents'],['/products/crm','Jewellery CRM'],['/products/catalog','Catalogue (PIM)'],['/products/inventory','Inventory'],['/products/billing-finance','Billing & Finance (roadmap)'],['/products/gold-schemes','Gold Schemes'],['/products/digital-gold','Digital Gold'],['/products/multi-store','Multi-store']])}
       ${col('Solutions', [['/solutions','All 22 solutions'],['/industries/retail','Retail'],['/solutions/single-store','Single store'],['/solutions/multi-store-chains','Multi-store & chains'],['/solutions/luxury-boutique','Luxury & boutique'],['/solutions/bridal','Bridal & wedding'],['/solutions/manufacturers','Manufacturers'],['/solutions/b2b-jewellery','Wholesale & B2B'],['/solutions/d2c-brands','D2C brands'],['/solutions/franchise-networks','Franchise networks'],['/solutions/pain/dead-stock','Dead stock'],['/solutions/pain/lead-leakage','Lead leakage']])}
-      ${col('Resources', [['/faq','FAQ — every objection'],['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/tools/whatsapp-revenue-estimator','WhatsApp Revenue Estimator'],['/tools/gold-loss-calculator','Gold-Loss Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/partners','Partners'],['/customers','Customer proof']])}
+      ${col('Resources', [['/faq','FAQ — every objection'],['/blog','Blog'],['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/tools/whatsapp-revenue-estimator','WhatsApp Revenue Estimator'],['/tools/gold-loss-calculator','Gold-Loss Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/partners','Partners'],['/customers','Customer proof']])}
       ${col('Company', [['/company','About'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
       ${col('Trust', [['/trust/security','Security'],['/roadmap','Roadmap'],['/legal/privacy','Privacy'],['/legal/terms','Terms'],['/legal/dpdp','DPDP statement']])}
     </div>

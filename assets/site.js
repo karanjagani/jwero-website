@@ -92,7 +92,11 @@
     shopify: 'Hi Jwero — I run a Shopify store, show me what Jwero adds.',
     zohocrm: 'Hi Jwero — I currently use Zoho CRM, help me compare.',
     'faq-hub': 'Hi Jwero — I have a question that wasn’t on your FAQ page: ',
-    partners: 'Hi Jwero — I’d like to talk about the partner program. Here’s who I’d bring first: '
+    partners: 'Hi Jwero — I’d like to talk about the partner program. Here’s who I’d bring first: ',
+    'blog-hub': 'Hi Jwero — I’d like to see a topic covered on the blog: ',
+    'blog-whatsapp': 'Hi Jwero — I read the WhatsApp guide, show me how it works for my business.',
+    'blog-deadstock': 'Hi Jwero — I read the dead stock guide, show me matched selling and rotation.',
+    'blog-scheme': 'Hi Jwero — I read the gold scheme guide, show me digital collection for my scheme book.'
   };
 
   function waLink(ctx, extra) {
