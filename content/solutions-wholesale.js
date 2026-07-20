@@ -98,6 +98,19 @@ ${L.section(
     { title: 'Reorder intelligence', text: 'See which retailers have gone quiet and haven’t reordered — before the relationship goes cold.' },
   ])}`
 )}
+${L.section(
+  `${L.sectionHead('A DAY IN YOUR TRADE DESK ON JWERO', 'Morning to night.', '')}
+  ${L.steps([
+    { title: 'Morning', text: 'Overnight orders from three retailers are already captured against the right pricing tier — no screenshots to reconcile by hand.' },
+    { title: 'Afternoon', text: 'A buyer asks for a lot-level grading detail on a gemstone parcel — it’s a catalogue field, not a call to the back office.' },
+    { title: 'Evening', text: 'The reorder view flags a retailer who’s gone quiet for six weeks — a nudge goes out before the relationship goes cold, not after it’s lost.' },
+    { title: 'Night', text: 'A new buyer’s catalogue request gets buyer-specific pricing visibility set up once — every order after follows the same rule automatically.' },
+  ], 4)}`
+, { tone: 'tint' })}
+${L.jtbdBlock([
+  { when: 'a retailer orders after hours', want: 'capture it against the right pricing tier automatically', so: 'nothing gets renegotiated or miskeyed the next morning' },
+  { when: 'a regular buyer stops reordering', want: 'see it flagged before month-end', so: 'a trade relationship doesn’t quietly die unnoticed' },
+])}
 ${L.section(`${L.sectionHead('QUESTIONS B2B TRADERS ASK', '', '')}${L.faqBlock(b2bJewelleryFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="b2b">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 

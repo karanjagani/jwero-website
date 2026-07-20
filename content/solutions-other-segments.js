@@ -95,6 +95,19 @@ ${L.section(
     { quote: 'Retention beyond the first order is basically zero.', title: 'A customer record, not just an order history', text: 'One record turns a first-time buyer into a remembered relationship, with occasion and win-back journeys.' },
   ])}`
 )}
+${L.section(
+  `${L.sectionHead('A DAY IN YOUR D2C BUSINESS ON JWERO', 'Morning to night.', '')}
+  ${L.steps([
+    { title: 'Morning', text: 'Overnight Instagram DMs from an ad campaign already have drafted, gold-rate-accurate replies waiting for approval — not sitting unread since midnight.' },
+    { title: 'Afternoon', text: 'A Shopify order comes in; it lands on the same customer record as her WhatsApp conversation from last week — one buyer, one history, not two disconnected systems.' },
+    { title: 'Evening', text: 'A cart-abandoner gets a personal, approved follow-up on WhatsApp — not a generic discount-code email blast.' },
+    { title: 'Night', text: 'The next morning’s ad spend gets pointed at what actually converted, because the record shows which DM turned into a real order.' },
+  ], 4)}`
+, { tone: 'tint' })}
+${L.jtbdBlock([
+  { when: 'an ad-driven DM comes in after hours', want: 'get an accurate, on-brand reply immediately', so: 'the click doesn’t go cold before your team wakes up' },
+  { when: 'a customer buys on Shopify after chatting on WhatsApp', want: 'have both touchpoints on one record', so: 'the relationship isn’t split across two disconnected tools' },
+])}
 ${L.section(`${L.sectionHead('QUESTIONS D2C BRANDS ASK', '', '')}${L.faqBlock(d2cFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/compare/jwero-vs-shopify">See Jwero vs Shopify</a> or <a href="/faq">the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="d2c">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -163,6 +176,19 @@ ${L.section(
     { quote: 'Onboarding a new franchisee takes forever.', title: 'A repeatable rollout', text: 'The same system, the same structure, every time a new location joins.' },
   ])}`
 )}
+${L.section(
+  `${L.sectionHead('A DAY ACROSS YOUR FRANCHISE NETWORK ON JWERO', 'Morning to night.', '')}
+  ${L.steps([
+    { title: 'Morning', text: 'Head office pushes a festival campaign template once — every franchisee location gets it in brand-consistent form, no location freelancing its own version.' },
+    { title: 'Afternoon', text: 'A customer who bought at one franchise location visits another — the counter there sees her full purchase history, not a blank slate.' },
+    { title: 'Evening', text: 'The owner rollup flags one location’s sales pattern drifting from the network average — visible today, not discovered at quarter-end.' },
+    { title: 'Night', text: 'A new franchisee’s onboarding checklist runs identically to the last one — same system, same structure, no reinventing the rollout.' },
+  ], 4)}`
+, { tone: 'tint' })}
+${L.jtbdBlock([
+  { when: 'a customer visits a franchise location she hasn’t been to before', want: 'her history to be visible there too', so: 'the brand feels consistent, not like separate shops wearing the same sign' },
+  { when: 'a location’s performance starts drifting', want: 'see it in the owner rollup immediately', so: 'brand-standard drift gets caught early, not at the annual review' },
+])}
 ${L.section(`${L.sectionHead('QUESTIONS FRANCHISORS ASK', '', '')}${L.faqBlock(franchiseFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="franchise">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 

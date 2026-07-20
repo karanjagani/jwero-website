@@ -110,6 +110,19 @@ ${L.section(
     { title: 'Slow-mover visibility', text: 'Solitaire and high-value pieces get the same ageing visibility as everything else — nothing sits unnoticed.' },
   ])}`
 )}
+${L.section(
+  `${L.sectionHead('A DAY IN YOUR DIAMOND COUNTER ON JWERO', 'Morning to night.', '')}
+  ${L.steps([
+    { title: 'Morning', text: 'A solitaire enquiry from last night already has a certificate-backed 4C reply drafted and waiting for your approval tap.' },
+    { title: 'Afternoon', text: 'A walk-in asks to compare two certified stones — your counter pulls both catalogue records side by side, with the numbers, not guesswork.' },
+    { title: 'Evening', text: 'A quoted solitaire hasn’t moved in three weeks — it surfaces in your ageing view before it becomes dead stock nobody remembers to follow up on.' },
+    { title: 'Night', text: 'A late enquiry about a certified piece gets an accurate, approved-tone reply — while your team sleeps, not while a competitor answers first.' },
+  ], 4)}`
+, { tone: 'tint' })}
+${L.jtbdBlock([
+  { when: 'a customer asks a technical 4C question', want: 'answer instantly with certificate-accurate detail', so: 'trust isn’t lost to a slow or vague reply' },
+  { when: 'a certified stone sits unsold for weeks', want: 'see it ageing before it becomes forgotten stock', so: 'capital tied up in solitaires gets followed up on, not written off' },
+])}
 ${L.section(`${L.sectionHead('QUESTIONS DIAMOND RETAILERS ASK', '', '')}${L.faqBlock(diamondRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="diamond">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -146,6 +159,19 @@ ${L.section(
     { title: 'Exchange & repair tracking', text: 'Old-gold exchange and repairs stay on the customer record, not a separate register.' },
   ])}`
 )}
+${L.section(
+  `${L.sectionHead('A DAY IN YOUR GOLD COUNTER ON JWERO', 'Morning to night.', '')}
+  ${L.steps([
+    { title: 'Morning', text: 'The rate updates for the day — every catalogue price, open quote and pending invoice follows it automatically, nobody repricing by hand.' },
+    { title: 'Afternoon', text: 'A scheme member walks in for her sixth instalment — her balance, past payments and maturity date are on screen before she finishes saying her name.' },
+    { title: 'Evening', text: 'An old-gold exchange gets logged straight onto the customer’s record, not a separate paper register that never makes it back to the shop file.' },
+    { title: 'Night', text: 'An enquiry about tomorrow’s rate gets an honest “checking and confirming by morning” reply — never a stale price quoted after the market moved.' },
+  ], 4)}`
+, { tone: 'tint' })}
+${L.jtbdBlock([
+  { when: 'the gold rate changes mid-conversation', want: 'every open quote and catalogue price to follow automatically', so: 'nobody sells at yesterday’s price by mistake' },
+  { when: 'a scheme member walks in', want: 'see her balance and history instantly', so: 'the counter conversation starts from trust, not a lookup' },
+])}
 ${L.section(`${L.sectionHead('QUESTIONS GOLD RETAILERS ASK', '', '')}${L.faqBlock(goldRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="gold">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -216,6 +242,19 @@ ${L.section(
     { title: 'Retention beyond the first order', text: 'One customer record turns a single online sale into a remembered relationship.' },
   ])}`
 )}
+${L.section(
+  `${L.sectionHead('A DAY IN YOUR LAB-GROWN BUSINESS ON JWERO', 'Morning to night.', '')}
+  ${L.steps([
+    { title: 'Morning', text: 'An Instagram comment asking “is this real or lab-grown?” already has a catalogue-backed, educational draft reply waiting for your approval.' },
+    { title: 'Afternoon', text: 'A price-comparison DM gets an accurate, live-rate quote — not a stale number copied from last week’s post.' },
+    { title: 'Evening', text: 'Your Shopify store takes an order; it syncs to the same customer record your WhatsApp team is already using — one buyer, one history.' },
+    { title: 'Night', text: 'A first-time buyer’s enquiry becomes a saved record, not a one-off DM — so the second purchase starts from a relationship, not a cold message.' },
+  ], 4)}`
+, { tone: 'tint' })}
+${L.jtbdBlock([
+  { when: 'a buyer asks a natural-vs-lab-grown question', want: 'give a consistent, accurate answer every time', so: 'education doesn’t depend on which staff member replies' },
+  { when: 'a customer buys once online', want: 'keep her on one record across every channel', so: 'the second sale isn’t a cold outreach' },
+])}
 ${L.section(`${L.sectionHead('QUESTIONS LAB-GROWN BRANDS ASK', '', '')}${L.faqBlock(labGrownFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/compare/jwero-vs-shopify">See Jwero vs Shopify</a> or <a href="/faq">the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="labgrown">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
