@@ -20,6 +20,7 @@ const home = {
     { q: 'Is Jwero built only for large jewellery chains?', a: 'No — the same system runs a single counter and a hundred-branch chain. A single-store jeweller gets the whole operating system from day one; a chain gets the same one, with governance and structure that scale to every branch.' },
     { q: 'Can multiple stores or a franchise network use it?', a: 'Yes. Multi-store and franchise structure — shared brand, per-branch data, central control — is built in, not bolted on.' },
     { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time.' },
+    { q: 'What kind of impact can I expect?', a: 'It depends on your business, which is why we won’t quote a percentage nobody can verify. Faster response, structured follow-up, visible dead stock and disciplined schemes are the same levers that let bigger players out-remember their customers at scale. Run the calculators on your own numbers, or ask for a 30-day growth report so you see your own impact.' },
   ],
   body: `
 ${L.section(
@@ -30,12 +31,42 @@ ${L.section(
 ${L.hero({
   eyebrow: 'THE AI OPERATING SYSTEM FOR JEWELLERY BUSINESS',
   h1: 'Run your whole jewellery business on one system — with an AI staff that waits for your yes.',
-  sub: 'One customer record. One catalogue. One inventory truth. One inbox for WhatsApp, Instagram and your storefront. Every AI action drafted, never sent, until you approve it.',
+  sub: 'More repeat customers. Faster replies. Less dead stock. All from one customer record, one catalogue and one inbox — with an AI staff that drafts everything and sends nothing without your approval.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'home' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   note: 'A real person + our AI reply within minutes — that’s the product.',
   mock: L.mockChat,
 })}
+
+${L.section(
+  `${L.sectionHead('THE IMPACT', 'What actually changes for your business.', 'Not features. Outcomes — the ones that show up in revenue, margin and the hours your team gets back.')}
+  ${L.impactGrid([
+    {
+      lever: 'LEAD RESPONSE',
+      before: 'An enquiry at 11pm waits until morning — she has already bought from someone else by then.',
+      after: 'Every enquiry gets a priced, knowledgeable reply within minutes, day or night.',
+      link: { href: '/products/whatsapp', label: 'See it' },
+    },
+    {
+      lever: 'DEAD STOCK',
+      before: 'Capital sits frozen in designs nobody is buying — financed at interest, sold never.',
+      after: 'Idle pieces matched to the customers whose taste actually fits, and sold — not marked down.',
+      link: { href: '/tools/dead-stock-calculator', label: 'Run your number' },
+    },
+    {
+      lever: 'CUSTOMER MEMORY',
+      before: 'A salesperson leaves, and twenty years of customer relationships leave with them.',
+      after: 'Every customer, occasion and preference lives on the business’s own record — permanently.',
+      link: { href: '/platform/customer-memory', label: 'See the record' },
+    },
+    {
+      lever: 'GOLD SCHEMES',
+      before: 'Instalments missed, maturity disputes, a paper register nobody fully trusts.',
+      after: 'Enrolment, reminders and maturity run digitally — this year’s book is next year’s revenue.',
+      link: { href: '/products/gold-schemes', label: 'See schemes' },
+    },
+  ])}`
+, { tone: 'tint' })}
 
 ${L.section(
   `${L.sectionHead(
@@ -87,7 +118,7 @@ ${L.section(
 ${L.governanceStrip()}
 
 ${L.section(
-  `${L.sectionHead('PROOF, BUILT NOT PROMISED', 'The numbers below are counted in the product, not written by marketing.', '')}
+  `${L.sectionHead('PROOF, BUILT NOT PROMISED', 'The numbers below are counted in the product, not written by marketing.', 'This is what has to be true for the impact above to actually happen — not marketing copy, plumbing you can inspect.')}
   ${L.proofStrip()}
   <div class="card" style="margin-top:24px; text-align:center;">
     <h3>This website’s chat runs on Jwero.</h3>
@@ -99,7 +130,7 @@ ${L.section(
 ${L.section(
   `<div class="grid grid-2" style="align-items:center; gap:48px;">
     <div>
-      ${L.sectionHead('WHAT CAME BACK THIS WEEK?', 'The growth report: the product’s weekly voice.', 'Every week, the owner gets a plain-language report: how many past customers returned, how many appointments were booked, how much revenue the system brought back. Not a dashboard you must remember to open — an answer that arrives.')}
+      ${L.sectionHead('WHAT CAME BACK THIS WEEK?', 'The growth report: the product’s weekly voice.', 'Every week, the owner gets a plain-language report: how many past customers returned, how many appointments were booked, how much revenue the system brought back. Not a dashboard you must remember to open — an answer that arrives. This is what impact looks like when it’s measured, not promised.')}
       <a class="btn btn-primary" href="#" data-wa="report">Get a sample report on WhatsApp</a>
     </div>
     <div class="report" data-report>
@@ -137,6 +168,7 @@ ${L.section(`${L.sectionHead('QUESTIONS BUSINESSES ASK', 'Straight answers, befo
   { q: 'Does it support Hindi, Gujarati or Tamil?', a: 'The AI voice assistant speaks 14 languages today. The product interface itself is English — vernacular UI is on the public roadmap, and we say so plainly rather than pretend otherwise.' },
   { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time. <a href="/trust/security">Read about security</a>.' },
   { q: 'Can I integrate this with my existing ERP or website?', a: 'Yes — Tally, Zoho Books, Shopify, WooCommerce, Unicommerce and Meta connectors are built in. <a href="/platform/integrations">See integrations</a>.' },
+  { q: 'What kind of impact can I expect?', a: 'It depends on your business, which is why we won’t quote a percentage nobody can verify. What we can show you: faster response, structured follow-up, visible dead stock and disciplined schemes are the same levers that let bigger players out-remember their customers at scale. Run the calculators on your own numbers, or ask for a 30-day growth report so you see your own impact — not someone else’s case study.' },
 ])}
 <p class="cta-note" style="margin-top:18px">More questions? <a href="#" data-wa="faq">Ask on WhatsApp</a>.</p>`)}
 
@@ -148,6 +180,7 @@ ${L.section(
       <li><strong>2.</strong> See it running on your own data</li>
       <li><strong>3.</strong> Go live before the season</li>
     </ol>
+    <p class="close-plan-note">The sooner you start, the sooner it shows up in your own growth report.</p>
     <div class="cta-row center">
       <a class="btn btn-primary" href="#" data-wa="close">Chat with us on WhatsApp</a>
       <a class="btn btn-ghost-light" href="/book-demo">Book a demo</a>

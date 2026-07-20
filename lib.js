@@ -228,6 +228,22 @@ function switchForBlock() {
 }
 
 // "What we don't do yet" — the trust block, reusable on /platform, comparisons, product pages.
+// Before/after business-impact cards — the "what changes for your business" block.
+// items: [{lever, before, after, link?}]. Only ever states Tier-A-grounded outcomes.
+function impactGrid(items) {
+  return `<div class="impact-grid">${items
+    .map(
+      (i) => `
+    <div class="impact-card">
+      <p class="impact-lever">${i.lever}</p>
+      <p class="impact-before"><span class="impact-tag">Today</span>${i.before}</p>
+      <p class="impact-after"><span class="impact-tag impact-tag-go">With Jwero</span>${i.after}</p>
+      ${i.link ? `<a class="card-link" href="${i.link.href}">${i.link.label} →</a>` : ''}
+    </div>`
+    )
+    .join('')}</div>`;
+}
+
 function honestGapsBlock(items) {
   return `
 <div class="gaps-block">
@@ -322,5 +338,5 @@ module.exports = {
   esc, hero, section, sectionHead, cards, steps, stats, faqBlock,
   governanceStrip, ctaBand, painRows, mockApproval, mockChat, mockMemory, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, PILLARS,
-  jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock,
+  jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid,
 };
