@@ -56,6 +56,12 @@ ${L.section(`${L.sectionHead('RESOURCES', '', '')}${L.cards([
   { title: 'Migration Centre', text: 'Switch without a rip-out — keep your books, change your growth.', link: { href: '/migration', label: 'See the plan' } },
 ])}`)}
 
+${L.section(`${L.sectionHead('QUESTIONS RETAIL BUSINESSES ASK', '', '')}${L.faqBlock([
+  { q: 'Is Jwero built for small retailers or large chains?', a: 'Both, on the same system. A single-store business gets the whole operating system from day one; a chain gets the same one, with governance and branch structure that scale.' },
+  { q: 'Does it matter if I sell mostly gold, mostly diamond, or a mix?', a: 'No — the catalogue, pricing engine and CRM handle purity, certification and material-specific fields for all of them.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
 ${L.ctaBand('Find where you fit.', 'Tell us your segment and size — we’ll route you to the exact page and the exact plan.', 'industries-retail')}
 `,
 };

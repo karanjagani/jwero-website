@@ -11,6 +11,10 @@ const security = {
     { q: 'Can I take my data out?', a: 'Yes, at any time, in standard formats. Your customer list is your asset. That promise is a design decision, not a support favour.' },
     { q: 'What can AI do and not do with my data?', a: 'AI drafts actions inside your approval queues, daily caps and quiet hours. It cannot bypass those limits, and a kill switch can stop it at five scopes instantly.' },
     { q: 'Is Jwero SOC 2 or ISO certified?', a: 'Not yet — formal certifications are planned as we scale, and we will publish them when earned, not before. We would rather tell you that plainly than let an audit discover it.' },
+    { q: 'This is family business data — how do I know it won’t leave the family?', a: 'It runs in a database isolated to your business alone, with encrypted credentials and access controlled entirely by roles you set. Nobody outside your business — not another customer of ours, not a generic support queue — can see it. That isolation is the design, not a policy promise.' },
+    { q: 'What happens to customer data if a salesperson who handled it leaves?', a: 'Deactivate their login in seconds. Every conversation and record they touched stays with the business — that is the entire point of the record belonging to the business, not the person.' },
+    { q: 'What if the internet goes down at my shop?', a: 'Honestly: Jwero is cloud software and needs a connection today. Offline mode is on the public roadmap, not shipped — mobile data works as a practical backup in the meantime.' },
+    { q: 'Can a competitor of mine, also on Jwero, ever see my data?', a: 'No. Physical database-per-tenant isolation means your data structurally cannot be queried alongside another business’s, regardless of who else uses the platform.' },
   ],
   body: `
 ${L.hero({
@@ -59,6 +63,14 @@ ${L.section(
   <p style="margin-top:14px;"><a class="btn btn-ghost" href="#" data-wa="security-pdf">Request the security overview PDF</a></p>`
 )}
 
+${L.section(`${L.sectionHead('THE FEARS OWNERS DON’T ALWAYS SAY OUT LOUD', '', '')}${L.faqBlock([
+  { q: 'This is family business data — how do I know it won’t leave the family?', a: 'It runs in a database isolated to your business alone. Nobody outside your business can see it — that is the design, not a policy promise.' },
+  { q: 'What happens to customer data if a salesperson leaves?', a: 'Deactivate their login in seconds. Every record stays with the business — that is the entire point of the record belonging to the business, not the person.' },
+  { q: 'What if the internet goes down at my shop?', a: 'Honestly: Jwero needs a connection today. Offline mode is on the roadmap, not shipped.' },
+  { q: 'Can a competitor of mine, also on Jwero, see my data?', a: 'No. Database-per-tenant isolation means it structurally cannot happen, regardless of who else uses the platform.' },
+])}
+<p class="cta-note" style="margin-top:14px">More on security and data? <a href="/faq#security">See every question we’ve been asked →</a></p>`)}
+
 ${L.ctaBand('Put your IT questions to us.', 'Enterprise evaluators: ask for the security overview document for your committee.', 'security', { enterprise: true })}
 `,
 };
@@ -71,6 +83,8 @@ const customers = {
   faqs: [
     { q: 'Where are the customer logos and testimonials?', a: 'Coming — with names, numbers and dates, or not at all. We publish stories only after the owner verifies the figures on record. What you will never see here: stock-photo testimonials or unverifiable claims.' },
     { q: 'What is the Lighthouse Partner program?', a: 'A founding cohort of jewellery businesses who get concierge onboarding, direct influence on the roadmap, and preferred terms — in exchange for measured, publishable results. Limited seats per region and segment.' },
+    { q: 'Without case studies yet, why should I trust the ROI claims?', a: 'You shouldn’t take our word for it — that is exactly why the weekly growth report exists. It is generated from your own data once you are live, so you judge on your own evidence, not a testimonial.' },
+    { q: 'How do I know the product actually works, not just the pitch?', a: 'Test the WhatsApp button on this site. It is not a form — it is Jwero’s own inbox, answered by Jwero’s own AI workforce with approvals on. That is a live demo you can run before talking to anyone.' },
   ],
   body: `
 ${L.hero({
@@ -116,6 +130,11 @@ ${L.section(
   `${L.sectionHead('FOUNDING COHORT', 'Become a Lighthouse Partner.', 'The first businesses in each region get concierge onboarding, a direct line to the product team, preferred terms — and their verified numbers on this page, if they choose. Limited seats per region and segment, because concierge does not scale.')}
   <div class="cta-row"><a class="btn btn-primary" href="#" data-wa="lighthouse">Apply on WhatsApp</a><a class="btn btn-ghost" href="/book-demo">Book a conversation</a></div>`
 )}
+
+${L.section(`${L.sectionHead('THE HONEST QUESTION', '', '')}${L.faqBlock([
+  { q: 'Without case studies yet, why should I trust the ROI claims?', a: 'You shouldn’t take our word for it — that’s exactly why the weekly growth report exists, generated from your own data once you’re live.' },
+  { q: 'How do I know the product actually works, not just the pitch?', a: 'Test the WhatsApp button on this site — it’s Jwero’s own inbox, answered by Jwero’s own AI workforce, with approvals on.' },
+])}`)}
 
 ${L.ctaBand('Judge us on your own numbers.', 'The honest pitch: run a pilot, read your growth report in 30 days, then decide.', 'customers')}
 `,
@@ -172,6 +191,13 @@ ${L.section(
 
 ${L.honestGapsBlock(['POS counter billing is on our roadmap. If a pure-messaging tool is genuinely all you need today, we’ll tell you that honestly rather than oversell.'])}
 
+${L.section(`${L.sectionHead('QUESTIONS SWITCHERS ASK', '', '')}${L.faqBlock([
+  { q: 'Isn’t a WhatsApp tool enough for messaging?', a: 'For pure messaging, yes. The gap appears the moment a reply needs to know her purchase history, scheme balance, or today’s gold rate.' },
+  { q: 'Can I use a WhatsApp tool and Jwero together?', a: 'Most businesses replace the WhatsApp tool once they see Jwero’s replies come from the same record as the rest of the business.' },
+  { q: 'Does switching mean losing my number or chat history?', a: 'No — your number moves onto the official API. Chat history import depends on the tool you’re switching from; ask us honestly what carries over.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
 ${L.section(
   `<div class="stack-verdict">Switching is a data question, not a leap of faith. See the <a href="/migration">Migration Centre</a> for exactly what moves and how.</div>`
 )}
@@ -191,6 +217,9 @@ const migration = {
     { q: 'What if we are in wedding season?', a: 'We operate a season change-freeze: no disruptive changes during your peak weeks. Go-lives are scheduled around your calendar, not our quarter.' },
     { q: 'What if I want to leave Jwero later?', a: 'Your data exports in standard formats, any time, no questions. A platform that holds customers hostage does not deserve them.' },
     { q: 'How does Tally fit into this?', a: 'It doesn’t move. See the <a href="/platform/integrations/tally">Tally coexistence page</a> — Jwero bridges to it, your books stay put.' },
+    { q: 'My customer data is a mess — half on staff phones, half in a diary. Can you still start?', a: 'Yes. Every business starts messy; it is the normal starting point, not a disqualifying one. We import what exists and the record gets more complete as the system is used.' },
+    { q: 'Will my shop have any downtime during setup?', a: 'No — Jwero is added alongside what you already run. Nothing is switched off to switch this on.' },
+    { q: 'Can I see my own data inside Jwero before I commit to anything?', a: 'Ask for a supervised sample import — we load a slice of your real customer list so you evaluate on your own data, not a demo dataset.' },
   ],
   body: `
 ${L.hero({
@@ -221,6 +250,13 @@ ${L.section(
     { title: 'Export anytime', text: 'Your data leaves with you in standard formats whenever you ask. This is a design decision, not a favour.' },
   ])}`
 , { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('MIGRATION QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'My customer data is a mess — half on staff phones, half in a diary. Can you still start?', a: 'Yes. Every business starts messy. We import what exists and the record gets more complete as the system is used.' },
+  { q: 'Will my shop have any downtime during setup?', a: 'No — Jwero is added alongside what you already run. Nothing is switched off to switch this on.' },
+  { q: 'Can I see my own data inside Jwero before I commit?', a: 'Ask for a supervised sample import — we load a slice of your real customer list so you evaluate on your own data.' },
+])}
+<p class="cta-note" style="margin-top:14px">More on migration? <a href="/faq#migration">See every question we’ve been asked →</a></p>`)}
 
 ${L.ctaBand('Tell us what you run today.', 'Name your current software and we will send the exact migration plan — what stays, what bridges, what improves.', 'migration')}
 `,

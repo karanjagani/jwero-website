@@ -11,6 +11,8 @@ const schemes = {
     { q: 'How do customers pay instalments?', a: 'Customers get reminders on WhatsApp with payment links, can check their balance anytime, and your staff can record counter payments — every entry on an auditable trail.' },
     { q: 'What about compliance?', a: 'Plans carry KYC capture, configurable terms, OTP-verified closures and a full audit trail. Scheme rules vary by market — Jwero gives you the controls and the records; your CA sets the policy.' },
     { q: 'Can I migrate paper schemes mid-cycle?', a: 'Yes. Existing members import with their paid-instalment history, so nobody restarts a plan and nobody’s record is lost.' },
+    { q: 'Will my long-time scheme members trust a digital system over the paper register they know?', a: 'Most already trust WhatsApp reminders more than a register they can’t check themselves — transparent balances they can see anytime tend to build trust faster than paper, not slower.' },
+    { q: 'What if scheme rules differ by state or by our own policy?', a: 'Duration, grace days and maturity benefits are configurable per plan — Jwero gives you the controls and the audit trail; your CA still sets the policy.' },
   ],
   body: `
 ${L.hero({
@@ -54,6 +56,12 @@ ${L.section(
   `<div class="stack-verdict"><strong>The lock-in nobody resents:</strong> a healthy scheme book is next year’s revenue, banked this year. Run the <a href="/tools/gold-scheme-calculator">Gold Scheme Calculator</a> to see what your enrolment rate is worth in locked-in future sales.</div>`
 )}
 
+${L.section(`${L.sectionHead('SCHEME QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'Will long-time members trust digital over the paper register?', a: 'Transparent balances they can check themselves tend to build trust faster than paper, not slower.' },
+  { q: 'What if scheme rules differ by our own policy?', a: 'Duration, grace days and maturity benefits are configurable per plan — you set the policy, Jwero gives you the controls and the audit trail.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
 ${L.ctaBand('Digitise the promise.', 'Bring your current scheme rules to a demo — we will show them running digitally, mid-cycle members included.', 'schemes')}
 `,
 };
@@ -67,6 +75,8 @@ const digitalGold = {
     { q: 'How does digital gold work for my customers?', a: 'They buy gold in small amounts from their phone at live rates. Their gram balance grows over time, and when they are ready, it converts to jewellery at your counter — a savings habit that ends in your showcase.' },
     { q: 'How do rates stay current?', a: 'Live rate feeds keep buy prices honest and current, and every transaction is recorded on the customer’s ledger with a full history.' },
     { q: 'Why offer digital gold at all?', a: 'Because someone will hold your customer’s monthly savings habit — a bank, an app, or you. Whoever holds the savings gets the wedding order.' },
+    { q: 'Is digital gold regulated, and are we exposed if something goes wrong?', a: 'KYC capture, transaction ledgers and OTP-verified redemptions keep every step auditable. Confirm current regulatory scope for your specific state and setup on a demo before launching — this is a compliance-sensitive product and deserves that conversation.' },
+    { q: 'What if a customer disputes their gram balance?', a: 'Every transaction is recorded on the customer’s ledger with a full history — balances are transparent and checkable by the customer at any time, which is what prevents most disputes before they start.' },
   ],
   body: `
 ${L.hero({
@@ -92,6 +102,12 @@ ${L.oneSystemBlock([
   'A digital gold balance nearing a milestone is visible to the same AI workforce that drafts occasion invitations — the redemption conversation starts itself.',
 ])}
 
+${L.section(`${L.sectionHead('DIGITAL GOLD QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'Is this regulated, and are we exposed if something goes wrong?', a: 'KYC, transaction ledgers and OTP-verified redemptions keep every step auditable. Confirm current regulatory scope for your setup on a demo — this deserves that conversation before launch.' },
+  { q: 'What if a customer disputes their gram balance?', a: 'Balances are transparent and checkable by the customer at any time, which prevents most disputes before they start.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
 ${L.ctaBand('Compete with the apps — as yourself.', 'Your name, your gold, your customers. See a digital gold journey from first gram to showcase visit.', 'digitalgold')}
 `,
 };
@@ -105,6 +121,8 @@ const multiStore = {
     { q: 'Can each branch have different prices and stock?', a: 'Yes. Branch-level stock, transfer tracking and price rules with central control — consistency where you want it, local flexibility where you allow it.' },
     { q: 'Can franchise partners use it without seeing everything?', a: 'Yes. Role-based access with ~150 fine-grained permissions controls exactly what each role, branch and partner can see and do.' },
     { q: 'Does a customer’s history follow them between branches?', a: 'Yes — one customer record across the network. She is known at every counter, and the whole relationship rolls up to one view for the owner.' },
+    { q: 'Will branch managers resist losing autonomy?', a: 'Central control applies to pricing consistency and brand standards; day-to-day counter operation stays with the branch. Most managers experience it as less admin work, not less authority.' },
+    { q: 'What if one branch genuinely needs different rules than the rest?', a: 'Controlled local exceptions exist for exactly this — they route through approvals rather than silently drifting, so flexibility doesn’t become inconsistency nobody can see.' },
   ],
   body: `
 ${L.hero({
@@ -130,6 +148,12 @@ ${L.oneSystemBlock([
   'A customer who buys at branch A is recognised at branch B on the same record — there’s only one Meera in the system, not one per branch.',
   'Branch-level performance data feeds the same reports the owner’s rollup reads from — no separate export per store.',
 ])}
+
+${L.section(`${L.sectionHead('MULTI-STORE QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'Will branch managers resist losing autonomy?', a: 'Central control applies to pricing consistency and brand standards; day-to-day counter operation stays with the branch.' },
+  { q: 'What if one branch genuinely needs different rules?', a: 'Controlled local exceptions route through approvals rather than silently drifting into inconsistency.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#segments">See every multi-store question →</a></p>`)}
 
 ${L.ctaBand('Bring network discipline to your business.', 'Multi-store deployments get staged rollouts: one pilot branch, then the network. Ask how.', 'multistore', { enterprise: true })}
 `,

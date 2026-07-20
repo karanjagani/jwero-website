@@ -28,6 +28,7 @@ ${L.section(
 , { tone: 'tint' })}
 ${L.section(`${L.sectionHead('WHAT SWITCHERS SWITCH FOR', '', '')}${L.switchForBlock()}`)}
 ${L.section(`<div class="stack-verdict">${migrationNote || `Switching is a data question, not a leap of faith. See the <a href="/migration">Migration Centre</a> for exactly what moves and how.`}</div>`)}
+${faqs && faqs.length ? L.section(`${L.sectionHead('QUESTIONS SWITCHERS ASK', '', '')}${L.faqBlock(faqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`) : ''}
 ${L.ctaBand(`Plan the switch from ${shortName || name}.`, 'Tell us what you use today — we’ll map exactly what carries over and what changes.', waCtx)}
 `,
   };

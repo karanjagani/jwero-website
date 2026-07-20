@@ -72,6 +72,12 @@ ${L.section(
   `${L.sectionHead('AFTER THE NUMBER', 'Visibility is step one. Memory is step two.', 'Knowing the cost changes the conversation; moving the stock changes the balance sheet. Jwero exposes ageing by piece and branch, then matches idle designs to customers whose taste fits — so clearance happens by invitation, not desperation.')}
   <p><a class="btn btn-ghost" href="/solutions/pain/dead-stock">Read the dead-stock playbook</a></p>`
 , { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'What counts as dead stock in jewellery?', a: 'A common working definition: pieces unsold after 180 days. Ageing analysis makes the real number visible per business.' },
+  { q: 'How is the carrying cost calculated?', a: 'Dead value × (your financing rate + ~2.5% insurance/storage/handling), per year — see the assumptions above the result.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 `,
 };
 
@@ -126,6 +132,12 @@ ${L.section(
   `${L.sectionHead('AFTER THE NUMBER', 'Run the promise properly.', 'Enrolment with KYC, reminders before every due date, transparent balances, OTP-verified maturity — the discipline that turns a leaky register into a compounding book.')}
   <p><a class="btn btn-ghost" href="/products/gold-schemes">See schemes in Jwero</a></p>`
 , { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'How does a savings scheme lock in revenue?', a: 'Members redeem their corpus at your counter — and typically spend more than the corpus when they do.' },
+  { q: 'Why does digital collection increase completion?', a: 'Most scheme dropouts are drift, not decisions. Automated reminders catch the drift in week one instead of month four.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 `,
 };
 

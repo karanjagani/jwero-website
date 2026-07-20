@@ -87,6 +87,8 @@ const singleStore = {
     { q: 'Is Jwero too much system for one store?', a: 'No — you start with three things: your customer list imported, your WhatsApp connected, your catalogue published. Everything else switches on only when you want it. One store with memory beats three without.' },
     { q: 'I am not technical. Can my team run this?', a: 'If they can use WhatsApp, they can run Jwero. Onboarding is done with you by a human, your data is imported for you, and AI drafts wait for a simple approve/edit tap.' },
     { q: 'What does it cost for a single store?', a: 'Entry plans are priced for single stores with monthly billing — see the pricing page. Measure it against one recovered customer, not against your billing software’s AMC.' },
+    { q: 'I need my family or business partner to agree before I decide anything. What do I show them?', a: 'Bring them into the WhatsApp demo directly, or share the growth report sample — a plain-language weekly account is easier for a sceptical family member to evaluate than a sales pitch.' },
+    { q: 'What if I try this and it doesn’t work for my shop?', a: 'You’ve changed nothing that can’t be undone — your billing software stays untouched, and your data exports any time you ask.' },
   ],
   body: `
 ${L.hero({
@@ -132,6 +134,12 @@ ${L.section(
   ])}`
 )}
 
+${L.section(`${L.sectionHead('QUESTIONS SINGLE-STORE OWNERS ASK', '', '')}${L.faqBlock([
+  { q: 'I need my family or partner to agree first. What do I show them?', a: 'Bring them into the WhatsApp demo directly, or share the growth report sample — easier to evaluate than a sales pitch.' },
+  { q: 'What if it doesn’t work for my shop?', a: 'You’ve changed nothing that can’t be undone — your billing software stays untouched, and your data exports any time.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
 ${L.ctaBand('One store. One system. One month to proof.', 'Show us the store and we will show you the plan — on WhatsApp, tonight if you like.', 'single-store')}
 `,
 };
@@ -145,6 +153,8 @@ const chains = {
     { q: 'How does rollout work for a multi-store business?', a: 'One pilot branch first, with success criteria you set. Then a staged rollout with per-branch configuration, training and a change-freeze around your peak season. No big-bang migrations.' },
     { q: 'Can head office control what branches do?', a: 'Yes — central price rules, campaign templates and role-based permissions per branch, with local flexibility only where you grant it.' },
     { q: 'We have an evaluation committee. What do you provide?', a: 'A security overview for IT, a migration plan for operations, an accounting-coexistence note for finance, and a pilot proposal with measurable exit criteria for the board.' },
+    { q: 'We already invested in an ERP or CRM across branches. Why change now?', a: 'You likely don’t need to change it — most multi-store businesses keep their ERP for the ledger and add Jwero for the revenue side: customers, WhatsApp, schemes, follow-up, all synced across branches.' },
+    { q: 'Won’t staff at different branches resist a new system differently?', a: 'Training is role-based and staged with the rollout — each branch gets the same onboarding as the pilot, not a rushed rollout after week one.' },
   ],
   body: `
 ${L.hero({
@@ -179,6 +189,12 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
+${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', '', '')}${L.faqBlock([
+  { q: 'We already invested in an ERP or CRM. Why change now?', a: 'You likely don’t need to — most multi-store businesses keep their ERP for the ledger and add Jwero for the revenue side, synced across branches.' },
+  { q: 'Won’t staff at different branches resist differently?', a: 'Training is role-based and staged with the rollout — each branch gets the same onboarding as the pilot.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
 ${L.ctaBand('Start with one branch.', 'Pick your toughest store. If the pilot doesn’t earn the rollout, it doesn’t deserve one.', 'chains', { enterprise: true })}
 `,
 };
@@ -193,6 +209,8 @@ const manufacturers = {
     { q: 'Does it handle artisan job-work?', a: 'Yes — job-work issue and receipt with weight reconciliation, gated by the rules you set per artisan and order.' },
     { q: 'Can wholesalers take orders on WhatsApp?', a: 'Yes — share live B2B catalogues with retailer-specific visibility, take orders in chat, and track the whole purchase-to-pay chain.' },
     { q: 'Is karigar wage settlement included?', a: 'Job-work tracking — issue, receipt, weight reconciliation — is shipped today. Wage and payroll settlement for karigars is on the public roadmap, and we say so rather than imply otherwise.' },
+    { q: 'Will karigars resist being tracked more closely than the notebook they’re used to?', a: 'Frame it as job cards, not surveillance — the same records that catch abnormal loss also settle disputes in the karigar’s favour when they did nothing wrong. Job tracking protects both sides, not just the owner.' },
+    { q: 'Our process is unusual — casting, CAD or export-specific. Does this actually fit?', a: 'Casting, CAD and export-house specific pages exist because these workflows genuinely differ — see <a href="/solutions/casting-units">casting units</a>, <a href="/solutions/cad-services">CAD services</a> or <a href="/solutions/export-houses">export houses</a> for your exact fit rather than a generic answer.' },
   ],
   body: `
 ${L.hero({
@@ -227,6 +245,12 @@ ${L.section(
 , { tone: 'ink' })}
 
 ${L.honestGapsBlock(['Karigar wage and payroll settlement is on the roadmap — job-work issue/receipt tracking itself is shipped today.'])}
+
+${L.section(`${L.sectionHead('QUESTIONS MANUFACTURERS ASK', '', '')}${L.faqBlock([
+  { q: 'Will karigars resist being tracked more closely?', a: 'Frame it as job cards, not surveillance — the same records that catch abnormal loss also settle disputes in the karigar’s favour. It protects both sides.' },
+  { q: 'Our process is unusual — casting, CAD, export-specific. Does this fit?', a: 'See <a href="/solutions/casting-units">casting units</a>, <a href="/solutions/cad-services">CAD services</a> or <a href="/solutions/export-houses">export houses</a> for your exact fit.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
 ${L.ctaBand('Bring one order, follow the grams.', 'In a demo, we track one production order end to end — issue, stages, loss, receipt. Your numbers, your call.', 'manufacturers', { enterprise: true })}
 `,

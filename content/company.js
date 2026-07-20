@@ -11,6 +11,11 @@ const pricing = {
     { q: 'What does implementation include?', a: 'Human-led onboarding: your customer list imported for you, WhatsApp number connected, catalogue set up, and your team trained by role. The scope is written down before you pay.' },
     { q: 'How should I think about the cost?', a: 'Against one recovered customer, not against your billing software’s maintenance fee. One returning bridal customer typically pays for years of Jwero. Run the calculators and use your own numbers.' },
     { q: 'Is there a free trial?', a: 'Self-serve trial mechanics are being finalised — talk to us about starting a pilot with your own data instead, which is how most businesses actually begin.' },
+    { q: 'Are there hidden costs I’ll discover later?', a: 'No — implementation scope, what’s included and what’s extra are stated before you commit. Any pass-through WhatsApp messaging costs from Meta are explained upfront, not buried in month two.' },
+    { q: 'Is this cheaper than the tools I already pay for combined?', a: 'Usually — count your WhatsApp tool, your catalogue app, your website, your SMS vendor and the staff hours spent reconciling Excel. See the Frankenstack math below.' },
+    { q: 'Can I upgrade or downgrade tiers later?', a: 'Yes — Assist, Approve and Autopilot are a deliberate ladder. Most businesses start on Assist and move up once their own weekly growth report justifies it, not because a salesperson pushed them.' },
+    { q: 'What if I only need one or two things, not the whole platform?', a: 'That’s exactly what Assist is — customers imported, WhatsApp connected, catalogue live. You are never sold modules you didn’t ask for.' },
+    { q: 'Why should I believe your ROI claims?', a: 'You shouldn’t take our word for it — that’s why the growth report exists. It’s a weekly account of what actually happened with your own customers, not a projection in a sales deck.' },
   ],
   body: `
 ${L.hero({
@@ -80,11 +85,26 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
+${L.section(
+  `${L.sectionHead('THE OBJECTIONS, ANSWERED DIRECTLY', 'Before you ask, in case you were about to.', '')}
+  ${L.cards([
+    { title: '"Another software cost"', text: 'Measure it against one recovered customer, not against your billing software’s AMC. One returning bridal customer typically pays for years of Jwero — run the calculators on your own numbers.' },
+    { title: '"I already have five tools"', text: 'Count what they actually cost — a WhatsApp tool, a catalogue app, a website, an agency retainer, plus the invisible cost of customers lost to silence. One system usually costs less than the pile it replaces.' },
+    { title: '"Hidden costs will show up later"', text: 'Implementation scope and what’s extra are written down before you pay. Any Meta messaging pass-through cost is explained upfront, not discovered on an invoice.' },
+    { title: '"I’ll be locked into a contract"', text: 'Monthly billing is available at entry tiers. Annual is a discount, not handcuffs — and export-anytime applies regardless of the term you choose.' },
+    { title: '"ROI is a promise I’ve heard before"', text: 'Fair — that’s why the weekly growth report exists. It shows what actually happened with your own customers, not a number in a sales deck.' },
+    { title: '"I don’t need the whole platform"', text: 'Then don’t buy it. Assist is exactly the minimum: customers imported, WhatsApp connected, catalogue live. Expand only when it’s earned its place.' },
+  ])}`
+, { tone: 'tint' })}
+
 ${L.section(`${L.sectionHead('PRICING QUESTIONS', '', '')}${L.faqBlock([
   { q: 'Why don’t I see numbers on this page?', a: 'Pricing is being finalised per region ahead of general availability. Ask on WhatsApp and you will get a straight answer with no "discovery call" required.' },
   { q: 'Is there a lock-in contract?', a: 'Entry tiers offer monthly billing. Annual plans are discounted — a choice, not handcuffs.' },
   { q: 'Is there a free trial?', a: 'Self-serve trial mechanics are being finalised — talk to us about starting a pilot with your own data instead.' },
-])}`)}
+  { q: 'Are there hidden costs?', a: 'No — implementation scope and what’s extra are stated before you commit. Meta messaging pass-through costs, if any, are explained upfront.' },
+  { q: 'Can I change tiers later?', a: 'Yes — most businesses start on Assist and move up once their own growth report justifies it.' },
+])}
+<p class="cta-note" style="margin-top:14px">More objections? <a href="/faq#pricing">See every pricing question we’ve been asked →</a></p>`)}
 `,
 };
 
@@ -150,6 +170,10 @@ const enterprise = {
   faqs: [
     { q: 'What’s different about the enterprise track?', a: 'A named specialist instead of a self-serve funnel, a buying-committee kit addressed to each stakeholder, and a staged pilot-branch rollout with exit criteria you set.' },
     { q: 'What do you need from us to start?', a: 'Roughly: number of branches, current systems (billing/ERP/WhatsApp tools), and your evaluation timeline. We’ll come back with a specific plan, not a generic deck.' },
+    { q: 'Our evaluation committee will ask about SSO and audit trails. What do we tell them?', a: 'Tell them the truth: enterprise SSO/SCIM is in active development, not shipped; per-module activity logging exists today with a unified immutable audit trail being consolidated. See <a href="/trust/security">the security page</a> for the full honest list — we’d rather you find gaps here than in an audit.' },
+    { q: 'How do we roll out across many branches without a chaotic big-bang migration?', a: 'You don’t — one pilot branch first, with exit criteria you define, then a staged rollout with per-branch configuration and training. No branch goes live without the previous one proving itself.' },
+    { q: 'Can we get a security overview document for our IT committee?', a: 'Yes — ask on WhatsApp and we’ll send the security overview PDF alongside the buying-committee kit below.' },
+    { q: 'What if different branches want different price rules or catalogues?', a: 'Central price rules under owner control, with per-branch exceptions that route through approvals — consistency where you want it, flexibility where you grant it.' },
   ],
   body: `
 ${L.hero({
@@ -169,6 +193,13 @@ ${L.section(
     { title: 'For branch managers', text: 'A day-in-the-life walkthrough of what actually changes at the counter.' },
   ], 4)}`
 )}
+
+${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', '', '')}${L.faqBlock([
+  { q: 'Our evaluation committee will ask about SSO and audit trails. What do we tell them?', a: 'Tell them the truth: enterprise SSO/SCIM is in active development, not shipped; per-module activity logging exists today with a unified audit trail being consolidated. <a href="/trust/security">See the full honest list</a>.' },
+  { q: 'How do we roll out across many branches without chaos?', a: 'One pilot branch first, with exit criteria you define, then a staged rollout. No branch goes live without the previous one proving itself.' },
+  { q: 'Can we get a security overview document?', a: 'Yes — ask on WhatsApp and we’ll send it alongside the buying-committee kit.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
 ${L.ctaBand('Start with one branch.', 'Tell us your network size and current systems — we’ll come back with a specific plan.', 'enterprise')}
 `,

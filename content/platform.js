@@ -11,6 +11,8 @@ const platform = {
     { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with the Assist scope — customers imported, WhatsApp connected, catalogue published — and expand module by module as each one proves itself.' },
     { q: 'What makes this different from buying a CRM plus a WhatsApp tool plus a catalogue app?', a: 'Separate tools mean separate memories. A WhatsApp tool doesn’t know her gold-plan balance; a CRM doesn’t sell on Instagram. In Jwero, the customer, the catalogue and the channels live on one record — so AI can actually sell, not just log.' },
     { q: 'Is there a public API or SSO for enterprise IT?', a: 'A public developer API and enterprise SSO/SCIM are on the public roadmap, not shipped today. We say so here rather than let your evaluation discover it later.' },
+    { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional. You can run the whole business on Assist — customers, WhatsApp, catalogue — and never touch the rest. Complexity is available when you want it, never mandatory.' },
+    { q: 'My business is unusual — will this fit, or will I be forcing a generic tool?', a: 'Custom fields, price rules and per-branch configuration exist because jewellery businesses aren’t generic. We’ll also tell you plainly what we don’t customise, on a demo, before you commit.' },
   ],
   body: `
 ${L.hero({
@@ -69,7 +71,9 @@ ${L.section(`${L.sectionHead('QUESTIONS EVALUATORS ASK', '', '')}${L.faqBlock([
   { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with customers imported, WhatsApp connected and catalogue published, then expand module by module.' },
   { q: 'What makes this different from a CRM plus a WhatsApp tool?', a: 'Separate tools mean separate memories. In Jwero the customer, catalogue and channels live on one record — so AI can actually sell, not just log.' },
   { q: 'Is there a public API or SSO?', a: 'On the public roadmap, not shipped today. <a href="/roadmap">See the roadmap</a>.' },
-])}`)}
+  { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional — run everything on Assist and never touch the rest.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
 ${L.ctaBand('See the operating system on your own data.', 'Bring one real customer scenario to a 15-minute demo — we’ll run it end to end, one record at a time.', 'platform')}
 `,
@@ -136,6 +140,10 @@ const aiWorkforce = {
     { q: 'What if the AI drafts something wrong?', a: 'Nothing goes out without approval until you decide otherwise. You can edit any draft, reject it, or switch a whole action type off. Daily caps and quiet hours are hard limits, not suggestions.' },
     { q: 'Can I turn AI off completely?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything. The kill switch is a product feature, not a support ticket.' },
     { q: 'What can the AI workforce actually do?', a: 'Over 240 defined business actions: draft replies, price a catalogue enquiry at today’s rate, schedule follow-ups, send instalment reminders, invite customers before festivals, book appointments and more — each action individually permissioned.' },
+    { q: 'Can the AI give a discount without me knowing?', a: 'No. Pricing and discount actions follow your price rules and staff permissions — the AI drafts messages, it does not set prices or approve exceptions.' },
+    { q: 'What if it says something embarrassing to a customer I’ve known for twenty years?', a: 'That fear is exactly what the approval queue exists for. Nothing reaches her until your team has seen it. Quiet hours mean nobody — old customer or new — gets a message at 11pm either.' },
+    { q: 'How does it know how to sound like MY shop, not a generic chatbot?', a: 'It drafts from your catalogue, your prices, your policies and your past conversations — the same context a new employee would need, except it never forgets any of it.' },
+    { q: 'Is this the same risk as an AI chatbot going rogue online?', a: 'No. Nothing sends without approval by default, ever. The entire governance layer — approvals, caps, kill switch — exists because a jewellery relationship can’t survive an ungoverned bot near it.' },
   ],
   body: `
 ${L.hero({
@@ -172,7 +180,10 @@ ${L.section(`${L.sectionHead('QUESTIONS OWNERS ASK', '', '')}${L.faqBlock([
   { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling.' },
   { q: 'What if the AI drafts something wrong?', a: 'Nothing goes out without approval until you decide otherwise. You can edit any draft, reject it, or switch a whole action type off.' },
   { q: 'Can I turn it all off?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything.' },
-])}`)}
+  { q: 'Can the AI give a discount without my knowledge?', a: 'No — pricing and discounts follow your price rules and staff permissions; the AI drafts messages, it does not set prices.' },
+  { q: 'What if it embarrasses me with a longtime customer?', a: 'The approval queue exists for exactly this. Nothing reaches her until your team has seen and approved it.' },
+])}
+<p class="cta-note" style="margin-top:14px">More on AI trust and control? <a href="/faq#ai-trust">See every AI question we’ve been asked →</a></p>`)}
 
 ${L.ctaBand('Meet your first AI workforce member.', 'Watch it draft, watch it wait for your approval, watch it learn. On your own WhatsApp.', 'ai')}
 `,
@@ -212,6 +223,12 @@ ${L.section(
 
 ${L.honestGapsBlock(['A self-serve public developer API is on the roadmap — until it ships, integrations run through the bridges above.'])}
 
+${L.section(`${L.sectionHead('INTEGRATION QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger; the built-in bridge carries sales data across so your accountant’s world doesn’t change.' },
+  { q: 'Can I keep my Shopify store?', a: 'Yes. The connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
+  { q: 'Is the WhatsApp integration official, or a ban risk?', a: 'Official WhatsApp Business API — template approvals, consent management and opt-out handling are built in, which is what keeps it out of ban-risk territory.' },
+])}`)}
+
 ${L.ctaBand('Tell us your stack.', 'Send the list of tools you run today — we will map exactly what stays, what bridges, and what Jwero takes over.', 'integrations')}
 `,
 };
@@ -225,6 +242,9 @@ const tally = {
     { q: 'Will switching to Jwero disrupt my accountant’s workflow?', a: 'No. That is the point of the bridge — sales data flows from Jwero to Tally automatically, in the shape your accountant already expects.' },
     { q: 'What exactly syncs to Tally?', a: 'Sales and invoicing data flows through the bridge, keeping your ledger current without manual re-entry. [VERIFY exact sync scope with product before publishing to enterprise buyers.]' },
     { q: 'Do I have to stop using Tally to start using Jwero?', a: 'No — this is the entire design. Keep Tally as your ledger of record; Jwero takes over customers, channels, schemes and follow-up alongside it.' },
+    { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes. They keep filing GST the way they always have, in Tally, from data that now arrives automatically instead of being re-typed. Invite them to the demo — most objections dissolve once they see the bridge, not the sales pitch.' },
+    { q: 'Does this replace GST filing or e-invoicing?', a: 'No — GST invoicing at the live gold rate happens in Jwero, but statutory filing and e-invoice/IRN stay Tally’s job (e-invoice automation is on our roadmap, not shipped). Two systems, one clean line.' },
+    { q: 'What if our CA wants to keep using their own workflow entirely?', a: 'They can. The bridge changes what arrives in Tally, not how your CA works once it’s there.' },
   ],
   body: `
 ${L.hero({
@@ -244,6 +264,12 @@ ${L.section(
   <p style="margin-top:20px; font-size:.95rem; color:var(--ink-2);">Sales data flows from Jwero to Tally through the built-in bridge — nothing about your accountant’s month-end changes.</p>`
 )}
 
+${L.section(`${L.sectionHead('QUESTIONS ACCOUNTANTS ASK', '', '')}${L.faqBlock([
+  { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes — they keep filing in Tally, from data that now arrives automatically instead of being re-typed.' },
+  { q: 'Does this replace GST filing or e-invoicing?', a: 'No — GST invoicing at the live rate happens in Jwero; statutory filing and e-invoice/IRN stay Tally’s job. Two systems, one clean line.' },
+  { q: 'Can our CA keep their own workflow?', a: 'Yes — the bridge changes what arrives in Tally, not how your CA works once it’s there.' },
+])}`)}
+
 ${L.ctaBand('Bring your accountant into the conversation.', 'We are happy to walk your CA through exactly what moves and what doesn’t.', 'tally')}
 `,
 };
@@ -257,6 +283,9 @@ const onboarding = {
     { q: 'How long does implementation take?', a: 'Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published, greetings live with approvals on.' },
     { q: 'Will my team need training?', a: 'If your team can use WhatsApp, they can use Jwero. Training runs by role, live, with a named onboarding contact — not a video library you’re left to figure out alone.' },
     { q: 'Can you implement without disrupting our wedding season?', a: 'Yes — a season change-freeze policy means no disruptive changes during your peak weeks. Go-lives are scheduled around your calendar.' },
+    { q: 'What if my older or more senior staff resist the change?', a: 'Start them on one thing: the shared inbox with AI-drafted replies. It makes their day easier immediately — usually the fastest way to convert a sceptic is to make their job less tedious, not to explain the technology.' },
+    { q: 'What if my whole team pushes back on new software?', a: 'If they can use WhatsApp, they can use Jwero — that’s deliberate, not a slogan. Training is role-based and live, and the AI workforce takes over the tedious parts (drafting, reminders) so staff feel helped, not surveilled.' },
+    { q: 'We tried new software before and it just sat unused. Why would this be different?', a: 'Because Assist gives your team something useful on day one — a shared inbox that answers faster than before — instead of a training manual to read first. Adoption follows usefulness, not a mandate.' },
   ],
   body: `
 ${L.hero({
@@ -287,6 +316,13 @@ ${L.section(
     { title: 'Export anytime', text: 'Your data leaves with you in standard formats whenever you ask.' },
   ])}`
 , { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('TRAINING & ADOPTION QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'What if my staff resist the change?', a: 'Start them on the shared inbox with AI-drafted replies — it makes their day easier immediately, which converts sceptics faster than any explanation.' },
+  { q: 'We tried new software before and it sat unused. Why would this be different?', a: 'Assist gives your team something useful on day one instead of a manual to read first. Adoption follows usefulness, not a mandate.' },
+  { q: 'Can you work around our festival-season staffing crunch?', a: 'Yes — the season change-freeze exists precisely so training and go-live never compete with your busiest weeks.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#support">See every implementation question →</a></p>`)}
 
 ${L.ctaBand('See the onboarding plan for your business.', 'Tell us your team size and busiest season — we’ll map the exact 30-day plan.', 'onboarding')}
 `,

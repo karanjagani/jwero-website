@@ -12,6 +12,9 @@ const whatsapp = {
     { q: 'Can I keep my existing WhatsApp number?', a: 'Yes, and you should — that number is part of your reputation. We migrate it onto the official API.' },
     { q: 'How is this different from WATI or other WhatsApp tools?', a: 'Those tools send messages. They don’t know her purchase history, her scheme balance, or what a gram of 22k costs today. Jwero replies come from a system that knows the customer and the jewellery — because they share one record.' },
     { q: 'What does this replace, work with, and cost?', a: 'It replaces unofficial bulk-messaging tools and personal-phone selling. It works alongside your existing WhatsApp number and your billing software. Pricing sits inside Jwero’s tiers — see /pricing for the structure.' },
+    { q: 'What if Meta changes WhatsApp’s rules tomorrow?', a: 'Your customer records, catalogue and history live in Jwero, not inside the channel. Channels can change; your data and relationships don’t move with them — that’s the point of owning the record separately from the app.' },
+    { q: 'Will older customers actually buy this way?', a: 'They already send your salespeople "rate kya hai?" on WhatsApp today. This just makes sure those chats get answered fast, recorded properly, and actually closed.' },
+    { q: 'Do I have to manage the AI drafts myself all day?', a: 'No — approve in batches when it suits you, or promote low-risk reply types to send automatically once you trust the pattern. You set the pace.' },
   ],
   body: `
 ${L.hero({
@@ -60,6 +63,13 @@ ${L.oneSystemBlock([
   'Her occasion journey — the anniversary invite next year — reads the same channel-preference field this conversation is updating right now.',
 ])}
 
+${L.section(`${L.sectionHead('WHATSAPP QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'Will my number get banned?', a: 'Jwero uses the official WhatsApp Business API with approved templates, consent tracking and opt-out handling — the discipline that keeps accounts healthy.' },
+  { q: 'What if Meta changes the rules?', a: 'Your customer records and catalogue live in Jwero, not inside the channel. Channels can change; your data doesn’t move with them.' },
+  { q: 'How is this different from WATI or similar tools?', a: 'They send messages. Jwero replies come from a system that knows the customer and the jewellery, because they share one record. See <a href="/compare/jwero-vs-wati">Jwero vs WATI</a>.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#whatsapp">See every WhatsApp & Meta question →</a></p>`)}
+
 ${L.ctaBand('Message us. Seriously.', 'The best demo of WhatsApp selling is a WhatsApp conversation. Send one message and watch the machine work.', 'whatsapp')}
 `,
 };
@@ -73,6 +83,8 @@ const instagram = {
     { q: 'Can Jwero reply to Instagram DMs automatically?', a: 'The AI workforce drafts replies to DMs and comments using the customer’s record and your catalogue; drafts wait for approval until you promote them. Every conversation lands in the same inbox as WhatsApp and web chat.' },
     { q: 'We get hundreds of "price?" comments. Can Jwero handle them?', a: 'Yes — that exact flood is the point. Price enquiries get a courteous reply that moves the conversation to DM or WhatsApp with a live-price catalogue link, automatically attached to a customer record so the follow-up actually happens.' },
     { q: 'Do I need a new Instagram account?', a: 'No. Jwero connects to your existing professional account through the official Meta APIs.' },
+    { q: 'Will this feel impersonal compared to how we reply now?', a: 'The AI drafts from the same customer record WhatsApp uses — her taste, her history — and every reply waits for your team’s approval. It should feel more informed, not less personal.' },
+    { q: 'Do I need someone dedicated to run this?', a: 'No — the AI workforce handles first response and routine follow-up. Your team reviews and approves; nobody needs to sit refreshing DMs all day.' },
   ],
   body: `
 ${L.hero({
@@ -106,6 +118,13 @@ ${L.oneSystemBlock([
   'The catalogue an AI drafts into a DM reply is the same live-priced catalogue every other channel sells from.',
 ])}
 
+${L.section(`${L.sectionHead('INSTAGRAM & FACEBOOK QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'Do I need a new Instagram account?', a: 'No — Jwero connects to your existing professional account through the official Meta APIs.' },
+  { q: 'Will replies feel impersonal?', a: 'Drafts come from the same customer record WhatsApp uses, and every reply waits for your approval — informed, not robotic.' },
+  { q: 'Do I need someone dedicated to run this?', a: 'No — the AI workforce handles first response and routine follow-up; your team just approves.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
 ${L.ctaBand('Stop losing the DMs you paid for.', 'Your reels already create demand. See how much of it a system with memory can catch.', 'instagram')}
 `,
 };
@@ -119,6 +138,9 @@ const aiAgents = {
     { q: 'What is an AI sales agent in Jwero?', a: 'A configured member of the AI workforce: a scope of allowed actions, a knowledge base, guardrails, an approval workflow and an activity log. It drafts replies, follows up, reminds and invites — within the limits you set.' },
     { q: 'Can the AI really speak on calls?', a: 'Yes — the voice assistant converses in 14 languages, follows your knowledge base, and files transcripts on the customer record. Use it for instalment reminders, follow-up calls and enquiry triage.' },
     { q: 'How do I know what the AI did?', a: 'Every action is logged: what, when, why, and who approved it. You can review any day’s activity in minutes.' },
+    { q: 'Will this replace my sales staff?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the actual selling. Salespeople close more when every customer walks in already known, not fewer.' },
+    { q: 'My salespeople are worried about being watched or replaced. What do I tell them?', a: 'That the AI does the tedious remembering — who to follow up, what she bought last time — so they spend their time selling instead of searching for notes. It works for them, not on them.' },
+    { q: 'Can it give a discount without me knowing?', a: 'No — pricing and discounts follow your price rules and staff permissions. The agents draft messages; they don’t set prices.' },
   ],
   body: `
 ${L.hero({
@@ -143,6 +165,13 @@ ${L.section(
 )}
 
 ${L.governanceStrip()}
+
+${L.section(`${L.sectionHead('THE STAFF QUESTION', '', '')}${L.faqBlock([
+  { q: 'Will this replace my sales staff?', a: 'No. The AI workforce does the remembering and follow-up; your people do the selling. Salespeople close more when every customer walks in already known.' },
+  { q: 'My salespeople are worried about being watched or replaced. What do I tell them?', a: 'It works for them, not on them — it does the tedious remembering so they spend their time on the sale itself.' },
+  { q: 'Can it give a discount without me knowing?', a: 'No — pricing and discounts follow your price rules and staff permissions, always.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#ai-trust">See every AI trust question →</a></p>`)}
 
 ${L.ctaBand('Hire staff that scale like software.', 'Start with one agent on Assist mode — drafts only, approvals on. Promote it when it earns your trust.', 'aiagents')}
 `,

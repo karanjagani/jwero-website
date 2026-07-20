@@ -35,6 +35,7 @@ const pages = [
   ...require('./content/trust'),
   ...require('./content/compare'),
   ...require('./content/tools'),
+  ...require('./content/faq'),
   ...require('./content/company'),
 ];
 
@@ -106,6 +107,7 @@ const NAV = [
   {
     label: 'Resources',
     items: [
+      ['/faq', 'FAQ', 'Every objection, answered honestly'],
       ['/tools', 'Tools & Calculators', 'Dead stock, gold scheme and more'],
       ['/compare', 'Compare Alternatives', 'ERPs, WhatsApp tools, ecommerce & more'],
       ['/migration', 'Migration Centre', 'Switch without fear'],
@@ -154,7 +156,7 @@ function footerHTML() {
       </div>
       ${col('Products', [['/products','App grid'],['/products/whatsapp','WhatsApp Commerce'],['/products/instagram-facebook','Instagram & Facebook'],['/products/ai-sales-agents','AI Sales Agents'],['/products/crm','Jewellery CRM'],['/products/catalog','Catalogue (PIM)'],['/products/inventory','Inventory'],['/products/billing-finance','Billing & Finance (roadmap)'],['/products/gold-schemes','Gold Schemes'],['/products/digital-gold','Digital Gold'],['/products/multi-store','Multi-store']])}
       ${col('Solutions', [['/solutions','All 22 solutions'],['/industries/retail','Retail'],['/solutions/single-store','Single store'],['/solutions/multi-store-chains','Multi-store & chains'],['/solutions/luxury-boutique','Luxury & boutique'],['/solutions/bridal','Bridal & wedding'],['/solutions/manufacturers','Manufacturers'],['/solutions/b2b-jewellery','Wholesale & B2B'],['/solutions/d2c-brands','D2C brands'],['/solutions/franchise-networks','Franchise networks'],['/solutions/pain/dead-stock','Dead stock'],['/solutions/pain/lead-leakage','Lead leakage']])}
-      ${col('Resources', [['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/customers','Customer proof']])}
+      ${col('Resources', [['/faq','FAQ — every objection'],['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/customers','Customer proof']])}
       ${col('Company', [['/company','About'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
       ${col('Trust', [['/trust/security','Security'],['/roadmap','Roadmap'],['/legal/privacy','Privacy'],['/legal/terms','Terms'],['/legal/dpdp','DPDP statement']])}
     </div>
