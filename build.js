@@ -116,27 +116,32 @@ const NAV = [
     label: 'Roles',
     groups: [
       { title: 'Leadership', items: [
-        ['/roles', 'All roles'],
         ['/roles/owner', 'Owner / Proprietor'],
         ['/roles/chain-owner', 'Multi-store & chain owner'],
         ['/roles/next-gen-successor', 'Next-gen successor'],
       ]},
-      { title: 'Frontline & growth', items: [
+      { title: 'Frontline & sales', items: [
         ['/roles/store-manager', 'Store manager'],
         ['/roles/sales-associate', 'Sales associate'],
         ['/roles/cashier', 'Billing cashier'],
+      ]},
+      { title: 'Customer & growth', items: [
         ['/roles/crm-executive', 'CRM / telecalling executive'],
         ['/roles/marketing-manager', 'Marketing manager'],
         ['/roles/ecommerce-manager', 'E-commerce / D2C manager'],
       ]},
-      { title: 'Manufacturing & ops', items: [
+      { title: 'Manufacturing', items: [
         ['/roles/karigar', 'Karigar / goldsmith'],
         ['/roles/cad-designer', 'CAD / CAM designer'],
         ['/roles/production-manager', 'Production manager'],
         ['/roles/quality-hallmarking', 'Quality & hallmarking officer'],
+      ]},
+      { title: 'Finance & operations', items: [
         ['/roles/accountant', 'Accountant / bookkeeper'],
         ['/roles/inventory-manager', 'Inventory / stock manager'],
         ['/roles/purchase-manager', 'Purchase / procurement manager'],
+      ]},
+      { title: 'Trade & partnerships', items: [
         ['/roles/b2b-manager', 'Wholesale / B2B manager'],
         ['/roles/franchise-partner', 'Franchise partner'],
       ]},
