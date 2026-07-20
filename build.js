@@ -134,7 +134,7 @@ function navHTML() {
 <div class="ann-bar"><div class="container">${TAGLINE} — <a href="#" data-wa="announce">chat with us on WhatsApp →</a></div></div>
 <header class="site-header">
   <div class="container header-row">
-    <a class="logo" href="/" aria-label="Jwero home"><img src="/assets/jwero-mark.png" alt="" width="282" height="423"><span class="logo-word">Jwero</span></a>
+    <a class="logo" href="/" aria-label="Jwero home"><img src="/assets/jwero-mark.png" alt="" width="80" height="120"><span class="logo-word">Jwero</span></a>
     <nav class="main-nav" aria-label="Main">${NAV.map(dd).join('')}</nav>
     <div class="header-cta">
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
@@ -154,7 +154,7 @@ function footerHTML() {
   <div class="container">
     <div class="f-grid">
       <div class="f-brand">
-        <p class="logo"><img src="/assets/jwero-mark.png" alt="" width="282" height="423"><span class="logo-word">Jwero</span></p>
+        <p class="logo"><img src="/assets/jwero-mark.png" alt="" width="80" height="120"><span class="logo-word">Jwero</span></p>
         <p class="f-tag">${SIGNATURE}<br>${TAGLINE}.</p>
         <p class="f-enemy">“Your software keeps accounts.<br>It doesn’t remember customers.”</p>
       </div>
@@ -221,17 +221,20 @@ ${robotsMeta}
 <meta property="og:url" content="${canonical}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="${FAVICON}">
+<meta name="theme-color" content="#0013b7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0b12" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;550;600;650;700;750&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 <script>(function(){try{var t=localStorage.getItem('jwero-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 ${navHTML()}
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-<main id="main">
+<main id="main" tabindex="-1">
 ${page.body}
 </main>
 ${footerHTML()}

@@ -24,7 +24,7 @@ ${L.hero({
   mock: L.mockMemory,
 })}
 ${L.section(
-  `${L.sectionHead('THE BOUTIQUE OWNER’S DILEMMA', '', '')}
+  `${L.sectionHead('THE BOUTIQUE OWNER’S DILEMMA', 'Private marketing for high-value relationships.', '')}
   ${L.painRows([
     { quote: 'Generic mass marketing feels cheap for what we sell.', title: 'Private, not broadcast', text: 'Curated catalogue previews go to named clients, with your approval on every message — never a blast.' },
     { quote: 'My clients expect privacy, not a mailing list.', title: 'Memory the client never sees, but always feels', text: 'Sizes, taste, past pieces and important dates — one record, visible only to your team.' },
@@ -35,7 +35,7 @@ ${L.jtbdBlock([
   { when: 'a client is due for an anniversary or a private preview', want: 'reach out personally, not as part of a blast', so: 'the relationship feels as considered as the pieces themselves' },
   { when: 'a client visits after months away', want: 'have her full taste and history on screen', so: 'the visit feels remembered, not restarted' },
 ])}
-${L.section(`${L.sectionHead('QUESTIONS BOUTIQUE OWNERS ASK', '', '')}${L.faqBlock(luxuryBoutiqueFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.sectionHead('QUESTIONS BOUTIQUE OWNERS ASK', 'What luxury clients expect from your system.', '')}${L.faqBlock(luxuryBoutiqueFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="luxury">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See white-glove memory in action.', 'Bring one client relationship to a demo — we’ll show the record, the preview, and the approval queue.', 'luxury', { enterprise: true })}
@@ -59,12 +59,12 @@ const bridal = {
 ${L.hero({
   eyebrow: 'FOR BRIDAL & WEDDING',
   h1: 'Win the wedding, keep the family.',
-  sub: 'Track every trousseau enquiry from first DM to final fitting — and the anniversaries after. The bridal journey is long and multi-visit; your system should remember it as one story, not scattered messages.',
+  sub: 'Track every trousseau enquiry from first DM to final fitting — and the anniversaries after. The bridal journey is long and multi-visit. Your system should remember it as one story, not scattered messages.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'bridal' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 ${L.section(
-  `${L.sectionHead('WHY BRIDAL BUSINESS LEAKS', '', '')}
+  `${L.sectionHead('WHY BRIDAL BUSINESS LEAKS', 'Where wedding enquiries lose the thread.', '')}
   ${L.painRows([
     { quote: 'Between the first enquiry and the wedding date, we lose the thread — literally.', title: 'One thread, months long', text: 'Every quote, trial and fitting stays on the same conversation and customer record, from enquiry to delivery.' },
     { quote: 'It’s never one decision-maker — it’s the whole family.', title: 'Built for the buying committee', text: 'The journey captures context for everyone involved, not just the name on the invoice.' },
@@ -74,7 +74,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('AFTER THE WEDDING', 'The relationship doesn’t end at the altar.', 'Anniversaries, first-child occasions and family referrals are the second half of a bridal relationship — captured on the same record as the trousseau order, and surfaced automatically when the date arrives.')}`
 , { tone: 'tint' })}
-${L.section(`${L.sectionHead('QUESTIONS BRIDAL BUSINESSES ASK', '', '')}${L.faqBlock(bridalFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.sectionHead('QUESTIONS BRIDAL BUSINESSES ASK', 'From first enquiry to the anniversaries after.', '')}${L.faqBlock(bridalFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="bridal">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring one wedding order.', 'Show us a real trousseau journey — we’ll show you how it stays as one thread from enquiry to delivery.', 'bridal')}
@@ -97,12 +97,12 @@ const diamondRetail = {
 ${L.hero({
   eyebrow: 'FOR DIAMOND RETAIL',
   h1: 'Certified stock, certified follow-up.',
-  sub: 'Certificate-level catalogue fields and an AI workforce that answers 4C questions instantly — built for a trade where trust is the whole sale, and solitaire stock can sit for a long time if nobody follows up.',
+  sub: 'Certificate-level catalogue fields and an AI workforce that answers 4C questions instantly. Built for a trade where trust is the whole sale, and where solitaire stock can sit for a long time if nobody follows up.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'diamond' },
   secondary: { href: '/tools/dead-stock-calculator', label: 'Try the Dead Stock Calculator' },
 })}
 ${L.section(
-  `${L.sectionHead('WHAT DIAMOND RETAIL NEEDS', '', '')}
+  `${L.sectionHead('WHAT DIAMOND RETAIL NEEDS', 'Built for certification, trust and patience.', '')}
   ${L.cards([
     { title: 'Certificate-aware catalogue', text: 'Certification numbers, cut, clarity, colour and carat as structured fields — not a PDF nobody can search.' },
     { title: 'Instant, accurate answers', text: 'The AI workforce drafts 4C and solitaire-question replies from the catalogue record, approved before it sends.' },
@@ -123,7 +123,7 @@ ${L.jtbdBlock([
   { when: 'a customer asks a technical 4C question', want: 'answer instantly with certificate-accurate detail', so: 'trust isn’t lost to a slow or vague reply' },
   { when: 'a certified stone sits unsold for weeks', want: 'see it ageing before it becomes forgotten stock', so: 'capital tied up in solitaires gets followed up on, not written off' },
 ])}
-${L.section(`${L.sectionHead('QUESTIONS DIAMOND RETAILERS ASK', '', '')}${L.faqBlock(diamondRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.sectionHead('QUESTIONS DIAMOND RETAILERS ASK', 'What diamond retailers ask about trust and AI.', '')}${L.faqBlock(diamondRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="diamond">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See a certified stone, sold end to end.', 'Bring one solitaire enquiry to a demo — catalogue, reply, approval, quote.', 'diamond')}
@@ -151,7 +151,7 @@ ${L.hero({
   secondary: { href: '/tools/gold-scheme-calculator', label: 'Try the Scheme Calculator' },
 })}
 ${L.section(
-  `${L.sectionHead('THE GOLD RETAIL STACK', '', '')}
+  `${L.sectionHead('THE GOLD RETAIL STACK', 'Pricing, schemes and exchange, in one flow.', '')}
   ${L.cards([
     { title: 'Rate-linked pricing', text: 'Every catalogue price, quote and invoice follows the live gold rate automatically — no manual repricing.' },
     { title: 'Gold savings schemes', text: 'Enrolment, reminders and maturity run digitally, with balances customers can check themselves.', link: { href: '/products/gold-schemes', label: 'See schemes' } },
@@ -172,7 +172,7 @@ ${L.jtbdBlock([
   { when: 'the gold rate changes mid-conversation', want: 'every open quote and catalogue price to follow automatically', so: 'nobody sells at yesterday’s price by mistake' },
   { when: 'a scheme member walks in', want: 'see her balance and history instantly', so: 'the counter conversation starts from trust, not a lookup' },
 ])}
-${L.section(`${L.sectionHead('QUESTIONS GOLD RETAILERS ASK', '', '')}${L.faqBlock(goldRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.sectionHead('QUESTIONS GOLD RETAILERS ASK', 'What gold retailers ask about rate-linked pricing.', '')}${L.faqBlock(goldRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="gold">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Change the rate. Watch it update.', 'In a demo, we change today’s rate live and watch a catalogue and invoice reprice instantly.', 'gold')}
@@ -200,14 +200,14 @@ ${L.hero({
   secondary: { href: '/products/inventory', label: 'See inventory tools' },
 })}
 ${L.section(
-  `${L.sectionHead('WHERE SILVER RETAIL BLEEDS', '', '')}
+  `${L.sectionHead('WHERE SILVER RETAIL BLEEDS', 'Volume and thin margins, automated.', '')}
   ${L.painRows([
     { quote: 'Thin margins mean we can’t afford manual work at this volume.', title: 'Bulk catalogue tools', text: 'Manage huge SKU counts efficiently — the catalogue is built for volume, not boutique piece counts.' },
     { quote: 'Trends change fast and we’re always guessing what to reorder.', title: 'Ageing and mover visibility', text: 'Fast/slow-mover views by category show what to reorder — evidence, not habit.' },
   ])}`
 )}
 ${L.honestGapsBlock(['POS counter billing with cash day-close — on the roadmap; today Billing & Finance handles GST invoicing at the live rate and works alongside your existing counter.'])}
-${L.section(`${L.sectionHead('QUESTIONS SILVER RETAILERS ASK', '', '')}${L.faqBlock(silverRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.sectionHead('QUESTIONS SILVER RETAILERS ASK', 'What silver retailers ask about volume selling.', '')}${L.faqBlock(silverRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="silver">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See volume selling, simplified.', 'Bring your SKU count to a demo — we’ll show the bulk catalogue and ageing tools in action.', 'silver')}
@@ -255,7 +255,7 @@ ${L.jtbdBlock([
   { when: 'a buyer asks a natural-vs-lab-grown question', want: 'give a consistent, accurate answer every time', so: 'education doesn’t depend on which staff member replies' },
   { when: 'a customer buys once online', want: 'keep her on one record across every channel', so: 'the second sale isn’t a cold outreach' },
 ])}
-${L.section(`${L.sectionHead('QUESTIONS LAB-GROWN BRANDS ASK', '', '')}${L.faqBlock(labGrownFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/compare/jwero-vs-shopify">See Jwero vs Shopify</a> or <a href="/faq">the full FAQ →</a></p>`)}
+${L.section(`${L.sectionHead('QUESTIONS LAB-GROWN BRANDS ASK', 'What lab-grown brands ask about going online-first.', '')}${L.faqBlock(labGrownFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/compare/jwero-vs-shopify">See Jwero vs Shopify</a> or <a href="/faq">the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="labgrown">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Sell to the online-first buyer.', 'See a lab-grown enquiry go from Instagram comment to educated, priced reply.', 'labgrown')}
@@ -289,7 +289,7 @@ ${L.section(
     { title: 'Occasion-aware journeys', text: 'Build follow-up and marketing journeys around the occasions your customers actually buy for.' },
   ])}`
 )}
-${L.section(`${L.sectionHead('QUESTIONS GEMSTONE RETAILERS ASK', '', '')}${L.faqBlock(gemstoneRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.sectionHead('QUESTIONS GEMSTONE RETAILERS ASK', 'What gemstone retailers ask about one-of-one stock.', '')}${L.faqBlock(gemstoneRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="gemstone">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Show us one stone.', 'Bring one piece with real provenance — we’ll show you the catalogue entry and the customer match.', 'gemstone')}

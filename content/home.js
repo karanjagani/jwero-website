@@ -82,14 +82,14 @@ ${L.section(
     <div class="stack-item"><strong>Website, if any</strong>A ghost town that doesn’t understand gold-rate pricing.</div>
     <div class="stack-item"><strong>Marketing agency</strong>Festival blasts into the void — no memory, no attribution.</div>
   </div>
-  <div class="stack-verdict">Every day on disconnected tools, an occasion passes silently, dead stock ages, a follow-up dies — and the business’s most valuable asset, who its customers are, walks out the door with whoever’s holding the phone.</div>`
+  <div class="stack-verdict">Every day on disconnected tools, an occasion passes silently, dead stock ages, a follow-up dies. The business’s most valuable asset — who its customers are — walks out the door with whoever’s holding the phone.</div>`
 )}
 
 ${L.section(
   `${L.sectionHead('THE SOLUTION', 'One record. Every channel. Your approval.', 'That’s one row in one database, not a metaphor. Every module below reads and writes the same customer card.')}
   <div class="grid grid-2" style="align-items:center; gap:44px;">
     <div>
-      <p style="font-size:1.02rem; color:var(--ink); line-height:1.7;">When Meera messages on WhatsApp, the reply drafts from her record — her taste, her scheme balance, today’s gold rate. When she buys, the catalogue share, the invoice and the scheme instalment all write back to the same card. No integration. No sync. One system.</p>
+      <p style="font-size:1.02rem; color:var(--ink); line-height:1.7;">When Meera messages on WhatsApp, the reply drafts from her record: her taste, her scheme balance, today’s gold rate. When she buys, the catalogue share, the invoice and the scheme instalment all write back to the same card. No integration. No sync. One system.</p>
       <a class="btn btn-ghost" style="margin-top:22px" href="/platform">See the full platform →</a>
     </div>
     ${L.mockOneRecord}
@@ -130,7 +130,7 @@ ${L.section(
 ${L.section(
   `<div class="grid grid-2" style="align-items:center; gap:48px;">
     <div>
-      ${L.sectionHead('WHAT CAME BACK THIS WEEK?', 'The growth report: the product’s weekly voice.', 'Every week, the owner gets a plain-language report: how many past customers returned, how many appointments were booked, how much revenue the system brought back. Not a dashboard you must remember to open — an answer that arrives. This is what impact looks like when it’s measured, not promised.')}
+      ${L.sectionHead('WHAT CAME BACK THIS WEEK?', 'The growth report: the product’s weekly voice.', 'Every week, the owner gets a plain-language report: past customers who returned, appointments booked, revenue brought back. Not a dashboard you must remember to open — an answer that arrives. This is what impact looks like when it’s measured, not promised.')}
       <a class="btn btn-primary" href="#" data-wa="report">Get a sample report on WhatsApp</a>
     </div>
     <div class="report" data-report>

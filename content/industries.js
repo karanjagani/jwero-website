@@ -13,7 +13,7 @@ const retail = {
 ${L.hero({
   eyebrow: 'INDUSTRY · RETAIL',
   h1: 'Jewellery retail, however you sell it.',
-  sub: 'From a single counter to a hundred-branch chain, from bridal specialists to lab-grown D2C brands — retail jewellery businesses run on the same three pillars: remember every customer, sell on every channel, run the whole operation on one truth.',
+  sub: 'From a single counter to a hundred-branch chain, from bridal specialists to lab-grown D2C brands — every retail jewellery business runs on the same three pillars. Remember every customer, sell on every channel, run the whole operation on one truth.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'industries-retail' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -28,7 +28,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('FIND YOUR SEGMENT', '', '')}
+  `${L.sectionHead('FIND YOUR SEGMENT', 'Pick the page built for your business.', '')}
   <div class="router-grid">
     <a class="router-card" id="single" href="/solutions/single-store"><div class="r-icon">◆</div><h3>Single store</h3><p>Run the whole shop from one screen — never lose a customer when staff leave.</p></a>
     <a class="router-card" id="chains" href="/solutions/multi-store-chains"><div class="r-icon">◇</div><h3>Multi-store & chains</h3><p>Every branch consistent, every customer one record.</p></a>
@@ -50,14 +50,14 @@ ${L.section(
   ${L.pillarConstellation()}`
 )}
 
-${L.section(`${L.sectionHead('RESOURCES', '', '')}${L.cards([
+${L.section(`${L.sectionHead('RESOURCES', 'Calculators and tools to run your numbers.', '')}${L.cards([
   { title: 'Dead Stock Calculator', text: 'What idle inventory is really costing your business, in 60 seconds.', link: { href: '/tools/dead-stock-calculator', label: 'Run the calculator' } },
   { title: 'Gold Scheme Calculator', text: 'What your enrolment rate is worth in locked-in future revenue.', link: { href: '/tools/gold-scheme-calculator', label: 'Run the calculator' } },
   { title: 'WhatsApp Revenue Estimator', text: 'What slow or missed WhatsApp replies are costing you in lost sales.', link: { href: '/tools/whatsapp-revenue-estimator', label: 'Run the calculator' } },
   { title: 'Migration Centre', text: 'Switch without a rip-out — keep your books, change your growth.', link: { href: '/migration', label: 'See the plan' } },
 ], 4)}`)}
 
-${L.section(`${L.sectionHead('QUESTIONS RETAIL BUSINESSES ASK', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('QUESTIONS RETAIL BUSINESSES ASK', 'What retail businesses ask before they switch.', '')}${L.faqBlock([
   { q: 'Is Jwero built for small retailers or large chains?', a: 'Both, on the same system. A single-store business gets the whole operating system from day one; a chain gets the same one, with governance and branch structure that scale.' },
   { q: 'Does it matter if I sell mostly gold, mostly diamond, or a mix?', a: 'No — the catalogue, pricing engine and CRM handle purity, certification and material-specific fields for all of them.' },
 ])}

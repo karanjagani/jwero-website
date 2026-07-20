@@ -30,7 +30,7 @@ const deadStockCalc = {
   faqs: [
     { q: 'What counts as dead stock in jewellery?', a: 'A common working definition: pieces unsold after 180 days. Many businesses find 15–30% of inventory value sits in this band. Ageing analysis makes the real number visible.' },
     { q: 'How is the carrying cost calculated?', a: 'Dead value × (your financing rate + ~2.5% for insurance, storage and handling), per year. It excludes the opportunity cost of capital not invested in fast movers — so the true cost is higher than this estimate.' },
-    { q: 'What does “freed capital” mean?', a: 'A realistic clearance program typically converts around 40% of dead value back into working capital within a season — through matched selling, rotation and disciplined markdowns with a metal-value floor.' },
+    { q: 'What does “freed capital” mean?', a: 'It’s dead value converted back into working capital. A realistic clearance program typically recovers around 40% of it within a season, through matched selling, rotation and disciplined markdowns with a metal-value floor.' },
   ],
   body: `
 ${L.hero({
@@ -71,11 +71,11 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('AFTER THE NUMBER', 'Visibility is step one. Memory is step two.', 'Knowing the cost changes the conversation; moving the stock changes the balance sheet. Jwero exposes ageing by piece and branch, then matches idle designs to customers whose taste fits — so clearance happens by invitation, not desperation.')}
+  `${L.sectionHead('AFTER THE NUMBER', 'Visibility is step one. Memory is step two.', 'Knowing the cost changes the conversation; moving the stock changes the balance sheet. Jwero exposes ageing by piece and branch, then matches idle designs to customers whose taste fits. Clearance happens by invitation, not desperation.')}
   <p><a class="btn btn-ghost" href="/solutions/pain/dead-stock">Read the dead-stock playbook</a></p>`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'What counts as dead stock, and how it’s costed.', '')}${L.faqBlock([
   { q: 'What counts as dead stock in jewellery?', a: 'A common working definition: pieces unsold after 180 days. Ageing analysis makes the real number visible per business.' },
   { q: 'How is the carrying cost calculated?', a: 'Dead value × (your financing rate + ~2.5% insurance/storage/handling), per year — see the assumptions above the result.' },
 ])}
@@ -97,7 +97,7 @@ const schemeCalc = {
 ${L.hero({
   eyebrow: 'FREE TOOL',
   h1: 'The Gold Scheme Calculator',
-  sub: 'Your scheme book is a revenue engine wearing a savings costume. See what your enrolment rate is worth in collected corpus and locked-in future sales — and what disciplined digital collection adds on top.',
+  sub: 'Your scheme book is a revenue engine wearing a savings costume. See what your enrolment rate is worth in collected corpus and locked-in future sales. Then see what disciplined digital collection adds on top.',
 })}
 
 ${L.section(
@@ -135,7 +135,7 @@ ${L.section(
   <p><a class="btn btn-ghost" href="/products/gold-schemes">See schemes in Jwero</a></p>`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'How the scheme numbers work.', '')}${L.faqBlock([
   { q: 'How does a savings scheme lock in revenue?', a: 'Members redeem their corpus at your counter — and typically spend more than the corpus when they do.' },
   { q: 'Why does digital collection increase completion?', a: 'Most scheme dropouts are drift, not decisions. Automated reminders catch the drift in week one instead of month four.' },
 ])}
@@ -192,11 +192,11 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('AFTER THE NUMBER', 'The gap is a reply-speed problem, not a staffing problem.', 'Hiring more people to answer WhatsApp faster doesn’t scale evenly with enquiry volume. An AI-drafted first response reaches near-instant coverage at any volume — your team still approves every message before it sends, so nothing goes out unchecked.')}
+  `${L.sectionHead('AFTER THE NUMBER', 'The gap is a reply-speed problem, not a staffing problem.', 'Hiring more people to answer WhatsApp faster doesn’t scale evenly with enquiry volume. An AI-drafted first response reaches near-instant coverage at any volume. Your team still approves every message before it sends, so nothing goes out unchecked.')}
   <p><a class="btn btn-ghost" href="/products/whatsapp">See WhatsApp Commerce in Jwero</a></p>`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'Where the estimate’s assumptions come from.', '')}${L.faqBlock([
   { q: 'Where do the close-rate numbers come from?', a: 'They’re editable planning assumptions, not a published study — change them above to match your own experience.' },
   { q: 'Is 95% reply coverage realistic?', a: 'That’s the target an AI-drafted first response is built to reach, with every draft still approved by your team before it sends.' },
 ])}
@@ -259,7 +259,7 @@ ${L.section(
   <p><a class="btn btn-ghost" href="/solutions/manufacturers">See the manufacturing spine in Jwero</a></p>`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'What these loss numbers do and don’t assume.', '')}${L.faqBlock([
   { q: 'Is this based on an industry-average loss rate?', a: 'No — enter your own observed and explained loss; there’s no fabricated benchmark behind the defaults.' },
   { q: 'Does a WIP ledger reduce physical gold loss by itself?', a: 'No — it flags abnormal loss the day it happens, by stage, instead of only at annual stocktake.' },
 ])}

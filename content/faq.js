@@ -19,7 +19,7 @@ const CATEGORIES = [
       { q: 'Will AI replace my staff?', a: 'No. AI proposes, your people dispose. Salespeople close more because the AI remembers every customer for them before they even pick up the conversation.' },
       { q: 'Can AI recommend jewellery to customers?', a: 'AI-assisted catalogue shares match pieces to a customer’s recorded taste and budget today. A predictive recommendation engine is on the roadmap, not shipped — we won’t call today’s matching "AI recommendations" in the machine-learning sense.' },
       { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time, in standard formats. That is a design decision, not a support favour.' },
-      { q: 'Is there a mobile app?', a: 'Running the business from your phone — approvals, enquiries, sales, stock — is part of the product. Confirm exact app-store availability for your case on a demo before assuming a specific platform.' },
+      { q: 'Is there a mobile app?', a: 'Yes — running the business from your phone (approvals, enquiries, sales, stock) is part of the product. Confirm exact app-store availability for your case on a demo before assuming a specific platform.' },
       { q: 'What is the weekly growth report?', a: 'A plain-language WhatsApp report to the owner: how many past customers came back, how many appointments were booked, how much revenue the system brought back. Proof, delivered weekly, not a dashboard you have to remember to open.' },
       { q: 'What does Jwero NOT do yet — honestly?', a: 'POS counter cash/day-close billing, girvi, karigar payroll, offline mode, a vernacular product interface, a public developer API, and e-invoice/GSTR automation. All on the <a href="/roadmap">public roadmap</a>, none shipped — we say so before you buy, not after.' },
     ],
@@ -71,7 +71,7 @@ const CATEGORIES = [
       { q: 'Can I migrate a paper gold scheme mid-cycle?', a: 'Yes — existing members import with their instalment history intact and continue without restarting the plan.' },
       { q: 'Will there be downtime for my shop during setup?', a: 'No — Jwero is added alongside what you already run. Nothing is switched off to switch this on.' },
       { q: 'Who actually does the setup work — my staff or yours?', a: 'Ours, with your inputs. The implementation scope is written down before you commit, not discovered afterward.' },
-      { q: 'Can I see my own data inside Jwero before paying?', a: 'Ask for a supervised sample import — we load a slice of your real customer list so you evaluate on your own data, not a demo dataset.' },
+      { q: 'Can I see my own data inside Jwero before paying?', a: 'Yes — ask for a supervised sample import. We load a slice of your real customer list so you evaluate on your own data, not a demo dataset.' },
     ],
   },
   {
@@ -106,7 +106,7 @@ const CATEGORIES = [
   {
     id: 'segments', label: 'Segments — retail, multi-store, wholesale, manufacturing',
     items: [
-      { q: 'I run one small store. Is this too much software for me?', a: 'Start with three things: customers imported, WhatsApp connected, catalogue live. That’s the whole Assist tier. Grow into the rest, or don’t — see <a href="/solutions/single-store">the single-store page</a>.' },
+      { q: 'I run one small store. Is this too much software for me?', a: 'No — start with three things: customers imported, WhatsApp connected, catalogue live. That’s the whole Assist tier. Grow into the rest, or don’t — see <a href="/solutions/single-store">the single-store page</a>.' },
       { q: 'Can multiple stores use it?', a: 'Yes — multi-store is native: shared customers and catalogue, per-branch stock, prices and permissions. See <a href="/solutions/multi-store-chains">multi-store & chains</a>.' },
       { q: 'Can branches have different prices?', a: 'Yes — per-branch price rules under central control, with approvals gating any exception.' },
       { q: 'Can I stop one branch’s staff from seeing another branch’s data?', a: 'Yes — branch-scoped permissions are standard, not a custom request.' },
@@ -125,7 +125,7 @@ const CATEGORIES = [
   {
     id: 'operations', label: 'Inventory, catalogue & operations',
     items: [
-      { q: 'Can it reduce my dead stock?', a: 'It makes ageing visible per piece and helps you match idle designs to the customers whose taste actually fits — dead stock stops being invisible, which is the real problem it solves.' },
+      { q: 'Can it reduce my dead stock?', a: 'Yes — it makes ageing visible per piece and helps you match idle designs to the customers whose taste actually fits. Dead stock stops being invisible, which is the real problem it solves.' },
       { q: 'Can I see fast and slow movers?', a: 'Yes — movement analytics per category, branch and period.' },
       { q: 'How does live gold-rate pricing work?', a: 'Catalogue prices are formulas — rate × weight × purity plus making charges — resolved live wherever the product appears. Change the rate once; everything follows.' },
       { q: 'Can it handle purity, HUID and certificates?', a: 'Yes — purity, HUID-related fields and certification numbers are structured catalogue attributes, not free text.' },
@@ -149,7 +149,7 @@ const CATEGORIES = [
       { q: 'Do you support in Hindi, Gujarati or other regional languages?', a: 'Support conversations, yes — in your language. The product screens themselves are English today; vernacular UI is on the roadmap, and we say so rather than pretend otherwise.' },
       { q: 'Who helps during the festival rush, when everything is chaos?', a: 'Support is staffed for the trade’s calendar — festivals are exactly when we don’t disappear. The season change-freeze policy exists to protect you from disruptive changes at the worst possible time.' },
       { q: 'How fast do you actually respond?', a: 'Test us before you buy: message us on WhatsApp right now and time it. That response is the SLA, demonstrated, not promised.' },
-      { q: 'Can you visit my store in person?', a: 'Onboarding is remote-first and works well that way. Ask a specialist about in-person options for your specific case.' },
+      { q: 'Can you visit my store in person?', a: 'Usually not — onboarding is remote-first and works well that way. Ask a specialist about in-person options for your specific case.' },
       { q: 'What if something breaks at 9pm during Dhanteras?', a: 'Peak-season escalation exists precisely for this scenario — ask us for the current escalation path for your tier.' },
       { q: 'Do I get a dedicated account manager?', a: 'Multi-store and enterprise plans do. Entry tiers get the shared support team plus your named onboarding contact — stated honestly per tier, not oversold.' },
     ],

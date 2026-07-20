@@ -40,7 +40,7 @@ ${L.oneSystemBlock([
   'The customer intelligence score visible here is the same score AI staff read before deciding who gets a win-back message.',
 ])}
 
-${L.section(`${L.sectionHead('CRM QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('CRM QUESTIONS', 'Why switch, and what happens to your history.', '')}${L.faqBlock([
   { q: 'I already use a CRM or Excel. Why switch?', a: 'A generic CRM has no idea what a scheme balance or purity preference is — you’d spend years bolting on custom fields to get half of what’s native here.' },
   { q: 'Will I lose my existing customer history?', a: 'No — we import it. Purchase history and contact details come across, deduplicated, during onboarding.' },
 ])}
@@ -61,7 +61,7 @@ const catalog = {
     { q: 'Can the catalogue handle certificates and hallmarking details?', a: 'Yes. Purity, gemstone details, certification numbers and hallmark-related fields are structured attributes, not free text — searchable, filterable and printable.' },
     { q: 'How does live pricing work?', a: 'Prices are formulas — metal rate × weight × purity plus making charges and stone values — resolved at today’s rate wherever the product appears: catalogue shares, website, WhatsApp and invoices. Overrides require approval.' },
     { q: 'Can I share a catalogue without exposing my full stock?', a: 'Yes — share curated selections as live links with price visibility you control, and see who viewed what.' },
-    { q: 'I have thousands of SKUs. Will setup take forever?', a: 'We do the import for you from your existing product sheets or software export — bulk tools handle high piece counts rather than one-by-one manual entry.' },
+    { q: 'I have thousands of SKUs. Will setup take forever?', a: 'No. We do the import for you from your existing product sheets or software export — bulk tools handle high piece counts rather than one-by-one manual entry.' },
     { q: 'Can it handle unusual or one-of-a-kind pieces, not just standard stock?', a: 'Yes — custom fields let you record provenance, unique certification and story details per piece where a standard template doesn’t fit.' },
   ],
   body: `
@@ -89,7 +89,7 @@ ${L.oneSystemBlock([
   'A curated share link is built from the same customer-taste fields the CRM already holds.',
 ])}
 
-${L.section(`${L.sectionHead('CATALOGUE QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('CATALOGUE QUESTIONS', 'Setup time, and pieces that do not fit a template.', '')}${L.faqBlock([
   { q: 'I have thousands of SKUs. Will setup take forever?', a: 'We import from your existing product sheets or software export — bulk tools handle high piece counts, not one-by-one entry.' },
   { q: 'Can it handle unique, one-of-a-kind pieces?', a: 'Yes — custom fields record provenance and story details per piece where a standard template doesn’t fit.' },
 ])}
@@ -109,7 +109,7 @@ const inventory = {
   faqs: [
     { q: 'Can Jwero tell me my dead stock?', a: 'Yes. Ageing bands (0–30, 31–90, 91–180, 180+ days) and fast/slow-mover views show exactly which pieces are sitting, for how long, and what they are worth at today’s rate.' },
     { q: 'Does it work across branches?', a: 'Yes — stock, transfers and valuation are branch-aware, with the full picture rolled up for the owner.' },
-    { q: 'Can it forecast demand?', a: 'We keep this page honest: today Jwero gives you valuation, ageing and mover analysis — the visibility layer. Predictive demand forecasting is on the roadmap, and we will say so until it ships.' },
+    { q: 'Can it forecast demand?', a: 'Not yet — predictive demand forecasting is on the roadmap, and we will say so until it ships. Today Jwero gives you valuation, ageing and mover analysis: the visibility layer that shows what to buy next.' },
     { q: 'Will this replace our physical stocktake?', a: 'It makes stocktakes faster (RFID-ready counting) and less necessary as a surprise-finding exercise — ageing and valuation are visible continuously, not just once a year.' },
     { q: 'Our stock records are inconsistent across branches. Can you still start?', a: 'Yes — we import what exists per branch and reconcile during onboarding. Inconsistent starting data is normal, not disqualifying.' },
   ],
@@ -142,7 +142,7 @@ ${L.section(
   `<div class="stack-verdict"><strong>Run your own number first.</strong> The <a href="/tools/dead-stock-calculator">Dead Stock Calculator</a> estimates what idle inventory costs you per month at your financing rate. Most owners are off by 3×. It takes 60 seconds and the result goes to your WhatsApp.</div>`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('INVENTORY QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('INVENTORY QUESTIONS', 'Stocktakes, and starting from messy records.', '')}${L.faqBlock([
   { q: 'Will this replace our physical stocktake?', a: 'It makes stocktakes faster and less of a surprise-finding exercise — ageing and valuation are visible continuously.' },
   { q: 'Our stock records are inconsistent across branches. Can you still start?', a: 'Yes — we import what exists per branch and reconcile during onboarding. Normal starting point, not disqualifying.' },
 ])}
@@ -189,7 +189,7 @@ ${L.honestGapsBlock([
   'E-invoice / IRN and GSTR filing automation.',
 ])}
 
-${L.section(`${L.sectionHead('BILLING QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('BILLING QUESTIONS', 'Your current software, and GST accuracy.', '')}${L.faqBlock([
   { q: 'Why not just keep using our current billing software?', a: 'You can — keep it running for the counter, and Billing & Finance adds GST invoicing and receivables tracking alongside it until the full POS counter ships.' },
   { q: 'Is GST computation compliant, or an approximation?', a: 'It’s data-driven, not hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.' },
 ])}
@@ -207,7 +207,7 @@ const erp = {
   description: 'The operations backbone inside Jwero: orders, purchases and vendors, repairs, and manufacturing job-work — jewellery-native, sharing one customer and catalogue truth.',
   breadcrumbs: BC('ERP, reconsidered'),
   faqs: [
-    { q: 'Is Jwero a full ERP replacement?', a: 'Jwero runs the operational backbone — orders, purchases, repairs, manufacturing job-work — and shares that data with the customer and catalogue layer, which a standalone ERP never does. Statutory accounting stays in Tally or Zoho Books via built-in bridges.' },
+    { q: 'Is Jwero a full ERP replacement?', a: 'For operations, yes; for statutory accounting, no. Jwero runs the operational backbone — orders, purchases, repairs, manufacturing job-work — and shares that data with the customer and catalogue layer, which a standalone ERP never does. Statutory accounting stays in Tally or Zoho Books via built-in bridges.' },
     { q: 'What’s different about a jewellery-native ERP?', a: 'Purity, HUID, live gold-rate pricing, karigar job-work and gold-loss tracking are built in as first-class concepts, not bolted-on custom fields.' },
     { q: 'Will switching disrupt operations mid-order?', a: 'Open orders, repairs and purchase records import alongside customers and catalogue during onboarding — nothing in progress gets orphaned by a switch.' },
     { q: 'Our process is unusual — can it be configured to match?', a: 'Custom fields and price/approval rules exist for exactly this. We’ll also tell you plainly what isn’t configurable on a demo, before you commit.' },
@@ -237,7 +237,7 @@ ${L.oneSystemBlock([
 
 ${L.honestGapsBlock(['Karigar wage/payroll settlement is on the roadmap; job-work tracking itself is shipped today.'])}
 
-${L.section(`${L.sectionHead('OPERATIONS QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('OPERATIONS QUESTIONS', 'Mid-order switching, and processes that do not fit the mould.', '')}${L.faqBlock([
   { q: 'Will switching disrupt operations mid-order?', a: 'Open orders, repairs and purchase records import alongside customers and catalogue — nothing in progress gets orphaned.' },
   { q: 'Our process is unusual — can it be configured to match?', a: 'Custom fields and approval rules exist for this. We’ll also tell you plainly what isn’t configurable, before you commit.' },
 ])}

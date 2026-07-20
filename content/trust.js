@@ -58,12 +58,12 @@ ${L.honestGapsBlock([
 ])}
 
 ${L.section(
-  `${L.sectionHead('COMPLIANCE', '', '')}
+  `${L.sectionHead('COMPLIANCE', 'Where our compliance documentation lives.', '')}
   <p style="font-size:.95rem;">Jwero maintains a data-processing summary and privacy statement aligned to applicable data-protection law. See our <a href="/legal/privacy">Privacy Policy</a> and <a href="/legal/dpdp">DPDP statement</a>. [VERIFY: full sub-processor list and legal review before this page is used in a regulated procurement process.]</p>
   <p style="margin-top:14px;"><a class="btn btn-primary" href="/assets/downloads/jwero-security-overview.pdf" download>Download the security overview (PDF)</a> <a class="btn btn-ghost" href="#" data-wa="security-pdf" style="margin-left:10px">Ask a follow-up on WhatsApp</a></p>`
 )}
 
-${L.section(`${L.sectionHead('THE FEARS OWNERS DON’T ALWAYS SAY OUT LOUD', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('THE FEARS OWNERS DON’T ALWAYS SAY OUT LOUD', 'Questions owners ask us privately.', '')}${L.faqBlock([
   { q: 'This is family business data — how do I know it won’t leave the family?', a: 'It runs in a database isolated to your business alone. Nobody outside your business can see it — that is the design, not a policy promise.' },
   { q: 'What happens to customer data if a salesperson leaves?', a: 'Deactivate their login in seconds. Every record stays with the business — that is the entire point of the record belonging to the business, not the person.' },
   { q: 'What if the internet goes down at my shop?', a: 'Honestly: Jwero needs a connection today. Offline mode is on the roadmap, not shipped.' },
@@ -90,7 +90,7 @@ const customers = {
 ${L.hero({
   eyebrow: 'PROOF',
   h1: 'We would rather show you than tell you.',
-  sub: 'Jewellery is a trade that trusts hallmarks, not adjectives. So this page holds itself to the same rule: every claim below is verified in the product, every sample is labelled a sample, and customer stories ship with names, numbers and dates — or they don’t ship.',
+  sub: 'Jewellery is a trade that trusts hallmarks, not adjectives. This page holds itself to the same rule: every claim below is verified in the product, every sample is labelled a sample. Customer stories ship with names, numbers and dates — or they don’t ship.',
   primary: { href: '#', label: 'Get a live demo instead', wa: 'customers' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -131,7 +131,7 @@ ${L.section(
   <div class="cta-row"><a class="btn btn-primary" href="#" data-wa="lighthouse">Apply on WhatsApp</a><a class="btn btn-ghost" href="/book-demo">Book a conversation</a></div>`
 )}
 
-${L.section(`${L.sectionHead('THE HONEST QUESTION', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('THE HONEST QUESTION', 'Trusting ROI claims before case studies exist.', '')}${L.faqBlock([
   { q: 'Without case studies yet, why should I trust the ROI claims?', a: 'You shouldn’t take our word for it — that’s exactly why the weekly growth report exists, generated from your own data once you’re live.' },
   { q: 'How do I know the product actually works, not just the pitch?', a: 'Test the WhatsApp button on this site — it’s Jwero’s own inbox, answered by Jwero’s own AI workforce, with approvals on.' },
 ])}`)}
@@ -168,7 +168,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('THE HONEST MATRIX', '', 'Every row below is a factual capability comparison. Market/pricing figures for named competitor products are withheld pending our verification process — dated, sourced claims only.')}
+  `${L.sectionHead('THE HONEST MATRIX', 'The feature-by-feature comparison.', 'Every row below is a factual capability comparison. We withhold market/pricing figures for named competitors until verified — dated, sourced claims only.')}
   ${L.compareTable('A WhatsApp messaging tool', [
     { label: 'Send & receive WhatsApp messages', jwero: 'Yes — official Business API', other: 'Yes' },
     { label: 'Knows customer purchase history in a reply', jwero: 'Yes — one shared record', other: 'No — messaging only' },
@@ -181,7 +181,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('WHAT SWITCHERS SWITCH FOR', '', '')}
+  `${L.sectionHead('WHAT SWITCHERS SWITCH FOR', 'What switching actually buys you.', '')}
   ${L.cards([
     { title: 'Memory', text: 'A reply that already knows what she owns and what she’s saving toward — not a blank message thread.' },
     { title: 'Governed AI', text: 'Approval queues, daily caps and a kill switch — not a bot that fires without oversight.' },
@@ -191,7 +191,7 @@ ${L.section(
 
 ${L.honestGapsBlock(['POS counter billing is on our roadmap. If a pure-messaging tool is genuinely all you need today, we’ll tell you that honestly rather than oversell.'])}
 
-${L.section(`${L.sectionHead('QUESTIONS SWITCHERS ASK', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('QUESTIONS SWITCHERS ASK', 'Common questions before switching.', '')}${L.faqBlock([
   { q: 'Isn’t a WhatsApp tool enough for messaging?', a: 'For pure messaging, yes. The gap appears the moment a reply needs to know her purchase history, scheme balance, or today’s gold rate.' },
   { q: 'Can I use a WhatsApp tool and Jwero together?', a: 'Most businesses replace the WhatsApp tool once they see Jwero’s replies come from the same record as the rest of the business.' },
   { q: 'Does switching mean losing my number or chat history?', a: 'No — your number moves onto the official API. Chat history import depends on the tool you’re switching from; ask us honestly what carries over.' },
@@ -213,7 +213,7 @@ const migration = {
   breadcrumbs: [['Home', '/'], ['Migration Centre']],
   faqs: [
     { q: 'Do I have to stop using my current software?', a: 'No. Day one touches nothing: your billing software stays, your ledger stays, your WhatsApp number stays. Jwero lands alongside and takes the revenue side — customers, channels, schemes, follow-up.' },
-    { q: 'Who does the data import?', a: 'We do — customers, catalogue and scheme members, from Excel, CSV or exports of practically any jewellery software, deduplicated and verified with you before go-live.' },
+    { q: 'Who does the data import?', a: 'We do. Customers, catalogue and scheme members are imported from Excel, CSV or an export of practically any jewellery software — deduplicated and verified with you before go-live.' },
     { q: 'What if we are in wedding season?', a: 'We operate a season change-freeze: no disruptive changes during your peak weeks. Go-lives are scheduled around your calendar, not our quarter.' },
     { q: 'What if I want to leave Jwero later?', a: 'Your data exports in standard formats, any time, no questions. A platform that holds customers hostage does not deserve them.' },
     { q: 'How does Tally fit into this?', a: 'It doesn’t move. See the <a href="/platform/integrations/tally">Tally coexistence page</a> — Jwero bridges to it, your books stay put.' },
@@ -251,7 +251,7 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('MIGRATION QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('MIGRATION QUESTIONS', 'What businesses ask before they move.', '')}${L.faqBlock([
   { q: 'My customer data is a mess — half on staff phones, half in a diary. Can you still start?', a: 'Yes. Every business starts messy. We import what exists and the record gets more complete as the system is used.' },
   { q: 'Will my shop have any downtime during setup?', a: 'No — Jwero is added alongside what you already run. Nothing is switched off to switch this on.' },
   { q: 'Can I see my own data inside Jwero before I commit?', a: 'Ask for a supervised sample import — we load a slice of your real customer list so you evaluate on your own data.' },

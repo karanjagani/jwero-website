@@ -6,11 +6,11 @@ const pricing = {
   description: 'Transparent tiers named after how trust is earned: Assist (AI drafts, you send), Approve (one-tap approvals), Autopilot (earned autonomy) — plus plans for multi-store networks.',
   breadcrumbs: [['Home', '/'], ['Pricing']],
   faqs: [
-    { q: 'Why don’t I see numbers on this page?', a: 'Pricing is being finalised per region ahead of general availability and will be published here — a number you can see before you talk to anyone. Until then, ask on WhatsApp and you will get a straight answer with no "discovery call" required.' },
-    { q: 'Is there a lock-in contract?', a: 'Entry tiers offer monthly billing. Annual plans are discounted — a choice, not handcuffs. Your data exports any time you ask.' },
+    { q: 'Why don’t I see numbers on this page?', a: 'Because pricing is still being finalised per region, ahead of general availability. It will be published here once set — until then, ask on WhatsApp and you will get a straight answer with no "discovery call" required.' },
+    { q: 'Is there a lock-in contract?', a: 'No — entry tiers offer monthly billing, and annual plans are simply a discount, not handcuffs. Your data exports any time you ask.' },
     { q: 'What does implementation include?', a: 'Human-led onboarding: your customer list imported for you, WhatsApp number connected, catalogue set up, and your team trained by role. The scope is written down before you pay.' },
     { q: 'How should I think about the cost?', a: 'Against one recovered customer, not against your billing software’s maintenance fee. One returning bridal customer typically pays for years of Jwero. Run the calculators and use your own numbers.' },
-    { q: 'Is there a free trial?', a: 'Self-serve trial mechanics are being finalised — talk to us about starting a pilot with your own data instead, which is how most businesses actually begin.' },
+    { q: 'Is there a free trial?', a: 'Not yet as a self-serve trial — those mechanics are being finalised. Talk to us about starting a pilot with your own data instead, which is how most businesses actually begin.' },
     { q: 'Are there hidden costs I’ll discover later?', a: 'No — implementation scope, what’s included and what’s extra are stated before you commit. Any pass-through WhatsApp messaging costs from Meta are explained upfront, not buried in month two.' },
     { q: 'Is this cheaper than the tools I already pay for combined?', a: 'Usually — count your WhatsApp tool, your catalogue app, your website, your SMS vendor and the staff hours spent reconciling Excel. See the Frankenstack math below.' },
     { q: 'Can I upgrade or downgrade tiers later?', a: 'Yes — Assist, Approve and Autopilot are a deliberate ladder. Most businesses start on Assist and move up once their own weekly growth report justifies it, not because a salesperson pushed them.' },
@@ -97,10 +97,10 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('PRICING QUESTIONS', '', '')}${L.faqBlock([
-  { q: 'Why don’t I see numbers on this page?', a: 'Pricing is being finalised per region ahead of general availability. Ask on WhatsApp and you will get a straight answer with no "discovery call" required.' },
-  { q: 'Is there a lock-in contract?', a: 'Entry tiers offer monthly billing. Annual plans are discounted — a choice, not handcuffs.' },
-  { q: 'Is there a free trial?', a: 'Self-serve trial mechanics are being finalised — talk to us about starting a pilot with your own data instead.' },
+${L.section(`${L.sectionHead('PRICING QUESTIONS', 'Straight answers on cost and terms.', '')}${L.faqBlock([
+  { q: 'Why don’t I see numbers on this page?', a: 'Because pricing is being finalised per region ahead of general availability. Ask on WhatsApp and you will get a straight answer with no "discovery call" required.' },
+  { q: 'Is there a lock-in contract?', a: 'No — entry tiers offer monthly billing. Annual plans are discounted, not handcuffs.' },
+  { q: 'Is there a free trial?', a: 'Not yet as self-serve — those mechanics are being finalised. Talk to us about starting a pilot with your own data instead.' },
   { q: 'Are there hidden costs?', a: 'No — implementation scope and what’s extra are stated before you commit. Meta messaging pass-through costs, if any, are explained upfront.' },
   { q: 'Can I change tiers later?', a: 'Yes — most businesses start on Assist and move up once their own growth report justifies it.' },
 ])}
@@ -130,7 +130,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('THE COMPANY', '', 'Jwero is built by a team across product, jewellery retail and AI engineering — working daily with jewellery businesses from single family stores to multi-branch chains. We measure ourselves on one number: the revenue our customers’ growth reports attribute to the system.')}
+  `${L.sectionHead('THE COMPANY', 'Who builds it, and what we measure.', 'Jwero is built by a team across product, jewellery retail and AI engineering — working daily with jewellery businesses from single family stores to multi-branch chains. We measure ourselves on one number: the revenue our customers’ growth reports attribute to the system.')}
   <div class="cta-row">
     <a class="btn btn-primary" href="/book-demo">Talk to us</a>
     <a class="btn btn-ghost" href="#" data-wa="company">WhatsApp the founders’ desk</a>
@@ -198,7 +198,7 @@ ${L.section(
   </div>`
 )}
 
-${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', 'Answers for your evaluation committee.', '')}${L.faqBlock([
   { q: 'Our evaluation committee will ask about SSO and audit trails. What do we tell them?', a: 'Tell them the truth: enterprise SSO/SCIM is in active development, not shipped; per-module activity logging exists today with a unified audit trail being consolidated. <a href="/trust/security">See the full honest list</a>.' },
   { q: 'How do we roll out across many branches without chaos?', a: 'One pilot branch first, with exit criteria you define, then a staged rollout. No branch goes live without the previous one proving itself.' },
   { q: 'Can we get a security overview document?', a: 'Yes — download it directly above, alongside the buying-committee kit.' },
@@ -245,7 +245,7 @@ ${L.section(
       <p class="cta-note">No spam, no drip campaigns. One confirmation, one demo, your decision.</p>
     </form>
     <div>
-      ${L.sectionHead('WHAT HAPPENS NEXT', '', '')}
+      ${L.sectionHead('WHAT HAPPENS NEXT', 'Three steps from here to your demo.', '')}
       ${L.steps([
         { title: 'We confirm on WhatsApp', text: 'A human (yes, really) confirms a 15-minute slot that suits you.' },
         { title: 'You bring a scenario', text: 'A real customer situation from your business. We run it live in Jwero.' },

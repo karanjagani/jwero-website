@@ -66,7 +66,7 @@ ${L.honestGapsBlock([
   'Offline mode — Jwero is a connected product today.',
 ])}
 
-${L.section(`${L.sectionHead('QUESTIONS EVALUATORS ASK', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('QUESTIONS EVALUATORS ASK', 'Straight answers for the people who have to sign off.', '')}${L.faqBlock([
   { q: 'Is Jwero an ERP?', a: 'It includes an operations backbone — orders, inventory, purchases, repairs and billing — but Jwero is bigger than an ERP: it is the one system where the customer, the catalogue and the operation share state. Your statutory books stay in Tally or Zoho Books.' },
   { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with customers imported, WhatsApp connected and catalogue published, then expand module by module.' },
   { q: 'What makes this different from a CRM plus a WhatsApp tool?', a: 'Separate tools mean separate memories. In Jwero the customer, catalogue and channels live on one record — so AI can actually sell, not just log.' },
@@ -176,7 +176,7 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('QUESTIONS OWNERS ASK', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('QUESTIONS OWNERS ASK', 'The doubts every owner raises first.', '')}${L.faqBlock([
   { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling.' },
   { q: 'What if the AI drafts something wrong?', a: 'Nothing goes out without approval until you decide otherwise. You can edit any draft, reject it, or switch a whole action type off.' },
   { q: 'Can I turn it all off?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything.' },
@@ -223,7 +223,7 @@ ${L.section(
 
 ${L.honestGapsBlock(['A self-serve public developer API is on the roadmap — until it ships, integrations run through the bridges above.'])}
 
-${L.section(`${L.sectionHead('INTEGRATION QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('INTEGRATION QUESTIONS', 'What actually changes in your stack.', '')}${L.faqBlock([
   { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger; the built-in bridge carries sales data across so your accountant’s world doesn’t change.' },
   { q: 'Can I keep my Shopify store?', a: 'Yes. The connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
   { q: 'Is the WhatsApp integration official, or a ban risk?', a: 'Official WhatsApp Business API — template approvals, consent management and opt-out handling are built in, which is what keeps it out of ban-risk territory.' },
@@ -250,7 +250,7 @@ const tally = {
 ${L.hero({
   eyebrow: 'KEEP YOUR TALLY',
   h1: 'Apna hisaab rakho. Kamai badlo.',
-  sub: 'Keep your books. Change your earnings. Jwero does not ask you to abandon Tally — it asks Tally to keep doing exactly what it already does well, while Jwero takes over the side of the business that brings customers back.',
+  sub: 'Keep your books. Change your earnings. Jwero does not ask you to abandon Tally — it asks Tally to keep doing exactly what it already does well. Jwero takes over the side of the business that brings customers back.',
   primary: { href: '#', label: 'Ask your accountant question', wa: 'tally' },
   secondary: { href: '/migration', label: 'See the migration plan' },
 })}
@@ -264,7 +264,7 @@ ${L.section(
   <p style="margin-top:20px; font-size:.95rem; color:var(--ink-2);">Sales data flows from Jwero to Tally through the built-in bridge — nothing about your accountant’s month-end changes.</p>`
 )}
 
-${L.section(`${L.sectionHead('QUESTIONS ACCOUNTANTS ASK', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('QUESTIONS ACCOUNTANTS ASK', 'What to tell your CA.', '')}${L.faqBlock([
   { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes — they keep filing in Tally, from data that now arrives automatically instead of being re-typed.' },
   { q: 'Does this replace GST filing or e-invoicing?', a: 'No — GST invoicing at the live rate happens in Jwero; statutory filing and e-invoice/IRN stay Tally’s job. Two systems, one clean line.' },
   { q: 'Can our CA keep their own workflow?', a: 'Yes — the bridge changes what arrives in Tally, not how your CA works once it’s there.' },
@@ -297,7 +297,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('THE FIRST 30 DAYS', '', '')}
+  `${L.sectionHead('THE FIRST 30 DAYS', 'What happens, week by week.', '')}
   ${L.steps([
     { title: 'Days 1–7: Land', text: 'Customers imported for you, WhatsApp number connected, catalogue published. Nothing ripped out — your billing software stays.' },
     { title: 'Weeks 2–3: First wins', text: 'Enquiries answered in minutes, occasion greetings flowing with approvals, first catalogue shares sent.' },
@@ -317,7 +317,7 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('TRAINING & ADOPTION QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('TRAINING & ADOPTION QUESTIONS', 'Getting a hesitant team to actually use it.', '')}${L.faqBlock([
   { q: 'What if my staff resist the change?', a: 'Start them on the shared inbox with AI-drafted replies — it makes their day easier immediately, which converts sceptics faster than any explanation.' },
   { q: 'We tried new software before and it sat unused. Why would this be different?', a: 'Assist gives your team something useful on day one instead of a manual to read first. Adoption follows usefulness, not a mandate.' },
   { q: 'Can you work around our festival-season staffing crunch?', a: 'Yes — the season change-freeze exists precisely so training and go-live never compete with your busiest weeks.' },

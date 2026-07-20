@@ -21,7 +21,7 @@ const partners = {
 ${L.hero({
   eyebrow: 'PARTNERS',
   h1: 'Bring Jwero to the jewellers you already serve.',
-  sub: 'You already have the relationship — as their billing/ERP dealer, their accountant, or their trusted consultant. Jwero adds the customer, WhatsApp and scheme layer they don’t have, without touching the ledger relationship that’s already yours.',
+  sub: 'You already have the relationship — as their billing/ERP dealer, their accountant, or their trusted consultant. Jwero adds the customer, WhatsApp and scheme layer they don’t have. It doesn’t touch the ledger relationship that’s already yours.',
   primary: { href: '#', label: 'Talk to us on WhatsApp', wa: 'partners' },
   secondary: { href: '/migration', label: 'See how coexistence works' },
 })}
@@ -35,7 +35,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('WHY THIS DOESN’T THREATEN YOUR BUSINESS', '', '')}
+  `${L.sectionHead('WHY THIS DOESN’T THREATEN YOUR BUSINESS', 'Your two biggest worries, addressed directly.', '')}
   ${L.painRows([
     { quote: 'If I bring in new software, do I lose the client to it?', title: 'The ledger stays yours', text: 'Jwero bridges to Tally and Zoho Books rather than replacing them — the accounting relationship you have with the client doesn’t change.' },
     { quote: 'Will Jwero go around me and sell direct after the intro?', title: 'You’re looped in, not cut out', text: 'You made the introduction; we keep you informed of where the relationship stands rather than disappearing into a direct sale.' },
@@ -46,7 +46,7 @@ ${L.section(
   `<div class="gaps-block">
     <p class="gaps-tag">WHAT’S NOT BUILT OUT YET</p>
     <p class="gaps-lead">Said plainly, before you find out the hard way.</p>
-    <ul class="gaps-list"><li>No published commission schedule or partner tier structure yet — terms are worked out directly per relationship while we learn what actually works, not read off a rigid sheet.</li></ul>
+    <ul class="gaps-list"><li>No published commission schedule or partner tier structure yet. Terms are worked out directly per relationship while we learn what actually works — not read off a rigid sheet.</li></ul>
   </div>`
 )}
 
@@ -59,7 +59,7 @@ ${L.section(
   ])}`
 )}
 
-${L.section(`${L.sectionHead('QUESTIONS PARTNERS ASK', '', '')}${L.faqBlock(partnersFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.sectionHead('QUESTIONS PARTNERS ASK', 'Answers before you refer your first client.', '')}${L.faqBlock(partnersFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="partners">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 

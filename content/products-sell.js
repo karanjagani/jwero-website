@@ -8,7 +8,7 @@ const whatsapp = {
   breadcrumbs: BC('WhatsApp Commerce'),
   faqs: [
     { q: 'Can customers actually buy on WhatsApp?', a: 'Yes. Share catalogues with live prices, take orders and collect payments in the chat. For high-value pieces, WhatsApp books the appointment or the video call — the sale closes wherever the customer is comfortable.' },
-    { q: 'Will my number get banned?', a: 'Jwero uses the official WhatsApp Business API with approved templates, consent tracking, per-customer message-fatigue limits and instant opt-out handling — the discipline that keeps accounts healthy.' },
+    { q: 'Will my number get banned?', a: 'No. Jwero uses the official WhatsApp Business API with approved templates, consent tracking, per-customer message-fatigue limits and instant opt-out handling — the discipline that keeps accounts healthy.' },
     { q: 'Can I keep my existing WhatsApp number?', a: 'Yes, and you should — that number is part of your reputation. We migrate it onto the official API.' },
     { q: 'How is this different from WATI or other WhatsApp tools?', a: 'Those tools send messages. They don’t know her purchase history, her scheme balance, or what a gram of 22k costs today. Jwero replies come from a system that knows the customer and the jewellery — because they share one record.' },
     { q: 'What does this replace, work with, and cost?', a: 'It replaces unofficial bulk-messaging tools and personal-phone selling. It works alongside your existing WhatsApp number and your billing software. Pricing sits inside Jwero’s tiers — see /pricing for the structure.' },
@@ -20,7 +20,7 @@ const whatsapp = {
 ${L.hero({
   eyebrow: 'WHATSAPP COMMERCE',
   h1: 'Your counter is now open 24 hours a day.',
-  sub: 'Jewellery is bought on trust and conversation — which is why it is bought on WhatsApp. Jwero turns your number into a full counter: live-price catalogues, knowledgeable replies in minutes, appointments, payments and follow-up. Officially, safely, at scale.',
+  sub: 'Jewellery is bought on trust and conversation — which is why it is bought on WhatsApp. Jwero turns your number into a full counter — live-price catalogues, knowledgeable replies in minutes, appointments, payments and follow-up — officially, safely, at scale.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'whatsapp' },
   secondary: { href: '/tools/whatsapp-revenue-estimator', label: 'Try the Revenue Estimator' },
   note: 'The demo IS a WhatsApp conversation.',
@@ -63,8 +63,8 @@ ${L.oneSystemBlock([
   'Her occasion journey — the anniversary invite next year — reads the same channel-preference field this conversation is updating right now.',
 ])}
 
-${L.section(`${L.sectionHead('WHATSAPP QUESTIONS', '', '')}${L.faqBlock([
-  { q: 'Will my number get banned?', a: 'Jwero uses the official WhatsApp Business API with approved templates, consent tracking and opt-out handling — the discipline that keeps accounts healthy.' },
+${L.section(`${L.sectionHead('WHATSAPP QUESTIONS', 'Bans, rule changes, and what actually sets this apart.', '')}${L.faqBlock([
+  { q: 'Will my number get banned?', a: 'No. Jwero uses the official WhatsApp Business API with approved templates, consent tracking and opt-out handling — the discipline that keeps accounts healthy.' },
   { q: 'What if Meta changes the rules?', a: 'Your customer records and catalogue live in Jwero, not inside the channel. Channels can change; your data doesn’t move with them.' },
   { q: 'How is this different from WATI or similar tools?', a: 'They send messages. Jwero replies come from a system that knows the customer and the jewellery, because they share one record. See <a href="/compare/jwero-vs-wati">Jwero vs WATI</a>.' },
 ])}
@@ -120,7 +120,7 @@ ${L.oneSystemBlock([
   'The catalogue an AI drafts into a DM reply is the same live-priced catalogue every other channel sells from.',
 ])}
 
-${L.section(`${L.sectionHead('INSTAGRAM & FACEBOOK QUESTIONS', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('INSTAGRAM & FACEBOOK QUESTIONS', 'New accounts, personal touch, and who is running it.', '')}${L.faqBlock([
   { q: 'Do I need a new Instagram account?', a: 'No — Jwero connects to your existing professional account through the official Meta APIs.' },
   { q: 'Will replies feel impersonal?', a: 'Drafts come from the same customer record WhatsApp uses, and every reply waits for your approval — informed, not robotic.' },
   { q: 'Do I need someone dedicated to run this?', a: 'No — the AI workforce handles first response and routine follow-up; your team just approves.' },
@@ -170,7 +170,7 @@ ${L.section(
 
 ${L.governanceStrip()}
 
-${L.section(`${L.sectionHead('THE STAFF QUESTION', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('THE STAFF QUESTION', 'What your salespeople should actually worry about.', '')}${L.faqBlock([
   { q: 'Will this replace my sales staff?', a: 'No. The AI workforce does the remembering and follow-up; your people do the selling. Salespeople close more when every customer walks in already known.' },
   { q: 'My salespeople are worried about being watched or replaced. What do I tell them?', a: 'It works for them, not on them — it does the tedious remembering so they spend their time on the sale itself.' },
   { q: 'Can it give a discount without me knowing?', a: 'No — pricing and discounts follow your price rules and staff permissions, always.' },

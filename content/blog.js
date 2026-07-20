@@ -76,13 +76,16 @@ ${L.section(
   <p><strong>The official WhatsApp Business API</strong> is what serious commerce runs on: approved message templates for anything outside an active conversation, consent and opt-out tracking, and support for a whole team working one number through a shared inbox — without each person needing the phone in hand. This is the number your customers already trust, migrated onto infrastructure that won’t put it at risk.</p>
 
   <h2>Catalogue sharing that doesn’t go stale</h2>
-  <p>A screenshot of a price list sent last week is wrong by the time it’s reopened, because gold and silver rates move — often twice a day. A catalogue that resolves price live, at the moment it’s viewed or shared, removes the single most common source of an awkward "actually, the price has changed" conversation. This matters even more for certified stones, where a customer expects the certification number, cut, clarity and carat to be exact, not paraphrased from memory.</p>
+  <p>A screenshot of a price list sent last week is wrong by the time it’s reopened, because gold and silver rates move — often twice a day. A catalogue that resolves price live, at the moment it’s viewed or shared, removes the single most common source of an awkward "actually, the price has changed" conversation.</p>
+  <p>This matters even more for certified stones, where a customer expects the certification number, cut, clarity and carat to be exact, not paraphrased from memory.</p>
 
   <h2>Reply speed decides more sales than the reply itself</h2>
-  <p>The customer messaging three jewellers at 11pm isn’t choosing the best design — she’s choosing whoever answers first with a real, accurate price. A correct reply that arrives the next morning has usually already lost to a mediocre reply that arrived in minutes. This is the single biggest lever in WhatsApp selling, and it’s also the easiest to underestimate, because "we always reply eventually" feels like coverage until you measure how many enquiries went cold overnight. <a href="/tools/whatsapp-revenue-estimator">The WhatsApp Revenue Estimator</a> puts a number on exactly this gap for your own volume and average order value.</p>
+  <p>The customer messaging three jewellers at 11pm isn’t choosing the best design — she’s choosing whoever answers first with a real, accurate price. A correct reply that arrives the next morning has usually already lost to a mediocre reply that arrived in minutes.</p>
+  <p>This is the single biggest lever in WhatsApp selling, and it’s also the easiest to underestimate, because "we always reply eventually" feels like coverage until you measure how many enquiries went cold overnight. <a href="/tools/whatsapp-revenue-estimator">The WhatsApp Revenue Estimator</a> puts a number on exactly this gap for your own volume and average order value.</p>
 
   <h2>A conversation is not a customer record</h2>
-  <p>The deepest structural problem with running sales purely through chat is that a conversation thread isn’t a customer record. Six months later, when the same customer messages about an anniversary gift, nothing about her past purchase, her sizes, or what she was shown last time carries forward unless a person remembers it. The chat and the CRM need to be the same system — otherwise every returning customer is, functionally, a stranger again.</p>
+  <p>The deepest structural problem with running sales purely through chat is that a conversation thread isn’t a customer record. Six months later, when the same customer messages about an anniversary gift, nothing about her past purchase, her sizes, or what she was shown last time carries forward unless a person remembers it.</p>
+  <p>The chat and the CRM need to be the same system — otherwise every returning customer is, functionally, a stranger again.</p>
 
   <h2>The most common mistakes jewellers make on WhatsApp</h2>
   <p><strong>Running it on a personal number with no backup.</strong> When that staff member is on leave, sick, or leaves the business, the relationships they carried go dark or leave with them.</p>
@@ -100,7 +103,7 @@ ${L.section(
   <p><a class="btn btn-ghost" href="/products/whatsapp">See WhatsApp Commerce in Jwero</a></p>`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('GUIDE QUESTIONS', '', '')}${L.faqBlock(whatsappGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about setup and bans.', '')}${L.faqBlock(whatsappGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-whatsapp">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -139,7 +142,8 @@ ${L.section(
   <p>What matters more than the exact cutoff is having one at all, tracked consistently, so "slow" and "dead" are measured the same way every month rather than judged by feel.</p>
 
   <h2>Why it’s worse in jewellery than in almost any other retail category</h2>
-  <p>Jewellery inventory ties up an unusually large amount of capital per square foot of shelf space, and most of that capital is financed — through working-capital loans, gold loan schemes, or the owner’s own money that could be earning a return elsewhere. Every month a piece sits unsold, it’s quietly costing the business the financing rate on that capital, plus insurance, storage and handling — and none of that shows up as a line item anywhere. It only shows up as a smaller number in the bank account than the sales figures would suggest.</p>
+  <p>Jewellery inventory ties up an unusually large amount of capital per square foot of shelf space, and most of that capital is financed — through working-capital loans, gold loan schemes, or the owner’s own money that could be earning a return elsewhere. Every month a piece sits unsold, it’s quietly costing the business the financing rate on that capital, plus insurance, storage and handling — and none of that shows up as a line item anywhere.</p>
+  <p>It only shows up as a smaller number in the bank account than the sales figures would suggest.</p>
 
   <h2>How the real carrying cost is calculated</h2>
   <p>The calculation is straightforward once it’s made explicit: take the value of stock sitting in the dead-stock band, and multiply it by your financing rate plus a reasonable allowance for insurance, storage and handling — commonly a couple of percentage points on top of the financing rate. Divide by twelve for a monthly figure. This deliberately excludes the opportunity cost of that capital not being invested in faster-moving pieces instead, which means the true cost to the business is higher than this number, not lower.</p>
@@ -161,7 +165,7 @@ ${L.section(
   <p><a class="btn btn-ghost" href="/solutions/pain/dead-stock">Read the full dead-stock playbook</a></p>`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('GUIDE QUESTIONS', '', '')}${L.faqBlock(deadStockGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about calculating and clearing it.', '')}${L.faqBlock(deadStockGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-deadstock">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -196,16 +200,19 @@ ${L.section(postMeta(8, 'Gold Savings Schemes'))}
 ${L.section(
   `<div class="post-body">
   <h2>Why a scheme is a revenue engine, not just a savings product</h2>
-  <p>A gold savings scheme looks, from the customer's side, like a disciplined way to save toward a future purchase. From the business's side, it's something more specific: a corpus collected this year that becomes a near-guaranteed showcase visit next year. Members overwhelmingly redeem their corpus in person, at the counter — and typically add money at maturity to reach the piece they actually want, rather than spending exactly the corpus amount and no more. The scheme book you build this year is next year's booked traffic, collected in advance.</p>
+  <p>A gold savings scheme looks, from the customer's side, like a disciplined way to save toward a future purchase. From the business's side, it's something more specific: a corpus collected this year that becomes a near-guaranteed showcase visit next year.</p>
+  <p>Members overwhelmingly redeem their corpus in person, at the counter — and typically add money at maturity to reach the piece they actually want, rather than spending exactly the corpus amount and no more. The scheme book you build this year is next year's booked traffic, collected in advance.</p>
 
   <h2>The classic structure, and why it's shaped that way</h2>
   <p>The most common scheme structure is an 11-instalment plan: the member pays a fixed amount each month for eleven months, and redeems the full twelve-month value (or an equivalent) in jewellery. The structure rewards completion without asking the business to carry an open-ended liability, and it gives members a clear, short horizon rather than an indefinite savings commitment. Specific terms — instalment counts, bonus structures, lock-in periods — vary business to business, and should be set with your own compliance advisor rather than copied from a competitor's scheme.</p>
 
   <h2>Where paper-register schemes actually leak</h2>
-  <p>The failure mode of a manually run scheme is almost never a member deciding to quit. It's drift: a missed month that nobody notices for weeks, because the register only gets reviewed occasionally, not against a due date. By the time someone follows up, the member has already mentally written off the scheme, or worse, feels chased rather than reminded. Multiply that pattern across a few hundred members and the completion rate on paper-run schemes ends up meaningfully lower than it should be — not because the product failed, but because the collection process did.</p>
+  <p>The failure mode of a manually run scheme is almost never a member deciding to quit. It's drift: a missed month that nobody notices for weeks, because the register only gets reviewed occasionally, not against a due date. By the time someone follows up, the member has already mentally written off the scheme, or worse, feels chased rather than reminded.</p>
+  <p>Multiply that pattern across a few hundred members and the completion rate on paper-run schemes ends up meaningfully lower than it should be — not because the product failed, but because the collection process did.</p>
 
   <h2>What digital collection actually fixes</h2>
-  <p>The mechanics that close this gap are simple, individually: automated reminders before a due date rather than after it's missed, a payment link inside the reminder so paying takes one tap, a balance the member can check themselves without calling the shop, and an OTP-verified maturity step so redemption is unambiguous for both sides. None of these are complicated technology — what they replace is a person remembering to chase hundreds of due dates by hand, which doesn't scale past a small member base no matter how diligent that person is.</p>
+  <p>The mechanics that close this gap are simple, individually: automated reminders before a due date rather than after it's missed, a payment link inside the reminder so paying takes one tap, a balance the member can check themselves without calling the shop, and an OTP-verified maturity step so redemption is unambiguous for both sides.</p>
+  <p>None of these are complicated technology — what they replace is a person remembering to chase hundreds of due dates by hand, which doesn't scale past a small member base no matter how diligent that person is.</p>
   <p>See what your own enrolment rate and instalment size are worth in locked-in future revenue with the <a href="/tools/gold-scheme-calculator">Gold Scheme Calculator</a> — and what a realistic completion-rate uplift from digital collection adds on top.</p>
 
   <h2>Digital gold, alongside classic schemes</h2>
@@ -221,7 +228,7 @@ ${L.section(
   <p><a class="btn btn-ghost" href="/products/gold-schemes">See schemes in Jwero</a></p>`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('GUIDE QUESTIONS', '', '')}${L.faqBlock(schemeGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about running one properly.', '')}${L.faqBlock(schemeGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-scheme">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 

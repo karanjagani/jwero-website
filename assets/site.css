@@ -85,6 +85,16 @@ strong, summary, .stat-n { color: var(--ink); }
 /* ---------- focus ---------- */
 :focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
 
+/* ---------- skip link ---------- */
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: var(--brand); color: #fff; padding: 10px 18px; border-radius: var(--r-sm);
+  font-weight: 600; font-size: .9rem; text-decoration: none;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 12px; }
+main:focus-visible { outline: none; }
+
 /* ---------- buttons ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -129,7 +139,7 @@ strong, summary, .stat-n { color: var(--ink); }
 .logo-word { font-size: 1.32rem; font-weight: 700; letter-spacing: -.03em; color: var(--ink); }
 .main-nav { display: flex; gap: 2px; flex: 1; }
 .nav-link {
-  display: inline-block; padding: 8px 13px; border-radius: 8px; font-size: .92rem; font-weight: 550;
+  display: inline-block; padding: 8px 13px; border-radius: 8px; font-size: .92rem; font-weight: 600;
   text-decoration: none; color: var(--ink); cursor: pointer; list-style: none;
 }
 .nav-link:hover { background: var(--brand-soft); color: var(--brand); }
@@ -154,9 +164,9 @@ strong, summary, .stat-n { color: var(--ink); }
 [data-theme="dark"] .dd-footer { color: var(--brand-strong) !important; }
 .header-cta { display: flex; align-items: center; gap: 10px; }
 .header-cta .btn { padding: 9px 16px; font-size: .87rem; }
-.theme-toggle { background: none; border: none; font-size: 1.1rem; cursor: pointer; color: var(--ink-2); padding: 6px; border-radius: 8px; }
+.theme-toggle { background: none; border: none; font-size: 1.1rem; cursor: pointer; color: var(--ink-2); padding: 10px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; }
 .theme-toggle:hover { background: var(--surface); }
-.nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+.nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 11px 10px; }
 .nav-burger span { display: block; width: 22px; height: 2px; background: var(--ink); margin: 5px 0; border-radius: 2px; }
 
 /* ---------- hero ---------- */
@@ -209,7 +219,7 @@ strong, summary, .stat-n { color: var(--ink); }
   font-size: 1.15rem; color: var(--brand); background: var(--brand-soft); margin-bottom: 16px;
 }
 [data-theme="dark"] .card-icon { color: var(--brand-strong); }
-.card-link { display: inline-block; margin-top: 12px; font-size: .9rem; font-weight: 650; color: var(--brand); text-decoration: none; }
+.card-link { display: inline-block; margin-top: 12px; font-size: .9rem; font-weight: 700; color: var(--brand); text-decoration: none; }
 .card-link:hover { text-decoration: underline; }
 [data-theme="dark"] .card-link { color: var(--brand-strong); }
 
@@ -226,7 +236,7 @@ strong, summary, .stat-n { color: var(--ink); }
 /* ---------- stats ---------- */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; text-align: center; }
 .stat { padding: 26px 10px; border: 1px solid var(--line); border-radius: var(--r); background: var(--card); }
-.stat-n { font-size: 2.1rem; font-weight: 750; letter-spacing: -.03em; color: var(--brand); }
+.stat-n { font-size: 2.1rem; font-weight: 700; letter-spacing: -.03em; color: var(--brand); }
 [data-theme="dark"] .stat-n { color: var(--brand-strong); }
 .stat-l { font-size: .87rem; color: var(--ink-2); margin-top: 6px; }
 
@@ -237,7 +247,7 @@ strong, summary, .stat-n { color: var(--ink); }
   padding: 18px 34px 18px 0; cursor: pointer; font-weight: 600; list-style: none; position: relative; font-size: 1rem;
 }
 .faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary::after { content: '+'; position: absolute; right: 4px; top: 14px; color: var(--brand); font-size: 1.3rem; font-weight: 500; }
+.faq-item summary::after { content: '+'; position: absolute; right: 4px; top: 14px; color: var(--brand); font-size: 1.3rem; font-weight: 600; }
 [data-theme="dark"] .faq-item summary::after { color: var(--brand-strong); }
 .faq-item[open] summary::after { content: '–'; }
 .faq-a { padding: 0 0 18px; max-width: 62em; }
@@ -270,7 +280,7 @@ strong, summary, .stat-n { color: var(--ink); }
 }
 .bubble.in { background: var(--surface); border: 1px solid var(--line); border-bottom-left-radius: 4px; }
 .bubble.out { background: var(--brand-soft); margin-left: auto; border-bottom-right-radius: 4px; }
-.bubble-tag { display: block; margin-top: 7px; font-size: .7rem; color: var(--brand); font-weight: 650; }
+.bubble-tag { display: block; margin-top: 7px; font-size: .7rem; color: var(--brand); font-weight: 700; }
 [data-theme="dark"] .bubble-tag { color: var(--brand-strong); }
 
 /* ---------- frankenstack ---------- */

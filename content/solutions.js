@@ -16,13 +16,13 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('RETAIL', '', '')}
+  `${L.sectionHead('RETAIL', 'Every retail format, on one system.', '')}
   <div class="filter-chips">
     <a href="#retail" class="active">Retail</a><a href="#wholesale">Wholesale</a><a href="#manufacturing">Manufacturing</a><a href="#other">Brands, D2C & networks</a><a href="#pain">By pain</a>
   </div>
   <div class="router-grid" id="retail">
     <a class="router-card" href="/solutions/single-store"><div class="r-icon">◆</div><h3>Single store</h3><p>Everything lives in the owner’s head and staff phones — until now.</p></a>
-    <a class="router-card" href="/solutions/multi-store-chains"><div class="r-icon">◇</div><h3>Multi-store & chains</h3><p>Can’t see stores without calling them? One spine fixes that.</p></a>
+    <a class="router-card" href="/solutions/multi-store-chains"><div class="r-icon">◇</div><h3>Multi-store & chains</h3><p>One spine — no more calling every branch to see what's happening.</p></a>
     <a class="router-card" href="/industries/retail"><div class="r-icon">✦</div><h3>Retail (hub)</h3><p>Orientation page routing every retail material and format.</p></a>
     <a class="router-card" href="/solutions/luxury-boutique"><div class="r-icon">✦</div><h3>Luxury & boutique</h3><p>Clienteling worthy of what you sell.</p></a>
     <a class="router-card" href="/solutions/bridal"><div class="r-icon">♥</div><h3>Bridal & wedding</h3><p>Win the wedding, keep the family.</p></a>
@@ -35,7 +35,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('WHOLESALE', '', '')}
+  `${L.sectionHead('WHOLESALE', 'Selling to the trade, built to order.', '')}
   <div class="router-grid" id="wholesale">
     <a class="router-card" href="/solutions/diamond-wholesale"><h3>Diamond wholesale</h3><p>Your inventory, in every buyer’s pocket.</p></a>
     <a class="router-card" href="/solutions/gold-wholesale"><h3>Gold wholesale</h3><p>Wholesale gold, retail-grade systems.</p></a>
@@ -44,7 +44,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('MANUFACTURING', '', '')}
+  `${L.sectionHead('MANUFACTURING', 'Every stage of production, connected.', '')}
   <div class="router-grid" id="manufacturing">
     <a class="router-card" href="/solutions/manufacturers"><h3>Manufacturers (hub)</h3><p>From jangad to despatch, one ledger.</p></a>
     <a class="router-card" href="/solutions/casting-units"><h3>Casting units</h3><p>Every tree, every flask, accounted.</p></a>
@@ -55,7 +55,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('BRANDS, D2C & NETWORKS', '', '')}
+  `${L.sectionHead('BRANDS, D2C & NETWORKS', 'Built for brands beyond one counter.', '')}
   <div class="router-grid" id="other">
     <a class="router-card" href="/solutions/bullion-gold-traders"><h3>Bullion dealers & gold traders</h3><p>Volume trades, zero ambiguity.</p></a>
     <a class="router-card" href="/solutions/jewellery-brands"><h3>Jewellery brands</h3><p>One brand voice across every counter and channel.</p></a>
@@ -136,7 +136,7 @@ ${L.section(
   ])}`
 )}
 
-${L.section(`${L.sectionHead('QUESTIONS SINGLE-STORE OWNERS ASK', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('QUESTIONS SINGLE-STORE OWNERS ASK', 'What single-store owners ask before they switch.', '')}${L.faqBlock([
   { q: 'I need my family or partner to agree first. What do I show them?', a: 'Bring them into the WhatsApp demo directly, or share the growth report sample — easier to evaluate than a sales pitch.' },
   { q: 'What if it doesn’t work for my shop?', a: 'You’ve changed nothing that can’t be undone — your billing software stays untouched, and your data exports any time.' },
 ])}
@@ -170,7 +170,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('THREE PROBLEMS EVERY MULTI-STORE OWNER KNOWS', '', '')}
+  `${L.sectionHead('THREE PROBLEMS EVERY MULTI-STORE OWNER KNOWS', 'Consistency, memory and spend, solved centrally.', '')}
   ${L.painRows([
     { quote: 'Every branch runs its own way. I find out about problems a month later.', title: 'One spine, every branch', text: 'Consistent pricing rules, catalogues and processes from the centre; controlled exceptions with approvals; an owner rollup that surfaces drift now, not at month-end.' },
     { quote: 'A customer of our city store walks into our new mall store and nobody knows her.', title: 'Network-wide memory', text: 'One customer record across branches: her purchases, plan balance and preferences greet her at every counter you own.' },
@@ -193,7 +193,7 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', 'What IT, finance and operations will ask.', '')}${L.faqBlock([
   { q: 'We already invested in an ERP or CRM. Why change now?', a: 'You likely don’t need to — most multi-store businesses keep their ERP for the ledger and add Jwero for the revenue side, synced across branches.' },
   { q: 'Won’t staff at different branches resist differently?', a: 'Training is role-based and staged with the rollout — each branch gets the same onboarding as the pilot.' },
 ])}
@@ -214,7 +214,7 @@ const manufacturers = {
     { q: 'Can Jwero track gold loss per production stage?', a: 'Yes — an append-only work-in-progress ledger tracks fine weight through every stage with per-stage loss norms; abnormal loss is flagged the day it happens, not at year-end stocktake.' },
     { q: 'Does it handle artisan job-work?', a: 'Yes — job-work issue and receipt with weight reconciliation, gated by the rules you set per artisan and order.' },
     { q: 'Can wholesalers take orders on WhatsApp?', a: 'Yes — share live B2B catalogues with retailer-specific visibility, take orders in chat, and track the whole purchase-to-pay chain.' },
-    { q: 'Is karigar wage settlement included?', a: 'Job-work tracking — issue, receipt, weight reconciliation — is shipped today. Wage and payroll settlement for karigars is on the public roadmap, and we say so rather than imply otherwise.' },
+    { q: 'Is karigar wage settlement included?', a: 'No — wage and payroll settlement for karigars is on the public roadmap, not shipped today. Job-work tracking itself — issue, receipt, weight reconciliation — is shipped now, and we say plainly what isn’t rather than imply otherwise.' },
     { q: 'Will karigars resist being tracked more closely than the notebook they’re used to?', a: 'Frame it as job cards, not surveillance — the same records that catch abnormal loss also settle disputes in the karigar’s favour when they did nothing wrong. Job tracking protects both sides, not just the owner.' },
     { q: 'Our process is unusual — casting, CAD or export-specific. Does this actually fit?', a: 'Casting, CAD and export-house specific pages exist because these workflows genuinely differ — see <a href="/solutions/casting-units">casting units</a>, <a href="/solutions/cad-services">CAD services</a> or <a href="/solutions/export-houses">export houses</a> for your exact fit rather than a generic answer.' },
   ],
@@ -222,13 +222,13 @@ const manufacturers = {
 ${L.hero({
   eyebrow: 'FOR MANUFACTURERS & WHOLESALERS',
   h1: 'You measure in milligrams. Your systems should too.',
-  sub: 'Retail software dressed up for the workshop does not survive the workshop. Jwero’s manufacturing spine speaks your language: fine weight through every stage, loss norms per process, job-work under rules, intake verified by assay — and B2B selling on the channel your buyers already use.',
+  sub: 'Retail software dressed up for the workshop does not survive the workshop. Jwero’s manufacturing spine speaks your language: fine weight through every stage, loss norms per process, job-work under rules, intake verified by assay. And B2B selling happens on the channel your buyers already use.',
   primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'manufacturers' },
   secondary: { href: '/tools/gold-loss-calculator', label: 'Try the Gold-Loss Calculator' },
 })}
 
 ${L.section(
-  `${L.sectionHead('WHERE THE MARGIN GOES', '', '')}
+  `${L.sectionHead('WHERE THE MARGIN GOES', 'Three leaks in every production line.', '')}
   ${L.painRows([
     { quote: 'Between issue and receipt, gold evaporates — and I find out at stocktake.', title: 'A ledger that never forgets a milligram', text: 'Append-only WIP tracking with per-stage gold-loss norms. Abnormal loss flags the day it happens, with the stage and the hands it happened in.' },
     { quote: 'Job-work runs on trust and a notebook.', title: 'Job-work under rules', text: 'Issue and receipt with weight reconciliation, artisan-level norms and a documented trail — trust, plus verification.' },
@@ -254,7 +254,7 @@ ${L.section(
 
 ${L.honestGapsBlock(['Karigar wage and payroll settlement is on the roadmap — job-work issue/receipt tracking itself is shipped today.'])}
 
-${L.section(`${L.sectionHead('QUESTIONS MANUFACTURERS ASK', '', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('QUESTIONS MANUFACTURERS ASK', 'What manufacturers ask about job-work and loss.', '')}${L.faqBlock([
   { q: 'Will karigars resist being tracked more closely?', a: 'Frame it as job cards, not surveillance — the same records that catch abnormal loss also settle disputes in the karigar’s favour. It protects both sides.' },
   { q: 'Our process is unusual — casting, CAD, export-specific. Does this fit?', a: 'See <a href="/solutions/casting-units">casting units</a>, <a href="/solutions/cad-services">CAD services</a> or <a href="/solutions/export-houses">export houses</a> for your exact fit.' },
 ])}

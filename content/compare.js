@@ -27,12 +27,12 @@ ${L.hero({
 })}
 ${L.section(L.verdictBox(shortName || name, concedeThem, concedeJwero))}
 ${L.section(
-  `${L.sectionHead('THE HONEST MATRIX', '', researchNote || `Jwero claims below are product-verified. ${name} claims are sourced from its own public marketing and independent review/pricing sites, checked July 2026 — anything more specific than that is marked [VERIFY].`)}
+  `${L.sectionHead('THE HONEST MATRIX', `Jwero vs ${name}, feature by feature.`, researchNote || `Jwero claims below are product-verified. ${name} claims are sourced from its own public marketing and independent review/pricing sites, checked July 2026 — anything more specific than that is marked [VERIFY].`)}
   ${L.compareTable(name, rows)}`
 , { tone: 'tint' })}
-${L.section(`${L.sectionHead('WHAT SWITCHERS SWITCH FOR', '', '')}${L.switchForBlock()}`)}
+${L.section(`${L.sectionHead('WHAT SWITCHERS SWITCH FOR', 'What switching actually buys you.', '')}${L.switchForBlock()}`)}
 ${L.section(`<div class="stack-verdict">${migrationNote || `Switching is a data question, not a leap of faith. See the <a href="/migration">Migration Centre</a> for exactly what moves and how.`}</div>`)}
-${faqs && faqs.length ? L.section(`${L.sectionHead('QUESTIONS SWITCHERS ASK', '', '')}${L.faqBlock(faqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`) : ''}
+${faqs && faqs.length ? L.section(`${L.sectionHead('QUESTIONS SWITCHERS ASK', `Questions about switching from ${name}.`, '')}${L.faqBlock(faqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`) : ''}
 ${L.ctaBand(`Plan the switch from ${shortName || name}.`, 'Tell us what you use today — we’ll map exactly what carries over and what changes.', waCtx)}
 `,
   };
@@ -52,13 +52,13 @@ ${L.hero({
   secondary: { href: '/migration', label: 'See the Migration Centre' },
 })}
 ${L.section(
-  `${L.sectionHead('CATEGORY LEVEL', '', '')}
+  `${L.sectionHead('CATEGORY LEVEL', 'Messaging tools vs the operating system layer.', '')}
   ${L.cards([
     { title: 'WhatsApp tools vs a jewellery operating system', text: 'The honest difference between a messaging layer and the system underneath it.', link: { href: '/compare/whatsapp-tools-vs-jewellery-os', label: 'Compare' } },
   ])}`
 )}
 ${L.section(
-  `${L.sectionHead('JEWELLERY ERP & ACCOUNTING-FIRST', '', '')}
+  `${L.sectionHead('JEWELLERY ERP & ACCOUNTING-FIRST', 'How Jwero compares to jewellery ERPs.', '')}
   ${L.cards([
     { title: 'Jwero vs Ornate NX', text: 'Touchscreen POS, karigar contacts and real-time accounting for Indian jewellery retail.', link: { href: '/compare/jwero-vs-ornate-nx', label: 'Compare' } },
     { title: 'Jwero vs Synergics', text: 'Concept-to-customer manufacturing ERP used by 150+ jewellery businesses (per Synergics).', link: { href: '/compare/jwero-vs-synergics', label: 'Compare' } },
@@ -67,14 +67,14 @@ ${L.section(
   ], 4)}`
 , { tone: 'tint' })}
 ${L.section(
-  `${L.sectionHead('OPERATING SYSTEM & ENGAGEMENT PLATFORMS', '', '')}
+  `${L.sectionHead('OPERATING SYSTEM & ENGAGEMENT PLATFORMS', 'Direct rivals to the operating-system claim.', '')}
   ${L.cards([
     { title: 'Jwero vs SIONIQ', text: 'A broad jewellery ERP spanning manufacturing to bullion, that also uses a "Jewelry Operating System" label.', link: { href: '/compare/jwero-vs-sioniq', label: 'Compare' } },
     { title: 'Jwero vs Zithara', text: 'An AI-first retail CRM with named jewellery-brand customers (Palmonas, Ernesto Buono).', link: { href: '/compare/jwero-vs-zithara', label: 'Compare' } },
   ])}`
 )}
 ${L.section(
-  `${L.sectionHead('WHATSAPP & MESSAGING TOOLS', '', '')}
+  `${L.sectionHead('WHATSAPP & MESSAGING TOOLS', 'How Jwero compares to WhatsApp and catalogue tools.', '')}
   ${L.cards([
     { title: 'Jwero vs WATI', text: 'A WhatsApp Business API tool with published pricing from roughly $39–229/month.', link: { href: '/compare/jwero-vs-wati', label: 'Compare' } },
     { title: 'Jwero vs Interakt', text: 'A WhatsApp commerce tool priced from ₹3,499/quarter, backed by Haptik AI agents.', link: { href: '/compare/jwero-vs-interakt', label: 'Compare' } },
@@ -83,7 +83,7 @@ ${L.section(
   ], 4)}`
 , { tone: 'tint' })}
 ${L.section(
-  `${L.sectionHead('ECOMMERCE & GENERIC CRM', '', '')}
+  `${L.sectionHead('ECOMMERCE & GENERIC CRM', 'How Jwero compares to ecommerce and CRM platforms.', '')}
   ${L.cards([
     { title: 'Jwero vs Shopify', text: 'The category-leading ecommerce platform, from $39/month for a solo storefront.', link: { href: '/compare/jwero-vs-shopify', label: 'Compare' } },
     { title: 'Jwero vs Zoho CRM', text: 'A mature horizontal CRM, free for 3 users up to $52/user/month.', link: { href: '/compare/jwero-vs-zoho-crm', label: 'Compare' } },
