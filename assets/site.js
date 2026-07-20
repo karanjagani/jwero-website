@@ -91,7 +91,8 @@
     quicksell: 'Hi Jwero — I currently use QuickSell, help me compare.',
     shopify: 'Hi Jwero — I run a Shopify store, show me what Jwero adds.',
     zohocrm: 'Hi Jwero — I currently use Zoho CRM, help me compare.',
-    'faq-hub': 'Hi Jwero — I have a question that wasn’t on your FAQ page: '
+    'faq-hub': 'Hi Jwero — I have a question that wasn’t on your FAQ page: ',
+    partners: 'Hi Jwero — I’d like to talk about the partner program. Here’s who I’d bring first: '
   };
 
   function waLink(ctx, extra) {
