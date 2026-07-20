@@ -224,7 +224,7 @@ ${L.hero({
   h1: 'You measure in milligrams. Your systems should too.',
   sub: 'Retail software dressed up for the workshop does not survive the workshop. Jwero’s manufacturing spine speaks your language: fine weight through every stage, loss norms per process, job-work under rules, intake verified by assay — and B2B selling on the channel your buyers already use.',
   primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'manufacturers' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  secondary: { href: '/tools/gold-loss-calculator', label: 'Try the Gold-Loss Calculator' },
 })}
 
 ${L.section(
@@ -240,6 +240,8 @@ ${L.jtbdBlock([
   { when: 'gold moves between stages of production', want: 'see exactly where every gram is and what was lost', so: 'abnormal loss gets caught the day it happens, not at audit' },
   { when: 'a karigar takes a job-work order', want: 'issue and receive weight against a documented rule', so: 'disputes don’t become relationship damage' },
 ])}
+
+${L.section(`<div class="stack-verdict"><strong>Run your own number:</strong> the <a href="/tools/gold-loss-calculator">Gold-Loss Calculator</a> takes your production volume and the gap between observed and explained stocktake loss, and shows what it’s worth at today’s rate — a self-assessment, not an industry benchmark.</div>`)}
 
 ${L.section(
   `${L.stats([

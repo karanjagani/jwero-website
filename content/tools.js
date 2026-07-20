@@ -15,7 +15,9 @@ ${L.section(
   `${L.cards([
     { title: 'Dead Stock Calculator', text: 'What idle inventory is really costing your business every month.', link: { href: '/tools/dead-stock-calculator', label: 'Run it' } },
     { title: 'Gold Scheme Calculator', text: 'What your enrolment rate is worth in locked-in future revenue.', link: { href: '/tools/gold-scheme-calculator', label: 'Run it' } },
-  ])}`
+    { title: 'WhatsApp Revenue Estimator', text: 'What slow or missed WhatsApp replies are costing you in lost sales.', link: { href: '/tools/whatsapp-revenue-estimator', label: 'Run it' } },
+    { title: 'Gold-Loss Calculator', text: 'What unexplained production loss is worth, before a per-stage ledger catches it.', link: { href: '/tools/gold-loss-calculator', label: 'Run it' } },
+  ], 4)}`
 )}
 `,
 };
@@ -141,4 +143,128 @@ ${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', '', '')}${L.faqBlock([
 `,
 };
 
-module.exports = [toolsIndex, deadStockCalc, schemeCalc];
+const waRevenueCalc = {
+  slug: 'tools/whatsapp-revenue-estimator',
+  title: 'WhatsApp Revenue Estimator for Jewellery Business — What Slow Replies Cost | Jwero',
+  description: 'Free calculator: enter your monthly WhatsApp enquiries, average order value and current reply speed to see the revenue slow or missed replies are costing you.',
+  breadcrumbs: [['Home', '/'], ['Tools', '/tools'], ['WhatsApp Revenue Estimator']],
+  faqs: [
+    { q: 'Where do the close-rate numbers come from?', a: 'They’re editable planning assumptions, not a published study — 15% close rate for enquiries replied to within an hour, 3% for enquiries replied to slowly or missed, are common starting points. Change them to match your own experience; the result updates instantly.' },
+    { q: 'Is 95% reply coverage realistic?', a: 'That’s the target coverage a first-response AI draft (approved by your team before sending) is built to reach — instant drafting removes the “nobody was free to reply” gap that slow coverage usually comes from.' },
+    { q: 'Does this account for enquiries that were never going to buy?', a: 'No — it assumes your enquiry volume and its buying intent stay constant, and only measures what changes when the reply gets faster and more consistent. It’s a directional estimate, not a forecast.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'FREE TOOL',
+  h1: 'The WhatsApp Revenue Estimator',
+  sub: 'Every enquiry that waits too long for a reply is a sale that might already be happening somewhere else. See what that’s worth in your business — defaults are editable planning assumptions, not a published study.',
+})}
+
+${L.section(
+  `<div class="calc" id="calc-warevenue">
+    <div class="calc-panel">
+      <label for="wr-cur">Currency</label>
+      <select id="wr-cur"><option value="INR" selected>₹ INR</option><option value="USD">$ USD</option><option value="GBP">£ GBP</option><option value="AED">AED</option></select>
+
+      <label for="wr-enq">WhatsApp enquiries per month <span class="calc-val" id="wr-enq-out"></span></label>
+      <input type="range" id="wr-enq" min="20" max="3000" step="10" value="200">
+
+      <label for="wr-aov">Average order value <span class="calc-val" id="wr-aov-out"></span></label>
+      <input type="range" id="wr-aov" min="5000" max="300000" step="1000" value="35000">
+
+      <label for="wr-reply">Share replied to within an hour, today <span class="calc-val" id="wr-reply-out"></span></label>
+      <input type="range" id="wr-reply" min="5" max="90" step="1" value="35">
+
+      <details class="assumptions" style="margin-top:22px">
+        <summary>Assumptions (editable thinking)</summary>
+        <p style="margin-top:10px">Close rate: 15% for enquiries replied to within an hour, 3% for enquiries replied to slowly or missed — a common planning range, not a published study; edit to your own experience. Target with AI-drafted first response: 95% of enquiries replied to within minutes, each draft still approved by your team before it sends.</p>
+      </details>
+    </div>
+    <div class="calc-out">
+      <div class="stat"><div class="stat-n" id="wr-current">—</div><div class="stat-l">revenue you’re converting today</div></div>
+      <div class="stat"><div class="stat-n" id="wr-potential">—</div><div class="stat-l">revenue possible at 95% fast-reply coverage</div></div>
+      <div class="stat"><div class="stat-n" id="wr-gap-mo">—</div><div class="stat-l">left on the table every month</div></div>
+      <div class="stat"><div class="stat-n" id="wr-gap-yr">—</div><div class="stat-l">left on the table every year</div></div>
+      <a class="btn btn-wa" id="wr-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to WhatsApp</a>
+      <p class="cta-note">We reply with what fast, consistent coverage would take to set up for your volume.</p>
+    </div>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('AFTER THE NUMBER', 'The gap is a reply-speed problem, not a staffing problem.', 'Hiring more people to answer WhatsApp faster doesn’t scale evenly with enquiry volume. An AI-drafted first response reaches near-instant coverage at any volume — your team still approves every message before it sends, so nothing goes out unchecked.')}
+  <p><a class="btn btn-ghost" href="/products/whatsapp">See WhatsApp Commerce in Jwero</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'Where do the close-rate numbers come from?', a: 'They’re editable planning assumptions, not a published study — change them above to match your own experience.' },
+  { q: 'Is 95% reply coverage realistic?', a: 'That’s the target an AI-drafted first response is built to reach, with every draft still approved by your team before it sends.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+`,
+};
+
+const goldLossCalc = {
+  slug: 'tools/gold-loss-calculator',
+  title: 'Gold-Loss Calculator for Jewellery Manufacturers — What Unexplained Loss Costs | Jwero',
+  description: 'Free calculator: enter your monthly production weight, gold rate and the gap between observed and explained loss to see what unexplained wastage costs.',
+  breadcrumbs: [['Home', '/'], ['Tools', '/tools'], ['Gold-Loss Calculator']],
+  faqs: [
+    { q: 'Is this based on an industry-average loss rate?', a: 'No — this is a self-assessment tool. You enter your own observed stocktake loss and the loss you can currently explain per stage; there’s no fabricated industry benchmark behind the defaults.' },
+    { q: 'Does a WIP ledger reduce physical gold loss by itself?', a: 'No — recording where fine weight goes doesn’t stop metal loss during casting, filing or polishing. What it does is flag abnormal loss the day it happens, by stage and by hand, instead of only at annual stocktake when it’s too late to trace.' },
+    { q: 'What counts as "explained" loss?', a: 'Loss you already track against a per-stage norm — expected casting sprue, filing dust, polishing loss. "Unexplained" is the gap between that and what stocktake actually shows.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'FREE TOOL',
+  h1: 'The Gold-Loss Calculator',
+  sub: 'The gap between what stocktake shows and what you can actually explain per stage — priced in today’s gold rate. This is a self-assessment: enter your own numbers, not an industry benchmark.',
+})}
+
+${L.section(
+  `<div class="calc" id="calc-goldloss">
+    <div class="calc-panel">
+      <label for="gl-cur">Currency</label>
+      <select id="gl-cur"><option value="INR" selected>₹ INR</option><option value="USD">$ USD</option><option value="GBP">£ GBP</option><option value="AED">AED</option></select>
+
+      <label for="gl-vol">Monthly production / job-work volume (grams) <span class="calc-val" id="gl-vol-out"></span></label>
+      <input type="range" id="gl-vol" min="100" max="100000" step="100" value="8000">
+
+      <label for="gl-rate">Gold rate, per gram <span class="calc-val" id="gl-rate-out"></span></label>
+      <input type="range" id="gl-rate" min="3000" max="12000" step="50" value="6500">
+
+      <label for="gl-observed">Total loss seen at stocktake <span class="calc-val" id="gl-observed-out"></span></label>
+      <input type="range" id="gl-observed" min="0.5" max="6" step="0.1" value="3.2">
+
+      <label for="gl-explained">Loss you can explain per stage today <span class="calc-val" id="gl-explained-out"></span></label>
+      <input type="range" id="gl-explained" min="0.2" max="5" step="0.1" value="1.5">
+
+      <details class="assumptions" style="margin-top:22px">
+        <summary>Assumptions (editable thinking)</summary>
+        <p style="margin-top:10px">Unexplained loss = total loss observed at stocktake − loss you can currently explain per stage, applied to your monthly volume. This is your own self-assessment, not an industry-average benchmark. A per-stage WIP ledger doesn’t reduce physical loss on its own — it makes the unexplained portion visible the day it happens, not just at annual stocktake.</p>
+      </details>
+    </div>
+    <div class="calc-out">
+      <div class="stat"><div class="stat-n" id="gl-grams">—</div><div class="stat-l">unaccounted grams per month</div></div>
+      <div class="stat"><div class="stat-n" id="gl-monthly">—</div><div class="stat-l">value lost every month</div></div>
+      <div class="stat"><div class="stat-n" id="gl-yearly">—</div><div class="stat-l">value lost every year</div></div>
+      <a class="btn btn-wa" id="gl-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to WhatsApp</a>
+      <p class="cta-note">We reply with how per-stage loss tracking would flag this in your workflow.</p>
+    </div>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('AFTER THE NUMBER', 'Visibility, stage by stage, not just at stocktake.', 'An append-only work-in-progress ledger tracks fine weight through casting, filing, setting and polishing, with a loss norm per stage. Abnormal loss gets flagged the day it happens — with the stage and the hands it happened in — instead of surfacing as an unexplained gap once a year.')}
+  <p><a class="btn btn-ghost" href="/solutions/manufacturers">See the manufacturing spine in Jwero</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', '', '')}${L.faqBlock([
+  { q: 'Is this based on an industry-average loss rate?', a: 'No — enter your own observed and explained loss; there’s no fabricated benchmark behind the defaults.' },
+  { q: 'Does a WIP ledger reduce physical gold loss by itself?', a: 'No — it flags abnormal loss the day it happens, by stage, instead of only at annual stocktake.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+`,
+};
+
+module.exports = [toolsIndex, deadStockCalc, schemeCalc, waRevenueCalc, goldLossCalc];

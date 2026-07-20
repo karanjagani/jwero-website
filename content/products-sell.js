@@ -22,7 +22,7 @@ ${L.hero({
   h1: 'Your counter is now open 24 hours a day.',
   sub: 'Jewellery is bought on trust and conversation — which is why it is bought on WhatsApp. Jwero turns your number into a full counter: live-price catalogues, knowledgeable replies in minutes, appointments, payments and follow-up. Officially, safely, at scale.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'whatsapp' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  secondary: { href: '/tools/whatsapp-revenue-estimator', label: 'Try the Revenue Estimator' },
   note: 'The demo IS a WhatsApp conversation.',
   mock: L.mockChat,
 })}

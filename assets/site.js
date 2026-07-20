@@ -41,6 +41,8 @@
     'pain-index': 'Hi Jwero — here is the pain I’m dealing with: ',
     deadstock: 'Hi Jwero — I ran the dead stock calculator. Here are my numbers: ',
     scheme_calc: 'Hi Jwero — I ran the gold scheme calculator. Here are my numbers: ',
+    wa_revenue_calc: 'Hi Jwero — I ran the WhatsApp revenue estimator. Here are my numbers: ',
+    goldloss_calc: 'Hi Jwero — I ran the gold-loss calculator. Here are my numbers: ',
     leadleak: 'Hi Jwero — show me how you stop lead leakage.',
     security: 'Hi Jwero — I have a security question.',
     'security-pdf': 'Hi Jwero — please send the security overview PDF.',
@@ -220,6 +222,64 @@
     }
     [en, inst, up, gcur].forEach(function (el) { el.addEventListener('input', gsCalc); el.addEventListener('change', gsCalc); });
     gsCalc();
+  }
+
+  // WhatsApp revenue estimator
+  var wr = document.getElementById('calc-warevenue');
+  if (wr) {
+    var wrEnq = bindRange('wr-enq', 'wr-enq-out');
+    var wrAov = bindRange('wr-aov', 'wr-aov-out');
+    var wrReply = bindRange('wr-reply', 'wr-reply-out', '%');
+    var wrCur = document.getElementById('wr-cur');
+    var FAST_CLOSE = 0.15, SLOW_CLOSE = 0.03, TARGET_REPLY = 0.95;
+    function wrCalc() {
+      var c = wrCur.value;
+      var enq = Number(wrEnq.value);
+      var aov = Number(wrAov.value);
+      var replyNow = Number(wrReply.value) / 100;
+      var current = enq * (replyNow * FAST_CLOSE + (1 - replyNow) * SLOW_CLOSE) * aov;
+      var potential = enq * (TARGET_REPLY * FAST_CLOSE + (1 - TARGET_REPLY) * SLOW_CLOSE) * aov;
+      var gapMo = Math.max(0, potential - current);
+      var gapYr = gapMo * 12;
+      document.getElementById('wr-current').textContent = fmt(current, c);
+      document.getElementById('wr-potential').textContent = fmt(potential, c);
+      document.getElementById('wr-gap-mo').textContent = fmt(gapMo, c);
+      document.getElementById('wr-gap-yr').textContent = fmt(gapYr, c);
+      var wa = document.getElementById('wr-wa');
+      if (wa) wa.setAttribute('href', waLink('wa_revenue_calc',
+        enq + ' enquiries/mo, ' + Number(wrReply.value) + '% replied fast today, gap ' + fmt(gapMo, c) + '/mo'));
+    }
+    [wrEnq, wrAov, wrReply, wrCur].forEach(function (el) { el.addEventListener('input', wrCalc); el.addEventListener('change', wrCalc); });
+    wrCalc();
+  }
+
+  // Gold-loss calculator
+  var gl = document.getElementById('calc-goldloss');
+  if (gl) {
+    var glVol = bindRange('gl-vol', 'gl-vol-out');
+    var glRate = bindRange('gl-rate', 'gl-rate-out');
+    var glObserved = bindRange('gl-observed', 'gl-observed-out', '%');
+    var glExplained = bindRange('gl-explained', 'gl-explained-out', '%');
+    var glCur = document.getElementById('gl-cur');
+    function glCalc() {
+      var c = glCur.value;
+      var vol = Number(glVol.value);
+      var rate = Number(glRate.value);
+      var observed = Number(glObserved.value) / 100;
+      var explained = Number(glExplained.value) / 100;
+      var unexplainedPct = Math.max(0, observed - explained);
+      var grams = vol * unexplainedPct;
+      var monthly = grams * rate;
+      var yearly = monthly * 12;
+      document.getElementById('gl-grams').textContent = grams.toFixed(1) + ' g';
+      document.getElementById('gl-monthly').textContent = fmt(monthly, c);
+      document.getElementById('gl-yearly').textContent = fmt(yearly, c);
+      var wa = document.getElementById('gl-wa');
+      if (wa) wa.setAttribute('href', waLink('goldloss_calc',
+        vol + 'g/mo, ' + grams.toFixed(1) + 'g unexplained, ' + fmt(monthly, c) + '/mo'));
+    }
+    [glVol, glRate, glObserved, glExplained, glCur].forEach(function (el) { el.addEventListener('input', glCalc); el.addEventListener('change', glCalc); });
+    glCalc();
   }
 
   // Demo form (static build: show confirmation; wire to CRM API in production)

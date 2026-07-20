@@ -53,8 +53,9 @@ ${L.section(
 ${L.section(`${L.sectionHead('RESOURCES', '', '')}${L.cards([
   { title: 'Dead Stock Calculator', text: 'What idle inventory is really costing your business, in 60 seconds.', link: { href: '/tools/dead-stock-calculator', label: 'Run the calculator' } },
   { title: 'Gold Scheme Calculator', text: 'What your enrolment rate is worth in locked-in future revenue.', link: { href: '/tools/gold-scheme-calculator', label: 'Run the calculator' } },
+  { title: 'WhatsApp Revenue Estimator', text: 'What slow or missed WhatsApp replies are costing you in lost sales.', link: { href: '/tools/whatsapp-revenue-estimator', label: 'Run the calculator' } },
   { title: 'Migration Centre', text: 'Switch without a rip-out — keep your books, change your growth.', link: { href: '/migration', label: 'See the plan' } },
-])}`)}
+], 4)}`)}
 
 ${L.section(`${L.sectionHead('QUESTIONS RETAIL BUSINESSES ASK', '', '')}${L.faqBlock([
   { q: 'Is Jwero built for small retailers or large chains?', a: 'Both, on the same system. A single-store business gets the whole operating system from day one; a chain gets the same one, with governance and branch structure that scale.' },
