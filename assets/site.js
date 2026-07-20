@@ -10,6 +10,7 @@
     header: 'Hi Jwero — I would like to see a quick demo.',
     sticky: 'Hi Jwero — I would like to see a quick demo.',
     home: 'Hi Jwero — show me how the AI workforce works, with approvals.',
+    roles: 'Hi Jwero — I want to understand how this helps my team, role by role.',
     proof: 'Hi — testing the inbox this button leads to. Show me what you’ve got.',
     report: 'Hi Jwero — I would like a sample growth report for my business.',
     close: 'Hi Jwero — I would like to see a quick demo.',
