@@ -37,7 +37,7 @@
     multistore: 'Hi Jwero — I run multiple stores, show me the multi-store structure.',
     showroom: 'Hi Jwero — show me the showroom / in-store visit intelligence.',
     loyalty: 'Hi Jwero — show me the loyalty and referral program.',
-    storefront: 'Hi Jwero — show me the storefront/website builder.',
+    storefront: 'Hi Jwero — show me the ecommerce website builder.',
     'industries-retail': 'Hi Jwero — I’m in retail, help me find my segment.',
     solutions: 'Hi Jwero — help me find the right solution for my business.',
     'single-store': 'Hi Jwero — I run a single store, show me how Jwero fits.',

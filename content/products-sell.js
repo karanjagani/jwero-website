@@ -296,69 +296,105 @@ ${L.ctaBand('See where your own visitors drop off.', 'One pixel turns on analyti
 
 const storefront = {
   slug: 'products/storefront',
-  title: 'Storefront & Website for Jewellery Business | Jwero',
-  description: 'A native jewellery storefront — live-rate catalogue, cart, wishlist, checkout, blog and reviews — as your first website, or a jewellery-native option beside it.',
+  title: 'Ecommerce Website for Jewellery Business | Jwero',
+  description: 'A jewellery-native ecommerce website: live purity-rate pricing that recalculates automatically, one CRM-linked wishlist, cart, checkout, blog and reviews.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Storefront & Website', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'A native, standalone jewellery storefront with live-rate catalogue, cart, wishlist, comparison, checkout, blog, reviews and a themeable template system, on the same customer record as every other Jwero module.',
+    name: 'Jwero Ecommerce Website', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'A native, standalone jewellery ecommerce website with a live purity/metal-rate price breakup that recalculates on rate change, a CRM-linked wishlist, cart, comparison, checkout, blog, reviews and jewellery-styled themes, on the same customer record as every other Jwero module.',
     url: 'https://jwero.ai/products/storefront', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
-  breadcrumbs: BC('Storefront & Website'),
+  breadcrumbs: BC('Ecommerce Website'),
   faqs: [
-    { q: 'Do I need Shopify or WooCommerce to sell online?', a: 'No. Jwero includes a native storefront — a live-price catalogue, cart, wishlist, comparison and checkout — that can be your website if you don’t have one yet.' },
-    { q: 'I already have a Shopify or WooCommerce store. Do I have to switch?', a: 'No. Storefront is an option, not a replacement mandate. If you already run a store, the existing platform integrations and /products/optimize add Jwero on top of it. Storefront is for businesses that don’t have a website yet, or want a jewellery-native alternative.' },
-    { q: 'What can customers actually do on the storefront?', a: 'Browse a live-price catalogue, add to cart, save a wishlist, compare pieces side by side, and check out — the full path from browsing to buying, without leaving the site.' },
-    { q: 'Can it look like my brand, not a template?', a: 'Yes — a theming and template system lets the storefront be branded to match your business rather than looking like generic software.' },
-    { q: 'Is it just a catalogue, or a full website?', a: 'A full site: public catalogue pages, quote pages and payment pages, plus a blog, customer reviews and landing pages for campaigns — content tools for the storefront itself, not just a product list.' },
-    { q: 'Who is this for?', a: 'Startups, first-time founders and single stores without a website today are the clearest fit. It runs on the same customer record as your WhatsApp, CRM and billing — so a storefront order is never a separate system to reconcile.' },
+    { q: 'Do I need Shopify or WooCommerce to sell online?', a: 'No. Jwero includes a native ecommerce website — a live-price catalogue, cart, wishlist, comparison and checkout — that can be your website if you don’t have one yet.' },
+    { q: 'I already have a Shopify or WooCommerce store. Do I have to switch?', a: 'No. The Ecommerce Website is an option, not a replacement mandate. If you already run a store, the existing platform integrations and /products/optimize add Jwero on top of it. It’s for businesses that don’t have a website yet, or want a jewellery-native alternative.' },
+    { q: 'What actually makes this jewellery-native, not just a themed generic store?', a: 'The product page price is a live breakup — metal, purity, weight and rate-per-gram, plus stone and making-charge lines — that recalculates automatically when the metal rate moves, driven by the same repricing engine as the rest of Jwero. A generic platform shows a fixed price until someone manually edits it; this one doesn’t.' },
+    { q: 'Is the wishlist just a cookie, or does it follow the customer?', a: 'For a signed-in shopper, it’s backed by the same CRM contact record used across your counter and CRM — not a separate guest list tied to a browser. Save it on the website, and it’s there when she messages you on WhatsApp.' },
+    { q: 'Can it look like my brand, not a template?', a: 'Yes — five jewellery-styled themes and eleven page templates (including festive, gift-guide and lookbook layouts a generic store builder doesn’t ship with) so the site looks like your business, not repurposed retail software.' },
+    { q: 'Is it just a catalogue, or a full website?', a: 'A full site: public catalogue pages, quote pages and payment pages, plus a blog, customer reviews and landing pages for campaigns — content tools built for jewellery retail, not just a product list.' },
+    { q: 'Who is this for?', a: 'Startups, first-time founders and single stores without a website today are the clearest fit. It runs on the same customer record as your WhatsApp, CRM and billing — so an order here is never a separate system to reconcile.' },
   ],
   body: `
 ${L.hero({
-  eyebrow: 'STOREFRONT & WEBSITE',
+  eyebrow: 'ECOMMERCE WEBSITE',
   h1: 'A jewellery website that already knows how to sell jewellery.',
-  sub: 'If you don’t have a website yet, or you’re tired of forcing jewellery into a generic store builder, Jwero includes a native storefront — a live-rate catalogue, cart, wishlist, comparison and checkout — built to sell rings and rates, not t-shirts.',
+  sub: 'If you don’t have a website yet, or you’re tired of forcing jewellery into a generic store builder, Jwero includes a native ecommerce website — a live-rate catalogue, cart, wishlist, comparison and checkout — built to sell rings and rates, not t-shirts.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'storefront' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
 ${L.section(
-  `${L.sectionHead('THE FIRST-WEBSITE PROBLEM', 'A brochure site isn’t a storefront.', '')}
+  `${L.sectionHead('THE FIRST-WEBSITE PROBLEM', 'A brochure site isn’t an ecommerce website.', '')}
   ${L.cards([
     { title: 'No website yet', text: 'A first-time founder or single store often has no site at all — just Instagram and word of mouth. That’s enquiries with nowhere to close.' },
     { title: 'Generic builders don’t speak jewellery', text: 'Prices that don’t move with the metal rate, no wishlist for a big-ticket decision, no way to compare two pieces — because the builder was made for t-shirts, not temple work.' },
-    { title: 'A separate system to reconcile', text: 'A storefront that doesn’t share the customer record means every online order is a manual re-entry into the CRM and billing you actually run the business on.' },
+    { title: 'A separate system to reconcile', text: 'A store that doesn’t share the customer record means every online order is a manual re-entry into the CRM and billing you actually run the business on.' },
   ])}`
 )}
 
 ${L.section(
-  `${L.sectionHead('WHAT THE STOREFRONT DOES', 'Browse, decide, buy — on one site.', '')}
-  ${L.cards([
-    { title: 'Live-rate catalogue', text: 'Product pages priced against today’s metal rate, not a stale PDF.' },
-    { title: 'Cart, wishlist & compare', text: 'The three things a jewellery buyer actually needs before a big-ticket decision — not just an add-to-cart button.' },
-    { title: 'Checkout, quotes & payments', text: 'Public catalogue pages, quote pages and payment pages carry a browsing customer all the way to paid.' },
-    { title: 'Blog, reviews & landing pages', text: 'Content tools built for the storefront itself — a blog for SEO and story, reviews for trust, landing pages for campaigns.' },
-    { title: 'Your brand, not a template', text: 'A theming and template system so the storefront looks like your business, not the software it runs on.' },
-    { title: 'An option, not a rebuild', text: 'Already on Shopify or WooCommerce? Keep it — Optimize and platform integrations add Jwero on top. Storefront is for a first site, or a jewellery-native alternative.' },
+  `${L.sectionHead('THE ONLY ONE BUILT FOR THIS', 'Not a theme on a generic platform. A different foundation.', 'Every generic ecommerce platform can be dressed up to look like a jewellery store. None of them are built on a jewellery pricing engine, or share a customer record with your counter. That difference shows up the moment the gold rate moves.')}
+  ${L.impactGrid([
+    {
+      lever: 'What the price actually is',
+      before: 'A fixed price tag, manually edited whenever someone remembers the rate has moved — on Shopify, WooCommerce, or any generic builder.',
+      after: 'A live breakup — metal, purity, weight, rate-per-gram, stone and making-charge lines — that recalculates automatically the moment the rate changes, from the same pricing engine every other Jwero channel uses.',
+      link: { href: '/platform/pricing-engine', label: 'See the pricing engine' },
+    },
+    {
+      lever: 'What a saved wishlist means',
+      before: 'A cookie in a browser. Clear it, switch devices, or come back next week on a different phone, and it’s gone.',
+      after: 'A CRM contact record — the same one your counter and CRM already use. Save it on the website, and it’s there when she messages you on WhatsApp.',
+    },
+    {
+      lever: 'What "book a visit" does',
+      before: 'A contact form that emails someone, who may or may not follow up before she walks in somewhere else.',
+      after: 'A showroom-visit request that creates or updates her CRM contact directly, putting her on the same expected-visits list your floor staff already work from.',
+      link: { href: '/products/showroom', label: 'See Showroom Intelligence' },
+    },
+    {
+      lever: 'What the theme is dressed for',
+      before: 'A generic retail theme, restyled with gold colours and a serif logo.',
+      after: 'Five jewellery-styled themes and eleven page templates built for this trade specifically — festive, gift-guide and lookbook layouts among them, not a t-shirt store in different fonts.',
+    },
   ])}`
 , { tone: 'tint' })}
 
+${L.section(
+  `${L.sectionHead('WHAT THE WEBSITE DOES', 'Browse, decide, buy — on one site.', '')}
+  ${L.cards([
+    { title: 'Live-rate price breakup', text: 'Metal, purity, weight, stone and making-charge shown as a real breakup on the product page, not a single stale number.' },
+    { title: 'Cart, wishlist & compare', text: 'The three things a jewellery buyer actually needs before a big-ticket decision — not just an add-to-cart button.' },
+    { title: 'Checkout, quotes & payments', text: 'Public catalogue pages, quote pages and payment pages carry a browsing customer all the way to paid.' },
+    { title: 'Showroom-visit booking', text: 'A visit request from the website creates or updates her CRM contact and lands on the same expected-visits list your floor already uses.' },
+    { title: 'Blog, reviews & landing pages', text: 'Content tools built for jewellery retail — a blog for SEO and story, reviews for trust, landing pages for campaigns.' },
+    { title: 'Your brand, not a template', text: 'Five jewellery-styled themes and eleven page templates, so the site looks like your business, not the software it runs on.' },
+  ])}`
+)}
+
 ${L.oneSystemBlock([
-  'A storefront order writes to the same customer record your WhatsApp replies and billing already update — no export, no re-entry.',
-  'The catalogue and live rate on the storefront are the same catalogue every other channel sells from.',
-  'A wishlist saved on the storefront is visible the next time she messages on WhatsApp — the same record, not a separate login.',
+  'An order here writes to the same customer record your WhatsApp replies and billing already update — no export, no re-entry.',
+  'The catalogue and live-rate price breakup on the website are the same catalogue every other channel sells from.',
+  'A wishlist saved on the website is visible the next time she messages on WhatsApp — the same CRM contact, not a separate login.',
 ])}
 
-${L.section(`${L.sectionHead('STOREFRONT QUESTIONS', 'Shopify, branding, and what this replaces.', '')}${L.faqBlock([
-  { q: 'Do I need Shopify or WooCommerce to sell online?', a: 'No — Jwero includes a native storefront that can be your website if you don’t have one yet.' },
-  { q: 'I already have a store. Do I have to switch?', a: 'No — Storefront is an option, not a replacement mandate. If you already run a store, /products/optimize and platform integrations add Jwero on top of it.' },
-  { q: 'Can it look like my brand?', a: 'Yes — a theming and template system brands the storefront to match your business.' },
+${L.honestGapsBlock([
+  'Certificate/HUID verification shown directly on a product page — today the catalogue carries certificate and HUID data; a customer-facing verification widget on the website itself is not built yet.',
+  'Gold-scheme or digital-gold balance redemption at website checkout — scheme and digital-gold balances live on the customer record and are visible to your team; applying them during an online checkout isn’t wired yet.',
+  'An old-gold exchange or buyback calculator on the website.',
+])}
+
+${L.section(`${L.sectionHead('ECOMMERCE WEBSITE QUESTIONS', 'Shopify, branding, and what this replaces.', '')}${L.faqBlock([
+  { q: 'Do I need Shopify or WooCommerce to sell online?', a: 'No — Jwero includes a native ecommerce website that can be your website if you don’t have one yet.' },
+  { q: 'I already have a store. Do I have to switch?', a: 'No — it’s an option, not a replacement mandate. If you already run a store, /products/optimize and platform integrations add Jwero on top of it.' },
+  { q: 'What actually makes this jewellery-native?', a: 'A live metal/purity/stone price breakup that recalculates on rate change, and a wishlist backed by the same CRM contact record as your counter — not a themed generic store.' },
+  { q: 'Can it look like my brand?', a: 'Yes — five jewellery-styled themes and eleven page templates brand the site to match your business.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="storefront">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('Bring your storefront onto one system.', 'A live-rate catalogue, cart, wishlist and checkout — as your first website, or alongside the one you already run.', 'storefront')}
+${L.ctaBand('Bring your ecommerce website onto one system.', 'A live-rate price breakup, cart, wishlist and checkout — as your first website, or alongside the one you already run.', 'storefront')}
 `,
 };
 

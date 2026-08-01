@@ -74,7 +74,7 @@ const NAV = [
         ['/products/ads-manager', 'Ads Manager'],
         ['/products/social-media', 'Social Media Management'],
         ['/products/optimize', 'Optimize (Website CRO)'],
-        ['/products/storefront', 'Storefront & Website'],
+        ['/products/storefront', 'Ecommerce Website'],
       ]},
       { title: 'Know', items: [
         ['/products/crm', 'Jewellery CRM'],

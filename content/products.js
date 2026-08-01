@@ -23,7 +23,7 @@ ${L.section(
     { title: 'Ads Manager', text: 'Meta, Google and Pinterest campaigns in one place — budget alerts, an approval step, and an AI strategist that drafts, never spends.', link: { href: '/products/ads-manager', label: 'Explore' } },
     { title: 'Social Media Management', text: 'Schedule posts and manage one inbox for every comment and DM, with AI-drafted replies your team approves.', link: { href: '/products/social-media', label: 'Explore' } },
     { title: 'Optimize (Website CRO)', text: 'Analytics, heatmaps, A/B experiments, personalization, popups, push and an AI webchat — built into your website, on the same customer record.', link: { href: '/products/optimize', label: 'Explore' } },
-    { title: 'Storefront & Website', text: 'A native storefront — cart, wishlist, checkout, blog and reviews — for businesses that don’t have one yet, or want an alternative.', link: { href: '/products/storefront', label: 'Explore' } },
+    { title: 'Ecommerce Website', text: 'A native jewellery ecommerce website — live-rate pricing, cart, wishlist, checkout, blog and reviews — for businesses that don’t have one yet, or want the jewellery-native alternative.', link: { href: '/products/storefront', label: 'Explore' } },
   ], 4)}`
 )}
 
