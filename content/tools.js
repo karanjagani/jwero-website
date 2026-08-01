@@ -72,7 +72,8 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('AFTER THE NUMBER', 'Visibility is step one. Memory is step two.', 'Knowing the cost changes the conversation; moving the stock changes the balance sheet. Jwero exposes ageing by piece and branch, then matches idle designs to customers whose taste fits. Clearance happens by invitation, not desperation.')}
-  <p><a class="btn btn-ghost" href="/solutions/pain/dead-stock">Read the dead-stock playbook</a></p>`
+  <p><a class="btn btn-ghost" href="/solutions/pain/dead-stock">Read the dead-stock playbook</a></p>
+  <p class="cta-note" style="margin-top:14px">Prefer the long read? <a href="/blog/dead-stock-jewellery-business-guide">The complete dead-stock guide for jewellery businesses →</a></p>`
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'What counts as dead stock, and how it’s costed.', '')}${L.faqBlock([
@@ -132,7 +133,8 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('AFTER THE NUMBER', 'Run the promise properly.', 'Enrolment with KYC, reminders before every due date, transparent balances, OTP-verified maturity — the discipline that turns a leaky register into a compounding book.')}
-  <p><a class="btn btn-ghost" href="/products/gold-schemes">See schemes in Jwero</a></p>`
+  <p><a class="btn btn-ghost" href="/products/gold-schemes">See schemes in Jwero</a></p>
+  <p class="cta-note" style="margin-top:14px">Want the full picture first? <a href="/blog/gold-savings-scheme-guide">Read the practical guide to running a gold savings scheme digitally →</a></p>`
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'How the scheme numbers work.', '')}${L.faqBlock([
@@ -193,7 +195,8 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('AFTER THE NUMBER', 'The gap is a reply-speed problem, not a staffing problem.', 'Hiring more people to answer WhatsApp faster doesn’t scale evenly with enquiry volume. An AI-drafted first response reaches near-instant coverage at any volume. Your team still approves every message before it sends, so nothing goes out unchecked.')}
-  <p><a class="btn btn-ghost" href="/products/whatsapp">See WhatsApp Commerce in Jwero</a></p>`
+  <p><a class="btn btn-ghost" href="/products/whatsapp">See WhatsApp Commerce in Jwero</a></p>
+  <p class="cta-note" style="margin-top:14px">New to selling this way? <a href="/blog/whatsapp-for-jewellers-guide">Read the complete WhatsApp guide for jewellers →</a></p>`
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'Where the estimate’s assumptions come from.', '')}${L.faqBlock([
@@ -256,7 +259,8 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('AFTER THE NUMBER', 'Visibility, stage by stage, not just at stocktake.', 'An append-only work-in-progress ledger tracks fine weight through casting, filing, setting and polishing, with a loss norm per stage. Abnormal loss gets flagged the day it happens — with the stage and the hands it happened in — instead of surfacing as an unexplained gap once a year.')}
-  <p><a class="btn btn-ghost" href="/solutions/manufacturers">See the manufacturing spine in Jwero</a></p>`
+  <p><a class="btn btn-ghost" href="/solutions/manufacturers">See the manufacturing spine in Jwero</a></p>
+  <p class="cta-note" style="margin-top:14px">Want the method behind the number? <a href="/blog/gold-loss-wastage-control-jewellery-manufacturing">Read the guide to gold-loss and wastage control in manufacturing →</a></p>`
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'What these loss numbers do and don’t assume.', '')}${L.faqBlock([

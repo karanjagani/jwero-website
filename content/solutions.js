@@ -82,7 +82,7 @@ ${L.ctaBand('Not sure which page is yours?', 'Tell us what you sell and how — 
 
 const singleStore = {
   slug: 'solutions/single-store',
-  title: 'For Single-Store Jewellery Businesses — One Operating System, Live in Days | Jwero',
+  title: 'Software for Single-Store Jewellery Businesses | Jwero',
   description: 'Keep the relationships that built your store — in a system that belongs to the store. Customer memory, WhatsApp selling and schemes, live in days.',
   breadcrumbs: BC('Single store'),
   faqs: [
@@ -151,7 +151,8 @@ ${L.section(`${L.sectionHead('QUESTIONS SINGLE-STORE OWNERS ASK', 'What single-s
   { q: 'I need my family or partner to agree first. What do I show them?', a: 'Bring them into the WhatsApp demo directly, or share the growth report sample — easier to evaluate than a sales pitch.' },
   { q: 'What if it doesn’t work for my shop?', a: 'You’ve changed nothing that can’t be undone — your billing software stays untouched, and your data exports any time.' },
 ])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
+<p class="cta-note" style="margin-top:14px">Wedding season coming up? <a href="/blog/jewellery-software-wedding-season">Read how to get your shop system-ready before the rush →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="single-store">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -263,7 +264,7 @@ ${L.jtbdBlock([
   { when: 'a karigar takes a job-work order', want: 'issue and receive weight against a documented rule', so: 'disputes don’t become relationship damage' },
 ])}
 
-${L.section(`<div class="stack-verdict"><strong>Run your own number:</strong> the <a href="/tools/gold-loss-calculator">Gold-Loss Calculator</a> takes your production volume and the gap between observed and explained stocktake loss, and shows what it’s worth at today’s rate — a self-assessment, not an industry benchmark.</div>`)}
+${L.section(`<div class="stack-verdict"><strong>Run your own number:</strong> the <a href="/tools/gold-loss-calculator">Gold-Loss Calculator</a> takes your production volume and the gap between observed and explained stocktake loss, and shows what it’s worth at today’s rate — a self-assessment, not an industry benchmark. For the full method, <a href="/blog/gold-loss-wastage-control-jewellery-manufacturing">read the gold-loss and wastage control guide →</a></div>`)}
 
 ${L.section(
   `${L.stats([

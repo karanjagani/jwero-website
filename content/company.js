@@ -24,7 +24,7 @@ ${L.hero({
   sub: 'Three tiers, named after how the AI earns your trust. Start where you are comfortable; move up when the results say so. No hidden costs, no hostage clauses, export-anytime.',
   primary: { href: '#', label: 'Get a straight price on WhatsApp', wa: 'pricing' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
-  note: 'Prefer email? <a href="/contact">hello@jwero.ai</a>.',
+  note: 'Prefer email? <a href="/contact">care@jwero.ai</a>.',
 })}
 
 ${L.section(
@@ -32,7 +32,7 @@ ${L.section(
     <div class="card tier">
       <p class="tier-flag">Start here</p>
       <h3>Assist</h3>
-      <p>The memory and the counter. AI drafts, your team sends.</p>
+      <p><strong>Most single stores start here.</strong> The memory and the counter. AI drafts, your team sends.</p>
       <ul>
         <li>Customer memory — full import done for you</li>
         <li>WhatsApp on your existing number (official API)</li>
@@ -46,7 +46,7 @@ ${L.section(
     <div class="card tier tier-hot">
       <p class="tier-flag">Most chosen</p>
       <h3>Approve</h3>
-      <p>The whole operating system. AI proposes everything; you approve with one tap.</p>
+      <p><strong>For established stores and growing teams.</strong> The whole operating system. AI proposes everything; you approve with one tap.</p>
       <ul>
         <li>Everything in Assist</li>
         <li>AI workforce: follow-ups, win-back, festival journeys</li>
@@ -61,7 +61,7 @@ ${L.section(
     <div class="card tier">
       <p class="tier-flag">Earned</p>
       <h3>Autopilot</h3>
-      <p>Proven action types run within hard caps. You supervise by exception.</p>
+      <p><strong>For high-volume stores and chains that have run Approve.</strong> Proven action types run within hard caps. You supervise by exception.</p>
       <ul>
         <li>Everything in Approve</li>
         <li>Earned per-action autonomy with auto-demotion</li>
@@ -73,13 +73,26 @@ ${L.section(
       <a class="btn btn-ghost" href="#" data-wa="tier-autopilot">Ask the Autopilot price</a>
     </div>
   </div>
+  <p style="margin-top:20px; text-align:center; font-size:.95rem; color:var(--ink-2);"><strong style="color:var(--ink)">A rough anchor while regional pricing is finalised:</strong> Assist typically lands in the range of what a jewellery business already pays its SMS vendor and catalogue app combined — the exact number for your region and configuration is one WhatsApp message away, no call required.</p>
+  <div class="cta-row" style="justify-content:center; margin-top:14px"><a class="btn btn-ghost" href="/book-demo">Prefer a scheduled call? Book a demo</a></div>
   <div class="stack-verdict" style="margin-top:26px"><strong>Multi-store & franchise networks:</strong> branch structure, role-based control, staged rollout and an evaluation kit for your committee. <a href="/enterprise">Talk to a specialist</a>.</div>`
 )}
 
 ${L.section(L.customerLogos())}
 
 ${L.section(
-  `${L.sectionHead('THE HONEST FRAME', 'What this replaces.', 'Most jewellery businesses pay for five or six disconnected tools — a messaging tool, a catalogue app, a website, scheme spreadsheets, an agency retainer — plus the invisible cost: customers lost to silence. One system, one bill, one owner of the customer record.')}
+  `${L.sectionHead('THE FRANKENSTACK MATH', 'What the pile of tools actually costs.', 'Most jewellery businesses pay for five or six disconnected tools — plus the invisible cost: customers lost to silence. Put your own numbers in the right column; these rows are the ones we see most often.')}
+  <div class="tbl-wrap"><table class="tbl">
+    <thead><tr><th>What you pay for today</th><th>Typical job it does</th><th>In Jwero</th></tr></thead>
+    <tbody>
+      <tr><td><strong>WhatsApp bulk-message tool</strong></td><td>Sends texts; knows nothing about the customer</td><td>Included — with the customer record behind every reply</td></tr>
+      <tr><td><strong>Catalogue app</strong></td><td>Shares designs; prices go stale when the rate moves</td><td>Included — live-rate pricing on every share</td></tr>
+      <tr><td><strong>Website / ecommerce subscription</strong></td><td>A brochure or a generic store</td><td>Included — a jewellery-native ecommerce website</td></tr>
+      <tr><td><strong>SMS vendor</strong></td><td>Festival blasts nobody reads</td><td>Included — consent-aware broadcasts across four channels</td></tr>
+      <tr><td><strong>Agency retainer / freelancer</strong></td><td>Posts and ads, disconnected from sales data</td><td>Included — social, ads and attribution on the same record</td></tr>
+      <tr><td><strong>Scheme registers & Excel hours</strong></td><td>Staff time reconciling what no tool connects</td><td>Gone — one record, no reconciliation</td></tr>
+    </tbody>
+  </table></div>
   ${L.stats([
     { n: '5–6', l: 'tools a typical business pays for today' },
     { n: '1', l: 'system that holds the whole customer' },
@@ -99,6 +112,8 @@ ${L.section(
     { title: '"I don’t need the whole platform"', text: 'Then don’t buy it. Assist is exactly the minimum: customers imported, WhatsApp connected, catalogue live. Expand only when it’s earned its place.' },
   ])}`
 , { tone: 'tint' })}
+
+${L.section(L.safeToTryStrip())}
 
 ${L.section(`${L.sectionHead('PRICING QUESTIONS', 'Straight answers on cost and terms.', '')}${L.faqBlock([
   { q: 'Why don’t I see numbers on this page?', a: 'Because pricing is being finalised per region ahead of general availability. Ask on WhatsApp and you will get a straight answer with no "discovery call" required.' },
@@ -134,6 +149,15 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('THE COMPANY', 'Who builds it, and what we measure.', 'Jwero is built by a team across product, jewellery retail and AI engineering — working daily with jewellery businesses from single family stores to multi-branch chains. We measure ourselves on one number: the revenue our customers’ growth reports attribute to the system.')}
+  <div class="tbl-wrap" style="margin-bottom:26px"><table class="tbl">
+    <tbody>
+      <tr><td><strong>Legal entity</strong></td><td>Tanika Tech Jewels Private Limited</td></tr>
+      <tr><td><strong>CIN</strong></td><td>U74900MH2016PTC273631 — verifiable on the MCA registry</td></tr>
+      <tr><td><strong>Incorporated</strong></td><td>December 2016, Registrar of Companies, Mumbai</td></tr>
+      <tr><td><strong>Registered office</strong></td><td>Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road, Bhayandar (West), Thane, Maharashtra 401101</td></tr>
+      <tr><td><strong>Reach us</strong></td><td><a href="mailto:care@jwero.ai">care@jwero.ai</a> · WhatsApp <a href="tel:+919169959959">+91 91699 59959</a> · <a href="https://www.linkedin.com/company/jwero" rel="noopener" target="_blank">LinkedIn</a> · <a href="https://www.instagram.com/jwero.ai/" rel="noopener" target="_blank">Instagram</a></td></tr>
+    </tbody>
+  </table></div>
   <div class="cta-row">
     <a class="btn btn-primary" href="/book-demo">Talk to us</a>
     <a class="btn btn-ghost" href="#" data-wa="company">WhatsApp the founders’ desk</a>
@@ -155,12 +179,13 @@ ${L.hero({
 })}
 ${L.section(
   `${L.cards([
-    { title: 'WhatsApp', text: 'The fastest way to reach us — usually a reply within minutes during business hours.', link: { href: '#', label: 'Chat now' } },
-    { title: 'Phone', text: '+91 00000 00000 — for a call instead of a chat.' },
-    { title: 'Email', text: 'hello@jwero.ai — for anything that needs an attachment.' },
+    { title: 'WhatsApp', text: 'The fastest way to reach us — usually a reply within minutes during business hours. <a class="card-link" href="#" data-wa="contact">Chat now →</a>' },
+    { title: 'Phone', text: '<a href="tel:+919169959959">+91 91699 59959</a> — for a call instead of a chat.' },
+    { title: 'Email', text: '<a href="mailto:care@jwero.ai">care@jwero.ai</a> — for anything that needs an attachment.' },
     { title: 'Book a demo', text: 'A 15-minute slot with someone who knows the trade.', link: { href: '/book-demo', label: 'Book now' } },
   ], 4)}
-  <div class="cta-row" style="margin-top:10px"><a class="btn btn-primary" href="#" data-wa="contact">Chat with us on WhatsApp</a></div>`
+  <div class="cta-row" style="margin-top:10px"><a class="btn btn-primary" href="#" data-wa="contact">Chat with us on WhatsApp</a></div>
+  <p style="margin-top:26px; font-size:.88rem; color:var(--ink-2);">Evaluating for a chain or committee? <a href="/enterprise">Start on the enterprise track</a> · Curious what the product does first? <a href="/platform">Take the platform tour</a> · Cost questions? <a href="/pricing">See pricing</a>.</p>`
 )}
 `,
 };
@@ -200,6 +225,8 @@ ${L.section(
     <a class="btn btn-ghost" href="/assets/downloads/jwero-security-overview.pdf" download>Download the security overview (PDF)</a>
   </div>`
 )}
+
+${L.section(L.customerLogos())}
 
 ${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', 'Answers for your evaluation committee.', '')}${L.faqBlock([
   { q: 'Our evaluation committee will ask about SSO and audit trails. What do we tell them?', a: 'Tell them the truth: enterprise SSO/SCIM is in active development, not shipped; per-module activity logging exists today with a unified audit trail being consolidated. <a href="/trust/security">See the full honest list</a>.' },
@@ -244,10 +271,11 @@ ${L.section(
       <label for="f-city">City & country</label>
       <input id="f-city" name="city" type="text" autocomplete="address-level2">
       <button class="btn btn-primary" type="submit">Request my demo slot</button>
-      <p class="form-ok">Thank you — we will confirm your slot on WhatsApp within business hours. Faster route: message us directly from the button above.</p>
+      <p class="form-ok">Opening WhatsApp with your details filled in — press send, and we’ll confirm your slot within business hours.</p>
       <p class="cta-note">No spam, no drip campaigns. One confirmation, one demo, your decision.</p>
     </form>
     <div>
+      ${L.customerLogos()}
       ${L.sectionHead('WHAT HAPPENS NEXT', 'Three steps from here to your demo.', '')}
       ${L.steps([
         { title: 'We confirm on WhatsApp', text: 'A human (yes, really) confirms a 15-minute slot that suits you.' },
@@ -268,7 +296,7 @@ const legalPrivacy = {
   body: `
 ${L.section(
   `<h1>Privacy Policy</h1>
-  <p style="max-width:64em; margin-top:18px; color:var(--ink-2);">Last updated: see the site footer. Jwero (“Jwero”, “we”, “us”) builds jewellery business software. This policy explains what personal data we collect, why, how it is used and shared, and the choices available to you — separately for (a) visitors to this website, (b) businesses that subscribe to the Jwero product ("Customers"), and (c) the individuals whose data Customers store inside Jwero ("End Customers", e.g. a jeweller's own shoppers).</p>
+  <p style="max-width:64em; margin-top:18px; color:var(--ink-2);">Last updated: 1 August 2026. Jwero is a product of <strong>Tanika Tech Jewels Private Limited</strong> (CIN U74900MH2016PTC273631), registered office: Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road, Bhayandar (West), Thane, Maharashtra 401101 (“Jwero”, “we”, “us”). This policy explains what personal data we collect, why, how it is used and shared, and the choices available to you — separately for (a) visitors to this website, (b) businesses that subscribe to the Jwero product ("Customers"), and (c) the individuals whose data Customers store inside Jwero ("End Customers", e.g. a jeweller's own shoppers).</p>
   <div style="max-width:64em; margin-top:26px; font-size:.95rem; color:var(--ink-2); line-height:1.8;">
 
     <h3 style="margin-top:28px; color:var(--ink);">1. Scope — who this policy covers</h3>
@@ -310,7 +338,7 @@ ${L.section(
     <p>We may update this policy as the product and our practices evolve. Material changes will be reflected here with an updated date; continued use after a change constitutes acceptance of the revised policy.</p>
 
     <h3 style="margin-top:28px; color:var(--ink);">13. Contact & grievance officer</h3>
-    <p>For privacy questions, access/correction/deletion requests, or grievances, write to us via <a href="/contact">Contact</a> or hello@jwero.ai. A named grievance officer for data-protection matters will be published here once appointed.</p>
+    <p>For privacy questions, access/correction/deletion requests, or grievances, write to the Grievance Officer, Tanika Tech Jewels Private Limited, at <a href="mailto:care@jwero.ai">care@jwero.ai</a> (subject line: "Privacy grievance") or via <a href="/contact">Contact</a>. Grievances are acknowledged and addressed within the timelines applicable law prescribes.</p>
   </div>`
 )}
 `,
@@ -324,7 +352,7 @@ const legalTerms = {
   body: `
 ${L.section(
   `<h1>Terms of Service</h1>
-  <p style="max-width:64em; margin-top:18px; color:var(--ink-2);">Last updated: see the site footer. These terms govern your use of this website. If you are a Jwero product subscriber, your use of the product itself is governed by a separate signed order/subscription agreement referenced in §3, which takes precedence over this page for product matters.</p>
+  <p style="max-width:64em; margin-top:18px; color:var(--ink-2);">Last updated: 1 August 2026. This website and the Jwero product are operated by <strong>Tanika Tech Jewels Private Limited</strong> (CIN U74900MH2016PTC273631), registered office: Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road, Bhayandar (West), Thane, Maharashtra 401101. These terms govern your use of this website. If you are a Jwero product subscriber, your use of the product itself is governed by a separate signed order/subscription agreement referenced in §3, which takes precedence over this page for product matters.</p>
   <div style="max-width:64em; margin-top:22px; font-size:.95rem; color:var(--ink-2); line-height:1.8;">
 
     <h3 style="margin-top:28px; color:var(--ink);">1. Acceptance of terms</h3>
@@ -361,7 +389,7 @@ ${L.section(
     <p>We may update these terms as the website and our practices evolve. Material changes will be reflected here with an updated date.</p>
 
     <h3 style="margin-top:28px; color:var(--ink);">12. Contact</h3>
-    <p>Questions about these terms: <a href="/contact">Contact</a> or hello@jwero.ai.</p>
+    <p>Questions about these terms: <a href="/contact">Contact</a> or care@jwero.ai.</p>
   </div>`
 )}
 `,
@@ -375,7 +403,7 @@ const legalDpdp = {
   body: `
 ${L.section(
   `<h1>DPDP Statement</h1>
-  <p style="max-width:64em; margin-top:18px; color:var(--ink-2);">This statement describes how Jwero approaches personal data protection under India's Digital Personal Data Protection Act, 2023 ("DPDP Act"), for data processed through this website and the Jwero product — including personal data about our Customers' own End Customers (e.g. names, contact details, purchase and scheme records).</p>
+  <p style="max-width:64em; margin-top:18px; color:var(--ink-2);">Last updated: 1 August 2026. This statement describes how <strong>Tanika Tech Jewels Private Limited</strong> (CIN U74900MH2016PTC273631, registered office: Bhayandar (West), Thane, Maharashtra 401101), operating the Jwero product, approaches personal data protection under India's Digital Personal Data Protection Act, 2023 ("DPDP Act") — for data processed through this website and the Jwero product, including personal data about our Customers' own End Customers (e.g. names, contact details, purchase and scheme records).</p>
   <div style="max-width:64em; margin-top:22px; font-size:.95rem; color:var(--ink-2); line-height:1.8;">
 
     <h3 style="margin-top:28px; color:var(--ink);">1. Data Fiduciary and Data Processor roles</h3>
@@ -403,7 +431,7 @@ ${L.section(
     <p>Customers can export their data at any time. On termination of a subscription, data is retained for a limited period to permit export before deletion, per the subscription agreement — see <a href="/legal/terms">Terms of Service</a>.</p>
 
     <h3 style="margin-top:28px; color:var(--ink);">9. Grievance redressal</h3>
-    <p>Grievances relating to Jwero's own processing (as Data Fiduciary) can be raised via <a href="/contact">Contact</a> or hello@jwero.ai. A named grievance officer, as contemplated by the DPDP Act, will be published here once appointed. Grievances relating to how a specific jewellery business handles its End Customers' data should be raised with that business directly, as the Data Fiduciary for that data.</p>
+    <p>Grievances relating to Jwero's own processing (as Data Fiduciary) can be raised with the Grievance Officer, Tanika Tech Jewels Private Limited, at <a href="mailto:care@jwero.ai">care@jwero.ai</a> (subject: "DPDP grievance") or via <a href="/contact">Contact</a>. Grievances relating to how a specific jewellery business handles its End Customers' data should be raised with that business directly, as the Data Fiduciary for that data.</p>
   </div>`
 )}
 `,

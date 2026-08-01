@@ -3,7 +3,7 @@
   'use strict';
 
   // --- CONFIG ---
-  var WA_NUMBER = '919967160916'; // WhatsApp Business number, digits only
+  var WA_NUMBER = '919169959959'; // WhatsApp Business number, digits only
   var WA_MESSAGES = {
     default: 'Hi Jwero — I would like to see a quick demo.',
     announce: 'Hi Jwero — saw the site, show me the live WhatsApp demo.',
@@ -346,11 +346,19 @@
     glCalc();
   }
 
-  // Demo form (static build: show confirmation; wire to CRM API in production)
+  // Demo form: hand the request to the same WhatsApp inbox everything else uses,
+  // with the form details prefilled — no silent black hole, no separate backend.
   var form = document.getElementById('demo-form');
   if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
+    var v = function (name) { var el = form.querySelector('[name=' + name + ']'); return el && el.value ? el.value.trim() : ''; };
+    var msg = 'Hi Jwero — I would like to book a demo.' +
+      (v('name') ? ' Name: ' + v('name') + '.' : '') +
+      (v('phone') ? ' WhatsApp: ' + v('phone') + '.' : '') +
+      (v('business') ? ' Business: ' + v('business') + '.' : '') +
+      (v('city') ? ' City: ' + v('city') + '.' : '');
     form.querySelector('.form-ok').style.display = 'block';
     form.querySelector('button[type=submit]').disabled = true;
+    window.location.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg + ' [ref:book-demo/form]');
   });
 })();

@@ -2,7 +2,7 @@ const L = require('../lib');
 
 const home = {
   slug: 'index',
-  title: 'Jwero — AI Jewellery Software & Operating System for Jewellery Business',
+  title: 'Jwero — AI Operating System for Jewellery Business',
   description:
     'Jwero is jewellery software built as an AI operating system: one customer record, catalogue, inventory, inbox, WhatsApp, gold schemes and an AI workforce.',
   schema: {
@@ -29,7 +29,7 @@ ${L.hero({
   sub: 'More repeat customers. Faster replies. Less dead stock. All from one customer record, one catalogue and one inbox — with an AI staff that drafts everything and sends nothing without your approval.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'home' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
-  note: 'A real person + our AI reply within minutes — that’s the product. Prefer email? <a href="/contact">hello@jwero.ai</a>.',
+  note: 'The button above opens our own Jwero inbox — test the product before you talk to anyone. A real person + our AI reply within minutes. Prefer email? <a href="/contact">care@jwero.ai</a>.',
   mock: L.mockChat,
 })}
 
@@ -170,6 +170,8 @@ ${L.section(`${L.sectionHead('QUESTIONS BUSINESSES ASK', 'Straight answers, befo
   { q: 'What kind of impact can I expect?', a: 'It depends on your business, which is why we won’t quote a percentage nobody can verify. What we can show you: faster response, structured follow-up, visible dead stock and disciplined schemes are the same levers that let bigger players out-remember their customers at scale. Run the calculators on your own numbers, or ask for a 30-day growth report so you see your own impact — not someone else’s case study.' },
 ])}
 <p class="cta-note" style="margin-top:18px">More questions? <a href="#" data-wa="faq">Ask on WhatsApp</a>.</p>`)}
+
+${L.section(L.safeToTryStrip())}
 
 ${L.section(
   `<div class="close-plan">

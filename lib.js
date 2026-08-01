@@ -223,14 +223,20 @@ function jtbdBlock(items) {
 // Comparison matrix — T6 pages. rows: [{label, jwero, other}]; jwero/other can carry a "roadmap" flag.
 // Cells marked "[VERIFY]" are unconfirmed rather than asserted (D3) — never state a specific unverified
 // fact about a named third party as settled.
+// Render editorial "[VERIFY — …]" markers as a neutral styled badge instead of raw brackets.
+function verifyBadge(text) {
+  return String(text).replace(/\[VERIFY(?:\s*[—-]\s*([^\]]*))?\]/g, (m, rest) =>
+    `<span class="verify-tag">Unverified${rest ? ' — ' + rest.trim() : ''}</span>`);
+}
+
 function compareTable(theirName, rows) {
   return `<div class="tbl-wrap"><table class="tbl compare-tbl">
     <thead><tr><th>Capability</th><th>Jwero</th><th>${esc(theirName)}</th></tr></thead>
     <tbody>${rows
       .map(
         (r) => `<tr><td><strong>${r.label}</strong></td>
-          <td>${r.jwero}${r.jweroRoadmap ? ' <span class="tag-roadmap">roadmap</span>' : ''}</td>
-          <td>${r.other}</td></tr>`
+          <td>${verifyBadge(r.jwero)}${r.jweroRoadmap ? ' <span class="tag-roadmap">roadmap</span>' : ''}</td>
+          <td>${verifyBadge(r.other)}</td></tr>`
       )
       .join('')}</tbody>
   </table></div>
@@ -334,18 +340,32 @@ function ctaBand(title, sub, waContext, opts = {}) {
   const secondary = opts.enterprise
     ? `<a class="btn btn-ghost-light" href="/enterprise">Talk to a specialist</a>`
     : `<a class="btn btn-ghost-light" href="/book-demo">Book a demo</a>`;
+  const label = opts.label || 'Chat with us on WhatsApp';
   return `
 <section class="cta-band">
   <div class="container">
     <h2>${title}</h2>
     <p>${sub}</p>
     <div class="cta-row center">
-      <a class="btn btn-primary" href="#" data-wa="${esc(waContext)}">Chat with us on WhatsApp</a>
+      <a class="btn btn-primary" href="#" data-wa="${esc(waContext)}">${label}</a>
       ${secondary}
     </div>
-    <p class="cta-note">A real person + our AI reply within minutes — that's the product.</p>
+    <p class="cta-note">A real person + our AI reply within minutes — that's the product. You message us first; we never message you uninvited.</p>
   </div>
 </section>`;
+}
+
+// Risk-reversal strip: the "why trying this is safe" facts, assembled at the decision moment.
+function safeToTryStrip() {
+  return `
+<div class="safe-strip">
+  <p class="safe-title">WHY TRYING THIS IS SAFE</p>
+  <div class="safe-items">
+    <div><strong>Pilot on your own data</strong><span>Start with a supervised sample import — evaluate on your real customers, not a demo dataset.</span></div>
+    <div><strong>Monthly billing, export anytime</strong><span>Entry tiers bill monthly, and your data leaves with you in standard formats whenever you ask.</span></div>
+    <div><strong>Your season is protected</strong><span>A written change-freeze means nothing disruptive happens during your peak weeks.</span></div>
+  </div>
+</div>`;
 }
 
 // Two-column pain/agitate rows for pain pages.
@@ -409,5 +429,5 @@ module.exports = {
   esc, hero, section, sectionHead, cards, steps, stats, faqBlock,
   governanceStrip, ctaBand, painRows, mockApproval, mockChat, mockMemory, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
-  jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos,
+  jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,
 };

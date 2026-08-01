@@ -73,7 +73,8 @@ ${L.section(`${L.sectionHead('QUESTIONS EVALUATORS ASK', 'Straight answers for t
   { q: 'Is there a public API or SSO?', a: 'On the public roadmap, not shipped today. <a href="/roadmap">See the roadmap</a>.' },
   { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional — run everything on Assist and never touch the rest.' },
 ])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
+<p class="cta-note" style="margin-top:14px">Evaluating vendors side by side? <a href="/blog/jewellery-software-buyer-checklist">Work through the jewellery software buyer’s checklist →</a></p>`)}
 
 ${L.ctaBand('See the operating system on your own data.', 'Bring one real customer scenario to a 15-minute demo — we’ll run it end to end, one record at a time.', 'platform')}
 `,
@@ -85,7 +86,7 @@ const customerMemory = {
   description: 'Jwero’s customer record remembers purchases, gold-plan balances, family occasions, taste and best time to reach each customer — with an explainable "why" score.',
   breadcrumbs: BC('Customer Memory'),
   faqs: [
-    { q: 'What does Jwero remember about each customer?', a: 'Over 90 fields per record: purchase history, gold savings balance and instalment status, birthdays, anniversaries and wedding months, metal and design preferences, preferred channel and best time to reach, engagement and churn signals — each with a visible explanation.' },
+    { q: 'What does Jwero remember about each customer?', a: '90+ fields per record: purchase history, gold savings balance and instalment status, birthdays, anniversaries and wedding months, metal and design preferences, preferred channel and best time to reach, engagement and churn signals — each with a visible explanation.' },
     { q: 'How is this different from a normal CRM?', a: 'Generic CRMs know names and notes. Jwero’s record is jewellery-native: it knows her scheme balance, her daughter’s wedding month and what today’s gold rate means for her budget — as structured fields, every module can act on, not free-text notes.' },
     { q: 'What happens when a salesperson leaves?', a: 'Nothing. The memory belongs to the business, not to a personal phone. Every conversation, preference and promise stays on the record.' },
   ],
@@ -127,7 +128,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('MEMORY QUESTIONS', 'What owners and evaluators ask first.', '')}${L.faqBlock([
-  { q: 'What does Jwero remember about each customer?', a: 'Over 90 fields per record: purchase history, gold savings balance and instalment status, birthdays, anniversaries and wedding months, metal and design preferences, preferred channel and best time to reach, engagement and churn signals — each with a visible explanation.' },
+  { q: 'What does Jwero remember about each customer?', a: '90+ fields per record: purchase history, gold savings balance and instalment status, birthdays, anniversaries and wedding months, metal and design preferences, preferred channel and best time to reach, engagement and churn signals — each with a visible explanation.' },
   { q: 'How is this different from a normal CRM?', a: 'Generic CRMs know names and notes. Jwero’s record is jewellery-native: it knows her scheme balance, her daughter’s wedding month and what today’s gold rate means for her budget — as structured fields every module can act on, not free-text notes.' },
   { q: 'What happens when a salesperson leaves?', a: 'Nothing. The memory belongs to the business, not to a personal phone. Every conversation, preference and promise stays on the record.' },
 ])}
@@ -364,7 +365,8 @@ ${L.section(`${L.sectionHead('QUESTIONS ACCOUNTANTS ASK', 'What to tell your CA.
   { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes — masters arrive already synced instead of re-typed, and they still enter sales and payment vouchers in Tally exactly as before.' },
   { q: 'Does this replace GST filing or e-invoicing?', a: 'No — GST invoicing at the live rate happens in Jwero; statutory filing and e-invoice/IRN stay Tally’s job. Two systems, one clean line.' },
   { q: 'Can our CA keep their own workflow?', a: 'Yes — the bridge changes what arrives in Tally, not how your CA works once it’s there.' },
-])}`)}
+])}
+<p class="cta-note" style="margin-top:14px">Want the full division of labour explained? <a href="/blog/jewellery-software-and-tally">Read the guide to running jewellery software and Tally together →</a></p>`)}
 
 ${L.ctaBand('Bring your accountant into the conversation.', 'We are happy to walk your CA through exactly what moves and what doesn’t.', 'tally')}
 `,
@@ -418,7 +420,8 @@ ${L.section(`${L.sectionHead('TRAINING & ADOPTION QUESTIONS', 'Getting a hesitan
   { q: 'We tried new software before and it sat unused. Why would this be different?', a: 'Assist gives your team something useful on day one instead of a manual to read first. Adoption follows usefulness, not a mandate.' },
   { q: 'Can you work around our festival-season staffing crunch?', a: 'Yes — the season change-freeze exists precisely so training and go-live never compete with your busiest weeks.' },
 ])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#support">See every implementation question →</a></p>`)}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#support">See every implementation question →</a></p>
+<p class="cta-note" style="margin-top:14px">Timing a go-live around the busy months? <a href="/blog/jewellery-software-wedding-season">Read the wedding-season readiness guide →</a></p>`)}
 
 ${L.ctaBand('See the onboarding plan for your business.', 'Tell us your team size and busiest season — we’ll map the exact 30-day plan.', 'onboarding')}
 `,
@@ -450,7 +453,11 @@ ${L.section(
       <div class="road-item"><strong>Jewellery catalogue (PIM)</strong>purity, certificates, HUID-aware, RFID</div>
       <div class="road-item"><strong>Inventory intelligence</strong>valuation, ageing, dead-stock visibility</div>
       <div class="road-item"><strong>GST invoicing at live metal rates</strong>AR ledger, payment reminders</div>
-      <div class="road-item"><strong>Journeys, campaigns & loyalty</strong>festival calendar triggers</div>
+      <div class="road-item"><strong>Journeys, campaigns & loyalty</strong>festival calendar triggers, consent-aware broadcasts</div>
+      <div class="road-item"><strong>Campaign attribution (UTM)</strong>what each send actually sold, on the record</div>
+      <div class="road-item"><strong>Quotations</strong>draft → sent → accepted, with a PDF and a shareable link</div>
+      <div class="road-item"><strong>Customer segmentation</strong>live rule-based audiences, RFM tiers</div>
+      <div class="road-item"><strong>Showroom intelligence</strong>walk-in register, live floor, walkout rescue</div>
       <div class="road-item"><strong>Repairs, purchases, manufacturing job-work</strong>with gold-loss tracking</div>
       <div class="road-item"><strong>Multi-store structure</strong>brands, branches, role-based access</div>
       <div class="road-item"><strong>Bridges</strong>Tally, Zoho Books, Shopify, Woo, Unicommerce</div>
@@ -458,15 +465,20 @@ ${L.section(
     <div class="road-col">
       <h3>Rolling out</h3>
       <div class="road-item"><strong>POS counter & cash day-close</strong>the billing counter, composed on the pricing spine</div>
-      <div class="road-item"><strong>Attribution dashboard</strong>the weekly growth report, productised</div>
+      <div class="road-item"><strong>Attribution dashboard</strong>the owner’s weekly growth report, productised</div>
       <div class="road-item"><strong>Enterprise SSO/SCIM</strong>for chain deployments</div>
-      <div class="road-item"><strong>Quotation-to-order flow</strong>quotes that convert in one tap</div>
+      <div class="road-item"><strong>Direct ad-platform publishing</strong>one-click publish from Ads Manager, not uniform across every flow yet</div>
+      <div class="road-item"><strong>Additional social publishing channels</strong>Instagram & Facebook are live; LinkedIn, X, Pinterest, YouTube and Google Business are being wired</div>
       <div class="road-item"><strong>Occasion & win-back recipes</strong>packaged one-click playbooks</div>
     </div>
     <div class="road-col">
       <h3>On the roadmap</h3>
       <div class="road-item"><strong>Offline mode</strong>the counter needs the internet today</div>
       <div class="road-item"><strong>Payroll & karigar wage settlement</strong>planned; not shipped</div>
+      <div class="road-item"><strong>E-invoice / IRN & GSTR filing automation</strong>statutory filing stays with Tally and your CA today</div>
+      <div class="road-item"><strong>Scheme & digital-gold redemption at online checkout</strong>balances live on the record; applying them on the ecommerce website isn’t wired yet</div>
+      <div class="road-item"><strong>HUID / certificate verification on the ecommerce website</strong>the catalogue carries the data; a customer-facing widget isn’t built</div>
+      <div class="road-item"><strong>Old-gold exchange / buyback calculator online</strong></div>
       <div class="road-item"><strong>Girvi / gold-loan module</strong>on the long-term map</div>
       <div class="road-item"><strong>Vernacular product interface</strong>the voice assistant speaks 14 languages; the screens are English today</div>
       <div class="road-item"><strong>Public developer API</strong>bridges only, for now</div>

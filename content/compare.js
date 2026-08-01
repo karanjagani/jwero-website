@@ -89,6 +89,8 @@ ${L.section(
     { title: 'Jwero vs Zoho CRM', text: 'A mature horizontal CRM, free for 3 users up to $52/user/month.', link: { href: '/compare/jwero-vs-zoho-crm', label: 'Compare' } },
   ])}`
 )}
+${L.section(L.customerLogos())}
+
 ${L.section(`<p style="font-size:.85rem; color:var(--ink-2);">Using something not listed here? <a href="#" data-wa="compare-hub">Tell us on WhatsApp</a> and we’ll build an honest, researched comparison.</p>`)}
 `,
 };

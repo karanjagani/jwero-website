@@ -63,7 +63,8 @@ ${L.section(`${L.sectionHead('CRM QUESTIONS', 'Why switch, and what happens to y
   { q: 'Will I lose my existing customer history?', a: 'No — we import it. Purchase history and contact details come across, deduplicated, during onboarding.' },
   { q: 'Can I send a formal quote a customer can accept online?', a: 'Yes — a quotation moves from draft to sent to accepted or declined, with a number, line items and a PDF, shared as a link the customer can act on without a call.' },
 ])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
+<p class="cta-note" style="margin-top:14px">Still deciding whether you need a CRM, an ERP, or both? <a href="/blog/jewellery-crm-vs-erp-difference">Read the plain-language guide to the CRM vs ERP difference →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="crm">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -118,7 +119,8 @@ ${L.section(`${L.sectionHead('CATALOGUE QUESTIONS', 'Setup time, and pieces that
   { q: 'I have thousands of SKUs. Will setup take forever?', a: 'We import from your existing product sheets or software export — bulk tools handle high piece counts, not one-by-one entry.' },
   { q: 'Can it handle unique, one-of-a-kind pieces?', a: 'Yes — custom fields record provenance and story details per piece where a standard template doesn’t fit.' },
 ])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
+<p class="cta-note" style="margin-top:14px">Getting your records audit-ready? <a href="/blog/huid-hallmarking-records-audit-checklist">Use the HUID & hallmarking records audit checklist →</a> And before you send another PDF, <a href="/blog/digital-catalog-vs-pdf-jewellery">read why live digital catalogues outsell PDFs →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="catalog">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -128,7 +130,7 @@ ${L.ctaBand('Retire the PDF catalogue.', 'See a live catalogue share — with pr
 
 const inventory = {
   slug: 'products/inventory',
-  title: 'Jewellery Inventory — Valuation, Ageing & Dead Stock Visibility | Jwero',
+  title: 'Jewellery Inventory Software — Ageing & Dead Stock | Jwero',
   description: 'Know what your stock is worth at today’s rate, what is ageing, and what is quietly eating your capital — across every branch.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -170,7 +172,7 @@ ${L.oneSystemBlock([
 ])}
 
 ${L.section(
-  `<div class="stack-verdict"><strong>Run your own number first.</strong> The <a href="/tools/dead-stock-calculator">Dead Stock Calculator</a> estimates what idle inventory costs you per month at your financing rate. Most owners are off by 3×. It takes 60 seconds and the result goes to your WhatsApp.</div>`
+  `<div class="stack-verdict"><strong>Run your own number first.</strong> The <a href="/tools/dead-stock-calculator">Dead Stock Calculator</a> estimates what idle inventory costs you per month at your financing rate. Most owners are off by 3×. It takes 60 seconds and the result goes to your WhatsApp. Then, for the full playbook on finding and moving it, <a href="/blog/dead-stock-jewellery-business-guide">read the dead-stock guide for jewellery businesses →</a></div>`
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('INVENTORY QUESTIONS', 'Stocktakes, and starting from messy records.', '')}${L.faqBlock([
@@ -230,7 +232,8 @@ ${L.section(`${L.sectionHead('BILLING QUESTIONS', 'Your current software, and GS
   { q: 'Is there a POS alternative in Jwero, or should I keep my current billing counter?', a: 'Keep your current counter for now — a full POS with cash day-close is on our roadmap, not shipped. Billing & Finance adds GST invoicing at the live rate and receivables tracking alongside it until that ships.' },
   { q: 'Is GST computation compliant, or an approximation?', a: 'It’s data-driven, not hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.' },
 ])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
+<p class="cta-note" style="margin-top:14px">Wondering how jewellery software and Tally divide the work? <a href="/blog/jewellery-software-and-tally">Read the guide to running both without double entry →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="billing">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -240,7 +243,7 @@ ${L.ctaBand('See invoicing at today’s rate.', 'Change the rate live in a demo 
 
 const erp = {
   slug: 'products/erp',
-  title: 'Jewellery ERP Software, Reconsidered — Orders, Purchases, Manufacturing | Jwero',
+  title: 'Jewellery ERP Software, Reconsidered | Jwero',
   description: 'Jewellery ERP software: orders, purchases and vendors, repairs and manufacturing job-work — jewellery-native, sharing one customer record.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -284,7 +287,8 @@ ${L.section(`${L.sectionHead('OPERATIONS QUESTIONS', 'Mid-order switching, and p
   { q: 'Will switching disrupt operations mid-order?', a: 'Open orders, repairs and purchase records import alongside customers and catalogue — nothing in progress gets orphaned.' },
   { q: 'Our process is unusual — can it be configured to match?', a: 'Custom fields and approval rules exist for this. We’ll also tell you plainly what isn’t configurable, before you commit.' },
 ])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
+<p class="cta-note" style="margin-top:14px">Running repairs on registers today? <a href="/blog/jewellery-repair-management-custody-chain">Read the guide to repair management and the custody chain →</a> Still comparing system types? <a href="/blog/jewellery-crm-vs-erp-difference">See what actually separates a CRM from an ERP →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="erp">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 

@@ -17,36 +17,34 @@ const SIGNATURE = 'One system that remembers every customer.';
 const ORG_DESCRIPTION =
   'Jwero is the AI operating system for jewellery business: one customer record, one catalogue, one inventory truth and one inbox — with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and governed AI staff, in one place.';
 
-// ---------------------------------------------------------------- pages
-const pages = [
-  ...require('./content/home'),
-  ...require('./content/platform'),
-  ...require('./content/products'),
-  ...require('./content/products-sell'),
-  ...require('./content/products-run'),
-  ...require('./content/products-grow'),
-  ...require('./content/industries'),
-  ...require('./content/solutions'),
-  ...require('./content/solutions-retail-segments'),
-  ...require('./content/solutions-wholesale'),
-  ...require('./content/solutions-manufacturing-segments'),
-  ...require('./content/solutions-other-segments'),
-  ...require('./content/pain'),
-  ...require('./content/trust'),
-  ...require('./content/compare'),
-  ...require('./content/tools'),
-  ...require('./content/faq'),
-  ...require('./content/company'),
-  ...require('./content/partners'),
-  ...require('./content/blog'),
-  ...require('./content/roles'),
-  ...require('./content/roles-leadership'),
-  ...require('./content/roles-frontline'),
-  ...require('./content/roles-growth'),
-  ...require('./content/roles-manufacturing'),
-  ...require('./content/roles-operations'),
-  ...require('./content/roles-trade'),
+// ---------------------------------------------------------------- company facts (single source of truth)
+const LEGAL_ENTITY = 'Tanika Tech Jewels Private Limited';
+const LEGAL_CIN = 'U74900MH2016PTC273631';
+const LEGAL_ADDRESS = 'Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road, Bhayandar (West), Thane, Maharashtra 401101';
+const SOCIALS = [
+  ['https://www.instagram.com/jwero.ai/', 'Instagram'],
+  ['https://www.linkedin.com/company/jwero', 'LinkedIn'],
 ];
+
+// ---------------------------------------------------------------- pages
+// Each page is stamped with the mtime of the content file that defined it, so the
+// sitemap can emit an honest <lastmod> without hand-maintaining dates.
+const CONTENT_FILES = [
+  'home', 'platform', 'products', 'products-sell', 'products-run', 'products-grow',
+  'industries', 'solutions', 'solutions-retail-segments', 'solutions-wholesale',
+  'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
+  'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
+  'roles-leadership', 'roles-frontline', 'roles-growth', 'roles-manufacturing',
+  'roles-operations', 'roles-trade',
+];
+const pages = [];
+for (const f of CONTENT_FILES) {
+  const lastmod = fs.statSync(path.join(ROOT, 'content', `${f}.js`)).mtime.toISOString().slice(0, 10);
+  for (const p of require(`./content/${f}`)) {
+    p.lastmod = p.lastmod || lastmod;
+    pages.push(p);
+  }
+}
 
 // ---------------------------------------------------------------- nav
 // Matches Blueprint v2 §3.2.1 — 6 top-level items, Products as the 4-pillar "app grid" mega-menu.
@@ -211,7 +209,7 @@ function footerHTML() {
         <p class="f-tag">${SIGNATURE}<br>${TAGLINE}.</p>
         <p class="f-enemy">“Your software keeps accounts.<br>It doesn’t remember customers.”</p>
       </div>
-      ${col('Products', [['/products','App grid'],['/products/whatsapp','WhatsApp Commerce'],['/products/instagram-facebook','Instagram & Facebook'],['/products/ai-sales-agents','AI Sales Agents'],['/products/crm','Jewellery CRM'],['/products/catalog','Catalogue (PIM)'],['/products/inventory','Inventory'],['/products/billing-finance','Billing & Finance (roadmap)'],['/products/gold-schemes','Gold Schemes'],['/products/digital-gold','Digital Gold'],['/products/multi-store','Multi-store']])}
+      ${col('Products', [['/products', 'App grid'], ...NAV.find((m) => m.label === 'Products').groups.flatMap((g) => g.items)])}
       ${col('Solutions', [['/roles','Roles — who uses Jwero'],['/solutions','All 22 solutions'],['/industries/retail','Retail'],['/solutions/single-store','Single store'],['/solutions/multi-store-chains','Multi-store & chains'],['/solutions/luxury-boutique','Luxury & boutique'],['/solutions/bridal','Bridal & wedding'],['/solutions/manufacturers','Manufacturers'],['/solutions/b2b-jewellery','Wholesale & B2B'],['/solutions/d2c-brands','D2C brands'],['/solutions/franchise-networks','Franchise networks'],['/solutions/pain/dead-stock','Dead stock'],['/solutions/pain/lead-leakage','Lead leakage']])}
       ${col('Resources', [['/faq','FAQ — every objection'],['/blog','Blog'],['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/tools/whatsapp-revenue-estimator','WhatsApp Revenue Estimator'],['/tools/gold-loss-calculator','Gold-Loss Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/partners','Partners'],['/customers','Customer proof']])}
       ${col('Company', [['/company','About'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
@@ -220,12 +218,14 @@ function footerHTML() {
     <div class="f-proof">90+ customer-record fields · 240+ governed AI actions · AI voice in 14 languages · 5 kill-switch scopes · Tally, Zoho Books, Shopify, WooCommerce, Unicommerce &amp; Meta connectors built in.</div>
     <div class="f-bottom">
       <p>© <span data-year></span> Jwero. All rights reserved.</p>
+      <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank">${l}</a>`).join(' · ')} · <a href="mailto:care@jwero.ai">care@jwero.ai</a></p>
       <p>This site runs on Jwero — the chat button is the product.</p>
     </div>
+    <p class="f-legal">Jwero is a product of ${LEGAL_ENTITY} · CIN ${LEGAL_CIN} · Registered office: ${LEGAL_ADDRESS}</p>
   </div>
 </footer>
 <div class="sticky-bar" role="navigation" aria-label="Quick actions">
-  <a href="tel:+919967160916">Call</a>
+  <a href="tel:+919169959959">Call</a>
   <a class="sb-wa" href="#" data-wa="sticky">WhatsApp</a>
   <a class="sb-demo" href="/book-demo">Book demo</a>
 </div>`;
@@ -237,9 +237,11 @@ const FAVICON = '/assets/favicon.png';
 function orgSchema() {
   return {
     '@context': 'https://schema.org', '@type': 'Organization',
-    name: BRAND, url: SITE, slogan: TAGLINE, description: ORG_DESCRIPTION,
+    name: BRAND, legalName: LEGAL_ENTITY, url: SITE, slogan: TAGLINE, description: ORG_DESCRIPTION,
     logo: SITE + '/assets/jwero-mark.png',
-    contactPoint: { '@type': 'ContactPoint', contactType: 'sales', url: SITE + '/book-demo' },
+    sameAs: SOCIALS.map(([h]) => h),
+    address: { '@type': 'PostalAddress', streetAddress: 'Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road', addressLocality: 'Bhayandar (West), Thane', addressRegion: 'Maharashtra', postalCode: '401101', addressCountry: 'IN' },
+    contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: 'care@jwero.ai', telephone: '+91-91699-59959', url: SITE + '/book-demo' },
   };
 }
 
@@ -273,7 +275,11 @@ ${robotsMeta}
 <meta property="og:title" content="${page.title}">
 <meta property="og:description" content="${page.description}">
 <meta property="og:url" content="${canonical}">
+<meta property="og:image" content="${SITE}/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${SITE}/assets/og-default.png">
 <link rel="icon" type="image/png" href="${FAVICON}">
 <meta name="theme-color" content="#0013b7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a0b12" media="(prefers-color-scheme: dark)">
@@ -311,14 +317,14 @@ function whatsappRedirectPage() {
 <body>
 <div>
   <p>Opening WhatsApp…</p>
-  <p><a id="wa-fallback" href="https://wa.me/910000000000">Tap here if it doesn't open automatically</a></p>
+  <p><a id="wa-fallback" href="https://wa.me/919169959959">Tap here if it doesn't open automatically</a></p>
 </div>
 <script>
 (function(){
   var params = new URLSearchParams(location.search);
   var ref = params.get('ref') || 'whatsapp-redirect/qr';
   var msg = params.get('msg') || 'Hi Jwero — I scanned your code and would like to see a quick demo.';
-  var url = 'https://wa.me/910000000000?text=' + encodeURIComponent(msg + ' [ref:' + ref + ']');
+  var url = 'https://wa.me/919169959959?text=' + encodeURIComponent(msg + ' [ref:' + ref + ']');
   document.getElementById('wa-fallback').href = url;
   location.replace(url);
 })();
@@ -342,6 +348,26 @@ function build() {
   // /whatsapp special redirect (offline QR / print codes)
   fs.mkdirSync(path.join(DIST, 'whatsapp'), { recursive: true });
   fs.writeFileSync(path.join(DIST, 'whatsapp', 'index.html'), whatsappRedirectPage());
+
+  // 404 — branded recovery page at the root path most static hosts pick up automatically.
+  fs.writeFileSync(path.join(DIST, '404.html'), layout({
+    slug: '404', noindex: true,
+    title: 'Page Not Found | Jwero',
+    description: 'That page doesn’t exist — here’s the way back to what you were looking for.',
+    body: `
+${require('./lib').section(`
+  <div class="section-head" style="margin-top:24px">
+    <p class="eyebrow">404</p>
+    <h1>That page isn’t here.</h1>
+    <p class="lead">The link may be old, or the address mistyped. Everything worth finding is one click below.</p>
+  </div>
+  <div class="cta-row" style="margin-top:8px">
+    <a class="btn btn-primary" href="/">Go to the home page</a>
+    <a class="btn btn-ghost" href="#" data-wa="default">Ask us on WhatsApp</a>
+  </div>
+  <p style="margin-top:30px; font-size:.95rem;">Popular destinations: <a href="/platform">The platform tour</a> · <a href="/products">All products</a> · <a href="/solutions">Solutions by business type</a> · <a href="/pricing">Pricing</a> · <a href="/faq">FAQ</a></p>`)}
+`,
+  }));
 
   // robots — AI crawlers explicitly welcome (GEO policy).
   fs.writeFileSync(path.join(DIST, 'robots.txt'),
@@ -379,22 +405,17 @@ export), and jewellery brands, D2C startups and franchise networks alike.
   product interface, public API/SSO and predictive ML forecasting are on the public roadmap, not
   shipped today: ${SITE}/roadmap
 
-## Key pages
-- Platform (the OS tour): ${SITE}/platform
-- Customer memory: ${SITE}/platform/customer-memory
-- Pricing engine: ${SITE}/platform/pricing-engine
-- AI workforce & governance: ${SITE}/platform/ai-workforce
-- WhatsApp commerce: ${SITE}/products/whatsapp
-- Gold schemes: ${SITE}/products/gold-schemes
-- Pricing: ${SITE}/pricing
-- Migration Centre: ${SITE}/migration
-- Customer proof: ${SITE}/customers
-- Public roadmap: ${SITE}/roadmap
+## Company
+Jwero is a product of ${LEGAL_ENTITY} (CIN ${LEGAL_CIN}), ${LEGAL_ADDRESS}.
+Contact: care@jwero.ai · WhatsApp +91 91699 59959.
+
+## All pages
+${pages.filter((p) => !p.noindex).map((p) => `- ${p.title.replace(/ \| Jwero$/, '')}: ${SITE}/${p.slug === 'index' ? '' : p.slug}`).join('\n')}
 `);
   // sitemap
   const urls = pages
     .filter((p) => !p.noindex)
-    .map((p) => `<url><loc>${SITE}/${p.slug === 'index' ? '' : p.slug}</loc></url>`)
+    .map((p) => `<url><loc>${SITE}/${p.slug === 'index' ? '' : p.slug}</loc><lastmod>${p.lastmod}</lastmod></url>`)
     .join('\n');
   fs.writeFileSync(path.join(DIST, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`);
@@ -419,7 +440,12 @@ function serve(port) {
     file = file.replace(/^([.][.][/\\])+/, '');
     if (!file.startsWith(DIST)) { res.writeHead(403); return res.end(); }
     fs.readFile(file, (err, data) => {
-      if (err) { res.writeHead(404, { 'Content-Type': 'text/plain' }); return res.end('404 — ' + p); }
+      if (err) {
+        return fs.readFile(path.join(DIST, '404.html'), (err2, page404) => {
+          res.writeHead(404, { 'Content-Type': 'text/html' });
+          res.end(err2 ? '404 — ' + p : page404);
+        });
+      }
       res.writeHead(200, { 'Content-Type': MIME[path.extname(file)] || 'application/octet-stream' });
       res.end(data);
     });

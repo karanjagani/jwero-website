@@ -3,7 +3,7 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 const whatsapp = {
   slug: 'products/whatsapp',
-  title: 'WhatsApp Business API Software for Jewellers — Sell Where They Already Are | Jwero',
+  title: 'WhatsApp Business API Software for Jewellers | Jwero',
   description: 'Official WhatsApp Business API software for jewellers: live-rate catalogues, safe broadcasts, AI replies with approval, payments on your own number.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -74,11 +74,14 @@ ${L.section(`${L.sectionHead('WHATSAPP QUESTIONS', 'Bans, rule changes, and what
   { q: 'What if Meta changes the rules?', a: 'Your customer records and catalogue live in Jwero, not inside the channel. Channels can change; your data doesn’t move with them.' },
   { q: 'How is this different from WATI or similar tools?', a: 'They send messages. Jwero replies come from a system that knows the customer and the jewellery, because they share one record. See <a href="/compare/jwero-vs-wati">Jwero vs WATI</a>.' },
 ])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#whatsapp">See every WhatsApp & Meta question →</a></p>`)}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#whatsapp">See every WhatsApp & Meta question →</a></p>
+<p class="cta-note" style="margin-top:14px">Want the full picture before a demo? <a href="/blog/whatsapp-for-jewellers-guide">Read the complete WhatsApp guide for jewellers →</a> And if you still send PDF catalogues in chat, <a href="/blog/digital-catalog-vs-pdf-jewellery">here is why a live digital catalogue outsells a PDF →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="whatsapp">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('Message us. Seriously.', 'The best demo of WhatsApp selling is a WhatsApp conversation. Send one message and watch the machine work.', 'whatsapp')}
+${L.section(L.safeToTryStrip())}
+
+${L.ctaBand('Message us. Seriously.', 'The best demo of WhatsApp selling is a WhatsApp conversation. Send one message and watch the machine work.', 'whatsapp', { label: 'Send that first message' })}
 `,
 };
 

@@ -3,7 +3,7 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 const schemes = {
   slug: 'products/gold-schemes',
-  title: 'Gold Savings Scheme Software for Jewellers — Enrolment to Maturity | Jwero',
+  title: 'Gold Savings Scheme Software for Jewellers | Jwero',
   description: 'Gold savings scheme software: KYC enrolment, instalment reminders, transparent balances, disciplined maturity and closure — no more paper disputes.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -59,7 +59,7 @@ ${L.oneSystemBlock([
 ])}
 
 ${L.section(
-  `<div class="stack-verdict"><strong>The lock-in nobody resents:</strong> a healthy scheme book is next year’s revenue, banked this year. Run the <a href="/tools/gold-scheme-calculator">Gold Scheme Calculator</a> to see what your enrolment rate is worth in locked-in future sales.</div>`
+  `<div class="stack-verdict"><strong>The lock-in nobody resents:</strong> a healthy scheme book is next year’s revenue, banked this year. Run the <a href="/tools/gold-scheme-calculator">Gold Scheme Calculator</a> to see what your enrolment rate is worth in locked-in future sales. Want the full picture first? <a href="/blog/gold-savings-scheme-guide">Read the practical guide to running a scheme digitally →</a></div>`
 )}
 
 ${L.section(`${L.sectionHead('SCHEME QUESTIONS', 'Trust in digital, and who still sets the rules.', '')}${L.faqBlock([
@@ -67,6 +67,10 @@ ${L.section(`${L.sectionHead('SCHEME QUESTIONS', 'Trust in digital, and who stil
   { q: 'What if scheme rules differ by our own policy?', a: 'Duration, grace days and maturity benefits are configurable per plan — you set the policy, Jwero gives you the controls and the audit trail.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.honestGapsBlock([
+  'Applying a scheme balance at the ecommerce website checkout — balances live on the customer record and are visible to your team and the member today; online redemption is on the roadmap, not wired yet.',
+])}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="schemes">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -76,7 +80,7 @@ ${L.ctaBand('Digitise the promise.', 'Bring your current scheme rules to a demo 
 
 const digitalGold = {
   slug: 'products/digital-gold',
-  title: 'Digital Gold — Customers Save in Grams, You Bank the Relationship | Jwero',
+  title: 'Digital Gold Platform for Jewellers | Jwero',
   description: 'Let customers buy gold in grams from their phone with live rates, watch savings grow, and convert to jewellery at your counter.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -122,6 +126,10 @@ ${L.section(`${L.sectionHead('DIGITAL GOLD QUESTIONS', 'Regulation, exposure, an
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
+${L.honestGapsBlock([
+  'Buying or redeeming digital gold directly at the ecommerce website checkout — digital gold runs through your team and the customer’s record today; online checkout integration is on the roadmap.',
+])}
+
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="digitalgold">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Compete with the apps — as yourself.', 'Your name, your gold, your customers. See a digital gold journey from first gram to showcase visit.', 'digitalgold')}
@@ -130,7 +138,7 @@ ${L.ctaBand('Compete with the apps — as yourself.', 'Your name, your gold, you
 
 const multiStore = {
   slug: 'products/multi-store',
-  title: 'Multi-store & Franchise — Every Branch Consistent, Every Customer Known | Jwero',
+  title: 'Multi-store & Franchise Jewellery Software | Jwero',
   description: 'Holdings, brands and branches on one platform: branch-consistent pricing, role-based access, central campaigns, and customers recognised at every counter.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -176,6 +184,11 @@ ${L.section(`${L.sectionHead('MULTI-STORE QUESTIONS', 'Autonomy, exceptions, and
   { q: 'What if one branch genuinely needs different rules?', a: 'Controlled local exceptions route through approvals rather than silently drifting into inconsistency.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#segments">See every multi-store question →</a></p>`)}
+
+${L.honestGapsBlock([
+  'Enterprise SSO/SCIM for chain deployments — in active development, not shipped.',
+  'A single unified, immutable audit trail across every module — per-module activity logging exists today; consolidation is in progress.',
+])}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="multistore">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -239,6 +252,10 @@ ${L.section(`${L.sectionHead('LOYALTY QUESTIONS', 'How it differs from schemes, 
   { q: 'Do we set our own tiers and rules?', a: 'Yes — tiers, earning rules and redemptions are configurable to your business; nothing is fixed by Jwero.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.honestGapsBlock([
+  'Predictive analytics on loyalty behaviour — loyalty reporting today is rule-based and factual, not a machine-learning prediction of who will churn or redeem.',
+])}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="loyalty">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -308,6 +325,10 @@ ${L.section(`${L.sectionHead('JOURNEY QUESTIONS', 'Approval gates, channels and 
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
+${L.honestGapsBlock([
+  'Triggering a journey from a third-party system through a public inbound API — journeys can call outward via webhook steps today; the public developer API is on the roadmap.',
+])}
+
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="journeys">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Build a journey your team can watch.', 'Bring one real flow — a scheme reminder sequence, a festival invite, a win-back — and we’ll build it live with an approval gate in place.', 'journeys')}
@@ -373,6 +394,10 @@ ${L.section(`${L.sectionHead('CAMPAIGN QUESTIONS', 'Consent, attribution, and wh
   { q: 'Does the AI campaign-strategist send campaigns by itself?', a: 'No. It drafts a plan from a brief; a person still reviews, builds and sends it — the same "AI drafts, human approves" rule used across Jwero.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.honestGapsBlock([
+  'The owner’s weekly growth-report dashboard — campaign-level UTM attribution is live today; the productised owner dashboard built on top of it is rolling out. See <a href="/roadmap">the roadmap</a>.',
+])}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="campaigns">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
