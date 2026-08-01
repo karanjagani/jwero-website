@@ -172,6 +172,12 @@
     dds.forEach(function (d) {
       d.addEventListener('mouseenter', function () { d.open = true; });
       d.addEventListener('mouseleave', function () { d.open = false; });
+      // Hover already controls open/close here — without this, clicking the
+      // summary (which people do reflexively) fires the browser's native
+      // toggle on top of the hover state and immediately closes the menu
+      // that just opened, before a sub-link can be clicked.
+      var summary = d.querySelector('summary');
+      if (summary) summary.addEventListener('click', function (e) { e.preventDefault(); });
     });
   }
 
