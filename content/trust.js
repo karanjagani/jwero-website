@@ -111,6 +111,7 @@ ${L.section(
   `<div class="grid grid-2" style="align-items:center; gap:48px;">
     <div>
       ${L.sectionHead('THE WEEKLY ANSWER', 'The growth report.', 'This is the artifact our customers judge us by: a weekly, plain-language accounting of who came back, what was booked, and what revenue the system brought home. The sample here is illustrative; yours would be real.')}
+      <a class="btn btn-primary" href="#" data-wa="report">Get a sample report on WhatsApp</a>
     </div>
     <div class="report" data-report>
       <div class="report-head"><strong>Your Growth Report</strong><span class="badge-sample">Sample</span></div>
@@ -121,7 +122,7 @@ ${L.section(
       <div class="report-body">
         <div class="report-line"><span>Past customers who returned</span><strong data-r="back">14</strong></div>
         <div class="report-line"><span>Appointments booked</span><strong data-r="appt">9</strong></div>
-        <div class="report-line"><span>Revenue attributed to Jwero</span><strong data-r="rev">38,400</strong></div>
+        <div class="report-line"><span>Revenue attributed to Jwero</span><strong data-r="rev">₹38,400</strong></div>
         <div class="report-line"><span>Enquiries answered in under 5 min</span><strong data-r="msg">212</strong></div>
       </div>
     </div>

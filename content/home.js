@@ -143,7 +143,7 @@ ${L.section(
       <div class="report-body">
         <div class="report-line"><span>Past customers who returned</span><strong data-r="back">14</strong></div>
         <div class="report-line"><span>Appointments booked</span><strong data-r="appt">9</strong></div>
-        <div class="report-line"><span>Revenue attributed to Jwero</span><strong data-r="rev">38,400</strong></div>
+        <div class="report-line"><span>Revenue attributed to Jwero</span><strong data-r="rev">₹38,400</strong></div>
         <div class="report-line"><span>Enquiries answered in under 5 min</span><strong data-r="msg">212</strong></div>
       </div>
     </div>

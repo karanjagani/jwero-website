@@ -205,8 +205,8 @@
   var report = document.querySelector('[data-report]');
   if (report) {
     var data = {
-      week: { back: '14', appt: '9', rev: '38,400', msg: '212' },
-      month: { back: '61', appt: '37', rev: '1,64,900', msg: '890' }
+      week: { back: '14', appt: '9', rev: '₹38,400', msg: '212' },
+      month: { back: '61', appt: '37', rev: '₹1,64,900', msg: '890' }
     };
     report.querySelectorAll('.report-tabs button').forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -218,6 +218,41 @@
           if (el) el.textContent = d[k];
         });
       });
+    });
+  }
+
+  // FAQ instant search — filters the 111-question hub down to a scannable few as you type,
+  // since scrolling every category to find one answer is the opposite of instant clarity.
+  var faqSearch = document.querySelector('[data-faq-search]');
+  if (faqSearch) {
+    var faqInput = faqSearch.querySelector('.faq-search-input');
+    var faqCount = faqSearch.querySelector('[data-faq-count]');
+    var faqChips = document.querySelector('[data-faq-chips]');
+    var faqCats = Array.prototype.slice.call(document.querySelectorAll('[data-faq-cat]'));
+    var faqItems = Array.prototype.slice.call(document.querySelectorAll('.faq-item'));
+    faqInput.addEventListener('input', function () {
+      var q = faqInput.value.trim().toLowerCase();
+      if (!q) {
+        faqItems.forEach(function (el) { el.style.display = ''; });
+        faqCats.forEach(function (cat) { cat.closest('.section').style.display = ''; });
+        if (faqChips) faqChips.style.display = '';
+        faqCount.textContent = '';
+        return;
+      }
+      if (faqChips) faqChips.style.display = 'none';
+      var shown = 0;
+      faqCats.forEach(function (cat) {
+        var catShown = 0;
+        cat.querySelectorAll('.faq-item').forEach(function (item) {
+          var text = (item.querySelector('summary').textContent + ' ' + item.querySelector('.faq-a').textContent).toLowerCase();
+          var match = text.indexOf(q) !== -1;
+          item.style.display = match ? '' : 'none';
+          if (match) { item.open = true; catShown++; }
+        });
+        cat.closest('.section').style.display = catShown ? '' : 'none';
+        shown += catShown;
+      });
+      faqCount.textContent = shown + (shown === 1 ? ' question matches' : ' questions match') + ' “' + faqInput.value.trim() + '”';
     });
   }
 

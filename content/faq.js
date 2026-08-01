@@ -188,14 +188,18 @@ ${L.hero({
 })}
 
 ${L.section(
-  `<div class="filter-chips">${CATEGORIES.map((c, i) => `<a href="#${c.id}"${i === 0 ? ' class="active"' : ''}>${c.label}</a>`).join('')}</div>
+  `<div class="faq-search-wrap" data-faq-search>
+    <input type="search" class="faq-search-input" placeholder="Search all ${ALL_FAQS.length} questions — try “pricing”, “WhatsApp ban”, “data export”…" aria-label="Search FAQ questions">
+    <p class="faq-search-count" data-faq-count aria-live="polite"></p>
+  </div>
+  <div class="filter-chips" data-faq-chips>${CATEGORIES.map((c, i) => `<a href="#${c.id}"${i === 0 ? ' class="active"' : ''}>${c.label}</a>`).join('')}</div>
   <p style="font-size:.85rem; color:var(--ink-2); max-width:44em;">Every answer below follows one rule: shipped capabilities are claimed plainly, and anything not yet built is named just as plainly. See the full <a href="/roadmap">public roadmap</a> for what’s shipped, rolling out, and still ahead.</p>`
 )}
 
 ${CATEGORIES.map(
   (c, i) => `
 ${L.section(
-  `<div id="${c.id}" style="scroll-margin-top:96px;">
+  `<div id="${c.id}" data-faq-cat style="scroll-margin-top:96px;">
     ${L.sectionHead(String.fromCharCode(65 + i), c.label, '')}
     ${L.faqBlock(c.items)}
   </div>`

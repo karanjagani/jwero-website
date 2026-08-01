@@ -196,7 +196,7 @@ ${L.section(
   `${L.sectionHead('BEYOND TEXT', 'Staff that never sleep — now on video too.', '')}
   ${L.cards([
     { title: 'Live streaming & shoppable video', text: 'Run a live stream of new arrivals or a festival launch; customers watch and buy the pieces they see, in the moment.' },
-    { title: 'Video calls with your team', text: 'A customer who wants to see a piece up close before deciding can move straight into a video call with your salesperson — the video counter this site’s /pricing describes at the Autopilot tier.' },
+    { title: 'Video calls with your team', text: 'A customer who wants to see a piece up close before deciding can move straight into a video call with your salesperson, no separate app to install.' },
     { title: 'Video-QR', text: 'A QR code — on a poster, an invoice, a catalogue page — that opens a video interaction instead of a webpage, so an in-store or offline moment can lead straight into a live conversation.' },
   ])}`
 )}
