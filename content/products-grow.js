@@ -186,7 +186,6 @@ ${L.section(`${L.sectionHead('MULTI-STORE QUESTIONS', 'Autonomy, exceptions, and
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#segments">See every multi-store question →</a></p>`)}
 
 ${L.honestGapsBlock([
-  'Enterprise SSO/SCIM for chain deployments — in active development, not shipped.',
   'A single unified, immutable audit trail across every module — per-module activity logging exists today; consolidation is in progress.',
 ])}
 

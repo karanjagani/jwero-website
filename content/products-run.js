@@ -194,15 +194,15 @@ const billingFinance = {
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Billing & Finance', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'GST invoicing priced at the live gold rate, with receivables tracking and automated payment reminders; POS cash-drawer day-close is on the public roadmap.',
+    description: 'GST invoicing priced at the live gold rate, with receivables tracking, automated payment reminders and scan-to-sale POS checkout; POS returns and cash-drawer day-close are on the public roadmap.',
     url: 'https://jwero.ai/products/billing-finance', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   breadcrumbs: BC('Billing & Finance'),
   faqs: [
-    { q: 'Does Jwero do POS counter billing? Is there a POS alternative?', a: 'A dedicated POS counter with cash day-close is on our public roadmap, not shipped today. Until it ships, Billing & Finance is the closest thing to a POS alternative Jwero offers: GST invoicing at live rates and receivables tracking, working alongside whatever counter billing you use now rather than replacing it.' },
+    { q: 'Does Jwero do POS counter billing? Is there a POS alternative?', a: 'Yes, for the core sale: scan or search a product, build a cart at the live gold rate, apply a discount, take payment and generate a GST draft invoice, all in one touchscreen flow. What is still on the roadmap is in-POS sales returns and cash-drawer day-close reconciliation — until those ship, keep your current counter for returns and till close.' },
     { q: 'Can it price invoices at today’s gold rate automatically?', a: 'Yes — invoicing uses the same live-rate pricing formulas as the catalogue, so a rate change is reflected instantly.' },
     { q: 'Does it chase payments for me?', a: 'Yes — automated reminders run on receivables so collection doesn’t depend on someone remembering to call.' },
-    { q: 'Why not just keep using our current billing software until POS ships?', a: 'That’s exactly the recommendation — keep your current counter billing running. Jwero’s Billing & Finance adds GST invoicing at the live rate and receivables tracking alongside it, not instead of it, until the full counter ships.' },
+    { q: 'Why not just keep using our current billing software until returns and day-close ship?', a: 'For sales, Jwero’s scan-to-sale POS checkout is ready to use today. For returns and cash-drawer day-close, keep your current counter running alongside it until those ship — Jwero adds GST invoicing at the live rate and receivables tracking either way.' },
     { q: 'Is GST computation actually compliant, or an approximation?', a: 'GST (CGST/SGST/IGST) is computed as part of live-rate invoicing, data-driven rather than hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.' },
   ],
   body: `
@@ -224,12 +224,12 @@ ${L.section(
 )}
 
 ${L.honestGapsBlock([
-  'POS counter with cash-drawer day-close — nav copy says "Billing & Finance" until this ships; today Jwero handles invoicing and works alongside your billing counter.',
+  'In-POS sales returns and cash-drawer day-close reconciliation — scan-to-sale checkout is live today; returns and till close are next.',
   'E-invoice / IRN and GSTR filing automation.',
 ])}
 
 ${L.section(`${L.sectionHead('BILLING QUESTIONS', 'Your current software, and GST accuracy.', '')}${L.faqBlock([
-  { q: 'Is there a POS alternative in Jwero, or should I keep my current billing counter?', a: 'Keep your current counter for now — a full POS with cash day-close is on our roadmap, not shipped. Billing & Finance adds GST invoicing at the live rate and receivables tracking alongside it until that ships.' },
+  { q: 'Is there a POS alternative in Jwero, or should I keep my current billing counter?', a: 'Jwero’s scan-to-sale POS checkout — cart, live gold rate, discount, payment, GST draft invoice — is live today. Keep your current counter for returns and cash-drawer day-close until those ship.' },
   { q: 'Is GST computation compliant, or an approximation?', a: 'It’s data-driven, not hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
@@ -280,8 +280,6 @@ ${L.oneSystemBlock([
   'A repair job and the customer’s purchase history live on one record — your team knows what she owns before she says a word.',
   'Purchases and manufacturing WIP feed the same inventory truth that pricing and dead-stock visibility read from.',
 ])}
-
-${L.honestGapsBlock(['Karigar wage/payroll settlement is on the roadmap; job-work tracking itself is shipped today.'])}
 
 ${L.section(`${L.sectionHead('OPERATIONS QUESTIONS', 'Mid-order switching, and processes that do not fit the mould.', '')}${L.faqBlock([
   { q: 'Will switching disrupt operations mid-order?', a: 'Open orders, repairs and purchase records import alongside customers and catalogue — nothing in progress gets orphaned.' },

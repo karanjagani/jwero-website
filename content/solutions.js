@@ -210,7 +210,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('BUILT FOR THE EVALUATION', 'What your committee will ask. What we hand them.', '')}
   ${L.cards([
-    { title: 'For IT', text: 'Isolated database per business, encryption, MFA/passkeys, role-based access — and an honest roadmap for SSO.', link: { href: '/trust/security', label: 'Security overview' } },
+    { title: 'For IT', text: 'Isolated database per business, encryption, MFA/passkeys, role-based access — plus enterprise SSO (SAML/OIDC) and SCIM provisioning for chain deployments.', link: { href: '/trust/security', label: 'Security overview' } },
     { title: 'For finance', text: 'Your ledger stays in Tally or Zoho Books; the bridge is built. Jwero takes the revenue side.', link: { href: '/platform/integrations/tally', label: 'Coexistence note' } },
     { title: 'For operations', text: 'Pilot-branch rollout, training per role, season change-freeze, exit criteria you define.', link: { href: '/migration', label: 'Migration Centre' } },
   ])}`
@@ -237,7 +237,7 @@ const manufacturers = {
     { q: 'Can Jwero track gold loss per production stage?', a: 'Yes — an append-only work-in-progress ledger tracks fine weight through every stage with per-stage loss norms; abnormal loss is flagged the day it happens, not at year-end stocktake.' },
     { q: 'Does it handle artisan job-work?', a: 'Yes — job-work issue and receipt with weight reconciliation, gated by the rules you set per artisan and order.' },
     { q: 'Can wholesalers take orders on WhatsApp?', a: 'Yes — share live B2B catalogues with retailer-specific visibility, take orders in chat, and track the whole purchase-to-pay chain.' },
-    { q: 'Is karigar wage settlement included?', a: 'No: wage and payroll settlement for karigars is on the public roadmap, not shipped today. Job-work tracking itself — issue, receipt, weight reconciliation — is shipped now, and we say plainly what isn’t rather than imply otherwise.' },
+    { q: 'Is karigar wage settlement included?', a: 'Yes: karigar wage and payroll settlement — rate cards, work logs, khata ledger, settlement runs — is shipped, alongside job-work tracking itself (issue, receipt, weight reconciliation).' },
     { q: 'Will karigars resist being tracked more closely than the notebook they’re used to?', a: 'Frame it as job cards, not surveillance — the same records that catch abnormal loss also settle disputes in the karigar’s favour when they did nothing wrong. Job tracking protects both sides, not just the owner.' },
     { q: 'Our process is unusual — casting, CAD or export-specific. Does this fit?', a: 'Casting, CAD and export-house specific pages exist because these workflows genuinely differ — see <a href="/solutions/casting-units">casting units</a>, <a href="/solutions/cad-services">CAD services</a> or <a href="/solutions/export-houses">export houses</a> for your exact fit rather than a generic answer.' },
   ],
@@ -275,7 +275,7 @@ ${L.section(
   ])}`
 , { tone: 'ink' })}
 
-${L.honestGapsBlock(['Karigar wage and payroll settlement is on the roadmap — job-work issue/receipt tracking itself is shipped today.'])}
+${L.honestGapsBlock(['A public developer API is on the roadmap, not shipped today.'])}
 
 ${L.section(
   `${L.sectionHead('ILLUSTRATIVE IMPACT MODEL', 'What this could be worth on your factory floor.', 'Illustrative model on a ₹15cr/year manufacturer with a 40-karigar network — not a measured result. Run your own numbers, or ask for a 30-day growth report once you’re live.')}

@@ -23,7 +23,7 @@ const CATEGORIES = [
       { q: 'What is the weekly growth report?', a: 'A plain-language WhatsApp report to the owner: how many past customers came back, how many appointments were booked, how much revenue the system brought back. Proof, delivered weekly, without a dashboard you have to remember to open.' },
       { q: 'Is a gold savings scheme even legal to run — isn’t that an NBFC or interest product?', a: 'Every plan is framed and operated as an advance against a future purchase: benefits are paid as bonus gold or a discount, never as interest. That’s a framing discipline the product enforces, and it stops short of a legal opinion; confirm your specific scheme structure with your own counsel. See <a href="/products/gold-schemes">gold schemes</a>.' },
       { q: 'My competitors don’t use anything like this — why be first?', a: 'Regional chains already run on systems like this; independent jewellers have been the ones without one. Being early on the revenue side (WhatsApp commerce, digital catalogues, gold schemes) is a customer-facing advantage today, ahead of when everyone else catches up.' },
-      { q: 'What does Jwero NOT do yet — honestly?', a: 'POS counter cash/day-close billing, girvi, karigar payroll, offline mode, a vernacular product interface, a public developer API, and e-invoice/GSTR automation. All on the <a href="/roadmap">public roadmap</a>, none shipped — we say so before you buy, not after.' },
+      { q: 'What does Jwero NOT do yet — honestly?', a: 'In-POS returns and cash-drawer day-close, girvi, offline mode, a vernacular product interface, a public developer API, and e-invoice/GSTR automation (IRN, e-way bills, portal filing). All on the <a href="/roadmap">public roadmap</a>, none shipped — we say so before you buy, not after.' },
     ],
   },
   {
@@ -89,7 +89,7 @@ const CATEGORIES = [
       { q: 'I don’t trust the cloud with my customer data — why should I?', a: 'Role-based access with role presets, activity logs (per-module today, with a unified audit trail being consolidated), and DPDP-compliant data-subject export/erase workflows are real, working product features rather than marketing lines. We are not ISO or SOC 2 certified yet, and we don’t claim specific uptime or backup guarantees — see <a href="/trust/security">Security & Data Ownership</a> for the full honest list.' },
       { q: 'Do you sell or share my customer data?', a: 'Never. Your customers are your asset; our privacy approach is built around that. See the <a href="/legal/privacy">Privacy Policy</a> and <a href="/legal/dpdp">DPDP statement</a>.' },
       { q: 'Can the owner see everything across every branch?', a: 'Yes — owner-level visibility spans all branches by default; branch staff see only what their role and branch permit.' },
-      { q: 'Do you support SSO for company logins?', a: 'Not yet — enterprise SSO/SCIM is in active development, not shipped. Today: per-user logins with MFA and role-based permissions.' },
+      { q: 'Do you support SSO for company logins?', a: 'Yes — enterprise SSO (SAML/OIDC) with JIT provisioning and SCIM 2.0 for automated user provisioning, alongside per-user logins with MFA and role-based permissions.' },
     ],
   },
   {
@@ -118,7 +118,7 @@ const CATEGORIES = [
       { q: 'I’m a wholesaler — what does Jwero do for B2B?', a: 'Private, buyer-tiered catalogue sharing, order capture and buyer relationship tracking. See <a href="/solutions/b2b-jewellery">B2B jewellery</a>, <a href="/solutions/diamond-wholesale">diamond wholesale</a> or <a href="/solutions/gold-wholesale">gold wholesale</a>.' },
       { q: 'I’m a manufacturer — can I track karigar jobs?', a: 'Yes — job issue and receipt with weight reconciliation, gated by the rules you set per artisan and order. See <a href="/solutions/manufacturers">manufacturers</a>.' },
       { q: 'Can it track gold loss and wastage in manufacturing?', a: 'Yes — an append-only WIP ledger tracks fine weight through every stage, with per-stage loss norms and abnormal-loss flags.' },
-      { q: 'Does it handle karigar wages and payroll?', a: 'Not yet — that is on the roadmap. Job-work tracking and weight-reconciliation records are live today.' },
+      { q: 'Does it handle karigar wages and payroll?', a: 'Yes — a karigar khata/settlement engine (rate cards, work logs, settlement runs) runs alongside job-work tracking and weight-reconciliation records, and a full staff payroll engine (attendance, statutory pack, maker-checker approval, payslips and bank-file generation) is also live.' },
       { q: 'Is Jwero suitable for luxury or boutique brands?', a: 'Yes — appointment-led selling, video-assisted remote consultations, occasion tracking and private catalogue previews suit high-touch, high-ticket retail. See <a href="/solutions/luxury-boutique">luxury & boutique</a>.' },
       { q: 'I sell lab-grown diamonds online only — does this fit?', a: 'Yes — WhatsApp/Instagram commerce and a storefront connector, with education-first AI replies for a segment that researches heavily before buying. See <a href="/solutions/lab-grown-diamond">lab-grown diamond</a>.' },
       { q: 'Can bullion dealers or gold traders use it?', a: 'Rate-locked deal capture and counterparty ledgers work today. Talk to a specialist so we map the exact fit honestly rather than assume. See <a href="/solutions/bullion-gold-traders">bullion & gold traders</a>.' },
@@ -139,7 +139,7 @@ const CATEGORIES = [
       { q: 'Purchase orders and vendors?', a: 'Yes — POs, vendor records and receiving, with weigh-and-assay intake for raw materials.' },
       { q: 'Can customers book appointments?', a: 'Yes — appointment booking with WhatsApp confirmations and reminders.' },
       { q: 'Does it do GST invoices?', a: 'Yes — GST invoicing at the live metal rate is live. E-invoice/IRN integration is on the roadmap; your accountant keeps working in Tally via the bridge in the meantime.' },
-      { q: 'Is there a full POS with a cash drawer and day-close?', a: 'Not yet — that is on the public roadmap. Billing and finance features (GST invoicing, receivables, reminders) are live today, and we say this plainly before you buy, not after.' },
+      { q: 'Is there a full POS with a cash drawer and day-close?', a: 'Not a full POS yet. Touchscreen counter billing is live — scan or search a product, build a cart, price it at the live gold rate, apply a discount and generate a GST draft invoice in one flow. In-POS sales returns and cash-drawer/till day-close reconciliation are still on the roadmap, and we say this plainly before you buy, not after.' },
     ],
   },
   {

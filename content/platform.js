@@ -10,7 +10,7 @@ const platform = {
     { q: 'Is Jwero an ERP?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP (orders, inventory, purchases, repairs, billing), from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.' },
     { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with the Assist scope (customers imported, WhatsApp connected, catalogue published) and expand module by module as each one proves itself.' },
     { q: 'What makes this different from buying a CRM plus a WhatsApp tool plus a catalogue app?', a: 'Separate tools mean separate memories. A WhatsApp tool doesn’t know her gold-plan balance; a CRM doesn’t sell on Instagram. In Jwero, the customer, the catalogue and the channels live on one record, so AI can actually sell instead of just logging.' },
-    { q: 'Is there a public API or SSO for enterprise IT?', a: 'A public developer API and enterprise SSO/SCIM are on the public roadmap, not shipped today. We say so here rather than let your evaluation discover it later.' },
+    { q: 'Is there a public API or SSO for enterprise IT?', a: 'Enterprise SSO/SCIM (SAML, OIDC, SCIM 2.0 provisioning) is shipped today. A public developer API is on the roadmap, not shipped — we say so here rather than let your evaluation discover it later.' },
     { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional. You can run the whole business on Assist (customers, WhatsApp, catalogue) and never touch the rest. Complexity is available when you want it, never mandatory.' },
     { q: 'My business is unusual — will this fit, or will I be forcing a generic tool?', a: 'Custom fields, price rules and per-branch configuration exist because jewellery businesses aren’t generic. We’ll also tell you plainly what we don’t customise, on a demo, before you commit.' },
   ],
@@ -59,10 +59,9 @@ ${L.section(
 )}
 
 ${L.honestGapsBlock([
-  'POS counter billing with cash day-close — until it ships, Billing & Finance handles GST invoicing and works alongside your existing counter.',
-  'Payroll and karigar wage settlement.',
-  'A public developer API, and enterprise single sign-on (SSO) for chains whose IT team needs staff to log in with their company account.',
-  'A vernacular product interface — the AI voice speaks 14 languages today; the screens are English.',
+  'POS counter returns & cash day-close — scan-to-sale checkout is live; Billing & Finance handles GST invoicing at the counter today, with returns and till reconciliation still rolling out.',
+  'A public developer API — bridges to Tally, Zoho Books, Shopify, Woo and Unicommerce exist; a general-purpose API for your own integrations doesn’t yet.',
+  'A vernacular product interface — the AI voice speaks 14 languages today; product screens are English, with an early Hindi pilot on one screen.',
   'Offline mode — Jwero is a connected product today.',
 ])}
 
@@ -70,7 +69,7 @@ ${L.section(`${L.sectionHead('QUESTIONS EVALUATORS ASK', 'Straight answers for t
   { q: 'Is Jwero an ERP?', a: 'Both, running as a single system that does the job of a CRM and an ERP at once. It remembers customers like a CRM and runs operations like an ERP, from the same record. Your statutory books stay in Tally or Zoho Books.' },
   { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with customers imported, WhatsApp connected and catalogue published, then expand module by module.' },
   { q: 'What makes this different from a CRM plus a WhatsApp tool?', a: 'Separate tools mean separate memories. In Jwero the customer, catalogue and channels live on one record, so AI can sell instead of just logging.' },
-  { q: 'Is there a public API or single sign-on (SSO)?', a: 'On the public roadmap, not shipped today. <a href="/roadmap">See the roadmap</a>.' },
+  { q: 'Is there a public API or single sign-on (SSO)?', a: 'SSO is shipped (SAML, OIDC, SCIM 2.0 provisioning). A public developer API is on the roadmap, not shipped. <a href="/roadmap">See the roadmap</a>.' },
   { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional — run everything on Assist and never touch the rest.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
@@ -469,9 +468,9 @@ ${L.hero({
 
 ${L.section(
   `${L.stats([
-    { n: '16', l: 'shipped, live today' },
-    { n: '6', l: 'rolling out now' },
-    { n: '10', l: 'named on the roadmap, not shipped' },
+    { n: '20', l: 'shipped, live today' },
+    { n: '5', l: 'rolling out now' },
+    { n: '9', l: 'named on the roadmap, not shipped' },
   ])}`
 )}
 
@@ -491,20 +490,27 @@ ${L.section(
         <div class="road-item"><strong>Journeys, campaigns & loyalty</strong>festival triggers, consent-aware broadcasts</div>
         <div class="road-item"><strong>Campaign attribution (UTM)</strong>what each send actually sold, on the record</div>
         <div class="road-item"><strong>Customer segmentation</strong>live rule-based audiences, RFM tiers</div>
-        <div class="road-item"><strong>Gold schemes & digital gold</strong>enrolment → instalments → maturity</div>
+        <div class="road-item"><strong>Gold schemes & digital gold</strong>enrolment → instalments → maturity, now on the storefront too</div>
       </div>
       <div class="road-group">
         <p class="road-group-label">Operations</p>
         <div class="road-item"><strong>Jewellery catalogue (PIM)</strong>purity, certificates, HUID-aware, RFID</div>
         <div class="road-item"><strong>Inventory intelligence</strong>valuation, ageing, dead-stock visibility</div>
         <div class="road-item"><strong>GST invoicing at live metal rates</strong>AR ledger, payment reminders</div>
+        <div class="road-item"><strong>GSTR-1/3B report export</strong>GSTN-offline-tool format, for manual upload</div>
         <div class="road-item"><strong>Showroom intelligence</strong>walk-in register, live floor, walkout rescue</div>
         <div class="road-item"><strong>Repairs, purchases, manufacturing job-work</strong>with gold-loss tracking</div>
         <div class="road-item"><strong>Multi-store structure</strong>brands, branches, role-based access</div>
       </div>
       <div class="road-group">
+        <p class="road-group-label">Workforce</p>
+        <div class="road-item"><strong>Payroll</strong>attendance-aware, maker-checker approval, payslips + bank file</div>
+        <div class="road-item"><strong>Karigar wage settlement</strong>rate cards, work logs, khata ledger, settlement runs</div>
+      </div>
+      <div class="road-group">
         <p class="road-group-label">Governance & integrations</p>
         <div class="road-item"><strong>AI workforce with governance</strong>approvals, daily caps, kill switch</div>
+        <div class="road-item"><strong>Enterprise SSO/SCIM</strong>SAML, OIDC and SCIM 2.0 user provisioning</div>
         <div class="road-item"><strong>Bridges</strong>Tally, Zoho Books, Shopify, Woo, Unicommerce</div>
       </div>
     </div>
@@ -512,9 +518,8 @@ ${L.section(
       <h3><span class="road-dot"></span>Rolling out</h3>
       <div class="road-group">
         <p class="road-group-label">In active rollout</p>
-        <div class="road-item"><strong>POS counter & cash day-close</strong>the billing counter, composed on the pricing spine</div>
+        <div class="road-item"><strong>POS counter returns & cash day-close</strong>scan-to-sale checkout is live; in-POS returns and till reconciliation are next</div>
         <div class="road-item"><strong>Attribution dashboard</strong>the owner’s weekly growth report, productised</div>
-        <div class="road-item"><strong>Enterprise SSO/SCIM</strong>for chain deployments</div>
         <div class="road-item"><strong>Direct ad-platform publishing</strong>one-click publish from Ads Manager, not uniform across every flow yet</div>
         <div class="road-item"><strong>Additional social publishing channels</strong>Instagram & Facebook live; LinkedIn, X, Pinterest, YouTube, Google Business being wired</div>
         <div class="road-item"><strong>Occasion & win-back recipes</strong>packaged one-click playbooks</div>
@@ -524,20 +529,19 @@ ${L.section(
       <h3><span class="road-dot"></span>On the roadmap</h3>
       <div class="road-group">
         <p class="road-group-label">Statutory & finance</p>
-        <div class="road-item"><strong>Payroll & karigar wage settlement</strong>planned; not shipped</div>
-        <div class="road-item"><strong>E-invoice / IRN & GSTR filing automation</strong>stays with Tally and your CA today</div>
+        <div class="road-item"><strong>E-invoice IRN, e-way bill & GSTR auto-filing</strong>stays with Tally and your CA today</div>
         <div class="road-item"><strong>Girvi / gold-loan module</strong>on the long-term map</div>
       </div>
       <div class="road-group">
         <p class="road-group-label">Ecommerce website</p>
-        <div class="road-item"><strong>Scheme & digital-gold redemption at checkout</strong>balances live on the record; not wired to the website yet</div>
+        <div class="road-item"><strong>Scheme & digital-gold redemption at checkout</strong>storefront enrolment and instalment payments are live; applying a balance at checkout isn’t wired yet</div>
         <div class="road-item"><strong>HUID / certificate verification widget</strong>the catalogue carries the data; the widget isn’t built</div>
         <div class="road-item"><strong>Old-gold exchange / buyback calculator online</strong></div>
       </div>
       <div class="road-group">
         <p class="road-group-label">Operations & platform</p>
         <div class="road-item"><strong>Offline mode</strong>the counter needs the internet today</div>
-        <div class="road-item"><strong>Vernacular product interface</strong>the voice assistant speaks 14 languages; the screens are English today</div>
+        <div class="road-item"><strong>Vernacular product interface</strong>the voice assistant speaks 14 languages; product screens are English today, with an early Hindi pilot on one screen</div>
         <div class="road-item"><strong>Public developer API</strong>bridges only, for now</div>
         <div class="road-item"><strong>Predictive ML forecasting</strong>today’s inventory intelligence is ageing/valuation-based, not predictive</div>
       </div>

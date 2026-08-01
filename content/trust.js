@@ -43,7 +43,7 @@ ${L.section(
     <tbody>
       <tr><td><strong>Tenant isolation</strong></td><td>One database per business — physical isolation, not row-level flags.</td></tr>
       <tr><td><strong>Encryption</strong></td><td>Encrypted credentials; data encrypted in transit and at rest.</td></tr>
-      <tr><td><strong>Authentication</strong></td><td>Multi-factor authentication and passkeys; sessions revocable globally in one action.</td></tr>
+      <tr><td><strong>Authentication</strong></td><td>Multi-factor authentication and passkeys; enterprise SSO (SAML/OIDC) with SCIM provisioning for chain deployments; sessions revocable globally in one action.</td></tr>
       <tr><td><strong>Access control</strong></td><td>Role-based access control, ~150 fine-grained permission slugs, fail-closed checker.</td></tr>
       <tr><td><strong>AI authorisation</strong></td><td>A second permission axis for AI: per-user/org action allowlists, independent of human RBAC.</td></tr>
       <tr><td><strong>Financial integrity</strong></td><td>Maker-checker approvals and tamper-evident document transitions on financial records.</td></tr>
@@ -52,7 +52,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.honestGapsBlock([
-  'Enterprise SSO/SCIM for chain deployments — in active development, not shipped.',
+  'A public developer API — on the roadmap, not shipped.',
   'Formal certifications (SOC 2 / ISO) — planned; published only when earned.',
   'A single unified, immutable audit trail across every module — activity logging exists per module today; consolidation is in progress.',
 ])}
@@ -179,7 +179,8 @@ ${L.section(
     { label: 'Prices a reply at today’s live gold rate', jwero: 'Yes', other: 'No' },
     { label: 'Catalogue, CRM and inventory in the same system', jwero: 'Yes', other: 'No — separate tools needed' },
     { label: 'Governed AI drafting with approval queues', jwero: 'Yes', other: '[VERIFY per tool]' },
-    { label: 'Counter billing with cash day-close', jwero: 'Roadmap', jweroRoadmap: true, other: '[VERIFY per tool]' },
+    { label: 'Touchscreen counter billing (scan to GST invoice)', jwero: 'Yes', other: '[VERIFY per tool]' },
+    { label: 'In-POS returns and cash-drawer day-close', jwero: 'Roadmap', jweroRoadmap: true, other: '[VERIFY per tool]' },
   ])}`
 , { tone: 'tint' })}
 
@@ -192,7 +193,7 @@ ${L.section(
   ])}`
 )}
 
-${L.honestGapsBlock(['POS counter billing is on our roadmap. If a pure-messaging tool is genuinely all you need today, we’ll tell you that honestly rather than oversell.'])}
+${L.honestGapsBlock(['Touchscreen counter billing is live today; in-POS returns and cash-drawer day-close are still on our roadmap. If a pure-messaging tool is genuinely all you need today, we’ll tell you that honestly rather than oversell.'])}
 
 ${L.section(`${L.sectionHead('QUESTIONS SWITCHERS ASK', 'Common questions before switching.', '')}${L.faqBlock([
   { q: 'Isn’t a WhatsApp tool enough for messaging?', a: 'For pure messaging, yes. The gap appears the moment a reply needs to know her purchase history, scheme balance, or today’s gold rate.' },

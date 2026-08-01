@@ -6,7 +6,7 @@ const BC = (label) => [['Home', '/'], ['Roles', '/roles'], [label]];
 // ---------------------------------------------------------------------------
 
 const karigarFaqs = [
-  { q: 'Does Jwero track my wages or payments?', a: 'No. Jwero tracks the job — gold weight issued to you, weight returned, loss per stage, timelines. It does not touch wage or payroll settlement; that stays wherever it is handled today.' },
+  { q: 'Does Jwero track my wages or payments?', a: 'Yes, alongside the job tracking — Jwero tracks the job (gold weight issued, weight returned, loss per stage, timelines) and now also handles your wage settlement: a rate card, your logged work, a running khata ledger, and settlement runs off that same record — not someone’s memory of what you’re owed.' },
   { q: 'Will this be used to blame me for loss instead of protecting me?', a: 'The ledger records loss at every stage, not just the last one — so if loss happened before a job reached your bench, that shows too. A record that catches everyone’s stage is fairer than one person’s memory of who touched what last.' },
   { q: 'Do I have to learn a computer system to use this?', a: 'The record is built and read by your supervisor or production manager, not typed up by you at the bench. What changes for you is that a job’s weight and history are written down accurately, instead of remembered and re-argued later.' },
   { q: 'Does the AI do any of the actual craft or casting work?', a: 'No. Jwero tracks jobs and gold — it does not cast, set, polish or touch metal. The bench work stays entirely yours; the system only remembers what happened around it.' },
@@ -15,7 +15,7 @@ const karigarFaqs = [
 const karigarRole = {
   slug: 'roles/karigar',
   title: 'Jwero for Karigars & Goldsmiths — Traceable Jobs, Accounted Loss | Jwero',
-  description: 'How Jwero changes a karigar’s day: every job traceable from jangad to despatch, loss accounted at each stage, not memory. Jwero tracks jobs and gold, not wages.',
+  description: 'How Jwero changes a karigar’s day: every job traceable from jangad to despatch, loss accounted at each stage, and wage settlement run off the same record.',
   breadcrumbs: BC('Karigar / goldsmith'),
   faqs: karigarFaqs,
   body: `
@@ -141,7 +141,7 @@ ${L.ctaBand('Track one design, end to end.', 'Bring one CAD job — we’ll show
 const productionManagerFaqs = [
   { q: 'Does Jwero replace my job-work register or production sheet?', a: 'It becomes the single record instead of a paper or spreadsheet register — job-work tracking from jangad to despatch, with gold-in/gold-out and loss at each stage, on one ledger.' },
   { q: 'Can I keep client jobs separated if I run job-work for multiple OEM clients?', a: 'Yes — OEM/client segregation keeps specs, WIP and settlement separate per buyer, even when jobs share your production floor.' },
-  { q: 'Does it handle karigar wages or payroll?', a: 'No. Jwero tracks the job — weight, stage, loss, timeline — not the person’s pay. Wage and payroll settlement stays wherever it’s handled today; it’s not part of what this system does.' },
+  { q: 'Does it handle karigar wages or payroll?', a: 'Yes. Alongside the job tracking — weight, stage, loss, timeline — Jwero runs karigar wage settlement too: rate cards, work logs, a khata ledger, and settlement runs off the same record you’re already using for production.' },
   { q: 'Do I still need to walk the floor to know where things stand?', a: 'You’ll still walk the floor for the reasons a manager always does — but you won’t need to just to find out which stage a job is at. That’s visible from the record.' },
 ];
 
@@ -181,7 +181,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The floor is still yours to run. The system only remembers the paperwork.', '')}
-  <p class="lead">What stays yours: labour scheduling, production calls and floor authority — Jwero just tracks gold-in/gold-out and stage loss, and never touches karigar wages or payroll. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
+  <p class="lead">What stays yours: labour scheduling, production calls and floor authority — Jwero tracks gold-in/gold-out and stage loss, and now runs karigar wage settlement off that same record. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(

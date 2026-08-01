@@ -47,7 +47,7 @@ ${L.section(
   ${L.cards([
     { title: 'Catalogue (PIM)', text: 'One catalogue: purity, stones, certificates, HUID — published everywhere from one place.', link: { href: '/products/catalog', label: 'Explore' } },
     { title: 'Inventory', text: 'Every piece: weight, purity, certificate, location, age — one inventory truth across branches.', link: { href: '/products/inventory', label: 'Explore' } },
-    { title: 'Billing & Finance', text: 'GST invoices at the live gold rate, receivables and payment reminders. POS counter billing: on the roadmap.', link: { href: '/products/billing-finance', label: 'Explore' } },
+    { title: 'Billing & Finance', text: 'GST invoices at the live gold rate, receivables and payment reminders, plus scan-to-sale POS checkout. Returns and cash-drawer day-close: on the roadmap.', link: { href: '/products/billing-finance', label: 'Explore' } },
     { title: 'ERP, reconsidered', text: 'Orders, purchases, repairs and manufacturing job-work — jewellery-native, sharing one truth.', link: { href: '/products/erp', label: 'Explore' } },
     { title: 'Multi-store & Franchise', text: 'One catalogue, one customer base, per-branch stock and performance — however many stores you run.', link: { href: '/products/multi-store', label: 'Explore' } },
   ], 4)}`

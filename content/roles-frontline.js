@@ -145,9 +145,9 @@ ${L.ctaBand('See what a sales associate sees.', 'We’ll show you the customer r
 // ---------------------------------------------------------------------------
 
 const cashierFaqs = [
-  { q: 'Does Jwero run my cash counter and day-close?', a: 'Not yet — a dedicated POS counter with cash-drawer day-close is on our public roadmap, not shipped today. Jwero’s Billing & Finance prices and generates the GST invoice at the live gold rate; your existing billing counter still handles the physical cash till and day-close until POS ships.' },
-  { q: 'So what does Jwero actually do at billing time, right now?', a: 'It prices the invoice at today’s live gold rate (metal rate × weight × purity, plus making charges and GST) automatically, and tracks what’s outstanding with reminders — so the pricing math and the follow-up on unpaid amounts stop being manual.' },
-  { q: 'Will I still use my current billing software alongside this?', a: 'Yes — that’s the current recommendation. Keep your existing counter billing running for the cash till and day-close; Jwero’s invoicing and receivables tracking work alongside it, not instead of it, until POS ships.' },
+  { q: 'Does Jwero run my cash counter and day-close?', a: 'Partly. The touchscreen counter itself is live — scan or search a piece, build the cart, price it at the live gold rate, apply a discount, take payment and generate the GST invoice, all in Jwero. What’s not there yet is in-POS sales returns and cash-drawer day-close reconciliation, so that piece still runs on your existing counter.' },
+  { q: 'So what does Jwero actually do at billing time, right now?', a: 'It runs the sale itself — scan or search the piece, cart it, price it at today’s live gold rate (metal rate × weight × purity, plus making charges and GST) automatically, take the payment and generate the invoice — and tracks what’s outstanding with reminders after.' },
+  { q: 'Will I still use my current billing software alongside this?', a: 'For the sale itself, no — Jwero’s counter handles scan-to-invoice end to end. Keep your existing counter software running for returns and cash-drawer day-close until those ship in Jwero.' },
   { q: 'Does this replace my job at the counter?', a: 'No — a person still hands over the invoice, handles the payment and reassures the customer. What Jwero removes is the manual rate lookup and repricing calculation, and the follow-up call when a payment is late.' },
 ];
 
@@ -161,7 +161,7 @@ const cashier = {
 ${L.hero({
   eyebrow: 'FRONTLINE & SALES · BILLING CASHIER',
   h1: 'Bill at the live gold rate without a calculator fight.',
-  sub: 'Gold moves twice a day, and repricing every invoice by hand is where cashiers lose time and customers lose patience. Jwero prices and generates the GST invoice at this minute’s rate automatically — your existing billing counter still runs the cash till and day-close until the full POS ships.',
+  sub: 'Gold moves twice a day, and repricing every invoice by hand is where cashiers lose time and customers lose patience. Jwero’s touchscreen counter scans, carts, prices at this minute’s rate and generates the GST invoice — your existing counter still handles returns and cash-drawer day-close until those ship.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -172,7 +172,7 @@ ${L.section(
     { lever: 'Pricing an invoice', before: 'You look up today’s rate, calculate metal value, purity, making charges and GST by hand or on a calculator while the customer waits.', after: 'The invoice prices itself at the live rate — metal, purity, making charges and GST computed together, instantly.', link: { href: '/products/billing-finance', label: 'See Billing & Finance' } },
     { lever: 'The rate changes mid-morning', before: 'Invoices drafted before the change are wrong, and you have to remember to reprice anything not yet billed.', after: 'Open invoices follow the live rate automatically, so nothing goes out priced at a stale number.' },
     { lever: 'A customer’s payment is overdue', before: 'Someone has to remember to call and ask — or it just doesn’t happen and the amount sits uncollected.', after: 'Automated reminders run on the receivables ledger, so collection doesn’t depend on memory.' },
-    { lever: 'The physical cash till at day-close', before: 'You reconcile the cash drawer against the day’s bills on your existing counter software.', after: 'Still the same today — Jwero does not run cash-drawer day-close yet. That piece is on the roadmap, not shipped.' },
+    { lever: 'The physical cash till at day-close', before: 'You reconcile the cash drawer against the day’s bills on your existing counter software.', after: 'Still the same today — Jwero handles the sale itself but doesn’t run cash-drawer day-close reconciliation yet. That piece is on the roadmap.' },
   ])}`
 )}
 
@@ -188,7 +188,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The math is automated. You’re still the one at the counter.', '')}
-  <p class="lead">Repricing and GST get handled automatically; handing over the invoice, reassuring a customer, and running the till stay yours — now and as POS ships more of the counter workflow. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
+  <p class="lead">Scanning, pricing and GST get handled automatically now; handing over the invoice, reassuring a customer, and running returns and till day-close stay yours — until those ship too. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -196,7 +196,7 @@ ${L.section(
   ${L.steps([
     { title: 'Use live-rate invoicing to build trust, not just speed', text: 'Show the customer the rate, purity and making-charge breakdown on the invoice — it answers the "why this price" question before it’s asked.' },
     { title: 'Keep receivables current', text: 'Check the receivables ledger regularly so reminders go out on real numbers, not stale ones from a missed update.' },
-    { title: 'Flag mismatches between the invoice and your cash counter early', text: 'Since Jwero and your existing billing counter run side by side today, catching a gap between them quickly prevents it from compounding at day-close.' },
+    { title: 'Flag mismatches between the invoice and your cash counter early', text: 'Since returns and day-close still run on your existing counter alongside Jwero’s checkout, catching a gap between them quickly prevents it from compounding at day-close.' },
     { title: 'Learn the GST breakdown, not just the total', text: 'Being able to explain CGST/SGST/IGST on a bill builds customer confidence and reduces disputes at the counter.' },
   ])}`
 , { tone: 'tint' })}

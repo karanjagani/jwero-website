@@ -7,7 +7,7 @@ const BC = (label) => [['Home', '/'], ['Roles', '/roles'], [label]];
 
 const accountantFaqs = [
   { q: 'Does Jwero replace Tally or Zoho Books?', a: 'No — Jwero bridges to Tally and Zoho Books, it doesn’t replace them. Your books stay exactly where they already are; Jwero-generated GST invoices sync across so you’re reconciling against a live feed instead of re-keying every bill by hand.' },
-  { q: 'Does Jwero handle the physical billing counter and cash day-close?', a: 'Not yet — a POS counter with a cash drawer and day-close is on our public roadmap, not shipped today. Jwero prices and invoices at the live gold rate; the physical counter close still runs on whatever you use now.' },
+  { q: 'Does Jwero handle the physical billing counter and cash day-close?', a: 'The sale itself, yes — scan or search the piece, cart it, price it at the live gold rate, take payment and generate the invoice. Cash-drawer day-close reconciliation isn’t shipped yet, so that still runs on whatever you use now.' },
   { q: 'Is GST computation on Jwero invoices actually compliant, or an approximation?', a: 'It’s data-driven — CGST/SGST/IGST computed as part of live-rate invoicing, not hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.' },
   { q: 'Will this change what accounting software or process I use?', a: 'Most businesses change nothing on the accounting side on day one. Jwero adds GST invoicing at the live rate and receivables tracking that flows into your existing books via the Tally/Zoho bridge — it doesn’t ask you to move your ledger.' },
 ];

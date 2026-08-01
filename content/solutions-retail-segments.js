@@ -182,7 +182,7 @@ ${L.ctaBand('Change the rate. Watch it update.', 'In a demo, we change today’s
 
 const silverRetailFaqs = [
   { q: 'Can it handle a very large SKU count?', a: 'Yes — the catalogue is built for high piece counts, with bulk tools and RFID-ready stock-take for exactly this kind of volume.' },
-  { q: 'Does Jwero do counter billing for high-volume silver sales?', a: 'A dedicated POS counter is on our public roadmap, not shipped today — Billing & Finance handles GST invoicing and works alongside your current counter billing.' },
+  { q: 'Does Jwero do counter billing for high-volume silver sales?', a: 'Scan-to-sale checkout is live — scan or search a piece, build the cart, price it at the live rate, apply a discount, take payment and generate the GST invoice, all in one flow. Sales returns and cash-drawer day-close aren’t in it yet, so keep those on your current counter for now.' },
   { q: 'Our margins are thin — can we really afford new software?', a: 'Measure it against the manual hours currently spent reconciling volume sales, not against a line-item cost. The <a href="/tools/dead-stock-calculator">Dead Stock Calculator</a> alone often surfaces more than the subscription costs.' },
 ];
 
@@ -207,7 +207,7 @@ ${L.section(
     { quote: 'Trends change fast and we’re always guessing what to reorder.', title: 'Ageing and mover visibility', text: 'Fast/slow-mover views by category show what to reorder — evidence, not habit.' },
   ])}`
 )}
-${L.honestGapsBlock(['POS counter billing with cash day-close — on the roadmap; today Billing & Finance handles GST invoicing at the live rate and works alongside your existing counter.'])}
+${L.honestGapsBlock(['POS checkout (scan, cart, live-rate pricing, GST invoice) is live; in-POS sales returns and cash-drawer day-close are still on the roadmap.'])}
 ${L.section(`${L.sectionHead('QUESTIONS SILVER RETAILERS ASK', 'What silver retailers ask about volume selling.', '')}${L.faqBlock(silverRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="silver">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
