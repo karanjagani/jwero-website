@@ -156,6 +156,12 @@ main:focus-visible { outline: none; }
 [data-theme="dark"] .nav-link:hover { color: var(--brand-strong); }
 .nav-dd { position: relative; }
 .nav-dd summary::-webkit-details-marker { display: none; }
+/* Invisible hover bridge: the dd-panel sits 10px below the summary (a visual
+   gap), but that gap belongs to neither element, so crossing it on the way
+   down fires mouseleave and closes the menu before you can reach an item.
+   This pseudo-element covers the gap and counts as part of .nav-dd for
+   hover purposes, so the menu stays open while moving into it. */
+.nav-dd::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 14px; }
 .dd-panel {
   position: absolute; top: calc(100% + 10px); left: 0; min-width: 300px;
   background: var(--bg); border: 1px solid var(--line); border-radius: var(--r);
