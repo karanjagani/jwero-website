@@ -159,7 +159,7 @@ ${L.section(
   `${L.cards([
     { title: 'Network structure', text: 'Holdings → brands → branches modelled properly, with settings inherited and overridden deliberately.' },
     { title: 'One customer, every counter', text: 'Purchase history, plans and preferences follow the customer across branches.' },
-    { title: 'Branch-consistent pricing', text: 'Central price rules with controlled local exceptions — approvals required, drift impossible.' },
+    { title: 'Branch-consistent pricing', text: 'Central price rules with controlled local exceptions — approvals required, drift impossible.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
     { title: 'Role-based control', text: '~150 permissions decide who sees customers, costs, schemes and reports — per role, per branch.' },
     { title: 'Central marketing', text: 'Campaigns and festival journeys run centrally, execute locally, and report by branch.' },
     { title: 'Owner’s rollup', text: 'Stock, sales, schemes and customer movement across the network, in one view.' },

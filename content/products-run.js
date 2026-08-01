@@ -101,7 +101,7 @@ ${L.hero({
 ${L.section(
   `${L.cards([
     { title: 'Jewellery DNA', text: 'Metal, purity, gross and net weight, stone details, design attributes, certifications — structured, searchable, consistent.' },
-    { title: 'Formula pricing', text: 'Live metal-rate pricing with making charges and price rules. Change the rate once; everything follows.' },
+    { title: 'Formula pricing', text: 'Live metal-rate pricing with making charges and price rules. Change the rate once; everything follows.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
     { title: 'Approval-gated overrides', text: 'Discounts and price exceptions route through approvals — the end of quiet margin leaks.' },
     { title: 'Shareable catalogues', text: 'Curated live links for WhatsApp — with stock and price sync, view tracking and follow-up built in.' },
     { title: 'RFID-ready', text: 'Tagging and fast stock-take support for high-piece-count inventories.' },
@@ -214,7 +214,7 @@ ${L.hero({
 
 ${L.section(
   `${L.cards([
-    { title: 'Live-rate GST invoicing', text: 'Metal rate, purity, making charges and GST computed together — no manual repricing when the rate moves.' },
+    { title: 'Live-rate GST invoicing', text: 'Metal rate, purity, making charges and GST computed together — no manual repricing when the rate moves.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
     { title: 'Receivables ledger', text: 'Who owes what, since when — one view instead of a register.' },
     { title: 'Payment reminders', text: 'Automated reminders on outstanding receivables, sent on schedule.' },
     { title: 'Approval-gated overrides', text: 'Discounts and price exceptions on invoices route through approvals.' },

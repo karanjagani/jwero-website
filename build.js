@@ -56,6 +56,7 @@ const NAV = [
     items: [
       ['/platform', 'The OS tour', 'One record, one catalogue, one truth'],
       ['/platform/customer-memory', 'Customer Memory', '90+ fields on every customer'],
+      ['/platform/pricing-engine', 'The Pricing Engine', 'Rate, making charge, stone & override rules'],
       ['/platform/ai-workforce', 'AI Workforce & Governance', '240+ governed actions, approvals, kill switches'],
       ['/platform/integrations', 'Integrations', 'Tally, Zoho Books, Shopify, Meta and more'],
       ['/trust/security', 'Security & Data Ownership', 'Your data, exportable anytime'],
@@ -376,6 +377,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 ## Key pages
 - Platform (the OS tour): ${SITE}/platform
 - Customer memory: ${SITE}/platform/customer-memory
+- Pricing engine: ${SITE}/platform/pricing-engine
 - AI workforce & governance: ${SITE}/platform/ai-workforce
 - WhatsApp commerce: ${SITE}/products/whatsapp
 - Gold schemes: ${SITE}/products/gold-schemes

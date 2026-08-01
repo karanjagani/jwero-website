@@ -137,6 +137,95 @@ ${L.ctaBand('Give your business a memory.', 'We import your customers from Excel
 `,
 };
 
+const pricingEngine = {
+  slug: 'platform/pricing-engine',
+  title: 'The Pricing Engine — Rate, Making Charge & Stone Rules | Jwero',
+  description: 'How Jwero prices a piece: purity rate cards, 3 making-charge models, wastage, per-carat stone pricing, channel/branch rules, and an audit log for every price.',
+  breadcrumbs: BC('The Pricing Engine'),
+  faqs: [
+    { q: 'How does Jwero actually calculate a price?', a: 'Metal rate (by purity, updated manually or from a live feed) × weight, plus a making charge (percentage, per-gram, or flat — your choice per category), plus stone or gemstone value priced separately, resolved against any price rules that apply to that channel, branch or customer. Every resolution is logged.' },
+    { q: 'Which purities does the rate card support?', a: 'Whatever your business sells — 24K, 22K, 916, 18K, 14K and more, each with its own rate. Rates can be entered manually each session (a common am/pm pattern) or pulled from a live feed; you choose per metal.' },
+    { q: 'Can making charges differ by category, or does everyone pay one formula?', a: 'Both exist. A making-charge type (percentage of metal value, per-gram, or flat amount) attaches per category or product, plus a separate service charge as a percentage of the subtotal if you charge one — not one formula forced onto everything you sell.' },
+    { q: 'How are diamonds and gemstones priced — bundled into the metal rate?', a: 'No — priced separately, per carat for gemstones or per piece for pearls, and can be tied to the certificate on file (GIA, IGI, SGL, HRD, BIS) so the price and the paperwork agree.' },
+    { q: 'Can the same piece show a different price on WhatsApp than on the website or in-store?', a: 'It can, if you set it up that way — price rules resolve by channel (store, website, WhatsApp, marketplace, POS) as well as by branch and customer tier. Most businesses keep one price everywhere; the option to vary exists when you need it.' },
+    { q: 'What stops a salesperson from just typing in a lower number?', a: 'An override request, not a free-text field — it needs a reason, and it is checked against a floor and ceiling you set before anyone approves it. Every override is on the record: who asked, who approved, what changed.' },
+    { q: 'If a customer disputes a price a week later, can we show how we got there?', a: 'Yes — every resolved price keeps a log of exactly which rate, rule and charge produced it. That is the answer to a dispute, not a reconstruction from memory.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'THE PRICING ENGINE',
+  h1: 'Every price, explainable. Every override, on the record.',
+  sub: 'A jewellery price is never just a number — it is a rate, a purity, a making charge, a stone value and sometimes a rule. Jwero prices it as a formula, not a field, and can show its work for every piece, every channel, every time.',
+  primary: { href: '#', label: 'See a price resolve live', wa: 'pricingengine' },
+  secondary: { href: '/book-demo', label: 'Book a demo' },
+})}
+
+${L.section(
+  `${L.sectionHead('WHAT GOES INTO A PRICE', 'Five inputs, one resolved number.', 'Say it out loud to a jeweller and it sounds obvious — because it is how the trade has always priced. The difference is that Jwero does it as data, at the speed of a WhatsApp reply.')}
+  ${L.cards([
+    { title: 'Metal rate, by purity', text: 'A rate card per metal and purity — 24K, 22K, 916, 18K, 14K and more — entered manually (a common am/pm pattern) or fed from a live source, your choice.' },
+    { title: 'Making charge', text: 'Percentage of metal value, per-gram, or a flat amount — set per category, not forced into one formula for everything you sell. A separate service charge can apply as a percentage of the subtotal.' },
+    { title: 'Wastage', text: 'Tracked as its own percentage where you apply it, distinct from the making charge — so the two never get silently confused with each other.' },
+    { title: 'Stone & gemstone value', text: 'Priced separately from the metal — per carat for gemstones, per piece for pearls — and can be tied to the certificate on file (GIA, IGI, SGL, HRD, BIS).' },
+    { title: 'Rules & overrides', text: 'Channel, branch, region and customer-tier rules apply on top; anything outside them needs an override request with a reason, checked against a floor and ceiling.' },
+  ])}`
+)}
+
+${L.oneSystemBlock([
+  'Update the day’s gold rate once, and the WhatsApp catalogue, the website and the counter reprice together — not three separate updates that drift out of sync.',
+  'The making-charge and stone rules that price a catalogue reply on WhatsApp are the same rules the invoice uses — no separate "online price" spreadsheet to keep in step.',
+  'An override approved at one branch shows up in the same audit log the owner checks from anywhere — not a paper chit in a drawer.',
+])}
+
+${L.section(
+  `${L.sectionHead('THREE WAYS TO CHARGE FOR MAKING', 'One formula never fits every category.', 'Bridal sets, daily-wear chains and coin sales don’t price the same way in real jewellery businesses — so the engine doesn’t force them to.')}
+  <div class="tbl-wrap"><table class="tbl">
+    <thead><tr><th>Model</th><th>How it charges</th><th>Where it tends to fit</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Percentage</strong></td><td>A % of the metal value</td><td>Standard retail pieces</td></tr>
+      <tr><td><strong>Per-gram</strong></td><td>A fixed amount per gram of weight</td><td>Chains, coins, high-volume plain gold</td></tr>
+      <tr><td><strong>Flat</strong></td><td>A fixed amount per piece, regardless of weight</td><td>Small items, findings, standardised designs</td></tr>
+    </tbody>
+  </table></div>
+  <p style="margin-top:16px; font-size:.95rem; color:var(--ink-2);">A separate service charge — a percentage of the subtotal — can apply on top where a business charges one, kept distinct from the making charge itself.</p>`
+, { tone: 'tint' })}
+
+${L.section(
+  `${L.sectionHead('WHERE PRICE CAN VARY, ON PURPOSE', 'Consistency where you want it. Flexibility where you grant it.', '')}
+  ${L.cards([
+    { title: 'By channel', text: 'Store, website, WhatsApp, marketplace and POS can each carry their own price rules — most businesses keep one price everywhere; the option exists for the ones who need it.' },
+    { title: 'By branch or region', text: 'Central price rules under owner control, with branch- or region-scoped exceptions that route through approval — not five branches quietly drifting apart.', link: { href: '/products/multi-store', label: 'See Multi-store & Franchise' } },
+    { title: 'By customer tier', text: 'Standard, and loyalty tiers above it, can carry their own pricing where a business chooses to reward them that way.', link: { href: '/products/loyalty', label: 'See Loyalty & Referrals' } },
+    { title: 'By promotion', text: 'Promo codes and quantity price-breaks apply on top of the base rules, not as a separate system a salesperson has to remember.' },
+  ], 4)}`
+)}
+
+${L.section(
+  `${L.sectionHead('THE OVERRIDE, DONE PROPERLY', 'A guardrail, not a free-text box.', 'Every jewellery counter has had the moment: a good customer, a bit more discount than the price allows. The question is whether that moment leaves a record or a mystery.')}
+  ${L.steps([
+    { title: 'Requested', text: 'A salesperson submits an override with the price they want to offer and a reason — not a blank field to type any number into.' },
+    { title: 'Checked', text: 'The request is checked against a floor and ceiling price set in advance, so an approver is reviewing a bounded exception, not an open-ended ask.' },
+    { title: 'Logged', text: 'Approved or declined, it is on the record — who asked, who decided, and exactly what changed — the same log a dispute or an audit would need.' },
+  ])}`
+, { tone: 'tint' })}
+
+${L.honestGapsBlock([
+  'A public developer API for pulling pricing rules into a third-party system — the rules run inside Jwero today, not exposed externally yet.',
+])}
+
+${L.section(`${L.sectionHead('PRICING ENGINE QUESTIONS', 'What owners and evaluators ask first.', '')}${L.faqBlock([
+  { q: 'How does Jwero actually calculate a price?', a: 'Metal rate (by purity) × weight, plus a making charge (percentage, per-gram or flat), plus stone value priced separately, resolved against any rules for that channel, branch or customer. Every resolution is logged.' },
+  { q: 'Can making charges differ by category?', a: 'Yes — percentage, per-gram or flat, set per category or product, plus an optional service charge on the subtotal. Not one formula forced onto everything.' },
+  { q: 'How are diamonds and gemstones priced?', a: 'Separately from the metal — per carat for gemstones, per piece for pearls — and can be tied to the certificate on file so the price and the paperwork agree.' },
+  { q: 'What stops a salesperson from just typing a lower number?', a: 'An override request with a reason, checked against a floor and ceiling before approval — not a free-text field.' },
+  { q: 'Can we show how a price was reached if a customer disputes it later?', a: 'Yes — every resolved price keeps a log of exactly which rate, rule and charge produced it.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.ctaBand('See your own catalogue priced this way.', 'Bring one real product — we’ll show the rate, the making charge and the resolved price, live.', 'pricingengine')}
+`,
+};
+
 const aiWorkforce = {
   slug: 'platform/ai-workforce',
   title: 'AI Workforce & Governance — AI That Waits for Your Yes | Jwero',
@@ -390,4 +479,4 @@ ${L.ctaBand('Need something on this list?', 'Tell us which item decides your pur
 `,
 };
 
-module.exports = [platform, customerMemory, aiWorkforce, integrations, tally, onboarding, roadmap];
+module.exports = [platform, customerMemory, pricingEngine, aiWorkforce, integrations, tally, onboarding, roadmap];

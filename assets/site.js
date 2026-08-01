@@ -19,6 +19,7 @@
     platform: 'Hi Jwero — show me the full platform, one record at a time.',
     ai: 'Hi Jwero — show me the AI workforce approval queue live.',
     memory: 'Hi Jwero — show me a live customer record.',
+    pricingengine: 'Hi Jwero — show me how a price is actually calculated, on my own catalogue.',
     integrations: 'Hi Jwero — here is the software stack I run today, tell me what bridges.',
     tally: 'Hi Jwero — I want to understand exactly how the Tally bridge works.',
     onboarding: 'Hi Jwero — walk me through onboarding for my team.',
