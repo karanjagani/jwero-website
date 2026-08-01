@@ -81,7 +81,7 @@ ${L.section(
   ])}`
 )}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="roles">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('ROLE QUESTIONS', 'Straight answers about who uses this and how.', '')}${L.faqBlock(rolesHubFaqs)}`)}
 

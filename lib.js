@@ -10,6 +10,7 @@ function esc(s) {
 function hero({ eyebrow, h1, sub, primary, secondary, note, mock }) {
   return `
 <section class="hero">
+  <div class="gem-facet" aria-hidden="true"></div>
   <div class="container hero-grid${mock ? '' : ' hero-solo'}">
     <div class="hero-copy">
       ${eyebrow ? `<p class="eyebrow">${eyebrow}</p>` : ''}
@@ -37,7 +38,8 @@ function sectionHead(eyebrow, title, lead) {
 
 function section(inner, opts = {}) {
   const cls = ['section', opts.tone ? `section-${opts.tone}` : ''].filter(Boolean).join(' ');
-  return `<section class="${cls}"${opts.id ? ` id="${opts.id}"` : ''}><div class="container">${inner}</div></section>`;
+  const facet = opts.tone === 'tint' ? `<div class="gem-facet" aria-hidden="true"></div>` : '';
+  return `<section class="${cls}"${opts.id ? ` id="${opts.id}"` : ''}>${facet}<div class="container" style="position:relative; z-index:1;">${inner}</div></section>`;
 }
 
 // Breadcrumb nav — every page below home carries one. trail: [[label,href],...,[label]] (last = current, no href)
@@ -311,6 +313,15 @@ const mockChat = `
   <div class="mock-foot">Enquiry → priced reply → appointment. While the store slept.</div>
 </div>`;
 
+const mockChatCatalog = `
+<div class="mock" role="img" aria-label="Illustration of a WhatsApp catalogue share and checkout">
+  <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">WhatsApp · Catalogue share</span></div>
+  <div class="bubble in">Can you share the necklace set you posted on Instagram?</div>
+  <div class="bubble out">Here’s the live-price link — updates automatically with today’s rate.<span class="bubble-tag">Catalogue link · view &amp; checkout tracked</span></div>
+  <div class="bubble in">Booking it, sending the advance now.</div>
+  <div class="mock-foot">Instagram post → priced catalogue → payment. One thread, one record.</div>
+</div>`;
+
 const mockMemory = `
 <div class="mock" role="img" aria-label="Illustration of a Jwero customer record">
   <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">Customer · Meera K.</span></div>
@@ -427,7 +438,7 @@ function customerLogos() {
 
 module.exports = {
   esc, hero, section, sectionHead, cards, steps, stats, faqBlock,
-  governanceStrip, ctaBand, painRows, mockApproval, mockChat, mockMemory, mockOneRecord,
+  governanceStrip, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,
 };

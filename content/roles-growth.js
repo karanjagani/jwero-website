@@ -87,7 +87,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('CRM EXECUTIVE QUESTIONS', 'Straight answers about this role.', '')}${L.faqBlock(crmFaqs)}`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="roles">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See the approval queue for yourself.', 'We’ll walk through a real follow-up list — what’s drafted, what you’d approve.', 'roles')}
 `,
@@ -174,7 +174,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('MARKETING MANAGER QUESTIONS', 'Straight answers about this role.', '')}${L.faqBlock(marketingFaqs)}`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="roles">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See attribution on one record.', 'Bring a recent campaign — we’ll show how it would trace through Jwero.', 'roles')}
 `,

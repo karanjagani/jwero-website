@@ -72,7 +72,7 @@ ${L.honestGapsBlock([
   'Applying a scheme balance at the ecommerce website checkout — balances live on the customer record and are visible to your team and the member today; online redemption is on the roadmap, not wired yet.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="schemes">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="schemes">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Digitise the promise.', 'Bring your current scheme rules to a demo — we will show them running digitally, mid-cycle members included.', 'schemes')}
 `,
@@ -130,7 +130,7 @@ ${L.honestGapsBlock([
   'Buying or redeeming digital gold directly at the ecommerce website checkout — digital gold runs through your team and the customer’s record today; online checkout integration is on the roadmap.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="digitalgold">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="digitalgold">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Compete with the apps — as yourself.', 'Your name, your gold, your customers. See a digital gold journey from first gram to showcase visit.', 'digitalgold')}
 `,
@@ -190,7 +190,7 @@ ${L.honestGapsBlock([
   'A single unified, immutable audit trail across every module — per-module activity logging exists today; consolidation is in progress.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="multistore">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="multistore">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring network discipline to your business.', 'Multi-store deployments get staged rollouts: one pilot branch, then the network. Ask how.', 'multistore', { enterprise: true })}
 `,
@@ -257,7 +257,7 @@ ${L.honestGapsBlock([
   'Predictive analytics on loyalty behaviour — loyalty reporting today is rule-based and factual, not a machine-learning prediction of who will churn or redeem.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="loyalty">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="loyalty">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Reward regulars, not just savers.', 'Bring your idea of tiers and rewards to a demo — we will show how they’re configured and where they show up on the customer record.', 'loyalty')}
 `,
@@ -329,7 +329,7 @@ ${L.honestGapsBlock([
   'Triggering a journey from a third-party system through a public inbound API — journeys can call outward via webhook steps today; the public developer API is on the roadmap.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="journeys">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="journeys">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Build a journey your team can watch.', 'Bring one real flow: a scheme reminder sequence, a festival invite, a win-back — and we’ll build it live with an approval gate in place.', 'journeys')}
 `,
@@ -399,7 +399,7 @@ ${L.honestGapsBlock([
   'The owner’s weekly growth-report dashboard — campaign-level UTM attribution is live today; the productised owner dashboard built on top of it is rolling out. See <a href="/roadmap">the roadmap</a>.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="campaigns">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="campaigns">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Send it, then know what it sold.', 'Bring one segment and one offer — we’ll build the broadcast, wire the attribution, and show you the report it produces.', 'campaigns')}
 `,

@@ -30,7 +30,7 @@ ${L.hero({
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'whatsapp' },
   secondary: { href: '/tools/whatsapp-revenue-estimator', label: 'Try the Revenue Estimator' },
   note: 'The demo IS a WhatsApp conversation.',
-  mock: L.mockChat,
+  mock: L.mockChatCatalog,
 })}
 
 ${L.section(
@@ -77,7 +77,7 @@ ${L.section(`${L.sectionHead('WHATSAPP QUESTIONS', 'Bans, rule changes, and what
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#whatsapp">See every WhatsApp & Meta question →</a></p>
 <p class="cta-note" style="margin-top:14px">Want the full picture before a demo? <a href="/blog/whatsapp-for-jewellers-guide">Read the complete WhatsApp guide for jewellers →</a> And if you still send PDF catalogues in chat, <a href="/blog/digital-catalog-vs-pdf-jewellery">here is why a live digital catalogue outsells a PDF →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="whatsapp">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="whatsapp">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.section(L.safeToTryStrip())}
 
@@ -142,7 +142,7 @@ ${L.section(`${L.sectionHead('INSTAGRAM & FACEBOOK QUESTIONS', 'New accounts, pe
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="instagram">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="instagram">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Stop losing the DMs you paid for.', 'Your reels already create demand. See how much of it a system with memory can catch.', 'instagram')}
 `,
@@ -209,7 +209,7 @@ ${L.section(`${L.sectionHead('THE STAFF QUESTION', 'What your salespeople should
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#ai-trust">See every AI trust question →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="aiagents">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="aiagents">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Hire staff that scale like software.', 'Start with one agent on Assist mode — drafts only, approvals on. Promote it when it earns your trust.', 'aiagents')}
 `,
@@ -291,7 +291,7 @@ ${L.section(`${L.sectionHead('OPTIMIZE QUESTIONS', 'Consent, AI webchat, and wha
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="optimize">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="optimize">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See where your own visitors drop off.', 'One pixel turns on analytics, heatmaps, experiments, popups, push and webchat together — on your existing website.', 'optimize')}
 `,
@@ -395,7 +395,7 @@ ${L.section(`${L.sectionHead('ECOMMERCE WEBSITE QUESTIONS', 'Shopify, branding, 
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="storefront">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="storefront">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring your ecommerce website onto one system.', 'A live-rate price breakup, cart, wishlist and checkout — as your first website, or alongside the one you already run.', 'storefront')}
 `,
@@ -459,7 +459,7 @@ ${L.section(`${L.sectionHead('ADS MANAGER QUESTIONS', 'Budget control, publishin
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="adsmanager">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="adsmanager">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Run ads without losing sight of the budget.', 'Meta, Google and Pinterest campaigns, budget alerts and an approval step before spend — all in one place. See it work on your own accounts.', 'adsmanager')}
 `,
@@ -523,7 +523,7 @@ ${L.section(`${L.sectionHead('SOCIAL MEDIA QUESTIONS', 'Platform coverage and wh
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="socialmedia">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="socialmedia">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('One inbox for every comment and DM.', 'Schedule across channels, reply from one place, and let AI draft the first response while your team approves. Ask which platforms are live for your account.', 'socialmedia')}
 `,

@@ -236,11 +236,12 @@ const aiWorkforce = {
     { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling. Salespeople close more when every customer walks in already known.' },
     { q: 'What if the AI drafts something wrong?', a: 'Nothing goes out without approval until you decide otherwise. You can edit any draft, reject it, or switch a whole action type off. Daily caps and quiet hours are hard limits, not suggestions.' },
     { q: 'Can I turn AI off completely?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything. The kill switch is a product feature, not a support ticket.' },
-    { q: 'What can the AI workforce do?', a: 'Over 240 defined business actions: draft replies, price a catalogue enquiry at today’s rate, schedule follow-ups, send instalment reminders, invite customers before festivals, book appointments and more — each action individually permissioned.' },
+    { q: 'What can the AI workforce do?', a: '251 individually permissioned actions across 7 categories: CRM and replies, inbox drafting, inventory, campaigns, reporting and finance — draft replies, price a catalogue enquiry at today’s rate, schedule follow-ups, send instalment reminders, invite customers before festivals, book appointments and more.' },
     { q: 'Can the AI give a discount without me knowing?', a: 'No. Pricing and discount actions follow your price rules and staff permissions — the AI drafts messages, it does not set prices or approve exceptions.' },
     { q: 'What if it says something embarrassing to a customer I’ve known for twenty years?', a: 'That fear is exactly what the approval queue exists for. Nothing reaches her until your team has seen it. Quiet hours mean nobody, old customer or new, gets a message at 11pm either.' },
     { q: 'How does it know how to sound like MY shop, not a generic chatbot?', a: 'It drafts from your catalogue, your prices, your policies and your past conversations — the same context a new employee would need, except it never forgets any of it.' },
     { q: 'Is this the same risk as an AI chatbot going rogue online?', a: 'No. Nothing sends without approval by default, ever. The entire governance layer (approvals, caps, kill switch) exists because a jewellery relationship can’t survive an ungoverned bot near it.' },
+    { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Not yet, and we’d rather say so than blur it: the chat/voice assistant speaks 14 languages; the separate outbound/inbound phone-calling agent currently covers 11 Indian languages.' },
   ],
   body: `
 ${L.hero({
@@ -273,12 +274,37 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
+${L.section(
+  `${L.sectionHead('WHAT "240+ ACTIONS" ACTUALLY MEANS', 'Not a round number — a real registry, category by category.', 'Every governed action is a defined, individually permissioned entry in Jwero’s action registry — the same registry the approval queue and kill switch enforce against. Here’s what the 251 active entries actually cover.')}
+  <div class="tbl-wrap"><table class="tbl">
+    <thead><tr><th>Category</th><th>What lives there</th><th>Actions</th></tr></thead>
+    <tbody>
+      <tr><td><strong>CRM</strong></td><td>Customer replies, follow-ups, occasion outreach, quotations, lead routing</td><td>56</td></tr>
+      <tr><td><strong>Internal</strong></td><td>Task assignment, staff/HR workflows, AI-administration and calling logs</td><td>55</td></tr>
+      <tr><td><strong>Inbox</strong></td><td>WhatsApp/Instagram/email reply drafting, follow-up scheduling</td><td>52</td></tr>
+      <tr><td><strong>Inventory &amp; Products</strong></td><td>Catalogue updates, stock actions, ageing flags</td><td>41</td></tr>
+      <tr><td><strong>Campaigns &amp; Marketing</strong></td><td>Broadcasts, segment suggestions, journey steps</td><td>31</td></tr>
+      <tr><td><strong>Reporting</strong></td><td>Dashboard summaries, the owner’s growth report</td><td>10</td></tr>
+      <tr><td><strong>Finance</strong></td><td>Invoice and receivables-adjacent drafting</td><td>6</td></tr>
+    </tbody>
+  </table></div>
+  <p style="margin-top:16px; font-size:.9rem; color:var(--ink-2);">251 active entries today (259 defined, 8 excluded as internal audit/governance tools that don’t touch a customer) — “240+” on the rest of this site is the conservative, round-down version of that same number.</p>`
+, { tone: 'tint' })}
+
+${L.section(
+  `${L.sectionHead('THE 14 LANGUAGES, NAMED', 'Not a marketing round number — the actual list.', 'The AI assistant’s chat and voice conversations run in these 14 languages today. (A separate, phone-calling voice agent for outbound/inbound calls currently covers 11 Indian languages — fewer than the assistant above — and we’d rather say that plainly than let the two get conflated.)')}
+  <div class="chip-row" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;">
+    ${['English','Hindi','Marathi','Gujarati','Tamil','Telugu','Kannada','Bengali','Malayalam','Punjabi','Odia','Arabic','Spanish','French'].map((l) => `<span class="chip">${l}</span>`).join('')}
+  </div>`
+)}
+
 ${L.section(`${L.sectionHead('QUESTIONS OWNERS ASK', 'The doubts every owner raises first.', '')}${L.faqBlock([
   { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling.' },
   { q: 'What if the AI drafts something wrong?', a: 'Nothing goes out without approval until you decide otherwise. You can edit any draft, reject it, or switch a whole action type off.' },
   { q: 'Can I turn it all off?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything.' },
   { q: 'Can the AI give a discount without my knowledge?', a: 'No — pricing and discounts follow your price rules and staff permissions; the AI drafts messages, it does not set prices.' },
   { q: 'What if it embarrasses me with a longtime customer?', a: 'The approval queue exists for exactly this. Nothing reaches her until your team has seen and approved it.' },
+  { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Not yet, and we’d rather say so than blur it: the chat/voice assistant above speaks 14 languages; the separate outbound/inbound phone-calling agent currently covers 11 Indian languages.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More on AI trust and control? <a href="/faq#ai-trust">See every AI question we’ve been asked →</a></p>`)}
 

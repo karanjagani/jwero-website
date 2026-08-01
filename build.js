@@ -69,27 +69,29 @@ const NAV = [
         ['/products/whatsapp', 'WhatsApp Commerce'],
         ['/products/instagram-facebook', 'Instagram & Facebook'],
         ['/products/ai-sales-agents', 'AI Sales Agents & Voice'],
+        ['/products/storefront', 'Ecommerce Website'],
+      ]},
+      { title: 'Market', items: [
         ['/products/ads-manager', 'Ads Manager'],
         ['/products/social-media', 'Social Media Management'],
         ['/products/optimize', 'Optimize (Website Visitors)'],
-        ['/products/storefront', 'Ecommerce Website'],
       ]},
       { title: 'Know', items: [
         ['/products/crm', 'Jewellery CRM'],
         ['/products/showroom', 'Showroom Intelligence'],
-        ['/products/segmentation', 'Customer Segmentation'],
       ]},
       { title: 'Run', items: [
         ['/products/catalog', 'Catalogue (PIM)'],
         ['/products/inventory', 'Inventory'],
         ['/products/billing-finance', 'Billing & Finance'],
         ['/products/erp', 'ERP, reconsidered'],
+        ['/products/multi-store', 'Multi-store & Franchise'],
       ]},
       { title: 'Grow', items: [
         ['/products/gold-schemes', 'Gold Savings Schemes'],
         ['/products/digital-gold', 'Digital Gold'],
         ['/products/loyalty', 'Loyalty & Referrals'],
-        ['/products/multi-store', 'Multi-store & Franchise'],
+        ['/products/segmentation', 'Customer Segmentation'],
         ['/products/journeys', 'Customer Journeys'],
         ['/products/campaigns', 'Campaigns & Broadcasts'],
       ]},
@@ -185,7 +187,7 @@ function navHTML() {
 <div class="ann-bar"><div class="container">${TAGLINE} — <a href="#" data-wa="announce">chat with us on WhatsApp →</a></div></div>
 <header class="site-header">
   <div class="container header-row">
-    <a class="logo" href="/" aria-label="Jwero home"><img src="/assets/jwero-mark.png" alt="" width="80" height="120"><span class="logo-word">Jwero</span></a>
+    <a class="logo" href="/" aria-label="Jwero home"><img src="/assets/jwero-mark.png" alt="" width="86" height="122"><span class="logo-word">Jwero</span></a>
     <nav class="main-nav" aria-label="Main">${NAV.map(dd).join('')}</nav>
     <div class="header-cta">
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
@@ -205,7 +207,7 @@ function footerHTML() {
   <div class="container">
     <div class="f-grid">
       <div class="f-brand">
-        <p class="logo"><img src="/assets/jwero-mark.png" alt="" width="80" height="120"><span class="logo-word">Jwero</span></p>
+        <p class="logo"><img src="/assets/jwero-mark.png" alt="" width="86" height="122"><span class="logo-word">Jwero</span></p>
         <p class="f-tag">${SIGNATURE}<br>${TAGLINE}.</p>
         <p class="f-enemy">“Your software keeps accounts.<br>It doesn’t remember customers.”</p>
       </div>
@@ -283,9 +285,7 @@ ${robotsMeta}
 <link rel="icon" type="image/png" href="${FAVICON}">
 <meta name="theme-color" content="#0013b7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a0b12" media="(prefers-color-scheme: dark)">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
 <script>(function(){try{var t=localStorage.getItem('jwero-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}

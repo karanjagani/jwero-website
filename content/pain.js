@@ -29,7 +29,7 @@ ${L.section(
   <p style="margin-top:18px; font-size:.85rem; color:var(--ink-2);">Not seeing your pain listed? <a href="#" data-wa="pain-index">Tell us on WhatsApp</a> — it becomes the next page we write.</p>`
 )}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="pain-index">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="pain-index">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Get your own number.', 'Two calculators turn your pain into a monthly cost you can act on.', 'pain-index')}
 `,
@@ -80,7 +80,7 @@ ${L.section(`${L.sectionHead('QUESTIONS ABOUT DEAD STOCK', 'Cost, prediction and
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="deadstock">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="deadstock">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Wake up the sleeping capital.', 'Calculate your dead-stock cost, then see how memory-driven selling moves what discounting cannot.', 'deadstock')}
 `,
@@ -120,7 +120,7 @@ ${L.section(`${L.sectionHead('QUESTIONS ABOUT LEAD LEAKAGE', 'Scale of the loss,
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="leadleak">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="leadleak">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Plug the leak this week.', 'Connect your number, and every enquiry from tomorrow onward gets caught, answered and followed. See it live.', 'leadleak')}
 `,

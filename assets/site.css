@@ -2,6 +2,14 @@
    Aligned with the Jwero product: Inter, white surfaces, royal blue #0013b7,
    indigo scale (#99a3ff→#000d7d), amber accent from the logo. Light + dark. */
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/assets/fonts/inter-var.woff2') format('woff2-variations'), url('/assets/fonts/inter-var.woff2') format('woff2');
+}
+
 :root {
   --bg: #ffffff;
   --surface: #f7f8fb;
@@ -204,13 +212,34 @@ main:focus-visible { outline: none; }
   background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--amber) 55%, transparent), transparent);
   opacity: .6;
 }
+/* Gem-facet motif: an abstract faceted-cut silhouette (not a photo — an honest geometric
+   nod to the trade) in the brand's two hues, tucked into corners so it reads as texture,
+   not decoration competing with copy. Reused as a quiet section-rhythm break too. */
+.gem-facet {
+  position: absolute; pointer-events: none; z-index: 0;
+  clip-path: polygon(50% 0%, 90% 20%, 100% 55%, 75% 100%, 25% 100%, 0% 55%, 10% 20%);
+}
+.hero .gem-facet {
+  width: 340px; height: 340px; right: -90px; top: -60px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 16%, transparent), color-mix(in srgb, var(--amber) 22%, transparent));
+  opacity: .55;
+}
+[data-theme="dark"] .hero .gem-facet { opacity: .35; }
+.section-tint { position: relative; }
+.section-tint .gem-facet {
+  width: 180px; height: 180px; left: -60px; bottom: -50px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--amber) 14%, transparent), color-mix(in srgb, var(--brand) 10%, transparent));
+  opacity: .4;
+}
+[data-theme="dark"] .section-tint .gem-facet { opacity: .22; }
+@media (max-width: 720px) { .gem-facet { display: none; } }
 [data-theme="dark"] .hero::before {
   background:
     radial-gradient(56rem 30rem at 82% -18%, rgba(50, 66, 203, .32), transparent 62%),
     radial-gradient(40rem 24rem at -12% 16%, rgba(50, 66, 203, .14), transparent 60%),
     radial-gradient(26rem 18rem at 72% 90%, rgba(246, 167, 35, .06), transparent 65%);
 }
-.hero .container { position: relative; }
+.hero .container { position: relative; z-index: 1; }
 .hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: 56px; align-items: center; }
 .hero-solo { grid-template-columns: 1fr; max-width: 820px; }
 .hero .sub { font-size: 1.14rem; margin-top: 22px; max-width: 34em; }
@@ -284,9 +313,16 @@ main:focus-visible { outline: none; }
 .card {
   background: var(--card); border: 1px solid var(--line); border-radius: var(--r);
   padding: 26px 24px; box-shadow: 0 1px 2px rgba(11,13,26,.03);
+  border-top: 3px solid transparent;
   transition: transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s var(--ease);
 }
 .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-glow); border-color: color-mix(in srgb, var(--brand) 28%, var(--line)); }
+/* Rhythm break for long card stacks (mobile especially): a cycling top-accent
+   in the two brand hues, so consecutive cards read as distinct facets of one
+   system rather than an undifferentiated tunnel. */
+.grid .card:nth-child(3n+1) { border-top-color: color-mix(in srgb, var(--brand) 55%, transparent); }
+.grid .card:nth-child(3n+2) { border-top-color: color-mix(in srgb, var(--amber) 60%, transparent); }
+.grid .card:nth-child(3n+3) { border-top-color: color-mix(in srgb, var(--brand-light, var(--brand)) 40%, transparent); }
 .card h3 { margin-bottom: 8px; }
 .card p { font-size: .94rem; }
 .card-icon {

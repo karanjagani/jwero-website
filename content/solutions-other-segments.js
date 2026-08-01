@@ -29,7 +29,7 @@ ${L.section(
 )}
 ${L.honestGapsBlock(['Girvi / gold-loan functionality is on the long-term roadmap, not shipped today.'])}
 ${L.section(`${L.sectionHead('QUESTIONS TRADERS ASK', 'Rate locks, girvi and deal speed — answered.', '')}${L.faqBlock(bullionFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="bullion">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="bullion">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See a deal, captured properly.', 'Bring one recent trade — we’ll show how it would sit on the record.', 'bullion', { enterprise: true })}
 `,
@@ -62,7 +62,7 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS BRAND TEAMS ASK', 'Consistency and partner visibility — answered.', '')}${L.faqBlock(brandsFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="brands">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="brands">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring your channel map.', 'Show us how your brand sells today — we’ll map it to one central system.', 'brands', { enterprise: true })}
 `,
@@ -118,7 +118,7 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 ${L.section(`${L.sectionHead('QUESTIONS D2C BRANDS ASK', 'Shopify, trials and the stack you keep — answered.', '')}${L.faqBlock(d2cFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/compare/jwero-vs-shopify">See Jwero vs Shopify</a> or <a href="/faq">the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="d2c">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="d2c">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Add what Shopify can’t do.', 'Tell us your current stack — we’ll show exactly what Jwero adds on top.', 'd2c')}
 `,
@@ -153,7 +153,7 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS FIRST-TIME FOUNDERS ASK', 'Complexity, budget and where to start — answered.', '')}${L.faqBlock(startupsFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="startups">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="startups">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Start where you are.', 'Tell us about your first store — we’ll tell you honestly what matters first.', 'startups')}
 `,
@@ -200,7 +200,7 @@ ${L.jtbdBlock([
   { when: 'a location’s performance starts drifting', want: 'see it in the owner rollup immediately', so: 'brand-standard drift gets caught early rather than surfacing at the annual review' },
 ])}
 ${L.section(`${L.sectionHead('QUESTIONS FRANCHISORS ASK', 'Independence, visibility and control — answered.', '')}${L.faqBlock(franchiseFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="franchise">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="franchise">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Start with one franchise location.', 'Pick your newest or your toughest location as the pilot.', 'franchise', { enterprise: true })}
 `,

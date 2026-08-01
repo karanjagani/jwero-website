@@ -29,7 +29,7 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS DIAMOND WHOLESALERS ASK', 'Memo tracking, pricing and trust — answered.', '')}${L.faqBlock(diamondWholesaleFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="diamondwholesale">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="diamondwholesale">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring one buyer relationship.', 'We’ll show a private catalogue, a memo, and the follow-up that keeps it moving.', 'diamondwholesale', { enterprise: true })}
 `,
@@ -63,7 +63,7 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS GOLD WHOLESALERS ASK', 'Rate quotes, ledgers and disputes — answered.', '')}${L.faqBlock(goldWholesaleFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="goldwholesale">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="goldwholesale">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Quote at today’s rate, live.', 'Change the rate in a demo and watch a wholesale quote reprice instantly.', 'goldwholesale', { enterprise: true })}
 `,
@@ -112,7 +112,7 @@ ${L.jtbdBlock([
   { when: 'a regular buyer stops reordering', want: 'see it flagged before month-end', so: 'a trade relationship doesn’t quietly die unnoticed' },
 ])}
 ${L.section(`${L.sectionHead('QUESTIONS B2B TRADERS ASK', 'Materials, reorders and margins — answered.', '')}${L.faqBlock(b2bJewelleryFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="b2b">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="b2b">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Put your catalogue in every buyer’s pocket.', 'Bring your buyer list — we’ll show tiered pricing and order capture on WhatsApp.', 'b2b', { enterprise: true })}
 `,

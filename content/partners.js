@@ -61,7 +61,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('QUESTIONS PARTNERS ASK', 'Answers before you refer your first client.', '')}${L.faqBlock(partnersFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="partners">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="partners">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Tell us who you’d bring first.', 'One conversation, one business in mind — we’ll take it from there honestly.', 'partners')}
 `,

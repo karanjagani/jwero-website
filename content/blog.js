@@ -129,7 +129,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about setup and bans.', '')}${L.faqBlock(whatsappGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-whatsapp">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-whatsapp">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Run your own WhatsApp number, properly.', 'Bring your current setup — we’ll show you the official API, live catalogue and one shared record.', 'blog-whatsapp')}
 `,
@@ -191,7 +191,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about calculating and clearing it.', '')}${L.faqBlock(deadStockGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-deadstock">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="blog-deadstock">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See ageing and matched selling in action.', 'Bring your real ageing report — we’ll show how matching and rotation would work on your actual stock.', 'blog-deadstock')}
 `,
@@ -254,7 +254,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about running one properly.', '')}${L.faqBlock(schemeGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-scheme">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="blog-scheme">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Digitise your existing scheme book.', 'Bring your current paper register — we’ll show what it looks like moved onto reminders and transparent balances.', 'blog-scheme')}
 `,
@@ -319,7 +319,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about the Tally connection.', '')}${L.faqBlock(tallyGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-tally">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="blog-tally">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring your CA into the conversation directly.', 'We’ll walk through the connector, the mapping rules, and exactly what stays manual — with them in the room.', 'blog-tally')}
 `,
@@ -384,7 +384,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about wastage and control.', '')}${L.faqBlock(goldLossGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-goldloss">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-goldloss">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See your own wastage, per stage and per karigar.', 'Bring your current issue-and-return register — we’ll show what it looks like tracked per movement instead of per year.', 'blog-goldloss')}
 `,
@@ -455,7 +455,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about running this properly.', '')}${L.faqBlock(repairGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-repair">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="blog-repair">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Ask us about repair tracking.', 'Tell us how repair volume moves through your shop today — we’ll tell you honestly where the custody-chain discipline stands in the product.', 'blog-repair')}
 `,
@@ -518,7 +518,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about records and audits.', '')}${L.faqBlock(huidGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-huid">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-huid">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Turn audit day into a quick lookup.', 'Bring your current hallmarking register — we’ll show what it looks like as a searchable record instead.', 'blog-huid')}
 `,
@@ -581,7 +581,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about catalogues and checkout.', '')}${L.faqBlock(catalogGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-catalog">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="blog-catalog">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Send a catalogue that can close the sale itself.', 'Bring a design you’d normally screenshot — we’ll show it as a live, trackable link with checkout built in.', 'blog-catalog')}
 `,
@@ -641,7 +641,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about the CRM/ERP split.', '')}${L.faqBlock(crmErpGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-crmerp">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-crmerp">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Stop reconciling two systems.', 'Tell us what your CRM and ERP each hold today — we’ll show you what one record looks like instead.', 'blog-crmerp')}
 `,
@@ -724,7 +724,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about evaluating vendors.', '')}${L.faqBlock(checklistGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-checklist">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="blog-checklist">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Ask us every question on this list.', 'We’ll answer each one directly, including the ones our answer is “not yet.”', 'blog-checklist')}
 `,
@@ -790,7 +790,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about timing.', '')}${L.faqBlock(weddingGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-wedding">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="blog-wedding">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Plan your season before it starts.', 'Tell us your busiest weeks — we’ll map a go-live plan that stays clear of every one of them.', 'blog-wedding')}
 `,
@@ -852,7 +852,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about cost.', '')}${L.faqBlock(costGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-cost">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-cost">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Get a straight number for your own stack.', 'Tell us what you currently pay for, tool by tool — we’ll show you honestly what changes and what it costs.', 'blog-cost')}
 `,
@@ -914,7 +914,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about comparing software.', '')}${L.faqBlock(bestSoftwareGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-bestsoftware">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="blog-bestsoftware">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Ask us this checklist directly.', 'We’ll answer every criterion honestly, including where the answer is “not yet.”', 'blog-bestsoftware')}
 `,
@@ -1034,7 +1034,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions first-time founders ask.', '')}${L.faqBlock(startOnlineGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-startonline">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="blog-startonline">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Start where you actually are.', 'Tell us about your first store — we’ll tell you honestly what matters first and what can wait.', 'blog-startonline')}
 `,
@@ -1094,7 +1094,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about API pricing.', '')}${L.faqBlock(waPricingGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-wapricing">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-wapricing">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Understand your own conversation mix.', 'Tell us how you use WhatsApp today — enquiries, reminders, campaigns — and we’ll help you think through the cost picture honestly.', 'blog-wapricing')}
 `,
@@ -1160,7 +1160,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about scheme compliance.', '')}${L.faqBlock(schemesLegalGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-schemeslegal">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="blog-schemeslegal">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See the compliance controls in a demo.', 'Bring your current scheme structure — we’ll show KYC, documented terms, the audit trail and OTP closures running on it.', 'blog-schemeslegal')}
 `,

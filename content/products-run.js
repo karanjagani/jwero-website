@@ -66,7 +66,7 @@ ${L.section(`${L.sectionHead('CRM QUESTIONS', 'Why switch, and what happens to y
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
 <p class="cta-note" style="margin-top:14px">Still deciding whether you need a CRM, an ERP, or both? <a href="/blog/jewellery-crm-vs-erp-difference">Read the plain-language guide to the CRM vs ERP difference →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="crm">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="crm">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Own your customer list. Finally.', 'We import your customers for you — from any software, any spreadsheet, any phone.', 'crm')}
 `,
@@ -122,7 +122,7 @@ ${L.section(`${L.sectionHead('CATALOGUE QUESTIONS', 'Setup time, and pieces that
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
 <p class="cta-note" style="margin-top:14px">Getting your records audit-ready? <a href="/blog/huid-hallmarking-records-audit-checklist">Use the HUID & hallmarking records audit checklist →</a> And before you send another PDF, <a href="/blog/digital-catalog-vs-pdf-jewellery">read why live digital catalogues outsell PDFs →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="catalog">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="catalog">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Retire the PDF catalogue.', 'See a live catalogue share — with prices that update while you watch.', 'catalog')}
 `,
@@ -181,7 +181,7 @@ ${L.section(`${L.sectionHead('INVENTORY QUESTIONS', 'Stocktakes, and starting fr
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="inventory">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="inventory">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Find the sleeping capital.', 'Bring last year’s stock summary to a demo — we will show you what a memory-driven system sees in it.', 'inventory')}
 `,
@@ -235,7 +235,7 @@ ${L.section(`${L.sectionHead('BILLING QUESTIONS', 'Your current software, and GS
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
 <p class="cta-note" style="margin-top:14px">Wondering how jewellery software and Tally divide the work? <a href="/blog/jewellery-software-and-tally">Read the guide to running both without double entry →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="billing">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="billing">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See invoicing at today’s rate.', 'Change the rate live in a demo and watch a draft invoice reprice.', 'billing')}
 `,
@@ -290,7 +290,7 @@ ${L.section(`${L.sectionHead('OPERATIONS QUESTIONS', 'Mid-order switching, and p
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
 <p class="cta-note" style="margin-top:14px">Running repairs on registers today? <a href="/blog/jewellery-repair-management-custody-chain">Read the guide to repair management and the custody chain →</a> Still comparing system types? <a href="/blog/jewellery-crm-vs-erp-difference">See what separates a CRM from an ERP →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="erp">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="erp">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See operations on one record.', 'Bring one real order and follow it end to end — advance to delivery, on one screen.', 'erp')}
 `,
@@ -372,7 +372,7 @@ ${L.section(`${L.sectionHead('SHOWROOM QUESTIONS', 'What sends automatically, an
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="showroom">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="showroom">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See who is on your floor, right now.', 'Bring one real walkout from last week — we will show you what Walkout Rescue would have drafted.', 'showroom')}
 `,
@@ -456,7 +456,7 @@ ${L.section(`${L.sectionHead('SEGMENTATION QUESTIONS', 'Live rules, reviewed sug
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="segmentation">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="segmentation">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Stop exporting lists that are already wrong.', 'Bring one audience you send to often — we will show you the live rule that replaces the spreadsheet.', 'segmentation')}
 `,
