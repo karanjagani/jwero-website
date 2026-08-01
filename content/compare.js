@@ -205,12 +205,12 @@ const sioniq = comparePage({
 const zithara = comparePage({
   slug: 'zithara', name: 'Zithara', shortName: 'Zithara',
   category: 'an AI-first retail CRM (founded 2021) with a customer data platform, omnichannel campaigner and RFM segmentation, serving jewellery, luxury, electronics and wellness retailers — stated at 300+ brands, with named jewellery customers including Palmonas and Ernesto Buono Fine Jewellery',
-  concedeThem: 'Zithara has real, named jewellery-brand customers and public case studies we could verify — a Palmonas partnership, an Australian expansion via Ernesto Buono Fine Jewellery, and a stated 20% ROI result for retailer Q-Mart’s loyalty program. That is proof Jwero does not yet have, and we say so plainly rather than compete on claims we can’t back.',
+  concedeThem: 'Zithara has public, numbered case studies we could independently verify — a Palmonas partnership, an Australian expansion via Ernesto Buono Fine Jewellery, and a stated 20% ROI result for retailer Q-Mart’s loyalty program. Jwero has named customers (see the logos on /customers) but not yet a published, numbered case study to match that — and we say so plainly rather than compete on claims we can’t back.',
   concedeJwero: 'you want jewellery-native fields — scheme balances, purity, live gold-rate pricing — and full operations (inventory, orders, manufacturing) on the same record as engagement, not a CRM layer sitting on top of a separate operational system.',
   waCtx: 'zithara',
   researchNote: 'Zithara facts are sourced from zithara.ai, Indian Television, Telangana Today and PR coverage of its customer partnerships (checked July 2026) — Zithara’s named case studies are independently reported, not just self-claimed.',
   rows: [
-    { label: 'Named jewellery-brand customers with public case studies', jwero: '[VERIFY — Lighthouse Partner program in progress, no public case studies yet]', other: 'Yes — Palmonas, Ernesto Buono Fine Jewellery (Australia), Q-Mart (20% ROI on loyalty)' },
+    { label: 'Named jewellery-brand customers with public case studies', jwero: 'Named customers — see /customers; numbered case studies in progress', other: 'Yes — Palmonas, Ernesto Buono Fine Jewellery (Australia), Q-Mart (20% ROI on loyalty)' },
     { label: 'Customer data platform / omnichannel campaigner', jwero: 'Yes — one customer record across channels', other: 'Yes — a named, central product feature' },
     { label: 'Bridal-specific CRM segmentation', jwero: 'Via journeys/occasions on the customer record', other: 'Yes — a named product feature' },
     { label: 'Jewellery-native fields (scheme balance, purity, live gold rate)', jwero: 'Yes — 90+ fields, native', other: '[VERIFY — Zithara also serves electronics/wellness/luxury, not jewellery-exclusive]' },

@@ -77,6 +77,11 @@ ${L.section(
 )}
 
 ${L.section(
+  `<p style="text-align:center; font-size:.85rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); margin-bottom:22px;">Jewellery businesses already paying for this</p>
+  ${L.customerLogos()}`
+)}
+
+${L.section(
   `${L.sectionHead('THE HONEST FRAME', 'What this replaces.', 'Most jewellery businesses pay for five or six disconnected tools — a messaging tool, a catalogue app, a website, scheme spreadsheets, an agency retainer — plus the invisible cost: customers lost to silence. One system, one bill, one owner of the customer record.')}
   ${L.stats([
     { n: '5–6', l: 'tools a typical business pays for today' },

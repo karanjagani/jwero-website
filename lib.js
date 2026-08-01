@@ -373,9 +373,39 @@ function trustBar(html, link) {
 </div>`;
 }
 
+// Real named customers, shown as a logo wall. Every entry here is a
+// verified, permissioned Jwero customer — never a prospect or a partner.
+const CUSTOMER_LOGOS = [
+  { name: 'BK Saraf Jewellers', file: 'bk-saraf.png' },
+  { name: 'Mukti Gold, Gems, Diamonds & Platinum', file: 'mukti.png' },
+  { name: 'Devji', file: 'devji.png' },
+  { name: 'Sri Jagdamba Pearls, Gold & Diamonds', file: 'sri-jagdamba.png' },
+  { name: 'Kashi Jewellers', file: 'kashi.png' },
+  { name: 'Everbrite Jewellery', file: 'everbrite.png' },
+  { name: 'Mangatrai Neeraj', file: 'mangatrai-neeraj.png' },
+  { name: 'Om Jewellers', file: 'om-jewellers.png' },
+  { name: 'Prince Jewellery', file: 'prince-jewellery.png' },
+  { name: 'Ratnalaya Jewellers', file: 'ratnalaya.png' },
+  { name: 'Simha Jewellers', file: 'simha.png' },
+  { name: 'Gujjadi Swarna', file: 'gujjadi-swarna.png' },
+  { name: 'Talwarsons — Anil Talwar Group', file: 'talwarsons.png' },
+  { name: 'Waman Hari Pethe & Sons', file: 'waman-hari-pethe.png' },
+  { name: 'L Sunderdas Zaveri', file: 'ls-zaveri.png' },
+];
+
+function customerLogos(caption) {
+  return `
+<div class="logo-wall">
+  ${CUSTOMER_LOGOS.map(
+    (c) => `<div class="logo-chip" title="${esc(c.name)}"><img src="/assets/logos/customers/${c.file}" alt="${esc(c.name)} logo" loading="lazy" width="140" height="60"></div>`
+  ).join('')}
+</div>
+${caption ? `<p class="proof-caption">${caption}</p>` : ''}`;
+}
+
 module.exports = {
   esc, hero, section, sectionHead, cards, steps, stats, faqBlock,
   governanceStrip, ctaBand, painRows, mockApproval, mockChat, mockMemory, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
-  jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid,
+  jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos,
 };

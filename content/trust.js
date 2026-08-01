@@ -81,7 +81,7 @@ const customers = {
   description: 'Jwero’s proof policy: product-verified capabilities, sample reports labelled as samples, and founding-partner stories published only with verified numbers.',
   breadcrumbs: [['Home', '/'], ['Customers']],
   faqs: [
-    { q: 'Where are the customer logos and testimonials?', a: 'Coming — with names, numbers and dates, or not at all. We publish stories only after the owner verifies the figures on record. What you will never see here: stock-photo testimonials or unverifiable claims.' },
+    { q: 'Where are the customer logos and testimonials?', a: 'The logos are above — real jewellery businesses running on Jwero, named with their permission. Numbered case studies come next, and only after the owner verifies the figures on record. What you will never see here: stock-photo testimonials or unverifiable claims.' },
     { q: 'What is the Lighthouse Partner program?', a: 'A founding cohort of jewellery businesses who get concierge onboarding, direct influence on the roadmap, and preferred terms — in exchange for measured, publishable results. Limited seats per region and segment.' },
     { q: 'Without case studies yet, why should I trust the ROI claims?', a: 'You shouldn’t take our word for it — that is exactly why the weekly growth report exists. It is generated from your own data once you are live, so you judge on your own evidence, not a testimonial.' },
     { q: 'How do I know the product actually works, not just the pitch?', a: 'Test the WhatsApp button on this site. It is not a form — it is Jwero’s own inbox, answered by Jwero’s own AI workforce with approvals on. That is a live demo you can run before talking to anyone.' },
@@ -94,6 +94,11 @@ ${L.hero({
   primary: { href: '#', label: 'Get a live demo instead', wa: 'customers' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
+
+${L.section(
+  `${L.sectionHead('WHO RUNS ON JWERO', 'Real jewellery businesses, not stock logos.', 'Named with their permission — the first honest step before the numbered case studies below are ready to publish.')}
+  ${L.customerLogos()}`
+)}
 
 ${L.section(
   `${L.sectionHead('VERIFIED IN THE PRODUCT', 'Claims an engineer can check.', '')}
