@@ -219,18 +219,25 @@ main:focus-visible { outline: none; }
 .trust-bar a:hover { text-decoration: underline; }
 [data-theme="dark"] .trust-bar a { color: var(--brand-strong); }
 
-/* ---------- customer logo wall ---------- */
-.logo-wall { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; }
+/* ---------- customer logo wall (single-line auto-scroll) ---------- */
+.logo-wall-title { text-align: center; font-size: .85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 22px; }
+.logo-marquee {
+  overflow: hidden; width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+.logo-track { display: flex; align-items: center; gap: 14px; width: max-content; animation: logo-scroll 36s linear infinite; }
+.logo-marquee:hover .logo-track { animation-play-state: paused; }
+@keyframes logo-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .logo-chip {
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: center; flex: 0 0 auto;
   height: 64px; padding: 10px 20px;
   background: #ffffff; border: 1px solid var(--line); border-radius: 12px;
   box-shadow: 0 1px 2px rgba(11,13,26,.04);
-  transition: transform .15s ease, box-shadow .15s ease;
 }
-.logo-chip:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(11,13,26,.08); }
 .logo-chip img { max-height: 34px; max-width: 128px; width: auto; height: auto; object-fit: contain; }
 [data-theme="dark"] .logo-chip { background: #f4f5f9; border-color: transparent; }
+@media (prefers-reduced-motion: reduce) { .logo-track { animation: none; } }
 
 /* ---------- platform tabs (interactive category switcher) ---------- */
 .ptabs-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; border-bottom: 1px solid var(--line); }

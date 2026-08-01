@@ -95,10 +95,7 @@ ${L.hero({
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
-${L.section(
-  `${L.sectionHead('WHO RUNS ON JWERO', 'Real jewellery businesses, not stock logos.', 'Named with their permission — the first honest step before the numbered case studies below are ready to publish.')}
-  ${L.customerLogos()}`
-)}
+${L.section(L.customerLogos())}
 
 ${L.section(
   `${L.sectionHead('VERIFIED IN THE PRODUCT', 'Claims an engineer can check.', '')}

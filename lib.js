@@ -393,14 +393,16 @@ const CUSTOMER_LOGOS = [
   { name: 'L Sunderdas Zaveri', file: 'ls-zaveri.png' },
 ];
 
-function customerLogos(caption) {
+function customerLogos() {
+  const chip = (c) => `<div class="logo-chip" title="${esc(c.name)}"><img src="/assets/logos/customers/${c.file}" alt="${esc(c.name)} logo" loading="lazy" width="140" height="60"></div>`;
   return `
-<div class="logo-wall">
-  ${CUSTOMER_LOGOS.map(
-    (c) => `<div class="logo-chip" title="${esc(c.name)}"><img src="/assets/logos/customers/${c.file}" alt="${esc(c.name)} logo" loading="lazy" width="140" height="60"></div>`
-  ).join('')}
-</div>
-${caption ? `<p class="proof-caption">${caption}</p>` : ''}`;
+<p class="logo-wall-title">Trusted By</p>
+<div class="logo-marquee">
+  <div class="logo-track">
+    ${CUSTOMER_LOGOS.map(chip).join('')}
+    ${CUSTOMER_LOGOS.map(chip).join('')}
+  </div>
+</div>`;
 }
 
 module.exports = {

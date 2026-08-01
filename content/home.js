@@ -35,10 +35,7 @@ ${L.hero({
 
 ${L.trustBar('<strong>240+</strong> governed AI actions. Every one waits for your approval before a customer sees it.', { href: '/platform/ai-workforce', label: 'See how governance works' })}
 
-${L.section(
-  `<p style="text-align:center; font-size:.85rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); margin-bottom:22px;">Trusted by jewellery businesses running on Jwero</p>
-  ${L.customerLogos()}`
-)}
+${L.section(L.customerLogos())}
 
 ${L.section(
   `${L.sectionHead('THE IMPACT', 'What actually changes for your business.', 'Not features. Outcomes — the ones that show up in revenue, margin and the hours your team gets back.')}
