@@ -107,7 +107,7 @@ ${L.section(
   ${L.painRows([
     { quote: 'My best salesman left and took twenty years of customers in his pocket.', title: 'The memory belongs to the shop now', text: 'Every conversation, preference and promise lives on the store’s own record. Staff change; the relationship stays.' },
     { quote: 'Customers message at night. By morning they have bought elsewhere.', title: 'The counter that never closes', text: 'The AI workforce answers in minutes with real prices at today’s rate — and every draft waits for approval until you say otherwise.' },
-    { quote: 'We spend on festival marketing and cannot tell if a single sale came from it.', title: 'Invitations, not blasts', text: 'The right customers hear from you before the festival — personally, with consent — and the growth report tells you what came back.' },
+    { quote: 'We spend on festival marketing and cannot tell if a single sale came from it.', title: 'Invitations, not blasts', text: 'The right customers hear from you before the festival, personally, with consent — and the growth report tells you what came back.' },
     { quote: 'Someone walked out today. I don’t know who, what they tried, or why they didn’t buy.', title: 'Know who is in your shop, and who just left', text: 'A live floor view shows who is browsing right now; when someone leaves without buying, Walkout Rescue drafts a WhatsApp follow-up naming the exact pieces they tried — your team sends it. See <a href="/products/showroom">Showroom Intelligence</a>.' },
   ])}`
 )}
@@ -118,14 +118,14 @@ ${L.section(
     { title: 'Morning', text: 'The AI workforce has already answered three overnight WhatsApp enquiries with today’s gold rate. Your team reviews and approves the ones waiting.' },
     { title: 'Afternoon', text: 'A walk-in mentions her daughter’s wedding — your staff notes it once. From now on, every occasion journey knows it too.' },
     { title: 'Evening', text: 'A scheme instalment reminder goes out to five members. One replies asking for a plan comparison — the AI drafts it, your team sends it.' },
-    { title: 'Night', text: 'An 11pm enquiry gets a priced reply while you sleep. It’s waiting for your approval tap in the morning, not gone to a competitor.' },
+    { title: 'Night', text: 'An 11pm enquiry gets a priced reply while you sleep. It’s waiting for your approval tap in the morning; no competitor got there first.' },
   ], 4)}`
 , { tone: 'tint' })}
 
 ${L.jtbdBlock([
   { when: 'a customer messages after closing time', want: 'answer with real prices instantly', so: 'the enquiry doesn’t go to whoever replies first' },
   { when: 'a salesperson resigns', want: 'keep every customer relationship they built', so: 'the business doesn’t lose years of trust overnight' },
-  { when: 'a festival is coming', want: 'invite the right customers personally, not blast everyone', so: 'the marketing spend actually returns' },
+  { when: 'a festival is coming', want: 'invite the right customers personally instead of blasting the whole list', so: 'the marketing spend returns' },
 ])}
 
 ${L.section(
@@ -141,7 +141,7 @@ ${L.section(
   `${L.sectionHead('ILLUSTRATIVE IMPACT MODEL', 'What this could be worth in a store like yours.', 'Illustrative model on a ₹6cr/year single store with ~1,500 active customers — not a measured result. Run your own numbers, or ask for a 30-day growth report once you’re live.')}
   ${L.stats([
     { n: '~₹30L/yr', l: 'modelled extra revenue from a repeat-rate lift of 22%→27% (+5pt)' },
-    { n: '~₹1.2cr', l: 'modelled scheme float locked in — plus ~₹25L in top-up purchases — from 200 members at ₹5k/month' },
+    { n: '~₹1.2cr', l: 'modelled scheme float locked in, plus ~₹25L in top-up purchases — from 200 members at ₹5k/month' },
     { n: '~₹40L/yr', l: 'modelled WhatsApp-channel revenue from 2 attributed orders/week at a ₹40k average ticket' },
     { n: '~₹15L', l: 'modelled working capital freed by releasing 10% of a ₹1.5cr aged inventory' },
   ])}`
@@ -187,13 +187,13 @@ ${L.section(
     { quote: 'Every branch runs its own way. I find out about problems a month later.', title: 'One spine, every branch', text: 'Consistent pricing rules, catalogues and processes from the centre; controlled exceptions with approvals; an owner rollup that surfaces drift now, not at month-end.' },
     { quote: 'A customer of our city store walks into our new mall store and nobody knows her.', title: 'Network-wide memory', text: 'One customer record across branches: her purchases, plan balance and preferences greet her at every counter you own.' },
     { quote: 'Marketing spend per branch is a black box.', title: 'Central campaigns, measured locally', text: 'Festival journeys run from head office, execute per branch, and report what came back — by branch, by campaign, by customer.' },
-    { quote: 'I can’t tell which branch is actually earning its rent, or which salesperson is carrying the floor.', title: 'Compare every branch, on the floor, not just the ledger', text: 'Revenue-per-square-foot and a salesperson leaderboard sit side by side across every store. See <a href="/products/showroom">Showroom Intelligence</a>.' },
+    { quote: 'I can’t tell which branch is earning its rent, or which salesperson is carrying the floor.', title: 'See every branch’s floor performance, beyond the ledger', text: 'Revenue-per-square-foot and a salesperson leaderboard sit side by side across every store. See <a href="/products/showroom">Showroom Intelligence</a>.' },
   ])}`
 )}
 
 ${L.jtbdBlock([
   { when: 'a customer visits a branch she has never been to', want: 'have her full history and preferences on screen', so: 'every branch feels like the one she trusts' },
-  { when: 'a new branch opens', want: 'launch it on the same system, not a fresh implementation', so: 'growth doesn’t mean starting from zero every time' },
+  { when: 'a new branch opens', want: 'launch it on the same system instead of starting a fresh implementation', so: 'growth doesn’t mean starting from zero every time' },
   { when: 'the owner is travelling', want: 'see every branch’s numbers from one phone', so: 'distance doesn’t mean losing control' },
 ])}
 
@@ -201,7 +201,7 @@ ${L.section(
   `${L.sectionHead('ILLUSTRATIVE IMPACT MODEL', 'Chains have systems. Now every jeweller has one.', 'Illustrative model on a 5-store regional chain doing ₹35cr/year combined, ~7,500 active customers — not a measured result. Run your own numbers, or ask for a 30-day growth report once you’re live.')}
   ${L.stats([
     { n: '~₹1.1cr/yr', l: 'modelled revenue from a +4pt same-store repeat-rate lift across 7,500 customers' },
-    { n: '~₹4.8cr', l: 'modelled scheme float locked in — plus ~₹1cr in top-up purchases — from 800 members chain-wide at ₹5k/month' },
+    { n: '~₹4.8cr', l: 'modelled scheme float locked in, plus ~₹1cr in top-up purchases — from 800 members chain-wide at ₹5k/month' },
     { n: '~₹45L/yr', l: 'modelled shrinkage saving from cutting count variance 0.4%→0.15% on ₹18cr average stock' },
     { n: '~₹18L/yr', l: 'modelled value of recovering 15 lost leads/month chain-wide at a 25% close rate' },
   ])}`
@@ -237,9 +237,9 @@ const manufacturers = {
     { q: 'Can Jwero track gold loss per production stage?', a: 'Yes — an append-only work-in-progress ledger tracks fine weight through every stage with per-stage loss norms; abnormal loss is flagged the day it happens, not at year-end stocktake.' },
     { q: 'Does it handle artisan job-work?', a: 'Yes — job-work issue and receipt with weight reconciliation, gated by the rules you set per artisan and order.' },
     { q: 'Can wholesalers take orders on WhatsApp?', a: 'Yes — share live B2B catalogues with retailer-specific visibility, take orders in chat, and track the whole purchase-to-pay chain.' },
-    { q: 'Is karigar wage settlement included?', a: 'No — wage and payroll settlement for karigars is on the public roadmap, not shipped today. Job-work tracking itself — issue, receipt, weight reconciliation — is shipped now, and we say plainly what isn’t rather than imply otherwise.' },
+    { q: 'Is karigar wage settlement included?', a: 'No: wage and payroll settlement for karigars is on the public roadmap, not shipped today. Job-work tracking itself — issue, receipt, weight reconciliation — is shipped now, and we say plainly what isn’t rather than imply otherwise.' },
     { q: 'Will karigars resist being tracked more closely than the notebook they’re used to?', a: 'Frame it as job cards, not surveillance — the same records that catch abnormal loss also settle disputes in the karigar’s favour when they did nothing wrong. Job tracking protects both sides, not just the owner.' },
-    { q: 'Our process is unusual — casting, CAD or export-specific. Does this actually fit?', a: 'Casting, CAD and export-house specific pages exist because these workflows genuinely differ — see <a href="/solutions/casting-units">casting units</a>, <a href="/solutions/cad-services">CAD services</a> or <a href="/solutions/export-houses">export houses</a> for your exact fit rather than a generic answer.' },
+    { q: 'Our process is unusual — casting, CAD or export-specific. Does this fit?', a: 'Casting, CAD and export-house specific pages exist because these workflows genuinely differ — see <a href="/solutions/casting-units">casting units</a>, <a href="/solutions/cad-services">CAD services</a> or <a href="/solutions/export-houses">export houses</a> for your exact fit rather than a generic answer.' },
   ],
   body: `
 ${L.hero({
@@ -264,7 +264,7 @@ ${L.jtbdBlock([
   { when: 'a karigar takes a job-work order', want: 'issue and receive weight against a documented rule', so: 'disputes don’t become relationship damage' },
 ])}
 
-${L.section(`<div class="stack-verdict"><strong>Run your own number:</strong> the <a href="/tools/gold-loss-calculator">Gold-Loss Calculator</a> takes your production volume and the gap between observed and explained stocktake loss, and shows what it’s worth at today’s rate — a self-assessment, not an industry benchmark. For the full method, <a href="/blog/gold-loss-wastage-control-jewellery-manufacturing">read the gold-loss and wastage control guide →</a></div>`)}
+${L.section(`<div class="stack-verdict"><strong>Run your own number:</strong> the <a href="/tools/gold-loss-calculator">Gold-Loss Calculator</a> takes your production volume and the gap between observed and explained stocktake loss, and shows what it’s worth at today’s rate: a self-assessment rather than an industry benchmark. For the full method, <a href="/blog/gold-loss-wastage-control-jewellery-manufacturing">read the gold-loss and wastage control guide →</a></div>`)}
 
 ${L.section(
   `${L.stats([
@@ -288,7 +288,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('QUESTIONS MANUFACTURERS ASK', 'What manufacturers ask about job-work and loss.', '')}${L.faqBlock([
-  { q: 'Will karigars resist being tracked more closely?', a: 'Frame it as job cards, not surveillance — the same records that catch abnormal loss also settle disputes in the karigar’s favour. It protects both sides.' },
+  { q: 'Will karigars resist being tracked more closely?', a: 'Think job cards, rather than surveillance: the same records that catch abnormal loss also settle disputes in the karigar’s favour. It protects both sides.' },
   { q: 'Our process is unusual — casting, CAD, export-specific. Does this fit?', a: 'See <a href="/solutions/casting-units">casting units</a>, <a href="/solutions/cad-services">CAD services</a> or <a href="/solutions/export-houses">export houses</a> for your exact fit.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}

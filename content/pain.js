@@ -41,10 +41,10 @@ const deadStock = {
   description: 'Idle inventory eats financing, insurance and opportunity every month. See it, price it, and move it — with ageing analysis and memory-driven selling.',
   breadcrumbs: BC('Dead stock'),
   faqs: [
-    { q: 'How much does dead stock actually cost?', a: 'A piece that sits for a year costs roughly its financing rate plus insurance and handling — typically 12–18% of its value annually — plus the sales the locked capital never funded. The calculator on this page computes your number in 60 seconds.' },
+    { q: 'How much does dead stock actually cost?', a: 'A piece that sits for a year costs roughly its financing rate plus insurance and handling, typically 12–18% of its value annually — plus the sales the locked capital never funded. The calculator on this page computes your number in 60 seconds.' },
     { q: 'How does Jwero help move dead stock?', a: 'First, visibility: ageing bands and slow-mover views expose what is sitting. Then, memory: match idle designs to customers whose taste fits, and put them in front of the right people on WhatsApp — instead of melting margin with blanket discounts.' },
     { q: 'Does Jwero predict what will become dead stock?', a: 'Not yet — today’s inventory intelligence is ageing- and valuation-based visibility, not predictive forecasting. Predictive ML is on the public roadmap, and we won’t claim it before it ships.' },
-    { q: 'We’ve tried clearance sales before with limited results. What’s actually different here?', a: 'Matched selling finds the specific customers whose recorded taste and budget already fit the piece — a different mechanism from blanket discounts to whoever’s browsing, not just a bigger sale.' },
+    { q: 'We’ve tried clearance sales before with limited results. What’s actually different here?', a: 'Matched selling finds the specific customers whose recorded taste and budget already fit the piece — a different mechanism from blanket discounts to whoever’s browsing, rather than simply a bigger sale.' },
   ],
   body: `
 ${L.hero({
@@ -66,17 +66,17 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('THE JWERO PLAYBOOK', 'See it. Price it. Move it — with memory, not markdowns.', '')}
+  `${L.sectionHead('THE JWERO PLAYBOOK', 'See it. Price it. Move it — memory over markdowns.', '')}
   ${L.steps([
     { title: 'Expose', text: 'Ageing bands and slow-mover views make the sleeping stock undeniable — by piece, category and branch.' },
     { title: 'Match', text: 'Customer memory finds the people whose taste and budget fit each idle design. A 200-gram temple set has a buyer; she just hasn’t been asked.' },
-    { title: 'Move', text: 'Targeted WhatsApp catalogues to matched customers — personal invitations, not desperate discounts. Margin stays home.' },
+    { title: 'Move', text: 'Targeted WhatsApp catalogues to matched customers — personal invitations rather than desperate discounts. Margin stays home.' },
   ])}`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('QUESTIONS ABOUT DEAD STOCK', 'Cost, prediction and what actually moves it.', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('QUESTIONS ABOUT DEAD STOCK', 'Cost, prediction and what moves it.', '')}${L.faqBlock([
   { q: 'How much does dead stock actually cost?', a: 'Roughly 12–18% of value annually in financing, insurance and handling, plus the sales the locked capital never funded. Run the calculator for your number.' },
-  { q: 'How does Jwero help move it, differently from a clearance sale?', a: 'Matched selling finds the specific customers whose recorded taste and budget already fit the piece — a different mechanism from a blanket discount, not just a bigger one.' },
+  { q: 'How does Jwero help move it, differently from a clearance sale?', a: 'Matched selling finds the specific customers whose recorded taste and budget already fit the piece — a different mechanism from a blanket discount, rather than simply a bigger one.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
@@ -94,7 +94,7 @@ const leadLeakage = {
   faqs: [
     { q: 'How many enquiries does a typical business lose?', a: 'Most businesses cannot answer that question — which is the problem. Enquiries scattered across personal phones, DMs and missed calls have no owner, no record and no follow-up. The ones answered slowly or never are your quietest revenue leak.' },
     { q: 'How does Jwero stop the leak?', a: 'Every channel lands in one inbox attached to a customer record. The AI workforce drafts replies in minutes and follows up on schedule until there is an outcome. Nothing depends on someone remembering.' },
-    { q: 'We already have a WhatsApp tool for this. Isn’t the leak already plugged?', a: 'A messaging tool answers faster, but it still doesn’t know her purchase history or follow up on a schedule after she goes quiet — that’s the harder half of the leak, and it’s where most enquiries actually die.' },
+    { q: 'We already have a WhatsApp tool for this. Isn’t the leak already plugged?', a: 'A messaging tool answers faster, but it still doesn’t know her purchase history or follow up on a schedule after she goes quiet — that’s the harder half of the leak, and it’s where most enquiries die.' },
   ],
   body: `
 ${L.hero({
@@ -110,13 +110,13 @@ ${L.section(
   ${L.painRows([
     { quote: 'Enquiries come to whoever’s number is on the visiting card.', title: 'One inbox, owned by the business', text: 'WhatsApp, Instagram, Facebook and web chat land in one place, attached to customer records, visible to the team, assignable and accountable.' },
     { quote: 'We reply when we get time. Sometimes that is tomorrow.', title: 'Minutes, not mornings', text: 'The AI workforce drafts knowledgeable replies with live prices in minutes, around the clock. Speed is the first conversion lever in jewellery enquiries.' },
-    { quote: 'If she does not reply, we move on. Nobody follows up twice.', title: 'Follow-up that never forgets', text: 'Every open conversation is chased on schedule — politely, with context — until there is an outcome. The follow-up IS the sale.' },
+    { quote: 'If she does not reply, we move on. Nobody follows up twice.', title: 'Follow-up that never forgets', text: 'Every open conversation is chased on schedule, politely, with context — until there is an outcome. The follow-up IS the sale.' },
   ])}`
 )}
 
 ${L.section(`${L.sectionHead('QUESTIONS ABOUT LEAD LEAKAGE', 'Scale of the loss, and how it stops.', '')}${L.faqBlock([
   { q: 'How many enquiries does a typical business actually lose?', a: 'Most businesses can’t answer that — which is the problem. Enquiries with no owner and no record are the quietest revenue leak there is.' },
-  { q: 'We already have a WhatsApp tool. Isn’t this already solved?', a: 'A messaging tool answers faster but doesn’t know her history or follow up on schedule after she goes quiet — that’s where most enquiries actually die.' },
+  { q: 'We already have a WhatsApp tool. Isn’t this already solved?', a: 'A messaging tool answers faster but doesn’t know her history or follow up on schedule after she goes quiet — that’s where most enquiries die.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 

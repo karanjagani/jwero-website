@@ -57,7 +57,7 @@ ${L.section(
     { title: 'Prices that breathe', text: 'Catalogue prices update with the metal rate. No more "price on request" or stale PDFs.' },
     { title: 'Memory in every reply', text: 'Replies know her purchases, plan balance and taste — because the record and the chat are one system.' },
     { title: 'Broadcasts with manners', text: 'Consent, fatigue limits and quiet hours per customer. Reach thousands without burning your number or your name.' },
-    { title: 'Scheme conversations', text: 'Instalment reminders, balance checks and maturity congratulations — the messages customers actually thank you for.' },
+    { title: 'Scheme conversations', text: 'Instalment reminders, balance checks and maturity congratulations — the messages customers thank you for.' },
     { title: 'Group selling', text: 'Curated customer groups for launches and festivals, managed from the same inbox.' },
     { title: 'One inbox, whole team', text: 'Every conversation visible, assignable and owned by the business — with role-based access.' },
   ])}`
@@ -69,7 +69,7 @@ ${L.oneSystemBlock([
   'Her occasion journey — the anniversary invite next year — reads the same channel-preference field this conversation is updating right now.',
 ])}
 
-${L.section(`${L.sectionHead('WHATSAPP QUESTIONS', 'Bans, rule changes, and what actually sets this apart.', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('WHATSAPP QUESTIONS', 'Bans, rule changes, and what sets this apart.', '')}${L.faqBlock([
   { q: 'Will my number get banned?', a: 'No. Jwero uses the official WhatsApp Business API with approved templates, consent tracking and opt-out handling — the discipline that keeps accounts healthy.' },
   { q: 'What if Meta changes the rules?', a: 'Your customer records and catalogue live in Jwero, not inside the channel. Channels can change; your data doesn’t move with them.' },
   { q: 'How is this different from WATI or similar tools?', a: 'They send messages. Jwero replies come from a system that knows the customer and the jewellery, because they share one record. See <a href="/compare/jwero-vs-wati">Jwero vs WATI</a>.' },
@@ -201,7 +201,7 @@ ${L.section(
   ])}`
 )}
 
-${L.section(`${L.sectionHead('THE STAFF QUESTION', 'What your salespeople should actually worry about.', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('THE STAFF QUESTION', 'What your salespeople should worry about.', '')}${L.faqBlock([
   { q: 'Will this replace my sales staff?', a: 'No. The AI workforce does the remembering and follow-up; your people do the selling. Salespeople close more when every customer walks in already known.' },
   { q: 'My salespeople are worried about being watched or replaced. What do I tell them?', a: 'It works for them, not on them — it does the tedious remembering so they spend their time on the sale itself.' },
   { q: 'Can it give a discount without me knowing?', a: 'No — pricing and discounts follow your price rules and staff permissions, always.' },
@@ -240,7 +240,7 @@ const optimize = {
 ${L.hero({
   eyebrow: 'OPTIMIZE',
   h1: 'Your website stops being a brochure.',
-  sub: 'Visitors arrive, look around, and leave — and until now you had no idea where. Optimize shows you exactly that, and helps you catch the next one before they go: heatmaps, recordings, A/B experiments, personalization, popups, push and an AI webchat — reading and writing the same customer record as everything else.',
+  sub: 'Visitors arrive, look around, and leave, and until now you had no idea where. Optimize shows you exactly that, and helps you catch the next one before they go: heatmaps, recordings, A/B experiments, personalization, popups, push and an AI webchat — reading and writing the same customer record as everything else.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'optimize' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -249,7 +249,7 @@ ${L.section(
   `${L.sectionHead('SEE WHERE VISITORS DROP OFF', 'You cannot fix a leak you cannot see.', '')}
   ${L.cards([
     { title: 'Visitor analytics', text: 'Traffic, retention and geo on every visit — who’s coming back, and from where.' },
-    { title: 'Events, goals & funnels', text: 'Define the path — browse, enquire, checkout — and see exactly which step loses people.' },
+    { title: 'Events, goals & funnels', text: 'Define the path: browse, enquire, checkout — and see exactly which step loses people.' },
     { title: 'Heatmaps & session recordings', text: 'Grid-based heatmaps and full session recordings with snapshots show what visitors actually do on a product page, not what you assume they do.' },
   ])}`
 )}
@@ -264,7 +264,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('CATCH THE VISITOR BEFORE THEY LEAVE', 'Anonymous traffic becomes a lead, not a lost tab.', '')}
+  `${L.sectionHead('CATCH THE VISITOR BEFORE THEY LEAVE', 'Anonymous traffic becomes a lead instead of a lost tab.', '')}
   ${L.cards([
     { title: 'Popups & lead forms', text: 'A visual editor with design presets — exit-intent offers, lead capture and polls, built without a developer.' },
     { title: 'Web push', text: 'Visitors who decline chat can still opt into push — so a new collection or a scheme update can bring them back without ad spend.' },
@@ -274,7 +274,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('MANAGE THE SPEND THAT BRINGS THEM HERE', 'From watching traffic to running the ads that create it.', '')}
-  <p>Optimize tells you where visitors drop off — but the ads that brought them here live in their own workspace, with budget alerts and an AI strategist that drafts, never spends. Need to actually manage that spend? See <a href="/products/ads-manager">Ads Manager →</a>.</p>`
+  <p>Optimize tells you where visitors drop off — but the ads that brought them here live in their own workspace, with budget alerts and an AI strategist that drafts, never spends. Need to manage that spend? See <a href="/products/ads-manager">Ads Manager →</a>.</p>`
 )}
 
 ${L.oneSystemBlock([
@@ -285,9 +285,9 @@ ${L.oneSystemBlock([
 
 ${L.section(`${L.sectionHead('OPTIMIZE QUESTIONS', 'Consent, AI webchat, and what this replaces.', '')}${L.faqBlock([
   { q: 'How is this different from installing Hotjar or VWO myself?', a: 'Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your other modules use.' },
-  { q: 'Can the AI actually answer webchat questions?', a: 'Yes — AIVA drafts and sends replies using your catalogue and knowledge base, and marks a conversation for human takeover the moment it needs a person.' },
+  { q: 'Can the AI answer webchat questions?', a: 'Yes — AIVA drafts and sends replies using your catalogue and knowledge base, and marks a conversation for human takeover the moment it needs a person.' },
   { q: 'Is visitor data handled with consent?', a: 'Yes — consent settings, a domain guard and a CSS sanitizer are built into the suite.' },
-  { q: 'Can I manage my Meta/Google ad campaigns from here too?', a: 'Not inside Optimize — see <a href="/products/ads-manager">Ads Manager</a> for Meta, Google and Pinterest campaigns, budget alerts and an AI strategist that drafts, never spends.' },
+  { q: 'Can I manage my Meta/Google ad campaigns from here too?', a: 'Not inside Optimize — see <a href="/products/ads-manager">Ads Manager</a> for Meta, Google and Pinterest campaigns, budget alerts and an AI strategist that only drafts and never commits spend on its own.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
@@ -321,7 +321,7 @@ const storefront = {
 ${L.hero({
   eyebrow: 'ECOMMERCE WEBSITE',
   h1: 'A jewellery website that already knows how to sell jewellery.',
-  sub: 'If you don’t have a website yet, or you’re tired of forcing jewellery into a generic store builder, Jwero includes a native ecommerce website — a live-rate catalogue, cart, wishlist, comparison and checkout — built to sell rings and rates, not t-shirts.',
+  sub: 'If you don’t have a website yet, or you’re tired of forcing jewellery into a generic store builder, Jwero includes a native ecommerce website, a live-rate catalogue, cart, wishlist, comparison and checkout — built to sell rings and rates, not t-shirts.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'storefront' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -330,8 +330,8 @@ ${L.section(
   `${L.sectionHead('THE FIRST-WEBSITE PROBLEM', 'A brochure site isn’t an ecommerce website.', '')}
   ${L.cards([
     { title: 'No website yet', text: 'A first-time founder or single store often has no site at all — just Instagram and word of mouth. That’s enquiries with nowhere to close.' },
-    { title: 'Generic builders don’t speak jewellery', text: 'Prices that don’t move with the metal rate, no wishlist for a big-ticket decision, no way to compare two pieces — because the builder was made for t-shirts, not temple work.' },
-    { title: 'A separate system to reconcile', text: 'A store that doesn’t share the customer record means every online order is a manual re-entry into the CRM and billing you actually run the business on.' },
+    { title: 'Generic builders don’t speak jewellery', text: 'Prices that don’t move with the metal rate, no wishlist for a big-ticket decision, no way to compare two pieces: the builder was made for t-shirts rather than temple work.' },
+    { title: 'A separate system to reconcile', text: 'A store that doesn’t share the customer record means every online order is a manual re-entry into the CRM and billing you run the business on.' },
   ])}`
 )}
 
@@ -341,7 +341,7 @@ ${L.section(
     {
       lever: 'What the price actually is',
       before: 'A fixed price tag, manually edited whenever someone remembers the rate has moved — on Shopify, WooCommerce, or any generic builder.',
-      after: 'A live breakup — metal, purity, weight, rate-per-gram, stone and making-charge lines — that recalculates automatically the moment the rate changes, from the same pricing engine every other Jwero channel uses.',
+      after: 'A live breakup: metal, purity, weight, rate-per-gram, stone and making-charge lines — that recalculates automatically the moment the rate changes, from the same pricing engine every other Jwero channel uses.',
       link: { href: '/platform/pricing-engine', label: 'See the pricing engine' },
     },
     {
@@ -358,7 +358,7 @@ ${L.section(
     {
       lever: 'What the theme is dressed for',
       before: 'A generic retail theme, restyled with gold colours and a serif logo.',
-      after: 'Five jewellery-styled themes and eleven page templates built for this trade specifically — festive, gift-guide and lookbook layouts among them, not a t-shirt store in different fonts.',
+      after: 'Five jewellery-styled themes and eleven page templates built for this trade specifically, including festive, gift-guide and lookbook layouts, rather than a t-shirt store wearing different fonts.',
     },
   ])}`
 , { tone: 'tint' })}
@@ -366,19 +366,19 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('WHAT THE WEBSITE DOES', 'Browse, decide, buy — on one site.', '')}
   ${L.cards([
-    { title: 'Live-rate price breakup', text: 'Metal, purity, weight, stone and making-charge shown as a real breakup on the product page, not a single stale number.' },
-    { title: 'Cart, wishlist & compare', text: 'The three things a jewellery buyer actually needs before a big-ticket decision — not just an add-to-cart button.' },
+    { title: 'Live-rate price breakup', text: 'Metal, purity, weight, stone and making-charge shown as a real breakup on the product page instead of a single stale number.' },
+    { title: 'Cart, wishlist & compare', text: 'The three things a jewellery buyer actually needs before a big-ticket decision, beyond just an add-to-cart button.' },
     { title: 'Checkout, quotes & payments', text: 'Public catalogue pages, quote pages and payment pages carry a browsing customer all the way to paid.' },
     { title: 'Showroom-visit booking', text: 'A visit request from the website creates or updates her CRM contact and lands on the same expected-visits list your floor already uses.' },
     { title: 'Blog, reviews & landing pages', text: 'Content tools built for jewellery retail — a blog for SEO and story, reviews for trust, landing pages for campaigns.' },
-    { title: 'Your brand, not a template', text: 'Five jewellery-styled themes and eleven page templates, so the site looks like your business, not the software it runs on.' },
+    { title: 'Your brand, not a template', text: 'Five jewellery-styled themes and eleven page templates, so the site looks like your business rather than the software running it.' },
   ])}`
 )}
 
 ${L.oneSystemBlock([
   'An order here writes to the same customer record your WhatsApp replies and billing already update — no export, no re-entry.',
   'The catalogue and live-rate price breakup on the website are the same catalogue every other channel sells from.',
-  'A wishlist saved on the website is visible the next time she messages on WhatsApp — the same CRM contact, not a separate login.',
+  'A wishlist saved on the website is visible the next time she messages on WhatsApp, tied to the same CRM contact rather than a separate login.',
 ])}
 
 ${L.honestGapsBlock([
@@ -389,8 +389,8 @@ ${L.honestGapsBlock([
 
 ${L.section(`${L.sectionHead('ECOMMERCE WEBSITE QUESTIONS', 'Shopify, branding, and what this replaces.', '')}${L.faqBlock([
   { q: 'Do I need Shopify or WooCommerce to sell online?', a: 'No — Jwero includes a native ecommerce website that can be your website if you don’t have one yet.' },
-  { q: 'I already have a store. Do I have to switch?', a: 'No — it’s an option, not a replacement mandate. If you already run a store, /products/optimize and platform integrations add Jwero on top of it.' },
-  { q: 'What actually makes this jewellery-native?', a: 'A live metal/purity/stone price breakup that recalculates on rate change, and a wishlist backed by the same CRM contact record as your counter — not a themed generic store.' },
+  { q: 'I already have a store. Do I have to switch?', a: 'No, it’s an option rather than a replacement mandate. If you already run a store, /products/optimize and platform integrations add Jwero on top of it.' },
+  { q: 'What makes this jewellery-native?', a: 'A live metal/purity/stone price breakup that recalculates on rate change, and a wishlist backed by the same CRM contact record as your counter, well beyond a themed generic store.' },
   { q: 'Can it look like my brand?', a: 'Yes — five jewellery-styled themes and eleven page templates brand the site to match your business.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
@@ -434,9 +434,9 @@ ${L.section(
   ${L.cards([
     { title: 'Meta, Google & Pinterest', text: 'Each platform has its own integration and its own catalogue of supported campaign types — built for that platform, not a lowest-common-denominator form.' },
     { title: 'Create/edit wizard', text: 'One guided flow to build and adjust a campaign, instead of relearning three different ad-platform interfaces.' },
-    { title: 'Budget alerts', text: 'Get flagged when a campaign is approaching its limit — before the spend surprises you, not after.' },
+    { title: 'Budget alerts', text: 'Get flagged when a campaign is approaching its limit, before the spend can surprise you.' },
     { title: 'Approval before spend', text: 'Every campaign passes an approval step before it goes live. Nobody spends the marketing budget by accident.' },
-    { title: 'AI opportunity analysis', text: 'The AI strategist surfaces where a campaign is underperforming or where there’s budget headroom worth using — a draft recommendation, not an autopilot.' },
+    { title: 'AI opportunity analysis', text: 'The AI strategist surfaces where a campaign is underperforming or where there’s budget headroom worth using — a draft recommendation you review, rather than an autopilot.' },
     { title: 'Learnings dashboards', text: 'Performance and learnings in one view across platforms, so you compare Meta against Google against Pinterest without exporting three reports.' },
   ])}`
 )}
@@ -452,7 +452,7 @@ ${L.honestGapsBlock([
   'Direct one-click publishing of a campaign straight to the ad platform is not fully wired for every flow yet — some setups still need a manual publish step, which we will tell you about upfront rather than let a draft campaign silently sit unpublished.',
 ])}
 
-${L.section(`${L.sectionHead('ADS MANAGER QUESTIONS', 'Budget control, publishing, and what the AI actually does.', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('ADS MANAGER QUESTIONS', 'Budget control, publishing, and what the AI does.', '')}${L.faqBlock([
   { q: 'Does Jwero publish my campaign straight to the ad platform?', a: 'Campaigns are created, configured, budgeted and analyzed inside Jwero. Direct one-click publish to the ad platform is rolling out, not uniformly live yet — we will tell you plainly if your flow needs a manual step.' },
   { q: 'Can the AI spend my budget without me knowing?', a: 'No — it drafts opportunity analysis and learnings; every campaign needs your approval before spend.' },
   { q: 'Which platforms are covered?', a: 'Meta Ads, Google Ads and Pinterest, each with its own campaign-type catalogue.' },

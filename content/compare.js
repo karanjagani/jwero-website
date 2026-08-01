@@ -30,7 +30,7 @@ ${L.section(
   `${L.sectionHead('THE HONEST MATRIX', `Jwero vs ${name}, feature by feature.`, researchNote || `Jwero claims below are product-verified. ${name} claims are sourced from its own public marketing and independent review/pricing sites, checked July 2026 — anything more specific than that is marked [VERIFY].`)}
   ${L.compareTable(name, rows)}`
 , { tone: 'tint' })}
-${L.section(`${L.sectionHead('WHAT SWITCHERS SWITCH FOR', 'What switching actually buys you.', '')}${L.switchForBlock()}`)}
+${L.section(`${L.sectionHead('WHAT SWITCHERS SWITCH FOR', 'What switching buys you.', '')}${L.switchForBlock()}`)}
 ${L.section(`<div class="stack-verdict">${migrationNote || `Switching is a data question, not a leap of faith. See the <a href="/migration">Migration Centre</a> for exactly what moves and how.`}</div>`)}
 ${faqs && faqs.length ? L.section(`${L.sectionHead('QUESTIONS SWITCHERS ASK', `Questions about switching from ${name}.`, '')}${L.faqBlock(faqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`) : ''}
 ${L.ctaBand(`Plan the switch from ${shortName || name}.`, 'Tell us what you use today — we’ll map exactly what carries over and what changes.', waCtx)}
@@ -99,7 +99,7 @@ const ornateNx = comparePage({
   slug: 'ornate-nx', name: 'Ornate NX', shortName: 'Ornate NX',
   category: 'a jewellery ERP by Ornate Software with a touchscreen POS, karigar/artisan contact management, real-time financial accounting and a CRM/loyalty module, built for Indian diamond jewellery traders',
   concedeThem: 'you need touchscreen counter billing, karigar and artisan contact management, and real-time financial reporting (balance sheets, MIS) refined specifically for Indian jewellery retail over years — Ornate NX is built around exactly this.',
-  concedeJwero: 'you want the customer, the catalogue and every selling channel — WhatsApp, Instagram, storefront — to share one record, with a governed AI workforce handling follow-up. Most businesses run both: Ornate NX for the counter and ledger, Jwero for the revenue side.',
+  concedeJwero: 'you want the customer, the catalogue and every selling channel (WhatsApp, Instagram, storefront) to share one record, with a governed AI workforce handling follow-up. Most businesses run both: Ornate NX for the counter and ledger, Jwero for the revenue side.',
   waCtx: 'ornate',
   researchNote: 'Ornate NX facts are sourced from ornatesoftware.com and independent listings (SoftwareSuggest, Capterra India, Techjockey) checked July 2026. Ornate NX does not publish pricing — it is quote-on-request.',
   rows: [
@@ -164,7 +164,7 @@ const marg = comparePage({
   slug: 'marg', name: 'Marg ERP', shortName: 'Marg',
   category: 'a widely-used general retail billing ERP (₹18,500/piece as listed on IndiaMART) with touchscreen POS, barcode scanning, e-invoicing and GST e-way bill filing, used across many trades including jewellery',
   concedeThem: 'you want e-invoicing and GST e-way bill generation built in today, a large support organisation (Marg states 250+ support staff and 500+ tutorial videos), and a specific, publicly listed price point rather than a quote-on-request process.',
-  concedeJwero: 'you want a system built jewellery-first — live gold-rate pricing, purity/HUID catalogue fields, gold schemes and digital gold — with customers and every selling channel on the same record, not adapted from a general retail template.',
+  concedeJwero: 'you want a system built jewellery-first: live gold-rate pricing, purity/HUID catalogue fields, gold schemes and digital gold — with customers and every selling channel on the same record, not adapted from a general retail template.',
   waCtx: 'marg',
   researchNote: 'Marg facts are sourced from margcompusoft.com and an IndiaMART listing (₹18,500/piece, checked July 2026) — a distributor-listed price point, not necessarily Marg’s only or current pricing tier. Verify directly with Marg for your exact requirement.',
   rows: [
@@ -177,7 +177,7 @@ const marg = comparePage({
     { label: 'Governed AI workforce + WhatsApp/Instagram commerce', jwero: 'Yes', other: '[VERIFY]' },
   ],
   faqs: [
-    { q: 'Is Marg jewellery-specific?', a: 'Marg is a general retail billing ERP used across many trades, including jewellery, with a jewellery-adapted package. Jwero is built jewellery-first — live gold-rate pricing, purity and HUID-aware catalogue fields, and gold schemes are native, not adapted.' },
+    { q: 'Is Marg jewellery-specific?', a: 'Marg is a general retail billing ERP used across many trades, including jewellery, with a jewellery-adapted package. Jwero is built jewellery-first: live gold-rate pricing, purity and HUID-aware catalogue fields, and gold schemes are all native to the system from the ground up.' },
     { q: 'Does Marg really cost ₹18,500?', a: 'That is one distributor’s IndiaMART listing for the jewellery package we found in research — pricing likely varies by edition, users and region. Confirm directly with Marg for your case.' },
     { q: 'Marg already does e-invoicing — why would I switch?', a: 'If e-invoicing and GST e-way billing are your primary need today, Marg has that shipped and we don’t. We’d rather say so than pretend otherwise — <a href="/roadmap">it’s on our public roadmap</a>.' },
   ],
@@ -199,7 +199,7 @@ const sioniq = comparePage({
     { label: 'Published pricing', jwero: 'Being finalised — see /pricing', other: 'Not publicly listed' },
   ],
   faqs: [
-    { q: 'Why compare against a direct label rival honestly rather than avoid it?', a: 'Because our own honesty policy applies here too — SIONIQ genuinely has the broadest module list of anything we researched, including HR and digital gold. We’d rather concede that plainly and differentiate on what we can actually demonstrate: the governed AI workforce and the one-record architecture, live.' },
+    { q: 'Why compare against a direct label rival honestly rather than avoid it?', a: 'Because our own honesty policy applies here too — SIONIQ genuinely has the broadest module list of anything we researched, including HR and digital gold. We’d rather concede that plainly and differentiate on what we can demonstrate: the governed AI workforce and the one-record architecture, live.' },
     { q: 'Does SIONIQ have the same AI governance model as Jwero?', a: 'SIONIQ states it uses AI and machine learning for analytics and sales trends. We could not find public detail on approval queues, daily caps or a kill switch specifically — ask SIONIQ directly, or see our approval queue working live at <a href="/platform/ai-workforce">/platform/ai-workforce</a>.' },
   ],
 });
@@ -208,7 +208,7 @@ const zithara = comparePage({
   slug: 'zithara', name: 'Zithara', shortName: 'Zithara',
   category: 'an AI-first retail CRM (founded 2021) with a customer data platform, omnichannel campaigner and RFM segmentation, serving jewellery, luxury, electronics and wellness retailers — stated at 300+ brands, with named jewellery customers including Palmonas and Ernesto Buono Fine Jewellery',
   concedeThem: 'Zithara has public, numbered case studies we could independently verify — a Palmonas partnership, an Australian expansion via Ernesto Buono Fine Jewellery, and a stated 20% ROI result for retailer Q-Mart’s loyalty program. Jwero has named customers (see the logos on /customers) but not yet a published, numbered case study to match that — and we say so plainly rather than compete on claims we can’t back.',
-  concedeJwero: 'you want jewellery-native fields — scheme balances, purity, live gold-rate pricing — and full operations (inventory, orders, manufacturing) on the same record as engagement, not a CRM layer sitting on top of a separate operational system.',
+  concedeJwero: 'you want jewellery-native fields: scheme balances, purity, live gold-rate pricing — and full operations (inventory, orders, manufacturing) on the same record as engagement, not a CRM layer sitting on top of a separate operational system.',
   waCtx: 'zithara',
   researchNote: 'Zithara facts are sourced from zithara.ai, Indian Television, Telangana Today and PR coverage of its customer partnerships (checked July 2026) — Zithara’s named case studies are independently reported, not just self-claimed.',
   rows: [
@@ -308,7 +308,7 @@ const quicksell = comparePage({
     { label: 'Inventory & operations (repairs, manufacturing, orders)', jwero: 'Yes — one system', other: '[VERIFY — inventory tracking exists for catalogue purposes; full ops not evidenced]' },
   ],
   faqs: [
-    { q: 'Does QuickSell already do live gold-rate pricing?', a: 'Yes — QuickSell states automatic daily price changes based on bullion rates. We got this wrong in an earlier draft of this page and corrected it once we actually checked; the real differentiation is customer memory, schemes and operations sharing one record, not catalogue pricing.' },
+    { q: 'Does QuickSell already do live gold-rate pricing?', a: 'Yes — QuickSell states automatic daily price changes based on bullion rates. We got this wrong in an earlier draft of this page and corrected it once we checked; the real differentiation is customer memory, schemes and operations sharing one record, not catalogue pricing.' },
     { q: 'Is QuickSell enough for a small jewellery business?', a: 'If fast, lightweight catalogue sharing with live bullion pricing is genuinely all you need, QuickSell does that well and is widely used. The gap shows up the moment you want the catalogue, the customer relationship and the operation to share one record.' },
   ],
 });

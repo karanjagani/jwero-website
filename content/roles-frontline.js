@@ -50,7 +50,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts. You and your team approve. That doesn’t change.', '')}
-  <p class="lead">The parts of a store manager’s day that are genuinely tedious — typing out the same follow-up message, remembering to chase a scheme instalment, compiling a report from a register — are exactly what AI staff take off your plate, and only after a person approves each action. Nothing is sent, changed or decided without your team’s yes; the approval queue, daily caps and kill switch exist specifically so that stays true. What stays yours: reading the floor, deciding how to handle a difficult customer, coaching staff, and setting the judgment calls the AI drafts against. Leaning into that — the parts a system genuinely cannot do — is what makes a store manager more valuable here, not less.</p>`
+  <p class="lead">What stays yours: reading the floor, deciding how to handle a difficult customer, and coaching staff. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -119,7 +119,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts the message. You close the sale.', '')}
-  <p class="lead">The part of selling that’s genuinely repetitive — typing the same greeting, remembering to follow up, recalculating a price by hand — is what AI staff now draft, and only a person on your team approves before it reaches a customer. Nothing is sent on your behalf without your review. What stays entirely human: reading a customer’s hesitation in person, building trust across a counter, closing the sale, and the craftsmanship of a genuinely good recommendation. The associates who lean into that — using the data instead of competing with the drafting — are the ones this system makes more valuable, not less relevant.</p>`
+  <p class="lead">What stays entirely human: reading a customer’s hesitation in person, building trust across a counter, and closing the sale. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -188,7 +188,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The math is automated. You’re still the one at the counter.', '')}
-  <p class="lead">The part of billing that’s pure arithmetic — repricing to the live rate, computing GST, remembering to chase an overdue payment — is what Jwero now handles, so it stops being where cashiers lose time or make errors under pressure. That doesn’t touch the parts that still need a person: handing over the invoice, reassuring a customer about a price, handling the cash till and day-close on your existing counter. Nothing here runs unattended — the system prices and drafts; you and the counter process still complete the transaction. As POS ships and more of the counter workflow comes into Jwero, the same principle holds: it will still wait for a person to run it.</p>`
+  <p class="lead">Repricing and GST get handled automatically; handing over the invoice, reassuring a customer, and running the till stay yours — now and as POS ships more of the counter workflow. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(

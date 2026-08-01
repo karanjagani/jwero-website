@@ -18,7 +18,7 @@ const luxuryBoutique = {
 ${L.hero({
   eyebrow: 'FOR LUXURY & BOUTIQUE',
   h1: 'Clienteling worthy of what you sell.',
-  sub: 'White-glove memory for high-value clients — preferences, sizes, anniversaries — at every touchpoint, with private previews on WhatsApp instead of mass marketing.',
+  sub: 'White-glove memory for high-value clients: preferences, sizes, anniversaries — at every touchpoint, with private previews on WhatsApp instead of mass marketing.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'luxury' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   mock: L.mockMemory,
@@ -27,7 +27,7 @@ ${L.section(
   `${L.sectionHead('THE BOUTIQUE OWNER’S DILEMMA', 'Private marketing for high-value relationships.', '')}
   ${L.painRows([
     { quote: 'Generic mass marketing feels cheap for what we sell.', title: 'Private, not broadcast', text: 'Curated catalogue previews go to named clients, with your approval on every message — never a blast.' },
-    { quote: 'My clients expect privacy, not a mailing list.', title: 'Memory the client never sees, but always feels', text: 'Sizes, taste, past pieces and important dates — one record, visible only to your team.' },
+    { quote: 'My clients expect privacy. They didn’t sign up for a mailing list.', title: 'Memory the client never sees, but always feels', text: 'Sizes, taste, past pieces and important dates — one record, visible only to your team.' },
     { quote: 'We see clients rarely, and every visit has to count.', title: 'Low-frequency, high-stakes follow-up', text: 'Appointments and video-counter previews replace guesswork with a scheduled, prepared visit.' },
     { quote: 'A client browses, tries three pieces, and walks out. My team has no idea whom to follow up with, or how.', title: 'Clienteling that knows what she tried', text: 'The live floor view shows who is being served and what they looked at, so a follow-up can name the exact pieces, not a generic reminder. See <a href="/products/showroom">Showroom Intelligence</a>.' },
   ])}`
@@ -44,7 +44,7 @@ ${L.ctaBand('See white-glove memory in action.', 'Bring one client relationship 
 };
 
 const bridalFaqs = [
-  { q: 'Can multiple family members be tracked on one order?', a: 'Yes — the journey and conversation thread hold context for the whole family buying committee, not just one contact.' },
+  { q: 'Can multiple family members be tracked on one order?', a: 'Yes — the journey and conversation thread hold context for the whole family buying committee, beyond a single contact.' },
   { q: 'Can Jwero handle multi-visit trial and fitting cycles?', a: 'Yes — appointments, quotes and catalogue shares stay attached to one ongoing thread, so nothing gets lost between the first enquiry and the final fitting.' },
   { q: 'Does the relationship continue after the wedding?', a: 'Yes — anniversaries and future occasions are captured on the same record, so the bridal customer becomes a returning one.' },
   { q: 'Wedding season is our busiest and most fragile time. What if setup goes wrong then?', a: 'It won’t happen then — a season change-freeze policy means we never touch a live system during your peak weeks. Go-lives are scheduled before or after, never during.' },
@@ -53,7 +53,7 @@ const bridalFaqs = [
 const bridal = {
   slug: 'solutions/bridal',
   title: 'For Bridal & Wedding Jewellery Businesses | Jwero',
-  description: 'Track the whole family wedding journey — trials, quotes, dates, multiple decision-makers — in one thread, from first enquiry to the anniversaries after.',
+  description: 'Track the whole family wedding journey: trials, quotes, dates, multiple decision-makers — in one thread, from first enquiry to the anniversaries after.',
   breadcrumbs: BC('Bridal & wedding'),
   faqs: bridalFaqs,
   body: `
@@ -68,7 +68,7 @@ ${L.section(
   `${L.sectionHead('WHY BRIDAL BUSINESS LEAKS', 'Where wedding enquiries lose the thread.', '')}
   ${L.painRows([
     { quote: 'Between the first enquiry and the wedding date, we lose the thread — literally.', title: 'One thread, months long', text: 'Every quote, trial and fitting stays on the same conversation and customer record, from enquiry to delivery.' },
-    { quote: 'It’s never one decision-maker — it’s the whole family.', title: 'Built for the buying committee', text: 'The journey captures context for everyone involved, not just the name on the invoice.' },
+    { quote: 'It’s never one decision-maker — it’s the whole family.', title: 'Built for the buying committee', text: 'The journey captures context for everyone involved — well beyond the name on the invoice.' },
     { quote: 'Wedding season is chaos — we can’t give every enquiry the attention it deserves.', title: 'The AI workforce holds the line', text: 'Draft replies, appointment scheduling and follow-up run even at peak season — with your approval on every message.' },
   ])}`
 )}
@@ -115,14 +115,14 @@ ${L.section(
   `${L.sectionHead('A DAY IN YOUR DIAMOND COUNTER ON JWERO', 'Morning to night.', '')}
   ${L.steps([
     { title: 'Morning', text: 'A solitaire enquiry from last night already has a certificate-backed 4C reply drafted and waiting for your approval tap.' },
-    { title: 'Afternoon', text: 'A walk-in asks to compare two certified stones — your counter pulls both catalogue records side by side, with the numbers, not guesswork.' },
+    { title: 'Afternoon', text: 'A walk-in asks to compare two certified stones. Your counter pulls both catalogue records side by side, with real numbers instead of guesswork.' },
     { title: 'Evening', text: 'A quoted solitaire hasn’t moved in three weeks — it surfaces in your ageing view before it becomes dead stock nobody remembers to follow up on.' },
-    { title: 'Night', text: 'A late enquiry about a certified piece gets an accurate, approved-tone reply — while your team sleeps, not while a competitor answers first.' },
+    { title: 'Night', text: 'A late enquiry about a certified stone gets a reply with the right certificate and 4C details already quoted — while your team sleeps, so trust isn’t lost to a slow answer.' },
   ], 4)}`
 , { tone: 'tint' })}
 ${L.jtbdBlock([
   { when: 'a customer asks a technical 4C question', want: 'answer instantly with certificate-accurate detail', so: 'trust isn’t lost to a slow or vague reply' },
-  { when: 'a certified stone sits unsold for weeks', want: 'see it ageing before it becomes forgotten stock', so: 'capital tied up in solitaires gets followed up on, not written off' },
+  { when: 'a certified stone sits unsold for weeks', want: 'see it ageing before it becomes forgotten stock', so: 'capital tied up in solitaires gets followed up on instead of quietly written off' },
 ])}
 ${L.section(`${L.sectionHead('QUESTIONS DIAMOND RETAILERS ASK', 'What diamond retailers ask about trust and AI.', '')}${L.faqBlock(diamondRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="diamond">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
@@ -132,7 +132,7 @@ ${L.ctaBand('See a certified stone, sold end to end.', 'Bring one solitaire enqu
 };
 
 const goldRetailFaqs = [
-  { q: 'How does pricing stay accurate as the rate moves?', a: 'Catalogue prices are formulas — rate × weight × purity plus making charges — resolved live wherever the product appears. Change the rate once; everything follows.' },
+  { q: 'How does pricing stay accurate as the rate moves?', a: 'Catalogue prices are formulas: rate × weight × purity plus making charges — resolved live wherever the product appears. Change the rate once; everything follows.' },
   { q: 'Can I run my gold savings scheme alongside daily selling?', a: 'Yes — schemes, digital gold and everyday catalogue selling share the same customer record and pricing engine.' },
   { q: 'What if we mis-price something because the rate updated mid-conversation?', a: 'Prices resolve live at the moment they’re shown or invoiced, not cached from earlier in the day — that specific risk is what rate-linked pricing is built to remove.' },
 ];
@@ -165,13 +165,13 @@ ${L.section(
   ${L.steps([
     { title: 'Morning', text: 'The rate updates for the day — every catalogue price, open quote and pending invoice follows it automatically, nobody repricing by hand.' },
     { title: 'Afternoon', text: 'A scheme member walks in for her sixth instalment — her balance, past payments and maturity date are on screen before she finishes saying her name.' },
-    { title: 'Evening', text: 'An old-gold exchange gets logged straight onto the customer’s record, not a separate paper register that never makes it back to the shop file.' },
+    { title: 'Evening', text: 'An old-gold exchange gets logged straight onto the customer’s record instead of a separate paper register that never makes it back to the shop file.' },
     { title: 'Night', text: 'An enquiry about tomorrow’s rate gets an honest “checking and confirming by morning” reply — never a stale price quoted after the market moved.' },
   ], 4)}`
 , { tone: 'tint' })}
 ${L.jtbdBlock([
   { when: 'the gold rate changes mid-conversation', want: 'every open quote and catalogue price to follow automatically', so: 'nobody sells at yesterday’s price by mistake' },
-  { when: 'a scheme member walks in', want: 'see her balance and history instantly', so: 'the counter conversation starts from trust, not a lookup' },
+  { when: 'a scheme member walks in', want: 'see her balance and history instantly', so: 'the counter conversation starts from trust instead of a lookup' },
 ])}
 ${L.section(`${L.sectionHead('QUESTIONS GOLD RETAILERS ASK', 'What gold retailers ask about rate-linked pricing.', '')}${L.faqBlock(goldRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="gold">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
@@ -203,7 +203,7 @@ ${L.hero({
 ${L.section(
   `${L.sectionHead('WHERE SILVER RETAIL BLEEDS', 'Volume and thin margins, automated.', '')}
   ${L.painRows([
-    { quote: 'Thin margins mean we can’t afford manual work at this volume.', title: 'Bulk catalogue tools', text: 'Manage huge SKU counts efficiently — the catalogue is built for volume, not boutique piece counts.' },
+    { quote: 'Thin margins mean we can’t afford manual work at this volume.', title: 'Bulk catalogue tools', text: 'Manage huge SKU counts efficiently — the catalogue is built for volume rather than boutique piece counts.' },
     { quote: 'Trends change fast and we’re always guessing what to reorder.', title: 'Ageing and mover visibility', text: 'Fast/slow-mover views by category show what to reorder — evidence, not habit.' },
   ])}`
 )}
@@ -247,9 +247,9 @@ ${L.section(
   `${L.sectionHead('A DAY IN YOUR LAB-GROWN BUSINESS ON JWERO', 'Morning to night.', '')}
   ${L.steps([
     { title: 'Morning', text: 'An Instagram comment asking “is this real or lab-grown?” already has a catalogue-backed, educational draft reply waiting for your approval.' },
-    { title: 'Afternoon', text: 'A price-comparison DM gets an accurate, live-rate quote — not a stale number copied from last week’s post.' },
+    { title: 'Afternoon', text: 'A price-comparison DM gets an accurate, live-rate quote instead of a stale number copied from last week’s post.' },
     { title: 'Evening', text: 'Your Shopify store takes an order; it syncs to the same customer record your WhatsApp team is already using — one buyer, one history.' },
-    { title: 'Night', text: 'A first-time buyer’s enquiry becomes a saved record, not a one-off DM — so the second purchase starts from a relationship, not a cold message.' },
+    { title: 'Night', text: 'A first-time buyer’s enquiry becomes a saved record rather than a one-off DM, so the second purchase starts from a relationship instead of a cold message.' },
   ], 4)}`
 , { tone: 'tint' })}
 ${L.jtbdBlock([
@@ -287,7 +287,7 @@ ${L.section(
   `${L.cards([
     { title: 'Provenance-rich catalogue', text: 'Custom fields capture certification, origin and story per piece — not generic descriptions.' },
     { title: 'One-of-one inventory', text: 'Track unique pieces individually, shareable in one tap with the story intact.' },
-    { title: 'Occasion-aware journeys', text: 'Build follow-up and marketing journeys around the occasions your customers actually buy for.' },
+    { title: 'Occasion-aware journeys', text: 'Build follow-up and marketing journeys around the occasions your customers buy for.' },
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS GEMSTONE RETAILERS ASK', 'What gemstone retailers ask about one-of-one stock.', '')}${L.faqBlock(gemstoneRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}

@@ -72,7 +72,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts. You decide. That doesn’t change.', '')}
-  <p class="lead">The parts of this job that were always tedious — remembering who’s due for a call, typing the same reminder forty times, checking a register for scheme balances — are what Jwero’s AI workforce now drafts, inside an approval queue you control, with daily caps and quiet hours set by the business. Nothing reaches a customer without your yes. What stays entirely yours: deciding who actually gets called today, judging the tone a message needs, catching the customer whose situation the data can’t explain, and building the kind of relationship that a drafted message alone never will. The executives who lean into that judgment — not the typing — are the ones this role gets more valuable for, not less.</p>`
+  <p class="lead">What stays yours: deciding who gets called today, judging tone, and catching the customer whose situation the data can’t explain. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -159,7 +159,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts the replies. You own the strategy.', '')}
-  <p class="lead">The repetitive part of this job — answering the tenth "is this available in this size" DM, drafting a follow-up to a cart-abandoner, typing the same offer for different segments — is what Jwero’s AI workforce now drafts, inside an approval queue with daily caps and quiet hours the business sets. Every message waits for a person’s yes before it reaches a customer. What stays yours: campaign strategy, creative direction, brand voice, and the judgment call on which segment gets which offer. Jwero doesn’t predict what will perform — it gives you a clean, honest record of what did, so your judgment about what to run next gets sharper, not replaced.</p>`
+  <p class="lead">What stays yours: campaign strategy, creative direction, and which segment gets which offer — Jwero gives you a clean record of what performed, not a prediction. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -245,7 +245,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts the replies. You own the channel strategy.', '')}
-  <p class="lead">The repetitive load in this role — answering the same "is this in stock" DM, manually repricing listings after a gold-rate move, sending a generic abandoned-cart email — is what Jwero’s AI workforce and connectors now handle, with every customer-facing message waiting in an approval queue for your yes, governed by daily caps and quiet hours. What stays yours: merchandising decisions, storefront design, channel strategy, and deciding which conversations need a human touch rather than a drafted reply. Jwero doesn’t replace Shopify or predict demand for you — it removes the manual reconciliation between your storefront and your messaging channels, so your judgment goes toward growth decisions instead of stock-count firefighting.</p>`
+  <p class="lead">What stays yours: merchandising, storefront design, and channel strategy — Jwero just removes the manual reconciliation between your storefront and your messaging channels. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(

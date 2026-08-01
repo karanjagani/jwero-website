@@ -48,6 +48,17 @@ ${L.section(
     { title: 'Jewellery Software for Wedding Season', text: 'Enquiry speed, appointment load, scheme maturities, dead-stock timing — and why not to switch systems mid-season.', link: { href: '/blog/jewellery-software-wedding-season', label: 'Read the guide' } },
   ], 4)}`
 , { tone: 'tint' })}
+${L.section(
+  `${L.sectionHead('BUYING AND STARTING UP', 'Cost, comparisons and getting started, honestly.', '')}
+  ${L.cards([
+    { title: 'How Much Does Jewellery Software Cost in India?', text: 'The real cost anatomy — what a Frankenstack of separate tools adds up to, and what a unified platform changes.', link: { href: '/blog/jewellery-software-cost-india', label: 'Read the guide' } },
+    { title: 'Best Jewellery Software in India: How to Actually Compare', text: 'Not a ranked listicle — the criteria that actually separate jewellery-built software from generic retail tools.', link: { href: '/blog/best-jewellery-software-india', label: 'Read the guide' } },
+    { title: 'Where Does the Live Gold Rate Come From?', text: 'Manual entry vs a live feed, morning/evening rate sessions, and why purity-specific rates matter.', link: { href: '/blog/gold-rate-api-live-pricing', label: 'Read the guide' } },
+    { title: 'How to Start a Jewellery Business Online', text: 'Registration basics, sourcing, photography, and the honest tradeoff of starting lean.', link: { href: '/blog/start-jewellery-business-online', label: 'Read the guide' } },
+    { title: 'WhatsApp Business API Pricing for Jewellers', text: 'How Meta’s conversation-based pricing model actually works — without inventing a rate that will be stale by tomorrow.', link: { href: '/blog/whatsapp-business-api-pricing', label: 'Read the guide' } },
+    { title: 'Are Gold Savings Schemes Legal in India?', text: 'A common trade practice with a real compliance question behind it — and the practices that reduce risk either way.', link: { href: '/blog/are-gold-savings-schemes-legal', label: 'Read the guide' } },
+  ], 3)}`
+, { tone: 'tint' })}
 ${L.section(`<p style="font-size:.85rem; color:var(--ink-2);">More guides are coming — starting with the topics jewellers ask us about most on WhatsApp. <a href="#" data-wa="blog-hub">Tell us what you’d want covered</a>.</p>`)}
 `,
 };
@@ -103,11 +114,11 @@ ${L.section(
   <h2>The most common mistakes jewellers make on WhatsApp</h2>
   <p><strong>Running it on a personal number with no backup.</strong> When that staff member is on leave, sick, or leaves the business, the relationships they carried go dark or leave with them.</p>
   <p><strong>Treating it as a broadcast channel.</strong> Mass blasts to a full contact list, without consent tracking, are exactly the pattern that gets numbers restricted — and exactly the kind of messaging customers learn to ignore.</p>
-  <p><strong>No plan for after-hours enquiries.</strong> A jewellery store is open maybe 10–12 hours; WhatsApp enquiries don’t stop at closing time. Every enquiry that waits until morning for a reply is a chance for it to have already been answered — accurately — by someone else.</p>
+  <p><strong>No plan for after-hours enquiries.</strong> A jewellery store is open maybe 10–12 hours; WhatsApp enquiries don’t stop at closing time. Every enquiry that waits until morning for a reply is a chance for it to have already been answered, accurately, by someone else.</p>
   <p><strong>Selling without the record behind it.</strong> Catalogue shares, quotes and appointments that live only in the chat thread, disconnected from inventory, scheme balances or purchase history.</p>
 
   <h2>What a proper setup looks like</h2>
-  <p>Official API, on the number customers already have. A live-priced catalogue that’s always correct when opened. A shared team inbox so coverage doesn’t depend on one phone. A first response — drafted quickly, approved by a person before it sends — so an 11pm enquiry doesn’t sit unanswered until morning. And underneath all of it, one customer record that the chat, the catalogue and the sale all write to, so the relationship compounds instead of resetting every time.</p>
+  <p>Official API, on the number customers already have. A live-priced catalogue that’s always correct when opened. A shared team inbox so coverage doesn’t depend on one phone. A first response, drafted quickly, approved by a person before it sends, so an 11pm enquiry doesn’t sit unanswered until morning. And underneath all of it, one customer record that the chat, the catalogue and the sale all write to, so the relationship compounds instead of resetting every time.</p>
   </div>`
 )}
 
@@ -155,7 +166,7 @@ ${L.section(
   <p>What matters more than the exact cutoff is having one at all, tracked consistently, so "slow" and "dead" are measured the same way every month rather than judged by feel.</p>
 
   <h2>Why it’s worse in jewellery than in almost any other retail category</h2>
-  <p>Jewellery inventory ties up an unusually large amount of capital per square foot of shelf space, and most of that capital is financed — through working-capital loans, gold loan schemes, or the owner’s own money that could be earning a return elsewhere. Every month a piece sits unsold, it’s quietly costing the business the financing rate on that capital, plus insurance, storage and handling — and none of that shows up as a line item anywhere.</p>
+  <p>Jewellery inventory ties up an unusually large amount of capital per square foot of shelf space, and most of that capital is financed: through working-capital loans, gold loan schemes, or the owner’s own money that could be earning a return elsewhere. Every month a piece sits unsold, it’s quietly costing the business the financing rate on that capital, plus insurance, storage and handling — and none of that shows up as a line item anywhere.</p>
   <p>It only shows up as a smaller number in the bank account than the sales figures would suggest.</p>
 
   <h2>How the real carrying cost is calculated</h2>
@@ -217,7 +228,7 @@ ${L.section(
   <p>Members overwhelmingly redeem their corpus in person, at the counter — and typically add money at maturity to reach the piece they actually want, rather than spending exactly the corpus amount and no more. The scheme book you build this year is next year's booked traffic, collected in advance.</p>
 
   <h2>The classic structure, and why it's shaped that way</h2>
-  <p>The most common scheme structure is an 11-instalment plan: the member pays a fixed amount each month for eleven months, and redeems the full twelve-month value (or an equivalent) in jewellery. The structure rewards completion without asking the business to carry an open-ended liability, and it gives members a clear, short horizon rather than an indefinite savings commitment. Specific terms — instalment counts, bonus structures, lock-in periods — vary business to business, and should be set with your own compliance advisor rather than copied from a competitor's scheme.</p>
+  <p>The most common scheme structure is an 11-instalment plan: the member pays a fixed amount each month for eleven months, and redeems the full twelve-month value (or an equivalent) in jewellery. The structure rewards completion without asking the business to carry an open-ended liability, and it gives members a clear, short horizon rather than an indefinite savings commitment. Specific terms, instalment counts, bonus structures, lock-in periods, vary business to business, and should be set with your own compliance advisor rather than copied from a competitor's scheme.</p>
 
   <h2>Where paper-register schemes actually leak</h2>
   <p>The failure mode of a manually run scheme is almost never a member deciding to quit. It's drift: a missed month that nobody notices for weeks, because the register only gets reviewed occasionally, not against a due date. By the time someone follows up, the member has already mentally written off the scheme, or worse, feels chased rather than reminded.</p>
@@ -293,7 +304,7 @@ ${L.section(
   <p>Statutory GST filing, and e-invoice or IRN generation, stay exactly where they are today — inside Tally, or with your CA. E-invoice automation is a roadmap item, not something shipped, and this guide isn’t going to pretend otherwise. The line is simple: Jwero handles the invoice at the point of sale; Tally and your CA handle the statutory filing that follows.</p>
 
   <h2>How to have this conversation with your CA</h2>
-  <p>The version of this conversation that actually works is narrow and specific, not a broad pitch about "modernising the business." Show them three things: the books don’t move — Tally stays exactly where it is, same file, same login. Master data arrives pre-matched instead of retyped from a paper register or a WhatsApp message, which is fewer manual entry errors, not more risk. And transactions are still their entry, in their voucher format, until auto-posting ships — nothing is being taken out of their hands today.</p>
+  <p>The version of this conversation that actually works is narrow and specific, not a broad pitch about "modernising the business." Show them three things: the books don’t move. Tally stays exactly where it is, same file, same login. Master data arrives pre-matched instead of retyped from a paper register or a WhatsApp message, which is fewer manual entry errors, not more risk. And transactions are still their entry, in their voucher format, until auto-posting ships — nothing is being taken out of their hands today.</p>
   <p>That’s a conversation about reducing their typing, not replacing their judgment. It tends to land very differently than "we’re bringing in new software."</p>
 
   <h2>What changes for the accountant, in one sentence</h2>
@@ -341,7 +352,7 @@ ${L.section(postMeta(8, 'Manufacturing'))}
 ${L.section(
   `<div class="post-body">
   <h2>The oldest trust problem in the trade</h2>
-  <p>Gold loss — wastage — happens at every stage a piece passes through on its way from raw metal to finished jewellery: issue to a karigar, casting, filing and polishing, setting. Some of it is physical and unavoidable — metal genuinely lost as dust, scrap and process loss. Some of it is simply never accounted for, because the traditional way of tracking it is memory, or a paper register kept per karigar, updated when someone remembers to.</p>
+  <p>Gold loss, or wastage, happens at every stage a piece passes through on its way from raw metal to finished jewellery: issue to a karigar, casting, filing and polishing, setting. Some of it is physical and unavoidable — metal genuinely lost as dust, scrap and process loss. Some of it is simply never accounted for, because the traditional way of tracking it is memory, or a paper register kept per karigar, updated when someone remembers to.</p>
   <p>An illustrative range often cited in the trade is 0.5–2% of metal processed — worth treating as a rough guide, not a guarantee, since it varies by product type and process. The real problem isn’t the existence of that range. It’s that most businesses have no way of knowing where inside that range they actually sit, or whether one workshop, one karigar, or one process is running consistently higher than the rest.</p>
 
   <h2>Why wastage hides in an annual number</h2>
@@ -354,7 +365,7 @@ ${L.section(
 
   <h2>The old-gold and exchange chain</h2>
   <p>Old-gold and exchange transactions carry their own version of the same risk, because metal changes form multiple times before it re-enters usable stock: buyback intake, a melt lot, refining, and recovered metal valued back into raw-material inventory. Each of those steps is a point where weight can be under-recorded or simply not tracked at all.</p>
-  <p>A working chain records weight at every one of those steps — what came in at intake, what went into the melt lot, what came back from refining, what was valued into stock — so the whole path from a customer’s old piece to usable raw material is traceable, not a black box between "customer handed it over" and "stock went up."</p>
+  <p>A working chain records weight at every one of those steps: what came in at intake, what went into the melt lot, what came back from refining, what was valued into stock. That makes the whole path from a customer’s old piece to usable raw material traceable, not a black box between "customer handed it over" and "stock went up."</p>
 
   <h2>The recovery desk, and the outside-karigar problem</h2>
   <p>Scrap and filings generated during production are real recoverable metal, not a rounding error — and if there’s no dedicated place to book that recovery, it tends to just disappear into "shrinkage," indistinguishable from genuine loss. A recovery desk that books scrap and recovered metal as its own step closes that gap.</p>
@@ -425,10 +436,10 @@ ${L.section(
 
   <h2>QC before it goes back</h2>
   <p>Before a repaired piece reaches the counter for delivery, it should go through a reconciliation step: the same stones, described the same way, and the same weight recorded at intake, checked against what's now in hand. This is the step that actually prevents "you swapped my stone" — not because it stops a genuine mistake from happening, but because it catches the mistake before the customer does, and gives the business a record either way.</p>
-  <p>If the piece's hallmarking status needs to change — after resizing, or repair work that alters the metal — that's a separate gate before delivery too, not something folded quietly into "the job's done."</p>
+  <p>If the piece's hallmarking status needs to change, after resizing or repair work that alters the metal, that's a separate gate before delivery too, not something folded quietly into "the job's done."</p>
 
   <h2>Warranty as a reason to see them again</h2>
-  <p>A repair job doesn't have to end at delivery. A warranty or annual maintenance plan attached to the piece — with a defined entitlement and an inspection schedule — gives the business a structured, non-awkward reason to bring the customer back in six or twelve months, rather than hoping they remember to come in on their own.</p>
+  <p>A repair job doesn't have to end at delivery. A warranty or annual maintenance plan attached to the piece, with a defined entitlement and an inspection schedule, gives the business a structured, non-awkward reason to bring the customer back in six or twelve months, rather than hoping they remember to come in on their own.</p>
   <p>It also means the next time that piece needs work, there's already a record of its condition, its stones and its weight from the last visit — the custody chain compounds instead of starting from zero each time.</p>
 
   <h2>Starting simple, before software</h2>
@@ -481,7 +492,7 @@ ${L.section(
   <p>This guide isn't about hallmarking law — the specifics of what BIS requires should be confirmed directly with BIS guidance, not taken from a marketing page. It's about the much narrower, much more fixable problem: keeping the records you already generate organized enough that an audit is a retrieval exercise, not a research project.</p>
 
   <h2>What actually gets asked for</h2>
-  <p>In practice, a compliance check tends to circle around the same few things: which pieces carry a HUID and what it is, where a piece was between leaving the showcase and returning hallmarked, who touched a record and what they changed, and — occasionally — a specific customer's data if a data-subject request applies. None of these are exotic asks. They're the kind of thing that should already exist somewhere in the business. The question is whether "somewhere" means a searchable field or a stack of paper.</p>
+  <p>In practice, a compliance check tends to circle around the same few things: which pieces carry a HUID and what it is, where a piece was between leaving the showcase and returning hallmarked, who touched a record and what they changed, and, occasionally, a specific customer's data if a data-subject request applies. None of these are exotic asks. They're the kind of thing that should already exist somewhere in the business. The question is whether "somewhere" means a searchable field or a stack of paper.</p>
 
   <h2>The hallmark batch workflow, in order</h2>
   <p>Unhallmarked stock is easiest to lose track of at exactly the point it leaves the shop. A workable version of the workflow looks like this: an unhallmarked lot gets flagged in inventory, it's batched together for the trip to the hallmarking centre, custody is recorded on the way out and again on the way back in, each piece's HUID is captured individually once the lot returns, and labels are reprinted before that stock is activated for sale. Every step in that chain is a place where a record either gets created or doesn't — and the ones that don't get created are the ones that turn into gaps later.</p>
@@ -495,7 +506,7 @@ ${L.section(
   <p>Records only hold up under scrutiny if they can't be quietly edited after the fact without a trace. An activity log that captures sensitive changes as value diffs — what a field was, what it was changed to, and by whom — turns "I'm fairly sure that's right" into something that can actually be shown. This applies as much to a corrected HUID entry as to a custody update or a stock status change; the point isn't to prevent corrections, it's to make sure every correction is itself part of the record.</p>
 
   <h2>The five-minute retrieval test</h2>
-  <p>A simple way to check where a business actually stands, before an inspector or auditor asks: pick one piece at random and see how long it takes to produce its hallmark and HUID record, its custody chain if it went out for hallmarking, and the activity log showing any changes made to it since. If a specific customer's data needs to be pulled — a DSR export — that should be retrievable too, not reconstructed from memory across systems.</p>
+  <p>A simple way to check where a business actually stands, before an inspector or auditor asks: pick one piece at random and see how long it takes to produce its hallmark and HUID record, its custody chain if it went out for hallmarking, and the activity log showing any changes made to it since. If a specific customer's data needs to be pulled, a DSR export, that should be retrievable too, not reconstructed from memory across systems.</p>
   <p>If that takes five minutes because it's a search across a register, a courier slip and someone's recollection, the records exist but aren't organized. If it takes five minutes because it's a lookup, the discipline is already in place — audit day just becomes a slightly more formal version of a normal Tuesday.</p>
   </div>`
 )}
@@ -509,7 +520,7 @@ ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about rec
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-huid">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('Make audit day a retrieval, not a scramble.', 'Bring your current hallmarking register — we’ll show what it looks like as a searchable record instead.', 'blog-huid')}
+${L.ctaBand('Turn audit day into a quick lookup.', 'Bring your current hallmarking register — we’ll show what it looks like as a searchable record instead.', 'blog-huid')}
 `,
 };
 
@@ -552,10 +563,10 @@ ${L.section(
   <p>That distinction matters because it changes what the customer does next. A generic browse-everything page invites scrolling; a personal link invites a decision.</p>
 
   <h2>Tracking that tells you what a customer actually wants</h2>
-  <p>A PDF, once sent, is a black box — there's no way to know if it was opened, skimmed, or ignored. A digital catalogue link can be tracked: who viewed it, and which pieces they actually looked at. That's information a follow-up message can use directly — "I noticed you looked at the second necklace twice" is a far better opener than a generic check-in, and it only exists because the catalogue was live and trackable instead of a file sitting in a chat thread.</p>
+  <p>A PDF, once sent, is a black box. There's no way to know if it was opened, skimmed, or ignored. A digital catalogue link can be tracked: who viewed it, and which pieces they actually looked at. That's information a follow-up message can use directly — "I noticed you looked at the second necklace twice" is a far better opener than a generic check-in, and it only exists because the catalogue was live and trackable instead of a file sitting in a chat thread.</p>
 
   <h2>When a catalogue becomes a sale, not just a look</h2>
-  <p>The bigger shift is that a shared catalogue doesn't have to end in a message back to the shop asking "how do I pay." Catalogue pages can take the actual payment — Razorpay and Cashfree integration lets a customer check out on the same link they were browsing — and that order syncs straight into the order-management system, the same way any other order would. The catalogue isn't a brochure that leads to a sale elsewhere; it can be the point of sale itself.</p>
+  <p>The bigger shift is that a shared catalogue doesn't have to end in a message back to the shop asking "how do I pay." Catalogue pages can take the actual payment: Razorpay and Cashfree integration lets a customer check out on the same link they were browsing, and that order syncs straight into the order-management system, the same way any other order would. The catalogue isn't a brochure that leads to a sale elsewhere; it can be the point of sale itself.</p>
   <p>This is narrower than a full storefront on purpose. A catalogue is one curated link for one customer's conversation. For businesses that want a broader, generic online store — cart, wishlist, coupons, express checkout — that's a separate, fuller capability sitting alongside this, not a replacement for it.</p>
 
   <h2>Who this replaces</h2>
@@ -749,7 +760,7 @@ ${L.section(
   <p>Every weakness in a jewellery business's process shows up hardest during wedding season, because volume magnifies it. A reply that's a few hours slow in a quiet month is a lost customer in wedding season, when she's messaging three jewellers at once. A follow-up that gets forgotten in a quiet month is a lost sale worth many times more in wedding season, when the piece in question is a bridal set, not a daily-wear chain.</p>
 
   <h2>Enquiry response speed becomes the whole game</h2>
-  <p>Wedding-season shoppers compare aggressively — multiple jewellers, multiple designs, often across family members weighing in. Whoever answers first, accurately, with a real price at today's rate, tends to stay in the conversation. Whoever answers next morning has often already lost it. This is true year-round, but the volume and stakes of wedding season make it the single highest-leverage thing to get right before the season starts, not during it.</p>
+  <p>Wedding-season shoppers compare aggressively — multiple jewellers, multiple designs, often across family members weighing in. Whoever answers first, accurately, with a real price at today's rate, tends to stay in the conversation. Whoever answers next morning has often already lost it. This is true year-round, but the volume and stakes of wedding season make it the single highest-leverage thing to get right before the season starts, while there's still time to fix it.</p>
 
   <h2>Appointment load needs a system, not a notebook</h2>
   <p>Bridal buying involves showroom visits, often with multiple family members, often more than once before a decision. A booking system that shows real availability, and a record of what was shown and discussed at each visit, prevents the double-booked slot and the "what did we already show her" conversation that a busy season makes inevitable otherwise.</p>
@@ -757,11 +768,11 @@ ${L.section(
   <h2>Scheme maturities are often timed to this exact season</h2>
   <p>Gold savings schemes frequently mature around wedding timelines by design — customers save specifically for this purchase. A scheme book that isn't tracked digitally makes it easy to miss a maturity date, or to have a customer arrive ready to redeem while staff scramble to confirm her balance manually. Getting scheme tracking right before the season means maturities become a proactive outreach opportunity instead of a reactive scramble.</p>
 
-  <h2>Clear dead stock before the season, not during it</h2>
+  <h2>Clear dead stock before the season, when there's still time for it</h2>
   <p>The tray of pieces that have sat unsold for a year are exactly the inventory a business wants moving before wedding-season footfall arrives — both for cash flow and to make room and attention for what actually sells this season. Reviewing ageing inventory in the quiet weeks before the season starts is a far better time than trying to clear it while every hour is needed for active customers.</p>
 
   <h2>Why implementation should never happen mid-season</h2>
-  <p>This is the part vendors sometimes gloss over: switching systems, importing data or training staff during your busiest weeks is a genuinely bad idea, regardless of how good the software is. A season change-freeze — no disruptive changes during peak weeks, go-lives scheduled around the business's calendar — isn't a nice-to-have, it's a basic responsibility any vendor should hold themselves to. See <a href="/platform/onboarding">how onboarding is actually staged</a> around this.</p>
+  <p>This is the part vendors sometimes gloss over: switching systems, importing data or training staff during your busiest weeks is a genuinely bad idea, regardless of how good the software is. A season change-freeze, no disruptive changes during peak weeks, go-lives scheduled around the business's calendar, isn't a nice-to-have. It's a basic responsibility any vendor should hold themselves to. See <a href="/platform/onboarding">how onboarding is actually staged</a> around this.</p>
 
   <h2>What to have ready before the season starts</h2>
   <p>In order of leverage: fast, accurate WhatsApp response with live pricing; an appointment system that shows real availability; visible scheme balances and maturity dates; a dead-stock review, cleared before footfall picks up; and staff trained well before the first peak weekend, not during it.</p>
@@ -785,4 +796,374 @@ ${L.ctaBand('Plan your season before it starts.', 'Tell us your busiest weeks �
 `,
 };
 
-module.exports = [blogHub, whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide, crmErpGuide, checklistGuide, weddingGuide];
+// ---------------------------------------------------------------- Article 12: Software cost
+const costGuideFaqs = [
+  { q: 'What does jewellery software cost in India?', a: 'It depends on scope — a single WhatsApp tool can start under ₹3,000/month, a full unified platform costs more but replaces several of those tools at once. Jwero’s own pricing is being finalised per region — see <a href="/pricing">the pricing page</a> for the honest current frame, or ask us directly on WhatsApp.' },
+  { q: 'Is it cheaper to keep using separate tools?', a: 'On the sticker price of any one tool, often yes. Add up what a WhatsApp tool, a catalogue app, a website subscription and an SMS vendor cost together, plus the staff hours spent reconciling them, and the comparison usually looks different — see the Frankenstack breakdown on <a href="/pricing">the pricing page</a>.' },
+  { q: 'Why won’t this article just quote a price?', a: 'Because a single number without your scope, region and current stack attached would be more marketing than answer. This site’s pricing is still being finalised per region — the honest move is to point you to <a href="/pricing">the pricing page</a> for where that stands, and to a real conversation for a number that actually applies to your business.' },
+];
+
+const costGuide = {
+  slug: 'blog/jewellery-software-cost-india',
+  title: 'How Much Does Jewellery Software Cost in India? | Jwero',
+  description: 'What jewellery businesses in India actually pay across WhatsApp tools, catalogue apps, websites and SMS vendors — and what a unified platform changes.',
+  breadcrumbs: BC('Jewellery Software Cost in India'),
+  schema: postSchema('How Much Does Jewellery Software Cost in India?', 'What a jewellery business typically pays across separate tools today, and what a unified platform changes about that cost picture.'),
+  faqs: costGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · SOFTWARE COST',
+  h1: 'How Much Does Jewellery Software Cost in India?',
+  sub: 'The honest answer starts with a question most price pages skip: cost compared to what? Here’s the real anatomy of what a jewellery business pays today, and what changes when it moves to one system instead of five.',
+  primary: { href: '#', label: 'Ask us for a straight number', wa: 'blog-cost' },
+  secondary: { href: '/pricing', label: 'See our pricing page' },
+})}
+${L.section(postMeta(7, 'Software Cost'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>Why this question rarely gets a straight answer</h2>
+  <p>Search for jewellery software cost in India and most results either quote one vendor’s sticker price with no context, or dodge the question entirely with "contact us for pricing." Neither is very useful, because the real cost of running a jewellery business’s software isn’t one number. It’s the sum of whatever tools are already stitched together, plus the staff time spent keeping them in sync, plus whatever gets missed because nothing connects.</p>
+  <p>This isn’t going to invent a specific Jwero price here either — pricing is still being finalised per region, and the honest place for the current frame is <a href="/pricing">the pricing page</a>, not a blog post. What this article can do is lay out the cost anatomy clearly enough that a straight number, wherever you get it, means something.</p>
+
+  <h2>The tools a typical business is already paying for</h2>
+  <p>Most jewellery businesses aren’t paying for one piece of software. They’re paying for several, bought at different times, for different reasons, that were never designed to talk to each other. A WhatsApp bulk-messaging tool for festival blasts. A catalogue app to share designs. A website subscription that’s really a brochure. Sometimes an SMS vendor left over from before WhatsApp took over. And a scheme register, usually still on paper or in a spreadsheet, with staff hours spent reconciling it every month.</p>
+  <p>Each of those has its own subscription, its own login, and its own blind spot — none of them know what the others know about a given customer.</p>
+
+  <h2>What a category tool actually costs, roughly</h2>
+  <p>Named WhatsApp API platforms publish real numbers worth knowing before comparing anything against them. WATI’s published pricing runs roughly $39–229/month across tiers, plus a markup over Meta’s own per-message fees. Interakt publishes ₹3,499/quarter at entry up to ₹10,499/quarter at its higher tier. On the ecommerce side, Shopify’s published pricing runs from $39/month at the Basic tier up to $399/month at Advanced, with Shopify Plus priced separately from $2,300/month for larger operations. These are the vendors’ own published figures as of when our <a href="/compare">comparison pages</a> were last checked — confirm current numbers directly with each vendor, since pricing changes.</p>
+  <p>Stack even two or three of those alongside a catalogue app and an SMS vendor, and the combined monthly cost adds up before a single WhatsApp reply or gold-rate recalculation happens automatically between them.</p>
+
+  <h2>The cost that doesn’t show up on any invoice</h2>
+  <p>The sticker price of each separate tool is only part of the real cost. The rest is invisible: a staff member manually copying a customer’s number between the WhatsApp tool and the register, a catalogue that goes stale the moment the gold rate moves because nobody’s had time to update the PDF, a scheme instalment logged on paper that never makes it into anything the owner can see at a glance. None of that appears as a line item. It shows up as a smaller number in the bank account than the sales activity would suggest, and as customers who feel like strangers every time they come back.</p>
+
+  <h2>What changes when it’s one system instead of five</h2>
+  <p>A unified platform doesn’t make jewellery software free — but it changes what’s being paid for. Instead of five subscriptions each doing one job in isolation, one system holds the customer record, the catalogue, the WhatsApp inbox, the scheme balances and the invoicing together, so nothing needs reconciling between them by hand. Whether that nets out cheaper than the sum of separate tools depends on how many of those tools a specific business already runs, and what the staff time spent stitching them together is actually worth — which is exactly the math worth doing before comparing sticker prices alone.</p>
+
+  <h2>What this site can honestly tell you</h2>
+  <p>Jwero’s own pricing is still being finalised per region, so this article isn’t going to manufacture a number that doesn’t exist yet. What it can point to is <a href="/pricing">the pricing page</a>, which lays out the tier structure and the Frankenstack comparison honestly, and a direct conversation on WhatsApp, where a real number gets discussed against your actual current stack rather than a generic estimate.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('SEE IT WORKING', 'The Frankenstack math, laid out plainly.', 'The pricing page walks through exactly what a typical business pays across separate tools today, row by row — not a single sticker price with no context.')}
+  <p><a class="btn btn-ghost" href="/pricing">See the pricing page</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about cost.', '')}${L.faqBlock(costGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-cost">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Get a straight number for your own stack.', 'Tell us what you currently pay for, tool by tool — we’ll show you honestly what changes and what it costs.', 'blog-cost')}
+`,
+};
+
+// ---------------------------------------------------------------- Article 13: Best jewellery software
+const bestSoftwareGuideFaqs = [
+  { q: 'What’s the single most important thing to check first?', a: 'Whether it prices by purity, not just by category. 24K, 22K, 916, 18K and 14K each need their own rate — a system that blends them into one number is a generic retail tool with jewellery labels on it, not built for the trade.' },
+  { q: 'Should I trust a “best jewellery software” ranking online?', a: 'Treat any ranked listicle with real skepticism, including ones that look independent — many are paid placements or affiliate content with no disclosed methodology. A vendor-agnostic checklist of criteria, applied to your own shortlist, tells you more than someone else’s ranking.' },
+  { q: 'How many vendors should I actually compare?', a: 'Two or three, evaluated properly against the same checklist, beats ten evaluated superficially. Depth of comparison matters more than breadth — see named, sourced comparisons on the <a href="/compare">compare hub</a> if you want specifics.' },
+];
+
+const bestSoftwareGuide = {
+  slug: 'blog/best-jewellery-software-india',
+  title: 'Best Jewellery Software in India: How to Actually Compare | Jwero',
+  description: 'A practical guide to comparing jewellery software: purity-based pricing, WhatsApp API vs unofficial tools, data ownership and AI governance — no rankings.',
+  breadcrumbs: BC('Best Jewellery Software: How to Compare'),
+  schema: postSchema('Best Jewellery Software in India: How to Actually Compare', 'The criteria that actually matter when evaluating jewellery software in India — purity pricing, WhatsApp compliance, data ownership and AI governance.'),
+  faqs: bestSoftwareGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · COMPARING JEWELLERY SOFTWARE',
+  h1: 'Best Jewellery Software in India: How to Actually Compare',
+  sub: 'This isn’t a ranked list naming a winner — that’s not something a vendor writing about itself can do honestly. It’s the criteria that actually separate a system built for jewellery from a generic retail tool wearing jewellery fields, so you can judge any vendor, including us, properly.',
+  primary: { href: '#', label: 'Ask us these questions directly', wa: 'blog-bestsoftware' },
+  secondary: { href: '/blog/jewellery-software-buyer-checklist', label: 'Read the full buyer’s checklist' },
+})}
+${L.section(postMeta(8, 'Comparing Jewellery Software'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>Why this isn’t a ranked list</h2>
+  <p>A "best jewellery software" listicle that names a winner is, almost always, either paid placement dressed up as editorial content, or a company ranking itself first. We’re not going to pretend to be a neutral third party ranking ourselves and competitors — that would contradict the same honesty standard this whole site tries to hold. What’s actually useful, and what a vendor can write honestly, is the set of criteria that separates jewellery-specific software from generic retail software, so you can apply it yourself to whatever shortlist you’re evaluating, Jwero included.</p>
+
+  <h2>Purity-based pricing, not category pricing</h2>
+  <p>This is the first real test. Jewellery isn’t priced like most retail categories — 24K, 22K, 916, 18K and 14K each carry their own rate, updated as the metal rate moves, sometimes twice a day. A system that treats "gold jewellery" as one priced category, rather than resolving a rate per purity, per weight, is a generic retail platform with a jewellery skin over it. Ask any vendor to show you the rate card, not describe it.</p>
+
+  <h2>Official WhatsApp API, or an unofficial bulk tool</h2>
+  <p>This distinction matters more than it looks. The official WhatsApp Business API supports approved templates, consent tracking and multiple team members on one number safely. Unofficial "bulk sender" tools that spoof the app are the most common way jewellery businesses lose a WhatsApp number entirely — Meta actively detects and restricts numbers that behave like spam senders. Ask directly which one a vendor runs on; the answer is usually in the fine print, if it’s disclosed at all.</p>
+
+  <h2>Data ownership: can you actually leave?</h2>
+  <p>Ask whether you can export your data, in standard formats, at any time — and get that in writing, not a verbal assurance during a sales call. Also worth asking: is your business’s data isolated from every other customer’s, or does it sit in a shared table distinguished only by a row-level flag? A database-per-business architecture is a materially different security posture, and it’s a fair question to ask any vendor plainly.</p>
+
+  <h2>AI governance, if the product uses AI at all</h2>
+  <p>A growing number of jewellery platforms now offer some form of AI reply or automation. The question that actually matters isn’t whether AI exists — it’s whether a human approves before anything reaches a customer, whether there’s a daily cap on automated actions, and whether there’s a kill switch, and at what scope. "We use AI" is a marketing line. "Here’s the approval queue, live" is a product you can actually evaluate.</p>
+
+  <h2>Honest roadmaps over polished demos</h2>
+  <p>Every vendor demo looks finished. The tell is what happens when you ask what isn’t built yet. A vendor with a specific, public answer — "this syncs automatically, this still needs a manual voucher, here’s what’s on the roadmap" — is more trustworthy than one that implies everything is done. This one criterion alone filters out more bad fits than any feature comparison.</p>
+
+  <h2>Where to go from here</h2>
+  <p>This guide is deliberately about how to evaluate, not who wins — for the full 15-question version of this checklist, read <a href="/blog/jewellery-software-buyer-checklist">the buyer’s checklist</a>. If you want named, sourced comparisons against specific tools jewellery businesses already use — WATI, Shopify, Zoho CRM, Marg ERP and others — those live on the <a href="/compare">compare hub</a>, with published pricing and dated research notes rather than a vague "we’re better" claim.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('SEE IT WORKING', 'Apply the checklist to us directly.', 'Bring this list to a conversation with us the same way you’d bring it to any vendor — we’ll answer plainly, including the questions our honest answer is “not yet.”')}
+  <p><a class="btn btn-ghost" href="/blog/jewellery-software-buyer-checklist">Read the full 15-question checklist</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about comparing software.', '')}${L.faqBlock(bestSoftwareGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-bestsoftware">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Ask us this checklist directly.', 'We’ll answer every criterion honestly, including where the answer is “not yet.”', 'blog-bestsoftware')}
+`,
+};
+
+// ---------------------------------------------------------------- Article 14: Live gold rate
+const goldRateGuideFaqs = [
+  { q: 'Does live gold-rate pricing mean an automatic feed is required?', a: 'No. Rates can be entered manually each session — a common am/pm pattern in the trade — or pulled from a live feed; a jewellery business chooses per metal. “Live” describes how the price resolves at the moment it’s viewed, not necessarily where the rate itself comes from.' },
+  { q: 'Why do purity-specific rates matter so much?', a: 'Because 24K, 22K, 916, 18K and 14K are genuinely different products with different metal content, not variations of the same rate. A system that blends them into one number is either approximating or wrong for anything that isn’t the purity it was calibrated for.' },
+  { q: 'How does a rate change reach every price at once?', a: 'By storing a formula instead of a number — rate × weight, plus making charge, plus stone value — resolved fresh at the moment a price is viewed. Update the rate once, and the catalogue, the website and the counter all resolve against the new rate together, rather than needing three separate manual updates.' },
+];
+
+const goldRateGuide = {
+  slug: 'blog/gold-rate-api-live-pricing',
+  title: 'Where Does the Live Gold Rate Come From? A Jeweller’s Guide | Jwero',
+  description: 'How live metal-rate pricing actually works for a jewellery business: manual entry vs live feeds, morning/evening sessions, and purity-specific rates.',
+  breadcrumbs: BC('Live Gold Rate Guide'),
+  schema: postSchema('Where Does the Live Gold Rate Come From? A Jeweller’s Guide', 'How live gold-rate pricing works in a jewellery business — manual entry vs a live feed, rate sessions, and why purity-specific rates matter.'),
+  faqs: goldRateGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · LIVE GOLD RATE PRICING',
+  h1: 'Where Does the Live Gold Rate Come From? A Jeweller’s Guide',
+  sub: '“Live pricing” gets thrown around a lot in jewellery software marketing. Here’s what it plainly means, in practice — where the rate actually comes from, why purity matters, and how one rate change should reach every price at once.',
+  primary: { href: '#', label: 'See a price resolve live', wa: 'blog-goldrate' },
+  secondary: { href: '/platform/pricing-engine', label: 'See the pricing engine' },
+})}
+${L.section(postMeta(6, 'Pricing & Rates'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>Manual entry vs a live feed</h2>
+  <p>There are two honest ways a jewellery business gets its metal rate into a pricing system, and neither one is wrong. The first is manual entry: a staff member checks the day’s rate — often from a trusted local source or a bullion association update — and enters it into the system, once or twice a day. The second is a live feed, where the rate updates automatically from a connected source as it moves. A real pricing engine should let a business choose per metal, rather than forcing one approach on everything it sells.</p>
+  <p>"Live pricing" doesn’t strictly require an automatic feed. What it actually describes is what happens after the rate is in the system — whether a price is stored as a fixed number that goes stale, or resolved fresh, from a formula, every time it’s viewed.</p>
+
+  <h2>The morning and evening rate session, and why it exists</h2>
+  <p>A genuine trade practice in many jewellery markets is the twice-daily rate session — a morning rate and an evening rate, reflecting how gold and silver actually move within a single trading day. A system built for the trade should support this rhythm directly, rather than assuming a rate only ever changes once a day or once a week. This isn’t a technical nicety; it’s matching the software to how the business actually operates, not the other way around.</p>
+
+  <h2>Why purity-specific rates aren’t optional</h2>
+  <p>24K, 22K, 916, 18K and 14K aren’t variations on a theme — they’re different metal content, and a rate that’s correct for one is wrong for the others. A rate card built for the trade carries its own rate per metal and purity, not one blended number stretched across everything a business sells. This matters most at the exact moment a customer compares two pieces of different purity and expects the price difference to make sense, not just look approximately right.</p>
+
+  <h2>What actually gets priced, beyond the rate</h2>
+  <p>The metal rate is one input among several. A resolved price is the rate multiplied by weight, plus a making charge — which can be a percentage of metal value, a per-gram amount, or a flat fee depending on the category — plus stone or gemstone value priced separately, often tied to a certificate on file. Wastage, where a business applies it, is tracked as its own distinct percentage rather than quietly folded into the making charge. None of these inputs are stored as a fixed final number; the price is a formula, resolved at the moment it’s needed.</p>
+
+  <h2>Propagating a rate change everywhere at once</h2>
+  <p>The practical benefit of pricing this way shows up the moment a rate moves. Because the price was never stored as a static number, updating the rate once means every catalogue link, every website page and every counter terminal resolves against the new rate the next time it’s viewed — not three or four separate manual updates that inevitably drift out of sync with each other. A screenshot sent an hour ago and a page opened just now show the same, correct price, because both are resolving the same live formula rather than displaying a snapshot.</p>
+
+  <h2>What this doesn’t claim</h2>
+  <p>This guide is deliberately staying close to how a pricing engine mechanically works, not making claims about specific rate sources, accuracy guarantees, or real-time market-data licensing — those specifics vary by provider and region, and are worth confirming directly rather than assumed from a blog post. For the fuller technical picture of how Jwero’s own pricing engine handles rate cards, making-charge models, stone pricing and override rules, see <a href="/platform/pricing-engine">the pricing engine page</a>.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('SEE IT WORKING', 'A price, resolved live, with the formula shown.', 'The pricing engine page walks through exactly what goes into a resolved price — rate, purity, making charge, wastage and stone value — and how an override gets logged.')}
+  <p><a class="btn btn-ghost" href="/platform/pricing-engine">See the pricing engine in detail</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about rates and pricing.', '')}${L.faqBlock(goldRateGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-goldrate">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('See your own rate card resolve live.', 'Bring one real product and your current rate — we’ll show the formula resolving, purity by purity.', 'blog-goldrate')}
+`,
+};
+
+// ---------------------------------------------------------------- Article 15: Start jewellery business online
+const startOnlineGuideFaqs = [
+  { q: 'Do I need GST registration before selling jewellery online?', a: 'This depends on your turnover, structure and state — it’s a real compliance question, not something to take from a blog post. Confirm registration and disclosure requirements with your own CA before you start invoicing.' },
+  { q: 'Should I start with WhatsApp or a full website?', a: 'Most first-time founders start where the conversation already happens — WhatsApp — because it needs no separate audience to build. A website matters more once there’s a catalogue and a reason for people to browse rather than ask directly; many businesses run both together once they’re past the very first stage.' },
+  { q: 'Can I run a jewellery business without holding much stock upfront?', a: 'Many new businesses start lean — a smaller curated catalogue, made-to-order or limited stock, sourced against confirmed demand rather than large upfront inventory. This keeps working capital lower at the stage it matters most, though it trades off some instant-fulfilment convenience.' },
+];
+
+const startOnlineGuide = {
+  slug: 'blog/start-jewellery-business-online',
+  title: 'How to Start a Jewellery Business Online | Jwero',
+  description: 'A practical starter guide to launching a jewellery business online: registration basics, sourcing, photography, WhatsApp vs a storefront, starting lean.',
+  breadcrumbs: BC('Starting a Jewellery Business Online'),
+  schema: postSchema('How to Start a Jewellery Business Online', 'A practical guide for first-time founders starting a jewellery business online — registration, sourcing, photography, and the WhatsApp-vs-storefront tradeoff.'),
+  faqs: startOnlineGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · STARTING ONLINE',
+  h1: 'How to Start a Jewellery Business Online',
+  sub: 'Starting a jewellery business online doesn’t require a warehouse, a big team or a finished website on day one. Here’s a practical, honest starting sequence — not legal or tax advice, but the shape of what actually comes first.',
+  primary: { href: '#', label: 'Talk through your first steps', wa: 'blog-startonline' },
+  secondary: { href: '/solutions/startups', label: 'See the startups playbook' },
+})}
+${L.section(postMeta(8, 'Starting Online'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>Registration and GST, in general terms</h2>
+  <p>Every jewellery business, online or not, eventually needs to deal with business registration and, depending on turnover and structure, GST. This is a genuine legal and tax question that depends on your specific situation — state, structure, turnover thresholds — and it deserves an actual CA’s answer, not a generic checklist from a blog post. What’s worth knowing upfront is simply that this step exists and shouldn’t be an afterthought once sales have already started; get the registration conversation going early, in parallel with everything else on this list, not after.</p>
+
+  <h2>Sourcing: the decision that shapes everything else</h2>
+  <p>How you source pieces determines almost everything downstream — pricing, lead time, how much capital sits idle as inventory. Broadly, new online jewellery businesses source one of a few ways: buying finished pieces from wholesalers or manufacturers, working with a karigar on made-to-order pieces, or some mix depending on category. Starting lean often means leaning toward made-to-order or a smaller curated catalogue rather than a large upfront stock purchase — it trades some instant-fulfilment convenience for meaningfully lower working capital at the exact stage that capital is hardest to come by.</p>
+
+  <h2>Photography that actually sells jewellery</h2>
+  <p>Jewellery photography has its own quiet rules: consistent, even lighting that doesn’t wash out stone colour, a plain or consistent background so a small catalogue doesn’t look mismatched, and multiple angles so a customer can judge proportion, not just sparkle. A phone with a steady tripod and good natural light gets a new business further than expensive equipment used badly. What matters most at this stage is consistency across the catalogue — a customer scrolling through five pieces shot five different ways reads as unprofessional even if each individual photo is fine.</p>
+
+  <h2>WhatsApp first, or a full storefront first?</h2>
+  <p>This is the real early decision, and there’s an honest tradeoff either way. WhatsApp needs no audience-building of its own — it works with whatever contacts and referrals a founder already has, and conversations there convert well because jewellery is sold on trust and back-and-forth, not a single browse-and-buy click. A full ecommerce website matters more once there’s a catalogue worth browsing and a reason for strangers to land on it — search, ads, social traffic that isn’t already a warm contact.</p>
+  <p>Most founders are better served starting with WhatsApp, because it’s where the first real sales conversations happen with the least setup — and adding a website once there’s traffic worth sending somewhere, rather than building a storefront nobody visits yet. See <a href="/products/storefront">the Ecommerce Website</a> for what that looks like when the business is ready for it, alongside WhatsApp and Instagram commerce.</p>
+
+  <h2>The honest tradeoff of starting lean</h2>
+  <p>Starting lean — smaller catalogue, made-to-order sourcing, WhatsApp before a full website — genuinely trades some things away: slower fulfilment on pieces not already in hand, a narrower range for a customer to browse, less polish than an established competitor’s storefront. What it buys in return is lower upfront capital, a faster real start, and room to learn what actually sells before committing to a large inventory position. Neither path is universally right; the honest version of this advice is that starting lean is usually the lower-risk choice for a genuinely new business, not the only correct one.</p>
+
+  <h2>What to have in place before the first real sale</h2>
+  <p>In rough order: the registration conversation started with a CA, a small but consistently photographed catalogue, a WhatsApp number set up properly (official API, not a personal number doing double duty), and a clear sense of sourcing lead times so a customer’s expectations match reality. Everything else — a full website, a scheme program, multiple channels — can be added once the first version is actually working.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('SEE IT WORKING', 'Built for exactly this stage.', 'Full operating system from day one, priced for a first store — customers, WhatsApp and catalogue first, everything else added as the business grows into it.')}
+  <p><a class="btn btn-ghost" href="/solutions/startups">See the startups playbook</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions first-time founders ask.', '')}${L.faqBlock(startOnlineGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-startonline">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Start where you actually are.', 'Tell us about your first store — we’ll tell you honestly what matters first and what can wait.', 'blog-startonline')}
+`,
+};
+
+// ---------------------------------------------------------------- Article 16: WhatsApp API pricing
+const waPricingGuideFaqs = [
+  { q: 'What does Meta actually charge for WhatsApp Business API messages?', a: 'This changes over time and varies by country, so this guide won’t quote a specific current rate — that would likely be wrong by the time you read it. Meta publishes its own current rate card; check that directly for the number that applies to you today.' },
+  { q: 'Is the WhatsApp Business API free to use?', a: 'The API access itself typically isn’t a flat subscription from Meta — pricing is usage-based, tied to conversations, and platforms that provide the API layer (like Jwero) may add their own service pricing on top. The two are separate line items worth understanding separately.' },
+  { q: 'What’s the difference between a template message and a regular reply?', a: 'A reply inside an active customer-initiated conversation window doesn’t need a pre-approved template. A message that starts a new conversation, or reaches outside that window, generally needs a pre-approved template. This structural distinction is what conversation-based pricing is built around.' },
+];
+
+const waPricingGuide = {
+  slug: 'blog/whatsapp-business-api-pricing',
+  title: 'WhatsApp Business API Pricing for Jewellers: What Meta Actually Charges | Jwero',
+  description: 'How Meta’s conversation-based WhatsApp API pricing model works for jewellers — business vs user-initiated conversations, and where to check current rates.',
+  breadcrumbs: BC('WhatsApp Business API Pricing'),
+  schema: postSchema('WhatsApp Business API Pricing for Jewellers: What Meta Actually Charges', 'How Meta’s conversation-based pricing model works for the WhatsApp Business API — business-initiated vs user-initiated conversations and template messages, explained in general terms.'),
+  faqs: waPricingGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · WHATSAPP API PRICING',
+  h1: 'WhatsApp Business API Pricing for Jewellers: What Meta Actually Charges',
+  sub: 'This is about understanding how Meta’s pricing model works, not quoting a live rate that will be stale by the time you read it. Here’s the shape of conversation-based pricing, in plain terms.',
+  primary: { href: '#', label: 'Ask us about your setup', wa: 'blog-wapricing' },
+  secondary: { href: '/products/whatsapp', label: 'See WhatsApp Commerce in Jwero' },
+})}
+${L.section(postMeta(6, 'WhatsApp Pricing'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>Why this article won’t quote a specific rate</h2>
+  <p>Meta’s WhatsApp Business API pricing changes over time and varies by country and conversation category. Any specific per-conversation number printed here would risk being wrong by the time you’re reading it, which would be a worse outcome than no number at all. What this guide can do honestly is explain how the pricing model itself is structured, so a current rate card — checked directly from Meta — actually makes sense when you look at it.</p>
+
+  <h2>Conversations, not individual messages</h2>
+  <p>The core structural idea behind Meta’s model is that pricing is generally based on conversation windows, not counted per individual message sent back and forth. Once a conversation opens between a business and a customer, messages within that window are typically covered under that conversation, rather than billed one by one. This matters because it changes how a business should think about cost: the question isn’t "how many messages did we send," it’s "how many conversations did we open, and of what kind."</p>
+
+  <h2>Business-initiated vs. user-initiated</h2>
+  <p>Broadly, conversations fall into two shapes. A user-initiated conversation starts when the customer messages the business first — she asks about a design, the reply and everything that follows within that window generally falls under that conversation. A business-initiated conversation is the reverse: the business reaches out first, such as a scheme reminder or a festival notification, which typically requires a pre-approved message template and generally carries different pricing than a reply inside an existing customer-started conversation.</p>
+  <p>This distinction is exactly why a jewellery business’s mix of behaviour matters — a business that mostly replies to inbound enquiries has a different conversation profile than one that runs frequent proactive outreach like scheme reminders or occasion messages.</p>
+
+  <h2>What a template message actually is</h2>
+  <p>A template is a pre-approved message format, submitted to Meta and approved before it can be sent to start a new conversation or to reach outside an existing conversation window. This exists specifically to prevent spam-style outreach — a business can’t just message any contact whenever it wants with arbitrary text; it has to use an approved template for anything outside an active, customer-started exchange. This is also part of why the official API, used properly, keeps a number safer than an unofficial bulk-sending tool that ignores this structure entirely.</p>
+
+  <h2>Why this matters for a scheme or occasion-heavy business</h2>
+  <p>A jewellery business that runs gold-scheme reminders, birthday and anniversary outreach, or festival campaigns is, by the nature of that outreach, generating business-initiated conversations regularly. Understanding that this is a distinct, usage-based cost category — separate from a platform’s own service pricing — matters for budgeting honestly, even without a specific rate attached to it here.</p>
+
+  <h2>Where to check the actual current number</h2>
+  <p>For the rate that actually applies to your business today, Meta’s own current rate card is the source that won’t be stale — check it directly rather than relying on any third-party page, including this one, since these figures do change. What we can offer instead is help understanding your own conversation mix and what a proper setup looks like on top of it — see <a href="/products/whatsapp">WhatsApp Commerce in Jwero</a> for how the official API, live catalogue pricing and approval-gated replies fit together.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('SEE IT WORKING', 'The official API, set up properly.', 'This site’s own WhatsApp button runs on the official API described above — approved templates, consent tracking, and a shared team inbox, not a workaround.')}
+  <p><a class="btn btn-ghost" href="/products/whatsapp">See WhatsApp Commerce in Jwero</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about API pricing.', '')}${L.faqBlock(waPricingGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-wapricing">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Understand your own conversation mix.', 'Tell us how you use WhatsApp today — enquiries, reminders, campaigns — and we’ll help you think through the cost picture honestly.', 'blog-wapricing')}
+`,
+};
+
+// ---------------------------------------------------------------- Article 17: Gold savings schemes legal
+const schemesLegalGuideFaqs = [
+  { q: 'Are gold savings schemes legal in India?', a: 'This is a genuine legal question that depends on the specific structure of a scheme, and it isn’t something a marketing page can answer responsibly for your business — confirm with your own CA or lawyer how your specific scheme design is treated. What this guide can do is point at the practices that reduce risk regardless of the answer: KYC, written terms, an audit trail and verified closures.' },
+  { q: 'Does running a scheme through software make it legal?', a: 'No — software doesn’t change the legal status of a scheme structure; that’s determined by the scheme’s design and applicable regulation, which is a question for your compliance advisor. What software can do is make whatever structure you and your advisor land on easier to run with discipline — proper KYC capture, documented terms, and a full audit trail.' },
+  { q: 'What should I ask my CA before launching or scaling a scheme?', a: 'Whether your specific scheme structure needs registration or disclosure under applicable rules for your state and business type, what KYC and documentation the scheme should capture, and whether your current terms are actually written down and given to members — not just explained verbally at enrolment.' },
+];
+
+const schemesLegalGuide = {
+  slug: 'blog/are-gold-savings-schemes-legal',
+  title: 'Are Gold Savings Schemes Legal in India? | Jwero',
+  description: 'Gold savings schemes are a common jewellery trade practice — their specific legal treatment is a CA/lawyer question. Here’s what reduces risk either way.',
+  breadcrumbs: BC('Gold Savings Schemes: Legal Questions'),
+  schema: postSchema('Are Gold Savings Schemes Legal in India?', 'Gold-savings scheme legality depends on scheme structure and is a question for a compliance advisor — this guide covers the practices that reduce risk.'),
+  faqs: schemesLegalGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · GOLD SCHEMES & COMPLIANCE',
+  h1: 'Are Gold Savings Schemes Legal in India?',
+  sub: 'This is a genuine legal question, and this page won’t pretend to answer it for you — that call depends on your specific scheme structure and belongs with your own CA or lawyer. What it can do is lay out what’s actually well-established, and the practices that reduce risk whatever the answer turns out to be.',
+  primary: { href: '#', label: 'Ask us about our compliance controls', wa: 'blog-schemeslegal' },
+  secondary: { href: '/products/gold-schemes', label: 'See gold schemes in Jwero' },
+})}
+${L.section(postMeta(7, 'Compliance & Gold Schemes'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>Why this guide won’t give you a yes or no</h2>
+  <p>A page that flatly states "gold savings schemes are legal" or "gold savings schemes are illegal" would be handing out a legal conclusion to a general audience, on a topic where the actual answer depends on the specific structure of a scheme, the applicable regulatory framework, and questions that sit close to areas like the Prize Chits and Money Circulation Schemes Banning Act and other adjacent regulatory considerations that vary by structure. That’s unlicensed legal advice dressed up as a blog post, and it’s exactly the kind of overreach this site tries not to make anywhere else — this topic is no exception.</p>
+  <p>What’s genuinely true, and safe to say plainly: gold savings schemes are a long-standing, widespread trade practice across Indian jewellery retail, run by businesses of every size for decades. That establishes the practice is common, not that any specific scheme structure is automatically compliant — those are different questions, and only the second one needs a lawyer.</p>
+
+  <h2>The question that actually needs a professional</h2>
+  <p>Whether a particular scheme structure requires registration, specific disclosures, or falls under particular regulatory scrutiny depends on details a general article can’t responsibly generalise across — how the scheme is structured, what jurisdiction it operates in, how funds are held, what’s promised to members. This genuinely varies, and the honest answer is the same one this site gives on other compliance-adjacent topics: confirm the current regulatory scope for your specific state and scheme structure with your own CA or lawyer, and treat that as a real step, not a formality to skip.</p>
+
+  <h2>What’s actually useful to focus on instead</h2>
+  <p>Regardless of where the legal-structure conversation with your advisor lands, there’s a set of practices that reduce risk and protect both the business and its members in any well-run scheme. These aren’t a substitute for legal advice — they’re the operational discipline that a responsible scheme should have in place either way.</p>
+
+  <h2>KYC capture at enrolment</h2>
+  <p>Knowing who a member actually is, captured properly at the point of enrolment rather than assumed from familiarity, is basic due diligence for any scheme handling recurring customer payments over months. It protects the business in a dispute and is generally table stakes for any structured financial-adjacent product.</p>
+
+  <h2>Written terms, not verbal understanding</h2>
+  <p>A scheme explained verbally at the counter and never written down leaves both sides relying on memory months later. Documented terms — duration, instalment amount, what happens on a missed payment, maturity benefits — given to the member at enrolment, not reconstructed from memory at redemption, is one of the simplest risk-reducing steps a business can take.</p>
+
+  <h2>A full audit trail</h2>
+  <p>Every instalment, every reminder sent, every balance check — recorded, not just remembered. This matters for two reasons: it protects the business if a member disputes a payment, and it protects the member if the business’s own records are ever questioned. An audit trail that exists only in a paper register that can be edited after the fact isn’t really an audit trail at all.</p>
+
+  <h2>OTP-verified closures</h2>
+  <p>The maturity moment — when a scheme closes and a member redeems — is exactly where disputes are most likely if it isn’t unambiguous for both sides. An OTP-verified closure means the member themselves confirms the redemption at the moment it happens, rather than a closure that either side can later claim didn’t happen the way it’s recorded.</p>
+
+  <h2>What this looks like in practice</h2>
+  <p>These four practices — KYC, written terms, an audit trail and OTP-verified closures — are exactly the discipline built into how Jwero runs gold savings schemes today, not a hypothetical best practice described from the outside. See <a href="/products/gold-schemes">gold schemes in Jwero</a> for how enrolment, reminders, balances and closure actually work, and confirm current scope for your state and structure on a demo before relying on any of it for a specific compliance question.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('SEE IT WORKING', 'Discipline first, whatever the legal structure.', 'KYC enrolment, documented plan terms, a full audit trail and OTP-verified closures — the practices that reduce risk in a scheme, built into the product, not described as a hypothetical.')}
+  <p><a class="btn btn-ghost" href="/products/gold-schemes">See gold schemes in Jwero</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about scheme compliance.', '')}${L.faqBlock(schemesLegalGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-schemeslegal">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('See the compliance controls in a demo.', 'Bring your current scheme structure — we’ll show KYC, documented terms, the audit trail and OTP closures running on it.', 'blog-schemeslegal')}
+`,
+};
+
+module.exports = [blogHub, whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide, crmErpGuide, checklistGuide, weddingGuide, costGuide, bestSoftwareGuide, goldRateGuide, startOnlineGuide, waPricingGuide, schemesLegalGuide];

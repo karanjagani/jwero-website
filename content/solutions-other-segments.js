@@ -17,7 +17,7 @@ const bullionTraders = {
 ${L.hero({
   eyebrow: 'FOR BULLION DEALERS & GOLD TRADERS',
   h1: 'Volume trades, zero ambiguity.',
-  sub: 'Rate-locked deal capture and a clean ledger of every settlement — your trading relationships as a business asset the business owns, not a book that lives in one person’s phone.',
+  sub: 'Rate-locked deal capture and a clean ledger of every settlement — your trading relationships as a business asset the business owns, kept off any single person’s phone.',
   primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'bullion' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -58,7 +58,7 @@ ${L.hero({
 ${L.section(
   `${L.painRows([
     { quote: 'Every partner presents the brand a little differently.', title: 'Central catalogue, brand-controlled', text: 'One catalogue, one set of campaign rules, enforced everywhere the brand sells.' },
-    { quote: 'We can’t see how partners are actually selling us.', title: 'Distributor visibility', text: 'Structure your network in Jwero to get channel and partner performance in one view.' },
+    { quote: 'We can’t see how partners are selling us.', title: 'Distributor visibility', text: 'Structure your network in Jwero to get channel and partner performance in one view.' },
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS BRAND TEAMS ASK', 'Consistency and partner visibility — answered.', '')}${L.faqBlock(brandsFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
@@ -99,9 +99,9 @@ ${L.section(
   `${L.sectionHead('A DAY IN YOUR D2C BUSINESS ON JWERO', 'Morning to night.', '')}
   ${L.steps([
     { title: 'Morning', text: 'Overnight Instagram DMs from an ad campaign already have drafted, gold-rate-accurate replies waiting for approval — not sitting unread since midnight.' },
-    { title: 'Afternoon', text: 'A Shopify order comes in; it lands on the same customer record as her WhatsApp conversation from last week — one buyer, one history, not two disconnected systems.' },
+    { title: 'Afternoon', text: 'A Shopify order comes in; it lands on the same customer record as her WhatsApp conversation from last week — one buyer, one history, no juggling between disconnected systems.' },
     { title: 'Evening', text: 'A cart-abandoner gets a personal, approved follow-up on WhatsApp — not a generic discount-code email blast.' },
-    { title: 'Night', text: 'The next morning’s ad spend gets pointed at what actually converted, because the record shows which DM turned into a real order.' },
+    { title: 'Night', text: 'The next morning’s ad spend gets pointed at what converted, because the record shows which DM turned into a real order.' },
   ], 4)}`
 , { tone: 'tint' })}
 ${L.jtbdBlock([
@@ -126,7 +126,7 @@ ${L.ctaBand('Add what Shopify can’t do.', 'Tell us your current stack — we�
 
 const startupsFaqs = [
   { q: 'Is this too much system for a brand-new business?', a: 'No — you start with the same three things every business does: customers imported, WhatsApp connected, catalogue published. Everything else switches on when you’re ready.' },
-  { q: 'What if I don’t know what I need yet?', a: 'That’s normal for a first store — talk to us on WhatsApp and we’ll help you figure out what actually matters first, honestly, not sell you everything at once.' },
+  { q: 'What if I don’t know what I need yet?', a: 'That’s normal for a first store — talk to us on WhatsApp and we’ll help you figure out what matters first, honestly, not sell you everything at once.' },
   { q: 'I don’t have a big budget as a new business. Is this realistic for me?', a: 'Entry pricing is structured for exactly this stage, with monthly billing and no long-term commitment required to start. See <a href="/pricing">pricing</a> for the honest frame.' },
 ];
 
@@ -140,7 +140,7 @@ const startups = {
 ${L.hero({
   eyebrow: 'FOR STARTUPS & FIRST-TIME FOUNDERS',
   h1: 'Start with the system chains took decades to build.',
-  sub: 'Full operating system from day one — catalogue to CRM to WhatsApp — priced for a first store. No systems knowledge required, no tiny team wearing all hats without help.',
+  sub: 'Full operating system from day one: catalogue to CRM to WhatsApp — priced for a first store. No systems knowledge required, no tiny team wearing all hats without help.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'startups' },
   secondary: { href: '/pricing', label: 'See pricing' },
 })}
@@ -149,7 +149,7 @@ ${L.section(
     { quote: 'I don’t know what jewellery software is even supposed to do.', title: 'One system, explained plainly', text: 'You start with three things: customers, WhatsApp, catalogue. We explain the rest as you need it.' },
     { quote: 'My whole team is three people wearing every hat.', title: 'An AI workforce that covers the gaps', text: 'The AI workforce handles first-response and follow-up, so a tiny team serves like a bigger one.' },
     { quote: 'I’m worried about the cost before I even have revenue.', title: 'Transparent pricing, no surprises', text: 'See the pricing structure upfront — no hidden costs, monthly billing at entry.' },
-    { quote: 'I don’t even have a website yet, and building one feels like a separate project.', title: 'Your ecommerce website, not a bolt-on', text: 'Jwero can be your website — native cart, wishlist, checkout, blog and reviews — a jewellery-native alternative to a generic ecommerce platform. See <a href="/products/storefront">Ecommerce Website</a>.' },
+    { quote: 'I don’t even have a website yet, and building one feels like a separate project.', title: 'Your ecommerce website, not a bolt-on', text: 'Jwero can be your website: native cart, wishlist, checkout, blog and reviews — a jewellery-native alternative to a generic ecommerce platform. See <a href="/products/storefront">Ecommerce Website</a>.' },
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS FIRST-TIME FOUNDERS ASK', 'Complexity, budget and where to start — answered.', '')}${L.faqBlock(startupsFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
@@ -191,13 +191,13 @@ ${L.section(
   ${L.steps([
     { title: 'Morning', text: 'Head office pushes a festival campaign template once — every franchisee location gets it in brand-consistent form, no location freelancing its own version.' },
     { title: 'Afternoon', text: 'A customer who bought at one franchise location visits another — the counter there sees her full purchase history, not a blank slate.' },
-    { title: 'Evening', text: 'The owner rollup flags one location’s sales pattern drifting from the network average — visible today, not discovered at quarter-end.' },
+    { title: 'Evening', text: 'The owner rollup surfaces one location’s sales pattern drifting from the network average today — no waiting for the quarter-end review.' },
     { title: 'Night', text: 'A new franchisee’s onboarding checklist runs identically to the last one — same system, same structure, no reinventing the rollout.' },
   ], 4)}`
 , { tone: 'tint' })}
 ${L.jtbdBlock([
   { when: 'a customer visits a franchise location she hasn’t been to before', want: 'her history to be visible there too', so: 'the brand feels consistent, not like separate shops wearing the same sign' },
-  { when: 'a location’s performance starts drifting', want: 'see it in the owner rollup immediately', so: 'brand-standard drift gets caught early, not at the annual review' },
+  { when: 'a location’s performance starts drifting', want: 'see it in the owner rollup immediately', so: 'brand-standard drift gets caught early rather than surfacing at the annual review' },
 ])}
 ${L.section(`${L.sectionHead('QUESTIONS FRANCHISORS ASK', 'Independence, visibility and control — answered.', '')}${L.faqBlock(franchiseFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="franchise">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}

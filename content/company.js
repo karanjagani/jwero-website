@@ -10,12 +10,12 @@ const pricing = {
     { q: 'Is there a lock-in contract?', a: 'No — entry tiers offer monthly billing, and annual plans are simply a discount, not handcuffs. Your data exports any time you ask.' },
     { q: 'What does implementation include?', a: 'Human-led onboarding: your customer list imported for you, WhatsApp number connected, catalogue set up, and your team trained by role. The scope is written down before you pay.' },
     { q: 'How should I think about the cost?', a: 'Against one recovered customer, not against your billing software’s maintenance fee. One returning bridal customer typically pays for years of Jwero. Run the calculators and use your own numbers.' },
-    { q: 'Is there a free trial?', a: 'Not yet as a self-serve trial — those mechanics are being finalised. Talk to us about starting a pilot with your own data instead, which is how most businesses actually begin.' },
+    { q: 'Is there a free trial?', a: 'Not yet as a self-serve trial — those mechanics are being finalised. Talk to us about starting a pilot with your own data instead, which is how most businesses begin.' },
     { q: 'Are there hidden costs I’ll discover later?', a: 'No — implementation scope, what’s included and what’s extra are stated before you commit. Any pass-through WhatsApp messaging costs from Meta are explained upfront, not buried in month two.' },
-    { q: 'Is this cheaper than the tools I already pay for combined?', a: 'A biller stops at the invoice — it can’t touch repeat-purchase lift, scheme float, WhatsApp-attributed revenue or gold-loss control, which is where the real ROI lives. Count what the "Frankenstack" it replaces actually costs — WhatsApp tool, catalogue app, website, SMS vendor, staff hours reconciling Excel. See the Frankenstack math below.' },
+    { q: 'Is this cheaper than the tools I already pay for combined?', a: 'A biller stops at the invoice: it can’t touch repeat-purchase lift, scheme float, WhatsApp-attributed revenue or gold-loss control, which is where the real ROI lives. Count what the "Frankenstack" it replaces costs — WhatsApp tool, catalogue app, website, SMS vendor, staff hours reconciling Excel. See the Frankenstack math below.' },
     { q: 'Can I upgrade or downgrade tiers later?', a: 'Yes — Assist, Approve and Autopilot are a deliberate ladder. Most businesses start on Assist and move up once their own weekly growth report justifies it, not because a salesperson pushed them.' },
     { q: 'What if I only need one or two things, not the whole platform?', a: 'That’s exactly what Assist is — customers imported, WhatsApp connected, catalogue live. You are never sold modules you didn’t ask for.' },
-    { q: 'Why should I believe your ROI claims?', a: 'You shouldn’t take our word for it — that’s why the growth report exists. It’s a weekly account of what actually happened with your own customers, not a projection in a sales deck.' },
+    { q: 'Why should I believe your ROI claims?', a: 'You shouldn’t take our word for it — that’s why the growth report exists. It’s a weekly account of what happened with your own customers, drawn from evidence rather than a projection in a sales deck.' },
   ],
   body: `
 ${L.hero({
@@ -89,7 +89,7 @@ ${L.section(
 ${L.section(L.customerLogos())}
 
 ${L.section(
-  `${L.sectionHead('THE FRANKENSTACK MATH', 'What the pile of tools actually costs.', 'Most jewellery businesses pay for five or six disconnected tools — plus the invisible cost: customers lost to silence. Put your own numbers in the right column; these rows are the ones we see most often.')}
+  `${L.sectionHead('THE FRANKENSTACK MATH', 'What the pile of tools costs.', 'Most jewellery businesses pay for five or six disconnected tools — plus the invisible cost: customers lost to silence. Put your own numbers in the right column; these rows are the ones we see most often.')}
   <div class="tbl-wrap"><table class="tbl">
     <thead><tr><th>What you pay for today</th><th>Typical job it does</th><th>In Jwero</th></tr></thead>
     <tbody>
@@ -113,10 +113,10 @@ ${L.section(
   `${L.sectionHead('THE OBJECTIONS, ANSWERED DIRECTLY', 'Before you ask, in case you were about to.', '')}
   ${L.cards([
     { title: '"Another software cost"', text: 'Measure it against one recovered customer, not against your billing software’s AMC. One returning bridal customer typically pays for years of Jwero — run the calculators on your own numbers.' },
-    { title: '"I already have five tools"', text: 'A biller stops at the invoice. Count what the pile actually costs — a WhatsApp tool, a catalogue app, a website, an agency retainer, plus the invisible cost of customers lost to silence — against the revenue levers a biller can’t touch.' },
+    { title: '"I already have five tools"', text: 'A biller stops at the invoice. Count what the pile costs: a WhatsApp tool, a catalogue app, a website, an agency retainer, plus the invisible cost of customers lost to silence — against the revenue levers a biller can’t touch.' },
     { title: '"Hidden costs will show up later"', text: 'Implementation scope and what’s extra are written down before you pay. Any Meta messaging pass-through cost is explained upfront, not discovered on an invoice.' },
-    { title: '"I’ll be locked into a contract"', text: 'Monthly billing is available at entry tiers. Annual is a discount, not handcuffs — and export-anytime applies regardless of the term you choose.' },
-    { title: '"ROI is a promise I’ve heard before"', text: 'Fair — that’s why the weekly growth report exists. It shows what actually happened with your own customers, not a number in a sales deck.' },
+    { title: '"I’ll be locked into a contract"', text: 'Monthly billing is available at entry tiers. Annual is simply a discount rather than a handcuff — and export-anytime applies regardless of the term you choose.' },
+    { title: '"ROI is a promise I’ve heard before"', text: 'Fair — that’s why the weekly growth report exists. It shows what happened with your own customers: real evidence, no sales-deck number.' },
     { title: '"I don’t need the whole platform"', text: 'Then don’t buy it. Assist is exactly the minimum: customers imported, WhatsApp connected, catalogue live. Expand only when it’s earned its place.' },
   ])}`
 , { tone: 'tint' })}
@@ -125,7 +125,7 @@ ${L.section(L.safeToTryStrip())}
 
 ${L.section(`${L.sectionHead('PRICING QUESTIONS', 'Straight answers on cost and terms.', '')}${L.faqBlock([
   { q: 'Why don’t I see numbers on this page?', a: 'Because pricing is being finalised per region ahead of general availability. Ask on WhatsApp and you will get a straight answer with no "discovery call" required.' },
-  { q: 'Is there a lock-in contract?', a: 'No — entry tiers offer monthly billing. Annual plans are discounted, not handcuffs.' },
+  { q: 'Is there a lock-in contract?', a: 'No — entry tiers offer monthly billing. Annual plans are simply discounted, with no handcuffs attached.' },
   { q: 'Is there a free trial?', a: 'Not yet as self-serve — those mechanics are being finalised. Talk to us about starting a pilot with your own data instead.' },
   { q: 'Are there hidden costs?', a: 'No — implementation scope and what’s extra are stated before you commit. Meta messaging pass-through costs, if any, are explained upfront.' },
   { q: 'Can I change tiers later?', a: 'Yes — most businesses start on Assist and move up once their own growth report justifies it.' },
@@ -226,7 +226,7 @@ ${L.section(
     { title: 'For the MD / owner', text: 'ROI framing against your own numbers, and the case for one system over five.' },
     { title: 'For IT / operations', text: 'Security overview, migration plan, pilot-branch rollout with exit criteria.', link: { href: '/trust/security', label: 'Security overview' } },
     { title: 'For finance', text: 'The Tally/Zoho coexistence note — nothing about the ledger changes.', link: { href: '/platform/integrations/tally', label: 'Coexistence note' } },
-    { title: 'For branch managers', text: 'A day-in-the-life walkthrough of what actually changes at the counter.' },
+    { title: 'For branch managers', text: 'A day-in-the-life walkthrough of what changes at the counter.' },
   ], 4)}
   <div class="cta-row" style="margin-top:22px">
     <a class="btn btn-primary" href="/assets/downloads/jwero-buying-committee-kit.pdf" download>Download the buying-committee kit (PDF)</a>
@@ -256,7 +256,7 @@ const bookDemo = {
 ${L.hero({
   eyebrow: 'BOOK A DEMO',
   h1: 'Fifteen minutes. Your scenario, not our script.',
-  sub: 'Bring one real situation — a quiet customer list, a leaking scheme book, a flooded Instagram inbox — and we will run it through Jwero live. If we cannot help, we will say so in the first five minutes.',
+  sub: 'Bring one real situation: a quiet customer list, a leaking scheme book, a flooded Instagram inbox — and we will run it through Jwero live. If we cannot help, we will say so in the first five minutes.',
   primary: { href: '#', label: 'Skip the form — WhatsApp us', wa: 'bookdemo' },
 })}
 

@@ -100,7 +100,7 @@ const digitalGold = {
 ${L.hero({
   eyebrow: 'DIGITAL GOLD',
   h1: 'Their savings habit. Your future showcase visit.',
-  sub: 'The fintech apps discovered what jewellery businesses always knew: people love saving in gold. Jwero gives you your own digital gold offering — live rates, gram balances, clean records — so the savings habit that starts on a phone ends at your counter, not a stranger’s app.',
+  sub: 'The fintech apps discovered what jewellery businesses always knew: people love saving in gold. Jwero gives you your own digital gold offering: live rates, gram balances, clean records — so the savings habit that starts on a phone ends at your counter, not a stranger’s app.',
   primary: { href: '#', label: 'See digital gold live', wa: 'digitalgold' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -158,7 +158,7 @@ const multiStore = {
 ${L.hero({
   eyebrow: 'MULTI-STORE & FRANCHISE',
   h1: 'Grow to ten stores without losing the one-store touch.',
-  sub: 'Chains win because every branch runs the same system and every customer is known everywhere. Jwero gives your network the same spine: holdings, brands and branches, consistent pricing, central campaigns — and one report the owner actually reads.',
+  sub: 'Chains win because every branch runs the same system and every customer is known everywhere. Jwero gives your network the same spine: holdings, brands and branches, consistent pricing, central campaigns — and one report the owner reads.',
   primary: { href: '#', label: 'Talk to a specialist', wa: 'multistore' },
   secondary: { href: '/solutions/multi-store-chains', label: 'The multi-store playbook' },
 })}
@@ -218,7 +218,7 @@ const loyalty = {
 ${L.hero({
   eyebrow: 'LOYALTY & REFERRALS',
   h1: 'Reward every visit, not just every gold instalment.',
-  sub: 'Gold schemes reward saving. Loyalty rewards everything else — repeat purchases, referrals, being a regular. Jwero lets you define tiers, earning rules and redemptions, and track who referred whom — all landing on the same customer record your team already reads.',
+  sub: 'Gold schemes reward saving. Loyalty rewards everything else: repeat purchases, referrals, being a regular. Jwero lets you define tiers, earning rules and redemptions, and track who referred whom — all landing on the same customer record your team already reads.',
   primary: { href: '#', label: 'See loyalty on a demo', wa: 'loyalty' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -236,9 +236,9 @@ ${L.section(
   `${L.sectionHead('WHAT’S CONFIGURABLE', 'Tiers, earning and redemption — set by you.', '')}
   ${L.cards([
     { title: 'Loyalty tiers', text: 'Define the tiers that make sense for your business — how many, what they’re called, what each one unlocks.' },
-    { title: 'Earning rules', text: 'Set how customers move up — by purchase, by visit, by referral — configured to your policy, not a fixed formula.' },
+    { title: 'Earning rules', text: 'Set how customers move up: by purchase, by visit, by referral — configured to your policy, not a fixed formula.' },
     { title: 'Redemptions', text: 'Customers redeem what they’ve earned; what’s redeemable is yours to define.' },
-    { title: 'Referral tracking', text: 'When an existing customer refers a new one, the system tracks the link so it’s visible on both records, not just remembered at the counter.' },
+    { title: 'Referral tracking', text: 'When an existing customer refers a new one, the system tracks the link so it’s visible on both records instead of relying on memory at the counter.' },
   ])}`
 )}
 
@@ -266,7 +266,7 @@ ${L.ctaBand('Reward regulars, not just savers.', 'Bring your idea of tiers and r
 const journeys = {
   slug: 'products/journeys',
   title: 'Customer Journeys — Visual, Approval-Gated Automation | Jwero',
-  description: 'Build multi-step customer journeys — triggers, branches, wait steps, messages — with a human-approval gate before anything reaches a customer.',
+  description: 'Build multi-step customer journeys: triggers, branches, wait steps, messages — with a human-approval gate before anything reaches a customer.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Customer Journeys', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
@@ -294,7 +294,7 @@ ${L.hero({
 ${L.section(
   `${L.sectionHead('THE BUILDER', 'A real canvas, not a config form.', '')}
   ${L.cards([
-    { title: 'Entry & triggers', text: 'Start a journey from an event — a purchase, a scheme instalment due, a birthday, a form submit — or drop a customer in manually.' },
+    { title: 'Entry & triggers', text: 'Start a journey from an event: a purchase, a scheme instalment due, a birthday, a form submit — or drop a customer in manually.' },
     { title: 'Filter & score gates', text: 'Only customers meeting a condition or crossing a score threshold move forward — the rest wait or exit.' },
     { title: 'Branches & conditions', text: 'Split the flow on any condition, so different customers take different paths through the same journey.' },
     { title: 'Wait & message steps', text: 'Add time delays between steps, and send messages through the shared channel router into WhatsApp, email, SMS or push.' },
@@ -314,7 +314,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.oneSystemBlock([
-  'A journey’s approval node opens the same approval queue an AI-drafted WhatsApp reply uses — one governance system, not a separate one per feature.',
+  'A journey’s approval node opens the same approval queue an AI-drafted WhatsApp reply uses: one governance system shared everywhere, rather than a separate one per feature.',
   'Message steps share the channel router with Broadcasts, so a journey and a broadcast never fight over template rules or send limits.',
   'A journey can update the same customer record the rest of Jwero reads from — a CRM-update step is not a copy, it is the record.',
 ])}
@@ -331,7 +331,7 @@ ${L.honestGapsBlock([
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="journeys">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('Build a journey your team can watch.', 'Bring one real flow — a scheme reminder sequence, a festival invite, a win-back — and we’ll build it live with an approval gate in place.', 'journeys')}
+${L.ctaBand('Build a journey your team can watch.', 'Bring one real flow: a scheme reminder sequence, a festival invite, a win-back — and we’ll build it live with an approval gate in place.', 'journeys')}
 `,
 };
 
@@ -378,7 +378,7 @@ ${L.section(
   ${L.cards([
     { title: 'Wraps broadcasts and journeys', text: 'A campaign is a container: one or more broadcasts and journeys, organised around one goal.' },
     { title: 'UTM-based attribution', text: 'Every campaign carries UTM tracking through to the sale, so revenue rolls up to the send that drove it.' },
-    { title: 'Real reporting', text: 'See what a campaign actually sold, attributed to the campaign — not an open-rate proxy for revenue.' },
+    { title: 'Real reporting', text: 'See what a campaign actually sold, attributed to the campaign, rather than an open-rate proxy for revenue.' },
     { title: 'AI campaign-strategist', text: 'Give it a brief and it drafts a campaign plan — audience, angles, timing. A person still builds and sends it; nothing ships on its own.' },
   ], 4)}`
 , { tone: 'tint' })}

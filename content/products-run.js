@@ -52,7 +52,7 @@ ${L.section(
   ${L.cards([
     { title: 'Quotations', text: 'A formal quote moves from draft to sent to accepted or declined, with a number, line items and a PDF. Share the link and the customer can accept or decline it themselves — no call required.' },
     { title: 'Smart lead routing', text: 'New enquiries route automatically to the right salesperson — round-robin, whoever has the lightest workload, or by territory rules your business sets.' },
-    { title: 'Next-best-action', text: 'A small set of suggested next actions per customer — "due for a follow-up," "scheme is maturing" — one tap to act, with the reasoning behind each score visible, not just the number.' },
+    { title: 'Next-best-action', text: 'A small set of suggested next actions per customer: "due for a follow-up," "scheme is maturing" — one tap to act, with the reasoning behind each score visible, not just the number.' },
     { title: 'Search across everything', text: 'One search box finds a customer, a deal, a product or an order — instead of hunting through separate screens.' },
     { title: 'Duplicate detection', text: 'Likely-duplicate customer records get flagged for a person to review and merge, keeping the record clean as data arrives from every channel.' },
   ])}`
@@ -150,7 +150,7 @@ const inventory = {
 ${L.hero({
   eyebrow: 'INVENTORY',
   h1: 'Every gram accounted for. Every idle piece exposed.',
-  sub: 'In jewellery, inventory is not stock — it is capital, revalued twice a day. Jwero shows what everything is worth at today’s rate, what is moving, and what has quietly stopped — before the interest bill tells you.',
+  sub: 'In jewellery, inventory is not stock: it is capital, revalued twice a day. Jwero shows what everything is worth at today’s rate, what is moving, and what has quietly stopped — before the interest bill tells you.',
   primary: { href: '#', label: 'See your stock differently', wa: 'inventory' },
   secondary: { href: '/tools/dead-stock-calculator', label: 'Try the Dead Stock Calculator' },
 })}
@@ -288,7 +288,7 @@ ${L.section(`${L.sectionHead('OPERATIONS QUESTIONS', 'Mid-order switching, and p
   { q: 'Our process is unusual — can it be configured to match?', a: 'Custom fields and approval rules exist for this. We’ll also tell you plainly what isn’t configurable, before you commit.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
-<p class="cta-note" style="margin-top:14px">Running repairs on registers today? <a href="/blog/jewellery-repair-management-custody-chain">Read the guide to repair management and the custody chain →</a> Still comparing system types? <a href="/blog/jewellery-crm-vs-erp-difference">See what actually separates a CRM from an ERP →</a></p>`)}
+<p class="cta-note" style="margin-top:14px">Running repairs on registers today? <a href="/blog/jewellery-repair-management-custody-chain">Read the guide to repair management and the custody chain →</a> Still comparing system types? <a href="/blog/jewellery-crm-vs-erp-difference">See what separates a CRM from an ERP →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="erp">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
@@ -367,7 +367,7 @@ ${L.oneSystemBlock([
 ])}
 
 ${L.section(`${L.sectionHead('SHOWROOM QUESTIONS', 'What sends automatically, and what still needs a person.', '')}${L.faqBlock([
-  { q: 'Is Walkout Rescue automatic — does it message customers without anyone checking?', a: 'No. It drafts the WhatsApp follow-up naming the pieces tried, but a staff member reviews and sends it. A rescue only counts as successful once linked to a completed sales order — never estimated.' },
+  { q: 'Is Walkout Rescue automatic, or does it message customers without anyone checking?', a: 'No. It drafts the WhatsApp follow-up naming the pieces tried, but a staff member reviews and sends it. A rescue only counts as successful once linked to a completed sales order — never estimated.' },
   { q: 'Does the Daily Brief get pushed to WhatsApp automatically?', a: 'Not yet — today someone has to open the Daily Brief to see it. Automatic push delivery is not built yet.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
@@ -401,7 +401,7 @@ const segmentation = {
 ${L.hero({
   eyebrow: 'CUSTOMER SEGMENTATION',
   h1: 'Every audience, defined once. Live, not a stale export.',
-  sub: 'Most "segments" are a spreadsheet exported once and never updated. Here, a segment is a rule — RFM tier, tags, CRM stage, custom fields — that recalculates live against your actual customer records, so the audience is always current when a journey or campaign reads it.',
+  sub: 'Most "segments" are a spreadsheet exported once and never updated. Here, a segment is a rule: RFM tier, tags, CRM stage, custom fields — that recalculates live against your actual customer records, so the audience is always current when a journey or campaign reads it.',
   primary: { href: '#', label: 'Build a live segment', wa: 'segmentation' },
   secondary: { href: '/products/crm', label: 'See the Jewellery CRM' },
 })}
@@ -427,7 +427,7 @@ ${L.section(
     {
       lever: 'Finding a starting point',
       before: 'Every segment starts from a blank rule builder, even when the useful groupings are already visible in your data.',
-      after: 'AI-suggested segments propose candidates from existing data for a person to review — a starting point, not an auto-send.',
+      after: 'AI-suggested segments propose candidates from existing data for a person to review: a starting point rather than an auto-send.',
     },
   ])}`
 )}
@@ -435,7 +435,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('HOW A SEGMENT GETS BUILT', 'One rule builder, several ways to slice the same record.', '')}
   ${L.cards([
-    { title: 'RFM tier rules', text: 'Filter on the classic recency/frequency/monetary tier already computed on the customer record — a 5x5 grid, not a hand-rolled score.' },
+    { title: 'RFM tier rules', text: 'Filter on the classic recency/frequency/monetary tier already computed on the customer record: a 5x5 grid instead of a hand-rolled score.' },
     { title: 'Tags, CRM stage & custom fields', text: 'Combine tags, pipeline stage and any custom field with typed operators and AND/OR matching in one visual builder.' },
     { title: 'AI-suggested segments', text: 'The system proposes candidate segments from patterns already in your data — a person reviews before it is used anywhere.' },
     { title: 'Reachable count & revenue before you save', text: 'See an estimated audience size and estimated revenue/ROI for the segment as you build it, before it goes live.' },
@@ -445,13 +445,13 @@ ${L.section(
 )}
 
 ${L.oneSystemBlock([
-  'A segment built here reads RFM tier, tags and stage straight off the same customer record CRM keeps — not a separate, exportable copy that drifts out of date.',
-  'The audience a journey triggers on, or a campaign sends to, is this exact live segment — recalculated at send time, not whatever it looked like when someone last exported a list.',
+  'A segment built here reads RFM tier, tags and stage straight off the same customer record CRM keeps, rather than a separate, exportable copy that drifts out of date.',
+  'The audience a journey triggers on, or a campaign sends to, is this exact live segment — recalculated at send time, no matter what it looked like when someone last exported a list.',
 ])}
 
 ${L.section(`${L.sectionHead('SEGMENTATION QUESTIONS', 'Live rules, reviewed suggestions, no guessing on size.', '')}${L.faqBlock([
-  { q: 'Is a segment a one-time export, or does it stay current?', a: 'Segments are dynamic by default — they recalculate live against your customer records, not a stale list exported once and forgotten.' },
-  { q: 'What do the "AI-suggested" segments actually do?', a: 'The system proposes candidate segments from patterns already in your data. It is not a prediction or forecasting engine, and a person reviews before use.' },
+  { q: 'Is a segment a one-time export, or does it stay current?', a: 'Segments are dynamic by default: they recalculate live against your customer records instead of sitting as a stale list exported once and forgotten.' },
+  { q: 'What do the "AI-suggested" segments do?', a: 'The system proposes candidate segments from patterns already in your data. It is not a prediction or forecasting engine, and a person reviews before use.' },
   { q: 'Do I know how big or valuable an audience is before I save it?', a: 'Yes — an estimated reachable count and estimated revenue/ROI are shown before you save.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}

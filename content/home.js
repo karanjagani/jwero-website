@@ -18,7 +18,7 @@ const home = {
     { q: 'Will AI message my customers without asking?', a: 'No. Every AI-drafted action waits in an approval queue until your team clears it, inside daily caps and quiet hours you set — with a kill switch at five scopes. Autonomy is earned action by action, never assumed.' },
     { q: 'How long does it take to go live?', a: 'Days, not months, for the first stage: we import your customers, connect your existing WhatsApp number, and publish your catalogue — with approvals switched on from day one.' },
     { q: 'Is Jwero built only for large jewellery chains?', a: 'No — the same system runs a single counter and a hundred-branch chain. A single-store jeweller gets the whole operating system from day one; a chain gets the same one, with governance and structure that scale to every branch.' },
-    { q: 'Can multiple stores or a franchise network use it?', a: 'Yes. Multi-store and franchise structure — shared brand, per-branch data, central control — is built in, not bolted on.' },
+    { q: 'Can multiple stores or a franchise network use it?', a: 'Yes. Multi-store and franchise structure (shared brand, per-branch data, central control) is built in, not bolted on.' },
     { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time.' },
     { q: 'What kind of impact can I expect?', a: 'It depends on your business, which is why we won’t quote a percentage nobody can verify. Faster response, structured follow-up, visible dead stock and disciplined schemes are the same levers that let bigger players out-remember their customers at scale. Run the calculators on your own numbers, or ask for a 30-day growth report so you see your own impact.' },
   ],
@@ -40,7 +40,7 @@ ${L.trustBar('<strong>240+</strong> governed AI actions. Every one waits for you
 ${L.section(L.customerLogos())}
 
 ${L.section(
-  `${L.sectionHead('THE IMPACT', 'What actually changes for your business.', 'Not features. Outcomes — the ones that show up in revenue, margin and the hours your team gets back.')}
+  `${L.sectionHead('THE IMPACT', 'What changes for your business.', 'Not features. Outcomes — the ones that show up in revenue, margin and the hours your team gets back.')}
   ${L.impactGrid([
     {
       lever: 'LEAD RESPONSE',
@@ -51,7 +51,7 @@ ${L.section(
     {
       lever: 'DEAD STOCK',
       before: 'Capital sits frozen in designs nobody is buying — financed at interest, sold never.',
-      after: 'Idle pieces matched to the customers whose taste actually fits, and sold — not marked down.',
+      after: 'Idle pieces matched to the customers whose taste fits, and sold — not marked down.',
       link: { href: '/tools/dead-stock-calculator', label: 'Run your number' },
     },
     {
@@ -83,7 +83,7 @@ ${L.section(
     <div class="stack-item"><strong>Website, if any</strong>A ghost town that doesn’t understand gold-rate pricing.</div>
     <div class="stack-item"><strong>Marketing agency</strong>Festival blasts into the void — no memory, no attribution.</div>
   </div>
-  <div class="stack-verdict">Every day on disconnected tools, an occasion passes silently, dead stock ages, a follow-up dies. The business’s most valuable asset — who its customers are — walks out the door with whoever’s holding the phone.</div>`
+  <div class="stack-verdict">Every day on disconnected tools, an occasion passes silently, dead stock ages, a follow-up dies. The business’s most valuable asset, who its customers are, walks out the door with whoever’s holding the phone.</div>`
 )}
 
 ${L.section(
@@ -98,7 +98,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('THE THREE PILLARS', 'What an operating system for jewellery actually does.', 'Tap a pillar — Remember, Sell or Run — to see what lives inside it.')}
+  `${L.sectionHead('THE THREE PILLARS', 'What an operating system for jewellery does.', 'Tap a pillar (Remember, Sell or Run) to see what lives inside it.')}
   ${L.platformTabs()}`
 )}
 
@@ -107,8 +107,8 @@ ${L.section(
   <div class="router-grid">
     <a class="router-card" href="/solutions/single-store"><div class="r-icon">◆</div><h3>Single store</h3><p>Run the whole shop from one screen, and never lose a customer when staff leave.</p></a>
     <a class="router-card" href="/solutions/multi-store-chains"><div class="r-icon">◇</div><h3>Multi-store &amp; chains</h3><p>Every branch consistent, every customer one record, one owner’s view across it all.</p></a>
-    <a class="router-card" href="/solutions/luxury-boutique"><div class="r-icon">✦</div><h3>Luxury &amp; boutique</h3><p>Clienteling worthy of what you sell — memory, not a mailing list.</p></a>
-    <a class="router-card" href="/solutions/bridal"><div class="r-icon">♥</div><h3>Bridal &amp; wedding</h3><p>Track the whole family journey — trials, quotes, dates — in one thread.</p></a>
+    <a class="router-card" href="/solutions/luxury-boutique"><div class="r-icon">✦</div><h3>Luxury &amp; boutique</h3><p>Clienteling worthy of what you sell: real memory, no mailing list.</p></a>
+    <a class="router-card" href="/solutions/bridal"><div class="r-icon">♥</div><h3>Bridal &amp; wedding</h3><p>Track the whole family journey — trials, quotes, dates, in one thread.</p></a>
     <a class="router-card" href="/solutions/manufacturers"><div class="r-icon">⚒</div><h3>Manufacturers</h3><p>Gold in, gold out, and loss at every stage — on one ledger.</p></a>
     <a class="router-card" href="/solutions/b2b-jewellery"><div class="r-icon">⇄</div><h3>Wholesale &amp; B2B</h3><p>Every buyer, every memo, every order — in one B2B thread.</p></a>
     <a class="router-card" href="/solutions/d2c-brands"><div class="r-icon">▲</div><h3>D2C &amp; ecommerce-first</h3><p>Keep Shopify. Add the channels and live-rate pricing it can’t do.</p></a>
@@ -119,7 +119,7 @@ ${L.section(
 ${L.governanceStrip()}
 
 ${L.section(
-  `${L.sectionHead('PROOF, BUILT NOT PROMISED', 'The numbers below are counted in the product, not written by marketing.', 'This is what has to be true for the impact above to actually happen — not marketing copy, plumbing you can inspect.')}
+  `${L.sectionHead('PROOF, BUILT NOT PROMISED', 'The numbers below are counted in the product itself, before marketing ever touches them.', 'This is what has to be true for the impact above to happen — not marketing copy, plumbing you can inspect.')}
   ${L.proofStrip()}
   <div class="card" style="margin-top:24px; text-align:center;">
     <h3>This website’s chat runs on Jwero.</h3>
@@ -131,7 +131,7 @@ ${L.section(
 ${L.section(
   `<div class="grid grid-2" style="align-items:center; gap:48px;">
     <div>
-      ${L.sectionHead('WHAT CAME BACK THIS WEEK?', 'The growth report: the product’s weekly voice.', 'Every week, the owner gets a plain-language report: past customers who returned, appointments booked, revenue brought back. Not a dashboard you must remember to open — an answer that arrives. This is what impact looks like when it’s measured, not promised.')}
+      ${L.sectionHead('WHAT CAME BACK THIS WEEK?', 'The growth report: the product’s weekly voice.', 'Every week, the owner gets a plain-language report: past customers who returned, appointments booked, revenue brought back. Not a dashboard you must remember to open — an answer that arrives. This is what impact looks like once it’s measured instead of promised.')}
       <a class="btn btn-primary" href="#" data-wa="report">Get a sample report on WhatsApp</a>
     </div>
     <div class="report" data-report>

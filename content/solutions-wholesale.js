@@ -103,7 +103,7 @@ ${L.section(
   ${L.steps([
     { title: 'Morning', text: 'Overnight orders from three retailers are already captured against the right pricing tier — no screenshots to reconcile by hand.' },
     { title: 'Afternoon', text: 'A buyer asks for a lot-level grading detail on a gemstone parcel — it’s a catalogue field, not a call to the back office.' },
-    { title: 'Evening', text: 'The reorder view flags a retailer who’s gone quiet for six weeks — a nudge goes out before the relationship goes cold, not after it’s lost.' },
+    { title: 'Evening', text: 'The reorder view flags a retailer who’s gone quiet for six weeks: a nudge goes out before the relationship goes cold instead of after it’s lost.' },
     { title: 'Night', text: 'A new buyer’s catalogue request gets buyer-specific pricing visibility set up once — every order after follows the same rule automatically.' },
   ], 4)}`
 , { tone: 'tint' })}

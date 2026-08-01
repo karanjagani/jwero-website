@@ -92,7 +92,7 @@ const schemeCalc = {
   faqs: [
     { q: 'How does a savings scheme lock in revenue?', a: 'Members redeem their corpus at your counter — and typically spend more than the corpus when they do. The scheme book you build this year is next year’s guaranteed showcase traffic.' },
     { q: 'Why does digital collection increase completion?', a: 'Most scheme dropouts are drift, not decisions: a missed month nobody chased. Automated reminders on WhatsApp with payment links, plus AI voice follow-ups, catch the drift in week one instead of month four.' },
-    { q: 'What is the redemption multiplier?', a: 'The average redemption basket versus corpus. Members usually add money at maturity to reach the piece they actually want — 1.3–1.5× corpus is a common planning range; the calculator uses 1.35×.' },
+    { q: 'What is the redemption multiplier?', a: 'The average redemption basket versus corpus. Members usually add money at maturity to reach the piece they want — 1.3–1.5× corpus is a common planning range; the calculator uses 1.35×.' },
   ],
   body: `
 ${L.hero({
@@ -139,7 +139,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'How the scheme numbers work.', '')}${L.faqBlock([
   { q: 'How does a savings scheme lock in revenue?', a: 'Members redeem their corpus at your counter — and typically spend more than the corpus when they do.' },
-  { q: 'Why does digital collection increase completion?', a: 'Most scheme dropouts are drift, not decisions. Automated reminders catch the drift in week one instead of month four.' },
+  { q: 'Why does digital collection increase completion?', a: 'Most scheme dropouts come from drift rather than decisions. Automated reminders catch the drift in week one instead of month four.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 `,
@@ -159,7 +159,7 @@ const waRevenueCalc = {
 ${L.hero({
   eyebrow: 'FREE TOOL',
   h1: 'The WhatsApp Revenue Estimator',
-  sub: 'Every enquiry that waits too long for a reply is a sale that might already be happening somewhere else. See what that’s worth in your business — defaults are editable planning assumptions, not a published study.',
+  sub: 'Every enquiry that waits too long for a reply is a sale that might already be happening somewhere else. See what that’s worth in your business — defaults are editable planning assumptions rather than a published study.',
 })}
 
 ${L.section(
@@ -179,7 +179,7 @@ ${L.section(
 
       <details class="assumptions" style="margin-top:22px">
         <summary>Assumptions (editable thinking)</summary>
-        <p style="margin-top:10px">Close rate: 15% for enquiries replied to within an hour, 3% for enquiries replied to slowly or missed — a common planning range, not a published study; edit to your own experience. Target with AI-drafted first response: 95% of enquiries replied to within minutes, each draft still approved by your team before it sends.</p>
+        <p style="margin-top:10px">Close rate: 15% for enquiries replied to within an hour, 3% for enquiries replied to slowly or missed — a common planning range rather than a published study; edit to your own experience. Target with AI-drafted first response: 95% of enquiries replied to within minutes, each draft still approved by your team before it sends.</p>
       </details>
     </div>
     <div class="calc-out">
@@ -200,7 +200,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'Where the estimate’s assumptions come from.', '')}${L.faqBlock([
-  { q: 'Where do the close-rate numbers come from?', a: 'They’re editable planning assumptions, not a published study — change them above to match your own experience.' },
+  { q: 'Where do the close-rate numbers come from?', a: 'They’re editable planning assumptions, drawn from common experience rather than a published study — change them above to match your own.' },
   { q: 'Is 95% reply coverage realistic?', a: 'That’s the target an AI-drafted first response is built to reach, with every draft still approved by your team before it sends.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
@@ -215,13 +215,13 @@ const goldLossCalc = {
   faqs: [
     { q: 'Is this based on an industry-average loss rate?', a: 'No — this is a self-assessment tool. You enter your own observed stocktake loss and the loss you can currently explain per stage; there’s no fabricated industry benchmark behind the defaults.' },
     { q: 'Does a WIP ledger reduce physical gold loss by itself?', a: 'No — recording where fine weight goes doesn’t stop metal loss during casting, filing or polishing. What it does is flag abnormal loss the day it happens, by stage and by hand, instead of only at annual stocktake when it’s too late to trace.' },
-    { q: 'What counts as "explained" loss?', a: 'Loss you already track against a per-stage norm — expected casting sprue, filing dust, polishing loss. "Unexplained" is the gap between that and what stocktake actually shows.' },
+    { q: 'What counts as "explained" loss?', a: 'Loss you already track against a per-stage norm — expected casting sprue, filing dust, polishing loss. "Unexplained" is the gap between that and what stocktake shows.' },
   ],
   body: `
 ${L.hero({
   eyebrow: 'FREE TOOL',
   h1: 'The Gold-Loss Calculator',
-  sub: 'The gap between what stocktake shows and what you can actually explain per stage — priced in today’s gold rate. This is a self-assessment: enter your own numbers, not an industry benchmark.',
+  sub: 'The gap between what stocktake shows and what you can explain per stage — priced in today’s gold rate. This is a self-assessment: enter your own numbers, not an industry benchmark.',
 })}
 
 ${L.section(
@@ -244,7 +244,7 @@ ${L.section(
 
       <details class="assumptions" style="margin-top:22px">
         <summary>Assumptions (editable thinking)</summary>
-        <p style="margin-top:10px">Unexplained loss = total loss observed at stocktake − loss you can currently explain per stage, applied to your monthly volume. This is your own self-assessment, not an industry-average benchmark. A per-stage WIP ledger doesn’t reduce physical loss on its own — it makes the unexplained portion visible the day it happens, not just at annual stocktake.</p>
+        <p style="margin-top:10px">Unexplained loss = total loss observed at stocktake − loss you can currently explain per stage, applied to your monthly volume. This is your own self-assessment, rather than an industry-average benchmark. A per-stage WIP ledger doesn’t reduce physical loss on its own: it makes the unexplained portion visible the day it happens, not just at annual stocktake.</p>
       </details>
     </div>
     <div class="calc-out">
@@ -258,7 +258,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('AFTER THE NUMBER', 'Visibility, stage by stage, not just at stocktake.', 'An append-only work-in-progress ledger tracks fine weight through casting, filing, setting and polishing, with a loss norm per stage. Abnormal loss gets flagged the day it happens — with the stage and the hands it happened in — instead of surfacing as an unexplained gap once a year.')}
+  `${L.sectionHead('AFTER THE NUMBER', 'Visibility, stage by stage, beyond the annual stocktake.', 'An append-only work-in-progress ledger tracks fine weight through casting, filing, setting and polishing, with a loss norm per stage. Abnormal loss gets flagged the day it happens, with the stage and the hands it happened in — instead of surfacing as an unexplained gap once a year.')}
   <p><a class="btn btn-ghost" href="/solutions/manufacturers">See the manufacturing spine in Jwero</a></p>
   <p class="cta-note" style="margin-top:14px">Want the method behind the number? <a href="/blog/gold-loss-wastage-control-jewellery-manufacturing">Read the guide to gold-loss and wastage control in manufacturing →</a></p>`
 , { tone: 'tint' })}

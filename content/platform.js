@@ -8,10 +8,10 @@ const platform = {
   breadcrumbs: [['Home', '/'], ['Platform']],
   faqs: [
     { q: 'Is Jwero an ERP?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP (orders, inventory, purchases, repairs, billing), from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.' },
-    { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with the Assist scope — customers imported, WhatsApp connected, catalogue published — and expand module by module as each one proves itself.' },
-    { q: 'What makes this different from buying a CRM plus a WhatsApp tool plus a catalogue app?', a: 'Separate tools mean separate memories. A WhatsApp tool doesn’t know her gold-plan balance; a CRM doesn’t sell on Instagram. In Jwero, the customer, the catalogue and the channels live on one record — so AI can actually sell, not just log.' },
+    { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with the Assist scope (customers imported, WhatsApp connected, catalogue published) and expand module by module as each one proves itself.' },
+    { q: 'What makes this different from buying a CRM plus a WhatsApp tool plus a catalogue app?', a: 'Separate tools mean separate memories. A WhatsApp tool doesn’t know her gold-plan balance; a CRM doesn’t sell on Instagram. In Jwero, the customer, the catalogue and the channels live on one record, so AI can actually sell instead of just logging.' },
     { q: 'Is there a public API or SSO for enterprise IT?', a: 'A public developer API and enterprise SSO/SCIM are on the public roadmap, not shipped today. We say so here rather than let your evaluation discover it later.' },
-    { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional. You can run the whole business on Assist — customers, WhatsApp, catalogue — and never touch the rest. Complexity is available when you want it, never mandatory.' },
+    { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional. You can run the whole business on Assist (customers, WhatsApp, catalogue) and never touch the rest. Complexity is available when you want it, never mandatory.' },
     { q: 'My business is unusual — will this fit, or will I be forcing a generic tool?', a: 'Custom fields, price rules and per-branch configuration exist because jewellery businesses aren’t generic. We’ll also tell you plainly what we don’t customise, on a demo, before you commit.' },
   ],
   body: `
@@ -53,7 +53,7 @@ ${L.section(
     { title: 'Zoho Books', text: 'Full accounting bridge for Zoho-first businesses.' },
     { title: 'Shopify / WooCommerce / Unicommerce', text: 'Two-way product and order sync — keep your storefront, add the channels around it.' },
     { title: 'Razorpay & Cashfree', text: 'Payment collection, verified end to end.' },
-    { title: 'Meta', text: 'Official WhatsApp Business API, Instagram and Facebook — the channels jewellery actually sells on.' },
+    { title: 'Meta', text: 'Official WhatsApp Business API, Instagram and Facebook — the channels jewellery sells on.' },
   ], 4)}
   <p style="margin-top:20px"><a class="card-link" href="/platform/integrations">See all integrations →</a></p>`
 )}
@@ -67,9 +67,9 @@ ${L.honestGapsBlock([
 ])}
 
 ${L.section(`${L.sectionHead('QUESTIONS EVALUATORS ASK', 'Straight answers for the people who have to sign off.', '')}${L.faqBlock([
-  { q: 'Is Jwero an ERP?', a: 'Both — one system, not two. It remembers customers like a CRM and runs operations like an ERP, from the same record. Your statutory books stay in Tally or Zoho Books.' },
+  { q: 'Is Jwero an ERP?', a: 'Both, running as a single system that does the job of a CRM and an ERP at once. It remembers customers like a CRM and runs operations like an ERP, from the same record. Your statutory books stay in Tally or Zoho Books.' },
   { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with customers imported, WhatsApp connected and catalogue published, then expand module by module.' },
-  { q: 'What makes this different from a CRM plus a WhatsApp tool?', a: 'Separate tools mean separate memories. In Jwero the customer, catalogue and channels live on one record — so AI can actually sell, not just log.' },
+  { q: 'What makes this different from a CRM plus a WhatsApp tool?', a: 'Separate tools mean separate memories. In Jwero the customer, catalogue and channels live on one record, so AI can sell instead of just logging.' },
   { q: 'Is there a public API or single sign-on (SSO)?', a: 'On the public roadmap, not shipped today. <a href="/roadmap">See the roadmap</a>.' },
   { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional — run everything on Assist and never touch the rest.' },
 ])}
@@ -144,7 +144,7 @@ const pricingEngine = {
   description: 'How Jwero prices a piece: purity rate cards, 3 making-charge models, wastage, per-carat stone pricing, channel/branch rules, and an audit log for every price.',
   breadcrumbs: BC('The Pricing Engine'),
   faqs: [
-    { q: 'How does Jwero actually calculate a price?', a: 'Metal rate (by purity, updated manually or from a live feed) × weight, plus a making charge (percentage, per-gram, or flat — your choice per category), plus stone or gemstone value priced separately, resolved against any price rules that apply to that channel, branch or customer. Every resolution is logged.' },
+    { q: 'How does Jwero calculate a price?', a: 'Metal rate (by purity, updated manually or from a live feed) × weight, plus a making charge (percentage, per-gram, or flat — your choice per category), plus stone or gemstone value priced separately, resolved against any price rules that apply to that channel, branch or customer. Every resolution is logged.' },
     { q: 'Which purities does the rate card support?', a: 'Whatever your business sells — 24K, 22K, 916, 18K, 14K and more, each with its own rate. Rates can be entered manually each session (a common am/pm pattern) or pulled from a live feed; you choose per metal.' },
     { q: 'Can making charges differ by category, or does everyone pay one formula?', a: 'Both exist. A making-charge type (percentage of metal value, per-gram, or flat amount) attaches per category or product, plus a separate service charge as a percentage of the subtotal if you charge one — not one formula forced onto everything you sell.' },
     { q: 'How are diamonds and gemstones priced — bundled into the metal rate?', a: 'No — priced separately, per carat for gemstones or per piece for pearls, and can be tied to the certificate on file (GIA, IGI, SGL, HRD, BIS) so the price and the paperwork agree.' },
@@ -164,10 +164,10 @@ ${L.hero({
 ${L.section(
   `${L.sectionHead('WHAT GOES INTO A PRICE', 'Five inputs, one resolved number.', 'Say it out loud to a jeweller and it sounds obvious — because it is how the trade has always priced. The difference is that Jwero does it as data, at the speed of a WhatsApp reply.')}
   ${L.cards([
-    { title: 'Metal rate, by purity', text: 'A rate card per metal and purity — 24K, 22K, 916, 18K, 14K and more — entered manually (a common am/pm pattern) or fed from a live source, your choice.' },
-    { title: 'Making charge', text: 'Percentage of metal value, per-gram, or a flat amount — set per category, not forced into one formula for everything you sell. A separate service charge can apply as a percentage of the subtotal.' },
+    { title: 'Metal rate, by purity', text: 'A rate card per metal and purity: 24K, 22K, 916, 18K, 14K and more — entered manually (a common am/pm pattern) or fed from a live source, your choice.' },
+    { title: 'Making charge', text: 'Percentage of metal value, per-gram, or a flat amount — set per category, so no single formula gets forced onto everything you sell. A separate service charge can apply as a percentage of the subtotal.' },
     { title: 'Wastage', text: 'Tracked as its own percentage where you apply it, distinct from the making charge — so the two never get silently confused with each other.' },
-    { title: 'Stone & gemstone value', text: 'Priced separately from the metal — per carat for gemstones, per piece for pearls — and can be tied to the certificate on file (GIA, IGI, SGL, HRD, BIS).' },
+    { title: 'Stone & gemstone value', text: 'Priced separately from the metal: per carat for gemstones, per piece for pearls — and can be tied to the certificate on file (GIA, IGI, SGL, HRD, BIS).' },
     { title: 'Rules & overrides', text: 'Channel, branch, region and customer-tier rules apply on top; anything outside them needs an override request with a reason, checked against a floor and ceiling.' },
   ])}`
 )}
@@ -188,7 +188,7 @@ ${L.section(
       <tr><td><strong>Flat</strong></td><td>A fixed amount per piece, regardless of weight</td><td>Small items, findings, standardised designs</td></tr>
     </tbody>
   </table></div>
-  <p style="margin-top:16px; font-size:.95rem; color:var(--ink-2);">A separate service charge — a percentage of the subtotal — can apply on top where a business charges one, kept distinct from the making charge itself.</p>`
+  <p style="margin-top:16px; font-size:.95rem; color:var(--ink-2);">A separate service charge (a percentage of the subtotal) can apply on top where a business charges one, kept distinct from the making charge itself.</p>`
 , { tone: 'tint' })}
 
 ${L.section(
@@ -202,11 +202,11 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('THE OVERRIDE, DONE PROPERLY', 'A guardrail, not a free-text box.', 'Every jewellery counter has had the moment: a good customer, a bit more discount than the price allows. The question is whether that moment leaves a record or a mystery.')}
+  `${L.sectionHead('THE OVERRIDE, DONE PROPERLY', 'Every override, checked and logged.', 'Every jewellery counter has had the moment: a good customer, a bit more discount than the price allows. The question is whether that moment leaves a record or a mystery.')}
   ${L.steps([
     { title: 'Requested', text: 'A salesperson submits an override with the price they want to offer and a reason — not a blank field to type any number into.' },
     { title: 'Checked', text: 'The request is checked against a floor and ceiling price set in advance, so an approver is reviewing a bounded exception, not an open-ended ask.' },
-    { title: 'Logged', text: 'Approved or declined, it is on the record — who asked, who decided, and exactly what changed — the same log a dispute or an audit would need.' },
+    { title: 'Logged', text: 'Approved or declined, it is on the record: who asked, who decided, and exactly what changed — the same log a dispute or an audit would need.' },
   ])}`
 , { tone: 'tint' })}
 
@@ -215,9 +215,9 @@ ${L.honestGapsBlock([
 ])}
 
 ${L.section(`${L.sectionHead('PRICING ENGINE QUESTIONS', 'What owners and evaluators ask first.', '')}${L.faqBlock([
-  { q: 'How does Jwero actually calculate a price?', a: 'Metal rate (by purity) × weight, plus a making charge (percentage, per-gram or flat), plus stone value priced separately, resolved against any rules for that channel, branch or customer. Every resolution is logged.' },
+  { q: 'How does Jwero calculate a price?', a: 'Metal rate (by purity) × weight, plus a making charge (percentage, per-gram or flat), plus stone value priced separately, resolved against any rules for that channel, branch or customer. Every resolution is logged.' },
   { q: 'Can making charges differ by category?', a: 'Yes — percentage, per-gram or flat, set per category or product, plus an optional service charge on the subtotal. Not one formula forced onto everything.' },
-  { q: 'How are diamonds and gemstones priced?', a: 'Separately from the metal — per carat for gemstones, per piece for pearls — and can be tied to the certificate on file so the price and the paperwork agree.' },
+  { q: 'How are diamonds and gemstones priced?', a: 'Separately from the metal: per carat for gemstones, per piece for pearls — and can be tied to the certificate on file so the price and the paperwork agree.' },
   { q: 'What stops a salesperson from just typing a lower number?', a: 'An override request with a reason, checked against a floor and ceiling before approval — not a free-text field.' },
   { q: 'Can we show how a price was reached if a customer disputes it later?', a: 'Yes — every resolved price keeps a log of exactly which rate, rule and charge produced it.' },
 ])}
@@ -236,11 +236,11 @@ const aiWorkforce = {
     { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling. Salespeople close more when every customer walks in already known.' },
     { q: 'What if the AI drafts something wrong?', a: 'Nothing goes out without approval until you decide otherwise. You can edit any draft, reject it, or switch a whole action type off. Daily caps and quiet hours are hard limits, not suggestions.' },
     { q: 'Can I turn AI off completely?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything. The kill switch is a product feature, not a support ticket.' },
-    { q: 'What can the AI workforce actually do?', a: 'Over 240 defined business actions: draft replies, price a catalogue enquiry at today’s rate, schedule follow-ups, send instalment reminders, invite customers before festivals, book appointments and more — each action individually permissioned.' },
+    { q: 'What can the AI workforce do?', a: 'Over 240 defined business actions: draft replies, price a catalogue enquiry at today’s rate, schedule follow-ups, send instalment reminders, invite customers before festivals, book appointments and more — each action individually permissioned.' },
     { q: 'Can the AI give a discount without me knowing?', a: 'No. Pricing and discount actions follow your price rules and staff permissions — the AI drafts messages, it does not set prices or approve exceptions.' },
-    { q: 'What if it says something embarrassing to a customer I’ve known for twenty years?', a: 'That fear is exactly what the approval queue exists for. Nothing reaches her until your team has seen it. Quiet hours mean nobody — old customer or new — gets a message at 11pm either.' },
+    { q: 'What if it says something embarrassing to a customer I’ve known for twenty years?', a: 'That fear is exactly what the approval queue exists for. Nothing reaches her until your team has seen it. Quiet hours mean nobody, old customer or new, gets a message at 11pm either.' },
     { q: 'How does it know how to sound like MY shop, not a generic chatbot?', a: 'It drafts from your catalogue, your prices, your policies and your past conversations — the same context a new employee would need, except it never forgets any of it.' },
-    { q: 'Is this the same risk as an AI chatbot going rogue online?', a: 'No. Nothing sends without approval by default, ever. The entire governance layer — approvals, caps, kill switch — exists because a jewellery relationship can’t survive an ungoverned bot near it.' },
+    { q: 'Is this the same risk as an AI chatbot going rogue online?', a: 'No. Nothing sends without approval by default, ever. The entire governance layer (approvals, caps, kill switch) exists because a jewellery relationship can’t survive an ungoverned bot near it.' },
   ],
   body: `
 ${L.hero({
@@ -255,7 +255,7 @@ ${L.hero({
 ${L.section(
   `${L.sectionHead('WHAT THEY DO', 'The work your team never gets time for.', '')}
   ${L.cards([
-    { icon: '✉', title: 'Answer in minutes', text: 'Every WhatsApp, Instagram and website enquiry gets a knowledgeable draft reply — with her history and live prices — in minutes, at midnight, during festivals.' },
+    { icon: '✉', title: 'Answer in minutes', text: 'Every WhatsApp, Instagram and website enquiry gets a knowledgeable draft reply (with her history and live prices) in minutes, at midnight, during festivals.' },
     { icon: '↺', title: 'Follow up on everything', text: 'Every enquiry that didn’t buy, every quote that went quiet, every instalment coming due — followed up on schedule, never forgotten.' },
     { icon: '🗓', title: 'Work the calendar', text: 'Birthdays, anniversaries, festivals — the AI workforce proposes the right invitation to the right customers, weeks ahead.' },
     { icon: '☏', title: 'Speak, not just type', text: 'The AI voice assistant holds conversations in 14 languages, with transcripts on the customer record.' },
@@ -320,7 +320,7 @@ ${L.section(
 
 ${L.honestGapsBlock(['A self-serve public developer API is on the roadmap — until it ships, integrations run through the bridges above.'])}
 
-${L.section(`${L.sectionHead('INTEGRATION QUESTIONS', 'What actually changes in your stack.', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('INTEGRATION QUESTIONS', 'What changes in your stack.', '')}${L.faqBlock([
   { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger; the built-in bridge carries sales data across so your accountant’s world doesn’t change.' },
   { q: 'Can I keep my Shopify store?', a: 'Yes. The connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
   { q: 'Is the WhatsApp integration official, or a ban risk?', a: 'Official WhatsApp Business API — template approvals, consent management and opt-out handling are built in, which is what keeps it out of ban-risk territory.' },
@@ -358,7 +358,7 @@ ${L.section(
     <div class="card"><h3>Tally keeps</h3><p>Statutory books, GST filings, the ledger of record — everything your accountant already trusts, unchanged.</p></div>
     <div class="card"><h3>Jwero runs</h3><p>Customer memory, WhatsApp and Instagram selling, gold schemes, catalogue, follow-up and the AI workforce — the revenue side.</p></div>
   </div>
-  <p style="margin-top:20px; font-size:.95rem; color:var(--ink-2);">Customer and item masters sync both ways through the built-in bridge, automatically. Transaction posting is a manual voucher in Tally today — auto-posting is on the roadmap, not shipped yet — so nothing about your accountant’s month-end changes without their knowledge.</p>`
+  <p style="margin-top:20px; font-size:.95rem; color:var(--ink-2);">Customer and item masters sync both ways through the built-in bridge, automatically. Transaction posting is a manual voucher in Tally today; auto-posting is on the roadmap, not shipped yet — so nothing about your accountant’s month-end changes without their knowledge.</p>`
 )}
 
 ${L.section(`${L.sectionHead('QUESTIONS ACCOUNTANTS ASK', 'What to tell your CA.', '')}${L.faqBlock([
@@ -375,7 +375,7 @@ ${L.ctaBand('Bring your accountant into the conversation.', 'We are happy to wal
 const onboarding = {
   slug: 'platform/onboarding',
   title: 'Onboarding & Support — Live in Days, Trained in Your Language | Jwero',
-  description: 'How Jwero implementation actually works: what we import for you, how training runs, and the season change-freeze that protects your busiest months.',
+  description: 'How Jwero implementation works: what we import for you, how training runs, and the season change-freeze that protects your busiest months.',
   breadcrumbs: BC('Onboarding & Support'),
   faqs: [
     { q: 'How long does implementation take?', a: 'Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published, greetings live with approvals on.' },
@@ -383,7 +383,7 @@ const onboarding = {
     { q: 'Can you implement without disrupting our wedding season?', a: 'Yes — a season change-freeze policy means no disruptive changes during your peak weeks. Go-lives are scheduled around your calendar.' },
     { q: 'What if my older or more senior staff resist the change?', a: 'Start them on one thing: the shared inbox with AI-drafted replies. It makes their day easier immediately — usually the fastest way to convert a sceptic is to make their job less tedious, not to explain the technology.' },
     { q: 'What if my whole team pushes back on new software?', a: 'If they can use WhatsApp, they can use Jwero — that’s deliberate, not a slogan. Training is role-based and live, and the AI workforce takes over the tedious parts (drafting, reminders) so staff feel helped, not surveilled.' },
-    { q: 'We tried new software before and it just sat unused. Why would this be different?', a: 'Because Assist gives your team something useful on day one — a shared inbox that answers faster than before — instead of a training manual to read first. Adoption follows usefulness, not a mandate.' },
+    { q: 'We tried new software before and it just sat unused. Why would this be different?', a: 'Because Assist gives your team something useful on day one (a shared inbox that answers faster than before) instead of a training manual to read first. Adoption follows usefulness, not a mandate.' },
   ],
   body: `
 ${L.hero({
@@ -415,7 +415,7 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('TRAINING & ADOPTION QUESTIONS', 'Getting a hesitant team to actually use it.', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('TRAINING & ADOPTION QUESTIONS', 'Getting a hesitant team to use it.', '')}${L.faqBlock([
   { q: 'What if my staff resist the change?', a: 'Start them on the shared inbox with AI-drafted replies — it makes their day easier immediately, which converts sceptics faster than any explanation.' },
   { q: 'We tried new software before and it sat unused. Why would this be different?', a: 'Assist gives your team something useful on day one instead of a manual to read first. Adoption follows usefulness, not a mandate.' },
   { q: 'Can you work around our festival-season staffing crunch?', a: 'Yes — the season change-freeze exists precisely so training and go-live never compete with your busiest weeks.' },

@@ -72,7 +72,8 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts. You approve. That doesn’t change.', 'The parts of your day that AI now takes off your plate are the repetitive ones — drafting a priced reply at midnight, remembering to nudge a customer whose scheme matured, recalculating a price when the gold rate moves. None of that reaches a customer without a person’s yes: yours, or someone you’ve authorised, tapping approve in a queue with daily caps and a kill switch behind it. What stays entirely yours is the judgment — which customer relationship to protect, which price exception makes sense, which risk is worth taking. Owners who lean into that judgment, freed from re-typing and remembering, are the ones who grow the business; the role doesn’t shrink, the forgettable parts of it do.')}`
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts. You approve. That doesn’t change.', '')}
+  <p class="lead">What stays entirely yours: which customer relationship to protect, which price exception makes sense, which risk is worth taking. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -158,7 +159,8 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'More branches, not less oversight.', 'The instinct when you add branches is that you lose visibility — more stores, more blind spots. What actually changes with Jwero is that the repetitive reporting and reconciling work moves to the system: rollups, ageing bands and weekly summaries that used to take a round of phone calls now sit in one place. AI-drafted replies and follow-ups at every branch still wait in an approval queue with daily caps and a kill switch you control per branch, per channel, or across the whole chain. The judgment about which branch needs your attention, which manager to trust with more autonomy, and which customer relationship matters most — that stays entirely yours, and having the rolled-up picture makes that judgment sharper, not less necessary.')}`
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'More branches, not less oversight.', '')}
+  <p class="lead">What stays entirely yours: which branch needs your attention, which manager to trust with more autonomy, and which customer relationship matters most. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -244,7 +246,8 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'Modernising doesn’t mean replacing what worked.', 'The temptation when you take over is to assume “modern” means automating the relationship-first way the business has always operated. It doesn’t, and Jwero isn’t built that way — AI drafts a reply, a follow-up or a price suggestion, and a person, you or someone you designate, approves it before a customer ever sees it. What AI takes off your plate is the part that was never really the relationship anyway: remembering to follow up, retyping a customer’s details, recalculating a price by hand. What stays yours — and what your parents’ generation will recognise as unchanged — is the judgment call on every relationship that matters. Growing the business under you means proving that judgment gets sharper with more visibility, not that it gets replaced by a system.')}`
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'Modernising doesn’t mean replacing what worked.', '')}
+  <p class="lead">What stays yours — and what your parents’ generation will recognise as unchanged — is the judgment call on every relationship that matters. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(

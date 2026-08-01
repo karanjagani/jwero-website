@@ -37,7 +37,7 @@ ${L.ctaBand('Follow one batch, start to finish.', 'Bring one casting order to a 
 const cadServicesFaqs = [
   { q: 'Can client design revisions be tracked in order?', a: 'Yes — each design’s conversation thread holds the revision and approval history, so nothing gets lost in scattered chat.' },
   { q: 'Does approval flow into production automatically?', a: 'Approved designs hand off into order/job tracking, closing the gap between a signed-off file and a production job.' },
-  { q: 'We already manage files and approvals over WhatsApp informally. What actually changes?', a: 'The same WhatsApp conversation now attaches to a structured job record instead of disappearing into chat history — nothing about how you talk to clients changes, what happens to that conversation afterward does.' },
+  { q: 'We already manage files and approvals over WhatsApp informally. What changes?', a: 'The same WhatsApp conversation now attaches to a structured job record instead of disappearing into chat history — nothing about how you talk to clients changes, what happens to that conversation afterward does.' },
 ];
 
 const cadServices = {
@@ -69,7 +69,7 @@ ${L.ctaBand('Track one design, end to end.', 'Bring one CAD job — we’ll show
 
 const oemManufacturersFaqs = [
   { q: 'Can work for different client brands stay separated?', a: 'Yes — client-wise structure keeps specs, WIP and settlement segregated per buyer brand, even when they share your production floor.' },
-  { q: 'Can gold-loss be tracked per client job?', a: 'Yes — the WIP ledger tracks fine weight and loss per job, so settlement reflects what actually happened, not an estimate.' },
+  { q: 'Can gold-loss be tracked per client job?', a: 'Yes — the WIP ledger tracks fine weight and loss per job, so settlement reflects what happened, not an estimate.' },
   { q: 'What if two client brands’ jobs get physically mixed on the floor?', a: 'The record stays separated even if the physical workflow shares equipment — job-level tracking is what prevents a mix-up from becoming a settlement dispute.' },
 ];
 

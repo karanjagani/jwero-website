@@ -48,7 +48,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The craft stays yours. The system only remembers the paperwork.', '')}
-  <p class="lead">Jwero doesn’t cast, set or polish anything — it can’t, and it isn’t built to. What it takes off your plate is the tracking: who has which piece, how much gold moved, what the loss was at each stage. That used to live in slips, memory and arguments. Now it lives on a record. The judgment on the bench, the skill in your hands, the call on whether a piece is right — none of that moves. AI drafts and tracks; a person, including you, still does the work and still has the final say on what leaves your bench.</p>`
+  <p class="lead">What stays yours: the bench, the skill in your hands, and the final say on what leaves it — Jwero just replaces the slips and arguments over gold loss with a record. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -114,7 +114,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The design work stays yours. The system only tracks the paper trail.', '')}
-  <p class="lead">Jwero doesn’t design, model or render anything — that’s still entirely your craft, in your tools. What it takes off your plate is the bookkeeping around the design: remembering which revision is current, chasing an approval, making sure a signed-off file actually reaches the floor. That used to mean re-reading chat threads and following up by memory. Now it’s a record anyone on the job can check. Your design judgment, your read of a client’s intent, your technical calls on a model — none of that is touched. AI tracks the status; you still do the design and still decide what’s ready to send.</p>`
+  <p class="lead">What stays yours: the design itself and every technical call on it — Jwero just tracks which revision is current and whether the sign-off actually reached the floor. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -181,7 +181,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The floor is still yours to run. The system only remembers the paperwork.', '')}
-  <p class="lead">Jwero doesn’t schedule labour, cast metal or make production calls — those decisions, and the authority behind them, stay entirely with you. What it takes off your plate is the tracking that used to eat your day: remembering which job is at which stage, chasing gold-in/gold-out entries, reconciling loss at month-end from scattered notes. That’s now a ledger, not a memory exercise. And to be direct about one thing: Jwero does not touch karigar wages or payroll — it tracks the job, not the person’s pay, and that stays exactly where it is today. AI drafts and tracks the record; you still run the floor and make the calls.</p>`
+  <p class="lead">What stays yours: labour scheduling, production calls and floor authority — Jwero just tracks gold-in/gold-out and stage loss, and never touches karigar wages or payroll. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -248,7 +248,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The certification call stays yours. The system only tracks the paperwork.', '')}
-  <p class="lead">Jwero does not perform hallmarking, assaying or any certification testing — that stays exactly where it happens today, done by the people and processes qualified to do it. What it takes off your plate is the paper-chase side: remembering which piece is pending, which is cleared, and where the documentation trail for a job actually lives. That used to mean flipping through files and asking around. Now it’s a status on the job record. The judgment behind a sign-off — is this piece actually compliant, is this documentation complete — is still entirely yours. AI tracks the status; you still make the call.</p>`
+  <p class="lead">What stays yours: the sign-off judgment on whether a piece is actually compliant — Jwero just tracks which piece is pending, cleared, or missing paperwork. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(

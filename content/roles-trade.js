@@ -62,7 +62,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts and tracks. You still make the call.', '')}
-  <p class="lead">The AI workforce takes the repetitive load off a B2B manager’s plate — drafting follow-ups on stale memos, tracking order status, and flagging buyers who’ve gone quiet. None of it reaches a buyer without your approval: every drafted message sits in a queue until you review, edit or send it. What stays entirely yours is the part that was never going to be automated anyway — reading a buyer’s tone on a call, negotiating terms, deciding which relationship gets the extra attention this quarter. Jwero clears the memo-chasing and re-typing off your day; the trade relationships stay yours to run.</p>`
+  <p class="lead">What stays entirely yours: reading a buyer’s tone on a call, negotiating terms, and deciding which relationship gets extra attention this quarter. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -143,7 +143,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI keeps the network consistent. You still run your branch.', '')}
-  <p class="lead">The system handles the parts that used to require constant back-and-forth with head office — pushing campaign templates, keeping pricing consistent, tracking a customer across branches. AI-drafted follow-ups and reports still wait for a human approval before anything reaches a customer. What stays with you as the franchise partner is everything that was always local: reading your branch’s customers, managing your staff, deciding how to run the floor day-to-day, and making the case for the exception your branch genuinely needs. Nothing here replaces the franchisee — it removes the admin friction of being one.</p>`
+  <p class="lead">What stays with you as the franchise partner: reading your branch’s customers, managing your staff, and making the case for the exception your branch genuinely needs. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(

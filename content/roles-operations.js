@@ -66,7 +66,8 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts and tracks. You still approve, judge and sign off.', 'What moves to the system is the mechanical part: pricing an invoice at the live rate, tracking who owes what, sending a payment reminder on schedule, keeping a receivables number current without a manual tally. None of that touches your books without a bridge you can see — Jwero doesn’t maintain a general ledger that replaces your accounting software, it feeds Tally or Zoho Books, which stays exactly where you already work. What stays entirely yours is the accounting judgment: how to classify an unusual transaction, which exception needs a closer look before it’s booked, the relationship with your auditor and the final sign-off on every number that goes out. An accountant who spends less time re-keying bills has more time for exactly that judgment — the role doesn’t shrink, the paperwork does.')}`
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts and tracks. You still approve, judge and sign off.', '')}
+  <p class="lead">Jwero feeds Tally or Zoho Books rather than replacing them, so the books stay exactly where you already work. What stays entirely yours: classifying an unusual transaction, the auditor relationship, and final sign-off on every number. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -151,7 +152,8 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The system tracks and surfaces. You still decide what to do about it.', 'What moves to the system is the tracking: ageing every piece continuously, valuing it at today’s rate, syncing counts across branches and online channels so nobody’s reconciling by phone call. Jwero does not forecast demand or generate a reorder plan for you — that’s explicitly not built yet, and won’t be claimed as done until it is. What you get is visibility: which pieces are old, which capital is frozen, which channel a piece sold through. The decision — markdown, melt, transfer, hold, reorder — stays a judgment call for a person who knows the store’s customers and season, because that judgment is exactly what the system doesn’t replace.')}`
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The system tracks and surfaces. You still decide what to do about it.', '')}
+  <p class="lead">Jwero does not forecast demand or generate a reorder plan — that’s explicitly not built yet. The decision — markdown, melt, transfer, hold, reorder — stays a judgment call for a person who knows the season. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -237,7 +239,8 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The system shows the data. You still make the buying call.', 'What moves to the system is the visibility: continuous ageing and velocity data instead of a once-a-year stocktake surprise, GRN-matched purchase records instead of manual reconciliation, live-rate pricing on new stock instead of hand recalculation. Jwero does not generate a demand forecast or a reorder plan for you — that capability isn’t built yet, and won’t be claimed until it is. The actual buying decision — which vendor, which design, how much, and when — stays a judgment call that draws on relationships with vendors and a read of the season that a data view alone can’t give. A purchase manager freed from reconstructing “what’s selling” by hand has more time for exactly that judgment, not less reason to be in the room.')}`
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The system shows the data. You still make the buying call.', '')}
+  <p class="lead">Jwero does not generate a demand forecast or reorder plan — that capability isn’t built yet. The actual buying decision — which vendor, which design, how much, when — stays a judgment call that draws on vendor relationships and a read of the season. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(

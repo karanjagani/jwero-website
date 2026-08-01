@@ -22,7 +22,7 @@ ${L.section(
   `${L.sectionHead('THE SHIFT', 'Why retail jewellery needs an operating system now.', '')}
   ${L.steps([
     { title: 'Discovery moved to the phone', text: 'Customers see jewellery on Instagram and WhatsApp before they see a counter — every enquiry, every occasion, every gram of trust now lives across ten apps.' },
-    { title: 'Systems, not size, decide the winner', text: 'Larger players don’t out-sell smaller ones on relationships — they out-remember them, at scale, with software.' },
+    { title: 'The system wins, regardless of size', text: 'Larger players don’t out-sell smaller ones on relationships — they out-remember them, at scale, with software.' },
     { title: 'AI made memory affordable', text: 'What used to need a CRM team and a call centre now runs on one operating system, governed and approval-first.' },
   ])}`
 )}
@@ -32,8 +32,8 @@ ${L.section(
   <div class="router-grid">
     <a class="router-card" id="single" href="/solutions/single-store"><div class="r-icon">◆</div><h3>Single store</h3><p>Run the whole shop from one screen — never lose a customer when staff leave.</p></a>
     <a class="router-card" id="chains" href="/solutions/multi-store-chains"><div class="r-icon">◇</div><h3>Multi-store & chains</h3><p>Every branch consistent, every customer one record.</p></a>
-    <a class="router-card" id="luxury" href="/solutions/luxury-boutique"><div class="r-icon">✦</div><h3>Luxury & boutique</h3><p>Clienteling worthy of what you sell — memory, not a mailing list.</p></a>
-    <a class="router-card" id="bridal" href="/solutions/bridal"><div class="r-icon">♥</div><h3>Bridal & wedding</h3><p>Track the whole family journey — trials, quotes, dates — in one thread.</p></a>
+    <a class="router-card" id="luxury" href="/solutions/luxury-boutique"><div class="r-icon">✦</div><h3>Luxury & boutique</h3><p>Clienteling worthy of what you sell: genuine memory, beyond a mailing list.</p></a>
+    <a class="router-card" id="bridal" href="/solutions/bridal"><div class="r-icon">♥</div><h3>Bridal & wedding</h3><p>Track the whole family journey: trials, quotes, dates — in one thread.</p></a>
     <a class="router-card" href="/solutions/diamond-retail"><div class="r-icon">◈</div><h3>Diamond retail</h3><p>Certificate-aware catalogue and instant answers on solitaire queries.</p></a>
     <a class="router-card" href="/solutions/gold-retail"><div class="r-icon">●</div><h3>Gold retail</h3><p>Live-rate pricing, scheme enrolment and exchange in one flow.</p></a>
     <a class="router-card" href="/solutions/silver-retail"><div class="r-icon">○</div><h3>Silver retail</h3><p>High volume, low margin — automated.</p></a>

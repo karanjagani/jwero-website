@@ -11,8 +11,8 @@ const security = {
     { q: 'Can I take my data out?', a: 'Yes, at any time, in standard formats. Your customer list is your asset. That promise is a design decision, not a support favour.' },
     { q: 'What can AI do and not do with my data?', a: 'AI drafts actions inside your approval queues, daily caps and quiet hours. It cannot bypass those limits, and a kill switch can stop it at five scopes instantly.' },
     { q: 'Is Jwero SOC 2 or ISO certified?', a: 'Not yet — formal certifications are planned as we scale, and we will publish them when earned, not before. We would rather tell you that plainly than let an audit discover it.' },
-    { q: 'This is family business data — how do I know it won’t leave the family?', a: 'It runs in a database isolated to your business alone, with encrypted credentials and access controlled entirely by roles you set. Nobody outside your business — not another customer of ours, not a generic support queue — can see it. That isolation is the design, not a policy promise.' },
-    { q: 'What happens to customer data if a salesperson who handled it leaves?', a: 'Deactivate their login in seconds. Every conversation and record they touched stays with the business — that is the entire point of the record belonging to the business, not the person.' },
+    { q: 'This is family business data — how do I know it won’t leave the family?', a: 'It runs in a database isolated to your business alone, with encrypted credentials and access controlled entirely by roles you set. Nobody outside your business can see it: not another customer of ours, not a generic support queue. That isolation is built into the architecture, not something we ask you to take on faith.' },
+    { q: 'What happens to customer data if a salesperson who handled it leaves?', a: 'Deactivate their login in seconds. Every conversation and record they touched stays with the business: it was always the business’s record, never the individual’s.' },
     { q: 'What if the internet goes down at my shop?', a: 'Honestly: Jwero is cloud software and needs a connection today. Offline mode is on the public roadmap, not shipped — mobile data works as a practical backup in the meantime.' },
     { q: 'Can a competitor of mine, also on Jwero, ever see my data?', a: 'No. Physical database-per-tenant isolation means your data structurally cannot be queried alongside another business’s, regardless of who else uses the platform.' },
   ],
@@ -64,8 +64,8 @@ ${L.section(
 )}
 
 ${L.section(`${L.sectionHead('THE FEARS OWNERS DON’T ALWAYS SAY OUT LOUD', 'Questions owners ask us privately.', '')}${L.faqBlock([
-  { q: 'This is family business data — how do I know it won’t leave the family?', a: 'It runs in a database isolated to your business alone. Nobody outside your business can see it — that is the design, not a policy promise.' },
-  { q: 'What happens to customer data if a salesperson leaves?', a: 'Deactivate their login in seconds. Every record stays with the business — that is the entire point of the record belonging to the business, not the person.' },
+  { q: 'This is family business data — how do I know it won’t leave the family?', a: 'It runs in a database isolated to your business alone. Nobody outside your business can see it, and that isolation is built in, not promised.' },
+  { q: 'What happens to customer data if a salesperson leaves?', a: 'Deactivate their login in seconds. Every record stays with the business, because it was always the business’s record and never the individual’s.' },
   { q: 'What if the internet goes down at my shop?', a: 'Honestly: Jwero needs a connection today. Offline mode is on the roadmap, not shipped.' },
   { q: 'Can a competitor of mine, also on Jwero, see my data?', a: 'No. Database-per-tenant isolation means it structurally cannot happen, regardless of who else uses the platform.' },
 ])}
@@ -165,7 +165,7 @@ ${L.hero({
 ${L.section(
   `<div class="verdict-box">
     <div class="v-cell"><p class="v-tag">CHOOSE A WHATSAPP TOOL IF</p><p>You only need to send and receive messages, with no need for the reply to know the customer’s purchase history, scheme balance, or the live gold rate.</p></div>
-    <div class="v-cell v-jwero"><p class="v-tag">CHOOSE JWERO IF</p><p>You want every reply, price and follow-up to come from the same record as the rest of your business — so a conversation can actually become a sale, a scheme instalment, or a repair update.</p></div>
+    <div class="v-cell v-jwero"><p class="v-tag">CHOOSE JWERO IF</p><p>You want every reply, price and follow-up to come from the same record as the rest of your business — so a conversation can become a sale, a scheme instalment, or a repair update.</p></div>
   </div>`
 )}
 
@@ -183,7 +183,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('WHAT SWITCHERS SWITCH FOR', 'What switching actually buys you.', '')}
+  `${L.sectionHead('WHAT SWITCHERS SWITCH FOR', 'What switching buys you.', '')}
   ${L.cards([
     { title: 'Memory', text: 'A reply that already knows what she owns and what she’s saving toward — not a blank message thread.' },
     { title: 'Governed AI', text: 'Approval queues, daily caps and a kill switch — not a bot that fires without oversight.' },
