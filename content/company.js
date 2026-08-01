@@ -261,23 +261,56 @@ ${L.section(
 const legalPrivacy = {
   slug: 'legal/privacy',
   title: 'Privacy Policy | Jwero',
-  description: 'How Jwero collects, uses, stores and protects your data.',
-  breadcrumbs: [['Home', '/'], ['Legal', '/legal/privacy'], ['Privacy Policy']],
+  description: 'How Jwero collects, uses, stores, shares and protects data — for website visitors, product customers, and their end customers.',
+  breadcrumbs: [['Home', '/'], ['Legal'], ['Privacy Policy']],
   body: `
 ${L.section(
   `<h1>Privacy Policy</h1>
-  <p style="max-width:64em; margin-top:18px;">Jwero (“we”, “us”) provides jewellery business software. This policy explains what data we collect through this website and our product, why, and the choices you have.</p>
+  <p style="max-width:64em; margin-top:18px; color:var(--ink-2);">Last updated: see the site footer. Jwero (“Jwero”, “we”, “us”) builds jewellery business software. This policy explains what personal data we collect, why, how it is used and shared, and the choices available to you — separately for (a) visitors to this website, (b) businesses that subscribe to the Jwero product ("Customers"), and (c) the individuals whose data Customers store inside Jwero ("End Customers", e.g. a jeweller's own shoppers).</p>
   <div style="max-width:64em; margin-top:26px; font-size:.95rem; color:var(--ink-2); line-height:1.8;">
-    <h3 style="margin-top:24px; color:var(--ink);">What we collect</h3>
-    <p>Contact details you provide via forms or WhatsApp (name, phone, business details), and standard website analytics (pages viewed, approximate location, device type).</p>
-    <h3 style="margin-top:24px; color:var(--ink);">How we use it</h3>
-    <p>To respond to enquiries, run demos, provide the product to customers, and improve this website. We do not sell personal data.</p>
-    <h3 style="margin-top:24px; color:var(--ink);">Customer data inside the product</h3>
-    <p>For businesses using Jwero, each business’s data is isolated in its own database and remains that business’s property. See <a href="/trust/security">Security & Data Ownership</a> for detail.</p>
-    <h3 style="margin-top:24px; color:var(--ink);">Your choices</h3>
-    <p>You may ask us to access, correct, or delete your personal data by writing to us via <a href="/contact">Contact</a>. See also our <a href="/legal/dpdp">DPDP statement</a>.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">1. Scope — who this policy covers</h3>
+    <p>If you are browsing this website, this policy governs our collection and use of your data directly. If you are an End Customer of a jewellery business that uses Jwero, that business is responsible for its own privacy practices toward you; Jwero processes your data only on that business's instructions, as its data processor. See §7 and our <a href="/legal/dpdp">DPDP statement</a> for the fiduciary/processor distinction.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">2. What we collect</h3>
+    <p><strong>From website visitors:</strong> contact details submitted via forms, WhatsApp or email (name, phone number, business name, business type, city); standard website analytics (pages viewed, approximate location, device and browser type, referring source); and cookies as described in §6.</p>
+    <p><strong>From Customers (product subscribers):</strong> account and business details (business name, GSTIN where provided, branch locations, staff logins), billing contact details, and support communications.</p>
+    <p><strong>From End Customers, on a Customer's behalf:</strong> whatever fields that Customer chooses to record in Jwero — typically name, phone number, purchase history, gold-scheme balances, occasion dates, product preferences and consented communication history. Jwero does not decide what an End Customer's data is used for; the Customer business does.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">3. How we use it</h3>
+    <p>To respond to enquiries, schedule and run demos, provision and operate the product for Customers, process payments, provide support, send service communications, and improve this website and the product. Where Jwero's AI features draft messages on a Customer's behalf (see <a href="/platform/ai-workforce">AI Workforce & Governance</a>), those drafts are generated from data the Customer already holds and require the Customer's human approval before anything is sent — Jwero does not use End Customer data to train models shared across other Customers. We do not sell personal data, to anyone, ever.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">4. Legal basis for processing</h3>
+    <p>For website visitors and Customers, we process data with your consent (submitting a form, starting a WhatsApp conversation, signing a subscription agreement) or to take steps you request before entering a contract. For End Customer data processed inside the product, the lawful basis is set and obtained by the Customer business — including WhatsApp/Instagram opt-in consent, which is managed through Meta's official Business APIs with consent and opt-out handling built in, not bulk or unofficial messaging tools.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">5. How data is stored and protected</h3>
+    <p>Each Customer's product data is held in its own isolated database — physically separated, not a shared table with row-level flags — encrypted in transit and at rest, with role-based access control and multi-factor authentication available on Customer accounts. Full technical detail is on our <a href="/trust/security">Security & Data Ownership</a> page, including what is not yet certified (we do not hold SOC 2 or ISO certification today and say so plainly there).</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">6. Cookies & website analytics</h3>
+    <p>This website uses cookies and similar technologies for essential site functioning and for analytics that help us understand which pages are useful. We do not use these to build cross-site advertising profiles. Where a consent banner is shown, your choice is respected; you may also control cookies through your browser settings.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">7. Who we share data with</h3>
+    <p>We share data only as needed to run the service, with providers bound by contract to protect it: cloud hosting/infrastructure providers; Meta (official WhatsApp Business API, Instagram and Facebook, for messaging Customers' End Customers where consented); payment processors Razorpay and Cashfree (for storefront/checkout transactions); and, where a Customer enables it, their own Tally or Zoho Books instance (for accounting sync) or Shopify/WooCommerce/Unicommerce (for storefront/order sync). We do not share data with third parties for their own marketing purposes. A full sub-processor list is available to Customers and evaluation committees on request via <a href="/contact">Contact</a> or WhatsApp.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">8. Data retention</h3>
+    <p>Website enquiry data is retained for as long as reasonably needed to respond to you and for a limited period afterward for legitimate business records, then deleted or anonymised. Customer and End Customer data inside the product is retained for the life of the subscription and for a limited period after termination to allow export, after which it is deleted per the Customer's subscription agreement — see §9.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">9. Export & deletion</h3>
+    <p>Customers can export their business's data, in standard formats, at any time — this is a product design decision, not a support favour. Requests to access, correct, or delete personal data should be sent via <a href="/contact">Contact</a>; if your data is held inside a Customer's Jwero account rather than directly by us, we will direct you to that business, which controls it, and support them in fulfilling your request.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">10. International data transfers</h3>
+    <p>Jwero's infrastructure and sub-processors may process data in jurisdictions other than where you are located. Where this occurs, we require our providers to apply protections consistent with applicable data-protection law.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">11. Children's data</h3>
+    <p>This website and product are intended for business use by adults. We do not knowingly collect personal data from children. Jewellery purchase records held on End Customer accounts may occasionally reference family occasions (e.g. a child's birthday) as a preference field; this is not data collected from or about a child directly.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">12. Changes to this policy</h3>
+    <p>We may update this policy as the product and our practices evolve. Material changes will be reflected here with an updated date; continued use after a change constitutes acceptance of the revised policy.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">13. Contact & grievance officer</h3>
+    <p>For privacy questions, access/correction/deletion requests, or grievances, write to us via <a href="/contact">Contact</a> or hello@jwero.ai. A named grievance officer for data-protection matters will be published here once appointed — see the [VERIFY] note below.</p>
   </div>
-  <p style="margin-top:24px; font-size:.85rem; color:var(--ink-2);">[VERIFY: full legal review required before this policy is relied upon for compliance purposes.]</p>`
+  <p style="margin-top:24px; font-size:.85rem; color:var(--ink-2);">[VERIFY: this policy is a working draft reflecting current product and data practices. It requires review and sign-off by qualified legal counsel — including confirmation of the grievance officer's name and contact details — before being relied upon as a binding, compliant privacy policy.]</p>`
 )}
 `,
 };
@@ -285,19 +318,51 @@ ${L.section(
 const legalTerms = {
   slug: 'legal/terms',
   title: 'Terms of Service | Jwero',
-  description: 'The terms governing use of the Jwero website and product.',
-  breadcrumbs: [['Home', '/'], ['Legal', '/legal/privacy'], ['Terms of Service']],
+  description: 'The terms governing use of the Jwero website, and the framework under which the Jwero product is licensed to business customers.',
+  breadcrumbs: [['Home', '/'], ['Legal'], ['Terms of Service']],
   body: `
 ${L.section(
   `<h1>Terms of Service</h1>
+  <p style="max-width:64em; margin-top:18px; color:var(--ink-2);">Last updated: see the site footer. These terms govern your use of this website. If you are a Jwero product subscriber, your use of the product itself is governed by a separate signed order/subscription agreement referenced in §3, which takes precedence over this page for product matters.</p>
   <div style="max-width:64em; margin-top:22px; font-size:.95rem; color:var(--ink-2); line-height:1.8;">
-    <p>These terms govern your use of this website and, for customers, the Jwero product under a separate order/subscription agreement.</p>
-    <h3 style="margin-top:24px; color:var(--ink);">Use of this website</h3>
-    <p>Content here is for informational purposes. Pricing shown, where present, is indicative pending your specific quote.</p>
-    <h3 style="margin-top:24px; color:var(--ink);">Product terms</h3>
-    <p>Customer subscriptions are governed by a separate agreement signed at onboarding, covering scope, data ownership and export rights described on <a href="/trust/security">our security page</a>.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">1. Acceptance of terms</h3>
+    <p>By accessing this website you agree to these terms. If you do not agree, please do not use the site. These terms apply to business visitors and prospective customers; the website is not directed at consumers.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">2. Use of this website</h3>
+    <p>Content on this website — including product descriptions, comparisons, ROI figures and calculators — is provided for general informational purposes to help evaluate the product. Pricing shown, where present, is indicative and subject to a specific quote; see <a href="/pricing">Pricing</a>. Downloadable materials (e.g. the security overview, buying-committee kit) may be used only for your own evaluation of Jwero, not redistributed as your own work.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">3. Relationship to the product agreement</h3>
+    <p>This website describes the Jwero product; it does not itself grant any licence to use it. Access to the Jwero product is governed by a separate subscription/order agreement signed at onboarding, which sets out scope, term, fees, data ownership and export rights (summarised on our <a href="/trust/security">Security & Data Ownership</a> page). Where this website and the signed agreement conflict on product matters, the signed agreement governs.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">4. Intellectual property</h3>
+    <p>The Jwero name, logo, and the content, design and code of this website are owned by Jwero or its licensors. Nothing here grants you rights to our trademarks or content beyond viewing the site and using materials as permitted in §2.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">5. AI-generated content — a specific disclosure</h3>
+    <p>Jwero's product includes AI features that draft messages, suggestions and content on a Customer's behalf. By design, these drafts require human review and approval before being sent to an End Customer unless a Customer has explicitly promoted a specific, capped action type to run with reduced approval — see <a href="/platform/ai-workforce">AI Workforce & Governance</a>. Jwero is not responsible for the consequences of content a Customer's team chooses to approve and send; the approving human is the final publisher of that message.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">6. Third-party services</h3>
+    <p>The product integrates with third-party services — including Meta's WhatsApp Business API, Instagram and Facebook, Razorpay, Cashfree, Tally, Zoho Books, Shopify, WooCommerce and Unicommerce. Use of those integrations is also subject to each provider's own terms; Jwero is not responsible for outages, policy changes or account actions taken by those third parties.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">7. Acceptable use</h3>
+    <p>You agree not to use this website to submit false information, attempt to access non-public areas, interfere with its operation, or use it for any unlawful purpose. Use of the product itself for unsolicited bulk messaging outside Meta's opt-in rules is prohibited and is also a violation of the underlying WhatsApp/Meta platform terms.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">8. Disclaimers</h3>
+    <p>This website and its content are provided "as is." While we aim for accuracy — including publishing what is not yet built on our <a href="/roadmap">public roadmap</a> rather than overstating capability — we do not warrant that all content is complete, current or error-free at every moment. Product performance, uptime and support commitments are set out in the signed subscription agreement, not this page.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">9. Limitation of liability</h3>
+    <p>To the maximum extent permitted by law, Jwero is not liable for indirect, incidental or consequential damages arising from use of this website. Liability arising from the product itself is governed exclusively by the limitation-of-liability terms in the signed subscription agreement.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">10. Governing law & disputes</h3>
+    <p>These terms are governed by the laws of India. Any dispute arising from use of this website will first be attempted to be resolved informally by contacting us via <a href="/contact">Contact</a>. Product-related disputes are governed by the dispute-resolution clause in the signed subscription agreement.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">11. Changes to these terms</h3>
+    <p>We may update these terms as the website and our practices evolve. Material changes will be reflected here with an updated date.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">12. Contact</h3>
+    <p>Questions about these terms: <a href="/contact">Contact</a> or hello@jwero.ai.</p>
   </div>
-  <p style="margin-top:24px; font-size:.85rem; color:var(--ink-2);">[VERIFY: full legal review required before publishing as binding terms.]</p>`
+  <p style="margin-top:24px; font-size:.85rem; color:var(--ink-2);">[VERIFY: this is a working draft reflecting current product practices. It requires review and sign-off by qualified legal counsel before being published as binding terms, and does not itself constitute the signed subscription agreement referenced in §3.]</p>`
 )}
 `,
 };
@@ -305,21 +370,42 @@ ${L.section(
 const legalDpdp = {
   slug: 'legal/dpdp',
   title: 'DPDP Statement | Jwero',
-  description: 'Jwero’s statement on data protection practices relevant to jewellery business customers and their customers’ data.',
-  breadcrumbs: [['Home', '/'], ['Legal', '/legal/privacy'], ['DPDP Statement']],
+  description: 'Jwero’s statement on data protection under India’s DPDP Act — the fiduciary/processor split, data principal rights, and grievance redressal.',
+  breadcrumbs: [['Home', '/'], ['Legal'], ['DPDP Statement']],
   body: `
 ${L.section(
   `<h1>DPDP Statement</h1>
+  <p style="max-width:64em; margin-top:18px; color:var(--ink-2);">This statement describes how Jwero approaches personal data protection under India's Digital Personal Data Protection Act, 2023 ("DPDP Act"), for data processed through this website and the Jwero product — including personal data about our Customers' own End Customers (e.g. names, contact details, purchase and scheme records).</p>
   <div style="max-width:64em; margin-top:22px; font-size:.95rem; color:var(--ink-2); line-height:1.8;">
-    <p>This statement describes how Jwero approaches data protection for personal data processed on behalf of our customers, including their end customers’ data (e.g. names, contact details, purchase and scheme records).</p>
-    <h3 style="margin-top:24px; color:var(--ink);">Data isolation</h3>
-    <p>Each customer business’s data is held in an isolated database. See <a href="/trust/security">Security & Data Ownership</a>.</p>
-    <h3 style="margin-top:24px; color:var(--ink);">Data principal rights</h3>
-    <p>Requests relating to an individual’s personal data held within a customer’s Jwero account should be directed to that business in the first instance; Jwero supports businesses in fulfilling such requests.</p>
-    <h3 style="margin-top:24px; color:var(--ink);">Export & deletion</h3>
-    <p>Customers can export their data at any time. Deletion requests are honoured per the terms of the customer agreement.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">1. Data Fiduciary and Data Processor roles</h3>
+    <p>For website visitor data and our own Customer account data, Jwero acts as the Data Fiduciary — we determine the purpose and means of processing, and this policy plus our <a href="/legal/privacy">Privacy Policy</a> apply directly. For End Customer personal data that a jewellery business stores and processes inside Jwero (their own shoppers' records), that business is the Data Fiduciary and Jwero acts as its Data Processor, processing data strictly on that business's instructions and for the purposes it configures — not for Jwero's own independent purposes.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">2. Notice and consent</h3>
+    <p>Where Jwero collects data directly (this website, Customer accounts), we aim to give clear notice of what is collected and why at the point of collection, consistent with the DPDP Act's notice requirements. Where a Customer business collects End Customer data through Jwero — for example, WhatsApp/Instagram opt-in for messaging — obtaining valid consent from that individual is the Customer's responsibility as Data Fiduciary; Jwero provides consent- and opt-out-handling tooling (built on Meta's official Business APIs) to support it, not to replace it.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">3. Purpose limitation & data minimisation</h3>
+    <p>Data collected through this website is used only for the purposes described in our <a href="/legal/privacy">Privacy Policy</a>. Within the product, each Customer determines which fields of an End Customer's record it collects and why (e.g. gold-scheme balances for scheme participants, occasion dates for personalised outreach); Jwero does not repurpose that data for its own use, including AI model training shared across other Customers.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">4. Data isolation & security safeguards</h3>
+    <p>Each Customer's data is held in a physically isolated database, encrypted in transit and at rest, behind role-based access control — the reasonable security safeguards the DPDP Act requires a Data Fiduciary and its processors to implement. Full technical detail, including what is not yet certified, is on our <a href="/trust/security">Security & Data Ownership</a> page.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">5. Data principal rights</h3>
+    <p>Individuals ("Data Principals") whose personal data is held within a Customer's Jwero account should direct access, correction, erasure, grievance or nomination requests to that business in the first instance, as the Data Fiduciary responsible for that data. Jwero supports Customers in fulfilling such requests, including data export and deletion within the product. For personal data Jwero holds directly (website visitors, Customer account holders), requests can be sent via <a href="/contact">Contact</a>.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">6. Breach notification</h3>
+    <p>In the event of a personal data breach affecting Customer or End Customer data, Jwero will notify the affected Customer(s) without undue delay so they can meet their own notification obligations as Data Fiduciary, including to the Data Protection Board of India where required.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">7. Cross-border processing</h3>
+    <p>Where data is processed outside India by Jwero's infrastructure or sub-processors, this is done under contractual safeguards consistent with applicable law, and a full sub-processor list is available to Customers and evaluation committees on request.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">8. Retention & erasure</h3>
+    <p>Customers can export their data at any time. On termination of a subscription, data is retained for a limited period to permit export before deletion, per the subscription agreement — see <a href="/legal/terms">Terms of Service</a>.</p>
+
+    <h3 style="margin-top:28px; color:var(--ink);">9. Grievance redressal</h3>
+    <p>Grievances relating to Jwero's own processing (as Data Fiduciary) can be raised via <a href="/contact">Contact</a> or hello@jwero.ai. A named grievance officer, as contemplated by the DPDP Act, will be published here once appointed — see the [VERIFY] note below. Grievances relating to how a specific jewellery business handles its End Customers' data should be raised with that business directly, as the Data Fiduciary for that data.</p>
   </div>
-  <p style="margin-top:24px; font-size:.85rem; color:var(--ink-2);">[VERIFY: this statement requires legal review against applicable data-protection law (e.g. India’s DPDP Act) before external reliance.]</p>`
+  <p style="margin-top:24px; font-size:.85rem; color:var(--ink-2);">[VERIFY: this statement is a working draft reflecting current product architecture and a good-faith reading of the DPDP Act's fiduciary/processor framework. It requires review by qualified counsel — including formal appointment and publication of a grievance officer, and confirmation against the Act's rules as notified — before being relied upon for compliance purposes.]</p>`
 )}
 `,
 };
