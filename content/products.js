@@ -3,7 +3,7 @@ const L = require('../lib');
 const productsIndex = {
   slug: 'products',
   title: 'Products — The Jwero App Grid | Jwero',
-  description: 'Every Jwero product, grouped by promise: Remember, Sell, Run and Grow — all sharing one customer record, one catalogue and one inventory truth.',
+  description: 'Every Jwero product, grouped by promise: Sell, Know, Run and Grow — all sharing one customer record, one catalogue and one inventory truth.',
   breadcrumbs: [['Home', '/'], ['Products']],
   body: `
 ${L.hero({
