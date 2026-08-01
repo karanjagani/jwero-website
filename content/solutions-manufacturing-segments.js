@@ -126,7 +126,7 @@ ${L.section(
     { quote: 'Our buyers are in different timezones and expect fast replies.', title: 'Replies around the clock', text: 'The AI workforce answers enquiries at any hour, approved by your team before they send.' },
   ])}`
 )}
-${L.honestGapsBlock(['Multi-currency order support is [VERIFY] — confirm current status with us before committing to a specific export requirement.'])}
+${L.honestGapsBlock(['Multi-currency order support — not yet shipped; ask us for its current status against your specific export requirement.'])}
 ${L.section(`${L.sectionHead('QUESTIONS EXPORT HOUSES ASK', 'Documentation, timezones and honest gaps — answered.', '')}${L.faqBlock(exportHousesFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/solutions/manufacturers">See the manufacturer overview</a> or <a href="/faq">the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="export">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
