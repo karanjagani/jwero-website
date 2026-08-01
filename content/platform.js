@@ -468,47 +468,79 @@ ${L.hero({
 })}
 
 ${L.section(
-  `<div class="grid grid-3">
+  `${L.stats([
+    { n: '16', l: 'shipped, live today' },
+    { n: '6', l: 'rolling out now' },
+    { n: '10', l: 'named on the roadmap, not shipped' },
+  ])}`
+)}
+
+${L.section(
+  `<div class="grid grid-3 road-grid">
     <div class="road-col now">
-      <h3>Shipped</h3>
-      <div class="road-item"><strong>Customer Memory (90+ fields)</strong>with explainable scores</div>
-      <div class="road-item"><strong>WhatsApp, Instagram & Facebook commerce</strong>official APIs, one inbox</div>
-      <div class="road-item"><strong>AI workforce with governance</strong>approvals, caps, kill switch</div>
-      <div class="road-item"><strong>AI voice assistant</strong>14 languages, transcripts</div>
-      <div class="road-item"><strong>Gold schemes & digital gold</strong>enrolment → instalments → maturity</div>
-      <div class="road-item"><strong>Jewellery catalogue (PIM)</strong>purity, certificates, HUID-aware, RFID</div>
-      <div class="road-item"><strong>Inventory intelligence</strong>valuation, ageing, dead-stock visibility</div>
-      <div class="road-item"><strong>GST invoicing at live metal rates</strong>AR ledger, payment reminders</div>
-      <div class="road-item"><strong>Journeys, campaigns & loyalty</strong>festival calendar triggers, consent-aware broadcasts</div>
-      <div class="road-item"><strong>Campaign attribution (UTM)</strong>what each send actually sold, on the record</div>
-      <div class="road-item"><strong>Quotations</strong>draft → sent → accepted, with a PDF and a shareable link</div>
-      <div class="road-item"><strong>Customer segmentation</strong>live rule-based audiences, RFM tiers</div>
-      <div class="road-item"><strong>Showroom intelligence</strong>walk-in register, live floor, walkout rescue</div>
-      <div class="road-item"><strong>Repairs, purchases, manufacturing job-work</strong>with gold-loss tracking</div>
-      <div class="road-item"><strong>Multi-store structure</strong>brands, branches, role-based access</div>
-      <div class="road-item"><strong>Bridges</strong>Tally, Zoho Books, Shopify, Woo, Unicommerce</div>
+      <h3><span class="road-dot"></span>Shipped</h3>
+      <div class="road-group">
+        <p class="road-group-label">Selling & customer memory</p>
+        <div class="road-item"><strong>Customer Memory</strong>90+ fields, with explainable scores</div>
+        <div class="road-item"><strong>WhatsApp, Instagram & Facebook commerce</strong>official APIs, one inbox</div>
+        <div class="road-item"><strong>AI voice assistant</strong>14 languages, transcripts</div>
+        <div class="road-item"><strong>Quotations</strong>draft → sent → accepted, PDF + shareable link</div>
+      </div>
+      <div class="road-group">
+        <p class="road-group-label">Marketing & growth</p>
+        <div class="road-item"><strong>Journeys, campaigns & loyalty</strong>festival triggers, consent-aware broadcasts</div>
+        <div class="road-item"><strong>Campaign attribution (UTM)</strong>what each send actually sold, on the record</div>
+        <div class="road-item"><strong>Customer segmentation</strong>live rule-based audiences, RFM tiers</div>
+        <div class="road-item"><strong>Gold schemes & digital gold</strong>enrolment → instalments → maturity</div>
+      </div>
+      <div class="road-group">
+        <p class="road-group-label">Operations</p>
+        <div class="road-item"><strong>Jewellery catalogue (PIM)</strong>purity, certificates, HUID-aware, RFID</div>
+        <div class="road-item"><strong>Inventory intelligence</strong>valuation, ageing, dead-stock visibility</div>
+        <div class="road-item"><strong>GST invoicing at live metal rates</strong>AR ledger, payment reminders</div>
+        <div class="road-item"><strong>Showroom intelligence</strong>walk-in register, live floor, walkout rescue</div>
+        <div class="road-item"><strong>Repairs, purchases, manufacturing job-work</strong>with gold-loss tracking</div>
+        <div class="road-item"><strong>Multi-store structure</strong>brands, branches, role-based access</div>
+      </div>
+      <div class="road-group">
+        <p class="road-group-label">Governance & integrations</p>
+        <div class="road-item"><strong>AI workforce with governance</strong>approvals, daily caps, kill switch</div>
+        <div class="road-item"><strong>Bridges</strong>Tally, Zoho Books, Shopify, Woo, Unicommerce</div>
+      </div>
     </div>
-    <div class="road-col">
-      <h3>Rolling out</h3>
-      <div class="road-item"><strong>POS counter & cash day-close</strong>the billing counter, composed on the pricing spine</div>
-      <div class="road-item"><strong>Attribution dashboard</strong>the owner’s weekly growth report, productised</div>
-      <div class="road-item"><strong>Enterprise SSO/SCIM</strong>for chain deployments</div>
-      <div class="road-item"><strong>Direct ad-platform publishing</strong>one-click publish from Ads Manager, not uniform across every flow yet</div>
-      <div class="road-item"><strong>Additional social publishing channels</strong>Instagram & Facebook are live; LinkedIn, X, Pinterest, YouTube and Google Business are being wired</div>
-      <div class="road-item"><strong>Occasion & win-back recipes</strong>packaged one-click playbooks</div>
+    <div class="road-col soon">
+      <h3><span class="road-dot"></span>Rolling out</h3>
+      <div class="road-group">
+        <p class="road-group-label">In active rollout</p>
+        <div class="road-item"><strong>POS counter & cash day-close</strong>the billing counter, composed on the pricing spine</div>
+        <div class="road-item"><strong>Attribution dashboard</strong>the owner’s weekly growth report, productised</div>
+        <div class="road-item"><strong>Enterprise SSO/SCIM</strong>for chain deployments</div>
+        <div class="road-item"><strong>Direct ad-platform publishing</strong>one-click publish from Ads Manager, not uniform across every flow yet</div>
+        <div class="road-item"><strong>Additional social publishing channels</strong>Instagram & Facebook live; LinkedIn, X, Pinterest, YouTube, Google Business being wired</div>
+        <div class="road-item"><strong>Occasion & win-back recipes</strong>packaged one-click playbooks</div>
+      </div>
     </div>
-    <div class="road-col">
-      <h3>On the roadmap</h3>
-      <div class="road-item"><strong>Offline mode</strong>the counter needs the internet today</div>
-      <div class="road-item"><strong>Payroll & karigar wage settlement</strong>planned; not shipped</div>
-      <div class="road-item"><strong>E-invoice / IRN & GSTR filing automation</strong>statutory filing stays with Tally and your CA today</div>
-      <div class="road-item"><strong>Scheme & digital-gold redemption at online checkout</strong>balances live on the record; applying them on the ecommerce website isn’t wired yet</div>
-      <div class="road-item"><strong>HUID / certificate verification on the ecommerce website</strong>the catalogue carries the data; a customer-facing widget isn’t built</div>
-      <div class="road-item"><strong>Old-gold exchange / buyback calculator online</strong></div>
-      <div class="road-item"><strong>Girvi / gold-loan module</strong>on the long-term map</div>
-      <div class="road-item"><strong>Vernacular product interface</strong>the voice assistant speaks 14 languages; the screens are English today</div>
-      <div class="road-item"><strong>Public developer API</strong>bridges only, for now</div>
-      <div class="road-item"><strong>Predictive ML forecasting</strong>today’s inventory intelligence is ageing/valuation-based, not predictive</div>
+    <div class="road-col next">
+      <h3><span class="road-dot"></span>On the roadmap</h3>
+      <div class="road-group">
+        <p class="road-group-label">Statutory & finance</p>
+        <div class="road-item"><strong>Payroll & karigar wage settlement</strong>planned; not shipped</div>
+        <div class="road-item"><strong>E-invoice / IRN & GSTR filing automation</strong>stays with Tally and your CA today</div>
+        <div class="road-item"><strong>Girvi / gold-loan module</strong>on the long-term map</div>
+      </div>
+      <div class="road-group">
+        <p class="road-group-label">Ecommerce website</p>
+        <div class="road-item"><strong>Scheme & digital-gold redemption at checkout</strong>balances live on the record; not wired to the website yet</div>
+        <div class="road-item"><strong>HUID / certificate verification widget</strong>the catalogue carries the data; the widget isn’t built</div>
+        <div class="road-item"><strong>Old-gold exchange / buyback calculator online</strong></div>
+      </div>
+      <div class="road-group">
+        <p class="road-group-label">Operations & platform</p>
+        <div class="road-item"><strong>Offline mode</strong>the counter needs the internet today</div>
+        <div class="road-item"><strong>Vernacular product interface</strong>the voice assistant speaks 14 languages; the screens are English today</div>
+        <div class="road-item"><strong>Public developer API</strong>bridges only, for now</div>
+        <div class="road-item"><strong>Predictive ML forecasting</strong>today’s inventory intelligence is ageing/valuation-based, not predictive</div>
+      </div>
     </div>
   </div>`
 )}

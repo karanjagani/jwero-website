@@ -534,10 +534,25 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: .92rem; backgroun
 [data-theme="dark"] .tier-hot .tier-flag { color: var(--brand-strong); }
 
 /* ---------- roadmap ---------- */
-.road-col h3 { padding-bottom: 10px; border-bottom: 2px solid var(--line); margin-bottom: 14px; }
+.road-grid { align-items: start; }
+.road-col { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 20px 8px; }
+.road-col h3 { display: flex; align-items: center; gap: 9px; padding-bottom: 12px; border-bottom: 2px solid var(--line); margin-bottom: 6px; font-size: 1rem; }
+.road-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ink-3, #b7bac4); flex-shrink: 0; }
 .road-col.now h3 { border-color: var(--brand); }
-.road-item { padding: 10px 0; border-bottom: 1px dashed var(--line); font-size: .93rem; color: var(--ink-2); }
-.road-item strong { display: block; font-size: .95rem; }
+.road-col.now .road-dot { background: #1a9c5c; }
+.road-col.soon h3 { border-color: #b7791a; }
+.road-col.soon .road-dot { background: #d99a2b; }
+.road-col.next .road-dot { background: var(--ink-2); opacity: .5; }
+.road-group { margin-bottom: 4px; }
+.road-group-label { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); opacity: .7; margin: 16px 0 4px; }
+.road-group:first-child .road-group-label { margin-top: 4px; }
+.road-item { padding: 8px 0 8px 15px; border-bottom: 1px dashed var(--line); font-size: .87rem; color: var(--ink-2); line-height: 1.4; position: relative; }
+.road-item:last-child { border-bottom: none; }
+.road-item::before { content: ''; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; border-radius: 50%; background: var(--line); }
+.road-col.now .road-item::before { background: #1a9c5c; }
+.road-col.soon .road-item::before { background: #d99a2b; }
+.road-item strong { display: block; font-size: .89rem; color: var(--ink); margin-bottom: 1px; }
+@media (max-width: 860px) { .road-grid { grid-template-columns: 1fr; } .road-col { margin-bottom: 16px; } }
 
 /* ---------- footer ---------- */
 .site-footer { background: var(--band); color: var(--band-text); padding: 64px 0 90px; position: relative; }
