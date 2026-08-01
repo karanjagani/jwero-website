@@ -77,6 +77,8 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('B2B MANAGER QUESTIONS', 'Memos, pricing and trust — answered.', '')}${L.faqBlock(b2bManagerFaqs)}`)}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('Bring one buyer relationship.', 'We’ll show a private catalogue, a memo, and the follow-up that keeps it moving.', 'roles')}
 `,
 };
@@ -155,6 +157,8 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('FRANCHISE PARTNER QUESTIONS', 'Control, independence and consistency — answered.', '')}${L.faqBlock(franchisePartnerFaqs)}`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Start with one branch.', 'Pick your branch as the pilot — we’ll show shared customer records and brand-consistent pricing in one message.', 'roles')}
 `,

@@ -139,9 +139,9 @@ const NAV = [
       { title: 'Finance & operations', items: [
         ['/roles/accountant', 'Accountant / bookkeeper'],
         ['/roles/inventory-manager', 'Inventory / stock manager'],
-        ['/roles/purchase-manager', 'Purchase / procurement manager'],
       ]},
       { title: 'Trade & partnerships', items: [
+        ['/roles/purchase-manager', 'Purchase / procurement manager'],
         ['/roles/b2b-manager', 'Wholesale / B2B manager'],
         ['/roles/franchise-partner', 'Franchise partner'],
       ]},

@@ -81,6 +81,8 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('ACCOUNTANT QUESTIONS', 'Tally/Zoho, the billing counter, and GST accuracy.', '')}${L.faqBlock(accountantFaqs)}`)}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('See a GST invoice reprice at the live rate.', 'Tell us how your books are set up today — we’ll show you exactly what the Tally/Zoho bridge does and doesn’t touch.', 'roles')}
 `,
 };
@@ -104,7 +106,7 @@ const inventoryManagerRole = {
   faqs: inventoryManagerFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'OPERATIONS · INVENTORY MANAGER',
+  eyebrow: 'FINANCE & OPERATIONS · INVENTORY MANAGER',
   h1: 'See what’s dying on the shelf before it’s a write-off.',
   sub: 'Capital sits frozen in pieces nobody’s buying, and by the time a yearly stocktake finds them, months of financing cost are already gone. Jwero shows ageing and dead-stock value continuously, across every branch, so slow-moving pieces get a decision made while there’s still time to act.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
@@ -163,6 +165,8 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('INVENTORY QUESTIONS', 'Dead stock, forecasting, and staying in sync online.', '')}${L.faqBlock(inventoryManagerFaqs)}`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See your dead-stock number.', 'Tell us how stock is tracked today across your branches — we’ll show you what the ageing view looks like on your own data.', 'roles')}
 `,
@@ -247,6 +251,8 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('PURCHASE MANAGER QUESTIONS', 'Forecasting, vendor reconciliation, and pricing approvals.', '')}${L.faqBlock(purchaseManagerFaqs)}`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See ageing data before your next order.', 'Tell us how purchasing works today — we’ll show you exactly what the reorder view looks like.', 'roles')}
 `,

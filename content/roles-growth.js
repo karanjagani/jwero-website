@@ -28,7 +28,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('CUSTOMER & GROWTH', 'A day in this role.', '')}
+  `${L.sectionHead('A DAY IN THIS ROLE', 'What changes between a blank call list and a prioritised one.', '')}
   ${L.impactGrid([
     {
       lever: 'Building today’s call list',
@@ -81,6 +81,8 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('CRM EXECUTIVE QUESTIONS', 'Straight answers about this role.', '')}${L.faqBlock(crmFaqs)}`)}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('See the approval queue for yourself.', 'We’ll walk through a real follow-up list — what’s drafted, what you’d approve.', 'roles')}
 `,
 };
@@ -112,7 +114,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('CUSTOMER & GROWTH', 'A day in this role.', '')}
+  `${L.sectionHead('A DAY IN THIS ROLE', 'What changes when every channel shares one record.', '')}
   ${L.impactGrid([
     {
       lever: 'Instagram & WhatsApp enquiries',
@@ -166,6 +168,8 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('MARKETING MANAGER QUESTIONS', 'Straight answers about this role.', '')}${L.faqBlock(marketingFaqs)}`)}
 
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
 ${L.ctaBand('See attribution on one record.', 'Bring a recent campaign — we’ll show how it would trace through Jwero.', 'roles')}
 `,
 };
@@ -197,7 +201,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('CUSTOMER & GROWTH', 'A day in this role.', '')}
+  `${L.sectionHead('A DAY IN THIS ROLE', 'What changes when the storefront and the chat share one truth.', '')}
   ${L.impactGrid([
     {
       lever: 'Inventory across channels',
@@ -249,6 +253,8 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('E-COMMERCE MANAGER QUESTIONS', 'Straight answers about this role.', '')}${L.faqBlock(ecommerceFaqs)}`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring your current stack.', 'Tell us what you run today — we’ll show exactly what Jwero adds on top.', 'roles')}
 `,
