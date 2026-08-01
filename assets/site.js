@@ -197,6 +197,20 @@
     });
   }
 
+  // Platform tabs (interactive category switcher, e.g. Remember/Sell/Run)
+  document.querySelectorAll('[data-ptabs]').forEach(function (wrap) {
+    var buttons = wrap.querySelectorAll('.ptabs-nav button');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var key = btn.getAttribute('data-tab');
+        buttons.forEach(function (b) { b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+        wrap.querySelectorAll('.ptabs-panel').forEach(function (p) {
+          p.classList.toggle('is-active', p.getAttribute('data-panel') === key);
+        });
+      });
+    });
+  });
+
   // --- calculators ---------------------------------------------------
   var CUR = { INR: '₹', USD: '$', GBP: '£', AED: 'AED ', EUR: '€' };
   function fmt(n, cur) {

@@ -181,6 +181,33 @@ function pillarConstellation() {
   ).join('')}</div>`;
 }
 
+// Interactive platform tabs — same PILLARS data as pillarConstellation, as a
+// click-to-switch category view (eyebrow tab nav + two-column detail panel).
+function platformTabs() {
+  return `
+<div data-ptabs>
+  <div class="ptabs-nav" role="tablist">
+    ${PILLARS.map((p, i) => `<button type="button" role="tab" data-tab="${p.key}" aria-selected="${i === 0 ? 'true' : 'false'}">${p.title}</button>`).join('')}
+  </div>
+  ${PILLARS.map(
+    (p, i) => `
+  <div class="ptabs-panel${i === 0 ? ' is-active' : ''}" data-panel="${p.key}">
+    <div class="ptabs-body">
+      <div class="ptabs-copy">
+        <h3>${p.promise}</h3>
+        <div class="ptabs-chips">${p.chips.map(([l, h]) => `<a class="chip chip-link" href="${h}">${l}</a>`).join('')}</div>
+        <p class="ptabs-proof">${p.proof}</p>
+      </div>
+      <div class="one-system">
+        <p class="one-system-tag">INSIDE ${p.title}</p>
+        <ul class="one-system-list">${p.chips.map(([l]) => `<li>${l}</li>`).join('')}</ul>
+      </div>
+    </div>
+  </div>`
+  ).join('')}
+</div>`;
+}
+
 // JTBD literal blocks — "When X, I want Y, so I can Z" (AEO-friendly H3s), per BP2 T3 §6.
 function jtbdBlock(items) {
   return `<div class="jtbd">${items
@@ -334,9 +361,21 @@ function painRows(items) {
     .join('');
 }
 
+// Confident single-line proof strip, placed directly under the hero (Webex-style
+// trust bar) — always a real, product-verified claim, never a fabricated stat.
+function trustBar(html, link) {
+  return `
+<div class="trust-bar">
+  <div class="container">
+    <p>${html}</p>
+    ${link ? `<a href="${link.href}">${link.label} →</a>` : ''}
+  </div>
+</div>`;
+}
+
 module.exports = {
   esc, hero, section, sectionHead, cards, steps, stats, faqBlock,
   governanceStrip, ctaBand, painRows, mockApproval, mockChat, mockMemory, mockOneRecord,
-  breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, PILLARS,
+  breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid,
 };

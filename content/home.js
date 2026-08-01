@@ -38,6 +38,8 @@ ${L.hero({
   mock: L.mockChat,
 })}
 
+${L.trustBar('<strong>240+</strong> governed AI actions. Every one waits for your approval before a customer sees it.', { href: '/platform/ai-workforce', label: 'See how governance works' })}
+
 ${L.section(
   `${L.sectionHead('THE IMPACT', 'What actually changes for your business.', 'Not features. Outcomes — the ones that show up in revenue, margin and the hours your team gets back.')}
   ${L.impactGrid([
@@ -97,8 +99,8 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('THE THREE PILLARS', 'What an operating system for jewellery actually does.', '')}
-  ${L.pillarConstellation()}`
+  `${L.sectionHead('THE THREE PILLARS', 'What an operating system for jewellery actually does.', 'Tap a pillar — Remember, Sell or Run — to see what lives inside it.')}
+  ${L.platformTabs()}`
 )}
 
 ${L.section(
