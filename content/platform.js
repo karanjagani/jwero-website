@@ -7,7 +7,7 @@ const platform = {
   description: 'One customer record, catalogue, inventory truth, one inbox — how Jwero runs a jewellery business, with an AI workforce that waits for your approval.',
   breadcrumbs: [['Home', '/'], ['Platform']],
   faqs: [
-    { q: 'Is Jwero an ERP?', a: 'It includes an operations backbone — orders, inventory, purchases, repairs and billing — but Jwero is bigger than an ERP: it is the one system where the customer, the catalogue and the operation share state, so AI can act on all three at once. Your statutory books stay in Tally or Zoho Books via built-in bridges.' },
+    { q: 'Is Jwero an ERP?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP (orders, inventory, purchases, repairs, billing), from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.' },
     { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with the Assist scope — customers imported, WhatsApp connected, catalogue published — and expand module by module as each one proves itself.' },
     { q: 'What makes this different from buying a CRM plus a WhatsApp tool plus a catalogue app?', a: 'Separate tools mean separate memories. A WhatsApp tool doesn’t know her gold-plan balance; a CRM doesn’t sell on Instagram. In Jwero, the customer, the catalogue and the channels live on one record — so AI can actually sell, not just log.' },
     { q: 'Is there a public API or SSO for enterprise IT?', a: 'A public developer API and enterprise SSO/SCIM are on the public roadmap, not shipped today. We say so here rather than let your evaluation discover it later.' },
@@ -61,16 +61,16 @@ ${L.section(
 ${L.honestGapsBlock([
   'POS counter billing with cash day-close — until it ships, Billing & Finance handles GST invoicing and works alongside your existing counter.',
   'Payroll and karigar wage settlement.',
-  'A public developer API and enterprise SSO/SCIM.',
+  'A public developer API, and enterprise single sign-on (SSO) for chains whose IT team needs staff to log in with their company account.',
   'A vernacular product interface — the AI voice speaks 14 languages today; the screens are English.',
   'Offline mode — Jwero is a connected product today.',
 ])}
 
 ${L.section(`${L.sectionHead('QUESTIONS EVALUATORS ASK', 'Straight answers for the people who have to sign off.', '')}${L.faqBlock([
-  { q: 'Is Jwero an ERP?', a: 'It includes an operations backbone — orders, inventory, purchases, repairs and billing — but Jwero is bigger than an ERP: it is the one system where the customer, the catalogue and the operation share state. Your statutory books stay in Tally or Zoho Books.' },
+  { q: 'Is Jwero an ERP?', a: 'Both — one system, not two. It remembers customers like a CRM and runs operations like an ERP, from the same record. Your statutory books stay in Tally or Zoho Books.' },
   { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with customers imported, WhatsApp connected and catalogue published, then expand module by module.' },
   { q: 'What makes this different from a CRM plus a WhatsApp tool?', a: 'Separate tools mean separate memories. In Jwero the customer, catalogue and channels live on one record — so AI can actually sell, not just log.' },
-  { q: 'Is there a public API or SSO?', a: 'On the public roadmap, not shipped today. <a href="/roadmap">See the roadmap</a>.' },
+  { q: 'Is there a public API or single sign-on (SSO)?', a: 'On the public roadmap, not shipped today. <a href="/roadmap">See the roadmap</a>.' },
   { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional — run everything on Assist and never touch the rest.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>

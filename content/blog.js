@@ -578,7 +578,7 @@ ${L.ctaBand('Send a catalogue that can close the sale itself.', 'Bring a design 
 
 // ---------------------------------------------------------------- Article 9: CRM vs ERP
 const crmErpGuideFaqs = [
-  { q: 'Is Jwero a CRM or an ERP?', a: 'Both, on one record — but the honest answer is that the label matters less than the fact that customer data and operational data don’t live in two disconnected systems. A CRM alone can’t tell you if a piece is even in stock; an ERP alone doesn’t know a customer’s scheme balance or wedding month. Jwero is built as the operating system that sits above both.' },
+  { q: 'Is Jwero a CRM or an ERP?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP, from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at.' },
   { q: 'Can I buy just the CRM part and skip the operations side?', a: 'Yes — most businesses start on customer memory, WhatsApp and catalogue (the CRM-adjacent scope) and adopt inventory, purchases and manufacturing job-work later, once the first layer has proven itself.' },
   { q: 'What actually breaks when CRM and ERP are two separate systems?', a: 'The join between them. A quote sent from the CRM references stock the ERP hasn’t confirmed; an ERP delivery note doesn’t update the CRM’s purchase history; a scheme payment in one system doesn’t reflect in the other until someone exports and re-imports. Every one of those gaps is a place a customer detail gets stale or a sale gets delayed.' },
 ];

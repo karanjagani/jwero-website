@@ -217,20 +217,20 @@ ${L.ctaBand('Hire staff that scale like software.', 'Start with one agent on Ass
 
 const optimize = {
   slug: 'products/optimize',
-  title: 'Optimize — Website CRO Suite for Jewellery Business | Jwero',
-  description: 'A CRO suite built into Jwero: analytics, heatmaps, session recordings, A/B experiments, personalization, web push and an AI webchat — on your customer record.',
+  title: 'Optimize — See Why Website Visitors Leave, Before They Do | Jwero',
+  description: 'Optimize shows why visitors leave your website and catches them first: heatmaps, A/B tests, popups, web push and an AI webchat — on your customer record.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Optimize', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'A website conversion-rate-optimization suite built into Jwero: analytics, heatmaps, session recordings, A/B experiments, personalization and an AI webchat on the customer record.',
+    description: 'Website conversion optimization built into Jwero: visitor analytics, heatmaps, session recordings, A/B experiments, personalization and an AI webchat on the customer record.',
     url: 'https://jwero.ai/products/optimize', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
-  breadcrumbs: BC('Optimize (Website CRO)'),
+  breadcrumbs: BC('Optimize'),
   faqs: [
-    { q: 'What is Optimize?', a: 'A conversion-rate-optimization suite built into the Jwero platform: visitor analytics, funnels, heatmaps, session recordings, A/B experiments, personalization rules, popups and lead forms, web push, and an AI webchat widget — the class of stack you’d otherwise stitch together from Hotjar, VWO and OneSignal.' },
+    { q: 'What is Optimize?', a: 'The toolkit that shows you why a website visitor left without buying, and helps you catch the next one before they do: visitor analytics, heatmaps, session recordings, A/B experiments, personalization rules, popups and lead forms, web push, and an AI webchat widget — in the trade, this category is called "CRO" (conversion-rate optimization). It’s the class of stack you’d otherwise stitch together from Hotjar, VWO and OneSignal.' },
     { q: 'Do I need to install anything extra?', a: 'No separate tools or contracts. One pixel on your website turns on analytics, heatmaps, recordings, experiments, popups, push and webchat together.' },
     { q: 'How is this different from just installing Hotjar or VWO?', a: 'Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your WhatsApp, scheme and billing modules already use — not a separate export you have to reconcile.' },
-    { q: 'Can the AI actually answer webchat questions?', a: 'Yes — AIVA drafts and sends replies on the webchat widget using your catalogue and knowledge base, and marks a conversation for human takeover the moment it needs a person.' },
+    { q: 'Can the AI actually answer webchat questions?', a: 'Yes — AIVA (Jwero’s AI webchat assistant) drafts and sends replies on the widget using your catalogue and knowledge base, and marks a conversation for human takeover the moment it needs a person.' },
     { q: 'What can I personalize?', a: 'Personalization rules can target by behaviour tracked on your site — pages viewed, funnel stage — and, because it shares the customer record, by data like scheme or loyalty membership, so a returning scheme member can see different content than a first-time visitor.' },
     { q: 'What does this replace, work with, and cost?', a: 'It replaces the need for separate analytics, heatmap, A/B testing and push tools. It works alongside your existing website — one pixel, no rebuild. Pricing sits inside Jwero’s tiers — see /pricing for the structure.' },
     { q: 'Is visitor data handled with consent?', a: 'Yes — consent settings, a domain guard and a CSS sanitizer are built into the suite, so tracking and on-site widgets respect visitor consent and stay scoped to domains you approve.' },
@@ -240,7 +240,7 @@ const optimize = {
 ${L.hero({
   eyebrow: 'OPTIMIZE',
   h1: 'Your website stops being a brochure.',
-  sub: 'Visitors arrive, look around, and leave — and until now you had no idea where. Optimize is a full CRO suite built into Jwero: analytics, heatmaps, recordings, A/B experiments, personalization, popups, push and an AI webchat — reading and writing the same customer record as everything else.',
+  sub: 'Visitors arrive, look around, and leave — and until now you had no idea where. Optimize shows you exactly that, and helps you catch the next one before they go: heatmaps, recordings, A/B experiments, personalization, popups, push and an AI webchat — reading and writing the same customer record as everything else.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'optimize' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}

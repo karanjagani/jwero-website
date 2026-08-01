@@ -28,7 +28,15 @@ ${L.hero({
 })}
 
 ${L.section(
-  `<div class="tiers">
+  `<div class="quick-check">
+    <p class="quick-check-title">WHICH ONE IS FOR YOU? A 5-SECOND CHECK</p>
+    <div class="quick-check-items">
+      <div><strong>Single store, just starting?</strong><span>→ Assist</span></div>
+      <div><strong>Growing team, want more done for you?</strong><span>→ Approve</span></div>
+      <div><strong>Multi-branch or high volume?</strong><span>→ Autopilot</span></div>
+    </div>
+  </div>
+  <div class="tiers">
     <div class="card tier">
       <p class="tier-flag">Start here</p>
       <h3>Assist</h3>

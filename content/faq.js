@@ -11,7 +11,7 @@ const CATEGORIES = [
     id: 'product', label: 'What Jwero is',
     items: [
       { q: 'What is Jwero?', a: 'The AI operating system for jewellery business — one place where customers, catalogue, inventory, WhatsApp/Instagram selling, gold schemes and marketing all share the same record, with an AI workforce that drafts the work under your approval.' },
-      { q: 'Is Jwero a CRM or an ERP?', a: 'Both jobs, one record. The CRM side — customers, follow-ups, marketing — is the core. Accounting stays in your Tally or Zoho Books via built-in bridges rather than being replaced.' },
+      { q: 'Is Jwero a CRM or an ERP?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP, from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.' },
       { q: 'Who is Jwero actually for?', a: 'Single stores to multi-store chains, wholesalers, manufacturers, franchise networks and online-first brands. The same system; modules switch on per business type. See <a href="/solutions">all 22 solutions</a>.' },
       { q: 'Does Jwero replace my current software?', a: 'Usually it sits alongside your accounting software (via the Tally/Zoho bridge) and replaces the scattered tools — the WhatsApp app, the Excel customer list, the diary follow-ups, the PDF catalogue.' },
       { q: 'What does "AI-first" actually mean here, concretely?', a: 'An AI workforce that drafts replies, follow-ups and campaigns — 240+ governed actions, approval queues, daily caps and a five-scope kill switch. It proposes; your team disposes.' },

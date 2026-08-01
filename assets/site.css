@@ -394,6 +394,19 @@ main:focus-visible { outline: none; }
 /* ---------- compare-table "unverified" badge ---------- */
 .verify-tag { display: inline-block; font-size: .72rem; font-weight: 600; color: var(--ink-2); background: var(--surface); border: 1px dashed var(--line); border-radius: 6px; padding: 2px 8px; line-height: 1.5; }
 
+.plain-line { text-align: center; font-size: 1rem; color: var(--ink-2); max-width: 52em; margin: 0 auto; padding: 0 20px; }
+.plain-line strong { color: var(--ink); }
+
+/* ---------- pricing tier self-selection quick-check ---------- */
+.quick-check { text-align: center; margin-bottom: 26px; }
+.quick-check-title { font-size: .72rem; font-weight: 800; letter-spacing: .1em; color: var(--ink-2); margin-bottom: 14px; }
+.quick-check-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 900px; margin: 0 auto; }
+.quick-check-items > div { border: 1px solid var(--line); background: var(--card); border-radius: 12px; padding: 14px 16px; }
+.quick-check-items strong { display: block; font-size: .88rem; margin-bottom: 4px; }
+.quick-check-items span { font-size: .95rem; font-weight: 700; color: var(--brand); }
+[data-theme="dark"] .quick-check-items span { color: var(--brand-strong); }
+@media (max-width: 720px) { .quick-check-items { grid-template-columns: 1fr; } }
+
 /* ---------- risk-reversal "safe to try" strip ---------- */
 .safe-strip { border: 1px solid var(--line); background: var(--card); border-radius: 14px; padding: 22px 26px; margin-top: 34px; }
 .safe-title { font-size: .72rem; font-weight: 800; letter-spacing: .1em; color: var(--brand); margin-bottom: 14px; }

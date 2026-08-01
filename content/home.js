@@ -13,7 +13,7 @@ const home = {
   },
   faqs: [
     { q: 'What is Jwero?', a: 'Jwero is the AI operating system for jewellery business — one system where your customer record, catalogue, inventory and every selling channel (WhatsApp, Instagram, storefront, video) share one truth, and an AI workforce drafts the work under your approval.' },
-    { q: 'Is Jwero a CRM, an ERP, or something else?', a: 'It is the operating system that sits above both. A CRM only remembers; an ERP only records. Jwero is the one place where the customer, the catalogue and the operation all live — so AI can actually act, not just log.' },
+    { q: 'Is Jwero a CRM, an ERP, or something else?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP, from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.' },
     { q: 'Do I have to replace my current billing or accounting software?', a: 'No. Keep your books exactly where your accountant likes them — Jwero bridges to Tally and Zoho Books. Most businesses change nothing on the accounting side on day one.' },
     { q: 'Will AI message my customers without asking?', a: 'No. Every AI-drafted action waits in an approval queue until your team clears it, inside daily caps and quiet hours you set — with a kill switch at five scopes. Autonomy is earned action by action, never assumed.' },
     { q: 'How long does it take to go live?', a: 'Days, not months, for the first stage: we import your customers, connect your existing WhatsApp number, and publish your catalogue — with approvals switched on from day one.' },
@@ -32,6 +32,8 @@ ${L.hero({
   note: 'The button above opens our own Jwero inbox — test the product before you talk to anyone. A real person + our AI reply within minutes. Prefer email? <a href="/contact">care@jwero.ai</a>.',
   mock: L.mockChat,
 })}
+
+${L.section(`<p class="plain-line"><strong>In one line:</strong> your WhatsApp, your customer list, your gold schemes and your website — in one place, replies drafted by AI, sent only when your team says yes.</p>`)}
 
 ${L.trustBar('<strong>240+</strong> governed AI actions. Every one waits for your approval before a customer sees it.', { href: '/platform/ai-workforce', label: 'See how governance works' })}
 

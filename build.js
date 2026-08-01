@@ -71,7 +71,7 @@ const NAV = [
         ['/products/ai-sales-agents', 'AI Sales Agents & Voice'],
         ['/products/ads-manager', 'Ads Manager'],
         ['/products/social-media', 'Social Media Management'],
-        ['/products/optimize', 'Optimize (Website CRO)'],
+        ['/products/optimize', 'Optimize (Website Visitors)'],
         ['/products/storefront', 'Ecommerce Website'],
       ]},
       { title: 'Know', items: [
