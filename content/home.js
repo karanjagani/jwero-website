@@ -23,11 +23,6 @@ const home = {
     { q: 'What kind of impact can I expect?', a: 'It depends on your business, which is why we won’t quote a percentage nobody can verify. Faster response, structured follow-up, visible dead stock and disciplined schemes are the same levers that let bigger players out-remember their customers at scale. Run the calculators on your own numbers, or ask for a 30-day growth report so you see your own impact.' },
   ],
   body: `
-${L.section(
-  `<div class="ticker-row"><span class="ticker-rate">24k gold ₹1,43,460 / 10g — as of 20 Jul 2026</span><a href="/tools">calculators for your business →</a></div>`,
-  { tone: 'tint', id: 'rate-strip' }
-)}
-
 ${L.hero({
   eyebrow: 'THE AI OPERATING SYSTEM FOR JEWELLERY BUSINESS',
   h1: 'Run your whole jewellery business on one system — with an AI staff that waits for your yes.',
