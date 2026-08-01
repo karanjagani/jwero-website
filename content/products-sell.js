@@ -404,27 +404,27 @@ ${L.ctaBand('Bring your ecommerce website onto one system.', 'A live-rate price 
 const adsManager = {
   slug: 'products/ads-manager',
   title: 'Ads Manager — Meta, Google & Pinterest Campaigns | Jwero',
-  description: 'Create and manage ad campaigns across Meta, Google and Pinterest from one place, with budget alerts and an AI strategist that drafts, never spends.',
+  description: 'Create ad campaigns across Meta, Google and Pinterest from one place — approve in the wizard and Jwero publishes straight to Meta and Google, with budget alerts and an approval step before spend.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Ads Manager', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Ad-campaign management across Meta, Google and Pinterest, with a create/edit wizard, budget alerts, a pre-spend approval step and AI-assisted opportunity analysis.',
+    description: 'Ad-campaign management across Meta, Google and Pinterest, with a create/edit wizard, automated publishing to Meta Ads and Google Ads (Search, Performance Max, Shopping) via their APIs once approved, budget-alert monitoring and AI-assisted opportunity analysis.',
     url: 'https://jwero.ai/products/ads-manager', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   breadcrumbs: BC('Ads Manager'),
   faqs: [
-    { q: 'Which ad platforms does Jwero manage?', a: 'Meta Ads, Google Ads and Pinterest — each with its own integration and a catalogue of supported campaign types for that platform.' },
-    { q: 'Does Jwero publish my campaign straight to the ad platform?', a: 'Campaigns are created, configured, budgeted and analyzed inside Jwero end to end. Direct one-click publishing to the ad platform is rolling out and not uniformly live across every flow yet — we will tell you plainly if your setup needs a manual publish step, rather than let you find out from a failed campaign.' },
-    { q: 'Can the AI spend my budget without me knowing?', a: 'No. The AI strategist analyzes performance and surfaces opportunities and learnings for you to review; every campaign goes through an approval step before spend. It drafts, it does not spend.' },
-    { q: 'What happens if I go over budget?', a: 'Budget alerts flag campaigns approaching their limits, so overspend is something you catch early, not something you discover on the invoice.' },
-    { q: 'How is this different from managing ads inside Meta or Google directly?', a: 'You get one wizard for campaign creation across all three platforms, one place for budget alerts and approvals, and AI-drafted analysis — instead of three separate ad managers with three separate logins.' },
+    { q: 'Which ad platforms does Jwero manage?', a: 'Meta Ads, Google Ads and Pinterest — each with its own integration and campaign-type catalogue. Google covers Search, Performance Max and Shopping (linked to your jewellery catalogue); Meta covers standard campaigns, Advantage+ automated campaigns and lead-gen ad forms.' },
+    { q: 'Does Jwero publish my campaign straight to the ad platform?', a: 'Yes, for Meta and Google. Once you approve a campaign in the wizard, Jwero calls the Meta Graph API and Google Ads API directly to create the live budget, campaign, ad sets and creatives — it doesn\'t hand you a draft to copy-paste. Pinterest publishing is still rolling out; ask us for its current status on your account.' },
+    { q: 'Can the AI spend my budget without me knowing?', a: 'No. The AI strategist analyzes performance and surfaces opportunities and learnings for you to review — it does not write your ad headlines or copy, and it never spends on its own. Approval happens in the wizard before Jwero ever calls the ad platform; nothing goes live without you saying yes first.' },
+    { q: 'What happens if I go over budget?', a: 'An automated monitoring worker watches spend and alerts you as campaigns approach their limits, so overspend is something you catch early, not something you discover on the invoice.' },
+    { q: 'How is this different from managing ads inside Meta or Google directly?', a: 'You get one wizard for campaign creation across all three platforms, one place for budget alerts and approvals, and — for Meta and Google — automatic publishing straight from that wizard, instead of three separate ad managers with three separate logins.' },
     { q: 'Does this replace my existing ad accounts?', a: 'No — it connects to and manages your existing Meta, Google and Pinterest ad accounts from inside Jwero, rather than replacing them.' },
   ],
   body: `
 ${L.hero({
   eyebrow: 'ADS MANAGER',
   h1: 'Run the ads. Keep your hand on the budget.',
-  sub: 'Meta, Google and Pinterest campaigns — created, configured and analyzed from one place, with a budget alert before you overspend and an approval step before a single rupee goes out. The AI strategist drafts the opportunity; you decide what launches.',
+  sub: 'Meta, Google and Pinterest campaigns — created, configured and analyzed from one place. Approve a campaign in the wizard and Jwero publishes it straight to Meta and Google through their own APIs, no manual copy-paste into another ad manager. A budget alert flags overspend early, and nothing goes live until you approve it.',
   primary: { href: '#', label: 'Talk to us about Ads Manager', wa: 'adsmanager' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -433,10 +433,13 @@ ${L.section(
   `${L.sectionHead('ONE WORKSPACE, THREE PLATFORMS', 'Stop juggling three ad managers.', '')}
   ${L.cards([
     { title: 'Meta, Google & Pinterest', text: 'Each platform has its own integration and its own catalogue of supported campaign types — built for that platform, not a lowest-common-denominator form.' },
+    { title: 'Automatic publishing to Meta & Google', text: 'Approve a campaign in the wizard and Jwero calls the Meta Graph API and Google Ads API directly to create the live budget, campaign, ad sets and creatives — not a draft you copy-paste in elsewhere.' },
+    { title: 'Google Search, Performance Max & Shopping', text: 'Google campaigns cover Search (with server-side checks — e.g. at least three headlines before it lets you submit), Performance Max, and Shopping campaigns linked to your jewellery catalogue.' },
+    { title: 'Meta Advantage+ & lead-gen forms', text: 'Meta campaigns include Advantage+ automated campaigns and native lead-gen ad forms, alongside standard campaign types.' },
     { title: 'Create/edit wizard', text: 'One guided flow to build and adjust a campaign, instead of relearning three different ad-platform interfaces.' },
-    { title: 'Budget alerts', text: 'Get flagged when a campaign is approaching its limit, before the spend can surprise you.' },
-    { title: 'Approval before spend', text: 'Every campaign passes an approval step before it goes live. Nobody spends the marketing budget by accident.' },
-    { title: 'AI opportunity analysis', text: 'The AI strategist surfaces where a campaign is underperforming or where there’s budget headroom worth using — a draft recommendation you review, rather than an autopilot.' },
+    { title: 'Budget alerts', text: 'An automated monitoring worker watches spend and flags a campaign as it approaches its limit, before the spend can surprise you.' },
+    { title: 'Approval before spend', text: 'Every campaign passes an approval step in the wizard before Jwero submits it to the ad platform. Nobody spends the marketing budget by accident.' },
+    { title: 'AI opportunity analysis', text: 'The AI strategist surfaces where a campaign is underperforming or where there’s budget headroom worth using, based on your performance data — a draft recommendation you review, not generative copywriting. It doesn’t write your ad headlines or body copy; those are still entered by hand in the wizard.' },
     { title: 'Learnings dashboards', text: 'Performance and learnings in one view across platforms, so you compare Meta against Google against Pinterest without exporting three reports.' },
   ])}`
 )}
@@ -449,19 +452,20 @@ ${L.oneSystemBlock([
 ])}
 
 ${L.honestGapsBlock([
-  'Direct one-click publishing of a campaign straight to the ad platform is not fully wired for every flow yet — some setups still need a manual publish step, which we will tell you about upfront rather than let a draft campaign silently sit unpublished.',
+  'Pinterest publishing is still rolling out and not yet uniformly live — Meta and Google campaigns publish directly to the ad platform once approved; ask us for Pinterest\'s current status on your account.',
+  'The AI strategist analyzes performance and drafts opportunities for you to review — it does not write your ad headlines or body copy today; those are still entered by hand in the campaign wizard.',
 ])}
 
 ${L.section(`${L.sectionHead('ADS MANAGER QUESTIONS', 'Budget control, publishing, and what the AI does.', '')}${L.faqBlock([
-  { q: 'Does Jwero publish my campaign straight to the ad platform?', a: 'Campaigns are created, configured, budgeted and analyzed inside Jwero. Direct one-click publish to the ad platform is rolling out, not uniformly live yet — we will tell you plainly if your flow needs a manual step.' },
-  { q: 'Can the AI spend my budget without me knowing?', a: 'No — it drafts opportunity analysis and learnings; every campaign needs your approval before spend.' },
-  { q: 'Which platforms are covered?', a: 'Meta Ads, Google Ads and Pinterest, each with its own campaign-type catalogue.' },
+  { q: 'Does Jwero publish my campaign straight to the ad platform?', a: 'Yes, for Meta and Google — approve a campaign in the wizard and Jwero submits it directly via the Meta Graph API and Google Ads API to create the budget, campaign, ad sets and creatives. Pinterest publishing is still rolling out.' },
+  { q: 'Can the AI spend my budget without me knowing?', a: 'No — it drafts opportunity analysis and learnings, not ad copy, and never spends. Every campaign needs your approval in the wizard before Jwero calls the ad platform.' },
+  { q: 'Which platforms are covered?', a: 'Meta Ads, Google Ads and Pinterest. Google spans Search, Performance Max and Shopping; Meta spans standard campaigns, Advantage+ and lead-gen forms.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="adsmanager">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('Run ads without losing sight of the budget.', 'Meta, Google and Pinterest campaigns, budget alerts and an approval step before spend — all in one place. See it work on your own accounts.', 'adsmanager')}
+${L.ctaBand('Run ads without losing sight of the budget.', 'Approve a campaign in the wizard and Jwero publishes it straight to Meta and Google — budget alerts and an approval step keep you in control. See it work on your own accounts.', 'adsmanager')}
 `,
 };
 

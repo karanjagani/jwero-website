@@ -468,7 +468,7 @@ ${L.hero({
 
 ${L.section(
   `${L.stats([
-    { n: '20', l: 'shipped, live today' },
+    { n: '25', l: 'shipped, live today' },
     { n: '5', l: 'rolling out now' },
     { n: '9', l: 'named on the roadmap, not shipped' },
   ])}`
@@ -499,13 +499,18 @@ ${L.section(
         <div class="road-item"><strong>GST invoicing at live metal rates</strong>AR ledger, payment reminders</div>
         <div class="road-item"><strong>GSTR-1/3B report export</strong>GSTN-offline-tool format, for manual upload</div>
         <div class="road-item"><strong>Showroom intelligence</strong>walk-in register, live floor, walkout rescue</div>
-        <div class="road-item"><strong>Repairs, purchases, manufacturing job-work</strong>with gold-loss tracking</div>
+        <div class="road-item"><strong>Repairs & after-sales service</strong>custody chain, warranty/AMC, in-store old-gold exchange</div>
+        <div class="road-item"><strong>Purchase & vendor management</strong>POs, GRN, vendor bills, self-serve vendor portal</div>
+        <div class="road-item"><strong>Manufacturing job-work</strong>with gold-loss tracking</div>
+        <div class="road-item"><strong>Hallmarking dispatch tracking</strong>batch to AHC, with auto re-hallmark flags on repairs</div>
         <div class="road-item"><strong>Multi-store structure</strong>brands, branches, role-based access</div>
       </div>
       <div class="road-group">
         <p class="road-group-label">Workforce</p>
         <div class="road-item"><strong>Payroll</strong>attendance-aware, maker-checker approval, payslips + bank file</div>
         <div class="road-item"><strong>Karigar wage settlement</strong>rate cards, work logs, khata ledger, settlement runs</div>
+        <div class="road-item"><strong>Attendance, leave & recruitment</strong>geo/selfie attendance, accrual-based leave, hire-to-onboarding pipeline</div>
+        <div class="road-item"><strong>Performance, LMS & incentives</strong>review cycles, courses with certificates, sales commission with clawbacks</div>
       </div>
       <div class="road-group">
         <p class="road-group-label">Governance & integrations</p>

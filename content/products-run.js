@@ -270,8 +270,8 @@ ${L.hero({
 ${L.section(
   `${L.cards([
     { title: 'Orders', text: 'Retail, B2B or custom — tracked from advance to delivery.', link: { href: '/products/inventory', label: 'See inventory' } },
-    { title: 'Purchases & vendors', text: 'Purchase-to-pay with GRN weigh-and-assay — what you ordered, received and owe, reconciled.' },
-    { title: 'Repairs', text: 'Every repair tracked from intake to re-hallmark to return, with the hallmark gate enforced.' },
+    { title: 'Purchases & vendors', text: 'Purchase-to-pay with GRN weigh-and-assay — what you ordered, received and owe, reconciled.', link: { href: '/products/purchase-vendors', label: 'See purchase & vendors' } },
+    { title: 'Repairs', text: 'Every repair tracked from intake to re-hallmark to return, with the hallmark gate enforced.', link: { href: '/products/repairs-service', label: 'See repairs & after-sales' } },
     { title: 'Manufacturing', text: 'Work-in-progress, stage tracking and a gold-loss ledger — see where every gram goes.', link: { href: '/solutions/manufacturers', label: 'For manufacturers' } },
   ], 4)}`
 )}

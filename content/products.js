@@ -54,6 +54,15 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
+  `${L.sectionHead('MANAGE', 'The back office, on the same record.', '')}
+  ${L.cards([
+    { title: 'HR & Payroll', text: 'Attendance, leave, recruitment, performance and a full statutory payroll run — plus a separate karigar wage-settlement ledger, on the same record as the job.', link: { href: '/products/hr-payroll', label: 'Explore' } },
+    { title: 'Repairs & After-Sales', text: 'Every repair tracked from intake to delivery with a photographic custody chain, warranty/AMC entitlements, and in-store old-gold exchange.', link: { href: '/products/repairs-service', label: 'Explore' } },
+    { title: 'Purchase & Vendors', text: 'Purchase orders, goods-received notes, vendor bills and credit notes, with a self-serve portal so suppliers track their own POs.', link: { href: '/products/purchase-vendors', label: 'Explore' } },
+  ])}`
+)}
+
+${L.section(
   `${L.sectionHead('GROW', 'The money products, run digitally.', '')}
   ${L.cards([
     { title: 'Gold Savings Schemes', text: 'Enrol, collect, remind and mature gold schemes digitally — balances your customers can see.', link: { href: '/products/gold-schemes', label: 'Explore' } },
@@ -63,7 +72,7 @@ ${L.section(
     { title: 'Customer Journeys', text: 'Visual, multi-step automation: triggers, branches, wait steps — with a human-approval gate before anything reaches a customer.', link: { href: '/products/journeys', label: 'Explore' } },
     { title: 'Campaigns & Broadcasts', text: 'Consent-aware sends across WhatsApp, email, SMS and push, attributed to exactly what each campaign sold.', link: { href: '/products/campaigns', label: 'Explore' } },
   ], 4)}`
-)}
+, { tone: 'tint' })}
 
 ${L.section(`<p style="text-align:center; font-size:.9rem; color:var(--ink-2);">Every module reads the same customer record. That’s the operating system. <a href="/platform">See how it fits together →</a></p>`)}
 

@@ -209,7 +209,10 @@ const loyalty = {
   faqs: [
     { q: 'Is this the same thing as your gold savings schemes?', a: 'No. Gold schemes and digital gold are savings products tied to grams of gold. Loyalty is a separate points/tier layer that can apply to any purchase — the two are designed to run side by side, both visible on the same customer record.' },
     { q: 'Can we set our own tiers and earning rules?', a: 'Yes — tiers, how customers earn toward them, and what they can redeem are all configurable to your business. We don’t ship a fixed set of tier names or point values; you define what fits your store.' },
-    { q: 'How does referral tracking work?', a: 'When an existing customer refers a new one, that link is tracked in the system, so staff can see it on the customer record rather than relying on memory or a manual note.' },
+    { q: 'What kind of loyalty program can we run — just points?', a: 'No — points-based, tiered-membership, visit-based and spend-based programs are all supported. Pick the structure that fits your store, or combine them.' },
+    { q: 'How does a customer actually move up a tier?', a: 'Automatically. A tier can be qualified by points balance, total spend, or redeemed points — whichever thresholds you set — and it is recalculated after every point-earning event. There is no manual badge-assignment step.' },
+    { q: 'How does referral tracking work?', a: 'A referral is tracked as a pair — who referred whom — with self-referral blocked outright. It starts pending and only flips to qualified once the referred customer actually completes a purchase that matches your earning rules; the reward is then credited to the referrer through an idempotent ledger entry, so the same order can never double-reward them.' },
+    { q: 'Can we tell if our loyalty program is actually paying for itself?', a: 'Yes — a loyalty ROI report shows points liability (what you currently owe members), the redemption/breakage rate (points earned vs. actually redeemed), and member-vs-non-member average spend, in one view.' },
     { q: 'Where do loyalty tier and referral status show up for staff?', a: 'On the same customer record as scheme balances, purchase history and occasions — one card, not a separate loyalty app to check.' },
     { q: 'Can we run a loyalty program and a gold scheme for the same customer?', a: 'Yes — they’re independent layers on one record. A customer can hold a scheme balance and a loyalty tier at the same time, and staff see both in one place.' },
   ],
@@ -232,23 +235,37 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('WHAT’S CONFIGURABLE', 'Tiers, earning and redemption — set by you.', '')}
+  `${L.sectionHead('WHAT’S CONFIGURABLE', 'Program type, tiers, earning and redemption — set by you.', '')}
   ${L.cards([
+    { title: 'Program type', text: 'Points-based, tiered-membership, visit-based or spend-based — pick the structure that fits your store, not one fixed points model.' },
     { title: 'Loyalty tiers', text: 'Define the tiers that make sense for your business — how many, what they’re called, what each one unlocks.' },
     { title: 'Earning rules', text: 'Set how customers move up: by purchase, by visit, by referral — configured to your policy, not a fixed formula.' },
     { title: 'Redemptions', text: 'Customers redeem what they’ve earned; what’s redeemable is yours to define.' },
-    { title: 'Referral tracking', text: 'When an existing customer refers a new one, the system tracks the link so it’s visible on both records instead of relying on memory at the counter.' },
+    { title: 'Automatic tier recalculation', text: 'A member’s tier is qualified by points balance, total spend or redeemed points — whichever you set — and recalculated after every point-earning event. Moving up a tier fires an event that can trigger a journey, like a “you’ve been upgraded” message. No one assigns the badge by hand.' },
+    { title: 'Referral tracking', text: 'A referral is tracked as a referrer→referee pair, with self-referral blocked. It starts pending and only qualifies once the referred customer completes a matching purchase — the reward is then credited via an idempotent ledger entry, so one order can never double-reward the referrer.' },
   ])}`
 )}
+
+${L.section(
+  `${L.sectionHead('DOES YOUR PROGRAM PAY FOR ITSELF', 'Loyalty ROI reporting, not just a points ledger.', 'Most loyalty tools show you a balance. This shows you the business case.')}
+  ${L.cards([
+    { title: 'Points liability', text: 'What you currently owe members in outstanding, unredeemed points — the number a finance conversation actually needs.' },
+    { title: 'Redemption / breakage rate', text: 'Points earned versus points actually redeemed, so you know how much of the liability is real versus points that quietly expire unused.' },
+    { title: 'Member vs. non-member spend', text: 'Average spend for loyalty members compared with non-members — the closest thing to a direct answer on whether the program is worth running.' },
+    { title: 'AI program-design copilot', text: 'A merchant-facing AI feature reviews how your program is structured and suggests specific reward ideas — a tool for whoever is designing the program, not something customers ever see.' },
+  ])}`
+, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
   'A customer’s loyalty tier sits on the same record as their scheme balance, purchase history and occasions — staff check one card, not a separate loyalty app.',
   'A referral is recorded against the referring customer’s record, so a regular who sends you business is visible as one, not just remembered by whoever was at the counter.',
+  'A tier upgrade is an event the same journey engine can act on — the “you’ve been upgraded” message is a journey trigger, not a separate notification system.',
 ])}
 
 ${L.section(`${L.sectionHead('LOYALTY QUESTIONS', 'How it differs from schemes, and what you control.', '')}${L.faqBlock([
   { q: 'Is this the same as gold savings schemes?', a: 'No — schemes are gold savings; loyalty is a separate points/tier layer for any purchase. They run side by side on one record.' },
   { q: 'Do we set our own tiers and rules?', a: 'Yes — tiers, earning rules and redemptions are configurable to your business; nothing is fixed by Jwero.' },
+  { q: 'Can we see if the loyalty program is worth what it costs?', a: 'Yes — the ROI report shows points liability, redemption/breakage rate, and member-vs-non-member spend in one view.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
@@ -277,8 +294,12 @@ const journeys = {
     { q: 'What is a customer journey in Jwero?', a: 'A visual, drag-and-drop flow you build on a canvas: an entry point, then steps like event triggers, filter and score gates, conditions, branches, wait delays, messages, manual tasks, webhooks, CRM updates, calls, approvals and exits.' },
     { q: 'Can a journey send a message without anyone checking it first?', a: 'Only if you let it. Add an approval node anywhere in the flow and the journey pauses until a person approves — the same approval-queue governance and kill switch described on the AI workforce page, not a separate system.' },
     { q: 'Which channels can a journey message step use?', a: 'Message steps route through the shared channel router into WhatsApp, email, SMS and push — the same channels Broadcasts uses.' },
+    { q: 'How does an occasion like a birthday actually get triggered?', a: 'A recurring sweep derives each customer’s next occasion from three sources: a recorded birthday or anniversary date, an inferred purchase-anniversary (a past significant purchase above a value threshold, treated as a recurring date even if the customer never told you), and a built-in Indian jewellery-festival calendar. A date a salesperson has entered by hand always wins — the automation never overwrites it.' },
+    { q: 'What does the occasion journey actually send?', a: 'It’s enriched first: the customer’s top AI-recommended products and their lifetime spend are attached before anything goes out. The pre-built template sends curated WhatsApp product picks; if there’s no response in 2 days, it escalates to an AI voice call; either way it ends in a store-visit-booking task for staff — the automation itself never messages the customer directly, it feeds the journey.' },
+    { q: 'Are the recommended products actually personalized, or generic bestsellers?', a: 'A co-purchase pattern engine looks at what products actually sell together across 24 months of real order history to build per-customer recommendations. Where there isn’t enough behavioral signal for a customer, the system falls back to category-level suggestions — and marks internally which is which, rather than presenting a fallback as if it were personalized.' },
     { q: 'Can I see what a journey is actually doing right now?', a: 'Yes. Journeys have live run monitoring, replay of past runs, staged rollout, and an incidents view — so a journey running in production is never a black box.' },
     { q: 'How is this different from a simple autoresponder?', a: 'Branching conditions, score and filter gates, wait steps and CRM updates let a journey react to who a customer is and what they do — not just fire on a timer.' },
+    { q: 'What do the filter and score gates actually check?', a: 'A deterministic, rule-based scoring system computes intent, confidence, conversion likelihood, ROI probability, message-fatigue and trust-risk per customer from real behavioural signals. Those scores can gate entry to a journey — a customer already scoring high on message-fatigue, for instance, won’t be dropped into another one.' },
     { q: 'Can a journey require someone to approve before it continues?', a: 'Yes — that is what the approval node is for. It is not a workaround; it is a first-class step type in the builder.' },
   ],
   body: `
@@ -293,14 +314,24 @@ ${L.hero({
 ${L.section(
   `${L.sectionHead('THE BUILDER', 'A real canvas, not a config form.', '')}
   ${L.cards([
-    { title: 'Entry & triggers', text: 'Start a journey from an event: a purchase, a scheme instalment due, a birthday, a form submit — or drop a customer in manually.' },
-    { title: 'Filter & score gates', text: 'Only customers meeting a condition or crossing a score threshold move forward — the rest wait or exit.' },
+    { title: 'Entry & triggers', text: 'Start a journey from an event: a purchase, a scheme instalment due, an occasion, a form submit — or drop a customer in manually.' },
+    { title: 'Filter & score gates', text: 'A deterministic, rule-based score — intent, confidence, conversion likelihood, ROI probability, message-fatigue, trust-risk — gates entry, so a customer already fatigued on messages won’t be added to another journey.' },
     { title: 'Branches & conditions', text: 'Split the flow on any condition, so different customers take different paths through the same journey.' },
     { title: 'Wait & message steps', text: 'Add time delays between steps, and send messages through the shared channel router into WhatsApp, email, SMS or push.' },
     { title: 'Approval node', text: 'Insert a human-approval step anywhere — the flow pauses until someone in your team approves, the same queue used across the AI workforce.', link: { href: '/platform/ai-workforce', label: 'See the approval queue' } },
     { title: 'Manual task, webhook, CRM update, call', text: 'Hand a step to a person, call out to another system, update a customer record, or trigger an AI voice call — all as steps in the same flow.' },
   ])}`
 )}
+
+${L.section(
+  `${L.sectionHead('THE OCCASION ENGINE', 'Not a festival-calendar blast — a real per-customer derivation.', 'A recurring sweep finds each customer’s next occasion from three sources, then hands it to a journey — the automation itself never messages anyone directly.')}
+  ${L.cards([
+    { title: 'Three sources, one date', text: 'A recorded birthday or anniversary on the customer record; an inferred purchase-anniversary — a past significant purchase above a value threshold, treated as a recurring occasion even if the customer never told anyone; and a built-in Indian jewellery-festival calendar.' },
+    { title: 'Manual entries always win', text: 'If a salesperson has entered a date on the customer record by hand, the automatic sweep never overwrites it. A person’s knowledge of their own customer outranks the inference.' },
+    { title: 'Enriched before it sends', text: 'Each triggered occasion is attached to the customer’s top AI-recommended products and their lifetime spend before a journey template does anything with it.' },
+    { title: 'Curated picks, then escalation', text: 'The pre-built journey sends curated WhatsApp product picks first. No response in 2 days escalates to an AI voice call. Either path ends in a store-visit-booking task for staff — a human closes it, the automation only opens the door.' },
+  ], 4)}`
+, { tone: 'tint' })}
 
 ${L.section(
   `${L.sectionHead('RUNNING IN PRODUCTION', 'Not a black box once it’s live.', '')}
@@ -316,11 +347,13 @@ ${L.oneSystemBlock([
   'A journey’s approval node opens the same approval queue an AI-drafted WhatsApp reply uses: one governance system shared everywhere, rather than a separate one per feature.',
   'Message steps share the channel router with Broadcasts, so a journey and a broadcast never fight over template rules or send limits.',
   'A journey can update the same customer record the rest of Jwero reads from — a CRM-update step is not a copy, it is the record.',
+  'The occasion engine’s product picks come from the same co-purchase recommendation engine used elsewhere in Jwero — built on 24 months of real order history, and marked internally when it has to fall back to a category-level suggestion instead of a personalized one.',
 ])}
 
 ${L.section(`${L.sectionHead('JOURNEY QUESTIONS', 'Approval gates, channels and visibility.', '')}${L.faqBlock([
   { q: 'Can a journey send something without a human checking it?', a: 'Only if you design it that way. Drop in an approval node and the flow waits for a person — the same governance and kill switch used across the AI workforce.' },
   { q: 'Can I watch a journey while it runs, or only see it after?', a: 'Live run monitoring shows customers moving through the flow in real time, plus replay of past runs and an incidents view.' },
+  { q: 'How does the occasion engine find a customer’s birthday or anniversary?', a: 'From three sources — a recorded date, an inferred purchase-anniversary from a past significant purchase, or the built-in festival calendar — and a manual date a salesperson entered always takes priority over any of them.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 

@@ -30,7 +30,7 @@ const SOCIALS = [
 // Each page is stamped with the mtime of the content file that defined it, so the
 // sitemap can emit an honest <lastmod> without hand-maintaining dates.
 const CONTENT_FILES = [
-  'home', 'platform', 'products', 'products-sell', 'products-run', 'products-grow',
+  'home', 'platform', 'products', 'products-sell', 'products-run', 'products-grow', 'products-manage', 'products-hr',
   'industries', 'solutions', 'solutions-retail-segments', 'solutions-wholesale',
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
@@ -86,6 +86,11 @@ const NAV = [
         ['/products/billing-finance', 'Billing & Finance'],
         ['/products/erp', 'ERP, reconsidered'],
         ['/products/multi-store', 'Multi-store & Franchise'],
+      ]},
+      { title: 'Manage', items: [
+        ['/products/hr-payroll', 'HR & Payroll'],
+        ['/products/repairs-service', 'Repairs & After-Sales'],
+        ['/products/purchase-vendors', 'Purchase & Vendors'],
       ]},
       { title: 'Grow', items: [
         ['/products/gold-schemes', 'Gold Savings Schemes'],
