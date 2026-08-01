@@ -3,8 +3,8 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 const whatsapp = {
   slug: 'products/whatsapp',
-  title: 'WhatsApp Commerce for Jewellery Business — Sell Where They Already Are | Jwero',
-  description: 'Official WhatsApp Business API for jewellery: live-rate catalogues, safe broadcasts, AI replies with approval, and payments — on the number you already own.',
+  title: 'WhatsApp Business API Software for Jewellers — Sell Where They Already Are | Jwero',
+  description: 'Official WhatsApp Business API software for jewellers: live-rate catalogues, safe broadcasts, AI replies with approval, payments on your own number.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero WhatsApp Commerce', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',

@@ -3,7 +3,7 @@ const BC = (label) => [['Home', '/'], ['Platform', '/platform'], [label]];
 
 const platform = {
   slug: 'platform',
-  title: 'The Jewellery Business OS — How Jwero Works | Jwero',
+  title: 'The Jewellery Business Operating System — How Jwero Works | Jwero',
   description: 'One customer record, catalogue, inventory truth, one inbox — how Jwero runs a jewellery business, with an AI workforce that waits for your approval.',
   breadcrumbs: [['Home', '/'], ['Platform']],
   faqs: [

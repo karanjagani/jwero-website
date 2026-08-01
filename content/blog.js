@@ -43,6 +43,9 @@ ${L.section(
     { title: 'Jewellery Repair Management: The Custody-Chain Method', text: 'Why repair intake needs a documented custody chain — condition notes, a stone chart and a weight record.', link: { href: '/blog/jewellery-repair-management-custody-chain', label: 'Read the guide' } },
     { title: 'HUID and Hallmarking Records: The Audit-Day Checklist', text: 'Keep hallmarking and HUID records organized so a compliance check is a retrieval, not a scramble.', link: { href: '/blog/huid-hallmarking-records-audit-checklist', label: 'Read the guide' } },
     { title: 'Digital Catalog vs PDF: Why Shareable Checkout Links Sell More', text: 'A PDF catalogue is wrong the moment gold rates move. A live catalogue never is — and it can take the payment.', link: { href: '/blog/digital-catalog-vs-pdf-jewellery', label: 'Read the guide' } },
+    { title: 'Jewellery CRM vs ERP: The Real Difference', text: 'What each system actually does, where the line blurs in a jewellery business, and why most need both, on one record.', link: { href: '/blog/jewellery-crm-vs-erp-difference', label: 'Read the guide' } },
+    { title: 'Jewellery Software Buyer’s Checklist: 15 Questions', text: 'A vendor-agnostic checklist — pricing depth, data ownership, WhatsApp compliance, AI governance and honest roadmaps.', link: { href: '/blog/jewellery-software-buyer-checklist', label: 'Read the guide' } },
+    { title: 'Jewellery Software for Wedding Season', text: 'Enquiry speed, appointment load, scheme maturities, dead-stock timing — and why not to switch systems mid-season.', link: { href: '/blog/jewellery-software-wedding-season', label: 'Read the guide' } },
   ], 4)}`
 , { tone: 'tint' })}
 ${L.section(`<p style="font-size:.85rem; color:var(--ink-2);">More guides are coming — starting with the topics jewellers ask us about most on WhatsApp. <a href="#" data-wa="blog-hub">Tell us what you’d want covered</a>.</p>`)}
@@ -573,4 +576,213 @@ ${L.ctaBand('Send a catalogue that can close the sale itself.', 'Bring a design 
 `,
 };
 
-module.exports = [blogHub, whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide];
+// ---------------------------------------------------------------- Article 9: CRM vs ERP
+const crmErpGuideFaqs = [
+  { q: 'Is Jwero a CRM or an ERP?', a: 'Both, on one record — but the honest answer is that the label matters less than the fact that customer data and operational data don’t live in two disconnected systems. A CRM alone can’t tell you if a piece is even in stock; an ERP alone doesn’t know a customer’s scheme balance or wedding month. Jwero is built as the operating system that sits above both.' },
+  { q: 'Can I buy just the CRM part and skip the operations side?', a: 'Yes — most businesses start on customer memory, WhatsApp and catalogue (the CRM-adjacent scope) and adopt inventory, purchases and manufacturing job-work later, once the first layer has proven itself.' },
+  { q: 'What actually breaks when CRM and ERP are two separate systems?', a: 'The join between them. A quote sent from the CRM references stock the ERP hasn’t confirmed; an ERP delivery note doesn’t update the CRM’s purchase history; a scheme payment in one system doesn’t reflect in the other until someone exports and re-imports. Every one of those gaps is a place a customer detail gets stale or a sale gets delayed.' },
+];
+
+const crmErpGuide = {
+  slug: 'blog/jewellery-crm-vs-erp-difference',
+  title: 'Jewellery CRM vs ERP: The Real Difference (And Do You Need Both?) | Jwero',
+  description: 'What a jewellery CRM actually does versus an ERP, where the line blurs in practice, and why most jewellery businesses end up needing both, not one or the other.',
+  breadcrumbs: BC('CRM vs ERP for Jewellery'),
+  schema: postSchema('Jewellery CRM vs ERP: The Real Difference', 'What a jewellery CRM does versus an ERP, where the two overlap in a jewellery business, and why most businesses need both working from one record.'),
+  faqs: crmErpGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · CRM VS ERP',
+  h1: 'Jewellery CRM vs ERP: The Real Difference',
+  sub: 'Two acronyms, two software categories, and a lot of vendors happy to let the line blur in whichever direction sells more. Here’s what each one actually does in a jewellery business — and why the two are usually needed together, not instead of each other.',
+  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-crmerp' },
+  secondary: { href: '/platform', label: 'See how Jwero unifies both' },
+})}
+${L.section(postMeta(7, 'CRM vs ERP for Jewellery'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>What a CRM is actually for</h2>
+  <p>A Customer Relationship Management system exists to answer one question well: who is this customer, and what do we know about them? In a jewellery business, that means purchase history, gold-scheme balances and instalment status, occasions like birthdays and wedding months, preferred metals and styles, and the thread of past conversations. A CRM is customer-facing by design — it's the system a salesperson, or an AI drafting a follow-up, reaches for before talking to someone.</p>
+
+  <h2>What an ERP is actually for</h2>
+  <p>An Enterprise Resource Planning system exists to answer a different question: what is actually happening inside the business? Inventory levels and ageing, purchase orders to karigars and suppliers, manufacturing job-work stages, repair custody, GST invoicing at the live gold rate. An ERP is operations-facing — it's the system that knows whether a piece exists, where it is, and what it cost to make.</p>
+
+  <h2>Where the line blurs, in practice</h2>
+  <p>The two categories sound cleanly separated until a real jewellery transaction happens. A customer messages asking about a design (CRM: who is she, what's her taste, what has she bought before) — and the answer to "can we sell her this exact piece" depends on stock the ERP tracks. A scheme instalment (arguably a CRM concern, since it's about the customer relationship) changes a balance that finance and ERP reporting also need to reflect accurately. A repair intake needs both a custody chain (ERP) and a note on the customer's record about why she's back in the shop (CRM).</p>
+  <p>In a jewellery business specifically, almost no meaningful action is purely one or the other — which is exactly why running two disconnected systems creates so much quiet friction: someone re-typing between them, or worse, nobody doing that reconciliation at all and the two records slowly drifting apart.</p>
+
+  <h2>Why most jewellery businesses end up needing both</h2>
+  <p>A pure CRM with no operational depth eventually can't answer "is this piece actually available" without a phone call to the counter. A pure ERP with no customer memory eventually can't tell a salesperson anything about the person standing in front of them beyond a transaction history table. Jewellery is a relationship trade built on physical, certificated, purity-specific inventory — it genuinely needs both halves, which is why so many businesses end up running a CRM and an ERP side by side, syncing awkwardly through spreadsheets or manual re-entry.</p>
+
+  <h2>The alternative: one record, not two systems</h2>
+  <p>Jwero doesn't pick a side of this line, because the line itself is the problem. Customer memory, catalogue, inventory, purchases, repairs and manufacturing job-work all read and write the same record — so a quote references real stock, a scheme instalment updates everywhere at once, and a repair custody entry shows up on the same customer timeline as everything else. It's not a CRM with an ERP bolted on, or the reverse; see <a href="/platform">how the platform is actually structured</a> if the architecture itself is the question.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('SEE BOTH HALVES, ONE RECORD', 'Not a CRM. Not an ERP. The operating system above both.', '')}
+  <div class="grid grid-2">
+    <div class="card"><h3>The CRM side</h3><p>Customer memory, WhatsApp and Instagram commerce, occasion journeys, scheme balances.</p><a class="card-link" href="/products/crm">See the CRM →</a></div>
+    <div class="card"><h3>The ERP side</h3><p>Inventory, purchases, repairs and manufacturing job-work, GST invoicing at live rates.</p><a class="card-link" href="/products/erp">See the ERP →</a></div>
+  </div>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about the CRM/ERP split.', '')}${L.faqBlock(crmErpGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-crmerp">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Stop reconciling two systems.', 'Tell us what your CRM and ERP each hold today — we’ll show you what one record looks like instead.', 'blog-crmerp')}
+`,
+};
+
+// ---------------------------------------------------------------- Article 10: Buyer's checklist
+const checklistGuideFaqs = [
+  { q: 'Should I choose jewellery software based on price or fit?', a: 'Fit, then price. The cheapest system that doesn’t handle purity-based pricing or certificate-linked stone value ends up costing more in manual workarounds than the difference in subscription fees ever saved.' },
+  { q: 'What if a vendor can’t answer one of these questions?', a: 'That’s useful information, not a dealbreaker by itself — ask them to say so plainly rather than talk around it. A vendor who says "not yet, here’s our roadmap" is more trustworthy than one who claims everything is already built.' },
+  { q: 'How long should a proper implementation take?', a: 'For the first working stage — customers imported, WhatsApp connected, catalogue live — days, not months, is a reasonable bar to hold any vendor to.' },
+];
+
+const checklistGuide = {
+  slug: 'blog/jewellery-software-buyer-checklist',
+  title: 'Jewellery Software Buyer’s Checklist: 15 Questions to Ask First | Jwero',
+  description: 'A vendor-agnostic checklist for buying jewellery software: pricing engine depth, data ownership, WhatsApp compliance, AI governance and honest roadmaps.',
+  breadcrumbs: BC('Jewellery Software Buyer’s Checklist'),
+  schema: postSchema('Jewellery Software Buyer’s Checklist: 15 Questions to Ask First', 'A vendor-agnostic checklist of the questions worth asking before buying jewellery software, covering pricing depth, data ownership, compliance and AI governance.'),
+  faqs: checklistGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · BUYER’S CHECKLIST',
+  h1: 'Jewellery Software Buyer’s Checklist: 15 Questions to Ask First',
+  sub: 'Every vendor demo looks polished. These are the questions that separate a system built for jewellery from a generic retail tool with jewellery fields bolted on — ask them of anyone you’re evaluating, including us.',
+  primary: { href: '#', label: 'Ask us these, on WhatsApp', wa: 'blog-checklist' },
+  secondary: { href: '/roadmap', label: 'See our own honest answers' },
+})}
+${L.section(postMeta(8, 'Jewellery Software Buying Guide'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>On pricing and the metal you actually sell</h2>
+  <ol>
+    <li><strong>Does it price by purity, not just by category?</strong> 24K, 22K, 916, 18K and 14K each need their own rate — ask whether the rate card is purity-specific or a single blended number.</li>
+    <li><strong>What making-charge models does it actually support?</strong> Percentage, per-gram and flat are all used in real jewellery businesses, often by different product categories in the same shop. One formula forced onto everything is a red flag.</li>
+    <li><strong>Are stones and gemstones priced separately from the metal?</strong> Per-carat, certificate-linked pricing (GIA, IGI, SGL, HRD, BIS) is table stakes for anyone selling certified stones, not an add-on.</li>
+    <li><strong>Is there an override workflow, or just a discount field?</strong> A floor/ceiling-checked approval with a logged reason is very different from a salesperson typing any number they like.</li>
+  </ol>
+
+  <h2>On WhatsApp and how it actually gets sent</h2>
+  <ol start="5">
+    <li><strong>Is it the official WhatsApp Business API, or an unofficial bulk tool?</strong> This single answer is the difference between a number that stays safe and one at real risk of restriction.</li>
+    <li><strong>Does the catalogue price live, or does it go stale the moment the gold rate moves?</strong> A screenshot sent yesterday is wrong today — ask what "live" actually means in their product.</li>
+  </ol>
+
+  <h2>On data ownership and what happens if you leave</h2>
+  <ol start="7">
+    <li><strong>Can you export your data, in standard formats, any time?</strong> Ask this before signing, not after — "export anytime" as a written commitment is different from a verbal promise.</li>
+    <li><strong>Is your data isolated, or does it sit in a shared table with everyone else's?</strong> A database-per-business architecture is a materially different security posture than row-level flags in a shared database.</li>
+  </ol>
+
+  <h2>On AI, if the product uses it</h2>
+  <ol start="9">
+    <li><strong>Does AI send messages automatically, or does a human approve first?</strong> In a relationship trade, this is not a minor detail — ask to see the approval queue, not just hear that one exists.</li>
+    <li><strong>Is there a kill switch, and at what scopes?</strong> One action, one agent, one branch, one channel, or everything — the more granular, the more it's a real control and not a marketing line.</li>
+  </ol>
+
+  <h2>On accounting and what actually stays put</h2>
+  <ol start="11">
+    <li><strong>Does it replace Tally, or bridge to it?</strong> Most jewellery businesses don't want to rip out their accountant's workflow — ask exactly what syncs automatically and what still needs a manual voucher.</li>
+  </ol>
+
+  <h2>On honesty, which is the hardest thing to fake</h2>
+  <ol start="12">
+    <li><strong>Will they tell you what isn't built yet?</strong> Ask directly: "what's on your roadmap, not shipped." A vendor with a public, specific answer is more trustworthy than one who implies everything is done.</li>
+    <li><strong>Can they name a real named customer, not a stock testimonial?</strong> Ask to see who actually runs on the product today.</li>
+    <li><strong>How long does implementation actually take, in their own words?</strong> "Days" and "it depends" are both answers — vagueness on this specific question is itself informative.</li>
+    <li><strong>Is there a lock-in contract, or can you leave on notice?</strong> Ask before you need the answer, not after.</li>
+  </ol>
+
+  <h2>How to use this list</h2>
+  <p>Bring it to every demo, ours included, and expect direct answers rather than reframed ones. A vendor that welcomes the list is telling you something; one that steers around it is telling you something else.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('OUR OWN ANSWERS, IN PUBLIC', 'We hold ourselves to this list first.', 'Every honest gap in Jwero today is published, not hidden behind a demo script.')}
+  <p><a class="btn btn-ghost" href="/roadmap">See what’s shipped, building, and not yet</a></p>`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about evaluating vendors.', '')}${L.faqBlock(checklistGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-checklist">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Ask us every question on this list.', 'We’ll answer each one directly, including the ones our answer is “not yet.”', 'blog-checklist')}
+`,
+};
+
+// ---------------------------------------------------------------- Article 11: Wedding season
+const weddingGuideFaqs = [
+  { q: 'When should I set up new software before wedding season?', a: 'Well before the peak weeks begin — implementation, data import and staff training all take real time, and none of it should be happening during your busiest fortnight. A season change-freeze policy exists for exactly this reason: go-lives are scheduled around your calendar, not squeezed into it.' },
+  { q: 'What if we’re already in the middle of wedding season right now?', a: 'Say so plainly when you talk to any vendor — a responsible one will offer to plan the transition for after the season rather than push a disruptive change into your busiest weeks.' },
+  { q: 'Is bridal jewellery CRM different from general jewellery CRM?', a: 'The customer record is the same underlying system, but bridal buying involves longer consideration windows, family decision-makers, and higher-value custom pieces — which is why it benefits from CRM fields and follow-up cadences built for that specific journey.' },
+];
+
+const weddingGuide = {
+  slug: 'blog/jewellery-software-wedding-season',
+  title: 'Jewellery Software for Wedding Season: What to Get Right First | Jwero',
+  description: 'What to prepare before wedding season hits: enquiry response speed, appointment load, scheme maturities, dead-stock timing, and when not to switch software.',
+  breadcrumbs: BC('Jewellery Software for Wedding Season'),
+  schema: postSchema('Jewellery Software for Wedding Season', 'What a jewellery business should get right before wedding season starts, and why implementation timing matters more than the software itself.'),
+  faqs: weddingGuideFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'GUIDE · WEDDING SEASON',
+  h1: 'Jewellery Software for Wedding Season: What to Get Right First',
+  sub: 'Wedding season is when a jewellery business makes its year — and when the cost of a slow reply, a missed follow-up or a dead-stock tray is highest. Here’s what to get in order before it starts, not during it.',
+  primary: { href: '#', label: 'Plan the timing on WhatsApp', wa: 'blog-wedding' },
+  secondary: { href: '/solutions/bridal', label: 'See the bridal playbook' },
+})}
+${L.section(postMeta(6, 'Wedding Season Readiness'))}
+
+${L.section(
+  `<div class="post-body">
+  <h2>Why wedding season punishes slow systems more than any other stretch</h2>
+  <p>Every weakness in a jewellery business's process shows up hardest during wedding season, because volume magnifies it. A reply that's a few hours slow in a quiet month is a lost customer in wedding season, when she's messaging three jewellers at once. A follow-up that gets forgotten in a quiet month is a lost sale worth many times more in wedding season, when the piece in question is a bridal set, not a daily-wear chain.</p>
+
+  <h2>Enquiry response speed becomes the whole game</h2>
+  <p>Wedding-season shoppers compare aggressively — multiple jewellers, multiple designs, often across family members weighing in. Whoever answers first, accurately, with a real price at today's rate, tends to stay in the conversation. Whoever answers next morning has often already lost it. This is true year-round, but the volume and stakes of wedding season make it the single highest-leverage thing to get right before the season starts, not during it.</p>
+
+  <h2>Appointment load needs a system, not a notebook</h2>
+  <p>Bridal buying involves showroom visits, often with multiple family members, often more than once before a decision. A booking system that shows real availability, and a record of what was shown and discussed at each visit, prevents the double-booked slot and the "what did we already show her" conversation that a busy season makes inevitable otherwise.</p>
+
+  <h2>Scheme maturities are often timed to this exact season</h2>
+  <p>Gold savings schemes frequently mature around wedding timelines by design — customers save specifically for this purchase. A scheme book that isn't tracked digitally makes it easy to miss a maturity date, or to have a customer arrive ready to redeem while staff scramble to confirm her balance manually. Getting scheme tracking right before the season means maturities become a proactive outreach opportunity instead of a reactive scramble.</p>
+
+  <h2>Clear dead stock before the season, not during it</h2>
+  <p>The tray of pieces that have sat unsold for a year are exactly the inventory a business wants moving before wedding-season footfall arrives — both for cash flow and to make room and attention for what actually sells this season. Reviewing ageing inventory in the quiet weeks before the season starts is a far better time than trying to clear it while every hour is needed for active customers.</p>
+
+  <h2>Why implementation should never happen mid-season</h2>
+  <p>This is the part vendors sometimes gloss over: switching systems, importing data or training staff during your busiest weeks is a genuinely bad idea, regardless of how good the software is. A season change-freeze — no disruptive changes during peak weeks, go-lives scheduled around the business's calendar — isn't a nice-to-have, it's a basic responsibility any vendor should hold themselves to. See <a href="/platform/onboarding">how onboarding is actually staged</a> around this.</p>
+
+  <h2>What to have ready before the season starts</h2>
+  <p>In order of leverage: fast, accurate WhatsApp response with live pricing; an appointment system that shows real availability; visible scheme balances and maturity dates; a dead-stock review, cleared before footfall picks up; and staff trained well before the first peak weekend, not during it.</p>
+  </div>`
+)}
+
+${L.section(
+  `${L.sectionHead('READY BEFORE THE RUSH, NOT DURING IT', 'The pieces this guide covers, in one place.', '')}
+  ${L.cards([
+    { title: 'Bridal-specific CRM', text: 'Longer consideration windows, family decision-makers, custom-piece tracking.', link: { href: '/solutions/bridal', label: 'See the playbook' } },
+    { title: 'Season change-freeze', text: 'Implementation staged around your calendar, never during your peak weeks.', link: { href: '/platform/onboarding', label: 'See onboarding' } },
+    { title: 'Scheme maturity tracking', text: 'Balances and maturity dates visible before the customer walks in ready to redeem.', link: { href: '/products/gold-schemes', label: 'See gold schemes' } },
+  ])}`
+, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about timing.', '')}${L.faqBlock(weddingGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-wedding">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Plan your season before it starts.', 'Tell us your busiest weeks — we’ll map a go-live plan that stays clear of every one of them.', 'blog-wedding')}
+`,
+};
+
+module.exports = [blogHub, whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide, crmErpGuide, checklistGuide, weddingGuide];

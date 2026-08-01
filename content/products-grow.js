@@ -3,8 +3,8 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 const schemes = {
   slug: 'products/gold-schemes',
-  title: 'Gold Savings Schemes — Digital Enrolment to Maturity | Jwero',
-  description: 'Run gold savings plans digitally: KYC enrolment, instalment reminders, transparent balances, disciplined maturity and closure — no more paper disputes.',
+  title: 'Gold Savings Scheme Software for Jewellers — Enrolment to Maturity | Jwero',
+  description: 'Gold savings scheme software: KYC enrolment, instalment reminders, transparent balances, disciplined maturity and closure — no more paper disputes.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Gold Savings Schemes', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',

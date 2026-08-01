@@ -107,7 +107,10 @@
     'blog-goldloss': 'Hi Jwero — I read the gold-loss guide, show me the wastage ledger and recovery desk.',
     'blog-repair': 'Hi Jwero — I read the repair custody-chain guide, show me how it works for my business.',
     'blog-huid': 'Hi Jwero — I read the HUID/hallmarking guide, show me compliance tracking.',
-    'blog-catalog': 'Hi Jwero — I read the digital catalogue guide, show me a live-price catalogue.'
+    'blog-catalog': 'Hi Jwero — I read the digital catalogue guide, show me a live-price catalogue.',
+    'blog-crmerp': 'Hi Jwero — I read the CRM vs ERP guide, show me how one record covers both.',
+    'blog-checklist': 'Hi Jwero — I read the buyer’s checklist, ask me the questions and I’ll answer honestly.',
+    'blog-wedding': 'Hi Jwero — I read the wedding season guide, help me plan the timing for my business.'
   };
 
   function waLink(ctx, extra) {

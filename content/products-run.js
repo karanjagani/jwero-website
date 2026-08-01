@@ -3,8 +3,8 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 const crm = {
   slug: 'products/crm',
-  title: 'Jewellery CRM & Customer 360 — Built for the Trade | Jwero',
-  description: 'A CRM that speaks jewellery: gold-plan balances, occasions, taste and churn risk as structured fields, with explainable scores and win-back journeys.',
+  title: 'Jewellery CRM Software & Customer 360 — Built for the Trade | Jwero',
+  description: 'Jewellery CRM software: gold-plan balances, occasions, taste and churn risk as structured fields, with explainable scores and win-back journeys.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Jewellery CRM', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
@@ -187,8 +187,8 @@ ${L.ctaBand('Find the sleeping capital.', 'Bring last year’s stock summary to 
 
 const billingFinance = {
   slug: 'products/billing-finance',
-  title: 'Billing & Finance — GST Invoicing at Live Gold Rates | Jwero',
-  description: 'GST invoices priced at the live gold rate, receivables tracking and automated payment reminders — with an honest note on what’s roadmap, not shipped.',
+  title: 'Jewellery Billing Software — GST Invoicing at Live Gold Rates | Jwero',
+  description: 'Jewellery billing software: GST invoices at the live gold rate, receivables tracking and payment reminders — with an honest note on what’s roadmap.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Billing & Finance', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
@@ -197,7 +197,7 @@ const billingFinance = {
   },
   breadcrumbs: BC('Billing & Finance'),
   faqs: [
-    { q: 'Does Jwero do POS counter billing?', a: 'A dedicated POS counter with cash day-close is on our public roadmap, not shipped today. Billing & Finance in Jwero handles GST invoicing at live rates and receivables — and works alongside whatever counter billing you use now.' },
+    { q: 'Does Jwero do POS counter billing? Is there a POS alternative?', a: 'A dedicated POS counter with cash day-close is on our public roadmap, not shipped today. Until it ships, Billing & Finance is the closest thing to a POS alternative Jwero offers: GST invoicing at live rates and receivables tracking, working alongside whatever counter billing you use now rather than replacing it.' },
     { q: 'Can it price invoices at today’s gold rate automatically?', a: 'Yes — invoicing uses the same live-rate pricing formulas as the catalogue, so a rate change is reflected instantly.' },
     { q: 'Does it chase payments for me?', a: 'Yes — automated reminders run on receivables so collection doesn’t depend on someone remembering to call.' },
     { q: 'Why not just keep using our current billing software until POS ships?', a: 'That’s exactly the recommendation — keep your current counter billing running. Jwero’s Billing & Finance adds GST invoicing at the live rate and receivables tracking alongside it, not instead of it, until the full counter ships.' },
@@ -227,7 +227,7 @@ ${L.honestGapsBlock([
 ])}
 
 ${L.section(`${L.sectionHead('BILLING QUESTIONS', 'Your current software, and GST accuracy.', '')}${L.faqBlock([
-  { q: 'Why not just keep using our current billing software?', a: 'You can — keep it running for the counter, and Billing & Finance adds GST invoicing and receivables tracking alongside it until the full POS counter ships.' },
+  { q: 'Is there a POS alternative in Jwero, or should I keep my current billing counter?', a: 'Keep your current counter for now — a full POS with cash day-close is on our roadmap, not shipped. Billing & Finance adds GST invoicing at the live rate and receivables tracking alongside it until that ships.' },
   { q: 'Is GST computation compliant, or an approximation?', a: 'It’s data-driven, not hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
@@ -240,8 +240,8 @@ ${L.ctaBand('See invoicing at today’s rate.', 'Change the rate live in a demo 
 
 const erp = {
   slug: 'products/erp',
-  title: 'Jewellery ERP, Reconsidered — Orders, Purchases, Repairs, Manufacturing | Jwero',
-  description: 'The operations backbone inside Jwero: orders, purchases and vendors, repairs and manufacturing job-work — jewellery-native, one shared customer record.',
+  title: 'Jewellery ERP Software, Reconsidered — Orders, Purchases, Manufacturing | Jwero',
+  description: 'Jewellery ERP software: orders, purchases and vendors, repairs and manufacturing job-work — jewellery-native, sharing one customer record.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero ERP', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',

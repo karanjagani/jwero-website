@@ -2,9 +2,9 @@ const L = require('../lib');
 
 const home = {
   slug: 'index',
-  title: 'Jwero — The AI Operating System for Jewellery Business',
+  title: 'Jwero — AI Jewellery Software & Operating System for Jewellery Business',
   description:
-    'Jwero is the AI operating system for jewellery: one customer record, catalogue, inventory, inbox, WhatsApp, gold schemes and an AI workforce awaiting approval.',
+    'Jwero is jewellery software built as an AI operating system: one customer record, catalogue, inventory, inbox, WhatsApp, gold schemes and an AI workforce.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
