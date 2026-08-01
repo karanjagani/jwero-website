@@ -18,6 +18,7 @@ const crm = {
     { q: 'What are journeys?', a: 'Automated relationship sequences — welcome series, occasion greetings, win-back campaigns, scheme-maturity conversations — that run on the customer record with your approval settings.' },
     { q: 'I already use a CRM (or Excel). Why switch?', a: 'A generic CRM or spreadsheet has no idea what a scheme balance or a purity preference is — you’d spend years bolting on custom fields to get half of what’s native here. And it still wouldn’t sell on WhatsApp for you.' },
     { q: 'Will I lose my existing customer history when I switch?', a: 'No — we import it. Purchase history, notes and contact details from Excel, CSV or your current software come across, deduplicated, during onboarding.' },
+    { q: 'Can I send a formal quote a customer can accept online?', a: 'Yes — a quotation moves from draft to sent to accepted or declined, with a number, line items and a PDF. Share the link and the customer can review and accept or decline it themselves, without needing to be on a call.' },
   ],
   body: `
 ${L.hero({
@@ -46,9 +47,21 @@ ${L.oneSystemBlock([
   'The customer intelligence score visible here is the same score AI staff read before deciding who gets a win-back message.',
 ])}
 
+${L.section(
+  `${L.sectionHead('MORE FROM THE SAME RECORD', 'Built on the same customer record.', 'Everything below reads and writes the one 90+ field record above — nothing here is a bolted-on module with its own copy of your customers.')}
+  ${L.cards([
+    { title: 'Quotations', text: 'A formal quote moves from draft to sent to accepted or declined, with a number, line items and a PDF. Share the link and the customer can accept or decline it themselves — no call required.' },
+    { title: 'Smart lead routing', text: 'New enquiries route automatically to the right salesperson — round-robin, whoever has the lightest workload, or by territory rules your business sets.' },
+    { title: 'Next-best-action', text: 'A small set of suggested next actions per customer — "due for a follow-up," "scheme is maturing" — one tap to act, with the reasoning behind each score visible, not just the number.' },
+    { title: 'Search across everything', text: 'One search box finds a customer, a deal, a product or an order — instead of hunting through separate screens.' },
+    { title: 'Duplicate detection', text: 'Likely-duplicate customer records get flagged for a person to review and merge, keeping the record clean as data arrives from every channel.' },
+  ])}`
+)}
+
 ${L.section(`${L.sectionHead('CRM QUESTIONS', 'Why switch, and what happens to your history.', '')}${L.faqBlock([
   { q: 'I already use a CRM or Excel. Why switch?', a: 'A generic CRM has no idea what a scheme balance or purity preference is — you’d spend years bolting on custom fields to get half of what’s native here.' },
   { q: 'Will I lose my existing customer history?', a: 'No — we import it. Purchase history and contact details come across, deduplicated, during onboarding.' },
+  { q: 'Can I send a formal quote a customer can accept online?', a: 'Yes — a quotation moves from draft to sent to accepted or declined, with a number, line items and a PDF, shared as a link the customer can act on without a call.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
@@ -279,4 +292,86 @@ ${L.ctaBand('See operations on one record.', 'Bring one real order and follow it
 `,
 };
 
-module.exports = [crm, catalog, inventory, billingFinance, erp];
+const showroom = {
+  slug: 'products/showroom',
+  title: 'Showroom Intelligence — Who Is on Your Floor, Right Now | Jwero',
+  description: 'Walk-in check-in, a live floor view, Walkout Rescue drafts and rule-based store alerts — showroom visibility built from real visit data.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Showroom Intelligence', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Walk-in check-in, a live floor view, expected-visit tracking, Walkout Rescue drafts and rule-based store alerts, sharing the same customer record as the rest of Jwero.',
+    url: 'https://jwero.ai/products/showroom', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
+  breadcrumbs: BC('Showroom Intelligence'),
+  faqs: [
+    { q: 'Does the tablet check-in use facial recognition or special hardware?', a: 'No. Walk-in Register runs off a tablet at the entrance where a walk-in is checked in and out — there is no CCTV or facial-recognition automatic detection today, and no footfall door-counter hardware integration.' },
+    { q: 'Is Walkout Rescue automatic — does it message customers without anyone checking?', a: 'No. It drafts a WhatsApp follow-up naming the exact pieces a customer tried, but a person on staff reviews and sends it — nothing goes out unapproved. A rescue only counts as successful once it is linked to a completed sales order afterward; it is never estimated or guessed.' },
+    { q: 'Does the Daily Brief get pushed to WhatsApp automatically?', a: 'Not yet. Today the owner or manager opens the Daily Brief to see the morning and evening summary — automatic push delivery to WhatsApp is not built yet.' },
+    { q: 'Are the store insights predictive AI, or something else?', a: 'They are rule-based alerts — a conversion-rate drop, dead stock needing attention, a staffing gap, a spike in a walkout reason, a repeat visitor who still has not purchased, an unclosed-visit backlog. Deterministic rules, not predictive machine learning.' },
+    { q: 'How does Jwero know a customer is coming before they walk in?', a: 'Expected Visits is created automatically whenever someone books via webchat, an appointment, a CRM follow-up, a campaign, a phone call, WhatsApp, a catalogue order or the lead-finder tool. It auto-closes when they check in, and flags a no-show after a grace period — and tracks show-up rate by booking channel.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'SHOWROOM INTELLIGENCE',
+  h1: 'Know who is on your floor — and who walked out without buying.',
+  sub: 'A showroom visit is the highest-intent moment in the whole business, and most stores remember none of it. Jwero checks walk-ins in, shows who is on the floor live, records what was shown and tried, and drafts a follow-up the moment someone leaves without buying.',
+  primary: { href: '#', label: 'See the live floor', wa: 'showroom' },
+  secondary: { href: '/products/crm', label: 'See the Jewellery CRM' },
+})}
+
+${L.section(
+  `${L.sectionHead('WHAT A SHOWROOM LOSES TODAY', 'The visit that nobody wrote down.', '')}
+  ${L.impactGrid([
+    {
+      lever: 'Knowing who is in the store',
+      before: 'Staff eyeball the floor; there is no real headcount and no record of what a visit involved.',
+      after: 'Walk-in Register checks customers in and out at the entrance tablet; Live Floor shows who is on the floor right now.',
+    },
+    {
+      lever: 'Customers who leave without buying',
+      before: 'A visit ends, the lead goes cold, and nobody follows up on what was actually shown.',
+      after: 'Walkout Rescue queues them for follow-up and drafts a WhatsApp message naming the exact pieces tried — a staff member reviews and sends it.',
+    },
+    {
+      lever: 'Knowing who is coming',
+      before: 'Bookings from webchat, appointments, CRM follow-ups and calls sit in separate places; staff are caught off guard.',
+      after: 'Expected Visits pulls every booking channel into one list, auto-closes it on check-in, and flags a no-show after a grace period.',
+    },
+    {
+      lever: 'End-of-day visibility',
+      before: 'An owner pieces together how the day went from memory and a register, hours after it mattered.',
+      after: 'Daily Brief summarises footfall, conversions, walkouts and the best-performing salesperson — open it each morning and evening.',
+    },
+  ])}`
+)}
+
+${L.section(
+  `${L.sectionHead('WHAT IT TRACKS', 'Every visit, from walk-in to walkout.', '')}
+  ${L.cards([
+    { title: 'Walk-in Register', text: 'Tablet check-in and check-out at the store entrance the moment a customer walks in.' },
+    { title: 'Live Floor', text: 'A real-time view for staff and owner of who is currently in the store, updating live.' },
+    { title: 'Visit journey capture', text: 'Log which pieces were shown and tried, note a quote given, add notes, log a handover, and check the customer out — a per-visit record.' },
+    { title: 'Shown, tried, bought', text: 'The products view shows which pieces get shown often, tried often, and actually bought — surfacing a "tried often, rarely bought" merchandising signal.' },
+    { title: 'Store insights', text: 'A small set of rule-based alerts — conversion drop, dead stock, staffing gap, walkout-reason spike, repeat non-buyer, unclosed-visit backlog. Deterministic rules, not predictive AI.' },
+    { title: 'Multi-branch comparison', text: 'For chains: revenue-per-square-foot by store, a salesperson leaderboard, walkout-reason ranking, busiest hours and conversion-by-visit-purpose, rolled up centrally.' },
+  ])}`
+)}
+
+${L.oneSystemBlock([
+  'A walk-in checked in on the tablet is matched to their existing customer record — occasions, scheme balance and past visits are already there, not a blank slate.',
+  'A Walkout Rescue draft is written from the same customer record and catalogue pricing the CRM and catalogue already share — not a separate database that goes stale.',
+])}
+
+${L.section(`${L.sectionHead('SHOWROOM QUESTIONS', 'What sends automatically, and what still needs a person.', '')}${L.faqBlock([
+  { q: 'Is Walkout Rescue automatic — does it message customers without anyone checking?', a: 'No. It drafts the WhatsApp follow-up naming the pieces tried, but a staff member reviews and sends it. A rescue only counts as successful once linked to a completed sales order — never estimated.' },
+  { q: 'Does the Daily Brief get pushed to WhatsApp automatically?', a: 'Not yet — today someone has to open the Daily Brief to see it. Automatic push delivery is not built yet.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="showroom">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('See who is on your floor, right now.', 'Bring one real walkout from last week — we will show you what Walkout Rescue would have drafted.', 'showroom')}
+`,
+};
+
+module.exports = [crm, catalog, inventory, billingFinance, erp, showroom];

@@ -163,6 +163,7 @@ const aiAgents = {
     { q: 'Will this replace my sales staff?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the actual selling. Salespeople close more when every customer walks in already known, not fewer.' },
     { q: 'My salespeople are worried about being watched or replaced. What do I tell them?', a: 'That the AI does the tedious remembering — who to follow up, what she bought last time — so they spend their time selling instead of searching for notes. It works for them, not on them.' },
     { q: 'Can it give a discount without me knowing?', a: 'No — pricing and discounts follow your price rules and staff permissions. The agents draft messages; they don’t set prices.' },
+    { q: 'Can customers video-call or watch a live stream to see a piece?', a: 'Yes — customers can join a live stream and buy what they see, start a video call with your team to look at a piece up close, or scan a video-QR code to open a video interaction on the spot. These are live-video connections to your people, not an AI-hosted stream; the AI’s role stays where it is elsewhere on this page — drafting the surrounding text follow-ups, under approval.' },
   ],
   body: `
 ${L.hero({
@@ -188,10 +189,20 @@ ${L.section(
 
 ${L.governanceStrip()}
 
+${L.section(
+  `${L.sectionHead('BEYOND TEXT', 'Staff that never sleep — now on video too.', '')}
+  ${L.cards([
+    { title: 'Live streaming & shoppable video', text: 'Run a live stream of new arrivals or a festival launch; customers watch and buy the pieces they see, in the moment.' },
+    { title: 'Video calls with your team', text: 'A customer who wants to see a piece up close before deciding can move straight into a video call with your salesperson — the video counter this site’s /pricing describes at the Autopilot tier.' },
+    { title: 'Video-QR', text: 'A QR code — on a poster, an invoice, a catalogue page — that opens a video interaction instead of a webpage, so an in-store or offline moment can lead straight into a live conversation.' },
+  ])}`
+)}
+
 ${L.section(`${L.sectionHead('THE STAFF QUESTION', 'What your salespeople should actually worry about.', '')}${L.faqBlock([
   { q: 'Will this replace my sales staff?', a: 'No. The AI workforce does the remembering and follow-up; your people do the selling. Salespeople close more when every customer walks in already known.' },
   { q: 'My salespeople are worried about being watched or replaced. What do I tell them?', a: 'It works for them, not on them — it does the tedious remembering so they spend their time on the sale itself.' },
   { q: 'Can it give a discount without me knowing?', a: 'No — pricing and discounts follow your price rules and staff permissions, always.' },
+  { q: 'Can customers video-call or watch a live stream to see a piece?', a: 'Yes — live streams, shoppable video and video-QR all connect customers with your team on camera. These are live-video capabilities, not an AI-hosted stream; only the surrounding text is AI-drafted, and always under approval.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#ai-trust">See every AI trust question →</a></p>`)}
 
@@ -220,6 +231,7 @@ const optimize = {
     { q: 'What can I personalize?', a: 'Personalization rules can target by behaviour tracked on your site — pages viewed, funnel stage — and, because it shares the customer record, by data like scheme or loyalty membership, so a returning scheme member can see different content than a first-time visitor.' },
     { q: 'What does this replace, work with, and cost?', a: 'It replaces the need for separate analytics, heatmap, A/B testing and push tools. It works alongside your existing website — one pixel, no rebuild. Pricing sits inside Jwero’s tiers — see /pricing for the structure.' },
     { q: 'Is visitor data handled with consent?', a: 'Yes — consent settings, a domain guard and a CSS sanitizer are built into the suite, so tracking and on-site widgets respect visitor consent and stay scoped to domains you approve.' },
+    { q: 'Can I manage my Meta/Google ad campaigns from here too?', a: 'Yes — Optimize includes Meta and Google Ads campaign creation and management, so you can build and edit campaigns from inside the same platform, not just track how they perform. An AI assistant drafts targeting and budget suggestions for you to review; it does not run campaigns on its own — you decide what launches, same as every other AI draft on this site.' },
   ],
   body: `
 ${L.hero({
@@ -257,6 +269,15 @@ ${L.section(
   ])}`
 )}
 
+${L.section(
+  `${L.sectionHead('MANAGE THE SPEND THAT BRINGS THEM HERE', 'From watching traffic to running the ads that create it.', '')}
+  ${L.cards([
+    { title: 'Meta & Google campaigns, in one place', text: 'Create and manage Facebook, Instagram and Google Ads campaigns from inside Optimize — not just tracking what already ran, but building and editing the campaigns themselves.' },
+    { title: 'AI-drafted strategy', text: 'An AI assistant drafts targeting and budget suggestions for you to review and adjust — a starting point, not an autopilot. You decide what launches and what spends, exactly like every other AI draft on this site.' },
+    { title: 'One record, ad to sale', text: 'Because campaigns sit on the same platform as the customer record, the visitor an ad brought in is the same lead your funnels, heatmaps and CRM already track — no separate ads dashboard to reconcile against.' },
+  ])}`
+)}
+
 ${L.oneSystemBlock([
   'A lead captured through a webchat conversation or a popup becomes a CRM contact instantly — no export, no re-entry.',
   'Personalization rules can key off scheme or loyalty membership from the same customer record your WhatsApp and billing modules already update.',
@@ -267,6 +288,7 @@ ${L.section(`${L.sectionHead('OPTIMIZE QUESTIONS', 'Consent, AI webchat, and wha
   { q: 'How is this different from installing Hotjar or VWO myself?', a: 'Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your other modules use.' },
   { q: 'Can the AI actually answer webchat questions?', a: 'Yes — AIVA drafts and sends replies using your catalogue and knowledge base, and marks a conversation for human takeover the moment it needs a person.' },
   { q: 'Is visitor data handled with consent?', a: 'Yes — consent settings, a domain guard and a CSS sanitizer are built into the suite.' },
+  { q: 'Can I manage my Meta/Google ad campaigns from here too?', a: 'Yes — build and edit Meta and Google Ads campaigns from inside Optimize, with an AI assistant drafting targeting and budget suggestions for you to review, not run.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
@@ -276,4 +298,72 @@ ${L.ctaBand('See where your own visitors drop off.', 'One pixel turns on analyti
 `,
 };
 
-module.exports = [whatsapp, instagram, aiAgents, optimize];
+const storefront = {
+  slug: 'products/storefront',
+  title: 'Storefront & Website for Jewellery Business | Jwero',
+  description: 'A native jewellery storefront — live-rate catalogue, cart, wishlist, checkout, blog and reviews — as your first website, or a jewellery-native option beside it.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Storefront & Website', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'A native, standalone jewellery storefront with live-rate catalogue, cart, wishlist, comparison, checkout, blog, reviews and a themeable template system, on the same customer record as every other Jwero module.',
+    url: 'https://jwero.ai/products/storefront', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
+  breadcrumbs: BC('Storefront & Website'),
+  faqs: [
+    { q: 'Do I need Shopify or WooCommerce to sell online?', a: 'No. Jwero includes a native storefront — a live-price catalogue, cart, wishlist, comparison and checkout — that can be your website if you don’t have one yet.' },
+    { q: 'I already have a Shopify or WooCommerce store. Do I have to switch?', a: 'No. Storefront is an option, not a replacement mandate. If you already run a store, the existing platform integrations and /products/optimize add Jwero on top of it. Storefront is for businesses that don’t have a website yet, or want a jewellery-native alternative.' },
+    { q: 'What can customers actually do on the storefront?', a: 'Browse a live-price catalogue, add to cart, save a wishlist, compare pieces side by side, and check out — the full path from browsing to buying, without leaving the site.' },
+    { q: 'Can it look like my brand, not a template?', a: 'Yes — a theming and template system lets the storefront be branded to match your business rather than looking like generic software.' },
+    { q: 'Is it just a catalogue, or a full website?', a: 'A full site: public catalogue pages, quote pages and payment pages, plus a blog, customer reviews and landing pages for campaigns — content tools for the storefront itself, not just a product list.' },
+    { q: 'Who is this for?', a: 'Startups, first-time founders and single stores without a website today are the clearest fit. It runs on the same customer record as your WhatsApp, CRM and billing — so a storefront order is never a separate system to reconcile.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'STOREFRONT & WEBSITE',
+  h1: 'A jewellery website that already knows how to sell jewellery.',
+  sub: 'If you don’t have a website yet, or you’re tired of forcing jewellery into a generic store builder, Jwero includes a native storefront — a live-rate catalogue, cart, wishlist, comparison and checkout — built to sell rings and rates, not t-shirts.',
+  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'storefront' },
+  secondary: { href: '/book-demo', label: 'Book a demo' },
+})}
+
+${L.section(
+  `${L.sectionHead('THE FIRST-WEBSITE PROBLEM', 'A brochure site isn’t a storefront.', '')}
+  ${L.cards([
+    { title: 'No website yet', text: 'A first-time founder or single store often has no site at all — just Instagram and word of mouth. That’s enquiries with nowhere to close.' },
+    { title: 'Generic builders don’t speak jewellery', text: 'Prices that don’t move with the metal rate, no wishlist for a big-ticket decision, no way to compare two pieces — because the builder was made for t-shirts, not temple work.' },
+    { title: 'A separate system to reconcile', text: 'A storefront that doesn’t share the customer record means every online order is a manual re-entry into the CRM and billing you actually run the business on.' },
+  ])}`
+)}
+
+${L.section(
+  `${L.sectionHead('WHAT THE STOREFRONT DOES', 'Browse, decide, buy — on one site.', '')}
+  ${L.cards([
+    { title: 'Live-rate catalogue', text: 'Product pages priced against today’s metal rate, not a stale PDF.' },
+    { title: 'Cart, wishlist & compare', text: 'The three things a jewellery buyer actually needs before a big-ticket decision — not just an add-to-cart button.' },
+    { title: 'Checkout, quotes & payments', text: 'Public catalogue pages, quote pages and payment pages carry a browsing customer all the way to paid.' },
+    { title: 'Blog, reviews & landing pages', text: 'Content tools built for the storefront itself — a blog for SEO and story, reviews for trust, landing pages for campaigns.' },
+    { title: 'Your brand, not a template', text: 'A theming and template system so the storefront looks like your business, not the software it runs on.' },
+    { title: 'An option, not a rebuild', text: 'Already on Shopify or WooCommerce? Keep it — Optimize and platform integrations add Jwero on top. Storefront is for a first site, or a jewellery-native alternative.' },
+  ])}`
+, { tone: 'tint' })}
+
+${L.oneSystemBlock([
+  'A storefront order writes to the same customer record your WhatsApp replies and billing already update — no export, no re-entry.',
+  'The catalogue and live rate on the storefront are the same catalogue every other channel sells from.',
+  'A wishlist saved on the storefront is visible the next time she messages on WhatsApp — the same record, not a separate login.',
+])}
+
+${L.section(`${L.sectionHead('STOREFRONT QUESTIONS', 'Shopify, branding, and what this replaces.', '')}${L.faqBlock([
+  { q: 'Do I need Shopify or WooCommerce to sell online?', a: 'No — Jwero includes a native storefront that can be your website if you don’t have one yet.' },
+  { q: 'I already have a store. Do I have to switch?', a: 'No — Storefront is an option, not a replacement mandate. If you already run a store, /products/optimize and platform integrations add Jwero on top of it.' },
+  { q: 'Can it look like my brand?', a: 'Yes — a theming and template system brands the storefront to match your business.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="storefront">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Bring your storefront onto one system.', 'A live-rate catalogue, cart, wishlist and checkout — as your first website, or alongside the one you already run.', 'storefront')}
+`,
+};
+
+module.exports = [whatsapp, instagram, aiAgents, optimize, storefront];

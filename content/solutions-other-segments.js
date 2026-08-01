@@ -149,6 +149,7 @@ ${L.section(
     { quote: 'I don’t know what jewellery software is even supposed to do.', title: 'One system, explained plainly', text: 'You start with three things: customers, WhatsApp, catalogue. We explain the rest as you need it.' },
     { quote: 'My whole team is three people wearing every hat.', title: 'An AI workforce that covers the gaps', text: 'The AI workforce handles first-response and follow-up, so a tiny team serves like a bigger one.' },
     { quote: 'I’m worried about the cost before I even have revenue.', title: 'Transparent pricing, no surprises', text: 'See the pricing structure upfront — no hidden costs, monthly billing at entry.' },
+    { quote: 'I don’t even have a website yet, and building one feels like a separate project.', title: 'Your storefront, not a bolt-on', text: 'Jwero can be your website — native cart, wishlist, checkout, blog and reviews — a jewellery-native alternative to a generic ecommerce platform. See <a href="/products/storefront">Storefront & Website</a>.' },
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS FIRST-TIME FOUNDERS ASK', 'Complexity, budget and where to start — answered.', '')}${L.faqBlock(startupsFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}

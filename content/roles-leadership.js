@@ -52,6 +52,12 @@ ${L.section(
       after: 'Catalogue and billing prices resolve from the live rate automatically; any manual override routes through an approval so nothing slips past you.',
       link: { href: '/products/billing-finance', label: 'See Billing & Finance' },
     },
+    {
+      lever: 'Knowing who walked out without buying',
+      before: 'A customer tries on three pieces, leaves without a word, and by the time you hear about it from staff, if you ever do, the moment to follow up has passed.',
+      after: 'The live floor view logs the visit and the pieces she was shown; Walkout Rescue drafts a WhatsApp follow-up naming them for a person to check and send, and it shows up in the daily brief when you look.',
+      link: { href: '/products/showroom', label: 'See Showroom Intelligence' },
+    },
   ])}`
 )}
 

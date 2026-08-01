@@ -71,9 +71,11 @@ const NAV = [
         ['/products/instagram-facebook', 'Instagram & Facebook'],
         ['/products/ai-sales-agents', 'AI Sales Agents & Voice'],
         ['/products/optimize', 'Optimize (Website CRO)'],
+        ['/products/storefront', 'Storefront & Website'],
       ]},
       { title: 'Know', items: [
         ['/products/crm', 'Jewellery CRM'],
+        ['/products/showroom', 'Showroom Intelligence'],
       ]},
       { title: 'Run', items: [
         ['/products/catalog', 'Catalogue (PIM)'],
@@ -84,6 +86,7 @@ const NAV = [
       { title: 'Grow', items: [
         ['/products/gold-schemes', 'Gold Savings Schemes'],
         ['/products/digital-gold', 'Digital Gold'],
+        ['/products/loyalty', 'Loyalty & Referrals'],
         ['/products/multi-store', 'Multi-store & Franchise'],
       ]},
     ],

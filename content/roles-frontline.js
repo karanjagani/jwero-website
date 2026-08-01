@@ -34,6 +34,7 @@ ${L.section(
     { lever: 'A customer walks in mid-afternoon', before: 'Your sales staff greet her cold — no memory of her last visit, her scheme balance or what she was shown before.', after: 'Her record — past purchases, scheme status, taste — is one tap away for whoever’s on the floor, before the conversation starts.' },
     { lever: 'A WhatsApp enquiry comes in after closing', before: 'It sits unread until morning, and by then the customer has usually asked someone else.', after: 'AI staff draft a priced reply at today’s rate overnight; a person on your team approves it first thing, so nothing goes out unchecked.', link: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' } },
     { lever: 'Checking on other branches', before: 'You call each store manager individually to ask what moved and what’s stuck on the shelf.', after: 'Stock, ageing and sales roll up across branches into one view, with exceptions flagged instead of buried in a phone call.', link: { href: '/products/multi-store', label: 'See multi-store' } },
+    { lever: 'Knowing what actually happened on the floor today', before: 'You piece together footfall and walkouts from what staff remember to mention, hours after the moment has passed.', after: 'A live floor view shows who’s in and who walked out without buying, with rule-based flags on the ones worth checking; you catch it in the daily brief instead of hearing it secondhand.', link: { href: '/products/showroom', label: 'See Showroom Intelligence' } },
   ])}`
 )}
 

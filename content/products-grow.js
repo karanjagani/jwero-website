@@ -183,4 +183,67 @@ ${L.ctaBand('Bring network discipline to your business.', 'Multi-store deploymen
 `,
 };
 
-module.exports = [schemes, digitalGold, multiStore];
+const loyalty = {
+  slug: 'products/loyalty',
+  title: 'Loyalty & Referrals — Tiers, Earning Rules, Redemptions | Jwero',
+  description: 'Configure loyalty tiers, earning rules and redemptions, and track customer referrals — all on the same customer record your team already uses.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Loyalty & Referrals', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Configurable loyalty tiers, earning rules and redemptions, plus referral tracking, on the shared Jwero customer record.',
+    url: 'https://jwero.ai/products/loyalty', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
+  breadcrumbs: BC('Loyalty & Referrals'),
+  faqs: [
+    { q: 'Is this the same thing as your gold savings schemes?', a: 'No. Gold schemes and digital gold are savings products tied to grams of gold. Loyalty is a separate points/tier layer that can apply to any purchase — the two are designed to run side by side, both visible on the same customer record.' },
+    { q: 'Can we set our own tiers and earning rules?', a: 'Yes — tiers, how customers earn toward them, and what they can redeem are all configurable to your business. We don’t ship a fixed set of tier names or point values; you define what fits your store.' },
+    { q: 'How does referral tracking work?', a: 'When an existing customer refers a new one, that link is tracked in the system, so staff can see it on the customer record rather than relying on memory or a manual note.' },
+    { q: 'Where do loyalty tier and referral status show up for staff?', a: 'On the same customer record as scheme balances, purchase history and occasions — one card, not a separate loyalty app to check.' },
+    { q: 'Can we run a loyalty program and a gold scheme for the same customer?', a: 'Yes — they’re independent layers on one record. A customer can hold a scheme balance and a loyalty tier at the same time, and staff see both in one place.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'LOYALTY & REFERRALS',
+  h1: 'Reward every visit, not just every gold instalment.',
+  sub: 'Gold schemes reward saving. Loyalty rewards everything else — repeat purchases, referrals, being a regular. Jwero lets you define tiers, earning rules and redemptions, and track who referred whom — all landing on the same customer record your team already reads.',
+  primary: { href: '#', label: 'See loyalty on a demo', wa: 'loyalty' },
+  secondary: { href: '/book-demo', label: 'Book a demo' },
+})}
+
+${L.section(
+  `${L.sectionHead('WHY A SEPARATE LAYER', 'Not every reward is about gold.', '')}
+  ${L.cards([
+    { title: 'Loyalty isn’t savings', text: 'A scheme rewards a savings habit toward gold. Loyalty can reward any purchase, any visit, any referral — it doesn’t require the customer to be saving toward anything.' },
+    { title: 'Referrals go untracked', text: 'A customer sends a friend your way and nobody records it. The referral happens, the credit doesn’t — and the habit of referring quietly stops.' },
+    { title: 'Status lives in someone’s head', text: 'Who’s a regular, who’s owed something, who referred whom — without a record, it’s whatever the counter staff on duty happens to remember.' },
+  ])}`
+)}
+
+${L.section(
+  `${L.sectionHead('WHAT’S CONFIGURABLE', 'Tiers, earning and redemption — set by you.', '')}
+  ${L.cards([
+    { title: 'Loyalty tiers', text: 'Define the tiers that make sense for your business — how many, what they’re called, what each one unlocks.' },
+    { title: 'Earning rules', text: 'Set how customers move up — by purchase, by visit, by referral — configured to your policy, not a fixed formula.' },
+    { title: 'Redemptions', text: 'Customers redeem what they’ve earned; what’s redeemable is yours to define.' },
+    { title: 'Referral tracking', text: 'When an existing customer refers a new one, the system tracks the link so it’s visible on both records, not just remembered at the counter.' },
+  ])}`
+)}
+
+${L.oneSystemBlock([
+  'A customer’s loyalty tier sits on the same record as their scheme balance, purchase history and occasions — staff check one card, not a separate loyalty app.',
+  'A referral is recorded against the referring customer’s record, so a regular who sends you business is visible as one, not just remembered by whoever was at the counter.',
+])}
+
+${L.section(`${L.sectionHead('LOYALTY QUESTIONS', 'How it differs from schemes, and what you control.', '')}${L.faqBlock([
+  { q: 'Is this the same as gold savings schemes?', a: 'No — schemes are gold savings; loyalty is a separate points/tier layer for any purchase. They run side by side on one record.' },
+  { q: 'Do we set our own tiers and rules?', a: 'Yes — tiers, earning rules and redemptions are configurable to your business; nothing is fixed by Jwero.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="loyalty">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Reward regulars, not just savers.', 'Bring your idea of tiers and rewards to a demo — we will show how they’re configured and where they show up on the customer record.', 'loyalty')}
+`,
+};
+
+module.exports = [schemes, digitalGold, multiStore, loyalty];

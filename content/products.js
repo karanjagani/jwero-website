@@ -21,6 +21,7 @@ ${L.section(
     { title: 'Instagram & Facebook', text: 'Turn DMs and story replies into orders without leaving Instagram.', link: { href: '/products/instagram-facebook', label: 'Explore' } },
     { title: 'AI Sales Agents & Voice', text: 'An AI workforce that drafts follow-ups, birthday invites and win-backs — every action waits in your approval queue.', link: { href: '/products/ai-sales-agents', label: 'Explore' } },
     { title: 'Optimize (Website CRO)', text: 'Analytics, heatmaps, A/B experiments, personalization, popups, push and an AI webchat — built into your website, on the same customer record.', link: { href: '/products/optimize', label: 'Explore' } },
+    { title: 'Storefront & Website', text: 'A native storefront — cart, wishlist, checkout, blog and reviews — for businesses that don’t have one yet, or want an alternative.', link: { href: '/products/storefront', label: 'Explore' } },
   ], 4)}`
 )}
 
@@ -29,6 +30,7 @@ ${L.section(
   ${L.cards([
     { title: 'Jewellery CRM', text: 'Every customer — occasions, taste, scheme balance, every conversation — in one record with 90+ fields.', link: { href: '/products/crm', label: 'Explore' } },
     { title: 'Customer Memory', text: 'The architecture behind the CRM: 90+ fields, explainable scores, owned by your business.', link: { href: '/platform/customer-memory', label: 'Explore' } },
+    { title: 'Showroom Intelligence', text: 'Who walked in, what they tried, who walked out without buying — and the follow-up drafted the moment they leave.', link: { href: '/products/showroom', label: 'Explore' } },
   ])}`
 , { tone: 'tint' })}
 
@@ -47,8 +49,9 @@ ${L.section(
   ${L.cards([
     { title: 'Gold Savings Schemes', text: 'Enrol, collect, remind and mature gold schemes digitally — balances your customers can see.', link: { href: '/products/gold-schemes', label: 'Explore' } },
     { title: 'Digital Gold', text: 'Sell gold savings digitally with KYC and OTP-verified closures built in.', link: { href: '/products/digital-gold', label: 'Explore' } },
+    { title: 'Loyalty & Referrals', text: 'Tiers, earning rules and referral tracking — reward the customers who keep coming back and bringing others.', link: { href: '/products/loyalty', label: 'Explore' } },
     { title: 'Multi-store & Franchise', text: 'One catalogue, one customer base, per-branch stock and performance — however many stores you run.', link: { href: '/products/multi-store', label: 'Explore' } },
-  ])}`
+  ], 4)}`
 , { tone: 'tint' })}
 
 ${L.section(`<p style="text-align:center; font-size:.9rem; color:var(--ink-2);">Every module reads the same customer record. That’s the operating system. <a href="/platform">See how it fits together →</a></p>`)}

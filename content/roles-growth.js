@@ -51,6 +51,12 @@ ${L.section(
       before: 'Birthdays and anniversaries are tracked, if at all, in a diary that nobody checks daily.',
       after: 'Occasion dates on the customer record trigger a drafted greeting or offer for your review — nothing is forgotten because a page wasn’t turned.',
     },
+    {
+      lever: 'Sharing a price',
+      before: 'A customer asks for a price and it turns into a back-and-forth over chat — numbers typed out, revised, and re-typed until something sticks.',
+      after: 'A formal quotation goes out instead — numbered, itemised, with a PDF and a shareable link the customer can open and accept or decline on their own, no call needed.',
+      link: { href: '/products/crm', label: 'See the CRM' },
+    },
   ])}`
 )}
 

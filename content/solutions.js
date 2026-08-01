@@ -108,6 +108,7 @@ ${L.section(
     { quote: 'My best salesman left and took twenty years of customers in his pocket.', title: 'The memory belongs to the shop now', text: 'Every conversation, preference and promise lives on the store’s own record. Staff change; the relationship stays.' },
     { quote: 'Customers message at night. By morning they have bought elsewhere.', title: 'The counter that never closes', text: 'The AI workforce answers in minutes with real prices at today’s rate — and every draft waits for approval until you say otherwise.' },
     { quote: 'We spend on festival marketing and cannot tell if a single sale came from it.', title: 'Invitations, not blasts', text: 'The right customers hear from you before the festival — personally, with consent — and the growth report tells you what came back.' },
+    { quote: 'Someone walked out today. I don’t know who, what they tried, or why they didn’t buy.', title: 'Know who is in your shop, and who just left', text: 'A live floor view shows who is browsing right now; when someone leaves without buying, Walkout Rescue drafts a WhatsApp follow-up naming the exact pieces they tried — your team sends it. See <a href="/products/showroom">Showroom Intelligence</a>.' },
   ])}`
 )}
 
@@ -185,6 +186,7 @@ ${L.section(
     { quote: 'Every branch runs its own way. I find out about problems a month later.', title: 'One spine, every branch', text: 'Consistent pricing rules, catalogues and processes from the centre; controlled exceptions with approvals; an owner rollup that surfaces drift now, not at month-end.' },
     { quote: 'A customer of our city store walks into our new mall store and nobody knows her.', title: 'Network-wide memory', text: 'One customer record across branches: her purchases, plan balance and preferences greet her at every counter you own.' },
     { quote: 'Marketing spend per branch is a black box.', title: 'Central campaigns, measured locally', text: 'Festival journeys run from head office, execute per branch, and report what came back — by branch, by campaign, by customer.' },
+    { quote: 'I can’t tell which branch is actually earning its rent, or which salesperson is carrying the floor.', title: 'Compare every branch, on the floor, not just the ledger', text: 'Revenue-per-square-foot and a salesperson leaderboard sit side by side across every store. See <a href="/products/showroom">Showroom Intelligence</a>.' },
   ])}`
 )}
 

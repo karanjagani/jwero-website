@@ -29,6 +29,7 @@ ${L.section(
     { quote: 'Generic mass marketing feels cheap for what we sell.', title: 'Private, not broadcast', text: 'Curated catalogue previews go to named clients, with your approval on every message — never a blast.' },
     { quote: 'My clients expect privacy, not a mailing list.', title: 'Memory the client never sees, but always feels', text: 'Sizes, taste, past pieces and important dates — one record, visible only to your team.' },
     { quote: 'We see clients rarely, and every visit has to count.', title: 'Low-frequency, high-stakes follow-up', text: 'Appointments and video-counter previews replace guesswork with a scheduled, prepared visit.' },
+    { quote: 'A client browses, tries three pieces, and walks out. My team has no idea whom to follow up with, or how.', title: 'Clienteling that knows what she tried', text: 'The live floor view shows who is being served and what they looked at, so a follow-up can name the exact pieces, not a generic reminder. See <a href="/products/showroom">Showroom Intelligence</a>.' },
   ])}`
 )}
 ${L.jtbdBlock([
