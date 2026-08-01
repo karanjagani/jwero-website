@@ -231,7 +231,7 @@ const optimize = {
     { q: 'What can I personalize?', a: 'Personalization rules can target by behaviour tracked on your site — pages viewed, funnel stage — and, because it shares the customer record, by data like scheme or loyalty membership, so a returning scheme member can see different content than a first-time visitor.' },
     { q: 'What does this replace, work with, and cost?', a: 'It replaces the need for separate analytics, heatmap, A/B testing and push tools. It works alongside your existing website — one pixel, no rebuild. Pricing sits inside Jwero’s tiers — see /pricing for the structure.' },
     { q: 'Is visitor data handled with consent?', a: 'Yes — consent settings, a domain guard and a CSS sanitizer are built into the suite, so tracking and on-site widgets respect visitor consent and stay scoped to domains you approve.' },
-    { q: 'Can I manage my Meta/Google ad campaigns from here too?', a: 'Yes — Optimize includes Meta and Google Ads campaign creation and management, so you can build and edit campaigns from inside the same platform, not just track how they perform. An AI assistant drafts targeting and budget suggestions for you to review; it does not run campaigns on its own — you decide what launches, same as every other AI draft on this site.' },
+    { q: 'Can I manage my Meta/Google ad campaigns from here too?', a: 'Not inside Optimize itself — that lives in Ads Manager, a dedicated part of Jwero for Meta, Google and Pinterest campaigns, with budget alerts and an AI strategist that drafts, never spends. Optimize tells you what happens after the click; Ads Manager runs the campaign that brought the click.' },
   ],
   body: `
 ${L.hero({
@@ -271,11 +271,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('MANAGE THE SPEND THAT BRINGS THEM HERE', 'From watching traffic to running the ads that create it.', '')}
-  ${L.cards([
-    { title: 'Meta & Google campaigns, in one place', text: 'Create and manage Facebook, Instagram and Google Ads campaigns from inside Optimize — not just tracking what already ran, but building and editing the campaigns themselves.' },
-    { title: 'AI-drafted strategy', text: 'An AI assistant drafts targeting and budget suggestions for you to review and adjust — a starting point, not an autopilot. You decide what launches and what spends, exactly like every other AI draft on this site.' },
-    { title: 'One record, ad to sale', text: 'Because campaigns sit on the same platform as the customer record, the visitor an ad brought in is the same lead your funnels, heatmaps and CRM already track — no separate ads dashboard to reconcile against.' },
-  ])}`
+  <p>Optimize tells you where visitors drop off — but the ads that brought them here live in their own workspace, with budget alerts and an AI strategist that drafts, never spends. Need to actually manage that spend? See <a href="/products/ads-manager">Ads Manager →</a>.</p>`
 )}
 
 ${L.oneSystemBlock([
@@ -288,7 +284,7 @@ ${L.section(`${L.sectionHead('OPTIMIZE QUESTIONS', 'Consent, AI webchat, and wha
   { q: 'How is this different from installing Hotjar or VWO myself?', a: 'Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your other modules use.' },
   { q: 'Can the AI actually answer webchat questions?', a: 'Yes — AIVA drafts and sends replies using your catalogue and knowledge base, and marks a conversation for human takeover the moment it needs a person.' },
   { q: 'Is visitor data handled with consent?', a: 'Yes — consent settings, a domain guard and a CSS sanitizer are built into the suite.' },
-  { q: 'Can I manage my Meta/Google ad campaigns from here too?', a: 'Yes — build and edit Meta and Google Ads campaigns from inside Optimize, with an AI assistant drafting targeting and budget suggestions for you to review, not run.' },
+  { q: 'Can I manage my Meta/Google ad campaigns from here too?', a: 'Not inside Optimize — see <a href="/products/ads-manager">Ads Manager</a> for Meta, Google and Pinterest campaigns, budget alerts and an AI strategist that drafts, never spends.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
@@ -366,4 +362,132 @@ ${L.ctaBand('Bring your storefront onto one system.', 'A live-rate catalogue, ca
 `,
 };
 
-module.exports = [whatsapp, instagram, aiAgents, optimize, storefront];
+const adsManager = {
+  slug: 'products/ads-manager',
+  title: 'Ads Manager — Meta, Google & Pinterest Campaigns | Jwero',
+  description: 'Create and manage ad campaigns across Meta, Google and Pinterest from one place, with budget alerts and an AI strategist that drafts, never spends.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Ads Manager', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Ad-campaign management across Meta, Google and Pinterest, with a create/edit wizard, budget alerts, a pre-spend approval step and AI-assisted opportunity analysis.',
+    url: 'https://jwero.ai/products/ads-manager', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
+  breadcrumbs: BC('Ads Manager'),
+  faqs: [
+    { q: 'Which ad platforms does Jwero manage?', a: 'Meta Ads, Google Ads and Pinterest — each with its own integration and a catalogue of supported campaign types for that platform.' },
+    { q: 'Does Jwero publish my campaign straight to the ad platform?', a: 'Campaigns are created, configured, budgeted and analyzed inside Jwero end to end. Direct one-click publishing to the ad platform is rolling out and not uniformly live across every flow yet — we will tell you plainly if your setup needs a manual publish step, rather than let you find out from a failed campaign.' },
+    { q: 'Can the AI spend my budget without me knowing?', a: 'No. The AI strategist analyzes performance and surfaces opportunities and learnings for you to review; every campaign goes through an approval step before spend. It drafts, it does not spend.' },
+    { q: 'What happens if I go over budget?', a: 'Budget alerts flag campaigns approaching their limits, so overspend is something you catch early, not something you discover on the invoice.' },
+    { q: 'How is this different from managing ads inside Meta or Google directly?', a: 'You get one wizard for campaign creation across all three platforms, one place for budget alerts and approvals, and AI-drafted analysis — instead of three separate ad managers with three separate logins.' },
+    { q: 'Does this replace my existing ad accounts?', a: 'No — it connects to and manages your existing Meta, Google and Pinterest ad accounts from inside Jwero, rather than replacing them.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'ADS MANAGER',
+  h1: 'Run the ads. Keep your hand on the budget.',
+  sub: 'Meta, Google and Pinterest campaigns — created, configured and analyzed from one place, with a budget alert before you overspend and an approval step before a single rupee goes out. The AI strategist drafts the opportunity; you decide what launches.',
+  primary: { href: '#', label: 'Talk to us about Ads Manager', wa: 'adsmanager' },
+  secondary: { href: '/book-demo', label: 'Book a demo' },
+})}
+
+${L.section(
+  `${L.sectionHead('ONE WORKSPACE, THREE PLATFORMS', 'Stop juggling three ad managers.', '')}
+  ${L.cards([
+    { title: 'Meta, Google & Pinterest', text: 'Each platform has its own integration and its own catalogue of supported campaign types — built for that platform, not a lowest-common-denominator form.' },
+    { title: 'Create/edit wizard', text: 'One guided flow to build and adjust a campaign, instead of relearning three different ad-platform interfaces.' },
+    { title: 'Budget alerts', text: 'Get flagged when a campaign is approaching its limit — before the spend surprises you, not after.' },
+    { title: 'Approval before spend', text: 'Every campaign passes an approval step before it goes live. Nobody spends the marketing budget by accident.' },
+    { title: 'AI opportunity analysis', text: 'The AI strategist surfaces where a campaign is underperforming or where there’s budget headroom worth using — a draft recommendation, not an autopilot.' },
+    { title: 'Learnings dashboards', text: 'Performance and learnings in one view across platforms, so you compare Meta against Google against Pinterest without exporting three reports.' },
+  ])}`
+)}
+
+${L.oneSystemBlock([
+  'The lead a campaign brings in lands on the same customer record your WhatsApp, Instagram and CRM already use — no separate ads dashboard to reconcile.',
+  'Budget alerts and approvals sit next to the same governance pattern the AI workforce uses everywhere else on Jwero: drafts, never spends, without a human saying yes.',
+  'Traffic Optimize tracks on your website often started as a click on one of these campaigns — see <a href="/products/optimize">Optimize</a> for what happens after the click.',
+  'Running organic posts alongside paid campaigns? <a href="/products/social-media">Social Media Management</a> covers scheduling and the unified inbox on the same customer record.',
+])}
+
+${L.honestGapsBlock([
+  'Direct one-click publishing of a campaign straight to the ad platform is not fully wired for every flow yet — some setups still need a manual publish step, which we will tell you about upfront rather than let a draft campaign silently sit unpublished.',
+])}
+
+${L.section(`${L.sectionHead('ADS MANAGER QUESTIONS', 'Budget control, publishing, and what the AI actually does.', '')}${L.faqBlock([
+  { q: 'Does Jwero publish my campaign straight to the ad platform?', a: 'Campaigns are created, configured, budgeted and analyzed inside Jwero. Direct one-click publish to the ad platform is rolling out, not uniformly live yet — we will tell you plainly if your flow needs a manual step.' },
+  { q: 'Can the AI spend my budget without me knowing?', a: 'No — it drafts opportunity analysis and learnings; every campaign needs your approval before spend.' },
+  { q: 'Which platforms are covered?', a: 'Meta Ads, Google Ads and Pinterest, each with its own campaign-type catalogue.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="adsmanager">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Run ads without losing sight of the budget.', 'Meta, Google and Pinterest campaigns, budget alerts and an approval step before spend — all in one place. See it work on your own accounts.', 'adsmanager')}
+`,
+};
+
+const socialMedia = {
+  slug: 'products/social-media',
+  title: 'Social Media Management — Schedule, Inbox, Reply | Jwero',
+  description: 'Schedule posts, manage one inbox for every comment and DM, and let AI draft replies your team approves — across your social channels in one place.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Social Media Management', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Multi-platform post scheduling with a multi-channel preview, a unified inbox for comments and DMs with AI-drafted replies under approval, and analytics.',
+    url: 'https://jwero.ai/products/social-media', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
+  breadcrumbs: BC('Social Media Management'),
+  faqs: [
+    { q: 'What can I actually schedule and manage from Jwero?', a: 'Posts across your social platforms from one composer, with a preview of how each post will look on each channel before it goes out, plus a unified inbox for the comments and DMs that come back.' },
+    { q: 'Does the AI reply to comments and DMs on its own?', a: 'It drafts replies — including handling Instagram private replies — using the same "AI drafts, human approves" governance as the rest of Jwero. Your team approves before anything sends, until you choose to promote a reply type.' },
+    { q: 'Which platforms are supported?', a: 'Instagram and Facebook are the flagship, proven channels — the same official integrations this site’s /products/instagram-facebook page already sells. Additional platforms including LinkedIn, X, Pinterest, YouTube and Google Business are part of the roadmap; ask us which are confirmed live for your account before you plan a launch around one.' },
+    { q: 'Is this different from Instagram & Facebook Commerce?', a: 'That page is the focused Instagram/Facebook experience. Social Media Management is the broader version: scheduling, preview and analytics across channels, with the same unified inbox and AI-drafted replies underneath.' },
+    { q: 'Can I see how my posts and replies are performing?', a: 'Yes — analytics sit alongside the composer and inbox, so scheduling, replying and measuring stay in the same place instead of a separate reporting tool.' },
+    { q: 'Do I need someone watching every channel all day?', a: 'No — the unified inbox collects every comment and DM in one place, and AI drafts the first response; your team reviews and approves rather than monitoring each platform separately.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'SOCIAL MEDIA MANAGEMENT',
+  h1: 'Every platform, one inbox, one calendar.',
+  sub: 'Schedule posts across your channels with a preview of how each will look before it goes live, and answer every comment and DM from a single inbox — with AI drafting the reply and your team approving it.',
+  primary: { href: '#', label: 'Talk to us about Social Media', wa: 'socialmedia' },
+  secondary: { href: '/book-demo', label: 'Book a demo' },
+})}
+
+${L.section(
+  `${L.sectionHead('SCHEDULE, PREVIEW, PUBLISH', 'One composer for every channel.', '')}
+  ${L.cards([
+    { title: 'Multi-platform composer', text: 'Write once, schedule across your connected channels from a single screen.' },
+    { title: 'Multi-channel preview', text: 'See how a post will actually look on each platform before it goes out — not a guess after publishing.' },
+    { title: 'Unified inbox', text: 'Every comment and DM, across every connected channel, in one inbox instead of a rotation of apps.' },
+    { title: 'Instagram private replies', text: 'Comment-to-DM handling on Instagram is built in, so a public "price?" comment can move to a private conversation cleanly.' },
+    { title: 'AI-drafted replies, human approval', text: 'AI drafts the reply to a comment or DM using your knowledge base; a person approves before it sends — the same governance as the rest of Jwero.' },
+    { title: 'Analytics', text: 'Performance across your scheduled posts and channels, next to the same inbox you reply from.' },
+  ])}`
+)}
+
+${L.oneSystemBlock([
+  'A DM answered in the unified inbox lands on the same customer record your WhatsApp and CRM already use — no separate export.',
+  'The AI drafting a reply here follows the same "AI drafts, human approves" governance as the AI Sales Agents elsewhere on Jwero.',
+  'Instagram and Facebook here are the same official integrations behind <a href="/products/instagram-facebook">Instagram & Facebook Commerce</a> — this page is the broader, multi-platform version of that experience.',
+  'Paying to promote a post? <a href="/products/ads-manager">Ads Manager</a> runs the paid campaigns on the same platform, with its own budget alerts and approvals.',
+])}
+
+${L.honestGapsBlock([
+  'Not every one of the additional platforms (LinkedIn, X, Pinterest, YouTube, Google Business) is confirmed live for publishing on every account yet — Instagram and Facebook are the proven, flagship channels; ask us which others are live before you plan around one.',
+])}
+
+${L.section(`${L.sectionHead('SOCIAL MEDIA QUESTIONS', 'Platform coverage and who approves what.', '')}${L.faqBlock([
+  { q: 'Which platforms are supported?', a: 'Instagram and Facebook are the flagship, proven channels. Additional platforms including LinkedIn, X, Pinterest, YouTube and Google Business are on the roadmap — ask which are live for your account.' },
+  { q: 'Does the AI reply on its own?', a: 'It drafts; your team approves before anything sends, until you choose to promote a reply type — same governance as the rest of Jwero.' },
+  { q: 'How is this different from Instagram & Facebook Commerce?', a: 'That page is the focused Instagram/Facebook experience; this is the broader multi-platform scheduling, inbox and analytics layer built on the same foundation.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="socialmedia">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('One inbox for every comment and DM.', 'Schedule across channels, reply from one place, and let AI draft the first response while your team approves. Ask which platforms are live for your account.', 'socialmedia')}
+`,
+};
+
+module.exports = [whatsapp, instagram, aiAgents, optimize, storefront, adsManager, socialMedia];

@@ -110,7 +110,12 @@
     'blog-catalog': 'Hi Jwero — I read the digital catalogue guide, show me a live-price catalogue.',
     'blog-crmerp': 'Hi Jwero — I read the CRM vs ERP guide, show me how one record covers both.',
     'blog-checklist': 'Hi Jwero — I read the buyer’s checklist, ask me the questions and I’ll answer honestly.',
-    'blog-wedding': 'Hi Jwero — I read the wedding season guide, help me plan the timing for my business.'
+    'blog-wedding': 'Hi Jwero — I read the wedding season guide, help me plan the timing for my business.',
+    segmentation: 'Hi Jwero — show me live customer segmentation for my business.',
+    journeys: 'Hi Jwero — show me a customer journey with the approval gate live.',
+    campaigns: 'Hi Jwero — show me a campaign and broadcast, with attribution.',
+    adsmanager: 'Hi Jwero — show me Ads Manager for Meta, Google and Pinterest.',
+    socialmedia: 'Hi Jwero — show me the social media inbox and scheduler.'
   };
 
   function waLink(ctx, extra) {

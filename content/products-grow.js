@@ -246,4 +246,138 @@ ${L.ctaBand('Reward regulars, not just savers.', 'Bring your idea of tiers and r
 `,
 };
 
-module.exports = [schemes, digitalGold, multiStore, loyalty];
+const journeys = {
+  slug: 'products/journeys',
+  title: 'Customer Journeys — Visual, Approval-Gated Automation | Jwero',
+  description: 'Build multi-step customer journeys — triggers, branches, wait steps, messages — with a human-approval gate before anything reaches a customer.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Customer Journeys', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'A visual, drag-and-drop journey builder for multi-step customer automation, with an approval node that routes any step through the same human-approval governance used across Jwero.',
+    url: 'https://jwero.ai/products/journeys', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
+  breadcrumbs: BC('Customer Journeys'),
+  faqs: [
+    { q: 'What is a customer journey in Jwero?', a: 'A visual, drag-and-drop flow you build on a canvas: an entry point, then steps like event triggers, filter and score gates, conditions, branches, wait delays, messages, manual tasks, webhooks, CRM updates, calls, approvals and exits.' },
+    { q: 'Can a journey send a message without anyone checking it first?', a: 'Only if you let it. Add an approval node anywhere in the flow and the journey pauses until a person approves — the same approval-queue governance and kill switch described on the AI workforce page, not a separate system.' },
+    { q: 'Which channels can a journey message step use?', a: 'Message steps route through the shared channel router into WhatsApp, email, SMS and push — the same channels Broadcasts uses.' },
+    { q: 'Can I see what a journey is actually doing right now?', a: 'Yes. Journeys have live run monitoring, replay of past runs, staged rollout, and an incidents view — so a journey running in production is never a black box.' },
+    { q: 'How is this different from a simple autoresponder?', a: 'Branching conditions, score and filter gates, wait steps and CRM updates let a journey react to who a customer is and what they do — not just fire on a timer.' },
+    { q: 'Can a journey require someone to approve before it continues?', a: 'Yes — that is what the approval node is for. It is not a workaround; it is a first-class step type in the builder.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'CUSTOMER JOURNEYS',
+  h1: 'Automation your team can see, and can stop.',
+  sub: 'Most journey builders are a black box once you publish them. Jwero’s is a visual canvas you build, watch and can pause at any step — including an approval node that puts a person between a draft and a customer, wired into the same governance spine as the rest of your AI workforce.',
+  primary: { href: '#', label: 'See a journey run live', wa: 'journeys' },
+  secondary: { href: '/platform/ai-workforce', label: 'How Jwero governs AI actions' },
+})}
+
+${L.section(
+  `${L.sectionHead('THE BUILDER', 'A real canvas, not a config form.', '')}
+  ${L.cards([
+    { title: 'Entry & triggers', text: 'Start a journey from an event — a purchase, a scheme instalment due, a birthday, a form submit — or drop a customer in manually.' },
+    { title: 'Filter & score gates', text: 'Only customers meeting a condition or crossing a score threshold move forward — the rest wait or exit.' },
+    { title: 'Branches & conditions', text: 'Split the flow on any condition, so different customers take different paths through the same journey.' },
+    { title: 'Wait & message steps', text: 'Add time delays between steps, and send messages through the shared channel router into WhatsApp, email, SMS or push.' },
+    { title: 'Approval node', text: 'Insert a human-approval step anywhere — the flow pauses until someone in your team approves, the same queue used across the AI workforce.', link: { href: '/platform/ai-workforce', label: 'See the approval queue' } },
+    { title: 'Manual task, webhook, CRM update, call', text: 'Hand a step to a person, call out to another system, update a customer record, or trigger an AI voice call — all as steps in the same flow.' },
+  ])}`
+)}
+
+${L.section(
+  `${L.sectionHead('RUNNING IN PRODUCTION', 'Not a black box once it’s live.', '')}
+  ${L.cards([
+    { title: 'Live run monitoring', text: 'Watch customers move through a journey in real time — where they are, what fired, what’s waiting.' },
+    { title: 'Replay', text: 'Step back through a past run to see exactly what happened and why, node by node.' },
+    { title: 'Staged rollout', text: 'Publish a journey to a small slice of customers before it runs on everyone.' },
+    { title: 'Incidents view', text: 'A journey that errors or stalls shows up as an incident, not a silent failure.' },
+  ], 4)}`
+, { tone: 'tint' })}
+
+${L.oneSystemBlock([
+  'A journey’s approval node opens the same approval queue an AI-drafted WhatsApp reply uses — one governance system, not a separate one per feature.',
+  'Message steps share the channel router with Broadcasts, so a journey and a broadcast never fight over template rules or send limits.',
+  'A journey can update the same customer record the rest of Jwero reads from — a CRM-update step is not a copy, it is the record.',
+])}
+
+${L.section(`${L.sectionHead('JOURNEY QUESTIONS', 'Approval gates, channels and visibility.', '')}${L.faqBlock([
+  { q: 'Can a journey send something without a human checking it?', a: 'Only if you design it that way. Drop in an approval node and the flow waits for a person — the same governance and kill switch used across the AI workforce.' },
+  { q: 'Can I watch a journey while it runs, or only see it after?', a: 'Live run monitoring shows customers moving through the flow in real time, plus replay of past runs and an incidents view.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="journeys">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Build a journey your team can watch.', 'Bring one real flow — a scheme reminder sequence, a festival invite, a win-back — and we’ll build it live with an approval gate in place.', 'journeys')}
+`,
+};
+
+const campaigns = {
+  slug: 'products/campaigns',
+  title: 'Campaigns & Broadcasts — WhatsApp, Email, SMS, Push | Jwero',
+  description: 'Send consent-aware broadcasts across WhatsApp, email, SMS and push to any segment, then see exactly what each campaign sold, attributed to the send.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Campaigns & Broadcasts', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Consent-aware broadcasts across WhatsApp, email, SMS and push to any segment, group or tag, wrapped in campaigns with UTM-based attribution and an AI campaign-strategist for drafting plans.',
+    url: 'https://jwero.ai/products/campaigns', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
+  breadcrumbs: BC('Campaigns & Broadcasts'),
+  faqs: [
+    { q: 'What is a Broadcast?', a: 'A single send — WhatsApp, email, SMS or push — to an audience built from a segment, a group or a tag. WhatsApp sends are template-linked, following the same approved-template discipline as the rest of Jwero’s WhatsApp story.' },
+    { q: 'What does "consent-aware" actually mean?', a: 'A delivery automatically skips a recipient who has opted out, is on DND, or is missing a required template — a structured skip-reason system, not a manual checklist someone has to remember to run.' },
+    { q: 'What is a Campaign, and how is it different from a Broadcast?', a: 'A campaign wraps one or more broadcasts and journeys with UTM-based attribution and a reporting layer, so you see what a campaign actually sold — not just how many messages went out.' },
+    { q: 'Where does the audience for a broadcast or campaign come from?', a: 'From segments — built in Jwero’s segmentation tool — or from groups and tags. The same segments feed both journeys and campaigns.' },
+    { q: 'Does the AI write and send campaigns on its own?', a: 'No. The AI campaign-strategist turns a brief into a draft plan — audience, message angles, timing — but a person still reviews, builds and sends it. Nothing goes out without your team’s action, the same "AI drafts, human approves" rule used across Jwero.' },
+    { q: 'Can a campaign target a loyalty tier?', a: 'Yes — loyalty tiers are one of the ways to build an audience, so a campaign can target your top tier specifically rather than everyone at once.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'CAMPAIGNS & BROADCASTS',
+  h1: 'One send, every channel, one number for what it sold.',
+  sub: 'A broadcast that ignores opt-outs is a ban risk. A campaign with no attribution is a guess about what worked. Jwero sends consent-aware broadcasts across WhatsApp, email, SMS and push, then wraps them in campaigns that report what was actually sold — not just what was sent.',
+  primary: { href: '#', label: 'See a campaign run live', wa: 'campaigns' },
+  secondary: { href: '/products/loyalty', label: 'Target a loyalty tier' },
+})}
+
+${L.section(
+  `${L.sectionHead('BROADCASTS', 'One send, four channels, consent built in.', '')}
+  ${L.cards([
+    { title: 'Any audience', text: 'Build the send list from a segment, a group, or a tag — the same audience tools that feed journeys.', link: { href: '/products/segmentation', label: 'See segmentation' } },
+    { title: 'Four channels', text: 'WhatsApp, email, SMS and push from one broadcast — no separate tool per channel.' },
+    { title: 'Template-linked WhatsApp', text: 'WhatsApp sends link to approved templates, the same discipline that keeps the rest of Jwero’s WhatsApp use out of ban-risk territory.' },
+    { title: 'Consent-aware delivery', text: 'A send automatically skips anyone opted out, on DND, or missing a required template — with a structured, visible skip reason, not a silent drop.' },
+  ], 4)}`
+)}
+
+${L.section(
+  `${L.sectionHead('CAMPAIGNS', 'What it sold, not just what it sent.', '')}
+  ${L.cards([
+    { title: 'Wraps broadcasts and journeys', text: 'A campaign is a container: one or more broadcasts and journeys, organised around one goal.' },
+    { title: 'UTM-based attribution', text: 'Every campaign carries UTM tracking through to the sale, so revenue rolls up to the send that drove it.' },
+    { title: 'Real reporting', text: 'See what a campaign actually sold, attributed to the campaign — not an open-rate proxy for revenue.' },
+    { title: 'AI campaign-strategist', text: 'Give it a brief and it drafts a campaign plan — audience, angles, timing. A person still builds and sends it; nothing ships on its own.' },
+  ], 4)}`
+, { tone: 'tint' })}
+
+${L.oneSystemBlock([
+  'Broadcasts and journeys share the same channel router and the same consent state — an opt-out recorded anywhere is honoured everywhere.',
+  'Campaign audiences are built from the same segments, groups and tags Jwero uses for journeys — no separate list to export and re-upload.',
+  'A campaign can target a loyalty tier directly, because loyalty tier already lives on the same customer record campaigns read from.',
+])}
+
+${L.section(`${L.sectionHead('CAMPAIGN QUESTIONS', 'Consent, attribution, and what the AI can touch.', '')}${L.faqBlock([
+  { q: 'Does a broadcast risk sending to someone who opted out?', a: 'No — delivery automatically skips anyone opted out, on DND, or missing a required template, with a structured skip reason recorded.' },
+  { q: 'Does the AI campaign-strategist send campaigns by itself?', a: 'No. It drafts a plan from a brief; a person still reviews, builds and sends it — the same "AI drafts, human approves" rule used across Jwero.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="campaigns">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Send it, then know what it sold.', 'Bring one segment and one offer — we’ll build the broadcast, wire the attribution, and show you the report it produces.', 'campaigns')}
+`,
+};
+
+module.exports = [schemes, digitalGold, multiStore, loyalty, journeys, campaigns];

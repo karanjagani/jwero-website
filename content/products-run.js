@@ -374,4 +374,88 @@ ${L.ctaBand('See who is on your floor, right now.', 'Bring one real walkout from
 `,
 };
 
-module.exports = [crm, catalog, inventory, billingFinance, erp, showroom];
+const segmentation = {
+  slug: 'products/segmentation',
+  title: 'Customer Segmentation — Dynamic, Rule-Based Audiences | Jwero',
+  description: 'Build live customer segments from RFM tier, tags, CRM stage and custom fields — reachable counts and revenue shown before you save, AI-suggested to start.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Customer Segmentation', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'A visual rule builder for live, dynamically-recalculated customer segments from RFM tier, tags, CRM stage and custom fields, with reachable-count and revenue estimates before you save.',
+    url: 'https://jwero.ai/products/segmentation', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
+  breadcrumbs: BC('Customer Segmentation'),
+  faqs: [
+    { q: 'Is a segment a one-time export, or does it stay current?', a: 'Segments are dynamic by default — they recalculate live against your customer records, not a stale list exported once and forgotten. Add a customer who now matches the rules, and they show up automatically.' },
+    { q: 'What can I build a segment out of?', a: 'RFM tier from the recency/frequency/monetary grid, tags, CRM stage or pipeline membership, and custom fields — combined with typed operators (equals, not-equals, in-list, contains, has-all, between) and AND/OR matching in a visual rule builder.' },
+    { q: 'What do the "AI-suggested" segments actually do?', a: 'The system proposes candidate segments from patterns already in your data — it is not a prediction or forecasting engine. A person reviews a suggestion before it becomes a segment anyone uses.' },
+    { q: 'Do I know how big or valuable an audience is before I save it?', a: 'Yes — before you save, the builder shows an estimated reachable count and an estimated revenue/ROI figure for that audience, so you are not saving blind.' },
+    { q: 'Can I see how my segments overlap with each other?', a: 'Yes — a segment relationship graph shows overlap between segments, and geo segmentation is available with a vector-map view for location-based audiences.' },
+    { q: 'Where do segments get used?', a: 'They are the audience source for journeys and campaigns, and they read the exact same customer record the CRM keeps — no separate, out-of-sync copy of your customers.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'CUSTOMER SEGMENTATION',
+  h1: 'Every audience, defined once. Live, not a stale export.',
+  sub: 'Most "segments" are a spreadsheet exported once and never updated. Here, a segment is a rule — RFM tier, tags, CRM stage, custom fields — that recalculates live against your actual customer records, so the audience is always current when a journey or campaign reads it.',
+  primary: { href: '#', label: 'Build a live segment', wa: 'segmentation' },
+  secondary: { href: '/products/crm', label: 'See the Jewellery CRM' },
+})}
+
+${L.section(
+  `${L.sectionHead('WHAT A STALE LIST COSTS TODAY', 'The export that was already wrong by the time you used it.', '')}
+  ${L.impactGrid([
+    {
+      lever: 'Who is actually in an audience',
+      before: 'A segment is a one-time export — customers who joined, upgraded a tier or changed stage since are simply missing.',
+      after: 'Segments are dynamic by default, recalculated live from RFM tier, tags, CRM stage and custom fields — no re-export, ever.',
+    },
+    {
+      lever: 'Building the rule itself',
+      before: 'Someone hand-filters a spreadsheet, or a developer writes a one-off query nobody else can adjust.',
+      after: 'A visual rule builder with typed operators (equals, in-list, contains, between) and AND/OR logic — no code required.',
+    },
+    {
+      lever: 'Knowing if a segment is worth sending to',
+      before: 'You save first and find out the audience was too small, or too low-value, after a campaign already went out.',
+      after: 'Estimated reachable count and estimated revenue/ROI are shown before you save — so you decide with numbers, not a guess.',
+    },
+    {
+      lever: 'Finding a starting point',
+      before: 'Every segment starts from a blank rule builder, even when the useful groupings are already visible in your data.',
+      after: 'AI-suggested segments propose candidates from existing data for a person to review — a starting point, not an auto-send.',
+    },
+  ])}`
+)}
+
+${L.section(
+  `${L.sectionHead('HOW A SEGMENT GETS BUILT', 'One rule builder, several ways to slice the same record.', '')}
+  ${L.cards([
+    { title: 'RFM tier rules', text: 'Filter on the classic recency/frequency/monetary tier already computed on the customer record — a 5x5 grid, not a hand-rolled score.' },
+    { title: 'Tags, CRM stage & custom fields', text: 'Combine tags, pipeline stage and any custom field with typed operators and AND/OR matching in one visual builder.' },
+    { title: 'AI-suggested segments', text: 'The system proposes candidate segments from patterns already in your data — a person reviews before it is used anywhere.' },
+    { title: 'Reachable count & revenue before you save', text: 'See an estimated audience size and estimated revenue/ROI for the segment as you build it, before it goes live.' },
+    { title: 'Geo segmentation', text: 'Build location-based audiences with a vector-map view alongside the rule-based filters.' },
+    { title: 'Segment relationship graph', text: 'A graph view shows how your segments overlap, so you can see what a rule change would actually affect.' },
+  ])}`
+)}
+
+${L.oneSystemBlock([
+  'A segment built here reads RFM tier, tags and stage straight off the same customer record CRM keeps — not a separate, exportable copy that drifts out of date.',
+  'The audience a journey triggers on, or a campaign sends to, is this exact live segment — recalculated at send time, not whatever it looked like when someone last exported a list.',
+])}
+
+${L.section(`${L.sectionHead('SEGMENTATION QUESTIONS', 'Live rules, reviewed suggestions, no guessing on size.', '')}${L.faqBlock([
+  { q: 'Is a segment a one-time export, or does it stay current?', a: 'Segments are dynamic by default — they recalculate live against your customer records, not a stale list exported once and forgotten.' },
+  { q: 'What do the "AI-suggested" segments actually do?', a: 'The system proposes candidate segments from patterns already in your data. It is not a prediction or forecasting engine, and a person reviews before use.' },
+  { q: 'Do I know how big or valuable an audience is before I save it?', a: 'Yes — an estimated reachable count and estimated revenue/ROI are shown before you save.' },
+])}
+<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
+
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site's own WhatsApp button runs on Jwero — <a href="#" data-wa="segmentation">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+
+${L.ctaBand('Stop exporting lists that are already wrong.', 'Bring one audience you send to often — we will show you the live rule that replaces the spreadsheet.', 'segmentation')}
+`,
+};
+
+module.exports = [crm, catalog, inventory, billingFinance, erp, showroom, segmentation];
