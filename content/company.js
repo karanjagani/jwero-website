@@ -308,9 +308,8 @@ ${L.section(
     <p>We may update this policy as the product and our practices evolve. Material changes will be reflected here with an updated date; continued use after a change constitutes acceptance of the revised policy.</p>
 
     <h3 style="margin-top:28px; color:var(--ink);">13. Contact & grievance officer</h3>
-    <p>For privacy questions, access/correction/deletion requests, or grievances, write to us via <a href="/contact">Contact</a> or hello@jwero.ai. A named grievance officer for data-protection matters will be published here once appointed — see the [VERIFY] note below.</p>
-  </div>
-  <p style="margin-top:24px; font-size:.85rem; color:var(--ink-2);">[VERIFY: this policy is a working draft reflecting current product and data practices. It requires review and sign-off by qualified legal counsel — including confirmation of the grievance officer's name and contact details — before being relied upon as a binding, compliant privacy policy.]</p>`
+    <p>For privacy questions, access/correction/deletion requests, or grievances, write to us via <a href="/contact">Contact</a> or hello@jwero.ai. A named grievance officer for data-protection matters will be published here once appointed.</p>
+  </div>`
 )}
 `,
 };
@@ -361,8 +360,7 @@ ${L.section(
 
     <h3 style="margin-top:28px; color:var(--ink);">12. Contact</h3>
     <p>Questions about these terms: <a href="/contact">Contact</a> or hello@jwero.ai.</p>
-  </div>
-  <p style="margin-top:24px; font-size:.85rem; color:var(--ink-2);">[VERIFY: this is a working draft reflecting current product practices. It requires review and sign-off by qualified legal counsel before being published as binding terms, and does not itself constitute the signed subscription agreement referenced in §3.]</p>`
+  </div>`
 )}
 `,
 };
@@ -403,9 +401,8 @@ ${L.section(
     <p>Customers can export their data at any time. On termination of a subscription, data is retained for a limited period to permit export before deletion, per the subscription agreement — see <a href="/legal/terms">Terms of Service</a>.</p>
 
     <h3 style="margin-top:28px; color:var(--ink);">9. Grievance redressal</h3>
-    <p>Grievances relating to Jwero's own processing (as Data Fiduciary) can be raised via <a href="/contact">Contact</a> or hello@jwero.ai. A named grievance officer, as contemplated by the DPDP Act, will be published here once appointed — see the [VERIFY] note below. Grievances relating to how a specific jewellery business handles its End Customers' data should be raised with that business directly, as the Data Fiduciary for that data.</p>
-  </div>
-  <p style="margin-top:24px; font-size:.85rem; color:var(--ink-2);">[VERIFY: this statement is a working draft reflecting current product architecture and a good-faith reading of the DPDP Act's fiduciary/processor framework. It requires review by qualified counsel — including formal appointment and publication of a grievance officer, and confirmation against the Act's rules as notified — before being relied upon for compliance purposes.]</p>`
+    <p>Grievances relating to Jwero's own processing (as Data Fiduciary) can be raised via <a href="/contact">Contact</a> or hello@jwero.ai. A named grievance officer, as contemplated by the DPDP Act, will be published here once appointed. Grievances relating to how a specific jewellery business handles its End Customers' data should be raised with that business directly, as the Data Fiduciary for that data.</p>
+  </div>`
 )}
 `,
 };
