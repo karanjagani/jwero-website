@@ -15,7 +15,7 @@ const karigarFaqs = [
 const karigarRole = {
   slug: 'roles/karigar',
   title: 'Jwero for Karigars & Goldsmiths — Traceable Jobs, Accounted Loss | Jwero',
-  description: 'How Jwero changes a karigar’s day: every job traceable from jangad to despatch, loss accounted at every stage — not blamed on memory. Jwero tracks jobs and gold, not wages.',
+  description: 'How Jwero changes a karigar’s day: every job traceable from jangad to despatch, loss accounted at each stage, not memory. Jwero tracks jobs and gold, not wages.',
   breadcrumbs: BC('Karigar / goldsmith'),
   faqs: karigarFaqs,
   body: `
@@ -144,7 +144,7 @@ const productionManagerFaqs = [
 const productionManagerRole = {
   slug: 'roles/production-manager',
   title: 'Jwero for Production Managers — See Every Job’s Stage | Jwero',
-  description: 'How Jwero changes a production manager’s day: job-work tracked from jangad to despatch, gold-in/gold-out and loss at every stage, client jobs segregated — all on one ledger.',
+  description: 'How Jwero changes a production manager’s day: job-work tracked jangad to despatch, gold-in/out and loss at each stage, client jobs segregated on one ledger.',
   breadcrumbs: BC('Production manager'),
   faqs: productionManagerFaqs,
   body: `
@@ -209,7 +209,7 @@ const qualityHallmarkingFaqs = [
 const qualityHallmarkingRole = {
   slug: 'roles/quality-hallmarking',
   title: 'Jwero for Quality & Hallmarking Officers — Status, Not Paper Chase | Jwero',
-  description: 'How Jwero changes a quality and hallmarking officer’s day: certification and documentation status tracked against the job — not chased across paper and departments.',
+  description: 'How Jwero changes a quality and hallmarking officer’s day: certification status tracked against the job — not chased across paper and departments.',
   breadcrumbs: BC('Quality & hallmarking officer'),
   faqs: qualityHallmarkingFaqs,
   body: `

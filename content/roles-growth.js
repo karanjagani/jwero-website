@@ -15,7 +15,7 @@ const crmFaqs = [
 const crmExecutiveRole = {
   slug: 'roles/crm-executive',
   title: 'For CRM & Telecalling Executives — Follow-ups That Draft Themselves | Jwero',
-  description: 'Stop building call lists from a gut feeling and a notebook. See how a CRM/telecalling executive works inside Jwero — prioritised outreach, drafted follow-ups, one customer record.',
+  description: 'How a CRM/telecalling executive works inside Jwero: prioritised outreach, drafted follow-ups, and one customer record instead of a notebook and gut feeling.',
   breadcrumbs: BC('CRM / telecalling executive'),
   faqs: crmFaqs,
   body: `
@@ -99,7 +99,7 @@ const marketingFaqs = [
 const marketingManagerRole = {
   slug: 'roles/marketing-manager',
   title: 'For Marketing Managers — One Campaign, One Customer Record | Jwero',
-  description: 'One campaign, every channel, one customer record. See how a jewellery marketing manager works inside Jwero — provable attribution, governed AI drafting, no more guessing which channel worked.',
+  description: 'One campaign, every channel, one record. How a marketing manager works inside Jwero — provable attribution, governed AI drafting, no more guessing what worked.',
   breadcrumbs: BC('Marketing manager'),
   faqs: marketingFaqs,
   body: `
@@ -184,7 +184,7 @@ const ecommerceFaqs = [
 const ecommerceManagerRole = {
   slug: 'roles/ecommerce-manager',
   title: 'For E-commerce & D2C Managers — Shopify Plus Everything It Can’t Do | Jwero',
-  description: 'Shopify for the storefront, Jwero for everything Shopify can’t do. See how an e-commerce/D2C manager works inside Jwero — synced inventory, live-rate pricing, one customer record across channels.',
+  description: 'Shopify for the storefront, Jwero for what Shopify can’t do: synced inventory, live-rate pricing, one customer record across channels.',
   breadcrumbs: BC('E-commerce / D2C manager'),
   faqs: ecommerceFaqs,
   body: `

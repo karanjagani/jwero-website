@@ -229,6 +229,7 @@ function orgSchema() {
   return {
     '@context': 'https://schema.org', '@type': 'Organization',
     name: BRAND, url: SITE, slogan: TAGLINE, description: ORG_DESCRIPTION,
+    logo: SITE + '/assets/jwero-mark.png',
     contactPoint: { '@type': 'ContactPoint', contactType: 'sales', url: SITE + '/book-demo' },
   };
 }

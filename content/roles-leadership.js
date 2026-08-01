@@ -15,7 +15,7 @@ const ownerFaqs = [
 const ownerRole = {
   slug: 'roles/owner',
   title: 'Owner / Proprietor — Run the Shop From a Record You Own | Jwero',
-  description: 'How Jwero changes the owner’s day: enquiries answered while you sleep, follow-ups that don’t depend on memory, and a business record that belongs to the shop, not one person’s head.',
+  description: 'How Jwero changes the owner’s day: enquiries answered while you sleep, follow-ups independent of memory, and a record owned by the shop, not one person’s head.',
   breadcrumbs: BC('Owner / Proprietor'),
   faqs: ownerFaqs,
   body: `
@@ -99,7 +99,7 @@ const chainOwnerFaqs = [
 const chainOwnerRole = {
   slug: 'roles/chain-owner',
   title: 'Multi-Store & Chain Owner — One System, Every Branch | Jwero',
-  description: 'How Jwero changes the multi-store owner’s day: central price rules with branch exceptions, a rolled-up view of every store, and no more calling each manager to know what happened.',
+  description: 'How Jwero changes the multi-store owner’s day: central price rules, branch exceptions, a rolled-up view of every store, no more calling managers for updates.',
   breadcrumbs: BC('Multi-store & chain owner'),
   faqs: chainOwnerFaqs,
   body: `
@@ -183,7 +183,7 @@ const nextGenFaqs = [
 const nextGenRole = {
   slug: 'roles/next-gen-successor',
   title: 'Next-Gen Successor — Inherit the Relationships, Not Just the Shop | Jwero',
-  description: 'How Jwero helps the next generation modernise a family jewellery business: turning decades of relationship memory into a record, without a fight over “too much technology.”',
+  description: 'How Jwero helps the next generation modernise a family jewellery business: turning decades of memory into a record, without a fight over “too much technology.”',
   breadcrumbs: BC('Next-gen successor'),
   faqs: nextGenFaqs,
   body: `

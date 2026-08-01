@@ -4,7 +4,13 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 const crm = {
   slug: 'products/crm',
   title: 'Jewellery CRM & Customer 360 — Built for the Trade | Jwero',
-  description: 'A CRM that speaks jewellery: gold-plan balances, occasions, taste and churn risk as structured fields, explainable scores, and journeys that bring customers back.',
+  description: 'A CRM that speaks jewellery: gold-plan balances, occasions, taste and churn risk as structured fields, with explainable scores and win-back journeys.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Jewellery CRM', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'A jewellery-specific CRM with 90+ customer-record fields — gold-plan balances, occasions, taste and explainable scores — driving journeys under approval.',
+    url: 'https://jwero.ai/products/crm', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
   breadcrumbs: BC('Jewellery CRM'),
   faqs: [
     { q: 'How is Jwero different from Zoho or Salesforce for a jewellery business?', a: 'Generic CRMs know names, notes and deals. Jwero’s record is jewellery-native: scheme balances, wedding months, metal preferences and live-rate context are structured fields the whole system acts on. You would spend years customising a generic CRM to get half of it.' },
@@ -55,7 +61,13 @@ ${L.ctaBand('Own your customer list. Finally.', 'We import your customers for yo
 const catalog = {
   slug: 'products/catalog',
   title: 'Jewellery Catalogue (PIM) — Purity, Certificates, Live Prices | Jwero',
-  description: 'A product catalogue built for jewellery: metal, purity, stones, certifications and HUID-aware records, live metal-rate pricing, and shareable catalogues with control.',
+  description: 'A product catalogue built for jewellery: metal, purity, stones, certifications and HUID-aware records, live metal-rate pricing, and controlled sharing.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Catalogue (PIM)', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'A jewellery product-information catalogue with metal, purity, stones and certification data, live metal-rate pricing, and controlled shareable links.',
+    url: 'https://jwero.ai/products/catalog', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
   breadcrumbs: BC('Catalogue (PIM)'),
   faqs: [
     { q: 'Can the catalogue handle certificates and hallmarking details?', a: 'Yes. Purity, gemstone details, certification numbers and hallmark-related fields are structured attributes, not free text — searchable, filterable and printable.' },
@@ -105,6 +117,12 @@ const inventory = {
   slug: 'products/inventory',
   title: 'Jewellery Inventory — Valuation, Ageing & Dead Stock Visibility | Jwero',
   description: 'Know what your stock is worth at today’s rate, what is ageing, and what is quietly eating your capital — across every branch.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Inventory', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Jewellery inventory valuation, ageing and dead-stock visibility at today’s metal rate, across every branch.',
+    url: 'https://jwero.ai/products/inventory', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
   breadcrumbs: BC('Inventory'),
   faqs: [
     { q: 'Can Jwero tell me my dead stock?', a: 'Yes. Ageing bands (0–30, 31–90, 91–180, 180+ days) and fast/slow-mover views show exactly which pieces are sitting, for how long, and what they are worth at today’s rate.' },
@@ -157,7 +175,13 @@ ${L.ctaBand('Find the sleeping capital.', 'Bring last year’s stock summary to 
 const billingFinance = {
   slug: 'products/billing-finance',
   title: 'Billing & Finance — GST Invoicing at Live Gold Rates | Jwero',
-  description: 'GST invoices priced at the live gold rate, receivables tracking and automated payment reminders — with an honest note on what counter billing does today and what’s on the roadmap.',
+  description: 'GST invoices priced at the live gold rate, receivables tracking and automated payment reminders — with an honest note on what’s roadmap, not shipped.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Billing & Finance', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'GST invoicing priced at the live gold rate, with receivables tracking and automated payment reminders; POS cash-drawer day-close is on the public roadmap.',
+    url: 'https://jwero.ai/products/billing-finance', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
   breadcrumbs: BC('Billing & Finance'),
   faqs: [
     { q: 'Does Jwero do POS counter billing?', a: 'A dedicated POS counter with cash day-close is on our public roadmap, not shipped today. Billing & Finance in Jwero handles GST invoicing at live rates and receivables — and works alongside whatever counter billing you use now.' },
@@ -204,7 +228,13 @@ ${L.ctaBand('See invoicing at today’s rate.', 'Change the rate live in a demo 
 const erp = {
   slug: 'products/erp',
   title: 'Jewellery ERP, Reconsidered — Orders, Purchases, Repairs, Manufacturing | Jwero',
-  description: 'The operations backbone inside Jwero: orders, purchases and vendors, repairs, and manufacturing job-work — jewellery-native, sharing one customer and catalogue truth.',
+  description: 'The operations backbone inside Jwero: orders, purchases and vendors, repairs and manufacturing job-work — jewellery-native, one shared customer record.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero ERP', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Jewellery-native operations: orders, purchases and vendors, repairs and manufacturing job-work, sharing one customer and catalogue record with the rest of Jwero.',
+    url: 'https://jwero.ai/products/erp', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
   breadcrumbs: BC('ERP, reconsidered'),
   faqs: [
     { q: 'Is Jwero a full ERP replacement?', a: 'For operations, yes; for statutory accounting, no. Jwero runs the operational backbone — orders, purchases, repairs, manufacturing job-work — and shares that data with the customer and catalogue layer, which a standalone ERP never does. Statutory accounting stays in Tally or Zoho Books via built-in bridges.' },

@@ -15,7 +15,7 @@ const storeManagerFaqs = [
 const storeManager = {
   slug: 'roles/store-manager',
   title: 'Store Manager — Run the Floor on Today’s Numbers | Jwero',
-  description: 'How Jwero changes a jewellery store manager’s day: live stock and sales visibility, AI-drafted follow-ups awaiting approval, and a weekly report instead of a guessing game.',
+  description: 'How Jwero changes a store manager’s day: live stock and sales visibility, AI-drafted follow-ups awaiting approval, and a weekly report instead of guessing.',
   breadcrumbs: BC('Store manager'),
   faqs: storeManagerFaqs,
   body: `
@@ -84,7 +84,7 @@ const salesAssociateFaqs = [
 const salesAssociate = {
   slug: 'roles/sales-associate',
   title: 'Sales Associate — Walk Up Already Knowing the Customer | Jwero',
-  description: 'How Jwero changes a jewellery sales associate’s day: customer memory at the counter, AI-drafted follow-ups awaiting approval, and consultative selling backed by data instead of guessing.',
+  description: 'How Jwero changes a sales associate’s day: customer memory at the counter, AI-drafted follow-ups awaiting approval, and selling backed by data, not guesswork.',
   breadcrumbs: BC('Sales associate'),
   faqs: salesAssociateFaqs,
   body: `
@@ -153,7 +153,7 @@ const cashierFaqs = [
 const cashier = {
   slug: 'roles/cashier',
   title: 'Billing Cashier — Price at the Live Gold Rate, No Calculator Fight | Jwero',
-  description: 'How Jwero changes a jewellery billing cashier’s day: GST invoices priced instantly at the live gold rate, automated receivables reminders — and an honest note on what still runs on your existing counter today.',
+  description: 'How Jwero changes a billing cashier’s day: GST invoices priced at live gold rate, automated receivables reminders, and a note on what still runs at the counter.',
   breadcrumbs: BC('Billing cashier'),
   faqs: cashierFaqs,
   body: `

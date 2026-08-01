@@ -4,7 +4,7 @@ const BC = (label) => [['Home', '/'], ['Solutions', '/solutions'], ['Pains', '/s
 const painIndex = {
   slug: 'solutions/pain',
   title: "What's Eating Your Jewellery Business? — Every Pain, Answered | Jwero",
-  description: 'Lead leakage, dead stock, customer follow-up, scheme leakage and more — every pain a jewellery business feels, with the honest fix and a calculator where one exists.',
+  description: 'Lead leakage, dead stock, follow-up and scheme leakage — every pain a jewellery business feels, with the honest fix and a calculator where one exists.',
   breadcrumbs: [['Home', '/'], ['Solutions', '/solutions'], ['Pains']],
   body: `
 ${L.hero({

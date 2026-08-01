@@ -175,7 +175,7 @@ const ALL_FAQS = CATEGORIES.flatMap((c) => c.items);
 const faqHub = {
   slug: 'faq',
   title: 'Frequently Asked Questions — Every Objection, Answered | Jwero',
-  description: `${ALL_FAQS.length}+ honest answers on what Jwero is, WhatsApp & Meta, AI trust and control, migration, security, pricing, every business segment, operations, support and language — before you talk to sales.`,
+  description: `${ALL_FAQS.length}+ honest answers on Jwero, WhatsApp & Meta, AI trust, migration, security, pricing, business segments, operations, support and language — before sales calls.`,
   breadcrumbs: [['Home', '/'], ['FAQ']],
   faqs: ALL_FAQS,
   body: `

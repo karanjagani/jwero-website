@@ -25,7 +25,7 @@ ${L.section(
 const deadStockCalc = {
   slug: 'tools/dead-stock-calculator',
   title: 'Dead Stock Calculator for Jewellery Business — What Idle Inventory Costs | Jwero',
-  description: 'Free calculator: enter your inventory value, dead-stock percentage and financing rate to see the monthly cost of idle jewellery stock. Results delivered on WhatsApp.',
+  description: 'Free calculator: enter inventory value, dead-stock percentage and financing rate to see the monthly cost of idle stock. Results delivered on WhatsApp.',
   breadcrumbs: [['Home', '/'], ['Tools', '/tools'], ['Dead Stock Calculator']],
   faqs: [
     { q: 'What counts as dead stock in jewellery?', a: 'A common working definition: pieces unsold after 180 days. Many businesses find 15–30% of inventory value sits in this band. Ageing analysis makes the real number visible.' },

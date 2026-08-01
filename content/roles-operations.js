@@ -15,7 +15,7 @@ const accountantFaqs = [
 const accountantRole = {
   slug: 'roles/accountant',
   title: 'Accountant / Bookkeeper — Reconcile With Your Books, Not Against Them | Jwero',
-  description: 'How Jwero changes the accountant’s day: GST invoices priced at the live gold rate, a Tally/Zoho bridge that keeps your books where they are, and an honest note on what the billing counter does and doesn’t do yet.',
+  description: 'How Jwero changes the accountant’s day: GST invoices at live gold rate, a Tally/Zoho bridge keeping books in place, and a note on what billing doesn’t do yet.',
   breadcrumbs: BC('Accountant / bookkeeper'),
   faqs: accountantFaqs,
   body: `
@@ -99,7 +99,7 @@ const inventoryManagerFaqs = [
 const inventoryManagerRole = {
   slug: 'roles/inventory-manager',
   title: 'Inventory / Stock Manager — See What’s Dying on the Shelf | Jwero',
-  description: 'How Jwero changes the stock manager’s day: ageing and dead-stock visibility across every branch, stock that stays synced with online channels, and an honest note on what’s visibility versus prediction.',
+  description: 'How Jwero changes the stock manager’s day: ageing and dead-stock visibility across branches, stock synced online, and a note on visibility versus prediction.',
   breadcrumbs: BC('Inventory / stock manager'),
   faqs: inventoryManagerFaqs,
   body: `
@@ -182,7 +182,7 @@ const purchaseManagerFaqs = [
 const purchaseManagerRole = {
   slug: 'roles/purchase-manager',
   title: 'Purchase / Procurement Manager — Reorder on Visibility, Not Gut Feel | Jwero',
-  description: 'How Jwero changes the purchase manager’s day: ageing and velocity visibility to guide reorder decisions, GRN-tracked purchase-to-pay, and an honest note on what’s visibility versus prediction.',
+  description: 'How Jwero changes the purchase manager’s day: ageing/velocity visibility for reorder decisions, GRN-tracked purchase-to-pay, a note on visibility vs prediction.',
   breadcrumbs: BC('Purchase / procurement manager'),
   faqs: purchaseManagerFaqs,
   body: `

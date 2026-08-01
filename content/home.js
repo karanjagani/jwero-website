@@ -4,7 +4,7 @@ const home = {
   slug: 'index',
   title: 'Jwero — The AI Operating System for Jewellery Business',
   description:
-    'Jwero is the AI operating system for jewellery business: one customer record, one catalogue, one inventory truth and one inbox — with WhatsApp commerce, gold schemes and an AI workforce that waits for your yes.',
+    'Jwero is the AI operating system for jewellery: one customer record, catalogue, inventory, inbox, WhatsApp, gold schemes and an AI workforce awaiting approval.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',

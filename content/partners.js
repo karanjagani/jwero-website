@@ -13,7 +13,7 @@ const partnersFaqs = [
 const partners = {
   slug: 'partners',
   title: 'Partners — ERP Dealers, Accountants & Consultants | Jwero',
-  description: 'Bring Jwero to the jewellery businesses you already serve. Built for ERP/billing software dealers, accountants and industry consultants — a new, honest partner program, not a mature channel with fine print.',
+  description: 'Jwero for jewellery businesses you serve: ERP/billing software dealers, accountants, consultants — a new, honest program, not a mature channel with fine print.',
   breadcrumbs: BC('Partners'),
   schema: { '@context': 'https://schema.org', '@type': 'Article', headline: 'Jwero Partners' },
   faqs: partnersFaqs,

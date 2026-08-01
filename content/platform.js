@@ -4,7 +4,7 @@ const BC = (label) => [['Home', '/'], ['Platform', '/platform'], [label]];
 const platform = {
   slug: 'platform',
   title: 'The Jewellery Business OS — How Jwero Works | Jwero',
-  description: 'One customer record, one catalogue, one inventory truth, one inbox. How Jwero runs a jewellery business as one operating system — with an AI workforce that waits for your approval.',
+  description: 'One customer record, catalogue, inventory truth, one inbox — how Jwero runs a jewellery business, with an AI workforce that waits for your approval.',
   breadcrumbs: [['Home', '/'], ['Platform']],
   faqs: [
     { q: 'Is Jwero an ERP?', a: 'It includes an operations backbone — orders, inventory, purchases, repairs and billing — but Jwero is bigger than an ERP: it is the one system where the customer, the catalogue and the operation share state, so AI can act on all three at once. Your statutory books stay in Tally or Zoho Books via built-in bridges.' },
@@ -82,7 +82,7 @@ ${L.ctaBand('See the operating system on your own data.', 'Bring one real custom
 const customerMemory = {
   slug: 'platform/customer-memory',
   title: 'Customer Memory — The 90-Field Jewellery Customer Record | Jwero',
-  description: 'Jwero’s customer record remembers purchases, gold-plan balances, family occasions, taste and the best time to reach every customer — with an explainable "why" behind every score.',
+  description: 'Jwero’s customer record remembers purchases, gold-plan balances, family occasions, taste and best time to reach each customer — with an explainable "why" score.',
   breadcrumbs: BC('Customer Memory'),
   faqs: [
     { q: 'What does Jwero remember about each customer?', a: 'Over 90 fields per record: purchase history, gold savings balance and instalment status, birthdays, anniversaries and wedding months, metal and design preferences, preferred channel and best time to reach, engagement and churn signals — each with a visible explanation.' },
@@ -133,7 +133,7 @@ ${L.ctaBand('Give your business a memory.', 'We import your customers from Excel
 const aiWorkforce = {
   slug: 'platform/ai-workforce',
   title: 'AI Workforce & Governance — AI That Waits for Your Yes | Jwero',
-  description: '240+ governed AI actions, approval queues, daily caps, quiet hours and a five-scope kill switch — the AI workforce inside Jwero, and exactly how it stays under your control.',
+  description: '240+ governed AI actions, approval queues, daily caps, quiet hours, a five-scope kill switch — the AI workforce inside Jwero, kept under your control.',
   breadcrumbs: BC('AI Workforce & Governance'),
   faqs: [
     { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling. Salespeople close more when every customer walks in already known.' },

@@ -4,7 +4,13 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 const whatsapp = {
   slug: 'products/whatsapp',
   title: 'WhatsApp Commerce for Jewellery Business — Sell Where They Already Are | Jwero',
-  description: 'Official WhatsApp Business API built for jewellery: catalogues with live gold-rate prices, broadcasts without bans, AI replies with approval, and payments — on the number you already own.',
+  description: 'Official WhatsApp Business API for jewellery: live-rate catalogues, safe broadcasts, AI replies with approval, and payments — on the number you already own.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero WhatsApp Commerce', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Official WhatsApp Business API commerce for jewellery: live-rate catalogues, AI-drafted replies under approval, appointments and payments on your existing number.',
+    url: 'https://jwero.ai/products/whatsapp', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
   breadcrumbs: BC('WhatsApp Commerce'),
   faqs: [
     { q: 'Can customers actually buy on WhatsApp?', a: 'Yes. Share catalogues with live prices, take orders and collect payments in the chat. For high-value pieces, WhatsApp books the appointment or the video call — the sale closes wherever the customer is comfortable.' },
@@ -80,6 +86,12 @@ const instagram = {
   slug: 'products/instagram-facebook',
   title: 'Instagram & Facebook Commerce for Jewellery Business | Jwero',
   description: 'Turn Instagram DMs and Facebook messages into sales conversations with memory: official APIs, AI-drafted replies with approval, and one inbox for every channel.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Instagram & Facebook Commerce', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Official Instagram and Facebook messaging turned into tracked sales conversations, with AI-drafted replies under approval, in one inbox with WhatsApp.',
+    url: 'https://jwero.ai/products/instagram-facebook', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
   breadcrumbs: BC('Instagram & Facebook'),
   faqs: [
     { q: 'Can Jwero reply to Instagram DMs automatically?', a: 'The AI workforce drafts replies to DMs and comments using the customer’s record and your catalogue; drafts wait for approval until you promote them. Every conversation lands in the same inbox as WhatsApp and web chat.' },
@@ -137,6 +149,12 @@ const aiAgents = {
   slug: 'products/ai-sales-agents',
   title: 'AI Sales Agents & Voice — Staff That Never Sleep | Jwero',
   description: 'AI sales agents that answer, follow up, and call customers back in 14 languages — governed by approval queues, daily caps and kill switches.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero AI Sales Agents & Voice', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Governed AI sales agents and a voice assistant speaking 14 languages, drafting replies and follow-ups inside approval queues, daily caps and a kill switch.',
+    url: 'https://jwero.ai/products/ai-sales-agents', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
   breadcrumbs: BC('AI Sales Agents & Voice'),
   faqs: [
     { q: 'What is an AI sales agent in Jwero?', a: 'A configured member of the AI workforce: a scope of allowed actions, a knowledge base, guardrails, an approval workflow and an activity log. It drafts replies, follows up, reminds and invites — within the limits you set.' },
@@ -186,7 +204,13 @@ ${L.ctaBand('Hire staff that scale like software.', 'Start with one agent on Ass
 const optimize = {
   slug: 'products/optimize',
   title: 'Optimize — Website CRO Suite for Jewellery Business | Jwero',
-  description: 'A Hotjar + VWO + OneSignal class CRO suite built into Jwero: analytics, funnels, heatmaps, session recordings, A/B experiments, personalization, popups, web push and an AI webchat — all on the same customer record.',
+  description: 'A CRO suite built into Jwero: analytics, heatmaps, session recordings, A/B experiments, personalization, web push and an AI webchat — on your customer record.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Optimize', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'A website conversion-rate-optimization suite built into Jwero: analytics, heatmaps, session recordings, A/B experiments, personalization and an AI webchat on the customer record.',
+    url: 'https://jwero.ai/products/optimize', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
   breadcrumbs: BC('Optimize (Website CRO)'),
   faqs: [
     { q: 'What is Optimize?', a: 'A conversion-rate-optimization suite built into the Jwero platform: visitor analytics, funnels, heatmaps, session recordings, A/B experiments, personalization rules, popups and lead forms, web push, and an AI webchat widget — the class of stack you’d otherwise stitch together from Hotjar, VWO and OneSignal.' },

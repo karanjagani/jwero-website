@@ -9,7 +9,7 @@ const rolesHubFaqs = [
 const rolesHub = {
   slug: 'roles',
   title: 'Roles — Everyone Jwero Touches in a Jewellery Business | Jwero',
-  description: 'From the owner to the karigar to the counter cashier — how Jwero changes each role’s day, what skills it grows, and how to stay valuable as AI takes over the repetitive parts.',
+  description: 'From the owner to the karigar to the cashier — how Jwero changes each role’s day, what skills it grows, and how to stay valuable as AI takes over routine work.',
   breadcrumbs: [['Home', '/'], ['Roles']],
   faqs: rolesHubFaqs,
   body: `

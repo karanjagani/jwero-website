@@ -41,7 +41,7 @@ ${L.ctaBand(`Plan the switch from ${shortName || name}.`, 'Tell us what you use 
 const compareHub = {
   slug: 'compare',
   title: 'Compare Jwero to Alternatives | Jwero',
-  description: 'Honest, concession-first, publicly-researched comparisons: jewellery ERPs, WhatsApp tools, catalogue-sharing apps, generic CRMs and ecommerce platforms — against the Jwero operating system.',
+  description: 'Honest, concession-first, publicly-researched comparisons: jewellery ERPs, WhatsApp tools, catalogue apps, CRMs and ecommerce platforms — against the Jwero OS.',
   breadcrumbs: [['Home', '/'], ['Compare']],
   body: `
 ${L.hero({

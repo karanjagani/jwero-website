@@ -4,7 +4,13 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 const schemes = {
   slug: 'products/gold-schemes',
   title: 'Gold Savings Schemes — Digital Enrolment to Maturity | Jwero',
-  description: 'Run gold savings plans digitally: enrolment with KYC, instalment reminders, transparent balances, disciplined maturity and closure — no more paper registers and disputes.',
+  description: 'Run gold savings plans digitally: KYC enrolment, instalment reminders, transparent balances, disciplined maturity and closure — no more paper disputes.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Gold Savings Schemes', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Digital gold savings scheme management: KYC enrolment, instalment reminders, transparent balances, and disciplined maturity and closure.',
+    url: 'https://jwero.ai/products/gold-schemes', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
   breadcrumbs: BC('Gold Savings Schemes'),
   faqs: [
     { q: 'Can I run my traditional 11+1 monthly scheme on Jwero?', a: 'Yes — fixed monthly-amount plans with a bonus month are the default plan shape, alongside gram-accumulation plans. Duration, grace days and maturity benefits are configurable per plan.' },
@@ -72,6 +78,12 @@ const digitalGold = {
   slug: 'products/digital-gold',
   title: 'Digital Gold — Customers Save in Grams, You Bank the Relationship | Jwero',
   description: 'Let customers buy gold in grams from their phone with live rates, watch savings grow, and convert to jewellery at your counter.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Digital Gold', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Customers buy gold in grams at live rates from their phone, track savings growth, and convert holdings to jewellery in-store.',
+    url: 'https://jwero.ai/products/digital-gold', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
   breadcrumbs: BC('Digital Gold'),
   faqs: [
     { q: 'How does digital gold work for my customers?', a: 'They buy gold in small amounts from their phone at live rates. Their gram balance grows over time, and when they are ready, it converts to jewellery at your counter — a savings habit that ends in your showcase.' },
@@ -120,6 +132,12 @@ const multiStore = {
   slug: 'products/multi-store',
   title: 'Multi-store & Franchise — Every Branch Consistent, Every Customer Known | Jwero',
   description: 'Holdings, brands and branches on one platform: branch-consistent pricing, role-based access, central campaigns, and customers recognised at every counter.',
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'Jwero Multi-store & Franchise', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Multi-store and franchise structure on one platform: central price rules with branch exceptions, role-based access, and customers recognised at every branch.',
+    url: 'https://jwero.ai/products/multi-store', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
   breadcrumbs: BC('Multi-store & Franchise'),
   faqs: [
     { q: 'Can each branch have different prices and stock?', a: 'Yes. Branch-level stock, transfer tracking and price rules with central control — consistency where you want it, local flexibility where you allow it.' },

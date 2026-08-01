@@ -19,7 +19,7 @@ function postMeta(readMins, cluster) {
 const blogHub = {
   slug: 'blog',
   title: 'The Jwero Blog — Practical Guides for Jewellery Business Owners | Jwero',
-  description: 'Practical, honest guides on WhatsApp selling, dead stock, gold schemes and running a jewellery business — no fluff, no fabricated statistics, calculators where the topic has a number worth running.',
+  description: 'Honest guides on WhatsApp selling, dead stock and gold schemes for jewellery business — no fluff, no fabricated stats, calculators where the numbers matter.',
   breadcrumbs: [['Home', '/'], ['Blog']],
   body: `
 ${L.hero({
@@ -59,7 +59,7 @@ const whatsappGuideFaqs = [
 const whatsappGuide = {
   slug: 'blog/whatsapp-for-jewellers-guide',
   title: 'WhatsApp for Jewellers: The Complete Guide to Selling and Servicing on WhatsApp | Jwero',
-  description: 'A practical guide to selling jewellery on WhatsApp: official API vs personal number, catalogue pricing, reply speed, appointments and payments, and the mistakes that cost sales.',
+  description: 'A guide to selling jewellery on WhatsApp: official API vs personal number, catalogue pricing, reply speed, appointments, payments, and costly mistakes to avoid.',
   breadcrumbs: BC('WhatsApp for Jewellers Guide'),
   schema: postSchema('WhatsApp for Jewellers: The Complete Guide', 'A practical guide to selling jewellery on WhatsApp — official API vs personal number, catalogue pricing, reply speed, and common mistakes.'),
   faqs: whatsappGuideFaqs,
@@ -131,7 +131,7 @@ const deadStockGuideFaqs = [
 const deadStockGuide = {
   slug: 'blog/dead-stock-jewellery-business-guide',
   title: 'Dead Stock in Jewellery Business: How to Calculate It and Clear It | Jwero',
-  description: 'A practical guide to dead stock in jewellery retail: what counts as dead stock, how to calculate its real carrying cost, and how to clear it without a fire sale.',
+  description: 'A practical guide to dead stock in jewellery retail: what counts as dead stock, its real carrying cost, and how to clear it without a fire sale.',
   breadcrumbs: BC('Dead Stock Guide'),
   schema: postSchema('Dead Stock in Jewellery Business: How to Calculate It and Clear It', 'What counts as dead stock in jewellery, how to calculate its carrying cost, and how to clear it without a fire sale.'),
   faqs: deadStockGuideFaqs,
@@ -193,7 +193,7 @@ const schemeGuideFaqs = [
 const schemeGuide = {
   slug: 'blog/gold-savings-scheme-guide',
   title: 'Gold Savings Schemes for Jewellers: A Practical Guide to Running One Digitally | Jwero',
-  description: 'A practical guide to jewellery gold savings schemes: why they lock in future revenue, why paper registers leak members through drift, and what digital collection actually changes.',
+  description: 'A guide to jewellery gold savings schemes: why they lock in future revenue, why registers leak members through drift, and what digital collection changes.',
   breadcrumbs: BC('Gold Savings Scheme Guide'),
   schema: postSchema('Gold Savings Schemes for Jewellers: A Practical Guide to Running One Digitally', 'Why gold savings schemes lock in future revenue, why paper registers leak members, and what digital collection changes.'),
   faqs: schemeGuideFaqs,
@@ -256,7 +256,7 @@ const tallyGuideFaqs = [
 const tallyGuide = {
   slug: 'blog/jewellery-software-and-tally',
   title: 'Jewellery Software and Tally: What Should and Shouldn’t Move | Jwero',
-  description: 'A plain guide to what actually syncs between jewellery software and Tally Prime, what still needs a manual voucher, and how to have this conversation with your accountant.',
+  description: 'A plain guide to what syncs between jewellery software and Tally Prime, what needs a manual voucher, and how to raise this with your accountant.',
   breadcrumbs: BC('Jewellery Software and Tally'),
   schema: postSchema('Jewellery Software and Tally: What Should and Shouldn’t Move', 'What syncs automatically between jewellery software and Tally, what still needs a manual voucher, and how to talk to your CA about it.'),
   faqs: tallyGuideFaqs,
@@ -321,7 +321,7 @@ const goldLossGuideFaqs = [
 const goldLossGuide = {
   slug: 'blog/gold-loss-wastage-control-jewellery-manufacturing',
   title: 'Gold Loss (Wastage) Control in Jewellery Manufacturing: A Working Ledger | Jwero',
-  description: 'A practical guide to measuring and controlling gold loss in jewellery manufacturing — per-movement weight tracking, per-karigar attribution, the old-gold chain, and what a working ledger does and doesn’t fix.',
+  description: 'A guide to gold loss in jewellery manufacturing: per-movement weight tracking, per-karigar attribution, the old-gold chain, and what a ledger doesn’t fix.',
   breadcrumbs: BC('Gold Loss Control Guide'),
   schema: postSchema('Gold Loss (Wastage) Control in Jewellery Manufacturing: A Working Ledger', 'How to measure and control gold loss in jewellery manufacturing with per-movement, per-karigar weight tracking — and what it does and doesn’t fix.'),
   faqs: goldLossGuideFaqs,
@@ -386,7 +386,7 @@ const repairGuideFaqs = [
 const repairGuide = {
   slug: 'blog/jewellery-repair-management-custody-chain',
   title: 'Jewellery Repair Management: The Custody-Chain Method | Jwero',
-  description: 'Why jewellery repair intake needs a documented custody chain — condition notes, a stone chart and a weight record — to prevent disputes, and how to run it with or without software.',
+  description: 'Why jewellery repair intake needs a documented custody chain — condition notes, a stone chart and weight record — to prevent disputes, with or without software.',
   breadcrumbs: BC('Repair Management Guide'),
   schema: postSchema('Jewellery Repair Management: The Custody-Chain Method', 'Why repair intake needs a documented custody chain to prevent disputes, and what it should capture at every stage.'),
   faqs: repairGuideFaqs,
@@ -457,7 +457,7 @@ const huidGuideFaqs = [
 const huidGuide = {
   slug: 'blog/huid-hallmarking-records-audit-checklist',
   title: 'HUID and Hallmarking Records: The Audit-Day Checklist | Jwero',
-  description: 'A practical guide to keeping hallmarking and HUID records organized — so a BIS audit or compliance check is a quick retrieval, not a scramble through paper registers.',
+  description: 'A guide to keeping hallmarking and HUID records organized — so a BIS audit or compliance check is a quick retrieval, not a scramble through paper registers.',
   breadcrumbs: BC('HUID & Hallmarking Records'),
   schema: postSchema('HUID and Hallmarking Records: The Audit-Day Checklist', 'How to keep hallmarking and HUID records organized so a compliance check is a retrieval, not a scramble.'),
   faqs: huidGuideFaqs,
@@ -520,7 +520,7 @@ const catalogGuideFaqs = [
 const catalogGuide = {
   slug: 'blog/digital-catalog-vs-pdf-jewellery',
   title: 'Digital Catalog vs PDF: Why Shareable Checkout Links Sell More | Jwero',
-  description: 'Why a live digital catalogue outsells a static PDF or screenshot catalogue for jewellery — live pricing, tracking, and checkout links that turn a share into a sale.',
+  description: 'Why a live digital catalogue outsells a static PDF or screenshot catalogue for jewellery — live pricing, tracking, and checkout links that sell.',
   breadcrumbs: BC('Digital Catalog vs PDF'),
   schema: postSchema('Digital Catalog vs PDF: Why Shareable Checkout Links Sell More', 'Why a live digital catalogue outsells a static PDF or screenshot catalogue for jewellery — live pricing, tracking, and checkout links.'),
   faqs: catalogGuideFaqs,

@@ -143,7 +143,7 @@ ${L.ctaBand('Judge us on your own numbers.', 'The honest pitch: run a pilot, rea
 const compare = {
   slug: 'compare/whatsapp-tools-vs-jewellery-os',
   title: 'WhatsApp Tools vs a Jewellery Operating System | Jwero',
-  description: 'A WhatsApp messaging tool sends texts. A jewellery operating system remembers the customer, prices at the live rate, and turns the conversation into a sale. Here is the honest difference.',
+  description: 'A WhatsApp tool sends texts. A jewellery OS remembers the customer, prices at live rate, and turns the conversation into a sale. Here is the honest difference.',
   breadcrumbs: [['Home', '/'], ['Compare', '/compare/whatsapp-tools-vs-jewellery-os'], ['WhatsApp tools vs Jewellery OS']],
   faqs: [
     { q: 'Isn’t a WhatsApp tool enough for messaging?', a: 'For pure messaging, yes. The gap appears the moment a reply needs to know her purchase history, her scheme balance, or today’s gold rate — a messaging tool has no memory to draw from.' },

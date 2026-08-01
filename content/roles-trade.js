@@ -91,7 +91,7 @@ const franchisePartnerFaqs = [
 const franchisePartnerRole = {
   slug: 'roles/franchise-partner',
   title: 'For Franchise Partners — Franchisor Control, Franchisee Freedom | Jwero',
-  description: 'How Jwero changes a franchise partner’s day: brand-consistent pricing and catalogue under franchisor control, with structured local operation instead of a rip-and-replace.',
+  description: 'How Jwero changes a franchise partner’s day: brand-consistent pricing/catalogue under franchisor control, with structured local operation, not rip-and-replace.',
   breadcrumbs: BC('Franchise partner'),
   faqs: franchisePartnerFaqs,
   body: `

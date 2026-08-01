@@ -3,7 +3,7 @@ const L = require('../lib');
 const retail = {
   slug: 'industries/retail',
   title: 'Jewellery Retail Software — Single Store to Chain | Jwero',
-  description: 'How the Jwero operating system fits jewellery retail: single stores, multi-store chains, luxury and boutique, bridal, and every material specialism — one system, routed to your segment.',
+  description: 'How Jwero fits jewellery retail: single stores, multi-store chains, luxury, boutique, bridal, and material specialisms — one system, routed to your segment.',
   breadcrumbs: [['Home', '/'], ['Solutions', '/solutions'], ['Retail']],
   faqs: [
     { q: 'Is Jwero built for small retailers or large chains?', a: 'Both, on the same system. A single-store jeweller gets the whole operating system from day one; a chain gets the same one, with governance and branch structure that scale.' },

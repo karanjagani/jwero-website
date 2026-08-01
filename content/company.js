@@ -3,7 +3,7 @@ const L = require('../lib');
 const pricing = {
   slug: 'pricing',
   title: 'Pricing — Assist, Approve, Autopilot | Jwero',
-  description: 'Transparent tiers named after how trust is earned: Assist (AI drafts, you send), Approve (one-tap approvals), Autopilot (earned autonomy) — plus plans for multi-store networks.',
+  description: 'Tiers named for how trust is earned: Assist (AI drafts, you send), Approve (one-tap approvals), Autopilot (earned autonomy) — plus multi-store network plans.',
   breadcrumbs: [['Home', '/'], ['Pricing']],
   faqs: [
     { q: 'Why don’t I see numbers on this page?', a: 'Because pricing is still being finalised per region, ahead of general availability. It will be published here once set — until then, ask on WhatsApp and you will get a straight answer with no "discovery call" required.' },
@@ -112,7 +112,7 @@ ${L.section(`${L.sectionHead('PRICING QUESTIONS', 'Straight answers on cost and 
 const company = {
   slug: 'company',
   title: 'About Jwero — Why We Build for Jewellery Business | Jwero',
-  description: 'Jwero exists because the world’s most relationship-driven retail trade was left with software that only keeps records. We build the operating system it deserves.',
+  description: 'Jwero exists because the world’s most relationship-driven retail trade was left with software that only keeps records. We build the OS it deserves.',
   breadcrumbs: [['Home', '/'], ['Company']],
   body: `
 ${L.hero({
