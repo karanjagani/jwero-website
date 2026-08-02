@@ -25,7 +25,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('THE SYNC TAX', 'What five disconnected tools cost you, in minutes.', 'Concrete, not conceptual — six ordinary questions, answered two ways.')}
+  `${L.sectionHead('THE SYNC TAX', 'What five disconnected tools cost you, in minutes.', 'Six ordinary questions, answered two ways.')}
   <div class="tbl-wrap"><table class="tbl">
     <thead><tr><th>Question</th><th>Five tools + CSV exports</th><th>One system</th></tr></thead>
     <tbody>
@@ -47,7 +47,7 @@ ${L.section(
 ${L.governanceStrip()}
 
 ${L.section(
-  `${L.sectionHead('YOUR TEAM RUNS ON ONE LOGIN TOO', 'Staff chat and calling, built in — not bolted on from Slack.', 'Customer-facing memory is the headline. But the same platform also gives your own team channels, DMs and video calls, so internal coordination doesn’t need a second subscription and a second login.')}
+  `${L.sectionHead('YOUR TEAM RUNS ON ONE LOGIN TOO', 'Staff chat and calling, built in — not bolted on from Slack.', 'The same platform gives your own team channels, DMs and video calls, so internal coordination doesn’t need a second subscription and a second login.')}
   ${L.cards([
     { title: 'Channels & DMs', text: 'Team channels and direct messages, with unread counts surfaced right in the nav — no separate app to check.' },
     { title: 'Video calls with screen share', text: 'Team calls with screen sharing, a pinnable focus layout for whoever is presenting, and a minimizable window so a call doesn’t block the rest of your work.' },
@@ -110,7 +110,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('WHAT THE RECORD KNOWS', 'Not notes. Fields.', 'The line "your customer record knows her gold balance and her daughter’s wedding month" is literally true — these are structured columns, not a diary.')}
+  `${L.sectionHead('WHAT THE RECORD KNOWS', 'Not notes. Fields.', 'Her gold balance, her daughter’s wedding month, her missed instalment — each one a structured column, on every record.')}
   ${L.cards([
     { title: 'Money & plans', text: 'Gold savings balance, instalments paid and missed, maturity dates, digital gold holdings, lifetime value.' },
     { title: 'Occasions', text: 'Birthdays, anniversaries, wedding months and upcoming family occasions — the reasons jewellery gets bought.' },
@@ -128,7 +128,7 @@ ${L.oneSystemBlock([
 ])}
 
 ${L.section(
-  `${L.sectionHead('WHAT MEMORY MAKES POSSIBLE', 'Memory is not a report. It is revenue.', '')}
+  `${L.sectionHead('', 'Memory is not a report. It is revenue.', '')}
   ${L.steps([
     { title: 'Win-back', text: 'Customers who quietly stopped coming are surfaced with a reason and a suggested invitation — before they buy elsewhere.' },
     { title: 'Occasion selling', text: 'The right customers hear from you before the festival, before the anniversary, before the wedding season — not after.' },
@@ -211,7 +211,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('THE OVERRIDE, DONE PROPERLY', 'Every override, checked and logged.', 'Every jewellery counter has had the moment: a good customer, a bit more discount than the price allows. The question is whether that moment leaves a record or a mystery.')}
+  `${L.sectionHead('', 'Every override, checked and logged.', 'Every jewellery counter has had the moment: a good customer, a bit more discount than the price allows. The question is whether that moment leaves a record or a mystery.')}
   ${L.steps([
     { title: 'Requested', text: 'A salesperson submits an override with the price they want to offer and a reason — not a blank field to type any number into.' },
     { title: 'Checked', text: 'The request is checked against a floor and ceiling price set in advance, so an approver is reviewing a bounded exception, not an open-ended ask.' },
@@ -256,14 +256,14 @@ const aiWorkforce = {
 ${L.hero({
   eyebrow: 'AI WORKFORCE & GOVERNANCE',
   h1: 'AI that waits for your yes.',
-  sub: 'Hiring is hard. Training is harder. Jwero gives you an AI workforce that never forgets, never sleeps, and never acts without approval. Autonomy is earned action by action — and you can take it back with one switch.',
+  sub: 'Hiring is hard. Training is harder. Jwero gives you an AI workforce that never forgets, never sleeps, and never acts without your approval. One switch takes it all back.',
   primary: { href: '#', label: 'See the approval queue live', wa: 'ai' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   mock: L.mockApproval,
 })}
 
 ${L.section(
-  `${L.sectionHead('WHAT THEY DO', 'The work your team never gets time for.', '')}
+  `${L.sectionHead('', 'The work your team never gets time for.', '')}
   ${L.cards([
     { icon: '✉', title: 'Answer in minutes', text: 'Every WhatsApp, Instagram and website enquiry gets a knowledgeable draft reply (with her history and live prices) in minutes, at midnight, during festivals.' },
     { icon: '↺', title: 'Follow up on everything', text: 'Every enquiry that didn’t buy, every quote that went quiet, every instalment coming due — followed up on schedule, never forgotten.' },
@@ -275,7 +275,7 @@ ${L.section(
 ${L.governanceStrip()}
 
 ${L.section(
-  `${L.sectionHead('240+ ACTIONS. EVERY ONE WAITS FOR YOUR YES.', 'The trust ladder — autonomy is earned, never assumed.', 'Every business starts at Assist. You promote the AI one action type at a time — based on measured accuracy, not promises.')}
+  `${L.sectionHead('', 'The trust ladder — autonomy is earned, never assumed.', 'Every business starts at Assist. You promote the AI one action type at a time — based on measured accuracy, not promises.')}
   ${L.steps([
     { title: 'Assist', text: 'AI drafts, humans send. Every action waits in the approval queue. This is day one, and some businesses happily stay here.' },
     { title: 'Approve', text: 'Routine, low-risk actions run with one-tap approval; anything sensitive still waits. You see a log of everything.' },
@@ -284,7 +284,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('WHAT "240+ ACTIONS" ACTUALLY MEANS', 'Not a round number — a real registry, category by category.', 'Every governed action is a defined, individually permissioned entry in Jwero’s action registry — the same registry the approval queue and kill switch enforce against. Here’s what the 251 active entries actually cover.')}
+  `${L.sectionHead('WHAT "240+ ACTIONS" ACTUALLY MEANS', 'A real registry, category by category.', 'Every governed action is a defined, individually permissioned entry in Jwero’s action registry — the same registry the approval queue and kill switch enforce against. Here’s what the 251 active entries cover.')}
   <div class="tbl-wrap"><table class="tbl">
     <thead><tr><th>Category</th><th>What lives there</th><th>Actions</th></tr></thead>
     <tbody>
@@ -307,7 +307,7 @@ ${L.section(
   </div>`
 )}
 
-${L.section(`${L.sectionHead('QUESTIONS OWNERS ASK', 'The doubts every owner raises first.', '')}${L.faqBlock([
+${L.section(`${L.sectionHead('QUESTIONS OWNERS ASK', 'Answers, not reassurance.', '')}${L.faqBlock([
   { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling.' },
   { q: 'What if the AI drafts something wrong?', a: 'Nothing goes out without approval until you decide otherwise. You can edit any draft, reject it, or switch a whole action type off.' },
   { q: 'Can I turn it all off?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything.' },
@@ -394,7 +394,7 @@ const tally = {
 ${L.hero({
   eyebrow: 'KEEP YOUR TALLY',
   h1: 'Apna hisaab rakho. Kamai badlo.',
-  sub: 'Keep your books. Change your earnings. Jwero does not ask you to abandon Tally — it asks Tally to keep doing exactly what it already does well. Jwero takes over the side of the business that brings customers back.',
+  sub: 'Keep your books. Change your earnings. Jwero does not ask you to abandon Tally — it takes over the side of the business that brings customers back.',
   primary: { href: '#', label: 'Ask your accountant question', wa: 'tally' },
   secondary: { href: '/migration', label: 'See the migration plan' },
 })}
@@ -436,7 +436,7 @@ const onboarding = {
 ${L.hero({
   eyebrow: 'ONBOARDING & SUPPORT',
   h1: 'If your team can use WhatsApp, they can run Jwero.',
-  sub: 'Implementation is a promise we write down, not a vague timeline. Here is exactly what happens, in what order, and who is with you at each step.',
+  sub: 'Implementation is a promise we write down, not a vague timeline. A named human is with you at every step.',
   primary: { href: '#', label: 'Plan your onboarding', wa: 'onboarding' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
