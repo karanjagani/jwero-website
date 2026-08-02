@@ -23,7 +23,7 @@ const CATEGORIES = [
       { q: 'What is the weekly growth report?', a: 'A plain-language WhatsApp report to the owner: how many past customers came back, how many appointments were booked, how much revenue the system brought back. Proof, delivered weekly, without a dashboard you have to remember to open.' },
       { q: 'Is a gold savings scheme even legal to run — isn’t that an NBFC or interest product?', a: 'Every plan is framed and operated as an advance against a future purchase: benefits are paid as bonus gold or a discount, never as interest. That’s a framing discipline the product enforces, and it stops short of a legal opinion; confirm your specific scheme structure with your own counsel. See <a href="/products/gold-schemes">gold schemes</a>.' },
       { q: 'My competitors don’t use anything like this — why be first?', a: 'Regional chains already run on systems like this; independent jewellers have been the ones without one. Being early on the revenue side (WhatsApp commerce, digital catalogues, gold schemes) is a customer-facing advantage today, ahead of when everyone else catches up.' },
-      { q: 'What does Jwero NOT do yet — honestly?', a: 'In-POS returns and cash-drawer day-close, girvi, offline mode, a vernacular product interface, a public developer API, and e-invoice/GSTR automation (IRN, e-way bills, portal filing). All on the <a href="/roadmap">public roadmap</a>, none shipped — we say so before you buy, not after.' },
+      { q: 'What does Jwero NOT do yet — honestly?', a: 'In-POS returns and cash-drawer day-close, girvi, offline mode, a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens), a public developer API, and e-invoice/GSTR automation (IRN, e-way bills, portal filing). All on the <a href="/roadmap">public roadmap</a>, none fully shipped — we say so before you buy, not after.' },
     ],
   },
   {
@@ -149,7 +149,7 @@ const CATEGORIES = [
       { q: 'Is training included in the price?', a: 'Yes — included in implementation, delivered per role, with refreshers when you add new staff.' },
       { q: 'What if my older or more senior staff resist?', a: 'Start them on one thing: the shared inbox with AI-drafted replies. It makes their day easier immediately and usually converts sceptics faster than any pitch.' },
       { q: 'What support do I get after going live?', a: 'WhatsApp-first support with a named onboarding contact from day one, never a ticket queue you shout into.' },
-      { q: 'Do you support in Hindi, Gujarati or other regional languages?', a: 'Support conversations, yes — in your language. The product screens themselves are English today; vernacular UI is on the roadmap, and we say so rather than pretend otherwise.' },
+      { q: 'Do you support in Hindi, Gujarati or other regional languages?', a: 'Support conversations, yes — in your language. Product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets); broader vernacular UI is on the roadmap, and we say so rather than pretend otherwise.' },
       { q: 'Who helps during the festival rush, when everything is chaos?', a: 'Support is staffed for the trade’s calendar — festivals are exactly when we don’t disappear. The season change-freeze policy exists to protect you from disruptive changes at the worst possible time.' },
       { q: 'How fast do you actually respond?', a: 'Test us before you buy: message us on WhatsApp right now and time it. That response is the SLA, demonstrated in real time rather than promised on paper.' },
       { q: 'Can you visit my store in person?', a: 'Usually not — onboarding is remote-first and works well that way. Ask a specialist about in-person options for your specific case.' },
@@ -160,7 +160,7 @@ const CATEGORIES = [
   {
     id: 'language', label: 'Languages & customer experience',
     items: [
-      { q: 'Does the product work in Hindi, Gujarati or Tamil for my team?', a: 'Honestly: the product screens are English today; a vernacular interface is on the public roadmap. The AI voice assistant already speaks 14 languages, and support helps in yours.' },
+      { q: 'Does the product work in Hindi, Gujarati or Tamil for my team?', a: 'Honestly: product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets); a broader vernacular interface is on the public roadmap. The AI voice assistant already speaks 14 languages, and support helps in yours.' },
       { q: 'Can the AI talk to my customers in their own language?', a: 'Yes — the AI voice assistant covers 14 languages, and chat replies follow the customer’s language where supported.' },
       { q: 'Will my customers need to download anything new?', a: 'No — they use WhatsApp and Instagram, which they already have. An optional customer app exists as an add-on, never a requirement.' },
       { q: 'Can NRI or overseas customers buy from abroad?', a: 'Yes — WhatsApp catalogue sharing, remote video consultation and ordering work across borders; payment specifics depend on your setup.' },

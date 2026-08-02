@@ -36,15 +36,26 @@ ${L.section(
     { title: 'Plans & balances', text: 'Gold scheme status, instalments, missed payments and maturity dates on the record — because the plan IS the relationship.' },
     { title: 'Occasions', text: 'Weddings, birthdays, anniversaries and festivals drive jewellery purchases. Here they are data, not diary entries.' },
     { title: 'Explainable scores', text: 'Churn risk, buying intent, value tier — each with a visible "why", so your team trusts what the system says.' },
-    { title: 'Journeys & campaigns', text: 'Win-back, welcome, occasion and scheme journeys that draft themselves and wait for approval.' },
+    { title: 'Journeys & campaigns', text: 'Win-back, welcome, occasion and scheme journeys that draft themselves and wait for approval — including pre-built recipes like VIP-at-risk rescue and new-lead nurture.', link: { href: '/products/journeys', label: 'See the journey builder' } },
     { title: 'One inbox attached', text: 'Every WhatsApp, Instagram and web conversation lives on the record — context nobody has to ask for.' },
     { title: 'Action console', text: 'Each morning, every salesperson sees exactly who to contact and why. Memory turned into a to-do list.' },
   ])}`
 )}
 
+${L.section(
+  `${L.sectionHead('WHAT ACTUALLY WORKED', 'Proof, not a vanity open-rate.', 'The record doesn’t just log activity — it reports on it.')}
+  ${L.cards([
+    { title: 'VIP-at-risk rescue', text: 'A pre-built recipe detects at-risk high-value customers and runs a rescue journey automatically — not something you have to design from a blank canvas.' },
+    { title: 'New-lead nurture', text: 'A second pre-built recipe nurtures new leads and can join in a maturing scheme balance along the way, rather than treating every lead the same.' },
+    { title: 'Cohort retention reporting', text: 'See how a given cohort of customers actually comes back over time — not just this month’s total, but the shape of retention itself.' },
+    { title: 'Deal attribution', text: 'A spine of action-outcome records ties a completed sale back to the specific journey send or follow-up that preceded it — so you can see which action actually produced a deal, not just which campaign was live at the time.' },
+  ])}`
+, { tone: 'tint' })}
+
 ${L.oneSystemBlock([
   'A pipeline card and a WhatsApp thread for the same buyer are the same record — no re-typing between "sales" and "chat".',
   'The customer intelligence score visible here is the same score AI staff read before deciding who gets a win-back message.',
+  'Suggested next-best-actions are consent-gated the same way every AI-drafted message on this site is — a suggestion never bypasses an opt-out or DND status.',
 ])}
 
 ${L.section(
@@ -350,9 +361,12 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('WHAT IT TRACKS', 'Every visit, from walk-in to walkout.', '')}
   ${L.cards([
-    { title: 'Walk-in Register', text: 'Tablet check-in and check-out at the store entrance the moment a customer walks in.' },
+    { title: 'Walk-in Register', text: 'Tablet check-in and check-out at the store entrance the moment a customer walks in, with a consent-labelled photo captured on the tablet’s camera and shown on the Live Floor card — never stored as a permanently public file.' },
+    { title: 'Check-in intelligence', text: 'Type a phone number at the register — before check-in even completes — and see visit count, why they left last time, pieces tried-not-bought, category preferences, a maturing gold scheme, and a salesperson suggestion ranked by 90-day conversion.' },
     { title: 'Live Floor', text: 'A real-time view for staff and owner of who is currently in the store, updating live.' },
+    { title: 'Scan-to-log', text: 'Log a tried piece by RFID, SKU or barcode scan in one motion — search is the fallback for a miss, not the default way of logging a visit.' },
     { title: 'Visit journey capture', text: 'Log which pieces were shown and tried, note a quote given, add notes, log a handover, and check the customer out — a per-visit record.' },
+    { title: 'Per-person recommendations', text: 'Product suggestions with a stated reason — "new in necklaces," "tried 14 times this month" — derived from that customer’s actual visit and purchase behaviour, not a generic bestseller list.' },
     { title: 'Shown, tried, bought', text: 'The products view shows which pieces get shown often, tried often, and actually bought — surfacing a "tried often, rarely bought" merchandising signal.' },
     { title: 'Store insights', text: 'A small set of rule-based alerts — conversion drop, dead stock, staffing gap, walkout-reason spike, repeat non-buyer, unclosed-visit backlog. Deterministic rules, not predictive AI.' },
     { title: 'Multi-branch comparison', text: 'For chains: revenue-per-square-foot by store, a salesperson leaderboard, walkout-reason ranking, busiest hours and conversion-by-visit-purpose, rolled up centrally.' },
@@ -362,6 +376,7 @@ ${L.section(
 ${L.oneSystemBlock([
   'A walk-in checked in on the tablet is matched to their existing customer record — occasions, scheme balance and past visits are already there, not a blank slate.',
   'A Walkout Rescue draft is written from the same customer record and catalogue pricing the CRM and catalogue already share — not a separate database that goes stale.',
+  'A digital gold or scheme balance nearing maturity auto-populates the Expected Visits list, landed at the customer’s nearest branch with the balance and date noted — see <a href="/products/digital-gold">Digital Gold</a> and <a href="/products/gold-schemes">Gold Savings Schemes</a>.',
 ])}
 
 ${L.section(`${L.sectionHead('SHOWROOM QUESTIONS', 'What sends automatically, and what still needs a person.', '')}${L.faqBlock([

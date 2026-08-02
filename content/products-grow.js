@@ -107,21 +107,32 @@ ${L.hero({
 
 ${L.section(
   `${L.cards([
-    { title: 'Live-rate purchases', text: 'Customers buy in currency amounts or grams at current market rates, from their phone, any time.' },
+    { title: 'Live-rate purchases', text: 'Customers buy in currency amounts or grams at current market rates, from their phone, any time — priced in the org’s own currency, not hardcoded to one market.' },
     { title: 'Transparent balances', text: 'Gram holdings visible to the customer at all times — trust through transparency.' },
-    { title: 'KYC & records', text: 'Identity capture, transaction ledgers and OTP-verified redemptions keep everything auditable.' },
+    { title: 'KYC & records', text: 'Identity capture with real scanned documents attached to the record, transaction ledgers and OTP-verified redemptions keep everything auditable.' },
     { title: 'Redemption at your counter', text: 'Balances convert into jewellery purchases — the digital habit becomes a physical visit.' },
     { title: 'On the customer record', text: 'Digital gold balances live on the same Customer 360 — so the AI workforce knows who is quietly saving toward something big.' },
     { title: 'Runs with your schemes', text: 'Offer classic monthly plans and modern gram savings side by side; different customers, same discipline.' },
   ])}`
 )}
 
+${L.section(
+  `${L.sectionHead('COMPLIANCE & CONTROLS', 'Built for the audit, not just the sale.', 'The parts of digital gold that finance and compliance actually ask about.')}
+  ${L.cards([
+    { title: 'Statutory cash & PAN controls', text: 'Section 269ST cash-receipt limits are enforced at the point of collection, and Form 60/61 is accepted for customers without a PAN — built in, not left to a staff member to police by memory.' },
+    { title: 'Maker-checker on closures', text: 'Plan closures require dual control, and collections can be configured for maker-checker approval too — segregation of duties on money movement, not just OTP confirmation from the customer.' },
+    { title: 'GL posting & GST invoicing', text: 'Scheme money posts to the general ledger, and closure invoices are cut on the correct per-GSTIN series with tax calculated by place of supply.' },
+    { title: 'Dormancy tracking & GST reporting', text: 'Inactive plans are tracked as a distinct lifecycle state, and a GSTR-shaped tax report plus an outstanding-liability report (customer liability, gold owed, GST) are both one view.' },
+  ], 4)}`
+, { tone: 'tint' })}
+
 ${L.oneSystemBlock([
   'A digital gold balance nearing a milestone is visible to the same AI workforce that drafts occasion invitations — the redemption conversation starts itself.',
+  'A digital gold or scheme balance nearing maturity surfaces automatically on the showroom’s Expected Visits list, landed at the customer’s nearest branch with the balance and date noted for the redemption conversation.',
 ])}
 
 ${L.section(`${L.sectionHead('DIGITAL GOLD QUESTIONS', 'Regulation, exposure, and disputed balances.', '')}${L.faqBlock([
-  { q: 'Is this regulated, and are we exposed if something goes wrong?', a: 'KYC, transaction ledgers and OTP-verified redemptions keep every step auditable. Confirm current regulatory scope for your setup on a demo — this deserves that conversation before launch.' },
+  { q: 'Is this regulated, and are we exposed if something goes wrong?', a: 'Section 269ST cash-limit enforcement, Form 60/61 for PAN-less customers, dual control on closures, full KYC with document scans, and GL posting are all built in. Confirm current regulatory scope for your specific state and setup on a demo before launching — this is a compliance-sensitive product and deserves that conversation.' },
   { q: 'What if a customer disputes their gram balance?', a: 'Balances are transparent and checkable by the customer at any time, which prevents most disputes before they start.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}

@@ -47,6 +47,16 @@ ${L.section(
 ${L.governanceStrip()}
 
 ${L.section(
+  `${L.sectionHead('YOUR TEAM RUNS ON ONE LOGIN TOO', 'Staff chat and calling, built in — not bolted on from Slack.', 'Customer-facing memory is the headline. But the same platform also gives your own team channels, DMs and video calls, so internal coordination doesn’t need a second subscription and a second login.')}
+  ${L.cards([
+    { title: 'Channels & DMs', text: 'Team channels and direct messages, with unread counts surfaced right in the nav — no separate app to check.' },
+    { title: 'Video calls with screen share', text: 'Team calls with screen sharing, a pinnable focus layout for whoever is presenting, and a minimizable window so a call doesn’t block the rest of your work.' },
+    { title: 'Ringtones & notifications', text: 'Incoming calls ring, messages toast with sound — the ordinary signals a chat tool needs, present from day one.' },
+    { title: 'One login, one record', text: 'Staff chat sits inside the same platform as HR, CRM and the customer inbox — not a Slack or Teams workspace your ops team has to provision and pay for separately.' },
+  ], 4)}`
+, { tone: 'tint' })}
+
+${L.section(
   `${L.sectionHead('INTEGRATIONS & COEXISTENCE', 'Keep your Tally. Books stay where your CA likes them.', '')}
   ${L.cards([
     { title: 'Tally', text: 'Customer and item masters sync both ways automatically. Your accountant’s world doesn’t change.', link: { href: '/platform/integrations/tally', label: 'The accountant page' } },
@@ -61,7 +71,7 @@ ${L.section(
 ${L.honestGapsBlock([
   'POS counter returns & cash day-close — scan-to-sale checkout is live; Billing & Finance handles GST invoicing at the counter today, with returns and till reconciliation still rolling out.',
   'A public developer API — bridges to Tally, Zoho Books, Shopify, Woo and Unicommerce exist; a general-purpose API for your own integrations doesn’t yet.',
-  'A vernacular product interface — the AI voice speaks 14 languages today; product screens are English, with an early Hindi pilot on one screen.',
+  'A vernacular product interface — the AI voice speaks 14 languages today; product screens are English, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets).',
   'Offline mode — Jwero is a connected product today.',
 ])}
 
@@ -287,7 +297,7 @@ ${L.section(
       <tr><td><strong>Finance</strong></td><td>Invoice and receivables-adjacent drafting</td><td>6</td></tr>
     </tbody>
   </table></div>
-  <p style="margin-top:16px; font-size:.9rem; color:var(--ink-2);">251 active entries today (259 defined, 8 excluded as internal audit/governance tools that don’t touch a customer) — “240+” on the rest of this site is the conservative, round-down version of that same number.</p>`
+  <p style="margin-top:16px; font-size:.9rem; color:var(--ink-2);">251 active entries today (259 defined, 8 excluded as internal audit/governance tools that don’t touch a customer) — “240+” on the rest of this site is the conservative, round-down version of that same number. Want your own AI agent to reach this data directly instead? See the <a href="/platform/integrations">MCP server on the Integrations page</a>.</p>`
 , { tone: 'tint' })}
 
 ${L.section(
@@ -313,8 +323,8 @@ ${L.ctaBand('Meet your first AI workforce member.', 'Watch it draft, watch it wa
 
 const integrations = {
   slug: 'platform/integrations',
-  title: 'Integrations — Tally, Shopify, Meta, Razorpay & More | Jwero',
-  description: 'Jwero bridges to Tally and Zoho Books, syncs with Shopify, WooCommerce and Unicommerce, collects via Razorpay and Cashfree, and sells on official Meta channels.',
+  title: 'Integrations — Tally, Shopify, Meta, Razorpay, MCP & More | Jwero',
+  description: 'Jwero bridges to Tally and Zoho Books, syncs with Shopify, WooCommerce and Unicommerce, collects via Razorpay and Cashfree, sells on official Meta channels, and exposes a first-party MCP server for your own AI agents.',
   breadcrumbs: BC('Integrations'),
   faqs: [
     { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger; the built-in bridge carries sales data across so your accountant’s world doesn’t change.' },
@@ -343,12 +353,24 @@ ${L.section(
   ], 4)}`
 )}
 
-${L.honestGapsBlock(['A self-serve public developer API is on the roadmap — until it ships, integrations run through the bridges above.'])}
+${L.section(
+  `${L.sectionHead('BRING YOUR OWN AI AGENT', 'Jwero also speaks MCP.', 'Alongside the AI workforce built into Jwero, a first-party MCP (Model Context Protocol) server lets you connect any MCP-compatible AI agent — Claude, or your own tooling — directly to your live data.')}
+  ${L.cards([
+    { title: 'A real tool registry, not a demo endpoint', text: 'Hundreds of scoped tools across CRM, inbox, HR, inventory, finance, marketing, org and reporting — the same data your team already works from, exposed for an agent to read and act on.' },
+    { title: 'Reads broad, writes conservative', text: 'Read access is available widely; write access is deliberately narrow — physical acts, cash payouts, OTP-gated closures and gateway payments are excluded on purpose, not by oversight.' },
+    { title: 'Your own connect flow', text: 'A guided connect flow and an in-product API-keys page let your team (or a technical partner) set this up without engineering help from us.' },
+    { title: 'Permission-scoped per key', text: 'Access is scoped per API key and membership, the same permission model that governs every other user in Jwero.' },
+  ], 4)}
+  <p style="margin-top:16px; font-size:.9rem; color:var(--ink-2);">This is distinct from the built-in AI workforce described on <a href="/platform/ai-workforce">the AI Workforce & Governance page</a> — that’s Jwero’s own AI acting inside your business under approval; MCP is the door for an AI agent of your choosing to reach the same data from outside.</p>`
+, { tone: 'tint' })}
+
+${L.honestGapsBlock(['A general-purpose, self-serve public developer REST API is on the roadmap — the MCP server above already gives AI agents scoped access today; a broader API for custom, non-agent integrations doesn’t exist yet.'])}
 
 ${L.section(`${L.sectionHead('INTEGRATION QUESTIONS', 'What changes in your stack.', '')}${L.faqBlock([
   { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger; the built-in bridge carries sales data across so your accountant’s world doesn’t change.' },
   { q: 'Can I keep my Shopify store?', a: 'Yes. The connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
   { q: 'Is the WhatsApp integration official, or a ban risk?', a: 'Official WhatsApp Business API — template approvals, consent management and opt-out handling are built in, which is what keeps it out of ban-risk territory.' },
+  { q: 'Can I connect my own AI agent to Jwero data?', a: 'Yes — a first-party MCP server exposes scoped CRM, inbox, HR, inventory, finance, marketing, org and reporting tools to any MCP-compatible agent, with a guided connect flow and an API-keys page in-product.' },
 ])}`)}
 
 ${L.ctaBand('Tell us your stack.', 'Send the list of tools you run today — we will map exactly what stays, what bridges, and what Jwero takes over.', 'integrations')}
@@ -546,7 +568,7 @@ ${L.section(
       <div class="road-group">
         <p class="road-group-label">Operations & platform</p>
         <div class="road-item"><strong>Offline mode</strong>the counter needs the internet today</div>
-        <div class="road-item"><strong>Vernacular product interface</strong>the voice assistant speaks 14 languages; product screens are English today, with an early Hindi pilot on one screen</div>
+        <div class="road-item"><strong>Vernacular product interface</strong>the voice assistant speaks 14 languages; product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets)</div>
         <div class="road-item"><strong>Public developer API</strong>bridges only, for now</div>
         <div class="road-item"><strong>Predictive ML forecasting</strong>today’s inventory intelligence is ageing/valuation-based, not predictive</div>
       </div>

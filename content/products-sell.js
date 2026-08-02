@@ -313,6 +313,7 @@ const storefront = {
     { q: 'I already have a Shopify or WooCommerce store. Do I have to switch?', a: 'No. The Ecommerce Website is an option, not a replacement mandate. If you already run a store, the existing platform integrations and /products/optimize add Jwero on top of it. It’s for businesses that don’t have a website yet, or want a jewellery-native alternative.' },
     { q: 'What actually makes this jewellery-native, not just a themed generic store?', a: 'The product page price is a live breakup — metal, purity, weight and rate-per-gram, plus stone and making-charge lines — that recalculates automatically when the metal rate moves, driven by the same repricing engine as the rest of Jwero. A generic platform shows a fixed price until someone manually edits it; this one doesn’t.' },
     { q: 'Is the wishlist just a cookie, or does it follow the customer?', a: 'For a signed-in shopper, it’s backed by the same CRM contact record used across your counter and CRM — not a separate guest list tied to a browser. Save it on the website, and it’s there when she messages you on WhatsApp.' },
+    { q: 'Do customers need to create a password to sign in?', a: 'No — sign-in is OTP-based over WhatsApp, SMS or email, tied to her phone number rather than a password to remember or a credential to leak. One session carries across the account page, express checkout, wishlist and reviews.' },
     { q: 'Can it look like my brand, not a template?', a: 'Yes — five jewellery-styled themes and eleven page templates (including festive, gift-guide and lookbook layouts a generic store builder doesn’t ship with) so the site looks like your business, not repurposed retail software.' },
     { q: 'Is it just a catalogue, or a full website?', a: 'A full site: public catalogue pages, quote pages and payment pages, plus a blog, customer reviews and landing pages for campaigns — content tools built for jewellery retail, not just a product list.' },
     { q: 'Who is this for?', a: 'Startups, first-time founders and single stores without a website today are the clearest fit. It runs on the same customer record as your WhatsApp, CRM and billing — so an order here is never a separate system to reconcile.' },
@@ -392,6 +393,7 @@ ${L.section(`${L.sectionHead('ECOMMERCE WEBSITE QUESTIONS', 'Shopify, branding, 
   { q: 'I already have a store. Do I have to switch?', a: 'No, it’s an option rather than a replacement mandate. If you already run a store, /products/optimize and platform integrations add Jwero on top of it.' },
   { q: 'What makes this jewellery-native?', a: 'A live metal/purity/stone price breakup that recalculates on rate change, and a wishlist backed by the same CRM contact record as your counter, well beyond a themed generic store.' },
   { q: 'Can it look like my brand?', a: 'Yes — five jewellery-styled themes and eleven page templates brand the site to match your business.' },
+  { q: 'Do customers need a password?', a: 'No — sign-in is OTP over WhatsApp, SMS or email, tied to her phone number rather than a password.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 

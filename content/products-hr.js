@@ -48,7 +48,7 @@ ${L.section(
   `${L.sectionHead('THE FULL EMPLOYEE LIFECYCLE', 'From application to final settlement, on one record.', '')}
   ${L.cards([
     { title: 'Recruitment', text: 'A real pipeline — applied, screening, interview, offer, hired — with reject/withdraw states, feeding automatically into onboarding the moment someone is hired.' },
-    { title: 'Onboarding', text: 'Template-driven checklists with due-date offsets from the joining date and role-based task assignment. A hired candidate starts onboarding automatically from the org’s default template — no manual re-entry.' },
+    { title: 'Onboarding', text: 'Template-driven checklists with due-date offsets from the joining date and role-based task assignment. A hired candidate starts onboarding automatically from the org’s default template — no manual re-entry. Switching from another HR system? A bulk employee CSV import brings your existing roster in at once, not one profile at a time.' },
     { title: 'Documents', text: 'Typed employee documents — PAN, Aadhaar, passport, offer letter, contract, certificates and more — uploaded, listed and deleted per employee.' },
     { title: 'Offboarding', text: 'A genuine full-and-final settlement engine — prorated final salary, leave encashment, statutory gratuity, advance recovery — through the same compute-approve-pay lifecycle, deactivating the employee record once paid.' },
     { title: 'Shift scheduling & directory', text: 'Roster and shift assignment with a dedicated UI, alongside a full employee directory and profile system.' },
