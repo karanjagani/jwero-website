@@ -75,6 +75,22 @@ function cards(items, cols = 3) {
     .join('')}</div>`;
 }
 
+// Team grid: [{initials,name,title,bio,linkedin}]
+function teamGrid(people) {
+  return `<div class="team-grid">${people
+    .map(
+      (p) => `
+    <div class="team-card">
+      <div class="team-avatar" aria-hidden="true">${esc(p.initials)}</div>
+      <h3>${esc(p.name)}</h3>
+      <p class="team-title">${esc(p.title)}</p>
+      ${p.bio ? `<p class="team-bio">${p.bio}</p>` : ''}
+      ${p.linkedin ? `<a class="team-linkedin" href="${p.linkedin}" rel="noopener" target="_blank" aria-label="${esc(p.name)} on LinkedIn">LinkedIn ↗</a>` : ''}
+    </div>`
+    )
+    .join('')}</div>`;
+}
+
 // Numbered steps
 function steps(items) {
   return `<ol class="steps">${items
@@ -437,7 +453,7 @@ function customerLogos() {
 }
 
 module.exports = {
-  esc, hero, section, sectionHead, cards, steps, stats, faqBlock,
+  esc, hero, section, sectionHead, cards, teamGrid, steps, stats, faqBlock,
   governanceStrip, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,

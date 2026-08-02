@@ -156,7 +156,16 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('THE COMPANY', 'Who builds it, and what we measure.', 'Jwero is built by a team across product, jewellery retail and AI engineering — working daily with jewellery businesses from single family stores to multi-branch chains. We measure ourselves on one number: the revenue our customers’ growth reports attribute to the system.')}
+  `${L.sectionHead('WHO YOU’RE TALKING TO', 'The founders, by name.', 'Not an anonymous "team" — three people you can look up before you trust them with your customer list.')}
+  ${L.teamGrid([
+    { initials: 'KJ', name: 'Karan Jagani', title: 'Co-Founder & CEO', bio: 'Runs the business side — strategy, partnerships and the buying-committee conversations chains and manufacturers have with us.', linkedin: 'https://www.linkedin.com/in/karanjagani/' },
+    { initials: 'MJ', name: 'Manav Jagani', title: 'Co-Founder & CTO', bio: 'Builds the product — the same person you’ll often reach on the founders’ WhatsApp desk when something needs an engineering answer.', linkedin: 'https://www.linkedin.com/in/jaganimanav/' },
+    { initials: 'MJ', name: 'Mahendra Jagani', title: 'Co-Founder', bio: 'Comes from the gems and jewellery trade itself — the operating knowledge that keeps Jwero built for how the business actually runs, not how software assumes it does.', linkedin: 'https://www.linkedin.com/in/mdjagani/' },
+  ])}`
+)}
+
+${L.section(
+  `${L.sectionHead('THE COMPANY', 'What we build under, and what we measure.', 'Jwero is built by a team across product, jewellery retail and AI engineering — working daily with jewellery businesses from single family stores to multi-branch chains. We measure ourselves on one number: the revenue our customers’ growth reports attribute to the system.')}
   <div class="tbl-wrap" style="margin-bottom:26px"><table class="tbl">
     <tbody>
       <tr><td><strong>Legal entity</strong></td><td>Tanika Tech Jewels Private Limited</td></tr>
