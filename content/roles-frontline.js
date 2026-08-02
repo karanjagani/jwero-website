@@ -201,7 +201,7 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('CASHIER QUESTIONS', 'Straight answers about the role, and what’s roadmap versus shipped.', '')}${L.faqBlock(cashierFaqs)}`)}
+${L.section(`${L.sectionHead('CASHIER QUESTIONS', 'Straight answers about the role — and roadmap versus shipped.', '')}${L.faqBlock(cashierFaqs)}`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="roles">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 

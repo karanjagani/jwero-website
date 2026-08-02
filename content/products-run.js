@@ -59,7 +59,7 @@ ${L.oneSystemBlock([
 ])}
 
 ${L.section(
-  `${L.sectionHead('MORE FROM THE SAME RECORD', 'Built on the same customer record.', 'Everything below reads and writes the one 90+ field record above — nothing here is a bolted-on module with its own copy of your customers.')}
+  `${L.sectionHead('', 'Built on the same customer record.', 'Everything below reads and writes the one 90+ field record above — nothing here is a bolted-on module with its own copy of your customers.')}
   ${L.cards([
     { title: 'Quotations', text: 'A formal quote moves from draft to sent to accepted or declined, with a number, line items and a PDF. Share the link and the customer can accept or decline it themselves — no call required.' },
     { title: 'Smart lead routing', text: 'New enquiries route automatically to the right salesperson — round-robin, whoever has the lightest workload, or by territory rules your business sets.' },
@@ -326,7 +326,7 @@ const showroom = {
   body: `
 ${L.hero({
   eyebrow: 'SHOWROOM INTELLIGENCE',
-  h1: 'Know who is on your floor — and who walked out without buying.',
+  h1: 'Know who’s on your floor — and who left without buying.',
   sub: 'A showroom visit is the highest-intent moment in the whole business, and most stores remember none of it. Jwero checks walk-ins in, shows who is on the floor live, records what was shown and tried, and drafts a follow-up the moment someone leaves without buying.',
   primary: { href: '#', label: 'See the live floor', wa: 'showroom' },
   secondary: { href: '/products/crm', label: 'See the Jewellery CRM' },
@@ -359,7 +359,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('WHAT IT TRACKS', 'Every visit, from walk-in to walkout.', '')}
+  `${L.sectionHead('', 'Every visit, from walk-in to walkout.', '')}
   ${L.cards([
     { title: 'Walk-in Register', text: 'Tablet check-in and check-out at the store entrance the moment a customer walks in, with a consent-labelled photo captured on the tablet’s camera and shown on the Live Floor card — never stored as a permanently public file.' },
     { title: 'Check-in intelligence', text: 'Type a phone number at the register — before check-in even completes — and see visit count, why they left last time, pieces tried-not-bought, category preferences, a maturing gold scheme, and a salesperson suggestion ranked by 90-day conversion.' },
@@ -414,7 +414,7 @@ const segmentation = {
 ${L.hero({
   eyebrow: 'CUSTOMER SEGMENTATION',
   h1: 'Every audience, defined once. Live, not a stale export.',
-  sub: 'Most "segments" are a spreadsheet exported once and never updated. Here, a segment is a rule: RFM tier, tags, CRM stage, custom fields — that recalculates live against your actual customer records, so the audience is always current when a journey or campaign reads it.',
+  sub: 'A segment here is a rule — RFM tier, tags, CRM stage, custom fields — that recalculates live against your actual customer records, so the audience is always current when a journey or campaign reads it.',
   primary: { href: '#', label: 'Build a live segment', wa: 'segmentation' },
   secondary: { href: '/products/crm', label: 'See the Jewellery CRM' },
 })}

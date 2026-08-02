@@ -39,7 +39,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('HOW JWERO RUNS IT', 'Enrolment to maturity, with discipline.', '')}
+  `${L.sectionHead('', 'Enrolment to maturity, with discipline.', '')}
   ${L.steps([
     { title: 'Enrol digitally', text: 'Plan selection, KYC capture and first payment in minutes — at the counter or over WhatsApp.' },
     { title: 'Collect reliably', text: 'Automatic reminders before every due date, payment links in chat, missed-instalment follow-ups by message and AI voice call.' },
@@ -335,7 +335,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('THE OCCASION ENGINE', 'Not a festival-calendar blast — a real per-customer derivation.', 'A recurring sweep finds each customer’s next occasion from three sources, then hands it to a journey — the automation itself never messages anyone directly.')}
+  `${L.sectionHead('THE OCCASION ENGINE', 'Not a festival blast. A real per-customer derivation.', 'A recurring sweep finds each customer’s next occasion from three sources, then hands it to a journey — the automation itself never messages anyone directly.')}
   ${L.cards([
     { title: 'Three sources, one date', text: 'A recorded birthday or anniversary on the customer record; an inferred purchase-anniversary — a past significant purchase above a value threshold, treated as a recurring occasion even if the customer never told anyone; and a built-in Indian jewellery-festival calendar.' },
     { title: 'Manual entries always win', text: 'If a salesperson has entered a date on the customer record by hand, the automatic sweep never overwrites it. A person’s knowledge of their own customer outranks the inference.' },
@@ -401,7 +401,7 @@ const campaigns = {
 ${L.hero({
   eyebrow: 'CAMPAIGNS & BROADCASTS',
   h1: 'One send, every channel, one number for what it sold.',
-  sub: 'A broadcast that ignores opt-outs is a ban risk. A campaign with no attribution is a guess about what worked. Jwero sends consent-aware broadcasts across WhatsApp, email, SMS and push, then wraps them in campaigns that report what was actually sold — not just what was sent.',
+  sub: 'A broadcast that ignores opt-outs is a ban risk. A campaign with no attribution is a guess about what worked. Jwero sends consent-aware broadcasts across WhatsApp, email, SMS and push, then wraps them in campaigns that report what each one actually sold.',
   primary: { href: '#', label: 'See a campaign run live', wa: 'campaigns' },
   secondary: { href: '/products/loyalty', label: 'Target a loyalty tier' },
 })}

@@ -78,6 +78,10 @@ h2 { font-size: clamp(1.85rem, 4.2vw, 3rem); line-height: 1.08; letter-spacing: 
 /* Single-column heroes (articles, text-only pages) carry longer, keyword-bearing
    headlines — give them a wider measure and a slightly calmer display size. */
 .hero-solo h1 { max-width: 26ch; font-size: clamp(2.2rem, 4.6vw, 3.5rem); }
+/* Article body headings are editorial, not marketing display: they're full
+   sentences carrying keywords, so they get a reading scale and a wide measure
+   rather than the 48px section-statement treatment. */
+.is-article h2 { font-size: clamp(1.5rem, 2.6vw, 1.95rem); letter-spacing: -.022em; max-width: 40ch; }
 h3 { font-size: 1.14rem; line-height: 1.38; letter-spacing: -.014em; }
 /* Headlines that are deliberately long-form (tables, comparison pages) opt out. */
 h1.wide, h2.wide { max-width: none; }
@@ -788,7 +792,13 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: .92rem; backgroun
   .f-grid { grid-template-columns: 1fr 1fr; }
   .hero { padding-top: 52px; }
 }
-@media (max-width: 720px) {
+/* Nav switches to the burger overlay at 900px, not 720px. The mega-nav's
+   dropdown is a fixed 480px absolutely-positioned panel, so between ~721px
+   and 900px the right-hand panels extended past the viewport and gave the
+   whole document a horizontal scrollbar even while closed. Layout rules stay
+   on their own 720px breakpoint below — a tablet should still get two-column
+   grids, just not a cramped nine-item mega-nav. */
+@media (max-width: 900px) {
   .main-nav {
     display: none; position: fixed; inset: 0; top: 0; background: var(--bg); z-index: 90;
     flex-direction: column; padding: 84px 26px 40px; gap: 2px; overflow-y: auto;
@@ -806,6 +816,8 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: .92rem; backgroun
   .dd-cols { grid-template-columns: 1fr; min-width: 0; }
   .nav-burger { display: block; }
   .header-cta .btn-wa, .header-cta .btn-primary { display: none; }
+}
+@media (max-width: 720px) {
   .grid-2, .grid-3, .grid-4, .steps, .tiers, .stack-grid, .pillars, .impact-grid { grid-template-columns: 1fr; }
   .router-grid { grid-template-columns: 1fr 1fr; }
   .onerecord-grid { grid-template-columns: 1fr 1.2fr 1fr; }

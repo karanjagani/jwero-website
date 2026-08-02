@@ -17,7 +17,7 @@ const b2bManagerRole = {
   body: `
 ${L.hero({
   eyebrow: 'TRADE & PARTNERSHIPS · B2B MANAGER',
-  h1: 'Every buyer, every memo, every order — in one thread, not a register.',
+  h1: 'Every buyer, every memo, every order — in one thread.',
   sub: 'Right now, a wholesale desk runs on phone calls, screenshots and whoever remembers which buyer asked for what. Jwero gives every retail buyer relationship one record — order history, memo status and pricing terms in one place, with follow-ups drafted for you and sent only after you say yes.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
@@ -99,7 +99,7 @@ const franchisePartnerRole = {
   body: `
 ${L.hero({
   eyebrow: 'TRADE & PARTNERSHIPS · FRANCHISE PARTNER',
-  h1: 'Franchisor control. Franchisee freedom. One system underneath both.',
+  h1: 'Franchisor control. Franchisee freedom. One system.',
   sub: 'Running a branch under someone else’s brand means constantly balancing head office’s standards against your own local judgment. Jwero puts pricing and catalogue consistency under the franchisor’s control while your branch keeps a structured way to run day-to-day and flag the exceptions that actually matter.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
@@ -132,7 +132,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('WHAT THIS ROLE GAINS', 'Operating with franchisor-grade discipline while keeping local control.', '')}
+  `${L.sectionHead('WHAT THIS ROLE GAINS', 'Franchisor-grade discipline, local control.', '')}
   ${L.cards([
     { title: 'Brand-consistent operation without losing local judgment', text: 'Central pricing and catalogue rules mean you’re never guessing what "on-brand" looks like — while staffing and floor decisions stay yours to make.' },
     { title: 'A network view instead of a single-branch view', text: 'Shared customer records mean you learn to think about a customer relationship across the whole network, not just the four walls of your branch.' },

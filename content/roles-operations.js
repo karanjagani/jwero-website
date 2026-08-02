@@ -152,7 +152,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The system tracks and surfaces. You still decide what to do about it.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The system surfaces it. You decide what to do.', '')}
   <p class="lead">Jwero does not forecast demand or generate a reorder plan — that’s explicitly not built yet. The decision — markdown, melt, transfer, hold, reorder — stays a judgment call for a person who knows the season. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
@@ -194,7 +194,7 @@ const purchaseManagerRole = {
   body: `
 ${L.hero({
   eyebrow: 'TRADE & PARTNERSHIPS · PURCHASE MANAGER',
-  h1: 'Know what to reorder before the shelf goes empty — or stays too full.',
+  h1: 'Know what to reorder before the shelf decides for you.',
   sub: 'Buying by gut feel means either a shelf that runs empty on a fast mover or capital tied up in pieces that were never going to sell. Jwero shows which pieces are ageing and which are moving, at today’s rate, so the reorder call is a decision you make on data, not a hunch.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
@@ -229,7 +229,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills that move the job from restocking to buying with judgment.', '')}
+  `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills that move the job from restocking to buying.', '')}
   ${L.cards([
     { title: 'Demand-aware ordering instead of gut-feel restocking', text: 'Reading velocity and ageing data before placing an order builds a habit of buying to what’s actually selling, not what feels like it should.' },
     { title: 'Vendor reconciliation discipline', text: 'Matching GRN receipts against purchase orders as routine, rather than at month-end, builds the muscle of catching a shortfall or overcharge early.' },

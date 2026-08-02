@@ -15,8 +15,8 @@ const rolesHub = {
   body: `
 ${L.hero({
   eyebrow: 'ROLES',
-  h1: 'Everyone who touches your jewellery business has a seat at this system.',
-  sub: 'Jwero isn’t a tool the owner uses alone. It’s the one system the whole team works inside — each role seeing exactly the part built for their job. Find yours below: what changes, what skills it grows, and how to stay valuable as AI takes the repetitive work off your plate.',
+  h1: 'Every role in your jewellery business, on one system.',
+  sub: 'Not a tool the owner uses alone — each role sees exactly the part built for their job. Find yours below: what changes, what skills it grows, and how to stay valuable as AI takes the repetitive work off your plate.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -73,7 +73,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `<div id="pattern" style="scroll-margin-top:96px;">${L.sectionHead('THE PATTERN ACROSS EVERY ROLE', 'AI drafts. A person approves. Nobody’s judgment gets automated away.', 'Every role on this page keeps the same shape of change: the repetitive, forgettable, error-prone parts of the job move to a governed AI workforce that waits for a human yes. What’s left is the part that actually needed a person — relationships, craftsmanship, judgment calls — with a record behind it that never forgets. This is true whether you own the business, run the counter, or work the bench: the job doesn’t shrink, the forgettable parts of it do.')}</div>
+  `<div id="pattern" style="scroll-margin-top:96px;">${L.sectionHead('THE PATTERN ACROSS EVERY ROLE', 'AI drafts. A person approves.', 'Nobody’s judgment gets automated away. Every role on this page keeps the same shape of change: the repetitive, forgettable, error-prone parts of the job move to a governed AI workforce that waits for a human yes. What’s left is the part that actually needed a person — relationships, craftsmanship, judgment calls — with a record behind it that never forgets. This is true whether you own the business, run the counter, or work the bench: the job doesn’t shrink, the forgettable parts of it do.')}</div>
   ${L.cards([
     { title: 'Less retyping, more relationship', text: 'Data entry, follow-up drafting and repetitive replies move to AI staff under approval — freeing the hours for the parts of the job that actually need a person.' },
     { title: 'A record that outlives any one person', text: 'Customer history, job status and stock truth live on the business’s own system — not in a notebook, a phone, or one person’s memory that walks out the door when they do.' },

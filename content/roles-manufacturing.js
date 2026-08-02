@@ -38,7 +38,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills that follow you, not just your supervisor’s memory of you.', '')}
+  `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills that follow you, not a supervisor’s memory.', '')}
   ${L.cards([
     { title: 'A verifiable track record', text: 'Your loss discipline and on-time delivery build up as a real record over time — proof of your standard of work that isn’t only in one supervisor’s head.' },
     { title: 'Fewer disputes to defend yourself in', text: 'When loss and timing are logged at every stage, you spend less time re-explaining what happened weeks ago and more time on the bench.' },
@@ -47,7 +47,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The craft stays yours. The system only remembers the paperwork.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The craft stays yours. The paperwork goes to the system.', '')}
   <p class="lead">What stays yours: the bench, the skill in your hands, and the final say on what leaves it — Jwero just replaces the slips and arguments over gold loss with a record. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
@@ -104,7 +104,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills that make you more valuable on the floor, not just at the screen.', '')}
+  `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills that count on the floor, not just at the screen.', '')}
   ${L.cards([
     { title: 'Design-to-production handoff literacy', text: 'Understanding how an approved file actually becomes a job — stages, weight, timeline — makes you someone production trusts to hand off to, not just a file-sender.' },
     { title: 'A defensible approval trail', text: 'When a client disputes what was agreed, you can point to the recorded revision and approval instead of relitigating a chat history from memory.' },
@@ -113,7 +113,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The design work stays yours. The system only tracks the paper trail.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The design stays yours. The system tracks the rest.', '')}
   <p class="lead">What stays yours: the design itself and every technical call on it — Jwero just tracks which revision is current and whether the sign-off actually reached the floor. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
@@ -161,7 +161,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('A DAY IN THIS ROLE', 'What changes when jobs are on a ledger instead of a walk-through.', '')}
+  `${L.sectionHead('A DAY IN THIS ROLE', 'What changes when every stage is on the record.', '')}
   ${L.impactGrid([
     { lever: 'Checking job status', before: 'Knowing where a job stands means walking the floor or calling around — and even then it’s a snapshot, not a trail.', after: 'Every job’s stage, from jangad to despatch, is visible on one record — no floor walk required to answer "where is it".' },
     { lever: 'Loss across the pipeline', before: 'Loss gets noticed at settlement, long after the stage that caused it, making the cause hard to pin down.', after: 'Gold-in, gold-out and loss are tracked at each production stage, so an abnormal loss is visible near the stage it happened at, not weeks later.' },
@@ -171,7 +171,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills that make you the person leadership trusts with the whole pipeline.', '')}
+  `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills that make leadership trust you with the pipeline.', '')}
   ${L.cards([
     { title: 'Pipeline-wide loss fluency', text: 'Reading loss patterns across stages and clients — not just at settlement — builds the kind of judgment that catches a problem before it’s a write-off.' },
     { title: 'A defensible client-facing record', text: 'When an OEM client questions a settlement, you can show job-level WIP and loss data instead of reconstructing it from memory or paper.' },
@@ -180,7 +180,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The floor is still yours to run. The system only remembers the paperwork.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The floor is yours to run. The ledger does the remembering.', '')}
   <p class="lead">What stays yours: labour scheduling, production calls and floor authority — Jwero tracks gold-in/gold-out and stage loss, and now runs karigar wage settlement off that same record. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
@@ -228,7 +228,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('A DAY IN THIS ROLE', 'What changes between a finished piece and a cleared, certified one.', '')}
+  `${L.sectionHead('A DAY IN THIS ROLE', 'What changes between a finished piece and a certified one.', '')}
   ${L.impactGrid([
     { lever: 'Tracking what’s pending', before: 'Knowing which pieces are still waiting on certification means checking paper files or asking each department.', after: 'Documentation status sits on the job record, so pending versus cleared is visible without a paper chase.' },
     { lever: 'Export documentation', before: 'Export paperwork gets assembled late, under time pressure, by pulling records from several places.', after: 'Export documentation tracking keeps the trail attached to the job as it moves — not reconstructed at the last minute.' },
@@ -247,7 +247,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The certification call stays yours. The system only tracks the paperwork.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The certification call stays yours.', '')}
   <p class="lead">What stays yours: the sign-off judgment on whether a piece is actually compliant — Jwero just tracks which piece is pending, cleared, or missing paperwork. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 

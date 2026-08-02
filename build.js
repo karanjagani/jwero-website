@@ -299,7 +299,7 @@ ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</s
 <a class="skip-link" href="#main">Skip to content</a>
 ${navHTML()}
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-<main id="main" tabindex="-1">
+<main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.body}
 </main>
 ${footerHTML()}

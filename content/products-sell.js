@@ -43,7 +43,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('HOW IT WORKS', 'From "do you have…?" to "see you Saturday."', '')}
+  `${L.sectionHead('', 'From "do you have…?" to "see you Saturday."', '')}
   ${L.steps([
     { title: 'Connect your number', text: 'Your existing WhatsApp number moves onto the official Business API. Customers notice nothing — except faster answers.' },
     { title: 'AI drafts, you approve', text: 'Every enquiry gets a draft reply that knows the customer and today’s metal rate. Your team approves with one tap — until you decide some replies can flow on their own.' },
@@ -122,7 +122,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('WHAT JWERO DOES', 'From comment to customer record.', '')}
+  `${L.sectionHead('', 'From comment to customer record.', '')}
   ${L.steps([
     { title: 'Catch everything', text: 'DMs and comment enquiries from Instagram and Facebook flow into the one inbox, matched to customer records.' },
     { title: 'Reply with knowledge', text: 'AI drafts answers with real availability and live prices, and offers the next step: catalogue, WhatsApp, appointment.' },
@@ -240,7 +240,7 @@ const optimize = {
 ${L.hero({
   eyebrow: 'OPTIMIZE',
   h1: 'Your website stops being a brochure.',
-  sub: 'Visitors arrive, look around, and leave, and until now you had no idea where. Optimize shows you exactly that, and helps you catch the next one before they go: heatmaps, recordings, A/B experiments, personalization, popups, push and an AI webchat — reading and writing the same customer record as everything else.',
+  sub: 'Visitors arrive, look around, and leave. Optimize shows you exactly where, and helps you catch the next one before they go: heatmaps, recordings, A/B experiments, personalization, popups, push and an AI webchat — reading and writing the same customer record as everything else.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'optimize' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -365,7 +365,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('WHAT THE WEBSITE DOES', 'Browse, decide, buy — on one site.', '')}
+  `${L.sectionHead('', 'Browse, decide, buy — on one site.', '')}
   ${L.cards([
     { title: 'Live-rate price breakup', text: 'Metal, purity, weight, stone and making-charge shown as a real breakup on the product page instead of a single stale number.' },
     { title: 'Cart, wishlist & compare', text: 'The three things a jewellery buyer actually needs before a big-ticket decision, beyond just an add-to-cart button.' },

@@ -9,7 +9,7 @@ const solutionsHub = {
   body: `
 ${L.hero({
   eyebrow: 'SOLUTIONS',
-  h1: 'This platform understands your business. Show us which one it is.',
+  h1: 'One system. Every kind of jewellery business.',
   sub: 'The same operating system runs a single counter, a hundred-branch chain, and a manufacturing bench. Find the page written in your language — 22 segments, all equal-status.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'solutions' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
@@ -103,7 +103,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('SOUND FAMILIAR?', 'Three quiet leaks in every single-store business.', '')}
+  `${L.sectionHead('', 'Three quiet leaks in every single-store business.', '')}
   ${L.painRows([
     { quote: 'My best salesman left and took twenty years of customers in his pocket.', title: 'The memory belongs to the shop now', text: 'Every conversation, preference and promise lives on the store’s own record. Staff change; the relationship stays.' },
     { quote: 'Customers message at night. By morning they have bought elsewhere.', title: 'The counter that never closes', text: 'The AI workforce answers in minutes with real prices at today’s rate — and every draft waits for approval until you say otherwise.' },

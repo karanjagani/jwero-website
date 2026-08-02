@@ -42,7 +42,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('THE RE-HALLMARK GATE', 'A compliance rule enforced in the workflow, not a memory test.', '')}
+  `${L.sectionHead('THE RE-HALLMARK GATE', 'A compliance rule, enforced. Not a memory test.', '')}
   <div class="stack-verdict"><strong>When a repair changes enough metal to trigger BIS re-hallmarking — a 2-gram or 50%-of-melt threshold — the job is flagged automatically, and it cannot move to "ready for delivery" until the flag is addressed.</strong> Most repair-tracking tools have no idea this rule exists. Here it is built into the status flow itself, so a busy counter can't accidentally hand back a piece that legally needed re-testing.</div>`,
   { tone: 'tint' }
 )}

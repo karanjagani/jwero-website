@@ -21,7 +21,7 @@ const ownerRole = {
   body: `
 ${L.hero({
   eyebrow: 'LEADERSHIP · OWNER',
-  h1: 'You built this business on memory. Now the memory has a backup.',
+  h1: 'You built this business on memory. Now it has a backup.',
   sub: 'Right now, if you’re not in the shop, half the context leaves with you — who’s due a call, what’s ageing on the shelf, what a regular customer actually likes. Jwero puts that memory on a record the business owns, with a governed AI workforce handling the repetitive parts while you keep every real decision.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
