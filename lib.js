@@ -36,6 +36,17 @@ function sectionHead(eyebrow, title, lead) {
     </div>`;
 }
 
+// A single idea at display scale, centred, with nothing competing with it.
+// The pause between dense sections — use sparingly, once or twice per page.
+function statement(title, body, cta) {
+  return `
+    <div class="statement">
+      <h2>${title}</h2>
+      ${body ? `<p>${body}</p>` : ''}
+      ${cta ? `<a class="btn ${cta.primary ? 'btn-primary' : 'btn-ghost'}" href="${cta.href}"${cta.wa ? ` data-wa="${esc(cta.wa)}"` : ''}>${cta.label}</a>` : ''}
+    </div>`;
+}
+
 function section(inner, opts = {}) {
   const cls = ['section', opts.tone ? `section-${opts.tone}` : ''].filter(Boolean).join(' ');
   const facet = opts.tone === 'tint' ? `<div class="gem-facet" aria-hidden="true"></div>` : '';
@@ -453,7 +464,7 @@ function customerLogos() {
 }
 
 module.exports = {
-  esc, hero, section, sectionHead, cards, teamGrid, steps, stats, faqBlock,
+  esc, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
   governanceStrip, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,

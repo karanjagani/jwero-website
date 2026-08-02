@@ -201,7 +201,7 @@ const nextGenRole = {
   body: `
 ${L.hero({
   eyebrow: 'LEADERSHIP · NEXT-GEN SUCCESSOR',
-  h1: 'You’re inheriting relationships built over decades. Don’t let them stay in one person’s head.',
+  h1: 'Inherit the business. And the memory that built it.',
   sub: 'The hardest part of taking over isn’t the stock or the counter — it’s that your parents’ generation knows every customer by instinct, and that knowledge rarely transfers cleanly. Jwero turns that memory into a record you can actually inherit, while keeping the trust-based way the business has always run.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },

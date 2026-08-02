@@ -157,7 +157,7 @@ const compare = {
   body: `
 ${L.hero({
   eyebrow: 'COMPARE · CATEGORY LEVEL',
-  h1: 'A WhatsApp tool sends messages. An operating system remembers the customer.',
+  h1: 'A WhatsApp tool sends. An operating system remembers.',
   sub: 'This isn’t a fight with one competitor — it’s the honest difference between a messaging layer and the system underneath it. Choose the tool if messaging is genuinely all you need.',
   primary: { href: '#', label: 'See the difference on WhatsApp', wa: 'compare' },
   secondary: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' },

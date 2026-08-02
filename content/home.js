@@ -25,22 +25,20 @@ const home = {
   body: `
 ${L.hero({
   eyebrow: 'THE AI OPERATING SYSTEM FOR JEWELLERY BUSINESS',
-  h1: 'Run your whole jewellery business on one system — with an AI staff that waits for your yes.',
-  sub: 'More repeat customers. Faster replies. Less dead stock. All from one customer record, one catalogue and one inbox — with an AI staff that drafts everything and sends nothing without your approval.',
+  h1: 'One system that never forgets a customer.',
+  sub: 'Your whole jewellery business on one record — customers, catalogue, WhatsApp, billing and gold schemes. An AI staff drafts the work, and sends nothing without your yes.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'home' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   note: 'The button above opens our own Jwero inbox — test the product before you talk to anyone. A real person + our AI reply within minutes. Prefer email? <a href="/contact">care@jwero.ai</a>.',
   mock: L.mockChat,
 })}
 
-${L.section(`<p class="plain-line"><strong>In one line:</strong> your WhatsApp, your customer list, your gold schemes and your website — in one place, replies drafted by AI, sent only when your team says yes.</p>`)}
-
-${L.trustBar('<strong>240+</strong> governed AI actions. Every one waits for your approval before a customer sees it.', { href: '/platform/ai-workforce', label: 'See how governance works' })}
+${L.trustBar('<strong>240+</strong> AI actions your team switches on one at a time — or shuts off in a single tap.', { href: '/platform/ai-workforce', label: 'See how governance works' })}
 
 ${L.section(L.customerLogos())}
 
 ${L.section(
-  `${L.sectionHead('THE IMPACT', 'What changes for your business.', 'Not features. Outcomes — the ones that show up in revenue, margin and the hours your team gets back.')}
+  `${L.sectionHead('', 'What changes for your business.', 'Not features. Outcomes — the ones that show up in revenue, margin and the hours your team gets back.')}
   ${L.impactGrid([
     {
       lever: 'LEAD RESPONSE',
@@ -71,7 +69,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead(
-    'THE ENEMY',
+    '',
     'Your software keeps accounts. It doesn’t remember customers.',
     'The average jewellery business runs on five or six disconnected tools — and the customer exists as a whole person in none of them.'
   )}
@@ -87,8 +85,8 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('THE SOLUTION', 'One record. Every channel. Your approval.', 'That’s one row in one database, not a metaphor. Every module below reads and writes the same customer card.')}
-  <div class="grid grid-2" style="align-items:center; gap:44px;">
+  `${L.statement('One record. Every channel. Your approval.', 'That’s one row in one database, not a metaphor. Every module below reads and writes the same customer card.')}
+  <div class="grid grid-2" style="align-items:center; gap:44px; margin-top:64px;">
     <div>
       <p style="font-size:1.02rem; color:var(--ink); line-height:1.7;">When Meera messages on WhatsApp, the reply drafts from her record: her taste, her scheme balance, today’s gold rate. When she buys, the catalogue share, the invoice and the scheme instalment all write back to the same card. No integration. No sync. One system.</p>
       <a class="btn btn-ghost" style="margin-top:22px" href="/platform">See the full platform →</a>
@@ -119,7 +117,7 @@ ${L.section(
 ${L.governanceStrip()}
 
 ${L.section(
-  `${L.sectionHead('PROOF, BUILT NOT PROMISED', 'The numbers below are counted in the product itself, before marketing ever touches them.', 'This is what has to be true for the impact above to happen — not marketing copy, plumbing you can inspect.')}
+  `${L.sectionHead('PROOF', 'Counted in the product, not written by marketing.', 'Every number below is measured by the system itself. This is what has to be true for the impact above to happen — plumbing you can inspect, not copy you have to believe.')}
   ${L.proofStrip()}
   <div class="card" style="margin-top:24px; text-align:center;">
     <h3>This website’s chat runs on Jwero.</h3>

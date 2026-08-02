@@ -95,7 +95,7 @@ const singleStore = {
   body: `
 ${L.hero({
   eyebrow: 'FOR SINGLE-STORE JEWELLERY BUSINESSES',
-  h1: 'Everything lives in your head and your staff’s phones. Now it can live in one system.',
+  h1: 'Out of your head. Into one system.',
   sub: 'Run the whole shop from one screen — every customer remembered, every enquiry answered in seconds, without hiring anyone. The same operating system a chain runs, sized for one counter.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'single-store' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
