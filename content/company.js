@@ -160,7 +160,7 @@ ${L.section(
   ${L.teamGrid([
     { initials: 'KJ', name: 'Karan Jagani', title: 'Co-Founder & CEO', bio: 'Runs the business side — strategy, partnerships and the buying-committee conversations chains and manufacturers have with us.', linkedin: 'https://www.linkedin.com/in/karanjagani/' },
     { initials: 'MJ', name: 'Manav Jagani', title: 'Co-Founder & CTO', bio: 'Builds the product — the same person you’ll often reach on the founders’ WhatsApp desk when something needs an engineering answer.', linkedin: 'https://www.linkedin.com/in/jaganimanav/' },
-    { initials: 'MJ', name: 'Mahendra Jagani', title: 'Co-Founder', bio: 'Comes from the gems and jewellery trade itself — the operating knowledge that keeps Jwero built for how the business actually runs, not how software assumes it does.', linkedin: 'https://www.linkedin.com/in/mdjagani/' },
+    { initials: 'MJ', name: 'Mahendra Jagani', title: 'Founder & COO', bio: 'Comes from the gems and jewellery trade itself — the operating knowledge that keeps Jwero built for how the business actually runs, not how software assumes it does.', linkedin: 'https://www.linkedin.com/in/mdjagani/' },
   ])}`
 )}
 
