@@ -117,6 +117,34 @@ ${L.section(
 ${L.governanceStrip()}
 
 ${L.section(
+  `${L.sectionHead('WHERE YOU START', 'Autonomy is earned, one action at a time.', 'Every business starts at Assist. You promote the AI one action type at a time, based on measured accuracy rather than a promise — and you can stop at any rung, permanently.')}
+  <div class="ladder">
+    <div class="rung">
+      <p class="rung-n">01</p>
+      <h3>Assist</h3>
+      <p>AI drafts, your team sends. Every action waits in the approval queue until a person clears it.</p>
+      <div class="rung-meter"><span style="width:16%"></span></div>
+      <p class="rung-meta">Day one. Most single stores start here — and some happily stay.</p>
+    </div>
+    <div class="rung">
+      <p class="rung-n">02</p>
+      <h3>Approve</h3>
+      <p>Routine, low-risk actions run with one-tap approval. Anything sensitive still waits for you.</p>
+      <div class="rung-meter"><span style="width:58%"></span></div>
+      <p class="rung-meta">You see a log of everything that ran.</p>
+    </div>
+    <div class="rung">
+      <p class="rung-n">03</p>
+      <h3>Autopilot</h3>
+      <p>Action types with proven accuracy run inside hard daily caps and quiet hours you set.</p>
+      <div class="rung-meter"><span style="width:100%"></span></div>
+      <p class="rung-meta">They demote themselves automatically if accuracy drifts.</p>
+    </div>
+  </div>
+  <p class="proof-caption">The bar shows how much the AI can do before it needs a tap. You decide when it moves — and the kill switch works at every rung. <a href="/pricing">See what each tier includes →</a></p>`
+, { tone: 'tint' })}
+
+${L.section(
   `${L.sectionHead('PROOF', 'Counted in the product, not written by marketing.', 'Every number below is measured by the system itself — plumbing you can inspect, not copy you have to believe.')}
   ${L.proofStrip()}`
 )}
@@ -144,13 +172,37 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('KEEP WHAT WORKS', 'Jwero joins your business. It doesn’t hold it hostage.', '')}
-  ${L.cards([
-    { title: 'Accounting', text: 'Tally and Zoho Books bridges keep your ledger exactly where your accountant wants it.' },
-    { title: 'Ecommerce', text: 'Shopify, WooCommerce and Unicommerce connectors sync stock and orders both ways.' },
-    { title: 'Payments & Meta', text: 'Razorpay and Cashfree for collections; the official WhatsApp Business API and Meta channels for selling.' },
-  ])}
-  <p style="margin-top:18px"><a class="card-link" href="/platform/integrations">See all integrations →</a></p>`
+  `${L.sectionHead('KEEP WHAT WORKS', 'Jwero joins your business. It doesn’t hold it hostage.', 'Nothing here asks you to rip out the systems your business already runs on. Here is exactly what stays where it is, and what Jwero takes over.')}
+  <div class="coexist">
+    <div class="coexist-col">
+      <p class="coexist-title">Stays yours</p>
+      <div class="coexist-chips">
+        <span class="coexist-chip">Tally</span>
+        <span class="coexist-chip">Zoho Books</span>
+        <span class="coexist-chip">Shopify</span>
+        <span class="coexist-chip">WooCommerce</span>
+        <span class="coexist-chip">Unicommerce</span>
+        <span class="coexist-chip">Razorpay</span>
+        <span class="coexist-chip">Cashfree</span>
+        <span class="coexist-chip">Your WhatsApp number</span>
+      </div>
+      <p class="coexist-foot">Your ledger stays exactly where your accountant wants it. Razorpay and Cashfree keep collecting.</p>
+    </div>
+    <div class="coexist-link"><span class="coexist-arrow">⇄</span>Two-way sync</div>
+    <div class="coexist-col is-jwero">
+      <p class="coexist-title">Jwero runs</p>
+      <div class="coexist-chips">
+        <span class="coexist-chip">Customer record</span>
+        <span class="coexist-chip">Catalogue &amp; live pricing</span>
+        <span class="coexist-chip">One inbox</span>
+        <span class="coexist-chip">Gold schemes</span>
+        <span class="coexist-chip">Follow-up &amp; journeys</span>
+        <span class="coexist-chip">Reporting</span>
+      </div>
+      <p class="coexist-foot">Stock and orders sync both ways. Selling runs on the official WhatsApp Business API and Meta channels.</p>
+    </div>
+  </div>
+  <p style="margin-top:22px"><a class="card-link" href="/platform/integrations">See all integrations →</a></p>`
 )}
 
 ${L.section(`${L.sectionHead('QUESTIONS BUSINESSES ASK', 'Straight answers, before the sales call.', '')}${L.faqBlock([
