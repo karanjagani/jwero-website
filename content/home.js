@@ -2,9 +2,9 @@ const L = require('../lib');
 
 const home = {
   slug: 'index',
-  title: 'Jwero — AI Operating System for Jewellery Business',
+  title: 'Jwero — The Autonomous Jewellery OS | AI Operating System for Jewellery Business',
   description:
-    'Jwero is jewellery software built as an AI operating system: one customer record, catalogue, inventory, inbox, WhatsApp, gold schemes and an AI workforce.',
+    'Fifty systems become one. Jwero is the autonomous jewellery OS: CRM, ERP, inventory, POS, billing, WhatsApp, gold schemes and ecommerce on one record, run by AI agents that act on their own or ask you first.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
@@ -24,9 +24,9 @@ const home = {
   ],
   body: `
 ${L.hero({
-  eyebrow: 'THE AI OPERATING SYSTEM FOR JEWELLERY BUSINESS',
-  h1: 'One system that never forgets a customer.',
-  sub: 'Your whole jewellery business on one record — customers, catalogue, WhatsApp, billing and gold schemes. An AI staff drafts the work, and sends nothing without your yes.',
+  eyebrow: 'THE AUTONOMOUS JEWELLERY OS',
+  h1: 'Fifty systems become one. Run by AI agents.',
+  sub: 'Your whole jewellery business — customers, catalogue, WhatsApp, billing, gold schemes — on one record, worked around the clock by AI that runs on its own or asks you first. You choose which, agent by agent.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'home' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   note: 'The button above opens our own Jwero inbox — test the product before you talk to anyone. A real person + our AI reply within minutes. Prefer email? <a href="/contact">care@jwero.ai</a>.',
@@ -39,19 +39,24 @@ ${L.section(L.customerLogos())}
 
 ${L.section(
   `${L.sectionHead(
-    '',
-    'Your software keeps accounts. It doesn’t remember customers.',
-    'The average jewellery business runs on five or six disconnected tools — and the customer exists as a whole person in none of them.'
+    'COUNT YOURS',
+    'How many of these are you running today?',
+    'Every one is a login, a bill, a vendor and a place your customer exists as a fragment. She is a whole person in none of them.'
   )}
-  <div class="stack-grid">
-    <div class="stack-item"><strong>Billing software</strong>Knows what she bought. Not why, or when she’ll buy again.</div>
-    <div class="stack-item"><strong>Personal WhatsApp</strong>On a salesperson’s phone. When they leave, her history leaves too.</div>
-    <div class="stack-item"><strong>Catalogue PDFs</strong>Shared manually, with no live prices and no follow-through.</div>
-    <div class="stack-item"><strong>Scheme register</strong>A savings plan tracked on paper — leakage and disputes built in.</div>
-    <div class="stack-item"><strong>Website, if any</strong>A ghost town that doesn’t understand gold-rate pricing.</div>
-    <div class="stack-item"><strong>Marketing agency</strong>Festival blasts into the void — no memory, no attribution.</div>
+  <div class="syscount">
+    <span>Billing &amp; Invoicing</span><span>Accounting &amp; Tally</span><span>Inventory &amp; Stock</span><span>POS Counter</span>
+    <span>Barcode &amp; Tagging</span><span>CRM</span><span>Customer Database</span><span>WhatsApp Marketing</span>
+    <span>Instagram DMs</span><span>Facebook Page</span><span>Google Ads</span><span>Ecommerce Website</span>
+    <span>Marketplace Listings</span><span>Gold Scheme Register</span><span>Loyalty Cards</span><span>Repairs Register</span>
+    <span>Karigar Job Work</span><span>Vendor Ledger</span><span>HR &amp; Payroll</span><span>Reporting &amp; MIS</span>
   </div>
-  <div class="stack-verdict">Every day on disconnected tools, an occasion passes silently, dead stock ages, a follow-up dies. The business’s most valuable asset, who its customers are, walks out the door with whoever’s holding the phone.</div>`
+  <p class="syscount-more">… and thirty more inside Jwero</p>
+  <p class="syscount-arrow" aria-hidden="true">▼</p>
+  <div class="syscount-one">
+    <strong>One platform.</strong>
+    <span>One login. One truth. One bill.</span>
+  </div>
+  <div class="stack-verdict"><strong>Now grow without adding a single new system.</strong> New branches, new channels, new capabilities — with no new logins, no new bills, no new vendors, no new chaos. Today, every day on disconnected tools, an occasion passes silently, dead stock ages, a follow-up dies — and the business’s most valuable asset, who its customers are, walks out the door with whoever’s holding the phone.</div>`
 , { tone: 'tint' })}
 
 ${L.section(
@@ -96,9 +101,15 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
+  `${L.sectionHead('EVERYONE SAYS AI. ASK THEM THIS.', 'Not software with AI added. AI that runs the software.', 'Most jewellery software bolted a chatbot onto a database. This is the loop that actually runs your counter — and step 04 is the one that matters.')}
+  ${L.agentLoop()}
+  <p class="proof-caption">Running on every branch, around the clock — inside the limits you set on the next screen down.</p>`
+)}
+
+${L.section(
   `${L.sectionHead('THE THREE PILLARS', 'What an operating system for jewellery does.', 'Tap a pillar (Remember, Sell or Run) to see what lives inside it.')}
   ${L.platformTabs()}`
-)}
+, { tone: 'tint' })}
 
 ${L.section(
   `${L.sectionHead('FIND YOUR FIT', 'Which jeweller are you?', 'Every segment gets the same operating system — built to speak its own language.')}
@@ -112,7 +123,7 @@ ${L.section(
     <a class="router-card" href="/solutions/d2c-brands"><div class="r-icon">▲</div><h3>D2C &amp; ecommerce-first</h3><p>Keep Shopify. Add the channels and live-rate pricing it can’t do.</p></a>
     <a class="router-card" href="/solutions"><div class="r-icon">…</div><h3>More segments</h3><p>Diamond, gold, silver, lab-grown, franchise networks and more.</p></a>
   </div>`
-, { tone: 'tint' })}
+)}
 
 ${L.governanceStrip()}
 

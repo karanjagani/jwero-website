@@ -149,24 +149,70 @@ function faqBlock(faqs) {
 }
 
 // Governance strip — used on several pages, one source of truth.
+// Governance, framed the way the trade actually thinks about it: some work you
+// never want to see again, some you always want to see. The mechanisms
+// (kill switch, quiet hours, action log, data ownership) sit underneath as
+// the proof, not as the opening argument.
 function governanceStrip() {
   return section(
     `${sectionHead(
-      'GOVERNANCE FIRST',
-      'AI that waits for your yes.',
-      'Nothing reaches a customer without passing your rules. This is not a promise in a brochure — approval queues, daily caps and kill switches are enforced in the product.'
+      'TWO SPEEDS, YOUR CHOICE',
+      'Let AI run on its own. Or make it ask you first.',
+      'Some work you never want to see again. Some you always want to see. You decide which is which — agent by agent, branch by branch.'
     )}
-    ${cards(
-      [
-        { icon: '☑', title: 'Approval queues', text: 'Every AI-drafted message, offer or follow-up waits in a queue you review. Approve, edit or reject — one tap each.' },
-        { icon: '◷', title: 'Daily caps & quiet hours', text: 'Hard limits on how many actions AI staff can take per day, per action type — and hours it never messages in.' },
-        { icon: '⏻', title: '5 kill-switch scopes', text: 'Pause one agent, one action type, one branch, one channel, or all AI activity — instantly.' },
-        { icon: '≡', title: 'Action log', text: 'Every AI action is recorded: what it did, why, and who approved it. Autonomy is earned, never assumed.' },
-      ],
-      4
-    )}`,
+    <div class="speeds">
+      <div class="speed speed-run">
+        <p class="speed-title">Let AI run</p>
+        <ul>
+          <li>Posting new designs to your catalogue</li>
+          <li>Answering price questions at midnight</li>
+          <li>Reminding customers an instalment is due</li>
+          <li>Chasing the follow-up nobody had time for</li>
+        </ul>
+      </div>
+      <div class="speed speed-ask">
+        <p class="speed-title">Ask me first</p>
+        <ul>
+          <li>Any discount beyond the limit you set</li>
+          <li>Messages to your biggest families</li>
+          <li>A festival campaign before it goes out</li>
+          <li>Anything at all that you choose to flag</li>
+        </ul>
+      </div>
+    </div>
+    <p class="speed-set">Set it once, per agent, per branch. Change your mind any time.</p>
+    <div class="speed-guards">
+      <div><strong>Stop anything</strong><p>One tap halts one agent, one action type, one branch, one channel, or everything.</p></div>
+      <div><strong>Quiet hours</strong><p>Your business stays silent when you want it silent, inside daily caps you set.</p></div>
+      <div><strong>Full record</strong><p>Every action, and who approved it, kept on file.</p></div>
+      <div><strong>Your data</strong><p>Your customers stay yours. Your books stay in Tally.</p></div>
+    </div>
+    <p class="speed-close">Always in charge. Never in the way.</p>`,
     { tone: 'ink' }
   );
+}
+
+// "Not software with AI added. AI that runs the software." — the six-step loop
+// behind that claim. Step 04 is the one buyers actually care about, so it is
+// visually promoted.
+function agentLoop() {
+  const steps = [
+    ['01', 'Senses', 'Every enquiry, rate change and missed instalment, across every branch and channel.'],
+    ['02', 'Decides', 'Who to answer first, what to offer, what it is worth — against her whole history.'],
+    ['03', 'Drafts', 'The reply, the price, the follow-up, the campaign. Written and ready.'],
+    ['04', 'Runs or asks', 'Sends on its own, or waits for your nod. You choose, agent by agent.'],
+    ['05', 'Executes', 'WhatsApp, Instagram, storefront, phone. In seconds, not mornings.'],
+    ['06', 'Learns', 'What worked goes back on her record. The next decision starts better.'],
+  ];
+  return `<div class="loop">${steps
+    .map(
+      ([n, t, d]) => `
+    <div class="loop-step${n === '04' ? ' is-key' : ''}">
+      <div class="loop-n">${n}</div>
+      <div><h3>${t}</h3><p>${d}</p></div>
+    </div>`
+    )
+    .join('')}</div>`;
 }
 
 // "Because it's one system" — the fixed cross-module proof block every product page carries (BP2 §1.1.3).
@@ -454,7 +500,7 @@ const CUSTOMER_LOGOS = [
 function customerLogos() {
   const chip = (c) => `<div class="logo-chip" title="${esc(c.name)}"><img src="/assets/logos/customers/${c.file}" alt="${esc(c.name)} logo" loading="lazy" width="140" height="60"></div>`;
   return `
-<p class="logo-wall-title">Trusted By</p>
+<p class="logo-wall-title">Trusted by names you already know</p>
 <div class="logo-marquee">
   <div class="logo-track">
     ${CUSTOMER_LOGOS.map(chip).join('')}
@@ -465,7 +511,7 @@ function customerLogos() {
 
 module.exports = {
   esc, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
-  governanceStrip, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockOneRecord,
+  governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,
 };

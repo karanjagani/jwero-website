@@ -215,6 +215,7 @@ function footerHTML() {
         <p class="logo"><img src="/assets/jwero-mark.png" alt="" width="86" height="122"><span class="logo-word">Jwero</span></p>
         <p class="f-tag">${SIGNATURE}<br>${TAGLINE}.</p>
         <p class="f-enemy">“Your software keeps accounts.<br>It doesn’t remember customers.”</p>
+        <p class="f-made">Made with <span aria-hidden="true">❤</span><span class="sr-only">love</span> for Jewellers</p>
       </div>
       ${col('Products', [['/products', 'App grid'], ...NAV.find((m) => m.label === 'Products').groups.flatMap((g) => g.items)])}
       ${col('Solutions', [['/roles','Roles — who uses Jwero'],['/solutions','All 22 solutions'],['/industries/retail','Retail'],['/solutions/single-store','Single store'],['/solutions/multi-store-chains','Multi-store & chains'],['/solutions/luxury-boutique','Luxury & boutique'],['/solutions/bridal','Bridal & wedding'],['/solutions/manufacturers','Manufacturers'],['/solutions/b2b-jewellery','Wholesale & B2B'],['/solutions/d2c-brands','D2C brands'],['/solutions/franchise-networks','Franchise networks'],['/solutions/pain/dead-stock','Dead stock'],['/solutions/pain/lead-leakage','Lead leakage']])}

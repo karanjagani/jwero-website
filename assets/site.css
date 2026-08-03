@@ -349,6 +349,79 @@ main:focus-visible { outline: none; }
 .card h3 { margin-bottom: 8px; }
 .card p { font-size: .94rem; }
 
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- system count ("How many of these are you running today?") ----------
+   The IIJS booth panel's strongest device: the reader counts their own stack
+   and arrives at the conclusion themselves. */
+.syscount { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.syscount span {
+  border: 1px solid var(--line); border-radius: 10px; background: var(--card);
+  padding: 14px 10px; text-align: center; font-size: .84rem; font-weight: 600;
+  color: var(--ink-2); line-height: 1.35;
+}
+.syscount-more { text-align: center; font-weight: 700; color: var(--brand); margin-top: 18px; font-size: .95rem; }
+[data-theme="dark"] .syscount-more { color: var(--brand-strong); }
+.syscount-arrow { text-align: center; color: var(--amber); font-size: 1.5rem; line-height: 1; margin-top: 6px; }
+.syscount-one {
+  margin-top: 14px; background: var(--amber); border-radius: var(--r); padding: 26px 24px; text-align: center;
+  color: #2a1c00;
+}
+.syscount-one strong { display: block; font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -.03em; color: #2a1c00; line-height: 1.1; }
+.syscount-one span { display: block; margin-top: 8px; font-weight: 600; font-size: 1rem; color: #4a3208; }
+@media (max-width: 720px) { .syscount { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- agent loop ---------- */
+.loop { display: grid; gap: 0; }
+.loop-step {
+  display: grid; grid-template-columns: 58px 1fr; gap: 18px; align-items: start;
+  padding: 20px 0; border-top: 1px solid var(--line);
+}
+.loop-step:last-child { border-bottom: 1px solid var(--line); }
+.loop-n { font-size: 1.3rem; font-weight: 800; letter-spacing: -.02em; color: color-mix(in srgb, var(--amber) 85%, var(--ink)); }
+.loop-step h3 { font-size: 1rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 5px; }
+.loop-step p { font-size: .95rem; }
+.loop-step.is-key {
+  background: color-mix(in srgb, var(--amber) 9%, transparent);
+  border: 1px solid color-mix(in srgb, var(--amber) 42%, transparent); border-radius: var(--r);
+  padding: 20px 22px; margin: 6px 0;
+}
+.loop-step.is-key h3 { color: color-mix(in srgb, var(--amber) 80%, var(--ink)); }
+
+/* ---------- two speeds (let AI run / ask me first) ---------- */
+/* This block always renders inside .section-ink, whose generic `p`/`strong`
+   rules would otherwise win on specificity and paint dark-on-dark. Every
+   colour below is therefore scoped to beat them explicitly. */
+.speeds { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.speed { border-radius: var(--r); padding: 26px 24px; border: 1px solid var(--line); }
+.speed-title { font-size: 1.06rem; font-weight: 700; letter-spacing: -.015em; margin-bottom: 14px; }
+.speed ul { list-style: none; display: grid; gap: 10px; }
+.speed li { font-size: .93rem; line-height: 1.45; }
+/* Dark half — light text on the deep band. */
+.section-ink .speed-run { background: #0b1147; border-color: rgba(238,240,255,.14); }
+.section-ink .speed-run .speed-title { color: var(--amber); }
+.section-ink .speed-run li { color: rgba(238,240,255,.88); }
+/* Light half — a genuine white card sitting on the dark section. */
+.section-ink .speed-ask { background: #fff; border-color: transparent; }
+.section-ink .speed-ask .speed-title { color: var(--brand); }
+.section-ink .speed-ask li { color: #565b73; }
+.section-ink .speed-set {
+  margin-top: 20px; text-align: center; background: rgba(238,240,255,.08);
+  border: 1px solid rgba(238,240,255,.16); border-radius: var(--r);
+  padding: 18px 22px; font-weight: 700; color: var(--band-text); font-size: 1rem;
+}
+.speed-guards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 30px; }
+.section-ink .speed-guards strong { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+.section-ink .speed-guards p { font-size: .9rem; color: rgba(238,240,255,.74); }
+.section-ink .speed-close {
+  margin-top: 30px; font-size: clamp(1.3rem, 2.6vw, 1.8rem); font-weight: 800;
+  letter-spacing: -.03em; color: var(--amber); line-height: 1.2;
+}
+@media (max-width: 860px) { .speeds, .speed-guards { grid-template-columns: 1fr; } }
+
 /* ---------- coexistence map ----------
    "Do I have to throw out what I already run?" is the first question every
    jeweller asks. Answering it as three prose cards made the reader assemble
@@ -664,6 +737,8 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: .92rem; backgroun
 .f-col a { display: block; color: rgba(238,240,255,.72); text-decoration: none; font-size: .88rem; padding: 4px 0; }
 .f-col a:hover { color: #fff; }
 .f-tag { font-size: .9rem; color: rgba(238,240,255,.66); margin-top: 12px; }
+.f-made { margin-top: 18px; font-size: .85rem; font-weight: 700; color: rgba(238,240,255,.8); }
+.f-made span[aria-hidden] { color: #ff5a5a; }
 .f-enemy { margin-top: 18px; font-size: 1rem; font-weight: 600; letter-spacing: -.01em; color: var(--brand-light); line-height: 1.5; }
 .f-proof { border-top: 1px solid rgba(238,240,255,.12); margin-top: 40px; padding-top: 24px; font-size: .82rem; color: rgba(238,240,255,.5); line-height: 1.6; }
 .f-bottom { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(238,240,255,.12); margin-top: 24px; padding-top: 20px; font-size: .8rem; color: rgba(238,240,255,.5); }
