@@ -38,6 +38,23 @@ ${L.trustBar('<strong>240+</strong> AI actions your team switches on one at a ti
 ${L.section(L.customerLogos())}
 
 ${L.section(
+  `${L.sectionHead(
+    '',
+    'Your software keeps accounts. It doesn’t remember customers.',
+    'The average jewellery business runs on five or six disconnected tools — and the customer exists as a whole person in none of them.'
+  )}
+  <div class="stack-grid">
+    <div class="stack-item"><strong>Billing software</strong>Knows what she bought. Not why, or when she’ll buy again.</div>
+    <div class="stack-item"><strong>Personal WhatsApp</strong>On a salesperson’s phone. When they leave, her history leaves too.</div>
+    <div class="stack-item"><strong>Catalogue PDFs</strong>Shared manually, with no live prices and no follow-through.</div>
+    <div class="stack-item"><strong>Scheme register</strong>A savings plan tracked on paper — leakage and disputes built in.</div>
+    <div class="stack-item"><strong>Website, if any</strong>A ghost town that doesn’t understand gold-rate pricing.</div>
+    <div class="stack-item"><strong>Marketing agency</strong>Festival blasts into the void — no memory, no attribution.</div>
+  </div>
+  <div class="stack-verdict">Every day on disconnected tools, an occasion passes silently, dead stock ages, a follow-up dies. The business’s most valuable asset, who its customers are, walks out the door with whoever’s holding the phone.</div>`
+, { tone: 'tint' })}
+
+${L.section(
   `${L.sectionHead('', 'What changes for your business.', 'Not features. Outcomes — the ones that show up in revenue, margin and the hours your team gets back.')}
   ${L.impactGrid([
     {
@@ -65,23 +82,6 @@ ${L.section(
       link: { href: '/products/gold-schemes', label: 'See schemes' },
     },
   ])}`
-, { tone: 'tint' })}
-
-${L.section(
-  `${L.sectionHead(
-    '',
-    'Your software keeps accounts. It doesn’t remember customers.',
-    'The average jewellery business runs on five or six disconnected tools — and the customer exists as a whole person in none of them.'
-  )}
-  <div class="stack-grid">
-    <div class="stack-item"><strong>Billing software</strong>Knows what she bought. Not why, or when she’ll buy again.</div>
-    <div class="stack-item"><strong>Personal WhatsApp</strong>On a salesperson’s phone. When they leave, her history leaves too.</div>
-    <div class="stack-item"><strong>Catalogue PDFs</strong>Shared manually, with no live prices and no follow-through.</div>
-    <div class="stack-item"><strong>Scheme register</strong>A savings plan tracked on paper — leakage and disputes built in.</div>
-    <div class="stack-item"><strong>Website, if any</strong>A ghost town that doesn’t understand gold-rate pricing.</div>
-    <div class="stack-item"><strong>Marketing agency</strong>Festival blasts into the void — no memory, no attribution.</div>
-  </div>
-  <div class="stack-verdict">Every day on disconnected tools, an occasion passes silently, dead stock ages, a follow-up dies. The business’s most valuable asset, who its customers are, walks out the door with whoever’s holding the phone.</div>`
 )}
 
 ${L.section(
@@ -117,19 +117,14 @@ ${L.section(
 ${L.governanceStrip()}
 
 ${L.section(
-  `${L.sectionHead('PROOF', 'Counted in the product, not written by marketing.', 'Every number below is measured by the system itself. This is what has to be true for the impact above to happen — plumbing you can inspect, not copy you have to believe.')}
-  ${L.proofStrip()}
-  <div class="card" style="margin-top:24px; text-align:center;">
-    <h3>This website’s chat runs on Jwero.</h3>
-    <p>The WhatsApp button above isn’t a form — it’s our own inbox, answered by our own AI staff, with approvals on. Test it before you take our word for anything else.</p>
-    <a class="card-link" href="#" data-wa="proof">Test our own inbox →</a>
-  </div>`
+  `${L.sectionHead('PROOF', 'Counted in the product, not written by marketing.', 'Every number below is measured by the system itself — plumbing you can inspect, not copy you have to believe.')}
+  ${L.proofStrip()}`
 )}
 
 ${L.section(
   `<div class="grid grid-2" style="align-items:center; gap:48px;">
     <div>
-      ${L.sectionHead('WHAT CAME BACK THIS WEEK?', 'The growth report: the product’s weekly voice.', 'Every week, the owner gets a plain-language report: past customers who returned, appointments booked, revenue brought back. Not a dashboard you must remember to open — an answer that arrives. This is what impact looks like once it’s measured instead of promised.')}
+      ${L.sectionHead('WHAT CAME BACK THIS WEEK?', 'An answer that arrives. Not a dashboard you must remember to open.', 'Every week the owner gets a plain-language report: past customers who returned, appointments booked, revenue brought back.')}
       <a class="btn btn-primary" href="#" data-wa="report">Get a sample report on WhatsApp</a>
     </div>
     <div class="report" data-report>
@@ -169,7 +164,7 @@ ${L.section(`${L.sectionHead('QUESTIONS BUSINESSES ASK', 'Straight answers, befo
   { q: 'Can I integrate this with my existing ERP or website?', a: 'Yes — Tally, Zoho Books, Shopify, WooCommerce, Unicommerce and Meta connectors are built in. <a href="/platform/integrations">See integrations</a>.' },
   { q: 'What kind of impact can I expect?', a: 'It depends on your business, which is why we won’t quote a percentage nobody can verify. What we can show you: faster response, structured follow-up, visible dead stock and disciplined schemes are the same levers that let bigger players out-remember their customers at scale. Run the calculators on your own numbers, or ask for a 30-day growth report so you see your own impact — not someone else’s case study.' },
 ])}
-<p class="cta-note" style="margin-top:18px">More questions? <a href="#" data-wa="faq">Ask on WhatsApp</a>.</p>`)}
+<p class="cta-note" style="margin-top:18px">More questions? <a href="#" data-wa="faq">Ask on WhatsApp</a>.</p>`, { tone: 'tint' })}
 
 ${L.section(L.safeToTryStrip())}
 
