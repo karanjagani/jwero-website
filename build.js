@@ -66,39 +66,39 @@ const NAV = [
     label: 'Products',
     groups: [
       { title: 'Sell', items: [
-        ['/products/whatsapp', 'WhatsApp Commerce'],
-        ['/products/instagram-facebook', 'Instagram & Facebook'],
-        ['/products/ai-sales-agents', 'AI Sales Agents & Voice'],
-        ['/products/storefront', 'Ecommerce Website'],
+        ['/products/whatsapp', 'WhatsApp Commerce', 'Sell on your official number'],
+        ['/products/instagram-facebook', 'Instagram & Facebook', 'DMs into sales, one inbox'],
+        ['/products/ai-sales-agents', 'AI Sales Agents & Voice', 'Replies and follow-up, governed'],
+        ['/products/storefront', 'Ecommerce Website', 'Live-rate jewellery storefront'],
       ]},
       { title: 'Market', items: [
-        ['/products/ads-manager', 'Ads Manager'],
-        ['/products/social-media', 'Social Media Management'],
-        ['/products/optimize', 'Optimize (Website Visitors)'],
+        ['/products/ads-manager', 'Ads Manager', 'Meta, Google & Pinterest'],
+        ['/products/social-media', 'Social Media Management', 'Schedule, inbox, reply'],
+        ['/products/optimize', 'Optimize (Website Visitors)', 'Heatmaps, A/B tests, webchat'],
       ]},
       { title: 'Know', items: [
-        ['/products/crm', 'Jewellery CRM'],
-        ['/products/showroom', 'Showroom Intelligence'],
+        ['/products/crm', 'Jewellery CRM', 'Customer 360 for the trade'],
+        ['/products/showroom', 'Showroom Intelligence', 'Who is on your floor, right now'],
       ]},
       { title: 'Run', items: [
-        ['/products/catalog', 'Catalogue (PIM)'],
-        ['/products/inventory', 'Inventory'],
-        ['/products/billing-finance', 'Billing & Finance'],
-        ['/products/erp', 'ERP, reconsidered'],
-        ['/products/multi-store', 'Multi-store & Franchise'],
+        ['/products/catalog', 'Catalogue (PIM)', 'Purity, certificates, live prices'],
+        ['/products/inventory', 'Inventory', 'Ageing and dead stock'],
+        ['/products/billing-finance', 'Billing & Finance', 'GST invoices at live rates'],
+        ['/products/erp', 'ERP, reconsidered', 'Orders, vendors, job-work'],
+        ['/products/multi-store', 'Multi-store & Franchise', 'Every branch, one platform'],
       ]},
       { title: 'Manage', items: [
-        ['/products/hr-payroll', 'HR & Payroll'],
-        ['/products/repairs-service', 'Repairs & After-Sales'],
-        ['/products/purchase-vendors', 'Purchase & Vendors'],
+        ['/products/hr-payroll', 'HR & Payroll', 'Attendance, leave, onboarding'],
+        ['/products/repairs-service', 'Repairs & After-Sales', 'Custody chain for every repair'],
+        ['/products/purchase-vendors', 'Purchase & Vendors', 'POs, GRN, vendor portal'],
       ]},
       { title: 'Grow', items: [
-        ['/products/gold-schemes', 'Gold Savings Schemes'],
-        ['/products/digital-gold', 'Digital Gold'],
-        ['/products/loyalty', 'Loyalty & Referrals'],
-        ['/products/segmentation', 'Customer Segmentation'],
-        ['/products/journeys', 'Customer Journeys'],
-        ['/products/campaigns', 'Campaigns & Broadcasts'],
+        ['/products/gold-schemes', 'Gold Savings Schemes', 'Enrolment to maturity'],
+        ['/products/digital-gold', 'Digital Gold', 'Buy gold in grams'],
+        ['/products/loyalty', 'Loyalty & Referrals', 'Tiers, rules, redemptions'],
+        ['/products/segmentation', 'Customer Segmentation', 'Rule-based audiences'],
+        ['/products/journeys', 'Customer Journeys', 'Approval-gated automation'],
+        ['/products/campaigns', 'Campaigns & Broadcasts', 'WhatsApp, email, SMS, push'],
       ]},
     ],
     footer: ['Every module reads the same customer record. That’s the OS.', '/platform'],
@@ -178,27 +178,41 @@ const NAV = [
   },
 ];
 
+const { icon } = require('./lib');
+
 function navHTML() {
+  const link = ([h, l, d]) => `<a href="${h}"><strong>${l}</strong>${d ? `<span>${d}</span>` : ''}</a>`;
   const dd = (m) => {
     if (m.href) return `<a class="nav-link" href="${m.href}">${m.label}</a>`;
-    const inner = m.groups
-      ? m.groups.map((g) => `<div class="dd-group"><p class="dd-title">${g.title}</p>${g.items
-          .map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</div>`).join('') +
-          (m.footer ? `<a class="dd-footer" href="${m.footer[1]}">${m.footer[0]} →</a>` : '')
-      : m.items.map(([h, l, d]) => `<a href="${h}"><strong>${l}</strong>${d ? `<span>${d}</span>` : ''}</a>`).join('');
-    return `<details class="nav-dd"><summary class="nav-link">${m.label}</summary><div class="dd-panel${m.groups ? ' dd-cols' : ''}">${inner}</div></details>`;
+    const body = m.groups
+      ? m.groups.map((g) => `<div class="dd-group"><p class="dd-title">${g.title}</p>${g.items.map(link).join('')}</div>`).join('')
+      : m.items.map(link).join('');
+    // Panel width follows the content: six-column menus span the header,
+    // shorter ones stay compact under the nav.
+    const size = m.groups ? (m.groups.length > 3 ? ' dd-wide' : ' dd-mid') : ' dd-list';
+    const cols = m.groups ? ` style="--cols:${m.groups.length}"` : '';
+    return `<details class="nav-dd"><summary class="nav-link">${m.label}${icon('updown')}</summary><div class="dd-panel${size}"><div class="dd-box"><div class="dd-cols"${cols}>${body}</div>${
+      m.footer ? `<a class="dd-footer" href="${m.footer[1]}">${m.footer[0].replace(/\s*→$/, '')}${icon('arrow')}</a>` : ''
+    }</div></div></details>`;
   };
   return `
-<div class="ann-bar"><div class="container">${TAGLINE} — <a href="#" data-wa="announce">chat with us on WhatsApp →</a></div></div>
 <header class="site-header">
-  <div class="container header-row">
+  <div class="header-row">
     <a class="logo" href="/" aria-label="Jwero home"><img src="/assets/jwero-mark.png" alt="" width="86" height="122"><span class="logo-word">Jwero</span></a>
-    <nav class="main-nav" aria-label="Main">${NAV.map(dd).join('')}</nav>
+    <nav class="main-nav" aria-label="Main">
+      ${NAV.map(dd).join('')}
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="tel:+919169959959">Call us</a>
+        <a class="btn btn-ghost" href="/book-demo">Book a demo</a>
+        <a class="btn btn-primary" href="#" data-wa="header">Chat on WhatsApp</a>
+      </div>
+    </nav>
     <div class="header-cta">
-      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
-      <a class="btn btn-wa" href="#" data-wa="header">WhatsApp</a>
-      <a class="btn btn-primary" href="/book-demo">Book a demo</a>
-      <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="btn btn-ghost btn-sm" href="#" data-wa="header">WhatsApp</a>
+      <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
+      <button class="theme-toggle icon-btn" type="button" aria-label="Toggle dark mode">${icon('moon')}</button>
+      <a class="btn btn-primary btn-sm header-float" href="#" data-wa="header">Chat on WhatsApp</a>
+      <button class="nav-burger icon-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
 </header>`;
@@ -209,24 +223,28 @@ function footerHTML() {
     `<div class="f-col"><p class="f-title">${t}</p>${links.map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</div>`;
   return `
 <footer class="site-footer">
-  <div class="container">
-    <div class="f-grid">
+  <div class="f-wrap">
+    <div class="f-top">
       <div class="f-brand">
         <p class="logo"><img src="/assets/jwero-mark.png" alt="" width="86" height="122"><span class="logo-word">Jwero</span></p>
         <p class="f-tag">${SIGNATURE}<br>${TAGLINE}.</p>
         <p class="f-enemy">“Your software keeps accounts.<br>It doesn’t remember customers.”</p>
         <p class="f-made">Made with <span aria-hidden="true">❤</span><span class="sr-only">love</span> for Jewellers</p>
       </div>
+      <div class="f-grid">
       ${col('Products', [['/products', 'App grid'], ...NAV.find((m) => m.label === 'Products').groups.flatMap((g) => g.items)])}
       ${col('Solutions', [['/roles','Roles — who uses Jwero'],['/solutions','All 22 solutions'],['/industries/retail','Retail'],['/solutions/single-store','Single store'],['/solutions/multi-store-chains','Multi-store & chains'],['/solutions/luxury-boutique','Luxury & boutique'],['/solutions/bridal','Bridal & wedding'],['/solutions/manufacturers','Manufacturers'],['/solutions/b2b-jewellery','Wholesale & B2B'],['/solutions/d2c-brands','D2C brands'],['/solutions/franchise-networks','Franchise networks'],['/solutions/pain/dead-stock','Dead stock'],['/solutions/pain/lead-leakage','Lead leakage']])}
       ${col('Resources', [['/faq','FAQ — every objection'],['/blog','Blog'],['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/tools/whatsapp-revenue-estimator','WhatsApp Revenue Estimator'],['/tools/gold-loss-calculator','Gold-Loss Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/partners','Partners'],['/customers','Customer proof']])}
+      <div class="f-stack">
       ${col('Company', [['/company','About'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
       ${col('Trust', [['/trust/security','Security'],['/roadmap','Roadmap'],['/legal/privacy','Privacy'],['/legal/terms','Terms'],['/legal/dpdp','DPDP statement']])}
+      </div>
+      </div>
     </div>
     <div class="f-proof">90+ customer-record fields · 240+ governed AI actions · AI voice in 14 languages · 5 kill-switch scopes · Tally, Zoho Books, Shopify, WooCommerce, Unicommerce &amp; Meta connectors built in.</div>
     <div class="f-bottom">
       <p>© <span data-year></span> Jwero. All rights reserved.</p>
-      <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank">${l}</a>`).join(' · ')} · <a href="mailto:care@jwero.ai">care@jwero.ai</a></p>
+      <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank">${l}</a>`).join('')}<a href="mailto:care@jwero.ai">care@jwero.ai</a></p>
       <p>This site runs on Jwero — the chat button is the product.</p>
     </div>
     <p class="f-legal">Jwero is a product of ${LEGAL_ENTITY} · CIN ${LEGAL_CIN} · Registered office: ${LEGAL_ADDRESS}</p>
@@ -289,8 +307,8 @@ ${robotsMeta}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="${SITE}/assets/og-default.png">
 <link rel="icon" type="image/png" href="${FAVICON}">
-<meta name="theme-color" content="#0013b7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0a0b12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0c12" media="(prefers-color-scheme: dark)">
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
 <script>(function(){try{var t=localStorage.getItem('jwero-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
@@ -299,9 +317,9 @@ ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</s
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 ${navHTML()}
-${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
-${page.body}
+${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
+${page.body.replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
 </main>
 ${footerHTML()}
 <script src="/assets/site.js" defer></script>

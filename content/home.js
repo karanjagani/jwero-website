@@ -24,6 +24,7 @@ const home = {
   ],
   body: `
 ${L.hero({
+  panel: true,
   eyebrow: 'THE AUTONOMOUS JEWELLERY OS',
   h1: 'Fifty systems become one. Run by AI agents.',
   sub: 'Your whole jewellery business — customers, catalogue, WhatsApp, billing, gold schemes — on one record, worked around the clock by AI that runs on its own or asks you first. You choose which, agent by agent.',

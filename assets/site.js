@@ -153,43 +153,88 @@
   });
 
   // --- nav ---------------------------------------------------------
+  var body = document.body;
   var burger = document.querySelector('.nav-burger');
-  if (burger) burger.addEventListener('click', function () {
-    var open = document.body.classList.toggle('nav-open');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  // one dropdown open at a time; close on outside click
   var dds = Array.prototype.slice.call(document.querySelectorAll('details.nav-dd'));
+  // Below this width the nav is the full-screen menu (matches the CSS breakpoint).
+  var wideNav = window.matchMedia('(min-width: 1181px)');
+  function closeMenus() { dds.forEach(function (d) { d.open = false; }); }
+  function setMenu(open) {
+    body.classList.toggle('nav-open', open);
+    if (burger) {
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    if (!open) closeMenus();
+  }
+  if (burger) burger.addEventListener('click', function () { setMenu(!body.classList.contains('nav-open')); });
+  wideNav.addEventListener('change', function () { setMenu(false); });
+  // one dropdown open at a time; close on outside click or Escape
   dds.forEach(function (d) {
     d.addEventListener('toggle', function () {
       if (d.open) dds.forEach(function (o) { if (o !== d) o.open = false; });
     });
   });
   document.addEventListener('click', function (e) {
-    if (!e.target.closest('.nav-dd')) dds.forEach(function (d) { d.open = false; });
+    if (!e.target.closest('.nav-dd')) closeMenus();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    closeMenus();
+    if (body.classList.contains('nav-open')) { setMenu(false); burger.focus(); }
   });
   // desktop: open on hover, not just click (closed <details> content can't be
   // reliably forced visible with a CSS display override, so toggle the real
   // `open` property on mouseenter/mouseleave instead)
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     dds.forEach(function (d) {
-      d.addEventListener('mouseenter', function () { d.open = true; });
-      d.addEventListener('mouseleave', function () { d.open = false; });
+      d.addEventListener('mouseenter', function () { if (wideNav.matches) d.open = true; });
+      d.addEventListener('mouseleave', function () { if (wideNav.matches) d.open = false; });
       // Hover already controls open/close here — without this, clicking the
       // summary (which people do reflexively) fires the browser's native
       // toggle on top of the hover state and immediately closes the menu
       // that just opened, before a sub-link can be clicked.
       var summary = d.querySelector('summary');
-      if (summary) summary.addEventListener('click', function (e) { e.preventDefault(); });
+      if (summary) summary.addEventListener('click', function (e) { if (wideNav.matches) e.preventDefault(); });
     });
   }
+
+  // --- header scroll state -------------------------------------------
+  // Scrolling down dissolves the bar to the mark plus one action; scrolling
+  // back up (or reaching the top) brings the full nav back. While the mark
+  // floats over a brand panel it flips to white so it stays legible.
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.panel, .syscount-one'));
+  var lastY = window.scrollY, ticking = false;
+  function overPanel() {
+    for (var i = 0; i < panels.length; i++) {
+      var r = panels[i].getBoundingClientRect();
+      if (r.top < 36 && r.bottom > 36) return true;
+    }
+    return false;
+  }
+  function onScroll() {
+    ticking = false;
+    var y = window.scrollY;
+    var menuOpen = dds.some(function (d) { return d.open; });
+    if (y < 80) body.classList.remove('is-scrolled');
+    else if (y > lastY + 4 && !menuOpen) body.classList.add('is-scrolled');
+    else if (y < lastY - 4) body.classList.remove('is-scrolled');
+    body.classList.toggle('on-panel', overPanel());
+    lastY = y;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
 
   // --- misc --------------------------------------------------------
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
   // --- scroll reveal -------------------------------------------------
+  // Cells share their hairlines, so a bordered group fades in as one piece.
   var revealTargets = document.querySelectorAll(
-    '.section .card, .section .stat, .router-card, .pillar, .impact-card, .jtbd-item, .section .mock, .onerecord-grid, .verdict-box .v-cell, .tier'
+    '.section .cells, .section .router-grid, .section .stats, .section .pillars, .section .impact-grid, .section .ladder, .section .tiers, ' +
+    '.section .jtbd, .section .verdict-box, .section .loop, .section .coexist, .section .mock, .section .report, .stage .mock'
   );
   if (revealTargets.length && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -197,9 +242,8 @@
         if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealTargets.forEach(function (el, i) {
+    revealTargets.forEach(function (el) {
       el.classList.add('reveal');
-      el.style.transitionDelay = (i % 4) * 60 + 'ms';
       io.observe(el);
     });
   }
