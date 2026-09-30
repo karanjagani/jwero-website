@@ -8,9 +8,9 @@ const productsIndex = {
   body: `
 ${L.hero({
   eyebrow: 'PRODUCTS',
-  h1: 'The app grid of one operating system.',
+  h1: 'Every product Jwero makes — and the one record they all share.',
   sub: 'Every product below reads and writes the same customer record, catalogue and inventory truth. Grouped by what it promises, not what department bought it.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'products' },
+  primary: { href: '#', label: 'Tell me which three products matter first', wa: 'products' },
   secondary: { href: '/platform', label: 'See the platform tour' },
 })}
 
@@ -20,6 +20,7 @@ ${L.section(
     { title: 'WhatsApp Commerce', text: 'Your full catalogue, checkout and payment reminders — inside the app your customers already open 50 times a day.', link: { href: '/products/whatsapp', label: 'Explore' } },
     { title: 'Instagram & Facebook', text: 'Turn DMs and story replies into orders without leaving Instagram.', link: { href: '/products/instagram-facebook', label: 'Explore' } },
     { title: 'AI Sales Agents & Voice', text: 'An AI workforce that drafts follow-ups, birthday invites and win-backs — every action waits in your approval queue.', link: { href: '/products/ai-sales-agents', label: 'Explore' } },
+    { title: 'Video Counter & Appointments', text: 'Turn a WhatsApp or web chat into a video call in one tap, or let her self-book against real availability — waiting room, recording with consent, reminders.', link: { href: '/products/meetings', label: 'Explore' } },
     { title: 'Ecommerce Website', text: 'A native jewellery ecommerce website: live-rate pricing, cart, wishlist, checkout, blog and reviews — for businesses that don’t have one yet, or want the jewellery-native alternative.', link: { href: '/products/storefront', label: 'Explore' } },
   ], 4)}`
 )}
@@ -47,8 +48,10 @@ ${L.section(
   ${L.cards([
     { title: 'Catalogue (PIM)', text: 'One catalogue: purity, stones, certificates, HUID — published everywhere from one place.', link: { href: '/products/catalog', label: 'Explore' } },
     { title: 'Inventory', text: 'Every piece: weight, purity, certificate, location, age — one inventory truth across branches.', link: { href: '/products/inventory', label: 'Explore' } },
-    { title: 'Billing & Finance', text: 'GST invoices at the live gold rate, receivables and payment reminders, plus scan-to-sale POS checkout. Returns and cash-drawer day-close: on the roadmap.', link: { href: '/products/billing-finance', label: 'Explore' } },
-    { title: 'ERP, reconsidered', text: 'Orders, purchases, repairs and manufacturing job-work — jewellery-native, sharing one truth.', link: { href: '/products/erp', label: 'Explore' } },
+    { title: 'Counter POS', text: 'Scan-to-sale at the live rate, weight-based sales, old-gold exchange vouchers, returns, register shifts and cash day-close — and it keeps ringing sales through a dropout.', link: { href: '/products/pos', label: 'Explore' } },
+    { title: 'Billing & Finance', text: 'GST invoices at the live gold rate, receivables and payment reminders — every sale, return and expense posted to a double-entry ledger that still bridges to Tally.', link: { href: '/products/billing-finance', label: 'Explore' } },
+    { title: 'ERP, reconsidered', text: 'Orders, purchases, repairs and job-work — jewellery-native, sharing one truth.', link: { href: '/products/erp', label: 'Explore' } },
+    { title: 'Manufacturing & Workshop', text: 'BOM, routings, issue desk, stage-wise wastage norms with a metal-closure check, QC, and a karigar khata that settles wages against gold.', link: { href: '/products/manufacturing', label: 'Explore' } },
     { title: 'Multi-store & Franchise', text: 'One catalogue, one customer base, per-branch stock and performance — however many stores you run.', link: { href: '/products/multi-store', label: 'Explore' } },
   ], 4)}`
 , { tone: 'tint' })}
@@ -67,6 +70,7 @@ ${L.section(
   ${L.cards([
     { title: 'Gold Savings Schemes', text: 'Enrol, collect, remind and mature gold schemes digitally — balances your customers can see.', link: { href: '/products/gold-schemes', label: 'Explore' } },
     { title: 'Digital Gold', text: 'Sell gold savings digitally with KYC and OTP-verified closures built in.', link: { href: '/products/digital-gold', label: 'Explore' } },
+    { title: 'Girvi / Gold Loans', text: 'Pledge intake with a printed receipt, interest schemes that accrue on schedule, collection, renewal and release — posted to the books, on the customer record.', link: { href: '/products/girvi', label: 'Explore' } },
     { title: 'Loyalty & Referrals', text: 'Tiers, earning rules and referral tracking — reward the customers who keep coming back and bringing others.', link: { href: '/products/loyalty', label: 'Explore' } },
     { title: 'Customer Segmentation', text: 'Live, rule-based audiences from RFM tier, tags and custom fields — reachable count and revenue shown before you save.', link: { href: '/products/segmentation', label: 'Explore' } },
     { title: 'Customer Journeys', text: 'Visual, multi-step automation: triggers, branches, wait steps — with a human-approval gate before anything reaches a customer.', link: { href: '/products/journeys', label: 'Explore' } },

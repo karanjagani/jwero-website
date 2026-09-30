@@ -20,7 +20,7 @@ const pricing = {
   body: `
 ${L.hero({
   eyebrow: 'PRICING',
-  h1: 'Priced like growth. Not like software maintenance.',
+  h1: 'Three tiers, named after how much the AI is allowed to do. Start small, export any time.',
   sub: 'Three tiers, named after how the AI earns your trust. Start where you are comfortable; move up when the results say so. No hidden costs, no hostage clauses, export-anytime.',
   primary: { href: '#', label: 'Get a straight price on WhatsApp', wa: 'pricing' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
@@ -143,7 +143,7 @@ const company = {
 ${L.hero({
   eyebrow: 'ABOUT',
   h1: 'The most personal trade on earth deserved better software.',
-  sub: 'Jewellery is bought for weddings, births and promises — and sold, everywhere on earth, through relationships. Yet the industry’s software only ever learned to keep records. We started Jwero to build the operating system that remembers people, not just transactions.',
+  sub: 'Jwero is built by Mahendra, Karan and Manav Jagani — three people you can look up before you trust them with your customer list — for the most relationship-driven trade there is.',
 })}
 
 ${L.section(
@@ -227,8 +227,8 @@ const enterprise = {
   body: `
 ${L.hero({
   eyebrow: 'ENTERPRISE',
-  h1: 'For networks, not just counters.',
-  sub: 'Multi-store chains, franchise networks, wholesalers and manufacturers get a specialist evaluation track: a named contact, a buying-committee kit, and a staged rollout that starts with one pilot branch.',
+  h1: 'One system for a hundred branches — with governance that scales to every counter.',
+  sub: 'Multi-store chains, franchise networks, wholesalers and manufacturers get a specialist evaluation track: a named contact, a buying-committee kit, and a staged rollout that starts with one pilot branch. Built India-first — GST, HUID, live Indian rates, +91 numbers — with multi-currency at the counter for showrooms abroad.',
   primary: { href: '/book-demo', label: 'Talk to a specialist' },
   secondary: { href: '#', label: 'Or start on WhatsApp', wa: 'enterprise' },
 })}
@@ -319,6 +319,10 @@ ${L.section(
       </select>
       <label for="f-city">City & country</label>
       <input id="f-city" name="city" type="text" autocomplete="address-level2">
+      <label for="f-reach">How should we reach you?</label>
+      <select id="f-reach" name="reach"><option>WhatsApp</option><option>Call me</option></select>
+      <label for="f-time">Best time (if a call)</label>
+      <input id="f-time" name="time" type="text" placeholder="e.g. weekdays after 7pm">
       <button class="btn btn-primary" type="submit">Request my demo slot</button>
       <p class="form-ok">Opening WhatsApp with your details filled in — press send, and we’ll confirm your slot within business hours.</p>
       <p class="cta-note">No spam, no drip campaigns. One confirmation, one demo, your decision.</p>

@@ -8,7 +8,7 @@ const BC = (label) => [['Home', '/'], ['Roles', '/roles'], [label]];
 const ownerFaqs = [
   { q: 'I already carry the whole business in my head. Why do I need this?', a: 'Because your head is a single point of failure — a sick day, a family emergency or a second store means the memory doesn’t scale. Jwero puts the customer relationships, the stock truth and the pending decisions on a record the business owns, so the shop still runs the way you’d run it even when you’re not the one answering.' },
   { q: 'Will I lose control of pricing and messaging if AI is drafting things?', a: 'No — every AI-drafted message, offer or price exception sits in an approval queue until you or someone you’ve authorised taps approve. Daily caps, quiet hours and a 5-scope kill switch mean you decide how much rope the AI staff get, and you can pull it back instantly.' },
-  { q: 'Does Jwero replace my billing counter?', a: 'Mostly, for the sale itself: scan or search a piece, cart it, price it at the live gold rate, apply a discount and generate the GST invoice, all in Jwero. What it doesn’t do yet is sales returns and cash-drawer day-close — that reconciliation still runs on your existing counter until it ships.' },
+  { q: 'Does Jwero replace my billing counter?', a: 'Yes. Scan or search a piece, price it at the live gold rate, apply a discount, take old gold in exchange, generate the GST invoice; returns and a reconciled cash day-close are in the same counter. Your statutory books can still live in Tally through the bridge. <a href="/products/pos">See the Counter POS</a>.' },
   { q: 'What actually changes for me day to day?', a: 'Enquiries get answered on WhatsApp even after closing, follow-ups draft themselves instead of being forgotten, and you get a weekly plain-language report instead of reconstructing the picture from memory and a notebook.' },
 ];
 
@@ -23,7 +23,7 @@ ${L.hero({
   eyebrow: 'LEADERSHIP · OWNER',
   h1: 'You built this business on memory. Now it has a backup.',
   sub: 'Right now, if you’re not in the shop, half the context leaves with you — who’s due a call, what’s ageing on the shelf, what a regular customer actually likes. Jwero puts that memory on a record the business owns, with a governed AI workforce handling the repetitive parts while you keep every real decision.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
@@ -116,7 +116,7 @@ ${L.hero({
   eyebrow: 'LEADERSHIP · MULTI-STORE & CHAIN OWNER',
   h1: 'Stop calling every branch to know what happened today.',
   sub: 'Every branch you add multiplies the phone calls, the pricing drift and the version of the truth you’re working from. Jwero gives every store the same system with a branch-aware structure — central control where you want it, local exceptions that still route through your approval.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
@@ -203,7 +203,7 @@ ${L.hero({
   eyebrow: 'LEADERSHIP · NEXT-GEN SUCCESSOR',
   h1: 'Inherit the business. And the memory that built it.',
   sub: 'The hardest part of taking over isn’t the stock or the counter — it’s that your parents’ generation knows every customer by instinct, and that knowledge rarely transfers cleanly. Jwero turns that memory into a record you can actually inherit, while keeping the trust-based way the business has always run.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 

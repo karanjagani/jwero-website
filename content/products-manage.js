@@ -25,7 +25,7 @@ ${L.hero({
   eyebrow: 'REPAIRS & AFTER-SALES SERVICE',
   h1: 'Every repair leaves a paper trail your customer can trust.',
   sub: 'A repair ticket that just says "in progress" is a liability the moment a customer asks where their gold went. Jwero tracks every handoff, reconciles weight in against weight out, and won\'t let a re-hallmark-eligible job reach delivery unaddressed.',
-  primary: { href: '#', label: 'See repair tracking', wa: 'repairsservice' },
+  primary: { href: '#', label: 'Show me a repair’s custody chain', wa: 'repairsservice' },
   secondary: { href: '/products/erp', label: 'See the full ERP' },
 })}
 
@@ -110,7 +110,7 @@ ${L.hero({
   eyebrow: 'PURCHASE ORDERS & VENDOR MANAGEMENT',
   h1: 'Your suppliers stop calling to ask "where\'s my payment."',
   sub: 'Most jewellery ERPs stop at raising a purchase order. Jwero gives vendors their own login — to see their POs, submit invoices against them, and check payment status themselves — so the routine calls disappear.',
-  primary: { href: '#', label: 'See the vendor portal', wa: 'purchasevendors' },
+  primary: { href: '#', label: 'Show me the vendor portal', wa: 'purchasevendors' },
   secondary: { href: '/products/erp', label: 'See the full ERP' },
 })}
 
@@ -122,6 +122,7 @@ ${L.section(
     { title: 'Purchase bills', text: 'Bill the PO and GRN together, so what you\'re paying for matches what was ordered and received.' },
     { title: 'Returns & credit notes', text: 'Purchase returns and vendor credit notes close the loop when something doesn\'t match or needs to go back.' },
     { title: 'Vendor master', text: 'One record per supplier, with configurable per-vendor pricing rules.' },
+    { title: 'Design Bank', text: 'A supplier shares a design; you adopt it into your catalogue with your own templates and master rules applied at the door — no retyping, no rule-breaking SKUs.' },
   ], 3)}`
 )}
 

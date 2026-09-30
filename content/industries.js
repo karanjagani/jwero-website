@@ -14,7 +14,7 @@ ${L.hero({
   eyebrow: 'INDUSTRY · RETAIL',
   h1: 'Jewellery retail, however you sell it.',
   sub: 'From a single counter to a hundred-branch chain, from bridal specialists to lab-grown D2C brands — every retail jewellery business runs on the same three pillars. Remember every customer, sell on every channel, run the whole operation on one truth.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'industries-retail' },
+  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'industries-retail' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 

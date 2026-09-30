@@ -23,8 +23,8 @@ ${L.hero({
   eyebrow: 'CUSTOMER & GROWTH · CRM EXECUTIVE',
   h1: 'Stop guessing who to call. Start knowing.',
   sub: 'Today, most follow-up lists are built from memory, a spreadsheet, or whoever comes to mind — and half the base goes untouched between festivals. Jwero drafts who to reach and what to say from real customer data, and waits for you to say yes.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
+  secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
 
 ${L.section(
@@ -115,8 +115,8 @@ ${L.hero({
   eyebrow: 'CUSTOMER & GROWTH · MARKETING MANAGER',
   h1: 'One campaign, every channel, one customer record.',
   sub: 'Today, a WhatsApp broadcast, an Instagram DM and a store visit from the same customer look like three different people across three different tools. Jwero puts every channel on one record, so you can see what actually worked instead of guessing.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
+  secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
 
 ${L.section(
@@ -202,8 +202,8 @@ ${L.hero({
   eyebrow: 'CUSTOMER & GROWTH · E-COMMERCE / D2C MANAGER',
   h1: 'Shopify for the storefront. Jwero for what it can’t do.',
   sub: 'A gold-rate-priced storefront, WhatsApp orders and Instagram DMs usually run as three disconnected systems today, each with its own idea of what’s in stock. Jwero syncs them into one inventory and one customer record — without asking you to leave Shopify.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
+  secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
 
 ${L.section(

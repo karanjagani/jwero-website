@@ -8,7 +8,7 @@ const toolsIndex = {
   body: `
 ${L.hero({
   eyebrow: 'TOOLS & CALCULATORS',
-  h1: 'Turn a felt pain into a number.',
+  h1: 'Four calculators that put a rupee figure on dead stock, gold loss, scheme revenue and unanswered WhatsApp.',
   sub: 'No email gate, no signup — sliders, a result, and the option to get it on WhatsApp. Assumptions are published so the math is yours to check.',
 })}
 ${L.section(

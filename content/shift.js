@@ -1,0 +1,341 @@
+// "The shift" — the one story every page tells before anything else:
+// what the reader does today, what disappears with Jwero, and what now
+// happens at the speed of thought. Keyed by slug; prefixes are fallbacks.
+// Each entry: title, today, gone, now, tempo [before, after].
+// Every "now" line restates a capability that exists on that page.
+
+const SHIFTS = {
+  // ---------------------------------------------------------------- home & platform
+  index: {
+    title: 'From fifty logins to one thought.',
+    today: 'You carry the business in your head, on WhatsApp, in a register and across half a dozen tools that never talk. Every question means a call.',
+    gone: 'Re-entering the same customer in four places. Repricing bills by hand when the rate moves. Waiting till morning to answer a 9pm enquiry.',
+    now: 'One record for every customer, priced at this minute’s rate, answered in minutes by AI that acts on its own or asks you first — and everything you ask is one screen away.',
+    tempo: ['Next morning', 'Within minutes'],
+  },
+  platform: {
+    title: 'From software you check to a system that keeps up.',
+    today: 'You open one app to see stock, another for bills, WhatsApp for customers, and Excel to stitch them together before you can decide anything.',
+    gone: 'Exports, reconciliations and the weekly “where are we” call.',
+    now: 'Every module reads and writes the same record, so what a customer asked, what she bought and what it cost are true everywhere the moment they happen.',
+    tempo: ['Weekly reconciliation', 'Real time'],
+  },
+  'platform/customer-memory': {
+    title: 'From a salesman’s memory to the business’s record.',
+    today: 'The best salesperson remembers the family, the occasion and the budget. When they leave, so does the customer.',
+    gone: 'Twenty years of relationships walking out the door with a phone.',
+    now: '90+ fields on every customer — occasions, taste, scheme balance, every conversation — owned by the business and read by every module before anyone replies.',
+    tempo: ['One person’s head', 'Everyone’s screen'],
+  },
+  'platform/pricing-engine': {
+    title: 'From the calculator to the rule.',
+    today: 'Rate, making charge, stone and discount are worked out at the counter, differently by whoever is standing there.',
+    gone: 'Stale catalogue prices, mis-priced quotes after a rate move, and the argument about who allowed that discount.',
+    now: 'One pricing rule resolves every price — catalogue, WhatsApp, counter, storefront — from the live rate, with overrides routed through an approval.',
+    tempo: ['Per bill, by hand', 'Every price, instantly'],
+  },
+  'platform/ai-workforce': {
+    title: 'From doing everything to deciding what runs.',
+    today: 'Follow-ups, reminders and replies wait for a free moment that never comes.',
+    gone: 'The follow-up nobody had time for. The 11pm enquiry that bought elsewhere by morning.',
+    now: 'An AI workforce drafts the work; you set which actions run on their own and which wait for your tap — inside daily caps, quiet hours and a five-scope kill switch.',
+    tempo: ['When someone remembers', 'As it happens'],
+  },
+  'platform/integrations': {
+    title: 'From switching tools to one truth.',
+    today: 'Tally for books, Shopify for the site, a WhatsApp tool, a catalogue app — and someone copying between them.',
+    gone: 'Double entry, mismatched stock and the month-end hunt for which number is right.',
+    now: 'Tally, Zoho Books, Shopify, WooCommerce, Unicommerce, Razorpay and Meta connect to the same record; stock and orders sync both ways.',
+    tempo: ['Copy-paste at month end', 'Two-way sync'],
+  },
+  'platform/integrations/tally': {
+    title: 'From re-keying to a bridge.',
+    today: 'Sales are entered in Jwero, then entered again in Tally by your accountant.',
+    gone: 'The second entry, and the mismatch it creates.',
+    now: 'Sales, returns and payments cross the bridge to Tally; your accountant’s world does not change.',
+    tempo: ['Entered twice', 'Entered once'],
+  },
+  'platform/onboarding': {
+    title: 'From a six-month project to a few days.',
+    today: 'Software changes are dreaded: months of setup, a consultant, and the season lost to migration.',
+    gone: 'The rip-and-replace. The training marathon. The change during Diwali.',
+    now: 'Customers imported, your WhatsApp number connected, catalogue published and approvals on from day one — with a written change-freeze around your season.',
+    tempo: ['Months', 'Days'],
+  },
+  'trust/security': {
+    title: 'From a vendor holding your data to owning it outright.',
+    today: 'Customer data sits in whichever tool captured it, exportable only if the vendor allows.',
+    gone: 'Hostage data and the fear of what happens if you leave.',
+    now: 'Every business in its own isolated database, exportable any time, with role-based access your team controls.',
+    tempo: ['Ask the vendor', 'Export yourself'],
+  },
+  roadmap: {
+    title: 'From guessing what ships to reading it.',
+    today: 'Every vendor promises the feature you asked about is “coming soon”.',
+    gone: 'The surprise after signing.',
+    now: 'Shipped, rolling out and not-yet, in public, updated as the product moves.',
+    tempo: ['After signing', 'Before you buy'],
+  },
+  pricing: {
+    title: 'From paying for six tools to paying for one outcome.',
+    today: 'A WhatsApp tool, a catalogue app, an SMS vendor, a website subscription and an agency retainer — none of which knows the customer.',
+    gone: 'Five invoices and the invisible cost of customers lost to silence.',
+    now: 'Three tiers named after how much the AI is allowed to do — start where you are comfortable, move up when the results say so, export any time.',
+    tempo: ['Six bills', 'One'],
+  },
+  migration: {
+    title: 'From fear of switching to a supervised pilot.',
+    today: 'Your data is a mess across tools and you assume that disqualifies you.',
+    gone: 'The clean-up nobody starts because it looks impossible.',
+    now: 'We import what exists, reconcile during onboarding, and you evaluate on your own customers — not a demo dataset.',
+    tempo: ['Someday', 'This season'],
+  },
+  enterprise: {
+    title: 'From branch reports to one live picture.',
+    today: 'Head office learns what happened in each branch a week later, from a report someone assembled.',
+    gone: 'The Monday roll-up call.',
+    now: 'Per-branch stock, pricing and performance on one record, with governance that scales to every counter.',
+    tempo: ['A week later', 'Now'],
+  },
+
+  'why-an-os': {
+    title: 'From tools that keep records to a system that remembers.',
+    today: 'Billing knows the invoice, WhatsApp knows the chat, the catalogue app knows the design. Nobody knows the customer.',
+    gone: 'The second copy of every customer and every piece — and the reconciliation that loses her.',
+    now: 'One row, read and written by every module; AI that drafts from it and acts only as far as you allow.',
+    tempo: ['Synced', 'One row'],
+  },
+  'how-it-goes': {
+    title: 'From “someone will get back to you” to a sequence with dates.',
+    today: 'You message a vendor and wait. A call, a deck, a proposal, a month.',
+    gone: 'The mystery between the first message and the first result.',
+    now: 'A reply in minutes, a 15-minute call, a pilot on your own data, a written plan, go-live inside two weeks, a growth report at day 30.',
+    tempo: ['Weeks of waiting', 'Day 30 report'],
+  },
+
+  // ---------------------------------------------------------------- products · sell
+  'products/whatsapp': {
+    title: 'From a personal phone to a counter that never closes.',
+    today: 'Enquiries land on a salesperson’s WhatsApp; prices are typed from memory; the thread is lost when they leave.',
+    gone: 'Stale quotes, banned bulk-messaging numbers, and follow-ups that depend on someone remembering.',
+    now: 'Your official number, live-rate catalogues, AI-drafted replies in minutes, payments and appointments — every message on the customer’s record.',
+    tempo: ['Next morning', 'Within minutes'],
+  },
+  'products/instagram-facebook': {
+    title: 'From DMs you paid for to sales you can trace.',
+    today: 'Reels bring enquiries into a DM inbox nobody owns; half go unanswered and none reach a record.',
+    gone: 'Ad spend that ends in an unread DM.',
+    now: 'Instagram and Facebook conversations in the same inbox as WhatsApp, with AI-drafted replies and every order written to the customer record.',
+    tempo: ['Hours', 'Minutes'],
+  },
+  'products/ai-sales-agents': {
+    title: 'From hiring for the night shift to staffing it with AI.',
+    today: 'Follow-ups, reminders and callbacks happen when a person is free — which is never during the season.',
+    gone: 'The unclosed quote. The instalment nobody chased. The 11pm enquiry lost to a competitor.',
+    now: 'AI agents answer, follow up and remind in 14 languages by chat and voice — each action waiting in your approval queue until you say it may run alone.',
+    tempo: ['When someone is free', 'Always'],
+  },
+  'products/storefront': {
+    title: 'From a brochure site to a store that prices itself.',
+    today: 'The website shows designs with yesterday’s prices, or none, and sends buyers back to WhatsApp to ask.',
+    gone: 'Manual price updates and the “please call for price” dead end.',
+    now: 'A jewellery-native store where every piece reprices at the live rate, with cart, wishlist, checkout and reviews on the same customer record as the counter.',
+    tempo: ['Updated when remembered', 'Every rate move'],
+  },
+  'products/meetings': {
+    title: 'From “come to the showroom” to the showroom coming to her.',
+    today: 'A serious buyer who cannot visit gets photos on WhatsApp and a promise to call back.',
+    gone: 'The lost out-of-town sale and the missed appointment.',
+    now: 'A video call from the chat in one tap, self-booking against real availability, a waiting room the host controls — and the meeting on her record.',
+    tempo: ['When she can visit', 'When she has a minute'],
+  },
+
+  // ---------------------------------------------------------------- products · market
+  'products/ads-manager': {
+    title: 'From an agency dashboard to campaigns that know who bought.',
+    today: 'Ads run from an agency login; results arrive as a PDF; nobody knows which ad sold which piece.',
+    gone: 'Spend decided by habit, and attribution by guesswork.',
+    now: 'Meta, Google and Pinterest campaigns from one place with budget alerts, an approval step and audiences built from your own customer segments.',
+    tempo: ['Monthly PDF', 'Live'],
+  },
+  'products/social-media': {
+    title: 'From posting when you remember to a calendar that runs.',
+    today: 'Posts go out when someone has time; comments and DMs pile up across three apps.',
+    gone: 'The unanswered comment and the festival post that went out a day late.',
+    now: 'Scheduled posts across your channels, one inbox for every comment and DM, AI-drafted replies your team approves.',
+    tempo: ['When there is time', 'On schedule'],
+  },
+  'products/optimize': {
+    title: 'From wondering why they left to catching them first.',
+    today: 'Visitors arrive, browse and vanish; you learn nothing about why.',
+    gone: 'The silent exit.',
+    now: 'Heatmaps, A/B tests, popups, push and an AI webchat on the same customer record — so the visitor who hesitated gets a reply, not a bounce.',
+    tempo: ['Never known', 'Seen as it happens'],
+  },
+
+  // ---------------------------------------------------------------- products · know
+  'products/crm': {
+    title: 'From a contact list to a customer you actually know.',
+    today: 'Names and numbers in a phone, purchases in billing, the daughter’s wedding date in someone’s memory.',
+    gone: 'Asking the customer what she bought last time.',
+    now: 'One record with 90+ fields — occasions, scheme balance, taste, churn risk with a visible why — and a morning to-do list of who to call.',
+    tempo: ['Recalled', 'On screen'],
+  },
+  'products/showroom': {
+    title: 'From “how was footfall?” to who walked out without buying.',
+    today: 'You know the day’s sales, not the visitors who tried three pieces and left.',
+    gone: 'The walkout nobody followed up.',
+    now: 'Walk-in check-in, a live floor view, and a follow-up drafted the moment she leaves — named for a person to approve.',
+    tempo: ['Unknown', 'Same day'],
+  },
+
+  // ---------------------------------------------------------------- products · run
+  'products/catalog': {
+    title: 'From a photo folder to one catalogue everywhere.',
+    today: 'Designs live in WhatsApp galleries and a spreadsheet; prices are typed per share.',
+    gone: 'Sending the same photo with a different price to three customers.',
+    now: 'One catalogue with purity, stones, certificates and HUID — priced at the live rate and published to WhatsApp, the storefront and the counter from one place.',
+    tempo: ['Per share', 'Once'],
+  },
+  'products/inventory': {
+    title: 'From a yearly stocktake to knowing what is dying today.',
+    today: 'Stock value is known at year end; dead stock is discovered when the interest bill arrives.',
+    gone: 'Capital frozen in designs nobody noticed had stopped moving.',
+    now: 'Live valuation at today’s rate, ageing bands, memo and exhibition ledgers, and slow movers matched to customers whose taste fits.',
+    tempo: ['Once a year', 'Any day'],
+  },
+  'products/pos': {
+    title: 'From the calculator at the counter to a till that closes itself.',
+    today: 'Bills are repriced by hand when the rate moves; returns and old gold are handled on slips; the drawer is counted against a printout.',
+    gone: 'Mis-priced invoices, exchange arguments and the mismatch found a week later.',
+    now: 'Scan-to-sale at this minute’s rate, exchange vouchers, returns under branch policy, and a shift close that reconciles the cash count before the cashier leaves.',
+    tempo: ['Reconciled weekly', 'Closed nightly'],
+  },
+  'products/billing-finance': {
+    title: 'From invoices in one place and truth in another.',
+    today: 'GST bills come from the counter software; receivables live in a diary; the accountant reconciles at month end.',
+    gone: 'The month-end hunt for who still owes what.',
+    now: 'GST invoices at the live rate, receivables ageing, and every sale, return and expense posted to a double-entry ledger that still bridges to Tally.',
+    tempo: ['Month end', 'As it posts'],
+  },
+  'products/erp': {
+    title: 'From five modules bolted together to one operation.',
+    today: 'Orders in one system, purchases in another, repairs in a register, job-work in a notebook.',
+    gone: 'The handover between departments that loses the customer.',
+    now: 'Orders, purchases, repairs and job-work on one record, jewellery-native — so a custom order taken on WhatsApp is the production order.',
+    tempo: ['Handed over', 'Shared'],
+  },
+  'products/manufacturing': {
+    title: 'From “process loss” to every milligram accounted for.',
+    today: 'Gold goes to the bench in grams and comes back in a notebook; loss is a shrug at settlement time.',
+    gone: 'Unexplained wastage and the karigar khata that argues.',
+    now: 'Routing, issue desk, stage-wise wastage norms with a metal-closure check, QC and a karigar settlement that posts to the books.',
+    tempo: ['At settlement', 'At every hand-off'],
+  },
+  'products/multi-store': {
+    title: 'From calling every branch to one live view.',
+    today: 'Each store runs its own way; the owner learns what happened from a phone call and a WhatsApp photo of a register.',
+    gone: 'The inconsistent price, the unrecognised customer at the second branch, the Monday roll-up.',
+    now: 'One catalogue and one customer base with per-branch stock, pricing and performance — central control, local flexibility.',
+    tempo: ['Per phone call', 'Live'],
+  },
+
+  // ---------------------------------------------------------------- products · manage
+  'products/hr-payroll': {
+    title: 'From an Excel payroll to one people record.',
+    today: 'Attendance in a register, salary in a spreadsheet, karigar wages in a notebook — three sources that never agree.',
+    gone: 'The month-end salary scramble and the karigar dispute.',
+    now: 'Attendance, leave, statutory payroll with PF/ESI/PT/TDS, and a separate karigar settlement ledger — on the same record as the sale each person made.',
+    tempo: ['Three days a month', 'One run'],
+  },
+  'products/repairs-service': {
+    title: 'From a repair slip to a custody chain.',
+    today: 'A customer’s piece is taken in on a slip; its weight and condition are remembered, not recorded.',
+    gone: 'The “it was lighter when I gave it” argument.',
+    now: 'Photographed intake, weight reconciliation at every step, warranty tied to the original invoice, and the repair on her record.',
+    tempo: ['Remembered', 'Recorded'],
+  },
+  'products/purchase-vendors': {
+    title: 'From supplier calls to a portal they check themselves.',
+    today: 'Suppliers call to ask about a PO; bills are matched to deliveries by memory.',
+    gone: 'The unmatched bill and the “where is my payment” call.',
+    now: 'POs, goods-received notes and bills matched together, vendor credits closed, and a portal where suppliers track their own POs and payments.',
+    tempo: ['Per call', 'Self-serve'],
+  },
+
+  // ---------------------------------------------------------------- products · grow
+  'products/gold-schemes': {
+    title: 'From a paper register to a scheme customers can see.',
+    today: 'Instalments are collected in cash and written in a register; maturity is a negotiation.',
+    gone: 'Missed instalments and maturity disputes.',
+    now: 'KYC enrolment, reminders on WhatsApp, transparent balances, disciplined maturity and closure — this year’s book visible as next year’s revenue.',
+    tempo: ['Remembered', 'Reminded'],
+  },
+  'products/digital-gold': {
+    title: 'From “come to the shop” to gold bought at 11pm.',
+    today: 'A customer who wants to start saving has to visit, and often does not.',
+    gone: 'The saver who never became a buyer.',
+    now: 'Gold in grams from her phone at the live rate, KYC and OTP-verified closures, convertible to jewellery at your counter.',
+    tempo: ['Store hours', 'Any hour'],
+  },
+  'products/girvi': {
+    title: 'From a pledge slip in a drawer to a loan on the record.',
+    today: 'Girvi lives in a separate register; interest is worked out on a calculator; the sales counter knows nothing about it.',
+    gone: 'Interest disputes and forgotten renewals.',
+    now: 'Pledge receipt, interest that accrues on its scheme, collection, renewal and release — posted to the books and on the customer’s record.',
+    tempo: ['Calculator', 'Accrued daily'],
+  },
+  'products/loyalty': {
+    title: 'From a punch card to rewards the record already earns.',
+    today: 'Loyalty is a card customers forget and staff cannot look up.',
+    gone: 'Points nobody redeems and referrals nobody tracks.',
+    now: 'Tiers, earning rules and redemptions on the customer record, with referrals traced to the sale they brought.',
+    tempo: ['Forgotten', 'Automatic'],
+  },
+  'products/segmentation': {
+    title: 'From “send to everyone” to the right two hundred.',
+    today: 'Broadcasts go to the whole list because there is no other list.',
+    gone: 'The festival blast that annoys nine customers to reach one.',
+    now: 'Live audiences from RFM tier, tags and custom fields — reachable count and revenue shown before you send.',
+    tempo: ['Everyone', 'The right ones'],
+  },
+  'products/journeys': {
+    title: 'From follow-ups you must remember to journeys that wait for your yes.',
+    today: 'The welcome, the win-back and the occasion invite depend on someone remembering, so they rarely happen.',
+    gone: 'The follow-up that dies.',
+    now: 'Visual multi-step journeys with triggers, branches and wait steps — and a human-approval gate before anything reaches a customer.',
+    tempo: ['If remembered', 'On trigger'],
+  },
+  'products/campaigns': {
+    title: 'From a blast to a send you can attribute.',
+    today: 'SMS blasts go out; nobody knows what they sold.',
+    gone: 'Vanity open-rates and the number-ban risk of unofficial tools.',
+    now: 'Consent-aware sends across WhatsApp, email, SMS and push, attributed to exactly what each campaign sold.',
+    tempo: ['Blind', 'Attributed'],
+  },
+
+  // ---------------------------------------------------------------- group fallbacks
+  'solutions/': {
+    title: 'From running the business by memory to running it on one record.',
+    today: 'Your customers, catalogue, stock and money live in separate tools — and in the heads of the people who happen to be there.',
+    gone: 'The re-entry, the reconciliation, and the relationship that leaves with a phone.',
+    now: 'One system where every module reads the same record, priced at the live rate, worked around the clock by AI that runs on its own or asks you first.',
+    tempo: ['Next morning', 'In real time'],
+  },
+  'industries/': {
+    title: 'From running the business by memory to running it on one record.',
+    today: 'Your customers, catalogue, stock and money live in separate tools — and in the heads of the people who happen to be there.',
+    gone: 'The re-entry, the reconciliation, and the relationship that leaves with a phone.',
+    now: 'One system where every module reads the same record, priced at the live rate, worked around the clock by AI that runs on its own or asks you first.',
+    tempo: ['Next morning', 'In real time'],
+  },
+  'roles/': {
+    title: 'From doing the remembering to doing the work.',
+    today: 'Your day is spent looking things up, chasing, re-entering — and still missing the follow-up that mattered.',
+    gone: 'The lookup, the chase, the double entry.',
+    now: 'The record remembers, the AI drafts, you decide — so the hours go to customers, not to finding out what happened.',
+    tempo: ['Looking it up', 'Already on screen'],
+  },
+};
+
+module.exports = SHIFTS;

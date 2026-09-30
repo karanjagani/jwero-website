@@ -12,10 +12,10 @@ const ROOT = __dirname;
 const DIST = path.join(ROOT, 'dist');
 const SITE = 'https://jwero.ai';
 const BRAND = 'Jwero';
-const TAGLINE = 'The AI Operating System for Jewellery Business';
-const SIGNATURE = 'One system that remembers every customer.';
+const TAGLINE = 'The Autonomous Jewellery OS, run by AI';
+const SIGNATURE = 'Jwero runs your whole jewellery business from one customer record — and the AI does the remembering.';
 const ORG_DESCRIPTION =
-  'Jwero is the AI operating system for jewellery business: one customer record, one catalogue, one inventory truth and one inbox — with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and governed AI staff, in one place.';
+  'Jwero is the Autonomous Jewellery OS, run by AI: one customer record, one catalogue, one inventory truth and one inbox — with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and governed AI staff, in one place.';
 
 // ---------------------------------------------------------------- company facts (single source of truth)
 const LEGAL_ENTITY = 'Tanika Tech Jewels Private Limited';
@@ -30,12 +30,12 @@ const SOCIALS = [
 // Each page is stamped with the mtime of the content file that defined it, so the
 // sitemap can emit an honest <lastmod> without hand-maintaining dates.
 const CONTENT_FILES = [
-  'home', 'platform', 'products', 'products-sell', 'products-run', 'products-grow', 'products-manage', 'products-hr',
+  'home', 'platform', 'products', 'products-sell', 'products-run', 'products-grow', 'products-manage', 'products-hr', 'products-ops',
   'industries', 'solutions', 'solutions-retail-segments', 'solutions-wholesale',
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
   'roles-leadership', 'roles-frontline', 'roles-growth', 'roles-manufacturing',
-  'roles-operations', 'roles-trade',
+  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey',
 ];
 const pages = [];
 for (const f of CONTENT_FILES) {
@@ -51,7 +51,9 @@ for (const f of CONTENT_FILES) {
 const NAV = [
   {
     label: 'Platform',
+    match: ['platform', 'trust', 'roadmap'],
     items: [
+      ['/why-an-os', 'Why an OS, not another tool', 'The category, explained in one page'],
       ['/platform', 'The OS tour', 'One record, one catalogue, one truth'],
       ['/platform/customer-memory', 'Customer Memory', '90+ fields on every customer'],
       ['/platform/pricing-engine', 'The Pricing Engine', 'Rate, making charge, stone & override rules'],
@@ -64,12 +66,14 @@ const NAV = [
   },
   {
     label: 'Products',
+    match: ['products'],
     groups: [
       { title: 'Sell', items: [
         ['/products/whatsapp', 'WhatsApp Commerce', 'Sell on your official number'],
         ['/products/instagram-facebook', 'Instagram & Facebook', 'DMs into sales, one inbox'],
         ['/products/ai-sales-agents', 'AI Sales Agents & Voice', 'Replies and follow-up, governed'],
         ['/products/storefront', 'Ecommerce Website', 'Live-rate jewellery storefront'],
+        ['/products/meetings', 'Video Counter & Appointments', 'Meet from the inbox, self-booking'],
       ]},
       { title: 'Market', items: [
         ['/products/ads-manager', 'Ads Manager', 'Meta, Google & Pinterest'],
@@ -83,7 +87,9 @@ const NAV = [
       { title: 'Run', items: [
         ['/products/catalog', 'Catalogue (PIM)', 'Purity, certificates, live prices'],
         ['/products/inventory', 'Inventory', 'Ageing and dead stock'],
+        ['/products/pos', 'Counter POS', 'Scan, exchange, return, day-close'],
         ['/products/billing-finance', 'Billing & Finance', 'GST invoices at live rates'],
+        ['/products/manufacturing', 'Manufacturing & Workshop', 'BOM, wastage norms, karigar khata'],
         ['/products/erp', 'ERP, reconsidered', 'Orders, vendors, job-work'],
         ['/products/multi-store', 'Multi-store & Franchise', 'Every branch, one platform'],
       ]},
@@ -95,28 +101,55 @@ const NAV = [
       { title: 'Grow', items: [
         ['/products/gold-schemes', 'Gold Savings Schemes', 'Enrolment to maturity'],
         ['/products/digital-gold', 'Digital Gold', 'Buy gold in grams'],
+        ['/products/girvi', 'Girvi / Gold Loans', 'Pledge, interest, release'],
         ['/products/loyalty', 'Loyalty & Referrals', 'Tiers, rules, redemptions'],
         ['/products/segmentation', 'Customer Segmentation', 'Rule-based audiences'],
         ['/products/journeys', 'Customer Journeys', 'Approval-gated automation'],
         ['/products/campaigns', 'Campaigns & Broadcasts', 'WhatsApp, email, SMS, push'],
       ]},
     ],
-    footer: ['Every module reads the same customer record. That’s the OS.', '/platform'],
+    footer: ['See all products', '/products'],
+    links: [['/platform', 'The OS tour'], ['/platform/integrations', 'Integrations'], ['/enterprise', 'Enterprise'], ['/roadmap', 'Roadmap']],
   },
   {
     label: 'Solutions',
+    match: ['solutions', 'industries', 'roles'],
     groups: [
       { title: 'By business', items: [
-        ['/solutions', 'All solutions'],
-        ['/industries/retail', 'Retail (hub)'],
+        ['/industries/retail', 'Retail'],
         ['/solutions/single-store', 'Single store'],
         ['/solutions/multi-store-chains', 'Multi-store & chains'],
         ['/solutions/luxury-boutique', 'Luxury & boutique'],
         ['/solutions/bridal', 'Bridal & wedding'],
         ['/solutions/d2c-brands', 'D2C & ecommerce-first'],
-        ['/solutions/manufacturers', 'Manufacturers (hub)'],
+        ['/solutions/manufacturers', 'Manufacturers'],
         ['/solutions/b2b-jewellery', 'Wholesale & B2B'],
+        ['/solutions/diamond-wholesale', 'Diamond wholesalers & traders'],
         ['/solutions/franchise-networks', 'Franchise networks'],
+      ]},
+      { title: 'By role · owners & counter', items: [
+        ['/roles/owner', 'Owner / Proprietor'],
+        ['/roles/chain-owner', 'Multi-store & chain owner'],
+        ['/roles/next-gen-successor', 'Next-gen successor'],
+        ['/roles/store-manager', 'Store manager'],
+        ['/roles/sales-associate', 'Sales associate'],
+        ['/roles/cashier', 'Billing cashier'],
+      ]},
+      { title: 'By role · growth & finance', items: [
+        ['/roles/crm-executive', 'CRM / telecalling executive'],
+        ['/roles/marketing-manager', 'Marketing manager'],
+        ['/roles/ecommerce-manager', 'E-commerce / D2C manager'],
+        ['/roles/accountant', 'Accountant / bookkeeper'],
+        ['/roles/inventory-manager', 'Inventory / stock manager'],
+      ]},
+      { title: 'By role · making & trade', items: [
+        ['/roles/karigar', 'Karigar / goldsmith'],
+        ['/roles/cad-designer', 'CAD / CAM designer'],
+        ['/roles/production-manager', 'Production manager'],
+        ['/roles/quality-hallmarking', 'Quality & hallmarking officer'],
+        ['/roles/purchase-manager', 'Purchase / procurement manager'],
+        ['/roles/b2b-manager', 'Wholesale / B2B manager'],
+        ['/roles/franchise-partner', 'Franchise partner'],
       ]},
       { title: 'By pain', items: [
         ['/solutions/pain', 'All pains'],
@@ -124,76 +157,50 @@ const NAV = [
         ['/solutions/pain/lead-leakage', 'Lead leakage'],
       ]},
     ],
-    footer: ['See all 22 segments →', '/solutions'],
+    footer: ['See all 22 segments', '/solutions'],
+    links: [['/roles', 'Every role'], ['/enterprise', 'Enterprise'], ['/migration', 'Migration Centre']],
   },
-  {
-    label: 'Roles',
-    groups: [
-      { title: 'Leadership', items: [
-        ['/roles/owner', 'Owner / Proprietor'],
-        ['/roles/chain-owner', 'Multi-store & chain owner'],
-        ['/roles/next-gen-successor', 'Next-gen successor'],
-      ]},
-      { title: 'Frontline & sales', items: [
-        ['/roles/store-manager', 'Store manager'],
-        ['/roles/sales-associate', 'Sales associate'],
-        ['/roles/cashier', 'Billing cashier'],
-      ]},
-      { title: 'Customer & growth', items: [
-        ['/roles/crm-executive', 'CRM / telecalling executive'],
-        ['/roles/marketing-manager', 'Marketing manager'],
-        ['/roles/ecommerce-manager', 'E-commerce / D2C manager'],
-      ]},
-      { title: 'Manufacturing', items: [
-        ['/roles/karigar', 'Karigar / goldsmith'],
-        ['/roles/cad-designer', 'CAD / CAM designer'],
-        ['/roles/production-manager', 'Production manager'],
-        ['/roles/quality-hallmarking', 'Quality & hallmarking officer'],
-      ]},
-      { title: 'Finance & operations', items: [
-        ['/roles/accountant', 'Accountant / bookkeeper'],
-        ['/roles/inventory-manager', 'Inventory / stock manager'],
-      ]},
-      { title: 'Trade & partnerships', items: [
-        ['/roles/purchase-manager', 'Purchase / procurement manager'],
-        ['/roles/b2b-manager', 'Wholesale / B2B manager'],
-        ['/roles/franchise-partner', 'Franchise partner'],
-      ]},
-    ],
-    footer: ['See every role →', '/roles'],
-  },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Customers', href: '/customers' },
   {
     label: 'Resources',
+    match: ['faq', 'blog', 'tools', 'compare', 'migration', 'partners', 'customers', 'company', 'contact'],
     items: [
+      ['/customers', 'Customers', 'Named jewellers running on Jwero'],
       ['/faq', 'FAQ', 'Every objection, answered honestly'],
       ['/blog', 'Blog', 'Practical guides, not filler'],
       ['/tools', 'Tools & Calculators', 'Dead stock, gold scheme, WhatsApp revenue, gold loss'],
       ['/compare', 'Compare Alternatives', 'ERPs, WhatsApp tools, ecommerce & more'],
       ['/migration', 'Migration Centre', 'Switch without fear'],
       ['/partners', 'Partners', 'ERP dealers, accountants, consultants'],
-      ['/roadmap', 'Roadmap', 'Shipped, building, not yet'],
+      ['/glossary', 'Glossary', 'HUID, girvi, karigar, memo — defined'],
+      ['/how-it-goes', 'What happens after you message', 'The first 30 days, step by step'],
+      ['/start', 'Get started', 'Create your workspace in three steps'],
+      ['/company', 'About Jwero', 'The founders, by name'],
     ],
+    links: [['/book-demo', 'Book a demo'], ['/contact', 'Contact']],
   },
+  { label: 'Pricing', href: '/pricing', match: ['pricing'] },
 ];
 
-const { icon } = require('./lib');
+const { icon, LINK_ICONS, heroSchematic, PERSONAS, personaSwitch } = require('./lib');
 
-function navHTML() {
+function navHTML(page) {
+  const top = (page && page.slug ? page.slug : '').split('/')[0];
   const link = ([h, l, d]) => `<a href="${h}"><strong>${l}</strong>${d ? `<span>${d}</span>` : ''}</a>`;
   const dd = (m) => {
-    if (m.href) return `<a class="nav-link" href="${m.href}">${m.label}</a>`;
+    const here = m.match && m.match.includes(top) ? ' is-here' : '';
+    if (m.href) return `<a class="nav-link${here}" href="${m.href}"${here ? ' aria-current="page"' : ''}>${m.label}</a>`;
     const body = m.groups
       ? m.groups.map((g) => `<div class="dd-group"><p class="dd-title">${g.title}</p>${g.items.map(link).join('')}</div>`).join('')
       : m.items.map(link).join('');
-    // Panel width follows the content: six-column menus span the header,
+    // Panel width follows the content: multi-column menus span the header,
     // shorter ones stay compact under the nav.
     const size = m.groups ? (m.groups.length > 3 ? ' dd-wide' : ' dd-mid') : ' dd-list';
     const cols = m.groups ? ` style="--cols:${m.groups.length}"` : '';
-    return `<details class="nav-dd"><summary class="nav-link">${m.label}${icon('updown')}</summary><div class="dd-panel${size}"><div class="dd-box"><div class="dd-cols"${cols}>${body}</div>${
-      m.footer ? `<a class="dd-footer" href="${m.footer[1]}">${m.footer[0].replace(/\s*→$/, '')}${icon('arrow')}</a>` : ''
-    }</div></div></details>`;
+    const foot = m.footer || m.links
+      ? `<div class="dd-foot">${m.footer ? `<a class="dd-footer" href="${m.footer[1]}">${m.footer[0]}${icon('arrow')}</a>` : '<span></span>'}${
+          m.links ? `<div class="dd-links">${m.links.map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</div>` : ''}</div>`
+      : '';
+    return `<details class="nav-dd"><summary class="nav-link${here}">${m.label}${icon('updown')}</summary><div class="dd-panel${size}"><div class="dd-box"><div class="dd-cols"${cols}>${body}</div>${foot}</div></div></details>`;
   };
   return `
 <header class="site-header">
@@ -205,11 +212,14 @@ function navHTML() {
         <a class="btn btn-ghost" href="tel:+919169959959">Call us</a>
         <a class="btn btn-ghost" href="/book-demo">Book a demo</a>
         <a class="btn btn-primary" href="#" data-wa="header">Chat on WhatsApp</a>
+        <a class="btn btn-ghost" href="/start">Get started</a>
       </div>
     </nav>
     <div class="header-cta">
       <a class="btn btn-ghost btn-sm" href="#" data-wa="header">WhatsApp</a>
       <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
+      <a class="btn btn-ghost btn-sm header-start" href="/start">Get started</a>
+      <button class="search-open icon-btn" type="button" aria-label="Search the site" aria-keyshortcuts="Meta+K Control+K">${icon('search')}</button>
       <button class="theme-toggle icon-btn" type="button" aria-label="Toggle dark mode">${icon('moon')}</button>
       <a class="btn btn-primary btn-sm header-float" href="#" data-wa="header">Chat on WhatsApp</a>
       <button class="nav-burger icon-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
@@ -264,6 +274,8 @@ function orgSchema() {
   return {
     '@context': 'https://schema.org', '@type': 'Organization',
     name: BRAND, legalName: LEGAL_ENTITY, url: SITE, slogan: TAGLINE, description: ORG_DESCRIPTION,
+    alternateName: ['Jwero — the Autonomous Jewellery OS', 'Jwero — the Autonomous Jewelry OS'],
+    areaServed: ['IN', 'AE', 'GB', 'SG', 'US', 'AU', 'CA'],
     logo: SITE + '/assets/jwero-mark.png',
     sameAs: SOCIALS.map(([h]) => h),
     address: { '@type': 'PostalAddress', streetAddress: 'Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road', addressLocality: 'Bhayandar (West), Thane', addressRegion: 'Maharashtra', postalCode: '401101', addressCountry: 'IN' },
@@ -271,10 +283,165 @@ function orgSchema() {
   };
 }
 
+// Product and platform pages whose hero has no product mock open with a small
+// system diagram instead: this module, the shared record, the rest of Jwero.
+function withSchematic(page) {
+  const ic = LINK_ICONS['/' + page.slug];
+  if (!ic || !page.breadcrumbs || /class="stage hero-mock"/.test(page.body)) return fillPersona(page.body);
+  const label = page.breadcrumbs[page.breadcrumbs.length - 1][0];
+  return page.body.replace('<section class="hero">', `<section class="hero has-schematic">${heroSchematic(ic, label)}`);
+}
+
+// The home persona switch quotes each solution page's own headline and intro.
+function fillPersona(body) {
+  if (body.indexOf('<!--persona-switch-->') === -1) return body;
+  const productName = (href) => {
+    for (const g of NAV.find((m) => m.label === 'Products').groups) for (const it of g.items) if (it[0] === href) return it[1];
+    return href;
+  };
+  const entries = PERSONAS.map((p) => {
+    const pg = pages.find((x) => x.slug === p.slug);
+    const h1 = (pg.body.match(/<h1>([\s\S]*?)<\/h1>/) || [])[1];
+    const sub = (pg.body.match(/<p class="sub">([\s\S]*?)<\/p>/) || [])[1];
+    const wa = (pg.body.match(/data-wa="([^"]+)"/) || [])[1] || 'default';
+    return Object.assign({}, p, { h1, sub, wa });
+  });
+  return body.replace('<!--persona-switch-->', personaSwitch(entries, productName));
+}
+
+// Related pages: every product links to the solutions that lead with it and
+// its siblings; every solution/role page links to its persona's products.
+// Internal links are how a 130-page site tells search engines what matters.
+function productMeta(href) {
+  for (const g of NAV.find((m) => m.label === 'Products').groups) for (const it of g.items) if (it[0] === href) return { label: it[1], desc: it[2], group: g.title, items: g.items };
+  return null;
+}
+// Under the hero: the three questions this reader is most likely carrying,
+// as tappable chips that open the matching answer further down the page.
+function withAsking(body, page) {
+  if (page.slug === 'index' || page.slug === 'faq') return body;
+  // Only questions answered on this page, so a tap never leaves it.
+  const qs = [...body.matchAll(/<summary>([\s\S]*?)<\/summary>/g)].map((m) => m[1].replace(/<[^>]+>/g, '').trim()).filter((q) => q.length > 12 && q.length < 110).slice(0, 4);
+  if (qs.length < 3) return body;
+  const strip = `
+<div class="asking" data-asking>
+  <div class="container">
+    <p class="asking-label">You’re probably asking</p>
+    <div class="asking-chips">${qs.map((q) => `<button type="button" class="asking-chip">${q}</button>`).join('')}</div>
+  </div>
+</div>`;
+  const i = body.indexOf('</section>', body.indexOf('<section class="hero'));
+  return i === -1 ? body : body.slice(0, i + 10) + strip + body.slice(i + 10);
+}
+// The shift: today → gone → at the speed of thought. Page-specific copy from
+// content/shift.js, group fallbacks for solutions, industries and roles.
+const SHIFTS = require('./content/shift');
+function withShift(body, page) {
+  const s = SHIFTS[page.slug] || SHIFTS[Object.keys(SHIFTS).find((k) => k.endsWith('/') && page.slug.startsWith(k)) || ''];
+  if (!s) return body;
+  const block = `
+<section class="shift" data-shift aria-labelledby="shift-title">
+  <div class="container">
+    <div class="shift-head"><p class="eyebrow">THE SHIFT</p><h2 id="shift-title">${s.title}</h2></div>
+    <div class="shift-lanes">
+      <div class="lane lane-today"><p class="lane-tag">Today</p><p class="lane-text">${s.today}</p></div>
+      <div class="lane lane-gone"><p class="lane-tag">Gone with Jwero</p><p class="lane-text"><span>${s.gone}</span></p></div>
+      <div class="lane lane-now"><p class="lane-tag">At the speed of thought</p><p class="lane-text">${s.now}</p></div>
+    </div>
+    <div class="shift-tempo" aria-label="From ${s.tempo[0]} to ${s.tempo[1]}">
+      <span class="tempo-from">${s.tempo[0]}</span><span class="tempo-track"><i></i></span><span class="tempo-to">${s.tempo[1]}</span>
+    </div>
+  </div>
+</section>`;
+  const heroAt = body.indexOf('<section class="hero');
+  if (heroAt === -1) return body;
+  const at = body.indexOf('<section class="section', heroAt);
+  return at === -1 ? body + block : body.slice(0, at) + block + body.slice(at);
+}
+// Simulations sit right after the shift on the pages where that mindset lives.
+const SIM_PAGES = {
+  'products/catalog': 'rate', 'platform/pricing-engine': 'rate', 'solutions/gold-retail': 'rate',
+  'platform/ai-workforce': 'approve', 'products/ai-sales-agents': 'approve', 'products/journeys': 'approve', 'roles/owner': 'approve',
+  'products/crm': 'memory', 'platform/customer-memory': 'memory', 'roles/sales-associate': 'memory', 'products/whatsapp': 'memory', 'index': 'memory',
+  'products/inventory': 'shelf', 'solutions/pain/dead-stock': 'shelf', 'roles/inventory-manager': 'shelf',
+  'products/pos': 'till', 'roles/cashier': 'till', 'products/billing-finance': 'till',
+  'products/manufacturing': 'grams', 'solutions/manufacturers': 'grams', 'roles/production-manager': 'grams', 'roles/karigar': 'grams',
+};
+function withSim(body, page) {
+  const kind = SIM_PAGES[page.slug];
+  if (!kind) return body;
+  const block = require('./lib').sim(kind);
+  const shiftAt = body.indexOf('<section class="shift"');
+  const after = shiftAt !== -1 ? body.indexOf('</section>', shiftAt) + 10 : -1;
+  if (after > 9) return body.slice(0, after) + block + body.slice(after);
+  const heroAt = body.indexOf('<section class="hero'); const at = body.indexOf('<section class="section', heroAt);
+  return at === -1 ? body + block : body.slice(0, at) + block + body.slice(at);
+}
+function withRelated(body, page) {
+  const href = '/' + page.slug;
+  const links = [];
+  if (page.slug.startsWith('products/') && productMeta(href)) {
+    const meta = productMeta(href);
+    for (const p of PERSONAS) if (p.products.includes(href)) links.push([`/${p.slug}`, `For ${p.label.toLowerCase()}s`, 'How this fits your kind of business']);
+    for (const it of meta.items) if (it[0] !== href && links.length < 6) links.push([it[0], it[1], it[2]]);
+  } else if (/^(solutions|roles|industries)\//.test(page.slug)) {
+    const persona = PERSONAS.find((p) => page.slug === p.slug) || PERSONAS[0];
+    for (const h of persona.products) { const m = productMeta(h); if (m) links.push([h, m.label, m.desc]); }
+    links.push(['/pricing', 'Pricing', 'Three tiers, named after how the AI earns trust']);
+  } else return body;
+  if (!links.length) return body;
+  const block = `
+<section class="section related" aria-labelledby="related-title">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">KEEP READING</p><h2 id="related-title">Related on Jwero.</h2></div>
+    <div class="grid grid-3 cells">${links.slice(0, 6).map(([h, l, d]) => `<a class="card" href="${h}"><h3>${l}</h3><p>${d || ''}</p></a>`).join('')}</div>
+  </div>
+</section>`;
+  const i = body.lastIndexOf('<section class="cta-band">');
+  return i === -1 ? body + block : body.slice(0, i) + block + body.slice(i);
+}
+
+// Site search: a small index of every page, searched in the browser.
+function searchDialog() {
+  return `
+<dialog class="search" aria-label="Search Jwero">
+  <form class="search-box" method="get" action="/search" role="search">
+    ${icon('search')}
+    <input type="search" name="q" placeholder="Search products, solutions, questions…" autocomplete="off" aria-label="Search">
+    <button type="button" class="search-close icon-btn" aria-label="Close search">${icon('close')}</button>
+  </form>
+  <div class="search-results" role="listbox" aria-label="Results"></div>
+  <p class="search-hint"><kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to open · <kbd>Esc</kbd> to close</p>
+</dialog>`;
+}
+function searchIndex() {
+  const section = (slug) => slug === 'index' ? 'Home' : ({ products: 'Product', platform: 'Platform', solutions: 'Solution', industries: 'Solution', roles: 'Role', blog: 'Guide', tools: 'Tool', compare: 'Compare', faq: 'FAQ', glossary: 'Glossary' }[slug.split('/')[0]] || 'Page');
+  return pages.filter((p) => !p.noindex).map((p) => ({
+    u: '/' + (p.slug === 'index' ? '' : p.slug),
+    t: p.title.replace(/ \| Jwero$/, ''),
+    d: p.description,
+    s: section(p.slug),
+    k: (p.faqs || []).map((f) => f.q.replace(/<[^>]+>/g, '')).join(' ').slice(0, 600),
+  }));
+}
+
+// Per-page share images live in assets/og/<slug>.png (rendered by scripts/og.js); default otherwise.
+function ogImage(page) {
+  const f = (page.slug === 'index' ? 'index' : page.slug.replace(/\//g, '--')) + '.jpg';
+  return fs.existsSync(path.join(ROOT, 'assets', 'og', f)) ? '/assets/og/' + f : '/assets/og-default.jpg';
+}
+
 function layout(page) {
   const urlPath = page.slug === 'index' ? '' : `/${page.slug}`;
   const canonical = SITE + (urlPath || '/');
-  const schemas = [orgSchema(), { '@context': 'https://schema.org', '@type': 'WebSite', name: BRAND, url: SITE }];
+  const schemas = [orgSchema(), {
+    '@context': 'https://schema.org', '@type': 'WebSite', name: BRAND, url: SITE,
+    potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: SITE + '/search?q={search_term_string}' }, 'query-input': 'required name=search_term_string' },
+  }, {
+    '@context': 'https://schema.org', '@type': 'WebPage', url: canonical, name: page.title, description: page.description,
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.hero .sub'] },
+    isPartOf: { '@type': 'WebSite', url: SITE },
+  }];
   if (page.faqs) {
     schemas.push({
       '@context': 'https://schema.org', '@type': 'FAQPage',
@@ -301,28 +468,32 @@ ${robotsMeta}
 <meta property="og:title" content="${page.title}">
 <meta property="og:description" content="${page.description}">
 <meta property="og:url" content="${canonical}">
-<meta property="og:image" content="${SITE}/assets/og-default.png">
+<meta property="og:image" content="${SITE}${ogImage(page)}">
+<meta property="og:image:alt" content="${page.title}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="${SITE}/assets/og-default.png">
+<meta name="twitter:image" content="${SITE}${ogImage(page)}">
 <link rel="icon" type="image/png" href="${FAVICON}">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c12" media="(prefers-color-scheme: dark)">
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
-<script>(function(){try{var t=localStorage.getItem('jwero-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>(function(){var d=document.documentElement;try{var t=localStorage.getItem('jwero-theme');if(t)d.setAttribute('data-theme',t);}catch(e){}d.classList.add('js');setTimeout(function(){d.classList.add('motion-failsafe');},4000);})();</script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/assets/*"}}]},"eagerness":"moderate"}]}</script>
 ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-${navHTML()}
+${navHTML(page)}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-${page.body.replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
+${withSim(withShift(withAsking(withRelated(withSchematic(page), page), page), page), page).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
 </main>
+${searchDialog()}
 ${footerHTML()}
 <script src="/assets/site.js" defer></script>
+${page.body.indexOf('data-sim=') !== -1 || SIM_PAGES[page.slug] ? '<script src="/assets/sims.js" defer></script>' : ''}
 </body>
 </html>`;
 }
@@ -393,6 +564,23 @@ ${require('./lib').section(`
 `,
   }));
 
+  // search index + a no-JS-fallback results page
+  fs.writeFileSync(path.join(DIST, 'search-index.json'), JSON.stringify(searchIndex()));
+  fs.mkdirSync(path.join(DIST, 'search'), { recursive: true });
+  fs.writeFileSync(path.join(DIST, 'search', 'index.html'), layout({
+    slug: 'search', noindex: true, title: 'Search | Jwero', description: 'Search every product, solution, guide and answer on jwero.ai.',
+    body: `${require('./lib').section(`<div class="section-head"><h1>Search Jwero</h1></div>
+  <form class="search-box search-box-page" method="get" action="/search" role="search">${icon('search')}<input type="search" name="q" placeholder="Search products, solutions, questions…" aria-label="Search" autocomplete="off"></form>
+  <div class="search-results search-results-page" data-search-page role="list"></div>
+  <p class="cta-note" style="margin-top:18px">Can’t find it? <a href="#" data-wa="faq">Ask on WhatsApp</a> — a real person and our AI reply within minutes.</p>`)}`,
+  }));
+
+  // llms-full.txt — every page's text, for answer engines that read whole sites.
+  const strip = (h) => h.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ').replace(/<svg[\s\S]*?<\/svg>/g, ' ').replace(/<(h[1-3])[^>]*>/g, '\n\n## ').replace(/<\/(p|li|h[1-6]|div|tr)>/g, '\n').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/[ \t]+/g, ' ').replace(/\n\s*\n\s*\n+/g, '\n\n').trim();
+  fs.writeFileSync(path.join(DIST, 'llms-full.txt'),
+    `# Jwero — ${TAGLINE}\n\n${ORG_DESCRIPTION}\n\n` +
+    pages.filter((p) => !p.noindex).map((p) => `---\n\n# ${p.title.replace(/ \| Jwero$/, '')}\nURL: ${SITE}/${p.slug === 'index' ? '' : p.slug}\n\n${p.description}\n\n${strip(p.body)}\n${(p.faqs || []).map((f) => `\nQ: ${f.q.replace(/<[^>]+>/g, '')}\nA: ${f.a.replace(/<[^>]+>/g, '')}`).join('\n')}`).join('\n\n') + '\n');
+
   // robots — AI crawlers explicitly welcome (GEO policy).
   fs.writeFileSync(path.join(DIST, 'robots.txt'),
 `User-agent: *
@@ -411,27 +599,33 @@ Sitemap: ${SITE}/sitemap.xml
   fs.writeFileSync(path.join(DIST, 'llms.txt'),
 `# Jwero — ${TAGLINE}
 
-> Jwero is the AI operating system for jewellery business. One customer record (90+ fields,
+> Jwero is the Autonomous Jewellery OS, run by AI. One customer record (90+ fields,
 > including gold-plan balances and family occasions), one catalogue, one inventory truth and one
 > inbox — with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and an AI
 > workforce that acts only inside approval queues, daily caps, quiet hours and a five-scope kill
 > switch enforced in the product ("AI that waits for your yes").
 
 ## Category
-Jwero calls this category the Jewellery Business OS / AI Operating System for Jewellery Business.
+Jwero calls this category the Autonomous Jewellery OS — an operating system for a jewellery business, run by AI agents that act on their own or ask first.
+Spelling: this site uses "jewellery" (India, UK, Gulf, Commonwealth). "Jewelry" (US) refers to the same product and the same category — Jwero is the Autonomous Jewelry OS for US readers.
 It serves single stores, multi-store chains, luxury/boutique/bridal retailers, diamond/gold/silver/
 platinum/lab-grown/gemstone retailers, wholesalers, manufacturers (gold, diamond, casting, CAD, OEM,
 export), and jewellery brands, D2C startups and franchise networks alike.
 
 ## What Jwero is not (honesty)
 - Not a replacement for statutory accounting: Jwero bridges to Tally and Zoho Books; books stay there.
-- POS counter cash/day-close billing, payroll & karigar wage settlement, offline mode, a vernacular
-  product interface, public API/SSO and predictive ML forecasting are on the public roadmap, not
-  shipped today: ${SITE}/roadmap
+- Counter POS (registers, shifts, cash day-close, returns, old-gold exchange), statutory payroll, karigar
+  settlement, girvi/gold loans, manufacturing (BOM, routing, wastage norms) and a video counter shipped in 2026.
+- E-invoice IRN, auto-debit mandates, a full vernacular product interface (an early Hindi pilot is live on
+  karigar screens), public API/SSO and predictive ML forecasting are on the public roadmap, not shipped today:
+  ${SITE}/roadmap
 
 ## Company
 Jwero is a product of ${LEGAL_ENTITY} (CIN ${LEGAL_CIN}), ${LEGAL_ADDRESS}.
 Contact: care@jwero.ai · WhatsApp +91 91699 59959.
+
+## Full text
+Every page's text in one file: ${SITE}/llms-full.txt
 
 ## All pages
 ${pages.filter((p) => !p.noindex).map((p) => `- ${p.title.replace(/ \| Jwero$/, '')}: ${SITE}/${p.slug === 'index' ? '' : p.slug}`).join('\n')}

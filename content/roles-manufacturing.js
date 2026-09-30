@@ -23,8 +23,8 @@ ${L.hero({
   eyebrow: 'MANUFACTURING & OPS · KARIGAR',
   h1: 'Your loss, your credit — written down, not remembered.',
   sub: 'Right now, what happened to a job between jangad and despatch lives in whoever’s memory is loudest at settlement time. Jwero puts gold-in, gold-out and loss at every stage on one ledger — so your work speaks for itself.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
+  secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
 
 ${L.section(
@@ -89,8 +89,8 @@ ${L.hero({
   eyebrow: 'MANUFACTURING & OPS · CAD / CAM DESIGNER',
   h1: 'A design that doesn’t die in a WhatsApp thread.',
   sub: 'Right now, a revision from three days ago is a scroll-back exercise, and an approved file can sit for days before anyone starts the job. Jwero tracks the revision history and the handoff — so your file’s status is visible, not guessed at.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
+  secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
 
 ${L.section(
@@ -156,8 +156,8 @@ ${L.hero({
   eyebrow: 'MANUFACTURING & OPS · PRODUCTION MANAGER',
   h1: 'Every job’s stage, without walking the floor to find it.',
   sub: 'Right now, knowing where twenty jobs stand means twenty conversations or a walk down the line. Jwero tracks job-work from jangad to despatch — gold-in, gold-out and loss at every stage — on one ledger you can read from your desk.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
+  secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
 
 ${L.section(
@@ -223,8 +223,8 @@ ${L.hero({
   eyebrow: 'MANUFACTURING & OPS · QUALITY & HALLMARKING',
   h1: 'Certification status, tracked — not chased on paper.',
   sub: 'Right now, knowing whether a batch is hallmark-cleared means flipping through paper or asking around. Jwero tracks documentation status against the job record — so pending and cleared are visible at a glance, not reconstructed from files.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
+  secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
 
 ${L.section(

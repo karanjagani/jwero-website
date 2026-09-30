@@ -10,7 +10,7 @@ const CATEGORIES = [
   {
     id: 'product', label: 'What Jwero is',
     items: [
-      { q: 'What is Jwero?', a: 'The AI operating system for jewellery business — one place where customers, catalogue, inventory, WhatsApp/Instagram selling, gold schemes and marketing all share the same record, with an AI workforce that drafts the work under your approval.' },
+      { q: 'What is Jwero?', a: 'The Autonomous Jewellery OS, run by AI — one place where customers, catalogue, inventory, WhatsApp/Instagram selling, gold schemes and marketing all share the same record, with an AI workforce that drafts the work under your approval.' },
       { q: 'Is Jwero a CRM or an ERP?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP, from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.' },
       { q: 'Who is Jwero actually for?', a: 'Single stores to multi-store chains, wholesalers, manufacturers, franchise networks and online-first brands. The same system; modules switch on per business type. See <a href="/solutions">all 22 solutions</a>.' },
       { q: 'Does Jwero replace my current software?', a: 'Usually it sits alongside your accounting software (via the Tally/Zoho bridge) and replaces the scattered tools — the WhatsApp app, the Excel customer list, the diary follow-ups, the PDF catalogue.' },
@@ -23,7 +23,7 @@ const CATEGORIES = [
       { q: 'What is the weekly growth report?', a: 'A plain-language WhatsApp report to the owner: how many past customers came back, how many appointments were booked, how much revenue the system brought back. Proof, delivered weekly, without a dashboard you have to remember to open.' },
       { q: 'Is a gold savings scheme even legal to run — isn’t that an NBFC or interest product?', a: 'Every plan is framed and operated as an advance against a future purchase: benefits are paid as bonus gold or a discount, never as interest. That’s a framing discipline the product enforces, and it stops short of a legal opinion; confirm your specific scheme structure with your own counsel. See <a href="/products/gold-schemes">gold schemes</a>.' },
       { q: 'My competitors don’t use anything like this — why be first?', a: 'Regional chains already run on systems like this; independent jewellers have been the ones without one. Being early on the revenue side (WhatsApp commerce, digital catalogues, gold schemes) is a customer-facing advantage today, ahead of when everyone else catches up.' },
-      { q: 'What does Jwero NOT do yet — honestly?', a: 'In-POS returns and cash-drawer day-close, girvi, offline mode, a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens), a public developer API, and e-invoice/GSTR automation (IRN, e-way bills, portal filing). All on the <a href="/roadmap">public roadmap</a>, none fully shipped — we say so before you buy, not after.' },
+      { q: 'What does Jwero NOT do yet — honestly?', a: 'E-invoice/GSTR automation (IRN, e-way bills, portal filing), auto-debit mandates for scheme and girvi collections, a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens), a public developer API, and demand-netting MRP for the workshop. All on the <a href="/roadmap">public roadmap</a>, none fully shipped — we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)' },
     ],
   },
   {
@@ -96,12 +96,14 @@ const CATEGORIES = [
     id: 'pricing', label: 'Pricing, ROI & contract',
     items: [
       { q: 'What does Jwero cost?', a: 'Pricing is being finalised per region ahead of general availability. Ask on WhatsApp and you get a straight number, no "book a discovery call" runaround. See <a href="/pricing">the pricing page</a> for the tier structure.' },
-      { q: 'Is there a free trial?', a: 'Self-serve trial mechanics are being finalised. Most businesses start with a pilot using their own data instead — real customers, real catalogue, real results, in days.' },
+      { q: 'Is there a free trial?', a: 'A free account, yes — create it in three steps at <a href="/start">/start</a> (Google, LinkedIn or email, no card). What each paid tier unlocks, and when billing starts, is set up inside the product once you have seen it on your own data. Self-serve trial mechanics for the paid tiers are being finalised. Most businesses start with a pilot using their own data instead — real customers, real catalogue, real results, in days.' },
       { q: 'How much ROI can I actually expect?', a: 'We won’t quote a percentage nobody can verify. Run the <a href="/tools/dead-stock-calculator">Dead Stock</a> and <a href="/tools/gold-scheme-calculator">Gold Scheme</a> calculators on your own numbers, then judge the weekly growth report on actuals once you’re live — not on a projection.' },
       { q: 'Are there hidden costs?', a: 'No — implementation scope, what’s included and what’s extra are stated plainly before you commit. Any pass-through WhatsApp messaging costs from Meta are explained upfront instead of turning up later.' },
       { q: 'Is there a lock-in contract?', a: 'Monthly billing is available at entry tiers. Annual pricing is simply a discount rather than a handcuff, and the export-anytime promise applies regardless of contract term.' },
       { q: 'What’s included in implementation?', a: 'Data import, WhatsApp connection, catalogue setup and role-based team training — the full checklist is confirmed with you before you pay.' },
       { q: 'Is it cheaper than the tools I already pay for combined?', a: 'A biller stops at the invoice: it can’t touch repeat-purchase lift, scheme float, WhatsApp-attributed revenue or gold-loss control, which is where the real ROI lives. Compare it against the "Frankenstack" it replaces — WhatsApp tool, catalogue app, website, staff hours on Excel — rather than against sticker price alone. See the honest frame on the <a href="/pricing">pricing page</a>.' },
+      { q: 'What does my accountant do differently?', a: 'Less re-typing. Sales, returns, payments and expenses post to Jwero’s own double-entry ledger with GST handled, and the Tally / Zoho Books bridge carries them across — so your accountant works in the tool they already trust, from entries that were made once, at the counter.' },
+      { q: 'What happens if I stop paying?', a: 'Your data stays yours. Export everything — customers, catalogue, stock, invoices — in standard formats at any time, before or after you stop. There is no hostage clause and no deletion-on-lapse surprise; we say so in writing before you start.' },
       { q: 'Can I upgrade or downgrade tiers later?', a: 'Yes — Assist, Approve and Autopilot are a deliberate ladder. Most businesses start on Assist and move up once their own growth reports justify it.' },
       { q: 'Why should I trust an ROI claim from the company selling the product?', a: 'You shouldn’t take our word for it — that’s why the growth report exists. It’s a weekly, plain-language account of what happened, generated from your own data instead of a projection from a sales deck.' },
     ],
@@ -109,6 +111,7 @@ const CATEGORIES = [
   {
     id: 'segments', label: 'Segments — retail, multi-store, wholesale, manufacturing',
     items: [
+      { q: 'I run a D2C brand on Shopify. What happens to my Shopify data if I leave Jwero?', a: 'Nothing. Shopify remains the system of record for your store; Jwero syncs products and orders both ways while connected and stops syncing when you disconnect. Your customer record, built in Jwero, exports with you.' },
       { q: 'I run one small store. Is this too much software for me?', a: 'No. Start with three things: customers imported, WhatsApp connected, catalogue live. That’s the whole Assist tier. Grow into the rest, or don’t — see <a href="/solutions/single-store">the single-store page</a>.' },
       { q: 'Can multiple stores use it?', a: 'Yes — multi-store is native: shared customers and catalogue, per-branch stock, prices and permissions. See <a href="/solutions/multi-store-chains">multi-store & chains</a>.' },
       { q: 'Can branches have different prices?', a: 'Yes — per-branch price rules under central control, with approvals gating any exception.' },
@@ -139,7 +142,7 @@ const CATEGORIES = [
       { q: 'Purchase orders and vendors?', a: 'Yes — POs, vendor records and receiving, with weigh-and-assay intake for raw materials.' },
       { q: 'Can customers book appointments?', a: 'Yes — appointment booking with WhatsApp confirmations and reminders.' },
       { q: 'Does it do GST invoices?', a: 'Yes — GST invoicing at the live metal rate is live. E-invoice/IRN integration is on the roadmap; your accountant keeps working in Tally via the bridge in the meantime.' },
-      { q: 'Is there a full POS with a cash drawer and day-close?', a: 'Not a full POS yet. Touchscreen counter billing is live — scan or search a product, build a cart, price it at the live gold rate, apply a discount and generate a GST draft invoice in one flow. In-POS sales returns and cash-drawer/till day-close reconciliation are still on the roadmap, and we say this plainly before you buy, not after.' },
+      { q: 'Is there a full POS with a cash drawer and day-close?', a: 'Yes. Each counter is a register; a cashier opens a shift, rings sales — scan or search, live gold rate, discount, old-gold exchange voucher, GST invoice — takes returns under the branch’s policy, and closes the shift with a declared cash count that Jwero reconciles against expected takings. <a href="/products/pos">See the Counter POS</a>.' },
     ],
   },
   {

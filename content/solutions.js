@@ -9,9 +9,9 @@ const solutionsHub = {
   body: `
 ${L.hero({
   eyebrow: 'SOLUTIONS',
-  h1: 'One system. Every kind of jewellery business.',
+  h1: 'Find the page written for your kind of jewellery business.',
   sub: 'The same operating system runs a single counter, a hundred-branch chain, and a manufacturing bench. Find the page written in your language — 22 segments, all equal-status.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'solutions' },
+  primary: { href: '#', label: 'Tell me which page is mine', wa: 'solutions' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
@@ -37,7 +37,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('WHOLESALE', 'Selling to the trade, built to order.', '')}
   <div class="router-grid" id="wholesale">
-    <a class="router-card" href="/solutions/diamond-wholesale"><h3>Diamond wholesale</h3><p>Your inventory, in every buyer’s pocket.</p></a>
+    <a class="router-card" href="/solutions/diamond-wholesale"><h3>Diamond wholesale &amp; traders</h3><p>Your inventory, in every buyer’s pocket — certificate-first, memo-tracked.</p></a>
     <a class="router-card" href="/solutions/gold-wholesale"><h3>Gold wholesale</h3><p>Wholesale gold, retail-grade systems.</p></a>
     <a class="router-card" href="/solutions/b2b-jewellery"><h3>B2B jewellery (silver, gemstone, pearl)</h3><p>Sell to the trade without living on the phone.</p></a>
   </div>`
@@ -95,9 +95,9 @@ const singleStore = {
   body: `
 ${L.hero({
   eyebrow: 'FOR SINGLE-STORE JEWELLERY BUSINESSES',
-  h1: 'Out of your head. Into one system.',
+  h1: 'Run the whole shop from one screen — and keep every customer when staff leave.',
   sub: 'Run the whole shop from one screen — every customer remembered, every enquiry answered in seconds, without hiring anyone. The same operating system a chain runs, sized for one counter.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'single-store' },
+  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'single-store' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   mock: L.mockMemory,
 })}
@@ -175,7 +175,7 @@ const chains = {
   body: `
 ${L.hero({
   eyebrow: 'FOR MULTI-STORE BUSINESSES & CHAINS',
-  h1: 'Every branch consistent. Every customer, one record.',
+  h1: 'Every branch on one record, so a customer is known at every counter and you see it all live.',
   sub: 'You know exactly why the biggest players win: every branch consistent, every customer known, every campaign measured. Jwero gives your network that same spine — without a head-office IT department, and without betting the season on a rip-out.',
   primary: { href: '#', label: 'Talk to a specialist', wa: 'chains' },
   secondary: { href: '/book-demo', label: 'Book an evaluation demo' },
@@ -244,7 +244,7 @@ const manufacturers = {
   body: `
 ${L.hero({
   eyebrow: 'FOR MANUFACTURERS & WHOLESALERS',
-  h1: 'You measure in milligrams. Your systems should too.',
+  h1: 'Software that weighs every stage, every karigar, every loss — the way you already do.',
   sub: 'Retail software dressed up for the workshop does not survive the workshop. Jwero’s manufacturing spine speaks your language: fine weight through every stage, loss norms per process, job-work under rules, intake verified by assay. And B2B selling happens on the channel your buyers already use.',
   primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'manufacturers' },
   secondary: { href: '/tools/gold-loss-calculator', label: 'Try the Gold-Loss Calculator' },

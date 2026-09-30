@@ -56,10 +56,15 @@ const ICON_PATHS = {
   pie: '<path d="M21 12a9 9 0 1 1-9-9v9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/>',
   route: '<circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H15a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h6.5"/>',
   send: '<path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/>',
+  till: '<rect x="3" y="10" width="18" height="11" rx="2"/><path d="M7 10V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4"/><path d="M7 14h4"/><path d="M7 17h6"/><circle cx="17" cy="15.5" r="1"/>',
+  scale: '<path d="M12 3v18"/><path d="M5 21h14"/><path d="M3 7h18"/><path d="m6 7-3 7a3 3 0 0 0 6 0z"/><path d="m18 7-3 7a3 3 0 0 0 6 0z"/>',
+  vault: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/><path d="M12 10v2l1.5 1"/><path d="M7 21v1"/><path d="M17 21v1"/>',
+  video: '<rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3z"/>',
   updown: '<path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/>',
   arrow: '<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>',
   moon: '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>',
   close: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+  search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
 };
 const ICON_GLYPHS = {
   '◆': 'gem', '◇': 'layers', '✦': 'sparkle', '♥': 'heart', '●': 'disc', '○': 'circle', '◉': 'target', '◈': 'facet',
@@ -76,9 +81,38 @@ const LINK_ICONS = {
   '/products/repairs-service': 'tools', '/products/purchase-vendors': 'truck', '/products/gold-schemes': 'coins',
   '/products/digital-gold': 'wallet', '/products/loyalty': 'gift', '/products/segmentation': 'pie',
   '/products/journeys': 'route', '/products/campaigns': 'send',
+  '/products/pos': 'till', '/products/manufacturing': 'scale', '/products/girvi': 'vault', '/products/meetings': 'video',
   '/platform/customer-memory': 'record', '/platform/ai-workforce': 'shield', '/platform/integrations': 'swap',
   '/platform/pricing-engine': 'coins', '/trust/security': 'key', '/platform/onboarding': 'check', '/roadmap': 'trend',
 };
+// A card with no icon of its own gets one from its title — the same line
+// icons everywhere, so a page reads as a system rather than a list.
+const AUTO_ICONS = [
+  [/whatsapp|chat|inbox|reply|message|conversation|dm\b/i, 'chat'], [/instagram|facebook|social|photo|reel|post/i, 'camera'],
+  [/\bai\b|agent|draft|assistant|autopilot|bot/i, 'bot'], [/approv|govern|guardrail|kill|permission|control|safe|consent/i, 'shield'],
+  [/invoice|bill|gst|receipt|tender|cash|till|counter|pos\b/i, 'receipt'], [/stock|inventory|piece|vault|memo|consign|exhibit|transfer/i, 'box'],
+  [/customer|clientel|family|walk-in|visitor|people|staff|team|karigar|employee|salesperson/i, 'users'],
+  [/report|dashboard|analytic|insight|kpi|attribution|what worked|number|measure/i, 'activity'],
+  [/birthday|anniversar|occasion|festival|calendar|season|wedding|reminder|schedule|due/i, 'calendar'],
+  [/gold|scheme|instalment|rate|price|pricing|margin|cost|₹|rupee|payment|collect|loan|girvi|pledge|interest|balance|plan\b|plans\b/i, 'coins'],
+  [/catalog|catalogue|design|sku|listing|product|pim/i, 'book'], [/branch|store|chain|franchise|multi|outlet|head office/i, 'branches'],
+  [/workshop|manufactur|casting|routing|bom|wastage|weight|gram|milligram|assay|melt/i, 'scale'],
+  [/loyalty|referral|reward|tier|gift|point/i, 'gift'], [/campaign|broadcast|send|blast|sms|push/i, 'send'], [/segment|audience|rfm|cohort/i, 'pie'],
+  [/journey|automation|workflow|trigger|follow-up|sequence|pipeline/i, 'route'], [/video|meeting|appointment|call back|book/i, 'video'],
+  [/\bad\b|ads|meta|google|pinterest|spend/i, 'megaphone'], [/security|data|backup|export|own|encrypt|isolat|privacy|dpdp/i, 'key'],
+  [/hallmark|huid|certif|qc|quality|inspection|verify|check/i, 'check'], [/return|exchange|refund|sync|bridge|tally|zoho|shopify|integrat|connect/i, 'swap'],
+  [/search|find|lookup|discover/i, 'search'], [/voice|phone|call|ivr|telephon/i, 'phone'], [/email|mail|newsletter/i, 'mail'],
+  [/website|storefront|web|online|ecommerce|shop\b|d2c|checkout/i, 'store'], [/vendor|supplier|purchase|procure|po\b|grn|dispatch|courier|ship/i, 'truck'],
+  [/repair|service|warranty|after-sales|custody/i, 'tools'], [/record|profile|360|memory|field|history/i, 'record'],
+  [/download|import|migrat|pdf|document/i, 'download'], [/count|stocktake|rfid|label|tag\b|barcode/i, 'checkbox'],
+  [/24|night|midnight|always|hour|time|speed|fast|instant|minute/i, 'power'], [/grow|scale|revenue|sales|sell|win|convert|upsell/i, 'trend'],
+  [/score|explain|intelligen|signal|predict/i, 'activity'], [/console|to-do|task|action|queue/i, 'checkbox'], [/roadmap|next|later|future/i, 'route'],
+];
+function autoIcon(title) {
+  const t = String(title || '').replace(/<[^>]+>/g, '');
+  for (const [re, name] of AUTO_ICONS) if (re.test(t)) return name;
+  return 'sparkle';
+}
 function icon(nameOrGlyph) {
   const key = ICON_PATHS[nameOrGlyph] ? nameOrGlyph : ICON_GLYPHS[String(nameOrGlyph).trim()];
   if (!key) return nameOrGlyph;
@@ -92,7 +126,7 @@ function hero({ eyebrow, h1, sub, primary, secondary, note, mock, panel }) {
   const cta = `
       <div class="cta-row center">
         ${primary ? `<a class="btn btn-primary" href="${primary.href}" ${primary.wa ? `data-wa="${esc(primary.wa)}"` : ''}>${primary.label}</a>` : ''}
-        ${secondary ? `<a class="btn btn-ghost" href="${secondary.href}">${secondary.label}</a>` : ''}
+        ${secondary ? `<a class="btn btn-ghost" href="${secondary.href}"${secondary.share ? ` data-share="${esc(secondary.share)}"` : ''}>${secondary.label}</a>` : ''}
       </div>
       ${note ? `<p class="cta-note">${note}</p>` : ''}`;
   if (panel) {
@@ -175,7 +209,7 @@ function cards(items, cols = 3) {
     .map(
       (c) => `
     <div class="card">
-      ${c.icon || (c.link && LINK_ICONS[c.link.href]) ? `<div class="card-icon">${icon(c.icon || LINK_ICONS[c.link.href])}</div>` : ''}
+      <div class="card-icon">${icon(c.icon || (c.link && LINK_ICONS[c.link.href]) || autoIcon(c.title))}</div>
       <h3>${c.title}</h3>
       <p>${c.text}</p>
       ${c.link ? `<a class="card-link" href="${c.link.href}">${c.link.label} →</a>` : ''}
@@ -206,7 +240,7 @@ function steps(items) {
     .map(
       (s, i) => `
     <li class="step">
-      <span class="step-n">${i + 1}</span>
+      <span class="step-n">${i + 1}</span><span class="step-line" aria-hidden="true"></span>
       <div><h3>${s.title}</h3><p>${s.text}</p></div>
     </li>`
     )
@@ -262,23 +296,23 @@ function governanceStrip() {
       <div class="speed speed-run">
         <p class="speed-title">Let AI run</p>
         <ul>
-          <li>Posting new designs to your catalogue</li>
-          <li>Answering price questions at midnight</li>
-          <li>Reminding customers an instalment is due</li>
-          <li>Chasing the follow-up nobody had time for</li>
+          <li data-mode="run"><span>Posting new designs to your catalogue</span><button type="button" class="speed-toggle" aria-pressed="true"><i></i><b>Runs</b><b>Asks</b></button></li>
+          <li data-mode="run"><span>Answering price questions at midnight</span><button type="button" class="speed-toggle" aria-pressed="true"><i></i><b>Runs</b><b>Asks</b></button></li>
+          <li data-mode="run"><span>Reminding customers an instalment is due</span><button type="button" class="speed-toggle" aria-pressed="true"><i></i><b>Runs</b><b>Asks</b></button></li>
+          <li data-mode="run"><span>Chasing the follow-up nobody had time for</span><button type="button" class="speed-toggle" aria-pressed="true"><i></i><b>Runs</b><b>Asks</b></button></li>
         </ul>
       </div>
       <div class="speed speed-ask">
         <p class="speed-title">Ask me first</p>
         <ul>
-          <li>Any discount beyond the limit you set</li>
-          <li>Messages to your biggest families</li>
-          <li>A festival campaign before it goes out</li>
-          <li>Anything at all that you choose to flag</li>
+          <li data-mode="ask"><span>Any discount beyond the limit you set</span><button type="button" class="speed-toggle" aria-pressed="false"><i></i><b>Runs</b><b>Asks</b></button></li>
+          <li data-mode="ask"><span>Messages to your biggest families</span><button type="button" class="speed-toggle" aria-pressed="false"><i></i><b>Runs</b><b>Asks</b></button></li>
+          <li data-mode="ask"><span>A festival campaign before it goes out</span><button type="button" class="speed-toggle" aria-pressed="false"><i></i><b>Runs</b><b>Asks</b></button></li>
+          <li data-mode="ask"><span>Anything at all that you choose to flag</span><button type="button" class="speed-toggle" aria-pressed="false"><i></i><b>Runs</b><b>Asks</b></button></li>
         </ul>
       </div>
     </div>
-    <p class="speed-set">Set it once, per agent, per branch. Change your mind any time.</p>
+    <p class="speed-set"><span class="speed-tally" aria-live="polite"><b data-run>4</b> run on their own · <b data-ask>4</b> wait for you.</span> Set it once, per agent, per branch. Change your mind any time.</p>
     <div class="speed-guards">
       <div><strong>Stop anything</strong><p>One tap halts one agent, one action type, one branch, one channel, or everything.</p></div>
       <div><strong>Quiet hours</strong><p>Your business stays silent when you want it silent, inside daily caps you set.</p></div>
@@ -387,7 +421,7 @@ function jtbdBlock(items) {
     .map(
       (j) => `
     <div class="jtbd-item">
-      <h3>When ${j.when}, I want to ${j.want} — so ${j.so}.</h3>
+      <h3><span class="jtbd-when"><em>When</em>${j.when},</span><span class="jtbd-want"><em>I want to</em>${j.want}</span><span class="jtbd-so"><em>so that</em>${j.so}.</span></h3>
     </div>`
     )
     .join('')}</div>`;
@@ -437,7 +471,12 @@ function switchForBlock() {
 // Before/after business-impact cards — the "what changes for your business" block.
 // items: [{lever, before, after, link?}]. Only ever states Tier-A-grounded outcomes.
 function impactGrid(items) {
-  return `<div class="impact-grid">${items
+  return `<div class="impact" data-impact>
+  <div class="impact-switch" role="group" aria-label="Today or with Jwero">
+    <button type="button" class="is-on" data-state="today" aria-pressed="true">Today</button>
+    <button type="button" data-state="jwero" aria-pressed="false">With Jwero</button>
+  </div>
+  <div class="impact-grid">${items
     .map(
       (i) => `
     <div class="impact-card">
@@ -447,7 +486,9 @@ function impactGrid(items) {
       ${i.link ? `<a class="card-link" href="${i.link.href}">${i.link.label} →</a>` : ''}
     </div>`
     )
-    .join('')}</div>`;
+    .join('')}</div>
+  <p class="impact-hint" aria-hidden="true">Flip the switch to see what changes.</p>
+</div>`;
 }
 
 function honestGapsBlock(items) {
@@ -515,6 +556,165 @@ const mockOneRecord = `
     <div class="onerecord-chip">🧾 Invoice</div>
   </div>
   <div class="mock-foot">Every module reads and writes this one row. That's the operating system.</div>
+</div>`;
+
+// ---------------------------------------------------------------- graphics
+// "Fifty systems" against "one platform": the left cell lets the reader watch
+// their own stack drift past in lanes; the right cell is the single answer.
+// Screen readers get the plain list instead of four moving lanes.
+function systemSplit(systems, more) {
+  const lanes = [0, 1, 2, 3].map((i) => systems.filter((_, k) => k % 4 === i));
+  const lane = (items, i) => {
+    const chips = (dup) => items.map((t) => `<button type="button" class="chaos-chip${dup ? ' dup' : ''}" aria-pressed="false"${dup ? ' tabindex="-1" aria-hidden="true"' : ''}>${t}</button>`).join('');
+    return `<div class="chaos-lane" style="--lane:${i}"><div class="chaos-track">${chips(false)}${chips(true)}${chips(true)}</div></div>`;
+  };
+  return `
+<div class="split">
+  <div class="split-chaos">
+    <p class="split-title">Fifty systems.</p>
+    <p class="split-hint">Tap every one you run today.</p>
+    <div class="chaos" data-count>
+      <div class="chaos-wave"></div>
+      ${lanes.map(lane).join('')}
+    </div>
+    <p class="syscount-more">${more}</p>
+    <p class="split-tally" aria-live="polite"></p>
+  </div>
+  <div class="split-one syscount-one">
+    <p class="split-versus" aria-hidden="true"><b data-n>0</b><i>→</i><b>1</b></p>
+    <strong>One platform.</strong>
+    <span>One login. One truth. One bill.</span>
+    <div class="split-pulse" aria-hidden="true"><i></i>${icon('record')}<i></i></div>
+  </div>
+</div>`;
+}
+
+// The signature graphic: a brilliant-cut stone drawn as a slowly turning dot
+// matrix (site.js paints it), with the modules that touch the record pinned
+// around it and two bracketed callouts. Every label restates a verified fact.
+function gemStage({ nodes, callouts }) {
+  return `
+<div class="gem-stage" data-gem>
+  <canvas aria-hidden="true"></canvas>
+  ${nodes.map((n, i) => `<button type="button" class="gem-node gem-node-${i + 1}" aria-expanded="false" aria-describedby="gem-note-${i + 1}">${icon(n.icon)}<span class="sr-only">${esc(n.label)}</span></button>
+  <div class="gem-note gem-note-${i + 1}" id="gem-note-${i + 1}" role="tooltip"><strong>${esc(n.label)}</strong><span>${n.note}</span></div>`).join('')}
+  <p class="gem-hint" aria-hidden="true">Tap a module to see what it reads and writes</p>
+  ${callouts.map((c, i) => `<div class="callout callout-${i + 1}">${c.title ? `<strong>${c.title}</strong>` : ''}<span>${c.text}</span></div>`).join('')}
+</div>`;
+}
+
+// Diagram strip for product and platform heroes: this module on the left, the
+// shared customer record in the middle, the rest of the system on the right.
+function heroSchematic(iconName, label) {
+  const node = (i, cls, text) => `<div class="sch-node ${cls}">${icon(i)}${text ? `<span>${text}</span>` : ''}</div>`;
+  return `
+<div class="schematic" aria-hidden="true">
+  ${node(iconName, 'sch-this', esc(label))}
+  <div class="sch-wire"><i></i></div>
+  ${node('record', 'sch-core', 'Customer record')}
+  <div class="sch-wire sch-wire-fan"><i></i></div>
+  <div class="sch-rest">${[['chat', 'Inbox'], ['book', 'Catalogue'], ['box', 'Inventory'], ['receipt', 'Billing']].filter((x) => x[0] !== iconName).slice(0, 3).map(([i, l]) => `<div class="sch-node sch-dim" title="${l}">${icon(i)}</div>`).join('')}</div>
+</div>`;
+}
+
+// Persona switch (home). The reader picks the business they run; the card
+// shows that solution page's own headline and intro, and the products that
+// page leads with. build.js fills the slot once every page has been read.
+const PERSONAS = [
+  { key: 'single', chat: 'store', label: 'Single store', slug: 'solutions/single-store', products: ['/products/whatsapp', '/products/pos', '/products/crm', '/products/catalog', '/products/gold-schemes'] },
+  { key: 'chain', chat: 'chain', label: 'Multi-store chain', slug: 'solutions/multi-store-chains', products: ['/products/multi-store', '/products/pos', '/products/inventory', '/products/crm', '/products/campaigns'] },
+  { key: 'maker', chat: 'workshop', label: 'Manufacturer', slug: 'solutions/manufacturers', products: ['/products/manufacturing', '/products/purchase-vendors', '/products/inventory', '/products/erp', '/products/hr-payroll'] },
+  { key: 'b2b', chat: 'trade business', label: 'Wholesaler / B2B', slug: 'solutions/b2b-jewellery', products: ['/products/catalog', '/products/erp', '/products/whatsapp', '/products/crm', '/products/purchase-vendors'] },
+  { key: 'd2c', chat: 'brand', label: 'D2C brand', slug: 'solutions/d2c-brands', products: ['/products/storefront', '/products/instagram-facebook', '/products/ads-manager', '/products/optimize', '/products/journeys'] },
+  { key: 'franchise', chat: 'network', label: 'Franchise network', slug: 'solutions/franchise-networks', products: ['/products/multi-store', '/products/campaigns', '/products/loyalty', '/products/crm', '/products/billing-finance'] },
+];
+function personaSlot() { return '<!--persona-switch-->'; }
+function personaSwitch(entries, productName) {
+  return `
+<section class="section persona-section" id="persona">
+  <div class="container">
+    <div class="persona" data-persona>
+      <div class="persona-head">
+        <p class="persona-label">I run a…</p>
+        <div class="ptabs-nav persona-nav" role="tablist" aria-label="Type of jewellery business">
+          ${entries.map((e, i) => `<button type="button" role="tab" id="persona-tab-${e.key}" aria-controls="persona-${e.key}" aria-selected="${i === 0 ? 'true' : 'false'}" data-key="${e.key}">${e.label}</button>`).join('')}
+        </div>
+      </div>
+      ${entries.map((e, i) => `
+      <div class="persona-panel${i === 0 ? ' is-active' : ''}" id="persona-${e.key}" role="tabpanel" aria-labelledby="persona-tab-${e.key}" data-panel="${e.key}"${i === 0 ? '' : ' hidden'}>
+        <div class="persona-copy">
+          <p class="eyebrow">${esc(e.label)}</p>
+          <h3>${e.h1}</h3>
+          <p>${e.sub}</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#" data-wa="${esc(e.wa)}">Chat about my ${esc(e.chat)}</a>
+            <a class="btn btn-ghost" href="/${e.slug}">Read the ${esc(e.label.toLowerCase())} page</a>
+          </div>
+        </div>
+        <div class="persona-products cells">
+          ${e.products.map((h) => `<a class="card" href="${h}"><div class="card-icon">${icon(LINK_ICONS[h] || 'grid')}</div><h4>${esc(productName(h))}</h4></a>`).join('')}
+          <a class="card persona-more" href="/${e.slug}"><h4>Everything else on the ${esc(e.label.toLowerCase())} page</h4><span>${icon('arrow')}</span></a>
+        </div>
+      </div>`).join('')}
+    </div>
+  </div>
+</section>`;
+}
+
+// Interactive simulation block. sims.js builds the UI inside [data-sim];
+// the copy here frames it as a try-it, never as a recorded result.
+const SIMS = {
+  rate: { eyebrow: 'TRY IT · LIVE RATE', title: 'Move the gold rate. Watch every price follow.', lead: 'Nine prices on three channels, one rule. Drag the rate and see what a jeweller repricing by hand would have to retype.', cta: 'Show me this on my own catalogue' },
+  approve: { eyebrow: 'TRY IT · THE MORNING QUEUE', title: 'Run the AI workforce for a minute.', lead: 'Drafts arrive the way customers do. Approve, edit, or decide an action type may run alone — and stop everything with one tap.', cta: 'Show me a real queue on WhatsApp' },
+  memory: { eyebrow: 'TRY IT · CUSTOMER MEMORY', title: 'A customer messages. What does the record already know?', lead: 'Pick a customer and watch her record fill in before anyone types a reply.', cta: 'Send me a sample customer record' },
+  shelf: { eyebrow: 'TRY IT · THE SLEEPING SHELF', title: 'Slide time forward. Watch stock fall asleep.', lead: 'Seventy-two pieces, ageing month by month. The count past 180 days is the number most owners have never seen.', cta: 'Show me my own shelf' },
+  till: { eyebrow: 'TRY IT · THE COUNTER', title: 'Ring up a sale. Take old gold. Close the shift.', lead: 'Scan pieces, add exchange gold, take payment, then close the till and see the variance appear tonight — not next week.', cta: 'Show me a till close on WhatsApp' },
+  grams: { eyebrow: 'TRY IT · METAL CLOSURE', title: 'Push a stage past its wastage norm. Watch the order refuse to close.', lead: 'A hundred grams issued to the bench, four stages, four norms. The mechanics are the product’s; the numbers are yours to play with.', cta: 'Show me one real job, gram by gram' },
+};
+function sim(kind) {
+  const s = SIMS[kind];
+  return `
+<section class="section sim-section" id="try-${kind}">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">${s.eyebrow}</p><h2>${s.title}</h2><p class="lead">${s.lead}</p></div>
+    <div class="sim" data-sim="${kind}" data-sim-name="${s.title.replace(/\.$/, '')}"><p class="sim-foot">Loading the simulation…</p></div>
+    <p class="sim-note">Simulation — illustrative numbers, the product’s real mechanics.</p>
+    <div class="cta-row center"><a class="btn btn-primary" href="#" data-sim-wa>${s.cta}</a><a class="btn btn-ghost" href="/start">Create your workspace</a></div>
+  </div>
+</section>`;
+}
+
+// Who sets what — head office vs branch. Same switch as the two-speed strip,
+// so a chain owner can flip a line and see the network re-balance.
+function controlSplit() {
+  const li = (t, mode) => `<li data-mode="${mode}"><span>${t}</span><button type="button" class="speed-toggle" aria-pressed="${mode === 'run' ? 'true' : 'false'}"><i></i><b>HQ</b><b>Branch</b></button></li>`;
+  return `
+<div class="speeds speeds-light" data-controls>
+  <div class="speed speed-run">
+    <p class="speed-title">Head office sets</p>
+    <ul>${[
+      'The catalogue and the price rules', 'Discount limits per role', 'Brand campaigns and the festival calendar', 'Who may approve what, at every branch',
+    ].map((t) => li(t, 'run')).join('')}</ul>
+  </div>
+  <div class="speed speed-ask">
+    <p class="speed-title">The branch runs</p>
+    <ul>${[
+      'Discounts inside the limit, at the counter', 'Local follow-ups and appointments', 'Stock counts, transfers and memo for its own vault', 'Its own shift, till and day-close',
+    ].map((t) => li(t, 'ask')).join('')}</ul>
+  </div>
+</div>
+<p class="speed-set speed-set-light"><span class="speed-tally"><b data-run>4</b> decided centrally · <b data-ask>4</b> left to the branch.</span> Flip any line — the network re-balances, and every branch sees the same customer either way.</p>`;
+}
+
+// Memo exposure — which buyer holds what, for wholesalers and traders.
+const mockMemo = `
+<div class="mock mock-memo" role="img" aria-label="Illustration of memo exposure per buyer">
+  <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">Memo book · who holds what</span></div>
+  <div class="mock-kv"><span>Sharma Jewels, Jaipur</span><strong>14 pcs · 62.40 ct · due in 3 days</strong></div>
+  <div class="mock-kv"><span>R. K. Gems, Surat</span><strong>6 pcs · 18.10 ct · overdue 2 days</strong></div>
+  <div class="mock-kv"><span>Lakshmi & Sons, Chennai</span><strong>22 pcs · 41.75 ct · due in 9 days</strong></div>
+  <div class="mock-kv"><span>Exposure today</span><strong>42 pcs · 122.25 ct · ₹1.84 Cr at list</strong></div>
+  <div class="mock-foot">Every memo with a return date; the overdue one is already a drafted follow-up waiting for your tap.</div>
 </div>`;
 
 // Standard pre-footer CTA band, on the brand panel. variant 'enterprise' swaps
@@ -626,7 +826,7 @@ function customerLogos() {
 }
 
 module.exports = {
-  esc, icon, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
+  esc, icon, autoIcon, sim, controlSplit, mockMemo, LINK_ICONS, PERSONAS, personaSlot, personaSwitch, systemSplit, gemStage, heroSchematic, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
   governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,

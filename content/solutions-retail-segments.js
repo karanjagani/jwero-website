@@ -19,7 +19,7 @@ ${L.hero({
   eyebrow: 'FOR LUXURY & BOUTIQUE',
   h1: 'Clienteling worthy of what you sell.',
   sub: 'White-glove memory for high-value clients: preferences, sizes, anniversaries — at every touchpoint, with private previews on WhatsApp instead of mass marketing.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'luxury' },
+  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'luxury' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   mock: L.mockMemory,
 })}
@@ -61,7 +61,7 @@ ${L.hero({
   eyebrow: 'FOR BRIDAL & WEDDING',
   h1: 'Win the wedding, keep the family.',
   sub: 'Track every trousseau enquiry from first DM to final fitting — and the anniversaries after. The bridal journey is long and multi-visit. Your system should remember it as one story, not scattered messages.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'bridal' },
+  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'bridal' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 ${L.section(
@@ -99,7 +99,7 @@ ${L.hero({
   eyebrow: 'FOR DIAMOND RETAIL',
   h1: 'Certified stock, certified follow-up.',
   sub: 'Certificate-level catalogue fields and an AI workforce that answers 4C questions instantly. Built for a trade where trust is the whole sale, and where solitaire stock can sit for a long time if nobody follows up.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'diamond' },
+  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'diamond' },
   secondary: { href: '/tools/dead-stock-calculator', label: 'Try the Dead Stock Calculator' },
 })}
 ${L.section(
@@ -148,7 +148,7 @@ ${L.hero({
   eyebrow: 'FOR GOLD RETAIL',
   h1: 'Gold moves fast. Your system should too.',
   sub: 'Live-rate pricing, scheme enrolment and old-gold exchange in one flow — because in gold retail, the rate changes twice a day and every quote has to keep up.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'gold' },
+  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'gold' },
   secondary: { href: '/tools/gold-scheme-calculator', label: 'Try the Scheme Calculator' },
 })}
 ${L.section(
@@ -182,7 +182,7 @@ ${L.ctaBand('Change the rate. Watch it update.', 'In a demo, we change today’s
 
 const silverRetailFaqs = [
   { q: 'Can it handle a very large SKU count?', a: 'Yes — the catalogue is built for high piece counts, with bulk tools and RFID-ready stock-take for exactly this kind of volume.' },
-  { q: 'Does Jwero do counter billing for high-volume silver sales?', a: 'Scan-to-sale checkout is live — scan or search a piece, build the cart, price it at the live rate, apply a discount, take payment and generate the GST invoice, all in one flow. Sales returns and cash-drawer day-close aren’t in it yet, so keep those on your current counter for now.' },
+  { q: 'Does Jwero do counter billing for high-volume silver sales?', a: 'Scan-to-sale checkout is live — scan or search a piece, build the cart, price it at the live rate, apply a discount, take payment and generate the GST invoice, all in one flow. Returns and a reconciled cash day-close are in the same counter, and search works in transliterated Hindi, Gujarati or Tamil for fast tills. <a href="/products/pos">See the Counter POS</a>.' },
   { q: 'Our margins are thin — can we really afford new software?', a: 'Measure it against the manual hours currently spent reconciling volume sales, not against a line-item cost. The <a href="/tools/dead-stock-calculator">Dead Stock Calculator</a> alone often surfaces more than the subscription costs.' },
 ];
 
@@ -195,9 +195,9 @@ const silverRetail = {
   body: `
 ${L.hero({
   eyebrow: 'FOR SILVER RETAIL',
-  h1: 'High volume, low margin — automated.',
+  h1: 'Bill a hundred silver pieces an hour at the live rate, without a calculator.',
   sub: 'Silver moves in volume with thin margins and huge SKU counts. Fast catalogue tools, automated reorder signals and inventory ageing keep manual work from eating what little margin there is.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'silver' },
+  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'silver' },
   secondary: { href: '/products/inventory', label: 'See inventory tools' },
 })}
 ${L.section(
@@ -207,7 +207,7 @@ ${L.section(
     { quote: 'Trends change fast and we’re always guessing what to reorder.', title: 'Ageing and mover visibility', text: 'Fast/slow-mover views by category show what to reorder — evidence, not habit.' },
   ])}`
 )}
-${L.honestGapsBlock(['POS checkout (scan, cart, live-rate pricing, GST invoice) is live; in-POS sales returns and cash-drawer day-close are still on the roadmap.'])}
+${L.honestGapsBlock(['E-invoice IRN generation is not built in — GST invoices are generated; IRP registration stays with your CA’s tool for now.'])}
 ${L.section(`${L.sectionHead('QUESTIONS SILVER RETAILERS ASK', 'What silver retailers ask about volume selling.', '')}${L.faqBlock(silverRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="silver">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
@@ -230,9 +230,9 @@ const labGrown = {
   body: `
 ${L.hero({
   eyebrow: 'FOR LAB-GROWN DIAMOND',
-  h1: 'Built for the fastest-moving segment in jewellery.',
+  h1: 'Lab-grown moves online-first. Sell it with live pricing on every channel.',
   sub: 'Lab-grown buyers research online, compare on price and clarity, and expect a digital-native experience. Educate, convert and retain them where they already are — WhatsApp, Instagram and your storefront.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'labgrown' },
+  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'labgrown' },
   secondary: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' },
 })}
 ${L.section(
@@ -278,9 +278,9 @@ const gemstoneRetail = {
   body: `
 ${L.hero({
   eyebrow: 'FOR GEMSTONE RETAIL',
-  h1: 'Every stone has a story. Keep both.',
+  h1: 'Every stone’s provenance on the record, every customer’s taste beside it.',
   sub: 'Gemstone inventory is often one-of-one, with provenance and certification that matter as much as the stone itself. Jwero’s catalogue and CRM keep the story and the customer together.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'gemstone' },
+  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'gemstone' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 ${L.section(

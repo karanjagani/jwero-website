@@ -89,9 +89,9 @@ const customers = {
   body: `
 ${L.hero({
   eyebrow: 'PROOF',
-  h1: 'We would rather show you than tell you.',
-  sub: 'Jewellery is a trade that trusts hallmarks, not adjectives. This page holds itself to the same rule: every claim below is verified in the product, every sample is labelled a sample. Customer stories ship with names, numbers and dates — or they don’t ship.',
-  primary: { href: '#', label: 'Get a live demo instead', wa: 'customers' },
+  h1: 'Fifteen named jewellers run on Jwero. Ask any of them.',
+  sub: 'Every logo below is a verified, permissioned Jwero customer — never a prospect. The button on this page opens the same inbox they use; test it before you trust anyone’s word, including ours.',
+  primary: { href: '#', label: 'Message the inbox our customers use', wa: 'customers' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
@@ -180,7 +180,7 @@ ${L.section(
     { label: 'Catalogue, CRM and inventory in the same system', jwero: 'Yes', other: 'No — separate tools needed' },
     { label: 'Governed AI drafting with approval queues', jwero: 'Yes', other: '[VERIFY per tool]' },
     { label: 'Touchscreen counter billing (scan to GST invoice)', jwero: 'Yes', other: '[VERIFY per tool]' },
-    { label: 'In-POS returns and cash-drawer day-close', jwero: 'Roadmap', jweroRoadmap: true, other: '[VERIFY per tool]' },
+    { label: 'In-POS returns and cash-drawer day-close', jwero: 'Yes — returns under branch policy; register shifts with a reconciled cash count', jweroRoadmap: false, other: '[VERIFY per tool]' },
   ])}`
 , { tone: 'tint' })}
 
@@ -193,7 +193,7 @@ ${L.section(
   ])}`
 )}
 
-${L.honestGapsBlock(['Touchscreen counter billing is live today; in-POS returns and cash-drawer day-close are still on our roadmap. If a pure-messaging tool is genuinely all you need today, we’ll tell you that honestly rather than oversell.'])}
+${L.honestGapsBlock(['E-invoice IRN generation is not built in yet. If a pure-messaging tool is genuinely all you need today, we’ll tell you that honestly rather than oversell.'])}
 
 ${L.section(`${L.sectionHead('QUESTIONS SWITCHERS ASK', 'Common questions before switching.', '')}${L.faqBlock([
   { q: 'Isn’t a WhatsApp tool enough for messaging?', a: 'For pure messaging, yes. The gap appears the moment a reply needs to know her purchase history, scheme balance, or today’s gold rate.' },

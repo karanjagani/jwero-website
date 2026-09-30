@@ -16,7 +16,7 @@ const castingUnits = {
   body: `
 ${L.hero({
   eyebrow: 'FOR CASTING UNITS',
-  h1: 'Every tree, every flask, accounted.',
+  h1: 'Metal in, castings out, loss per flask — closed every day.',
   sub: 'Batch and work-in-progress tracking tuned to casting workflows — with per-stage loss norms and abnormal-loss flags, and client jobs kept distinguishable even when they share a process.',
   primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'casting' },
   secondary: { href: '/solutions/manufacturers', label: 'See the manufacturer overview' },
@@ -82,7 +82,7 @@ const oemManufacturers = {
   body: `
 ${L.hero({
   eyebrow: 'FOR OEM MANUFACTURERS',
-  h1: 'Your buyers’ brands. Your system.',
+  h1: 'Make for many brands from one workshop, with each buyer’s job-work on its own ledger.',
   sub: 'Multi-client job-work: client-wise WIP, specs and settlement — segregated cleanly, run centrally, so each buyer brand gets an accurate settlement without cross-contamination.',
   primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'oem' },
   secondary: { href: '/solutions/manufacturers', label: 'See the manufacturer overview' },
@@ -115,8 +115,8 @@ const exportHouses = {
   body: `
 ${L.hero({
   eyebrow: 'FOR EXPORT HOUSES',
-  h1: 'Export-grade process discipline.',
-  sub: 'Order-to-shipment tracking with documentation trails, and replies to overseas buyers around the clock — because a timezone gap shouldn’t mean a slow reply.',
+  h1: 'Order to shipment, tracked to the gram, in the currency your buyer pays.',
+  sub: 'Order-to-shipment tracking with documentation trails, and replies to overseas buyers around the clock — because a timezone gap shouldn’t mean a slow reply. Jwero is India-first by design — GST and HUID are built in; invoicing in your buyer’s currency is; local tax rails abroad are not yet.',
   primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'export' },
   secondary: { href: '/solutions/manufacturers', label: 'See the manufacturer overview' },
 })}

@@ -4,18 +4,19 @@ const BC = (label) => [['Home', '/'], ['Solutions', '/solutions'], [label]];
 const diamondWholesaleFaqs = [
   { q: 'Can I share different prices with different buyers?', a: 'Yes — buyer-tiered pricing and catalogue visibility are configurable, so each buyer sees their own terms.' },
   { q: 'Can memo and approval status be tracked per stone?', a: 'Order and pipeline tracking hold memo and approval status per item, replacing the register-hunting that comes with paper memos.' },
+  { q: 'I trade loose diamonds and parcels, not jewellery. Is this for me?', a: 'Partly, and we would rather say where the line is. Today Jwero holds each stone with its certificate number, shape, carat, colour, clarity and cut on the catalogue; tracks it out on memo and consignment to several buyers with return dates; prices per buyer with tiered lists; and invoices in more than one currency. What it does not do yet is treat a parcel as a lot in carats with a price per carat, or price as a discount off a list — those are on the roadmap, and until they ship a trader who works parcel-by-parcel will still keep that sheet outside Jwero.' },
   { q: 'Our buyer relationships run on trust built over years. Won’t a system feel transactional?', a: 'The system holds the record; your team still holds the relationship. It replaces the register-hunting, not the trust — the buyer still deals with a person, just one who has the memo history in front of them.' },
 ];
 
 const diamondWholesale = {
   slug: 'solutions/diamond-wholesale',
-  title: 'For Diamond Wholesalers | Jwero',
-  description: 'Private B2B catalogues on WhatsApp, memo and approval tracking, and buyer-tiered pricing — every buyer, every memo, every order in one thread.',
-  breadcrumbs: BC('Diamond wholesale'),
+  title: 'For Diamond Wholesalers & Traders | Jwero',
+  description: 'Private B2B catalogues on WhatsApp, certificate-first stone records, memo and approval tracking, and buyer-tiered pricing — every buyer, every memo, every order in one thread. Honest about what parcel traders still need.',
+  breadcrumbs: BC('Diamond wholesale & trading'),
   faqs: diamondWholesaleFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'FOR DIAMOND WHOLESALE',
+  eyebrow: 'FOR DIAMOND WHOLESALERS & TRADERS',
   h1: 'Your inventory, in every buyer’s pocket.',
   sub: 'Private B2B catalogues on WhatsApp, memo and approval tracking, and buyer-tiered pricing — every buyer, every memo, every order in one thread, not a register.',
   primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'diamondwholesale' },
@@ -28,6 +29,18 @@ ${L.section(
     { quote: 'Following up on every buyer, every week, doesn’t scale.', title: 'Follow-up that doesn’t depend on memory', text: 'The AI workforce drafts scheduled follow-ups on stale memos and quiet buyers — approved before they send.' },
   ])}`
 )}
+${L.section(
+  `${L.sectionHead('IF YOU TRADE STONES, NOT JEWELLERY', 'What a diamond trader gets today — and what is still on the roadmap.', 'Traders work certificate-first, memo-heavy and across borders. Here is the honest split.')}
+  ${L.cards([
+    { icon: '✓', title: 'Certificate-first records', text: 'Each stone carries its GIA/IGI number, shape, carat, colour, clarity and cut on the catalogue — the certificate is the identity, not an afterthought.' },
+    { icon: '⇩', title: 'Memo to many buyers', text: 'Stones out on memo or consignment to several buyers at once, each with a return date, so exposure per counterparty is visible.' },
+    { icon: '⚿', title: 'Buyer-tiered prices, multi-currency', text: 'Private price lists per buyer, invoices in the currency the buyer pays in.' },
+    { icon: '☏', title: 'Deals on the channel buyers use', text: 'WhatsApp catalogues, quotes and follow-ups on the thread where the deal is actually done.' },
+  ], 4)}
+  ${L.honestGapsBlock(['Parcel-as-lot accounting in carats with a price per carat — today a parcel is entered as its stones, not as one lot.', 'Discount-off-list (Rapaport-style) pricing — pricing is per stone or per buyer list, not a percentage off a published sheet.', 'Export documentation for cross-border shipments is not generated in Jwero.'])}`
+, { tone: 'tint' })}
+${L.section(`<div class="grid grid-2" style="align-items:center; gap:44px;"><div>${L.sectionHead('WHO HOLDS WHAT', 'Every memo, every buyer, every due date — on one screen.', 'Exposure per counterparty is the number a wholesaler carries in their head. Here it is written down, with the overdue one already chased.')}</div>${L.mockMemo}</div>`, { tone: 'tint' })}
+
 ${L.section(`${L.sectionHead('QUESTIONS DIAMOND WHOLESALERS ASK', 'Memo tracking, pricing and trust — answered.', '')}${L.faqBlock(diamondWholesaleFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="diamondwholesale">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
@@ -85,7 +98,7 @@ const b2bJewellery = {
 ${L.hero({
   eyebrow: 'FOR B2B JEWELLERY TRADE',
   h1: 'Sell to the trade without living on the phone.',
-  sub: 'One catalogue, many buyers, tiered prices — orders captured while you sleep. Built for silver, gemstone and pearl wholesale relationships that currently run on calls and screenshots.',
+  sub: 'One catalogue, many buyers, tiered price lists, memo and approval tracked per relationship — orders captured on WhatsApp while you sleep. Built for silver, gemstone and pearl B2B.',
   primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'b2b' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -111,6 +124,8 @@ ${L.jtbdBlock([
   { when: 'a retailer orders after hours', want: 'capture it against the right pricing tier automatically', so: 'nothing gets renegotiated or miskeyed the next morning' },
   { when: 'a regular buyer stops reordering', want: 'see it flagged before month-end', so: 'a trade relationship doesn’t quietly die unnoticed' },
 ])}
+${L.section(`<div class="grid grid-2" style="align-items:center; gap:44px;"><div>${L.sectionHead('WHO HOLDS WHAT', 'Every memo, every buyer, every due date — on one screen.', 'Exposure per counterparty is the number a wholesaler carries in their head. Here it is written down, with the overdue one already chased.')}</div>${L.mockMemo}</div>`, { tone: 'tint' })}
+
 ${L.section(`${L.sectionHead('QUESTIONS B2B TRADERS ASK', 'Materials, reorders and margins — answered.', '')}${L.faqBlock(b2bJewelleryFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="b2b">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 

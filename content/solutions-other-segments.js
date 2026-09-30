@@ -3,7 +3,7 @@ const BC = (label) => [['Home', '/'], ['Solutions', '/solutions'], [label]];
 
 const bullionFaqs = [
   { q: 'Can deals be captured at a locked rate?', a: 'Yes — deal capture records the rate at the moment of agreement, with a clean ledger of every settlement against it.' },
-  { q: 'Do you offer girvi / gold-loan functionality?', a: 'No — a girvi/gold-loan module is on the long-term roadmap, not shipped today. We say so plainly rather than imply otherwise.' },
+  { q: 'Do you offer girvi / gold-loan functionality?', a: 'Yes — pledge intake with a printed receipt, interest schemes that accrue on schedule, collection, renewal and release, posted to the books and on the customer’s record. Auto-debit mandates for interest are not there yet. <a href="/products/girvi">See Girvi / Gold Loans</a>.' },
   { q: 'Our trades depend on speed. Won’t logging deals slow us down?', a: 'Deal capture is built to be fast at the point of agreement, not a paperwork step afterward — it replaces reconstructing terms from memory later, which costs more time than it saves.' },
 ];
 
@@ -27,7 +27,7 @@ ${L.section(
     { quote: 'Rate-lock disputes are constant and hard to prove.', title: 'Rate-locked, auditable deal capture', text: 'The agreed rate and terms are recorded at the moment of the deal, not reconstructed afterward.' },
   ])}`
 )}
-${L.honestGapsBlock(['Girvi / gold-loan functionality is on the long-term roadmap, not shipped today.'])}
+${L.honestGapsBlock(['Girvi auto-debit (e-mandate) for interest collections and auction/forfeiture workflows for defaulted pledges are not built yet — pledge, accrual, collection, renewal and release are.'])}
 ${L.section(`${L.sectionHead('QUESTIONS TRADERS ASK', 'Rate locks, girvi and deal speed — answered.', '')}${L.faqBlock(bullionFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="bullion">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
@@ -85,7 +85,7 @@ ${L.hero({
   eyebrow: 'FOR D2C & ECOMMERCE-FIRST BRANDS',
   h1: 'Keep Shopify. Add the channels it can’t do.',
   sub: 'Ad clicks bring traffic; chat closes it, badly, without memory. Jwero adds WhatsApp and Instagram-native selling, live-rate pricing and a video counter on top of the storefront you already run.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'd2c' },
+  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'd2c' },
   secondary: { href: '/platform/integrations', label: 'See the Shopify connector' },
 })}
 ${L.section(
@@ -139,9 +139,9 @@ const startups = {
   body: `
 ${L.hero({
   eyebrow: 'FOR STARTUPS & FIRST-TIME FOUNDERS',
-  h1: 'Start with the system chains took decades to build.',
+  h1: 'Start on the system chains took decades to build — from day one, at single-store cost.',
   sub: 'Full operating system from day one: catalogue to CRM to WhatsApp — priced for a first store. No systems knowledge required, no tiny team wearing all hats without help.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'startups' },
+  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'startups' },
   secondary: { href: '/pricing', label: 'See pricing' },
 })}
 ${L.section(

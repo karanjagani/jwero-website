@@ -23,9 +23,9 @@ const schemes = {
   body: `
 ${L.hero({
   eyebrow: 'GOLD SAVINGS SCHEMES',
-  h1: 'The oldest loyalty program in jewellery. Finally digital.',
+  h1: 'Run your gold scheme with no paper register, no missed instalment, no maturity dispute.',
   sub: 'A savings plan is a promise held for eleven months. Paper registers break that promise: missed entries, disputed balances, silent dropouts. Jwero runs enrolment, reminders, balances and maturity with bank-grade discipline — and turns every maturity into your next sale.',
-  primary: { href: '#', label: 'See a scheme run live', wa: 'schemes' },
+  primary: { href: '#', label: 'Show me a scheme from enrolment to maturity', wa: 'schemes' },
   secondary: { href: '/tools/gold-scheme-calculator', label: 'Try the Scheme Calculator' },
 })}
 
@@ -99,9 +99,9 @@ const digitalGold = {
   body: `
 ${L.hero({
   eyebrow: 'DIGITAL GOLD',
-  h1: 'Their savings habit. Your future showcase visit.',
+  h1: 'Let customers buy gold in grams from their phone — and redeem it at your counter.',
   sub: 'The fintech apps discovered what jewellery businesses always knew: people love saving in gold. Jwero gives you your own digital gold offering: live rates, gram balances, clean records — so the savings habit that starts on a phone ends at your counter, not a stranger’s app.',
-  primary: { href: '#', label: 'See digital gold live', wa: 'digitalgold' },
+  primary: { href: '#', label: 'Show me gold bought from a phone', wa: 'digitalgold' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
@@ -170,7 +170,7 @@ ${L.hero({
   eyebrow: 'MULTI-STORE & FRANCHISE',
   h1: 'Grow to ten stores without losing the one-store touch.',
   sub: 'Chains win because every branch runs the same system and every customer is known everywhere. Jwero gives your network the same spine: holdings, brands and branches, consistent pricing, central campaigns — and one report the owner reads.',
-  primary: { href: '#', label: 'Talk to a specialist', wa: 'multistore' },
+  primary: { href: '#', label: 'Show me the owner’s view of every branch', wa: 'multistore' },
   secondary: { href: '/solutions/multi-store-chains', label: 'The multi-store playbook' },
 })}
 
@@ -189,6 +189,8 @@ ${L.oneSystemBlock([
   'A customer who buys at branch A is recognised at branch B on the same record — there’s only one Meera in the system, not one per branch.',
   'Branch-level performance data feeds the same reports the owner’s rollup reads from — no separate export per store.',
 ])}
+
+${L.section(`${L.sectionHead('WHO SETS WHAT', 'Head office decides. The branch runs. Flip a line and see the network re-balance.', 'Central control and local flexibility are not opposites — they are a switch per line.')}${L.controlSplit()}`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('MULTI-STORE QUESTIONS', 'Autonomy, exceptions, and who stays in control.', '')}${L.faqBlock([
   { q: 'Will branch managers resist losing autonomy?', a: 'Central control applies to pricing consistency and brand standards; day-to-day counter operation stays with the branch.' },
@@ -232,7 +234,7 @@ ${L.hero({
   eyebrow: 'LOYALTY & REFERRALS',
   h1: 'Reward every visit, not just every gold instalment.',
   sub: 'Gold schemes reward saving. Loyalty rewards everything else: repeat purchases, referrals, being a regular. Jwero lets you define tiers, earning rules and redemptions, and track who referred whom — all landing on the same customer record your team already reads.',
-  primary: { href: '#', label: 'See loyalty on a demo', wa: 'loyalty' },
+  primary: { href: '#', label: 'Show me rewards on the record', wa: 'loyalty' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
@@ -318,7 +320,7 @@ ${L.hero({
   eyebrow: 'CUSTOMER JOURNEYS',
   h1: 'Automation your team can see, and can stop.',
   sub: 'Most journey builders are a black box once you publish them. Jwero’s is a visual canvas you build, watch and can pause at any step — including an approval node that puts a person between a draft and a customer, wired into the same governance spine as the rest of your AI workforce.',
-  primary: { href: '#', label: 'See a journey run live', wa: 'journeys' },
+  primary: { href: '#', label: 'Show me a journey waiting for approval', wa: 'journeys' },
   secondary: { href: '/platform/ai-workforce', label: 'How Jwero governs AI actions' },
 })}
 
@@ -402,7 +404,7 @@ ${L.hero({
   eyebrow: 'CAMPAIGNS & BROADCASTS',
   h1: 'One send, every channel, one number for what it sold.',
   sub: 'A broadcast that ignores opt-outs is a ban risk. A campaign with no attribution is a guess about what worked. Jwero sends consent-aware broadcasts across WhatsApp, email, SMS and push, then wraps them in campaigns that report what each one actually sold.',
-  primary: { href: '#', label: 'See a campaign run live', wa: 'campaigns' },
+  primary: { href: '#', label: 'Show me what one campaign sold', wa: 'campaigns' },
   secondary: { href: '/products/loyalty', label: 'Target a loyalty tier' },
 })}
 

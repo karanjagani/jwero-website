@@ -19,8 +19,8 @@ ${L.hero({
   eyebrow: 'TRADE & PARTNERSHIPS · B2B MANAGER',
   h1: 'Every buyer, every memo, every order — in one thread.',
   sub: 'Right now, a wholesale desk runs on phone calls, screenshots and whoever remembers which buyer asked for what. Jwero gives every retail buyer relationship one record — order history, memo status and pricing terms in one place, with follow-ups drafted for you and sent only after you say yes.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
+  secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
 
 ${L.section(
@@ -101,7 +101,7 @@ ${L.hero({
   eyebrow: 'TRADE & PARTNERSHIPS · FRANCHISE PARTNER',
   h1: 'Franchisor control. Franchisee freedom. One system.',
   sub: 'Running a branch under someone else’s brand means constantly balancing head office’s standards against your own local judgment. Jwero puts pricing and catalogue consistency under the franchisor’s control while your branch keeps a structured way to run day-to-day and flag the exceptions that actually matter.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 

@@ -23,9 +23,9 @@ const hrPayroll = {
   body: `
 ${L.hero({
   eyebrow: 'HR & PAYROLL',
-  h1: 'The back office that doesn’t need a separate HR system.',
+  h1: 'Attendance, statutory payroll and karigar settlement — on the same record as the sale.',
   sub: 'Most jewellers run payroll in one tool, attendance in another, and karigar wages on paper — none of it talking to sales or the customer record. Jwero runs HR and payroll on the same platform as everything else: one login, one record, one place approvals happen.',
-  primary: { href: '#', label: 'Ask about HR & payroll', wa: 'hrpayroll' },
+  primary: { href: '#', label: 'Show me a payroll run', wa: 'hrpayroll' },
   secondary: { href: '/platform', label: 'See the full platform' },
 })}
 
@@ -52,6 +52,7 @@ ${L.section(
     { title: 'Documents', text: 'Typed employee documents — PAN, Aadhaar, passport, offer letter, contract, certificates and more — uploaded, listed and deleted per employee.' },
     { title: 'Offboarding', text: 'A genuine full-and-final settlement engine — prorated final salary, leave encashment, statutory gratuity, advance recovery — through the same compute-approve-pay lifecycle, deactivating the employee record once paid.' },
     { title: 'Shift scheduling & directory', text: 'Roster and shift assignment with a dedicated UI, alongside a full employee directory and profile system.' },
+    { title: 'Employee self-service', text: 'My Day, attendance, leave, payslips, loans, tax declarations, Form 16 and learning — 22 screens on the employee’s own phone, with an early Hindi pilot on karigar screens.' },
     { title: 'Asset management', text: 'Company-asset issue, return and report-lost-or-damaged tracking, per employee.' },
   ])}`
 )}

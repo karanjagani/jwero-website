@@ -23,9 +23,9 @@ const crm = {
   body: `
 ${L.hero({
   eyebrow: 'JEWELLERY CRM & CUSTOMER 360',
-  h1: 'A CRM that knows what a gram of trust is worth.',
-  sub: 'Most CRMs were built for software salespeople. This one was built for a trade where the customer returns every few years, spends a fortune, and expects to be remembered. Every field, score and journey exists because jewellery works this way.',
-  primary: { href: '#', label: 'See a customer record', wa: 'crm' },
+  h1: 'The CRM that remembers what she bought, what she’s saving for, and when her daughter’s wedding is.',
+  sub: '90+ fields on every customer — occasions, taste, scheme balance, churn risk with a visible why — owned by your business, not a salesman’s phone. Every reply, quote and follow-up drafts from it.',
+  primary: { href: '#', label: 'Send me a sample customer record', wa: 'crm' },
   secondary: { href: '/platform/customer-memory', label: 'Explore Customer Memory' },
   mock: L.mockMemory,
 })}
@@ -104,9 +104,9 @@ const catalog = {
   body: `
 ${L.hero({
   eyebrow: 'CATALOGUE — JEWELLERY PIM',
-  h1: 'Your entire stock, priced at this minute’s rate.',
+  h1: 'One catalogue, every piece priced at this minute’s gold rate — on WhatsApp, the counter and your website.',
   sub: 'Jewellery is the only retail where the price changes twice a day and the product has a certificate. Jwero’s catalogue treats purity, stones, certification and rate-linked pricing as first-class — so every channel always shows the truth.',
-  primary: { href: '#', label: 'See the catalogue', wa: 'catalog' },
+  primary: { href: '#', label: 'Send me a live-priced catalogue', wa: 'catalog' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
@@ -160,9 +160,9 @@ const inventory = {
   body: `
 ${L.hero({
   eyebrow: 'INVENTORY',
-  h1: 'Every gram accounted for. Every idle piece exposed.',
-  sub: 'In jewellery, inventory is not stock: it is capital, revalued twice a day. Jwero shows what everything is worth at today’s rate, what is moving, and what has quietly stopped — before the interest bill tells you.',
-  primary: { href: '#', label: 'See your stock differently', wa: 'inventory' },
+  h1: 'Know what your stock is worth today, and which pieces stopped moving 180 days ago.',
+  sub: 'Live valuation at today’s rate, ageing bands from 0–30 to 180+ days, and the number most owners have never seen: how much capital is sitting in pieces that stopped moving. Then the customers whose taste fits them.',
+  primary: { href: '#', label: 'Show me my dead stock number', wa: 'inventory' },
   secondary: { href: '/tools/dead-stock-calculator', label: 'Try the Dead Stock Calculator' },
 })}
 
@@ -176,6 +176,20 @@ ${L.section(
     { title: 'RFID stock-take', text: 'Count a showcase in minutes, not weekends.' },
   ])}`
 )}
+
+${L.section(
+  `${L.sectionHead('EVERY DOOR', 'Every way a piece leaves the vault — and comes back.', 'Jewellery stock rarely just sits or sells. It goes out on memo, to an exhibition, on approval to a good customer, to a karigar, to another branch. Each door is a ledger entry, not a sticky note.')}
+  ${L.cards([
+    { title: 'Memo & approval', text: 'Pieces out on approval memo to a customer or the trade, with due dates and a return-or-bill close.' },
+    { title: 'Consignment', text: 'Stock placed with a partner store or taken from a supplier, valued and reconciled as its own ledger.' },
+    { title: 'Exhibitions', text: 'A show’s stock goes out as a set, sells or returns piece by piece, and reconciles when the stand closes.' },
+    { title: 'Trials & reservations', text: 'Held for a customer with an expiry — released automatically if she does not come back.' },
+    { title: 'Vaults & transfers', text: 'Vault to showcase, branch to branch, with a documented trail for every high-value transit.' },
+    { title: 'Counts & discrepancies', text: 'Scheduled or spot counts; every mismatch becomes a discrepancy to resolve, not a shrug.' },
+    { title: 'Hallmarking', text: 'HUID and hallmark status carried on the piece; unhallmarked stock is flagged before it reaches the counter.' },
+    { title: 'Labels & item ledger', text: 'Print tags from the record; every movement of a piece, from receipt to sale, on one ledger line.' },
+  ], 4)}`
+, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
   'A piece flagged as slow-moving here can be matched to a customer whose taste fits it, straight from the CRM — no export to a spreadsheet.',
@@ -205,15 +219,15 @@ const billingFinance = {
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Billing & Finance', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'GST invoicing priced at the live gold rate, with receivables tracking, automated payment reminders and scan-to-sale POS checkout; POS returns and cash-drawer day-close are on the public roadmap.',
+    description: 'GST invoicing priced at the live gold rate, with receivables tracking, automated payment reminders and a full counter POS — returns, old-gold exchange and cash day-close included.',
     url: 'https://jwero.ai/products/billing-finance', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   breadcrumbs: BC('Billing & Finance'),
   faqs: [
-    { q: 'Does Jwero do POS counter billing? Is there a POS alternative?', a: 'Yes, for the core sale: scan or search a product, build a cart at the live gold rate, apply a discount, take payment and generate a GST draft invoice, all in one touchscreen flow. What is still on the roadmap is in-POS sales returns and cash-drawer day-close reconciliation — until those ship, keep your current counter for returns and till close.' },
+    { q: 'Does Jwero do POS counter billing? Is there a POS alternative?', a: 'Yes — a full counter: scan or search a product, build a cart at the live gold rate, apply a discount, take old gold on an exchange voucher, take payment and generate the GST invoice; returns follow your branch’s policy and each register closes its shift with a reconciled cash count. <a href="/products/pos">See the Counter POS</a>.' },
     { q: 'Can it price invoices at today’s gold rate automatically?', a: 'Yes — invoicing uses the same live-rate pricing formulas as the catalogue, so a rate change is reflected instantly.' },
     { q: 'Does it chase payments for me?', a: 'Yes — automated reminders run on receivables so collection doesn’t depend on someone remembering to call.' },
-    { q: 'Why not just keep using our current billing software until returns and day-close ship?', a: 'For sales, Jwero’s scan-to-sale POS checkout is ready to use today. For returns and cash-drawer day-close, keep your current counter running alongside it until those ship — Jwero adds GST invoicing at the live rate and receivables tracking either way.' },
+    { q: 'Do our books move to Jwero, or stay in Tally?', a: 'Your choice. Every sale, return, payment and expense posts to Jwero’s own double-entry ledger with GST handled; the Tally / Zoho Books bridge carries it across if your accountant’s world should not change.' },
     { q: 'Is GST computation actually compliant, or an approximation?', a: 'GST (CGST/SGST/IGST) is computed as part of live-rate invoicing, data-driven rather than hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.' },
   ],
   body: `
@@ -221,7 +235,7 @@ ${L.hero({
   eyebrow: 'BILLING & FINANCE',
   h1: 'GST invoices at the live gold rate, in seconds.',
   sub: 'Rate changes twice a day; your invoices should follow instantly, not by hand. Jwero prices, invoices and tracks receivables at the rate that’s true right now — and reminds customers to pay without anyone chasing.',
-  primary: { href: '#', label: 'Ask about billing', wa: 'billing' },
+  primary: { href: '#', label: 'Send me a live-rate GST invoice', wa: 'billing' },
   secondary: { href: '/roadmap', label: 'See the counter-billing roadmap' },
 })}
 
@@ -235,12 +249,12 @@ ${L.section(
 )}
 
 ${L.honestGapsBlock([
-  'In-POS sales returns and cash-drawer day-close reconciliation — scan-to-sale checkout is live today; returns and till close are next.',
+  'E-invoice IRN and e-way bill generation — GST invoices are generated; IRP registration still runs in your CA’s tool.',
   'E-invoice / IRN and GSTR filing automation.',
 ])}
 
 ${L.section(`${L.sectionHead('BILLING QUESTIONS', 'Your current software, and GST accuracy.', '')}${L.faqBlock([
-  { q: 'Is there a POS alternative in Jwero, or should I keep my current billing counter?', a: 'Jwero’s scan-to-sale POS checkout — cart, live gold rate, discount, payment, GST draft invoice — is live today. Keep your current counter for returns and cash-drawer day-close until those ship.' },
+  { q: 'Is there a POS alternative in Jwero, or should I keep my current billing counter?', a: 'Jwero’s <a href="/products/pos">Counter POS</a> covers the sale, the exchange, the return and the till close — you do not need a second counter.' },
   { q: 'Is GST computation compliant, or an approximation?', a: 'It’s data-driven, not hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
@@ -272,9 +286,9 @@ const erp = {
   body: `
 ${L.hero({
   eyebrow: 'ERP, RECONSIDERED',
-  h1: 'Every operation, one truth — not a separate island.',
+  h1: 'Orders, purchases, repairs and job-work on the same record as the customer.',
   sub: 'A jewellery ERP usually means another silo: orders here, customers there, catalogue somewhere else. Jwero runs orders, purchases, repairs and manufacturing on the same record as the customer and the catalogue — because an operating system doesn’t get to have blind spots.',
-  primary: { href: '#', label: 'Ask about operations', wa: 'erp' },
+  primary: { href: '#', label: 'Show me an order becoming a job', wa: 'erp' },
   secondary: { href: '/platform', label: 'See the full platform' },
 })}
 
@@ -328,7 +342,7 @@ ${L.hero({
   eyebrow: 'SHOWROOM INTELLIGENCE',
   h1: 'Know who’s on your floor — and who left without buying.',
   sub: 'A showroom visit is the highest-intent moment in the whole business, and most stores remember none of it. Jwero checks walk-ins in, shows who is on the floor live, records what was shown and tried, and drafts a follow-up the moment someone leaves without buying.',
-  primary: { href: '#', label: 'See the live floor', wa: 'showroom' },
+  primary: { href: '#', label: 'Show me the live floor view', wa: 'showroom' },
   secondary: { href: '/products/crm', label: 'See the Jewellery CRM' },
 })}
 
@@ -415,7 +429,7 @@ ${L.hero({
   eyebrow: 'CUSTOMER SEGMENTATION',
   h1: 'Every audience, defined once. Live, not a stale export.',
   sub: 'A segment here is a rule — RFM tier, tags, CRM stage, custom fields — that recalculates live against your actual customer records, so the audience is always current when a journey or campaign reads it.',
-  primary: { href: '#', label: 'Build a live segment', wa: 'segmentation' },
+  primary: { href: '#', label: 'Show me a live audience', wa: 'segmentation' },
   secondary: { href: '/products/crm', label: 'See the Jewellery CRM' },
 })}
 

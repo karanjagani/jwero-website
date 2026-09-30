@@ -103,7 +103,7 @@ const ornateNx = comparePage({
   waCtx: 'ornate',
   researchNote: 'Ornate NX facts are sourced from ornatesoftware.com and independent listings (SoftwareSuggest, Capterra India, Techjockey) checked July 2026. Ornate NX does not publish pricing — it is quote-on-request. Jwero-side claims re-verified against the product on 2026-08-01.',
   rows: [
-    { label: 'Touchscreen counter POS billing', jwero: 'Partial — scan-to-sale checkout live; in-POS returns & cash day-close still roadmap', jweroRoadmap: false, other: 'Yes — a named feature (touchscreen, product-selection, sales returns)' },
+    { label: 'Touchscreen counter POS billing', jwero: 'Yes — registers and shifts, scan-to-sale at the live rate, sales returns, old-gold exchange vouchers, reconciled cash day-close', jweroRoadmap: false, other: 'Yes — a named feature (touchscreen, product-selection, sales returns)' },
     { label: 'Karigar/artisan contact management', jwero: 'Yes — via job-work module', other: 'Yes — built into the platform' },
     { label: 'One customer record across WhatsApp, Instagram, storefront', jwero: 'Yes — 90+ fields, one record', other: '[VERIFY — CRM module exists; omnichannel scope not public]' },
     { label: 'Governed AI workforce (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: '[VERIFY — not found in public materials]' },
@@ -113,7 +113,7 @@ const ornateNx = comparePage({
   ],
   faqs: [
     { q: 'Does Jwero replace Ornate NX?', a: 'Not necessarily on day one — most businesses keep their billing ERP and add Jwero for the revenue side: customers, channels, schemes, follow-up. See the <a href="/migration">Migration Centre</a>.' },
-    { q: 'Which one handles counter billing better?', a: 'Ornate NX has a named touchscreen POS with sales returns and loyalty built in — genuinely ahead here today. Jwero has a working scan-to-sale POS checkout (search product, cart, live-rate pricing, GST draft invoice), but returns and cash day-close inside the POS are still on our roadmap.' },
+    { q: 'Which one handles counter billing better?', a: 'Both have a touchscreen counter with sales returns. Ornate NX has had one longer; Jwero’s counter adds old-gold exchange vouchers, a reconciled shift close per register, and — the real difference — the sale lands on the same customer record WhatsApp, the scheme and the follow-up use.' },
     { q: 'Does Ornate NX have an omnichannel WhatsApp/Instagram inbox?', a: 'Its CRM module manages customer interactions and loyalty programs, but we could not verify a WhatsApp Business API or Instagram DM integration in public materials — ask Ornate directly for current scope, or ask us for a side-by-side demo.' },
   ],
 });
@@ -170,7 +170,7 @@ const marg = comparePage({
   rows: [
     { label: 'Published price point', jwero: 'Being finalised — see /pricing', other: '₹18,500/piece, per an IndiaMART listing [VERIFY current/other tiers]' },
     { label: 'E-invoicing & GST e-way bill generation', jwero: 'GSTR-1/3B reports generate today; e-invoice IRN & e-way bill on roadmap', jweroRoadmap: true, other: 'Yes — a named, shipped feature' },
-    { label: 'Touchscreen counter POS with old-gold/exchange handling', jwero: 'Partial — scan-to-sale checkout live; returns, day-close & exchange handling still roadmap', jweroRoadmap: false, other: 'Yes — named features' },
+    { label: 'Touchscreen counter POS with old-gold/exchange handling', jwero: 'Yes — scan-to-sale, old-gold exchange vouchers, returns and a reconciled cash day-close per register', jweroRoadmap: false, other: 'Yes — named features' },
     { label: 'Live gold-rate catalogue pricing', jwero: 'Yes', other: '[VERIFY — not jewellery-specific by design; rate-linking not confirmed]' },
     { label: 'Purity, HUID-aware catalogue fields', jwero: 'Yes', other: '[VERIFY]' },
     { label: 'Gold schemes & digital gold', jwero: 'Yes', other: '[VERIFY — loyalty/promotions exist; scheme-specific engine not confirmed]' },
@@ -195,7 +195,7 @@ const sioniq = comparePage({
     { label: 'Serves manufacturers through bullion traders in one platform', jwero: 'Yes — same platform across segments', other: 'Yes — stated as a core positioning point' },
     { label: 'One-record architecture demonstrated, not just listed', jwero: 'Yes — see /platform for the live demo', other: '[VERIFY — modules are listed; a unified-record demo was not found publicly]' },
     { label: 'Governed AI workforce (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes, all product-verified', other: '"AI and machine learning" claimed for analytics; approval/governance model [VERIFY]' },
-    { label: 'Category label used', jwero: '"The AI Operating System for Jewellery Business"', other: 'Uses "Jewelry Operating System" framing per its own materials' },
+    { label: 'Category label used', jwero: '"The Autonomous Jewellery OS, run by AI"', other: 'Uses "Jewelry Operating System" framing per its own materials' },
     { label: 'Published pricing', jwero: 'Being finalised — see /pricing', other: 'Not publicly listed' },
   ],
   faqs: [

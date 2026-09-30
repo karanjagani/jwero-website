@@ -7,7 +7,7 @@ const BC = (label) => [['Home', '/'], ['Roles', '/roles'], [label]];
 
 const accountantFaqs = [
   { q: 'Does Jwero replace Tally or Zoho Books?', a: 'No — Jwero bridges to Tally and Zoho Books, it doesn’t replace them. Your books stay exactly where they already are; Jwero-generated GST invoices sync across so you’re reconciling against a live feed instead of re-keying every bill by hand.' },
-  { q: 'Does Jwero handle the physical billing counter and cash day-close?', a: 'The sale itself, yes — scan or search the piece, cart it, price it at the live gold rate, take payment and generate the invoice. Cash-drawer day-close reconciliation isn’t shipped yet, so that still runs on whatever you use now.' },
+  { q: 'Does Jwero handle the physical billing counter and cash day-close?', a: 'Yes — registers and shifts per counter, scan-to-sale at the live rate, returns under branch policy, old-gold exchange vouchers, and a day-close that reconciles the declared cash count against expected takings. <a href="/products/pos">See the Counter POS</a>.' },
   { q: 'Is GST computation on Jwero invoices actually compliant, or an approximation?', a: 'It’s data-driven — CGST/SGST/IGST computed as part of live-rate invoicing, not hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.' },
   { q: 'Will this change what accounting software or process I use?', a: 'Most businesses change nothing on the accounting side on day one. Jwero adds GST invoicing at the live rate and receivables tracking that flows into your existing books via the Tally/Zoho bridge — it doesn’t ask you to move your ledger.' },
 ];
@@ -23,8 +23,8 @@ ${L.hero({
   eyebrow: 'FINANCE & OPERATIONS · ACCOUNTANT',
   h1: 'Reconcile with the books, not against a pile of paper bills.',
   sub: 'Every rate change means recalculated invoices, and every recalculation by hand is a place for a mismatch to creep into the ledger. Jwero prices and generates GST invoices at the live gold rate and bridges them into Tally or Zoho Books — so reconciliation starts from a feed, not a stack of receipts.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
+  secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
 
 ${L.section(
@@ -110,8 +110,8 @@ ${L.hero({
   eyebrow: 'FINANCE & OPERATIONS · INVENTORY MANAGER',
   h1: 'See what’s dying on the shelf before it’s a write-off.',
   sub: 'Capital sits frozen in pieces nobody’s buying, and by the time a yearly stocktake finds them, months of financing cost are already gone. Jwero shows ageing and dead-stock value continuously, across every branch, so slow-moving pieces get a decision made while there’s still time to act.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
+  secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
 
 ${L.section(
@@ -196,8 +196,8 @@ ${L.hero({
   eyebrow: 'TRADE & PARTNERSHIPS · PURCHASE MANAGER',
   h1: 'Know what to reorder before the shelf decides for you.',
   sub: 'Buying by gut feel means either a shelf that runs empty on a fast mover or capital tied up in pieces that were never going to sell. Jwero shows which pieces are ageing and which are moving, at today’s rate, so the reorder call is a decision you make on data, not a hunch.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
+  secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
 
 ${L.section(
