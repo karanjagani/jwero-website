@@ -61,7 +61,7 @@ ${L.section(
   `${L.sectionHead('PERFORMANCE, LEARNING & INCENTIVES', 'Where HR meets the sales floor.', '')}
   ${L.cards([
     { title: 'Performance reviews', text: 'Review cycles group goals with self, manager and peer reviews and a competency roll-up; individual goals auto-complete at 100% progress.' },
-    { title: 'Learning & certifications', text: 'Courses built from ordered lessons and assessments, scored server-side, with certificates auto-issued on completion.' },
+    { title: 'Learning & certifications', text: 'Courses built from ordered lessons and assessments, scored securely, with certificates auto-issued on completion.' },
     { title: 'Sales & production incentives', text: 'Commission computed from real sales-order data, true margin (excluding rather than guessing when cost data is missing), or settled karigar work value, on tiered rate ladders — with a genuine clawback engine if a paid-commission sale is later returned.', link: { href: '/products/crm', label: 'See the CRM this reads from' } },
     { title: 'Loans & reimbursements', text: 'Flat-interest EMI loans recovered automatically as a payroll deduction, and expense reimbursement claims paid as a non-taxable line — both maker-checker approved.' },
   ])}`

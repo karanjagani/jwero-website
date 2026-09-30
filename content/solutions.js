@@ -224,6 +224,16 @@ ${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', 'What IT, fi
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="chains">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
+${L.section(
+  `${L.sectionHead('THE ROLLOUT', 'One branch earns the next.', 'The plan we run across a chain; each step has an exit test before the next.')}
+  ${L.steps([
+    { title: 'Week 1–2 — one pilot branch', text: 'Your toughest store. Customers, catalogue and stock imported; head-office rules set once; the branch runs the counter and WhatsApp with every AI action waiting for approval.' },
+    { title: 'Week 3 — the exit test', text: 'Rate consistency, enquiry response time, day-close variance, the branch manager’s own verdict. If it fails, we stop.' },
+    { title: 'Week 4–6 — three more branches', text: 'Head-office controls proven at the pilot go chain-wide; branch permissions per action; transfers with an approval trail.' },
+    { title: 'After — the rest, around your season', text: 'Remaining branches in waves; nothing goes live in peak weeks. The written change-freeze is part of the plan.' },
+  ])}`
+, { tone: 'tint' })}
+
 ${L.ctaBand('Start with one branch.', 'Pick your toughest store. If the pilot doesn’t earn the rollout, it doesn’t deserve one.', 'chains', { enterprise: true })}
 `,
 };

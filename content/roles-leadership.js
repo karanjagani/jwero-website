@@ -64,7 +64,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills that compound instead of living only in your head.', '')}
   ${L.cards([
-    { title: 'Structured relationship management', text: 'Instead of remembering which customers matter, you work from a record of 90+ fields per customer — occasions, scheme balances, taste, RFM — that shows you why, not just who.' },
+    { title: 'Structured relationship management', text: 'Instead of remembering which customers matter, you work from a record that scores every signal a customer gives — occasions, scheme balances, taste, RFM, 11 live scores — and shows you why, not just who.' },
     { title: 'Data-backed decision making', text: 'Dead-stock ageing, fast/slow movers and a weekly report replace gut calls with a number you can actually check.' },
     { title: 'Delegated oversight, not delegated control', text: 'Approval queues, daily caps and a 5-scope kill switch let you extend how the business responds to customers without handing away the final word.' },
     { title: 'Cross-channel fluency', text: 'One inbox for WhatsApp, Instagram and Facebook means you stop needing to check four apps to know what customers are asking.' },
@@ -238,7 +238,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills to bridge a generation, not just run a shop.', '')}
   ${L.cards([
-    { title: 'Structured relationship inheritance', text: 'Instead of years of floor-time to absorb who’s who, you read the same 90+-field customer record your predecessor would have carried in memory.' },
+    { title: 'Structured relationship inheritance', text: 'Instead of years of floor-time to absorb who’s who, you read the same scored customer record your predecessor would have carried in memory — every signal, every score, with its why.' },
     { title: 'Digital reconciliation fluency', text: 'GST invoicing at the live gold rate and the Tally/Zoho bridge teach you the financial side of the business in a format an accountant — and a bank — recognises.' },
     { title: 'Data-backed pitching to the older generation', text: 'You learn to bring evidence (ageing stock, weekly reports) into family decisions, rather than relying on seniority alone to win an argument.' },
     { title: 'Change management inside a trust-based culture', text: 'Rolling out approval queues and AI staff without alarming staff or customers is a skill in itself — one this role builds by necessity.' },

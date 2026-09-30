@@ -51,7 +51,7 @@ ${L.section(
     <div class="start-panel" data-panel="3">
       <h2>Create your workspace</h2>
       <div class="start-summary"><p><span>Business</span><b data-sum="persona">—</b></p><p><span>Tier</span><b data-sum="tier">—</b></p></div>
-      <div class="cta-row"><a class="btn btn-primary" data-start-go href="${APP}/signup?utm_source=jwero.ai&utm_medium=start">Create my free account at os.jwero.ai</a><a class="btn btn-ghost" href="#" data-wa="bookdemo" data-start-wa>Set it up with a person on WhatsApp</a></div>
+      <div class="cta-row"><a class="btn btn-primary btn-mark" data-start-go href="${APP}/signup?utm_source=jwero.ai&utm_medium=start">${L.mark('mark-xs')}Create my free account at os.jwero.ai</a><a class="btn btn-ghost" href="#" data-wa="bookdemo" data-start-wa>Set it up with a person on WhatsApp</a></div>
       <ol class="start-next"><li><b>Create a free account</b> — Google, LinkedIn or email, no card.</li><li><b>Onboarding inside Jwero</b> seeds your masters, templates, price lists and the live gold rate for your kind of business.</li><li><b>Import customers and connect WhatsApp</b> — we can do this with you; approvals are on from day one.</li><li><b>Billing</b> is set up in the product once you have seen it on your own data.</li></ol>
     </div>
 

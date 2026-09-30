@@ -17,7 +17,7 @@ const platform = {
   body: `
 ${L.hero({
   eyebrow: 'PLATFORM',
-  h1: 'One record. Every channel. Your approval.',
+  h1: 'One customer record, every channel on it, nothing sent without your approval.',
   sub: 'One customer record. One catalogue. One inventory truth. One inbox. Every module in Jwero reads and writes the same data — that is what makes it an operating system, not a bundle of features.',
   primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'platform' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
@@ -69,7 +69,7 @@ ${L.section(
 )}
 
 ${L.honestGapsBlock([
-  'POS counter returns & cash day-close — scan-to-sale checkout is live; Billing & Finance handles GST invoicing at the counter today, with returns and till reconciliation still rolling out.',
+  'E-invoice IRN and e-way bill generation — GST invoices are generated at the counter and online; IRP registration still runs in your CA’s tool.',
   'A public developer API — bridges to Tally, Zoho Books, Shopify, Woo and Unicommerce exist; a general-purpose API for your own integrations doesn’t yet.',
   'A vernacular product interface — the AI voice speaks 14 languages today; product screens are English, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets).',
   'Offline mode — Jwero is a connected product today.',
@@ -91,11 +91,13 @@ ${L.ctaBand('See the operating system on your own data.', 'Bring one real custom
 
 const customerMemory = {
   slug: 'platform/customer-memory',
-  title: 'Customer Memory — The 90-Field Jewellery Customer Record | Jwero',
-  description: 'Jwero’s customer record remembers purchases, gold-plan balances, family occasions, taste and best time to reach each customer — with an explainable "why" score.',
+  title: 'Customer Memory — 198 Signals, 11 Scores, One Jewellery Customer Record | Jwero',
+  description: 'Jwero reads 198 kinds of customer signal from 36 sources, scores each customer on 11 live, explainable scores, places her in one of 6,600 states, and decides who to reach, with what and when — every send waiting for approval.',
   breadcrumbs: BC('Customer Memory'),
   faqs: [
-    { q: 'What does Jwero remember about each customer?', a: '90+ fields per record: purchase history, gold savings balance and instalment status, birthdays, anniversaries and wedding months, metal and design preferences, preferred channel and best time to reach, engagement and churn signals — each with a visible explanation.' },
+    { q: 'What does Jwero remember about each customer?', a: 'Everything she does, as a signal: 198 kinds, from 36 sources — the counter, WhatsApp, the website, gold schemes, girvi, calls, Instagram, occasions. Sixty-eight of them move her scores the moment they land. Underneath, 90+ structured fields hold the facts: purchases, scheme balance and instalments, birthdays, anniversaries and wedding months, metal and design preferences, consent and best hour per channel.' },
+    { q: 'How does it decide who to reach, and when?', a: 'Each customer carries 11 live scores — intent, conversion, churn risk, trust and others — computed by rules you can read, each with its reasons shown. Where she sits — new or lapsed, champion or about-to-sleep, WhatsApp or call, birthday or wedding — is one of 6,600 states. From that, Jwero picks the play, the channel and her best hour, and drafts the message. Scores fade when she goes quiet, so the list stays honest.' },
+    { q: 'Is this machine learning?', a: 'No, and we say so. The scores are explainable rules you can inspect — not a model nobody can question. The AI drafts the words; the rules decide the who and the when; you decide what runs alone.' },
     { q: 'How is this different from a normal CRM?', a: 'Generic CRMs know names and notes. Jwero’s record is jewellery-native: it knows her scheme balance, her daughter’s wedding month and what today’s gold rate means for her budget — as structured fields, every module can act on, not free-text notes.' },
     { q: 'What happens when a salesperson leaves?', a: 'Nothing. The memory belongs to the business, not to a personal phone. Every conversation, preference and promise stays on the record.' },
   ],
@@ -103,7 +105,7 @@ const customerMemory = {
 ${L.hero({
   eyebrow: 'CUSTOMER MEMORY',
   h1: 'The memory your best salesperson has. At business scale.',
-  sub: 'The great jewellers always remembered — the daughter’s wedding, the taste for temple work, the plan maturing in March. Jwero makes that memory a system: 90+ fields on every customer, owned by the business, explained on demand.',
+  sub: 'The great jewellers always remembered — the daughter’s wedding, the taste for temple work, the plan maturing in March. Jwero makes that memory a system: 198 kinds of signal read into 11 live scores, every one explained on demand, owned by the business.',
   primary: { href: '#', label: 'See a live record', wa: 'memory' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   mock: L.mockMemory,
@@ -116,9 +118,14 @@ ${L.section(
     { title: 'Occasions', text: 'Birthdays, anniversaries, wedding months and upcoming family occasions — the reasons jewellery gets bought.' },
     { title: 'Taste', text: 'Metals, purity, styles, price bands, brands browsed and bought — learned from real behaviour.' },
     { title: 'Reachability', text: 'Preferred channel, consent per channel, best send window, message fatigue — reach people the way they want.' },
-    { title: 'Signals', text: 'Recency, frequency, value, engagement, churn risk and buying intent — computed continuously.' },
+    { title: 'Signals', text: '198 kinds, from 36 sources — every view, message, visit, instalment and call — many of which move a score the moment they land.' },
     { title: 'The "why"', text: 'Every score comes with its reasons. Ask why a customer is "at risk" and the record shows its work.' },
   ])}`
+)}
+
+${L.section(
+  `${L.sectionHead('HOW JWERO DECIDES', 'Who to reach, with what, and when — decided from what she actually did.', 'Not a list of fields. A reading of every signal she gives you, scored in rules you can inspect, turned into a draft that waits for your tap.')}
+  ${L.intelligence()}`
 )}
 
 ${L.oneSystemBlock([
@@ -137,7 +144,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('MEMORY QUESTIONS', 'What owners and evaluators ask first.', '')}${L.faqBlock([
-  { q: 'What does Jwero remember about each customer?', a: '90+ fields per record: purchase history, gold savings balance and instalment status, birthdays, anniversaries and wedding months, metal and design preferences, preferred channel and best time to reach, engagement and churn signals — each with a visible explanation.' },
+  { q: 'What does Jwero remember about each customer?', a: 'Every signal she gives you — 198 kinds from 36 sources — read into 11 live scores with a visible why, on one record the business owns. Purchases, scheme balance, occasions, taste, consent and best hour per channel sit underneath as structured fields.' },
   { q: 'How is this different from a normal CRM?', a: 'Generic CRMs know names and notes. Jwero’s record is jewellery-native: it knows her scheme balance, her daughter’s wedding month and what today’s gold rate means for her budget — as structured fields every module can act on, not free-text notes.' },
   { q: 'What happens when a salesperson leaves?', a: 'Nothing. The memory belongs to the business, not to a personal phone. Every conversation, preference and promise stays on the record.' },
 ])}
@@ -250,7 +257,7 @@ const aiWorkforce = {
     { q: 'What if it says something embarrassing to a customer I’ve known for twenty years?', a: 'That fear is exactly what the approval queue exists for. Nothing reaches her until your team has seen it. Quiet hours mean nobody, old customer or new, gets a message at 11pm either.' },
     { q: 'How does it know how to sound like MY shop, not a generic chatbot?', a: 'It drafts from your catalogue, your prices, your policies and your past conversations — the same context a new employee would need, except it never forgets any of it.' },
     { q: 'Is this the same risk as an AI chatbot going rogue online?', a: 'No. Nothing sends without approval by default, ever. The entire governance layer (approvals, caps, kill switch) exists because a jewellery relationship can’t survive an ungoverned bot near it.' },
-    { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Not yet, and we’d rather say so than blur it: the chat/voice assistant speaks 14 languages; the separate outbound/inbound phone-calling agent currently covers 11 Indian languages.' },
+    { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Not yet, and we’d rather say so than blur it: the chat/voice assistant speaks 14 languages; the separate outbound/inbound phone-calling agent (running over a connected telephony line — Exotel, Tata Tele, or another provider) currently covers 11 Indian languages.' },
   ],
   body: `
 ${L.hero({
@@ -268,7 +275,7 @@ ${L.section(
     { icon: '✉', title: 'Answer in minutes', text: 'Every WhatsApp, Instagram and website enquiry gets a knowledgeable draft reply (with her history and live prices) in minutes, at midnight, during festivals.' },
     { icon: '↺', title: 'Follow up on everything', text: 'Every enquiry that didn’t buy, every quote that went quiet, every instalment coming due — followed up on schedule, never forgotten.' },
     { icon: '🗓', title: 'Work the calendar', text: 'Birthdays, anniversaries, festivals — the AI workforce proposes the right invitation to the right customers, weeks ahead.' },
-    { icon: '☏', title: 'Speak, not just type', text: 'The AI voice assistant holds conversations in 14 languages, with transcripts on the customer record.' },
+    { icon: '☏', title: 'Speak, not just type', text: 'The AI voice assistant holds conversations in 14 languages on WhatsApp and web chat — native to Jwero, no third party — with transcripts on the customer record.' },
   ], 4)}`
 )}
 
@@ -301,7 +308,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('THE 14 LANGUAGES, NAMED', 'Not a marketing round number — the actual list.', 'The AI assistant’s chat and voice conversations run in these 14 languages today. (A separate, phone-calling voice agent for outbound/inbound calls currently covers 11 Indian languages — fewer than the assistant above — and we’d rather say that plainly than let the two get conflated.)')}
+  `${L.sectionHead('THE 14 LANGUAGES, NAMED', 'Not a marketing round number — the actual list.', 'The AI assistant’s chat and voice conversations — native on WhatsApp and web chat, no telephony provider involved — run in these 14 languages today. (A separate phone-calling voice agent for outbound/inbound calls and IVR, which runs over a connected telephony line such as Exotel or Tata Tele, currently covers 11 Indian languages — fewer than the native assistant above — and we’d rather say that plainly than let the two get conflated.)')}
   <div class="chip-row" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;">
     ${['English','Hindi','Marathi','Gujarati','Tamil','Telugu','Kannada','Bengali','Malayalam','Punjabi','Odia','Arabic','Spanish','French'].map((l) => `<span class="chip">${l}</span>`).join('')}
   </div>`
@@ -313,7 +320,7 @@ ${L.section(`${L.sectionHead('QUESTIONS OWNERS ASK', 'Answers, not reassurance.'
   { q: 'Can I turn it all off?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything.' },
   { q: 'Can the AI give a discount without my knowledge?', a: 'No — pricing and discounts follow your price rules and staff permissions; the AI drafts messages, it does not set prices.' },
   { q: 'What if it embarrasses me with a longtime customer?', a: 'The approval queue exists for exactly this. Nothing reaches her until your team has seen and approved it.' },
-  { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Not yet, and we’d rather say so than blur it: the chat/voice assistant above speaks 14 languages; the separate outbound/inbound phone-calling agent currently covers 11 Indian languages.' },
+  { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Not yet, and we’d rather say so than blur it: the chat/voice assistant above speaks 14 languages; the separate outbound/inbound phone-calling agent (running over a connected telephony line — Exotel, Tata Tele, or another provider) currently covers 11 Indian languages.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More on AI trust and control? <a href="/faq#ai-trust">See every AI question we’ve been asked →</a></p>`)}
 
@@ -323,13 +330,14 @@ ${L.ctaBand('Meet your first AI workforce member.', 'Watch it draft, watch it wa
 
 const integrations = {
   slug: 'platform/integrations',
-  title: 'Integrations — Tally, Shopify, Meta, Razorpay, MCP & More | Jwero',
-  description: 'Jwero bridges to Tally and Zoho Books, syncs with Shopify, WooCommerce and Unicommerce, collects via Razorpay and Cashfree, sells on official Meta channels, and exposes a first-party MCP server for your own AI agents.',
+  title: 'Integrations — Tally, Shopify, Meta, Razorpay, Telephony, MCP & More | Jwero',
+  description: 'Jwero bridges to Tally and Zoho Books, syncs with Shopify, WooCommerce and Unicommerce, collects via Razorpay and Cashfree, sells on official Meta channels, connects to telephony providers like Exotel and Tata Tele for AI voice calls and IVR, and exposes a first-party MCP server for your own AI agents.',
   breadcrumbs: BC('Integrations'),
   faqs: [
     { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger; the built-in bridge carries sales data across so your accountant’s world doesn’t change.' },
     { q: 'Can I keep my Shopify store?', a: 'Yes. The Shopify connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
     { q: 'Is the WhatsApp integration official?', a: 'Yes — Jwero uses the official WhatsApp Business API, with template approvals, consent management and opt-out handling built in.' },
+    { q: 'Which telephony providers work for AI voice calls and IVR?', a: 'Exotel and Tata Tele are wired in today; most other telephony/CPaaS providers can be connected on request. This only applies to actual phone calls and IVR — voice on WhatsApp and web chat is native to Jwero and needs no telephony provider at all. For the phone channel, Jwero drives the AI conversation and IVR logic — the call itself runs over the line you connect, the same division of labour as WhatsApp (Meta’s API) or payments (Razorpay/Cashfree).' },
   ],
   body: `
 ${L.hero({
@@ -349,6 +357,7 @@ ${L.section(
     { title: 'Unicommerce', text: 'Order-management sync for marketplace-heavy operations.' },
     { title: 'Razorpay & Cashfree', text: 'Payment collection for storefront checkout, verified end to end.' },
     { title: 'Meta (WhatsApp, Instagram, Facebook)', text: 'Official APIs for the channels where jewellery actually sells today.' },
+    { title: 'Exotel & Tata Tele', text: 'Telephony connectors that carry Jwero’s AI voice agent — outbound/inbound calls and IVR menus — over a line you already run.', link: { href: '/products/ai-sales-agents', label: 'See voice & IVR' } },
     { title: 'Your ERP export', text: 'Customers and catalogue import from Excel/CSV exports of practically any jewellery ERP.' },
   ], 4)}`
 )}
@@ -371,6 +380,7 @@ ${L.section(`${L.sectionHead('INTEGRATION QUESTIONS', 'What changes in your stac
   { q: 'Can I keep my Shopify store?', a: 'Yes. The connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
   { q: 'Is the WhatsApp integration official, or a ban risk?', a: 'Official WhatsApp Business API — template approvals, consent management and opt-out handling are built in, which is what keeps it out of ban-risk territory.' },
   { q: 'Can I connect my own AI agent to Jwero data?', a: 'Yes — a first-party MCP server exposes scoped CRM, inbox, HR, inventory, finance, marketing, org and reporting tools to any MCP-compatible agent, with a guided connect flow and an API-keys page in-product.' },
+  { q: 'Does Jwero support IVR and AI voice calls?', a: 'Yes — connect Exotel, Tata Tele, or most other telephony providers on request, and Jwero’s AI voice agent runs outbound/inbound phone calls and IVR menus over that line. Voice on WhatsApp and web chat is separate and fully native to Jwero, with no telephony connection needed. See <a href="/products/ai-sales-agents">AI Sales Agents & Voice</a> for what the agent actually does on each channel.' },
 ])}`)}
 
 ${L.ctaBand('Tell us your stack.', 'Send the list of tools you run today — we will map exactly what stays, what bridges, and what Jwero takes over.', 'integrations')}
@@ -436,7 +446,7 @@ const onboarding = {
 ${L.hero({
   eyebrow: 'ONBOARDING & SUPPORT',
   h1: 'If your team can use WhatsApp, they can run Jwero.',
-  sub: 'Implementation is a promise we write down, not a vague timeline. A named human is with you at every step.',
+  sub: 'Live in days, not months: customers imported, your WhatsApp number connected, catalogue published and approvals switched on from day one — with a written change-freeze around your season.',
   primary: { href: '#', label: 'Plan your onboarding', wa: 'onboarding' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -502,7 +512,7 @@ ${L.section(
       <h3><span class="road-dot"></span>Shipped</h3>
       <div class="road-group">
         <p class="road-group-label">Selling & customer memory</p>
-        <div class="road-item"><strong>Customer Memory</strong>90+ fields, with explainable scores</div>
+        <div class="road-item"><strong>Customer Memory</strong>198 signals, 11 explainable scores</div>
         <div class="road-item"><strong>WhatsApp, Instagram & Facebook commerce</strong>official APIs, one inbox</div>
         <div class="road-item"><strong>AI voice assistant</strong>14 languages, transcripts</div>
         <div class="road-item"><strong>Quotations</strong>draft → sent → accepted, PDF + shareable link</div>
@@ -545,7 +555,7 @@ ${L.section(
       <h3><span class="road-dot"></span>Rolling out</h3>
       <div class="road-group">
         <p class="road-group-label">In active rollout</p>
-        <div class="road-item"><strong>POS counter returns & cash day-close</strong>scan-to-sale checkout is live; in-POS returns and till reconciliation are next</div>
+        <div class="road-item"><strong>Counter POS: returns, old-gold exchange & cash day-close</strong>registers, shifts and a reconciled till close — <a href="/products/pos">shipped</a></div>
         <div class="road-item"><strong>Attribution dashboard</strong>the owner’s weekly growth report, productised</div>
         <div class="road-item"><strong>Direct ad-platform publishing</strong>one-click publish from Ads Manager, not uniform across every flow yet</div>
         <div class="road-item"><strong>Additional social publishing channels</strong>Instagram & Facebook live; LinkedIn, X, Pinterest, YouTube, Google Business being wired</div>
@@ -557,7 +567,7 @@ ${L.section(
       <div class="road-group">
         <p class="road-group-label">Statutory & finance</p>
         <div class="road-item"><strong>E-invoice IRN, e-way bill & GSTR auto-filing</strong>stays with Tally and your CA today</div>
-        <div class="road-item"><strong>Girvi / gold-loan module</strong>on the long-term map</div>
+        <div class="road-item"><strong>Girvi / gold-loan module</strong>pledge, interest schemes, collection, renewal, release — <a href="/products/girvi">shipped</a>; auto-debit mandates are not</div>
       </div>
       <div class="road-group">
         <p class="road-group-label">Ecommerce website</p>

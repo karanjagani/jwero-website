@@ -26,8 +26,8 @@ const whatsapp = {
 ${L.hero({
   eyebrow: 'WHATSAPP COMMERCE',
   h1: 'Your counter is now open 24 hours a day.',
-  sub: 'Jewellery is bought on trust and conversation — which is why it is bought on WhatsApp. Jwero turns your number into a full counter — live-price catalogues, knowledgeable replies in minutes, appointments, payments and follow-up — officially, safely, at scale.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'whatsapp' },
+  sub: 'Jewellery is bought on trust and conversation — which is why it is bought on WhatsApp. Jwero turns your official number into a full counter: live-rate catalogues, knowledgeable replies within minutes instead of next morning, appointments, payments and follow-up.',
+  primary: { href: '#', label: 'Send me a live catalogue on WhatsApp', wa: 'whatsapp' },
   secondary: { href: '/tools/whatsapp-revenue-estimator', label: 'Try the Revenue Estimator' },
   note: 'The demo IS a WhatsApp conversation.',
   mock: L.mockChatCatalog,
@@ -108,7 +108,7 @@ ${L.hero({
   eyebrow: 'INSTAGRAM & FACEBOOK',
   h1: 'The showcase is Instagram. The sale needs a system.',
   sub: 'Your reels bring the audience; then two hundred "price?" comments die in the DMs. Jwero catches every comment and message, replies with knowledge, and walks each one toward WhatsApp, an appointment, or a sale — with your approval on every word.',
-  primary: { href: '#', label: 'See it work', wa: 'instagram' },
+  primary: { href: '#', label: 'Show me a DM becoming an order', wa: 'instagram' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
@@ -151,17 +151,18 @@ ${L.ctaBand('Stop losing the DMs you paid for.', 'Your reels already create dema
 const aiAgents = {
   slug: 'products/ai-sales-agents',
   title: 'AI Sales Agents & Voice — Staff That Never Sleep | Jwero',
-  description: 'AI sales agents that answer, follow up, and call customers back in 14 languages — governed by approval queues, daily caps and kill switches.',
+  description: 'AI sales agents that answer, follow up, and call customers back in 14 languages — on WhatsApp, web chat, and phone/IVR via Exotel or Tata Tele — governed by approval queues, daily caps and kill switches.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero AI Sales Agents & Voice', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Governed AI sales agents and a voice assistant speaking 14 languages, drafting replies and follow-ups inside approval queues, daily caps and a kill switch.',
+    description: 'Governed AI sales agents and a voice assistant speaking 14 languages, drafting replies and follow-ups across WhatsApp, web chat and phone/IVR, inside approval queues, daily caps and a kill switch.',
     url: 'https://jwero.ai/products/ai-sales-agents', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   breadcrumbs: BC('AI Sales Agents & Voice'),
   faqs: [
     { q: 'What is an AI sales agent in Jwero?', a: 'A configured member of the AI workforce: a scope of allowed actions, a knowledge base, guardrails, an approval workflow and an activity log. It drafts replies, follows up, reminds and invites — within the limits you set.' },
-    { q: 'Can the AI really speak on calls?', a: 'Yes — the voice assistant converses in 14 languages, follows your knowledge base, and files transcripts on the customer record. Use it for instalment reminders, follow-up calls and enquiry triage.' },
+    { q: 'Can the AI really speak on calls?', a: 'Yes, in two ways. On WhatsApp and your website’s web chat, AI voice is native to Jwero — no third party involved — and converses in 14 languages, with transcripts filed on the customer record. For actual phone calls (instalment reminders, outbound follow-ups, IVR), the AI agent speaks over a telephony line you connect, currently in 11 Indian languages.' },
+    { q: 'Does Jwero do IVR?', a: 'Yes, through your telephony provider — Jwero’s AI voice agent runs outbound and inbound phone calls, including IVR menus, over a connected line from Exotel, Tata Tele, or most other telephony/CPaaS providers on request. That’s different from voice on WhatsApp and web chat, which is fully native to Jwero and needs no telephony connection at all. See <a href="/platform/integrations">Integrations</a> for the telephony connectors.' },
     { q: 'How do I know what the AI did?', a: 'Every action is logged: what, when, why, and who approved it. You can review any day’s activity in minutes.' },
     { q: 'Will this replace my sales staff?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the actual selling. Salespeople close more when every customer walks in already known, not fewer.' },
     { q: 'My salespeople are worried about being watched or replaced. What do I tell them?', a: 'That the AI does the tedious remembering — who to follow up, what she bought last time — so they spend their time selling instead of searching for notes. It works for them, not on them.' },
@@ -172,8 +173,8 @@ const aiAgents = {
 ${L.hero({
   eyebrow: 'AI SALES AGENTS & VOICE',
   h1: 'Staff who remember everyone, work all night, and ask first.',
-  sub: 'Not a chatbot with a jewellery skin — a governed AI workforce. Each agent has defined duties, hard limits, a knowledge base and an approval trail. They speak 14 languages, work faster than any intern, and never take your customer list when they leave.',
-  primary: { href: '#', label: 'Talk to one now', wa: 'aiagents' },
+  sub: 'An AI workforce with 240+ individually permissioned actions, speaking 14 languages by chat and voice — drafting replies, follow-ups, reminders and invitations that wait in your approval queue until you say which may run alone.',
+  primary: { href: '#', label: 'Show me an AI draft waiting for approval', wa: 'aiagents' },
   secondary: { href: '/platform/ai-workforce', label: 'How governance works' },
   mock: L.mockApproval,
 })}
@@ -185,10 +186,19 @@ ${L.section(
     { title: 'Follow-up clerk', text: 'Every quiet conversation, unclosed quote and abandoned enquiry chased on schedule, forever.' },
     { title: 'Scheme collections', text: 'Instalment reminders by message and voice call — the polite persistence that keeps plans healthy.' },
     { title: 'Occasion concierge', text: 'Birthday and anniversary outreach, festival invitations, wedding-season campaigns — proposed weeks ahead for your approval.' },
-    { title: 'Voice caller', text: 'Outbound reminder and follow-up calls in the customer’s language, transcribed onto the record.' },
+    { title: 'Voice caller', text: 'Outbound and inbound reminder and follow-up calls in the customer’s language, placed over your connected telephony line, transcribed onto the record.' },
     { title: 'Night shift', text: 'The 11pm enquiry answered at 11:01pm. This one duty pays for the rest.' },
   ])}`
 )}
+
+${L.section(
+  `${L.sectionHead('THE CHANNELS', 'One AI workforce, wherever she reaches you.', 'Same customer record, same approval queue, same voice — whichever channel she picks.')}
+  ${L.cards([
+    { title: 'WhatsApp', text: 'Catalogue, replies, appointments and payments on your official WhatsApp Business number — text and native AI voice, both built into Jwero, no third-party add-on.', link: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' } },
+    { title: 'Web chat', text: 'AIVA answers on your website’s chat widget by text or native voice — Jwero’s own assistant, not a bolted-on plugin — and hands off to a person the moment one is needed.', link: { href: '/products/optimize', label: 'See web chat (Optimize)' } },
+    { title: 'Phone & IVR', text: 'Outbound and inbound AI voice calls — reminders, follow-ups, IVR menus — run over a telephony line you connect (Exotel, Tata Tele, or most other providers on request). This is the one channel where Jwero drives the conversation over a line someone else carries; WhatsApp and web voice above are fully native.', link: { href: '/platform/integrations', label: 'See telephony integrations' } },
+  ])}`
+, { tone: 'tint' })}
 
 ${L.governanceStrip()}
 
@@ -239,9 +249,9 @@ const optimize = {
   body: `
 ${L.hero({
   eyebrow: 'OPTIMIZE',
-  h1: 'Your website stops being a brochure.',
+  h1: 'See why visitors leave your website — and catch them before they do.',
   sub: 'Visitors arrive, look around, and leave. Optimize shows you exactly where, and helps you catch the next one before they go: heatmaps, recordings, A/B experiments, personalization, popups, push and an AI webchat — reading and writing the same customer record as everything else.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'optimize' },
+  primary: { href: '#', label: 'Show me why visitors leave', wa: 'optimize' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
@@ -323,7 +333,7 @@ ${L.hero({
   eyebrow: 'ECOMMERCE WEBSITE',
   h1: 'A jewellery website that already knows how to sell jewellery.',
   sub: 'If you don’t have a website yet, or you’re tired of forcing jewellery into a generic store builder, Jwero includes a native ecommerce website, a live-rate catalogue, cart, wishlist, comparison and checkout — built to sell rings and rates, not t-shirts.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'storefront' },
+  primary: { href: '#', label: 'Send me a live-priced storefront link', wa: 'storefront' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
@@ -427,7 +437,7 @@ ${L.hero({
   eyebrow: 'ADS MANAGER',
   h1: 'Run the ads. Keep your hand on the budget.',
   sub: 'Meta, Google and Pinterest campaigns — created, configured and analyzed from one place. Approve a campaign in the wizard and Jwero publishes it straight to Meta and Google through their own APIs, no manual copy-paste into another ad manager. A budget alert flags overspend early, and nothing goes live until you approve it.',
-  primary: { href: '#', label: 'Talk to us about Ads Manager', wa: 'adsmanager' },
+  primary: { href: '#', label: 'Show me a campaign with an approval step', wa: 'adsmanager' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
@@ -495,7 +505,7 @@ ${L.hero({
   eyebrow: 'SOCIAL MEDIA MANAGEMENT',
   h1: 'Every platform, one inbox, one calendar.',
   sub: 'Schedule posts across your channels with a preview of how each will look before it goes live, and answer every comment and DM from a single inbox — with AI drafting the reply and your team approving it.',
-  primary: { href: '#', label: 'Talk to us about Social Media', wa: 'socialmedia' },
+  primary: { href: '#', label: 'Show me one inbox for every DM', wa: 'socialmedia' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 

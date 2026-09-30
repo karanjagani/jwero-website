@@ -82,6 +82,7 @@ const LINK_ICONS = {
   '/products/digital-gold': 'wallet', '/products/loyalty': 'gift', '/products/segmentation': 'pie',
   '/products/journeys': 'route', '/products/campaigns': 'send',
   '/products/pos': 'till', '/products/manufacturing': 'scale', '/products/girvi': 'vault', '/products/meetings': 'video',
+  '/products/email': 'mail', '/products/marketplaces': 'truck', '/products/quotations': 'receipt', '/products/digital-catalogues': 'share', '/products/reports': 'pie', '/products/training-lms': 'book',
   '/platform/customer-memory': 'record', '/platform/ai-workforce': 'shield', '/platform/integrations': 'swap',
   '/platform/pricing-engine': 'coins', '/trust/security': 'key', '/platform/onboarding': 'check', '/roadmap': 'trend',
 };
@@ -125,8 +126,8 @@ function icon(nameOrGlyph) {
 function hero({ eyebrow, h1, sub, primary, secondary, note, mock, panel }) {
   const cta = `
       <div class="cta-row center">
-        ${primary ? `<a class="btn btn-primary" href="${primary.href}" ${primary.wa ? `data-wa="${esc(primary.wa)}"` : ''}>${primary.label}</a>` : ''}
-        ${secondary ? `<a class="btn btn-ghost" href="${secondary.href}"${secondary.share ? ` data-share="${esc(secondary.share)}"` : ''}>${secondary.label}</a>` : ''}
+        ${primary ? `<a class="btn btn-primary" href="${primary.href}" ${primary.wa ? `data-wa="${esc(primary.wa)}"` : ''}${primary.share ? ` data-share="${esc(primary.share)}"` : ''}>${primary.label}</a>` : ''}
+        ${secondary ? `<a class="btn btn-ghost" href="${secondary.href}"${secondary.share ? ` data-share="${esc(secondary.share)}"` : ''}${secondary.print ? ' data-print' : ''}>${secondary.label}</a>` : ''}
       </div>
       ${note ? `<p class="cta-note">${note}</p>` : ''}`;
   if (panel) {
@@ -135,7 +136,7 @@ function hero({ eyebrow, h1, sub, primary, secondary, note, mock, panel }) {
   <div class="panel">
     <div class="panel-glow" aria-hidden="true"></div>
     <div class="hero-inner">
-      ${eyebrow ? `<a class="hero-pill" href="#" data-wa="announce"><span>${eyebrow} · Chat with us on WhatsApp</span><span class="pill-arrow" aria-hidden="true">${icon('arrow')}</span></a>` : ''}
+      ${eyebrow ? `<a class="hero-pill" href="#" data-wa="announce">${mark('mark-xs')}<span>${eyebrow} · Chat with us on WhatsApp</span><span class="pill-arrow" aria-hidden="true">${icon('arrow')}</span></a>` : ''}
       <h1>${h1}</h1>
       <p class="sub">${sub}</p>${cta}
       ${mock ? `<div class="hero-mock">${mock}</div>` : ''}
@@ -247,6 +248,159 @@ function steps(items) {
     .join('')}</ol>`;
 }
 
+
+
+// ---------------------------------------------------------------- solution playbooks
+// A day in your business (auto-playing loop, the rocket rides the track), the
+// modules that segment uses first, a fit check that becomes a tailored CTA,
+// and the first three steps. Data: content/solution-playbooks.js.
+function dayLoop(day) {
+  const n = day.length;
+  const nodes = day.map(([t, m], i) => `<button type="button" class="day-node${i === 0 ? ' is-on' : ''}" data-day-i="${i}" style="--x:${(i / (n - 1)) * 100}%" aria-pressed="${i === 0}"><b>${t}</b><span>${m}</span></button>`).join('');
+  const cards = day.map(([t, m, today, jwero], i) => `
+      <div class="day-card${i === 0 ? ' is-on' : ''}" data-day-card="${i}">
+        <p class="day-moment"><b>${t}</b> ${m}</p>
+        <div class="day-cols">
+          <div class="day-today"><p class="lane-tag">Today</p><p>${today}</p></div>
+          <div class="day-jwero"><p class="lane-tag">With Jwero</p><p>${jwero}</p></div>
+        </div>
+      </div>`).join('');
+  return `
+<div class="day" data-day>
+  <div class="day-track" role="tablist" aria-label="Moments in the day">
+    <i class="day-fill"></i>${mark('day-rocket')}
+    ${nodes}
+  </div>
+  <div class="day-cards">${cards}</div>
+  <div class="day-ctl"><button type="button" class="day-play" data-day-play aria-pressed="true">Pause</button><span class="day-bar"><i></i></span><span class="day-count"><b data-day-n>1</b> / ${n}</span></div>
+</div>`;
+}
+function moduleMap(modules, names) {
+  return cards(modules.map(([href, why]) => ({ icon: LINK_ICONS[href] || 'sparkle', title: names[href] || href, text: why, link: { href, label: 'See ' + (names[href] || 'the module') } })), 3);
+}
+function fitCheck(items, wa, modules, names) {
+  const first = names[modules[0][0]] || 'the first module', second = names[modules[1][0]] || 'the next';
+  return `
+<div class="fit" data-fit data-fit-first="${esc(first)}" data-fit-second="${esc(second)}">
+  <div class="fit-items">${items.map((t) => `<button type="button" class="fit-item" aria-pressed="false">${t}</button>`).join('')}</div>
+  <div class="fit-out">
+    <div class="fit-meter" aria-hidden="true"><i></i></div>
+    <p class="fit-verdict" data-fit-verdict aria-live="polite">Tap what’s true for you. We’ll say honestly where Jwero fits — and where it doesn’t yet.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#" data-wa="${esc(wa)}" data-fit-cta>Show me this on WhatsApp</a>
+      <a class="btn btn-ghost" href="/start">Create my free workspace</a>
+    </div>
+  </div>
+</div>`;
+}
+function playbookTop(pb, names) {
+  return `
+${section(`${sectionHead('A DAY IN YOUR BUSINESS', 'Same day. Different business.', 'Five moments from a normal day — how they run today, and how they run when every one of them lands on one record. Tap an hour, or let it play.')}
+  ${dayLoop(pb.day)}`)}
+${section(`${sectionHead('WHERE JEWELLERS LIKE YOU START', 'The six parts of Jwero you’d switch on first.', 'Everything else is inside the same workspace when you want it. Nothing here needs a separate login.')}
+  ${moduleMap(pb.modules, names)}${pb.note ? `<p class="proof-caption">${pb.note}</p>` : ''}`, { tone: 'tint' })}`;
+}
+function playbookBottom(pb, names) {
+  return `
+${section(`${sectionHead('DOES THIS SOUND LIKE YOU?', 'Five things we hear from businesses like yours.', '')}
+  ${fitCheck(pb.fit, pb.wa, pb.modules, names)}`)}
+${section(`${sectionHead('WHAT HAPPENS AFTER YOU TAP', 'Three steps. No mystery.', '')}
+  ${steps([
+    { title: 'Minutes — a reply', text: 'A real person and our AI answer on WhatsApp. Bring one real situation from your day above.' },
+    { title: 'Day 1 — fifteen minutes, your scenario', text: 'We run it through Jwero live. If we cannot help, we say so on the call.' },
+    { title: 'Days 2–5 — a pilot on your own data', text: 'Your customers, your catalogue, your stock — however messy. You judge on your evidence, then it is your call.' },
+  ])}
+  <p class="cta-note" style="margin-top:14px">The full thirty days, step by step: <a href="/how-it-goes">How it goes →</a></p>`, { tone: 'tint' })}`;
+}
+
+// ---------------------------------------------------------------- intelligence
+// "How Jwero decides" — the customer-intelligence engine as a four-stage flow
+// plus a live simulator. Every number and every delta below is read from the
+// product (journey_scoring/rules.ts, contact-profile-compute.ts,
+// marketing-profile-codes.ts, suggested-segments-catalogue.ts,
+// journey-template-presets.ts, send_window_learner.ts) — see
+// blueprint/CUSTOMER-INTELLIGENCE-FACTS-2026-09.md. No ML is claimed: the
+// scores are rule formulas a jeweller can read, each with a visible why.
+const INTEL_SOURCES = ['WhatsApp', 'Website', 'Counter', 'POS', 'Gold schemes', 'Girvi', 'Karigar', 'Calls', 'Instagram', 'Loyalty', 'Occasions', 'Referrals', 'Email & SMS', 'Ads', 'Staff'];
+const INTEL_SCORES = ['Intent', 'Conversion', 'Churn risk', 'Trust', 'Health', 'Opportunity', '… and five more'];
+// Illustrative weights only — the engine's own weights are tuned per business and
+// deliberately not published. d = [intent, conversion, confidence, trust]
+const INTEL_SIGNALS = [
+  { id: 'view', label: 'Viewed a bangle for 45 seconds', d: [10, 0, 0, 0] },
+  { id: 'search', label: 'Searched “22k temple”', d: [10, 0, 0, 0] },
+  { id: 'wish', label: 'Added it to her wishlist', d: [20, 0, 0, 0] },
+  { id: 'cart', label: 'Added it to cart', d: [30, 10, 0, 0] },
+  { id: 'price', label: 'Asked the price on WhatsApp', d: [30, 0, 0, 0] },
+  { id: 'tried', label: 'Tried it on at the counter', d: [30, 10, 0, 0] },
+  { id: 'appt', label: 'Booked an appointment', d: [20, 10, 0, 0] },
+  { id: 'maturity', label: 'Her gold plan matures next month', d: [30, 20, 0, 0] },
+  { id: 'missed', label: 'Missed a scheme instalment', d: [0, 0, 0, 20] },
+  { id: 'complaint', label: 'Raised a complaint', d: [0, 0, 0, 50] },
+];
+function intelligence(opts = {}) {
+  const chips = INTEL_SOURCES.map((s) => `<span>${s}</span>`).join('');
+  const scores = INTEL_SCORES.map((s) => `<li>${s}</li>`).join('');
+  const signals = INTEL_SIGNALS.map((g) => `<button type="button" class="intel-sig" data-sig="${g.id}" data-d="${g.d.join(',')}" aria-pressed="false">${g.label}</button>`).join('');
+  const gauge = (k, l) => `<div class="intel-gauge"><span class="intel-gl">${l}</span><span class="intel-gt"><i data-gauge="${k}"></i></span><b data-gauge-n="${k}">0</b></div>`;
+  return `
+<div class="intel${opts.compact ? ' intel-compact' : ''}" data-intel>
+  <div class="intel-flow cells">
+    <div class="intel-stage">
+      <p class="eyebrow">1 · SIGNALS</p>
+      <div class="intel-big"><span class="stat-n">198</span><span>kinds of customer signal</span></div>
+      <p>From 36 sources — the counter, WhatsApp, the website, schemes, girvi, the workshop, calls, Instagram, occasions. Many of them move a score the moment they land.</p>
+      <div class="intel-chips" aria-hidden="true">${chips}</div>
+    </div>
+    <div class="intel-stage">
+      <p class="eyebrow">2 · STATES</p>
+      <div class="intel-mult" aria-label="5 lifecycle stages times 11 RFM segments times 4 value tiers times 6 channels times 5 occasion types equals 6,600 customer states">
+        <span><b>5</b><small>lifecycle stages</small></span><i>×</i>
+        <span><b>11</b><small>RFM segments</small></span><i>×</i>
+        <span><b>4</b><small>value tiers</small></span><i>×</i>
+        <span><b>6</b><small>channels</small></span><i>×</i>
+        <span><b>5</b><small>occasions</small></span>
+        <span class="intel-total"><b><i>=</i><span data-total>6,600</span></b><small>customer states</small></span>
+      </div>
+      <p>Every customer sits in exactly one — new or lapsed, champion or about-to-sleep, WhatsApp or call, birthday or wedding — before a single score is read.</p>
+    </div>
+    <div class="intel-stage">
+      <p class="eyebrow">3 · SCORES</p>
+      <div class="intel-big"><span class="stat-n">11</span><span>live scores, each with a visible why</span></div>
+      <ul class="intel-scores">${scores}</ul>
+      <p>Rules you can read, not a black box. Scores fade when she goes quiet, so the list stays honest. Ask “why is she at risk?” and the record shows its reasons.</p>
+    </div>
+    <div class="intel-stage">
+      <p class="eyebrow">4 · THE DECISION</p>
+      <dl class="intel-decide">
+        <div><dt>Who</dt><dd>41 ready segments in 13 families — high-intent enquiry, bridal enquiry, abandoned cart, viewers who never bought, VIP at risk, scheme maturing.</dd></div>
+        <div><dt>What</dt><dd>Six plays — nurture, engage, upsell VIP, retain, reactivate, win back — with an expected outcome and ₹ potential on every record, and a taste profile from her very first purchase.</dd></div>
+        <div><dt>When</dt><dd>Her best hour on her best channel; the shop’s windows re-learnt from real reads and replies; one fatigue cap across every send engine.</dd></div>
+        <div><dt>How</dt><dd>21 journey recipes and 30 personalisation fields draft the message. Nothing sends until you widen what may run alone.</dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="intel-sim">
+    <div class="intel-sim-head">
+      <p class="eyebrow">TRY IT · MEERA’S WEEK</p>
+      <h3>Tap what she did. Watch the scores move — and the decision change.</h3>
+      <p class="intel-note">Illustrative weights. The engine’s own weights and decision rules are tuned per business and not published.</p>
+    </div>
+    <div class="intel-sim-body">
+      <div class="intel-sigs">${signals}<button type="button" class="intel-reset" data-sig-reset>Reset the week</button></div>
+      <div class="intel-out">
+        ${gauge('intent', 'Intent')}${gauge('conv', 'Conversion')}${gauge('conf', 'Confidence')}${gauge('trust', 'Trust risk')}
+        <div class="intel-card">
+          <div class="intel-kv"><span>Segment</span><strong data-out="segment">New customer · listening</strong></div>
+          <div class="intel-kv"><span>Play</span><strong data-out="play">Nurture — no send yet</strong></div>
+          <div class="intel-kv"><span>Channel · hour</span><strong data-out="when">WhatsApp · 18:00–20:00</strong></div>
+          <div class="intel-kv"><span>Waiting for your tap</span><strong data-out="draft">Nothing. Jwero keeps listening.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`;
+}
+
 // Stat wall — product-truth numbers only (honesty tier A).
 function stats(items) {
   return `<div class="stats">${items
@@ -256,7 +410,7 @@ function stats(items) {
 
 // The Tier-A proof strip (Blueprint v2 §1.4.1) — one source of truth, deploy on Home/Platform/Pricing.
 const PROOF_STRIP_ITEMS = [
-  { n: '90+', l: 'fields on every customer record', href: '/platform/customer-memory' },
+  { n: '198', l: 'kinds of customer signal, scored into 11 live scores', href: '/platform/customer-memory' },
   { n: '240+', l: 'governed AI actions, individually permissioned', href: '/platform/ai-workforce' },
   { n: '14', l: 'languages the AI voice speaks', href: '/products/ai-sales-agents' },
   { n: '5', l: 'scopes of AI kill switch', href: '/platform/ai-workforce' },
@@ -363,7 +517,7 @@ const PILLARS = [
   {
     key: 'remember', title: 'REMEMBER', promise: 'Every customer, occasion, taste, scheme balance and conversation in one record that belongs to the business — not a salesman’s phone.',
     chips: [['Jewellery CRM', '/products/crm'], ['Customer Memory', '/platform/customer-memory'], ['Loyalty', '/products/gold-schemes'], ['Gold Schemes', '/products/gold-schemes'], ['Digital Gold', '/products/digital-gold']],
-    proof: '90+ fields per customer record — occasions, RFM, scheme balances, on one card.',
+    proof: 'Every visit, message and instalment scored on one card — 11 live scores decide who to reach and when.',
   },
   {
     key: 'sell', title: 'SELL', promise: 'The counter that never closes: WhatsApp, Instagram, Messenger, storefront and video — with AI that answers in seconds and follows up without being told.',
@@ -432,8 +586,10 @@ function jtbdBlock(items) {
 // fact about a named third party as settled.
 // Render editorial "[VERIFY — …]" markers as a neutral styled badge instead of raw brackets.
 function verifyBadge(text) {
-  return String(text).replace(/\[VERIFY(?:\s*[—-]\s*([^\]]*))?\]/g, (m, rest) =>
-    `<span class="verify-tag">Unverified${rest ? ' — ' + rest.trim() : ''}</span>`);
+  return String(text)
+    .replace(/\[VERIFY(?:\s*[—-]\s*([^\]]*))?\]/g, (m, rest) =>
+      `<span class="verify-tag">Not stated publicly${rest ? ' · ' + rest.trim().replace(/^not found in public materials$/i, '') : ''}</span>`.replace(' · </span>', '</span>'))
+    .replace(/\[Being finalised — see \/pricing\]/g, 'Three tiers — <a href="/pricing">see pricing</a>');
 }
 
 function compareTable(theirName, rows) {
@@ -447,7 +603,7 @@ function compareTable(theirName, rows) {
       )
       .join('')}</tbody>
   </table></div>
-  <p class="compare-disclaimer">Claims about Jwero above are product-verified. Claims about ${esc(theirName)} are based on its public positioning; anything marked <strong>[VERIFY]</strong> is unconfirmed rather than asserted — <a href="/contact">tell us if something here is wrong</a> and we’ll correct it.</p>`;
+  <p class="compare-disclaimer">Claims about Jwero above are product-verified. Claims about ${esc(theirName)} are based on its public materials; where a capability is <em>not stated publicly</em> we say so rather than guess — <a href="/contact">tell us if something here is wrong</a> and we’ll correct it.</p>`;
 }
 
 // Verdict box — T6 pages' signature block: concede honestly, then state the fit.
@@ -504,7 +660,7 @@ function honestGapsBlock(items) {
 // Reusable CSS-built product mocks (no images, no fantasy dashboards).
 const mockApproval = `
 <div class="mock" role="img" aria-label="Illustration of the Jwero approval queue">
-  <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">Approval queue · 3 waiting</span></div>
+  <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">${mark('mark-xs')}Approval queue · 3 waiting</span></div>
   <div class="mock-row">
     <div class="mock-msg"><strong>Anniversary follow-up · Sofia M.</strong><br>“It has been a year since the emerald ring — we would love to see you both again…”</div>
     <div class="mock-actions"><button class="chip chip-go" type="button">Approve</button><button class="chip" type="button">Edit</button></div>
@@ -516,11 +672,17 @@ const mockApproval = `
   <div class="mock-foot">Daily cap 40 · Quiet hours on · Kill switch armed</div>
 </div>`;
 
+// The brand mark as two layers — body and flame — so the flame can flicker and
+// the rocket can fly along its own axis (30° right of vertical) without a second fire.
+function mark(cls = '') {
+  return `<span class="mark${cls ? ' ' + cls : ''}" aria-hidden="true"><img class="mark-body" src="/assets/jwero-mark-body.png" alt="" width="86" height="122"><img class="mark-flame" src="/assets/jwero-mark-flame.png" alt="" width="86" height="122"></span>`;
+}
+
 const mockChat = `
 <div class="mock" role="img" aria-label="Illustration of a WhatsApp sales conversation">
   <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">WhatsApp · 11:42 pm</span></div>
   <div class="bubble in">Do you have this bangle in 22k, around 18 grams?</div>
-  <div class="bubble out">Yes — two designs in 22k near 18 g. At today’s rate: full price with making charges below. Shall I hold one for a store visit?<span class="bubble-tag">Drafted by AI staff · sent after approval</span></div>
+  <div class="bubble out">Yes — two designs in 22k near 18 g. At today’s rate: full price with making charges below. Shall I hold one for a store visit?<span class="bubble-tag">${mark('mark-xs')}Drafted by AI staff · sent after approval</span></div>
   <div class="bubble in">Saturday 5pm works.</div>
   <div class="mock-foot">Enquiry → priced reply → appointment. While the store slept.</div>
 </div>`;
@@ -529,7 +691,7 @@ const mockChatCatalog = `
 <div class="mock" role="img" aria-label="Illustration of a WhatsApp catalogue share and checkout">
   <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">WhatsApp · Catalogue share</span></div>
   <div class="bubble in">Can you share the necklace set you posted on Instagram?</div>
-  <div class="bubble out">Here’s the live-price link — updates automatically with today’s rate.<span class="bubble-tag">Catalogue link · view &amp; checkout tracked</span></div>
+  <div class="bubble out">Here’s the live-price link — updates automatically with today’s rate.<span class="bubble-tag">${mark('mark-xs')}Catalogue link · view &amp; checkout tracked</span></div>
   <div class="bubble in">Booking it, sending the advance now.</div>
   <div class="mock-foot">Instagram post → priced catalogue → payment. One thread, one record.</div>
 </div>`;
@@ -541,7 +703,7 @@ const mockMemory = `
   <div class="mock-kv"><span>Daughter’s wedding</span><strong>November</strong></div>
   <div class="mock-kv"><span>Prefers</span><strong>Temple work · 22k · yellow</strong></div>
   <div class="mock-kv"><span>Best time to reach</span><strong>Weekdays, evening · WhatsApp</strong></div>
-  <div class="mock-foot">90+ fields like these, on every customer — with a “why” behind every score.</div>
+  <div class="mock-foot">198 kinds of signal feed a record like this — 11 live scores, each with a “why”, decide who to reach and when.</div>
 </div>`;
 
 // The one-record architecture visual — the home/platform OS-proof centrepiece (BP2 §1.1.3, home B3).
@@ -551,7 +713,7 @@ const mockOneRecord = `
   <div class="onerecord-grid">
     <div class="onerecord-chip">💬 WhatsApp reply</div>
     <div class="onerecord-chip">🛍 Catalogue share</div>
-    <div class="onerecord-center">Meera K.<br><span>90+ fields</span></div>
+    <div class="onerecord-center">Meera K.<br><span>198 signals · 11 scores</span></div>
     <div class="onerecord-chip">💰 Scheme reminder</div>
     <div class="onerecord-chip">🧾 Invoice</div>
   </div>
@@ -722,7 +884,8 @@ const mockMemo = `
 // ever repeats product-verified facts already stated elsewhere on the site.
 const CTA_TILES = ['shield', 'chat', 'gem', 'record', 'sparkle', 'coins'];
 const CTA_TICKER = [
-  ['record', '90+ fields on every customer record'],
+  ['record', '198 customer signals · 11 live scores, each with a why'],
+  ['sparkle', '41 ready segments · 21 journey recipes'],
   ['shield', '240+ governed AI actions'],
   ['phone', 'AI voice in 14 languages'],
   ['power', 'Kill switch at five scopes'],
@@ -741,6 +904,7 @@ function ctaBand(title, sub, waContext, opts = {}) {
   <div class="panel">
     <div class="panel-glow" aria-hidden="true"></div>
     <div class="cta-tiles" aria-hidden="true">${CTA_TILES.map((i) => `<span>${icon(i)}</span>`).join('')}</div>
+    ${mark('mark-band')}
     <div class="container">
       <h2>${title}</h2>
       <p>${sub}</p>
@@ -748,7 +912,7 @@ function ctaBand(title, sub, waContext, opts = {}) {
         <a class="btn btn-primary" href="#" data-wa="${esc(waContext)}">${label}</a>
         ${secondary}
       </div>
-      <p class="cta-note">A real person + our AI reply within minutes — that's the product. You message us first; we never message you uninvited.</p>
+      <p class="cta-note">A real person + our AI reply within minutes — that's the product. You message us first; we never message you uninvited. <a class="cta-hindi" lang="hi" href="#" data-wa="hindi">हिन्दी में बात करें →</a></p>
     </div>
     <div class="cta-ticker" aria-hidden="true"><div class="cta-track">${ticker}${ticker}</div></div>
   </div>
@@ -827,7 +991,7 @@ function customerLogos() {
 
 module.exports = {
   esc, icon, autoIcon, sim, controlSplit, mockMemo, LINK_ICONS, PERSONAS, personaSlot, personaSwitch, systemSplit, gemStage, heroSchematic, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
-  governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockOneRecord,
+  mark, intelligence, playbookTop, playbookBottom, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,
 };

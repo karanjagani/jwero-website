@@ -30,7 +30,7 @@ const SOCIALS = [
 // Each page is stamped with the mtime of the content file that defined it, so the
 // sitemap can emit an honest <lastmod> without hand-maintaining dates.
 const CONTENT_FILES = [
-  'home', 'platform', 'products', 'products-sell', 'products-run', 'products-grow', 'products-manage', 'products-hr', 'products-ops',
+  'home', 'platform', 'products', 'products-sell', 'products-run', 'products-grow', 'products-manage', 'products-hr', 'products-ops', 'products-more', 'brief', 'erp-to-os',
   'industries', 'solutions', 'solutions-retail-segments', 'solutions-wholesale',
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
@@ -51,11 +51,12 @@ for (const f of CONTENT_FILES) {
 const NAV = [
   {
     label: 'Platform',
-    match: ['platform', 'trust', 'roadmap'],
+    match: ['platform', 'trust', 'roadmap', 'erp-to-os', 'why-an-os'],
     items: [
       ['/why-an-os', 'Why an OS, not another tool', 'The category, explained in one page'],
+      ['/erp-to-os', 'From ERP to OS', 'Running an ERP? Why the shift is now, why switching is safer than staying, and what making do costs'],
       ['/platform', 'The OS tour', 'One record, one catalogue, one truth'],
-      ['/platform/customer-memory', 'Customer Memory', '90+ fields on every customer'],
+      ['/platform/customer-memory', 'Customer Memory', '198 signals, 11 scores, one record'],
       ['/platform/pricing-engine', 'The Pricing Engine', 'Rate, making charge, stone & override rules'],
       ['/platform/ai-workforce', 'AI Workforce & Governance', '240+ governed actions, approvals, kill switches'],
       ['/platform/integrations', 'Integrations', 'Tally, Zoho Books, Shopify, Meta and more'],
@@ -74,8 +75,11 @@ const NAV = [
         ['/products/ai-sales-agents', 'AI Sales Agents & Voice', 'Replies and follow-up, governed'],
         ['/products/storefront', 'Ecommerce Website', 'Live-rate jewellery storefront'],
         ['/products/meetings', 'Video Counter & Appointments', 'Meet from the inbox, self-booking'],
+        ['/products/quotations', 'Quotations', 'Numbered, live-rate, accepted online'],
+        ['/products/digital-catalogues', 'Digital Catalogues', 'Shareable links, every view tracked'],
       ]},
       { title: 'Market', items: [
+        ['/products/marketplaces', 'Marketplaces', 'Amazon & Flipkart on one ledger'],
         ['/products/ads-manager', 'Ads Manager', 'Meta, Google & Pinterest'],
         ['/products/social-media', 'Social Media Management', 'Schedule, inbox, reply'],
         ['/products/optimize', 'Optimize (Website Visitors)', 'Heatmaps, A/B tests, webchat'],
@@ -83,6 +87,8 @@ const NAV = [
       { title: 'Know', items: [
         ['/products/crm', 'Jewellery CRM', 'Customer 360 for the trade'],
         ['/products/showroom', 'Showroom Intelligence', 'Who is on your floor, right now'],
+        ['/products/reports', 'Reports & Dashboards', 'Ask a question, pin the answer'],
+        ['/products/email', 'Business Email', 'Own-domain mail in the same inbox'],
       ]},
       { title: 'Run', items: [
         ['/products/catalog', 'Catalogue (PIM)', 'Purity, certificates, live prices'],
@@ -97,6 +103,7 @@ const NAV = [
         ['/products/hr-payroll', 'HR & Payroll', 'Attendance, leave, onboarding'],
         ['/products/repairs-service', 'Repairs & After-Sales', 'Custody chain for every repair'],
         ['/products/purchase-vendors', 'Purchase & Vendors', 'POs, GRN, vendor portal'],
+        ['/products/training-lms', 'Training & LMS', 'Courses, tests, certificates'],
       ]},
       { title: 'Grow', items: [
         ['/products/gold-schemes', 'Gold Savings Schemes', 'Enrolment to maturity'],
@@ -115,17 +122,34 @@ const NAV = [
     label: 'Solutions',
     match: ['solutions', 'industries', 'roles'],
     groups: [
-      { title: 'By business', items: [
-        ['/industries/retail', 'Retail'],
+      { title: 'By what you sell', items: [
+        ['/solutions/gold-retail', 'Gold jewellery'],
+        ['/solutions/silver-retail', 'Silver & articles'],
+        ['/solutions/diamond-retail', 'Diamond jewellery'],
+        ['/solutions/gemstone-retail', 'Gemstones'],
+        ['/solutions/lab-grown-diamond', 'Lab-grown diamonds'],
+        ['/solutions/bullion-gold-traders', 'Bullion & gold trading'],
+        ['/solutions/jewellery-brands', 'Jewellery brands'],
+        ['/industries/retail', 'All retail'],
+      ]},
+      { title: 'By how you operate', items: [
         ['/solutions/single-store', 'Single store'],
         ['/solutions/multi-store-chains', 'Multi-store & chains'],
         ['/solutions/luxury-boutique', 'Luxury & boutique'],
         ['/solutions/bridal', 'Bridal & wedding'],
         ['/solutions/d2c-brands', 'D2C & ecommerce-first'],
-        ['/solutions/manufacturers', 'Manufacturers'],
-        ['/solutions/b2b-jewellery', 'Wholesale & B2B'],
-        ['/solutions/diamond-wholesale', 'Diamond wholesalers & traders'],
         ['/solutions/franchise-networks', 'Franchise networks'],
+        ['/solutions/startups', 'New jewellery businesses'],
+      ]},
+      { title: 'Making & trade', items: [
+        ['/solutions/manufacturers', 'Manufacturers'],
+        ['/solutions/oem-manufacturers', 'OEM & contract makers'],
+        ['/solutions/casting-units', 'Casting units'],
+        ['/solutions/cad-services', 'CAD & design services'],
+        ['/solutions/b2b-jewellery', 'Wholesale & B2B'],
+        ['/solutions/gold-wholesale', 'Gold wholesalers'],
+        ['/solutions/diamond-wholesale', 'Diamond wholesalers & traders'],
+        ['/solutions/export-houses', 'Export houses'],
       ]},
       { title: 'By role · owners & counter', items: [
         ['/roles/owner', 'Owner / Proprietor'],
@@ -151,14 +175,9 @@ const NAV = [
         ['/roles/b2b-manager', 'Wholesale / B2B manager'],
         ['/roles/franchise-partner', 'Franchise partner'],
       ]},
-      { title: 'By pain', items: [
-        ['/solutions/pain', 'All pains'],
-        ['/solutions/pain/dead-stock', 'Dead stock'],
-        ['/solutions/pain/lead-leakage', 'Lead leakage'],
-      ]},
     ],
     footer: ['See all 22 segments', '/solutions'],
-    links: [['/roles', 'Every role'], ['/enterprise', 'Enterprise'], ['/migration', 'Migration Centre']],
+    links: [['/solutions/pain/dead-stock', 'Dead stock'], ['/solutions/pain/lead-leakage', 'Lead leakage'], ['/roles', 'Every role'], ['/enterprise', 'Enterprise']],
   },
   {
     label: 'Resources',
@@ -174,6 +193,7 @@ const NAV = [
       ['/glossary', 'Glossary', 'HUID, girvi, karigar, memo — defined'],
       ['/how-it-goes', 'What happens after you message', 'The first 30 days, step by step'],
       ['/start', 'Get started', 'Create your workspace in three steps'],
+      ['/brief', 'The one-page brief', 'For the owner who won’t read the site'],
       ['/company', 'About Jwero', 'The founders, by name'],
     ],
     links: [['/book-demo', 'Book a demo'], ['/contact', 'Contact']],
@@ -181,7 +201,7 @@ const NAV = [
   { label: 'Pricing', href: '/pricing', match: ['pricing'] },
 ];
 
-const { icon, LINK_ICONS, heroSchematic, PERSONAS, personaSwitch } = require('./lib');
+const { icon, LINK_ICONS, heroSchematic, PERSONAS, personaSwitch, mark } = require('./lib');
 
 function navHTML(page) {
   const top = (page && page.slug ? page.slug : '').split('/')[0];
@@ -205,20 +225,22 @@ function navHTML(page) {
   return `
 <header class="site-header">
   <div class="header-row">
-    <a class="logo" href="/" aria-label="Jwero home"><img src="/assets/jwero-mark.png" alt="" width="86" height="122"><span class="logo-word">Jwero</span></a>
+    <a class="logo" href="/" aria-label="Jwero home">${mark()}<span class="logo-word">Jwero</span></a>
     <nav class="main-nav" aria-label="Main">
       ${NAV.map(dd).join('')}
       <div class="nav-cta">
         <a class="btn btn-ghost" href="tel:+919169959959">Call us</a>
         <a class="btn btn-ghost" href="/book-demo">Book a demo</a>
         <a class="btn btn-primary" href="#" data-wa="header">Chat on WhatsApp</a>
-        <a class="btn btn-ghost" href="/start">Get started</a>
+        <a class="btn btn-ghost" href="/start" data-start-cta>Get started</a>
+        <a class="nav-login" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
       </div>
     </nav>
     <div class="header-cta">
       <a class="btn btn-ghost btn-sm" href="#" data-wa="header">WhatsApp</a>
       <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
-      <a class="btn btn-ghost btn-sm header-start" href="/start">Get started</a>
+      <a class="btn btn-ghost btn-sm header-start" href="/start" data-start-cta>Get started</a>
+      <a class="nav-login nav-login-sm" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
       <button class="search-open icon-btn" type="button" aria-label="Search the site" aria-keyshortcuts="Meta+K Control+K">${icon('search')}</button>
       <button class="theme-toggle icon-btn" type="button" aria-label="Toggle dark mode">${icon('moon')}</button>
       <a class="btn btn-primary btn-sm header-float" href="#" data-wa="header">Chat on WhatsApp</a>
@@ -236,7 +258,7 @@ function footerHTML() {
   <div class="f-wrap">
     <div class="f-top">
       <div class="f-brand">
-        <p class="logo"><img src="/assets/jwero-mark.png" alt="" width="86" height="122"><span class="logo-word">Jwero</span></p>
+        <p class="logo">${mark()}<span class="logo-word">Jwero</span></p>
         <p class="f-tag">${SIGNATURE}<br>${TAGLINE}.</p>
         <p class="f-enemy">“Your software keeps accounts.<br>It doesn’t remember customers.”</p>
         <p class="f-made">Made with <span aria-hidden="true">❤</span><span class="sr-only">love</span> for Jewellers</p>
@@ -251,10 +273,10 @@ function footerHTML() {
       </div>
       </div>
     </div>
-    <div class="f-proof">90+ customer-record fields · 240+ governed AI actions · AI voice in 14 languages · 5 kill-switch scopes · Tally, Zoho Books, Shopify, WooCommerce, Unicommerce &amp; Meta connectors built in.</div>
+    <div class="f-proof">198 customer signals · 11 explainable scores · 240+ governed AI actions · AI voice in 14 languages · 5 kill-switch scopes · Tally, Zoho Books, Shopify, WooCommerce, Unicommerce &amp; Meta connectors built in.</div>
     <div class="f-bottom">
       <p>© <span data-year></span> Jwero. All rights reserved.</p>
-      <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank">${l}</a>`).join('')}<a href="mailto:care@jwero.ai">care@jwero.ai</a></p>
+      <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank">${l}</a>`).join('')}<a href="mailto:care@jwero.ai">care@jwero.ai</a><a href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=footer" rel="noopener">Log in to Jwero</a></p>
       <p>This site runs on Jwero — the chat button is the product.</p>
     </div>
     <p class="f-legal">Jwero is a product of ${LEGAL_ENTITY} · CIN ${LEGAL_CIN} · Registered office: ${LEGAL_ADDRESS}</p>
@@ -264,7 +286,8 @@ function footerHTML() {
   <a href="tel:+919169959959">Call</a>
   <a class="sb-wa" href="#" data-wa="sticky">WhatsApp</a>
   <a class="sb-demo" href="/book-demo">Book demo</a>
-</div>`;
+</div>
+<button class="to-top" type="button" aria-label="Back to top">${mark()}</button>`;
 }
 
 // ---------------------------------------------------------------- layout
@@ -360,13 +383,44 @@ function withShift(body, page) {
 }
 // Simulations sit right after the shift on the pages where that mindset lives.
 const SIM_PAGES = {
-  'products/catalog': 'rate', 'platform/pricing-engine': 'rate', 'solutions/gold-retail': 'rate',
+  // every solution page carries the simulation its mindset lives in
+  ...Object.fromEntries(Object.entries(require('./content/solution-playbooks').PLAYBOOKS).map(([slug, pb]) => [slug, pb.sim])),
+  'products/catalog': 'rate', 'platform/pricing-engine': 'rate', 'solutions/gold-retail': 'rate', 'products/digital-catalogues': 'rate', 'products/quotations': 'rate',
+  'products/email': 'approve', 'products/marketplaces': 'shelf', 'products/reports': 'shelf', 'products/training-lms': 'approve',
   'platform/ai-workforce': 'approve', 'products/ai-sales-agents': 'approve', 'products/journeys': 'approve', 'roles/owner': 'approve',
   'products/crm': 'memory', 'platform/customer-memory': 'memory', 'roles/sales-associate': 'memory', 'products/whatsapp': 'memory', 'index': 'memory',
   'products/inventory': 'shelf', 'solutions/pain/dead-stock': 'shelf', 'roles/inventory-manager': 'shelf',
   'products/pos': 'till', 'roles/cashier': 'till', 'products/billing-finance': 'till',
   'products/manufacturing': 'grams', 'solutions/manufacturers': 'grams', 'roles/production-manager': 'grams', 'roles/karigar': 'grams',
 };
+// Solution playbooks: the day loop + module map after the simulation, the fit
+// check + first steps before the closing band.
+const { PLAYBOOKS, NAMES: PB_NAMES } = require('./content/solution-playbooks');
+// A page with FAQ schema must show the answers: append a FAQ section wherever
+// the body has none (FAQPage rich results require visible content).
+function withFaqs(body, page) {
+  if (!page.faqs || !page.faqs.length || body.includes('<details')) return body;
+  const L2 = require('./lib');
+  const block = L2.section(`${L2.sectionHead('QUESTIONS', 'What people ask before they message.', '')}${L2.faqBlock(page.faqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`);
+  const relAt = body.lastIndexOf('<section class="related"'), bandAt = body.lastIndexOf('<section class="cta-band">');
+  const at = relAt !== -1 ? relAt : bandAt;
+  return at === -1 ? body + block : body.slice(0, at) + block + body.slice(at);
+}
+function withPlaybook(body, page) {
+  const pb = PLAYBOOKS[page.slug];
+  if (!pb) return body;
+  const L2 = require('./lib');
+  const top = L2.playbookTop(pb, PB_NAMES), bottom = L2.playbookBottom(pb, PB_NAMES);
+  const simAt = body.indexOf('<section class="section sim-section"'), shiftAt = body.indexOf('<section class="shift"');
+  const anchor = simAt !== -1 ? simAt : shiftAt;
+  if (anchor !== -1) {
+    const after = body.indexOf('</section>', anchor) + 10;
+    body = body.slice(0, after) + top + body.slice(after);
+  }
+  const relAt = body.lastIndexOf('<section class="related"'), bandAt = body.lastIndexOf('<section class="cta-band">');
+  const at = relAt !== -1 ? relAt : bandAt;
+  return at === -1 ? body + bottom : body.slice(0, at) + bottom + body.slice(at);
+}
 function withSim(body, page) {
   const kind = SIM_PAGES[page.slug];
   if (!kind) return body;
@@ -388,6 +442,7 @@ function withRelated(body, page) {
     const persona = PERSONAS.find((p) => page.slug === p.slug) || PERSONAS[0];
     for (const h of persona.products) { const m = productMeta(h); if (m) links.push([h, m.label, m.desc]); }
     links.push(['/pricing', 'Pricing', 'Three tiers, named after how the AI earns trust']);
+    if (page.slug.startsWith('roles/')) links.unshift(['/brief', 'The one-page brief', 'Print it or send it to the owner']);
   } else return body;
   if (!links.length) return body;
   const block = `
@@ -411,7 +466,7 @@ function searchDialog() {
     <button type="button" class="search-close icon-btn" aria-label="Close search">${icon('close')}</button>
   </form>
   <div class="search-results" role="listbox" aria-label="Results"></div>
-  <p class="search-hint"><kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to open · <kbd>Esc</kbd> to close</p>
+  <p class="search-hint">${mark('mark-xs')}<kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to open · <kbd>Esc</kbd> to close</p>
 </dialog>`;
 }
 function searchIndex() {
@@ -429,6 +484,21 @@ function searchIndex() {
 function ogImage(page) {
   const f = (page.slug === 'index' ? 'index' : page.slug.replace(/\//g, '--')) + '.jpg';
   return fs.existsSync(path.join(ROOT, 'assets', 'og', f)) ? '/assets/og/' + f : '/assets/og-default.jpg';
+}
+
+// The launch: the mark ignites, lifts off and the panel rises to reveal the
+// page. Rendered on every page, shown only on the first page of a session
+// (html.first-visit), skipped under reduced motion. Pure CSS after that.
+const LAUNCH_LINE = 'Strapping a rocket to your jewellery business.';
+function launchHTML() {
+  return `<div class="launch" aria-hidden="true">
+  <div class="launch-stage">
+    <div class="launch-glow"></div>
+    <div class="launch-rocket">${mark('mark-launch')}<div class="launch-trail"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    <p class="launch-word">Jwero</p>
+    <p class="launch-line">${LAUNCH_LINE}</p>
+  </div>
+</div>`;
 }
 
 function layout(page) {
@@ -479,16 +549,17 @@ ${robotsMeta}
 <meta name="theme-color" content="#0b0c12" media="(prefers-color-scheme: dark)">
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
-<script>(function(){var d=document.documentElement;try{var t=localStorage.getItem('jwero-theme');if(t)d.setAttribute('data-theme',t);}catch(e){}d.classList.add('js');setTimeout(function(){d.classList.add('motion-failsafe');},4000);})();</script>
+<script>(function(){var d=document.documentElement;try{var t=localStorage.getItem('jwero-theme');if(t)d.setAttribute('data-theme',t);}catch(e){}d.classList.add('js');try{var c=navigator.connection||{},q=location.search,slow=c.saveData||/2g|3g/.test(c.effectiveType||''),camp=/[?&](utm_|ref=|gclid|fbclid|p=)/.test(q);if(!sessionStorage.getItem('jwero-launched')&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!slow&&!camp){d.classList.add('first-visit');}sessionStorage.setItem('jwero-launched','1');}catch(e){}setTimeout(function(){d.classList.add('motion-failsafe');},4000);})();</script>
 <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/assets/*"}}]},"eagerness":"moderate"}]}</script>
 ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}
 </head>
 <body>
+${launchHTML()}
 <a class="skip-link" href="#main">Skip to content</a>
 ${navHTML(page)}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-${withSim(withShift(withAsking(withRelated(withSchematic(page), page), page), page), page).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
+${withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withSchematic(page), page), page), page), page), page), page).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
 </main>
 ${searchDialog()}
 ${footerHTML()}
@@ -552,6 +623,7 @@ function build() {
     body: `
 ${require('./lib').section(`
   <div class="section-head" style="margin-top:24px">
+    ${mark('mark-lost')}
     <p class="eyebrow">404</p>
     <h1>That page isn’t here.</h1>
     <p class="lead">The link may be old, or the address mistyped. Everything worth finding is one click below.</p>
@@ -599,7 +671,7 @@ Sitemap: ${SITE}/sitemap.xml
   fs.writeFileSync(path.join(DIST, 'llms.txt'),
 `# Jwero — ${TAGLINE}
 
-> Jwero is the Autonomous Jewellery OS, run by AI. One customer record (90+ fields,
+> Jwero is the Autonomous Jewellery OS, run by AI. One customer record (198 kinds of signal scored into 11 explainable scores; 90+ structured fields,
 > including gold-plan balances and family occasions), one catalogue, one inventory truth and one
 > inbox — with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and an AI
 > workforce that acts only inside approval queues, daily caps, quiet hours and a five-scope kill

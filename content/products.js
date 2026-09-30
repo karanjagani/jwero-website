@@ -22,6 +22,9 @@ ${L.section(
     { title: 'AI Sales Agents & Voice', text: 'An AI workforce that drafts follow-ups, birthday invites and win-backs — every action waits in your approval queue.', link: { href: '/products/ai-sales-agents', label: 'Explore' } },
     { title: 'Video Counter & Appointments', text: 'Turn a WhatsApp or web chat into a video call in one tap, or let her self-book against real availability — waiting room, recording with consent, reminders.', link: { href: '/products/meetings', label: 'Explore' } },
     { title: 'Ecommerce Website', text: 'A native jewellery ecommerce website: live-rate pricing, cart, wishlist, checkout, blog and reviews — for businesses that don’t have one yet, or want the jewellery-native alternative.', link: { href: '/products/storefront', label: 'Explore' } },
+    { title: 'Quotations', text: 'Numbered quotations at the live rate, sent as a link and a PDF, accepted or declined online — created from an enquiry, a catalogue request or by voice at the counter.', link: { href: '/products/quotations', label: 'Explore' } },
+    { title: 'Digital Catalogues', text: 'Curated, shareable catalogue links priced live — every open, view and request tracked on the record; requests become quotations; checkout on the link.', link: { href: '/products/digital-catalogues', label: 'Explore' } },
+    { title: 'Marketplaces', text: 'Amazon and Flipkart orders poll into the same ledger as the counter; available stock pushes back so no door oversells.', link: { href: '/products/marketplaces', label: 'Explore' } },
   ], 4)}`
 )}
 
@@ -37,9 +40,11 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('KNOW', 'Every customer, remembered.', '')}
   ${L.cards([
-    { title: 'Jewellery CRM', text: 'Every customer: occasions, taste, scheme balance, every conversation — in one record with 90+ fields.', link: { href: '/products/crm', label: 'Explore' } },
-    { title: 'Customer Memory', text: 'The architecture behind the CRM: 90+ fields, explainable scores, owned by your business.', link: { href: '/platform/customer-memory', label: 'Explore' } },
+    { title: 'Jewellery CRM', text: 'Every customer: occasions, taste, scheme balance, every conversation — in one record — 198 kinds of signal scored into 11 explainable scores, so the AI knows who to reach and when. Fields.', link: { href: '/products/crm', label: 'Explore' } },
+    { title: 'Customer Memory', text: 'The architecture behind the CRM: 198 signals, 11 explainable scores, 6,600 customer states — owned by your business.', link: { href: '/platform/customer-memory', label: 'Explore' } },
     { title: 'Showroom Intelligence', text: 'Who walked in, what they tried, who walked out without buying — and the follow-up drafted the moment they leave.', link: { href: '/products/showroom', label: 'Explore' } },
+    { title: 'Reports & Dashboards', text: 'A builder over every module, an AI prompt that turns a question into a report, dashboards per role, exports for the CA.', link: { href: '/products/reports', label: 'Explore' } },
+    { title: 'Business Email', text: 'Mailboxes on your own domain, provisioned and signed by Jwero, in the same inbox as WhatsApp and Instagram — with email in campaigns and journeys.', link: { href: '/products/email', label: 'Explore' } },
   ], 4)}`
 )}
 
@@ -75,6 +80,7 @@ ${L.section(
     { title: 'Customer Segmentation', text: 'Live, rule-based audiences from RFM tier, tags and custom fields — reachable count and revenue shown before you save.', link: { href: '/products/segmentation', label: 'Explore' } },
     { title: 'Customer Journeys', text: 'Visual, multi-step automation: triggers, branches, wait steps — with a human-approval gate before anything reaches a customer.', link: { href: '/products/journeys', label: 'Explore' } },
     { title: 'Campaigns & Broadcasts', text: 'Consent-aware sends across WhatsApp, email, SMS and push, attributed to exactly what each campaign sold.', link: { href: '/products/campaigns', label: 'Explore' } },
+    { title: 'Training & LMS', text: 'Courses, assessments scored honestly, certificates on the profile, learning paths per role — and the next course suggested by the scorecard.', link: { href: '/products/training-lms', label: 'Explore' } },
   ], 4)}`
 , { tone: 'tint' })}
 

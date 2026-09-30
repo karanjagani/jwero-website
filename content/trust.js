@@ -21,8 +21,8 @@ ${L.hero({
   eyebrow: 'SECURITY & DATA OWNERSHIP',
   h1: 'Your data is yours. Here’s exactly how we keep it that way.',
   sub: 'A family business’s customer list is its most valuable asset. Here is what protects it in plain words first, then the technical depth — and what we are still building, stated plainly.',
-  primary: { href: '#', label: 'Ask a security question', wa: 'security' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Request the security pack for my IT team', wa: 'securitypack' },
+  secondary: { href: '#', label: 'Ask a security question', wa: 'security' },
 })}
 
 ${L.section(

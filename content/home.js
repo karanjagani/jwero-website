@@ -38,6 +38,15 @@ ${L.trustBar('<strong>240+</strong> AI actions your team switches on one at a ti
 
 ${L.personaSlot()}
 
+${L.section(
+  `${L.sectionHead('RUNNING AN ERP TODAY?', 'Three sentences we hear. Three pages that answer them.', '')}
+  ${L.cards([
+    { icon: 'receipt', title: '“We already have an ERP.”', text: 'Your ERP was built around the invoice. Your customers moved to WhatsApp. Why the shift to an operating system is happening now.', link: { href: '/erp-to-os', label: 'From ERP to OS' } },
+    { icon: 'shield', title: '“Switching is risky.”', text: 'Six risks you imagine, each with the thing that removes it — and six costs of staying that have no answer.', link: { href: '/erp-to-os/switching', label: 'Is switching risky?' } },
+    { icon: 'grid', title: '“We can make do.”', text: 'Tap the tools you run on, see the gaps between them, and put a number on a year of making do.', link: { href: '/erp-to-os/make-do', label: 'Can I make do?' } },
+  ])}`
+, { tone: 'tint' })}
+
 ${L.section(L.customerLogos())}
 
 ${L.section(
@@ -96,7 +105,7 @@ ${L.section(
       { icon: 'receipt', label: 'Invoice', note: 'Reads your price rules and her GST details. Writes the purchase to the record every other module sees.' },
     ],
     callouts: [
-      { title: '90+ fields', text: 'on every customer record — her taste, her scheme balance, her occasions.' },
+      { title: '198 signals', text: 'read into 11 live scores on every customer — who to reach, with what, and when.' },
       { text: 'Every module reads and writes this one row. That’s the operating system.' },
     ],
   })}
@@ -105,6 +114,11 @@ ${L.section(
     <a class="btn btn-ghost" href="/platform">See the full platform →</a>
   </div>`
 , { tone: 'tint' })}
+
+${L.section(
+  `${L.sectionHead('HOW JWERO DECIDES', 'Who to reach, with what, and when — decided from what she actually did.', 'Not a list of fields. A reading of every signal she gives you, scored in rules you can inspect, turned into a draft that waits for your tap.')}
+  ${L.intelligence()}`
+)}
 
 ${L.section(
   `${L.sectionHead('EVERYONE SAYS AI. ASK THEM THIS.', 'Not software with AI added. AI that runs the software.', 'Most jewellery software bolted a chatbot onto a database. This is the loop that actually runs your counter — and step 04 is the one that matters.')}

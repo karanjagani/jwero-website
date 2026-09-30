@@ -28,7 +28,7 @@ ${L.section(
   ${L.impactGrid([
     { lever: 'A customer buys at the counter', before: 'The bill is in billing. Her WhatsApp thread, her scheme and her follow-up know nothing.', after: 'One row updates: her record, her scheme balance, her next follow-up, the stock, the books.', link: { href: '/products/pos', label: 'See the counter' } },
     { lever: 'The gold rate moves', before: 'Someone reprices the catalogue, the website and the quotes — or doesn’t.', after: 'One rule reprices every channel at once, with overrides routed through approval.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
-    { lever: 'A salesperson leaves', before: 'Twenty years of relationships leave with the phone.', after: '90+ fields per customer stay with the business; the next person walks up already knowing her.', link: { href: '/platform/customer-memory', label: 'See customer memory' } },
+    { lever: 'A salesperson leaves', before: 'Twenty years of relationships leave with the phone.', after: 'Every signal she ever gave you — scored, explained — stays with the business; the next person walks up already knowing her.', link: { href: '/platform/customer-memory', label: 'See customer memory' } },
     { lever: 'An enquiry lands at 11pm', before: 'It waits for morning. She has bought elsewhere by then.', after: 'The AI drafts a priced reply from her record in minutes — and sends it, or waits for your yes.', link: { href: '/platform/ai-workforce', label: 'See the AI workforce' } },
   ])}`
 )}
@@ -50,6 +50,15 @@ ${L.section(
     { title: 'Not finished', text: 'The public roadmap says what is shipped, rolling out and not yet — before you buy, not after.', link: { href: '/roadmap', label: 'See the roadmap' } },
   ])}`
 )}
+
+${L.section(
+  `${L.sectionHead('COMING FROM AN ERP?', 'The three pages for the three sentences.', '')}
+  ${L.cards([
+    { title: '“We already have an ERP.”', text: 'Why the ERP era is ending the way the register era did.', link: { href: '/erp-to-os', label: 'From ERP to OS' } },
+    { title: '“Switching is risky.”', text: 'The risk ledger: six imagined, six paid.', link: { href: '/erp-to-os/switching', label: 'Is switching risky?' } },
+    { title: '“We can make do.”', text: 'Your stack, its gaps, and a number.', link: { href: '/erp-to-os/make-do', label: 'Can I make do?' } },
+  ])}`
+, { tone: 'tint' })}
 
 ${L.ctaBand('See one record run the whole business.', 'Bring one customer’s name. We will show every module touching the same row — live, on WhatsApp.', 'platform')}
 `,

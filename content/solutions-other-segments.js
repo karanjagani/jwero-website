@@ -70,7 +70,8 @@ ${L.ctaBand('Bring your channel map.', 'Show us how your brand sells today — w
 
 const d2cFaqs = [
   { q: 'Do I have to leave Shopify?', a: 'No — the Shopify connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
-  { q: 'Is there a free trial for D2C brands?', a: 'Self-serve trial mechanics are being finalised — most D2C brands start with a pilot using their own data instead. Ask us on WhatsApp.' },
+  { q: 'Is there a free trial for D2C brands?', a: 'Yes — create a free workspace in three steps at <a href="/start">/start</a>, connect Shopify or WooCommerce, and evaluate on your own orders. No card, no demo required.' },
+  { q: 'What happens to my Shopify data if I leave Jwero?', a: 'Nothing happens to Shopify — it stays the store of record for your storefront and is never modified by a disconnect. Jwero holds synced copies of orders and customers plus everything it added (WhatsApp threads, scores, occasions). All of it exports as CSV before or after you leave, and the connector is removed from Shopify in one click.' },
   { q: 'We already use a lot of ecommerce tools. Won’t this just be one more?', a: 'It replaces the gap between them, not the tools themselves — the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce stack doesn’t do, added on top of what you keep.' },
 ];
 
@@ -201,6 +202,16 @@ ${L.jtbdBlock([
 ])}
 ${L.section(`${L.sectionHead('QUESTIONS FRANCHISORS ASK', 'Independence, visibility and control — answered.', '')}${L.faqBlock(franchiseFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="franchise">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+
+${L.section(
+  `${L.sectionHead('THE ROLLOUT', 'From one location to the network, without a fight.', 'The plan we run; each wave has an exit test before the next begins.')}
+  ${L.steps([
+    { title: 'Week 1–2 — one pilot location', text: 'Your toughest or newest store. Catalogue, pricing rules and templates set by the brand; the store runs the counter and WhatsApp with approvals on.' },
+    { title: 'Week 3 — the exit test', text: 'Enquiries answered, prices consistent, day-close variance, franchisee’s own verdict. If it fails, we stop here.' },
+    { title: 'Week 4–6 — wave one', text: 'Three to five locations. Brand controls proven at the pilot are switched on network-wide; local overrides route through approval.' },
+    { title: 'After — the rest, in waves', text: 'Each wave inherits the last one’s templates and training. Nothing goes live in a store’s peak weeks — the change-freeze is written down.' },
+  ])}`
+, { tone: 'tint' })}
 
 ${L.ctaBand('Start with one franchise location.', 'Pick your newest or your toughest location as the pilot.', 'franchise', { enterprise: true })}
 `,

@@ -57,3 +57,16 @@ Now claimable: counter POS with returns, exchange and day-close; girvi; statutor
 ## F. Diamond traders (added 2026-09-30)
 
 Covered as an audience on `/solutions/diamond-wholesale` ("Diamond wholesalers & traders", in the Solutions menu and hub). Claimed: certificate-first stone records, memo/consignment to many buyers with return dates, buyer-tiered price lists, multi-currency invoicing. Declared roadmap on the page: parcel-as-lot carat accounting with price per carat, discount-off-list (Rapaport) pricing, export documentation. **Confirm with product** before promoting to a dedicated `/solutions/diamond-traders` page and a seventh home persona.
+
+## G. Six product pages added 2026-09-30 (user asked: "email, catalog, quotation, meetings, LMS, reporting, marketplaces")
+
+| Page | Evidence in `~/pim` | Kept cautious |
+|---|---|---|
+| `/products/email` | `lib/backend/lib/mail/stalwart_client.ts` (JMAP, live-verified 2026-09-25), `services/mail_provisioning.service.ts`, `mail/dns_records.ts` + `dns_verify.ts`, `email.ts` IMAP/SMTP shared inbox, `email/dsn_ingest.ts`, `email_unsubscribe.ts`, `email_ai.ts`, `STALWART_EMAIL_MULTITENANCY_PLAN.md` (Phase 0–1 done; Part B wizard pending) | "mailboxes provisioned for you during onboarding"; wizard/aliases/metering on roadmap; multi-tenancy "functional, being hardened" |
+| `/products/marketplaces` | `lib/backend/lib/marketplaces/{amazon,flipkart,ingest,inventory_push,poll_sweep}.ts`, `settings/integrations/marketplaces/page.tsx` | orders in + available-qty out only; no listing creation; fees not reconciled |
+| `/products/quotations` | `operations/customer-quotations/*`, public `app/customer-quotation/[orgId]/[code]`, `catalogs/inquiry_quote.ts`, `sell/intent_router.ts` (8 intents, EN/HI/Hinglish, confirm-gated), journey preset `quote_follow_up`, scoring `crm.quote_accepted/declined` | rate protection inside validity is "your rule" |
+| `/products/digital-catalogues` | `catalog_*.ts` (visitors tracking, checkout, payments, order intake, OMS sync), `catalogs/catalog_numbering.ts`, `product_share*.ts` (WhatsApp caption), `meta_commerce_catalogs.ts` | distinct from PIM (`/products/catalog`) — stated on the page |
+| `/products/reports` | `app/[orgId]/reports/{builder,all,[dashboardId]}`, `components/reports/builder/*` incl. `ai-report-prompt.tsx`, `reports_scheduled_delivery.ts` | scheduled delivery "built and rolling out" (audit P0: permission gate) — not promised |
+| `/products/training-lms` | `hr/lms.ts`, `course_content.ts`, `learning_paths.ts`, `learning_resource_suggestions.ts`, `performance_learning_loop.ts`, `teams/lms/page.tsx` | — |
+
+Meetings already existed (`/products/meetings`, in the Products menu and hub). Every page with FAQ schema now also renders the FAQ block (`withFaqs`), which FAQPage rich results require.

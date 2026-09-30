@@ -8,7 +8,7 @@ const crm = {
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Jewellery CRM', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'A jewellery-specific CRM with 90+ customer-record fields — gold-plan balances, occasions, taste and explainable scores — driving journeys under approval.',
+    description: 'A jewellery-specific CRM that reads 198 kinds of customer signal into 11 explainable scores — gold-plan balances, occasions, taste and churn risk on one record — and decides who to reach, with what and when. Explainable scores — driving journeys under approval.',
     url: 'https://jwero.ai/products/crm', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   breadcrumbs: BC('Jewellery CRM'),
@@ -24,7 +24,7 @@ const crm = {
 ${L.hero({
   eyebrow: 'JEWELLERY CRM & CUSTOMER 360',
   h1: 'The CRM that remembers what she bought, what she’s saving for, and when her daughter’s wedding is.',
-  sub: '90+ fields on every customer — occasions, taste, scheme balance, churn risk with a visible why — owned by your business, not a salesman’s phone. Every reply, quote and follow-up drafts from it.',
+  sub: 'Every visit, message and instalment read as a signal — 198 kinds, scored into 11 live scores with a visible why — on a record your business owns, not a salesman’s phone. Every reply, quote and follow-up drafts from it.',
   primary: { href: '#', label: 'Send me a sample customer record', wa: 'crm' },
   secondary: { href: '/platform/customer-memory', label: 'Explore Customer Memory' },
   mock: L.mockMemory,
@@ -40,6 +40,11 @@ ${L.section(
     { title: 'One inbox attached', text: 'Every WhatsApp, Instagram and web conversation lives on the record — context nobody has to ask for.' },
     { title: 'Action console', text: 'Each morning, every salesperson sees exactly who to contact and why. Memory turned into a to-do list.' },
   ])}`
+)}
+
+${L.section(
+  `${L.sectionHead('HOW JWERO DECIDES', 'Who to reach, with what, and when — decided from what she actually did.', 'Not a list of fields. A reading of every signal she gives you, scored in rules you can inspect, turned into a draft that waits for your tap.')}
+  ${L.intelligence()}`
 )}
 
 ${L.section(
@@ -59,7 +64,7 @@ ${L.oneSystemBlock([
 ])}
 
 ${L.section(
-  `${L.sectionHead('', 'Built on the same customer record.', 'Everything below reads and writes the one 90+ field record above — nothing here is a bolted-on module with its own copy of your customers.')}
+  `${L.sectionHead('', 'Built on the same customer record.', 'Everything below reads and writes the one record above — nothing here is a bolted-on module with its own copy of your customers.')}
   ${L.cards([
     { title: 'Quotations', text: 'A formal quote moves from draft to sent to accepted or declined, with a number, line items and a PDF. Share the link and the customer can accept or decline it themselves — no call required.' },
     { title: 'Smart lead routing', text: 'New enquiries route automatically to the right salesperson — round-robin, whoever has the lightest workload, or by territory rules your business sets.' },

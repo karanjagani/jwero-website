@@ -108,6 +108,20 @@
     pos: 'Hi Jwero — show me the counter POS: exchange, returns and day-close.',
     girvi: 'Hi Jwero — show me a girvi pledge from intake to release.',
     meetings: 'Hi Jwero — send me a video counter link the way a customer would get one.',
+    email: 'Hi Jwero — I want business email on my own domain inside the same inbox as WhatsApp. Show me.',
+    marketplaces: 'Hi Jwero — I sell on Amazon/Flipkart. Show me orders landing on one ledger with stock pushing back.',
+    quotations: 'Hi Jwero — send me a sample quotation link the way a customer gets one.',
+    catalogues: 'Hi Jwero — send me a live digital catalogue link and show me what it reports back.',
+    reports: 'Hi Jwero — show me a report for my kind of jewellery business.',
+    training: 'Hi Jwero — show me a staff training course with a test and certificate.',
+    securitypack: 'Hi Jwero — please send the security pack for my IT / evaluation committee: hosting, backups, access control, SSO, data export.',
+    hindi: 'नमस्ते Jwero — मैं ज्वेलर हूँ। मुझे हिन्दी में जानकारी चाहिए।',
+    brief: 'Hi Jwero — I read the one-page brief. I want to see it on my own business.',
+    nudge: 'Hi Jwero — one question before I decide:',
+    erp: 'Hi Jwero — we run an ERP. Show me what it cannot see about one of my customers, and what Jwero would.',
+    erpswitch: 'Hi Jwero — we run an ERP and switching worries me. Walk me through the plan for my business.',
+    erpmakedo: 'Hi Jwero — we make do with an ERP + WhatsApp + Excel. Show me what the gaps cost on my numbers.',
+    leak: 'Hi Jwero — my enquiry numbers from the make-do calculator:',
     optimize: 'Hi Jwero — show me the Optimize suite: heatmaps, A/B tests, popups and webchat for my website.',
     'blog-tally': 'Hi Jwero — I read the Tally guide, tell me exactly what moves and what stays in Tally.',
     'blog-goldloss': 'Hi Jwero — I read the gold-loss guide, show me the wastage ledger and recovery desk.',
@@ -130,8 +144,11 @@
     socialmedia: 'Hi Jwero — show me the social media inbox and scheduler.'
   };
 
+  var PERSONA_NAMES = { single: 'a single-store jeweller', chain: 'a multi-store chain', maker: 'a manufacturer', b2b: 'a wholesaler / B2B business', d2c: 'a D2C brand', franchise: 'a franchise network' };
+  function personaKey() { try { return localStorage.getItem('jwero-persona') || ''; } catch (e) { return ''; } }
   function waLink(ctx, extra) {
-    var msg = (WA_MESSAGES[ctx] || WA_MESSAGES.default) + (extra || '');
+    var who = PERSONA_NAMES[personaKey()];
+    var msg = (WA_MESSAGES[ctx] || WA_MESSAGES.default) + (extra || '') + (who && ctx !== 'announce' ? ' (I am ' + who + '.)' : '');
     var page = location.pathname.replace(/\W+/g, '-').replace(/^-|-$/g, '') || 'home';
     return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg + ' [ref:' + page + '/' + ctx + ']');
   }
@@ -303,9 +320,10 @@
 
     // The shift plays its three beats once it is on screen.
     onView(document.querySelectorAll('[data-shift]'), function (el) { el.classList.add('is-in'); }, { threshold: 0.3 });
+    onView(document.querySelectorAll('.cta-band'), function (el) { el.classList.add('is-in'); }, { threshold: 0.25 });
 
     // Proof numbers count up once.
-    onView(document.querySelectorAll('.stats .stat-n'), function (el) {
+    onView(document.querySelectorAll('.stats .stat-n, .intel-big .stat-n'), function (el) {
       var m = /^(\d{1,4})(\+?)$/.exec(el.textContent.trim());
       if (!m) return;
       var end = Number(m[1]), t0 = null;
@@ -709,6 +727,353 @@
     });
   });
 
+  // How Jwero decides — the simulator. Illustrative weights and a simplified read-out.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-intel]'), function (wrap) {
+    var total = wrap.querySelector('[data-total]');
+    function arrive() {
+      wrap.classList.add('is-in');
+      if (!total || reduceMotion) return;
+      var t0 = null;
+      (function frame(t) {
+        if (t0 === null) t0 = t;
+        var p = Math.min(1, (t - t0) / 1600), eased = 1 - Math.pow(1 - p, 3);
+        total.textContent = Math.round(6600 * eased).toLocaleString('en-IN');
+        if (p < 1) window.requestAnimationFrame(frame);
+      })(window.performance.now());
+    }
+    if (canObserve && !reduceMotion) onView([wrap], arrive, { threshold: 0.2 });
+    else wrap.classList.add('is-in');
+    var sigs = wrap.querySelectorAll('.intel-sig'), out = {};
+    Array.prototype.forEach.call(wrap.querySelectorAll('[data-out]'), function (el) { out[el.getAttribute('data-out')] = el; });
+    function gauge(k, v) {
+      var bar = wrap.querySelector('[data-gauge="' + k + '"]'), n = wrap.querySelector('[data-gauge-n="' + k + '"]');
+      if (bar) bar.style.width = v + '%';
+      if (n) n.textContent = String(v);
+    }
+    function set(k, text) {
+      var el = out[k]; if (!el || el.textContent === text) return;
+      el.textContent = text; el.classList.add('is-changed');
+      window.setTimeout(function () { el.classList.remove('is-changed'); }, 900);
+    }
+    function decide() {
+      var d = [0, 0, 0, 0], on = {};
+      Array.prototype.forEach.call(sigs, function (b) {
+        if (b.getAttribute('aria-pressed') !== 'true') return;
+        on[b.getAttribute('data-sig')] = true;
+        b.getAttribute('data-d').split(',').forEach(function (x, i) { d[i] += Number(x); });
+      });
+      var intent = Math.min(100, d[0]), conv = Math.min(100, d[1]), conf = Math.min(100, d[2]), trust = Math.min(100, d[3]);
+      gauge('intent', intent); gauge('conv', conv); gauge('conf', conf); gauge('trust', trust);
+      var seg, play, when = 'WhatsApp · 18:00–20:00', draft, live = true;
+      if (on.complaint) {
+        seg = 'Suppression, risk & service'; play = 'Complaint trust recovery — promotions paused';
+        when = 'Call · today, by a person'; draft = 'A service follow-up for the owner, not a sales message.';
+      } else if (on.maturity) {
+        seg = 'Savings scheme · maturing'; play = 'Scheme maturity reminder journey';
+        draft = 'A maturity note with three pieces near her accumulated value.';
+      } else if (trust >= 15 && intent < 40) {
+        seg = 'Savings scheme & ledger · missed instalment'; play = 'Scheme payment due — gentle reminder';
+        draft = 'A one-line reminder with a pay link. No promotion.';
+      } else if (intent >= 60 && (conv >= 10 || on.price)) {
+        seg = 'High-intent product enquiry'; play = on.tried || on.appt ? 'Hold the piece · confirm the visit' : 'Send priced options · offer a hold';
+        when = 'WhatsApp · her best hour, 18:00–20:00'; draft = 'A priced reply from her record, held for your approval.';
+      } else if (intent >= 30) {
+        seg = 'Product viewers with no purchase'; play = 'Engage — matched catalogue share';
+        draft = 'Three pieces in her taste and budget, with live prices.';
+      } else if (intent > 0) {
+        seg = 'New customer · warming'; play = 'Nurture — keep listening'; draft = 'Nothing yet. One more signal and a draft appears.'; live = false;
+      } else {
+        seg = 'New customer · listening'; play = 'Nurture — no send yet'; draft = 'Nothing. Jwero keeps listening.'; live = false;
+      }
+      if (on.missed && !on.complaint && intent >= 60) draft += ' The missed instalment is mentioned once, kindly.';
+      set('segment', seg); set('play', play); set('when', when); set('draft', draft);
+      if (out.draft) out.draft.classList.toggle('is-live', live);
+    }
+    Array.prototype.forEach.call(sigs, function (b) {
+      b.addEventListener('click', function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); decide(); });
+    });
+    var reset = wrap.querySelector('[data-sig-reset]');
+    if (reset) reset.addEventListener('click', function () { Array.prototype.forEach.call(sigs, function (b) { b.setAttribute('aria-pressed', 'false'); }); decide(); });
+    decide();
+  });
+
+  // A day in your business: auto-plays through the moments; tap to jump; the rocket rides the track.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-day]'), function (day) {
+    var nodes = day.querySelectorAll('.day-node'), cards = day.querySelectorAll('.day-card'), fill = day.querySelector('.day-fill');
+    var rocket = day.querySelector('.day-rocket'), play = day.querySelector('[data-day-play]'), count = day.querySelector('[data-day-n]');
+    var n = nodes.length, i = 0, timer = null, playing = !reduceMotion, bar = day.querySelector('.day-bar i');
+    function show(k) {
+      i = (k + n) % n;
+      Array.prototype.forEach.call(nodes, function (b, j) { b.classList.toggle('is-on', j === i); b.classList.toggle('is-done', j < i); b.setAttribute('aria-pressed', String(j === i)); });
+      Array.prototype.forEach.call(cards, function (c, j) { c.classList.toggle('is-on', j === i); });
+      var x = n > 1 ? (i / (n - 1)) * 100 : 0;
+      if (fill) fill.style.width = x + '%';
+      if (rocket) rocket.style.left = x + '%';
+      if (count) count.textContent = String(i + 1);
+      if (bar) { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; }
+    }
+    function tick() { if (playing) show(i + 1); }
+    function start() { stop(); if (playing) timer = window.setInterval(tick, 6000); day.classList.toggle('is-playing', playing); day.classList.toggle('is-paused', !playing); if (play) { play.textContent = playing ? 'Pause' : 'Play'; play.setAttribute('aria-pressed', String(playing)); } }
+    function stop() { if (timer) { window.clearInterval(timer); timer = null; } }
+    Array.prototype.forEach.call(nodes, function (b, j) { b.addEventListener('click', function () { show(j); start(); }); });
+    if (play) play.addEventListener('click', function () { playing = !playing; start(); });
+    day.addEventListener('mouseenter', function () { day.classList.add('is-paused'); stop(); });
+    day.addEventListener('mouseleave', function () { if (playing) { day.classList.remove('is-paused'); start(); } });
+    show(0);
+    if (canObserve && !reduceMotion) onView([day], function () { start(); }, { threshold: 0.4 });
+    else { playing = false; start(); }
+  });
+
+  // Fit check: tap what is true; the verdict and the CTA follow.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-fit]'), function (fit) {
+    var items = fit.querySelectorAll('.fit-item'), meter = fit.querySelector('.fit-meter i'), verdict = fit.querySelector('[data-fit-verdict]'), cta = fit.querySelector('[data-fit-cta]');
+    var first = fit.getAttribute('data-fit-first'), second = fit.getAttribute('data-fit-second'), total = items.length;
+    function update() {
+      var on = Array.prototype.filter.call(items, function (b) { return b.getAttribute('aria-pressed') === 'true'; }).length;
+      if (meter) meter.style.width = (on / total) * 100 + '%';
+      var text, label;
+      if (on === 0) { text = 'Tap what’s true for you. We’ll say honestly where Jwero fits — and where it doesn’t yet.'; label = 'Show me this on WhatsApp'; }
+      else if (on <= 2) { text = on + ' of ' + total + ' — a real fit on those. Businesses like yours usually start with ' + first + ', and add ' + second + ' in the first month.'; label = 'Start with ' + first + ' on WhatsApp'; }
+      else { text = on + ' of ' + total + ' — a strong fit. Start with ' + first + ' and ' + second + '; most of the rest follows in the first thirty days, on your own data.'; label = 'Show me ' + first + ' on my data'; }
+      if (verdict) { verdict.textContent = text; verdict.classList.toggle('is-strong', on >= 3); }
+      if (cta) cta.textContent = label;
+    }
+    Array.prototype.forEach.call(items, function (b) { b.addEventListener('click', function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); update(); }); });
+    update();
+  });
+
+  // Personalisation layer. Everything here is local to the browser: the reader's
+  // kind of business (from the home switch, /start, a solution page or ?p=),
+  // the pages they have seen, and whether they already created a workspace.
+  (function () {
+    var SOL = { 'solutions/single-store': 'single', 'solutions/gold-retail': 'single', 'solutions/silver-retail': 'single', 'solutions/diamond-retail': 'single', 'solutions/gemstone-retail': 'single', 'solutions/luxury-boutique': 'single', 'solutions/bridal': 'single',
+      'solutions/multi-store-chains': 'chain', 'solutions/franchise-networks': 'franchise', 'solutions/jewellery-brands': 'd2c', 'solutions/d2c-brands': 'd2c', 'solutions/startups': 'd2c', 'solutions/lab-grown-diamond': 'd2c',
+      'solutions/manufacturers': 'maker', 'solutions/oem-manufacturers': 'maker', 'solutions/casting-units': 'maker', 'solutions/cad-services': 'maker',
+      'solutions/b2b-jewellery': 'b2b', 'solutions/gold-wholesale': 'b2b', 'solutions/diamond-wholesale': 'b2b', 'solutions/bullion-gold-traders': 'b2b', 'solutions/export-houses': 'b2b' };
+    var PATH = {
+      single: { label: 'a single store', sol: '/solutions/single-store', sim: '/products/pos#try-till', simLabel: 'Try the till', prod: '/products/whatsapp' },
+      chain: { label: 'a multi-store chain', sol: '/solutions/multi-store-chains', sim: '/platform/ai-workforce#try-approve', simLabel: 'Try the approval queue', prod: '/products/multi-store' },
+      maker: { label: 'a manufacturer', sol: '/solutions/manufacturers', sim: '/products/manufacturing#try-grams', simLabel: 'Try metal closure', prod: '/products/manufacturing' },
+      b2b: { label: 'a wholesale business', sol: '/solutions/b2b-jewellery', sim: '/products/inventory#try-shelf', simLabel: 'Try the shelf', prod: '/products/digital-catalogues' },
+      d2c: { label: 'a brand', sol: '/solutions/d2c-brands', sim: '/platform/customer-memory#try-memory', simLabel: 'Try customer memory', prod: '/products/instagram-facebook' },
+      franchise: { label: 'a franchise network', sol: '/solutions/franchise-networks', sim: '/platform/ai-workforce#try-approve', simLabel: 'Try the approval queue', prod: '/products/multi-store' },
+    };
+    var slug = location.pathname.replace(/^\/|\/$/g, '');
+    var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+    // learn
+    var q = /[?&]p=(single|chain|maker|b2b|d2c|franchise)/.exec(location.search);
+    if (q) store.set('jwero-persona', q[1]);
+    else if (SOL[slug] && !store.get('jwero-persona')) store.set('jwero-persona', SOL[slug]);
+    var seen = []; try { seen = JSON.parse(store.get('jwero-seen') || '[]'); } catch (e) {}
+    var title = (document.querySelector('h1') || {}).textContent || document.title;
+    seen = seen.filter(function (x) { return x.u !== location.pathname; });
+    seen.unshift({ u: location.pathname, t: title.trim().slice(0, 60), at: Date.now() });
+    store.set('jwero-seen', JSON.stringify(seen.slice(0, 8)));
+    var visits = Number(store.get('jwero-visits') || 0);
+    if (!sessionStorage.getItem('jwero-session')) { visits += 1; store.set('jwero-visits', String(visits)); try { sessionStorage.setItem('jwero-session', '1'); } catch (e) {} }
+    var persona = store.get('jwero-persona'), path = PATH[persona], signed = store.get('jwero-signed-up');
+    if (persona) docEl.setAttribute('data-persona', persona);
+    if (visits > 1) docEl.classList.add('is-returning');
+    // already has a workspace: the header sends them to it, not to /start
+    if (signed) {
+      docEl.classList.add('has-workspace');
+      Array.prototype.forEach.call(document.querySelectorAll('[data-start-cta]'), function (a) { a.textContent = 'Open my workspace'; a.setAttribute('href', 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header'); a.setAttribute('rel', 'noopener'); });
+    }
+    // your path: one line under the hero, on pages that aren't already the reader's own
+    var hero = document.querySelector('main .hero');
+    if (path && hero && location.pathname !== path.sol && slug !== 'start' && slug !== 'search') {
+      var bar = document.createElement('div');
+      bar.className = 'path-bar'; bar.setAttribute('data-path', '');
+      bar.innerHTML = '<div class="container"><span class="path-who">You run ' + path.label + '</span>' +
+        '<a href="' + path.sol + '">Your solution page</a><a href="' + path.sim + '">' + path.simLabel + '</a><a href="' + path.prod + '">Start with the first module</a>' +
+        '<a class="path-start" href="' + (signed ? 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=path' : '/start') + '">' + (signed ? 'Open my workspace' : 'Create my free workspace') + '</a>' +
+        '<button type="button" class="path-change" aria-label="Change your kind of business">Not you?</button></div>';
+      hero.insertAdjacentElement('afterend', bar);
+      bar.querySelector('.path-change').addEventListener('click', function () { try { localStorage.removeItem('jwero-persona'); } catch (e) {} location.href = '/#persona'; });
+    }
+    // resume: returning readers on the home page pick up where they left
+    if (slug === '' && visits > 1 && seen.length > 1) {
+      var recent = seen.slice(1, 4).filter(function (x) { return x.u !== '/'; });
+      if (recent.length) {
+        var r = document.createElement('div');
+        r.className = 'resume'; r.setAttribute('data-resume', '');
+        r.innerHTML = '<div class="container"><span class="resume-tag">Welcome back</span>' + recent.map(function (x) { return '<a href="' + x.u + '">' + x.t.replace(/</g, '&lt;') + '</a>'; }).join('') +
+          (path ? '<a class="resume-go" href="' + (signed ? 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=resume' : '/start') + '">' + (signed ? 'Open my workspace' : 'Pick up at /start') + '</a>' : '') + '</div>';
+        var h = document.querySelector('main .hero');
+        if (h) h.insertAdjacentElement('beforebegin', r);
+      }
+    }
+  })();
+
+  // Arriving at /book-demo#callback: pre-select "Call me" and focus the phone field.
+  if (location.hash === '#callback') {
+    var reachSel = document.getElementById('f-reach'), phoneIn = document.getElementById('f-phone') || document.querySelector('#demo-form [name="phone"]');
+    if (reachSel) reachSel.value = 'Call me';
+    if (phoneIn) window.setTimeout(function () { phoneIn.focus(); }, 300);
+  }
+
+  // Print / save as PDF (the brief).
+  Array.prototype.forEach.call(document.querySelectorAll('[data-print]'), function (a) { a.addEventListener('click', function (e) { e.preventDefault(); window.print(); }); });
+
+  // Hours-aware calling: inside desk hours (IST 10:00–20:00) the call buttons say so;
+  // outside them, they become a callback request so nobody rings a closed desk.
+  (function () {
+    var ist = new Date(Date.now() + (330 + new Date().getTimezoneOffset()) * 60000), h = ist.getHours(), open = h >= 10 && h < 20;
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="tel:"]'), function (a) {
+      var t = a.textContent.trim();
+      if (open) { a.setAttribute('title', 'Desk hours 10am–8pm IST — open now'); a.classList.add('is-open'); }
+      else { a.setAttribute('href', '/book-demo#callback'); a.setAttribute('title', 'Desk hours 10am–8pm IST — we call you back'); if (/^call( us)?$/i.test(t)) a.textContent = 'Call me back'; }
+    });
+  })();
+
+  // Arrived from an AI answer engine: the short version, then the door.
+  (function () {
+    var ref = document.referrer || '';
+    if (!/chatgpt\.com|openai\.com|perplexity\.ai|claude\.ai|gemini\.google|copilot\.microsoft|bing\.com\/(chat|copilot)|you\.com|phind\.com/i.test(ref)) return;
+    if (sessionStorage.getItem('jwero-ai-short')) return;
+    var hero = document.querySelector('main .hero'); if (!hero) return;
+    var box = document.createElement('div');
+    box.className = 'short-version';
+    box.innerHTML = '<div class="container"><span class="short-tag">The short version</span><p>Jwero runs your whole jewellery business from one customer record — and the AI does the remembering. Nothing sends without your yes.</p>' +
+      '<a href="/why-an-os">What it is</a><a href="/pricing">What it costs</a><a href="/start">Start free</a><a href="#" data-wa="default">Ask a person</a></div>';
+    hero.insertAdjacentElement('afterend', box);
+    var a = box.querySelector('[data-wa]'); a.setAttribute('href', waLink('default')); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
+    try { sessionStorage.setItem('jwero-ai-short', '1'); } catch (e) {}
+  })();
+
+  // Pricing page: one gentle line after 45 seconds of stillness, once per session.
+  (function () {
+    if (location.pathname !== '/pricing' && location.pathname !== '/pricing/') return;
+    try { if (sessionStorage.getItem('jwero-nudged')) return; } catch (e) {}
+    var timer = null, shown = false;
+    function arm() { if (shown) return; if (timer) window.clearTimeout(timer); timer = window.setTimeout(show, 45000); }
+    function show() {
+      shown = true;
+      var n = document.createElement('div');
+      n.className = 'nudge'; n.setAttribute('role', 'status');
+      n.innerHTML = '<p>Still deciding? Ask one question — a real person and our AI reply within minutes.</p><a class="btn btn-primary btn-sm" href="#" data-wa="nudge">Ask on WhatsApp</a><button type="button" class="nudge-x" aria-label="Dismiss">×</button>';
+      document.body.appendChild(n);
+      var a = n.querySelector('[data-wa]'); a.setAttribute('href', waLink('nudge')); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
+      n.querySelector('.nudge-x').addEventListener('click', function () { n.remove(); });
+      window.requestAnimationFrame(function () { n.classList.add('is-on'); });
+      try { sessionStorage.setItem('jwero-nudged', '1'); } catch (e) {}
+    }
+    ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (ev) { window.addEventListener(ev, arm, { passive: true }); });
+    arm();
+  })();
+
+  // ERP → OS: the era slider.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-era]'), function (era) {
+    var stops = era.querySelectorAll('.era-stop'), panels = era.querySelectorAll('.era-panel'), fill = era.querySelector('.era-fill');
+    function show(i) {
+      Array.prototype.forEach.call(stops, function (b, j) { b.classList.toggle('is-on', j === i); b.setAttribute('aria-pressed', String(j === i)); });
+      Array.prototype.forEach.call(panels, function (p, j) { p.classList.toggle('is-on', j === i); });
+      if (fill) fill.style.width = (i / (stops.length - 1)) * 100 + '%';
+    }
+    Array.prototype.forEach.call(stops, function (b, j) { b.addEventListener('click', function () { show(j); }); });
+    show(1);
+    if (canObserve && !reduceMotion) onView([era], function () { window.setTimeout(function () { show(2); }, 1800); }, { threshold: 0.5 });
+  });
+
+  // ERP → OS: move the centre.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cswap]'), function (w) {
+    var READ = {
+      erp: 'In an ERP, the invoice is the truth. WhatsApp, Instagram and the customer’s history live outside it — on phones, in sheets, in heads. The ERP only learns about Meera when she pays.',
+      os: 'In the OS, Meera’s record is the truth. Billing writes her purchase to it; stock, schemes, the workshop, WhatsApp and the counter read and write the same row — so the reply at 11pm knows what the counter knew at noon.',
+    };
+    var NOTES = {
+      erp: ['writes the invoice', 'moves on sale', 'a separate register', 'on someone’s phone', 'greets a stranger', 'its own khata'],
+      os: ['writes her purchase to the record', 'reads what she asked for', 'her balance, on the same row', 'drafts from her record', 'greets her by name and taste', 'her order, gram by gram'],
+    };
+    var out = w.querySelector('[data-cs-read]'), notes = w.querySelectorAll('.cs-node small');
+    w.querySelectorAll('[data-cs]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var k = b.getAttribute('data-cs');
+        w.querySelectorAll('[data-cs]').forEach(function (x) { x.classList.toggle('is-on', x === b); x.setAttribute('aria-pressed', String(x === b)); });
+        w.classList.toggle('is-os', k === 'os');
+        if (out) out.textContent = READ[k];
+        Array.prototype.forEach.call(notes, function (n, i) { n.textContent = NOTES[k][i]; });
+      });
+    });
+  });
+
+  // ERP → OS: the risk ledger.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-rl]'), function (rl) {
+    var verdict = document.querySelector('[data-rl-verdict]');
+    function tally(kind) {
+      var items = rl.querySelectorAll('.rl-item[data-rl="' + kind + '"]'), open = 0;
+      Array.prototype.forEach.call(items, function (b) { if (b.getAttribute('aria-expanded') === 'true') open += 1; });
+      var n = rl.querySelector('[data-rl-n="' + kind + '"]'), l = rl.querySelector('[data-rl-l="' + kind + '"]');
+      if (kind === 'switch') { if (n) n.textContent = String(items.length - open); if (l) l.textContent = items.length - open === 1 ? 'risk standing' : 'risks standing'; }
+      else { if (n) n.textContent = String(items.length); }
+      if (verdict && kind === 'switch' && items.length - open === 0) { verdict.textContent = 'Every risk on the left had an answer. The right column is still counting. That is the whole decision.'; verdict.classList.add('is-done'); }
+    }
+    rl.querySelectorAll('.rl-item').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var on = b.getAttribute('aria-expanded') !== 'true';
+        b.setAttribute('aria-expanded', String(on)); b.classList.toggle('is-open', on);
+        tally(b.getAttribute('data-rl'));
+      });
+    });
+  });
+
+  // ERP → OS: the make-do stack.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-mds]'), function (m) {
+    var GAPS = {}; try { GAPS = JSON.parse((m.querySelector('[data-mds-json]') || {}).textContent || '{}'); } catch (e) {}
+    var tools = m.querySelectorAll('.mds-tool'), gaps = m.querySelector('[data-mds-gaps]'), read = m.querySelector('[data-mds-read]');
+    var MEM = { heads: 1, wa: 1, paper: 1, excel: 1, erp: 1 };
+    function n(k, v) { var el = m.querySelector('[data-mds-n="' + k + '"]'); if (el) el.textContent = String(v); }
+    function update() {
+      var on = Array.prototype.filter.call(tools, function (b) { return b.getAttribute('aria-pressed') === 'true'; }).map(function (b) { return b.getAttribute('data-tool'); });
+      var pairs = on.length * (on.length - 1) / 2, mem = on.filter(function (k) { return MEM[k]; }).length;
+      n('tools', on.length); n('handoffs', pairs); n('memory', mem);
+      var found = [];
+      for (var i = 0; i < on.length; i++) for (var j = i + 1; j < on.length; j++) { var g = GAPS[on[i] + '+' + on[j]] || GAPS[on[j] + '+' + on[i]]; if (g) found.push(g); }
+      if (!on.length) { gaps.innerHTML = '<li class="mds-empty">Tap what you use today. The gaps appear between them.</li>'; read.textContent = ''; return; }
+      gaps.innerHTML = found.length ? found.map(function (g) { return '<li>' + g + '</li>'; }).join('') : '<li class="mds-empty">One tool, no hand-offs yet. Add the next one you use.</li>';
+      read.textContent = on.length < 2 ? '' : on.length + ' tools, ' + pairs + ' hand-off' + (pairs === 1 ? '' : 's') + ', ' + mem + ' place' + (mem === 1 ? '' : 's') + ' a customer is remembered — and none of them is the business. In Jwero it is one record, one hand-off: yours to approve.';
+    }
+    tools.forEach(function (b) { b.addEventListener('click', function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); update(); }); });
+    update();
+  });
+
+  // Make-do leakage calculator.
+  var lk = document.getElementById('calc-leak');
+  if (lk) {
+    var rupee = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+    var lkEnq = bindRange('lk-enq', 'lk-enq-out'), lkFast = bindRange('lk-fast', 'lk-fast-out', '%'), lkTicket = bindRange('lk-ticket', 'lk-ticket-out'), lkClose = bindRange('lk-close', 'lk-close-out', '%');
+    function lkCalc() {
+      var enq = Number(lkEnq.value), fast = Number(lkFast.value) / 100, ticket = Number(lkTicket.value), close = Number(lkClose.value) / 100;
+      var slowPerMonth = enq * (1 - fast) * 26;
+      var month = slowPerMonth * ticket * (close - close / 3);
+      document.getElementById('lk-slow').textContent = Math.round(slowPerMonth).toLocaleString('en-IN');
+      document.getElementById('lk-month').textContent = rupee(month);
+      document.getElementById('lk-year').textContent = rupee(month * 12);
+      var wa = document.getElementById('lk-wa');
+      if (wa) wa.setAttribute('href', waLink('leak', ' ' + enq + ' enquiries/day, ' + Math.round(fast * 100) + '% priced within an hour, ticket ' + rupee(ticket), 'value at risk ' + rupee(month) + '/month.'));
+    }
+    [lkEnq, lkFast, lkTicket, lkClose].forEach(function (el) { el.addEventListener('input', lkCalc); });
+    lkCalc();
+  }
+
+  // Back to top: the rocket lifts first, the page follows.
+  (function () {
+    var btn = document.querySelector('.to-top');
+    if (!btn) return;
+    var on = false;
+    function check() {
+      var want = window.scrollY > window.innerHeight * 1.2;
+      if (want !== on) { on = want; btn.classList.toggle('is-on', on); }
+    }
+    window.addEventListener('scroll', check, { passive: true });
+    check();
+    btn.addEventListener('click', function () {
+      btn.classList.add('is-flying');
+      window.setTimeout(function () { btn.classList.remove('is-flying'); }, 700);
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  })();
+
   // /start funnel: three steps, the choices ride along to the product signup.
   Array.prototype.forEach.call(document.querySelectorAll('[data-start]'), function (wrap) {
     var pick = { persona: null, tier: null }, labels = {}, step = 1;
@@ -735,7 +1100,29 @@
       window.setTimeout(function () { show(step + 1); }, 260);
     });
     back.addEventListener('click', function () { show(Math.max(1, step - 1)); });
+    // Lift-off on the final click: the rocket goes first, then the reader.
+    go.addEventListener('click', function (e) {
+      if (reduceMotion || !document.querySelector('.launch')) return;
+      e.preventDefault();
+      var href = go.getAttribute('href'), l = document.querySelector('.launch');
+      docEl.classList.add('first-visit'); l.classList.add('is-liftoff');
+      window.setTimeout(function () { location.href = href; }, 1500);
+    });
     try { var saved = localStorage.getItem('jwero-persona'); if (saved) { var b = wrap.querySelector('[data-persona="' + saved + '"]'); if (b) b.classList.add('is-picked'); } } catch (e) {}
+    // Remember the picks so a return visit resumes at the summary, not step one.
+    wrap.addEventListener('click', function (e) {
+      var o = e.target.closest('.start-opt'); if (!o) return;
+      try { if (o.dataset.persona) localStorage.setItem('jwero-persona', o.dataset.persona); localStorage.setItem('jwero-start', JSON.stringify({ pick: pick, labels: labels })); } catch (x) {}
+    });
+    go.addEventListener('click', function () { try { localStorage.setItem('jwero-signed-up', String(Date.now())); } catch (x) {} });
+    try {
+      var st = JSON.parse(localStorage.getItem('jwero-start') || 'null');
+      if (st && st.pick && st.pick.persona && st.pick.tier) {
+        pick = st.pick; labels = st.labels || {};
+        wrap.querySelectorAll('.start-opt').forEach(function (x) { x.classList.toggle('is-picked', x.dataset.persona === pick.persona || x.dataset.tier === pick.tier); });
+        show(3);
+      }
+    } catch (x) {}
   });
 
   // Flip each line of the two-speed strip between running and asking.
