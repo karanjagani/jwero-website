@@ -179,13 +179,13 @@ const PLAYBOOKS = {
   'solutions/startups': {
     wa: 'startups', sim: 'approve',
     day: [
-      ['09:00', 'Day one', 'A billing app, a WhatsApp Business number, a Shopify trial, a spreadsheet.', 'One free workspace at os.jwero.ai: catalogue, inbox, billing, customers — one record from the first sale.'],
+      ['09:00', 'Day one', 'A billing app, a WhatsApp Business number, a Shopify trial, a spreadsheet.', 'One workspace at os.jwero.ai, free for 14 days: catalogue, inbox, billing, customers — one record from the first sale.'],
       ['11:00', 'First Instagram enquiries', 'Answered from the founder’s phone.', 'Priced replies draft from the catalogue; you approve from anywhere.'],
       ['14:00', 'First ten customers', 'Names in a notebook.', 'Ten records with occasions and taste; the eleventh customer is already segmented.'],
       ['16:00', 'First ad', 'Boosted post.', 'Catalogue ad with a budget alert; conversions attributed to orders.'],
       ['19:00', 'Month one report', 'Bank balance.', 'Enquiries answered, replies approved, orders, repeat buyers — on your own data.'],
     ],
-    modules: [['/products/whatsapp', 'Start selling on the channel you already have.'], ['/products/catalog', 'One catalogue from the first ten designs.'], ['/products/storefront', 'Your own store when you’re ready, same stock.'], ['/products/crm', 'Every customer remembered from day one.'], ['/products/ads-manager', 'First ads on catalogue winners, budget-capped.'], ['/platform/onboarding', 'Free self-serve start; a person on WhatsApp when you want one.']],
+    modules: [['/products/whatsapp', 'Start selling on the channel you already have.'], ['/products/catalog', 'One catalogue from the first ten designs.'], ['/products/storefront', 'Your own store when you’re ready, same stock.'], ['/products/crm', 'Every customer remembered from day one.'], ['/products/ads-manager', 'First ads on catalogue winners, budget-capped.'], ['/platform/onboarding', 'A 14-day free trial, self-serve; a person on WhatsApp when you want one.']],
     fit: ['You’re juggling four tools before your fiftieth order', 'Enquiries are answered from the founder’s phone', 'Customers live in a notebook', 'You’ve boosted posts and can’t say what they sold', 'You want to start today, free, without a demo'],
   },
 
@@ -262,6 +262,19 @@ const PLAYBOOKS = {
     ],
     modules: [['/platform/pricing-engine', 'Rate plus making by party tier.'], ['/products/billing-finance', 'Party ledgers in grams and rupees; receipts and reminders.'], ['/products/inventory', 'Memo, consignment and lot stock.'], ['/products/catalog', 'Buyer links with live prices.'], ['/products/whatsapp', 'Bookings and confirmations on the party record.'], ['/products/erp', 'Orders to dispatch to metal settlement.']],
     fit: ['Rates go out as voice notes', 'Bookings live in chats', 'Memo exposure is a memo book', 'Metal accounts are reconciled monthly', 'Collections are phone calls'],
+  },
+  'solutions/diamond-traders': {
+    wa: 'diamondtraders', sim: '',
+    day: [
+      ['10:00', 'A parcel arrives from the manufacturer', 'Logged on the stock sheet by weight; the count is on a slip.', 'One lot, with carats and count kept together and the supplier on it.'],
+      ['11:30', 'A buyer asks for 1 ct, G, VS1 rounds', 'Someone searches the sheet and types six lines into WhatsApp.', 'Matching stones go out as a buyer link at his prices; you see what he opens.'],
+      ['13:00', 'Four stones go out on memo', 'A line in the memo book. The same stone can still be promised twice.', 'Held against the buyer with a return date; not sellable to anyone else.'],
+      ['16:00', 'He keeps two and returns two', 'An invoice typed by hand; the sheet updated later, if at all.', 'Invoice raised from the memo; the two returned stones are back in stock.'],
+      ['19:00', 'What is out, and what is late?', 'A flip through the memo book.', 'Memos by buyer with value at list; the overdue one is a drafted follow-up.'],
+    ],
+    modules: [['/products/inventory', 'Parcels by carats and count, certified stones one by one, memo and consignment.'], ['/platform/pricing-engine', 'Your own per-carat rate grid, with a discount for each band.'], ['/products/digital-catalogues', 'Private buyer links with his prices; you see what he looked at.'], ['/products/quotations', 'A numbered quote he can accept from his phone.'], ['/products/billing-finance', 'Invoices from memos, and a ledger for every party.'], ['/products/whatsapp', 'Buyer conversations on the party record, not on one phone.']],
+    fit: ['Stock lives on an Excel sheet that only one person trusts', 'The memo book is the only record of what is out', 'A stone has been promised to two buyers at once', 'Prices per carat are quoted from memory', 'You cannot say tonight what you own, what is out and what is on consignment'],
+    note: 'There is no Rapaport or other published price-list feed: the rate grid is yours to enter and maintain.',
   },
   'solutions/diamond-wholesale': {
     wa: 'diamondwholesale', sim: 'shelf',

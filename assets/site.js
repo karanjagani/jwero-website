@@ -1,151 +1,152 @@
-/* Jwero marketing site — shared behaviour. No frameworks, ~4 KB. */
+/* Jwero marketing site, shared behaviour. No frameworks, ~4 KB. */
 (function () {
   'use strict';
 
   // --- CONFIG ---
   var WA_NUMBER = '919169959959'; // WhatsApp Business number, digits only
   var WA_MESSAGES = {
-    default: 'Hi Jwero — I would like to see a quick demo.',
-    announce: 'Hi Jwero — saw the site, show me the live WhatsApp demo.',
-    header: 'Hi Jwero — I would like to see a quick demo.',
-    sticky: 'Hi Jwero — I would like to see a quick demo.',
-    home: 'Hi Jwero — show me how the AI workforce works, with approvals.',
-    roles: 'Hi Jwero — I want to understand how this helps my team, role by role.',
-    proof: 'Hi — testing the inbox this button leads to. Show me what you’ve got.',
-    report: 'Hi Jwero — I would like a sample growth report for my business.',
-    close: 'Hi Jwero — I would like to see a quick demo.',
-    pilot: 'Hi Jwero — I would like to start a pilot with my own data.',
-    faq: 'Hi Jwero — I have a question that wasn’t on your FAQ.',
-    platform: 'Hi Jwero — show me the full platform, one record at a time.',
-    ai: 'Hi Jwero — show me the AI workforce approval queue live.',
-    memory: 'Hi Jwero — show me a live customer record.',
-    pricingengine: 'Hi Jwero — show me how a price is actually calculated, on my own catalogue.',
-    integrations: 'Hi Jwero — here is the software stack I run today, tell me what bridges.',
-    tally: 'Hi Jwero — I want to understand exactly how the Tally bridge works.',
-    onboarding: 'Hi Jwero — walk me through onboarding for my team.',
-    roadmap: 'Hi Jwero — I have a question about something on your roadmap.',
-    whatsapp: 'Hi Jwero — show me WhatsApp commerce for my business.',
-    instagram: 'Hi Jwero — show me Instagram & Facebook commerce.',
-    aiagents: 'Hi Jwero — show me an AI sales agent in action.',
-    crm: 'Hi Jwero — show me the jewellery CRM and customer record.',
-    catalog: 'Hi Jwero — show me the catalogue with live gold-rate pricing.',
-    inventory: 'Hi Jwero — show me inventory ageing and dead-stock visibility.',
-    billing: 'Hi Jwero — show me GST invoicing at the live gold rate.',
-    erp: 'Hi Jwero — show me orders, purchases and manufacturing in one place.',
-    schemes: 'Hi Jwero — I want to see gold savings schemes running digitally.',
-    digitalgold: 'Hi Jwero — show me how digital gold works.',
-    multistore: 'Hi Jwero — I run multiple stores, show me the multi-store structure.',
-    showroom: 'Hi Jwero — show me the showroom / in-store visit intelligence.',
-    loyalty: 'Hi Jwero — show me the loyalty and referral program.',
-    hrpayroll: 'Hi Jwero — show me the HR and payroll suite.',
-    repairsservice: 'Hi Jwero — show me repairs and after-sales service tracking.',
-    purchasevendors: 'Hi Jwero — show me purchase orders and vendor management.',
-    storefront: 'Hi Jwero — show me the ecommerce website builder.',
-    'industries-retail': 'Hi Jwero — I’m in retail, help me find my segment.',
-    solutions: 'Hi Jwero — help me find the right solution for my business.',
-    'single-store': 'Hi Jwero — I run a single store, show me how Jwero fits.',
-    chains: 'Hi Jwero — I run multiple stores, I’d like to talk to a specialist.',
-    manufacturers: 'Hi Jwero — I’m a manufacturer/wholesaler, show me the WIP and gold-loss ledger.',
-    'pain-index': 'Hi Jwero — here is the pain I’m dealing with: ',
-    deadstock: 'Hi Jwero — I ran the dead stock calculator. Here are my numbers: ',
-    scheme_calc: 'Hi Jwero — I ran the gold scheme calculator. Here are my numbers: ',
-    wa_revenue_calc: 'Hi Jwero — I ran the WhatsApp revenue estimator. Here are my numbers: ',
-    goldloss_calc: 'Hi Jwero — I ran the gold-loss calculator. Here are my numbers: ',
-    leadleak: 'Hi Jwero — show me how you stop lead leakage.',
-    security: 'Hi Jwero — I have a security question.',
-    'security-pdf': 'Hi Jwero — please send the security overview PDF.',
-    customers: 'Hi Jwero — I’d like to see real proof before a demo.',
-    lighthouse: 'Hi Jwero — I’m interested in the Lighthouse Partner program.',
-    compare: 'Hi Jwero — I currently use a WhatsApp tool, help me compare.',
-    migration: 'Hi Jwero — help me plan my migration.',
-    pricing: 'Hi Jwero — what does this actually cost for my business?',
-    'tier-assist': 'Hi Jwero — what does the Assist tier cost?',
-    'tier-approve': 'Hi Jwero — what does the Approve tier cost?',
-    'tier-autopilot': 'Hi Jwero — what does the Autopilot tier cost?',
-    company: 'Hi Jwero — I’d like to talk to your team directly.',
-    contact: 'Hi Jwero — reaching out via the contact page.',
-    enterprise: 'Hi Jwero — I’m evaluating for a multi-store/enterprise deployment.',
-    bookdemo: 'Hi Jwero — I would like to see a quick demo.',
-    products: 'Hi Jwero — help me figure out which products matter for my business.',
-    luxury: 'Hi Jwero — I run a luxury/boutique jewellery business, show me clienteling.',
-    bridal: 'Hi Jwero — I focus on bridal, show me the wedding-journey tracking.',
-    diamond: 'Hi Jwero — I sell diamonds, show me the certificate-aware catalogue.',
-    gold: 'Hi Jwero — I sell gold jewellery, show me live-rate pricing and schemes.',
-    silver: 'Hi Jwero — I sell silver at volume, show me the bulk catalogue tools.',
-    labgrown: 'Hi Jwero — I sell lab-grown diamonds, show me the online-first tools.',
-    gemstone: 'Hi Jwero — I sell gemstones, show me provenance-rich catalogue fields.',
-    diamondwholesale: 'Hi Jwero — I’m a diamond wholesaler, show me B2B catalogues.',
-    goldwholesale: 'Hi Jwero — I’m a gold wholesaler, show me rate-linked ordering.',
-    b2b: 'Hi Jwero — I sell B2B (silver/gemstone/pearl), show me the wholesale tools.',
-    casting: 'Hi Jwero — I run a casting unit, show me WIP and loss tracking.',
-    cad: 'Hi Jwero — I run a CAD service, show me job intake and approval flow.',
-    oem: 'Hi Jwero — I’m an OEM manufacturer, show me multi-client job-work.',
-    export: 'Hi Jwero — I run an export house, show me order-to-shipment tracking.',
-    bullion: 'Hi Jwero — I’m a bullion dealer/trader, show me deal capture.',
-    brands: 'Hi Jwero — I run a jewellery brand, show me brand governance across channels.',
-    d2c: 'Hi Jwero — I run a D2C/ecommerce-first brand, show me what you add to Shopify.',
-    startups: 'Hi Jwero — I’m starting a new jewellery business, help me figure out what I need.',
-    franchise: 'Hi Jwero — I run a franchise network, show me franchisor controls.',
-    'compare-hub': 'Hi Jwero — I want to compare Jwero to a tool I’m using or considering.',
-    ornate: 'Hi Jwero — I currently use Ornate NX, help me compare.',
-    synergics: 'Hi Jwero — I currently use Synergics, help me compare.',
-    jewelacc: 'Hi Jwero — I currently use JewelAcc, help me compare.',
-    marg: 'Hi Jwero — I currently use Marg ERP, help me compare.',
-    sioniq: 'Hi Jwero — I’m evaluating Jwero against SIONIQ, help me compare.',
-    zithara: 'Hi Jwero — I currently use Zithara, help me compare.',
-    wati: 'Hi Jwero — I currently use WATI, help me compare.',
-    interakt: 'Hi Jwero — I currently use Interakt, help me compare.',
-    doubletick: 'Hi Jwero — I currently use DoubleTick, help me compare.',
-    quicksell: 'Hi Jwero — I currently use QuickSell, help me compare.',
-    shopify: 'Hi Jwero — I run a Shopify store, show me what Jwero adds.',
-    zohocrm: 'Hi Jwero — I currently use Zoho CRM, help me compare.',
-    'faq-hub': 'Hi Jwero — I have a question that wasn’t on your FAQ page: ',
-    partners: 'Hi Jwero — I’d like to talk about the partner program. Here’s who I’d bring first: ',
-    'blog-hub': 'Hi Jwero — I’d like to see a topic covered on the blog: ',
-    'blog-whatsapp': 'Hi Jwero — I read the WhatsApp guide, show me how it works for my business.',
-    'blog-deadstock': 'Hi Jwero — I read the dead stock guide, show me matched selling and rotation.',
-    'blog-scheme': 'Hi Jwero — I read the gold scheme guide, show me digital collection for my scheme book.',
-    pos: 'Hi Jwero — show me the counter POS: exchange, returns and day-close.',
-    girvi: 'Hi Jwero — show me a girvi pledge from intake to release.',
-    meetings: 'Hi Jwero — send me a video counter link the way a customer would get one.',
-    email: 'Hi Jwero — I want business email on my own domain inside the same inbox as WhatsApp. Show me.',
-    marketplaces: 'Hi Jwero — I sell on Amazon/Flipkart. Show me orders landing on one ledger with stock pushing back.',
-    quotations: 'Hi Jwero — send me a sample quotation link the way a customer gets one.',
-    catalogues: 'Hi Jwero — send me a live digital catalogue link and show me what it reports back.',
-    reports: 'Hi Jwero — show me a report for my kind of jewellery business.',
-    training: 'Hi Jwero — show me a staff training course with a test and certificate.',
-    securitypack: 'Hi Jwero — please send the security pack for my IT / evaluation committee: hosting, backups, access control, SSO, data export.',
-    hindi: 'नमस्ते Jwero — मैं ज्वेलर हूँ। मुझे हिन्दी में जानकारी चाहिए।',
-    brief: 'Hi Jwero — I read the one-page brief. I want to see it on my own business.',
-    nudge: 'Hi Jwero — one question before I decide:',
-    erp: 'Hi Jwero — we run an ERP. Show me what it cannot see about one of my customers, and what Jwero would.',
-    erpswitch: 'Hi Jwero — we run an ERP and switching worries me. Walk me through the plan for my business.',
-    erpmakedo: 'Hi Jwero — we make do with an ERP + WhatsApp + Excel. Show me what the gaps cost on my numbers.',
-    leak: 'Hi Jwero — my enquiry numbers from the make-do calculator:',
-    optimize: 'Hi Jwero — show me the Optimize suite: heatmaps, A/B tests, popups and webchat for my website.',
-    'blog-tally': 'Hi Jwero — I read the Tally guide, tell me exactly what moves and what stays in Tally.',
-    'blog-goldloss': 'Hi Jwero — I read the gold-loss guide, show me the wastage ledger and recovery desk.',
-    'blog-repair': 'Hi Jwero — I read the repair custody-chain guide, show me how it works for my business.',
-    'blog-huid': 'Hi Jwero — I read the HUID/hallmarking guide, show me compliance tracking.',
-    'blog-catalog': 'Hi Jwero — I read the digital catalogue guide, show me a live-price catalogue.',
-    'blog-crmerp': 'Hi Jwero — I read the CRM vs ERP guide, show me how one record covers both.',
-    'blog-checklist': 'Hi Jwero — I read the buyer’s checklist, ask me the questions and I’ll answer honestly.',
-    'blog-wedding': 'Hi Jwero — I read the wedding season guide, help me plan the timing for my business.',
-    'blog-cost': 'Hi Jwero — I read the software cost guide, give me a straight number for my business.',
-    'blog-bestsoftware': 'Hi Jwero — I read the how-to-compare guide, ask me these questions directly.',
-    'blog-goldrate': 'Hi Jwero — I read the live gold rate guide, show me a price resolve live.',
-    'blog-startonline': 'Hi Jwero — I read the starting-online guide, help me plan my first steps.',
-    'blog-wapricing': 'Hi Jwero — I read the WhatsApp API pricing guide, help me understand my own conversation mix.',
-    'blog-schemeslegal': 'Hi Jwero — I read the gold scheme legal guide, show me the compliance controls.',
-    segmentation: 'Hi Jwero — show me live customer segmentation for my business.',
-    journeys: 'Hi Jwero — show me a customer journey with the approval gate live.',
-    campaigns: 'Hi Jwero — show me a campaign and broadcast, with attribution.',
-    adsmanager: 'Hi Jwero — show me Ads Manager for Meta, Google and Pinterest.',
-    socialmedia: 'Hi Jwero — show me the social media inbox and scheduler.'
+    default: 'Hi Jwero, I would like to see a quick demo.',
+    announce: 'Hi Jwero, saw the site, show me the live WhatsApp demo.',
+    header: 'Hi Jwero, I would like to see a quick demo.',
+    sticky: 'Hi Jwero, I would like to see a quick demo.',
+    home: 'Hi Jwero, show me how the AI workforce works, with approvals.',
+    roles: 'Hi Jwero, I want to understand how this helps my team, role by role.',
+    proof: 'Hi, testing the inbox this button leads to. Show me what you’ve got.',
+    report: 'Hi Jwero, I would like a sample growth report for my business.',
+    close: 'Hi Jwero, I would like to see a quick demo.',
+    pilot: 'Hi Jwero, I would like to start a pilot with my own data.',
+    faq: 'Hi Jwero, I have a question that wasn’t on your FAQ.',
+    platform: 'Hi Jwero, show me the full platform, one record at a time.',
+    ai: 'Hi Jwero, show me the AI workforce approval queue live.',
+    memory: 'Hi Jwero, show me a live customer record.',
+    pricingengine: 'Hi Jwero, show me how a price is actually calculated, on my own catalogue.',
+    integrations: 'Hi Jwero, here is the software stack I run today, tell me what bridges.',
+    tally: 'Hi Jwero, I want to understand exactly how the Tally bridge works.',
+    onboarding: 'Hi Jwero, walk me through onboarding for my team.',
+    roadmap: 'Hi Jwero, I have a question about something on your roadmap.',
+    whatsapp: 'Hi Jwero, show me WhatsApp commerce for my business.',
+    instagram: 'Hi Jwero, show me Instagram & Facebook commerce.',
+    aiagents: 'Hi Jwero, show me an AI sales agent in action.',
+    crm: 'Hi Jwero, show me the jewellery CRM and customer record.',
+    catalog: 'Hi Jwero, show me the catalogue with live gold-rate pricing.',
+    inventory: 'Hi Jwero, show me inventory ageing and dead-stock visibility.',
+    billing: 'Hi Jwero, show me GST invoicing at the live gold rate.',
+    erp: 'Hi Jwero, show me orders, purchases and manufacturing in one place.',
+    schemes: 'Hi Jwero, I want to see gold savings schemes running digitally.',
+    digitalgold: 'Hi Jwero, show me how digital gold works.',
+    multistore: 'Hi Jwero, I run multiple stores, show me the multi-store structure.',
+    showroom: 'Hi Jwero, show me the showroom / in-store visit intelligence.',
+    loyalty: 'Hi Jwero, show me the loyalty and referral program.',
+    hrpayroll: 'Hi Jwero, show me the HR and payroll suite.',
+    repairsservice: 'Hi Jwero, show me repairs and after-sales service tracking.',
+    purchasevendors: 'Hi Jwero, show me purchase orders and vendor management.',
+    storefront: 'Hi Jwero, show me the ecommerce website builder.',
+    'industries-retail': 'Hi Jwero, I’m in retail, help me find my segment.',
+    solutions: 'Hi Jwero, help me find the right solution for my business.',
+    'single-store': 'Hi Jwero, I run a single store, show me how Jwero fits.',
+    chains: 'Hi Jwero, I run multiple stores, I’d like to talk to a specialist.',
+    manufacturers: 'Hi Jwero, I’m a manufacturer/wholesaler, show me the WIP and gold-loss ledger.',
+    'pain-index': 'Hi Jwero, here is the pain I’m dealing with: ',
+    deadstock: 'Hi Jwero, I ran the dead stock calculator. Here are my numbers: ',
+    scheme_calc: 'Hi Jwero, I ran the gold scheme calculator. Here are my numbers: ',
+    wa_revenue_calc: 'Hi Jwero, I ran the WhatsApp revenue estimator. Here are my numbers: ',
+    goldloss_calc: 'Hi Jwero, I ran the gold-loss calculator. Here are my numbers: ',
+    leadleak: 'Hi Jwero, show me how you stop lead leakage.',
+    security: 'Hi Jwero, I have a security question.',
+    'security-pdf': 'Hi Jwero, please send the security overview PDF.',
+    customers: 'Hi Jwero, I’d like to see real proof before a demo.',
+    lighthouse: 'Hi Jwero, I’m interested in the Lighthouse Partner program.',
+    compare: 'Hi Jwero, I currently use a WhatsApp tool, help me compare.',
+    migration: 'Hi Jwero, help me plan my migration.',
+    pricing: 'Hi Jwero, what does this actually cost for my business?',
+    'tier-assist': 'Hi Jwero, a question about Jwero One pricing.',
+    company: 'Hi Jwero, I’d like to talk to your team directly.',
+    contact: 'Hi Jwero, reaching out via the contact page.',
+    enterprise: 'Hi Jwero, I’m evaluating for a multi-store/enterprise deployment.',
+    bookdemo: 'Hi Jwero, I would like to see a quick demo.',
+    products: 'Hi Jwero, help me figure out which products matter for my business.',
+    luxury: 'Hi Jwero, I run a luxury/boutique jewellery business, show me clienteling.',
+    bridal: 'Hi Jwero, I focus on bridal, show me the wedding-journey tracking.',
+    diamond: 'Hi Jwero, I sell diamonds, show me the certificate-aware catalogue.',
+    gold: 'Hi Jwero, I sell gold jewellery, show me live-rate pricing and schemes.',
+    silver: 'Hi Jwero, I sell silver at volume, show me the bulk catalogue tools.',
+    labgrown: 'Hi Jwero, I sell lab-grown diamonds, show me the online-first tools.',
+    gemstone: 'Hi Jwero, I sell gemstones, show me provenance-rich catalogue fields.',
+    diamondwholesale: 'Hi Jwero, I’m a diamond wholesaler, show me B2B catalogues.',
+    goldwholesale: 'Hi Jwero, I’m a gold wholesaler, show me rate-linked ordering.',
+    b2b: 'Hi Jwero, I sell B2B (silver/gemstone/pearl), show me the wholesale tools.',
+    casting: 'Hi Jwero, I run a casting unit, show me WIP and loss tracking.',
+    cad: 'Hi Jwero, I run a CAD service, show me job intake and approval flow.',
+    oem: 'Hi Jwero, I’m an OEM manufacturer, show me multi-client job-work.',
+    export: 'Hi Jwero, I run an export house, show me order-to-shipment tracking.',
+    bullion: 'Hi Jwero, I’m a bullion dealer/trader, show me deal capture.',
+    brands: 'Hi Jwero, I run a jewellery brand, show me brand governance across channels.',
+    d2c: 'Hi Jwero, I run a D2C/ecommerce-first brand, show me what you add to Shopify.',
+    startups: 'Hi Jwero, I’m starting a new jewellery business, help me figure out what I need.',
+    franchise: 'Hi Jwero, I run a franchise network, show me franchisor controls.',
+    'compare-hub': 'Hi Jwero, I want to compare Jwero to a tool I’m using or considering.',
+    ornate: 'Hi Jwero, I currently use Ornate NX, help me compare.',
+    synergics: 'Hi Jwero, I currently use Synergics, help me compare.',
+    jewelacc: 'Hi Jwero, I currently use JewelAcc, help me compare.',
+    marg: 'Hi Jwero, I currently use Marg ERP, help me compare.',
+    sioniq: 'Hi Jwero, I’m evaluating Jwero against SIONIQ, help me compare.',
+    zithara: 'Hi Jwero, I currently use Zithara, help me compare.',
+    wati: 'Hi Jwero, I currently use WATI, help me compare.',
+    interakt: 'Hi Jwero, I currently use Interakt, help me compare.',
+    doubletick: 'Hi Jwero, I currently use DoubleTick, help me compare.',
+    quicksell: 'Hi Jwero, I currently use QuickSell, help me compare.',
+    shopify: 'Hi Jwero, I run a Shopify store, show me what Jwero adds.',
+    zohocrm: 'Hi Jwero, I currently use Zoho CRM, help me compare.',
+    'faq-hub': 'Hi Jwero, I have a question that wasn’t on your FAQ page: ',
+    partners: 'Hi Jwero, I’d like to talk about the partner program. Here’s who I’d bring first: ',
+    'blog-hub': 'Hi Jwero, I’d like to see a topic covered on the blog: ',
+    'blog-whatsapp': 'Hi Jwero, I read the WhatsApp guide, show me how it works for my business.',
+    'blog-deadstock': 'Hi Jwero, I read the dead stock guide, show me matched selling and rotation.',
+    'blog-scheme': 'Hi Jwero, I read the gold scheme guide, show me digital collection for my scheme book.',
+    pos: 'Hi Jwero, show me the counter POS: exchange, returns and day-close.',
+    girvi: 'Hi Jwero, show me a girvi pledge from intake to release.',
+    meetings: 'Hi Jwero, send me a video counter link the way a customer would get one.',
+    email: 'Hi Jwero, I want business email on my own domain inside the same inbox as WhatsApp. Show me.',
+    marketplaces: 'Hi Jwero, I sell on Amazon/Flipkart. Show me orders landing on one ledger with stock pushing back.',
+    quotations: 'Hi Jwero, send me a sample quotation link the way a customer gets one.',
+    catalogues: 'Hi Jwero, send me a live digital catalogue link and show me what it reports back.',
+    reports: 'Hi Jwero, show me a report for my kind of jewellery business.',
+    training: 'Hi Jwero, show me a staff training course with a test and certificate.',
+    securitypack: 'Hi Jwero, please send the security pack for my IT / evaluation committee: hosting, backups, access control, SSO, data export.',
+    hindi: 'नमस्ते Jwero, मैं ज्वेलर हूँ। मुझे हिन्दी में जानकारी चाहिए।',
+    brief: 'Hi Jwero, I read the one-page brief. I want to see it on my own business.',
+    nudge: 'Hi Jwero, one question before I decide:',
+    erp: 'Hi Jwero, we run an ERP. Show me what it cannot see about one of my customers, and what Jwero would.',
+    erpswitch: 'Hi Jwero, we run an ERP and switching worries me. Walk me through the plan for my business.',
+    erpmakedo: 'Hi Jwero, we make do with an ERP + WhatsApp + Excel. Show me what the gaps cost on my numbers.',
+    leak: 'Hi Jwero, my enquiry numbers from the make-do calculator:',
+    quote: 'Hi Jwero, please send me this as a quote:',
+    diamondtraders: 'Hi Jwero, I trade loose diamonds. Show me parcels, certified stones, memo and my rate grid on one screen.',
+    grid: 'Hi Jwero, show me my own per-carat rate grid in Jwero. My example line:',
+    optimize: 'Hi Jwero, show me the Optimize suite: heatmaps, A/B tests, popups and webchat for my website.',
+    'blog-tally': 'Hi Jwero, I read the Tally guide, tell me exactly what moves and what stays in Tally.',
+    'blog-goldloss': 'Hi Jwero, I read the gold-loss guide, show me the wastage ledger and recovery desk.',
+    'blog-repair': 'Hi Jwero, I read the repair custody-chain guide, show me how it works for my business.',
+    'blog-huid': 'Hi Jwero, I read the HUID/hallmarking guide, show me compliance tracking.',
+    'blog-catalog': 'Hi Jwero, I read the digital catalogue guide, show me a live-price catalogue.',
+    'blog-crmerp': 'Hi Jwero, I read the CRM vs ERP guide, show me how one record covers both.',
+    'blog-checklist': 'Hi Jwero, I read the buyer’s checklist, ask me the questions and I’ll answer honestly.',
+    'blog-wedding': 'Hi Jwero, I read the wedding season guide, help me plan the timing for my business.',
+    'blog-cost': 'Hi Jwero, I read the software cost guide, give me a straight number for my business.',
+    'blog-bestsoftware': 'Hi Jwero, I read the how-to-compare guide, ask me these questions directly.',
+    'blog-goldrate': 'Hi Jwero, I read the live gold rate guide, show me a price resolve live.',
+    'blog-startonline': 'Hi Jwero, I read the starting-online guide, help me plan my first steps.',
+    'blog-wapricing': 'Hi Jwero, I read the WhatsApp API pricing guide, help me understand my own conversation mix.',
+    'blog-schemeslegal': 'Hi Jwero, I read the gold scheme legal guide, show me the compliance controls.',
+    segmentation: 'Hi Jwero, show me live customer segmentation for my business.',
+    journeys: 'Hi Jwero, show me a customer journey with the approval gate live.',
+    campaigns: 'Hi Jwero, show me a campaign and broadcast, with attribution.',
+    adsmanager: 'Hi Jwero, show me Ads Manager for Meta, Google and Pinterest.',
+    socialmedia: 'Hi Jwero, show me the social media inbox and scheduler.'
   };
 
-  var PERSONA_NAMES = { single: 'a single-store jeweller', chain: 'a multi-store chain', maker: 'a manufacturer', b2b: 'a wholesaler / B2B business', d2c: 'a D2C brand', franchise: 'a franchise network' };
-  function personaKey() { try { return localStorage.getItem('jwero-persona') || ''; } catch (e) { return ''; } }
+  var PERSONA_NAMES = { single: 'a single-store jeweller', chain: 'a multi-store chain', maker: 'a manufacturer', b2b: 'a wholesaler / B2B business', d2c: 'a D2C brand', franchise: 'a franchise network', trader: 'a diamond trader', staff: 'on the staff of a jewellery business' };
+  function personaKey() { var q = /[?&]p=(single|chain|maker|b2b|d2c|franchise|trader|staff)/.exec(location.search); if (q) return q[1]; try { return localStorage.getItem('jwero-persona') || ''; } catch (e) { return ''; } }
   function waLink(ctx, extra) {
     var who = PERSONA_NAMES[personaKey()];
     var msg = (WA_MESSAGES[ctx] || WA_MESSAGES.default) + (extra || '') + (who && ctx !== 'announce' ? ' (I am ' + who + '.)' : '');
@@ -159,6 +160,100 @@
     a.setAttribute('target', '_blank');
     a.setAttribute('rel', 'noopener');
   });
+
+  // --- connect: chat, voice or video through the Jwero chat widget ------------
+  // Every "chat or call" button opens one panel with three doors. With the widget
+  // loaded (html[data-webchat="on"]) they hand over to it: jwero.chat.open() for
+  // chat, a browser call for voice and video. Without it, no site key yet, a
+  // blocker, offline, each door falls back to WhatsApp, the phone or the demo
+  // form, so nothing is ever a dead end.
+  var Connect = (function () {
+    var dlg = document.querySelector('dialog.connect');
+    var WEBCHAT_ON = document.documentElement.getAttribute('data-webchat') === 'on';
+    var TEL = 'tel:+919169959959', state = { wa: '', msg: '', ctx: '' };
+    function deskOpen() { var ist = new Date(Date.now() + (330 + new Date().getTimezoneOffset()) * 60000), h = ist.getHours(); return h >= 10 && h < 20; }
+    function widget() { var j = window.jwero; return j && j.chat && typeof j.chat.open === 'function' ? j : null; }
+    function whenWidget(cb, ms) {
+      var t0 = Date.now();
+      (function poll() { var j = widget(); if (j) return cb(j); if (Date.now() - t0 > ms) return cb(null); window.setTimeout(poll, 150); })();
+    }
+    function shadow() { var host = document.getElementById('jwero-optimize-root'); return host ? (host.shadowRoot || host) : null; }
+    function note(j, mode) { try { j.track('website_cta', { mode: mode, context: state.ctx, page: location.pathname, persona: personaKey() }); } catch (e) {} }
+    // Put the page's question in the widget's box so the visitor only has to press send.
+    function prefill() {
+      if (!state.msg) return;
+      window.setTimeout(function () {
+        try { var r = shadow(), box = r && r.querySelector('textarea, input[type="text"]'); if (box && !box.value) { box.value = state.msg; box.dispatchEvent(new Event('input', { bubbles: true })); } } catch (e) {}
+      }, 500);
+    }
+    function call(j, mode) {
+      note(j, mode);
+      if (typeof j.chat.call === 'function') { j.chat.call(mode === 'voice' ? 'audio' : 'video'); return; }
+      // Older widget builds have no public call method: open the panel and press its own call button.
+      j.chat.open();
+      window.setTimeout(function () { try { var r = shadow(), b = r && r.querySelector('.jw-call'); if (b) b.click(); } catch (e) {} }, 450);
+    }
+    function close() { if (dlg && dlg.open) dlg.close(); }
+    function fallback(mode) {
+      close();
+      if (mode === 'chat') { window.open(state.wa || waLink('default'), '_blank', 'noopener'); return; }
+      if (mode === 'voice') { location.href = deskOpen() ? TEL : '/book-demo#callback'; return; }
+      location.href = '/book-demo#schedule';
+    }
+    function go(mode) {
+      if (!WEBCHAT_ON) return fallback(mode);
+      if (mode !== 'chat' && !deskOpen()) return fallback(mode);
+      if (dlg) dlg.classList.add('is-busy');
+      whenWidget(function (j) {
+        if (dlg) dlg.classList.remove('is-busy');
+        if (!j) return fallback(mode);
+        close();
+        if (mode === 'chat') { note(j, 'chat'); j.chat.open(); prefill(); } else call(j, mode);
+      }, 3500);
+    }
+    function set(sel, text) { var el = dlg.querySelector(sel); if (el) el.textContent = text; }
+    function open(opts) {
+      opts = opts || {};
+      state.wa = opts.wa || waLink('default'); state.ctx = opts.ctx || ''; state.msg = opts.msg || '';
+      // "Book a demo" goes straight to video when a person can pick up.
+      if (opts.mode === 'video' && opts.direct && WEBCHAT_ON && deskOpen()) return go('video');
+      if (!dlg || typeof dlg.showModal !== 'function') return fallback(opts.mode || 'chat');
+      var desk = deskOpen();
+      set('[data-connect-title]', opts.mode === 'video' ? 'A demo on video' : opts.mode === 'voice' ? 'Call Jwero' : 'Talk to Jwero');
+      set('[data-connect-sub]', opts.mode === 'video' ? 'Fifteen minutes, your scenario, a real person on camera.' : 'A real person and our AI, within minutes. Pick how.');
+      set('[data-connect-note="chat"]', WEBCHAT_ON ? 'Opens right here' : 'Opens WhatsApp');
+      set('[data-connect-note="voice"]', WEBCHAT_ON && desk ? 'From your browser, no app' : desk ? 'Dials +91 91699 59959' : 'We call you back');
+      set('[data-connect-note="video"]', WEBCHAT_ON && desk ? 'See the product, face to face' : 'Pick a time for a video demo');
+      set('[data-connect-hours]', desk ? 'The desk is open now · 10am–8pm IST' : 'The desk is closed right now (10am–8pm IST). Chat reaches us; calls become a callback.');
+      var ctx = dlg.querySelector('[data-connect-ctx]');
+      if (ctx) { ctx.hidden = !state.msg; ctx.textContent = state.msg ? '“' + state.msg + '”' : ''; }
+      var alt = dlg.querySelector('[data-connect-alt="wa"]'); if (alt) alt.setAttribute('href', state.wa);
+      Array.prototype.forEach.call(dlg.querySelectorAll('.connect-opt'), function (b) { b.classList.toggle('is-lead', b.getAttribute('data-connect-go') === (opts.mode || 'chat')); });
+      if (!dlg.open) dlg.showModal();
+    }
+    if (dlg) {
+      dlg.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-connect-go]');
+        if (b) return go(b.getAttribute('data-connect-go'));
+        if (e.target === dlg || e.target.closest('.connect-close')) close();
+      });
+    }
+    // One listener for every door on the site: chat buttons, call links, demo links.
+    document.addEventListener('click', function (e) {
+      if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+      var a = e.target.closest('a');
+      if (!a || a.hasAttribute('data-direct') || a.hasAttribute('data-share') || a.closest('dialog.connect')) return;
+      var href = a.getAttribute('href') || '', mode = a.getAttribute('data-connect');
+      var isWa = a.hasAttribute('data-wa') || href.indexOf('https://wa.me/' + WA_NUMBER) === 0;
+      var isDemo = /^\/book-demo\/?$/.test(href), isTel = href.indexOf('tel:') === 0;
+      if (!isWa && !isDemo && !isTel && mode === null) return;
+      e.preventDefault();
+      var msg = '';
+      if (href.indexOf('https://wa.me/') === 0) { try { msg = decodeURIComponent((href.split('text=')[1] || '')).replace(/\s*\[ref:[^\]]*\]\s*$/, ''); } catch (x) {} }
+      open({ mode: mode || (isDemo ? 'video' : isTel ? 'voice' : ''), direct: isDemo, wa: isWa && href.indexOf('https://') === 0 ? href : '', ctx: a.getAttribute('data-wa') || (isDemo ? 'book-demo' : isTel ? 'call' : ''), msg: isWa ? msg : '' });
+    });
+    return { open: open };
+  })();
 
   // Share a page to someone else on WhatsApp (no number: the picker opens).
   document.querySelectorAll('[data-share]').forEach(function (a) {
@@ -216,7 +311,7 @@
     dds.forEach(function (d) {
       d.addEventListener('mouseenter', function () { if (wideNav.matches) d.open = true; });
       d.addEventListener('mouseleave', function () { if (wideNav.matches) d.open = false; });
-      // Hover already controls open/close here — without this, clicking the
+      // Hover already controls open/close here, without this, clicking the
       // summary (which people do reflexively) fires the browser's native
       // toggle on top of the hover state and immediately closes the menu
       // that just opened, before a sub-link can be clicked.
@@ -552,7 +647,7 @@
     function update() {
       var c = chips.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; }).length;
       if (n) { n.textContent = c; n.classList.add('bump'); window.setTimeout(function () { n.classList.remove('bump'); }, 260); }
-      if (tally) tally.innerHTML = c ? 'You run <b>' + c + '</b> system' + (c === 1 ? '' : 's') + ' — <b>' + c + '</b> logins, <b>' + c + '</b> bills, <b>' + c + '</b> vendors, and your customer in pieces across all of them.' : '';
+      if (tally) tally.innerHTML = c ? 'You run <b>' + c + '</b> system' + (c === 1 ? '' : 's') + ', <b>' + c + '</b> logins, <b>' + c + '</b> bills, <b>' + c + '</b> vendors, and your customer in pieces across all of them.' : '';
     }
     split.addEventListener('click', function (e) {
       var b = e.target.closest('.chaos-chip');
@@ -583,6 +678,357 @@
     stage.addEventListener('mouseleave', function () { nodes.forEach(function (o) { show(o, false); }); });
   });
 
+  // The stone as the customer record (home). A week plays through it; it breaks
+  // into the tools the record lives in today; it turns under the finger; a facet
+  // opens its module; writes run in blue, reads in amber; a rate change ripples
+  // across every price at once. The module set follows the header's "I run a…".
+  Array.prototype.forEach.call(document.querySelectorAll('[data-gem2]'), function (root) {
+    var DATA; try { DATA = JSON.parse(root.querySelector('[data-gem2-json]').textContent); } catch (e) { return; }
+    var key = root.getAttribute('data-set') || personaKey(); var set = DATA.sets[key] || DATA.sets.single;
+    var fixedMetal = root.getAttribute('data-fixed-metal');
+    var stage = root.querySelector('.gem2-stage'), cv = stage.querySelector('canvas'), ctx = cv.getContext && cv.getContext('2d');
+    var nodesEl = root.querySelector('[data-gem2-nodes]'), shardsEl = root.querySelector('[data-gem2-shards]'), centreEl = root.querySelector('[data-gem2-centre]');
+    var linesEl = root.querySelector('[data-gem2-lines]'), noteEl = root.querySelector('[data-gem2-note]'), eventsEl = root.querySelector('[data-gem2-events]');
+    var cardTitle = root.querySelector('[data-gem2-cardtitle]'), cardTag = root.querySelector('[data-gem2-cardtag]'), playBtn = root.querySelector('[data-gem2-play]');
+    var esc2 = function (t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+    var FAMS = DATA.families || [], famBtns = Array.prototype.slice.call(root.querySelectorAll('.gem2-fam')), heardEl = root.querySelector('[data-gem2-heard]'), sigNote = root.querySelector('[data-gem2-signote]'), famOpen = -1;
+    var N = set.modules.length, mode = 'os', active = -1, step = -1, timer = null;
+
+    // ---- markup for this kind of business
+    nodesEl.innerHTML = set.modules.map(function (m, k) { return '<button type="button" class="gem2-node" data-k="' + k + '">' + (DATA.icons[m[0]] || '') + '<span>' + esc2(m[1]) + '</span><em>Repriced</em></button>'; }).join('');
+    shardsEl.innerHTML = set.tools.map(function (t, g) { return '<span class="gem2-shard" data-g="' + g + '">' + esc2(t) + '</span>'; }).join('');
+    eventsEl.innerHTML = set.week.map(function (e, k) { return '<li><button type="button" data-ev="' + k + '"><b>' + esc2(e[0]) + '</b><span>' + esc2(e[1]) + '</span></button></li>'; }).join('');
+    centreEl.textContent = set.centre; cardTitle.textContent = set.centre;
+    var nodeBtns = Array.prototype.slice.call(nodesEl.querySelectorAll('.gem2-node'));
+    var shardEls = Array.prototype.slice.call(shardsEl.children), evBtns = Array.prototype.slice.call(eventsEl.querySelectorAll('button'));
+
+    // ---- geometry: two shapes built from flat facets. Every facet knows which
+    // quarter it breaks away with (grp) and which module's stretch it belongs to (mod).
+    var TAU = Math.PI * 2, SHAPES = { diamond: [], bangle: [] };
+    function V(r, deg, y) { var a = deg * Math.PI / 180; return [Math.cos(a) * r, y, Math.sin(a) * r]; }
+    function facet(list, vs, o) {
+      var a = vs[0], b = vs[1], c = vs[2], n = o.n;
+      var cx = 0, cy = 0, cz = 0; vs.forEach(function (v) { cx += v[0]; cy += v[1]; cz += v[2]; }); cx /= vs.length; cy /= vs.length; cz /= vs.length;
+      if (!n) {
+        var ux = b[0] - a[0], uy = b[1] - a[1], uz = b[2] - a[2], vx = c[0] - a[0], vy = c[1] - a[1], vz = c[2] - a[2];
+        var nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx, len = Math.sqrt(nx * nx + ny * ny + nz * nz) || 1;
+        nx /= len; ny /= len; nz /= len;
+        if (nx * cx + ny * (cy + .25) + nz * cz < 0) { nx = -nx; ny = -ny; nz = -nz; }
+        n = [nx, ny, nz];
+      }
+      list.push({ v: vs, n: n, c: [cx, cy, cz], grp: o.grp, mod: o.mod, kind: o.kind, e: o.e, ang: o.ang || 0 });
+    }
+    // brilliant cut: table, crown, pavilion
+    (function () {
+      var TOP = .44, GIRDLE = .12, CULET = [0, -1.04, 0], O = [0, TOP, 0];
+      for (var i = 0; i < 8; i++) {
+        var T0 = V(.56, i * 45, TOP), T1 = V(.56, i * 45 + 45, TOP);
+        var G0 = V(1, i * 45, GIRDLE), Gm = V(1, i * 45 + 22.5, GIRDLE), G1 = V(1, i * 45 + 45, GIRDLE);
+        var o = function (kind, e) { return { grp: i >> 1, mod: Math.min(N - 1, Math.floor(i * N / 8)), kind: kind, e: e }; };
+        facet(SHAPES.diamond, [O, T0, T1], o(0, [0, 1, 0]));
+        facet(SHAPES.diamond, [T0, Gm, T1], o(1, [1, 1, 0]));
+        facet(SHAPES.diamond, [T0, G0, Gm], o(1, [1, 1, 1]));
+        facet(SHAPES.diamond, [T1, Gm, G1], o(1, [1, 1, 1]));
+        facet(SHAPES.diamond, [CULET, G0, Gm], o(2, [1, 1, 1]));
+        facet(SHAPES.diamond, [CULET, Gm, G1], o(2, [1, 1, 1]));
+      }
+    })();
+    // bangle: a band standing upright, facing the reader
+    (function () {
+      var M = 72, m = 12, R = .86, TR = .085, TZ = .22, QUAD = [1, 0, 2, 3];
+      function P(u, v) { var a = u / M * TAU, b = v / m * TAU, rr = R + TR * Math.cos(b); return [rr * Math.cos(a), rr * Math.sin(a), TZ * Math.sin(b)]; }
+      for (var u = 0; u < M; u++) for (var v = 0; v < m; v++) {
+        var am = (u + .5) / M * TAU, bm = (v + .5) / m * TAU;
+        var nx = Math.cos(bm) * Math.cos(am) / TR, ny = Math.cos(bm) * Math.sin(am) / TR, nz = Math.sin(bm) / TZ, len = Math.sqrt(nx * nx + ny * ny + nz * nz);
+        // the stretch of band nearest each module: screen angle runs clockwise from the top
+        var scr = ((90 - (u + .5) / M * 360) % 360 + 360) % 360;
+        facet(SHAPES.bangle, [P(u, v), P(u + 1, v), P(u + 1, v + 1), P(u, v + 1)], { n: [nx / len, ny / len, nz / len], grp: QUAD[Math.floor(u / (M / 4))], mod: Math.min(N - 1, Math.floor(scr / (360 / N))), kind: 1, ang: (u + .5) / M });
+      }
+    })();
+    var METALS = {
+      gold: { shape: 'bangle', base: '#d4a21f', dark: '#8a6408', lite: '#fff1b8', word: 'gold' },
+      silver: { shape: 'bangle', base: '#b9c0c8', dark: '#6b737c', lite: '#ffffff', word: 'silver' },
+      platinum: { shape: 'bangle', base: '#9fa9b6', dark: '#4f5967', lite: '#f1f5fa', word: 'platinum' },
+      diamond: { shape: 'diamond', word: 'gold' },
+    };
+    function hex(h) { h = h.replace('#', ''); if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2]; return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]; }
+    function mix(a, b, t) { return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t]; }
+    Object.keys(METALS).forEach(function (k) { var M0 = METALS[k]; if (M0.base) { M0.rgb = hex(M0.base); M0.lrgb = hex(M0.lite); M0.drgb = hex(M0.dark); } });
+    var INK = [0, 19, 183], AMB = [246, 167, 35];
+    var metal = fixedMetal || 'gold'; if (!fixedMetal) { try { metal = localStorage.getItem('jwero-metal') || 'gold'; } catch (e) {} }
+    if (!METALS[metal]) metal = 'gold';
+    var facets = SHAPES[METALS[metal].shape];
+
+    // ---- state the frame loop reads
+    var w = 0, h = 0, dpr = 1, raf = 0, ink = '#0013b7', faint = '#c9cdd8', amber = '#f6a723';
+    var spin = 0, rotY = 0, rotX = .2, dragging = false, lastX = 0, lastY = 0, lastT = 0;
+    var explode = 0, explodeTo = 0, glow = [], pulses = [], ripple = -1, ox = 0, oy = 0, S = 1, nodePos = [];
+    var DIRS = [[-1, -.62], [1, -.62], [-1, .7], [1, .7]];
+    for (var g0 = 0; g0 < N; g0++) glow.push(0);
+    function theme() { var cs = window.getComputedStyle(root); ink = cs.getPropertyValue('--brand').trim() || ink; faint = cs.getPropertyValue('--line-2').trim() || faint; if (/^#[0-9a-f]{3,6}$/i.test(ink)) INK = hex(ink); }
+    function layout() {
+      dpr = Math.min(2, window.devicePixelRatio || 1);
+      w = stage.clientWidth; h = stage.clientHeight;
+      cv.width = w * dpr; cv.height = h * dpr; if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var small = w < 520;
+      S = Math.min(w * (small ? .2 : .22), h * .32); ox = w / 2; oy = h * .47;
+      var rx = Math.min(w / 2 - (small ? 34 : 70), S * (small ? 2.05 : 2.5)), ry = Math.min(h / 2 - 46, S * 1.55);
+      nodePos = [];
+      nodeBtns.forEach(function (b, k) {
+        var a = -Math.PI / 2 + (k + .5) * TAU / N, x = ox + Math.cos(a) * rx, y = oy + Math.sin(a) * ry;
+        nodePos.push([x, y, a]); b.style.left = x + 'px'; b.style.top = y + 'px';
+      });
+      shardEls.forEach(function (el, g) { el.style.left = (ox + DIRS[g][0] * S * .78) + 'px'; el.style.top = (oy + DIRS[g][1] * S * .66 + (DIRS[g][1] < 0 ? -S * .1 : S * .1)) + 'px'; });
+      centreEl.style.top = (METALS[metal].shape === 'bangle' && !small ? oy - 8 : oy + S * 1.22) + 'px';
+    }
+    function sectorOf(k) { return [Math.floor(k * 8 / N), Math.floor((k + 1) * 8 / N)]; }
+    function wireEnd(k) {
+      if (explode > .5) { var g = set.modules[k][5]; return [ox + DIRS[g][0] * S * .72 * explode, oy + DIRS[g][1] * S * .62 * explode]; }
+      var p = nodePos[k], rr = METALS[metal].shape === 'bangle' ? [.98, .98] : [.55, .4]; return [ox + Math.cos(p[2]) * S * rr[0], oy + Math.sin(p[2]) * S * rr[1]];
+    }
+    function draw(now) {
+      raf = window.requestAnimationFrame(draw);
+      if (!ctx) return;
+      var t = now / 1000, dt = lastT ? Math.min(.05, t - lastT) : 0; lastT = t;
+      if (!dragging) spin += dt * (mode === 'today' ? .1 : .22);
+      explode += (explodeTo - explode) * Math.min(1, dt * 5);
+      var bangle = METALS[metal].shape === 'bangle';
+      var ry = (bangle ? Math.sin(spin * 1.5) * (.62 - .4 * explode) : spin) + rotY, rxx = bangle ? rotX - .08 : rotX, cy = Math.cos(ry), sy = Math.sin(ry), cxr = Math.cos(rxx), sxr = Math.sin(rxx);
+      ctx.clearRect(0, 0, w, h);
+      // wires: module → the record (or, today, → the one tool that knows)
+      ctx.lineWidth = 1; ctx.setLineDash([3, 6]); ctx.lineDashOffset = -t * 14;
+      for (var k = 0; k < N; k++) {
+        var p = nodePos[k], e = wireEnd(k);
+        ctx.strokeStyle = k === active ? ink : faint; ctx.globalAlpha = k === active ? .9 : .8;
+        ctx.beginPath(); ctx.moveTo(p[0], p[1]); ctx.lineTo(e[0], e[1]); ctx.stroke();
+      }
+      ctx.setLineDash([]);
+      // the piece: a bangle in metal, or the stone in glass
+      var MT = METALS[metal], isMetal = MT.shape === 'bangle';
+      var front = ripple >= 0 ? (isMetal ? ripple : 1.1 - ripple * 2.4) : 9, k2 = 1 - .36 * explode, best = null;
+      var sh = ctx.createRadialGradient(ox, oy + S * 1.12, 0, ox, oy + S * 1.12, S * .9), shc = isMetal ? '20, 16, 0' : '0, 19, 183';
+      sh.addColorStop(0, 'rgba(' + shc + ', ' + (.1 * (1 - explode)) + ')'); sh.addColorStop(1, 'rgba(' + shc + ', 0)');
+      ctx.globalAlpha = 1; ctx.fillStyle = sh; ctx.beginPath(); ctx.ellipse(ox, oy + S * 1.12, S * .9, S * .14, 0, 0, TAU); ctx.fill();
+      var list = [];
+      for (var f0 = 0; f0 < facets.length; f0++) {
+        var F = facets[f0], n = F.n;
+        var nxr = n[0] * cy + n[2] * sy, nzr = -n[0] * sy + n[2] * cy, ny2 = n[1] * cxr - nzr * sxr, nz2 = n[1] * sxr + nzr * cxr;
+        if (isMetal && nz2 < 0) continue; // metal is opaque: the far side is simply hidden
+        var grp = F.grp, dx = DIRS[grp][0] * S * .72 * explode, dy = DIRS[grp][1] * S * .62 * explode, P = [], zs = 0;
+        for (var v0 = 0; v0 < F.v.length; v0++) {
+          var q = F.v[v0], x = q[0] * cy + q[2] * sy, z = -q[0] * sy + q[2] * cy, y2 = q[1] * cxr - z * sxr;
+          zs += q[1] * sxr + z * cxr;
+          P.push(ox + x * S * k2 + dx, oy - y2 * S * k2 + dy);
+        }
+        var hot = 0;
+        if (explode < .5) hot = glow[F.mod] > .02 ? glow[F.mod] : 0;
+        else { for (var m2 = 0; m2 < N; m2++) if (glow[m2] > .02 && set.modules[m2][5] === grp) hot = Math.max(hot, glow[m2]); }
+        var shine = isMetal ? (ripple >= 0 && Math.abs(((F.ang - front + 1.5) % 1) - .5) < .05 ? 1 : 0) : (Math.abs(F.c[1] - front) < .22 ? 1 : 0);
+        var light = Math.max(0, nxr * .35 + ny2 * .72 + nz2 * .6) + Math.max(0, -ny2 * .5 + nz2 * .45 - nxr * .2) * .6;
+        list.push({ P: P, z: zs / F.v.length, front: nz2 >= 0, light: Math.min(1, light), hot: hot, shine: shine, F: F });
+      }
+      list.sort(function (a3, b3) { return a3.z - b3.z; });
+      ctx.lineJoin = 'round';
+      for (var l0 = 0; l0 < list.length; l0++) {
+        var it = list[l0], P2 = it.P, F2 = it.F, np = P2.length / 2;
+        ctx.beginPath(); ctx.moveTo(P2[0], P2[1]); for (var p0 = 1; p0 < np; p0++) ctx.lineTo(P2[p0 * 2], P2[p0 * 2 + 1]); ctx.closePath();
+        if (isMetal) {
+          // solid metal: base colour, then light or shade laid over it, then the module's own tint
+          // one blended colour per facet, filled and stroked alike, so the band reads as smooth metal
+          var col = it.light > .5 ? mix(MT.rgb, MT.lrgb, Math.min(.9, (it.light - .5) * 1.7)) : mix(MT.rgb, MT.drgb, Math.min(.75, (.5 - it.light) * 1.6));
+          if (it.shine) col = mix(col, [255, 255, 255], .85);
+          else if (it.hot > .2) col = mix(col, explode > .5 ? AMB : INK, .3 + it.hot * .45);
+          var css = 'rgb(' + (col[0] | 0) + ',' + (col[1] | 0) + ',' + (col[2] | 0) + ')';
+          ctx.globalAlpha = 1; ctx.fillStyle = css; ctx.fill(); ctx.strokeStyle = css; ctx.lineWidth = 1; ctx.stroke();
+          if (it.light > .97 && (!best || it.light > best.light)) best = it;
+          continue;
+        }
+        var lit = it.hot > .2 || it.shine;
+        if (!it.front) { ctx.globalAlpha = .28; ctx.strokeStyle = faint; ctx.lineWidth = .75; ctx.stroke(); continue; }
+        ctx.fillStyle = lit ? amber : ink;
+        ctx.globalAlpha = lit ? .18 + Math.max(it.hot, it.shine) * .5 : (F2.kind === 0 ? .05 + (1 - it.light) * .06 : .06 + (1 - it.light) * .26);
+        ctx.fill();
+        if (it.light > .93 && !lit) { ctx.fillStyle = '#fff'; ctx.globalAlpha = (it.light - .93) * 9; ctx.fill(); }
+        ctx.strokeStyle = lit ? amber : ink; ctx.globalAlpha = .55 + it.light * .3; ctx.lineWidth = 1;
+        for (var e0 = 0; e0 < np; e0++) {
+          if (F2.e && !F2.e[e0]) continue;
+          var j0 = e0 * 2, j1 = ((e0 + 1) % np) * 2;
+          ctx.beginPath(); ctx.moveTo(P2[j0], P2[j0 + 1]); ctx.lineTo(P2[j1], P2[j1 + 1]); ctx.stroke();
+        }
+        if (it.light > .96 && F2.kind === 1 && !lit && (!best || it.light > best.light)) best = it;
+      }
+      if (best && explode < .5) {
+        var B = best.P, gx = 0, gy = 0; for (var b0 = 0; b0 < B.length; b0 += 2) { gx += B[b0]; gy += B[b0 + 1]; } gx /= B.length / 2; gy /= B.length / 2;
+        var gl = isMetal ? 7 : 4 + (best.light - .96) * 180;
+        ctx.globalAlpha = .95; ctx.strokeStyle = isMetal ? '#fff' : amber; ctx.lineWidth = 1.5; ctx.lineCap = 'round';
+        ctx.beginPath(); ctx.moveTo(gx - gl, gy); ctx.lineTo(gx + gl, gy); ctx.moveTo(gx, gy - gl); ctx.lineTo(gx, gy + gl); ctx.stroke();
+      }
+      ctx.lineWidth = 1;
+      // pulses along the wires: blue in = write, amber out = read
+      for (var i2 = pulses.length - 1; i2 >= 0; i2--) {
+        var pu = pulses[i2], u = (t - pu.t0) / .7;
+        if (u < 0) continue;
+        if (u > 1) { pulses.splice(i2, 1); continue; }
+        var a2 = nodePos[pu.k], b2 = wireEnd(pu.k), v = pu.read ? 1 - u : u;
+        ctx.globalAlpha = 1 - Math.abs(u - .5) * .8; ctx.fillStyle = pu.read ? amber : ink;
+        ctx.beginPath(); ctx.arc(a2[0] + (b2[0] - a2[0]) * v, a2[1] + (b2[1] - a2[1]) * v, 4.5, 0, TAU); ctx.fill();
+      }
+      for (var g1 = 0; g1 < N; g1++) glow[g1] *= Math.pow(.2, dt);
+      if (ripple >= 0) { ripple += dt * .9; if (ripple > 1) ripple = -1; }
+      ctx.globalAlpha = 1;
+    }
+    function pulse(k, read, delay) { pulses.push({ k: k, read: read, t0: window.performance.now() / 1000 + (delay || 0) }); }
+
+    // ---- what the card says
+    function line(k, isRate) {
+      var ev = set.week[k];
+      if (isRate) return '<li class="is-rate"><b>Rate</b><span>' + (mode === 'today' ? 'The rate moved. Each tool is repriced by hand, or isn’t.' : 'The rate moved. One rule repriced every channel at once.') + '</span></li>';
+      var tool = set.tools[set.modules[ev[2]][5]];
+      var chips = (ev[4] || []).map(function (g) { return '<i>' + esc2(g[1]) + '</i>'; }).join('');
+      return '<li><b>' + esc2(ev[0]) + '</b><span>' + esc2(mode === 'today' ? ev[1] + ', known only to: ' + tool : ev[3]) + (chips ? '<span class="gem2-chips">' + chips + '</span>' : '') + '</span></li>';
+    }
+    var rated = false;
+    // The signal board: 198 dots in ten families; the ones this week has fired are lit.
+    function fired() {
+      var per = FAMS.map(function () { return []; }), seen = {};
+      function add(g) { var id = g[0] + '|' + g[1]; if (seen[id]) return; seen[id] = 1; if (per[g[0]]) per[g[0]].push(g[1]); }
+      for (var k = 0; k <= step; k++) (set.week[k][4] || []).forEach(add);
+      if (rated && METALS[metal].word === 'gold') add([4, 'Gold rate increased']);
+      return per;
+    }
+    // One family at a time: the one the current event belongs to. An event that
+    // fires in two families offers the second as a small switch.
+    var shown = -1, lastStep = -2, lastRated = false;
+    function renderSignals() {
+      if (!famBtns.length) return;
+      var per = fired(), total = 0, latest = step >= 0 ? (set.week[step][4] || []) : [];
+      per.forEach(function (x) { total += x.length; });
+      if (rated && !lastRated && METALS[metal].word === 'gold') shown = 4;
+      else if (step !== lastStep) shown = latest.length ? latest[0][0] : -1;
+      lastStep = step; lastRated = rated;
+      var live = []; latest.forEach(function (g) { if (live.indexOf(g[0]) === -1) live.push(g[0]); });
+      if (rated && METALS[metal].word === 'gold' && live.indexOf(4) === -1) live.push(4);
+      famBtns.forEach(function (b, f) {
+        var dots = b.querySelectorAll('.gem2-dots i'), n = per[f].length;
+        for (var d = 0; d < dots.length; d++) {
+          var on = d < n, was = dots[d].classList.contains('is-on');
+          dots[d].classList.toggle('is-on', on); dots[d].title = on ? per[f][d] : '';
+          if (on && (!was || f === shown && step !== -1 && latest.some(function (g) { return g[0] === f && g[1] === per[f][d]; }))) { dots[d].classList.remove('is-new'); void dots[d].offsetWidth; dots[d].classList.add('is-new'); }
+        }
+        b.classList.toggle('is-shown', f === shown);
+      });
+      root.querySelector('[data-gem2-signals]').classList.toggle('is-idle', shown < 0);
+      if (heardEl) heardEl.textContent = total + ' of 198';
+      if (shown < 0) { sigNote.innerHTML = 'Press play. Each event shows the family of signals it fires, one family at a time.'; return; }
+      var F = FAMS[shown], on = per[shown], now = latest.filter(function (g) { return g[0] === shown; }).map(function (g) { return g[1]; });
+      var also = live.filter(function (f) { return f !== shown; });
+      sigNote.innerHTML =
+        (on.length ? '<span class="gem2-heard">' + on.map(function (n) { return '<i' + (now.indexOf(n) !== -1 ? ' class="is-now"' : '') + '>' + esc2(n) + '</i>'; }).join('') + '</span>' : '') +
+        '<span class="gem2-also">Also listens for ' + F[2].filter(function (n) { return on.indexOf(n) === -1; }).map(esc2).join(', ') + ' and ' + Math.max(0, F[1] - on.length - F[2].length) + ' more.</span>' +
+        (also.length ? '<span class="gem2-switchfam">This event also fired in: ' + also.map(function (f) { return '<button type="button" data-showfam="' + f + '">' + esc2(FAMS[f][0]) + '</button>'; }).join(' ') + '</span>' : '');
+    }
+    function renderLines() {
+      var html = '';
+      for (var k = 0; k <= step; k++) html += line(k);
+      if (rated) html += line(0, true);
+      linesEl.classList.remove('is-fresh'); void linesEl.offsetWidth; linesEl.classList.add('is-fresh');
+      linesEl.innerHTML = html || '<li class="gem2-empty">Press play. Watch one week land on ' + (mode === 'today' ? 'four different tools.' : 'one record.') + '</li>';
+      renderSignals();
+      cardTag.textContent = mode === 'today' ? 'SCATTERED ACROSS YOUR TOOLS' : 'ON THE RECORD';
+      cardTitle.textContent = mode === 'today' ? set.tools.length + ' tools, ' + set.tools.length + ' partial copies' : set.centre;
+    }
+    function select(k, quiet) {
+      active = k;
+      nodeBtns.forEach(function (b, j) { b.classList.toggle('is-on', j === k); });
+      shardEls.forEach(function (el, g) { el.classList.toggle('is-on', k >= 0 && set.modules[k][5] === g); });
+      if (k < 0) { noteEl.hidden = true; return; }
+      var m = set.modules[k];
+      glow[k] = 1;
+      if (!quiet) { pulse(k, true, 0); pulse(k, false, .45); }
+      noteEl.hidden = false;
+      noteEl.innerHTML = '<strong>' + esc2(m[1]) + '</strong>' +
+        (mode === 'today' ? '<span>Today this lives in <b>' + esc2(set.tools[m[5]]) + '</b>. Nothing else sees it.</span>'
+          : '<span><i class="lg-r"></i>Reads ' + esc2(m[2]) + '.</span><span><i class="lg-w"></i>Writes ' + esc2(m[3]) + '.</span>') +
+        '<a href="' + m[4] + '">Open ' + esc2(m[1]) + ' →</a>';
+    }
+    function go(k) {
+      step = k;
+      evBtns.forEach(function (b, j) { b.classList.toggle('is-on', j === k); b.classList.toggle('is-done', j < k); });
+      if (k < 0) { renderLines(); select(-1); return; }
+      var ev = set.week[k];
+      select(ev[2], true); pulse(ev[2], false, 0); glow[ev[2]] = 1;
+      renderLines();
+      var on = evBtns[k]; if (on && eventsEl.scrollTo) eventsEl.scrollTo({ left: on.parentNode.offsetLeft - 16, behavior: reduceMotion ? 'auto' : 'smooth' });
+    }
+    function stop() { if (timer) { window.clearInterval(timer); timer = null; } playBtn.textContent = step >= set.week.length - 1 ? 'Replay the week' : 'Play the week'; playBtn.setAttribute('aria-pressed', 'false'); }
+    function play() {
+      if (timer) return stop();
+      if (step >= set.week.length - 1) { rated = false; go(-1); }
+      playBtn.textContent = 'Pause'; playBtn.setAttribute('aria-pressed', 'true');
+      go(step + 1);
+      timer = window.setInterval(function () { if (step >= set.week.length - 1) return stop(); go(step + 1); }, 2600);
+    }
+    function setMode(mo) {
+      mode = mo; explodeTo = mo === 'today' ? 1 : 0;
+      root.classList.toggle('is-today', mo === 'today');
+      Array.prototype.forEach.call(root.querySelectorAll('[data-gem2-mode]'), function (b) { var on = b.getAttribute('data-gem2-mode') === mo; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', String(on)); });
+      renderLines(); if (active >= 0) select(active, true);
+    }
+    function rate() {
+      rated = true; ripple = 0;
+      var n = 0;
+      set.modules.forEach(function (m, k) {
+        if (!m[6]) return;
+        var b = nodeBtns[k], d = n++ * (mode === 'today' ? 900 : 140);
+        window.setTimeout(function () { b.classList.add('is-repriced'); glow[k] = 1; pulse(k, true, 0); window.setTimeout(function () { b.classList.remove('is-repriced'); }, 2400); }, 250 + d);
+      });
+      renderLines();
+    }
+
+    // ---- hands
+    nodeBtns.forEach(function (b, k) { b.addEventListener('click', function () { stop(); select(k); }); });
+    evBtns.forEach(function (b, k) { b.addEventListener('click', function () { stop(); go(k); }); });
+    playBtn.addEventListener('click', play);
+    sigNote.addEventListener('click', function (e) { var b = e.target.closest('[data-showfam]'); if (!b) return; shown = Number(b.getAttribute('data-showfam')); renderSignals(); });
+    root.querySelector('[data-gem2-rate]').addEventListener('click', rate);
+    Array.prototype.forEach.call(root.querySelectorAll('[data-gem2-mode]'), function (b) { b.addEventListener('click', function () { setMode(b.getAttribute('data-gem2-mode')); }); });
+    var rateBtn = root.querySelector('[data-gem2-rate] span');
+    function setMetal(mt) {
+      if (!METALS[mt]) return;
+      metal = mt; facets = SHAPES[METALS[mt].shape];
+      if (!fixedMetal) { try { localStorage.setItem('jwero-metal', mt); } catch (e) {} }
+      root.setAttribute('data-metal', mt);
+      Array.prototype.forEach.call(root.querySelectorAll('[data-gem2-metal]'), function (b) { var on = b.getAttribute('data-gem2-metal') === mt; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', String(on)); });
+      if (rateBtn) rateBtn.textContent = 'The ' + METALS[mt].word + ' rate just moved';
+      layout();
+      if (reduceMotion && ctx) { lastT = 0; draw(0); window.cancelAnimationFrame(raf); }
+    }
+    Array.prototype.forEach.call(root.querySelectorAll('[data-gem2-metal]'), function (b) { b.addEventListener('click', function () { setMetal(b.getAttribute('data-gem2-metal')); }); });
+    var moved = 0;
+    cv.addEventListener('pointerdown', function (e) { dragging = true; moved = 0; lastX = e.clientX; lastY = e.clientY; try { cv.setPointerCapture(e.pointerId); } catch (x) {} });
+    cv.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - lastX, dy = e.clientY - lastY; lastX = e.clientX; lastY = e.clientY; moved += Math.abs(dx) + Math.abs(dy);
+      rotY += dx * .012; rotX = Math.max(-.5, Math.min(.95, rotX + dy * .008));
+    });
+    function release(e) {
+      if (!dragging) return; dragging = false;
+      if (moved < 6) { // a tap: open the module on the side of the stone that was touched
+        var r = cv.getBoundingClientRect(), ang = Math.atan2(e.clientY - r.top - oy, e.clientX - r.left - ox), best = 0, bd = 9;
+        nodePos.forEach(function (p, k) { var d = Math.abs(Math.atan2(Math.sin(p[2] - ang), Math.cos(p[2] - ang))); if (d < bd) { bd = d; best = k; } });
+        stop(); select(best);
+      }
+    }
+    cv.addEventListener('pointerup', release); cv.addEventListener('pointercancel', function () { dragging = false; });
+
+    theme(); layout(); renderLines(); setMetal(metal);
+    window.addEventListener('resize', layout);
+    new MutationObserver(theme).observe(docEl, { attributes: true, attributeFilter: ['data-theme'] });
+    if (reduceMotion || !canObserve) { layout(); if (ctx) { lastT = 0; draw(0); window.cancelAnimationFrame(raf); } return; }
+    var started = false;
+    whileVisible(root, function () { layout(); raf = window.requestAnimationFrame(draw); if (!started) { started = true; window.setTimeout(function () { if (step < 0 && !timer) play(); }, 900); } }, function () { window.cancelAnimationFrame(raf); lastT = 0; });
+  });
+
   // Persona switch: pick the business you run; the page remembers and the
   // "Which jeweller are you?" grid moves your card first.
   Array.prototype.forEach.call(document.querySelectorAll('[data-persona]'), function (wrap) {
@@ -590,7 +1036,7 @@
     var panels = Array.prototype.slice.call(wrap.querySelectorAll('.persona-panel'));
     var routes = { single: '/solutions/single-store', chain: '/solutions/multi-store-chains', maker: '/solutions/manufacturers', b2b: '/solutions/b2b-jewellery', d2c: '/solutions/d2c-brands', franchise: '/solutions/franchise-networks' };
     function select(key, focus) {
-      tabs.forEach(function (t) { var on = t.getAttribute('data-key') === key; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; if (on && focus) t.focus(); if (on && t.scrollIntoView) t.scrollIntoView({ block: 'nearest', inline: 'center' }); });
+      tabs.forEach(function (t) { var on = t.getAttribute('data-key') === key; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; if (on && focus) t.focus(); if (on && focus && t.parentNode) t.parentNode.scrollLeft = Math.max(0, t.offsetLeft - (t.parentNode.clientWidth - t.offsetWidth) / 2); });
       panels.forEach(function (p) { var on = p.getAttribute('data-panel') === key; p.classList.toggle('is-active', on); p.hidden = !on; });
       var grid = document.querySelector('.router-grid');
       if (grid) {
@@ -727,7 +1173,7 @@
     });
   });
 
-  // How Jwero decides — the simulator. Illustrative weights and a simplified read-out.
+  // How Jwero decides, the simulator. Illustrative weights and a simplified read-out.
   Array.prototype.forEach.call(document.querySelectorAll('[data-intel]'), function (wrap) {
     var total = wrap.querySelector('[data-total]');
     function arrive() {
@@ -766,24 +1212,24 @@
       gauge('intent', intent); gauge('conv', conv); gauge('conf', conf); gauge('trust', trust);
       var seg, play, when = 'WhatsApp · 18:00–20:00', draft, live = true;
       if (on.complaint) {
-        seg = 'Suppression, risk & service'; play = 'Complaint trust recovery — promotions paused';
+        seg = 'Suppression, risk & service'; play = 'Complaint trust recovery, promotions paused';
         when = 'Call · today, by a person'; draft = 'A service follow-up for the owner, not a sales message.';
       } else if (on.maturity) {
         seg = 'Savings scheme · maturing'; play = 'Scheme maturity reminder journey';
         draft = 'A maturity note with three pieces near her accumulated value.';
       } else if (trust >= 15 && intent < 40) {
-        seg = 'Savings scheme & ledger · missed instalment'; play = 'Scheme payment due — gentle reminder';
+        seg = 'Savings scheme & ledger · missed instalment'; play = 'Scheme payment due, gentle reminder';
         draft = 'A one-line reminder with a pay link. No promotion.';
       } else if (intent >= 60 && (conv >= 10 || on.price)) {
         seg = 'High-intent product enquiry'; play = on.tried || on.appt ? 'Hold the piece · confirm the visit' : 'Send priced options · offer a hold';
         when = 'WhatsApp · her best hour, 18:00–20:00'; draft = 'A priced reply from her record, held for your approval.';
       } else if (intent >= 30) {
-        seg = 'Product viewers with no purchase'; play = 'Engage — matched catalogue share';
+        seg = 'Product viewers with no purchase'; play = 'Engage, matched catalogue share';
         draft = 'Three pieces in her taste and budget, with live prices.';
       } else if (intent > 0) {
-        seg = 'New customer · warming'; play = 'Nurture — keep listening'; draft = 'Nothing yet. One more signal and a draft appears.'; live = false;
+        seg = 'New customer · warming'; play = 'Nurture, keep listening'; draft = 'Nothing yet. One more signal and a draft appears.'; live = false;
       } else {
-        seg = 'New customer · listening'; play = 'Nurture — no send yet'; draft = 'Nothing. Jwero keeps listening.'; live = false;
+        seg = 'New customer · listening'; play = 'Nurture, no send yet'; draft = 'Nothing. Jwero keeps listening.'; live = false;
       }
       if (on.missed && !on.complaint && intent >= 60) draft += ' The missed instalment is mentioned once, kindly.';
       set('segment', seg); set('play', play); set('when', when); set('draft', draft);
@@ -832,9 +1278,9 @@
       var on = Array.prototype.filter.call(items, function (b) { return b.getAttribute('aria-pressed') === 'true'; }).length;
       if (meter) meter.style.width = (on / total) * 100 + '%';
       var text, label;
-      if (on === 0) { text = 'Tap what’s true for you. We’ll say honestly where Jwero fits — and where it doesn’t yet.'; label = 'Show me this on WhatsApp'; }
-      else if (on <= 2) { text = on + ' of ' + total + ' — a real fit on those. Businesses like yours usually start with ' + first + ', and add ' + second + ' in the first month.'; label = 'Start with ' + first + ' on WhatsApp'; }
-      else { text = on + ' of ' + total + ' — a strong fit. Start with ' + first + ' and ' + second + '; most of the rest follows in the first thirty days, on your own data.'; label = 'Show me ' + first + ' on my data'; }
+      if (on === 0) { text = 'Tap what’s true for you. We’ll say honestly where Jwero fits, and where it doesn’t yet.'; label = 'Show me this, live'; }
+      else if (on <= 2) { text = on + ' of ' + total + ', a real fit on those. Businesses like yours usually start with ' + first + ', and add ' + second + ' in the first month.'; label = 'Start with ' + first; }
+      else { text = on + ' of ' + total + ', a strong fit. Start with ' + first + ' and ' + second + '; most of the rest follows in the first thirty days, on your own data.'; label = 'Show me ' + first + ' on my data'; }
       if (verdict) { verdict.textContent = text; verdict.classList.toggle('is-strong', on >= 3); }
       if (cta) cta.textContent = label;
     }
@@ -849,7 +1295,7 @@
     var SOL = { 'solutions/single-store': 'single', 'solutions/gold-retail': 'single', 'solutions/silver-retail': 'single', 'solutions/diamond-retail': 'single', 'solutions/gemstone-retail': 'single', 'solutions/luxury-boutique': 'single', 'solutions/bridal': 'single',
       'solutions/multi-store-chains': 'chain', 'solutions/franchise-networks': 'franchise', 'solutions/jewellery-brands': 'd2c', 'solutions/d2c-brands': 'd2c', 'solutions/startups': 'd2c', 'solutions/lab-grown-diamond': 'd2c',
       'solutions/manufacturers': 'maker', 'solutions/oem-manufacturers': 'maker', 'solutions/casting-units': 'maker', 'solutions/cad-services': 'maker',
-      'solutions/b2b-jewellery': 'b2b', 'solutions/gold-wholesale': 'b2b', 'solutions/diamond-wholesale': 'b2b', 'solutions/bullion-gold-traders': 'b2b', 'solutions/export-houses': 'b2b' };
+      'solutions/diamond-traders': 'trader', 'solutions/b2b-jewellery': 'b2b', 'solutions/gold-wholesale': 'b2b', 'solutions/diamond-wholesale': 'b2b', 'solutions/bullion-gold-traders': 'b2b', 'solutions/export-houses': 'b2b' };
     var PATH = {
       single: { label: 'a single store', sol: '/solutions/single-store', sim: '/products/pos#try-till', simLabel: 'Try the till', prod: '/products/whatsapp' },
       chain: { label: 'a multi-store chain', sol: '/solutions/multi-store-chains', sim: '/platform/ai-workforce#try-approve', simLabel: 'Try the approval queue', prod: '/products/multi-store' },
@@ -861,7 +1307,7 @@
     var slug = location.pathname.replace(/^\/|\/$/g, '');
     var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
     // learn
-    var q = /[?&]p=(single|chain|maker|b2b|d2c|franchise)/.exec(location.search);
+    var q = /[?&]p=(single|chain|maker|b2b|d2c|franchise|trader|staff)/.exec(location.search);
     if (q) store.set('jwero-persona', q[1]);
     else if (SOL[slug] && !store.get('jwero-persona')) store.set('jwero-persona', SOL[slug]);
     var seen = []; try { seen = JSON.parse(store.get('jwero-seen') || '[]'); } catch (e) {}
@@ -879,18 +1325,55 @@
       docEl.classList.add('has-workspace');
       Array.prototype.forEach.call(document.querySelectorAll('[data-start-cta]'), function (a) { a.textContent = 'Open my workspace'; a.setAttribute('href', 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header'); a.setAttribute('rel', 'noopener'); });
     }
-    // your path: one line under the hero, on pages that aren't already the reader's own
-    var hero = document.querySelector('main .hero');
-    if (path && hero && location.pathname !== path.sol && slug !== 'start' && slug !== 'search') {
-      var bar = document.createElement('div');
-      bar.className = 'path-bar'; bar.setAttribute('data-path', '');
-      bar.innerHTML = '<div class="container"><span class="path-who">You run ' + path.label + '</span>' +
-        '<a href="' + path.sol + '">Your solution page</a><a href="' + path.sim + '">' + path.simLabel + '</a><a href="' + path.prod + '">Start with the first module</a>' +
-        '<a class="path-start" href="' + (signed ? 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=path' : '/start') + '">' + (signed ? 'Open my workspace' : 'Create my free workspace') + '</a>' +
-        '<button type="button" class="path-change" aria-label="Change your kind of business">Not you?</button></div>';
-      hero.insertAdjacentElement('afterend', bar);
-      bar.querySelector('.path-change').addEventListener('click', function () { try { localStorage.removeItem('jwero-persona'); } catch (e) {} location.href = '/#persona'; });
+    // The pipeline: once the reader has said what they run, every page carries the
+    // same six stages for their kind of business, and the header says who they are.
+    var ICP = {
+      single: { label: 'Single store', sol: '/solutions/single-store', sim: 'memory', door: 'trial' },
+      chain: { label: 'Multi-store chain', sol: '/solutions/multi-store-chains', sim: 'approve', door: 'demo' },
+      franchise: { label: 'Franchise network', sol: '/solutions/franchise-networks', sim: 'approve', door: 'demo' },
+      maker: { label: 'Workshop / manufacturer', sol: '/solutions/manufacturers', sim: 'grams', door: 'demo' },
+      b2b: { label: 'Wholesale / trade', sol: '/solutions/b2b-jewellery', sim: 'shelf', door: 'trial' },
+      trader: { label: 'Diamond trader', sol: '/solutions/diamond-traders', sim: 'memo', door: 'trial' },
+      d2c: { label: 'Online brand', sol: '/solutions/d2c-brands', sim: 'memory', door: 'trial' },
+      staff: { label: 'I work in one', sol: '/roles', door: 'brief' },
+    };
+    var TRIAL = 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=';
+    var icp = ICP[persona], icpDlg = document.querySelector('dialog.icp-dialog');
+    Array.prototype.forEach.call(document.querySelectorAll('[data-icp-label]'), function (el) { if (icp) { el.textContent = icp.label; el.parentNode.classList.add('is-set'); } });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-icp="' + persona + '"]'), function (a) { a.classList.add('is-you'); });
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('[data-icp-open]') && icpDlg && icpDlg.showModal) { e.preventDefault(); if (!icpDlg.open) icpDlg.showModal(); return; }
+      if (icpDlg && (e.target === icpDlg || e.target.closest('[data-icp-close]'))) { icpDlg.close(); return; }
+      var pick = e.target.closest('a[data-icp]');
+      if (pick) store.set('jwero-persona', pick.getAttribute('data-icp'));
+    });
+    if (icp && slug !== 'start' && slug !== 'search') {
+      // On the reader's own page a stage is an anchor; elsewhere it leads back to it.
+      var own = SOL[slug] === persona || (slug === 'roles' && persona === 'staff');
+      var base = own ? '' : icp.sol;
+      var tryHref = signed ? 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=pipe' : icp.door === 'demo' ? '/book-demo' : TRIAL + 'pipe';
+      var tryLabel = signed ? 'Open my workspace' : icp.door === 'demo' ? 'Video demo' : 'Try free';
+      var shareMsg = 'Worth five minutes, this is the software page for a ' + icp.label.toLowerCase() + ' like ours: ' + location.origin + icp.sol + '?p=' + persona;
+      var stages = persona === 'staff'
+        ? [['Find your role', '/roles'], ['The one-page brief', '/brief'], ['Send it to your owner', 'https://wa.me/?text=' + encodeURIComponent('The one-page brief on Jwero, five minutes, no jargon: ' + location.origin + '/brief'), true]]
+        : [['Recognise', base || '#main'], ['See it', base + '#try-' + icp.sim], ['Believe', '/customers'], ['Price', base + '#price'], [tryLabel, tryHref], ['Pass it on', 'https://wa.me/?text=' + encodeURIComponent(shareMsg), true]];
+      var at = own ? 0 : slug === 'customers' ? 2 : slug === 'pricing' ? 3 : -1;
+      var pipe = document.createElement('nav');
+      pipe.className = 'pipe'; pipe.setAttribute('aria-label', 'Your path');
+      pipe.innerHTML = '<div class="container"><button type="button" class="pipe-who" data-icp-open>' + icp.label + '<span>change</span></button><ol>' +
+        stages.map(function (st, k) { return '<li' + (k === at ? ' class="is-here"' : '') + '><a href="' + st[1] + '"' + (st[2] ? ' target="_blank" rel="noopener" data-direct' : '') + '><b>' + (k + 1) + '</b>' + st[0] + '</a></li>'; }).join('') + '</ol></div>';
+      var mainEl2 = document.querySelector('main');
+      if (mainEl2) mainEl2.insertBefore(pipe, mainEl2.firstChild);
+      // Phone bar: see it · price · try, for this kind of business.
+      var sb = document.querySelector('.sticky-bar');
+      if (sb && persona !== 'staff') {
+        sb.innerHTML = '<a href="' + base + '#try-' + icp.sim + '">See it</a><a href="' + base + '#price">Price</a><a class="sb-demo" href="' + tryHref + '"' + (icp.door === 'demo' || signed ? '' : ' rel="noopener" data-trial') + '>' + tryLabel + '</a>';
+      }
     }
+    // A shared link opens already set to the sender's kind of business.
+    Array.prototype.forEach.call(document.querySelectorAll('[data-share][data-share-p]'), function (a) {
+      a.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent(a.getAttribute('data-share') + ' ' + location.origin + location.pathname + '?p=' + a.getAttribute('data-share-p')));
+    });
     // resume: returning readers on the home page pick up where they left
     if (slug === '' && visits > 1 && seen.length > 1) {
       var recent = seen.slice(1, 4).filter(function (x) { return x.u !== '/'; });
@@ -898,7 +1381,7 @@
         var r = document.createElement('div');
         r.className = 'resume'; r.setAttribute('data-resume', '');
         r.innerHTML = '<div class="container"><span class="resume-tag">Welcome back</span>' + recent.map(function (x) { return '<a href="' + x.u + '">' + x.t.replace(/</g, '&lt;') + '</a>'; }).join('') +
-          (path ? '<a class="resume-go" href="' + (signed ? 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=resume' : '/start') + '">' + (signed ? 'Open my workspace' : 'Pick up at /start') + '</a>' : '') + '</div>';
+          (path ? '<a class="resume-go" href="' + (signed ? 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=resume' : path.sol) + '">' + (signed ? 'Open my workspace' : 'Back to your page') + '</a>' : '') + '</div>';
         var h = document.querySelector('main .hero');
         if (h) h.insertAdjacentElement('beforebegin', r);
       }
@@ -912,19 +1395,14 @@
     if (phoneIn) window.setTimeout(function () { phoneIn.focus(); }, 300);
   }
 
+  // Any trial door to the product marks this browser as having a workspace.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="https://os.jwero.ai"]');
+    if (a && a.getAttribute('href').indexOf('/login') === -1) { try { localStorage.setItem('jwero-signed-up', String(Date.now())); } catch (x) {} }
+  });
+
   // Print / save as PDF (the brief).
   Array.prototype.forEach.call(document.querySelectorAll('[data-print]'), function (a) { a.addEventListener('click', function (e) { e.preventDefault(); window.print(); }); });
-
-  // Hours-aware calling: inside desk hours (IST 10:00–20:00) the call buttons say so;
-  // outside them, they become a callback request so nobody rings a closed desk.
-  (function () {
-    var ist = new Date(Date.now() + (330 + new Date().getTimezoneOffset()) * 60000), h = ist.getHours(), open = h >= 10 && h < 20;
-    Array.prototype.forEach.call(document.querySelectorAll('a[href^="tel:"]'), function (a) {
-      var t = a.textContent.trim();
-      if (open) { a.setAttribute('title', 'Desk hours 10am–8pm IST — open now'); a.classList.add('is-open'); }
-      else { a.setAttribute('href', '/book-demo#callback'); a.setAttribute('title', 'Desk hours 10am–8pm IST — we call you back'); if (/^call( us)?$/i.test(t)) a.textContent = 'Call me back'; }
-    });
-  })();
 
   // Arrived from an AI answer engine: the short version, then the door.
   (function () {
@@ -934,8 +1412,8 @@
     var hero = document.querySelector('main .hero'); if (!hero) return;
     var box = document.createElement('div');
     box.className = 'short-version';
-    box.innerHTML = '<div class="container"><span class="short-tag">The short version</span><p>Jwero runs your whole jewellery business from one customer record — and the AI does the remembering. Nothing sends without your yes.</p>' +
-      '<a href="/why-an-os">What it is</a><a href="/pricing">What it costs</a><a href="/start">Start free</a><a href="#" data-wa="default">Ask a person</a></div>';
+    box.innerHTML = '<div class="container"><span class="short-tag">The short version</span><p>Jwero runs your whole jewellery business from one customer record, and the AI does the remembering. Nothing sends without your yes.</p>' +
+      '<a href="/why-an-os">What it is</a><a href="/pricing">What it costs</a><a href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=ai-referrer" rel="noopener">Start free</a><a href="#" data-wa="default">Ask a person</a></div>';
     hero.insertAdjacentElement('afterend', box);
     var a = box.querySelector('[data-wa]'); a.setAttribute('href', waLink('default')); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
     try { sessionStorage.setItem('jwero-ai-short', '1'); } catch (e) {}
@@ -951,7 +1429,7 @@
       shown = true;
       var n = document.createElement('div');
       n.className = 'nudge'; n.setAttribute('role', 'status');
-      n.innerHTML = '<p>Still deciding? Ask one question — a real person and our AI reply within minutes.</p><a class="btn btn-primary btn-sm" href="#" data-wa="nudge">Ask on WhatsApp</a><button type="button" class="nudge-x" aria-label="Dismiss">×</button>';
+      n.innerHTML = '<p>Still deciding? Ask one question, a real person and our AI reply within minutes.</p><a class="btn btn-primary btn-sm" href="#" data-wa="nudge">Ask us now</a><button type="button" class="nudge-x" aria-label="Dismiss">×</button>';
       document.body.appendChild(n);
       var a = n.querySelector('[data-wa]'); a.setAttribute('href', waLink('nudge')); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
       n.querySelector('.nudge-x').addEventListener('click', function () { n.remove(); });
@@ -978,8 +1456,8 @@
   // ERP → OS: move the centre.
   Array.prototype.forEach.call(document.querySelectorAll('[data-cswap]'), function (w) {
     var READ = {
-      erp: 'In an ERP, the invoice is the truth. WhatsApp, Instagram and the customer’s history live outside it — on phones, in sheets, in heads. The ERP only learns about Meera when she pays.',
-      os: 'In the OS, Meera’s record is the truth. Billing writes her purchase to it; stock, schemes, the workshop, WhatsApp and the counter read and write the same row — so the reply at 11pm knows what the counter knew at noon.',
+      erp: 'In an ERP, the invoice is the truth. WhatsApp, Instagram and the customer’s history live outside it, on phones, in sheets, in heads. The ERP only learns about Meera when she pays.',
+      os: 'In the OS, Meera’s record is the truth. Billing writes her purchase to it; stock, schemes, the workshop, WhatsApp and the counter read and write the same row, so the reply at 11pm knows what the counter knew at noon.',
     };
     var NOTES = {
       erp: ['writes the invoice', 'moves on sale', 'a separate register', 'on someone’s phone', 'greets a stranger', 'its own khata'],
@@ -1031,7 +1509,7 @@
       for (var i = 0; i < on.length; i++) for (var j = i + 1; j < on.length; j++) { var g = GAPS[on[i] + '+' + on[j]] || GAPS[on[j] + '+' + on[i]]; if (g) found.push(g); }
       if (!on.length) { gaps.innerHTML = '<li class="mds-empty">Tap what you use today. The gaps appear between them.</li>'; read.textContent = ''; return; }
       gaps.innerHTML = found.length ? found.map(function (g) { return '<li>' + g + '</li>'; }).join('') : '<li class="mds-empty">One tool, no hand-offs yet. Add the next one you use.</li>';
-      read.textContent = on.length < 2 ? '' : on.length + ' tools, ' + pairs + ' hand-off' + (pairs === 1 ? '' : 's') + ', ' + mem + ' place' + (mem === 1 ? '' : 's') + ' a customer is remembered — and none of them is the business. In Jwero it is one record, one hand-off: yours to approve.';
+      read.textContent = on.length < 2 ? '' : on.length + ' tools, ' + pairs + ' hand-off' + (pairs === 1 ? '' : 's') + ', ' + mem + ' place' + (mem === 1 ? '' : 's') + ' a customer is remembered, and none of them is the business. In Jwero it is one record, one hand-off: yours to approve.';
     }
     tools.forEach(function (b) { b.addEventListener('click', function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); update(); }); });
     update();
@@ -1054,6 +1532,104 @@
     }
     [lkEnq, lkFast, lkTicket, lkClose].forEach(function (el) { el.addEventListener('input', lkCalc); });
     lkCalc();
+  }
+
+  // Pricing: billing-term toggle on the plan card.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-plans]'), function (plans) {
+    var btns = plans.querySelectorAll('[data-term]');
+    function set(term) {
+      Array.prototype.forEach.call(btns, function (b) { var on = b.getAttribute('data-term') === term; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', String(on)); });
+      Array.prototype.forEach.call(plans.querySelectorAll('[data-price], [data-term-note]'), function (el) { el.textContent = el.getAttribute('data-' + term); });
+    }
+    Array.prototype.forEach.call(btns, function (b) { b.addEventListener('click', function () { set(b.getAttribute('data-term')); }); });
+  });
+
+  // Pricing: rate-card families.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-rates]'), function (rates) {
+    var tabs = rates.querySelectorAll('[data-rate-tab]');
+    Array.prototype.forEach.call(tabs, function (t) {
+      t.addEventListener('click', function () {
+        var k = t.getAttribute('data-rate-tab');
+        Array.prototype.forEach.call(tabs, function (x) { x.setAttribute('aria-selected', String(x === t)); });
+        Array.prototype.forEach.call(rates.querySelectorAll('[data-rate-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-rate-panel') === k); });
+      });
+    });
+  });
+
+  // Pricing: work out your own number. Plan and add-on prices mirror the pricing page.
+  var pc = document.getElementById('calc-plan');
+  if (pc) {
+    var PRICE = { monthly: 18000, annual: 9999, location: 2999, brand: 999, register: 499, camera: 799 };
+    var pcTerm = 'annual', money = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+    var pcLoc = bindRange('pc-loc', 'pc-loc-out'), pcBrand = bindRange('pc-brand', 'pc-brand-out'), pcReg = bindRange('pc-reg', 'pc-reg-out'), pcCam = bindRange('pc-cam', 'pc-cam-out');
+    function pcCalc() {
+      var loc = Number(pcLoc.value), brand = Number(pcBrand.value), reg = Number(pcReg.value), cam = Number(pcCam.value);
+      var plan = PRICE[pcTerm];
+      var add = (loc - 1) * PRICE.location + (brand - 1) * PRICE.brand + Math.max(0, reg - 2) * PRICE.register + cam * PRICE.camera;
+      document.getElementById('pc-plan').textContent = money(plan);
+      document.getElementById('pc-add').textContent = money(add);
+      document.getElementById('pc-total').textContent = money(plan + add);
+      var ent = document.getElementById('pc-ent'); if (ent) ent.hidden = loc < 6;
+      var wa = document.getElementById('pc-wa');
+      if (wa) wa.setAttribute('href', waLink('quote', ' Jwero One, ' + pcTerm + ' billing, ' + loc + ' location' + (loc > 1 ? 's' : '') + ', ' + brand + ' brand' + (brand > 1 ? 's' : '') + ', ' + reg + ' registers, ' + cam + ' cameras, about ' + money(plan + add) + '/month before GST and usage.'));
+    }
+    Array.prototype.forEach.call(pc.querySelectorAll('[data-pc-term]'), function (b) {
+      b.addEventListener('click', function () {
+        pcTerm = b.getAttribute('data-pc-term');
+        Array.prototype.forEach.call(pc.querySelectorAll('[data-pc-term]'), function (x) { x.classList.toggle('is-on', x === b); x.setAttribute('aria-pressed', String(x === b)); });
+        pcCalc();
+      });
+    });
+    [pcLoc, pcBrand, pcReg, pcCam].forEach(function (el) { el.addEventListener('input', pcCalc); });
+    pcCalc();
+  }
+
+  // Diamond traders: the memo board. Mark a memo returned or sold; what is out, and what is late, follows.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-memoboard]'), function (board) {
+    var rows = board.querySelectorAll('[data-memo]'), draft = board.querySelector('[data-memo-draft]');
+    var money = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+    function n(k, v) { var el = board.querySelector('[data-memo-n="' + k + '"]'); if (el) el.textContent = v; }
+    function tally() {
+      var out = 0, value = 0, late = 0;
+      Array.prototype.forEach.call(rows, function (r) { if (r.classList.contains('is-closed')) return; out += 1; value += Number(r.getAttribute('data-value')); late += Number(r.getAttribute('data-late')); });
+      n('out', String(out)); n('value', money(value)); n('late', String(late));
+      if (draft) draft.innerHTML = late ? '<b>Drafted for your tap:</b> a follow-up for each overdue memo, naming the stones and the return date agreed.' : out ? '<b>Nothing overdue.</b> Every memo still out is inside its return date.' : '<b>Everything is home or sold.</b> Stock and the party ledgers are already up to date.';
+    }
+    board.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-memo-do]'); if (!b) return;
+      var row = b.closest('[data-memo]'), res = row.querySelector('.memo-result'), sold = b.getAttribute('data-memo-do') === 'sold';
+      row.classList.add('is-closed'); row.classList.remove('is-late');
+      res.hidden = false; res.textContent = sold ? 'Sold. Invoice raised from the memo; the party ledger and stock moved together.' : 'Returned. The stones are back in stock and can be shown to the next buyer.';
+      tally();
+    });
+    tally();
+  });
+
+  // Diamond traders: a per-carat rate grid. Illustrative list rates; the buyer's discount and the carats are the reader's.
+  var grid = document.getElementById('calc-grid');
+  if (grid) {
+    var gState = { shape: 'round', size: '1', q: '1' }, BASE = { '0.3': 90000, '0.5': 160000, '1': 420000 };
+    var gDisc = bindRange('grid-disc', 'grid-disc-out', '%'), gCt = bindRange('grid-ct', 'grid-ct-out', ' ct');
+    var rupees = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+    function gridCalc() {
+      var list = BASE[gState.size] * Number(gState.q) * (gState.shape === 'fancy' ? .8 : 1), rate = list * (1 - Number(gDisc.value) / 100), total = rate * Number(gCt.value);
+      document.getElementById('grid-list').textContent = rupees(list);
+      document.getElementById('grid-rate').textContent = rupees(rate);
+      document.getElementById('grid-total').textContent = rupees(total);
+      var wa = document.getElementById('grid-wa');
+      if (wa) wa.setAttribute('href', waLink('grid', ' ' + Number(gCt.value).toFixed(2) + ' ct, ' + gState.shape + ', list ' + rupees(list) + ' per carat, less ' + gDisc.value + '%.'));
+    }
+    [['shape', 'data-grid-shape'], ['size', 'data-grid-size'], ['q', 'data-grid-q']].forEach(function (pair) {
+      Array.prototype.forEach.call(grid.querySelectorAll('[' + pair[1] + ']'), function (b) {
+        b.addEventListener('click', function () {
+          gState[pair[0]] = b.getAttribute(pair[1]);
+          Array.prototype.forEach.call(grid.querySelectorAll('[' + pair[1] + ']'), function (x) { x.classList.toggle('is-on', x === b); x.setAttribute('aria-pressed', String(x === b)); });
+          gridCalc();
+        });
+      });
+    });
+    [gDisc, gCt].forEach(function (el) { el.addEventListener('input', gridCalc); });
+    gridCalc();
   }
 
   // Back to top: the rocket lifts first, the page follows.
@@ -1085,10 +1661,10 @@
       wrap.querySelectorAll('.start-steps li').forEach(function (li) { var k = Number(li.dataset.step); li.classList.toggle('is-on', k === n); li.classList.toggle('is-done', k < n); });
       back.hidden = n === 1;
       if (n === 3) {
-        wrap.querySelector('[data-sum="persona"]').textContent = labels.persona || '—';
-        wrap.querySelector('[data-sum="tier"]').textContent = labels.tier || '—';
+        wrap.querySelector('[data-sum="persona"]').textContent = labels.persona || '…';
+        wrap.querySelector('[data-sum="tier"]').textContent = labels.tier || '…';
         go.setAttribute('href', base + '&business=' + encodeURIComponent(pick.persona || '') + '&tier=' + encodeURIComponent(pick.tier || ''));
-        if (waBtn) waBtn.setAttribute('href', 'https://wa.me/919169959959?text=' + encodeURIComponent('Hi Jwero — I want to set up a workspace for my ' + (labels.persona || 'business').toLowerCase() + ' on the ' + (labels.tier || 'Assist') + ' tier. Help me start. [ref:start/wa]'));
+        if (waBtn) waBtn.setAttribute('href', 'https://wa.me/919169959959?text=' + encodeURIComponent('Hi Jwero, I want to set up a workspace for my ' + (labels.persona || 'business').toLowerCase() + ' on the ' + (labels.tier || 'Assist') + ' tier. Help me start. [ref:start/wa]'));
       }
       wrap.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
     }
@@ -1164,7 +1740,7 @@
     });
   }
 
-  // FAQ instant search — filters the 111-question hub down to a scannable few as you type,
+  // FAQ instant search, filters the 111-question hub down to a scannable few as you type,
   // since scrolling every category to find one answer is the opposite of instant clarity.
   var faqSearch = document.querySelector('[data-faq-search]');
   if (faqSearch) {
@@ -1337,17 +1913,17 @@
   }
 
   // Demo form: hand the request to the same WhatsApp inbox everything else uses,
-  // with the form details prefilled — no silent black hole, no separate backend.
+  // with the form details prefilled, no silent black hole, no separate backend.
   var form = document.getElementById('demo-form');
   if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
     var v = function (name) { var el = form.querySelector('[name=' + name + ']'); return el && el.value ? el.value.trim() : ''; };
-    var msg = 'Hi Jwero — I would like to book a demo.' +
+    var msg = 'Hi Jwero, I would like to book a demo.' +
       (v('name') ? ' Name: ' + v('name') + '.' : '') +
       (v('phone') ? ' WhatsApp: ' + v('phone') + '.' : '') +
       (v('business') ? ' Business: ' + v('business') + '.' : '') +
       (v('city') ? ' City: ' + v('city') + '.' : '') +
-      (v('reach') === 'Call me' ? ' Please call me' + (v('time') ? ' — ' + v('time') : '') + '.' : '');
+      (v('reach') === 'Call me' ? ' Please call me' + (v('time') ? ', ' + v('time') : '') + '.' : '');
     form.querySelector('.form-ok').style.display = 'block';
     form.querySelector('button[type=submit]').disabled = true;
     window.location.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg + ' [ref:book-demo/form]');

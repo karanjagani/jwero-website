@@ -14,7 +14,7 @@ ${L.hero({
   eyebrow: 'INDUSTRY · RETAIL',
   h1: 'Jewellery retail, however you sell it.',
   sub: 'From a single counter to a hundred-branch chain, from bridal specialists to lab-grown D2C brands — every retail jewellery business runs on the same three pillars. Remember every customer, sell on every channel, run the whole operation on one truth.',
-  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'industries-retail' },
+  primary: { href: '#', label: 'Tell us about your business', wa: 'industries-retail' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
@@ -42,7 +42,7 @@ ${L.section(
     <a class="router-card" id="d2c" href="/solutions/d2c-brands"><div class="r-icon">▲</div><h3>D2C & ecommerce-first</h3><p>Keep Shopify. Add the channels and live-rate pricing it can’t do.</p></a>
     <a class="router-card" id="wholesale" href="/solutions/b2b-jewellery"><div class="r-icon">⇄</div><h3>Wholesale</h3><p>Every buyer, every memo, every order — in one B2B thread.</p></a>
   </div>
-  <p style="margin-top:16px; font-size:.85rem; color:var(--ink-2);">Don’t see your exact material or format above? <a href="/solutions">See all 22 solutions →</a> or <a href="#" data-wa="industries-retail">ask us on WhatsApp</a>.</p>`
+  <p style="margin-top:16px; font-size:.85rem; color:var(--ink-2);">Don’t see your exact material or format above? <a href="/solutions">See all 23 solutions →</a> or <a href="#" data-wa="industries-retail">ask us now</a>.</p>`
 , { tone: 'tint' })}
 
 ${L.section(

@@ -149,7 +149,7 @@ ${L.section(`${L.sectionHead('PURCHASE & VENDOR QUESTIONS', 'Portal access, per-
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
 <p class="cta-note" style="margin-top:14px">Purchases and vendors are one part of the wider operations layer — <a href="/products/erp">see the full ERP →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don't have to take our word for it — <a href="#" data-wa="purchasevendors">try the WhatsApp button on this page</a>; it's Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don't have to take our word for it — <a href="#" data-wa="purchasevendors">try the chat button on this page</a>; it's Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Let your vendors check their own status.', 'Bring one supplier relationship you manage over calls and email — we will show you the portal that replaces it.', 'purchasevendors')}
 `,

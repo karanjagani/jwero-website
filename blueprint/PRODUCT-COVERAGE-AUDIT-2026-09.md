@@ -70,3 +70,18 @@ Covered as an audience on `/solutions/diamond-wholesale` ("Diamond wholesalers &
 | `/products/training-lms` | `hr/lms.ts`, `course_content.ts`, `learning_paths.ts`, `learning_resource_suggestions.ts`, `performance_learning_loop.ts`, `teams/lms/page.tsx` | — |
 
 Meetings already existed (`/products/meetings`, in the Products menu and hub). Every page with FAQ schema now also renders the FAQ block (`withFaqs`), which FAQPage rich results require.
+
+## H. Diamond trader ICP and `/solutions/diamond-traders` (added 2026-10-01)
+
+Promoted from an audience on the wholesale page to an ICP of its own (header question, home stone, pipeline). Evidence on pim-app `origin/main`:
+
+| Claim | Evidence |
+|---|---|
+| Parcels by carats and by count | `materials/stone_lot_document.ts`; screens `operations/materials/stone-lots` |
+| Certified stones tracked one by one | `inventory/stone_piece_identity*.ts`; screens `operations/materials/stone-pieces` |
+| Own per-carat rate grid, list less the band's discount | `pricing/stone_rate_grid.ts`; screen `settings/inventory/masters/stone-rate-grid` |
+| Memo with return dates; goods on memo not sellable | `inventory/memo_conservation.ts`; screens `inventory/memo`, `approval-memos` |
+| Consignment held, not owned, settled on sale | `inventory/consignment_in_schema_sql.ts`; screen `inventory/consignments` |
+| Natural / lab-grown / treated disclosure | `inventory/stone_disclosure*.ts` |
+
+Listed as "rolling out" (data model present, no dedicated screens found): parcel sorting that reconciles, grading sessions, stone away at a lab. Not claimed: Rapaport or RapNet feed, brokerage accounting, Kimberley or export paperwork. The rate-grid calculator and memo board on the page use illustrative values and anonymous buyers.

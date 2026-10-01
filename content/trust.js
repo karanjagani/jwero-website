@@ -60,7 +60,7 @@ ${L.honestGapsBlock([
 ${L.section(
   `${L.sectionHead('COMPLIANCE', 'Where our compliance documentation lives.', '')}
   <p style="font-size:.95rem;">Jwero maintains a data-processing summary and privacy statement aligned to applicable data-protection law. See our <a href="/legal/privacy">Privacy Policy</a> and <a href="/legal/dpdp">DPDP statement</a>. For a regulated procurement process, ask us for the full sub-processor list on WhatsApp — we'll get it to your committee directly.</p>
-  <p style="margin-top:14px;"><a class="btn btn-primary" href="/assets/downloads/jwero-security-overview.pdf" download>Download the security overview (PDF)</a> <a class="btn btn-ghost" href="#" data-wa="security-pdf" style="margin-left:10px">Ask a follow-up on WhatsApp</a></p>`
+  <p style="margin-top:14px;"><a class="btn btn-primary" href="/assets/downloads/jwero-security-overview.pdf" download>Download the security overview (PDF)</a> <a class="btn btn-ghost" href="#" data-wa="security-pdf" style="margin-left:10px">Ask a follow-up</a></p>`
 )}
 
 ${L.section(`${L.sectionHead('THE FEARS OWNERS DON’T ALWAYS SAY OUT LOUD', 'Questions owners ask us privately.', '')}${L.faqBlock([
@@ -111,7 +111,7 @@ ${L.section(
   `<div class="grid grid-2" style="align-items:center; gap:48px;">
     <div>
       ${L.sectionHead('THE WEEKLY ANSWER', 'The growth report.', 'This is the artifact our customers judge us by: a weekly, plain-language accounting of who came back, what was booked, and what revenue the system brought home. The sample here is illustrative; yours would be real.')}
-      <a class="btn btn-primary" href="#" data-wa="report">Get a sample report on WhatsApp</a>
+      <a class="btn btn-primary" href="#" data-wa="report">Get a sample report</a>
     </div>
     <div class="report" data-report>
       <div class="report-head"><strong>Your Growth Report</strong><span class="badge-sample">Sample</span></div>
@@ -131,7 +131,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('FOUNDING COHORT', 'Become a Lighthouse Partner.', 'The first businesses in each region get concierge onboarding, a direct line to the product team, preferred terms — and their verified numbers on this page, if they choose. Limited seats per region and segment, because concierge does not scale.')}
-  <div class="cta-row"><a class="btn btn-primary" href="#" data-wa="lighthouse">Apply on WhatsApp</a><a class="btn btn-ghost" href="/book-demo">Book a conversation</a></div>`
+  <div class="cta-row"><a class="btn btn-primary" href="#" data-wa="lighthouse">Apply — chat or call</a><a class="btn btn-ghost" href="/book-demo">Book a conversation</a></div>`
 )}
 
 ${L.section(`${L.sectionHead('THE HONEST QUESTION', 'Trusting ROI claims before case studies exist.', '')}${L.faqBlock([
@@ -159,7 +159,7 @@ ${L.hero({
   eyebrow: 'COMPARE · CATEGORY LEVEL',
   h1: 'A WhatsApp tool sends. An operating system remembers.',
   sub: 'This isn’t a fight with one competitor — it’s the honest difference between a messaging layer and the system underneath it. Choose the tool if messaging is genuinely all you need.',
-  primary: { href: '#', label: 'See the difference on WhatsApp', wa: 'compare' },
+  primary: { href: '#', label: 'See the difference', wa: 'compare' },
   secondary: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' },
 })}
 
@@ -230,7 +230,7 @@ ${L.hero({
   eyebrow: 'MIGRATION CENTRE',
   h1: 'Keep your books. Change your growth.',
   sub: 'The riskiest software decision is a rip-out — so we designed the opposite. Jwero lands in days without touching your ledger, proves itself with a weekly report, and expands only as fast as the results earn it.',
-  primary: { href: '#', label: 'Plan my migration on WhatsApp', wa: 'migration' },
+  primary: { href: '#', label: 'Plan my migration', wa: 'migration' },
   secondary: { href: '/book-demo', label: 'Book a migration call' },
 })}
 

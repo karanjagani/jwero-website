@@ -57,7 +57,7 @@ ${L.section(`
     <div>
       <h2>What it costs to find out</h2>
       <ul>
-        <li>A free workspace at os.jwero.ai — Google, LinkedIn or email; no card.</li>
+        <li>Fourteen days free at os.jwero.ai — Google, LinkedIn or email; no card. Then ₹9,999 a month billed annually, every module included.</li>
         <li>A fifteen-minute call on one real situation from your shop. If it does not fit, they say so on the call.</li>
         <li>A pilot on your own data in days 2–5. You pay only after you have seen it on your customers.</li>
         <li>A written change-freeze around your season: nothing goes live in peak weeks.</li>
@@ -80,7 +80,7 @@ ${L.section(`
 
   <footer class="brief-foot">
     <span>Sent from jwero.ai/brief</span>
-    <span>Message the founders’ desk on WhatsApp: +91 91699 59959</span>
+    <span>Chat, call or video with the founders’ desk at jwero.ai · +91 91699 59959</span>
   </footer>
 </article>
 <div class="cta-row center brief-cta">

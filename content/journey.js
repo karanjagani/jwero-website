@@ -60,26 +60,26 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
-${L.ctaBand('See one record run the whole business.', 'Bring one customer’s name. We will show every module touching the same row — live, on WhatsApp.', 'platform')}
+${L.ctaBand('See one record run the whole business.', 'Bring one customer’s name. We will show every module touching the same row — live, on chat or a video call.', 'platform')}
 `,
 };
 
 const howItGoes = {
   slug: 'how-it-goes',
   title: 'What Happens After You Message — The First 30 Days with Jwero | Jwero',
-  description: 'The literal sequence after your first WhatsApp message: a reply within minutes, a 15-minute call, a pilot on your own data, a written change-freeze around your season, a go-live date, and your first growth report.',
+  description: 'The literal sequence after your first message: a reply within minutes, a 15-minute call, a pilot on your own data, a written change-freeze around your season, a go-live date, and your first growth report.',
   breadcrumbs: [['Home', '/'], ['How it goes']],
   faqs: [
     { q: 'Who do I actually talk to?', a: 'A real person on the founders’ WhatsApp desk, with our AI drafting alongside. Not a call centre.' },
     { q: 'What do I need to prepare?', a: 'One real situation from your business and whatever customer or stock export you already have — however messy. We import what exists and reconcile during onboarding.' },
     { q: 'What if it isn’t right for us?', a: 'We say so on the first call, in the first five minutes if we can. A pilot on your own data is the test; you can stop at any point, and your data leaves with you.' },
-    { q: 'When do I pay?', a: 'After you have seen it on your own data. Entry tiers bill monthly; billing is set up inside Jwero, not on this site.' },
+    { q: 'When do I pay?', a: 'After you have seen it on your own data: the first 14 days are free. Then Jwero One is ₹18,000 a month, or ₹9,999 a month billed annually; billing is set up inside Jwero, not on this site.' },
   ],
   body: `
 ${L.hero({
   eyebrow: 'HOW IT GOES',
   h1: 'You send one message. Here is everything that happens next.',
-  sub: 'No mystery, no “our team will get back to you”. This is the sequence, who does each step, and how long it takes — from the first WhatsApp message to your first growth report.',
+  sub: 'No mystery, no “our team will get back to you”. This is the sequence, who does each step, and how long it takes — from the first message to your first growth report.',
   primary: { href: '#', label: 'Send the first message', wa: 'bookdemo' },
   secondary: { href: '/start', label: 'Or create your workspace' },
 })}
@@ -87,7 +87,7 @@ ${L.hero({
 ${L.section(
   `${L.sectionHead('THE SEQUENCE', 'From first message to first report.', '')}
   ${L.steps([
-    { title: 'Minutes — a reply', text: 'A real person and our AI reply on WhatsApp. You get a straight answer to whatever you asked, and a slot for a call if you want one.' },
+    { title: 'Minutes — a reply', text: 'A real person and our AI reply in the chat. You get a straight answer to whatever you asked, and a slot for a call if you want one.' },
     { title: 'Day 1 — fifteen minutes, your scenario', text: 'You bring one real situation: a quiet customer list, a leaking scheme book, a flooded inbox. We run it through Jwero live. If we cannot help, we say so here.' },
     { title: 'Days 2–5 — a pilot on your own data', text: 'We import what exists — customers, catalogue, stock, however messy — and reconcile it with you. You evaluate on your customers, not a demo dataset.' },
     { title: 'Day 5 — the written plan', text: 'What Jwero would change, the migration path, a straight price, and a written change-freeze around your season. Then it is your call.' },

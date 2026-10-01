@@ -17,7 +17,7 @@ ${L.hero({
   eyebrow: 'ROLES',
   h1: 'Every role in your jewellery business, on one system.',
   sub: 'Not a tool the owner uses alone — each role sees exactly the part built for their job. Find yours below: what changes, what skills it grows, and how to stay valuable as AI takes the repetitive work off your plate.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'roles' },
+  primary: { href: '#', label: 'Chat or call with us', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 

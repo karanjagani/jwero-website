@@ -64,7 +64,7 @@ ${L.section(
       <div class="stat"><div class="stat-n" id="ds-monthly">—</div><div class="stat-l">bleeding away every month</div></div>
       <div class="stat"><div class="stat-n" id="ds-yearly">—</div><div class="stat-l">every year, silently</div></div>
       <div class="stat"><div class="stat-n" id="ds-freed">—</div><div class="stat-l">realistic freed capital with a clearance program</div></div>
-      <a class="btn btn-wa" id="ds-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to WhatsApp</a>
+      <a class="btn btn-wa" id="ds-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to Jwero</a>
       <p class="cta-note">We reply with the playbook for your bracket — matched selling first, markdowns last.</p>
     </div>
   </div>`
@@ -125,7 +125,7 @@ ${L.section(
       <div class="stat"><div class="stat-n" id="gs-corpus">—</div><div class="stat-l">corpus collected per year</div></div>
       <div class="stat"><div class="stat-n" id="gs-locked">—</div><div class="stat-l">locked-in future revenue (redemptions)</div></div>
       <div class="stat"><div class="stat-n" id="gs-uplift-val">—</div><div class="stat-l">added by digital collection discipline</div></div>
-      <a class="btn btn-wa" id="gs-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to WhatsApp</a>
+      <a class="btn btn-wa" id="gs-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to Jwero</a>
       <p class="cta-note">We reply with a scheme-digitisation plan — existing paper members included.</p>
     </div>
   </div>`
@@ -187,7 +187,7 @@ ${L.section(
       <div class="stat"><div class="stat-n" id="wr-potential">—</div><div class="stat-l">revenue possible at 95% fast-reply coverage</div></div>
       <div class="stat"><div class="stat-n" id="wr-gap-mo">—</div><div class="stat-l">left on the table every month</div></div>
       <div class="stat"><div class="stat-n" id="wr-gap-yr">—</div><div class="stat-l">left on the table every year</div></div>
-      <a class="btn btn-wa" id="wr-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to WhatsApp</a>
+      <a class="btn btn-wa" id="wr-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to Jwero</a>
       <p class="cta-note">We reply with what fast, consistent coverage would take to set up for your volume.</p>
     </div>
   </div>`
@@ -251,7 +251,7 @@ ${L.section(
       <div class="stat"><div class="stat-n" id="gl-grams">—</div><div class="stat-l">unaccounted grams per month</div></div>
       <div class="stat"><div class="stat-n" id="gl-monthly">—</div><div class="stat-l">value lost every month</div></div>
       <div class="stat"><div class="stat-n" id="gl-yearly">—</div><div class="stat-l">value lost every year</div></div>
-      <a class="btn btn-wa" id="gl-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to WhatsApp</a>
+      <a class="btn btn-wa" id="gl-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to Jwero</a>
       <p class="cta-note">We reply with how per-stage loss tracking would flag this in your workflow.</p>
     </div>
   </div>`

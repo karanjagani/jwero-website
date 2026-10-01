@@ -18,7 +18,7 @@ ${L.hero({
   eyebrow: 'FOR BULLION DEALERS & GOLD TRADERS',
   h1: 'Volume trades, zero ambiguity.',
   sub: 'Rate-locked deal capture and a clean ledger of every settlement — your trading relationships as a business asset the business owns, kept off any single person’s phone.',
-  primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'bullion' },
+  primary: { href: '#', label: 'Talk shop with us', wa: 'bullion' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 ${L.section(
@@ -29,7 +29,7 @@ ${L.section(
 )}
 ${L.honestGapsBlock(['Girvi auto-debit (e-mandate) for interest collections and auction/forfeiture workflows for defaulted pledges are not built yet — pledge, accrual, collection, renewal and release are.'])}
 ${L.section(`${L.sectionHead('QUESTIONS TRADERS ASK', 'Rate locks, girvi and deal speed — answered.', '')}${L.faqBlock(bullionFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="bullion">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="bullion">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See a deal, captured properly.', 'Bring one recent trade — we’ll show how it would sit on the record.', 'bullion', { enterprise: true })}
 `,
@@ -52,7 +52,7 @@ ${L.hero({
   eyebrow: 'FOR JEWELLERY BRANDS',
   h1: 'One brand voice across every counter and channel.',
   sub: 'Central catalogue, brand-controlled campaigns and distributor visibility — so the brand stays consistent whether a customer meets it on Instagram, at a partner counter, or on your own storefront.',
-  primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'brands' },
+  primary: { href: '#', label: 'Talk shop with us', wa: 'brands' },
   secondary: { href: '/enterprise', label: 'Talk to a specialist' },
 })}
 ${L.section(
@@ -70,7 +70,7 @@ ${L.ctaBand('Bring your channel map.', 'Show us how your brand sells today — w
 
 const d2cFaqs = [
   { q: 'Do I have to leave Shopify?', a: 'No — the Shopify connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
-  { q: 'Is there a free trial for D2C brands?', a: 'Yes — create a free workspace in three steps at <a href="/start">/start</a>, connect Shopify or WooCommerce, and evaluate on your own orders. No card, no demo required.' },
+  { q: 'Is there a free trial for D2C brands?', a: 'Yes — 14 days free. Create a workspace in three steps at <a href="/start">/start</a>, connect Shopify or WooCommerce, and evaluate on your own orders. No card, no demo required.' },
   { q: 'What happens to my Shopify data if I leave Jwero?', a: 'Nothing happens to Shopify — it stays the store of record for your storefront and is never modified by a disconnect. Jwero holds synced copies of orders and customers plus everything it added (WhatsApp threads, scores, occasions). All of it exports as CSV before or after you leave, and the connector is removed from Shopify in one click.' },
   { q: 'We already use a lot of ecommerce tools. Won’t this just be one more?', a: 'It replaces the gap between them, not the tools themselves — the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce stack doesn’t do, added on top of what you keep.' },
 ];
@@ -86,7 +86,7 @@ ${L.hero({
   eyebrow: 'FOR D2C & ECOMMERCE-FIRST BRANDS',
   h1: 'Keep Shopify. Add the channels it can’t do.',
   sub: 'Ad clicks bring traffic; chat closes it, badly, without memory. Jwero adds WhatsApp and Instagram-native selling, live-rate pricing and a video counter on top of the storefront you already run.',
-  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'd2c' },
+  primary: { href: '#', label: 'Tell us about your business', wa: 'd2c' },
   secondary: { href: '/platform/integrations', label: 'See the Shopify connector' },
 })}
 ${L.section(
@@ -96,15 +96,6 @@ ${L.section(
     { quote: 'Retention beyond the first order is basically zero.', title: 'A customer record, not just an order history', text: 'One record turns a first-time buyer into a remembered relationship, with occasion and win-back journeys.' },
   ])}`
 )}
-${L.section(
-  `${L.sectionHead('A DAY IN YOUR D2C BUSINESS ON JWERO', 'Morning to night.', '')}
-  ${L.steps([
-    { title: 'Morning', text: 'Overnight Instagram DMs from an ad campaign already have drafted, gold-rate-accurate replies waiting for approval — not sitting unread since midnight.' },
-    { title: 'Afternoon', text: 'A Shopify order comes in; it lands on the same customer record as her WhatsApp conversation from last week — one buyer, one history, no juggling between disconnected systems.' },
-    { title: 'Evening', text: 'A cart-abandoner gets a personal, approved follow-up on WhatsApp — not a generic discount-code email blast.' },
-    { title: 'Night', text: 'The next morning’s ad spend gets pointed at what converted, because the record shows which DM turned into a real order.' },
-  ], 4)}`
-, { tone: 'tint' })}
 ${L.jtbdBlock([
   { when: 'an ad-driven DM comes in after hours', want: 'get an accurate, on-brand reply immediately', so: 'the click doesn’t go cold before your team wakes up' },
   { when: 'a customer buys on Shopify after chatting on WhatsApp', want: 'have both touchpoints on one record', so: 'the relationship isn’t split across two disconnected tools' },
@@ -119,7 +110,7 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 ${L.section(`${L.sectionHead('QUESTIONS D2C BRANDS ASK', 'Shopify, trials and the stack you keep — answered.', '')}${L.faqBlock(d2cFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/compare/jwero-vs-shopify">See Jwero vs Shopify</a> or <a href="/faq">the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="d2c">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="d2c">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Add what Shopify can’t do.', 'Tell us your current stack — we’ll show exactly what Jwero adds on top.', 'd2c')}
 `,
@@ -142,7 +133,7 @@ ${L.hero({
   eyebrow: 'FOR STARTUPS & FIRST-TIME FOUNDERS',
   h1: 'Start on the system chains took decades to build — from day one, at single-store cost.',
   sub: 'Full operating system from day one: catalogue to CRM to WhatsApp — priced for a first store. No systems knowledge required, no tiny team wearing all hats without help.',
-  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'startups' },
+  primary: { href: '#', label: 'Tell us about your business', wa: 'startups' },
   secondary: { href: '/pricing', label: 'See pricing' },
 })}
 ${L.section(
@@ -154,7 +145,7 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS FIRST-TIME FOUNDERS ASK', 'Complexity, budget and where to start — answered.', '')}${L.faqBlock(startupsFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="startups">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="startups">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Start where you are.', 'Tell us about your first store — we’ll tell you honestly what matters first.', 'startups')}
 `,
@@ -201,7 +192,7 @@ ${L.jtbdBlock([
   { when: 'a location’s performance starts drifting', want: 'see it in the owner rollup immediately', so: 'brand-standard drift gets caught early rather than surfacing at the annual review' },
 ])}
 ${L.section(`${L.sectionHead('QUESTIONS FRANCHISORS ASK', 'Independence, visibility and control — answered.', '')}${L.faqBlock(franchiseFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="franchise">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="franchise">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.section(
   `${L.sectionHead('THE ROLLOUT', 'From one location to the network, without a fight.', 'The plan we run; each wave has an exit test before the next begins.')}

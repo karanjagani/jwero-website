@@ -27,7 +27,7 @@ ${L.hero({
   eyebrow: 'COUNTER POS',
   h1: 'The counter, end to end. Scan, sell, exchange, return, close the till.',
   sub: 'One screen at the counter: scan or search a piece, price it at this minute’s gold rate, take old gold in exchange, bill it with GST — then close the shift with a cash count that reconciles itself. Every sale lands on the customer’s record before she reaches the door.',
-  primary: { href: '#', label: 'Show me a till close on WhatsApp', wa: 'pos' },
+  primary: { href: '#', label: 'Show me a till close', wa: 'pos' },
   secondary: { href: '/products/billing-finance', label: 'See Billing & Finance' },
   note: 'The demo IS a WhatsApp conversation — ask for the counter walkthrough.',
 })}
@@ -72,7 +72,7 @@ ${L.section(`${L.sectionHead('COUNTER QUESTIONS', 'Cash, returns and the interne
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the WhatsApp button on this page — it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the chat button on this page — it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See a sale rung up, returned and closed.', 'Bring one real bill from last week. We will run it through the counter — exchange, GST, till close — live.', 'pos')}
 `,
@@ -147,7 +147,7 @@ ${L.section(`${L.sectionHead('WORKSHOP QUESTIONS', 'Loss, karigars and starting 
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the WhatsApp button on this page — it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the chat button on this page — it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring one job that lost gold.', 'We will run it through the routing, the norms and the karigar settlement — and show you where the milligrams went.', 'manufacturers')}
 `,
@@ -210,7 +210,7 @@ ${L.honestGapsBlock([
   'Auction and forfeiture workflows for defaulted pledges are not built; release and renewal are.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the WhatsApp button on this page — it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the chat button on this page — it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring your pledge register.', 'We will show you one loan from intake to release — receipt, accrual, collection, journal — on your own numbers.', 'girvi')}
 `,
@@ -259,7 +259,7 @@ ${L.oneSystemBlock([
   'The pieces she asked about in chat are the ones the host has on screen when she joins.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the WhatsApp button on this page — it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the chat button on this page — it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See the video counter from the customer’s side.', 'Message us; we will send you a meeting link the way your customers would get one.', 'meetings')}
 `,

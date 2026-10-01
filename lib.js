@@ -81,6 +81,7 @@ const LINK_ICONS = {
   '/products/repairs-service': 'tools', '/products/purchase-vendors': 'truck', '/products/gold-schemes': 'coins',
   '/products/digital-gold': 'wallet', '/products/loyalty': 'gift', '/products/segmentation': 'pie',
   '/products/journeys': 'route', '/products/campaigns': 'send',
+  '/solutions/diamond-traders': 'gem',
   '/products/pos': 'till', '/products/manufacturing': 'scale', '/products/girvi': 'vault', '/products/meetings': 'video',
   '/products/email': 'mail', '/products/marketplaces': 'truck', '/products/quotations': 'receipt', '/products/digital-catalogues': 'share', '/products/reports': 'pie', '/products/training-lms': 'book',
   '/platform/customer-memory': 'record', '/platform/ai-workforce': 'shield', '/platform/integrations': 'swap',
@@ -123,7 +124,7 @@ function icon(nameOrGlyph) {
 // Hero: centred copy, one idea, one primary action. `panel: true` sets it on the
 // full-bleed brand panel (home only); every other page gets the plain framed
 // hero. An optional product mock sits underneath the copy on a dotted stage.
-function hero({ eyebrow, h1, sub, primary, secondary, note, mock, panel }) {
+function hero({ eyebrow, h1, sub, primary, secondary, note, mock, panel, extra }) {
   const cta = `
       <div class="cta-row center">
         ${primary ? `<a class="btn btn-primary" href="${primary.href}" ${primary.wa ? `data-wa="${esc(primary.wa)}"` : ''}${primary.share ? ` data-share="${esc(primary.share)}"` : ''}>${primary.label}</a>` : ''}
@@ -136,9 +137,9 @@ function hero({ eyebrow, h1, sub, primary, secondary, note, mock, panel }) {
   <div class="panel">
     <div class="panel-glow" aria-hidden="true"></div>
     <div class="hero-inner">
-      ${eyebrow ? `<a class="hero-pill" href="#" data-wa="announce">${mark('mark-xs')}<span>${eyebrow} · Chat with us on WhatsApp</span><span class="pill-arrow" aria-hidden="true">${icon('arrow')}</span></a>` : ''}
+      ${eyebrow ? `<a class="hero-pill" href="#" data-wa="announce">${mark('mark-xs')}<span>${eyebrow} · Chat or call with us</span><span class="pill-arrow" aria-hidden="true">${icon('arrow')}</span></a>` : ''}
       <h1>${h1}</h1>
-      <p class="sub">${sub}</p>${cta}
+      <p class="sub">${sub}</p>${extra || ''}${cta}
       ${mock ? `<div class="hero-mock">${mock}</div>` : ''}
     </div>
   </div>
@@ -250,6 +251,89 @@ function steps(items) {
 
 
 
+
+// ---------------------------------------------------------------- the ICP pipeline
+// One question — "I run a…" — asked in the header and the home hero. The answer
+// (stored in the browser, or carried by ?p=) turns the site into six stages:
+// recognise · see · believe · price · try · pass it on.
+const TRIAL_URL = 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=';
+const ICPS = [
+  { key: 'single', label: 'Single store', icon: 'store', sol: '/solutions/single-store', door: 'trial',
+    price: ['One store', '₹9,999 a month billed annually — one location, two POS registers, 25,000 customers and 25,000 products included.'] },
+  { key: 'chain', label: 'Multi-store chain', icon: 'branches', sol: '/solutions/multi-store-chains', door: 'demo',
+    price: ['Five branches', '₹9,999 + 4 extra locations × ₹2,999 = ₹21,995 a month billed annually. From six locations, ask for Enterprise terms.'] },
+  { key: 'franchise', label: 'Franchise network', icon: 'flow', sol: '/solutions/franchise-networks', door: 'demo',
+    price: ['Per location', '₹9,999 for the first location and ₹2,999 a month for each one after. Networks usually take Enterprise terms.'] },
+  { key: 'maker', label: 'Workshop / manufacturer', icon: 'scale', sol: '/solutions/manufacturers', door: 'demo',
+    price: ['One workshop', '₹9,999 a month billed annually, every module. Vendor portal logins are ₹149 each a month; payslips ₹40 each.'] },
+  { key: 'b2b', label: 'Wholesale / trade', icon: 'truck', sol: '/solutions/b2b-jewellery', door: 'trial',
+    price: ['One office', '₹9,999 a month billed annually — 25,000 contacts and 25,000 products included, ₹499 a month per extra 10,000.'] },
+  { key: 'trader', label: 'Diamond trader', icon: 'gem', sol: '/solutions/diamond-traders', door: 'trial',
+    price: ['One trading office', '₹9,999 a month billed annually, every module. 25,000 contacts and 25,000 products included, then ₹499 a month per extra 10,000.'] },
+  { key: 'd2c', label: 'Online brand', icon: 'megaphone', sol: '/solutions/d2c-brands', door: 'trial',
+    price: ['One brand', '₹9,999 a month billed annually, or ₹18,000 month to month. Two connected integrations included (Shopify plus one), ₹499 a month for each extra.'] },
+  { key: 'staff', label: 'I work in one', icon: 'users', sol: '/roles', door: 'brief', price: null },
+];
+// Which pipeline a solution or buyer-role page belongs to.
+const ICP_OF = {
+  'solutions/single-store': 'single', 'solutions/gold-retail': 'single', 'solutions/silver-retail': 'single', 'solutions/diamond-retail': 'single', 'solutions/gemstone-retail': 'single', 'solutions/luxury-boutique': 'single', 'solutions/bridal': 'single',
+  'solutions/multi-store-chains': 'chain', 'solutions/franchise-networks': 'franchise',
+  'solutions/manufacturers': 'maker', 'solutions/oem-manufacturers': 'maker', 'solutions/casting-units': 'maker', 'solutions/cad-services': 'maker',
+  'solutions/b2b-jewellery': 'b2b', 'solutions/gold-wholesale': 'b2b', 'solutions/diamond-wholesale': 'b2b', 'solutions/bullion-gold-traders': 'b2b', 'solutions/export-houses': 'b2b',
+  'solutions/diamond-traders': 'trader',
+  'solutions/d2c-brands': 'd2c', 'solutions/jewellery-brands': 'd2c', 'solutions/startups': 'd2c', 'solutions/lab-grown-diamond': 'd2c',
+  'roles/owner': 'single', 'roles/next-gen-successor': 'single', 'roles/chain-owner': 'chain', 'roles/franchise-partner': 'franchise',
+};
+const icpOf = (slug) => ICPS.find((i) => i.key === ICP_OF[slug]);
+function icpLinks(cls) {
+  return ICPS.map((i) => `<a class="${cls}" href="${i.sol}?p=${i.key}" data-icp="${i.key}">${icon(i.icon)}<span>${i.label}</span></a>`).join('');
+}
+// The question, as large buttons in the home hero.
+function icpPick() {
+  return `
+      <div class="icp-pick" data-icp-pick>
+        <p class="icp-q">I run a…</p>
+        <div class="icp-opts">${icpLinks('icp-opt')}</div>
+      </div>`;
+}
+// Stage 4 on the visitor's own page: what it costs a business like theirs.
+function priceBlock(i, medium) {
+  if (!i || !i.price) return '';
+  const door = i.door === 'demo'
+    ? `<a class="btn btn-primary" href="/book-demo">See it on a video demo</a><a class="btn btn-ghost" href="${TRIAL_URL}${medium}" rel="noopener" data-trial>Or start a 14-day free trial</a>`
+    : `<a class="btn btn-primary" href="${TRIAL_URL}${medium}" rel="noopener" data-trial>Start my 14-day free trial</a><a class="btn btn-ghost" href="#" data-wa="pricing">Ask a pricing question</a>`;
+  return section(`${sectionHead('WHAT IT COSTS YOU', 'One plan. Every module. No per-seat price.', '')}
+  <div class="price-block" id="price">
+    <div class="price-main">
+      <p class="price-tag">Jwero One</p>
+      <p class="price-n"><b>₹9,999</b><span>/month, billed annually</span></p>
+      <p class="price-alt">or ₹18,000 month to month · prices exclude GST · 14 days free, no card</p>
+    </div>
+    <div class="price-you">
+      <p class="price-tag">${i.price[0]}</p>
+      <p class="price-eg">${i.price[1]}</p>
+      <p class="price-wallet">WhatsApp messages, AI and calls run on a prepaid wallet at published rates. <a href="/pricing">See the full rate card →</a></p>
+    </div>
+    <div class="cta-row price-cta">${door}</div>
+  </div>`, { id: 'price-section' });
+}
+// Stage 3: who already runs on it. Stage 6: pass it on.
+function proofStrip2() {
+  return section(`${customerLogos()}<p class="proof-caption">Fifteen named jewellers, each one a permissioned customer. <a href="/customers">See them</a> · <a href="/roadmap">What Jwero does not do yet</a></p>`, { tone: 'tint' });
+}
+function passItOn(i) {
+  const what = i && i.key !== 'staff' ? i.label.toLowerCase().replace('i work in one', 'jewellery business') : 'jewellery business';
+  return `
+<section class="pass" id="pass">
+  <div class="container">
+    <div class="pass-box">
+      <div><p class="eyebrow">PASS IT ON</p><h2>Know another jeweller who runs a ${what}?</h2><p>Send them this page on WhatsApp. It opens already set to their kind of business.</p></div>
+      <a class="btn btn-primary" href="#" data-share="Worth five minutes — this is the software page for a ${what} like ours:"${i ? ` data-share-p="${i.key}"` : ''}>Send this page to a jeweller</a>
+    </div>
+  </div>
+</section>`;
+}
+
 // ---------------------------------------------------------------- solution playbooks
 // A day in your business (auto-playing loop, the rocket rides the track), the
 // modules that segment uses first, a fit check that becomes a tailored CTA,
@@ -287,30 +371,36 @@ function fitCheck(items, wa, modules, names) {
     <div class="fit-meter" aria-hidden="true"><i></i></div>
     <p class="fit-verdict" data-fit-verdict aria-live="polite">Tap what’s true for you. We’ll say honestly where Jwero fits — and where it doesn’t yet.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#" data-wa="${esc(wa)}" data-fit-cta>Show me this on WhatsApp</a>
-      <a class="btn btn-ghost" href="/start">Create my free workspace</a>
+      <a class="btn btn-primary" href="#" data-wa="${esc(wa)}" data-fit-cta>Show me this, live</a>
+      <a class="btn btn-ghost" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=fit" rel="noopener" data-trial>Start my 14-day free trial</a>
     </div>
   </div>
 </div>`;
 }
-function playbookTop(pb, names) {
-  return `
-${section(`${sectionHead('A DAY IN YOUR BUSINESS', 'Same day. Different business.', 'Five moments from a normal day — how they run today, and how they run when every one of them lands on one record. Tap an hour, or let it play.')}
-  ${dayLoop(pb.day)}`)}
+function playbookTop(pb, names, slug) {
+  const { GEM_PAGE } = require('./content/gem');
+  const g = GEM_PAGE[slug];
+  const piece = g ? (g[1] === 'diamond' ? 'stone' : 'bangle') : '';
+  return `${g ? section(`${sectionHead('ONE RECORD', `A week in your business, on one ${piece}.`, `The ${piece} is one record. Play the week, break it into the tools it lives in today, or move the rate.`)}
+  ${gemStage2({ set: g[0], metal: g[1] })}`, { tone: 'tint' }) : ''}
 ${section(`${sectionHead('WHERE JEWELLERS LIKE YOU START', 'The six parts of Jwero you’d switch on first.', 'Everything else is inside the same workspace when you want it. Nothing here needs a separate login.')}
   ${moduleMap(pb.modules, names)}${pb.note ? `<p class="proof-caption">${pb.note}</p>` : ''}`, { tone: 'tint' })}`;
 }
-function playbookBottom(pb, names) {
+function playbookBottom(pb, names, slug) {
+  const i = icpOf(slug);
   return `
+${proofStrip2()}
+${priceBlock(i, 'solution-price')}
 ${section(`${sectionHead('DOES THIS SOUND LIKE YOU?', 'Five things we hear from businesses like yours.', '')}
   ${fitCheck(pb.fit, pb.wa, pb.modules, names)}`)}
 ${section(`${sectionHead('WHAT HAPPENS AFTER YOU TAP', 'Three steps. No mystery.', '')}
   ${steps([
-    { title: 'Minutes — a reply', text: 'A real person and our AI answer on WhatsApp. Bring one real situation from your day above.' },
+    { title: 'Minutes — a reply', text: 'A real person and our AI answer in the chat. Bring one real situation from your day above.' },
     { title: 'Day 1 — fifteen minutes, your scenario', text: 'We run it through Jwero live. If we cannot help, we say so on the call.' },
     { title: 'Days 2–5 — a pilot on your own data', text: 'Your customers, your catalogue, your stock — however messy. You judge on your evidence, then it is your call.' },
   ])}
-  <p class="cta-note" style="margin-top:14px">The full thirty days, step by step: <a href="/how-it-goes">How it goes →</a></p>`, { tone: 'tint' })}`;
+  <p class="cta-note" style="margin-top:14px">The full thirty days, step by step: <a href="/how-it-goes">How it goes →</a></p>`, { tone: 'tint' })}
+${passItOn(i)}`;
 }
 
 // ---------------------------------------------------------------- intelligence
@@ -589,7 +679,7 @@ function verifyBadge(text) {
   return String(text)
     .replace(/\[VERIFY(?:\s*[—-]\s*([^\]]*))?\]/g, (m, rest) =>
       `<span class="verify-tag">Not stated publicly${rest ? ' · ' + rest.trim().replace(/^not found in public materials$/i, '') : ''}</span>`.replace(' · </span>', '</span>'))
-    .replace(/\[Being finalised — see \/pricing\]/g, 'Three tiers — <a href="/pricing">see pricing</a>');
+    .replace(/\[Being finalised — see \/pricing\]/g, '₹9,999/month billed annually, every module — <a href="/pricing">see pricing</a>');
 }
 
 function compareTable(theirName, rows) {
@@ -626,24 +716,63 @@ function switchForBlock() {
 // "What we don't do yet" — the trust block, reusable on /platform, comparisons, product pages.
 // Before/after business-impact cards — the "what changes for your business" block.
 // items: [{lever, before, after, link?}]. Only ever states Tier-A-grounded outcomes.
-function impactGrid(items) {
-  return `<div class="impact" data-impact>
-  <div class="impact-switch" role="group" aria-label="Today or with Jwero">
-    <button type="button" class="is-on" data-state="today" aria-pressed="true">Today</button>
-    <button type="button" data-state="jwero" aria-pressed="false">With Jwero</button>
+// Before/after pairs render as the comparison table everywhere (the old Today ↔ With Jwero
+// switch hid one side; the table shows both).
+function impactGrid(items) { return compareRows(items); }
+
+
+// Security, compliance and focus, in one view. Every line is something the
+// security and enterprise pages already state and the product does. Formal
+// certifications are shown with their true status — "Planned" — and never as a
+// badge: the site says so on /trust/security and this must not contradict it.
+const SECURITY_CONTROLS = [
+  ['shield', 'Your own database', 'One isolated database per business. Your customers are never stored alongside another jeweller’s.'],
+  ['key', 'Encrypted, in transit and at rest', 'Credentials are encrypted; data is encrypted on the wire and on disk.'],
+  ['users', 'You decide who sees what', 'Around 150 permissions, per role and per branch. Multi-factor login and passkeys; single sign-on for chains.'],
+  ['checkbox', 'Two people on money', 'Maker-checker approvals and tamper-evident trails on financial records.'],
+  ['refresh', 'Backups that are tested', 'You set the backup frequency and retention; an automated restore drill proves the latest backup actually restores.'],
+  ['download', 'Export any time', 'Your data leaves with you in standard formats whenever you ask. No hostage clauses.'],
+];
+const COMPLIANCE_ROWS = [
+  ['India’s DPDP Act', 'Data-protection statement published; consent and opt-out handling built into every channel.', 'in', '/legal/dpdp'],
+  ['GST record keeping', 'Orders, invoices, payments, purchases and payroll are never deleted, on every plan.', 'in', '/pricing'],
+  ['WhatsApp Business', 'Runs on Meta’s official Business API — templates, consent and opt-outs handled.', 'in', '/products/whatsapp'],
+  ['BIS hallmarking & HUID', 'HUID and certificate details are recorded on the piece itself.', 'in', '/products/catalog'],
+  ['SOC 2', 'Not certified yet. Planned, and published only when earned.', 'plan', '/trust/security'],
+  ['ISO 27001', 'Not certified yet. Planned, and published only when earned.', 'plan', '/trust/security'],
+];
+function securityBlock() {
+  return `
+<div class="sec">
+  <div class="sec-controls cells">${SECURITY_CONTROLS.map(([i, t, d]) => `<div class="card sec-card">${icon(i)}<h3>${t}</h3><p>${d}</p></div>`).join('')}</div>
+  <div class="sec-side">
+    <div class="sec-comp">
+      <p class="eyebrow">COMPLIANCE, STATED PLAINLY</p>
+      <ul>${COMPLIANCE_ROWS.map(([n, d, st, h]) => `<li><a href="${h}"><span class="sec-pill sec-${st}">${st === 'in' ? 'In place' : 'Planned'}</span><b>${n}</b><span>${d}</span></a></li>`).join('')}</ul>
+    </div>
+    <div class="sec-only">
+      <p class="eyebrow">ONLY JEWELLERY</p>
+      <p>Jwero is built for one trade and sold to no other. Weight, purity, live rate, making charge, hallmark, memo, karigar, scheme and girvi are first-class in the data — not fields bolted onto retail software.</p>
+    </div>
   </div>
-  <div class="impact-grid">${items
-    .map(
-      (i) => `
-    <div class="impact-card">
-      <p class="impact-lever">${i.lever}</p>
-      <p class="impact-before"><span class="impact-tag">Today</span>${i.before}</p>
-      <p class="impact-after"><span class="impact-tag impact-tag-go">With Jwero</span>${i.after}</p>
-      ${i.link ? `<a class="card-link" href="${i.link.href}">${i.link.label} →</a>` : ''}
-    </div>`
-    )
-    .join('')}</div>
-  <p class="impact-hint" aria-hidden="true">Flip the switch to see what changes.</p>
+  <div class="cta-row sec-cta">
+    <a class="btn btn-primary" href="/trust/security">Read the security page</a>
+    <a class="btn btn-ghost" href="#" data-wa="securitypack">Request the security pack for my IT team</a>
+  </div>
+</div>`;
+}
+
+// The same before/after pairs as a comparison: both sides visible at once,
+// one row per lever, so the whole argument fits in a single view.
+function compareRows(items) {
+  return `<div class="cmp" role="table" aria-label="Today compared with Jwero">
+  <div class="cmp-head" role="row"><span role="columnheader"></span><span role="columnheader">Today</span><span role="columnheader" class="cmp-go">With Jwero</span></div>
+  ${items.map((i) => `
+  <div class="cmp-row" role="row">
+    <div class="cmp-lever" role="rowheader"><b>${i.lever}</b>${i.link ? `<a href="${i.link.href}">${i.link.label} →</a>` : ''}</div>
+    <p class="cmp-before" role="cell"><span class="cmp-tag">Today</span>${i.before}</p>
+    <p class="cmp-after" role="cell"><span class="cmp-tag cmp-tag-go">With Jwero</span>${i.after}</p>
+  </div>`).join('')}
 </div>`;
 }
 
@@ -765,6 +894,63 @@ function gemStage({ nodes, callouts }) {
 </div>`;
 }
 
+
+// The stone as the customer record: play a week through it, break it into the
+// tools it lives in today, turn it, tap a facet, move the gold rate. Data per
+// kind of business in content/gem.js; the canvas and controls are in site.js.
+function gemStage2(opts = {}) {
+  const { GEM, FAMILIES } = require('./content/gem');
+  const icons = {};
+  Object.values(GEM).forEach((g) => g.modules.forEach((m) => { icons[m[0]] = icon(m[0]); }));
+  const d = GEM[opts.set] || GEM.single;
+  const json = JSON.stringify({ sets: GEM, icons, families: FAMILIES }).replace(/</g, '\\u003c');
+  return `
+<div class="gem2${opts.set ? ' gem2-page' : ''}" data-gem2 data-metal="${opts.metal || 'gold'}"${opts.set ? ` data-set="${opts.set}" data-fixed-metal="${opts.metal || 'gold'}"` : ''}>
+  <script type="application/json" data-gem2-json>${json}</script>
+  <div class="gem2-top">
+    <div class="gem2-switch" role="group" aria-label="Where the record lives">
+      <button type="button" data-gem2-mode="os" class="is-on" aria-pressed="true">One record</button>
+      <button type="button" data-gem2-mode="today" aria-pressed="false">Your tools today</button>
+    </div>
+    <div class="gem2-metals" role="group" aria-label="Metal">
+      <button type="button" data-gem2-metal="gold" class="is-on" aria-pressed="true"><i></i>Gold</button>
+      <button type="button" data-gem2-metal="silver" aria-pressed="false"><i></i>Silver</button>
+      <button type="button" data-gem2-metal="platinum" aria-pressed="false"><i></i>Platinum</button>
+      <button type="button" data-gem2-metal="diamond" aria-pressed="false"><i></i>Diamond</button>
+    </div>
+    <button type="button" class="gem2-rate" data-gem2-rate>${icon('trend')}<span>The gold rate just moved</span></button>
+    <p class="gem2-hint" aria-hidden="true">Drag to turn · tap a module</p>
+  </div>
+  <div class="gem2-signals is-idle" data-gem2-signals>
+    <div class="gem2-sig-head">
+      <p><b>198</b> kinds of signal Jwero listens for, from 36 sources. Here is the family this event belongs to — each dot is one signal.</p>
+      <p class="gem2-sig-count"><b data-gem2-heard>0</b> heard this week</p>
+    </div>
+    <div class="gem2-fams">${FAMILIES.map(([name, n], f) => `<button type="button" class="gem2-fam" data-fam="${f}"><span class="gem2-fam-name">${esc(name)}<em>${n}</em></span><span class="gem2-dots">${'<i></i>'.repeat(n)}</span></button>`).join('')}</div>
+    <p class="gem2-sig-note" data-gem2-signote>Press play. Each event shows the family of signals it fires — one family at a time.</p>
+  </div>
+  <div class="gem2-body">
+    <div class="gem2-stage">
+      <canvas aria-hidden="true"></canvas>
+      <div class="gem2-nodes" data-gem2-nodes>${d.modules.map((m, k) => `<button type="button" class="gem2-node" data-k="${k}">${icon(m[0])}<span>${esc(m[1])}</span></button>`).join('')}</div>
+      <div class="gem2-shards" data-gem2-shards aria-hidden="true"></div>
+      <p class="gem2-centre" data-gem2-centre>${esc(d.centre)}</p>
+    </div>
+    <aside class="gem2-card" aria-live="polite">
+      <p class="eyebrow" data-gem2-cardtag>ON THE RECORD</p>
+      <h3 data-gem2-cardtitle>${esc(d.centre)}</h3>
+      <ol class="gem2-lines" data-gem2-lines><li class="gem2-empty">Press play. Watch one week land on one record.</li></ol>
+      <div class="gem2-note" data-gem2-note hidden></div>
+      <p class="gem2-legend"><i class="lg-w"></i>writes to the record <i class="lg-r"></i>reads from it</p>
+    </aside>
+  </div>
+  <div class="gem2-week">
+    <button type="button" class="gem2-play" data-gem2-play aria-pressed="false">Play the week</button>
+    <ol class="gem2-events" data-gem2-events>${d.week.map((e, k) => `<li><button type="button" data-ev="${k}"><b>${esc(e[0])}</b><span>${esc(e[1])}</span></button></li>`).join('')}</ol>
+  </div>
+</div>`;
+}
+
 // Diagram strip for product and platform heroes: this module on the left, the
 // shared customer record in the middle, the rest of the system on the right.
 function heroSchematic(iconName, label) {
@@ -827,10 +1013,10 @@ function personaSwitch(entries, productName) {
 // the copy here frames it as a try-it, never as a recorded result.
 const SIMS = {
   rate: { eyebrow: 'TRY IT · LIVE RATE', title: 'Move the gold rate. Watch every price follow.', lead: 'Nine prices on three channels, one rule. Drag the rate and see what a jeweller repricing by hand would have to retype.', cta: 'Show me this on my own catalogue' },
-  approve: { eyebrow: 'TRY IT · THE MORNING QUEUE', title: 'Run the AI workforce for a minute.', lead: 'Drafts arrive the way customers do. Approve, edit, or decide an action type may run alone — and stop everything with one tap.', cta: 'Show me a real queue on WhatsApp' },
+  approve: { eyebrow: 'TRY IT · THE MORNING QUEUE', title: 'Run the AI workforce for a minute.', lead: 'Drafts arrive the way customers do. Approve, edit, or decide an action type may run alone — and stop everything with one tap.', cta: 'Show me a real queue' },
   memory: { eyebrow: 'TRY IT · CUSTOMER MEMORY', title: 'A customer messages. What does the record already know?', lead: 'Pick a customer and watch her record fill in before anyone types a reply.', cta: 'Send me a sample customer record' },
   shelf: { eyebrow: 'TRY IT · THE SLEEPING SHELF', title: 'Slide time forward. Watch stock fall asleep.', lead: 'Seventy-two pieces, ageing month by month. The count past 180 days is the number most owners have never seen.', cta: 'Show me my own shelf' },
-  till: { eyebrow: 'TRY IT · THE COUNTER', title: 'Ring up a sale. Take old gold. Close the shift.', lead: 'Scan pieces, add exchange gold, take payment, then close the till and see the variance appear tonight — not next week.', cta: 'Show me a till close on WhatsApp' },
+  till: { eyebrow: 'TRY IT · THE COUNTER', title: 'Ring up a sale. Take old gold. Close the shift.', lead: 'Scan pieces, add exchange gold, take payment, then close the till and see the variance appear tonight — not next week.', cta: 'Show me a till close' },
   grams: { eyebrow: 'TRY IT · METAL CLOSURE', title: 'Push a stage past its wastage norm. Watch the order refuse to close.', lead: 'A hundred grams issued to the bench, four stages, four norms. The mechanics are the product’s; the numbers are yours to play with.', cta: 'Show me one real job, gram by gram' },
 };
 function sim(kind) {
@@ -897,7 +1083,7 @@ function ctaBand(title, sub, waContext, opts = {}) {
   const secondary = opts.enterprise
     ? `<a class="btn btn-ghost-light" href="/enterprise">Talk to a specialist</a>`
     : `<a class="btn btn-ghost-light" href="/book-demo">Book a demo</a>`;
-  const label = opts.label || 'Chat with us on WhatsApp';
+  const label = opts.label || 'Chat or call with us';
   const ticker = CTA_TICKER.map(([i, t]) => `<span>${icon(i)}${t}</span>`).join('');
   return `
 <section class="cta-band">
@@ -912,7 +1098,7 @@ function ctaBand(title, sub, waContext, opts = {}) {
         <a class="btn btn-primary" href="#" data-wa="${esc(waContext)}">${label}</a>
         ${secondary}
       </div>
-      <p class="cta-note">A real person + our AI reply within minutes — that's the product. You message us first; we never message you uninvited. <a class="cta-hindi" lang="hi" href="#" data-wa="hindi">हिन्दी में बात करें →</a></p>
+      <p class="cta-note">A real person + our AI reply within minutes — that's the product. You message us first; we never message you uninvited. <a class="cta-hindi" lang="hi" href="#" data-wa="hindi" data-direct>हिन्दी में बात करें →</a></p>
     </div>
     <div class="cta-ticker" aria-hidden="true"><div class="cta-track">${ticker}${ticker}</div></div>
   </div>
@@ -926,7 +1112,7 @@ function safeToTryStrip() {
   <p class="safe-title">WHY TRYING THIS IS SAFE</p>
   <div class="safe-items">
     <div><strong>Pilot on your own data</strong><span>Start with a supervised sample import — evaluate on your real customers, not a demo dataset.</span></div>
-    <div><strong>Monthly billing, export anytime</strong><span>Entry tiers bill monthly, and your data leaves with you in standard formats whenever you ask.</span></div>
+    <div><strong>14 days free, then month to month</strong><span>No card for the trial. Monthly billing has no lock-in, and your data leaves with you in standard formats whenever you ask.</span></div>
     <div><strong>Your season is protected</strong><span>A written change-freeze means nothing disruptive happens during your peak weeks.</span></div>
   </div>
 </div>`;
@@ -991,7 +1177,7 @@ function customerLogos() {
 
 module.exports = {
   esc, icon, autoIcon, sim, controlSplit, mockMemo, LINK_ICONS, PERSONAS, personaSlot, personaSwitch, systemSplit, gemStage, heroSchematic, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
-  mark, intelligence, playbookTop, playbookBottom, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockOneRecord,
+  mark, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,
 };

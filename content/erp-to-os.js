@@ -152,7 +152,7 @@ function leakCalc() {
     <div class="stat"><div class="stat-n" id="lk-slow">—</div><div class="stat-l">enquiries a month that wait for a price</div></div>
     <div class="stat"><div class="stat-n" id="lk-month">—</div><div class="stat-l">value at risk every month, at your close rates</div></div>
     <div class="stat"><div class="stat-n" id="lk-year">—</div><div class="stat-l">a year of “making do”</div></div>
-    <a class="btn btn-wa" id="lk-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to WhatsApp</a>
+    <a class="btn btn-wa" id="lk-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to Jwero</a>
     <p class="cta-note">We reply with what the priced-reply flow would do on your enquiries — drafted, approved, sent.</p>
   </div>
 </div>`;
@@ -331,7 +331,7 @@ ${L.section(
   `${L.sectionHead('KEEP THE ERP', 'You do not have to choose on day one.', '')}
   ${L.cards([
     { title: 'Coexist', text: 'The ERP keeps the books; Jwero takes the customer-facing doors. Bridged, for as long as you want.', link: { href: '/erp-to-os/switching', label: 'See how switching works' } },
-    { title: 'Start free, alone', text: 'A workspace at os.jwero.ai in three steps. Bring your catalogue and ten customers; see the priced reply on a real enquiry.', link: { href: '/start', label: 'Create my free workspace' } },
+    { title: 'Start free, alone', text: 'Fourteen days free at os.jwero.ai, in three steps. Bring your catalogue and ten customers; see the priced reply on a real enquiry.', link: { href: '/start', label: 'Start my 14-day free trial' } },
     { title: 'Or make do, honestly', text: 'If the calculator says the gap is small, keep going and come back when it is not. We would rather you find that out here than on a call.' },
   ])}`
 , { tone: 'tint' })}

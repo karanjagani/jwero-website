@@ -1,139 +1,5 @@
 const L = require('../lib');
 
-const pricing = {
-  slug: 'pricing',
-  title: 'Pricing — Assist, Approve, Autopilot | Jwero',
-  description: 'Tiers named for how trust is earned: Assist (AI drafts, you send), Approve (one-tap approvals), Autopilot (earned autonomy) — plus multi-store network plans.',
-  breadcrumbs: [['Home', '/'], ['Pricing']],
-  faqs: [
-    { q: 'Why don’t I see numbers on this page?', a: 'Because pricing is still being finalised per region, ahead of general availability. It will be published here once set — until then, ask on WhatsApp and you will get a straight answer with no "discovery call" required.' },
-    { q: 'Is there a lock-in contract?', a: 'No — entry tiers offer monthly billing, and annual plans are simply a discount, not handcuffs. Your data exports any time you ask.' },
-    { q: 'What does implementation include?', a: 'Human-led onboarding: your customer list imported for you, WhatsApp number connected, catalogue set up, and your team trained by role. The scope is written down before you pay.' },
-    { q: 'How should I think about the cost?', a: 'Against one recovered customer, not against your billing software’s maintenance fee. One returning bridal customer typically pays for years of Jwero. Run the calculators and use your own numbers.' },
-    { q: 'Is there a free trial?', a: 'Yes — a free account, created in three steps at <a href="/start">/start</a> with Google, LinkedIn or email, no card. Bring your own data in and evaluate on it; when you want a person, the WhatsApp button reaches one.' },
-    { q: 'Are there hidden costs I’ll discover later?', a: 'No — implementation scope, what’s included and what’s extra are stated before you commit. Any pass-through WhatsApp messaging costs from Meta are explained upfront, not buried in month two.' },
-    { q: 'Is this cheaper than the tools I already pay for combined?', a: 'A biller stops at the invoice: it can’t touch repeat-purchase lift, scheme float, WhatsApp-attributed revenue or gold-loss control, which is where the real ROI lives. Count what the "Frankenstack" it replaces costs — WhatsApp tool, catalogue app, website, SMS vendor, staff hours reconciling Excel. See the Frankenstack math below.' },
-    { q: 'Can I upgrade or downgrade tiers later?', a: 'Yes — Assist, Approve and Autopilot are a deliberate ladder. Most businesses start on Assist and move up once their own weekly growth report justifies it, not because a salesperson pushed them.' },
-    { q: 'What if I only need one or two things, not the whole platform?', a: 'That’s exactly what Assist is — customers imported, WhatsApp connected, catalogue live. You are never sold modules you didn’t ask for.' },
-    { q: 'Why should I believe your ROI claims?', a: 'You shouldn’t take our word for it — that’s why the growth report exists. It’s a weekly account of what happened with your own customers, drawn from evidence rather than a projection in a sales deck.' },
-  ],
-  body: `
-${L.hero({
-  eyebrow: 'PRICING',
-  h1: 'Three tiers, named after how much the AI is allowed to do. Start small, export any time.',
-  sub: 'Three tiers, named after how the AI earns your trust. Start where you are comfortable; move up when the results say so. No hidden costs, no hostage clauses, export-anytime.',
-  primary: { href: '#', label: 'Get a straight price on WhatsApp', wa: 'pricing' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
-  note: 'Prefer email? <a href="/contact">care@jwero.ai</a>.',
-})}
-
-${L.section(
-  `<div class="quick-check">
-    <p class="quick-check-title">WHICH ONE IS FOR YOU? A 5-SECOND CHECK</p>
-    <div class="quick-check-items">
-      <div><strong>Single store, just starting?</strong><span>→ Assist</span></div>
-      <div><strong>Growing team, want more done for you?</strong><span>→ Approve</span></div>
-      <div><strong>Multi-branch or high volume?</strong><span>→ Autopilot</span></div>
-    </div>
-  </div>
-  <div class="tiers">
-    <div class="card tier">
-      <p class="tier-flag">Start here</p>
-      <h3>Assist</h3>
-      <p><strong>Most single stores start here.</strong> The memory and the counter. AI drafts, your team sends.</p>
-      <ul>
-        <li>Customer memory — full import done for you</li>
-        <li>WhatsApp on your existing number (official API)</li>
-        <li>Instagram & Facebook in one inbox</li>
-        <li>Live-price shareable catalogues</li>
-        <li>Occasion greetings with approval queue</li>
-        <li>Tally / Zoho Books bridge</li>
-      </ul>
-      <a class="btn btn-ghost" href="#" data-wa="tier-assist">Ask the Assist price</a>
-    </div>
-    <div class="card tier tier-hot">
-      <p class="tier-flag">Most chosen</p>
-      <h3>Approve</h3>
-      <p><strong>For established stores and growing teams.</strong> The whole operating system. AI proposes everything; you approve with one tap.</p>
-      <ul>
-        <li>Everything in Assist</li>
-        <li>AI workforce: follow-ups, win-back, festival journeys</li>
-        <li>Gold schemes: enrolment → reminders → maturity</li>
-        <li>Digital gold</li>
-        <li>Weekly growth report to the owner</li>
-        <li>Inventory ageing & dead-stock visibility</li>
-        <li>Loyalty & campaigns</li>
-      </ul>
-      <a class="btn btn-primary" href="#" data-wa="tier-approve">Ask the Approve price</a>
-    </div>
-    <div class="card tier">
-      <p class="tier-flag">Earned</p>
-      <h3>Autopilot</h3>
-      <p><strong>For high-volume stores and chains that have run Approve.</strong> Proven action types run within hard caps. You supervise by exception.</p>
-      <ul>
-        <li>Everything in Approve</li>
-        <li>Earned per-action autonomy with auto-demotion</li>
-        <li>AI voice agent (14 languages)</li>
-        <li>Video counter & appointments</li>
-        <li>Advanced analytics & ask-in-plain-language reports</li>
-        <li>Priority support</li>
-      </ul>
-      <a class="btn btn-ghost" href="#" data-wa="tier-autopilot">Ask the Autopilot price</a>
-    </div>
-  </div>
-  <p style="margin-top:20px; text-align:center; font-size:.95rem; color:var(--ink-2);"><strong style="color:var(--ink)">A rough anchor while regional pricing is finalised:</strong> Assist typically lands in the range of what a jewellery business already pays its SMS vendor and catalogue app combined — the exact number for your region and configuration is one WhatsApp message away, no call required.</p>
-  <div class="cta-row" style="justify-content:center; margin-top:14px"><a class="btn btn-ghost" href="/book-demo">Prefer a scheduled call? Book a demo</a></div>
-  <div class="stack-verdict" style="margin-top:26px"><strong>Multi-store & franchise networks:</strong> branch structure, role-based control, staged rollout and an evaluation kit for your committee. <a href="/enterprise">Talk to a specialist</a>.</div>`
-)}
-
-${L.section(L.customerLogos())}
-
-${L.section(
-  `${L.sectionHead('THE FRANKENSTACK MATH', 'What the pile of tools costs.', 'Most jewellery businesses pay for five or six disconnected tools — plus the invisible cost: customers lost to silence. Put your own numbers in the right column; these rows are the ones we see most often.')}
-  <div class="tbl-wrap"><table class="tbl">
-    <thead><tr><th>What you pay for today</th><th>Typical job it does</th><th>In Jwero</th></tr></thead>
-    <tbody>
-      <tr><td><strong>WhatsApp bulk-message tool</strong></td><td>Sends texts; knows nothing about the customer</td><td>Included — with the customer record behind every reply</td></tr>
-      <tr><td><strong>Catalogue app</strong></td><td>Shares designs; prices go stale when the rate moves</td><td>Included — live-rate pricing on every share</td></tr>
-      <tr><td><strong>Website / ecommerce subscription</strong></td><td>A brochure or a generic store</td><td>Included — a jewellery-native ecommerce website</td></tr>
-      <tr><td><strong>SMS vendor</strong></td><td>Festival blasts nobody reads</td><td>Included — consent-aware broadcasts across four channels</td></tr>
-      <tr><td><strong>Agency retainer / freelancer</strong></td><td>Posts and ads, disconnected from sales data</td><td>Included — social, ads and attribution on the same record</td></tr>
-      <tr><td><strong>Scheme registers & Excel hours</strong></td><td>Staff time reconciling what no tool connects</td><td>Gone — one record, no reconciliation</td></tr>
-    </tbody>
-  </table></div>
-  ${L.stats([
-    { n: '5–6', l: 'tools a typical business pays for today' },
-    { n: '1', l: 'system that holds the whole customer' },
-    { n: '0', l: 'hostage clauses — export anytime' },
-    { n: '30 days', l: 'to your first growth report' },
-  ])}`
-, { tone: 'tint' })}
-
-${L.section(
-  `${L.sectionHead('THE OBJECTIONS, ANSWERED DIRECTLY', 'Before you ask, in case you were about to.', '')}
-  ${L.cards([
-    { title: '"Another software cost"', text: 'Measure it against one recovered customer, not against your billing software’s AMC. One returning bridal customer typically pays for years of Jwero — run the calculators on your own numbers.' },
-    { title: '"I already have five tools"', text: 'A biller stops at the invoice. Count what the pile costs: a WhatsApp tool, a catalogue app, a website, an agency retainer, plus the invisible cost of customers lost to silence — against the revenue levers a biller can’t touch.' },
-    { title: '"Hidden costs will show up later"', text: 'Implementation scope and what’s extra are written down before you pay. Any Meta messaging pass-through cost is explained upfront, not discovered on an invoice.' },
-    { title: '"I’ll be locked into a contract"', text: 'Monthly billing is available at entry tiers. Annual is simply a discount rather than a handcuff — and export-anytime applies regardless of the term you choose.' },
-    { title: '"ROI is a promise I’ve heard before"', text: 'Fair — that’s why the weekly growth report exists. It shows what happened with your own customers: real evidence, no sales-deck number.' },
-    { title: '"I don’t need the whole platform"', text: 'Then don’t buy it. Assist is exactly the minimum: customers imported, WhatsApp connected, catalogue live. Expand only when it’s earned its place.' },
-  ])}`
-, { tone: 'tint' })}
-
-${L.section(L.safeToTryStrip())}
-
-${L.section(`${L.sectionHead('PRICING QUESTIONS', 'Straight answers on cost and terms.', '')}${L.faqBlock([
-  { q: 'Why don’t I see numbers on this page?', a: 'Because pricing is being finalised per region ahead of general availability. Ask on WhatsApp and you will get a straight answer with no "discovery call" required.' },
-  { q: 'Is there a lock-in contract?', a: 'No — entry tiers offer monthly billing. Annual plans are simply discounted, with no handcuffs attached.' },
-  { q: 'Is there a free trial?', a: 'Yes — a free account, created in three steps at <a href="/start">/start</a> with Google, LinkedIn or email, no card. Bring your own data in and evaluate on it; when you want a person, the WhatsApp button reaches one.' },
-  { q: 'Are there hidden costs?', a: 'No — implementation scope and what’s extra are stated before you commit. Meta messaging pass-through costs, if any, are explained upfront.' },
-  { q: 'Can I change tiers later?', a: 'Yes — most businesses start on Assist and move up once their own growth report justifies it.' },
-])}
-<p class="cta-note" style="margin-top:14px">More objections? <a href="/faq#pricing">See every pricing question we’ve been asked →</a></p>`)}
-`,
-};
-
 const company = {
   slug: 'company',
   title: 'About Jwero — Why We Build for Jewellery Business | Jwero',
@@ -177,7 +43,7 @@ ${L.section(
   </table></div>
   <div class="cta-row">
     <a class="btn btn-primary" href="/book-demo">Talk to us</a>
-    <a class="btn btn-ghost" href="#" data-wa="company">WhatsApp the founders’ desk</a>
+    <a class="btn btn-ghost" href="#" data-wa="company">Talk to the founders’ desk</a>
   </div>`
 , { tone: 'tint' })}
 `,
@@ -201,7 +67,7 @@ ${L.section(
     { title: 'Email', text: '<a href="mailto:care@jwero.ai">care@jwero.ai</a> — for anything that needs an attachment.' },
     { title: 'Book a demo', text: 'A 15-minute slot with someone who knows the trade.', link: { href: '/book-demo', label: 'Book now' } },
   ], 4)}
-  <div class="cta-row" style="margin-top:10px"><a class="btn btn-primary" href="#" data-wa="contact">Chat with us on WhatsApp</a></div>
+  <div class="cta-row" style="margin-top:10px"><a class="btn btn-primary" href="#" data-wa="contact">Chat or call with us</a></div>
   <p style="margin-top:26px; font-size:.88rem; color:var(--ink-2);">Evaluating for a chain or committee? <a href="/enterprise">Start on the enterprise track</a> · Curious what the product does first? <a href="/platform">Take the platform tour</a> · Cost questions? <a href="/pricing">See pricing</a>.</p>`
 )}
 `,
@@ -230,7 +96,7 @@ ${L.hero({
   h1: 'One system for a hundred branches — with governance that scales to every counter.',
   sub: 'Multi-store chains, franchise networks, wholesalers and manufacturers get a specialist evaluation track: a named contact, a buying-committee kit, and a staged rollout that starts with one pilot branch. Built India-first — GST, HUID, live Indian rates, +91 numbers — with multi-currency at the counter for showrooms abroad.',
   primary: { href: '/book-demo', label: 'Talk to a specialist' },
-  secondary: { href: '#', label: 'Or start on WhatsApp', wa: 'enterprise' },
+  secondary: { href: '#', label: 'Or start with a chat', wa: 'enterprise' },
 })}
 
 ${L.section(
@@ -298,12 +164,12 @@ ${L.hero({
   eyebrow: 'BOOK A DEMO',
   h1: 'Fifteen minutes. Your scenario, not our script.',
   sub: 'Bring one real situation: a quiet customer list, a leaking scheme book, a flooded Instagram inbox — and we will run it through Jwero live. If we cannot help, we will say so in the first five minutes.',
-  primary: { href: '#', label: 'Skip the form — WhatsApp us', wa: 'bookdemo' },
+  primary: { href: '#', label: 'Skip the form — chat or call now', wa: 'bookdemo' },
 })}
 
 ${L.section(
   `<div class="grid grid-2" style="gap:48px; align-items:start;">
-    <form class="form" id="demo-form"><span id="callback"></span>
+    <form class="form" id="demo-form"><span id="callback"></span><span id="schedule"></span>
       <label for="f-name">Your name</label>
       <input id="f-name" name="name" type="text" required autocomplete="name">
       <label for="f-phone">WhatsApp number</label>
@@ -490,4 +356,4 @@ ${L.section(
 `,
 };
 
-module.exports = [pricing, company, contact, enterprise, bookDemo, legalPrivacy, legalTerms, legalDpdp];
+module.exports = [company, contact, enterprise, bookDemo, legalPrivacy, legalTerms, legalDpdp];

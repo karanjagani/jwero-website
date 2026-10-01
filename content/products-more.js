@@ -66,7 +66,7 @@ ${L.honestGapsBlock([
   'Self-serve mailbox creation, aliases and seat metering are on the roadmap — today mailboxes are set up for you during onboarding.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the WhatsApp button on this page — the same inbox answers it.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the chat button on this page — the same inbox answers it.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Put the trade’s email where the trade’s WhatsApp already is.', 'Tell us your domain. We will show the DNS checklist, the first mailbox and the inbox — on a call, in fifteen minutes.', 'email')}
 `,
@@ -123,7 +123,7 @@ ${L.honestGapsBlock([
   'Marketplace fees and settlements are not reconciled automatically yet; payouts are posted as receipts.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the live product, not a form.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the live product, not a form.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See a marketplace order land next to a counter bill.', 'Bring your seller account. We connect it on the call and watch the first orders arrive.', 'marketplaces')}
 `,
@@ -295,7 +295,7 @@ ${L.honestGapsBlock([
   'No predictive forecasting — the numbers are what happened, plus rule-based scores you can read.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Ask the WhatsApp button for a report on your business type — a real person and our AI reply within minutes.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Ask the chat button for a report on your business type — a real person and our AI reply within minutes.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('One question you have never had a clean answer to.', 'Bring it. We will build the report on the call, on your kind of data.', 'reports')}
 `,
@@ -351,7 +351,7 @@ ${L.oneSystemBlock([
   'Karigar onboarding and hallmarking refreshers sit beside statutory payroll — one people record, not an HR tool plus a training tool.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the live product.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the live product.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('The mistakes your floor repeats have a course.', 'Tell us the three things new staff get wrong. We will show the course, the test and the certificate on a call.', 'training')}
 `,

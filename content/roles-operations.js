@@ -82,7 +82,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('ACCOUNTANT QUESTIONS', 'Tally/Zoho, the billing counter, and GST accuracy.', '')}${L.faqBlock(accountantFaqs)}`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="roles">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="roles">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See a GST invoice reprice at the live rate.', 'Tell us how your books are set up today — we’ll show you exactly what the Tally/Zoho bridge does and doesn’t touch.', 'roles')}
 `,
@@ -168,7 +168,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('INVENTORY QUESTIONS', 'Dead stock, forecasting, and staying in sync online.', '')}${L.faqBlock(inventoryManagerFaqs)}`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="roles">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="roles">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See your dead-stock number.', 'Tell us how stock is tracked today across your branches — we’ll show you what the ageing view looks like on your own data.', 'roles')}
 `,

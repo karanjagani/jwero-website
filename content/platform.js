@@ -19,7 +19,7 @@ ${L.hero({
   eyebrow: 'PLATFORM',
   h1: 'One customer record, every channel on it, nothing sent without your approval.',
   sub: 'One customer record. One catalogue. One inventory truth. One inbox. Every module in Jwero reads and writes the same data — that is what makes it an operating system, not a bundle of features.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'platform' },
+  primary: { href: '#', label: 'Chat or call with us', wa: 'platform' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   mock: L.mockOneRecord,
 })}

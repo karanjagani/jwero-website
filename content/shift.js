@@ -80,7 +80,7 @@ const SHIFTS = {
     title: 'From paying for six tools to paying for one outcome.',
     today: 'A WhatsApp tool, a catalogue app, an SMS vendor, a website subscription and an agency retainer — none of which knows the customer.',
     gone: 'Five invoices and the invisible cost of customers lost to silence.',
-    now: 'Three tiers named after how much the AI is allowed to do — start where you are comfortable, move up when the results say so, export any time.',
+    now: 'One plan with every module at a published price, a rate card for what you use, fourteen days free on your own data, export any time.',
     tempo: ['Six bills', 'One'],
   },
   migration: {
@@ -298,6 +298,13 @@ const SHIFTS = {
     gone: 'The hand-offs where a customer, a price or a payment quietly goes missing.',
     now: 'One record, one rate rule, one inbox, one ledger — and a number, on your own enquiries, for what making do was costing.',
     tempo: ['Held together by people', 'Held together by one record'],
+  },
+  'solutions/diamond-traders': {
+    title: 'From a stock sheet and a memo book to every stone known to the carat.',
+    today: 'Stock is an Excel sheet one person trusts, memos are a book, and prices per carat are quoted from memory.',
+    gone: 'The stone promised to two buyers, and the memo nobody chased.',
+    now: 'Parcels by carats and count, certified stones one by one, your own rate grid, memo with return dates, and what each buyer holds, tonight.',
+    tempo: ['Reconciled at month end', 'Known to the carat, now'],
   },
   'products/email': {
     title: 'From a personal Gmail to the business’s own address, in the same inbox.',

@@ -82,7 +82,7 @@ ${L.hero({
   eyebrow: 'GUIDE · WHATSAPP FOR JEWELLERS',
   h1: 'WhatsApp for Jewellers: The Complete Guide',
   sub: 'Jewellery is sold on trust and conversation — which is exactly what WhatsApp is built for. Here’s how to actually run a jewellery business on it, not just have a number customers can message.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-whatsapp' },
+  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-whatsapp' },
   secondary: { href: '/tools/whatsapp-revenue-estimator', label: 'Try the Revenue Estimator' },
 })}
 ${L.section(postMeta(9, 'WhatsApp for Jewellers'))}
@@ -123,13 +123,13 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('SEE IT WORKING', 'This guide is written by the team behind the button below.', 'This site’s own WhatsApp button runs on the official API, catalogue-linked pricing and the approval-gated AI reply described above — not a hypothetical.')}
+  `${L.sectionHead('SEE IT WORKING', 'This guide is written by the team behind the button below.', 'Jwero’s own WhatsApp line runs on the official API, catalogue-linked pricing and the approval-gated AI reply described above — not a hypothetical.')}
   <p><a class="btn btn-ghost" href="/products/whatsapp">See WhatsApp Commerce in Jwero</a></p>`
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about setup and bans.', '')}${L.faqBlock(whatsappGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-whatsapp">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-whatsapp">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Run your own WhatsApp number, properly.', 'Bring your current setup — we’ll show you the official API, live catalogue and one shared record.', 'blog-whatsapp')}
 `,
@@ -154,7 +154,7 @@ ${L.hero({
   eyebrow: 'GUIDE · DEAD STOCK',
   h1: 'Dead Stock in Jewellery Business: Calculate It, Then Clear It',
   sub: 'Idle inventory is the quietest expense in a jewellery business — no invoice arrives for it, so it rarely gets budgeted against. Here’s how to see the real number, and what to do once you see it.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-deadstock' },
+  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-deadstock' },
   secondary: { href: '/tools/dead-stock-calculator', label: 'Run the calculator' },
 })}
 ${L.section(postMeta(8, 'Dead Stock'))}
@@ -216,7 +216,7 @@ ${L.hero({
   eyebrow: 'GUIDE · GOLD SAVINGS SCHEMES',
   h1: 'Gold Savings Schemes: A Practical Guide to Running One Digitally',
   sub: 'A scheme book is a revenue engine wearing a savings costume — but only if the collection discipline behind it actually holds. Here’s how the mechanics work, and where paper registers quietly leak.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-scheme' },
+  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-scheme' },
   secondary: { href: '/tools/gold-scheme-calculator', label: 'Run the calculator' },
 })}
 ${L.section(postMeta(8, 'Gold Savings Schemes'))}
@@ -279,7 +279,7 @@ ${L.hero({
   eyebrow: 'GUIDE · JEWELLERY SOFTWARE AND TALLY',
   h1: 'Jewellery Software and Tally: What Should and Shouldn’t Move',
   sub: 'Every conversation about new software in a jewellery business eventually reaches the same wall: "what does the accountant say?" Here’s exactly what syncs, what doesn’t, and how to have that conversation without guessing.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-tally' },
+  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-tally' },
   secondary: { href: '/platform/integrations/tally', label: 'See the Tally integration' },
 })}
 ${L.section(postMeta(7, 'Jewellery Software and Tally'))}
@@ -319,7 +319,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about the Tally connection.', '')}${L.faqBlock(tallyGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="blog-tally">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="blog-tally">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring your CA into the conversation directly.', 'We’ll walk through the connector, the mapping rules, and exactly what stays manual — with them in the room.', 'blog-tally')}
 `,
@@ -344,7 +344,7 @@ ${L.hero({
   eyebrow: 'GUIDE · MANUFACTURING',
   h1: 'Gold Loss (Wastage) Control in Jewellery Manufacturing: A Working Ledger',
   sub: 'Wastage has always happened at every stage of manufacturing. The question that actually matters isn’t whether it happens — it’s whether anyone can see where, and with whom.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-goldloss' },
+  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-goldloss' },
   secondary: { href: '/solutions/manufacturers', label: 'See it for manufacturers' },
 })}
 ${L.section(postMeta(8, 'Manufacturing'))}
@@ -384,7 +384,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about wastage and control.', '')}${L.faqBlock(goldLossGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-goldloss">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-goldloss">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See your own wastage, per stage and per karigar.', 'Bring your current issue-and-return register — we’ll show what it looks like tracked per movement instead of per year.', 'blog-goldloss')}
 `,
@@ -409,7 +409,7 @@ ${L.hero({
   eyebrow: 'GUIDE · REPAIR MANAGEMENT',
   h1: 'Jewellery Repair Management: The Custody-Chain Method',
   sub: 'A repair job is the one moment a customer hands you their gold and walks away with nothing but trust. Here’s the discipline that makes that trust provable, not just assumed.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-repair' },
+  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-repair' },
   secondary: { href: '/products/crm', label: 'See the customer record in Jwero' },
 })}
 ${L.section(postMeta(7, 'Repair Management'))}
@@ -480,7 +480,7 @@ ${L.hero({
   eyebrow: 'GUIDE · HUID & HALLMARKING',
   h1: 'HUID and Hallmarking Records: The Audit-Day Checklist',
   sub: 'A hallmarking audit shouldn’t be a scramble through drawers and old registers. Here’s what actually needs to be retrievable, and how to keep it that way every day, not just before an inspection.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-huid' },
+  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-huid' },
   secondary: { href: '/products/inventory', label: 'See inventory tracking in Jwero' },
 })}
 ${L.section(postMeta(7, 'Compliance & Records'))}
@@ -518,7 +518,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about records and audits.', '')}${L.faqBlock(huidGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-huid">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own chat button runs on Jwero — <a href="#" data-wa="blog-huid">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Turn audit day into a quick lookup.', 'Bring your current hallmarking register — we’ll show what it looks like as a searchable record instead.', 'blog-huid')}
 `,
@@ -543,7 +543,7 @@ ${L.hero({
   eyebrow: 'GUIDE · DIGITAL CATALOGUE',
   h1: 'Digital Catalog vs PDF: Why Shareable Checkout Links Sell More',
   sub: 'A PDF catalogue is a snapshot that starts going wrong the moment it’s saved. A digital catalogue is a live page — priced correctly whenever it’s opened, and able to take the payment right there. Here’s the actual difference.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-catalog' },
+  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-catalog' },
   secondary: { href: '/products/whatsapp', label: 'See WhatsApp Commerce in Jwero' },
 })}
 ${L.section(postMeta(7, 'Digital Catalogue'))}
@@ -581,7 +581,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about catalogues and checkout.', '')}${L.faqBlock(catalogGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="blog-catalog">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="blog-catalog">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Send a catalogue that can close the sale itself.', 'Bring a design you’d normally screenshot — we’ll show it as a live, trackable link with checkout built in.', 'blog-catalog')}
 `,
@@ -606,7 +606,7 @@ ${L.hero({
   eyebrow: 'GUIDE · CRM VS ERP',
   h1: 'Jewellery CRM vs ERP: The Real Difference',
   sub: 'Two acronyms, two software categories, and a lot of vendors happy to let the line blur in whichever direction sells more. Here’s what each one actually does in a jewellery business — and why the two are usually needed together, not instead of each other.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'blog-crmerp' },
+  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-crmerp' },
   secondary: { href: '/platform', label: 'See how Jwero unifies both' },
 })}
 ${L.section(postMeta(7, 'CRM vs ERP for Jewellery'))}
@@ -641,7 +641,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about the CRM/ERP split.', '')}${L.faqBlock(crmErpGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-crmerp">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-crmerp">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Stop reconciling two systems.', 'Tell us what your CRM and ERP each hold today — we’ll show you what one record looks like instead.', 'blog-crmerp')}
 `,
@@ -666,7 +666,7 @@ ${L.hero({
   eyebrow: 'GUIDE · BUYER’S CHECKLIST',
   h1: 'Jewellery Software Buyer’s Checklist: 15 Questions to Ask First',
   sub: 'Every vendor demo looks polished. These are the questions that separate a system built for jewellery from a generic retail tool with jewellery fields bolted on — ask them of anyone you’re evaluating, including us.',
-  primary: { href: '#', label: 'Ask us these, on WhatsApp', wa: 'blog-checklist' },
+  primary: { href: '#', label: 'Ask us these, live', wa: 'blog-checklist' },
   secondary: { href: '/roadmap', label: 'See our own honest answers' },
 })}
 ${L.section(postMeta(8, 'Jewellery Software Buying Guide'))}
@@ -749,7 +749,7 @@ ${L.hero({
   eyebrow: 'GUIDE · WEDDING SEASON',
   h1: 'Jewellery Software for Wedding Season: What to Get Right First',
   sub: 'Wedding season is when a jewellery business makes its year — and when the cost of a slow reply, a missed follow-up or a dead-stock tray is highest. Here’s what to get in order before it starts, not during it.',
-  primary: { href: '#', label: 'Plan the timing on WhatsApp', wa: 'blog-wedding' },
+  primary: { href: '#', label: 'Plan the timing', wa: 'blog-wedding' },
   secondary: { href: '/solutions/bridal', label: 'See the bridal playbook' },
 })}
 ${L.section(postMeta(6, 'Wedding Season Readiness'))}
@@ -790,7 +790,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about timing.', '')}${L.faqBlock(weddingGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="blog-wedding">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="blog-wedding">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Plan your season before it starts.', 'Tell us your busiest weeks — we’ll map a go-live plan that stays clear of every one of them.', 'blog-wedding')}
 `,
@@ -798,9 +798,9 @@ ${L.ctaBand('Plan your season before it starts.', 'Tell us your busiest weeks �
 
 // ---------------------------------------------------------------- Article 12: Software cost
 const costGuideFaqs = [
-  { q: 'What does jewellery software cost in India?', a: 'It depends on scope — a single WhatsApp tool can start under ₹3,000/month, a full unified platform costs more but replaces several of those tools at once. Jwero’s own pricing is being finalised per region — see <a href="/pricing">the pricing page</a> for the honest current frame, or ask us directly on WhatsApp.' },
+  { q: 'What does jewellery software cost in India?', a: 'It depends on scope — a single WhatsApp tool can start under ₹3,000/month, a full unified platform costs more but replaces several of those tools at once. Jwero’s own price is published: every module for ₹9,999 a month billed annually, or ₹18,000 month to month — see <a href="/pricing">the pricing page</a>., or ask us directly on WhatsApp.' },
   { q: 'Is it cheaper to keep using separate tools?', a: 'On the sticker price of any one tool, often yes. Add up what a WhatsApp tool, a catalogue app, a website subscription and an SMS vendor cost together, plus the staff hours spent reconciling them, and the comparison usually looks different — see the Frankenstack breakdown on <a href="/pricing">the pricing page</a>.' },
-  { q: 'Why won’t this article just quote a price?', a: 'Because a single number without your scope, region and current stack attached would be more marketing than answer. This site’s pricing is still being finalised per region — the honest move is to point you to <a href="/pricing">the pricing page</a> for where that stands, and to a real conversation for a number that actually applies to your business.' },
+  { q: 'Why won’t this article just quote a price?', a: 'It does, for Jwero: one plan with every module at ₹18,000 a month, or ₹9,999 a month billed annually, plus a published rate card for per-use services — all on <a href="/pricing">the pricing page</a>. For other vendors, a single number without your scope and current stack attached would be more marketing than answer.' },
 ];
 
 const costGuide = {
@@ -824,7 +824,7 @@ ${L.section(
   `<div class="post-body">
   <h2>Why this question rarely gets a straight answer</h2>
   <p>Search for jewellery software cost in India and most results either quote one vendor’s sticker price with no context, or dodge the question entirely with "contact us for pricing." Neither is very useful, because the real cost of running a jewellery business’s software isn’t one number. It’s the sum of whatever tools are already stitched together, plus the staff time spent keeping them in sync, plus whatever gets missed because nothing connects.</p>
-  <p>This isn’t going to invent a specific Jwero price here either — pricing is still being finalised per region, and the honest place for the current frame is <a href="/pricing">the pricing page</a>, not a blog post. What this article can do is lay out the cost anatomy clearly enough that a straight number, wherever you get it, means something.</p>
+  <p>This isn’t going to invent a specific Jwero price here either — Jwero One is ₹18,000 a month, or ₹9,999 a month billed annually, with every module included — the full breakdown, including the per-use rate card, is on <a href="/pricing">the pricing page</a>, not a blog post. What this article can do is lay out the cost anatomy clearly enough that a straight number, wherever you get it, means something.</p>
 
   <h2>The tools a typical business is already paying for</h2>
   <p>Most jewellery businesses aren’t paying for one piece of software. They’re paying for several, bought at different times, for different reasons, that were never designed to talk to each other. A WhatsApp bulk-messaging tool for festival blasts. A catalogue app to share designs. A website subscription that’s really a brochure. Sometimes an SMS vendor left over from before WhatsApp took over. And a scheme register, usually still on paper or in a spreadsheet, with staff hours spent reconciling it every month.</p>
@@ -841,7 +841,7 @@ ${L.section(
   <p>A unified platform doesn’t make jewellery software free — but it changes what’s being paid for. Instead of five subscriptions each doing one job in isolation, one system holds the customer record, the catalogue, the WhatsApp inbox, the scheme balances and the invoicing together, so nothing needs reconciling between them by hand. Whether that nets out cheaper than the sum of separate tools depends on how many of those tools a specific business already runs, and what the staff time spent stitching them together is actually worth — which is exactly the math worth doing before comparing sticker prices alone.</p>
 
   <h2>What this site can honestly tell you</h2>
-  <p>Jwero’s own pricing is still being finalised per region, so this article isn’t going to manufacture a number that doesn’t exist yet. What it can point to is <a href="/pricing">the pricing page</a>, which lays out the tier structure and the Frankenstack comparison honestly, and a direct conversation on WhatsApp, where a real number gets discussed against your actual current stack rather than a generic estimate.</p>
+  <p>Jwero’s own price is published: one plan, every module, ₹9,999 a month billed annually or ₹18,000 month to month. The detail is on <a href="/pricing">the pricing page</a>, which lays out the tier structure and the Frankenstack comparison honestly, and a direct conversation on WhatsApp, where a real number gets discussed against your actual current stack rather than a generic estimate.</p>
   </div>`
 )}
 
@@ -852,7 +852,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about cost.', '')}${L.faqBlock(costGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-cost">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-cost">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Get a straight number for your own stack.', 'Tell us what you currently pay for, tool by tool — we’ll show you honestly what changes and what it costs.', 'blog-cost')}
 `,
@@ -974,7 +974,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about rates and pricing.', '')}${L.faqBlock(goldRateGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="blog-goldrate">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own chat button runs on Jwero — <a href="#" data-wa="blog-goldrate">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See your own rate card resolve live.', 'Bring one real product and your current rate — we’ll show the formula resolving, purity by purity.', 'blog-goldrate')}
 `,
@@ -1034,7 +1034,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions first-time founders ask.', '')}${L.faqBlock(startOnlineGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="blog-startonline">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="blog-startonline">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Start where you actually are.', 'Tell us about your first store — we’ll tell you honestly what matters first and what can wait.', 'blog-startonline')}
 `,
@@ -1088,13 +1088,13 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('SEE IT WORKING', 'The official API, set up properly.', 'This site’s own WhatsApp button runs on the official API described above — approved templates, consent tracking, and a shared team inbox, not a workaround.')}
+  `${L.sectionHead('SEE IT WORKING', 'The official API, set up properly.', 'Jwero’s own WhatsApp line runs on the official API described above — approved templates, consent tracking, and a shared team inbox, not a workaround.')}
   <p><a class="btn btn-ghost" href="/products/whatsapp">See WhatsApp Commerce in Jwero</a></p>`
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about API pricing.', '')}${L.faqBlock(waPricingGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-wapricing">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-wapricing">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Understand your own conversation mix.', 'Tell us how you use WhatsApp today — enquiries, reminders, campaigns — and we’ll help you think through the cost picture honestly.', 'blog-wapricing')}
 `,

@@ -19,7 +19,7 @@ ${L.hero({
   eyebrow: 'FOR DIAMOND WHOLESALERS & TRADERS',
   h1: 'Your inventory, in every buyer’s pocket.',
   sub: 'Private B2B catalogues on WhatsApp, memo and approval tracking, and buyer-tiered pricing — every buyer, every memo, every order in one thread, not a register.',
-  primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'diamondwholesale' },
+  primary: { href: '#', label: 'Talk shop with us', wa: 'diamondwholesale' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 ${L.section(
@@ -65,7 +65,7 @@ ${L.hero({
   eyebrow: 'FOR GOLD WHOLESALE',
   h1: 'Wholesale gold, retail-grade systems.',
   sub: 'Rate-linked B2B ordering and ledger clarity per buyer — quote at the live rate in seconds and track every order to delivery, without disputes over what was agreed.',
-  primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'goldwholesale' },
+  primary: { href: '#', label: 'Talk shop with us', wa: 'goldwholesale' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 ${L.section(
@@ -76,7 +76,7 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS GOLD WHOLESALERS ASK', 'Rate quotes, ledgers and disputes — answered.', '')}${L.faqBlock(goldWholesaleFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="goldwholesale">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="goldwholesale">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Quote at today’s rate, live.', 'Change the rate in a demo and watch a wholesale quote reprice instantly.', 'goldwholesale', { enterprise: true })}
 `,
@@ -99,7 +99,7 @@ ${L.hero({
   eyebrow: 'FOR B2B JEWELLERY TRADE',
   h1: 'Sell to the trade without living on the phone.',
   sub: 'One catalogue, many buyers, tiered price lists, memo and approval tracked per relationship — orders captured on WhatsApp while you sleep. Built for silver, gemstone and pearl B2B.',
-  primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'b2b' },
+  primary: { href: '#', label: 'Talk shop with us', wa: 'b2b' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 ${L.section(
@@ -111,15 +111,6 @@ ${L.section(
     { title: 'Reorder intelligence', text: 'See which retailers have gone quiet and haven’t reordered — before the relationship goes cold.' },
   ])}`
 )}
-${L.section(
-  `${L.sectionHead('A DAY IN YOUR TRADE DESK ON JWERO', 'Morning to night.', '')}
-  ${L.steps([
-    { title: 'Morning', text: 'Overnight orders from three retailers are already captured against the right pricing tier — no screenshots to reconcile by hand.' },
-    { title: 'Afternoon', text: 'A buyer asks for a lot-level grading detail on a gemstone parcel — it’s a catalogue field, not a call to the back office.' },
-    { title: 'Evening', text: 'The reorder view flags a retailer who’s gone quiet for six weeks: a nudge goes out before the relationship goes cold instead of after it’s lost.' },
-    { title: 'Night', text: 'A new buyer’s catalogue request gets buyer-specific pricing visibility set up once — every order after follows the same rule automatically.' },
-  ], 4)}`
-, { tone: 'tint' })}
 ${L.jtbdBlock([
   { when: 'a retailer orders after hours', want: 'capture it against the right pricing tier automatically', so: 'nothing gets renegotiated or miskeyed the next morning' },
   { when: 'a regular buyer stops reordering', want: 'see it flagged before month-end', so: 'a trade relationship doesn’t quietly die unnoticed' },
@@ -127,7 +118,7 @@ ${L.jtbdBlock([
 ${L.section(`<div class="grid grid-2" style="align-items:center; gap:44px;"><div>${L.sectionHead('WHO HOLDS WHAT', 'Every memo, every buyer, every due date — on one screen.', 'Exposure per counterparty is the number a wholesaler carries in their head. Here it is written down, with the overdue one already chased.')}</div>${L.mockMemo}</div>`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('QUESTIONS B2B TRADERS ASK', 'Materials, reorders and margins — answered.', '')}${L.faqBlock(b2bJewelleryFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="b2b">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="b2b">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Put your catalogue in every buyer’s pocket.', 'Bring your buyer list — we’ll show tiered pricing and order capture on WhatsApp.', 'b2b', { enterprise: true })}
 `,

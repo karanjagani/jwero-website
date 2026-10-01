@@ -13,6 +13,12 @@ const DIST = path.join(ROOT, 'dist');
 const SITE = 'https://jwero.ai';
 const BRAND = 'Jwero';
 const TAGLINE = 'The Autonomous Jewellery OS, run by AI';
+// Jwero's own website chat widget (the product's webchat, dogfooded here).
+// It loads from the product origin with this site's key and gives the page
+// window.jwero.chat.open(). Until a key is set the connect panel falls back to
+// WhatsApp / phone / the demo form, so no button is ever a dead end.
+// Set JWERO_SITE_KEY in the build environment, or paste the key below.
+const WEBCHAT = { origin: process.env.JWERO_WEBCHAT_ORIGIN || 'https://os.jwero.ai', siteKey: process.env.JWERO_SITE_KEY || '' };
 const SIGNATURE = 'Jwero runs your whole jewellery business from one customer record — and the AI does the remembering.';
 const ORG_DESCRIPTION =
   'Jwero is the Autonomous Jewellery OS, run by AI: one customer record, one catalogue, one inventory truth and one inbox — with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and governed AI staff, in one place.';
@@ -30,7 +36,7 @@ const SOCIALS = [
 // Each page is stamped with the mtime of the content file that defined it, so the
 // sitemap can emit an honest <lastmod> without hand-maintaining dates.
 const CONTENT_FILES = [
-  'home', 'platform', 'products', 'products-sell', 'products-run', 'products-grow', 'products-manage', 'products-hr', 'products-ops', 'products-more', 'brief', 'erp-to-os',
+  'home', 'platform', 'products', 'products-sell', 'products-run', 'products-grow', 'products-manage', 'products-hr', 'products-ops', 'products-more', 'brief', 'erp-to-os', 'pricing', 'diamond-traders',
   'industries', 'solutions', 'solutions-retail-segments', 'solutions-wholesale',
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
@@ -148,7 +154,8 @@ const NAV = [
         ['/solutions/cad-services', 'CAD & design services'],
         ['/solutions/b2b-jewellery', 'Wholesale & B2B'],
         ['/solutions/gold-wholesale', 'Gold wholesalers'],
-        ['/solutions/diamond-wholesale', 'Diamond wholesalers & traders'],
+        ['/solutions/diamond-traders', 'Diamond traders'],
+        ['/solutions/diamond-wholesale', 'Diamond wholesalers'],
         ['/solutions/export-houses', 'Export houses'],
       ]},
       { title: 'By role · owners & counter', items: [
@@ -176,7 +183,7 @@ const NAV = [
         ['/roles/franchise-partner', 'Franchise partner'],
       ]},
     ],
-    footer: ['See all 22 segments', '/solutions'],
+    footer: ['See all 23 segments', '/solutions'],
     links: [['/solutions/pain/dead-stock', 'Dead stock'], ['/solutions/pain/lead-leakage', 'Lead leakage'], ['/roles', 'Every role'], ['/enterprise', 'Enterprise']],
   },
   {
@@ -226,24 +233,24 @@ function navHTML(page) {
 <header class="site-header">
   <div class="header-row">
     <a class="logo" href="/" aria-label="Jwero home">${mark()}<span class="logo-word">Jwero</span></a>
+    <button type="button" class="icp-chip" data-icp-open aria-haspopup="dialog"><span data-icp-label>I run a…</span>${icon('updown')}</button>
     <nav class="main-nav" aria-label="Main">
       ${NAV.map(dd).join('')}
       <div class="nav-cta">
-        <a class="btn btn-ghost" href="tel:+919169959959">Call us</a>
+        <a class="btn btn-primary" href="#" data-wa="header">Chat or call with us</a>
         <a class="btn btn-ghost" href="/book-demo">Book a demo</a>
-        <a class="btn btn-primary" href="#" data-wa="header">Chat on WhatsApp</a>
         <a class="btn btn-ghost" href="/start" data-start-cta>Get started</a>
         <a class="nav-login" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
       </div>
     </nav>
     <div class="header-cta">
-      <a class="btn btn-ghost btn-sm" href="#" data-wa="header">WhatsApp</a>
+      <a class="btn btn-ghost btn-sm" href="#" data-wa="header">Chat or call</a>
       <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
       <a class="btn btn-ghost btn-sm header-start" href="/start" data-start-cta>Get started</a>
       <a class="nav-login nav-login-sm" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
       <button class="search-open icon-btn" type="button" aria-label="Search the site" aria-keyshortcuts="Meta+K Control+K">${icon('search')}</button>
       <button class="theme-toggle icon-btn" type="button" aria-label="Toggle dark mode">${icon('moon')}</button>
-      <a class="btn btn-primary btn-sm header-float" href="#" data-wa="header">Chat on WhatsApp</a>
+      <a class="btn btn-primary btn-sm header-float" href="#" data-wa="header">Chat or call with us</a>
       <button class="nav-burger icon-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
@@ -265,7 +272,7 @@ function footerHTML() {
       </div>
       <div class="f-grid">
       ${col('Products', [['/products', 'App grid'], ...NAV.find((m) => m.label === 'Products').groups.flatMap((g) => g.items)])}
-      ${col('Solutions', [['/roles','Roles — who uses Jwero'],['/solutions','All 22 solutions'],['/industries/retail','Retail'],['/solutions/single-store','Single store'],['/solutions/multi-store-chains','Multi-store & chains'],['/solutions/luxury-boutique','Luxury & boutique'],['/solutions/bridal','Bridal & wedding'],['/solutions/manufacturers','Manufacturers'],['/solutions/b2b-jewellery','Wholesale & B2B'],['/solutions/d2c-brands','D2C brands'],['/solutions/franchise-networks','Franchise networks'],['/solutions/pain/dead-stock','Dead stock'],['/solutions/pain/lead-leakage','Lead leakage']])}
+      ${col('Solutions', [['/roles','Roles — who uses Jwero'],['/solutions','All 23 solutions'],['/industries/retail','Retail'],['/solutions/single-store','Single store'],['/solutions/multi-store-chains','Multi-store & chains'],['/solutions/luxury-boutique','Luxury & boutique'],['/solutions/bridal','Bridal & wedding'],['/solutions/manufacturers','Manufacturers'],['/solutions/b2b-jewellery','Wholesale & B2B'],['/solutions/d2c-brands','D2C brands'],['/solutions/franchise-networks','Franchise networks'],['/solutions/pain/dead-stock','Dead stock'],['/solutions/pain/lead-leakage','Lead leakage']])}
       ${col('Resources', [['/faq','FAQ — every objection'],['/blog','Blog'],['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/tools/whatsapp-revenue-estimator','WhatsApp Revenue Estimator'],['/tools/gold-loss-calculator','Gold-Loss Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/partners','Partners'],['/customers','Customer proof']])}
       <div class="f-stack">
       ${col('Company', [['/company','About'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
@@ -283,12 +290,40 @@ function footerHTML() {
   </div>
 </footer>
 <div class="sticky-bar" role="navigation" aria-label="Quick actions">
-  <a href="tel:+919169959959">Call</a>
-  <a class="sb-wa" href="#" data-wa="sticky">WhatsApp</a>
-  <a class="sb-demo" href="/book-demo">Book demo</a>
+  <a class="sb-wa" href="#" data-wa="sticky" data-connect="chat">Chat</a>
+  <a href="#" data-wa="sticky" data-connect="voice">Call</a>
+  <a class="sb-demo" href="${L3.TRIAL_URL}mobile-bar" rel="noopener" data-trial data-sb-try>Try free</a>
 </div>
 <button class="to-top" type="button" aria-label="Back to top">${mark()}</button>`;
 }
+
+// House style: no long dashes anywhere a visitor can read. Content is written
+// freely; this pass turns every " — " into the punctuation a person would use:
+// a colon after a short label or heading stem, a comma inside a sentence.
+// Number ranges (2–5, 10am–8pm) are left alone.
+function noDash(text) {
+  return String(text)
+    .replace(/>\s*[—–]\s*</g, '>…<')
+    .replace(/\s+–\s+/g, ', ')
+    .replace(/\s*—\s*/g, (m, at, str) => {
+      const before = str.slice(Math.max(0, at - 160), at), rest = str.slice(at + m.length, at + m.length + 160);
+      const prev = before.replace(/\s+$/, '').slice(-1);
+      if (!prev || prev === '>' && !/<\/[a-z0-9]+>\s*$/.test(before) || prev === '"' && /=\s*"$/.test(before)) return ''; // text that opens with a dash
+      if (',:;'.includes(prev)) return ' ';
+      if (/<\/(b|strong|dt|em)>\s*$/.test(before)) return ': ';       // "<b>Label</b> — detail"
+      if (/^[^"<]{0,150}\| Jwero/.test(rest)) return ': ';               // page titles: "Topic — angle | Jwero"
+      const gt = before.lastIndexOf('>');
+      if (gt !== -1) {
+        const seg = before.slice(gt + 1), tag = (/<([a-z0-9]+)[^<>]*>$/.exec(before.slice(0, gt + 1)) || [])[1];
+        if (tag && /^(h[1-4]|b|strong|dt|title|summary)$/.test(tag) && !/[.?!]/.test(seg) && seg.trim().split(/\s+/).length <= 5) return ': ';
+      }
+      return ', ';
+    });
+}
+
+// Every text file the build writes goes through noDash, so nothing slips past.
+const writeRaw = fs.writeFileSync.bind(fs);
+fs.writeFileSync = (file, data, ...rest) => writeRaw(file, typeof data === 'string' && /\.(html|txt|json)$/.test(String(file)) ? noDash(data) : data, ...rest);
 
 // ---------------------------------------------------------------- layout
 const FAVICON = '/assets/favicon.png';
@@ -388,7 +423,7 @@ const SIM_PAGES = {
   'products/catalog': 'rate', 'platform/pricing-engine': 'rate', 'solutions/gold-retail': 'rate', 'products/digital-catalogues': 'rate', 'products/quotations': 'rate',
   'products/email': 'approve', 'products/marketplaces': 'shelf', 'products/reports': 'shelf', 'products/training-lms': 'approve',
   'platform/ai-workforce': 'approve', 'products/ai-sales-agents': 'approve', 'products/journeys': 'approve', 'roles/owner': 'approve',
-  'products/crm': 'memory', 'platform/customer-memory': 'memory', 'roles/sales-associate': 'memory', 'products/whatsapp': 'memory', 'index': 'memory',
+  'products/crm': 'memory', 'platform/customer-memory': 'memory', 'roles/sales-associate': 'memory', 'products/whatsapp': 'memory',
   'products/inventory': 'shelf', 'solutions/pain/dead-stock': 'shelf', 'roles/inventory-manager': 'shelf',
   'products/pos': 'till', 'roles/cashier': 'till', 'products/billing-finance': 'till',
   'products/manufacturing': 'grams', 'solutions/manufacturers': 'grams', 'roles/production-manager': 'grams', 'roles/karigar': 'grams',
@@ -396,6 +431,7 @@ const SIM_PAGES = {
 // Solution playbooks: the day loop + module map after the simulation, the fit
 // check + first steps before the closing band.
 const { PLAYBOOKS, NAMES: PB_NAMES } = require('./content/solution-playbooks');
+const L3 = require('./lib');
 // A page with FAQ schema must show the answers: append a FAQ section wherever
 // the body has none (FAQPage rich results require visible content).
 function withFaqs(body, page) {
@@ -406,11 +442,38 @@ function withFaqs(body, page) {
   const at = relAt !== -1 ? relAt : bandAt;
   return at === -1 ? body + block : body.slice(0, at) + block + body.slice(at);
 }
+// A quiet trial line under the hero buttons of every pipeline page.
+function withHeroTrial(body, slug) {
+  return body.replace(/(<section class="hero[\s\S]*?<div class="cta-row center">[\s\S]*?<\/div>)/, (m) => `${m}\n      <p class="hero-try">or <a href="${L3.TRIAL_URL}hero-${slug.replace(/\W+/g, '-')}" rel="noopener" data-trial>start a 14-day free trial</a> — no card · <a href="#price">see what it costs</a></p>`);
+}
+// The four role pages a buyer reads get what a buyer needs: the fit check, the
+// price for a business like theirs, a trial or demo door, and a way to pass it on.
+const BUYER_ROLES = {
+  'roles/owner': { sol: 'solutions/single-store', fit: ['The business stops remembering when I am not in the shop', 'I answer the same price question on WhatsApp ten times a day', 'A good salesperson leaving would take customers with them', 'I find out about dead stock at the year-end count', 'Scheme collections depend on one person and a register'] },
+  'roles/next-gen-successor': { sol: 'solutions/single-store', fit: ['My parents know every customer; nothing is written down', 'I am the one answering Instagram and WhatsApp at night', 'I want to modernise without a fight at home', 'Our billing software cannot tell me who to call this week', 'I need to show the family a result before spending more'] },
+  'roles/chain-owner': { sol: 'solutions/multi-store-chains', fit: ['I call branches to learn what happened today', 'A rate change reaches some branches late', 'A customer is a stranger at our next branch', 'Stock questions go to a WhatsApp group', 'Each branch markets its own way'] },
+  'roles/franchise-partner': { sol: 'solutions/franchise-networks', fit: ['Brand price updates arrive as PDFs', 'Local offers get settled over the phone', 'I cannot see my own store’s numbers the way the brand does', 'Replenishment runs on email and calls', 'Brand campaigns reach my customers late or twice'] },
+};
+function withBuyerRole(body, page) {
+  const cfg = BUYER_ROLES[page.slug];
+  if (!cfg) return body;
+  const pb = PLAYBOOKS[cfg.sol], i = L3.icpOf(page.slug);
+  const block = `
+${L3.section(`${L3.sectionHead('DOES THIS SOUND LIKE YOU?', 'Five things owners tell us.', '')}
+  ${L3.fitCheck(cfg.fit, pb.wa, pb.modules, PB_NAMES)}`)}
+${L3.priceBlock(i, 'role-price')}
+${L3.passItOn(i)}`;
+  body = withHeroTrial(body, page.slug);
+  const relAt = body.lastIndexOf('<section class="related"'), bandAt = body.lastIndexOf('<section class="cta-band">');
+  const at = relAt !== -1 ? relAt : bandAt;
+  return at === -1 ? body + block : body.slice(0, at) + block + body.slice(at);
+}
 function withPlaybook(body, page) {
   const pb = PLAYBOOKS[page.slug];
   if (!pb) return body;
   const L2 = require('./lib');
-  const top = L2.playbookTop(pb, PB_NAMES), bottom = L2.playbookBottom(pb, PB_NAMES);
+  const top = L2.playbookTop(pb, PB_NAMES, page.slug), bottom = L2.playbookBottom(pb, PB_NAMES, page.slug);
+  body = withHeroTrial(body, page.slug);
   const simAt = body.indexOf('<section class="section sim-section"'), shiftAt = body.indexOf('<section class="shift"');
   const anchor = simAt !== -1 ? simAt : shiftAt;
   if (anchor !== -1) {
@@ -441,7 +504,7 @@ function withRelated(body, page) {
   } else if (/^(solutions|roles|industries)\//.test(page.slug)) {
     const persona = PERSONAS.find((p) => page.slug === p.slug) || PERSONAS[0];
     for (const h of persona.products) { const m = productMeta(h); if (m) links.push([h, m.label, m.desc]); }
-    links.push(['/pricing', 'Pricing', 'Three tiers, named after how the AI earns trust']);
+    links.push(['/pricing', 'Pricing', 'One plan, every module — ₹9,999 a month billed annually']);
     if (page.slug.startsWith('roles/')) links.unshift(['/brief', 'The one-page brief', 'Print it or send it to the owner']);
   } else return body;
   if (!links.length) return body;
@@ -457,6 +520,35 @@ function withRelated(body, page) {
 }
 
 // Site search: a small index of every page, searched in the browser.
+// The connect panel: every "chat or call" button on the site opens this, and it
+// hands over to the Jwero chat widget for chat, a voice call or a video call.
+// "I run a…" — the one question the whole site hangs on. Links carry ?p= so the
+// answer works without JavaScript too.
+function icpDialog() {
+  return `
+<dialog class="icp-dialog" aria-labelledby="icp-title">
+  <button type="button" class="connect-close icon-btn" data-icp-close aria-label="Close">${icon('close')}</button>
+  <h2 id="icp-title">I run a…</h2>
+  <p>Pick one. The site shows your day, your price and your next step — nothing else.</p>
+  <div class="icp-opts">${L3.icpLinks('icp-opt')}</div>
+</dialog>`;
+}
+function connectDialog() {
+  const opt = (mode, ico, title, note) => `<button type="button" class="connect-opt" data-connect-go="${mode}">${icon(ico)}<b>${title}</b><span data-connect-note="${mode}">${note}</span></button>`;
+  return `
+<dialog class="connect" aria-labelledby="connect-title">
+  <button type="button" class="connect-close icon-btn" aria-label="Close">${icon('close')}</button>
+  <div class="connect-head">${mark('connect-mark')}<div><h2 id="connect-title" data-connect-title>Talk to Jwero</h2><p data-connect-sub>A real person and our AI, within minutes. Pick how.</p></div></div>
+  <p class="connect-ctx" data-connect-ctx hidden></p>
+  <div class="connect-opts">
+    ${opt('chat', 'chat', 'Chat', 'Opens right here')}
+    ${opt('voice', 'phone', 'Voice call', 'From your browser — no app')}
+    ${opt('video', 'video', 'Video call', 'See the product, face to face')}
+  </div>
+  <p class="connect-hours" data-connect-hours></p>
+  <p class="connect-alt">Prefer another way? <a href="#" data-connect-alt="wa" data-direct target="_blank" rel="noopener">WhatsApp</a><a href="tel:+919169959959" data-direct>+91 91699 59959</a><a href="/book-demo#schedule" data-direct>Pick a time</a></p>
+</dialog>`;
+}
 function searchDialog() {
   return `
 <dialog class="search" aria-label="Search Jwero">
@@ -525,7 +617,7 @@ function layout(page) {
   if (page.schema) schemas.push(page.schema);
   const robotsMeta = page.noindex ? `<meta name="robots" content="noindex,follow">` : '';
   return `<!doctype html>
-<html lang="en">
+<html lang="en" data-webchat="${WEBCHAT.siteKey ? 'on' : 'off'}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -559,9 +651,11 @@ ${launchHTML()}
 ${navHTML(page)}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-${withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withSchematic(page), page), page), page), page), page), page).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
+${withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withSchematic(page), page), page), page), page), page), page), page).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
 </main>
 ${searchDialog()}
+${connectDialog()}
+${icpDialog()}${WEBCHAT.siteKey ? `\n<script async src="${WEBCHAT.origin}/t.js" data-site-key="${WEBCHAT.siteKey}"></script>` : ''}
 ${footerHTML()}
 <script src="/assets/site.js" defer></script>
 ${page.body.indexOf('data-sim=') !== -1 || SIM_PAGES[page.slug] ? '<script src="/assets/sims.js" defer></script>' : ''}
@@ -609,11 +703,11 @@ function build() {
   for (const p of pages) {
     const dir = p.slug === 'index' ? DIST : path.join(DIST, p.slug);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), layout(p));
+    fs.writeFileSync(path.join(dir, 'index.html'), noDash(layout(p)));
   }
   // /whatsapp special redirect (offline QR / print codes)
   fs.mkdirSync(path.join(DIST, 'whatsapp'), { recursive: true });
-  fs.writeFileSync(path.join(DIST, 'whatsapp', 'index.html'), whatsappRedirectPage());
+  fs.writeFileSync(path.join(DIST, 'whatsapp', 'index.html'), noDash(whatsappRedirectPage()));
 
   // 404 — branded recovery page at the root path most static hosts pick up automatically.
   fs.writeFileSync(path.join(DIST, '404.html'), layout({
@@ -630,21 +724,21 @@ ${require('./lib').section(`
   </div>
   <div class="cta-row" style="margin-top:8px">
     <a class="btn btn-primary" href="/">Go to the home page</a>
-    <a class="btn btn-ghost" href="#" data-wa="default">Ask us on WhatsApp</a>
+    <a class="btn btn-ghost" href="#" data-wa="default">Ask us now</a>
   </div>
   <p style="margin-top:30px; font-size:.95rem;">Popular destinations: <a href="/platform">The platform tour</a> · <a href="/products">All products</a> · <a href="/solutions">Solutions by business type</a> · <a href="/pricing">Pricing</a> · <a href="/faq">FAQ</a></p>`)}
 `,
   }));
 
   // search index + a no-JS-fallback results page
-  fs.writeFileSync(path.join(DIST, 'search-index.json'), JSON.stringify(searchIndex()));
+  fs.writeFileSync(path.join(DIST, 'search-index.json'), noDash(JSON.stringify(searchIndex())));
   fs.mkdirSync(path.join(DIST, 'search'), { recursive: true });
   fs.writeFileSync(path.join(DIST, 'search', 'index.html'), layout({
     slug: 'search', noindex: true, title: 'Search | Jwero', description: 'Search every product, solution, guide and answer on jwero.ai.',
     body: `${require('./lib').section(`<div class="section-head"><h1>Search Jwero</h1></div>
   <form class="search-box search-box-page" method="get" action="/search" role="search">${icon('search')}<input type="search" name="q" placeholder="Search products, solutions, questions…" aria-label="Search" autocomplete="off"></form>
   <div class="search-results search-results-page" data-search-page role="list"></div>
-  <p class="cta-note" style="margin-top:18px">Can’t find it? <a href="#" data-wa="faq">Ask on WhatsApp</a> — a real person and our AI reply within minutes.</p>`)}`,
+  <p class="cta-note" style="margin-top:18px">Can’t find it? <a href="#" data-wa="faq">Ask us now</a> — a real person and our AI reply within minutes.</p>`)}`,
   }));
 
   // llms-full.txt — every page's text, for answer engines that read whole sites.

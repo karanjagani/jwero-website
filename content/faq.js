@@ -12,7 +12,7 @@ const CATEGORIES = [
     items: [
       { q: 'What is Jwero?', a: 'The Autonomous Jewellery OS, run by AI — one place where customers, catalogue, inventory, WhatsApp/Instagram selling, gold schemes and marketing all share the same record, with an AI workforce that drafts the work under your approval.' },
       { q: 'Is Jwero a CRM or an ERP?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP, from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.' },
-      { q: 'Who is Jwero actually for?', a: 'Single stores to multi-store chains, wholesalers, manufacturers, franchise networks and online-first brands. The same system; modules switch on per business type. See <a href="/solutions">all 22 solutions</a>.' },
+      { q: 'Who is Jwero actually for?', a: 'Single stores to multi-store chains, wholesalers, manufacturers, franchise networks and online-first brands. The same system; modules switch on per business type. See <a href="/solutions">all 23 solutions</a>.' },
       { q: 'Does Jwero replace my current software?', a: 'Usually it sits alongside your accounting software (via the Tally/Zoho bridge) and replaces the scattered tools — the WhatsApp app, the Excel customer list, the diary follow-ups, the PDF catalogue.' },
       { q: 'What does "AI-first" actually mean here, concretely?', a: 'An AI workforce that drafts replies, follow-ups and campaigns — 240+ governed actions, approval queues, daily caps and a five-scope kill switch. It proposes; your team disposes.' },
       { q: 'Can AI actually increase my sales?', a: 'It recovers sales you are currently losing — unanswered enquiries, forgotten follow-ups, dormant customers, occasions nobody tracked. That recovered revenue is what the weekly growth report measures.' },
@@ -95,16 +95,16 @@ const CATEGORIES = [
   {
     id: 'pricing', label: 'Pricing, ROI & contract',
     items: [
-      { q: 'What does Jwero cost?', a: 'Pricing is being finalised per region ahead of general availability. Ask on WhatsApp and you get a straight number, no "book a discovery call" runaround. See <a href="/pricing">the pricing page</a> for the tier structure.' },
-      { q: 'Is there a free trial?', a: 'A free account, yes — create it in three steps at <a href="/start">/start</a> (Google, LinkedIn or email, no card). What each paid tier unlocks, and when billing starts, is set up inside the product once you have seen it on your own data. Self-serve trial mechanics for the paid tiers are being finalised. Most businesses start with a pilot using their own data instead — real customers, real catalogue, real results, in days.' },
+      { q: 'What does Jwero cost?', a: 'One plan, Jwero One: ₹18,000 a month billed monthly, or ₹9,999 a month billed annually. Every module is included; prices exclude GST. Per-use services such as WhatsApp messages and AI run on a prepaid wallet at published rates. Groups and chains can ask for Enterprise terms. <a href="/pricing">See pricing</a>.' },
+      { q: 'Is there a free trial?', a: 'Yes — 14 days of Jwero One, free, no card. Create the account in three steps at <a href="/start">/start</a> (Google, LinkedIn or email). The trial waives the plan fee and includes ₹200 of usage headroom for WhatsApp and AI.' },
       { q: 'How much ROI can I actually expect?', a: 'We won’t quote a percentage nobody can verify. Run the <a href="/tools/dead-stock-calculator">Dead Stock</a> and <a href="/tools/gold-scheme-calculator">Gold Scheme</a> calculators on your own numbers, then judge the weekly growth report on actuals once you’re live — not on a projection.' },
       { q: 'Are there hidden costs?', a: 'No — implementation scope, what’s included and what’s extra are stated plainly before you commit. Any pass-through WhatsApp messaging costs from Meta are explained upfront instead of turning up later.' },
-      { q: 'Is there a lock-in contract?', a: 'Monthly billing is available at entry tiers. Annual pricing is simply a discount rather than a handcuff, and the export-anytime promise applies regardless of contract term.' },
+      { q: 'Is there a lock-in contract?', a: 'No. Monthly billing is month to month; annual is paid upfront for the lower price. The export-anytime promise applies on both.' },
       { q: 'What’s included in implementation?', a: 'Data import, WhatsApp connection, catalogue setup and role-based team training — the full checklist is confirmed with you before you pay.' },
       { q: 'Is it cheaper than the tools I already pay for combined?', a: 'A biller stops at the invoice: it can’t touch repeat-purchase lift, scheme float, WhatsApp-attributed revenue or gold-loss control, which is where the real ROI lives. Compare it against the "Frankenstack" it replaces — WhatsApp tool, catalogue app, website, staff hours on Excel — rather than against sticker price alone. See the honest frame on the <a href="/pricing">pricing page</a>.' },
       { q: 'What does my accountant do differently?', a: 'Less re-typing. Sales, returns, payments and expenses post to Jwero’s own double-entry ledger with GST handled, and the Tally / Zoho Books bridge carries them across — so your accountant works in the tool they already trust, from entries that were made once, at the counter.' },
       { q: 'What happens if I stop paying?', a: 'Your data stays yours. Export everything — customers, catalogue, stock, invoices — in standard formats at any time, before or after you stop. There is no hostage clause and no deletion-on-lapse surprise; we say so in writing before you start.' },
-      { q: 'Can I upgrade or downgrade tiers later?', a: 'Yes — Assist, Approve and Autopilot are a deliberate ladder. Most businesses start on Assist and move up once their own growth reports justify it.' },
+      { q: 'Can I upgrade or downgrade tiers later?', a: 'There are no tiers to climb: Jwero One includes every module. You can switch between monthly and annual billing, and move to Enterprise when you need custom terms. Assist, Approve and Autopilot are not prices — they are how much the AI is allowed to do, and you change that per action type whenever you like.' },
       { q: 'Why should I trust an ROI claim from the company selling the product?', a: 'You shouldn’t take our word for it — that’s why the growth report exists. It’s a weekly, plain-language account of what happened, generated from your own data instead of a projection from a sales deck.' },
     ],
   },
@@ -112,7 +112,7 @@ const CATEGORIES = [
     id: 'segments', label: 'Segments — retail, multi-store, wholesale, manufacturing',
     items: [
       { q: 'I run a D2C brand on Shopify. What happens to my Shopify data if I leave Jwero?', a: 'Nothing. Shopify remains the system of record for your store; Jwero syncs products and orders both ways while connected and stops syncing when you disconnect. Your customer record, built in Jwero, exports with you.' },
-      { q: 'I run one small store. Is this too much software for me?', a: 'No. Start with three things: customers imported, WhatsApp connected, catalogue live. That’s the whole Assist tier. Grow into the rest, or don’t — see <a href="/solutions/single-store">the single-store page</a>.' },
+      { q: 'I run one small store. Is this too much software for me?', a: 'No. Start with three things: customers imported, WhatsApp connected, catalogue live. Every module is in the plan, and you switch off what you do not use so the screen stays that simple.' },
       { q: 'Can multiple stores use it?', a: 'Yes — multi-store is native: shared customers and catalogue, per-branch stock, prices and permissions. See <a href="/solutions/multi-store-chains">multi-store & chains</a>.' },
       { q: 'Can branches have different prices?', a: 'Yes — per-branch price rules under central control, with approvals gating any exception.' },
       { q: 'Can I stop one branch’s staff from seeing another branch’s data?', a: 'Yes — branch-scoped permissions are standard, no custom request needed.' },
@@ -157,7 +157,7 @@ const CATEGORIES = [
       { q: 'How fast do you actually respond?', a: 'Test us before you buy: message us on WhatsApp right now and time it. That response is the SLA, demonstrated in real time rather than promised on paper.' },
       { q: 'Can you visit my store in person?', a: 'Usually not — onboarding is remote-first and works well that way. Ask a specialist about in-person options for your specific case.' },
       { q: 'What if something breaks at 9pm during Dhanteras?', a: 'Peak-season escalation exists precisely for this scenario — ask us for the current escalation path for your tier.' },
-      { q: 'Do I get a dedicated account manager?', a: 'Multi-store and enterprise plans do. Entry tiers get the shared support team plus your named onboarding contact — stated honestly per tier, without oversold promises.' },
+      { q: 'Do I get a dedicated account manager?', a: 'Enterprise includes dedicated support. On Jwero One you get the shared support team and your onboarding contact; priority support and a dedicated success manager are available as priced add-ons on the <a href="/pricing">pricing page</a>.' },
     ],
   },
   {
@@ -186,7 +186,7 @@ ${L.hero({
   eyebrow: 'FAQ',
   h1: 'Every question. Every objection. Answered honestly.',
   sub: `${ALL_FAQS.length}+ straight answers, organised by what’s actually on your mind — cost, migration, AI trust, security, your specific segment. If a capability isn’t shipped, you’ll read that here, not discover it after signing.`,
-  primary: { href: '#', label: 'Still have a question? Ask on WhatsApp', wa: 'faq-hub' },
+  primary: { href: '#', label: 'Still have a question? Ask us now', wa: 'faq-hub' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 

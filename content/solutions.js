@@ -4,13 +4,13 @@ const BC = (label) => [['Home', '/'], ['Solutions', '/solutions'], [label]];
 const solutionsHub = {
   slug: 'solutions',
   title: 'Solutions — Jwero for Every Kind of Jewellery Business | Jwero',
-  description: 'One operating system, routed to your business: 22 segments across retail, wholesale, manufacturing and beyond — plus every pain we solve.',
+  description: 'One operating system, routed to your business: 23 segments across retail, wholesale, manufacturing and beyond — plus every pain we solve.',
   breadcrumbs: [['Home', '/'], ['Solutions']],
   body: `
 ${L.hero({
   eyebrow: 'SOLUTIONS',
   h1: 'Find the page written for your kind of jewellery business.',
-  sub: 'The same operating system runs a single counter, a hundred-branch chain, and a manufacturing bench. Find the page written in your language — 22 segments, all equal-status.',
+  sub: 'The same operating system runs a single counter, a hundred-branch chain, and a manufacturing bench. Find the page written in your language — 23 segments, all equal-status.',
   primary: { href: '#', label: 'Tell me which page is mine', wa: 'solutions' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -37,6 +37,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('WHOLESALE', 'Selling to the trade, built to order.', '')}
   <div class="router-grid" id="wholesale">
+    <a class="router-card" href="/solutions/diamond-traders"><h3>Diamond traders</h3><p>Every stone, every parcel, every memo. Known to the carat.</p></a>
     <a class="router-card" href="/solutions/diamond-wholesale"><h3>Diamond wholesale &amp; traders</h3><p>Your inventory, in every buyer’s pocket — certificate-first, memo-tracked.</p></a>
     <a class="router-card" href="/solutions/gold-wholesale"><h3>Gold wholesale</h3><p>Wholesale gold, retail-grade systems.</p></a>
     <a class="router-card" href="/solutions/b2b-jewellery"><h3>B2B jewellery (silver, gemstone, pearl)</h3><p>Sell to the trade without living on the phone.</p></a>
@@ -97,7 +98,7 @@ ${L.hero({
   eyebrow: 'FOR SINGLE-STORE JEWELLERY BUSINESSES',
   h1: 'Run the whole shop from one screen — and keep every customer when staff leave.',
   sub: 'Run the whole shop from one screen — every customer remembered, every enquiry answered in seconds, without hiring anyone. The same operating system a chain runs, sized for one counter.',
-  primary: { href: '#', label: 'Tell us about your business on WhatsApp', wa: 'single-store' },
+  primary: { href: '#', label: 'Tell us about your business', wa: 'single-store' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   mock: L.mockMemory,
 })}
@@ -111,16 +112,6 @@ ${L.section(
     { quote: 'Someone walked out today. I don’t know who, what they tried, or why they didn’t buy.', title: 'Know who is in your shop, and who just left', text: 'A live floor view shows who is browsing right now; when someone leaves without buying, Walkout Rescue drafts a WhatsApp follow-up naming the exact pieces they tried — your team sends it. See <a href="/products/showroom">Showroom Intelligence</a>.' },
   ])}`
 )}
-
-${L.section(
-  `${L.sectionHead('A DAY IN YOUR SHOP ON JWERO', 'Morning to night.', '')}
-  ${L.steps([
-    { title: 'Morning', text: 'The AI workforce has already answered three overnight WhatsApp enquiries with today’s gold rate. Your team reviews and approves the ones waiting.' },
-    { title: 'Afternoon', text: 'A walk-in mentions her daughter’s wedding — your staff notes it once. From now on, every occasion journey knows it too.' },
-    { title: 'Evening', text: 'A scheme instalment reminder goes out to five members. One replies asking for a plan comparison — the AI drafts it, your team sends it.' },
-    { title: 'Night', text: 'An 11pm enquiry gets a priced reply while you sleep. It’s waiting for your approval tap in the morning; no competitor got there first.' },
-  ], 4)}`
-, { tone: 'tint' })}
 
 ${L.jtbdBlock([
   { when: 'a customer messages after closing time', want: 'answer with real prices instantly', so: 'the enquiry doesn’t go to whoever replies first' },
@@ -222,7 +213,7 @@ ${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', 'What IT, fi
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="chains">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="chains">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.section(
   `${L.sectionHead('THE ROLLOUT', 'One branch earns the next.', 'The plan we run across a chain; each step has an exit test before the next.')}
@@ -256,7 +247,7 @@ ${L.hero({
   eyebrow: 'FOR MANUFACTURERS & WHOLESALERS',
   h1: 'Software that weighs every stage, every karigar, every loss — the way you already do.',
   sub: 'Retail software dressed up for the workshop does not survive the workshop. Jwero’s manufacturing spine speaks your language: fine weight through every stage, loss norms per process, job-work under rules, intake verified by assay. And B2B selling happens on the channel your buyers already use.',
-  primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'manufacturers' },
+  primary: { href: '#', label: 'Talk shop with us', wa: 'manufacturers' },
   secondary: { href: '/tools/gold-loss-calculator', label: 'Try the Gold-Loss Calculator' },
 })}
 
@@ -303,7 +294,7 @@ ${L.section(`${L.sectionHead('QUESTIONS MANUFACTURERS ASK', 'What manufacturers 
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="manufacturers">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="manufacturers">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring one order, follow the grams.', 'In a demo, we track one production order end to end — issue, stages, loss, receipt. Your numbers, your call.', 'manufacturers', { enterprise: true })}
 `,

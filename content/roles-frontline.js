@@ -134,7 +134,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('SALES ASSOCIATE QUESTIONS', 'Straight answers about the role and the change.', '')}${L.faqBlock(salesAssociateFaqs)}`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own chat button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See what a sales associate sees.', 'We’ll show you the customer record and the follow-up queue on a real counter workflow.', 'roles')}
 `,
@@ -203,7 +203,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('CASHIER QUESTIONS', 'Straight answers about the role — and roadmap versus shipped.', '')}${L.faqBlock(cashierFaqs)}`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="roles">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="roles">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See live-rate invoicing in action.', 'Change the rate live in a demo and watch a draft invoice reprice in front of you.', 'roles')}
 `,

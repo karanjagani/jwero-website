@@ -62,7 +62,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('KARIGAR QUESTIONS', 'Straight answers about tracking, loss and wages.', '')}${L.faqBlock(karigarFaqs)}`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="roles">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="roles">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See how one job gets tracked, start to finish.', 'Bring one job’s history — we’ll show what changes between jangad and despatch.', 'roles')}
 `,
@@ -196,7 +196,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('PRODUCTION MANAGER QUESTIONS', 'Straight answers about tracking, clients and wages.', '')}${L.faqBlock(productionManagerFaqs)}`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own chat button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See your production pipeline as one ledger.', 'Bring one week of jobs — we’ll show gold-in, gold-out and loss, stage by stage.', 'roles')}
 `,
@@ -262,7 +262,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('QUALITY & HALLMARKING QUESTIONS', 'Straight answers about certification, tracking and compliance.', '')}${L.faqBlock(qualityHallmarkingFaqs)}`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="roles">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="roles">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See documentation status on one job.', 'Bring one batch’s paperwork — we’ll show what pending versus cleared looks like on the record.', 'roles')}
 `,

@@ -18,7 +18,7 @@ ${L.hero({
   eyebrow: 'FOR CASTING UNITS',
   h1: 'Metal in, castings out, loss per flask — closed every day.',
   sub: 'Batch and work-in-progress tracking tuned to casting workflows — with per-stage loss norms and abnormal-loss flags, and client jobs kept distinguishable even when they share a process.',
-  primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'casting' },
+  primary: { href: '#', label: 'Talk shop with us', wa: 'casting' },
   secondary: { href: '/solutions/manufacturers', label: 'See the manufacturer overview' },
 })}
 ${L.section(
@@ -51,7 +51,7 @@ ${L.hero({
   eyebrow: 'FOR CAD SERVICES',
   h1: 'Design files to job files, connected.',
   sub: 'CAD job intake, approval and production handoff with client communication on WhatsApp — nothing lost between a design revision and a job file, because they live on the same thread.',
-  primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'cad' },
+  primary: { href: '#', label: 'Talk shop with us', wa: 'cad' },
   secondary: { href: '/solutions/manufacturers', label: 'See the manufacturer overview' },
 })}
 ${L.section(
@@ -61,7 +61,7 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS CAD STUDIOS ASK', 'Revisions, approvals and handoff — answered.', '')}${L.faqBlock(cadServicesFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/solutions/manufacturers">See the manufacturer overview</a> or <a href="/faq">the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="cad">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own chat button runs on Jwero — <a href="#" data-wa="cad">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Track one design, end to end.', 'Bring one CAD job — we’ll show the thread from brief to production handoff.', 'cad', { enterprise: true })}
 `,
@@ -84,7 +84,7 @@ ${L.hero({
   eyebrow: 'FOR OEM MANUFACTURERS',
   h1: 'Make for many brands from one workshop, with each buyer’s job-work on its own ledger.',
   sub: 'Multi-client job-work: client-wise WIP, specs and settlement — segregated cleanly, run centrally, so each buyer brand gets an accurate settlement without cross-contamination.',
-  primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'oem' },
+  primary: { href: '#', label: 'Talk shop with us', wa: 'oem' },
   secondary: { href: '/solutions/manufacturers', label: 'See the manufacturer overview' },
 })}
 ${L.section(
@@ -94,7 +94,7 @@ ${L.section(
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS OEM MANUFACTURERS ASK', 'Client segregation and settlement — answered.', '')}${L.faqBlock(oemManufacturersFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/solutions/manufacturers">See the manufacturer overview</a> or <a href="/faq">the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="oem">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="oem">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See one client’s jobs, isolated.', 'Bring one OEM buyer’s order book — we’ll show WIP and settlement for that client alone.', 'oem', { enterprise: true })}
 `,
@@ -117,7 +117,7 @@ ${L.hero({
   eyebrow: 'FOR EXPORT HOUSES',
   h1: 'Order to shipment, tracked to the gram, in the currency your buyer pays.',
   sub: 'Order-to-shipment tracking with documentation trails, and replies to overseas buyers around the clock — because a timezone gap shouldn’t mean a slow reply. Jwero is India-first by design — GST and HUID are built in; invoicing in your buyer’s currency is; local tax rails abroad are not yet.',
-  primary: { href: '#', label: 'Talk shop on WhatsApp', wa: 'export' },
+  primary: { href: '#', label: 'Talk shop with us', wa: 'export' },
   secondary: { href: '/solutions/manufacturers', label: 'See the manufacturer overview' },
 })}
 ${L.section(
@@ -128,7 +128,7 @@ ${L.section(
 )}
 ${L.honestGapsBlock(['Multi-currency order support — not yet shipped; ask us for its current status against your specific export requirement.'])}
 ${L.section(`${L.sectionHead('QUESTIONS EXPORT HOUSES ASK', 'Documentation, timezones and honest gaps — answered.', '')}${L.faqBlock(exportHousesFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/solutions/manufacturers">See the manufacturer overview</a> or <a href="/faq">the full FAQ →</a></p>`)}
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="export">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="export">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Bring one export order.', 'We’ll walk one shipment through the system, from order to documentation.', 'export', { enterprise: true })}
 `,

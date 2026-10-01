@@ -88,7 +88,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('OWNER QUESTIONS', 'Control, the billing counter, and what actually changes.', '')}${L.faqBlock(ownerFaqs)}`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="roles">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="roles">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See what a day looks like on Jwero.', 'Tell us how your shop runs today — we’ll show you exactly where the AI workforce and the approval queue fit in.', 'roles')}
 `,
@@ -262,7 +262,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('NEXT-GEN SUCCESSOR QUESTIONS', 'Handover, trust, and starting from messy records.', '')}${L.faqBlock(nextGenFaqs)}`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own WhatsApp button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own chat button runs on Jwero — <a href="#" data-wa="roles">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Start inheriting the relationships, not just the shop.', 'Tell us what records you’re starting from — we’ll show you how the customer memory gets built from what already exists.', 'roles')}
 `,

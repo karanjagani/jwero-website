@@ -11,7 +11,7 @@ ${L.hero({
   eyebrow: 'PAIN INDEX',
   h1: "What's eating your business?",
   sub: 'Every pain below is real, common, and answered honestly — with a calculator where the math helps, and a straight statement of what Jwero does and doesn’t fix yet.',
-  primary: { href: '#', label: 'Chat with us on WhatsApp', wa: 'pain-index' },
+  primary: { href: '#', label: 'Chat or call with us', wa: 'pain-index' },
   secondary: { href: '/tools', label: 'See all calculators' },
 })}
 
@@ -26,10 +26,10 @@ ${L.section(
     <a class="router-card" href="/solutions/manufacturers"><h3>Manufacturing gold loss</h3><p>Direct gold loss, unmeasured.</p></a>
     <a class="router-card" href="/trust/security"><h3>Data security fear</h3><p>"Family business data leaving us."</p></a>
   </div>
-  <p style="margin-top:18px; font-size:.85rem; color:var(--ink-2);">Not seeing your pain listed? <a href="#" data-wa="pain-index">Tell us on WhatsApp</a> — it becomes the next page we write.</p>`
+  <p style="margin-top:18px; font-size:.85rem; color:var(--ink-2);">Not seeing your pain listed? <a href="#" data-wa="pain-index">Tell us now</a> — it becomes the next page we write.</p>`
 )}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="pain-index">try the WhatsApp button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="pain-index">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Get your own number.', 'Two calculators turn your pain into a monthly cost you can act on.', 'pain-index')}
 `,
@@ -80,7 +80,7 @@ ${L.section(`${L.sectionHead('QUESTIONS ABOUT DEAD STOCK', 'Cost, prediction and
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every WhatsApp button on this site is the actual product, not a mockup — <a href="#" data-wa="deadstock">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="deadstock">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('Wake up the sleeping capital.', 'Calculate your dead-stock cost, then see how memory-driven selling moves what discounting cannot.', 'deadstock')}
 `,
@@ -101,7 +101,7 @@ ${L.hero({
   eyebrow: 'THE PAIN · LEAD LEAKAGE',
   h1: 'You paid for every enquiry. Then most of them vanished.',
   sub: 'The reel worked. The ad worked. She messaged — along with forty others that week. Between personal phones, unanswered DMs and follow-ups nobody owned, most of that hard-won interest simply evaporated. This is the cheapest revenue you are losing.',
-  primary: { href: '#', label: 'See the fix on WhatsApp', wa: 'leadleak' },
+  primary: { href: '#', label: 'See the fix', wa: 'leadleak' },
   secondary: { href: '/products/whatsapp', label: 'WhatsApp Commerce' },
 })}
 
