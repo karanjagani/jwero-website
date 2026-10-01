@@ -6,7 +6,7 @@ const L = require('../lib');
 const whyAnOs = {
   slug: 'why-an-os',
   title: 'Why a Jewellery Business Needs an Operating System, Not Another Tool | Jwero',
-  description: 'What an operating system for a jewellery business is, why a CRM + ERP + WhatsApp tool never becomes one, and what "run by AI" means in practice: one customer record, every module on it, AI that acts on its own or asks first.',
+  description: 'What an operating system for a jewellery business is, why a CRM + ERP + WhatsApp tool never becomes one, and what "run by AI" means in practice: one record, every department on it, AI that acts on its own or asks first.',
   breadcrumbs: [['Home', '/'], ['Why an OS']],
   faqs: [
     { q: 'Isn’t an “operating system” just marketing for an all-in-one?', a: 'An all-in-one bundles modules under one login. An operating system makes every module read and write the same record. The test: when a customer buys at the counter, does her WhatsApp thread, her scheme balance and her next follow-up change without anyone syncing anything? In a bundle, no. In an OS, yes — it is one row.' },
@@ -17,8 +17,8 @@ const whyAnOs = {
   body: `
 ${L.hero({
   eyebrow: 'WHY AN OS',
-  h1: 'Your tools keep records. None of them remembers a customer.',
-  sub: 'A billing tool knows the invoice. A WhatsApp tool knows the chat. The catalogue app knows the design. Nobody knows Meera — what she saved, what she loved, when her daughter is getting married. An operating system fixes that with one move: one record that every module reads and writes.',
+  h1: 'Your tools keep records. None of them sees the whole business.',
+  sub: 'A billing tool knows the invoice. A WhatsApp tool knows the chat. The stock sheet knows the piece, and the karigar book knows the gold. Nobody sees all of it at once: what Meera asked, what is on the shelf, what the vendor is owed, what the day closed at. An operating system fixes that with one move: one record that every module reads and writes.',
   primary: { href: '#', label: 'Show me one record doing all of it', wa: 'platform' },
   secondary: { href: '/platform', label: 'Take the platform tour' },
 })}

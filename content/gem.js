@@ -25,22 +25,23 @@ const FAMILIES = [
 
 const GEM = {
   single: {
-    centre: 'Meera’s record', who: 'Meera',
-    tools: ['Billing software', 'WhatsApp on a phone', 'Excel sheet', 'Scheme register'],
+    centre: 'The shop, on one record', who: 'the shop',
+    tools: ['Billing software', 'WhatsApp on a phone', 'Excel stock sheet', 'Staff register'],
     modules: [
-      ['chat', 'WhatsApp', 'her taste, her scheme balance, today’s rate', 'the conversation', '/products/whatsapp', 1, 1],
-      ['store', 'Counter', 'what she asked on WhatsApp', 'the bill and the old-gold exchange', '/products/pos', 0, 1],
-      ['coins', 'Schemes', 'which instalment is due', 'the payment, the moment it lands', '/products/gold-schemes', 3, 0],
-      ['book', 'Catalogue', 'live prices from the one catalogue', 'what she viewed, and for how long', '/products/digital-catalogues', 1, 1],
-      ['box', 'Stock', 'what has sat on the shelf', 'the sale, piece by piece', '/products/inventory', 2, 0],
-      ['receipt', 'Books', 'every bill and payment', 'GST-ready entries', '/products/billing-finance', 0, 0],
+      ['chat', 'WhatsApp', 'the customer’s taste, scheme balance and today’s rate', 'the conversation', '/products/whatsapp', 1, 1],
+      ['store', 'Counter', 'what she asked before she walked in', 'the bill, the exchange and the day-close', '/products/pos', 0, 1],
+      ['box', 'Stock', 'what is ageing and what is selling', 'every piece in and out', '/products/inventory', 2, 1],
+      ['truck', 'Purchase', 'what is running low', 'the order, the receipt and the vendor’s bill', '/products/purchase-vendors', 2, 0],
+      ['users', 'Team', 'who is in, and what is waiting', 'attendance, targets and incentives', '/products/hr-payroll', 3, 0],
+      ['receipt', 'Books', 'every bill, purchase and payment', 'GST-ready entries', '/products/billing-finance', 0, 0],
     ],
     week: [
-      ['Mon 9pm', 'Asks the price of a 22k bangle on WhatsApp', 0, 'Asked: 22k bangle, about 18 g · reply drafted at today’s rate', [[1, 'Message received']]],
-      ['Tue', 'Opens the catalogue link twice', 3, 'Viewed the temple bangle twice · interest rising', [[1, 'Catalogue viewed'], [0, 'Product viewed']]],
-      ['Thu', 'Pays her scheme instalment', 2, 'Gold plan: 8 of 11 paid', [[5, 'Instalment paid']]],
-      ['Sat 5pm', 'Walks in and tries the bangle', 1, 'The counter knew what she asked · tried two pieces', [[3, 'Walk-in captured'], [3, 'Piece tried on']]],
-      ['Sat', 'Buys, with old gold in exchange', 5, 'Bill posted · stock, scheme and books updated together', [[3, 'Old-gold exchange'], [3, 'Invoice created'], [3, 'Payment received']]],
+      ['Mon 10am', 'The gold rate moves', 2, 'One rate · every tag, link and quote repriced', [[4, 'Gold rate increased']]],
+      ['Mon 9pm', 'Meera asks the price of a 22k bangle on WhatsApp', 0, 'Asked: 22k bangle, about 18 g · reply drafted at today’s rate', [[1, 'Message received']]],
+      ['Wed', 'You reorder bangles from your vendor', 3, 'Purchase order raised · on the vendor’s account', [[8, 'PO issued']]],
+      ['Fri', 'An enquiry sits unanswered for a day', 4, 'Flagged to the owner before it goes cold', [[9, 'Lead unattended']]],
+      ['Sat 5pm', 'Meera walks in and buys, with old gold in exchange', 1, 'The counter knew what she asked · bill, exchange and stock on one screen', [[3, 'Walk-in captured'], [3, 'Old-gold exchange'], [3, 'Invoice created']]],
+      ['Sat 9pm', 'The shop closes the day', 5, 'Cash tallied · stock, vendor and books updated together', [[9, 'Cash reconciliation due']]],
     ],
   },
   chain: {
@@ -136,6 +137,7 @@ const GEM = {
       ['Tue', 'Adds to cart, then leaves', 0, 'Cart abandoned · interest high', [[0, 'Added to cart'], [0, 'Cart abandoned']]],
       ['Wed', 'Gets a WhatsApp nudge with the exact ring', 4, 'Recovery drafted, sent after your tap', [[7, 'Journey entered'], [1, 'Message read']]],
       ['Wed', 'Buys', 5, 'Order, stock and the ad that earned it — on one record', [[0, 'Checkout started'], [3, 'Order created']]],
+    ['Thu', 'That ring runs low; you reorder from the maker', 5, 'Purchase order raised · storefront stock stays true', [[8, 'PO issued']]],
     ],
   },
 };
@@ -175,6 +177,7 @@ GEM.diamondretail = {
     ['Thu', 'Books a video call to see it', 3, 'Video appointment booked', [[3, 'Appointment booked']]],
     ['Sat', 'Visits and tries the ring', 4, 'Tried one piece · quote given at the counter', [[3, 'Piece tried on'], [3, 'Quote given']]],
     ['Sat', 'Buys; the stone was on supplier memo', 5, 'Sold · the supplier’s settlement is raised', [[3, 'Invoice created'], [3, 'Payment received']]],
+    ['Sat 8pm', 'The shop closes the day', 4, 'Cash tallied · stock, supplier account and books updated together', [[9, 'Cash reconciliation due']]],
   ],
 };
 GEM.silver = {
@@ -205,7 +208,7 @@ GEM.bridal = {
     ['receipt', 'Quotation', 'today’s rate and your making rule', 'accepted, declined or revised', '/products/quotations', 2, 1],
     ['coins', 'Schemes', 'the balance she can use', 'the amount applied to the bill', '/products/gold-schemes', 3, 0],
     ['store', 'Counter', 'what the family shortlisted', 'the order and the advance', '/products/pos', 3, 1],
-    ['route', 'Occasions', 'the wedding date', 'the anniversary to remember', '/products/journeys', 0, 0],
+    ['layers', 'Order', 'the accepted quote', 'the job and its delivery date', '/products/erp', 3, 0],
   ],
   week: [
     ['Mon', 'The mother enquires about a bridal set', 0, 'One family thread opened · three decision-makers on it', [[1, 'Message received'], [7, 'Lead captured']]],
@@ -213,6 +216,7 @@ GEM.bridal = {
     ['Wed', 'She tries four sets', 4, 'Tried four · two shortlisted', [[3, 'Piece tried on']]],
     ['Fri', 'The quotation for the set arrives', 2, 'Quote sent · revisions kept in order', [[7, 'Quote sent']]],
     ['Sun', 'The family accepts and pays the advance', 2, 'Accepted · advance on the order', [[7, 'Quote accepted'], [3, 'Payment received']]],
+    ['Next Mon', 'The set goes into making as an order', 5, 'Job raised · delivery date on the family’s record', [[8, 'Job issued']]],
   ],
 };
 GEM.luxury = {
@@ -232,6 +236,7 @@ GEM.luxury = {
     ['Thu', 'Asks to see it on video from abroad', 2, 'Video call booked', [[3, 'Appointment booked']]],
     ['Sat', 'Visits and tries two pieces', 3, 'Tried two · the floor knows which', [[3, 'Piece tried on']]],
     ['Sat', 'Buys the emerald', 5, 'Sold · her taste and sizes updated', [[3, 'Invoice created']]],
+    ['Sat 8pm', 'The boutique closes the day', 5, 'Cash tallied · the piece off stock, the bill in the books', [[9, 'Cash reconciliation due']]],
   ],
 };
 GEM.bullion = {

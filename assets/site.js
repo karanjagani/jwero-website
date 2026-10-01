@@ -433,7 +433,7 @@
 
     // A few live dots on the gutter grid.
     var mainEl = document.querySelector('main');
-    if (mainEl && window.innerWidth >= 1320) {
+    if (mainEl && window.innerWidth >= 1320 && document.body.hasAttribute('data-gutter-dots')) {
       var gutter = (window.innerWidth - 1200) / 2, mh = mainEl.offsetHeight, count = Math.min(40, Math.round(mh / 260));
       for (var gi = 0; gi < count; gi++) {
         var dot = document.createElement('i');
@@ -451,7 +451,7 @@
     }
 
     // Brand panels: the dot matrix becomes a slow field of light.
-    Array.prototype.forEach.call(document.querySelectorAll('.hero-panel .panel, .cta-band .panel, .panel:has(.close-plan)'), function (panel) {
+    Array.prototype.forEach.call(document.querySelectorAll('.hero-panel:not(.hero-home) .panel, .cta-band .panel, .panel:has(.close-plan)'), function (panel) {
       var cv = document.createElement('canvas'), ctx = cv.getContext('2d');
       if (!ctx) return;
       cv.className = 'panel-fx'; cv.setAttribute('aria-hidden', 'true');
@@ -659,6 +659,110 @@
     });
   });
 
+  // Stack merge: tap the tools you run; each tap flies into the count, and
+  // "merge" pulls every selected tool into the one platform.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-stackm]'), function (root) {
+    var total = +root.getAttribute('data-total'), chips = Array.prototype.slice.call(root.querySelectorAll('.stackm-chip'));
+    var nEl = root.querySelector('[data-stackm-n]'), tally = root.querySelector('[data-stackm-tally]'), label = root.querySelector('[data-stackm-label]');
+    var panel = root.querySelector('[data-stackm-panel]'), go = root.querySelector('[data-stackm-go]');
+    var depts = Array.prototype.slice.call(root.querySelectorAll('.stackm-dept'));
+    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var touched = false, merged = false, hintTimer = null, countTimer = null, shown = total;
+    chips.forEach(function (c, i) { c.style.setProperty('--i', i); });
+    function on(b) { return b.getAttribute('aria-pressed') === 'true'; }
+    function picked() { return chips.filter(on); }
+    function setNum(v) { shown = v; nEl.textContent = v; }
+    function bump() { nEl.classList.add('bump'); window.setTimeout(function () { nEl.classList.remove('bump'); }, 260); }
+    function hit() { panel.classList.remove('is-hit'); void panel.offsetWidth; panel.classList.add('is-hit'); }
+    function update() {
+      var c = picked().length;
+      depts.forEach(function (d) {
+        var n = chips.filter(function (x) { return x.getAttribute('data-g') === d.getAttribute('data-g') && on(x); }).length;
+        d.querySelector('[data-stackm-gn]').textContent = n; d.classList.toggle('has', n > 0);
+      });
+      setNum(c || total); bump();
+      label.textContent = c ? 'Tools you run today' : 'Tools a jewellery business can end up running';
+      tally.innerHTML = c ? '<b>' + c + '</b> login' + (c === 1 ? '' : 's') + ', <b>' + c + '</b> bill' + (c === 1 ? '' : 's') + ' and <b>' + c + '</b> vendor' + (c === 1 ? '' : 's') + ' become one of each.' : 'Tap every one you run today.';
+      go.textContent = c ? 'Merge my ' + c + ' into one' : 'Merge them into one';
+    }
+    function centre(el) { var r = el.getBoundingClientRect(), o = root.getBoundingClientRect(); return [r.left + r.width / 2 - o.left, r.top + r.height / 2 - o.top]; }
+    function fly(chip) {
+      if (calm || !root.animate) { hit(); return; }
+      var a = centre(chip), b = centre(nEl), dot = document.createElement('i');
+      dot.className = 'stackm-fly'; dot.style.left = a[0] + 'px'; dot.style.top = a[1] + 'px'; root.appendChild(dot);
+      var anim = dot.animate([{ transform: 'translate(0,0) scale(1)', opacity: 1 }, { transform: 'translate(' + (b[0] - a[0]) * .5 + 'px,' + ((b[1] - a[1]) * .5 - 40) + 'px) scale(1.3)', opacity: 1, offset: .5 }, { transform: 'translate(' + (b[0] - a[0]) + 'px,' + (b[1] - a[1]) + 'px) scale(.4)', opacity: .2 }], { duration: 520, easing: 'cubic-bezier(.5,0,.3,1)' });
+      anim.onfinish = function () { dot.remove(); hit(); };
+    }
+    function unmerge() {
+      merged = false; window.clearInterval(countTimer); root.classList.remove('is-merged'); root.classList.remove('is-merging');
+      chips.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      update();
+    }
+    function merge() {
+      if (!picked().length) chips.forEach(function (x) { x.setAttribute('aria-pressed', 'true'); });
+      update();
+      var sel = picked(), b = centre(nEl), from = sel.length;
+      sel.forEach(function (x, k) { var a = centre(x); x.style.setProperty('--dx', (b[0] - a[0]) + 'px'); x.style.setProperty('--dy', (b[1] - a[1]) + 'px'); x.style.setProperty('--m', k); });
+      merged = true; root.classList.remove('is-filter'); root.classList.add('is-open');
+      label.textContent = 'Merging';
+      var steps = Math.min(from - 1, 24), k = 0;
+      function done() { root.classList.add('is-merged'); label.textContent = 'What you run now'; tally.innerHTML = '<b>' + from + '</b> tools, logins and bills are now <b>one</b>.'; go.textContent = 'Start again'; }
+      void root.offsetWidth; root.classList.add('is-merging');
+      if (calm || steps < 1) { done(); return; }
+      window.clearInterval(countTimer);
+      countTimer = window.setInterval(function () {
+        k += 1; setNum(Math.max(1, Math.round(from - (from - 1) * (k / steps)))); bump();
+        if (k >= steps) { window.clearInterval(countTimer); done(); }
+      }, 34);
+    }
+    root.addEventListener('click', function (e) {
+      var b = e.target.closest('.stackm-chip'), d = e.target.closest('.stackm-dept');
+      if (e.target.closest('[data-stackm-more]')) { root.classList.add('is-open'); return; }
+      if (e.target.closest('[data-stackm-go]')) { touched = true; stopHint(); if (merged) unmerge(); else merge(); return; }
+      if (merged) return;
+      if (b) { var was = on(b); b.setAttribute('aria-pressed', was ? 'false' : 'true'); if (!was) fly(b); }
+      else if (d) {
+        var g = d.getAttribute('data-g'), mine = chips.filter(function (x) { return x.getAttribute('data-g') === g; });
+        var all = mine.every(on);
+        mine.forEach(function (x) { x.setAttribute('aria-pressed', all ? 'false' : 'true'); });
+        root.classList.add('is-open'); if (!all) hit();
+      }
+      else if (e.target.closest('[data-stackm-all]')) { chips.forEach(function (x) { x.setAttribute('aria-pressed', 'true'); }); root.classList.add('is-open'); hit(); }
+      else if (e.target.closest('[data-stackm-clear]')) chips.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      else return;
+      touched = true; stopHint(); update();
+    });
+    // Hovering a department lights its tools and dims the rest.
+    depts.forEach(function (d) {
+      function lit(yes) {
+        if (merged) return;
+        var g = d.getAttribute('data-g');
+        root.classList.toggle('is-filter', yes); d.classList.toggle('is-on', yes);
+        chips.forEach(function (x) { x.classList.toggle('is-lit', yes && x.getAttribute('data-g') === g); });
+      }
+      d.addEventListener('mouseenter', function () { lit(true); }); d.addEventListener('mouseleave', function () { lit(false); });
+      d.addEventListener('focus', function () { lit(true); }); d.addEventListener('blur', function () { lit(false); });
+    });
+    // Until the first tap, one tool at a time glows as an invitation.
+    function stopHint() { window.clearInterval(hintTimer); hintTimer = null; chips.forEach(function (x) { x.classList.remove('is-hint'); }); }
+    function startHint() {
+      if (touched || calm || hintTimer) return;
+      hintTimer = window.setInterval(function () {
+        chips.forEach(function (x) { x.classList.remove('is-hint'); });
+        var vis = chips.filter(function (x) { return x.offsetParent && x.offsetTop < x.parentNode.clientHeight; });
+        if (vis.length) vis[Math.floor(Math.random() * vis.length)].classList.add('is-hint');
+      }, 1100);
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (en) {
+          if (en.isIntersecting) { root.classList.add('is-in'); window.setTimeout(function () { root.classList.add('is-ready'); }, 1400); startHint(); }
+          else if (hintTimer) { window.clearInterval(hintTimer); hintTimer = null; }
+        });
+      }, { threshold: .15 }).observe(root);
+    } else { root.classList.add('is-in'); root.classList.add('is-ready'); }
+  });
+
   // Ask the stone what a module reads and writes.
   Array.prototype.forEach.call(document.querySelectorAll('[data-gem]'), function (stage) {
     var nodes = Array.prototype.slice.call(stage.querySelectorAll('.gem-node'));
@@ -689,6 +793,7 @@
     var stage = root.querySelector('.gem2-stage'), cv = stage.querySelector('canvas'), ctx = cv.getContext && cv.getContext('2d');
     var nodesEl = root.querySelector('[data-gem2-nodes]'), shardsEl = root.querySelector('[data-gem2-shards]'), centreEl = root.querySelector('[data-gem2-centre]');
     var linesEl = root.querySelector('[data-gem2-lines]'), noteEl = root.querySelector('[data-gem2-note]'), eventsEl = root.querySelector('[data-gem2-events]');
+    var capEl = root.querySelector('[data-gem2-caption]'), loop = root.hasAttribute('data-loop');
     var cardTitle = root.querySelector('[data-gem2-cardtitle]'), cardTag = root.querySelector('[data-gem2-cardtag]'), playBtn = root.querySelector('[data-gem2-play]');
     var esc2 = function (t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
     var FAMS = DATA.families || [], famBtns = Array.prototype.slice.call(root.querySelectorAll('.gem2-fam')), heardEl = root.querySelector('[data-gem2-heard]'), sigNote = root.querySelector('[data-gem2-signote]'), famOpen = -1;
@@ -957,6 +1062,7 @@
       if (k < 0) { renderLines(); select(-1); return; }
       var ev = set.week[k];
       select(ev[2], true); pulse(ev[2], false, 0); glow[ev[2]] = 1;
+      if (capEl) capEl.innerHTML = '<b>' + esc2(ev[0]) + '</b>' + esc2(ev[1]) + '<span>' + esc2(ev[3]) + '</span>';
       renderLines();
       var on = evBtns[k]; if (on && eventsEl.scrollTo) eventsEl.scrollTo({ left: on.parentNode.offsetLeft - 16, behavior: reduceMotion ? 'auto' : 'smooth' });
     }
@@ -966,7 +1072,7 @@
       if (step >= set.week.length - 1) { rated = false; go(-1); }
       playBtn.textContent = 'Pause'; playBtn.setAttribute('aria-pressed', 'true');
       go(step + 1);
-      timer = window.setInterval(function () { if (step >= set.week.length - 1) return stop(); go(step + 1); }, 2600);
+      timer = window.setInterval(function () { if (step >= set.week.length - 1) { if (loop) { rated = false; go(0); } else stop(); return; } go(step + 1); }, loop ? 3200 : 2600);
     }
     function setMode(mo) {
       mode = mo; explodeTo = mo === 'today' ? 1 : 0;
@@ -1412,7 +1518,7 @@
     var hero = document.querySelector('main .hero'); if (!hero) return;
     var box = document.createElement('div');
     box.className = 'short-version';
-    box.innerHTML = '<div class="container"><span class="short-tag">The short version</span><p>Jwero runs your whole jewellery business from one customer record, and the AI does the remembering. Nothing sends without your yes.</p>' +
+    box.innerHTML = '<div class="container"><span class="short-tag">The short version</span><p>Jwero runs your whole jewellery business on one record: customers, counter, stock, workshop, team and books. AI drafts the work, and nothing sends without your yes.</p>' +
       '<a href="/why-an-os">What it is</a><a href="/pricing">What it costs</a><a href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=ai-referrer" rel="noopener">Start free</a><a href="#" data-wa="default">Ask a person</a></div>';
     hero.insertAdjacentElement('afterend', box);
     var a = box.querySelector('[data-wa]'); a.setAttribute('href', waLink('default')); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
@@ -1630,6 +1736,12 @@
     });
     [gDisc, gCt].forEach(function (el) { el.addEventListener('input', gridCalc); });
     gridCalc();
+  }
+
+  // Motion only where the reader is looking: sections off screen pause their CSS animations.
+  if (canObserve) {
+    var offIo = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('is-off', !e.isIntersecting); }); }, { rootMargin: '120px' });
+    Array.prototype.forEach.call(document.querySelectorAll('main > section, .site-footer'), function (sn) { offIo.observe(sn); });
   }
 
   // Back to top: the rocket lifts first, the page follows.

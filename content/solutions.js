@@ -84,7 +84,7 @@ ${L.ctaBand('Not sure which page is yours?', 'Tell us what you sell and how — 
 const singleStore = {
   slug: 'solutions/single-store',
   title: 'Software for Single-Store Jewellery Businesses | Jwero',
-  description: 'Keep the relationships that built your store — in a system that belongs to the store. Customer memory, WhatsApp selling and schemes, live in days.',
+  description: 'Run the whole shop on one system: billing, stock, purchase, books and staff, with customer memory, WhatsApp selling and schemes, live in days.',
   breadcrumbs: BC('Single store'),
   faqs: [
     { q: 'Is Jwero too much system for one store?', a: 'No — you start with three things: your customer list imported, your WhatsApp connected, your catalogue published. Everything else switches on only when you want it. One store with memory beats three without.' },
@@ -96,11 +96,11 @@ const singleStore = {
   body: `
 ${L.hero({
   eyebrow: 'FOR SINGLE-STORE JEWELLERY BUSINESSES',
-  h1: 'Run the whole shop from one screen — and keep every customer when staff leave.',
-  sub: 'Run the whole shop from one screen — every customer remembered, every enquiry answered in seconds, without hiring anyone. The same operating system a chain runs, sized for one counter.',
+  h1: 'Run the whole shop from one screen: counter, stock, books and every customer.',
+  sub: 'Billing at the live rate, stock valued today, purchases and vendor dues, staff attendance and the day-close, with every customer remembered and every enquiry answered in seconds. The same operating system a chain runs, sized for one counter.',
   primary: { href: '#', label: 'Tell us about your business', wa: 'single-store' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
-  mock: L.mockMemory,
+  mock: L.mockShop(),
 })}
 
 ${L.section(
@@ -166,8 +166,8 @@ const chains = {
   body: `
 ${L.hero({
   eyebrow: 'FOR MULTI-STORE BUSINESSES & CHAINS',
-  h1: 'Every branch on one record, so a customer is known at every counter and you see it all live.',
-  sub: 'You know exactly why the biggest players win: every branch consistent, every customer known, every campaign measured. Jwero gives your network that same spine — without a head-office IT department, and without betting the season on a rip-out.',
+  h1: 'Every branch on one record: stock, cash, customers and staff, seen live from head office.',
+  sub: 'You know exactly why the biggest players win: every branch consistent, every customer known, every gram and rupee counted, every campaign measured. Jwero gives your network that same spine — without a head-office IT department, and without betting the season on a rip-out.',
   primary: { href: '#', label: 'Talk to a specialist', wa: 'chains' },
   secondary: { href: '/book-demo', label: 'Book an evaluation demo' },
 })}

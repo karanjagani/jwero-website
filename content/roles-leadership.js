@@ -15,14 +15,14 @@ const ownerFaqs = [
 const ownerRole = {
   slug: 'roles/owner',
   title: 'Owner / Proprietor — Run the Shop From a Record You Own | Jwero',
-  description: 'How Jwero changes the owner’s day: enquiries answered while you sleep, follow-ups independent of memory, and a record owned by the shop, not one person’s head.',
+  description: 'How Jwero changes the owner’s day: today’s sales, cash and stock on one screen, enquiries answered while you sleep, and a record owned by the shop, not one person’s head.',
   breadcrumbs: BC('Owner / Proprietor'),
   faqs: ownerFaqs,
   body: `
 ${L.hero({
   eyebrow: 'LEADERSHIP · OWNER',
   h1: 'You built this business on memory. Now it has a backup.',
-  sub: 'Right now, if you’re not in the shop, half the context leaves with you — who’s due a call, what’s ageing on the shelf, what a regular customer actually likes. Jwero puts that memory on a record the business owns, with a governed AI workforce handling the repetitive parts while you keep every real decision.',
+  sub: 'Right now, if you’re not in the shop, half the context leaves with you — who’s due a call, what’s ageing on the shelf, what the vendor is owed, how the day closed. Jwero puts all of it on a record the business owns, shows you today’s sales, cash, stock and pending work on one screen, and has a governed AI workforce handle the repetitive parts while you keep every real decision.',
   primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -202,7 +202,7 @@ const nextGenRole = {
 ${L.hero({
   eyebrow: 'LEADERSHIP · NEXT-GEN SUCCESSOR',
   h1: 'Inherit the business. And the memory that built it.',
-  sub: 'The hardest part of taking over isn’t the stock or the counter — it’s that your parents’ generation knows every customer by instinct, and that knowledge rarely transfers cleanly. Jwero turns that memory into a record you can actually inherit, while keeping the trust-based way the business has always run.',
+  sub: 'The hardest part of taking over isn’t the stock or the counter — it’s that your parents’ generation runs it by instinct: every customer, every vendor’s terms, every karigar’s balance, and that knowledge rarely transfers cleanly. Jwero turns that memory into a record you can actually inherit, while keeping the trust-based way the business has always run.',
   primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}

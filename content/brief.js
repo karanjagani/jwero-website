@@ -26,7 +26,7 @@ ${L.section(`
 
   <section class="brief-block">
     <h2>What it is, in one sentence</h2>
-    <p>Jwero runs the whole jewellery business — customers, catalogue, WhatsApp, counter, schemes, workshop, books — from one customer record, and the AI does the remembering and the drafting. Nothing the AI writes is sent until a person taps yes, until you decide otherwise, one action type at a time.</p>
+    <p>Jwero runs the whole jewellery business — customers, catalogue, WhatsApp, counter, schemes, workshop, books — from one record, and the AI does the remembering, the drafting and the flagging of what is slipping. Nothing the AI writes is sent until a person taps yes, until you decide otherwise, one action type at a time.</p>
   </section>
 
   <section class="brief-block brief-cols">

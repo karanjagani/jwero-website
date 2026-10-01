@@ -174,7 +174,7 @@ const erpToOs = {
 ${L.hero({
   eyebrow: 'FROM ERP TO OS',
   h1: 'Your ERP was built around the invoice. Your customers moved to WhatsApp.',
-  sub: 'Every era of jewellery software had a centre. The register had the owner’s memory. The ERP has the ledger. The operating system has the customer — and AI working her record on every door. This is why the shift is happening now, in plain words, and what it changes.',
+  sub: 'Every era of jewellery software had a centre. The register had the owner’s memory. The ERP has the ledger. The operating system keeps everything the ERP did, billing, stock, purchase, workshop and accounts, and adds what it never saw: the customer, the enquiry, the showroom floor and the team, on one record with AI working it. This is why the shift is happening now, in plain words, and what it changes.',
   primary: { href: '#', label: 'Show me the difference on my business', wa: 'erp' },
   secondary: { href: '/erp-to-os/switching', label: 'Is switching risky? Read this first' },
 })}

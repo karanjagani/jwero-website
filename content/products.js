@@ -3,13 +3,13 @@ const L = require('../lib');
 const productsIndex = {
   slug: 'products',
   title: 'Products — The Jwero App Grid | Jwero',
-  description: 'Every Jwero product, grouped by promise: Sell, Market, Know, Run and Grow — all sharing one customer record, one catalogue and one inventory truth.',
+  description: 'Every Jwero product, grouped by promise: Sell, Market, Know, Run and Grow — all sharing one record: customers, catalogue, stock, orders and books.',
   breadcrumbs: [['Home', '/'], ['Products']],
   body: `
 ${L.hero({
   eyebrow: 'PRODUCTS',
   h1: 'Every product Jwero makes — and the one record they all share.',
-  sub: 'Every product below reads and writes the same customer record, catalogue and inventory truth. Grouped by what it promises, not what department bought it.',
+  sub: 'Every product below reads and writes the same record: customers, catalogue, stock, orders and books. Grouped by what it promises, not what department bought it.',
   primary: { href: '#', label: 'Tell me which three products matter first', wa: 'products' },
   secondary: { href: '/platform', label: 'See the platform tour' },
 })}

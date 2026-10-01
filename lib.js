@@ -835,18 +835,39 @@ const mockMemory = `
   <div class="mock-foot">198 kinds of signal feed a record like this — 11 live scores, each with a “why”, decide who to reach and when.</div>
 </div>`;
 
+// The shop's day on one screen: counter, stock and day-close. Illustrative
+// figures; the hero visual for whole-business pages.
+function mockShop(o = {}) {
+  const d = Object.assign({
+    title: 'The shop · today, 9:04 pm',
+    counter: [['Last bill', '22k bangle · old gold adjusted · GST'], ['Bills today', '14']],
+    stock: [['On hand, valued at today’s rate', '1,284 pieces'], ['Sitting 180 days or more', '37 pieces']],
+    close: [['Cash counted against bills', 'Matched'], ['Posted to the books', '14 bills · 2 purchases']],
+  }, o);
+  const secs = d.secs || [['store', 'Counter', d.counter], ['box', 'Stock', d.stock], ['receipt', 'Day-close', d.close]];
+  const names = secs.map((s) => s[1].toLowerCase());
+  const list = names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
+  const rows = (r) => r.map(([k, v]) => `<div class="mock-kv"><span>${k}</span><strong>${v}</strong></div>`).join('');
+  return `
+<div class="mock mock-shop" role="img" aria-label="Illustration of ${list} on one screen">
+  <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">${d.title}</span></div>
+  ${secs.map(([ic, label, r]) => `<p class="mock-sec">${icon(ic)}${label}</p>${rows(r)}`).join('\n  ')}
+  <div class="mock-foot">An illustration. ${list.charAt(0).toUpperCase() + list.slice(1)} read and write the same record, so the day closes on the numbers, not from memory.</div>
+</div>`;
+}
+
 // The one-record architecture visual — the home/platform OS-proof centrepiece (BP2 §1.1.3, home B3).
 const mockOneRecord = `
-<div class="mock mock-onerecord" role="img" aria-label="Illustration of one customer record touched by every module">
-  <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">One record · Meera K.</span></div>
+<div class="mock mock-onerecord" role="img" aria-label="Illustration of one record touched by every department">
+  <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">One record · the whole business</span></div>
   <div class="onerecord-grid">
+    <div class="onerecord-chip">🧾 Counter bill</div>
+    <div class="onerecord-chip">📦 Stock in and out</div>
+    <div class="onerecord-center">One record<br><span>customers · stock · cash · team</span></div>
     <div class="onerecord-chip">💬 WhatsApp reply</div>
-    <div class="onerecord-chip">🛍 Catalogue share</div>
-    <div class="onerecord-center">Meera K.<br><span>198 signals · 11 scores</span></div>
-    <div class="onerecord-chip">💰 Scheme reminder</div>
-    <div class="onerecord-chip">🧾 Invoice</div>
+    <div class="onerecord-chip">📒 Books</div>
   </div>
-  <div class="mock-foot">Every module reads and writes this one row. That's the operating system.</div>
+  <div class="mock-foot">Every module reads and writes this one record. That's the operating system.</div>
 </div>`;
 
 // ---------------------------------------------------------------- graphics
@@ -895,6 +916,136 @@ function gemStage({ nodes, callouts }) {
 }
 
 
+// The whole business, department by department: today versus on one record.
+// Shown on the home page and the platform page.
+const DEPARTMENTS = [
+  {
+    lever: 'CUSTOMERS',
+    before: 'An enquiry at 11pm waits until morning, and a salesperson who leaves takes the relationships with them.',
+    after: 'Every enquiry gets a priced reply within minutes, and every customer lives on the business’s own record.',
+    link: { href: '/products/crm', label: 'See the CRM' },
+  },
+  {
+    lever: 'SHOWROOM',
+    before: 'Nobody knows who walked in, what they tried, or why they left without buying.',
+    after: 'Walk-ins checked in, a live view of the floor, and a follow-up drafted for every walkout.',
+    link: { href: '/products/showroom', label: 'See the floor' },
+  },
+  {
+    lever: 'BILLING',
+    before: 'Rate typed by hand, old gold worked out on a calculator, the day closed from memory.',
+    after: 'Scan to bill at the live rate, with old-gold exchange, returns, GST and a cash day-close on one screen.',
+    link: { href: '/products/pos', label: 'See the counter' },
+  },
+  {
+    lever: 'STOCK',
+    before: 'Capital frozen in designs nobody is buying, and a stock value that is a guess.',
+    after: 'Every piece valued at today’s rate, ageing flagged, and idle pieces matched to the customers who would buy them.',
+    link: { href: '/products/inventory', label: 'See inventory' },
+  },
+  {
+    lever: 'PURCHASE',
+    before: 'Orders on phone calls, vendor balances in a notebook, bills matched at month end.',
+    after: 'Purchase order, goods received, bill and credit note in one chain, and vendors check their own status.',
+    link: { href: '/products/purchase-vendors', label: 'See purchase' },
+  },
+  {
+    lever: 'WORKSHOP',
+    before: 'Gold goes out to the karigar and the shortfall shows up at stocktake.',
+    after: 'Metal issued and returned in fine grams, with wastage checked against the norm at each stage.',
+    link: { href: '/products/manufacturing', label: 'See manufacturing' },
+  },
+  {
+    lever: 'ACCOUNTS',
+    before: 'The accountant re-enters every bill, and receivables are chased when someone remembers.',
+    after: 'Every sale, purchase and payment posts itself, GST-ready, with Tally and Zoho Books bridges.',
+    link: { href: '/products/billing-finance', label: 'See the books' },
+  },
+  {
+    lever: 'TEAM',
+    before: 'Attendance in a register, incentives argued at month end, training by standing next to someone.',
+    after: 'Attendance, payroll, incentives and training on the same record as the sales they earned.',
+    link: { href: '/products/hr-payroll', label: 'See HR' },
+  },
+  {
+    lever: 'DECISIONS',
+    before: 'You learn how the month went after it ends, from a report somebody built by hand.',
+    after: 'Today’s sales, stock, cash and pending work on one dashboard. Ask a question, get a report.',
+    link: { href: '/products/reports', label: 'See reports' },
+  },
+];
+
+// Every separate tool a jewellery business ends up running, by department:
+// one dense cloud, all visible and tappable, with the count between the tools
+// and the one platform, and a merge that pulls them into it.
+// Each name is something a Jwero module does today. The cloud is alphabetical;
+// the department tabs still light and select their own tools.
+const STACK = [
+  ['Selling', 'chat', ['WhatsApp API', 'Instagram DMs', 'Facebook page inbox', 'Website live chat', 'Forms', 'Document viewer', 'Ecommerce website', 'Marketplace seller panels', 'Video call app', 'Meetings', 'Catalogue PDF maker', 'Quotation maker', 'Business email']],
+  ['Counter', 'store', ['ERP', 'Billing software', 'POS counter', 'Barcode &amp; tagging', 'Gold rate updates', 'Old-gold calculator', 'Estimate pad']],
+  ['Stock', 'box', ['Inventory software', 'Inventory intelligence']],
+  ['Workshop', 'scale', ['Hallmark tracker']],
+  ['Customers', 'record', ['CRM', 'Loyalty cards', 'Gold scheme register', 'Girvi register', 'Digital gold app', 'Occasion diary', 'Appointment diary', 'Walk-in register', 'CCTV tracking', 'RFM', 'Customer segmentation', 'Customer journeys', 'Lead finder']],
+  ['Marketing', 'megaphone', ['SMS', 'RCS', 'Push notifications', 'Email marketing tool', 'Social media scheduler', 'Pinterest', 'YouTube', 'LinkedIn', 'Google Business reviews', 'Ads manager', 'Website heatmaps', 'Broadcasts', 'Campaigns', 'Visitor tracking']],
+  ['AI', 'sparkle', ['AI agents', 'Voice AI', 'MCP tools', 'AI image generation', 'AI content creation', 'Automation tool']],
+  ['Books', 'receipt', ['Tally integration', 'Zoho integration', 'Payment reminders']],
+  ['Team', 'users', ['HR', 'Attendance register', 'Payroll software', 'Incentive sheet', 'LMS', 'Team chat app', 'Hiring tracker']],
+  ['Decisions', 'pie', ['MIS reports', 'Branch report calls', 'Call tracking tool']],
+];
+const STACK_N = STACK.reduce((a, g) => a + g[2].length, 0);
+function stackMerge() {
+  return `
+<div class="stackm" data-stackm data-total="${STACK_N}">
+  <div class="stackm-main">
+    <div class="stackm-depts" role="group" aria-label="Departments">
+      ${STACK.map(([name, ic, items], g) => `<button type="button" class="stackm-dept" data-g="${g}">${icon(ic)}<span>${name}</span><em><b data-stackm-gn>0</b>/${items.length}</em></button>`).join('')}
+    </div>
+    <div class="stackm-cloud" data-stackm-cloud>
+      ${STACK.flatMap(([, , items], g) => items.map((t) => [t, g])).sort((x, y) => x[0].localeCompare(y[0], 'en', { sensitivity: 'base' })).map(([t, g]) => `<button type="button" class="stackm-chip" data-g="${g}" aria-pressed="false">${t}</button>`).join('')}
+    </div>
+    <button type="button" class="stackm-more" data-stackm-more>Show all ${STACK_N}</button>
+  </div>
+  <aside class="stackm-panel" data-stackm-panel>
+    <p class="stackm-label" data-stackm-label>Tools a jewellery business can end up running</p>
+    <p class="stackm-num" aria-live="polite"><b data-stackm-n>${STACK_N}</b><i>→</i><b class="stackm-one">1</b></p>
+    <strong>One platform.</strong>
+    <span>One login. One record. One bill.</span>
+    <p class="stackm-tally" data-stackm-tally>Tap every one you run today.</p>
+    <button type="button" class="stackm-go" data-stackm-go>Merge them into one</button>
+    <div class="stackm-actions">
+      <button type="button" data-stackm-all>Select all ${STACK_N}</button>
+      <button type="button" data-stackm-clear>Clear</button>
+    </div>
+  </aside>
+</div>`;
+}
+
+// The home hero: one question, one action, and the piece as the visual.
+function homeHero({ kicker, h1, sub }) {
+  return `
+<section class="hero hero-panel hero-home">
+  <div class="panel">
+    <div class="panel-glow" aria-hidden="true"></div>
+    <div class="hero-home-grid">
+      <div class="hero-home-copy">
+        <p class="hero-kicker">${mark('mark-xs')}${kicker}</p>
+        <h1>${h1}</h1>
+        <p class="sub">${sub}</p>${icpPick()}
+        <div class="cta-row hero-home-cta">
+          <a class="btn btn-primary" href="${TRIAL_URL}home-hero" rel="noopener" data-trial>Start my 14-day free trial</a>
+          <a class="hero-quiet" href="#" data-wa="home">or chat or call with us</a>
+        </div>
+        <p class="cta-note">No card. Every module. ₹9,999 a month after the trial, billed annually.</p>
+      </div>
+      <div class="hero-home-piece">
+        ${gemStage2({ hero: true })}
+        <a class="hero-piece-link" href="#one-record">This bangle is your business on one record. Play with it ↓</a>
+      </div>
+    </div>
+  </div>
+</section>`;
+}
+
 // The stone as the customer record: play a week through it, break it into the
 // tools it lives in today, turn it, tap a facet, move the gold rate. Data per
 // kind of business in content/gem.js; the canvas and controls are in site.js.
@@ -905,7 +1056,7 @@ function gemStage2(opts = {}) {
   const d = GEM[opts.set] || GEM.single;
   const json = JSON.stringify({ sets: GEM, icons, families: FAMILIES }).replace(/</g, '\\u003c');
   return `
-<div class="gem2${opts.set ? ' gem2-page' : ''}" data-gem2 data-metal="${opts.metal || 'gold'}"${opts.set ? ` data-set="${opts.set}" data-fixed-metal="${opts.metal || 'gold'}"` : ''}>
+<div class="gem2${opts.set ? ' gem2-page' : ''}${opts.hero ? ' gem2-hero' : ''}" data-gem2 data-metal="${opts.metal || 'gold'}"${opts.set ? ` data-set="${opts.set}"` : ''}${opts.set || opts.hero ? ` data-fixed-metal="${opts.metal || 'gold'}"` : ''}${opts.hero ? ' data-loop' : ''}>
   <script type="application/json" data-gem2-json>${json}</script>
   <div class="gem2-top">
     <div class="gem2-switch" role="group" aria-label="Where the record lives">
@@ -936,6 +1087,7 @@ function gemStage2(opts = {}) {
       <div class="gem2-shards" data-gem2-shards aria-hidden="true"></div>
       <p class="gem2-centre" data-gem2-centre>${esc(d.centre)}</p>
     </div>
+    <p class="gem2-caption" data-gem2-caption aria-live="polite"></p>
     <aside class="gem2-card" aria-live="polite">
       <p class="eyebrow" data-gem2-cardtag>ON THE RECORD</p>
       <h3 data-gem2-cardtitle>${esc(d.centre)}</h3>
@@ -959,7 +1111,7 @@ function heroSchematic(iconName, label) {
 <div class="schematic" aria-hidden="true">
   ${node(iconName, 'sch-this', esc(label))}
   <div class="sch-wire"><i></i></div>
-  ${node('record', 'sch-core', 'Customer record')}
+  ${node('record', 'sch-core', 'One record')}
   <div class="sch-wire sch-wire-fan"><i></i></div>
   <div class="sch-rest">${[['chat', 'Inbox'], ['book', 'Catalogue'], ['box', 'Inventory'], ['receipt', 'Billing']].filter((x) => x[0] !== iconName).slice(0, 3).map(([i, l]) => `<div class="sch-node sch-dim" title="${l}">${icon(i)}</div>`).join('')}</div>
 </div>`;
@@ -1177,7 +1329,7 @@ function customerLogos() {
 
 module.exports = {
   esc, icon, autoIcon, sim, controlSplit, mockMemo, LINK_ICONS, PERSONAS, personaSlot, personaSwitch, systemSplit, gemStage, heroSchematic, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
-  mark, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockOneRecord,
+  mark, homeHero, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,
 };

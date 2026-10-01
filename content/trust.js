@@ -228,8 +228,8 @@ const migration = {
   body: `
 ${L.hero({
   eyebrow: 'MIGRATION CENTRE',
-  h1: 'Keep your books. Change your growth.',
-  sub: 'The riskiest software decision is a rip-out — so we designed the opposite. Jwero lands in days without touching your ledger, proves itself with a weekly report, and expands only as fast as the results earn it.',
+  h1: 'Switch one department at a time. Keep what works.',
+  sub: 'The riskiest software decision is a rip-out — so we designed the opposite. Jwero lands in days alongside your billing and your books, proves itself with a weekly report, and takes over the counter, stock, purchase and accounts only as fast as the results earn it.',
   primary: { href: '#', label: 'Plan my migration', wa: 'migration' },
   secondary: { href: '/book-demo', label: 'Book a migration call' },
 })}

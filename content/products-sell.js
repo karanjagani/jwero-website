@@ -495,7 +495,7 @@ const socialMedia = {
   faqs: [
     { q: 'What can I actually schedule and manage from Jwero?', a: 'Posts across your social platforms from one composer, with a preview of how each post will look on each channel before it goes out, plus a unified inbox for the comments and DMs that come back.' },
     { q: 'Does the AI reply to comments and DMs on its own?', a: 'It drafts replies — including handling Instagram private replies — using the same "AI drafts, human approves" governance as the rest of Jwero. Your team approves before anything sends, until you choose to promote a reply type.' },
-    { q: 'Which platforms are supported?', a: 'Instagram and Facebook are the flagship, proven channels — the same official integrations this site’s /products/instagram-facebook page already sells. Additional platforms including LinkedIn, X, Pinterest, YouTube and Google Business are part of the roadmap; ask us which are confirmed live for your account before you plan a launch around one.' },
+    { q: 'Which platforms are supported?', a: 'Instagram, Facebook, LinkedIn, Pinterest, YouTube and Google Business are live, each through its official integration. X is on the roadmap.' },
     { q: 'Is this different from Instagram & Facebook Commerce?', a: 'That page is the focused Instagram/Facebook experience. Social Media Management is the broader version: scheduling, preview and analytics across channels, with the same unified inbox and AI-drafted replies underneath.' },
     { q: 'Can I see how my posts and replies are performing?', a: 'Yes — analytics sit alongside the composer and inbox, so scheduling, replying and measuring stay in the same place instead of a separate reporting tool.' },
     { q: 'Do I need someone watching every channel all day?', a: 'No — the unified inbox collects every comment and DM in one place, and AI drafts the first response; your team reviews and approves rather than monitoring each platform separately.' },
@@ -529,11 +529,11 @@ ${L.oneSystemBlock([
 ])}
 
 ${L.honestGapsBlock([
-  'Not every one of the additional platforms (LinkedIn, X, Pinterest, YouTube, Google Business) is confirmed live for publishing on every account yet — Instagram and Facebook are the proven, flagship channels; ask us which others are live before you plan around one.',
+  'Publishing to X is not live yet. Instagram, Facebook, LinkedIn, Pinterest, YouTube and Google Business are.',
 ])}
 
 ${L.section(`${L.sectionHead('SOCIAL MEDIA QUESTIONS', 'Platform coverage and who approves what.', '')}${L.faqBlock([
-  { q: 'Which platforms are supported?', a: 'Instagram and Facebook are the flagship, proven channels. Additional platforms including LinkedIn, X, Pinterest, YouTube and Google Business are on the roadmap — ask which are live for your account.' },
+  { q: 'Which platforms are supported?', a: 'Instagram, Facebook, LinkedIn, Pinterest, YouTube and Google Business are live. X is on the roadmap.' },
   { q: 'Does the AI reply on its own?', a: 'It drafts; your team approves before anything sends, until you choose to promote a reply type — same governance as the rest of Jwero.' },
   { q: 'How is this different from Instagram & Facebook Commerce?', a: 'That page is the focused Instagram/Facebook experience; this is the broader multi-platform scheduling, inbox and analytics layer built on the same foundation.' },
 ])}

@@ -21,7 +21,7 @@ const partners = {
 ${L.hero({
   eyebrow: 'PARTNERS',
   h1: 'Bring Jwero to the jewellers you already serve.',
-  sub: 'You already have the relationship — as their billing/ERP dealer, their accountant, or their trusted consultant. Jwero adds the customer, WhatsApp and scheme layer they don’t have. It doesn’t touch the ledger relationship that’s already yours.',
+  sub: 'You already have the relationship — as their billing/ERP dealer, their accountant, or their trusted consultant. Jwero gives them one system for customers, WhatsApp, the counter, stock, purchase, the workshop and schemes, and bridges to the books you already keep for them. The ledger relationship stays yours.',
   primary: { href: '#', label: 'Talk to us', wa: 'partners' },
   secondary: { href: '/migration', label: 'See how coexistence works' },
 })}

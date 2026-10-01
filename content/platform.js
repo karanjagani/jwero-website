@@ -4,7 +4,7 @@ const BC = (label) => [['Home', '/'], ['Platform', '/platform'], [label]];
 const platform = {
   slug: 'platform',
   title: 'The Jewellery Business Operating System — How Jwero Works | Jwero',
-  description: 'One customer record, catalogue, inventory truth, one inbox — how Jwero runs a jewellery business, with an AI workforce that waits for your approval.',
+  description: 'How Jwero runs a jewellery business on one record: customers, catalogue, stock, counter billing, purchase, workshop, accounts and team, with an AI workforce that waits for your approval.',
   breadcrumbs: [['Home', '/'], ['Platform']],
   faqs: [
     { q: 'Is Jwero an ERP?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP (orders, inventory, purchases, repairs, billing), from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.' },
@@ -17,15 +17,15 @@ const platform = {
   body: `
 ${L.hero({
   eyebrow: 'PLATFORM',
-  h1: 'One customer record, every channel on it, nothing sent without your approval.',
-  sub: 'One customer record. One catalogue. One inventory truth. One inbox. Every module in Jwero reads and writes the same data — that is what makes it an operating system, not a bundle of features.',
+  h1: 'One record for the whole business, every department on it, nothing sent without your approval.',
+  sub: 'Customers, catalogue, stock, the counter, purchase, the workshop, the books and the team. Every module in Jwero reads and writes the same data — that is what makes it an operating system, not a bundle of features.',
   primary: { href: '#', label: 'Chat or call with us', wa: 'platform' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   mock: L.mockOneRecord,
 })}
 
 ${L.section(
-  `${L.sectionHead('THE SYNC TAX', 'What five disconnected tools cost you, in minutes.', 'Six ordinary questions, answered two ways.')}
+  `${L.sectionHead('THE SYNC TAX', 'What five disconnected tools cost you, in minutes.', 'Nine ordinary questions, answered two ways.')}
   <div class="tbl-wrap"><table class="tbl">
     <thead><tr><th>Question</th><th>Five tools + CSV exports</th><th>One system</th></tr></thead>
     <tbody>
@@ -35,14 +35,22 @@ ${L.section(
       <tr><td><strong>Did the WhatsApp enquiry become a sale?</strong></td><td>Unknowable — different systems</td><td>One thread, start to close</td></tr>
       <tr><td><strong>What did this campaign actually sell?</strong></td><td>A guess</td><td>Attributed on the record</td></tr>
       <tr><td><strong>What does the owner see across branches?</strong></td><td>A phone call to each one</td><td>One rollup</td></tr>
+      <tr><td><strong>What do we owe this vendor, and what is still to arrive?</strong></td><td>The notebook, then a call to the accountant</td><td>On the vendor’s account, live</td></tr>
+      <tr><td><strong>How much gold is with each karigar tonight?</strong></td><td>The khata book, if it is up to date</td><td>The balance, in fine grams</td></tr>
+      <tr><td><strong>Did today’s cash match the bills?</strong></td><td>Counted and argued at closing</td><td>Tallied at day-close, by register</td></tr>
     </tbody>
   </table></div>`
 )}
 
 ${L.section(
+  `${L.sectionHead('EVERY DEPARTMENT', 'What changes across the whole jewellery business.', 'The counter, the stock room, the vendor, the workshop, the books and the team run on the same record as the customer.')}
+  ${L.compareRows(L.DEPARTMENTS)}`
+, { tone: 'tint' })}
+
+${L.section(
   `${L.sectionHead('THE THREE PILLARS', 'Feature depth, organised by promise.', '')}
   ${L.pillarConstellation()}`
-, { tone: 'tint' })}
+)}
 
 ${L.governanceStrip()}
 
@@ -390,7 +398,7 @@ ${L.ctaBand('Tell us your stack.', 'Send the list of tools you run today — we 
 const tally = {
   slug: 'platform/integrations/tally',
   title: 'Keep Your Tally — The Accountant Page | Jwero',
-  description: 'Jwero bridges to Tally so your books stay exactly where your CA likes them. Jwero runs the revenue side; Tally keeps the ledger.',
+  description: 'Jwero bridges to Tally so your books stay exactly where your CA likes them. Jwero runs sales, stock, purchase and the workshop; Tally keeps the ledger.',
   breadcrumbs: [['Home', '/'], ['Platform', '/platform'], ['Integrations', '/platform/integrations'], ['Tally']],
   faqs: [
     { q: 'Will switching to Jwero disrupt my accountant’s workflow?', a: 'No. That is the point of the bridge — customer and item masters sync both ways automatically, in the shape your accountant already expects. Invoice and payment entries are a manual voucher today; automatic transaction posting is on the roadmap, and we say so plainly.' },
@@ -404,7 +412,7 @@ const tally = {
 ${L.hero({
   eyebrow: 'KEEP YOUR TALLY',
   h1: 'Apna hisaab rakho. Kamai badlo.',
-  sub: 'Keep your books. Change your earnings. Jwero does not ask you to abandon Tally — it takes over the side of the business that brings customers back.',
+  sub: 'Keep your books. Change your earnings. Jwero does not ask you to abandon Tally. It runs customers, the counter, stock, purchase and the workshop, and bridges the entries to the ledger your CA already trusts.',
   primary: { href: '#', label: 'Ask your accountant question', wa: 'tally' },
   secondary: { href: '/migration', label: 'See the migration plan' },
 })}
@@ -558,7 +566,7 @@ ${L.section(
         <div class="road-item"><strong>Counter POS: returns, old-gold exchange & cash day-close</strong>registers, shifts and a reconciled till close — <a href="/products/pos">shipped</a></div>
         <div class="road-item"><strong>Attribution dashboard</strong>the owner’s weekly growth report, productised</div>
         <div class="road-item"><strong>Direct ad-platform publishing</strong>one-click publish from Ads Manager, not uniform across every flow yet</div>
-        <div class="road-item"><strong>Additional social publishing channels</strong>Instagram & Facebook live; LinkedIn, X, Pinterest, YouTube, Google Business being wired</div>
+        <div class="road-item"><strong>Publishing to X</strong>Instagram, Facebook, LinkedIn, Pinterest, YouTube and Google Business are live; X is being wired</div>
         <div class="road-item"><strong>Occasion & win-back recipes</strong>packaged one-click playbooks</div>
       </div>
     </div>

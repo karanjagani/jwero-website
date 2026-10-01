@@ -51,7 +51,7 @@ const jewelleryBrands = {
 ${L.hero({
   eyebrow: 'FOR JEWELLERY BRANDS',
   h1: 'One brand voice across every counter and channel.',
-  sub: 'Central catalogue, brand-controlled campaigns and distributor visibility — so the brand stays consistent whether a customer meets it on Instagram, at a partner counter, or on your own storefront.',
+  sub: 'Central catalogue, brand-controlled campaigns and distributor visibility — so the brand stays consistent whether a customer meets it on Instagram, at a partner counter, or on your own storefront. Stock, orders, purchase and books sit behind it on one record.',
   primary: { href: '#', label: 'Talk shop with us', wa: 'brands' },
   secondary: { href: '/enterprise', label: 'Talk to a specialist' },
 })}
@@ -85,7 +85,7 @@ const d2cBrands = {
 ${L.hero({
   eyebrow: 'FOR D2C & ECOMMERCE-FIRST BRANDS',
   h1: 'Keep Shopify. Add the channels it can’t do.',
-  sub: 'Ad clicks bring traffic; chat closes it, badly, without memory. Jwero adds WhatsApp and Instagram-native selling, live-rate pricing and a video counter on top of the storefront you already run.',
+  sub: 'Ad clicks bring traffic; chat closes it, badly, without memory. Jwero adds WhatsApp and Instagram-native selling, live-rate pricing and a video counter on top of the storefront you already run, with orders, stock, purchase and books on one record behind it.',
   primary: { href: '#', label: 'Tell us about your business', wa: 'd2c' },
   secondary: { href: '/platform/integrations', label: 'See the Shopify connector' },
 })}
@@ -132,7 +132,7 @@ const startups = {
 ${L.hero({
   eyebrow: 'FOR STARTUPS & FIRST-TIME FOUNDERS',
   h1: 'Start on the system chains took decades to build — from day one, at single-store cost.',
-  sub: 'Full operating system from day one: catalogue to CRM to WhatsApp — priced for a first store. No systems knowledge required, no tiny team wearing all hats without help.',
+  sub: 'Full operating system from day one: catalogue, billing, stock, purchase and books, with CRM and WhatsApp on the same record, priced for a first store. No systems knowledge required, no tiny team wearing all hats without help.',
   primary: { href: '#', label: 'Tell us about your business', wa: 'startups' },
   secondary: { href: '/pricing', label: 'See pricing' },
 })}

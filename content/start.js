@@ -23,7 +23,7 @@ const start = {
   body: `
 ${L.hero({
   eyebrow: 'GET STARTED',
-  h1: 'Three steps to a workspace that remembers every customer.',
+  h1: 'Three steps to a workspace that runs your whole jewellery business.',
   sub: 'Tell us the kind of jewellery business you run, pick how much the AI may do, and create your workspace. Onboarding and billing happen inside Jwero — a real person is one message away at every step.',
   primary: { href: '#', label: 'Rather talk first? Chat or call', wa: 'bookdemo' },
   secondary: { href: '/pricing', label: 'See pricing' },

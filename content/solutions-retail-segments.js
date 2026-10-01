@@ -18,10 +18,10 @@ const luxuryBoutique = {
 ${L.hero({
   eyebrow: 'FOR LUXURY & BOUTIQUE',
   h1: 'Clienteling worthy of what you sell.',
-  sub: 'White-glove memory for high-value clients: preferences, sizes, anniversaries — at every touchpoint, with private previews on WhatsApp instead of mass marketing.',
+  sub: 'White-glove memory for high-value clients: preferences, sizes, anniversaries — at every touchpoint, with private previews on WhatsApp instead of mass marketing. Behind it, every piece, certificate, repair and bill sits on the same record.',
   primary: { href: '#', label: 'Tell us about your business', wa: 'luxury' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
-  mock: L.mockMemory,
+  mock: L.mockShop({ title: 'The boutique · today, 8:10 pm', counter: [['Last bill', 'Emerald ring · certificate attached · GST'], ['Bills today', '3']], stock: [['On hand, valued today', '212 pieces'], ['Out on approval', '4 pieces']], close: [['Cash and card against bills', 'Matched'], ['Posted to the books', '3 bills · 1 repair']] }),
 })}
 ${L.section(
   `${L.sectionHead('THE BOUTIQUE OWNER’S DILEMMA', 'Private marketing for high-value relationships.', '')}
@@ -60,7 +60,7 @@ const bridal = {
 ${L.hero({
   eyebrow: 'FOR BRIDAL & WEDDING',
   h1: 'Win the wedding, keep the family.',
-  sub: 'Track every trousseau enquiry from first DM to final fitting — and the anniversaries after. The bridal journey is long and multi-visit. Your system should remember it as one story, not scattered messages.',
+  sub: 'Track every trousseau enquiry from first DM to final fitting — and the anniversaries after. The bridal journey is long and multi-visit. Your system should remember it as one story, not scattered messages, with the quote, the advance, the order and the delivery date on the same record.',
   primary: { href: '#', label: 'Tell us about your business', wa: 'bridal' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -98,7 +98,7 @@ const diamondRetail = {
 ${L.hero({
   eyebrow: 'FOR DIAMOND RETAIL',
   h1: 'Certified stock, certified follow-up.',
-  sub: 'Certificate-level catalogue fields and an AI workforce that answers 4C questions instantly. Built for a trade where trust is the whole sale, and where solitaire stock can sit for a long time if nobody follows up.',
+  sub: 'Certificate-level catalogue fields and an AI workforce that answers 4C questions instantly. Built for a trade where trust is the whole sale, and where solitaire stock can sit for a long time if nobody follows up. Stock, supplier memo and billing run on the same record, so what is sold, owed and still in the safe is always known.',
   primary: { href: '#', label: 'Tell us about your business', wa: 'diamond' },
   secondary: { href: '/tools/dead-stock-calculator', label: 'Try the Dead Stock Calculator' },
 })}
@@ -213,7 +213,7 @@ const labGrown = {
 ${L.hero({
   eyebrow: 'FOR LAB-GROWN DIAMOND',
   h1: 'Lab-grown moves online-first. Sell it with live pricing on every channel.',
-  sub: 'Lab-grown buyers research online, compare on price and clarity, and expect a digital-native experience. Educate, convert and retain them where they already are — WhatsApp, Instagram and your storefront.',
+  sub: 'Lab-grown buyers research online, compare on price and clarity, and expect a digital-native experience. Educate, convert and retain them where they already are — WhatsApp, Instagram and your storefront — while stock, orders, billing and books update from the same sale.',
   primary: { href: '#', label: 'Tell us about your business', wa: 'labgrown' },
   secondary: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' },
 })}
@@ -252,7 +252,7 @@ const gemstoneRetail = {
 ${L.hero({
   eyebrow: 'FOR GEMSTONE RETAIL',
   h1: 'Every stone’s provenance on the record, every customer’s taste beside it.',
-  sub: 'Gemstone inventory is often one-of-one, with provenance and certification that matter as much as the stone itself. Jwero’s catalogue and CRM keep the story and the customer together.',
+  sub: 'Gemstone inventory is often one-of-one, with provenance and certification that matter as much as the stone itself. Jwero’s catalogue and CRM keep the story and the customer together, with stock, purchase and billing on the same record.',
   primary: { href: '#', label: 'Tell us about your business', wa: 'gemstone' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}

@@ -19,9 +19,9 @@ const TAGLINE = 'The Autonomous Jewellery OS, run by AI';
 // WhatsApp / phone / the demo form, so no button is ever a dead end.
 // Set JWERO_SITE_KEY in the build environment, or paste the key below.
 const WEBCHAT = { origin: process.env.JWERO_WEBCHAT_ORIGIN || 'https://os.jwero.ai', siteKey: process.env.JWERO_SITE_KEY || '' };
-const SIGNATURE = 'Jwero runs your whole jewellery business from one customer record — and the AI does the remembering.';
+const SIGNATURE = 'Jwero runs your whole jewellery business on one record, from the first enquiry to the closed books.';
 const ORG_DESCRIPTION =
-  'Jwero is the Autonomous Jewellery OS, run by AI: one customer record, one catalogue, one inventory truth and one inbox — with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and governed AI staff, in one place.';
+  'Jwero is the Autonomous Jewellery OS, run by AI: customers, catalogue, stock, counter billing, purchase, manufacturing, accounts and team on one record, with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and governed AI staff, in one place.';
 
 // ---------------------------------------------------------------- company facts (single source of truth)
 const LEGAL_ENTITY = 'Tanika Tech Jewels Private Limited';
@@ -199,7 +199,7 @@ const NAV = [
       ['/partners', 'Partners', 'ERP dealers, accountants, consultants'],
       ['/glossary', 'Glossary', 'HUID, girvi, karigar, memo — defined'],
       ['/how-it-goes', 'What happens after you message', 'The first 30 days, step by step'],
-      ['/start', 'Get started', 'Create your workspace in three steps'],
+      ['/start', 'Start in three steps', 'Create your workspace, free for 14 days'],
       ['/brief', 'The one-page brief', 'For the owner who won’t read the site'],
       ['/company', 'About Jwero', 'The founders, by name'],
     ],
@@ -239,14 +239,14 @@ function navHTML(page) {
       <div class="nav-cta">
         <a class="btn btn-primary" href="#" data-wa="header">Chat or call with us</a>
         <a class="btn btn-ghost" href="/book-demo">Book a demo</a>
-        <a class="btn btn-ghost" href="/start" data-start-cta>Get started</a>
+        <a class="btn btn-ghost" href="${L3.TRIAL_URL}header" rel="noopener" data-trial data-start-cta>Start free trial</a>
         <a class="nav-login" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
       </div>
     </nav>
     <div class="header-cta">
       <a class="btn btn-ghost btn-sm" href="#" data-wa="header">Chat or call</a>
       <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
-      <a class="btn btn-ghost btn-sm header-start" href="/start" data-start-cta>Get started</a>
+      <a class="btn btn-primary btn-sm header-start" href="${L3.TRIAL_URL}header" rel="noopener" data-trial data-start-cta>Start free trial</a>
       <a class="nav-login nav-login-sm" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
       <button class="search-open icon-btn" type="button" aria-label="Search the site" aria-keyshortcuts="Meta+K Control+K">${icon('search')}</button>
       <button class="theme-toggle icon-btn" type="button" aria-label="Toggle dark mode">${icon('moon')}</button>
@@ -343,7 +343,19 @@ function orgSchema() {
 
 // Product and platform pages whose hero has no product mock open with a small
 // system diagram instead: this module, the shared record, the rest of Jwero.
+// The day-on-one-screen illustration under each solution page's hero.
+const { SHOP_DAY } = require('./content/shop-day');
+function withShopDay(page) {
+  const d = SHOP_DAY[page.slug];
+  if (!d || /hero-mock/.test(page.body)) return page;
+  const at = page.body.indexOf('<section class="hero">');
+  const end = at === -1 ? -1 : page.body.indexOf('</section>', at);
+  if (end === -1) return page;
+  return Object.assign({}, page, { body: page.body.slice(0, end) + `<div class="container"><div class="stage hero-mock">${L3.mockShop(d)}</div></div>\n` + page.body.slice(end) });
+}
+
 function withSchematic(page) {
+  page = withShopDay(page);
   const ic = LINK_ICONS['/' + page.slug];
   if (!ic || !page.breadcrumbs || /class="stage hero-mock"/.test(page.body)) return fillPersona(page.body);
   const label = page.breadcrumbs[page.breadcrumbs.length - 1][0];
@@ -395,6 +407,7 @@ function withAsking(body, page) {
 // content/shift.js, group fallbacks for solutions, industries and roles.
 const SHIFTS = require('./content/shift');
 function withShift(body, page) {
+  if (page.slug === 'index') return body; // the home page folds this into its comparison section
   const s = SHIFTS[page.slug] || SHIFTS[Object.keys(SHIFTS).find((k) => k.endsWith('/') && page.slug.startsWith(k)) || ''];
   if (!s) return body;
   const block = `
@@ -641,7 +654,7 @@ ${robotsMeta}
 <meta name="theme-color" content="#0b0c12" media="(prefers-color-scheme: dark)">
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
-<script>(function(){var d=document.documentElement;try{var t=localStorage.getItem('jwero-theme');if(t)d.setAttribute('data-theme',t);}catch(e){}d.classList.add('js');try{var c=navigator.connection||{},q=location.search,slow=c.saveData||/2g|3g/.test(c.effectiveType||''),camp=/[?&](utm_|ref=|gclid|fbclid|p=)/.test(q);if(!sessionStorage.getItem('jwero-launched')&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!slow&&!camp){d.classList.add('first-visit');}sessionStorage.setItem('jwero-launched','1');}catch(e){}setTimeout(function(){d.classList.add('motion-failsafe');},4000);})();</script>
+<script>(function(){var d=document.documentElement;try{var t=localStorage.getItem('jwero-theme');if(t)d.setAttribute('data-theme',t);}catch(e){}d.classList.add('js');try{var c=navigator.connection||{},q=location.search,slow=c.saveData||/2g|3g/.test(c.effectiveType||''),camp=/[?&](utm_|ref=|gclid|fbclid|p=)/.test(q)||innerWidth<760;if(!sessionStorage.getItem('jwero-launched')&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!slow&&!camp){d.classList.add('first-visit');}sessionStorage.setItem('jwero-launched','1');}catch(e){}setTimeout(function(){d.classList.add('motion-failsafe');},4000);})();</script>
 <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/assets/*"}}]},"eagerness":"moderate"}]}</script>
 ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}
 </head>
@@ -699,6 +712,13 @@ function build() {
   fs.mkdirSync(DIST, { recursive: true });
   // assets
   fs.cpSync(path.join(ROOT, 'assets'), path.join(DIST, 'assets'), { recursive: true });
+  // Ship lean: comments and indentation stripped from the stylesheet and scripts.
+  const cssFile = path.join(DIST, 'assets', 'site.css');
+  writeRaw(cssFile, fs.readFileSync(cssFile, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s+/g, '\n').replace(/\n{2,}/g, '\n').replace(/\s*([{};])\s*\n/g, '$1').replace(/;}/g, '}'));
+  for (const f of ['site.js', 'sims.js']) {
+    const jsFile = path.join(DIST, 'assets', f);
+    writeRaw(jsFile, fs.readFileSync(jsFile, 'utf8').split('\n').filter((l) => !/^\s*\/\//.test(l) && l.trim() !== '').map((l) => l.replace(/^\s+/, '')).join('\n'));
+  }
   // pages — extensionless clean-URL output: <slug>/index.html (home -> index.html)
   for (const p of pages) {
     const dir = p.slug === 'index' ? DIST : path.join(DIST, p.slug);
