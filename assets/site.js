@@ -681,17 +681,69 @@
         d.classList.toggle('has', n > 0);
       });
       setNum(c || total); bump();
-      label.textContent = c ? 'Tools you run today' : 'Tools a jewellery business can end up running';
+      label.textContent = c ? 'The ' + c + ' tool' + (c === 1 ? '' : 's') + ' you picked' : 'If you ran all ' + total + ' today';
       // What the selection costs today, row by row, and what each becomes.
-      var links = c * (c - 1) / 2, s = c === 1 ? '' : 's';
+      var nn = c || total, links = nn * (nn - 1) / 2, s = nn === 1 ? '' : 's';
       function row(n, what, to) { return '<li><b>' + n + '</b><span>' + what + '</span><i>' + to + '</i></li>'; }
-      tally.innerHTML = c
-        ? '<span class="stackm-tally-short"><b>' + c + '</b> login' + s + ', bill' + s + ' and vendor' + s + ' become one.</span><ul class="stackm-rows">' +
-          row(c, 'login' + s, '1') + row(c, 'bill' + s + ' to pay', '1') + row(c, 'vendor' + s + ' to coordinate', '1') +
-          row(links ? 'up to ' + links : '0', 'integration' + (links === 1 ? '' : 's') + ' between them', '0') +
-          row(c, 'place' + s + ' your data can leak', '1') + row(c, 'renewal' + s + ' and support line' + s, '1') + '</ul>'
-        : 'Tap every one you run today.';
+      tally.innerHTML = '<span class="stackm-tally-short" data-stackm-short></span><ul class="stackm-rows">' +
+        row(c || total, 'login' + s + ', bill' + s + ' and vendor' + s, '1') +
+        row(links ? 'up to ' + links.toLocaleString('en-IN') : '0', 'integration' + (links === 1 ? '' : 's') + ' between them', '0') +
+        row(c || total, 'place' + s + ' your data can leak', '1') + '</ul>';
       go.textContent = c ? 'Merge my ' + c + ' into one' : 'Merge them into one';
+      calc();
+    }
+    // Money, hours and opportunity for the selection (or for every tool when
+    // nothing is picked). Estimates from the published per-tool assumptions.
+    var outEl = root.querySelector('[data-stackm-out]');
+    function inr(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+    function calc() {
+      if (!outEl) return;
+      var sel = picked(), c = sel.length, list = c ? sel : chips, n = list.length, tools = 0, hrs = 0;
+      var plan = +outEl.getAttribute('data-plan'), locFee = +outEl.getAttribute('data-locfee'), base = +outEl.getAttribute('data-base'), share = +outEl.getAttribute('data-share'), match = +outEl.getAttribute('data-match'), week = +outEl.getAttribute('data-week');
+      var v = {}; ['sal', 'enq', 'aov', 'rep', 'loc', 'team'].forEach(function (k) { v[k] = +root.querySelector('[data-stackm-in="' + k + '"]').value; });
+      v.loc = Math.min(50, Math.max(1, Math.round(v.loc) || 1)); v.team = Math.min(500, Math.max(1, Math.round(v.team) || 1));
+      // Per-outlet tools scale with showrooms, per-user tools with team size; the rest are flat.
+      // Tools in the same overlap group are usually one product: charge the group once, at its highest price.
+      var grp = {}, uf = v.team / base, ff = Math.min(2, Math.max(.5, Math.sqrt(uf)));
+      list.forEach(function (x) {
+        var s = x.getAttribute('data-s'), f = s === 'l' ? v.loc : s === 'u' ? uf : 1;
+        var cst = (+x.getAttribute('data-c') || 0) * f, g = x.getAttribute('data-grp');
+        hrs += (+x.getAttribute('data-h') || 0) * (s ? f : ff);
+        if (g) grp[g] = Math.max(grp[g] || 0, cst); else tools += cst;
+      });
+      Object.keys(grp).forEach(function (g) { tools += grp[g]; });
+      if (n > 1) hrs += n * match * (1 + .5 * (v.loc - 1));
+      var cap = v.team * week * .6, capped = hrs > cap; if (capped) hrs = cap;
+      var rate = v.sal / (week * 4.33), team = hrs * 4.33 * rate, left = team * (1 - share);
+      var jw = plan + (v.loc - 1) * locFee;
+      var today = tools + team, withJ = jw + left, saved = today - withJ, back = hrs * share;
+      var opp = Math.max(0, v.enq * v.aov * (.95 - v.rep / 100) * (.15 - .03));
+      function set(k, t) { var el = root.querySelector('[data-stackm-o="' + k + '"]'); if (el) el.textContent = t; }
+      function tip(k, t) { var el = root.querySelector('[data-stackm-tip="' + k + '"]'); if (el) el.textContent = t; }
+      set('today', inr(today)); set('with', inr(withJ)); set('hours', Math.round(back));
+      set('people', (back / week).toFixed(1) + ' of ' + v.team);
+      set('save-k', saved > 0 ? 'Saved a month' : 'Costs more a month'); set('save', inr(Math.abs(saved)));
+      root.classList.toggle('is-neg', saved <= 0);
+      root.querySelector('[data-stackm-opp]').textContent = inr(opp);
+      var sized = v.loc + ' showroom' + (v.loc === 1 ? '' : 's') + ' and ' + v.team + ' team member' + (v.team === 1 ? '' : 's');
+      tip('today', 'For ' + sized + ': subscriptions ' + inr(tools) + ' plus team time ' + inr(team) + ' (' + Math.round(hrs) + ' hours a week, about ' + (hrs / week).toFixed(1) + ' people running and matching these tools' + (capped ? '; capped at 60% of the team’s time' : '') + '). Average paid-plan prices; per-outlet tools counted per showroom, per-user tools by team size, and tools that are one product charged once.');
+      tip('with', 'Jwero One ' + inr(plan) + (v.loc > 1 ? ' plus ' + inr((v.loc - 1) * locFee) + ' for ' + (v.loc - 1) + ' more showroom' + (v.loc === 2 ? '' : 's') : '') + ', with no charge per team member, plus the team time that remains, ' + inr(left) + ' (' + Math.round(hrs - back) + ' hours a week).' + (v.loc >= 6 ? ' From six showrooms, Enterprise terms apply and the real figure may differ.' : '') + ' The first month is ₹3,600 instead of ' + inr(plan) + '. Charges for messages, AI, calls and ads are left out on both sides.');
+      tip('save', saved > 0 ? 'Today minus with Jwero. That is ' + inr(saved * 12) + ' a year.' : 'These tools cost less than Jwero One today. With this few, the gain is the time, not the money. Pick everything you really run.');
+      tip('hours', 'Half of the ' + Math.round(hrs) + ' hours is counted as saved, because the work itself stays.');
+      tip('people', 'Hours back divided by a ' + week + '-hour week: about ' + (back / week).toFixed(1) + ' of your ' + v.team + ' people could move to selling, service or the floor.');
+      tip('opp', 'More sales you could reach by replying fast to every enquiry: ' + v.enq.toLocaleString('en-IN') + ' enquiries, ' + inr(v.aov) + ' average bill, ' + v.rep + '% answered within an hour today. Not added to the saving. Change these under Your numbers.');
+      var short = root.querySelector('[data-stackm-short]'); if (short) short.textContent = saved > 0 ? 'Saves ' + inr(saved) + ' a month' : Math.round(back) + ' hours a week back';
+      var li = root.querySelector('[data-stackm-in="loc"]'), ti = root.querySelector('[data-stackm-in="team"]'); if (document.activeElement !== li) li.value = v.loc; if (document.activeElement !== ti) ti.value = v.team;
+      root.querySelector('[data-stackm-v="sal"]').textContent = inr(v.sal);
+      root.querySelector('[data-stackm-v="enq"]').textContent = v.enq.toLocaleString('en-IN');
+      root.querySelector('[data-stackm-v="aov"]').textContent = inr(v.aov);
+      root.querySelector('[data-stackm-v="rep"]').textContent = v.rep + '%';
+    }
+    var enqTouched = false;
+    function syncEnq() { if (enqTouched) return; var e = root.querySelector('[data-stackm-in="enq"]'), lo = Math.max(1, +root.querySelector('[data-stackm-in="loc"]').value || 1); e.value = Math.min(3000, 200 * lo); }
+    if (outEl) {
+      root.addEventListener('input', function (e) { var k = e.target.getAttribute && e.target.getAttribute('data-stackm-in'); if (k === 'enq') enqTouched = true; if (k === 'loc') syncEnq(); calc(); });
+      calc();
     }
     function centre(el) { var r = el.getBoundingClientRect(), o = root.getBoundingClientRect(); return [r.left + r.width / 2 - o.left, r.top + r.height / 2 - o.top]; }
     function fly(chip) {
@@ -714,7 +766,7 @@
       merged = true; root.classList.remove('is-filter'); root.classList.add('is-open');
       label.textContent = 'Merging';
       var steps = Math.min(from - 1, 24), k = 0;
-      function done() { root.classList.add('is-merged'); label.textContent = 'What you run now'; tally.innerHTML = '<b>' + from + '</b> tools, logins, bills and vendors are now <b>one</b>. No integrations to maintain, one record to protect, one team to call.'; go.textContent = 'Start again'; }
+      function done() { root.classList.add('is-merged'); label.textContent = 'What you run now'; tally.innerHTML = '<span class="stackm-tally-short" data-stackm-short></span><p class="stackm-merged"><b>' + from + '</b> tools, logins, bills and vendors are now <b>one</b>.</p>'; calc(); go.textContent = 'Start again'; }
       void root.offsetWidth; root.classList.add('is-merging');
       if (calm || steps < 1) { done(); return; }
       window.clearInterval(countTimer);
@@ -727,6 +779,10 @@
       var b = e.target.closest('.stackm-chip'), d = e.target.closest('.stackm-dept');
       if (e.target.closest('[data-stackm-more]')) { root.classList.add('is-open'); return; }
       if (e.target.closest('[data-stackm-go]')) { touched = true; stopHint(); if (merged) unmerge(); else merge(); return; }
+      var stp = e.target.closest('[data-stackm-step]');
+      if (stp) { var inp = root.querySelector('[data-stackm-in="' + stp.getAttribute('data-stackm-step') + '"]'); inp.value = Math.min(+inp.max, Math.max(+inp.min, (Math.round(+inp.value) || 1) + (+stp.getAttribute('data-d')))); if (stp.getAttribute('data-stackm-step') === 'loc') syncEnq(); calc(); return; }
+      if (e.target.closest('[data-stackm-open]')) { var dg = root.querySelector('[data-stackm-dlg="' + e.target.closest('[data-stackm-open]').getAttribute('data-stackm-open') + '"]'); if (dg && dg.showModal) dg.showModal(); return; }
+      if (e.target.closest('[data-stackm-exp]')) { var eb = e.target.closest('[data-stackm-exp]'), ex = panel.classList.toggle('is-exp'); eb.setAttribute('aria-expanded', String(ex)); eb.textContent = ex ? 'Close' : 'Details'; return; }
       if (merged) return;
       if (b) { var was = on(b); b.setAttribute('aria-pressed', was ? 'false' : 'true'); if (!was) fly(b); }
       else if (d) {
@@ -808,7 +864,7 @@
     var N = set.modules.length, mode = 'os', active = -1, step = -1, timer = null;
 
     // ---- markup for this kind of business
-    nodesEl.innerHTML = set.modules.map(function (m, k) { return '<button type="button" class="gem2-node" data-k="' + k + '">' + (DATA.icons[m[0]] || '') + '<span>' + esc2(m[1]) + '</span><em>Repriced</em></button>'; }).join('');
+    nodesEl.innerHTML = set.modules.map(function (m, k) { return '<button type="button" class="gem2-node" data-k="' + k + '">' + (DATA.icons[m[0]] || '') + '<span>' + esc2(m[1]) + '</span><em>Repriced</em><u class="gem2-n"></u></button>'; }).join('');
     shardsEl.innerHTML = set.tools.map(function (t, g) { return '<span class="gem2-shard" data-g="' + g + '">' + esc2(t) + '</span>'; }).join('');
     eventsEl.innerHTML = set.week.map(function (e, k) { return '<li><button type="button" data-ev="' + k + '"><b>' + esc2(e[0]) + '</b><span>' + esc2(e[1]) + '</span></button></li>'; }).join('');
     centreEl.textContent = set.centre; cardTitle.textContent = set.centre;
@@ -869,6 +925,7 @@
     Object.keys(METALS).forEach(function (k) { var M0 = METALS[k]; if (M0.base) { M0.rgb = hex(M0.base); M0.lrgb = hex(M0.lite); M0.drgb = hex(M0.dark); } });
     var INK = [0, 19, 183], AMB = [246, 167, 35];
     var metal = fixedMetal || 'gold'; if (!fixedMetal) { try { metal = localStorage.getItem('jwero-metal') || 'gold'; } catch (e) {} }
+    if (!fixedMetal && metal !== 'gold' && metal !== 'diamond') metal = 'gold';
     if (!METALS[metal]) metal = 'gold';
     var facets = SHAPES[METALS[metal].shape];
 
@@ -1047,6 +1104,7 @@
       linesEl.classList.remove('is-fresh'); void linesEl.offsetWidth; linesEl.classList.add('is-fresh');
       linesEl.innerHTML = html || '<li class="gem2-empty">Press play. Watch one week land on ' + (mode === 'today' ? 'four different tools.' : 'one record.') + '</li>';
       renderSignals();
+      linesEl.scrollTop = linesEl.scrollHeight;
       cardTag.textContent = mode === 'today' ? 'SCATTERED ACROSS YOUR TOOLS' : 'ON THE RECORD';
       cardTitle.textContent = mode === 'today' ? set.tools.length + ' tools, ' + set.tools.length + ' partial copies' : set.centre;
     }
@@ -1083,6 +1141,7 @@
       timer = window.setInterval(function () { if (step >= set.week.length - 1) { if (loop) { rated = false; go(0); } else stop(); return; } go(step + 1); }, loop ? 3200 : 2600);
     }
     function setMode(mo) {
+      if (dayOn && mo !== 'os') { dayExit(); }
       mode = mo; explodeTo = mo === 'today' ? 1 : 0;
       root.classList.toggle('is-today', mo === 'today');
       Array.prototype.forEach.call(root.querySelectorAll('[data-gem2-mode]'), function (b) { var on = b.getAttribute('data-gem2-mode') === mo; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', String(on)); });
@@ -1099,10 +1158,57 @@
       renderLines();
     }
 
+    // ---- a full day: many small events across every department, counted by
+    // who did them (the system, AI waiting for a yes, or your team).
+    var dayBtn = root.querySelector('[data-gem2-day]'), dayOn = false, dayTimer = null, dayStep = -1, dayN = { all: 0, a: 0, q: 0, t: 0 }, modN = [], dayFeed = [];
+    var KIND = { a: 'Done by the system', q: 'Waiting for your yes', t: 'Your team' };
+    function dayPaint(summary) {
+      ['all', 'a', 'q', 't'].forEach(function (k) { var el = root.querySelector('[data-gem2-dn="' + k + '"]'); if (el) el.textContent = dayN[k]; });
+      nodeBtns.forEach(function (b, k) { var u = b.querySelector('.gem2-n'); if (u) { u.textContent = modN[k] || ''; u.classList.toggle('is-on', !!modN[k]); } });
+      cardTag.textContent = 'ONE DAY, EVERY DEPARTMENT'; cardTitle.textContent = 'What ran today';
+      linesEl.innerHTML = (summary || '') + dayFeed.slice(0, summary ? 4 : 6).map(function (e, i) {
+        return '<li class="gem2-dl k-' + e[3] + (i === 0 && !summary ? ' is-new' : '') + '"><b>' + esc2(e[0]) + '</b><span>' + esc2(e[2]) + (e[4] > 1 ? ' <i class="gem2-x">×' + e[4] + '</i>' : '') + '<em>' + KIND[e[3]] + '</em></span></li>';
+      }).join('');
+      linesEl.scrollTop = 0;
+    }
+    function dayEnd() {
+      window.clearInterval(dayTimer); dayTimer = null;
+      if (dayBtn) { dayBtn.querySelector('span').textContent = 'Run the day again'; dayBtn.setAttribute('aria-pressed', 'false'); }
+      var depts = modN.filter(function (n) { return n > 0; }).length;
+      dayPaint('<li class="gem2-dl gem2-dsum"><span><strong>' + dayN.all + ' events across ' + depts + ' departments.</strong> ' + dayN.a + ' needed no one.' + (dayN.q ? ' ' + dayN.q + ' were drafted by AI and waited for a yes.' : '') + ' ' + dayN.t + ' were done by your team, on the same record. You can let any one kind of action run on its own, and take it back with one switch.</span></li>');
+    }
+    function dayTick() {
+      dayStep += 1;
+      if (dayStep >= set.day.length) { dayEnd(); return; }
+      var e = set.day[dayStep], k = e[1], n = e[4] || 1;
+      dayN.all += n; dayN[e[3]] += n; modN[k] = (modN[k] || 0) + n; dayFeed.unshift(e);
+      glow[k] = 1;
+      for (var i = 0; i < Math.min(n, 5); i++) pulse(k, e[3] === 'q' && i % 2 === 1, i * .09);
+      var clock = root.querySelector('[data-gem2-clock]'); if (clock) clock.textContent = e[0];
+      nodeBtns.forEach(function (b, x) { b.classList.toggle('is-on', x === k); });
+      dayPaint();
+    }
+    function dayExit() {
+      if (!dayOn) return;
+      window.clearInterval(dayTimer); dayTimer = null; dayOn = false; root.classList.remove('is-day');
+      nodeBtns.forEach(function (b) { var u = b.querySelector('.gem2-n'); if (u) { u.textContent = ''; u.classList.remove('is-on'); } });
+      if (dayBtn) { dayBtn.querySelector('span').textContent = 'Run a full day'; dayBtn.setAttribute('aria-pressed', 'false'); }
+    }
+    function dayStart() {
+      if (!set.day) return;
+      if (dayTimer) { dayEnd(); return; }
+      stop(); if (mode !== 'os') setMode('os');
+      rated = false; step = -1; evBtns.forEach(function (b) { b.classList.remove('is-on'); b.classList.remove('is-done'); }); select(-1);
+      dayOn = true; root.classList.add('is-day'); dayStep = -1; dayN = { all: 0, a: 0, q: 0, t: 0 }; modN = []; dayFeed = [];
+      dayBtn.querySelector('span').textContent = 'Stop the day'; dayBtn.setAttribute('aria-pressed', 'true');
+      dayTick(); dayTimer = window.setInterval(dayTick, reduceMotion ? 500 : 1100);
+    }
+    if (dayBtn) { if (set.day) dayBtn.addEventListener('click', dayStart); else dayBtn.hidden = true; }
+
     // ---- hands
-    nodeBtns.forEach(function (b, k) { b.addEventListener('click', function () { stop(); select(k); }); });
-    evBtns.forEach(function (b, k) { b.addEventListener('click', function () { stop(); go(k); }); });
-    playBtn.addEventListener('click', play);
+    nodeBtns.forEach(function (b, k) { b.addEventListener('click', function () { if (dayOn) { dayExit(); renderLines(); } stop(); select(k); }); });
+    evBtns.forEach(function (b, k) { b.addEventListener('click', function () { dayExit(); stop(); go(k); }); });
+    playBtn.addEventListener('click', function () { dayExit(); play(); });
     sigNote.addEventListener('click', function (e) { var b = e.target.closest('[data-showfam]'); if (!b) return; shown = Number(b.getAttribute('data-showfam')); renderSignals(); });
     root.querySelector('[data-gem2-rate]').addEventListener('click', rate);
     Array.prototype.forEach.call(root.querySelectorAll('[data-gem2-mode]'), function (b) { b.addEventListener('click', function () { setMode(b.getAttribute('data-gem2-mode')); }); });
@@ -1140,7 +1246,7 @@
     new MutationObserver(theme).observe(docEl, { attributes: true, attributeFilter: ['data-theme'] });
     if (reduceMotion || !canObserve) { layout(); if (ctx) { lastT = 0; draw(0); window.cancelAnimationFrame(raf); } return; }
     var started = false;
-    whileVisible(root, function () { layout(); raf = window.requestAnimationFrame(draw); if (!started) { started = true; window.setTimeout(function () { if (step < 0 && !timer) play(); }, 900); } }, function () { window.cancelAnimationFrame(raf); lastT = 0; });
+    whileVisible(root, function () { layout(); raf = window.requestAnimationFrame(draw); if (!started) { started = true; window.setTimeout(function () { if (step < 0 && !timer && !dayOn) play(); }, 900); } }, function () { window.cancelAnimationFrame(raf); lastT = 0; });
   });
 
   // Persona switch: pick the business you run; the page remembers and the
@@ -1439,8 +1545,9 @@
       docEl.classList.add('has-workspace');
       Array.prototype.forEach.call(document.querySelectorAll('[data-start-cta]'), function (a) { a.textContent = 'Open my workspace'; a.setAttribute('href', 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header'); a.setAttribute('rel', 'noopener'); });
     }
-    // The pipeline: once the reader has said what they run, every page carries the
-    // same six stages for their kind of business, and the header says who they are.
+    // Once the reader has said what they run, the header chip says who they are
+    // and the phone bar points at their page. (The six-stage strip under the
+    // header was removed: the chip already offers the change.)
     var ICP = {
       single: { label: 'Single store', sol: '/solutions/single-store', sim: 'memory', door: 'trial' },
       chain: { label: 'Multi-store chain', sol: '/solutions/multi-store-chains', sim: 'approve', door: 'demo' },
@@ -1466,18 +1573,7 @@
       var own = SOL[slug] === persona || (slug === 'roles' && persona === 'staff');
       var base = own ? '' : icp.sol;
       var tryHref = signed ? 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=pipe' : icp.door === 'demo' ? '/book-demo' : TRIAL + 'pipe';
-      var tryLabel = signed ? 'Open my workspace' : icp.door === 'demo' ? 'Video demo' : 'Try free';
-      var shareMsg = 'Worth five minutes, this is the software page for a ' + icp.label.toLowerCase() + ' like ours: ' + location.origin + icp.sol + '?p=' + persona;
-      var stages = persona === 'staff'
-        ? [['Find your role', '/roles'], ['The one-page brief', '/brief'], ['Send it to your owner', 'https://wa.me/?text=' + encodeURIComponent('The one-page brief on Jwero, five minutes, no jargon: ' + location.origin + '/brief'), true]]
-        : [['Recognise', base || '#main'], ['See it', base + '#try-' + icp.sim], ['Believe', '/customers'], ['Price', base + '#price'], [tryLabel, tryHref], ['Pass it on', 'https://wa.me/?text=' + encodeURIComponent(shareMsg), true]];
-      var at = own ? 0 : slug === 'customers' ? 2 : slug === 'pricing' ? 3 : -1;
-      var pipe = document.createElement('nav');
-      pipe.className = 'pipe'; pipe.setAttribute('aria-label', 'Your path');
-      pipe.innerHTML = '<div class="container"><button type="button" class="pipe-who" data-icp-open>' + icp.label + '<span>change</span></button><ol>' +
-        stages.map(function (st, k) { return '<li' + (k === at ? ' class="is-here"' : '') + '><a href="' + st[1] + '"' + (st[2] ? ' target="_blank" rel="noopener" data-direct' : '') + '><b>' + (k + 1) + '</b>' + st[0] + '</a></li>'; }).join('') + '</ol></div>';
-      var mainEl2 = document.querySelector('main');
-      if (mainEl2) mainEl2.insertBefore(pipe, mainEl2.firstChild);
+      var tryLabel = signed ? 'Open my workspace' : icp.door === 'demo' ? 'Video demo' : 'Start';
       // Phone bar: see it · price · try, for this kind of business.
       var sb = document.querySelector('.sticky-bar');
       if (sb && persona !== 'staff') {
@@ -1488,18 +1584,6 @@
     Array.prototype.forEach.call(document.querySelectorAll('[data-share][data-share-p]'), function (a) {
       a.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent(a.getAttribute('data-share') + ' ' + location.origin + location.pathname + '?p=' + a.getAttribute('data-share-p')));
     });
-    // resume: returning readers on the home page pick up where they left
-    if (slug === '' && visits > 1 && seen.length > 1) {
-      var recent = seen.slice(1, 4).filter(function (x) { return x.u !== '/'; });
-      if (recent.length) {
-        var r = document.createElement('div');
-        r.className = 'resume'; r.setAttribute('data-resume', '');
-        r.innerHTML = '<div class="container"><span class="resume-tag">Welcome back</span>' + recent.map(function (x) { return '<a href="' + x.u + '">' + x.t.replace(/</g, '&lt;') + '</a>'; }).join('') +
-          (path ? '<a class="resume-go" href="' + (signed ? 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=resume' : path.sol) + '">' + (signed ? 'Open my workspace' : 'Back to your page') + '</a>' : '') + '</div>';
-        var h = document.querySelector('main .hero');
-        if (h) h.insertAdjacentElement('beforebegin', r);
-      }
-    }
   })();
 
   // Arriving at /book-demo#callback: pre-select "Call me" and focus the phone field.
@@ -1527,7 +1611,7 @@
     var box = document.createElement('div');
     box.className = 'short-version';
     box.innerHTML = '<div class="container"><span class="short-tag">The short version</span><p>Jwero runs your whole jewellery business on one record: customers, counter, stock, workshop, team and books. AI drafts the work, and nothing sends without your yes.</p>' +
-      '<a href="/why-an-os">What it is</a><a href="/pricing">What it costs</a><a href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=ai-referrer" rel="noopener">Start free</a><a href="#" data-wa="default">Ask a person</a></div>';
+      '<a href="/why-an-os">What it is</a><a href="/pricing">What it costs</a><a href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=ai-referrer" rel="noopener">Start</a><a href="#" data-wa="default">Ask a person</a></div>';
     hero.insertAdjacentElement('afterend', box);
     var a = box.querySelector('[data-wa]'); a.setAttribute('href', waLink('default')); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
     try { sessionStorage.setItem('jwero-ai-short', '1'); } catch (e) {}
@@ -1673,8 +1757,8 @@
   // Pricing: work out your own number. Plan and add-on prices mirror the pricing page.
   var pc = document.getElementById('calc-plan');
   if (pc) {
-    var PRICE = { monthly: 18000, annual: 9999, location: 2999, brand: 999, register: 499, camera: 799 };
-    var pcTerm = 'annual', money = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+    var PRICE = { monthly: 18000, location: 2999, brand: 999, register: 499, camera: 799 };
+    var pcTerm = 'monthly', money = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
     var pcLoc = bindRange('pc-loc', 'pc-loc-out'), pcBrand = bindRange('pc-brand', 'pc-brand-out'), pcReg = bindRange('pc-reg', 'pc-reg-out'), pcCam = bindRange('pc-cam', 'pc-cam-out');
     function pcCalc() {
       var loc = Number(pcLoc.value), brand = Number(pcBrand.value), reg = Number(pcReg.value), cam = Number(pcCam.value);

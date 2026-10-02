@@ -70,7 +70,7 @@ ${L.ctaBand('Bring your channel map.', 'Show us how your brand sells today — w
 
 const d2cFaqs = [
   { q: 'Do I have to leave Shopify?', a: 'No — the Shopify connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
-  { q: 'Is there a free trial for D2C brands?', a: 'Yes — 14 days free. Create a workspace in three steps at <a href="/start">/start</a>, connect Shopify or WooCommerce, and evaluate on your own orders. No card, no demo required.' },
+  { q: 'Is there a free trial for D2C brands?', a: 'No free trial, but the first month is ₹3,600 instead of ₹18,000. Create a workspace in three steps at <a href="/start">/start</a>, connect Shopify or WooCommerce, and evaluate on your own orders. No demo required.' },
   { q: 'What happens to my Shopify data if I leave Jwero?', a: 'Nothing happens to Shopify — it stays the store of record for your storefront and is never modified by a disconnect. Jwero holds synced copies of orders and customers plus everything it added (WhatsApp threads, scores, occasions). All of it exports as CSV before or after you leave, and the connector is removed from Shopify in one click.' },
   { q: 'We already use a lot of ecommerce tools. Won’t this just be one more?', a: 'It replaces the gap between them, not the tools themselves — the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce stack doesn’t do, added on top of what you keep.' },
 ];

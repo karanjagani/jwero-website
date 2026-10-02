@@ -83,7 +83,7 @@ const faqs = [
   { q: 'Can a buyer see my stock without me sending an Excel sheet?', a: 'Yes. A private buyer link shows the stones you choose, at prices for that buyer, and you see what he opened and lingered on. Requests from the link become quotations.' },
   { q: 'Do you handle natural and lab-grown separately?', a: 'Every stone records whether it is natural, lab-grown, treated or a simulant, and that disclosure travels with it onto the documents.' },
   { q: 'Can I invoice an overseas buyer in dollars?', a: 'Orders and party ledgers can be kept in another currency. The tax and compliance rails are built for India first, so export paperwork is not generated for you.' },
-  { q: 'What does it cost a trading office?', a: 'Jwero One: ₹9,999 a month billed annually, or ₹18,000 month to month, with every module. The first 14 days are free.' },
+  { q: 'What does it cost a trading office?', a: 'Jwero One: ₹18,000 a month, with every module. The first month is ₹3,600.' },
 ];
 
 const diamondTraders = {

@@ -798,9 +798,9 @@ ${L.ctaBand('Plan your season before it starts.', 'Tell us your busiest weeks �
 
 // ---------------------------------------------------------------- Article 12: Software cost
 const costGuideFaqs = [
-  { q: 'What does jewellery software cost in India?', a: 'It depends on scope — a single WhatsApp tool can start under ₹3,000/month, a full unified platform costs more but replaces several of those tools at once. Jwero’s own price is published: every module for ₹9,999 a month billed annually, or ₹18,000 month to month — see <a href="/pricing">the pricing page</a>., or ask us directly on WhatsApp.' },
+  { q: 'What does jewellery software cost in India?', a: 'It depends on scope — a single WhatsApp tool can start under ₹3,000/month, a full unified platform costs more but replaces several of those tools at once. Jwero’s own price is published: every module for ₹18,000 a month — see <a href="/pricing">the pricing page</a>., or ask us directly on WhatsApp.' },
   { q: 'Is it cheaper to keep using separate tools?', a: 'On the sticker price of any one tool, often yes. Add up what a WhatsApp tool, a catalogue app, a website subscription and an SMS vendor cost together, plus the staff hours spent reconciling them, and the comparison usually looks different — see the Frankenstack breakdown on <a href="/pricing">the pricing page</a>.' },
-  { q: 'Why won’t this article just quote a price?', a: 'It does, for Jwero: one plan with every module at ₹18,000 a month, or ₹9,999 a month billed annually, plus a published rate card for per-use services — all on <a href="/pricing">the pricing page</a>. For other vendors, a single number without your scope and current stack attached would be more marketing than answer.' },
+  { q: 'Why won’t this article just quote a price?', a: 'It does, for Jwero: one plan with every module at ₹18,000 a month, plus a published rate card for per-use services — all on <a href="/pricing">the pricing page</a>. For other vendors, a single number without your scope and current stack attached would be more marketing than answer.' },
 ];
 
 const costGuide = {
@@ -824,7 +824,7 @@ ${L.section(
   `<div class="post-body">
   <h2>Why this question rarely gets a straight answer</h2>
   <p>Search for jewellery software cost in India and most results either quote one vendor’s sticker price with no context, or dodge the question entirely with "contact us for pricing." Neither is very useful, because the real cost of running a jewellery business’s software isn’t one number. It’s the sum of whatever tools are already stitched together, plus the staff time spent keeping them in sync, plus whatever gets missed because nothing connects.</p>
-  <p>This isn’t going to invent a specific Jwero price here either — Jwero One is ₹18,000 a month, or ₹9,999 a month billed annually, with every module included — the full breakdown, including the per-use rate card, is on <a href="/pricing">the pricing page</a>, not a blog post. What this article can do is lay out the cost anatomy clearly enough that a straight number, wherever you get it, means something.</p>
+  <p>This isn’t going to invent a specific Jwero price here either — Jwero One is ₹18,000 a month, with every module included — the full breakdown, including the per-use rate card, is on <a href="/pricing">the pricing page</a>, not a blog post. What this article can do is lay out the cost anatomy clearly enough that a straight number, wherever you get it, means something.</p>
 
   <h2>The tools a typical business is already paying for</h2>
   <p>Most jewellery businesses aren’t paying for one piece of software. They’re paying for several, bought at different times, for different reasons, that were never designed to talk to each other. A WhatsApp bulk-messaging tool for festival blasts. A catalogue app to share designs. A website subscription that’s really a brochure. Sometimes an SMS vendor left over from before WhatsApp took over. And a scheme register, usually still on paper or in a spreadsheet, with staff hours spent reconciling it every month.</p>
@@ -841,7 +841,7 @@ ${L.section(
   <p>A unified platform doesn’t make jewellery software free — but it changes what’s being paid for. Instead of five subscriptions each doing one job in isolation, one system holds the customer record, the catalogue, the WhatsApp inbox, the scheme balances and the invoicing together, so nothing needs reconciling between them by hand. Whether that nets out cheaper than the sum of separate tools depends on how many of those tools a specific business already runs, and what the staff time spent stitching them together is actually worth — which is exactly the math worth doing before comparing sticker prices alone.</p>
 
   <h2>What this site can honestly tell you</h2>
-  <p>Jwero’s own price is published: one plan, every module, ₹9,999 a month billed annually or ₹18,000 month to month. The detail is on <a href="/pricing">the pricing page</a>, which lays out the tier structure and the Frankenstack comparison honestly, and a direct conversation on WhatsApp, where a real number gets discussed against your actual current stack rather than a generic estimate.</p>
+  <p>Jwero’s own price is published: one plan, every module, ₹18,000 a month. The detail is on <a href="/pricing">the pricing page</a>, which lays out the tier structure and the Frankenstack comparison honestly, and a direct conversation on WhatsApp, where a real number gets discussed against your actual current stack rather than a generic estimate.</p>
   </div>`
 )}
 

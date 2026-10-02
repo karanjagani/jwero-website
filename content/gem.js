@@ -269,6 +269,91 @@ const GEM_PAGE = {
   'solutions/diamond-wholesale': ['trader', 'diamond'], 'solutions/diamond-traders': ['trader', 'diamond'],
   'solutions/d2c-brands': ['d2c', 'gold'], 'solutions/jewellery-brands': ['d2c', 'gold'], 'solutions/startups': ['d2c', 'gold'],
 };
+// One whole day per kind of business, for "Run a full day": many small events
+// across every department, to show how much runs without anyone carrying it.
+// [time, module index, what happened, who did it, how many times]
+//   a = done by the system on its own (a rule, a posting, a flag)
+//   q = drafted by AI, waiting for a person's yes
+//   t = done by your team, on the same record
+// Counts are illustrative of a busy day, not measurements.
+const DAYS = {
+  single: [
+    ['09:30', 4, 'Staff punch in on their phones', 't', 6], ['10:00', 2, 'The gold rate moves; every price follows', 'a', 1], ['10:20', 0, 'Priced replies drafted for overnight enquiries', 'q', 9],
+    ['11:00', 1, 'Bills at the live rate', 't', 5], ['11:05', 5, 'Each bill posts to the books with GST', 'a', 5], ['11:10', 2, 'Sold pieces come off stock', 'a', 5],
+    ['13:00', 0, 'Scheme instalment reminders drafted', 'q', 14], ['14:00', 3, 'Low stock flagged; a reorder is drafted', 'q', 2], ['15:00', 1, 'Old gold taken in exchange, recorded as metal', 't', 2],
+    ['16:00', 0, 'Follow-ups drafted for walk-outs', 'q', 3], ['17:00', 4, 'An unanswered enquiry is flagged to the owner', 'a', 1], ['18:30', 1, 'Evening bills', 't', 8],
+    ['19:00', 0, 'Birthday and anniversary wishes drafted', 'q', 4], ['21:00', 5, 'Day-close: cash tallied against bills', 'a', 1],
+  ],
+  chain: [
+    ['09:30', 0, 'One rate and one rule reach every branch', 'a', 5], ['10:00', 1, 'Branches open their registers', 't', 5], ['10:30', 3, 'Priced replies drafted for enquiries', 'q', 31],
+    ['11:00', 1, 'Bills across the branches', 't', 64], ['11:05', 5, 'Bills post to one ledger', 'a', 64], ['12:00', 2, 'A transfer is requested and approved', 't', 3],
+    ['13:00', 2, 'Stock at every branch updates', 'a', 64], ['14:00', 4, 'A head-office campaign reaches its segment, inside each cap', 'q', 1], ['15:00', 0, 'A discount above the limit asks for approval', 'a', 4],
+    ['16:30', 3, 'A customer who asked at one branch is known at another', 'a', 7], ['18:00', 1, 'Evening bills', 't', 96], ['20:30', 0, 'A branch falling behind target is flagged', 'a', 1],
+    ['21:00', 5, 'Day-close by branch', 'a', 5], ['21:15', 0, 'Head office sees the day', 'a', 1],
+  ],
+  franchise: [
+    ['09:30', 0, 'The brand price rule reaches every store', 'a', 18], ['10:00', 1, 'Stores open their registers', 't', 18], ['10:30', 4, 'Priced replies drafted for local enquiries', 'q', 42],
+    ['11:00', 1, 'Bills at the brand price', 't', 110], ['11:05', 5, 'Sales land in the network view', 'a', 110], ['12:30', 0, 'A local offer asks the brand for approval', 'a', 2],
+    ['13:00', 3, 'The brand campaign goes out, store by store, inside each cap', 'q', 18], ['14:30', 2, 'Stores order replenishment', 't', 6], ['15:00', 2, 'Orders reserve available brand stock', 'a', 6],
+    ['17:00', 0, 'An off-rule price is stopped at the counter', 'a', 3], ['18:30', 1, 'Evening bills', 't', 140], ['21:00', 5, 'Tonight’s report: sales, stock and customers by store', 'a', 1],
+  ],
+  maker: [
+    ['08:30', 2, 'Karigars punch in', 't', 22], ['09:00', 0, 'A retailer’s order becomes jobs against the BOM', 'a', 12], ['09:30', 1, 'Metal issued in fine grams', 't', 12],
+    ['09:35', 2, 'Each karigar’s balance updates', 'a', 12], ['11:00', 3, 'Finished jobs pass quality check', 't', 9], ['12:00', 2, 'A job over the wastage norm is flagged', 'a', 2],
+    ['13:30', 0, 'A job running late is flagged before the due date', 'a', 1], ['13:40', 0, 'Delay notes drafted for the retailers concerned', 'q', 1], ['14:00', 3, 'A hallmarking batch returns; HUIDs attach piece by piece', 'a', 40], ['15:00', 4, 'Finished pieces enter stock at real weights', 'a', 40],
+    ['16:00', 4, 'Orders dispatched', 't', 3], ['16:05', 5, 'Invoices raised; party ledgers updated', 'a', 3], ['16:30', 5, 'Payment reminders drafted for overdue parties', 'q', 4], ['17:30', 1, 'Scrap and dust weighed back', 't', 6],
+    ['18:00', 2, 'Metal closes for the day, by department', 'a', 1], ['18:15', 5, 'Karigar wages worked out against gold', 'a', 22],
+  ],
+  b2b: [
+    ['09:30', 4, 'New stock is priced by each buyer’s terms', 'a', 60], ['10:00', 0, 'Buyers open their links', 'a', 14], ['10:30', 3, 'Replies drafted to buyer enquiries', 'q', 11],
+    ['11:00', 1, 'Pieces go out on memo', 't', 86], ['11:05', 4, 'Memo stock is marked as out, not sold', 'a', 86], ['12:30', 2, 'Receipts posted to party ledgers', 't', 5],
+    ['14:00', 1, 'Memos due back tomorrow are flagged', 'a', 3], ['14:30', 3, 'Return reminders drafted', 'q', 3], ['15:30', 5, 'Kept pieces become invoices', 'a', 4],
+    ['16:00', 4, 'Returned pieces go back on the shelf', 'a', 22], ['17:00', 2, 'A buyer over his credit limit is flagged', 'a', 1], ['18:00', 0, 'What each buyer lingered on is on his record', 'a', 14],
+  ],
+  d2c: [
+    ['00:30', 0, 'Orders arrive while you sleep', 'a', 6], ['08:00', 1, 'Priced replies drafted for Instagram messages', 'q', 28], ['09:00', 2, 'Priced replies drafted for WhatsApp', 'q', 17],
+    ['10:00', 3, 'Each order is traced to the ad that earned it', 'a', 11], ['11:00', 0, 'Carts are abandoned', 'a', 9], ['11:30', 4, 'Cart recovery messages drafted', 'q', 9],
+    ['13:00', 5, 'Paid orders reserve stock', 'a', 11], ['14:00', 3, 'An ad over its budget raises an alert', 'a', 1], ['15:00', 5, 'A piece runs low; a reorder is drafted', 'q', 2],
+    ['17:00', 2, 'Delivery updates drafted', 'q', 8], ['19:00', 1, 'Comments answered from the catalogue', 'q', 22], ['22:00', 5, 'Orders, payments and stock agree', 'a', 1],
+  ],
+  trader: [
+    ['09:30', 0, 'New parcels entered, to the carat', 't', 4], ['10:00', 1, 'Each buyer’s link shows his prices from your grid', 'a', 9], ['10:30', 5, 'Stone lists drafted for buyer requests', 'q', 12],
+    ['11:30', 2, 'Stones go out on memo', 't', 18], ['11:35', 0, 'Memo stones are marked as out, not sold', 'a', 18], ['13:00', 3, 'Quotations drafted at your grid rate', 'q', 5],
+    ['14:00', 2, 'Memos due back are flagged', 'a', 2], ['15:00', 4, 'Kept stones become invoices', 'a', 3], ['15:30', 0, 'Returned stones go back to stock', 'a', 7],
+    ['16:30', 4, 'Receipts posted to party ledgers', 't', 3], ['17:30', 1, 'Which stones each buyer opened is on his record', 'a', 9], ['18:00', 4, 'Exposure by buyer is totalled', 'a', 1],
+  ],
+  diamondretail: [
+    ['09:30', 0, 'Replies with the certificate drafted for Instagram messages', 'q', 12], ['10:30', 1, 'Each stone’s certificate is on its record', 'a', 6], ['11:00', 2, 'Comparison links shared', 't', 4],
+    ['11:30', 2, 'Which stone she lingered on is recorded', 'a', 4], ['13:00', 3, 'Video appointments booked', 'a', 3], ['14:00', 3, 'Reminders drafted for appointments', 'q', 3],
+    ['15:00', 4, 'Rings tried at the counter', 't', 5], ['16:00', 4, 'Bills with the certificate attached', 't', 2], ['16:05', 5, 'A supplier-memo stone sold raises its settlement', 'a', 1],
+    ['17:30', 0, 'Follow-ups drafted for those who compared and left', 'q', 6], ['19:00', 1, 'Stones unsold for 180 days are flagged', 'a', 9], ['20:30', 4, 'Day-close', 'a', 1],
+  ],
+  silver: [
+    ['09:30', 1, 'The silver rate moves; every price follows', 'a', 1], ['10:00', 0, 'Bills by weight', 't', 26], ['10:05', 5, 'Bills post to the books', 'a', 26],
+    ['11:30', 2, 'Sold weight comes off the lot', 'a', 26], ['12:30', 3, 'The festival message reaches gift buyers', 'q', 1], ['13:30', 4, 'Catalogue links opened', 'a', 38],
+    ['14:30', 2, 'A fast-moving category is flagged for reorder', 'a', 2], ['16:00', 0, 'Afternoon bills', 't', 31], ['17:30', 3, 'Who opened and who came is recorded', 'a', 12],
+    ['19:00', 0, 'Evening bills', 't', 17], ['20:30', 2, 'One category counted by scanning', 't', 1], ['21:00', 5, 'Day-close', 'a', 1],
+  ],
+  bridal: [
+    ['09:30', 0, 'Replies drafted on family threads', 'q', 8], ['10:30', 1, 'Trials booked, with the shortlist attached', 'a', 4], ['11:00', 1, 'Reminders drafted for today’s trials', 'q', 4],
+    ['12:00', 4, 'Sets tried on the floor', 't', 14], ['13:30', 2, 'Quotations drafted at today’s rate', 'q', 3], ['14:00', 2, 'A revised quotation keeps the earlier one', 'a', 2],
+    ['15:00', 3, 'A scheme balance is applied to an order', 'a', 1], ['15:30', 4, 'Advances taken', 't', 2], ['16:00', 5, 'Accepted sets go into making as orders', 'a', 2],
+    ['17:30', 5, 'An order nearing its delivery date is flagged', 'a', 1], ['18:30', 0, 'Delivery updates drafted for families', 'q', 3], ['20:30', 4, 'Day-close', 'a', 1],
+  ],
+  luxury: [
+    ['09:30', 4, 'Clients with an occasion this month are listed', 'a', 6], ['10:00', 4, 'Personal notes drafted', 'q', 6], ['11:00', 1, 'Private previews shared', 't', 3],
+    ['11:30', 1, 'Which piece she returned to is recorded', 'a', 3], ['12:30', 2, 'A video viewing is booked from abroad', 'a', 1], ['14:00', 3, 'Clients checked in on the floor', 't', 4],
+    ['14:30', 0, 'What each tried goes on her record', 'a', 4], ['16:00', 5, 'A sale, with the certificate on the bill', 't', 1], ['16:05', 0, 'Her sizes and taste update', 'a', 1],
+    ['17:30', 0, 'A client who has gone quiet is flagged', 'a', 2], ['18:30', 4, 'A thank-you note drafted', 'q', 1], ['20:00', 5, 'Day-close', 'a', 1],
+  ],
+  bullion: [
+    ['09:30', 0, 'The market opens; one rate goes out with your spread', 'a', 1], ['09:45', 1, 'Rate replies drafted for buyers', 'q', 19], ['10:30', 1, 'Bookings taken at the rate agreed', 't', 11],
+    ['10:35', 2, 'Each booking lands on the buyer’s account', 'a', 11], ['11:30', 0, 'The rate moves; open quotes follow', 'a', 4], ['12:30', 3, 'A purchase from the refiner covers the bookings', 't', 1],
+    ['12:35', 4, 'Fine gold stock moves with it', 'a', 1], ['14:00', 2, 'Receipts posted by bank transfer', 't', 7], ['15:00', 2, 'A buyer over his limit is flagged', 'a', 1],
+    ['16:30', 4, 'Deliveries reduce bar stock', 'a', 9], ['17:00', 5, 'Invoices raised on delivery', 'a', 9], ['18:30', 2, 'Party ledgers balance for the day', 'a', 1],
+  ],
+};
+Object.keys(DAYS).forEach((k) => { GEM[k].day = DAYS[k]; });
 GEM.staff = GEM.single;
 
 module.exports = { GEM, FAMILIES, GEM_PAGE };

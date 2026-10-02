@@ -8,11 +8,11 @@ const L = require('../lib');
 const PRICE = `<div class="home-price">
     <div>
       <p class="eyebrow">PRICE</p>
-      <h2>Every module. ₹9,999 a month. 14 days free.</h2>
-      <p>One plan, billed annually, or ₹18,000 month to month. No per-module price, no per-seat price, no card for the trial.</p>
+      <h2>Every module. ₹18,000 a month. First month ₹3,600.</h2>
+      <p>One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.</p>
     </div>
     <div class="cta-row">
-      <a class="btn btn-primary" href="${L.TRIAL_URL}seo" rel="noopener" data-trial>Start my 14-day free trial</a>
+      <a class="btn btn-primary" href="${L.TRIAL_URL}seo" rel="noopener" data-trial>Start for ₹3,600</a>
       <a class="btn btn-ghost" href="/pricing">See the full pricing</a>
     </div>
   </div>`;
@@ -171,13 +171,13 @@ const cityPage = ([slug, name, trade, need, links, q, a]) => {
   const faqs = [
     { q, a },
     { q: `Is there a Jwero office in ${name}?`, a: `No. Jwero is set up and supported over chat, call and video call, so a jeweller in ${name} gets the same team as one anywhere else in India. Your data is imported for you and training is done on your own screen.` },
-    { q: `What does jewellery software cost for a shop in ${name}?`, a: 'The price is the same in every city: ₹9,999 a month billed annually, or ₹18,000 month to month, with every module included and a 14-day free trial without a card. WhatsApp messages, AI and calls run on a prepaid wallet at published rates.' },
+    { q: `What does jewellery software cost for a shop in ${name}?`, a: 'The price is the same in every city: ₹18,000 a month, with every module included. The first month is ₹3,600. WhatsApp messages, AI and calls run on a prepaid wallet at published rates.' },
     { q: 'Do I have to give up Tally?', a: 'No. Sales, purchases and payments post to Jwero’s own ledger with GST handled, and the Tally and Zoho Books bridges carry the entries across if your accountant works there.' },
   ];
   return {
     slug: `jewellery-software-india/${slug}`,
     title: `Jewellery Software in ${name === 'Bengaluru' ? 'Bangalore' : name}: Billing, Stock, CRM in One | Jwero`,
-    description: `Jewellery software for jewellers in ${name === 'Bengaluru' ? 'Bangalore (Bengaluru)' : name}: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. 14-day free trial.`,
+    description: `Jewellery software for jewellers in ${name === 'Bengaluru' ? 'Bangalore (Bengaluru)' : name}: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600.`,
     breadcrumbs: [['Home', '/'], ['Jewellery software in India', '/jewellery-software-india'], [name]],
     faqs,
     body: `
@@ -233,7 +233,7 @@ const hub = {
   faqs: [
     { q: 'Which jewellery software is used in India?', a: 'Indian jewellers mostly run a billing or ERP package, Tally for accounts, WhatsApp on a phone and Excel for everything in between. Jwero replaces that set with one system: counter, stock, purchase, workshop, customers, schemes, selling channels and books on one record.' },
     { q: 'Is Jwero made for Indian jewellers?', a: 'Yes. It prices at the live gold rate with making and wastage rules, handles old-gold exchange, HUID, GST invoices, gold savings schemes, girvi and karigar accounts in fine grams. Its rate feed, GST shapes and phone defaults are India first.' },
-    { q: 'What does it cost?', a: '₹9,999 a month billed annually, or ₹18,000 month to month, with every module included. The first 14 days are free and need no card.' },
+    { q: 'What does it cost?', a: '₹18,000 a month, with every module included. The first month is ₹3,600.' },
   ],
   body: `
 ${L.hero({
@@ -259,7 +259,7 @@ ${L.section(PRICE)}
 ${L.section(`${L.sectionHead('QUESTIONS', 'What jewellers ask first.', '')}${L.faqBlock([
   { q: 'Which jewellery software is used in India?', a: 'Most jewellers run a billing or ERP package, Tally for accounts, WhatsApp on a phone and Excel for everything in between. Jwero replaces that set with one system on one record. <a href="/compare">See how it compares</a>.' },
   { q: 'Is Jwero made for Indian jewellers?', a: 'Yes: live gold rate with making and wastage rules, old-gold exchange, HUID, GST invoices, savings schemes, girvi and karigar accounts in fine grams.' },
-  { q: 'What does it cost?', a: '₹9,999 a month billed annually, or ₹18,000 month to month, every module included, 14 days free. <a href="/pricing">Full pricing</a>.' },
+  { q: 'What does it cost?', a: '₹18,000 a month, every module included. The first month is ₹3,600. <a href="/pricing">Full pricing</a>.' },
 ])}`, { tone: 'tint' })}
 
 ${L.ctaBand('Tell us your city and what you run today.', 'We will show you the same day in Jwero.', 'india')}
@@ -315,7 +315,7 @@ const accounting = needPage({
     { q: 'Is Jwero a replacement for Tally?', a: 'It can be, and it does not have to be. Every transaction posts to Jwero’s own double-entry ledger. If your accountant prefers Tally or Zoho Books, the bridge carries the entries there.' },
     { q: 'Does it handle GST for jewellery?', a: 'Invoices are GST-ready, with tax handled on sales, returns, old-gold exchange and purchases. E-invoice IRN, e-way bills and portal filing are not done by Jwero today.' },
     { q: 'Can ledgers be kept in gold weight?', a: 'Yes. Party ledgers for buyers, vendors and karigars can be read in grams and in rupees.' },
-    { q: 'What does it cost?', a: 'Accounting is part of the one plan: ₹9,999 a month billed annually, every module included, 14 days free.' },
+    { q: 'What does it cost?', a: 'Accounting is part of the one plan: ₹18,000 a month, every module included. The first month is ₹3,600.' },
   ],
   links: [['/products/billing-finance', 'Jewellery billing software'], ['/platform/integrations/tally', 'Tally integration'], ['/blog/jewellery-software-and-tally', 'Jewellery software and Tally'], ['/roles/accountant', 'For the accountant']],
 });
@@ -391,11 +391,11 @@ const hi = {
   slug: 'hi',
   lang: 'hi',
   title: 'ज्वेलरी सॉफ्टवेयर: बिलिंग, स्टॉक, CRM और WhatsApp | Jwero',
-  description: 'ज्वेलर्स के लिए सॉफ्टवेयर: लाइव सोने के भाव पर GST बिलिंग, स्टॉक, खरीद, कारीगर खाता, गोल्ड स्कीम, गिरवी, WhatsApp और हिसाब किताब, सब एक ही रिकॉर्ड पर। 14 दिन मुफ़्त।',
+  description: 'ज्वेलर्स के लिए सॉफ्टवेयर: लाइव सोने के भाव पर GST बिलिंग, स्टॉक, खरीद, कारीगर खाता, गोल्ड स्कीम, गिरवी, WhatsApp और हिसाब किताब, सब एक ही रिकॉर्ड पर। पहला महीना ₹3,600।',
   breadcrumbs: [['Home', '/'], ['हिंदी']],
   faqs: [
     { q: 'क्या Jwero हिंदी में चलता है?', a: 'सपोर्ट और ट्रेनिंग हिंदी में मिलती है। सॉफ्टवेयर की स्क्रीन अभी अंग्रेज़ी में हैं, और कारीगर की स्क्रीन पर हिंदी का शुरुआती रूप उपलब्ध है।' },
-    { q: 'कीमत क्या है?', a: 'सालाना बिलिंग पर ₹9,999 प्रति माह, या महीने दर महीने ₹18,000। हर मॉड्यूल शामिल है। पहले 14 दिन मुफ़्त हैं और कार्ड नहीं लगता।' },
+    { q: 'कीमत क्या है?', a: '₹18,000 प्रति माह, हर महीने बिलिंग। हर मॉड्यूल शामिल है। पहला महीना ₹18,000 की जगह ₹3,600 में।' },
     { q: 'क्या Tally छोड़ना पड़ेगा?', a: 'नहीं। हर बिक्री, खरीद और भुगतान Jwero के अपने खाते में GST के साथ दर्ज होता है, और Tally या Zoho Books ब्रिज से आपके अकाउंटेंट तक पहुँच जाता है।' },
     { q: 'क्या AI ग्राहक को बिना पूछे मैसेज भेजेगा?', a: 'नहीं। AI जो भी लिखता है वह आपकी मंज़ूरी का इंतज़ार करता है। आप हाँ कहें, तभी भेजा जाता है।' },
   ],
@@ -426,11 +426,11 @@ ${L.section(
   `<div class="home-price">
     <div>
       <p class="eyebrow">कीमत</p>
-      <h2>हर मॉड्यूल। ₹9,999 प्रति माह। 14 दिन मुफ़्त।</h2>
-      <p>एक ही प्लान, सालाना बिलिंग पर, या महीने दर महीने ₹18,000। ट्रायल के लिए कार्ड नहीं चाहिए। WhatsApp मैसेज, AI और कॉल प्रीपेड वॉलेट से चलते हैं।</p>
+      <h2>हर मॉड्यूल। ₹18,000 प्रति माह। पहला महीना ₹3,600।</h2>
+      <p>एक ही प्लान, हर महीने बिलिंग। पहला महीना ₹18,000 की जगह ₹3,600 में। WhatsApp मैसेज, AI और कॉल प्रीपेड वॉलेट से चलते हैं।</p>
     </div>
     <div class="cta-row">
-      <a class="btn btn-primary" href="${L.TRIAL_URL}hindi" rel="noopener" data-trial>14 दिन का मुफ़्त ट्रायल शुरू करें</a>
+      <a class="btn btn-primary" href="${L.TRIAL_URL}hindi" rel="noopener" data-trial>₹3,600 में शुरू करें</a>
       <a class="btn btn-ghost" href="/pricing">पूरी कीमत देखें</a>
     </div>
   </div>`
@@ -438,7 +438,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('सवाल', 'ज्वेलर्स सबसे पहले क्या पूछते हैं।', '')}${L.faqBlock([
   { q: 'क्या Jwero हिंदी में चलता है?', a: 'सपोर्ट और ट्रेनिंग हिंदी में मिलती है। सॉफ्टवेयर की स्क्रीन अभी अंग्रेज़ी में हैं, और कारीगर की स्क्रीन पर हिंदी का शुरुआती रूप उपलब्ध है।' },
-  { q: 'कीमत क्या है?', a: 'सालाना बिलिंग पर ₹9,999 प्रति माह, या महीने दर महीने ₹18,000। हर मॉड्यूल शामिल है। पहले 14 दिन मुफ़्त हैं और कार्ड नहीं लगता।' },
+  { q: 'कीमत क्या है?', a: '₹18,000 प्रति माह, हर महीने बिलिंग। हर मॉड्यूल शामिल है। पहला महीना ₹18,000 की जगह ₹3,600 में।' },
   { q: 'क्या Tally छोड़ना पड़ेगा?', a: 'नहीं। हर बिक्री, खरीद और भुगतान Jwero के अपने खाते में GST के साथ दर्ज होता है, और Tally या Zoho Books ब्रिज से आपके अकाउंटेंट तक पहुँच जाता है।' },
   { q: 'क्या AI ग्राहक को बिना पूछे मैसेज भेजेगा?', a: 'नहीं। AI जो भी लिखता है वह आपकी मंज़ूरी का इंतज़ार करता है। आप हाँ कहें, तभी भेजा जाता है।' },
   { q: 'शुरू करने में कितना समय लगता है?', a: 'पहला चरण कुछ दिनों में: आपके ग्राहक और स्टॉक हम इम्पोर्ट करते हैं, आपका WhatsApp नंबर जुड़ता है और कैटलॉग प्रकाशित होता है।' },

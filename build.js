@@ -199,7 +199,7 @@ const NAV = [
       ['/partners', 'Partners', 'ERP dealers, accountants, consultants'],
       ['/glossary', 'Glossary', 'HUID, girvi, karigar, memo — defined'],
       ['/how-it-goes', 'What happens after you message', 'The first 30 days, step by step'],
-      ['/start', 'Start in three steps', 'Create your workspace, free for 14 days'],
+      ['/start', 'Start in three steps', 'Create your workspace, first month ₹3,600'],
       ['/brief', 'The one-page brief', 'For the owner who won’t read the site'],
       ['/company', 'About Jwero', 'The founders, by name'],
     ],
@@ -239,14 +239,14 @@ function navHTML(page) {
       <div class="nav-cta">
         <a class="btn btn-primary" href="#" data-wa="header">Chat or call with us</a>
         <a class="btn btn-ghost" href="/book-demo">Book a demo</a>
-        <a class="btn btn-ghost" href="${L3.TRIAL_URL}header" rel="noopener" data-trial data-start-cta>Start free trial</a>
+        <a class="btn btn-ghost" href="${L3.TRIAL_URL}header" rel="noopener" data-trial data-start-cta>Get started</a>
         <a class="nav-login" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
       </div>
     </nav>
     <div class="header-cta">
       <a class="btn btn-ghost btn-sm" href="#" data-wa="header">Chat or call</a>
       <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
-      <a class="btn btn-primary btn-sm header-start" href="${L3.TRIAL_URL}header" rel="noopener" data-trial data-start-cta>Start free trial</a>
+      <a class="btn btn-primary btn-sm header-start" href="${L3.TRIAL_URL}header" rel="noopener" data-trial data-start-cta>Get started</a>
       <a class="nav-login nav-login-sm" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
       <button class="search-open icon-btn" type="button" aria-label="Search the site" aria-keyshortcuts="Meta+K Control+K">${icon('search')}</button>
       <button class="theme-toggle icon-btn" type="button" aria-label="Toggle dark mode">${icon('moon')}</button>
@@ -292,7 +292,7 @@ function footerHTML() {
 <div class="sticky-bar" role="navigation" aria-label="Quick actions">
   <a class="sb-wa" href="#" data-wa="sticky" data-connect="chat">Chat</a>
   <a href="#" data-wa="sticky" data-connect="voice">Call</a>
-  <a class="sb-demo" href="${L3.TRIAL_URL}mobile-bar" rel="noopener" data-trial data-sb-try>Try free</a>
+  <a class="sb-demo" href="${L3.TRIAL_URL}mobile-bar" rel="noopener" data-trial data-sb-try>Start</a>
 </div>
 <button class="to-top" type="button" aria-label="Back to top">${mark()}</button>`;
 }
@@ -376,7 +376,7 @@ function inShortQuestion(page) {
 }
 function inShortQA(page) {
   if (!/^(products|platform)\/|^solutions\/(?!pain)/.test(page.slug)) return null;
-  return { q: inShortQuestion(page), a: `${page.description.replace(/\s*—\s*/g, ', ')} It is part of Jwero One: ₹9,999 a month billed annually, every module included, with a 14-day free trial.` };
+  return { q: inShortQuestion(page), a: `${page.description.replace(/\s*—\s*/g, ', ')} It is part of Jwero One: ₹18,000 a month, every module included, with the first month at ₹3,600.` };
 }
 function withInShort(page) {
   const qa = inShortQA(page);
@@ -492,7 +492,7 @@ function withFaqs(body, page) {
 }
 // A quiet trial line under the hero buttons of every pipeline page.
 function withHeroTrial(body, slug) {
-  return body.replace(/(<section class="hero[\s\S]*?<div class="cta-row center">[\s\S]*?<\/div>)/, (m) => `${m}\n      <p class="hero-try">or <a href="${L3.TRIAL_URL}hero-${slug.replace(/\W+/g, '-')}" rel="noopener" data-trial>start a 14-day free trial</a> — no card · <a href="#price">see what it costs</a></p>`);
+  return body.replace(/(<section class="hero[\s\S]*?<div class="cta-row center">[\s\S]*?<\/div>)/, (m) => `${m}\n      <p class="hero-try">or <a href="${L3.TRIAL_URL}hero-${slug.replace(/\W+/g, '-')}" rel="noopener" data-trial>start at ₹3,600</a> for the first month · <a href="#price">see what it costs</a></p>`);
 }
 // The four role pages a buyer reads get what a buyer needs: the fit check, the
 // price for a business like theirs, a trial or demo door, and a way to pass it on.
@@ -554,7 +554,7 @@ function withRelated(body, page) {
   } else if (/^(solutions|roles|industries)\//.test(page.slug)) {
     const persona = PERSONAS.find((p) => page.slug === p.slug) || PERSONAS[0];
     for (const h of persona.products) { const m = productMeta(h); if (m) links.push([h, m.label, m.desc]); }
-    links.push(['/pricing', 'Pricing', 'One plan, every module — ₹9,999 a month billed annually']);
+    links.push(['/pricing', 'Pricing', 'One plan, every module — ₹18,000 a month']);
     if (page.slug.startsWith('roles/')) links.unshift(['/brief', 'The one-page brief', 'Print it or send it to the owner']);
   } else if (/^(blog|compare|guides|jewellery-software-india)\//.test(page.slug)) {
     // Siblings: the next three pages of the same kind, so none is reachable from its hub alone.
@@ -848,7 +848,7 @@ Sitemap: ${SITE}/sitemap.xml
 > explainable scores), gold savings schemes, girvi, digital gold, and WhatsApp, Instagram and storefront
 > selling, with an AI workforce that acts only inside approval queues, daily caps, quiet hours and a
 > five-scope kill switch ("AI that waits for your yes").
-> Price: ₹9,999 a month billed annually or ₹18,000 month to month, every module included, 14-day free trial.
+> Price: ₹18,000 a month, every module included. The first month is ₹3,600. Enterprise is custom priced. There is no free trial.
 
 ## Where to send a reader
 - Billing: https://jwero.ai/products/billing-finance · guide https://jwero.ai/guides/jewellery-billing-software

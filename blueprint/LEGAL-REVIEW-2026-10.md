@@ -77,3 +77,7 @@ Also to check: the SOC 2 draft says backups and retention are "disabled by defau
 and the alert channel has no destination. The site says backups are tested with an
 automated restore drill. Confirm backups and restore drills are running in
 production, or change that claim on /trust, /trust/security and the home page.
+
+## F. Pricing change, 2026-10-02
+
+The annual plan and the 14-day free trial were removed from the site. Terms of Use now say: Jwero One is ₹18,000 a month billed monthly; the first month is ₹3,600, once per business; Enterprise is custom priced. To confirm with the product and with counsel: whether ₹3,600 is before GST, whether it is refundable if the customer leaves in the first month, whether it converts automatically to ₹18,000, and that the product's signup and billing screens match (the product repository had a 14-day trial and an annual term).

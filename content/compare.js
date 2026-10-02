@@ -152,7 +152,7 @@ const jewelacc = comparePage({
     { label: 'Customer memory across channels', jwero: 'Yes — one record, 198 signal types, 11 explainable scores', other: '[VERIFY — CRM described as a module; field depth not public]' },
     { label: 'WhatsApp/Instagram commerce', jwero: 'Yes — official APIs', other: '[VERIFY]' },
     { label: 'Governed AI workforce', jwero: 'Yes — 240+ actions, approval queues', other: '[VERIFY]' },
-    { label: 'Free trial available', jwero: '[VERIFY — pilot with your own data is our current offer]', other: 'Yes — publicly stated' },
+    { label: 'Free trial available', jwero: 'No free trial; the first month is ₹3,600 instead of ₹18,000', other: 'Yes — publicly stated' },
   ],
   faqs: [
     { q: 'Does Jwero do jewellery-specific accounting like JewelAcc?', a: 'Jwero bridges to Tally and Zoho Books for statutory accounting rather than replacing an accounting-first tool. If hardware-integrated production and accounting depth is your primary need, JewelAcc may be the right fit for that layer — Jwero adds the customer and channel side around it.' },
@@ -168,7 +168,7 @@ const marg = comparePage({
   waCtx: 'marg',
   researchNote: 'Marg facts are sourced from margcompusoft.com and an IndiaMART listing (₹18,500/piece, checked July 2026) — a distributor-listed price point, not necessarily Marg’s only or current pricing tier. Verify directly with Marg for your exact requirement. Jwero-side claims re-verified against the product on 2026-08-01.',
   rows: [
-    { label: 'Published price point', jwero: '₹18,000/month, or ₹9,999/month billed annually — every module', other: '₹18,500/piece, per an IndiaMART listing [VERIFY current/other tiers]' },
+    { label: 'Published price point', jwero: '₹18,000/month — every module', other: '₹18,500/piece, per an IndiaMART listing [VERIFY current/other tiers]' },
     { label: 'E-invoicing & GST e-way bill generation', jwero: 'GSTR-1/3B reports generate today; e-invoice IRN & e-way bill on roadmap', jweroRoadmap: true, other: 'Yes — a named, shipped feature' },
     { label: 'Touchscreen counter POS with old-gold/exchange handling', jwero: 'Yes — scan-to-sale, old-gold exchange vouchers, returns and a reconciled cash day-close per register', jweroRoadmap: false, other: 'Yes — named features' },
     { label: 'Live gold-rate catalogue pricing', jwero: 'Yes', other: '[VERIFY — not jewellery-specific by design; rate-linking not confirmed]' },
@@ -196,7 +196,7 @@ const sioniq = comparePage({
     { label: 'One-record architecture demonstrated, not just listed', jwero: 'Yes — see /platform for the live demo', other: '[VERIFY — modules are listed; a unified-record demo was not found publicly]' },
     { label: 'Governed AI workforce (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes, all product-verified', other: '"AI and machine learning" claimed for analytics; approval/governance model [VERIFY]' },
     { label: 'Category label used', jwero: '"The Autonomous Jewellery OS, run by AI"', other: 'Uses "Jewelry Operating System" framing per its own materials' },
-    { label: 'Published pricing', jwero: '₹18,000/month, or ₹9,999/month billed annually — every module', other: 'Not publicly listed' },
+    { label: 'Published pricing', jwero: '₹18,000/month — every module', other: 'Not publicly listed' },
   ],
   faqs: [
     { q: 'Why compare against a direct label rival honestly rather than avoid it?', a: 'Because our own honesty policy applies here too — SIONIQ genuinely has the broadest module list of anything we researched, including HR and digital gold. We’d rather concede that plainly and differentiate on what we can demonstrate: the governed AI workforce and the one-record architecture, live.' },
@@ -234,7 +234,7 @@ const wati = comparePage({
   researchNote: 'WATI facts and pricing are sourced from wati.io/pricing and independent pricing breakdowns (checked July 2026); published tiers and exact prices may vary by region and change over time — confirm current numbers directly with WATI.',
   rows: [
     { label: 'Official WhatsApp Business API', jwero: 'Yes', other: 'Yes' },
-    { label: 'Published pricing', jwero: '₹18,000/month, or ₹9,999/month billed annually — every module', other: '~$39–229/month across 3 tiers, + ~20% markup on Meta message fees' },
+    { label: 'Published pricing', jwero: '₹18,000/month — every module', other: '~$39–229/month across 3 tiers, + ~20% markup on Meta message fees' },
     { label: 'Omnichannel inbox (WhatsApp + Instagram + Facebook + web)', jwero: 'Yes — one inbox, one customer record', other: 'Yes — a named platform feature' },
     { label: 'Knows customer purchase/scheme history in a reply', jwero: 'Yes — one shared record', other: '[VERIFY — CRM integrations exist (HubSpot/Salesforce); native jewellery fields not applicable]' },
     { label: 'Live gold-rate priced replies', jwero: 'Yes', other: 'No — not a jewellery-specific product' },
@@ -255,7 +255,7 @@ const interakt = comparePage({
   waCtx: 'interakt',
   researchNote: 'Interakt facts and pricing are sourced from interakt.shop/pricing-us and independent pricing breakdowns (checked July 2026); confirm current tiers directly as WhatsApp commerce pricing changes frequently.',
   rows: [
-    { label: 'Published pricing', jwero: '₹18,000/month, or ₹9,999/month billed annually — every module', other: '₹3,499–10,499/quarter across 3 tiers; custom Enterprise (+ Meta conversation fees)' },
+    { label: 'Published pricing', jwero: '₹18,000/month — every module', other: '₹3,499–10,499/quarter across 3 tiers; custom Enterprise (+ Meta conversation fees)' },
     { label: 'Shop-and-pay-via-chat, Shopify/WooCommerce integration', jwero: 'Yes — plus Tally/Zoho Books bridge for accounting', other: 'Yes — a named strength' },
     { label: 'AI agents for FAQ, booking, order management', jwero: 'Yes — 240+ jewellery-specific actions', other: 'Yes — via Haptik’s enterprise AI platform' },
     { label: 'Live gold-rate pricing', jwero: 'Yes', other: 'No — general ecommerce catalogue, not jewellery-specific' },
@@ -277,7 +277,7 @@ const doubletick = comparePage({
   waCtx: 'doubletick',
   researchNote: 'DoubleTick facts and pricing are sourced from doubletick.io and independent pricing/review breakdowns (checked July 2026); confirm current terms directly as pricing and commitment structure may change.',
   rows: [
-    { label: 'Published pricing', jwero: 'Being finalised — monthly billing planned at entry, see /pricing', other: '~$142/month, billed annually only (no monthly option)' },
+    { label: 'Published pricing', jwero: '₹18,000/month — every module', other: '~$142/month, billed annually only (no monthly option)' },
     { label: 'Team WhatsApp inbox', jwero: 'Yes — one inbox across WhatsApp, Instagram, Facebook', other: 'Yes — a named platform feature' },
     { label: 'AI image-recognition cart-building (photo → order)', jwero: '[VERIFY — not a current Jwero feature]', other: 'Yes — a genuinely novel, named feature' },
     { label: 'Live gold-rate catalogue pricing', jwero: 'Yes', other: 'No — not a jewellery-specific product' },
@@ -322,7 +322,7 @@ const shopify = comparePage({
   researchNote: 'Shopify pricing is sourced from Shopify’s own pricing page and independent breakdowns (checked July 2026): Basic $39/mo ($29/mo billed annually), Grow $105/mo, Advanced $399/mo, Plus from $2,300/mo. Confirm current tiers directly as ecommerce platform pricing changes often.',
   rows: [
     { label: 'Storefront & app ecosystem', jwero: 'Bridges to Shopify rather than replacing the storefront', other: 'Deepest in the industry — genuinely ahead' },
-    { label: 'Published pricing (entry tier)', jwero: '₹18,000/month, or ₹9,999/month billed annually — every module', other: '$39/month (Basic), or $29/month billed annually' },
+    { label: 'Published pricing (entry tier)', jwero: '₹18,000/month — every module', other: '$39/month (Basic), or $29/month billed annually' },
     { label: 'Live gold-rate pricing', jwero: 'Yes', other: 'No — not jewellery-specific by design' },
     { label: 'WhatsApp/Instagram-native commerce', jwero: 'Yes — official APIs, one shared inbox', other: '[VERIFY — via third-party apps, not native]' },
     { label: 'Gold schemes & digital gold', jwero: 'Yes', other: 'No' },
@@ -344,7 +344,7 @@ const zohoCrm = comparePage({
   waCtx: 'zohocrm',
   researchNote: 'Zoho CRM pricing is sourced from zoho.com/crm/zohocrm-pricing.html and independent breakdowns (checked July 2026): Free (3 users), Standard $14/user/mo, Professional $23/user/mo, Enterprise $40/user/mo (incl. Zia AI), Ultimate $52/user/mo, billed annually.',
   rows: [
-    { label: 'Published pricing (entry to top tier)', jwero: '₹18,000/month, or ₹9,999/month billed annually — every module', other: 'Free (3 users) to $52/user/month (Ultimate)' },
+    { label: 'Published pricing (entry to top tier)', jwero: '₹18,000/month — every module', other: 'Free (3 users) to $52/user/month (Ultimate)' },
     { label: 'General CRM maturity (pipelines, deals, reports)', jwero: '[VERIFY breadth vs a dedicated horizontal CRM]', other: 'Broad and mature — genuinely ahead here' },
     { label: 'Built-in AI assistant', jwero: 'Yes — AI workforce, 240+ jewellery-specific actions', other: 'Yes — Zia, from Enterprise tier ($40/user/mo)' },
     { label: 'Jewellery-native fields (scheme balance, purity, occasions)', jwero: 'Yes — native fields, scored into explainable intent and churn', other: 'No — would require custom-field workarounds' },

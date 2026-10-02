@@ -150,13 +150,13 @@ const privacy = doc({
 const terms = doc({
   slug: 'legal/terms',
   title: 'Terms of Use: Website and Jwero Subscription | Jwero',
-  description: 'The terms on which Jwero is provided to jewellery businesses: accounts, the free trial, fees and the prepaid wallet, your data, acceptable use, AI features, third-party services, liability and how the agreement ends.',
+  description: 'The terms on which Jwero is provided to jewellery businesses: accounts, the first month, fees and the prepaid wallet, your data, acceptable use, AI features, third-party services, liability and how the agreement ends.',
   h1: 'Terms of Use',
-  intro: `These terms are an agreement between ${ENTITY} (“Jwero”) and the business that uses this website or creates a Jwero workspace (“you”). They apply when you browse jwero.ai, start a trial or subscribe at os.jwero.ai. If you have signed an order or agreement with us, that document prevails where it differs from these terms.`,
+  intro: `These terms are an agreement between ${ENTITY} (“Jwero”) and the business that uses this website or creates a Jwero workspace (“you”). They apply when you browse jwero.ai, or subscribe at os.jwero.ai. If you have signed an order or agreement with us, that document prevails where it differs from these terms.`,
   short: [
     'Jwero is for businesses, not consumers. The person who accepts these terms must be authorised to do so for the business.',
     'Your data is yours. You can export it at any time, including after you leave.',
-    'The first 14 days are free. After that the plan fee is charged in advance from a prepaid wallet, and usage such as messages, AI and calls is charged at published rates.',
+    'There is no free trial. The first month is ₹3,600 instead of ₹18,000. After that the plan fee is charged in advance from a prepaid wallet, and usage such as messages, AI and calls is charged at published rates.',
     'You are responsible for what you and your staff send to your customers, including messages you approve that the AI drafted.',
     'Jwero is software. It is not your accountant, lawyer, lender or tax adviser.',
   ],
@@ -165,10 +165,10 @@ const terms = doc({
     <p>Jwero is offered to businesses and professionals for use in the course of their trade. It is not offered to consumers. You confirm that you are at least 18, that the information you give us is accurate, and that you have authority to bind the business you represent.</p>`],
     ['Your account', 'Keep logins personal and secure. The owner controls who gets access.', `
     <p>The person who creates a workspace is its owner and may invite others and set their permissions. You are responsible for activity under your logins. Do not share a login between people. Turn on multi-factor login where you can, remove access promptly when someone leaves, and tell us at once if you suspect misuse.</p>`],
-    ['The free trial', 'Fourteen days, every module, no card.', `
-    <p>A new workspace may use Jwero free for 14 days. At the end of the trial you may subscribe. If you do not, the workspace becomes read-only and you may still export your data for the period described in section 12. We may limit trials to one per business.</p>`],
+    ['The first month', 'There is no free trial. The first month is ₹3,600.', `
+    <p>A new workspace pays ₹3,600 for its first month of Jwero One instead of ₹18,000, with every module included. The first-month price applies once per business. From the second month the plan fee is ₹18,000 a month. Usage on the wallet is charged at the published rates from the first day.</p>`],
     ['Fees, the wallet and taxes', 'One plan fee in advance, usage at published rates, from a prepaid balance.', `
-    <p><strong>Plan.</strong> The current fees are on the <a href="/pricing">pricing page</a>. The plan fee is charged in advance, monthly or annually as you choose. Extra locations, registers, capacity and connected devices are charged at the published rates.</p>
+    <p><strong>Plan.</strong> The current fees are on the <a href="/pricing">pricing page</a>. The plan fee is charged monthly, in advance. Extra locations, registers, capacity and connected devices are charged at the published rates.</p>
     <p><strong>Wallet.</strong> Fees and usage, including WhatsApp and SMS messages, AI, voice and video minutes and similar metered items, are debited from a prepaid wallet at the published rates. Rates set by third parties, such as Meta’s message charges, can change when they change theirs.</p>
     <p><strong>If the balance runs out.</strong> When the wallet has no balance, the workspace becomes read-only until it is topped up. Your data is not deleted because of a low balance. If a subscription fee remains unpaid for seven days, the subscription is cancelled so that further fees stop accruing.</p>
     <p><strong>Taxes.</strong> Fees exclude GST and other taxes, which are added at the applicable rate. We issue a tax invoice for each charge.</p>

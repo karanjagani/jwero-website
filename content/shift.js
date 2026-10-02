@@ -80,7 +80,7 @@ const SHIFTS = {
     title: 'From paying for six tools to paying for one outcome.',
     today: 'A WhatsApp tool, a catalogue app, an SMS vendor, a website subscription and an agency retainer — none of which knows the customer.',
     gone: 'Five invoices and the invisible cost of customers lost to silence.',
-    now: 'One plan with every module at a published price, a rate card for what you use, fourteen days free on your own data, export any time.',
+    now: 'One plan with every module at a published price, a rate card for what you use, a first month at ₹3,600, export any time.',
     tempo: ['Six bills', 'One'],
   },
   migration: {

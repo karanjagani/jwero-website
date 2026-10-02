@@ -57,9 +57,9 @@ ${L.section(`
     <div>
       <h2>What it costs to find out</h2>
       <ul>
-        <li>Fourteen days free at os.jwero.ai — Google, LinkedIn or email; no card. Then ₹9,999 a month billed annually, every module included.</li>
+        <li>The first month is ₹3,600 instead of ₹18,000, every module included. After that, ₹18,000 a month with no lock-in.</li>
         <li>A fifteen-minute call on one real situation from your shop. If it does not fit, they say so on the call.</li>
-        <li>A pilot on your own data in days 2–5. You pay only after you have seen it on your customers.</li>
+        <li>A pilot on your own data in days 2–5, inside that first month.</li>
         <li>A written change-freeze around your season: nothing goes live in peak weeks.</li>
       </ul>
     </div>

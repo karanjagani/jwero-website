@@ -73,7 +73,7 @@ const howItGoes = {
     { q: 'Who do I actually talk to?', a: 'A real person on the founders’ WhatsApp desk, with our AI drafting alongside. Not a call centre.' },
     { q: 'What do I need to prepare?', a: 'One real situation from your business and whatever customer or stock export you already have — however messy. We import what exists and reconcile during onboarding.' },
     { q: 'What if it isn’t right for us?', a: 'We say so on the first call, in the first five minutes if we can. A pilot on your own data is the test; you can stop at any point, and your data leaves with you.' },
-    { q: 'When do I pay?', a: 'After you have seen it on your own data: the first 14 days are free. Then Jwero One is ₹18,000 a month, or ₹9,999 a month billed annually; billing is set up inside Jwero, not on this site.' },
+    { q: 'When do I pay?', a: 'When you create your workspace. The first month is ₹3,600 instead of ₹18,000; after that Jwero One is ₹18,000 a month. Billing is set up inside Jwero, not on this site.' },
   ],
   body: `
 ${L.hero({

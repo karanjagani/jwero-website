@@ -331,7 +331,7 @@ ${L.section(
   `${L.sectionHead('KEEP THE ERP', 'You do not have to choose on day one.', '')}
   ${L.cards([
     { title: 'Coexist', text: 'The ERP keeps the books; Jwero takes the customer-facing doors. Bridged, for as long as you want.', link: { href: '/erp-to-os/switching', label: 'See how switching works' } },
-    { title: 'Start free, alone', text: 'Fourteen days free at os.jwero.ai, in three steps. Bring your catalogue and ten customers; see the priced reply on a real enquiry.', link: { href: '/start', label: 'Start my 14-day free trial' } },
+    { title: 'Start alone, for ₹3,600', text: 'The first month is ₹3,600 at os.jwero.ai, in three steps. Bring your catalogue and ten customers; see the priced reply on a real enquiry.', link: { href: '/start', label: 'Start for ₹3,600' } },
     { title: 'Or make do, honestly', text: 'If the calculator says the gap is small, keep going and come back when it is not. We would rather you find that out here than on a call.' },
   ])}`
 , { tone: 'tint' })}

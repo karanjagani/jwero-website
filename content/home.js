@@ -10,7 +10,7 @@ const home = {
     name: 'Jwero', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
     description: 'The Autonomous Jewellery OS, run by AI: CRM, showroom, POS and billing, inventory, purchase, manufacturing, accounts, HR and reports on one record, with WhatsApp and Instagram commerce, gold savings schemes and a governed AI workforce.',
     url: 'https://jwero.ai',
-    offers: { '@type': 'Offer', price: '9999', priceCurrency: 'INR', description: 'Per month, billed annually, excluding GST. Every module. 14-day free trial.' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Per month, billed monthly, excluding GST. Every module. First month ₹3,600.' },
   },
   faqs: [
     { q: 'What is Jwero?', a: 'Jwero is the Autonomous Jewellery OS, run by AI — one system where customers, catalogue, stock, counter billing, purchase, workshop, accounts and team share one record with every selling channel, and an AI workforce drafts the work under your approval.' },
@@ -29,7 +29,7 @@ ${L.homeHero({
 ${L.section(L.customerLogos())}
 
 ${L.section(
-  `${L.sectionHead('COUNT YOURS', `${L.STACK_N} separate tools become one.`, 'Each one is a login, a bill and a vendor. Tap the ones you run today, then merge them.')}
+  `<span id="count-yours"></span>${L.sectionHead('COUNT YOURS', `${L.STACK_N} separate tools become one.`, 'Tap the ones you run today and watch what they cost you.')}
   ${L.stackMerge()}`
 , { tone: 'tint' })}
 
@@ -39,23 +39,19 @@ ${L.section(
 )}
 
 ${L.section(
-  `<span id="one-record"></span>${L.statement('One record. Every department. Your approval.', 'This bangle is your business on one record, unbroken. Play a week through it, break it into the tools it lives in today, or move the rate, and watch what one record changes.')}
-  ${L.gemStage2()}
-  <div class="gem-copy">
-    <p>When the rate moves, every tag, link and quote follows. When a customer buys, the bill, the stock, the scheme and the books update together. When the day closes, the cash is tallied and the owner sees it. No integration. No sync. One system.</p>
-    <a class="btn btn-ghost" href="/platform">See the full platform →</a>
-  </div>`
+  `<span id="one-record"></span><div class="gem-head"><h2>One record. Every department. Your approval.</h2><p>Play a week, run a full day, or break it into the tools it lives in today. <a href="/platform">See the full platform →</a></p></div>
+  ${L.gemStage2()}`
 , { tone: 'tint' })}
 
 ${L.section(
   `<div class="home-price">
     <div>
       <p class="eyebrow">PRICE</p>
-      <h2>Every module. ₹9,999 a month. 14 days free.</h2>
-      <p>One plan, billed annually — or ₹18,000 month to month. No per-module price, no per-seat price, no card for the trial. WhatsApp messages, AI and calls run on a prepaid wallet at published rates.</p>
+      <h2>Every module. ₹18,000 a month. First month ₹3,600.</h2>
+      <p>One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000. WhatsApp messages, AI and calls run on a prepaid wallet at published rates.</p>
     </div>
     <div class="cta-row">
-      <a class="btn btn-primary" href="${L.TRIAL_URL}home-price" rel="noopener" data-trial>Start my 14-day free trial</a>
+      <a class="btn btn-primary" href="${L.TRIAL_URL}home-price" rel="noopener" data-trial>Start for ₹3,600</a>
       <a class="btn btn-ghost" href="/pricing">See the full pricing</a>
     </div>
   </div>`
@@ -73,14 +69,13 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('PROOF', 'Counted in the product, not written by marketing.', 'Every number below is measured by the system itself — plumbing you can inspect, not copy you have to believe.')}
-  ${L.proofStrip()}
-  <p class="proof-caption">Every week the owner gets a plain-language growth report on their own customers — who came back, what was booked, what it earned. <a href="#" data-wa="report">Get a sample report</a></p>`
+  `<div class="gem-head"><h2>Proof you can check.</h2><p>Who uses it, what the product counts, what is published, and how to try it yourself.</p></div>
+  ${L.proofGrid()}`
 )}
 
 ${L.section(
-  `${L.sectionHead('SECURITY & COMPLIANCE', 'Your customer list is your business. It is guarded like one.', 'What protects your data, which rules Jwero already meets, and which certificates it does not hold yet — said plainly.')}
-  ${L.securityBlock()}`
+  `<div class="gem-head"><h2>Security and compliance, with the real status.</h2><p>Six in place, four not yet. Hover a seal, or open any document.</p></div>
+  ${L.trustStrip()}`
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('QUESTIONS JEWELLERS ASK', 'Jewellery software questions, answered straight.', '')}${L.faqBlock([

@@ -22,7 +22,7 @@ ${L.section(meta(mins))}
 ${L.section(`<div class="post-body">${body}</div>`)}
 ${L.section(
   `${L.sectionHead('SEE IT WORKING', 'This guide is written by the team that builds it.', 'Every capability described as Jwero’s here is on the product page, with what it does not do yet stated beside it.')}
-  <div class="cta-row center"><a class="btn btn-primary" href="${L.TRIAL_URL}guide" rel="noopener" data-trial>Start my 14-day free trial</a><a class="btn btn-ghost" href="${product[0]}">${product[1]}</a></div>`
+  <div class="cta-row center"><a class="btn btn-primary" href="${L.TRIAL_URL}guide" rel="noopener" data-trial>Start for ₹3,600</a><a class="btn btn-ghost" href="${product[0]}">${product[1]}</a></div>`
 , { tone: 'tint' })}
 ${L.section(`${L.sectionHead('QUESTIONS', 'What jewellers ask about this.', '')}${L.faqBlock(faqs)}
 <p class="cta-note" style="margin-top:18px">Related: ${related.map(([h, l]) => `<a href="${h}">${l}</a>`).join(' · ')}</p>`)}
@@ -104,7 +104,7 @@ const billing = guide({
   faqs: [
     { q: 'What is jewellery billing software?', a: 'Software that works out a jewellery bill from weight, purity and the day’s rate, adds making, wastage, stones and tax, handles old-gold exchange and scheme balances, and records the sale against stock, books and the customer.' },
     { q: 'Can general GST billing software be used for a jewellery shop?', a: 'It can print an invoice, but it expects a fixed price per item. It does not price by weight at a moving rate, does not handle old-gold exchange as metal coming into stock, and does not know schemes or HUID, so the real calculation ends up on a calculator.' },
-    { q: 'How much does jewellery billing software cost?', a: 'Prices vary widely by vendor and by how many counters and branches you run. Jwero is ₹9,999 a month billed annually, with billing, stock, CRM and every other module included and a 14-day free trial.' },
+    { q: 'How much does jewellery billing software cost?', a: 'Prices vary widely by vendor and by how many counters and branches you run. Jwero is ₹18,000 a month, with billing, stock, CRM and every other module included. The first month is ₹3,600.' },
     { q: 'Does the gold rate update automatically?', a: 'In Jwero, one rate drives every price. You set it or take it from the rate feed, and tags, quotations, chat replies and bills follow.' },
     { q: 'Does it generate e-invoices?', a: 'Not in Jwero today. Invoices are GST-ready; e-invoice IRN and e-way bills are on the roadmap, not shipped.' },
   ],
@@ -181,7 +181,7 @@ const erp = guide({
 
   <h2>What it costs</h2>
   <p>Jewellery ERPs are sold in three ways: a one-time licence with yearly maintenance, a monthly subscription per user or per branch, or a single plan that includes every module. Compare the total for three years, including extra users, extra branches, the add-on tools you will need and the cost of anything billed per message or per document. A cheap licence with five paid add-ons is not cheap.</p>
-  <p>Jwero publishes one price: ₹9,999 a month billed annually for every module, with extra locations and usage at published rates. The detail is on the <a href="/pricing">pricing page</a>.</p>
+  <p>Jwero publishes one price: ₹18,000 a month for every module, with extra locations and usage at published rates. The detail is on the <a href="/pricing">pricing page</a>.</p>
 
   <h2>How Jwero does it, and what it does not do</h2>
   <p>Jwero covers inventory, counter billing, purchase and vendors, manufacturing with karigar accounts in fine grams, repairs, schemes, girvi, multi-branch and its own ledger, on the same record as the customer, WhatsApp and the team. The operations are on the <a href="/products/erp">ERP page</a> and the workshop on the <a href="/products/manufacturing">manufacturing page</a>.</p>

@@ -185,7 +185,7 @@ const PLAYBOOKS = {
       ['16:00', 'First ad', 'Boosted post.', 'Catalogue ad with a budget alert; conversions attributed to orders.'],
       ['19:00', 'Month one report', 'Bank balance.', 'Enquiries answered, replies approved, orders, repeat buyers — on your own data.'],
     ],
-    modules: [['/products/whatsapp', 'Start selling on the channel you already have.'], ['/products/catalog', 'One catalogue from the first ten designs.'], ['/products/storefront', 'Your own store when you’re ready, same stock.'], ['/products/crm', 'Every customer remembered from day one.'], ['/products/ads-manager', 'First ads on catalogue winners, budget-capped.'], ['/platform/onboarding', 'A 14-day free trial, self-serve; a person on WhatsApp when you want one.']],
+    modules: [['/products/whatsapp', 'Start selling on the channel you already have.'], ['/products/catalog', 'One catalogue from the first ten designs.'], ['/products/storefront', 'Your own store when you’re ready, same stock.'], ['/products/crm', 'Every customer remembered from day one.'], ['/products/ads-manager', 'First ads on catalogue winners, budget-capped.'], ['/platform/onboarding', 'A self-serve start with the first month at ₹3,600; a person on WhatsApp when you want one.']],
     fit: ['You’re juggling four tools before your fiftieth order', 'Enquiries are answered from the founder’s phone', 'Customers live in a notebook', 'You’ve boosted posts and can’t say what they sold', 'You want to start today, free, without a demo'],
   },
 

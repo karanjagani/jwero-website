@@ -13,10 +13,10 @@ const TIERS = [
 const start = {
   slug: 'start',
   title: 'Get Started — Create Your Jwero Workspace | Jwero',
-  description: 'Three steps to a live Jwero workspace: tell us the kind of jewellery business you run, pick how much the AI does on its own, create your workspace — free for 14 days. Pay and onboard inside the product; a real person is one WhatsApp message away.',
+  description: 'Three steps to a live Jwero workspace: tell us the kind of jewellery business you run, pick how much the AI does on its own, create your workspace, with the first month at ₹3,600. Pay and onboard inside the product; a real person is one WhatsApp message away.',
   breadcrumbs: [['Home', '/'], ['Get started']],
   faqs: [
-    { q: 'Do I pay on this page?', a: 'No. Creating the account costs nothing — Google, LinkedIn or email, no card. The first 14 days of Jwero One are free; billing is set up inside Jwero once you have seen it on your own data; after that, Jwero One bills monthly or annually and you can export everything, any time.' },
+    { q: 'Do I pay on this page?', a: 'No. You create the account with Google, LinkedIn or email, and billing is set up inside Jwero. The first month of Jwero One is ₹3,600 instead of ₹18,000; after that it bills monthly, and you can export everything, any time.' },
     { q: 'How long until I am live?', a: 'Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one.' },
     { q: 'Can I get help instead of doing it myself?', a: 'Yes — every step below has a chat-or-call button; a real person and our AI reply within minutes, and we can run onboarding with you.' },
   ],
@@ -51,8 +51,8 @@ ${L.section(
     <div class="start-panel" data-panel="3">
       <h2>Create your workspace</h2>
       <div class="start-summary"><p><span>Business</span><b data-sum="persona">—</b></p><p><span>AI starts at</span><b data-sum="tier">—</b></p></div>
-      <div class="cta-row"><a class="btn btn-primary btn-mark" data-start-go href="${APP}/signup?utm_source=jwero.ai&utm_medium=start">${L.mark('mark-xs')}Start my 14-day free trial at os.jwero.ai</a><a class="btn btn-ghost" href="#" data-wa="bookdemo" data-start-wa>Set it up with a person</a></div>
-      <ol class="start-next"><li><b>Create your account</b> — Google, LinkedIn or email, no card. Jwero One is free for 14 days.</li><li><b>Onboarding inside Jwero</b> seeds your masters, templates, price lists and the live gold rate for your kind of business.</li><li><b>Import customers and connect WhatsApp</b> — we can do this with you; approvals are on from day one.</li><li><b>Billing</b> is set up in the product once you have seen it on your own data.</li></ol>
+      <div class="cta-row"><a class="btn btn-primary btn-mark" data-start-go href="${APP}/signup?utm_source=jwero.ai&utm_medium=start">${L.mark('mark-xs')}Start for ₹3,600 at os.jwero.ai</a><a class="btn btn-ghost" href="#" data-wa="bookdemo" data-start-wa>Set it up with a person</a></div>
+      <ol class="start-next"><li><b>Create your account</b> with Google, LinkedIn or email. Your first month of Jwero One is ₹3,600.</li><li><b>Onboarding inside Jwero</b> seeds your masters, templates, price lists and the live gold rate for your kind of business.</li><li><b>Import customers and connect WhatsApp</b> — we can do this with you; approvals are on from day one.</li><li><b>Billing</b> is set up in the product: ₹3,600 for the first month, then ₹18,000 a month.</li></ol>
     </div>
 
     <div class="start-nav"><button type="button" class="btn btn-ghost" data-start-back hidden>Back</button></div>
@@ -61,7 +61,7 @@ ${L.section(
 
 ${L.section(L.safeToTryStrip(), { tone: 'tint' })}
 ${L.section(`${L.sectionHead('BEFORE YOU START', 'Three questions people ask on this page.', '')}${L.faqBlock([
-  { q: 'Do I pay on this page?', a: 'No. Creating the account costs nothing — Google, LinkedIn or email, no card. The first 14 days of Jwero One are free; billing is set up inside Jwero once you have seen it on your own data; after that, Jwero One bills monthly or annually and you can export everything, any time.' },
+  { q: 'Do I pay on this page?', a: 'No. You create the account with Google, LinkedIn or email, and billing is set up inside Jwero. The first month of Jwero One is ₹3,600 instead of ₹18,000; after that it bills monthly, and you can export everything, any time.' },
   { q: 'How long until I am live?', a: 'Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one.' },
   { q: 'Can I get help instead of doing it myself?', a: 'Yes — every step has a chat-or-call button; a real person and our AI reply within minutes, and we can run onboarding with you.' },
 ])}`)}

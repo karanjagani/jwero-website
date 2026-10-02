@@ -39,7 +39,7 @@ ${L.section(
   ${L.cards([
     { icon: 'shield', title: 'Security', text: 'Isolation, encryption, access, approvals, AI limits and what is not built yet.', link: { href: '/trust/security', label: 'Open' } },
     { icon: 'record', title: 'Privacy Policy', text: 'What is collected, why, who receives it, how long it is kept and your rights.', link: { href: '/legal/privacy', label: 'Open' } },
-    { icon: 'receipt', title: 'Terms of Use', text: 'Accounts, the trial, fees and the wallet, your data, acceptable use, liability.', link: { href: '/legal/terms', label: 'Open' } },
+    { icon: 'receipt', title: 'Terms of Use', text: 'Accounts, the first month, fees and the wallet, your data, acceptable use, liability.', link: { href: '/legal/terms', label: 'Open' } },
     { icon: 'box', title: 'Data Policy', text: 'Ownership, processing terms, retention, export, deletion and breach notification.', link: { href: '/legal/data-policy', label: 'Open' } },
     { icon: 'flow', title: 'Sub-processors', text: 'Every company that may process your data, what it does and where.', link: { href: '/legal/sub-processors', label: 'Open' } },
     { icon: 'check', title: 'DPDP statement', text: 'Roles, consent, rights and grievance under India’s data protection law.', link: { href: '/legal/dpdp', label: 'Open' } },

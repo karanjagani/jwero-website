@@ -9,8 +9,7 @@
 // auto-debit, courier) are left off until the roadmap page says otherwise.
 const L = require('../lib');
 
-const PLAN = { monthly: 18000, annualMonthly: 9999, trialDays: 14, trialHeadroom: 200 };
-const SAVE = Math.round((1 - PLAN.annualMonthly / PLAN.monthly) * 100);
+const PLAN = { monthly: 18000, firstMonth: 3600 };
 const inr = (n) => '₹' + Number(n).toLocaleString('en-IN');
 
 const MODULES = [
@@ -64,55 +63,50 @@ const rateCard = `
 </div>`;
 
 const faqs = [
-  { q: 'What does Jwero cost?', a: `One plan, Jwero One: ${inr(PLAN.monthly)} a month billed monthly, or ${inr(PLAN.annualMonthly)} a month billed annually (${inr(PLAN.annualMonthly * 12)} for the year). Every module is included. Prices exclude GST. Groups and chains that need custom terms take Enterprise, which is quoted.` },
-  { q: 'Is there a free trial?', a: `Yes — ${PLAN.trialDays} days of Jwero One, free, with no card. The trial waives the plan fee; per-use services such as WhatsApp messages and AI run on a prepaid wallet, and the trial includes ${inr(PLAN.trialHeadroom)} of usage headroom so you can try them before topping up. One trial per account.` },
+  { q: 'What does Jwero cost?', a: `One plan, Jwero One: ${inr(PLAN.monthly)} a month, billed monthly. Every module is included. Prices exclude GST. Groups and chains take Enterprise, which is custom priced.` },
+  { q: 'Is there a free trial?', a: `No. Instead, your first month of Jwero One is ${inr(PLAN.firstMonth)} instead of ${inr(PLAN.monthly)}, with every module. Per-use services such as WhatsApp messages and AI run on a prepaid wallet from day one. The first-month price applies once per business.` },
   { q: 'What is the wallet?', a: 'The plan covers the whole platform. Things that cost money each time they happen — a WhatsApp marketing message, an AI image, a call minute, a payout — are metered from a prepaid wallet at the published rates on this page. You top it up; nothing is charged to a card behind your back.' },
   { q: 'Do I pay per module, or per user?', a: 'Neither. Jwero One includes every module, and there is no per-seat price for your team. You turn off the modules you do not use so the screen stays simple. What scales with you is capacity: extra locations, brands, registers and storage, at the rates shown.' },
   { q: 'I run more than one store. What does that cost?', a: `One location is included. Each additional location is ${inr(2999)} a month. Use the calculator above for your count; chains that want negotiated terms, unlimited history or dedicated support should ask for Enterprise.` },
-  { q: 'Is there a lock-in contract?', a: 'No. Monthly billing is month to month. Annual is paid upfront for the lower price. Your data exports whenever you ask, on either term.' },
+  { q: 'Is there a lock-in contract?', a: 'No. Billing is month to month and you can cancel any time. Your data exports whenever you ask.' },
   { q: 'How long is my history kept?', a: 'On Jwero One: three years of audit and analytics history, and message history kept without a limit. Enterprise keeps everything without a limit. Your books — orders, invoices, payments, purchases, payroll and GST records — are statutory and are never deleted on any plan.' },
   { q: 'Are there hidden costs?', a: 'The plan price and the rate card are both on this page. Onboarding help is priced per session if you want it; importing your data and connecting your number are part of getting started.' },
   { q: 'How should I think about the cost?', a: 'Against the tools it replaces and the customers it recovers — a WhatsApp tool, a catalogue app, a website subscription, an SMS vendor and the hours spent reconciling them. Run the calculators on your own numbers before you decide.' },
-  { q: 'Why should I believe the return?', a: 'You should not take our word for it — that is what the growth report is for. It is an account of what happened with your own customers, on your own data, inside the trial.' },
+  { q: 'Why should I believe the return?', a: 'You should not take our word for it — that is what the growth report is for. It is an account of what happened with your own customers, on your own data, inside your first month.' },
 ];
 
 const pricing = {
   slug: 'pricing',
-  title: `Jwero One Pricing — Every Module, ${inr(PLAN.annualMonthly)}/month Billed Annually | Jwero`,
-  description: `One plan with every module: ${inr(PLAN.monthly)} a month, or ${inr(PLAN.annualMonthly)} a month billed annually. ${PLAN.trialDays}-day free trial, no card. Per-use services — WhatsApp, AI, calls — run on a prepaid wallet at published rates. Enterprise terms for groups and chains.`,
+  title: `Jwero Pricing: Every Module, ${inr(PLAN.monthly)} a Month | Jwero`,
+  description: `One plan with every module: ${inr(PLAN.monthly)} a month, billed monthly. First month ${inr(PLAN.firstMonth)}. Per-use services — WhatsApp, AI, calls — run on a prepaid wallet at published rates. Enterprise for groups and chains is custom priced.`,
   breadcrumbs: [['Home', '/'], ['Pricing']],
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Jwero One', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
     url: 'https://jwero.ai/pricing',
     offers: [
-      { '@type': 'Offer', name: 'Jwero One — billed annually', price: String(PLAN.annualMonthly), priceCurrency: 'INR', description: 'Per month, billed annually, excluding GST' },
-      { '@type': 'Offer', name: 'Jwero One — billed monthly', price: String(PLAN.monthly), priceCurrency: 'INR', description: 'Per month, billed monthly, excluding GST' },
+      { '@type': 'Offer', name: 'Jwero One', price: String(PLAN.monthly), priceCurrency: 'INR', description: 'Per month, billed monthly, excluding GST. First month ' + PLAN.firstMonth + ' INR.' },
     ],
   },
   faqs,
   body: `
 ${L.hero({
   eyebrow: 'PRICING',
-  h1: `One plan. Every module. ${inr(PLAN.annualMonthly)} a month.`,
-  sub: `Jwero One is the whole operating system — CRM, WhatsApp, catalogues, the counter, the workshop, schemes, the books and the AI workforce — for ${inr(PLAN.annualMonthly)} a month billed annually, or ${inr(PLAN.monthly)} month to month. No per-module price, no per-seat price. Try it free for ${PLAN.trialDays} days.`,
-  primary: { href: 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing', label: `Start my ${PLAN.trialDays}-day free trial` },
+  h1: `One plan. Every module. ${inr(PLAN.monthly)} a month.`,
+  sub: `Jwero One is the whole operating system — CRM, WhatsApp, catalogues, the counter, the workshop, schemes, the books and the AI workforce — for ${inr(PLAN.monthly)} a month, billed monthly. No per-module price, no per-seat price. Your first month is ${inr(PLAN.firstMonth)}.`,
+  primary: { href: 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing', label: `Start for ${inr(PLAN.firstMonth)}` },
   secondary: { href: '#', label: 'Ask a pricing question', wa: 'pricing' },
-  note: 'Prices exclude GST. No card needed for the trial.',
+  note: `Prices exclude GST. First month ${inr(PLAN.firstMonth)}, then ${inr(PLAN.monthly)} a month.`,
 })}
 
 ${L.section(
   `<div class="plans" data-plans>
-    <div class="term" role="group" aria-label="Billing term">
-      <button type="button" data-term="annual" class="is-on" aria-pressed="true">Billed annually <em>save ${SAVE}%</em></button>
-      <button type="button" data-term="monthly" aria-pressed="false">Billed monthly</button>
-    </div>
     <div class="plan-grid">
       <div class="plan plan-one">
-        <p class="plan-flag">${PLAN.trialDays}-day free trial</p>
+        <p class="plan-flag">First month ${inr(PLAN.firstMonth)}</p>
         <h2>Jwero One</h2>
         <p class="plan-desc">Everything Jwero does, in one plan. Turn off what you don’t use.</p>
-        <p class="plan-price"><b data-price data-annual="${inr(PLAN.annualMonthly)}" data-monthly="${inr(PLAN.monthly)}">${inr(PLAN.annualMonthly)}</b><span>/month</span></p>
-        <p class="plan-term" data-term-note data-annual="Billed annually — ${inr(PLAN.annualMonthly * 12)} a year, excluding GST" data-monthly="Billed monthly, excluding GST · or ${inr(PLAN.annualMonthly)}/month paid annually">Billed annually — ${inr(PLAN.annualMonthly * 12)} a year, excluding GST</p>
+        <p class="plan-price"><b>${inr(PLAN.monthly)}</b><span>/month</span></p>
+        <p class="plan-term">${inr(PLAN.firstMonth)} for the first month, then ${inr(PLAN.monthly)}. Billed monthly, excluding GST. Cancel any time.</p>
         <ul class="plan-list">
           <li>Every module included</li>
           <li>AI agents &amp; Smart AI</li>
@@ -120,14 +114,14 @@ ${L.section(
           <li>10 GB storage, 1 location, 2 POS registers</li>
           <li>No per-seat price for your team</li>
         </ul>
-        <div class="cta-row"><a class="btn btn-primary" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing-plan" rel="noopener" data-trial>Start free for ${PLAN.trialDays} days</a><a class="btn btn-ghost" href="#" data-wa="pricing">Talk to us first</a></div>
+        <div class="cta-row"><a class="btn btn-primary" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing-plan" rel="noopener" data-trial>Start for ${inr(PLAN.firstMonth)}</a><a class="btn btn-ghost" href="#" data-wa="pricing">Talk to us first</a></div>
       </div>
       <div class="plan plan-ent">
         <p class="plan-flag plan-flag-quiet">For groups &amp; chains</p>
         <h2>Enterprise</h2>
-        <p class="plan-desc">Custom terms for groups and chains: unlimited history, dedicated support, negotiated pricing.</p>
-        <p class="plan-price"><b>Contact us</b></p>
-        <p class="plan-term">Quoted for your network</p>
+        <p class="plan-desc">For groups and chains: unlimited history, dedicated support and terms written for your network.</p>
+        <p class="plan-price"><b>Custom pricing</b></p>
+        <p class="plan-term">Quoted for your network, from six locations</p>
         <ul class="plan-list">
           <li>Everything in Jwero One</li>
           <li>Unlimited history</li>
@@ -146,8 +140,6 @@ ${L.section(
   `${L.sectionHead('YOUR PRICE', 'Work out your own number.', 'One location and one brand are included. Add what you run.')}
   <div class="calc" id="calc-plan">
     <div class="calc-panel">
-      <label>Billing term</label>
-      <div class="term term-sm" role="group" aria-label="Billing term"><button type="button" data-pc-term="annual" class="is-on" aria-pressed="true">Annual</button><button type="button" data-pc-term="monthly" aria-pressed="false">Monthly</button></div>
       <label for="pc-loc">Locations (stores, branches, workshops) <span class="calc-val" id="pc-loc-out"></span></label>
       <input type="range" id="pc-loc" min="1" max="30" step="1" value="1">
       <label for="pc-brand">Brands <span class="calc-val" id="pc-brand-out"></span></label>
@@ -210,9 +202,9 @@ ${L.section(
     { title: '"Another software cost"', text: 'Measure it against the tools it replaces and one recovered customer, not against your billing software’s AMC. Run the calculators on your own numbers.', link: { href: '/tools', label: 'Open the calculators' } },
     { title: '"I don’t need the whole platform"', text: 'You are not charged per module, so there is nothing to trim. Switch off what you don’t use and the screen shows only what you run.' },
     { title: '"Hidden costs will show up later"', text: 'The plan price and the wallet rate card are both on this page, and the same card is inside your billing screen.' },
-    { title: '"I’ll be locked into a contract"', text: 'Monthly is month to month. Annual is paid upfront for the lower price. Export-anytime applies on both.' },
+    { title: '"I’ll be locked into a contract"', text: 'Billing is month to month. Cancel any time, and export everything when you leave.' },
     { title: '"What will WhatsApp and AI add?"', text: 'They run on a prepaid wallet at per-use rates. You see the balance and the spend; nothing is charged beyond what you top up.' },
-    { title: '"ROI is a promise I’ve heard before"', text: `Fair — that is why the trial runs on your own data for ${PLAN.trialDays} days, and why the growth report shows what happened with your own customers.` },
+    { title: '"ROI is a promise I’ve heard before"', text: `Fair. That is why the first month is ${inr(PLAN.firstMonth)}, on your own data, and why the growth report shows what happened with your own customers.` },
   ])}`
 , { tone: 'tint' })}
 
@@ -221,7 +213,7 @@ ${L.section(L.safeToTryStrip())}
 ${L.section(`${L.sectionHead('PRICING QUESTIONS', 'Straight answers on cost and terms.', '')}${L.faqBlock(faqs)}
 <p class="cta-note" style="margin-top:14px">More objections? <a href="/faq#pricing">See every pricing question we’ve been asked →</a></p>`)}
 
-${L.ctaBand(`Every module, ${inr(PLAN.annualMonthly)} a month. Try it first.`, `${PLAN.trialDays} days free on your own data, no card. Chat or call if you want a person beside you.`, 'pricing')}
+${L.ctaBand(`Every module, ${inr(PLAN.monthly)} a month. Try it first.`, `First month ${inr(PLAN.firstMonth)}, on your own data. Chat or call if you want a person beside you.`, 'pricing')}
 `,
 };
 

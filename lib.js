@@ -259,19 +259,19 @@ function steps(items) {
 const TRIAL_URL = 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=';
 const ICPS = [
   { key: 'single', label: 'Single store', icon: 'store', sol: '/solutions/single-store', door: 'trial',
-    price: ['One store', '₹9,999 a month billed annually — one location, two POS registers, 25,000 customers and 25,000 products included.'] },
+    price: ['One store', '₹18,000 a month — one location, two POS registers, 25,000 customers and 25,000 products included.'] },
   { key: 'chain', label: 'Multi-store chain', icon: 'branches', sol: '/solutions/multi-store-chains', door: 'demo',
-    price: ['Five branches', '₹9,999 + 4 extra locations × ₹2,999 = ₹21,995 a month billed annually. From six locations, ask for Enterprise terms.'] },
+    price: ['Five branches', '₹18,000 + 4 extra locations × ₹2,999 = ₹29,996 a month. From six locations, ask for Enterprise pricing.'] },
   { key: 'franchise', label: 'Franchise network', icon: 'flow', sol: '/solutions/franchise-networks', door: 'demo',
-    price: ['Per location', '₹9,999 for the first location and ₹2,999 a month for each one after. Networks usually take Enterprise terms.'] },
+    price: ['Per location', '₹18,000 a month for the first location and ₹2,999 for each one after. Networks usually take Enterprise, which is custom priced.'] },
   { key: 'maker', label: 'Workshop / manufacturer', icon: 'scale', sol: '/solutions/manufacturers', door: 'demo',
-    price: ['One workshop', '₹9,999 a month billed annually, every module. Vendor portal logins are ₹149 each a month; payslips ₹40 each.'] },
+    price: ['One workshop', '₹18,000 a month, every module. Vendor portal logins are ₹149 each a month; payslips ₹40 each.'] },
   { key: 'b2b', label: 'Wholesale / trade', icon: 'truck', sol: '/solutions/b2b-jewellery', door: 'trial',
-    price: ['One office', '₹9,999 a month billed annually — 25,000 contacts and 25,000 products included, ₹499 a month per extra 10,000.'] },
+    price: ['One office', '₹18,000 a month — 25,000 contacts and 25,000 products included, ₹499 a month per extra 10,000.'] },
   { key: 'trader', label: 'Diamond trader', icon: 'gem', sol: '/solutions/diamond-traders', door: 'trial',
-    price: ['One trading office', '₹9,999 a month billed annually, every module. 25,000 contacts and 25,000 products included, then ₹499 a month per extra 10,000.'] },
+    price: ['One trading office', '₹18,000 a month, every module. 25,000 contacts and 25,000 products included, then ₹499 a month per extra 10,000.'] },
   { key: 'd2c', label: 'Online brand', icon: 'megaphone', sol: '/solutions/d2c-brands', door: 'trial',
-    price: ['One brand', '₹9,999 a month billed annually, or ₹18,000 month to month. Two connected integrations included (Shopify plus one), ₹499 a month for each extra.'] },
+    price: ['One brand', '₹18,000 a month. Two connected integrations included (Shopify plus one), ₹499 a month for each extra.'] },
   { key: 'staff', label: 'I work in one', icon: 'users', sol: '/roles', door: 'brief', price: null },
 ];
 // Which pipeline a solution or buyer-role page belongs to.
@@ -300,14 +300,14 @@ function icpPick() {
 function priceBlock(i, medium) {
   if (!i || !i.price) return '';
   const door = i.door === 'demo'
-    ? `<a class="btn btn-primary" href="/book-demo">See it on a video demo</a><a class="btn btn-ghost" href="${TRIAL_URL}${medium}" rel="noopener" data-trial>Or start a 14-day free trial</a>`
-    : `<a class="btn btn-primary" href="${TRIAL_URL}${medium}" rel="noopener" data-trial>Start my 14-day free trial</a><a class="btn btn-ghost" href="#" data-wa="pricing">Ask a pricing question</a>`;
+    ? `<a class="btn btn-primary" href="/book-demo">See it on a video demo</a><a class="btn btn-ghost" href="${TRIAL_URL}${medium}" rel="noopener" data-trial>Or start for ₹3,600</a>`
+    : `<a class="btn btn-primary" href="${TRIAL_URL}${medium}" rel="noopener" data-trial>Start for ₹3,600</a><a class="btn btn-ghost" href="#" data-wa="pricing">Ask a pricing question</a>`;
   return section(`${sectionHead('WHAT IT COSTS YOU', 'One plan. Every module. No per-seat price.', '')}
   <div class="price-block" id="price">
     <div class="price-main">
       <p class="price-tag">Jwero One</p>
-      <p class="price-n"><b>₹9,999</b><span>/month, billed annually</span></p>
-      <p class="price-alt">or ₹18,000 month to month · prices exclude GST · 14 days free, no card</p>
+      <p class="price-n"><b>₹18,000</b><span>/month</span></p>
+      <p class="price-alt">billed monthly · first month ₹3,600 · prices exclude GST</p>
     </div>
     <div class="price-you">
       <p class="price-tag">${i.price[0]}</p>
@@ -372,7 +372,7 @@ function fitCheck(items, wa, modules, names) {
     <p class="fit-verdict" data-fit-verdict aria-live="polite">Tap what’s true for you. We’ll say honestly where Jwero fits — and where it doesn’t yet.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#" data-wa="${esc(wa)}" data-fit-cta>Show me this, live</a>
-      <a class="btn btn-ghost" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=fit" rel="noopener" data-trial>Start my 14-day free trial</a>
+      <a class="btn btn-ghost" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=fit" rel="noopener" data-trial>Start for ₹3,600</a>
     </div>
   </div>
 </div>`;
@@ -381,7 +381,7 @@ function playbookTop(pb, names, slug) {
   const { GEM_PAGE } = require('./content/gem');
   const g = GEM_PAGE[slug];
   const piece = g ? (g[1] === 'diamond' ? 'stone' : 'bangle') : '';
-  return `${g ? section(`${sectionHead('ONE RECORD', `A week in your business, on one ${piece}.`, `The ${piece} is one record. Play the week, break it into the tools it lives in today, or move the rate.`)}
+  return `${g ? section(`<div class="gem-head"><h2>A week in your business, on one ${piece}.</h2><p>Play the week, run a full day, or break it into the tools it lives in today.</p></div>
   ${gemStage2({ set: g[0], metal: g[1] })}`, { tone: 'tint' }) : ''}
 ${section(`${sectionHead('WHERE JEWELLERS LIKE YOU START', 'The six parts of Jwero you’d switch on first.', 'Everything else is inside the same workspace when you want it. Nothing here needs a separate login.')}
   ${moduleMap(pb.modules, names)}${pb.note ? `<p class="proof-caption">${pb.note}</p>` : ''}`, { tone: 'tint' })}`;
@@ -679,7 +679,7 @@ function verifyBadge(text) {
   return String(text)
     .replace(/\[VERIFY(?:\s*[—-]\s*([^\]]*))?\]/g, (m, rest) =>
       `<span class="verify-tag">Not stated publicly${rest ? ' · ' + rest.trim().replace(/^not found in public materials$/i, '') : ''}</span>`.replace(' · </span>', '</span>'))
-    .replace(/\[Being finalised — see \/pricing\]/g, '₹9,999/month billed annually, every module — <a href="/pricing">see pricing</a>');
+    .replace(/\[Being finalised — see \/pricing\]/g, '₹18,000/month, every module — <a href="/pricing">see pricing</a>');
 }
 
 function compareTable(theirName, rows) {
@@ -768,6 +768,47 @@ function trustBadges() {
       <span class="tbadge-body"><strong>${n}</strong><em>${TRUST_STATUS[st]}</em><span>${d}</span></span>
     </a>`).join('')}
   </div>
+</div>`;
+}
+
+// The short trust strip for the home page: every standard as a small seal with
+// its real status, three facts, and a door to each trust document.
+function trustStrip() {
+  const docs = [['/trust', 'Trust Centre'], ['/trust/security', 'Security'], ['/legal/privacy', 'Privacy Policy'], ['/legal/terms', 'Terms of Use'], ['/legal/data-policy', 'Data Policy'], ['/legal/sub-processors', 'Sub-processors'], ['/legal/dpdp', 'DPDP statement']];
+  return `
+<div class="tstrip">
+  <div class="tstrip-seals">${TRUST_BADGES.map(([s, n, st, d, h]) => `<a class="tseal tb-${st}" href="${h}" title="${esc(n)}: ${esc(TRUST_STATUS[st])}. ${esc(d)}"><span class="tseal-mark" aria-hidden="true"><b>${s}</b></span><span class="tseal-name">${n.replace('India’s ', '').replace(', 2023', '').replace(' and penetration test', '').replace('ISO/IEC', 'ISO')}</span><em>${TRUST_STATUS[st]}</em></a>`).join('')}</div>
+  <ul class="tstrip-facts">
+    <li>${icon('shield')}<span><b>Your own database.</b> Never stored with another jeweller’s.</span></li>
+    <li>${icon('key')}<span><b>Encrypted</b> in transit and at rest, with roles you control.</span></li>
+    <li>${icon('download')}<span><b>Export any time.</b> Your data leaves with you.</span></li>
+  </ul>
+  <nav class="tstrip-docs" aria-label="Trust documents">${docs.map(([h, t], i) => `<a href="${h}"${i === 0 ? ' class="is-main"' : ''}>${t}${i === 0 ? ' →' : ''}</a>`).join('')}</nav>
+</div>`;
+}
+
+// Proof, in four kinds: who uses it, what the product itself counts, what is
+// published in the open, and how to check for yourself. Every line links to
+// where it can be verified; nothing here is a testimonial.
+function proofGrid() {
+  const nums = [
+    ['15', 'named jewellers running on Jwero', '/customers'],
+    ['198', 'kinds of signal, scored into 11 live scores', '/platform/customer-memory'],
+    ['240+', 'governed AI actions, each permissioned', '/platform/ai-workforce'],
+    ['14', 'languages the AI speaks', '/products/ai-sales-agents'],
+    ['5', 'levels of AI kill switch', '/platform/ai-workforce'],
+    [String(STACK_N), 'separate tools it replaces', '#count-yours'],
+  ];
+  const cols = [
+    ['users', 'In use', [['Fifteen named jewellers, each a permissioned customer', '/customers'], ['Built by a jewellery family you can look up', '/company'], ['A registered company, with its CIN on every page', '/company']]],
+    ['pie', 'Counted by the product', [['Every number above is measured in the system', '/platform'], ['A weekly growth report on your own customers', '/platform/customer-memory'], ['Every AI action logged, with who approved it', '/platform/ai-workforce']]],
+    ['eye', 'In the open', [['The price is published, with every usage rate', '/pricing'], ['What it does not do yet is on a public roadmap', '/roadmap'], ['Standards shown with their real status', '/trust']]],
+    ['check', 'Check it yourself', [['First month ₹3,600, every module', TRIAL_URL + 'proof'], ['See it on a call before you start', '/how-it-goes'], ['Leave when you like; export everything', '/legal/data-policy']]],
+  ];
+  return `
+<div class="proofg">
+  <div class="proofg-nums">${nums.map(([n, t, h]) => `<a class="proofg-num" href="${h}"><b>${n}</b><span>${t}</span></a>`).join('')}</div>
+  <div class="proofg-cols">${cols.map(([ic, title, items]) => `<div class="proofg-col"><p class="proofg-k">${icon(ic)}${title}</p><ul>${items.map(([t, h]) => `<li><a href="${h}"${/^https/.test(h) ? ' rel="noopener" data-trial' : ''}>${t}</a></li>`).join('')}</ul></div>`).join('')}</div>
 </div>`;
 }
 
@@ -1013,38 +1054,188 @@ const DEPARTMENTS = [
 // the department tabs still light and select their own tools.
 const STACK = [
   ['Selling', 'chat', ['WhatsApp API', 'DMs', 'Facebook page inbox', 'Website live chat', 'Forms', 'Document viewer', 'Ecommerce website', 'Marketplace seller panels', 'Video call app', 'Meetings', 'Shareable live catalogues', 'Quotation maker', 'Business email', 'Shopify integration', 'WooCommerce integration', 'Google Shopping', 'Franchise management', 'Calendar']],
-  ['Counter', 'store', ['ERP', 'Billing software', 'POS counter', 'Barcode &amp; tagging', 'Gold rate updates', 'Old-gold calculator', 'Estimate pad']],
+  ['Counter', 'store', ['ERP', 'Billing software', 'POS counter', 'Barcode &amp; tagging', 'Gold rate updates', 'Old gold management', 'Pricing engine', 'Estimate pad']],
   ['Stock', 'box', ['Inventory software', 'Inventory intelligence', 'Vendor portal']],
-  ['Workshop', 'scale', ['Hallmark tracker', 'Karigar portal']],
-  ['Customers', 'record', ['CRM', 'Loyalty cards', 'Gold scheme register', 'Girvi register', 'Digital gold app', 'Occasion diary', 'Appointment diary', 'Walk-in register', 'CCTV tracking', 'RFM', 'Customer segmentation', 'Customer journeys', 'Lead finder']],
-  ['Marketing', 'megaphone', ['SMS', 'RCS', 'Push notifications', 'Email marketing tool', 'Social media scheduler', 'Pinterest', 'YouTube', 'LinkedIn', 'Google Business reviews', 'Website heatmaps', 'Broadcasts', 'Campaigns', 'Marketing automation', 'Visitor tracking', 'Google Tag Manager', 'Pixels', 'Comments management', 'A/B testing', 'Coupons management', 'X', 'Threads', 'Stories', 'Reels', 'ChatGPT Ads', 'Meta Ads', 'Google Ads', 'Asset library']],
+  ['Workshop', 'scale', ['Hallmark tracker', 'Karigar portal', 'Repairs management']],
+  ['Customers', 'record', ['CRM', 'Loyalty cards', 'Gold scheme register', 'Girvi register', 'Digital gold app', 'Occasion diary', 'Appointment diary', 'Walk-in register', 'CCTV tracking', 'RFM', 'Customer segmentation', 'Customer journeys', 'Lead finder', 'Customer personalisation engine']],
+  ['Marketing', 'megaphone', ['SMS', 'RCS', 'Push notifications', 'Email marketing tool', 'Social media scheduler', 'Pinterest', 'YouTube', 'LinkedIn', 'Google Business reviews', 'Website heatmaps', 'Broadcasts', 'Campaigns', 'Marketing automation', 'Visitor tracking', 'Google Tag Manager', 'Pixels', 'Comments management', 'A/B testing', 'Coupons management', 'X', 'Threads', 'Stories', 'Reels', 'ChatGPT Ads', 'Meta Ads', 'Google Ads', 'Asset library', 'Social media post creator', 'Ads creator']],
   ['AI', 'sparkle', ['AI agents', 'AI inbound calling', 'AI outbound calling campaigns', 'Autonomous customer follow-ups', 'MCP tools', 'AI image generation', 'AI content creation', 'Automation rules', 'Webhooks &amp; APIs']],
   ['Books', 'receipt', ['Tally integration', 'Zoho integration', 'Payment reminders']],
   ['Team', 'users', ['HR', 'Attendance register', 'Payroll software', 'Incentive sheet', 'LMS', 'Team chat app', 'Recruitment management', 'Task management']],
   ['Decisions', 'pie', ['MIS reports', 'Branch report calls', 'Call tracking tool', 'Google Sheets']],
 ];
 const STACK_N = STACK.reduce((a, g) => a + g[2].length, 0);
+
+// What each tool costs and takes today:
+// [average ₹ a month for a typical paid plan in India (about five logins),
+//  hours a week to operate it, what the price is based on, overlap group,
+//  confidence, and what the price and hours scale with: 'u' = team size,
+//  'l' = number of showrooms, none = flat]. Tools in the same overlap group are usually one product, so the
+// group is charged once, at its highest price. Researched 2026-10-02 from
+// published vendor prices; "low" confidence rows are estimates. Listed under
+// the section and in blueprint/STACK-SAVINGS-ASSUMPTIONS.md.
+const STACK_COST = {
+  "A/B testing": [3500, 0.5, "Testing apps about $30 to $75 a month; VWO paid plans are far higher", "", "low"],
+  "AI agents": [4000, 2, "Chatbot builders $29 to $79 a month (WotNot, Tidio Lyro, Intercom Fin base)", "", "medium"],
+  "AI content creation": [2500, 2, "ChatGPT Plus ₹1,999; Jasper Creator $39 to $49", "", "medium"],
+  "AI image generation": [2000, 2, "Midjourney Standard $24 to $30 a month", "", "medium"],
+  "AI inbound calling": [2500, 1, "India vendors bill mostly per minute; platform fee is an estimate", "aicall", "low"],
+  "AI outbound calling campaigns": [2500, 1.5, "Same vendors as inbound; counted once with it", "aicall", "low"],
+  "Ads creator": [1500, 2, "Canva Pro ₹499 at the low end; AI ad-creative tools $29 to $39", "creative", "low"],
+  "Appointment diary": [480, 1, "Zoho Bookings ₹360 to ₹480 a user; Calendly $10 to $12", "meet", "medium"],
+  "Asset library": [650, 1, "About 2 TB of paid cloud storage", "", "low"],
+  "Attendance register": [500, 1, "Attendance apps ₹50 to ₹100 a staff member; often inside HR tools", "hr", "low", "u"],
+  "Automation rules": [1500, 1, "Zapier Professional ₹1,680 to ₹2,520; Make Core ₹1,000 to ₹1,350; Pabbly about ₹1,300", "integ", "high"],
+  "Autonomous customer follow-ups": [2000, 3, "A CRM or WhatsApp automation tier; no standalone product", "mktauto", "low"],
+  "Barcode &amp; tagging": [400, 3, "Label software ₹5,000 to ₹15,000 one time, spread over three years", "erp", "low", "l"],
+  "Billing software": [1100, 6, "Marg Jewellery ₹10,300 to ₹26,000 a year; Online Munim ₹7,670 to ₹22,184; Vyapar ₹3,799 to ₹4,799", "erp", "medium", "l"],
+  "Branch report calls": [0, 3, "Phone calls and WhatsApp today", "", "low", "l"],
+  "Broadcasts": [1500, 2, "AiSensy Basic ₹1,500; counted once with WhatsApp API", "wa", "medium"],
+  "Business email": [900, 1, "Zoho Mail ₹90 to ₹180 a user; Google Workspace about ₹125 to ₹270; five users", "", "medium", "u"],
+  "Calendar": [0, 0.5, "Free", "", "high"],
+  "Call tracking tool": [3500, 1.5, "MyOperator ₹2,500 to ₹5,000; Exotel from about ₹3,000; Knowlarity ₹1,999 an agent", "", "medium", "u"],
+  "Campaigns": [1200, 2, "Zoho Marketing Automation Standard ₹1,140; counted once with marketing automation", "mktauto", "low"],
+  "CCTV tracking": [2500, 1, "People-counting services $9 to $49 a sensor; two points assumed", "", "low", "l"],
+  "ChatGPT Ads": [0, 0.5, "No established paid tool; ad spend excluded", "", "low"],
+  "Comments management": [1700, 2, "Zoho Social ₹570 to ₹900; Hootsuite ₹2,600; counted once with DMs", "social", "medium"],
+  "Coupons management": [1000, 0.5, "Coupon tools from about $20 a month", "", "low"],
+  "CRM": [5000, 5, "Zoho CRM Standard ₹800 to Professional ₹1,400 a user; five users", "", "high", "u"],
+  "Customer journeys": [1700, 1.5, "Zoho Marketing Automation Professional ₹1,740; counted once", "mktauto", "low"],
+  "Customer personalisation engine": [6300, 1, "CleverTap Essentials $75; WebEngage Solo $199", "cdp", "low"],
+  "Customer segmentation": [1500, 1.5, "A CRM or data-platform feature; counted once with personalisation", "cdp", "low"],
+  "Digital gold app": [4000, 2, "One white-label vendor: ₹75,000 to ₹1,00,000 set-up plus yearly fee, over three years", "", "low"],
+  "DMs": [1700, 3, "Zoho Social ₹570 to ₹3,800; Hootsuite Standard ₹2,600", "social", "medium"],
+  "Document viewer": [0, 0.5, "Free", "", "high"],
+  "Ecommerce website": [3000, 5, "Shopify India Basic ₹1,499 to ₹1,994; Grow ₹5,599 to ₹7,447", "", "high"],
+  "Email marketing tool": [1200, 1.5, "Mailchimp Standard from $20; Zoho Campaigns ₹240 to ₹345", "", "medium"],
+  "ERP": [4000, 8, "Marg Gold ₹26,000 a year; Online Munim Pro ₹22,184; others ₹30,000 to ₹1,50,000", "erp", "low", "l"],
+  "Estimate pad": [70, 2, "Vyapar mobile ₹699 to ₹799 a year", "erp", "medium", "l"],
+  "Facebook page inbox": [0, 1.5, "Meta Business Suite is free", "social", "high"],
+  "Forms": [0, 0.5, "Google Forms is free", "", "medium"],
+  "Franchise management": [6000, 2, "Built on tools such as Zoho Creator, ₹2,400 to ₹6,000 for five users", "", "low", "u"],
+  "Girvi register": [700, 3, "SthirApp ₹500 a month; one-time pawn software ₹5,000 to ₹16,000", "", "medium", "l"],
+  "Gold rate updates": [0, 1, "Usually free from an association or a rate app", "", "low"],
+  "Gold scheme register": [2000, 3, "One published price: Suniyara ₹2,499 a month", "", "low", "l"],
+  "Google Ads": [0, 2, "The ads console is free; ad spend excluded", "", "high"],
+  "Google Business reviews": [2000, 1, "Indian review tools about ₹1,000 to ₹3,000", "", "low", "l"],
+  "Google Sheets": [0, 4, "Free", "", "high"],
+  "Google Shopping": [0, 1, "Merchant Center is free", "", "medium"],
+  "Google Tag Manager": [0, 0.5, "Free", "", "high"],
+  "Hallmark tracker": [300, 2, "An ERP module or a register; no standalone product", "erp", "low", "l"],
+  "HR": [3000, 2, "greytHR Essential ₹2,495; Keka Foundation ₹6,999", "hr", "medium", "u"],
+  "Incentive sheet": [0, 1.5, "A spreadsheet today", "", "low"],
+  "Inventory intelligence": [2500, 2, "Inventory planning apps $30 to $99", "", "low"],
+  "Inventory software": [1500, 6, "Marg Jewellery Silver ₹13,900 a year; cloud inventory ₹1,500 to ₹3,000", "erp", "low", "l"],
+  "Karigar portal": [1500, 3, "A job-work module of a jewellery ERP; no standalone price", "erp", "low"],
+  "Lead finder": [3300, 2, "Apollo Basic $49 to $59; Lusha $37 to $50; EasyLeadz ₹2,417", "", "medium"],
+  "LinkedIn": [0, 0.5, "Free to post", "", "high"],
+  "LMS": [1500, 1, "Zoho Learn ₹60 to ₹180 a user; TalentLMS from $69", "", "medium", "u"],
+  "Loyalty cards": [3250, 2, "Reelo Growth ₹39,000 an outlet a year", "", "medium", "l"],
+  "Marketing automation": [3000, 2, "Zoho Marketing Automation ₹1,140 to ₹1,740; CleverTap $75; WebEngage $199", "mktauto", "medium"],
+  "Marketplace seller panels": [0, 3, "Free to use; commission based", "", "medium"],
+  "MCP tools": [1500, 0.5, "No settled category; an integration-platform plan", "integ", "low"],
+  "Meetings": [1300, 1, "Zoom Pro about ₹1,150 to ₹1,376", "meet", "medium"],
+  "Meta Ads": [0, 3, "Ads Manager is free; ad spend excluded", "", "high"],
+  "MIS reports": [1500, 3, "Power BI Pro or Zoho Analytics entry plans, about ₹1,100 to ₹1,500", "", "low"],
+  "Occasion diary": [200, 1, "A reminder app", "", "low"],
+  "Old gold management": [500, 2, "A register or ERP module; no standalone product", "erp", "low", "l"],
+  "Payment reminders": [0, 1.5, "Free ledger apps", "", "medium"],
+  "Payroll software": [2300, 1.5, "RazorpayX Payroll ₹2,499; greytHR ₹2,495; Zoho Payroll ₹40 to ₹50 an employee", "hr", "high", "u"],
+  "Pinterest": [0, 0.5, "Free to post", "", "high"],
+  "Pixels": [0, 0.25, "Free", "", "high"],
+  "POS counter": [1500, 4, "Retail POS about ₹1,000 to ₹2,000 a counter", "erp", "low", "l"],
+  "Pricing engine": [1500, 2, "An ERP feature, or a gold-price app at $10 to $30", "erp", "low"],
+  "Push notifications": [1500, 0.5, "OneSignal Growth, PushEngage, Pushwoosh small-list plans", "", "medium"],
+  "Quotation maker": [300, 2, "Vyapar desktop ₹3,799 a year", "erp", "medium", "l"],
+  "RCS": [0, 0.5, "No platform fee at most providers; per-message charges excluded", "", "medium"],
+  "Recruitment management": [1800, 1, "Zoho Recruit ₹1,250 to ₹2,500 a recruiter", "", "medium"],
+  "Reels": [0, 2, "Free to post", "", "high"],
+  "Repairs management": [2500, 2, "Repair-shop software $10 to $150 a month, low end weighted", "", "low", "l"],
+  "RFM": [1500, 1, "A CRM or loyalty feature; counted once with segmentation", "cdp", "low"],
+  "Shareable live catalogues": [1200, 3, "QuickSell ₹12,000 a year, or ₹1,750 month to month", "", "high"],
+  "Shopify integration": [2000, 2, "Connector apps $20 to $50, or custom work spread over three years", "", "low"],
+  "SMS": [0, 0.5, "Pay per SMS; no monthly platform fee", "", "medium"],
+  "Social media post creator": [500, 3, "Canva Pro ₹499", "creative", "high"],
+  "Social media scheduler": [1700, 2, "Buffer about ₹1,700 to ₹2,000 for four channels; Zoho Social; Hootsuite ₹2,600", "social", "medium"],
+  "Stories": [0, 2, "Free to post", "", "high"],
+  "Tally integration": [1000, 3, "Connector work of about ₹10,000 to ₹50,000 one time plus yearly support, over three years", "", "low"],
+  "Task management": [2800, 1.5, "Zoho Projects ₹350 a user; Asana about ₹949 a user; five users", "", "medium", "u"],
+  "Team chat app": [850, 1, "Slack Pro about ₹250 a user; many shops use free WhatsApp groups", "", "medium", "u"],
+  "Threads": [0, 0.5, "Free to post", "", "high"],
+  "Vendor portal": [3000, 1.5, "Portal tools ₹2,500 to ₹4,200 for five users", "", "low", "u"],
+  "Video call app": [0, 1, "WhatsApp and Google Meet are free", "meet", "high"],
+  "Visitor tracking": [1000, 0.5, "Zoho SalesIQ ₹830 to ₹1,580; counted once with live chat", "chat", "low"],
+  "Walk-in register": [500, 2, "A visitor or lead-capture app", "", "low", "l"],
+  "Webhooks &amp; APIs": [1000, 0.5, "An entry integration-platform plan", "integ", "low"],
+  "Website heatmaps": [1400, 0.5, "Hotjar Plus about ₹2,700 to ₹3,300; Microsoft Clarity is free", "", "medium"],
+  "Website live chat": [2000, 2, "Zoho SalesIQ ₹830 to ₹1,580; Tidio ₹2,436 to ₹4,956", "chat", "medium"],
+  "WhatsApp API": [2800, 3, "Interakt Growth ₹2,499 to ₹2,799; AiSensy Pro ₹3,200; Wati ₹2,199 to ₹4,899", "wa", "high"],
+  "WooCommerce integration": [1500, 2, "Connector plugins $100 to $300 a year, or custom work", "", "low"],
+  "X": [0, 0.5, "Free to post", "", "high"],
+  "YouTube": [0, 1, "Free to post", "", "high"],
+  "Zoho integration": [1000, 1.5, "Partner connectors of about ₹10,000 to ₹50,000 one time", "", "low"],
+};
+const STACK_PLAN = 18000, STACK_LOC = 2999, STACK_TEAM = 8, STACK_HOUR_SHARE = 0.5, STACK_MATCH = 0.5, STACK_WEEK = 45;
 function stackMerge() {
+  const tip = (k) => `<button type="button" class="stackm-tip" aria-label="How this is worked out"><span role="tooltip" data-stackm-tip="${k}"></span></button>`;
   return `
 <div class="stackm" data-stackm data-total="${STACK_N}">
   <div class="stackm-main">
     <div class="stackm-cloud" data-stackm-cloud>
-      ${STACK.flatMap(([, , items], g) => items.map((t) => [t, g])).sort((x, y) => x[0].localeCompare(y[0], 'en', { sensitivity: 'base' })).map(([t, g]) => `<button type="button" class="stackm-chip" data-g="${g}" aria-pressed="false">${t}</button>`).join('')}
+      ${STACK.flatMap(([, , items], g) => items.map((t) => [t, g])).sort((x, y) => x[0].localeCompare(y[0], 'en', { sensitivity: 'base' })).map(([t, g]) => `<button type="button" class="stackm-chip" data-g="${g}" data-c="${(STACK_COST[t] || [0, 1])[0]}" data-h="${(STACK_COST[t] || [0, 1])[1]}" data-grp="${(STACK_COST[t] || [])[3] || ''}" data-s="${(STACK_COST[t] || [])[5] || ''}" aria-pressed="false">${t}</button>`).join('')}
     </div>
     <button type="button" class="stackm-more" data-stackm-more>Show all ${STACK_N}</button>
   </div>
-  <aside class="stackm-panel" data-stackm-panel>
-    <p class="stackm-label" data-stackm-label>Tools a jewellery business can end up running</p>
+  <aside class="stackm-panel" data-stackm-panel data-stackm-out data-plan="${STACK_PLAN}" data-locfee="${STACK_LOC}" data-base="${STACK_TEAM}" data-share="${STACK_HOUR_SHARE}" data-match="${STACK_MATCH}" data-week="${STACK_WEEK}">
+    <div class="stackm-fx" aria-hidden="true"><i></i></div>
+    <div class="stackm-size">
+      <label>Showrooms<span><button type="button" data-stackm-step="loc" data-d="-1" aria-label="Fewer showrooms">−</button><input type="number" inputmode="numeric" data-stackm-in="loc" value="1" min="1" max="50" aria-label="Number of showrooms"><button type="button" data-stackm-step="loc" data-d="1" aria-label="More showrooms">+</button></span></label>
+      <label>Team members<span><button type="button" data-stackm-step="team" data-d="-1" aria-label="Fewer team members">−</button><input type="number" inputmode="numeric" data-stackm-in="team" value="${STACK_TEAM}" min="1" max="500" aria-label="Number of team members"><button type="button" data-stackm-step="team" data-d="1" aria-label="More team members">+</button></span></label>
+    </div>
+    <p class="stackm-label" data-stackm-label>If you ran all ${STACK_N} today</p>
     <p class="stackm-num" aria-live="polite"><b data-stackm-n>${STACK_N}</b><i>→</i><b class="stackm-one">1</b></p>
-    <strong>One platform.</strong>
-    <span>One login. One record. One bill.</span>
-    <p class="stackm-tally" data-stackm-tally>Tap every one you run today.</p>
+    <div class="stackm-tally" data-stackm-tally></div>
+    <div class="stackm-money">
+      <p class="stackm-m"><span>Today, a month${tip('today')}</span><b data-stackm-o="today">₹0</b></p>
+      <p class="stackm-m"><span>With Jwero${tip('with')}</span><b data-stackm-o="with">₹0</b></p>
+      <p class="stackm-m stackm-m-save"><span><em data-stackm-o="save-k">Saved a month</em>${tip('save')}</span><b data-stackm-o="save">₹0</b></p>
+      <p class="stackm-m"><span>Hours back a week${tip('hours')}</span><b data-stackm-o="hours">0</b></p>
+      <p class="stackm-m"><span>People’s time freed${tip('people')}</span><b data-stackm-o="people">0</b></p>
+      <p class="stackm-m"><span>Opportunity, a month${tip('opp')}</span><b data-stackm-opp>₹0</b></p>
+    </div>
     <button type="button" class="stackm-go" data-stackm-go>Merge them into one</button>
     <div class="stackm-actions">
       <button type="button" data-stackm-all>Select all ${STACK_N}</button>
       <button type="button" data-stackm-clear>Clear</button>
+      <button type="button" data-stackm-open="nums">Your numbers</button>
+      <button type="button" data-stackm-open="how">How it is worked out</button>
+      <button type="button" class="stackm-more-btn" data-stackm-exp aria-expanded="false">Details</button>
     </div>
   </aside>
+  <dialog class="stackm-dlg" data-stackm-dlg="nums" aria-label="Your numbers">
+    <form method="dialog"><button class="stackm-dlg-x" aria-label="Close">×</button></form>
+    <h3>Your numbers</h3>
+    <div class="stackm-opp-in">
+      <label>Average monthly salary of the staff who run these tools <b data-stackm-v="sal">₹25,000</b><input type="range" data-stackm-in="sal" min="10000" max="80000" step="1000" value="25000"></label>
+      <label>Enquiries a month, all showrooms <b data-stackm-v="enq">200</b><input type="range" data-stackm-in="enq" min="20" max="3000" step="10" value="200"></label>
+      <label>Average bill <b data-stackm-v="aov">₹35,000</b><input type="range" data-stackm-in="aov" min="5000" max="300000" step="1000" value="35000"></label>
+      <label>Replied to within an hour today <b data-stackm-v="rep">35%</b><input type="range" data-stackm-in="rep" min="5" max="90" step="1" value="35"></label>
+    </div>
+  </dialog>
+  <dialog class="stackm-dlg stackm-dlg-how" data-stackm-dlg="how" aria-label="How it is worked out">
+    <form method="dialog"><button class="stackm-dlg-x" aria-label="Close">×</button></form>
+    <h3>How it is worked out</h3>
+    <div class="stackm-how-body">
+        <p><strong>These are estimates, not a quote.</strong> Change the selection and the sliders to match your business.</p>
+        <p><strong>Subscriptions.</strong> Each tool carries the average monthly price of a typical paid plan from well-known vendors in India, for a business with about five people who need a login. Platforms that are free to use, such as posting on a social network, count as ₹0. Advertising spend and per-message or per-minute charges are left out on both sides, because you pay those with or without Jwero.</p>
+        <p><strong>No double counting.</strong> Several items are usually one product: billing, POS, stock and ERP; WhatsApp API and broadcasts; the social inbox and scheduler; marketing automation, campaigns and journeys; HR, payroll and attendance. Each such group is charged once, at its highest price, however many of its items you pick. Where a tool is often kept on paper or a free app, the price shown is the simplest paid tool that replaces it; if you pay nothing for it today, your saving is lower.</p>
+        <p><strong>Team time.</strong> Each tool carries the hours a week a team spends operating it and keeping it up to date. When more than one tool is picked, ${STACK_MATCH} hours a week per tool is added for matching it with the others: exporting, re-typing and checking that the numbers agree. Hours are priced from the salary slider at ${STACK_WEEK} hours a week. “People’s worth of time” is those hours divided by ${STACK_WEEK}.</p>
+        <p><strong>Showrooms and team.</strong> Tools bought per counter or per outlet, such as billing, POS, stock, loyalty and the scheme register, are multiplied by the number of showrooms, and so are their hours. Tools bought per user, such as CRM, email, HR and payroll, are scaled by team size from a base of ${STACK_TEAM} people. Hours on the remaining tools grow with the square root of team size, between half and double the base. Each extra showroom also adds matching time, because every tool’s numbers have to be combined across branches. Total team time is capped at 60% of what the whole team can work.</p>
+        <p><strong>With Jwero.</strong> One plan at ₹${STACK_PLAN.toLocaleString('en-IN')} a month replaces the subscriptions, plus ₹${STACK_LOC.toLocaleString('en-IN')} a month for each showroom after the first. There is no charge per team member. From six showrooms, Enterprise terms apply and the real figure may differ. We count ${Math.round(STACK_HOUR_SHARE * 100)}% of the team time as saved, not all of it, because the work itself does not disappear; what goes is the re-typing and the matching.</p>
+        <p><strong>Opportunity.</strong> The same working as the <a href="/tools/whatsapp-revenue-estimator">WhatsApp Revenue Estimator</a>: enquiries answered within an hour close at 15%, slow or missed ones at 3%, and the target is 95% answered fast. Planning assumptions, not a study. It is a direction, not a forecast, and it is not added to the saving.</p>
+        <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Tool</th><th>Average ₹ a month</th><th>Hours a week</th><th>Scales with</th><th>Based on</th></tr></thead><tbody>${STACK.flatMap(([, , items]) => items).sort((x, y) => x.localeCompare(y, 'en', { sensitivity: 'base' })).map((t) => { const c = STACK_COST[t] || [0, 1, '']; return `<tr><td>${t}</td><td>${c[0] ? '₹' + c[0].toLocaleString('en-IN') : 'Free'}</td><td>${c[1]}</td><td>${c[5] === 'l' ? 'Showrooms' : c[5] === 'u' ? 'Team size' : ''}</td><td>${c[2] || ''}${c[4] === 'low' ? ' <em>(estimate)</em>' : ''}</td></tr>`; }).join('')}</tbody></table></div>
+      </div>
+  </dialog>
 </div>`;
 }
 
@@ -1060,10 +1251,10 @@ function homeHero({ kicker, h1, sub }) {
         <h1>${h1}</h1>
         <p class="sub">${sub}</p>${icpPick()}
         <div class="cta-row hero-home-cta">
-          <a class="btn btn-primary" href="${TRIAL_URL}home-hero" rel="noopener" data-trial>Start my 14-day free trial</a>
+          <a class="btn btn-primary" href="${TRIAL_URL}home-hero" rel="noopener" data-trial>Start for ₹3,600</a>
           <a class="hero-quiet" href="#" data-wa="home">or chat or call with us</a>
         </div>
-        <p class="cta-note">No card. Every module. ₹9,999 a month after the trial, billed annually.</p>
+        <p class="cta-note">Every module. First month ₹3,600, then ₹18,000 a month.</p>
       </div>
       <div class="hero-home-piece">
         ${gemStage2({ hero: true })}
@@ -1093,17 +1284,25 @@ function gemStage2(opts = {}) {
     </div>
     <div class="gem2-metals" role="group" aria-label="Metal">
       <button type="button" data-gem2-metal="gold" class="is-on" aria-pressed="true"><i></i>Gold</button>
-      <button type="button" data-gem2-metal="silver" aria-pressed="false"><i></i>Silver</button>
-      <button type="button" data-gem2-metal="platinum" aria-pressed="false"><i></i>Platinum</button>
       <button type="button" data-gem2-metal="diamond" aria-pressed="false"><i></i>Diamond</button>
     </div>
     <button type="button" class="gem2-rate" data-gem2-rate>${icon('trend')}<span>The gold rate just moved</span></button>
+    <button type="button" class="gem2-daybtn" data-gem2-day aria-pressed="false">${icon('refresh')}<span>Run a full day</span></button>
     <p class="gem2-hint" aria-hidden="true">Drag to turn · tap a module</p>
+  </div>
+  <div class="gem2-day" data-gem2-dayp>
+    <p class="gem2-clock" title="One busy day across every department. An illustration, not a measurement."><b data-gem2-clock>09:30</b><span>One busy day. An illustration.</span></p>
+    <div class="gem2-daystats">
+      <p title="Everything that happened across the business today"><b data-gem2-dn="all">0</b><span>events</span></p>
+      <p class="k-a" title="Done by the system on its own: a rule, a posting or a flag"><b data-gem2-dn="a">0</b><span>by system</span></p>
+      <p class="k-q" title="Drafted by AI and waiting for a person to say yes"><b data-gem2-dn="q">0</b><span>await a yes</span></p>
+      <p class="k-t" title="Done by your team, on the same record"><b data-gem2-dn="t">0</b><span>by team</span></p>
+    </div>
   </div>
   <div class="gem2-signals is-idle" data-gem2-signals>
     <div class="gem2-sig-head">
-      <p><b>198</b> kinds of signal Jwero listens for, from 36 sources. Here is the family this event belongs to — each dot is one signal.</p>
-      <p class="gem2-sig-count"><b data-gem2-heard>0</b> heard this week</p>
+      <p title="Jwero listens for 198 kinds of signal from 36 sources. Each event lights the family it belongs to; each dot is one signal."><b>198</b> signals</p>
+      <p class="gem2-sig-count"><b data-gem2-heard>0</b> heard</p>
     </div>
     <div class="gem2-fams">${FAMILIES.map(([name, n], f) => `<button type="button" class="gem2-fam" data-fam="${f}"><span class="gem2-fam-name">${esc(name)}<em>${n}</em></span><span class="gem2-dots">${'<i></i>'.repeat(n)}</span></button>`).join('')}</div>
     <p class="gem2-sig-note" data-gem2-signote>Press play. Each event shows the family of signals it fires — one family at a time.</p>
@@ -1292,7 +1491,7 @@ function safeToTryStrip() {
   <p class="safe-title">WHY TRYING THIS IS SAFE</p>
   <div class="safe-items">
     <div><strong>Pilot on your own data</strong><span>Start with a supervised sample import — evaluate on your real customers, not a demo dataset.</span></div>
-    <div><strong>14 days free, then month to month</strong><span>No card for the trial. Monthly billing has no lock-in, and your data leaves with you in standard formats whenever you ask.</span></div>
+    <div><strong>First month ₹3,600, then month to month</strong><span>Monthly billing has no lock-in, and your data leaves with you in standard formats whenever you ask.</span></div>
     <div><strong>Your season is protected</strong><span>A written change-freeze means nothing disruptive happens during your peak weeks.</span></div>
   </div>
 </div>`;
@@ -1357,7 +1556,7 @@ function customerLogos() {
 
 module.exports = {
   esc, icon, autoIcon, sim, controlSplit, mockMemo, LINK_ICONS, PERSONAS, personaSlot, personaSwitch, systemSplit, gemStage, heroSchematic, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
-  mark, homeHero, trustBadges, SECURITY_CONTROLS, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
+  mark, homeHero, STACK, STACK_COST, trustStrip, proofGrid, trustBadges, SECURITY_CONTROLS, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,
 };
