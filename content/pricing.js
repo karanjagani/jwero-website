@@ -175,8 +175,8 @@ ${L.section(
 ${L.section(L.customerLogos())}
 
 ${L.section(
-  `${L.sectionHead('SECURITY & COMPLIANCE', 'Your customer list is your business. It is guarded like one.', 'What protects your data, which rules Jwero already meets, and which certificates it does not hold yet — said plainly.')}
-  ${L.securityBlock()}`
+  `<div class="gem-head"><h2>Security and compliance, with the real status.</h2><p>Six in place, four not yet. Hover a seal, or open any document.</p></div>
+  ${L.trustStrip()}`
 )}
 
 
