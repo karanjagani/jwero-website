@@ -88,7 +88,7 @@ ${L.ctaBand('See a repair, tracked properly.', 'Bring one real repair job — we
 
 const purchaseVendors = {
   slug: 'products/purchase-vendors',
-  title: 'Purchase Orders & Vendor Management for Jewellers | Jwero',
+  title: 'Jewellery Purchase & Vendor Management Software | Jwero',
   description: 'Purchase orders, GRN, bills and vendor credit notes, plus a self-serve vendor portal — suppliers check their own PO and payment status.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',

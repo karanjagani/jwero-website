@@ -14,7 +14,7 @@ const accountantFaqs = [
 
 const accountantRole = {
   slug: 'roles/accountant',
-  title: 'Accountant / Bookkeeper — Reconcile With Your Books, Not Against Them | Jwero',
+  title: 'For Jewellery Accountants: Books That Reconcile | Jwero',
   description: 'How Jwero changes the accountant’s day: GST invoices at live gold rate, a Tally/Zoho bridge keeping books in place, and a note on what billing doesn’t do yet.',
   breadcrumbs: BC('Accountant / bookkeeper'),
   faqs: accountantFaqs,
@@ -187,7 +187,7 @@ const purchaseManagerFaqs = [
 
 const purchaseManagerRole = {
   slug: 'roles/purchase-manager',
-  title: 'Purchase / Procurement Manager — Reorder on Visibility, Not Gut Feel | Jwero',
+  title: 'For Purchase Managers: Reorder on Data, Not Gut Feel | Jwero',
   description: 'How Jwero changes the purchase manager’s day: ageing/velocity visibility for reorder decisions, GRN-tracked purchase-to-pay, a note on visibility vs prediction.',
   breadcrumbs: BC('Purchase / procurement manager'),
   faqs: purchaseManagerFaqs,

@@ -24,7 +24,7 @@ ${L.section(
 
 const deadStockCalc = {
   slug: 'tools/dead-stock-calculator',
-  title: 'Dead Stock Calculator for Jewellery Business — What Idle Inventory Costs | Jwero',
+  title: 'Dead Stock Calculator for Jewellers: Cost of Idle Stock | Jwero',
   description: 'Free calculator: enter inventory value, dead-stock percentage and financing rate to see the monthly cost of idle stock. Results delivered on WhatsApp.',
   breadcrumbs: [['Home', '/'], ['Tools', '/tools'], ['Dead Stock Calculator']],
   faqs: [
@@ -147,7 +147,7 @@ ${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'How the scheme numbers wor
 
 const waRevenueCalc = {
   slug: 'tools/whatsapp-revenue-estimator',
-  title: 'WhatsApp Revenue Estimator for Jewellery Business — What Slow Replies Cost | Jwero',
+  title: 'WhatsApp Revenue Estimator for Jewellers | Jwero',
   description: 'Free calculator: enter your monthly WhatsApp enquiries, average order value and current reply speed to see the revenue slow or missed replies are costing you.',
   breadcrumbs: [['Home', '/'], ['Tools', '/tools'], ['WhatsApp Revenue Estimator']],
   faqs: [
@@ -209,7 +209,7 @@ ${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'Where the estimate’s ass
 
 const goldLossCalc = {
   slug: 'tools/gold-loss-calculator',
-  title: 'Gold-Loss Calculator for Jewellery Manufacturers — What Unexplained Loss Costs | Jwero',
+  title: 'Gold Loss Calculator for Jewellery Manufacturers | Jwero',
   description: 'Free calculator: enter your monthly production weight, gold rate and the gap between observed and explained loss to see what unexplained wastage costs.',
   breadcrumbs: [['Home', '/'], ['Tools', '/tools'], ['Gold-Loss Calculator']],
   faqs: [

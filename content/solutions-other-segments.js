@@ -9,7 +9,7 @@ const bullionFaqs = [
 
 const bullionTraders = {
   slug: 'solutions/bullion-gold-traders',
-  title: 'For Bullion Dealers & Gold Traders | Jwero',
+  title: 'Bullion Trading Software for Dealers & Gold Traders | Jwero',
   description: 'Rate-locked deal capture and clean counterparty ledgers — your trading relationships as a business asset, not a personal phone’s contact list.',
   breadcrumbs: BC('Bullion & gold traders'),
   faqs: bullionFaqs,
@@ -43,7 +43,7 @@ const brandsFaqs = [
 
 const jewelleryBrands = {
   slug: 'solutions/jewellery-brands',
-  title: 'For Jewellery Brands — Multi-Channel & Multi-Partner | Jwero',
+  title: 'Software for Jewellery Brands: Multi-Channel, Multi-Partner | Jwero',
   description: 'One brand voice across every counter and channel: central catalogue, brand-controlled campaigns and distributor visibility.',
   breadcrumbs: BC('Jewellery brands'),
   faqs: brandsFaqs,
@@ -77,7 +77,7 @@ const d2cFaqs = [
 
 const d2cBrands = {
   slug: 'solutions/d2c-brands',
-  title: 'For D2C & Ecommerce-First Jewellery Brands | Jwero',
+  title: 'Software for D2C & Online Jewellery Brands | Jwero',
   description: 'Keep Shopify. Add the channels it can’t do — WhatsApp/Instagram-native selling, live-rate pricing and a video counter, on top of your stack.',
   breadcrumbs: BC('D2C & ecommerce-first'),
   faqs: d2cFaqs,
@@ -124,7 +124,7 @@ const startupsFaqs = [
 
 const startups = {
   slug: 'solutions/startups',
-  title: 'For Jewellery Startups & First-Time Founders | Jwero',
+  title: 'Jewellery Software for Startups & New Jewellers | Jwero',
   description: 'Start with the system chains took decades to build — the full operating system from day one, priced for a first store.',
   breadcrumbs: BC('Startups'),
   faqs: startupsFaqs,
@@ -159,7 +159,7 @@ const franchiseFaqs = [
 
 const franchiseNetworks = {
   slug: 'solutions/franchise-networks',
-  title: 'For Jewellery Franchise Networks | Jwero',
+  title: 'Jewellery Franchise Software: Brand Control, Store Freedom | Jwero',
   description: 'Franchisor control, franchisee freedom: brand-level catalogue and pricing governance with store-level flexibility.',
   breadcrumbs: BC('Franchise networks'),
   faqs: franchiseFaqs,

@@ -6,7 +6,7 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 const pos = {
   slug: 'products/pos',
-  title: 'Jewellery POS — Counter Billing, Returns, Old-Gold Exchange & Day-Close | Jwero',
+  title: 'Jewellery POS Software: Billing, Exchange, Day-Close | Jwero',
   description: 'A jewellery counter POS: scan-to-sale at the live gold rate, weight-based sales, old-gold exchange vouchers, returns, register shifts with cash day-close — on the same customer record as everything else.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -80,7 +80,7 @@ ${L.ctaBand('See a sale rung up, returned and closed.', 'Bring one real bill fro
 
 const manufacturing = {
   slug: 'products/manufacturing',
-  title: 'Jewellery Manufacturing Software — BOM, Routing, Wastage, Karigar Khata | Jwero',
+  title: 'Jewellery Manufacturing Software: Karigar, BOM, Wastage | Jwero',
   description: 'Manufacturing for jewellery: bill of materials, routings, production orders, stage-wise wastage norms with a metal-closure check, job cards, QC, raw-material lots and a karigar khata that settles wages against gold.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -155,7 +155,7 @@ ${L.ctaBand('Bring one job that lost gold.', 'We will run it through the routing
 
 const girvi = {
   slug: 'products/girvi',
-  title: 'Girvi / Gold Loan Software for Jewellers — Pledge, Interest, Release | Jwero',
+  title: 'Girvi, Gold Loan & Pawn Broking Software for Jewellers | Jwero',
   description: 'Girvi for jewellers: pledge intake with a printed receipt, interest schemes that accrue on schedule, collections, renewals and release — with every entry posted to the books and the loan on the customer’s record.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -218,7 +218,7 @@ ${L.ctaBand('Bring your pledge register.', 'We will show you one loan from intak
 
 const meetings = {
   slug: 'products/meetings',
-  title: 'Video Counter & Appointments — Meet Customers from the Inbox | Jwero',
+  title: 'Jewellery Appointment & Video Call Software | Jwero',
   description: 'Start a video or voice call from any WhatsApp or web-chat conversation, let customers self-book against real availability, run a waiting room with admit control, and record with consent — all on the customer record.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',

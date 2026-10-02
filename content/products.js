@@ -2,7 +2,7 @@ const L = require('../lib');
 
 const productsIndex = {
   slug: 'products',
-  title: 'Products — The Jwero App Grid | Jwero',
+  title: 'Jewellery Software Products: CRM, ERP, POS, Billing and More | Jwero',
   description: 'Every Jwero product, grouped by promise: Sell, Market, Know, Run and Grow — all sharing one record: customers, catalogue, stock, orders and books.',
   breadcrumbs: [['Home', '/'], ['Products']],
   body: `

@@ -5,7 +5,7 @@ const L = require('../lib');
 
 const whyAnOs = {
   slug: 'why-an-os',
-  title: 'Why a Jewellery Business Needs an Operating System, Not Another Tool | Jwero',
+  title: 'Why Jewellers Need an Operating System, Not Another Tool | Jwero',
   description: 'What an operating system for a jewellery business is, why a CRM + ERP + WhatsApp tool never becomes one, and what "run by AI" means in practice: one record, every department on it, AI that acts on its own or asks first.',
   breadcrumbs: [['Home', '/'], ['Why an OS']],
   faqs: [

@@ -10,7 +10,7 @@ const luxuryBoutiqueFaqs = [
 
 const luxuryBoutique = {
   slug: 'solutions/luxury-boutique',
-  title: 'For Luxury & Boutique Jewellery Businesses | Jwero',
+  title: 'Software for Luxury & Boutique Jewellers: Clienteling | Jwero',
   description: 'Clienteling worthy of what you sell: white-glove memory for high-value clients, private previews on WhatsApp, and a small team serving like a large one.',
   breadcrumbs: BC('Luxury & boutique'),
   faqs: luxuryBoutiqueFaqs,
@@ -52,7 +52,7 @@ const bridalFaqs = [
 
 const bridal = {
   slug: 'solutions/bridal',
-  title: 'For Bridal & Wedding Jewellery Businesses | Jwero',
+  title: 'Bridal Jewellery Software: Trials, Quotes, Orders | Jwero',
   description: 'Track the whole family wedding journey: trials, quotes, dates, multiple decision-makers — in one thread, from first enquiry to the anniversaries after.',
   breadcrumbs: BC('Bridal & wedding'),
   faqs: bridalFaqs,
@@ -90,7 +90,7 @@ const diamondRetailFaqs = [
 
 const diamondRetail = {
   slug: 'solutions/diamond-retail',
-  title: 'For Diamond Jewellery Retailers | Jwero',
+  title: 'Diamond Jewellery Retail Software: Certificates and Stock | Jwero',
   description: 'Certificate-aware catalogue and AI that answers 4C questions instantly — for a trust-first, high-ticket, slow-moving category.',
   breadcrumbs: BC('Diamond retail'),
   faqs: diamondRetailFaqs,
@@ -130,7 +130,7 @@ const goldRetailFaqs = [
 
 const goldRetail = {
   slug: 'solutions/gold-retail',
-  title: 'For Gold Jewellery Retailers | Jwero',
+  title: 'Gold Jewellery Shop Software: Live Rate, Schemes, Exchange | Jwero',
   description: 'Live-rate pricing, scheme enrolment and old-gold exchange in one flow — for a business where the rate changes twice a day.',
   breadcrumbs: BC('Gold retail'),
   faqs: goldRetailFaqs,
@@ -170,7 +170,7 @@ const silverRetailFaqs = [
 
 const silverRetail = {
   slug: 'solutions/silver-retail',
-  title: 'For Silver Jewellery Retailers | Jwero',
+  title: 'Silver Jewellery Billing Software: Weight Sales and Lots | Jwero',
   description: 'Fast catalogue, fast reorder, high volume — automated for silver’s velocity and thin margins.',
   breadcrumbs: BC('Silver retail'),
   faqs: silverRetailFaqs,
@@ -205,7 +205,7 @@ const labGrownFaqs = [
 
 const labGrown = {
   slug: 'solutions/lab-grown-diamond',
-  title: 'For Lab-Grown Diamond Jewellery Businesses | Jwero',
+  title: 'Lab-Grown Diamond Jewellery Software | Jwero',
   description: 'Educate, convert and retain the lab-grown customer online-first — the fastest-growing, most digitally-native segment in jewellery.',
   breadcrumbs: BC('Lab-grown diamond'),
   faqs: labGrownFaqs,
@@ -244,7 +244,7 @@ const gemstoneRetailFaqs = [
 
 const gemstoneRetail = {
   slug: 'solutions/gemstone-retail',
-  title: 'For Gemstone Jewellery Retailers | Jwero',
+  title: 'Gemstone Inventory & Retail Software for Jewellers | Jwero',
   description: 'Provenance-rich catalogue and occasion-aware CRM journeys — every stone has a story, and Jwero keeps both.',
   breadcrumbs: BC('Gemstone retail'),
   faqs: gemstoneRetailFaqs,

@@ -9,7 +9,7 @@ const castingUnitsFaqs = [
 
 const castingUnits = {
   slug: 'solutions/casting-units',
-  title: 'For Jewellery Casting Units | Jwero',
+  title: 'Jewellery Casting Software: Flasks, Metal Loss, Job Work | Jwero',
   description: 'Batch and work-in-progress tracking tuned to casting workflows — every tree, every flask, accounted, with loss norms per stage.',
   breadcrumbs: BC('Casting units'),
   faqs: castingUnitsFaqs,
@@ -42,7 +42,7 @@ const cadServicesFaqs = [
 
 const cadServices = {
   slug: 'solutions/cad-services',
-  title: 'For Jewellery CAD Studios & Services | Jwero',
+  title: 'Software for Jewellery CAD Studios: Briefs, Approvals, Handoff | Jwero',
   description: 'CAD job intake, approval and production handoff with client communication on WhatsApp — nothing lost between design revision and job file.',
   breadcrumbs: BC('CAD services'),
   faqs: cadServicesFaqs,
@@ -75,7 +75,7 @@ const oemManufacturersFaqs = [
 
 const oemManufacturers = {
   slug: 'solutions/oem-manufacturers',
-  title: 'For OEM Jewellery Manufacturers | Jwero',
+  title: 'OEM Jewellery Manufacturing Software: Client-Wise Job Work | Jwero',
   description: 'Multi-client job-work: client-wise WIP, specs and settlement — your buyers’ brands, run cleanly on your system.',
   breadcrumbs: BC('OEM manufacturers'),
   faqs: oemManufacturersFaqs,
@@ -108,7 +108,7 @@ const exportHousesFaqs = [
 
 const exportHouses = {
   slug: 'solutions/export-houses',
-  title: 'For Jewellery Export Houses | Jwero',
+  title: 'Jewellery Export Software: Orders, Production, Buyer Currency | Jwero',
   description: 'Order-to-shipment tracking with documentation trails, and 24/7 buyer replies across timezones — export-grade process discipline.',
   breadcrumbs: BC('Export houses'),
   faqs: exportHousesFaqs,

@@ -12,8 +12,8 @@ const BC = (label) => [['Home', '/'], ['Compare', '/compare'], [label]];
 function comparePage({ slug, name, shortName, category, title, description, concedeThem, concedeJwero, rows, faqs, waCtx, migrationNote, researchNote }) {
   return {
     slug: `compare/jwero-vs-${slug}`,
-    title: title || `Jwero vs ${name} — An Honest Comparison | Jwero`,
-    description: description || `How Jwero compares to ${name}: what ${shortName || name} does well, what Jwero does differently, and an honest feature matrix sourced from public research.`,
+    title: title || `${name} Alternative for Jewellers: Jwero vs ${shortName || name} | Jwero`,
+    description: description || `Looking for a ${shortName || name} alternative? How Jwero compares to ${name}: what ${shortName || name} does well, what Jwero does differently, and an honest feature matrix sourced from public research.`,
     breadcrumbs: BC(`Jwero vs ${shortName || name}`),
     schema: { '@context': 'https://schema.org', '@type': 'Article', headline: `Jwero vs ${name}` },
     faqs: faqs || [],
@@ -40,7 +40,7 @@ ${L.ctaBand(`Plan the switch from ${shortName || name}.`, 'Tell us what you use 
 
 const compareHub = {
   slug: 'compare',
-  title: 'Compare Jwero to Alternatives | Jwero',
+  title: 'Jewellery Software Alternatives Compared: Jwero vs the Rest | Jwero',
   description: 'Honest, concession-first, publicly-researched comparisons: jewellery ERPs, WhatsApp tools, catalogue apps, CRMs and ecommerce platforms — against the Jwero OS.',
   breadcrumbs: [['Home', '/'], ['Compare']],
   body: `

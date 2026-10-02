@@ -37,7 +37,7 @@ const TERMS = [
 
 const glossary = {
   slug: 'glossary',
-  title: 'Jewellery Business Glossary — HUID, Girvi, Karigar, Memo, Wastage & More | Jwero',
+  title: 'Jewellery Glossary: HUID, Girvi, Karigar, Memo, Wastage | Jwero',
   description: 'Plain-language definitions of the terms that run a jewellery business — HUID, hallmarking, making charges, wastage, karigar, khata, girvi, memo, consignment, gold schemes, RFM and more — with where each one shows up in Jwero.',
   breadcrumbs: [['Home', '/'], ['Glossary']],
   schema: {

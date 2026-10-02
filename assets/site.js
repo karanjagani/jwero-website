@@ -678,11 +678,19 @@
       var c = picked().length;
       depts.forEach(function (d) {
         var n = chips.filter(function (x) { return x.getAttribute('data-g') === d.getAttribute('data-g') && on(x); }).length;
-        d.querySelector('[data-stackm-gn]').textContent = n; d.classList.toggle('has', n > 0);
+        d.classList.toggle('has', n > 0);
       });
       setNum(c || total); bump();
       label.textContent = c ? 'Tools you run today' : 'Tools a jewellery business can end up running';
-      tally.innerHTML = c ? '<b>' + c + '</b> login' + (c === 1 ? '' : 's') + ', <b>' + c + '</b> bill' + (c === 1 ? '' : 's') + ' and <b>' + c + '</b> vendor' + (c === 1 ? '' : 's') + ' become one of each.' : 'Tap every one you run today.';
+      // What the selection costs today, row by row, and what each becomes.
+      var links = c * (c - 1) / 2, s = c === 1 ? '' : 's';
+      function row(n, what, to) { return '<li><b>' + n + '</b><span>' + what + '</span><i>' + to + '</i></li>'; }
+      tally.innerHTML = c
+        ? '<span class="stackm-tally-short"><b>' + c + '</b> login' + s + ', bill' + s + ' and vendor' + s + ' become one.</span><ul class="stackm-rows">' +
+          row(c, 'login' + s, '1') + row(c, 'bill' + s + ' to pay', '1') + row(c, 'vendor' + s + ' to coordinate', '1') +
+          row(links ? 'up to ' + links : '0', 'integration' + (links === 1 ? '' : 's') + ' between them', '0') +
+          row(c, 'place' + s + ' your data can leak', '1') + row(c, 'renewal' + s + ' and support line' + s, '1') + '</ul>'
+        : 'Tap every one you run today.';
       go.textContent = c ? 'Merge my ' + c + ' into one' : 'Merge them into one';
     }
     function centre(el) { var r = el.getBoundingClientRect(), o = root.getBoundingClientRect(); return [r.left + r.width / 2 - o.left, r.top + r.height / 2 - o.top]; }
@@ -706,7 +714,7 @@
       merged = true; root.classList.remove('is-filter'); root.classList.add('is-open');
       label.textContent = 'Merging';
       var steps = Math.min(from - 1, 24), k = 0;
-      function done() { root.classList.add('is-merged'); label.textContent = 'What you run now'; tally.innerHTML = '<b>' + from + '</b> tools, logins and bills are now <b>one</b>.'; go.textContent = 'Start again'; }
+      function done() { root.classList.add('is-merged'); label.textContent = 'What you run now'; tally.innerHTML = '<b>' + from + '</b> tools, logins, bills and vendors are now <b>one</b>. No integrations to maintain, one record to protect, one team to call.'; go.textContent = 'Start again'; }
       void root.offsetWidth; root.classList.add('is-merging');
       if (calm || steps < 1) { done(); return; }
       window.clearInterval(countTimer);

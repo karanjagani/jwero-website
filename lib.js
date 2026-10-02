@@ -741,6 +741,36 @@ const COMPLIANCE_ROWS = [
   ['SOC 2', 'Not certified yet. Planned, and published only when earned.', 'plan', '/trust/security'],
   ['ISO 27001', 'Not certified yet. Planned, and published only when earned.', 'plan', '/trust/security'],
 ];
+// Trust badges. Jwero's own marks, never a certification body's logo: a badge
+// here states a status, and only "In place" means the thing is done. ISO 27001,
+// SOC 2, GDPR and an independent penetration test are not achieved and say so.
+// [short, name, status, what is true today, href]
+const TRUST_BADGES = [
+  ['DPDP', 'India’s DPDP Act, 2023', 'in', 'Data protection statement, processor terms, consent records, export and erasure tools.', '/legal/dpdp'],
+  ['IN', 'Data hosted in India', 'in', 'Each business in its own database on Microsoft Azure, India region.', '/legal/sub-processors'],
+  ['PCI', 'Card data (PCI DSS)', 'in', 'Card details never reach Jwero. Payments run through PCI DSS certified providers.', '/legal/sub-processors'],
+  ['META', 'WhatsApp Business API', 'in', 'Messaging runs on Meta’s official business interfaces, with consent and opt-outs.', '/products/whatsapp'],
+  ['GST', 'GST record keeping', 'in', 'Invoices, orders, payments, purchases and payroll are never deleted on a schedule.', '/legal/data-policy'],
+  ['BIS', 'BIS hallmarking and HUID', 'in', 'HUID and certificate details recorded on each piece.', '/products/catalog'],
+  ['ISO', 'ISO/IEC 27001', 'prog', 'Not certified. Security policy and control mapping are drafted; certification is being prepared.', '/trust/security'],
+  ['SOC 2', 'SOC 2', 'prog', 'Not audited. The system description is drafted; an audit has not started.', '/trust/security'],
+  ['GDPR', 'EU GDPR', 'plan', 'Not assessed. Jwero is built for Indian law first. Tell us if you serve customers in the EU.', '/legal/data-policy'],
+  ['OWASP', 'OWASP Top 10 and penetration test', 'plan', 'No independent penetration test has been done yet. One is planned, and the summary will be shared here.', '/trust/security'],
+];
+const TRUST_STATUS = { in: 'In place', prog: 'In progress', plan: 'Planned' };
+function trustBadges() {
+  return `
+<div class="tbadges">
+  <p class="tbadge-legend"><span class="tb-in">In place</span><span class="tb-prog">In progress, not certified</span><span class="tb-plan">Planned, not started</span></p>
+  <div class="tbadge-grid">${TRUST_BADGES.map(([s, n, st, d, h]) => `
+    <a class="tbadge tb-${st}" href="${h}">
+      <span class="tbadge-seal" aria-hidden="true"><b>${s}</b></span>
+      <span class="tbadge-body"><strong>${n}</strong><em>${TRUST_STATUS[st]}</em><span>${d}</span></span>
+    </a>`).join('')}
+  </div>
+</div>`;
+}
+
 function securityBlock() {
   return `
 <div class="sec">
@@ -756,7 +786,7 @@ function securityBlock() {
     </div>
   </div>
   <div class="cta-row sec-cta">
-    <a class="btn btn-primary" href="/trust/security">Read the security page</a>
+    <a class="btn btn-primary" href="/trust">Open the Trust Centre</a>
     <a class="btn btn-ghost" href="#" data-wa="securitypack">Request the security pack for my IT team</a>
   </div>
 </div>`;
@@ -976,30 +1006,28 @@ const DEPARTMENTS = [
 ];
 
 // Every separate tool a jewellery business ends up running, by department:
-// one dense cloud, all visible and tappable, with the count between the tools
+// one dense alphabetical cloud, all visible and tappable (departments only group
+// the data), with the count between the tools
 // and the one platform, and a merge that pulls them into it.
 // Each name is something a Jwero module does today. The cloud is alphabetical;
 // the department tabs still light and select their own tools.
 const STACK = [
-  ['Selling', 'chat', ['WhatsApp API', 'Instagram DMs', 'Facebook page inbox', 'Website live chat', 'Forms', 'Document viewer', 'Ecommerce website', 'Marketplace seller panels', 'Video call app', 'Meetings', 'Catalogue PDF maker', 'Quotation maker', 'Business email']],
+  ['Selling', 'chat', ['WhatsApp API', 'DMs', 'Facebook page inbox', 'Website live chat', 'Forms', 'Document viewer', 'Ecommerce website', 'Marketplace seller panels', 'Video call app', 'Meetings', 'Shareable live catalogues', 'Quotation maker', 'Business email', 'Shopify integration', 'WooCommerce integration', 'Google Shopping', 'Franchise management', 'Calendar']],
   ['Counter', 'store', ['ERP', 'Billing software', 'POS counter', 'Barcode &amp; tagging', 'Gold rate updates', 'Old-gold calculator', 'Estimate pad']],
-  ['Stock', 'box', ['Inventory software', 'Inventory intelligence']],
-  ['Workshop', 'scale', ['Hallmark tracker']],
+  ['Stock', 'box', ['Inventory software', 'Inventory intelligence', 'Vendor portal']],
+  ['Workshop', 'scale', ['Hallmark tracker', 'Karigar portal']],
   ['Customers', 'record', ['CRM', 'Loyalty cards', 'Gold scheme register', 'Girvi register', 'Digital gold app', 'Occasion diary', 'Appointment diary', 'Walk-in register', 'CCTV tracking', 'RFM', 'Customer segmentation', 'Customer journeys', 'Lead finder']],
-  ['Marketing', 'megaphone', ['SMS', 'RCS', 'Push notifications', 'Email marketing tool', 'Social media scheduler', 'Pinterest', 'YouTube', 'LinkedIn', 'Google Business reviews', 'Ads manager', 'Website heatmaps', 'Broadcasts', 'Campaigns', 'Visitor tracking']],
-  ['AI', 'sparkle', ['AI agents', 'Voice AI', 'MCP tools', 'AI image generation', 'AI content creation', 'Automation tool']],
+  ['Marketing', 'megaphone', ['SMS', 'RCS', 'Push notifications', 'Email marketing tool', 'Social media scheduler', 'Pinterest', 'YouTube', 'LinkedIn', 'Google Business reviews', 'Website heatmaps', 'Broadcasts', 'Campaigns', 'Marketing automation', 'Visitor tracking', 'Google Tag Manager', 'Pixels', 'Comments management', 'A/B testing', 'Coupons management', 'X', 'Threads', 'Stories', 'Reels', 'ChatGPT Ads', 'Meta Ads', 'Google Ads', 'Asset library']],
+  ['AI', 'sparkle', ['AI agents', 'AI inbound calling', 'AI outbound calling campaigns', 'Autonomous customer follow-ups', 'MCP tools', 'AI image generation', 'AI content creation', 'Automation rules', 'Webhooks &amp; APIs']],
   ['Books', 'receipt', ['Tally integration', 'Zoho integration', 'Payment reminders']],
-  ['Team', 'users', ['HR', 'Attendance register', 'Payroll software', 'Incentive sheet', 'LMS', 'Team chat app', 'Hiring tracker']],
-  ['Decisions', 'pie', ['MIS reports', 'Branch report calls', 'Call tracking tool']],
+  ['Team', 'users', ['HR', 'Attendance register', 'Payroll software', 'Incentive sheet', 'LMS', 'Team chat app', 'Recruitment management', 'Task management']],
+  ['Decisions', 'pie', ['MIS reports', 'Branch report calls', 'Call tracking tool', 'Google Sheets']],
 ];
 const STACK_N = STACK.reduce((a, g) => a + g[2].length, 0);
 function stackMerge() {
   return `
 <div class="stackm" data-stackm data-total="${STACK_N}">
   <div class="stackm-main">
-    <div class="stackm-depts" role="group" aria-label="Departments">
-      ${STACK.map(([name, ic, items], g) => `<button type="button" class="stackm-dept" data-g="${g}">${icon(ic)}<span>${name}</span><em><b data-stackm-gn>0</b>/${items.length}</em></button>`).join('')}
-    </div>
     <div class="stackm-cloud" data-stackm-cloud>
       ${STACK.flatMap(([, , items], g) => items.map((t) => [t, g])).sort((x, y) => x[0].localeCompare(y[0], 'en', { sensitivity: 'base' })).map(([t, g]) => `<button type="button" class="stackm-chip" data-g="${g}" aria-pressed="false">${t}</button>`).join('')}
     </div>
@@ -1329,7 +1357,7 @@ function customerLogos() {
 
 module.exports = {
   esc, icon, autoIcon, sim, controlSplit, mockMemo, LINK_ICONS, PERSONAS, personaSlot, personaSwitch, systemSplit, gemStage, heroSchematic, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
-  mark, homeHero, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
+  mark, homeHero, trustBadges, SECURITY_CONTROLS, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,
 };

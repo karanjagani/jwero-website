@@ -10,7 +10,7 @@ const diamondWholesaleFaqs = [
 
 const diamondWholesale = {
   slug: 'solutions/diamond-wholesale',
-  title: 'For Diamond Wholesalers & Traders | Jwero',
+  title: 'Diamond Wholesale Software: Inventory, Memo, Buyer Prices | Jwero',
   description: 'Private B2B catalogues on WhatsApp, certificate-first stone records, memo and approval tracking, and buyer-tiered pricing — every buyer, every memo, every order in one thread. Honest about what parcel traders still need.',
   breadcrumbs: BC('Diamond wholesale & trading'),
   faqs: diamondWholesaleFaqs,
@@ -56,7 +56,7 @@ const goldWholesaleFaqs = [
 
 const goldWholesale = {
   slug: 'solutions/gold-wholesale',
-  title: 'For Gold Wholesalers | Jwero',
+  title: 'Gold Wholesale Software: Rate-Linked Orders, Party Ledgers | Jwero',
   description: 'Rate-linked B2B ordering and ledger clarity per buyer — quote at the live rate in seconds and track every order to delivery.',
   breadcrumbs: BC('Gold wholesale'),
   faqs: goldWholesaleFaqs,
@@ -90,7 +90,7 @@ const b2bJewelleryFaqs = [
 
 const b2bJewellery = {
   slug: 'solutions/b2b-jewellery',
-  title: 'For B2B Jewellery Trade — Silver, Gemstone & Pearl Wholesale | Jwero',
+  title: 'Jewellery Wholesale & B2B Software: Catalogue App, Memo, Orders | Jwero',
   description: 'One catalogue, many buyers, tiered prices — orders captured while you sleep. Covers silver, gemstone and pearl wholesale trade.',
   breadcrumbs: BC('B2B jewellery'),
   faqs: b2bJewelleryFaqs,

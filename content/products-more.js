@@ -142,7 +142,7 @@ const mockQuote = `
 
 const quotations = {
   slug: 'products/quotations',
-  title: 'Customer Quotations — Numbered, Priced at Live Rate, Accepted Online | Jwero',
+  title: 'Jewellery Quotation & Estimate Software at the Live Rate | Jwero',
   description: 'Numbered quotations with line items and a PDF, priced from the catalogue at the live rate, sent on WhatsApp or email, accepted or declined by the customer on a public link — created from an enquiry, from a catalogue request, or by voice at the counter.',
   schema: app('Jwero Quotations', 'quotations', 'Quotation lifecycle for jewellers: draft, sent, accepted or declined, with online acceptance, live-rate pricing and follow-up journeys.'),
   breadcrumbs: BC('Quotations'),
@@ -201,7 +201,7 @@ const mockShare = `
 
 const digitalCatalogues = {
   slug: 'products/digital-catalogues',
-  title: 'Shareable Digital Catalogues — Live Prices, Tracked Views, Enquiry to Quote | Jwero',
+  title: 'Digital Catalogue App for Jewellers: Live Prices, Tracked Views | Jwero',
   description: 'Curated catalogue links per customer, buyer or season, priced at the live rate, shared on WhatsApp with a ready caption; every open and view tracked on the record; requests become quotations; checkout with advance payment; the same products published to Meta commerce catalogues.',
   schema: app('Jwero Digital Catalogues', 'digital-catalogues', 'Shareable, tracked, live-priced catalogue links for jewellers with enquiry-to-quotation and checkout.'),
   breadcrumbs: BC('Digital Catalogues'),
@@ -258,7 +258,7 @@ const mockReports = `
 
 const reports = {
   slug: 'products/reports',
-  title: 'Reports & Dashboards — Build, Ask, Pin, Export | Jwero',
+  title: 'Jewellery MIS Reports & Dashboard Software | Jwero',
   description: 'A report builder with filters and charts over every module, an AI prompt that turns a question into a report, dashboards you pin to, the full report library, and exports — on the one record everything writes to.',
   schema: app('Jwero Reports', 'reports', 'Report builder, dashboards and AI-prompted reports over sales, inventory, customers, schemes, finance and HR for jewellery businesses.'),
   breadcrumbs: BC('Reports & Dashboards'),
@@ -314,7 +314,7 @@ const mockLms = `
 
 const trainingLms = {
   slug: 'products/training-lms',
-  title: 'Staff Training & LMS for Jewellery Teams — Courses, Assessments, Certificates | Jwero',
+  title: 'Jewellery Staff Training Software (LMS): Courses, Certificates | Jwero',
   description: 'Courses with ordered lessons, assessments scored securely, enrolments with progress, certificates on completion, learning paths per role, and a performance-to-learning loop that suggests the next course from what happened on the floor.',
   schema: app('Jwero Training & LMS', 'training-lms', 'Learning management for jewellery staff: courses, assessments, certificates, learning paths and performance-linked suggestions inside the HR module.'),
   breadcrumbs: BC('Training & LMS'),

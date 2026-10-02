@@ -1,12 +1,86 @@
 const L = require('../lib');
 
+const trustCentre = {
+  slug: 'trust',
+  title: 'Trust Centre: Security, Privacy and Compliance Status | Jwero',
+  description: 'Jwero’s Trust Centre: what protects a jeweller’s data, the status of DPDP, ISO 27001, SOC 2, GDPR, PCI DSS and OWASP testing stated plainly, every policy document, and the companies that process data.',
+  breadcrumbs: [['Home', '/'], ['Trust Centre']],
+  faqs: [
+    { q: 'Is Jwero ISO 27001 certified?', a: 'No. Jwero is not ISO 27001 certified today. The security policy and control mapping are drafted and certification is being prepared. The badge will change only when a certificate is issued.' },
+    { q: 'Does Jwero have a SOC 2 report?', a: 'No. A SOC 2 audit has not started. The system description is drafted in preparation.' },
+    { q: 'Is Jwero GDPR compliant?', a: 'Jwero has not been assessed against the GDPR. It is built for Indian law first, under the Digital Personal Data Protection Act, 2023. If you serve customers in the EU, tell us before you start.' },
+    { q: 'Has Jwero had a penetration test?', a: 'Not yet. No independent penetration test has been done. One is planned, and a summary will be published here when it is complete.' },
+    { q: 'Does Jwero comply with India’s DPDP Act?', a: 'Jwero acts as data processor for jewellers and as data fiduciary for its own account holders. It publishes a DPDP statement, processing terms and its sub-processors, and the product has consent records, opt-outs, export and erasure.' },
+    { q: 'Does Jwero store card details?', a: 'No. Card and bank details are entered with the payment provider. Payments run through PCI DSS certified providers and card data does not pass through Jwero.' },
+    { q: 'Where is my data stored?', a: 'In a database that belongs to your business alone, hosted on Microsoft Azure in India.' },
+  ],
+  body: `
+${L.hero({
+  eyebrow: 'TRUST CENTRE',
+  h1: 'What protects your data, and exactly where we stand.',
+  sub: 'A jeweller’s customer list, stock and books are the business. This page shows the safeguards in place, the status of every standard you might ask about, and the documents behind them. A badge here says “in place” only when it is.',
+  primary: { href: '#', label: 'Request the security pack', wa: 'securitypack' },
+  secondary: { href: '/legal/data-policy', label: 'Read the Data Policy' },
+})}
+
+${L.section(
+  `${L.sectionHead('STANDARDS AND COMPLIANCE', 'Every standard, with its real status.', 'Six are in place. Four are not yet, and are shown as such. We will not display a certification mark we have not earned.')}
+  ${L.trustBadges()}`
+)}
+
+${L.section(
+  `${L.sectionHead('SAFEGUARDS', 'What protects your data today.', '')}
+  ${L.cards(L.SECURITY_CONTROLS.map(([i, title, text]) => ({ icon: i, title, text })), 3)}
+  <div class="cta-row center" style="margin-top:24px"><a class="btn btn-ghost" href="/trust/security">The technical detail</a></div>`
+, { tone: 'tint' })}
+
+${L.section(
+  `${L.sectionHead('DOCUMENTS', 'Everything in writing.', 'Each opens with a short version in plain words.')}
+  ${L.cards([
+    { icon: 'shield', title: 'Security', text: 'Isolation, encryption, access, approvals, AI limits and what is not built yet.', link: { href: '/trust/security', label: 'Open' } },
+    { icon: 'record', title: 'Privacy Policy', text: 'What is collected, why, who receives it, how long it is kept and your rights.', link: { href: '/legal/privacy', label: 'Open' } },
+    { icon: 'receipt', title: 'Terms of Use', text: 'Accounts, the trial, fees and the wallet, your data, acceptable use, liability.', link: { href: '/legal/terms', label: 'Open' } },
+    { icon: 'box', title: 'Data Policy', text: 'Ownership, processing terms, retention, export, deletion and breach notification.', link: { href: '/legal/data-policy', label: 'Open' } },
+    { icon: 'flow', title: 'Sub-processors', text: 'Every company that may process your data, what it does and where.', link: { href: '/legal/sub-processors', label: 'Open' } },
+    { icon: 'check', title: 'DPDP statement', text: 'Roles, consent, rights and grievance under India’s data protection law.', link: { href: '/legal/dpdp', label: 'Open' } },
+  ], 3)}`
+)}
+
+${L.section(
+  `${L.sectionHead('YOUR CONTROL', 'Four promises that do not depend on a certificate.', '')}
+  ${L.compareRows([
+    { lever: 'OWNERSHIP', before: 'Your customer list sits in a vendor’s shared system and in salespeople’s phones.', after: 'Your data is yours, in a database of its own. Jwero has no right to use it for anything but running your workspace.' },
+    { lever: 'EXIT', before: 'Leaving a software vendor means begging for your own data.', after: 'Export everything yourself at any time, and for at least 30 days after you leave.' },
+    { lever: 'AI', before: 'Automation that messages customers without anyone checking.', after: 'Every AI draft waits for a person. One switch stops it, at five levels.' },
+    { lever: 'HONESTY', before: 'A wall of logos and a sales call to find out what is real.', after: 'What is not done is written on this page and on the public roadmap.' },
+  ])}`
+, { tone: 'tint' })}
+
+${L.section(
+  `${L.sectionHead('REPORT A PROBLEM', 'Found a security issue, or have a privacy complaint?', '')}
+  <div class="stack-verdict">Write to <a href="mailto:care@jwero.ai">care@jwero.ai</a> with the subject “Security” or “Privacy”. We acknowledge within two working days. Anyone who reports a vulnerability in good faith will not be pursued for it.</div>`
+)}
+
+${L.section(`${L.sectionHead('QUESTIONS', 'What IT teams and owners ask.', '')}${L.faqBlock([
+  { q: 'Is Jwero ISO 27001 certified?', a: 'No. The security policy and control mapping are drafted and certification is being prepared. The badge changes only when a certificate is issued.' },
+  { q: 'Does Jwero have a SOC 2 report?', a: 'No. An audit has not started; the system description is drafted in preparation.' },
+  { q: 'Is Jwero GDPR compliant?', a: 'It has not been assessed against the GDPR. Jwero is built for Indian law first. If you serve customers in the EU, tell us before you start.' },
+  { q: 'Has Jwero had a penetration test?', a: 'Not yet. One is planned, and a summary will be published here when it is complete.' },
+  { q: 'Does Jwero store card details?', a: 'No. Payments run through PCI DSS certified providers and card data does not pass through Jwero.' },
+  { q: 'Where is my data stored?', a: 'In a database that belongs to your business alone, hosted on Microsoft Azure in India. <a href="/legal/sub-processors">See the sub-processors</a>.' },
+])}`, { tone: 'tint' })}
+
+${L.ctaBand('Put your IT questions to us.', 'Send your questionnaire. We answer it in writing, including the parts where the answer is “not yet”.', 'security', { enterprise: true })}
+`,
+};
+
 const security = {
   slug: 'trust/security',
   title: 'Security & Data Ownership — Your Data, Your Rules | Jwero',
   description: 'Isolated database per business, encryption, role-based access with ~150 permissions, MFA and passkeys, AI kill switches, and export-anytime data ownership.',
-  breadcrumbs: [['Home', '/'], ['Trust', '/trust/security'], ['Security']],
+  breadcrumbs: [['Home', '/'], ['Trust Centre', '/trust'], ['Security']],
   faqs: [
-    { q: 'Where does my data live?', a: 'Each business runs in its own isolated database — your data is never mixed with another business’s. Credentials are encrypted, and access is controlled by roles you define.' },
+    { q: 'Where does my data live?', a: 'Each business runs in its own isolated database, hosted in India. Your data is never mixed with another business’s. Credentials are encrypted, and access is controlled by roles you define. The companies that help process it are named on the <a href="/legal/sub-processors">Sub-processors</a> page.' },
     { q: 'Can my staff see everything?', a: 'Only what you allow. Around 150 fine-grained permissions control who sees customers, prices, schemes and reports — per role, per branch.' },
     { q: 'Can I take my data out?', a: 'Yes, at any time, in standard formats. Your customer list is your asset. That promise is a design decision, not a support favour.' },
     { q: 'What can AI do and not do with my data?', a: 'AI drafts actions inside your approval queues, daily caps and quiet hours. It cannot bypass those limits, and a kill switch can stop it at five scopes instantly.' },
@@ -41,25 +115,30 @@ ${L.section(
   `${L.sectionHead('THE TECHNICAL LAYER', 'For your IT evaluator.', '')}
   <div class="tbl-wrap"><table class="tbl">
     <tbody>
+      <tr><td><strong>Hosting</strong></td><td>Microsoft Azure, India region. Providers that process data elsewhere are listed on the <a href="/legal/sub-processors">Sub-processors</a> page.</td></tr>
       <tr><td><strong>Tenant isolation</strong></td><td>One database per business — physical isolation, not row-level flags.</td></tr>
       <tr><td><strong>Encryption</strong></td><td>Encrypted credentials; data encrypted in transit and at rest.</td></tr>
       <tr><td><strong>Authentication</strong></td><td>Multi-factor authentication and passkeys; enterprise SSO (SAML/OIDC) with SCIM provisioning for chain deployments; sessions revocable globally in one action.</td></tr>
       <tr><td><strong>Access control</strong></td><td>Role-based access control, ~150 fine-grained permission slugs, fail-closed checker.</td></tr>
       <tr><td><strong>AI authorisation</strong></td><td>A second permission axis for AI: per-user/org action allowlists, independent of human RBAC.</td></tr>
       <tr><td><strong>Financial integrity</strong></td><td>Maker-checker approvals and tamper-evident document transitions on financial records.</td></tr>
+      <tr><td><strong>Activity records</strong></td><td>Who did what is logged per module and kept for up to 12 months. Exports of customer or employee data are recorded.</td></tr>
+      <tr><td><strong>Personal data requests</strong></td><td>Export and erasure of a customer’s or an employee’s record from inside the product, with statutory records retained.</td></tr>
+      <tr><td><strong>AI and your data</strong></td><td>AI features send the content needed for a draft to the model providers named on the Sub-processors page. Jwero does not train its own models on your records.</td></tr>
+      <tr><td><strong>Incidents</strong></td><td>A written incident response plan. If your data is affected you are told without undue delay.</td></tr>
+      <tr><td><strong>Reporting a vulnerability</strong></td><td>Write to care@jwero.ai with the subject “Security”. We acknowledge within two working days and will not pursue anyone who reports in good faith.</td></tr>
     </tbody>
   </table></div>`
 , { tone: 'tint' })}
 
 ${L.honestGapsBlock([
-  'A public developer API — on the roadmap, not shipped.',
   'Formal certifications (SOC 2 / ISO) — planned; published only when earned.',
   'A single unified, immutable audit trail across every module — activity logging exists per module today; consolidation is in progress.',
 ])}
 
 ${L.section(
   `${L.sectionHead('COMPLIANCE', 'Where our compliance documentation lives.', '')}
-  <p style="font-size:.95rem;">Jwero maintains a data-processing summary and privacy statement aligned to applicable data-protection law. See our <a href="/legal/privacy">Privacy Policy</a> and <a href="/legal/dpdp">DPDP statement</a>. For a regulated procurement process, ask us for the full sub-processor list on WhatsApp — we'll get it to your committee directly.</p>
+  <p style="font-size:.95rem;">The full set is public: the <a href="/legal/privacy">Privacy Policy</a>, the <a href="/legal/terms">Terms of Use</a>, the <a href="/legal/data-policy">Data Policy</a> (ownership, processing terms, retention, export and breach notification), the <a href="/legal/sub-processors">Sub-processors</a> list and the <a href="/legal/dpdp">DPDP statement</a>.</p>
   <p style="margin-top:14px;"><a class="btn btn-primary" href="/assets/downloads/jwero-security-overview.pdf" download>Download the security overview (PDF)</a> <a class="btn btn-ghost" href="#" data-wa="security-pdf" style="margin-left:10px">Ask a follow-up</a></p>`
 )}
 
@@ -266,4 +345,4 @@ ${L.ctaBand('Tell us what you run today.', 'Name your current software and we wi
 `,
 };
 
-module.exports = [security, customers, compare, migration];
+module.exports = [trustCentre, security, customers, compare, migration];

@@ -3,7 +3,7 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 const whatsapp = {
   slug: 'products/whatsapp',
-  title: 'WhatsApp Business API Software for Jewellers | Jwero',
+  title: 'WhatsApp API & CRM Software for Jewellers | Jwero',
   description: 'Official WhatsApp Business API software for jewellers: live-rate catalogues, safe broadcasts, AI replies with approval, payments on your own number.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -150,7 +150,7 @@ ${L.ctaBand('Stop losing the DMs you paid for.', 'Your reels already create dema
 
 const aiAgents = {
   slug: 'products/ai-sales-agents',
-  title: 'AI Sales Agents & Voice — Staff That Never Sleep | Jwero',
+  title: 'AI for Jewellers: AI Chatbot, Sales Agents & Voice AI | Jwero',
   description: 'AI sales agents that answer, follow up, and call customers back in 14 languages — on WhatsApp, web chat, and phone/IVR via Exotel or Tata Tele — governed by approval queues, daily caps and kill switches.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -309,7 +309,7 @@ ${L.ctaBand('See where your own visitors drop off.', 'One pixel turns on analyti
 
 const storefront = {
   slug: 'products/storefront',
-  title: 'Ecommerce Website for Jewellery Business | Jwero',
+  title: 'Jewellery Ecommerce Website Builder | Jwero',
   description: 'A jewellery-native ecommerce website: live purity-rate pricing that recalculates automatically, one CRM-linked wishlist, cart, checkout, blog and reviews.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -415,7 +415,7 @@ ${L.ctaBand('Bring your ecommerce website onto one system.', 'A live-rate price 
 
 const adsManager = {
   slug: 'products/ads-manager',
-  title: 'Ads Manager — Meta, Google & Pinterest Campaigns | Jwero',
+  title: 'Jewellery Ads Manager: Meta, Google & Pinterest Campaigns | Jwero',
   description: 'Create ad campaigns across Meta, Google and Pinterest from one place — approve in the wizard and Jwero publishes straight to Meta and Google, with budget alerts and an approval step before spend.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -495,7 +495,7 @@ const socialMedia = {
   faqs: [
     { q: 'What can I actually schedule and manage from Jwero?', a: 'Posts across your social platforms from one composer, with a preview of how each post will look on each channel before it goes out, plus a unified inbox for the comments and DMs that come back.' },
     { q: 'Does the AI reply to comments and DMs on its own?', a: 'It drafts replies — including handling Instagram private replies — using the same "AI drafts, human approves" governance as the rest of Jwero. Your team approves before anything sends, until you choose to promote a reply type.' },
-    { q: 'Which platforms are supported?', a: 'Instagram, Facebook, LinkedIn, Pinterest, YouTube and Google Business are live, each through its official integration. X is on the roadmap.' },
+    { q: 'Which platforms are supported?', a: 'Instagram, Facebook, X, LinkedIn, Pinterest, YouTube and Google Business are live, each through its official integration.' },
     { q: 'Is this different from Instagram & Facebook Commerce?', a: 'That page is the focused Instagram/Facebook experience. Social Media Management is the broader version: scheduling, preview and analytics across channels, with the same unified inbox and AI-drafted replies underneath.' },
     { q: 'Can I see how my posts and replies are performing?', a: 'Yes — analytics sit alongside the composer and inbox, so scheduling, replying and measuring stay in the same place instead of a separate reporting tool.' },
     { q: 'Do I need someone watching every channel all day?', a: 'No — the unified inbox collects every comment and DM in one place, and AI drafts the first response; your team reviews and approves rather than monitoring each platform separately.' },
@@ -528,12 +528,9 @@ ${L.oneSystemBlock([
   'Paying to promote a post? <a href="/products/ads-manager">Ads Manager</a> runs the paid campaigns on the same platform, with its own budget alerts and approvals.',
 ])}
 
-${L.honestGapsBlock([
-  'Publishing to X is not live yet. Instagram, Facebook, LinkedIn, Pinterest, YouTube and Google Business are.',
-])}
 
 ${L.section(`${L.sectionHead('SOCIAL MEDIA QUESTIONS', 'Platform coverage and who approves what.', '')}${L.faqBlock([
-  { q: 'Which platforms are supported?', a: 'Instagram, Facebook, LinkedIn, Pinterest, YouTube and Google Business are live. X is on the roadmap.' },
+  { q: 'Which platforms are supported?', a: 'Instagram, Facebook, X, LinkedIn, Pinterest, YouTube and Google Business are live.' },
   { q: 'Does the AI reply on its own?', a: 'It drafts; your team approves before anything sends, until you choose to promote a reply type — same governance as the rest of Jwero.' },
   { q: 'How is this different from Instagram & Facebook Commerce?', a: 'That page is the focused Instagram/Facebook experience; this is the broader multi-platform scheduling, inbox and analytics layer built on the same foundation.' },
 ])}

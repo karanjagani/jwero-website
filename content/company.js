@@ -356,4 +356,5 @@ ${L.section(
 `,
 };
 
-module.exports = [company, contact, enterprise, bookDemo, legalPrivacy, legalTerms, legalDpdp];
+// The legal pages now live in content/legal.js; the three objects above are kept only as history.
+module.exports = [company, contact, enterprise, bookDemo];

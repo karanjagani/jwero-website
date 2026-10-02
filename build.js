@@ -41,7 +41,7 @@ const CONTENT_FILES = [
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
   'roles-leadership', 'roles-frontline', 'roles-growth', 'roles-manufacturing',
-  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey',
+  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal',
 ];
 const pages = [];
 for (const f of CONTENT_FILES) {
@@ -66,7 +66,7 @@ const NAV = [
       ['/platform/pricing-engine', 'The Pricing Engine', 'Rate, making charge, stone & override rules'],
       ['/platform/ai-workforce', 'AI Workforce & Governance', '240+ governed actions, approvals, kill switches'],
       ['/platform/integrations', 'Integrations', 'Tally, Zoho Books, Shopify, Meta and more'],
-      ['/trust/security', 'Security & Data Ownership', 'Your data, exportable anytime'],
+      ['/trust', 'Trust Centre', 'Security, privacy and compliance status'],
       ['/platform/onboarding', 'Onboarding & Support', 'Live in days, trained in your language'],
       ['/roadmap', 'Roadmap & Changelog', "What's shipped, what's next — in public"],
     ],
@@ -273,10 +273,10 @@ function footerHTML() {
       <div class="f-grid">
       ${col('Products', [['/products', 'App grid'], ...NAV.find((m) => m.label === 'Products').groups.flatMap((g) => g.items)])}
       ${col('Solutions', [['/roles','Roles — who uses Jwero'],['/solutions','All 23 solutions'],['/industries/retail','Retail'],['/solutions/single-store','Single store'],['/solutions/multi-store-chains','Multi-store & chains'],['/solutions/luxury-boutique','Luxury & boutique'],['/solutions/bridal','Bridal & wedding'],['/solutions/manufacturers','Manufacturers'],['/solutions/b2b-jewellery','Wholesale & B2B'],['/solutions/d2c-brands','D2C brands'],['/solutions/franchise-networks','Franchise networks'],['/solutions/pain/dead-stock','Dead stock'],['/solutions/pain/lead-leakage','Lead leakage']])}
-      ${col('Resources', [['/faq','FAQ — every objection'],['/blog','Blog'],['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/tools/whatsapp-revenue-estimator','WhatsApp Revenue Estimator'],['/tools/gold-loss-calculator','Gold-Loss Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/partners','Partners'],['/customers','Customer proof']])}
+      ${col('Resources', [['/faq','FAQ — every objection'],['/guides','Buyer’s guides'],['/blog','Blog'],['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/tools/whatsapp-revenue-estimator','WhatsApp Revenue Estimator'],['/tools/gold-loss-calculator','Gold-Loss Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/partners','Partners'],['/customers','Customer proof']])}
       <div class="f-stack">
-      ${col('Company', [['/company','About'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
-      ${col('Trust', [['/trust/security','Security'],['/roadmap','Roadmap'],['/legal/privacy','Privacy'],['/legal/terms','Terms'],['/legal/dpdp','DPDP statement']])}
+      ${col('Company', [['/company','About'],['/jewellery-software-india','Jewellery software by city'],['/hi','हिंदी'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
+      ${col('Trust', [['/trust','Trust Centre'],['/trust/security','Security'],['/legal/privacy','Privacy Policy'],['/legal/terms','Terms of Use'],['/legal/data-policy','Data Policy'],['/legal/sub-processors','Sub-processors'],['/legal/dpdp','DPDP statement'],['/roadmap','Roadmap']])}
       </div>
       </div>
     </div>
@@ -354,8 +354,43 @@ function withShopDay(page) {
   return Object.assign({}, page, { body: page.body.slice(0, end) + `<div class="container"><div class="stage hero-mock">${L3.mockShop(d)}</div></div>\n` + page.body.slice(end) });
 }
 
+// "In short": a question a searcher would type, answered in the page's own
+// words, written into the HTML so answer engines can quote it without running
+// any script. Product, solution and platform pages; also added to the page's
+// question-and-answer data.
+const KEEP_CASE = /^(Jwero|Optimize|WhatsApp|Instagram|Facebook|Meta|Google|Pinterest|Tally|Shopify|Amazon|Flipkart|Zoho|India|Girvi|Karigar)$/;
+const IN_SHORT_Q = {
+  'platform/integrations': 'What does Jwero integrate with?',
+  'platform/ai-workforce': 'What is Jwero’s AI workforce?',
+  'platform/onboarding': 'How does onboarding with Jwero work?',
+  'products/email': 'What does Jwero’s business email do?',
+  'products/marketplaces': 'How does Jwero handle Amazon and Flipkart orders?',
+  'products/quotations': 'What does Jwero’s jewellery quotation and estimate software do?',
+};
+function inShortQuestion(page) {
+  if (IN_SHORT_Q[page.slug]) return IN_SHORT_Q[page.slug];
+  const kw = page.title.split(' | ')[0].split(/[:(—]/)[0].trim().replace(/^Jwero /, '')
+    .split(' ').map((w) => (KEEP_CASE.test(w) || (!w.includes('-') && /[A-Z].*[A-Z]|\d/.test(w)) || w === w.toUpperCase() ? w : w.toLowerCase())).join(' ');
+  if (/^(software )?for /i.test(kw)) return `What does Jwero do ${kw.replace(/^software /i, '')}?`;
+  return `What does Jwero’s ${kw} do?`;
+}
+function inShortQA(page) {
+  if (!/^(products|platform)\/|^solutions\/(?!pain)/.test(page.slug)) return null;
+  return { q: inShortQuestion(page), a: `${page.description.replace(/\s*—\s*/g, ', ')} It is part of Jwero One: ₹9,999 a month billed annually, every module included, with a 14-day free trial.` };
+}
+function withInShort(page) {
+  const qa = inShortQA(page);
+  if (!qa || /class="in-short"/.test(page.body)) return page;
+  const at = page.body.indexOf('<section class="hero');
+  const end = at === -1 ? -1 : page.body.indexOf('</section>', at);
+  if (end === -1) return page;
+  const { q, a } = qa;
+  const block = `\n<section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">${q}</h2><p>${a}</p></div></section>`;
+  return Object.assign({}, page, { body: page.body.slice(0, end + 10) + block + page.body.slice(end + 10), faqs: (page.faqs || []).concat([{ q, a }]) });
+}
+
 function withSchematic(page) {
-  page = withShopDay(page);
+  page = withInShort(withShopDay(page));
   const ic = LINK_ICONS['/' + page.slug];
   if (!ic || !page.breadcrumbs || /class="stage hero-mock"/.test(page.body)) return fillPersona(page.body);
   const label = page.breadcrumbs[page.breadcrumbs.length - 1][0];
@@ -510,6 +545,8 @@ function withSim(body, page) {
 function withRelated(body, page) {
   const href = '/' + page.slug;
   const links = [];
+  const GUIDE = { 'products/billing-finance': 'jewellery-billing-software', 'products/pos': 'jewellery-billing-software', 'products/erp': 'jewellery-erp-software', 'products/inventory': 'jewellery-inventory-software', 'products/crm': 'jewellery-crm-software', 'products/manufacturing': 'jewellery-manufacturing-software', 'solutions/manufacturers': 'jewellery-manufacturing-software' }[page.slug];
+  if (GUIDE) links.push([`/guides/${GUIDE}`, 'The buyer’s guide', 'What this kind of software must do, with a checklist']);
   if (page.slug.startsWith('products/') && productMeta(href)) {
     const meta = productMeta(href);
     for (const p of PERSONAS) if (p.products.includes(href)) links.push([`/${p.slug}`, `For ${p.label.toLowerCase()}s`, 'How this fits your kind of business']);
@@ -519,6 +556,13 @@ function withRelated(body, page) {
     for (const h of persona.products) { const m = productMeta(h); if (m) links.push([h, m.label, m.desc]); }
     links.push(['/pricing', 'Pricing', 'One plan, every module — ₹9,999 a month billed annually']);
     if (page.slug.startsWith('roles/')) links.unshift(['/brief', 'The one-page brief', 'Print it or send it to the owner']);
+  } else if (/^(blog|compare|guides|jewellery-software-india)\//.test(page.slug)) {
+    // Siblings: the next three pages of the same kind, so none is reachable from its hub alone.
+    const kind = page.slug.split('/')[0], sibs = pages.filter((p) => p.slug.startsWith(kind + '/'));
+    const at = sibs.findIndex((p) => p.slug === page.slug);
+    for (let k = 1; k <= 3 && k < sibs.length; k++) { const p = sibs[(at + k) % sibs.length]; links.push(['/' + p.slug, p.title.split(' | ')[0].split(': ')[0], p.description.split('. ')[0].slice(0, 110)]); }
+    if (kind === 'blog') links.push(['/guides', 'Buyer’s guides', 'Billing, ERP, inventory, CRM and manufacturing']);
+    if (kind === 'compare') links.push(['/guides/jewellery-erp-software', 'How to choose jewellery software', 'A checklist and the questions to ask any vendor']);
   } else return body;
   if (!links.length) return body;
   const block = `
@@ -606,6 +650,17 @@ function launchHTML() {
 </div>`;
 }
 
+// What a search result shows: about 60 characters of title and 160 of
+// description. Long titles drop the brand suffix; long descriptions end at the
+// last full sentence that fits, else at a word.
+function serpTitle(t) { return t.length > 60 ? t.replace(/ \| Jwero$/, '') : t; }
+function serpDesc(d) {
+  if (d.length <= 160) return d;
+  const cut = d.slice(0, 160), stop = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('। '));
+  if (stop > 90) return cut.slice(0, stop + 1);
+  return cut.slice(0, cut.lastIndexOf(' ', 156)).replace(/[,:;]$/, '') + '…';
+}
+
 function layout(page) {
   const urlPath = page.slug === 'index' ? '' : `/${page.slug}`;
   const canonical = SITE + (urlPath || '/');
@@ -614,13 +669,15 @@ function layout(page) {
     potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: SITE + '/search?q={search_term_string}' }, 'query-input': 'required name=search_term_string' },
   }, {
     '@context': 'https://schema.org', '@type': 'WebPage', url: canonical, name: page.title, description: page.description,
+    ...(page.lastmod ? { dateModified: page.lastmod } : {}), inLanguage: page.lang || 'en',
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.hero .sub'] },
     isPartOf: { '@type': 'WebSite', url: SITE },
   }];
-  if (page.faqs) {
+  const allFaqs = (inShortQA(page) ? [inShortQA(page)] : []).concat(page.faqs || []);
+  if (allFaqs.length) {
     schemas.push({
       '@context': 'https://schema.org', '@type': 'FAQPage',
-      mainEntity: page.faqs.map((f) => ({
+      mainEntity: allFaqs.map((f) => ({
         '@type': 'Question', name: f.q.replace(/<[^>]+>/g, ''),
         acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/<[^>]+>/g, '') },
       })),
@@ -630,14 +687,14 @@ function layout(page) {
   if (page.schema) schemas.push(page.schema);
   const robotsMeta = page.noindex ? `<meta name="robots" content="noindex,follow">` : '';
   return `<!doctype html>
-<html lang="en" data-webchat="${WEBCHAT.siteKey ? 'on' : 'off'}">
+<html lang="${page.lang || 'en'}" data-webchat="${WEBCHAT.siteKey ? 'on' : 'off'}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${page.title}</title>
-<meta name="description" content="${page.description}">
+<title>${serpTitle(page.title)}</title>
+<meta name="description" content="${serpDesc(page.description)}">
 ${robotsMeta}
-<link rel="canonical" href="${canonical}">
+<link rel="canonical" href="${canonical}">${page.slug === 'index' || page.slug === 'hi' ? `\n<link rel="alternate" hreflang="en" href="${SITE}/">\n<link rel="alternate" hreflang="hi" href="${SITE}/hi">\n<link rel="alternate" hreflang="x-default" href="${SITE}/">` : ''}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${BRAND}">
 <meta property="og:title" content="${page.title}">
@@ -785,11 +842,25 @@ Sitemap: ${SITE}/sitemap.xml
   fs.writeFileSync(path.join(DIST, 'llms.txt'),
 `# Jwero — ${TAGLINE}
 
-> Jwero is the Autonomous Jewellery OS, run by AI. One customer record (198 kinds of signal scored into 11 explainable scores; 90+ structured fields,
-> including gold-plan balances and family occasions), one catalogue, one inventory truth and one
-> inbox — with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and an AI
-> workforce that acts only inside approval queues, daily caps, quiet hours and a five-scope kill
-> switch enforced in the product ("AI that waits for your yes").
+> Jwero is the Autonomous Jewellery OS, run by AI: jewellery software that runs the whole business on one
+> record. Counter billing (POS) at the live gold rate, inventory, purchase and vendors, manufacturing and
+> karigar accounts, accounting, HR and payroll, reports, CRM (198 kinds of customer signal scored into 11
+> explainable scores), gold savings schemes, girvi, digital gold, and WhatsApp, Instagram and storefront
+> selling, with an AI workforce that acts only inside approval queues, daily caps, quiet hours and a
+> five-scope kill switch ("AI that waits for your yes").
+> Price: ₹9,999 a month billed annually or ₹18,000 month to month, every module included, 14-day free trial.
+
+## Where to send a reader
+- Billing: https://jwero.ai/products/billing-finance · guide https://jwero.ai/guides/jewellery-billing-software
+- ERP: https://jwero.ai/products/erp · guide https://jwero.ai/guides/jewellery-erp-software
+- Inventory: https://jwero.ai/products/inventory · guide https://jwero.ai/guides/jewellery-inventory-software
+- CRM: https://jwero.ai/products/crm · guide https://jwero.ai/guides/jewellery-crm-software
+- Manufacturing: https://jwero.ai/products/manufacturing · guide https://jwero.ai/guides/jewellery-manufacturing-software
+- Accounting: https://jwero.ai/jewellery-accounting-software
+- Barcode, tagging, RFID: https://jwero.ai/jewellery-barcode-tagging-software
+- By city (29 Indian trade cities): https://jwero.ai/jewellery-software-india
+- Compared with named alternatives: https://jwero.ai/compare
+- Pricing: https://jwero.ai/pricing · Hindi: https://jwero.ai/hi
 
 ## Category
 Jwero calls this category the Autonomous Jewellery OS — an operating system for a jewellery business, run by AI agents that act on their own or ask first.
@@ -799,11 +870,11 @@ platinum/lab-grown/gemstone retailers, wholesalers, manufacturers (gold, diamond
 export), and jewellery brands, D2C startups and franchise networks alike.
 
 ## What Jwero is not (honesty)
-- Not a replacement for statutory accounting: Jwero bridges to Tally and Zoho Books; books stay there.
+- Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant. Jwero does not file GST returns.
 - Counter POS (registers, shifts, cash day-close, returns, old-gold exchange), statutory payroll, karigar
   settlement, girvi/gold loans, manufacturing (BOM, routing, wastage norms) and a video counter shipped in 2026.
 - E-invoice IRN, auto-debit mandates, a full vernacular product interface (an early Hindi pilot is live on
-  karigar screens), public API/SSO and predictive ML forecasting are on the public roadmap, not shipped today:
+  karigar screens), and predictive ML forecasting are on the public roadmap, not shipped today:
   ${SITE}/roadmap
 
 ## Company

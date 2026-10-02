@@ -83,7 +83,7 @@ ${L.ctaBand('Not sure which page is yours?', 'Tell us what you sell and how — 
 
 const singleStore = {
   slug: 'solutions/single-store',
-  title: 'Software for Single-Store Jewellery Businesses | Jwero',
+  title: 'Jewellery Shop Software for a Single Store or Small Shop | Jwero',
   description: 'Run the whole shop on one system: billing, stock, purchase, books and staff, with customer memory, WhatsApp selling and schemes, live in days.',
   breadcrumbs: BC('Single store'),
   faqs: [
@@ -153,7 +153,7 @@ ${L.ctaBand('One store. One system. One month to proof.', 'Show us the store and
 
 const chains = {
   slug: 'solutions/multi-store-chains',
-  title: 'For Multi-Store Jewellery Businesses & Chains | Jwero',
+  title: 'Multi-Store Jewellery Software for Chains | Jwero',
   description: 'Branch consistency, network-wide customer memory, central campaigns and owner-grade reporting — deployed branch by branch, without disrupting the season.',
   breadcrumbs: BC('Multi-store & chains'),
   faqs: [
@@ -231,7 +231,7 @@ ${L.ctaBand('Start with one branch.', 'Pick your toughest store. If the pilot do
 
 const manufacturers = {
   slug: 'solutions/manufacturers',
-  title: 'For Manufacturers & Wholesalers — Job-Work, Gold-Loss, B2B Orders | Jwero',
+  title: 'Jewellery Manufacturing & Wholesale Software: Job Work, Gold Loss | Jwero',
   description: 'Work-in-progress tracking with per-stage gold-loss norms, artisan job-work control, assay-verified intake, and B2B catalogue distribution to retail buyers.',
   breadcrumbs: BC('Manufacturers'),
   faqs: [
@@ -276,7 +276,6 @@ ${L.section(
   ])}`
 , { tone: 'ink' })}
 
-${L.honestGapsBlock(['A public developer API is on the roadmap, not shipped today.'])}
 
 ${L.section(
   `${L.sectionHead('ILLUSTRATIVE IMPACT MODEL', 'What this could be worth on your factory floor.', 'Illustrative model on a ₹15cr/year manufacturer with a 40-karigar network — not a measured result. Run your own numbers, or ask for a 30-day growth report once you’re live.')}

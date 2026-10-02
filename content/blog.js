@@ -72,7 +72,7 @@ const whatsappGuideFaqs = [
 
 const whatsappGuide = {
   slug: 'blog/whatsapp-for-jewellers-guide',
-  title: 'WhatsApp for Jewellers: The Complete Guide to Selling and Servicing on WhatsApp | Jwero',
+  title: 'WhatsApp for Jewellers: The Complete Selling Guide | Jwero',
   description: 'A guide to selling jewellery on WhatsApp: official API vs personal number, catalogue pricing, reply speed, appointments, payments, and costly mistakes to avoid.',
   breadcrumbs: BC('WhatsApp for Jewellers Guide'),
   schema: postSchema('WhatsApp for Jewellers: The Complete Guide', 'A practical guide to selling jewellery on WhatsApp — official API vs personal number, catalogue pricing, reply speed, and common mistakes.'),
@@ -144,7 +144,7 @@ const deadStockGuideFaqs = [
 
 const deadStockGuide = {
   slug: 'blog/dead-stock-jewellery-business-guide',
-  title: 'Dead Stock in Jewellery Business: How to Calculate It and Clear It | Jwero',
+  title: 'Dead Stock in Jewellery: How to Calculate and Clear It | Jwero',
   description: 'A practical guide to dead stock in jewellery retail: what counts as dead stock, its real carrying cost, and how to clear it without a fire sale.',
   breadcrumbs: BC('Dead Stock Guide'),
   schema: postSchema('Dead Stock in Jewellery Business: How to Calculate It and Clear It', 'What counts as dead stock in jewellery, how to calculate its carrying cost, and how to clear it without a fire sale.'),
@@ -206,7 +206,7 @@ const schemeGuideFaqs = [
 
 const schemeGuide = {
   slug: 'blog/gold-savings-scheme-guide',
-  title: 'Gold Savings Schemes for Jewellers: A Practical Guide to Running One Digitally | Jwero',
+  title: 'Gold Savings Schemes for Jewellers: How to Run One | Jwero',
   description: 'A guide to jewellery gold savings schemes: why they lock in future revenue, why registers leak members through drift, and what digital collection changes.',
   breadcrumbs: BC('Gold Savings Scheme Guide'),
   schema: postSchema('Gold Savings Schemes for Jewellers: A Practical Guide to Running One Digitally', 'Why gold savings schemes lock in future revenue, why paper registers leak members, and what digital collection changes.'),
@@ -334,7 +334,7 @@ const goldLossGuideFaqs = [
 
 const goldLossGuide = {
   slug: 'blog/gold-loss-wastage-control-jewellery-manufacturing',
-  title: 'Gold Loss (Wastage) Control in Jewellery Manufacturing: A Working Ledger | Jwero',
+  title: 'Gold Loss and Wastage Control in Jewellery Manufacturing | Jwero',
   description: 'A guide to gold loss in jewellery manufacturing: per-movement weight tracking, per-karigar attribution, the old-gold chain, and what a ledger doesn’t fix.',
   breadcrumbs: BC('Gold Loss Control Guide'),
   schema: postSchema('Gold Loss (Wastage) Control in Jewellery Manufacturing: A Working Ledger', 'How to measure and control gold loss in jewellery manufacturing with per-movement, per-karigar weight tracking — and what it does and doesn’t fix.'),
@@ -1049,7 +1049,7 @@ const waPricingGuideFaqs = [
 
 const waPricingGuide = {
   slug: 'blog/whatsapp-business-api-pricing',
-  title: 'WhatsApp Business API Pricing for Jewellers: What Meta Actually Charges | Jwero',
+  title: 'WhatsApp Business API Pricing for Jewellers Explained | Jwero',
   description: 'How Meta’s conversation-based WhatsApp API pricing model works for jewellers — business vs user-initiated conversations, and where to check current rates.',
   breadcrumbs: BC('WhatsApp Business API Pricing'),
   schema: postSchema('WhatsApp Business API Pricing for Jewellers: What Meta Actually Charges', 'How Meta’s conversation-based pricing model works for the WhatsApp Business API — business-initiated vs user-initiated conversations and template messages, explained in general terms.'),

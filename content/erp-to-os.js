@@ -161,7 +161,7 @@ function leakCalc() {
 // ---------------------------------------------------------------- page 1: imminence
 const erpToOs = {
   slug: 'erp-to-os',
-  title: 'From ERP to Operating System — Why Jewellery Software Is Changing Now | Jwero',
+  title: 'From ERP to OS: Why Jewellery Software Is Changing | Jwero',
   description: 'The ERP was built around the invoice. Your customers now live on WhatsApp and Instagram, the rate moves twice a day, and AI can draft at the quality of your best salesperson — if it has the record. Why the shift from ERP to an operating system is already underway, and what it means for a jewellery business.',
   breadcrumbs: BC('From ERP to OS'),
   faqs: [
@@ -231,7 +231,7 @@ ${L.ctaBand('See your ERP’s blind spots on your own data.', 'Bring one custome
 // ---------------------------------------------------------------- page 2: switching
 const switching = {
   slug: 'erp-to-os/switching',
-  title: 'Is Switching from an ERP Risky? The Risks You Imagine vs the Costs of Staying | Jwero',
+  title: 'Is Switching Jewellery ERP Risky? Risks vs Costs of Staying | Jwero',
   description: 'The six risks jewellers name when they think about leaving an ERP — data, staff, the accountant, the season, lock-in, time — each with the specific thing that removes it; the six costs of staying, which compound daily; and the 30-day switch plan with coexistence, a change-freeze and an exit test.',
   breadcrumbs: BC('Is switching risky?', true),
   faqs: [
@@ -294,7 +294,7 @@ ${L.ctaBand('Start with the risk that worries you most.', 'Tell us which line on
 // ---------------------------------------------------------------- page 3: make do
 const makeDo = {
   slug: 'erp-to-os/make-do',
-  title: '“I Can Make Do With My ERP” — What Making Do Costs a Jewellery Business | Jwero',
+  title: 'Can a Jeweller Make Do With an ERP? What It Costs | Jwero',
   description: 'Take the objection seriously: tap the tools a jewellery business runs on today — ERP, WhatsApp app, Excel, Tally, Instagram, PDFs, people’s memory — see the gaps between them, compare the jobs each can do, and put a number on a year of making do with your own enquiries and ticket size.',
   breadcrumbs: BC('Can I make do?', true),
   faqs: [

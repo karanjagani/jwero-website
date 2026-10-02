@@ -14,7 +14,7 @@ const crmFaqs = [
 
 const crmExecutiveRole = {
   slug: 'roles/crm-executive',
-  title: 'For CRM & Telecalling Executives — Follow-ups That Draft Themselves | Jwero',
+  title: 'For CRM & Telecalling Staff: Follow-ups, Drafted | Jwero',
   description: 'How a CRM/telecalling executive works inside Jwero: prioritised outreach, drafted follow-ups, and one customer record instead of a notebook and gut feeling.',
   breadcrumbs: BC('CRM / telecalling executive'),
   faqs: crmFaqs,
@@ -193,7 +193,7 @@ const ecommerceFaqs = [
 
 const ecommerceManagerRole = {
   slug: 'roles/ecommerce-manager',
-  title: 'For E-commerce & D2C Managers — Shopify Plus Everything It Can’t Do | Jwero',
+  title: 'For E-commerce Managers: Shopify Plus What It Lacks | Jwero',
   description: 'Shopify for the storefront, Jwero for what Shopify can’t do: synced inventory, live-rate pricing, one customer record across channels.',
   breadcrumbs: BC('E-commerce / D2C manager'),
   faqs: ecommerceFaqs,

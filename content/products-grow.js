@@ -210,7 +210,7 @@ ${L.ctaBand('Bring network discipline to your business.', 'Multi-store deploymen
 
 const loyalty = {
   slug: 'products/loyalty',
-  title: 'Loyalty & Referrals — Tiers, Earning Rules, Redemptions | Jwero',
+  title: 'Jewellery Loyalty Program Software: Tiers, Points, Referrals | Jwero',
   description: 'Configure loyalty tiers, earning rules and redemptions, and track customer referrals — all on the same customer record your team already uses.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -294,7 +294,7 @@ ${L.ctaBand('Reward regulars, not just savers.', 'Bring your idea of tiers and r
 
 const journeys = {
   slug: 'products/journeys',
-  title: 'Customer Journeys — Visual, Approval-Gated Automation | Jwero',
+  title: 'Jewellery Marketing Automation: Customer Journeys With Approval | Jwero',
   description: 'Build multi-step customer journeys: triggers, branches, wait steps, messages — with a human-approval gate before anything reaches a customer.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -370,9 +370,6 @@ ${L.section(`${L.sectionHead('JOURNEY QUESTIONS', 'Approval gates, channels and 
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.honestGapsBlock([
-  'Triggering a journey from a third-party system through a public inbound API — journeys can call outward via webhook steps today; the public developer API is on the roadmap.',
-])}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="journeys">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
@@ -382,7 +379,7 @@ ${L.ctaBand('Build a journey your team can watch.', 'Bring one real flow: a sche
 
 const campaigns = {
   slug: 'products/campaigns',
-  title: 'Campaigns & Broadcasts — WhatsApp, Email, SMS, Push | Jwero',
+  title: 'Jewellery Marketing Software: WhatsApp, Email, SMS Campaigns | Jwero',
   description: 'Send consent-aware broadcasts across WhatsApp, email, SMS and push to any segment, then see exactly what each campaign sold, attributed to the send.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',

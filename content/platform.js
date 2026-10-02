@@ -10,7 +10,7 @@ const platform = {
     { q: 'Is Jwero an ERP?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP (orders, inventory, purchases, repairs, billing), from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.' },
     { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with the Assist scope (customers imported, WhatsApp connected, catalogue published) and expand module by module as each one proves itself.' },
     { q: 'What makes this different from buying a CRM plus a WhatsApp tool plus a catalogue app?', a: 'Separate tools mean separate memories. A WhatsApp tool doesn’t know her gold-plan balance; a CRM doesn’t sell on Instagram. In Jwero, the customer, the catalogue and the channels live on one record, so AI can actually sell instead of just logging.' },
-    { q: 'Is there a public API or SSO for enterprise IT?', a: 'Enterprise SSO/SCIM (SAML, OIDC, SCIM 2.0 provisioning) is shipped today. A public developer API is on the roadmap, not shipped — we say so here rather than let your evaluation discover it later.' },
+    { q: 'Is there a public API or SSO for enterprise IT?', a: 'Yes to both. Enterprise SSO/SCIM (SAML, OIDC, SCIM 2.0 provisioning) is shipped, and webhooks and APIs are available for your own integrations.' },
     { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional. You can run the whole business on Assist (customers, WhatsApp, catalogue) and never touch the rest. Complexity is available when you want it, never mandatory.' },
     { q: 'My business is unusual — will this fit, or will I be forcing a generic tool?', a: 'Custom fields, price rules and per-branch configuration exist because jewellery businesses aren’t generic. We’ll also tell you plainly what we don’t customise, on a demo, before you commit.' },
   ],
@@ -78,7 +78,6 @@ ${L.section(
 
 ${L.honestGapsBlock([
   'E-invoice IRN and e-way bill generation — GST invoices are generated at the counter and online; IRP registration still runs in your CA’s tool.',
-  'A public developer API — bridges to Tally, Zoho Books, Shopify, Woo and Unicommerce exist; a general-purpose API for your own integrations doesn’t yet.',
   'A vernacular product interface — the AI voice speaks 14 languages today; product screens are English, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets).',
   'Offline mode — Jwero is a connected product today.',
 ])}
@@ -87,7 +86,7 @@ ${L.section(`${L.sectionHead('QUESTIONS EVALUATORS ASK', 'Straight answers for t
   { q: 'Is Jwero an ERP?', a: 'Both, running as a single system that does the job of a CRM and an ERP at once. It remembers customers like a CRM and runs operations like an ERP, from the same record. Your statutory books stay in Tally or Zoho Books.' },
   { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with customers imported, WhatsApp connected and catalogue published, then expand module by module.' },
   { q: 'What makes this different from a CRM plus a WhatsApp tool?', a: 'Separate tools mean separate memories. In Jwero the customer, catalogue and channels live on one record, so AI can sell instead of just logging.' },
-  { q: 'Is there a public API or single sign-on (SSO)?', a: 'SSO is shipped (SAML, OIDC, SCIM 2.0 provisioning). A public developer API is on the roadmap, not shipped. <a href="/roadmap">See the roadmap</a>.' },
+  { q: 'Is there a public API or single sign-on (SSO)?', a: 'Yes to both. SSO is shipped (SAML, OIDC, SCIM 2.0 provisioning), and webhooks and APIs are available for your own integrations.' },
   { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional — run everything on Assist and never touch the rest.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
@@ -99,7 +98,7 @@ ${L.ctaBand('See the operating system on your own data.', 'Bring one real custom
 
 const customerMemory = {
   slug: 'platform/customer-memory',
-  title: 'Customer Memory — 198 Signals, 11 Scores, One Jewellery Customer Record | Jwero',
+  title: 'Customer Memory: 198 Signals, 11 Scores, One Record | Jwero',
   description: 'Jwero reads 198 kinds of customer signal from 36 sources, scores each customer on 11 live, explainable scores, places her in one of 6,600 states, and decides who to reach, with what and when — every send waiting for approval.',
   breadcrumbs: BC('Customer Memory'),
   faqs: [
@@ -164,7 +163,7 @@ ${L.ctaBand('Give your business a memory.', 'We import your customers from Excel
 
 const pricingEngine = {
   slug: 'platform/pricing-engine',
-  title: 'The Pricing Engine — Rate, Making Charge & Stone Rules | Jwero',
+  title: 'Live Gold Rate Pricing: Rate, Making Charge & Stone Rules | Jwero',
   description: 'How Jwero prices a piece: purity rate cards, 3 making-charge models, wastage, per-carat stone pricing, channel/branch rules, and an audit log for every price.',
   breadcrumbs: BC('The Pricing Engine'),
   faqs: [
@@ -234,9 +233,6 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
-${L.honestGapsBlock([
-  'A public developer API for pulling pricing rules into a third-party system — the rules run inside Jwero today, not exposed externally yet.',
-])}
 
 ${L.section(`${L.sectionHead('PRICING ENGINE QUESTIONS', 'What owners and evaluators ask first.', '')}${L.faqBlock([
   { q: 'How does Jwero calculate a price?', a: 'Metal rate (by purity) × weight, plus a making charge (percentage, per-gram or flat), plus stone value priced separately, resolved against any rules for that channel, branch or customer. Every resolution is logged.' },
@@ -338,7 +334,7 @@ ${L.ctaBand('Meet your first AI workforce member.', 'Watch it draft, watch it wa
 
 const integrations = {
   slug: 'platform/integrations',
-  title: 'Integrations — Tally, Shopify, Meta, Razorpay, Telephony, MCP & More | Jwero',
+  title: 'Jwero Integrations: Tally, Shopify, Meta, Razorpay, MCP | Jwero',
   description: 'Jwero bridges to Tally and Zoho Books, syncs with Shopify, WooCommerce and Unicommerce, collects via Razorpay and Cashfree, sells on official Meta channels, connects to telephony providers like Exotel and Tata Tele for AI voice calls and IVR, and exposes a first-party MCP server for your own AI agents.',
   breadcrumbs: BC('Integrations'),
   faqs: [
@@ -397,7 +393,7 @@ ${L.ctaBand('Tell us your stack.', 'Send the list of tools you run today — we 
 
 const tally = {
   slug: 'platform/integrations/tally',
-  title: 'Keep Your Tally — The Accountant Page | Jwero',
+  title: 'Tally Integration for Jewellers: Keep Your Books | Jwero',
   description: 'Jwero bridges to Tally so your books stay exactly where your CA likes them. Jwero runs sales, stock, purchase and the workshop; Tally keeps the ledger.',
   breadcrumbs: [['Home', '/'], ['Platform', '/platform'], ['Integrations', '/platform/integrations'], ['Tally']],
   faqs: [
@@ -566,7 +562,6 @@ ${L.section(
         <div class="road-item"><strong>Counter POS: returns, old-gold exchange & cash day-close</strong>registers, shifts and a reconciled till close — <a href="/products/pos">shipped</a></div>
         <div class="road-item"><strong>Attribution dashboard</strong>the owner’s weekly growth report, productised</div>
         <div class="road-item"><strong>Direct ad-platform publishing</strong>one-click publish from Ads Manager, not uniform across every flow yet</div>
-        <div class="road-item"><strong>Publishing to X</strong>Instagram, Facebook, LinkedIn, Pinterest, YouTube and Google Business are live; X is being wired</div>
         <div class="road-item"><strong>Occasion & win-back recipes</strong>packaged one-click playbooks</div>
       </div>
     </div>
@@ -587,7 +582,6 @@ ${L.section(
         <p class="road-group-label">Operations & platform</p>
         <div class="road-item"><strong>Offline mode</strong>the counter needs the internet today</div>
         <div class="road-item"><strong>Vernacular product interface</strong>the voice assistant speaks 14 languages; product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets)</div>
-        <div class="road-item"><strong>Public developer API</strong>bridges only, for now</div>
         <div class="road-item"><strong>Predictive ML forecasting</strong>today’s inventory intelligence is ageing/valuation-based, not predictive</div>
       </div>
     </div>

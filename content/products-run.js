@@ -3,7 +3,7 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 const crm = {
   slug: 'products/crm',
-  title: 'Jewellery CRM Software & Customer 360 — Built for the Trade | Jwero',
+  title: 'Jewellery CRM Software: Customer & Lead Management | Jwero',
   description: 'Jewellery CRM software: gold-plan balances, occasions, taste and churn risk as structured fields, with explainable scores and win-back journeys.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -90,7 +90,7 @@ ${L.ctaBand('Own your customer list. Finally.', 'We import your customers for yo
 
 const catalog = {
   slug: 'products/catalog',
-  title: 'Jewellery Catalogue (PIM) — Purity, Certificates, Live Prices | Jwero',
+  title: 'Jewellery Catalogue Software: Purity, Certificates, Live Prices | Jwero',
   description: 'A product catalogue built for jewellery: metal, purity, stones, certifications and HUID-aware records, live metal-rate pricing, and controlled sharing.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -146,7 +146,7 @@ ${L.ctaBand('Retire the PDF catalogue.', 'See a live catalogue share — with pr
 
 const inventory = {
   slug: 'products/inventory',
-  title: 'Jewellery Inventory Software — Ageing & Dead Stock | Jwero',
+  title: 'Jewellery Inventory & Stock Management Software | Jwero',
   description: 'Know what your stock is worth at today’s rate, what is ageing, and what is quietly eating your capital — across every branch.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -219,7 +219,7 @@ ${L.ctaBand('Find the sleeping capital.', 'Bring last year’s stock summary to 
 
 const billingFinance = {
   slug: 'products/billing-finance',
-  title: 'Jewellery Billing Software — GST Invoicing at Live Gold Rates | Jwero',
+  title: 'Jewellery Billing Software: GST Invoices at the Live Gold Rate | Jwero',
   description: 'Jewellery billing software: GST invoices at the live gold rate, receivables tracking and payment reminders — with an honest note on what’s roadmap.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -273,7 +273,7 @@ ${L.ctaBand('See invoicing at today’s rate.', 'Change the rate live in a demo 
 
 const erp = {
   slug: 'products/erp',
-  title: 'Jewellery ERP Software, Reconsidered | Jwero',
+  title: 'Jewellery ERP Software: Orders, Purchase, Repairs, Job Work | Jwero',
   description: 'Jewellery ERP software: orders, purchases and vendors, repairs and manufacturing job-work — jewellery-native, sharing one customer record.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -326,7 +326,7 @@ ${L.ctaBand('See operations on one record.', 'Bring one real order and follow it
 
 const showroom = {
   slug: 'products/showroom',
-  title: 'Showroom Intelligence — Who Is on Your Floor, Right Now | Jwero',
+  title: 'Jewellery Showroom Software: Walk-in Tracking and Floor View | Jwero',
   description: 'Walk-in check-in, a live floor view, Walkout Rescue drafts and rule-based store alerts — showroom visibility built from real visit data.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -412,7 +412,7 @@ ${L.ctaBand('See who is on your floor, right now.', 'Bring one real walkout from
 
 const segmentation = {
   slug: 'products/segmentation',
-  title: 'Customer Segmentation — Dynamic, Rule-Based Audiences | Jwero',
+  title: 'Jewellery Customer Segmentation Software: RFM and Live Rules | Jwero',
   description: 'Build live customer segments from RFM tier, tags, CRM stage and custom fields — reachable counts and revenue shown before you save, AI-suggested to start.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',

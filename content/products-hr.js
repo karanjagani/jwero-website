@@ -3,7 +3,7 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 const hrPayroll = {
   slug: 'products/hr-payroll',
-  title: 'HR & Payroll Software for Jewellery Businesses | Jwero',
+  title: 'Jewellery HR & Payroll Software: Attendance, Karigar Wages | Jwero',
   description: 'Payroll, karigar wage settlement, attendance, leave, onboarding, recruitment and performance — on the same record as your customers and sales.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',

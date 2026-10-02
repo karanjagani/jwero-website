@@ -10,6 +10,7 @@ const home = {
     name: 'Jwero', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
     description: 'The Autonomous Jewellery OS, run by AI: CRM, showroom, POS and billing, inventory, purchase, manufacturing, accounts, HR and reports on one record, with WhatsApp and Instagram commerce, gold savings schemes and a governed AI workforce.',
     url: 'https://jwero.ai',
+    offers: { '@type': 'Offer', price: '9999', priceCurrency: 'INR', description: 'Per month, billed annually, excluding GST. Every module. 14-day free trial.' },
   },
   faqs: [
     { q: 'What is Jwero?', a: 'Jwero is the Autonomous Jewellery OS, run by AI — one system where customers, catalogue, stock, counter billing, purchase, workshop, accounts and team share one record with every selling channel, and an AI workforce drafts the work under your approval.' },

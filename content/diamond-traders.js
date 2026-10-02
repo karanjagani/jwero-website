@@ -88,7 +88,7 @@ const faqs = [
 
 const diamondTraders = {
   slug: 'solutions/diamond-traders',
-  title: 'For Diamond Traders: Parcels, Certified Stones, Memo and Your Own Rate Grid | Jwero',
+  title: 'Diamond Trading Software: Inventory, Memo and Your Rate Grid | Jwero',
   description: 'Software for loose-diamond traders: parcels tracked by carats and count, certified stones as individual pieces, your own per-carat rate grid with a discount per band, memo with return dates, consignment kept apart from owned stock, and private buyer links on WhatsApp.',
   breadcrumbs: [['Home', '/'], ['Solutions', '/solutions'], ['Diamond traders']],
   schema: {
