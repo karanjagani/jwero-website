@@ -389,8 +389,19 @@ function withInShort(page) {
   return Object.assign({}, page, { body: page.body.slice(0, end + 10) + block + page.body.slice(end + 10), faqs: (page.faqs || []).concat([{ q, a }]) });
 }
 
+// "More questions jewellers ask": one direct answer per tool, on the page that
+// should win that search. Sits before the closing band.
+const { TOOL_QA } = require('./content/tool-answers');
+function withToolQA(page) {
+  const qa = TOOL_QA[page.slug];
+  if (!qa || /class="tool-qa"/.test(page.body)) return page;
+  const block = `\n<section class="section tool-qa"><div class="container">${L3.sectionHead('', 'More questions jewellers ask.', '')}${L3.faqBlock(qa)}</div></section>\n`;
+  const at = page.body.lastIndexOf('<section class="cta-band"');
+  return Object.assign({}, page, { body: at === -1 ? page.body + block : page.body.slice(0, at) + block + page.body.slice(at) });
+}
+
 function withSchematic(page) {
-  page = withInShort(withShopDay(page));
+  page = withToolQA(withInShort(withShopDay(page)));
   const ic = LINK_ICONS['/' + page.slug];
   if (!ic || !page.breadcrumbs || /class="stage hero-mock"/.test(page.body)) return fillPersona(page.body);
   const label = page.breadcrumbs[page.breadcrumbs.length - 1][0];
@@ -673,7 +684,7 @@ function layout(page) {
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.hero .sub'] },
     isPartOf: { '@type': 'WebSite', url: SITE },
   }];
-  const allFaqs = (inShortQA(page) ? [inShortQA(page)] : []).concat(page.faqs || []);
+  const allFaqs = (inShortQA(page) ? [inShortQA(page)] : []).concat(page.faqs || [], TOOL_QA[page.slug] || []);
   if (allFaqs.length) {
     schemas.push({
       '@context': 'https://schema.org', '@type': 'FAQPage',

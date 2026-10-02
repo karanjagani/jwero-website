@@ -220,9 +220,9 @@ const NEEDS = [
   ['Counter and billing', [['/products/billing-finance', 'Jewellery billing software'], ['/products/pos', 'Jewellery POS software'], ['/jewellery-barcode-tagging-software', 'Barcode, tagging and RFID'], ['/products/quotations', 'Quotation and estimate software'], ['/platform/pricing-engine', 'Live gold rate pricing']]],
   ['Stock and purchase', [['/products/inventory', 'Inventory and stock management'], ['/products/purchase-vendors', 'Purchase and vendor management'], ['/products/catalog', 'Jewellery catalogue software'], ['/products/digital-catalogues', 'Digital catalogue app'], ['/products/erp', 'Jewellery ERP software']]],
   ['Workshop', [['/products/manufacturing', 'Manufacturing and karigar management'], ['/products/repairs-service', 'Repair management'], ['/solutions/casting-units', 'Casting software'], ['/tools/gold-loss-calculator', 'Gold loss calculator']]],
-  ['Customers', [['/products/crm', 'Jewellery CRM software'], ['/products/gold-schemes', 'Gold scheme software'], ['/products/girvi', 'Girvi and gold loan software'], ['/products/loyalty', 'Loyalty program software'], ['/products/showroom', 'Showroom and walk-in tracking'], ['/products/meetings', 'Appointments and video calls']]],
-  ['Selling and marketing', [['/products/whatsapp', 'WhatsApp API and CRM'], ['/products/instagram-facebook', 'Instagram and Facebook'], ['/products/storefront', 'Ecommerce website builder'], ['/products/campaigns', 'Marketing campaigns'], ['/products/ai-sales-agents', 'AI chatbot and voice AI'], ['/products/ads-manager', 'Ads manager']]],
-  ['Books, team and decisions', [['/guides', 'Buyer’s guides'], ['/jewellery-accounting-software', 'Jewellery accounting software'], ['/platform/integrations/tally', 'Tally integration'], ['/products/hr-payroll', 'HR and payroll'], ['/products/training-lms', 'Staff training'], ['/products/reports', 'MIS reports and dashboards'], ['/cloud-jewellery-software', 'Cloud and mobile access']]],
+  ['Customers', [['/products/crm', 'Jewellery CRM software'], ['/products/gold-schemes', 'Gold scheme software'], ['/products/girvi', 'Girvi and gold loan software'], ['/products/loyalty', 'Loyalty program software'], ['/products/showroom', 'Showroom and walk-in tracking'], ['/jewellery-showroom-footfall-counting', 'Footfall counting'], ['/jewellery-appointment-booking-software', 'Appointment booking'], ['/products/meetings', 'Appointments and video calls']]],
+  ['Selling and marketing', [['/products/whatsapp', 'WhatsApp API and CRM'], ['/whatsapp-broadcast-for-jewellers', 'WhatsApp broadcasts'], ['/instagram-for-jewellers', 'Instagram for jewellers'], ['/ads-for-jewellers', 'Google and Instagram ads'], ['/sms-marketing-for-jewellers', 'SMS, RCS and push'], ['/ai-calling-for-jewellers', 'AI calling'], ['/jewellery-website-analytics', 'Website analytics'], ['/products/instagram-facebook', 'Instagram and Facebook'], ['/products/storefront', 'Ecommerce website builder'], ['/products/campaigns', 'Marketing campaigns'], ['/products/ai-sales-agents', 'AI chatbot and voice AI'], ['/products/ads-manager', 'Ads manager']]],
+  ['Books, team and decisions', [['/guides', 'Buyer’s guides'], ['/jewellery-accounting-software', 'Jewellery accounting software'], ['/platform/integrations/tally', 'Tally integration'], ['/products/hr-payroll', 'HR and payroll'], ['/jewellery-staff-management-software', 'Staff management'], ['/products/training-lms', 'Staff training'], ['/products/reports', 'MIS reports and dashboards'], ['/cloud-jewellery-software', 'Cloud and mobile access']]],
 ];
 
 const hub = {
@@ -386,6 +386,306 @@ const cloud = needPage({
   links: [['/trust/security', 'Security'], ['/products/multi-store', 'Multi-store jewellery software'], ['/migration', 'Migration Centre'], ['/platform/onboarding', 'Onboarding']],
 });
 
+// ---------------------------------------------------------------- tool landing pages
+// One page for each cluster of tools jewellers search for by name, where the
+// product page covers several at once and cannot rank for each phrase.
+const broadcast = needPage({
+  slug: 'whatsapp-broadcast-for-jewellers',
+  title: 'WhatsApp Broadcast for Jewellers: Bulk Messages Without a Ban | Jwero',
+  description: 'WhatsApp broadcast software for jewellers on the official Business API: approved templates, consent and opt-outs handled, audiences from your own customer segments, and sales traced to each send.',
+  eyebrow: 'WhatsApp broadcast for jewellers',
+  h1: 'WhatsApp broadcasts for jewellers, on the official API.',
+  sub: 'Send a festival offer, a rate alert or a new collection to the right customers, from your own number, without the bulk tools that get numbers banned.',
+  wa: 'broadcast',
+  intro: ['A broadcast that is safe, targeted and measured.', 'Who it goes to matters more than how many.'],
+  cards: [
+    { icon: 'chat', title: 'Official Business API', text: 'Sent from your own verified number through Meta’s business interfaces, with approved templates.', link: { href: '/products/whatsapp', label: 'WhatsApp' } },
+    { icon: 'shield', title: 'Consent and opt-outs', text: 'Anyone who opted out is skipped, and the reason is shown, not hidden.' },
+    { icon: 'users', title: 'Audiences from your records', text: 'Scheme members, bridal buyers, customers quiet for a year: built from live segments.', link: { href: '/products/segmentation', label: 'Segmentation' } },
+    { icon: 'megaphone', title: 'One send, four channels', text: 'WhatsApp, email, SMS and push from the same campaign.', link: { href: '/products/campaigns', label: 'Campaigns' } },
+    { icon: 'pie', title: 'What it sold', text: 'Each campaign is traced through to the bills it produced.' },
+    { icon: 'check', title: 'Replies land in one inbox', text: 'A reply to a broadcast arrives on the customer’s record, with a priced answer drafted.' },
+  ],
+  rows: [
+    { lever: 'SENDING', before: 'A bulk tool paired to a personal number, one report away from a ban.', after: 'Approved templates on the official API.' },
+    { lever: 'AUDIENCE', before: 'The whole contact list, every time.', after: 'The customers the message is actually for.' },
+    { lever: 'REPLIES', before: 'Two hundred replies on one phone, answered by whoever is free.', after: 'A shared inbox, each reply on the customer’s record.' },
+    { lever: 'RESULT', before: 'Blue ticks, and a guess.', after: 'Sales traced to the send.' },
+  ],
+  notYet: 'Meta charges for each marketing message, at the published rate on the pricing page. Jwero does not send to contacts who have not agreed to hear from you.',
+  faqs: [
+    { q: 'How do jewellers send WhatsApp broadcasts without getting banned?', a: 'Use the official WhatsApp Business API with approved templates, send only to customers who agreed, and honour opt-outs at once. Bulk tools that pair with a personal number break WhatsApp’s rules and are the usual cause of bans.' },
+    { q: 'How many customers can I broadcast to?', a: 'WhatsApp sets a daily limit per number that rises as your quality rating holds. Sending to people who want the message keeps the rating high.' },
+    { q: 'What does a WhatsApp broadcast cost?', a: 'Meta charges per marketing message; Jwero’s rate card on the pricing page shows the current price. The plan fee itself is ₹18,000 a month for every module.' },
+    { q: 'Can I keep my existing WhatsApp number?', a: 'Yes. Your shop’s number is moved onto the official API, so customers see the same number.' },
+  ],
+  links: [['/products/whatsapp', 'WhatsApp API for jewellers'], ['/products/campaigns', 'Campaigns'], ['/blog/whatsapp-for-jewellers-guide', 'WhatsApp for jewellers guide'], ['/blog/whatsapp-business-api-pricing', 'WhatsApp API pricing']],
+});
+
+const instagram = needPage({
+  slug: 'instagram-for-jewellers',
+  title: 'Instagram for Jewellers: DMs, Comments, Reels and Stories | Jwero',
+  description: 'Instagram software for jewellers: every DM, comment, Reel and Story reply in one shared inbox, a priced answer drafted from your catalogue, posts scheduled across channels, and each enquiry kept on the customer’s record.',
+  eyebrow: 'Instagram for jewellers',
+  h1: 'Instagram brings the enquiries. This is how they become sales.',
+  sub: 'DMs, “price?” comments, Reel and Story replies in one inbox, each with a priced reply drafted from your catalogue and a follow-up that does not get forgotten.',
+  wa: 'instagram',
+  intro: ['Everything Instagram sends you, answered from one place.', 'The post is the easy part. The reply is where the sale is.'],
+  cards: [
+    { icon: 'camera', title: 'DMs in a shared inbox', text: 'The whole team answers from one place; nothing lives on one phone.', link: { href: '/products/instagram-facebook', label: 'Instagram and Facebook' } },
+    { icon: 'chat', title: 'Comments to private replies', text: 'A public “price?” comment is moved to a private message with the price.' },
+    { icon: 'video', title: 'Reels and Stories', text: 'Scheduled with your other posts; every reply they bring arrives as an enquiry.' },
+    { icon: 'book', title: 'Priced from your catalogue', text: 'Replies are drafted at today’s gold rate and wait for a person’s approval.' },
+    { icon: 'record', title: 'On the customer’s record', text: 'The person asking today may have bought last year. The reply knows it.', link: { href: '/products/crm', label: 'CRM' } },
+    { icon: 'megaphone', title: 'Posts on every channel', text: 'Write once and schedule to Instagram, Facebook, YouTube, Pinterest, LinkedIn and X.', link: { href: '/products/social-media', label: 'Social media' } },
+  ],
+  rows: [
+    { lever: 'DMs', before: 'Answered late, or by an intern who has since left.', after: 'One inbox, a draft in minutes, a person approves.' },
+    { lever: 'COMMENTS', before: 'Two hundred “price?” comments under a Reel, unanswered.', after: 'Each one moved to a private, priced reply.' },
+    { lever: 'FOLLOW-UP', before: 'She asked, you answered, she went quiet, nobody wrote again.', after: 'A follow-up is drafted on schedule.' },
+    { lever: 'MEMORY', before: 'Instagram does not know she bought bangles last year.', after: 'Her record does.' },
+  ],
+  notYet: 'Jwero does not shoot or edit Reels for you, and it cannot message someone on Instagram who has not written to you first; that is Instagram’s rule.',
+  faqs: [
+    { q: 'How do jewellers manage Instagram DMs?', a: 'By moving them off a single phone into a shared inbox, so any team member can answer and every conversation is kept on the customer’s record.' },
+    { q: 'How do I reply to price comments on Instagram?', a: 'Reply privately. Jwero moves a public “price?” comment into a direct message with a priced reply drafted from your catalogue at today’s rate.' },
+    { q: 'How do jewellers get sales from Instagram Reels?', a: 'By answering what the Reel brings. The views are not the sale; the comment or message answered within minutes with a real price is.' },
+    { q: 'Do I need a separate tool for Facebook?', a: 'No. Facebook messages and comments arrive in the same inbox.' },
+  ],
+  links: [['/products/instagram-facebook', 'Instagram and Facebook'], ['/products/social-media', 'Social media management'], ['/solutions/pain/lead-leakage', 'Lost enquiries'], ['/products/ai-sales-agents', 'AI replies']],
+});
+
+const adsLanding = needPage({
+  slug: 'ads-for-jewellers',
+  title: 'Google Ads & Instagram Ads for Jewellers: Run, Approve, Measure | Jwero',
+  description: 'Ads software for jewellers: build Google Search, Performance Max and Shopping campaigns and Meta and Instagram ads from one place, approve before any spend, get budget alerts, and see which ad led to a sale.',
+  eyebrow: 'Ads for jewellers',
+  h1: 'Google and Instagram ads for jewellers, with your hand on the budget.',
+  sub: 'Build campaigns for Google and Meta from one place, approve before a rupee is spent, and see which ad brought the customer who actually bought.',
+  wa: 'ads',
+  intro: ['From the ad to the bill, on one record.', 'An ad that brings an enquiry nobody answers is money spent twice.'],
+  cards: [
+    { icon: 'megaphone', title: 'Google Ads', text: 'Search, Performance Max and Shopping campaigns, built in a guided flow and published to Google.', link: { href: '/products/ads-manager', label: 'Ads Manager' } },
+    { icon: 'camera', title: 'Meta and Instagram ads', text: 'Standard and Advantage+ campaigns and lead forms, published to Meta once approved.' },
+    { icon: 'check', title: 'Approval before spend', text: 'Every campaign passes an approval step. Nobody spends the budget by accident.' },
+    { icon: 'trend', title: 'Budget alerts', text: 'Spend is watched, and a campaign nearing its limit is flagged.' },
+    { icon: 'users', title: 'Audiences from your customers', text: 'Build audiences from your own segments, not guesses.', link: { href: '/products/segmentation', label: 'Segmentation' } },
+    { icon: 'pie', title: 'Which ad sold', text: 'The enquiry, the conversation and the bill are tied back to the ad.' },
+  ],
+  rows: [
+    { lever: 'SET-UP', before: 'Three ad consoles, each with its own way of working.', after: 'One guided flow for all of them.' },
+    { lever: 'CONTROL', before: 'An agency or a staff member spends, and you see the bill.', after: 'You approve each campaign and get an alert before it overspends.' },
+    { lever: 'ENQUIRIES', before: 'The ad works, the message arrives at 10pm, nobody replies.', after: 'A priced reply is drafted within minutes.' },
+    { lever: 'RESULT', before: 'Clicks and impressions.', after: 'Sales, by ad.' },
+  ],
+  notYet: 'Jwero does not write your ad headlines and text for you today; you enter them in the campaign wizard, and the AI suggests where a campaign is under-performing. Pinterest publishing is still rolling out. Ad spend is paid to Google and Meta, not to Jwero.',
+  faqs: [
+    { q: 'Do Google Ads work for jewellery shops?', a: 'They work for people already searching, such as “gold bangles near me”, provided the enquiry is answered quickly. Search and Shopping campaigns suit jewellers best.' },
+    { q: 'How do I run Instagram ads for my jewellery shop?', a: 'Choose the pieces, the audience and the budget in the campaign wizard, approve it, and Jwero publishes it to Meta. Replies to the ad arrive in your shared inbox.' },
+    { q: 'How much should a jewellery shop spend on ads?', a: 'There is no one figure. Start small, measure which ad produces bills, not clicks, and raise the budget on what sells.' },
+    { q: 'Can I advertise my jewellery shop on ChatGPT?', a: 'Advertising inside AI assistants is new. Ask us about its status for your account before planning a budget around it.' },
+  ],
+  links: [['/products/ads-manager', 'Ads Manager'], ['/products/optimize', 'Website analytics'], ['/products/instagram-facebook', 'Instagram and Facebook'], ['/instagram-for-jewellers', 'Instagram for jewellers']],
+});
+
+const smsLanding = needPage({
+  slug: 'sms-marketing-for-jewellers',
+  title: 'SMS, RCS & Push Notifications for Jewellers | Jwero',
+  description: 'SMS, RCS and push notification software for jewellers: payment and order alerts, scheme reminders and offers sent from the same campaign as WhatsApp and email, with consent handled and results measured.',
+  eyebrow: 'SMS, RCS and push for jewellers',
+  h1: 'SMS, RCS and push notifications, from the same campaign as WhatsApp.',
+  sub: 'Use each channel for what it is good at: SMS for the certain message, RCS for the rich one, push for the free one, WhatsApp for the conversation.',
+  wa: 'sms',
+  intro: ['One audience, the right channel for each message.', 'No separate tool, list or bill for each.'],
+  cards: [
+    { icon: 'chat', title: 'SMS', text: 'Payment received, order ready, instalment due: short messages that must arrive.', link: { href: '/products/campaigns', label: 'Campaigns' } },
+    { icon: 'megaphone', title: 'RCS', text: 'Messages with images and buttons in the phone’s own messaging app, where it is supported.' },
+    { icon: 'sparkle', title: 'Push notifications', text: 'Free to send to visitors who opted in on your website or app.', link: { href: '/products/optimize', label: 'Optimize' } },
+    { icon: 'shield', title: 'Consent in one place', text: 'A customer’s choices for each channel are kept on her record and respected.' },
+    { icon: 'route', title: 'In journeys too', text: 'An instalment reminder can go by WhatsApp first and SMS if it is not read.', link: { href: '/products/journeys', label: 'Journeys' } },
+    { icon: 'pie', title: 'Measured together', text: 'One report for the campaign across every channel.' },
+  ],
+  rows: [
+    { lever: 'TOOLS', before: 'An SMS panel, a WhatsApp tool and an email tool, each with its own list.', after: 'One audience, one campaign.' },
+    { lever: 'CONSENT', before: 'Nobody is sure who opted out of what.', after: 'Preferences per channel on each record.' },
+    { lever: 'REMINDERS', before: 'Scheme reminders sent by hand, when someone remembers.', after: 'Drafted on schedule for every instalment.' },
+    { lever: 'COST', before: 'Paying for messages nobody reads.', after: 'The cheapest channel that gets read.' },
+  ],
+  notYet: 'SMS in India needs sender and template registration under the telecom rules, which you complete once. RCS reaches only phones and networks that support it. Messages are charged per message at the published rates.',
+  faqs: [
+    { q: 'Does SMS marketing still work for jewellers?', a: 'For short, certain messages, yes: payment received, order ready, instalment due. For offers and conversations, WhatsApp usually gets more response.' },
+    { q: 'What is RCS messaging for a jewellery shop?', a: 'RCS is the richer successor to SMS: images, buttons and a verified business name inside the phone’s messaging app. It works on supported phones and networks.' },
+    { q: 'Do push notifications work for jewellery stores?', a: 'They work for people who opted in on your website or app, and cost nothing per message. They suit new collections and rate alerts.' },
+    { q: 'Which channel should I use?', a: 'WhatsApp for conversation, SMS for certainty, push for free reach, email for detail. One campaign can use all four.' },
+  ],
+  links: [['/products/campaigns', 'Campaigns'], ['/whatsapp-broadcast-for-jewellers', 'WhatsApp broadcasts'], ['/products/journeys', 'Customer journeys'], ['/pricing', 'Message rates']],
+});
+
+const footfall = needPage({
+  slug: 'jewellery-showroom-footfall-counting',
+  title: 'Footfall Counting & Walk-in Tracking for Jewellery Showrooms | Jwero',
+  description: 'Footfall counting and walk-in tracking for jewellery showrooms: tablet check-in or camera-based counting, a live view of the floor, what each visitor tried, why they left, and conversion by store and salesperson.',
+  eyebrow: 'Showroom footfall and walk-in tracking',
+  h1: 'Know who walked in, what they tried, and why they left.',
+  sub: 'Count footfall, record each visit and see conversion by store and salesperson, so a walk-out becomes a follow-up, not a mystery.',
+  wa: 'footfall',
+  intro: ['The highest-intent moment in the business, on record.', 'Most shops remember a visit only if it ended in a bill.'],
+  cards: [
+    { icon: 'store', title: 'Walk-in register', text: 'A tablet check-in at the entrance, with consent, replaces the paper register.', link: { href: '/products/showroom', label: 'Showroom' } },
+    { icon: 'eye', title: 'Camera-based counting', text: 'Connect showroom cameras to count footfall, charged per camera.' },
+    { icon: 'users', title: 'Live floor', text: 'Who is in the store now, and who is serving them.' },
+    { icon: 'box', title: 'Shown, tried, bought', text: 'Scan a piece to log it as tried. See which pieces are tried often and rarely bought.' },
+    { icon: 'chat', title: 'Walk-out follow-up', text: 'A message is drafted for those who left without buying, with the pieces they tried.' },
+    { icon: 'pie', title: 'Conversion by store', text: 'Visits, conversion, busiest hours and reasons for leaving, by branch and salesperson.', link: { href: '/products/reports', label: 'Reports' } },
+  ],
+  rows: [
+    { lever: 'FOOTFALL', before: 'A guess, or a tally mark on paper.', after: 'Counted, by hour and by day.' },
+    { lever: 'VISITS', before: 'Nobody knows what she tried or why she left.', after: 'Each visit recorded on her record.' },
+    { lever: 'WALK-OUTS', before: 'Lost the moment she leaves.', after: 'A follow-up drafted the same day.' },
+    { lever: 'STAFF', before: 'Performance judged on bills alone.', after: 'Conversion of visits, by salesperson.' },
+  ],
+  notYet: 'Jwero does not sell cameras or tablets. Photographs and camera counting need a notice to visitors and, where the law requires, their consent; that is the showroom’s duty.',
+  faqs: [
+    { q: 'How do I count footfall in my jewellery showroom?', a: 'Either check each walk-in in on a tablet at the entrance, or connect showroom cameras for automatic counting. Both give visits by hour and conversion to bills.' },
+    { q: 'How do I record walk-in customers in a jewellery shop?', a: 'Enter the phone number at check-in. A returning customer’s history appears at once; a new one gets a record. What she tried and why she left are noted at check-out.' },
+    { q: 'What is a good conversion rate for a jewellery showroom?', a: 'It varies by store and category, so compare your own stores, salespeople and months with each other. The useful number is the trend.' },
+    { q: 'Is camera tracking legal?', a: 'Showrooms may use cameras, but visitors should be told, and personal data must be handled under the data protection law. Take advice for your own case.' },
+  ],
+  links: [['/products/showroom', 'Showroom software'], ['/products/crm', 'Jewellery CRM'], ['/roles/store-manager', 'For the store manager'], ['/trust', 'Trust Centre']],
+});
+
+const aiCalling = needPage({
+  slug: 'ai-calling-for-jewellers',
+  title: 'AI Calling for Jewellers: Inbound Calls & Reminder Campaigns | Jwero',
+  description: 'AI voice calling for jewellers: an AI agent answers inbound calls and places reminder and follow-up calls in Indian languages over your telephony line, with every call transcribed onto the customer’s record.',
+  eyebrow: 'AI calling for jewellers',
+  h1: 'AI that answers the phone and makes the reminder calls.',
+  sub: 'Inbound calls answered and scheme, payment and follow-up calls placed in the customer’s language, with the outcome written on her record.',
+  wa: 'ai-calling',
+  intro: ['The calls nobody has time to make.', 'Polite, on schedule, and in her language.'],
+  cards: [
+    { icon: 'chat', title: 'Inbound calls answered', text: 'Shop timings, today’s rate, order status and appointments, with a hand-over to a person when needed.', link: { href: '/products/ai-sales-agents', label: 'AI agents' } },
+    { icon: 'megaphone', title: 'Outbound calling campaigns', text: 'Scheme instalment reminders, payment follow-ups and festival invitations.' },
+    { icon: 'users', title: 'Indian languages', text: 'The phone agent speaks 11 Indian languages over a line you connect.' },
+    { icon: 'record', title: 'On the record', text: 'Each call is transcribed and summarised on the customer’s record.' },
+    { icon: 'shield', title: 'Inside your limits', text: 'Daily caps, quiet hours and an approval queue apply. One switch stops it.', link: { href: '/platform/ai-workforce', label: 'AI governance' } },
+    { icon: 'route', title: 'Part of a journey', text: 'A call can follow an unread WhatsApp message, automatically.', link: { href: '/products/journeys', label: 'Journeys' } },
+  ],
+  rows: [
+    { lever: 'MISSED CALLS', before: 'The phone rings during a sale and nobody picks up.', after: 'Answered every time, with a hand-over when needed.' },
+    { lever: 'REMINDERS', before: 'A staff member calls forty scheme members, when free.', after: 'Every due instalment gets a call, on the day.' },
+    { lever: 'LANGUAGE', before: 'Depends on who is in the shop.', after: 'The customer’s own language.' },
+    { lever: 'RECORD', before: 'Nobody knows what was said.', after: 'A transcript on her record.' },
+  ],
+  notYet: 'Calls run over a telephony line you connect from a provider such as Exotel or Tata Tele, and are charged per minute. The AI does not negotiate prices or give discounts; it hands those to a person.',
+  faqs: [
+    { q: 'Can AI answer calls for my jewellery shop?', a: 'Yes. An AI voice agent answers common questions, takes appointments and passes the call to a person when the customer needs one.' },
+    { q: 'Can AI call my customers for scheme reminders?', a: 'Yes. It calls each member whose instalment is due, in her language, and records the outcome.' },
+    { q: 'Which languages does it speak?', a: 'The phone agent covers 11 Indian languages today. The chat and voice assistant inside WhatsApp and web chat covers 14.' },
+    { q: 'What does AI calling cost?', a: 'It is charged per minute at the rate on the pricing page, on top of your telephony provider’s charges.' },
+  ],
+  links: [['/products/ai-sales-agents', 'AI agents and voice'], ['/platform/ai-workforce', 'AI governance'], ['/products/gold-schemes', 'Gold schemes'], ['/pricing', 'Calling rates']],
+});
+
+const appointments = needPage({
+  slug: 'jewellery-appointment-booking-software',
+  title: 'Jewellery Appointment Booking Software: Showroom & Video Visits | Jwero',
+  description: 'Appointment booking software for jewellers: customers book a showroom or video visit against real availability, the shortlist is ready when they arrive, reminders go out, and every visit is on one calendar.',
+  eyebrow: 'Appointment booking for jewellers',
+  h1: 'Appointments customers can book themselves, on one calendar.',
+  sub: 'Showroom visits, bridal trials and video viewings booked against real availability, with the shortlist ready and a reminder sent.',
+  wa: 'appointments',
+  intro: ['An appointment that arrives prepared.', 'The diary on the counter, replaced.'],
+  cards: [
+    { icon: 'calendar', title: 'Self-booking', text: 'A booking page that offers only real slots, with working hours, buffers and daily limits.', link: { href: '/products/meetings', label: 'Meetings' } },
+    { icon: 'video', title: 'Video visits', text: 'Start a video call from WhatsApp or web chat, or let her book one.' },
+    { icon: 'record', title: 'One calendar', text: 'Showroom, phone and video appointments together, with Google Calendar and Zoho Bookings.' },
+    { icon: 'book', title: 'Shortlist attached', text: 'The pieces she asked about are ready before she arrives.' },
+    { icon: 'chat', title: 'Reminders and no-shows', text: 'Reminders on her own channel, and a follow-up if she does not come.' },
+    { icon: 'store', title: 'On the floor', text: 'Expected visits appear on the showroom’s live view.', link: { href: '/products/showroom', label: 'Showroom' } },
+  ],
+  rows: [
+    { lever: 'BOOKING', before: 'A phone call and a note in a diary.', after: 'She books a real slot herself.' },
+    { lever: 'PREPARATION', before: 'She arrives and starts from the beginning.', after: 'Her shortlist is on the counter.' },
+    { lever: 'NO-SHOWS', before: 'Forgotten by both sides.', after: 'A reminder before, a follow-up after.' },
+    { lever: 'DISTANCE', before: 'A buyer abroad waits until she visits.', after: 'A video viewing this week.' },
+  ],
+  notYet: 'Recording a video call is optional and shows a notice to everyone in the room. Jwero does not take payment for an appointment slot itself; advances are taken on a quotation or an order.',
+  faqs: [
+    { q: 'How do jewellers take appointments online?', a: 'With a booking page linked from WhatsApp, Instagram and the website that shows only the slots your team is actually free.' },
+    { q: 'How do I manage showroom appointments on a calendar?', a: 'Every appointment, in person or on video, sits on one calendar alongside Google Calendar, with the customer and her shortlist attached.' },
+    { q: 'How do I sell jewellery on a video call?', a: 'Start the call from the conversation, show the shortlisted pieces, and send a quotation she can accept on her phone.' },
+    { q: 'Does it suit bridal trials?', a: 'Yes. Trials are booked with the pieces to prepare, and each visit is kept on the family’s record.' },
+  ],
+  links: [['/products/meetings', 'Video counter and appointments'], ['/solutions/bridal', 'Bridal jewellers'], ['/products/showroom', 'Showroom'], ['/products/quotations', 'Quotations']],
+});
+
+const staff = needPage({
+  slug: 'jewellery-staff-management-software',
+  title: 'Jewellery Staff Management: Attendance, Tasks, Targets, Incentives | Jwero',
+  description: 'Staff management software for jewellery showrooms: phone and kiosk attendance, daily task lists, sales targets, incentives worked out from real bills, hiring, training and payroll, on the same record as sales.',
+  eyebrow: 'Jewellery staff management',
+  h1: 'Attendance, tasks, targets and incentives for a jewellery team.',
+  sub: 'Each person knows what to do today, sees what they earned, and the owner sees it without a register or a spreadsheet.',
+  wa: 'staff',
+  intro: ['The team, on the same record as the sales they made.', 'Incentives nobody has to argue about.'],
+  cards: [
+    { icon: 'users', title: 'Attendance', text: 'Punch in on a phone or a kiosk, with optional location and selfie checks.', link: { href: '/products/hr-payroll', label: 'HR and payroll' } },
+    { icon: 'check', title: 'Daily tasks', text: 'A list for each person: follow-ups due, counts to do, visits expected.' },
+    { icon: 'trend', title: 'Targets', text: 'Set by person and by branch, with progress visible daily.' },
+    { icon: 'coins', title: 'Incentives from real bills', text: 'Worked out from the sales each person made, then paid through payroll.' },
+    { icon: 'book', title: 'Training', text: 'Courses and assessments on hallmarking, exchange and schemes.', link: { href: '/products/training-lms', label: 'Training' } },
+    { icon: 'receipt', title: 'Payroll and karigar wages', text: 'Salaries with PF and ESI, and wages by piece, weight, hour or day.' },
+  ],
+  rows: [
+    { lever: 'ATTENDANCE', before: 'A register, copied into a sheet at month end.', after: 'Punched on a phone, straight into payroll.' },
+    { lever: 'TASKS', before: 'Told in the morning, forgotten by noon.', after: 'A list each person works through.' },
+    { lever: 'INCENTIVES', before: 'Argued at month end from memory.', after: 'Calculated from the bills.' },
+    { lever: 'HIRING', before: 'CVs in WhatsApp chats.', after: 'A pipeline from application to onboarding.' },
+  ],
+  notYet: 'Attendance is by phone or kiosk; there is no fingerprint or face-scanner hardware. Payroll produces the bank file and statutory files, which your accountant uploads and files.',
+  faqs: [
+    { q: 'How do I track staff attendance in a jewellery shop?', a: 'Staff punch in on their own phone or a kiosk in the shop. Optional location and selfie checks confirm they are on site.' },
+    { q: 'How do I calculate sales incentives in a jewellery shop?', a: 'Set the rule once and incentives are worked out from the bills each salesperson made, with no separate sheet.' },
+    { q: 'How do I assign daily tasks to jewellery staff?', a: 'Each person gets a daily list built from what is due, and managers can add tasks and see them completed.' },
+    { q: 'Does it cover karigars?', a: 'Yes. Karigar wages are settled by piece, weight, hour or day, with advances recovered.' },
+  ],
+  links: [['/products/hr-payroll', 'HR and payroll'], ['/jewellery-staff-management-software', 'Staff management'], ['/products/training-lms', 'Staff training'], ['/roles/store-manager', 'For the store manager'], ['/roles/sales-associate', 'For sales staff']],
+});
+
+const webAnalytics = needPage({
+  slug: 'jewellery-website-analytics',
+  title: 'Jewellery Website Analytics: Heatmaps, Visitor Tracking, A/B Tests | Jwero',
+  description: 'Website analytics for jewellery stores: visitor tracking, funnels, heatmaps and session recordings, A/B tests, pop-ups and lead forms, and web push, so you see why visitors leave and catch the next one.',
+  eyebrow: 'Jewellery website analytics',
+  h1: 'See why visitors leave your jewellery website.',
+  sub: 'Heatmaps, recordings, funnels and A/B tests on your own store, with lead forms and chat to catch the visitor before she goes.',
+  wa: 'web-analytics',
+  intro: ['What visitors actually do on a product page.', 'And what to change so more of them enquire.'],
+  cards: [
+    { icon: 'eye', title: 'Visitor tracking', text: 'Who came, from where, and who came back.', link: { href: '/products/optimize', label: 'Optimize' } },
+    { icon: 'layers', title: 'Heatmaps and recordings', text: 'Where they tap, how far they scroll and where they give up.' },
+    { icon: 'route', title: 'Funnels', text: 'Browse, enquire, order: see the step that loses people.' },
+    { icon: 'check', title: 'A/B tests', text: 'Try two versions and keep the one that brings more enquiries.' },
+    { icon: 'chat', title: 'Lead forms and pop-ups', text: 'An exit offer, a callback request or a custom order form, built without a developer.' },
+    { icon: 'megaphone', title: 'Pixels and tags', text: 'Meta pixel, Google Analytics and Tag Manager connect to your store.', link: { href: '/products/ads-manager', label: 'Ads Manager' } },
+  ],
+  rows: [
+    { lever: 'TRAFFIC', before: 'Visitors arrive from an ad and leave. Nobody knows why.', after: 'You watch what they did.' },
+    { lever: 'CHANGES', before: 'Redesigns based on opinion.', after: 'Two versions tested on real visitors.' },
+    { lever: 'LEADS', before: 'A visitor who does not chat is gone.', after: 'A form, a pop-up or push catches her.' },
+    { lever: 'TOOLS', before: 'Separate tools for analytics, heatmaps, pop-ups and chat.', after: 'One, on the same record as the customer.' },
+  ],
+  notYet: 'Recordings hide typed personal details, and visitors should be told about tracking in your privacy notice. Optimize measures your own website; it does not measure marketplaces or social apps.',
+  faqs: [
+    { q: 'Why do visitors leave my jewellery website?', a: 'Usually no clear price, slow pages or no quick way to ask. Heatmaps and recordings show where they stopped; a chat or a form gives them a way to ask.' },
+    { q: 'How do I A/B test my jewellery website?', a: 'Set up two versions of a page or a pop-up, split visitors between them, and compare enquiries and orders.' },
+    { q: 'How do I see who visits my jewellery website?', a: 'Visitor tracking shows sources, returning visitors and locations. A visitor becomes a named person when she enquires, logs in or opts in.' },
+    { q: 'Do I still need Google Analytics?', a: 'You can keep it; it connects. Optimize adds the recordings, heatmaps, tests and forms beside your customer records.' },
+  ],
+  links: [['/products/optimize', 'Optimize'], ['/products/storefront', 'Jewellery website builder'], ['/ads-for-jewellers', 'Ads for jewellers'], ['/products/ads-manager', 'Ads Manager']],
+});
+
 // ---------------------------------------------------------------- Hindi
 const hi = {
   slug: 'hi',
@@ -449,4 +749,4 @@ ${L.ctaBand('अपनी दुकान के डेटा पर देख�
 `,
 };
 
-module.exports = [hub, ...CITIES.map(cityPage), accounting, barcode, cloud, hi];
+module.exports = [hub, ...CITIES.map(cityPage), accounting, barcode, cloud, broadcast, instagram, adsLanding, smsLanding, footfall, aiCalling, appointments, staff, webAnalytics, hi];
