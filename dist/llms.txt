@@ -1,0 +1,245 @@
+# Jwero, The Autonomous Jewellery OS, run by AI
+
+> Jwero is the Autonomous Jewellery OS, run by AI: jewellery software that runs the whole business on one
+> record. Counter billing (POS) at the live gold rate, inventory, purchase and vendors, manufacturing and
+> karigar accounts, accounting, HR and payroll, reports, CRM (198 kinds of customer signal scored into 11
+> explainable scores), gold savings schemes, girvi, digital gold, and WhatsApp, Instagram and storefront
+> selling, with an AI workforce that acts only inside approval queues, daily caps, quiet hours and a
+> five-scope kill switch ("AI that waits for your yes").
+> Price: ₹18,000 a month, every module included. The first month is ₹3,600. Enterprise is custom priced. There is no free trial.
+
+## Where to send a reader
+- Billing: https://jwero.ai/products/billing-finance · guide https://jwero.ai/guides/jewellery-billing-software
+- ERP: https://jwero.ai/products/erp · guide https://jwero.ai/guides/jewellery-erp-software
+- Inventory: https://jwero.ai/products/inventory · guide https://jwero.ai/guides/jewellery-inventory-software
+- CRM: https://jwero.ai/products/crm · guide https://jwero.ai/guides/jewellery-crm-software
+- Manufacturing: https://jwero.ai/products/manufacturing · guide https://jwero.ai/guides/jewellery-manufacturing-software
+- Accounting: https://jwero.ai/jewellery-accounting-software
+- Barcode, tagging, RFID: https://jwero.ai/jewellery-barcode-tagging-software
+- By city (29 Indian trade cities): https://jwero.ai/jewellery-software-india
+- Compared with named alternatives: https://jwero.ai/compare
+- Pricing: https://jwero.ai/pricing · Hindi: https://jwero.ai/hi
+
+## Category
+Jwero calls this category the Autonomous Jewellery OS, an operating system for a jewellery business, run by AI agents that act on their own or ask first.
+Spelling: this site uses "jewellery" (India, UK, Gulf, Commonwealth). "Jewelry" (US) refers to the same product and the same category, Jwero is the Autonomous Jewelry OS for US readers.
+It serves single stores, multi-store chains, luxury/boutique/bridal retailers, diamond/gold/silver/
+platinum/lab-grown/gemstone retailers, wholesalers, manufacturers (gold, diamond, casting, CAD, OEM,
+export), and jewellery brands, D2C startups and franchise networks alike.
+
+## What Jwero is not (honesty)
+- Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant. Jwero does not file GST returns.
+- Counter POS (registers, shifts, cash day-close, returns, old-gold exchange), statutory payroll, karigar
+  settlement, girvi/gold loans, manufacturing (BOM, routing, wastage norms) and a video counter shipped in 2026.
+- E-invoice IRN, auto-debit mandates, a full vernacular product interface (an early Hindi pilot is live on
+  karigar screens), and predictive ML forecasting are on the public roadmap, not shipped today:
+  https://jwero.ai/roadmap
+
+## Company
+Jwero is a product of Tanika Tech Jewels Private Limited (CIN U74900MH2016PTC273631), Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road, Bhayandar (West), Thane, Maharashtra 401101.
+Contact: care@jwero.ai · WhatsApp +91 91699 59959.
+
+## Full text
+Every page's text in one file: https://jwero.ai/llms-full.txt
+
+## All pages
+- Jewellery Software: CRM, ERP, POS and WhatsApp in One: https://jwero.ai/
+- The Jewellery Business Operating System, How Jwero Works: https://jwero.ai/platform
+- Customer Memory: 198 Signals, 11 Scores, One Record: https://jwero.ai/platform/customer-memory
+- Live Gold Rate Pricing: Rate, Making Charge & Stone Rules: https://jwero.ai/platform/pricing-engine
+- AI Workforce & Governance, AI That Waits for Your Yes: https://jwero.ai/platform/ai-workforce
+- Jwero Integrations: Tally, Shopify, Meta, Razorpay, MCP: https://jwero.ai/platform/integrations
+- Tally Integration for Jewellers: Keep Your Books: https://jwero.ai/platform/integrations/tally
+- Onboarding & Support, Live in Days, Trained in Your Language: https://jwero.ai/platform/onboarding
+- Public Roadmap, Shipped, Building, Not Yet: https://jwero.ai/roadmap
+- Jewellery Software Products: CRM, ERP, POS, Billing and More: https://jwero.ai/products
+- WhatsApp API & CRM Software for Jewellers: https://jwero.ai/products/whatsapp
+- Instagram & Facebook Commerce for Jewellery Business: https://jwero.ai/products/instagram-facebook
+- AI for Jewellers: AI Chatbot, Sales Agents & Voice AI: https://jwero.ai/products/ai-sales-agents
+- Optimize, See Why Website Visitors Leave, Before They Do: https://jwero.ai/products/optimize
+- Jewellery Ecommerce Website Builder: https://jwero.ai/products/storefront
+- Jewellery Ads Manager: Meta, Google & Pinterest Campaigns: https://jwero.ai/products/ads-manager
+- Social Media Management, Schedule, Inbox, Reply: https://jwero.ai/products/social-media
+- Jewellery CRM Software: Customer & Lead Management: https://jwero.ai/products/crm
+- Jewellery Catalogue Software: Purity, Certificates, Live Prices: https://jwero.ai/products/catalog
+- Jewellery Inventory & Stock Management Software: https://jwero.ai/products/inventory
+- Jewellery Billing Software: GST Invoices at the Live Gold Rate: https://jwero.ai/products/billing-finance
+- Jewellery ERP Software: Orders, Purchase, Repairs, Job Work: https://jwero.ai/products/erp
+- Jewellery Showroom Software: Walk-in Tracking and Floor View: https://jwero.ai/products/showroom
+- Jewellery Customer Segmentation Software: RFM and Live Rules: https://jwero.ai/products/segmentation
+- Gold Savings Scheme Software for Jewellers: https://jwero.ai/products/gold-schemes
+- Digital Gold Platform for Jewellers: https://jwero.ai/products/digital-gold
+- Multi-store & Franchise Jewellery Software: https://jwero.ai/products/multi-store
+- Jewellery Loyalty Program Software: Tiers, Points, Referrals: https://jwero.ai/products/loyalty
+- Jewellery Marketing Automation: Customer Journeys With Approval: https://jwero.ai/products/journeys
+- Jewellery Marketing Software: WhatsApp, Email, SMS Campaigns: https://jwero.ai/products/campaigns
+- Repairs & After-Sales Service Software for Jewellers: https://jwero.ai/products/repairs-service
+- Jewellery Purchase & Vendor Management Software: https://jwero.ai/products/purchase-vendors
+- Jewellery HR & Payroll Software: Attendance, Karigar Wages: https://jwero.ai/products/hr-payroll
+- Jewellery POS Software: Billing, Exchange, Day-Close: https://jwero.ai/products/pos
+- Jewellery Manufacturing Software: Karigar, BOM, Wastage: https://jwero.ai/products/manufacturing
+- Girvi, Gold Loan & Pawn Broking Software for Jewellers: https://jwero.ai/products/girvi
+- Jewellery Appointment & Video Call Software: https://jwero.ai/products/meetings
+- Business Email on Your Own Domain, Inside the Same Inbox: https://jwero.ai/products/email
+- Amazon & Flipkart Orders on One Ledger, Marketplace Integration: https://jwero.ai/products/marketplaces
+- Jewellery Quotation & Estimate Software at the Live Rate: https://jwero.ai/products/quotations
+- Digital Catalogue App for Jewellers: Live Prices, Tracked Views: https://jwero.ai/products/digital-catalogues
+- Jewellery MIS Reports & Dashboard Software: https://jwero.ai/products/reports
+- Jewellery Staff Training Software (LMS): Courses, Certificates: https://jwero.ai/products/training-lms
+- Jwero in One Page, A Brief for the Owner: https://jwero.ai/brief
+- From ERP to OS: Why Jewellery Software Is Changing: https://jwero.ai/erp-to-os
+- Is Switching Jewellery ERP Risky? Risks vs Costs of Staying: https://jwero.ai/erp-to-os/switching
+- Can a Jeweller Make Do With an ERP? What It Costs: https://jwero.ai/erp-to-os/make-do
+- Jwero Pricing: Every Module, ₹18,000 a Month: https://jwero.ai/pricing
+- Diamond Trading Software: Inventory, Memo and Your Rate Grid: https://jwero.ai/solutions/diamond-traders
+- Jewellery Retail Software, Single Store to Chain: https://jwero.ai/industries/retail
+- Solutions, Jwero for Every Kind of Jewellery Business: https://jwero.ai/solutions
+- Jewellery Shop Software for a Single Store or Small Shop: https://jwero.ai/solutions/single-store
+- Multi-Store Jewellery Software for Chains: https://jwero.ai/solutions/multi-store-chains
+- Jewellery Manufacturing & Wholesale Software: Job Work, Gold Loss: https://jwero.ai/solutions/manufacturers
+- Software for Luxury & Boutique Jewellers: Clienteling: https://jwero.ai/solutions/luxury-boutique
+- Bridal Jewellery Software: Trials, Quotes, Orders: https://jwero.ai/solutions/bridal
+- Diamond Jewellery Retail Software: Certificates and Stock: https://jwero.ai/solutions/diamond-retail
+- Gold Jewellery Shop Software: Live Rate, Schemes, Exchange: https://jwero.ai/solutions/gold-retail
+- Silver Jewellery Billing Software: Weight Sales and Lots: https://jwero.ai/solutions/silver-retail
+- Lab-Grown Diamond Jewellery Software: https://jwero.ai/solutions/lab-grown-diamond
+- Gemstone Inventory & Retail Software for Jewellers: https://jwero.ai/solutions/gemstone-retail
+- Diamond Wholesale Software: Inventory, Memo, Buyer Prices: https://jwero.ai/solutions/diamond-wholesale
+- Gold Wholesale Software: Rate-Linked Orders, Party Ledgers: https://jwero.ai/solutions/gold-wholesale
+- Jewellery Wholesale & B2B Software: Catalogue App, Memo, Orders: https://jwero.ai/solutions/b2b-jewellery
+- Jewellery Casting Software: Flasks, Metal Loss, Job Work: https://jwero.ai/solutions/casting-units
+- Software for Jewellery CAD Studios: Briefs, Approvals, Handoff: https://jwero.ai/solutions/cad-services
+- OEM Jewellery Manufacturing Software: Client-Wise Job Work: https://jwero.ai/solutions/oem-manufacturers
+- Jewellery Export Software: Orders, Production, Buyer Currency: https://jwero.ai/solutions/export-houses
+- Bullion Trading Software for Dealers & Gold Traders: https://jwero.ai/solutions/bullion-gold-traders
+- Software for Jewellery Brands: Multi-Channel, Multi-Partner: https://jwero.ai/solutions/jewellery-brands
+- Software for D2C & Online Jewellery Brands: https://jwero.ai/solutions/d2c-brands
+- Jewellery Software for Startups & New Jewellers: https://jwero.ai/solutions/startups
+- Jewellery Franchise Software: Brand Control, Store Freedom: https://jwero.ai/solutions/franchise-networks
+- What's Eating Your Jewellery Business?, Every Pain, Answered: https://jwero.ai/solutions/pain
+- Dead Stock, The Silent Tax on Every Jewellery Business: https://jwero.ai/solutions/pain/dead-stock
+- Lead Leakage, Where Jewellery Enquiries Go to Die: https://jwero.ai/solutions/pain/lead-leakage
+- Trust Centre: Security, Privacy and Compliance Status: https://jwero.ai/trust
+- Security & Data Ownership, Your Data, Your Rules: https://jwero.ai/trust/security
+- Proof, Verified in the Product, Not Written by Marketing: https://jwero.ai/customers
+- WhatsApp Tools vs a Jewellery Operating System: https://jwero.ai/compare/whatsapp-tools-vs-jewellery-os
+- Migration Centre, Switch Without Fear: https://jwero.ai/migration
+- Jewellery Software Alternatives Compared: Jwero vs the Rest: https://jwero.ai/compare
+- Ornate NX Alternative for Jewellers: Jwero vs Ornate NX: https://jwero.ai/compare/jwero-vs-ornate-nx
+- Synergics Alternative for Jewellers: Jwero vs Synergics: https://jwero.ai/compare/jwero-vs-synergics
+- JewelAcc Alternative for Jewellers: Jwero vs JewelAcc: https://jwero.ai/compare/jwero-vs-jewelacc
+- Marg ERP Alternative for Jewellers: Jwero vs Marg: https://jwero.ai/compare/jwero-vs-marg
+- SIONIQ Alternative for Jewellers: Jwero vs SIONIQ: https://jwero.ai/compare/jwero-vs-sioniq
+- Zithara Alternative for Jewellers: Jwero vs Zithara: https://jwero.ai/compare/jwero-vs-zithara
+- WATI Alternative for Jewellers: Jwero vs WATI: https://jwero.ai/compare/jwero-vs-wati
+- Interakt Alternative for Jewellers: Jwero vs Interakt: https://jwero.ai/compare/jwero-vs-interakt
+- DoubleTick Alternative for Jewellers: Jwero vs DoubleTick: https://jwero.ai/compare/jwero-vs-doubletick
+- QuickSell Alternative for Jewellers: Jwero vs QuickSell: https://jwero.ai/compare/jwero-vs-quicksell
+- Shopify Alternative for Jewellers: Jwero vs Shopify: https://jwero.ai/compare/jwero-vs-shopify
+- Zoho CRM Alternative for Jewellers: Jwero vs Zoho CRM: https://jwero.ai/compare/jwero-vs-zoho-crm
+- Tools & Calculators for Jewellery Business: https://jwero.ai/tools
+- Dead Stock Calculator for Jewellers: Cost of Idle Stock: https://jwero.ai/tools/dead-stock-calculator
+- Gold Scheme Calculator, What a Digital Scheme Book Is Worth: https://jwero.ai/tools/gold-scheme-calculator
+- WhatsApp Revenue Estimator for Jewellers: https://jwero.ai/tools/whatsapp-revenue-estimator
+- Gold Loss Calculator for Jewellery Manufacturers: https://jwero.ai/tools/gold-loss-calculator
+- Frequently Asked Questions, Every Objection, Answered: https://jwero.ai/faq
+- About Jwero, Why We Build for Jewellery Business: https://jwero.ai/company
+- Contact Jwero: https://jwero.ai/contact
+- Enterprise, Multi-store, Wholesale & Manufacturing: https://jwero.ai/enterprise
+- Book a Demo, 15 Minutes, Your Numbers: https://jwero.ai/book-demo
+- Partners, ERP Dealers, Accountants & Consultants: https://jwero.ai/partners
+- The Jwero Blog, Practical Guides for Jewellery Business Owners: https://jwero.ai/blog
+- WhatsApp for Jewellers: The Complete Selling Guide: https://jwero.ai/blog/whatsapp-for-jewellers-guide
+- Dead Stock in Jewellery: How to Calculate and Clear It: https://jwero.ai/blog/dead-stock-jewellery-business-guide
+- Gold Savings Schemes for Jewellers: How to Run One: https://jwero.ai/blog/gold-savings-scheme-guide
+- Jewellery Software and Tally: What Should and Shouldn’t Move: https://jwero.ai/blog/jewellery-software-and-tally
+- Gold Loss and Wastage Control in Jewellery Manufacturing: https://jwero.ai/blog/gold-loss-wastage-control-jewellery-manufacturing
+- Jewellery Repair Management: The Custody-Chain Method: https://jwero.ai/blog/jewellery-repair-management-custody-chain
+- HUID and Hallmarking Records: The Audit-Day Checklist: https://jwero.ai/blog/huid-hallmarking-records-audit-checklist
+- Digital Catalog vs PDF: Why Shareable Checkout Links Sell More: https://jwero.ai/blog/digital-catalog-vs-pdf-jewellery
+- Jewellery CRM vs ERP: The Real Difference (And Do You Need Both?): https://jwero.ai/blog/jewellery-crm-vs-erp-difference
+- Jewellery Software Buyer’s Checklist: 15 Questions to Ask First: https://jwero.ai/blog/jewellery-software-buyer-checklist
+- Jewellery Software for Wedding Season: What to Get Right First: https://jwero.ai/blog/jewellery-software-wedding-season
+- How Much Does Jewellery Software Cost in India?: https://jwero.ai/blog/jewellery-software-cost-india
+- Best Jewellery Software in India: How to Actually Compare: https://jwero.ai/blog/best-jewellery-software-india
+- Where Does the Live Gold Rate Come From? A Jeweller’s Guide: https://jwero.ai/blog/gold-rate-api-live-pricing
+- How to Start a Jewellery Business Online: https://jwero.ai/blog/start-jewellery-business-online
+- WhatsApp Business API Pricing for Jewellers Explained: https://jwero.ai/blog/whatsapp-business-api-pricing
+- Are Gold Savings Schemes Legal in India?: https://jwero.ai/blog/are-gold-savings-schemes-legal
+- Roles, Everyone Jwero Touches in a Jewellery Business: https://jwero.ai/roles
+- Owner / Proprietor, Run the Shop From a Record You Own: https://jwero.ai/roles/owner
+- Multi-Store & Chain Owner, One System, Every Branch: https://jwero.ai/roles/chain-owner
+- Next-Gen Successor, Inherit the Relationships, Not Just the Shop: https://jwero.ai/roles/next-gen-successor
+- Store Manager, Run the Floor on Today’s Numbers: https://jwero.ai/roles/store-manager
+- Sales Associate, Walk Up Already Knowing the Customer: https://jwero.ai/roles/sales-associate
+- Billing Cashier, Price at the Live Gold Rate, No Calculator Fight: https://jwero.ai/roles/cashier
+- For CRM & Telecalling Staff: Follow-ups, Drafted: https://jwero.ai/roles/crm-executive
+- For Marketing Managers, One Campaign, One Customer Record: https://jwero.ai/roles/marketing-manager
+- For E-commerce Managers: Shopify Plus What It Lacks: https://jwero.ai/roles/ecommerce-manager
+- Jwero for Karigars & Goldsmiths, Traceable Jobs, Accounted Loss: https://jwero.ai/roles/karigar
+- Jwero for CAD/CAM Designers, Files That Don’t Die in Chat: https://jwero.ai/roles/cad-designer
+- Jwero for Production Managers, See Every Job’s Stage: https://jwero.ai/roles/production-manager
+- Jwero for Quality & Hallmarking Officers, Status, Not Paper Chase: https://jwero.ai/roles/quality-hallmarking
+- For Jewellery Accountants: Books That Reconcile: https://jwero.ai/roles/accountant
+- Inventory / Stock Manager, See What’s Dying on the Shelf: https://jwero.ai/roles/inventory-manager
+- For Purchase Managers: Reorder on Data, Not Gut Feel: https://jwero.ai/roles/purchase-manager
+- For Wholesale / B2B Managers, Every Buyer, One Thread: https://jwero.ai/roles/b2b-manager
+- For Franchise Partners, Franchisor Control, Franchisee Freedom: https://jwero.ai/roles/franchise-partner
+- Jewellery Glossary: HUID, Girvi, Karigar, Memo, Wastage: https://jwero.ai/glossary
+- Get Started, Create Your Jwero Workspace: https://jwero.ai/start
+- Why Jewellers Need an Operating System, Not Another Tool: https://jwero.ai/why-an-os
+- What Happens After You Message, The First 30 Days with Jwero: https://jwero.ai/how-it-goes
+- Jewellery Software in India: By City and By Need: https://jwero.ai/jewellery-software-india
+- Jewellery Software in Mumbai: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/mumbai
+- Jewellery Software in Surat: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/surat
+- Jewellery Software in Jaipur: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/jaipur
+- Jewellery Software in Rajkot: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/rajkot
+- Jewellery Software in Ahmedabad: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/ahmedabad
+- Jewellery Software in Delhi: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/delhi
+- Jewellery Software in Kolkata: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/kolkata
+- Jewellery Software in Hyderabad: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/hyderabad
+- Jewellery Software in Chennai: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/chennai
+- Jewellery Software in Coimbatore: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/coimbatore
+- Jewellery Software in Bangalore: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/bangalore
+- Jewellery Software in Thrissur: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/thrissur
+- Jewellery Software in Pune: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/pune
+- Jewellery Software in Kochi: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/kochi
+- Jewellery Software in Kozhikode: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/kozhikode
+- Jewellery Software in Madurai: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/madurai
+- Jewellery Software in Vijayawada: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/vijayawada
+- Jewellery Software in Lucknow: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/lucknow
+- Jewellery Software in Indore: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/indore
+- Jewellery Software in Nagpur: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/nagpur
+- Jewellery Software in Jalgaon: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/jalgaon
+- Jewellery Software in Amritsar: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/amritsar
+- Jewellery Software in Bikaner: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/bikaner
+- Jewellery Software in Varanasi: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/varanasi
+- Jewellery Software in Cuttack: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/cuttack
+- Jewellery Software in Patna: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/patna
+- Jewellery Software in Kolhapur: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/kolhapur
+- Jewellery Software in Agra: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/agra
+- Jewellery Software in Salem: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/salem
+- Jewellery Accounting Software: GST Books That Post Themselves: https://jwero.ai/jewellery-accounting-software
+- Jewellery Barcode, Tagging & RFID Software: https://jwero.ai/jewellery-barcode-tagging-software
+- Cloud Jewellery Software: Online, on Any Phone or Computer: https://jwero.ai/cloud-jewellery-software
+- WhatsApp Broadcast for Jewellers: Bulk Messages Without a Ban: https://jwero.ai/whatsapp-broadcast-for-jewellers
+- Instagram for Jewellers: DMs, Comments, Reels and Stories: https://jwero.ai/instagram-for-jewellers
+- Google Ads & Instagram Ads for Jewellers: Run, Approve, Measure: https://jwero.ai/ads-for-jewellers
+- SMS, RCS & Push Notifications for Jewellers: https://jwero.ai/sms-marketing-for-jewellers
+- Footfall Counting & Walk-in Tracking for Jewellery Showrooms: https://jwero.ai/jewellery-showroom-footfall-counting
+- AI Calling for Jewellers: Inbound Calls & Reminder Campaigns: https://jwero.ai/ai-calling-for-jewellers
+- Jewellery Appointment Booking Software: Showroom & Video Visits: https://jwero.ai/jewellery-appointment-booking-software
+- Jewellery Staff Management: Attendance, Tasks, Targets, Incentives: https://jwero.ai/jewellery-staff-management-software
+- Jewellery Website Analytics: Heatmaps, Visitor Tracking, A/B Tests: https://jwero.ai/jewellery-website-analytics
+- ज्वेलरी सॉफ्टवेयर: बिलिंग, स्टॉक, CRM और WhatsApp: https://jwero.ai/hi
+- Jewellery Software Guides: Billing, ERP, Stock, CRM: https://jwero.ai/guides
+- Jewellery Billing Software: The Complete Buyer’s Guide (2026): https://jwero.ai/guides/jewellery-billing-software
+- Jewellery ERP Software: What It Covers and How to Choose (2026): https://jwero.ai/guides/jewellery-erp-software
+- Jewellery Inventory Software: Stock Management Guide (2026): https://jwero.ai/guides/jewellery-inventory-software
+- Jewellery CRM Software: A Practical Guide for Jewellers (2026): https://jwero.ai/guides/jewellery-crm-software
+- Jewellery Manufacturing Software: A Buyer’s Guide: https://jwero.ai/guides/jewellery-manufacturing-software
+- Privacy Policy: How Jwero Handles Personal Data: https://jwero.ai/legal/privacy
+- Terms of Use: Website and Jwero Subscription: https://jwero.ai/legal/terms
+- Data Policy: Ownership, Processing, Retention and Export: https://jwero.ai/legal/data-policy
+- Sub-processors: Who Helps Jwero Process Your Data: https://jwero.ai/legal/sub-processors
+- DPDP Statement: Jwero and India’s Data Protection Act: https://jwero.ai/legal/dpdp

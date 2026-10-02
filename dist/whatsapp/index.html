@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opening WhatsApp… | Jwero</title>
+<meta name="robots" content="noindex,nofollow">
+<style>body{font-family:-apple-system,Inter,sans-serif;background:#0013b7;color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px}a{color:#fff}</style>
+</head>
+<body>
+<div>
+  <p>Opening WhatsApp…</p>
+  <p><a id="wa-fallback" href="https://wa.me/919169959959">Tap here if it doesn't open automatically</a></p>
+</div>
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  var ref = params.get('ref') || 'whatsapp-redirect/qr';
+  var msg = params.get('msg') || 'Hi Jwero, I scanned your code and would like to see a quick demo.';
+  var url = 'https://wa.me/919169959959?text=' + encodeURIComponent(msg + ' [ref:' + ref + ']');
+  document.getElementById('wa-fallback').href = url;
+  location.replace(url);
+})();
+</script>
+</body>
+</html>
