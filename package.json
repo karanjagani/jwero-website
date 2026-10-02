@@ -4,6 +4,7 @@
   "type": "commonjs",
   "scripts": {
     "build": "node build.js",
-    "dev": "node build.js --serve"
+    "dev": "node build.js --serve",
+    "pages": "node build.js && node scripts/publish-root.js"
   }
 }

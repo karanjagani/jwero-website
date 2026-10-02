@@ -9,7 +9,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/assets/fonts/inter-var.woff2') format('woff2-variations'), url('/assets/fonts/inter-var.woff2') format('woff2');
+  src: url('fonts/inter-var.woff2') format('woff2-variations'), url('fonts/inter-var.woff2') format('woff2');
 }
 
 :root {
@@ -1573,7 +1573,7 @@ dialog.search[open] { animation: bounce-in .18s var(--ease); }
 .tempo-to { color: var(--brand); font-weight: 560; letter-spacing: -.01em; }
 .tempo-track { position: relative; height: 4px; border-radius: 999px; background: repeating-linear-gradient(90deg, var(--line-2) 0 4px, transparent 4px 9px); }
 .tempo-track i { position: absolute; inset: 0; border-radius: 999px; background: linear-gradient(90deg, color-mix(in srgb, var(--brand) 30%, transparent), var(--brand)); transform: scaleX(0); transform-origin: left; transition: transform 1.2s var(--ease) 1s; }
-.tempo-track i::after { content: ''; position: absolute; right: -14px; top: -19px; width: 30px; height: 42px; background: url('/assets/jwero-mark.png') center / contain no-repeat; transform: rotate(59.5deg); filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .18)); }
+.tempo-track i::after { content: ''; position: absolute; right: -14px; top: -19px; width: 30px; height: 42px; background: url('jwero-mark.png') center / contain no-repeat; transform: rotate(59.5deg); filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .18)); }
 .js [data-shift].is-in .tempo-track i, .motion-failsafe .tempo-track i { transform: none; }
 @media (max-width: 980px) {
   .shift-lanes { grid-template-columns: minmax(0, 1fr); }

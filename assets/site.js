@@ -2,6 +2,14 @@
 (function () {
   'use strict';
 
+  // --- BASE PATH ---
+  // On a sub-path host (GitHub Pages project site) the pages carry
+  // <html data-base="/repo">. On jwero.ai it is empty and all of this is a no-op.
+  var BASE = document.documentElement.getAttribute('data-base') || '';
+  function unbase(p) { return BASE && p.indexOf(BASE) === 0 ? (p.slice(BASE.length) || '/') : p; }
+  function based(p) { return BASE && p.charAt(0) === '/' && p.charAt(1) !== '/' && p.indexOf(BASE + '/') !== 0 && p !== BASE ? BASE + p : p; }
+  var HERE = unbase(location.pathname);
+
   // --- CONFIG ---
   var WA_NUMBER = '919169959959'; // WhatsApp Business number, digits only
   var WA_MESSAGES = {
@@ -150,7 +158,7 @@
   function waLink(ctx, extra) {
     var who = PERSONA_NAMES[personaKey()];
     var msg = (WA_MESSAGES[ctx] || WA_MESSAGES.default) + (extra || '') + (who && ctx !== 'announce' ? ' (I am ' + who + '.)' : '');
-    var page = location.pathname.replace(/\W+/g, '-').replace(/^-|-$/g, '') || 'home';
+    var page = HERE.replace(/\W+/g, '-').replace(/^-|-$/g, '') || 'home';
     return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg + ' [ref:' + page + '/' + ctx + ']');
   }
 
@@ -178,7 +186,7 @@
       (function poll() { var j = widget(); if (j) return cb(j); if (Date.now() - t0 > ms) return cb(null); window.setTimeout(poll, 150); })();
     }
     function shadow() { var host = document.getElementById('jwero-optimize-root'); return host ? (host.shadowRoot || host) : null; }
-    function note(j, mode) { try { j.track('website_cta', { mode: mode, context: state.ctx, page: location.pathname, persona: personaKey() }); } catch (e) {} }
+    function note(j, mode) { try { j.track('website_cta', { mode: mode, context: state.ctx, page: HERE, persona: personaKey() }); } catch (e) {} }
     // Put the page's question in the widget's box so the visitor only has to press send.
     function prefill() {
       if (!state.msg) return;
@@ -197,8 +205,8 @@
     function fallback(mode) {
       close();
       if (mode === 'chat') { window.open(state.wa || waLink('default'), '_blank', 'noopener'); return; }
-      if (mode === 'voice') { location.href = deskOpen() ? TEL : '/book-demo#callback'; return; }
-      location.href = '/book-demo#schedule';
+      if (mode === 'voice') { location.href = deskOpen() ? TEL : BASE + '/book-demo#callback'; return; }
+      location.href = BASE + '/book-demo#schedule';
     }
     function go(mode) {
       if (!WEBCHAT_ON) return fallback(mode);
@@ -243,7 +251,7 @@
       if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
       var a = e.target.closest('a');
       if (!a || a.hasAttribute('data-direct') || a.hasAttribute('data-share') || a.closest('dialog.connect')) return;
-      var href = a.getAttribute('href') || '', mode = a.getAttribute('data-connect');
+      var href = unbase(a.getAttribute('href') || ''), mode = a.getAttribute('data-connect');
       var isWa = a.hasAttribute('data-wa') || href.indexOf('https://wa.me/' + WA_NUMBER) === 0;
       var isDemo = /^\/book-demo\/?$/.test(href), isTel = href.indexOf('tel:') === 0;
       if (!isWa && !isDemo && !isTel && mode === null) return;
@@ -1288,7 +1296,7 @@
     var index = null, loading = null;
     function load() {
       if (index) return Promise.resolve(index);
-      if (!loading) loading = fetch('/search-index.json').then(function (r) { return r.json(); }).then(function (d) { index = d; return d; });
+      if (!loading) loading = fetch(BASE + '/search-index.json').then(function (r) { return r.json(); }).then(function (d) { index = d; return d; });
       return loading;
     }
     function score(item, terms) {
@@ -1314,7 +1322,7 @@
     }
     if (dlg) {
       var input = dlg.querySelector('input'), results = dlg.querySelector('.search-results');
-      function open() { if (typeof dlg.showModal !== 'function') { location.href = '/search'; return; } load(); dlg.showModal(); input.value = ''; results.innerHTML = ''; input.focus(); }
+      function open() { if (typeof dlg.showModal !== 'function') { location.href = BASE + '/search'; return; } load(); dlg.showModal(); input.value = ''; results.innerHTML = ''; input.focus(); }
       Array.prototype.forEach.call(document.querySelectorAll('.search-open'), function (b) { b.addEventListener('click', open); });
       dlg.querySelector('.search-close').addEventListener('click', function () { dlg.close(); });
       dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
@@ -1331,7 +1339,7 @@
           var next = (cur + (e.key === 'ArrowDown' ? 1 : -1) + opts.length) % opts.length;
           Array.prototype.forEach.call(opts, function (o, i) { o.setAttribute('aria-selected', i === next ? 'true' : 'false'); });
           opts[next].scrollIntoView({ block: 'nearest' });
-        } else if (e.key === 'Enter' && cur >= 0) { e.preventDefault(); location.href = opts[cur].getAttribute('href'); }
+        } else if (e.key === 'Enter' && cur >= 0) { e.preventDefault(); location.href = based(opts[cur].getAttribute('href')); }
       });
     }
     if (pageBox) {
@@ -1361,7 +1369,7 @@
     chip.addEventListener('click', function () {
       var q = chip.textContent.trim().toLowerCase().replace(/\s+/g, ' ');
       var hit = Array.prototype.find.call(document.querySelectorAll('.faq-item'), function (d) { return d.querySelector('summary').textContent.trim().toLowerCase().replace(/\s+/g, ' ') === q; });
-      if (!hit) { location.href = '/faq'; return; }
+      if (!hit) { location.href = BASE + '/faq'; return; }
       Array.prototype.forEach.call(document.querySelectorAll('.faq-item.is-hit'), function (d) { d.classList.remove('is-hit'); });
       hit.open = true; hit.classList.add('is-hit');
       hit.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
@@ -1524,7 +1532,7 @@
       d2c: { label: 'a brand', sol: '/solutions/d2c-brands', sim: '/platform/customer-memory#try-memory', simLabel: 'Try customer memory', prod: '/products/instagram-facebook' },
       franchise: { label: 'a franchise network', sol: '/solutions/franchise-networks', sim: '/platform/ai-workforce#try-approve', simLabel: 'Try the approval queue', prod: '/products/multi-store' },
     };
-    var slug = location.pathname.replace(/^\/|\/$/g, '');
+    var slug = HERE.replace(/^\/|\/$/g, '');
     var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
     // learn
     var q = /[?&]p=(single|chain|maker|b2b|d2c|franchise|trader|staff)/.exec(location.search);
@@ -1532,8 +1540,8 @@
     else if (SOL[slug] && !store.get('jwero-persona')) store.set('jwero-persona', SOL[slug]);
     var seen = []; try { seen = JSON.parse(store.get('jwero-seen') || '[]'); } catch (e) {}
     var title = (document.querySelector('h1') || {}).textContent || document.title;
-    seen = seen.filter(function (x) { return x.u !== location.pathname; });
-    seen.unshift({ u: location.pathname, t: title.trim().slice(0, 60), at: Date.now() });
+    seen = seen.filter(function (x) { return x.u !== HERE; });
+    seen.unshift({ u: HERE, t: title.trim().slice(0, 60), at: Date.now() });
     store.set('jwero-seen', JSON.stringify(seen.slice(0, 8)));
     var visits = Number(store.get('jwero-visits') || 0);
     if (!sessionStorage.getItem('jwero-session')) { visits += 1; store.set('jwero-visits', String(visits)); try { sessionStorage.setItem('jwero-session', '1'); } catch (e) {} }
@@ -1619,7 +1627,7 @@
 
   // Pricing page: one gentle line after 45 seconds of stillness, once per session.
   (function () {
-    if (location.pathname !== '/pricing' && location.pathname !== '/pricing/') return;
+    if (HERE !== '/pricing' && HERE !== '/pricing/') return;
     try { if (sessionStorage.getItem('jwero-nudged')) return; } catch (e) {}
     var timer = null, shown = false;
     function arm() { if (shown) return; if (timer) window.clearTimeout(timer); timer = window.setTimeout(show, 45000); }
@@ -2132,4 +2140,10 @@
     form.querySelector('button[type=submit]').disabled = true;
     window.location.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg + ' [ref:book-demo/form]');
   });
+
+  // Links written by script carry root paths. On a sub-path host, send them to the right place.
+  if (BASE) {
+    var fix = function (e) { var a = e.target.closest && e.target.closest('a[href^="/"]'); if (a) { var h = a.getAttribute('href'), b = based(h); if (b !== h) a.setAttribute('href', b); } };
+    document.addEventListener('mouseover', fix, true); document.addEventListener('focusin', fix, true); document.addEventListener('touchstart', fix, { capture: true, passive: true }); document.addEventListener('mousedown', fix, true);
+  }
 })();
