@@ -1,4 +1,4 @@
-# Jwero, The Autonomous Jewellery OS, run by AI
+# Jwero, You focus on jewellery. We handle the chaos
 
 > Jwero is the Autonomous Jewellery OS, run by AI: jewellery software that runs the whole business on one
 > record. Counter billing (POS) at the live gold rate, inventory, purchase and vendors, manufacturing and
@@ -43,7 +43,7 @@ Contact: care@jwero.ai · WhatsApp +91 91699 59959.
 Every page's text in one file: https://jwero.ai/llms-full.txt
 
 ## All pages
-- Jewellery Software: CRM, ERP, POS and WhatsApp in One: https://jwero.ai/
+- Jewellery Software: CRM, ERP, POS and WhatsApp in One: https://jwero.ai/jwero-os
 - The Jewellery Business Operating System, How Jwero Works: https://jwero.ai/platform
 - Customer Memory: 198 Signals, 11 Scores, One Record: https://jwero.ai/platform/customer-memory
 - Live Gold Rate Pricing: Rate, Making Charge & Stone Rules: https://jwero.ai/platform/pricing-engine
@@ -243,3 +243,11 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Data Policy: Ownership, Processing, Retention and Export: https://jwero.ai/legal/data-policy
 - Sub-processors: Who Helps Jwero Process Your Data: https://jwero.ai/legal/sub-processors
 - DPDP Statement: Jwero and India’s Data Protection Act: https://jwero.ai/legal/dpdp
+- Jwero: You Focus on Jewellery. We Handle the Chaos.: https://jwero.ai/
+- Why Jwero: You Shouldn’t Have to Be an Expert in Everything: https://jwero.ai/why-jwero
+- How Jwero Works: From Your Goal to Getting It Done: https://jwero.ai/how-it-works
+- AI + Experts: AI Scale With Human Expertise for Jewellers: https://jwero.ai/ai-and-experts
+- What Jwero Handles: Acquisition, Sales, Commerce, Operations: https://jwero.ai/what-we-handle
+- Self Managed: Run It Yourself With Jwero’s Tools, AI and Automation: https://jwero.ai/self-managed
+- Managed Services: Jwero Runs It With You, or for You: https://jwero.ai/managed-services
+- Success Stories: Chaos, Jwero, Outcome: https://jwero.ai/success-stories

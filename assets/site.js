@@ -14,6 +14,10 @@
   var WA_NUMBER = '919169959959'; // WhatsApp Business number, digits only
   var WA_MESSAGES = {
     default: 'Hi Jwero, I would like to see a quick demo.',
+    handle: 'Hi Jwero, I would like you to handle things for my jewellery business. Here is where I am:',
+    'with-you': 'Hi Jwero, I have a team and want your specialists to work with us.',
+    outcome: 'Hi Jwero, this is what I want to improve:',
+    assessment: 'Hi Jwero, I took the business assessment and would like to talk to a business specialist.',
     announce: 'Hi Jwero, saw the site, show me the live WhatsApp demo.',
     header: 'Hi Jwero, I would like to see a quick demo.',
     sticky: 'Hi Jwero, I would like to see a quick demo.',
@@ -258,7 +262,7 @@
       e.preventDefault();
       var msg = '';
       if (href.indexOf('https://wa.me/') === 0) { try { msg = decodeURIComponent((href.split('text=')[1] || '')).replace(/\s*\[ref:[^\]]*\]\s*$/, ''); } catch (x) {} }
-      open({ mode: mode || (isDemo ? 'video' : isTel ? 'voice' : ''), direct: isDemo, wa: isWa && href.indexOf('https://') === 0 ? href : '', ctx: a.getAttribute('data-wa') || (isDemo ? 'book-demo' : isTel ? 'call' : ''), msg: isWa ? msg : '' });
+      open({ mode: mode || (isDemo ? 'video' : isTel ? 'voice' : ''), direct: isDemo, wa: a.getAttribute('data-wa-extra') ? waLink(a.getAttribute('data-wa') || 'default', a.getAttribute('data-wa-extra')) : isWa && href.indexOf('https://') === 0 ? href : '', ctx: a.getAttribute('data-wa') || (isDemo ? 'book-demo' : isTel ? 'call' : ''), msg: isWa ? msg : '' });
     });
     return { open: open };
   })();
@@ -1582,11 +1586,6 @@
       var base = own ? '' : icp.sol;
       var tryHref = signed ? 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=pipe' : icp.door === 'demo' ? '/book-demo' : TRIAL + 'pipe';
       var tryLabel = signed ? 'Open my workspace' : icp.door === 'demo' ? 'Video demo' : 'Start';
-      // Phone bar: see it · price · try, for this kind of business.
-      var sb = document.querySelector('.sticky-bar');
-      if (sb && persona !== 'staff') {
-        sb.innerHTML = '<a href="' + base + '#try-' + icp.sim + '">See it</a><a href="' + base + '#price">Price</a><a class="sb-demo" href="' + tryHref + '"' + (icp.door === 'demo' || signed ? '' : ' rel="noopener" data-trial') + '>' + tryLabel + '</a>';
-      }
     }
     // A shared link opens already set to the sender's kind of business.
     Array.prototype.forEach.call(document.querySelectorAll('[data-share][data-share-p]'), function (a) {
@@ -2146,4 +2145,88 @@
     var fix = function (e) { var a = e.target.closest && e.target.closest('a[href^="/"]'); if (a) { var h = a.getAttribute('href'), b = based(h); if (b !== h) a.setAttribute('href', b); } };
     document.addEventListener('mouseover', fix, true); document.addEventListener('focusin', fix, true); document.addEventListener('touchstart', fix, { capture: true, passive: true }); document.addEventListener('mousedown', fix, true);
   }
+
+  // ===== positioning: you focus on jewellery, we handle the chaos =====
+  // What Jwero can take off your plate: tap the areas, the count and the message follow.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-pz-plate]'), function (root) {
+    var cells = Array.prototype.slice.call(root.querySelectorAll('.pz-plate-cell')), wrap = root.parentNode;
+    var out = wrap.querySelector('[data-pz-plate-out]'), cta = wrap.querySelector('[data-pz-plate-cta]');
+    function update() {
+      var on = cells.filter(function (c) { return c.getAttribute('aria-pressed') === 'true'; }).map(function (c) { return c.getAttribute('data-area'); });
+      out.innerHTML = !on.length ? '<b>You choose how much you want us to handle.</b>' : on.length === cells.length ? '<b>Everything around the jewellery.</b> You focus on jewellery. Jwero handles the rest.' : '<b>' + on.length + ' of ' + cells.length + ' handed to Jwero:</b> ' + on.join(', ').toLowerCase() + '.';
+      if (cta) { cta.setAttribute('data-wa-extra', on.length ? ' I would like Jwero to handle: ' + on.join(', ') + '.' : ''); }
+    }
+    root.addEventListener('click', function (e) { var c = e.target.closest('.pz-plate-cell'); if (!c) return; c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); update(); });
+  });
+  // Outcome first: pick what to improve, see what Jwero would do.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-pz-out]'), function (root) {
+    var data; try { data = JSON.parse(root.querySelector('script').textContent); } catch (e) { return; }
+    var btns = Array.prototype.slice.call(root.querySelectorAll('.pz-out-btns button'));
+    function q(s) { return root.querySelector(s); }
+    function show(i) {
+      var d = data[i];
+      btns.forEach(function (b, k) { b.setAttribute('aria-pressed', String(k === i)); });
+      q('[data-pz-out-t]').textContent = d.t; q('[data-pz-out-line]').textContent = d.line;
+      q('[data-pz-out-does]').innerHTML = d.does.map(function (x) { return '<li>' + x + '</li>'; }).join('');
+      q('[data-pz-out-who]').textContent = d.who.join(', '); q('[data-pz-out-lv]').textContent = d.lv;
+      q('[data-pz-out-caps]').innerHTML = d.caps.map(function (c) { return '<a href="' + based(c[1]) + '">' + c[0] + '</a>'; }).join(' · ');
+      q('[data-pz-out-cta]').setAttribute('data-wa-extra', ' ' + d.t + '.');
+      var card = q('.pz-out-card'); card.classList.remove('is-in'); void card.offsetWidth; card.classList.add('is-in');
+    }
+    root.addEventListener('click', function (e) { var b = e.target.closest('.pz-out-btns button'); if (b) show(+b.getAttribute('data-i')); });
+    show(0);
+  });
+  // The business assessment: four steps, then a plan built from the answers.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-pz-assess]'), function (root) {
+    var steps = Array.prototype.slice.call(root.querySelectorAll('.pz-step')), dots = Array.prototype.slice.call(root.querySelectorAll('.pz-steps li'));
+    var next = root.querySelector('[data-pz-next]'), back = root.querySelector('[data-pz-back]'), at = 0;
+    function val(n) { var el = root.querySelector('[data-pz-f="' + n + '"]'); return el ? el.value : ''; }
+    function picks(n) { return Array.prototype.filter.call(root.querySelectorAll('[data-pz-c="' + n + '"]'), function (c) { return c.checked; }).map(function (c) { return c.value; }); }
+    function has(list, word) { return list.some(function (x) { return x.indexOf(word) !== -1; }); }
+    function block(title, items) { return items.length ? '<div class="pz-plan-b"><p>' + title + '</p><ul>' + items.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div>' : ''; }
+    function plan() {
+      var ch = picks('channels'), st = picks('stack'), cs = picks('challenges'), keep = picks('keep'), hand = picks('hand');
+      var all = has(hand, 'Everything'), handed = hand.filter(function (x) { return x.indexOf('Everything') === -1; });
+      var level = all || handed.length >= 4 ? 'We run it for you' : handed.length ? 'We run it with you' : 'You run it';
+      var gaps = [], opp = [], caps = [], agents = [], who = [], auto = [];
+      if (!has(ch, 'Website')) gaps.push('No way for a customer to browse or buy online');
+      if (!has(ch, 'WhatsApp')) gaps.push('WhatsApp is not yet a working sales channel');
+      if (!has(ch, 'Instagram')) gaps.push('No presence where jewellery is discovered');
+      if (!has(st, 'CRM')) gaps.push('Customers live in phones and registers, not on a record the business owns');
+      if (has(st, 'Excel') || has(st, 'Several')) gaps.push('The same information is kept in more than one place');
+      if (val('marketing').indexOf('Nobody') === 0) gaps.push('Nobody owns marketing');
+      if (val('engagement').indexOf('Whoever') === 0) gaps.push('Enquiries depend on who happens to be free');
+      if (has(cs, 'new customers')) { opp.push('More enquiries from search, ads and social'); caps.push('Ads and search'); who.push('Performance marketing expert', 'SEO, AEO and GEO expert'); }
+      if (has(cs, 'Enquiries not')) { opp.push('Every enquiry answered within minutes, day or night'); caps.push('WhatsApp and one shared inbox'); agents.push('Enquiry desk agent', 'Night shift agent'); who.push('Customer engagement specialist'); auto.push('First replies and follow-ups'); }
+      if (has(cs, 'Old customers')) { opp.push('Customers you already earned, coming back'); caps.push('Customer memory and journeys'); agents.push('Follow-up agent', 'Occasion agent'); who.push('CRM specialist'); auto.push('Occasion, scheme and reactivation outreach'); }
+      if (has(cs, 'Online sales')) { opp.push('An online store and catalogue that sell at the live rate'); caps.push('Online store and catalogues'); who.push('Ecommerce specialist', 'Content and creative specialist'); }
+      if (has(cs, 'manual work')) { opp.push('Hours a week given back to the team'); caps.push('One system for counter, stock and books'); auto.push('Billing to books, stock updates, reminders'); who.push('Automation specialist'); }
+      if (has(cs, 'Too many tools')) { opp.push('One partner in place of many vendors'); caps.push('The Jwero operating system'); who.push('Technology specialist'); }
+      if (has(cs, 'stretched')) { opp.push('Growth without adding headcount'); agents.push('Voice caller for reminders'); who.push('Jewellery growth strategist'); }
+      if (has(cs, 'No clear numbers')) { opp.push('A plain weekly account of what changed and why'); caps.push('Reports and customer intelligence'); who.push('Data and analytics expert'); }
+      if (!opp.length) { opp.push('A clear picture of where the business stands'); caps.push('The Jwero operating system'); who.push('Jewellery growth strategist'); }
+      function uniq(a) { return a.filter(function (x, i) { return a.indexOf(x) === i; }); }
+      var first = opp[0], second = opp[1] || 'The next priority from your list', third = opp[2] || 'Review the results and decide what Jwero takes on next';
+      root.querySelector('[data-pz-plan-title]').textContent = 'Recommended: ' + level + '.';
+      root.querySelector('[data-pz-plan]').innerHTML =
+        block('Current gaps', gaps.slice(0, 5).length ? gaps.slice(0, 5) : ['Nothing obvious from these answers; a specialist will look closer']) +
+        block('Opportunities', opp.slice(0, 5)) + block('Recommended capabilities', uniq(caps)) +
+        block('Recommended AI agents', uniq(agents).length ? uniq(agents) : ['Enquiry desk agent']) + block('Recommended specialists', uniq(who).slice(0, 6)) +
+        block('Processes to automate', auto.length ? auto : ['Routine replies and reminders']) +
+        block('Functions for Jwero to handle', all ? ['Everything Jwero can, function by function'] : handed.length ? handed : ['None yet. You run it; hand something over when you choose']) +
+        block('You keep in-house', keep.length ? keep : ['Jewellery, design, sourcing, customers and business decisions']) +
+        block('Your first 90 days', ['Days 1 to 30: set up, bring your data in, ' + first.charAt(0).toLowerCase() + first.slice(1), 'Days 31 to 60: ' + second.charAt(0).toLowerCase() + second.slice(1), 'Days 61 to 90: ' + third.charAt(0).toLowerCase() + third.slice(1)]);
+      root.querySelector('[data-pz-plan-cta]').setAttribute('data-wa-extra', ' ' + val('type') + ', ' + val('stores') + ' location(s), team ' + val('team') + '. Challenges: ' + (cs.join('; ') || 'not chosen') + '. Hand to Jwero: ' + (hand.join('; ') || 'nothing yet') + '. Suggested: ' + level + '.');
+    }
+    function go(n) {
+      at = Math.max(0, Math.min(steps.length - 1, n));
+      steps.forEach(function (s, i) { s.classList.toggle('is-on', i === at); });
+      dots.forEach(function (d, i) { d.classList.toggle('is-on', i === at); d.classList.toggle('is-done', i < at); });
+      back.hidden = at === 0; next.hidden = at === steps.length - 1;
+      next.textContent = at === steps.length - 2 ? 'Show my plan' : 'Next';
+      if (at === steps.length - 1) plan();
+    }
+    next.addEventListener('click', function () { go(at + 1); root.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
+    back.addEventListener('click', function () { go(at - 1); });
+  });
 })();

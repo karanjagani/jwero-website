@@ -12,14 +12,14 @@ const ROOT = __dirname;
 const DIST = path.join(ROOT, 'dist');
 const SITE = 'https://jwero.ai';
 const BRAND = 'Jwero';
-const TAGLINE = 'The Autonomous Jewellery OS, run by AI';
+const TAGLINE = 'You focus on jewellery. We handle the chaos';
 // Jwero's own website chat widget (the product's webchat, dogfooded here).
 // It loads from the product origin with this site's key and gives the page
 // window.jwero.chat.open(). Until a key is set the connect panel falls back to
 // WhatsApp / phone / the demo form, so no button is ever a dead end.
 // Set JWERO_SITE_KEY in the build environment, or paste the key below.
 const WEBCHAT = { origin: process.env.JWERO_WEBCHAT_ORIGIN || 'https://os.jwero.ai', siteKey: process.env.JWERO_SITE_KEY || '' };
-const SIGNATURE = 'Jwero runs your whole jewellery business on one record, from the first enquiry to the closed books.';
+const SIGNATURE = 'Markets change. Customers change. Technology changes. Your business shouldn’t have to chase every change.';
 const ORG_DESCRIPTION =
   'Jwero is the Autonomous Jewellery OS, run by AI: customers, catalogue, stock, counter billing, purchase, manufacturing, accounts and team on one record, with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and governed AI staff, in one place.';
 
@@ -41,7 +41,7 @@ const CONTENT_FILES = [
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
   'roles-leadership', 'roles-frontline', 'roles-growth', 'roles-manufacturing',
-  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal',
+  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal', 'positioning',
 ];
 const pages = [];
 for (const f of CONTENT_FILES) {
@@ -210,6 +210,19 @@ const NAV = [
 
 const { icon, LINK_ICONS, heroSchematic, PERSONAS, personaSwitch, mark } = require('./lib');
 
+// Primary navigation for the positioning "You focus on jewellery. We handle the
+// chaos." Products, solutions and the rest are capabilities underneath: they
+// stay in the footer, in search and on their own pages, not in the top bar.
+const TOP_NAV = [
+  { label: 'Why Jwero', href: '/why-jwero', match: ['why-jwero'] },
+  { label: 'How it works', href: '/how-it-works', match: ['how-it-works'] },
+  { label: 'AI + experts', href: '/ai-and-experts', match: ['ai-and-experts'] },
+  { label: 'What we handle', href: '/what-we-handle', match: ['what-we-handle'] },
+  { label: 'Self managed', href: '/self-managed', match: ['self-managed', 'jwero-os', 'products', 'platform', 'solutions', 'pricing'] },
+  { label: 'Managed services', href: '/managed-services', match: ['managed-services'] },
+  { label: 'Success stories', href: '/success-stories', match: ['success-stories', 'customers'] },
+];
+
 function navHTML(page) {
   const top = (page && page.slug ? page.slug : '').split('/')[0];
   const link = ([h, l, d]) => `<a href="${h}"><strong>${l}</strong>${d ? `<span>${d}</span>` : ''}</a>`;
@@ -235,22 +248,18 @@ function navHTML(page) {
     <a class="logo" href="/" aria-label="Jwero home">${mark()}<span class="logo-word">Jwero</span></a>
     <button type="button" class="icp-chip" data-icp-open aria-haspopup="dialog"><span data-icp-label>I run a…</span>${icon('updown')}</button>
     <nav class="main-nav" aria-label="Main">
-      ${NAV.map(dd).join('')}
+      ${TOP_NAV.map(dd).join('')}
       <div class="nav-cta">
-        <a class="btn btn-primary" href="#" data-wa="header">Chat or call with us</a>
-        <a class="btn btn-ghost" href="/book-demo">Book a demo</a>
-        <a class="btn btn-ghost" href="${L3.TRIAL_URL}header" rel="noopener" data-trial data-start-cta>Get started</a>
+        <a class="btn btn-primary" href="#" data-wa="handle">Let Jwero handle it</a>
         <a class="nav-login" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
       </div>
     </nav>
     <div class="header-cta">
-      <a class="btn btn-ghost btn-sm" href="#" data-wa="header">Chat or call</a>
-      <a class="btn btn-ghost btn-sm" href="/book-demo">Book a demo</a>
-      <a class="btn btn-primary btn-sm header-start" href="${L3.TRIAL_URL}header" rel="noopener" data-trial data-start-cta>Get started</a>
+      <a class="btn btn-primary btn-sm header-start" href="#" data-wa="handle">Let Jwero handle it</a>
       <a class="nav-login nav-login-sm" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
       <button class="search-open icon-btn" type="button" aria-label="Search the site" aria-keyshortcuts="Meta+K Control+K">${icon('search')}</button>
       <button class="theme-toggle icon-btn" type="button" aria-label="Toggle dark mode">${icon('moon')}</button>
-      <a class="btn btn-primary btn-sm header-float" href="#" data-wa="header">Chat or call with us</a>
+      <a class="btn btn-primary btn-sm header-float" href="#" data-wa="handle">Let Jwero handle it</a>
       <button class="nav-burger icon-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
@@ -267,7 +276,7 @@ function footerHTML() {
       <div class="f-brand">
         <p class="logo">${mark()}<span class="logo-word">Jwero</span></p>
         <p class="f-tag">${SIGNATURE}<br>${TAGLINE}.</p>
-        <p class="f-enemy">“Your software keeps accounts.<br>It doesn’t remember customers.”</p>
+        <p class="f-enemy">“You shouldn’t have to become an expert in everything to remain an expert in jewellery.”</p>
         <p class="f-made">Made with <span aria-hidden="true">❤</span><span class="sr-only">love</span> for Jewellers</p>
       </div>
       <div class="f-grid">
@@ -275,6 +284,7 @@ function footerHTML() {
       ${col('Solutions', [['/roles','Roles — who uses Jwero'],['/solutions','All 23 solutions'],['/industries/retail','Retail'],['/solutions/single-store','Single store'],['/solutions/multi-store-chains','Multi-store & chains'],['/solutions/luxury-boutique','Luxury & boutique'],['/solutions/bridal','Bridal & wedding'],['/solutions/manufacturers','Manufacturers'],['/solutions/b2b-jewellery','Wholesale & B2B'],['/solutions/d2c-brands','D2C brands'],['/solutions/franchise-networks','Franchise networks'],['/solutions/pain/dead-stock','Dead stock'],['/solutions/pain/lead-leakage','Lead leakage']])}
       ${col('Resources', [['/faq','FAQ — every objection'],['/guides','Buyer’s guides'],['/blog','Blog'],['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/tools/whatsapp-revenue-estimator','WhatsApp Revenue Estimator'],['/tools/gold-loss-calculator','Gold-Loss Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/partners','Partners'],['/customers','Customer proof']])}
       <div class="f-stack">
+      ${col('Jwero', [['/why-jwero','Why Jwero'],['/how-it-works','How it works'],['/ai-and-experts','AI + experts'],['/what-we-handle','What we handle'],['/self-managed','Self managed'],['/managed-services','Managed services'],['/success-stories','Success stories'],['/jwero-os','The operating system']])}
       ${col('Company', [['/company','About'],['/jewellery-software-india','Jewellery software by city'],['/hi','हिंदी'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
       ${col('Trust', [['/trust','Trust Centre'],['/trust/security','Security'],['/legal/privacy','Privacy Policy'],['/legal/terms','Terms of Use'],['/legal/data-policy','Data Policy'],['/legal/sub-processors','Sub-processors'],['/legal/dpdp','DPDP statement'],['/roadmap','Roadmap']])}
       </div>
@@ -292,7 +302,7 @@ function footerHTML() {
 <div class="sticky-bar" role="navigation" aria-label="Quick actions">
   <a class="sb-wa" href="#" data-wa="sticky" data-connect="chat">Chat</a>
   <a href="#" data-wa="sticky" data-connect="voice">Call</a>
-  <a class="sb-demo" href="${L3.TRIAL_URL}mobile-bar" rel="noopener" data-trial data-sb-try>Start</a>
+  <a class="sb-demo" href="#" data-wa="handle">Handle it for me</a>
 </div>
 <button class="to-top" type="button" aria-label="Back to top">${mark()}</button>`;
 }
@@ -435,7 +445,7 @@ function productMeta(href) {
 // Under the hero: the three questions this reader is most likely carrying,
 // as tappable chips that open the matching answer further down the page.
 function withAsking(body, page) {
-  if (page.slug === 'index' || page.slug === 'faq') return body;
+  if (page.slug === 'index' || page.slug === 'jwero-os' || page.slug === 'faq') return body;
   // Only questions answered on this page, so a tap never leaves it.
   const qs = [...body.matchAll(/<summary>([\s\S]*?)<\/summary>/g)].map((m) => m[1].replace(/<[^>]+>/g, '').trim()).filter((q) => q.length > 12 && q.length < 110).slice(0, 4);
   if (qs.length < 3) return body;
@@ -453,7 +463,7 @@ function withAsking(body, page) {
 // content/shift.js, group fallbacks for solutions, industries and roles.
 const SHIFTS = require('./content/shift');
 function withShift(body, page) {
-  if (page.slug === 'index') return body; // the home page folds this into its comparison section
+  if (page.slug === 'index' || page.slug === 'jwero-os') return body; // that page folds this into its comparison section
   const s = SHIFTS[page.slug] || SHIFTS[Object.keys(SHIFTS).find((k) => k.endsWith('/') && page.slug.startsWith(k)) || ''];
   if (!s) return body;
   const block = `

@@ -1,8 +1,9 @@
 const L = require('../lib');
 
 const home = {
-  slug: 'index',
+  slug: 'jwero-os',
   title: 'Jewellery Software: CRM, ERP, POS and WhatsApp in One | Jwero',
+  breadcrumbs: [['Home', '/'], ['Self managed', '/self-managed'], ['The operating system']],
   description:
     'Jwero is jewellery software for the whole business: CRM, ERP, inventory, POS, billing, WhatsApp and gold schemes on one record, with AI that asks you first.',
   schema: {
