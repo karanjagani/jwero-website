@@ -216,8 +216,8 @@ const { icon, LINK_ICONS, heroSchematic, PERSONAS, personaSwitch, mark } = requi
 const TOP_NAV = [
   { label: 'Why Jwero', href: '/why-jwero', match: ['why-jwero'] },
   { label: 'How it works', href: '/how-it-works', match: ['how-it-works'] },
-  { label: 'AI + experts', href: '/ai-and-experts', match: ['ai-and-experts'] },
   { label: 'What we handle', href: '/what-we-handle', match: ['what-we-handle'] },
+  { label: 'AI + experts', href: '/ai-and-experts', match: ['ai-and-experts'] },
   { label: 'Self managed', href: '/self-managed', match: ['self-managed', 'jwero-os', 'products', 'platform', 'solutions', 'pricing'] },
   { label: 'Managed services', href: '/managed-services', match: ['managed-services'] },
   { label: 'Success stories', href: '/success-stories', match: ['success-stories', 'customers'] },

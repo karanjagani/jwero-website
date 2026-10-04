@@ -246,8 +246,8 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jwero: You Focus on Jewellery. We Handle the Chaos.: https://jwero.ai/
 - Why Jwero: You Shouldn’t Have to Be an Expert in Everything: https://jwero.ai/why-jwero
 - How Jwero Works: From Your Goal to Getting It Done: https://jwero.ai/how-it-works
-- AI + Experts: AI Scale With Human Expertise for Jewellers: https://jwero.ai/ai-and-experts
-- What Jwero Handles: Acquisition, Sales, Commerce, Operations: https://jwero.ai/what-we-handle
-- Self Managed: Run It Yourself With Jwero’s Tools, AI and Automation: https://jwero.ai/self-managed
-- Managed Services: Jwero Runs It With You, or for You: https://jwero.ai/managed-services
-- Success Stories: Chaos, Jwero, Outcome: https://jwero.ai/success-stories
+- AI + Experts: AI Does the Work, Experts Make It Better: https://jwero.ai/ai-and-experts
+- What Jwero Handles: Customers, Sales, Online Growth, Operations: https://jwero.ai/what-we-handle
+- Self Managed: Your Team Runs It, Jwero Powers It: https://jwero.ai/self-managed
+- Managed Services: We Run It Together, or Jwero Runs It: https://jwero.ai/managed-services
+- Success Stories: What Jwero Took Responsibility For: https://jwero.ai/success-stories

@@ -15,7 +15,9 @@
   var WA_MESSAGES = {
     default: 'Hi Jwero, I would like to see a quick demo.',
     handle: 'Hi Jwero, I would like you to handle things for my jewellery business. Here is where I am:',
-    guarantee: 'Hi Jwero, I want to know more about the 40% operational cost guarantee for my jewellery business.',
+    start: 'Hi Jwero, this is what I want to achieve for my jewellery business:',
+    plan: 'Hi Jwero, I would like a Jwero business plan for my jewellery business.',
+    guarantee: 'Hi Jwero, I want to know more about the Jwero Efficiency Guarantee for my jewellery business.',
     'with-you': 'Hi Jwero, I have a team and want your specialists to work with us.',
     outcome: 'Hi Jwero, this is what I want to improve:',
     assessment: 'Hi Jwero, I took the business assessment and would like to talk to a business specialist.',
@@ -2162,6 +2164,40 @@
     io.observe(g);
   });
 
+  // Tabs: one list visible at a time (what Jwero does each month).
+  Array.prototype.forEach.call(document.querySelectorAll('[data-pz-tabs]'), function (root) {
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]')), panels = Array.prototype.slice.call(root.querySelectorAll('[role="tabpanel"]'));
+    root.addEventListener('click', function (e) {
+      var b = e.target.closest('[role="tab"]'); if (!b) return; var n = +b.getAttribute('data-i');
+      tabs.forEach(function (t, i) { t.setAttribute('aria-selected', String(i === n)); });
+      panels.forEach(function (p, i) { p.classList.toggle('is-on', i === n); });
+    });
+  });
+
+  // A day with Jwero: the hours tick by; earlier ones are marked done.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-pz-day]'), function (root) {
+    var items = Array.prototype.slice.call(root.children), at = 0, timer = null, touched = false;
+    function show(n) { at = n; items.forEach(function (li, i) { li.classList.toggle('is-on', i === n); li.classList.toggle('is-done', i < n); }); }
+    function stop() { if (timer) { window.clearInterval(timer); timer = null; } }
+    root.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; touched = true; stop(); show(+b.getAttribute('data-i')); });
+    if ('IntersectionObserver' in window && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+      new IntersectionObserver(function (es) { es.forEach(function (en) {
+        if (en.isIntersecting && !touched && !timer) timer = window.setInterval(function () { show((at + 1) % items.length); }, 2200);
+        else if (!en.isIntersecting) stop();
+      }); }, { threshold: .3 }).observe(root);
+    }
+  });
+
+  // The command centre: three open items become handled, one after another.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-pz-cmd]'), function (root) {
+    var go = root.querySelector('[data-pz-cmd-go]'), cta = root.querySelector('[data-pz-cmd-cta]'), rows = Array.prototype.slice.call(root.querySelectorAll('.pz-cmd-list li')), k = root.querySelector('.pz-cmd-k');
+    if (!go) return;
+    go.addEventListener('click', function () {
+      go.disabled = true;
+      rows.forEach(function (li, i) { window.setTimeout(function () { li.classList.add('is-done'); if (i === rows.length - 1) { if (k) k.textContent = 'Nothing needs your attention'; go.hidden = true; if (cta) cta.hidden = false; } }, 500 * (i + 1)); });
+    });
+  });
+
   // Who runs it: three modes, the work slides between the lanes.
   Array.prototype.forEach.call(document.querySelectorAll('[data-pz-run]'), function (root) {
     var modes; try { modes = JSON.parse(root.querySelector('script').textContent); } catch (e) { return; }
@@ -2174,12 +2210,13 @@
       tabs.forEach(function (t, k) { t.setAttribute('aria-selected', String(k === i)); });
       chips.forEach(function (c, k) { c.style.setProperty('--lane', m.lanes[k]); });
       heads.forEach(function (h, k) { h.classList.toggle('is-on', m.lanes.indexOf(k) !== -1 || k === 0); });
+      chips.forEach(function (c, k) { c.setAttribute('data-l', m.lanes[k]); });
       q('[data-pz-run-title]').textContent = m.title; q('[data-pz-run-line]').textContent = m.line;
       q('[data-pz-run-you]').textContent = m.you; q('[data-pz-run-ai]').textContent = m.ai; q('[data-pz-run-jw]').textContent = m.jw;
       q('[data-pz-run-m="0"]').style.width = m.meters[0] + '%'; q('[data-pz-run-m="1"]').style.width = m.meters[1] + '%';
       q('[data-pz-run-cost]').textContent = m.cost;
       var cta = q('[data-pz-run-cta]'); cta.textContent = m.cta[0];
-      if (m.cta[1] === '#handle') { cta.setAttribute('href', '#'); cta.setAttribute('data-wa', 'handle'); } else { cta.setAttribute('href', based(m.cta[1])); cta.removeAttribute('data-wa'); }
+      if (m.cta[1].charAt(0) === '#') { cta.setAttribute('href', '#'); cta.setAttribute('data-wa', m.cta[1].slice(1)); } else { cta.setAttribute('href', based(m.cta[1])); cta.removeAttribute('data-wa'); }
     }
     function stop() { if (timer) { window.clearInterval(timer); timer = null; } }
     root.addEventListener('click', function (e) { var b = e.target.closest('.pz-run-tabs button'); if (!b) return; touched = true; stop(); show(+b.getAttribute('data-i')); });
@@ -2230,45 +2267,40 @@
     function has(list, word) { return list.some(function (x) { return x.indexOf(word) !== -1; }); }
     function block(title, items) { return items.length ? '<div class="pz-plan-b"><p>' + title + '</p><ul>' + items.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div>' : ''; }
     function plan() {
-      var ch = picks('channels'), st = picks('stack'), cs = picks('challenges'), keep = picks('keep'), hand = picks('hand');
-      var all = has(hand, 'Everything'), handed = hand.filter(function (x) { return x.indexOf('Everything') === -1; });
-      var level = all || handed.length >= 4 ? 'We run it for you' : handed.length ? 'We run it with you' : 'You run it';
-      var gaps = [], opp = [], caps = [], agents = [], who = [], auto = [];
-      if (!has(ch, 'Website')) gaps.push('No way for a customer to browse or buy online');
-      if (!has(ch, 'WhatsApp')) gaps.push('WhatsApp is not yet a working sales channel');
-      if (!has(ch, 'Instagram')) gaps.push('No presence where jewellery is discovered');
-      if (!has(st, 'CRM')) gaps.push('Customers live in phones and registers, not on a record the business owns');
-      if (has(st, 'Excel') || has(st, 'Several')) gaps.push('The same information is kept in more than one place');
-      if (val('marketing').indexOf('Nobody') === 0) gaps.push('Nobody owns marketing');
-      if (val('engagement').indexOf('Whoever') === 0) gaps.push('Enquiries depend on who happens to be free');
-      if (has(cs, 'new customers')) { opp.push('More enquiries from search, ads and social'); caps.push('Ads and search'); who.push('Performance marketing expert', 'SEO, AEO and GEO expert'); }
-      if (has(cs, 'Enquiries not')) { opp.push('Every enquiry answered within minutes, day or night'); caps.push('WhatsApp and one shared inbox'); agents.push('Enquiry desk agent', 'Night shift agent'); who.push('Customer engagement specialist'); auto.push('First replies and follow-ups'); }
-      if (has(cs, 'Old customers')) { opp.push('Customers you already earned, coming back'); caps.push('Customer memory and journeys'); agents.push('Follow-up agent', 'Occasion agent'); who.push('CRM specialist'); auto.push('Occasion, scheme and reactivation outreach'); }
-      if (has(cs, 'Online sales')) { opp.push('An online store and catalogue that sell at the live rate'); caps.push('Online store and catalogues'); who.push('Ecommerce specialist', 'Content and creative specialist'); }
-      if (has(cs, 'manual work')) { opp.push('Hours a week given back to the team'); caps.push('One system for counter, stock and books'); auto.push('Billing to books, stock updates, reminders'); who.push('Automation specialist'); }
-      if (has(cs, 'Too many tools')) { opp.push('One partner in place of many vendors'); caps.push('The Jwero operating system'); who.push('Technology specialist'); }
-      if (has(cs, 'stretched')) { opp.push('Growth without adding headcount'); agents.push('Voice caller for reminders'); who.push('Jewellery growth strategist'); }
-      if (has(cs, 'No clear numbers')) { opp.push('A plain weekly account of what changed and why'); caps.push('Reports and customer intelligence'); who.push('Data and analytics expert'); }
-      if (!opp.length) { opp.push('A clear picture of where the business stands'); caps.push('The Jwero operating system'); who.push('Jewellery growth strategist'); }
-      function uniq(a) { return a.filter(function (x, i) { return a.indexOf(x) === i; }); }
-      var first = opp[0], second = opp[1] || 'The next priority from your list', third = opp[2] || 'Review the results and decide what Jwero takes on next';
-      root.querySelector('[data-pz-plan-title]').textContent = 'Recommended: ' + level + '.';
+      var keep = ['Jewellery, design and craftsmanship', 'Customer relationships at the counter', 'Business decisions'], aug = [], hand = [], signs = 0;
+      function put(list, x) { if (keep.indexOf(x) === -1 && aug.indexOf(x) === -1 && hand.indexOf(x) === -1) list.push(x); }
+      var worries = picks('worry');
+      worries.forEach(function (w) { put(hand, w); });
+      [['wa', 'WhatsApp and customer conversations'], ['dm', 'Digital marketing'], ['ec', 'Online store and ecommerce']].forEach(function (p) {
+        var v = val(p[0]);
+        if (v.indexOf('dedicated') !== -1) put(keep, p[1]);
+        else if (v.indexOf('staff') !== -1 || v.indexOf('myself') !== -1) { put(aug, p[1]); signs++; }
+        else { put(hand, p[1]); signs++; }
+      });
+      var f = val('followup');
+      if (f.indexOf('Most') === 0 || f.indexOf('Nearly') === 0) { signs++; if (!has(worries, 'Customer follow-up')) put(aug, 'Customer follow-up, with AI doing the routine'); }
+      var a = val('agencies'); if (a !== 'None' && a !== '1') { put(hand, 'The work now spread across agencies, under one team'); signs++; }
+      if (val('techtime').indexOf('day') !== -1) { put(hand, 'Technology and integrations'); signs++; }
+      if (val('mkt').indexOf('Nobody') === 0) signs++;
+      if (val('stores') !== '1') put(aug, 'One view across every store');
+      var ch = val('challenge'); put(aug, 'Your biggest challenge: ' + ch.charAt(0).toLowerCase() + ch.slice(1));
+      signs += Math.min(3, worries.length);
+      var level = hand.length >= 4 ? 'Jwero runs it' : (hand.length || aug.length > 1) ? 'We run it together' : 'You run it';
+      var read = signs >= 6 ? 'You are managing a lot of chaos.' : signs >= 3 ? 'You are managing a fair amount of chaos.' : 'Your chaos is under control.';
+      root.querySelector('[data-pz-plan-title]').textContent = read;
       root.querySelector('[data-pz-plan]').innerHTML =
-        block('Current gaps', gaps.slice(0, 5).length ? gaps.slice(0, 5) : ['Nothing obvious from these answers; a specialist will look closer']) +
-        block('Opportunities', opp.slice(0, 5)) + block('Recommended capabilities', uniq(caps)) +
-        block('Recommended AI agents', uniq(agents).length ? uniq(agents) : ['Enquiry desk agent']) + block('Recommended specialists', uniq(who).slice(0, 6)) +
-        block('Processes to automate', auto.length ? auto : ['Routine replies and reminders']) +
-        block('Functions for Jwero to handle', all ? ['Everything Jwero can, function by function'] : handed.length ? handed : ['None yet. You run it; hand something over when you choose']) +
-        block('You keep in-house', keep.length ? keep : ['Jewellery, design, sourcing, customers and business decisions']) +
-        block('Your first 90 days', ['Days 1 to 30: set up, bring your data in, ' + first.charAt(0).toLowerCase() + first.slice(1), 'Days 31 to 60: ' + second.charAt(0).toLowerCase() + second.slice(1), 'Days 61 to 90: ' + third.charAt(0).toLowerCase() + third.slice(1)]);
-      root.querySelector('[data-pz-plan-cta]').setAttribute('data-wa-extra', ' ' + val('type') + ', ' + val('stores') + ' location(s), team ' + val('team') + '. Challenges: ' + (cs.join('; ') || 'not chosen') + '. Hand to Jwero: ' + (hand.join('; ') || 'nothing yet') + '. Suggested: ' + level + '.');
+        block('Keep in-house', keep) +
+        block('Augment with Jwero', aug.length ? aug : ['Nothing yet from these answers']) +
+        block('Let Jwero handle', hand.length ? hand : ['Nothing yet. Start by running it yourself; hand a function over when you choose']) +
+        block('Suggested way to start', [level + '. Start with one function. Give us more when you are ready.']);
+      root.querySelector('[data-pz-plan-cta]').setAttribute('data-wa-extra', ' ' + val('stores') + ' store(s), customer base ' + val('customers') + '. Biggest challenge: ' + ch + '. Keep: ' + keep.slice(3).join('; ') + '. Augment: ' + aug.join('; ') + '. Hand to Jwero: ' + (hand.join('; ') || 'nothing yet') + '. Suggested: ' + level + '.');
     }
     function go(n) {
       at = Math.max(0, Math.min(steps.length - 1, n));
       steps.forEach(function (s, i) { s.classList.toggle('is-on', i === at); });
       dots.forEach(function (d, i) { d.classList.toggle('is-on', i === at); d.classList.toggle('is-done', i < at); });
       back.hidden = at === 0; next.hidden = at === steps.length - 1;
-      next.textContent = at === steps.length - 2 ? 'Show my plan' : 'Next';
+      next.textContent = at === steps.length - 2 ? 'Show my recommendation' : 'Next';
       if (at === steps.length - 1) plan();
     }
     next.addEventListener('click', function () { go(at + 1); root.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });

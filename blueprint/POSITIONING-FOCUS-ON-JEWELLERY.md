@@ -29,3 +29,30 @@ Every page built before is still there, unchanged: products, solutions, roles, p
 5. **The assessment** produces a plan from simple rules in the page script. It is labelled a first reading, not advice. A specialist should own the real version.
 6. **Inner pages still speak the old language.** Product, solution and role pages lead with software. They were deliberately left as they are; decide whether they should be reworded to sit under the new promise.
 7. **Search.** The home page title no longer leads with "jewellery software". /jwero-os keeps that title, and the product, guide and city pages still target those searches.
+
+## Second pass, 2026-10-04: the eight acts
+
+The home page now follows one story: the world changed, the hidden cost, the
+insight, the solution, how it works, the customer's choice, proof, the ask.
+
+- Category: Jwero is "the operating partner for the modern jewellery business";
+  Jewellery Business as a Service is the business model, shown under it.
+- The three ways are named: You run it / We run it together / Jwero runs it.
+- AI is presented as nine agents that understand, decide, execute, measure and
+  improve, with specialists beside them. Agent names are roles from the brief;
+  confirm they match what is deployed.
+- "What we handle" is eight outcome groups, each split into what Jwero can
+  power (software), manage (service) and help with (specialists). The split was
+  drafted here and must be confirmed against what Jwero can operationally run.
+- The 40% figure left the home page (replaced by "Build less. Manage less. Get
+  more done.") and sits on /managed-services as the Jwero Efficiency Guarantee
+  with six terms. Those terms were drafted here; there is no contract behind
+  them yet. Remove the section if the methodology is not adopted.
+- Command centre figures (127, 1,240) are the brief's examples, labelled as an
+  illustration.
+- Proof cards remain patterns without figures. Needed from the business: named
+  stories, verified numbers, testimonials, screenshots, photography, years in
+  business and customer count.
+- Not done: Avenir / Open Sans (the site keeps its existing typeface), real
+  jewellery and people photography, renaming the older product and pricing
+  pages out of SaaS language.
