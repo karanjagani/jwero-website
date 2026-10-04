@@ -2147,6 +2147,36 @@
   }
 
   // ===== positioning: you focus on jewellery, we handle the chaos =====
+  // Who runs it: three modes, the work slides between the lanes.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-pz-run]'), function (root) {
+    var modes; try { modes = JSON.parse(root.querySelector('script').textContent); } catch (e) { return; }
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('.pz-run-tabs button')), chips = Array.prototype.slice.call(root.querySelectorAll('.pz-run-track i[data-f]'));
+    var heads = Array.prototype.slice.call(root.querySelectorAll('.pz-run-head b')), cur = -1, timer = null, touched = false;
+    function q(s) { return root.querySelector(s); }
+    function show(i) {
+      cur = i; var m = modes[i];
+      root.setAttribute('data-mode', m.key);
+      tabs.forEach(function (t, k) { t.setAttribute('aria-selected', String(k === i)); });
+      chips.forEach(function (c, k) { c.style.setProperty('--lane', m.lanes[k]); });
+      heads.forEach(function (h, k) { h.classList.toggle('is-on', m.lanes.indexOf(k) !== -1 || k === 0); });
+      q('[data-pz-run-title]').textContent = m.title; q('[data-pz-run-line]').textContent = m.line;
+      q('[data-pz-run-you]').textContent = m.you; q('[data-pz-run-ai]').textContent = m.ai; q('[data-pz-run-jw]').textContent = m.jw;
+      q('[data-pz-run-m="0"]').style.width = m.meters[0] + '%'; q('[data-pz-run-m="1"]').style.width = m.meters[1] + '%';
+      q('[data-pz-run-cost]').textContent = m.cost;
+      var cta = q('[data-pz-run-cta]'); cta.textContent = m.cta[0];
+      if (m.cta[1] === '#handle') { cta.setAttribute('href', '#'); cta.setAttribute('data-wa', 'handle'); } else { cta.setAttribute('href', based(m.cta[1])); cta.removeAttribute('data-wa'); }
+    }
+    function stop() { if (timer) { window.clearInterval(timer); timer = null; } }
+    root.addEventListener('click', function (e) { var b = e.target.closest('.pz-run-tabs button'); if (!b) return; touched = true; stop(); show(+b.getAttribute('data-i')); });
+    show(+root.getAttribute('data-run-start') || 0);
+    // Until someone taps, walk through the three so the difference is seen.
+    if ('IntersectionObserver' in window && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+      new IntersectionObserver(function (es) { es.forEach(function (en) {
+        if (en.isIntersecting && !touched && !timer) timer = window.setInterval(function () { show((cur + 1) % modes.length); }, 4200);
+        else if (!en.isIntersecting) stop();
+      }); }, { threshold: .35 }).observe(root);
+    }
+  });
   // What Jwero can take off your plate: tap the areas, the count and the message follow.
   Array.prototype.forEach.call(document.querySelectorAll('[data-pz-plate]'), function (root) {
     var cells = Array.prototype.slice.call(root.querySelectorAll('.pz-plate-cell')), wrap = root.parentNode;
