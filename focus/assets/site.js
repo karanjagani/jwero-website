@@ -1,0 +1,2057 @@
+/* Jwero marketing site, shared behaviour. No frameworks, ~4 KB. */
+(function () {
+'use strict';
+var BASE = document.documentElement.getAttribute('data-base') || '';
+function unbase(p) { return BASE && p.indexOf(BASE) === 0 ? (p.slice(BASE.length) || '/') : p; }
+function based(p) { return BASE && p.charAt(0) === '/' && p.charAt(1) !== '/' && p.indexOf(BASE + '/') !== 0 && p !== BASE ? BASE + p : p; }
+var HERE = unbase(location.pathname);
+var WA_NUMBER = '919169959959'; // WhatsApp Business number, digits only
+var WA_MESSAGES = {
+default: 'Hi Jwero, I would like to see a quick demo.',
+handle: 'Hi Jwero, I would like you to handle things for my jewellery business. Here is where I am:',
+guarantee: 'Hi Jwero, I want to know more about the 40% operational cost guarantee for my jewellery business.',
+'with-you': 'Hi Jwero, I have a team and want your specialists to work with us.',
+outcome: 'Hi Jwero, this is what I want to improve:',
+assessment: 'Hi Jwero, I took the business assessment and would like to talk to a business specialist.',
+announce: 'Hi Jwero, saw the site, show me the live WhatsApp demo.',
+header: 'Hi Jwero, I would like to see a quick demo.',
+sticky: 'Hi Jwero, I would like to see a quick demo.',
+home: 'Hi Jwero, show me how the AI workforce works, with approvals.',
+roles: 'Hi Jwero, I want to understand how this helps my team, role by role.',
+proof: 'Hi, testing the inbox this button leads to. Show me what you’ve got.',
+report: 'Hi Jwero, I would like a sample growth report for my business.',
+close: 'Hi Jwero, I would like to see a quick demo.',
+pilot: 'Hi Jwero, I would like to start a pilot with my own data.',
+faq: 'Hi Jwero, I have a question that wasn’t on your FAQ.',
+platform: 'Hi Jwero, show me the full platform, one record at a time.',
+ai: 'Hi Jwero, show me the AI workforce approval queue live.',
+memory: 'Hi Jwero, show me a live customer record.',
+pricingengine: 'Hi Jwero, show me how a price is actually calculated, on my own catalogue.',
+integrations: 'Hi Jwero, here is the software stack I run today, tell me what bridges.',
+tally: 'Hi Jwero, I want to understand exactly how the Tally bridge works.',
+onboarding: 'Hi Jwero, walk me through onboarding for my team.',
+roadmap: 'Hi Jwero, I have a question about something on your roadmap.',
+whatsapp: 'Hi Jwero, show me WhatsApp commerce for my business.',
+instagram: 'Hi Jwero, show me Instagram & Facebook commerce.',
+aiagents: 'Hi Jwero, show me an AI sales agent in action.',
+crm: 'Hi Jwero, show me the jewellery CRM and customer record.',
+catalog: 'Hi Jwero, show me the catalogue with live gold-rate pricing.',
+inventory: 'Hi Jwero, show me inventory ageing and dead-stock visibility.',
+billing: 'Hi Jwero, show me GST invoicing at the live gold rate.',
+erp: 'Hi Jwero, show me orders, purchases and manufacturing in one place.',
+schemes: 'Hi Jwero, I want to see gold savings schemes running digitally.',
+digitalgold: 'Hi Jwero, show me how digital gold works.',
+multistore: 'Hi Jwero, I run multiple stores, show me the multi-store structure.',
+showroom: 'Hi Jwero, show me the showroom / in-store visit intelligence.',
+loyalty: 'Hi Jwero, show me the loyalty and referral program.',
+hrpayroll: 'Hi Jwero, show me the HR and payroll suite.',
+repairsservice: 'Hi Jwero, show me repairs and after-sales service tracking.',
+purchasevendors: 'Hi Jwero, show me purchase orders and vendor management.',
+storefront: 'Hi Jwero, show me the ecommerce website builder.',
+'industries-retail': 'Hi Jwero, I’m in retail, help me find my segment.',
+solutions: 'Hi Jwero, help me find the right solution for my business.',
+'single-store': 'Hi Jwero, I run a single store, show me how Jwero fits.',
+chains: 'Hi Jwero, I run multiple stores, I’d like to talk to a specialist.',
+manufacturers: 'Hi Jwero, I’m a manufacturer/wholesaler, show me the WIP and gold-loss ledger.',
+'pain-index': 'Hi Jwero, here is the pain I’m dealing with: ',
+deadstock: 'Hi Jwero, I ran the dead stock calculator. Here are my numbers: ',
+scheme_calc: 'Hi Jwero, I ran the gold scheme calculator. Here are my numbers: ',
+wa_revenue_calc: 'Hi Jwero, I ran the WhatsApp revenue estimator. Here are my numbers: ',
+goldloss_calc: 'Hi Jwero, I ran the gold-loss calculator. Here are my numbers: ',
+leadleak: 'Hi Jwero, show me how you stop lead leakage.',
+security: 'Hi Jwero, I have a security question.',
+'security-pdf': 'Hi Jwero, please send the security overview PDF.',
+customers: 'Hi Jwero, I’d like to see real proof before a demo.',
+lighthouse: 'Hi Jwero, I’m interested in the Lighthouse Partner program.',
+compare: 'Hi Jwero, I currently use a WhatsApp tool, help me compare.',
+migration: 'Hi Jwero, help me plan my migration.',
+pricing: 'Hi Jwero, what does this actually cost for my business?',
+'tier-assist': 'Hi Jwero, a question about Jwero One pricing.',
+company: 'Hi Jwero, I’d like to talk to your team directly.',
+contact: 'Hi Jwero, reaching out via the contact page.',
+enterprise: 'Hi Jwero, I’m evaluating for a multi-store/enterprise deployment.',
+bookdemo: 'Hi Jwero, I would like to see a quick demo.',
+products: 'Hi Jwero, help me figure out which products matter for my business.',
+luxury: 'Hi Jwero, I run a luxury/boutique jewellery business, show me clienteling.',
+bridal: 'Hi Jwero, I focus on bridal, show me the wedding-journey tracking.',
+diamond: 'Hi Jwero, I sell diamonds, show me the certificate-aware catalogue.',
+gold: 'Hi Jwero, I sell gold jewellery, show me live-rate pricing and schemes.',
+silver: 'Hi Jwero, I sell silver at volume, show me the bulk catalogue tools.',
+labgrown: 'Hi Jwero, I sell lab-grown diamonds, show me the online-first tools.',
+gemstone: 'Hi Jwero, I sell gemstones, show me provenance-rich catalogue fields.',
+diamondwholesale: 'Hi Jwero, I’m a diamond wholesaler, show me B2B catalogues.',
+goldwholesale: 'Hi Jwero, I’m a gold wholesaler, show me rate-linked ordering.',
+b2b: 'Hi Jwero, I sell B2B (silver/gemstone/pearl), show me the wholesale tools.',
+casting: 'Hi Jwero, I run a casting unit, show me WIP and loss tracking.',
+cad: 'Hi Jwero, I run a CAD service, show me job intake and approval flow.',
+oem: 'Hi Jwero, I’m an OEM manufacturer, show me multi-client job-work.',
+export: 'Hi Jwero, I run an export house, show me order-to-shipment tracking.',
+bullion: 'Hi Jwero, I’m a bullion dealer/trader, show me deal capture.',
+brands: 'Hi Jwero, I run a jewellery brand, show me brand governance across channels.',
+d2c: 'Hi Jwero, I run a D2C/ecommerce-first brand, show me what you add to Shopify.',
+startups: 'Hi Jwero, I’m starting a new jewellery business, help me figure out what I need.',
+franchise: 'Hi Jwero, I run a franchise network, show me franchisor controls.',
+'compare-hub': 'Hi Jwero, I want to compare Jwero to a tool I’m using or considering.',
+ornate: 'Hi Jwero, I currently use Ornate NX, help me compare.',
+synergics: 'Hi Jwero, I currently use Synergics, help me compare.',
+jewelacc: 'Hi Jwero, I currently use JewelAcc, help me compare.',
+marg: 'Hi Jwero, I currently use Marg ERP, help me compare.',
+sioniq: 'Hi Jwero, I’m evaluating Jwero against SIONIQ, help me compare.',
+zithara: 'Hi Jwero, I currently use Zithara, help me compare.',
+wati: 'Hi Jwero, I currently use WATI, help me compare.',
+interakt: 'Hi Jwero, I currently use Interakt, help me compare.',
+doubletick: 'Hi Jwero, I currently use DoubleTick, help me compare.',
+quicksell: 'Hi Jwero, I currently use QuickSell, help me compare.',
+shopify: 'Hi Jwero, I run a Shopify store, show me what Jwero adds.',
+zohocrm: 'Hi Jwero, I currently use Zoho CRM, help me compare.',
+'faq-hub': 'Hi Jwero, I have a question that wasn’t on your FAQ page: ',
+partners: 'Hi Jwero, I’d like to talk about the partner program. Here’s who I’d bring first: ',
+'blog-hub': 'Hi Jwero, I’d like to see a topic covered on the blog: ',
+'blog-whatsapp': 'Hi Jwero, I read the WhatsApp guide, show me how it works for my business.',
+'blog-deadstock': 'Hi Jwero, I read the dead stock guide, show me matched selling and rotation.',
+'blog-scheme': 'Hi Jwero, I read the gold scheme guide, show me digital collection for my scheme book.',
+pos: 'Hi Jwero, show me the counter POS: exchange, returns and day-close.',
+girvi: 'Hi Jwero, show me a girvi pledge from intake to release.',
+meetings: 'Hi Jwero, send me a video counter link the way a customer would get one.',
+email: 'Hi Jwero, I want business email on my own domain inside the same inbox as WhatsApp. Show me.',
+marketplaces: 'Hi Jwero, I sell on Amazon/Flipkart. Show me orders landing on one ledger with stock pushing back.',
+quotations: 'Hi Jwero, send me a sample quotation link the way a customer gets one.',
+catalogues: 'Hi Jwero, send me a live digital catalogue link and show me what it reports back.',
+reports: 'Hi Jwero, show me a report for my kind of jewellery business.',
+training: 'Hi Jwero, show me a staff training course with a test and certificate.',
+securitypack: 'Hi Jwero, please send the security pack for my IT / evaluation committee: hosting, backups, access control, SSO, data export.',
+hindi: 'नमस्ते Jwero, मैं ज्वेलर हूँ। मुझे हिन्दी में जानकारी चाहिए।',
+brief: 'Hi Jwero, I read the one-page brief. I want to see it on my own business.',
+nudge: 'Hi Jwero, one question before I decide:',
+erp: 'Hi Jwero, we run an ERP. Show me what it cannot see about one of my customers, and what Jwero would.',
+erpswitch: 'Hi Jwero, we run an ERP and switching worries me. Walk me through the plan for my business.',
+erpmakedo: 'Hi Jwero, we make do with an ERP + WhatsApp + Excel. Show me what the gaps cost on my numbers.',
+leak: 'Hi Jwero, my enquiry numbers from the make-do calculator:',
+quote: 'Hi Jwero, please send me this as a quote:',
+diamondtraders: 'Hi Jwero, I trade loose diamonds. Show me parcels, certified stones, memo and my rate grid on one screen.',
+grid: 'Hi Jwero, show me my own per-carat rate grid in Jwero. My example line:',
+optimize: 'Hi Jwero, show me the Optimize suite: heatmaps, A/B tests, popups and webchat for my website.',
+'blog-tally': 'Hi Jwero, I read the Tally guide, tell me exactly what moves and what stays in Tally.',
+'blog-goldloss': 'Hi Jwero, I read the gold-loss guide, show me the wastage ledger and recovery desk.',
+'blog-repair': 'Hi Jwero, I read the repair custody-chain guide, show me how it works for my business.',
+'blog-huid': 'Hi Jwero, I read the HUID/hallmarking guide, show me compliance tracking.',
+'blog-catalog': 'Hi Jwero, I read the digital catalogue guide, show me a live-price catalogue.',
+'blog-crmerp': 'Hi Jwero, I read the CRM vs ERP guide, show me how one record covers both.',
+'blog-checklist': 'Hi Jwero, I read the buyer’s checklist, ask me the questions and I’ll answer honestly.',
+'blog-wedding': 'Hi Jwero, I read the wedding season guide, help me plan the timing for my business.',
+'blog-cost': 'Hi Jwero, I read the software cost guide, give me a straight number for my business.',
+'blog-bestsoftware': 'Hi Jwero, I read the how-to-compare guide, ask me these questions directly.',
+'blog-goldrate': 'Hi Jwero, I read the live gold rate guide, show me a price resolve live.',
+'blog-startonline': 'Hi Jwero, I read the starting-online guide, help me plan my first steps.',
+'blog-wapricing': 'Hi Jwero, I read the WhatsApp API pricing guide, help me understand my own conversation mix.',
+'blog-schemeslegal': 'Hi Jwero, I read the gold scheme legal guide, show me the compliance controls.',
+segmentation: 'Hi Jwero, show me live customer segmentation for my business.',
+journeys: 'Hi Jwero, show me a customer journey with the approval gate live.',
+campaigns: 'Hi Jwero, show me a campaign and broadcast, with attribution.',
+adsmanager: 'Hi Jwero, show me Ads Manager for Meta, Google and Pinterest.',
+socialmedia: 'Hi Jwero, show me the social media inbox and scheduler.'
+};
+var PERSONA_NAMES = { single: 'a single-store jeweller', chain: 'a multi-store chain', maker: 'a manufacturer', b2b: 'a wholesaler / B2B business', d2c: 'a D2C brand', franchise: 'a franchise network', trader: 'a diamond trader', staff: 'on the staff of a jewellery business' };
+function personaKey() { var q = /[?&]p=(single|chain|maker|b2b|d2c|franchise|trader|staff)/.exec(location.search); if (q) return q[1]; try { return localStorage.getItem('jwero-persona') || ''; } catch (e) { return ''; } }
+function waLink(ctx, extra) {
+var who = PERSONA_NAMES[personaKey()];
+var msg = (WA_MESSAGES[ctx] || WA_MESSAGES.default) + (extra || '') + (who && ctx !== 'announce' ? ' (I am ' + who + '.)' : '');
+var page = HERE.replace(/\W+/g, '-').replace(/^-|-$/g, '') || 'home';
+return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg + ' [ref:' + page + '/' + ctx + ']');
+}
+document.querySelectorAll('[data-wa]').forEach(function (a) {
+a.setAttribute('href', waLink(a.getAttribute('data-wa')));
+a.setAttribute('target', '_blank');
+a.setAttribute('rel', 'noopener');
+});
+var Connect = (function () {
+var dlg = document.querySelector('dialog.connect');
+var WEBCHAT_ON = document.documentElement.getAttribute('data-webchat') === 'on';
+var TEL = 'tel:+919169959959', state = { wa: '', msg: '', ctx: '' };
+function deskOpen() { var ist = new Date(Date.now() + (330 + new Date().getTimezoneOffset()) * 60000), h = ist.getHours(); return h >= 10 && h < 20; }
+function widget() { var j = window.jwero; return j && j.chat && typeof j.chat.open === 'function' ? j : null; }
+function whenWidget(cb, ms) {
+var t0 = Date.now();
+(function poll() { var j = widget(); if (j) return cb(j); if (Date.now() - t0 > ms) return cb(null); window.setTimeout(poll, 150); })();
+}
+function shadow() { var host = document.getElementById('jwero-optimize-root'); return host ? (host.shadowRoot || host) : null; }
+function note(j, mode) { try { j.track('website_cta', { mode: mode, context: state.ctx, page: HERE, persona: personaKey() }); } catch (e) {} }
+function prefill() {
+if (!state.msg) return;
+window.setTimeout(function () {
+try { var r = shadow(), box = r && r.querySelector('textarea, input[type="text"]'); if (box && !box.value) { box.value = state.msg; box.dispatchEvent(new Event('input', { bubbles: true })); } } catch (e) {}
+}, 500);
+}
+function call(j, mode) {
+note(j, mode);
+if (typeof j.chat.call === 'function') { j.chat.call(mode === 'voice' ? 'audio' : 'video'); return; }
+j.chat.open();
+window.setTimeout(function () { try { var r = shadow(), b = r && r.querySelector('.jw-call'); if (b) b.click(); } catch (e) {} }, 450);
+}
+function close() { if (dlg && dlg.open) dlg.close(); }
+function fallback(mode) {
+close();
+if (mode === 'chat') { window.open(state.wa || waLink('default'), '_blank', 'noopener'); return; }
+if (mode === 'voice') { location.href = deskOpen() ? TEL : BASE + '/book-demo#callback'; return; }
+location.href = BASE + '/book-demo#schedule';
+}
+function go(mode) {
+if (!WEBCHAT_ON) return fallback(mode);
+if (mode !== 'chat' && !deskOpen()) return fallback(mode);
+if (dlg) dlg.classList.add('is-busy');
+whenWidget(function (j) {
+if (dlg) dlg.classList.remove('is-busy');
+if (!j) return fallback(mode);
+close();
+if (mode === 'chat') { note(j, 'chat'); j.chat.open(); prefill(); } else call(j, mode);
+}, 3500);
+}
+function set(sel, text) { var el = dlg.querySelector(sel); if (el) el.textContent = text; }
+function open(opts) {
+opts = opts || {};
+state.wa = opts.wa || waLink('default'); state.ctx = opts.ctx || ''; state.msg = opts.msg || '';
+if (opts.mode === 'video' && opts.direct && WEBCHAT_ON && deskOpen()) return go('video');
+if (!dlg || typeof dlg.showModal !== 'function') return fallback(opts.mode || 'chat');
+var desk = deskOpen();
+set('[data-connect-title]', opts.mode === 'video' ? 'A demo on video' : opts.mode === 'voice' ? 'Call Jwero' : 'Talk to Jwero');
+set('[data-connect-sub]', opts.mode === 'video' ? 'Fifteen minutes, your scenario, a real person on camera.' : 'A real person and our AI, within minutes. Pick how.');
+set('[data-connect-note="chat"]', WEBCHAT_ON ? 'Opens right here' : 'Opens WhatsApp');
+set('[data-connect-note="voice"]', WEBCHAT_ON && desk ? 'From your browser, no app' : desk ? 'Dials +91 91699 59959' : 'We call you back');
+set('[data-connect-note="video"]', WEBCHAT_ON && desk ? 'See the product, face to face' : 'Pick a time for a video demo');
+set('[data-connect-hours]', desk ? 'The desk is open now · 10am–8pm IST' : 'The desk is closed right now (10am–8pm IST). Chat reaches us; calls become a callback.');
+var ctx = dlg.querySelector('[data-connect-ctx]');
+if (ctx) { ctx.hidden = !state.msg; ctx.textContent = state.msg ? '“' + state.msg + '”' : ''; }
+var alt = dlg.querySelector('[data-connect-alt="wa"]'); if (alt) alt.setAttribute('href', state.wa);
+Array.prototype.forEach.call(dlg.querySelectorAll('.connect-opt'), function (b) { b.classList.toggle('is-lead', b.getAttribute('data-connect-go') === (opts.mode || 'chat')); });
+if (!dlg.open) dlg.showModal();
+}
+if (dlg) {
+dlg.addEventListener('click', function (e) {
+var b = e.target.closest('[data-connect-go]');
+if (b) return go(b.getAttribute('data-connect-go'));
+if (e.target === dlg || e.target.closest('.connect-close')) close();
+});
+}
+document.addEventListener('click', function (e) {
+if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+var a = e.target.closest('a');
+if (!a || a.hasAttribute('data-direct') || a.hasAttribute('data-share') || a.closest('dialog.connect')) return;
+var href = unbase(a.getAttribute('href') || ''), mode = a.getAttribute('data-connect');
+var isWa = a.hasAttribute('data-wa') || href.indexOf('https://wa.me/' + WA_NUMBER) === 0;
+var isDemo = /^\/book-demo\/?$/.test(href), isTel = href.indexOf('tel:') === 0;
+if (!isWa && !isDemo && !isTel && mode === null) return;
+e.preventDefault();
+var msg = '';
+if (href.indexOf('https://wa.me/') === 0) { try { msg = decodeURIComponent((href.split('text=')[1] || '')).replace(/\s*\[ref:[^\]]*\]\s*$/, ''); } catch (x) {} }
+open({ mode: mode || (isDemo ? 'video' : isTel ? 'voice' : ''), direct: isDemo, wa: a.getAttribute('data-wa-extra') ? waLink(a.getAttribute('data-wa') || 'default', a.getAttribute('data-wa-extra')) : isWa && href.indexOf('https://') === 0 ? href : '', ctx: a.getAttribute('data-wa') || (isDemo ? 'book-demo' : isTel ? 'call' : ''), msg: isWa ? msg : '' });
+});
+return { open: open };
+})();
+document.querySelectorAll('[data-share]').forEach(function (a) {
+a.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent(a.getAttribute('data-share') + ' ' + location.origin + location.pathname));
+a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
+});
+var root = document.documentElement;
+document.querySelectorAll('.theme-toggle').forEach(function (b) {
+b.addEventListener('click', function () {
+var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+root.setAttribute('data-theme', next);
+localStorage.setItem('jwero-theme', next);
+});
+});
+var body = document.body;
+var burger = document.querySelector('.nav-burger');
+var dds = Array.prototype.slice.call(document.querySelectorAll('details.nav-dd'));
+var wideNav = window.matchMedia('(min-width: 1181px)');
+function closeMenus() { dds.forEach(function (d) { d.open = false; }); }
+function setMenu(open) {
+body.classList.toggle('nav-open', open);
+if (burger) {
+burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+if (!open) closeMenus();
+}
+if (burger) burger.addEventListener('click', function () { setMenu(!body.classList.contains('nav-open')); });
+wideNav.addEventListener('change', function () { setMenu(false); });
+dds.forEach(function (d) {
+d.addEventListener('toggle', function () {
+if (d.open) dds.forEach(function (o) { if (o !== d) o.open = false; });
+});
+});
+document.addEventListener('click', function (e) {
+if (!e.target.closest('.nav-dd')) closeMenus();
+});
+document.addEventListener('keydown', function (e) {
+if (e.key !== 'Escape') return;
+closeMenus();
+if (body.classList.contains('nav-open')) { setMenu(false); burger.focus(); }
+});
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+dds.forEach(function (d) {
+d.addEventListener('mouseenter', function () { if (wideNav.matches) d.open = true; });
+d.addEventListener('mouseleave', function () { if (wideNav.matches) d.open = false; });
+var summary = d.querySelector('summary');
+if (summary) summary.addEventListener('click', function (e) { if (wideNav.matches) e.preventDefault(); });
+});
+}
+var panels = Array.prototype.slice.call(document.querySelectorAll('.panel, .syscount-one'));
+var lastY = window.scrollY, ticking = false;
+function overPanel() {
+for (var i = 0; i < panels.length; i++) {
+var r = panels[i].getBoundingClientRect();
+if (r.top < 36 && r.bottom > 36) return true;
+}
+return false;
+}
+function onScroll() {
+ticking = false;
+var y = window.scrollY;
+var menuOpen = dds.some(function (d) { return d.open; });
+if (y < 80) body.classList.remove('is-scrolled');
+else if (y > lastY + 4 && !menuOpen) body.classList.add('is-scrolled');
+else if (y < lastY - 4) body.classList.remove('is-scrolled');
+body.classList.toggle('on-panel', overPanel());
+lastY = y;
+}
+window.addEventListener('scroll', function () {
+if (!ticking) { ticking = true; window.requestAnimationFrame(onScroll); }
+}, { passive: true });
+onScroll();
+document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var canObserve = 'IntersectionObserver' in window;
+var docEl = document.documentElement;
+function onView(els, fn, opts) {
+if (!els.length) return;
+var o = new IntersectionObserver(function (entries) {
+entries.forEach(function (en) { if (en.isIntersecting) { o.unobserve(en.target); fn(en.target); } });
+}, opts || { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+Array.prototype.forEach.call(els, function (el) { o.observe(el); });
+}
+function whileVisible(el, start, stop) {
+var on = false;
+function set(v) { if (v === on) return; on = v; (v ? start : stop)(); }
+var seen = false;
+new IntersectionObserver(function (e) { seen = e[0].isIntersecting; set(seen && !document.hidden); }, { rootMargin: '80px' }).observe(el);
+document.addEventListener('visibilitychange', function () { set(seen && !document.hidden); });
+}
+if (!reduceMotion && canObserve) {
+var headings = document.querySelectorAll('.hero h1, .section-head h2, .statement h2, .cta-band h2, .close-plan h2, .split-title');
+Array.prototype.forEach.call(headings, function (h) {
+var i = 0;
+(function walk(node) {
+Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+if (n.nodeType === 3) {
+var parts = n.textContent.split(/(\s+)/), frag = document.createDocumentFragment();
+parts.forEach(function (part) {
+if (!part) return;
+if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+var w = document.createElement('span'), inner = document.createElement('span');
+w.className = 'w'; inner.textContent = part; inner.style.setProperty('--i', i++);
+w.appendChild(inner); frag.appendChild(w);
+});
+node.replaceChild(frag, n);
+} else if (n.nodeType === 1 && n.tagName !== 'BR') walk(n);
+});
+})(h);
+h.setAttribute('data-words', '');
+});
+onView(headings, function (h) { h.classList.add('is-in'); }, { threshold: 0.3 });
+var groups = document.querySelectorAll(
+'.section .cells, .section .grid:not(.cells), .section .router-grid, .section .stats, .section .pillars, .section .impact-grid, ' +
+'.section .ladder, .section .tiers, .section .team-grid, .section .steps, .section .stack-grid, .section .jtbd, .section .verdict-box, ' +
+'.section .loop, .section .speeds, .section .speed-guards, .section .safe-items, .section .quick-check-items, .faq'
+);
+Array.prototype.forEach.call(groups, function (g) {
+if (g.closest('.reveal-group') || g.closest('.calc')) return;
+g.classList.add('reveal-group');
+Array.prototype.forEach.call(g.children, function (c, i) { c.style.setProperty('--i', Math.min(i, 9)); });
+});
+onView(document.querySelectorAll('.reveal-group'), function (g) { g.classList.add('is-visible'); }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+var singles = document.querySelectorAll('.section .coexist, .section .split, .section .gem-stage, .section .gem-copy, .section .tbl-wrap, .section .calc, .section .stack-verdict, .section .gaps-block, main > .gaps-block, main > .one-system, .section .safe-strip, .section .form, .trust-bar .container, .logo-marquee');
+Array.prototype.forEach.call(singles, function (el) { if (!el.closest('.reveal-group')) el.classList.add('reveal'); });
+onView(document.querySelectorAll('.reveal'), function (el) { el.classList.add('is-visible'); });
+onView(document.querySelectorAll('[data-shift]'), function (el) { el.classList.add('is-in'); }, { threshold: 0.3 });
+onView(document.querySelectorAll('.cta-band'), function (el) { el.classList.add('is-in'); }, { threshold: 0.25 });
+onView(document.querySelectorAll('.stats .stat-n, .intel-big .stat-n'), function (el) {
+var m = /^(\d{1,4})(\+?)$/.exec(el.textContent.trim());
+if (!m) return;
+var end = Number(m[1]), t0 = null;
+el.style.fontVariantNumeric = 'tabular-nums';
+(function frame(t) {
+if (t0 === null) t0 = t;
+var p = Math.min(1, (t - t0) / 1100), eased = 1 - Math.pow(1 - p, 3);
+el.textContent = Math.round(end * eased) + m[2];
+if (p < 1) window.requestAnimationFrame(frame);
+})(window.performance.now());
+}, { threshold: 0.6 });
+var mainEl = document.querySelector('main');
+if (mainEl && window.innerWidth >= 1320 && document.body.hasAttribute('data-gutter-dots')) {
+var gutter = (window.innerWidth - 1200) / 2, mh = mainEl.offsetHeight, count = Math.min(40, Math.round(mh / 260));
+for (var gi = 0; gi < count; gi++) {
+var dot = document.createElement('i');
+var left = gi % 2 === 0;
+var gx = 60 + Math.floor(Math.random() * ((gutter - 84) / 12)) * 12;
+dot.className = 'gutter-dot';
+dot.style.top = (Math.floor(Math.random() * (mh / 12)) * 12) + 'px';
+dot.style[left ? 'left' : 'right'] = gx + 'px';
+dot.style.setProperty('--dx', (Math.random() < .5 ? 12 : 0) * (Math.random() < .5 ? -1 : 1) + 'px');
+dot.style.setProperty('--dy', (Math.random() < .5 ? 12 : 0) * (Math.random() < .5 ? -1 : 1) + 'px');
+dot.style.animationDelay = (-Math.random() * 2.4).toFixed(2) + 's';
+dot.style.animationDuration = (2 + Math.random() * 1.6).toFixed(2) + 's';
+mainEl.appendChild(dot);
+}
+}
+Array.prototype.forEach.call(document.querySelectorAll('.hero-panel:not(.hero-home) .panel, .cta-band .panel, .panel:has(.close-plan)'), function (panel) {
+var cv = document.createElement('canvas'), ctx = cv.getContext('2d');
+if (!ctx) return;
+cv.className = 'panel-fx'; cv.setAttribute('aria-hidden', 'true');
+panel.insertBefore(cv, panel.firstChild);
+panel.classList.add('has-fx');
+var STEP = 8, w = 0, h = 0, raf = 0, last = 0;
+function size() { w = cv.width = panel.offsetWidth; h = cv.height = panel.offsetHeight; }
+function draw(now) {
+raf = window.requestAnimationFrame(draw);
+if (now - last < 50) return;
+last = now;
+var t = now / 1000, levels = [[], [], [], [], [], []];
+for (var y = 4; y < h; y += STEP) {
+var ny = y / h;
+for (var x = 4; x < w; x += STEP) {
+var nx = x / w;
+var v = Math.sin(nx * 9 + t * .55) * Math.cos(ny * 7 - t * .4) + Math.sin((nx + ny) * 5 - t * .7) * .6;
+var edge = Math.min(1, Math.min(nx, 1 - nx) * 7) * Math.min(1, Math.min(ny, 1 - ny) * 9);
+var a = (0.32 + v * 0.3) * (0.35 + edge * 0.65);
+var li = a <= 0.04 ? -1 : Math.min(5, Math.floor(a * 9));
+if (li >= 0) levels[li].push(x, y);
+}
+}
+ctx.clearRect(0, 0, w, h);
+ctx.fillStyle = '#fff';
+for (var l = 0; l < 6; l++) {
+ctx.globalAlpha = 0.07 + l * 0.075;
+var arr = levels[l];
+for (var k = 0; k < arr.length; k += 2) ctx.fillRect(arr[k], arr[k + 1], 1.6, 1.6);
+}
+}
+size();
+window.addEventListener('resize', size);
+whileVisible(panel, function () { size(); raf = window.requestAnimationFrame(draw); }, function () { window.cancelAnimationFrame(raf); });
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-gem]'), function (stage) {
+var cv = stage.querySelector('canvas'), ctx = cv && cv.getContext('2d');
+if (!ctx) return;
+var pts = [], TAU = Math.PI * 2;
+function V(r, deg, y) { var a = deg * Math.PI / 180; return [Math.cos(a) * r, y, Math.sin(a) * r]; }
+function tri(a, b, c, n) {
+var ux = b[0] - a[0], uy = b[1] - a[1], uz = b[2] - a[2], vx = c[0] - a[0], vy = c[1] - a[1], vz = c[2] - a[2];
+var nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx, len = Math.sqrt(nx * nx + ny * ny + nz * nz) || 1;
+nx /= len; ny /= len; nz /= len;
+var cx = (a[0] + b[0] + c[0]) / 3, cy = (a[1] + b[1] + c[1]) / 3 + .25, cz = (a[2] + b[2] + c[2]) / 3;
+if (nx * cx + ny * cy + nz * cz < 0) { nx = -nx; ny = -ny; nz = -nz; }
+for (var i = 0; i <= n; i++) for (var j = 0; j <= n - i; j++) {
+var s = i / n, t = j / n, r = 1 - s - t;
+pts.push([a[0] * r + b[0] * s + c[0] * t, a[1] * r + b[1] * s + c[1] * t, a[2] * r + b[2] * s + c[2] * t, nx, ny, nz, (i === 0 || j === 0 || i + j === n) ? 1 : 0]);
+}
+}
+var TOP = .46, GIRDLE = .14, C = [0, -1.02, 0], O = [0, TOP, 0];
+for (var i = 0; i < 8; i++) {
+var T0 = V(.54, i * 45 + 22.5, TOP), T1 = V(.54, i * 45 + 67.5, TOP);
+var G0 = V(1, i * 45, GIRDLE), G1 = V(1, i * 45 + 22.5, GIRDLE), G2 = V(1, i * 45 + 45, GIRDLE), G3 = V(1, i * 45 + 67.5, GIRDLE);
+tri(O, T0, T1, 6);
+tri(T0, G0, G1, 5); tri(T0, G1, G2, 5); tri(T0, T1, G2, 6);
+tri(C, G0, G1, 12); tri(C, G1, G2, 12);
+void G3;
+}
+var w = 0, h = 0, dpr = 1, raf = 0, ink = '#0013b7', faint = '#c9cdd8', amber = '#f6a723';
+function theme() {
+var cs = window.getComputedStyle(stage);
+ink = cs.getPropertyValue('--brand').trim() || ink;
+faint = cs.getPropertyValue('--line-2').trim() || faint;
+}
+function size() {
+dpr = Math.min(2, window.devicePixelRatio || 1);
+w = cv.clientWidth; h = cv.clientHeight;
+cv.width = w * dpr; cv.height = h * dpr;
+ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+var nodes = Array.prototype.slice.call(stage.querySelectorAll('.gem-node'));
+function draw(now) {
+raf = window.requestAnimationFrame(draw);
+var t = now / 1000, ry = t * .22, rx = .2;
+var cy = Math.cos(ry), sy = Math.sin(ry), cxr = Math.cos(rx), sxr = Math.sin(rx);
+var S = Math.min(w * .3, h * .37), ox = w / 2, oy = h * .43;
+ctx.clearRect(0, 0, w, h);
+ctx.lineWidth = 1; ctx.strokeStyle = ink; ctx.globalAlpha = .45;
+ctx.setLineDash([3, 6]); ctx.lineDashOffset = -t * 14;
+nodes.forEach(function (n, k) {
+var nx = n.offsetLeft + n.offsetWidth / 2, ny = n.offsetTop + n.offsetHeight / 2;
+ctx.beginPath(); ctx.moveTo(nx, ny);
+ctx.quadraticCurveTo((nx + ox) / 2, ny + (k % 2 ? 50 : -50), ox + (nx < ox ? -S * .25 : S * .25), oy - S * .1);
+ctx.stroke();
+});
+ctx.setLineDash([]);
+for (var p = 0; p < pts.length; p++) {
+var q = pts[p];
+var x = q[0] * cy + q[2] * sy, z = -q[0] * sy + q[2] * cy, y = q[1];
+var y2 = y * cxr - z * sxr, z2 = y * sxr + z * cxr;
+var nxr = q[3] * cy + q[5] * sy, nzr = -q[3] * sy + q[5] * cy, nyr = q[4];
+var ny2 = nyr * cxr - nzr * sxr, nz2 = nyr * sxr + nzr * cxr;
+var px = ox + x * S, py = oy - y2 * S;
+if (nz2 < 0) { // far side: a faint ghost, which is what makes it read as glass
+if (!q[6]) continue;
+ctx.globalAlpha = .5; ctx.fillStyle = faint;
+ctx.fillRect(px - .6, py - .6, 1.2, 1.2);
+continue;
+}
+var light = Math.max(0, nxr * .35 + ny2 * .72 + nz2 * .6) + Math.max(0, -ny2 * .5 + nz2 * .45 - nxr * .2) * .7;
+var spark = light > .96 && ny2 > 0;
+ctx.fillStyle = spark ? amber : ink;
+ctx.globalAlpha = spark ? 1 : Math.min(1, .3 + light * .75 + (q[6] ? .2 : 0));
+var r = (q[6] ? 1.5 : 1.15) + z2 * .35 + (spark ? .5 : 0);
+ctx.beginPath(); ctx.arc(px, py, Math.max(.5, r), 0, TAU); ctx.fill();
+}
+ctx.globalAlpha = 1;
+}
+theme(); size();
+window.addEventListener('resize', size);
+new MutationObserver(theme).observe(docEl, { attributes: true, attributeFilter: ['data-theme'] });
+whileVisible(stage, function () { size(); raf = window.requestAnimationFrame(draw); }, function () { window.cancelAnimationFrame(raf); });
+});
+Array.prototype.forEach.call(document.querySelectorAll('.hero .mock'), function (mock) {
+var bubbles = Array.prototype.slice.call(mock.querySelectorAll('.bubble'));
+if (!bubbles.length) return;
+var foot = mock.querySelector('.mock-foot');
+var typing = document.createElement('span');
+typing.className = 'typing'; typing.setAttribute('aria-hidden', 'true');
+typing.innerHTML = '<i></i><i></i><i></i>';
+mock.appendChild(typing);
+mock.classList.add('is-play');
+onView([mock], function () {
+var at = 500;
+bubbles.forEach(function (b) {
+var out = b.classList.contains('out');
+if (out) {
+window.setTimeout(function () {
+typing.style.top = b.offsetTop + 'px';
+typing.style.right = '16px';
+typing.classList.add('is-on');
+}, at);
+at += 1300;
+window.setTimeout(function () { typing.classList.remove('is-on'); }, at - 150);
+}
+window.setTimeout(function () { b.classList.add('is-on'); }, at);
+at += out ? 1500 : 900;
+});
+window.setTimeout(function () { if (foot) foot.classList.add('is-on'); }, at);
+}, { threshold: 0.35 });
+});
+Array.prototype.forEach.call(document.querySelectorAll('.mock'), function (mock) {
+var rows = Array.prototype.slice.call(mock.querySelectorAll('.mock-row'));
+if (!rows.length || !mock.querySelector('.chip-go')) return;
+var step = 0, timer = 0;
+function tick() {
+if (step < rows.length) {
+var go = rows[step].querySelector('.chip-go');
+rows[step].classList.add('is-done');
+if (go) { go.setAttribute('data-label', go.textContent); go.textContent = 'Approved ✓'; }
+step++;
+} else {
+rows.forEach(function (r) {
+var go = r.querySelector('.chip-go');
+r.classList.remove('is-done');
+if (go && go.getAttribute('data-label')) go.textContent = go.getAttribute('data-label');
+});
+step = 0;
+}
+}
+whileVisible(mock, function () { timer = window.setInterval(tick, 2400); }, function () { window.clearInterval(timer); });
+});
+Array.prototype.forEach.call(document.querySelectorAll('.loop'), function (loop) {
+var steps = loop.querySelectorAll('.loop-step'), i = -1, timer = 0;
+function tick() {
+if (i >= 0) steps[i].classList.remove('is-live');
+i = (i + 1) % steps.length;
+steps[i].classList.add('is-live');
+}
+whileVisible(loop, function () { tick(); timer = window.setInterval(tick, 1800); }, function () { window.clearInterval(timer); });
+});
+} else {
+docEl.classList.add('motion-failsafe');
+}
+Array.prototype.forEach.call(document.querySelectorAll('.split'), function (split) {
+var chips = Array.prototype.slice.call(split.querySelectorAll('.chaos-chip:not(.dup)'));
+var tally = split.querySelector('.split-tally'), n = split.querySelector('[data-n]');
+function update() {
+var c = chips.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; }).length;
+if (n) { n.textContent = c; n.classList.add('bump'); window.setTimeout(function () { n.classList.remove('bump'); }, 260); }
+if (tally) tally.innerHTML = c ? 'You run <b>' + c + '</b> system' + (c === 1 ? '' : 's') + ', <b>' + c + '</b> logins, <b>' + c + '</b> bills, <b>' + c + '</b> vendors, and your customer in pieces across all of them.' : '';
+}
+split.addEventListener('click', function (e) {
+var b = e.target.closest('.chaos-chip');
+if (!b) return;
+if (b.classList.contains('dup')) { b = chips[Array.prototype.indexOf.call(b.parentNode.children, b) % chips.length] || b; }
+split.classList.add('is-counting');
+b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+update();
+});
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-stackm]'), function (root) {
+var total = +root.getAttribute('data-total'), chips = Array.prototype.slice.call(root.querySelectorAll('.stackm-chip'));
+var nEl = root.querySelector('[data-stackm-n]'), tally = root.querySelector('[data-stackm-tally]'), label = root.querySelector('[data-stackm-label]');
+var panel = root.querySelector('[data-stackm-panel]'), go = root.querySelector('[data-stackm-go]');
+var depts = Array.prototype.slice.call(root.querySelectorAll('.stackm-dept'));
+var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var touched = false, merged = false, hintTimer = null, countTimer = null, shown = total;
+chips.forEach(function (c, i) { c.style.setProperty('--i', i); });
+function on(b) { return b.getAttribute('aria-pressed') === 'true'; }
+function picked() { return chips.filter(on); }
+function setNum(v) { shown = v; nEl.textContent = v; }
+function bump() { nEl.classList.add('bump'); window.setTimeout(function () { nEl.classList.remove('bump'); }, 260); }
+function hit() { panel.classList.remove('is-hit'); void panel.offsetWidth; panel.classList.add('is-hit'); }
+function update() {
+var c = picked().length;
+depts.forEach(function (d) {
+var n = chips.filter(function (x) { return x.getAttribute('data-g') === d.getAttribute('data-g') && on(x); }).length;
+d.classList.toggle('has', n > 0);
+});
+setNum(c || total); bump();
+label.textContent = c ? 'The ' + c + ' tool' + (c === 1 ? '' : 's') + ' you picked' : 'If you ran all ' + total + ' today';
+var nn = c || total, links = nn * (nn - 1) / 2, s = nn === 1 ? '' : 's';
+function row(n, what, to) { return '<li><b>' + n + '</b><span>' + what + '</span><i>' + to + '</i></li>'; }
+tally.innerHTML = '<span class="stackm-tally-short" data-stackm-short></span><ul class="stackm-rows">' +
+row(c || total, 'login' + s + ', bill' + s + ' and vendor' + s, '1') +
+row(links ? 'up to ' + links.toLocaleString('en-IN') : '0', 'integration' + (links === 1 ? '' : 's') + ' between them', '0') +
+row(c || total, 'place' + s + ' your data can leak', '1') + '</ul>';
+go.textContent = c ? 'Merge my ' + c + ' into one' : 'Merge them into one';
+calc();
+}
+var outEl = root.querySelector('[data-stackm-out]');
+function inr(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+function calc() {
+if (!outEl) return;
+var sel = picked(), c = sel.length, list = c ? sel : chips, n = list.length, tools = 0, hrs = 0;
+var plan = +outEl.getAttribute('data-plan'), locFee = +outEl.getAttribute('data-locfee'), base = +outEl.getAttribute('data-base'), share = +outEl.getAttribute('data-share'), match = +outEl.getAttribute('data-match'), week = +outEl.getAttribute('data-week');
+var v = {}; ['sal', 'enq', 'aov', 'rep', 'loc', 'team'].forEach(function (k) { v[k] = +root.querySelector('[data-stackm-in="' + k + '"]').value; });
+v.loc = Math.min(50, Math.max(1, Math.round(v.loc) || 1)); v.team = Math.min(500, Math.max(1, Math.round(v.team) || 1));
+var grp = {}, uf = v.team / base, ff = Math.min(2, Math.max(.5, Math.sqrt(uf)));
+list.forEach(function (x) {
+var s = x.getAttribute('data-s'), f = s === 'l' ? v.loc : s === 'u' ? uf : 1;
+var cst = (+x.getAttribute('data-c') || 0) * f, g = x.getAttribute('data-grp');
+hrs += (+x.getAttribute('data-h') || 0) * (s ? f : ff);
+if (g) grp[g] = Math.max(grp[g] || 0, cst); else tools += cst;
+});
+Object.keys(grp).forEach(function (g) { tools += grp[g]; });
+if (n > 1) hrs += n * match * (1 + .5 * (v.loc - 1));
+var cap = v.team * week * .6, capped = hrs > cap; if (capped) hrs = cap;
+var rate = v.sal / (week * 4.33), team = hrs * 4.33 * rate, left = team * (1 - share);
+var jw = plan + (v.loc - 1) * locFee;
+var today = tools + team, withJ = jw + left, saved = today - withJ, back = hrs * share;
+var opp = Math.max(0, v.enq * v.aov * (.95 - v.rep / 100) * (.15 - .03));
+function set(k, t) { var el = root.querySelector('[data-stackm-o="' + k + '"]'); if (el) el.textContent = t; }
+function tip(k, t) { var el = root.querySelector('[data-stackm-tip="' + k + '"]'); if (el) el.textContent = t; }
+set('today', inr(today)); set('with', inr(withJ)); set('hours', Math.round(back));
+set('people', (back / week).toFixed(1) + ' of ' + v.team);
+set('save-k', saved > 0 ? 'Saved a month' : 'Costs more a month'); set('save', inr(Math.abs(saved)));
+root.classList.toggle('is-neg', saved <= 0);
+root.querySelector('[data-stackm-opp]').textContent = inr(opp);
+var sized = v.loc + ' showroom' + (v.loc === 1 ? '' : 's') + ' and ' + v.team + ' team member' + (v.team === 1 ? '' : 's');
+tip('today', 'For ' + sized + ': subscriptions ' + inr(tools) + ' plus team time ' + inr(team) + ' (' + Math.round(hrs) + ' hours a week, about ' + (hrs / week).toFixed(1) + ' people running and matching these tools' + (capped ? '; capped at 60% of the team’s time' : '') + '). Average paid-plan prices; per-outlet tools counted per showroom, per-user tools by team size, and tools that are one product charged once.');
+tip('with', 'Jwero One ' + inr(plan) + (v.loc > 1 ? ' plus ' + inr((v.loc - 1) * locFee) + ' for ' + (v.loc - 1) + ' more showroom' + (v.loc === 2 ? '' : 's') : '') + ', with no charge per team member, plus the team time that remains, ' + inr(left) + ' (' + Math.round(hrs - back) + ' hours a week).' + (v.loc >= 6 ? ' From six showrooms, Enterprise terms apply and the real figure may differ.' : '') + ' The first month is ₹3,600 instead of ' + inr(plan) + '. Charges for messages, AI, calls and ads are left out on both sides.');
+tip('save', saved > 0 ? 'Today minus with Jwero. That is ' + inr(saved * 12) + ' a year.' : 'These tools cost less than Jwero One today. With this few, the gain is the time, not the money. Pick everything you really run.');
+tip('hours', 'Half of the ' + Math.round(hrs) + ' hours is counted as saved, because the work itself stays.');
+tip('people', 'Hours back divided by a ' + week + '-hour week: about ' + (back / week).toFixed(1) + ' of your ' + v.team + ' people could move to selling, service or the floor.');
+tip('opp', 'More sales you could reach by replying fast to every enquiry: ' + v.enq.toLocaleString('en-IN') + ' enquiries, ' + inr(v.aov) + ' average bill, ' + v.rep + '% answered within an hour today. Not added to the saving. Change these under Your numbers.');
+var short = root.querySelector('[data-stackm-short]'); if (short) short.textContent = saved > 0 ? 'Saves ' + inr(saved) + ' a month' : Math.round(back) + ' hours a week back';
+var li = root.querySelector('[data-stackm-in="loc"]'), ti = root.querySelector('[data-stackm-in="team"]'); if (document.activeElement !== li) li.value = v.loc; if (document.activeElement !== ti) ti.value = v.team;
+root.querySelector('[data-stackm-v="sal"]').textContent = inr(v.sal);
+root.querySelector('[data-stackm-v="enq"]').textContent = v.enq.toLocaleString('en-IN');
+root.querySelector('[data-stackm-v="aov"]').textContent = inr(v.aov);
+root.querySelector('[data-stackm-v="rep"]').textContent = v.rep + '%';
+}
+var enqTouched = false;
+function syncEnq() { if (enqTouched) return; var e = root.querySelector('[data-stackm-in="enq"]'), lo = Math.max(1, +root.querySelector('[data-stackm-in="loc"]').value || 1); e.value = Math.min(3000, 200 * lo); }
+if (outEl) {
+root.addEventListener('input', function (e) { var k = e.target.getAttribute && e.target.getAttribute('data-stackm-in'); if (k === 'enq') enqTouched = true; if (k === 'loc') syncEnq(); calc(); });
+calc();
+}
+function centre(el) { var r = el.getBoundingClientRect(), o = root.getBoundingClientRect(); return [r.left + r.width / 2 - o.left, r.top + r.height / 2 - o.top]; }
+function fly(chip) {
+if (calm || !root.animate) { hit(); return; }
+var a = centre(chip), b = centre(nEl), dot = document.createElement('i');
+dot.className = 'stackm-fly'; dot.style.left = a[0] + 'px'; dot.style.top = a[1] + 'px'; root.appendChild(dot);
+var anim = dot.animate([{ transform: 'translate(0,0) scale(1)', opacity: 1 }, { transform: 'translate(' + (b[0] - a[0]) * .5 + 'px,' + ((b[1] - a[1]) * .5 - 40) + 'px) scale(1.3)', opacity: 1, offset: .5 }, { transform: 'translate(' + (b[0] - a[0]) + 'px,' + (b[1] - a[1]) + 'px) scale(.4)', opacity: .2 }], { duration: 520, easing: 'cubic-bezier(.5,0,.3,1)' });
+anim.onfinish = function () { dot.remove(); hit(); };
+}
+function unmerge() {
+merged = false; window.clearInterval(countTimer); root.classList.remove('is-merged'); root.classList.remove('is-merging');
+chips.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+update();
+}
+function merge() {
+if (!picked().length) chips.forEach(function (x) { x.setAttribute('aria-pressed', 'true'); });
+update();
+var sel = picked(), b = centre(nEl), from = sel.length;
+sel.forEach(function (x, k) { var a = centre(x); x.style.setProperty('--dx', (b[0] - a[0]) + 'px'); x.style.setProperty('--dy', (b[1] - a[1]) + 'px'); x.style.setProperty('--m', k); });
+merged = true; root.classList.remove('is-filter'); root.classList.add('is-open');
+label.textContent = 'Merging';
+var steps = Math.min(from - 1, 24), k = 0;
+function done() { root.classList.add('is-merged'); label.textContent = 'What you run now'; tally.innerHTML = '<span class="stackm-tally-short" data-stackm-short></span><p class="stackm-merged"><b>' + from + '</b> tools, logins, bills and vendors are now <b>one</b>.</p>'; calc(); go.textContent = 'Start again'; }
+void root.offsetWidth; root.classList.add('is-merging');
+if (calm || steps < 1) { done(); return; }
+window.clearInterval(countTimer);
+countTimer = window.setInterval(function () {
+k += 1; setNum(Math.max(1, Math.round(from - (from - 1) * (k / steps)))); bump();
+if (k >= steps) { window.clearInterval(countTimer); done(); }
+}, 34);
+}
+root.addEventListener('click', function (e) {
+var b = e.target.closest('.stackm-chip'), d = e.target.closest('.stackm-dept');
+if (e.target.closest('[data-stackm-more]')) { root.classList.add('is-open'); return; }
+if (e.target.closest('[data-stackm-go]')) { touched = true; stopHint(); if (merged) unmerge(); else merge(); return; }
+var stp = e.target.closest('[data-stackm-step]');
+if (stp) { var inp = root.querySelector('[data-stackm-in="' + stp.getAttribute('data-stackm-step') + '"]'); inp.value = Math.min(+inp.max, Math.max(+inp.min, (Math.round(+inp.value) || 1) + (+stp.getAttribute('data-d')))); if (stp.getAttribute('data-stackm-step') === 'loc') syncEnq(); calc(); return; }
+if (e.target.closest('[data-stackm-open]')) { var dg = root.querySelector('[data-stackm-dlg="' + e.target.closest('[data-stackm-open]').getAttribute('data-stackm-open') + '"]'); if (dg && dg.showModal) dg.showModal(); return; }
+if (e.target.closest('[data-stackm-exp]')) { var eb = e.target.closest('[data-stackm-exp]'), ex = panel.classList.toggle('is-exp'); eb.setAttribute('aria-expanded', String(ex)); eb.textContent = ex ? 'Close' : 'Details'; return; }
+if (merged) return;
+if (b) { var was = on(b); b.setAttribute('aria-pressed', was ? 'false' : 'true'); if (!was) fly(b); }
+else if (d) {
+var g = d.getAttribute('data-g'), mine = chips.filter(function (x) { return x.getAttribute('data-g') === g; });
+var all = mine.every(on);
+mine.forEach(function (x) { x.setAttribute('aria-pressed', all ? 'false' : 'true'); });
+root.classList.add('is-open'); if (!all) hit();
+}
+else if (e.target.closest('[data-stackm-all]')) { chips.forEach(function (x) { x.setAttribute('aria-pressed', 'true'); }); root.classList.add('is-open'); hit(); }
+else if (e.target.closest('[data-stackm-clear]')) chips.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+else return;
+touched = true; stopHint(); update();
+});
+depts.forEach(function (d) {
+function lit(yes) {
+if (merged) return;
+var g = d.getAttribute('data-g');
+root.classList.toggle('is-filter', yes); d.classList.toggle('is-on', yes);
+chips.forEach(function (x) { x.classList.toggle('is-lit', yes && x.getAttribute('data-g') === g); });
+}
+d.addEventListener('mouseenter', function () { lit(true); }); d.addEventListener('mouseleave', function () { lit(false); });
+d.addEventListener('focus', function () { lit(true); }); d.addEventListener('blur', function () { lit(false); });
+});
+function stopHint() { window.clearInterval(hintTimer); hintTimer = null; chips.forEach(function (x) { x.classList.remove('is-hint'); }); }
+function startHint() {
+if (touched || calm || hintTimer) return;
+hintTimer = window.setInterval(function () {
+chips.forEach(function (x) { x.classList.remove('is-hint'); });
+var vis = chips.filter(function (x) { return x.offsetParent && x.offsetTop < x.parentNode.clientHeight; });
+if (vis.length) vis[Math.floor(Math.random() * vis.length)].classList.add('is-hint');
+}, 1100);
+}
+if ('IntersectionObserver' in window) {
+new IntersectionObserver(function (es) {
+es.forEach(function (en) {
+if (en.isIntersecting) { root.classList.add('is-in'); window.setTimeout(function () { root.classList.add('is-ready'); }, 1400); startHint(); }
+else if (hintTimer) { window.clearInterval(hintTimer); hintTimer = null; }
+});
+}, { threshold: .15 }).observe(root);
+} else { root.classList.add('is-in'); root.classList.add('is-ready'); }
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-gem]'), function (stage) {
+var nodes = Array.prototype.slice.call(stage.querySelectorAll('.gem-node'));
+function show(node, on) {
+var note = document.getElementById(node.getAttribute('aria-describedby'));
+nodes.forEach(function (o) { if (o !== node) { o.setAttribute('aria-expanded', 'false'); var x = document.getElementById(o.getAttribute('aria-describedby')); if (x) x.classList.remove('is-on'); } });
+node.setAttribute('aria-expanded', on ? 'true' : 'false');
+if (note) note.classList.toggle('is-on', on);
+stage.classList.toggle('has-note', on);
+}
+nodes.forEach(function (node) {
+node.addEventListener('click', function () { show(node, node.getAttribute('aria-expanded') !== 'true'); });
+node.addEventListener('mouseenter', function () { show(node, true); });
+node.addEventListener('focus', function () { show(node, true); });
+node.addEventListener('blur', function () { show(node, false); });
+});
+stage.addEventListener('mouseleave', function () { nodes.forEach(function (o) { show(o, false); }); });
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-gem2]'), function (root) {
+var DATA; try { DATA = JSON.parse(root.querySelector('[data-gem2-json]').textContent); } catch (e) { return; }
+var key = root.getAttribute('data-set') || personaKey(); var set = DATA.sets[key] || DATA.sets.single;
+var fixedMetal = root.getAttribute('data-fixed-metal');
+var stage = root.querySelector('.gem2-stage'), cv = stage.querySelector('canvas'), ctx = cv.getContext && cv.getContext('2d');
+var nodesEl = root.querySelector('[data-gem2-nodes]'), shardsEl = root.querySelector('[data-gem2-shards]'), centreEl = root.querySelector('[data-gem2-centre]');
+var linesEl = root.querySelector('[data-gem2-lines]'), noteEl = root.querySelector('[data-gem2-note]'), eventsEl = root.querySelector('[data-gem2-events]');
+var capEl = root.querySelector('[data-gem2-caption]'), loop = root.hasAttribute('data-loop');
+var cardTitle = root.querySelector('[data-gem2-cardtitle]'), cardTag = root.querySelector('[data-gem2-cardtag]'), playBtn = root.querySelector('[data-gem2-play]');
+var esc2 = function (t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+var FAMS = DATA.families || [], famBtns = Array.prototype.slice.call(root.querySelectorAll('.gem2-fam')), heardEl = root.querySelector('[data-gem2-heard]'), sigNote = root.querySelector('[data-gem2-signote]'), famOpen = -1;
+var N = set.modules.length, mode = 'os', active = -1, step = -1, timer = null;
+nodesEl.innerHTML = set.modules.map(function (m, k) { return '<button type="button" class="gem2-node" data-k="' + k + '">' + (DATA.icons[m[0]] || '') + '<span>' + esc2(m[1]) + '</span><em>Repriced</em><u class="gem2-n"></u></button>'; }).join('');
+shardsEl.innerHTML = set.tools.map(function (t, g) { return '<span class="gem2-shard" data-g="' + g + '">' + esc2(t) + '</span>'; }).join('');
+eventsEl.innerHTML = set.week.map(function (e, k) { return '<li><button type="button" data-ev="' + k + '"><b>' + esc2(e[0]) + '</b><span>' + esc2(e[1]) + '</span></button></li>'; }).join('');
+centreEl.textContent = set.centre; cardTitle.textContent = set.centre;
+var nodeBtns = Array.prototype.slice.call(nodesEl.querySelectorAll('.gem2-node'));
+var shardEls = Array.prototype.slice.call(shardsEl.children), evBtns = Array.prototype.slice.call(eventsEl.querySelectorAll('button'));
+var TAU = Math.PI * 2, SHAPES = { diamond: [], bangle: [] };
+function V(r, deg, y) { var a = deg * Math.PI / 180; return [Math.cos(a) * r, y, Math.sin(a) * r]; }
+function facet(list, vs, o) {
+var a = vs[0], b = vs[1], c = vs[2], n = o.n;
+var cx = 0, cy = 0, cz = 0; vs.forEach(function (v) { cx += v[0]; cy += v[1]; cz += v[2]; }); cx /= vs.length; cy /= vs.length; cz /= vs.length;
+if (!n) {
+var ux = b[0] - a[0], uy = b[1] - a[1], uz = b[2] - a[2], vx = c[0] - a[0], vy = c[1] - a[1], vz = c[2] - a[2];
+var nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx, len = Math.sqrt(nx * nx + ny * ny + nz * nz) || 1;
+nx /= len; ny /= len; nz /= len;
+if (nx * cx + ny * (cy + .25) + nz * cz < 0) { nx = -nx; ny = -ny; nz = -nz; }
+n = [nx, ny, nz];
+}
+list.push({ v: vs, n: n, c: [cx, cy, cz], grp: o.grp, mod: o.mod, kind: o.kind, e: o.e, ang: o.ang || 0 });
+}
+(function () {
+var TOP = .44, GIRDLE = .12, CULET = [0, -1.04, 0], O = [0, TOP, 0];
+for (var i = 0; i < 8; i++) {
+var T0 = V(.56, i * 45, TOP), T1 = V(.56, i * 45 + 45, TOP);
+var G0 = V(1, i * 45, GIRDLE), Gm = V(1, i * 45 + 22.5, GIRDLE), G1 = V(1, i * 45 + 45, GIRDLE);
+var o = function (kind, e) { return { grp: i >> 1, mod: Math.min(N - 1, Math.floor(i * N / 8)), kind: kind, e: e }; };
+facet(SHAPES.diamond, [O, T0, T1], o(0, [0, 1, 0]));
+facet(SHAPES.diamond, [T0, Gm, T1], o(1, [1, 1, 0]));
+facet(SHAPES.diamond, [T0, G0, Gm], o(1, [1, 1, 1]));
+facet(SHAPES.diamond, [T1, Gm, G1], o(1, [1, 1, 1]));
+facet(SHAPES.diamond, [CULET, G0, Gm], o(2, [1, 1, 1]));
+facet(SHAPES.diamond, [CULET, Gm, G1], o(2, [1, 1, 1]));
+}
+})();
+(function () {
+var M = 72, m = 12, R = .86, TR = .085, TZ = .22, QUAD = [1, 0, 2, 3];
+function P(u, v) { var a = u / M * TAU, b = v / m * TAU, rr = R + TR * Math.cos(b); return [rr * Math.cos(a), rr * Math.sin(a), TZ * Math.sin(b)]; }
+for (var u = 0; u < M; u++) for (var v = 0; v < m; v++) {
+var am = (u + .5) / M * TAU, bm = (v + .5) / m * TAU;
+var nx = Math.cos(bm) * Math.cos(am) / TR, ny = Math.cos(bm) * Math.sin(am) / TR, nz = Math.sin(bm) / TZ, len = Math.sqrt(nx * nx + ny * ny + nz * nz);
+var scr = ((90 - (u + .5) / M * 360) % 360 + 360) % 360;
+facet(SHAPES.bangle, [P(u, v), P(u + 1, v), P(u + 1, v + 1), P(u, v + 1)], { n: [nx / len, ny / len, nz / len], grp: QUAD[Math.floor(u / (M / 4))], mod: Math.min(N - 1, Math.floor(scr / (360 / N))), kind: 1, ang: (u + .5) / M });
+}
+})();
+var METALS = {
+gold: { shape: 'bangle', base: '#d4a21f', dark: '#8a6408', lite: '#fff1b8', word: 'gold' },
+silver: { shape: 'bangle', base: '#b9c0c8', dark: '#6b737c', lite: '#ffffff', word: 'silver' },
+platinum: { shape: 'bangle', base: '#9fa9b6', dark: '#4f5967', lite: '#f1f5fa', word: 'platinum' },
+diamond: { shape: 'diamond', word: 'gold' },
+};
+function hex(h) { h = h.replace('#', ''); if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2]; return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]; }
+function mix(a, b, t) { return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t]; }
+Object.keys(METALS).forEach(function (k) { var M0 = METALS[k]; if (M0.base) { M0.rgb = hex(M0.base); M0.lrgb = hex(M0.lite); M0.drgb = hex(M0.dark); } });
+var INK = [0, 19, 183], AMB = [246, 167, 35];
+var metal = fixedMetal || 'gold'; if (!fixedMetal) { try { metal = localStorage.getItem('jwero-metal') || 'gold'; } catch (e) {} }
+if (!fixedMetal && metal !== 'gold' && metal !== 'diamond') metal = 'gold';
+if (!METALS[metal]) metal = 'gold';
+var facets = SHAPES[METALS[metal].shape];
+var w = 0, h = 0, dpr = 1, raf = 0, ink = '#0013b7', faint = '#c9cdd8', amber = '#f6a723';
+var spin = 0, rotY = 0, rotX = .2, dragging = false, lastX = 0, lastY = 0, lastT = 0;
+var explode = 0, explodeTo = 0, glow = [], pulses = [], ripple = -1, ox = 0, oy = 0, S = 1, nodePos = [];
+var DIRS = [[-1, -.62], [1, -.62], [-1, .7], [1, .7]];
+for (var g0 = 0; g0 < N; g0++) glow.push(0);
+function theme() { var cs = window.getComputedStyle(root); ink = cs.getPropertyValue('--brand').trim() || ink; faint = cs.getPropertyValue('--line-2').trim() || faint; if (/^#[0-9a-f]{3,6}$/i.test(ink)) INK = hex(ink); }
+function layout() {
+dpr = Math.min(2, window.devicePixelRatio || 1);
+w = stage.clientWidth; h = stage.clientHeight;
+cv.width = w * dpr; cv.height = h * dpr; if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+var small = w < 520;
+S = Math.min(w * (small ? .2 : .22), h * .32); ox = w / 2; oy = h * .47;
+var rx = Math.min(w / 2 - (small ? 34 : 70), S * (small ? 2.05 : 2.5)), ry = Math.min(h / 2 - 46, S * 1.55);
+nodePos = [];
+nodeBtns.forEach(function (b, k) {
+var a = -Math.PI / 2 + (k + .5) * TAU / N, x = ox + Math.cos(a) * rx, y = oy + Math.sin(a) * ry;
+nodePos.push([x, y, a]); b.style.left = x + 'px'; b.style.top = y + 'px';
+});
+shardEls.forEach(function (el, g) { el.style.left = (ox + DIRS[g][0] * S * .78) + 'px'; el.style.top = (oy + DIRS[g][1] * S * .66 + (DIRS[g][1] < 0 ? -S * .1 : S * .1)) + 'px'; });
+centreEl.style.top = (METALS[metal].shape === 'bangle' && !small ? oy - 8 : oy + S * 1.22) + 'px';
+}
+function sectorOf(k) { return [Math.floor(k * 8 / N), Math.floor((k + 1) * 8 / N)]; }
+function wireEnd(k) {
+if (explode > .5) { var g = set.modules[k][5]; return [ox + DIRS[g][0] * S * .72 * explode, oy + DIRS[g][1] * S * .62 * explode]; }
+var p = nodePos[k], rr = METALS[metal].shape === 'bangle' ? [.98, .98] : [.55, .4]; return [ox + Math.cos(p[2]) * S * rr[0], oy + Math.sin(p[2]) * S * rr[1]];
+}
+function draw(now) {
+raf = window.requestAnimationFrame(draw);
+if (!ctx) return;
+var t = now / 1000, dt = lastT ? Math.min(.05, t - lastT) : 0; lastT = t;
+if (!dragging) spin += dt * (mode === 'today' ? .1 : .22);
+explode += (explodeTo - explode) * Math.min(1, dt * 5);
+var bangle = METALS[metal].shape === 'bangle';
+var ry = (bangle ? Math.sin(spin * 1.5) * (.62 - .4 * explode) : spin) + rotY, rxx = bangle ? rotX - .08 : rotX, cy = Math.cos(ry), sy = Math.sin(ry), cxr = Math.cos(rxx), sxr = Math.sin(rxx);
+ctx.clearRect(0, 0, w, h);
+ctx.lineWidth = 1; ctx.setLineDash([3, 6]); ctx.lineDashOffset = -t * 14;
+for (var k = 0; k < N; k++) {
+var p = nodePos[k], e = wireEnd(k);
+ctx.strokeStyle = k === active ? ink : faint; ctx.globalAlpha = k === active ? .9 : .8;
+ctx.beginPath(); ctx.moveTo(p[0], p[1]); ctx.lineTo(e[0], e[1]); ctx.stroke();
+}
+ctx.setLineDash([]);
+var MT = METALS[metal], isMetal = MT.shape === 'bangle';
+var front = ripple >= 0 ? (isMetal ? ripple : 1.1 - ripple * 2.4) : 9, k2 = 1 - .36 * explode, best = null;
+var sh = ctx.createRadialGradient(ox, oy + S * 1.12, 0, ox, oy + S * 1.12, S * .9), shc = isMetal ? '20, 16, 0' : '0, 19, 183';
+sh.addColorStop(0, 'rgba(' + shc + ', ' + (.1 * (1 - explode)) + ')'); sh.addColorStop(1, 'rgba(' + shc + ', 0)');
+ctx.globalAlpha = 1; ctx.fillStyle = sh; ctx.beginPath(); ctx.ellipse(ox, oy + S * 1.12, S * .9, S * .14, 0, 0, TAU); ctx.fill();
+var list = [];
+for (var f0 = 0; f0 < facets.length; f0++) {
+var F = facets[f0], n = F.n;
+var nxr = n[0] * cy + n[2] * sy, nzr = -n[0] * sy + n[2] * cy, ny2 = n[1] * cxr - nzr * sxr, nz2 = n[1] * sxr + nzr * cxr;
+if (isMetal && nz2 < 0) continue; // metal is opaque: the far side is simply hidden
+var grp = F.grp, dx = DIRS[grp][0] * S * .72 * explode, dy = DIRS[grp][1] * S * .62 * explode, P = [], zs = 0;
+for (var v0 = 0; v0 < F.v.length; v0++) {
+var q = F.v[v0], x = q[0] * cy + q[2] * sy, z = -q[0] * sy + q[2] * cy, y2 = q[1] * cxr - z * sxr;
+zs += q[1] * sxr + z * cxr;
+P.push(ox + x * S * k2 + dx, oy - y2 * S * k2 + dy);
+}
+var hot = 0;
+if (explode < .5) hot = glow[F.mod] > .02 ? glow[F.mod] : 0;
+else { for (var m2 = 0; m2 < N; m2++) if (glow[m2] > .02 && set.modules[m2][5] === grp) hot = Math.max(hot, glow[m2]); }
+var shine = isMetal ? (ripple >= 0 && Math.abs(((F.ang - front + 1.5) % 1) - .5) < .05 ? 1 : 0) : (Math.abs(F.c[1] - front) < .22 ? 1 : 0);
+var light = Math.max(0, nxr * .35 + ny2 * .72 + nz2 * .6) + Math.max(0, -ny2 * .5 + nz2 * .45 - nxr * .2) * .6;
+list.push({ P: P, z: zs / F.v.length, front: nz2 >= 0, light: Math.min(1, light), hot: hot, shine: shine, F: F });
+}
+list.sort(function (a3, b3) { return a3.z - b3.z; });
+ctx.lineJoin = 'round';
+for (var l0 = 0; l0 < list.length; l0++) {
+var it = list[l0], P2 = it.P, F2 = it.F, np = P2.length / 2;
+ctx.beginPath(); ctx.moveTo(P2[0], P2[1]); for (var p0 = 1; p0 < np; p0++) ctx.lineTo(P2[p0 * 2], P2[p0 * 2 + 1]); ctx.closePath();
+if (isMetal) {
+var col = it.light > .5 ? mix(MT.rgb, MT.lrgb, Math.min(.9, (it.light - .5) * 1.7)) : mix(MT.rgb, MT.drgb, Math.min(.75, (.5 - it.light) * 1.6));
+if (it.shine) col = mix(col, [255, 255, 255], .85);
+else if (it.hot > .2) col = mix(col, explode > .5 ? AMB : INK, .3 + it.hot * .45);
+var css = 'rgb(' + (col[0] | 0) + ',' + (col[1] | 0) + ',' + (col[2] | 0) + ')';
+ctx.globalAlpha = 1; ctx.fillStyle = css; ctx.fill(); ctx.strokeStyle = css; ctx.lineWidth = 1; ctx.stroke();
+if (it.light > .97 && (!best || it.light > best.light)) best = it;
+continue;
+}
+var lit = it.hot > .2 || it.shine;
+if (!it.front) { ctx.globalAlpha = .28; ctx.strokeStyle = faint; ctx.lineWidth = .75; ctx.stroke(); continue; }
+ctx.fillStyle = lit ? amber : ink;
+ctx.globalAlpha = lit ? .18 + Math.max(it.hot, it.shine) * .5 : (F2.kind === 0 ? .05 + (1 - it.light) * .06 : .06 + (1 - it.light) * .26);
+ctx.fill();
+if (it.light > .93 && !lit) { ctx.fillStyle = '#fff'; ctx.globalAlpha = (it.light - .93) * 9; ctx.fill(); }
+ctx.strokeStyle = lit ? amber : ink; ctx.globalAlpha = .55 + it.light * .3; ctx.lineWidth = 1;
+for (var e0 = 0; e0 < np; e0++) {
+if (F2.e && !F2.e[e0]) continue;
+var j0 = e0 * 2, j1 = ((e0 + 1) % np) * 2;
+ctx.beginPath(); ctx.moveTo(P2[j0], P2[j0 + 1]); ctx.lineTo(P2[j1], P2[j1 + 1]); ctx.stroke();
+}
+if (it.light > .96 && F2.kind === 1 && !lit && (!best || it.light > best.light)) best = it;
+}
+if (best && explode < .5) {
+var B = best.P, gx = 0, gy = 0; for (var b0 = 0; b0 < B.length; b0 += 2) { gx += B[b0]; gy += B[b0 + 1]; } gx /= B.length / 2; gy /= B.length / 2;
+var gl = isMetal ? 7 : 4 + (best.light - .96) * 180;
+ctx.globalAlpha = .95; ctx.strokeStyle = isMetal ? '#fff' : amber; ctx.lineWidth = 1.5; ctx.lineCap = 'round';
+ctx.beginPath(); ctx.moveTo(gx - gl, gy); ctx.lineTo(gx + gl, gy); ctx.moveTo(gx, gy - gl); ctx.lineTo(gx, gy + gl); ctx.stroke();
+}
+ctx.lineWidth = 1;
+for (var i2 = pulses.length - 1; i2 >= 0; i2--) {
+var pu = pulses[i2], u = (t - pu.t0) / .7;
+if (u < 0) continue;
+if (u > 1) { pulses.splice(i2, 1); continue; }
+var a2 = nodePos[pu.k], b2 = wireEnd(pu.k), v = pu.read ? 1 - u : u;
+ctx.globalAlpha = 1 - Math.abs(u - .5) * .8; ctx.fillStyle = pu.read ? amber : ink;
+ctx.beginPath(); ctx.arc(a2[0] + (b2[0] - a2[0]) * v, a2[1] + (b2[1] - a2[1]) * v, 4.5, 0, TAU); ctx.fill();
+}
+for (var g1 = 0; g1 < N; g1++) glow[g1] *= Math.pow(.2, dt);
+if (ripple >= 0) { ripple += dt * .9; if (ripple > 1) ripple = -1; }
+ctx.globalAlpha = 1;
+}
+function pulse(k, read, delay) { pulses.push({ k: k, read: read, t0: window.performance.now() / 1000 + (delay || 0) }); }
+function line(k, isRate) {
+var ev = set.week[k];
+if (isRate) return '<li class="is-rate"><b>Rate</b><span>' + (mode === 'today' ? 'The rate moved. Each tool is repriced by hand, or isn’t.' : 'The rate moved. One rule repriced every channel at once.') + '</span></li>';
+var tool = set.tools[set.modules[ev[2]][5]];
+var chips = (ev[4] || []).map(function (g) { return '<i>' + esc2(g[1]) + '</i>'; }).join('');
+return '<li><b>' + esc2(ev[0]) + '</b><span>' + esc2(mode === 'today' ? ev[1] + ', known only to: ' + tool : ev[3]) + (chips ? '<span class="gem2-chips">' + chips + '</span>' : '') + '</span></li>';
+}
+var rated = false;
+function fired() {
+var per = FAMS.map(function () { return []; }), seen = {};
+function add(g) { var id = g[0] + '|' + g[1]; if (seen[id]) return; seen[id] = 1; if (per[g[0]]) per[g[0]].push(g[1]); }
+for (var k = 0; k <= step; k++) (set.week[k][4] || []).forEach(add);
+if (rated && METALS[metal].word === 'gold') add([4, 'Gold rate increased']);
+return per;
+}
+var shown = -1, lastStep = -2, lastRated = false;
+function renderSignals() {
+if (!famBtns.length) return;
+var per = fired(), total = 0, latest = step >= 0 ? (set.week[step][4] || []) : [];
+per.forEach(function (x) { total += x.length; });
+if (rated && !lastRated && METALS[metal].word === 'gold') shown = 4;
+else if (step !== lastStep) shown = latest.length ? latest[0][0] : -1;
+lastStep = step; lastRated = rated;
+var live = []; latest.forEach(function (g) { if (live.indexOf(g[0]) === -1) live.push(g[0]); });
+if (rated && METALS[metal].word === 'gold' && live.indexOf(4) === -1) live.push(4);
+famBtns.forEach(function (b, f) {
+var dots = b.querySelectorAll('.gem2-dots i'), n = per[f].length;
+for (var d = 0; d < dots.length; d++) {
+var on = d < n, was = dots[d].classList.contains('is-on');
+dots[d].classList.toggle('is-on', on); dots[d].title = on ? per[f][d] : '';
+if (on && (!was || f === shown && step !== -1 && latest.some(function (g) { return g[0] === f && g[1] === per[f][d]; }))) { dots[d].classList.remove('is-new'); void dots[d].offsetWidth; dots[d].classList.add('is-new'); }
+}
+b.classList.toggle('is-shown', f === shown);
+});
+root.querySelector('[data-gem2-signals]').classList.toggle('is-idle', shown < 0);
+if (heardEl) heardEl.textContent = total + ' of 198';
+if (shown < 0) { sigNote.innerHTML = 'Press play. Each event shows the family of signals it fires, one family at a time.'; return; }
+var F = FAMS[shown], on = per[shown], now = latest.filter(function (g) { return g[0] === shown; }).map(function (g) { return g[1]; });
+var also = live.filter(function (f) { return f !== shown; });
+sigNote.innerHTML =
+(on.length ? '<span class="gem2-heard">' + on.map(function (n) { return '<i' + (now.indexOf(n) !== -1 ? ' class="is-now"' : '') + '>' + esc2(n) + '</i>'; }).join('') + '</span>' : '') +
+'<span class="gem2-also">Also listens for ' + F[2].filter(function (n) { return on.indexOf(n) === -1; }).map(esc2).join(', ') + ' and ' + Math.max(0, F[1] - on.length - F[2].length) + ' more.</span>' +
+(also.length ? '<span class="gem2-switchfam">This event also fired in: ' + also.map(function (f) { return '<button type="button" data-showfam="' + f + '">' + esc2(FAMS[f][0]) + '</button>'; }).join(' ') + '</span>' : '');
+}
+function renderLines() {
+var html = '';
+for (var k = 0; k <= step; k++) html += line(k);
+if (rated) html += line(0, true);
+linesEl.classList.remove('is-fresh'); void linesEl.offsetWidth; linesEl.classList.add('is-fresh');
+linesEl.innerHTML = html || '<li class="gem2-empty">Press play. Watch one week land on ' + (mode === 'today' ? 'four different tools.' : 'one record.') + '</li>';
+renderSignals();
+linesEl.scrollTop = linesEl.scrollHeight;
+cardTag.textContent = mode === 'today' ? 'SCATTERED ACROSS YOUR TOOLS' : 'ON THE RECORD';
+cardTitle.textContent = mode === 'today' ? set.tools.length + ' tools, ' + set.tools.length + ' partial copies' : set.centre;
+}
+function select(k, quiet) {
+active = k;
+nodeBtns.forEach(function (b, j) { b.classList.toggle('is-on', j === k); });
+shardEls.forEach(function (el, g) { el.classList.toggle('is-on', k >= 0 && set.modules[k][5] === g); });
+if (k < 0) { noteEl.hidden = true; return; }
+var m = set.modules[k];
+glow[k] = 1;
+if (!quiet) { pulse(k, true, 0); pulse(k, false, .45); }
+noteEl.hidden = false;
+noteEl.innerHTML = '<strong>' + esc2(m[1]) + '</strong>' +
+(mode === 'today' ? '<span>Today this lives in <b>' + esc2(set.tools[m[5]]) + '</b>. Nothing else sees it.</span>'
+: '<span><i class="lg-r"></i>Reads ' + esc2(m[2]) + '.</span><span><i class="lg-w"></i>Writes ' + esc2(m[3]) + '.</span>') +
+'<a href="' + m[4] + '">Open ' + esc2(m[1]) + ' →</a>';
+}
+function go(k) {
+step = k;
+evBtns.forEach(function (b, j) { b.classList.toggle('is-on', j === k); b.classList.toggle('is-done', j < k); });
+if (k < 0) { renderLines(); select(-1); return; }
+var ev = set.week[k];
+select(ev[2], true); pulse(ev[2], false, 0); glow[ev[2]] = 1;
+if (capEl) capEl.innerHTML = '<b>' + esc2(ev[0]) + '</b>' + esc2(ev[1]) + '<span>' + esc2(ev[3]) + '</span>';
+renderLines();
+var on = evBtns[k]; if (on && eventsEl.scrollTo) eventsEl.scrollTo({ left: on.parentNode.offsetLeft - 16, behavior: reduceMotion ? 'auto' : 'smooth' });
+}
+function stop() { if (timer) { window.clearInterval(timer); timer = null; } playBtn.textContent = step >= set.week.length - 1 ? 'Replay the week' : 'Play the week'; playBtn.setAttribute('aria-pressed', 'false'); }
+function play() {
+if (timer) return stop();
+if (step >= set.week.length - 1) { rated = false; go(-1); }
+playBtn.textContent = 'Pause'; playBtn.setAttribute('aria-pressed', 'true');
+go(step + 1);
+timer = window.setInterval(function () { if (step >= set.week.length - 1) { if (loop) { rated = false; go(0); } else stop(); return; } go(step + 1); }, loop ? 3200 : 2600);
+}
+function setMode(mo) {
+if (dayOn && mo !== 'os') { dayExit(); }
+mode = mo; explodeTo = mo === 'today' ? 1 : 0;
+root.classList.toggle('is-today', mo === 'today');
+Array.prototype.forEach.call(root.querySelectorAll('[data-gem2-mode]'), function (b) { var on = b.getAttribute('data-gem2-mode') === mo; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', String(on)); });
+renderLines(); if (active >= 0) select(active, true);
+}
+function rate() {
+rated = true; ripple = 0;
+var n = 0;
+set.modules.forEach(function (m, k) {
+if (!m[6]) return;
+var b = nodeBtns[k], d = n++ * (mode === 'today' ? 900 : 140);
+window.setTimeout(function () { b.classList.add('is-repriced'); glow[k] = 1; pulse(k, true, 0); window.setTimeout(function () { b.classList.remove('is-repriced'); }, 2400); }, 250 + d);
+});
+renderLines();
+}
+var dayBtn = root.querySelector('[data-gem2-day]'), dayOn = false, dayTimer = null, dayStep = -1, dayN = { all: 0, a: 0, q: 0, t: 0 }, modN = [], dayFeed = [];
+var KIND = { a: 'Done by the system', q: 'Waiting for your yes', t: 'Your team' };
+function dayPaint(summary) {
+['all', 'a', 'q', 't'].forEach(function (k) { var el = root.querySelector('[data-gem2-dn="' + k + '"]'); if (el) el.textContent = dayN[k]; });
+nodeBtns.forEach(function (b, k) { var u = b.querySelector('.gem2-n'); if (u) { u.textContent = modN[k] || ''; u.classList.toggle('is-on', !!modN[k]); } });
+cardTag.textContent = 'ONE DAY, EVERY DEPARTMENT'; cardTitle.textContent = 'What ran today';
+linesEl.innerHTML = (summary || '') + dayFeed.slice(0, summary ? 4 : 6).map(function (e, i) {
+return '<li class="gem2-dl k-' + e[3] + (i === 0 && !summary ? ' is-new' : '') + '"><b>' + esc2(e[0]) + '</b><span>' + esc2(e[2]) + (e[4] > 1 ? ' <i class="gem2-x">×' + e[4] + '</i>' : '') + '<em>' + KIND[e[3]] + '</em></span></li>';
+}).join('');
+linesEl.scrollTop = 0;
+}
+function dayEnd() {
+window.clearInterval(dayTimer); dayTimer = null;
+if (dayBtn) { dayBtn.querySelector('span').textContent = 'Run the day again'; dayBtn.setAttribute('aria-pressed', 'false'); }
+var depts = modN.filter(function (n) { return n > 0; }).length;
+dayPaint('<li class="gem2-dl gem2-dsum"><span><strong>' + dayN.all + ' events across ' + depts + ' departments.</strong> ' + dayN.a + ' needed no one.' + (dayN.q ? ' ' + dayN.q + ' were drafted by AI and waited for a yes.' : '') + ' ' + dayN.t + ' were done by your team, on the same record. You can let any one kind of action run on its own, and take it back with one switch.</span></li>');
+}
+function dayTick() {
+dayStep += 1;
+if (dayStep >= set.day.length) { dayEnd(); return; }
+var e = set.day[dayStep], k = e[1], n = e[4] || 1;
+dayN.all += n; dayN[e[3]] += n; modN[k] = (modN[k] || 0) + n; dayFeed.unshift(e);
+glow[k] = 1;
+for (var i = 0; i < Math.min(n, 5); i++) pulse(k, e[3] === 'q' && i % 2 === 1, i * .09);
+var clock = root.querySelector('[data-gem2-clock]'); if (clock) clock.textContent = e[0];
+nodeBtns.forEach(function (b, x) { b.classList.toggle('is-on', x === k); });
+dayPaint();
+}
+function dayExit() {
+if (!dayOn) return;
+window.clearInterval(dayTimer); dayTimer = null; dayOn = false; root.classList.remove('is-day');
+nodeBtns.forEach(function (b) { var u = b.querySelector('.gem2-n'); if (u) { u.textContent = ''; u.classList.remove('is-on'); } });
+if (dayBtn) { dayBtn.querySelector('span').textContent = 'Run a full day'; dayBtn.setAttribute('aria-pressed', 'false'); }
+}
+function dayStart() {
+if (!set.day) return;
+if (dayTimer) { dayEnd(); return; }
+stop(); if (mode !== 'os') setMode('os');
+rated = false; step = -1; evBtns.forEach(function (b) { b.classList.remove('is-on'); b.classList.remove('is-done'); }); select(-1);
+dayOn = true; root.classList.add('is-day'); dayStep = -1; dayN = { all: 0, a: 0, q: 0, t: 0 }; modN = []; dayFeed = [];
+dayBtn.querySelector('span').textContent = 'Stop the day'; dayBtn.setAttribute('aria-pressed', 'true');
+dayTick(); dayTimer = window.setInterval(dayTick, reduceMotion ? 500 : 1100);
+}
+if (dayBtn) { if (set.day) dayBtn.addEventListener('click', dayStart); else dayBtn.hidden = true; }
+nodeBtns.forEach(function (b, k) { b.addEventListener('click', function () { if (dayOn) { dayExit(); renderLines(); } stop(); select(k); }); });
+evBtns.forEach(function (b, k) { b.addEventListener('click', function () { dayExit(); stop(); go(k); }); });
+playBtn.addEventListener('click', function () { dayExit(); play(); });
+sigNote.addEventListener('click', function (e) { var b = e.target.closest('[data-showfam]'); if (!b) return; shown = Number(b.getAttribute('data-showfam')); renderSignals(); });
+root.querySelector('[data-gem2-rate]').addEventListener('click', rate);
+Array.prototype.forEach.call(root.querySelectorAll('[data-gem2-mode]'), function (b) { b.addEventListener('click', function () { setMode(b.getAttribute('data-gem2-mode')); }); });
+var rateBtn = root.querySelector('[data-gem2-rate] span');
+function setMetal(mt) {
+if (!METALS[mt]) return;
+metal = mt; facets = SHAPES[METALS[mt].shape];
+if (!fixedMetal) { try { localStorage.setItem('jwero-metal', mt); } catch (e) {} }
+root.setAttribute('data-metal', mt);
+Array.prototype.forEach.call(root.querySelectorAll('[data-gem2-metal]'), function (b) { var on = b.getAttribute('data-gem2-metal') === mt; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', String(on)); });
+if (rateBtn) rateBtn.textContent = 'The ' + METALS[mt].word + ' rate just moved';
+layout();
+if (reduceMotion && ctx) { lastT = 0; draw(0); window.cancelAnimationFrame(raf); }
+}
+Array.prototype.forEach.call(root.querySelectorAll('[data-gem2-metal]'), function (b) { b.addEventListener('click', function () { setMetal(b.getAttribute('data-gem2-metal')); }); });
+var moved = 0;
+cv.addEventListener('pointerdown', function (e) { dragging = true; moved = 0; lastX = e.clientX; lastY = e.clientY; try { cv.setPointerCapture(e.pointerId); } catch (x) {} });
+cv.addEventListener('pointermove', function (e) {
+if (!dragging) return;
+var dx = e.clientX - lastX, dy = e.clientY - lastY; lastX = e.clientX; lastY = e.clientY; moved += Math.abs(dx) + Math.abs(dy);
+rotY += dx * .012; rotX = Math.max(-.5, Math.min(.95, rotX + dy * .008));
+});
+function release(e) {
+if (!dragging) return; dragging = false;
+if (moved < 6) { // a tap: open the module on the side of the stone that was touched
+var r = cv.getBoundingClientRect(), ang = Math.atan2(e.clientY - r.top - oy, e.clientX - r.left - ox), best = 0, bd = 9;
+nodePos.forEach(function (p, k) { var d = Math.abs(Math.atan2(Math.sin(p[2] - ang), Math.cos(p[2] - ang))); if (d < bd) { bd = d; best = k; } });
+stop(); select(best);
+}
+}
+cv.addEventListener('pointerup', release); cv.addEventListener('pointercancel', function () { dragging = false; });
+theme(); layout(); renderLines(); setMetal(metal);
+window.addEventListener('resize', layout);
+new MutationObserver(theme).observe(docEl, { attributes: true, attributeFilter: ['data-theme'] });
+if (reduceMotion || !canObserve) { layout(); if (ctx) { lastT = 0; draw(0); window.cancelAnimationFrame(raf); } return; }
+var started = false;
+whileVisible(root, function () { layout(); raf = window.requestAnimationFrame(draw); if (!started) { started = true; window.setTimeout(function () { if (step < 0 && !timer && !dayOn) play(); }, 900); } }, function () { window.cancelAnimationFrame(raf); lastT = 0; });
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-persona]'), function (wrap) {
+var tabs = Array.prototype.slice.call(wrap.querySelectorAll('[role="tab"]'));
+var panels = Array.prototype.slice.call(wrap.querySelectorAll('.persona-panel'));
+var routes = { single: '/solutions/single-store', chain: '/solutions/multi-store-chains', maker: '/solutions/manufacturers', b2b: '/solutions/b2b-jewellery', d2c: '/solutions/d2c-brands', franchise: '/solutions/franchise-networks' };
+function select(key, focus) {
+tabs.forEach(function (t) { var on = t.getAttribute('data-key') === key; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; if (on && focus) t.focus(); if (on && focus && t.parentNode) t.parentNode.scrollLeft = Math.max(0, t.offsetLeft - (t.parentNode.clientWidth - t.offsetWidth) / 2); });
+panels.forEach(function (p) { var on = p.getAttribute('data-panel') === key; p.classList.toggle('is-active', on); p.hidden = !on; });
+var grid = document.querySelector('.router-grid');
+if (grid) {
+Array.prototype.forEach.call(grid.querySelectorAll('.router-card'), function (c) { c.classList.remove('is-you'); });
+var mine = grid.querySelector('.router-card[href="' + routes[key] + '"]');
+if (mine) { mine.classList.add('is-you'); grid.insertBefore(mine, grid.firstChild); }
+}
+try { localStorage.setItem('jwero-persona', key); } catch (e) {}
+}
+tabs.forEach(function (t, i) {
+t.addEventListener('click', function () { select(t.getAttribute('data-key')); });
+t.addEventListener('keydown', function (e) {
+var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+if (!d) return;
+e.preventDefault();
+select(tabs[(i + d + tabs.length) % tabs.length].getAttribute('data-key'), true);
+});
+});
+var saved = null;
+try { saved = localStorage.getItem('jwero-persona'); } catch (e) {}
+if (saved && routes[saved]) select(saved);
+});
+(function () {
+var dlg = document.querySelector('dialog.search'), pageBox = document.querySelector('[data-search-page]');
+if (!dlg && !pageBox) return;
+var index = null, loading = null;
+function load() {
+if (index) return Promise.resolve(index);
+if (!loading) loading = fetch(BASE + '/search-index.json').then(function (r) { return r.json(); }).then(function (d) { index = d; return d; });
+return loading;
+}
+function score(item, terms) {
+var t = item.t.toLowerCase(), d = (item.d || '').toLowerCase(), k = (item.k || '').toLowerCase(), s = 0;
+for (var i = 0; i < terms.length; i++) {
+var w = terms[i];
+if (t.indexOf(w) === 0) s += 8; else if (t.indexOf(w) !== -1) s += 5;
+if (d.indexOf(w) !== -1) s += 2;
+if (k.indexOf(w) !== -1) s += 1;
+}
+return s;
+}
+function esc(x) { return String(x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function render(box, q, limit) {
+var terms = q.toLowerCase().split(/\s+/).filter(function (w) { return w.length > 1; });
+if (!terms.length) { box.innerHTML = ''; return; }
+load().then(function (items) {
+var hits = items.map(function (it) { return [score(it, terms), it]; }).filter(function (x) { return x[0] > 0; }).sort(function (a, b) { return b[0] - a[0]; }).slice(0, limit);
+box.innerHTML = hits.length
+? hits.map(function (x, i) { var it = x[1]; return '<a href="' + esc(it.u) + '" role="option"' + (i === 0 ? ' aria-selected="true"' : '') + '><strong>' + esc(it.t) + '</strong><em>' + esc(it.s) + '</em><span>' + esc(it.d) + '</span></a>'; }).join('')
+: '<p class="search-empty">Nothing matched “' + esc(q) + '”. Try a product name, a role, or a question.</p>';
+});
+}
+if (dlg) {
+var input = dlg.querySelector('input'), results = dlg.querySelector('.search-results');
+function open() { if (typeof dlg.showModal !== 'function') { location.href = BASE + '/search'; return; } load(); dlg.showModal(); input.value = ''; results.innerHTML = ''; input.focus(); }
+Array.prototype.forEach.call(document.querySelectorAll('.search-open'), function (b) { b.addEventListener('click', open); });
+dlg.querySelector('.search-close').addEventListener('click', function () { dlg.close(); });
+dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+document.addEventListener('keydown', function (e) {
+if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); dlg.open ? dlg.close() : open(); }
+});
+var t = 0;
+input.addEventListener('input', function () { window.clearTimeout(t); t = window.setTimeout(function () { render(results, input.value, 8); }, 60); });
+input.addEventListener('keydown', function (e) {
+var opts = results.querySelectorAll('a'); if (!opts.length) return;
+var cur = Array.prototype.findIndex.call(opts, function (o) { return o.getAttribute('aria-selected') === 'true'; });
+if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+e.preventDefault();
+var next = (cur + (e.key === 'ArrowDown' ? 1 : -1) + opts.length) % opts.length;
+Array.prototype.forEach.call(opts, function (o, i) { o.setAttribute('aria-selected', i === next ? 'true' : 'false'); });
+opts[next].scrollIntoView({ block: 'nearest' });
+} else if (e.key === 'Enter' && cur >= 0) { e.preventDefault(); location.href = based(opts[cur].getAttribute('href')); }
+});
+}
+if (pageBox) {
+var pInput = document.querySelector('.search-box-page input');
+var q = new URLSearchParams(location.search).get('q') || '';
+pInput.value = q; render(pageBox, q, 40);
+pInput.addEventListener('input', function () { render(pageBox, pInput.value, 40); history.replaceState(null, '', pInput.value ? '?q=' + encodeURIComponent(pInput.value) : location.pathname); });
+}
+})();
+Array.prototype.forEach.call(document.querySelectorAll('[data-impact]'), function (wrap) {
+var btns = wrap.querySelectorAll('.impact-switch button'), touched = false;
+function set(state) {
+wrap.setAttribute('data-show', state);
+Array.prototype.forEach.call(btns, function (b) { var on = b.getAttribute('data-state') === state; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+}
+set('today');
+Array.prototype.forEach.call(btns, function (b) { b.addEventListener('click', function () { touched = true; set(b.getAttribute('data-state')); }); });
+if (!reduceMotion && canObserve) onView([wrap], function () { window.setTimeout(function () { if (!touched) set('jwero'); }, 1900); }, { threshold: 0.4 });
+else set('jwero');
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-asking] .asking-chip'), function (chip) {
+chip.addEventListener('click', function () {
+var q = chip.textContent.trim().toLowerCase().replace(/\s+/g, ' ');
+var hit = Array.prototype.find.call(document.querySelectorAll('.faq-item'), function (d) { return d.querySelector('summary').textContent.trim().toLowerCase().replace(/\s+/g, ' ') === q; });
+if (!hit) { location.href = BASE + '/faq'; return; }
+Array.prototype.forEach.call(document.querySelectorAll('.faq-item.is-hit'), function (d) { d.classList.remove('is-hit'); });
+hit.open = true; hit.classList.add('is-hit');
+hit.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+});
+});
+Array.prototype.forEach.call(document.querySelectorAll('.calc-out'), function (out) {
+var stats = Array.prototype.slice.call(out.querySelectorAll('.stat'));
+stats.forEach(function (s) { var bar = document.createElement('span'); bar.className = 'calc-bar'; bar.innerHTML = '<i></i>'; s.appendChild(bar); });
+function paint() {
+var vals = stats.map(function (s) { return Number((s.querySelector('.stat-n').textContent || '').replace(/[^\d.]/g, '')) || 0; });
+var max = Math.max.apply(null, vals) || 1;
+stats.forEach(function (s, i) { s.querySelector('.calc-bar i').style.width = Math.max(2, Math.round(vals[i] / max * 100)) + '%'; });
+}
+new MutationObserver(paint).observe(out, { childList: true, characterData: true, subtree: true });
+paint();
+});
+Array.prototype.forEach.call(document.querySelectorAll('.quick-check-items > div'), function (row) {
+row.addEventListener('click', function () {
+var name = (row.querySelector('span') || row).textContent.replace(/[^A-Za-z]/g, '').toLowerCase();
+var tier = Array.prototype.find.call(document.querySelectorAll('.tier'), function (t) { return t.querySelector('h3').textContent.trim().toLowerCase() === name; });
+if (!tier) return;
+Array.prototype.forEach.call(document.querySelectorAll('.tier.is-picked'), function (t) { t.classList.remove('is-picked'); });
+tier.classList.add('is-picked');
+tier.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+});
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-intel]'), function (wrap) {
+var total = wrap.querySelector('[data-total]');
+function arrive() {
+wrap.classList.add('is-in');
+if (!total || reduceMotion) return;
+var t0 = null;
+(function frame(t) {
+if (t0 === null) t0 = t;
+var p = Math.min(1, (t - t0) / 1600), eased = 1 - Math.pow(1 - p, 3);
+total.textContent = Math.round(6600 * eased).toLocaleString('en-IN');
+if (p < 1) window.requestAnimationFrame(frame);
+})(window.performance.now());
+}
+if (canObserve && !reduceMotion) onView([wrap], arrive, { threshold: 0.2 });
+else wrap.classList.add('is-in');
+var sigs = wrap.querySelectorAll('.intel-sig'), out = {};
+Array.prototype.forEach.call(wrap.querySelectorAll('[data-out]'), function (el) { out[el.getAttribute('data-out')] = el; });
+function gauge(k, v) {
+var bar = wrap.querySelector('[data-gauge="' + k + '"]'), n = wrap.querySelector('[data-gauge-n="' + k + '"]');
+if (bar) bar.style.width = v + '%';
+if (n) n.textContent = String(v);
+}
+function set(k, text) {
+var el = out[k]; if (!el || el.textContent === text) return;
+el.textContent = text; el.classList.add('is-changed');
+window.setTimeout(function () { el.classList.remove('is-changed'); }, 900);
+}
+function decide() {
+var d = [0, 0, 0, 0], on = {};
+Array.prototype.forEach.call(sigs, function (b) {
+if (b.getAttribute('aria-pressed') !== 'true') return;
+on[b.getAttribute('data-sig')] = true;
+b.getAttribute('data-d').split(',').forEach(function (x, i) { d[i] += Number(x); });
+});
+var intent = Math.min(100, d[0]), conv = Math.min(100, d[1]), conf = Math.min(100, d[2]), trust = Math.min(100, d[3]);
+gauge('intent', intent); gauge('conv', conv); gauge('conf', conf); gauge('trust', trust);
+var seg, play, when = 'WhatsApp · 18:00–20:00', draft, live = true;
+if (on.complaint) {
+seg = 'Suppression, risk & service'; play = 'Complaint trust recovery, promotions paused';
+when = 'Call · today, by a person'; draft = 'A service follow-up for the owner, not a sales message.';
+} else if (on.maturity) {
+seg = 'Savings scheme · maturing'; play = 'Scheme maturity reminder journey';
+draft = 'A maturity note with three pieces near her accumulated value.';
+} else if (trust >= 15 && intent < 40) {
+seg = 'Savings scheme & ledger · missed instalment'; play = 'Scheme payment due, gentle reminder';
+draft = 'A one-line reminder with a pay link. No promotion.';
+} else if (intent >= 60 && (conv >= 10 || on.price)) {
+seg = 'High-intent product enquiry'; play = on.tried || on.appt ? 'Hold the piece · confirm the visit' : 'Send priced options · offer a hold';
+when = 'WhatsApp · her best hour, 18:00–20:00'; draft = 'A priced reply from her record, held for your approval.';
+} else if (intent >= 30) {
+seg = 'Product viewers with no purchase'; play = 'Engage, matched catalogue share';
+draft = 'Three pieces in her taste and budget, with live prices.';
+} else if (intent > 0) {
+seg = 'New customer · warming'; play = 'Nurture, keep listening'; draft = 'Nothing yet. One more signal and a draft appears.'; live = false;
+} else {
+seg = 'New customer · listening'; play = 'Nurture, no send yet'; draft = 'Nothing. Jwero keeps listening.'; live = false;
+}
+if (on.missed && !on.complaint && intent >= 60) draft += ' The missed instalment is mentioned once, kindly.';
+set('segment', seg); set('play', play); set('when', when); set('draft', draft);
+if (out.draft) out.draft.classList.toggle('is-live', live);
+}
+Array.prototype.forEach.call(sigs, function (b) {
+b.addEventListener('click', function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); decide(); });
+});
+var reset = wrap.querySelector('[data-sig-reset]');
+if (reset) reset.addEventListener('click', function () { Array.prototype.forEach.call(sigs, function (b) { b.setAttribute('aria-pressed', 'false'); }); decide(); });
+decide();
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-day]'), function (day) {
+var nodes = day.querySelectorAll('.day-node'), cards = day.querySelectorAll('.day-card'), fill = day.querySelector('.day-fill');
+var rocket = day.querySelector('.day-rocket'), play = day.querySelector('[data-day-play]'), count = day.querySelector('[data-day-n]');
+var n = nodes.length, i = 0, timer = null, playing = !reduceMotion, bar = day.querySelector('.day-bar i');
+function show(k) {
+i = (k + n) % n;
+Array.prototype.forEach.call(nodes, function (b, j) { b.classList.toggle('is-on', j === i); b.classList.toggle('is-done', j < i); b.setAttribute('aria-pressed', String(j === i)); });
+Array.prototype.forEach.call(cards, function (c, j) { c.classList.toggle('is-on', j === i); });
+var x = n > 1 ? (i / (n - 1)) * 100 : 0;
+if (fill) fill.style.width = x + '%';
+if (rocket) rocket.style.left = x + '%';
+if (count) count.textContent = String(i + 1);
+if (bar) { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; }
+}
+function tick() { if (playing) show(i + 1); }
+function start() { stop(); if (playing) timer = window.setInterval(tick, 6000); day.classList.toggle('is-playing', playing); day.classList.toggle('is-paused', !playing); if (play) { play.textContent = playing ? 'Pause' : 'Play'; play.setAttribute('aria-pressed', String(playing)); } }
+function stop() { if (timer) { window.clearInterval(timer); timer = null; } }
+Array.prototype.forEach.call(nodes, function (b, j) { b.addEventListener('click', function () { show(j); start(); }); });
+if (play) play.addEventListener('click', function () { playing = !playing; start(); });
+day.addEventListener('mouseenter', function () { day.classList.add('is-paused'); stop(); });
+day.addEventListener('mouseleave', function () { if (playing) { day.classList.remove('is-paused'); start(); } });
+show(0);
+if (canObserve && !reduceMotion) onView([day], function () { start(); }, { threshold: 0.4 });
+else { playing = false; start(); }
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-fit]'), function (fit) {
+var items = fit.querySelectorAll('.fit-item'), meter = fit.querySelector('.fit-meter i'), verdict = fit.querySelector('[data-fit-verdict]'), cta = fit.querySelector('[data-fit-cta]');
+var first = fit.getAttribute('data-fit-first'), second = fit.getAttribute('data-fit-second'), total = items.length;
+function update() {
+var on = Array.prototype.filter.call(items, function (b) { return b.getAttribute('aria-pressed') === 'true'; }).length;
+if (meter) meter.style.width = (on / total) * 100 + '%';
+var text, label;
+if (on === 0) { text = 'Tap what’s true for you. We’ll say honestly where Jwero fits, and where it doesn’t yet.'; label = 'Show me this, live'; }
+else if (on <= 2) { text = on + ' of ' + total + ', a real fit on those. Businesses like yours usually start with ' + first + ', and add ' + second + ' in the first month.'; label = 'Start with ' + first; }
+else { text = on + ' of ' + total + ', a strong fit. Start with ' + first + ' and ' + second + '; most of the rest follows in the first thirty days, on your own data.'; label = 'Show me ' + first + ' on my data'; }
+if (verdict) { verdict.textContent = text; verdict.classList.toggle('is-strong', on >= 3); }
+if (cta) cta.textContent = label;
+}
+Array.prototype.forEach.call(items, function (b) { b.addEventListener('click', function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); update(); }); });
+update();
+});
+(function () {
+var SOL = { 'solutions/single-store': 'single', 'solutions/gold-retail': 'single', 'solutions/silver-retail': 'single', 'solutions/diamond-retail': 'single', 'solutions/gemstone-retail': 'single', 'solutions/luxury-boutique': 'single', 'solutions/bridal': 'single',
+'solutions/multi-store-chains': 'chain', 'solutions/franchise-networks': 'franchise', 'solutions/jewellery-brands': 'd2c', 'solutions/d2c-brands': 'd2c', 'solutions/startups': 'd2c', 'solutions/lab-grown-diamond': 'd2c',
+'solutions/manufacturers': 'maker', 'solutions/oem-manufacturers': 'maker', 'solutions/casting-units': 'maker', 'solutions/cad-services': 'maker',
+'solutions/diamond-traders': 'trader', 'solutions/b2b-jewellery': 'b2b', 'solutions/gold-wholesale': 'b2b', 'solutions/diamond-wholesale': 'b2b', 'solutions/bullion-gold-traders': 'b2b', 'solutions/export-houses': 'b2b' };
+var PATH = {
+single: { label: 'a single store', sol: '/solutions/single-store', sim: '/products/pos#try-till', simLabel: 'Try the till', prod: '/products/whatsapp' },
+chain: { label: 'a multi-store chain', sol: '/solutions/multi-store-chains', sim: '/platform/ai-workforce#try-approve', simLabel: 'Try the approval queue', prod: '/products/multi-store' },
+maker: { label: 'a manufacturer', sol: '/solutions/manufacturers', sim: '/products/manufacturing#try-grams', simLabel: 'Try metal closure', prod: '/products/manufacturing' },
+b2b: { label: 'a wholesale business', sol: '/solutions/b2b-jewellery', sim: '/products/inventory#try-shelf', simLabel: 'Try the shelf', prod: '/products/digital-catalogues' },
+d2c: { label: 'a brand', sol: '/solutions/d2c-brands', sim: '/platform/customer-memory#try-memory', simLabel: 'Try customer memory', prod: '/products/instagram-facebook' },
+franchise: { label: 'a franchise network', sol: '/solutions/franchise-networks', sim: '/platform/ai-workforce#try-approve', simLabel: 'Try the approval queue', prod: '/products/multi-store' },
+};
+var slug = HERE.replace(/^\/|\/$/g, '');
+var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+var q = /[?&]p=(single|chain|maker|b2b|d2c|franchise|trader|staff)/.exec(location.search);
+if (q) store.set('jwero-persona', q[1]);
+else if (SOL[slug] && !store.get('jwero-persona')) store.set('jwero-persona', SOL[slug]);
+var seen = []; try { seen = JSON.parse(store.get('jwero-seen') || '[]'); } catch (e) {}
+var title = (document.querySelector('h1') || {}).textContent || document.title;
+seen = seen.filter(function (x) { return x.u !== HERE; });
+seen.unshift({ u: HERE, t: title.trim().slice(0, 60), at: Date.now() });
+store.set('jwero-seen', JSON.stringify(seen.slice(0, 8)));
+var visits = Number(store.get('jwero-visits') || 0);
+if (!sessionStorage.getItem('jwero-session')) { visits += 1; store.set('jwero-visits', String(visits)); try { sessionStorage.setItem('jwero-session', '1'); } catch (e) {} }
+var persona = store.get('jwero-persona'), path = PATH[persona], signed = store.get('jwero-signed-up');
+if (persona) docEl.setAttribute('data-persona', persona);
+if (visits > 1) docEl.classList.add('is-returning');
+if (signed) {
+docEl.classList.add('has-workspace');
+Array.prototype.forEach.call(document.querySelectorAll('[data-start-cta]'), function (a) { a.textContent = 'Open my workspace'; a.setAttribute('href', 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header'); a.setAttribute('rel', 'noopener'); });
+}
+var ICP = {
+single: { label: 'Single store', sol: '/solutions/single-store', sim: 'memory', door: 'trial' },
+chain: { label: 'Multi-store chain', sol: '/solutions/multi-store-chains', sim: 'approve', door: 'demo' },
+franchise: { label: 'Franchise network', sol: '/solutions/franchise-networks', sim: 'approve', door: 'demo' },
+maker: { label: 'Workshop / manufacturer', sol: '/solutions/manufacturers', sim: 'grams', door: 'demo' },
+b2b: { label: 'Wholesale / trade', sol: '/solutions/b2b-jewellery', sim: 'shelf', door: 'trial' },
+trader: { label: 'Diamond trader', sol: '/solutions/diamond-traders', sim: 'memo', door: 'trial' },
+d2c: { label: 'Online brand', sol: '/solutions/d2c-brands', sim: 'memory', door: 'trial' },
+staff: { label: 'I work in one', sol: '/roles', door: 'brief' },
+};
+var TRIAL = 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=';
+var icp = ICP[persona], icpDlg = document.querySelector('dialog.icp-dialog');
+Array.prototype.forEach.call(document.querySelectorAll('[data-icp-label]'), function (el) { if (icp) { el.textContent = icp.label; el.parentNode.classList.add('is-set'); } });
+Array.prototype.forEach.call(document.querySelectorAll('[data-icp="' + persona + '"]'), function (a) { a.classList.add('is-you'); });
+document.addEventListener('click', function (e) {
+if (e.target.closest('[data-icp-open]') && icpDlg && icpDlg.showModal) { e.preventDefault(); if (!icpDlg.open) icpDlg.showModal(); return; }
+if (icpDlg && (e.target === icpDlg || e.target.closest('[data-icp-close]'))) { icpDlg.close(); return; }
+var pick = e.target.closest('a[data-icp]');
+if (pick) store.set('jwero-persona', pick.getAttribute('data-icp'));
+});
+if (icp && slug !== 'start' && slug !== 'search') {
+var own = SOL[slug] === persona || (slug === 'roles' && persona === 'staff');
+var base = own ? '' : icp.sol;
+var tryHref = signed ? 'https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=pipe' : icp.door === 'demo' ? '/book-demo' : TRIAL + 'pipe';
+var tryLabel = signed ? 'Open my workspace' : icp.door === 'demo' ? 'Video demo' : 'Start';
+}
+Array.prototype.forEach.call(document.querySelectorAll('[data-share][data-share-p]'), function (a) {
+a.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent(a.getAttribute('data-share') + ' ' + location.origin + location.pathname + '?p=' + a.getAttribute('data-share-p')));
+});
+})();
+if (location.hash === '#callback') {
+var reachSel = document.getElementById('f-reach'), phoneIn = document.getElementById('f-phone') || document.querySelector('#demo-form [name="phone"]');
+if (reachSel) reachSel.value = 'Call me';
+if (phoneIn) window.setTimeout(function () { phoneIn.focus(); }, 300);
+}
+document.addEventListener('click', function (e) {
+var a = e.target.closest('a[href^="https://os.jwero.ai"]');
+if (a && a.getAttribute('href').indexOf('/login') === -1) { try { localStorage.setItem('jwero-signed-up', String(Date.now())); } catch (x) {} }
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-print]'), function (a) { a.addEventListener('click', function (e) { e.preventDefault(); window.print(); }); });
+(function () {
+var ref = document.referrer || '';
+if (!/chatgpt\.com|openai\.com|perplexity\.ai|claude\.ai|gemini\.google|copilot\.microsoft|bing\.com\/(chat|copilot)|you\.com|phind\.com/i.test(ref)) return;
+if (sessionStorage.getItem('jwero-ai-short')) return;
+var hero = document.querySelector('main .hero'); if (!hero) return;
+var box = document.createElement('div');
+box.className = 'short-version';
+box.innerHTML = '<div class="container"><span class="short-tag">The short version</span><p>Jwero runs your whole jewellery business on one record: customers, counter, stock, workshop, team and books. AI drafts the work, and nothing sends without your yes.</p>' +
+'<a href="/why-an-os">What it is</a><a href="/pricing">What it costs</a><a href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=ai-referrer" rel="noopener">Start</a><a href="#" data-wa="default">Ask a person</a></div>';
+hero.insertAdjacentElement('afterend', box);
+var a = box.querySelector('[data-wa]'); a.setAttribute('href', waLink('default')); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
+try { sessionStorage.setItem('jwero-ai-short', '1'); } catch (e) {}
+})();
+(function () {
+if (HERE !== '/pricing' && HERE !== '/pricing/') return;
+try { if (sessionStorage.getItem('jwero-nudged')) return; } catch (e) {}
+var timer = null, shown = false;
+function arm() { if (shown) return; if (timer) window.clearTimeout(timer); timer = window.setTimeout(show, 45000); }
+function show() {
+shown = true;
+var n = document.createElement('div');
+n.className = 'nudge'; n.setAttribute('role', 'status');
+n.innerHTML = '<p>Still deciding? Ask one question, a real person and our AI reply within minutes.</p><a class="btn btn-primary btn-sm" href="#" data-wa="nudge">Ask us now</a><button type="button" class="nudge-x" aria-label="Dismiss">×</button>';
+document.body.appendChild(n);
+var a = n.querySelector('[data-wa]'); a.setAttribute('href', waLink('nudge')); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
+n.querySelector('.nudge-x').addEventListener('click', function () { n.remove(); });
+window.requestAnimationFrame(function () { n.classList.add('is-on'); });
+try { sessionStorage.setItem('jwero-nudged', '1'); } catch (e) {}
+}
+['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (ev) { window.addEventListener(ev, arm, { passive: true }); });
+arm();
+})();
+Array.prototype.forEach.call(document.querySelectorAll('[data-era]'), function (era) {
+var stops = era.querySelectorAll('.era-stop'), panels = era.querySelectorAll('.era-panel'), fill = era.querySelector('.era-fill');
+function show(i) {
+Array.prototype.forEach.call(stops, function (b, j) { b.classList.toggle('is-on', j === i); b.setAttribute('aria-pressed', String(j === i)); });
+Array.prototype.forEach.call(panels, function (p, j) { p.classList.toggle('is-on', j === i); });
+if (fill) fill.style.width = (i / (stops.length - 1)) * 100 + '%';
+}
+Array.prototype.forEach.call(stops, function (b, j) { b.addEventListener('click', function () { show(j); }); });
+show(1);
+if (canObserve && !reduceMotion) onView([era], function () { window.setTimeout(function () { show(2); }, 1800); }, { threshold: 0.5 });
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-cswap]'), function (w) {
+var READ = {
+erp: 'In an ERP, the invoice is the truth. WhatsApp, Instagram and the customer’s history live outside it, on phones, in sheets, in heads. The ERP only learns about Meera when she pays.',
+os: 'In the OS, Meera’s record is the truth. Billing writes her purchase to it; stock, schemes, the workshop, WhatsApp and the counter read and write the same row, so the reply at 11pm knows what the counter knew at noon.',
+};
+var NOTES = {
+erp: ['writes the invoice', 'moves on sale', 'a separate register', 'on someone’s phone', 'greets a stranger', 'its own khata'],
+os: ['writes her purchase to the record', 'reads what she asked for', 'her balance, on the same row', 'drafts from her record', 'greets her by name and taste', 'her order, gram by gram'],
+};
+var out = w.querySelector('[data-cs-read]'), notes = w.querySelectorAll('.cs-node small');
+w.querySelectorAll('[data-cs]').forEach(function (b) {
+b.addEventListener('click', function () {
+var k = b.getAttribute('data-cs');
+w.querySelectorAll('[data-cs]').forEach(function (x) { x.classList.toggle('is-on', x === b); x.setAttribute('aria-pressed', String(x === b)); });
+w.classList.toggle('is-os', k === 'os');
+if (out) out.textContent = READ[k];
+Array.prototype.forEach.call(notes, function (n, i) { n.textContent = NOTES[k][i]; });
+});
+});
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-rl]'), function (rl) {
+var verdict = document.querySelector('[data-rl-verdict]');
+function tally(kind) {
+var items = rl.querySelectorAll('.rl-item[data-rl="' + kind + '"]'), open = 0;
+Array.prototype.forEach.call(items, function (b) { if (b.getAttribute('aria-expanded') === 'true') open += 1; });
+var n = rl.querySelector('[data-rl-n="' + kind + '"]'), l = rl.querySelector('[data-rl-l="' + kind + '"]');
+if (kind === 'switch') { if (n) n.textContent = String(items.length - open); if (l) l.textContent = items.length - open === 1 ? 'risk standing' : 'risks standing'; }
+else { if (n) n.textContent = String(items.length); }
+if (verdict && kind === 'switch' && items.length - open === 0) { verdict.textContent = 'Every risk on the left had an answer. The right column is still counting. That is the whole decision.'; verdict.classList.add('is-done'); }
+}
+rl.querySelectorAll('.rl-item').forEach(function (b) {
+b.addEventListener('click', function () {
+var on = b.getAttribute('aria-expanded') !== 'true';
+b.setAttribute('aria-expanded', String(on)); b.classList.toggle('is-open', on);
+tally(b.getAttribute('data-rl'));
+});
+});
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-mds]'), function (m) {
+var GAPS = {}; try { GAPS = JSON.parse((m.querySelector('[data-mds-json]') || {}).textContent || '{}'); } catch (e) {}
+var tools = m.querySelectorAll('.mds-tool'), gaps = m.querySelector('[data-mds-gaps]'), read = m.querySelector('[data-mds-read]');
+var MEM = { heads: 1, wa: 1, paper: 1, excel: 1, erp: 1 };
+function n(k, v) { var el = m.querySelector('[data-mds-n="' + k + '"]'); if (el) el.textContent = String(v); }
+function update() {
+var on = Array.prototype.filter.call(tools, function (b) { return b.getAttribute('aria-pressed') === 'true'; }).map(function (b) { return b.getAttribute('data-tool'); });
+var pairs = on.length * (on.length - 1) / 2, mem = on.filter(function (k) { return MEM[k]; }).length;
+n('tools', on.length); n('handoffs', pairs); n('memory', mem);
+var found = [];
+for (var i = 0; i < on.length; i++) for (var j = i + 1; j < on.length; j++) { var g = GAPS[on[i] + '+' + on[j]] || GAPS[on[j] + '+' + on[i]]; if (g) found.push(g); }
+if (!on.length) { gaps.innerHTML = '<li class="mds-empty">Tap what you use today. The gaps appear between them.</li>'; read.textContent = ''; return; }
+gaps.innerHTML = found.length ? found.map(function (g) { return '<li>' + g + '</li>'; }).join('') : '<li class="mds-empty">One tool, no hand-offs yet. Add the next one you use.</li>';
+read.textContent = on.length < 2 ? '' : on.length + ' tools, ' + pairs + ' hand-off' + (pairs === 1 ? '' : 's') + ', ' + mem + ' place' + (mem === 1 ? '' : 's') + ' a customer is remembered, and none of them is the business. In Jwero it is one record, one hand-off: yours to approve.';
+}
+tools.forEach(function (b) { b.addEventListener('click', function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); update(); }); });
+update();
+});
+var lk = document.getElementById('calc-leak');
+if (lk) {
+var rupee = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+var lkEnq = bindRange('lk-enq', 'lk-enq-out'), lkFast = bindRange('lk-fast', 'lk-fast-out', '%'), lkTicket = bindRange('lk-ticket', 'lk-ticket-out'), lkClose = bindRange('lk-close', 'lk-close-out', '%');
+function lkCalc() {
+var enq = Number(lkEnq.value), fast = Number(lkFast.value) / 100, ticket = Number(lkTicket.value), close = Number(lkClose.value) / 100;
+var slowPerMonth = enq * (1 - fast) * 26;
+var month = slowPerMonth * ticket * (close - close / 3);
+document.getElementById('lk-slow').textContent = Math.round(slowPerMonth).toLocaleString('en-IN');
+document.getElementById('lk-month').textContent = rupee(month);
+document.getElementById('lk-year').textContent = rupee(month * 12);
+var wa = document.getElementById('lk-wa');
+if (wa) wa.setAttribute('href', waLink('leak', ' ' + enq + ' enquiries/day, ' + Math.round(fast * 100) + '% priced within an hour, ticket ' + rupee(ticket), 'value at risk ' + rupee(month) + '/month.'));
+}
+[lkEnq, lkFast, lkTicket, lkClose].forEach(function (el) { el.addEventListener('input', lkCalc); });
+lkCalc();
+}
+Array.prototype.forEach.call(document.querySelectorAll('[data-plans]'), function (plans) {
+var btns = plans.querySelectorAll('[data-term]');
+function set(term) {
+Array.prototype.forEach.call(btns, function (b) { var on = b.getAttribute('data-term') === term; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', String(on)); });
+Array.prototype.forEach.call(plans.querySelectorAll('[data-price], [data-term-note]'), function (el) { el.textContent = el.getAttribute('data-' + term); });
+}
+Array.prototype.forEach.call(btns, function (b) { b.addEventListener('click', function () { set(b.getAttribute('data-term')); }); });
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-rates]'), function (rates) {
+var tabs = rates.querySelectorAll('[data-rate-tab]');
+Array.prototype.forEach.call(tabs, function (t) {
+t.addEventListener('click', function () {
+var k = t.getAttribute('data-rate-tab');
+Array.prototype.forEach.call(tabs, function (x) { x.setAttribute('aria-selected', String(x === t)); });
+Array.prototype.forEach.call(rates.querySelectorAll('[data-rate-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-rate-panel') === k); });
+});
+});
+});
+var pc = document.getElementById('calc-plan');
+if (pc) {
+var PRICE = { monthly: 18000, location: 2999, brand: 999, register: 499, camera: 799 };
+var pcTerm = 'monthly', money = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+var pcLoc = bindRange('pc-loc', 'pc-loc-out'), pcBrand = bindRange('pc-brand', 'pc-brand-out'), pcReg = bindRange('pc-reg', 'pc-reg-out'), pcCam = bindRange('pc-cam', 'pc-cam-out');
+function pcCalc() {
+var loc = Number(pcLoc.value), brand = Number(pcBrand.value), reg = Number(pcReg.value), cam = Number(pcCam.value);
+var plan = PRICE[pcTerm];
+var add = (loc - 1) * PRICE.location + (brand - 1) * PRICE.brand + Math.max(0, reg - 2) * PRICE.register + cam * PRICE.camera;
+document.getElementById('pc-plan').textContent = money(plan);
+document.getElementById('pc-add').textContent = money(add);
+document.getElementById('pc-total').textContent = money(plan + add);
+var ent = document.getElementById('pc-ent'); if (ent) ent.hidden = loc < 6;
+var wa = document.getElementById('pc-wa');
+if (wa) wa.setAttribute('href', waLink('quote', ' Jwero One, ' + pcTerm + ' billing, ' + loc + ' location' + (loc > 1 ? 's' : '') + ', ' + brand + ' brand' + (brand > 1 ? 's' : '') + ', ' + reg + ' registers, ' + cam + ' cameras, about ' + money(plan + add) + '/month before GST and usage.'));
+}
+Array.prototype.forEach.call(pc.querySelectorAll('[data-pc-term]'), function (b) {
+b.addEventListener('click', function () {
+pcTerm = b.getAttribute('data-pc-term');
+Array.prototype.forEach.call(pc.querySelectorAll('[data-pc-term]'), function (x) { x.classList.toggle('is-on', x === b); x.setAttribute('aria-pressed', String(x === b)); });
+pcCalc();
+});
+});
+[pcLoc, pcBrand, pcReg, pcCam].forEach(function (el) { el.addEventListener('input', pcCalc); });
+pcCalc();
+}
+Array.prototype.forEach.call(document.querySelectorAll('[data-memoboard]'), function (board) {
+var rows = board.querySelectorAll('[data-memo]'), draft = board.querySelector('[data-memo-draft]');
+var money = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+function n(k, v) { var el = board.querySelector('[data-memo-n="' + k + '"]'); if (el) el.textContent = v; }
+function tally() {
+var out = 0, value = 0, late = 0;
+Array.prototype.forEach.call(rows, function (r) { if (r.classList.contains('is-closed')) return; out += 1; value += Number(r.getAttribute('data-value')); late += Number(r.getAttribute('data-late')); });
+n('out', String(out)); n('value', money(value)); n('late', String(late));
+if (draft) draft.innerHTML = late ? '<b>Drafted for your tap:</b> a follow-up for each overdue memo, naming the stones and the return date agreed.' : out ? '<b>Nothing overdue.</b> Every memo still out is inside its return date.' : '<b>Everything is home or sold.</b> Stock and the party ledgers are already up to date.';
+}
+board.addEventListener('click', function (e) {
+var b = e.target.closest('[data-memo-do]'); if (!b) return;
+var row = b.closest('[data-memo]'), res = row.querySelector('.memo-result'), sold = b.getAttribute('data-memo-do') === 'sold';
+row.classList.add('is-closed'); row.classList.remove('is-late');
+res.hidden = false; res.textContent = sold ? 'Sold. Invoice raised from the memo; the party ledger and stock moved together.' : 'Returned. The stones are back in stock and can be shown to the next buyer.';
+tally();
+});
+tally();
+});
+var grid = document.getElementById('calc-grid');
+if (grid) {
+var gState = { shape: 'round', size: '1', q: '1' }, BASE = { '0.3': 90000, '0.5': 160000, '1': 420000 };
+var gDisc = bindRange('grid-disc', 'grid-disc-out', '%'), gCt = bindRange('grid-ct', 'grid-ct-out', ' ct');
+var rupees = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+function gridCalc() {
+var list = BASE[gState.size] * Number(gState.q) * (gState.shape === 'fancy' ? .8 : 1), rate = list * (1 - Number(gDisc.value) / 100), total = rate * Number(gCt.value);
+document.getElementById('grid-list').textContent = rupees(list);
+document.getElementById('grid-rate').textContent = rupees(rate);
+document.getElementById('grid-total').textContent = rupees(total);
+var wa = document.getElementById('grid-wa');
+if (wa) wa.setAttribute('href', waLink('grid', ' ' + Number(gCt.value).toFixed(2) + ' ct, ' + gState.shape + ', list ' + rupees(list) + ' per carat, less ' + gDisc.value + '%.'));
+}
+[['shape', 'data-grid-shape'], ['size', 'data-grid-size'], ['q', 'data-grid-q']].forEach(function (pair) {
+Array.prototype.forEach.call(grid.querySelectorAll('[' + pair[1] + ']'), function (b) {
+b.addEventListener('click', function () {
+gState[pair[0]] = b.getAttribute(pair[1]);
+Array.prototype.forEach.call(grid.querySelectorAll('[' + pair[1] + ']'), function (x) { x.classList.toggle('is-on', x === b); x.setAttribute('aria-pressed', String(x === b)); });
+gridCalc();
+});
+});
+});
+[gDisc, gCt].forEach(function (el) { el.addEventListener('input', gridCalc); });
+gridCalc();
+}
+if (canObserve) {
+var offIo = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('is-off', !e.isIntersecting); }); }, { rootMargin: '120px' });
+Array.prototype.forEach.call(document.querySelectorAll('main > section, .site-footer'), function (sn) { offIo.observe(sn); });
+}
+(function () {
+var btn = document.querySelector('.to-top');
+if (!btn) return;
+var on = false;
+function check() {
+var want = window.scrollY > window.innerHeight * 1.2;
+if (want !== on) { on = want; btn.classList.toggle('is-on', on); }
+}
+window.addEventListener('scroll', check, { passive: true });
+check();
+btn.addEventListener('click', function () {
+btn.classList.add('is-flying');
+window.setTimeout(function () { btn.classList.remove('is-flying'); }, 700);
+window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+});
+})();
+Array.prototype.forEach.call(document.querySelectorAll('[data-start]'), function (wrap) {
+var pick = { persona: null, tier: null }, labels = {}, step = 1;
+var go = wrap.querySelector('[data-start-go]'), waBtn = wrap.querySelector('[data-start-wa]'), back = wrap.querySelector('[data-start-back]');
+var base = go.getAttribute('href');
+function show(n) {
+step = n;
+wrap.querySelectorAll('.start-panel').forEach(function (p) { p.classList.toggle('is-on', Number(p.dataset.panel) === n); });
+wrap.querySelectorAll('.start-steps li').forEach(function (li) { var k = Number(li.dataset.step); li.classList.toggle('is-on', k === n); li.classList.toggle('is-done', k < n); });
+back.hidden = n === 1;
+if (n === 3) {
+wrap.querySelector('[data-sum="persona"]').textContent = labels.persona || '…';
+wrap.querySelector('[data-sum="tier"]').textContent = labels.tier || '…';
+go.setAttribute('href', base + '&business=' + encodeURIComponent(pick.persona || '') + '&tier=' + encodeURIComponent(pick.tier || ''));
+if (waBtn) waBtn.setAttribute('href', 'https://wa.me/919169959959?text=' + encodeURIComponent('Hi Jwero, I want to set up a workspace for my ' + (labels.persona || 'business').toLowerCase() + ' on the ' + (labels.tier || 'Assist') + ' tier. Help me start. [ref:start/wa]'));
+}
+wrap.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+}
+wrap.addEventListener('click', function (e) {
+var o = e.target.closest('.start-opt'); if (!o) return;
+var key = o.dataset.persona ? 'persona' : 'tier';
+pick[key] = o.dataset.persona || o.dataset.tier; labels[key] = o.querySelector('b').textContent;
+o.parentNode.querySelectorAll('.start-opt').forEach(function (x) { x.classList.toggle('is-picked', x === o); });
+window.setTimeout(function () { show(step + 1); }, 260);
+});
+back.addEventListener('click', function () { show(Math.max(1, step - 1)); });
+go.addEventListener('click', function (e) {
+if (reduceMotion || !document.querySelector('.launch')) return;
+e.preventDefault();
+var href = go.getAttribute('href'), l = document.querySelector('.launch');
+docEl.classList.add('first-visit'); l.classList.add('is-liftoff');
+window.setTimeout(function () { location.href = href; }, 1500);
+});
+try { var saved = localStorage.getItem('jwero-persona'); if (saved) { var b = wrap.querySelector('[data-persona="' + saved + '"]'); if (b) b.classList.add('is-picked'); } } catch (e) {}
+wrap.addEventListener('click', function (e) {
+var o = e.target.closest('.start-opt'); if (!o) return;
+try { if (o.dataset.persona) localStorage.setItem('jwero-persona', o.dataset.persona); localStorage.setItem('jwero-start', JSON.stringify({ pick: pick, labels: labels })); } catch (x) {}
+});
+go.addEventListener('click', function () { try { localStorage.setItem('jwero-signed-up', String(Date.now())); } catch (x) {} });
+try {
+var st = JSON.parse(localStorage.getItem('jwero-start') || 'null');
+if (st && st.pick && st.pick.persona && st.pick.tier) {
+pick = st.pick; labels = st.labels || {};
+wrap.querySelectorAll('.start-opt').forEach(function (x) { x.classList.toggle('is-picked', x.dataset.persona === pick.persona || x.dataset.tier === pick.tier); });
+show(3);
+}
+} catch (x) {}
+});
+Array.prototype.forEach.call(document.querySelectorAll('.speeds'), function (speeds) {
+var strip = speeds.parentElement.closest('.container') || speeds.parentElement, runN = strip.querySelector('[data-run]'), askN = strip.querySelector('[data-ask]');
+function tally() {
+var items = strip.querySelectorAll('.speed li'), r = 0;
+Array.prototype.forEach.call(items, function (li) { if (li.getAttribute('data-mode') === 'run') r++; });
+if (runN) runN.textContent = r;
+if (askN) askN.textContent = items.length - r;
+}
+speeds.addEventListener('click', function (e) {
+var t = e.target.closest('.speed-toggle');
+if (!t) return;
+var li = t.closest('li'), run = li.getAttribute('data-mode') !== 'run';
+li.setAttribute('data-mode', run ? 'run' : 'ask');
+t.setAttribute('aria-pressed', run ? 'true' : 'false');
+tally();
+});
+});
+var report = document.querySelector('[data-report]');
+if (report) {
+var data = {
+week: { back: '14', appt: '9', rev: '₹38,400', msg: '212' },
+month: { back: '61', appt: '37', rev: '₹1,64,900', msg: '890' }
+};
+report.querySelectorAll('.report-tabs button').forEach(function (btn) {
+btn.addEventListener('click', function () {
+report.querySelectorAll('.report-tabs button').forEach(function (b) { b.setAttribute('aria-selected', 'false'); });
+btn.setAttribute('aria-selected', 'true');
+var d = data[btn.getAttribute('data-tab')];
+Object.keys(d).forEach(function (k) {
+var el = report.querySelector('[data-r="' + k + '"]');
+if (el) el.textContent = d[k];
+});
+});
+});
+}
+var faqSearch = document.querySelector('[data-faq-search]');
+if (faqSearch) {
+var faqInput = faqSearch.querySelector('.faq-search-input');
+var faqCount = faqSearch.querySelector('[data-faq-count]');
+var faqChips = document.querySelector('[data-faq-chips]');
+var faqCats = Array.prototype.slice.call(document.querySelectorAll('[data-faq-cat]'));
+var faqItems = Array.prototype.slice.call(document.querySelectorAll('.faq-item'));
+faqInput.addEventListener('input', function () {
+var q = faqInput.value.trim().toLowerCase();
+if (!q) {
+faqItems.forEach(function (el) { el.style.display = ''; });
+faqCats.forEach(function (cat) { cat.closest('.section').style.display = ''; });
+if (faqChips) faqChips.style.display = '';
+faqCount.textContent = '';
+return;
+}
+if (faqChips) faqChips.style.display = 'none';
+var shown = 0;
+faqCats.forEach(function (cat) {
+var catShown = 0;
+cat.querySelectorAll('.faq-item').forEach(function (item) {
+var text = (item.querySelector('summary').textContent + ' ' + item.querySelector('.faq-a').textContent).toLowerCase();
+var match = text.indexOf(q) !== -1;
+item.style.display = match ? '' : 'none';
+if (match) { item.open = true; catShown++; }
+});
+cat.closest('.section').style.display = catShown ? '' : 'none';
+shown += catShown;
+});
+faqCount.textContent = shown + (shown === 1 ? ' question matches' : ' questions match') + ' “' + faqInput.value.trim() + '”';
+});
+}
+document.querySelectorAll('[data-ptabs]').forEach(function (wrap) {
+var buttons = wrap.querySelectorAll('.ptabs-nav button');
+buttons.forEach(function (btn) {
+btn.addEventListener('click', function () {
+var key = btn.getAttribute('data-tab');
+buttons.forEach(function (b) { b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+wrap.querySelectorAll('.ptabs-panel').forEach(function (p) {
+p.classList.toggle('is-active', p.getAttribute('data-panel') === key);
+});
+});
+});
+});
+var CUR = { INR: '₹', USD: '$', GBP: '£', AED: 'AED ', EUR: '€' };
+function fmt(n, cur) {
+var loc = cur === 'INR' ? 'en-IN' : 'en-US';
+return (CUR[cur] || '') + Math.round(n).toLocaleString(loc);
+}
+function bindRange(id, out, unit) {
+var el = document.getElementById(id);
+if (!el) return null;
+var lab = document.getElementById(out);
+var f = function () { if (lab) lab.textContent = Number(el.value).toLocaleString('en-IN') + (unit || ''); };
+el.addEventListener('input', f); f();
+return el;
+}
+var ds = document.getElementById('calc-deadstock');
+if (ds) {
+var v = bindRange('ds-value', 'ds-value-out'); // total inventory value (thousands)
+var p = bindRange('ds-pct', 'ds-pct-out', '%');
+var r = bindRange('ds-rate', 'ds-rate-out', '%');
+var cur = document.getElementById('ds-cur');
+function dsCalc() {
+var c = cur.value;
+var total = Number(v.value) * 1000;
+var dead = total * Number(p.value) / 100;
+var carryYr = dead * (Number(r.value) + 2.5) / 100; // financing + ~2.5% insurance/storage/handling
+var carryMo = carryYr / 12;
+var freed = dead * 0.4;
+document.getElementById('ds-dead').textContent = fmt(dead, c);
+document.getElementById('ds-monthly').textContent = fmt(carryMo, c);
+document.getElementById('ds-yearly').textContent = fmt(carryYr, c);
+document.getElementById('ds-freed').textContent = fmt(freed, c);
+var wa = document.getElementById('ds-wa');
+if (wa) wa.setAttribute('href', waLink('deadstock',
+'inventory ' + fmt(total, c) + ', dead ' + fmt(dead, c) + ', yearly carrying cost ' + fmt(carryYr, c)));
+}
+[v, p, r, cur].forEach(function (el) { el.addEventListener('input', dsCalc); el.addEventListener('change', dsCalc); });
+dsCalc();
+}
+var gs = document.getElementById('calc-scheme');
+if (gs) {
+var en = bindRange('gs-enrol', 'gs-enrol-out');
+var inst = bindRange('gs-inst', 'gs-inst-out');
+var up = bindRange('gs-uplift', 'gs-uplift-out', '%');
+var gcur = document.getElementById('gs-cur');
+function gsCalc() {
+var c = gcur.value;
+var yearlyEnrol = Number(en.value) * 12;
+var corpus = yearlyEnrol * Number(inst.value) * 11; // 11 paid months
+var redemption = corpus * 1.35; // avg redemption basket vs corpus (assumption, editable below)
+var uplift = redemption * Number(up.value) / 100;
+document.getElementById('gs-corpus').textContent = fmt(corpus, c);
+document.getElementById('gs-locked').textContent = fmt(redemption, c);
+document.getElementById('gs-uplift-val').textContent = fmt(uplift, c);
+var wa = document.getElementById('gs-wa');
+if (wa) wa.setAttribute('href', waLink('scheme_calc',
+'enrolments ' + en.value + '/month, corpus ' + fmt(corpus, c) + '/yr, locked-in revenue ' + fmt(redemption, c)));
+}
+[en, inst, up, gcur].forEach(function (el) { el.addEventListener('input', gsCalc); el.addEventListener('change', gsCalc); });
+gsCalc();
+}
+var wr = document.getElementById('calc-warevenue');
+if (wr) {
+var wrEnq = bindRange('wr-enq', 'wr-enq-out');
+var wrAov = bindRange('wr-aov', 'wr-aov-out');
+var wrReply = bindRange('wr-reply', 'wr-reply-out', '%');
+var wrCur = document.getElementById('wr-cur');
+var FAST_CLOSE = 0.15, SLOW_CLOSE = 0.03, TARGET_REPLY = 0.95;
+function wrCalc() {
+var c = wrCur.value;
+var enq = Number(wrEnq.value);
+var aov = Number(wrAov.value);
+var replyNow = Number(wrReply.value) / 100;
+var current = enq * (replyNow * FAST_CLOSE + (1 - replyNow) * SLOW_CLOSE) * aov;
+var potential = enq * (TARGET_REPLY * FAST_CLOSE + (1 - TARGET_REPLY) * SLOW_CLOSE) * aov;
+var gapMo = Math.max(0, potential - current);
+var gapYr = gapMo * 12;
+document.getElementById('wr-current').textContent = fmt(current, c);
+document.getElementById('wr-potential').textContent = fmt(potential, c);
+document.getElementById('wr-gap-mo').textContent = fmt(gapMo, c);
+document.getElementById('wr-gap-yr').textContent = fmt(gapYr, c);
+var wa = document.getElementById('wr-wa');
+if (wa) wa.setAttribute('href', waLink('wa_revenue_calc',
+enq + ' enquiries/mo, ' + Number(wrReply.value) + '% replied fast today, gap ' + fmt(gapMo, c) + '/mo'));
+}
+[wrEnq, wrAov, wrReply, wrCur].forEach(function (el) { el.addEventListener('input', wrCalc); el.addEventListener('change', wrCalc); });
+wrCalc();
+}
+var gl = document.getElementById('calc-goldloss');
+if (gl) {
+var glVol = bindRange('gl-vol', 'gl-vol-out');
+var glRate = bindRange('gl-rate', 'gl-rate-out');
+var glObserved = bindRange('gl-observed', 'gl-observed-out', '%');
+var glExplained = bindRange('gl-explained', 'gl-explained-out', '%');
+var glCur = document.getElementById('gl-cur');
+function glCalc() {
+var c = glCur.value;
+var vol = Number(glVol.value);
+var rate = Number(glRate.value);
+var observed = Number(glObserved.value) / 100;
+var explained = Number(glExplained.value) / 100;
+var unexplainedPct = Math.max(0, observed - explained);
+var grams = vol * unexplainedPct;
+var monthly = grams * rate;
+var yearly = monthly * 12;
+document.getElementById('gl-grams').textContent = grams.toFixed(1) + ' g';
+document.getElementById('gl-monthly').textContent = fmt(monthly, c);
+document.getElementById('gl-yearly').textContent = fmt(yearly, c);
+var wa = document.getElementById('gl-wa');
+if (wa) wa.setAttribute('href', waLink('goldloss_calc',
+vol + 'g/mo, ' + grams.toFixed(1) + 'g unexplained, ' + fmt(monthly, c) + '/mo'));
+}
+[glVol, glRate, glObserved, glExplained, glCur].forEach(function (el) { el.addEventListener('input', glCalc); el.addEventListener('change', glCalc); });
+glCalc();
+}
+var form = document.getElementById('demo-form');
+if (form) form.addEventListener('submit', function (e) {
+e.preventDefault();
+var v = function (name) { var el = form.querySelector('[name=' + name + ']'); return el && el.value ? el.value.trim() : ''; };
+var msg = 'Hi Jwero, I would like to book a demo.' +
+(v('name') ? ' Name: ' + v('name') + '.' : '') +
+(v('phone') ? ' WhatsApp: ' + v('phone') + '.' : '') +
+(v('business') ? ' Business: ' + v('business') + '.' : '') +
+(v('city') ? ' City: ' + v('city') + '.' : '') +
+(v('reach') === 'Call me' ? ' Please call me' + (v('time') ? ', ' + v('time') : '') + '.' : '');
+form.querySelector('.form-ok').style.display = 'block';
+form.querySelector('button[type=submit]').disabled = true;
+window.location.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg + ' [ref:book-demo/form]');
+});
+if (BASE) {
+var fix = function (e) { var a = e.target.closest && e.target.closest('a[href^="/"]'); if (a) { var h = a.getAttribute('href'), b = based(h); if (b !== h) a.setAttribute('href', b); } };
+document.addEventListener('mouseover', fix, true); document.addEventListener('focusin', fix, true); document.addEventListener('touchstart', fix, { capture: true, passive: true }); document.addEventListener('mousedown', fix, true);
+}
+Array.prototype.forEach.call(document.querySelectorAll('.pz-guar'), function (g) {
+var n = g.querySelector('[data-pz-count]'), to = n ? +n.getAttribute('data-pz-count') : 0;
+var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (still || !('IntersectionObserver' in window)) { g.classList.add('is-in'); return; }
+if (n) n.textContent = '0';
+var io = new IntersectionObserver(function (es) { es.forEach(function (en) {
+if (!en.isIntersecting) return; io.disconnect(); g.classList.add('is-in');
+var t0 = null; function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1200); n.textContent = String(Math.round(to * (1 - Math.pow(1 - k, 3)))); if (k < 1) window.requestAnimationFrame(step); }
+if (n) window.requestAnimationFrame(step);
+}); }, { threshold: .4 });
+io.observe(g);
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-pz-run]'), function (root) {
+var modes; try { modes = JSON.parse(root.querySelector('script').textContent); } catch (e) { return; }
+var tabs = Array.prototype.slice.call(root.querySelectorAll('.pz-run-tabs button')), chips = Array.prototype.slice.call(root.querySelectorAll('.pz-run-track i[data-f]'));
+var heads = Array.prototype.slice.call(root.querySelectorAll('.pz-run-head b')), cur = -1, timer = null, touched = false;
+function q(s) { return root.querySelector(s); }
+function show(i) {
+cur = i; var m = modes[i];
+root.setAttribute('data-mode', m.key);
+tabs.forEach(function (t, k) { t.setAttribute('aria-selected', String(k === i)); });
+chips.forEach(function (c, k) { c.style.setProperty('--lane', m.lanes[k]); });
+heads.forEach(function (h, k) { h.classList.toggle('is-on', m.lanes.indexOf(k) !== -1 || k === 0); });
+q('[data-pz-run-title]').textContent = m.title; q('[data-pz-run-line]').textContent = m.line;
+q('[data-pz-run-you]').textContent = m.you; q('[data-pz-run-ai]').textContent = m.ai; q('[data-pz-run-jw]').textContent = m.jw;
+q('[data-pz-run-m="0"]').style.width = m.meters[0] + '%'; q('[data-pz-run-m="1"]').style.width = m.meters[1] + '%';
+q('[data-pz-run-cost]').textContent = m.cost;
+var cta = q('[data-pz-run-cta]'); cta.textContent = m.cta[0];
+if (m.cta[1] === '#handle') { cta.setAttribute('href', '#'); cta.setAttribute('data-wa', 'handle'); } else { cta.setAttribute('href', based(m.cta[1])); cta.removeAttribute('data-wa'); }
+}
+function stop() { if (timer) { window.clearInterval(timer); timer = null; } }
+root.addEventListener('click', function (e) { var b = e.target.closest('.pz-run-tabs button'); if (!b) return; touched = true; stop(); show(+b.getAttribute('data-i')); });
+show(+root.getAttribute('data-run-start') || 0);
+if ('IntersectionObserver' in window && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+new IntersectionObserver(function (es) { es.forEach(function (en) {
+if (en.isIntersecting && !touched && !timer) timer = window.setInterval(function () { show((cur + 1) % modes.length); }, 4200);
+else if (!en.isIntersecting) stop();
+}); }, { threshold: .35 }).observe(root);
+}
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-pz-plate]'), function (root) {
+var cells = Array.prototype.slice.call(root.querySelectorAll('.pz-plate-cell')), wrap = root.parentNode;
+var out = wrap.querySelector('[data-pz-plate-out]'), cta = wrap.querySelector('[data-pz-plate-cta]');
+function update() {
+var on = cells.filter(function (c) { return c.getAttribute('aria-pressed') === 'true'; }).map(function (c) { return c.getAttribute('data-area'); });
+out.innerHTML = !on.length ? '<b>You choose how much you want us to handle.</b>' : on.length === cells.length ? '<b>Everything around the jewellery.</b> You focus on jewellery. Jwero handles the rest.' : '<b>' + on.length + ' of ' + cells.length + ' handed to Jwero:</b> ' + on.join(', ').toLowerCase() + '.';
+if (cta) { cta.setAttribute('data-wa-extra', on.length ? ' I would like Jwero to handle: ' + on.join(', ') + '.' : ''); }
+}
+root.addEventListener('click', function (e) { var c = e.target.closest('.pz-plate-cell'); if (!c) return; c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); update(); });
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-pz-out]'), function (root) {
+var data; try { data = JSON.parse(root.querySelector('script').textContent); } catch (e) { return; }
+var btns = Array.prototype.slice.call(root.querySelectorAll('.pz-out-btns button'));
+function q(s) { return root.querySelector(s); }
+function show(i) {
+var d = data[i];
+btns.forEach(function (b, k) { b.setAttribute('aria-pressed', String(k === i)); });
+q('[data-pz-out-t]').textContent = d.t; q('[data-pz-out-line]').textContent = d.line;
+q('[data-pz-out-does]').innerHTML = d.does.map(function (x) { return '<li>' + x + '</li>'; }).join('');
+q('[data-pz-out-who]').textContent = d.who.join(', '); q('[data-pz-out-lv]').textContent = d.lv;
+q('[data-pz-out-caps]').innerHTML = d.caps.map(function (c) { return '<a href="' + based(c[1]) + '">' + c[0] + '</a>'; }).join(' · ');
+q('[data-pz-out-cta]').setAttribute('data-wa-extra', ' ' + d.t + '.');
+var card = q('.pz-out-card'); card.classList.remove('is-in'); void card.offsetWidth; card.classList.add('is-in');
+}
+root.addEventListener('click', function (e) { var b = e.target.closest('.pz-out-btns button'); if (b) show(+b.getAttribute('data-i')); });
+show(0);
+});
+Array.prototype.forEach.call(document.querySelectorAll('[data-pz-assess]'), function (root) {
+var steps = Array.prototype.slice.call(root.querySelectorAll('.pz-step')), dots = Array.prototype.slice.call(root.querySelectorAll('.pz-steps li'));
+var next = root.querySelector('[data-pz-next]'), back = root.querySelector('[data-pz-back]'), at = 0;
+function val(n) { var el = root.querySelector('[data-pz-f="' + n + '"]'); return el ? el.value : ''; }
+function picks(n) { return Array.prototype.filter.call(root.querySelectorAll('[data-pz-c="' + n + '"]'), function (c) { return c.checked; }).map(function (c) { return c.value; }); }
+function has(list, word) { return list.some(function (x) { return x.indexOf(word) !== -1; }); }
+function block(title, items) { return items.length ? '<div class="pz-plan-b"><p>' + title + '</p><ul>' + items.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div>' : ''; }
+function plan() {
+var ch = picks('channels'), st = picks('stack'), cs = picks('challenges'), keep = picks('keep'), hand = picks('hand');
+var all = has(hand, 'Everything'), handed = hand.filter(function (x) { return x.indexOf('Everything') === -1; });
+var level = all || handed.length >= 4 ? 'We run it for you' : handed.length ? 'We run it with you' : 'You run it';
+var gaps = [], opp = [], caps = [], agents = [], who = [], auto = [];
+if (!has(ch, 'Website')) gaps.push('No way for a customer to browse or buy online');
+if (!has(ch, 'WhatsApp')) gaps.push('WhatsApp is not yet a working sales channel');
+if (!has(ch, 'Instagram')) gaps.push('No presence where jewellery is discovered');
+if (!has(st, 'CRM')) gaps.push('Customers live in phones and registers, not on a record the business owns');
+if (has(st, 'Excel') || has(st, 'Several')) gaps.push('The same information is kept in more than one place');
+if (val('marketing').indexOf('Nobody') === 0) gaps.push('Nobody owns marketing');
+if (val('engagement').indexOf('Whoever') === 0) gaps.push('Enquiries depend on who happens to be free');
+if (has(cs, 'new customers')) { opp.push('More enquiries from search, ads and social'); caps.push('Ads and search'); who.push('Performance marketing expert', 'SEO, AEO and GEO expert'); }
+if (has(cs, 'Enquiries not')) { opp.push('Every enquiry answered within minutes, day or night'); caps.push('WhatsApp and one shared inbox'); agents.push('Enquiry desk agent', 'Night shift agent'); who.push('Customer engagement specialist'); auto.push('First replies and follow-ups'); }
+if (has(cs, 'Old customers')) { opp.push('Customers you already earned, coming back'); caps.push('Customer memory and journeys'); agents.push('Follow-up agent', 'Occasion agent'); who.push('CRM specialist'); auto.push('Occasion, scheme and reactivation outreach'); }
+if (has(cs, 'Online sales')) { opp.push('An online store and catalogue that sell at the live rate'); caps.push('Online store and catalogues'); who.push('Ecommerce specialist', 'Content and creative specialist'); }
+if (has(cs, 'manual work')) { opp.push('Hours a week given back to the team'); caps.push('One system for counter, stock and books'); auto.push('Billing to books, stock updates, reminders'); who.push('Automation specialist'); }
+if (has(cs, 'Too many tools')) { opp.push('One partner in place of many vendors'); caps.push('The Jwero operating system'); who.push('Technology specialist'); }
+if (has(cs, 'stretched')) { opp.push('Growth without adding headcount'); agents.push('Voice caller for reminders'); who.push('Jewellery growth strategist'); }
+if (has(cs, 'No clear numbers')) { opp.push('A plain weekly account of what changed and why'); caps.push('Reports and customer intelligence'); who.push('Data and analytics expert'); }
+if (!opp.length) { opp.push('A clear picture of where the business stands'); caps.push('The Jwero operating system'); who.push('Jewellery growth strategist'); }
+function uniq(a) { return a.filter(function (x, i) { return a.indexOf(x) === i; }); }
+var first = opp[0], second = opp[1] || 'The next priority from your list', third = opp[2] || 'Review the results and decide what Jwero takes on next';
+root.querySelector('[data-pz-plan-title]').textContent = 'Recommended: ' + level + '.';
+root.querySelector('[data-pz-plan]').innerHTML =
+block('Current gaps', gaps.slice(0, 5).length ? gaps.slice(0, 5) : ['Nothing obvious from these answers; a specialist will look closer']) +
+block('Opportunities', opp.slice(0, 5)) + block('Recommended capabilities', uniq(caps)) +
+block('Recommended AI agents', uniq(agents).length ? uniq(agents) : ['Enquiry desk agent']) + block('Recommended specialists', uniq(who).slice(0, 6)) +
+block('Processes to automate', auto.length ? auto : ['Routine replies and reminders']) +
+block('Functions for Jwero to handle', all ? ['Everything Jwero can, function by function'] : handed.length ? handed : ['None yet. You run it; hand something over when you choose']) +
+block('You keep in-house', keep.length ? keep : ['Jewellery, design, sourcing, customers and business decisions']) +
+block('Your first 90 days', ['Days 1 to 30: set up, bring your data in, ' + first.charAt(0).toLowerCase() + first.slice(1), 'Days 31 to 60: ' + second.charAt(0).toLowerCase() + second.slice(1), 'Days 61 to 90: ' + third.charAt(0).toLowerCase() + third.slice(1)]);
+root.querySelector('[data-pz-plan-cta]').setAttribute('data-wa-extra', ' ' + val('type') + ', ' + val('stores') + ' location(s), team ' + val('team') + '. Challenges: ' + (cs.join('; ') || 'not chosen') + '. Hand to Jwero: ' + (hand.join('; ') || 'nothing yet') + '. Suggested: ' + level + '.');
+}
+function go(n) {
+at = Math.max(0, Math.min(steps.length - 1, n));
+steps.forEach(function (s, i) { s.classList.toggle('is-on', i === at); });
+dots.forEach(function (d, i) { d.classList.toggle('is-on', i === at); d.classList.toggle('is-done', i < at); });
+back.hidden = at === 0; next.hidden = at === steps.length - 1;
+next.textContent = at === steps.length - 2 ? 'Show my plan' : 'Next';
+if (at === steps.length - 1) plan();
+}
+next.addEventListener('click', function () { go(at + 1); root.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
+back.addEventListener('click', function () { go(at - 1); });
+});
+})();
