@@ -9,6 +9,7 @@ var WA_NUMBER = '919169959959'; // WhatsApp Business number, digits only
 var WA_MESSAGES = {
 default: 'Hi Jwero, I would like to see a quick demo.',
 handle: 'Hi Jwero, I would like you to handle things for my jewellery business. Here is where I am:',
+guarantee: 'Hi Jwero, I want to know more about the 40% operational cost guarantee for my jewellery business.',
 'with-you': 'Hi Jwero, I have a team and want your specialists to work with us.',
 outcome: 'Hi Jwero, this is what I want to improve:',
 assessment: 'Hi Jwero, I took the business assessment and would like to talk to a business specialist.',
@@ -1934,6 +1935,18 @@ if (BASE) {
 var fix = function (e) { var a = e.target.closest && e.target.closest('a[href^="/"]'); if (a) { var h = a.getAttribute('href'), b = based(h); if (b !== h) a.setAttribute('href', b); } };
 document.addEventListener('mouseover', fix, true); document.addEventListener('focusin', fix, true); document.addEventListener('touchstart', fix, { capture: true, passive: true }); document.addEventListener('mousedown', fix, true);
 }
+Array.prototype.forEach.call(document.querySelectorAll('.pz-guar'), function (g) {
+var n = g.querySelector('[data-pz-count]'), to = n ? +n.getAttribute('data-pz-count') : 0;
+var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (still || !('IntersectionObserver' in window)) { g.classList.add('is-in'); return; }
+if (n) n.textContent = '0';
+var io = new IntersectionObserver(function (es) { es.forEach(function (en) {
+if (!en.isIntersecting) return; io.disconnect(); g.classList.add('is-in');
+var t0 = null; function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1200); n.textContent = String(Math.round(to * (1 - Math.pow(1 - k, 3)))); if (k < 1) window.requestAnimationFrame(step); }
+if (n) window.requestAnimationFrame(step);
+}); }, { threshold: .4 });
+io.observe(g);
+});
 Array.prototype.forEach.call(document.querySelectorAll('[data-pz-run]'), function (root) {
 var modes; try { modes = JSON.parse(root.querySelector('script').textContent); } catch (e) { return; }
 var tabs = Array.prototype.slice.call(root.querySelectorAll('.pz-run-tabs button')), chips = Array.prototype.slice.call(root.querySelectorAll('.pz-run-track i[data-f]'));

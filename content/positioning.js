@@ -49,14 +49,14 @@ const hero = () => `
 // The one choice a visitor must leave understanding: run the software
 // yourself, let the AI run it, or let Jwero's team run it. Eight functions
 // slide between three lanes; "jewellery" never leaves yours.
-const RUN_FUNCS = ['Customer acquisition', 'Customer engagement', 'Sales', 'Digital commerce', 'Customer retention', 'Operations', 'Intelligence', 'Technology'];
+const RUN_FUNCS = ['Customer acquisition', 'Offline marketing and promotion', 'Customer engagement', 'Showroom journey', 'Sales', 'Digital commerce', 'Customer retention', 'Sourcing and vendors', 'Operations', 'Intelligence', 'Technology'];
 const RUN_MODES = [
-  { key: 'you', tab: 'I’ll run it', title: 'You run it, on one system.', line: 'Your team does the work, on Jwero’s software. One system in place of many tools, so there is far less to learn and nothing to stitch together.', lanes: [0, 0, 0, 0, 0, 0, 1, 1],
+  { key: 'you', tab: 'I’ll run it', title: 'You run it, on one system.', line: 'Your team does the work, on Jwero’s software. One system in place of many tools, so there is far less to learn and nothing to stitch together.', lanes: [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
     you: 'Run every function with your own team', ai: 'Keeps the record, the numbers and the technology in order', jw: 'Sets you up, trains your team, stays on call', meters: [85, 60, 1], cost: '₹18,000 a month. First month ₹3,600.', cta: ['Explore Jwero', '/self-managed'] },
-  { key: 'ai', tab: 'Let AI run it', title: 'AI runs the routine. You say yes.', line: 'AI agents answer, follow up, remind, reprice and report around the clock. Nothing reaches a customer without your approval unless you allow it.', lanes: [0, 1, 0, 1, 1, 1, 1, 1],
+  { key: 'ai', tab: 'Let AI run it', title: 'AI runs the routine. You say yes.', line: 'AI agents answer, follow up, remind, reprice and report around the clock. Nothing reaches a customer without your approval unless you allow it.', lanes: [0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1],
     you: 'Approve, sell, and decide', ai: 'Does the replies, follow-ups, reminders, updates and reports', jw: 'Tunes the agents and steps in when you ask', meters: [40, 30, 1], cost: 'The same plan. AI and messages are charged only as used.', cta: ['See the AI team', '/ai-and-experts'] },
-  { key: 'jwero', tab: 'Let Jwero’s team run it', title: 'Jwero’s people and AI run it for you.', line: 'Specialists and AI agents run the functions you hand over. No hiring, no agencies, no new tools to learn. You set the goal and see one account of what was done.', lanes: [2, 2, 2, 2, 2, 2, 2, 2],
-    you: 'Set the goals. Stay with the jewellery and your customers', ai: 'Works at scale under the specialists', jw: 'Plans, executes and reports on every function you hand over', meters: [10, 5, 1], cost: 'Scoped and quoted for your business. No new hires.', cta: ['Let Jwero handle it', '#handle'] },
+  { key: 'jwero', tab: 'Let Jwero’s team run it', title: 'Jwero’s people and AI run it for you.', line: 'Specialists and AI agents run the functions you hand over, from the showroom journey and offline promotion to sourcing and vendors. No hiring, no agencies, no new tools to learn. You set the goal and see one account of what was done.', lanes: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    you: 'Set the goals. Stay with the jewellery and your customers', ai: 'Works at scale under the specialists', jw: 'Plans, executes and reports on every function you hand over', meters: [10, 5, 1], cost: 'Guaranteed 40% lower operational cost each month, or the entire tool is free.', cta: ['Let Jwero handle it', '#handle'] },
 ];
 const whoRuns = (start = 0) => L.section(`
 ${eyebrow('The only choice you have to make')}
@@ -68,7 +68,7 @@ ${eyebrow('The only choice you have to make')}
   <div class="pz-run-body">
     <div class="pz-run-board" aria-hidden="true">
       <div class="pz-run-head"><span></span><b data-lane="0">You and your team</b><b data-lane="1">AI agents</b><b data-lane="2">Jwero’s specialists</b></div>
-      <div class="pz-run-row pz-run-keep"><span>Jewellery, design, sourcing, your customers</span><div class="pz-run-track"><i style="--lane:0">${gem}Always yours</i></div></div>
+      <div class="pz-run-row pz-run-keep"><span>Jewellery, design, craftsmanship, your customers</span><div class="pz-run-track"><i style="--lane:0">Always yours</i></div></div>
       ${RUN_FUNCS.map((f, i) => `<div class="pz-run-row"><span>${f}</span><div class="pz-run-track"><i data-f="${i}" style="--lane:${RUN_MODES[start].lanes[i]};--d:${i}"></i></div></div>`).join('')}
     </div>
     <div class="pz-run-card" aria-live="polite">
@@ -90,6 +90,23 @@ ${eyebrow('The only choice you have to make')}
     </div>
   </div>
 </div>`, { id: 'who-runs-it' });
+
+// ---------------------------------------------------------------- the guarantee
+const guarantee = () => `
+<section class="pz-guar" id="guarantee"><div class="wrap pz-guar-in">
+  <div class="pz-guar-seal" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" class="pz-guar-ring"/><circle cx="60" cy="60" r="54" class="pz-guar-arc"/></svg><b><span data-pz-count="40">40</span>%</b><small>guaranteed</small></div>
+  <div class="pz-guar-copy">
+    ${eyebrow('The Jwero guarantee')}
+    <h2 class="pz-h">We guarantee 40% savings in your operational cost. Every month.</h2>
+    <p class="pz-lead">If you already do it at a lower cost, the entire Jwero tool is yours, free.</p>
+    <div class="pz-guar-bars" aria-hidden="true">
+      <p><span>What you spend today</span><i><u style="--w:100%"></u></i><b>100</b></p>
+      <p><span>With Jwero handling it</span><i><u class="is-gold" style="--w:60%"></u></i><b>60 or less</b></p>
+    </div>
+    <div class="pz-cta-row">${HANDLE('Claim the guarantee', 'guarantee')}<a class="btn btn-ghost" href="#who-runs-it">See who does the work</a></div>
+    <p class="pz-guar-note">We compare your current monthly operational cost with the cost of Jwero doing the same work, and put it in writing before you start.</p>
+  </div>
+</div></section>`;
 
 // ---------------------------------------------------------------- 2. the world has changed
 const EXPECTED = ['Digital marketing', 'Google', 'Instagram', 'WhatsApp', 'Meta Ads', 'Ecommerce', 'SEO', 'AI', 'CRM', 'Customer data', 'Automation', 'Content', 'Analytics', 'Cybersecurity', 'Technology', 'New marketplaces', 'New customer behaviour'];
@@ -221,6 +238,10 @@ const PLATE = [
   ['Operations', ['Automation', 'ERP', 'CRM', 'Workflows', 'Data'], '/products/erp'],
   ['Intelligence', ['Analytics', 'Insights', 'Forecasting', 'Customer intelligence', 'Business recommendations'], '/products/reports'],
   ['Technology', ['Integrations', 'AI', 'Automation', 'Security', 'Infrastructure'], '/platform/integrations'],
+  ['Showroom journey', ['Walk-ins', 'Appointments', 'Counter selling', 'Billing', 'After-sale care'], '/products/erp'],
+  ['Offline marketing and promotion', ['Events', 'Exhibitions', 'Hoardings and print', 'Festive offers', 'Local tie-ups'], '/ads-for-jewellers'],
+  ['Sourcing', ['Requirements', 'Supplier search', 'Rates', 'Purchase orders', 'Quality checks'], '/products/erp'],
+  ['Vendor management', ['Karigars', 'Suppliers', 'Job work', 'Payments', 'Follow-ups'], '/products/erp'],
 ];
 const plate = () => L.section(`
 ${eyebrow('What we handle')}
@@ -429,6 +450,7 @@ const home = {
   body: `
 ${hero()}
 ${whoRuns(0)}
+${guarantee()}
 ${worldChanged()}
 ${learningLoop()}
 ${enter()}
@@ -551,6 +573,7 @@ const managed = {
   body: `
 ${innerHero('02 and 03 · Managed', 'Run it with Jwero. Or let Jwero run it.', 'Your team with our specialists and AI, or whole functions handed over. You define the goal. Jwero handles the execution.', ['#assessment', 'Take the assessment'])}
 ${whoRuns(2)}
+${guarantee()}
 ${L.section(`
 <div class="pz-levels pz-levels-2">
   <article class="pz-level" id="with-you"><p class="pz-level-n">02</p><h3>We run it with you</h3><p class="pz-level-who">For jewellers who have teams but need expertise.</p><ul><li>Technology and AI agents</li><li>Automation</li><li>Strategy</li><li>Specialists working beside your people</li><li>Execution</li><li>Continuous optimisation</li></ul><p class="pz-level-line">Your team works with Jwero experts.</p>${HANDLE('Build your team', 'with-you', 'btn btn-ghost')}</article>
