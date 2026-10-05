@@ -3710,3 +3710,19 @@ main > .cmp { width: min(calc(var(--rail) - 2 * var(--pad)), 100% - 32px); margi
 .pz-team2-note { margin: 0; font-size: .6875rem; line-height: 1.5; color: rgba(255, 255, 255, .55); }
 @media (max-width: 1000px) { .pz-team2 { grid-template-columns: minmax(0, 1fr); } .pz-team2-panel { position: static; } }
 @media (max-width: 560px) { .pz-team2-pick { padding: 16px; } .pz-team2-pick button { font-size: .875rem; padding: 8px 12px; } .pz-team2-panel dl div { flex-direction: column; gap: 2px; } .pz-team2-panel dd { text-align: left; } }
+
+.pz-team2-mode { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.pz-team2-mode button { display: grid; gap: 4px; text-align: left; padding: 11px 12px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, .25); background: rgba(255, 255, 255, .06); color: #fff; font: inherit; cursor: pointer; transition: background .2s var(--ease), border-color .2s var(--ease); }
+.pz-team2-mode b { font-size: .875rem; letter-spacing: -.01em; }
+.pz-team2-mode span { font-size: .6875rem; line-height: 1.35; color: rgba(255, 255, 255, .7); }
+.pz-team2-mode button[aria-pressed="true"] { background: #fff; border-color: #fff; color: #10142b; }
+.pz-team2-mode button[aria-pressed="true"] span { color: #4a5068; }
+.pz-team2-panel dl .is-sub { padding: 6px 0 6px 14px; border-bottom-style: dashed; }
+.pz-team2-panel dl .is-sub dt, .pz-team2-panel dl .is-sub dd { font-size: .8125rem; font-weight: 500; color: rgba(255, 255, 255, .75); }
+.pz-team2-kinds { margin: 0; display: flex; flex-wrap: wrap; gap: 5px; }
+.pz-team2-kinds span { padding: 5px 9px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .16); font-size: .6875rem; color: rgba(255, 255, 255, .4); transition: color .3s var(--ease), border-color .3s var(--ease), background .3s var(--ease); }
+.pz-team2-kinds span.is-on { color: #1c1503; background: var(--gold); border-color: var(--gold); font-weight: 600; }
+.pz-team2-bars i { display: flex; }
+.pz-team2-bars u.is-soft { background: var(--soft); border-radius: 999px 0 0 999px; }
+.pz-team2-bars u.is-soft + u.is-gold { border-radius: 0 999px 999px 0; }
+@media (max-width: 420px) { .pz-team2-mode { grid-template-columns: minmax(0, 1fr); } }

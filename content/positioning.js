@@ -421,47 +421,57 @@ const buildLess = () => `
 </section>`;
 
 // ---------------------------------------------------------------- count your team
-// The roles a jeweller hires, or pays an agency for, to keep up. Each can be
-// marked as an employee, an agency, or a gap nobody covers.
-// [role, employee ₹/month, agency ₹/month, Jwero ₹/month at the smallest scale]
-// Employee and agency figures are market averages drafted for India; the Jwero
-// figures are PROPOSED starting prices and need the founders' sign-off. All of
-// it, and the scale factors in site.js, is listed in
-// blueprint/TEAM-COST-ASSUMPTIONS.md.
+// The roles a jeweller hires, or pays a freelancer or agency for, to keep up.
+// Each can be marked as an employee, an agency, or a gap nobody covers.
+// [role, lowest employee ₹/month, lowest freelancer or agency ₹/month,
+//  share of the work AI does, the kinds of AI usage it draws on]
+// "Lowest" means the cheapest way the role is commonly filled in India: a
+// junior hire in a smaller city, or a freelancer. These are drafted estimates.
+// Jwero is priced by rule from the lower of the two: 50% when the jeweller
+// focuses on the outcome, 60% when they want to be involved in every decision.
+// See blueprint/TEAM-COST-ASSUMPTIONS.md.
 const TEAM_ROLES = [
-  ['Get more customers', [['Performance marketing', 45000, 35000, 22000], ['SEO, AEO and GEO', 35000, 25000, 16500], ['Social media manager', 30000, 30000, 16500], ['Content writer', 25000, 15000, 11000], ['Graphic designer', 30000, 20000, 14000], ['Video editor', 30000, 25000, 15000]]],
-  ['Sell more', [['Telecaller and follow-up', 18000, 20000, 10500], ['CRM executive', 28000, 25000, 14500], ['Sales coordinator', 25000, 20000, 12500]]],
-  ['Keep customers', [['Loyalty and scheme coordinator', 22000, 20000, 11500], ['WhatsApp executive', 20000, 18000, 10500], ['Customer care', 20000, 20000, 11000]]],
-  ['Grow online', [['Ecommerce manager', 50000, 40000, 25000], ['Catalogue and listing executive', 22000, 18000, 11000], ['Product photographer', 30000, 30000, 16500], ['Marketplace executive', 25000, 20000, 12500]]],
-  ['Reduce work', [['Data entry operator', 16000, 15000, 8500], ['MIS and reports executive', 30000, 25000, 15000], ['IT and software coordinator', 40000, 30000, 19500]]],
-  ['Shop floor and supply', [['Purchase and sourcing executive', 35000, 30000, 18000], ['Vendor coordinator', 25000, 20000, 12500], ['Events and offline promotion', 30000, 40000, 19500]]],
+  ['Get more customers', [['Performance marketing', 20000, 12000, .35, 'image,content'], ['SEO, AEO and GEO', 18000, 10000, .5, 'content'], ['Social media manager', 15000, 8000, .5, 'content,image,comment'], ['Content writer', 12000, 6000, .7, 'content'], ['Graphic designer', 15000, 8000, .6, 'image'], ['Video editor', 15000, 10000, .4, 'content']]],
+  ['Sell more', [['Telecaller and follow-up', 10000, 12000, .7, 'out,in'], ['CRM executive', 15000, 12000, .5, 'reply,data'], ['Sales coordinator', 14000, 12000, .4, 'reply,out']]],
+  ['Keep customers', [['Loyalty and scheme coordinator', 12000, 10000, .5, 'reply,out'], ['WhatsApp executive', 10000, 8000, .75, 'reply'], ['Customer care', 10000, 10000, .65, 'reply,in']]],
+  ['Grow online', [['Ecommerce manager', 25000, 15000, .35, 'content,data'], ['Catalogue and listing executive', 12000, 8000, .6, 'content,image'], ['Product photographer', 15000, 10000, .5, 'image'], ['Marketplace executive', 14000, 10000, .5, 'content']]],
+  ['Reduce work', [['Data entry operator', 9000, 7000, .7, 'data'], ['MIS and reports executive', 15000, 10000, .6, 'data'], ['IT and software coordinator', 18000, 10000, .3, 'data']]],
+  ['Shop floor and supply', [['Purchase and sourcing executive', 18000, 15000, .2, 'data'], ['Vendor coordinator', 14000, 12000, .3, 'out'], ['Events and offline promotion', 15000, 15000, .15, 'image,content']]],
 ];
+const AI_KINDS = [['reply', 'Customer replies'], ['comment', 'Comment replies'], ['image', 'Image generation'], ['content', 'Content creation'], ['in', 'Inbound calls'], ['out', 'Outbound calls'], ['data', 'Reports and data']];
 const VOLUMES = ['Under 2,000 customers', '2,000 to 10,000', '10,000 to 50,000', 'More than 50,000'];
 const countTeam = () => L.section(`
 ${eyebrow('Count your team')}
 <h2 class="pz-h pz-center">What does keeping up cost you today?</h2>
-<p class="pz-lead pz-center">Tap each role once if an employee does it, twice if an agency does, three times if nobody does. Your team stays yours. This counts the roles you would otherwise have to hire, train and replace.</p>
+<p class="pz-lead pz-center">Tap each role once if an employee does it, twice if a freelancer or agency does, three times if nobody does. We count it at the lowest going rate in India, so the comparison is fair to you. Your team stays yours.</p>
 <div class="pz-team2" data-pz-team>
   <div class="pz-team2-pick">
-    <p class="pz-team2-legend"><span class="is-e">Employee</span><span class="is-a">Agency or freelancer</span><span class="is-g">Nobody does it</span></p>
-    ${TEAM_ROLES.map(([g, roles]) => `<div class="pz-team2-group"><p>${g}</p><div>${roles.map(([r, e, a, jw]) => `<button type="button" data-s="0" data-e="${e}" data-a="${a}" data-j="${jw}" data-g="${g}" aria-label="${r}: not counted"><b>${r}</b><i></i></button>`).join('')}</div></div>`).join('')}
+    <p class="pz-team2-legend"><span class="is-e">Employee</span><span class="is-a">Freelancer or agency</span><span class="is-g">Nobody does it</span></p>
+    ${TEAM_ROLES.map(([g, roles]) => `<div class="pz-team2-group"><p>${g}</p><div>${roles.map(([r, e, a, ai, k]) => `<button type="button" data-s="0" data-e="${e}" data-a="${a}" data-ai="${ai}" data-k="${k}" aria-label="${r}: not counted"><b>${r}</b><i></i></button>`).join('')}</div></div>`).join('')}
   </div>
   <div class="pz-team2-panel" aria-live="polite">
     <div class="pz-team2-scale">
       <label>Showrooms<span class="pz-team2-step"><button type="button" data-d="-1" aria-label="Fewer showrooms">−</button><output data-pz-team-stores>1</output><button type="button" data-d="1" aria-label="More showrooms">+</button></span></label>
       <label>Customer base<select data-pz-team-vol>${VOLUMES.map((v, i) => `<option value="${i}">${v}</option>`).join('')}</select></label>
     </div>
+    <div class="pz-team2-mode" role="group" aria-label="How involved you want to be">
+      <button type="button" aria-pressed="true" data-m="0"><b>Focus on the outcome</b><span>Jwero plans and executes. You see results.</span></button>
+      <button type="button" aria-pressed="false" data-m="1"><b>Involve me in every decision</b><span>You approve each step. More coordination, more time.</span></button>
+    </div>
     <p class="pz-team2-big"><span data-pz-team-n>0</span> people and agencies to manage <em>→ one partner</em></p>
     <dl>
-      <div><dt>What you spend today</dt><dd data-pz-team-now>₹0</dd></div>
-      <div><dt>The same work with Jwero, from</dt><dd data-pz-team-jw>₹0</dd></div>
+      <div><dt>What you spend today, at the lowest rates</dt><dd data-pz-team-now>₹0</dd></div>
+      <div><dt>The same work with Jwero</dt><dd data-pz-team-jw>₹0</dd></div>
+      <div class="is-sub"><dt>Specialists’ time</dt><dd data-pz-team-human>₹0</dd></div>
+      <div class="is-sub"><dt>AI usage, as used</dt><dd data-pz-team-ai>₹0</dd></div>
       <div class="is-save"><dt>Difference each month</dt><dd data-pz-team-save>₹0</dd></div>
-      <div><dt>Your hours coordinating them, each week</dt><dd data-pz-team-hrs>0</dd></div>
-      <div><dt>Gaps Jwero would fill</dt><dd data-pz-team-gaps>0</dd></div>
+      <div><dt>Your hours on it, each week</dt><dd data-pz-team-hrs>0</dd></div>
+      <div><dt>Gaps Jwero would fill</dt><dd data-pz-team-gaps>None marked</dd></div>
     </dl>
-    <div class="pz-team2-bars" aria-hidden="true"><p><span>Today</span><i><u data-pz-team-b1></u></i></p><p><span>With Jwero</span><i><u class="is-gold" data-pz-team-b2></u></i></p></div>
+    <p class="pz-team2-kinds" aria-label="AI usage in this estimate">${AI_KINDS.map(([k, t]) => `<span data-kind="${k}">${t}</span>`).join('')}</p>
+    <div class="pz-team2-bars" aria-hidden="true"><p><span>Today</span><i><u data-pz-team-b1></u></i></p><p><span>With Jwero</span><i><u class="is-soft" data-pz-team-b3></u><u class="is-gold" data-pz-team-b2></u></i></p></div>
     <a class="btn pz-btn-gold" href="#" data-wa="plan" data-pz-team-cta>Get my Jwero business plan</a>
-    <p class="pz-team2-note">Indicative. Today’s figures are market averages for India, including the cost of employing someone. Jwero’s are starting prices that rise with your showrooms and customer base. Filling a gap adds cost, so it is shown apart. Your plan carries the exact quote.</p>
+    <p class="pz-team2-note">Indicative. Today’s figures are the lowest going rates in India, drafted by us, not a survey. Jwero is priced at half of the cheaper way to fill each role when you focus on the outcome, and at 60% when you want to approve every step. AI usage is charged as used, so it moves with your volume. Filling a gap adds cost, so it is shown apart. Your plan carries the exact quote.</p>
   </div>
 </div>`, { tone: 'tint', id: 'count-your-team' });
 

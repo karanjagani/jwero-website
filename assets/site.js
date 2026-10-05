@@ -2164,39 +2164,48 @@
     io.observe(g);
   });
 
-  // Count your team: each role is an employee, an agency, a gap, or not counted.
-  // Costs grow with showrooms and customer base; Jwero's grow more slowly.
+  // Count your team: each role is an employee, a freelancer or agency, a gap,
+  // or not counted. Today's cost is the lowest going rate, scaled by showrooms
+  // and customer base. Jwero is 50% of the cheaper way to fill the role when the
+  // jeweller focuses on the outcome, 60% when they approve every step; the
+  // extra is specialists' coordination time. AI's share grows with volume.
   Array.prototype.forEach.call(document.querySelectorAll('[data-pz-team]'), function (root) {
-    var btns = Array.prototype.slice.call(root.querySelectorAll('.pz-team2-pick button')), stores = 1;
-    var VOL_NOW = [1, 1.4, 2, 3], VOL_JW = [1, 1.25, 1.6, 2.2], STORE_NOW = .12, STORE_JW = .06, HRS_E = 1.5, HRS_A = 2.5, HRS_JW = 2;
-    var NAMES = ['not counted', 'an employee', 'an agency or freelancer', 'nobody does it'], TAG = ['', 'Employee', 'Agency', 'Gap'];
+    var btns = Array.prototype.slice.call(root.querySelectorAll('.pz-team2-pick button')), modes = Array.prototype.slice.call(root.querySelectorAll('.pz-team2-mode button')), kinds = Array.prototype.slice.call(root.querySelectorAll('[data-kind]')), stores = 1, mode = 0;
+    var VOL = [1, 1.4, 2, 3], AI_UP = [1, 1.1, 1.2, 1.3], STORE = .12, RATE = .5, INVOLVED = .1, HRS_E = 1.5, HRS_A = 2.5;
+    var NAMES = ['not counted', 'an employee', 'a freelancer or agency', 'nobody does it'], TAG = ['', 'Employee', 'Agency', 'Gap'];
     function q(s) { return root.querySelector(s); }
-    function inr(n) { return '₹' + Math.round(n / 500) * 500 === '₹0' ? '₹0' : '₹' + (Math.round(n / 500) * 500).toLocaleString('en-IN'); }
+    function inr(n) { return '₹' + (Math.round(n / 500) * 500).toLocaleString('en-IN'); }
     function calc() {
-      var v = +q('[data-pz-team-vol]').value, extra = Math.min(stores - 1, 20);
-      var fNow = VOL_NOW[v] * (1 + STORE_NOW * extra), fJw = VOL_JW[v] * (1 + STORE_JW * extra);
-      var now = 0, jw = 0, gapJw = 0, n = 0, gaps = 0, hrs = 0, picked = [];
+      var v = +q('[data-pz-team-vol]').value, f = VOL[v] * (1 + STORE * Math.min(stores - 1, 20));
+      var now = 0, human = 0, ai = 0, gapJw = 0, n = 0, gaps = 0, hrs = 0, picked = [], used = {};
       btns.forEach(function (b) {
         var s = +b.getAttribute('data-s'); if (!s) return;
-        var name = b.querySelector('b').textContent;
-        if (s === 3) { gaps++; gapJw += +b.getAttribute('data-j') * fJw; picked.push(name + ' (gap)'); return; }
-        n++; now += +b.getAttribute(s === 1 ? 'data-e' : 'data-a') * fNow; jw += +b.getAttribute('data-j') * fJw; hrs += s === 1 ? HRS_E : HRS_A;
+        var name = b.querySelector('b').textContent, e = +b.getAttribute('data-e'), a = +b.getAttribute('data-a'), low = Math.min(e, a) * f;
+        var share = Math.min(.85, +b.getAttribute('data-ai') * AI_UP[v]), base = low * RATE, h = base * (1 - share) + (mode ? low * INVOLVED : 0), u = base * share;
+        b.getAttribute('data-k').split(',').forEach(function (k) { used[k] = 1; });
+        if (s === 3) { gaps++; gapJw += h + u; picked.push(name + ' (gap)'); return; }
+        n++; now += (s === 1 ? e : a) * f; human += h; ai += u; hrs += s === 1 ? HRS_E : HRS_A;
         picked.push(name + (s === 1 ? ' (employee)' : ' (agency)'));
       });
-      var save = now - jw, pct = now ? Math.round(save / now * 100) : 0;
+      var jw = human + ai, save = now - jw, pct = now ? Math.round(save / now * 100) : 0, after = mode ? Math.max(2, Math.round(n * .75)) : 1;
       q('[data-pz-team-n]').textContent = n;
       q('[data-pz-team-now]').textContent = inr(now) + ' a month';
       q('[data-pz-team-jw]').textContent = inr(jw) + ' a month';
+      q('[data-pz-team-human]').textContent = inr(human);
+      q('[data-pz-team-ai]').textContent = inr(ai);
       q('[data-pz-team-save]').textContent = now ? inr(save) + ' (' + pct + '% less)' : '₹0';
-      q('[data-pz-team-hrs]').textContent = n ? Math.round(hrs) + ' hours, down to about ' + HRS_JW : '0';
+      q('[data-pz-team-hrs]').textContent = n ? Math.round(hrs) + ' hours, down to about ' + Math.min(after, Math.round(hrs)) : '0';
       q('[data-pz-team-gaps]').textContent = gaps ? gaps + (gaps === 1 ? ' role' : ' roles') + ', from ' + inr(gapJw) + ' a month' : 'None marked';
-      q('[data-pz-team-b1]').style.width = now ? '100%' : '0'; q('[data-pz-team-b2]').style.width = now ? Math.max(4, jw / now * 100) + '%' : '0';
-      root.classList.toggle('has-pick', n + gaps > 0);
-      q('[data-pz-team-cta]').setAttribute('data-wa-extra', picked.length ? ' ' + stores + ' showroom(s), ' + q('[data-pz-team-vol]').selectedOptions[0].textContent + '. Roles: ' + picked.join('; ') + '.' : '');
+      q('[data-pz-team-b1]').style.width = now ? '100%' : '0';
+      q('[data-pz-team-b3]').style.width = now ? human / now * 100 + '%' : '0'; q('[data-pz-team-b2]').style.width = now ? ai / now * 100 + '%' : '0';
+      kinds.forEach(function (k) { k.classList.toggle('is-on', !!used[k.getAttribute('data-kind')]); });
+      q('[data-pz-team-cta]').setAttribute('data-wa-extra', picked.length ? ' ' + stores + ' showroom(s), ' + q('[data-pz-team-vol]').selectedOptions[0].textContent + '. ' + (mode ? 'I want to be involved in every decision.' : 'I want to focus on the outcome.') + ' Roles: ' + picked.join('; ') + '.' : '');
     }
     root.addEventListener('click', function (e) {
       var st = e.target.closest('.pz-team2-step button');
       if (st) { stores = Math.max(1, Math.min(99, stores + +st.getAttribute('data-d'))); q('[data-pz-team-stores]').textContent = stores; calc(); return; }
+      var m = e.target.closest('.pz-team2-mode button');
+      if (m) { mode = +m.getAttribute('data-m'); modes.forEach(function (x) { x.setAttribute('aria-pressed', String(x === m)); }); calc(); return; }
       var b = e.target.closest('.pz-team2-pick button'); if (!b) return;
       var s = (+b.getAttribute('data-s') + 1) % 4;
       b.setAttribute('data-s', s); b.querySelector('i').textContent = TAG[s];
