@@ -531,13 +531,14 @@ const PREDICT = [['conv', 'Customer conversations'], ['comments', 'Comments and 
 const countTeam = () => L.section(`
 ${eyebrow('Count your team')}
 <h2 class="pz-h pz-center">What does keeping up take, and cost, today?</h2>
-<p class="pz-lead pz-center">Set your customer base. Then tap each role once if an employee does it, twice if a freelancer or agency does, three times if nobody does. Each role shows how much work it is and how many people that takes.</p>
+<p class="pz-lead pz-center">Set your customer base. Tap a role, then say who does it today: an employee, a freelancer or agency, or nobody. Each role shows how much work it is and how many people that takes.</p>
 <div class="pz-team2" data-pz-team>
   <div class="pz-team2-pick">
     <p class="pz-team2-legend"><span class="is-e">Employee</span><span class="is-a">Freelancer or agency</span><span class="is-g">Nobody does it</span></p>
     ${TEAM_ROLES.map(([g, roles]) => `<div class="pz-team2-group"><p>${g}</p><div class="pz-team2-roles">${roles.map(([r, e, a, ai, unit, cap, def, step, extra]) => `<button type="button" data-role="${r}" data-s="0" data-e="${e}" data-a="${a}" data-ai="${ai}" data-cap="${cap}" data-def="${def}" data-step="${step}"${extra ? ` data-extra="${extra}"` : ''} aria-label="${r}: not counted"><b>${r}</b><i></i></button>`).join('')}</div>
       ${roles.map(([r, , , , unit, , def]) => `<div class="pz-team2-scope" data-scope="${r}" hidden>
         <p><b>${r}</b><span data-scope-takes></span></p>
+        <p class="pz-team2-who" role="group" aria-label="Who does this today"><em>Who does it today?</em><button type="button" data-who="1" aria-pressed="true">An employee</button><button type="button" data-who="2" aria-pressed="false">Freelancer or agency</button><button type="button" data-who="3" aria-pressed="false">Nobody. It is a gap</button></p>
         <p class="pz-team2-count">${def === 'c' ? '' : `<span class="pz-team2-step"><button type="button" data-c="-1" aria-label="Less">−</button><output data-scope-count>0</output><button type="button" data-c="1" aria-label="More">+</button></span>`}<span data-scope-unit>${def === 'c' ? '' : unit}</span></p>
         ${SCOPE[r].map(([label, items]) => `<div><em>${label}</em>${items.map((x) => `<button type="button" class="pz-team2-item" aria-pressed="true">${x}</button>`).join('')}</div>`).join('')}
       </div>`).join('')}
@@ -564,7 +565,7 @@ ${eyebrow('Count your team')}
       <div class="is-sub"><dt>AI usage, as used</dt><dd data-pz-team-ai>₹0</dd></div>
       <div class="is-save"><dt>Difference each month</dt><dd data-pz-team-save>₹0</dd></div>
       <div><dt>Your hours on it, each week</dt><dd data-pz-team-hrs>0</dd></div>
-      <div><dt>Gaps Jwero would fill</dt><dd data-pz-team-gaps>None marked</dd></div>
+      <div><dt>Gaps Jwero would fill</dt><dd data-pz-team-gaps>None yet</dd></div>
     </dl>
     <div class="pz-team2-bars" aria-hidden="true"><p><span>Today</span><i><u data-pz-team-b1></u></i></p><p><span>With Jwero</span><i><u class="is-soft" data-pz-team-b3></u><u class="is-gold" data-pz-team-b2></u></i></p></div>
     <a class="btn pz-btn-gold" href="#" data-wa="plan" data-pz-team-cta>Get my Jwero business plan</a>

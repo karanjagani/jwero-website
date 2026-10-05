@@ -3807,3 +3807,11 @@ main > .cmp { width: min(calc(var(--rail) - 2 * var(--pad)), 100% - 32px); margi
 .pz-refer-cta { display: grid; gap: 10px; justify-items: start; }
 @media (max-width: 1000px) { .pz-quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .pz-quotes { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: -16px; padding: 0 16px 8px; scrollbar-width: none; } .pz-quotes::-webkit-scrollbar { display: none; } .pz-quote { flex: 0 0 86%; scroll-snap-align: center; } }
+
+/* count your team: who does the role today */
+.pz-team2-pick .pz-team2-who { justify-content: flex-start; flex-wrap: wrap; align-items: center; gap: 6px; }
+.pz-team2-who em { flex: 0 0 100%; font: 600 .5625rem/1 var(--mono); font-style: normal; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
+.pz-team2-pick .pz-team2-who button { padding: 7px 13px; font-size: .8125rem; font-weight: 600; }
+.pz-team2-pick .pz-team2-who button[aria-pressed="true"][data-who="1"] { background: var(--panel); border-color: var(--panel); color: #fff; }
+.pz-team2-pick .pz-team2-who button[aria-pressed="true"][data-who="2"] { background: var(--soft); border-color: var(--soft); color: #fff; }
+.pz-team2-pick .pz-team2-who button[aria-pressed="true"][data-who="3"] { border: 1.5px dashed var(--gold-ink); background: var(--gold-soft); color: var(--ink); }
