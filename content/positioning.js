@@ -420,27 +420,50 @@ const buildLess = () => `
   </div>
 </section>`;
 
-// The efficiency guarantee lives on the managed services page only, with what
-// has to be agreed in writing before it applies.
-const GUAR = [
-  ['What counts as operational cost', 'The tools, agencies, vendors and people-hours you spend today on the functions Jwero takes over.'],
-  ['The baseline', 'Your own figures for those functions, agreed with you before Jwero starts.'],
-  ['The period measured', 'Each month, against that baseline.'],
-  ['What Jwero controls', 'Only the functions handed to Jwero in your plan.'],
-  ['What is excluded', 'Metal, stock, making, rent, ad spend paid to platforms, and anything Jwero does not run.'],
-  ['How the guarantee works', 'If you already run those functions for less, the Jwero technology is yours at no charge.'],
+// ---------------------------------------------------------------- count your team
+// The roles a jeweller hires, or pays an agency for, to keep up. Each can be
+// marked as an employee, an agency, or a gap nobody covers.
+// [role, employee ₹/month, agency ₹/month, Jwero ₹/month at the smallest scale]
+// Employee and agency figures are market averages drafted for India; the Jwero
+// figures are PROPOSED starting prices and need the founders' sign-off. All of
+// it, and the scale factors in site.js, is listed in
+// blueprint/TEAM-COST-ASSUMPTIONS.md.
+const TEAM_ROLES = [
+  ['Get more customers', [['Performance marketing', 45000, 35000, 22000], ['SEO, AEO and GEO', 35000, 25000, 16500], ['Social media manager', 30000, 30000, 16500], ['Content writer', 25000, 15000, 11000], ['Graphic designer', 30000, 20000, 14000], ['Video editor', 30000, 25000, 15000]]],
+  ['Sell more', [['Telecaller and follow-up', 18000, 20000, 10500], ['CRM executive', 28000, 25000, 14500], ['Sales coordinator', 25000, 20000, 12500]]],
+  ['Keep customers', [['Loyalty and scheme coordinator', 22000, 20000, 11500], ['WhatsApp executive', 20000, 18000, 10500], ['Customer care', 20000, 20000, 11000]]],
+  ['Grow online', [['Ecommerce manager', 50000, 40000, 25000], ['Catalogue and listing executive', 22000, 18000, 11000], ['Product photographer', 30000, 30000, 16500], ['Marketplace executive', 25000, 20000, 12500]]],
+  ['Reduce work', [['Data entry operator', 16000, 15000, 8500], ['MIS and reports executive', 30000, 25000, 15000], ['IT and software coordinator', 40000, 30000, 19500]]],
+  ['Shop floor and supply', [['Purchase and sourcing executive', 35000, 30000, 18000], ['Vendor coordinator', 25000, 20000, 12500], ['Events and offline promotion', 30000, 40000, 19500]]],
 ];
-const efficiency = () => `
-<section class="pz-guar" id="guarantee"><div class="pz-guar-in">
-  <div class="pz-guar-seal" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" class="pz-guar-ring"/><circle cx="60" cy="60" r="54" class="pz-guar-arc"/></svg><b><span data-pz-count="40">40</span>%</b><small>lower operational cost</small></div>
-  <div class="pz-guar-copy">
-    ${eyebrow('Jwero Efficiency Guarantee')}
-    <h2 class="pz-h">40% lower operational cost on what Jwero runs, each month.</h2>
-    <p class="pz-lead">If you already do it at a lower cost, the entire Jwero tool is yours, free. The guarantee applies once these six points are agreed in writing in your plan.</p>
-    <dl class="pz-guar-terms">${GUAR.map(([t, d]) => `<div><dt>${t}</dt><dd>${d}</dd></div>`).join('')}</dl>
-    <div class="pz-cta-row">${HANDLE('Ask about the guarantee', 'guarantee')}</div>
+const VOLUMES = ['Under 2,000 customers', '2,000 to 10,000', '10,000 to 50,000', 'More than 50,000'];
+const countTeam = () => L.section(`
+${eyebrow('Count your team')}
+<h2 class="pz-h pz-center">What does keeping up cost you today?</h2>
+<p class="pz-lead pz-center">Tap each role once if an employee does it, twice if an agency does, three times if nobody does. Your team stays yours. This counts the roles you would otherwise have to hire, train and replace.</p>
+<div class="pz-team2" data-pz-team>
+  <div class="pz-team2-pick">
+    <p class="pz-team2-legend"><span class="is-e">Employee</span><span class="is-a">Agency or freelancer</span><span class="is-g">Nobody does it</span></p>
+    ${TEAM_ROLES.map(([g, roles]) => `<div class="pz-team2-group"><p>${g}</p><div>${roles.map(([r, e, a, jw]) => `<button type="button" data-s="0" data-e="${e}" data-a="${a}" data-j="${jw}" data-g="${g}" aria-label="${r}: not counted"><b>${r}</b><i></i></button>`).join('')}</div></div>`).join('')}
   </div>
-</div></section>`;
+  <div class="pz-team2-panel" aria-live="polite">
+    <div class="pz-team2-scale">
+      <label>Showrooms<span class="pz-team2-step"><button type="button" data-d="-1" aria-label="Fewer showrooms">−</button><output data-pz-team-stores>1</output><button type="button" data-d="1" aria-label="More showrooms">+</button></span></label>
+      <label>Customer base<select data-pz-team-vol>${VOLUMES.map((v, i) => `<option value="${i}">${v}</option>`).join('')}</select></label>
+    </div>
+    <p class="pz-team2-big"><span data-pz-team-n>0</span> people and agencies to manage <em>→ one partner</em></p>
+    <dl>
+      <div><dt>What you spend today</dt><dd data-pz-team-now>₹0</dd></div>
+      <div><dt>The same work with Jwero, from</dt><dd data-pz-team-jw>₹0</dd></div>
+      <div class="is-save"><dt>Difference each month</dt><dd data-pz-team-save>₹0</dd></div>
+      <div><dt>Your hours coordinating them, each week</dt><dd data-pz-team-hrs>0</dd></div>
+      <div><dt>Gaps Jwero would fill</dt><dd data-pz-team-gaps>0</dd></div>
+    </dl>
+    <div class="pz-team2-bars" aria-hidden="true"><p><span>Today</span><i><u data-pz-team-b1></u></i></p><p><span>With Jwero</span><i><u class="is-gold" data-pz-team-b2></u></i></p></div>
+    <a class="btn pz-btn-gold" href="#" data-wa="plan" data-pz-team-cta>Get my Jwero business plan</a>
+    <p class="pz-team2-note">Indicative. Today’s figures are market averages for India, including the cost of employing someone. Jwero’s are starting prices that rise with your showrooms and customer base. Filling a gap adds cost, so it is shown apart. Your plan carries the exact quote.</p>
+  </div>
+</div>`, { tone: 'tint', id: 'count-your-team' });
 
 // ---------------------------------------------------------------- the assessment
 const OWNERS = ['Nobody in particular', 'I do it myself', 'A staff member', 'A dedicated team', 'An agency', 'We don’t do this yet'];
@@ -624,7 +647,7 @@ ${aiWorks()}
 ${dayAndCommand()}
 ${handles()}
 ${howMuch()}
-${buildLess()}
+${countTeam()}
 ${assessment()}
 ${proof(true, 3)}
 ${whyFive()}
@@ -749,7 +772,7 @@ ${L.section(`${eyebrow('How an engagement goes')}<h2 class="pz-h pz-center">Scop
   <li><span>04</span><b>A regular account</b><p>What was done, what it produced, what changes next.</p></li>
   <li><span>05</span><b>Your control</b><p>Take a function back, or hand another over, whenever you like. Your data is always yours.</p></li>
 </ol>`, { id: 'engagement' })}
-${efficiency()}
+${countTeam()}
 ${assessment()}
 ${close()}
 `,

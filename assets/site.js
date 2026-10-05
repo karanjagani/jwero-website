@@ -2164,6 +2164,49 @@
     io.observe(g);
   });
 
+  // Count your team: each role is an employee, an agency, a gap, or not counted.
+  // Costs grow with showrooms and customer base; Jwero's grow more slowly.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-pz-team]'), function (root) {
+    var btns = Array.prototype.slice.call(root.querySelectorAll('.pz-team2-pick button')), stores = 1;
+    var VOL_NOW = [1, 1.4, 2, 3], VOL_JW = [1, 1.25, 1.6, 2.2], STORE_NOW = .12, STORE_JW = .06, HRS_E = 1.5, HRS_A = 2.5, HRS_JW = 2;
+    var NAMES = ['not counted', 'an employee', 'an agency or freelancer', 'nobody does it'], TAG = ['', 'Employee', 'Agency', 'Gap'];
+    function q(s) { return root.querySelector(s); }
+    function inr(n) { return '₹' + Math.round(n / 500) * 500 === '₹0' ? '₹0' : '₹' + (Math.round(n / 500) * 500).toLocaleString('en-IN'); }
+    function calc() {
+      var v = +q('[data-pz-team-vol]').value, extra = Math.min(stores - 1, 20);
+      var fNow = VOL_NOW[v] * (1 + STORE_NOW * extra), fJw = VOL_JW[v] * (1 + STORE_JW * extra);
+      var now = 0, jw = 0, gapJw = 0, n = 0, gaps = 0, hrs = 0, picked = [];
+      btns.forEach(function (b) {
+        var s = +b.getAttribute('data-s'); if (!s) return;
+        var name = b.querySelector('b').textContent;
+        if (s === 3) { gaps++; gapJw += +b.getAttribute('data-j') * fJw; picked.push(name + ' (gap)'); return; }
+        n++; now += +b.getAttribute(s === 1 ? 'data-e' : 'data-a') * fNow; jw += +b.getAttribute('data-j') * fJw; hrs += s === 1 ? HRS_E : HRS_A;
+        picked.push(name + (s === 1 ? ' (employee)' : ' (agency)'));
+      });
+      var save = now - jw, pct = now ? Math.round(save / now * 100) : 0;
+      q('[data-pz-team-n]').textContent = n;
+      q('[data-pz-team-now]').textContent = inr(now) + ' a month';
+      q('[data-pz-team-jw]').textContent = inr(jw) + ' a month';
+      q('[data-pz-team-save]').textContent = now ? inr(save) + ' (' + pct + '% less)' : '₹0';
+      q('[data-pz-team-hrs]').textContent = n ? Math.round(hrs) + ' hours, down to about ' + HRS_JW : '0';
+      q('[data-pz-team-gaps]').textContent = gaps ? gaps + (gaps === 1 ? ' role' : ' roles') + ', from ' + inr(gapJw) + ' a month' : 'None marked';
+      q('[data-pz-team-b1]').style.width = now ? '100%' : '0'; q('[data-pz-team-b2]').style.width = now ? Math.max(4, jw / now * 100) + '%' : '0';
+      root.classList.toggle('has-pick', n + gaps > 0);
+      q('[data-pz-team-cta]').setAttribute('data-wa-extra', picked.length ? ' ' + stores + ' showroom(s), ' + q('[data-pz-team-vol]').selectedOptions[0].textContent + '. Roles: ' + picked.join('; ') + '.' : '');
+    }
+    root.addEventListener('click', function (e) {
+      var st = e.target.closest('.pz-team2-step button');
+      if (st) { stores = Math.max(1, Math.min(99, stores + +st.getAttribute('data-d'))); q('[data-pz-team-stores]').textContent = stores; calc(); return; }
+      var b = e.target.closest('.pz-team2-pick button'); if (!b) return;
+      var s = (+b.getAttribute('data-s') + 1) % 4;
+      b.setAttribute('data-s', s); b.querySelector('i').textContent = TAG[s];
+      b.setAttribute('aria-label', b.querySelector('b').textContent + ': ' + NAMES[s]);
+      calc();
+    });
+    q('[data-pz-team-vol]').addEventListener('change', calc);
+    calc();
+  });
+
   // Tabs: one list visible at a time (what Jwero does each month).
   Array.prototype.forEach.call(document.querySelectorAll('[data-pz-tabs]'), function (root) {
     var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]')), panels = Array.prototype.slice.call(root.querySelectorAll('[role="tabpanel"]'));
