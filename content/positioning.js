@@ -425,73 +425,138 @@ const buildLess = () => `
 // ---------------------------------------------------------------- count your team
 // The roles a jeweller hires, or pays a freelancer or agency for, to keep up.
 // Each can be marked as an employee, an agency, or a gap nobody covers.
+//
 // [role, lowest employee ₹/month, lowest freelancer or agency ₹/month,
-//  share of the work AI does, the kinds of AI usage it draws on]
-// "Lowest" means the cheapest way the role is commonly filled in India: a
-// junior hire in a smaller city, or a freelancer. These are drafted estimates.
-// Jwero is priced by rule from the lower of the two: 50% when the jeweller
-// focuses on the outcome, 60% when they want to be involved in every decision.
-// See blueprint/TEAM-COST-ASSUMPTIONS.md.
+//  share of the work AI does, what is counted, how much one person handles a
+//  month, where the starting count comes from, stepper step]
+//
+// The starting count is either a plain number ("n:30"), a number per showroom
+// ("s:600"), the ticked channels ("c"), or a prediction from the customer base
+// ("p:conv" and so on; the formulas are in site.js). The count divided by what
+// one person handles is the number of people the work takes.
+//
+// "Lowest" is the cheapest way the role is commonly filled in India: a junior
+// hire in a smaller city, or a freelancer. Drafted estimates, as are the
+// capacities. Jwero is priced by rule from the cheaper of the two: 50% when
+// the jeweller focuses on the outcome, 60% when they approve every step.
+// Everything is listed in blueprint/TEAM-COST-ASSUMPTIONS.md.
 const TEAM_ROLES = [
-  ['Get more customers', [['Performance marketing', 20000, 12000, .35, 'image,content'], ['SEO, AEO and GEO', 18000, 10000, .5, 'content'], ['Social media manager', 15000, 8000, .5, 'content,image,comment'], ['Content writer', 12000, 6000, .7, 'content'], ['Graphic designer', 15000, 8000, .6, 'image'], ['Video editor', 15000, 10000, .4, 'content']]],
-  ['Sell more', [['Telecaller and follow-up', 10000, 12000, .7, 'out,in'], ['CRM executive', 15000, 12000, .5, 'reply,data'], ['Sales coordinator', 14000, 12000, .4, 'reply,out']]],
-  ['Keep customers', [['Loyalty and scheme coordinator', 12000, 10000, .5, 'reply,out'], ['WhatsApp executive', 10000, 8000, .75, 'reply'], ['Customer care', 10000, 10000, .65, 'reply,in']]],
-  ['Grow online', [['Ecommerce manager', 25000, 15000, .35, 'content,data'], ['Catalogue and listing executive', 12000, 8000, .6, 'content,image'], ['Product photographer', 15000, 10000, .5, 'image'], ['Marketplace executive', 14000, 10000, .5, 'content']]],
-  ['Reduce work', [['Data entry operator', 9000, 7000, .7, 'data'], ['MIS and reports executive', 15000, 10000, .6, 'data'], ['IT and software coordinator', 18000, 10000, .3, 'data']]],
-  ['Shop floor and supply', [['Purchase and sourcing executive', 18000, 15000, .2, 'data'], ['Vendor coordinator', 14000, 12000, .3, 'out'], ['Events and offline promotion', 15000, 15000, .15, 'image,content']]],
+  ['Strategy and direction', [
+    ['Growth strategist', 30000, 15000, .3, 'plans and reviews a month', 4, 'n:2', 1],
+    ['Marketing manager', 25000, 15000, .35, 'campaigns a month', 6, 'n:3', 1],
+    ['Data analyst', 22000, 12000, .6, 'questions answered a month', 30, 'n:12', 2],
+    ['AI and automation specialist', 30000, 15000, .5, 'journeys and agents kept running', 15, 'n:6', 1],
+  ]],
+  ['Get more customers', [
+    ['Performance marketing', 20000, 12000, .35, 'ad channels', 4, 'c', 0],
+    ['SEO, AEO and GEO', 18000, 10000, .5, 'pages improved a month', 12, 'n:8', 2],
+    ['Social media manager', 15000, 8000, .5, 'posts, stories and Reels a month', 45, 'n:30', 5, 'comments'],
+    ['Content writer', 12000, 6000, .7, 'pieces written a month', 40, 'n:20', 5],
+    ['Graphic designer', 15000, 8000, .6, 'creatives a month', 60, 'n:30', 5],
+    ['Video editor', 15000, 10000, .4, 'videos a month', 20, 'n:8', 2],
+    ['Influencer and collaborations', 15000, 10000, .3, 'collaborations a month', 8, 'n:2', 1],
+    ['Email and SMS marketer', 14000, 8000, .6, 'campaigns sent a month', 16, 'n:6', 1],
+  ]],
+  ['Sell more', [
+    ['Telecaller and follow-up', 10000, 12000, .7, 'outbound calls a month', 1800, 'p:out', 100],
+    ['CRM executive', 15000, 12000, .5, 'customers kept on record', 15000, 'p:base', 1000],
+    ['Sales coordinator', 14000, 12000, .4, 'quotations and orders a month', 300, 'p:quote', 20],
+    ['Showroom journey coordinator', 14000, 12000, .35, 'appointments and walk-ins followed up', 400, 'p:visits', 25],
+  ]],
+  ['Keep customers', [
+    ['Loyalty and scheme coordinator', 12000, 10000, .5, 'members reached a month', 4000, 'p:loyal', 250],
+    ['WhatsApp executive', 10000, 8000, .75, 'conversations a month', 1500, 'p:conv', 100],
+    ['Customer care', 10000, 10000, .65, 'inbound calls a month', 1200, 'p:in', 100],
+    ['Reviews and reputation', 12000, 8000, .7, 'reviews asked for and answered', 300, 'p:reviews', 10],
+  ]],
+  ['Grow online', [
+    ['Ecommerce manager', 25000, 15000, .35, 'online orders a month', 300, 'p:orders', 10],
+    ['Website developer', 22000, 10000, .4, 'changes and fixes a month', 20, 'n:6', 1],
+    ['Catalogue and listing executive', 12000, 8000, .6, 'products listed or updated a month', 600, 's:200', 50],
+    ['Product photographer', 15000, 10000, .5, 'products shot a month', 300, 's:100', 25],
+    ['Marketplace executive', 14000, 10000, .5, 'marketplace orders a month', 300, 'n:60', 10],
+  ]],
+  ['Reduce work', [
+    ['Data entry operator', 9000, 7000, .7, 'entries a month', 2500, 's:600', 100],
+    ['MIS and reports executive', 15000, 10000, .6, 'reports a month', 60, 's:30', 5],
+    ['IT and software coordinator', 18000, 10000, .3, 'systems and vendors looked after', 12, 's:5', 1],
+    ['Staff trainer', 18000, 12000, .3, 'staff trained a month', 40, 's:8', 2],
+  ]],
+  ['Shop floor and supply', [
+    ['Purchase and sourcing executive', 18000, 15000, .2, 'purchase orders a month', 60, 's:20', 5],
+    ['Vendor coordinator', 14000, 12000, .3, 'vendors and karigars followed up', 40, 's:15', 5],
+    ['Inventory planner', 20000, 15000, .5, 'stock reviews a month', 8, 's:4', 1],
+    ['Events and offline promotion', 15000, 15000, .15, 'events and campaigns a month', 4, 'n:2', 1],
+  ]],
 ];
-// What each role covers: channels and kinds of work. Each group is
-// [label, [items]]. The jeweller unticks what they do not need; the price of
-// the role moves with the share that stays ticked (see site.js).
+// What each role covers: channels and kinds of work, as [label, [items]].
 const SCOPE = {
+  'Growth strategist': [['Work', ['Yearly and festive plan', 'Monthly review', 'Budget split across channels', 'New store and category plans']]],
+  'Marketing manager': [['Work', ['Campaign calendar', 'Briefs to the team', 'Offer and scheme design', 'Results review']]],
+  'Data analyst': [['Work', ['Who is likely to buy', 'Who is drifting away', 'What stock is not moving', 'Which spend paid back']]],
+  'AI and automation specialist': [['Work', ['Customer journeys', 'AI agents and their limits', 'Templates and approvals', 'Testing what works']]],
   'Performance marketing': [['Channels', ['Google Search ads', 'Google Shopping ads', 'Instagram and Facebook ads', 'YouTube ads', 'Click-to-WhatsApp ads', 'Marketplace ads', 'Retargeting']]],
   'SEO, AEO and GEO': [['Where you are found', ['Website search ranking', 'Google Business Profile', 'Local search for each showroom', 'AI answers (ChatGPT, Gemini and others)', 'Blogs written to rank']]],
   'Social media manager': [['Channels', ['Instagram', 'Facebook', 'YouTube', 'Pinterest', 'LinkedIn', 'X', 'Threads', 'Google Business posts']], ['Work', ['Posts', 'Stories', 'Reels', 'Comment replies', 'DM replies', 'Content calendar']]],
   'Content writer': [['Kinds of content', ['Product descriptions', 'Collection stories', 'Blogs', 'Captions', 'Ad copy', 'WhatsApp and SMS messages', 'Emailers', 'Website pages']]],
   'Graphic designer': [['Kinds of design', ['Social posts', 'Ad creatives', 'Festive and offer creatives', 'Catalogue pages', 'Banners and hoardings', 'Print: brochures and invites', 'Product image retouching']]],
   'Video editor': [['Kinds of video', ['Reels and shorts', 'Product videos', 'Ad films', 'Customer testimonial videos', 'Store and event videos']]],
-  'Telecaller and follow-up': [['Calls', ['Outbound follow-up calls', 'Inbound call answering', 'Scheme due reminders', 'Appointment calls', 'Feedback calls']]],
+  'Influencer and collaborations': [['Work', ['Finding the right people', 'Outreach and terms', 'Shoot coordination', 'Tracking what it brought']]],
+  'Email and SMS marketer': [['Channels', ['Email', 'SMS', 'RCS', 'Push notifications']], ['Work', ['Festive and offer campaigns', 'Rate alerts', 'Scheme reminders']]],
+  'Telecaller and follow-up': [['Calls', ['Enquiry follow-up', 'Scheme due reminders', 'Appointment calls', 'Feedback calls', 'Win-back calls']]],
   'CRM executive': [['Work', ['Customer data clean-up', 'Segments', 'Lead assignment', 'Follow-up tracking', 'Occasion reminders']]],
-  'Sales coordinator': [['Work', ['Quotations', 'Order tracking', 'Appointment scheduling', 'Video call selling', 'Custom order follow-up']]],
+  'Sales coordinator': [['Work', ['Quotations', 'Order tracking', 'Video call selling', 'Custom order follow-up']]],
+  'Showroom journey coordinator': [['Work', ['Appointment booking', 'Walk-in capture', 'Visit follow-up', 'Try-at-home and approvals', 'After-sale thank you']]],
   'Loyalty and scheme coordinator': [['Programmes', ['Savings schemes', 'Loyalty points', 'Referral programme', 'Birthday and anniversary outreach', 'Reactivation']]],
   'WhatsApp executive': [['Work', ['Enquiry replies', 'Catalogue sharing', 'Broadcasts', 'Order and rate updates', 'Template upkeep']]],
-  'Customer care': [['Work', ['Complaints and service', 'Repairs follow-up', 'Reviews and ratings', 'Inbound calls', 'After-sale care']]],
+  'Customer care': [['Work', ['Inbound calls', 'Complaints and service', 'Repairs follow-up', 'After-sale care']]],
+  'Reviews and reputation': [['Work', ['Asking for Google reviews', 'Answering reviews', 'Handling a bad review', 'Ratings on marketplaces']]],
   'Ecommerce manager': [['Where you sell', ['Website store', 'Google Shopping', 'Marketplaces', 'Instagram and WhatsApp shop']], ['Work', ['Pricing at the live rate', 'Offers and coupons', 'Cart recovery', 'Order follow-up']]],
+  'Website developer': [['Work', ['New pages and collections', 'Speed and fixes', 'Tracking and pixels', 'Payment and delivery set-up']]],
   'Catalogue and listing executive': [['Work', ['Product listing', 'Descriptions and tags', 'Price and stock updates', 'Shareable catalogues', 'Collection pages']]],
   'Product photographer': [['Kinds of image', ['Product on white', 'Model shots', 'Lifestyle shots', 'Product video and 360', 'Retouching']]],
   'Marketplace executive': [['Marketplaces', ['Amazon', 'Flipkart', 'Myntra', 'Other marketplaces']], ['Work', ['Listings', 'Order processing', 'Returns']]],
   'Data entry operator': [['Work', ['Stock entry', 'Purchase entry', 'Customer entry', 'Billing support', 'Tagging and barcodes']]],
   'MIS and reports executive': [['Reports', ['Daily sales', 'Stock and ageing', 'Staff performance', 'Marketing results', 'Owner’s summary']]],
-  'IT and software coordinator': [['Work', ['Software vendors', 'Website upkeep', 'Integrations', 'Devices and logins', 'Backups and security']]],
+  'IT and software coordinator': [['Work', ['Software vendors', 'Integrations', 'Devices and logins', 'Backups and security']]],
+  'Staff trainer': [['Work', ['Product knowledge', 'Selling skills', 'Using the software', 'New joiner induction']]],
   'Purchase and sourcing executive': [['Work', ['Requirement planning', 'Supplier search', 'Rate comparison', 'Purchase orders', 'Quality checks']]],
   'Vendor coordinator': [['Work', ['Karigar job work', 'Supplier follow-up', 'Payments', 'Delivery tracking', 'Returns and repairs']]],
+  'Inventory planner': [['Work', ['Stock ageing', 'What to reorder', 'Transfers between showrooms', 'What to melt or discount']]],
   'Events and offline promotion': [['Work', ['Exhibitions', 'In-store events', 'Festive campaigns', 'Hoardings and print', 'Local tie-ups']]],
 };
-const AI_KINDS = [['reply', 'Customer replies'], ['comment', 'Comment replies'], ['image', 'Image generation'], ['content', 'Content creation'], ['in', 'Inbound calls'], ['out', 'Outbound calls'], ['data', 'Reports and data']];
-const VOLUMES = ['Under 2,000 customers', '2,000 to 10,000', '10,000 to 50,000', 'More than 50,000'];
+const PREDICT = [['conv', 'Customer conversations'], ['comments', 'Comments and DMs'], ['reviews', 'Reviews'], ['in', 'Inbound calls'], ['out', 'Follow-up calls due']];
 const countTeam = () => L.section(`
 ${eyebrow('Count your team')}
-<h2 class="pz-h pz-center">What does keeping up cost you today?</h2>
-<p class="pz-lead pz-center">Tap each role once if an employee does it, twice if a freelancer or agency does, three times if nobody does. Then untick the channels and work you do not need. We count it at the lowest going rate in India, so the comparison is fair to you.</p>
+<h2 class="pz-h pz-center">What does keeping up take, and cost, today?</h2>
+<p class="pz-lead pz-center">Set your customer base. Then tap each role once if an employee does it, twice if a freelancer or agency does, three times if nobody does. Each role shows how much work it is and how many people that takes.</p>
 <div class="pz-team2" data-pz-team>
   <div class="pz-team2-pick">
     <p class="pz-team2-legend"><span class="is-e">Employee</span><span class="is-a">Freelancer or agency</span><span class="is-g">Nobody does it</span></p>
-    ${TEAM_ROLES.map(([g, roles]) => `<div class="pz-team2-group"><p>${g}</p><div class="pz-team2-roles">${roles.map(([r, e, a, ai, k]) => `<button type="button" data-role="${r}" data-s="0" data-e="${e}" data-a="${a}" data-ai="${ai}" data-k="${k}" aria-label="${r}: not counted"><b>${r}</b><i></i></button>`).join('')}</div>
-      ${roles.map(([r]) => `<div class="pz-team2-scope" data-scope="${r}" hidden><p><b>${r}</b><span data-scope-n></span></p>${SCOPE[r].map(([label, items]) => `<div><em>${label}</em>${items.map((x) => `<button type="button" aria-pressed="true">${x}</button>`).join('')}</div>`).join('')}</div>`).join('')}
+    ${TEAM_ROLES.map(([g, roles]) => `<div class="pz-team2-group"><p>${g}</p><div class="pz-team2-roles">${roles.map(([r, e, a, ai, unit, cap, def, step, extra]) => `<button type="button" data-role="${r}" data-s="0" data-e="${e}" data-a="${a}" data-ai="${ai}" data-cap="${cap}" data-def="${def}" data-step="${step}"${extra ? ` data-extra="${extra}"` : ''} aria-label="${r}: not counted"><b>${r}</b><i></i></button>`).join('')}</div>
+      ${roles.map(([r, , , , unit, , def]) => `<div class="pz-team2-scope" data-scope="${r}" hidden>
+        <p><b>${r}</b><span data-scope-takes></span></p>
+        <p class="pz-team2-count">${def === 'c' ? '' : `<span class="pz-team2-step"><button type="button" data-c="-1" aria-label="Less">−</button><output data-scope-count>0</output><button type="button" data-c="1" aria-label="More">+</button></span>`}<span data-scope-unit>${def === 'c' ? '' : unit}</span></p>
+        ${SCOPE[r].map(([label, items]) => `<div><em>${label}</em>${items.map((x) => `<button type="button" class="pz-team2-item" aria-pressed="true">${x}</button>`).join('')}</div>`).join('')}
+      </div>`).join('')}
     </div>`).join('')}
   </div>
   <div class="pz-team2-panel" aria-live="polite">
     <div class="pz-team2-scale">
       <label>Showrooms<span class="pz-team2-step"><button type="button" data-d="-1" aria-label="Fewer showrooms">−</button><output data-pz-team-stores>1</output><button type="button" data-d="1" aria-label="More showrooms">+</button></span></label>
-      <label>Customer base<select data-pz-team-vol>${VOLUMES.map((v, i) => `<option value="${i}">${v}</option>`).join('')}</select></label>
+      <label>Customers on record: <output data-pz-team-base>5,000</output><input type="range" min="0" max="100" value="38" step="1" data-pz-team-vol aria-label="Customers on record"></label>
+    </div>
+    <div class="pz-team2-predict">
+      <p>What that customer base brings each month, predicted</p>
+      <ul>${PREDICT.map(([k, t]) => `<li><b data-predict="${k}">0</b><span>${t}</span></li>`).join('')}</ul>
     </div>
     <div class="pz-team2-mode" role="group" aria-label="How involved you want to be">
       <button type="button" aria-pressed="true" data-m="0"><b>Focus on the outcome</b><span>Jwero plans and executes. You see results.</span></button>
       <button type="button" aria-pressed="false" data-m="1"><b>Involve me in every decision</b><span>You approve each step. More coordination, more time.</span></button>
     </div>
-    <p class="pz-team2-big"><span data-pz-team-n>0</span> people and agencies to manage <em>→ one partner</em></p>
+    <p class="pz-team2-big">This work takes <span data-pz-team-n>0</span> people <em>→ one partner</em></p>
     <dl>
-      <div><dt>What you spend today, at the lowest rates</dt><dd data-pz-team-now>₹0</dd></div>
+      <div><dt>What it costs today, at the lowest rates</dt><dd data-pz-team-now>₹0</dd></div>
       <div><dt>The same work with Jwero</dt><dd data-pz-team-jw>₹0</dd></div>
       <div class="is-sub"><dt>Specialists’ time</dt><dd data-pz-team-human>₹0</dd></div>
       <div class="is-sub"><dt>AI usage, as used</dt><dd data-pz-team-ai>₹0</dd></div>
@@ -499,10 +564,9 @@ ${eyebrow('Count your team')}
       <div><dt>Your hours on it, each week</dt><dd data-pz-team-hrs>0</dd></div>
       <div><dt>Gaps Jwero would fill</dt><dd data-pz-team-gaps>None marked</dd></div>
     </dl>
-    <p class="pz-team2-kinds" aria-label="AI usage in this estimate">${AI_KINDS.map(([k, t]) => `<span data-kind="${k}">${t}</span>`).join('')}</p>
     <div class="pz-team2-bars" aria-hidden="true"><p><span>Today</span><i><u data-pz-team-b1></u></i></p><p><span>With Jwero</span><i><u class="is-soft" data-pz-team-b3></u><u class="is-gold" data-pz-team-b2></u></i></p></div>
     <a class="btn pz-btn-gold" href="#" data-wa="plan" data-pz-team-cta>Get my Jwero business plan</a>
-    <p class="pz-team2-note">Indicative. Today’s figures are the lowest going rates in India, drafted by us, not a survey. Jwero is priced at half of the cheaper way to fill each role when you focus on the outcome, and at 60% when you want to approve every step. AI usage is charged as used, so it moves with your volume. Filling a gap adds cost, so it is shown apart. Your plan carries the exact quote.</p>
+    <p class="pz-team2-note">Indicative. Volumes are predicted from your customer base and showrooms; change any count to your own. Today’s figures are the lowest going rates in India and what one person can handle in a month, drafted by us, not a survey. Jwero is priced at half of the cheaper way to do the work when you focus on the outcome, and at 60% when you approve every step. Filling a gap adds cost, so it is shown apart. Your plan carries the exact quote.</p>
   </div>
 </div>`, { tone: 'tint', id: 'count-your-team' });
 

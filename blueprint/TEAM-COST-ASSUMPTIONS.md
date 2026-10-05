@@ -51,16 +51,48 @@ The price is shown in two parts:
   outbound calls, reports and data.
 - Specialists' time = the rest.
 
-## Scale and volume
+## Volume, counts and people (replaces the old tier multipliers)
 
-Customer base multiplies both today's cost and Jwero's price by 1, 1.4, 2, 3
-across the four tiers. Each showroom after the first adds 12%, up to 20 extra.
-AI's share of Jwero's price rises with volume (x1, 1.1, 1.2, 1.3, capped at
-85%), because more of the growth is absorbed by AI than by people.
+The visitor sets customers on record (slider, 500 to 2,00,000) and showrooms.
+From customer base B and showrooms S the page predicts, per month:
 
-Because Jwero is a fixed share of the cheaper option, the difference is 50%
-(or 40% when involved) against the cheaper option, and more when the jeweller
-pays the dearer one.
+| Predicted | Formula |
+|---|---|
+| Customer conversations | 8% of B + 150 per showroom |
+| Comments and DMs | 1.5% of B + 30 per showroom |
+| Reviews | 0.4% of B + 10 per showroom |
+| Inbound calls | 3% of B + 100 per showroom |
+| Follow-up calls due | 6% of B |
+| Quotations and orders | 1% of B + 40 per showroom |
+| Appointments and walk-ins followed up | 1.2% of B + 60 per showroom |
+| Loyalty members reached | 20% of B |
+| Online orders | 0.5% of B + 5 |
+
+These percentages are assumptions, not measured from Jwero customers. Replace
+them with real ratios from the product's data when available.
+
+Every role has a count of work and a capacity per person per month (see
+`TEAM_ROLES`: for example 1,500 conversations, 1,800 outbound calls, 45 posts,
+40 written pieces, 60 creatives, 20 videos). People needed = count / capacity,
+rounded up. The count starts from the prediction, from a number per showroom,
+or from a plain starting number, and the visitor can change it. The social
+media manager also carries the predicted comments and DMs (1,500 per person).
+
+Today's cost: an employee costs whole people at the lowest salary; a
+freelancer or agency costs in proportion to the work, never less than one
+month's fee. Jwero is 50% (outcome) or 60% (involved) of the cheaper of those.
+
+The "AI usage" chips (customer replies, image generation and so on) were
+removed from the panel on 2026-10-05: the predicted volumes say the same thing
+with numbers.
+
+## Roles added on 2026-10-05
+
+Growth strategist, marketing manager, data analyst, AI and automation
+specialist, influencer and collaborations, email and SMS marketer, showroom
+journey coordinator, reviews and reputation, website developer, staff trainer,
+inventory planner. 33 roles in seven groups. Confirm Jwero can staff each one
+before selling it.
 
 ## Channels and work inside a role
 
