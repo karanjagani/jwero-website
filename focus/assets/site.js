@@ -1949,6 +1949,52 @@ if (n) window.requestAnimationFrame(step);
 }); }, { threshold: .4 });
 io.observe(g);
 });
+Array.prototype.forEach.call(document.querySelectorAll('[data-pz-team]'), function (root) {
+var btns = Array.prototype.slice.call(root.querySelectorAll('.pz-team2-pick button')), modes = Array.prototype.slice.call(root.querySelectorAll('.pz-team2-mode button')), kinds = Array.prototype.slice.call(root.querySelectorAll('[data-kind]')), stores = 1, mode = 0;
+var VOL = [1, 1.4, 2, 3], AI_UP = [1, 1.1, 1.2, 1.3], STORE = .12, RATE = .5, INVOLVED = .1, HRS_E = 1.5, HRS_A = 2.5;
+var NAMES = ['not counted', 'an employee', 'a freelancer or agency', 'nobody does it'], TAG = ['', 'Employee', 'Agency', 'Gap'];
+function q(s) { return root.querySelector(s); }
+function inr(n) { return '₹' + (Math.round(n / 500) * 500).toLocaleString('en-IN'); }
+function calc() {
+var v = +q('[data-pz-team-vol]').value, f = VOL[v] * (1 + STORE * Math.min(stores - 1, 20));
+var now = 0, human = 0, ai = 0, gapJw = 0, n = 0, gaps = 0, hrs = 0, picked = [], used = {};
+btns.forEach(function (b) {
+var s = +b.getAttribute('data-s'); if (!s) return;
+var name = b.querySelector('b').textContent, e = +b.getAttribute('data-e'), a = +b.getAttribute('data-a'), low = Math.min(e, a) * f;
+var share = Math.min(.85, +b.getAttribute('data-ai') * AI_UP[v]), base = low * RATE, h = base * (1 - share) + (mode ? low * INVOLVED : 0), u = base * share;
+b.getAttribute('data-k').split(',').forEach(function (k) { used[k] = 1; });
+if (s === 3) { gaps++; gapJw += h + u; picked.push(name + ' (gap)'); return; }
+n++; now += (s === 1 ? e : a) * f; human += h; ai += u; hrs += s === 1 ? HRS_E : HRS_A;
+picked.push(name + (s === 1 ? ' (employee)' : ' (agency)'));
+});
+var jw = human + ai, save = now - jw, pct = now ? Math.round(save / now * 100) : 0, after = mode ? Math.max(2, Math.round(n * .75)) : 1;
+q('[data-pz-team-n]').textContent = n;
+q('[data-pz-team-now]').textContent = inr(now) + ' a month';
+q('[data-pz-team-jw]').textContent = inr(jw) + ' a month';
+q('[data-pz-team-human]').textContent = inr(human);
+q('[data-pz-team-ai]').textContent = inr(ai);
+q('[data-pz-team-save]').textContent = now ? inr(save) + ' (' + pct + '% less)' : '₹0';
+q('[data-pz-team-hrs]').textContent = n ? Math.round(hrs) + ' hours, down to about ' + Math.min(after, Math.round(hrs)) : '0';
+q('[data-pz-team-gaps]').textContent = gaps ? gaps + (gaps === 1 ? ' role' : ' roles') + ', from ' + inr(gapJw) + ' a month' : 'None marked';
+q('[data-pz-team-b1]').style.width = now ? '100%' : '0';
+q('[data-pz-team-b3]').style.width = now ? human / now * 100 + '%' : '0'; q('[data-pz-team-b2]').style.width = now ? ai / now * 100 + '%' : '0';
+kinds.forEach(function (k) { k.classList.toggle('is-on', !!used[k.getAttribute('data-kind')]); });
+q('[data-pz-team-cta]').setAttribute('data-wa-extra', picked.length ? ' ' + stores + ' showroom(s), ' + q('[data-pz-team-vol]').selectedOptions[0].textContent + '. ' + (mode ? 'I want to be involved in every decision.' : 'I want to focus on the outcome.') + ' Roles: ' + picked.join('; ') + '.' : '');
+}
+root.addEventListener('click', function (e) {
+var st = e.target.closest('.pz-team2-step button');
+if (st) { stores = Math.max(1, Math.min(99, stores + +st.getAttribute('data-d'))); q('[data-pz-team-stores]').textContent = stores; calc(); return; }
+var m = e.target.closest('.pz-team2-mode button');
+if (m) { mode = +m.getAttribute('data-m'); modes.forEach(function (x) { x.setAttribute('aria-pressed', String(x === m)); }); calc(); return; }
+var b = e.target.closest('.pz-team2-pick button'); if (!b) return;
+var s = (+b.getAttribute('data-s') + 1) % 4;
+b.setAttribute('data-s', s); b.querySelector('i').textContent = TAG[s];
+b.setAttribute('aria-label', b.querySelector('b').textContent + ': ' + NAMES[s]);
+calc();
+});
+q('[data-pz-team-vol]').addEventListener('change', calc);
+calc();
+});
 Array.prototype.forEach.call(document.querySelectorAll('[data-pz-tabs]'), function (root) {
 var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]')), panels = Array.prototype.slice.call(root.querySelectorAll('[role="tabpanel"]'));
 root.addEventListener('click', function (e) {
