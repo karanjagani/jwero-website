@@ -2170,8 +2170,9 @@
   // jeweller focuses on the outcome, 60% when they approve every step; the
   // extra is specialists' coordination time. AI's share grows with volume.
   Array.prototype.forEach.call(document.querySelectorAll('[data-pz-team]'), function (root) {
-    var btns = Array.prototype.slice.call(root.querySelectorAll('.pz-team2-pick button')), modes = Array.prototype.slice.call(root.querySelectorAll('.pz-team2-mode button')), kinds = Array.prototype.slice.call(root.querySelectorAll('[data-kind]')), stores = 1, mode = 0;
-    var VOL = [1, 1.4, 2, 3], AI_UP = [1, 1.1, 1.2, 1.3], STORE = .12, RATE = .5, INVOLVED = .1, HRS_E = 1.5, HRS_A = 2.5;
+    var btns = Array.prototype.slice.call(root.querySelectorAll('.pz-team2-roles button')), modes = Array.prototype.slice.call(root.querySelectorAll('.pz-team2-mode button')), kinds = Array.prototype.slice.call(root.querySelectorAll('[data-kind]')), stores = 1, mode = 0;
+    var VOL = [1, 1.4, 2, 3], AI_UP = [1, 1.1, 1.2, 1.3], STORE = .12, RATE = .5, INVOLVED = .1, HRS_E = 1.5, HRS_A = 2.5, SCOPE_BASE = .4;
+    function scopeOf(b) { return root.querySelector('[data-scope="' + b.getAttribute('data-role') + '"]'); }
     var NAMES = ['not counted', 'an employee', 'a freelancer or agency', 'nobody does it'], TAG = ['', 'Employee', 'Agency', 'Gap'];
     function q(s) { return root.querySelector(s); }
     function inr(n) { return '₹' + (Math.round(n / 500) * 500).toLocaleString('en-IN'); }
@@ -2180,7 +2181,12 @@
       var now = 0, human = 0, ai = 0, gapJw = 0, n = 0, gaps = 0, hrs = 0, picked = [], used = {};
       btns.forEach(function (b) {
         var s = +b.getAttribute('data-s'); if (!s) return;
-        var name = b.querySelector('b').textContent, e = +b.getAttribute('data-e'), a = +b.getAttribute('data-a'), low = Math.min(e, a) * f;
+        var name = b.querySelector('b').textContent, sc = scopeOf(b), all = sc.querySelectorAll('button'), on = sc.querySelectorAll('button[aria-pressed="true"]');
+        // owning the role costs something; the rest moves with what is ticked
+        var part = SCOPE_BASE + (1 - SCOPE_BASE) * (all.length ? on.length / all.length : 1);
+        sc.querySelector('[data-scope-n]').textContent = on.length + ' of ' + all.length;
+        var e = +b.getAttribute('data-e') * part, a = +b.getAttribute('data-a') * part, low = Math.min(e, a) * f;
+        name += on.length < all.length ? ' [' + Array.prototype.map.call(on, function (x) { return x.textContent; }).join(', ') + ']' : ' [everything]';
         var share = Math.min(.85, +b.getAttribute('data-ai') * AI_UP[v]), base = low * RATE, h = base * (1 - share) + (mode ? low * INVOLVED : 0), u = base * share;
         b.getAttribute('data-k').split(',').forEach(function (k) { used[k] = 1; });
         if (s === 3) { gaps++; gapJw += h + u; picked.push(name + ' (gap)'); return; }
@@ -2206,8 +2212,11 @@
       if (st) { stores = Math.max(1, Math.min(99, stores + +st.getAttribute('data-d'))); q('[data-pz-team-stores]').textContent = stores; calc(); return; }
       var m = e.target.closest('.pz-team2-mode button');
       if (m) { mode = +m.getAttribute('data-m'); modes.forEach(function (x) { x.setAttribute('aria-pressed', String(x === m)); }); calc(); return; }
-      var b = e.target.closest('.pz-team2-pick button'); if (!b) return;
+      var sb = e.target.closest('.pz-team2-scope button');
+      if (sb) { sb.setAttribute('aria-pressed', sb.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); calc(); return; }
+      var b = e.target.closest('.pz-team2-roles button'); if (!b) return;
       var s = (+b.getAttribute('data-s') + 1) % 4;
+      scopeOf(b).hidden = !s;
       b.setAttribute('data-s', s); b.querySelector('i').textContent = TAG[s];
       b.setAttribute('aria-label', b.querySelector('b').textContent + ': ' + NAMES[s]);
       calc();

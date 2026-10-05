@@ -438,16 +438,45 @@ const TEAM_ROLES = [
   ['Reduce work', [['Data entry operator', 9000, 7000, .7, 'data'], ['MIS and reports executive', 15000, 10000, .6, 'data'], ['IT and software coordinator', 18000, 10000, .3, 'data']]],
   ['Shop floor and supply', [['Purchase and sourcing executive', 18000, 15000, .2, 'data'], ['Vendor coordinator', 14000, 12000, .3, 'out'], ['Events and offline promotion', 15000, 15000, .15, 'image,content']]],
 ];
+// What each role covers: channels and kinds of work. Each group is
+// [label, [items]]. The jeweller unticks what they do not need; the price of
+// the role moves with the share that stays ticked (see site.js).
+const SCOPE = {
+  'Performance marketing': [['Channels', ['Google Search ads', 'Google Shopping ads', 'Instagram and Facebook ads', 'YouTube ads', 'Click-to-WhatsApp ads', 'Marketplace ads', 'Retargeting']]],
+  'SEO, AEO and GEO': [['Where you are found', ['Website search ranking', 'Google Business Profile', 'Local search for each showroom', 'AI answers (ChatGPT, Gemini and others)', 'Blogs written to rank']]],
+  'Social media manager': [['Channels', ['Instagram', 'Facebook', 'YouTube', 'Pinterest', 'LinkedIn', 'X', 'Threads', 'Google Business posts']], ['Work', ['Posts', 'Stories', 'Reels', 'Comment replies', 'DM replies', 'Content calendar']]],
+  'Content writer': [['Kinds of content', ['Product descriptions', 'Collection stories', 'Blogs', 'Captions', 'Ad copy', 'WhatsApp and SMS messages', 'Emailers', 'Website pages']]],
+  'Graphic designer': [['Kinds of design', ['Social posts', 'Ad creatives', 'Festive and offer creatives', 'Catalogue pages', 'Banners and hoardings', 'Print: brochures and invites', 'Product image retouching']]],
+  'Video editor': [['Kinds of video', ['Reels and shorts', 'Product videos', 'Ad films', 'Customer testimonial videos', 'Store and event videos']]],
+  'Telecaller and follow-up': [['Calls', ['Outbound follow-up calls', 'Inbound call answering', 'Scheme due reminders', 'Appointment calls', 'Feedback calls']]],
+  'CRM executive': [['Work', ['Customer data clean-up', 'Segments', 'Lead assignment', 'Follow-up tracking', 'Occasion reminders']]],
+  'Sales coordinator': [['Work', ['Quotations', 'Order tracking', 'Appointment scheduling', 'Video call selling', 'Custom order follow-up']]],
+  'Loyalty and scheme coordinator': [['Programmes', ['Savings schemes', 'Loyalty points', 'Referral programme', 'Birthday and anniversary outreach', 'Reactivation']]],
+  'WhatsApp executive': [['Work', ['Enquiry replies', 'Catalogue sharing', 'Broadcasts', 'Order and rate updates', 'Template upkeep']]],
+  'Customer care': [['Work', ['Complaints and service', 'Repairs follow-up', 'Reviews and ratings', 'Inbound calls', 'After-sale care']]],
+  'Ecommerce manager': [['Where you sell', ['Website store', 'Google Shopping', 'Marketplaces', 'Instagram and WhatsApp shop']], ['Work', ['Pricing at the live rate', 'Offers and coupons', 'Cart recovery', 'Order follow-up']]],
+  'Catalogue and listing executive': [['Work', ['Product listing', 'Descriptions and tags', 'Price and stock updates', 'Shareable catalogues', 'Collection pages']]],
+  'Product photographer': [['Kinds of image', ['Product on white', 'Model shots', 'Lifestyle shots', 'Product video and 360', 'Retouching']]],
+  'Marketplace executive': [['Marketplaces', ['Amazon', 'Flipkart', 'Myntra', 'Other marketplaces']], ['Work', ['Listings', 'Order processing', 'Returns']]],
+  'Data entry operator': [['Work', ['Stock entry', 'Purchase entry', 'Customer entry', 'Billing support', 'Tagging and barcodes']]],
+  'MIS and reports executive': [['Reports', ['Daily sales', 'Stock and ageing', 'Staff performance', 'Marketing results', 'Owner’s summary']]],
+  'IT and software coordinator': [['Work', ['Software vendors', 'Website upkeep', 'Integrations', 'Devices and logins', 'Backups and security']]],
+  'Purchase and sourcing executive': [['Work', ['Requirement planning', 'Supplier search', 'Rate comparison', 'Purchase orders', 'Quality checks']]],
+  'Vendor coordinator': [['Work', ['Karigar job work', 'Supplier follow-up', 'Payments', 'Delivery tracking', 'Returns and repairs']]],
+  'Events and offline promotion': [['Work', ['Exhibitions', 'In-store events', 'Festive campaigns', 'Hoardings and print', 'Local tie-ups']]],
+};
 const AI_KINDS = [['reply', 'Customer replies'], ['comment', 'Comment replies'], ['image', 'Image generation'], ['content', 'Content creation'], ['in', 'Inbound calls'], ['out', 'Outbound calls'], ['data', 'Reports and data']];
 const VOLUMES = ['Under 2,000 customers', '2,000 to 10,000', '10,000 to 50,000', 'More than 50,000'];
 const countTeam = () => L.section(`
 ${eyebrow('Count your team')}
 <h2 class="pz-h pz-center">What does keeping up cost you today?</h2>
-<p class="pz-lead pz-center">Tap each role once if an employee does it, twice if a freelancer or agency does, three times if nobody does. We count it at the lowest going rate in India, so the comparison is fair to you. Your team stays yours.</p>
+<p class="pz-lead pz-center">Tap each role once if an employee does it, twice if a freelancer or agency does, three times if nobody does. Then untick the channels and work you do not need. We count it at the lowest going rate in India, so the comparison is fair to you.</p>
 <div class="pz-team2" data-pz-team>
   <div class="pz-team2-pick">
     <p class="pz-team2-legend"><span class="is-e">Employee</span><span class="is-a">Freelancer or agency</span><span class="is-g">Nobody does it</span></p>
-    ${TEAM_ROLES.map(([g, roles]) => `<div class="pz-team2-group"><p>${g}</p><div>${roles.map(([r, e, a, ai, k]) => `<button type="button" data-s="0" data-e="${e}" data-a="${a}" data-ai="${ai}" data-k="${k}" aria-label="${r}: not counted"><b>${r}</b><i></i></button>`).join('')}</div></div>`).join('')}
+    ${TEAM_ROLES.map(([g, roles]) => `<div class="pz-team2-group"><p>${g}</p><div class="pz-team2-roles">${roles.map(([r, e, a, ai, k]) => `<button type="button" data-role="${r}" data-s="0" data-e="${e}" data-a="${a}" data-ai="${ai}" data-k="${k}" aria-label="${r}: not counted"><b>${r}</b><i></i></button>`).join('')}</div>
+      ${roles.map(([r]) => `<div class="pz-team2-scope" data-scope="${r}" hidden><p><b>${r}</b><span data-scope-n></span></p>${SCOPE[r].map(([label, items]) => `<div><em>${label}</em>${items.map((x) => `<button type="button" aria-pressed="true">${x}</button>`).join('')}</div>`).join('')}</div>`).join('')}
+    </div>`).join('')}
   </div>
   <div class="pz-team2-panel" aria-live="polite">
     <div class="pz-team2-scale">

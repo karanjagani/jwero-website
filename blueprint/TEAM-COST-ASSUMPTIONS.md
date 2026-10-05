@@ -62,6 +62,14 @@ Because Jwero is a fixed share of the cheaper option, the difference is 50%
 (or 40% when involved) against the cheaper option, and more when the jeweller
 pays the dearer one.
 
+## Channels and work inside a role
+
+Each role opens a list of what it covers (channels, kinds of content, kinds of
+work; `SCOPE` in content/positioning.js). Everything starts ticked, which is the
+figure in the table above. Unticking lowers both today's cost and Jwero's price:
+40% of the role is treated as fixed, the other 60% moves with the share ticked.
+The items are not priced one by one; that needs Jwero's own rate card.
+
 ## Hours
 
 Owner's coordination time: 1.5 hours a week per employee role, 2.5 per agency.
