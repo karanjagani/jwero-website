@@ -36,6 +36,7 @@ const hero = () => `
         <a class="btn pz-btn-line" href="/how-it-works">See how Jwero works</a>
       </div>
       <p class="pz-hero-third"><a href="/self-managed">I want to run it myself →</a></p>
+      <p class="pz-hero-ease">A real person replies on WhatsApp within minutes. No commitment to ask.</p>
       <p class="pz-hero-note">You run it. We run it together. Or we run it for you.</p>
     </div>
   </div>
@@ -397,6 +398,7 @@ const levels = () => `
     <p class="pz-level-who">${line}</p>
     <p class="pz-level-line"><span>${way}</span>${pay}</p>
     ${href ? `<a class="btn btn-ghost" href="${href}">${cta}</a>` : HANDLE(cta, wa, i === 2 ? 'btn pz-btn-gold' : 'btn btn-ghost')}
+    ${i === 0 ? `<a class="pz-level-alt" href="${L.TRIAL_URL}ways" rel="noopener" data-trial>₹18,000 a month. Start today for ₹3,600 →</a>` : HANDLE('Or start with just one function →', 'one', 'pz-level-alt')}
   </article>`).join('')}
 </div>`;
 const howMuch = () => L.section(`
@@ -566,6 +568,7 @@ ${eyebrow('Count your team')}
     </dl>
     <div class="pz-team2-bars" aria-hidden="true"><p><span>Today</span><i><u data-pz-team-b1></u></i></p><p><span>With Jwero</span><i><u class="is-soft" data-pz-team-b3></u><u class="is-gold" data-pz-team-b2></u></i></p></div>
     <a class="btn pz-btn-gold" href="#" data-wa="plan" data-pz-team-cta>Get my Jwero business plan</a>
+    <a class="pz-team2-share" href="#" target="_blank" rel="noopener" data-pz-team-share>Send this to my partner or manager →</a>
     <p class="pz-team2-note">Indicative. Volumes are predicted from your customer base and showrooms; change any count to your own. Today’s figures are the lowest going rates in India and what one person can handle in a month, drafted by us, not a survey. Jwero is priced at half of the cheaper way to do the work when you focus on the outcome, and at 60% when you approve every step. Filling a gap adds cost, so it is shown apart. Your plan carries the exact quote.</p>
   </div>
 </div>`, { tone: 'tint', id: 'count-your-team' });
@@ -712,6 +715,29 @@ const adapt = () => L.section(`
   <ul class="pz-adapts">${ADAPTS.map(([q, a], i) => `<li style="--i:${i}"><span>${q}</span><b>${a}</b></li>`).join('')}</ul>
 </div>`);
 
+// ---------------------------------------------------------------- what happens next, and pass it on
+// Removes the two quiet blockers before a first message: "what am I signing up
+// for?" and "who else should see this?". No times are promised beyond the
+// reply, which the site already states.
+const NEXT = [
+  ['You message us', 'Say what you want to achieve, in your own words. A real person replies on WhatsApp within minutes.'],
+  ['A short call', 'We ask about your business, your team and what you would rather not manage. No preparation needed.'],
+  ['Your plan, in writing', 'What Jwero would take on, who does it, what is measured, and what it costs. Nothing starts before you agree.'],
+  ['Start with one function', 'We set it up, bring your data in and run it. You give us more when you are ready.'],
+];
+const nextSteps = () => L.section(`
+${eyebrow('What happens next')}
+<h2 class="pz-h pz-center">From a first message to work getting done.</h2>
+<ol class="pz-how pz-how-4">${NEXT.map(([t, d], i) => `<li><span>${String(i + 1).padStart(2, '0')}</span><b>${t}</b><p>${d}</p></li>`).join('')}</ol>
+<ul class="pz-ease"><li>Asking commits you to nothing</li><li>Your data stays yours</li><li>Take a function back whenever you like</li></ul>
+<p class="pz-cta-center">${HANDLE('Start with Jwero', 'start')}<a class="btn btn-ghost" href="#" data-wa="call" data-connect="voice">Call us instead</a></p>`, { id: 'next' });
+
+const refer = () => `
+<section class="pass pz-refer" id="pass"><div class="container"><div class="pass-box">
+  <div><p class="eyebrow">PASS IT ON</p><h2>Know a jeweller who is trying to keep up with all of this?</h2><p>Send them this page on WhatsApp. It takes ten seconds, and it may give them their evenings back.</p></div>
+  <a class="btn btn-primary" href="#" data-share="Thought of you. Jwero takes the marketing, technology and follow-up chaos off a jeweller, so we can focus on jewellery:">Send this to a jeweller</a>
+</div></div></section>`;
+
 // ---------------------------------------------------------------- act 8: the ask
 const ask = () => L.section(`
 <div class="pz-askband">
@@ -778,6 +804,8 @@ ${aiWorks()}
 ${handles()}
 ${proof(true, 3, false)}
 ${assessment()}
+${nextSteps()}
+${refer()}
 ${finale()}
 `,
 };
@@ -900,6 +928,7 @@ ${L.section(`${eyebrow('How an engagement goes')}<h2 class="pz-h pz-center">Scop
 </ol>`, { id: 'engagement' })}
 ${countTeam()}
 ${assessment()}
+${nextSteps()}
 ${close()}
 `,
 };
@@ -921,6 +950,8 @@ ${L.section(`${eyebrow('How it is worked out')}<h2 class="pz-h pz-center">No hid
   <li><span>05</span><b>Your quote</b><p>These are estimates drafted by us. Your plan carries the exact figure for your business.</p></li>
 </ol>`)}
 ${L.section(`${eyebrow('Ways to work with Jwero')}<h2 class="pz-h pz-center">Start with one function.</h2>${levels()}`, { tone: 'tint' })}
+${nextSteps()}
+${refer()}
 ${close()}
 `,
 };
@@ -934,6 +965,8 @@ const success = {
 ${innerHero('Success stories', 'Don’t take our word for it.', 'Not “the customer implemented a CRM”. What was happening, what Jwero took responsibility for, and what changed.', ['/customers', 'The jewellers on Jwero'])}
 ${proof(false)}
 ${dontKnow()}
+${nextSteps()}
+${refer()}
 ${close()}
 `,
 };

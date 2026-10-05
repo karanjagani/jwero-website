@@ -9,6 +9,8 @@ var WA_NUMBER = '919169959959'; // WhatsApp Business number, digits only
 var WA_MESSAGES = {
 default: 'Hi Jwero, I would like to see a quick demo.',
 handle: 'Hi Jwero, I would like you to handle things for my jewellery business. Here is where I am:',
+one: 'Hi Jwero, I would like to start with just one function. The one I have in mind is:',
+call: 'Hi Jwero, please call me about my jewellery business.',
 start: 'Hi Jwero, this is what I want to achieve for my jewellery business:',
 plan: 'Hi Jwero, I would like a Jwero business plan for my jewellery business.',
 guarantee: 'Hi Jwero, I want to know more about the Jwero Efficiency Guarantee for my jewellery business.',
@@ -2001,6 +2003,8 @@ q('[data-pz-team-hrs]').textContent = n ? Math.round(hrs) + ' hours, down to abo
 q('[data-pz-team-gaps]').textContent = gaps ? gaps + (gaps === 1 ? ' role' : ' roles') + ', from ' + inr(gapJw) + ' a month' : 'None marked';
 q('[data-pz-team-b1]').style.width = now ? '100%' : '0';
 q('[data-pz-team-b3]').style.width = now ? human / now * 100 + '%' : '0'; q('[data-pz-team-b2]').style.width = now ? ai / now * 100 + '%' : '0';
+var sh = q('[data-pz-team-share]');
+if (sh) sh.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent('Have a look at what keeping up costs us today, and the same work with Jwero' + (now ? ' (' + inr(now) + ' against ' + inr(jw) + ' a month)' : '') + ': ' + location.origin + based('/count-your-team/') + '#v=' + q('[data-pz-team-vol]').value + '&s=' + stores));
 q('[data-pz-team-cta]').setAttribute('data-wa-extra', picked.length ? ' ' + stores + ' showroom(s), ' + num(B) + ' customers. ' + (mode ? 'I want to be involved in every decision.' : 'I want to focus on the outcome.') + ' Roles: ' + picked.join('; ') + '.' : '');
 }
 root.addEventListener('click', function (e) {
