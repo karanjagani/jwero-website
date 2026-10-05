@@ -7,8 +7,10 @@
 // lives at /jwero-os. Styles are the `pz-` rules in site.css; behaviour is the
 // "positioning" block in site.js.
 //
-// The home page follows eight acts: the world changed, the hidden cost, the
-// insight, the solution, how it works, the customer's choice, proof, the ask.
+// The home page is ordered for conversion: promise, who trusts us, the cost of
+// keeping up, the insight, the solution, then three things to do early (say your
+// goal, choose how much we handle, count your team), then how it works, what
+// we handle, proof, and the assessment as the ask.
 //
 // Not invented here: customer numbers, team sizes, results or testimonials.
 // Proof cards are patterns, labelled as such, until real ones are supplied.
@@ -565,7 +567,7 @@ const TRUST_LINKS = [
   ['Works with your existing business', 'Tally, WhatsApp, Shopify and more.', '/platform/integrations'],
   ['Trust Centre', 'Every standard, with its honest status.', '/trust'],
 ];
-const proof = (cta = true, n = STORIES.length) => L.section(`
+const proof = (cta = true, n = STORIES.length, logos = true) => L.section(`
 ${eyebrow('Proof')}
 <h2 class="pz-h pz-center">Don’t take our word for it.</h2>
 <p class="pz-lead pz-center">Real businesses. Real work. Real outcomes. This is how each story is told.</p>
@@ -578,7 +580,7 @@ ${eyebrow('Proof')}
   </article>`).join('')}
 </div>
 <p class="pz-stories-note">These are the patterns we work to, shown without figures. We do not publish a result we have not verified. Named stories with their numbers replace these as each customer agrees to publish.</p>
-${L.customerLogos()}
+${logos ? L.customerLogos() : ''}
 <div class="pz-trust">${TRUST_LINKS.map(([t, d, href]) => `<a href="${href}"><b>${t}</b><span>${d}</span></a>`).join('')}</div>
 ${cta ? `<p class="pz-cta-center"><a class="btn btn-primary" href="/what-we-handle">See what Jwero runs</a><a class="btn btn-ghost" href="/customers">The jewellers on Jwero</a></p>` : ''}`, { id: 'proof' });
 
@@ -676,21 +678,19 @@ const home = {
   },
   body: `
 ${hero()}
+<section class="pz-logos">${L.customerLogos()}</section>
 ${contrast()}
-${worldChanged()}
 ${hiddenCost()}
 ${insight()}
 ${solution()}
 ${dontKnow()}
-${aiWorks()}
-${dayAndCommand()}
-${handles()}
 ${howMuch()}
 ${countTeam()}
+${dayAndCommand()}
+${aiWorks()}
+${handles()}
+${proof(true, 3, false)}
 ${assessment()}
-${proof(true, 3)}
-${whyFive()}
-${ask()}
 ${finale()}
 `,
 };

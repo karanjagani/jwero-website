@@ -3738,3 +3738,6 @@ main > .cmp { width: min(calc(var(--rail) - 2 * var(--pad)), 100% - 32px); margi
 .pz-team2-pick .pz-team2-scope button::before { content: '✓'; font-size: .6875rem; font-weight: 700; color: var(--brand); }
 .pz-team2-pick .pz-team2-scope button[aria-pressed="false"] { border-color: var(--line-2); background: var(--card); color: var(--ink-2); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--ink-2) 40%, transparent); }
 .pz-team2-pick .pz-team2-scope button[aria-pressed="false"]::before { content: '+'; color: var(--ink-2); }
+
+.pz-logos { padding: 22px 0 6px; }
+.pz-logos > * { margin-block: 0; }
