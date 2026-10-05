@@ -36,7 +36,7 @@ const hero = () => `
         <a class="btn pz-btn-line" href="/how-it-works">See how Jwero works</a>
       </div>
       <p class="pz-hero-third"><a href="/self-managed">I want to run it myself →</a></p>
-      <p class="pz-hero-ease">A real person replies on WhatsApp within minutes. No commitment to ask.</p>
+      <p class="pz-hero-ease">A real person replies on WhatsApp within minutes. Onboarding takes a day.</p>
       <p class="pz-hero-note">You run it. We run it together. Or we run it for you.</p>
     </div>
   </div>
@@ -674,6 +674,27 @@ ${logos ? L.customerLogos() : ''}
 <div class="pz-trust">${TRUST_LINKS.map(([t, d, href]) => `<a href="${href}"><b>${t}</b><span>${d}</span></a>`).join('')}</div>
 ${cta ? `<p class="pz-cta-center"><a class="btn btn-primary" href="/what-we-handle">See what Jwero runs</a><a class="btn btn-ghost" href="/customers">The jewellers on Jwero</a></p>` : ''}`, { id: 'proof' });
 
+// ---------------------------------------------------------------- what customers say
+// Taken word for word from the testimonials published on jwero.ai (read
+// 2026-10-05). Do not edit the wording. "Tanika" is the company behind Jwero,
+// which is why two of them use that name.
+const QUOTES = [
+  ['A capable, motivated and eager team has definitely delivered on their promise of speedy deployment. The team’s availability & response is commendable. This platform has immense potential to our trade.', 'Manjunatha Nayak', 'Gujjadi Swarna Jewellers, Bangalore'],
+  ['I must say the dedication of the team is impeccable. They have a very good understanding of the jewellery trade in our country and also know how to bridge the gap between orthodox and modern business pratices.', 'Sanjay Bohra', 'J Mittlal ThangaMaligai, Chennai'],
+  ['I recently had the pleasure of interacting with Jwero Care online support team, and I must say, it was an exceptional experience! Their live chat service was prompt, efficient, and incredibly helpful. Keep it up', 'Aradhana Jewellery', 'Kannur, Kerala'],
+  ['Jwero ai has made building and maintaining my website an enjoyable experience. The platform is user-friendly, flexible, and has everything I need to run a successful online business', 'Konika Jewellery', 'Chennai'],
+  ['Karan, I want to express my gratitude for your incredible support & collaboration. Your dedication, professionalism, & insights have significantly impacted our projects. Thankyou for being a reliable partner & a supportive colleague, I look forward to achieving even more together.', 'Suraj', 'Mangatrai Neeraj, Hyderabad'],
+  ['Promises kept on time : whether design, development, maintenance, they are always upto the mark. Complete support available round the clock to hear & help you. Our decision to tie up was a right click at the right time. Thanks team Tanika! keep it up.', 'Anish Shah', 'Akshaya Gold, Palakkad, Kerala'],
+  ['The entire Tanika team is fantastic & professional. They will make your ideas into reality with in-depth knowledge of the jewellery industry. Their operations are streamlined for our growth are always supportive with consistent technology upgradation for better user experience.', 'Saket Keshri', 'Ratnalaya Jewellers, Patna, Bihar'],
+  ['Tanika Tech encompasses all the functionalities needed for a jewellery business. The best part is its blend of online & offline format to suit different needs, their swift response to any problems is really praise-worthy.', 'Goutham Kota', 'Mohan Jewellery, Chennai'],
+];
+const quoteCards = (n) => `<div class="pz-quotes">${QUOTES.slice(0, n).map(([q, who, where]) => `<figure class="pz-quote"><blockquote>“${q}”</blockquote><figcaption><b>${who}</b><span>${where}</span></figcaption></figure>`).join('')}</div>`;
+const quotes = (n = QUOTES.length) => L.section(`
+${eyebrow('In their words')}
+<h2 class="pz-h pz-center">Jewellers on working with Jwero.</h2>
+${quoteCards(n)}
+${n < QUOTES.length ? `<p class="pz-cta-center"><a class="pz-link" href="/success-stories">Read what more jewellers say →</a></p>` : `<p class="pz-stories-note">In their own words, as published on jwero.ai. Two mention Tanika, the company behind Jwero.</p>`}`, { id: 'in-their-words' });
+
 // ---------------------------------------------------------------- why Jwero: five principles
 const WHY5 = [
   ['Jewellery-native', 'Built around how jewellery businesses actually operate.'],
@@ -723,19 +744,19 @@ const NEXT = [
   ['You message us', 'Say what you want to achieve, in your own words. A real person replies on WhatsApp within minutes.'],
   ['A short call', 'We ask about your business, your team and what you would rather not manage. No preparation needed.'],
   ['Your plan, in writing', 'What Jwero would take on, who does it, what is measured, and what it costs. Nothing starts before you agree.'],
-  ['Start with one function', 'We set it up, bring your data in and run it. You give us more when you are ready.'],
+  ['Onboarded in a day', 'We set you up and bring your data in, in a day. Start with one function and give us more when you are ready.'],
 ];
 const nextSteps = () => L.section(`
 ${eyebrow('What happens next')}
 <h2 class="pz-h pz-center">From a first message to work getting done.</h2>
 <ol class="pz-how pz-how-4">${NEXT.map(([t, d], i) => `<li><span>${String(i + 1).padStart(2, '0')}</span><b>${t}</b><p>${d}</p></li>`).join('')}</ol>
-<ul class="pz-ease"><li>Asking commits you to nothing</li><li>Your data stays yours</li><li>Take a function back whenever you like</li></ul>
+<ul class="pz-ease"><li>A reply within minutes</li><li>Onboarding in a day</li><li>Your data stays yours</li><li>Take a function back whenever you like</li></ul>
 <p class="pz-cta-center">${HANDLE('Start with Jwero', 'start')}<a class="btn btn-ghost" href="#" data-wa="call" data-connect="voice">Call us instead</a></p>`, { id: 'next' });
 
 const refer = () => `
 <section class="pass pz-refer" id="pass"><div class="container"><div class="pass-box">
-  <div><p class="eyebrow">PASS IT ON</p><h2>Know a jeweller who is trying to keep up with all of this?</h2><p>Send them this page on WhatsApp. It takes ten seconds, and it may give them their evenings back.</p></div>
-  <a class="btn btn-primary" href="#" data-share="Thought of you. Jwero takes the marketing, technology and follow-up chaos off a jeweller, so we can focus on jewellery:">Send this to a jeweller</a>
+  <div><p class="eyebrow">PASS IT ON</p><h2>Refer a jeweller. Save 10% for each one who joins.</h2><p>Know a jeweller who is trying to keep up with all of this? Send them this page on WhatsApp, and tell us you sent them. Every jeweller who becomes a Jwero customer through you takes 10% off what you pay.</p></div>
+  <span class="pz-refer-cta"><a class="btn btn-primary" href="#" data-share="Thought of you. Jwero takes the marketing, technology and follow-up chaos off a jeweller, so we can focus on jewellery:">Send this to a jeweller</a>${HANDLE('Tell us who you referred', 'referral', 'pz-link')}</span>
 </div></div></section>`;
 
 // ---------------------------------------------------------------- act 8: the ask
@@ -793,6 +814,7 @@ const home = {
 ${hero()}
 <section class="pz-logos">${L.customerLogos()}</section>
 ${contrast()}
+${quotes(3)}
 ${hiddenCost()}
 ${insight()}
 ${solution()}
@@ -891,7 +913,7 @@ const self = {
   description: 'For jewellers who want control: Jwero gives your team the technology, AI agents and data to run the business yourselves. A technology subscription at ₹18,000 a month, first month ₹3,600.',
   breadcrumbs: [['Home', '/'], ['Self managed']],
   body: `
-${innerHero('01 · You run it', 'Software when you want control.', 'You operate the business. Jwero provides the technology, the AI and the work that happens automatically.', ['/jwero-os', 'See the operating system'], `<a class="btn pz-btn-gold" href="${L.TRIAL_URL}self-managed" rel="noopener" data-trial>Start for ₹3,600</a>`)}
+${innerHero('01 · You run it', 'Software when you want control.', 'You operate the business. Jwero provides the technology, the AI and the work that happens automatically. Onboarding takes a day.', ['/jwero-os', 'See the operating system'], `<a class="btn pz-btn-gold" href="${L.TRIAL_URL}self-managed" rel="noopener" data-trial>Start for ₹3,600</a>`)}
 ${whoRuns(0)}
 ${L.section(`${eyebrow('What your team gets')}<h2 class="pz-h pz-center">One system, so your team is not learning ten.</h2>
 <div class="pz-levels pz-levels-4">
@@ -927,6 +949,7 @@ ${L.section(`${eyebrow('How an engagement goes')}<h2 class="pz-h pz-center">Scop
   <li><span>05</span><b>Your control</b><p>Take a function back, or hand another over, whenever you like. Your data is always yours.</p></li>
 </ol>`, { id: 'engagement' })}
 ${countTeam()}
+${quotes(3)}
 ${assessment()}
 ${nextSteps()}
 ${close()}
@@ -963,6 +986,7 @@ const success = {
   breadcrumbs: [['Home', '/'], ['Success stories']],
   body: `
 ${innerHero('Success stories', 'Don’t take our word for it.', 'Not “the customer implemented a CRM”. What was happening, what Jwero took responsibility for, and what changed.', ['/customers', 'The jewellers on Jwero'])}
+${quotes()}
 ${proof(false)}
 ${dontKnow()}
 ${nextSteps()}

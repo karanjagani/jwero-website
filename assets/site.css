@@ -3795,3 +3795,15 @@ main > .cmp { width: min(calc(var(--rail) - 2 * var(--pad)), 100% - 32px); margi
 @media (max-width: 900px) { .pz-how-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .pz-how-4 { grid-template-columns: minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { .pz-hero-ease::before { animation: none; } }
+
+/* what customers say */
+.pz-quotes { margin-top: 32px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.pz-quote { margin: 0; padding: 26px 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); display: flex; flex-direction: column; gap: 18px; }
+.pz-quote blockquote { margin: 0; font-size: 1.0625rem; line-height: 1.55; color: var(--ink); flex: 1; }
+.pz-quote figcaption { display: grid; gap: 2px; padding-top: 14px; border-top: 1px solid var(--line); }
+.pz-quote figcaption b { font-size: .9375rem; }
+.pz-quote figcaption span { font-size: .8125rem; color: var(--ink-2); }
+.pz-quote:nth-child(3n + 1) { border-top: 3px solid var(--gold); }
+.pz-refer-cta { display: grid; gap: 10px; justify-items: start; }
+@media (max-width: 1000px) { .pz-quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .pz-quotes { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: -16px; padding: 0 16px 8px; scrollbar-width: none; } .pz-quotes::-webkit-scrollbar { display: none; } .pz-quote { flex: 0 0 86%; scroll-snap-align: center; } }

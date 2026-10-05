@@ -15,6 +15,7 @@
   var WA_MESSAGES = {
     default: 'Hi Jwero, I would like to see a quick demo.',
     handle: 'Hi Jwero, I would like you to handle things for my jewellery business. Here is where I am:',
+    referral: 'Hi Jwero, I am a customer and I have referred a jeweller to you. Their name and business:',
     one: 'Hi Jwero, I would like to start with just one function. The one I have in mind is:',
     call: 'Hi Jwero, please call me about my jewellery business.',
     start: 'Hi Jwero, this is what I want to achieve for my jewellery business:',
