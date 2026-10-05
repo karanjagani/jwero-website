@@ -2248,6 +2248,27 @@
       calc();
     });
     q('[data-pz-team-vol]').addEventListener('input', calc);
+    var carried = /[#&]v=(\d+)&s=(\d+)/.exec(window.location.hash || '');
+    if (carried) { q('[data-pz-team-vol]').value = Math.min(100, +carried[1]); stores = Math.max(1, Math.min(99, +carried[2])); q('[data-pz-team-stores]').textContent = stores; }
+    calc();
+  });
+
+  // Count your team, short version (home page). Same prediction formulas as
+  // the full calculator above; keep the two in step.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-pz-teaser]'), function (root) {
+    var stores = 1, go = root.querySelector('[data-pz-teaser-go]'), href = go.getAttribute('href').split('#')[0];
+    function q(s) { return root.querySelector(s); }
+    function num(n) { return Math.round(n).toLocaleString('en-IN'); }
+    function calc() {
+      var v = +q('[data-pz-teaser-vol]').value, x = 500 * Math.pow(400, v / 100), m = Math.pow(10, Math.floor(Math.log10(x)) - 1), B = Math.round(x / m) * m;
+      var P = { conv: B * .08 + 150 * stores, comments: B * .015 + 30 * stores, reviews: B * .004 + 10 * stores, 'in': B * .03 + 100 * stores, out: B * .06 };
+      q('[data-pz-teaser-base]').textContent = num(B);
+      Array.prototype.forEach.call(root.querySelectorAll('[data-predict]'), function (el) { el.textContent = num(P[el.getAttribute('data-predict')]); });
+      q('[data-pz-teaser-n]').textContent = Math.ceil(P.conv / 1500) + Math.ceil(P.comments / 1500) + Math.ceil(P['in'] / 1200) + Math.ceil(P.out / 1800);
+      go.setAttribute('href', href + '#v=' + v + '&s=' + stores);
+    }
+    root.addEventListener('click', function (e) { var st = e.target.closest('.pz-team2-step button'); if (!st) return; stores = Math.max(1, Math.min(99, stores + +st.getAttribute('data-d'))); q('[data-pz-teaser-stores]').textContent = stores; calc(); });
+    q('[data-pz-teaser-vol]').addEventListener('input', calc);
     calc();
   });
 

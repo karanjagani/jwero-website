@@ -407,7 +407,7 @@ ${levels()}
 <p class="pz-shift pz-shift-sm">Start small.<br><b>Give us more when you’re ready.</b></p>
 <p class="pz-sub-h">See where the work goes</p>
 ${board(1)}
-<p class="pz-ways">Ways to work with Jwero are priced by how much we handle, not module by module. ${HANDLE('Get your Jwero business plan', 'plan', 'pz-link')}</p>`, { id: 'who-runs-it' });
+<p class="pz-ways">Ways to work with Jwero are priced by how much we handle, not module by module. <a class="pz-link" href="/count-your-team">Count your team and see →</a></p>`, { id: 'who-runs-it' });
 
 // In place of a savings figure on the home page.
 const buildLess = () => `
@@ -567,6 +567,29 @@ ${eyebrow('Count your team')}
     <div class="pz-team2-bars" aria-hidden="true"><p><span>Today</span><i><u data-pz-team-b1></u></i></p><p><span>With Jwero</span><i><u class="is-soft" data-pz-team-b3></u><u class="is-gold" data-pz-team-b2></u></i></p></div>
     <a class="btn pz-btn-gold" href="#" data-wa="plan" data-pz-team-cta>Get my Jwero business plan</a>
     <p class="pz-team2-note">Indicative. Volumes are predicted from your customer base and showrooms; change any count to your own. Today’s figures are the lowest going rates in India and what one person can handle in a month, drafted by us, not a survey. Jwero is priced at half of the cheaper way to do the work when you focus on the outcome, and at 60% when you approve every step. Filling a gap adds cost, so it is shown apart. Your plan carries the exact quote.</p>
+  </div>
+</div>`, { tone: 'tint', id: 'count-your-team' });
+
+// The short version for the home page: set the customer base, see what it
+// brings each month and how many people only answering it takes, then go to
+// the full calculator with those two numbers carried over.
+const countTeaser = () => L.section(`
+<div class="pz-teaser" data-pz-teaser>
+  <div class="pz-teaser-copy">
+    ${eyebrow('Count your team')}
+    <h2 class="pz-h">What does keeping up take today?</h2>
+    <p class="pz-lead">Set your customer base. This is what it brings in every month, and what it takes to keep up with it.</p>
+    <div class="pz-teaser-in">
+      <label>Showrooms<span class="pz-team2-step"><button type="button" data-d="-1" aria-label="Fewer showrooms">−</button><output data-pz-teaser-stores>1</output><button type="button" data-d="1" aria-label="More showrooms">+</button></span></label>
+      <label>Customers on record: <output data-pz-teaser-base>5,000</output><input type="range" min="0" max="100" value="38" step="1" data-pz-teaser-vol aria-label="Customers on record"></label>
+    </div>
+  </div>
+  <div class="pz-teaser-out" aria-live="polite">
+    <p class="pz-teaser-k">Every month, predicted</p>
+    <ul>${PREDICT.map(([k, t]) => `<li><b data-predict="${k}">0</b><span>${t}</span></li>`).join('')}</ul>
+    <p class="pz-teaser-big">Only answering them takes about <span data-pz-teaser-n>0</span> people.</p>
+    <p class="pz-teaser-sub">Before marketing, content, ecommerce or reports. With Jwero it is one partner.</p>
+    <a class="btn pz-btn-gold" href="/count-your-team" data-pz-teaser-go>See what it costs you</a>
   </div>
 </div>`, { tone: 'tint', id: 'count-your-team' });
 
@@ -749,7 +772,7 @@ ${insight()}
 ${solution()}
 ${dontKnow()}
 ${howMuch()}
-${countTeam()}
+${countTeaser()}
 ${dayAndCommand()}
 ${aiWorks()}
 ${handles()}
@@ -881,6 +904,27 @@ ${close()}
 `,
 };
 
+const count = {
+  slug: 'count-your-team',
+  title: 'Count Your Team: What a Jewellery Business Spends to Keep Up | Jwero',
+  description: 'A calculator for jewellers: set your customer base, mark the marketing, sales, ecommerce and operations roles you pay for, and see the people it takes, what it costs at the lowest rates in India, and the same work with Jwero.',
+  breadcrumbs: [['Home', '/'], ['Managed services', '/managed-services'], ['Count your team']],
+  body: `
+${innerHero('Count your team', 'What does keeping up take, and cost, today?', 'The people, freelancers and agencies it takes to keep a jewellery business current, counted from your own customer base. Then the same work with one partner.', ['/managed-services', 'See managed services'], HANDLE('Get my Jwero business plan', 'plan', 'btn pz-btn-gold'))}
+${countTeam()}
+${L.section(`${eyebrow('How it is worked out')}<h2 class="pz-h pz-center">No hidden arithmetic.</h2>
+<ol class="pz-how">
+  <li><span>01</span><b>Your volume</b><p>Conversations, comments, reviews and calls are predicted from your customers on record and showrooms. Change any count to your own.</p></li>
+  <li><span>02</span><b>The people it takes</b><p>Each count is divided by what one person can handle in a month.</p></li>
+  <li><span>03</span><b>Today’s cost</b><p>Those people at the lowest going rate in India: a junior hire in a smaller city, or a freelancer.</p></li>
+  <li><span>04</span><b>Jwero’s price</b><p>Half of the cheaper way to do the work when you focus on the outcome. 60% when you want to approve every step.</p></li>
+  <li><span>05</span><b>Your quote</b><p>These are estimates drafted by us. Your plan carries the exact figure for your business.</p></li>
+</ol>`)}
+${L.section(`${eyebrow('Ways to work with Jwero')}<h2 class="pz-h pz-center">Start with one function.</h2>${levels()}`, { tone: 'tint' })}
+${close()}
+`,
+};
+
 const success = {
   slug: 'success-stories',
   title: 'Success Stories: What Jwero Took Responsibility For | Jwero',
@@ -894,4 +938,5 @@ ${close()}
 `,
 };
 
-module.exports = [home, why, how, aiExperts, handle, self, managed, success];
+module.exports = [home, why, how, aiExperts, handle, self, managed, count, success];
+module.exports.levels = levels;

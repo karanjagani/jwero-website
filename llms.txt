@@ -250,4 +250,5 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - What Jwero Handles: Customers, Sales, Online Growth, Operations: https://jwero.ai/what-we-handle
 - Self Managed: Your Team Runs It, Jwero Powers It: https://jwero.ai/self-managed
 - Managed Services: We Run It Together, or Jwero Runs It: https://jwero.ai/managed-services
+- Count Your Team: What a Jewellery Business Spends to Keep Up: https://jwero.ai/count-your-team
 - Success Stories: What Jwero Took Responsibility For: https://jwero.ai/success-stories
