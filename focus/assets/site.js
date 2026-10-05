@@ -2001,12 +2001,18 @@ q('[data-pz-team-human]').textContent = inr(human);
 q('[data-pz-team-ai]').textContent = inr(ai);
 q('[data-pz-team-save]').textContent = now ? inr(save) + ' (' + pct + '% less)' : '₹0';
 q('[data-pz-team-hrs]').textContent = n ? Math.round(hrs) + ' hours, down to about ' + Math.min(after, Math.max(1, Math.round(hrs))) : '0';
-q('[data-pz-team-gaps]').textContent = gaps ? gaps + (gaps === 1 ? ' role' : ' roles') + ', from ' + inr(gapJw) + ' a month' : 'None marked';
+q('[data-pz-team-gaps]').textContent = gaps ? gaps + (gaps === 1 ? ' role' : ' roles') + ', from ' + inr(gapJw) + ' a month' : picked.length ? 'None yet. Mark a role as “Nobody”' : 'None yet';
 q('[data-pz-team-b1]').style.width = now ? '100%' : '0';
 q('[data-pz-team-b3]').style.width = now ? human / now * 100 + '%' : '0'; q('[data-pz-team-b2]').style.width = now ? ai / now * 100 + '%' : '0';
 var sh = q('[data-pz-team-share]');
 if (sh) sh.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent('Have a look at what keeping up costs us today, and the same work with Jwero' + (now ? ' (' + inr(now) + ' against ' + inr(jw) + ' a month)' : '') + ': ' + location.origin + based('/count-your-team/') + '#v=' + q('[data-pz-team-vol]').value + '&s=' + stores));
 q('[data-pz-team-cta]').setAttribute('data-wa-extra', picked.length ? ' ' + stores + ' showroom(s), ' + num(B) + ' customers. ' + (mode ? 'I want to be involved in every decision.' : 'I want to focus on the outcome.') + ' Roles: ' + picked.join('; ') + '.' : '');
+}
+function setState(b, s) {
+var sc = scopeOf(b); sc.hidden = !s;
+b.setAttribute('data-s', s); b.querySelector('i').textContent = TAG[s];
+b.setAttribute('aria-label', b.querySelector('b').textContent + ': ' + NAMES[s]);
+Array.prototype.forEach.call(sc.querySelectorAll('.pz-team2-who button'), function (w) { w.setAttribute('aria-pressed', String(+w.getAttribute('data-who') === s)); });
 }
 root.addEventListener('click', function (e) {
 var t = e.target, st = t.closest('.pz-team2-scale .pz-team2-step button');
@@ -2021,11 +2027,10 @@ b.setAttribute('data-count', Math.max(step, cur + step * +cb.getAttribute('data-
 }
 var it = t.closest('.pz-team2-item');
 if (it) { it.setAttribute('aria-pressed', it.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); calc(); return; }
+var wb = t.closest('.pz-team2-who button');
+if (wb) { setState(root.querySelector('.pz-team2-roles button[data-role="' + wb.closest('.pz-team2-scope').getAttribute('data-scope') + '"]'), +wb.getAttribute('data-who')); calc(); return; }
 var rb = t.closest('.pz-team2-roles button'); if (!rb) return;
-var s = (+rb.getAttribute('data-s') + 1) % 4;
-scopeOf(rb).hidden = !s;
-rb.setAttribute('data-s', s); rb.querySelector('i').textContent = TAG[s];
-rb.setAttribute('aria-label', rb.querySelector('b').textContent + ': ' + NAMES[s]);
+setState(rb, +rb.getAttribute('data-s') ? 0 : 1);
 calc();
 });
 q('[data-pz-team-vol]').addEventListener('input', calc);
