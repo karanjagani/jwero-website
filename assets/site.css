@@ -3815,3 +3815,10 @@ main > .cmp { width: min(calc(var(--rail) - 2 * var(--pad)), 100% - 32px); margi
 .pz-team2-pick .pz-team2-who button[aria-pressed="true"][data-who="1"] { background: var(--panel); border-color: var(--panel); color: #fff; }
 .pz-team2-pick .pz-team2-who button[aria-pressed="true"][data-who="2"] { background: var(--soft); border-color: var(--soft); color: #fff; }
 .pz-team2-pick .pz-team2-who button[aria-pressed="true"][data-who="3"] { border: 1.5px dashed var(--gold-ink); background: var(--gold-soft); color: var(--ink); }
+
+/* no team, no tools, no coordination */
+.pz-none { list-style: none; margin: 28px auto 0; padding: 0; max-width: 980px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+.pz-none li { padding: 2px 22px; border-left: 2px solid var(--gold); display: grid; gap: 6px; }
+.pz-none b { font-size: 1.1875rem; letter-spacing: -.02em; text-transform: uppercase; }
+.pz-none span { font-size: .9375rem; line-height: 1.45; color: var(--ink-2); }
+@media (max-width: 760px) { .pz-none { grid-template-columns: minmax(0, 1fr); gap: 16px; } }

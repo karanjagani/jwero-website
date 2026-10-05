@@ -344,9 +344,9 @@ const RUN_MODES = [
   { key: 'you', tab: 'You run it', title: 'Your team runs it. Jwero powers it.', line: 'You operate the business. Jwero provides the technology, the AI and the work that happens automatically. One system in place of many tools, so there is far less to learn.', lanes: [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
     you: 'Run every function with your own team', ai: 'Keeps the record, the numbers and the technology in order', jw: 'Sets you up, trains your team, stays on call', meters: [85, 60, 1], cost: 'A technology subscription. ₹18,000 a month, first month ₹3,600.', cta: ['Explore self-managed', '/self-managed'] },
   { key: 'together', tab: 'We run it together', title: 'Your team, Jwero specialists and AI.', line: 'You retain control. Jwero provides the expertise and the execution where you want it, and AI does the routine. Nothing reaches a customer without your approval unless you allow it.', lanes: [2, 0, 1, 0, 0, 2, 1, 0, 1, 1, 2],
-    you: 'Keep control, the showroom, the selling and the sourcing', ai: 'Does the replies, follow-ups, reminders and reports', jw: 'Specialists run the functions you choose, beside your people', meters: [45, 30, 1], cost: 'Platform, AI and specialist services. Scoped to your business.', cta: ['Build my Jwero team', '#with-you'] },
+    you: 'Keep control, the showroom, the selling and the sourcing', ai: 'Does the replies, follow-ups, reminders and reports', jw: 'Specialists run the functions you choose, beside your people', meters: [45, 30, 1], cost: 'Priced on the work. Every Jwero tool is included, with no subscription.', cta: ['Build my Jwero team', '#with-you'] },
   { key: 'jwero', tab: 'Jwero runs it', title: 'You define the outcome. Jwero handles the function.', line: 'Jwero specialists, AI and technology run the functions you hand over, from marketing and ecommerce to the showroom journey, sourcing and vendors. No hiring, no agencies, nothing new to learn.', lanes: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    you: 'Set the goals. Stay with the jewellery and your customers', ai: 'Works at scale under the specialists', jw: 'Plans, executes and reports on every function you hand over', meters: [10, 5, 1], cost: 'Priced on the service and the outcome. Scoped to your business.', cta: ['Let Jwero handle it', '#handle'] },
+    you: 'Set the goals. Stay with the jewellery and your customers', ai: 'Works at scale under the specialists', jw: 'Plans, executes and reports on every function you hand over', meters: [10, 5, 1], cost: 'Priced on the work and the outcome. No team to hire, no tools to buy, no subscription.', cta: ['Let Jwero handle it', '#handle'] },
 ];
 const board = (start = 0) => `
 <div class="pz-run" data-pz-run data-run-start="${start}">
@@ -386,8 +386,8 @@ ${board(start)}`, { id: 'who-runs-it' });
 // The three ways to work with Jwero, as cards. Swipeable on a phone.
 const LEVELS = [
   ['01', 'You run it', 'Your team + Jwero', 'You operate the business. Jwero provides technology, AI and work that happens automatically.', 'Self managed', 'A technology subscription.', '/self-managed', 'Explore self-managed', null],
-  ['02', 'We run it together', 'Your team + Jwero specialists + AI', 'You retain control. Jwero provides expertise and execution.', 'Co-managed', 'Platform, AI and specialist services.', null, 'Build my Jwero team', 'with-you'],
-  ['03', 'Jwero runs it', 'Jwero specialists + AI + technology', 'You define the outcome. Jwero handles the function.', 'Fully managed', 'Priced on the service and the outcome.', null, 'Let Jwero handle it', 'handle'],
+  ['02', 'We run it together', 'Your team + Jwero specialists + AI', 'You retain control. Jwero provides expertise and execution.', 'Co-managed', 'Specialists and AI, priced on the work. Every tool included.', null, 'Build my Jwero team', 'with-you'],
+  ['03', 'Jwero runs it', 'Jwero specialists + AI + technology', 'You define the outcome. Jwero handles the function.', 'Fully managed', 'Priced on the work and the outcome. Every tool included, no subscription.', null, 'Let Jwero handle it', 'handle'],
 ];
 const levels = () => `
 <div class="pz-levels pz-swipe">${LEVELS.map(([n, t, who, line, way, pay, href, cta, wa], i) => `
@@ -407,6 +407,7 @@ ${eyebrow('Your business. Your choice. Our responsibility.')}
 <p class="pz-lead pz-center">Software when you want control. Experts when you want execution.</p>
 ${levels()}
 <p class="pz-shift pz-shift-sm">Start small.<br><b>Give us more when you’re ready.</b></p>
+<ul class="pz-none"><li><b>No team to hire</b><span>Jwero’s specialists and AI do the work.</span></li><li><b>No tools to buy</b><span>When Jwero manages it, every Jwero tool is included. No ₹18,000 subscription.</span></li><li><b>No coordination</b><span>One partner to talk to, and one account of what was done.</span></li></ul>
 <p class="pz-sub-h">See where the work goes</p>
 ${board(1)}
 <p class="pz-ways">Ways to work with Jwero are priced by how much we handle, not module by module. <a class="pz-link" href="/count-your-team">Count your team and see →</a></p>`, { id: 'who-runs-it' });
@@ -425,6 +426,11 @@ const buildLess = () => `
 </section>`;
 
 // ---------------------------------------------------------------- count your team
+// The software a role needs when the jeweller employs someone to do it, at the
+// lowest paid plan: [label, ₹/month]. Drafted estimates. A freelancer or agency
+// is assumed to bring its own. With Jwero managing the work, every tool is
+// included at no charge and there is no platform subscription.
+const ROLE_TOOLS = {'Data analyst': ['Reporting tool', 1500], 'AI and automation specialist': ['Automation tool', 2500], 'Performance marketing': ['Ad tracking and landing pages', 1500], 'SEO, AEO and GEO': ['SEO tool', 2000], 'Social media manager': ['Scheduling tool', 1500], 'Content writer': ['AI writing tool', 1500], 'Graphic designer': ['Design tool', 500], 'Video editor': ['Editing tool', 1000], 'Email and SMS marketer': ['Email and SMS tool', 1500], 'Telecaller and follow-up': ['Cloud telephony', 2000], 'CRM executive': ['CRM', 2500], 'Showroom journey coordinator': ['Appointment tool', 1000], 'Loyalty and scheme coordinator': ['Loyalty and scheme app', 2000], 'WhatsApp executive': ['WhatsApp API tool', 2500], 'Customer care': ['Helpdesk', 1500], 'Reviews and reputation': ['Review tool', 1500], 'Ecommerce manager': ['Online store platform', 2500], 'Website developer': ['Hosting and plugins', 1000], 'Catalogue and listing executive': ['Catalogue app', 1000], 'Product photographer': ['Photo editing tool', 500], 'Marketplace executive': ['Listing tool', 1500], 'Staff trainer': ['Training app', 1500]};
 // The roles a jeweller hires, or pays a freelancer or agency for, to keep up.
 // Each can be marked as an employee, an agency, or a gap nobody covers.
 //
@@ -535,7 +541,7 @@ ${eyebrow('Count your team')}
 <div class="pz-team2" data-pz-team>
   <div class="pz-team2-pick">
     <p class="pz-team2-legend"><span class="is-e">Employee</span><span class="is-a">Freelancer or agency</span><span class="is-g">Nobody does it</span></p>
-    ${TEAM_ROLES.map(([g, roles]) => `<div class="pz-team2-group"><p>${g}</p><div class="pz-team2-roles">${roles.map(([r, e, a, ai, unit, cap, def, step, extra]) => `<button type="button" data-role="${r}" data-s="0" data-e="${e}" data-a="${a}" data-ai="${ai}" data-cap="${cap}" data-def="${def}" data-step="${step}"${extra ? ` data-extra="${extra}"` : ''} aria-label="${r}: not counted"><b>${r}</b><i></i></button>`).join('')}</div>
+    ${TEAM_ROLES.map(([g, roles]) => `<div class="pz-team2-group"><p>${g}</p><div class="pz-team2-roles">${roles.map(([r, e, a, ai, unit, cap, def, step, extra]) => `<button type="button" data-role="${r}" data-s="0" data-e="${e}" data-a="${a}" data-ai="${ai}" data-cap="${cap}" data-def="${def}" data-step="${step}" data-tool="${(ROLE_TOOLS[r] || ['', 0])[1]}" data-tool-n="${(ROLE_TOOLS[r] || [''])[0]}"${extra ? ` data-extra="${extra}"` : ''} aria-label="${r}: not counted"><b>${r}</b><i></i></button>`).join('')}</div>
       ${roles.map(([r, , , , unit, , def]) => `<div class="pz-team2-scope" data-scope="${r}" hidden>
         <p><b>${r}</b><span data-scope-takes></span></p>
         <p class="pz-team2-who" role="group" aria-label="Who does this today"><em>Who does it today?</em><button type="button" data-who="1" aria-pressed="true">An employee</button><button type="button" data-who="2" aria-pressed="false">Freelancer or agency</button><button type="button" data-who="3" aria-pressed="false">Nobody. It is a gap</button></p>
@@ -557,12 +563,15 @@ ${eyebrow('Count your team')}
       <button type="button" aria-pressed="true" data-m="0"><b>Focus on the outcome</b><span>Jwero plans and executes. You see results.</span></button>
       <button type="button" aria-pressed="false" data-m="1"><b>Involve me in every decision</b><span>You approve each step. More coordination, more time.</span></button>
     </div>
-    <p class="pz-team2-big">This work takes <span data-pz-team-n>0</span> people <em>→ one partner</em></p>
+    <p class="pz-team2-big">This work takes <span data-pz-team-n>0</span> people and <span data-pz-team-t>0</span> tools <em>→ one partner, no tools to buy</em></p>
     <dl>
       <div><dt>What it costs today, at the lowest rates</dt><dd data-pz-team-now>₹0</dd></div>
+      <div class="is-sub"><dt>People and agencies</dt><dd data-pz-team-ppl>₹0</dd></div>
+      <div class="is-sub"><dt>Software they need</dt><dd data-pz-team-tools>₹0</dd></div>
       <div><dt>The same work with Jwero</dt><dd data-pz-team-jw>₹0</dd></div>
       <div class="is-sub"><dt>Specialists’ time</dt><dd data-pz-team-human>₹0</dd></div>
       <div class="is-sub"><dt>AI usage, as used</dt><dd data-pz-team-ai>₹0</dd></div>
+      <div class="is-sub"><dt>Every Jwero tool, and the platform</dt><dd>Included, ₹0</dd></div>
       <div class="is-save"><dt>Difference each month</dt><dd data-pz-team-save>₹0</dd></div>
       <div><dt>Your hours on it, each week</dt><dd data-pz-team-hrs>0</dd></div>
       <div><dt>Gaps Jwero would fill</dt><dd data-pz-team-gaps>None yet</dd></div>
@@ -570,7 +579,7 @@ ${eyebrow('Count your team')}
     <div class="pz-team2-bars" aria-hidden="true"><p><span>Today</span><i><u data-pz-team-b1></u></i></p><p><span>With Jwero</span><i><u class="is-soft" data-pz-team-b3></u><u class="is-gold" data-pz-team-b2></u></i></p></div>
     <a class="btn pz-btn-gold" href="#" data-wa="plan" data-pz-team-cta>Get my Jwero business plan</a>
     <a class="pz-team2-share" href="#" target="_blank" rel="noopener" data-pz-team-share>Send this to my partner or manager →</a>
-    <p class="pz-team2-note">Indicative. Volumes are predicted from your customer base and showrooms; change any count to your own. Today’s figures are the lowest going rates in India and what one person can handle in a month, drafted by us, not a survey. Jwero is priced at half of the cheaper way to do the work when you focus on the outcome, and at 60% when you approve every step. Filling a gap adds cost, so it is shown apart. Your plan carries the exact quote.</p>
+    <p class="pz-team2-note">Indicative. Volumes are predicted from your customer base and showrooms; change any count to your own. Today’s figures are the lowest going rates in India, what one person can handle in a month, and the cheapest paid plan of the software an employee would need, drafted by us, not a survey. When Jwero manages the work there is no platform subscription and no tool to buy. Jwero is priced at half of the cheaper way to do the work when you focus on the outcome, and at 60% when you approve every step. Filling a gap adds cost, so it is shown apart. Your plan carries the exact quote.</p>
   </div>
 </div>`, { tone: 'tint', id: 'count-your-team' });
 
@@ -592,7 +601,7 @@ const countTeaser = () => L.section(`
     <p class="pz-teaser-k">Every month, predicted</p>
     <ul>${PREDICT.map(([k, t]) => `<li><b data-predict="${k}">0</b><span>${t}</span></li>`).join('')}</ul>
     <p class="pz-teaser-big">Only answering them takes about <span data-pz-teaser-n>0</span> people.</p>
-    <p class="pz-teaser-sub">Before marketing, content, ecommerce or reports. With Jwero it is one partner.</p>
+    <p class="pz-teaser-sub">Before marketing, content, ecommerce or reports, and before the software they each need. With Jwero it is one partner, with every tool included.</p>
     <a class="btn pz-btn-gold" href="/count-your-team" data-pz-teaser-go>See what it costs you</a>
   </div>
 </div>`, { tone: 'tint', id: 'count-your-team' });

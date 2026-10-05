@@ -98,7 +98,7 @@ ${L.hero({
   note: `Prices exclude GST. First month ${inr(PLAN.firstMonth)}, then ${inr(PLAN.monthly)} a month.`,
 })}
 
-${L.section(`<p class="pz-eyebrow">Ways to work with Jwero</p><h2 class="pz-h pz-center">How much do you want Jwero to handle?</h2><p class="pz-lead pz-center">The price below is the technology subscription, for jewellers who run it themselves. When Jwero’s specialists and AI do the work, the price follows the work.</p>${require('./positioning').levels()}<p class="pz-ways"><a class="pz-link" href="/count-your-team">Count your team: what the work costs today, and with Jwero →</a></p>`, { tone: 'tint' })}
+${L.section(`<p class="pz-eyebrow">Ways to work with Jwero</p><h2 class="pz-h pz-center">How much do you want Jwero to handle?</h2><p class="pz-lead pz-center">The price below is the technology subscription, for jewellers who run it themselves. When Jwero’s specialists and AI do the work, the price follows the work, and every tool is included with no subscription.</p>${require('./positioning').levels()}<p class="pz-ways"><a class="pz-link" href="/count-your-team">Count your team: what the work costs today, and with Jwero →</a></p>`, { tone: 'tint' })}
 ${L.section(
   `<div class="plans" data-plans>
     <div class="plan-grid">

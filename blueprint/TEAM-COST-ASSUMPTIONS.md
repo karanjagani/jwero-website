@@ -86,6 +86,22 @@ The "AI usage" chips (customer replies, image generation and so on) were
 removed from the panel on 2026-10-05: the predicted volumes say the same thing
 with numbers.
 
+## Tools, and no platform fee for managed customers (founder, 2026-10-05)
+
+Managed customers are not charged the ₹18,000 subscription; every Jwero tool
+is included free. The calculator therefore adds to TODAY's cost the cheapest
+paid plan of the software an employee would need for each role (`ROLE_TOOLS`,
+₹500 to ₹2,500 a month, drafted estimates; a freelancer or agency is assumed to
+bring its own) and shows "Every Jwero tool, and the platform: Included, ₹0" on
+the Jwero side. Jwero's price is still 50 to 60% of the cheaper way to staff
+the work; tools are not part of that base.
+
+STILL OPEN: message, call and AI usage at the published wallet rates is not
+calculated. At high volume the wallet cost at published rates exceeds the price
+shown (see the 50,000-customer example given to the founder). Decide whether
+managed customers pay usage at wallet rates on top, at lower rates, or inside
+the fee, then build that line.
+
 ## Roles added on 2026-10-05
 
 Growth strategist, marketing manager, data analyst, AI and automation

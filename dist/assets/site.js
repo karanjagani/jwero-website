@@ -1976,7 +1976,7 @@ function calc() {
 var B = base(), P = predict(B);
 q('[data-pz-team-base]').textContent = num(B);
 Array.prototype.forEach.call(root.querySelectorAll('[data-predict]'), function (el) { el.textContent = num(P[el.getAttribute('data-predict')]); });
-var now = 0, human = 0, ai = 0, gapJw = 0, people = 0, gaps = 0, hrs = 0, picked = [];
+var now = 0, human = 0, ai = 0, gapJw = 0, people = 0, gaps = 0, hrs = 0, picked = [], tools = 0, toolN = 0;
 btns.forEach(function (b) {
 var s = +b.getAttribute('data-s'); if (!s) return;
 var name = b.querySelector('b').textContent, sc = scopeOf(b), all = sc.querySelectorAll('.pz-team2-item'), on = sc.querySelectorAll('.pz-team2-item[aria-pressed="true"]');
@@ -1990,11 +1990,14 @@ var unit = sc.querySelector('[data-scope-unit]'); if (b.getAttribute('data-def')
 sc.querySelector('[data-scope-takes]').textContent = 'takes ' + heads + (heads === 1 ? ' person' : ' people') + (b.getAttribute('data-extra') ? ', with ' + num(P.comments) + ' comments and DMs' : '');
 name += ' x' + num(count) + (on.length < all.length ? ' [' + Array.prototype.map.call(on, function (x) { return x.textContent; }).join(', ') + ']' : '');
 if (s === 3) { gaps++; gapJw += h + u; picked.push(name + ' (gap)'); return; }
+if (s === 1 && +b.getAttribute('data-tool')) { tools += +b.getAttribute('data-tool'); toolN++; }
 people += heads; now += s === 1 ? eCost : aCost; human += h; ai += u; hrs += (s === 1 ? HRS_E : HRS_A) * (s === 1 ? heads : 1);
 picked.push(name + (s === 1 ? ' (employee)' : ' (agency)'));
 });
+var ppl = now; now += tools;
 var jw = human + ai, save = now - jw, pct = now ? Math.round(save / now * 100) : 0, n = picked.length - gaps, after = mode ? Math.max(2, Math.round(n * .75)) : 1;
-q('[data-pz-team-n]').textContent = people;
+q('[data-pz-team-n]').textContent = people; q('[data-pz-team-t]').textContent = toolN;
+q('[data-pz-team-ppl]').textContent = inr(ppl); q('[data-pz-team-tools]').textContent = toolN ? inr(tools) + ' for ' + toolN + (toolN === 1 ? ' tool' : ' tools') : '₹0';
 q('[data-pz-team-now]').textContent = inr(now) + ' a month';
 q('[data-pz-team-jw]').textContent = inr(jw) + ' a month';
 q('[data-pz-team-human]').textContent = inr(human);
