@@ -2431,3 +2431,13 @@
     back.addEventListener('click', function () { go(at - 1); });
   });
 })();
+
+// Home hero: the dot field follows the pointer, and ripples where a finger taps.
+(function () {
+  var dots = document.querySelector('.hero-home .panel-dots'); if (!dots) return;
+  var panel = dots.parentElement, off;
+  function at(x, y) { var r = panel.getBoundingClientRect(); dots.style.setProperty('--mx', (x - r.left) + 'px'); dots.style.setProperty('--my', (y - r.top) + 'px'); }
+  panel.addEventListener('pointermove', function (e) { if (e.pointerType !== 'mouse') return; at(e.clientX, e.clientY); dots.classList.add('is-on'); });
+  panel.addEventListener('pointerleave', function () { dots.classList.remove('is-on'); });
+  panel.addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse') return; at(e.clientX, e.clientY); dots.classList.remove('is-ripple'); void dots.offsetWidth; dots.classList.add('is-ripple'); clearTimeout(off); off = setTimeout(function () { dots.classList.remove('is-ripple'); }, 950); });
+})();

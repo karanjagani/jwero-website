@@ -3972,3 +3972,19 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .post-mid { margin: 28px 0; padding: 18px 20px; border-radius: 14px; background: var(--brand-soft); border: 1px solid color-mix(in srgb, var(--brand) 25%, transparent); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; }
 .post-mid p { margin: 0 !important; flex: 1 1 320px; font-weight: 600; color: var(--ink); line-height: 1.45; }
 .post-mid .cta-row { margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* Home hero: the glow sits low and soft on tablet and phone so the copy stays readable. */
+@media (max-width: 1023px) {
+  .hero-home .panel-glow { height: 110px; opacity: .3; animation: none; }
+  .hero-home .hero-piece-link { position: relative; text-shadow: 0 1px 6px rgba(0, 18, 185, .9); }
+  .hero-home .panel-glow::after { display: none; }
+}
+/* Home hero: dots that light up around the pointer or finger. */
+.panel-dots { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .35s ease;
+  background-image: radial-gradient(circle at 1px 1px, #ffd68c 1.3px, transparent 1.9px); background-size: 7px 7px;
+  -webkit-mask-image: radial-gradient(180px circle at var(--mx, 50%) var(--my, 50%), #000 0%, rgba(0,0,0,.5) 40%, transparent 100%);
+  mask-image: radial-gradient(180px circle at var(--mx, 50%) var(--my, 50%), #000 0%, rgba(0,0,0,.5) 40%, transparent 100%); }
+.panel-dots.is-on { opacity: 1; }
+.panel-dots.is-ripple { animation: dotRipple .9s ease-out; }
+@keyframes dotRipple { 0% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .panel-dots { transition: none; } .panel-dots.is-ripple { animation: none; } }
