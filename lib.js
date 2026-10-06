@@ -1279,6 +1279,12 @@ function homeHero({ kicker, h1, sub }) {
 // The stone as the customer record: play a week through it, break it into the
 // tools it lives in today, turn it, tap a facet, move the gold rate. Data per
 // kind of business in content/gem.js; the canvas and controls are in site.js.
+// The label in the middle of the bangle, on two lines so it never spills past
+// the ring as it turns: "The shop" / "on one record", "Priya’s" / "record".
+function centreLines(t) {
+  const m = /^(.*?),?\s+(on one record|record)$/i.exec(String(t));
+  return m ? `${esc(m[1])}<br>${esc(m[2])}` : esc(t);
+}
 function gemStage2(opts = {}) {
   const { GEM, FAMILIES } = require('./content/gem');
   const icons = {};
@@ -1323,7 +1329,7 @@ function gemStage2(opts = {}) {
       <canvas aria-hidden="true"></canvas>
       <div class="gem2-nodes" data-gem2-nodes>${d.modules.map((m, k) => `<button type="button" class="gem2-node" data-k="${k}">${icon(m[0])}<span>${esc(m[1])}</span></button>`).join('')}</div>
       <div class="gem2-shards" data-gem2-shards aria-hidden="true"></div>
-      <p class="gem2-centre" data-gem2-centre>${esc(d.centre)}</p>
+      <p class="gem2-centre" data-gem2-centre>${centreLines(d.centre)}</p>
     </div>
     <p class="gem2-caption" data-gem2-caption aria-live="polite"></p>
     <aside class="gem2-card" aria-live="polite">

@@ -3946,3 +3946,5 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .post-toc a { color: var(--brand); text-decoration: none; } .post-toc a:hover { text-decoration: underline; }
 .post-body h2[id] { scroll-margin-top: 96px; }
 @media (max-width: 760px) { .post-top { grid-template-columns: minmax(0, 1fr); } }
+
+.gem2-centre { line-height: 1.35; text-align: center; }

@@ -886,7 +886,7 @@
     nodesEl.innerHTML = set.modules.map(function (m, k) { return '<button type="button" class="gem2-node" data-k="' + k + '">' + (DATA.icons[m[0]] || '') + '<span>' + esc2(m[1]) + '</span><em>Repriced</em><u class="gem2-n"></u></button>'; }).join('');
     shardsEl.innerHTML = set.tools.map(function (t, g) { return '<span class="gem2-shard" data-g="' + g + '">' + esc2(t) + '</span>'; }).join('');
     eventsEl.innerHTML = set.week.map(function (e, k) { return '<li><button type="button" data-ev="' + k + '"><b>' + esc2(e[0]) + '</b><span>' + esc2(e[1]) + '</span></button></li>'; }).join('');
-    centreEl.textContent = set.centre; cardTitle.textContent = set.centre;
+    centreEl.innerHTML = (function (t) { var m = /^(.*?),?\s+(on one record|record)$/i.exec(t), e = function (x) { return x.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }; return m ? e(m[1]) + '<br>' + e(m[2]) : e(t); })(set.centre); cardTitle.textContent = set.centre;
     var nodeBtns = Array.prototype.slice.call(nodesEl.querySelectorAll('.gem2-node'));
     var shardEls = Array.prototype.slice.call(shardsEl.children), evBtns = Array.prototype.slice.call(eventsEl.querySelectorAll('button'));
 
@@ -968,7 +968,7 @@
         nodePos.push([x, y, a]); b.style.left = x + 'px'; b.style.top = y + 'px';
       });
       shardEls.forEach(function (el, g) { el.style.left = (ox + DIRS[g][0] * S * .78) + 'px'; el.style.top = (oy + DIRS[g][1] * S * .66 + (DIRS[g][1] < 0 ? -S * .1 : S * .1)) + 'px'; });
-      centreEl.style.top = (METALS[metal].shape === 'bangle' && !small ? oy - 8 : oy + S * 1.22) + 'px';
+      centreEl.style.top = (METALS[metal].shape === 'bangle' && !small ? oy - 15 : oy + S * 1.22) + 'px';
     }
     function sectorOf(k) { return [Math.floor(k * 8 / N), Math.floor((k + 1) * 8 / N)]; }
     function wireEnd(k) {
