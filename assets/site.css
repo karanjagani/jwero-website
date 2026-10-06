@@ -3988,3 +3988,33 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .panel-dots.is-ripple { animation: dotRipple .9s ease-out; }
 @keyframes dotRipple { 0% { opacity: 1; } 100% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .panel-dots { transition: none; } .panel-dots.is-ripple { animation: none; } }
+
+/* Count your tools, tablet and phone: the results are a full card under the
+   chips, not a cramped sticky strip. Everything the desktop panel shows is
+   visible at once, laid out to the width. */
+@media (max-width: 1000px) {
+  .stackm .stackm-panel, .stackm .stackm-panel.is-exp { position: relative; bottom: auto; display: block; text-align: left; padding: 18px 16px 16px; max-height: none; overflow: visible; margin-top: 14px; }
+  .stackm .stackm-panel .stackm-size { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .stackm .stackm-panel .stackm-label { display: block; margin: 0 0 2px; font-size: .8125rem; }
+  .stackm .stackm-panel .stackm-num { display: flex; align-items: baseline; gap: 8px; margin: 0 0 10px; font-size: 2.25rem; line-height: 1.1; }
+  .stackm .stackm-panel .stackm-tally { display: block; margin: 0 0 12px; padding: 10px 0 0; border-top: 1px solid rgba(255, 255, 255, .22); font-size: .875rem; }
+  .stackm .stackm-panel .stackm-tally-short { display: none; }
+  .stackm .stackm-panel .stackm-rows { display: grid; }
+  .stackm .stackm-panel .stackm-merged { display: grid; }
+  .stackm .stackm-panel .stackm-money { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0 0 14px; }
+  .stackm .stackm-panel .stackm-m { display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 10px 12px; border-radius: 12px; background: rgba(255, 255, 255, .1); text-align: left; }
+  .stackm .stackm-panel .stackm-m span { font-size: .75rem; line-height: 1.3; }
+  .stackm .stackm-panel .stackm-m b { font-size: 1.125rem; line-height: 1.2; font-variant-numeric: tabular-nums; }
+  .stackm .stackm-panel .stackm-m-save { grid-column: 1 / -1; background: rgba(246, 177, 28, .18); }
+  .stackm .stackm-panel .stackm-m-save b { font-size: 1.5rem; color: var(--amber); }
+  .stackm .stackm-panel .stackm-go { display: block; width: 100%; margin: 0; padding: 13px 16px; font-size: .9375rem; }
+  .stackm .stackm-panel .stackm-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 12px 0 0; visibility: visible !important; }
+  .stackm .stackm-panel .stackm-actions button { display: inline-block; }
+  .stackm .stackm-panel .stackm-more-btn { display: none; }
+  .stackm .stackm-tip span { left: auto; right: -10px; }
+  .stackm .stackm-panel .stackm-m:last-child { grid-column: 1 / -1; }
+}
+@media (min-width: 641px) and (max-width: 1000px) {
+  .stackm .stackm-panel .stackm-money { grid-template-columns: repeat(3, 1fr); }
+  .stackm .stackm-panel .stackm-m-save, .stackm .stackm-panel .stackm-m:last-child { grid-column: auto; }
+}
