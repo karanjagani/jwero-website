@@ -27738,26 +27738,341 @@ Jewellery Business as a Service
 
  Count your team
 
-## What does keeping up take today?
+## What does keeping up take, and cost, today?
 
- Set your customer base. This is what it brings in every month, and what it takes to keep up with it.
+ Set your customer base. Tap a role, then say who does it today: an employee, a freelancer or agency, or nobody. Each role shows how much work it is and how many people that takes.
+
+ Employee Freelancer or agency Nobody does it 
+
+ Strategy and direction
+ Growth strategist Marketing manager Data analyst AI and automation specialist 
+
+ Growth strategist 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + plans and reviews a month 
+
+ Work Yearly and festive plan Monthly review Budget split across channels New store and category plans 
+
+ Marketing manager 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + campaigns a month 
+
+ Work Campaign calendar Briefs to the team Offer and scheme design Results review 
+
+ Data analyst 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + questions answered a month 
+
+ Work Who is likely to buy Who is drifting away What stock is not moving Which spend paid back 
+
+ AI and automation specialist 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + journeys and agents kept running 
+
+ Work Customer journeys AI agents and their limits Templates and approvals Testing what works 
+
+ Get more customers
+ Performance marketing SEO, AEO and GEO Social media manager Content writer Graphic designer Video editor Influencer and collaborations Email and SMS marketer 
+
+ Performance marketing 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ Channels Google Search ads Google Shopping ads Instagram and Facebook ads YouTube ads Click-to-WhatsApp ads Marketplace ads Retargeting 
+
+ SEO, AEO and GEO 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + pages improved a month 
+
+ Where you are found Website search ranking Google Business Profile Local search for each showroom AI answers (ChatGPT, Gemini and others) Blogs written to rank 
+
+ Social media manager 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + posts, stories and Reels a month 
+
+ Channels Instagram Facebook YouTube Pinterest LinkedIn X Threads Google Business posts 
+ Work Posts Stories Reels Comment replies DM replies Content calendar 
+
+ Content writer 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + pieces written a month 
+
+ Kinds of content Product descriptions Collection stories Blogs Captions Ad copy WhatsApp and SMS messages Emailers Website pages 
+
+ Graphic designer 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + creatives a month 
+
+ Kinds of design Social posts Ad creatives Festive and offer creatives Catalogue pages Banners and hoardings Print: brochures and invites Product image retouching 
+
+ Video editor 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + videos a month 
+
+ Kinds of video Reels and shorts Product videos Ad films Customer testimonial videos Store and event videos 
+
+ Influencer and collaborations 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + collaborations a month 
+
+ Work Finding the right people Outreach and terms Shoot coordination Tracking what it brought 
+
+ Email and SMS marketer 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + campaigns sent a month 
+
+ Channels Email SMS RCS Push notifications 
+ Work Festive and offer campaigns Rate alerts Scheme reminders 
+
+ Sell more
+ Telecaller and follow-up CRM executive Sales coordinator Showroom journey coordinator 
+
+ Telecaller and follow-up 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + outbound calls a month 
+
+ Calls Enquiry follow-up Scheme due reminders Appointment calls Feedback calls Win-back calls 
+
+ CRM executive 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + customers kept on record 
+
+ Work Customer data clean-up Segments Lead assignment Follow-up tracking Occasion reminders 
+
+ Sales coordinator 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + quotations and orders a month 
+
+ Work Quotations Order tracking Video call selling Custom order follow-up 
+
+ Showroom journey coordinator 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + appointments and walk-ins followed up 
+
+ Work Appointment booking Walk-in capture Visit follow-up Try-at-home and approvals After-sale thank you 
+
+ Keep customers
+ Loyalty and scheme coordinator WhatsApp executive Customer care Reviews and reputation 
+
+ Loyalty and scheme coordinator 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + members reached a month 
+
+ Programmes Savings schemes Loyalty points Referral programme Birthday and anniversary outreach Reactivation 
+
+ WhatsApp executive 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + conversations a month 
+
+ Work Enquiry replies Catalogue sharing Broadcasts Order and rate updates Template upkeep 
+
+ Customer care 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + inbound calls a month 
+
+ Work Inbound calls Complaints and service Repairs follow-up After-sale care 
+
+ Reviews and reputation 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + reviews asked for and answered 
+
+ Work Asking for Google reviews Answering reviews Handling a bad review Ratings on marketplaces 
+
+ Grow online
+ Ecommerce manager Website developer Catalogue and listing executive Product photographer Marketplace executive 
+
+ Ecommerce manager 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + online orders a month 
+
+ Where you sell Website store Google Shopping Marketplaces Instagram and WhatsApp shop 
+ Work Pricing at the live rate Offers and coupons Cart recovery Order follow-up 
+
+ Website developer 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + changes and fixes a month 
+
+ Work New pages and collections Speed and fixes Tracking and pixels Payment and delivery set-up 
+
+ Catalogue and listing executive 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + products listed or updated a month 
+
+ Work Product listing Descriptions and tags Price and stock updates Shareable catalogues Collection pages 
+
+ Product photographer 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + products shot a month 
+
+ Kinds of image Product on white Model shots Lifestyle shots Product video and 360 Retouching 
+
+ Marketplace executive 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + marketplace orders a month 
+
+ Marketplaces Amazon Flipkart Myntra Other marketplaces 
+ Work Listings Order processing Returns 
+
+ Reduce work
+ Data entry operator MIS and reports executive IT and software coordinator Staff trainer 
+
+ Data entry operator 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + entries a month 
+
+ Work Stock entry Purchase entry Customer entry Billing support Tagging and barcodes 
+
+ MIS and reports executive 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + reports a month 
+
+ Reports Daily sales Stock and ageing Staff performance Marketing results Owner’s summary 
+
+ IT and software coordinator 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + systems and vendors looked after 
+
+ Work Software vendors Integrations Devices and logins Backups and security 
+
+ Staff trainer 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + staff trained a month 
+
+ Work Product knowledge Selling skills Using the software New joiner induction 
+
+ Shop floor and supply
+ Purchase and sourcing executive Vendor coordinator Inventory planner Events and offline promotion 
+
+ Purchase and sourcing executive 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + purchase orders a month 
+
+ Work Requirement planning Supplier search Rate comparison Purchase orders Quality checks 
+
+ Vendor coordinator 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + vendors and karigars followed up 
+
+ Work Karigar job work Supplier follow-up Payments Delivery tracking Returns and repairs 
+
+ Inventory planner 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + stock reviews a month 
+
+ Work Stock ageing What to reorder Transfers between showrooms What to melt or discount 
+
+ Events and offline promotion 
+
+ Who does it today? An employee Freelancer or agency Nobody. It is a gap 
+
+ − 0 + events and campaigns a month 
+
+ Work Exhibitions In-store events Festive campaigns Hoardings and print Local tie-ups 
 
  Showrooms − 1 + 
  Customers on record: 5,000 
 
- Every month, predicted
+ What that customer base brings each month, predicted
 
  0 Customer conversations 
  0 Comments and DMs 
  0 Reviews 
  0 Inbound calls 
  0 Follow-up calls due 
- 
- Only answering them takes about 0 people.
 
- Before marketing, content, ecommerce or reports, and before the software they each need. With Jwero it is one partner, with every tool included.
+ Focus on the outcome Jwero plans and executes. You see results. 
+ Involve me in every decision You approve each step. More coordination, more time. 
 
- See what it costs you 
+ This work takes 0 people and 0 tools → one partner, no tools to buy 
+
+ What it costs today, at the lowest rates ₹0 
+
+ People and agencies ₹0 
+
+ Software they need ₹0 
+
+ The same work with Jwero ₹0 
+
+ Specialists’ time ₹0 
+
+ AI usage, as used ₹0 
+
+ Every Jwero tool, and the platform Included, ₹0 
+
+ Difference each month ₹0 
+
+ Your hours on it, each week 0 
+
+ Gaps Jwero would fill None yet 
+
+ Today 
+ With Jwero 
+
+ Let Jwero handle it 
+ Send this to my partner or manager → 
+ Indicative. Volumes are predicted from your customer base and showrooms; change any count to your own. Today’s figures are the lowest going rates in India, what one person can handle in a month, and the cheapest paid plan of the software an employee would need, drafted by us, not a survey. When Jwero manages the work there is no platform subscription and no tool to buy. Jwero is priced at half of the cheaper way to do the work when you focus on the outcome, and at 60% when you approve every step. Filling a gap adds cost, so it is shown apart. Your plan carries the exact quote.
 
  A day in the life of Jwero
 

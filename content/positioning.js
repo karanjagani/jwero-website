@@ -55,7 +55,7 @@ const heroHome = () => `
         <p class="sub">Markets, customers and technology keep changing. Jwero’s specialists and AI run the work around your jewellery: marketing, follow-up, online sales and the back office. No team to hire, no tools to buy.</p>
         <div class="hero-doors">
           <a class="hero-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b><em>Priced on the work. Every tool included.</em></a>
-          <a class="hero-door" href="/count-your-team"><span>See your number</span><b>Count your team</b><em>What the work costs today, and with Jwero.</em></a>
+          <a class="hero-door" href="#count-your-team"><span>See your number</span><b>Count your team</b><em>What the work costs today, and with Jwero.</em></a>
         </div>
         <p class="cta-note">A real person replies on WhatsApp within minutes · Onboarding in a day · <a href="/self-managed">Run it yourself instead</a></p>
       </div>
@@ -591,7 +591,7 @@ ${eyebrow('Count your team')}
       <button type="button" aria-pressed="true" data-m="0"><b>Focus on the outcome</b><span>Jwero plans and executes. You see results.</span></button>
       <button type="button" aria-pressed="false" data-m="1"><b>Involve me in every decision</b><span>You approve each step. More coordination, more time.</span></button>
     </div>
-    <p class="pz-team2-big">This work takes <span data-pz-team-n>0</span> people and <span data-pz-team-t>0</span> tools <em>→ one partner, no tools to buy</em></p>
+    <p class="pz-team2-big">This work takes <span data-pz-team-n>0</span> <i data-pz-team-pw>people</i> and <span data-pz-team-t>0</span> <i data-pz-team-tw>tools</i> <em>→ one partner, no tools to buy</em></p>
     <dl>
       <div><dt>What it costs today, at the lowest rates</dt><dd data-pz-team-now>₹0</dd></div>
       <div class="is-sub"><dt>People and agencies</dt><dd data-pz-team-ppl>₹0</dd></div>
@@ -859,7 +859,7 @@ ${insight()}
 ${solution()}
 ${dontKnow()}
 ${howMuch()}
-${countTeaser()}
+${countTeam()}
 ${dayAndCommand()}
 ${aiWorks()}
 ${handles()}

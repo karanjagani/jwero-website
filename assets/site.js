@@ -2221,7 +2221,7 @@
       });
       var ppl = now; now += tools;
       var jw = human + ai, save = now - jw, pct = now ? Math.round(save / now * 100) : 0, n = picked.length - gaps, after = mode ? Math.max(2, Math.round(n * .75)) : 1;
-      q('[data-pz-team-n]').textContent = people; q('[data-pz-team-t]').textContent = toolN;
+      q('[data-pz-team-n]').textContent = people; q('[data-pz-team-t]').textContent = toolN; q('[data-pz-team-pw]').textContent = people === 1 ? 'person' : 'people'; q('[data-pz-team-tw]').textContent = toolN === 1 ? 'tool' : 'tools';
       q('[data-pz-team-ppl]').textContent = inr(ppl); q('[data-pz-team-tools]').textContent = toolN ? inr(tools) + ' for ' + toolN + (toolN === 1 ? ' tool' : ' tools') : '₹0';
       q('[data-pz-team-now]').textContent = inr(now) + ' a month';
       q('[data-pz-team-jw]').textContent = inr(jw) + ' a month';
