@@ -4065,3 +4065,12 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .price-calc-total { padding-top: 8px; margin-top: 4px !important; border-top: 1px dashed var(--line-2); font-size: 1.0625rem !important; }
 .price-calc-total b { color: var(--brand); }
 .post-note { padding: 12px 14px; border-left: 3px solid var(--amber); background: color-mix(in srgb, var(--amber) 10%, transparent); border-radius: 6px; font-size: .9375rem; }
+
+/* Two-doors strip on phones: stacked full-width cards, not squeezed columns. */
+@media (max-width: 640px) {
+  .doors-strip .container { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .doors-strip .container > p { grid-column: 1 / -1; margin: 0; }
+  .doors-strip .ds-door { min-width: 0; }
+  .doors-strip .ds-door b { white-space: normal; }
+  .doors-strip .ds-more { grid-column: 1 / -1; justify-self: center; }
+}

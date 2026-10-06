@@ -365,6 +365,8 @@ function journeyFix(html, p) {
   html = trimLong(html, slug);
   // 1. every self-serve start goes through /start, which explains the first month
   if (slug !== 'start') html = html.replace(/href="https:\/\/os\.jwero\.ai\/signup\?utm_source=jwero\.ai&(?:amp;)?utm_medium=([^"]*)"(?: rel="noopener")?(?: data-trial(?:="[^"]*")?)?/g, (m0, from) => `href="/start?from=${from.replace(/[^a-z0-9-]/gi, '')}"`);
+  // product pages: one main button and the two doors at the top, nothing else
+  if (/^products\//.test(slug)) html = html.replace(/(<section class="hero[^"]*">[\s\S]*?)(<div class="doors-strip)/, (m0, top, rest) => top.replace(/\s*<a class="btn btn-ghost[^"]*"[^>]*>[^<]*<\/a>/g, '').replace(/\s*<p class="cta-note">[\s\S]*?<\/p>/, '') + rest);
   // pages never offer a button back to themselves
   if (slug === 'how-it-works') html = html.replace(/<a class="btn[^"]*" href="\/how-it-works">See how Jwero works<\/a>/g, '');
   if (slug === 'self-managed') html = html.replace(/<a class="btn[^"]*" href="\/self-managed">Run it yourself<\/a>/g, '').replace(/<a class="btn[^"]*" href="\/pricing">Ways to work with Jwero<\/a>/g, '');
