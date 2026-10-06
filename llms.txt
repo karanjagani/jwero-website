@@ -90,7 +90,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - From ERP to OS: Why Jewellery Software Is Changing: https://jwero.ai/erp-to-os
 - Is Switching Jewellery ERP Risky? Risks vs Costs of Staying: https://jwero.ai/erp-to-os/switching
 - Can a Jeweller Make Do With an ERP? What It Costs: https://jwero.ai/erp-to-os/make-do
-- Jwero Pricing: Every Module, ₹18,000 a Month: https://jwero.ai/pricing
+- Jwero Pricing: Subscription, Managed or Enterprise: https://jwero.ai/pricing
 - Diamond Trading Software: Inventory, Memo and Your Rate Grid: https://jwero.ai/solutions/diamond-traders
 - Jewellery Retail Software, Single Store to Chain: https://jwero.ai/industries/retail
 - Solutions, Jwero for Every Kind of Jewellery Business: https://jwero.ai/solutions
@@ -249,6 +249,5 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - AI + Experts: AI Does the Work, Experts Make It Better: https://jwero.ai/ai-and-experts
 - What Jwero Handles: Customers, Sales, Online Growth, Operations: https://jwero.ai/what-we-handle
 - Self Managed: Your Team Runs It, Jwero Powers It: https://jwero.ai/self-managed
-- Managed Services: We Run It Together, or Jwero Runs It: https://jwero.ai/managed-services
 - Count Your Team: What a Jewellery Business Spends to Keep Up: https://jwero.ai/count-your-team
 - Success Stories: What Jwero Took Responsibility For: https://jwero.ai/success-stories

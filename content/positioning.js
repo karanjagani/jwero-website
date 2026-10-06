@@ -164,8 +164,8 @@ const OUTCOMES = [
   ['Build my digital presence', 'You look, online, like the jeweller you are in the showroom.', ['Website, catalogue and Google profile', 'A steady flow of posts, Reels and stories', 'Reviews asked for and answered'], [['Social media', '/products/social-media'], ['Online store', '/products/storefront'], ['Instagram', '/instagram-for-jewellers']], ['Content and creative', 'Digital marketing'], 3],
   ['Let the routine run itself', 'The routine runs itself, inside limits you set.', ['AI agents for enquiries, follow-ups and reminders', 'Journeys that act on what customers do', 'Approvals, caps and one switch to stop it'], [['AI agents', '/products/ai-sales-agents'], ['Journeys', '/products/journeys'], ['AI governance', '/platform/ai-workforce']], ['AI specialist', 'Automation specialist'], 1],
   ['Understand my customers', 'You know who is likely to buy, who is drifting, and why.', ['Every signal a customer gives, read and scored', 'Segments that update themselves', 'A plain weekly account of what changed'], [['Customer memory', '/platform/customer-memory'], ['Segmentation', '/products/segmentation'], ['Reports', '/products/reports']], ['Data and analytics', 'CRM specialist'], 1],
-  ['Scale without hiring', 'New branches and channels without a new team for each.', ['AI agents take the routine load', 'Jwero specialists fill the roles you would have hired', 'One system for every branch'], [['Multi-store', '/products/multi-store'], ['AI agents', '/products/ai-sales-agents'], ['Managed services', '/managed-services']], ['Jewellery growth strategist', 'AI specialist'], 3],
-  ['I want Jwero to handle everything', 'You set the goals. Jwero runs the functions around the jewellery.', ['A plan built from where your business is today', 'AI agents and specialists across every function you hand over', 'One account of what was done and what it produced'], [['Managed services', '/managed-services'], ['What we handle', '/what-we-handle'], ['How it works', '/how-it-works']], ['A Jwero business specialist leads; the rest are brought in as needed'], 3],
+  ['Scale without hiring', 'New branches and channels without a new team for each.', ['AI agents take the routine load', 'Jwero specialists fill the roles you would have hired', 'One system for every branch'], [['Multi-store', '/products/multi-store'], ['AI agents', '/products/ai-sales-agents'], ['Managed services', '/jewellery-business-as-a-service']], ['Jewellery growth strategist', 'AI specialist'], 3],
+  ['I want Jwero to handle everything', 'You set the goals. Jwero runs the functions around the jewellery.', ['A plan built from where your business is today', 'AI agents and specialists across every function you hand over', 'One account of what was done and what it produced'], [['Managed services', '/jewellery-business-as-a-service'], ['What we handle', '/what-we-handle'], ['How it works', '/how-it-works']], ['A Jwero business specialist leads; the rest are brought in as needed'], 3],
 ];
 const LEVEL_NAME = { 1: 'You run it', 2: 'We run it together', 3: 'Jwero runs it' };
 // `pick` is a list of [index into OUTCOMES, label override]; without it, all.
@@ -690,7 +690,7 @@ const STORIES = [
 const TRUST_LINKS = [
   ['Security', 'How your data is protected.', '/trust/security'],
   ['Data and privacy', 'What we hold, and what is always yours.', '/legal/data-policy'],
-  ['How we start', 'Assessment, plan, the first ninety days.', '/managed-services#engagement'],
+  ['How we start', 'Assessment, plan, the first ninety days.', '/jewellery-business-as-a-service#next'],
   ['Jwero Business Team', 'A named specialist, and one account of the work.', '/ai-and-experts'],
   ['Works with your existing business', 'Tally, WhatsApp, Shopify and more.', '/platform/integrations'],
   ['Trust Centre', 'Every standard, with its honest status.', '/trust'],
@@ -732,6 +732,11 @@ ${eyebrow('In their words')}
 <h2 class="pz-h pz-center">Jewellers on working with Jwero.</h2>
 ${quoteCards(n)}
 ${n < QUOTES.length ? `<p class="pz-cta-center"><a class="pz-link" href="/success-stories">Read what more jewellers say →</a></p>` : `<p class="pz-stories-note">In their own words, as published on jwero.ai. Two mention Tanika, the company behind Jwero.</p>`}`, { id: 'in-their-words' });
+
+// One customer's words and the three ways to work: the end of every managed
+// page, so none of them is a dead end.
+const quoteOne = (i) => { const [q, who, where] = QUOTES[i % QUOTES.length]; return `<figure class="pz-quote jb-solo"><blockquote>“${q}”</blockquote><figcaption><b>${who}</b><span>${where}</span></figcaption></figure>`; };
+const endStrip = (i) => L.section(quoteOne(i)) + L.section(`<p class="pz-eyebrow">Three ways to work with Jwero</p><h2 class="pz-h pz-center">Run it yourself, or let Jwero run it.</h2>${require('./jbaas').TIERS()}`, { tone: 'tint' });
 
 // ---------------------------------------------------------------- why Jwero: five principles
 const WHY5 = [
@@ -857,6 +862,7 @@ ${insight()}
 ${dontKnow()}
 ${howMuch()}
 ${countTeam()}
+${L.section(`<span id="pricing"></span><p class="pz-eyebrow">Pricing</p><h2 class="pz-h pz-center">No subscription. Every tool included.</h2><p class="pz-lead pz-center">Managed work costs about half of what the same work costs you today. Or run the platform yourself.</p>${require('./jbaas').TIERS()}`, { tone: 'tint' })}
 ${aiWorks()}
 ${quotes(3)}
 ${nextSteps()}
@@ -879,6 +885,7 @@ ${whyFive()}
 ${love()}
 ${notAgency()}
 ${proof(false)}
+${endStrip(1)}
 ${close()}
 `,
 };
@@ -903,6 +910,7 @@ ${dayAndCommand()}
 ${whoRuns(1)}
 ${dontKnow()}
 ${assessment()}
+${endStrip(0)}
 ${close()}
 `,
 };
@@ -920,6 +928,7 @@ ${notAgency()}
 ${L.section(`${eyebrow('In your control')}<h2 class="pz-h pz-center">AI that waits for your yes.</h2><p class="pz-lead pz-center">Every AI action sits inside limits you set: approvals, daily caps, quiet hours, and one switch that stops it. <a href="/platform/ai-workforce">How the AI is governed</a> · <a href="/trust">Trust Centre</a></p>`, { tone: 'tint' })}
 ${adapt()}
 ${whoRuns(1)}
+${endStrip(7)}
 ${close()}
 `,
 };
@@ -936,6 +945,7 @@ ${monthly()}
 ${plate()}
 ${L.section(`${eyebrow('Underneath')}<h2 class="pz-h pz-center">The capabilities are all still here.</h2><p class="pz-lead pz-center">Every capability sits under this promise. If you like to look under the bonnet: <a href="/products">capabilities</a> · <a href="/solutions">by business type</a> · <a href="/platform">the platform</a> · <a href="/platform/integrations">works with your existing business</a> · <a href="/pricing">ways to work with Jwero</a>.</p>`, { tone: 'tint' })}
 ${assessment()}
+${endStrip(6)}
 ${close()}
 `,
 };
@@ -956,7 +966,9 @@ ${L.section(`${eyebrow('What your team gets')}<h2 class="pz-h pz-center">One sys
   <article class="pz-level"><h3>For your kind of business</h3><p class="pz-level-who">Retail, chains, manufacturers, wholesale, diamond traders, online brands.</p><a class="pz-link" href="/solutions">Find yours →</a></article>
 </div>`)}
 ${L.section(`<div class="home-price"><div><p class="eyebrow">THE TECHNOLOGY SUBSCRIPTION</p><h2>Every capability. ₹18,000 a month. First month ₹3,600.</h2><p>One subscription, billed monthly. No price per capability and no price per seat. Messages, AI and calls run on a prepaid wallet at published rates.</p></div><div class="cta-row"><a class="btn btn-primary" href="${L.TRIAL_URL}self-managed" rel="noopener" data-trial>Start for ₹3,600</a><a class="btn btn-ghost" href="/pricing">Ways to work with Jwero</a></div></div>`, { tone: 'tint' })}
-${L.section(`${eyebrow('And when you want help')}<h2 class="pz-h pz-center">Experts when you want execution.</h2><p class="pz-lead pz-center">Start by running it yourself. Bring in Jwero specialists for one function, or all of them, when you would rather not manage it. <a href="/managed-services">See managed services</a>.</p>${levels()}`)}
+${L.section(`${eyebrow('And when you want help')}<h2 class="pz-h pz-center">Experts when you want execution.</h2><p class="pz-lead pz-center">Start by running it yourself. Bring in Jwero specialists for one function, or all of them, when you would rather not manage it. <a href="/jewellery-business-as-a-service">See managed services</a>.</p>${levels()}`)}
+${L.section(quoteOne(3))}
+${L.section(`<div class="gem-head"><h2>Proof you can check.</h2><p>Who uses it, what the product counts, what is published, and how to try it yourself.</p></div>${L.proofGrid()}`)}
 ${close()}
 `,
 };
@@ -994,9 +1006,9 @@ const count = {
   slug: 'count-your-team',
   title: 'Count Your Team: What a Jewellery Business Spends to Keep Up | Jwero',
   description: 'A calculator for jewellers: set your customer base, mark the marketing, sales, ecommerce and operations roles you pay for, and see the people it takes, what it costs at the lowest rates in India, and the same work with Jwero.',
-  breadcrumbs: [['Home', '/'], ['Managed services', '/managed-services'], ['Count your team']],
+  breadcrumbs: [['Home', '/'], ['Jewellery Business as a Service', '/jewellery-business-as-a-service'], ['Count your team']],
   body: `
-${innerHero('Count your team', 'What does keeping up take, and cost, today?', 'The people, freelancers and agencies it takes to keep a jewellery business current, counted from your own customer base. Then the same work with one partner.', ['/managed-services', 'See managed services'], HANDLE('Let Jwero handle it', 'plan', 'btn pz-btn-gold'))}
+${innerHero('Count your team', 'What does keeping up take, and cost, today?', 'The people, freelancers and agencies it takes to keep a jewellery business current, counted from your own customer base. Then the same work with one partner.', ['/jewellery-business-as-a-service', 'See managed services'], HANDLE('Let Jwero handle it', 'plan', 'btn pz-btn-gold'))}
 ${countTeam()}
 ${L.section(`${eyebrow('How it is worked out')}<h2 class="pz-h pz-center">No hidden arithmetic.</h2>
 <ol class="pz-how">
@@ -1030,7 +1042,9 @@ ${close()}
 `,
 };
 
-module.exports = [home, why, how, aiExperts, handle, self, managed, count, success];
+module.exports = [home, why, how, aiExperts, handle, self, count, success];
 module.exports.levels = levels;
 module.exports.quotes = quotes;
+module.exports.quoteOne = quoteOne;
+module.exports.refer = refer;
 module.exports.QUOTES = QUOTES;

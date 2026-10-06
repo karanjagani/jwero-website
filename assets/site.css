@@ -3894,3 +3894,4 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 /* scroll reveal for the page's own pieces uses the site's reveal classes */
 @media (max-width: 900px) { .jbs-flow { margin-top: 8px; } .jbs-flow .pz-focus ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .pz-team2-big i { font-style: normal; }
+.jb-quote2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .jb-quote2 .jb-solo { max-width: none; margin: 0; } @media (max-width: 760px) { .jb-quote2 { grid-template-columns: minmax(0, 1fr); } }

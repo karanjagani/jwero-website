@@ -77,7 +77,7 @@ const faqs = [
 
 const pricing = {
   slug: 'pricing',
-  title: `Jwero Pricing: Every Module, ${inr(PLAN.monthly)} a Month | Jwero`,
+  title: `Jwero Pricing: Subscription, Managed or Enterprise | Jwero`,
   description: `One plan with every module: ${inr(PLAN.monthly)} a month, billed monthly. First month ${inr(PLAN.firstMonth)}. Per-use services — WhatsApp, AI, calls — run on a prepaid wallet at published rates. Enterprise for groups and chains is custom priced.`,
   breadcrumbs: [['Home', '/'], ['Pricing']],
   schema: {
@@ -99,6 +99,7 @@ ${L.hero({
 })}
 
 ${L.section(`${L.sectionHead('THREE WAYS TO BUY', 'Subscription, managed, or enterprise.', 'Below the three: the detail of the subscription for jewellers who run it themselves. Managed customers pay no subscription; every tool is included.')}${require('./jbaas').TIERS()}`, { tone: 'tint' })}
+${L.section(`<div class="jb-quote2">${require('./positioning').quoteOne(0)}${require('./positioning').quoteOne(5)}</div>`)}
 ${L.section(
   `<div class="plans" data-plans>
     <div class="plan-grid">
@@ -199,6 +200,7 @@ ${L.section(L.safeToTryStrip())}
 ${L.section(`${L.sectionHead('PRICING QUESTIONS', 'Straight answers on cost and terms.', '')}${L.faqBlock(faqs)}
 <p class="cta-note" style="margin-top:14px">More objections? <a href="/faq#pricing">See every pricing question we’ve been asked →</a></p>`)}
 
+${require('./positioning').refer()}
 ${L.section(`${L.sectionHead('CHOOSE', 'Run it yourself, let Jwero run it, or talk to us.', '')}${require('./jbaas').TIERS()}`, { tone: 'tint' })}
 `,
 };

@@ -209,8 +209,7 @@ const NAV = [
     label: 'Managed',
     match: ['jewellery-business-as-a-service', 'managed-services', 'what-we-handle', 'ai-and-experts', 'how-it-works', 'count-your-team', 'success-stories', 'why-jwero', 'self-managed'],
     items: [
-      ['/jewellery-business-as-a-service', 'Jewellery Business as a Service', 'You focus on jewellery. We handle the chaos.'],
-      ['/managed-services', 'Managed services', 'We run it together, or Jwero runs it. Pricing.'],
+      ['/jewellery-business-as-a-service', 'Jewellery Business as a Service', 'Jwero runs it for you. Pricing and how it works.'],
       ['/what-we-handle', 'What we handle', 'Customers, sales, online, back office.'],
       ['/ai-and-experts', 'AI + experts', 'AI does the work. Experts make it better.'],
       ['/count-your-team', 'Count your team', 'What the work costs today, and with Jwero.'],
@@ -233,7 +232,7 @@ const TOP_NAV = [
   { label: 'What we handle', href: '/what-we-handle', match: ['what-we-handle'] },
   { label: 'AI + experts', href: '/ai-and-experts', match: ['ai-and-experts'] },
   { label: 'Self managed', href: '/self-managed', match: ['self-managed', 'jwero-os', 'products', 'platform', 'solutions', 'pricing'] },
-  { label: 'Managed services', href: '/managed-services', match: ['managed-services'] },
+  { label: 'Managed services', href: '/jewellery-business-as-a-service', match: ['managed-services'] },
   { label: 'Success stories', href: '/success-stories', match: ['success-stories', 'customers'] },
 ];
 
@@ -298,7 +297,7 @@ function footerHTML() {
       ${col('Solutions', [['/roles','Roles — who uses Jwero'],['/solutions','All 23 solutions'],['/industries/retail','Retail'],['/solutions/single-store','Single store'],['/solutions/multi-store-chains','Multi-store & chains'],['/solutions/luxury-boutique','Luxury & boutique'],['/solutions/bridal','Bridal & wedding'],['/solutions/manufacturers','Manufacturers'],['/solutions/b2b-jewellery','Wholesale & B2B'],['/solutions/d2c-brands','D2C brands'],['/solutions/franchise-networks','Franchise networks'],['/solutions/pain/dead-stock','Dead stock'],['/solutions/pain/lead-leakage','Lead leakage']])}
       ${col('Resources', [['/faq','FAQ — every objection'],['/guides','Buyer’s guides'],['/blog','Blog'],['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/tools/whatsapp-revenue-estimator','WhatsApp Revenue Estimator'],['/tools/gold-loss-calculator','Gold-Loss Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/partners','Partners'],['/customers','Customer proof']])}
       <div class="f-stack">
-      ${col('Jwero', [['/why-jwero','Why Jwero'],['/how-it-works','How it works'],['/ai-and-experts','AI + experts'],['/what-we-handle','What we handle'],['/self-managed','Self managed'],['/managed-services','Managed services'],['/success-stories','Success stories'],['/jwero-os','The operating system']])}
+      ${col('Jwero', [['/why-jwero','Why Jwero'],['/how-it-works','How it works'],['/ai-and-experts','AI + experts'],['/what-we-handle','What we handle'],['/self-managed','Self managed'],['/jewellery-business-as-a-service','Managed services'],['/success-stories','Success stories'],['/jwero-os','The operating system']])}
       ${col('Company', [['/company','About'],['/jewellery-software-india','Jewellery software by city'],['/hi','हिंदी'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
       ${col('Trust', [['/trust','Trust Centre'],['/trust/security','Security'],['/legal/privacy','Privacy Policy'],['/legal/terms','Terms of Use'],['/legal/data-policy','Data Policy'],['/legal/sub-processors','Sub-processors'],['/legal/dpdp','DPDP statement'],['/roadmap','Roadmap']])}
       </div>
@@ -307,7 +306,7 @@ function footerHTML() {
     <div class="f-proof">198 customer signals · 11 explainable scores · 240+ governed AI actions · AI voice in 14 languages · 5 kill-switch scopes · Tally, Zoho Books, Shopify, WooCommerce, Unicommerce &amp; Meta connectors built in.</div>
     <div class="f-bottom">
       <p>© <span data-year></span> Jwero. All rights reserved.</p>
-      <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank">${l}</a>`).join('')}<a href="mailto:care@jwero.ai">care@jwero.ai</a><a href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=footer" rel="noopener">Log in to Jwero</a></p>
+      <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank">${l}</a>`).join('')}<a href="#" data-share="Thought of you. Jwero takes the marketing, technology and follow-up chaos off a jeweller:">Refer a jeweller, save 10%</a><a href="mailto:care@jwero.ai">care@jwero.ai</a><a href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=footer" rel="noopener">Log in to Jwero</a></p>
       <p>This site runs on Jwero — the chat button is the product.</p>
     </div>
     <p class="f-legal">Jwero is a product of ${LEGAL_ENTITY} · CIN ${LEGAL_CIN} · Registered office: ${LEGAL_ADDRESS}</p>
@@ -590,6 +589,27 @@ function withManaged(body, page) {
   return at > 0 ? body.slice(0, at) + block + body.slice(at) : body + block;
 }
 
+// Solution pages: drop the sections that repeat what other parts of the page
+// or site already say, move the managed offer to the middle, and use one set
+// of button labels: start, let Jwero handle it, talk to us.
+const SOLUTION_DROP = /<h2[^>]*>\s*(A customer messages|Small start|One plan\. Every module|Five things we hear|Related on Jwero)/;
+function trimSolution(html, slug) {
+  if (!slug.startsWith('solutions/')) return html;
+  const parts = html.split(/(?=<section[\s>])/);
+  let kept = parts.filter((c) => !SOLUTION_DROP.test(c.slice(0, 1500)));
+  const mi = kept.findIndex((c) => /PREFER JWERO TO RUN THIS FOR YOU\?/.test(c.slice(0, 2500)));
+  if (mi > 0) {
+    const quoteI = mi - 1 >= 0 && /jb-solo/.test(kept[mi - 1].slice(0, 400)) ? mi - 1 : -1;
+    const moving = quoteI >= 0 ? kept.splice(quoteI, 2) : kept.splice(mi, 1);
+    const at = Math.min(4, kept.length - 1);
+    kept.splice(at, 0, ...moving);
+  }
+  return kept.join('')
+    .replace(/(<a class="btn[^"]*"[^>]*data-trial[^>]*>)[\s\S]*?(<\/a>)/g, '$1Start for ₹3,600$2')
+    .replace(/(<a class="btn[^"]*"[^>]*data-wa="handle"[^>]*>)[\s\S]*?(<\/a>)/g, '$1Let Jwero handle it$2')
+    .replace(/(<a class="btn[^"]*"(?![^>]*data-share)(?![^>]*data-trial)(?![^>]*data-wa="handle")[^>]*(?:data-wa="[^"]*"|href="\/book-demo")[^>]*>)[\s\S]*?(<\/a>)/g, '$1Talk to us$2');
+}
+
 function withRelated(body, page) {
   const href = '/' + page.slug;
   const links = [];
@@ -769,7 +789,7 @@ ${launchHTML()}
 ${navHTML(page)}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-${withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withManaged(withSchematic(page), page), page), page), page), page), page), page), page).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
+${trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
 </main>
 ${searchDialog()}
 ${connectDialog()}
@@ -831,7 +851,7 @@ function build() {
     fs.writeFileSync(path.join(dir, 'index.html'), noDash(layout(p)));
   }
   // Retired addresses: the separate /focus site, /jbaas and the old /jwero-os home.
-  const MOVED = { 'jwero-os': '/', jbaas: '/jewellery-business-as-a-service', focus: '/jewellery-business-as-a-service' };
+  const MOVED = { 'jwero-os': '/', jbaas: '/jewellery-business-as-a-service', focus: '/jewellery-business-as-a-service', 'managed-services': '/jewellery-business-as-a-service', 'focus/managed-services': '/jewellery-business-as-a-service' };
   for (const p of pages) if (p.slug !== 'index' && !p.slug.includes('/')) MOVED['focus/' + p.slug] = '/' + p.slug;
   MOVED['focus/jwero-os'] = '/';
   for (const [from, to] of Object.entries(MOVED)) {
