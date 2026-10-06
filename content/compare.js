@@ -9,7 +9,19 @@ const BC = (label) => [['Home', '/'], ['Compare', '/compare'], [label]];
 // number is used) or marked [VERIFY] where public information was genuinely unavailable or
 // unclear — never asserted with more confidence than the source supports. Jwero-side claims
 // remain product-verified throughout.
-function comparePage({ slug, name, shortName, category, title, description, concedeThem, concedeJwero, rows, faqs, waCtx, migrationNote, researchNote }) {
+// Switching questions every comparison answers, and a short answer at the top
+// built from the page's own "choose them if / choose Jwero if".
+const SWITCH_FAQS = (n) => [
+  { q: `Can I move my data from ${n} to Jwero?`, a: 'Customers, products and stock are imported for you from exports or spreadsheets, and the history you need is brought across. The Migration Centre lists what moves and how.' },
+  { q: `How long does switching from ${n} take?`, a: 'Set-up takes a day, and most businesses settle in within thirty days. Avoid switching in your busiest season; start before it or after it.' },
+  { q: `Can I run ${n} and Jwero side by side for a while?`, a: 'Yes. Many jewellers start with one function in Jwero, such as WhatsApp or customers, while the old system keeps running, then move the rest when they are ready.' },
+];
+const plain = (t) => String(t || '').replace(/<[^>]+>/g, '').replace(/\s*—\s*/g, ', ').trim().replace(/\.?$/, '.');
+function comparePage({ slug, name, shortName, category, title, description, concedeThem, concedeJwero, rows, faqs: faqs0, waCtx, migrationNote, researchNote }) {
+  const n = shortName || name;
+  const short = { q: `Jwero or ${n}: which should a jeweller choose?`, a: `Choose ${n} if ${plain(concedeThem)} Choose Jwero if ${plain(concedeJwero)}` };
+  const have = new Set((faqs0 || []).map((f) => f.q));
+  const faqs = [short, ...(faqs0 || []), ...SWITCH_FAQS(n).filter((f) => !have.has(f.q))];
   return {
     slug: `compare/jwero-vs-${slug}`,
     title: title || `${name} Alternative for Jewellers: Jwero vs ${shortName || name} | Jwero`,
@@ -25,9 +37,10 @@ ${L.hero({
   primary: { href: '#', label: 'Chat or call with us', wa: waCtx },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
+<section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">${short.q}</h2><p>${short.a}</p></div></section>
 ${L.section(L.verdictBox(shortName || name, concedeThem, concedeJwero))}
 ${L.section(
-  `${L.sectionHead('THE HONEST MATRIX', `Jwero vs ${name}, feature by feature.`, researchNote || `Jwero claims below are product-verified. ${name} claims are sourced from its own public marketing and independent review/pricing sites, checked July 2026 — anything more specific than that is marked [VERIFY].`)}
+  `${L.sectionHead('THE HONEST MATRIX', `Jwero vs ${name}, feature by feature.`, researchNote || `Jwero claims below were re-checked against the product on 6 October 2026. ${name} claims are sourced from its own public marketing and independent review/pricing sites, checked July 2026 — anything more specific than that is marked [VERIFY].`)}
   ${L.compareTable(name, rows)}`
 , { tone: 'tint' })}
 ${L.section(`${L.sectionHead('WHAT SWITCHERS SWITCH FOR', 'What switching buys you.', '')}${L.switchForBlock()}`)}
@@ -108,7 +121,7 @@ const ornateNx = comparePage({
     { label: 'One customer record across WhatsApp, Instagram, storefront', jwero: 'Yes — one record, 198 signal types, 11 explainable scores', other: '[VERIFY — CRM module exists; omnichannel scope not public]' },
     { label: 'Governed AI workforce (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: '[VERIFY — not found in public materials]' },
     { label: 'Live gold-rate catalogue pricing', jwero: 'Yes', other: '[VERIFY]' },
-    { label: 'Gold savings schemes & digital gold', jwero: 'Yes', other: '[VERIFY]' },
+    { label: 'Gold savings schemes', jwero: 'Yes', other: '[VERIFY]' },
     { label: 'Published pricing', jwero: '[Being finalised — see /pricing]', other: 'Quote-on-request; not published' },
   ],
   faqs: [
@@ -126,7 +139,7 @@ const synergics = comparePage({
   waCtx: 'synergics',
   researchNote: 'Synergics facts are sourced from synergicssolutions.com (checked July 2026), including its own "150+ businesses" and "AI-powered analytics" claims, quoted here as Synergics’ own positioning, not independently verified by us. Jwero-side claims re-verified against the product on 2026-08-01.',
   rows: [
-    { label: 'Manufacturing-to-retail ERP depth', jwero: '[VERIFY per module — see /products/erp]', other: '"Concept-to-customer" — a named strength, per Synergics' },
+    { label: 'Manufacturing-to-retail ERP depth', jwero: 'Yes: workshop, karigar metal, job work and wastage by stage, on the ERP', other: '"Concept-to-customer" — a named strength, per Synergics' },
     { label: 'Compliance automation (GST/HSN/hallmarking)', jwero: 'GST invoicing at live rate + GSTR-1/3B report export; e-invoice IRN on roadmap', jweroRoadmap: false, other: 'Automated GST/HSN/hallmarking reports claimed' },
     { label: 'One customer record across every channel', jwero: 'Yes — one record, 198 signal types, 11 explainable scores', other: '[VERIFY — CRM module exists; omnichannel/WhatsApp scope not public]' },
     { label: 'Governed AI workforce (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, approval queues', other: '"AI-powered analytics" claimed; governance model [VERIFY]' },
@@ -164,7 +177,7 @@ const marg = comparePage({
   slug: 'marg', name: 'Marg ERP', shortName: 'Marg',
   category: 'a widely-used general retail billing ERP (₹18,500/piece as listed on IndiaMART) with touchscreen POS, barcode scanning, e-invoicing and GST e-way bill filing, used across many trades including jewellery',
   concedeThem: 'you want e-invoicing and GST e-way bill generation built in today, a large support organisation (Marg states 250+ support staff and 500+ tutorial videos), and a specific, publicly listed price point rather than a quote-on-request process.',
-  concedeJwero: 'you want a system built jewellery-first: live gold-rate pricing, purity/HUID catalogue fields, gold schemes and digital gold — with customers and every selling channel on the same record, not adapted from a general retail template.',
+  concedeJwero: 'you want a system built jewellery-first: live gold-rate pricing, purity/HUID catalogue fields, gold savings schemes — with customers and every selling channel on the same record, not adapted from a general retail template.',
   waCtx: 'marg',
   researchNote: 'Marg facts are sourced from margcompusoft.com and an IndiaMART listing (₹18,500/piece, checked July 2026) — a distributor-listed price point, not necessarily Marg’s only or current pricing tier. Verify directly with Marg for your exact requirement. Jwero-side claims re-verified against the product on 2026-08-01.',
   rows: [
@@ -173,7 +186,7 @@ const marg = comparePage({
     { label: 'Touchscreen counter POS with old-gold/exchange handling', jwero: 'Yes — scan-to-sale, old-gold exchange vouchers, returns and a reconciled cash day-close per register', jweroRoadmap: false, other: 'Yes — named features' },
     { label: 'Live gold-rate catalogue pricing', jwero: 'Yes', other: '[VERIFY — not jewellery-specific by design; rate-linking not confirmed]' },
     { label: 'Purity, HUID-aware catalogue fields', jwero: 'Yes', other: '[VERIFY]' },
-    { label: 'Gold schemes & digital gold', jwero: 'Yes', other: '[VERIFY — loyalty/promotions exist; scheme-specific engine not confirmed]' },
+    { label: 'Gold savings schemes', jwero: 'Yes', other: '[VERIFY — loyalty/promotions exist; scheme-specific engine not confirmed]' },
     { label: 'Governed AI workforce + WhatsApp/Instagram commerce', jwero: 'Yes', other: '[VERIFY]' },
   ],
   faqs: [
@@ -191,7 +204,7 @@ const sioniq = comparePage({
   waCtx: 'sioniq',
   researchNote: 'SIONIQ facts are sourced from sioniqerp.com and Capterra (checked July 2026), including its own "AI and machine learning" claim, quoted as SIONIQ’s own positioning. SIONIQ does not publish pricing publicly. Jwero-side claims re-verified against the product on 2026-08-01.',
   rows: [
-    { label: 'Module breadth (incl. HR, digital gold, repair, scheme)', jwero: 'Yes — including a full payroll engine and a separate karigar wage-settlement ledger', jweroRoadmap: false, other: 'Broadest module list found in this research — a named strength' },
+    { label: 'Module breadth (incl. HR, repair, schemes)', jwero: 'Yes — including a full payroll engine and a separate karigar wage-settlement ledger', jweroRoadmap: false, other: 'Broadest module list found in this research — a named strength' },
     { label: 'Serves manufacturers through bullion traders in one platform', jwero: 'Yes — same platform across segments', other: 'Yes — stated as a core positioning point' },
     { label: 'One-record architecture demonstrated, not just listed', jwero: 'Yes — see /platform for the live demo', other: '[VERIFY — modules are listed; a unified-record demo was not found publicly]' },
     { label: 'Governed AI workforce (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes, all product-verified', other: '"AI and machine learning" claimed for analytics; approval/governance model [VERIFY]' },
@@ -251,7 +264,7 @@ const interakt = comparePage({
   slug: 'interakt', name: 'Interakt', shortName: 'Interakt',
   category: 'a WhatsApp Business API commerce and marketing tool with shop-and-pay-via-chat, Shopify/WooCommerce integration and Haptik-powered AI agents, publicly priced from ₹3,499/quarter',
   concedeThem: 'you want transparent, India-priced WhatsApp commerce tooling (₹3,499/quarter Starter up to ₹10,499/quarter Advanced, per Interakt’s published pricing) with Shopify/WooCommerce integration and AI agents for FAQ automation and order management already built by Haptik’s enterprise AI platform.',
-  concedeJwero: 'you sell jewellery specifically — live gold-rate pricing, purity fields, gold schemes and digital gold need to be native fields the whole system acts on, not generic ecommerce catalogue fields repurposed.',
+  concedeJwero: 'you sell jewellery specifically — live gold-rate pricing, purity fields, gold savings schemes need to be native fields the whole system acts on, not generic ecommerce catalogue fields repurposed.',
   waCtx: 'interakt',
   researchNote: 'Interakt facts and pricing are sourced from interakt.shop/pricing-us and independent pricing breakdowns (checked July 2026); confirm current tiers directly as WhatsApp commerce pricing changes frequently.',
   rows: [
@@ -259,7 +272,7 @@ const interakt = comparePage({
     { label: 'Shop-and-pay-via-chat, Shopify/WooCommerce integration', jwero: 'Yes — plus Tally/Zoho Books bridge for accounting', other: 'Yes — a named strength' },
     { label: 'AI agents for FAQ, booking, order management', jwero: 'Yes — 240+ jewellery-specific actions', other: 'Yes — via Haptik’s enterprise AI platform' },
     { label: 'Live gold-rate pricing', jwero: 'Yes', other: 'No — general ecommerce catalogue, not jewellery-specific' },
-    { label: 'Gold schemes & digital gold', jwero: 'Yes', other: 'No' },
+    { label: 'Gold savings schemes', jwero: 'Yes', other: 'No' },
     { label: 'Governed AI drafting with approval queues', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: '[VERIFY — Haptik AI agents exist; approval-queue governance model not confirmed]' },
     { label: 'One record across CRM, catalogue, operations', jwero: 'Yes', other: 'No — commerce/messaging layer; operations (inventory, manufacturing) not in scope' },
   ],
@@ -279,7 +292,7 @@ const doubletick = comparePage({
   rows: [
     { label: 'Published pricing', jwero: '₹18,000/month — every module', other: '~$142/month, billed annually only (no monthly option)' },
     { label: 'Team WhatsApp inbox', jwero: 'Yes — one inbox across WhatsApp, Instagram, Facebook', other: 'Yes — a named platform feature' },
-    { label: 'AI image-recognition cart-building (photo → order)', jwero: '[VERIFY — not a current Jwero feature]', other: 'Yes — a genuinely novel, named feature' },
+    { label: 'AI image-recognition cart-building (photo → order)', jwero: 'No', other: 'Yes — a genuinely novel, named feature' },
     { label: 'Live gold-rate catalogue pricing', jwero: 'Yes', other: 'No — not a jewellery-specific product' },
     { label: 'Customer record shared with catalogue & schemes', jwero: 'Yes', other: 'No — messaging/sales-CRM layer, no jewellery catalogue or scheme engine' },
     { label: 'Governed AI drafting (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: 'AI agents and enterprise governance features exist; specific model [VERIFY]' },
@@ -303,7 +316,7 @@ const quicksell = comparePage({
     { label: 'Diamond-rate and gram-based selling fields', jwero: 'Yes — purity/certification catalogue fields', other: 'Yes — named jewellery-specific features' },
     { label: 'B2B/B2C differentiated pricing on the same catalogue', jwero: 'Yes — via price rules and role-based visibility', other: 'Yes — a named feature' },
     { label: 'Customer memory (198 signal types, scheme balances, occasions)', jwero: 'Yes', other: '[VERIFY — positioned as catalogue-commerce, not a CRM]' },
-    { label: 'Gold schemes & digital gold', jwero: 'Yes', other: '[VERIFY — no evidence found of a scheme/digital-gold engine]' },
+    { label: 'Gold savings schemes', jwero: 'Yes', other: '[VERIFY — no evidence found of a scheme/digital-gold engine]' },
     { label: 'Governed AI workforce (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: '[VERIFY — not found in public materials]' },
     { label: 'Inventory & operations (repairs, manufacturing, orders)', jwero: 'Yes — one system', other: '[VERIFY — inventory tracking exists for catalogue purposes; full ops not evidenced]' },
   ],
@@ -325,9 +338,9 @@ const shopify = comparePage({
     { label: 'Published pricing (entry tier)', jwero: '₹18,000/month — every module', other: '$39/month (Basic), or $29/month billed annually' },
     { label: 'Live gold-rate pricing', jwero: 'Yes', other: 'No — not jewellery-specific by design' },
     { label: 'WhatsApp/Instagram-native commerce', jwero: 'Yes — official APIs, one shared inbox', other: '[VERIFY — via third-party apps, not native]' },
-    { label: 'Gold schemes & digital gold', jwero: 'Yes', other: 'No' },
+    { label: 'Gold savings schemes', jwero: 'Yes', other: 'No' },
     { label: 'Governed AI workforce', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: '[VERIFY — a 2026 "Agentic" plan targets AI-assistant selling; jewellery-specific governance not applicable]' },
-    { label: 'Coexistence: keep your existing store', jwero: 'Yes — Shopify connector syncs products & orders', other: '—' },
+    { label: 'Coexistence: keep your existing store', jwero: 'Yes: the Shopify connector keeps your store on the same product data', other: '—' },
   ],
   migrationNote: 'This isn’t a rip-and-replace pitch — most Shopify-based jewellery brands keep their store and add Jwero for the channels and pricing Shopify doesn’t do natively. See <a href="/solutions/d2c-brands">the D2C solution page</a>.',
   faqs: [
@@ -345,7 +358,7 @@ const zohoCrm = comparePage({
   researchNote: 'Zoho CRM pricing is sourced from zoho.com/crm/zohocrm-pricing.html and independent breakdowns (checked July 2026): Free (3 users), Standard $14/user/mo, Professional $23/user/mo, Enterprise $40/user/mo (incl. Zia AI), Ultimate $52/user/mo, billed annually.',
   rows: [
     { label: 'Published pricing (entry to top tier)', jwero: '₹18,000/month — every module', other: 'Free (3 users) to $52/user/month (Ultimate)' },
-    { label: 'General CRM maturity (pipelines, deals, reports)', jwero: '[VERIFY breadth vs a dedicated horizontal CRM]', other: 'Broad and mature — genuinely ahead here' },
+    { label: 'General CRM maturity (pipelines, deals, reports)', jwero: 'Narrower: built for jewellery, not a general sales CRM', other: 'Broad and mature — genuinely ahead here' },
     { label: 'Built-in AI assistant', jwero: 'Yes — AI workforce, 240+ jewellery-specific actions', other: 'Yes — Zia, from Enterprise tier ($40/user/mo)' },
     { label: 'Jewellery-native fields (scheme balance, purity, occasions)', jwero: 'Yes — native fields, scored into explainable intent and churn', other: 'No — would require custom-field workarounds' },
     { label: 'Live gold-rate catalogue pricing', jwero: 'Yes', other: 'No' },

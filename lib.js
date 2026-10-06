@@ -679,6 +679,8 @@ function verifyBadge(text) {
   return String(text)
     .replace(/\[VERIFY(?:\s*[—-]\s*([^\]]*))?\]/g, (m, rest) =>
       `<span class="verify-tag">Not stated publicly${rest ? ' · ' + rest.trim().replace(/^not found in public materials$/i, '') : ''}</span>`.replace(' · </span>', '</span>'))
+    .replace(/\s*\[VERIFY current\/other tiers\]/g, ', other tiers not confirmed')
+    .replace(/\[VERIFY[^\]]*\]/g, '<span class="verify-tag">Not confirmed</span>')
     .replace(/\[Being finalised — see \/pricing\]/g, '₹18,000/month, every module — <a href="/pricing">see pricing</a>');
 }
 
