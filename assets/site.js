@@ -2503,29 +2503,45 @@ document.addEventListener('click', function (e) {
   root.addEventListener('input', run); root.addEventListener('change', run); run();
 })();
 
-// Count your tools: per-group counts, "Tick all" per group, and open groups that have ticks.
+// Count your tools: quick start by business type, one yes per area, exact tools on request,
+// and the result sent on WhatsApp or taken to /start.
 (function () {
   Array.prototype.forEach.call(document.querySelectorAll('[data-stackm]'), function (root) {
     var groups = Array.prototype.slice.call(root.querySelectorAll('.stackm-grp')); if (!groups.length) return;
+    var chips = function () { return Array.prototype.slice.call(root.querySelectorAll('.stackm-chip')); };
+    var on = function (c) { return c.getAttribute('aria-pressed') === 'true'; };
+    var send = root.querySelector('[data-stackm-send]');
     function sync() {
       groups.forEach(function (gEl) {
-        var chips = gEl.querySelectorAll('.stackm-chip'), on = gEl.querySelectorAll('.stackm-chip[aria-pressed="true"]').length;
-        gEl.querySelector('[data-grp-n]').textContent = on;
-        gEl.classList.toggle('has-some', on > 0);
-        gEl.querySelector('[data-grp-all]').textContent = on === chips.length ? 'Clear' : 'Tick all';
+        var n = Array.prototype.filter.call(gEl.querySelectorAll('.stackm-chip'), on).length;
+        gEl.querySelector('[data-grp-n]').textContent = n;
+        gEl.classList.toggle('has-some', n > 0);
+        gEl.querySelector('[data-grp-all]').textContent = n ? '✓ Yes' : 'Yes, we use';
       });
+      if (send) {
+        var k = chips().filter(on).length, txt = function (sel) { var el = root.querySelector(sel); return el ? el.textContent.trim() : ''; };
+        send.setAttribute('data-wa-extra', k ? 'I counted ' + k + ' tools I pay for. Your estimate: ' + txt('[data-stackm-o="today"]') + ' a month today, ' + txt('[data-stackm-o="with"]') + ' with Jwero, saving ' + txt('[data-stackm-o="save"]') + ' a month. Please send me this plan.' : 'Please help me count the tools I pay for and what Jwero would save.');
+      }
     }
     root.addEventListener('click', function (e) {
-      var all = e.target.closest('[data-grp-all]');
+      var all = e.target.closest('[data-grp-all]'), quick = e.target.closest('[data-stackm-quick]'), detail = e.target.closest('[data-stackm-detail]');
       if (all) {
         e.preventDefault(); e.stopPropagation();
-        var gEl = all.closest('.stackm-grp'), chips = Array.prototype.slice.call(gEl.querySelectorAll('.stackm-chip'));
-        var full = chips.every(function (c) { return c.getAttribute('aria-pressed') === 'true'; });
-        chips.forEach(function (c) { if ((c.getAttribute('aria-pressed') === 'true') === full) c.click(); });
-        gEl.open = true;
+        var g = all.closest('.stackm-grp'), list = Array.prototype.slice.call(g.querySelectorAll('.stackm-chip'));
+        if (list.some(on)) list.filter(on).forEach(function (c) { c.click(); });
+        else { var want = (all.getAttribute('data-common') || '').split('|').filter(Boolean); list.filter(function (c) { return !want.length || want.indexOf(c.textContent.trim()) !== -1; }).forEach(function (c) { c.click(); }); }
+      } else if (quick) {
+        e.preventDefault(); e.stopPropagation();
+        var tools = quick.getAttribute('data-tools').split('|');
+        chips().forEach(function (c) { if (on(c) !== (tools.indexOf(c.textContent.trim()) !== -1)) c.click(); });
+        Array.prototype.forEach.call(root.querySelectorAll('[data-stackm-quick]'), function (b) { b.classList.toggle('is-on', b === quick); });
+      } else if (detail) {
+        e.preventDefault(); e.stopPropagation();
+        var open = root.classList.toggle('is-detail');
+        detail.textContent = open ? 'Hide exact tools ↑' : 'Choose exact tools ↓';
       }
-      setTimeout(sync, 30);
+      setTimeout(sync, 40);
     }, true);
-    setTimeout(function () { sync(); groups.forEach(function (gEl) { if (gEl.classList.contains('has-some')) gEl.open = true; }); }, 400);
+    setTimeout(sync, 400);
   });
 })();

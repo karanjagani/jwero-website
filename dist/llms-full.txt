@@ -136,34 +136,38 @@ The Autonomous Jewellery OS, run by AI
 
 ## 99 separate tools become one.
 
- Tap the ones you run today and watch what they cost you.
+ Pick your kind of business, or answer yes for each area you pay software for. See what it costs and what Jwero saves.
 
  0 → 1 Results ↓ 
- 
- Selling 0 of 18 Tick all 
+ Start from a business like yours
+ Single showroom Chain of stores Manufacturer Wholesaler Online brand 
+ or answer for each area below
+
+ Selling and chat tools? 0 of 18 Yes, we use 
  Business email Calendar DMs Document viewer Ecommerce website Facebook page inbox Forms Franchise management Google Shopping Marketplace seller panels Meetings Quotation maker Shareable live catalogues Shopify integration Video call app Website live chat WhatsApp API WooCommerce integration 
 
- ERP 0 of 14 Tick all 
+ Billing, stock and workshop (ERP)? 0 of 14 Yes, we use 
  Barcode & tagging Billing software ERP Estimate pad Gold rate updates Hallmark tracker Inventory intelligence Inventory software Karigar portal Old gold management POS counter Pricing engine Repairs management Vendor portal 
 
- Customers 0 of 14 Tick all 
+ Customer and scheme tools? 0 of 14 Yes, we use 
  Appointment diary CCTV tracking CRM Customer journeys Customer personalisation engine Customer segmentation Digital gold app Girvi register Gold scheme register Lead finder Loyalty cards Occasion diary RFM Walk-in register 
 
- Marketing 0 of 29 Tick all 
+ Marketing and ads tools? 0 of 29 Yes, we use 
  A/B testing Ads creator Asset library Broadcasts Campaigns ChatGPT Ads Comments management Coupons management Email marketing tool Google Ads Google Business reviews Google Tag Manager LinkedIn Marketing automation Meta Ads Pinterest Pixels Push notifications RCS Reels SMS Social media post creator Social media scheduler Stories Threads Visitor tracking Website heatmaps X YouTube 
 
- AI 0 of 9 Tick all 
+ AI and automation tools? 0 of 9 Yes, we use 
  AI agents AI content creation AI image generation AI inbound calling AI outbound calling campaigns Automation rules Autonomous customer follow-ups MCP tools Webhooks & APIs 
 
- Books 0 of 3 Tick all 
+ Accounting links? 0 of 3 Yes, we use 
  Payment reminders Tally integration Zoho integration 
 
- Team 0 of 8 Tick all 
+ Staff and payroll tools? 0 of 8 Yes, we use 
  Attendance register HR Incentive sheet LMS Payroll software Recruitment management Task management Team chat app 
 
- Decisions 0 of 4 Tick all 
+ Reports and MIS? 0 of 4 Yes, we use 
  Branch report calls Call tracking tool Google Sheets MIS reports 
 
+ Choose exact tools ↓ 
  Show all 99 
 
  Showrooms − + 
@@ -185,6 +189,8 @@ The Autonomous Jewellery OS, run by AI
 
  Opportunity, a month ₹0 
 
+ Send me this plan on WhatsApp 
+ Start for ₹3,600 
  Merge them into one 
  
  Select all 99 

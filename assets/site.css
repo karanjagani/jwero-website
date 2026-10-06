@@ -4116,3 +4116,21 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
   .stackm .stackm-grp-chips { display: grid; gap: 3px; }
   .stackm .stackm-chip { width: 100%; text-align: left; border-radius: 7px; line-height: 1.25; padding: 5px 6px 5px 20px; }
 }
+
+/* Count your tools: quick start, area rows, exact tools on request, result buttons. */
+.stackm-quick { margin: 0 0 12px; }
+.stackm-quick > p { margin: 0 0 8px; font-size: .8125rem; font-weight: 600; color: var(--ink); }
+.stackm-quick-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.stackm-quick-row button { padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--card); color: var(--ink); font: inherit; font-size: .8125rem; cursor: pointer; }
+.stackm-quick-row button:hover { border-color: var(--brand); }
+.stackm-quick-row button.is-on { background: var(--brand); border-color: var(--brand); color: #fff; }
+.stackm-quick-or { margin: 10px 0 0 !important; font-size: .75rem !important; font-weight: 400 !important; color: var(--ink-2) !important; }
+.stackm:not(.is-detail) .stackm-grp-chips { display: none; }
+.stackm:not(.is-detail) .stackm-grp-head { padding-bottom: 8px; }
+.stackm-grp.has-some .stackm-grp-all { background: var(--brand); border-color: var(--brand); color: #fff; }
+.stackm-detail { display: block; margin: 4px auto 0; padding: 6px 10px; border: 0; background: none; color: var(--brand); font: inherit; font-size: .8125rem; text-decoration: underline; cursor: pointer; }
+.stackm-send { display: block; width: 100%; margin-top: 12px; padding: 12px 16px; border-radius: 999px; background: #fff; color: var(--brand); font-weight: 600; text-align: center; text-decoration: none; }
+.stackm-send:hover { background: #f1f2f7; }
+.stackm-start { display: block; width: 100%; margin-top: 8px; padding: 11px 16px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .6); color: #fff; font-weight: 600; text-align: center; text-decoration: none; }
+.stackm .stackm-panel .stackm-go.stackm-go-link, .stackm-go.stackm-go-link { width: auto; margin: 10px auto 0; padding: 4px 8px; background: none; border: 0; color: rgba(255, 255, 255, .85); font-size: .8125rem; font-weight: 500; text-decoration: underline; display: block; }
+@media (max-width: 640px) { .stackm-quick-row button { padding: 7px 11px; font-size: .75rem; } }

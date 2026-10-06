@@ -33,7 +33,7 @@ ${require('./jbaas').section()}
 ${require('./positioning').quotes(3)}
 
 ${L.section(
-  `<span id="count-yours"></span>${L.sectionHead('COUNT YOUR TOOLS', `${L.STACK_N} separate tools become one.`, 'Tap the ones you run today and watch what they cost you.')}
+  `<span id="count-yours"></span>${L.sectionHead('COUNT YOUR TOOLS', `${L.STACK_N} separate tools become one.`, 'Pick your kind of business, or answer yes for each area you pay software for. See what it costs and what Jwero saves.')}
   ${L.stackMerge()}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too: the people it takes, and what Jwero would cost →</a></p>`
 , { tone: 'tint' })}
 

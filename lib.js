@@ -1187,6 +1187,15 @@ const STACK_COST = {
   "Zoho integration": [1000, 1.5, "Partner connectors of about ₹10,000 to ₹50,000 one time", "", "low"],
 };
 const STACK_PLAN = 18000, STACK_LOC = 2999, STACK_TEAM = 8, STACK_HOUR_SHARE = 0.5, STACK_MATCH = 0.5, STACK_WEEK = 45;
+const STACK_QUICK = [
+  ['single', 'Single showroom', ['WhatsApp API', 'Billing software', 'POS counter', 'Barcode & tagging', 'Gold rate updates', 'Inventory software', 'CRM', 'Gold scheme register', 'Tally integration', 'Social media scheduler', 'Google Business reviews', 'Attendance register']],
+  ['chain', 'Chain of stores', ['ERP', 'Inventory software', 'Vendor portal', 'Branch report calls', 'MIS reports', 'Google Sheets', 'HR', 'Payroll software', 'Incentive sheet', 'Task management', 'CRM', 'WhatsApp API', 'Tally integration', 'Gold rate updates', 'Barcode & tagging']],
+  ['maker', 'Manufacturer', ['ERP', 'Karigar portal', 'Hallmark tracker', 'Inventory software', 'Vendor portal', 'Gold rate updates', 'Estimate pad', 'Quotation maker', 'Tally integration', 'Google Sheets', 'Attendance register', 'Payroll software', 'WhatsApp API']],
+  ['b2b', 'Wholesaler', ['Shareable live catalogues', 'Quotation maker', 'WhatsApp API', 'ERP', 'Inventory software', 'Vendor portal', 'Gold rate updates', 'Pricing engine', 'Payment reminders', 'Tally integration', 'Google Sheets', 'CRM']],
+  ['d2c', 'Online brand', ['Ecommerce website', 'Shopify integration', 'Marketplace seller panels', 'Google Shopping', 'Meta Ads', 'Google Ads', 'Social media scheduler', 'Email marketing tool', 'WhatsApp API', 'DMs', 'CRM', 'Inventory software', 'Website heatmaps', 'Coupons management']],
+];
+const STACK_COMMON = [...new Set(STACK_QUICK.flatMap((q) => q[2]))];
+const GROUP_Q = { Selling: 'Selling and chat tools?', ERP: 'Billing, stock and workshop (ERP)?', Customers: 'Customer and scheme tools?', Marketing: 'Marketing and ads tools?', AI: 'AI and automation tools?', Books: 'Accounting links?', Team: 'Staff and payroll tools?', Decisions: 'Reports and MIS?' };
 function stackMerge(only) {
   const pool = (t) => !only || only.includes(t.replace(/&amp;/g, '&'));
   const N = only ? STACK.flatMap(([, , items]) => items).filter(pool).length : STACK_N;
@@ -1195,6 +1204,7 @@ function stackMerge(only) {
 <div class="stackm" data-stackm data-total="${N}">
   <div class="stackm-main">
     <a class="stackm-mini" href="#stackm-out" data-stackm-mini hidden><b data-mini-n>0</b><em>→ 1</em><span data-mini-save></span><i>Results ↓</i></a>
+    ${only ? '' : `<div class="stackm-quick"><p>Start from a business like yours</p><div class="stackm-quick-row">${STACK_QUICK.map(([k, l, tools]) => `<button type="button" data-stackm-quick="${k}" data-tools="${tools.join('|').replace(/&/g, '&amp;')}">${l}</button>`).join('')}</div><p class="stackm-quick-or">or answer for each area below</p></div>`}
     <div class="stackm-cloud" data-stackm-cloud>
       ${(() => {
         // Counter, Stock and Workshop show as one ERP group; each chip keeps its own group for the maths.
@@ -1205,8 +1215,9 @@ function stackMerge(only) {
           else out.push([label, ic, tools, g]);
         });
         return out.map(([l, ic, tools, g]) => [l, ic, tools.sort((x, y) => x[0].localeCompare(y[0], 'en', { sensitivity: 'base' })), g]);
-      })().filter(([, , items]) => items.length).map(([label, ic, items, g], k) => `<div class="stackm-grp" data-stackm-grp="${g}"><div class="stackm-grp-head"><span class="stackm-grp-name">${icon(ic)}${label}</span><span class="stackm-grp-n"><b data-grp-n>0</b> of ${items.length}</span><button type="button" class="stackm-grp-all" data-grp-all>Tick all</button></div><div class="stackm-grp-chips">${items.map(([t, g]) => `<button type="button" class="stackm-chip" data-g="${g}" data-c="${(STACK_COST[t] || [0, 1])[0]}" data-h="${(STACK_COST[t] || [0, 1])[1]}" data-grp="${(STACK_COST[t] || [])[3] || ''}" data-s="${(STACK_COST[t] || [])[5] || ''}" aria-pressed="false">${t}</button>`).join('')}</div></div>`).join('')}
+      })().filter(([, , items]) => items.length).map(([label, ic, items, g], k) => `<div class="stackm-grp" data-stackm-grp="${g}"><div class="stackm-grp-head"><span class="stackm-grp-name">${icon(ic)}${GROUP_Q[label] || label}</span><span class="stackm-grp-n"><b data-grp-n>0</b> of ${items.length}</span><button type="button" class="stackm-grp-all" data-grp-all data-common="${items.map(([t]) => t).filter((t) => STACK_COMMON.includes(t.replace(/&amp;/g, '&'))).join('|')}">Yes, we use</button></div><div class="stackm-grp-chips">${items.map(([t, g]) => `<button type="button" class="stackm-chip" data-g="${g}" data-c="${(STACK_COST[t] || [0, 1])[0]}" data-h="${(STACK_COST[t] || [0, 1])[1]}" data-grp="${(STACK_COST[t] || [])[3] || ''}" data-s="${(STACK_COST[t] || [])[5] || ''}" aria-pressed="false">${t}</button>`).join('')}</div></div>`).join('')}
     </div>
+    <button type="button" class="stackm-detail" data-stackm-detail>Choose exact tools ↓</button>
     <button type="button" class="stackm-more" data-stackm-more>Show all ${N}</button>
   </div>
   <aside class="stackm-panel" id="stackm-out" data-stackm-panel data-stackm-out data-plan="${STACK_PLAN}" data-locfee="${STACK_LOC}" data-base="${STACK_TEAM}" data-share="${STACK_HOUR_SHARE}" data-match="${STACK_MATCH}" data-week="${STACK_WEEK}">
@@ -1226,7 +1237,9 @@ function stackMerge(only) {
       <p class="stackm-m"><span>People’s time freed${tip('people')}</span><b data-stackm-o="people">0</b></p>
       <p class="stackm-m"><span>Opportunity, a month${tip('opp')}</span><b data-stackm-opp>₹0</b></p>
     </div>
-    <button type="button" class="stackm-go" data-stackm-go>Merge them into one</button>
+    <a class="stackm-send" href="#" data-wa="count-tools" data-stackm-send>Send me this plan on WhatsApp</a>
+    <a class="stackm-start" href="/start?from=count-tools">Start for ₹3,600</a>
+    <button type="button" class="stackm-go stackm-go-link" data-stackm-go>Merge them into one</button>
     <div class="stackm-actions">
       <button type="button" data-stackm-all>Select all ${N}</button>
       <button type="button" data-stackm-clear>Clear</button>
