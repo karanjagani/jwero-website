@@ -4045,3 +4045,6 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
   .nav-tool svg { width: 16px; height: 16px; }
   .nav-tools .nav-tool.theme-toggle, .nav-tools .nav-tool.search-open { display: inline-flex; }
 }
+
+/* Question chips after the logo strip: their own row, not pulled up over the logos. */
+.pz-logos + .asking { margin-top: 18px; padding-bottom: 18px; }
