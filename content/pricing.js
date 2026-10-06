@@ -98,6 +98,7 @@ ${L.hero({
   note: `Prices exclude GST. First month ${inr(PLAN.firstMonth)}, then ${inr(PLAN.monthly)} a month.`,
 })}
 
+${L.section(`${L.sectionHead('THREE WAYS TO BUY', 'Subscription, managed, or enterprise.', 'The price below is the subscription for jewellers who run it themselves. Managed customers pay no subscription; every tool is included.')}${require('./jbaas').TIERS()}`, { tone: 'tint' })}
 ${L.section(
   `<div class="plans" data-plans>
     <div class="plan-grid">

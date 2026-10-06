@@ -70,6 +70,7 @@
     'tier-assist': 'Hi Jwero, a question about Jwero One pricing.',
     company: 'Hi Jwero, I’d like to talk to your team directly.',
     contact: 'Hi Jwero, reaching out via the contact page.',
+    handle: 'Hi Jwero, I would like Jwero to run parts of my jewellery business as a managed service. Here is where I am:',
     enterprise: 'Hi Jwero, I’m evaluating for a multi-store/enterprise deployment.',
     bookdemo: 'Hi Jwero, I would like to see a quick demo.',
     products: 'Hi Jwero, help me figure out which products matter for my business.',

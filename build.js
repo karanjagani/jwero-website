@@ -41,7 +41,7 @@ const CONTENT_FILES = [
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
   'roles-leadership', 'roles-frontline', 'roles-growth', 'roles-manufacturing',
-  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal',
+  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal', 'jbaas',
 ];
 const pages = [];
 for (const f of CONTENT_FILES) {
@@ -205,6 +205,7 @@ const NAV = [
     ],
     links: [['/book-demo', 'Book a demo'], ['/contact', 'Contact']],
   },
+  { label: 'Managed JBaaS', href: '/jbaas', match: ['jbaas'] },
   { label: 'Pricing', href: '/pricing', match: ['pricing'] },
 ];
 

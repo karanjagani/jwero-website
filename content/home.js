@@ -57,6 +57,8 @@ ${L.section(
   </div>`
 )}
 
+${require('./jbaas').section()}
+
 ${L.governanceStrip()}
 
 ${L.section(

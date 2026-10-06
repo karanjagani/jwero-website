@@ -243,3 +243,4 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Data Policy: Ownership, Processing, Retention and Export: https://jwero.ai/legal/data-policy
 - Sub-processors: Who Helps Jwero Process Your Data: https://jwero.ai/legal/sub-processors
 - DPDP Statement: Jwero and India’s Data Protection Act: https://jwero.ai/legal/dpdp
+- Jewellery Business as a Service: Managed by Jwero: https://jwero.ai/jbaas
