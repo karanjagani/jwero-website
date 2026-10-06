@@ -800,6 +800,34 @@ function withBlogTop(body, page) {
   return body.slice(0, pb) + box + withIds + body.slice(pe);
 }
 
+// Articles link to the pages they mention and to related articles; product,
+// solution, tool, guide and platform pages list the articles that link to them.
+const IL = require('./content/interlink');
+const LEGACY = require('./content/legacy-posts.json').posts;
+const LINKED = (() => { const m = {}; for (const p of LEGACY) m[p.slug] = IL.link(p.body, '/' + p.slug); return m; })();
+const BACK = (() => { const r = {}; for (const p of LEGACY) for (const u of LINKED[p.slug].targets) (r[u] = r[u] || []).push(p); return r; })();
+function withInterlinks(body, page) {
+  const slug = page.slug || '';
+  const isPost = page.legacy || /^blog\/./.test(slug);
+  if (isPost) {
+    const pb = body.indexOf('<div class="post-body">'); if (pb < 0) return body;
+    const pe = body.indexOf('</section>', pb);
+    const linked = page.legacy ? LINKED[slug] : IL.link(body.slice(pb, pe), '/' + slug);
+    const out = page.legacy ? body : body.slice(0, pb) + linked.html + body.slice(pe);
+    // related articles: same topic first, then articles that share linked pages
+    const me = LEGACY.find((p) => p.slug === slug);
+    const tg = new Set(linked.targets);
+    const scored = LEGACY.filter((p) => p.slug !== slug).map((p) => ({ p, s: (me && p.topic === me.topic ? 3 : 0) + LINKED[p.slug].targets.filter((u) => tg.has(u)).length })).sort((a, b) => b.s - a.s).slice(0, 4).map((x) => x.p);
+    const rel = L3.section(`${L3.sectionHead('KEEP READING', 'Related articles.', '')}<div class="erp-map">${scored.map((p) => `<a href="/${p.slug}"><b>${p.title}</b><span>${p.topic}</span></a>`).join('')}</div>`, { tone: 'tint' });
+    const at = out.lastIndexOf('<section'); return at > 0 ? out.slice(0, at) + rel + out.slice(at) : out + rel;
+  }
+  const list = BACK['/' + slug];
+  if (!list || !/^(products|solutions|platform|tools|guides)\/|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^jewellery-business-as-a-service$/.test(slug)) return body;
+  const pick = list.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
+  const blk = L3.section(`${L3.sectionHead('FROM THE BLOG', 'Read more on this.', '')}<div class="erp-map">${pick.map((p) => `<a href="/${p.slug}"><b>${p.title}</b><span>${p.topic}</span></a>`).join('')}</div>`);
+  const at = body.lastIndexOf('<section'); return at > 0 ? body.slice(0, at) + blk + body.slice(at) : body + blk;
+}
+
 function withRelated(body, page) {
   const href = '/' + page.slug;
   const links = [];
@@ -995,7 +1023,7 @@ ${launchHTML()}
 ${navHTML(page)}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-${withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withBlogTop(withPlatformLinks(withUseCases(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
+${withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withInterlinks(withBlogTop(withPlatformLinks(withUseCases(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
 </main>
 ${searchDialog()}
 ${connectDialog()}
