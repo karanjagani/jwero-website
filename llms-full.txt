@@ -306,6 +306,68 @@ The Autonomous Jewellery OS, run by AI
 
  Tools are half of it. Count your team too: the people it takes, and what Jwero would cost → 
 
+ FROM FIFTY LOGINS TO ONE RECORD
+
+## What changes across the whole jewellery business.
+
+ Not only how you sell. The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.
+
+ Today With Jwero 
+
+ CUSTOMERS See the CRM → 
+
+ Today An enquiry at 11pm waits until morning, and a salesperson who leaves takes the relationships with them.
+
+ With Jwero Every enquiry gets a priced reply within minutes, and every customer lives on the business’s own record.
+
+ SHOWROOM See the floor → 
+
+ Today Nobody knows who walked in, what they tried, or why they left without buying.
+
+ With Jwero Walk-ins checked in, a live view of the floor, and a follow-up drafted for every walkout.
+
+ BILLING See the counter → 
+
+ Today Rate typed by hand, old gold worked out on a calculator, the day closed from memory.
+
+ With Jwero Scan to bill at the live rate, with old-gold exchange, returns, GST and a cash day-close on one screen.
+
+ STOCK See inventory → 
+
+ Today Capital frozen in designs nobody is buying, and a stock value that is a guess.
+
+ With Jwero Every piece valued at today’s rate, ageing flagged, and idle pieces matched to the customers who would buy them.
+
+ PURCHASE See purchase → 
+
+ Today Orders on phone calls, vendor balances in a notebook, bills matched at month end.
+
+ With Jwero Purchase order, goods received, bill and credit note in one chain, and vendors check their own status.
+
+ WORKSHOP See manufacturing → 
+
+ Today Gold goes out to the karigar and the shortfall shows up at stocktake.
+
+ With Jwero Metal issued and returned in fine grams, with wastage checked against the norm at each stage.
+
+ ACCOUNTS See the books → 
+
+ Today The accountant re-enters every bill, and receivables are chased when someone remembers.
+
+ With Jwero Every sale, purchase and payment posts itself, GST-ready, with Tally and Zoho Books bridges.
+
+ TEAM See HR → 
+
+ Today Attendance in a register, incentives argued at month end, training by standing next to someone.
+
+ With Jwero Attendance, payroll, incentives and training on the same record as the sales they earned.
+
+ DECISIONS See reports → 
+
+ Today You learn how the month went after it ends, from a report somebody built by hand.
+
+ With Jwero Today’s sales, stock, cash and pending work on one dashboard. Ask a question, get a report.
+
 ## One record. Every department. Your approval.
  Play a week, run a full day, or break it into the tools it lives in today. See the full platform → 
 

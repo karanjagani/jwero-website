@@ -38,6 +38,11 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
+  `${L.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole jewellery business.', 'Not only how you sell. The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}
+  ${L.compareRows(L.DEPARTMENTS)}`
+)}
+
+${L.section(
   `<span id="one-record"></span><div class="gem-head"><h2>One record. Every department. Your approval.</h2><p>Play a week, run a full day, or break it into the tools it lives in today. <a href="/platform">See the full platform →</a></p></div>
   ${L.gemStage2()}`
 , { tone: 'tint' })}
