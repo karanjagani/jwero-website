@@ -882,11 +882,30 @@ function withIcpHome(html, slug) {
   // Count your tools and the department comparison, before the price
   const pre = ICP_PRESET[cfg[0]];
   const rows = pre ? pre[1].map((k) => L4.DEPARTMENTS.find((d) => d.lever === k)).filter(Boolean) : L4.DEPARTMENTS;
-  const hooks = L4.section(`<span id="count-yours"></span>${L4.sectionHead('COUNT YOUR TOOLS', cfg[2], pre ? `We have ticked what ${pre[2]} usually runs. Tap to change it to match yours.` : 'Tap the ones you run today and watch what they cost you.')}${L4.stackMerge().replace('<div class="stackm" data-stackm', `<div class="stackm" data-stackm-preset="${pre ? pre[0].join('|').replace(/&/g, '&amp;') : ''}" data-stackm`)}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too →</a></p>`, { tone: 'tint' })
+  const hooks = L4.section(`<span id="count-yours"></span>${L4.sectionHead('COUNT YOUR TOOLS', cfg[2], pre ? `We have ticked what ${pre[2]} usually runs. Tap to change it to match yours, or <a href="#" data-stackm-clear-link>clear and pick your own</a>.` : 'Tap the ones you run today and watch what they cost you.')}${L4.stackMerge().replace('<div class="stackm" data-stackm', `<div class="stackm" data-stackm-preset="${pre ? pre[0].join('|').replace(/&/g, '&amp;') : ''}" data-stackm`)}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too →</a></p>`, { tone: 'tint' })
     + L4.section(`${L4.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole business.', 'The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}${L4.compareRows(rows)}`);
   const security = L4.section(`<div class="gem-head"><h2>Security and privacy delivered, just as you want.</h2></div>${L4.trustStrip()}`, { tone: 'tint' });
   const ti = html.indexOf('id="tiers"');
   if (ti > 0) { const ts = html.lastIndexOf('<section', ti); const te = html.indexOf('</section>', ti) + 10; html = html.slice(0, ts) + hooks + html.slice(ts, te) + security + html.slice(te); }
+  // trim to about a dozen sections, in the home page's order
+  const secs = () => { const out = []; const re = /<section[\s>]/g; let m; while ((m = re.exec(html))) { const e = html.indexOf('</section>', m.index) + 10; out.push([m.index, e, html.slice(m.index, e)]); } return out; };
+  const drop = (test) => { for (const [a, b, t] of secs().reverse()) if (test(t)) html = html.slice(0, a) + html.slice(b); };
+  drop((t) => /on one bangle\.<\/h2>|you’d switch on first\.|What this could be worth|kinds of customer signal|Fifteen named jewellers|Three steps\. No mystery\./.test(t));
+  html = html.replace(/<span id="one-record"><\/span>/, '').replace(/<a class="hero-piece-link"[^>]*>[\s\S]*?<\/a>/, '');
+  // security as one line
+  html = html.replace(/<section class="section section-tint">\s*<div class="container">\s*<div class="gem-head"><h2>Security and privacy delivered, just as you want\.<\/h2><\/div>[\s\S]*?<\/section>/, L4.section(`<p class="cta-note" style="text-align:center">Security and privacy delivered, just as you want. <a href="/trust/security">See how your data is protected →</a></p>`));
+  // one question block
+  const fs2 = secs().filter(([, , t]) => /class="faq"/.test(t));
+  if (fs2.length > 1 && fs2.slice(1).every(([, , t]) => /class="section tool-qa"/.test(t))) {
+    const extra = fs2.slice(1).map(([, , t]) => (t.match(/<details[\s\S]*?<\/details>/g) || []).join('')).join('');
+    for (const [a, b] of fs2.slice(1).reverse()) html = html.slice(0, a) + html.slice(b);
+    const f = html.indexOf('<div class="faq">'); const fe = html.lastIndexOf('</details>', html.indexOf('</section>', f)) + 10;
+    html = html.slice(0, fe) + extra + html.slice(fe);
+  }
+  // three matched quotes in place of the single one
+  const QI = { single: [0, 1, 2], chain: [4, 1, 0], franchise: [4, 0, 1], maker: [1, 0, 6], b2b: [1, 5, 0], trader: [1, 5, 2], d2c: [3, 2, 7] }[cfg[0]] || [0, 1, 2];
+  const qs = secs().find(([, , t]) => /<figure class="pz-quote jb-solo">/.test(t) && !/<h2/.test(t));
+  if (qs) html = html.slice(0, qs[0]) + require('./content/positioning').quotesOf(QI) + html.slice(qs[1]);
   return html;
 }
 

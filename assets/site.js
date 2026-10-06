@@ -2481,3 +2481,8 @@
   var chips = root.querySelectorAll('.stackm-chip');
   Array.prototype.forEach.call(chips, function (c) { if (want.indexOf(c.textContent.trim()) !== -1 && c.getAttribute('aria-pressed') !== 'true') c.click(); });
 })();
+
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('[data-stackm-clear-link]'); if (!a) return; e.preventDefault();
+  var b = document.querySelector('[data-stackm-clear]'); if (b) b.click();
+});
