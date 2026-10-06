@@ -274,7 +274,6 @@ ${L.section(
   <div class="need-index">${NEEDS.map(([group, items]) => `<div class="need-group"><h3>${group}</h3><ul>${items.map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join('')}</ul></div>`).join('')}</div>`
 , { tone: 'tint' })}
 
-${L.section(PRICE)}
 
 ${L.section(`${L.sectionHead('QUESTIONS', 'What jewellers ask first.', '')}${L.faqBlock([
   { q: 'Which jewellery software is used in India?', a: 'Most jewellers run a billing or ERP package, Tally for accounts, WhatsApp on a phone and Excel for everything in between. Jwero replaces that set with one system on one record. <a href="/compare">See how it compares</a>.' },

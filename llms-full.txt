@@ -821,7 +821,7 @@ CUSTOMER MEMORY
 
 ## Money & plans
 
- Gold savings balance, instalments paid and missed, maturity dates, digital gold holdings, lifetime value.
+ Gold savings balance, instalments paid and missed, maturity dates, lifetime value.
 
 ## Occasions
 
@@ -1736,6 +1736,8 @@ PUBLIC ROADMAP
 
  In active rollout
 
+ Offline counter billing switched on per business: sales are kept on the device and sync when the connection returns
+
  Counter POS: returns, old-gold exchange & cash day-close registers, shifts and a reconciled till close, shipped 
 
  Attribution dashboard the owner’s weekly growth report, productised
@@ -1769,8 +1771,6 @@ PUBLIC ROADMAP
  Operations & platform
 
  CAD file storage & design approval stage not built
-
- Offline mode the counter needs the internet today
 
  Vernacular product interface the voice assistant speaks 14 languages; product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets)
 
@@ -19657,15 +19657,6 @@ JEWELLERY SOFTWARE IN INDIA
  Staff training 
  MIS reports and dashboards 
  Cloud and mobile access 
-
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
 
  QUESTIONS
 

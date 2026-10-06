@@ -121,7 +121,7 @@ ${L.hero({
 ${L.section(
   `${L.sectionHead('WHAT THE RECORD KNOWS', 'Not notes. Fields.', 'Her gold balance, her daughter’s wedding month, her missed instalment — each one a structured column, on every record.')}
   ${L.cards([
-    { title: 'Money & plans', text: 'Gold savings balance, instalments paid and missed, maturity dates, digital gold holdings, lifetime value.' },
+    { title: 'Money & plans', text: 'Gold savings balance, instalments paid and missed, maturity dates, lifetime value.' },
     { title: 'Occasions', text: 'Birthdays, anniversaries, wedding months and upcoming family occasions — the reasons jewellery gets bought.' },
     { title: 'Taste', text: 'Metals, purity, styles, price bands, brands browsed and bought — learned from real behaviour.' },
     { title: 'Reachability', text: 'Preferred channel, consent per channel, best send window, message fatigue — reach people the way they want.' },
@@ -559,6 +559,7 @@ ${L.section(
       <h3><span class="road-dot"></span>Rolling out</h3>
       <div class="road-group">
         <p class="road-group-label">In active rollout</p>
+        <div class="road-item"><strong>Offline counter billing</strong>switched on per business: sales are kept on the device and sync when the connection returns</div>
         <div class="road-item"><strong>Counter POS: returns, old-gold exchange & cash day-close</strong>registers, shifts and a reconciled till close — <a href="/products/pos">shipped</a></div>
         <div class="road-item"><strong>Attribution dashboard</strong>the owner’s weekly growth report, productised</div>
         <div class="road-item"><strong>Direct ad-platform publishing</strong>one-click publish from Ads Manager, not uniform across every flow yet</div>
@@ -584,7 +585,7 @@ ${L.section(
       <div class="road-group">
         <p class="road-group-label">Operations & platform</p>
         <div class="road-item"><strong>CAD file storage & design approval stage</strong>not built</div>
-        <div class="road-item"><strong>Offline mode</strong>the counter needs the internet today</div>
+        
         <div class="road-item"><strong>Vernacular product interface</strong>the voice assistant speaks 14 languages; product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets)</div>
         <div class="road-item"><strong>Predictive ML forecasting</strong>today’s inventory intelligence is ageing/valuation-based, not predictive</div>
       </div>

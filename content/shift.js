@@ -46,7 +46,7 @@ const SHIFTS = {
     today: 'Tally for books, Shopify for the site, a WhatsApp tool, a catalogue app — and someone copying between them.',
     gone: 'Double entry, mismatched stock and the month-end hunt for which number is right.',
     now: 'Tally, Zoho Books, Shopify, WooCommerce, Unicommerce, Razorpay and Meta connect to the same record; products, orders and books connect to one record.',
-    tempo: ['Copy-paste at month end', 'Two-way sync'],
+    tempo: ['Copy-paste at month end', 'Connected'],
   },
   'platform/integrations/tally': {
     title: 'From re-keying to a bridge.',
