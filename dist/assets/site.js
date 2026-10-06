@@ -2199,3 +2199,15 @@ panel.addEventListener('pointermove', function (e) { if (e.pointerType !== 'mous
 panel.addEventListener('pointerleave', function () { dots.classList.remove('is-on'); });
 panel.addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse') return; at(e.clientX, e.clientY); dots.classList.remove('is-ripple'); void dots.offsetWidth; dots.classList.add('is-ripple'); clearTimeout(off); off = setTimeout(function () { dots.classList.remove('is-ripple'); }, 950); });
 })();
+(function () {
+var mini = document.querySelector('[data-stackm-mini]'); if (!mini) return;
+var root = mini.closest('[data-stackm]'), n = mini.querySelector('[data-mini-n]'), sv = mini.querySelector('[data-mini-save]');
+function sync() {
+var k = root.querySelectorAll('.stackm-chip[aria-pressed="true"], .stackm-chip.is-on').length;
+var save = root.querySelector('[data-stackm-o="save"]');
+mini.hidden = !k; n.textContent = k;
+sv.textContent = save && save.textContent && save.textContent !== '\u20b90' ? 'saves ' + save.textContent + '/month' : '';
+}
+root.addEventListener('click', function () { setTimeout(sync, 60); });
+sync();
+})();

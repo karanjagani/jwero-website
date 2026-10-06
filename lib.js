@@ -1192,12 +1192,13 @@ function stackMerge() {
   return `
 <div class="stackm" data-stackm data-total="${STACK_N}">
   <div class="stackm-main">
+    <a class="stackm-mini" href="#stackm-out" data-stackm-mini hidden><b data-mini-n>0</b><em>→ 1</em><span data-mini-save></span><i>Results ↓</i></a>
     <div class="stackm-cloud" data-stackm-cloud>
       ${STACK.flatMap(([, , items], g) => items.map((t) => [t, g])).sort((x, y) => x[0].localeCompare(y[0], 'en', { sensitivity: 'base' })).map(([t, g]) => `<button type="button" class="stackm-chip" data-g="${g}" data-c="${(STACK_COST[t] || [0, 1])[0]}" data-h="${(STACK_COST[t] || [0, 1])[1]}" data-grp="${(STACK_COST[t] || [])[3] || ''}" data-s="${(STACK_COST[t] || [])[5] || ''}" aria-pressed="false">${t}</button>`).join('')}
     </div>
     <button type="button" class="stackm-more" data-stackm-more>Show all ${STACK_N}</button>
   </div>
-  <aside class="stackm-panel" data-stackm-panel data-stackm-out data-plan="${STACK_PLAN}" data-locfee="${STACK_LOC}" data-base="${STACK_TEAM}" data-share="${STACK_HOUR_SHARE}" data-match="${STACK_MATCH}" data-week="${STACK_WEEK}">
+  <aside class="stackm-panel" id="stackm-out" data-stackm-panel data-stackm-out data-plan="${STACK_PLAN}" data-locfee="${STACK_LOC}" data-base="${STACK_TEAM}" data-share="${STACK_HOUR_SHARE}" data-match="${STACK_MATCH}" data-week="${STACK_WEEK}">
     <div class="stackm-fx" aria-hidden="true"><i></i></div>
     <div class="stackm-size">
       <label>Showrooms<span><button type="button" data-stackm-step="loc" data-d="-1" aria-label="Fewer showrooms">−</button><input type="number" inputmode="numeric" data-stackm-in="loc" value="1" min="1" max="50" aria-label="Number of showrooms"><button type="button" data-stackm-step="loc" data-d="1" aria-label="More showrooms">+</button></span></label>

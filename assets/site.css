@@ -4018,3 +4018,17 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
   .stackm .stackm-panel .stackm-money { grid-template-columns: repeat(3, 1fr); }
   .stackm .stackm-panel .stackm-m-save, .stackm .stackm-panel .stackm-m:last-child { grid-column: auto; }
 }
+
+/* Count your tools: no Details toggle on tablet and phone; the card is always open. */
+@media (max-width: 1000px) {
+  .stackm .stackm-panel .stackm-actions .stackm-more-btn { display: none; }
+  /* While picking tools, a slim summary stays pinned under the header. */
+  .stackm-mini:not([hidden]) { position: sticky; top: 74px; z-index: 4; display: flex; align-items: center; gap: 8px; margin: 0 0 10px; padding: 10px 14px; border-radius: 12px; background: var(--panel); color: #fff; font-size: .875rem; font-weight: 600; text-decoration: none; box-shadow: 0 6px 18px rgba(0, 18, 185, .25); }
+  .stackm-mini b { color: var(--amber); font-size: 1.125rem; }
+  .stackm-mini { white-space: nowrap; }
+  .stackm-mini em { font-style: normal; }
+  .stackm-mini span { min-width: 0; overflow: hidden; text-overflow: ellipsis; color: rgba(255, 255, 255, .85); font-weight: 500; }
+  .stackm-mini i { margin-left: auto; font-style: normal; font-size: .75rem; text-decoration: underline; white-space: nowrap; }
+  .stackm-panel { scroll-margin-top: 80px; }
+}
+@media (min-width: 1001px) { .stackm-mini { display: none !important; } }
