@@ -14,18 +14,16 @@ const TIERS = () => `
     <p class="jb-k">01 · Subscription</p>
     <h3>You run it</h3>
     <p class="jb-price">₹18,000<span> a month</span></p>
-    <p class="jb-note">First month ₹3,600. Billed monthly. Extra location ₹2,999.</p>
+    <p class="jb-note">First month ₹3,600. Billed monthly.</p>
     <ul><li>Every module of the platform</li><li>AI agents that wait for your approval</li><li>Your team does the work</li><li>Messages, AI and calls on a prepaid wallet</li></ul>
-    <a class="btn btn-ghost" href="${L.TRIAL_URL}pricing-tiers" rel="noopener" data-trial>Start for ₹3,600</a>
+    <div class="jb-cta"><a class="btn btn-ghost jb-btn2" href="${L.TRIAL_URL}pricing-tiers" rel="noopener" data-trial><span>Start for ₹3,600</span><small>Join the waitlist</small></a><a class="jb-demo" href="/book-demo">View demo</a></div>
   </article>
   <article class="jb-tier is-main">
     <p class="jb-k">02 · Managed (JBaaS)</p>
     <h3>Jwero runs it</h3>
-    <p class="jb-price">Priced on the work</p>
     <p class="jb-note">No subscription. Every tool included. About half of what the same work costs you today.</p>
     <ul><li>Jwero specialists and AI do the work</li><li>Start with one function, add more any time</li><li>No team to hire, no tools to buy</li><li>One partner, one account of what was done</li></ul>
-    <a class="btn btn-primary" href="#" data-wa="handle">Let Jwero handle it</a>
-    <a class="jb-link" href="/count-your-team">Count your team and see your price →</a>
+    <div class="jb-cta"><a class="btn btn-primary" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="jb-demo" href="/book-demo">View demo</a></div>
   </article>
   <article class="jb-tier">
     <p class="jb-k">03 · Enterprise</p>
@@ -38,7 +36,7 @@ const TIERS = () => `
 </div>
 <p class="jb-promise">A real person replies on WhatsApp within minutes · Onboarding in a day · Refer a jeweller, save 10%</p>`;
 
-const section = () => L.section(`<span id="jbaas"></span>${L.sectionHead('JEWELLERY BUSINESS AS A SERVICE', 'Use the platform. Or let Jwero run it for you.', 'The same platform, three ways to buy it. Run it with your own team, or hand the work to Jwero’s specialists and AI with every tool included.')}${TIERS()}<p class="jb-more"><a href="/jewellery-business-as-a-service">See how Jewellery Business as a Service works →</a></p>`, { tone: 'tint' });
+const section = () => L.section(`<span id="jbaas"></span>${L.sectionHead('JEWELLERY BUSINESS AS A SERVICE', 'Use the platform.<br>Or let Jwero run it for you.', 'The same platform, three ways to buy it. Run it with your own team, or hand the work to Jwero’s specialists and AI with every tool included.')}${TIERS()}<p class="jb-more"><a href="/jewellery-business-as-a-service">See how Jewellery Business as a Service works →</a></p>`, { tone: 'tint' });
 
 const WHAT = [
   ['Get more customers', 'Ads, search, social media, content and creatives.'],

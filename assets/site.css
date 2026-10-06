@@ -3948,3 +3948,8 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 @media (max-width: 760px) { .post-top { grid-template-columns: minmax(0, 1fr); } }
 
 .gem2-centre { line-height: 1.35; text-align: center; }
+
+.jb-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+.jb-btn2 { display: inline-grid; justify-items: center; gap: 2px; line-height: 1.1; padding-block: 9px; }
+.jb-btn2 small { font-size: .6875rem; font-weight: 500; color: var(--ink-2); letter-spacing: .01em; }
+.jb-demo { font-size: .9375rem; font-weight: 600; color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
