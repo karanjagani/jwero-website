@@ -38,44 +38,9 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole jewellery business.', 'Not only how you sell. The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}
-  ${L.compareRows(L.DEPARTMENTS)}`
-)}
-
-${L.section(
   `<span id="one-record"></span><div class="gem-head"><h2>One record. Every department. Your approval.</h2><p>Play a week, run a full day, or break it into the tools it lives in today. <a href="/platform">See the full platform →</a></p></div>
   ${L.gemStage2()}`
 , { tone: 'tint' })}
-
-${L.section(
-  `<div class="home-price">
-    <div>
-      <p class="eyebrow">PRICE</p>
-      <h2>Every module. ₹18,000 a month. First month ₹3,600.</h2>
-      <p>One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000. WhatsApp messages, AI and calls run on a prepaid wallet at published rates.</p>
-    </div>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="${L.TRIAL_URL}home-price" rel="noopener" data-trial>Start for ₹3,600</a>
-      <a class="btn btn-ghost" href="/pricing">See the full pricing</a>
-    </div>
-  </div>`
-)}
-
-${L.governanceStrip()}
-
-${L.section(
-  `${L.sectionHead('RUNNING AN ERP TODAY?', 'Three sentences we hear. Three pages that answer them.', '')}
-  ${L.cards([
-    { icon: 'receipt', title: '“We already have an ERP.”', text: 'Your ERP was built around the invoice. Your customers moved to WhatsApp. Why the shift to an operating system is happening now.', link: { href: '/erp-to-os', label: 'From ERP to OS' } },
-    { icon: 'shield', title: '“Switching is risky.”', text: 'Six risks you imagine, each with the thing that removes it — and six costs of staying that have no answer.', link: { href: '/erp-to-os/switching', label: 'Is switching risky?' } },
-    { icon: 'grid', title: '“We can make do.”', text: 'Tap the tools you run on, see the gaps between them, and put a number on a year of making do.', link: { href: '/erp-to-os/make-do', label: 'Can I make do?' } },
-  ])}`
-, { tone: 'tint' })}
-
-${L.section(
-  `<div class="gem-head"><h2>Proof you can check.</h2><p>Who uses it, what the product counts, what is published, and how to try it yourself.</p></div>
-  ${L.proofGrid()}`
-)}
 
 ${L.section(
   `<div class="gem-head"><h2>Security and compliance, with the real status.</h2><p>Six in place, four not yet. Hover a seal, or open any document.</p></div>
