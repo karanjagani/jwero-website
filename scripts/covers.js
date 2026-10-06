@@ -7,7 +7,7 @@
 const fs = require('fs'); const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const { posts } = require('../content/legacy-posts.json');
-const blog = require('../content/blog').filter((p) => /^blog\/./.test(p.slug));
+const blog = require('../content/blog').filter((p) => /^blog\/./.test(p.slug)).concat(require('../content/guides').filter((p) => /^guides\/./.test(p.slug)));
 
 const TOPIC_RULES = [['Order management', /\boms\b|order/], ['Product data and catalogues', /pim|product|catalog|sku|attribute|listing|upload/], ['Leads and conversion', /lead|walk|intent|enquir|convert|follow|nurtur|attribution|wishlist|visitor/], ['WhatsApp', /whatsapp|chat/], ['AI', /\bai\b|ai-|autonomous/], ['CRM and customers', /crm|customer|segment|repeat/], ['Ecommerce and websites', /ecommerce|e-commerce|website|shopify|online/], ['Marketing and campaigns', /marketing|ads|instagram|facebook|diwali|akshaya|wedding|social|meta/], ['Inventory, POS and ERP', /inventory|stock|pos|erp|barcode|tally|gold-rate|gold-loss|repair|huid/], ['Gold schemes', /scheme/], ['Retail operations and sales', /sales|kpi|staff|operations|appointment|software|cost|checklist/]];
 const topicOf = (slug) => (TOPIC_RULES.find(([, r]) => r.test(slug)) || ['Guides'])[0];

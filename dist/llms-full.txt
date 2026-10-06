@@ -26841,7 +26841,17 @@ GUIDES
  One long, plain guide for each thing a jeweller looks for. What it must do, a checklist, and the questions to ask any vendor, including us.
 
  Chat or call with us 
- Read the blog 
+ Which guide first? 
+
+ START HERE
+
+## Which guide first?
+
+ Bills take too long, or rates are typed by hand: billing .
+ You don’t know what is on the shelf or what it is worth today: inventory .
+ Customers buy once and never come back: CRM .
+ Gold goes missing between the workshop and the shop: manufacturing .
+ You want one system for everything: ERP .
 
 ## Jewellery Billing Software
 
@@ -26896,6 +26906,34 @@ GUIDES
 ## Where each guide leads in Jwero.
 
  Billing and accounts jwero.ai/products/billing-finance ERP jwero.ai/products/erp Inventory jwero.ai/products/inventory CRM jwero.ai/products/crm Manufacturing jwero.ai/products/manufacturing Pricing jwero.ai/pricing 
+
+ COMPLETE GUIDES
+
+## Longer reads, by topic.
+
+ What Is Jewellery PIM? Complete Guide for Jewellers 
+ Jewellery Automation Guide: Complete Guide 
+ JewelTech: Complete Guide 
+ Jewellery Demand Forecasting: Complete Guide 
+ Omnichannel Jewellery Inventory: Complete Guide 
+ Jewellery Barcode Inventory: Complete Guide 
+ Jewellery POS Software: Complete Guide 
+ Jewellery Inventory Management: Complete Guide 
+ Jewellery Inventory and ERP: Complete Guide 
+ Jewellery Appointment Booking: Complete Guide 
+ Jewellery Sales Pipeline Guide: Complete Guide 
+ Jewellery Store Analytics Guide: Complete Guide 
+ Jewellery Customer Journey Guide: From Lead to Loyal Customer 
+ Jewellery Retail Operations: Complete Guide 
+ Jewellery Instagram Marketing Guide 
+ Jewellery Marketing: Complete Guide 
+ Omnichannel Jewellery Ecommerce Guide 
+ Jewellery Ecommerce Conversion Guide 
+ Jewellery Ecommerce: Complete Guide 
+ Jewellery Customer Follow-Up Guide to Convert More Buyers 
+ Jewellery Customer Segmentation Guide for Personalised Engagement 
+ Jewellery Lead Management Guide: Convert More Enquiries 
+ Jewellery Lead Automation: The Complete Guide to Capturing & Converting High-Value Customers 
 
 ## Not sure where to start?
 
@@ -27036,14 +27074,6 @@ BUYER’S GUIDE
 
  Show me a till close Start for ₹3,600 
 
- SEE IT WORKING
-
-## This guide is written by the team that builds it.
-
- Every capability described as Jwero’s here is on the product page, with what it does not do yet stated beside it.
-
- Start for ₹3,600 See jewellery billing in Jwero 
-
  QUESTIONS
 
 ## What jewellers ask about this.
@@ -27064,6 +27094,9 @@ BUYER’S GUIDE
  Partly. Jwero prepares the e-invoice file for the GST portal and records the IRN back on the bill. Direct filing and e-way bills are not available yet.
 
  Related: Jewellery billing software · Jewellery POS software · Inventory guide · What jewellery software costs 
+
+ Comparing options? See Jwero against Marg , Ornate NX , JewelAcc .
+ Written for single showrooms and cashiers . Check your own numbers: see what idle stock costs you , free and without sign-up.
 
 ## Bring one real day from your business.
 
@@ -27188,6 +27221,24 @@ BUYER’S GUIDE
 
  Ignoring the staff. If the counter finds it slower than the calculator, the counter wins. Train on real bills, not slides.
 
+## Checklist for choosing a jewellery ERP
+
+ Does it keep a metal ledger in fine grams, by purity, alongside the money ledger?
+
+ Can I issue metal to a karigar and see what came back, with loss against my norm?
+
+ Does every piece carry its HUID, and does the bill print it?
+
+ Are GST, e-invoices and returns produced from the same bills?
+
+ Can my accountant export to Tally, or work without it?
+
+ Are prices worked out from today’s rate, making and wastage, not typed in?
+
+ Do the counter, the stock and the books all change with one sale?
+
+ Can I get all my data out, in a format I can open, whenever I ask?
+
 ## What it costs
 
  Jewellery ERPs are sold in three ways: a one-time licence with yearly maintenance, a monthly subscription per user or per branch, or a single plan that includes every module. Compare the total for three years, including extra users, extra branches, the add-on tools you will need and the cost of anything billed per message or per document. A cheap licence with five paid add-ons is not cheap.
@@ -27217,14 +27268,6 @@ BUYER’S GUIDE
 
  Show me one real job, gram by gram Start for ₹3,600 
 
- SEE IT WORKING
-
-## This guide is written by the team that builds it.
-
- Every capability described as Jwero’s here is on the product page, with what it does not do yet stated beside it.
-
- Start for ₹3,600 See jewellery ERP in Jwero 
-
  QUESTIONS
 
 ## What jewellers ask about this.
@@ -27245,6 +27288,9 @@ BUYER’S GUIDE
  With Jwero, yes. Transactions post to Jwero’s own ledger and the Tally or Zoho Books bridge carries them to your accountant.
 
  Related: Jewellery ERP software · From ERP to operating system · Manufacturing guide · CRM vs ERP 
+
+ Comparing options? See Jwero against Marg , Ornate NX , JewelAcc .
+ Written for gold retailers and owners . Check your own numbers: see what idle stock costs you , free and without sign-up.
 
 ## Bring one real day from your business.
 
@@ -27391,14 +27437,6 @@ BUYER’S GUIDE
 
  Show me my own shelf Start for ₹3,600 
 
- SEE IT WORKING
-
-## This guide is written by the team that builds it.
-
- Every capability described as Jwero’s here is on the product page, with what it does not do yet stated beside it.
-
- Start for ₹3,600 See inventory in Jwero 
-
  QUESTIONS
 
 ## What jewellers ask about this.
@@ -27419,6 +27457,9 @@ BUYER’S GUIDE
  A little, often. Counting one category each week by scanning finds a variance while it can still be traced.
 
  Related: Jewellery inventory software · Barcode and tagging · Dead stock calculator · Billing guide 
+
+ Comparing options? See Jwero against SIONIQ , Ornate NX .
+ Written for chains and inventory managers . Check your own numbers: see what idle stock costs you , free and without sign-up.
 
 ## Bring one real day from your business.
 
@@ -27581,14 +27622,6 @@ BUYER’S GUIDE
 
  Send me a sample customer record Start for ₹3,600 
 
- SEE IT WORKING
-
-## This guide is written by the team that builds it.
-
- Every capability described as Jwero’s here is on the product page, with what it does not do yet stated beside it.
-
- Start for ₹3,600 See the jewellery CRM in Jwero 
-
  QUESTIONS
 
 ## What jewellers ask about this.
@@ -27609,6 +27642,9 @@ BUYER’S GUIDE
  From Excel, your billing software or your phone contacts. With Jwero the import is done for you during onboarding.
 
  Related: Jewellery CRM software · Customer memory · WhatsApp for jewellers · CRM vs ERP 
+
+ Comparing options? See Jwero against Zoho CRM , Zithara .
+ Written for gold retailers and CRM executives . Check your own numbers: see what a savings scheme is worth to you , free and without sign-up.
 
 ## Bring one real day from your business.
 
@@ -27761,14 +27797,6 @@ BUYER’S GUIDE
 
  Show me one real job, gram by gram Start for ₹3,600 
 
- SEE IT WORKING
-
-## This guide is written by the team that builds it.
-
- Every capability described as Jwero’s here is on the product page, with what it does not do yet stated beside it.
-
- Start for ₹3,600 See manufacturing in Jwero 
-
  QUESTIONS
 
 ## What jewellers ask about this.
@@ -27789,6 +27817,9 @@ BUYER’S GUIDE
  No. In Jwero the bill of materials is entered by production. CAD to BOM conversion is not available.
 
  Related: Jewellery manufacturing software · For manufacturers · Gold loss calculator · ERP guide 
+
+ Comparing options? See Jwero against Synergics .
+ Written for manufacturers and production managers . Check your own numbers: see what production loss costs you , free and without sign-up.
 
 ## Bring one real day from your business.
 

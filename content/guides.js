@@ -21,6 +21,17 @@ const GUIDE_LINKS = {
   'jewellery-crm-software': ['memory', [['/products/crm', 'CRM'], ['/platform/customer-memory', 'Customer memory'], ['/products/segmentation', 'Segmentation'], ['/products/journeys', 'Journeys'], ['/products/loyalty', 'Loyalty'], ['/products/whatsapp', 'WhatsApp']]],
   'jewellery-manufacturing-software': ['grams', [['/products/manufacturing', 'Manufacturing and workshop'], ['/products/erp', 'ERP'], ['/products/purchase-vendors', 'Raw material purchase'], ['/products/inventory', 'Finished stock'], ['/tools/gold-loss-calculator', 'Gold loss calculator'], ['/roles/production-manager', 'For the production manager']]],
 };
+const GUIDE_NEXT = {
+  'jewellery-billing-software': [[['/compare/jwero-vs-marg', 'Marg'], ['/compare/jwero-vs-ornate-nx', 'Ornate NX'], ['/compare/jwero-vs-jewelacc', 'JewelAcc']], [['/solutions/single-store', 'single showrooms'], ['/roles/cashier', 'cashiers']], ['/tools/dead-stock-calculator', 'what idle stock costs you']],
+  'jewellery-erp-software': [[['/compare/jwero-vs-marg', 'Marg'], ['/compare/jwero-vs-ornate-nx', 'Ornate NX'], ['/compare/jwero-vs-jewelacc', 'JewelAcc']], [['/solutions/gold-retail', 'gold retailers'], ['/roles/owner', 'owners']], ['/tools/dead-stock-calculator', 'what idle stock costs you']],
+  'jewellery-inventory-software': [[['/compare/jwero-vs-sioniq', 'SIONIQ'], ['/compare/jwero-vs-ornate-nx', 'Ornate NX']], [['/solutions/multi-store-chains', 'chains'], ['/roles/inventory-manager', 'inventory managers']], ['/tools/dead-stock-calculator', 'what idle stock costs you']],
+  'jewellery-crm-software': [[['/compare/jwero-vs-zoho-crm', 'Zoho CRM'], ['/compare/jwero-vs-zithara', 'Zithara']], [['/solutions/gold-retail', 'gold retailers'], ['/roles/crm-executive', 'CRM executives']], ['/tools/gold-scheme-calculator', 'what a savings scheme is worth to you']],
+  'jewellery-manufacturing-software': [[['/compare/jwero-vs-synergics', 'Synergics']], [['/solutions/manufacturers', 'manufacturers'], ['/roles/production-manager', 'production managers']], ['/tools/gold-loss-calculator', 'what production loss costs you']],
+};
+const nextLine = (slug) => { const n = GUIDE_NEXT[slug]; if (!n) return ''; const j = (a) => a.map(([h, t]) => `<a href="${h}">${t}</a>`).join(', ');
+  return L.section(`<div class="jb-blogline"><p><b>Comparing options?</b> See Jwero against ${j(n[0])}.</p><p><b>Written for</b> ${j(n[1]).replace(/, ([^,]*)$/, ' and $1')}. <b>Check your own numbers:</b> <a href="${n[2][0]}">see ${n[2][1]}</a>, free and without sign-up.</p></div>`, { tone: 'tint' }); };
+const COMPLETE = () => { const ps = require('./legacy-posts.json'); const list = (ps.posts || ps).filter((p) => /guide/.test(p.slug));
+  return L.section(`${L.sectionHead('COMPLETE GUIDES', 'Longer reads, by topic.', '')}<ul class="blog-topic">${list.map((p) => `<li><a href="/${p.slug}">${p.title}</a></li>`).join('')}</ul>`, { tone: 'tint' }); };
 const guide = ({ slug, title, description, h1, sub, mins, wa, product, body, faqs, related }) => ({
   slug: `guides/${slug}`, title, description, breadcrumbs: BC(h1.split(':')[0]), schema: schema(h1, description), faqs,
   body: `
@@ -28,12 +39,9 @@ ${L.hero({ eyebrow: 'BUYER’S GUIDE', h1, sub, primary: { href: product[0], lab
 ${L.section(meta(mins))}
 ${L.section(`<div class="post-body">${body}</div>`)}
 ${GUIDE_LINKS[slug] ? L.section(`${L.sectionHead('WHERE THIS IS IN JWERO', 'Every part of this guide, in the product.', '')}<div class="erp-map">${GUIDE_LINKS[slug][1].map(([h, t]) => `<a href="${h}"><b>${t}</b><span>${h.replace(/^\//, 'jwero.ai/')}</span></a>`).join('')}</div>`, { tone: 'tint' }) + L.sim(GUIDE_LINKS[slug][0]) : ''}
-${L.section(
-  `${L.sectionHead('SEE IT WORKING', 'This guide is written by the team that builds it.', 'Every capability described as Jwero’s here is on the product page, with what it does not do yet stated beside it.')}
-  <div class="cta-row center"><a class="btn btn-primary" href="${L.TRIAL_URL}guide" rel="noopener" data-trial>Start for ₹3,600</a><a class="btn btn-ghost" href="${product[0]}">${product[1]}</a></div>`
-, { tone: 'tint' })}
 ${L.section(`${L.sectionHead('QUESTIONS', 'What jewellers ask about this.', '')}${L.faqBlock(faqs)}
 <p class="cta-note" style="margin-top:18px">Related: ${related.map(([h, l]) => `<a href="${h}">${l}</a>`).join(' · ')}</p>`)}
+${nextLine(slug)}
 ${L.ctaBand('Bring one real day from your business.', 'We will run it through Jwero on a call and tell you plainly if it does not fit.', wa)}
 `,
 });
@@ -186,6 +194,18 @@ const erp = guide({
     <li><strong>No owner inside the business.</strong> One person must decide how things are done. Software cannot settle an argument between two brothers about making charges.</li>
     <li><strong>Ignoring the staff.</strong> If the counter finds it slower than the calculator, the counter wins. Train on real bills, not slides.</li>
   </ul>
+
+  <h2>Checklist for choosing a jewellery ERP</h2>
+  <ol>
+    <li>Does it keep a metal ledger in fine grams, by purity, alongside the money ledger?</li>
+    <li>Can I issue metal to a karigar and see what came back, with loss against my norm?</li>
+    <li>Does every piece carry its HUID, and does the bill print it?</li>
+    <li>Are GST, e-invoices and returns produced from the same bills?</li>
+    <li>Can my accountant export to Tally, or work without it?</li>
+    <li>Are prices worked out from today’s rate, making and wastage, not typed in?</li>
+    <li>Do the counter, the stock and the books all change with one sale?</li>
+    <li>Can I get all my data out, in a format I can open, whenever I ask?</li>
+  </ol>
 
   <h2>What it costs</h2>
   <p>Jewellery ERPs are sold in three ways: a one-time licence with yearly maintenance, a monthly subscription per user or per branch, or a single plan that includes every module. Compare the total for three years, including extra users, extra branches, the add-on tools you will need and the cost of anything billed per message or per document. A cheap licence with five paid add-ons is not cheap.</p>
@@ -478,8 +498,9 @@ ${L.hero({
   h1: 'Buyer’s guides for jewellery software.',
   sub: 'One long, plain guide for each thing a jeweller looks for. What it must do, a checklist, and the questions to ask any vendor, including us.',
   primary: { href: '#', label: 'Chat or call with us', wa: 'guides' },
-  secondary: { href: '/blog', label: 'Read the blog' },
+  secondary: { href: '#start', label: 'Which guide first?' },
 })}
+${L.section(`${L.sectionHead('START HERE', 'Which guide first?', '')}<div class="jb-blogline" id="start"><p><b>Bills take too long, or rates are typed by hand:</b> <a href="/guides/jewellery-billing-software">billing</a>.</p><p><b>You don’t know what is on the shelf or what it is worth today:</b> <a href="/guides/jewellery-inventory-software">inventory</a>.</p><p><b>Customers buy once and never come back:</b> <a href="/guides/jewellery-crm-software">CRM</a>.</p><p><b>Gold goes missing between the workshop and the shop:</b> <a href="/guides/jewellery-manufacturing-software">manufacturing</a>.</p><p><b>You want one system for everything:</b> <a href="/guides/jewellery-erp-software">ERP</a>.</p></div>`)}
 ${L.section(L.cards(GUIDES.map((g) => ({ title: g.title.split(' | ')[0].split(':')[0], text: g.description, link: { href: '/' + g.slug, label: 'Read the guide' } })), 2))}
 ${L.section(L.cards([
   { title: 'Accounting', text: 'Books that post themselves, with a Tally and Zoho Books bridge.', link: { href: '/jewellery-accounting-software', label: 'Open' } },
@@ -487,6 +508,7 @@ ${L.section(L.cards([
   { title: 'Cloud and mobile', text: 'Online software on any phone or computer.', link: { href: '/cloud-jewellery-software', label: 'Open' } },
 ]), { tone: 'tint' })}
 ${L.section(`${L.sectionHead('IN THE PRODUCT', 'Where each guide leads in Jwero.', '')}<div class="erp-map">${[['/products/billing-finance', 'Billing and accounts'], ['/products/erp', 'ERP'], ['/products/inventory', 'Inventory'], ['/products/crm', 'CRM'], ['/products/manufacturing', 'Manufacturing'], ['/pricing', 'Pricing']].map(([h, t]) => `<a href="${h}"><b>${t}</b><span>${h.replace(/^\//, 'jwero.ai/')}</span></a>`).join('')}</div>`, { tone: 'tint' })}
+${COMPLETE()}
 ${L.ctaBand('Not sure where to start?', 'Tell us what you run today and we will point you to the right page.', 'guides')}
 `,
 };
