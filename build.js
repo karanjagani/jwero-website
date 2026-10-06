@@ -41,7 +41,7 @@ const CONTENT_FILES = [
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
   'roles-leadership', 'roles-frontline', 'roles-growth', 'roles-manufacturing',
-  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal', 'positioning',
+  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal', 'jbaas', 'positioning',
 ];
 const pages = [];
 for (const f of CONTENT_FILES) {
@@ -205,6 +205,20 @@ const NAV = [
     ],
     links: [['/book-demo', 'Book a demo'], ['/contact', 'Contact']],
   },
+  {
+    label: 'Managed',
+    match: ['jewellery-business-as-a-service', 'managed-services', 'what-we-handle', 'ai-and-experts', 'how-it-works', 'count-your-team', 'success-stories', 'why-jwero', 'self-managed'],
+    items: [
+      ['/jewellery-business-as-a-service', 'Jewellery Business as a Service', 'You focus on jewellery. We handle the chaos.'],
+      ['/managed-services', 'Managed services', 'We run it together, or Jwero runs it. Pricing.'],
+      ['/what-we-handle', 'What we handle', 'Customers, sales, online, back office.'],
+      ['/ai-and-experts', 'AI + experts', 'AI does the work. Experts make it better.'],
+      ['/count-your-team', 'Count your team', 'What the work costs today, and with Jwero.'],
+      ['/how-it-works', 'How it works', 'From your goal to work getting done.'],
+      ['/success-stories', 'Success stories', 'Jewellers in their own words.'],
+    ],
+    links: [['/why-jwero', 'Why Jwero'], ['/self-managed', 'Run it yourself']],
+  },
   { label: 'Pricing', href: '/pricing', match: ['pricing'] },
 ];
 
@@ -248,18 +262,18 @@ function navHTML(page) {
     <a class="logo" href="/" aria-label="Jwero home">${mark()}<span class="logo-word">Jwero</span></a>
     <button type="button" class="icp-chip" data-icp-open aria-haspopup="dialog"><span data-icp-label>I run a…</span>${icon('updown')}</button>
     <nav class="main-nav" aria-label="Main">
-      ${TOP_NAV.map(dd).join('')}
+      ${NAV.map(dd).join('')}
       <div class="nav-cta">
-        <a class="btn btn-primary" href="#" data-wa="handle">Let Jwero handle it</a>
+        <a class="btn btn-primary" href="#" data-wa="handle">Talk to us</a>
         <a class="nav-login" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
       </div>
     </nav>
     <div class="header-cta">
-      <a class="btn btn-primary btn-sm header-start" href="#" data-wa="handle">Let Jwero handle it</a>
+      <a class="btn btn-primary btn-sm header-start" href="#" data-wa="handle">Talk to us</a>
       <a class="nav-login nav-login-sm" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
       <button class="search-open icon-btn" type="button" aria-label="Search the site" aria-keyshortcuts="Meta+K Control+K">${icon('search')}</button>
       <button class="theme-toggle icon-btn" type="button" aria-label="Toggle dark mode">${icon('moon')}</button>
-      <a class="btn btn-primary btn-sm header-float" href="#" data-wa="handle">Let Jwero handle it</a>
+      <a class="btn btn-primary btn-sm header-float" href="#" data-wa="handle">Talk to us</a>
       <button class="nav-burger icon-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
@@ -802,6 +816,15 @@ function build() {
     const dir = p.slug === 'index' ? DIST : path.join(DIST, p.slug);
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, 'index.html'), noDash(layout(p)));
+  }
+  // Retired addresses: the separate /focus site, /jbaas and the old /jwero-os home.
+  const MOVED = { 'jwero-os': '/', jbaas: '/jewellery-business-as-a-service', focus: '/jewellery-business-as-a-service' };
+  for (const p of pages) if (p.slug !== 'index' && !p.slug.includes('/')) MOVED['focus/' + p.slug] = '/' + p.slug;
+  MOVED['focus/jwero-os'] = '/';
+  for (const [from, to] of Object.entries(MOVED)) {
+    if (pages.some((p) => p.slug === from)) continue;
+    fs.mkdirSync(path.join(DIST, from), { recursive: true });
+    fs.writeFileSync(path.join(DIST, from, 'index.html'), `<!doctype html><meta charset="utf-8"><title>Moved</title><meta name="robots" content="noindex"><link rel="canonical" href="${to}"><meta http-equiv="refresh" content="0; url=${to}"><a href="${to}">Continue</a>`);
   }
   // /whatsapp special redirect (offline QR / print codes)
   fs.mkdirSync(path.join(DIST, 'whatsapp'), { recursive: true });

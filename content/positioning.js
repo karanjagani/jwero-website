@@ -4,7 +4,7 @@
 // Service; the three ways to work are: you run it, we run it together, Jwero
 // runs it. The product, solution, pricing and trust pages built earlier are
 // unchanged and sit underneath as the capabilities. The previous home page
-// lives at /jwero-os. Styles are the `pz-` rules in site.css; behaviour is the
+// lives at /. Styles are the `pz-` rules in site.css; behaviour is the
 // "positioning" block in site.js.
 //
 // The home page is ordered for conversion: promise, who trusts us, the cost of
@@ -131,7 +131,7 @@ const OUTCOMES = [
   ['Increase sales', 'More of the enquiries and walk-ins you already get become bills.', ['Follow up every open enquiry and quotation', 'Show each salesperson who to call and why', 'Match idle stock to the customers who would buy it'], [['CRM', '/products/crm'], ['Showroom', '/products/showroom'], ['Quotations', '/products/quotations']], ['Jewellery growth strategist', 'CRM specialist'], 2],
   ['Bring back existing customers', 'The customers you already earned come back, and bring others.', ['Remember every occasion, taste and scheme', 'Reach each customer with a reason, not a blast', 'Run loyalty and savings schemes without a register'], [['Customer memory', '/platform/customer-memory'], ['Journeys', '/products/journeys'], ['Loyalty', '/products/loyalty']], ['CRM specialist', 'Customer engagement'], 2],
   ['Grow online', 'A store, a catalogue and channels that sell while the shop is shut.', ['Build and run your online store at the live rate', 'List on Google Shopping and marketplaces', 'Sell on WhatsApp, Instagram and video'], [['Online store', '/products/storefront'], ['Marketplaces', '/products/marketplaces'], ['Catalogues', '/products/digital-catalogues']], ['Ecommerce specialist', 'Content and creative'], 2],
-  ['Reduce manual work', 'The typing, matching and chasing stop being anyone’s job.', ['One record, so nothing is entered twice', 'Bills, stock and books that update together', 'Reminders and follow-ups drafted for you'], [['Count your tools', '/jwero-os#count-yours'], ['ERP', '/products/erp'], ['Accounting', '/jewellery-accounting-software']], ['Automation specialist', 'Technology specialist'], 1],
+  ['Reduce manual work', 'The typing, matching and chasing stop being anyone’s job.', ['One record, so nothing is entered twice', 'Bills, stock and books that update together', 'Reminders and follow-ups drafted for you'], [['Count your tools', '/#count-yours'], ['ERP', '/products/erp'], ['Accounting', '/jewellery-accounting-software']], ['Automation specialist', 'Technology specialist'], 1],
   ['Improve customer experience', 'Every customer is known, answered and remembered, on every channel.', ['One inbox for WhatsApp, Instagram, web and calls', 'A reply that knows her history', 'Appointments, video visits and follow-ups that arrive prepared'], [['WhatsApp', '/products/whatsapp'], ['Appointments', '/jewellery-appointment-booking-software'], ['Showroom', '/products/showroom']], ['Customer engagement', 'CRM specialist'], 2],
   ['Build my digital presence', 'You look, online, like the jeweller you are in the showroom.', ['Website, catalogue and Google profile', 'A steady flow of posts, Reels and stories', 'Reviews asked for and answered'], [['Social media', '/products/social-media'], ['Online store', '/products/storefront'], ['Instagram', '/instagram-for-jewellers']], ['Content and creative', 'Digital marketing'], 3],
   ['Let the routine run itself', 'The routine runs itself, inside limits you set.', ['AI agents for enquiries, follow-ups and reminders', 'Journeys that act on what customers do', 'Approvals, caps and one switch to stop it'], [['AI agents', '/products/ai-sales-agents'], ['Journeys', '/products/journeys'], ['AI governance', '/platform/ai-workforce']], ['AI specialist', 'Automation specialist'], 1],
@@ -813,8 +813,9 @@ const innerHero = (kicker, h1, sub, cta2, cta1) => `
 
 // ---------------------------------------------------------------- pages
 const home = {
-  slug: 'index',
-  title: 'Jwero: You Focus on Jewellery. We Handle the Chaos.',
+  slug: 'jewellery-business-as-a-service',
+  title: 'Jewellery Business as a Service: You Focus on Jewellery, We Handle the Chaos | Jwero',
+  breadcrumbs: [['Home', '/'], ['Jewellery Business as a Service']],
   description: 'Markets, customers and technology keep changing. Jwero brings together AI, technology and jewellery specialists to adapt, execute and grow your business, so you can focus on jewellery. You run it, we run it together, or we run it for you.',
   schema: {
     '@context': 'https://schema.org', '@type': 'Organization', name: 'Jwero', url: 'https://jwero.ai',
@@ -923,11 +924,11 @@ const self = {
   description: 'For jewellers who want control: Jwero gives your team the technology, AI agents and data to run the business yourselves. A technology subscription at ₹18,000 a month, first month ₹3,600.',
   breadcrumbs: [['Home', '/'], ['Self managed']],
   body: `
-${innerHero('01 · You run it', 'Software when you want control.', 'You operate the business. Jwero provides the technology, the AI and the work that happens automatically. Onboarding takes a day.', ['/jwero-os', 'See the operating system'], `<a class="btn pz-btn-gold" href="${L.TRIAL_URL}self-managed" rel="noopener" data-trial>Start for ₹3,600</a>`)}
+${innerHero('01 · You run it', 'Software when you want control.', 'You operate the business. Jwero provides the technology, the AI and the work that happens automatically. Onboarding takes a day.', ['/', 'See the operating system'], `<a class="btn pz-btn-gold" href="${L.TRIAL_URL}self-managed" rel="noopener" data-trial>Start for ₹3,600</a>`)}
 ${whoRuns(0)}
 ${L.section(`${eyebrow('What your team gets')}<h2 class="pz-h pz-center">One system, so your team is not learning ten.</h2>
 <div class="pz-levels pz-levels-4">
-  <article class="pz-level"><h3>The operating system</h3><p class="pz-level-who">Customers, counter, stock, purchase, workshop, books and team on one record.</p><a class="pz-link" href="/jwero-os">See it →</a></article>
+  <article class="pz-level"><h3>The operating system</h3><p class="pz-level-who">Customers, counter, stock, purchase, workshop, books and team on one record.</p><a class="pz-link" href="/">See it →</a></article>
   <article class="pz-level"><h3>AI agents</h3><p class="pz-level-who">Enquiries answered, follow-ups drafted, reminders sent, with your approval.</p><a class="pz-link" href="/products/ai-sales-agents">See them →</a></article>
   <article class="pz-level"><h3>Every capability</h3><p class="pz-level-who">CRM, WhatsApp, ecommerce, billing, inventory, manufacturing and more.</p><a class="pz-link" href="/products">All capabilities →</a></article>
   <article class="pz-level"><h3>For your kind of business</h3><p class="pz-level-who">Retail, chains, manufacturers, wholesale, diamond traders, online brands.</p><a class="pz-link" href="/solutions">Find yours →</a></article>
@@ -946,6 +947,7 @@ const managed = {
   body: `
 ${innerHero('02 and 03 · Managed', 'We run it together. Or Jwero runs it.', 'Your team with our specialists and AI, or whole functions handed over. You define the outcome. Jwero takes responsibility for the function.', ['#assessment', 'Build my business plan'], HANDLE('Build my Jwero team', 'with-you', 'btn pz-btn-gold'))}
 ${whoRuns(2)}
+${L.section(`<span id="pricing"></span><p class="pz-eyebrow" style="text-align:center">Pricing</p><h2 class="pz-h pz-center">Subscription, managed, or enterprise.</h2>${require('./jbaas').TIERS()}`)}
 ${L.section(`${levels()}<p class="pz-shift pz-shift-sm">Start small.<br><b>Give us more when you’re ready.</b></p>`, { tone: 'tint' })}
 ${monthly()}
 ${notAgency()}

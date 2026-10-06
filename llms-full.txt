@@ -5,7 +5,7 @@ Jwero is the Autonomous Jewellery OS, run by AI: customers, catalogue, stock, co
 ---
 
 # Jewellery Software: CRM, ERP, POS and WhatsApp in One
-URL: https://jwero.ai/jwero-os
+URL: https://jwero.ai/
 
 Jwero is jewellery software for the whole business: CRM, ERP, inventory, POS, billing, WhatsApp and gold schemes on one record, with AI that asks you first.
 
@@ -362,6 +362,61 @@ The Autonomous Jewellery OS, run by AI
 
  Start for ₹3,600 
  See the full pricing 
+
+ JEWELLERY BUSINESS AS A SERVICE
+
+## Use the platform. Or let Jwero run it for you.
+
+ The same platform, three ways to buy it. Run it with your own team, or hand the work to Jwero’s specialists and AI with every tool included.
+
+ 01 · Subscription
+
+## You run it
+
+ ₹18,000 a month 
+
+ First month ₹3,600. Billed monthly. Extra location ₹2,999.
+
+ Every module of the platform
+ AI agents that wait for your approval
+ Your team does the work
+ Messages, AI and calls on a prepaid wallet
+ 
+ Start for ₹3,600 
+
+ 02 · Managed (JBaaS)
+
+## Jwero runs it
+
+ Priced on the work
+
+ No subscription. Every tool included. About half of what the same work costs you today.
+
+ Jwero specialists and AI do the work
+ Start with one function, add more any time
+ No team to hire, no tools to buy
+ One partner, one account of what was done
+ 
+ Let Jwero handle it 
+ Count your team and see your price → 
+
+ 03 · Enterprise
+
+## For chains and groups
+
+ Custom
+
+ Many showrooms, brands or companies, with your own terms.
+
+ Self-run, managed, or a mix by function
+ Single sign-on and custom integrations
+ A dedicated success manager
+ Contracts and security reviews your way
+ 
+ Talk to us 
+
+ A real person replies on WhatsApp within minutes · Onboarding in a day · Refer a jeweller, save 10%
+ See how Jewellery Business as a Service works → 
 
  TWO SPEEDS, YOUR CHOICE
 
@@ -6946,51 +7001,59 @@ PRICING
 
  Prices exclude GST. First month ₹3,600, then ₹18,000 a month.
 
- Ways to work with Jwero
+ THREE WAYS TO BUY
 
-## How much do you want Jwero to handle?
- The price below is the technology subscription, for jewellers who run it themselves. When Jwero’s specialists and AI do the work, the price follows the work, and every tool is included with no subscription.
+## Subscription, managed, or enterprise.
 
- 01
+ The price below is the subscription for jewellers who run it themselves. Managed customers pay no subscription; every tool is included.
+
+ 01 · Subscription
 
 ## You run it
 
- Your team + Jwero
+ ₹18,000 a month 
 
- You operate the business. Jwero provides technology, AI and work that happens automatically.
+ First month ₹3,600. Billed monthly. Extra location ₹2,999.
 
- Self managed A technology subscription.
+ Every module of the platform
+ AI agents that wait for your approval
+ Your team does the work
+ Messages, AI and calls on a prepaid wallet
+ 
+ Start for ₹3,600 
 
- Explore self-managed 
- ₹18,000 a month. Start today for ₹3,600 → 
-
- 02
-
-## We run it together
-
- Your team + Jwero specialists + AI
-
- You retain control. Jwero provides expertise and execution.
-
- Co-managed Specialists and AI, priced on the work. Every tool included.
-
- Build my Jwero team 
- Or start with just one function → 
-
- 03
+ 02 · Managed (JBaaS)
 
 ## Jwero runs it
 
- Jwero specialists + AI + technology
+ Priced on the work
 
- You define the outcome. Jwero handles the function.
+ No subscription. Every tool included. About half of what the same work costs you today.
 
- Fully managed Priced on the work and the outcome. Every tool included, no subscription.
-
+ Jwero specialists and AI do the work
+ Start with one function, add more any time
+ No team to hire, no tools to buy
+ One partner, one account of what was done
+ 
  Let Jwero handle it 
- Or start with just one function → 
+ Count your team and see your price → 
 
- Count your team: what the work costs today, and with Jwero → 
+ 03 · Enterprise
+
+## For chains and groups
+
+ Custom
+
+ Many showrooms, brands or companies, with your own terms.
+
+ Self-run, managed, or a mix by function
+ Single sign-on and custom integrations
+ A dedicated success manager
+ Contracts and security reviews your way
+ 
+ Talk to us 
+
+ A real person replies on WhatsApp within minutes · Onboarding in a day · Refer a jeweller, save 10%
 
  First month ₹3,600
 
@@ -27429,8 +27492,8 @@ A: The jeweller. Jwero processes that data on the jeweller’s instructions as i
 
 ---
 
-# Jwero: You Focus on Jewellery. We Handle the Chaos.
-URL: https://jwero.ai/
+# Jewellery Business as a Service: You Focus on Jewellery, We Handle the Chaos
+URL: https://jwero.ai/jewellery-business-as-a-service
 
 Markets, customers and technology keep changing. Jwero brings together AI, technology and jewellery specialists to adapt, execute and grow your business, so you can focus on jewellery. You run it, we run it together, or we run it for you.
 
@@ -29196,6 +29259,58 @@ For jewellers who want expertise or freedom: Jwero specialists and AI work besid
  Partners to manage One 
 
  The bars are an illustration of the difference, not a measurement.
+
+ Pricing
+
+## Subscription, managed, or enterprise.
+
+ 01 · Subscription
+
+## You run it
+
+ ₹18,000 a month 
+
+ First month ₹3,600. Billed monthly. Extra location ₹2,999.
+
+ Every module of the platform
+ AI agents that wait for your approval
+ Your team does the work
+ Messages, AI and calls on a prepaid wallet
+ 
+ Start for ₹3,600 
+
+ 02 · Managed (JBaaS)
+
+## Jwero runs it
+
+ Priced on the work
+
+ No subscription. Every tool included. About half of what the same work costs you today.
+
+ Jwero specialists and AI do the work
+ Start with one function, add more any time
+ No team to hire, no tools to buy
+ One partner, one account of what was done
+ 
+ Let Jwero handle it 
+ Count your team and see your price → 
+
+ 03 · Enterprise
+
+## For chains and groups
+
+ Custom
+
+ Many showrooms, brands or companies, with your own terms.
+
+ Self-run, managed, or a mix by function
+ Single sign-on and custom integrations
+ A dedicated success manager
+ Contracts and security reviews your way
+ 
+ Talk to us 
+
+ A real person replies on WhatsApp within minutes · Onboarding in a day · Refer a jeweller, save 10%
 
  01
 
