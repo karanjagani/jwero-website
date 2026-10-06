@@ -2228,3 +2228,9 @@ sv.textContent = save && save.textContent && save.textContent !== '\u20b90' ? 's
 root.addEventListener('click', function () { setTimeout(sync, 60); });
 sync();
 })();
+(function () {
+var root = document.querySelector('[data-stackm-preset]'); if (!root) return;
+var want = (root.getAttribute('data-stackm-preset') || '').split('|').filter(Boolean); if (!want.length) return;
+var chips = root.querySelectorAll('.stackm-chip');
+Array.prototype.forEach.call(chips, function (c) { if (want.indexOf(c.textContent.trim()) !== -1 && c.getAttribute('aria-pressed') !== 'true') c.click(); });
+})();

@@ -2473,3 +2473,11 @@
   root.addEventListener('click', function () { setTimeout(sync, 60); });
   sync();
 })();
+
+// Business-type pages: tick the tools that kind of business usually runs.
+(function () {
+  var root = document.querySelector('[data-stackm-preset]'); if (!root) return;
+  var want = (root.getAttribute('data-stackm-preset') || '').split('|').filter(Boolean); if (!want.length) return;
+  var chips = root.querySelectorAll('.stackm-chip');
+  Array.prototype.forEach.call(chips, function (c) { if (want.indexOf(c.textContent.trim()) !== -1 && c.getAttribute('aria-pressed') !== 'true') c.click(); });
+})();

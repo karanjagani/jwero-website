@@ -857,6 +857,15 @@ const ICP_HOME = {
   'solutions/diamond-traders': ['trader', 'Jwero for diamond traders', 'How many tools does your trading desk run today?'],
   'solutions/d2c-brands': ['d2c', 'Jwero for online jewellery brands', 'How many tools does your brand run today?'],
 };
+const ICP_PRESET = {
+  single: [['WhatsApp API', 'Billing software', 'POS counter', 'Barcode & tagging', 'Gold rate updates', 'Inventory software', 'CRM', 'Gold scheme register', 'Tally integration', 'Social media scheduler', 'Google Business reviews', 'Attendance register'], ['CUSTOMERS', 'SHOWROOM', 'BILLING', 'STOCK', 'ACCOUNTS', 'TEAM', 'PURCHASE', 'DECISIONS', 'WORKSHOP'], 'a single showroom'],
+  chain: [['ERP', 'Inventory software', 'Vendor portal', 'Branch report calls', 'MIS reports', 'Google Sheets', 'HR', 'Payroll software', 'Incentive sheet', 'Task management', 'CRM', 'WhatsApp API', 'Tally integration', 'Gold rate updates', 'Barcode & tagging'], ['DECISIONS', 'STOCK', 'TEAM', 'CUSTOMERS', 'BILLING', 'SHOWROOM', 'PURCHASE', 'ACCOUNTS', 'WORKSHOP'], 'a multi-store chain'],
+  franchise: [['Franchise management', 'ERP', 'Branch report calls', 'MIS reports', 'Inventory software', 'CRM', 'WhatsApp API', 'Pricing engine', 'Gold rate updates', 'Tally integration', 'LMS', 'Task management'], ['DECISIONS', 'STOCK', 'TEAM', 'CUSTOMERS', 'BILLING', 'SHOWROOM', 'PURCHASE', 'ACCOUNTS', 'WORKSHOP'], 'a franchise network'],
+  maker: [['ERP', 'Karigar portal', 'Hallmark tracker', 'Inventory software', 'Vendor portal', 'Gold rate updates', 'Estimate pad', 'Quotation maker', 'Tally integration', 'Google Sheets', 'Attendance register', 'Payroll software', 'WhatsApp API'], ['WORKSHOP', 'STOCK', 'PURCHASE', 'ACCOUNTS', 'TEAM', 'DECISIONS', 'BILLING', 'CUSTOMERS', 'SHOWROOM'], 'a manufacturer'],
+  b2b: [['Shareable live catalogues', 'Quotation maker', 'WhatsApp API', 'ERP', 'Inventory software', 'Vendor portal', 'Gold rate updates', 'Pricing engine', 'Payment reminders', 'Tally integration', 'Google Sheets', 'CRM'], ['STOCK', 'PURCHASE', 'CUSTOMERS', 'BILLING', 'ACCOUNTS', 'DECISIONS', 'WORKSHOP', 'TEAM', 'SHOWROOM'], 'a wholesaler'],
+  trader: [['Shareable live catalogues', 'Quotation maker', 'WhatsApp API', 'Inventory software', 'Pricing engine', 'Payment reminders', 'Tally integration', 'Google Sheets', 'CRM', 'Video call app'], ['STOCK', 'CUSTOMERS', 'PURCHASE', 'ACCOUNTS', 'BILLING', 'DECISIONS', 'TEAM', 'WORKSHOP', 'SHOWROOM'], 'a diamond trader'],
+  d2c: [['Ecommerce website', 'Shopify integration', 'Marketplace seller panels', 'Google Shopping', 'Meta Ads', 'Google Ads', 'Social media scheduler', 'Email marketing tool', 'WhatsApp API', 'DMs', 'CRM', 'Inventory software', 'Website heatmaps', 'Coupons management'], ['CUSTOMERS', 'STOCK', 'BILLING', 'DECISIONS', 'PURCHASE', 'TEAM', 'ACCOUNTS', 'SHOWROOM', 'WORKSHOP'], 'an online brand'],
+};
 function withIcpHome(html, slug) {
   const cfg = ICP_HOME[slug]; if (!cfg) return html;
   const L4 = require('./lib');
@@ -871,8 +880,10 @@ function withIcpHome(html, slug) {
   // the bangle link in the hero lands on this page's own bangle section
   html = html.replace(/(<section class="section[^"]*"[^>]*>)(\s*<div class="container">[\s\S]{0,400}?on one bangle)/, '<span id="one-record"></span>$1$2');
   // Count your tools and the department comparison, before the price
-  const hooks = L4.section(`<span id="count-yours"></span>${L4.sectionHead('COUNT YOUR TOOLS', cfg[2], 'Tap the ones you run today and watch what they cost you.')}${L4.stackMerge()}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too →</a></p>`, { tone: 'tint' })
-    + L4.section(`${L4.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole business.', 'The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}${L4.compareRows(L4.DEPARTMENTS)}`);
+  const pre = ICP_PRESET[cfg[0]];
+  const rows = pre ? pre[1].map((k) => L4.DEPARTMENTS.find((d) => d.lever === k)).filter(Boolean) : L4.DEPARTMENTS;
+  const hooks = L4.section(`<span id="count-yours"></span>${L4.sectionHead('COUNT YOUR TOOLS', cfg[2], pre ? `We have ticked what ${pre[2]} usually runs. Tap to change it to match yours.` : 'Tap the ones you run today and watch what they cost you.')}${L4.stackMerge().replace('<div class="stackm" data-stackm', `<div class="stackm" data-stackm-preset="${pre ? pre[0].join('|').replace(/&/g, '&amp;') : ''}" data-stackm`)}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too →</a></p>`, { tone: 'tint' })
+    + L4.section(`${L4.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole business.', 'The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}${L4.compareRows(rows)}`);
   const security = L4.section(`<div class="gem-head"><h2>Security and privacy delivered, just as you want.</h2></div>${L4.trustStrip()}`, { tone: 'tint' });
   const ti = html.indexOf('id="tiers"');
   if (ti > 0) { const ts = html.lastIndexOf('<section', ti); const te = html.indexOf('</section>', ti) + 10; html = html.slice(0, ts) + hooks + html.slice(ts, te) + security + html.slice(te); }
