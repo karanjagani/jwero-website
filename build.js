@@ -354,7 +354,7 @@ function trimLong(html, slug) {
     || (roles && (/class="shift"/.test(t) || /<h2[^>]*>Skills /.test(t) || /<h2[^>]*>Concrete /.test(t)));
   let blogLinks = '';
   for (const [a, b, t] of secs().reverse()) {
-    if (/Read more on this\./.test(t) && /class="section related"/.test(m)) { blogLinks = (t.match(/<a [^>]*href="\/[^"]*"[^>]*>[^<]+<\/a>/g) || []).slice(0, 3).join(' · '); m = m.slice(0, a) + m.slice(b); }
+    if (/Read more on this\./.test(t) && /class="section related"/.test(m)) { blogLinks = [...t.matchAll(/<a href="(\/[^"]+)"><b>([^<]+)<\/b>/g)].slice(0, 3).map((x) => `<a href="${x[1]}">${x[2]}</a>`).join(' · '); m = m.slice(0, a) + m.slice(b); }
     else if (cut(t)) m = m.slice(0, a) + m.slice(b);
   }
   if (blogLinks) m = m.replace(/(<section class="section related"[\s\S]*?)(<\/div>\s*<\/section>)/, `$1<p class="cta-note" style="margin-top:14px">From the blog: ${blogLinks}</p>$2`);
@@ -964,7 +964,7 @@ function withIcpHome(html, slug) {
   const moreQ = all.filter(([, , t], k) => k > iTiers && k !== iFaq && /<details/.test(t)).map(([, , t]) => (t.match(/<details[\s\S]*?<\/details>/g) || []).join('')).join('');
   // the blog links and the security line ride along under the questions
   const blog = all.find(([, , t]) => /Read more on this\./.test(t));
-  const extra = `<p class="cta-note" style="margin-top:14px">Security and privacy delivered, just as you want: <a href="/trust/security">see how your data is protected</a>.${blog ? ' Read more: ' + (blog[2].match(/<a [^>]*href="\/[^"]*"[^>]*>[^<]+<\/a>/g) || []).slice(0, 3).join(' · ') : ''}</p>`;
+  const extra = `<p class="cta-note" style="margin-top:14px">Security and privacy delivered, just as you want: <a href="/trust/security">see how your data is protected</a>.${blog ? ' Read more: ' + [...blog[2].matchAll(/<a href="(\/[^"]+)"><b>([^<]+)<\/b>/g)].slice(0, 3).map((x) => `<a href="${x[1]}">${x[2]}</a>`).join(' · ') : ''}</p>`;
   for (let k = all.length - 1; k >= 0; k--) {
     const [a, b, t] = all[k];
     if (!keep.has(k)) html = html.slice(0, a) + html.slice(b);
@@ -1088,6 +1088,15 @@ function withBlogTop(body, page) {
 const IL = require('./content/interlink');
 const LINKED = (() => { const m = {}; for (const p of LEGACY) m[p.slug] = IL.link(p.body, '/' + p.slug); return m; })();
 const BACK = (() => { const r = {}; for (const p of LEGACY) for (const u of LINKED[p.slug].targets) (r[u] = r[u] || []).push(p); return r; })();
+// The guides written for the new site link to the pages they explain; those pages link back.
+const NEWBACK = (() => {
+  const r = {};
+  for (const p of [].concat(require('./content/blog-rules'), require('./content/blog-ops'), require('./content/blog-growth'))) {
+    const item = { slug: p.slug, title: p.title.split(' | ')[0], topic: (p.body.match(/<span>([^<]+)<\/span> · <span>\d+ min read/) || [])[1] || 'Guide', date: '2026-10-06' };
+    for (const m of new Set((p.body.match(/href="(\/(?:products|solutions|tools|platform)\/[^"#?]+|\/[a-z-]+-(?:software|for-jewellers|counting|analytics))"/g) || []).map((x) => x.slice(6, -1)))) (r[m] = r[m] || []).push(item);
+  }
+  return r;
+})();
 function withInterlinks(body, page) {
   const slug = page.slug || '';
   const isPost = page.legacy || /^blog\/./.test(slug);
@@ -1116,8 +1125,13 @@ function withInterlinks(body, page) {
   const pltopics = PLAT_TOPICS[slug] || TOOL_TOPICS[slug] || (ckind && CMP_TOPICS[ckind]) || null;
   const ptopics = /^products\//.test(slug) ? ((PROD_TOPICS.find(([r]) => r.test(slug)) || [, ['Technology and strategy']])[1]) : null;
   const list = (BACK['/' + slug] || []).concat(/^solutions\/(?!pain)/.test(slug) ? LEGACY.filter((p) => SOL_TOPICS[kind].includes(p.topic)) : cityKind ? LEGACY.filter((p) => SOL_TOPICS[cityKind].includes(p.topic)) : rtopics ? LEGACY.filter((p) => rtopics.includes(p.topic)) : pltopics ? LEGACY.filter((p) => pltopics.includes(p.topic)) : ptopics ? LEGACY.filter((p) => ptopics.includes(p.topic)) : []).filter((p, k, arr) => arr.indexOf(p) === k);
-  if (!list.length || !/^(products|solutions|platform|tools|guides|roles)\/|^platform$|^tools$|^compare|^(pricing|trust|customers|migration|enterprise|company|partners)$|^trust\/|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^cloud-|^jewellery-business-as-a-service$/.test(slug)) return body;
-  const pick = list.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
+  if ((!list.length && !(NEWBACK['/' + slug] || []).length) || !/^(products|solutions|platform|tools|guides|roles)\/|^platform$|^tools$|^compare|^(pricing|trust|customers|migration|enterprise|company|partners)$|^trust\/|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^cloud-|^jewellery-business-as-a-service$/.test(slug)) return body;
+  const INHERIT = { 'solutions/manufacturers': 'products/manufacturing', 'solutions/cad-services': 'products/manufacturing', 'solutions/casting-units': 'products/manufacturing', 'solutions/oem-manufacturers': 'products/manufacturing', 'solutions/export-houses': 'products/manufacturing',
+    'solutions/single-store': 'products/pos', 'solutions/gold-retail': 'products/pos', 'solutions/diamond-retail': 'products/pos', 'solutions/bridal': 'products/pos', 'solutions/gemstone-retail': 'products/pos', 'solutions/luxury-boutique': 'products/pos', 'solutions/startups': 'products/pos',
+    'solutions/multi-store-chains': 'products/multi-store', 'solutions/gold-wholesale': 'products/inventory', 'solutions/bullion-gold-traders': 'products/inventory', 'solutions/diamond-wholesale': 'products/inventory',
+    'roles/accountant': 'products/billing-finance', 'roles/cashier': 'products/pos', 'roles/inventory-manager': 'products/inventory', 'roles/production-manager': 'products/manufacturing', 'roles/karigar': 'products/manufacturing', 'roles/quality-hallmarking': 'products/inventory', 'roles/b2b-manager': 'products/inventory', 'roles/purchase-manager': 'products/inventory', 'roles/store-manager': 'products/pos', 'roles/owner': 'products/billing-finance', 'roles/chain-owner': 'products/multi-store', 'roles/crm-executive': 'products/crm', 'roles/sales-associate': 'products/pos' };
+  const fresh = [...new Set((NEWBACK['/' + slug] || []).concat(INHERIT[slug] ? NEWBACK['/' + INHERIT[slug]] || [] : []))].slice(0, 2);
+  const pick = fresh.concat(list.filter((p) => !fresh.includes(p)).slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4 - fresh.length));
   const blk = L3.section(`${L3.sectionHead('FROM THE BLOG', 'Read more on this.', '')}<div class="erp-map">${pick.map((p) => `<a href="/${p.slug}"><b>${p.title}</b><span>${p.topic}</span></a>`).join('')}</div>`);
   const at = body.lastIndexOf('<section'); return at > 0 ? body.slice(0, at) + blk + body.slice(at) : body + blk;
 }
