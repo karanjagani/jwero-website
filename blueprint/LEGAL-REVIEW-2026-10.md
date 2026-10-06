@@ -105,3 +105,4 @@ terms, or need to be withdrawn:
 6. **Backups.** Site wording was softened on 2026-10-06 to "you set frequency
    and retention; ask for the latest restore check" until restore drills are
    confirmed running in production (see section E).
+- **Season change-freeze** (on /start, the safe-to-try strip, FAQ, ERP-to-OS pages, blog): "a written change-freeze means nothing disruptive happens during your peak weeks." Needs a written policy or softer wording.

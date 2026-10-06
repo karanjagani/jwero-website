@@ -1689,7 +1689,7 @@ var pick = { persona: null, tier: null }, labels = {}, step = 1;
 var go = wrap.querySelector('[data-start-go]'), waBtn = wrap.querySelector('[data-start-wa]'), back = wrap.querySelector('[data-start-back]');
 var base = go.getAttribute('href');
 try { var from = (new URLSearchParams(location.search).get('from') || '').replace(/[^a-z0-9-]/gi, ''); if (from) { base = base.replace('utm_medium=start', 'utm_medium=start&utm_content=' + from); go.setAttribute('href', base); } } catch (e) {}
-function show(n) {
+function show(n, still) {
 step = n;
 wrap.querySelectorAll('.start-panel').forEach(function (p) { p.classList.toggle('is-on', Number(p.dataset.panel) === n); });
 wrap.querySelectorAll('.start-steps li').forEach(function (li) { var k = Number(li.dataset.step); li.classList.toggle('is-on', k === n); li.classList.toggle('is-done', k < n); });
@@ -1700,7 +1700,7 @@ wrap.querySelector('[data-sum="tier"]').textContent = labels.tier || '…';
 go.setAttribute('href', base + '&business=' + encodeURIComponent(pick.persona || '') + '&tier=' + encodeURIComponent(pick.tier || ''));
 if (waBtn) waBtn.setAttribute('href', 'https://wa.me/919169959959?text=' + encodeURIComponent('Hi Jwero, I want to set up a workspace for my ' + (labels.persona || 'business').toLowerCase() + ' on the ' + (labels.tier || 'Assist') + ' tier. Help me start. [ref:start/wa]'));
 }
-wrap.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+if (!still) wrap.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
 }
 wrap.addEventListener('click', function (e) {
 var o = e.target.closest('.start-opt'); if (!o) return;
@@ -1717,6 +1717,23 @@ var href = go.getAttribute('href'), l = document.querySelector('.launch');
 docEl.classList.add('first-visit'); l.classList.add('is-liftoff');
 window.setTimeout(function () { location.href = href; }, 1500);
 });
+try {
+var ref = document.referrer ? new URL(document.referrer) : null, rp = ref && ref.host === location.host ? ref.pathname : '';
+var guess = /manufactur|karigar|casting|cad|oem|gold-loss|production|export-houses/.test(rp) ? 'maker'
+: /franchise/.test(rp) ? 'franchise' : /multi-store|chain|enterprise|luxury/.test(rp) ? 'chain'
+: /b2b|wholesale|bullion|diamond-traders|trade|quicksell/.test(rp) ? 'b2b' : /d2c|ecommerce|storefront|shopify|instagram|jewellery-brands|website/.test(rp) ? 'd2c'
+: /single-store|gold-retail|silver-retail|diamond-retail|bridal|cashier|sales-associate/.test(rp) ? 'single' : '';
+var gb = guess && wrap.querySelector('[data-persona="' + guess + '"]');
+if (gb) {
+pick.persona = guess; labels.persona = gb.querySelector('b').textContent;
+gb.parentNode.querySelectorAll('.start-opt').forEach(function (x) { x.classList.toggle('is-picked', x === gb); });
+show(2, true);
+var note = document.createElement('p'); note.className = 'start-guess';
+note.innerHTML = 'Set up for <b>' + labels.persona + '</b>, from the page you came from. <button type="button">Change</button>';
+note.querySelector('button').addEventListener('click', function () { show(1); note.remove(); });
+var p2 = wrap.querySelector('[data-panel="2"]'); p2.insertBefore(note, p2.firstChild);
+}
+} catch (e) {}
 try { var saved = localStorage.getItem('jwero-persona'); if (saved) { var b = wrap.querySelector('[data-persona="' + saved + '"]'); if (b) b.classList.add('is-picked'); } } catch (e) {}
 wrap.addEventListener('click', function (e) {
 var o = e.target.closest('.start-opt'); if (!o) return;

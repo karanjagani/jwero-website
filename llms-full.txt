@@ -19326,6 +19326,8 @@ GET STARTED
 
  Back 
 
+ “A capable, motivated and eager team has definitely delivered on their promise of speedy deployment. The team’s availability & response is commendable. This platform has immense potential to our trade.” Manjunatha Nayak Gujjadi Swarna Jewellers, Bangalore Rather have Jwero run it for you? Let Jwero handle it → No subscription, every tool included.
+
  WHY TRYING THIS IS SAFE
 
  Pilot on your own data Start with a supervised sample import, evaluate on your real customers, not a demo dataset. 
@@ -19342,7 +19344,7 @@ GET STARTED
  No. You create the account with Google, LinkedIn or email, and billing is set up inside Jwero. The first month of Jwero One is ₹3,600 instead of ₹18,000; after that it bills monthly, and you can export everything, any time.
 
  How long until I am live? 
- Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one.
+ Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one. Everything else follows in stages.
 
  Can I get help instead of doing it myself? 
  Yes, every step has a chat-or-call button; a real person and our AI reply within minutes, and we can run onboarding with you.
@@ -19351,7 +19353,7 @@ Q: Do I pay on this page?
 A: No. You create the account with Google, LinkedIn or email, and billing is set up inside Jwero. The first month of Jwero One is ₹3,600 instead of ₹18,000; after that it bills monthly, and you can export everything, any time.
 
 Q: How long until I am live?
-A: Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one.
+A: Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one. Everything else follows in stages.
 
 Q: Can I get help instead of doing it myself?
 A: Yes, every step below has a chat-or-call button; a real person and our AI reply within minutes, and we can run onboarding with you.

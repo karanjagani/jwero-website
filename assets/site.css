@@ -4032,3 +4032,6 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
   .stackm-panel { scroll-margin-top: 80px; }
 }
 @media (min-width: 1001px) { .stackm-mini { display: none !important; } }
+
+.start-guess { margin: 0 0 12px; font-size: .875rem; color: var(--ink-2); }
+.start-guess button { margin-left: 6px; padding: 0; border: 0; background: none; color: var(--brand); text-decoration: underline; font: inherit; cursor: pointer; }

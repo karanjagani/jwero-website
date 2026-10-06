@@ -17,7 +17,7 @@ const start = {
   breadcrumbs: [['Home', '/'], ['Get started']],
   faqs: [
     { q: 'Do I pay on this page?', a: 'No. You create the account with Google, LinkedIn or email, and billing is set up inside Jwero. The first month of Jwero One is ₹3,600 instead of ₹18,000; after that it bills monthly, and you can export everything, any time.' },
-    { q: 'How long until I am live?', a: 'Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one.' },
+    { q: 'How long until I am live?', a: 'Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one. Everything else follows in stages.' },
     { q: 'Can I get help instead of doing it myself?', a: 'Yes — every step below has a chat-or-call button; a real person and our AI reply within minutes, and we can run onboarding with you.' },
   ],
   body: `
@@ -59,10 +59,11 @@ ${L.section(
   </div>`
 )}
 
+${L.section(`${require('./positioning').quoteOne(0)}<p class="cta-note" style="text-align:center;margin-top:16px">Rather have Jwero run it for you? <a href="/jewellery-business-as-a-service">Let Jwero handle it →</a> No subscription, every tool included.</p>`)}
 ${L.section(L.safeToTryStrip(), { tone: 'tint' })}
 ${L.section(`${L.sectionHead('BEFORE YOU START', 'Three questions people ask on this page.', '')}${L.faqBlock([
   { q: 'Do I pay on this page?', a: 'No. You create the account with Google, LinkedIn or email, and billing is set up inside Jwero. The first month of Jwero One is ₹3,600 instead of ₹18,000; after that it bills monthly, and you can export everything, any time.' },
-  { q: 'How long until I am live?', a: 'Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one.' },
+  { q: 'How long until I am live?', a: 'Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one. Everything else follows in stages.' },
   { q: 'Can I get help instead of doing it myself?', a: 'Yes — every step has a chat-or-call button; a real person and our AI reply within minutes, and we can run onboarding with you.' },
 ])}`)}
 `,

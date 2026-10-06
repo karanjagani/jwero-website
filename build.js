@@ -342,6 +342,9 @@ function journeyFix(html, p) {
   const slug = p.slug || '';
   // 1. every self-serve start goes through /start, which explains the first month
   if (slug !== 'start') html = html.replace(/href="https:\/\/os\.jwero\.ai\/signup\?utm_source=jwero\.ai&(?:amp;)?utm_medium=([^"]*)"(?: rel="noopener")?(?: data-trial(?:="[^"]*")?)?/g, (m0, from) => `href="/start?from=${from.replace(/[^a-z0-9-]/gi, '')}"`);
+  // pages never offer a button back to themselves
+  if (slug === 'how-it-works') html = html.replace(/<a class="btn[^"]*" href="\/how-it-works">See how Jwero works<\/a>/g, '');
+  if (slug === 'self-managed') html = html.replace(/<a class="btn[^"]*" href="\/self-managed">Run it yourself<\/a>/g, '').replace(/<a class="btn[^"]*" href="\/pricing">Ways to work with Jwero<\/a>/g, '');
   // 2. the managed page never links to itself
   if (slug === 'jewellery-business-as-a-service') html = html.replace(/<a class="btn btn-primary" href="\/jewellery-business-as-a-service">/g, '<a class="btn btn-primary" href="#" data-wa="handle">');
   // 4. Hindi: the closing band in Hindi, and a way in from Hindi-belt city pages
@@ -1295,13 +1298,14 @@ ${require('./lib').section(`
   // search index + a no-JS-fallback results page
   fs.writeFileSync(path.join(DIST, 'search-index.json'), noDash(JSON.stringify(searchIndex())));
   fs.mkdirSync(path.join(DIST, 'search'), { recursive: true });
-  fs.writeFileSync(path.join(DIST, 'search', 'index.html'), layout({
+  fs.writeFileSync(path.join(DIST, 'search', 'index.html'), journeyFix(layout({
     slug: 'search', noindex: true, title: 'Search | Jwero', description: 'Search every product, solution, guide and answer on jwero.ai.',
     body: `${require('./lib').section(`<div class="section-head"><h1>Search Jwero</h1></div>
   <form class="search-box search-box-page" method="get" action="/search" role="search">${icon('search')}<input type="search" name="q" placeholder="Search products, solutions, questions…" aria-label="Search" autocomplete="off"></form>
   <div class="search-results search-results-page" data-search-page role="list"></div>
-  <p class="cta-note" style="margin-top:18px">Can’t find it? <a href="#" data-wa="faq">Ask us now</a> — a real person and our AI reply within minutes.</p>`)}`,
-  }));
+  <p class="cta-note" style="margin-top:18px">Can’t find it? <a href="#" data-wa="faq">Ask us now</a> — a real person and our AI reply within minutes.</p>
+  <div class="jb-blogline" style="margin-top:22px"><p><b>Popular:</b> <a href="/pricing">Pricing</a> · <a href="/book-demo">Book a demo</a> · <a href="/jewellery-business-as-a-service">Let Jwero run it</a> · <a href="/count-your-team">Count your team</a> · <a href="/tools">Free calculators</a> · <a href="/compare">Compare</a> · <a href="/guides">Buyer’s guides</a> · <a href="/trust/security">Security</a></p></div>`)}`,
+  }), { slug: 'search' }));
 
   // llms-full.txt — every page's text, for answer engines that read whole sites.
   const strip = (h) => h.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ').replace(/<svg[\s\S]*?<\/svg>/g, ' ').replace(/<(h[1-3])[^>]*>/g, '\n\n## ').replace(/<\/(p|li|h[1-6]|div|tr)>/g, '\n').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/[ \t]+/g, ' ').replace(/\n\s*\n\s*\n+/g, '\n\n').trim();
