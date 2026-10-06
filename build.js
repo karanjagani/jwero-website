@@ -407,6 +407,7 @@ function inShortQuestion(page) {
 }
 // Hub and pain pages answer their own question in one paragraph.
 const HUB_SHORT = {
+  'jewellery-software-india': { q: 'Which jewellery software do Indian jewellers use?', a: 'Jewellers across India, from Surat diamond offices to Thrissur gold showrooms, run Jwero for billing at the live rate, stock, customers, karigar accounts, schemes and WhatsApp on one record. It is set up in a day over chat and video in any city, at the same price everywhere: ₹18,000 a month, first month ₹3,600.' },
   platform: { q: 'What is the Jwero platform?', a: 'Jwero is one system for a jewellery business: customers, counter, stock, purchase, workshop, books and team on one record, with AI agents that draft the routine work for a person to approve. It connects to Tally, Shopify, marketplaces and Meta, prices every piece from the live gold rate, and is set up in a day.' },
   roles: { q: 'How does Jwero help each person in a jewellery business?', a: 'Every role works on the same customer and stock record: the owner sees the whole business, the counter bills at the live rate, sales staff know each customer before they speak, and the workshop, purchase and accounts teams stop re-entering the same data. AI drafts routine work and a person approves it.' },
   solutions: { q: 'Which Jwero setup fits my kind of jewellery business?', a: 'Jwero is one system for every kind of jewellery business: single stores, chains, franchises, gold, diamond and silver retail, wholesale, traders and manufacturers. Each business type switches on the parts it needs first. Run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s specialists and AI run it for you.' },
@@ -415,6 +416,11 @@ const HUB_SHORT = {
   'solutions/pain/dead-stock': { q: 'How do jewellers reduce dead stock?', a: 'Know the age and today’s value of every piece, see what has not moved in months, and match slow pieces to the customers most likely to buy them before discounting or melting. Jwero shows stock ageing at the live rate and suggests who to offer each idle piece to.' },
 };
 const HUB_FAQ = {
+  'jewellery-software-india': [
+    { q: 'Does Jwero have offices in every city?', a: 'No. Setup, training and support are done over chat, call and video, so the service is the same in every city. Your data is imported for you.' },
+    { q: 'Does it work in regional languages?', a: 'Support is given in your language over chat and call. Customer messages and AI replies can be written in the customer’s language.' },
+    { q: 'Is the price different by city?', a: 'No. It is ₹18,000 a month in every city, with the first month at ₹3,600. The managed service is priced on the work.' },
+  ],
   solutions: [
     { q: 'Can one system handle retail, wholesale and manufacturing together?', a: 'Yes. Jwero runs the counter, B2B orders, the workshop and the books on one record, so a business that does more than one of these does not need separate software for each.' },
     { q: 'Do I pay more for a bigger or more complex business?', a: 'The subscription is ₹18,000 a month with every module. Extra locations are ₹2,999 each. Groups and chains can take Enterprise, which is custom priced.' },
@@ -641,7 +647,7 @@ function withManaged(body, page) {
     const head = slug === 'enterprise' ? ['WHERE ENTERPRISE SITS', 'Subscription, managed, or enterprise.', 'Chains and groups can run it themselves, hand functions to Jwero, or mix the two by function.']
       : top === 'compare' ? ['YOUR NEXT STEP', 'Try Jwero, or let Jwero run it.', 'Start on your own data for ₹3,600, or hand the work to Jwero’s specialists and AI with every tool included.']
       : ['PREFER JWERO TO RUN THIS FOR YOU?', 'Use it yourself, or let Jwero run it.', 'Everything on this page, run by Jwero’s specialists and AI. No team to hire, no tools to buy.'];
-    block = L3.section(`<figure class="pz-quote jb-solo"><blockquote>“${q}”</blockquote><figcaption><b>${who}</b><span>${where}</span></figcaption></figure>`) +
+    block = (/city-quote/.test(body) ? '' : L3.section(`<figure class="pz-quote jb-solo"><blockquote>“${q}”</blockquote><figcaption><b>${who}</b><span>${where}</span></figcaption></figure>`)) +
       L3.section(`${L3.sectionHead(...head)}${require('./content/jbaas').TIERS()}`, { tone: 'tint' });
   }
   const at = body.lastIndexOf('<section');

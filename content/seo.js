@@ -167,12 +167,34 @@ const CITIES = [
     'Work goes to many small job workers. Can each have an account?', 'Yes. Each job worker has an account of metal issued and returned and the wages due.'],
 ];
 
+// City pages carry local material so they are not near-copies of each other:
+// an opening answer naming the city's trade, use cases and buyer questions
+// from the business types the city routes to (content/segments.json), the
+// customer quote from that city or state where one exists, and a scenario
+// matched to the main trade.
+const SEG = require('./segments.json');
+const CITY_QUOTE = { bangalore: 0, chennai: 1, hyderabad: 4, patna: 6, kochi: 2, kozhikode: 2, thrissur: 5, coimbatore: 3, madurai: 3, salem: 1 };
+const SIM_FOR = { 'diamond-traders': 'shelf', 'diamond-wholesale': 'shelf', 'lab-grown-diamond': 'shelf', 'gold-retail': 'rate', 'gold-wholesale': 'rate', 'bullion-gold-traders': 'rate', 'silver-retail': 'rate', 'b2b-jewellery': 'rate', manufacturers: 'grams', 'casting-units': 'grams', 'oem-manufacturers': 'grams', 'export-houses': 'grams' };
+const cityLocal = (slug, name, links) => {
+  const segs = links.map(([h]) => (/^\/solutions\/([^/#]+)/.exec(h) || [])[1]).filter((k) => SEG[k]);
+  const uc = []; for (let r = 0; uc.length < 4 && r < 4; r++) for (const k of segs) { const u = SEG[k].usecases[r]; if (u && uc.length < 4 && !uc.includes(u)) uc.push(u); }
+  const extra = segs.slice(0, 2).map((k) => SEG[k].faqs[0]).filter(Boolean);
+  const names = links.slice(0, 3).map(([, l]) => l.toLowerCase());
+  const short = { q: `What is the best jewellery software for jewellers in ${name}?`, a: `For ${name}’s trade, which here means ${names.join(', ').replace(/, ([^,]*)$/, ' and $1')}, Jwero runs the counter, stock, customers, karigar accounts and books on one record, priced from the live rate. It is set up in a day over chat and video, with no office visit needed. Run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it.` };
+  const sim = SIM_FOR[segs[0]] || 'memory';
+  const qi = CITY_QUOTE[slug];
+  return { uc, extra, short, sim, qi };
+};
 const cityPage = ([slug, name, trade, need, links, q, a]) => {
+  const loc = cityLocal(slug, name, links);
+  const Q = loc.qi !== undefined ? require('./positioning').QUOTES[loc.qi] : null;
   const faqs = [
+    loc.short,
     { q, a },
+    ...loc.extra,
     { q: `Is there a Jwero office in ${name}?`, a: `No. Jwero is set up and supported over chat, call and video call, so a jeweller in ${name} gets the same team as one anywhere else in India. Your data is imported for you and training is done on your own screen.` },
     { q: `What does jewellery software cost for a shop in ${name}?`, a: 'The price is the same in every city: ₹18,000 a month, with every module included. The first month is ₹3,600. WhatsApp messages, AI and calls run on a prepaid wallet at published rates.' },
-    { q: 'Do I have to give up Tally?', a: 'No. Sales, purchases and payments post to Jwero’s own ledger with GST handled, and the Tally and Zoho Books bridges carry the entries across if your accountant works there.' },
+    { q: 'Do I have to give up Tally?', a: 'No. Sales, purchases and payments are kept in Jwero with GST handled. Jwero connects to Tally and Zoho Books, imports masters and checks records against them; entries are still posted in Tally by your accountant.' },
   ];
   return {
     slug: `jewellery-software-india/${slug}`,
@@ -189,22 +211,20 @@ ${L.hero({
   secondary: { href: '/pricing', label: 'See the price' },
 })}
 
+<section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">${loc.short.q}</h2><p>${loc.short.a}</p></div></section>
+
 ${L.section(
   `${L.sectionHead(`THE TRADE IN ${name.toUpperCase()}`, `How jewellery is bought, made and sold in ${name}.`, '')}
   <div class="prose city-prose"><p>${trade}</p><p>${need}</p></div>`
 )}
+${Q ? L.section(`<figure class="pz-quote jb-solo city-quote"><blockquote>“${Q[0]}”</blockquote><figcaption><b>${Q[1]}</b><span>${Q[2]}${/Tanika/.test(Q[0]) ? ' · Tanika Tech is the company behind Jwero' : ''}</span></figcaption></figure>`) : ''}
+${loc.uc.length ? L.section(`${L.sectionHead('USE CASES', `Where Jwero pays off for jewellers in ${name}.`, 'Everyday situations in the trade here, and what changes.')}<div class="uc-grid">${loc.uc.map((u, i) => `<article class="uc-card"><span class="uc-n">${String(i + 1).padStart(2, '0')}</span><h3>${u.hook}</h3><p>${u.does}</p><p class="uc-change"><b>What changes</b>${u.changes}</p></article>`).join('')}</div>`, { tone: 'tint' }) : ''}
+${L.sim(loc.sim)}
 
 ${L.section(
   `${L.sectionHead('START HERE', `The pages written for the trade in ${name}.`, '')}
   ${L.cards(links.map(([href, label, why]) => ({ title: label, text: why, link: { href, label: 'Open' } })), 2)}`
 , { tone: 'tint' })}
-
-${L.section(
-  `${L.sectionHead('EVERY DEPARTMENT', 'What changes across the whole business.', 'The counter, the stock room, the vendor, the workshop, the books and the team run on the same record as the customer.')}
-  ${L.compareRows(L.DEPARTMENTS)}`
-)}
-
-${L.section(PRICE, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('QUESTIONS', `What jewellers in ${name} ask.`, '')}${L.faqBlock(faqs)}
 <p class="cta-note" style="margin-top:18px">Other cities: ${CITIES.filter((c) => c[0] !== slug).map((c) => `<a href="/jewellery-software-india/${c[0]}">${c[1]}</a>`).join(' · ')}</p>`)}
