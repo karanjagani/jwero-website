@@ -1250,11 +1250,11 @@ function homeHero({ kicker, h1, sub }) {
         <p class="hero-kicker">${mark('mark-xs')}${kicker}</p>
         <h1>${h1}</h1>
         <p class="sub">${sub}</p>${icpPick()}
-        <div class="cta-row hero-home-cta">
-          <a class="btn btn-primary" href="${TRIAL_URL}home-hero" rel="noopener" data-trial>Start for ₹3,600</a>
-          <a class="hero-quiet" href="#" data-wa="home">or chat or call with us</a>
+        <div class="hero-doors">
+          <a class="hero-door" href="${TRIAL_URL}home-hero" rel="noopener" data-trial><span>Run it yourself</span><b>Start for ₹3,600</b><em>Every module. Then ₹18,000 a month.</em></a>
+          <a class="hero-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b><em>No team to hire. No tools to buy.</em></a>
         </div>
-        <p class="cta-note">Every module. First month ₹3,600, then ₹18,000 a month.</p>
+        <p class="cta-note"><a href="#jbaas">Compare the three ways</a> · A real person replies on WhatsApp within minutes</p>
       </div>
       <div class="hero-home-piece">
         ${gemStage2({ hero: true })}

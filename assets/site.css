@@ -3847,3 +3847,16 @@ main > .cmp { width: min(calc(var(--rail) - 2 * var(--pad)), 100% - 32px); margi
 @media (max-width: 900px) { .jb-tiers, .jb-what { grid-template-columns: minmax(0, 1fr); } .jb-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .jb-steps { grid-template-columns: minmax(0, 1fr); } }
 html.has-workspace .header-start.btn-primary { background: var(--panel); border-color: var(--panel); color: #fff; }
+
+/* home hero: two doors */
+.hero-doors { margin-top: 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; max-width: 560px; }
+.hero-door { display: grid; gap: 4px; padding: 14px 16px; border-radius: 14px; background: #fff; color: #10142b; text-decoration: none; border: 2px solid #fff; transition: transform .15s var(--ease), box-shadow .2s var(--ease); }
+.hero-door:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -14px rgba(0, 0, 0, .5); }
+.hero-door span { font: 600 .625rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: #5c6072; }
+.hero-door b { font-size: 1.0625rem; color: #0013b7; }
+.hero-door em { font-style: normal; font-size: .8125rem; color: #5c6072; }
+.hero-door.is-managed { background: #F6B11C; border-color: #F6B11C; }
+.hero-door.is-managed b { color: #1c1503; } .hero-door.is-managed span, .hero-door.is-managed em { color: #4a3a0c; }
+.hero-home .cta-note a { color: inherit; text-decoration: underline; }
+.jb-solo { max-width: 760px; margin: 0 auto; }
+@media (max-width: 520px) { .hero-doors { grid-template-columns: minmax(0, 1fr); } }

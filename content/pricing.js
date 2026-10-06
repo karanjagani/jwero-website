@@ -91,14 +91,14 @@ const pricing = {
   body: `
 ${L.hero({
   eyebrow: 'PRICING',
-  h1: `One plan. Every module. ${inr(PLAN.monthly)} a month.`,
+  h1: 'Three ways to work with Jwero.',
   sub: `Jwero One is the whole operating system — CRM, WhatsApp, catalogues, the counter, the workshop, schemes, the books and the AI workforce — for ${inr(PLAN.monthly)} a month, billed monthly. No per-module price, no per-seat price. Your first month is ${inr(PLAN.firstMonth)}.`,
   primary: { href: 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing', label: `Start for ${inr(PLAN.firstMonth)}` },
-  secondary: { href: '#', label: 'Ask a pricing question', wa: 'pricing' },
-  note: `Prices exclude GST. First month ${inr(PLAN.firstMonth)}, then ${inr(PLAN.monthly)} a month.`,
+  secondary: { href: '#', label: 'Let Jwero handle it', wa: 'handle' },
+  note: `Run it yourself: first month ${inr(PLAN.firstMonth)}, then ${inr(PLAN.monthly)} a month. Managed: no subscription, every tool included. Prices exclude GST.`,
 })}
 
-${L.section(`${L.sectionHead('THREE WAYS TO BUY', 'Subscription, managed, or enterprise.', 'The price below is the subscription for jewellers who run it themselves. Managed customers pay no subscription; every tool is included.')}${require('./jbaas').TIERS()}`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('THREE WAYS TO BUY', 'Subscription, managed, or enterprise.', 'Below the three: the detail of the subscription for jewellers who run it themselves. Managed customers pay no subscription; every tool is included.')}${require('./jbaas').TIERS()}`, { tone: 'tint' })}
 ${L.section(
   `<div class="plans" data-plans>
     <div class="plan-grid">
@@ -116,21 +116,6 @@ ${L.section(
           <li>No per-seat price for your team</li>
         </ul>
         <div class="cta-row"><a class="btn btn-primary" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing-plan" rel="noopener" data-trial>Start for ${inr(PLAN.firstMonth)}</a><a class="btn btn-ghost" href="#" data-wa="pricing">Talk to us first</a></div>
-      </div>
-      <div class="plan plan-ent">
-        <p class="plan-flag plan-flag-quiet">For groups &amp; chains</p>
-        <h2>Enterprise</h2>
-        <p class="plan-desc">For groups and chains: unlimited history, dedicated support and terms written for your network.</p>
-        <p class="plan-price"><b>Custom pricing</b></p>
-        <p class="plan-term">Quoted for your network, from six locations</p>
-        <ul class="plan-list">
-          <li>Everything in Jwero One</li>
-          <li>Unlimited history</li>
-          <li>100 GB storage included</li>
-          <li>Dedicated support &amp; custom terms</li>
-          <li>Custom integrations</li>
-        </ul>
-        <div class="cta-row"><a class="btn btn-ghost" href="/enterprise">See Enterprise</a><a class="btn btn-ghost" href="#" data-wa="enterprise">Talk to a specialist</a></div>
       </div>
     </div>
     <p class="plans-note">The plan covers the whole platform. WhatsApp, SMS, AI and other per-use services are metered from your prepaid wallet at the rates below.</p>
@@ -214,7 +199,7 @@ ${L.section(L.safeToTryStrip())}
 ${L.section(`${L.sectionHead('PRICING QUESTIONS', 'Straight answers on cost and terms.', '')}${L.faqBlock(faqs)}
 <p class="cta-note" style="margin-top:14px">More objections? <a href="/faq#pricing">See every pricing question we’ve been asked →</a></p>`)}
 
-${L.ctaBand(`Every module, ${inr(PLAN.monthly)} a month. Try it first.`, `First month ${inr(PLAN.firstMonth)}, on your own data. Chat or call if you want a person beside you.`, 'pricing')}
+${L.section(`${L.sectionHead('CHOOSE', 'Run it yourself, let Jwero run it, or talk to us.', '')}${require('./jbaas').TIERS()}`, { tone: 'tint' })}
 `,
 };
 

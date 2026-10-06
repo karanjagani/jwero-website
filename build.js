@@ -577,6 +577,19 @@ function withSim(body, page) {
   const heroAt = body.indexOf('<section class="hero'); const at = body.indexOf('<section class="section', heroAt);
   return at === -1 ? body + block : body.slice(0, at) + block + body.slice(at);
 }
+// Solution and product pages sell the software; each also offers the managed
+// service and carries one customer's words, so no path is a dead end.
+function withManaged(body, page) {
+  const slug = page.slug || '';
+  if (!(slug.startsWith('solutions/') || slug === 'solutions' || slug === 'products' || slug.startsWith('products/'))) return body;
+  const Q = require('./content/positioning').QUOTES;
+  const [q, who, where] = Q[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % Q.length];
+  const block = L3.section(`<figure class="pz-quote jb-solo"><blockquote>“${q}”</blockquote><figcaption><b>${who}</b><span>${where}</span></figcaption></figure>`) +
+    L3.section(`${L3.sectionHead('PREFER JWERO TO RUN THIS FOR YOU?', 'Use it yourself, or let Jwero run it.', 'Everything on this page, run by Jwero’s specialists and AI. No team to hire, no tools to buy.')}${require('./content/jbaas').TIERS()}`, { tone: 'tint' });
+  const at = body.lastIndexOf('<section');
+  return at > 0 ? body.slice(0, at) + block + body.slice(at) : body + block;
+}
+
 function withRelated(body, page) {
   const href = '/' + page.slug;
   const links = [];
@@ -756,7 +769,7 @@ ${launchHTML()}
 ${navHTML(page)}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-${withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withSchematic(page), page), page), page), page), page), page), page).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
+${withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withManaged(withSchematic(page), page), page), page), page), page), page), page), page).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
 </main>
 ${searchDialog()}
 ${connectDialog()}

@@ -157,7 +157,7 @@ const outWidget = (pick, k = 'What Jwero would do') => {
       <p><span>Usually starts as</span><b data-pz-out-lv></b></p>
       <p><span>Capabilities underneath</span><b data-pz-out-caps></b></p>
     </div>
-    <a class="btn btn-primary" href="#" data-wa="outcome" data-pz-out-cta>Tell Jwero this is what I want</a>
+    <a class="btn btn-primary" href="#" data-wa="outcome" data-pz-out-cta>Let Jwero handle it</a>
   </div>
 </div>`;
 };
@@ -213,7 +213,7 @@ const experts = () => L.section(`
     <h2 class="pz-h">When you need expertise, you don’t need to hire for it.</h2>
     <p class="pz-lead">Jwero can bring in specialists who understand both the work and the jewellery business.</p>
     <p class="pz-strong">As the world changes, Jwero’s capabilities evolve with it. You don’t have to rebuild your team every time something changes.</p>
-    <p class="pz-cta-inline">${HANDLE('Build my Jwero team', 'with-you', 'btn btn-ghost')}</p>
+    <p class="pz-cta-inline">${HANDLE('Let Jwero handle it', 'with-you', 'btn btn-ghost')}</p>
   </div>
   <ul class="pz-experts">${EXPERT_AREAS.map((e) => `<li>${gem}${e}</li>`).join('')}</ul>
 </div>`, { tone: 'tint' });
@@ -254,7 +254,7 @@ ${eyebrow('A day in the life of Jwero')}
     <p class="pz-cmd-k">3 things need your attention today</p>
     <ol class="pz-cmd-list">${CMD_ITEMS.map((t) => `<li><span>${t}</span><b>Handled by Jwero</b></li>`).join('')}</ol>
     <button type="button" class="btn pz-btn-gold" data-pz-cmd-go>Let Jwero handle these</button>
-    <a class="btn pz-btn-gold" href="#" data-wa="handle" data-pz-cmd-cta hidden>Do this for my business</a>
+    <a class="btn pz-btn-gold" href="#" data-wa="handle" data-pz-cmd-cta hidden>Let Jwero handle it</a>
     <p class="pz-cmd-note">An illustration with example figures, not a customer’s data.</p>
   </div>
 </div>`, { tone: 'tint', id: 'a-day' });
@@ -342,9 +342,9 @@ ${eyebrow('Choose')}
 const RUN_FUNCS = ['Customer acquisition', 'Offline marketing and promotion', 'Customer engagement', 'Showroom journey', 'Sales', 'Digital commerce', 'Customer retention', 'Sourcing and vendors', 'Operations', 'Intelligence', 'Technology'];
 const RUN_MODES = [
   { key: 'you', tab: 'You run it', title: 'Your team runs it. Jwero powers it.', line: 'You operate the business. Jwero provides the technology, the AI and the work that happens automatically. One system in place of many tools, so there is far less to learn.', lanes: [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
-    you: 'Run every function with your own team', ai: 'Keeps the record, the numbers and the technology in order', jw: 'Sets you up, trains your team, stays on call', meters: [85, 60, 1], cost: 'A technology subscription. ₹18,000 a month, first month ₹3,600.', cta: ['Explore self-managed', '/self-managed'] },
+    you: 'Run every function with your own team', ai: 'Keeps the record, the numbers and the technology in order', jw: 'Sets you up, trains your team, stays on call', meters: [85, 60, 1], cost: 'A technology subscription. ₹18,000 a month, first month ₹3,600.', cta: ['Run it yourself', '/self-managed'] },
   { key: 'together', tab: 'We run it together', title: 'Your team, Jwero specialists and AI.', line: 'You retain control. Jwero provides the expertise and the execution where you want it, and AI does the routine. Nothing reaches a customer without your approval unless you allow it.', lanes: [2, 0, 1, 0, 0, 2, 1, 0, 1, 1, 2],
-    you: 'Keep control, the showroom, the selling and the sourcing', ai: 'Does the replies, follow-ups, reminders and reports', jw: 'Specialists run the functions you choose, beside your people', meters: [45, 30, 1], cost: 'Priced on the work. Every Jwero tool is included, with no subscription.', cta: ['Build my Jwero team', '#with-you'] },
+    you: 'Keep control, the showroom, the selling and the sourcing', ai: 'Does the replies, follow-ups, reminders and reports', jw: 'Specialists run the functions you choose, beside your people', meters: [45, 30, 1], cost: 'Priced on the work. Every Jwero tool is included, with no subscription.', cta: ['Let Jwero handle it', '#with-you'] },
   { key: 'jwero', tab: 'Jwero runs it', title: 'You define the outcome. Jwero handles the function.', line: 'Jwero specialists, AI and technology run the functions you hand over, from marketing and ecommerce to the showroom journey, sourcing and vendors. No hiring, no agencies, nothing new to learn.', lanes: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
     you: 'Set the goals. Stay with the jewellery and your customers', ai: 'Works at scale under the specialists', jw: 'Plans, executes and reports on every function you hand over', meters: [10, 5, 1], cost: 'Priced on the work and the outcome. No team to hire, no tools to buy, no subscription.', cta: ['Let Jwero handle it', '#handle'] },
 ];
@@ -385,8 +385,8 @@ ${board(start)}`, { id: 'who-runs-it' });
 
 // The three ways to work with Jwero, as cards. Swipeable on a phone.
 const LEVELS = [
-  ['01', 'You run it', 'Your team + Jwero', 'You operate the business. Jwero provides technology, AI and work that happens automatically.', 'Self managed', 'A technology subscription.', '/self-managed', 'Explore self-managed', null],
-  ['02', 'We run it together', 'Your team + Jwero specialists + AI', 'You retain control. Jwero provides expertise and execution.', 'Co-managed', 'Specialists and AI, priced on the work. Every tool included.', null, 'Build my Jwero team', 'with-you'],
+  ['01', 'You run it', 'Your team + Jwero', 'You operate the business. Jwero provides technology, AI and work that happens automatically.', 'Self managed', 'A technology subscription.', '/self-managed', 'Run it yourself', null],
+  ['02', 'We run it together', 'Your team + Jwero specialists + AI', 'You retain control. Jwero provides expertise and execution.', 'Co-managed', 'Specialists and AI, priced on the work. Every tool included.', null, 'Let Jwero handle it', 'with-you'],
   ['03', 'Jwero runs it', 'Jwero specialists + AI + technology', 'You define the outcome. Jwero handles the function.', 'Fully managed', 'Priced on the work and the outcome. Every tool included, no subscription.', null, 'Let Jwero handle it', 'handle'],
 ];
 const levels = () => `
@@ -577,7 +577,7 @@ ${eyebrow('Count your team')}
       <div><dt>Gaps Jwero would fill</dt><dd data-pz-team-gaps>None yet</dd></div>
     </dl>
     <div class="pz-team2-bars" aria-hidden="true"><p><span>Today</span><i><u data-pz-team-b1></u></i></p><p><span>With Jwero</span><i><u class="is-soft" data-pz-team-b3></u><u class="is-gold" data-pz-team-b2></u></i></p></div>
-    <a class="btn pz-btn-gold" href="#" data-wa="plan" data-pz-team-cta>Get my Jwero business plan</a>
+    <a class="btn pz-btn-gold" href="#" data-wa="plan" data-pz-team-cta>Let Jwero handle it</a>
     <a class="pz-team2-share" href="#" target="_blank" rel="noopener" data-pz-team-share>Send this to my partner or manager →</a>
     <p class="pz-team2-note">Indicative. Volumes are predicted from your customer base and showrooms; change any count to your own. Today’s figures are the lowest going rates in India, what one person can handle in a month, and the cheapest paid plan of the software an employee would need, drafted by us, not a survey. When Jwero manages the work there is no platform subscription and no tool to buy. Jwero is priced at half of the cheaper way to do the work when you focus on the outcome, and at 60% when you approve every step. Filling a gap adds cost, so it is shown apart. Your plan carries the exact quote.</p>
   </div>
@@ -643,7 +643,7 @@ ${eyebrow('The business assessment')}
     <h3 data-pz-plan-title></h3>
     <div class="pz-plan-grid" data-pz-plan></div>
     <p class="pz-plan-note">A first reading from your answers, not advice. A Jwero business specialist goes through it with you and corrects it.</p>
-    <a class="btn btn-primary" href="#" data-wa="assessment" data-pz-plan-cta>Build my Jwero plan</a>
+    <a class="btn btn-primary" href="#" data-wa="assessment" data-pz-plan-cta>Let Jwero handle it</a>
   </div>
   <div class="pz-assess-nav"><button type="button" class="btn btn-ghost" data-pz-back hidden>Back</button><button type="button" class="btn btn-primary" data-pz-next>Next</button></div>
 </div>`, { tone: 'tint' });
@@ -761,7 +761,7 @@ ${eyebrow('What happens next')}
 <h2 class="pz-h pz-center">From a first message to work getting done.</h2>
 <ol class="pz-how pz-how-4">${NEXT.map(([t, d], i) => `<li><span>${String(i + 1).padStart(2, '0')}</span><b>${t}</b><p>${d}</p></li>`).join('')}</ol>
 <ul class="pz-ease"><li>A reply within minutes</li><li>Onboarding in a day</li><li>Your data stays yours</li><li>Take a function back whenever you like</li></ul>
-<p class="pz-cta-center">${HANDLE('Start with Jwero', 'start')}<a class="btn btn-ghost" href="#" data-wa="call" data-connect="voice">Call us instead</a></p>`, { id: 'next' });
+<p class="pz-cta-center">${HANDLE('Let Jwero handle it', 'start')}<a class="btn btn-ghost" href="#" data-wa="call" data-connect="voice">Call us instead</a></p>`, { id: 'next' });
 
 const refer = () => `
 <section class="pass pz-refer" id="pass"><div class="container"><div class="pass-box">
@@ -774,7 +774,7 @@ const ask = () => L.section(`
 <div class="pz-askband">
   <h2 class="pz-h">Tell us what you want to achieve.</h2>
   <p class="pz-lead">We’ll figure out what needs to happen.</p>
-  <div class="pz-cta">${HANDLE('Start with Jwero', 'start')}<a class="btn btn-ghost" href="#assessment">Build my business plan</a></div>
+  <div class="pz-cta">${HANDLE('Let Jwero handle it', 'start')}<a class="btn btn-ghost" href="#assessment">Take the 2-minute assessment</a></div>
 </div>`);
 
 const finale = () => `
@@ -795,7 +795,7 @@ const close = () => `
   <div class="pz-band-in">
     <p class="pz-sign">Tell us what you want to achieve.<br>We’ll figure out what needs to happen.</p>
     <p class="pz-lead">You focus on jewellery. We handle the chaos. You run it, we run it together, or we run it for you.</p>
-    <div class="pz-cta">${HANDLE('Start with Jwero', 'start', 'btn pz-btn-gold')}<a class="btn pz-btn-line" href="/how-it-works">See how Jwero works</a></div>
+    <div class="pz-cta">${HANDLE('Let Jwero handle it', 'start', 'btn pz-btn-gold')}<a class="btn pz-btn-line" href="/how-it-works">See how Jwero works</a></div>
   </div>
 </section>`;
 
@@ -874,7 +874,7 @@ const how = {
   description: 'How working with Jwero goes: you say what you want to achieve, AI and specialists work out and do what needs to happen, and you choose whether to run it yourself, together with Jwero, or hand it over.',
   breadcrumbs: [['Home', '/'], ['How it works']],
   body: `
-${innerHero('How it works', 'AI does the work. Experts make it better.', 'You tell us what you want to achieve. Software, AI, expertise and execution do the rest, and keep improving.', ['#assessment', 'Build my business plan'])}
+${innerHero('How it works', 'AI does the work. Experts make it better.', 'You tell us what you want to achieve. Software, AI, expertise and execution do the rest, and keep improving.', ['#assessment', 'Take the 2-minute assessment'])}
 ${L.section(`${eyebrow('Five steps')}<h2 class="pz-h pz-center">From a goal to a result.</h2><ol class="pz-how">${STEPS.map(([t, d], i) => `<li><span>${String(i + 1).padStart(2, '0')}</span><b>${t}</b><p>${d}</p></li>`).join('')}</ol>`)}
 ${notAgency()}
 ${dayAndCommand()}
@@ -891,7 +891,7 @@ const aiExperts = {
   description: 'How Jwero combines AI agents that understand, decide, execute, measure and improve with jewellery-business specialists in marketing, ecommerce, CRM, content, data and technology.',
   breadcrumbs: [['Home', '/'], ['AI + experts']],
   body: `
-${innerHero('AI + experts', 'AI does the work. Experts make it better.', 'AI handles scale. Specialists handle judgement and complexity. Together they keep your business adapting, without you having to learn any of it.', ['/what-we-handle', 'See what Jwero runs'], HANDLE('Build my Jwero team', 'with-you', 'btn pz-btn-gold'))}
+${innerHero('AI + experts', 'AI does the work. Experts make it better.', 'AI handles scale. Specialists handle judgement and complexity. Together they keep your business adapting, without you having to learn any of it.', ['/what-we-handle', 'See what Jwero runs'], HANDLE('Let Jwero handle it', 'with-you', 'btn pz-btn-gold'))}
 ${aiWorks()}
 ${experts()}
 ${notAgency()}
@@ -908,7 +908,7 @@ const handle = {
   description: 'What Jwero can power, manage for you, or help with: getting customers, selling more, keeping customers, growing online, reducing work, understanding the business and keeping up with technology.',
   breadcrumbs: [['Home', '/'], ['What we handle']],
   body: `
-${innerHero('What we handle', 'Start with one function. Give us more when you’re ready.', 'Eight outcomes around the jewellery itself. For each: what Jwero can power, what Jwero can manage for you, and where specialists can help.', ['#assessment', 'Build my business plan'])}
+${innerHero('What we handle', 'Start with one function. Give us more when you’re ready.', 'Eight outcomes around the jewellery itself. For each: what Jwero can power, what Jwero can manage for you, and where specialists can help.', ['#assessment', 'Take the 2-minute assessment'])}
 ${handles()}
 ${monthly()}
 ${plate()}
@@ -945,7 +945,7 @@ const managed = {
   description: 'For jewellers who want expertise or freedom: Jwero specialists and AI work beside your team, or run whole functions for you, from marketing and ecommerce to CRM, content and analytics. Start with one function.',
   breadcrumbs: [['Home', '/'], ['Managed services']],
   body: `
-${innerHero('02 and 03 · Managed', 'We run it together. Or Jwero runs it.', 'Your team with our specialists and AI, or whole functions handed over. You define the outcome. Jwero takes responsibility for the function.', ['#assessment', 'Build my business plan'], HANDLE('Build my Jwero team', 'with-you', 'btn pz-btn-gold'))}
+${innerHero('02 and 03 · Managed', 'We run it together. Or Jwero runs it.', 'Your team with our specialists and AI, or whole functions handed over. You define the outcome. Jwero takes responsibility for the function.', ['#assessment', 'Take the 2-minute assessment'], HANDLE('Let Jwero handle it', 'with-you', 'btn pz-btn-gold'))}
 ${whoRuns(2)}
 ${L.section(`<span id="pricing"></span><p class="pz-eyebrow" style="text-align:center">Pricing</p><h2 class="pz-h pz-center">Subscription, managed, or enterprise.</h2>${require('./jbaas').TIERS()}`)}
 ${L.section(`${levels()}<p class="pz-shift pz-shift-sm">Start small.<br><b>Give us more when you’re ready.</b></p>`, { tone: 'tint' })}
@@ -974,7 +974,7 @@ const count = {
   description: 'A calculator for jewellers: set your customer base, mark the marketing, sales, ecommerce and operations roles you pay for, and see the people it takes, what it costs at the lowest rates in India, and the same work with Jwero.',
   breadcrumbs: [['Home', '/'], ['Managed services', '/managed-services'], ['Count your team']],
   body: `
-${innerHero('Count your team', 'What does keeping up take, and cost, today?', 'The people, freelancers and agencies it takes to keep a jewellery business current, counted from your own customer base. Then the same work with one partner.', ['/managed-services', 'See managed services'], HANDLE('Get my Jwero business plan', 'plan', 'btn pz-btn-gold'))}
+${innerHero('Count your team', 'What does keeping up take, and cost, today?', 'The people, freelancers and agencies it takes to keep a jewellery business current, counted from your own customer base. Then the same work with one partner.', ['/managed-services', 'See managed services'], HANDLE('Let Jwero handle it', 'plan', 'btn pz-btn-gold'))}
 ${countTeam()}
 ${L.section(`${eyebrow('How it is worked out')}<h2 class="pz-h pz-center">No hidden arithmetic.</h2>
 <ol class="pz-how">
@@ -982,7 +982,7 @@ ${L.section(`${eyebrow('How it is worked out')}<h2 class="pz-h pz-center">No hid
   <li><span>02</span><b>The people it takes</b><p>Each count is divided by what one person can handle in a month.</p></li>
   <li><span>03</span><b>Today’s cost</b><p>Those people at the lowest going rate in India: a junior hire in a smaller city, or a freelancer.</p></li>
   <li><span>04</span><b>Jwero’s price</b><p>Half of the cheaper way to do the work when you focus on the outcome. 60% when you want to approve every step.</p></li>
-  <li><span>05</span><b>Your quote</b><p>These are estimates drafted by us. Your plan carries the exact figure for your business.</p></li>
+  <li><span>05</span><b>Your quote</b><p>These are estimates drafted by us. Your plan carries the exact figure for your business. Running it yourself? <a href="/#count-yours">Count your tools instead</a>.</p></li>
 </ol>`)}
 ${L.section(`${eyebrow('Ways to work with Jwero')}<h2 class="pz-h pz-center">Start with one function.</h2>${levels()}`, { tone: 'tint' })}
 ${nextSteps()}
@@ -1009,3 +1009,5 @@ ${close()}
 
 module.exports = [home, why, how, aiExperts, handle, self, managed, count, success];
 module.exports.levels = levels;
+module.exports.quotes = quotes;
+module.exports.QUOTES = QUOTES;
