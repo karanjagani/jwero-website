@@ -1564,7 +1564,7 @@ const CUSTOMER_LOGOS = [
 ];
 
 function customerLogos() {
-  const chip = (c) => `<div class="logo-chip" title="${esc(c.name)}"><img src="/assets/logos/customers/${c.file}" alt="${esc(c.name)} logo" loading="lazy" width="140" height="60"></div>`;
+  const chip = (c) => `<div class="logo-chip" title="${esc(c.name)}"><img src="/assets/logos/customers/${c.file.replace(/\.png$/, ".webp")}" alt="${esc(c.name)} logo" loading="lazy" width="140" height="60"></div>`;
   return `
 <p class="logo-wall-title">Trusted by names you already know</p>
 <div class="logo-marquee">

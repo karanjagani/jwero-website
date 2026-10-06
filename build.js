@@ -1451,10 +1451,14 @@ function build() {
   fs.cpSync(path.join(ROOT, 'assets'), path.join(DIST, 'assets'), { recursive: true });
   // Ship lean: comments and indentation stripped from the stylesheet and scripts.
   const cssFile = path.join(DIST, 'assets', 'site.css');
-  writeRaw(cssFile, fs.readFileSync(cssFile, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s+/g, '\n').replace(/\n{2,}/g, '\n').replace(/\s*([{};])\s*\n/g, '$1').replace(/;}/g, '}'));
+  // Real minification with esbuild when it is available (it ships with pim-app); the simple strip otherwise.
+  let esb = null; try { esb = require(require.resolve('esbuild', { paths: [ROOT, '/Users/karanjagani/pim'] })); } catch (e) {}
+  const cssSrc = fs.readFileSync(cssFile, 'utf8');
+  writeRaw(cssFile, esb ? esb.transformSync(cssSrc, { loader: 'css', minify: true, target: ['chrome90', 'safari14'] }).code : cssSrc.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s+/g, '\n'));
   for (const f of ['site.js', 'sims.js']) {
     const jsFile = path.join(DIST, 'assets', f);
-    writeRaw(jsFile, fs.readFileSync(jsFile, 'utf8').split('\n').filter((l) => !/^\s*\/\//.test(l) && l.trim() !== '').map((l) => l.replace(/^\s+/, '')).join('\n'));
+    const src = fs.readFileSync(jsFile, 'utf8');
+    writeRaw(jsFile, esb ? esb.transformSync(src, { loader: 'js', minify: true, target: 'es2017' }).code : src.split('\n').filter((l) => !/^\s*\/\//.test(l) && l.trim() !== '').map((l) => l.replace(/^\s+/, '')).join('\n'));
   }
   // pages — extensionless clean-URL output: <slug>/index.html (home -> index.html)
   for (const p of pages) {
