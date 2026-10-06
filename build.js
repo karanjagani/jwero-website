@@ -586,7 +586,7 @@ function withManaged(body, page) {
   if (/jb-tier/.test(body)) return body;
   const P = require('./content/positioning');
   const Q = P.QUOTES;
-  const qi = [...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % Q.length;
+  const R = P.ROTATE, qi = R[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % R.length];
   let block;
   if (top === 'blog') {
     // articles stay articles: one quiet line with both doors
@@ -625,6 +625,17 @@ function trimSolution(html, slug) {
     .replace(/(<a class="btn[^"]*"[^>]*data-trial[^>]*>)[\s\S]*?(<\/a>)/g, '$1Start for ₹3,600$2')
     .replace(/(<a class="btn[^"]*"[^>]*data-wa="handle"[^>]*>)[\s\S]*?(<\/a>)/g, '$1Let Jwero handle it$2')
     .replace(/(<a class="btn[^"]*"(?![^>]*data-share)(?![^>]*data-trial)(?![^>]*data-wa="handle")[^>]*(?:data-wa="[^"]*"|href="\/book-demo")[^>]*>)[\s\S]*?(<\/a>)/g, '$1Talk to us$2');
+}
+
+// Both doors on the first screen of every buying page: a slim strip right
+// under the page's top section.
+const DOORS_SKIP = ['index', '404', 'search', 'contact', 'book-demo', 'glossary', 'roadmap', 'start', 'legal', 'hi', 'partners', 'company', 'blog', 'jewellery-business-as-a-service'];
+function withDoors(html, slug) {
+  if (DOORS_SKIP.includes((slug || '').split('/')[0])) return html;
+  const end = html.indexOf('</section>');
+  if (end < 0) return html;
+  const strip = `<div class="doors-strip"><div class="container"><p>Two ways to work with Jwero</p><a class="ds-door" href="${require('./lib').TRIAL_URL}doors-strip" rel="noopener" data-trial><span>Run it yourself</span><b>Start for ₹3,600</b></a><a class="ds-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b></a><a class="ds-more" href="/pricing">Compare →</a></div></div>`;
+  return html.slice(0, end + 10) + strip + html.slice(end + 10);
 }
 
 function withRelated(body, page) {
@@ -806,7 +817,7 @@ ${launchHTML()}
 ${navHTML(page)}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-${trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
+${withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
 </main>
 ${searchDialog()}
 ${connectDialog()}

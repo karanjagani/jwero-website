@@ -928,7 +928,7 @@ ${notAgency()}
 ${L.section(`${eyebrow('In your control')}<h2 class="pz-h pz-center">AI that waits for your yes.</h2><p class="pz-lead pz-center">Every AI action sits inside limits you set: approvals, daily caps, quiet hours, and one switch that stops it. <a href="/platform/ai-workforce">How the AI is governed</a> · <a href="/trust">Trust Centre</a></p>`, { tone: 'tint' })}
 ${adapt()}
 ${whoRuns(1)}
-${endStrip(7)}
+${endStrip(3)}
 ${close()}
 `,
 };
@@ -945,7 +945,7 @@ ${monthly()}
 ${plate()}
 ${L.section(`${eyebrow('Underneath')}<h2 class="pz-h pz-center">The capabilities are all still here.</h2><p class="pz-lead pz-center">Every capability sits under this promise. If you like to look under the bonnet: <a href="/products">capabilities</a> · <a href="/solutions">by business type</a> · <a href="/platform">the platform</a> · <a href="/platform/integrations">works with your existing business</a> · <a href="/pricing">ways to work with Jwero</a>.</p>`, { tone: 'tint' })}
 ${assessment()}
-${endStrip(6)}
+${endStrip(2)}
 ${close()}
 `,
 };
@@ -1048,3 +1048,5 @@ module.exports.quotes = quotes;
 module.exports.quoteOne = quoteOne;
 module.exports.refer = refer;
 module.exports.QUOTES = QUOTES;
+// Quotes that name Jwero, not Tanika: the ones used outside Success stories and Customers.
+module.exports.ROTATE = [0, 1, 2, 3, 4];
