@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0012B9"/><stop offset="1" stop-color="#012687"/></linearGradient>
+<radialGradient id="h" cx="0.85" cy="1" r="0.6"><stop offset="0" stop-color="#F6B11C" stop-opacity=".35"/><stop offset="1" stop-color="#F6B11C" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="630" fill="url(#g)"/><rect width="1200" height="630" fill="url(#h)"/>
+<rect x="72" y="72" width="64" height="6" rx="3" fill="#F6B11C"/>
+<text x="72" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" letter-spacing="3" fill="#F6B11C" font-weight="600">CRM AND CUSTOMERS</text>
+<text x="72" y="236" font-family="Inter, 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="50" font-weight="650" letter-spacing="-1.5" fill="#ffffff">Jewellery CRM Implementation</text>
+<text x="72" y="292" font-family="Inter, 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="50" font-weight="650" letter-spacing="-1.5" fill="#ffffff">Checklist: A Step-by-Step</text>
+<text x="72" y="348" font-family="Inter, 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="50" font-weight="650" letter-spacing="-1.5" fill="#ffffff">Guide</text>
+<g transform="translate(850 170)" fill="none" stroke="#ffffff" stroke-opacity=".9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="130" cy="130" r="120"/><circle cx="130" cy="105" r="34"/><path d="M68 196c14-34 38-50 62-50s48 16 62 50"/></g>
+<g transform="translate(850 170)" fill="none" stroke="#F6B11C" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 22" opacity=".9"><circle cx="130" cy="130" r="175"/></g>
+<text x="72" y="566" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Jwero</text>
+<text x="160" y="566" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" fill="#ffffff" fill-opacity=".7">You focus on jewellery. We handle the chaos.</text>
+</svg>

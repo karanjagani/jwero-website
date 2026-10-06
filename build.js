@@ -797,7 +797,9 @@ function withBlogTop(body, page) {
   const withIds = body.slice(pb, pe).replace(/<h2>([\s\S]*?)<\/h2>/g, (m0, t) => { const id = 'p' + (++n); heads.push([id, t.replace(/<[^>]+>/g, '')]); return `<h2 id="${id}">${t}</h2>`; });
   const q = ((page.schema && page.schema.headline) || page.title || '').split('|')[0].trim();
   const box = `<div class="post-top"><div class="post-short"><p class="in-short-tag">In short</p><p>${page.description}</p></div>${heads.length > 2 ? `<nav class="post-toc" aria-label="Contents"><p class="in-short-tag">In this guide</p><ol>${heads.map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join('')}</ol></nav>` : ''}</div>`;
-  return body.slice(0, pb) + box + withIds + body.slice(pe);
+  const ck = (page.slug || '').replace(/\//g, '--');
+  const cover = fs.existsSync(path.join(ROOT, 'assets', 'covers', ck + '.svg')) ? `<figure class="post-cover"><img src="/assets/covers/${ck}.svg" alt="${q.replace(/"/g, '&quot;')}" width="1200" height="630"></figure>` : '';
+  return body.slice(0, pb) + cover + box + withIds + body.slice(pe);
 }
 
 // Articles link to the pages they mention and to related articles; product,
