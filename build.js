@@ -789,6 +789,7 @@ function withPlatformLinks(body, page) {
 
 // Blog posts: a short answer and a contents list at the top, so readers and
 // answer engines get the point before the detail.
+const LEGACY = require('./content/legacy-posts.json').posts;
 function withBlogTop(body, page) {
   if (!/^(blog|guides)\/./.test(page.slug || '') && !page.legacy) return body;
   const pb = body.indexOf('<div class="post-body">'); if (pb < 0) return body;
@@ -797,15 +798,35 @@ function withBlogTop(body, page) {
   const withIds = body.slice(pb, pe).replace(/<h2>([\s\S]*?)<\/h2>/g, (m0, t) => { const id = 'p' + (++n); heads.push([id, t.replace(/<[^>]+>/g, '')]); return `<h2 id="${id}">${t}</h2>`; });
   const q = ((page.schema && page.schema.headline) || page.title || '').split('|')[0].trim();
   const box = `<div class="post-top"><div class="post-short"><p class="in-short-tag">In short</p><p>${page.description}</p></div>${heads.length > 2 ? `<nav class="post-toc" aria-label="Contents"><p class="in-short-tag">In this guide</p><ol>${heads.map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join('')}</ol></nav>` : ''}</div>`;
+  // One line after the second section, matched to the article's topic, with both paths.
+  const MID = {
+    'Leads and conversion': 'Want every enquiry captured and followed up without your team chasing it? Jwero does it for you.',
+    'Product data and catalogues': 'Want your catalogue kept complete and priced at the live rate on every channel? Jwero runs it for you.',
+    'CRM and customers': 'Want every customer remembered and reached at the right moment? Jwero runs it for you.',
+    WhatsApp: 'Want every WhatsApp enquiry answered and followed up, day and night? Jwero does it for you.',
+    AI: 'Want AI doing the routine work, with a person approving what matters? Jwero runs it for you.',
+    'Order management': 'Want every order tracked from enquiry to delivery? Jwero runs it for you.',
+    'Marketing and campaigns': 'Want campaigns planned, run and measured without hiring a team? Jwero does it for you.',
+    'Ecommerce and websites': 'Want an online store that sells at the live rate, run for you? Jwero handles it.',
+    'Inventory, POS and ERP': 'Want stock, billing and books on one record, set up in a day? That is Jwero.',
+    'Retail operations and sales': 'Want your showroom running on today’s numbers, not guesswork? Jwero runs it with you.',
+    'Technology and strategy': 'Want the technology handled so you can focus on jewellery? Jwero does it for you.',
+    'Gold schemes': 'Want schemes enrolled, collected and tracked without a register? Jwero runs it for you.',
+  };
+  const lp = page.legacy ? LEGACY.find((x) => x.slug === page.slug) : null;
+  const topic = /scheme/.test(page.slug || '') ? 'Gold schemes' : lp ? lp.topic : (/scheme|gold-rate|huid|tally|loss|repair|cost|software|checklist|erp|crm/.test(page.slug) ? (/crm/.test(page.slug) ? 'CRM and customers' : /whatsapp/.test(page.slug) ? 'WhatsApp' : 'Inventory, POS and ERP') : /whatsapp/.test(page.slug) ? 'WhatsApp' : /catalog|online|wedding|dead-stock/.test(page.slug) ? 'Retail operations and sales' : 'Technology and strategy');
+  const mid = `<aside class="post-mid"><p>${MID[topic] || MID['Technology and strategy']}</p><div class="cta-row"><a class="btn btn-primary btn-sm" href="#" data-wa="handle">Let Jwero handle it</a><a class="btn btn-ghost btn-sm" href="${require('./lib').TRIAL_URL}article" rel="noopener" data-trial>Start for ₹3,600</a></div></aside>`;
+  const third = withIds.indexOf('<h2 id="p3"');
+  const withMid = third > 0 ? withIds.slice(0, third) + mid + withIds.slice(third) : withIds + mid;
   const ck = (page.slug || '').replace(/\//g, '--');
+
   const cover = fs.existsSync(path.join(ROOT, 'assets', 'covers', ck + '.svg')) ? `<figure class="post-cover"><img src="/assets/covers/${ck}.svg" alt="${q.replace(/"/g, '&quot;')}" width="1200" height="630"></figure>` : '';
-  return body.slice(0, pb) + cover + box + withIds + body.slice(pe);
+  return body.slice(0, pb) + cover + box + withMid + body.slice(pe);
 }
 
 // Articles link to the pages they mention and to related articles; product,
 // solution, tool, guide and platform pages list the articles that link to them.
 const IL = require('./content/interlink');
-const LEGACY = require('./content/legacy-posts.json').posts;
 const LINKED = (() => { const m = {}; for (const p of LEGACY) m[p.slug] = IL.link(p.body, '/' + p.slug); return m; })();
 const BACK = (() => { const r = {}; for (const p of LEGACY) for (const u of LINKED[p.slug].targets) (r[u] = r[u] || []).push(p); return r; })();
 function withInterlinks(body, page) {
