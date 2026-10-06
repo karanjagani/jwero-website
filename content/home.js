@@ -26,7 +26,7 @@ ${L.homeHero({
   sub: 'One system from the first enquiry to the closed books: CRM, showroom, POS and billing, inventory, purchase, manufacturing, accounts, HR and reports on one record. AI drafts the work and flags what is slipping, and nothing goes out without your yes.',
 })}
 
-${L.section(L.customerLogos())}
+<section class="pz-logos">${L.customerLogos()}</section>
 
 ${require('./jbaas').section()}
 
