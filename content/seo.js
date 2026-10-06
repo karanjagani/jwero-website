@@ -208,7 +208,7 @@ ${L.hero({
   h1: `Jewellery software for jewellers in ${name}.`,
   sub: `One system for the counter, the stock room, the workshop, the books and every customer, set up remotely and supported in your language.`,
   primary: { href: '#', label: 'Chat or call with us', wa: 'city-' + slug },
-  secondary: { href: '/pricing', label: 'See the price' },
+  secondary: { href: '#tiers', label: 'See the price' },
 })}
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">${loc.short.q}</h2><p>${loc.short.a}</p></div></section>

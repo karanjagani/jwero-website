@@ -708,7 +708,7 @@ function withManaged(body, page) {
       : top === 'compare' ? ['YOUR NEXT STEP', 'Try Jwero, or let Jwero run it.', 'Start on your own data for ₹3,600, or hand the work to Jwero’s specialists and AI with every tool included.']
       : ['PREFER JWERO TO RUN THIS FOR YOU?', 'Use it yourself, or let Jwero run it.', 'Everything on this page, run by Jwero’s specialists and AI. No team to hire, no tools to buy.'];
     block = (/city-quote/.test(body) ? '' : L3.section(`<figure class="pz-quote jb-solo"><blockquote>“${q}”</blockquote><figcaption><b>${who}</b><span>${where}</span></figcaption></figure>`)) +
-      L3.section(`${L3.sectionHead(...head)}${require('./content/jbaas').TIERS()}`, { tone: 'tint' });
+      L3.section(`${L3.sectionHead(...head)}${require('./content/jbaas').TIERS()}`, { tone: 'tint', id: 'tiers' });
   }
   const at = body.lastIndexOf('<section');
   return at > 0 ? body.slice(0, at) + block + body.slice(at) : body + block;
@@ -870,8 +870,9 @@ function withInterlinks(body, page) {
   const SOL_TOPICS = { retail: ['Marketing and campaigns', 'Leads and conversion', 'CRM and customers'], online: ['Ecommerce and websites', 'Product data and catalogues', 'Marketing and campaigns'], trade: ['Order management', 'Product data and catalogues', 'Leads and conversion'], making: ['Order management', 'Inventory, POS and ERP', 'Product data and catalogues'] };
   const kind = /d2c|brands|lab-grown|startups/.test(slug) ? 'online' : /wholesale|traders|bullion|b2b|export/.test(slug) ? 'trade' : /manufactur|casting|cad|oem/.test(slug) ? 'making' : 'retail';
   const PROD_TOPICS = [[/ads|campaign|email|social|instagram|optimize/, ['Marketing and campaigns', 'Ecommerce and websites']], [/whatsapp|ai-sales|meetings|showroom/, ['WhatsApp', 'Leads and conversion']], [/crm|journeys|loyalty|segmentation|gold-schemes|digital-gold|girvi/, ['CRM and customers', 'Leads and conversion']], [/storefront|catalog|marketplaces/, ['Ecommerce and websites', 'Product data and catalogues']], [/erp|inventory|pos|billing|purchase|manufacturing|multi-store|repairs|quotations|reports/, ['Inventory, POS and ERP', 'Order management']], [/hr|training/, ['Retail operations and sales']]];
+  const cityKind = (() => { if (!/^jewellery-software-india\/./.test(slug)) return null; const s = (body.match(/href="\/solutions\/([a-z-]+)"/) || [])[1] || ''; return /d2c|brands|lab-grown|startups/.test(s) ? 'online' : /wholesale|traders|bullion|b2b|export|diamond/.test(s) ? 'trade' : /manufactur|casting|cad|oem/.test(s) ? 'making' : 'retail'; })();
   const ptopics = /^products\//.test(slug) ? ((PROD_TOPICS.find(([r]) => r.test(slug)) || [, ['Technology and strategy']])[1]) : null;
-  const list = (BACK['/' + slug] || []).concat(/^solutions\/(?!pain)/.test(slug) ? LEGACY.filter((p) => SOL_TOPICS[kind].includes(p.topic)) : ptopics ? LEGACY.filter((p) => ptopics.includes(p.topic)) : []).filter((p, k, arr) => arr.indexOf(p) === k);
+  const list = (BACK['/' + slug] || []).concat(/^solutions\/(?!pain)/.test(slug) ? LEGACY.filter((p) => SOL_TOPICS[kind].includes(p.topic)) : cityKind ? LEGACY.filter((p) => SOL_TOPICS[cityKind].includes(p.topic)) : ptopics ? LEGACY.filter((p) => ptopics.includes(p.topic)) : []).filter((p, k, arr) => arr.indexOf(p) === k);
   if (!list.length || !/^(products|solutions|platform|tools|guides)\/|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^jewellery-business-as-a-service$/.test(slug)) return body;
   const pick = list.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
   const blk = L3.section(`${L3.sectionHead('FROM THE BLOG', 'Read more on this.', '')}<div class="erp-map">${pick.map((p) => `<a href="/${p.slug}"><b>${p.title}</b><span>${p.topic}</span></a>`).join('')}</div>`);
