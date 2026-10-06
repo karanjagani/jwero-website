@@ -419,7 +419,7 @@
     var groups = document.querySelectorAll(
       '.section .cells, .section .grid:not(.cells), .section .router-grid, .section .stats, .section .pillars, .section .impact-grid, ' +
       '.section .ladder, .section .tiers, .section .team-grid, .section .steps, .section .stack-grid, .section .jtbd, .section .verdict-box, ' +
-      '.section .pz-agents, .section .pz-groups, .section .pz-quotes, .section .pz-stories, .section .pz-levels, .section .pz-how, .section .pz-why5, .section .pz-none, .section .pz-trust, .section .pz-loop, ' +
+      '.section .uc-grid, .section .pz-agents, .section .pz-groups, .section .pz-quotes, .section .pz-stories, .section .pz-levels, .section .pz-how, .section .pz-why5, .section .pz-none, .section .pz-trust, .section .pz-loop, ' +
       '.section .loop, .section .speeds, .section .speed-guards, .section .safe-items, .section .quick-check-items, .faq'
     );
     Array.prototype.forEach.call(groups, function (g) {

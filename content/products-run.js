@@ -90,7 +90,7 @@ ${L.ctaBand('Own your customer list. Finally.', 'We import your customers for yo
 
 const catalog = {
   slug: 'products/catalog',
-  title: 'Jewellery Catalogue Software: Purity, Certificates, Live Prices | Jwero',
+  title: 'Jewellery Catalogue Software: Purity and Live Prices | Jwero',
   description: 'A product catalogue built for jewellery: metal, purity, stones, certifications and HUID-aware records, live metal-rate pricing, and controlled sharing.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -219,7 +219,7 @@ ${L.ctaBand('Find the sleeping capital.', 'Bring last year’s stock summary to 
 
 const billingFinance = {
   slug: 'products/billing-finance',
-  title: 'Jewellery Billing Software: GST Invoices at the Live Gold Rate | Jwero',
+  title: 'Jewellery Billing Software: GST at the Live Gold Rate | Jwero',
   description: 'Jewellery billing software: GST invoices at the live gold rate, receivables tracking and payment reminders — with an honest note on what’s roadmap.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
@@ -320,6 +320,19 @@ ${L.section(`${L.sectionHead('OPERATIONS QUESTIONS', 'Mid-order switching, and p
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="erp">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
+${L.section(`${L.sectionHead('WHAT THE ERP COVERS', 'Every back-office job, on the same record as the customer.', 'One system in place of separate billing, stock, purchase, workshop and accounts software. Open any part to see it in detail.')}
+<div class="erp-map">${[
+  ['/products/billing-finance', 'Billing and accounts', 'GST bills at the live rate, old-gold exchange, ledgers, and a Tally bridge.'],
+  ['/products/inventory', 'Inventory', 'Every piece by weight, purity and tag, valued at today’s rate, with ageing.'],
+  ['/products/purchase-vendors', 'Purchase and vendors', 'Orders, goods received, bills and vendor balances in one chain.'],
+  ['/products/manufacturing', 'Workshop and karigars', 'Metal issued and returned in grams, job-work and wastage by stage.'],
+  ['/products/repairs-service', 'Repairs and service', 'Every article taken in, tracked to the karigar and back to the customer.'],
+  ['/products/girvi', 'Girvi', 'Pledges, interest and redemption on the customer’s own record.'],
+  ['/products/gold-schemes', 'Gold schemes', 'Plans, instalments, bonuses and scheme liability in one place.'],
+  ['/products/multi-store', 'Branches', 'Stock, transfers and day-close for every location on one system.'],
+  ['/products/hr-payroll', 'Team and payroll', 'Attendance, incentives and payroll tied to the sales they earned.'],
+  ['/products/reports', 'Reports', 'Sales, stock, cash and pending work, today, without building a sheet.'],
+].map(([h, t, d]) => `<a href="${h}"><b>${t}</b><span>${d}</span></a>`).join('')}</div>`, { tone: 'tint' })}
 ${L.ctaBand('See operations on one record.', 'Bring one real order and follow it end to end — advance to delivery, on one screen.', 'erp')}
 `,
 };

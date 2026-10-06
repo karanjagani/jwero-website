@@ -223,6 +223,8 @@ const NAV = [
 
 const { icon, LINK_ICONS, heroSchematic, PERSONAS, personaSwitch, mark } = require('./lib');
 const TRIAL_URL_B = require('./lib').TRIAL_URL;
+// Use cases per product page (content/usecases.json), from the product's own documentation.
+const USECASES = (() => { try { return require('./content/usecases.json'); } catch (e) { return {}; } })();
 
 // Primary navigation for the positioning "You focus on jewellery. We handle the
 // chaos." Products, solutions and the rest are capabilities underneath: they
@@ -509,6 +511,7 @@ const SIM_PAGES = {
   'products/crm': 'memory', 'platform/customer-memory': 'memory', 'roles/sales-associate': 'memory', 'products/whatsapp': 'memory',
   'products/inventory': 'shelf', 'solutions/pain/dead-stock': 'shelf', 'roles/inventory-manager': 'shelf',
   'products/pos': 'till', 'roles/cashier': 'till', 'products/billing-finance': 'till',
+  'products/erp': 'grams', 'products/manufacturing': 'grams', 'products/purchase-vendors': 'grams', 'products/multi-store': 'shelf', 'products/gold-schemes': 'memory', 'products/repairs-service': 'memory',
   'products/manufacturing': 'grams', 'solutions/manufacturers': 'grams', 'roles/production-manager': 'grams', 'roles/karigar': 'grams',
 };
 // Solution playbooks: the day loop + module map after the simulation, the fit
@@ -644,6 +647,21 @@ function withDoors(html, slug) {
     return html.slice(0, end) + inHero + html.slice(end);
   }
   return html.slice(0, end + 10) + strip + html.slice(end + 10);
+}
+
+// Product pages: four real situations where the product pays off, taken from
+// the product's own documentation (content/usecases.json), right after the
+// opening answer.
+function withUseCases(body, page) {
+  const m = /^products\/([^/]+)$/.exec(page.slug || '');
+  const uc = m && USECASES[m[1]];
+  if (!uc || !uc.length) return body;
+  const name = (page.title || '').split(/[:|]/)[0].replace(/^Jwero\s+/, '').trim() || 'This';
+  const block = L3.section(`${L3.sectionHead('USE CASES', 'Where this pays off in a jewellery business.', 'Four everyday situations, and what changes when Jwero handles them.')}
+<div class="uc-grid">${uc.slice(0, 4).map((u, i) => `<article class="uc-card"><span class="uc-n">${String(i + 1).padStart(2, '0')}</span><h3>${u.hook}</h3><p>${u.does}</p><p class="uc-change"><b>What changes</b>${u.changes}</p></article>`).join('')}</div>`, { tone: 'tint' });
+  const shortAt = body.indexOf('class="in-short');
+  const after = shortAt !== -1 ? body.indexOf('</section>', shortAt) + 10 : body.indexOf('</section>') + 10;
+  return body.slice(0, after) + block + body.slice(after);
 }
 
 function withRelated(body, page) {
@@ -788,7 +806,17 @@ function layout(page) {
     });
   }
   if (page.breadcrumbs) schemas.push(require('./lib').breadcrumbSchema(page.breadcrumbs, SITE));
-  if (page.schema) schemas.push(page.schema);
+  if (page.schema) {
+    // Product pages: the price and what it does, for search and answer engines.
+    if (page.schema['@type'] === 'SoftwareApplication' && /^products\//.test(page.slug || '')) {
+      const uc = (USECASES[page.slug.split('/')[1]] || []);
+      page.schema = Object.assign({}, page.schema, {
+        offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', url: SITE + '/pricing', description: 'Every module, billed monthly. First month ₹3,600. Managed service priced on the work.' },
+        ...(uc.length ? { featureList: uc.map((u) => u.does) } : {}),
+      });
+    }
+    schemas.push(page.schema);
+  }
   const robotsMeta = page.noindex ? `<meta name="robots" content="noindex,follow">` : '';
   return `<!doctype html>
 <html lang="${page.lang || 'en'}" data-webchat="${WEBCHAT.siteKey ? 'on' : 'off'}">
@@ -825,7 +853,7 @@ ${launchHTML()}
 ${navHTML(page)}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-${withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
+${withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withUseCases(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
 </main>
 ${searchDialog()}
 ${connectDialog()}

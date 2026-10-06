@@ -1,0 +1,854 @@
+{
+  "ads-manager": [
+    {
+      "hook": "You boost a post and never know if it brought anyone in.",
+      "does": "Jwero shows your Meta and Google campaigns with their results inside the same workspace as your customer list.",
+      "changes": "You see what your ad money did, next to the customers it brought.",
+      "source": "app/[orgId]/marketing/ads/campaigns/page.tsx; app/[orgId]/marketing/ads/campaigns/[id]/page.tsx"
+    },
+    {
+      "hook": "Dhanteras is close and you have no idea what ad to run.",
+      "does": "Jwero suggests ad opportunities for you to review, adjust and launch from one screen.",
+      "changes": "You start from a ready suggestion instead of a blank ad form.",
+      "source": "app/[orgId]/marketing/ads/opportunities/page.tsx; app/[orgId]/marketing/ads/opportunities/[id]/review/page.tsx"
+    },
+    {
+      "hook": "Your running Facebook ad needs a change and the agency is busy.",
+      "does": "Edit your live Meta campaigns straight from Jwero without logging into Ads Manager.",
+      "changes": "Small fixes happen the same day, by you.",
+      "source": "app/[orgId]/marketing/ads/live/meta/[connectionId]/[campaignId]/edit/page.tsx"
+    },
+    {
+      "hook": "Every festival you relearn what worked in last year's ads.",
+      "does": "Jwero keeps a learnings page drawn from your past campaigns so the next one starts smarter.",
+      "changes": "Lessons from past ads stay with the business, not one person.",
+      "source": "app/[orgId]/marketing/ads/learnings/page.tsx; ADS_OPPORTUNITY_ENGINE_PLAN.md"
+    }
+  ],
+  "ai-sales-agents": [
+    {
+      "hook": "A customer asks the gold rate on WhatsApp at 10 at night.",
+      "does": "Your AI agent answers from a knowledge base you fill with your products, policies and store details.",
+      "changes": "Late night enquiries get a reply instead of going cold.",
+      "source": "app/[orgId]/settings/agent-teams/knowledge/page.tsx; app/[orgId]/settings/agent-teams/configure/[agentId]/page.tsx"
+    },
+    {
+      "hook": "You worry an AI might promise a discount you never approved.",
+      "does": "You set autonomy levels: what the agent may do alone and what it must send to you for approval.",
+      "changes": "The AI proposes, you decide.",
+      "source": "app/[orgId]/settings/agent-teams/autonomy/page.tsx"
+    },
+    {
+      "hook": "You want to check what the bot told a customer yesterday.",
+      "does": "Every agent reply and action is kept in activity and run logs you can review.",
+      "changes": "Nothing the AI says is hidden from you.",
+      "source": "app/[orgId]/settings/agent-teams/activity/page.tsx; app/[orgId]/settings/agent-teams/logs/page.tsx"
+    },
+    {
+      "hook": "A website visitor asks about bridal sets while staff are busy.",
+      "does": "The website chat widget answers visitors with AI and the conversation lands in your shared inbox.",
+      "changes": "Website visitors are answered and become contacts you can follow up.",
+      "source": "app/[orgId]/operations/marketing/optimize/webchat/page.tsx; app/[orgId]/chats/inbox/page.tsx"
+    }
+  ],
+  "billing-finance": [
+    {
+      "hook": "Your CA asks for GSTR-1 and GSTR-3B figures at month end.",
+      "does": "Jwero prepares GSTR-1 with the B2B and B2C split, GSTR-3B, and an input tax credit reconciliation from your bills.",
+      "changes": "Month end GST work starts from your own billing, not from re-typing.",
+      "source": "app/[orgId]/finance/gst/gstr1/page.tsx; app/[orgId]/finance/gst/gstr3b/page.tsx; app/[orgId]/finance/gst/itc-reconciliation/page.tsx"
+    },
+    {
+      "hook": "You are not sure which customers still owe you money.",
+      "does": "Receivable and payable ageing, party ledger and day book show who owes you and whom you owe.",
+      "changes": "Pending payments are chased on time, not remembered late.",
+      "source": "app/[orgId]/finance/reports/ar-ageing; app/[orgId]/finance/reports/ap-ageing; app/[orgId]/finance/reports/party-ledger; app/[orgId]/finance/reports/day-book"
+    },
+    {
+      "hook": "Gold given to a karigar is tracked in a separate notebook.",
+      "does": "Metal accounts keep gold balances owed to or by karigars and suppliers, alongside your money accounts.",
+      "changes": "You know who holds your gold, in grams, at any time.",
+      "source": "app/[orgId]/finance/reports/metal-balances/page.tsx; app/[orgId]/finance/metal-loans/page.tsx"
+    },
+    {
+      "hook": "Your accountant keeps the books in Tally and won't switch.",
+      "does": "Jwero connects to Tally and Zoho Books, maps your ledgers, imports masters and checks records against Tally.",
+      "changes": "Your accountant keeps Tally; you stop entering the same bill twice.",
+      "source": "app/[orgId]/finance/accounting/page.tsx; app/[orgId]/finance/accounting/reconciliation/page.tsx; TALLY_ERP_INTEGRATION_ANALYSIS.md"
+    }
+  ],
+  "campaigns": [
+    {
+      "hook": "Akshaya Tritiya arrives and your festival message goes out late.",
+      "does": "A campaign calendar lays out festivals and occasions so you plan sends ahead of each one.",
+      "changes": "Festival messages go out on time, every year.",
+      "source": "components/marketing/campaigns/campaign-calendar-page.tsx; lib/backend/lib/campaigns_calendar.ts"
+    },
+    {
+      "hook": "Nobody in the shop knows how to write a good festival message.",
+      "does": "Ready templates for festivals, birthdays, anniversaries and gold schemes are built into the broadcast creator.",
+      "changes": "Anyone on staff can send a polished message in minutes.",
+      "source": "components/marketing/broadcasts/broadcast-template-library.tsx; lib/marketing/broadcast-template-catalog.ts"
+    },
+    {
+      "hook": "You want a campaign but don't know where to start.",
+      "does": "Campaign blueprints give pre-made starting points you adjust and launch to the right customers and channels.",
+      "changes": "You launch proven campaign shapes instead of guessing.",
+      "source": "components/marketing/campaigns/campaign-blueprints-page.tsx; components/marketing/campaigns/launch-campaign-dialog.tsx"
+    },
+    {
+      "hook": "You sent a Diwali offer but can't tell if anyone came.",
+      "does": "Each campaign has a report showing how it performed across sends and responses.",
+      "changes": "You repeat what worked and drop what didn't.",
+      "source": "components/marketing/campaigns/campaign-analytics-page.tsx; components/marketing/campaign-report-page.tsx"
+    }
+  ],
+  "catalog": [
+    {
+      "hook": "Gold moves overnight and every price tag is now wrong.",
+      "does": "Formula pricing recalculates each product from the live metal rate, weight, making charges and stones.",
+      "changes": "Prices follow the gold rate without manual repricing.",
+      "source": "app/[orgId]/operations/products/pricing/page.tsx; app/[orgId]/operations/products/settings/pricing/page.tsx; PRICING_ENGINE_AUDIT_2026-08.md"
+    },
+    {
+      "hook": "Your stock list lives in an old Excel sheet with thousands of rows.",
+      "does": "Bulk import products from CSV, with a product form shaped to jewellery: metal, purity, weights, stones and custom fields.",
+      "changes": "Your whole range is in one place within days, not months.",
+      "source": "app/[orgId]/operations/products/list/page.tsx; app/[orgId]/operations/products/form-builder; app/[orgId]/settings/migration/page.tsx"
+    },
+    {
+      "hook": "A customer asks for the HUID of a chain she bought.",
+      "does": "HUID and hallmarking details are recorded against each piece and visible in products and at billing.",
+      "changes": "Hallmark questions are answered in seconds.",
+      "source": "app/[orgId]/operations/inventory/hallmarking/page.tsx; app/[orgId]/operations/inventory/pieces/page.tsx"
+    },
+    {
+      "hook": "Tags are handwritten and staff misread the weight.",
+      "does": "Print barcode tags from templates you design, carrying weight, purity and code for each piece.",
+      "changes": "Clean, scannable tags and fewer mistakes at the counter.",
+      "source": "app/[orgId]/operations/inventory/labels/page.tsx; app/[orgId]/inventory/labels/templates"
+    }
+  ],
+  "crm": [
+    {
+      "hook": "You forget a loyal customer's wedding anniversary.",
+      "does": "An Upcoming Occasions page lists customers' birthdays and anniversaries so staff can wish them each day.",
+      "changes": "Every important date becomes a reason to reach out.",
+      "source": "app/[orgId]/operations/crm/occasions/page.tsx; components/crm/upcoming-occasions-page-client.tsx"
+    },
+    {
+      "hook": "A walk-in liked a necklace, left, and nobody called back.",
+      "does": "Leads sit on a pipeline board by stage so every enquiry has an owner and a next step.",
+      "changes": "Enquiries are followed up instead of forgotten.",
+      "source": "app/[orgId]/operations/crm/pipeline/page.tsx; app/[orgId]/operations/crm/stage-movement/page.tsx"
+    },
+    {
+      "hook": "A regular walks in and the new salesman doesn't know her.",
+      "does": "One customer record shows family links, payments, store visits, scheme status and KYC together.",
+      "changes": "Any staff member can serve any customer like a regular.",
+      "source": "components/crm/contact-relationships-section.tsx; components/crm/contact-store-sessions-section.tsx; components/crm/contact-digital-gold-panel.tsx"
+    },
+    {
+      "hook": "You have no idea which customers have stopped buying.",
+      "does": "RFM and funnel reports group customers by how recently, often and how much they buy.",
+      "changes": "You know exactly who to win back.",
+      "source": "app/[orgId]/operations/crm/reports/rfm/page.tsx; app/[orgId]/operations/crm/reports/funnel"
+    }
+  ],
+  "digital-catalogues": [
+    {
+      "hook": "A customer on WhatsApp asks to see your latest bangles.",
+      "does": "Make a shareable catalogue of chosen pieces and send it as a link, on WhatsApp or as a QR code.",
+      "changes": "You show your counter on any phone in seconds.",
+      "source": "app/[orgId]/operations/catalogs/create/page.tsx; app/[orgId]/operations/catalogs/sent/page.tsx"
+    },
+    {
+      "hook": "You sent a catalogue and don't know if she even opened it.",
+      "does": "See who opened each catalogue and which items they looked at.",
+      "changes": "You follow up with the customers who are actually interested.",
+      "source": "app/[orgId]/operations/catalogs/visitors/page.tsx"
+    },
+    {
+      "hook": "A customer likes a piece in the catalogue but wants it in rose gold.",
+      "does": "Customers send enquiries and item requests from the catalogue straight to your team.",
+      "changes": "Interest turns into a conversation, not a missed message.",
+      "source": "app/[orgId]/operations/catalogs/inquiries/page.tsx; app/[orgId]/operations/catalogs/requested/page.tsx"
+    },
+    {
+      "hook": "A customer in another city wants to pay for a pendant now.",
+      "does": "Catalogues can take orders with online payment, and those orders appear in your catalogue orders list.",
+      "changes": "Catalogues sell, not just show.",
+      "source": "app/[orgId]/operations/catalogs/orders/page.tsx"
+    }
+  ],
+  "digital-gold": [
+    {
+      "hook": "Customers want to save in grams, not rupees, against rising gold.",
+      "does": "Set up gram-based plans with purity, so each payment converts to grams at the gold rate you set.",
+      "changes": "Customers save in gold, and you lock in their future purchase.",
+      "source": "components/digital-gold/digital-gold-plan-form.tsx; app/[orgId]/operations/digital-gold/plans/page.tsx"
+    },
+    {
+      "hook": "A customer asks how many grams she has collected so far.",
+      "does": "Every payment records the rate and grams credited, building a ledger per customer you can open anytime.",
+      "changes": "Balance questions are answered instantly, with proof.",
+      "source": "components/digital-gold/digital-gold-payment-form-dialog.tsx; app/[orgId]/operations/digital-gold/customers/[contactId]/page.tsx"
+    },
+    {
+      "hook": "Today's gold rate changed and staff use yesterday's figure.",
+      "does": "One rate settings screen sets the gold rate that every new payment uses to credit grams.",
+      "changes": "Everyone credits grams from the same rate.",
+      "source": "components/digital-gold/digital-gold-rate-settings-page.tsx; app/[orgId]/operations/digital-gold/settings/page.tsx"
+    },
+    {
+      "hook": "A customer wants to turn her saved grams into a necklace.",
+      "does": "The closure workspace settles accumulated gold into jewellery, a coin or cash, confirmed by customer and admin OTP.",
+      "changes": "Redemptions are clean, approved and fraud-resistant.",
+      "source": "app/[orgId]/operations/digital-gold/closures/[enrollmentId]/page.tsx; GOLD_SCHEME_AUDIT_2026-08.md"
+    }
+  ],
+  "email": [
+    {
+      "hook": "Your festival offer looks plain compared with big brand emails.",
+      "does": "Design branded emails in a drag-and-drop editor, no designer needed.",
+      "changes": "Your emails look as good as the big chains'.",
+      "source": "components/chats/email-template-unlayer-editor.tsx; app/[orgId]/chats/templates/[channel]"
+    },
+    {
+      "hook": "Some customers never read WhatsApp but check email daily.",
+      "does": "Choose email as a channel when you launch a campaign, alongside WhatsApp.",
+      "changes": "You reach customers on the channel they actually read.",
+      "source": "components/marketing/campaigns/launch-campaign-dialog.tsx"
+    },
+    {
+      "hook": "Customer emails sit in someone's personal Gmail.",
+      "does": "Connect your store email so customer mail is read and answered inside Jwero.",
+      "changes": "Customer mail belongs to the business, not one inbox.",
+      "source": "app/[orgId]/settings/inbox/email/page.tsx; app/[orgId]/sales/mail/page.tsx"
+    }
+  ],
+  "erp": [
+    {
+      "hook": "Your bills, stock and gold rate are in three different places.",
+      "does": "One system holds live metal-rate pricing, stock, billing and accounts on the same data.",
+      "changes": "One version of the truth for the whole shop.",
+      "source": "app/[orgId]/operations/products/pricing/page.tsx; app/[orgId]/sales/pos/page.tsx; JEWELLERY_ERP_LOOP_AUDIT_2026-08-26.md"
+    },
+    {
+      "hook": "A customer brings old gold to exchange for a new set.",
+      "does": "Old gold is taken at the counter and adjusted against the new bill.",
+      "changes": "Exchange is recorded on the bill, not in a side register.",
+      "source": "components/pos/pos-old-gold-card.tsx; app/[orgId]/sales/pos/page.tsx"
+    },
+    {
+      "hook": "A staff member gives a big discount without asking you.",
+      "does": "Approval queues hold sensitive actions until a manager approves them.",
+      "changes": "Nothing important happens without the right person signing off.",
+      "source": "app/[orgId]/finance/approvals/page.tsx; app/[orgId]/operations/approvals/page.tsx"
+    },
+    {
+      "hook": "You don't know how much gold karigars and suppliers hold.",
+      "does": "Metal balances and metal loans track gold given and owed, in grams, by party.",
+      "changes": "Your gold is accounted for, not guessed.",
+      "source": "app/[orgId]/finance/reports/metal-balances/page.tsx; app/[orgId]/finance/metal-loans/page.tsx"
+    }
+  ],
+  "girvi": [
+    {
+      "hook": "A customer needs cash today against her gold chain.",
+      "does": "Record a girvi loan with pledged ornaments and loan value worked out against the gold.",
+      "changes": "Each loan is recorded properly from the first minute.",
+      "source": "app/[orgId]/operations/girvi/loans/page.tsx; components/girvi/girvi-loan-intake-dialog.tsx"
+    },
+    {
+      "hook": "Interest on old girvi loans is worked out by hand.",
+      "does": "Each loan shows its interest and a ledger, and takes interest or part payments.",
+      "changes": "Interest is correct and every payment is on record.",
+      "source": "app/[orgId]/operations/girvi/loans/[loanId]/page.tsx; app/[orgId]/operations/girvi/payments/page.tsx"
+    },
+    {
+      "hook": "A customer comes to renew her loan or take back her gold.",
+      "does": "Renew loans or release pledged items with the loan closed out in the same step.",
+      "changes": "Renewals and returns are quick and leave a clear trail.",
+      "source": "app/[orgId]/operations/girvi/renewals/page.tsx; components/girvi/girvi-release-dialog.tsx"
+    },
+    {
+      "hook": "Some loans have been overdue for months with no action.",
+      "does": "A default ladder moves overdue loans through steps towards auction, with a pledge register and reports.",
+      "changes": "Overdue loans are acted on, not forgotten in the safe.",
+      "source": "app/[orgId]/operations/girvi/auctions/page.tsx; components/girvi/girvi-default-ladder-dialog.tsx; app/[orgId]/operations/girvi/reports/page.tsx"
+    }
+  ],
+  "gold-schemes": [
+    {
+      "hook": "You want to launch an 11+1 scheme before wedding season.",
+      "does": "Build monthly plans with duration, instalments, grace days and bonus rules, starting from templates.",
+      "changes": "A new scheme is ready the same day.",
+      "source": "app/[orgId]/operations/digital-gold/plans/create/page.tsx; components/digital-gold/digital-gold-plan-form.tsx"
+    },
+    {
+      "hook": "A scheme customer misses her 7th instalment.",
+      "does": "Overdue instalments are marked automatically and late rules applied, so the desk sees who to call.",
+      "changes": "Missed instalments are chased, not discovered at maturity.",
+      "source": "lib/backend/lib/digital_gold_dunning.ts; components/digital-gold/digital-gold-penalties-card.tsx"
+    },
+    {
+      "hook": "Staff argue whether a customer earned her bonus month.",
+      "does": "Bonus rules are set in the plan and applied by the system on payment and closure.",
+      "changes": "Bonuses follow your rules, not someone's memory.",
+      "source": "lib/backend/lib/digital_gold_benefits.ts; GOLD_SCHEME_AUDIT_2026-08.md"
+    },
+    {
+      "hook": "You can't say how much you owe scheme customers in total.",
+      "does": "A scheme liability report shows what is owed across all running schemes.",
+      "changes": "You know your scheme commitments at any time.",
+      "source": "app/[orgId]/finance/reports/scheme-liability; app/[orgId]/operations/digital-gold/reports"
+    }
+  ],
+  "hr-payroll": [
+    {
+      "hook": "Salary day means a full day with a calculator and attendance register.",
+      "does": "Payroll run with loss of pay, PF, ESI, PT and TDS, payslip PDFs and a bank transfer file.",
+      "changes": "Salaries are right and done quickly.",
+      "source": "app/[orgId]/hr/payroll/page.tsx; HR_AI_PEOPLE_OS_CURRENT_STATE_AUDIT_2026-09.md"
+    },
+    {
+      "hook": "A salesman says he came on time but the register says late.",
+      "does": "Staff punch in at a store kiosk, and attendance corrections need a manager's approval.",
+      "changes": "Attendance disputes end; records are trusted.",
+      "source": "app/[orgId]/hr/kiosk/page.tsx; app/[orgId]/hr/attendance/page.tsx"
+    },
+    {
+      "hook": "Salesmen ask every month how their incentive was calculated.",
+      "does": "Set incentive slabs linked to sales targets; staff see their own incentives.",
+      "changes": "Incentives are clear and motivating, not argued over.",
+      "source": "app/[orgId]/hr/incentives/page.tsx; app/[orgId]/hr/targets/page.tsx; app/[orgId]/teams/incentives"
+    },
+    {
+      "hook": "Your CA chases you for PF and ESI files every month.",
+      "does": "Export PF, ESI, PT and muster roll files straight from payroll.",
+      "changes": "Statutory filings stop being a monthly scramble.",
+      "source": "app/[orgId]/hr/compliance/page.tsx; HR_AI_PEOPLE_OS_CURRENT_STATE_AUDIT_2026-09.md"
+    }
+  ],
+  "instagram-facebook": [
+    {
+      "hook": "Comments asking 'price?' pile up under your reels.",
+      "does": "Reply to Instagram and Facebook comments from one comments inbox.",
+      "changes": "Every interested commenter gets an answer.",
+      "source": "app/[orgId]/operations/social/comments/page.tsx"
+    },
+    {
+      "hook": "The same question about a design comes in again and again.",
+      "does": "Set comment and DM automation flows that reply to common questions on your behalf.",
+      "changes": "Common questions get answered even when staff are busy.",
+      "source": "app/[orgId]/operations/social/automation/page.tsx; app/[orgId]/operations/social/automation/[flowId]/page.tsx"
+    },
+    {
+      "hook": "Posting to Instagram and Facebook means two apps and two logins.",
+      "does": "Create and publish posts to your connected Instagram and Facebook pages from Jwero.",
+      "changes": "One place to post for both pages.",
+      "source": "app/[orgId]/operations/social/posts/page.tsx; app/[orgId]/operations/social/channels/page.tsx"
+    },
+    {
+      "hook": "A bad review sits unanswered for weeks.",
+      "does": "See and reply to reviews in one reviews screen.",
+      "changes": "Reviews get answered while they still matter.",
+      "source": "app/[orgId]/operations/social/reviews/page.tsx"
+    }
+  ],
+  "inventory": [
+    {
+      "hook": "You can't tell at a glance which pieces are in which drawer.",
+      "does": "Every tagged piece is tracked individually with its stock position and full movement history.",
+      "changes": "You find any piece and know its story.",
+      "source": "app/[orgId]/operations/inventory/pieces/page.tsx; app/[orgId]/operations/inventory/item-ledger"
+    },
+    {
+      "hook": "Month end stock count never matches the register.",
+      "does": "Schedule stock counts, scan pieces, and see discrepancies on a separate screen to resolve.",
+      "changes": "Missing pieces surface quickly, not at year end.",
+      "source": "app/[orgId]/operations/inventory/counts/page.tsx; app/[orgId]/operations/inventory/discrepancies/page.tsx"
+    },
+    {
+      "hook": "A customer takes three sets home on approval to show family.",
+      "does": "Approval memos record which pieces went out, to whom, and what came back.",
+      "changes": "Pieces out on approval never go missing.",
+      "source": "app/[orgId]/operations/inventory/memo/page.tsx; app/[orgId]/operations/inventory/approval-memos/[id]"
+    },
+    {
+      "hook": "Stock gets adjusted quietly with no reason written.",
+      "does": "Stock adjustments are recorded with reasons and every movement is logged.",
+      "changes": "Every change in stock has a reason and a name.",
+      "source": "app/[orgId]/operations/inventory/stock-adjustments/page.tsx; app/[orgId]/operations/inventory/movements"
+    }
+  ],
+  "journeys": [
+    {
+      "hook": "Birthday wishes go out only when someone remembers.",
+      "does": "Ready journey recipes send birthday, anniversary and follow-up messages automatically once switched on.",
+      "changes": "Customers hear from you on their days, every time.",
+      "source": "app/[orgId]/operations/marketing/automation/journeys/recipes/page.tsx; lib/marketing/journey-template-library.ts"
+    },
+    {
+      "hook": "Customers who haven't visited in a year simply drift away.",
+      "does": "Build a win-back journey on a visual canvas that messages dormant customers step by step.",
+      "changes": "Lapsed customers get invited back without manual work.",
+      "source": "app/[orgId]/operations/marketing/automation/journeys/builder/new/page.tsx; components/marketing/journey-canvas-editor.tsx"
+    },
+    {
+      "hook": "You fear an automation will send the wrong message to everyone.",
+      "does": "Test a journey and run a readiness check before it goes live; messages can need approval.",
+      "changes": "Automations go live only when you are sure.",
+      "source": "components/marketing/journeys/journey-test-dialog.tsx; components/marketing/journeys/journey-readiness-button.tsx; components/marketing/journey-message-approval-dialog.tsx"
+    },
+    {
+      "hook": "You don't know if your automated messages bring anyone back.",
+      "does": "Each journey shows step-by-step performance and the customers in it.",
+      "changes": "You keep what works and fix what doesn't.",
+      "source": "components/marketing/journeys/journey-report-panel.tsx; components/marketing/journeys/journey-step-performance.tsx"
+    }
+  ],
+  "loyalty": [
+    {
+      "hook": "Regular customers get nothing for coming back.",
+      "does": "Set earning rules, rewards and tiers so customers collect points on purchases.",
+      "changes": "Regulars have a reason to choose you again.",
+      "source": "app/[orgId]/operations/marketing/loyalty/page.tsx; components/marketing/loyalty/loyalty-console-page.tsx"
+    },
+    {
+      "hook": "Staff forget to add points while billing.",
+      "does": "The loyalty card appears while billing, to earn or redeem points on that sale.",
+      "changes": "Points are given at the counter, every bill.",
+      "source": "components/marketing/loyalty/pos-loyalty-card.tsx; app/[orgId]/operations/orders/create/page.tsx"
+    },
+    {
+      "hook": "A customer asks how many points she has left.",
+      "does": "Her loyalty balance and history show on her customer profile, with manual adjustment if needed.",
+      "changes": "Points questions answered instantly.",
+      "source": "components/marketing/loyalty/contact-loyalty-panel.tsx; components/marketing/loyalty/contact-loyalty-actions.tsx"
+    },
+    {
+      "hook": "Happy customers send friends but you never thank them.",
+      "does": "A referrals tab tracks who referred whom so you can reward them.",
+      "changes": "Word of mouth gets recognised and repeated.",
+      "source": "components/marketing/loyalty/loyalty-console-page.tsx"
+    }
+  ],
+  "manufacturing": [
+    {
+      "hook": "You give gold to a karigar and track it in a notebook.",
+      "does": "Issue metal and stones to karigars as job work and record what comes back.",
+      "changes": "Every gram given out comes back on record.",
+      "source": "app/[orgId]/operations/manufacturing/job-work/create; app/[orgId]/inventory/raw-materials/issue-desk"
+    },
+    {
+      "hook": "A custom order is late and nobody knows which stage it's at.",
+      "does": "Production orders and a work-in-progress view show every piece's current stage.",
+      "changes": "You know where each order is without calling the workshop.",
+      "source": "app/[orgId]/operations/manufacturing/production-orders/[id]; app/[orgId]/operations/manufacturing/wip"
+    },
+    {
+      "hook": "Finished pieces reach the counter without anyone checking them.",
+      "does": "Finished goods are received with QC before they become stock.",
+      "changes": "Only checked pieces reach your customers.",
+      "source": "app/[orgId]/operations/manufacturing/fg-receipts/[id]; app/[orgId]/operations/manufacturing/qc"
+    },
+    {
+      "hook": "Karigar settlement at month end ends in arguments.",
+      "does": "Karigar khata and settlements show what each karigar received, returned and is owed.",
+      "changes": "Karigar accounts settle cleanly.",
+      "source": "app/[orgId]/operations/karigars/settlements; app/[orgId]/operations/inventory/raw-materials/karigar-khata"
+    }
+  ],
+  "marketplaces": [
+    {
+      "hook": "Amazon orders get missed because nobody checks the seller panel.",
+      "does": "Connect Amazon and Flipkart; orders come into Jwero as sales orders automatically.",
+      "changes": "Marketplace orders land with your other orders.",
+      "source": "app/[orgId]/settings/integrations/marketplaces/page.tsx"
+    },
+    {
+      "hook": "Your Shopify store shows pieces you sold in the shop yesterday.",
+      "does": "Connect Shopify or WooCommerce so your online store works from the same product data.",
+      "changes": "Online and shop stock stop telling different stories.",
+      "source": "app/[orgId]/settings/integrations/stores/shopify/page.tsx; app/[orgId]/settings/integrations/stores/woo-commerce/page.tsx"
+    },
+    {
+      "hook": "Listing the same product on every channel takes all afternoon.",
+      "does": "Publish products from your product list to Meta catalogue, WhatsApp and other channels in one step.",
+      "changes": "List once, appear everywhere.",
+      "source": "app/[orgId]/operations/products/list/components/PublishDialog.tsx"
+    },
+    {
+      "hook": "Stock on Flipkart doesn't match what's in your drawer.",
+      "does": "Optional inventory push sends your stock levels to connected marketplaces.",
+      "changes": "Fewer orders for pieces you no longer have.",
+      "source": "app/[orgId]/settings/integrations/marketplaces/page.tsx"
+    }
+  ],
+  "meetings": [
+    {
+      "hook": "A bride's family abroad wants to see bridal sets before flying in.",
+      "does": "Start a video call from the WhatsApp chat; the customer joins from a link, with screen share.",
+      "changes": "You can sell to customers who can't come to the store.",
+      "source": "app/[orgId]/meetings/[id]/page.tsx; MEETINGS_MODULE_DELIVERY_2026-09.md"
+    },
+    {
+      "hook": "Appointments are written on paper and staff double-book.",
+      "does": "One calendar holds video meetings, store appointments and phone calls for every staff member.",
+      "changes": "No more clashing appointments.",
+      "source": "app/[orgId]/meetings/page.tsx"
+    },
+    {
+      "hook": "Customers call just to ask when you are free.",
+      "does": "Customers book themselves within each staff member's working hours and limits.",
+      "changes": "Bookings come in without phone tag.",
+      "source": "app/[orgId]/meetings/settings; MEETINGS_MODULE_DELIVERY_2026-09.md"
+    },
+    {
+      "hook": "A customer books a visit and forgets to come.",
+      "does": "Reminders go out on the customer's own channel before the appointment, with a fresh link.",
+      "changes": "Fewer no-shows.",
+      "source": "MEETINGS_MODULE_DELIVERY_2026-09.md"
+    }
+  ],
+  "multi-store": [
+    {
+      "hook": "Branch two has the set a customer wants, but you are at branch one.",
+      "does": "Move stock between branches with a stock transfer that records what left and what arrived.",
+      "changes": "Stock moves between stores with a clear trail.",
+      "source": "app/[orgId]/operations/inventory/stock-transfers/page.tsx"
+    },
+    {
+      "hook": "Adding a new branch means setting up another software.",
+      "does": "Add branches and locations in the same account, under your group and brands.",
+      "changes": "A new store joins the same system on day one.",
+      "source": "app/[orgId]/settings/organization/locations/page.tsx; app/[orgId]/settings/organization/brands"
+    },
+    {
+      "hook": "Every staff member can see and change everything.",
+      "does": "Roles decide what each person can see and do in Jwero.",
+      "changes": "Staff get the access their job needs, no more.",
+      "source": "app/[orgId]/settings/roles/create; app/[orgId]/settings/users"
+    },
+    {
+      "hook": "Your franchise partners report to you on WhatsApp and calls.",
+      "does": "A franchise screen manages your franchise stores from head office.",
+      "changes": "Franchise stores are visible from one place.",
+      "source": "app/[orgId]/operations/franchise/page.tsx"
+    }
+  ],
+  "optimize": [
+    {
+      "hook": "People visit your website but you don't know what they look at.",
+      "does": "Website analytics and heatmaps show where visitors go and what they click.",
+      "changes": "You fix the pages that lose customers.",
+      "source": "app/[orgId]/operations/marketing/optimize/analytics/page.tsx; app/[orgId]/operations/marketing/optimize/heatmaps/page.tsx"
+    },
+    {
+      "hook": "Visitors leave your website without leaving a number.",
+      "does": "Show popups and lead forms that collect contacts from website visitors.",
+      "changes": "Anonymous visitors become customers you can contact.",
+      "source": "app/[orgId]/operations/marketing/optimize/engagement/page.tsx; app/[orgId]/operations/marketing/optimize/forms"
+    },
+    {
+      "hook": "You can't decide which offer banner works better.",
+      "does": "Run an A/B test showing two versions to visitors and compare the results.",
+      "changes": "You choose offers on results, not guesses.",
+      "source": "app/[orgId]/operations/marketing/optimize/experiments/page.tsx"
+    },
+    {
+      "hook": "Website visitors who allowed notifications never hear from you again.",
+      "does": "Send web push campaigns to visitors who opted in.",
+      "changes": "A free way to bring visitors back for new arrivals.",
+      "source": "app/[orgId]/operations/marketing/optimize/web-push/page.tsx"
+    }
+  ],
+  "pos": [
+    {
+      "hook": "Billing a 22K chain takes ages of rate and weight calculations.",
+      "does": "Scan the tag and the bill fills with the piece, priced at today's metal rate shown on screen.",
+      "changes": "Fast, correct bills at the live rate.",
+      "source": "app/[orgId]/sales/pos/page.tsx; components/pos/pos-product-search.tsx; components/pos/pos-metal-rate-strip.tsx"
+    },
+    {
+      "hook": "A customer pays partly cash, partly UPI, and partly old gold.",
+      "does": "Take split payments by cash, UPI, EMI and credit note, with old gold adjusted on the same bill.",
+      "changes": "Mixed payments are one clean bill.",
+      "source": "components/pos/pos-payments.tsx; components/pos/pos-old-gold-card.tsx"
+    },
+    {
+      "hook": "The cash drawer never matches at closing.",
+      "does": "Open and close registers and shifts, so each counter's cash is accounted for.",
+      "changes": "Day end cash is checked per counter.",
+      "source": "app/[orgId]/sales/pos/registers/page.tsx; components/pos/pos-shift-bar.tsx"
+    },
+    {
+      "hook": "The internet goes down during a busy Saturday.",
+      "does": "The counter keeps billing in offline mode.",
+      "changes": "A bad connection doesn't stop sales.",
+      "source": "components/pos/use-pos-offline.ts; app/[orgId]/sales/pos/page.tsx"
+    }
+  ],
+  "purchase-vendors": [
+    {
+      "hook": "You order from a supplier on a phone call and forget the terms.",
+      "does": "Raise purchase orders, print them and track them against what arrives.",
+      "changes": "Every order has written terms you can check.",
+      "source": "app/[orgId]/operations/inventory/purchase-orders/[poNumber]; app/[orgId]/operations/inventory/purchase-orders/reports"
+    },
+    {
+      "hook": "A parcel arrives and nobody checks it against what you ordered.",
+      "does": "Receive goods against the order, with QC on receipt, before they enter stock.",
+      "changes": "You pay only for what really arrived.",
+      "source": "app/[orgId]/operations/inventory/purchase-received/new; app/[orgId]/operations/inventory/qc"
+    },
+    {
+      "hook": "A supplier sends the wrong purity and you need to return it.",
+      "does": "Record purchase returns and vendor credits linked to the original purchase.",
+      "changes": "Returns and credits are tracked, not argued.",
+      "source": "app/[orgId]/operations/inventory/purchase-returns/create; app/[orgId]/operations/inventory/vendor-credits"
+    },
+    {
+      "hook": "You aren't sure how much gold and money you owe a supplier.",
+      "does": "Vendor ledgers show money and metal balances with each supplier.",
+      "changes": "Supplier accounts are clear before every payment.",
+      "source": "app/[orgId]/inventory/vendors/metal-account; app/[orgId]/inventory/party-ledger; app/[orgId]/finance/vendors/[vendorId]"
+    }
+  ],
+  "quotations": [
+    {
+      "hook": "A customer wants a price for a custom bridal set in 22K.",
+      "does": "Build a quote from your products, adjust purity per line, priced at the metal rate.",
+      "changes": "Accurate quotes in minutes, not by calculator.",
+      "source": "components/crm/quotes/quote-editor.tsx; components/crm/quotes/quote-line-customize-form.tsx"
+    },
+    {
+      "hook": "Gold rises and the customer insists on last week's quoted price.",
+      "does": "Quotes carry an expiry date and a rate lock you set.",
+      "changes": "Your quoted price has clear terms.",
+      "source": "components/crm/quotes/quote-settings-dialog.tsx; components/crm/quotes/quote-detail-page.tsx"
+    },
+    {
+      "hook": "The family wants to discuss the quote at home first.",
+      "does": "Send the quote by link or WhatsApp; the customer can accept it online.",
+      "changes": "Customers say yes from their phone.",
+      "source": "components/crm/quotes/public-quote-actions.tsx; components/crm/quotes/quote-detail-page.tsx"
+    },
+    {
+      "hook": "An accepted quote gets retyped as an order with mistakes.",
+      "does": "Turn an accepted quote into an order in one step, or download it as a PDF.",
+      "changes": "No retyping, no errors between quote and order.",
+      "source": "components/crm/quotes/quote-row-actions.tsx; components/crm/quotes/quotes-page.tsx"
+    }
+  ],
+  "reports": [
+    {
+      "hook": "You want to know today's sales without calling the shop.",
+      "does": "Dashboards show the numbers you choose, ready whenever you open them.",
+      "changes": "You see your business without asking anyone.",
+      "source": "app/[orgId]/reports/page.tsx; app/[orgId]/reports/[dashboardId]"
+    },
+    {
+      "hook": "Your CA asks for P&L and balance sheet.",
+      "does": "Profit and loss, balance sheet, trial balance and cash flow come from your own entries.",
+      "changes": "Financial statements are ready when you need them.",
+      "source": "app/[orgId]/finance/reports/pnl; app/[orgId]/finance/reports/balance-sheet; app/[orgId]/finance/reports/cash-flow"
+    },
+    {
+      "hook": "You need one specific report nobody has built.",
+      "does": "Build your own report with the report builder, no developer needed.",
+      "changes": "You answer your own questions.",
+      "source": "app/[orgId]/reports/builder/page.tsx"
+    },
+    {
+      "hook": "You suspect some stock has been sitting unsold for too long.",
+      "does": "Inventory reports show stock value and ageing positions.",
+      "changes": "Slow stock is spotted before it ties up more money.",
+      "source": "app/[orgId]/operations/inventory/reports; app/[orgId]/operations/inventory/reports/nrv"
+    }
+  ],
+  "repairs-service": [
+    {
+      "hook": "A customer says her ring came back with a smaller diamond.",
+      "does": "Intake records the item's condition, stones on a stone chart and weight when it comes in.",
+      "changes": "Repair disputes are settled by the record.",
+      "source": "app/[orgId]/operations/service/jobs/intake/page.tsx; components/service/stone-chart.tsx; components/service/condition-capture.tsx"
+    },
+    {
+      "hook": "Repair slips get lost and customers keep calling for status.",
+      "does": "A job board shows each repair's stage, with weight in and out tracked.",
+      "changes": "You know where every repair is.",
+      "source": "app/[orgId]/operations/service/board/page.tsx; components/service/weight-chain-panel.tsx"
+    },
+    {
+      "hook": "A customer is surprised by the repair charge at pickup.",
+      "does": "Build an estimate and get the customer's approval before work starts.",
+      "changes": "No surprises at pickup.",
+      "source": "components/service/estimate-builder.tsx; components/service/estimate-approval-dialog.tsx"
+    },
+    {
+      "hook": "Finished repairs sit in the drawer for weeks uncollected.",
+      "does": "A ready list shows repairs waiting for pickup, oldest first, with overdue marked.",
+      "changes": "Uncollected pieces get chased and handed back.",
+      "source": "app/[orgId]/operations/service/ready/page.tsx; components/service/handover-dialog.tsx"
+    }
+  ],
+  "segmentation": [
+    {
+      "hook": "You send the same message to every customer.",
+      "does": "Build segments with rules, like buyers of diamonds or customers in a pincode, and see the size first.",
+      "changes": "The right message reaches the right customers.",
+      "source": "components/marketing/marketing-segment-creator.tsx; components/marketing/segments/estimate-explainer.tsx"
+    },
+    {
+      "hook": "You don't know which groups of customers to target.",
+      "does": "Suggested segments give ready groups you can use straight away.",
+      "changes": "Start targeting without building lists from scratch.",
+      "source": "components/marketing/marketing-suggested-segments.tsx"
+    },
+    {
+      "hook": "You want to see exactly who is in a segment.",
+      "does": "Open any segment to see its customers and which channels reach them.",
+      "changes": "You know who you are messaging and how.",
+      "source": "app/[orgId]/operations/marketing/segments/[id]/page.tsx; components/marketing/segments/segment-channel-mix.tsx"
+    },
+    {
+      "hook": "Your customer list is full of duplicates.",
+      "does": "Find and merge duplicate contacts.",
+      "changes": "One clean record per customer.",
+      "source": "components/crm/contact-merge-candidates-dialog.tsx"
+    }
+  ],
+  "showroom": [
+    {
+      "hook": "Customers walk out without buying and nobody notes why.",
+      "does": "Log each walk-in and record the outcome and reason when they leave.",
+      "changes": "You know why sales are lost.",
+      "source": "components/showroom/showroom-register.tsx; components/showroom/showroom-checkout-dialog.tsx"
+    },
+    {
+      "hook": "A walk-out customer liked a necklace but nobody followed up.",
+      "does": "A rescue list of walk-outs opens WhatsApp with a ready message for staff to send.",
+      "changes": "Lost sales get a second chance.",
+      "source": "components/showroom/showroom-rescue.tsx"
+    },
+    {
+      "hook": "A returning customer walks in and staff don't know her history.",
+      "does": "The visit session shows items shown and her journey and history while she is in the store.",
+      "changes": "Every visit builds on the last one.",
+      "source": "components/showroom/showroom-visit-session.tsx; components/showroom/showroom-customer-journey.tsx"
+    },
+    {
+      "hook": "You don't know which salesman converts walk-ins best.",
+      "does": "Showroom insights show conversion by salesperson along with a daily brief.",
+      "changes": "You coach staff with facts.",
+      "source": "components/showroom/showroom-analytics.tsx; components/showroom/showroom-brief.tsx; SHOWROOM_MODULE_AUDIT_2026-08.md"
+    }
+  ],
+  "social-media": [
+    {
+      "hook": "You post on Instagram only when you remember.",
+      "does": "A content calendar plans your posts ahead.",
+      "changes": "Steady posting without daily scrambling.",
+      "source": "app/[orgId]/operations/social/calendar/page.tsx"
+    },
+    {
+      "hook": "You don't know what to post today.",
+      "does": "A today's actions list suggests posts and replies to do each day.",
+      "changes": "You always know what to post next.",
+      "source": "app/[orgId]/operations/social/today-actions/page.tsx; app/[orgId]/operations/social/opportunities/page.tsx"
+    },
+    {
+      "hook": "A junior staff member posts something you never saw.",
+      "does": "Posts go to an approval queue before publishing.",
+      "changes": "Nothing goes out without your okay.",
+      "source": "app/[orgId]/operations/social/approval-queue/page.tsx"
+    },
+    {
+      "hook": "Your posts look different every time.",
+      "does": "Brand templates and creative packs keep posts looking like your brand.",
+      "changes": "Your feed looks consistent and professional.",
+      "source": "app/[orgId]/operations/social/brand-templates/page.tsx; app/[orgId]/operations/social/creative-packs/page.tsx"
+    }
+  ],
+  "storefront": [
+    {
+      "hook": "Customers ask if they can buy from you online.",
+      "does": "Launch an online store with your own design and domain.",
+      "changes": "You sell online without a separate website vendor.",
+      "source": "app/[orgId]/operations/store/design/page.tsx; app/[orgId]/operations/store/domains/page.tsx"
+    },
+    {
+      "hook": "People add items to cart online and leave.",
+      "does": "See abandoned carts so you can follow up those customers.",
+      "changes": "Almost-sales get a follow-up.",
+      "source": "app/[orgId]/operations/store/abandoned/page.tsx"
+    },
+    {
+      "hook": "Online orders come in by email and get lost.",
+      "does": "Online orders appear in one orders screen.",
+      "changes": "Every online order is handled.",
+      "source": "app/[orgId]/operations/store/orders/page.tsx"
+    },
+    {
+      "hook": "You want a special page for your Akshaya Tritiya collection.",
+      "does": "Build landing pages for campaigns and collections.",
+      "changes": "Every campaign gets its own page.",
+      "source": "app/[orgId]/operations/store/landing-pages/page.tsx"
+    }
+  ],
+  "training-lms": [
+    {
+      "hook": "New salesmen don't know purity, hallmarking or stone basics.",
+      "does": "Create courses for your staff and enrol them.",
+      "changes": "Training is the same for everyone.",
+      "source": "app/[orgId]/hr/lms/page.tsx"
+    },
+    {
+      "hook": "Staff never find time to sit for training.",
+      "does": "Staff open their assigned courses from their own learning page.",
+      "changes": "Training happens alongside work.",
+      "source": "app/[orgId]/teams/lms/page.tsx"
+    },
+    {
+      "hook": "You can't tell who completed training.",
+      "does": "Issue certifications to staff when they finish training.",
+      "changes": "You know who is trained on what.",
+      "source": "app/[orgId]/hr/lms/page.tsx"
+    },
+    {
+      "hook": "Staff certifications quietly go out of date.",
+      "does": "See certifications due to expire, to plan refresher training.",
+      "changes": "Refreshers happen before skills lapse.",
+      "source": "app/[orgId]/hr/lms/page.tsx"
+    }
+  ],
+  "whatsapp": [
+    {
+      "hook": "Several staff answer customers on their personal WhatsApp.",
+      "does": "One shared WhatsApp inbox for the whole team.",
+      "changes": "Customer chats stay with the business.",
+      "source": "app/[orgId]/chats/inbox/page.tsx; components/chats/chats-inbox.tsx"
+    },
+    {
+      "hook": "Staff type the same answer about timings and rates all day.",
+      "does": "Saved quick replies answer common questions in one tap.",
+      "changes": "Faster replies, same answer every time.",
+      "source": "app/[orgId]/chats/quick-replies/page.tsx"
+    },
+    {
+      "hook": "A broadcast went out and half the customers ignored it.",
+      "does": "Send broadcasts, see the report, and resend to those who didn't respond.",
+      "changes": "A second chance with the customers who missed it.",
+      "source": "app/[orgId]/chats/broadcasts/create/page.tsx; components/chats/retarget-broadcast-dialog.tsx"
+    },
+    {
+      "hook": "WhatsApp keeps rejecting your message templates.",
+      "does": "Create templates from starters and submit them from Jwero.",
+      "changes": "Approved templates without the back and forth.",
+      "source": "components/chats/template-creator-page.tsx; components/chats/whatsapp-starter-templates.ts"
+    }
+  ]
+}

@@ -294,7 +294,7 @@ ${L.ctaBand('Reward regulars, not just savers.', 'Bring your idea of tiers and r
 
 const journeys = {
   slug: 'products/journeys',
-  title: 'Jewellery Marketing Automation: Customer Journeys With Approval | Jwero',
+  title: 'Jewellery Marketing Automation: Customer Journeys | Jwero',
   description: 'Build multi-step customer journeys: triggers, branches, wait steps, messages — with a human-approval gate before anything reaches a customer.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',

@@ -3296,7 +3296,7 @@ A: Yes, a quotation moves from draft to sent to accepted or declined, with a num
 
 ---
 
-# Jewellery Catalogue Software: Purity, Certificates, Live Prices
+# Jewellery Catalogue Software: Purity and Live Prices
 URL: https://jwero.ai/products/catalog
 
 A product catalogue built for jewellery: metal, purity, stones, certifications and HUID-aware records, live metal-rate pricing, and controlled sharing.
@@ -3528,7 +3528,7 @@ A: Yes, we import what exists per branch and reconcile during onboarding. Incons
 
 ---
 
-# Jewellery Billing Software: GST Invoices at the Live Gold Rate
+# Jewellery Billing Software: GST at the Live Gold Rate
 URL: https://jwero.ai/products/billing-finance
 
 Jewellery billing software: GST invoices at the live gold rate, receivables tracking and payment reminders, with an honest note on what’s roadmap.
@@ -3689,6 +3689,14 @@ ERP, RECONSIDERED
  scopes of AI kill switch
  
  This isn’t a demo video, message us here and Jwero’s own inbox answers, live.
+
+ WHAT THE ERP COVERS
+
+## Every back-office job, on the same record as the customer.
+
+ One system in place of separate billing, stock, purchase, workshop and accounts software. Open any part to see it in detail.
+
+ Billing and accounts GST bills at the live rate, old-gold exchange, ledgers, and a Tally bridge. Inventory Every piece by weight, purity and tag, valued at today’s rate, with ageing. Purchase and vendors Orders, goods received, bills and vendor balances in one chain. Workshop and karigars Metal issued and returned in grams, job-work and wastage by stage. Repairs and service Every article taken in, tracked to the karigar and back to the customer. Girvi Pledges, interest and redemption on the customer’s own record. Gold schemes Plans, instalments, bonuses and scheme liability in one place. Branches Stock, transfers and day-close for every location on one system. Team and payroll Attendance, incentives and payroll tied to the sales they earned. Reports Sales, stock, cash and pending work, today, without building a sheet. 
 
 ## See operations on one record.
 
@@ -4523,7 +4531,7 @@ A: Yes, they’re independent layers on one record. A customer can hold a scheme
 
 ---
 
-# Jewellery Marketing Automation: Customer Journeys With Approval
+# Jewellery Marketing Automation: Customer Journeys
 URL: https://jwero.ai/products/journeys
 
 Build multi-step customer journeys: triggers, branches, wait steps, messages, with a human-approval gate before anything reaches a customer.
@@ -5859,7 +5867,7 @@ A: A self-serve mailbox wizard: today your mailboxes are provisioned for you dur
 
 ---
 
-# Amazon & Flipkart Orders on One Ledger, Marketplace Integration
+# Jewellery Marketplace Integration: Amazon, Flipkart
 URL: https://jwero.ai/products/marketplaces
 
 Connect Amazon Seller (SP-API) and Flipkart Seller accounts: orders poll into the same sales-order ledger as your counter and WhatsApp sales, and available stock across warehouses pushes back so a sale on any door lowers what the marketplace can sell.
@@ -6070,7 +6078,7 @@ A: A validity window is on every quotation. Whether the rate is protected inside
 
 ---
 
-# Digital Catalogue App for Jewellers: Live Prices, Tracked Views
+# Digital Catalogue App for Jewellers: Live Prices
 URL: https://jwero.ai/products/digital-catalogues
 
 Curated catalogue links per customer, buyer or season, priced at the live rate, shared on WhatsApp with a ready caption; every open and view tracked on the record; requests become quotations; checkout with advance payment; the same products published to Meta commerce catalogues.
@@ -6281,7 +6289,7 @@ A: Books bridge to Tally and Zoho Books; the reports here are for running the bu
 
 ---
 
-# Jewellery Staff Training Software (LMS): Courses, Certificates
+# Jewellery Staff Training Software (LMS)
 URL: https://jwero.ai/products/training-lms
 
 Courses with ordered lessons, assessments scored securely, enrolments with progress, certificates on completion, learning paths per role, and a performance-to-learning loop that suggests the next course from what happened on the floor.

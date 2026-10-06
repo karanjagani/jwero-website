@@ -85,7 +85,7 @@ const mockMarket = `
 
 const marketplaces = {
   slug: 'products/marketplaces',
-  title: 'Amazon & Flipkart Orders on One Ledger — Marketplace Integration | Jwero',
+  title: 'Jewellery Marketplace Integration: Amazon, Flipkart | Jwero',
   description: 'Connect Amazon Seller (SP-API) and Flipkart Seller accounts: orders poll into the same sales-order ledger as your counter and WhatsApp sales, and available stock across warehouses pushes back so a sale on any door lowers what the marketplace can sell.',
   schema: app('Jwero Marketplaces', 'marketplaces', 'Amazon and Flipkart order intake and inventory push on one order ledger and one stock truth for jewellery sellers.'),
   breadcrumbs: BC('Marketplaces'),
@@ -201,7 +201,7 @@ const mockShare = `
 
 const digitalCatalogues = {
   slug: 'products/digital-catalogues',
-  title: 'Digital Catalogue App for Jewellers: Live Prices, Tracked Views | Jwero',
+  title: 'Digital Catalogue App for Jewellers: Live Prices | Jwero',
   description: 'Curated catalogue links per customer, buyer or season, priced at the live rate, shared on WhatsApp with a ready caption; every open and view tracked on the record; requests become quotations; checkout with advance payment; the same products published to Meta commerce catalogues.',
   schema: app('Jwero Digital Catalogues', 'digital-catalogues', 'Shareable, tracked, live-priced catalogue links for jewellers with enquiry-to-quotation and checkout.'),
   breadcrumbs: BC('Digital Catalogues'),
@@ -314,7 +314,7 @@ const mockLms = `
 
 const trainingLms = {
   slug: 'products/training-lms',
-  title: 'Jewellery Staff Training Software (LMS): Courses, Certificates | Jwero',
+  title: 'Jewellery Staff Training Software (LMS) | Jwero',
   description: 'Courses with ordered lessons, assessments scored securely, enrolments with progress, certificates on completion, learning paths per role, and a performance-to-learning loop that suggests the next course from what happened on the floor.',
   schema: app('Jwero Training & LMS', 'training-lms', 'Learning management for jewellery staff: courses, assessments, certificates, learning paths and performance-linked suggestions inside the HR module.'),
   breadcrumbs: BC('Training & LMS'),

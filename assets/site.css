@@ -3920,3 +3920,20 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .cmp-managed { display: block; margin-top: 8px; padding-top: 8px; border-top: 1px dashed color-mix(in srgb, var(--brand) 30%, transparent); font-size: .875rem; color: var(--ink-2); }
 .cmp-managed b { color: #94670a; font-weight: 600; }
 [data-theme="dark"] .cmp-managed b { color: #F6B11C; }
+
+/* product use cases */
+.uc-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.uc-card { padding: 22px 24px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); display: flex; flex-direction: column; gap: 10px; }
+.uc-n { font: 600 .6875rem/1 var(--mono); letter-spacing: .12em; color: var(--brand); }
+.uc-card h3 { margin: 0; font-size: 1.1875rem; letter-spacing: -.02em; line-height: 1.25; }
+.uc-card p { margin: 0; color: var(--ink-2); line-height: 1.5; }
+.uc-change { margin-top: auto !important; padding-top: 12px; border-top: 1px dashed var(--line-2); color: var(--ink) !important; font-weight: 500; }
+.uc-change b { display: block; margin-bottom: 4px; font: 600 .625rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: #94670a; }
+@media (max-width: 760px) { .uc-grid { grid-template-columns: minmax(0, 1fr); } }
+
+.erp-map { margin-top: 26px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.erp-map a { display: grid; gap: 4px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); color: var(--ink); text-decoration: none; transition: border-color .2s var(--ease); }
+.erp-map a:hover { border-color: var(--brand); }
+.erp-map b::after { content: ' →'; color: var(--brand); }
+.erp-map span { font-size: .9375rem; color: var(--ink-2); line-height: 1.45; }
+@media (max-width: 640px) { .erp-map { grid-template-columns: minmax(0, 1fr); } }
