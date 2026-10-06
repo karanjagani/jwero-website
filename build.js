@@ -620,7 +620,9 @@ const L3 = require('./lib');
 // A page with FAQ schema must show the answers: append a FAQ section wherever
 // the body has none (FAQPage rich results require visible content).
 function withFaqs(body, page) {
-  if (!page.faqs || !page.faqs.length || body.includes('<details')) return body;
+  if (!page.faqs || !page.faqs.length) return body;
+  const firstQ = page.faqs[0].q.replace(/&/g, '&amp;');
+  if (body.includes(firstQ) || body.includes(page.faqs[0].q)) return body;
   const L2 = require('./lib');
   const block = L2.section(`${L2.sectionHead('QUESTIONS', 'What people ask before they message.', '')}${L2.faqBlock(page.faqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`);
   const relAt = body.lastIndexOf('<section class="related"'), bandAt = body.lastIndexOf('<section class="cta-band">');
@@ -690,7 +692,9 @@ function withManaged(body, page) {
   const P = require('./content/positioning');
   const Q = P.QUOTES;
   const SOL_QUOTE = { 'gold-retail': 1, 'silver-retail': 1, 'bridal': 1, 'd2c-brands': 3, 'jewellery-brands': 3, 'lab-grown-diamond': 3, 'single-store': 0, 'startups': 0, 'multi-store-chains': 4, 'luxury-boutique': 4, 'diamond-retail': 4, 'gemstone-retail': 2, manufacturers: 0, 'casting-units': 0, 'oem-manufacturers': 0, 'cad-services': 0, 'export-houses': 1, 'b2b-jewellery': 1, 'gold-wholesale': 1, 'diamond-wholesale': 1, 'diamond-traders': 1, 'bullion-gold-traders': 1, 'franchise-networks': 4 };
-  const R = P.ROTATE, qi = SOL_QUOTE[slug.split('/')[1]] !== undefined && slug.startsWith('solutions/') ? SOL_QUOTE[slug.split('/')[1]] : R[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % R.length];
+  const PROD_QUOTE = { whatsapp: 2, 'instagram-facebook': 2, 'ai-sales-agents': 2, storefront: 3, catalog: 3, 'digital-catalogues': 3, marketplaces: 3, erp: 0, inventory: 0, pos: 0, 'billing-finance': 0, 'purchase-vendors': 0, manufacturing: 0, 'multi-store': 0, crm: 1, journeys: 1, loyalty: 1, segmentation: 1, 'gold-schemes': 1 };
+  const k2 = slug.split('/')[1];
+  const R = P.ROTATE, qi = slug.startsWith('solutions/') && SOL_QUOTE[k2] !== undefined ? SOL_QUOTE[k2] : slug.startsWith('products/') && PROD_QUOTE[k2] !== undefined ? PROD_QUOTE[k2] : R[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % R.length];
   let block;
   if (top === 'blog' || page.legacy) {
     // articles stay articles: one quiet line with both doors
@@ -865,7 +869,9 @@ function withInterlinks(body, page) {
   }
   const SOL_TOPICS = { retail: ['Marketing and campaigns', 'Leads and conversion', 'CRM and customers'], online: ['Ecommerce and websites', 'Product data and catalogues', 'Marketing and campaigns'], trade: ['Order management', 'Product data and catalogues', 'Leads and conversion'], making: ['Order management', 'Inventory, POS and ERP', 'Product data and catalogues'] };
   const kind = /d2c|brands|lab-grown|startups/.test(slug) ? 'online' : /wholesale|traders|bullion|b2b|export/.test(slug) ? 'trade' : /manufactur|casting|cad|oem/.test(slug) ? 'making' : 'retail';
-  const list = (BACK['/' + slug] || []).concat(/^solutions\/(?!pain)/.test(slug) ? LEGACY.filter((p) => SOL_TOPICS[kind].includes(p.topic)) : []).filter((p, k, arr) => arr.indexOf(p) === k);
+  const PROD_TOPICS = [[/ads|campaign|email|social|instagram|optimize/, ['Marketing and campaigns', 'Ecommerce and websites']], [/whatsapp|ai-sales|meetings|showroom/, ['WhatsApp', 'Leads and conversion']], [/crm|journeys|loyalty|segmentation|gold-schemes|digital-gold|girvi/, ['CRM and customers', 'Leads and conversion']], [/storefront|catalog|marketplaces/, ['Ecommerce and websites', 'Product data and catalogues']], [/erp|inventory|pos|billing|purchase|manufacturing|multi-store|repairs|quotations|reports/, ['Inventory, POS and ERP', 'Order management']], [/hr|training/, ['Retail operations and sales']]];
+  const ptopics = /^products\//.test(slug) ? ((PROD_TOPICS.find(([r]) => r.test(slug)) || [, ['Technology and strategy']])[1]) : null;
+  const list = (BACK['/' + slug] || []).concat(/^solutions\/(?!pain)/.test(slug) ? LEGACY.filter((p) => SOL_TOPICS[kind].includes(p.topic)) : ptopics ? LEGACY.filter((p) => ptopics.includes(p.topic)) : []).filter((p, k, arr) => arr.indexOf(p) === k);
   if (!list.length || !/^(products|solutions|platform|tools|guides)\/|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^jewellery-business-as-a-service$/.test(slug)) return body;
   const pick = list.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
   const blk = L3.section(`${L3.sectionHead('FROM THE BLOG', 'Read more on this.', '')}<div class="erp-map">${pick.map((p) => `<a href="/${p.slug}"><b>${p.title}</b><span>${p.topic}</span></a>`).join('')}</div>`);

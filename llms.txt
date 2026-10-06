@@ -68,7 +68,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jewellery Showroom Software: Walk-in Tracking and Floor View: https://jwero.ai/products/showroom
 - Jewellery Customer Segmentation Software: RFM and Live Rules: https://jwero.ai/products/segmentation
 - Gold Savings Scheme Software for Jewellers: https://jwero.ai/products/gold-schemes
-- Digital Gold Platform for Jewellers: https://jwero.ai/products/digital-gold
+- Gold Savings Plans for Jewellers: https://jwero.ai/products/digital-gold
 - Multi-store & Franchise Jewellery Software: https://jwero.ai/products/multi-store
 - Jewellery Loyalty Program Software: Tiers, Points, Referrals: https://jwero.ai/products/loyalty
 - Jewellery Marketing Automation: Customer Journeys: https://jwero.ai/products/journeys

@@ -69,11 +69,11 @@ const TOOL_QA = {
     { q: 'How do I personalise offers for jewellery customers?', a: 'Use what each customer has shown you: what she bought, what she viewed, her occasions and her budget. Jwero scores this and suggests who to contact and with which pieces, with the reason shown.' },
   ],
   'products/digital-gold': [
-    { q: 'How can a jeweller offer digital gold?', a: 'With your own branded digital gold: customers buy gold in grams from their phone at the live rate and redeem it at your counter. Check the rules that apply to you before launching; Jwero provides the software, not the licence.' },
+    { q: 'How can a jeweller offer a gold savings plan?', a: 'Run it as a plan on the customer’s own record: enrolment with KYC, payments at the desk or by link, a ledger she can be shown, and redemption into jewellery at your counter. Gram-based plans in Jwero are being corrected and are not offered yet. Check the rules that apply to you before launching.' },
   ],
   'products/storefront': [
     { q: 'How do I build a jewellery website with live gold rates?', a: 'Use a storefront where each piece is priced from weight, purity and the day’s rate, so prices change when the rate does. Jwero’s storefront does this from the same catalogue and stock as your counter.' },
-    { q: 'How do I list jewellery on Google Shopping?', a: 'Google needs a product feed with price, image and availability. Jwero sends your catalogue to Google Merchant Center and keeps prices and stock in step, and Shopping campaigns run from the Ads Manager.' },
+    { q: 'How do I list jewellery on Google Shopping?', a: 'Google needs a product feed with price, image and availability. Jwero keeps that product data accurate in one catalogue, but it does not yet send a feed to Google Merchant Center; that is on the roadmap.' },
   ],
   'products/quotations': [
     { q: 'How do I make a jewellery estimate?', a: 'Pick the pieces, and the estimate is worked out from weight, purity, today’s rate, making charges and stones. It goes to the customer as a numbered quotation she can accept on her phone.' },

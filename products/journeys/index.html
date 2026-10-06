@@ -113,7 +113,7 @@
     <div class="section-head"><p class="eyebrow">TRY IT · THE MORNING QUEUE</p><h2>Run the AI workforce for a minute.</h2><p class="lead">Drafts arrive the way customers do. Approve, edit, or decide an action type may run alone, and stop everything with one tap.</p></div>
     <div class="sim" data-sim="approve" data-sim-name="Run the AI workforce for a minute"><p class="sim-foot">Loading the simulation…</p></div>
     <p class="sim-note">Simulation, illustrative numbers, the product’s real mechanics.</p>
-    <div class="cta-row center"><a class="btn btn-primary" href="#" data-sim-wa>Show me a real queue</a><a class="btn btn-ghost" href="/jwero-website/start">Create your workspace</a></div>
+    <div class="cta-row center"><a class="btn btn-primary" href="#" data-sim-wa>Show me a real queue</a><a class="btn btn-ghost" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=scenario" rel="noopener" data-trial>Start for ₹3,600</a></div>
   </div>
 </section><section class="section section-tint"><div class="container">
     <div class="section-head">
@@ -316,7 +316,52 @@
     <div class="section-head"><p class="eyebrow">KEEP READING</p><h2 id="related-title">Related on Jwero.</h2></div>
     <div class="grid grid-3 cells"><a class="card" href="/jwero-website/solutions/d2c-brands"><h3>For d2c brands</h3><p>How this fits your kind of business</p></a><a class="card" href="/jwero-website/products/gold-schemes"><h3>Gold Savings Schemes</h3><p>Enrolment to maturity</p></a><a class="card" href="/jwero-website/products/digital-gold"><h3>Digital Gold</h3><p>Gold savings plans</p></a><a class="card" href="/jwero-website/products/girvi"><h3>Girvi / Gold Loans</h3><p>Pledge, interest, release</p></a><a class="card" href="/jwero-website/products/loyalty"><h3>Loyalty & Referrals</h3><p>Tiers, rules, redemptions</p></a><a class="card" href="/jwero-website/products/segmentation"><h3>Customer Segmentation</h3><p>Rule-based audiences</p></a></div>
   </div>
-</section><section class="cta-band">
+</section><section class="section"><div class="container">
+    <div class="section-head">
+      <p class="eyebrow">QUESTIONS</p>
+      <h2>What people ask before they message.</h2>
+      
+    </div><div class="faq">
+    <details class="faq-item">
+      <summary>What is a customer journey in Jwero?</summary>
+      <div class="faq-a"><p>A visual, drag-and-drop flow you build on a canvas: an entry point, then steps like event triggers, filter and score gates, conditions, branches, wait delays, messages, manual tasks, webhooks, CRM updates, calls, approvals and exits.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can a journey send a message without anyone checking it first?</summary>
+      <div class="faq-a"><p>Only if you let it. Add an approval node anywhere in the flow and the journey pauses until a person approves, the same approval-queue governance and kill switch described on the AI workforce page, not a separate system.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Which channels can a journey message step use?</summary>
+      <div class="faq-a"><p>Message steps route through the shared channel router into WhatsApp, email, SMS and push, the same channels Broadcasts uses.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How does an occasion like a birthday actually get triggered?</summary>
+      <div class="faq-a"><p>A recurring sweep derives each customer’s next occasion from three sources: a recorded birthday or anniversary date, an inferred purchase-anniversary (a past significant purchase above a value threshold, treated as a recurring date even if the customer never told you), and a built-in Indian jewellery-festival calendar. A date a salesperson has entered by hand always wins, the automation never overwrites it.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What does the occasion journey actually send?</summary>
+      <div class="faq-a"><p>It’s enriched first: the customer’s top AI-recommended products and their lifetime spend are attached before anything goes out. The pre-built template sends curated WhatsApp product picks; if there’s no response in 2 days, it escalates to an AI voice call; either way it ends in a store-visit-booking task for staff, the automation itself never messages the customer directly, it feeds the journey.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Are the recommended products actually personalized, or generic bestsellers?</summary>
+      <div class="faq-a"><p>A co-purchase pattern engine looks at what products actually sell together across 24 months of real order history to build per-customer recommendations. Where there isn’t enough behavioral signal for a customer, the system falls back to category-level suggestions, and marks internally which is which, rather than presenting a fallback as if it were personalized.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I see what a journey is actually doing right now?</summary>
+      <div class="faq-a"><p>Yes. Journeys have live run monitoring, replay of past runs, staged rollout, and an incidents view, so a journey running in production is never a black box.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How is this different from a simple autoresponder?</summary>
+      <div class="faq-a"><p>Branching conditions, score and filter gates, wait steps and CRM updates let a journey react to who a customer is and what they do, not just fire on a timer.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What do the filter and score gates actually check?</summary>
+      <div class="faq-a"><p>A deterministic, rule-based scoring system computes intent, confidence, conversion likelihood, ROI probability, message-fatigue and trust-risk per customer from real behavioural signals. Those scores can gate entry to a journey, a customer already scoring high on message-fatigue, for instance, won’t be dropped into another one.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can a journey require someone to approve before it continues?</summary>
+      <div class="faq-a"><p>Yes, that is what the approval node is for. It is not a workaround; it is a first-class step type in the builder.</p></div>
+    </details></div><p class="cta-note" style="margin-top:14px">More questions? <a href="/jwero-website/faq">See the full FAQ →</a></p></div></section><section class="cta-band">
   <div class="panel">
     <div class="panel-glow" aria-hidden="true"></div>
     <div class="cta-tiles" aria-hidden="true"><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5z"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20"/><path d="m12 21-4-12 2-6"/><path d="m12 21 4-12-2-6"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M15 9h3"/><path d="M15 13h3"/><path d="M6 16c.6-1.5 1.7-2 3-2s2.4.5 3 2"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.9 5.6a2 2 0 0 0 1.3 1.3L21 12l-5.8 2.1a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.6a2 2 0 0 0-1.3-1.3L3 12l5.8-2.1a2 2 0 0 0 1.3-1.3z"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M18.1 10.4A6 6 0 1 1 10.3 18"/><path d="M7 6h1v4"/></svg></span></div>

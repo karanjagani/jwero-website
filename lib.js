@@ -1423,7 +1423,7 @@ function sim(kind) {
     <div class="section-head"><p class="eyebrow">${s.eyebrow}</p><h2>${s.title}</h2><p class="lead">${s.lead}</p></div>
     <div class="sim" data-sim="${kind}" data-sim-name="${s.title.replace(/\.$/, '')}"><p class="sim-foot">Loading the simulation…</p></div>
     <p class="sim-note">Simulation — illustrative numbers, the product’s real mechanics.</p>
-    <div class="cta-row center"><a class="btn btn-primary" href="#" data-sim-wa>${s.cta}</a><a class="btn btn-ghost" href="/start">Create your workspace</a></div>
+    <div class="cta-row center"><a class="btn btn-primary" href="#" data-sim-wa>${s.cta}</a><a class="btn btn-ghost" href="${TRIAL_URL}scenario" rel="noopener" data-trial>Start for ₹3,600</a></div>
   </div>
 </section>`;
 }

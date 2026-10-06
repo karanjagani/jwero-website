@@ -236,7 +236,52 @@
     <a class="btn btn-ghost" href="#" data-wa="enterprise">Talk to us</a>
   </article>
 </div>
-<p class="jb-promise">A real person replies on WhatsApp within minutes · Onboarding in a day · Refer a jeweller, save 10%</p></div></section><section class="cta-band">
+<p class="jb-promise">A real person replies on WhatsApp within minutes · Onboarding in a day · Refer a jeweller, save 10%</p></div></section><section class="section"><div class="container">
+    <div class="section-head">
+      <p class="eyebrow">QUESTIONS</p>
+      <h2>What people ask before they message.</h2>
+      
+    </div><div class="faq">
+    <details class="faq-item">
+      <summary>What’s different about the enterprise track?</summary>
+      <div class="faq-a"><p>A named specialist instead of a self-serve funnel, a buying-committee kit addressed to each stakeholder, and a staged pilot-branch rollout with exit criteria you set.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What do you need from us to start?</summary>
+      <div class="faq-a"><p>Roughly: number of branches, current systems (billing/ERP/WhatsApp tools), and your evaluation timeline. We’ll come back with a specific plan, not a generic deck.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Our evaluation committee will ask about SSO and audit trails. What do we tell them?</summary>
+      <div class="faq-a"><p>Tell them the truth: enterprise SSO/SCIM (SAML 2.0 and OIDC, with JIT provisioning) is shipped and live, admin-configurable from an in-app settings page; per-module activity logging exists today with a unified immutable audit trail being consolidated. See <a href="/trust/security">the security page</a> for the full honest list, we’d rather you find gaps here than in an audit.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How do we roll out across many branches without a chaotic big-bang migration?</summary>
+      <div class="faq-a"><p>You don’t, one pilot branch first, with exit criteria you define, then a staged rollout with per-branch configuration and training. No branch goes live without the previous one proving itself.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can we get a security overview document for our IT committee?</summary>
+      <div class="faq-a"><p>Yes, both the security overview and the full buying-committee kit are downloadable directly on this page, no request needed.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What if different branches want different price rules or catalogues?</summary>
+      <div class="faq-a"><p>Central price rules under owner control, with per-branch exceptions that route through approvals, consistency where you want it, flexibility where you grant it.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How does SSO/SCIM actually get set up?</summary>
+      <div class="faq-a"><p>An org admin creates the connection from an in-app settings page, choose OIDC or SAML 2.0, set an email-domain allowlist, turn on JIT provisioning with a default role, and issue SCIM tokens. The Login URL, ACS URL, SP metadata URL and SCIM base URL are shown inline to hand to your IdP team. We support any SAML 2.0/OIDC-compliant provider, Okta, Microsoft Entra, Google Workspace included, as a protocol, not a pre-built certified app.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Does SCIM sync our groups as well as our users?</summary>
+      <div class="faq-a"><p>Users only today, SCIM provisions and deactivates individual accounts automatically. Group/team sync from your IdP isn’t part of it yet; role assignment is handled inside Jwero’s own RBAC.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How are backups handled, and how do we know they actually work?</summary>
+      <div class="faq-a"><p>You set your own backup frequency (1–168 hours) and retention (1–365 days) from an in-app Trust settings screen, which shows the last-backup timestamp. A restore check is part of the product; ask us for the latest result for your workspace.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can we get webhooks into our own systems?</summary>
+      <div class="faq-a"><p>Yes, today, via the API, signed payloads, automatic retries, and a delivery log. Honestly: the event catalogue is narrow right now (product create/update/delete and a customer-conversation-message event; no order, invoice or inventory events yet), and there’s no point-and-click admin UI for it yet, only API setup. Tell us what you need synced and we’ll tell you plainly if it’s covered today.</p></div>
+    </details></div><p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p></div></section><section class="cta-band">
   <div class="panel">
     <div class="panel-glow" aria-hidden="true"></div>
     <div class="cta-tiles" aria-hidden="true"><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5z"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20"/><path d="m12 21-4-12 2-6"/><path d="m12 21 4-12-2-6"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M15 9h3"/><path d="M15 13h3"/><path d="M6 16c.6-1.5 1.7-2 3-2s2.4.5 3 2"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.9 5.6a2 2 0 0 0 1.3 1.3L21 12l-5.8 2.1a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.6a2 2 0 0 0-1.3-1.3L3 12l5.8-2.1a2 2 0 0 0 1.3-1.3z"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M18.1 10.4A6 6 0 1 1 10.3 18"/><path d="M7 6h1v4"/></svg></span></div>

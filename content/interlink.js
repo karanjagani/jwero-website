@@ -30,6 +30,10 @@ const KEYWORDS = [
   ['silver jewellery', '/solutions/silver-retail'], ['lab-grown', '/solutions/lab-grown-diamond'], ['single store', '/solutions/single-store'], ['independent jeweller', '/solutions/single-store'],
   ['jewellery chain', '/solutions/multi-store-chains'], ['multiple stores', '/solutions/multi-store-chains'], ['wholesale', '/solutions/b2b-jewellery'], ['wholesaler', '/solutions/b2b-jewellery'],
   ['manufacturer', '/solutions/manufacturers'], ['karigar', '/solutions/manufacturers'], ['D2C', '/solutions/d2c-brands'], ['jewellery brand', '/solutions/jewellery-brands'], ['new jewellery business', '/solutions/startups'],
+  ['ads manager', '/products/ads-manager'], ['ad campaign', '/products/ads-manager'], ['campaigns', '/products/campaigns'], ['broadcast', '/products/campaigns'], ['email marketing', '/products/email'],
+  ['girvi', '/products/girvi'], ['gold loan', '/products/girvi'], ['payroll', '/products/hr-payroll'], ['attendance', '/products/hr-payroll'], ['Instagram', '/products/instagram-facebook'], ['Facebook', '/products/instagram-facebook'],
+  ['manufacturing', '/products/manufacturing'], ['job work', '/products/manufacturing'], ['video call', '/products/meetings'], ['A/B test', '/products/optimize'], ['purchase order', '/products/purchase-vendors'], ['vendor', '/products/purchase-vendors'], ['supplier', '/products/purchase-vendors'],
+  ['quotation', '/products/quotations'], ['showroom', '/products/showroom'], ['social media', '/products/social-media'], ['staff training', '/products/training-lms'],
   ['managed service', '/jewellery-business-as-a-service'], ['jewellery software', '/blog/best-jewellery-software-india'],
 ];
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

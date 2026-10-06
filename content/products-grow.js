@@ -13,7 +13,7 @@ const schemes = {
   },
   breadcrumbs: BC('Gold Savings Schemes'),
   faqs: [
-    { q: 'Can I run my traditional 11+1 monthly scheme on Jwero?', a: 'Yes — fixed monthly-amount plans with a bonus month are the default plan shape, alongside gram-accumulation plans. Duration, grace days and maturity benefits are configurable per plan.' },
+    { q: 'Can I run my traditional 11+1 monthly scheme on Jwero?', a: 'Yes — fixed monthly-amount plans with a bonus month are the default plan shape. Gram-based plans are being corrected and are not offered yet. Duration, grace days and maturity benefits are configurable per plan.' },
     { q: 'How do customers pay instalments?', a: 'Customers get reminders on WhatsApp with payment links, can check their balance anytime, and your staff can record counter payments — every entry on an auditable trail.' },
     { q: 'What about compliance?', a: 'Plans carry KYC capture, configurable terms, OTP-verified closures and a full audit trail. Scheme rules vary by market — Jwero gives you the controls and the records; your CA sets the policy.' },
     { q: 'Can I migrate paper schemes mid-cycle?', a: 'Yes. Existing members import with their paid-instalment history, so nobody restarts a plan and nobody’s record is lost.' },
@@ -47,7 +47,7 @@ ${L.section(
   ])}
   ${L.stats([
     { n: '11+1', l: 'classic plan shape, supported natively' },
-    { n: '2', l: 'plan types: fixed amount and gram accumulation' },
+    { n: '11+1', l: 'monthly plans with a bonus month, the default shape' },
     { n: 'OTP', l: 'verified closures — no disputed endings' },
     { n: '100%', l: 'of entries on an auditable trail' },
   ])}`
@@ -80,39 +80,39 @@ ${L.ctaBand('Digitise the promise.', 'Bring your current scheme rules to a demo 
 
 const digitalGold = {
   slug: 'products/digital-gold',
-  title: 'Digital Gold Platform for Jewellers | Jwero',
-  description: 'Let customers buy gold in grams from their phone with live rates, watch savings grow, and convert to jewellery at your counter.',
+  title: 'Gold Savings Plans for Jewellers | Jwero',
+  description: 'Run gold savings plans with a clear ledger for every customer, KYC and cash controls, and redemption into jewellery at your counter.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Digital Gold', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Customers buy gold in grams at live rates from their phone, track savings growth, and convert holdings to jewellery in-store.',
+    description: 'Gold savings plans with a ledger per customer, KYC and cash controls, OTP-verified redemption and GL posting.',
     url: 'https://jwero.ai/products/digital-gold', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   breadcrumbs: BC('Digital Gold'),
   faqs: [
-    { q: 'How does digital gold work for my customers?', a: 'They buy gold in small amounts from their phone at live rates. Their gram balance grows over time, and when they are ready, it converts to jewellery at your counter — a savings habit that ends in your showcase.' },
+    { q: 'How do gold savings plans work for my customers?', a: 'A customer joins a plan, pays at the desk or by link, and every payment is recorded on her ledger. At the end she redeems into jewellery at your counter, confirmed by OTP. Gram-based plans are being corrected and are not offered yet.' },
     { q: 'How do rates stay current?', a: 'Live rate feeds keep buy prices honest and current, and every transaction is recorded on the customer’s ledger with a full history.' },
     { q: 'Why offer digital gold at all?', a: 'Because someone will hold your customer’s monthly savings habit — a bank, an app, or you. Whoever holds the savings gets the wedding order.' },
     { q: 'Is digital gold regulated, and are we exposed if something goes wrong?', a: 'KYC capture, transaction ledgers and OTP-verified redemptions keep every step auditable. Confirm current regulatory scope for your specific state and setup on a demo before launching — this is a compliance-sensitive product and deserves that conversation.' },
-    { q: 'What if a customer disputes their gram balance?', a: 'Every transaction is recorded on the customer’s ledger with a full history — balances are transparent and checkable by the customer at any time, which is what prevents most disputes before they start.' },
+    { q: 'What if a customer disputes her balance?', a: 'Every transaction is recorded on the customer’s ledger with a full history — balances are transparent and checkable by the customer at any time, which is what prevents most disputes before they start.' },
   ],
   body: `
 ${L.hero({
   eyebrow: 'DIGITAL GOLD',
-  h1: 'Let customers buy gold in grams from their phone — and redeem it at your counter.',
-  sub: 'The fintech apps discovered what jewellery businesses always knew: people love saving in gold. Jwero gives you your own digital gold offering: live rates, gram balances, clean records — so the savings habit that starts on a phone ends at your counter, not a stranger’s app.',
+  h1: 'Gold savings plans, recorded properly, and redeemed at your counter.',
+  sub: 'People love saving towards gold. Jwero records every plan, payment and redemption on the customer’s own record, with KYC, cash limits and dual control on closures. Gram-based plans are being corrected and are not offered until they are.',
   primary: { href: '#', label: 'Show me gold bought from a phone', wa: 'digitalgold' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
 ${L.section(
   `${L.cards([
-    { title: 'Live-rate purchases', text: 'Customers buy in currency amounts or grams at current market rates, from their phone, any time — priced in the org’s own currency, not hardcoded to one market.' },
-    { title: 'Transparent balances', text: 'Gram holdings visible to the customer at all times — trust through transparency.' },
+    { title: 'Payments on record', text: 'Every instalment is recorded on the customer’s ledger, at the desk or by payment link.' },
+    { title: 'Transparent balances', text: 'Each customer’s balance and history are on her record, ready to show her at any time.' },
     { title: 'KYC & records', text: 'Identity capture with real scanned documents attached to the record, transaction ledgers and OTP-verified redemptions keep everything auditable.' },
     { title: 'Redemption at your counter', text: 'Balances convert into jewellery purchases — the digital habit becomes a physical visit.' },
-    { title: 'On the customer record', text: 'Digital gold balances live on the same Customer 360 — so the AI workforce knows who is quietly saving toward something big.' },
-    { title: 'Runs with your schemes', text: 'Offer classic monthly plans and modern gram savings side by side; different customers, same discipline.' },
+    { title: 'On the customer record', text: 'Plan balances live on the same customer record, so your team knows who is saving towards something big.' },
+    { title: 'Runs with your schemes', text: 'Runs inside the gold scheme module: the same discipline, controls and reports.' },
   ])}`
 )}
 
@@ -133,7 +133,7 @@ ${L.oneSystemBlock([
 
 ${L.section(`${L.sectionHead('DIGITAL GOLD QUESTIONS', 'Regulation, exposure, and disputed balances.', '')}${L.faqBlock([
   { q: 'Is this regulated, and are we exposed if something goes wrong?', a: 'Section 269ST cash-limit enforcement, Form 60/61 for PAN-less customers, dual control on closures, full KYC with document scans, and GL posting are all built in. Confirm current regulatory scope for your specific state and setup on a demo before launching — this is a compliance-sensitive product and deserves that conversation.' },
-  { q: 'What if a customer disputes their gram balance?', a: 'Balances are transparent and checkable by the customer at any time, which prevents most disputes before they start.' },
+  { q: 'What if a customer disputes her balance?', a: 'Balances are transparent and checkable by the customer at any time, which prevents most disputes before they start.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
@@ -143,7 +143,7 @@ ${L.honestGapsBlock([
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="digitalgold">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('Compete with the apps — as yourself.', 'Your name, your gold, your customers. See a digital gold journey from first gram to showcase visit.', 'digitalgold')}
+${L.ctaBand('Your name, your gold, your customers.', 'See a gold savings plan from first payment to redemption at the counter.', 'digitalgold')}
 `,
 };
 
@@ -220,7 +220,7 @@ const loyalty = {
   },
   breadcrumbs: BC('Loyalty & Referrals'),
   faqs: [
-    { q: 'Is this the same thing as your gold savings schemes?', a: 'No. Gold schemes and digital gold are savings products tied to grams of gold. Loyalty is a separate points/tier layer that can apply to any purchase — the two are designed to run side by side, both visible on the same customer record.' },
+    { q: 'Is this the same thing as your gold savings schemes?', a: 'No. Gold schemes are savings plans towards jewellery. Loyalty is a separate points/tier layer that can apply to any purchase — the two are designed to run side by side, both visible on the same customer record.' },
     { q: 'Can we set our own tiers and earning rules?', a: 'Yes — tiers, how customers earn toward them, and what they can redeem are all configurable to your business. We don’t ship a fixed set of tier names or point values; you define what fits your store.' },
     { q: 'What kind of loyalty program can we run — just points?', a: 'No — points-based, tiered-membership, visit-based and spend-based programs are all supported. Pick the structure that fits your store, or combine them.' },
     { q: 'How does a customer actually move up a tier?', a: 'Automatically. A tier can be qualified by points balance, total spend, or redeemed points — whichever thresholds you set — and it is recalculated after every point-earning event. There is no manual badge-assignment step.' },
