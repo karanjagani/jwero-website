@@ -635,6 +635,13 @@ function withDoors(html, slug) {
   const end = html.indexOf('</section>');
   if (end < 0) return html;
   const strip = `<div class="doors-strip"><div class="container"><p>Two ways to work with Jwero</p><a class="ds-door" href="${require('./lib').TRIAL_URL}doors-strip" rel="noopener" data-trial><span>Run it yourself</span><b>Start for ₹3,600</b></a><a class="ds-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b></a><a class="ds-more" href="/pricing">Compare →</a></div></div>`;
+  // product and solution pages: inside the top section, under the buttons and above the illustration
+  if (/^(products|solutions)(\/|$)/.test(slug || '')) {
+    const mock = html.lastIndexOf('<div class="container"><div class="stage hero-mock">', end);
+    const inHero = strip.replace('class="doors-strip"', 'class="doors-strip is-in-hero"');
+    if (mock > 0) return html.slice(0, mock) + inHero + html.slice(mock);
+    return html.slice(0, end) + inHero + html.slice(end);
+  }
   return html.slice(0, end + 10) + strip + html.slice(end + 10);
 }
 

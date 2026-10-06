@@ -3913,3 +3913,6 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .ds-more { margin-left: auto; font-size: .875rem; font-weight: 600; color: var(--brand); }
 @media (max-width: 560px) { .doors-strip p { flex: 0 0 100%; } .ds-door { flex: 1 1 0; } .ds-more { margin-left: 0; } }
 .doors-strip { margin-bottom: 40px; position: relative; z-index: 1; }
+.doors-strip.is-in-hero { margin: 22px 0 28px; }
+.doors-strip.is-in-hero .container { justify-content: center; border: 0; padding-block: 0; }
+.doors-strip.is-in-hero .ds-more { margin-left: 6px; }
