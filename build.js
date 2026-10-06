@@ -522,7 +522,7 @@ function withInShort(page) {
 // should win that search. Sits before the closing band.
 const { TOOL_QA } = require('./content/tool-answers');
 function withToolQA(page) {
-  const qa = (TOOL_QA[page.slug] || []).concat(HUB_FAQ[page.slug] || [], (SEGMENT_FAQ[page.slug] || []), (ROLE_FAQ[page.slug] || []), (BLOG_FAQ[page.slug] || []));
+  const qa = (TOOL_QA[page.slug] || []).concat(HUB_FAQ[page.slug] || [], (SEGMENT_FAQ[page.slug] || []), (ROLE_FAQ[page.slug] || []), (BLOG_FAQ[page.slug] || []), page.legacy ? TOPIC_FAQ(postTopic(page)) : []);
   if (!qa.length || /class="tool-qa"/.test(page.body)) return page;
   const block = `\n<section class="section tool-qa"><div class="container">${L3.sectionHead('', 'More questions jewellers ask.', '')}${L3.faqBlock(qa)}</div></section>\n`;
   const at = page.body.lastIndexOf('<section class="cta-band"');
@@ -706,7 +706,10 @@ function withManaged(body, page) {
   let block;
   if (top === 'blog' || page.legacy) {
     // articles stay articles: one quiet line with both doors
-    block = L3.section(`<div class="jb-blogline"><p><b>Run it yourself, or let Jwero run it.</b> The platform for ₹18,000 a month, or Jwero’s specialists and AI with every tool included.</p><div class="cta-row"><a class="btn btn-primary" href="${require('./lib').TRIAL_URL}blog" rel="noopener" data-trial>Start for ₹3,600</a><a class="btn btn-ghost" href="#" data-wa="handle">Let Jwero handle it</a></div></div>`, { tone: 'tint' });
+    const [bq, tool, who] = POST_NEXT[postTopic(page)] || POST_NEXT['Technology and strategy'];
+    const [q, by, where] = Q[bq];
+    block = L3.section(`<figure class="pz-quote jb-solo"><blockquote>“${q}”</blockquote><figcaption><b>${by}</b><span>${where}</span></figcaption></figure>`) +
+      L3.section(`<div class="jb-blogline"><p><b>Written for</b> ${who.map(([h, t]) => `<a href="${h}">${t}</a>`).join(' and ')}. <b>Check your own numbers:</b> <a href="${tool[0]}">see ${tool[1]}</a>, free and without sign-up.</p><p><b>Price:</b> the platform from ₹3,600 for the first month, or Jwero runs it for you with every tool included. <a href="/pricing">See the three ways →</a></p></div>`, { tone: 'tint' });
   } else if (top === 'roles' && slug !== 'roles' && !['roles/owner', 'roles/chain-owner', 'roles/franchise-partner', 'roles/next-gen-successor'].includes(slug)) {
     const [q, who, where] = Q[ROLE_QUOTE[slug.split('/')[1]] !== undefined ? ROLE_QUOTE[slug.split('/')[1]] : qi];
     block = L3.section(`<figure class="pz-quote jb-solo"><blockquote>“${q}”</blockquote><figcaption><b>${who}</b><span>${where}</span></figcaption></figure>`) +
@@ -847,6 +850,31 @@ function withPlatformLinks(body, page) {
 // Blog posts: a short answer and a contents list at the top, so readers and
 // answer engines get the point before the detail.
 const LEGACY = require('./content/legacy-posts.json').posts;
+function postTopic(page) {
+  const lp = page.legacy ? LEGACY.find((x) => x.slug === page.slug) : null;
+  if (/loss|karigar|manufactur/.test(page.slug || '') && !lp) return 'Order management';
+  return /scheme/.test(page.slug || '') ? 'Gold schemes' : lp ? lp.topic : (/scheme|gold-rate|huid|tally|loss|repair|cost|software|checklist|erp|crm/.test(page.slug) ? (/crm/.test(page.slug) ? 'CRM and customers' : /whatsapp/.test(page.slug) ? 'WhatsApp' : 'Inventory, POS and ERP') : /whatsapp/.test(page.slug) ? 'WhatsApp' : /catalog|online|wedding|dead-stock/.test(page.slug) ? 'Retail operations and sales' : 'Technology and strategy');
+}
+// What each article topic leads to: a matched quote, a calculator, who it is for, and two questions.
+const POST_NEXT = {
+  'Leads and conversion': [2, ['/tools/whatsapp-revenue-estimator', 'what missed enquiries cost you'], [['/solutions/pain/lead-leakage', 'shops losing enquiries'], ['/roles/sales-associate', 'sales staff']]],
+  WhatsApp: [2, ['/tools/whatsapp-revenue-estimator', 'what slow WhatsApp replies cost you'], [['/solutions/single-store', 'single showrooms'], ['/roles/crm-executive', 'CRM executives']]],
+  AI: [2, ['/tools/whatsapp-revenue-estimator', 'what unanswered enquiries cost you'], [['/solutions/multi-store-chains', 'chains'], ['/roles/owner', 'owners']]],
+  'Marketing and campaigns': [3, ['/tools/whatsapp-revenue-estimator', 'what your enquiries are worth'], [['/solutions/jewellery-brands', 'jewellery brands'], ['/roles/marketing-manager', 'marketing managers']]],
+  'Ecommerce and websites': [3, ['/tools/whatsapp-revenue-estimator', 'what your online enquiries are worth'], [['/solutions/d2c-brands', 'online brands'], ['/roles/ecommerce-manager', 'ecommerce managers']]],
+  'Product data and catalogues': [3, ['/tools/dead-stock-calculator', 'what unlisted stock costs you'], [['/solutions/b2b-jewellery', 'wholesalers'], ['/roles/ecommerce-manager', 'ecommerce managers']]],
+  'CRM and customers': [1, ['/tools/gold-scheme-calculator', 'what a savings scheme is worth to you'], [['/solutions/gold-retail', 'gold retailers'], ['/roles/crm-executive', 'CRM executives']]],
+  'Gold schemes': [1, ['/tools/gold-scheme-calculator', 'what your scheme enrolment is worth'], [['/solutions/gold-retail', 'gold retailers'], ['/roles/owner', 'owners']]],
+  'Inventory, POS and ERP': [0, ['/tools/dead-stock-calculator', 'what idle stock costs you'], [['/solutions/gold-retail', 'gold retailers'], ['/roles/inventory-manager', 'inventory managers']]],
+  'Retail operations and sales': [0, ['/tools/dead-stock-calculator', 'what idle stock costs you'], [['/solutions/single-store', 'single showrooms'], ['/roles/store-manager', 'store managers']]],
+  'Order management': [0, ['/tools/gold-loss-calculator', 'what production loss costs you'], [['/solutions/manufacturers', 'manufacturers'], ['/roles/production-manager', 'production managers']]],
+  'Technology and strategy': [1, ['/tools', 'where your shop is losing money'], [['/solutions', 'every kind of jeweller'], ['/roles/owner', 'owners']]],
+};
+const TOPIC_FAQ = (t) => [
+  { q: `Does Jwero handle ${t === 'Technology and strategy' ? 'this' : t.toLowerCase().replace('ai', 'AI').replace('pos', 'POS').replace('erp', 'ERP').replace('crm', 'CRM').replace('whatsapp', 'WhatsApp')} for jewellers?`, a: 'Yes. You can run it yourself on the platform from ₹3,600 for the first month, or let Jwero’s specialists and AI run it for you, with every tool included.' },
+  { q: 'How fast can a jeweller start?', a: 'Onboarding takes a day for most shops. Jwero sets up your stock, rates and customers with you, and a real person replies on WhatsApp within minutes.' },
+];
+
 function withBlogTop(body, page) {
   if (!/^(blog|guides)\/./.test(page.slug || '') && !page.legacy) return body;
   const pb = body.indexOf('<div class="post-body">'); if (pb < 0) return body;
@@ -871,7 +899,7 @@ function withBlogTop(body, page) {
     'Gold schemes': 'Want schemes enrolled, collected and tracked without a register? Jwero runs it for you.',
   };
   const lp = page.legacy ? LEGACY.find((x) => x.slug === page.slug) : null;
-  const topic = /scheme/.test(page.slug || '') ? 'Gold schemes' : lp ? lp.topic : (/scheme|gold-rate|huid|tally|loss|repair|cost|software|checklist|erp|crm/.test(page.slug) ? (/crm/.test(page.slug) ? 'CRM and customers' : /whatsapp/.test(page.slug) ? 'WhatsApp' : 'Inventory, POS and ERP') : /whatsapp/.test(page.slug) ? 'WhatsApp' : /catalog|online|wedding|dead-stock/.test(page.slug) ? 'Retail operations and sales' : 'Technology and strategy');
+  const topic = postTopic(page);
   const mid = `<aside class="post-mid"><p>${MID[topic] || MID['Technology and strategy']}</p><div class="cta-row"><a class="btn btn-primary btn-sm" href="#" data-wa="handle">Let Jwero handle it</a><a class="btn btn-ghost btn-sm" href="${require('./lib').TRIAL_URL}article" rel="noopener" data-trial>Start for ₹3,600</a></div></aside>`;
   const third = withIds.indexOf('<h2 id="p3"');
   const withMid = third > 0 ? withIds.slice(0, third) + mid + withIds.slice(third) : withIds + mid;
@@ -1063,7 +1091,7 @@ function layout(page) {
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.hero .sub'] },
     isPartOf: { '@type': 'WebSite', url: SITE },
   }];
-  const allFaqs = (inShortQA(page) ? [inShortQA(page)] : []).concat(page.faqs || [], TOOL_QA[page.slug] || [], HUB_FAQ[page.slug] || [], SEGMENT_FAQ[page.slug] || [], ROLE_FAQ[page.slug] || [], BLOG_FAQ[page.slug] || []);
+  const allFaqs = (inShortQA(page) ? [inShortQA(page)] : []).concat(page.faqs || [], TOOL_QA[page.slug] || [], HUB_FAQ[page.slug] || [], SEGMENT_FAQ[page.slug] || [], ROLE_FAQ[page.slug] || [], BLOG_FAQ[page.slug] || [], page.legacy ? TOPIC_FAQ(postTopic(page)) : []);
   if (allFaqs.length) {
     schemas.push({
       '@context': 'https://schema.org', '@type': 'FAQPage',

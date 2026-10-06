@@ -14,7 +14,7 @@ function postSchema(headline, description) {
 }
 
 function postMeta(readMins, cluster) {
-  return `<p class="post-meta"><span>${cluster}</span> · <span>${readMins} min read</span> · <span>By the Jwero editorial team</span> · <span>Reviewed October 2026</span></p>`;
+  return `<p class="post-meta"><span>${cluster}</span> · <span>${readMins} min read</span> · <span>By the Jwero editorial team</span> · <span>Published July 2026</span> · <span>Reviewed October 2026</span></p>`;
 }
 
 const blogHub = {
@@ -85,7 +85,6 @@ ${L.hero({
   eyebrow: 'GUIDE · WHATSAPP FOR JEWELLERS',
   h1: 'WhatsApp for Jewellers: The Complete Guide',
   sub: 'Jewellery is sold on trust and conversation — which is exactly what WhatsApp is built for. Here’s how to actually run a jewellery business on it, not just have a number customers can message.',
-  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-whatsapp' },
   secondary: { href: '/tools/whatsapp-revenue-estimator', label: 'Try the Revenue Estimator' },
 })}
 ${L.section(postMeta(9, 'WhatsApp for Jewellers'))}
@@ -157,7 +156,6 @@ ${L.hero({
   eyebrow: 'GUIDE · DEAD STOCK',
   h1: 'Dead Stock in Jewellery Business: Calculate It, Then Clear It',
   sub: 'Idle inventory is the quietest expense in a jewellery business — no invoice arrives for it, so it rarely gets budgeted against. Here’s how to see the real number, and what to do once you see it.',
-  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-deadstock' },
   secondary: { href: '/tools/dead-stock-calculator', label: 'Run the calculator' },
 })}
 ${L.section(postMeta(8, 'Dead Stock'))}
@@ -219,7 +217,6 @@ ${L.hero({
   eyebrow: 'GUIDE · GOLD SAVINGS SCHEMES',
   h1: 'Gold Savings Schemes: A Practical Guide to Running One Digitally',
   sub: 'A scheme book is a revenue engine wearing a savings costume — but only if the collection discipline behind it actually holds. Here’s how the mechanics work, and where paper registers quietly leak.',
-  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-scheme' },
   secondary: { href: '/tools/gold-scheme-calculator', label: 'Run the calculator' },
 })}
 ${L.section(postMeta(8, 'Gold Savings Schemes'))}
@@ -282,7 +279,6 @@ ${L.hero({
   eyebrow: 'GUIDE · JEWELLERY SOFTWARE AND TALLY',
   h1: 'Jewellery Software and Tally: What Should and Shouldn’t Move',
   sub: 'Every conversation about new software in a jewellery business eventually reaches the same wall: "what does the accountant say?" Here’s exactly what syncs, what doesn’t, and how to have that conversation without guessing.',
-  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-tally' },
   secondary: { href: '/platform/integrations/tally', label: 'See the Tally integration' },
 })}
 ${L.section(postMeta(7, 'Jewellery Software and Tally'))}
@@ -347,7 +343,6 @@ ${L.hero({
   eyebrow: 'GUIDE · MANUFACTURING',
   h1: 'Gold Loss (Wastage) Control in Jewellery Manufacturing: A Working Ledger',
   sub: 'Wastage has always happened at every stage of manufacturing. The question that actually matters isn’t whether it happens — it’s whether anyone can see where, and with whom.',
-  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-goldloss' },
   secondary: { href: '/solutions/manufacturers', label: 'See it for manufacturers' },
 })}
 ${L.section(postMeta(8, 'Manufacturing'))}
@@ -412,7 +407,6 @@ ${L.hero({
   eyebrow: 'GUIDE · REPAIR MANAGEMENT',
   h1: 'Jewellery Repair Management: The Custody-Chain Method',
   sub: 'A repair job is the one moment a customer hands you their gold and walks away with nothing but trust. Here’s the discipline that makes that trust provable, not just assumed.',
-  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-repair' },
   secondary: { href: '/products/crm', label: 'See the customer record in Jwero' },
 })}
 ${L.section(postMeta(7, 'Repair Management'))}
@@ -483,7 +477,6 @@ ${L.hero({
   eyebrow: 'GUIDE · HUID & HALLMARKING',
   h1: 'HUID and Hallmarking Records: The Audit-Day Checklist',
   sub: 'A hallmarking audit shouldn’t be a scramble through drawers and old registers. Here’s what actually needs to be retrievable, and how to keep it that way every day, not just before an inspection.',
-  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-huid' },
   secondary: { href: '/products/inventory', label: 'See inventory tracking in Jwero' },
 })}
 ${L.section(postMeta(7, 'Compliance & Records'))}
@@ -546,7 +539,6 @@ ${L.hero({
   eyebrow: 'GUIDE · DIGITAL CATALOGUE',
   h1: 'Digital Catalog vs PDF: Why Shareable Checkout Links Sell More',
   sub: 'A PDF catalogue is a snapshot that starts going wrong the moment it’s saved. A digital catalogue is a live page — priced correctly whenever it’s opened, and able to take the payment right there. Here’s the actual difference.',
-  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-catalog' },
   secondary: { href: '/products/whatsapp', label: 'See WhatsApp Commerce in Jwero' },
 })}
 ${L.section(postMeta(7, 'Digital Catalogue'))}
@@ -609,7 +601,6 @@ ${L.hero({
   eyebrow: 'GUIDE · CRM VS ERP',
   h1: 'Jewellery CRM vs ERP: The Real Difference',
   sub: 'Two acronyms, two software categories, and a lot of vendors happy to let the line blur in whichever direction sells more. Here’s what each one actually does in a jewellery business — and why the two are usually needed together, not instead of each other.',
-  primary: { href: '#', label: 'Chat or call with us', wa: 'blog-crmerp' },
   secondary: { href: '/platform', label: 'See how Jwero unifies both' },
 })}
 ${L.section(postMeta(7, 'CRM vs ERP for Jewellery'))}
