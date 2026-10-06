@@ -1187,16 +1187,18 @@ const STACK_COST = {
   "Zoho integration": [1000, 1.5, "Partner connectors of about ₹10,000 to ₹50,000 one time", "", "low"],
 };
 const STACK_PLAN = 18000, STACK_LOC = 2999, STACK_TEAM = 8, STACK_HOUR_SHARE = 0.5, STACK_MATCH = 0.5, STACK_WEEK = 45;
-function stackMerge() {
+function stackMerge(only) {
+  const pool = (t) => !only || only.includes(t.replace(/&amp;/g, '&'));
+  const N = only ? STACK.flatMap(([, , items]) => items).filter(pool).length : STACK_N;
   const tip = (k) => `<button type="button" class="stackm-tip" aria-label="How this is worked out"><span role="tooltip" data-stackm-tip="${k}"></span></button>`;
   return `
-<div class="stackm" data-stackm data-total="${STACK_N}">
+<div class="stackm" data-stackm data-total="${N}">
   <div class="stackm-main">
     <a class="stackm-mini" href="#stackm-out" data-stackm-mini hidden><b data-mini-n>0</b><em>→ 1</em><span data-mini-save></span><i>Results ↓</i></a>
     <div class="stackm-cloud" data-stackm-cloud>
-      ${STACK.flatMap(([, , items], g) => items.map((t) => [t, g])).sort((x, y) => x[0].localeCompare(y[0], 'en', { sensitivity: 'base' })).map(([t, g]) => `<button type="button" class="stackm-chip" data-g="${g}" data-c="${(STACK_COST[t] || [0, 1])[0]}" data-h="${(STACK_COST[t] || [0, 1])[1]}" data-grp="${(STACK_COST[t] || [])[3] || ''}" data-s="${(STACK_COST[t] || [])[5] || ''}" aria-pressed="false">${t}</button>`).join('')}
+      ${STACK.flatMap(([, , items], g) => items.map((t) => [t, g])).filter(([t]) => pool(t)).sort((x, y) => x[0].localeCompare(y[0], 'en', { sensitivity: 'base' })).map(([t, g]) => `<button type="button" class="stackm-chip" data-g="${g}" data-c="${(STACK_COST[t] || [0, 1])[0]}" data-h="${(STACK_COST[t] || [0, 1])[1]}" data-grp="${(STACK_COST[t] || [])[3] || ''}" data-s="${(STACK_COST[t] || [])[5] || ''}" aria-pressed="false">${t}</button>`).join('')}
     </div>
-    <button type="button" class="stackm-more" data-stackm-more>Show all ${STACK_N}</button>
+    <button type="button" class="stackm-more" data-stackm-more>Show all ${N}</button>
   </div>
   <aside class="stackm-panel" id="stackm-out" data-stackm-panel data-stackm-out data-plan="${STACK_PLAN}" data-locfee="${STACK_LOC}" data-base="${STACK_TEAM}" data-share="${STACK_HOUR_SHARE}" data-match="${STACK_MATCH}" data-week="${STACK_WEEK}">
     <div class="stackm-fx" aria-hidden="true"><i></i></div>
@@ -1204,8 +1206,8 @@ function stackMerge() {
       <label>Showrooms<span><button type="button" data-stackm-step="loc" data-d="-1" aria-label="Fewer showrooms">−</button><input type="number" inputmode="numeric" data-stackm-in="loc" value="1" min="1" max="50" aria-label="Number of showrooms"><button type="button" data-stackm-step="loc" data-d="1" aria-label="More showrooms">+</button></span></label>
       <label>Team members<span><button type="button" data-stackm-step="team" data-d="-1" aria-label="Fewer team members">−</button><input type="number" inputmode="numeric" data-stackm-in="team" value="${STACK_TEAM}" min="1" max="500" aria-label="Number of team members"><button type="button" data-stackm-step="team" data-d="1" aria-label="More team members">+</button></span></label>
     </div>
-    <p class="stackm-label" data-stackm-label>If you ran all ${STACK_N} today</p>
-    <p class="stackm-num" aria-live="polite"><b data-stackm-n>${STACK_N}</b><i>→</i><b class="stackm-one">1</b></p>
+    <p class="stackm-label" data-stackm-label>If you ran all ${N} today</p>
+    <p class="stackm-num" aria-live="polite"><b data-stackm-n>${N}</b><i>→</i><b class="stackm-one">1</b></p>
     <div class="stackm-tally" data-stackm-tally></div>
     <div class="stackm-money">
       <p class="stackm-m"><span>Today, a month${tip('today')}</span><b data-stackm-o="today">₹0</b></p>
@@ -1217,7 +1219,7 @@ function stackMerge() {
     </div>
     <button type="button" class="stackm-go" data-stackm-go>Merge them into one</button>
     <div class="stackm-actions">
-      <button type="button" data-stackm-all>Select all ${STACK_N}</button>
+      <button type="button" data-stackm-all>Select all ${N}</button>
       <button type="button" data-stackm-clear>Clear</button>
       <button type="button" data-stackm-open="nums">Your numbers</button>
       <button type="button" data-stackm-open="how">How it is worked out</button>
