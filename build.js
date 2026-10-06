@@ -454,6 +454,11 @@ const HUB_SHORT = {
   'solutions/pain/dead-stock': { q: 'How do jewellers reduce dead stock?', a: 'Know the age and today’s value of every piece, see what has not moved in months, and match slow pieces to the customers most likely to buy them before discounting or melting. Jwero shows stock ageing at the live rate and suggests who to offer each idle piece to.' },
 };
 const HUB_FAQ = {
+  tools: [
+    { q: 'Are the calculators free?', a: 'Yes. No sign-up and no email. Move the sliders to your own figures and the result updates.' },
+    { q: 'How accurate are the results?', a: 'They are estimates from your inputs and the assumptions shown under each calculator. Change any assumption to match your business.' },
+    { q: 'What should I do with the result?', a: 'Send it to Jwero on WhatsApp and we will reply with the plan for your bracket, or open the page under the result to see how Jwero fixes it.' },
+  ],
   roadmap: [
     { q: 'How often is the roadmap updated?', a: 'Whenever something ships or changes status. Items move from not yet to rolling out to shipped, and the product pages are updated with them.' },
     { q: 'Can I ask for a feature?', a: 'Yes. Tell us which item decides your purchase; order on the roadmap is open to discussion, especially for early partners.' },
@@ -694,9 +699,10 @@ function withManaged(body, page) {
   const SOL_QUOTE = { 'gold-retail': 1, 'silver-retail': 1, 'bridal': 1, 'd2c-brands': 3, 'jewellery-brands': 3, 'lab-grown-diamond': 3, 'single-store': 0, 'startups': 0, 'multi-store-chains': 4, 'luxury-boutique': 4, 'diamond-retail': 4, 'gemstone-retail': 2, manufacturers: 0, 'casting-units': 0, 'oem-manufacturers': 0, 'cad-services': 0, 'export-houses': 1, 'b2b-jewellery': 1, 'gold-wholesale': 1, 'diamond-wholesale': 1, 'diamond-traders': 1, 'bullion-gold-traders': 1, 'franchise-networks': 4 };
   const ROLE_QUOTE = { owner: 1, 'chain-owner': 4, 'franchise-partner': 4, 'next-gen-successor': 1, 'store-manager': 0, 'sales-associate': 2, 'crm-executive': 2, 'marketing-manager': 3, 'ecommerce-manager': 3, cashier: 0, accountant: 0, 'inventory-manager': 0, 'purchase-manager': 0, 'b2b-manager': 1, 'production-manager': 0, karigar: 1, 'cad-designer': 0, 'quality-hallmarking': 1 };
   const PLAT_QUOTE = { platform: 3, 'platform/onboarding': 0, 'platform/integrations': 0, 'platform/integrations/tally': 0, 'platform/customer-memory': 1, 'platform/pricing-engine': 1, 'platform/ai-workforce': 2 };
+  const TOOL_QUOTE = { 'ads-for-jewellers': 3, 'jewellery-website-analytics': 3, 'instagram-for-jewellers': 3, 'jewellery-appointment-booking-software': 2, 'whatsapp-broadcast-for-jewellers': 2, 'ai-calling-for-jewellers': 2, 'sms-marketing-for-jewellers': 2, 'jewellery-accounting-software': 0, 'jewellery-barcode-tagging-software': 0, 'cloud-jewellery-software': 0, 'jewellery-staff-management-software': 0, 'jewellery-showroom-footfall-counting': 1, 'tools/dead-stock-calculator': 1, 'tools/gold-scheme-calculator': 1, 'tools/gold-loss-calculator': 0, 'tools/whatsapp-revenue-estimator': 2 };
   const PROD_QUOTE = { whatsapp: 2, 'instagram-facebook': 2, 'ai-sales-agents': 2, storefront: 3, catalog: 3, 'digital-catalogues': 3, marketplaces: 3, erp: 0, inventory: 0, pos: 0, 'billing-finance': 0, 'purchase-vendors': 0, manufacturing: 0, 'multi-store': 0, crm: 1, journeys: 1, loyalty: 1, segmentation: 1, 'gold-schemes': 1 };
   const k2 = slug.split('/')[1];
-  const R = P.ROTATE, qi = slug.startsWith('solutions/') && SOL_QUOTE[k2] !== undefined ? SOL_QUOTE[k2] : slug.startsWith('products/') && PROD_QUOTE[k2] !== undefined ? PROD_QUOTE[k2] : slug.startsWith('roles/') && ROLE_QUOTE[k2] !== undefined ? ROLE_QUOTE[k2] : PLAT_QUOTE[slug] !== undefined ? PLAT_QUOTE[slug] : R[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % R.length];
+  const R = P.ROTATE, qi = slug.startsWith('solutions/') && SOL_QUOTE[k2] !== undefined ? SOL_QUOTE[k2] : slug.startsWith('products/') && PROD_QUOTE[k2] !== undefined ? PROD_QUOTE[k2] : slug.startsWith('roles/') && ROLE_QUOTE[k2] !== undefined ? ROLE_QUOTE[k2] : PLAT_QUOTE[slug] !== undefined ? PLAT_QUOTE[slug] : TOOL_QUOTE[slug] !== undefined ? TOOL_QUOTE[slug] : R[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % R.length];
   let block;
   if (top === 'blog' || page.legacy) {
     // articles stay articles: one quiet line with both doors
@@ -727,7 +733,7 @@ const SOLUTION_DROP = /<h2[^>]*>\s*(Small start|One plan\. Every module|Five thi
 const SOLUTION_WHO = { 'single-store': 'a single store', 'multi-store-chains': 'a chain of stores', 'franchise-networks': 'a franchise network', 'gold-retail': 'a gold jewellery shop', 'diamond-retail': 'a diamond showroom', 'silver-retail': 'a silver jewellery shop', 'gemstone-retail': 'a gemstone store', bridal: 'a bridal jewellery store', 'luxury-boutique': 'a luxury boutique', 'lab-grown-diamond': 'a lab-grown diamond business', 'jewellery-brands': 'a jewellery brand', 'd2c-brands': 'an online jewellery brand', startups: 'a new jewellery business', 'gold-wholesale': 'a gold wholesale business', 'diamond-wholesale': 'a diamond wholesale business', 'diamond-traders': 'a diamond trading business', 'bullion-gold-traders': 'a bullion business', 'b2b-jewellery': 'a B2B jewellery business', 'export-houses': 'an export house', manufacturers: 'a jewellery manufacturing unit', 'oem-manufacturers': 'an OEM manufacturing unit', 'casting-units': 'a casting unit', 'cad-services': 'a CAD studio' };
 const OWNER_ROLES = new Set(['roles/owner', 'roles/chain-owner', 'roles/franchise-partner', 'roles/next-gen-successor']);
 function trimSolution(html, slug) {
-  if (slug === 'platform' || slug.startsWith('platform/')) {
+  if (slug === 'platform' || slug.startsWith('platform/') || slug === 'tools' || slug.startsWith('tools/') || ['jewellery-accounting-software','jewellery-barcode-tagging-software','cloud-jewellery-software','whatsapp-broadcast-for-jewellers','instagram-for-jewellers','ads-for-jewellers','sms-marketing-for-jewellers','jewellery-showroom-footfall-counting','ai-calling-for-jewellers','jewellery-appointment-booking-software','jewellery-staff-management-software','jewellery-website-analytics'].includes(slug)) {
     let kept = html.split(/(?=<section[\s>])/).filter((c) => !(slug === 'platform' && /<h2[^>]*>\s*(What five disconnected tools cost|What changes across the whole jewellery business)/.test(c.slice(0, 2500))));
     const more = kept.findIndex((c) => /^<section class="section tool-qa/.test(c));
     const own = kept.findIndex((c, k) => k !== more && k > 0 && /<details/.test(c) && !/class="(pass|cta-band)/.test(c.slice(0, 80)));
@@ -902,13 +908,28 @@ function withInterlinks(body, page) {
   const ROLE_TOPICS = [[/owner|successor|franchise/, ['Technology and strategy', 'Retail operations and sales']], [/sales-associate|store-manager|crm/, ['Leads and conversion', 'CRM and customers']], [/marketing/, ['Marketing and campaigns', 'WhatsApp']], [/ecommerce/, ['Ecommerce and websites', 'Product data and catalogues']], [/inventory|purchase|cashier|accountant/, ['Inventory, POS and ERP', 'Order management']], [/b2b/, ['Order management', 'Product data and catalogues']], [/production|karigar|cad|quality/, ['Order management', 'Inventory, POS and ERP']]];
   const rtopics = /^roles\/./.test(slug) ? ((ROLE_TOPICS.find(([r]) => r.test(slug)) || [, ['Retail operations and sales']])[1]) : null;
   const PLAT_TOPICS = { platform: ['Technology and strategy', 'AI'], 'platform/ai-workforce': ['AI', 'Leads and conversion'], 'platform/customer-memory': ['CRM and customers', 'Leads and conversion'], 'platform/pricing-engine': ['Product data and catalogues', 'Inventory, POS and ERP'], 'platform/integrations': ['Technology and strategy', 'Inventory, POS and ERP'], 'platform/integrations/tally': ['Inventory, POS and ERP', 'Technology and strategy'], 'platform/onboarding': ['Technology and strategy', 'Retail operations and sales'] };
-  const pltopics = PLAT_TOPICS[slug] || null;
+  const TOOL_TOPICS = { 'jewellery-accounting-software': ['Inventory, POS and ERP'], 'cloud-jewellery-software': ['Technology and strategy'], 'sms-marketing-for-jewellers': ['Marketing and campaigns', 'WhatsApp'], 'ai-calling-for-jewellers': ['AI', 'Leads and conversion'], 'jewellery-website-analytics': ['Ecommerce and websites', 'Leads and conversion'], tools: ['Leads and conversion', 'Inventory, POS and ERP'], 'tools/dead-stock-calculator': ['Inventory, POS and ERP'], 'tools/gold-loss-calculator': ['Order management', 'Inventory, POS and ERP'], 'tools/gold-scheme-calculator': ['CRM and customers', 'Leads and conversion'], 'tools/whatsapp-revenue-estimator': ['WhatsApp', 'Leads and conversion'] };
+  const pltopics = PLAT_TOPICS[slug] || TOOL_TOPICS[slug] || null;
   const ptopics = /^products\//.test(slug) ? ((PROD_TOPICS.find(([r]) => r.test(slug)) || [, ['Technology and strategy']])[1]) : null;
   const list = (BACK['/' + slug] || []).concat(/^solutions\/(?!pain)/.test(slug) ? LEGACY.filter((p) => SOL_TOPICS[kind].includes(p.topic)) : cityKind ? LEGACY.filter((p) => SOL_TOPICS[cityKind].includes(p.topic)) : rtopics ? LEGACY.filter((p) => rtopics.includes(p.topic)) : pltopics ? LEGACY.filter((p) => pltopics.includes(p.topic)) : ptopics ? LEGACY.filter((p) => ptopics.includes(p.topic)) : []).filter((p, k, arr) => arr.indexOf(p) === k);
-  if (!list.length || !/^(products|solutions|platform|tools|guides|roles)\/|^platform$|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^jewellery-business-as-a-service$/.test(slug)) return body;
+  if (!list.length || !/^(products|solutions|platform|tools|guides|roles)\/|^platform$|^tools$|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^cloud-|^jewellery-business-as-a-service$/.test(slug)) return body;
   const pick = list.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
   const blk = L3.section(`${L3.sectionHead('FROM THE BLOG', 'Read more on this.', '')}<div class="erp-map">${pick.map((p) => `<a href="/${p.slug}"><b>${p.title}</b><span>${p.topic}</span></a>`).join('')}</div>`);
   const at = body.lastIndexOf('<section'); return at > 0 ? body.slice(0, at) + blk + body.slice(at) : body + blk;
+}
+
+// Calculators: right after the result, the page that fixes the problem.
+const CALC_FIX = {
+  'tools/dead-stock-calculator': ['Turn sleeping stock back into sales.', 'Jwero shows ageing at today’s rate and matches idle pieces to the customers most likely to buy them.', [['/solutions/pain/dead-stock', 'Dead stock'], ['/products/inventory', 'Inventory']]],
+  'tools/gold-loss-calculator': ['Catch loss stage by stage, not at stocktake.', 'Jwero tracks metal issued and returned in fine grams for every job and karigar, against your norm for each stage.', [['/products/manufacturing', 'Manufacturing'], ['/solutions/manufacturers', 'For manufacturers']]],
+  'tools/gold-scheme-calculator': ['Run the scheme without the register.', 'Jwero runs enrolment, instalments, bonuses and redemption on each customer’s record, and shows the desk who to call.', [['/products/gold-schemes', 'Gold schemes'], ['/blog/gold-savings-scheme-guide', 'Scheme guide']]],
+  'tools/whatsapp-revenue-estimator': ['Answer every enquiry within minutes.', 'Jwero puts every WhatsApp enquiry in one shared inbox, drafts the reply and keeps the follow-up open until it is a bill.', [['/products/whatsapp', 'WhatsApp'], ['/solutions/pain/lead-leakage', 'Lost enquiries']]],
+};
+function withCalcFix(body, page) {
+  const f = CALC_FIX[page.slug]; if (!f) return body;
+  const at = body.indexOf('</section>', body.indexOf('Send my numbers to Jwero')); if (at < 0) return body;
+  const blk = L3.section(`<div class="post-mid"><p><b>${f[0]}</b> ${f[1]} ${f[2].map(([h, t]) => `<a href="${h}">${t}</a>`).join(' · ')}</p><div class="cta-row"><a class="btn btn-primary btn-sm" href="#" data-wa="handle">Let Jwero handle it</a><a class="btn btn-ghost btn-sm" href="${require('./lib').TRIAL_URL}calculator" rel="noopener" data-trial>Start for ₹3,600</a></div></div>`);
+  return body.slice(0, at + 10) + blk + body.slice(at + 10);
 }
 
 function withRelated(body, page) {
@@ -1106,7 +1127,7 @@ ${launchHTML()}
 ${navHTML(page)}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-${withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withInterlinks(withBlogTop(withPlatformLinks(withUseCases(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
+${withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withCalcFix(withInterlinks(withBlogTop(withPlatformLinks(withUseCases(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
 </main>
 ${searchDialog()}
 ${connectDialog()}

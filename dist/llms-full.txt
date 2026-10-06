@@ -12710,25 +12710,25 @@ TOOLS & CALCULATORS
 
 ## Dead Stock Calculator
 
- What idle inventory is really costing your business every month.
+ For retailers and wholesalers with stock older than six months. Shows what idle inventory costs you each month, and what a clearance plan could free.
 
  Run it → 
 
 ## Gold Scheme Calculator
 
- What your enrolment rate is worth in locked-in future revenue.
+ For shops that run or plan a gold savings scheme. Shows what your enrolment is worth in future sales, so you know how hard to push it.
 
  Run it → 
 
 ## WhatsApp Revenue Estimator
 
- What slow or missed WhatsApp replies are costing you in lost sales.
+ For any shop that sells on WhatsApp. Shows what slow or missed replies cost in lost sales, and what faster replies would bring back.
 
  Run it → 
 
 ## Gold-Loss Calculator
 
- What unexplained production loss is worth, before a per-stage ledger catches it.
+ For manufacturers and workshops. Shows what gold lost beyond your norms is worth over a month and a year.
 
  Run it →
 

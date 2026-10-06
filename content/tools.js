@@ -13,10 +13,10 @@ ${L.hero({
 })}
 ${L.section(
   `${L.cards([
-    { title: 'Dead Stock Calculator', text: 'What idle inventory is really costing your business every month.', link: { href: '/tools/dead-stock-calculator', label: 'Run it' } },
-    { title: 'Gold Scheme Calculator', text: 'What your enrolment rate is worth in locked-in future revenue.', link: { href: '/tools/gold-scheme-calculator', label: 'Run it' } },
-    { title: 'WhatsApp Revenue Estimator', text: 'What slow or missed WhatsApp replies are costing you in lost sales.', link: { href: '/tools/whatsapp-revenue-estimator', label: 'Run it' } },
-    { title: 'Gold-Loss Calculator', text: 'What unexplained production loss is worth, before a per-stage ledger catches it.', link: { href: '/tools/gold-loss-calculator', label: 'Run it' } },
+    { title: 'Dead Stock Calculator', text: 'For retailers and wholesalers with stock older than six months. Shows what idle inventory costs you each month, and what a clearance plan could free.', link: { href: '/tools/dead-stock-calculator', label: 'Run it' } },
+    { title: 'Gold Scheme Calculator', text: 'For shops that run or plan a gold savings scheme. Shows what your enrolment is worth in future sales, so you know how hard to push it.', link: { href: '/tools/gold-scheme-calculator', label: 'Run it' } },
+    { title: 'WhatsApp Revenue Estimator', text: 'For any shop that sells on WhatsApp. Shows what slow or missed replies cost in lost sales, and what faster replies would bring back.', link: { href: '/tools/whatsapp-revenue-estimator', label: 'Run it' } },
+    { title: 'Gold-Loss Calculator', text: 'For manufacturers and workshops. Shows what gold lost beyond your norms is worth over a month and a year.', link: { href: '/tools/gold-loss-calculator', label: 'Run it' } },
   ], 4)}`
 )}
 `,
