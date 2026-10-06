@@ -223,6 +223,9 @@ const NAV = [
 
 const { icon, LINK_ICONS, heroSchematic, PERSONAS, personaSwitch, mark } = require('./lib');
 const TRIAL_URL_B = require('./lib').TRIAL_URL;
+// Asset versions: a short hash of each file, so browsers fetch the new CSS and
+// JS the moment they change instead of mixing a new page with an old script.
+const ASSET_V = (() => { const h = (f) => require('crypto').createHash('md5').update(require('fs').readFileSync(require('path').join(__dirname, 'assets', f))).digest('hex').slice(0, 8); return { css: h('site.css'), js: h('site.js'), sims: h('sims.js') }; })();
 // Use cases per product page (content/usecases.json), from the product's own documentation.
 const ROLES = (() => { try { return require('./content/roles.json'); } catch (e) { return {}; } })();
 const ROLE_FAQ = Object.fromEntries(Object.entries(ROLES).map(([k, v]) => ['roles/' + k, (v.faqs || []).map(({ q, a }) => ({ q, a }))]));
@@ -980,7 +983,7 @@ ${robotsMeta}
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0c12" media="(prefers-color-scheme: dark)">
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v=${ASSET_V.css}">
 <script>(function(){var d=document.documentElement;try{var t=localStorage.getItem('jwero-theme');if(t)d.setAttribute('data-theme',t);}catch(e){}d.classList.add('js');try{var c=navigator.connection||{},q=location.search,slow=c.saveData||/2g|3g/.test(c.effectiveType||''),camp=/[?&](utm_|ref=|gclid|fbclid|p=)/.test(q)||innerWidth<760;if(!sessionStorage.getItem('jwero-launched')&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!slow&&!camp){d.classList.add('first-visit');}sessionStorage.setItem('jwero-launched','1');}catch(e){}setTimeout(function(){d.classList.add('motion-failsafe');},4000);})();</script>
 <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/assets/*"}}]},"eagerness":"moderate"}]}</script>
 ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}
@@ -997,8 +1000,8 @@ ${searchDialog()}
 ${connectDialog()}
 ${icpDialog()}${WEBCHAT.siteKey ? `\n<script async src="${WEBCHAT.origin}/t.js" data-site-key="${WEBCHAT.siteKey}"></script>` : ''}
 ${footerHTML()}
-<script src="/assets/site.js" defer></script>
-${page.body.indexOf('data-sim=') !== -1 || SIM_PAGES[page.slug] ? '<script src="/assets/sims.js" defer></script>' : ''}
+<script src="/assets/site.js?v=${ASSET_V.js}" defer></script>
+${page.body.indexOf('data-sim=') !== -1 || SIM_PAGES[page.slug] ? `<script src="/assets/sims.js?v=${ASSET_V.sims}" defer></script>` : ''}
 </body>
 </html>`;
 }
