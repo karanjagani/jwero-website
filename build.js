@@ -615,6 +615,9 @@ function productMeta(href) {
 // Under the hero: the three questions this reader is most likely carrying,
 // as tappable chips that open the matching answer further down the page.
 function withAsking(body, page) {
+  // Removed 2026-10-06: the question strip under the top section pulled visitors away from the
+  // page's own order. The questions stay in each page's questions section.
+  return body;
   if (page.slug === 'index' || page.slug === 'jwero-os' || page.slug === 'faq') return body;
   // Only questions answered on this page, so a tap never leaves it.
   const qs = [...body.matchAll(/<summary>([\s\S]*?)<\/summary>/g)].map((m) => m[1].replace(/<[^>]+>/g, '').trim()).filter((q) => q.length > 12 && q.length < 110).slice(0, 4);
