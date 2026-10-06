@@ -26,6 +26,10 @@ const KEYWORDS = [
   ['Tally', '/platform/integrations/tally'], ['live gold rate', '/platform/pricing-engine'], ['gold rate', '/platform/pricing-engine'],
   ['repair', '/products/repairs-service'], ['multi-store', '/products/multi-store'], ['franchise', '/solutions/franchise-networks'],
   ['analytics', '/products/reports'], ['KPI', '/products/reports'], ['dashboard', '/products/reports'],
+  ['gold jewellery shop', '/solutions/gold-retail'], ['gold retail', '/solutions/gold-retail'], ['diamond jewellery', '/solutions/diamond-retail'], ['bridal', '/solutions/bridal'], ['wedding jewellery', '/solutions/bridal'],
+  ['silver jewellery', '/solutions/silver-retail'], ['lab-grown', '/solutions/lab-grown-diamond'], ['single store', '/solutions/single-store'], ['independent jeweller', '/solutions/single-store'],
+  ['jewellery chain', '/solutions/multi-store-chains'], ['multiple stores', '/solutions/multi-store-chains'], ['wholesale', '/solutions/b2b-jewellery'], ['wholesaler', '/solutions/b2b-jewellery'],
+  ['manufacturer', '/solutions/manufacturers'], ['karigar', '/solutions/manufacturers'], ['D2C', '/solutions/d2c-brands'], ['jewellery brand', '/solutions/jewellery-brands'], ['new jewellery business', '/solutions/startups'],
   ['managed service', '/jewellery-business-as-a-service'], ['jewellery software', '/blog/best-jewellery-software-india'],
 ];
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

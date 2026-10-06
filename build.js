@@ -689,7 +689,8 @@ function withManaged(body, page) {
   if (/jb-tier/.test(body)) return body;
   const P = require('./content/positioning');
   const Q = P.QUOTES;
-  const R = P.ROTATE, qi = R[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % R.length];
+  const SOL_QUOTE = { 'gold-retail': 1, 'silver-retail': 1, 'bridal': 1, 'd2c-brands': 3, 'jewellery-brands': 3, 'lab-grown-diamond': 3, 'single-store': 0, 'startups': 0, 'multi-store-chains': 4, 'luxury-boutique': 4, 'diamond-retail': 4, 'gemstone-retail': 2, manufacturers: 0, 'casting-units': 0, 'oem-manufacturers': 0, 'cad-services': 0, 'export-houses': 1, 'b2b-jewellery': 1, 'gold-wholesale': 1, 'diamond-wholesale': 1, 'diamond-traders': 1, 'bullion-gold-traders': 1, 'franchise-networks': 4 };
+  const R = P.ROTATE, qi = SOL_QUOTE[slug.split('/')[1]] !== undefined && slug.startsWith('solutions/') ? SOL_QUOTE[slug.split('/')[1]] : R[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % R.length];
   let block;
   if (top === 'blog' || page.legacy) {
     // articles stay articles: one quiet line with both doors
@@ -723,14 +724,32 @@ function trimSolution(html, slug) {
   const who = SOLUTION_WHO[slug.split('/')[1]];
   if (who) html = html.replace(/(Know another jeweller who runs )a [^?<]*\?/, `$1${who}?`).replace(/(software page for )a [^:"]* like ours/, `$1${who} like ours`);
   const parts = html.split(/(?=<section[\s>])/);
-  let kept = parts.filter((c) => !SOLUTION_DROP.test(c.slice(0, 1500)));
-  const mi = kept.findIndex((c) => /PREFER JWERO TO RUN THIS FOR YOU\?/.test(c.slice(0, 2500)));
-  if (mi > 0) {
-    const quoteI = mi - 1 >= 0 && /jb-solo/.test(kept[mi - 1].slice(0, 400)) ? mi - 1 : -1;
-    const moving = quoteI >= 0 ? kept.splice(quoteI, 2) : kept.splice(mi, 1);
-    const at = Math.min(4, kept.length - 1);
-    kept.splice(at, 0, ...moving);
+  // drop repeats, and the before-and-after story (the opening answer covers it)
+  let kept = parts.filter((c) => !SOLUTION_DROP.test(c.slice(0, 1500)) && !/^<section class="shift/.test(c));
+  const take = (test) => { const k = kept.findIndex(test); return k < 0 ? [] : kept.splice(k, 1); };
+  // value first: use cases straight after the opening answer
+  const uc = take((c) => /Where this pays off/.test(c.slice(0, 2500)));
+  const short = kept.findIndex((c) => /^<section class="in-short/.test(c));
+  if (uc.length) kept.splice(short >= 0 ? short + 1 : 1, 0, ...uc);
+  // price later: the quote and the tiers just before the questions
+  const tiers = take((c) => /PREFER JWERO TO RUN THIS FOR YOU\?/.test(c.slice(0, 2500)));
+  const quote = take((c) => /jb-solo/.test(c.slice(0, 400)));
+  const qa = kept.findIndex((c) => /class="faq|<h2[^>]*>\s*(What [^<]* ask|More questions)/.test(c.slice(0, 3000)));
+  const at = qa > 0 ? qa : Math.max(1, kept.length - 3);
+  kept.splice(at, 0, ...quote, ...tiers);
+  // one question block: fold "More questions jewellers ask" into the page's own
+  const more = kept.findIndex((c) => /^<section class="section tool-qa/.test(c));
+  const own = kept.findIndex((c, k) => k !== more && /<h2[^>]*>\s*What [^<]* ask/.test(c.slice(0, 3000)));
+  if (more >= 0 && own >= 0) {
+    const items = (kept[more].match(/<details[\s\S]*<\/details>/) || [''])[0];
+    kept[own] = kept[own].replace(/(<\/details>)(?![\s\S]*<\/details>)/, '$1' + items);
+    kept.splice(more, 1);
   }
+  // fewer generic buttons: keep the hero's "Talk to us", turn the rest into a start
+  let seen = 0;
+  kept = kept.map((c, k) => k === 0 ? c : c.replace(/<a class="btn btn-ghost" href="\/start">Create your workspace<\/a>/g, `<a class="btn btn-ghost" href="${require('./lib').TRIAL_URL}solution-sim" rel="noopener" data-trial>Start for ₹3,600</a>`));
+  html = kept.join('').replace(/(<a class="btn[^"]*"(?![^>]*data-share)(?![^>]*data-trial)(?![^>]*data-wa="handle")[^>]*(?:data-wa="[^"]*"|href="\/book-demo")[^>]*>)[\s\S]*?(<\/a>)/g, (m0, a, z) => (++seen === 1 || /cta-band/.test(a)) ? a + 'Talk to us' + z : '');
+  kept = [html];
   return kept.join('')
     .replace(/(<a class="btn[^"]*"[^>]*data-trial[^>]*>)[\s\S]*?(<\/a>)/g, '$1Start for ₹3,600$2')
     .replace(/(<a class="btn[^"]*"[^>]*data-wa="handle"[^>]*>)[\s\S]*?(<\/a>)/g, '$1Let Jwero handle it$2')
@@ -844,8 +863,10 @@ function withInterlinks(body, page) {
     const rel = L3.section(`${L3.sectionHead('KEEP READING', 'Related articles.', '')}<div class="erp-map">${scored.map((p) => `<a href="/${p.slug}"><b>${p.title}</b><span>${p.topic}</span></a>`).join('')}</div>`, { tone: 'tint' });
     const at = out.lastIndexOf('<section'); return at > 0 ? out.slice(0, at) + rel + out.slice(at) : out + rel;
   }
-  const list = BACK['/' + slug];
-  if (!list || !/^(products|solutions|platform|tools|guides)\/|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^jewellery-business-as-a-service$/.test(slug)) return body;
+  const SOL_TOPICS = { retail: ['Marketing and campaigns', 'Leads and conversion', 'CRM and customers'], online: ['Ecommerce and websites', 'Product data and catalogues', 'Marketing and campaigns'], trade: ['Order management', 'Product data and catalogues', 'Leads and conversion'], making: ['Order management', 'Inventory, POS and ERP', 'Product data and catalogues'] };
+  const kind = /d2c|brands|lab-grown|startups/.test(slug) ? 'online' : /wholesale|traders|bullion|b2b|export/.test(slug) ? 'trade' : /manufactur|casting|cad|oem/.test(slug) ? 'making' : 'retail';
+  const list = (BACK['/' + slug] || []).concat(/^solutions\/(?!pain)/.test(slug) ? LEGACY.filter((p) => SOL_TOPICS[kind].includes(p.topic)) : []).filter((p, k, arr) => arr.indexOf(p) === k);
+  if (!list.length || !/^(products|solutions|platform|tools|guides)\/|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^jewellery-business-as-a-service$/.test(slug)) return body;
   const pick = list.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
   const blk = L3.section(`${L3.sectionHead('FROM THE BLOG', 'Read more on this.', '')}<div class="erp-map">${pick.map((p) => `<a href="/${p.slug}"><b>${p.title}</b><span>${p.topic}</span></a>`).join('')}</div>`);
   const at = body.lastIndexOf('<section'); return at > 0 ? body.slice(0, at) + blk + body.slice(at) : body + blk;
