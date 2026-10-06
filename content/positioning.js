@@ -853,20 +853,13 @@ const home = {
 <div class="jbs">
 ${heroHome()}
 <section class="pz-logos">${L.customerLogos()}</section>
-${quotes(3)}
-${hiddenCost()}
 ${insight()}
-${solution()}
 ${dontKnow()}
 ${howMuch()}
 ${countTeam()}
-${dayAndCommand()}
 ${aiWorks()}
-${handles()}
-${proof(true, 3, false)}
-${assessment()}
+${quotes(3)}
 ${nextSteps()}
-${refer()}
 ${finale()}
 </div>
 `,
