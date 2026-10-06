@@ -262,7 +262,7 @@ ${L.ctaBand('Digitise your existing scheme book.', 'Bring your current paper reg
 
 // ---------------------------------------------------------------- Article 4: Tally coexistence
 const tallyGuideFaqs = [
-  { q: 'Does Jwero auto-post my invoices to Tally?', a: 'No — not yet. Customer and item master data sync both ways automatically between Jwero and Tally Prime. Transactions — invoices, sales, payments — still need a manual voucher entry in Tally today. Auto-posting transactions is on our roadmap, not something we claim is shipped.' },
+  { q: 'Does Jwero auto-post my invoices to Tally?', a: 'No — not yet. Jwero connects to Tally, imports customer and item masters and checks records against Tally. Transactions — invoices, sales, payments — still need a manual voucher entry in Tally today. Auto-posting transactions is on our roadmap, not something we claim is shipped.' },
   { q: 'Do I need to migrate my Tally data into Jwero?', a: 'No. Tally stays exactly as it is — same file, same login, same place your CA already works. Jwero connects alongside it through a local connector agent and keeps masters in sync; nothing gets moved out of Tally.' },
   { q: 'What if my CA or muneem refuses to use anything new?', a: 'They don’t have to. Nothing changes about how they work inside Tally — the same voucher entry, the same GST filing, the same reports. The only difference is that customer and item records arrive already matched instead of being typed in from a register.' },
 ];
@@ -297,7 +297,7 @@ ${L.section(
 
   <h2>What still needs a manual voucher, and why that’s fine for now</h2>
   <p>Here’s the part worth stating plainly rather than glossing over: transactions do not auto-post to Tally today. An invoice raised in Jwero does not turn into a Tally voucher by itself. The masters sync automatically — the transaction itself still needs to be entered as a voucher in Tally, by hand, the same way it always has been.</p>
-  <p>That’s a real limitation, not a small print footnote, and it’s on our roadmap to close. Until it is, the honest description of where things stand is: masters sync both ways, transactions are manual. Anyone who tells a jeweller otherwise is describing a future version, not the current one.</p>
+  <p>That’s a real limitation, not a small print footnote, and it’s on our roadmap to close. Until it is, the honest description of where things stand is: masters are imported and checked, transactions are manual. Anyone who tells a jeweller otherwise is describing a future version, not the current one.</p>
 
   <h2>GST invoicing: who does what</h2>
   <p>Jwero generates GST-compliant invoices at the live gold rate, with the CGST/SGST/IGST breakup calculated at the point of sale. That part happens inside Jwero, at the counter, at the moment the rate matters.</p>

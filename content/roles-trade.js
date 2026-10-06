@@ -92,7 +92,7 @@ const franchisePartnerFaqs = [
 
 const franchisePartnerRole = {
   slug: 'roles/franchise-partner',
-  title: 'For Franchise Partners — Franchisor Control, Franchisee Freedom | Jwero',
+  title: 'Jewellery Franchise Partner Software | Jwero',
   description: 'How Jwero changes a franchise partner’s day: brand-consistent pricing/catalogue under franchisor control, with structured local operation, not rip-and-replace.',
   breadcrumbs: BC('Franchise partner'),
   faqs: franchisePartnerFaqs,

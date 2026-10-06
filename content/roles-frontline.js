@@ -153,7 +153,7 @@ const cashierFaqs = [
 
 const cashier = {
   slug: 'roles/cashier',
-  title: 'Billing Cashier — Price at the Live Gold Rate, No Calculator Fight | Jwero',
+  title: 'Jewellery Billing Cashier: Live Gold Rate Billing | Jwero',
   description: 'How Jwero changes a billing cashier’s day: GST invoices priced at live gold rate, automated receivables reminders, and a note on what still runs at the counter.',
   breadcrumbs: BC('Billing cashier'),
   faqs: cashierFaqs,

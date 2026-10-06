@@ -14,7 +14,7 @@ const karigarFaqs = [
 
 const karigarRole = {
   slug: 'roles/karigar',
-  title: 'Jwero for Karigars & Goldsmiths — Traceable Jobs, Accounted Loss | Jwero',
+  title: 'Jwero for Karigars: Traceable Jobs, Accounted Loss | Jwero',
   description: 'How Jwero changes a karigar’s day: every job traceable from jangad to despatch, loss accounted at each stage, and wage settlement run off the same record.',
   breadcrumbs: BC('Karigar / goldsmith'),
   faqs: karigarFaqs,
@@ -214,7 +214,7 @@ const qualityHallmarkingFaqs = [
 
 const qualityHallmarkingRole = {
   slug: 'roles/quality-hallmarking',
-  title: 'Jwero for Quality & Hallmarking Officers — Status, Not Paper Chase | Jwero',
+  title: 'Jwero for Quality and Hallmarking Officers | Jwero',
   description: 'How Jwero changes a quality and hallmarking officer’s day: certification status tracked against the job — not chased across paper and departments.',
   breadcrumbs: BC('Quality & hallmarking officer'),
   faqs: qualityHallmarkingFaqs,

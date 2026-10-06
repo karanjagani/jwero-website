@@ -701,7 +701,7 @@ PLATFORM
 
 ## Tally
 
- Customer and item masters sync both ways automatically. Your accountant’s world doesn’t change.
+ Connect Tally, map your ledgers, import masters and check records against Tally. Your accountant’s world doesn’t change.
 
  The accountant page → 
 
@@ -711,7 +711,7 @@ PLATFORM
 
 ## Shopify / WooCommerce / Unicommerce
 
- Two-way product and order sync, keep your storefront, add the channels around it.
+ Your online store works from the same product data as the shop, and products can be published to Unicommerce.
 
 ## Razorpay & Cashfree
 
@@ -1339,7 +1339,7 @@ A: Not yet, and we’d rather say so than blur it: the chat/voice assistant spea
 # Jwero Integrations: Tally, Shopify, Meta, Razorpay, MCP
 URL: https://jwero.ai/platform/integrations
 
-Jwero bridges to Tally and Zoho Books, syncs with Shopify, WooCommerce and Unicommerce, collects via Razorpay and Cashfree, sells on official Meta channels, connects to telephony providers like Exotel and Tata Tele for AI voice calls and IVR, and exposes a first-party MCP server for your own AI agents.
+Jwero bridges to Tally and Zoho Books, connects Shopify, WooCommerce and Unicommerce, collects via Razorpay and Cashfree, sells on official Meta channels, connects to telephony providers like Exotel and Tata Tele for AI voice calls and IVR, and exposes a first-party MCP server for your own AI agents.
 
 INTEGRATIONS
 
@@ -1352,7 +1352,7 @@ INTEGRATIONS
 
 ## Tally
 
- The bridge your accountant will approve of: sales flow to the ledger; the books stay exactly where they are.
+ The bridge your accountant will approve of: ledgers mapped, masters imported and records checked against Tally; the books stay exactly where they are.
 
  The accountant page → 
 
@@ -1362,7 +1362,7 @@ INTEGRATIONS
 
 ## Shopify
 
- Two-way product and order sync. Keep the store, add the channels and the memory.
+ Your store works from the same product data. Keep the store, add the channels and the memory.
 
 ## WooCommerce
 
@@ -1370,7 +1370,7 @@ INTEGRATIONS
 
 ## Unicommerce
 
- Order-management sync for marketplace-heavy operations.
+ Publish products to Unicommerce for marketplace-heavy operations.
 
 ## Razorpay & Cashfree
 
@@ -1427,10 +1427,10 @@ INTEGRATIONS
 ## What changes in your stack.
 
  Does Jwero replace Tally? 
- No. Tally stays your ledger; the built-in bridge carries sales data across so your accountant’s world doesn’t change.
+ No. Tally stays your ledger. Jwero connects to it, imports masters and checks records against it; sales vouchers are still entered in Tally, so your accountant’s world doesn’t change.
 
  Can I keep my Shopify store? 
- Yes. The connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.
+ Yes. Connect Shopify and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.
 
  Is the WhatsApp integration official, or a ban risk? 
  Official WhatsApp Business API, template approvals, consent management and opt-out handling are built in, which is what keeps it out of ban-risk territory.
@@ -1453,10 +1453,10 @@ INTEGRATIONS
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
 Q: Does Jwero replace Tally?
-A: No. Tally stays your ledger; the built-in bridge carries sales data across so your accountant’s world doesn’t change.
+A: No. Tally stays your ledger. Jwero connects to it, imports masters and checks records against it; sales vouchers are still entered in Tally, so your accountant’s world doesn’t change.
 
 Q: Can I keep my Shopify store?
-A: Yes. The Shopify connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.
+A: Yes. Connect Shopify and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.
 
 Q: Is the WhatsApp integration official?
 A: Yes, Jwero uses the official WhatsApp Business API, with template approvals, consent management and opt-out handling built in.
@@ -1475,7 +1475,7 @@ KEEP YOUR TALLY
 
 ## Apna hisaab rakho. Kamai badlo.
 
- Keep your books. Change your earnings. Jwero does not ask you to abandon Tally. It runs customers, the counter, stock, purchase and the workshop, and bridges the entries to the ledger your CA already trusts.
+ Keep your books. Change your earnings. Jwero does not ask you to abandon Tally. It runs customers, the counter, stock, purchase and the workshop, and connects to the ledger your CA already trusts.
 
  Ask your accountant question 
  See the migration plan 
@@ -1490,14 +1490,14 @@ KEEP YOUR TALLY
 ## Jwero runs
  Customer memory, WhatsApp and Instagram selling, gold schemes, catalogue, follow-up and the AI workforce, the revenue side.
 
- Customer and item masters sync both ways through the built-in bridge, automatically. Transaction posting is a manual voucher in Tally today; auto-posting is on the roadmap, not shipped yet, so nothing about your accountant’s month-end changes without their knowledge.
+ Jwero connects to Tally, maps your ledgers, imports customer and item masters and checks records against Tally. Transaction posting is a manual voucher in Tally today; auto-posting is on the roadmap, not shipped yet, so nothing about your accountant’s month-end changes without their knowledge.
 
  QUESTIONS ACCOUNTANTS ASK
 
 ## What to tell your CA.
 
  My accountant is sceptical of new software near the books. What do I tell them? 
- That nothing about their world changes, masters arrive already synced instead of re-typed, and they still enter sales and payment vouchers in Tally exactly as before.
+ That nothing about their world changes, masters are imported instead of re-typed, and they still enter sales and payment vouchers in Tally exactly as before.
 
  Does this replace GST filing or e-invoicing? 
  No, GST invoicing at the live rate happens in Jwero; statutory filing and e-invoice/IRN stay Tally’s job. Two systems, one clean line.
@@ -1519,16 +1519,16 @@ KEEP YOUR TALLY
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
 Q: Will switching to Jwero disrupt my accountant’s workflow?
-A: No. That is the point of the bridge, customer and item masters sync both ways automatically, in the shape your accountant already expects. Invoice and payment entries are a manual voucher today; automatic transaction posting is on the roadmap, and we say so plainly.
+A: No. That is the point of the bridge, Jwero connects to Tally, imports customer and item masters and checks records against Tally, in the shape your accountant already expects. Invoice and payment entries are a manual voucher today; automatic transaction posting is on the roadmap, and we say so plainly.
 
 Q: What exactly syncs to Tally?
-A: Customer and item masters sync both ways automatically, keeping your ledger’s reference data current without manual re-entry. Sales and payment transactions still need a manual voucher in Tally today, automatic transaction posting is on the roadmap, not shipped.
+A: Jwero connects to Tally, maps your ledgers, imports customer and item masters and checks records against Tally, so reference data is not re-typed. Sales and payment transactions still need a manual voucher in Tally today, automatic transaction posting is on the roadmap, not shipped.
 
 Q: Do I have to stop using Tally to start using Jwero?
 A: No, this is the entire design. Keep Tally as your ledger of record; Jwero takes over customers, channels, schemes and follow-up alongside it.
 
 Q: My accountant is sceptical of new software near the books. What do I tell them?
-A: That nothing about their world changes. They keep filing GST exactly as they do today, in Tally, with customer and item masters arriving already synced instead of re-typed. Invite them to the demo, most objections dissolve once they see the bridge, not the sales pitch.
+A: That nothing about their world changes. They keep filing GST exactly as they do today, in Tally, with customer and item masters imported instead of re-typed. Invite them to the demo, most objections dissolve once they see the bridge, not the sales pitch.
 
 Q: Does this replace GST filing or e-invoicing?
 A: No, GST invoicing at the live gold rate happens in Jwero, but statutory filing and e-invoice/IRN stay Tally’s job (e-invoice automation is on our roadmap, not shipped). Two systems, one clean line.
@@ -1547,7 +1547,7 @@ ONBOARDING & SUPPORT
 
 ## If your team can use WhatsApp, they can run Jwero.
 
- Live in days, not months: customers imported, your WhatsApp number connected, catalogue published and approvals switched on from day one, with a written change-freeze around your season.
+ Set up in a day, settled in thirty: customers imported, your WhatsApp number connected, catalogue published and approvals switched on from day one, with a written change-freeze around your season.
 
  Plan your onboarding 
  Book a demo 
@@ -1558,8 +1558,8 @@ ONBOARDING & SUPPORT
 
  1 
 
-## Days 1–7: Land
- Customers imported for you, WhatsApp number connected, catalogue published. Nothing ripped out, your billing software stays.
+## Day 1: Set up, then days 2–7: Land
+ Set up in a day: customers imported for you, WhatsApp number connected, catalogue published. Nothing ripped out, your billing software stays.
 
  2 
 
@@ -8005,8 +8005,8 @@ FOR SINGLE-STORE JEWELLERY BUSINESSES
 
  1 
 
-## Days 1–7: Land
- Customers imported, WhatsApp connected, catalogue live. Nothing ripped out, your billing software stays.
+## Day 1: Set up, then days 2–7: Land
+ Set up in a day: customers imported, WhatsApp connected, catalogue live. Nothing ripped out, your billing software stays.
 
  2 
 
@@ -8883,7 +8883,7 @@ FOR LAB-GROWN DIAMOND
  The AI workforce drafts educational, catalogue-backed replies to common questions, approved before they send, consistent answers, every time.
 
  We already run Shopify ads and a store. Why add this? 
- Keep Shopify, the connector syncs products and orders. Jwero adds the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce platform doesn’t do, on top of what you already have.
+ Keep Shopify, the connector keeps your store on the same product data. Jwero adds the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce platform doesn’t do, on top of what you already have.
 
  More questions? See Jwero vs Shopify or the full FAQ → 
 
@@ -8916,7 +8916,7 @@ Q: Can AI help educate customers who are new to lab-grown?
 A: The AI workforce drafts educational, catalogue-backed replies to common questions, approved before they send, consistent answers, every time.
 
 Q: We already run Shopify ads and a store. Why add this?
-A: Keep Shopify, the connector syncs products and orders. Jwero adds the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce platform doesn’t do, on top of what you already have.
+A: Keep Shopify, the connector keeps your store on the same product data. Jwero adds the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce platform doesn’t do, on top of what you already have.
 
 ---
 
@@ -9809,7 +9809,7 @@ FOR D2C & ECOMMERCE-FIRST BRANDS
 ## Shopify, trials and the stack you keep, answered.
 
  Do I have to leave Shopify? 
- No, the Shopify connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.
+ No, the Shopify connector keeps your store on the same product data, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.
 
  Is there a free trial for D2C brands? 
  No free trial, but the first month is ₹3,600 instead of ₹18,000. Create a workspace in three steps at /start , connect Shopify or WooCommerce, and evaluate on your own orders. No demo required.
@@ -9845,7 +9845,7 @@ FOR D2C & ECOMMERCE-FIRST BRANDS
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
 Q: Do I have to leave Shopify?
-A: No, the Shopify connector syncs products and orders, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.
+A: No, the Shopify connector keeps your store on the same product data, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.
 
 Q: Is there a free trial for D2C brands?
 A: No free trial, but the first month is ₹3,600 instead of ₹18,000. Create a workspace in three steps at /start, connect Shopify or WooCommerce, and evaluate on your own orders. No demo required.
@@ -12768,7 +12768,7 @@ FAQ
  Yes, bulk import ships with sample files and column-mapping tools, and onboarding includes a dedicated migration period where contacts are deduped and merged and top SKUs are imported with their pricing formulas. We do the heavy lifting, messy files included.
 
  Do I have to leave my current ERP or Tally? 
- No, Jwero isn’t an accounting replacement, it’s the revenue layer Tally never had. Customer and item masters sync both ways with Tally and Zoho Books; your statutory books stay exactly where they are. See the accountant page .
+ No, Jwero isn’t an accounting replacement, it’s the revenue layer Tally never had. Jwero connects to Tally, imports customer and item masters and checks records against Tally with Tally and Zoho Books; your statutory books stay exactly where they are. See the accountant page .
 
  What happens to my data if I leave Jwero later? 
  You export everything in standard formats, any time, no questions asked. That is a written promise, printed in the main terms rather than buried in a footnote.
@@ -12876,7 +12876,7 @@ FAQ
 ## Segments, retail, multi-store, wholesale, manufacturing
 
  I run a D2C brand on Shopify. What happens to my Shopify data if I leave Jwero? 
- Nothing. Shopify remains the system of record for your store; Jwero syncs products and orders both ways while connected and stops syncing when you disconnect. Your customer record, built in Jwero, exports with you.
+ Nothing. Shopify remains the system of record for your store; Jwero works from the same product data while connected and stops when you disconnect. Your customer record, built in Jwero, exports with you.
 
  I run one small store. Is this too much software for me? 
  No. Start with three things: customers imported, WhatsApp connected, catalogue live. Every module is in the plan, and you switch off what you do not use so the screen stays that simple.
@@ -13145,7 +13145,7 @@ Q: Can you import from Excel?
 A: Yes, bulk import ships with sample files and column-mapping tools, and onboarding includes a dedicated migration period where contacts are deduped and merged and top SKUs are imported with their pricing formulas. We do the heavy lifting, messy files included.
 
 Q: Do I have to leave my current ERP or Tally?
-A: No, Jwero isn’t an accounting replacement, it’s the revenue layer Tally never had. Customer and item masters sync both ways with Tally and Zoho Books; your statutory books stay exactly where they are. See the accountant page.
+A: No, Jwero isn’t an accounting replacement, it’s the revenue layer Tally never had. Jwero connects to Tally, imports customer and item masters and checks records against Tally with Tally and Zoho Books; your statutory books stay exactly where they are. See the accountant page.
 
 Q: What happens to my data if I leave Jwero later?
 A: You export everything in standard formats, any time, no questions asked. That is a written promise, printed in the main terms rather than buried in a footnote.
@@ -13241,7 +13241,7 @@ Q: Why should I trust an ROI claim from the company selling the product?
 A: You shouldn’t take our word for it, that’s why the growth report exists. It’s a weekly, plain-language account of what happened, generated from your own data instead of a projection from a sales deck.
 
 Q: I run a D2C brand on Shopify. What happens to my Shopify data if I leave Jwero?
-A: Nothing. Shopify remains the system of record for your store; Jwero syncs products and orders both ways while connected and stops syncing when you disconnect. Your customer record, built in Jwero, exports with you.
+A: Nothing. Shopify remains the system of record for your store; Jwero works from the same product data while connected and stops when you disconnect. Your customer record, built in Jwero, exports with you.
 
 Q: I run one small store. Is this too much software for me?
 A: No. Start with three things: customers imported, WhatsApp connected, catalogue live. Every module is in the plan, and you switch off what you do not use so the screen stays that simple.
@@ -14317,7 +14317,7 @@ GUIDE · JEWELLERY SOFTWARE AND TALLY
 
  Here’s the part worth stating plainly rather than glossing over: transactions do not auto-post to Tally today. An invoice raised in Jwero does not turn into a Tally voucher by itself. The masters sync automatically, the transaction itself still needs to be entered as a voucher in Tally, by hand, the same way it always has been.
 
- That’s a real limitation, not a small print footnote, and it’s on our roadmap to close. Until it is, the honest description of where things stand is: masters sync both ways, transactions are manual. Anyone who tells a jeweller otherwise is describing a future version, not the current one.
+ That’s a real limitation, not a small print footnote, and it’s on our roadmap to close. Until it is, the honest description of where things stand is: masters are imported and checked, transactions are manual. Anyone who tells a jeweller otherwise is describing a future version, not the current one.
 
 ## GST invoicing: who does what
 
@@ -14348,7 +14348,7 @@ GUIDE · JEWELLERY SOFTWARE AND TALLY
 ## Questions readers ask about the Tally connection.
 
  Does Jwero auto-post my invoices to Tally? 
- No, not yet. Customer and item master data sync both ways automatically between Jwero and Tally Prime. Transactions, invoices, sales, payments, still need a manual voucher entry in Tally today. Auto-posting transactions is on our roadmap, not something we claim is shipped.
+ No, not yet. Jwero connects to Tally, imports customer and item masters and checks records against Tally. Transactions, invoices, sales, payments, still need a manual voucher entry in Tally today. Auto-posting transactions is on our roadmap, not something we claim is shipped.
 
  Do I need to migrate my Tally data into Jwero? 
  No. Tally stays exactly as it is, same file, same login, same place your CA already works. Jwero connects alongside it through a local connector agent and keeps masters in sync; nothing gets moved out of Tally.
@@ -14381,7 +14381,7 @@ GUIDE · JEWELLERY SOFTWARE AND TALLY
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
 Q: Does Jwero auto-post my invoices to Tally?
-A: No, not yet. Customer and item master data sync both ways automatically between Jwero and Tally Prime. Transactions, invoices, sales, payments, still need a manual voucher entry in Tally today. Auto-posting transactions is on our roadmap, not something we claim is shipped.
+A: No, not yet. Jwero connects to Tally, imports customer and item masters and checks records against Tally. Transactions, invoices, sales, payments, still need a manual voucher entry in Tally today. Auto-posting transactions is on our roadmap, not something we claim is shipped.
 
 Q: Do I need to migrate my Tally data into Jwero?
 A: No. Tally stays exactly as it is, same file, same login, same place your CA already works. Jwero connects alongside it through a local connector agent and keeps masters in sync; nothing gets moved out of Tally.
@@ -16215,7 +16215,7 @@ A: Yes, the Tally/Zoho Books bridge keeps accounting where your accountant alrea
 
 ---
 
-# Next-Gen Successor, Inherit the Relationships, Not Just the Shop
+# Next-Gen Jewellery Successor: Inherit the Memory
 URL: https://jwero.ai/roles/next-gen-successor
 
 How Jwero helps the next generation modernise a family jewellery business: turning decades of memory into a record, without a fight over “too much technology.”
@@ -16659,7 +16659,7 @@ A: The action log records what AI drafted and who approved it, so a sale that st
 
 ---
 
-# Billing Cashier, Price at the Live Gold Rate, No Calculator Fight
+# Jewellery Billing Cashier: Live Gold Rate Billing
 URL: https://jwero.ai/roles/cashier
 
 How Jwero changes a billing cashier’s day: GST invoices priced at live gold rate, automated receivables reminders, and a note on what still runs at the counter.
@@ -17249,7 +17249,7 @@ A: No, Jwero handles the connections, memory and messaging layer around your sto
 
 ---
 
-# Jwero for Karigars & Goldsmiths, Traceable Jobs, Accounted Loss
+# Jwero for Karigars: Traceable Jobs, Accounted Loss
 URL: https://jwero.ai/roles/karigar
 
 How Jwero changes a karigar’s day: every job traceable from jangad to despatch, loss accounted at each stage, and wage settlement run off the same record.
@@ -17659,7 +17659,7 @@ A: You’ll still walk the floor for the reasons a manager always does, but you 
 
 ---
 
-# Jwero for Quality & Hallmarking Officers, Status, Not Paper Chase
+# Jwero for Quality and Hallmarking Officers
 URL: https://jwero.ai/roles/quality-hallmarking
 
 How Jwero changes a quality and hallmarking officer’s day: certification status tracked against the job, not chased across paper and departments.
@@ -18374,7 +18374,7 @@ A: No, the system holds the record, not the relationship. You still make the cal
 
 ---
 
-# For Franchise Partners, Franchisor Control, Franchisee Freedom
+# Jewellery Franchise Partner Software
 URL: https://jwero.ai/roles/franchise-partner
 
 How Jwero changes a franchise partner’s day: brand-consistent pricing/catalogue under franchisor control, with structured local operation, not rip-and-replace.

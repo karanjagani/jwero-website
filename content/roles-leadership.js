@@ -194,7 +194,7 @@ const nextGenFaqs = [
 
 const nextGenRole = {
   slug: 'roles/next-gen-successor',
-  title: 'Next-Gen Successor — Inherit the Relationships, Not Just the Shop | Jwero',
+  title: 'Next-Gen Jewellery Successor: Inherit the Memory | Jwero',
   description: 'How Jwero helps the next generation modernise a family jewellery business: turning decades of memory into a record, without a fight over “too much technology.”',
   breadcrumbs: BC('Next-gen successor'),
   faqs: nextGenFaqs,

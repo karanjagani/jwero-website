@@ -169,22 +169,22 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Roles, Everyone Jwero Touches in a Jewellery Business: https://jwero.ai/roles
 - Owner / Proprietor, Run the Shop From a Record You Own: https://jwero.ai/roles/owner
 - Multi-Store & Chain Owner, One System, Every Branch: https://jwero.ai/roles/chain-owner
-- Next-Gen Successor, Inherit the Relationships, Not Just the Shop: https://jwero.ai/roles/next-gen-successor
+- Next-Gen Jewellery Successor: Inherit the Memory: https://jwero.ai/roles/next-gen-successor
 - Store Manager, Run the Floor on Today’s Numbers: https://jwero.ai/roles/store-manager
 - Sales Associate, Walk Up Already Knowing the Customer: https://jwero.ai/roles/sales-associate
-- Billing Cashier, Price at the Live Gold Rate, No Calculator Fight: https://jwero.ai/roles/cashier
+- Jewellery Billing Cashier: Live Gold Rate Billing: https://jwero.ai/roles/cashier
 - For CRM & Telecalling Staff: Follow-ups, Drafted: https://jwero.ai/roles/crm-executive
 - For Marketing Managers, One Campaign, One Customer Record: https://jwero.ai/roles/marketing-manager
 - For E-commerce Managers: Shopify Plus What It Lacks: https://jwero.ai/roles/ecommerce-manager
-- Jwero for Karigars & Goldsmiths, Traceable Jobs, Accounted Loss: https://jwero.ai/roles/karigar
+- Jwero for Karigars: Traceable Jobs, Accounted Loss: https://jwero.ai/roles/karigar
 - Jwero for CAD/CAM Designers, Files That Don’t Die in Chat: https://jwero.ai/roles/cad-designer
 - Jwero for Production Managers, See Every Job’s Stage: https://jwero.ai/roles/production-manager
-- Jwero for Quality & Hallmarking Officers, Status, Not Paper Chase: https://jwero.ai/roles/quality-hallmarking
+- Jwero for Quality and Hallmarking Officers: https://jwero.ai/roles/quality-hallmarking
 - For Jewellery Accountants: Books That Reconcile: https://jwero.ai/roles/accountant
 - Inventory / Stock Manager, See What’s Dying on the Shelf: https://jwero.ai/roles/inventory-manager
 - For Purchase Managers: Reorder on Data, Not Gut Feel: https://jwero.ai/roles/purchase-manager
 - For Wholesale / B2B Managers, Every Buyer, One Thread: https://jwero.ai/roles/b2b-manager
-- For Franchise Partners, Franchisor Control, Franchisee Freedom: https://jwero.ai/roles/franchise-partner
+- Jewellery Franchise Partner Software: https://jwero.ai/roles/franchise-partner
 - Jewellery Glossary: HUID, Girvi, Karigar, Memo, Wastage: https://jwero.ai/glossary
 - Get Started, Create Your Jwero Workspace: https://jwero.ai/start
 - Why Jewellers Need an Operating System, Not Another Tool: https://jwero.ai/why-an-os

@@ -200,7 +200,7 @@ ${L.ctaBand('See volume selling, simplified.', 'Bring your SKU count to a demo �
 const labGrownFaqs = [
   { q: 'Is this built for online-first, D2C-style selling?', a: 'Yes — WhatsApp, Instagram and storefront selling with live-rate pricing are native, and connectors keep an existing Shopify or WooCommerce store in sync.' },
   { q: 'Can AI help educate customers who are new to lab-grown?', a: 'The AI workforce drafts educational, catalogue-backed replies to common questions, approved before they send — consistent answers, every time.' },
-  { q: 'We already run Shopify ads and a store. Why add this?', a: 'Keep Shopify — the connector syncs products and orders. Jwero adds the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce platform doesn’t do, on top of what you already have.' },
+  { q: 'We already run Shopify ads and a store. Why add this?', a: 'Keep Shopify — the connector keeps your store on the same product data. Jwero adds the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce platform doesn’t do, on top of what you already have.' },
 ];
 
 const labGrown = {

@@ -64,7 +64,7 @@ const CATEGORIES = [
     items: [
       { q: 'How long does it take to go live?', a: 'A matter of days for the Assist scope: customers imported, WhatsApp connected, catalogue published, approvals on. Larger scopes are phased and discussed upfront.' },
       { q: 'Can you import from Excel?', a: 'Yes — bulk import ships with sample files and column-mapping tools, and onboarding includes a dedicated migration period where contacts are deduped and merged and top SKUs are imported with their pricing formulas. We do the heavy lifting, messy files included.' },
-      { q: 'Do I have to leave my current ERP or Tally?', a: 'No — Jwero isn’t an accounting replacement, it’s the revenue layer Tally never had. Customer and item masters sync both ways with Tally and Zoho Books; your statutory books stay exactly where they are. See <a href="/platform/integrations/tally">the accountant page</a>.' },
+      { q: 'Do I have to leave my current ERP or Tally?', a: 'No — Jwero isn’t an accounting replacement, it’s the revenue layer Tally never had. Jwero connects to Tally, imports customer and item masters and checks records against Tally with Tally and Zoho Books; your statutory books stay exactly where they are. See <a href="/platform/integrations/tally">the accountant page</a>.' },
       { q: 'What happens to my data if I leave Jwero later?', a: 'You export everything in standard formats, any time, no questions asked. That is a written promise, printed in the main terms rather than buried in a footnote.' },
       { q: 'Can we start with just one branch?', a: 'Yes — prove it in one branch with written exit criteria, then roll out. Most multi-store businesses start exactly this way.' },
       { q: 'Do you migrate during wedding or festival season?', a: 'No — a season change-freeze policy means we do not touch a live system during your peak weeks. We go live before the season or after it, never during.' },
@@ -111,7 +111,7 @@ const CATEGORIES = [
   {
     id: 'segments', label: 'Segments — retail, multi-store, wholesale, manufacturing',
     items: [
-      { q: 'I run a D2C brand on Shopify. What happens to my Shopify data if I leave Jwero?', a: 'Nothing. Shopify remains the system of record for your store; Jwero syncs products and orders both ways while connected and stops syncing when you disconnect. Your customer record, built in Jwero, exports with you.' },
+      { q: 'I run a D2C brand on Shopify. What happens to my Shopify data if I leave Jwero?', a: 'Nothing. Shopify remains the system of record for your store; Jwero works from the same product data while connected and stops when you disconnect. Your customer record, built in Jwero, exports with you.' },
       { q: 'I run one small store. Is this too much software for me?', a: 'No. Start with three things: customers imported, WhatsApp connected, catalogue live. Every module is in the plan, and you switch off what you do not use so the screen stays that simple.' },
       { q: 'Can multiple stores use it?', a: 'Yes — multi-store is native: shared customers and catalogue, per-branch stock, prices and permissions. See <a href="/solutions/multi-store-chains">multi-store & chains</a>.' },
       { q: 'Can branches have different prices?', a: 'Yes — per-branch price rules under central control, with approvals gating any exception.' },

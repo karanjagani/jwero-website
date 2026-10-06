@@ -1,0 +1,106 @@
+{
+ "ai-workforce": [
+  {
+   "hook": "A customer asks the gold rate on WhatsApp at 10 at night.",
+   "does": "Your AI agent answers from a knowledge base you fill with your products, policies and store details.",
+   "changes": "Late night enquiries get a reply instead of going cold.",
+   "source": "app/[orgId]/settings/agent-teams/knowledge/page.tsx; app/[orgId]/settings/agent-teams/configure/[agentId]/page.tsx"
+  },
+  {
+   "hook": "You worry an AI might promise a discount you never approved.",
+   "does": "You set autonomy levels: what the agent may do alone and what it must send to you for approval.",
+   "changes": "The AI proposes, you decide.",
+   "source": "app/[orgId]/settings/agent-teams/autonomy/page.tsx"
+  },
+  {
+   "hook": "You want to check what the bot told a customer yesterday.",
+   "does": "Every agent reply and action is kept in activity and run logs you can review.",
+   "changes": "Nothing the AI says is hidden from you.",
+   "source": "app/[orgId]/settings/agent-teams/activity/page.tsx; app/[orgId]/settings/agent-teams/logs/page.tsx"
+  },
+  {
+   "hook": "A website visitor asks about bridal sets while staff are busy.",
+   "does": "The website chat widget answers visitors with AI and the conversation lands in your shared inbox.",
+   "changes": "Website visitors are answered and become contacts you can follow up.",
+   "source": "app/[orgId]/operations/marketing/optimize/webchat/page.tsx; app/[orgId]/chats/inbox/page.tsx"
+  }
+ ],
+ "customer-memory": [
+  {
+   "hook": "You forget a loyal customer's wedding anniversary.",
+   "does": "An Upcoming Occasions page lists customers' birthdays and anniversaries so staff can wish them each day.",
+   "changes": "Every important date becomes a reason to reach out.",
+   "source": "app/[orgId]/operations/crm/occasions/page.tsx; components/crm/upcoming-occasions-page-client.tsx"
+  },
+  {
+   "hook": "A walk-in liked a necklace, left, and nobody called back.",
+   "does": "Leads sit on a pipeline board by stage so every enquiry has an owner and a next step.",
+   "changes": "Enquiries are followed up instead of forgotten.",
+   "source": "app/[orgId]/operations/crm/pipeline/page.tsx; app/[orgId]/operations/crm/stage-movement/page.tsx"
+  },
+  {
+   "hook": "A regular walks in and the new salesman doesn't know her.",
+   "does": "One customer record shows family links, payments, store visits, scheme status and KYC together.",
+   "changes": "Any staff member can serve any customer like a regular.",
+   "source": "components/crm/contact-relationships-section.tsx; components/crm/contact-store-sessions-section.tsx; components/crm/contact-digital-gold-panel.tsx"
+  },
+  {
+   "hook": "You have no idea which customers have stopped buying.",
+   "does": "RFM and funnel reports group customers by how recently, often and how much they buy.",
+   "changes": "You know exactly who to win back.",
+   "source": "app/[orgId]/operations/crm/reports/rfm/page.tsx; app/[orgId]/operations/crm/reports/funnel"
+  }
+ ],
+ "pricing-engine": [
+  {
+   "hook": "Gold moves overnight and every price tag is now wrong.",
+   "does": "Formula pricing recalculates each product from the live metal rate, weight, making charges and stones.",
+   "changes": "Prices follow the gold rate without manual repricing.",
+   "source": "app/[orgId]/operations/products/pricing/page.tsx; app/[orgId]/operations/products/settings/pricing/page.tsx; PRICING_ENGINE_AUDIT_2026-08.md"
+  },
+  {
+   "hook": "A customer wants a price for a custom bridal set in 22K.",
+   "does": "Build a quote from your products, adjust purity per line, priced at the metal rate.",
+   "changes": "Accurate quotes in minutes, not by calculator.",
+   "source": "components/crm/quotes/quote-editor.tsx; components/crm/quotes/quote-line-customize-form.tsx"
+  },
+  {
+   "hook": "Gold rises and the customer insists on last week's quoted price.",
+   "does": "Quotes carry an expiry date and a rate lock you set.",
+   "changes": "Your quoted price has clear terms.",
+   "source": "components/crm/quotes/quote-settings-dialog.tsx; components/crm/quotes/quote-detail-page.tsx"
+  },
+  {
+   "hook": "Billing a 22K chain takes ages of rate and weight calculations.",
+   "does": "Scan the tag and the bill fills with the piece, priced at today's metal rate shown on screen.",
+   "changes": "Fast, correct bills at the live rate.",
+   "source": "app/[orgId]/sales/pos/page.tsx; components/pos/pos-product-search.tsx; components/pos/pos-metal-rate-strip.tsx"
+  }
+ ],
+ "integrations": [
+  {
+   "hook": "Your accountant keeps the books in Tally and won't switch.",
+   "does": "Jwero connects to Tally and Zoho Books, maps your ledgers, imports masters and checks records against Tally.",
+   "changes": "Your accountant keeps Tally; you stop entering the same bill twice.",
+   "source": "app/[orgId]/finance/accounting/page.tsx; app/[orgId]/finance/accounting/reconciliation/page.tsx; TALLY_ERP_INTEGRATION_ANALYSIS.md"
+  },
+  {
+   "hook": "Amazon orders get missed because nobody checks the seller panel.",
+   "does": "Connect Amazon and Flipkart; orders come into Jwero as sales orders automatically.",
+   "changes": "Marketplace orders land with your other orders.",
+   "source": "app/[orgId]/settings/integrations/marketplaces/page.tsx"
+  },
+  {
+   "hook": "Your Shopify store shows pieces you sold in the shop yesterday.",
+   "does": "Connect Shopify or WooCommerce so your online store works from the same product data.",
+   "changes": "Online and shop stock stop telling different stories.",
+   "source": "app/[orgId]/settings/integrations/stores/shopify/page.tsx; app/[orgId]/settings/integrations/stores/woo-commerce/page.tsx"
+  },
+  {
+   "hook": "Listing the same product on every channel takes all afternoon.",
+   "does": "Publish products from your product list to Meta catalogue, WhatsApp and other channels in one step.",
+   "changes": "List once, appear everywhere.",
+   "source": "app/[orgId]/operations/products/list/components/PublishDialog.tsx"
+  }
+ ]
+}

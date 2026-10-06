@@ -122,7 +122,7 @@ ${L.jtbdBlock([
 ${L.section(
   `${L.sectionHead('THE FIRST 30 DAYS', 'Small start. Visible proof.', '')}
   ${L.steps([
-    { title: 'Days 1–7: Land', text: 'Customers imported, WhatsApp connected, catalogue live. Nothing ripped out — your billing software stays.' },
+    { title: 'Day 1: Set up, then days 2–7: Land', text: 'Set up in a day: customers imported, WhatsApp connected, catalogue live. Nothing ripped out — your billing software stays.' },
     { title: 'Weeks 2–3: First wins', text: 'Enquiries answered in minutes, birthday and anniversary greetings flowing with approvals, first catalogue shares.' },
     { title: 'Day 30: The report', text: 'Your first growth report: who came back, what they bought, what the system did. Judge us on that.' },
   ])}`
