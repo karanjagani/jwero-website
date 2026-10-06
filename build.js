@@ -693,9 +693,10 @@ function withManaged(body, page) {
   const Q = P.QUOTES;
   const SOL_QUOTE = { 'gold-retail': 1, 'silver-retail': 1, 'bridal': 1, 'd2c-brands': 3, 'jewellery-brands': 3, 'lab-grown-diamond': 3, 'single-store': 0, 'startups': 0, 'multi-store-chains': 4, 'luxury-boutique': 4, 'diamond-retail': 4, 'gemstone-retail': 2, manufacturers: 0, 'casting-units': 0, 'oem-manufacturers': 0, 'cad-services': 0, 'export-houses': 1, 'b2b-jewellery': 1, 'gold-wholesale': 1, 'diamond-wholesale': 1, 'diamond-traders': 1, 'bullion-gold-traders': 1, 'franchise-networks': 4 };
   const ROLE_QUOTE = { owner: 1, 'chain-owner': 4, 'franchise-partner': 4, 'next-gen-successor': 1, 'store-manager': 0, 'sales-associate': 2, 'crm-executive': 2, 'marketing-manager': 3, 'ecommerce-manager': 3, cashier: 0, accountant: 0, 'inventory-manager': 0, 'purchase-manager': 0, 'b2b-manager': 1, 'production-manager': 0, karigar: 1, 'cad-designer': 0, 'quality-hallmarking': 1 };
+  const PLAT_QUOTE = { platform: 3, 'platform/onboarding': 0, 'platform/integrations': 0, 'platform/integrations/tally': 0, 'platform/customer-memory': 1, 'platform/pricing-engine': 1, 'platform/ai-workforce': 2 };
   const PROD_QUOTE = { whatsapp: 2, 'instagram-facebook': 2, 'ai-sales-agents': 2, storefront: 3, catalog: 3, 'digital-catalogues': 3, marketplaces: 3, erp: 0, inventory: 0, pos: 0, 'billing-finance': 0, 'purchase-vendors': 0, manufacturing: 0, 'multi-store': 0, crm: 1, journeys: 1, loyalty: 1, segmentation: 1, 'gold-schemes': 1 };
   const k2 = slug.split('/')[1];
-  const R = P.ROTATE, qi = slug.startsWith('solutions/') && SOL_QUOTE[k2] !== undefined ? SOL_QUOTE[k2] : slug.startsWith('products/') && PROD_QUOTE[k2] !== undefined ? PROD_QUOTE[k2] : slug.startsWith('roles/') && ROLE_QUOTE[k2] !== undefined ? ROLE_QUOTE[k2] : R[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % R.length];
+  const R = P.ROTATE, qi = slug.startsWith('solutions/') && SOL_QUOTE[k2] !== undefined ? SOL_QUOTE[k2] : slug.startsWith('products/') && PROD_QUOTE[k2] !== undefined ? PROD_QUOTE[k2] : slug.startsWith('roles/') && ROLE_QUOTE[k2] !== undefined ? ROLE_QUOTE[k2] : PLAT_QUOTE[slug] !== undefined ? PLAT_QUOTE[slug] : R[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % R.length];
   let block;
   if (top === 'blog' || page.legacy) {
     // articles stay articles: one quiet line with both doors
@@ -726,6 +727,14 @@ const SOLUTION_DROP = /<h2[^>]*>\s*(Small start|One plan\. Every module|Five thi
 const SOLUTION_WHO = { 'single-store': 'a single store', 'multi-store-chains': 'a chain of stores', 'franchise-networks': 'a franchise network', 'gold-retail': 'a gold jewellery shop', 'diamond-retail': 'a diamond showroom', 'silver-retail': 'a silver jewellery shop', 'gemstone-retail': 'a gemstone store', bridal: 'a bridal jewellery store', 'luxury-boutique': 'a luxury boutique', 'lab-grown-diamond': 'a lab-grown diamond business', 'jewellery-brands': 'a jewellery brand', 'd2c-brands': 'an online jewellery brand', startups: 'a new jewellery business', 'gold-wholesale': 'a gold wholesale business', 'diamond-wholesale': 'a diamond wholesale business', 'diamond-traders': 'a diamond trading business', 'bullion-gold-traders': 'a bullion business', 'b2b-jewellery': 'a B2B jewellery business', 'export-houses': 'an export house', manufacturers: 'a jewellery manufacturing unit', 'oem-manufacturers': 'an OEM manufacturing unit', 'casting-units': 'a casting unit', 'cad-services': 'a CAD studio' };
 const OWNER_ROLES = new Set(['roles/owner', 'roles/chain-owner', 'roles/franchise-partner', 'roles/next-gen-successor']);
 function trimSolution(html, slug) {
+  if (slug === 'platform' || slug.startsWith('platform/')) {
+    let kept = html.split(/(?=<section[\s>])/).filter((c) => !(slug === 'platform' && /<h2[^>]*>\s*(What five disconnected tools cost|What changes across the whole jewellery business)/.test(c.slice(0, 2500))));
+    const more = kept.findIndex((c) => /^<section class="section tool-qa/.test(c));
+    const own = kept.findIndex((c, k) => k !== more && k > 0 && /<details/.test(c) && !/class="(pass|cta-band)/.test(c.slice(0, 80)));
+    if (more >= 0 && own >= 0) { const items = (kept[more].match(/<details[\s\S]*<\/details>/) || [''])[0]; kept[own] = kept[own].replace(/(<\/details>)(?![\s\S]*<\/details>)/, '$1' + items); kept.splice(more, 1); }
+    let seen = 0;
+    return kept.join('').replace(/(<a class="btn[^"]*"(?![^>]*data-share)(?![^>]*data-trial)(?![^>]*data-wa="handle")[^>]*(?:data-wa="[^"]*"|href="\/book-demo")[^>]*>)\s*(Talk to us|Chat or call with us|Book a demo)\s*(<\/a>)/g, (m0, a1, t, z) => /cta-band/.test(a1) ? m0 : (++seen === 1 && !/hero/.test(a1)) ? a1 + 'Talk to us' + z : '');
+  }
   if (slug.startsWith('roles/')) {
     let kept = html.split(/(?=<section[\s>])/).filter((c) => !/<h2[^>]*>\s*(One plan\. Every module|Five things)/.test(c.slice(0, 1500)));
     // one question block
@@ -802,7 +811,7 @@ function withDoors(html, slug) {
 // the product's own documentation (content/usecases.json), right after the
 // opening answer.
 function withUseCases(body, page) {
-  const m = /^(products|solutions|roles|platform)\/([^/]+)$/.exec(page.slug || '');
+  const m = page.slug === 'platform' ? [null, 'platform', 'platform'] : /^(products|solutions|roles|platform)\/([^/]+)$/.exec(page.slug || '');
   const uc = m && (m[1] === 'platform' ? PLATFORM_UC[m[2]] : m[1] === 'products' ? USECASES[m[2]] : m[1] === 'roles' ? (ROLES[m[2]] || {}).usecases : (SEGMENTS[m[2]] || {}).usecases);
   if (!uc || !uc.length) return body;
   const name = (page.title || '').split(/[:|]/)[0].replace(/^Jwero\s+/, '').trim() || 'This';
@@ -892,9 +901,11 @@ function withInterlinks(body, page) {
   const cityKind = (() => { if (!/^jewellery-software-india\/./.test(slug)) return null; const s = (body.match(/href="\/solutions\/([a-z-]+)"/) || [])[1] || ''; return /d2c|brands|lab-grown|startups/.test(s) ? 'online' : /wholesale|traders|bullion|b2b|export|diamond/.test(s) ? 'trade' : /manufactur|casting|cad|oem/.test(s) ? 'making' : 'retail'; })();
   const ROLE_TOPICS = [[/owner|successor|franchise/, ['Technology and strategy', 'Retail operations and sales']], [/sales-associate|store-manager|crm/, ['Leads and conversion', 'CRM and customers']], [/marketing/, ['Marketing and campaigns', 'WhatsApp']], [/ecommerce/, ['Ecommerce and websites', 'Product data and catalogues']], [/inventory|purchase|cashier|accountant/, ['Inventory, POS and ERP', 'Order management']], [/b2b/, ['Order management', 'Product data and catalogues']], [/production|karigar|cad|quality/, ['Order management', 'Inventory, POS and ERP']]];
   const rtopics = /^roles\/./.test(slug) ? ((ROLE_TOPICS.find(([r]) => r.test(slug)) || [, ['Retail operations and sales']])[1]) : null;
+  const PLAT_TOPICS = { platform: ['Technology and strategy', 'AI'], 'platform/ai-workforce': ['AI', 'Leads and conversion'], 'platform/customer-memory': ['CRM and customers', 'Leads and conversion'], 'platform/pricing-engine': ['Product data and catalogues', 'Inventory, POS and ERP'], 'platform/integrations': ['Technology and strategy', 'Inventory, POS and ERP'], 'platform/integrations/tally': ['Inventory, POS and ERP', 'Technology and strategy'], 'platform/onboarding': ['Technology and strategy', 'Retail operations and sales'] };
+  const pltopics = PLAT_TOPICS[slug] || null;
   const ptopics = /^products\//.test(slug) ? ((PROD_TOPICS.find(([r]) => r.test(slug)) || [, ['Technology and strategy']])[1]) : null;
-  const list = (BACK['/' + slug] || []).concat(/^solutions\/(?!pain)/.test(slug) ? LEGACY.filter((p) => SOL_TOPICS[kind].includes(p.topic)) : cityKind ? LEGACY.filter((p) => SOL_TOPICS[cityKind].includes(p.topic)) : rtopics ? LEGACY.filter((p) => rtopics.includes(p.topic)) : ptopics ? LEGACY.filter((p) => ptopics.includes(p.topic)) : []).filter((p, k, arr) => arr.indexOf(p) === k);
-  if (!list.length || !/^(products|solutions|platform|tools|guides|roles)\/|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^jewellery-business-as-a-service$/.test(slug)) return body;
+  const list = (BACK['/' + slug] || []).concat(/^solutions\/(?!pain)/.test(slug) ? LEGACY.filter((p) => SOL_TOPICS[kind].includes(p.topic)) : cityKind ? LEGACY.filter((p) => SOL_TOPICS[cityKind].includes(p.topic)) : rtopics ? LEGACY.filter((p) => rtopics.includes(p.topic)) : pltopics ? LEGACY.filter((p) => pltopics.includes(p.topic)) : ptopics ? LEGACY.filter((p) => ptopics.includes(p.topic)) : []).filter((p, k, arr) => arr.indexOf(p) === k);
+  if (!list.length || !/^(products|solutions|platform|tools|guides|roles)\/|^platform$|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^jewellery-business-as-a-service$/.test(slug)) return body;
   const pick = list.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
   const blk = L3.section(`${L3.sectionHead('FROM THE BLOG', 'Read more on this.', '')}<div class="erp-map">${pick.map((p) => `<a href="/${p.slug}"><b>${p.title}</b><span>${p.topic}</span></a>`).join('')}</div>`);
   const at = body.lastIndexOf('<section'); return at > 0 ? body.slice(0, at) + blk + body.slice(at) : body + blk;

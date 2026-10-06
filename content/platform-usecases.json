@@ -102,5 +102,31 @@
    "changes": "List once, appear everywhere.",
    "source": "app/[orgId]/operations/products/list/components/PublishDialog.tsx"
   }
+ ],
+ "platform": [
+  {
+   "hook": "Your bills, stock and gold rate are in three different places.",
+   "does": "One system holds live metal-rate pricing, stock, billing and accounts on the same data.",
+   "changes": "One version of the truth for the whole shop.",
+   "source": "app/[orgId]/operations/products/pricing/page.tsx; app/[orgId]/sales/pos/page.tsx; JEWELLERY_ERP_LOOP_AUDIT_2026-08-26.md"
+  },
+  {
+   "hook": "Gold moves overnight and every price tag is now wrong.",
+   "does": "Formula pricing recalculates each product from the live metal rate, weight, making charges and stones.",
+   "changes": "Prices follow the gold rate without manual repricing.",
+   "source": "app/[orgId]/operations/products/pricing/page.tsx; app/[orgId]/operations/products/settings/pricing/page.tsx; PRICING_ENGINE_AUDIT_2026-08.md"
+  },
+  {
+   "hook": "You worry an AI might promise a discount you never approved.",
+   "does": "You set autonomy levels: what the agent may do alone and what it must send to you for approval.",
+   "changes": "The AI proposes, you decide.",
+   "source": "app/[orgId]/settings/agent-teams/autonomy/page.tsx"
+  },
+  {
+   "hook": "Your accountant keeps the books in Tally and won't switch.",
+   "does": "Jwero connects to Tally and Zoho Books, maps your ledgers, imports masters and checks records against Tally.",
+   "changes": "Your accountant keeps Tally; you stop entering the same bill twice.",
+   "source": "app/[orgId]/finance/accounting/page.tsx; app/[orgId]/finance/accounting/reconciliation/page.tsx; TALLY_ERP_INTEGRATION_ANALYSIS.md"
+  }
  ]
 }
