@@ -3916,3 +3916,7 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .doors-strip.is-in-hero { margin: 22px 0 28px; }
 .doors-strip.is-in-hero .container { justify-content: center; border: 0; padding-block: 0; }
 .doors-strip.is-in-hero .ds-more { margin-left: 6px; }
+
+.cmp-managed { display: block; margin-top: 8px; padding-top: 8px; border-top: 1px dashed color-mix(in srgb, var(--brand) 30%, transparent); font-size: .875rem; color: var(--ink-2); }
+.cmp-managed b { color: #94670a; font-weight: 600; }
+[data-theme="dark"] .cmp-managed b { color: #F6B11C; }

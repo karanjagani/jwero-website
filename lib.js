@@ -842,7 +842,7 @@ function compareRows(items) {
   <div class="cmp-row" role="row">
     <div class="cmp-lever" role="rowheader"><b>${i.lever}</b>${i.link ? `<a href="${i.link.href}">${i.link.label} →</a>` : ''}</div>
     <p class="cmp-before" role="cell"><span class="cmp-tag">Today</span>${i.before}</p>
-    <p class="cmp-after" role="cell"><span class="cmp-tag cmp-tag-go">With Jwero</span>${i.after}</p>
+    <p class="cmp-after" role="cell"><span class="cmp-tag cmp-tag-go">With Jwero</span>${i.after}${i.managed ? `<span class="cmp-managed"><b>Or Jwero does it:</b> ${i.managed}</span>` : ''}</p>
   </div>`).join('')}
 </div>`;
 }
@@ -992,54 +992,63 @@ function gemStage({ nodes, callouts }) {
 const DEPARTMENTS = [
   {
     lever: 'CUSTOMERS',
+    managed: 'Jwero’s team answers and follows up every enquiry for you.',
     before: 'An enquiry at 11pm waits until morning, and a salesperson who leaves takes the relationships with them.',
     after: 'Every enquiry gets a priced reply within minutes, and every customer lives on the business’s own record.',
     link: { href: '/products/crm', label: 'See the CRM' },
   },
   {
     lever: 'SHOWROOM',
+    managed: 'Jwero books the appointments and follows up every walkout.',
     before: 'Nobody knows who walked in, what they tried, or why they left without buying.',
     after: 'Walk-ins checked in, a live view of the floor, and a follow-up drafted for every walkout.',
     link: { href: '/products/showroom', label: 'See the floor' },
   },
   {
     lever: 'BILLING',
+    managed: 'Jwero sets up your counter and trains your staff, in a day.',
     before: 'Rate typed by hand, old gold worked out on a calculator, the day closed from memory.',
     after: 'Scan to bill at the live rate, with old-gold exchange, returns, GST and a cash day-close on one screen.',
     link: { href: '/products/pos', label: 'See the counter' },
   },
   {
     lever: 'STOCK',
+    managed: 'Jwero reviews ageing every month and plans what to push, reorder or melt.',
     before: 'Capital frozen in designs nobody is buying, and a stock value that is a guess.',
     after: 'Every piece valued at today’s rate, ageing flagged, and idle pieces matched to the customers who would buy them.',
     link: { href: '/products/inventory', label: 'See inventory' },
   },
   {
     lever: 'PURCHASE',
+    managed: 'Jwero chases vendors and tracks every order to delivery.',
     before: 'Orders on phone calls, vendor balances in a notebook, bills matched at month end.',
     after: 'Purchase order, goods received, bill and credit note in one chain, and vendors check their own status.',
     link: { href: '/products/purchase-vendors', label: 'See purchase' },
   },
   {
     lever: 'WORKSHOP',
+    managed: 'Jwero follows up karigar job work and flags any shortfall.',
     before: 'Gold goes out to the karigar and the shortfall shows up at stocktake.',
     after: 'Metal issued and returned in fine grams, with wastage checked against the norm at each stage.',
     link: { href: '/products/manufacturing', label: 'See manufacturing' },
   },
   {
     lever: 'ACCOUNTS',
+    managed: 'Jwero keeps the entries current and sends the month’s reports.',
     before: 'The accountant re-enters every bill, and receivables are chased when someone remembers.',
     after: 'Every sale, purchase and payment posts itself, GST-ready, with Tally and Zoho Books bridges.',
     link: { href: '/products/billing-finance', label: 'See the books' },
   },
   {
     lever: 'TEAM',
+    managed: 'Jwero trains your staff, in the store and online.',
     before: 'Attendance in a register, incentives argued at month end, training by standing next to someone.',
     after: 'Attendance, payroll, incentives and training on the same record as the sales they earned.',
     link: { href: '/products/hr-payroll', label: 'See HR' },
   },
   {
     lever: 'DECISIONS',
+    managed: 'Jwero’s analyst explains the numbers each week and says what to do next.',
     before: 'You learn how the month went after it ends, from a report somebody built by hand.',
     after: 'Today’s sales, stock, cash and pending work on one dashboard. Ask a question, get a report.',
     link: { href: '/products/reports', label: 'See reports' },

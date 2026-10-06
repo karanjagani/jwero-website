@@ -222,6 +222,7 @@ const NAV = [
 ];
 
 const { icon, LINK_ICONS, heroSchematic, PERSONAS, personaSwitch, mark } = require('./lib');
+const TRIAL_URL_B = require('./lib').TRIAL_URL;
 
 // Primary navigation for the positioning "You focus on jewellery. We handle the
 // chaos." Products, solutions and the rest are capabilities underneath: they
@@ -314,7 +315,7 @@ function footerHTML() {
 </footer>
 <div class="sticky-bar" role="navigation" aria-label="Quick actions">
   <a class="sb-wa" href="#" data-wa="sticky" data-connect="chat">Chat</a>
-  <a href="#" data-wa="sticky" data-connect="voice">Call</a>
+  <a class="sb-start" href="${TRIAL_URL_B}sticky" rel="noopener" data-trial>Start ₹3,600</a>
   <a class="sb-demo" href="#" data-wa="handle">Handle it for me</a>
 </div>
 <button class="to-top" type="button" aria-label="Back to top">${mark()}</button>`;
