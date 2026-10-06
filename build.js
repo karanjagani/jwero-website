@@ -336,6 +336,29 @@ function footerHTML() {
 // freely; this pass turns every " — " into the punctuation a person would use:
 // a colon after a short label or heading stem, a comma inside a sentence.
 // Number ranges (2–5, 10am–8pm) are left alone.
+// Journey-wide fixes applied to the finished page.
+const HINDI_CITIES = /^jewellery-software-india\/(delhi|jaipur|lucknow|kanpur|indore|bhopal|patna|varanasi|agra|meerut|ludhiana|chandigarh|dehradun|amritsar|jodhpur|udaipur|bikaner|gwalior|raipur|ranchi)$/;
+function journeyFix(html, p) {
+  const slug = p.slug || '';
+  // 1. every self-serve start goes through /start, which explains the first month
+  if (slug !== 'start') html = html.replace(/href="https:\/\/os\.jwero\.ai\/signup\?utm_source=jwero\.ai&(?:amp;)?utm_medium=([^"]*)"(?: rel="noopener")?(?: data-trial(?:="[^"]*")?)?/g, (m0, from) => `href="/start?from=${from.replace(/[^a-z0-9-]/gi, '')}"`);
+  // 2. the managed page never links to itself
+  if (slug === 'jewellery-business-as-a-service') html = html.replace(/<a class="btn btn-primary" href="\/jewellery-business-as-a-service">/g, '<a class="btn btn-primary" href="#" data-wa="handle">');
+  // 4. Hindi: the closing band in Hindi, and a way in from Hindi-belt city pages
+  if (slug === 'hi') html = html.replace(/>Chat or call with us</g, '>हमसे चैट या कॉल करें<').replace(/>Book a demo</g, '>डेमो बुक करें<');
+  if (HINDI_CITIES.test(slug)) html = html.replace('</main>', '<section class="section"><div class="container"><p class="cta-note" style="text-align:center"><a href="/hi" lang="hi">यह पेज हिंदी में पढ़ें →</a></p></div></section></main>');
+  // 5. legal pages are not dead ends
+  if (/^legal\//.test(slug)) html = html.replace('</main>', '<section class="section"><div class="container"><p class="cta-note" style="text-align:center">Questions about this? <a href="#" data-wa="legal">Ask us on WhatsApp</a>. A real person replies within minutes. See also <a href="/trust">Trust</a> and <a href="/trust/security">Security</a>.</p></div></section></main>');
+  // 6. titles that fit in search results
+  html = html.replace(/<title>([^<]*)<\/title>/, (m0, t) => {
+    if (t.length <= 65) return m0;
+    let s = t.replace(/ \| Jwero$/, '');
+    if (s.length > 65) { s = s.slice(0, 62); s = s.slice(0, s.lastIndexOf(' ')).replace(/[\s,:;&-]+$/, ''); }
+    return `<title>${s}</title>`;
+  });
+  return html;
+}
+
 function noDash(text) {
   return String(text)
     .replace(/>\s*[—–]\s*</g, '>…<')
@@ -1231,7 +1254,7 @@ function build() {
   for (const p of pages) {
     const dir = p.slug === 'index' ? DIST : path.join(DIST, p.slug);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), noDash(layout(p)));
+    fs.writeFileSync(path.join(dir, 'index.html'), noDash(journeyFix(layout(p), p)));
   }
   // Retired addresses: the separate /focus site, /jbaas and the old /jwero-os home.
   const MOVED = { 'jwero-os': '/', jbaas: '/jewellery-business-as-a-service', focus: '/jewellery-business-as-a-service', 'managed-services': '/jewellery-business-as-a-service', 'focus/managed-services': '/jewellery-business-as-a-service' };

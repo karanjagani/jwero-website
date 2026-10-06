@@ -1688,6 +1688,7 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-start]'), function
 var pick = { persona: null, tier: null }, labels = {}, step = 1;
 var go = wrap.querySelector('[data-start-go]'), waBtn = wrap.querySelector('[data-start-wa]'), back = wrap.querySelector('[data-start-back]');
 var base = go.getAttribute('href');
+try { var from = (new URLSearchParams(location.search).get('from') || '').replace(/[^a-z0-9-]/gi, ''); if (from) { base = base.replace('utm_medium=start', 'utm_medium=start&utm_content=' + from); go.setAttribute('href', base); } } catch (e) {}
 function show(n) {
 step = n;
 wrap.querySelectorAll('.start-panel').forEach(function (p) { p.classList.toggle('is-on', Number(p.dataset.panel) === n); });

@@ -562,9 +562,9 @@ const SCOPE = {
   'Events and offline promotion': [['Work', ['Exhibitions', 'In-store events', 'Festive campaigns', 'Hoardings and print', 'Local tie-ups']]],
 };
 const PREDICT = [['conv', 'Customer conversations'], ['comments', 'Comments and DMs'], ['reviews', 'Reviews'], ['in', 'Inbound calls'], ['out', 'Follow-up calls due']];
-const countTeam = () => L.section(`
+const countTeam = (inner) => L.section(`
 ${eyebrow('Count your team')}
-<h2 class="pz-h pz-center">What does keeping up take, and cost, today?</h2>
+<h2 class="pz-h pz-center">${inner ? 'Set your customer base, then tap a role.' : 'What does keeping up take, and cost, today?'}</h2>
 <p class="pz-lead pz-center">Set your customer base. Tap a role, then say who does it today: an employee, a freelancer or agency, or nobody. Each role shows how much work it is and how many people that takes.</p>
 <div class="pz-team2" data-pz-team>
   <div class="pz-team2-pick">
@@ -794,7 +794,7 @@ ${eyebrow('What happens next')}
 <h2 class="pz-h pz-center">From a first message to work getting done.</h2>
 <ol class="pz-how pz-how-4">${NEXT.map(([t, d], i) => `<li><span>${String(i + 1).padStart(2, '0')}</span><b>${t}</b><p>${d}</p></li>`).join('')}</ol>
 <ul class="pz-ease"><li>A reply within minutes</li><li>Onboarding in a day</li><li>Your data stays yours</li><li>Take a function back whenever you like</li></ul>
-<p class="pz-cta-center">${HANDLE('Let Jwero handle it', 'start')}<a class="btn btn-ghost" href="#" data-wa="call" data-connect="voice">Call us instead</a></p>`, { id: 'next' });
+<p class="pz-cta-center">Rather speak first? <a href="#" data-wa="call" data-connect="voice">Call us instead</a>.</p>`, { id: 'next' });
 
 const refer = () => `
 <section class="pass pz-refer" id="pass"><div class="container"><div class="pass-box">
@@ -1009,7 +1009,7 @@ const count = {
   breadcrumbs: [['Home', '/'], ['Jewellery Business as a Service', '/jewellery-business-as-a-service'], ['Count your team']],
   body: `
 ${innerHero('Count your team', 'What does keeping up take, and cost, today?', 'The people, freelancers and agencies it takes to keep a jewellery business current, counted from your own customer base. Then the same work with one partner.', ['/jewellery-business-as-a-service', 'See managed services'], HANDLE('Let Jwero handle it', 'plan', 'btn pz-btn-gold'))}
-${countTeam()}
+${countTeam(true)}
 ${L.section(`${eyebrow('How it is worked out')}<h2 class="pz-h pz-center">No hidden arithmetic.</h2>
 <ol class="pz-how">
   <li><span>01</span><b>Your volume</b><p>Conversations, comments, reviews and calls are predicted from your customers on record and showrooms. Change any count to your own.</p></li>
