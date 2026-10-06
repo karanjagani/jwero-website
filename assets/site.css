@@ -4025,7 +4025,7 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
   /* While picking tools, a slim summary stays pinned under the header. */
   .stackm-mini:not([hidden]) { position: sticky; top: 74px; z-index: 4; display: flex; align-items: center; gap: 8px; margin: 0 0 10px; padding: 10px 14px; border-radius: 12px; background: var(--panel); color: #fff; font-size: .875rem; font-weight: 600; text-decoration: none; box-shadow: 0 6px 18px rgba(0, 18, 185, .25); }
   .stackm-mini b { color: var(--amber); font-size: 1.125rem; }
-  .stackm-mini { white-space: nowrap; }
+  .stackm-mini { white-space: nowrap; gap: 6px !important; padding: 10px 12px !important; font-size: .8125rem !important; }
   .stackm-mini em { font-style: normal; }
   .stackm-mini span { min-width: 0; overflow: hidden; text-overflow: ellipsis; color: rgba(255, 255, 255, .85); font-weight: 500; }
   .stackm-mini i { margin-left: auto; font-style: normal; font-size: .75rem; text-decoration: underline; white-space: nowrap; }
