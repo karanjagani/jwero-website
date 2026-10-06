@@ -96,26 +96,26 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Solutions, Jwero for Every Kind of Jewellery Business: https://jwero.ai/solutions
 - Jewellery Shop Software for a Single Store or Small Shop: https://jwero.ai/solutions/single-store
 - Multi-Store Jewellery Software for Chains: https://jwero.ai/solutions/multi-store-chains
-- Jewellery Manufacturing & Wholesale Software: Job Work, Gold Loss: https://jwero.ai/solutions/manufacturers
+- Jewellery Manufacturing Software: Job Work, Gold Loss: https://jwero.ai/solutions/manufacturers
 - Software for Luxury & Boutique Jewellers: Clienteling: https://jwero.ai/solutions/luxury-boutique
 - Bridal Jewellery Software: Trials, Quotes, Orders: https://jwero.ai/solutions/bridal
-- Diamond Jewellery Retail Software: Certificates and Stock: https://jwero.ai/solutions/diamond-retail
-- Gold Jewellery Shop Software: Live Rate, Schemes, Exchange: https://jwero.ai/solutions/gold-retail
+- Diamond Jewellery Retail Software: Certificates: https://jwero.ai/solutions/diamond-retail
+- Gold Jewellery Shop Software: Live Rate, Schemes: https://jwero.ai/solutions/gold-retail
 - Silver Jewellery Billing Software: Weight Sales and Lots: https://jwero.ai/solutions/silver-retail
 - Lab-Grown Diamond Jewellery Software: https://jwero.ai/solutions/lab-grown-diamond
 - Gemstone Inventory & Retail Software for Jewellers: https://jwero.ai/solutions/gemstone-retail
 - Diamond Wholesale Software: Inventory, Memo, Buyer Prices: https://jwero.ai/solutions/diamond-wholesale
-- Gold Wholesale Software: Rate-Linked Orders, Party Ledgers: https://jwero.ai/solutions/gold-wholesale
-- Jewellery Wholesale & B2B Software: Catalogue App, Memo, Orders: https://jwero.ai/solutions/b2b-jewellery
-- Jewellery Casting Software: Flasks, Metal Loss, Job Work: https://jwero.ai/solutions/casting-units
-- Software for Jewellery CAD Studios: Briefs, Approvals, Handoff: https://jwero.ai/solutions/cad-services
-- OEM Jewellery Manufacturing Software: Client-Wise Job Work: https://jwero.ai/solutions/oem-manufacturers
-- Jewellery Export Software: Orders, Production, Buyer Currency: https://jwero.ai/solutions/export-houses
+- Gold Wholesale Software: Rate-Linked Orders: https://jwero.ai/solutions/gold-wholesale
+- Jewellery B2B Software: Catalogue, Memo, Orders: https://jwero.ai/solutions/b2b-jewellery
+- Jewellery Casting Software: Flasks and Metal Loss: https://jwero.ai/solutions/casting-units
+- Software for Jewellery CAD Studios: https://jwero.ai/solutions/cad-services
+- OEM Jewellery Manufacturing Software: Job Work: https://jwero.ai/solutions/oem-manufacturers
+- Jewellery Export Software: Orders to Shipment: https://jwero.ai/solutions/export-houses
 - Bullion Trading Software for Dealers & Gold Traders: https://jwero.ai/solutions/bullion-gold-traders
-- Software for Jewellery Brands: Multi-Channel, Multi-Partner: https://jwero.ai/solutions/jewellery-brands
+- Software for Jewellery Brands: Every Channel: https://jwero.ai/solutions/jewellery-brands
 - Software for D2C & Online Jewellery Brands: https://jwero.ai/solutions/d2c-brands
 - Jewellery Software for Startups & New Jewellers: https://jwero.ai/solutions/startups
-- Jewellery Franchise Software: Brand Control, Store Freedom: https://jwero.ai/solutions/franchise-networks
+- Jewellery Franchise Software: Brand and Store: https://jwero.ai/solutions/franchise-networks
 - What's Eating Your Jewellery Business?, Every Pain, Answered: https://jwero.ai/solutions/pain
 - Dead Stock, The Silent Tax on Every Jewellery Business: https://jwero.ai/solutions/pain/dead-stock
 - Lead Leakage, Where Jewellery Enquiries Go to Die: https://jwero.ai/solutions/pain/lead-leakage

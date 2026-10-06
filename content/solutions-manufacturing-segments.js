@@ -9,8 +9,8 @@ const castingUnitsFaqs = [
 
 const castingUnits = {
   slug: 'solutions/casting-units',
-  title: 'Jewellery Casting Software: Flasks, Metal Loss, Job Work | Jwero',
-  description: 'Batch and work-in-progress tracking tuned to casting workflows — every tree, every flask, accounted, with loss norms per stage.',
+  title: 'Jewellery Casting Software: Flasks and Metal Loss | Jwero',
+  description: 'Jewellery casting software: track every tree and flask through work in progress, with metal-loss norms per stage and job work accounted.',
   breadcrumbs: BC('Casting units'),
   faqs: castingUnitsFaqs,
   body: `
@@ -42,8 +42,8 @@ const cadServicesFaqs = [
 
 const cadServices = {
   slug: 'solutions/cad-services',
-  title: 'Software for Jewellery CAD Studios: Briefs, Approvals, Handoff | Jwero',
-  description: 'CAD job intake, approval and production handoff with client communication on WhatsApp — nothing lost between design revision and job file.',
+  title: 'Software for Jewellery CAD Studios | Jwero',
+  description: 'Software for jewellery CAD studios: job intake, client approvals on WhatsApp and production handoff, so nothing is lost between revision and file.',
   breadcrumbs: BC('CAD services'),
   faqs: cadServicesFaqs,
   body: `
@@ -75,8 +75,8 @@ const oemManufacturersFaqs = [
 
 const oemManufacturers = {
   slug: 'solutions/oem-manufacturers',
-  title: 'OEM Jewellery Manufacturing Software: Client-Wise Job Work | Jwero',
-  description: 'Multi-client job-work: client-wise WIP, specs and settlement — your buyers’ brands, run cleanly on your system.',
+  title: 'OEM Jewellery Manufacturing Software: Job Work | Jwero',
+  description: 'OEM jewellery manufacturing software for multi-client job work: client-wise work in progress, specs and settlement, run cleanly on one system.',
   breadcrumbs: BC('OEM manufacturers'),
   faqs: oemManufacturersFaqs,
   body: `
@@ -108,8 +108,8 @@ const exportHousesFaqs = [
 
 const exportHouses = {
   slug: 'solutions/export-houses',
-  title: 'Jewellery Export Software: Orders, Production, Buyer Currency | Jwero',
-  description: 'Order-to-shipment tracking with documentation trails, and 24/7 buyer replies across timezones — export-grade process discipline.',
+  title: 'Jewellery Export Software: Orders to Shipment | Jwero',
+  description: 'Jewellery export software: track each buyer order through production to shipment, and answer overseas buyers on WhatsApp across time zones.',
   breadcrumbs: BC('Export houses'),
   faqs: exportHousesFaqs,
   body: `

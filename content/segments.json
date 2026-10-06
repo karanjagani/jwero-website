@@ -1,0 +1,876 @@
+{
+ "single-store": {
+  "usecases": [
+   {
+    "hook": "Gold moves in the morning and every tag in the showroom is wrong.",
+    "does": "Set today's rate once and Jwero reprices every piece by weight, purity, making charge and stones, so the counter and the bill use the same figure.",
+    "changes": "Nobody recalculates tags by hand after a rate change."
+   },
+   {
+    "hook": "A customer pays with old gold, some cash and UPI.",
+    "does": "The billing screen tests and values her old gold, takes it against the new piece, and splits the rest across cash and UPI on one GST bill.",
+    "changes": "One bill instead of a slip, a register entry and a calculator."
+   },
+   {
+    "hook": "A walk-in liked a necklace, left, and nobody called back.",
+    "does": "The showroom register notes each walk-in and what they liked, and lists the ones who left without buying so someone follows up.",
+    "changes": "Lost walk-ins get a second call instead of being forgotten."
+   },
+   {
+    "hook": "A customer's anniversary passes and you only remember afterwards.",
+    "does": "Occasions saved on the customer record come up as a list of who to wish this week, with a ready WhatsApp message.",
+    "changes": "Regulars hear from you on the days that matter to them."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can my staff learn this without a computer person in the shop?",
+    "a": "Billing, tags and customer lookups are on simple screens built for the counter. You can import your existing stock from Excel, and we help you set up rates, making charges and label formats before you go live."
+   },
+   {
+    "q": "Does it handle HUID and hallmarking?",
+    "a": "Yes. Each piece can carry its HUID, and a hallmarking screen tracks what has gone for hallmarking and what has come back. The HUID prints on tags and shows on the piece record when a customer asks."
+   },
+   {
+    "q": "What happens if the internet goes down during billing?",
+    "a": "The billing screen keeps working offline and holds the bills on the device. They sync once the connection is back, so a busy Saturday does not stop because of the router."
+   }
+  ]
+ },
+ "multi-store-chains": {
+  "usecases": [
+   {
+    "hook": "A customer wants a set that is sitting at your other branch.",
+    "does": "Search stock across every branch, then raise a stock transfer that tracks the piece out of one branch and into the other.",
+    "changes": "You sell the piece instead of saying it is not here."
+   },
+   {
+    "hook": "You want today's sales of every branch without phoning managers.",
+    "does": "Dashboards show sales, stock and collections by branch in one place, from the same data the counters bill on.",
+    "changes": "You see every branch from your phone, not from calls."
+   },
+   {
+    "hook": "Branch managers give discounts you never agreed to.",
+    "does": "Discounts above the limit you set wait for approval before the bill goes through, and every approval is logged with who gave it.",
+    "changes": "Big discounts need your yes before they happen."
+   },
+   {
+    "hook": "Month end stock count at each branch never matches.",
+    "does": "Run a count per branch, scan pieces, and Jwero lists what is missing or extra against the book stock for someone to explain.",
+    "changes": "Each branch closes its count with a list, not a guess."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Do all branches share one customer list?",
+    "a": "Yes. A customer who buys at one branch is known at every branch, with her purchases, schemes and occasions on one record, so any salesman can serve her."
+   },
+   {
+    "q": "Can I control what each branch's staff can see and do?",
+    "a": "You create roles with the screens and actions each person needs, such as billing only or stock and reports. Roles are set per user. Very fine branch by branch rules are limited today, so we set this up with you."
+   },
+   {
+    "q": "Can I add a new branch without another software?",
+    "a": "Yes. A new branch is added as a location in the same account, with its own stock, counters and staff, and it appears in your reports straight away."
+   }
+  ]
+ },
+ "franchise-networks": {
+  "usecases": [
+   {
+    "hook": "Franchise partners report sales to you on WhatsApp and calls.",
+    "does": "A franchise screen lists each partner outlet with its sales and stock, from the billing they do in Jwero.",
+    "changes": "You read partner numbers yourself instead of asking for them."
+   },
+   {
+    "hook": "Partners run festival offers in their own words and style.",
+    "does": "Brand templates and a social calendar let head office prepare posts and campaigns that every outlet can use as they are.",
+    "changes": "Every outlet speaks in the brand's voice."
+   },
+   {
+    "hook": "A partner needs a design that only head office stocks.",
+    "does": "Stock transfers move pieces between head office and partner locations with a record of what left and what arrived.",
+    "changes": "Transfers stop being arguments about who sent what."
+   },
+   {
+    "hook": "You need partner staff trained before a new outlet opens.",
+    "does": "The training section holds lessons on purity, hallmarking and selling, and shows who has finished them.",
+    "changes": "New partner staff learn the basics before the opening day."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can each franchise outlet bill on its own while I see everything?",
+    "a": "Yes. Each outlet is a location with its own counter and stock, and head office sees sales and stock across them. What partner staff can open is set by the roles you give them."
+   },
+   {
+    "q": "Can we keep one price list across all outlets?",
+    "a": "Pricing runs from one rate and one set of making charge rules, so every outlet prices the same design the same way unless you set a different rule."
+   },
+   {
+    "q": "Can partners use their own WhatsApp number?",
+    "a": "Chats come into a shared inbox per account. Connecting several numbers depends on how your WhatsApp Business accounts are set up, so we check this with you before you start."
+   }
+  ]
+ },
+ "gold-retail": {
+  "usecases": [
+   {
+    "hook": "Billing a 22K chain means working out rate, weight and making charges.",
+    "does": "Scan the tag and the bill fills in net weight, purity, today's rate, making charge and GST, ready to print.",
+    "changes": "A gold bill takes a scan, not a calculator."
+   },
+   {
+    "hook": "A customer brings her old bangles to exchange for a new necklace.",
+    "does": "Record the old gold's weight and purity at the counter, value it at today's rate, and set it off against the new bill.",
+    "changes": "Old gold exchange is on the bill, not on a separate slip."
+   },
+   {
+    "hook": "Wedding season is near and customers want a monthly gold saving plan.",
+    "does": "Create an instalment scheme with your bonus rules, enrol customers, take payments at the desk and see who has missed an instalment.",
+    "changes": "The desk knows who to call about missed instalments."
+   },
+   {
+    "hook": "A customer needs cash today against her gold chain.",
+    "does": "Girvi loans record the pledged pieces, weight and value, work out interest and handle renewal or release.",
+    "changes": "Loan interest is worked out by the system, not by hand."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "How do you handle HUID on gold pieces?",
+    "a": "Every piece can store its HUID and it prints on the tag and the bill. The hallmarking screen tracks batches sent for hallmarking and what has come back."
+   },
+   {
+    "q": "Can I set different making charges for different designs?",
+    "a": "Yes. Making charges can be per gram, a percentage or a fixed amount, set by category or per design, and the price updates with the day's rate."
+   },
+   {
+    "q": "Do you show how much I owe customers in gold schemes?",
+    "a": "There is a scheme report showing what each enrolled customer has paid and what is due at maturity. Instalment reminders are not sent automatically today; the desk sees who to call."
+   }
+  ]
+ },
+ "diamond-retail": {
+  "usecases": [
+   {
+    "hook": "A customer asks for the certificate of the solitaire she is looking at.",
+    "does": "Each stone is tracked on its own and can be found by certificate number, barcode or tag, with its grading on the record.",
+    "changes": "Staff find the certificate details in seconds."
+   },
+   {
+    "hook": "A customer says her ring came back from repair with a smaller diamond.",
+    "does": "Repair intake records each stone's count, carats and condition with photos before the piece goes to the bench.",
+    "changes": "Repair disputes are settled against what was written at intake."
+   },
+   {
+    "hook": "A family wants to take three diamond sets home before deciding.",
+    "does": "Give the pieces on trial; they stay reserved, cannot be sold twice, and are tracked until bought or returned.",
+    "changes": "You always know which sets are out and with whom."
+   },
+   {
+    "hook": "Diamond stock sits unsold and you do not know for how long.",
+    "does": "Ageing reports show which pieces have been in stock longest and what they are worth today against cost.",
+    "changes": "Slow pieces show up before they become dead stock."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I price diamond jewellery by carat, colour and clarity?",
+    "a": "Yes. Stones carry shape, colour, clarity, cut and rate per carat, and the piece price adds metal, making and stone value. A stone rate grid can be set in settings."
+   },
+   {
+    "q": "Do you keep the certificate with each stone?",
+    "a": "Stones can be registered one by one with their certificate number, and are searchable by certificate, barcode, HUID or tag. You attach the certificate details; Jwero does not fetch them from the lab."
+   },
+   {
+    "q": "Can I send diamond designs to a customer on WhatsApp and see if she opened them?",
+    "a": "Yes. Build a catalogue from your stock, send it as a link, and see who opened it and which pieces they looked at or asked about."
+   }
+  ]
+ },
+ "silver-retail": {
+  "usecases": [
+   {
+    "hook": "Silver items are priced per piece and per gram in the same shop.",
+    "does": "Each product can be priced by weight at today's silver rate or at a fixed price, and the counter bills both the same way.",
+    "changes": "Gram items and fixed price items sit in one bill."
+   },
+   {
+    "hook": "Hundreds of small silver items make counting the stock a headache.",
+    "does": "Barcode tags and a scan based stock count show what is missing against the books for each counter or tray.",
+    "changes": "Counting fast moving silver becomes a scan, not a ledger."
+   },
+   {
+    "hook": "Gifting season brings many first time buyers who never come back.",
+    "does": "Customers are saved at billing and simple journeys send a thank you and a reminder before the next gifting date.",
+    "changes": "First time buyers hear from you again."
+   },
+   {
+    "hook": "You print tags by hand for every new batch of silver.",
+    "does": "Label templates print weight, purity and price from the product record onto barcode tags.",
+    "changes": "Tags come out right the first time."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I keep the silver rate separate from gold?",
+    "a": "Yes. You keep a rate for each metal and purity, and silver items reprice from the silver rate without touching gold. Each purity of silver can have its own rate, and the counter always bills from the rate set for today."
+   },
+   {
+    "q": "Can I sell silver online as well?",
+    "a": "You can open an online store with your products, or connect Shopify or WooCommerce, and stock sold in the shop is reflected online. Products are published to each channel from one screen, so you do not list the same item twice."
+   },
+   {
+    "q": "Can I bring in my existing stock from Excel?",
+    "a": "Yes. The import tool takes your sheet, maps columns to Jwero fields and creates products, so you do not type thousands of items again. We help you check the first import before you go live."
+   }
+  ]
+ },
+ "gemstone-retail": {
+  "usecases": [
+   {
+    "hook": "A customer wants a ruby of a certain weight and origin.",
+    "does": "Stone lots and single stones carry weight, grade and certificate, so staff search the stock by what the customer asks for.",
+    "changes": "Staff answer from stock records, not from memory."
+   },
+   {
+    "hook": "A loose stone is set into a custom ring for a customer.",
+    "does": "Quote the ring with metal, making and the chosen stone, and convert the accepted quote into an order without retyping.",
+    "changes": "The order matches what the customer agreed to."
+   },
+   {
+    "hook": "Stones go out on approval to a customer or another dealer.",
+    "does": "Issue them on memo; Jwero tracks what is out, with whom, and what came back or was sold.",
+    "changes": "Nothing goes out on approval without a record."
+   },
+   {
+    "hook": "A customer asks the rate of a stone on WhatsApp late at night.",
+    "does": "The WhatsApp assistant answers from the knowledge and rules you give it, and hands the chat to staff in the inbox.",
+    "changes": "Late night questions get a reply instead of waiting."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can you track stones by lot as well as one by one?",
+    "a": "Yes. Parcels sit as stone lots with carat balance and grade, and individual stones can be drawn out and tracked on their own with a certificate number."
+   },
+   {
+    "q": "Can a gemstone price be set per carat?",
+    "a": "Yes. Stones can carry a rate per carat or per piece, and the jewellery price adds the stone value to metal and making. When you change a stone rate, pieces that use it reprice without retagging by hand."
+   },
+   {
+    "q": "Do you handle stones I hold for a supplier on consignment?",
+    "a": "Yes. Consignment agreements keep a supplier's stones separate from your own, and you pay only for what sells. Each agreement lists the supplier's pieces, so their stones never appear as your own stock in counts or reports."
+   }
+  ]
+ },
+ "bridal": {
+  "usecases": [
+   {
+    "hook": "A bride's family wants a full set quoted before they decide.",
+    "does": "Build a quote with each piece, its metal, stones and making, share it as a link, and hold the price for the period you set.",
+    "changes": "The family discusses a clear quote at home."
+   },
+   {
+    "hook": "Gold rises and the family wants last week's quoted price.",
+    "does": "Quote settings show how long a price is valid, so staff see whether the old price still holds.",
+    "changes": "Price arguments end with the quote's own terms."
+   },
+   {
+    "hook": "The bride's relatives abroad want to see sets before flying in.",
+    "does": "Book a video appointment and show the sets live, then send a catalogue of the shortlisted pieces.",
+    "changes": "Families abroad can shortlist before they travel."
+   },
+   {
+    "hook": "Bridal appointments are on paper and staff double book.",
+    "does": "Appointments sit in one calendar with a booking link and the staff member assigned.",
+    "changes": "Each family gets a fixed slot and a ready salesman."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can a family take pieces home before buying?",
+    "a": "Yes. Give the pieces on trial; they are reserved so no one else sells them, and you track them until they are bought or returned."
+   },
+   {
+    "q": "Can I take an advance against a bridal order?",
+    "a": "Orders and quotes record advance payments, and the advance is set off against the final bill when the set is delivered. The family sees what they have paid, and the balance is clear at delivery."
+   },
+   {
+    "q": "Can you design bespoke bridal pieces from scratch in Jwero?",
+    "a": "Quoting a custom set and tracking its making is supported. A separate design stage with sketches and approvals is not available yet, so design is agreed outside and the order starts after."
+   }
+  ]
+ },
+ "luxury-boutique": {
+  "usecases": [
+   {
+    "hook": "A valued client walks in and the new salesman does not know her.",
+    "does": "Her record shows past purchases, preferences, occasions and visits, so whoever greets her knows her history.",
+    "changes": "Every client is greeted as a regular."
+   },
+   {
+    "hook": "A client wants a private viewing at a time that suits her.",
+    "does": "Appointments with a booking link, an assigned consultant and video viewings for clients who cannot come.",
+    "changes": "Private viewings are planned, not squeezed in."
+   },
+   {
+    "hook": "Your festival email looks plain next to big brands.",
+    "does": "A visual email editor and campaign tools let you send well designed emails and WhatsApp messages to chosen client groups.",
+    "changes": "Your messages look as fine as your jewellery."
+   },
+   {
+    "hook": "High value pieces leave the safe every morning and evening.",
+    "does": "Open and close each safe with a piece count, so anything missing shows at once.",
+    "changes": "Every opening and closing of the safe is counted."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I send a personal selection to one client?",
+    "a": "Yes. Build a catalogue of chosen pieces, send it as a private link, and see which pieces she looked at and asked about. She can ask about a piece or request a change from the same link, and the request comes to your team."
+   },
+   {
+    "q": "Can clients take pieces home to decide?",
+    "a": "Yes, on trial. The pieces are reserved, tracked by client, and closed as bought or returned. Because the pieces are reserved, no other salesman can sell them while the client is deciding, and you see at a glance which pieces are out."
+   },
+   {
+    "q": "Is client data kept private from all staff?",
+    "a": "Access is controlled by roles you assign, so you decide which staff can see client records and reports. A salesman can be given billing and his own clients only, while owners see everything. We help you set the roles up at the start."
+   }
+  ]
+ },
+ "lab-grown-diamond": {
+  "usecases": [
+   {
+    "hook": "Customers ask whether a stone is lab grown and want proof.",
+    "does": "Each stone is recorded with its type, grading and certificate number, shown on the piece and the bill.",
+    "changes": "Staff answer with the stone's own record."
+   },
+   {
+    "hook": "Lab grown prices keep falling and old tags are now too high.",
+    "does": "Update stone rates per carat and Jwero reprices pieces that use them, along with metal and making.",
+    "changes": "Tags follow the market without retagging by hand."
+   },
+   {
+    "hook": "Young buyers find you on Instagram and ask the price in comments.",
+    "does": "Comments and messages land in one place, with automatic replies for common questions like price.",
+    "changes": "Interest from reels turns into a conversation."
+   },
+   {
+    "hook": "You want to sell online but listing every design takes hours.",
+    "does": "Publish products from Jwero to your own store, Shopify or marketplaces from one screen.",
+    "changes": "One product record feeds every channel."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I keep lab grown and natural stones clearly separate?",
+    "a": "Yes. Stones carry their own type and certificate on the record, and you can use separate categories so they never mix in stock or reports."
+   },
+   {
+    "q": "Can I run ads for my collections from Jwero?",
+    "a": "Jwero suggests ad ideas around festivals and occasions, and shows campaign results from connected Meta accounts. You can also edit a running Meta ad from Jwero, and see past learnings before the next festival."
+   },
+   {
+    "q": "Do you fetch certificates from the grading lab?",
+    "a": "No. You enter the certificate number and details when stones come in. Jwero then lets anyone search by that number. Many shops scan or type the number as stock arrives, so the record is ready when a customer asks."
+   }
+  ]
+ },
+ "jewellery-brands": {
+  "usecases": [
+   {
+    "hook": "Your stores, website and marketplaces each show a different stock.",
+    "does": "One stock record feeds billing, your store and connected channels, so a piece sold in one place is off the others.",
+    "changes": "Customers stop ordering pieces you have already sold."
+   },
+   {
+    "hook": "Every post and campaign looks a little different.",
+    "does": "Brand templates, creative packs and an approval queue keep posts on brand before they go out.",
+    "changes": "Nothing goes out that you have not approved."
+   },
+   {
+    "hook": "You run festival offers but cannot tell if anyone came.",
+    "does": "Campaign reports show who received, opened and replied, and which of them bought afterwards.",
+    "changes": "You judge offers by sales, not by feeling."
+   },
+   {
+    "hook": "Loyal customers get nothing for coming back.",
+    "does": "A loyalty programme adds points at billing and shows each customer her balance.",
+    "changes": "Coming back is rewarded at every bill."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I run more than one brand from one account?",
+    "a": "Yes. Brands are set up under the same organisation, each with its own locations and products, with reports across all of them. Staff can be given access to the brands they work on."
+   },
+   {
+    "q": "Can you sync with Google Shopping?",
+    "a": "Not yet. Jwero connects to Shopify, WooCommerce and Indian marketplaces, but Google Shopping sync is not available today. If Google Shopping matters to you, tell us; until then, listings there are managed outside Jwero."
+   },
+   {
+    "q": "Can you show me which customers have stopped buying?",
+    "a": "Yes. Customer reports group buyers by how recently, how often and how much they buy, so you can target those drifting away. You can then send that group a message or offer from the same place."
+   }
+  ]
+ },
+ "d2c-brands": {
+  "usecases": [
+   {
+    "hook": "People add a pendant to cart and leave without paying.",
+    "does": "Abandoned carts are listed with the customer and items, so you can follow up on WhatsApp or email.",
+    "changes": "Half finished orders get a second chance."
+   },
+   {
+    "hook": "Online orders come in by email and get lost.",
+    "does": "Store orders land in one order list with payment, status and dispatch.",
+    "changes": "Every online order has an owner and a status."
+   },
+   {
+    "hook": "Parcels leave and nobody notices one stuck in transit.",
+    "does": "The dispatch screen shows what is ready to ship and what has stopped moving after it left.",
+    "changes": "Stuck parcels show up before the customer complains."
+   },
+   {
+    "hook": "You want a special page for a new collection launch.",
+    "does": "Build landing pages for collections on your Jwero store without a developer.",
+    "changes": "Launches get their own page on time."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Do I need Shopify, or can Jwero run my store?",
+    "a": "Either. Jwero has its own store with domains, design and orders, or you can connect Shopify or WooCommerce and keep stock in sync. Store orders, abandoned carts and landing pages are all managed in Jwero."
+   },
+   {
+    "q": "Can I see what visitors do on my website?",
+    "a": "Yes. Website analytics and heatmaps show which pages and products visitors look at, and forms and chat capture their numbers. You can also test two offer banners and see which one gets more responses."
+   },
+   {
+    "q": "Can customers ask questions on WhatsApp and get answers at night?",
+    "a": "Yes. An AI assistant answers from what you teach it, within limits you set, and staff see every conversation in the inbox. You set what it may and may not promise, such as discounts."
+   }
+  ]
+ },
+ "startups": {
+  "usecases": [
+   {
+    "hook": "You have stock in an Excel sheet and no software yet.",
+    "does": "Import the sheet, map the columns and Jwero creates your products with weights, purity and prices.",
+    "changes": "You start with your real stock on day one."
+   },
+   {
+    "hook": "You cannot afford separate tools for billing, WhatsApp and a website.",
+    "does": "Billing, stock, customer chats, catalogues and an online store run from one account.",
+    "changes": "One login instead of five tools."
+   },
+   {
+    "hook": "You do not know what to post on Instagram today.",
+    "does": "Jwero suggests what to post, plans a calendar, and keeps posts in your brand templates.",
+    "changes": "You post regularly without a social media person."
+   },
+   {
+    "hook": "Your CA asks for GST figures at month end.",
+    "does": "GSTR-1 and GSTR-3B summaries come from your bills and purchases.",
+    "changes": "GST figures are ready when your CA asks."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I start small and add features later?",
+    "a": "Yes. You can begin with billing and stock and switch on schemes, manufacturing, marketing or an online store when you need them. Your data stays in one account, so nothing has to be moved when you grow."
+   },
+   {
+    "q": "Can my accountant keep using Tally?",
+    "a": "Yes. Your accountant can keep Tally. Entries do not post into Tally automatically today; reports and ledgers can be exported for them. GST summaries, ledgers, profit and loss and balance sheet are also available in Jwero itself."
+   },
+   {
+    "q": "Will WhatsApp templates get approved?",
+    "a": "Jwero comes with starter templates written to pass WhatsApp's rules, and a template builder that shows what is likely to be rejected. Final approval is always WhatsApp's decision, so a rejection can still happen."
+   }
+  ]
+ },
+ "gold-wholesale": {
+  "usecases": [
+   {
+    "hook": "Retailers take stock on approval and you lose track of it.",
+    "does": "Issue pieces on memo to each retailer; Jwero shows what is out, what came back and what turned into a sale.",
+    "changes": "You know what every retailer is holding."
+   },
+   {
+    "hook": "Retailers settle partly in fine gold, partly in money.",
+    "does": "Party ledgers keep both a metal balance and a money balance for each customer and supplier.",
+    "changes": "Gold and money accounts stay side by side."
+   },
+   {
+    "hook": "You show new designs to retailers on WhatsApp one photo at a time.",
+    "does": "Send a catalogue link of your designs and see which retailers opened it and what they asked about.",
+    "changes": "Retailers browse your range in one link."
+   },
+   {
+    "hook": "You are not sure which retailers still owe you.",
+    "does": "Ageing reports show who owes what and for how long.",
+    "changes": "Collection calls start from a list."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I track fine gold balances with each retailer?",
+    "a": "Yes. Each party has a metal account alongside money, so fine gold given and received shows as a running balance. You can see a party's balance in fine weight at any time, before settling with them."
+   },
+   {
+    "q": "Do you generate e-invoices and e-way bills?",
+    "a": "E-invoice JSON can be downloaded and uploaded to the portal, and the IRN recorded back on the bill. E-way bills are not available in Jwero yet."
+   },
+   {
+    "q": "Can I share designs with retailers who also use Jwero?",
+    "a": "Yes. The design bank lets you share designs with other organisations under access rules and prices you set. Retailers who do not use Jwero can be sent a catalogue link instead."
+   }
+  ]
+ },
+ "diamond-wholesale": {
+  "usecases": [
+   {
+    "hook": "Diamond parcels need to be tracked by carat as stones are drawn out.",
+    "does": "Stone lots hold carat and count balances, and single stones can be split out and tracked with certificates.",
+    "changes": "Parcel balances stay right after every draw."
+   },
+   {
+    "hook": "Jewellers take diamonds on memo and return some weeks later.",
+    "does": "Issue on memo to each buyer, then close lines as sold or returned.",
+    "changes": "Memo stock is never mixed up with sold stock."
+   },
+   {
+    "hook": "You show stock at a trade exhibition and need every piece back.",
+    "does": "Create an exhibition, send stock to it, and check every piece back or sold.",
+    "changes": "Nothing goes missing between the show and the office."
+   },
+   {
+    "hook": "A buyer asks for stones by size and quality.",
+    "does": "Search lots and stones by grade, size and certificate number.",
+    "changes": "Quotes start from real stock, not memory."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can stones be searched by certificate number?",
+    "a": "Yes. Each stone drawn from a parcel can be searched by certificate, barcode or tag. Each stone keeps its own record, including where it is now and which parcel it came from."
+   },
+   {
+    "q": "Can I merge returned stones back into a parcel?",
+    "a": "Lots can be split today. Merging returned stones back into a parent lot is not available yet. Returned stones can still be recorded as their own lot, and their carats are tracked, but they stay separate from the original parcel."
+   },
+   {
+    "q": "Do you handle stones held for another supplier?",
+    "a": "Yes. Consignment agreements keep a supplier's goods apart from your own until sold. Each agreement lists the supplier's stones, you pay only for what you sell, and the rest goes back on record."
+   }
+  ]
+ },
+ "diamond-traders": {
+  "usecases": [
+   {
+    "hook": "Stones change hands daily and the memo book is your only record.",
+    "does": "Every memo is recorded with the party, stones and date, and shows what is still out.",
+    "changes": "Who has what is a screen, not a book."
+   },
+   {
+    "hook": "You buy parcels and need a clear account with each supplier.",
+    "does": "Purchase orders, receipts and supplier ledgers track what was ordered, received and owed.",
+    "changes": "Supplier accounts are clear at any time."
+   },
+   {
+    "hook": "A buyer wants stones of a certain grade urgently.",
+    "does": "Search lots and single stones by grade, size and certificate.",
+    "changes": "You answer the buyer while he is still on the call."
+   },
+   {
+    "hook": "Stones go to a show and must all come back or be sold.",
+    "does": "Exhibition stock is tracked out and back, with sales recorded against it.",
+    "changes": "Show stock closes cleanly."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I record stones taken on memo from another trader?",
+    "a": "Yes. Goods held for a supplier are recorded under a consignment agreement and kept apart from your own stock. Stones you give out on memo are tracked separately, so you see both sides."
+   },
+   {
+    "q": "Does Jwero fetch grading reports from labs?",
+    "a": "No. You enter certificate numbers and grading when stones arrive, and can search by them later. The certificate number stays with the stone through memo, sale and return, so anyone in the office can find it."
+   },
+   {
+    "q": "Can I see who owes me money and for how long?",
+    "a": "Yes. Ageing and party ledger reports show each party's dues and how old they are. You can also see what you owe suppliers in the same way, and each party's full ledger is one click away."
+   }
+  ]
+ },
+ "bullion-gold-traders": {
+  "usecases": [
+   {
+    "hook": "Gold given and taken back from parties is tracked in a notebook.",
+    "does": "Metal loans and metal balances show fine gold given and taken with each party.",
+    "changes": "Each party's gold balance is on one screen."
+   },
+   {
+    "hook": "Bars and lots of different purity sit together in the safe.",
+    "does": "Metal lots record weight and purity, and can be split or merged as they move.",
+    "changes": "You know the purity of every lot you hold."
+   },
+   {
+    "hook": "Safes are opened many times a day.",
+    "does": "Each opening and closing of a safe is recorded with a count.",
+    "changes": "Any shortfall shows at the next count."
+   },
+   {
+    "hook": "Your CA asks for GST figures every month.",
+    "does": "GSTR-1 and GSTR-3B summaries come from your bills.",
+    "changes": "Returns start from figures you already have."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I keep metal and money balances per party?",
+    "a": "Yes. Every party has a metal account alongside the money ledger. Fine gold given or taken shows as a running balance, so you settle with each party from the same figures they see on your statement."
+   },
+   {
+    "q": "Do you reconcile physical metal against the books?",
+    "a": "Not yet. Jwero shows book balances of metal per party and lot, but a physical metal count and reconciliation screen is not available today. Your physical count still needs to be done outside Jwero for now."
+   },
+   {
+    "q": "Do you handle e-way bills?",
+    "a": "Not yet. E-invoice JSON can be downloaded for the portal and the IRN recorded back, but e-way bills are not built. Until then, e-way bills are made on the government portal."
+   }
+  ]
+ },
+ "b2b-jewellery": {
+  "usecases": [
+   {
+    "hook": "Retail buyers want to see your range without visiting.",
+    "does": "Send a catalogue link of chosen designs and see who opened it and what they asked for.",
+    "changes": "Buyers shortlist from your link."
+   },
+   {
+    "hook": "Stock goes to retailers on approval.",
+    "does": "Memo issue tracks every piece out, back or sold, by retailer.",
+    "changes": "Approval stock is accounted for by retailer."
+   },
+   {
+    "hook": "A retailer orders from your catalogue and wants changes.",
+    "does": "Catalogue enquiries and orders come into one list, with requested changes noted.",
+    "changes": "Orders are not lost in chat threads."
+   },
+   {
+    "hook": "Retailers settle in gold and money.",
+    "does": "Party ledgers keep metal and money balances for each retailer.",
+    "changes": "Settlement talks start from the same numbers."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I share designs with retailers who also use Jwero?",
+    "a": "Yes. The design bank shares designs with other organisations under access and price rules you set. Retailers who do not use Jwero can be sent a catalogue link instead."
+   },
+   {
+    "q": "Can I track which retailers owe me money?",
+    "a": "Yes. Ageing reports list who owes what and since when. Each retailer's full ledger, with metal and money balances, is one click away, so collection calls start from a clear figure."
+   },
+   {
+    "q": "Can I show my range at trade exhibitions?",
+    "a": "Yes. Exhibition stock is sent out and checked back or sold, piece by piece. Sales made at the show are recorded against it, so when you return, any piece not sold or brought back shows up straight away."
+   }
+  ]
+ },
+ "export-houses": {
+  "usecases": [
+   {
+    "hook": "Stock goes to an overseas trade show and must all come back.",
+    "does": "Exhibitions track every piece sent to a show until it is sold or returned.",
+    "changes": "Show stock closes piece by piece."
+   },
+   {
+    "hook": "A buyer abroad wants to see new designs before ordering.",
+    "does": "Send a catalogue link and see which designs they viewed and asked about.",
+    "changes": "Buyers abroad shortlist without samples."
+   },
+   {
+    "hook": "Production for an export order is late and nobody knows the stage.",
+    "does": "Production orders show each job's current stage and what is still in work.",
+    "changes": "You give the buyer a real status."
+   },
+   {
+    "hook": "Finished pieces need checking before they are packed.",
+    "does": "Finished goods receipts pass through quality checks before stock is released.",
+    "changes": "Pieces are checked before they ship."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Does Jwero prepare export documents like shipping bills?",
+    "a": "Not yet. Export paperwork such as shipping bills is not built today, so it stays with your customs agent. Jwero still holds the order, production and stock for the shipment."
+   },
+   {
+    "q": "Can I track gold given to karigars for an export order?",
+    "a": "Yes. Metal issued to karigars is recorded against the job, with returns and wastage, and settled at month end. Each karigar has a running metal account you can check any day."
+   },
+   {
+    "q": "Can I see the cost of each export order?",
+    "a": "Bills of material and routings set the expected metal, stones and labour, and production orders track what was actually used. Comparing the two shows where metal or stones went over what was planned."
+   }
+  ]
+ },
+ "manufacturers": {
+  "usecases": [
+   {
+    "hook": "Gold given to karigars is tracked in a notebook.",
+    "does": "Issue metal to a karigar against a job, record returns and wastage, and keep a running metal account per karigar.",
+    "changes": "Each karigar's gold balance is on screen."
+   },
+   {
+    "hook": "A custom order is late and nobody knows which stage it is at.",
+    "does": "Production orders move through stages with work in progress shown by stage.",
+    "changes": "Status questions get a real answer."
+   },
+   {
+    "hook": "Karigar settlement at month end ends in arguments.",
+    "does": "Settlements bring together metal issued, returned, wastage and labour for each karigar.",
+    "changes": "Settlements start from records both sides can see."
+   },
+   {
+    "hook": "Dust and scrap from the workshop are never accounted for.",
+    "does": "Recovery records dust, filings and scrap sent for melting and refining, and what came back.",
+    "changes": "Recovered gold is recorded, not guessed."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Does it handle karigar TDS?",
+    "a": "Yes. Karigars have a directory with their details, and a TDS screen for deductions on their labour payments. Settlements bring together metal, wastage and labour for each karigar."
+   },
+   {
+    "q": "Can I control stone loss at setting?",
+    "a": "Partly. Stones are issued from lots by carat, but per stage stone counts at setting are not tracked yet, so stone loss is checked at finished goods."
+   },
+   {
+    "q": "Can I define the process each design goes through?",
+    "a": "Yes. Routing templates set the stages, and bills of material set the metal and stones, for each design. Production orders then follow those stages, so you see work in progress by stage."
+   }
+  ]
+ },
+ "oem-manufacturers": {
+  "usecases": [
+   {
+    "hook": "Brands send their own gold to be made into jewellery.",
+    "does": "Production orders mark whether the metal is yours or the customer's, so their gold is kept apart.",
+    "changes": "A brand's gold never mixes with yours."
+   },
+   {
+    "hook": "A brand asks where its order is today.",
+    "does": "Production orders show each job's stage and what is still in work.",
+    "changes": "You answer the brand from the screen."
+   },
+   {
+    "hook": "Finished pieces need checking before they go back to the brand.",
+    "does": "Finished goods receipts go through quality checks before release.",
+    "changes": "Only checked pieces go back."
+   },
+   {
+    "hook": "Brands want to see your designs to choose from.",
+    "does": "The design bank shares your designs with brands under access and price rules.",
+    "changes": "Brands choose from your range directly."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I keep the brand's metal separate from mine?",
+    "a": "Yes. Production orders record whether the metal belongs to you or the customer. A separate liability report for customer metal held is not available yet."
+   },
+   {
+    "q": "Can I track metal given to outside karigars?",
+    "a": "Yes. Job work issues record metal sent, returns and wastage, and each karigar has a metal account. Settlements at month end start from these records, which reduces arguments."
+   },
+   {
+    "q": "Can I plan capacity across benches?",
+    "a": "Not yet. Stages and standard hours exist, but bench capacity planning and promise dates are not built. For now, you see work in progress by stage, which shows where jobs are piling up."
+   }
+  ]
+ },
+ "casting-units": {
+  "usecases": [
+   {
+    "hook": "Metal goes into each casting batch and you need it accounted for.",
+    "does": "Issue metal from lots against work orders and record what comes back after casting.",
+    "changes": "Every batch's metal is on record."
+   },
+   {
+    "hook": "Lots of different purity get mixed in the casting room.",
+    "does": "Metal lots record purity and weight, and can be split or merged as they move.",
+    "changes": "Purity is known for every lot."
+   },
+   {
+    "hook": "Sprues, dust and scrap pile up after casting.",
+    "does": "Recovery records scrap and dust sent for melting and refining, and the metal that came back.",
+    "changes": "Recovered metal is written down, not assumed."
+   },
+   {
+    "hook": "A jeweller asks where his casting order is.",
+    "does": "Production orders show each job's current stage.",
+    "changes": "You answer with a status, not a guess."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I record wastage per casting job?",
+    "a": "Yes. Work orders record metal in and out, and wastage over normal is flagged. Flags do not block a job today, so a supervisor reviews them."
+   },
+   {
+    "q": "Can I keep a customer's metal separate from mine?",
+    "a": "Production orders mark whether the metal is yours or the customer's. A separate report of customer metal held is not available yet. Each order still shows whose metal it uses."
+   },
+   {
+    "q": "Can I run a physical metal count?",
+    "a": "Not yet. Book balances by lot and party are shown, but a physical metal count screen is not built. Physical counts are done outside Jwero for now and compared to the book balances by hand."
+   }
+  ]
+ },
+ "cad-services": {
+  "usecases": [
+   {
+    "hook": "Jewellers ask to see your designs before they order.",
+    "does": "The design bank shares designs with other organisations under access and price rules you set.",
+    "changes": "Clients browse your designs in one place."
+   },
+   {
+    "hook": "A client asks the price of a design in different metals.",
+    "does": "Quotes list the design with metal, weight and making, and can be shared as a link.",
+    "changes": "Clients get a clear quote, not a chat message."
+   },
+   {
+    "hook": "Client requests come on WhatsApp from many numbers.",
+    "does": "Chats land in one shared inbox where any staff member can reply.",
+    "changes": "No request is lost in a personal phone."
+   },
+   {
+    "hook": "Some designs are popular and others are never picked.",
+    "does": "Design bank analytics show which designs clients view and adopt.",
+    "changes": "You know which designs to make more of."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I store CAD files and versions in Jwero?",
+    "a": "Not yet. Designs carry a reference, but CAD file storage with version history is not built today. Keep CAD files in your current storage and note the reference on the design in Jwero."
+   },
+   {
+    "q": "Can clients adopt my designs into their own catalogue?",
+    "a": "Yes, if they also use Jwero. The design bank lets them see and adopt designs under the terms you set. You decide who can see each design and at what price."
+   },
+   {
+    "q": "Can I track a design job's progress?",
+    "a": "Production orders track stages for making. A separate design approval stage is not available yet. Design approvals are handled outside Jwero for now, and the order starts once the design is final."
+   }
+  ]
+ }
+}

@@ -90,8 +90,8 @@ const diamondRetailFaqs = [
 
 const diamondRetail = {
   slug: 'solutions/diamond-retail',
-  title: 'Diamond Jewellery Retail Software: Certificates and Stock | Jwero',
-  description: 'Certificate-aware catalogue and AI that answers 4C questions instantly — for a trust-first, high-ticket, slow-moving category.',
+  title: 'Diamond Jewellery Retail Software: Certificates | Jwero',
+  description: 'Diamond jewellery retail software: a certificate-aware catalogue and quick answers to 4C questions, for a high-ticket, trust-first category.',
   breadcrumbs: BC('Diamond retail'),
   faqs: diamondRetailFaqs,
   body: `
@@ -130,8 +130,8 @@ const goldRetailFaqs = [
 
 const goldRetail = {
   slug: 'solutions/gold-retail',
-  title: 'Gold Jewellery Shop Software: Live Rate, Schemes, Exchange | Jwero',
-  description: 'Live-rate pricing, scheme enrolment and old-gold exchange in one flow — for a business where the rate changes twice a day.',
+  title: 'Gold Jewellery Shop Software: Live Rate, Schemes | Jwero',
+  description: 'Gold jewellery shop software: live-rate pricing, gold scheme enrolment and old-gold exchange in one flow, for a business where the rate keeps moving.',
   breadcrumbs: BC('Gold retail'),
   faqs: goldRetailFaqs,
   body: `
@@ -171,7 +171,7 @@ const silverRetailFaqs = [
 const silverRetail = {
   slug: 'solutions/silver-retail',
   title: 'Silver Jewellery Billing Software: Weight Sales and Lots | Jwero',
-  description: 'Fast catalogue, fast reorder, high volume — automated for silver’s velocity and thin margins.',
+  description: 'Silver jewellery shop software for fast catalogues, quick reorders and high-volume billing by weight, built for silver’s speed and thin margins.',
   breadcrumbs: BC('Silver retail'),
   faqs: silverRetailFaqs,
   body: `
@@ -245,7 +245,7 @@ const gemstoneRetailFaqs = [
 const gemstoneRetail = {
   slug: 'solutions/gemstone-retail',
   title: 'Gemstone Inventory & Retail Software for Jewellers | Jwero',
-  description: 'Provenance-rich catalogue and occasion-aware CRM journeys — every stone has a story, and Jwero keeps both.',
+  description: 'Gemstone retail software: a catalogue that keeps each stone’s details and certificate, with customer follow-ups timed to birthdays and occasions.',
   breadcrumbs: BC('Gemstone retail'),
   faqs: gemstoneRetailFaqs,
   body: `

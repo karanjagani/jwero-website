@@ -8250,7 +8250,7 @@ A: Training is role-based and staged with the rollout, each branch gets the same
 
 ---
 
-# Jewellery Manufacturing & Wholesale Software: Job Work, Gold Loss
+# Jewellery Manufacturing Software: Job Work, Gold Loss
 URL: https://jwero.ai/solutions/manufacturers
 
 Work-in-progress tracking with per-stage gold-loss norms, artisan job-work control, assay-verified intake, and B2B catalogue distribution to retail buyers.
@@ -8578,10 +8578,10 @@ A: It won’t happen then, a season change-freeze policy means we never touch a 
 
 ---
 
-# Diamond Jewellery Retail Software: Certificates and Stock
+# Diamond Jewellery Retail Software: Certificates
 URL: https://jwero.ai/solutions/diamond-retail
 
-Certificate-aware catalogue and AI that answers 4C questions instantly, for a trust-first, high-ticket, slow-moving category.
+Diamond jewellery retail software: a certificate-aware catalogue and quick answers to 4C questions, for a high-ticket, trust-first category.
 
 FOR DIAMOND RETAIL
 
@@ -8664,10 +8664,10 @@ A: The AI handles the first response and routine follow-up; your team still clos
 
 ---
 
-# Gold Jewellery Shop Software: Live Rate, Schemes, Exchange
+# Gold Jewellery Shop Software: Live Rate, Schemes
 URL: https://jwero.ai/solutions/gold-retail
 
-Live-rate pricing, scheme enrolment and old-gold exchange in one flow, for a business where the rate changes twice a day.
+Gold jewellery shop software: live-rate pricing, gold scheme enrolment and old-gold exchange in one flow, for a business where the rate keeps moving.
 
 FOR GOLD RETAIL
 
@@ -8757,7 +8757,7 @@ A: Prices resolve live at the moment they’re shown or invoiced, not cached fro
 # Silver Jewellery Billing Software: Weight Sales and Lots
 URL: https://jwero.ai/solutions/silver-retail
 
-Fast catalogue, fast reorder, high volume, automated for silver’s velocity and thin margins.
+Silver jewellery shop software for fast catalogues, quick reorders and high-volume billing by weight, built for silver’s speed and thin margins.
 
 FOR SILVER RETAIL
 
@@ -8923,7 +8923,7 @@ A: Keep Shopify, the connector syncs products and orders. Jwero adds the WhatsAp
 # Gemstone Inventory & Retail Software for Jewellers
 URL: https://jwero.ai/solutions/gemstone-retail
 
-Provenance-rich catalogue and occasion-aware CRM journeys, every stone has a story, and Jwero keeps both.
+Gemstone retail software: a catalogue that keeps each stone’s details and certificate, with customer follow-ups timed to birthdays and occasions.
 
 FOR GEMSTONE RETAIL
 
@@ -9127,10 +9127,10 @@ A: The system holds the record; your team still holds the relationship. It repla
 
 ---
 
-# Gold Wholesale Software: Rate-Linked Orders, Party Ledgers
+# Gold Wholesale Software: Rate-Linked Orders
 URL: https://jwero.ai/solutions/gold-wholesale
 
-Rate-linked B2B ordering and ledger clarity per buyer, quote at the live rate in seconds and track every order to delivery.
+Gold wholesale software: quote buyers at the live rate in seconds, keep a clear ledger per party, and track every order through to delivery.
 
 FOR GOLD WHOLESALE
 
@@ -9201,10 +9201,10 @@ A: Every quote is recorded with the rate and terms at the moment it was made, th
 
 ---
 
-# Jewellery Wholesale & B2B Software: Catalogue App, Memo, Orders
+# Jewellery B2B Software: Catalogue, Memo, Orders
 URL: https://jwero.ai/solutions/b2b-jewellery
 
-One catalogue, many buyers, tiered prices, orders captured while you sleep. Covers silver, gemstone and pearl wholesale trade.
+Jewellery wholesale and B2B software: one catalogue for many buyers, tiered prices and orders captured day and night, for gold, silver and gems.
 
 FOR B2B JEWELLERY TRADE
 
@@ -9305,10 +9305,10 @@ A: The math usually favours it, the AI workforce absorbs the follow-up load acro
 
 ---
 
-# Jewellery Casting Software: Flasks, Metal Loss, Job Work
+# Jewellery Casting Software: Flasks and Metal Loss
 URL: https://jwero.ai/solutions/casting-units
 
-Batch and work-in-progress tracking tuned to casting workflows, every tree, every flask, accounted, with loss norms per stage.
+Jewellery casting software: track every tree and flask through work in progress, with metal-loss norms per stage and job work accounted.
 
 FOR CASTING UNITS
 
@@ -9377,10 +9377,10 @@ A: Issue and receipt records are the minimum a disciplined casting floor already
 
 ---
 
-# Software for Jewellery CAD Studios: Briefs, Approvals, Handoff
+# Software for Jewellery CAD Studios
 URL: https://jwero.ai/solutions/cad-services
 
-CAD job intake, approval and production handoff with client communication on WhatsApp, nothing lost between design revision and job file.
+Software for jewellery CAD studios: job intake, client approvals on WhatsApp and production handoff, so nothing is lost between revision and file.
 
 FOR CAD SERVICES
 
@@ -9449,10 +9449,10 @@ A: The same WhatsApp conversation now attaches to a structured job record instea
 
 ---
 
-# OEM Jewellery Manufacturing Software: Client-Wise Job Work
+# OEM Jewellery Manufacturing Software: Job Work
 URL: https://jwero.ai/solutions/oem-manufacturers
 
-Multi-client job-work: client-wise WIP, specs and settlement, your buyers’ brands, run cleanly on your system.
+OEM jewellery manufacturing software for multi-client job work: client-wise work in progress, specs and settlement, run cleanly on one system.
 
 FOR OEM MANUFACTURERS
 
@@ -9521,10 +9521,10 @@ A: The record stays separated even if the physical workflow shares equipment, jo
 
 ---
 
-# Jewellery Export Software: Orders, Production, Buyer Currency
+# Jewellery Export Software: Orders to Shipment
 URL: https://jwero.ai/solutions/export-houses
 
-Order-to-shipment tracking with documentation trails, and 24/7 buyer replies across timezones, export-grade process discipline.
+Jewellery export software: track each buyer order through production to shipment, and answer overseas buyers on WhatsApp across time zones.
 
 FOR EXPORT HOUSES
 
@@ -9681,10 +9681,10 @@ A: Deal capture is built to be fast at the point of agreement, not a paperwork s
 
 ---
 
-# Software for Jewellery Brands: Multi-Channel, Multi-Partner
+# Software for Jewellery Brands: Every Channel
 URL: https://jwero.ai/solutions/jewellery-brands
 
-One brand voice across every counter and channel: central catalogue, brand-controlled campaigns and distributor visibility.
+Software for jewellery brands: one central catalogue, brand-controlled campaigns and visibility of every counter, channel and distributor.
 
 FOR JEWELLERY BRANDS
 
@@ -9861,7 +9861,7 @@ A: It replaces the gap between them, not the tools themselves, the WhatsApp/Inst
 # Jewellery Software for Startups & New Jewellers
 URL: https://jwero.ai/solutions/startups
 
-Start with the system chains took decades to build, the full operating system from day one, priced for a first store.
+Jewellery software for startups and new jewellers: the full system chains took years to build, from day one, priced for a first store.
 
 FOR STARTUPS & FIRST-TIME FOUNDERS
 
@@ -9940,10 +9940,10 @@ A: Entry pricing is structured for exactly this stage, with monthly billing and 
 
 ---
 
-# Jewellery Franchise Software: Brand Control, Store Freedom
+# Jewellery Franchise Software: Brand and Store
 URL: https://jwero.ai/solutions/franchise-networks
 
-Franchisor control, franchisee freedom: brand-level catalogue and pricing governance with store-level flexibility.
+Jewellery franchise software: the brand controls catalogue and pricing, each franchise store keeps its own counter, stock and customers.
 
 FOR FRANCHISE NETWORKS
 

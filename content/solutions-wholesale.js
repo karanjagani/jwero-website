@@ -56,8 +56,8 @@ const goldWholesaleFaqs = [
 
 const goldWholesale = {
   slug: 'solutions/gold-wholesale',
-  title: 'Gold Wholesale Software: Rate-Linked Orders, Party Ledgers | Jwero',
-  description: 'Rate-linked B2B ordering and ledger clarity per buyer — quote at the live rate in seconds and track every order to delivery.',
+  title: 'Gold Wholesale Software: Rate-Linked Orders | Jwero',
+  description: 'Gold wholesale software: quote buyers at the live rate in seconds, keep a clear ledger per party, and track every order through to delivery.',
   breadcrumbs: BC('Gold wholesale'),
   faqs: goldWholesaleFaqs,
   body: `
@@ -90,8 +90,8 @@ const b2bJewelleryFaqs = [
 
 const b2bJewellery = {
   slug: 'solutions/b2b-jewellery',
-  title: 'Jewellery Wholesale & B2B Software: Catalogue App, Memo, Orders | Jwero',
-  description: 'One catalogue, many buyers, tiered prices — orders captured while you sleep. Covers silver, gemstone and pearl wholesale trade.',
+  title: 'Jewellery B2B Software: Catalogue, Memo, Orders | Jwero',
+  description: 'Jewellery wholesale and B2B software: one catalogue for many buyers, tiered prices and orders captured day and night, for gold, silver and gems.',
   breadcrumbs: BC('B2B jewellery'),
   faqs: b2bJewelleryFaqs,
   body: `

@@ -231,7 +231,7 @@ ${L.ctaBand('Start with one branch.', 'Pick your toughest store. If the pilot do
 
 const manufacturers = {
   slug: 'solutions/manufacturers',
-  title: 'Jewellery Manufacturing & Wholesale Software: Job Work, Gold Loss | Jwero',
+  title: 'Jewellery Manufacturing Software: Job Work, Gold Loss | Jwero',
   description: 'Work-in-progress tracking with per-stage gold-loss norms, artisan job-work control, assay-verified intake, and B2B catalogue distribution to retail buyers.',
   breadcrumbs: BC('Manufacturers'),
   faqs: [

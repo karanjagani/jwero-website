@@ -224,6 +224,8 @@ const NAV = [
 const { icon, LINK_ICONS, heroSchematic, PERSONAS, personaSwitch, mark } = require('./lib');
 const TRIAL_URL_B = require('./lib').TRIAL_URL;
 // Use cases per product page (content/usecases.json), from the product's own documentation.
+const SEGMENTS = (() => { try { return require('./content/segments.json'); } catch (e) { return {}; } })();
+const SEGMENT_FAQ = Object.fromEntries(Object.entries(SEGMENTS).map(([k, v]) => ['solutions/' + k, (v.faqs || []).map(({ q, a }) => ({ q, a }))]));
 const USECASES = (() => { try { return require('./content/usecases.json'); } catch (e) { return {}; } })();
 
 // Primary navigation for the positioning "You focus on jewellery. We handle the
@@ -400,7 +402,35 @@ function inShortQuestion(page) {
   if (/^(software )?for /i.test(kw)) return `What does Jwero do ${kw.replace(/^software /i, '')}?`;
   return `What does Jwero’s ${kw} do?`;
 }
+// Hub and pain pages answer their own question in one paragraph.
+const HUB_SHORT = {
+  solutions: { q: 'Which Jwero setup fits my kind of jewellery business?', a: 'Jwero is one system for every kind of jewellery business: single stores, chains, franchises, gold, diamond and silver retail, wholesale, traders and manufacturers. Each business type switches on the parts it needs first. Run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s specialists and AI run it for you.' },
+  'solutions/pain': { q: 'What are the most common leaks in a jewellery business?', a: 'Enquiries that never get a reply or a follow-up, and stock that sits unsold for months, are the two leaks most jewellers never measure. Jwero shows both on one record: every enquiry from every channel with its follow-up, and every piece with its age and value at today’s rate.' },
+  'solutions/pain/lead-leakage': { q: 'How do jewellers stop losing enquiries?', a: 'Put every enquiry from WhatsApp, Instagram, the website and calls into one inbox on the customer’s record, answer it within minutes, and keep a follow-up open until it becomes a bill or is closed with a reason. Jwero does this, with AI drafting replies and follow-ups that wait for your approval.' },
+  'solutions/pain/dead-stock': { q: 'How do jewellers reduce dead stock?', a: 'Know the age and today’s value of every piece, see what has not moved in months, and match slow pieces to the customers most likely to buy them before discounting or melting. Jwero shows stock ageing at the live rate and suggests who to offer each idle piece to.' },
+};
+const HUB_FAQ = {
+  solutions: [
+    { q: 'Can one system handle retail, wholesale and manufacturing together?', a: 'Yes. Jwero runs the counter, B2B orders, the workshop and the books on one record, so a business that does more than one of these does not need separate software for each.' },
+    { q: 'Do I pay more for a bigger or more complex business?', a: 'The subscription is ₹18,000 a month with every module. Extra locations are ₹2,999 each. Groups and chains can take Enterprise, which is custom priced.' },
+    { q: 'Can Jwero run the work for me instead of my team?', a: 'Yes. With the managed service, Jwero’s specialists and AI run the functions you hand over, such as marketing, follow-ups and online sales. There is no subscription, and every tool is included.' },
+  ],
+  'solutions/pain': [
+    { q: 'How do I know how much my business is leaking?', a: 'Start with two numbers: enquiries in the last month that never got a follow-up, and stock older than six months at today’s value. Jwero shows both once your data is in.' },
+    { q: 'Do I need new staff to fix these leaks?', a: 'No. AI drafts the replies and follow-ups and your team approves them, or Jwero’s managed service runs the follow-up for you.' },
+  ],
+  'solutions/pain/lead-leakage': [
+    { q: 'Where do jewellery enquiries usually get lost?', a: 'In personal phones, late-night WhatsApp messages, Instagram DMs nobody owns, and quotations that are never followed up. When a salesperson leaves, their customers often leave with them.' },
+    { q: 'Will AI reply to my customers on its own?', a: 'Only if you allow it. By default AI drafts the reply and a person approves it. You can set limits, quiet hours and switch it off at any time.' },
+    { q: 'Does it work with my existing WhatsApp number?', a: 'Jwero uses the WhatsApp Business API. Your business number can be moved to it, and the team then replies from one shared inbox instead of separate phones.' },
+  ],
+  'solutions/pain/dead-stock': [
+    { q: 'What counts as dead stock in jewellery?', a: 'Pieces that have not sold for a long time, often six months or more, tying up gold and cash. The right threshold depends on the category; Jwero lets you see ageing by any period.' },
+    { q: 'Should I melt, discount or push dead stock?', a: 'First try to sell it to customers whose taste matches it, then discount, and melt last. Jwero shows each idle piece’s value at today’s rate and who it might suit.' },
+  ],
+};
 function inShortQA(page) {
+  if (HUB_SHORT[page.slug]) return HUB_SHORT[page.slug];
   if (!/^(products|platform)\/|^solutions\/(?!pain)/.test(page.slug)) return null;
   return { q: inShortQuestion(page), a: `${page.description.replace(/\s*—\s*/g, ', ')} It is part of Jwero One: ₹18,000 a month, every module included, with the first month at ₹3,600.` };
 }
@@ -419,8 +449,8 @@ function withInShort(page) {
 // should win that search. Sits before the closing band.
 const { TOOL_QA } = require('./content/tool-answers');
 function withToolQA(page) {
-  const qa = TOOL_QA[page.slug];
-  if (!qa || /class="tool-qa"/.test(page.body)) return page;
+  const qa = (TOOL_QA[page.slug] || []).concat(HUB_FAQ[page.slug] || [], (SEGMENT_FAQ[page.slug] || []));
+  if (!qa.length || /class="tool-qa"/.test(page.body)) return page;
   const block = `\n<section class="section tool-qa"><div class="container">${L3.sectionHead('', 'More questions jewellers ask.', '')}${L3.faqBlock(qa)}</div></section>\n`;
   const at = page.body.lastIndexOf('<section class="cta-band"');
   return Object.assign({}, page, { body: at === -1 ? page.body + block : page.body.slice(0, at) + block + page.body.slice(at) });
@@ -511,6 +541,7 @@ const SIM_PAGES = {
   'products/crm': 'memory', 'platform/customer-memory': 'memory', 'roles/sales-associate': 'memory', 'products/whatsapp': 'memory',
   'products/inventory': 'shelf', 'solutions/pain/dead-stock': 'shelf', 'roles/inventory-manager': 'shelf',
   'products/pos': 'till', 'roles/cashier': 'till', 'products/billing-finance': 'till',
+  'solutions/diamond-traders': 'shelf', 'solutions/pain/lead-leakage': 'memory',
   'products/erp': 'grams', 'products/manufacturing': 'grams', 'products/purchase-vendors': 'grams', 'products/multi-store': 'shelf', 'products/gold-schemes': 'memory', 'products/repairs-service': 'memory',
   'products/manufacturing': 'grams', 'solutions/manufacturers': 'grams', 'roles/production-manager': 'grams', 'roles/karigar': 'grams',
 };
@@ -613,9 +644,12 @@ function withManaged(body, page) {
 // Solution pages: drop the sections that repeat what other parts of the page
 // or site already say, move the managed offer to the middle, and use one set
 // of button labels: start, let Jwero handle it, talk to us.
-const SOLUTION_DROP = /<h2[^>]*>\s*(A customer messages|Small start|One plan\. Every module|Five things we hear|Related on Jwero)/;
+const SOLUTION_DROP = /<h2[^>]*>\s*(Small start|One plan\. Every module|Five things we hear|Related on Jwero)/;
+const SOLUTION_WHO = { 'single-store': 'a single store', 'multi-store-chains': 'a chain of stores', 'franchise-networks': 'a franchise network', 'gold-retail': 'a gold jewellery shop', 'diamond-retail': 'a diamond showroom', 'silver-retail': 'a silver jewellery shop', 'gemstone-retail': 'a gemstone store', bridal: 'a bridal jewellery store', 'luxury-boutique': 'a luxury boutique', 'lab-grown-diamond': 'a lab-grown diamond business', 'jewellery-brands': 'a jewellery brand', 'd2c-brands': 'an online jewellery brand', startups: 'a new jewellery business', 'gold-wholesale': 'a gold wholesale business', 'diamond-wholesale': 'a diamond wholesale business', 'diamond-traders': 'a diamond trading business', 'bullion-gold-traders': 'a bullion business', 'b2b-jewellery': 'a B2B jewellery business', 'export-houses': 'an export house', manufacturers: 'a jewellery manufacturing unit', 'oem-manufacturers': 'an OEM manufacturing unit', 'casting-units': 'a casting unit', 'cad-services': 'a CAD studio' };
 function trimSolution(html, slug) {
   if (!slug.startsWith('solutions/')) return html;
+  const who = SOLUTION_WHO[slug.split('/')[1]];
+  if (who) html = html.replace(/(Know another jeweller who runs )a [^?<]*\?/, `$1${who}?`).replace(/(software page for )a [^:"]* like ours/, `$1${who} like ours`);
   const parts = html.split(/(?=<section[\s>])/);
   let kept = parts.filter((c) => !SOLUTION_DROP.test(c.slice(0, 1500)));
   const mi = kept.findIndex((c) => /PREFER JWERO TO RUN THIS FOR YOU\?/.test(c.slice(0, 2500)));
@@ -653,8 +687,8 @@ function withDoors(html, slug) {
 // the product's own documentation (content/usecases.json), right after the
 // opening answer.
 function withUseCases(body, page) {
-  const m = /^products\/([^/]+)$/.exec(page.slug || '');
-  const uc = m && USECASES[m[1]];
+  const m = /^(products|solutions)\/([^/]+)$/.exec(page.slug || '');
+  const uc = m && (m[1] === 'products' ? USECASES[m[2]] : (SEGMENTS[m[2]] || {}).usecases);
   if (!uc || !uc.length) return body;
   const name = (page.title || '').split(/[:|]/)[0].replace(/^Jwero\s+/, '').trim() || 'This';
   const block = L3.section(`${L3.sectionHead('USE CASES', 'Where this pays off in a jewellery business.', 'Four everyday situations, and what changes when Jwero handles them.')}
@@ -795,7 +829,7 @@ function layout(page) {
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.hero .sub'] },
     isPartOf: { '@type': 'WebSite', url: SITE },
   }];
-  const allFaqs = (inShortQA(page) ? [inShortQA(page)] : []).concat(page.faqs || [], TOOL_QA[page.slug] || []);
+  const allFaqs = (inShortQA(page) ? [inShortQA(page)] : []).concat(page.faqs || [], TOOL_QA[page.slug] || [], HUB_FAQ[page.slug] || [], SEGMENT_FAQ[page.slug] || []);
   if (allFaqs.length) {
     schemas.push({
       '@context': 'https://schema.org', '@type': 'FAQPage',
@@ -806,10 +840,15 @@ function layout(page) {
     });
   }
   if (page.breadcrumbs) schemas.push(require('./lib').breadcrumbSchema(page.breadcrumbs, SITE));
+  if (!page.schema && /^solutions\/(?!pain)/.test(page.slug || '')) {
+    const seg = SEGMENTS[page.slug.split('/')[1]];
+    page.schema = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: (page.title || '').split(/[:|]/)[0].trim(), applicationCategory: 'BusinessApplication', operatingSystem: 'Web', description: page.description, url: SITE + '/' + page.slug, isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: SITE },
+      ...(seg && seg.usecases ? { featureList: seg.usecases.map((u) => u.does) } : {}) };
+  }
   if (page.schema) {
     // Product pages: the price and what it does, for search and answer engines.
-    if (page.schema['@type'] === 'SoftwareApplication' && /^products\//.test(page.slug || '')) {
-      const uc = (USECASES[page.slug.split('/')[1]] || []);
+    if (page.schema['@type'] === 'SoftwareApplication' && /^(products|solutions)\//.test(page.slug || '')) {
+      const uc = (USECASES[page.slug.split('/')[1]] || (SEGMENTS[page.slug.split('/')[1]] || {}).usecases || []);
       page.schema = Object.assign({}, page.schema, {
         offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', url: SITE + '/pricing', description: 'Every module, billed monthly. First month ₹3,600. Managed service priced on the work.' },
         ...(uc.length ? { featureList: uc.map((u) => u.does) } : {}),

@@ -43,8 +43,8 @@ const brandsFaqs = [
 
 const jewelleryBrands = {
   slug: 'solutions/jewellery-brands',
-  title: 'Software for Jewellery Brands: Multi-Channel, Multi-Partner | Jwero',
-  description: 'One brand voice across every counter and channel: central catalogue, brand-controlled campaigns and distributor visibility.',
+  title: 'Software for Jewellery Brands: Every Channel | Jwero',
+  description: 'Software for jewellery brands: one central catalogue, brand-controlled campaigns and visibility of every counter, channel and distributor.',
   breadcrumbs: BC('Jewellery brands'),
   faqs: brandsFaqs,
   body: `
@@ -125,7 +125,7 @@ const startupsFaqs = [
 const startups = {
   slug: 'solutions/startups',
   title: 'Jewellery Software for Startups & New Jewellers | Jwero',
-  description: 'Start with the system chains took decades to build — the full operating system from day one, priced for a first store.',
+  description: 'Jewellery software for startups and new jewellers: the full system chains took years to build, from day one, priced for a first store.',
   breadcrumbs: BC('Startups'),
   faqs: startupsFaqs,
   body: `
@@ -159,8 +159,8 @@ const franchiseFaqs = [
 
 const franchiseNetworks = {
   slug: 'solutions/franchise-networks',
-  title: 'Jewellery Franchise Software: Brand Control, Store Freedom | Jwero',
-  description: 'Franchisor control, franchisee freedom: brand-level catalogue and pricing governance with store-level flexibility.',
+  title: 'Jewellery Franchise Software: Brand and Store | Jwero',
+  description: 'Jewellery franchise software: the brand controls catalogue and pricing, each franchise store keeps its own counter, stock and customers.',
   breadcrumbs: BC('Franchise networks'),
   faqs: franchiseFaqs,
   body: `
