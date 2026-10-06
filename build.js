@@ -906,6 +906,25 @@ function withIcpHome(html, slug) {
   const QI = { single: [0, 1, 2], chain: [4, 1, 0], franchise: [4, 0, 1], maker: [1, 0, 6], b2b: [1, 5, 0], trader: [1, 5, 2], d2c: [3, 2, 7] }[cfg[0]] || [0, 1, 2];
   const qs = secs().find(([, , t]) => /<figure class="pz-quote jb-solo">/.test(t) && !/<h2/.test(t));
   if (qs) html = html.slice(0, qs[0]) + require('./content/positioning').quotesOf(QI) + html.slice(qs[1]);
+  // twelve sections: top, logos, answer, where it pays, try it, one page of their own, quotes,
+  // count your tools, today vs with Jwero, price, questions, close
+  const all = secs();
+  const at = (re) => all.findIndex(([, , t]) => re.test(t));
+  const iSim = at(/sim-section/), iQuotes = at(/Jewellers on working with Jwero\./), iTiers = at(/id="tiers"/), iBand = at(/class="cta-band"/);
+  const iFaq = all.findIndex(([, , t], k) => k > iTiers && /class="faq"/.test(t));
+  const keep = new Set();
+  all.forEach(([, , t], k) => { if (k <= iSim || (k >= iQuotes && k <= iTiers) || k === iFaq || k === iBand) keep.add(k); });
+  const own = all.findIndex(([, , t], k) => k > iSim && k < iQuotes && !/A week in your business/.test(t));
+  if (own > 0) keep.add(own);
+  const moreQ = all.filter(([, , t], k) => k > iTiers && k !== iFaq && /<details/.test(t)).map(([, , t]) => (t.match(/<details[\s\S]*?<\/details>/g) || []).join('')).join('');
+  // the blog links and the security line ride along under the questions
+  const blog = all.find(([, , t]) => /Read more on this\./.test(t));
+  const extra = `<p class="cta-note" style="margin-top:14px">Security and privacy delivered, just as you want: <a href="/trust/security">see how your data is protected</a>.${blog ? ' Read more: ' + (blog[2].match(/<a [^>]*href="\/[^"]*"[^>]*>[^<]+<\/a>/g) || []).slice(0, 3).join(' · ') : ''}</p>`;
+  for (let k = all.length - 1; k >= 0; k--) {
+    const [a, b, t] = all[k];
+    if (!keep.has(k)) html = html.slice(0, a) + html.slice(b);
+    else if (k === iFaq) { const end = t.lastIndexOf('</div>', t.lastIndexOf('</section>')); const dl = t.lastIndexOf('</details>') + 10; const t2 = t.slice(0, dl) + moreQ + t.slice(dl); const end2 = t2.lastIndexOf('</div>', t2.lastIndexOf('</section>')); html = html.slice(0, a) + t2.slice(0, end2) + extra + t2.slice(end2) + html.slice(b); }
+  }
   return html;
 }
 
