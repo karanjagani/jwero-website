@@ -2238,3 +2238,17 @@ document.addEventListener('click', function (e) {
 var a = e.target.closest('[data-stackm-clear-link]'); if (!a) return; e.preventDefault();
 var b = document.querySelector('[data-stackm-clear]'); if (b) b.click();
 });
+(function () {
+var root = document.querySelector('[data-price-calc]'); if (!root) return;
+var v = function (k) { var el = root.querySelector('[data-pc="' + k + '"]'); return el ? el.value : ''; };
+var inr = function (n) { return '\u20b9' + Math.round(n).toLocaleString('en-IN'); };
+function run() {
+var rate = +v('rate') || 0, k = +v('purity') || 22, w = +v('weight') || 0, mt = v('mtype'), mv = +v('making') || 0, st = +v('stones') || 0;
+var metal = rate * k / 24 * w;
+var making = mt === 'pct' ? metal * mv / 100 : mt === 'gram' ? w * mv : mv;
+var gst = (metal + making + st) * 0.03;
+var out = { metal: metal, making: making, stones: st, gst: gst, total: metal + making + st + gst };
+Object.keys(out).forEach(function (key) { var el = root.querySelector('[data-pc-o="' + key + '"]'); if (el) el.textContent = inr(out[key]); });
+}
+root.addEventListener('input', run); root.addEventListener('change', run); run();
+})();

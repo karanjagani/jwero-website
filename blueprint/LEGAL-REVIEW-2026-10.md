@@ -106,3 +106,11 @@ terms, or need to be withdrawn:
    and retention; ask for the latest restore check" until restore drills are
    confirmed running in production (see section E).
 - **Season change-freeze** (on /start, the safe-to-try strip, FAQ, ERP-to-OS pages, blog): "a written change-freeze means nothing disruptive happens during your peak weeks." Needs a written policy or softer wording.
+
+## H. New tax and compliance articles needing CA review (added 2026-10-06)
+- /blog/gst-on-jewellery-india: job-work rate (stated 5% for jewellery, lower for diamonds), old-gold exchange valuation (Karnataka AAR 2021 mentioned), loose stone rates.
+- /blog/cash-limit-pan-jewellery-sale: Rule 114B (PAN above ₹2 lakh), s.269ST / s.271DA, s.40A(3) ₹10,000, PMLA ₹10 lakh for dealers in precious metals and stones. States that Jwero enforces the cash limit on buybacks only.
+- /blog/old-gold-exchange-jewellers: cash payout limit, PAN above ₹2 lakh.
+- /blog/huid-hallmarking-rules-jewellers: exemptions (₹40 lakh turnover, under 2 g), hallmark grades.
+- /blog/e-way-bill-for-jewellery: Chapter 71 exemption, Kerala intra-state rule.
+- /blog/e-invoicing-for-jewellers: ₹5 crore threshold, 30-day rule at ₹10 crore, B2C QR above ₹500 crore.
