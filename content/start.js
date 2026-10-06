@@ -39,7 +39,7 @@ ${L.section(
 
     <div class="start-panel is-on" data-panel="1">
       <h2>I run a…</h2>
-      <div class="start-grid">${L.PERSONAS.map((p) => `<button type="button" class="start-opt" data-persona="${p.key}">${L.icon(L.LINK_ICONS[p.products[0]] || 'gem')}<b>${p.label}</b></button>`).join('')}</div>
+      <div class="start-grid">${L.PERSONAS.concat([{ key: 'trader', label: 'Diamond trader', products: ['/products/inventory'] }]).map((p) => `<button type="button" class="start-opt" data-persona="${p.key}">${L.icon(L.LINK_ICONS[p.products[0]] || 'gem')}<b>${p.label}</b></button>`).join('')}</div>
     </div>
 
     <div class="start-panel" data-panel="2">

@@ -75,6 +75,14 @@ const faqs = [
   { q: 'Why should I believe the return?', a: 'You should not take our word for it — that is what the growth report is for. It is an account of what happened with your own customers, on your own data, inside your first month.' },
 ];
 
+const OBJECTIONS = [
+  { q: '“Another software cost?”', a: 'Measure it against the tools it replaces and one recovered customer, not against your billing software’s AMC. Run the calculators on your own numbers. <a href="/tools">Open the calculators</a>.' },
+  { q: '“I don’t need the whole platform?”', a: 'You are not charged per module, so there is nothing to trim. Switch off what you don’t use and the screen shows only what you run.' },
+  { q: '“Hidden costs will show up later?”', a: 'The plan price and the wallet rate card are both on this page, and the same card is inside your billing screen.' },
+  { q: '“I’ll be locked into a contract?”', a: 'Billing is month to month. Cancel any time, and export everything when you leave.' },
+  { q: '“What will WhatsApp and AI add?”', a: 'They run on a prepaid wallet at per-use rates. You see the balance and the spend; nothing is charged beyond what you top up.' },
+  { q: '“ROI is a promise I’ve heard before?”', a: `Fair. That is why the first month is ${inr(PLAN.firstMonth)}, on your own data, and why the growth report shows what happened with your own customers.` },
+];
 const pricing = {
   slug: 'pricing',
   title: `Jwero Pricing: Subscription, Managed or Enterprise | Jwero`,
@@ -167,41 +175,22 @@ ${L.section(
   `${L.sectionHead('WHAT’S INCLUDED', 'Every module. No tiers to climb.', 'Nothing here is an upsell. Switch off what you don’t use; it comes back the day you need it.')}
   <div class="grid grid-4 cells incl-grid">${MODULES.map(([t, h]) => `<a class="card incl" href="${h}">${L.icon(L.LINK_ICONS[h] || 'check')}<h3>${t}</h3></a>`).join('')}</div>
   <div class="incl-caps">${INCLUDED.map(([n, l]) => `<div><b>${n}</b><span>${l}</span></div>`).join('')}</div>
-  <p class="proof-caption">Your books are never deleted. Orders, invoices, payments, purchases, payroll and GST records are statutory and are kept on every plan.</p>`
-)}
+  <p class="proof-caption">Your books are never deleted. Orders, invoices, payments, purchases, payroll and GST records are statutory and are kept on every plan.</p>
 
-${L.section(
-  `${L.sectionHead('THE WALLET', 'Pay for what you use, at rates you can read.', 'The plan is the platform. Anything that costs money each time it happens is metered from a prepaid wallet — the same rate card your billing screen shows.')}
+  <div style="margin-top:40px"></div>${L.sectionHead('THE WALLET', 'Pay for what you use, at rates you can read.', 'The plan is the platform. Anything that costs money each time it happens is metered from a prepaid wallet — the same rate card your billing screen shows.')}
   ${rateCard}`
 , { tone: 'tint' })}
 
-${L.section(L.customerLogos())}
-
-${L.section(`<p class="cta-note" style="text-align:center">Security and privacy delivered, just as you want. <a href="/trust/security">See how your data is protected →</a></p>`)}
 
 
-${L.section(
-  `${L.sectionHead('THE OBJECTIONS, ANSWERED DIRECTLY', 'Before you ask, in case you were about to.', '')}
-  ${L.cards([
-    { title: '"Another software cost"', text: 'Measure it against the tools it replaces and one recovered customer, not against your billing software’s AMC. Run the calculators on your own numbers.', link: { href: '/tools', label: 'Open the calculators' } },
-    { title: '"I don’t need the whole platform"', text: 'You are not charged per module, so there is nothing to trim. Switch off what you don’t use and the screen shows only what you run.' },
-    { title: '"Hidden costs will show up later"', text: 'The plan price and the wallet rate card are both on this page, and the same card is inside your billing screen.' },
-    { title: '"I’ll be locked into a contract"', text: 'Billing is month to month. Cancel any time, and export everything when you leave.' },
-    { title: '"What will WhatsApp and AI add?"', text: 'They run on a prepaid wallet at per-use rates. You see the balance and the spend; nothing is charged beyond what you top up.' },
-    { title: '"ROI is a promise I’ve heard before"', text: `Fair. That is why the first month is ${inr(PLAN.firstMonth)}, on your own data, and why the growth report shows what happened with your own customers.` },
-  ])}`
-, { tone: 'tint' })}
 
-${L.section(L.safeToTryStrip())}
-
-${L.section(`${L.sectionHead('PRICING QUESTIONS', 'Straight answers on cost and terms.', '')}${L.faqBlock(faqs)}
+${L.section(`${L.sectionHead('PRICING QUESTIONS', 'Straight answers on cost and terms.', '')}${L.faqBlock(faqs.concat(OBJECTIONS))}
 <p class="cta-note" style="margin-top:14px">More objections? <a href="/faq#pricing">See every pricing question we’ve been asked →</a></p>`)}
 
 ${L.section(`${L.sectionHead('MANAGED PRICING', 'How the managed price is worked out.', 'When Jwero runs the work, there is no subscription and every tool is included. The price follows the work.')}
 <ol class="pz-how pz-how-4"><li><span>01</span><b>Your volume</b><p>Conversations, calls, posts and orders, predicted from your customer base and showrooms, or counted from your own figures.</p></li><li><span>02</span><b>Today’s cost</b><p>What that work costs at the cheapest way to staff it in India: a junior hire or a freelancer.</p></li><li><span>03</span><b>Jwero’s price</b><p>About half of that when you let Jwero decide and execute, and about 60% when you want to approve every step.</p></li><li><span>04</span><b>In writing</b><p>Your plan states the price, the work and what is measured before anything starts.</p></li></ol>
-<p class="cta-note" style="text-align:center;margin-top:18px"><a class="btn btn-primary" href="/count-your-team">Count your team and see your number</a></p>`, { tone: 'tint' })}
+<p class="cta-note" style="text-align:center;margin-top:18px"><a class="btn btn-primary" href="/count-your-team">Count your team and see your number</a></p><p class="cta-note" style="text-align:center;margin-top:14px">Still deciding? <a href="#" data-wa="pricing">Ask us on WhatsApp</a>; a real person replies within minutes. Security and privacy delivered, just as you want: <a href="/trust/security">see how your data is protected</a>.</p>`, { tone: 'tint' })}
 ${require('./positioning').refer()}
-${L.section(`<p class="cta-note" style="text-align:center">Still deciding? <a href="#" data-wa="pricing">Ask us on WhatsApp</a>. A real person replies within minutes. Or go back to <a href="#tiers">the three ways to buy</a>.</p>`)}
 `,
 };
 

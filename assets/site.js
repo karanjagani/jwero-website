@@ -1908,7 +1908,7 @@
       var ref = document.referrer ? new URL(document.referrer) : null, rp = ref && ref.host === location.host ? ref.pathname : '';
       var guess = /manufactur|karigar|casting|cad|oem|gold-loss|production|export-houses/.test(rp) ? 'maker'
         : /franchise/.test(rp) ? 'franchise' : /multi-store|chain|enterprise|luxury/.test(rp) ? 'chain'
-        : /b2b|wholesale|bullion|diamond-traders|trade|quicksell/.test(rp) ? 'b2b' : /d2c|ecommerce|storefront|shopify|instagram|jewellery-brands|website/.test(rp) ? 'd2c'
+        : /diamond-traders/.test(rp) ? 'trader' : /b2b|wholesale|bullion|trade|quicksell/.test(rp) ? 'b2b' : /d2c|ecommerce|storefront|shopify|instagram|jewellery-brands|website/.test(rp) ? 'd2c'
         : /single-store|gold-retail|silver-retail|diamond-retail|bridal|cashier|sales-associate/.test(rp) ? 'single' : '';
       var gb = guess && wrap.querySelector('[data-persona="' + guess + '"]');
       if (gb) {

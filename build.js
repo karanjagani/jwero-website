@@ -342,8 +342,27 @@ function footerHTML() {
 // Number ranges (2–5, 10am–8pm) are left alone.
 // Journey-wide fixes applied to the finished page.
 const HINDI_CITIES = /^jewellery-software-india\/(delhi|jaipur|lucknow|kanpur|indore|bhopal|patna|varanasi|agra|meerut|ludhiana|chandigarh|dehradun|amritsar|jodhpur|udaipur|bikaner|gwalior|raipur|ranchi)$/;
+// Role, product and platform pages: drop the blocks every such page repeats,
+// and fold the article links into the related links.
+function trimLong(html, slug) {
+  if (!/^(roles|products|platform)\//.test(slug)) return html;
+  const ms = html.indexOf('<main'), me = html.indexOf('</main>'); if (ms < 0 || me < 0) return html;
+  let m = html.slice(ms, me);
+  const secs = () => { const out = []; const re = /<section[\s>]/g; let x; while ((x = re.exec(m))) { const e = m.indexOf('</section>', x.index) + 10; out.push([x.index, e, m.slice(x.index, e)]); } return out; };
+  const roles = /^roles\//.test(slug);
+  const cut = (t) => /kinds of customer signal/.test(t) || /WHY TRYING THIS IS SAFE/.test(t)
+    || (roles && (/class="shift"/.test(t) || /<h2[^>]*>Skills /.test(t) || /<h2[^>]*>Concrete /.test(t)));
+  let blogLinks = '';
+  for (const [a, b, t] of secs().reverse()) {
+    if (/Read more on this\./.test(t) && /class="section related"/.test(m)) { blogLinks = (t.match(/<a [^>]*href="\/[^"]*"[^>]*>[^<]+<\/a>/g) || []).slice(0, 3).join(' · '); m = m.slice(0, a) + m.slice(b); }
+    else if (cut(t)) m = m.slice(0, a) + m.slice(b);
+  }
+  if (blogLinks) m = m.replace(/(<section class="section related"[\s\S]*?)(<\/div>\s*<\/section>)/, `$1<p class="cta-note" style="margin-top:14px">From the blog: ${blogLinks}</p>$2`);
+  return html.slice(0, ms) + m + html.slice(me);
+}
 function journeyFix(html, p) {
   const slug = p.slug || '';
+  html = trimLong(html, slug);
   // 1. every self-serve start goes through /start, which explains the first month
   if (slug !== 'start') html = html.replace(/href="https:\/\/os\.jwero\.ai\/signup\?utm_source=jwero\.ai&(?:amp;)?utm_medium=([^"]*)"(?: rel="noopener")?(?: data-trial(?:="[^"]*")?)?/g, (m0, from) => `href="/start?from=${from.replace(/[^a-z0-9-]/gi, '')}"`);
   // pages never offer a button back to themselves
@@ -884,6 +903,15 @@ const ICP_TOOLS = (() => {
     d2c: [...core, 'Ecommerce website', 'Shopify integration', 'WooCommerce integration', 'Marketplace seller panels', 'Google Shopping', 'Website live chat', 'Forms', 'Inventory software', 'Pricing engine', 'Gold rate updates', 'Billing software', ...crm.filter((t) => !/Girvi|Walk-in/.test(t)), ...social, 'Email marketing tool', 'Push notifications', 'RCS', 'Pinterest', 'YouTube', 'Website heatmaps', 'Visitor tracking', 'Google Tag Manager', 'Pixels', 'A/B testing', 'Comments management', 'ChatGPT Ads', 'Ads creator', 'AI image generation', 'Asset library', 'Marketing automation', 'RFM', 'Customer personalisation engine', 'Lead finder', 'MCP tools', 'Webhooks & APIs'],
   };
 })();
+const ICP_MORE = {
+  'gold-retail': ['single', 'gold retailers', 'a gold showroom'], 'silver-retail': ['single', 'silver retailers', 'a silver showroom'], 'diamond-retail': ['single', 'diamond retailers', 'a diamond showroom'],
+  'gemstone-retail': ['single', 'gemstone retailers', 'a gemstone showroom'], 'lab-grown-diamond': ['single', 'lab-grown diamond jewellers', 'a lab-grown showroom'], bridal: ['single', 'bridal jewellers', 'a bridal showroom'],
+  'luxury-boutique': ['single', 'luxury boutiques', 'a luxury boutique'], startups: ['single', 'new jewellery businesses', 'a new jewellery business'],
+  'cad-services': ['maker', 'CAD studios', 'a CAD studio'], 'casting-units': ['maker', 'casting units', 'a casting unit'], 'oem-manufacturers': ['maker', 'OEM manufacturers', 'an OEM manufacturer'], 'export-houses': ['maker', 'export houses', 'an export house'],
+  'bullion-gold-traders': ['b2b', 'bullion traders', 'a bullion desk'], 'gold-wholesale': ['b2b', 'gold wholesalers', 'a gold wholesaler'], 'diamond-wholesale': ['b2b', 'diamond wholesalers', 'a diamond wholesaler'],
+  'jewellery-brands': ['d2c', 'jewellery brands', 'a jewellery brand'],
+};
+for (const [k, [base, who, one]] of Object.entries(ICP_MORE)) ICP_HOME['solutions/' + k] = [base, 'Jwero for ' + who, `How many tools does ${one} run today?`, one];
 function withIcpHome(html, slug) {
   const cfg = ICP_HOME[slug]; if (!cfg) return html;
   const L4 = require('./lib');
@@ -900,7 +928,7 @@ function withIcpHome(html, slug) {
   // Count your tools and the department comparison, before the price
   const pre = ICP_PRESET[cfg[0]];
   const rows = pre ? pre[1].map((k) => L4.DEPARTMENTS.find((d) => d.lever === k)).filter(Boolean) : L4.DEPARTMENTS;
-  const hooks = L4.section(`<span id="count-yours"></span>${L4.sectionHead('COUNT YOUR TOOLS', cfg[2], pre ? `We have ticked what ${pre[2]} usually runs. Tap to change it to match yours, or <a href="#" data-stackm-clear-link>clear and pick your own</a>.` : 'Tap the ones you run today and watch what they cost you.')}${L4.stackMerge(ICP_TOOLS[cfg[0]] && [...new Set([...ICP_TOOLS[cfg[0]], ...(pre ? pre[0] : [])])]).replace('<div class="stackm" data-stackm', `<div class="stackm" data-stackm-preset="${pre ? pre[0].join('|').replace(/&/g, '&amp;') : ''}" data-stackm`)}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too →</a></p>`, { tone: 'tint' })
+  const hooks = L4.section(`<span id="count-yours"></span>${L4.sectionHead('COUNT YOUR TOOLS', cfg[2], pre ? `We have ticked what ${cfg[3] || pre[2]} usually runs. Tap to change it to match yours, or <a href="#" data-stackm-clear-link>clear and pick your own</a>.` : 'Tap the ones you run today and watch what they cost you.')}${L4.stackMerge(ICP_TOOLS[cfg[0]] && [...new Set([...ICP_TOOLS[cfg[0]], ...(pre ? pre[0] : [])])]).replace('<div class="stackm" data-stackm', `<div class="stackm" data-stackm-preset="${pre ? pre[0].join('|').replace(/&/g, '&amp;') : ''}" data-stackm`)}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too →</a></p>`, { tone: 'tint' })
     + L4.section(`${L4.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole business.', 'The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}${L4.compareRows(rows)}`);
   const security = L4.section(`<div class="gem-head"><h2>Security and privacy delivered, just as you want.</h2></div>${L4.trustStrip()}`, { tone: 'tint' });
   const ti = html.indexOf('id="tiers"');
@@ -930,6 +958,7 @@ function withIcpHome(html, slug) {
   const at = (re) => all.findIndex(([, , t]) => re.test(t));
   const iSim = at(/sim-section/), iQuotes = at(/Jewellers on working with Jwero\./), iTiers = at(/id="tiers"/), iBand = at(/class="cta-band"/);
   const iFaq = all.findIndex(([, , t], k) => k > iTiers && /class="faq"/.test(t));
+  if (iSim < 0 || iQuotes < 0 || iTiers < 0 || iBand < 0) return html;
   const keep = new Set();
   all.forEach(([, , t], k) => { if (k <= iSim || (k >= iQuotes && k <= iTiers) || k === iFaq || k === iBand) keep.add(k); });
   const own = all.findIndex(([, , t], k) => k > iSim && k < iQuotes && !/A week in your business/.test(t));

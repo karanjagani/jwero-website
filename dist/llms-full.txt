@@ -7153,48 +7153,6 @@ PRICING
 
  Rates exclude GST. AI is metered on what an action actually uses, so “≈” shows a typical action. The live rate card for your account is inside Jwero under Billing → Rates & add-ons.
 
- Trusted by names you already know
-
- Security and privacy delivered, just as you want. See how your data is protected → 
-
- THE OBJECTIONS, ANSWERED DIRECTLY
-
-## Before you ask, in case you were about to.
-
-## "Another software cost"
-
- Measure it against the tools it replaces and one recovered customer, not against your billing software’s AMC. Run the calculators on your own numbers.
-
- Open the calculators → 
-
-## "I don’t need the whole platform"
-
- You are not charged per module, so there is nothing to trim. Switch off what you don’t use and the screen shows only what you run.
-
-## "Hidden costs will show up later"
-
- The plan price and the wallet rate card are both on this page, and the same card is inside your billing screen.
-
-## "I’ll be locked into a contract"
-
- Billing is month to month. Cancel any time, and export everything when you leave.
-
-## "What will WhatsApp and AI add?"
-
- They run on a prepaid wallet at per-use rates. You see the balance and the spend; nothing is charged beyond what you top up.
-
-## "ROI is a promise I’ve heard before"
-
- Fair. That is why the first month is ₹3,600, on your own data, and why the growth report shows what happened with your own customers.
-
- WHY TRYING THIS IS SAFE
-
- Pilot on your own data Start with a supervised sample import, evaluate on your real customers, not a demo dataset. 
-
- First month ₹3,600, then month to month Monthly billing has no lock-in, and your data leaves with you in standard formats whenever you ask. 
-
- Your season is protected A written change-freeze means nothing disruptive happens during your peak weeks. 
-
  PRICING QUESTIONS
 
 ## Straight answers on cost and terms.
@@ -7229,6 +7187,24 @@ PRICING
  Why should I believe the return? 
  You should not take our word for it, that is what the growth report is for. It is an account of what happened with your own customers, on your own data, inside your first month.
 
+ “Another software cost?” 
+ Measure it against the tools it replaces and one recovered customer, not against your billing software’s AMC. Run the calculators on your own numbers. Open the calculators .
+
+ “I don’t need the whole platform?” 
+ You are not charged per module, so there is nothing to trim. Switch off what you don’t use and the screen shows only what you run.
+
+ “Hidden costs will show up later?” 
+ The plan price and the wallet rate card are both on this page, and the same card is inside your billing screen.
+
+ “I’ll be locked into a contract?” 
+ Billing is month to month. Cancel any time, and export everything when you leave.
+
+ “What will WhatsApp and AI add?” 
+ They run on a prepaid wallet at per-use rates. You see the balance and the spend; nothing is charged beyond what you top up.
+
+ “ROI is a promise I’ve heard before?” 
+ Fair. That is why the first month is ₹3,600, on your own data, and why the growth report shows what happened with your own customers.
+
  More objections? See every pricing question we’ve been asked → 
 
  MANAGED PRICING
@@ -7246,15 +7222,14 @@ PRICING
  04 In writing Your plan states the price, the work and what is measured before anything starts.
 
  Count your team and see your number 
+ Still deciding? Ask us on WhatsApp ; a real person replies within minutes. Security and privacy delivered, just as you want: see how your data is protected .
 
  PASS IT ON
 
 ## Refer a jeweller. Save 10% for each one who joins.
  Know a jeweller who is trying to keep up with all of this? Send them this page on WhatsApp, and tell us you sent them. Every jeweller who becomes a Jwero customer through you takes 10% off what you pay.
 
- Send this to a jeweller Tell us who you referred 
-
- Still deciding? Ask us on WhatsApp . A real person replies within minutes. Or go back to the three ways to buy .
+ Send this to a jeweller Tell us who you referred
 
 Q: What does Jwero cost?
 A: One plan, Jwero One: ₹18,000 a month, billed monthly. Every module is included. Prices exclude GST. Groups and chains take Enterprise, which is custom priced.
@@ -19307,7 +19282,7 @@ GET STARTED
 
 ## I run a…
 
- Single store Multi-store chain Manufacturer Wholesaler / B2B D2C brand Franchise network 
+ Single store Multi-store chain Manufacturer Wholesaler / B2B D2C brand Franchise network Diamond trader 
 
 ## How much should the AI do on its own?
 
