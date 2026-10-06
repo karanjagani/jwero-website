@@ -41,7 +41,7 @@ const CONTENT_FILES = [
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
   'roles-leadership', 'roles-frontline', 'roles-growth', 'roles-manufacturing',
-  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal', 'jbaas', 'positioning',
+  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal', 'jbaas', 'legacy-blog', 'positioning',
 ];
 const pages = [];
 for (const f of CONTENT_FILES) {
@@ -691,7 +691,7 @@ function withManaged(body, page) {
   const Q = P.QUOTES;
   const R = P.ROTATE, qi = R[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % R.length];
   let block;
-  if (top === 'blog') {
+  if (top === 'blog' || page.legacy) {
     // articles stay articles: one quiet line with both doors
     block = L3.section(`<div class="jb-blogline"><p><b>Run it yourself, or let Jwero run it.</b> The platform for ₹18,000 a month, or Jwero’s specialists and AI with every tool included.</p><div class="cta-row"><a class="btn btn-primary" href="${require('./lib').TRIAL_URL}blog" rel="noopener" data-trial>Start for ₹3,600</a><a class="btn btn-ghost" href="#" data-wa="handle">Let Jwero handle it</a></div></div>`, { tone: 'tint' });
   } else if (slug === 'customers') {
@@ -739,9 +739,10 @@ function trimSolution(html, slug) {
 
 // Both doors on the first screen of every buying page: a slim strip right
 // under the page's top section.
+const LEGACY_SLUGS = new Set(require('./content/legacy-posts.json').posts.map((p) => p.slug));
 const DOORS_SKIP = ['index', '404', 'search', 'contact', 'book-demo', 'glossary', 'roadmap', 'start', 'legal', 'hi', 'partners', 'company', 'blog', 'jewellery-business-as-a-service'];
 function withDoors(html, slug) {
-  if (DOORS_SKIP.includes((slug || '').split('/')[0])) return html;
+  if (DOORS_SKIP.includes((slug || '').split('/')[0]) || LEGACY_SLUGS.has(slug)) return html;
   const end = html.indexOf('</section>');
   if (end < 0) return html;
   const strip = `<div class="doors-strip"><div class="container"><p>Two ways to work with Jwero</p><a class="ds-door" href="${require('./lib').TRIAL_URL}doors-strip" rel="noopener" data-trial><span>Run it yourself</span><b>Start for ₹3,600</b></a><a class="ds-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b></a><a class="ds-more" href="/pricing">Compare →</a></div></div>`;
@@ -789,7 +790,7 @@ function withPlatformLinks(body, page) {
 // Blog posts: a short answer and a contents list at the top, so readers and
 // answer engines get the point before the detail.
 function withBlogTop(body, page) {
-  if (!/^(blog|guides)\/./.test(page.slug || '')) return body;
+  if (!/^(blog|guides)\/./.test(page.slug || '') && !page.legacy) return body;
   const pb = body.indexOf('<div class="post-body">'); if (pb < 0) return body;
   let n = 0; const heads = [];
   const pe = body.indexOf('</section>', pb);
@@ -1059,6 +1060,8 @@ function build() {
   const MOVED = { 'jwero-os': '/', jbaas: '/jewellery-business-as-a-service', focus: '/jewellery-business-as-a-service', 'managed-services': '/jewellery-business-as-a-service', 'focus/managed-services': '/jewellery-business-as-a-service' };
   for (const p of pages) if (p.slug !== 'index' && !p.slug.includes('/')) MOVED['focus/' + p.slug] = '/' + p.slug;
   MOVED['focus/jwero-os'] = '/';
+  for (const [from, to] of Object.entries(require('./content/legacy-posts.json').redirects)) MOVED[from] = to.charAt(0) === '/' ? to : '/' + to;
+  MOVED.blogs = '/blog';
   for (const [from, to] of Object.entries(MOVED)) {
     if (pages.some((p) => p.slug === from)) continue;
     fs.mkdirSync(path.join(DIST, from), { recursive: true });

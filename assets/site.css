@@ -3953,3 +3953,15 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .jb-btn2 { display: inline-grid; justify-items: center; gap: 2px; line-height: 1.1; padding-block: 9px; }
 .jb-btn2 small { font-size: .6875rem; font-weight: 500; color: var(--ink-2); letter-spacing: .01em; }
 .jb-demo { font-size: .9375rem; font-weight: 600; color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+
+/* blog: all articles by topic */
+.blog-topics { margin-top: 24px; display: grid; gap: 8px; }
+.blog-topic { border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+.blog-topic summary { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px; cursor: pointer; list-style: none; }
+.blog-topic summary::-webkit-details-marker { display: none; }
+.blog-topic summary span { font-size: .8125rem; color: var(--ink-2); }
+.blog-topic ul { margin: 0; padding: 0 18px 16px 36px; display: grid; gap: 6px; }
+.blog-topic a { color: var(--brand); text-decoration: none; } .blog-topic a:hover { text-decoration: underline; }
+.post-body img { max-width: 100%; height: auto; border-radius: 12px; }
+.post-body table { width: 100%; border-collapse: collapse; margin: 16px 0; display: block; overflow-x: auto; }
+.post-body th, .post-body td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; font-size: .9375rem; }

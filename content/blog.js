@@ -61,6 +61,8 @@ ${L.section(
   ], 3)}`
 , { tone: 'tint' })}
 ${L.section(`<p style="font-size:.85rem; color:var(--ink-2);">More guides are coming — starting with the topics jewellers ask us about most on WhatsApp. <a href="#" data-wa="blog-hub">Tell us what you’d want covered</a>.</p>`)}
+${L.section(`${L.sectionHead('ALL ARTICLES', 'Every article, by topic.', 'Practical articles for jewellery business owners, from leads and WhatsApp to product data, orders and stock.')}
+<div class="blog-topics">${(() => { const P = require('./legacy-blog').POSTS; const T = {}; P.forEach((p) => { (T[p.topic] = T[p.topic] || []).push(p); }); return Object.entries(T).sort((a, b) => b[1].length - a[1].length).map(([t, list]) => `<details class="blog-topic"><summary><b>${t}</b><span>${list.length} articles</span></summary><ul>${list.sort((a, b) => b.date.localeCompare(a.date)).map((p) => `<li><a href="/${p.slug}">${p.title}</a></li>`).join('')}</ul></details>`).join(''); })()}</div>`, { tone: 'tint' })}
 `,
 };
 
