@@ -13,7 +13,7 @@ The Autonomous Jewellery OS, run by AI
 
 ## Jewellery software that runs the whole business: customers, counter, stock, team and books.
 
- One system from the first enquiry to the closed books: CRM, showroom, POS and billing, inventory, purchase, manufacturing, accounts, HR and reports on one record. AI drafts the work and flags what is slipping, and nothing goes out without your yes.
+ One system from the first enquiry to the closed books: CRM, showroom, POS and billing, inventory, purchase, manufacturing, accounts, HR, marketing, sales, promotions, automations and reports on one record. AI drafts the work and flags what is slipping, and nothing goes out without your yes.
 
  Run it yourself Start for ₹3,600 Every module. Then ₹18,000 a month. 
  Let Jwero run it Let Jwero handle it No team to hire. No tools to buy. 

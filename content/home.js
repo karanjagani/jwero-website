@@ -23,7 +23,7 @@ const home = {
 ${L.homeHero({
   kicker: 'The Autonomous Jewellery OS, run by AI',
   h1: 'Jewellery software that runs the whole business: customers, counter, stock, team and books.',
-  sub: 'One system from the first enquiry to the closed books: CRM, showroom, POS and billing, inventory, purchase, manufacturing, accounts, HR and reports on one record. AI drafts the work and flags what is slipping, and nothing goes out without your yes.',
+  sub: 'One system from the first enquiry to the closed books: CRM, showroom, POS and billing, inventory, purchase, manufacturing, accounts, HR, marketing, sales, promotions, automations and reports on one record. AI drafts the work and flags what is slipping, and nothing goes out without your yes.',
 })}
 
 <section class="pz-logos">${L.customerLogos()}</section>
