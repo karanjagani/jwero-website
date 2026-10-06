@@ -1260,7 +1260,7 @@ function homeHero({ kicker, h1, sub }) {
       <div class="hero-home-copy">
         <p class="hero-kicker">${mark('mark-xs')}${kicker}</p>
         <h1>${h1}</h1>
-        <p class="sub">${sub}</p>${icpPick()}
+        <p class="sub">${sub}</p>
         <div class="hero-doors">
           <a class="hero-door" href="${TRIAL_URL}home-hero" rel="noopener" data-trial><span>Run it yourself</span><b>Start for ₹3,600</b><em>Every module. Then ₹18,000 a month.</em></a>
           <a class="hero-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b><em>No team to hire. No tools to buy.</em></a>
