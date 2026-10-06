@@ -26662,6 +26662,12 @@ GUIDES
 
  Open → 
 
+ IN THE PRODUCT
+
+## Where each guide leads in Jwero.
+
+ Billing and accounts jwero.ai/products/billing-finance ERP jwero.ai/products/erp Inventory jwero.ai/products/inventory CRM jwero.ai/products/crm Manufacturing jwero.ai/products/manufacturing Pricing jwero.ai/pricing 
+
 ## Not sure where to start?
 
  Tell us what you run today and we will point you to the right page.
@@ -26676,7 +26682,7 @@ GUIDES
 
 ---
 
-# Jewellery Billing Software: The Complete Buyer’s Guide (2026)
+# Jewellery Billing Software: Buyer’s Guide (2026)
 URL: https://jwero.ai/guides/jewellery-billing-software
 
 How jewellery billing software works and how to choose it: live gold rate, making charges, wastage, stones, old-gold exchange, HUID, GST, schemes at the counter and day-close, with a feature checklist and questions to ask.
@@ -26690,7 +26696,7 @@ BUYER’S GUIDE
  See jewellery billing in Jwero 
  See the price 
 
- Buyer’s guide · 12 min read · Updated October 2026 
+ Buyer’s guide · 12 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Why a jewellery bill is not like any other bill
 
@@ -26782,7 +26788,24 @@ BUYER’S GUIDE
 
  Jwero prices from one live rate with your making and wastage rules, bills by scan, handles old-gold exchange, returns and advances, applies scheme balances from the customer’s record, and closes each register against its own bills. Every bill posts to the books and to the customer’s record in the same step. The counter is described on the POS page and the invoicing and receivables on the billing page .
 
- It does not generate e-invoice IRNs or e-way bills and does not file GST returns. Invoices are GST-ready and the data goes to your accountant, through the Tally or Zoho Books bridge if they use one.
+ It prepares the e-invoice file for the GST portal and records the IRN back on the bill, but it does not file e-invoices directly, generate e-way bills or file GST returns. Invoices are GST-ready and the data goes to your accountant, through the Tally or Zoho Books bridge if they use one.
+
+ WHERE THIS IS IN JWERO
+
+## Every part of this guide, in the product.
+
+ Counter POS jwero.ai/products/pos Billing and accounts jwero.ai/products/billing-finance Gold schemes jwero.ai/products/gold-schemes Catalogue and tags jwero.ai/products/catalog Live-rate pricing jwero.ai/platform/pricing-engine Tally jwero.ai/platform/integrations/tally 
+
+ TRY IT · THE COUNTER
+
+## Ring up a sale. Take old gold. Close the shift.
+ Scan pieces, add exchange gold, take payment, then close the till and see the variance appear tonight, not next week.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Show me a till close Create your workspace 
 
  SEE IT WORKING
 
@@ -26809,7 +26832,7 @@ BUYER’S GUIDE
  In Jwero, one rate drives every price. You set it or take it from the rate feed, and tags, quotations, chat replies and bills follow.
 
  Does it generate e-invoices? 
- Not in Jwero today. Invoices are GST-ready; e-invoice IRN and e-way bills are on the roadmap, not shipped.
+ Partly. Jwero prepares the e-invoice file for the GST portal and records the IRN back on the bill. Direct filing and e-way bills are not available yet.
 
  Related: Jewellery billing software · Jewellery POS software · Inventory guide · What jewellery software costs 
 
@@ -26837,11 +26860,11 @@ Q: Does the gold rate update automatically?
 A: In Jwero, one rate drives every price. You set it or take it from the rate feed, and tags, quotations, chat replies and bills follow.
 
 Q: Does it generate e-invoices?
-A: Not in Jwero today. Invoices are GST-ready; e-invoice IRN and e-way bills are on the roadmap, not shipped.
+A: Partly. Jwero prepares the e-invoice file for the GST portal and records the IRN back on the bill. Direct filing and e-way bills are not available yet.
 
 ---
 
-# Jewellery ERP Software: What It Covers and How to Choose (2026)
+# Jewellery ERP Software: How to Choose (2026)
 URL: https://jwero.ai/guides/jewellery-erp-software
 
 A plain guide to jewellery ERP software: the modules a jeweller needs, retail versus manufacturing ERP, what an ERP leaves out, how to run a selection, and the mistakes that make ERP projects fail.
@@ -26855,7 +26878,7 @@ BUYER’S GUIDE
  See jewellery ERP in Jwero 
  See the price 
 
- Buyer’s guide · 13 min read · Updated October 2026 
+ Buyer’s guide · 13 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## What “ERP” means for a jeweller
 
@@ -26946,7 +26969,24 @@ BUYER’S GUIDE
 
  Jwero covers inventory, counter billing, purchase and vendors, manufacturing with karigar accounts in fine grams, repairs, schemes, girvi, multi-branch and its own ledger, on the same record as the customer, WhatsApp and the team. The operations are on the ERP page and the workshop on the manufacturing page .
 
- It does not convert CAD files into bills of materials, does not generate e-invoices or e-way bills, and has no courier integration. Those are stated on the public roadmap .
+ It does not convert CAD files into bills of materials, does not file e-invoices directly or generate e-way bills, and has no courier integration. Those are stated on the public roadmap .
+
+ WHERE THIS IS IN JWERO
+
+## Every part of this guide, in the product.
+
+ ERP jwero.ai/products/erp Inventory jwero.ai/products/inventory Purchase and vendors jwero.ai/products/purchase-vendors Workshop and karigars jwero.ai/products/manufacturing Repairs jwero.ai/products/repairs-service Girvi jwero.ai/products/girvi Gold schemes jwero.ai/products/gold-schemes Branches jwero.ai/products/multi-store 
+
+ TRY IT · METAL CLOSURE
+
+## Push a stage past its wastage norm. Watch the order refuse to close.
+ A hundred grams issued to the bench, four stages, four norms. The mechanics are the product’s; the numbers are yours to play with.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Show me one real job, gram by gram Create your workspace 
 
  SEE IT WORKING
 
@@ -27019,7 +27059,7 @@ BUYER’S GUIDE
  See inventory in Jwero 
  See the price 
 
- Buyer’s guide · 11 min read · Updated October 2026 
+ Buyer’s guide · 11 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Why jewellery stock is hard to manage
 
@@ -27105,6 +27145,23 @@ BUYER’S GUIDE
 
  It does not sell hardware. Tag printers, scanners, RFID readers and scales are bought separately and connected; ask which models are supported before you order.
 
+ WHERE THIS IS IN JWERO
+
+## Every part of this guide, in the product.
+
+ Inventory jwero.ai/products/inventory Catalogue and tags jwero.ai/products/catalog Branch transfers jwero.ai/products/multi-store Purchase jwero.ai/products/purchase-vendors Reports jwero.ai/products/reports Dead stock calculator jwero.ai/tools/dead-stock-calculator 
+
+ TRY IT · THE SLEEPING SHELF
+
+## Slide time forward. Watch stock fall asleep.
+ Seventy-two pieces, ageing month by month. The count past 180 days is the number most owners have never seen.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Show me my own shelf Create your workspace 
+
  SEE IT WORKING
 
 ## This guide is written by the team that builds it.
@@ -27162,7 +27219,7 @@ A: A little, often. Counting one category each week by scanning finds a variance
 
 ---
 
-# Jewellery CRM Software: A Practical Guide for Jewellers (2026)
+# Jewellery CRM Software: A Practical Guide (2026)
 URL: https://jwero.ai/guides/jewellery-crm-software
 
 What a jewellery CRM should record, how it differs from a general CRM, how to follow up leads from WhatsApp, Instagram and walk-ins, occasions, schemes, consent and what to measure, with a checklist.
@@ -27176,7 +27233,7 @@ BUYER’S GUIDE
  See the jewellery CRM in Jwero 
  See the price 
 
- Buyer’s guide · 11 min read · Updated October 2026 
+ Buyer’s guide · 11 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Why jewellers need a different kind of CRM
 
@@ -27278,6 +27335,23 @@ BUYER’S GUIDE
 
  It does not send anything on its own unless you have switched that on for a specific kind of action, and it does not buy or import third-party contact lists.
 
+ WHERE THIS IS IN JWERO
+
+## Every part of this guide, in the product.
+
+ CRM jwero.ai/products/crm Customer memory jwero.ai/platform/customer-memory Segmentation jwero.ai/products/segmentation Journeys jwero.ai/products/journeys Loyalty jwero.ai/products/loyalty WhatsApp jwero.ai/products/whatsapp 
+
+ TRY IT · CUSTOMER MEMORY
+
+## A customer messages. What does the record already know?
+ Pick a customer and watch her record fill in before anyone types a reply.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Send me a sample customer record Create your workspace 
+
  SEE IT WORKING
 
 ## This guide is written by the team that builds it.
@@ -27349,7 +27423,7 @@ BUYER’S GUIDE
  See manufacturing in Jwero 
  See the price 
 
- Buyer’s guide · 12 min read · Updated October 2026 
+ Buyer’s guide · 12 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## The one question every workshop must answer
 
@@ -27437,9 +27511,26 @@ BUYER’S GUIDE
 
 ## How Jwero does it, and what it does not do
 
- Jwero runs orders, bills of materials, routings, issue and return in fine weight, wastage norms by stage with a metal closure check, job cards, quality checks, hallmarking records, raw material lots and a karigar khata that settles wages against gold. Client-supplied metal is tracked as job work. Finished pieces go straight into the stock the counter and the trade desk sell from. Details are on the manufacturing page .
+ Jwero runs orders, bills of materials, routings, issue and return in fine weight, wastage norms by stage, job cards, quality checks, hallmarking records, raw material lots and a karigar khata that settles wages against gold. Client-supplied metal is tracked as job work. Finished pieces go straight into the stock the counter and the trade desk sell from. Details are on the manufacturing page .
 
- It does not convert CAD files into bills of materials; these are entered by production. It does not connect to casting machines or weighing equipment beyond the scales supported as devices.
+ It does not convert CAD files into bills of materials; these are entered by production. It does not yet run a full metal reconciliation or a physical metal count. It does not connect to casting machines or weighing equipment beyond the scales supported as devices.
+
+ WHERE THIS IS IN JWERO
+
+## Every part of this guide, in the product.
+
+ Manufacturing and workshop jwero.ai/products/manufacturing ERP jwero.ai/products/erp Raw material purchase jwero.ai/products/purchase-vendors Finished stock jwero.ai/products/inventory Gold loss calculator jwero.ai/tools/gold-loss-calculator For the production manager jwero.ai/roles/production-manager 
+
+ TRY IT · METAL CLOSURE
+
+## Push a stage past its wastage norm. Watch the order refuse to close.
+ A hundred grams issued to the bench, four stages, four norms. The mechanics are the product’s; the numbers are yours to play with.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Show me one real job, gram by gram Create your workspace 
 
  SEE IT WORKING
 

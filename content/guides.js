@@ -8,18 +8,26 @@ const PUBLISHED = '2026-10-01';
 
 const schema = (headline, description) => ({
   '@context': 'https://schema.org', '@type': 'Article', headline, description,
-  datePublished: PUBLISHED, dateModified: PUBLISHED,
-  author: { '@type': 'Organization', name: 'Jwero' }, publisher: { '@type': 'Organization', name: 'Jwero' },
+  datePublished: PUBLISHED, dateModified: '2026-10-06',
+  author: { '@type': 'Organization', name: 'Jwero editorial team', url: 'https://jwero.ai/company' }, publisher: { '@type': 'Organization', name: 'Jwero' },
 });
-const meta = (mins) => `<p class="post-meta"><span>Buyer’s guide</span> · <span>${mins} min read</span> · <span>Updated October 2026</span></p>`;
+const meta = (mins) => `<p class="post-meta"><span>Buyer’s guide</span> · <span>${mins} min read</span> · <span>By the Jwero editorial team</span> · <span>Reviewed October 2026</span></p>`;
 const table = (head, rows) => `<div class="tbl-wrap"><table class="tbl"><thead><tr>${head.map((h) => `<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c, i) => `<td>${i === 0 ? `<strong>${c}</strong>` : c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
 
+const GUIDE_LINKS = {
+  'jewellery-billing-software': ['till', [['/products/pos', 'Counter POS'], ['/products/billing-finance', 'Billing and accounts'], ['/products/gold-schemes', 'Gold schemes'], ['/products/catalog', 'Catalogue and tags'], ['/platform/pricing-engine', 'Live-rate pricing'], ['/platform/integrations/tally', 'Tally']]],
+  'jewellery-erp-software': ['grams', [['/products/erp', 'ERP'], ['/products/inventory', 'Inventory'], ['/products/purchase-vendors', 'Purchase and vendors'], ['/products/manufacturing', 'Workshop and karigars'], ['/products/repairs-service', 'Repairs'], ['/products/girvi', 'Girvi'], ['/products/gold-schemes', 'Gold schemes'], ['/products/multi-store', 'Branches']]],
+  'jewellery-inventory-software': ['shelf', [['/products/inventory', 'Inventory'], ['/products/catalog', 'Catalogue and tags'], ['/products/multi-store', 'Branch transfers'], ['/products/purchase-vendors', 'Purchase'], ['/products/reports', 'Reports'], ['/tools/dead-stock-calculator', 'Dead stock calculator']]],
+  'jewellery-crm-software': ['memory', [['/products/crm', 'CRM'], ['/platform/customer-memory', 'Customer memory'], ['/products/segmentation', 'Segmentation'], ['/products/journeys', 'Journeys'], ['/products/loyalty', 'Loyalty'], ['/products/whatsapp', 'WhatsApp']]],
+  'jewellery-manufacturing-software': ['grams', [['/products/manufacturing', 'Manufacturing and workshop'], ['/products/erp', 'ERP'], ['/products/purchase-vendors', 'Raw material purchase'], ['/products/inventory', 'Finished stock'], ['/tools/gold-loss-calculator', 'Gold loss calculator'], ['/roles/production-manager', 'For the production manager']]],
+};
 const guide = ({ slug, title, description, h1, sub, mins, wa, product, body, faqs, related }) => ({
   slug: `guides/${slug}`, title, description, breadcrumbs: BC(h1.split(':')[0]), schema: schema(h1, description), faqs,
   body: `
 ${L.hero({ eyebrow: 'BUYER’S GUIDE', h1, sub, primary: { href: product[0], label: product[1] }, secondary: { href: '/pricing', label: 'See the price' } })}
 ${L.section(meta(mins))}
 ${L.section(`<div class="post-body">${body}</div>`)}
+${GUIDE_LINKS[slug] ? L.section(`${L.sectionHead('WHERE THIS IS IN JWERO', 'Every part of this guide, in the product.', '')}<div class="erp-map">${GUIDE_LINKS[slug][1].map(([h, t]) => `<a href="${h}"><b>${t}</b><span>${h.replace(/^\//, 'jwero.ai/')}</span></a>`).join('')}</div>`, { tone: 'tint' }) + L.sim(GUIDE_LINKS[slug][0]) : ''}
 ${L.section(
   `${L.sectionHead('SEE IT WORKING', 'This guide is written by the team that builds it.', 'Every capability described as Jwero’s here is on the product page, with what it does not do yet stated beside it.')}
   <div class="cta-row center"><a class="btn btn-primary" href="${L.TRIAL_URL}guide" rel="noopener" data-trial>Start for ₹3,600</a><a class="btn btn-ghost" href="${product[0]}">${product[1]}</a></div>`
@@ -33,7 +41,7 @@ ${L.ctaBand('Bring one real day from your business.', 'We will run it through Jw
 // ---------------------------------------------------------------- 1. Billing
 const billing = guide({
   slug: 'jewellery-billing-software',
-  title: 'Jewellery Billing Software: The Complete Buyer’s Guide (2026) | Jwero',
+  title: 'Jewellery Billing Software: Buyer’s Guide (2026) | Jwero',
   description: 'How jewellery billing software works and how to choose it: live gold rate, making charges, wastage, stones, old-gold exchange, HUID, GST, schemes at the counter and day-close, with a feature checklist and questions to ask.',
   h1: 'Jewellery billing software: the complete buyer’s guide',
   sub: 'What a jewellery bill really contains, why general billing software gets it wrong, the features that matter at a busy counter, and the questions to ask before you buy.',
@@ -99,14 +107,14 @@ const billing = guide({
 
   <h2>How Jwero does it, and what it does not do</h2>
   <p>Jwero prices from one live rate with your making and wastage rules, bills by scan, handles old-gold exchange, returns and advances, applies scheme balances from the customer’s record, and closes each register against its own bills. Every bill posts to the books and to the customer’s record in the same step. The counter is described on the <a href="/products/pos">POS page</a> and the invoicing and receivables on the <a href="/products/billing-finance">billing page</a>.</p>
-  <p>It does not generate e-invoice IRNs or e-way bills and does not file GST returns. Invoices are GST-ready and the data goes to your accountant, through the Tally or Zoho Books bridge if they use one.</p>
+  <p>It prepares the e-invoice file for the GST portal and records the IRN back on the bill, but it does not file e-invoices directly, generate e-way bills or file GST returns. Invoices are GST-ready and the data goes to your accountant, through the Tally or Zoho Books bridge if they use one.</p>
   `,
   faqs: [
     { q: 'What is jewellery billing software?', a: 'Software that works out a jewellery bill from weight, purity and the day’s rate, adds making, wastage, stones and tax, handles old-gold exchange and scheme balances, and records the sale against stock, books and the customer.' },
     { q: 'Can general GST billing software be used for a jewellery shop?', a: 'It can print an invoice, but it expects a fixed price per item. It does not price by weight at a moving rate, does not handle old-gold exchange as metal coming into stock, and does not know schemes or HUID, so the real calculation ends up on a calculator.' },
     { q: 'How much does jewellery billing software cost?', a: 'Prices vary widely by vendor and by how many counters and branches you run. Jwero is ₹18,000 a month, with billing, stock, CRM and every other module included. The first month is ₹3,600.' },
     { q: 'Does the gold rate update automatically?', a: 'In Jwero, one rate drives every price. You set it or take it from the rate feed, and tags, quotations, chat replies and bills follow.' },
-    { q: 'Does it generate e-invoices?', a: 'Not in Jwero today. Invoices are GST-ready; e-invoice IRN and e-way bills are on the roadmap, not shipped.' },
+    { q: 'Does it generate e-invoices?', a: 'Partly. Jwero prepares the e-invoice file for the GST portal and records the IRN back on the bill. Direct filing and e-way bills are not available yet.' },
   ],
   related: [['/products/billing-finance', 'Jewellery billing software'], ['/products/pos', 'Jewellery POS software'], ['/guides/jewellery-inventory-software', 'Inventory guide'], ['/blog/jewellery-software-cost-india', 'What jewellery software costs']],
 });
@@ -114,7 +122,7 @@ const billing = guide({
 // ---------------------------------------------------------------- 2. ERP
 const erp = guide({
   slug: 'jewellery-erp-software',
-  title: 'Jewellery ERP Software: What It Covers and How to Choose (2026) | Jwero',
+  title: 'Jewellery ERP Software: How to Choose (2026) | Jwero',
   description: 'A plain guide to jewellery ERP software: the modules a jeweller needs, retail versus manufacturing ERP, what an ERP leaves out, how to run a selection, and the mistakes that make ERP projects fail.',
   h1: 'Jewellery ERP software: what it covers and how to choose',
   sub: 'The modules a jewellery business really needs, how retail and manufacturing differ, what a traditional ERP leaves outside, and how to pick one without betting the season on it.',
@@ -185,7 +193,7 @@ const erp = guide({
 
   <h2>How Jwero does it, and what it does not do</h2>
   <p>Jwero covers inventory, counter billing, purchase and vendors, manufacturing with karigar accounts in fine grams, repairs, schemes, girvi, multi-branch and its own ledger, on the same record as the customer, WhatsApp and the team. The operations are on the <a href="/products/erp">ERP page</a> and the workshop on the <a href="/products/manufacturing">manufacturing page</a>.</p>
-  <p>It does not convert CAD files into bills of materials, does not generate e-invoices or e-way bills, and has no courier integration. Those are stated on the <a href="/roadmap">public roadmap</a>.</p>
+  <p>It does not convert CAD files into bills of materials, does not file e-invoices directly or generate e-way bills, and has no courier integration. Those are stated on the <a href="/roadmap">public roadmap</a>.</p>
   `,
   faqs: [
     { q: 'What is jewellery ERP software?', a: 'One system that records a jewellery business’s stock, sales, purchases, manufacturing, karigar accounts and books, with metal tracked by weight and purity as well as money.' },
@@ -282,7 +290,7 @@ const inventory = guide({
 // ---------------------------------------------------------------- 4. CRM
 const crm = guide({
   slug: 'jewellery-crm-software',
-  title: 'Jewellery CRM Software: A Practical Guide for Jewellers (2026) | Jwero',
+  title: 'Jewellery CRM Software: A Practical Guide (2026) | Jwero',
   description: 'What a jewellery CRM should record, how it differs from a general CRM, how to follow up leads from WhatsApp, Instagram and walk-ins, occasions, schemes, consent and what to measure, with a checklist.',
   h1: 'Jewellery CRM software: a practical guide for jewellers',
   sub: 'Jewellery is bought a few times in a life, from someone trusted. This is how to keep that trust on a record the business owns, and turn it into the next sale.',
@@ -445,8 +453,8 @@ const manufacturing = guide({
   </ol>
 
   <h2>How Jwero does it, and what it does not do</h2>
-  <p>Jwero runs orders, bills of materials, routings, issue and return in fine weight, wastage norms by stage with a metal closure check, job cards, quality checks, hallmarking records, raw material lots and a karigar khata that settles wages against gold. Client-supplied metal is tracked as job work. Finished pieces go straight into the stock the counter and the trade desk sell from. Details are on the <a href="/products/manufacturing">manufacturing page</a>.</p>
-  <p>It does not convert CAD files into bills of materials; these are entered by production. It does not connect to casting machines or weighing equipment beyond the scales supported as devices.</p>
+  <p>Jwero runs orders, bills of materials, routings, issue and return in fine weight, wastage norms by stage, job cards, quality checks, hallmarking records, raw material lots and a karigar khata that settles wages against gold. Client-supplied metal is tracked as job work. Finished pieces go straight into the stock the counter and the trade desk sell from. Details are on the <a href="/products/manufacturing">manufacturing page</a>.</p>
+  <p>It does not convert CAD files into bills of materials; these are entered by production. It does not yet run a full metal reconciliation or a physical metal count. It does not connect to casting machines or weighing equipment beyond the scales supported as devices.</p>
   `,
   faqs: [
     { q: 'What is jewellery manufacturing software?', a: 'Software that follows precious metal through a workshop: orders, bills of materials, issue and return to karigars in fine weight, loss against norms at each stage, quality checks, hallmarking and finished stock.' },
@@ -478,6 +486,7 @@ ${L.section(L.cards([
   { title: 'Barcode, tagging and RFID', text: 'Tag once, scan to bill and to count.', link: { href: '/jewellery-barcode-tagging-software', label: 'Open' } },
   { title: 'Cloud and mobile', text: 'Online software on any phone or computer.', link: { href: '/cloud-jewellery-software', label: 'Open' } },
 ]), { tone: 'tint' })}
+${L.section(`${L.sectionHead('IN THE PRODUCT', 'Where each guide leads in Jwero.', '')}<div class="erp-map">${[['/products/billing-finance', 'Billing and accounts'], ['/products/erp', 'ERP'], ['/products/inventory', 'Inventory'], ['/products/crm', 'CRM'], ['/products/manufacturing', 'Manufacturing'], ['/pricing', 'Pricing']].map(([h, t]) => `<a href="${h}"><b>${t}</b><span>${h.replace(/^\//, 'jwero.ai/')}</span></a>`).join('')}</div>`, { tone: 'tint' })}
 ${L.ctaBand('Not sure where to start?', 'Tell us what you run today and we will point you to the right page.', 'guides')}
 `,
 };

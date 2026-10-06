@@ -414,6 +414,7 @@ const HUB_SHORT = {
   'tools/gold-scheme-calculator': { q: 'How do I work out what a gold savings scheme is worth to my shop?', a: 'Multiply the customers who join by their monthly instalment and the scheme length, then account for the bonus month you give and how many complete. The calculator turns your enrolment numbers into the future sales a scheme locks in.' },
   'tools/whatsapp-revenue-estimator': { q: 'How much revenue do jewellers lose to slow WhatsApp replies?', a: 'It depends on how many enquiries you get, how many go unanswered or are answered late, and how many of those would have bought. The estimator works it out from your own numbers and shows each assumption.' },
   'compare/whatsapp-tools-vs-jewellery-os': { q: 'Do jewellers need a WhatsApp tool or a full jewellery system?', a: 'A WhatsApp tool sends and answers messages. A jewellery system also knows the stock, the live rate, schemes and each customer’s purchases, so a reply can quote the right piece at today’s price. If messaging is your only gap, a tool can be enough; if replies need the business behind them, a system fits better.' },
+  guides: { q: 'How should a jeweller choose software?', a: 'Start from the work: billing at the live rate, stock by piece and weight, customers and follow-up, purchase and the workshop. Check each vendor on purity-based pricing, old-gold exchange, scheme handling, data export and what is not built yet, and test it on your own data. These guides take each area in turn.' },
   compare: { q: 'How does Jwero compare with other jewellery software?', a: 'Jwero is built jewellery-first and runs customers, every selling channel and operations on one record, with AI that waits for approval. Jewellery ERPs such as Marg, Ornate NX or SIONIQ can be stronger on accounting depth or module breadth; WhatsApp tools such as WATI or Interakt focus on messaging. Each comparison here says where the other product wins.' },
   blog: { q: 'What does the Jwero blog cover?', a: 'Practical guides for jewellery business owners: selling on WhatsApp and Instagram, gold savings schemes and their rules, dead stock, gold loss in manufacturing, HUID records, Tally, software costs and how to compare vendors. Each guide is reviewed against what the product does and says plainly what it does not do yet.' },
   'jewellery-software-india': { q: 'Which jewellery software do Indian jewellers use?', a: 'Jewellers across India, from Surat diamond offices to Thrissur gold showrooms, run Jwero for billing at the live rate, stock, customers, karigar accounts, schemes and WhatsApp on one record. It is set up in a day over chat and video in any city, at the same price everywhere: ₹18,000 a month, first month ₹3,600.' },
@@ -425,6 +426,10 @@ const HUB_SHORT = {
   'solutions/pain/dead-stock': { q: 'How do jewellers reduce dead stock?', a: 'Know the age and today’s value of every piece, see what has not moved in months, and match slow pieces to the customers most likely to buy them before discounting or melting. Jwero shows stock ageing at the live rate and suggests who to offer each idle piece to.' },
 };
 const HUB_FAQ = {
+  guides: [
+    { q: 'Which guide should I read first?', a: 'Start with billing if the counter is your pain, inventory if stock is, CRM if customers are slipping away, and ERP or manufacturing if you make or supply jewellery.' },
+    { q: 'Are these guides neutral?', a: 'The checklists apply to any vendor. Each guide ends with what Jwero does and what it does not do yet, so you can judge it like the rest.' },
+  ],
   'compare/whatsapp-tools-vs-jewellery-os': [
     { q: 'Can I keep my WhatsApp number if I move to Jwero?', a: 'Yes. Your business number can be moved to the official WhatsApp Business API that Jwero runs on, and the team replies from one shared inbox.' },
     { q: 'Is a WhatsApp tool cheaper than a jewellery system?', a: 'Usually, for messaging alone. Compare it against everything it does not cover, such as stock, rate-linked pricing, schemes and customer history, and the tools you would add for those.' },
@@ -751,10 +756,10 @@ function withPlatformLinks(body, page) {
 // Blog posts: a short answer and a contents list at the top, so readers and
 // answer engines get the point before the detail.
 function withBlogTop(body, page) {
-  if (!/^blog\/./.test(page.slug || '')) return body;
+  if (!/^(blog|guides)\/./.test(page.slug || '')) return body;
   const pb = body.indexOf('<div class="post-body">'); if (pb < 0) return body;
   let n = 0; const heads = [];
-  const pe = body.indexOf('</div>', pb);
+  const pe = body.indexOf('</section>', pb);
   const withIds = body.slice(pb, pe).replace(/<h2>([\s\S]*?)<\/h2>/g, (m0, t) => { const id = 'p' + (++n); heads.push([id, t.replace(/<[^>]+>/g, '')]); return `<h2 id="${id}">${t}</h2>`; });
   const q = ((page.schema && page.schema.headline) || page.title || '').split('|')[0].trim();
   const box = `<div class="post-top"><div class="post-short"><p class="in-short-tag">In short</p><p>${page.description}</p></div>${heads.length > 2 ? `<nav class="post-toc" aria-label="Contents"><p class="in-short-tag">In this guide</p><ol>${heads.map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join('')}</ol></nav>` : ''}</div>`;

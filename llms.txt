@@ -233,10 +233,10 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jewellery Website Analytics: Heatmaps, A/B: https://jwero.ai/jewellery-website-analytics
 - ज्वेलरी सॉफ्टवेयर: बिलिंग, स्टॉक, CRM और WhatsApp: https://jwero.ai/hi
 - Jewellery Software Guides: Billing, ERP, Stock, CRM: https://jwero.ai/guides
-- Jewellery Billing Software: The Complete Buyer’s Guide (2026): https://jwero.ai/guides/jewellery-billing-software
-- Jewellery ERP Software: What It Covers and How to Choose (2026): https://jwero.ai/guides/jewellery-erp-software
+- Jewellery Billing Software: Buyer’s Guide (2026): https://jwero.ai/guides/jewellery-billing-software
+- Jewellery ERP Software: How to Choose (2026): https://jwero.ai/guides/jewellery-erp-software
 - Jewellery Inventory Software: Stock Management Guide (2026): https://jwero.ai/guides/jewellery-inventory-software
-- Jewellery CRM Software: A Practical Guide for Jewellers (2026): https://jwero.ai/guides/jewellery-crm-software
+- Jewellery CRM Software: A Practical Guide (2026): https://jwero.ai/guides/jewellery-crm-software
 - Jewellery Manufacturing Software: A Buyer’s Guide: https://jwero.ai/guides/jewellery-manufacturing-software
 - Privacy Policy: How Jwero Handles Personal Data: https://jwero.ai/legal/privacy
 - Terms of Use: Website and Jwero Subscription: https://jwero.ai/legal/terms
