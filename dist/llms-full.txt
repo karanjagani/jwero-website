@@ -6932,6 +6932,28 @@ PRICING
 
  Run it yourself: first month ₹3,600, then ₹18,000 a month. Managed: no subscription, every tool included. Prices exclude GST.
 
+ THE FRANKENSTACK MATH
+
+## What the pile of tools costs.
+
+ Most jewellery businesses pay for five or six disconnected tools, plus the invisible cost: customers lost to silence.
+
+ What you pay for today Typical job it does In Jwero One 
+
+ WhatsApp bulk-message tool Sends texts; knows nothing about the customer Included, with the customer record behind every reply 
+
+ Catalogue app Shares designs; prices go stale when the rate moves Included, live-rate pricing on every share 
+
+ Website / ecommerce subscription A brochure or a generic store Included, a jewellery-native ecommerce website 
+
+ Billing / ERP software The invoice and the ledger Included, POS, inventory, finance, with Tally and Zoho Books bridges 
+
+ Agency retainer / freelancer Posts and ads, disconnected from sales data Included, social, ads and attribution on the same record 
+
+ Scheme registers & Excel hours Staff time reconciling what no tool connects Gone, one record, no reconciliation 
+
+ Put your own numbers in: what making do costs · the calculators .
+
  THREE WAYS TO BUY
 
 ## Subscription, managed, or enterprise.
@@ -7131,39 +7153,7 @@ PRICING
 
  Trusted by names you already know
 
-## Security and privacy delivered, just as you want.
-
- DPDP DPDP Act In place IN Data hosted in India In place PCI Card data (PCI DSS) In place META WhatsApp Business API In place GST GST record keeping In place BIS BIS hallmarking and HUID In place ISO ISO 27001 In progress SOC 2 SOC 2 In progress GDPR EU GDPR Planned OWASP OWASP Top 10 Planned 
-
- Your own database. Never stored with another jeweller’s. 
-
- Encrypted in transit and at rest, with roles you control. 
-
- Export any time. Your data leaves with you. 
-
- Trust Centre → Security Privacy Policy Terms of Use Data Policy Sub-processors DPDP statement 
-
- THE FRANKENSTACK MATH
-
-## What the pile of tools costs.
-
- Most jewellery businesses pay for five or six disconnected tools, plus the invisible cost: customers lost to silence.
-
- What you pay for today Typical job it does In Jwero One 
-
- WhatsApp bulk-message tool Sends texts; knows nothing about the customer Included, with the customer record behind every reply 
-
- Catalogue app Shares designs; prices go stale when the rate moves Included, live-rate pricing on every share 
-
- Website / ecommerce subscription A brochure or a generic store Included, a jewellery-native ecommerce website 
-
- Billing / ERP software The invoice and the ledger Included, POS, inventory, finance, with Tally and Zoho Books bridges 
-
- Agency retainer / freelancer Posts and ads, disconnected from sales data Included, social, ads and attribution on the same record 
-
- Scheme registers & Excel hours Staff time reconciling what no tool connects Gone, one record, no reconciliation 
-
- Put your own numbers in: what making do costs · the calculators .
+ Security and privacy delivered, just as you want. See how your data is protected → 
 
  THE OBJECTIONS, ANSWERED DIRECTLY
 
@@ -7262,54 +7252,7 @@ PRICING
 
  Send this to a jeweller Tell us who you referred 
 
- CHOOSE
-
-## Run it yourself, let Jwero run it, or talk to us.
-
- 01 · Subscription
-
-## You run it
-
- ₹18,000 a month 
-
- First month ₹3,600. Billed monthly.
-
- Every module of the platform
- AI agents that wait for your approval
- Your team does the work
- Messages, AI and calls on a prepaid wallet
- 
- Start for ₹3,600 Join the waitlist View demo 
-
- 02 · Managed (JBaaS)
-
-## Jwero runs it
-
- No subscription. Every tool included. About half of what the same work costs you today.
-
- Jwero specialists and AI do the work
- Start with one function, add more any time
- No team to hire, no tools to buy
- One partner, one account of what was done
- 
- Let Jwero handle it View demo 
-
- 03 · Enterprise
-
-## For chains and groups
-
- Custom
-
- Many showrooms, brands or companies, with your own terms.
-
- Self-run, managed, or a mix by function
- Single sign-on and custom integrations
- A dedicated success manager
- Contracts and security reviews your way
- 
- Talk to us 
-
- A real person replies on WhatsApp within minutes · Onboarding in a day · Refer a jeweller, save 10%
+ Still deciding? Ask us on WhatsApp . A real person replies within minutes. Or go back to the three ways to buy .
 
 Q: What does Jwero cost?
 A: One plan, Jwero One: ₹18,000 a month, billed monthly. Every module is included. Prices exclude GST. Groups and chains take Enterprise, which is custom priced.
@@ -13866,7 +13809,21 @@ ABOUT
  Reach us care@jwero.ai · WhatsApp +91 91699 59959 · LinkedIn · Instagram 
 
  Talk to us 
- Talk to the founders’ desk
+ Talk to the founders’ desk 
+
+ WHAT WE PROMISE
+
+## Three things you can hold us to.
+
+ A reply within minutes. A real person answers on WhatsApp during business hours.
+ Onboarding in a day. We set up your stock, rates and customers with you.
+ 10% saved for each jeweller you refer. See how referral works .
+ Proof you can check: who uses Jwero, and what they say .
+
+ “I must say the dedication of the team is impeccable. They have a very good understanding of the jewellery trade in our country and also know how to bridge the gap between orthodox and modern business pratices.” Sanjay Bohra J Mittlal ThangaMaligai, Chennai 
+ 
+ Run it yourself, or let Jwero run it. The platform from ₹3,600 for the first month, or Jwero’s specialists and AI with every tool included.
+ Start for ₹3,600 Let Jwero handle it
 
 
 ---
@@ -13902,7 +13859,12 @@ CONTACT
 
  Chat or call with us 
 
+ What happens when you message. A real person from the Jwero team replies within minutes during business hours. Tell us your city, how many showrooms you run, and what you want fixed first. We reply with the next step: a demo on your own stock, a price, or a straight “we are not the right fit”.
+ Looking for something specific? Pricing · Book a demo · Security · Moving from your current software · Customers 
+
  Evaluating for a chain or committee? Start on the enterprise track · Curious what the product does first? Take the platform tour · Cost questions? See pricing .
+
+ “I recently had the pleasure of interacting with Jwero Care online support team, and I must say, it was an exceptional experience! Their live chat service was prompt, efficient, and incredibly helpful. Keep it up” Aradhana Jewellery Kannur, Kerala
 
 
 ---
@@ -14083,7 +14045,7 @@ BOOK A DEMO
  Request my demo slot 
  Opening WhatsApp with your details filled in, press send, and we’ll confirm your slot within business hours.
 
- No spam, no drip campaigns. One confirmation, one demo, your decision.
+ Your details are used only to arrange this demo. No spam, no drip campaigns. One confirmation, one demo, your decision. A real person replies within minutes during business hours.
 
  Trusted by names you already know
 
@@ -14106,6 +14068,16 @@ BOOK A DEMO
 ## You get the plan
  A written note: what Jwero would change, the migration path, and a straight price. Then it is your call.
 
+ WHAT YOU WILL SEE
+
+## Fifteen minutes, built around your shop.
+
+ Your stock at today’s rate. A few of your own pieces, priced live with making and wastage.
+ One real day. An enquiry, a bill and a follow-up, start to finish, on one record.
+ Your choice. Run it yourself from ₹3,600 for the first month, or let Jwero run it for you.
+
+ “A capable, motivated and eager team has definitely delivered on their promise of speedy deployment. The team’s availability & response is commendable. This platform has immense potential to our trade.” Manjunatha Nayak Gujjadi Swarna Jewellers, Bangalore
+
 
 ---
 
@@ -14122,6 +14094,10 @@ PARTNERS
 
  Talk to us 
  See how coexistence works 
+
+ “I must say the dedication of the team is impeccable. They have a very good understanding of the jewellery trade in our country and also know how to bridge the gap between orthodox and modern business pratices.” Sanjay Bohra J Mittlal ThangaMaligai, Chennai 
+ 
+ Already a Jwero customer? Each jeweller you refer saves you 10%. See how referral works .
 
  WHO THIS IS FOR
 

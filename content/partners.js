@@ -26,6 +26,8 @@ ${L.hero({
   secondary: { href: '/migration', label: 'See how coexistence works' },
 })}
 
+${L.section(require('./positioning').quoteOne(1))}
+${L.section(`<p class="cta-note" style="text-align:center">Already a Jwero customer? Each jeweller you refer saves you 10%. <a href="/pricing">See how referral works</a>.</p>`)}
 ${L.section(
   `${L.sectionHead('WHO THIS IS FOR', 'Two groups, one shared position.', '')}
   ${L.cards([

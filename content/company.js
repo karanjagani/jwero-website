@@ -1,4 +1,5 @@
 const L = require('../lib');
+const Q = (i) => require('./positioning').quoteOne(i);
 
 const company = {
   slug: 'company',
@@ -46,6 +47,9 @@ ${L.section(
     <a class="btn btn-ghost" href="#" data-wa="company">Talk to the founders’ desk</a>
   </div>`
 , { tone: 'tint' })}
+${L.section(`${L.sectionHead('WHAT WE PROMISE', 'Three things you can hold us to.', '')}<div class="jb-blogline"><p><b>A reply within minutes.</b> A real person answers on WhatsApp during business hours.</p><p><b>Onboarding in a day.</b> We set up your stock, rates and customers with you.</p><p><b>10% saved for each jeweller you refer.</b> <a href="/pricing">See how referral works</a>.</p><p>Proof you can check: <a href="/customers">who uses Jwero, and what they say</a>.</p></div>`, { tone: 'tint' })}
+${L.section(Q(1))}
+${L.section(`<div class="jb-blogline"><p><b>Run it yourself, or let Jwero run it.</b> The platform from ₹3,600 for the first month, or Jwero’s specialists and AI with every tool included.</p><div class="cta-row"><a class="btn btn-primary" href="${L.TRIAL_URL}company" rel="noopener" data-trial>Start for ₹3,600</a><a class="btn btn-ghost" href="#" data-wa="handle">Let Jwero handle it</a></div></div>`)}
 `,
 };
 
@@ -68,8 +72,10 @@ ${L.section(
     { title: 'Book a demo', text: 'A 15-minute slot with someone who knows the trade.', link: { href: '/book-demo', label: 'Book now' } },
   ], 4)}
   <div class="cta-row" style="margin-top:10px"><a class="btn btn-primary" href="#" data-wa="contact">Chat or call with us</a></div>
+  <div class="jb-blogline" style="margin-top:26px"><p><b>What happens when you message.</b> A real person from the Jwero team replies within minutes during business hours. Tell us your city, how many showrooms you run, and what you want fixed first. We reply with the next step: a demo on your own stock, a price, or a straight “we are not the right fit”.</p><p><b>Looking for something specific?</b> <a href="/pricing">Pricing</a> · <a href="/book-demo">Book a demo</a> · <a href="/trust/security">Security</a> · <a href="/migration">Moving from your current software</a> · <a href="/customers">Customers</a></p></div>
   <p style="margin-top:26px; font-size:.88rem; color:var(--ink-2);">Evaluating for a chain or committee? <a href="/enterprise">Start on the enterprise track</a> · Curious what the product does first? <a href="/platform">Take the platform tour</a> · Cost questions? <a href="/pricing">See pricing</a>.</p>`
 )}
+${L.section(Q(2))}
 `,
 };
 
@@ -191,7 +197,7 @@ ${L.section(
       <input id="f-time" name="time" type="text" placeholder="e.g. weekdays after 7pm">
       <button class="btn btn-primary" type="submit">Request my demo slot</button>
       <p class="form-ok">Opening WhatsApp with your details filled in — press send, and we’ll confirm your slot within business hours.</p>
-      <p class="cta-note">No spam, no drip campaigns. One confirmation, one demo, your decision.</p>
+      <p class="cta-note">Your details are used only to arrange this demo. No spam, no drip campaigns. One confirmation, one demo, your decision. A real person replies within minutes during business hours.</p>
     </form>
     <div>
       ${L.customerLogos()}
@@ -204,6 +210,8 @@ ${L.section(
     </div>
   </div>`
 )}
+${L.section(`${L.sectionHead('WHAT YOU WILL SEE', 'Fifteen minutes, built around your shop.', '')}<div class="jb-blogline"><p><b>Your stock at today’s rate.</b> A few of your own pieces, priced live with making and wastage.</p><p><b>One real day.</b> An enquiry, a bill and a follow-up, start to finish, on one record.</p><p><b>Your choice.</b> Run it yourself from ₹3,600 for the first month, or let Jwero run it for you.</p></div>`)}
+${L.section(Q(0))}
 `,
 };
 

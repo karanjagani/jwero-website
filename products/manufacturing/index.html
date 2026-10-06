@@ -232,6 +232,26 @@
     <details class="faq-item">
       <summary>Does it work for diamond and gemstone manufacturing too?</summary>
       <div class="faq-a"><p>Stone lots, setting stages and sorting loss are modelled; the gold flow and the stone flow reconcile on the same order.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Does it track gold through every stage, or just in and out?</summary>
+      <div class="faq-a"><p>Every stage. A production order carries a routing; each stage has a wastage norm; issue and receipt are weighed at each hand-off. The order cannot close until the metal balances, issued equals received plus recorded loss within norm.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How does it work with my karigars?</summary>
+      <div class="faq-a"><p>Each karigar has a directory entry, open jobs, a khata of metal issued and returned, and a settlement that converts work to wages under your wastage policy, posted to the books in the same step.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I run it without a routing for every design?</summary>
+      <div class="faq-a"><p>Yes. Routing templates resolve automatically from the product’s category and metal, in a fixed, auditable order, so a new design gets a sensible routing without a planner.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What about stones and raw metal?</summary>
+      <div class="faq-a"><p>Metal and stone masters, raw-material purchase orders, receiving QC and lots feed the same BOM, so a finished piece knows which lot its metal and stones came from.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Does it plan capacity or forecast what to make?</summary>
+      <div class="faq-a"><p>Capacity per stage is modelled and job due-dates are swept for lateness. It does not yet net demand against stock and work-in-progress into a make list, that decision is still yours, and we say so plainly.</p></div>
     </details></div>
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/jwero-website/faq">See the full FAQ →</a></p></div></section>
 
@@ -280,32 +300,7 @@
     <div class="section-head"><p class="eyebrow">KEEP READING</p><h2 id="related-title">Related on Jwero.</h2></div>
     <div class="grid grid-3 cells"><a class="card" href="/jwero-website/guides/jewellery-manufacturing-software"><h3>The buyer’s guide</h3><p>What this kind of software must do, with a checklist</p></a><a class="card" href="/jwero-website/solutions/manufacturers"><h3>For manufacturers</h3><p>How this fits your kind of business</p></a><a class="card" href="/jwero-website/products/catalog"><h3>Catalogue (PIM)</h3><p>Purity, certificates, live prices</p></a><a class="card" href="/jwero-website/products/inventory"><h3>Inventory</h3><p>Ageing and dead stock</p></a><a class="card" href="/jwero-website/products/pos"><h3>Counter POS</h3><p>Scan, exchange, return, day-close</p></a><a class="card" href="/jwero-website/products/billing-finance"><h3>Billing & Finance</h3><p>GST invoices at live rates</p></a></div>
   </div>
-</section><section class="section"><div class="container">
-    <div class="section-head">
-      <p class="eyebrow">QUESTIONS</p>
-      <h2>What people ask before they message.</h2>
-      
-    </div><div class="faq">
-    <details class="faq-item">
-      <summary>Does it track gold through every stage, or just in and out?</summary>
-      <div class="faq-a"><p>Every stage. A production order carries a routing; each stage has a wastage norm; issue and receipt are weighed at each hand-off. The order cannot close until the metal balances, issued equals received plus recorded loss within norm.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary>How does it work with my karigars?</summary>
-      <div class="faq-a"><p>Each karigar has a directory entry, open jobs, a khata of metal issued and returned, and a settlement that converts work to wages under your wastage policy, posted to the books in the same step.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary>Can I run it without a routing for every design?</summary>
-      <div class="faq-a"><p>Yes. Routing templates resolve automatically from the product’s category and metal, in a fixed, auditable order, so a new design gets a sensible routing without a planner.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary>What about stones and raw metal?</summary>
-      <div class="faq-a"><p>Metal and stone masters, raw-material purchase orders, receiving QC and lots feed the same BOM, so a finished piece knows which lot its metal and stones came from.</p></div>
-    </details>
-    <details class="faq-item">
-      <summary>Does it plan capacity or forecast what to make?</summary>
-      <div class="faq-a"><p>Capacity per stage is modelled and job due-dates are swept for lateness. It does not yet net demand against stock and work-in-progress into a make list, that decision is still yours, and we say so plainly.</p></div>
-    </details></div><p class="cta-note" style="margin-top:14px">More questions? <a href="/jwero-website/faq">See the full FAQ →</a></p></div></section><section class="cta-band">
+</section><section class="cta-band">
   <div class="panel">
     <div class="panel-glow" aria-hidden="true"></div>
     <div class="cta-tiles" aria-hidden="true"><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5z"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20"/><path d="m12 21-4-12 2-6"/><path d="m12 21 4-12-2-6"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M15 9h3"/><path d="M15 13h3"/><path d="M6 16c.6-1.5 1.7-2 3-2s2.4.5 3 2"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.9 5.6a2 2 0 0 0 1.3 1.3L21 12l-5.8 2.1a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.6a2 2 0 0 0-1.3-1.3L3 12l5.8-2.1a2 2 0 0 0 1.3-1.3z"/></svg></span><span><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M18.1 10.4A6 6 0 1 1 10.3 18"/><path d="M7 6h1v4"/></svg></span></div>

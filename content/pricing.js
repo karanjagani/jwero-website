@@ -98,7 +98,23 @@ ${L.hero({
   note: `Run it yourself: first month ${inr(PLAN.firstMonth)}, then ${inr(PLAN.monthly)} a month. Managed: no subscription, every tool included. Prices exclude GST.`,
 })}
 
-${L.section(`${L.sectionHead('THREE WAYS TO BUY', 'Subscription, managed, or enterprise.', 'Below the three: the detail of the subscription for jewellers who run it themselves. Managed customers pay no subscription; every tool is included.')}${require('./jbaas').TIERS()}`, { tone: 'tint' })}
+${L.section(
+  `${L.sectionHead('THE FRANKENSTACK MATH', 'What the pile of tools costs.', 'Most jewellery businesses pay for five or six disconnected tools — plus the invisible cost: customers lost to silence.')}
+  <div class="tbl-wrap"><table class="tbl">
+    <thead><tr><th>What you pay for today</th><th>Typical job it does</th><th>In Jwero One</th></tr></thead>
+    <tbody>
+      <tr><td><strong>WhatsApp bulk-message tool</strong></td><td>Sends texts; knows nothing about the customer</td><td>Included — with the customer record behind every reply</td></tr>
+      <tr><td><strong>Catalogue app</strong></td><td>Shares designs; prices go stale when the rate moves</td><td>Included — live-rate pricing on every share</td></tr>
+      <tr><td><strong>Website / ecommerce subscription</strong></td><td>A brochure or a generic store</td><td>Included — a jewellery-native ecommerce website</td></tr>
+      <tr><td><strong>Billing / ERP software</strong></td><td>The invoice and the ledger</td><td>Included — POS, inventory, finance, with Tally and Zoho Books bridges</td></tr>
+      <tr><td><strong>Agency retainer / freelancer</strong></td><td>Posts and ads, disconnected from sales data</td><td>Included — social, ads and attribution on the same record</td></tr>
+      <tr><td><strong>Scheme registers & Excel hours</strong></td><td>Staff time reconciling what no tool connects</td><td>Gone — one record, no reconciliation</td></tr>
+    </tbody>
+  </table></div>
+  <p class="cta-note" style="margin-top:16px">Put your own numbers in: <a href="/erp-to-os/make-do">what making do costs</a> · <a href="/tools">the calculators</a>.</p>`
+)}
+
+<div id="tiers"></div>${L.section(`${L.sectionHead('THREE WAYS TO BUY', 'Subscription, managed, or enterprise.', 'Below the three: the detail of the subscription for jewellers who run it themselves. Managed customers pay no subscription; every tool is included.')}${require('./jbaas').TIERS()}`, { tone: 'tint' })}
 ${L.section(`<div class="jb-quote2">${require('./positioning').quoteOne(0)}${require('./positioning').quoteOne(1)}</div>`)}
 ${L.section(
   `<div class="plans" data-plans>
@@ -161,27 +177,8 @@ ${L.section(
 
 ${L.section(L.customerLogos())}
 
-${L.section(
-  `<div class="gem-head"><h2>Security and privacy delivered, just as you want.</h2></div>
-  ${L.trustStrip()}`
-)}
+${L.section(`<p class="cta-note" style="text-align:center">Security and privacy delivered, just as you want. <a href="/trust/security">See how your data is protected →</a></p>`)}
 
-
-${L.section(
-  `${L.sectionHead('THE FRANKENSTACK MATH', 'What the pile of tools costs.', 'Most jewellery businesses pay for five or six disconnected tools — plus the invisible cost: customers lost to silence.')}
-  <div class="tbl-wrap"><table class="tbl">
-    <thead><tr><th>What you pay for today</th><th>Typical job it does</th><th>In Jwero One</th></tr></thead>
-    <tbody>
-      <tr><td><strong>WhatsApp bulk-message tool</strong></td><td>Sends texts; knows nothing about the customer</td><td>Included — with the customer record behind every reply</td></tr>
-      <tr><td><strong>Catalogue app</strong></td><td>Shares designs; prices go stale when the rate moves</td><td>Included — live-rate pricing on every share</td></tr>
-      <tr><td><strong>Website / ecommerce subscription</strong></td><td>A brochure or a generic store</td><td>Included — a jewellery-native ecommerce website</td></tr>
-      <tr><td><strong>Billing / ERP software</strong></td><td>The invoice and the ledger</td><td>Included — POS, inventory, finance, with Tally and Zoho Books bridges</td></tr>
-      <tr><td><strong>Agency retainer / freelancer</strong></td><td>Posts and ads, disconnected from sales data</td><td>Included — social, ads and attribution on the same record</td></tr>
-      <tr><td><strong>Scheme registers & Excel hours</strong></td><td>Staff time reconciling what no tool connects</td><td>Gone — one record, no reconciliation</td></tr>
-    </tbody>
-  </table></div>
-  <p class="cta-note" style="margin-top:16px">Put your own numbers in: <a href="/erp-to-os/make-do">what making do costs</a> · <a href="/tools">the calculators</a>.</p>`
-)}
 
 ${L.section(
   `${L.sectionHead('THE OBJECTIONS, ANSWERED DIRECTLY', 'Before you ask, in case you were about to.', '')}
@@ -204,7 +201,7 @@ ${L.section(`${L.sectionHead('MANAGED PRICING', 'How the managed price is worked
 <ol class="pz-how pz-how-4"><li><span>01</span><b>Your volume</b><p>Conversations, calls, posts and orders, predicted from your customer base and showrooms, or counted from your own figures.</p></li><li><span>02</span><b>Today’s cost</b><p>What that work costs at the cheapest way to staff it in India: a junior hire or a freelancer.</p></li><li><span>03</span><b>Jwero’s price</b><p>About half of that when you let Jwero decide and execute, and about 60% when you want to approve every step.</p></li><li><span>04</span><b>In writing</b><p>Your plan states the price, the work and what is measured before anything starts.</p></li></ol>
 <p class="cta-note" style="text-align:center;margin-top:18px"><a class="btn btn-primary" href="/count-your-team">Count your team and see your number</a></p>`, { tone: 'tint' })}
 ${require('./positioning').refer()}
-${L.section(`${L.sectionHead('CHOOSE', 'Run it yourself, let Jwero run it, or talk to us.', '')}${require('./jbaas').TIERS()}`, { tone: 'tint' })}
+${L.section(`<p class="cta-note" style="text-align:center">Still deciding? <a href="#" data-wa="pricing">Ask us on WhatsApp</a>. A real person replies within minutes. Or go back to <a href="#tiers">the three ways to buy</a>.</p>`)}
 `,
 };
 

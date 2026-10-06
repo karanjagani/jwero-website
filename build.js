@@ -411,6 +411,8 @@ function inShortQuestion(page) {
 }
 // Hub and pain pages answer their own question in one paragraph.
 const HUB_SHORT = {
+  company: { q: 'Who is behind Jwero?', a: 'Jwero is built by Mahendra, Karan and Manav Jagani of Tanika Tech Jewels Private Limited, Mumbai, incorporated in 2016. Mahendra comes from the gems and jewellery trade; Karan runs the business; Manav builds the product.' },
+  partners: { q: 'Who can partner with Jwero?', a: 'ERP and billing software dealers, accountants and consultants who already serve jewellers. Jwero works alongside the ledger they support, so the client stays theirs.' },
   tools: { q: 'Which free calculators does Jwero offer jewellers?', a: 'Four, free and without sign-up: a dead stock calculator for what idle inventory costs each month, a gold scheme calculator for what scheme enrolment is worth, a WhatsApp revenue estimator for what slow replies cost, and a gold-loss calculator for what unexplained production loss is worth. Each shows its assumptions.' },
   'tools/dead-stock-calculator': { q: 'How do I calculate the cost of dead stock in a jewellery shop?', a: 'Take the value of stock that has not sold in your chosen period, at today’s metal rate, and add what it costs you to hold it: the interest on the money tied up, plus any loss when it is finally discounted or melted. The calculator works this out from your own figures.' },
   'tools/gold-loss-calculator': { q: 'How do I calculate gold loss in jewellery manufacturing?', a: 'Compare the metal issued to each stage with the metal returned, subtract the loss your norm allows, and value what is left at today’s rate. The calculator shows what unexplained loss is worth over a month and a year from your own figures.' },
@@ -631,6 +633,15 @@ function withFaqs(body, page) {
   const firstQ = page.faqs[0].q.replace(/&/g, '&amp;');
   if (body.includes(firstQ) || body.includes(page.faqs[0].q)) return body;
   const L2 = require('./lib');
+  const lastFaq = body.lastIndexOf('<div class="faq">');
+  if (lastFaq !== -1) {
+    const missing = page.faqs.filter((f) => !body.includes(f.q) && !body.includes(f.q.replace(/&/g, '&amp;')));
+    if (!missing.length) return body;
+    const inner = L2.faqBlock(missing).replace(/^<div class="faq">/, '').replace(/<\/div>\s*$/, '');
+    const close = body.indexOf('</details>', lastFaq); let end = body.lastIndexOf('</details>', body.indexOf('</section>', lastFaq)) + 10;
+    if (close === -1 || end < 10) return body;
+    return body.slice(0, end) + inner + body.slice(end);
+  }
   const block = L2.section(`${L2.sectionHead('QUESTIONS', 'What people ask before they message.', '')}${L2.faqBlock(page.faqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`);
   const relAt = body.lastIndexOf('<section class="related"'), bandAt = body.lastIndexOf('<section class="cta-band">');
   const at = relAt !== -1 ? relAt : bandAt;
@@ -940,13 +951,13 @@ function withInterlinks(body, page) {
   const ROLE_TOPICS = [[/owner|successor|franchise/, ['Technology and strategy', 'Retail operations and sales']], [/sales-associate|store-manager|crm/, ['Leads and conversion', 'CRM and customers']], [/marketing/, ['Marketing and campaigns', 'WhatsApp']], [/ecommerce/, ['Ecommerce and websites', 'Product data and catalogues']], [/inventory|purchase|cashier|accountant/, ['Inventory, POS and ERP', 'Order management']], [/b2b/, ['Order management', 'Product data and catalogues']], [/production|karigar|cad|quality/, ['Order management', 'Inventory, POS and ERP']]];
   const rtopics = /^roles\/./.test(slug) ? ((ROLE_TOPICS.find(([r]) => r.test(slug)) || [, ['Retail operations and sales']])[1]) : null;
   const PLAT_TOPICS = { platform: ['Technology and strategy', 'AI'], 'platform/ai-workforce': ['AI', 'Leads and conversion'], 'platform/customer-memory': ['CRM and customers', 'Leads and conversion'], 'platform/pricing-engine': ['Product data and catalogues', 'Inventory, POS and ERP'], 'platform/integrations': ['Technology and strategy', 'Inventory, POS and ERP'], 'platform/integrations/tally': ['Inventory, POS and ERP', 'Technology and strategy'], 'platform/onboarding': ['Technology and strategy', 'Retail operations and sales'] };
-  const TOOL_TOPICS = { 'jewellery-accounting-software': ['Inventory, POS and ERP'], 'cloud-jewellery-software': ['Technology and strategy'], 'sms-marketing-for-jewellers': ['Marketing and campaigns', 'WhatsApp'], 'ai-calling-for-jewellers': ['AI', 'Leads and conversion'], 'jewellery-website-analytics': ['Ecommerce and websites', 'Leads and conversion'], tools: ['Leads and conversion', 'Inventory, POS and ERP'], 'tools/dead-stock-calculator': ['Inventory, POS and ERP'], 'tools/gold-loss-calculator': ['Order management', 'Inventory, POS and ERP'], 'tools/gold-scheme-calculator': ['CRM and customers', 'Leads and conversion'], 'tools/whatsapp-revenue-estimator': ['WhatsApp', 'Leads and conversion'] };
+  const TOOL_TOPICS = { 'jewellery-accounting-software': ['Inventory, POS and ERP'], 'cloud-jewellery-software': ['Technology and strategy'], 'sms-marketing-for-jewellers': ['Marketing and campaigns', 'WhatsApp'], 'ai-calling-for-jewellers': ['AI', 'Leads and conversion'], 'jewellery-website-analytics': ['Ecommerce and websites', 'Leads and conversion'], tools: ['Leads and conversion', 'Inventory, POS and ERP'], pricing: ['Technology and strategy', 'Inventory, POS and ERP'], trust: ['Technology and strategy'], 'trust/security': ['Technology and strategy'], migration: ['Inventory, POS and ERP'], enterprise: ['Retail operations and sales'], customers: ['Leads and conversion', 'CRM and customers'], company: ['Technology and strategy'], partners: ['Inventory, POS and ERP'], 'tools/dead-stock-calculator': ['Inventory, POS and ERP'], 'tools/gold-loss-calculator': ['Order management', 'Inventory, POS and ERP'], 'tools/gold-scheme-calculator': ['CRM and customers', 'Leads and conversion'], 'tools/whatsapp-revenue-estimator': ['WhatsApp', 'Leads and conversion'] };
   const CMP_TOPICS = { erp: ['Inventory, POS and ERP', 'Technology and strategy'], wa: ['WhatsApp', 'Leads and conversion'], shop: ['Ecommerce and websites', 'Product data and catalogues'], crm: ['CRM and customers', 'Marketing and campaigns'] };
   const ckind = /^compare/.test(slug) ? (/wati|interakt|doubletick|whatsapp/.test(slug) ? 'wa' : /shopify|quicksell/.test(slug) ? 'shop' : /zoho|zithara/.test(slug) ? 'crm' : 'erp') : null;
   const pltopics = PLAT_TOPICS[slug] || TOOL_TOPICS[slug] || (ckind && CMP_TOPICS[ckind]) || null;
   const ptopics = /^products\//.test(slug) ? ((PROD_TOPICS.find(([r]) => r.test(slug)) || [, ['Technology and strategy']])[1]) : null;
   const list = (BACK['/' + slug] || []).concat(/^solutions\/(?!pain)/.test(slug) ? LEGACY.filter((p) => SOL_TOPICS[kind].includes(p.topic)) : cityKind ? LEGACY.filter((p) => SOL_TOPICS[cityKind].includes(p.topic)) : rtopics ? LEGACY.filter((p) => rtopics.includes(p.topic)) : pltopics ? LEGACY.filter((p) => pltopics.includes(p.topic)) : ptopics ? LEGACY.filter((p) => ptopics.includes(p.topic)) : []).filter((p, k, arr) => arr.indexOf(p) === k);
-  if (!list.length || !/^(products|solutions|platform|tools|guides|roles)\/|^platform$|^tools$|^compare|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^cloud-|^jewellery-business-as-a-service$/.test(slug)) return body;
+  if (!list.length || !/^(products|solutions|platform|tools|guides|roles)\/|^platform$|^tools$|^compare|^(pricing|trust|customers|migration|enterprise|company|partners)$|^trust\/|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^cloud-|^jewellery-business-as-a-service$/.test(slug)) return body;
   const pick = list.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
   const blk = L3.section(`${L3.sectionHead('FROM THE BLOG', 'Read more on this.', '')}<div class="erp-map">${pick.map((p) => `<a href="/${p.slug}"><b>${p.title}</b><span>${p.topic}</span></a>`).join('')}</div>`);
   const at = body.lastIndexOf('<section'); return at > 0 ? body.slice(0, at) + blk + body.slice(at) : body + blk;
