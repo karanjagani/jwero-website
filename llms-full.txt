@@ -412,8 +412,7 @@ The Autonomous Jewellery OS, run by AI
  Sat 5pm Meera walks in and buys, with old gold in exchange 
  Sat 9pm The shop closes the day 
 
-## Security and compliance, with the real status.
- Six in place, four not yet. Hover a seal, or open any document.
+## Security and privacy delivered, just as you want.
 
  DPDP DPDP Act In place IN Data hosted in India In place PCI Card data (PCI DSS) In place META WhatsApp Business API In place GST GST record keeping In place BIS BIS hallmarking and HUID In place ISO ISO 27001 In progress SOC 2 SOC 2 In progress GDPR EU GDPR Planned OWASP OWASP Top 10 Planned 
 
@@ -7132,8 +7131,7 @@ PRICING
 
  Trusted by names you already know
 
-## Security and compliance, with the real status.
- Six in place, four not yet. Hover a seal, or open any document.
+## Security and privacy delivered, just as you want.
 
  DPDP DPDP Act In place IN Data hosted in India In place PCI Card data (PCI DSS) In place META WhatsApp Business API In place GST GST record keeping In place BIS BIS hallmarking and HUID In place ISO ISO 27001 In progress SOC 2 SOC 2 In progress GDPR EU GDPR Planned OWASP OWASP Top 10 Planned 
 

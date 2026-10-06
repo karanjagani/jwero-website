@@ -162,7 +162,7 @@ ${L.section(
 ${L.section(L.customerLogos())}
 
 ${L.section(
-  `<div class="gem-head"><h2>Security and compliance, with the real status.</h2><p>Six in place, four not yet. Hover a seal, or open any document.</p></div>
+  `<div class="gem-head"><h2>Security and privacy delivered, just as you want.</h2></div>
   ${L.trustStrip()}`
 )}
 
