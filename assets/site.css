@@ -4109,5 +4109,10 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .stackm .stackm-chip::before { left: 7px; width: 10px; height: 10px; margin-top: -5px; }
 .stackm .stackm-chip[aria-pressed="true"]::after { left: 10px; width: 3px; height: 6px; margin-top: -4px; }
 .stackm-grp-name { font-size: .8125rem; }
-@media (max-width: 640px) { .stackm .stackm-cloud { column-count: 1; } }
+@media (max-width: 640px) { .stackm .stackm-cloud { column-count: 2; column-gap: 6px; } .stackm-grp-head { flex-wrap: wrap; gap: 4px 6px; padding: 7px 8px 5px; } .stackm-grp-n { margin-left: 0; } .stackm-grp-all { margin-left: auto; padding: 3px 8px; } .stackm-grp-chips { padding: 0 8px 8px; gap: 4px; } .stackm .stackm-chip { font-size: .6875rem; padding: 4px 7px 4px 20px; } .stackm .stackm-chip::before { left: 6px; } .stackm .stackm-chip[aria-pressed="true"]::after { left: 9px; } }
 @media (min-width: 1300px) { .stackm .stackm-cloud { column-count: 3; } }
+/* Phones: inside each group, tools read as a tidy checkbox list, not wrapped pills. */
+@media (max-width: 640px) {
+  .stackm .stackm-grp-chips { display: grid; gap: 3px; }
+  .stackm .stackm-chip { width: 100%; text-align: left; border-radius: 7px; line-height: 1.25; padding: 5px 6px 5px 20px; }
+}

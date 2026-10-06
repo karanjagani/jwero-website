@@ -143,14 +143,8 @@ The Autonomous Jewellery OS, run by AI
  Selling 0 of 18 Tick all 
  Business email Calendar DMs Document viewer Ecommerce website Facebook page inbox Forms Franchise management Google Shopping Marketplace seller panels Meetings Quotation maker Shareable live catalogues Shopify integration Video call app Website live chat WhatsApp API WooCommerce integration 
 
- Counter 0 of 8 Tick all 
- Barcode & tagging Billing software ERP Estimate pad Gold rate updates Old gold management POS counter Pricing engine 
-
- Stock 0 of 3 Tick all 
- Inventory intelligence Inventory software Vendor portal 
-
- Workshop 0 of 3 Tick all 
- Hallmark tracker Karigar portal Repairs management 
+ ERP 0 of 14 Tick all 
+ Barcode & tagging Billing software ERP Estimate pad Gold rate updates Hallmark tracker Inventory intelligence Inventory software Karigar portal Old gold management POS counter Pricing engine Repairs management Vendor portal 
 
  Customers 0 of 14 Tick all 
  Appointment diary CCTV tracking CRM Customer journeys Customer personalisation engine Customer segmentation Digital gold app Girvi register Gold scheme register Lead finder Loyalty cards Occasion diary RFM Walk-in register 

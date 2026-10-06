@@ -1196,7 +1196,16 @@ function stackMerge(only) {
   <div class="stackm-main">
     <a class="stackm-mini" href="#stackm-out" data-stackm-mini hidden><b data-mini-n>0</b><em>→ 1</em><span data-mini-save></span><i>Results ↓</i></a>
     <div class="stackm-cloud" data-stackm-cloud>
-      ${STACK.map(([label, ic, items], g) => [label, ic, items.filter(pool).sort((x, y) => x.localeCompare(y, 'en', { sensitivity: 'base' })), g]).filter(([, , items]) => items.length).map(([label, ic, items, g], k) => `<div class="stackm-grp" data-stackm-grp="${g}"><div class="stackm-grp-head"><span class="stackm-grp-name">${icon(ic)}${label}</span><span class="stackm-grp-n"><b data-grp-n>0</b> of ${items.length}</span><button type="button" class="stackm-grp-all" data-grp-all>Tick all</button></div><div class="stackm-grp-chips">${items.map((t) => `<button type="button" class="stackm-chip" data-g="${g}" data-c="${(STACK_COST[t] || [0, 1])[0]}" data-h="${(STACK_COST[t] || [0, 1])[1]}" data-grp="${(STACK_COST[t] || [])[3] || ''}" data-s="${(STACK_COST[t] || [])[5] || ''}" aria-pressed="false">${t}</button>`).join('')}</div></div>`).join('')}
+      ${(() => {
+        // Counter, Stock and Workshop show as one ERP group; each chip keeps its own group for the maths.
+        const ERP = ['Counter', 'Stock', 'Workshop'], out = [];
+        STACK.forEach(([label, ic, items], g) => {
+          const tools = items.filter(pool).map((t) => [t, g]);
+          if (ERP.includes(label)) { let e = out.find((x) => x[0] === 'ERP'); if (!e) { e = ['ERP', 'store', [], g]; out.push(e); } e[2].push(...tools); }
+          else out.push([label, ic, tools, g]);
+        });
+        return out.map(([l, ic, tools, g]) => [l, ic, tools.sort((x, y) => x[0].localeCompare(y[0], 'en', { sensitivity: 'base' })), g]);
+      })().filter(([, , items]) => items.length).map(([label, ic, items, g], k) => `<div class="stackm-grp" data-stackm-grp="${g}"><div class="stackm-grp-head"><span class="stackm-grp-name">${icon(ic)}${label}</span><span class="stackm-grp-n"><b data-grp-n>0</b> of ${items.length}</span><button type="button" class="stackm-grp-all" data-grp-all>Tick all</button></div><div class="stackm-grp-chips">${items.map(([t, g]) => `<button type="button" class="stackm-chip" data-g="${g}" data-c="${(STACK_COST[t] || [0, 1])[0]}" data-h="${(STACK_COST[t] || [0, 1])[1]}" data-grp="${(STACK_COST[t] || [])[3] || ''}" data-s="${(STACK_COST[t] || [])[5] || ''}" aria-pressed="false">${t}</button>`).join('')}</div></div>`).join('')}
     </div>
     <button type="button" class="stackm-more" data-stackm-more>Show all ${N}</button>
   </div>
