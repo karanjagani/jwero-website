@@ -226,6 +226,7 @@ const TRIAL_URL_B = require('./lib').TRIAL_URL;
 // Use cases per product page (content/usecases.json), from the product's own documentation.
 const ROLES = (() => { try { return require('./content/roles.json'); } catch (e) { return {}; } })();
 const ROLE_FAQ = Object.fromEntries(Object.entries(ROLES).map(([k, v]) => ['roles/' + k, (v.faqs || []).map(({ q, a }) => ({ q, a }))]));
+const BLOG_FAQ = (() => { try { return require('./content/blog-extra.json'); } catch (e) { return {}; } })();
 const PLATFORM_UC = (() => { try { return require('./content/platform-usecases.json'); } catch (e) { return {}; } })();
 const SEGMENTS = (() => { try { return require('./content/segments.json'); } catch (e) { return {}; } })();
 const SEGMENT_FAQ = Object.fromEntries(Object.entries(SEGMENTS).map(([k, v]) => ['solutions/' + k, (v.faqs || []).map(({ q, a }) => ({ q, a }))]));
@@ -412,6 +413,7 @@ const HUB_SHORT = {
   'tools/gold-loss-calculator': { q: 'How do I calculate gold loss in jewellery manufacturing?', a: 'Compare the metal issued to each stage with the metal returned, subtract the loss your norm allows, and value what is left at today’s rate. The calculator shows what unexplained loss is worth over a month and a year from your own figures.' },
   'tools/gold-scheme-calculator': { q: 'How do I work out what a gold savings scheme is worth to my shop?', a: 'Multiply the customers who join by their monthly instalment and the scheme length, then account for the bonus month you give and how many complete. The calculator turns your enrolment numbers into the future sales a scheme locks in.' },
   'tools/whatsapp-revenue-estimator': { q: 'How much revenue do jewellers lose to slow WhatsApp replies?', a: 'It depends on how many enquiries you get, how many go unanswered or are answered late, and how many of those would have bought. The estimator works it out from your own numbers and shows each assumption.' },
+  blog: { q: 'What does the Jwero blog cover?', a: 'Practical guides for jewellery business owners: selling on WhatsApp and Instagram, gold savings schemes and their rules, dead stock, gold loss in manufacturing, HUID records, Tally, software costs and how to compare vendors. Each guide is reviewed against what the product does and says plainly what it does not do yet.' },
   'jewellery-software-india': { q: 'Which jewellery software do Indian jewellers use?', a: 'Jewellers across India, from Surat diamond offices to Thrissur gold showrooms, run Jwero for billing at the live rate, stock, customers, karigar accounts, schemes and WhatsApp on one record. It is set up in a day over chat and video in any city, at the same price everywhere: ₹18,000 a month, first month ₹3,600.' },
   platform: { q: 'What is the Jwero platform?', a: 'Jwero is one system for a jewellery business: customers, counter, stock, purchase, workshop, books and team on one record, with AI agents that draft the routine work for a person to approve. It connects to Tally, Shopify, marketplaces and Meta, prices every piece from the live gold rate, and is set up in a day.' },
   roles: { q: 'How does Jwero help each person in a jewellery business?', a: 'Every role works on the same customer and stock record: the owner sees the whole business, the counter bills at the live rate, sales staff know each customer before they speak, and the workshop, purchase and accounts teams stop re-entering the same data. AI drafts routine work and a person approves it.' },
@@ -467,7 +469,7 @@ function withInShort(page) {
 // should win that search. Sits before the closing band.
 const { TOOL_QA } = require('./content/tool-answers');
 function withToolQA(page) {
-  const qa = (TOOL_QA[page.slug] || []).concat(HUB_FAQ[page.slug] || [], (SEGMENT_FAQ[page.slug] || []), (ROLE_FAQ[page.slug] || []));
+  const qa = (TOOL_QA[page.slug] || []).concat(HUB_FAQ[page.slug] || [], (SEGMENT_FAQ[page.slug] || []), (ROLE_FAQ[page.slug] || []), (BLOG_FAQ[page.slug] || []));
   if (!qa.length || /class="tool-qa"/.test(page.body)) return page;
   const block = `\n<section class="section tool-qa"><div class="container">${L3.sectionHead('', 'More questions jewellers ask.', '')}${L3.faqBlock(qa)}</div></section>\n`;
   const at = page.body.lastIndexOf('<section class="cta-band"');
@@ -736,6 +738,19 @@ function withPlatformLinks(body, page) {
   return at > 0 ? body.slice(0, at) + block + body.slice(at) : body + block;
 }
 
+// Blog posts: a short answer and a contents list at the top, so readers and
+// answer engines get the point before the detail.
+function withBlogTop(body, page) {
+  if (!/^blog\/./.test(page.slug || '')) return body;
+  const pb = body.indexOf('<div class="post-body">'); if (pb < 0) return body;
+  let n = 0; const heads = [];
+  const pe = body.indexOf('</div>', pb);
+  const withIds = body.slice(pb, pe).replace(/<h2>([\s\S]*?)<\/h2>/g, (m0, t) => { const id = 'p' + (++n); heads.push([id, t.replace(/<[^>]+>/g, '')]); return `<h2 id="${id}">${t}</h2>`; });
+  const q = ((page.schema && page.schema.headline) || page.title || '').split('|')[0].trim();
+  const box = `<div class="post-top"><div class="post-short"><p class="in-short-tag">In short</p><p>${page.description}</p></div>${heads.length > 2 ? `<nav class="post-toc" aria-label="Contents"><p class="in-short-tag">In this guide</p><ol>${heads.map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join('')}</ol></nav>` : ''}</div>`;
+  return body.slice(0, pb) + box + withIds + body.slice(pe);
+}
+
 function withRelated(body, page) {
   const href = '/' + page.slug;
   const links = [];
@@ -867,7 +882,7 @@ function layout(page) {
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.hero .sub'] },
     isPartOf: { '@type': 'WebSite', url: SITE },
   }];
-  const allFaqs = (inShortQA(page) ? [inShortQA(page)] : []).concat(page.faqs || [], TOOL_QA[page.slug] || [], HUB_FAQ[page.slug] || [], SEGMENT_FAQ[page.slug] || [], ROLE_FAQ[page.slug] || []);
+  const allFaqs = (inShortQA(page) ? [inShortQA(page)] : []).concat(page.faqs || [], TOOL_QA[page.slug] || [], HUB_FAQ[page.slug] || [], SEGMENT_FAQ[page.slug] || [], ROLE_FAQ[page.slug] || [], BLOG_FAQ[page.slug] || []);
   if (allFaqs.length) {
     schemas.push({
       '@context': 'https://schema.org', '@type': 'FAQPage',
@@ -931,7 +946,7 @@ ${launchHTML()}
 ${navHTML(page)}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-${withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withPlatformLinks(withUseCases(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
+${withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withBlogTop(withPlatformLinks(withUseCases(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
 </main>
 ${searchDialog()}
 ${connectDialog()}

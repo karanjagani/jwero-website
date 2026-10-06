@@ -148,7 +148,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Enterprise, Multi-store, Wholesale & Manufacturing: https://jwero.ai/enterprise
 - Book a Demo, 15 Minutes, Your Numbers: https://jwero.ai/book-demo
 - Partners, ERP Dealers, Accountants & Consultants: https://jwero.ai/partners
-- The Jwero Blog, Practical Guides for Jewellery Business Owners: https://jwero.ai/blog
+- Jwero Blog: Guides for Jewellery Business Owners: https://jwero.ai/blog
 - WhatsApp for Jewellers: The Complete Selling Guide: https://jwero.ai/blog/whatsapp-for-jewellers-guide
 - Dead Stock in Jewellery: How to Calculate and Clear It: https://jwero.ai/blog/dead-stock-jewellery-business-guide
 - Gold Savings Schemes for Jewellers: How to Run One: https://jwero.ai/blog/gold-savings-scheme-guide
@@ -156,15 +156,15 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Gold Loss and Wastage Control in Jewellery Manufacturing: https://jwero.ai/blog/gold-loss-wastage-control-jewellery-manufacturing
 - Jewellery Repair Management: The Custody-Chain Method: https://jwero.ai/blog/jewellery-repair-management-custody-chain
 - HUID and Hallmarking Records: The Audit-Day Checklist: https://jwero.ai/blog/huid-hallmarking-records-audit-checklist
-- Digital Catalog vs PDF: Why Shareable Checkout Links Sell More: https://jwero.ai/blog/digital-catalog-vs-pdf-jewellery
-- Jewellery CRM vs ERP: The Real Difference (And Do You Need Both?): https://jwero.ai/blog/jewellery-crm-vs-erp-difference
-- Jewellery Software Buyer’s Checklist: 15 Questions to Ask First: https://jwero.ai/blog/jewellery-software-buyer-checklist
-- Jewellery Software for Wedding Season: What to Get Right First: https://jwero.ai/blog/jewellery-software-wedding-season
+- Digital Catalogue vs PDF: Why Live Links Sell More: https://jwero.ai/blog/digital-catalog-vs-pdf-jewellery
+- Jewellery CRM vs ERP: The Real Difference: https://jwero.ai/blog/jewellery-crm-vs-erp-difference
+- Jewellery Software Buyer’s Checklist: 15 Questions: https://jwero.ai/blog/jewellery-software-buyer-checklist
+- Jewellery Software for Wedding Season: https://jwero.ai/blog/jewellery-software-wedding-season
 - How Much Does Jewellery Software Cost in India?: https://jwero.ai/blog/jewellery-software-cost-india
 - Best Jewellery Software in India: How to Actually Compare: https://jwero.ai/blog/best-jewellery-software-india
 - Where Does the Live Gold Rate Come From? A Jeweller’s Guide: https://jwero.ai/blog/gold-rate-api-live-pricing
 - How to Start a Jewellery Business Online: https://jwero.ai/blog/start-jewellery-business-online
-- WhatsApp Business API Pricing for Jewellers Explained: https://jwero.ai/blog/whatsapp-business-api-pricing
+- WhatsApp Business API Pricing for Jewellers (2026): https://jwero.ai/blog/whatsapp-business-api-pricing
 - Are Gold Savings Schemes Legal in India?: https://jwero.ai/blog/are-gold-savings-schemes-legal
 - Roles, Everyone Jwero Touches in a Jewellery Business: https://jwero.ai/roles
 - Owner / Proprietor, Run the Shop From a Record You Own: https://jwero.ai/roles/owner

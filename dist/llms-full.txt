@@ -13825,7 +13825,7 @@ A: We run the same honest evaluation we’d run with any prospect: pilot first, 
 
 ---
 
-# The Jwero Blog, Practical Guides for Jewellery Business Owners
+# Jwero Blog: Guides for Jewellery Business Owners
 URL: https://jwero.ai/blog
 
 Honest guides on WhatsApp selling, dead stock and gold schemes for jewellery business, no fluff, no fabricated stats, calculators where the numbers matter.
@@ -13940,7 +13940,7 @@ THE JWERO BLOG
 
 ## WhatsApp Business API Pricing for Jewellers
 
- How Meta’s conversation-based pricing model actually works, without inventing a rate that will be stale by tomorrow.
+ How Meta’s per-message pricing model actually works, without inventing a rate that will be stale by tomorrow.
 
  Read the guide → 
 
@@ -13969,7 +13969,7 @@ GUIDE · WHATSAPP FOR JEWELLERS
  Chat or call with us 
  Try the Revenue Estimator 
 
- WhatsApp for Jewellers · 9 min read · Updated July 2026 
+ WhatsApp for Jewellers · 9 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Why WhatsApp is where jewellery gets bought, not just discussed
 
@@ -14089,7 +14089,7 @@ GUIDE · DEAD STOCK
  Chat or call with us 
  Run the calculator 
 
- Dead Stock · 8 min read · Updated July 2026 
+ Dead Stock · 8 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## What actually counts as dead stock
 
@@ -14193,7 +14193,7 @@ GUIDE · GOLD SAVINGS SCHEMES
  Chat or call with us 
  Run the calculator 
 
- Gold Savings Schemes · 8 min read · Updated July 2026 
+ Gold Savings Schemes · 8 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Why a scheme is a revenue engine, not just a savings product
 
@@ -14297,7 +14297,7 @@ GUIDE · JEWELLERY SOFTWARE AND TALLY
  Chat or call with us 
  See the Tally integration 
 
- Jewellery Software and Tally · 7 min read · Updated July 2026 
+ Jewellery Software and Tally · 7 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Why the accountant is the real gatekeeper
 
@@ -14309,7 +14309,7 @@ GUIDE · JEWELLERY SOFTWARE AND TALLY
 
  Jwero connects to Tally Prime through a local connector agent, a small piece of software that runs alongside Tally, pairs with a one-time code, and authenticates with a hashed token after that. It checks in on a regular heartbeat so the connection can be trusted to actually be live, not just configured once and forgotten.
 
- What moves through that connection is customer and item master data, both ways, kept aligned by a fuzzy mapping-rules engine that matches records even when names or codes don’t line up exactly between the two systems. If a customer exists in Tally under a slightly different spelling than in Jwero, the mapping engine is built to catch that rather than create a duplicate.
+ What moves through that connection is customer and item master data, imported into Jwero and checked against Tally, with mapping rules that match records that matches records even when names or codes don’t line up exactly between the two systems. If a customer exists in Tally under a slightly different spelling than in Jwero, the mapping engine is built to catch that rather than create a duplicate.
 
  For businesses that run on Zoho Books instead of, or alongside, Tally, the same idea applies through a Zoho connection made over OAuth.
 
@@ -14405,7 +14405,7 @@ GUIDE · MANUFACTURING
  Chat or call with us 
  See it for manufacturers 
 
- Manufacturing · 8 min read · Updated July 2026 
+ Manufacturing · 8 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## The oldest trust problem in the trade
 
@@ -14513,7 +14513,7 @@ GUIDE · REPAIR MANAGEMENT
  Chat or call with us 
  See the customer record in Jwero 
 
- Repair Management · 7 min read · Updated July 2026 
+ Repair Management · 7 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Why "where is my ring?" is the most dangerous question in the business
 
@@ -14631,7 +14631,7 @@ GUIDE · HUID & HALLMARKING
  Chat or call with us 
  See inventory tracking in Jwero 
 
- Compliance & Records · 7 min read · Updated July 2026 
+ Compliance & Records · 7 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Why audit day is stressful for most jewellery businesses
 
@@ -14721,7 +14721,7 @@ A: The hallmark/HUID register per piece, the custody chain for anything on the p
 
 ---
 
-# Digital Catalog vs PDF: Why Shareable Checkout Links Sell More
+# Digital Catalogue vs PDF: Why Live Links Sell More
 URL: https://jwero.ai/blog/digital-catalog-vs-pdf-jewellery
 
 Why a live digital catalogue outsells a static PDF or screenshot catalogue for jewellery, live pricing, tracking, and checkout links that sell.
@@ -14735,7 +14735,7 @@ GUIDE · DIGITAL CATALOGUE
  Chat or call with us 
  See WhatsApp Commerce in Jwero 
 
- Digital Catalogue · 7 min read · Updated July 2026 
+ Digital Catalogue · 7 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## The PDF that's already wrong
 
@@ -14825,7 +14825,7 @@ A: Not quite. A catalogue is a curated link sent to one customer, closer to a tr
 
 ---
 
-# Jewellery CRM vs ERP: The Real Difference (And Do You Need Both?)
+# Jewellery CRM vs ERP: The Real Difference
 URL: https://jwero.ai/blog/jewellery-crm-vs-erp-difference
 
 What a jewellery CRM actually does versus an ERP, where the line blurs in practice, and why most jewellery businesses end up needing both, not one or the other.
@@ -14839,7 +14839,7 @@ GUIDE · CRM VS ERP
  Chat or call with us 
  See how Jwero unifies both 
 
- CRM vs ERP for Jewellery · 7 min read · Updated July 2026 
+ CRM vs ERP for Jewellery · 7 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## What a CRM is actually for
 
@@ -14923,7 +14923,7 @@ A: The join between them. A quote sent from the CRM references stock the ERP has
 
 ---
 
-# Jewellery Software Buyer’s Checklist: 15 Questions to Ask First
+# Jewellery Software Buyer’s Checklist: 15 Questions
 URL: https://jwero.ai/blog/jewellery-software-buyer-checklist
 
 A vendor-agnostic checklist for buying jewellery software: pricing engine depth, data ownership, WhatsApp compliance, AI governance and honest roadmaps.
@@ -14937,7 +14937,7 @@ GUIDE · BUYER’S CHECKLIST
  Ask us these, live 
  See our own honest answers 
 
- Jewellery Software Buying Guide · 8 min read · Updated July 2026 
+ Jewellery Software Buying Guide · 8 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## On pricing and the metal you actually sell
 
@@ -15041,7 +15041,7 @@ A: For the first working stage, customers imported, WhatsApp connected, catalogu
 
 ---
 
-# Jewellery Software for Wedding Season: What to Get Right First
+# Jewellery Software for Wedding Season
 URL: https://jwero.ai/blog/jewellery-software-wedding-season
 
 What to prepare before wedding season hits: enquiry response speed, appointment load, scheme maturities, dead-stock timing, and when not to switch software.
@@ -15055,7 +15055,7 @@ GUIDE · WEDDING SEASON
  Plan the timing 
  See the bridal playbook 
 
- Wedding Season Readiness · 6 min read · Updated July 2026 
+ Wedding Season Readiness · 6 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Why wedding season punishes slow systems more than any other stretch
 
@@ -15169,7 +15169,7 @@ GUIDE · SOFTWARE COST
  Ask us for a straight number 
  See our pricing page 
 
- Software Cost · 7 min read · Updated July 2026 
+ Software Cost · 7 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Why this question rarely gets a straight answer
 
@@ -15271,7 +15271,7 @@ GUIDE · COMPARING JEWELLERY SOFTWARE
  Ask us these questions directly 
  Read the full buyer’s checklist 
 
- Comparing Jewellery Software · 8 min read · Updated July 2026 
+ Comparing Jewellery Software · 8 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Why this isn’t a ranked list
 
@@ -15371,7 +15371,7 @@ GUIDE · LIVE GOLD RATE PRICING
  See a price resolve live 
  See the pricing engine 
 
- Pricing & Rates · 6 min read · Updated July 2026 
+ Pricing & Rates · 6 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Manual entry vs a live feed
 
@@ -15469,7 +15469,7 @@ GUIDE · STARTING ONLINE
  Talk through your first steps 
  See the startups playbook 
 
- Starting Online · 8 min read · Updated July 2026 
+ Starting Online · 8 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Registration and GST, in general terms
 
@@ -15553,53 +15553,51 @@ A: Many new businesses start lean, a smaller curated catalogue, made-to-order or
 
 ---
 
-# WhatsApp Business API Pricing for Jewellers Explained
+# WhatsApp Business API Pricing for Jewellers (2026)
 URL: https://jwero.ai/blog/whatsapp-business-api-pricing
 
-How Meta’s conversation-based WhatsApp API pricing model works for jewellers, business vs user-initiated conversations, and where to check current rates.
+How WhatsApp Business API pricing works for jewellers since Meta moved to per-message pricing: marketing, utility and authentication templates, free replies, and Jwero’s rates.
 
 GUIDE · WHATSAPP API PRICING
 
-## WhatsApp Business API Pricing for Jewellers: What Meta Actually Charges
+## WhatsApp Business API Pricing for Jewellers: How Per-Message Pricing Works
 
- This is about understanding how Meta’s pricing model works, not quoting a live rate that will be stale by the time you read it. Here’s the shape of conversation-based pricing, in plain terms.
+ Since July 2025 Meta charges for each template message delivered, not for each conversation. Here is what that means for scheme reminders, campaigns and everyday replies.
 
  Ask us about your setup 
- See WhatsApp Commerce in Jwero 
+ See Jwero’s rate card 
 
- WhatsApp Pricing · 6 min read · Updated July 2026 
+ WhatsApp Pricing · 6 min read · By the Jwero editorial team · Reviewed October 2026 
 
-## Why this article won’t quote a specific rate
+## What changed in July 2025
 
- Meta’s WhatsApp Business API pricing changes over time and varies by country and conversation category. Any specific per-conversation number printed here would risk being wrong by the time you’re reading it, which would be a worse outcome than no number at all. What this guide can do honestly is explain how the pricing model itself is structured, so a current rate card, checked directly from Meta, actually makes sense when you look at it.
+ Meta used to charge for 24-hour conversation windows. From 1 July 2025 it charges for each template message that is delivered. A template is a pre-approved message a business uses to start contact with a customer, or to reach her outside the customer service window. Each template belongs to one of three categories, and each category has its own rate by country.
 
-## Conversations, not individual messages
+## The three kinds of template
 
- The core structural idea behind Meta’s model is that pricing is generally based on conversation windows, not counted per individual message sent back and forth. Once a conversation opens between a business and a customer, messages within that window are typically covered under that conversation, rather than billed one by one. This matters because it changes how a business should think about cost: the question isn’t "how many messages did we send," it’s "how many conversations did we open, and of what kind."
+ Marketing templates promote something: an offer, a festival campaign, a new collection, a win-back message. They are the most expensive category. Utility templates confirm or update something the customer already started: an order update, a scheme instalment receipt, a repair status, an appointment confirmation. Authentication templates send one-time codes. Meta decides the final category when it approves the template, so a promotional line inside a "utility" message can get it reclassified as marketing.
 
-## Business-initiated vs. user-initiated
+## What is free
 
- Broadly, conversations fall into two shapes. A user-initiated conversation starts when the customer messages the business first, she asks about a design, the reply and everything that follows within that window generally falls under that conversation. A business-initiated conversation is the reverse: the business reaches out first, such as a scheme reminder or a festival notification, which typically requires a pre-approved message template and generally carries different pricing than a reply inside an existing customer-started conversation.
+ When a customer messages you, a 24-hour customer service window opens. Free-form replies inside that window are not charged by Meta, and utility templates sent inside it are free too. For a jeweller who answers enquiries quickly, most everyday conversation costs nothing from Meta. The cost sits in outreach you start yourself: campaigns, reminders and follow-ups sent after the window has closed.
 
- This distinction is exactly why a jewellery business’s mix of behaviour matters, a business that mostly replies to inbound enquiries has a different conversation profile than one that runs frequent proactive outreach like scheme reminders or occasion messages.
+## What it means for a jewellery business
 
-## What a template message actually is
+ A shop that mostly replies to enquiries spends little. A shop that runs gold scheme reminders, birthday and anniversary wishes and festival campaigns sends many templates, and the marketing ones add up. Two habits keep the bill sensible: reply fast, so conversations stay inside the free window, and send campaigns to a chosen segment instead of the whole contact list.
 
- A template is a pre-approved message format, submitted to Meta and approved before it can be sent to start a new conversation or to reach outside an existing conversation window. This exists specifically to prevent spam-style outreach, a business can’t just message any contact whenever it wants with arbitrary text; it has to use an approved template for anything outside an active, customer-started exchange. This is also part of why the official API, used properly, keeps a number safer than an unofficial bulk-sending tool that ignores this structure entirely.
+## Jwero’s rates
 
-## Why this matters for a scheme or occasion-heavy business
+ In Jwero, messages are charged from a prepaid wallet at published rates: ₹1.05 per marketing message and ₹0.16 per utility, authentication or service message. The same rate card is on the pricing page and inside your billing screen, and you see the balance and the spend as you go. Meta revises its own rates from time to time; when it does, the rate card is updated.
 
- A jewellery business that runs gold-scheme reminders, birthday and anniversary outreach, or festival campaigns is, by the nature of that outreach, generating business-initiated conversations regularly. Understanding that this is a distinct, usage-based cost category, separate from a platform’s own service pricing, matters for budgeting honestly, even without a specific rate attached to it here.
+## Official API, not a bulk sender
 
-## Where to check the actual current number
-
- For the rate that actually applies to your business today, Meta’s own current rate card is the source that won’t be stale, check it directly rather than relying on any third-party page, including this one, since these figures do change. What we can offer instead is help understanding your own conversation mix and what a proper setup looks like on top of it, see WhatsApp Commerce in Jwero for how the official API, live catalogue pricing and approval-gated replies fit together.
+ Unofficial bulk-sender tools are the most common way a jewellery business loses its WhatsApp number. The official API with approved templates, consent and a shared team inbox costs a little per message and keeps the number safe. That is what Jwero runs on.
 
  SEE IT WORKING
 
 ## The official API, set up properly.
 
- Jwero’s own WhatsApp line runs on the official API described above, approved templates, consent tracking, and a shared team inbox, not a workaround.
+ Jwero’s own WhatsApp line runs on the official API described above, with approved templates, consent tracking and a shared team inbox.
 
  See WhatsApp Commerce in Jwero 
 
@@ -15607,31 +15605,26 @@ GUIDE · WHATSAPP API PRICING
 
 ## Questions readers ask about API pricing.
 
- What does Meta actually charge for WhatsApp Business API messages? 
- This changes over time and varies by country, so this guide won’t quote a specific current rate, that would likely be wrong by the time you read it. Meta publishes its own current rate card; check that directly for the number that applies to you today.
+ How does Meta charge for the WhatsApp Business API now? 
+ Since 1 July 2025 Meta charges per template message delivered, not per conversation. Each template is a marketing, utility or authentication message, and each category has its own rate by country.
 
- Is the WhatsApp Business API free to use? 
- The API access itself typically isn’t a flat subscription from Meta, pricing is usage-based, tied to conversations, and platforms that provide the API layer (like Jwero) may add their own service pricing on top. The two are separate line items worth understanding separately.
+ Are replies to customers charged? 
+ Free-form replies inside the 24-hour customer service window, which opens when a customer messages you, are not charged by Meta. Utility templates sent inside that window are also free.
 
- What’s the difference between a template message and a regular reply? 
- A reply inside an active customer-initiated conversation window doesn’t need a pre-approved template. A message that starts a new conversation, or reaches outside that window, generally needs a pre-approved template. This structural distinction is what conversation-based pricing is built around.
+ What does Jwero charge per WhatsApp message? 
+ Jwero’s published wallet rates are ₹1.05 per marketing message and ₹0.16 per utility, authentication or service message. The rate card on the pricing page is the one your billing screen uses.
+
+ Which jewellery messages are marketing and which are utility? 
+ Offers, festival campaigns, new collections and win-back messages are marketing. Order updates, scheme instalment receipts, repair status and appointment confirmations are usually utility, if the template is approved in that category.
+
+ How can a jeweller keep WhatsApp costs down? 
+ Answer enquiries quickly so replies fall inside the free service window, send campaigns to a chosen segment instead of the whole list, and keep transactional updates as utility templates.
 
  More questions? See the full FAQ → 
 
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Every chat button on this site is the actual product, not a mockup, send one message and see for yourself.
+## Work out your own message mix.
 
-## Understand your own conversation mix.
-
- Tell us how you use WhatsApp today, enquiries, reminders, campaigns, and we’ll help you think through the cost picture honestly.
+ Tell us how you use WhatsApp today, enquiries, reminders and campaigns, and we will help you estimate the cost honestly.
 
  Chat or call with us 
  Book a demo 
@@ -15640,14 +15633,20 @@ GUIDE · WHATSAPP API PRICING
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: What does Meta actually charge for WhatsApp Business API messages?
-A: This changes over time and varies by country, so this guide won’t quote a specific current rate, that would likely be wrong by the time you read it. Meta publishes its own current rate card; check that directly for the number that applies to you today.
+Q: How does Meta charge for the WhatsApp Business API now?
+A: Since 1 July 2025 Meta charges per template message delivered, not per conversation. Each template is a marketing, utility or authentication message, and each category has its own rate by country.
 
-Q: Is the WhatsApp Business API free to use?
-A: The API access itself typically isn’t a flat subscription from Meta, pricing is usage-based, tied to conversations, and platforms that provide the API layer (like Jwero) may add their own service pricing on top. The two are separate line items worth understanding separately.
+Q: Are replies to customers charged?
+A: Free-form replies inside the 24-hour customer service window, which opens when a customer messages you, are not charged by Meta. Utility templates sent inside that window are also free.
 
-Q: What’s the difference between a template message and a regular reply?
-A: A reply inside an active customer-initiated conversation window doesn’t need a pre-approved template. A message that starts a new conversation, or reaches outside that window, generally needs a pre-approved template. This structural distinction is what conversation-based pricing is built around.
+Q: What does Jwero charge per WhatsApp message?
+A: Jwero’s published wallet rates are ₹1.05 per marketing message and ₹0.16 per utility, authentication or service message. The rate card on the pricing page is the one your billing screen uses.
+
+Q: Which jewellery messages are marketing and which are utility?
+A: Offers, festival campaigns, new collections and win-back messages are marketing. Order updates, scheme instalment receipts, repair status and appointment confirmations are usually utility, if the template is approved in that category.
+
+Q: How can a jeweller keep WhatsApp costs down?
+A: Answer enquiries quickly so replies fall inside the free service window, send campaigns to a chosen segment instead of the whole list, and keep transactional updates as utility templates.
 
 ---
 
@@ -15665,7 +15664,7 @@ GUIDE · GOLD SCHEMES & COMPLIANCE
  Ask us about our compliance controls 
  See gold schemes in Jwero 
 
- Compliance & Gold Schemes · 7 min read · Updated July 2026 
+ Compliance & Gold Schemes · 7 min read · By the Jwero editorial team · Reviewed October 2026 
 
 ## Why this guide won’t give you a yes or no
 

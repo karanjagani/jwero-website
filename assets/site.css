@@ -3937,3 +3937,12 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .erp-map b::after { content: ' →'; color: var(--brand); }
 .erp-map span { font-size: .9375rem; color: var(--ink-2); line-height: 1.45; }
 @media (max-width: 640px) { .erp-map { grid-template-columns: minmax(0, 1fr); } }
+
+/* blog: short answer and contents */
+.post-top { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 14px; margin: 0 0 28px; }
+.post-short, .post-toc { padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+.post-short p:last-child { margin: 0; font-size: 1.0625rem; line-height: 1.55; color: var(--ink); }
+.post-toc ol { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: .9375rem; }
+.post-toc a { color: var(--brand); text-decoration: none; } .post-toc a:hover { text-decoration: underline; }
+.post-body h2[id] { scroll-margin-top: 96px; }
+@media (max-width: 760px) { .post-top { grid-template-columns: minmax(0, 1fr); } }

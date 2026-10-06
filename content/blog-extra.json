@@ -1,0 +1,66 @@
+{
+ "blog/whatsapp-for-jewellers-guide": [
+  {"q": "Can several staff answer customers from one WhatsApp number?", "a": "Yes, on the official WhatsApp Business API. The whole team works from one shared inbox on the business number, so customers are not split across personal phones."},
+  {"q": "Can I send WhatsApp broadcasts without getting my number blocked?", "a": "Use the official API with approved templates, send only to customers who agreed to hear from you, and send to a chosen segment rather than everyone. Unofficial bulk senders are the usual reason numbers get blocked."}
+ ],
+ "blog/dead-stock-jewellery-business-guide": [
+  {"q": "How long before a jewellery piece counts as dead stock?", "a": "There is no single rule. Many jewellers look at pieces unsold for six months or more, but the right period depends on the category. Track ageing by period and decide per category."},
+  {"q": "Should I melt dead stock or discount it?", "a": "Try selling it first to customers whose taste matches it, then discount, and melt last. Melting loses the making charge and labour you already paid for."}
+ ],
+ "blog/gold-savings-scheme-guide": [
+  {"q": "What is an 11 plus 1 gold scheme?", "a": "The customer pays eleven monthly instalments and the jeweller adds a twelfth as a bonus, usually towards making charges, when she buys jewellery at the end."},
+  {"q": "How do I track missed scheme instalments?", "a": "Mark instalments overdue automatically and give the desk a list of who to call. In Jwero overdue instalments are marked by the system; reminders to customers are sent through a journey you set up."}
+ ],
+ "blog/jewellery-software-and-tally": [
+  {"q": "Does Jwero auto-post invoices to Tally?", "a": "Not today. Jwero connects to Tally, maps your ledgers, imports customer and item masters and checks records against Tally. Sales and payment vouchers are still entered in Tally."},
+  {"q": "Can my accountant keep working in Tally?", "a": "Yes. Tally stays the ledger of record and the accountant's workflow does not change. Jwero runs the counter, stock, customers and workshop alongside it."}
+ ],
+ "blog/gold-loss-wastage-control-jewellery-manufacturing": [
+  {"q": "What is a normal gold loss in jewellery manufacturing?", "a": "It depends on the process, design and metal, so set a loss norm for each stage from your own history. The useful number is loss beyond the norm, stage by stage."},
+  {"q": "How do I track gold given to karigars?", "a": "Record metal issued and returned in grams for each job and karigar, and compare the difference with the norm for that stage. Jwero keeps metal balances by party for this."}
+ ],
+ "blog/jewellery-repair-management-custody-chain": [
+  {"q": "How do I track customer jewellery left for repair?", "a": "Log each article when it is taken in, with photos and weight, then record every hand-over: to the karigar, back to the shop and back to the customer."},
+  {"q": "What should a repair receipt record?", "a": "The customer, the item, its weight and description, the work requested, the estimated cost and date, and who received it, so the piece can be traced at every step."}
+ ],
+ "blog/huid-hallmarking-records-audit-checklist": [
+  {"q": "What is HUID?", "a": "HUID is the six-character Hallmark Unique Identification number given to each hallmarked gold piece in India. It links the piece to its hallmarking record."},
+  {"q": "Where should a jeweller record HUID?", "a": "Against each piece in the stock record, so it shows when the piece is billed and can be found when a customer or an inspector asks. Jwero records HUID per piece."}
+ ],
+ "blog/digital-catalog-vs-pdf-jewellery": [
+  {"q": "Why do PDF jewellery catalogues go out of date?", "a": "Prices in a PDF are fixed when it is made, but gold rates move every day. A live catalogue link recalculates prices from the current rate each time it is opened."},
+  {"q": "Can I see who viewed my catalogue?", "a": "With a tracked catalogue link, yes: who opened it, which pieces they looked at and for how long, so the follow-up can be about the pieces she liked."}
+ ],
+ "blog/jewellery-crm-vs-erp-difference": [
+  {"q": "Does a small jewellery shop need both a CRM and an ERP?", "a": "It needs both jobs done: knowing customers and running stock, billing and purchase. One system that does both on the same record avoids typing the same data twice."},
+  {"q": "What does a jewellery CRM do that a generic CRM does not?", "a": "It understands purity, weight, schemes, occasions and old-gold exchange, and keeps them on the customer's record alongside what she bought."}
+ ],
+ "blog/jewellery-software-buyer-checklist": [
+  {"q": "What is the first thing to check in jewellery software?", "a": "Whether it prices by purity and weight from the live metal rate. A system that treats gold jewellery as one price category is generic retail software."},
+  {"q": "How do I check a vendor's claims?", "a": "Ask for a demo on your own data, ask what is not built yet, and get data export rights in writing before you sign."}
+ ],
+ "blog/jewellery-software-wedding-season": [
+  {"q": "Should I switch software just before wedding season?", "a": "Avoid changing systems during the busiest weeks. Set up before the season, or keep the old system running while the new one settles in."},
+  {"q": "What matters most for wedding season sales?", "a": "Fast replies to enquiries, appointments that arrive prepared, quotations followed up, and bridal orders kept together with their advances and delivery dates."}
+ ],
+ "blog/jewellery-software-cost-india": [
+  {"q": "How much does Jwero cost?", "a": "Run it yourself for ₹18,000 a month with every module, first month ₹3,600. The managed service has no subscription and is priced on the work. Enterprise is custom."},
+  {"q": "What costs come on top of a jewellery software subscription?", "a": "Usually messages, AI and calls, extra locations and devices. In Jwero these are on a published rate card and charged from a prepaid wallet."}
+ ],
+ "blog/best-jewellery-software-india": [
+  {"q": "What should I ask every jewellery software vendor?", "a": "How it prices by purity, whether it uses the official WhatsApp API, whether you can export your data, how its AI is controlled, and what is not built yet."},
+  {"q": "Is there a free jewellery software?", "a": "Free tools exist for single jobs like billing, but a system that runs the whole business usually costs a monthly fee. Compare the total against the tools and hours it replaces."}
+ ],
+ "blog/gold-rate-api-live-pricing": [
+  {"q": "How often should jewellery prices change with the gold rate?", "a": "Whenever the rate you use changes, often once or twice a day. Rule-based pricing updates every tag, quote and catalogue together instead of retyping."},
+  {"q": "Where does the gold rate in jewellery software come from?", "a": "It can be entered by the jeweller or taken from a rate source. In Jwero the rate is set on one screen and every price is worked out from it."}
+ ],
+ "blog/start-jewellery-business-online": [
+  {"q": "What do I need to start selling jewellery online?", "a": "Clear photos, accurate weights and purity, prices that follow the gold rate, a way to take payment, and a quick reply on WhatsApp and Instagram."},
+  {"q": "Can I sell on Amazon and Flipkart as a jeweller?", "a": "Yes, with the right registrations. Jwero connects Amazon and Flipkart so their orders arrive in one place with your shop's orders."}
+ ],
+ "blog/are-gold-savings-schemes-legal": [
+  {"q": "Can software make my gold scheme compliant?", "a": "No. Software records a scheme properly, but whether a scheme's structure is allowed is a legal question for your CA or lawyer."},
+  {"q": "What records should a gold scheme keep?", "a": "Each customer's enrolment, KYC, every instalment and receipt, the bonus rule, and the redemption, so the scheme can be explained to the customer and an auditor."}
+ ]
+}

@@ -1,24 +1,25 @@
 const L = require('../lib');
 const BC = (label) => [['Home', '/'], ['Blog', '/blog'], [label]];
 const PUBLISHED = '2026-07-20';
+const REVIEWED = '2026-10-06'; // every post was reviewed against the product on this date
 
 function postSchema(headline, description) {
   return {
     '@context': 'https://schema.org', '@type': 'BlogPosting',
     headline, description,
-    datePublished: PUBLISHED, dateModified: PUBLISHED,
-    author: { '@type': 'Organization', name: 'Jwero' },
+    datePublished: PUBLISHED, dateModified: REVIEWED,
+    author: { '@type': 'Organization', name: 'Jwero editorial team', url: 'https://jwero.ai/company' },
     publisher: { '@type': 'Organization', name: 'Jwero' },
   };
 }
 
 function postMeta(readMins, cluster) {
-  return `<p class="post-meta"><span>${cluster}</span> · <span>${readMins} min read</span> · <span>Updated July 2026</span></p>`;
+  return `<p class="post-meta"><span>${cluster}</span> · <span>${readMins} min read</span> · <span>By the Jwero editorial team</span> · <span>Reviewed October 2026</span></p>`;
 }
 
 const blogHub = {
   slug: 'blog',
-  title: 'The Jwero Blog — Practical Guides for Jewellery Business Owners | Jwero',
+  title: 'Jwero Blog: Guides for Jewellery Business Owners | Jwero',
   description: 'Honest guides on WhatsApp selling, dead stock and gold schemes for jewellery business — no fluff, no fabricated stats, calculators where the numbers matter.',
   breadcrumbs: [['Home', '/'], ['Blog']],
   body: `
@@ -55,7 +56,7 @@ ${L.section(
     { title: 'Best Jewellery Software in India: How to Actually Compare', text: 'Not a ranked listicle — the criteria that actually separate jewellery-built software from generic retail tools.', link: { href: '/blog/best-jewellery-software-india', label: 'Read the guide' } },
     { title: 'Where Does the Live Gold Rate Come From?', text: 'Manual entry vs a live feed, morning/evening rate sessions, and why purity-specific rates matter.', link: { href: '/blog/gold-rate-api-live-pricing', label: 'Read the guide' } },
     { title: 'How to Start a Jewellery Business Online', text: 'Registration basics, sourcing, photography, and the honest tradeoff of starting lean.', link: { href: '/blog/start-jewellery-business-online', label: 'Read the guide' } },
-    { title: 'WhatsApp Business API Pricing for Jewellers', text: 'How Meta’s conversation-based pricing model actually works — without inventing a rate that will be stale by tomorrow.', link: { href: '/blog/whatsapp-business-api-pricing', label: 'Read the guide' } },
+    { title: 'WhatsApp Business API Pricing for Jewellers', text: 'How Meta’s per-message pricing model actually works — without inventing a rate that will be stale by tomorrow.', link: { href: '/blog/whatsapp-business-api-pricing', label: 'Read the guide' } },
     { title: 'Are Gold Savings Schemes Legal in India?', text: 'A common trade practice with a real compliance question behind it — and the practices that reduce risk either way.', link: { href: '/blog/are-gold-savings-schemes-legal', label: 'Read the guide' } },
   ], 3)}`
 , { tone: 'tint' })}
@@ -292,7 +293,7 @@ ${L.section(
 
   <h2>What actually syncs automatically</h2>
   <p>Jwero connects to Tally Prime through a local connector agent — a small piece of software that runs alongside Tally, pairs with a one-time code, and authenticates with a hashed token after that. It checks in on a regular heartbeat so the connection can be trusted to actually be live, not just configured once and forgotten.</p>
-  <p>What moves through that connection is customer and item master data, both ways, kept aligned by a fuzzy mapping-rules engine that matches records even when names or codes don’t line up exactly between the two systems. If a customer exists in Tally under a slightly different spelling than in Jwero, the mapping engine is built to catch that rather than create a duplicate.</p>
+  <p>What moves through that connection is customer and item master data, imported into Jwero and checked against Tally, with mapping rules that match records that matches records even when names or codes don’t line up exactly between the two systems. If a customer exists in Tally under a slightly different spelling than in Jwero, the mapping engine is built to catch that rather than create a duplicate.</p>
   <p>For businesses that run on Zoho Books instead of, or alongside, Tally, the same idea applies through a Zoho connection made over OAuth.</p>
 
   <h2>What still needs a manual voucher, and why that’s fine for now</h2>
@@ -533,7 +534,7 @@ const catalogGuideFaqs = [
 
 const catalogGuide = {
   slug: 'blog/digital-catalog-vs-pdf-jewellery',
-  title: 'Digital Catalog vs PDF: Why Shareable Checkout Links Sell More | Jwero',
+  title: 'Digital Catalogue vs PDF: Why Live Links Sell More | Jwero',
   description: 'Why a live digital catalogue outsells a static PDF or screenshot catalogue for jewellery — live pricing, tracking, and checkout links that sell.',
   breadcrumbs: BC('Digital Catalog vs PDF'),
   schema: postSchema('Digital Catalog vs PDF: Why Shareable Checkout Links Sell More', 'Why a live digital catalogue outsells a static PDF or screenshot catalogue for jewellery — live pricing, tracking, and checkout links.'),
@@ -596,7 +597,7 @@ const crmErpGuideFaqs = [
 
 const crmErpGuide = {
   slug: 'blog/jewellery-crm-vs-erp-difference',
-  title: 'Jewellery CRM vs ERP: The Real Difference (And Do You Need Both?) | Jwero',
+  title: 'Jewellery CRM vs ERP: The Real Difference | Jwero',
   description: 'What a jewellery CRM actually does versus an ERP, where the line blurs in practice, and why most jewellery businesses end up needing both, not one or the other.',
   breadcrumbs: BC('CRM vs ERP for Jewellery'),
   schema: postSchema('Jewellery CRM vs ERP: The Real Difference', 'What a jewellery CRM does versus an ERP, where the two overlap in a jewellery business, and why most businesses need both working from one record.'),
@@ -656,7 +657,7 @@ const checklistGuideFaqs = [
 
 const checklistGuide = {
   slug: 'blog/jewellery-software-buyer-checklist',
-  title: 'Jewellery Software Buyer’s Checklist: 15 Questions to Ask First | Jwero',
+  title: 'Jewellery Software Buyer’s Checklist: 15 Questions | Jwero',
   description: 'A vendor-agnostic checklist for buying jewellery software: pricing engine depth, data ownership, WhatsApp compliance, AI governance and honest roadmaps.',
   breadcrumbs: BC('Jewellery Software Buyer’s Checklist'),
   schema: postSchema('Jewellery Software Buyer’s Checklist: 15 Questions to Ask First', 'A vendor-agnostic checklist of the questions worth asking before buying jewellery software, covering pricing depth, data ownership, compliance and AI governance.'),
@@ -739,7 +740,7 @@ const weddingGuideFaqs = [
 
 const weddingGuide = {
   slug: 'blog/jewellery-software-wedding-season',
-  title: 'Jewellery Software for Wedding Season: What to Get Right First | Jwero',
+  title: 'Jewellery Software for Wedding Season | Jwero',
   description: 'What to prepare before wedding season hits: enquiry response speed, appointment load, scheme maturities, dead-stock timing, and when not to switch software.',
   breadcrumbs: BC('Jewellery Software for Wedding Season'),
   schema: postSchema('Jewellery Software for Wedding Season', 'What a jewellery business should get right before wedding season starts, and why implementation timing matters more than the software itself.'),
@@ -1042,61 +1043,61 @@ ${L.ctaBand('Start where you actually are.', 'Tell us about your first store —
 
 // ---------------------------------------------------------------- Article 16: WhatsApp API pricing
 const waPricingGuideFaqs = [
-  { q: 'What does Meta actually charge for WhatsApp Business API messages?', a: 'This changes over time and varies by country, so this guide won’t quote a specific current rate — that would likely be wrong by the time you read it. Meta publishes its own current rate card; check that directly for the number that applies to you today.' },
-  { q: 'Is the WhatsApp Business API free to use?', a: 'The API access itself typically isn’t a flat subscription from Meta — pricing is usage-based, tied to conversations, and platforms that provide the API layer (like Jwero) may add their own service pricing on top. The two are separate line items worth understanding separately.' },
-  { q: 'What’s the difference between a template message and a regular reply?', a: 'A reply inside an active customer-initiated conversation window doesn’t need a pre-approved template. A message that starts a new conversation, or reaches outside that window, generally needs a pre-approved template. This structural distinction is what conversation-based pricing is built around.' },
+  { q: 'How does Meta charge for the WhatsApp Business API now?', a: 'Since 1 July 2025 Meta charges per template message delivered, not per conversation. Each template is a marketing, utility or authentication message, and each category has its own rate by country.' },
+  { q: 'Are replies to customers charged?', a: 'Free-form replies inside the 24-hour customer service window, which opens when a customer messages you, are not charged by Meta. Utility templates sent inside that window are also free.' },
+  { q: 'What does Jwero charge per WhatsApp message?', a: 'Jwero’s published wallet rates are ₹1.05 per marketing message and ₹0.16 per utility, authentication or service message. The rate card on the pricing page is the one your billing screen uses.' },
+  { q: 'Which jewellery messages are marketing and which are utility?', a: 'Offers, festival campaigns, new collections and win-back messages are marketing. Order updates, scheme instalment receipts, repair status and appointment confirmations are usually utility, if the template is approved in that category.' },
+  { q: 'How can a jeweller keep WhatsApp costs down?', a: 'Answer enquiries quickly so replies fall inside the free service window, send campaigns to a chosen segment instead of the whole list, and keep transactional updates as utility templates.' },
 ];
+
 
 const waPricingGuide = {
   slug: 'blog/whatsapp-business-api-pricing',
-  title: 'WhatsApp Business API Pricing for Jewellers Explained | Jwero',
-  description: 'How Meta’s conversation-based WhatsApp API pricing model works for jewellers — business vs user-initiated conversations, and where to check current rates.',
+  title: 'WhatsApp Business API Pricing for Jewellers (2026) | Jwero',
+  description: 'How WhatsApp Business API pricing works for jewellers since Meta moved to per-message pricing: marketing, utility and authentication templates, free replies, and Jwero’s rates.',
   breadcrumbs: BC('WhatsApp Business API Pricing'),
-  schema: postSchema('WhatsApp Business API Pricing for Jewellers: What Meta Actually Charges', 'How Meta’s conversation-based pricing model works for the WhatsApp Business API — business-initiated vs user-initiated conversations and template messages, explained in general terms.'),
+  schema: postSchema('WhatsApp Business API Pricing for Jewellers: How Per-Message Pricing Works', 'How Meta’s per-message WhatsApp Business API pricing works for jewellers: template categories, the free customer service window, and Jwero’s published rates.'),
   faqs: waPricingGuideFaqs,
   body: `
 ${L.hero({
   eyebrow: 'GUIDE · WHATSAPP API PRICING',
-  h1: 'WhatsApp Business API Pricing for Jewellers: What Meta Actually Charges',
-  sub: 'This is about understanding how Meta’s pricing model works, not quoting a live rate that will be stale by the time you read it. Here’s the shape of conversation-based pricing, in plain terms.',
+  h1: 'WhatsApp Business API Pricing for Jewellers: How Per-Message Pricing Works',
+  sub: 'Since July 2025 Meta charges for each template message delivered, not for each conversation. Here is what that means for scheme reminders, campaigns and everyday replies.',
   primary: { href: '#', label: 'Ask us about your setup', wa: 'blog-wapricing' },
-  secondary: { href: '/products/whatsapp', label: 'See WhatsApp Commerce in Jwero' },
+  secondary: { href: '/pricing', label: 'See Jwero’s rate card' },
 })}
 ${L.section(postMeta(6, 'WhatsApp Pricing'))}
 
 ${L.section(
   `<div class="post-body">
-  <h2>Why this article won’t quote a specific rate</h2>
-  <p>Meta’s WhatsApp Business API pricing changes over time and varies by country and conversation category. Any specific per-conversation number printed here would risk being wrong by the time you’re reading it, which would be a worse outcome than no number at all. What this guide can do honestly is explain how the pricing model itself is structured, so a current rate card — checked directly from Meta — actually makes sense when you look at it.</p>
+  <h2>What changed in July 2025</h2>
+  <p>Meta used to charge for 24-hour conversation windows. From 1 July 2025 it charges for each template message that is delivered. A template is a pre-approved message a business uses to start contact with a customer, or to reach her outside the customer service window. Each template belongs to one of three categories, and each category has its own rate by country.</p>
 
-  <h2>Conversations, not individual messages</h2>
-  <p>The core structural idea behind Meta’s model is that pricing is generally based on conversation windows, not counted per individual message sent back and forth. Once a conversation opens between a business and a customer, messages within that window are typically covered under that conversation, rather than billed one by one. This matters because it changes how a business should think about cost: the question isn’t "how many messages did we send," it’s "how many conversations did we open, and of what kind."</p>
+  <h2>The three kinds of template</h2>
+  <p><b>Marketing</b> templates promote something: an offer, a festival campaign, a new collection, a win-back message. They are the most expensive category. <b>Utility</b> templates confirm or update something the customer already started: an order update, a scheme instalment receipt, a repair status, an appointment confirmation. <b>Authentication</b> templates send one-time codes. Meta decides the final category when it approves the template, so a promotional line inside a "utility" message can get it reclassified as marketing.</p>
 
-  <h2>Business-initiated vs. user-initiated</h2>
-  <p>Broadly, conversations fall into two shapes. A user-initiated conversation starts when the customer messages the business first — she asks about a design, the reply and everything that follows within that window generally falls under that conversation. A business-initiated conversation is the reverse: the business reaches out first, such as a scheme reminder or a festival notification, which typically requires a pre-approved message template and generally carries different pricing than a reply inside an existing customer-started conversation.</p>
-  <p>This distinction is exactly why a jewellery business’s mix of behaviour matters — a business that mostly replies to inbound enquiries has a different conversation profile than one that runs frequent proactive outreach like scheme reminders or occasion messages.</p>
+  <h2>What is free</h2>
+  <p>When a customer messages you, a 24-hour customer service window opens. Free-form replies inside that window are not charged by Meta, and utility templates sent inside it are free too. For a jeweller who answers enquiries quickly, most everyday conversation costs nothing from Meta. The cost sits in outreach you start yourself: campaigns, reminders and follow-ups sent after the window has closed.</p>
 
-  <h2>What a template message actually is</h2>
-  <p>A template is a pre-approved message format, submitted to Meta and approved before it can be sent to start a new conversation or to reach outside an existing conversation window. This exists specifically to prevent spam-style outreach — a business can’t just message any contact whenever it wants with arbitrary text; it has to use an approved template for anything outside an active, customer-started exchange. This is also part of why the official API, used properly, keeps a number safer than an unofficial bulk-sending tool that ignores this structure entirely.</p>
+  <h2>What it means for a jewellery business</h2>
+  <p>A shop that mostly replies to enquiries spends little. A shop that runs gold scheme reminders, birthday and anniversary wishes and festival campaigns sends many templates, and the marketing ones add up. Two habits keep the bill sensible: reply fast, so conversations stay inside the free window, and send campaigns to a chosen segment instead of the whole contact list.</p>
 
-  <h2>Why this matters for a scheme or occasion-heavy business</h2>
-  <p>A jewellery business that runs gold-scheme reminders, birthday and anniversary outreach, or festival campaigns is, by the nature of that outreach, generating business-initiated conversations regularly. Understanding that this is a distinct, usage-based cost category — separate from a platform’s own service pricing — matters for budgeting honestly, even without a specific rate attached to it here.</p>
+  <h2>Jwero’s rates</h2>
+  <p>In Jwero, messages are charged from a prepaid wallet at published rates: ₹1.05 per marketing message and ₹0.16 per utility, authentication or service message. The same rate card is on the <a href="/pricing">pricing page</a> and inside your billing screen, and you see the balance and the spend as you go. Meta revises its own rates from time to time; when it does, the rate card is updated.</p>
 
-  <h2>Where to check the actual current number</h2>
-  <p>For the rate that actually applies to your business today, Meta’s own current rate card is the source that won’t be stale — check it directly rather than relying on any third-party page, including this one, since these figures do change. What we can offer instead is help understanding your own conversation mix and what a proper setup looks like on top of it — see <a href="/products/whatsapp">WhatsApp Commerce in Jwero</a> for how the official API, live catalogue pricing and approval-gated replies fit together.</p>
+  <h2>Official API, not a bulk sender</h2>
+  <p>Unofficial bulk-sender tools are the most common way a jewellery business loses its WhatsApp number. The official API with approved templates, consent and a shared team inbox costs a little per message and keeps the number safe. That is what Jwero runs on.</p>
   </div>`
 )}
 
 ${L.section(
-  `${L.sectionHead('SEE IT WORKING', 'The official API, set up properly.', 'Jwero’s own WhatsApp line runs on the official API described above — approved templates, consent tracking, and a shared team inbox, not a workaround.')}
+  `${L.sectionHead('SEE IT WORKING', 'The official API, set up properly.', 'Jwero’s own WhatsApp line runs on the official API described above, with approved templates, consent tracking and a shared team inbox.')}
   <p><a class="btn btn-ghost" href="/products/whatsapp">See WhatsApp Commerce in Jwero</a></p>`
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about API pricing.', '')}${L.faqBlock(waPricingGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-wapricing">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Understand your own conversation mix.', 'Tell us how you use WhatsApp today — enquiries, reminders, campaigns — and we’ll help you think through the cost picture honestly.', 'blog-wapricing')}
+${L.ctaBand('Work out your own message mix.', 'Tell us how you use WhatsApp today, enquiries, reminders and campaigns, and we will help you estimate the cost honestly.', 'blog-wapricing')}
 `,
 };
 
