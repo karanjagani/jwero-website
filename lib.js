@@ -732,7 +732,7 @@ const SECURITY_CONTROLS = [
   ['key', 'Encrypted, in transit and at rest', 'Credentials are encrypted; data is encrypted on the wire and on disk.'],
   ['users', 'You decide who sees what', 'Around 150 permissions, per role and per branch. Multi-factor login and passkeys; single sign-on for chains.'],
   ['checkbox', 'Two people on money', 'Maker-checker approvals and tamper-evident trails on financial records.'],
-  ['refresh', 'Backups that are tested', 'You set the backup frequency and retention; an automated restore drill proves the latest backup actually restores.'],
+  ['refresh', 'Backups you control', 'You set the backup frequency and retention. Ask us for the latest restore check for your workspace.'],
   ['download', 'Export any time', 'Your data leaves with you in standard formats whenever you ask. No hostage clauses.'],
 ];
 const COMPLIANCE_ROWS = [

@@ -76,7 +76,7 @@ ${L.section(
 const enterprise = {
   slug: 'enterprise',
   title: 'Enterprise — Multi-store, Wholesale & Manufacturing | Jwero',
-  description: 'For chains, multi-brand groups and manufacturers: enterprise SSO/SCIM, role templates, restore-tested backups, a buying-committee kit, and a staged rollout plan.',
+  description: 'For chains, multi-brand groups and manufacturers: enterprise SSO/SCIM, role templates, configurable backups, a buying-committee kit, and a staged rollout plan.',
   breadcrumbs: [['Home', '/'], ['Enterprise']],
   faqs: [
     { q: 'What’s different about the enterprise track?', a: 'A named specialist instead of a self-serve funnel, a buying-committee kit addressed to each stakeholder, and a staged pilot-branch rollout with exit criteria you set.' },
@@ -87,7 +87,7 @@ const enterprise = {
     { q: 'What if different branches want different price rules or catalogues?', a: 'Central price rules under owner control, with per-branch exceptions that route through approvals — consistency where you want it, flexibility where you grant it.' },
     { q: 'How does SSO/SCIM actually get set up?', a: 'An org admin creates the connection from an in-app settings page — choose OIDC or SAML 2.0, set an email-domain allowlist, turn on JIT provisioning with a default role, and issue SCIM tokens. The Login URL, ACS URL, SP metadata URL and SCIM base URL are shown inline to hand to your IdP team. We support any SAML 2.0/OIDC-compliant provider — Okta, Microsoft Entra, Google Workspace included — as a protocol, not a pre-built certified app.' },
     { q: 'Does SCIM sync our groups as well as our users?', a: 'Users only today — SCIM provisions and deactivates individual accounts automatically. Group/team sync from your IdP isn’t part of it yet; role assignment is handled inside Jwero’s own RBAC.' },
-    { q: 'How are backups handled, and how do we know they actually work?', a: 'You set your own backup frequency (1–168 hours) and retention (1–365 days) from an in-app Trust settings screen, which shows the last-backup timestamp. Separately, an automated restore drill actually restores the latest backup into a scratch database and runs sanity checks — proving it’s restorable, not just that a file exists. We don’t publish an RPO/RTO or uptime SLA number yet; ask us directly if your committee needs one for a specific deployment size.' },
+    { q: 'How are backups handled, and how do we know they actually work?', a: 'You set your own backup frequency (1–168 hours) and retention (1–365 days) from an in-app Trust settings screen, which shows the last-backup timestamp. A restore check is part of the product; ask us for the latest result for your workspace.' },
     { q: 'Can we get webhooks into our own systems?', a: 'Yes, today, via the API — signed payloads, automatic retries, and a delivery log. Honestly: the event catalogue is narrow right now (product create/update/delete and a customer-conversation-message event; no order, invoice or inventory events yet), and there’s no point-and-click admin UI for it yet, only API setup. Tell us what you need synced and we’ll tell you plainly if it’s covered today.' },
   ],
   body: `
@@ -122,7 +122,7 @@ ${L.section(
       <tr><td><strong>SSO</strong></td><td>Enterprise SSO is shipped and admin-configurable from an in-app settings page — choose OIDC or SAML 2.0, set an email-domain allowlist, and connect any SAML 2.0/OIDC-compliant identity provider (Okta, Microsoft Entra, Google Workspace and others) as a supported protocol. Login URL, ACS URL and SP metadata URL are shown inline for your IdP team to paste in. A "Continue with SSO" button is live on the login page.</td></tr>
       <tr><td><strong>Provisioning (SCIM)</strong></td><td>SCIM 2.0 automates the joiner/leaver lifecycle — create, update and deactivate users straight from your identity provider, with just-in-time provisioning and a default role mapping. Deactivating a user in your IdP revokes their Jwero access. Users only today — group/team sync isn’t part of it yet.</td></tr>
       <tr><td><strong>Roles & permissions</strong></td><td>150+ granular permission slugs, bundled into five ready-made role templates — Owner, Admin, Manager, Staff, and a deliberately scoped read-only Accountant role built for an external CA (reads the books, can’t post entries). Clone and edit any template for a fully custom role.</td></tr>
-      <tr><td><strong>Backups & restore verification</strong></td><td>Each organisation sets its own backup frequency (1–168 hours) and retention (1–365 days) from an in-app Trust settings screen, which shows the last-backup timestamp. An automated restore drill actually restores the latest backup into a scratch database and runs sanity checks — proving the backup is restorable, not just that a file exists. No published RPO/RTO or uptime SLA number yet.</td></tr>
+      <tr><td><strong>Backups & restore verification</strong></td><td>Each organisation sets its own backup frequency (1–168 hours) and retention (1–365 days) from an in-app Trust settings screen, which shows the last-backup timestamp. A restore check is part of the product; ask us for the latest result for your workspace. No published RPO/RTO or uptime SLA number yet.</td></tr>
       <tr><td><strong>Webhooks</strong></td><td>A working outbound webhook system — signed payloads, automatic retries, a delivery log. Honestly narrow today: only product create/update/delete and a customer-conversation-message event, no order/invoice/inventory events yet, and setup is API-only — no admin UI yet.</td></tr>
       <tr><td><strong>Rate limiting</strong></td><td>Multiple layers of API rate limiting protect the platform from abuse.</td></tr>
       <tr><td><strong>AI governance</strong></td><td>Six autonomy levels, per-agent guardrails that block destructive actions, risk-tiered approval gating, and a five-scope kill switch (global/tenant/agent/action/module). One of the platform’s strongest security differentiators — see <a href="/platform/ai-workforce">/platform/ai-workforce</a> for the full detail.</td></tr>
@@ -139,14 +139,14 @@ ${L.honestGapsBlock([
   'No data-residency or multi-region hosting choice — single-region hosting today. Physical per-tenant database isolation is real and strong, but it is a separate claim from residency, and residency-on-request isn’t available yet.',
   'No organisation-mandated MFA policy — multi-factor authentication exists and is available to every user, but it’s opt-in per user today, not something an admin can force org-wide.',
   'No franchise-specific administration layer (royalty tracking, franchisor oversight of independently-owned franchisees) — genuine multi-store/multi-brand/multi-branch administration is real; franchise-specific tooling on top of it is not.',
-  'Formal certifications (SOC 2 / ISO) — planned, published only when earned, same as stated on the security page.',
+  'Formal certifications: ISO 27001 and SOC 2 are in progress, not certified, and are published only when earned, same as stated on the security page.',
 ])}
 
 ${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', 'Answers for your evaluation committee.', '')}${L.faqBlock([
   { q: 'Our evaluation committee will ask about SSO and audit trails. What do we tell them?', a: 'Tell them the truth: enterprise SSO/SCIM is shipped and live; per-module activity logging exists today with a unified audit trail being consolidated. <a href="/trust/security">See the full honest list</a>.' },
   { q: 'How do we roll out across many branches without chaos?', a: 'One pilot branch first, with exit criteria you define, then a staged rollout. No branch goes live without the previous one proving itself.' },
   { q: 'Can we get a security overview document?', a: 'Yes — download it directly above, alongside the buying-committee kit.' },
-  { q: 'What about backups and webhooks?', a: 'Backups are tenant-configurable and independently restore-tested via an automated restore drill. Webhooks work today via the API, with a narrow event catalogue and no admin UI yet — full detail in the table above.' },
+  { q: 'What about backups and webhooks?', a: 'Backups are configured by each business, and a restore check is part of the product; ask us for the latest result. Webhooks work today via the API, with a narrow event catalogue and no admin UI yet — full detail in the table above.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 

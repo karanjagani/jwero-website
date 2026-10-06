@@ -526,7 +526,7 @@ ${L.section(
         <div class="road-item"><strong>Journeys, campaigns & loyalty</strong>festival triggers, consent-aware broadcasts</div>
         <div class="road-item"><strong>Campaign attribution (UTM)</strong>what each send actually sold, on the record</div>
         <div class="road-item"><strong>Customer segmentation</strong>live rule-based audiences, RFM tiers</div>
-        <div class="road-item"><strong>Gold schemes & digital gold</strong>enrolment → instalments → maturity, now on the storefront too</div>
+        <div class="road-item"><strong>Gold savings schemes</strong>enrolment → instalments → maturity, now on the storefront too. Gram-based plans are being corrected and are not promoted until they are</div>
       </div>
       <div class="road-group">
         <p class="road-group-label">Operations</p>
@@ -545,14 +545,14 @@ ${L.section(
         <p class="road-group-label">Workforce</p>
         <div class="road-item"><strong>Payroll</strong>attendance-aware, maker-checker approval, payslips + bank file</div>
         <div class="road-item"><strong>Karigar wage settlement</strong>rate cards, work logs, khata ledger, settlement runs</div>
-        <div class="road-item"><strong>Attendance, leave & recruitment</strong>geo/selfie attendance, accrual-based leave, hire-to-onboarding pipeline</div>
+        <div class="road-item"><strong>Attendance, leave & recruitment</strong>geo attendance, accrual-based leave, hire-to-onboarding pipeline</div>
         <div class="road-item"><strong>Performance, LMS & incentives</strong>review cycles, courses with certificates, sales commission with clawbacks</div>
       </div>
       <div class="road-group">
         <p class="road-group-label">Governance & integrations</p>
         <div class="road-item"><strong>AI workforce with governance</strong>approvals, daily caps, kill switch</div>
         <div class="road-item"><strong>Enterprise SSO/SCIM</strong>SAML, OIDC and SCIM 2.0 user provisioning</div>
-        <div class="road-item"><strong>Bridges</strong>Tally, Zoho Books, Shopify, Woo, Unicommerce</div>
+        <div class="road-item"><strong>Bridges</strong>Tally and Zoho Books (connect, map, import masters, check records; posting stays manual), Shopify and WooCommerce on the same product data, publishing to Unicommerce</div>
       </div>
     </div>
     <div class="road-col soon">
@@ -569,17 +569,21 @@ ${L.section(
       <h3><span class="road-dot"></span>On the roadmap</h3>
       <div class="road-group">
         <p class="road-group-label">Statutory & finance</p>
-        <div class="road-item"><strong>E-invoice IRN, e-way bill & GSTR auto-filing</strong>stays with Tally and your CA today</div>
+        <div class="road-item"><strong>Direct e-invoice filing, e-way bills & GSTR auto-filing</strong>the e-invoice file is prepared for the portal and the IRN recorded on the bill; filing stays with your CA today</div>
+        <div class="road-item"><strong>Tally auto-posting</strong>sales and payment vouchers are still entered in Tally</div>
+        <div class="road-item"><strong>Metal reconciliation & physical metal count</strong>metal balances by party are live; a full reconciliation is not</div>
         <div class="road-item"><strong>Girvi / gold-loan module</strong>pledge, interest schemes, collection, renewal, release — <a href="/products/girvi">shipped</a>; auto-debit mandates are not</div>
       </div>
       <div class="road-group">
         <p class="road-group-label">Ecommerce website</p>
         <div class="road-item"><strong>Scheme & digital-gold redemption at checkout</strong>storefront enrolment and instalment payments are live; applying a balance at checkout isn’t wired yet</div>
+        <div class="road-item"><strong>Google Shopping sync</strong>not built</div>
         <div class="road-item"><strong>HUID / certificate verification widget</strong>the catalogue carries the data; the widget isn’t built</div>
         <div class="road-item"><strong>Old-gold exchange / buyback calculator online</strong></div>
       </div>
       <div class="road-group">
         <p class="road-group-label">Operations & platform</p>
+        <div class="road-item"><strong>CAD file storage & design approval stage</strong>not built</div>
         <div class="road-item"><strong>Offline mode</strong>the counter needs the internet today</div>
         <div class="road-item"><strong>Vernacular product interface</strong>the voice assistant speaks 14 languages; product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets)</div>
         <div class="road-item"><strong>Predictive ML forecasting</strong>today’s inventory intelligence is ageing/valuation-based, not predictive</div>

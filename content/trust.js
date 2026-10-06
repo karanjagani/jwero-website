@@ -132,7 +132,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.honestGapsBlock([
-  'Formal certifications (SOC 2 / ISO) — planned; published only when earned.',
+  'Formal certifications: ISO 27001 and SOC 2 are in progress, not certified; published only when earned.',
   'A single unified, immutable audit trail across every module — activity logging exists per module today; consolidation is in progress.',
 ])}
 

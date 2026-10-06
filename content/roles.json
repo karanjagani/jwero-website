@@ -263,9 +263,9 @@
     "changes": "One bill covers it all, without side calculations."
    },
    {
-    "hook": "The internet drops in the middle of a busy Saturday.",
-    "does": "Billing keeps working offline and holds bills on the device, syncing once the connection returns.",
-    "changes": "The queue keeps moving when the router fails."
+    "hook": "A scheme customer wants to pay this month’s instalment at the counter.",
+    "does": "Take the instalment against her scheme at the desk; it is recorded on her scheme and her customer record straight away.",
+    "changes": "Scheme payments are on record, not in a separate register."
    },
    {
     "hook": "End of shift, you must hand over the drawer.",

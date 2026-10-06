@@ -81,3 +81,27 @@ production, or change that claim on /trust, /trust/security and the home page.
 ## F. Pricing change, 2026-10-02
 
 The annual plan and the 14-day free trial were removed from the site. Terms of Use now say: Jwero One is ₹18,000 a month billed monthly; the first month is ₹3,600, once per business; Enterprise is custom priced. To confirm with the product and with counsel: whether ₹3,600 is before GST, whether it is refundable if the customer leaves in the first month, whether it converts automatically to ₹18,000, and that the product's signup and billing screens match (the product repository had a 14-day trial and an annual term).
+
+## G. Promises on the site with no written terms yet (added 2026-10-06)
+
+The Terms of Use cover the subscription only. These are now public and need
+terms, or need to be withdrawn:
+
+1. **Managed service.** No subscription; every tool included; priced on the
+   work, described as about half (outcome-led) or about 60% (approve every
+   step) of the cheapest way to staff that work in India. Needs: what is in
+   scope, how the price is set and changed, minimum term, notice, what happens
+   to data and tools when a managed customer leaves, and liability for work
+   Jwero performs on the customer's behalf (messages sent, ads run).
+2. **Referral saving.** "10% for each jeweller who joins." Undefined: 10% of
+   which fee, for how long, whether it stacks, any cap, when it starts and
+   ends.
+3. **Onboarding in a day.** Stated across the site, with "settled in thirty
+   days" on the onboarding page. Define what "onboarded" means.
+4. **Reply within minutes.** "A real person replies on WhatsApp within
+   minutes." Hours covered, and what happens out of hours.
+5. **Comparison pages.** Name competitors and their prices (comparative
+   advertising). Facts are sourced and dated; a lawyer should read them once.
+6. **Backups.** Site wording was softened on 2026-10-06 to "you set frequency
+   and retention; ask for the latest restore check" until restore drills are
+   confirmed running in production (see section E).

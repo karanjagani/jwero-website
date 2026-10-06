@@ -1690,7 +1690,7 @@ PUBLIC ROADMAP
 
  Customer segmentation live rule-based audiences, RFM tiers
 
- Gold schemes & digital gold enrolment → instalments → maturity, now on the storefront too
+ Gold savings schemes enrolment → instalments → maturity, now on the storefront too. Gram-based plans are being corrected and are not promoted until they are
 
  Operations
 
@@ -1720,7 +1720,7 @@ PUBLIC ROADMAP
 
  Karigar wage settlement rate cards, work logs, khata ledger, settlement runs
 
- Attendance, leave & recruitment geo/selfie attendance, accrual-based leave, hire-to-onboarding pipeline
+ Attendance, leave & recruitment geo attendance, accrual-based leave, hire-to-onboarding pipeline
 
  Performance, LMS & incentives review cycles, courses with certificates, sales commission with clawbacks
 
@@ -1730,7 +1730,7 @@ PUBLIC ROADMAP
 
  Enterprise SSO/SCIM SAML, OIDC and SCIM 2.0 user provisioning
 
- Bridges Tally, Zoho Books, Shopify, Woo, Unicommerce
+ Bridges Tally and Zoho Books (connect, map, import masters, check records; posting stays manual), Shopify and WooCommerce on the same product data, publishing to Unicommerce
 
 ## Rolling out
 
@@ -1748,7 +1748,11 @@ PUBLIC ROADMAP
 
  Statutory & finance
 
- E-invoice IRN, e-way bill & GSTR auto-filing stays with Tally and your CA today
+ Direct e-invoice filing, e-way bills & GSTR auto-filing the e-invoice file is prepared for the portal and the IRN recorded on the bill; filing stays with your CA today
+
+ Tally auto-posting sales and payment vouchers are still entered in Tally
+
+ Metal reconciliation & physical metal count metal balances by party are live; a full reconciliation is not
 
  Girvi / gold-loan module pledge, interest schemes, collection, renewal, release, shipped ; auto-debit mandates are not
 
@@ -1756,11 +1760,15 @@ PUBLIC ROADMAP
 
  Scheme & digital-gold redemption at checkout storefront enrolment and instalment payments are live; applying a balance at checkout isn’t wired yet
 
+ Google Shopping sync not built
+
  HUID / certificate verification widget the catalogue carries the data; the widget isn’t built
 
  Old-gold exchange / buyback calculator online 
 
  Operations & platform
+
+ CAD file storage & design approval stage not built
 
  Offline mode the counter needs the internet today
 
@@ -7243,6 +7251,22 @@ PRICING
 
  More objections? See every pricing question we’ve been asked → 
 
+ MANAGED PRICING
+
+## How the managed price is worked out.
+
+ When Jwero runs the work, there is no subscription and every tool is included. The price follows the work.
+
+ 01 Your volume Conversations, calls, posts and orders, predicted from your customer base and showrooms, or counted from your own figures.
+
+ 02 Today’s cost What that work costs at the cheapest way to staff it in India: a junior hire or a freelancer.
+
+ 03 Jwero’s price About half of that when you let Jwero decide and execute, and about 60% when you want to approve every step.
+
+ 04 In writing Your plan states the price, the work and what is measured before anything starts.
+
+ Count your team and see your number 
+
  PASS IT ON
 
 ## Refer a jeweller. Save 10% for each one who joins.
@@ -10002,7 +10026,7 @@ FOR FRANCHISE NETWORKS
 ## Independence, visibility and control, answered.
 
  Can franchisees operate independently while the brand stays controlled? 
- Yes, role-based access and franchise structure let the franchisor govern brand, catalogue and pricing centrally while franchisees run their store day-to-day.
+ Partly. Role-based access lets head office set the catalogue and pricing while each outlet runs its own counter, stock and customers on the same system. Royalty tracking and oversight of independently-owned franchisees are not built yet.
 
  Can the franchisor see performance across the whole network? 
  Yes, an owner rollup shows stock, sales and customer movement across every franchise location in one view.
@@ -10061,7 +10085,7 @@ FOR FRANCHISE NETWORKS
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
 Q: Can franchisees operate independently while the brand stays controlled?
-A: Yes, role-based access and franchise structure let the franchisor govern brand, catalogue and pricing centrally while franchisees run their store day-to-day.
+A: Partly. Role-based access lets head office set the catalogue and pricing while each outlet runs its own counter, stock and customers on the same system. Royalty tracking and oversight of independently-owned franchisees are not built yet.
 
 Q: Can the franchisor see performance across the whole network?
 A: Yes, an owner rollup shows stock, sales and customer movement across every franchise location in one view.
@@ -10385,9 +10409,9 @@ TRUST CENTRE
 
  Maker-checker approvals and tamper-evident trails on financial records.
 
-## Backups that are tested
+## Backups you control
 
- You set the backup frequency and retention; an automated restore drill proves the latest backup actually restores.
+ You set the backup frequency and retention. Ask us for the latest restore check for your workspace.
 
 ## Export any time
 
@@ -10603,7 +10627,7 @@ SECURITY & DATA OWNERSHIP
 
  Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
 
- Formal certifications (SOC 2 / ISO), planned; published only when earned.
+ Formal certifications: ISO 27001 and SOC 2 are in progress, not certified; published only when earned.
  A single unified, immutable audit trail across every module, activity logging exists per module today; consolidation is in progress.
  
  See the full public roadmap → 
@@ -13843,7 +13867,7 @@ CONTACT
 # Enterprise, Multi-store, Wholesale & Manufacturing
 URL: https://jwero.ai/enterprise
 
-For chains, multi-brand groups and manufacturers: enterprise SSO/SCIM, role templates, restore-tested backups, a buying-committee kit, and a staged rollout plan.
+For chains, multi-brand groups and manufacturers: enterprise SSO/SCIM, role templates, configurable backups, a buying-committee kit, and a staged rollout plan.
 
 ENTERPRISE
 
@@ -13895,7 +13919,7 @@ ENTERPRISE
 
  Roles & permissions 150+ granular permission slugs, bundled into five ready-made role templates, Owner, Admin, Manager, Staff, and a deliberately scoped read-only Accountant role built for an external CA (reads the books, can’t post entries). Clone and edit any template for a fully custom role. 
 
- Backups & restore verification Each organisation sets its own backup frequency (1–168 hours) and retention (1–365 days) from an in-app Trust settings screen, which shows the last-backup timestamp. An automated restore drill actually restores the latest backup into a scratch database and runs sanity checks, proving the backup is restorable, not just that a file exists. No published RPO/RTO or uptime SLA number yet. 
+ Backups & restore verification Each organisation sets its own backup frequency (1–168 hours) and retention (1–365 days) from an in-app Trust settings screen, which shows the last-backup timestamp. A restore check is part of the product; ask us for the latest result for your workspace. No published RPO/RTO or uptime SLA number yet. 
 
  Webhooks A working outbound webhook system, signed payloads, automatic retries, a delivery log. Honestly narrow today: only product create/update/delete and a customer-conversation-message event, no order/invoice/inventory events yet, and setup is API-only, no admin UI yet. 
 
@@ -13916,7 +13940,7 @@ ENTERPRISE
  No data-residency or multi-region hosting choice, single-region hosting today. Physical per-tenant database isolation is real and strong, but it is a separate claim from residency, and residency-on-request isn’t available yet.
  No organisation-mandated MFA policy, multi-factor authentication exists and is available to every user, but it’s opt-in per user today, not something an admin can force org-wide.
  No franchise-specific administration layer (royalty tracking, franchisor oversight of independently-owned franchisees), genuine multi-store/multi-brand/multi-branch administration is real; franchise-specific tooling on top of it is not.
- Formal certifications (SOC 2 / ISO), planned, published only when earned, same as stated on the security page.
+ Formal certifications: ISO 27001 and SOC 2 are in progress, not certified, and are published only when earned, same as stated on the security page.
  
  See the full public roadmap → 
 
@@ -13934,7 +13958,7 @@ ENTERPRISE
  Yes, download it directly above, alongside the buying-committee kit.
 
  What about backups and webhooks? 
- Backups are tenant-configurable and independently restore-tested via an automated restore drill. Webhooks work today via the API, with a narrow event catalogue and no admin UI yet, full detail in the table above.
+ Backups are configured by each business, and a restore check is part of the product; ask us for the latest result. Webhooks work today via the API, with a narrow event catalogue and no admin UI yet, full detail in the table above.
 
  More questions? See the full FAQ → 
 
@@ -13974,7 +13998,7 @@ Q: Does SCIM sync our groups as well as our users?
 A: Users only today, SCIM provisions and deactivates individual accounts automatically. Group/team sync from your IdP isn’t part of it yet; role assignment is handled inside Jwero’s own RBAC.
 
 Q: How are backups handled, and how do we know they actually work?
-A: You set your own backup frequency (1–168 hours) and retention (1–365 days) from an in-app Trust settings screen, which shows the last-backup timestamp. Separately, an automated restore drill actually restores the latest backup into a scratch database and runs sanity checks, proving it’s restorable, not just that a file exists. We don’t publish an RPO/RTO or uptime SLA number yet; ask us directly if your committee needs one for a specific deployment size.
+A: You set your own backup frequency (1–168 hours) and retention (1–365 days) from an in-app Trust settings screen, which shows the last-backup timestamp. A restore check is part of the product; ask us for the latest result for your workspace.
 
 Q: Can we get webhooks into our own systems?
 A: Yes, today, via the API, signed payloads, automatic retries, and a delivery log. Honestly: the event catalogue is narrow right now (product create/update/delete and a customer-conversation-message event; no order, invoice or inventory events yet), and there’s no point-and-click admin UI for it yet, only API setup. Tell us what you need synced and we’ll tell you plainly if it’s covered today.
