@@ -580,11 +580,28 @@ function withSim(body, page) {
 // service and carries one customer's words, so no path is a dead end.
 function withManaged(body, page) {
   const slug = page.slug || '';
-  if (!(slug.startsWith('solutions/') || slug === 'solutions' || slug === 'products' || slug.startsWith('products/'))) return body;
-  const Q = require('./content/positioning').QUOTES;
-  const [q, who, where] = Q[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % Q.length];
-  const block = L3.section(`<figure class="pz-quote jb-solo"><blockquote>“${q}”</blockquote><figcaption><b>${who}</b><span>${where}</span></figcaption></figure>`) +
-    L3.section(`${L3.sectionHead('PREFER JWERO TO RUN THIS FOR YOU?', 'Use it yourself, or let Jwero run it.', 'Everything on this page, run by Jwero’s specialists and AI. No team to hire, no tools to buy.')}${require('./content/jbaas').TIERS()}`, { tone: 'tint' });
+  const top = slug.split('/')[0];
+  // pages that are not part of a buying journey, or already carry the tiers
+  if (['index', '404', 'search', 'contact', 'book-demo', 'glossary', 'roadmap', 'start', 'legal', 'hi', 'partners', 'company'].includes(top)) return body;
+  if (/jb-tier/.test(body)) return body;
+  const P = require('./content/positioning');
+  const Q = P.QUOTES;
+  const qi = [...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % Q.length;
+  let block;
+  if (top === 'blog') {
+    // articles stay articles: one quiet line with both doors
+    block = L3.section(`<div class="jb-blogline"><p><b>Run it yourself, or let Jwero run it.</b> The platform for ₹18,000 a month, or Jwero’s specialists and AI with every tool included.</p><div class="cta-row"><a class="btn btn-primary" href="${require('./lib').TRIAL_URL}blog" rel="noopener" data-trial>Start for ₹3,600</a><a class="btn btn-ghost" href="#" data-wa="handle">Let Jwero handle it</a></div></div>`, { tone: 'tint' });
+  } else if (slug === 'customers') {
+    block = P.quotes() + L3.section(`<div class="gem-head"><h2>Proof you can check.</h2><p>Who uses it, what the product counts, what is published, and how to try it yourself.</p></div>${L3.proofGrid()}`) +
+      L3.section(`${L3.sectionHead('THREE WAYS TO WORK WITH JWERO', 'Run it yourself, or let Jwero run it.', '')}${require('./content/jbaas').TIERS()}`, { tone: 'tint' });
+  } else {
+    const [q, who, where] = Q[qi];
+    const head = slug === 'enterprise' ? ['WHERE ENTERPRISE SITS', 'Subscription, managed, or enterprise.', 'Chains and groups can run it themselves, hand functions to Jwero, or mix the two by function.']
+      : top === 'compare' ? ['YOUR NEXT STEP', 'Try Jwero, or let Jwero run it.', 'Start on your own data for ₹3,600, or hand the work to Jwero’s specialists and AI with every tool included.']
+      : ['PREFER JWERO TO RUN THIS FOR YOU?', 'Use it yourself, or let Jwero run it.', 'Everything on this page, run by Jwero’s specialists and AI. No team to hire, no tools to buy.'];
+    block = L3.section(`<figure class="pz-quote jb-solo"><blockquote>“${q}”</blockquote><figcaption><b>${who}</b><span>${where}</span></figcaption></figure>`) +
+      L3.section(`${L3.sectionHead(...head)}${require('./content/jbaas').TIERS()}`, { tone: 'tint' });
+  }
   const at = body.lastIndexOf('<section');
   return at > 0 ? body.slice(0, at) + block + body.slice(at) : body + block;
 }
