@@ -277,6 +277,10 @@ function navHTML(page) {
       <div class="nav-cta">
         <a class="btn btn-primary" href="#" data-wa="handle">Talk to us</a>
         <a class="nav-login" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=header" rel="noopener" data-login>Log in</a>
+        <div class="nav-tools">
+          <button class="search-open nav-tool" type="button">${icon('search')}<span>Search</span></button>
+          <button class="theme-toggle nav-tool" type="button">${icon('moon')}<span>Light or dark</span></button>
+        </div>
       </div>
     </nav>
     <div class="header-cta">
