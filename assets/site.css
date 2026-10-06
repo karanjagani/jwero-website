@@ -4074,3 +4074,7 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
   .doors-strip .ds-door b { white-space: normal; }
   .doors-strip .ds-more { grid-column: 1 / -1; justify-self: center; }
 }
+
+/* The page's opening answer, first in its questions and open. */
+.faq-item.is-lead { border-color: var(--brand); }
+.faq-item.is-lead > summary { font-weight: 600; }

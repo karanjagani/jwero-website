@@ -365,6 +365,29 @@ function journeyFix(html, p) {
   html = trimLong(html, slug);
   // 1. every self-serve start goes through /start, which explains the first month
   if (slug !== 'start') html = html.replace(/href="https:\/\/os\.jwero\.ai\/signup\?utm_source=jwero\.ai&(?:amp;)?utm_medium=([^"]*)"(?: rel="noopener")?(?: data-trial(?:="[^"]*")?)?/g, (m0, from) => `href="/start?from=${from.replace(/[^a-z0-9-]/gi, '')}"`);
+  // The opening answer becomes the first question in the page's questions, shown open.
+  // Same question and answer for search and AI tools, without a repeat under the top section.
+  {
+    let q = null, ans = null;
+    html = html.replace(/<section class="in-short"[^>]*>\s*<div class="container">\s*<p class="in-short-tag">In short<\/p>\s*<h2 id="in-short-q">([\s\S]*?)<\/h2>\s*<p>([\s\S]*?)<\/p>\s*<\/div>\s*<\/section>\s*/, (m0, a1, a2) => { q = a1; ans = a2; return ''; });
+    if (q === null) html = html.replace(/<div class="in-short-line"><div class="container"><p><b id="in-short-q">([\s\S]*?)<\/b> ([\s\S]*?)<\/p><\/div><\/div>\s*/, (m0, a1, a2) => { q = a1; ans = a2; return ''; });
+    if (q !== null) {
+      const plain = (t) => t.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim().toLowerCase();
+      const lead = `<details class="faq-item is-lead" open><summary>${q}</summary><div class="faq-a"><p>${ans}</p></div></details>`;
+      const ms = html.indexOf('<main'), fi = html.indexOf('<div class="faq">', ms);
+      if (fi > 0) {
+        // drop the same question if it is already further down the list
+        const fe = html.indexOf('</section>', fi);
+        let block = html.slice(fi, fe).replace(/\s*<details class="faq-item">\s*<summary>([\s\S]*?)<\/summary>[\s\S]*?<\/details>/g, (m0, sq) => plain(sq) === plain(q) ? '' : m0);
+        block = block.replace('<div class="faq">', '<div class="faq">' + lead);
+        html = html.slice(0, fi) + block + html.slice(fe);
+      } else {
+        const band = html.lastIndexOf('<section class="cta-band"'), me = html.indexOf('</main>');
+        const at = band > ms ? band : me;
+        html = html.slice(0, at) + `<section class="section"><div class="container"><div class="faq">${lead}</div></div></section>\n` + html.slice(at);
+      }
+    }
+  }
   // product pages: one main button and the two doors at the top, nothing else
   if (/^products\//.test(slug)) html = html.replace(/(<section class="hero[^"]*">[\s\S]*?)(<div class="doors-strip)/, (m0, top, rest) => top.replace(/\s*<a class="btn btn-ghost[^"]*"[^>]*>[^<]*<\/a>/g, '').replace(/\s*<p class="cta-note">[\s\S]*?<\/p>/, '') + rest);
   // pages never offer a button back to themselves
