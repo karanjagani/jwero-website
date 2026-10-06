@@ -2542,6 +2542,11 @@ document.addEventListener('click', function (e) {
       }
       setTimeout(sync, 40);
     }, true);
-    setTimeout(sync, 400);
+    setTimeout(function () {
+      // Open on a typical business, so the numbers on screen match what is ticked.
+      var row = root.querySelector('[data-default]');
+      if (row && !chips().some(on)) { var b = row.querySelector('[data-stackm-quick="' + row.getAttribute('data-default') + '"]'); if (b) b.click(); }
+      sync();
+    }, 400);
   });
 })();
