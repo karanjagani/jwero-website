@@ -42,6 +42,34 @@ const hero = () => `
   </div>
 </section>`;
 
+// The JBaaS page hero, in the home page's look: the blue panel, copy on the
+// left with two doors, and the chaos-to-focus flow as the moving graphic.
+const heroHome = () => `
+<section class="hero hero-panel hero-home jbs-hero">
+  <div class="panel">
+    <div class="panel-glow" aria-hidden="true"></div>
+    <div class="hero-home-grid">
+      <div class="hero-home-copy">
+        <p class="hero-kicker">${L.mark('mark-xs')}Jewellery Business as a Service</p>
+        <h1>You focus on jewellery. <em>We handle the chaos.</em></h1>
+        <p class="sub">Markets, customers and technology keep changing. Jwero’s specialists and AI run the work around your jewellery: marketing, follow-up, online sales and the back office. No team to hire, no tools to buy.</p>
+        <div class="hero-doors">
+          <a class="hero-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b><em>Priced on the work. Every tool included.</em></a>
+          <a class="hero-door" href="/count-your-team"><span>See your number</span><b>Count your team</b><em>What the work costs today, and with Jwero.</em></a>
+        </div>
+        <p class="cta-note">A real person replies on WhatsApp within minutes · Onboarding in a day · <a href="/self-managed">Run it yourself instead</a></p>
+      </div>
+      <div class="jbs-flow">
+        <div class="pz-split" aria-label="Everything that keeps changing flows through Jwero into what you focus on">
+          <div class="pz-chaos"><p class="pz-split-k">Everything that keeps changing</p><div class="pz-chaos-cloud">${['Markets', 'Customers', 'AI', 'Google', 'Instagram', 'WhatsApp', 'Ads', 'Ecommerce', 'Content', 'CRM', 'Data', 'Competition'].map((w, i) => `<span style="--i:${i}">${w}</span>`).join('')}</div></div>
+          <div class="pz-between"><i><u></u><u></u><u></u></i><span>${L.mark('pz-mark')}<b>Jwero</b><small>AI + experts</small></span><i><u></u><u></u><u></u></i></div>
+          <div class="pz-focus"><p class="pz-split-k">What you focus on</p><ul>${['Jewellery', 'Customers', 'Craftsmanship', 'Collections', 'Growth'].map((w) => `<li>${gem}${w}</li>`).join('')}</ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>`;
+
 // ---------------------------------------------------------------- the contrast
 const CHAOS = ['Markets', 'Customers', 'AI', 'Technology', 'Google', 'Instagram', 'WhatsApp', 'Advertising', 'Ecommerce', 'Content', 'CRM', 'Data', 'Automation', 'Competition'];
 const FOCUS = ['Jewellery', 'Customers', 'Craftsmanship', 'Collections', 'Stores', 'Growth'];
@@ -822,9 +850,9 @@ const home = {
     description: 'Jwero is the operating partner for the modern jewellery business. Its model, Jewellery Business as a Service, combines AI, technology and specialist execution to help run and grow a jewellery business. Jewellers can run it themselves, run it together with Jwero, or have Jwero run it.',
   },
   body: `
-${hero()}
+<div class="jbs">
+${heroHome()}
 <section class="pz-logos">${L.customerLogos()}</section>
-${contrast()}
 ${quotes(3)}
 ${hiddenCost()}
 ${insight()}
@@ -840,6 +868,7 @@ ${assessment()}
 ${nextSteps()}
 ${refer()}
 ${finale()}
+</div>
 `,
 };
 

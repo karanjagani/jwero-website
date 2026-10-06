@@ -3860,3 +3860,36 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .hero-home .cta-note a { color: inherit; text-decoration: underline; }
 .jb-solo { max-width: 760px; margin: 0 auto; }
 @media (max-width: 520px) { .hero-doors { grid-template-columns: minmax(0, 1fr); } }
+
+/* ===== Jewellery Business as a Service page, in the home page's look ===== */
+.jbs .pz-h, .jbs .pz-insight .pz-h, .jbs .pz-askband .pz-h { text-transform: none; font-size: clamp(2rem, 1.15rem + 2.3vw, 3rem); font-weight: 560; letter-spacing: -.03em; line-height: 1.02; max-width: 19em; }
+.jbs .pz-insight .pz-h { font-size: clamp(2.125rem, 1.2rem + 2.8vw, 3.5rem); }
+.jbs .pz-eyebrow { display: inline-block; margin: 0 0 16px; padding: 7px 10px; border-radius: 6px; border: 1px dashed rgba(0, 19, 183, .42); background: var(--brand-soft); color: var(--brand); font: 500 .6875rem/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.jbs .section:has(.pz-center) .pz-eyebrow { display: table; margin-inline: auto; }
+.jbs .pz-band .pz-eyebrow { background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .4); color: #fff; }
+.jbs .pz-lead { font-size: 1.125rem; line-height: 1.5; }
+.jbs .pz-band, .jbs .pz-band-deep, .jbs .pz-band-warm, .jbs .pz-final { margin: 0 8px; border-radius: 16px; background: var(--panel); }
+.jbs .pz-final { background: radial-gradient(80% 120% at 50% 120%, color-mix(in srgb, var(--panel) 60%, #fff 12%) 0%, var(--panel) 60%); }
+.jbs .pz-cmd, .jbs .pz-team2-panel, .jbs .pz-teaser-out, .jbs .pz-run-card { background: var(--panel); }
+.jbs .pz-shift, .jbs .pz-group h3, .jbs .pz-why5 b, .jbs .pz-jbaas h3, .jbs .pz-run-card h3, .jbs .pz-final-turn, .jbs .pz-none b, .jbs .pz-plan h3, .jbs .pz-level h3, .jbs .pz-out-card h3, .jbs .pz-sign { text-transform: none; letter-spacing: -.02em; }
+.jbs .pz-shift { font-weight: 560; }
+.jbs .pz-insight-lines .is-gold, .jbs .pz-final-turn { color: #F6B11C; }
+/* hero */
+.jbs-hero h1 em { font-style: normal; color: #F6B11C; }
+.jbs-hero .hero-home-grid { align-items: center; }
+.jbs-flow .pz-split { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.jbs-flow .pz-chaos { padding: 16px; }
+.jbs-flow .pz-chaos-cloud span { font-size: .75rem; padding: 6px 10px; }
+.jbs-flow .pz-between { flex-direction: column; justify-content: center; }
+.jbs-flow .pz-between i { width: 1px; height: 30px; }
+.jbs-flow .pz-between u { top: 0; left: -3px; animation-name: pz-flow-v2; }
+.jbs-flow .pz-between i:last-child u { animation-name: pz-flow-v2; border-radius: 1px; }
+@keyframes pz-flow-v2 { 0% { top: -6px; opacity: 0; } 20% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+.jbs-flow .pz-between span { grid-auto-flow: column; align-items: center; gap: 10px; padding: 10px 16px; }
+.jbs-flow .pz-between small { color: var(--ink-2); text-align: left; }
+.jbs-flow .pz-focus { padding: 16px 18px; }
+.jbs-flow .pz-focus ul { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 14px; }
+.jbs-flow .pz-focus li { font-size: .9375rem; }
+.jbs-hero .cta-note a { color: inherit; text-decoration: underline; }
+/* scroll reveal for the page's own pieces uses the site's reveal classes */
+@media (max-width: 900px) { .jbs-flow { margin-top: 8px; } .jbs-flow .pz-focus ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

@@ -366,6 +366,7 @@ onView(headings, function (h) { h.classList.add('is-in'); }, { threshold: 0.3 })
 var groups = document.querySelectorAll(
 '.section .cells, .section .grid:not(.cells), .section .router-grid, .section .stats, .section .pillars, .section .impact-grid, ' +
 '.section .ladder, .section .tiers, .section .team-grid, .section .steps, .section .stack-grid, .section .jtbd, .section .verdict-box, ' +
+'.section .pz-agents, .section .pz-groups, .section .pz-quotes, .section .pz-stories, .section .pz-levels, .section .pz-how, .section .pz-why5, .section .pz-none, .section .pz-trust, .section .pz-loop, ' +
 '.section .loop, .section .speeds, .section .speed-guards, .section .safe-items, .section .quick-check-items, .faq'
 );
 Array.prototype.forEach.call(groups, function (g) {
@@ -374,7 +375,7 @@ g.classList.add('reveal-group');
 Array.prototype.forEach.call(g.children, function (c, i) { c.style.setProperty('--i', Math.min(i, 9)); });
 });
 onView(document.querySelectorAll('.reveal-group'), function (g) { g.classList.add('is-visible'); }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-var singles = document.querySelectorAll('.section .coexist, .section .split, .section .gem-stage, .section .gem-copy, .section .tbl-wrap, .section .calc, .section .stack-verdict, .section .gaps-block, main > .gaps-block, main > .one-system, .section .safe-strip, .section .form, .trust-bar .container, .logo-marquee');
+var singles = document.querySelectorAll('.section .pz-two, .section .pz-out, .section .pz-daycmd, .section .pz-vs, .section .pz-teaser, .section .pz-jbaas, .section .pz-assess, .section .pz-run, .section .pz-struck, .section .pz-shift, .section .coexist, .section .split, .section .gem-stage, .section .gem-copy, .section .tbl-wrap, .section .calc, .section .stack-verdict, .section .gaps-block, main > .gaps-block, main > .one-system, .section .safe-strip, .section .form, .trust-bar .container, .logo-marquee');
 Array.prototype.forEach.call(singles, function (el) { if (!el.closest('.reveal-group')) el.classList.add('reveal'); });
 onView(document.querySelectorAll('.reveal'), function (el) { el.classList.add('is-visible'); });
 onView(document.querySelectorAll('[data-shift]'), function (el) { el.classList.add('is-in'); }, { threshold: 0.3 });
