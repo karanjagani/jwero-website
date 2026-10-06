@@ -447,7 +447,7 @@ The Autonomous Jewellery OS, run by AI
  No. Every AI-drafted action waits in an approval queue, inside daily caps and quiet hours, with a kill switch at five scopes. See how governance works .
 
  How long does it take to go live? 
- Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one.
+ Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one.
 
  Who owns my data? 
  You do. Every business runs in its own isolated database, and you can export everything, any time. Read about security .
@@ -478,7 +478,7 @@ Q: Will AI message my customers without asking?
 A: No. Every AI-drafted action waits in an approval queue until your team clears it, inside daily caps and quiet hours you set, with a kill switch at five scopes. Autonomy is earned action by action, never assumed.
 
 Q: How long does it take to go live?
-A: Days, not months, for the first stage: we import your customers, connect your existing WhatsApp number, and publish your catalogue, with approvals switched on from day one.
+A: Set-up takes a day for most shops: we import your customers, connect your existing WhatsApp number, and publish your catalogue, with approvals switched on from day one.
 
 Q: Who owns my data?
 A: You do. Every business runs in its own isolated database, and you can export everything, any time.

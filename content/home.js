@@ -16,7 +16,7 @@ const home = {
     { q: 'What is Jwero?', a: 'Jwero is the Autonomous Jewellery OS, run by AI — one system where customers, catalogue, stock, counter billing, purchase, workshop, accounts and team share one record with every selling channel, and an AI workforce drafts the work under your approval.' },
     { q: 'Do I have to replace my current billing or accounting software?', a: 'No. Keep your books exactly where your accountant likes them — Jwero bridges to Tally and Zoho Books. Most businesses change nothing on the accounting side on day one.' },
     { q: 'Will AI message my customers without asking?', a: 'No. Every AI-drafted action waits in an approval queue until your team clears it, inside daily caps and quiet hours you set — with a kill switch at five scopes. Autonomy is earned action by action, never assumed.' },
-    { q: 'How long does it take to go live?', a: 'Days, not months, for the first stage: we import your customers, connect your existing WhatsApp number, and publish your catalogue — with approvals switched on from day one.' },
+    { q: 'How long does it take to go live?', a: 'Set-up takes a day for most shops: we import your customers, connect your existing WhatsApp number, and publish your catalogue, with approvals switched on from day one.' },
     { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time.' },
   ],
   body: `
@@ -58,7 +58,7 @@ ${L.section(`${L.sectionHead('QUESTIONS JEWELLERS ASK', 'Jewellery software ques
   { q: 'What is Jwero?', a: 'Jwero is the Autonomous Jewellery OS, run by AI — one system where customers, catalogue, stock, counter billing, purchase, workshop, accounts and team share one record with every selling channel, and an AI workforce drafts the work under your approval.' },
   { q: 'Do I have to replace my billing or accounting software?', a: 'No. Keep your books exactly where your accountant likes them — Jwero bridges to Tally and Zoho Books. <a href="/migration">See the Migration Centre</a>.' },
   { q: 'Will AI message my customers without asking?', a: 'No. Every AI-drafted action waits in an approval queue, inside daily caps and quiet hours, with a kill switch at five scopes. <a href="/platform/ai-workforce">See how governance works</a>.' },
-  { q: 'How long does it take to go live?', a: 'Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published — approvals on from day one.' },
+  { q: 'How long does it take to go live?', a: 'Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one.' },
   { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time. <a href="/trust/security">Read about security</a>.' },
 ])}
 <p class="cta-note" style="margin-top:18px">More questions? <a href="/faq">Every question, answered</a> · <a href="#" data-wa="faq">ask us now</a>.</p>`)}

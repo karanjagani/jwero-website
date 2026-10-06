@@ -1547,7 +1547,7 @@
     var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
     // learn
     var q = /[?&]p=(single|chain|maker|b2b|d2c|franchise|trader|staff)/.exec(location.search);
-    if (q) store.set('jwero-persona', q[1]);
+    if (q) { store.set('jwero-persona', q[1]); store.set('jwero-persona-picked', '1'); }
     else if (SOL[slug] && !store.get('jwero-persona')) store.set('jwero-persona', SOL[slug]);
     var seen = []; try { seen = JSON.parse(store.get('jwero-seen') || '[]'); } catch (e) {}
     var title = (document.querySelector('h1') || {}).textContent || document.title;
@@ -1579,13 +1579,13 @@
     };
     var TRIAL = 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=';
     var icp = ICP[persona], icpDlg = document.querySelector('dialog.icp-dialog');
-    Array.prototype.forEach.call(document.querySelectorAll('[data-icp-label]'), function (el) { if (icp) { el.textContent = icp.label; el.parentNode.classList.add('is-set'); } });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-icp-label]'), function (el) { if (icp && store.get('jwero-persona-picked')) { el.textContent = icp.label; el.parentNode.classList.add('is-set'); } });
     Array.prototype.forEach.call(document.querySelectorAll('[data-icp="' + persona + '"]'), function (a) { a.classList.add('is-you'); });
     document.addEventListener('click', function (e) {
       if (e.target.closest('[data-icp-open]') && icpDlg && icpDlg.showModal) { e.preventDefault(); if (!icpDlg.open) icpDlg.showModal(); return; }
       if (icpDlg && (e.target === icpDlg || e.target.closest('[data-icp-close]'))) { icpDlg.close(); return; }
       var pick = e.target.closest('a[data-icp]');
-      if (pick) store.set('jwero-persona', pick.getAttribute('data-icp'));
+      if (pick) { store.set('jwero-persona', pick.getAttribute('data-icp')); store.set('jwero-persona-picked', '1'); }
     });
     if (icp && slug !== 'start' && slug !== 'search') {
       // On the reader's own page a stage is an anchor; elsewhere it leads back to it.
@@ -1925,7 +1925,7 @@
     // Remember the picks so a return visit resumes at the summary, not step one.
     wrap.addEventListener('click', function (e) {
       var o = e.target.closest('.start-opt'); if (!o) return;
-      try { if (o.dataset.persona) localStorage.setItem('jwero-persona', o.dataset.persona); localStorage.setItem('jwero-start', JSON.stringify({ pick: pick, labels: labels })); } catch (x) {}
+      try { if (o.dataset.persona) { localStorage.setItem('jwero-persona', o.dataset.persona); localStorage.setItem('jwero-persona-picked', '1'); } localStorage.setItem('jwero-start', JSON.stringify({ pick: pick, labels: labels })); } catch (x) {}
     });
     go.addEventListener('click', function () { try { localStorage.setItem('jwero-signed-up', String(Date.now())); } catch (x) {} });
     try {

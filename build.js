@@ -846,6 +846,39 @@ function trimSolution(html, slug) {
 // under the page's top section.
 const LEGACY_SLUGS = new Set(require('./content/legacy-posts.json').posts.map((p) => p.slug));
 const DOORS_SKIP = ['index', '404', 'search', 'contact', 'book-demo', 'glossary', 'roadmap', 'start', 'legal', 'hi', 'partners', 'company', 'blog', 'jewellery-business-as-a-service'];
+// The business-type pages the header picker opens: built like the home page,
+// in that business's words, with the home page's hooks kept in.
+const ICP_HOME = {
+  'solutions/single-store': ['single', 'Jwero for single-store jewellers', 'How many tools does one showroom run today?'],
+  'solutions/multi-store-chains': ['chain', 'Jwero for multi-store chains', 'How many tools do your branches run today?'],
+  'solutions/franchise-networks': ['franchise', 'Jwero for franchise networks', 'How many tools does your network run today?'],
+  'solutions/manufacturers': ['maker', 'Jwero for manufacturers', 'How many tools does your workshop run today?'],
+  'solutions/b2b-jewellery': ['b2b', 'Jwero for wholesalers', 'How many tools does your trade desk run today?'],
+  'solutions/diamond-traders': ['trader', 'Jwero for diamond traders', 'How many tools does your trading desk run today?'],
+  'solutions/d2c-brands': ['d2c', 'Jwero for online jewellery brands', 'How many tools does your brand run today?'],
+};
+function withIcpHome(html, slug) {
+  const cfg = ICP_HOME[slug]; if (!cfg) return html;
+  const L4 = require('./lib');
+  const hs = html.indexOf('<section class="hero"'); if (hs < 0) return html;
+  const he = html.indexOf('</section>', hs) + 10;
+  const old = html.slice(hs, he);
+  const h1 = ((old.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || '').trim();
+  const sub = ((old.match(/<p class="sub">([\s\S]*?)<\/p>/) || [])[1] || '').trim();
+  const hero = L4.homeHero({ kicker: cfg[1], h1, sub }).replace(/home-hero/g, 'icp-' + cfg[0]).replace('data-wa="handle"', `data-wa="handle-${cfg[0]}"`).replace('href="#jbaas"', 'href="#tiers"')
+    + `<section class="pz-logos">${L4.customerLogos()}</section>`;
+  html = html.slice(0, hs) + hero + html.slice(he);
+  // the bangle link in the hero lands on this page's own bangle section
+  html = html.replace(/(<section class="section[^"]*"[^>]*>)(\s*<div class="container">[\s\S]{0,400}?on one bangle)/, '<span id="one-record"></span>$1$2');
+  // Count your tools and the department comparison, before the price
+  const hooks = L4.section(`<span id="count-yours"></span>${L4.sectionHead('COUNT YOUR TOOLS', cfg[2], 'Tap the ones you run today and watch what they cost you.')}${L4.stackMerge()}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too →</a></p>`, { tone: 'tint' })
+    + L4.section(`${L4.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole business.', 'The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}${L4.compareRows(L4.DEPARTMENTS)}`);
+  const security = L4.section(`<div class="gem-head"><h2>Security and privacy delivered, just as you want.</h2></div>${L4.trustStrip()}`, { tone: 'tint' });
+  const ti = html.indexOf('id="tiers"');
+  if (ti > 0) { const ts = html.lastIndexOf('<section', ti); const te = html.indexOf('</section>', ti) + 10; html = html.slice(0, ts) + hooks + html.slice(ts, te) + security + html.slice(te); }
+  return html;
+}
+
 function withDoors(html, slug) {
   if (DOORS_SKIP.includes((slug || '').split('/')[0]) || LEGACY_SLUGS.has(slug)) return html;
   const end = html.indexOf('</section>');
@@ -1202,7 +1235,7 @@ ${launchHTML()}
 ${navHTML(page)}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-${withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withCalcFix(withInterlinks(withBlogTop(withPlatformLinks(withUseCases(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`)}
+${withIcpHome(withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withCalcFix(withInterlinks(withBlogTop(withPlatformLinks(withUseCases(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`), page.slug)}
 </main>
 ${searchDialog()}
 ${connectDialog()}
