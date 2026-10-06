@@ -18,7 +18,7 @@ const caNote = (what) => `<p class="post-note"><b>Check with your CA.</b> ${what
 const post = ({ slug, title, description, h1, sub, eyebrow, cluster, mins, body, faqs, product, wa, close }) => ({
   slug: `blog/${slug}`, title, description, breadcrumbs: BC(h1), schema: schema(h1, description), faqs,
   body: `
-${L.hero({ eyebrow, h1, sub, primary: { href: '#', label: 'Chat or call with us', wa }, secondary: { href: product[0], label: product[1] } })}
+${L.hero({ eyebrow, h1, sub, secondary: { href: product[0], label: product[1] } })}
 ${L.section(meta(mins, cluster))}
 ${L.section(`<div class="post-body">${body}</div>`)}
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'What jewellers ask about this.', '')}${L.faqBlock(faqs)}`)}

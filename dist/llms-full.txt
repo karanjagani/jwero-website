@@ -14332,6 +14332,90 @@ THE JWERO BLOG
 
  Read → 
 
+ RUNNING THE BUSINESS
+
+## Girvi, karigars, memo, stones, schemes and branches.
+
+ The day-to-day work, by kind of jewellery business.
+
+## Girvi Business for Jewellers: Licence, Interest, Renewals and Auctions
+
+ How a jeweller’s girvi (gold loan) business works: state licences and interest caps, how to calculate interest, renewals, release and auction notices.
+
+ Read → 
+
+## Girvi Register Software: Moving Gold Loans Off the Notebook
+
+ Why the girvi notebook fails as the book grows, what a girvi register in software must hold, and how to move existing pledges across without losing a rupee.
+
+ Read → 
+
+## Karigar Wastage: Normal Loss, Caps and Settlement
+
+ How much gold loss is normal at each stage, how to set wastage norms for karigars, cap recovery fairly, and settle every job in fine grams.
+
+ Read → 
+
+## Fine-Weight Metal Ledger: Tracking Gold by Purity, Not Just Rupees
+
+ Why jewellers need a metal ledger in fine grams next to the money ledger, how to convert purities, and how it catches loss and mismatches early.
+
+ Read → 
+
+## Job Work in Jewellery: Issue, Receipt, Challans and GST Rules
+
+ Sending gold to karigars and job-work units: delivery challans, the one-year return rule, ITC-04, job-work GST, and keeping issue and receipt in fine grams.
+
+ Read → 
+
+## Approval and Memo Stock: How Wholesalers Stop Losing Pieces on Approval
+
+ Goods on approval are the easiest stock to lose track of. How to issue memos, set return dates, convert to sale and reconcile what came back.
+
+ Read → 
+
+## Managing Loose Diamonds and Gemstones: Stone Records, Parcels and Certificates
+
+ How diamond traders and jewellers keep loose stones under control: one record per stone or parcel, certificates, where each stone went, and memo to buyers.
+
+ Read → 
+
+## Jewellery Repairs: Job Slips, Turnaround Times and Who Holds the Piece
+
+ Run jewellery repairs without lost pieces or angry customers: a proper job slip, weights in and out, turnaround promises, ready alerts and warranty.
+
+ Read → 
+
+## Gold Scheme Accounting: Why Instalments Are a Liability, Not Sales
+
+ How to account for gold savings scheme instalments: advances held as a liability until redemption, bonuses, closures, and reconciling members to the books.
+
+ Read → 
+
+## 11+1 Gold Scheme vs Gram Accumulation: Which Suits Your Shop?
+
+ The two common gold savings schemes compared: fixed monthly instalments with a bonus, or buying grams at each instalment. Who each suits, and the risks.
+
+ Read → 
+
+## Stock Transfers Between Jewellery Branches: Challans, GST and Control
+
+ Moving stock between showrooms without losing track: transfer documents, GST on inter-state transfers, approvals, and reconciling what was sent and received.
+
+ Read → 
+
+## Jewellery Exhibitions: Taking Stock Out and Bringing It Back
+
+ How to run a jewellery exhibition or trunk show without stock gaps: issue lists, sales at the venue, GST registration in another state, and counting everything back.
+
+ Read → 
+
+## Custom Jewellery Orders: From Enquiry to Delivery Without Delays
+
+ How to run custom and made-to-order jewellery: taking the order, advances and rate booking, sending it to the karigar, tracking due dates and delivering on time.
+
+ Read → 
+
  BUYING AND STARTING UP
 
 ## Cost, comparisons and getting started, honestly.
@@ -16360,7 +16444,6 @@ GUIDE · PRICING
 
  Today’s rate, the purity, the net weight, making and GST. The same formula every counter uses, worked through with real numbers, and a calculator you can use with your own.
 
- Chat or call with us 
  See live-rate billing 
 
  Pricing · 7 min read · By the Jwero editorial team · Published October 2026 
@@ -16502,7 +16585,6 @@ GUIDE · GST
 
  Three percent on the piece is the easy part. Making charges, gold the customer brings, old gold and loose diamonds are where bills and returns go wrong.
 
- Chat or call with us 
  See billing and GST in Jwero 
 
  Accounts and GST · 8 min read · By the Jwero editorial team · Published October 2026 
@@ -16605,7 +16687,6 @@ GUIDE · PRICING
 
  Per gram, percentage, flat or wastage: four ways to charge for the same work. Which suits which piece, how each looks on the bill, and how to keep every counter quoting the same.
 
- Chat or call with us 
  See live-rate billing 
 
  Pricing · 6 min read · By the Jwero editorial team · Published October 2026 
@@ -16692,7 +16773,6 @@ GUIDE · OLD GOLD
 
  Test it, weigh it, take out the stones, apply today’s rate, and write it all down. The counter process that keeps exchange fair to the customer and safe for the shop.
 
- Chat or call with us 
  See old gold at the counter 
 
  Counter · 7 min read · By the Jwero editorial team · Published October 2026 
@@ -16789,7 +16869,6 @@ GUIDE · COMPLIANCE
 
  Three numbers every counter should know: PAN above ₹2 lakh, no cash receipt of ₹2 lakh or more, and the ₹10 lakh cash rule for dealers in precious metals and stones.
 
- Chat or call with us 
  See how Jwero handles compliance 
 
  Compliance · 7 min read · By the Jwero editorial team · Published October 2026 
@@ -16894,7 +16973,6 @@ GUIDE · HALLMARKING
 
  Which gold pieces need a HUID, who is exempt, how customers check it on their phone, and the three checks your counter should make before a hallmarked piece is billed.
 
- Chat or call with us 
  See HUID in Jwero 
 
  Compliance · 6 min read · By the Jwero editorial team · Published October 2026 
@@ -16985,7 +17063,6 @@ GUIDE · GST
 
  Jewellery is on the national exemption list, so most movements need no e-way bill. But some states have their own rule for gold, and every movement still needs a challan or invoice.
 
- Chat or call with us 
  See memo and dispatch in Jwero 
 
  Accounts and GST · 5 min read · By the Jwero editorial team · Published October 2026 
@@ -17068,7 +17145,6 @@ GUIDE · GST
 
  If you sell to other businesses and your turnover is above ₹5 crore, your B2B invoices need an IRN. Retail bills to customers do not. Here is how it works for jewellers.
 
- Chat or call with us 
  See e-invoicing in Jwero 
 
  Accounts and GST · 5 min read · By the Jwero editorial team · Published October 2026 
@@ -17135,6 +17211,1016 @@ A: Businesses with turnover of ₹10 crore or more must report an invoice to the
 
 Q: Do retail jewellery bills need a QR code?
 A: Only very large businesses, above ₹500 crore turnover, must print a dynamic QR code on B2C invoices. Ordinary retail bills do not need an e-invoice.
+
+---
+
+# Girvi Business for Jewellers: Licence, Interest, Renewals and Auctions
+URL: https://jwero.ai/blog/girvi-gold-loan-business-guide
+
+How a jeweller’s girvi (gold loan) business works: state licences and interest caps, how to calculate interest, renewals, release and auction notices.
+
+GUIDE · GIRVI
+
+## Running a girvi business
+
+ Pledge, interest, renewal, release, and sometimes auction. The girvi cycle, the rules that govern it in most states, and the records that keep it out of trouble.
+
+ See girvi in Jwero 
+
+ Girvi and gold loans · 7 min read · By the Jwero editorial team · Published October 2026 
+
+## The girvi cycle
+
+ Pledge: the customer leaves gold, you test and weigh it, and lend an amount against it.
+
+ Interest: charged monthly on the loan.
+
+ Renewal or part payment: the customer pays interest, or part of the loan, and the pledge continues.
+
+ Release: the customer repays in full and takes the gold back.
+
+ Default and auction: if the loan is not repaid, the gold is sold after the notice the law requires.
+
+ Check with your lawyer. Girvi is regulated by state money-lending and pawnbroker laws: licences, interest caps, receipts and auction notice periods all differ by state. Rules here are as we understand them in October 2026, and they differ by state and change over time.
+
+## Licence and interest caps
+
+ Most states require a money-lender’s or pawnbroker’s licence for lending against gold, and cap the interest you can charge. The state act also sets what the pledge receipt must show and how long you must wait, and notify, before selling unredeemed gold.
+
+## Valuing the pledge
+
+ Test purity, weigh gross and net, and value the gold at today’s rate. Lend a share of that value, not all of it, so a fall in the gold rate does not leave the loan bigger than the gold. Write the gross weight, net weight, purity and value on the receipt.
+
+## Calculating interest
+
+ Most girvi interest is simple interest per month: loan × monthly rate × months . A ₹1,00,000 loan at 1.5% a month for 7 months is ₹10,500. Decide how part months are counted, and apply it the same way to every customer.
+
+## Renewals and part payments
+
+ When a customer pays only interest, record it and carry the pledge forward. When they pay part of the loan, reduce the principal from that date. Give a receipt each time; most girvi disputes are about payments the customer says they made.
+
+## Release and auction
+
+ On release, match the gold returned to the pledge record by weight in front of the customer. On default, send the notices your state requires, keep proof, and record the auction and how the proceeds were applied.
+
+## How Jwero does it
+
+ Jwero’s girvi module records pledges and loans, accrues interest, handles renewals, part payments and releases, prints the pledge receipt, and runs the default process with auction notices and auctions. Girvi reports show what is out, what is due and what is overdue. See ERP .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ Do jewellers need a licence for girvi? 
+ In most states, lending against gold needs a money-lender’s or pawnbroker’s licence under the state’s money-lending law, which also caps interest and sets notice periods. Check your state’s act.
+
+ How is girvi interest calculated? 
+ Usually as simple interest per month on the loan amount: ₹1,00,000 at 1.5% a month is ₹1,500 a month. Use the method and the cap your state allows, and print it on the pledge receipt.
+
+ How much can a jeweller lend against gold? 
+ There is no single rule for jewellers. Many lend a share of today’s gold value to leave a margin if the rate falls; banks and NBFCs work to a 75% loan-to-value cap as a reference point.
+
+ Can a jeweller auction unredeemed gold? 
+ Only after the notice your state’s law requires, sent to the borrower in the prescribed way. Keep proof of every notice.
+
+## Every pledge, every rupee of interest, on record.
+
+ Jwero runs pledges, interest, renewals, part payments, release and auction notices, with a receipt for each step.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Do jewellers need a licence for girvi?
+A: In most states, lending against gold needs a money-lender’s or pawnbroker’s licence under the state’s money-lending law, which also caps interest and sets notice periods. Check your state’s act.
+
+Q: How is girvi interest calculated?
+A: Usually as simple interest per month on the loan amount: ₹1,00,000 at 1.5% a month is ₹1,500 a month. Use the method and the cap your state allows, and print it on the pledge receipt.
+
+Q: How much can a jeweller lend against gold?
+A: There is no single rule for jewellers. Many lend a share of today’s gold value to leave a margin if the rate falls; banks and NBFCs work to a 75% loan-to-value cap as a reference point.
+
+Q: Can a jeweller auction unredeemed gold?
+A: Only after the notice your state’s law requires, sent to the borrower in the prescribed way. Keep proof of every notice.
+
+---
+
+# Girvi Register Software: Moving Gold Loans Off the Notebook
+URL: https://jwero.ai/blog/girvi-register-software
+
+Why the girvi notebook fails as the book grows, what a girvi register in software must hold, and how to move existing pledges across without losing a rupee.
+
+GUIDE · GIRVI
+
+## Girvi register software
+
+ A notebook works for twenty pledges. At two hundred, interest is missed, renewals go unrecorded and the gold in the locker stops matching the book.
+
+ See girvi in Jwero 
+
+ Girvi and gold loans · 5 min read · By the Jwero editorial team · Published October 2026 
+
+## Where the notebook breaks
+
+ Interest worked out by hand , differently on different days.
+
+ Part payments written in the margin and missed at release.
+
+ The locker and the book stop matching, and nobody knows since when.
+
+ Overdue loans found only when someone flips through the pages.
+
+## What the register must hold
+
+ Customer name, phone and ID
+
+ Each item: description, gross weight, net weight, purity, value
+
+ Loan amount, rate, interest method and start date
+
+ Every payment, renewal and part repayment, with receipt numbers
+
+ Release or auction, with date and who handled it
+
+## Moving across
+
+ Enter open pledges first, with their original dates and payments so far. Check twenty of them against the notebook: if interest to date matches, switch. Closed pledges can follow later for history.
+
+## What changes after
+
+ You see what is due this week, what is overdue and the total lent against how much gold, without opening a page. Customers can get a reminder before interest falls due. Read the girvi business guide for licences and interest rules.
+
+## How Jwero does it
+
+ Jwero records each pledge with its items and weights, accrues interest, records renewals and part payments, prints pledge receipts, and reports what is outstanding and overdue. See ERP .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ What should a girvi register record? 
+ Customer and ID, items pledged with gross and net weight and purity, valuation, loan amount, interest rate and method, every payment and renewal, and the release or auction.
+
+ How do I move existing pledges into software? 
+ Enter each open pledge with its original date, loan and payments so far. The software then works out interest to date; check a sample against your notebook before you switch.
+
+ Can customers be reminded about interest on WhatsApp? 
+ Yes, if they have agreed to messages. Reminders before the due date reduce overdue loans more than calls after it.
+
+## Your girvi book, on one screen.
+
+ Bring your current register. We will show it in Jwero with interest worked out to today.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: What should a girvi register record?
+A: Customer and ID, items pledged with gross and net weight and purity, valuation, loan amount, interest rate and method, every payment and renewal, and the release or auction.
+
+Q: How do I move existing pledges into software?
+A: Enter each open pledge with its original date, loan and payments so far. The software then works out interest to date; check a sample against your notebook before you switch.
+
+Q: Can customers be reminded about interest on WhatsApp?
+A: Yes, if they have agreed to messages. Reminders before the due date reduce overdue loans more than calls after it.
+
+---
+
+# Karigar Wastage: Normal Loss, Caps and Settlement
+URL: https://jwero.ai/blog/karigar-wastage-norms-settlement
+
+How much gold loss is normal at each stage, how to set wastage norms for karigars, cap recovery fairly, and settle every job in fine grams.
+
+GUIDE · MANUFACTURING
+
+## Karigar wastage: norms, caps and settlement
+
+ Some gold is always lost in making. The question is how much is normal, who carries the rest, and whether you find out per job or at the year-end stock count.
+
+ See karigar settlement in Jwero 
+
+ Manufacturing · 6 min read · By the Jwero editorial team · Published October 2026 
+
+## Why loss is normal, and why it hides
+
+ Filing, soldering, polishing and setting all lose some gold. Some comes back as dust and filings, some does not. When loss is only checked at the yearly stock count, a careful karigar and a careless one look the same.
+
+## Set norms per process
+
+ Take your own last few months of jobs and work out the loss per process: casting, filing, setting, polishing. That becomes the norm. Different designs can carry different norms; a heavy plain bangle is not a filigree necklace.
+
+## Issue and receive in fine grams
+
+ Fine weight = gross weight × purity. 50 g of 22K issued is 45.8 g fine. If the karigar returns 48 g of 22K finished work and 1.2 g of 22K scrap, that is 45.0 g fine back. The loss is 0.8 g fine, or 1.7%. Compare that to the norm.
+
+## Cap recovery fairly
+
+ A common rule: loss within the norm is the workshop’s cost; loss above the norm is recovered from the karigar, up to a cap. Write the norm and the cap on the job card before work starts, and settle each job when it comes back, not in a lump at month end.
+
+## Read the pattern, not one job
+
+ One high-loss job is noise. The same karigar above norm on most jobs is a conversation. The gold-loss calculator shows what loss above norm is worth over a year.
+
+## How Jwero does it
+
+ Jwero issues and receives karigar jobs by weight and purity, assesses wastage at settlement, and caps recovery to the norm you set. A karigar scorecard and metal reconciliation show loss by karigar over time. See manufacturing .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ What is a normal wastage percentage? 
+ It depends on the process and design: filing and polishing lose less than intricate handmade work, and casting has its own losses. Set a norm per process from your own history, not a market number.
+
+ Should karigars pay for loss above the norm? 
+ Many workshops recover loss above an agreed norm, up to a cap. Put the norm and the cap in writing before the job is issued.
+
+ Why settle in fine grams? 
+ Because gold is issued and returned in different purities. Converting everything to fine (pure) gold is the only way the issue and the return can be compared fairly.
+
+## Settle every job against its norm.
+
+ Jwero assesses wastage per job and caps recovery to the norm you set, in fine grams.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: What is a normal wastage percentage?
+A: It depends on the process and design: filing and polishing lose less than intricate handmade work, and casting has its own losses. Set a norm per process from your own history, not a market number.
+
+Q: Should karigars pay for loss above the norm?
+A: Many workshops recover loss above an agreed norm, up to a cap. Put the norm and the cap in writing before the job is issued.
+
+Q: Why settle in fine grams?
+A: Because gold is issued and returned in different purities. Converting everything to fine (pure) gold is the only way the issue and the return can be compared fairly.
+
+---
+
+# Fine-Weight Metal Ledger: Tracking Gold by Purity, Not Just Rupees
+URL: https://jwero.ai/blog/fine-weight-metal-ledger-jewellers
+
+Why jewellers need a metal ledger in fine grams next to the money ledger, how to convert purities, and how it catches loss and mismatches early.
+
+GUIDE · MANUFACTURING
+
+## The fine-weight metal ledger
+
+ Your books say what the gold cost. A metal ledger says where the gold is. Without it, loss, karigar balances and metal loans live in someone’s head.
+
+ See the metal ledger in Jwero 
+
+ Manufacturing · 6 min read · By the Jwero editorial team · Published October 2026 
+
+## Two ledgers, one business
+
+ The money ledger records rupees. The metal ledger records grams of fine gold: what you bought, what you issued, what came back, what you sold. They should tell the same story. When they do not, something is missing.
+
+## Converting to fine
+
+ Fine weight = gross weight × purity. 22K is 91.6%, 18K is 75%, 14K is 58.5%. Record every movement in fine grams, along with the gross weight and purity it came from.
+
+## What the ledger shows that the books do not
+
+ Karigar balances: grams issued minus grams returned, per karigar.
+
+ Metal loans: gold borrowed from or lent to suppliers, owed back in grams.
+
+ Process loss: where in production the grams go.
+
+ Stock in fine: total gold on hand, whatever the mix of purities.
+
+## Reconcile every month
+
+ Fine gold opening + purchases + returns from karigars − issues − sales should equal fine gold closing. A gap within your loss norms is normal. A gap outside them needs finding this month, not at the year end. See karigar wastage .
+
+## How Jwero does it
+
+ Jwero keeps a fine-weight metal ledger in the accounts, reconciles karigar metal issues and receipts, and records metal loans. See manufacturing and finance .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ What is fine weight? 
+ The weight of pure gold in a piece: gross weight × purity. 10 g of 22K (91.6%) is 9.16 g fine.
+
+ Why is a rupee ledger not enough? 
+ Because the gold rate changes. A rupee balance cannot tell you whether a karigar owes you grams, and stock valued at different rates cannot be compared. Fine grams do not change with the rate.
+
+ Who needs a metal ledger? 
+ Anyone who issues gold to others: manufacturers, wholesalers who give metal to karigars, and retailers with in-house workshops or metal loans.
+
+## Gold accounted for in grams and rupees.
+
+ Jwero keeps a fine-weight metal ledger alongside the books, with karigar balances and metal loans on it.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: What is fine weight?
+A: The weight of pure gold in a piece: gross weight × purity. 10 g of 22K (91.6%) is 9.16 g fine.
+
+Q: Why is a rupee ledger not enough?
+A: Because the gold rate changes. A rupee balance cannot tell you whether a karigar owes you grams, and stock valued at different rates cannot be compared. Fine grams do not change with the rate.
+
+Q: Who needs a metal ledger?
+A: Anyone who issues gold to others: manufacturers, wholesalers who give metal to karigars, and retailers with in-house workshops or metal loans.
+
+---
+
+# Job Work in Jewellery: Issue, Receipt, Challans and GST Rules
+URL: https://jwero.ai/blog/job-work-jewellery-gst-challan
+
+Sending gold to karigars and job-work units: delivery challans, the one-year return rule, ITC-04, job-work GST, and keeping issue and receipt in fine grams.
+
+GUIDE · MANUFACTURING
+
+## Job work in jewellery
+
+ Gold goes out on a challan and must come back, as jewellery or scrap, within the time the rules allow. Here is how issue, receipt and the paperwork fit together.
+
+ See job work in Jwero 
+
+ Manufacturing · 6 min read · By the Jwero editorial team · Published October 2026 
+
+## Issue on a challan
+
+ When you send gold to a karigar or job-work unit, it is still yours. It moves on a delivery challan showing the item, gross weight, purity and fine weight. No GST is charged on the gold.
+
+ Check with your CA. Job-work GST rules, the return period for ITC-04 and the deemed-supply timelines are the parts to confirm. Rules here are as we understand them in October 2026, and they differ by state and change over time.
+
+## Receive against the challan
+
+ What comes back is finished jewellery and scrap. Weigh both, convert to fine, and compare with what was issued. The difference is the loss, to be checked against your wastage norms .
+
+## The time limit
+
+ Under Section 143 of the CGST Act, inputs sent for job work should return within one year (capital goods within three). Gold not back in time is treated as supplied on the day it went out, with tax due. Track due dates per challan.
+
+## The karigar’s bill
+
+ A registered karigar bills you for making as a job-work service. An unregistered karigar does not charge GST. Either way, the making charge is your cost, separate from the gold.
+
+## Reporting
+
+ Goods sent to and received from job workers are reported in ITC-04. At the time of writing it is half-yearly if your turnover is above ₹5 crore and yearly otherwise.
+
+## How Jwero does it
+
+ Jwero issues job work to karigars and receives it back by weight and purity, sweeps for jobs that are due, settles wastage, and reconciles karigar metal. See manufacturing .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ Do I need to charge GST when sending gold to a karigar? 
+ No. Sending your own gold for job work is not a sale. It moves on a delivery challan. The karigar’s making charge, if they are registered, is a job-work service billed to you.
+
+ How long can gold stay with a job worker? 
+ Under the GST rules, inputs sent for job work should come back within one year (capital goods three years). If not, the gold is treated as supplied on the day it was sent.
+
+ What is ITC-04? 
+ The return that reports goods sent to and received back from job workers. At the time of writing it is half-yearly above ₹5 crore turnover and yearly below. Confirm with your CA.
+
+## Every issue, every receipt, every challan.
+
+ Jwero issues and receives job work by weight and purity and flags jobs that are due back.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Do I need to charge GST when sending gold to a karigar?
+A: No. Sending your own gold for job work is not a sale. It moves on a delivery challan. The karigar’s making charge, if they are registered, is a job-work service billed to you.
+
+Q: How long can gold stay with a job worker?
+A: Under the GST rules, inputs sent for job work should come back within one year (capital goods three years). If not, the gold is treated as supplied on the day it was sent.
+
+Q: What is ITC-04?
+A: The return that reports goods sent to and received back from job workers. At the time of writing it is half-yearly above ₹5 crore turnover and yearly below. Confirm with your CA.
+
+---
+
+# Approval and Memo Stock: How Wholesalers Stop Losing Pieces on Approval
+URL: https://jwero.ai/blog/approval-memo-stock-jewellery-wholesale
+
+Goods on approval are the easiest stock to lose track of. How to issue memos, set return dates, convert to sale and reconcile what came back.
+
+GUIDE · WHOLESALE
+
+## Approval and memo stock
+
+ A retailer takes twenty pieces on approval, keeps four, returns twelve, and four are still somewhere. Memo stock is where wholesale margin quietly disappears.
+
+ See approval memos in Jwero 
+
+ Wholesale and trade · 5 min read · By the Jwero editorial team · Published October 2026 
+
+## Why memo stock goes missing
+
+ Pieces issued on a handwritten memo that is never closed.
+
+ Partial returns written on the original slip.
+
+ Kept pieces billed weeks later, at a different rate, or not at all.
+
+## Issue properly
+
+ List every piece with tag number, gross and net weight, purity and value. Set a return date. Give the buyer a copy and keep one. The memo travels as the document for the goods; it is not a sale.
+
+## Close every memo
+
+ Each memo ends in one of three ways for every piece: returned, billed, or chased. Issued pieces = returned + billed. Anything else is outstanding.
+
+## Bill what is kept, at the agreed rate
+
+ Agree up front whether kept pieces are billed at the rate on the issue date or the rate on the day of sale. Write it on the memo.
+
+## Review the open memos weekly
+
+ A list of everything out on approval, by buyer and by age, is the most useful report a wholesaler can read. See also challans and e-way bills .
+
+## How Jwero does it
+
+ Jwero issues approval memos and memo issues, records consignments and dispatch, and shows what is out with each buyer. See inventory and wholesale .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ What document should go with goods on approval? 
+ A memo or delivery challan listing each piece with weight and value. It is not a sale until the buyer keeps the goods; then you raise an invoice.
+
+ How long should goods stay on approval? 
+ Set a return date on every memo, usually days not weeks, and follow up the day it passes. Goods out for months are a hidden loan to the buyer.
+
+ How do I find what is missing? 
+ Reconcile each memo: issued = returned + billed. Anything left over is what to chase.
+
+## Every piece on approval, accounted for.
+
+ Jwero issues approval memos, tracks what is out with whom, and converts kept pieces to a sale.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: What document should go with goods on approval?
+A: A memo or delivery challan listing each piece with weight and value. It is not a sale until the buyer keeps the goods; then you raise an invoice.
+
+Q: How long should goods stay on approval?
+A: Set a return date on every memo, usually days not weeks, and follow up the day it passes. Goods out for months are a hidden loan to the buyer.
+
+Q: How do I find what is missing?
+A: Reconcile each memo: issued = returned + billed. Anything left over is what to chase.
+
+---
+
+# Managing Loose Diamonds and Gemstones: Stone Records, Parcels and Certificates
+URL: https://jwero.ai/blog/loose-diamond-gemstone-inventory
+
+How diamond traders and jewellers keep loose stones under control: one record per stone or parcel, certificates, where each stone went, and memo to buyers.
+
+GUIDE · DIAMONDS
+
+## Managing loose diamonds and gemstones
+
+ A stone sheet in Excel works until a stone is mounted, sent on memo, or split from a parcel. Then nobody can say where it is or what it became.
+
+ See stone records in Jwero 
+
+ Diamonds and stones · 6 min read · By the Jwero editorial team · Published October 2026 
+
+## One record per stone, or per parcel
+
+ Certified stones need their own record: shape, carat weight, colour, clarity, cut, certificate number and lab. Melee and small stones are tracked as parcels, by total weight and count, with sizes.
+
+## Certificates
+
+ Keep the certificate number and lab on the stone record and a copy of the certificate attached. Buyers ask for it, and returns depend on it.
+
+## Follow the stone
+
+ A stone moves: from a parcel, onto a memo, into a setting, back for re-setting. Each move should be recorded against the stone, so you can always answer where it is and what it became.
+
+## Pricing
+
+ Price certified stones per carat by their grades; price parcels by weight. Keep cost and selling price on the record so margin is visible per stone. See the price guide for how stones sit on a jewellery bill.
+
+## Memo to buyers
+
+ Stones on approval are easy to lose. Issue them on a memo , stone by stone.
+
+## How Jwero does it
+
+ Jwero keeps a gemstone master and individual stone pieces, records where each stone came from and went (stone genealogy), and issues memos. See inventory and diamond traders .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ Should every diamond have its own record? 
+ Certified and larger stones, yes: shape, weight, colour, clarity, cut, certificate number and lab. Small melee is usually tracked by parcel, by weight and count.
+
+ How do I track a stone after it is set? 
+ Link the stone record to the piece it went into. Then the jewellery carries its stones, and returns or re-sets can be traced.
+
+ What about stones sent on memo? 
+ Issue them on a memo with each stone listed, and close the memo when they come back or are billed.
+
+## Every stone, from parcel to piece.
+
+ Jwero keeps a record per stone and follows it into the jewellery it was set in.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Should every diamond have its own record?
+A: Certified and larger stones, yes: shape, weight, colour, clarity, cut, certificate number and lab. Small melee is usually tracked by parcel, by weight and count.
+
+Q: How do I track a stone after it is set?
+A: Link the stone record to the piece it went into. Then the jewellery carries its stones, and returns or re-sets can be traced.
+
+Q: What about stones sent on memo?
+A: Issue them on a memo with each stone listed, and close the memo when they come back or are billed.
+
+---
+
+# Jewellery Repairs: Job Slips, Turnaround Times and Who Holds the Piece
+URL: https://jwero.ai/blog/jewellery-repair-job-slip-tat
+
+Run jewellery repairs without lost pieces or angry customers: a proper job slip, weights in and out, turnaround promises, ready alerts and warranty.
+
+GUIDE · SERVICE
+
+## Jewellery repairs: job slips and turnaround
+
+ A repair is a customer’s piece in your custody. The job slip, the weights and the date you promised are what protect both of you.
+
+ See repairs in Jwero 
+
+ Counter · 5 min read · By the Jwero editorial team · Published October 2026 
+
+## The job slip
+
+ At drop-off, record: customer name and phone, a description and a photo, gross weight, the work to be done, the estimate, and the promised date. Give the customer a copy. Most repair disputes come down to what was written at this moment.
+
+## Weigh in, weigh out
+
+ Weigh the piece in front of the customer when it comes in and when it goes out. If gold is added or removed by the work, write it on the slip.
+
+## Promise a date, and keep it
+
+ Set a turnaround per type of work: a clasp in two days, a re-polish in a week. Track how many repairs are past their date. Customers forgive a delay they are told about; not one they discover.
+
+## Tell them when it is ready
+
+ A message the day the piece is ready brings customers back, and a returning customer often buys. A list of ready pieces waiting more than a week tells you who to call.
+
+## Warranty
+
+ If you offer a warranty on repairs, write its terms on the slip, and record which repairs are under it. Our custody chain guide covers keeping track of a piece while it is with you.
+
+## How Jwero does it
+
+ Jwero records repair and service jobs with a job slip, tracks turnaround against the promised time, shows the queue of ready pieces by how long they have waited, and records warranty. See the counter .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ What should a repair job slip show? 
+ Customer name and phone, a description and photo of the piece, gross weight in, the work to be done, the estimate, the promised date, and the customer’s signature.
+
+ Why weigh the piece in and out? 
+ So nobody can later say gold went missing. Weigh in front of the customer at drop-off and at collection, and record both.
+
+ What if a customer never collects? 
+ Remind them, in writing, more than once. What you may do with uncollected articles is governed by law; take advice before disposing of anything.
+
+## Every repair tracked, every customer told.
+
+ Jwero issues the job slip, tracks the turnaround and tells you which pieces are ready and waiting.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: What should a repair job slip show?
+A: Customer name and phone, a description and photo of the piece, gross weight in, the work to be done, the estimate, the promised date, and the customer’s signature.
+
+Q: Why weigh the piece in and out?
+A: So nobody can later say gold went missing. Weigh in front of the customer at drop-off and at collection, and record both.
+
+Q: What if a customer never collects?
+A: Remind them, in writing, more than once. What you may do with uncollected articles is governed by law; take advice before disposing of anything.
+
+---
+
+# Gold Scheme Accounting: Why Instalments Are a Liability, Not Sales
+URL: https://jwero.ai/blog/gold-scheme-accounting-liability
+
+How to account for gold savings scheme instalments: advances held as a liability until redemption, bonuses, closures, and reconciling members to the books.
+
+GUIDE · GOLD SCHEMES
+
+## Gold scheme accounting
+
+ Scheme money is the customer’s, held against a future purchase. Booking it as sales flatters this month and creates a hole on redemption day.
+
+ See gold schemes in Jwero 
+
+ Gold schemes · 6 min read · By the Jwero editorial team · Published October 2026 
+
+## Whose money is it?
+
+ A scheme instalment is the customer’s money, paid in advance against jewellery they will buy later. Until they redeem, you owe it to them, as jewellery or, in some cases, as a refund. That makes it a liability, not a sale.
+
+ Check with your CA. The accounting and GST treatment of scheme advances and bonuses, and any limits under company deposit rules, should be confirmed for your business. Rules here are as we understand them in October 2026, and they differ by state and change over time.
+
+## Why it matters
+
+ Booking instalments as sales makes months look better than they were.
+
+ On redemption, the jewellery goes out with no money coming in, and the margin looks like a loss.
+
+ You cannot tell at any moment how much you owe your members.
+
+## The flow
+
+ Instalment received: cash or bank up, scheme liability up.
+
+ Maturity: the bonus is added to what the member can redeem.
+
+ Redemption: the sale is recorded; the liability comes off against it.
+
+## Reconcile members to the books
+
+ Total of every member’s balance = scheme liability in the accounts. Check it every month. A gap means an instalment recorded in one place and not the other.
+
+## Structure matters too
+
+ Many schemes run for 11 or 12 months, partly because of how deposit rules treat advances that are not used within a year. Read are gold savings schemes legal and talk to your advisor about yours.
+
+## How Jwero does it
+
+ Jwero records scheme instalments against each member, accounts for them as a liability, closes schemes into a sale, and reports what you owe members. See gold schemes .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ Are scheme instalments income? 
+ No. They are advances from customers against a future purchase, and sit as a liability until the member redeems. The sale is recognised when the jewellery is bought.
+
+ How is the bonus instalment accounted for? 
+ The bonus your shop adds at maturity is usually a discount on the sale at redemption, not a cost when each instalment arrives. Confirm the treatment with your CA.
+
+ Is GST charged on instalments? 
+ The treatment of advances for goods under GST has changed over time. Ask your CA how instalments and the final sale should be taxed in your case.
+
+## Your scheme book and your accounts, matching.
+
+ Jwero accounts for scheme money as a liability and shows what you owe members at any moment.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Are scheme instalments income?
+A: No. They are advances from customers against a future purchase, and sit as a liability until the member redeems. The sale is recognised when the jewellery is bought.
+
+Q: How is the bonus instalment accounted for?
+A: The bonus your shop adds at maturity is usually a discount on the sale at redemption, not a cost when each instalment arrives. Confirm the treatment with your CA.
+
+Q: Is GST charged on instalments?
+A: The treatment of advances for goods under GST has changed over time. Ask your CA how instalments and the final sale should be taxed in your case.
+
+---
+
+# 11+1 Gold Scheme vs Gram Accumulation: Which Suits Your Shop?
+URL: https://jwero.ai/blog/gold-scheme-types-11-plus-1-vs-grams
+
+The two common gold savings schemes compared: fixed monthly instalments with a bonus, or buying grams at each instalment. Who each suits, and the risks.
+
+GUIDE · GOLD SCHEMES
+
+## 11+1 schemes vs gram accumulation
+
+ Pay eleven, get one free. Or buy a few grams every month at that day’s rate. Same goal, very different risk for you and value for the customer.
+
+ See gold schemes in Jwero 
+
+ Gold schemes · 5 min read · By the Jwero editorial team · Published October 2026 
+
+## The 11+1 instalment scheme
+
+ The customer pays, say, ₹5,000 a month for 11 months: ₹55,000. At maturity the shop adds a bonus, often ₹5,000, and the customer redeems ₹60,000 against jewellery at that day’s rate.
+
+ For you: simple, and the bonus is a known cost, usually recovered in the making on the piece.
+
+ For the customer: easy to understand, but if gold rises, their rupees buy less gold.
+
+## Gram accumulation
+
+ Each instalment buys gold at that day’s rate. ₹5,000 at ₹6,875 a gram buys 0.727 g. Over a year the customer accumulates grams, and redeems the grams, often with a making-charge benefit.
+
+ For you: you owe grams, not rupees, so a rate rise raises what you owe. Hedge or hold stock against it.
+
+ For the customer: protected from rate rises, and averages their buying price.
+
+## Which to offer
+
+ Many shops offer both: instalment schemes for customers who think in rupees, gram schemes for those who think in gold. Whatever you run, account for it as a liability (see scheme accounting ), and write the terms down.
+
+## How Jwero does it
+
+ Jwero supports traditional instalment plans and gram-accumulation plans, with OTP enrolment, autodebit mandates, reminders, a passbook sent on WhatsApp, and closure into a sale. Old gold can also be put into a scheme. See gold schemes and the scheme calculator .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ What is an 11+1 gold scheme? 
+ The customer pays a fixed amount each month for 11 months, and the shop adds a bonus, often equal to one instalment, at maturity. The total is redeemed against jewellery.
+
+ What is a gram accumulation scheme? 
+ Each instalment buys gold at that day’s rate, and the customer accumulates grams. At maturity they redeem the grams, usually without paying making on part or all of them.
+
+ Which is better for the jeweller? 
+ Instalment schemes are simpler and the cost of the bonus is known. Gram schemes protect the customer from rate rises, so the shop carries more of that risk.
+
+## Run either scheme, or both.
+
+ Jwero supports instalment and gram-accumulation plans, with a passbook on WhatsApp.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: What is an 11+1 gold scheme?
+A: The customer pays a fixed amount each month for 11 months, and the shop adds a bonus, often equal to one instalment, at maturity. The total is redeemed against jewellery.
+
+Q: What is a gram accumulation scheme?
+A: Each instalment buys gold at that day’s rate, and the customer accumulates grams. At maturity they redeem the grams, usually without paying making on part or all of them.
+
+Q: Which is better for the jeweller?
+A: Instalment schemes are simpler and the cost of the bonus is known. Gram schemes protect the customer from rate rises, so the shop carries more of that risk.
+
+---
+
+# Stock Transfers Between Jewellery Branches: Challans, GST and Control
+URL: https://jwero.ai/blog/branch-stock-transfer-jewellery
+
+Moving stock between showrooms without losing track: transfer documents, GST on inter-state transfers, approvals, and reconciling what was sent and received.
+
+GUIDE · CHAINS
+
+## Stock transfers between branches
+
+ Stock leaves one showroom and should arrive at another. In between it is nobody’s, unless every transfer is sent, received and checked piece by piece.
+
+ See transfers in Jwero 
+
+ Multi-store · 5 min read · By the Jwero editorial team · Published October 2026 
+
+## Within your state
+
+ Stock moving between branches under the same GSTIN moves on a delivery challan, without GST. List every piece with tag, weight and value.
+
+ Check with your CA. Inter-state transfers between your own branches are taxable supplies. Confirm the valuation and paperwork for your setup. Rules here are as we understand them in October 2026, and they differ by state and change over time.
+
+## Between states
+
+ Branches in different states have different GSTINs, and GST treats them as separate persons. A transfer between them is billed with GST, and the receiving branch claims it as input credit.
+
+## Control
+
+ Approval by someone other than the sender.
+
+ Scan each tag out, and scan it in at the other end.
+
+ A list of transfers sent but not received, by age.
+
+## Vaults and locker moves
+
+ The same discipline applies to moves between the showroom floor and the vault at night. If it is not recorded, the morning count will not match.
+
+## How Jwero does it
+
+ Jwero records stock transfers between branches and vaults, so every move has a sending and a receiving record. See multi-store and chains .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ Is GST charged on transfers between branches? 
+ Within the same state, a transfer moves on a delivery challan without GST. Between states, branches with different GSTINs are treated as separate persons, so the transfer is billed with GST. Confirm with your CA.
+
+ Who should approve a transfer? 
+ Someone other than the person sending it, usually a manager at either end, so no single person can move stock alone.
+
+ How do I catch a missing piece? 
+ Receive every transfer by scanning each tag at the receiving branch. Sent minus received should be zero.
+
+## Every transfer sent, received and matched.
+
+ Jwero moves stock between branches and vaults with a record at both ends.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Is GST charged on transfers between branches?
+A: Within the same state, a transfer moves on a delivery challan without GST. Between states, branches with different GSTINs are treated as separate persons, so the transfer is billed with GST. Confirm with your CA.
+
+Q: Who should approve a transfer?
+A: Someone other than the person sending it, usually a manager at either end, so no single person can move stock alone.
+
+Q: How do I catch a missing piece?
+A: Receive every transfer by scanning each tag at the receiving branch. Sent minus received should be zero.
+
+---
+
+# Jewellery Exhibitions: Taking Stock Out and Bringing It Back
+URL: https://jwero.ai/blog/jewellery-exhibition-stock-control
+
+How to run a jewellery exhibition or trunk show without stock gaps: issue lists, sales at the venue, GST registration in another state, and counting everything back.
+
+GUIDE · CHAINS
+
+## Running a jewellery exhibition
+
+ Hundreds of pieces leave the showroom for three days. Most sell or come back. The ones that do neither are what an exhibition really costs, if you do not count properly.
+
+ See exhibitions in Jwero 
+
+ Multi-store · 5 min read · By the Jwero editorial team · Published October 2026 
+
+## Before you go
+
+ List every piece going out, with tag, weight and value, on a delivery challan. Insure the stock for transit and the venue. If the exhibition is in another state, register as a casual taxable person before the event.
+
+ Check with your CA. Casual taxable person registration, advance tax deposit and returns for out-of-state exhibitions. Rules here are as we understand them in October 2026, and they differ by state and change over time.
+
+## At the venue
+
+ Bill every sale on the spot, against the piece’s own tag, so the sale and the stock move together. Trials and holds should be recorded too: a piece taken to a customer’s hotel room is still yours.
+
+## Coming back
+
+ Scan every piece back in the day you return. Issued = sold + returned. Follow up any difference the same week.
+
+## Afterwards
+
+ Exhibition visitors who asked but did not buy are your best leads for the next month. Record who they were and what they looked at.
+
+## How Jwero does it
+
+ Jwero records exhibition stock and trials, bills at the venue against tagged pieces, and shows what is still out. See inventory .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ Do I need GST registration to sell at an exhibition in another state? 
+ Usually yes, as a casual taxable person, registered before the event, with an advance deposit of the estimated tax. Confirm with your CA.
+
+ What document goes with exhibition stock? 
+ A delivery challan listing every piece, since moving stock to an exhibition is not a sale.
+
+ How do I count stock back after an exhibition? 
+ Scan every piece back in on return. Issued = sold + returned. Investigate any difference before the next event.
+
+## Every exhibition piece out and back.
+
+ Jwero records exhibition stock and trials, so what went out is matched to what sold and what returned.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Do I need GST registration to sell at an exhibition in another state?
+A: Usually yes, as a casual taxable person, registered before the event, with an advance deposit of the estimated tax. Confirm with your CA.
+
+Q: What document goes with exhibition stock?
+A: A delivery challan listing every piece, since moving stock to an exhibition is not a sale.
+
+Q: How do I count stock back after an exhibition?
+A: Scan every piece back in on return. Issued = sold + returned. Investigate any difference before the next event.
+
+---
+
+# Custom Jewellery Orders: From Enquiry to Delivery Without Delays
+URL: https://jwero.ai/blog/custom-jewellery-order-process
+
+How to run custom and made-to-order jewellery: taking the order, advances and rate booking, sending it to the karigar, tracking due dates and delivering on time.
+
+GUIDE · ORDERS
+
+## Custom jewellery orders
+
+ A bride’s set promised for the 14th. An advance taken, a rate booked, a karigar briefed. Custom orders fail in the gaps between those steps.
+
+ See orders in Jwero 
+
+ Counter · 5 min read · By the Jwero editorial team · Published October 2026 
+
+## Taking the order
+
+ Record the design, purity, approximate weight, stones, size, the customer’s date, and the price basis. Attach the design image or sketch. Give the customer a copy with the order number.
+
+## Advance and rate
+
+ Take an advance and record the rate policy: is the rate fixed on the day of the advance, or set on delivery? Customers argue about this more than anything else in custom orders. Write it down.
+
+## To the karigar
+
+ Issue the job with the metal by weight and purity, and a due date a few days before the customer’s. See job work .
+
+## Track due dates daily
+
+ One list of every open custom order, its karigar and its due date, reviewed every morning, prevents most late deliveries.
+
+## Delivery
+
+ Weigh the finished piece, price it on the basis agreed, adjust the advance, and bill. Tell the customer the day it is ready.
+
+## How Jwero does it
+
+ Jwero records customer orders and quotations (with a link the customer can open), issues the work to karigars by weight, and sweeps for jobs that are due. See manufacturing and bridal .
+
+ GUIDE QUESTIONS
+
+## What jewellers ask about this.
+
+ Should I book the gold rate on a custom order? 
+ Decide your policy and write it on the order: either the rate on the day of the advance is fixed for the gold the advance covers, or the final rate applies on delivery.
+
+ How much advance should I take? 
+ Enough to cover your risk if the customer does not collect: many shops take a share of the estimated value, or the value of the gold.
+
+ How do I stop orders running late? 
+ Give every order a due date at the karigar a few days before the customer’s date, and review overdue jobs daily.
+
+## Every custom order on time.
+
+ Jwero tracks custom orders from advance to karigar to delivery, with due dates you can see.
+
+ Chat or call with us 
+ Book a demo 
+
+ A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Should I book the gold rate on a custom order?
+A: Decide your policy and write it on the order: either the rate on the day of the advance is fixed for the gold the advance covers, or the final rate applies on delivery.
+
+Q: How much advance should I take?
+A: Enough to cover your risk if the customer does not collect: many shops take a share of the estimated value, or the value of the gold.
+
+Q: How do I stop orders running late?
+A: Give every order a due date at the karigar a few days before the customer’s date, and review overdue jobs daily.
 
 ---
 

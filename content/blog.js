@@ -54,6 +54,10 @@ ${L.section(
   ${L.cards(require('./blog-rules').map((p) => ({ title: p.title.split(' | ')[0], text: p.description, link: { href: '/' + p.slug, label: 'Read' } })), 4)}`
 )}
 ${L.section(
+  `${L.sectionHead('RUNNING THE BUSINESS', 'Girvi, karigars, memo, stones, schemes and branches.', 'The day-to-day work, by kind of jewellery business.')}
+  ${L.cards(require('./blog-ops').map((p) => ({ title: p.title.split(' | ')[0], text: p.description, link: { href: '/' + p.slug, label: 'Read' } })), 3)}`
+, { tone: 'tint' })}
+${L.section(
   `${L.sectionHead('BUYING AND STARTING UP', 'Cost, comparisons and getting started, honestly.', '')}
   ${L.cards([
     { title: 'How Much Does Jewellery Software Cost in India?', text: 'The real cost anatomy — what a Frankenstack of separate tools adds up to, and what a unified platform changes.', link: { href: '/blog/jewellery-software-cost-india', label: 'Read the guide' } },
@@ -1164,4 +1168,4 @@ ${L.ctaBand('See the compliance controls in a demo.', 'Bring your current scheme
 `,
 };
 
-module.exports = [blogHub, whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide, crmErpGuide, checklistGuide, weddingGuide, costGuide, bestSoftwareGuide, goldRateGuide, startOnlineGuide, waPricingGuide, schemesLegalGuide].concat(require('./blog-rules'));
+module.exports = [blogHub, whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide, crmErpGuide, checklistGuide, weddingGuide, costGuide, bestSoftwareGuide, goldRateGuide, startOnlineGuide, waPricingGuide, schemesLegalGuide].concat(require('./blog-rules'), require('./blog-ops'));

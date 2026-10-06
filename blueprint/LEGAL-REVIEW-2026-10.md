@@ -114,3 +114,11 @@ terms, or need to be withdrawn:
 - /blog/huid-hallmarking-rules-jewellers: exemptions (₹40 lakh turnover, under 2 g), hallmark grades.
 - /blog/e-way-bill-for-jewellery: Chapter 71 exemption, Kerala intra-state rule.
 - /blog/e-invoicing-for-jewellers: ₹5 crore threshold, 30-day rule at ₹10 crore, B2C QR above ₹500 crore.
+
+## I. Tier 2 operational articles needing CA or lawyer review (added 2026-10-06)
+- /blog/girvi-gold-loan-business-guide: state money-lending/pawnbroker licences, interest caps, auction notice; 75% LTV mentioned as the bank/NBFC reference only.
+- /blog/job-work-jewellery-gst-challan: Section 143 one-year return rule, ITC-04 frequency (half-yearly above ₹5 crore, yearly below).
+- /blog/gold-scheme-accounting-liability: instalments as liability, bonus as discount, GST on advances, deposit-rule link to 11-12 month schemes.
+- /blog/branch-stock-transfer-jewellery: inter-state branch transfers taxable as distinct persons.
+- /blog/jewellery-exhibition-stock-control: casual taxable person registration for out-of-state exhibitions.
+- /blog/jewellery-repair-job-slip-tat: uncollected articles (no specific legal claim made; says take advice).

@@ -174,6 +174,19 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - HUID Hallmarking Rules for Jewellers: What to Check Before Every Sale: https://jwero.ai/blog/huid-hallmarking-rules-jewellers
 - E-Way Bill for Jewellery: Is Gold Exempt? Delivery Challans and State Rules: https://jwero.ai/blog/e-way-bill-for-jewellery
 - E-Invoicing for Jewellers: Who Must Issue It, B2B vs B2C, and the 30-Day Rule: https://jwero.ai/blog/e-invoicing-for-jewellers
+- Girvi Business for Jewellers: Licence, Interest, Renewals and Auctions: https://jwero.ai/blog/girvi-gold-loan-business-guide
+- Girvi Register Software: Moving Gold Loans Off the Notebook: https://jwero.ai/blog/girvi-register-software
+- Karigar Wastage: Normal Loss, Caps and Settlement: https://jwero.ai/blog/karigar-wastage-norms-settlement
+- Fine-Weight Metal Ledger: Tracking Gold by Purity, Not Just Rupees: https://jwero.ai/blog/fine-weight-metal-ledger-jewellers
+- Job Work in Jewellery: Issue, Receipt, Challans and GST Rules: https://jwero.ai/blog/job-work-jewellery-gst-challan
+- Approval and Memo Stock: How Wholesalers Stop Losing Pieces on Approval: https://jwero.ai/blog/approval-memo-stock-jewellery-wholesale
+- Managing Loose Diamonds and Gemstones: Stone Records, Parcels and Certificates: https://jwero.ai/blog/loose-diamond-gemstone-inventory
+- Jewellery Repairs: Job Slips, Turnaround Times and Who Holds the Piece: https://jwero.ai/blog/jewellery-repair-job-slip-tat
+- Gold Scheme Accounting: Why Instalments Are a Liability, Not Sales: https://jwero.ai/blog/gold-scheme-accounting-liability
+- 11+1 Gold Scheme vs Gram Accumulation: Which Suits Your Shop?: https://jwero.ai/blog/gold-scheme-types-11-plus-1-vs-grams
+- Stock Transfers Between Jewellery Branches: Challans, GST and Control: https://jwero.ai/blog/branch-stock-transfer-jewellery
+- Jewellery Exhibitions: Taking Stock Out and Bringing It Back: https://jwero.ai/blog/jewellery-exhibition-stock-control
+- Custom Jewellery Orders: From Enquiry to Delivery Without Delays: https://jwero.ai/blog/custom-jewellery-order-process
 - Roles, Everyone Jwero Touches in a Jewellery Business: https://jwero.ai/roles
 - Owner / Proprietor, Run the Shop From a Record You Own: https://jwero.ai/roles/owner
 - Multi-Store & Chain Owner, One System, Every Branch: https://jwero.ai/roles/chain-owner
