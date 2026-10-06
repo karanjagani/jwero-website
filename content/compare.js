@@ -17,6 +17,26 @@ const SWITCH_FAQS = (n) => [
   { q: `Can I run ${n} and Jwero side by side for a while?`, a: 'Yes. Many jewellers start with one function in Jwero, such as WhatsApp or customers, while the old system keeps running, then move the rest when they are ready.' },
 ];
 const plain = (t) => String(t || '').replace(/<[^>]+>/g, '').replace(/\s*—\s*/g, ', ').trim().replace(/\.?$/, '.');
+// Per competitor: who usually switches, and the calculator that fits.
+const CMP_NEXT = {
+  'ornate-nx': [[['/solutions/gold-retail', 'gold retailers'], ['/roles/owner', 'owners']], ['/tools/dead-stock-calculator', 'what idle stock costs you']],
+  synergics: [[['/solutions/manufacturers', 'manufacturers'], ['/roles/production-manager', 'production managers']], ['/tools/gold-loss-calculator', 'what production loss costs you']],
+  jewelacc: [[['/solutions/gold-retail', 'gold retailers'], ['/roles/accountant', 'accountants']], ['/tools/dead-stock-calculator', 'what idle stock costs you']],
+  marg: [[['/solutions/single-store', 'single showrooms'], ['/roles/accountant', 'accountants']], ['/tools/dead-stock-calculator', 'what idle stock costs you']],
+  sioniq: [[['/solutions/multi-store-chains', 'chains'], ['/roles/chain-owner', 'chain owners']], ['/tools/dead-stock-calculator', 'what idle stock costs you']],
+  zithara: [[['/solutions/jewellery-brands', 'jewellery brands'], ['/roles/crm-executive', 'CRM executives']], ['/tools/gold-scheme-calculator', 'what a savings scheme is worth to you']],
+  wati: [[['/solutions/single-store', 'single showrooms'], ['/roles/crm-executive', 'CRM executives']], ['/tools/whatsapp-revenue-estimator', 'what slow WhatsApp replies cost you']],
+  interakt: [[['/solutions/single-store', 'single showrooms'], ['/roles/sales-associate', 'sales staff']], ['/tools/whatsapp-revenue-estimator', 'what slow WhatsApp replies cost you']],
+  doubletick: [[['/solutions/gold-retail', 'gold retailers'], ['/roles/sales-associate', 'sales staff']], ['/tools/whatsapp-revenue-estimator', 'what slow WhatsApp replies cost you']],
+  quicksell: [[['/solutions/b2b-jewellery', 'wholesalers'], ['/roles/b2b-manager', 'B2B managers']], ['/tools/whatsapp-revenue-estimator', 'what your catalogue enquiries are worth']],
+  shopify: [[['/solutions/d2c-brands', 'online brands'], ['/roles/ecommerce-manager', 'ecommerce managers']], ['/tools/whatsapp-revenue-estimator', 'what your online enquiries are worth']],
+  'zoho-crm': [[['/solutions/jewellery-brands', 'jewellery brands'], ['/roles/crm-executive', 'CRM executives']], ['/tools/gold-scheme-calculator', 'what a savings scheme is worth to you']],
+};
+const switchBox = (n, slug) => {
+  const [who, tool] = CMP_NEXT[slug] || [[['/solutions', 'every kind of jeweller'], ['/roles/owner', 'owners']], ['/tools', 'where your shop is losing money']];
+  return `<div class="jb-blogline" id="switch"><p><b>How the switch from ${n} works.</b> 1. Send us your ${n} export. 2. We map your stock, customers and balances, usually within a day. 3. Run both side by side until you trust the numbers.</p><p><b>Who usually switches:</b> ${who.map(([h, t]) => `<a href="${h}">${t}</a>`).join(' and ')}. <b>Not ready to talk?</b> <a href="${tool[0]}">See ${tool[1]}</a>, free and without sign-up.</p><div class="cta-row"><a class="btn btn-primary" href="#" data-wa="switch-${slug}">Plan my switch</a></div></div>`;
+};
+
 function comparePage({ slug, name, shortName, category, title, description, concedeThem, concedeJwero, rows, faqs: faqs0, waCtx, migrationNote, researchNote }) {
   const n = shortName || name;
   const short = { q: `Jwero or ${n}: which should a jeweller choose?`, a: `Choose ${n} if ${plain(concedeThem)} Choose Jwero if ${plain(concedeJwero)}` };
@@ -35,7 +55,7 @@ ${L.hero({
   h1: `Jwero vs ${name}`,
   sub: `${name} is ${category}. Here is where it genuinely wins, where Jwero is built differently, and what we haven’t independently verified — marked plainly rather than asserted.`,
   primary: { href: '#', label: 'Chat or call with us', wa: waCtx },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  secondary: { href: '#switch', label: 'How the switch works' },
 })}
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">${short.q}</h2><p>${short.a}</p></div></section>
 ${L.section(L.verdictBox(shortName || name, concedeThem, concedeJwero))}
@@ -44,6 +64,7 @@ ${L.section(
   ${L.compareTable(name, rows)}`
 , { tone: 'tint' })}
 ${L.section(`${L.sectionHead('WHAT SWITCHERS SWITCH FOR', 'What switching buys you.', '')}${L.switchForBlock()}`)}
+${L.section(switchBox(n, slug), { tone: 'tint' })}
 ${L.section(`<div class="stack-verdict">${migrationNote || `Switching is a data question, not a leap of faith. See the <a href="/migration">Migration Centre</a> for exactly what moves and how.`}</div>`)}
 ${faqs && faqs.length ? L.section(`${L.sectionHead('QUESTIONS SWITCHERS ASK', `Questions about switching from ${name}.`, '')}${L.faqBlock(faqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`) : ''}
 ${L.ctaBand(`Plan the switch from ${shortName || name}.`, 'Tell us what you use today — we’ll map exactly what carries over and what changes.', waCtx)}
@@ -64,6 +85,7 @@ ${L.hero({
   primary: { href: '#', label: 'Chat or call with us', wa: 'compare-hub' },
   secondary: { href: '/migration', label: 'See the Migration Centre' },
 })}
+${L.section(`${L.sectionHead('WHICH PAGE IS FOR YOU', 'Start from what you use today.', '')}<div class="jb-blogline"><p><b>A jewellery ERP</b> (Ornate NX, Synergics, JewelAcc, SIONIQ): you want billing and stock that also sell for you. <a href="/compare/jwero-vs-ornate-nx">Start here</a>.</p><p><b>An accounting or billing tool</b> (Marg, Tally): you want jewellery rates, HUID and making charges handled. <a href="/compare/jwero-vs-marg">Start here</a>.</p><p><b>A WhatsApp tool</b> (WATI, Interakt, DoubleTick): you want every chat tied to the customer, the piece and the bill. <a href="/compare/whatsapp-tools-vs-jewellery-os">Start here</a>.</p><p><b>An online store or catalogue app</b> (Shopify, QuickSell): you want prices at the live rate and orders on the same record as the shop. <a href="/compare/jwero-vs-shopify">Start here</a>.</p><p><b>A CRM</b> (Zoho, Zithara): you want customer memory built around occasions, schemes and purchases. <a href="/compare/jwero-vs-zoho-crm">Start here</a>.</p></div>`)}
 ${L.section(
   `${L.sectionHead('CATEGORY LEVEL', 'Messaging tools vs the operating system layer.', '')}
   ${L.cards([
