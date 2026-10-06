@@ -287,29 +287,60 @@ ${L.ctaBand('Tell us your city and what you run today.', 'We will show you the s
 };
 
 // ---------------------------------------------------------------- need pages
-const needPage = ({ slug, title, description, eyebrow, h1, sub, wa, intro, cards, rows, notYet, faqs, links }) => ({
+// Each tool page borrows the confirmed use cases, questions and scenario of
+// the product it sells (content/usecases.json and the product page itself).
+const UC = require('./usecases.json');
+const PRODUCT_PAGES = ['./products-sell', './products-grow', './products-hr', './products-manage', './products-more', './products-ops', './products-run'].flatMap((m) => require(m));
+const TOOL_FOR = {
+  'jewellery-accounting-software': ['billing-finance', 'till'], 'jewellery-barcode-tagging-software': ['catalog', 'rate'], 'cloud-jewellery-software': ['erp', 'shelf'],
+  'whatsapp-broadcast-for-jewellers': ['whatsapp', 'approve'], 'instagram-for-jewellers': ['instagram-facebook', 'memory'], 'ads-for-jewellers': ['ads-manager', 'approve'],
+  'sms-marketing-for-jewellers': ['campaigns', 'approve'], 'jewellery-showroom-footfall-counting': ['showroom', 'memory'], 'ai-calling-for-jewellers': ['ai-sales-agents', 'approve'],
+  'jewellery-appointment-booking-software': ['meetings', 'memory'], 'jewellery-staff-management-software': ['hr-payroll', 'approve'], 'jewellery-website-analytics': ['optimize', 'memory'],
+};
+const needPage = ({ slug, title, description, eyebrow, h1, sub, wa, intro, cards, rows, notYet, faqs: faqs0, links }) => {
+  const [prod, simKind] = TOOL_FOR[slug] || [];
+  const pp = PRODUCT_PAGES.find((x) => x.slug === 'products/' + prod);
+  const have = new Set(faqs0.map((f) => f.q));
+  const extra = ((pp && pp.faqs) || []).filter((f) => !have.has(f.q)).slice(0, 3);
+  const TOOL_Q = {
+    'jewellery-accounting-software': 'What is the best accounting software for jewellers?', 'jewellery-barcode-tagging-software': 'What is the best barcode and tagging software for jewellers?',
+    'cloud-jewellery-software': 'What is the best cloud jewellery software?', 'whatsapp-broadcast-for-jewellers': 'How can jewellers send WhatsApp broadcasts safely?',
+    'instagram-for-jewellers': 'How can jewellers turn Instagram enquiries into sales?', 'ads-for-jewellers': 'How should jewellers run Google and Instagram ads?',
+    'sms-marketing-for-jewellers': 'How should jewellers use SMS, RCS and push messages?', 'jewellery-showroom-footfall-counting': 'How can a jewellery showroom count footfall and track walk-ins?',
+    'ai-calling-for-jewellers': 'How can jewellers use AI for customer calls?', 'jewellery-appointment-booking-software': 'What is the best appointment booking software for jewellers?',
+    'jewellery-staff-management-software': 'What is the best staff management software for jewellers?', 'jewellery-website-analytics': 'How can jewellers see what visitors do on their website?',
+  };
+  const short = { q: TOOL_Q[slug] || `What is the best ${eyebrow.toLowerCase()} for jewellers?`, a: `${description.replace(/\s*—\s*/g, ', ')} It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.` };
+  const faqs = [short, ...faqs0, ...extra];
+  const uc = (UC[prod] || []).slice(0, 4);
+  return {
   slug, title, description, breadcrumbs: [['Home', '/'], ['Jewellery software in India', '/jewellery-software-india'], [eyebrow]], faqs,
   body: `
 ${L.hero({ eyebrow: eyebrow.toUpperCase(), h1, sub, primary: { href: '#', label: 'Chat or call with us', wa }, secondary: { href: '/pricing', label: 'See the price' } })}
 
+<section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">${short.q}</h2><p>${short.a}</p></div></section>
+
 ${L.section(`${L.sectionHead('WHAT IT DOES', intro[0], intro[1])}${L.cards(cards, 3)}`)}
+
+${uc.length ? L.section(`${L.sectionHead('USE CASES', 'Where this pays off in a jewellery business.', 'Four everyday situations, and what changes when Jwero handles them.')}<div class="uc-grid">${uc.map((u, i) => `<article class="uc-card"><span class="uc-n">${String(i + 1).padStart(2, '0')}</span><h3>${u.hook}</h3><p>${u.does}</p><p class="uc-change"><b>What changes</b>${u.changes}</p></article>`).join('')}</div>`, { tone: 'tint' }) : ''}
+
+${simKind ? L.sim(simKind) : ''}
 
 ${L.section(`${L.sectionHead('TODAY AND WITH JWERO', 'What changes.', '')}${L.compareRows(rows)}`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('SAID PLAINLY', 'What it does not do yet.', '')}<div class="stack-verdict">${notYet} The <a href="/roadmap">public roadmap</a> says what is shipped, rolling out and not yet.</div>`)}
-
-${L.section(PRICE, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('QUESTIONS', 'What jewellers ask.', '')}${L.faqBlock(faqs)}
 <p class="cta-note" style="margin-top:18px">Related: ${links.map(([h, l]) => `<a href="${h}">${l}</a>`).join(' · ')}</p>`)}
 
 ${L.ctaBand('See it on your own data.', 'Tell us what you run today. We will show the same day in Jwero.', wa)}
 `,
-});
+  };
+};
 
 const accounting = needPage({
   slug: 'jewellery-accounting-software',
-  title: 'Jewellery Accounting Software: GST Books That Post Themselves | Jwero',
+  title: 'Jewellery Accounting Software: GST Books | Jwero',
   description: 'Jewellery accounting software where every sale, purchase, return and payment posts to a double-entry ledger with GST handled, party ledgers in grams and rupees, and a bridge to Tally and Zoho Books.',
   eyebrow: 'Jewellery accounting software',
   h1: 'Jewellery accounting software where the books post themselves.',
@@ -411,7 +442,7 @@ const cloud = needPage({
 // product page covers several at once and cannot rank for each phrase.
 const broadcast = needPage({
   slug: 'whatsapp-broadcast-for-jewellers',
-  title: 'WhatsApp Broadcast for Jewellers: Bulk Messages Without a Ban | Jwero',
+  title: 'WhatsApp Broadcast for Jewellers: Bulk, Safely | Jwero',
   description: 'WhatsApp broadcast software for jewellers on the official Business API: approved templates, consent and opt-outs handled, audiences from your own customer segments, and sales traced to each send.',
   eyebrow: 'WhatsApp broadcast for jewellers',
   h1: 'WhatsApp broadcasts for jewellers, on the official API.',
@@ -477,7 +508,7 @@ const instagram = needPage({
 
 const adsLanding = needPage({
   slug: 'ads-for-jewellers',
-  title: 'Google Ads & Instagram Ads for Jewellers: Run, Approve, Measure | Jwero',
+  title: 'Google and Instagram Ads for Jewellers | Jwero',
   description: 'Ads software for jewellers: build Google Search, Performance Max and Shopping campaigns and Meta and Instagram ads from one place, approve before any spend, get budget alerts, and see which ad led to a sale.',
   eyebrow: 'Ads for jewellers',
   h1: 'Google and Instagram ads for jewellers, with your hand on the budget.',
@@ -544,7 +575,7 @@ const smsLanding = needPage({
 const footfall = needPage({
   slug: 'jewellery-showroom-footfall-counting',
   title: 'Footfall Counting & Walk-in Tracking for Jewellery Showrooms | Jwero',
-  description: 'Footfall counting and walk-in tracking for jewellery showrooms: tablet check-in or camera-based counting, a live view of the floor, what each visitor tried, why they left, and conversion by store and salesperson.',
+  description: 'Footfall counting and walk-in tracking for jewellery showrooms: tablet check-in or camera counting through IP cameras, a live view of the floor, what each visitor tried, why they left, and conversion by store and salesperson.',
   eyebrow: 'Showroom footfall and walk-in tracking',
   h1: 'Know who walked in, what they tried, and why they left.',
   sub: 'Count footfall, record each visit and see conversion by store and salesperson, so a walk-out becomes a follow-up, not a mystery.',
@@ -552,7 +583,7 @@ const footfall = needPage({
   intro: ['The highest-intent moment in the business, on record.', 'Most shops remember a visit only if it ended in a bill.'],
   cards: [
     { icon: 'store', title: 'Walk-in register', text: 'A tablet check-in at the entrance, with consent, replaces the paper register.', link: { href: '/products/showroom', label: 'Showroom' } },
-    { icon: 'eye', title: 'Camera-based counting', text: 'Connect showroom cameras to count footfall, charged per camera.' },
+    { icon: 'eye', title: 'Camera counting', text: 'Connect showroom IP cameras through a small store-side device to count footfall, charged per camera. It counts visitors; it does not recognise faces or repeat visitors.' },
     { icon: 'users', title: 'Live floor', text: 'Who is in the store now, and who is serving them.' },
     { icon: 'box', title: 'Shown, tried, bought', text: 'Scan a piece to log it as tried. See which pieces are tried often and rarely bought.' },
     { icon: 'chat', title: 'Walk-out follow-up', text: 'A message is drafted for those who left without buying, with the pieces they tried.' },
@@ -564,9 +595,9 @@ const footfall = needPage({
     { lever: 'WALK-OUTS', before: 'Lost the moment she leaves.', after: 'A follow-up drafted the same day.' },
     { lever: 'STAFF', before: 'Performance judged on bills alone.', after: 'Conversion of visits, by salesperson.' },
   ],
-  notYet: 'Jwero does not sell cameras or tablets. Photographs and camera counting need a notice to visitors and, where the law requires, their consent; that is the showroom’s duty.',
+  notYet: 'Jwero does not sell cameras or tablets, and camera counting does not recognise faces or tell a repeat visitor from a new one. Photographs and camera counting need a notice to visitors and, where the law requires, their consent; that is the showroom’s duty.',
   faqs: [
-    { q: 'How do I count footfall in my jewellery showroom?', a: 'Either check each walk-in in on a tablet at the entrance, or connect showroom cameras for automatic counting. Both give visits by hour and conversion to bills.' },
+    { q: 'How do I count footfall in my jewellery showroom?', a: 'Either check each walk-in in on a tablet at the entrance, or connect showroom IP cameras, through a store-side device, for automatic counting. Both give visits by hour and conversion to bills.' },
     { q: 'How do I record walk-in customers in a jewellery shop?', a: 'Enter the phone number at check-in. A returning customer’s history appears at once; a new one gets a record. What she tried and why she left are noted at check-out.' },
     { q: 'What is a good conversion rate for a jewellery showroom?', a: 'It varies by store and category, so compare your own stores, salespeople and months with each other. The useful number is the trend.' },
     { q: 'Is camera tracking legal?', a: 'Showrooms may use cameras, but visitors should be told, and personal data must be handled under the data protection law. Take advice for your own case.' },
@@ -609,7 +640,7 @@ const aiCalling = needPage({
 
 const appointments = needPage({
   slug: 'jewellery-appointment-booking-software',
-  title: 'Jewellery Appointment Booking Software: Showroom & Video Visits | Jwero',
+  title: 'Jewellery Appointment Booking Software | Jwero',
   description: 'Appointment booking software for jewellers: customers book a showroom or video visit against real availability, the shortlist is ready when they arrive, reminders go out, and every visit is on one calendar.',
   eyebrow: 'Appointment booking for jewellers',
   h1: 'Appointments customers can book themselves, on one calendar.',
@@ -642,7 +673,7 @@ const appointments = needPage({
 
 const staff = needPage({
   slug: 'jewellery-staff-management-software',
-  title: 'Jewellery Staff Management: Attendance, Tasks, Targets, Incentives | Jwero',
+  title: 'Jewellery Staff Management Software | Jwero',
   description: 'Staff management software for jewellery showrooms: phone and kiosk attendance, daily task lists, sales targets, incentives worked out from real bills, hiring, training and payroll, on the same record as sales.',
   eyebrow: 'Jewellery staff management',
   h1: 'Attendance, tasks, targets and incentives for a jewellery team.',
@@ -675,7 +706,7 @@ const staff = needPage({
 
 const webAnalytics = needPage({
   slug: 'jewellery-website-analytics',
-  title: 'Jewellery Website Analytics: Heatmaps, Visitor Tracking, A/B Tests | Jwero',
+  title: 'Jewellery Website Analytics: Heatmaps, A/B | Jwero',
   description: 'Website analytics for jewellery stores: visitor tracking, funnels, heatmaps and session recordings, A/B tests, pop-ups and lead forms, and web push, so you see why visitors leave and catch the next one.',
   eyebrow: 'Jewellery website analytics',
   h1: 'See why visitors leave your jewellery website.',

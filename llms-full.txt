@@ -23782,7 +23782,7 @@ A: No. Sales, purchases and payments are kept in Jwero with GST handled. Jwero c
 
 ---
 
-# Jewellery Accounting Software: GST Books That Post Themselves
+# Jewellery Accounting Software: GST Books
 URL: https://jwero.ai/jewellery-accounting-software
 
 Jewellery accounting software where every sale, purchase, return and payment posts to a double-entry ledger with GST handled, party ledgers in grams and rupees, and a bridge to Tally and Zoho Books.
@@ -23795,6 +23795,11 @@ JEWELLERY ACCOUNTING SOFTWARE
 
  Chat or call with us 
  See the price 
+
+ In short
+
+## What is the best accounting software for jewellers?
+ Jewellery accounting software where every sale, purchase, return and payment posts to a double-entry ledger with GST handled, party ledgers in grams and rupees, and a bridge to Tally and Zoho Books. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -23834,6 +23839,44 @@ JEWELLERY ACCOUNTING SOFTWARE
 
  Tally integration → 
 
+ USE CASES
+
+## Where this pays off in a jewellery business.
+
+ Four everyday situations, and what changes when Jwero handles them.
+
+ 01 
+
+## Your CA asks for GSTR-1 and GSTR-3B figures at month end.
+ Jwero prepares GSTR-1 with the B2B and B2C split, GSTR-3B, and an input tax credit reconciliation from your bills.
+ What changes Month end GST work starts from your own billing, not from re-typing.
+ 02 
+
+## You are not sure which customers still owe you money.
+ Receivable and payable ageing, party ledger and day book show who owes you and whom you owe.
+ What changes Pending payments are chased on time, not remembered late.
+ 03 
+
+## Gold given to a karigar is tracked in a separate notebook.
+ Metal accounts keep gold balances owed to or by karigars and suppliers, alongside your money accounts.
+ What changes You know who holds your gold, in grams, at any time.
+ 04 
+
+## Your accountant keeps the books in Tally and won't switch.
+ Jwero connects to Tally and Zoho Books, maps your ledgers, imports masters and checks records against Tally.
+ What changes Your accountant keeps Tally; you stop entering the same bill twice.
+
+ TRY IT · THE COUNTER
+
+## Ring up a sale. Take old gold. Close the shift.
+ Scan pieces, add exchange gold, take payment, then close the till and see the variance appear tonight, not next week.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Show me a till close Create your workspace 
+
  TODAY AND WITH JWERO
 
 ## What changes.
@@ -23870,18 +23913,12 @@ JEWELLERY ACCOUNTING SOFTWARE
 
  Jwero does not generate e-invoice IRNs or e-way bills, and does not file GST returns on the portal. Invoices are GST-ready and the data exports for your accountant. The public roadmap says what is shipped, rolling out and not yet.
 
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
-
  QUESTIONS
 
 ## What jewellers ask.
+
+ What is the best accounting software for jewellers? 
+ Jewellery accounting software where every sale, purchase, return and payment posts to a double-entry ledger with GST handled, party ledgers in grams and rupees, and a bridge to Tally and Zoho Books. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  Is Jwero a replacement for Tally? 
  It can be, and it does not have to be. Every transaction posts to Jwero’s own double-entry ledger. If your accountant prefers Tally or Zoho Books, the bridge carries the entries there.
@@ -23894,6 +23931,15 @@ JEWELLERY ACCOUNTING SOFTWARE
 
  What does it cost? 
  Accounting is part of the one plan: ₹18,000 a month, every module included. The first month is ₹3,600.
+
+ Does Jwero do POS counter billing? Is there a POS alternative? 
+ Yes, a full counter: scan or search a product, build a cart at the live gold rate, apply a discount, take old gold on an exchange voucher, take payment and generate the GST invoice; returns follow your branch’s policy and each register closes its shift with a reconciled cash count. See the Counter POS .
+
+ Can it price invoices at today’s gold rate automatically? 
+ Yes, invoicing uses the same live-rate pricing formulas as the catalogue, so a rate change is reflected instantly.
+
+ Does it chase payments for me? 
+ Yes, automated reminders run on receivables so collection doesn’t depend on someone remembering to call.
 
  Related: Jewellery billing software · Tally integration · Jewellery software and Tally · For the accountant 
 
@@ -23908,6 +23954,9 @@ JEWELLERY ACCOUNTING SOFTWARE
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: What is the best accounting software for jewellers?
+A: Jewellery accounting software where every sale, purchase, return and payment posts to a double-entry ledger with GST handled, party ledgers in grams and rupees, and a bridge to Tally and Zoho Books. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
 Q: Is Jwero a replacement for Tally?
 A: It can be, and it does not have to be. Every transaction posts to Jwero’s own double-entry ledger. If your accountant prefers Tally or Zoho Books, the bridge carries the entries there.
 
@@ -23919,6 +23968,15 @@ A: Yes. Party ledgers for buyers, vendors and karigars can be read in grams and 
 
 Q: What does it cost?
 A: Accounting is part of the one plan: ₹18,000 a month, every module included. The first month is ₹3,600.
+
+Q: Does Jwero do POS counter billing? Is there a POS alternative?
+A: Yes, a full counter: scan or search a product, build a cart at the live gold rate, apply a discount, take old gold on an exchange voucher, take payment and generate the GST invoice; returns follow your branch’s policy and each register closes its shift with a reconciled cash count. See the Counter POS.
+
+Q: Can it price invoices at today’s gold rate automatically?
+A: Yes, invoicing uses the same live-rate pricing formulas as the catalogue, so a rate change is reflected instantly.
+
+Q: Does it chase payments for me?
+A: Yes, automated reminders run on receivables so collection doesn’t depend on someone remembering to call.
 
 ---
 
@@ -23935,6 +23993,11 @@ JEWELLERY BARCODE AND TAGGING SOFTWARE
 
  Chat or call with us 
  See the price 
+
+ In short
+
+## What is the best barcode and tagging software for jewellers?
+ Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect RFID readers and weighing scales. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -23972,6 +24035,44 @@ JEWELLERY BARCODE AND TAGGING SOFTWARE
 
  Device pricing → 
 
+ USE CASES
+
+## Where this pays off in a jewellery business.
+
+ Four everyday situations, and what changes when Jwero handles them.
+
+ 01 
+
+## Gold moves overnight and every price tag is now wrong.
+ Formula pricing recalculates each product from the live metal rate, weight, making charges and stones.
+ What changes Prices follow the gold rate without manual repricing.
+ 02 
+
+## Your stock list lives in an old Excel sheet with thousands of rows.
+ Bulk import products from CSV, with a product form shaped to jewellery: metal, purity, weights, stones and custom fields.
+ What changes Your whole range is in one place within days, not months.
+ 03 
+
+## A customer asks for the HUID of a chain she bought.
+ HUID and hallmarking details are recorded against each piece and visible in products and at billing.
+ What changes Hallmark questions are answered in seconds.
+ 04 
+
+## Tags are handwritten and staff misread the weight.
+ Print barcode tags from templates you design, carrying weight, purity and code for each piece.
+ What changes Clean, scannable tags and fewer mistakes at the counter.
+
+ TRY IT · LIVE RATE
+
+## Move the gold rate. Watch every price follow.
+ Nine prices on three channels, one rule. Drag the rate and see what a jeweller repricing by hand would have to retype.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Show me this on my own catalogue Create your workspace 
+
  TODAY AND WITH JWERO
 
 ## What changes.
@@ -24008,18 +24109,12 @@ JEWELLERY BARCODE AND TAGGING SOFTWARE
 
  Jwero does not sell tag printers, RFID readers or scales. It connects to devices you buy; ask us which models are supported before you order hardware. The public roadmap says what is shipped, rolling out and not yet.
 
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
-
  QUESTIONS
 
 ## What jewellers ask.
+
+ What is the best barcode and tagging software for jewellers? 
+ Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect RFID readers and weighing scales. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  Does Jwero support RFID for jewellery? 
  Yes. RFID readers connect as devices, alongside weighing scales and print stations. Each connected device is charged monthly at the published rate. Ask us about supported models before buying readers.
@@ -24032,6 +24127,15 @@ JEWELLERY BARCODE AND TAGGING SOFTWARE
 
  Can I count stock with a phone? 
  Yes. A phone camera can scan tags, which is enough for a small shop or an exhibition counter.
+
+ Can the catalogue handle certificates and hallmarking details? 
+ Yes. Purity, gemstone details, certification numbers and hallmark-related fields are structured attributes, not free text, searchable, filterable and printable.
+
+ How does live pricing work? 
+ Prices are formulas, metal rate × weight × purity plus making charges and stone values, resolved at today’s rate wherever the product appears: catalogue shares, website, WhatsApp and invoices. Overrides require approval.
+
+ Can I share a catalogue without exposing my full stock? 
+ Yes, share curated selections as live links with price visibility you control, and see who viewed what.
 
  Related: Inventory and stock management · Jewellery POS software · HUID records checklist · For the inventory manager 
 
@@ -24046,6 +24150,9 @@ JEWELLERY BARCODE AND TAGGING SOFTWARE
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: What is the best barcode and tagging software for jewellers?
+A: Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect RFID readers and weighing scales. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
 Q: Does Jwero support RFID for jewellery?
 A: Yes. RFID readers connect as devices, alongside weighing scales and print stations. Each connected device is charged monthly at the published rate. Ask us about supported models before buying readers.
 
@@ -24057,6 +24164,15 @@ A: No, and that is deliberate. The tag identifies the piece; the price is calcul
 
 Q: Can I count stock with a phone?
 A: Yes. A phone camera can scan tags, which is enough for a small shop or an exhibition counter.
+
+Q: Can the catalogue handle certificates and hallmarking details?
+A: Yes. Purity, gemstone details, certification numbers and hallmark-related fields are structured attributes, not free text, searchable, filterable and printable.
+
+Q: How does live pricing work?
+A: Prices are formulas, metal rate × weight × purity plus making charges and stone values, resolved at today’s rate wherever the product appears: catalogue shares, website, WhatsApp and invoices. Overrides require approval.
+
+Q: Can I share a catalogue without exposing my full stock?
+A: Yes, share curated selections as live links with price visibility you control, and see who viewed what.
 
 ---
 
@@ -24073,6 +24189,11 @@ CLOUD JEWELLERY SOFTWARE
 
  Chat or call with us 
  See the price 
+
+ In short
+
+## What is the best cloud jewellery software?
+ Cloud-based jewellery software that runs in the browser on a computer, tablet or phone: nothing to install on a server, every branch on the same live data, your own isolated database and export any time. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -24112,6 +24233,44 @@ CLOUD JEWELLERY SOFTWARE
 
  Reports → 
 
+ USE CASES
+
+## Where this pays off in a jewellery business.
+
+ Four everyday situations, and what changes when Jwero handles them.
+
+ 01 
+
+## Your bills, stock and gold rate are in three different places.
+ One system holds live metal-rate pricing, stock, billing and accounts on the same data.
+ What changes One version of the truth for the whole shop.
+ 02 
+
+## A customer brings old gold to exchange for a new set.
+ Old gold is taken at the counter and adjusted against the new bill.
+ What changes Exchange is recorded on the bill, not in a side register.
+ 03 
+
+## A staff member gives a big discount without asking you.
+ Approval queues hold sensitive actions until a manager approves them.
+ What changes Nothing important happens without the right person signing off.
+ 04 
+
+## You don't know how much gold karigars and suppliers hold.
+ Metal balances and metal loans track gold given and owed, in grams, by party.
+ What changes Your gold is accounted for, not guessed.
+
+ TRY IT · THE SLEEPING SHELF
+
+## Slide time forward. Watch stock fall asleep.
+ Seventy-two pieces, ageing month by month. The count past 180 days is the number most owners have never seen.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Show me my own shelf Create your workspace 
+
  TODAY AND WITH JWERO
 
 ## What changes.
@@ -24148,18 +24307,12 @@ CLOUD JEWELLERY SOFTWARE
 
  Jwero needs an internet connection, and there is no separate app in the Play Store or App Store; it is used through the browser. Product screens are in English today, with an early Hindi version on karigar screens. The public roadmap says what is shipped, rolling out and not yet.
 
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
-
  QUESTIONS
 
 ## What jewellers ask.
+
+ What is the best cloud jewellery software? 
+ Cloud-based jewellery software that runs in the browser on a computer, tablet or phone: nothing to install on a server, every branch on the same live data, your own isolated database and export any time. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  Is there a mobile app? 
  Jwero runs in the phone’s browser and can be added to the home screen like an app. There is no separate download from an app store.
@@ -24172,6 +24325,15 @@ CLOUD JEWELLERY SOFTWARE
 
  Can I get my data out? 
  Yes. You can export everything, any time.
+
+ Is Jwero a full ERP replacement? 
+ For operations, yes; for statutory accounting, no. Jwero runs the operational backbone, orders, purchases, repairs, manufacturing job-work, and shares that data with the customer and catalogue layer, which a standalone ERP never does. Statutory accounting stays in Tally or Zoho Books via built-in bridges.
+
+ What’s different about a jewellery-native ERP? 
+ Purity, HUID, live gold-rate pricing, karigar job-work and gold-loss tracking are built in as first-class concepts, not bolted-on custom fields.
+
+ Will switching disrupt operations mid-order? 
+ Open orders, repairs and purchase records import alongside customers and catalogue during onboarding, nothing in progress gets orphaned by a switch.
 
  Related: Security · Multi-store jewellery software · Migration Centre · Onboarding 
 
@@ -24186,6 +24348,9 @@ CLOUD JEWELLERY SOFTWARE
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: What is the best cloud jewellery software?
+A: Cloud-based jewellery software that runs in the browser on a computer, tablet or phone: nothing to install on a server, every branch on the same live data, your own isolated database and export any time. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
 Q: Is there a mobile app?
 A: Jwero runs in the phone’s browser and can be added to the home screen like an app. There is no separate download from an app store.
 
@@ -24198,9 +24363,18 @@ A: It needs a connection. If your shop’s line is unreliable, tell us before yo
 Q: Can I get my data out?
 A: Yes. You can export everything, any time.
 
+Q: Is Jwero a full ERP replacement?
+A: For operations, yes; for statutory accounting, no. Jwero runs the operational backbone, orders, purchases, repairs, manufacturing job-work, and shares that data with the customer and catalogue layer, which a standalone ERP never does. Statutory accounting stays in Tally or Zoho Books via built-in bridges.
+
+Q: What’s different about a jewellery-native ERP?
+A: Purity, HUID, live gold-rate pricing, karigar job-work and gold-loss tracking are built in as first-class concepts, not bolted-on custom fields.
+
+Q: Will switching disrupt operations mid-order?
+A: Open orders, repairs and purchase records import alongside customers and catalogue during onboarding, nothing in progress gets orphaned by a switch.
+
 ---
 
-# WhatsApp Broadcast for Jewellers: Bulk Messages Without a Ban
+# WhatsApp Broadcast for Jewellers: Bulk, Safely
 URL: https://jwero.ai/whatsapp-broadcast-for-jewellers
 
 WhatsApp broadcast software for jewellers on the official Business API: approved templates, consent and opt-outs handled, audiences from your own customer segments, and sales traced to each send.
@@ -24213,6 +24387,11 @@ WHATSAPP BROADCAST FOR JEWELLERS
 
  Chat or call with us 
  See the price 
+
+ In short
+
+## How can jewellers send WhatsApp broadcasts safely?
+ WhatsApp broadcast software for jewellers on the official Business API: approved templates, consent and opt-outs handled, audiences from your own customer segments, and sales traced to each send. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -24250,6 +24429,44 @@ WHATSAPP BROADCAST FOR JEWELLERS
 
  A reply to a broadcast arrives on the customer’s record, with a priced answer drafted.
 
+ USE CASES
+
+## Where this pays off in a jewellery business.
+
+ Four everyday situations, and what changes when Jwero handles them.
+
+ 01 
+
+## Several staff answer customers on their personal WhatsApp.
+ One shared WhatsApp inbox for the whole team.
+ What changes Customer chats stay with the business.
+ 02 
+
+## Staff type the same answer about timings and rates all day.
+ Saved quick replies answer common questions in one tap.
+ What changes Faster replies, same answer every time.
+ 03 
+
+## A broadcast went out and half the customers ignored it.
+ Send broadcasts, see the report, and resend to those who didn't respond.
+ What changes A second chance with the customers who missed it.
+ 04 
+
+## WhatsApp keeps rejecting your message templates.
+ Create templates from starters and submit them from Jwero.
+ What changes Approved templates without the back and forth.
+
+ TRY IT · THE MORNING QUEUE
+
+## Run the AI workforce for a minute.
+ Drafts arrive the way customers do. Approve, edit, or decide an action type may run alone, and stop everything with one tap.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Show me a real queue Create your workspace 
+
  TODAY AND WITH JWERO
 
 ## What changes.
@@ -24286,18 +24503,12 @@ WHATSAPP BROADCAST FOR JEWELLERS
 
  Meta charges for each marketing message, at the published rate on the pricing page. Jwero does not send to contacts who have not agreed to hear from you. The public roadmap says what is shipped, rolling out and not yet.
 
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
-
  QUESTIONS
 
 ## What jewellers ask.
+
+ How can jewellers send WhatsApp broadcasts safely? 
+ WhatsApp broadcast software for jewellers on the official Business API: approved templates, consent and opt-outs handled, audiences from your own customer segments, and sales traced to each send. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  How do jewellers send WhatsApp broadcasts without getting banned? 
  Use the official WhatsApp Business API with approved templates, send only to customers who agreed, and honour opt-outs at once. Bulk tools that pair with a personal number break WhatsApp’s rules and are the usual cause of bans.
@@ -24310,6 +24521,15 @@ WHATSAPP BROADCAST FOR JEWELLERS
 
  Can I keep my existing WhatsApp number? 
  Yes. Your shop’s number is moved onto the official API, so customers see the same number.
+
+ Can customers actually buy on WhatsApp? 
+ Yes. Share catalogues with live prices, take orders and collect payments in the chat. For high-value pieces, WhatsApp books the appointment or the video call, the sale closes wherever the customer is comfortable.
+
+ Will my number get banned? 
+ No. Jwero uses the official WhatsApp Business API with approved templates, consent tracking, per-customer message-fatigue limits and instant opt-out handling, the discipline that keeps accounts healthy.
+
+ How is this different from WATI or other WhatsApp tools? 
+ Those tools send messages. They don’t know her purchase history, her scheme balance, or what a gram of 22k costs today. Jwero replies come from a system that knows the customer and the jewellery, because they share one record.
 
  Related: WhatsApp API for jewellers · Campaigns · WhatsApp for jewellers guide · WhatsApp API pricing 
 
@@ -24324,6 +24544,9 @@ WHATSAPP BROADCAST FOR JEWELLERS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: How can jewellers send WhatsApp broadcasts safely?
+A: WhatsApp broadcast software for jewellers on the official Business API: approved templates, consent and opt-outs handled, audiences from your own customer segments, and sales traced to each send. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
 Q: How do jewellers send WhatsApp broadcasts without getting banned?
 A: Use the official WhatsApp Business API with approved templates, send only to customers who agreed, and honour opt-outs at once. Bulk tools that pair with a personal number break WhatsApp’s rules and are the usual cause of bans.
 
@@ -24335,6 +24558,15 @@ A: Meta charges per marketing message; Jwero’s rate card on the pricing page s
 
 Q: Can I keep my existing WhatsApp number?
 A: Yes. Your shop’s number is moved onto the official API, so customers see the same number.
+
+Q: Can customers actually buy on WhatsApp?
+A: Yes. Share catalogues with live prices, take orders and collect payments in the chat. For high-value pieces, WhatsApp books the appointment or the video call, the sale closes wherever the customer is comfortable.
+
+Q: Will my number get banned?
+A: No. Jwero uses the official WhatsApp Business API with approved templates, consent tracking, per-customer message-fatigue limits and instant opt-out handling, the discipline that keeps accounts healthy.
+
+Q: How is this different from WATI or other WhatsApp tools?
+A: Those tools send messages. They don’t know her purchase history, her scheme balance, or what a gram of 22k costs today. Jwero replies come from a system that knows the customer and the jewellery, because they share one record.
 
 ---
 
@@ -24351,6 +24583,11 @@ INSTAGRAM FOR JEWELLERS
 
  Chat or call with us 
  See the price 
+
+ In short
+
+## How can jewellers turn Instagram enquiries into sales?
+ Instagram software for jewellers: every DM, comment, Reel and Story reply in one shared inbox, a priced answer drafted from your catalogue, posts scheduled across channels, and each enquiry kept on the customer’s record. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -24388,6 +24625,44 @@ INSTAGRAM FOR JEWELLERS
 
  Social media → 
 
+ USE CASES
+
+## Where this pays off in a jewellery business.
+
+ Four everyday situations, and what changes when Jwero handles them.
+
+ 01 
+
+## Comments asking 'price?' pile up under your reels.
+ Reply to Instagram and Facebook comments from one comments inbox.
+ What changes Every interested commenter gets an answer.
+ 02 
+
+## The same question about a design comes in again and again.
+ Set comment and DM automation flows that reply to common questions on your behalf.
+ What changes Common questions get answered even when staff are busy.
+ 03 
+
+## Posting to Instagram and Facebook means two apps and two logins.
+ Create and publish posts to your connected Instagram and Facebook pages from Jwero.
+ What changes One place to post for both pages.
+ 04 
+
+## A bad review sits unanswered for weeks.
+ See and reply to reviews in one reviews screen.
+ What changes Reviews get answered while they still matter.
+
+ TRY IT · CUSTOMER MEMORY
+
+## A customer messages. What does the record already know?
+ Pick a customer and watch her record fill in before anyone types a reply.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Send me a sample customer record Create your workspace 
+
  TODAY AND WITH JWERO
 
 ## What changes.
@@ -24424,18 +24699,12 @@ INSTAGRAM FOR JEWELLERS
 
  Jwero does not shoot or edit Reels for you, and it cannot message someone on Instagram who has not written to you first; that is Instagram’s rule. The public roadmap says what is shipped, rolling out and not yet.
 
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
-
  QUESTIONS
 
 ## What jewellers ask.
+
+ How can jewellers turn Instagram enquiries into sales? 
+ Instagram software for jewellers: every DM, comment, Reel and Story reply in one shared inbox, a priced answer drafted from your catalogue, posts scheduled across channels, and each enquiry kept on the customer’s record. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  How do jewellers manage Instagram DMs? 
  By moving them off a single phone into a shared inbox, so any team member can answer and every conversation is kept on the customer’s record.
@@ -24448,6 +24717,15 @@ INSTAGRAM FOR JEWELLERS
 
  Do I need a separate tool for Facebook? 
  No. Facebook messages and comments arrive in the same inbox.
+
+ Can Jwero reply to Instagram DMs automatically? 
+ The AI workforce drafts replies to DMs and comments using the customer’s record and your catalogue; drafts wait for approval until you promote them. Every conversation lands in the same inbox as WhatsApp and web chat.
+
+ We get hundreds of "price?" comments. Can Jwero handle them? 
+ Yes, that exact flood is the point. Price enquiries get a courteous reply that moves the conversation to DM or WhatsApp with a live-price catalogue link, automatically attached to a customer record so the follow-up actually happens.
+
+ Do I need a new Instagram account? 
+ No. Jwero connects to your existing professional account through the official Meta APIs.
 
  Related: Instagram and Facebook · Social media management · Lost enquiries · AI replies 
 
@@ -24462,6 +24740,9 @@ INSTAGRAM FOR JEWELLERS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: How can jewellers turn Instagram enquiries into sales?
+A: Instagram software for jewellers: every DM, comment, Reel and Story reply in one shared inbox, a priced answer drafted from your catalogue, posts scheduled across channels, and each enquiry kept on the customer’s record. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
 Q: How do jewellers manage Instagram DMs?
 A: By moving them off a single phone into a shared inbox, so any team member can answer and every conversation is kept on the customer’s record.
 
@@ -24474,9 +24755,18 @@ A: By answering what the Reel brings. The views are not the sale; the comment or
 Q: Do I need a separate tool for Facebook?
 A: No. Facebook messages and comments arrive in the same inbox.
 
+Q: Can Jwero reply to Instagram DMs automatically?
+A: The AI workforce drafts replies to DMs and comments using the customer’s record and your catalogue; drafts wait for approval until you promote them. Every conversation lands in the same inbox as WhatsApp and web chat.
+
+Q: We get hundreds of "price?" comments. Can Jwero handle them?
+A: Yes, that exact flood is the point. Price enquiries get a courteous reply that moves the conversation to DM or WhatsApp with a live-price catalogue link, automatically attached to a customer record so the follow-up actually happens.
+
+Q: Do I need a new Instagram account?
+A: No. Jwero connects to your existing professional account through the official Meta APIs.
+
 ---
 
-# Google Ads & Instagram Ads for Jewellers: Run, Approve, Measure
+# Google and Instagram Ads for Jewellers
 URL: https://jwero.ai/ads-for-jewellers
 
 Ads software for jewellers: build Google Search, Performance Max and Shopping campaigns and Meta and Instagram ads from one place, approve before any spend, get budget alerts, and see which ad led to a sale.
@@ -24489,6 +24779,11 @@ ADS FOR JEWELLERS
 
  Chat or call with us 
  See the price 
+
+ In short
+
+## How should jewellers run Google and Instagram ads?
+ Ads software for jewellers: build Google Search, Performance Max and Shopping campaigns and Meta and Instagram ads from one place, approve before any spend, get budget alerts, and see which ad led to a sale. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -24523,6 +24818,44 @@ ADS FOR JEWELLERS
 ## Which ad sold
 
  The enquiry, the conversation and the bill are tied back to the ad.
+
+ USE CASES
+
+## Where this pays off in a jewellery business.
+
+ Four everyday situations, and what changes when Jwero handles them.
+
+ 01 
+
+## You boost a post and never know if it brought anyone in.
+ Jwero shows your Meta and Google campaigns with their results inside the same workspace as your customer list.
+ What changes You see what your ad money did, next to the customers it brought.
+ 02 
+
+## Dhanteras is close and you have no idea what ad to run.
+ Jwero suggests ad opportunities for you to review, adjust and launch from one screen.
+ What changes You start from a ready suggestion instead of a blank ad form.
+ 03 
+
+## Your running Facebook ad needs a change and the agency is busy.
+ Edit your live Meta campaigns straight from Jwero without logging into Ads Manager.
+ What changes Small fixes happen the same day, by you.
+ 04 
+
+## Every festival you relearn what worked in last year's ads.
+ Jwero keeps a learnings page drawn from your past campaigns so the next one starts smarter.
+ What changes Lessons from past ads stay with the business, not one person.
+
+ TRY IT · THE MORNING QUEUE
+
+## Run the AI workforce for a minute.
+ Drafts arrive the way customers do. Approve, edit, or decide an action type may run alone, and stop everything with one tap.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Show me a real queue Create your workspace 
 
  TODAY AND WITH JWERO
 
@@ -24560,18 +24893,12 @@ ADS FOR JEWELLERS
 
  Jwero does not write your ad headlines and text for you today; you enter them in the campaign wizard, and the AI suggests where a campaign is under-performing. Pinterest publishing is still rolling out. Ad spend is paid to Google and Meta, not to Jwero. The public roadmap says what is shipped, rolling out and not yet.
 
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
-
  QUESTIONS
 
 ## What jewellers ask.
+
+ How should jewellers run Google and Instagram ads? 
+ Ads software for jewellers: build Google Search, Performance Max and Shopping campaigns and Meta and Instagram ads from one place, approve before any spend, get budget alerts, and see which ad led to a sale. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  Do Google Ads work for jewellery shops? 
  They work for people already searching, such as “gold bangles near me”, provided the enquiry is answered quickly. Search and Shopping campaigns suit jewellers best.
@@ -24584,6 +24911,15 @@ ADS FOR JEWELLERS
 
  Can I advertise my jewellery shop on ChatGPT? 
  Advertising inside AI assistants is new. Ask us about its status for your account before planning a budget around it.
+
+ Which ad platforms does Jwero manage? 
+ Meta Ads, Google Ads and Pinterest, each with its own integration and campaign-type catalogue. Google covers Search, Performance Max and Shopping (linked to your jewellery catalogue); Meta covers standard campaigns, Advantage+ automated campaigns and lead-gen ad forms.
+
+ Does Jwero publish my campaign straight to the ad platform? 
+ Yes, for Meta and Google. Once you approve a campaign in the wizard, Jwero calls the Meta Graph API and Google Ads API directly to create the live budget, campaign, ad sets and creatives, it doesn't hand you a draft to copy-paste. Pinterest publishing is still rolling out; ask us for its current status on your account.
+
+ Can the AI spend my budget without me knowing? 
+ No. The AI strategist analyzes performance and surfaces opportunities and learnings for you to review, it does not write your ad headlines or copy, and it never spends on its own. Approval happens in the wizard before Jwero ever calls the ad platform; nothing goes live without you saying yes first.
 
  Related: Ads Manager · Website analytics · Instagram and Facebook · Instagram for jewellers 
 
@@ -24598,6 +24934,9 @@ ADS FOR JEWELLERS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: How should jewellers run Google and Instagram ads?
+A: Ads software for jewellers: build Google Search, Performance Max and Shopping campaigns and Meta and Instagram ads from one place, approve before any spend, get budget alerts, and see which ad led to a sale. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
 Q: Do Google Ads work for jewellery shops?
 A: They work for people already searching, such as “gold bangles near me”, provided the enquiry is answered quickly. Search and Shopping campaigns suit jewellers best.
 
@@ -24609,6 +24948,15 @@ A: There is no one figure. Start small, measure which ad produces bills, not cli
 
 Q: Can I advertise my jewellery shop on ChatGPT?
 A: Advertising inside AI assistants is new. Ask us about its status for your account before planning a budget around it.
+
+Q: Which ad platforms does Jwero manage?
+A: Meta Ads, Google Ads and Pinterest, each with its own integration and campaign-type catalogue. Google covers Search, Performance Max and Shopping (linked to your jewellery catalogue); Meta covers standard campaigns, Advantage+ automated campaigns and lead-gen ad forms.
+
+Q: Does Jwero publish my campaign straight to the ad platform?
+A: Yes, for Meta and Google. Once you approve a campaign in the wizard, Jwero calls the Meta Graph API and Google Ads API directly to create the live budget, campaign, ad sets and creatives, it doesn't hand you a draft to copy-paste. Pinterest publishing is still rolling out; ask us for its current status on your account.
+
+Q: Can the AI spend my budget without me knowing?
+A: No. The AI strategist analyzes performance and surfaces opportunities and learnings for you to review, it does not write your ad headlines or copy, and it never spends on its own. Approval happens in the wizard before Jwero ever calls the ad platform; nothing goes live without you saying yes first.
 
 ---
 
@@ -24625,6 +24973,11 @@ SMS, RCS AND PUSH FOR JEWELLERS
 
  Chat or call with us 
  See the price 
+
+ In short
+
+## How should jewellers use SMS, RCS and push messages?
+ SMS, RCS and push notification software for jewellers: payment and order alerts, scheme reminders and offers sent from the same campaign as WhatsApp and email, with consent handled and results measured. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -24662,6 +25015,44 @@ SMS, RCS AND PUSH FOR JEWELLERS
 
  One report for the campaign across every channel.
 
+ USE CASES
+
+## Where this pays off in a jewellery business.
+
+ Four everyday situations, and what changes when Jwero handles them.
+
+ 01 
+
+## Akshaya Tritiya arrives and your festival message goes out late.
+ A campaign calendar lays out festivals and occasions so you plan sends ahead of each one.
+ What changes Festival messages go out on time, every year.
+ 02 
+
+## Nobody in the shop knows how to write a good festival message.
+ Ready templates for festivals, birthdays, anniversaries and gold schemes are built into the broadcast creator.
+ What changes Anyone on staff can send a polished message in minutes.
+ 03 
+
+## You want a campaign but don't know where to start.
+ Campaign blueprints give pre-made starting points you adjust and launch to the right customers and channels.
+ What changes You launch proven campaign shapes instead of guessing.
+ 04 
+
+## You sent a Diwali offer but can't tell if anyone came.
+ Each campaign has a report showing how it performed across sends and responses.
+ What changes You repeat what worked and drop what didn't.
+
+ TRY IT · THE MORNING QUEUE
+
+## Run the AI workforce for a minute.
+ Drafts arrive the way customers do. Approve, edit, or decide an action type may run alone, and stop everything with one tap.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Show me a real queue Create your workspace 
+
  TODAY AND WITH JWERO
 
 ## What changes.
@@ -24698,18 +25089,12 @@ SMS, RCS AND PUSH FOR JEWELLERS
 
  SMS in India needs sender and template registration under the telecom rules, which you complete once. RCS reaches only phones and networks that support it. Messages are charged per message at the published rates. The public roadmap says what is shipped, rolling out and not yet.
 
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
-
  QUESTIONS
 
 ## What jewellers ask.
+
+ How should jewellers use SMS, RCS and push messages? 
+ SMS, RCS and push notification software for jewellers: payment and order alerts, scheme reminders and offers sent from the same campaign as WhatsApp and email, with consent handled and results measured. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  Does SMS marketing still work for jewellers? 
  For short, certain messages, yes: payment received, order ready, instalment due. For offers and conversations, WhatsApp usually gets more response.
@@ -24722,6 +25107,15 @@ SMS, RCS AND PUSH FOR JEWELLERS
 
  Which channel should I use? 
  WhatsApp for conversation, SMS for certainty, push for free reach, email for detail. One campaign can use all four.
+
+ What is a Broadcast? 
+ A single send, WhatsApp, email, SMS or push, to an audience built from a segment, a group or a tag. WhatsApp sends are template-linked, following the same approved-template discipline as the rest of Jwero’s WhatsApp story.
+
+ What does "consent-aware" actually mean? 
+ A delivery automatically skips a recipient who has opted out, is on DND, or is missing a required template, a structured skip-reason system, not a manual checklist someone has to remember to run.
+
+ What is a Campaign, and how is it different from a Broadcast? 
+ A campaign wraps one or more broadcasts and journeys with UTM-based attribution and a reporting layer, so you see what a campaign actually sold, not just how many messages went out.
 
  Related: Campaigns · WhatsApp broadcasts · Customer journeys · Message rates 
 
@@ -24736,6 +25130,9 @@ SMS, RCS AND PUSH FOR JEWELLERS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: How should jewellers use SMS, RCS and push messages?
+A: SMS, RCS and push notification software for jewellers: payment and order alerts, scheme reminders and offers sent from the same campaign as WhatsApp and email, with consent handled and results measured. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
 Q: Does SMS marketing still work for jewellers?
 A: For short, certain messages, yes: payment received, order ready, instalment due. For offers and conversations, WhatsApp usually gets more response.
 
@@ -24748,12 +25145,21 @@ A: They work for people who opted in on your website or app, and cost nothing pe
 Q: Which channel should I use?
 A: WhatsApp for conversation, SMS for certainty, push for free reach, email for detail. One campaign can use all four.
 
+Q: What is a Broadcast?
+A: A single send, WhatsApp, email, SMS or push, to an audience built from a segment, a group or a tag. WhatsApp sends are template-linked, following the same approved-template discipline as the rest of Jwero’s WhatsApp story.
+
+Q: What does "consent-aware" actually mean?
+A: A delivery automatically skips a recipient who has opted out, is on DND, or is missing a required template, a structured skip-reason system, not a manual checklist someone has to remember to run.
+
+Q: What is a Campaign, and how is it different from a Broadcast?
+A: A campaign wraps one or more broadcasts and journeys with UTM-based attribution and a reporting layer, so you see what a campaign actually sold, not just how many messages went out.
+
 ---
 
 # Footfall Counting & Walk-in Tracking for Jewellery Showrooms
 URL: https://jwero.ai/jewellery-showroom-footfall-counting
 
-Footfall counting and walk-in tracking for jewellery showrooms: tablet check-in or camera-based counting, a live view of the floor, what each visitor tried, why they left, and conversion by store and salesperson.
+Footfall counting and walk-in tracking for jewellery showrooms: tablet check-in or camera counting through IP cameras, a live view of the floor, what each visitor tried, why they left, and conversion by store and salesperson.
 
 SHOWROOM FOOTFALL AND WALK-IN TRACKING
 
@@ -24763,6 +25169,11 @@ SHOWROOM FOOTFALL AND WALK-IN TRACKING
 
  Chat or call with us 
  See the price 
+
+ In short
+
+## How can a jewellery showroom count footfall and track walk-ins?
+ Footfall counting and walk-in tracking for jewellery showrooms: tablet check-in or camera counting through IP cameras, a live view of the floor, what each visitor tried, why they left, and conversion by store and salesperson. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -24776,9 +25187,9 @@ SHOWROOM FOOTFALL AND WALK-IN TRACKING
 
  Showroom → 
 
-## Camera-based counting
+## Camera counting
 
- Connect showroom cameras to count footfall, charged per camera.
+ Connect showroom IP cameras through a small store-side device to count footfall, charged per camera. It counts visitors; it does not recognise faces or repeat visitors.
 
 ## Live floor
 
@@ -24797,6 +25208,44 @@ SHOWROOM FOOTFALL AND WALK-IN TRACKING
  Visits, conversion, busiest hours and reasons for leaving, by branch and salesperson.
 
  Reports → 
+
+ USE CASES
+
+## Where this pays off in a jewellery business.
+
+ Four everyday situations, and what changes when Jwero handles them.
+
+ 01 
+
+## Customers walk out without buying and nobody notes why.
+ Log each walk-in and record the outcome and reason when they leave.
+ What changes You know why sales are lost.
+ 02 
+
+## A walk-out customer liked a necklace but nobody followed up.
+ A rescue list of walk-outs opens WhatsApp with a ready message for staff to send.
+ What changes Lost sales get a second chance.
+ 03 
+
+## A returning customer walks in and staff don't know her history.
+ The visit session shows items shown and her journey and history while she is in the store.
+ What changes Every visit builds on the last one.
+ 04 
+
+## You don't know which salesman converts walk-ins best.
+ Showroom insights show conversion by salesperson along with a daily brief.
+ What changes You coach staff with facts.
+
+ TRY IT · CUSTOMER MEMORY
+
+## A customer messages. What does the record already know?
+ Pick a customer and watch her record fill in before anyone types a reply.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Send me a sample customer record Create your workspace 
 
  TODAY AND WITH JWERO
 
@@ -24832,23 +25281,17 @@ SHOWROOM FOOTFALL AND WALK-IN TRACKING
 
 ## What it does not do yet.
 
- Jwero does not sell cameras or tablets. Photographs and camera counting need a notice to visitors and, where the law requires, their consent; that is the showroom’s duty. The public roadmap says what is shipped, rolling out and not yet.
-
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
+ Jwero does not sell cameras or tablets, and camera counting does not recognise faces or tell a repeat visitor from a new one. Photographs and camera counting need a notice to visitors and, where the law requires, their consent; that is the showroom’s duty. The public roadmap says what is shipped, rolling out and not yet.
 
  QUESTIONS
 
 ## What jewellers ask.
 
+ How can a jewellery showroom count footfall and track walk-ins? 
+ Footfall counting and walk-in tracking for jewellery showrooms: tablet check-in or camera counting through IP cameras, a live view of the floor, what each visitor tried, why they left, and conversion by store and salesperson. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
  How do I count footfall in my jewellery showroom? 
- Either check each walk-in in on a tablet at the entrance, or connect showroom cameras for automatic counting. Both give visits by hour and conversion to bills.
+ Either check each walk-in in on a tablet at the entrance, or connect showroom IP cameras, through a store-side device, for automatic counting. Both give visits by hour and conversion to bills.
 
  How do I record walk-in customers in a jewellery shop? 
  Enter the phone number at check-in. A returning customer’s history appears at once; a new one gets a record. What she tried and why she left are noted at check-out.
@@ -24858,6 +25301,15 @@ SHOWROOM FOOTFALL AND WALK-IN TRACKING
 
  Is camera tracking legal? 
  Showrooms may use cameras, but visitors should be told, and personal data must be handled under the data protection law. Take advice for your own case.
+
+ Does the tablet check-in use facial recognition or special hardware? 
+ No. Walk-in Register runs off a tablet at the entrance where a walk-in is checked in and out, there is no CCTV or facial-recognition automatic detection today, and no footfall door-counter hardware integration.
+
+ Is Walkout Rescue automatic, does it message customers without anyone checking? 
+ No. It drafts a WhatsApp follow-up naming the exact pieces a customer tried, but a person on staff reviews and sends it, nothing goes out unapproved. A rescue only counts as successful once it is linked to a completed sales order afterward; it is never estimated or guessed.
+
+ Does the Daily Brief get pushed to WhatsApp automatically? 
+ Not yet. Today the owner or manager opens the Daily Brief to see the morning and evening summary, automatic push delivery to WhatsApp is not built yet.
 
  Related: Showroom software · Jewellery CRM · For the store manager · Trust Centre 
 
@@ -24872,8 +25324,11 @@ SHOWROOM FOOTFALL AND WALK-IN TRACKING
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: How can a jewellery showroom count footfall and track walk-ins?
+A: Footfall counting and walk-in tracking for jewellery showrooms: tablet check-in or camera counting through IP cameras, a live view of the floor, what each visitor tried, why they left, and conversion by store and salesperson. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
 Q: How do I count footfall in my jewellery showroom?
-A: Either check each walk-in in on a tablet at the entrance, or connect showroom cameras for automatic counting. Both give visits by hour and conversion to bills.
+A: Either check each walk-in in on a tablet at the entrance, or connect showroom IP cameras, through a store-side device, for automatic counting. Both give visits by hour and conversion to bills.
 
 Q: How do I record walk-in customers in a jewellery shop?
 A: Enter the phone number at check-in. A returning customer’s history appears at once; a new one gets a record. What she tried and why she left are noted at check-out.
@@ -24883,6 +25338,15 @@ A: It varies by store and category, so compare your own stores, salespeople and 
 
 Q: Is camera tracking legal?
 A: Showrooms may use cameras, but visitors should be told, and personal data must be handled under the data protection law. Take advice for your own case.
+
+Q: Does the tablet check-in use facial recognition or special hardware?
+A: No. Walk-in Register runs off a tablet at the entrance where a walk-in is checked in and out, there is no CCTV or facial-recognition automatic detection today, and no footfall door-counter hardware integration.
+
+Q: Is Walkout Rescue automatic, does it message customers without anyone checking?
+A: No. It drafts a WhatsApp follow-up naming the exact pieces a customer tried, but a person on staff reviews and sends it, nothing goes out unapproved. A rescue only counts as successful once it is linked to a completed sales order afterward; it is never estimated or guessed.
+
+Q: Does the Daily Brief get pushed to WhatsApp automatically?
+A: Not yet. Today the owner or manager opens the Daily Brief to see the morning and evening summary, automatic push delivery to WhatsApp is not built yet.
 
 ---
 
@@ -24899,6 +25363,11 @@ AI CALLING FOR JEWELLERS
 
  Chat or call with us 
  See the price 
+
+ In short
+
+## How can jewellers use AI for customer calls?
+ AI voice calling for jewellers: an AI agent answers inbound calls and places reminder and follow-up calls in Indian languages over your telephony line, with every call transcribed onto the customer’s record. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -24936,6 +25405,44 @@ AI CALLING FOR JEWELLERS
 
  Journeys → 
 
+ USE CASES
+
+## Where this pays off in a jewellery business.
+
+ Four everyday situations, and what changes when Jwero handles them.
+
+ 01 
+
+## A customer asks the gold rate on WhatsApp at 10 at night.
+ Your AI agent answers from a knowledge base you fill with your products, policies and store details.
+ What changes Late night enquiries get a reply instead of going cold.
+ 02 
+
+## You worry an AI might promise a discount you never approved.
+ You set autonomy levels: what the agent may do alone and what it must send to you for approval.
+ What changes The AI proposes, you decide.
+ 03 
+
+## You want to check what the bot told a customer yesterday.
+ Every agent reply and action is kept in activity and run logs you can review.
+ What changes Nothing the AI says is hidden from you.
+ 04 
+
+## A website visitor asks about bridal sets while staff are busy.
+ The website chat widget answers visitors with AI and the conversation lands in your shared inbox.
+ What changes Website visitors are answered and become contacts you can follow up.
+
+ TRY IT · THE MORNING QUEUE
+
+## Run the AI workforce for a minute.
+ Drafts arrive the way customers do. Approve, edit, or decide an action type may run alone, and stop everything with one tap.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Show me a real queue Create your workspace 
+
  TODAY AND WITH JWERO
 
 ## What changes.
@@ -24972,18 +25479,12 @@ AI CALLING FOR JEWELLERS
 
  Calls run over a telephony line you connect from a provider such as Exotel or Tata Tele, and are charged per minute. The AI does not negotiate prices or give discounts; it hands those to a person. The public roadmap says what is shipped, rolling out and not yet.
 
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
-
  QUESTIONS
 
 ## What jewellers ask.
+
+ How can jewellers use AI for customer calls? 
+ AI voice calling for jewellers: an AI agent answers inbound calls and places reminder and follow-up calls in Indian languages over your telephony line, with every call transcribed onto the customer’s record. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  Can AI answer calls for my jewellery shop? 
  Yes. An AI voice agent answers common questions, takes appointments and passes the call to a person when the customer needs one.
@@ -24996,6 +25497,15 @@ AI CALLING FOR JEWELLERS
 
  What does AI calling cost? 
  It is charged per minute at the rate on the pricing page, on top of your telephony provider’s charges.
+
+ What is an AI sales agent in Jwero? 
+ A configured member of the AI workforce: a scope of allowed actions, a knowledge base, guardrails, an approval workflow and an activity log. It drafts replies, follows up, reminds and invites, within the limits you set.
+
+ Can the AI really speak on calls? 
+ Yes, in two ways. On WhatsApp and your website’s web chat, AI voice is native to Jwero, no third party involved, and converses in 14 languages, with transcripts filed on the customer record. For actual phone calls (instalment reminders, outbound follow-ups, IVR), the AI agent speaks over a telephony line you connect, currently in 11 Indian languages.
+
+ Does Jwero do IVR? 
+ Yes, through your telephony provider, Jwero’s AI voice agent runs outbound and inbound phone calls, including IVR menus, over a connected line from Exotel, Tata Tele, or most other telephony/CPaaS providers on request. That’s different from voice on WhatsApp and web chat, which is fully native to Jwero and needs no telephony connection at all. See Integrations for the telephony connectors.
 
  Related: AI agents and voice · AI governance · Gold schemes · Calling rates 
 
@@ -25010,6 +25520,9 @@ AI CALLING FOR JEWELLERS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: How can jewellers use AI for customer calls?
+A: AI voice calling for jewellers: an AI agent answers inbound calls and places reminder and follow-up calls in Indian languages over your telephony line, with every call transcribed onto the customer’s record. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
 Q: Can AI answer calls for my jewellery shop?
 A: Yes. An AI voice agent answers common questions, takes appointments and passes the call to a person when the customer needs one.
 
@@ -25022,9 +25535,18 @@ A: The phone agent covers 11 Indian languages today. The chat and voice assistan
 Q: What does AI calling cost?
 A: It is charged per minute at the rate on the pricing page, on top of your telephony provider’s charges.
 
+Q: What is an AI sales agent in Jwero?
+A: A configured member of the AI workforce: a scope of allowed actions, a knowledge base, guardrails, an approval workflow and an activity log. It drafts replies, follows up, reminds and invites, within the limits you set.
+
+Q: Can the AI really speak on calls?
+A: Yes, in two ways. On WhatsApp and your website’s web chat, AI voice is native to Jwero, no third party involved, and converses in 14 languages, with transcripts filed on the customer record. For actual phone calls (instalment reminders, outbound follow-ups, IVR), the AI agent speaks over a telephony line you connect, currently in 11 Indian languages.
+
+Q: Does Jwero do IVR?
+A: Yes, through your telephony provider, Jwero’s AI voice agent runs outbound and inbound phone calls, including IVR menus, over a connected line from Exotel, Tata Tele, or most other telephony/CPaaS providers on request. That’s different from voice on WhatsApp and web chat, which is fully native to Jwero and needs no telephony connection at all. See Integrations for the telephony connectors.
+
 ---
 
-# Jewellery Appointment Booking Software: Showroom & Video Visits
+# Jewellery Appointment Booking Software
 URL: https://jwero.ai/jewellery-appointment-booking-software
 
 Appointment booking software for jewellers: customers book a showroom or video visit against real availability, the shortlist is ready when they arrive, reminders go out, and every visit is on one calendar.
@@ -25037,6 +25559,11 @@ APPOINTMENT BOOKING FOR JEWELLERS
 
  Chat or call with us 
  See the price 
+
+ In short
+
+## What is the best appointment booking software for jewellers?
+ Appointment booking software for jewellers: customers book a showroom or video visit against real availability, the shortlist is ready when they arrive, reminders go out, and every visit is on one calendar. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -25071,6 +25598,44 @@ APPOINTMENT BOOKING FOR JEWELLERS
  Expected visits appear on the showroom’s live view.
 
  Showroom → 
+
+ USE CASES
+
+## Where this pays off in a jewellery business.
+
+ Four everyday situations, and what changes when Jwero handles them.
+
+ 01 
+
+## A bride's family abroad wants to see bridal sets before flying in.
+ Start a video call from the WhatsApp chat; the customer joins from a link, with screen share.
+ What changes You can sell to customers who can't come to the store.
+ 02 
+
+## Appointments are written on paper and staff double-book.
+ One calendar holds video meetings, store appointments and phone calls for every staff member.
+ What changes No more clashing appointments.
+ 03 
+
+## Customers call just to ask when you are free.
+ Customers book themselves within each staff member's working hours and limits.
+ What changes Bookings come in without phone tag.
+ 04 
+
+## A customer books a visit and forgets to come.
+ Reminders go out on the customer's own channel before the appointment, with a fresh link.
+ What changes Fewer no-shows.
+
+ TRY IT · CUSTOMER MEMORY
+
+## A customer messages. What does the record already know?
+ Pick a customer and watch her record fill in before anyone types a reply.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Send me a sample customer record Create your workspace 
 
  TODAY AND WITH JWERO
 
@@ -25108,18 +25673,12 @@ APPOINTMENT BOOKING FOR JEWELLERS
 
  Recording a video call is optional and shows a notice to everyone in the room. Jwero does not take payment for an appointment slot itself; advances are taken on a quotation or an order. The public roadmap says what is shipped, rolling out and not yet.
 
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
-
  QUESTIONS
 
 ## What jewellers ask.
+
+ What is the best appointment booking software for jewellers? 
+ Appointment booking software for jewellers: customers book a showroom or video visit against real availability, the shortlist is ready when they arrive, reminders go out, and every visit is on one calendar. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  How do jewellers take appointments online? 
  With a booking page linked from WhatsApp, Instagram and the website that shows only the slots your team is actually free.
@@ -25132,6 +25691,15 @@ APPOINTMENT BOOKING FOR JEWELLERS
 
  Does it suit bridal trials? 
  Yes. Trials are booked with the pieces to prepare, and each visit is kept on the family’s record.
+
+ How does a customer join a video call? 
+ From a link sent on her own channel, WhatsApp or web chat. She fills a short form your team configured, knocks, and joins when a host admits her. No app to install.
+
+ Can customers book themselves? 
+ Yes. Each host sets working hours, buffers, minimum notice and a daily cap; busy time comes from the unified calendar, so a Google Meet already booked blocks the slot.
+
+ Are calls recorded? 
+ Optionally, with an indicator for everyone in the room and a notice to the customer before she joins.
 
  Related: Video counter and appointments · Bridal jewellers · Showroom · Quotations 
 
@@ -25146,6 +25714,9 @@ APPOINTMENT BOOKING FOR JEWELLERS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: What is the best appointment booking software for jewellers?
+A: Appointment booking software for jewellers: customers book a showroom or video visit against real availability, the shortlist is ready when they arrive, reminders go out, and every visit is on one calendar. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
 Q: How do jewellers take appointments online?
 A: With a booking page linked from WhatsApp, Instagram and the website that shows only the slots your team is actually free.
 
@@ -25158,9 +25729,18 @@ A: Start the call from the conversation, show the shortlisted pieces, and send a
 Q: Does it suit bridal trials?
 A: Yes. Trials are booked with the pieces to prepare, and each visit is kept on the family’s record.
 
+Q: How does a customer join a video call?
+A: From a link sent on her own channel, WhatsApp or web chat. She fills a short form your team configured, knocks, and joins when a host admits her. No app to install.
+
+Q: Can customers book themselves?
+A: Yes. Each host sets working hours, buffers, minimum notice and a daily cap; busy time comes from the unified calendar, so a Google Meet already booked blocks the slot.
+
+Q: Are calls recorded?
+A: Optionally, with an indicator for everyone in the room and a notice to the customer before she joins.
+
 ---
 
-# Jewellery Staff Management: Attendance, Tasks, Targets, Incentives
+# Jewellery Staff Management Software
 URL: https://jwero.ai/jewellery-staff-management-software
 
 Staff management software for jewellery showrooms: phone and kiosk attendance, daily task lists, sales targets, incentives worked out from real bills, hiring, training and payroll, on the same record as sales.
@@ -25173,6 +25753,11 @@ JEWELLERY STAFF MANAGEMENT
 
  Chat or call with us 
  See the price 
+
+ In short
+
+## What is the best staff management software for jewellers?
+ Staff management software for jewellery showrooms: phone and kiosk attendance, daily task lists, sales targets, incentives worked out from real bills, hiring, training and payroll, on the same record as sales. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -25207,6 +25792,44 @@ JEWELLERY STAFF MANAGEMENT
 ## Payroll and karigar wages
 
  Salaries with PF and ESI, and wages by piece, weight, hour or day.
+
+ USE CASES
+
+## Where this pays off in a jewellery business.
+
+ Four everyday situations, and what changes when Jwero handles them.
+
+ 01 
+
+## Salary day means a full day with a calculator and attendance register.
+ Payroll run with loss of pay, PF, ESI, PT and TDS, payslip PDFs and a bank transfer file.
+ What changes Salaries are right and done quickly.
+ 02 
+
+## A salesman says he came on time but the register says late.
+ Staff punch in at a store kiosk, and attendance corrections need a manager's approval.
+ What changes Attendance disputes end; records are trusted.
+ 03 
+
+## Salesmen ask every month how their incentive was calculated.
+ Set incentive slabs linked to sales targets; staff see their own incentives.
+ What changes Incentives are clear and motivating, not argued over.
+ 04 
+
+## Your CA chases you for PF and ESI files every month.
+ Export PF, ESI, PT and muster roll files straight from payroll.
+ What changes Statutory filings stop being a monthly scramble.
+
+ TRY IT · THE MORNING QUEUE
+
+## Run the AI workforce for a minute.
+ Drafts arrive the way customers do. Approve, edit, or decide an action type may run alone, and stop everything with one tap.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Show me a real queue Create your workspace 
 
  TODAY AND WITH JWERO
 
@@ -25244,18 +25867,12 @@ JEWELLERY STAFF MANAGEMENT
 
  Attendance is by phone or kiosk; there is no fingerprint or face-scanner hardware. Payroll produces the bank file and statutory files, which your accountant uploads and files. The public roadmap says what is shipped, rolling out and not yet.
 
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
-
  QUESTIONS
 
 ## What jewellers ask.
+
+ What is the best staff management software for jewellers? 
+ Staff management software for jewellery showrooms: phone and kiosk attendance, daily task lists, sales targets, incentives worked out from real bills, hiring, training and payroll, on the same record as sales. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  How do I track staff attendance in a jewellery shop? 
  Staff punch in on their own phone or a kiosk in the shop. Optional location and selfie checks confirm they are on site.
@@ -25268,6 +25885,15 @@ JEWELLERY STAFF MANAGEMENT
 
  Does it cover karigars? 
  Yes. Karigar wages are settled by piece, weight, hour or day, with advances recovered.
+
+ Does this replace my accountant? 
+ No. Payroll computes PF, ESI, PT and TDS and generates the statutory export files, PF ECR, ESI CSV, PT CSV, Form 16 / Form 24Q, but your accountant still files them with the government. Nothing here has a government-portal integration.
+
+ Does the bank file actually pay people? 
+ No. Payroll produces a ready-to-upload NEFT-style bank file, but it does not move money or connect to any bank API. A person uploads it in your own banking portal.
+
+ Is this a full biometric attendance system? 
+ No. Attendance is phone- and kiosk-based, with optional geo-fencing and selfie-on-punch verification. There is no fingerprint or face-scanner hardware, and no biometric-device SDK involved.
 
  Related: HR and payroll · Staff management · Staff training · For the store manager · For sales staff 
 
@@ -25282,6 +25908,9 @@ JEWELLERY STAFF MANAGEMENT
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: What is the best staff management software for jewellers?
+A: Staff management software for jewellery showrooms: phone and kiosk attendance, daily task lists, sales targets, incentives worked out from real bills, hiring, training and payroll, on the same record as sales. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
 Q: How do I track staff attendance in a jewellery shop?
 A: Staff punch in on their own phone or a kiosk in the shop. Optional location and selfie checks confirm they are on site.
 
@@ -25294,9 +25923,18 @@ A: Each person gets a daily list built from what is due, and managers can add ta
 Q: Does it cover karigars?
 A: Yes. Karigar wages are settled by piece, weight, hour or day, with advances recovered.
 
+Q: Does this replace my accountant?
+A: No. Payroll computes PF, ESI, PT and TDS and generates the statutory export files, PF ECR, ESI CSV, PT CSV, Form 16 / Form 24Q, but your accountant still files them with the government. Nothing here has a government-portal integration.
+
+Q: Does the bank file actually pay people?
+A: No. Payroll produces a ready-to-upload NEFT-style bank file, but it does not move money or connect to any bank API. A person uploads it in your own banking portal.
+
+Q: Is this a full biometric attendance system?
+A: No. Attendance is phone- and kiosk-based, with optional geo-fencing and selfie-on-punch verification. There is no fingerprint or face-scanner hardware, and no biometric-device SDK involved.
+
 ---
 
-# Jewellery Website Analytics: Heatmaps, Visitor Tracking, A/B Tests
+# Jewellery Website Analytics: Heatmaps, A/B
 URL: https://jwero.ai/jewellery-website-analytics
 
 Website analytics for jewellery stores: visitor tracking, funnels, heatmaps and session recordings, A/B tests, pop-ups and lead forms, and web push, so you see why visitors leave and catch the next one.
@@ -25309,6 +25947,11 @@ JEWELLERY WEBSITE ANALYTICS
 
  Chat or call with us 
  See the price 
+
+ In short
+
+## How can jewellers see what visitors do on their website?
+ Website analytics for jewellery stores: visitor tracking, funnels, heatmaps and session recordings, A/B tests, pop-ups and lead forms, and web push, so you see why visitors leave and catch the next one. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -25343,6 +25986,44 @@ JEWELLERY WEBSITE ANALYTICS
  Meta pixel, Google Analytics and Tag Manager connect to your store.
 
  Ads Manager → 
+
+ USE CASES
+
+## Where this pays off in a jewellery business.
+
+ Four everyday situations, and what changes when Jwero handles them.
+
+ 01 
+
+## People visit your website but you don't know what they look at.
+ Website analytics and heatmaps show where visitors go and what they click.
+ What changes You fix the pages that lose customers.
+ 02 
+
+## Visitors leave your website without leaving a number.
+ Show popups and lead forms that collect contacts from website visitors.
+ What changes Anonymous visitors become customers you can contact.
+ 03 
+
+## You can't decide which offer banner works better.
+ Run an A/B test showing two versions to visitors and compare the results.
+ What changes You choose offers on results, not guesses.
+ 04 
+
+## Website visitors who allowed notifications never hear from you again.
+ Send web push campaigns to visitors who opted in.
+ What changes A free way to bring visitors back for new arrivals.
+
+ TRY IT · CUSTOMER MEMORY
+
+## A customer messages. What does the record already know?
+ Pick a customer and watch her record fill in before anyone types a reply.
+
+ Loading the simulation…
+
+ Simulation, illustrative numbers, the product’s real mechanics.
+
+ Send me a sample customer record Create your workspace 
 
  TODAY AND WITH JWERO
 
@@ -25380,18 +26061,12 @@ JEWELLERY WEBSITE ANALYTICS
 
  Recordings hide typed personal details, and visitors should be told about tracking in your privacy notice. Optimize measures your own website; it does not measure marketplaces or social apps. The public roadmap says what is shipped, rolling out and not yet.
 
- PRICE
-
-## Every module. ₹18,000 a month. First month ₹3,600.
-
- One plan, billed monthly. No per-module price and no per-seat price. Your first month is ₹3,600 instead of ₹18,000.
-
- Start for ₹3,600 
- See the full pricing 
-
  QUESTIONS
 
 ## What jewellers ask.
+
+ How can jewellers see what visitors do on their website? 
+ Website analytics for jewellery stores: visitor tracking, funnels, heatmaps and session recordings, A/B tests, pop-ups and lead forms, and web push, so you see why visitors leave and catch the next one. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  Why do visitors leave my jewellery website? 
  Usually no clear price, slow pages or no quick way to ask. Heatmaps and recordings show where they stopped; a chat or a form gives them a way to ask.
@@ -25404,6 +26079,15 @@ JEWELLERY WEBSITE ANALYTICS
 
  Do I still need Google Analytics? 
  You can keep it; it connects. Optimize adds the recordings, heatmaps, tests and forms beside your customer records.
+
+ What is Optimize? 
+ The toolkit that shows you why a website visitor left without buying, and helps you catch the next one before they do: visitor analytics, heatmaps, session recordings, A/B experiments, personalization rules, popups and lead forms, web push, and an AI webchat widget, in the trade, this category is called "CRO" (conversion-rate optimization). It’s the class of stack you’d otherwise stitch together from Hotjar, VWO and OneSignal.
+
+ Do I need to install anything extra? 
+ No separate tools or contracts. One pixel on your website turns on analytics, heatmaps, recordings, experiments, popups, push and webchat together.
+
+ How is this different from just installing Hotjar or VWO? 
+ Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your WhatsApp, scheme and billing modules already use, not a separate export you have to reconcile.
 
  Related: Optimize · Jewellery website builder · Ads for jewellers · Ads Manager 
 
@@ -25418,6 +26102,9 @@ JEWELLERY WEBSITE ANALYTICS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI voice in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: How can jewellers see what visitors do on their website?
+A: Website analytics for jewellery stores: visitor tracking, funnels, heatmaps and session recordings, A/B tests, pop-ups and lead forms, and web push, so you see why visitors leave and catch the next one. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+
 Q: Why do visitors leave my jewellery website?
 A: Usually no clear price, slow pages or no quick way to ask. Heatmaps and recordings show where they stopped; a chat or a form gives them a way to ask.
 
@@ -25429,6 +26116,15 @@ A: Visitor tracking shows sources, returning visitors and locations. A visitor b
 
 Q: Do I still need Google Analytics?
 A: You can keep it; it connects. Optimize adds the recordings, heatmaps, tests and forms beside your customer records.
+
+Q: What is Optimize?
+A: The toolkit that shows you why a website visitor left without buying, and helps you catch the next one before they do: visitor analytics, heatmaps, session recordings, A/B experiments, personalization rules, popups and lead forms, web push, and an AI webchat widget, in the trade, this category is called "CRO" (conversion-rate optimization). It’s the class of stack you’d otherwise stitch together from Hotjar, VWO and OneSignal.
+
+Q: Do I need to install anything extra?
+A: No separate tools or contracts. One pixel on your website turns on analytics, heatmaps, recordings, experiments, popups, push and webchat together.
+
+Q: How is this different from just installing Hotjar or VWO?
+A: Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your WhatsApp, scheme and billing modules already use, not a separate export you have to reconcile.
 
 ---
 

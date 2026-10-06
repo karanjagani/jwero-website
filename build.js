@@ -109,11 +109,11 @@ const NAV = [
         ['/products/hr-payroll', 'HR & Payroll', 'Attendance, leave, onboarding'],
         ['/products/repairs-service', 'Repairs & After-Sales', 'Custody chain for every repair'],
         ['/products/purchase-vendors', 'Purchase & Vendors', 'POs, GRN, vendor portal'],
-        ['/products/training-lms', 'Training & LMS', 'Courses, tests, certificates'],
+        ['/products/training-lms', 'Training & LMS', 'Courses and certificates'],
       ]},
       { title: 'Grow', items: [
         ['/products/gold-schemes', 'Gold Savings Schemes', 'Enrolment to maturity'],
-        ['/products/digital-gold', 'Digital Gold', 'Buy gold in grams'],
+        ['/products/digital-gold', 'Digital Gold', 'Gold savings plans'],
         ['/products/girvi', 'Girvi / Gold Loans', 'Pledge, interest, release'],
         ['/products/loyalty', 'Loyalty & Referrals', 'Tiers, rules, redemptions'],
         ['/products/segmentation', 'Customer Segmentation', 'Rule-based audiences'],
@@ -407,6 +407,11 @@ function inShortQuestion(page) {
 }
 // Hub and pain pages answer their own question in one paragraph.
 const HUB_SHORT = {
+  tools: { q: 'Which free calculators does Jwero offer jewellers?', a: 'Four, free and without sign-up: a dead stock calculator for what idle inventory costs each month, a gold scheme calculator for what scheme enrolment is worth, a WhatsApp revenue estimator for what slow replies cost, and a gold-loss calculator for what unexplained production loss is worth. Each shows its assumptions.' },
+  'tools/dead-stock-calculator': { q: 'How do I calculate the cost of dead stock in a jewellery shop?', a: 'Take the value of stock that has not sold in your chosen period, at today’s metal rate, and add what it costs you to hold it: the interest on the money tied up, plus any loss when it is finally discounted or melted. The calculator works this out from your own figures.' },
+  'tools/gold-loss-calculator': { q: 'How do I calculate gold loss in jewellery manufacturing?', a: 'Compare the metal issued to each stage with the metal returned, subtract the loss your norm allows, and value what is left at today’s rate. The calculator shows what unexplained loss is worth over a month and a year from your own figures.' },
+  'tools/gold-scheme-calculator': { q: 'How do I work out what a gold savings scheme is worth to my shop?', a: 'Multiply the customers who join by their monthly instalment and the scheme length, then account for the bonus month you give and how many complete. The calculator turns your enrolment numbers into the future sales a scheme locks in.' },
+  'tools/whatsapp-revenue-estimator': { q: 'How much revenue do jewellers lose to slow WhatsApp replies?', a: 'It depends on how many enquiries you get, how many go unanswered or are answered late, and how many of those would have bought. The estimator works it out from your own numbers and shows each assumption.' },
   'jewellery-software-india': { q: 'Which jewellery software do Indian jewellers use?', a: 'Jewellers across India, from Surat diamond offices to Thrissur gold showrooms, run Jwero for billing at the live rate, stock, customers, karigar accounts, schemes and WhatsApp on one record. It is set up in a day over chat and video in any city, at the same price everywhere: ₹18,000 a month, first month ₹3,600.' },
   platform: { q: 'What is the Jwero platform?', a: 'Jwero is one system for a jewellery business: customers, counter, stock, purchase, workshop, books and team on one record, with AI agents that draft the routine work for a person to approve. It connects to Tally, Shopify, marketplaces and Meta, prices every piece from the live gold rate, and is set up in a day.' },
   roles: { q: 'How does Jwero help each person in a jewellery business?', a: 'Every role works on the same customer and stock record: the owner sees the whole business, the counter bills at the live rate, sales staff know each customer before they speak, and the workshop, purchase and accounts teams stop re-entering the same data. AI drafts routine work and a person approves it.' },
@@ -873,6 +878,7 @@ function layout(page) {
     });
   }
   if (page.breadcrumbs) schemas.push(require('./lib').breadcrumbSchema(page.breadcrumbs, SITE));
+  if (/^tools\/./.test(page.slug || '')) schemas.push({ '@context': 'https://schema.org', '@type': 'WebApplication', name: (page.title || '').split('|')[0].trim(), url: SITE + '/' + page.slug, applicationCategory: 'BusinessApplication', operatingSystem: 'Web', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' }, description: page.description });
   if (!page.schema && (/^solutions\/(?!pain)/.test(page.slug || '') || /^roles\/(owner|chain-owner|franchise-partner)$/.test(page.slug || '') || /^platform\/(ai-workforce|customer-memory|pricing-engine)$/.test(page.slug || ''))) {
     const seg = page.slug.startsWith('roles/') ? ROLES[page.slug.split('/')[1]] : page.slug.startsWith('platform/') ? { usecases: PLATFORM_UC[page.slug.split('/')[1]] } : SEGMENTS[page.slug.split('/')[1]];
     page.schema = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: (page.title || '').split(/[:|]/)[0].trim(), applicationCategory: 'BusinessApplication', operatingSystem: 'Web', description: page.description, url: SITE + '/' + page.slug, isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: SITE },
