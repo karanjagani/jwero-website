@@ -1021,6 +1021,7 @@ const success = {
   body: `
 ${innerHero('Success stories', 'Don’t take our word for it.', 'Not “the customer implemented a CRM”. What was happening, what Jwero took responsibility for, and what changed.', ['/customers', 'The jewellers on Jwero'])}
 ${quotes()}
+${L.section(`<div class="gem-head"><h2>Proof you can check.</h2><p>Who uses it, what the product counts, what is published, and how to try it yourself.</p></div>${L.proofGrid()}`)}
 ${proof(false)}
 ${dontKnow()}
 ${nextSteps()}
