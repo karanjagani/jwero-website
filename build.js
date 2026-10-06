@@ -460,8 +460,6 @@ function inShortQuestion(page) {
 }
 // Hub and pain pages answer their own question in one paragraph.
 const HUB_SHORT = {
-  company: { q: 'Who is behind Jwero?', a: 'Jwero is built by Mahendra, Karan and Manav Jagani of Tanika Tech Jewels Private Limited, Mumbai, incorporated in 2016. Mahendra comes from the gems and jewellery trade; Karan runs the business; Manav builds the product.' },
-  partners: { q: 'Who can partner with Jwero?', a: 'ERP and billing software dealers, accountants and consultants who already serve jewellers. Jwero works alongside the ledger they support, so the client stays theirs.' },
   tools: { q: 'Which free calculators does Jwero offer jewellers?', a: 'Four, free and without sign-up: a dead stock calculator for what idle inventory costs each month, a gold scheme calculator for what scheme enrolment is worth, a WhatsApp revenue estimator for what slow replies cost, and a gold-loss calculator for what unexplained production loss is worth. Each shows its assumptions.' },
   'tools/dead-stock-calculator': { q: 'How do I calculate the cost of dead stock in a jewellery shop?', a: 'Take the value of stock that has not sold in your chosen period, at today’s metal rate, and add what it costs you to hold it: the interest on the money tied up, plus any loss when it is finally discounted or melted. The calculator works this out from your own figures.' },
   'tools/gold-loss-calculator': { q: 'How do I calculate gold loss in jewellery manufacturing?', a: 'Compare the metal issued to each stage with the metal returned, subtract the loss your norm allows, and value what is left at today’s rate. The calculator shows what unexplained loss is worth over a month and a year from your own figures.' },
@@ -972,6 +970,8 @@ function withIcpHome(html, slug) {
     if (!keep.has(k)) html = html.slice(0, a) + html.slice(b);
     else if (k === iFaq) { const end = t.lastIndexOf('</div>', t.lastIndexOf('</section>')); const dl = t.lastIndexOf('</details>') + 10; const t2 = t.slice(0, dl) + moreQ + t.slice(dl); const end2 = t2.lastIndexOf('</div>', t2.lastIndexOf('</section>')); html = html.slice(0, a) + t2.slice(0, end2) + extra + t2.slice(end2) + html.slice(b); }
   }
+  // the opening answer as one compact line: the top panel already says it at length
+  html = html.replace(/<section class="in-short"[^>]*>\s*<div class="container">\s*<p class="in-short-tag">In short<\/p>\s*<h2 id="in-short-q">([\s\S]*?)<\/h2>\s*<p>([\s\S]*?)<\/p>\s*<\/div>\s*<\/section>/, (m0, q, ans) => `<div class="in-short-line"><div class="container"><p><b id="in-short-q">${q}</b> ${ans}</p></div></div>`);
   return html;
 }
 

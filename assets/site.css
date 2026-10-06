@@ -4048,3 +4048,8 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 
 /* Question chips after the logo strip: their own row, not pulled up over the logos. */
 .pz-logos + .asking { margin-top: 18px; padding-bottom: 18px; }
+
+/* Opening answer as one line on pages whose top panel already says it. */
+.in-short-line { padding: 4px 0 26px; }
+.in-short-line p { max-width: 820px; margin: 0 auto; text-align: center; font-size: .9375rem; line-height: 1.55; color: var(--ink-2); }
+.in-short-line b { color: var(--ink); font-weight: 600; }
