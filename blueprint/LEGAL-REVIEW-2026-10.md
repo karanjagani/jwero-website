@@ -122,3 +122,10 @@ terms, or need to be withdrawn:
 - /blog/branch-stock-transfer-jewellery: inter-state branch transfers taxable as distinct persons.
 - /blog/jewellery-exhibition-stock-control: casual taxable person registration for out-of-state exhibitions.
 - /blog/jewellery-repair-job-slip-tat: uncollected articles (no specific legal claim made; says take advice).
+
+## J. Tier 3 growth articles needing review (added 2026-10-06)
+- /blog/ai-calling-jewellers-scheme-reminders: TRAI commercial communication rules, consent.
+- /blog/jewellery-showroom-footfall-conversion: camera notices, retention, DPDP Act.
+- /blog/silver-jewellery-business-pricing: silver hallmarking stated as voluntary.
+- /blog/lab-grown-diamond-jewellery-selling: disclosure wording, GST on loose lab-grown stones.
+- /blog/jewellery-franchise-control: says royalty tooling availability should be asked; matches the enterprise page's stated gap.

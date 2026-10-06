@@ -187,6 +187,15 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Stock Transfers Between Jewellery Branches: Challans, GST and Control: https://jwero.ai/blog/branch-stock-transfer-jewellery
 - Jewellery Exhibitions: Taking Stock Out and Bringing It Back: https://jwero.ai/blog/jewellery-exhibition-stock-control
 - Custom Jewellery Orders: From Enquiry to Delivery Without Delays: https://jwero.ai/blog/custom-jewellery-order-process
+- Birthday and Anniversary Marketing for Jewellers, Done Automatically: https://jwero.ai/blog/birthday-anniversary-marketing-jewellers
+- Selling Jewellery in Hindi and Regional Languages: Counter, WhatsApp and Calls: https://jwero.ai/blog/selling-jewellery-regional-languages
+- AI Phone Calls for Jewellers: Scheme Reminders, Follow-Ups and Missed Calls: https://jwero.ai/blog/ai-calling-jewellers-scheme-reminders
+- Counting Showroom Footfall and Conversion for Jewellers: https://jwero.ai/blog/jewellery-showroom-footfall-conversion
+- Selling Gold Jewellery Online at the Live Rate: Shopify, WooCommerce and Marketplaces: https://jwero.ai/blog/selling-gold-jewellery-online-live-rate
+- Jewellery Staff Incentives: Setting Targets Salespeople Trust: https://jwero.ai/blog/jewellery-staff-incentives-targets
+- Running a Jewellery Franchise: What the Franchisor Should Control: https://jwero.ai/blog/jewellery-franchise-control
+- Silver Jewellery Business: Pricing, Making, Wastage and Margins: https://jwero.ai/blog/silver-jewellery-business-pricing
+- Lab-Grown Diamonds: Pricing, Disclosure and Selling Them Next to Natural: https://jwero.ai/blog/lab-grown-diamond-jewellery-selling
 - Roles, Everyone Jwero Touches in a Jewellery Business: https://jwero.ai/roles
 - Owner / Proprietor, Run the Shop From a Record You Own: https://jwero.ai/roles/owner
 - Multi-Store & Chain Owner, One System, Every Branch: https://jwero.ai/roles/chain-owner
