@@ -4078,3 +4078,24 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 /* The page's opening answer, first in its questions and open. */
 .faq-item.is-lead { border-color: var(--brand); }
 .faq-item.is-lead > summary { font-weight: 600; }
+
+/* Count your tools: tools grouped by area, each group folds, chips carry a tick. */
+.stackm .stackm-cloud { display: grid; gap: 8px; max-height: none !important; -webkit-mask-image: none !important; mask-image: none !important; }
+.stackm .stackm-more { display: none !important; }
+.stackm-grp { border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+.stackm-grp > summary { display: flex; align-items: center; gap: 10px; padding: 10px 12px; cursor: pointer; list-style: none; }
+.stackm-grp > summary::-webkit-details-marker { display: none; }
+.stackm-grp > summary::after { content: '+'; margin-left: 4px; color: var(--ink-2); font-size: 1rem; line-height: 1; }
+.stackm-grp[open] > summary::after { content: '−'; }
+.stackm-grp-name { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .875rem; color: var(--ink); }
+.stackm-grp-name svg { width: 15px; height: 15px; color: var(--brand); }
+.stackm-grp-n { margin-left: auto; font-size: .75rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.stackm-grp-n b { color: var(--brand); }
+.stackm-grp.has-some { border-color: color-mix(in srgb, var(--brand) 45%, var(--line)); }
+.stackm-grp-all { padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line-2); background: transparent; color: var(--brand); font: inherit; font-size: .6875rem; cursor: pointer; }
+.stackm-grp-all:hover { border-color: var(--brand); }
+.stackm-grp-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 12px 12px; }
+.stackm .stackm-chip { padding-left: 26px; }
+.stackm .stackm-chip::before { content: ''; position: absolute; left: 9px; top: 50%; width: 11px; height: 11px; margin-top: -6px; border: 1.5px solid var(--line-2); border-radius: 3px; background: transparent; }
+.stackm .stackm-chip[aria-pressed="true"]::before { border-color: #fff; background: #fff; -webkit-mask: none; box-shadow: inset 0 0 0 2px var(--brand); }
+.stackm .stackm-chip[aria-pressed="true"]::after { content: ''; position: absolute; left: 12px; top: 50%; width: 4px; height: 7px; margin-top: -5px; border: solid var(--brand); border-width: 0 1.6px 1.6px 0; transform: rotate(45deg); }

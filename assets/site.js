@@ -2502,3 +2502,30 @@ document.addEventListener('click', function (e) {
   }
   root.addEventListener('input', run); root.addEventListener('change', run); run();
 })();
+
+// Count your tools: per-group counts, "Tick all" per group, and open groups that have ticks.
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll('[data-stackm]'), function (root) {
+    var groups = Array.prototype.slice.call(root.querySelectorAll('.stackm-grp')); if (!groups.length) return;
+    function sync() {
+      groups.forEach(function (gEl) {
+        var chips = gEl.querySelectorAll('.stackm-chip'), on = gEl.querySelectorAll('.stackm-chip[aria-pressed="true"]').length;
+        gEl.querySelector('[data-grp-n]').textContent = on;
+        gEl.classList.toggle('has-some', on > 0);
+        gEl.querySelector('[data-grp-all]').textContent = on === chips.length ? 'Clear' : 'Tick all';
+      });
+    }
+    root.addEventListener('click', function (e) {
+      var all = e.target.closest('[data-grp-all]');
+      if (all) {
+        e.preventDefault(); e.stopPropagation();
+        var gEl = all.closest('.stackm-grp'), chips = Array.prototype.slice.call(gEl.querySelectorAll('.stackm-chip'));
+        var full = chips.every(function (c) { return c.getAttribute('aria-pressed') === 'true'; });
+        chips.forEach(function (c) { if ((c.getAttribute('aria-pressed') === 'true') === full) c.click(); });
+        gEl.open = true;
+      }
+      setTimeout(sync, 30);
+    }, true);
+    setTimeout(function () { sync(); groups.forEach(function (gEl) { if (gEl.classList.contains('has-some')) gEl.open = true; }); }, 400);
+  });
+})();
