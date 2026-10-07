@@ -142,66 +142,108 @@ ${L.ctaBand('Message us. Seriously.', 'The best demo of WhatsApp selling is a Wh
 `,
 };
 
+// Instagram & Facebook commerce, rebuilt 2026-10-07. Confirmed by Jwero: story
+// replies, mentions and Messenger in the inbox; payment links inside a DM.
+// Meta lead forms into the inbox not claimed (unconfirmed).
+const IG_FLOW = [
+  ['Reel', 'Your bridal reel gets 60 “price?” comments'],
+  ['Comment to DM', 'Each one gets a DM automatically'],
+  ['AI draft', 'Three pieces from her taste, priced at today’s rate'],
+  ['Approved', 'Your team approves in one tap'],
+  ['Video call', 'She asks to see it on video · booked from the DM'],
+  ['Payment', 'Payment link sent inside the DM · paid'],
+  ['Traced', 'The sale is traced to the reel · loyalty points added'],
+];
+const igFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">INSTAGRAM · DM TO SALE</p>${IG_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${IG_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const IG_CMP = [
+  ['DMs, comments, story replies, mentions, Messenger', 'Across apps and phones', 'Most', 'All in one team inbox'],
+  ['“Price?” comments', 'Missed in the flood', 'Manual', 'Turned into DMs automatically'],
+  ['Replies with prices', 'Typed in, often stale', 'Templates', 'Pieces at today’s rate from your catalogue'],
+  ['Knows the customer', 'No', 'Contact notes', 'Purchases, scheme, taste on one record'],
+  ['Payment', 'Ask for bank transfer', 'Link out', 'Payment link inside the DM'],
+  ['Instagram and Facebook shop', 'Uploaded by hand', 'Separate', 'Catalogue synced automatically'],
+  ['What it sold', 'Guess', 'Response times', 'Sales traced to the post or ad'],
+];
+const igTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Replying from the Instagram app</th><th>A generic social inbox</th><th>Jwero</th></tr></thead><tbody>${IG_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const IG_HOW = [
+  ['Connect your accounts', 'Your existing Instagram professional account and Facebook page, through Meta’s official connection.'],
+  ['Bring everything into one inbox', 'DMs, comments, story replies, mentions and Messenger, shared by your team.'],
+  ['Switch on comment-to-DM', '“Price?” and similar comments get a DM automatically.'],
+  ['Let AI draft, your team approve', 'Replies from the customer record and today’s prices, approved in one tap.'],
+  ['Close in the chat', 'Payment links inside the DM, video calls and visits booked, sales traced to the post.'],
+];
+const igFaqs = [
+  { q: 'How do jewellers turn Instagram DMs into sales?', a: 'Answer every DM and comment fast with real prices, move interested customers to a video call, a visit or a payment link, and follow up the ones who go quiet. Jwero does this from one inbox, with replies drafted from the customer record and today’s rate.' },
+  { q: 'Can Instagram DMs be automated without sounding robotic?', a: 'Yes, when the reply knows the customer. Jwero’s AI drafts from her purchases, scheme and taste, and your team approves each reply until you trust it to send on its own.' },
+  { q: 'Are story replies, mentions and Messenger included?', a: 'Yes. Instagram DMs, comments, story replies and mentions, and Facebook Messenger all land in the same team inbox.' },
+  { q: 'Can a customer pay from an Instagram DM?', a: 'Yes. Send a payment link inside the DM; the payment, the order and the invoice land on the customer’s record.' },
+  { q: 'Can I sell through an Instagram and Facebook shop?', a: 'Yes. Your catalogue syncs to Meta automatically, with prices that follow today’s gold rate.' },
+  { q: 'Do I need a new Instagram account?', a: 'No. Jwero connects to your existing professional account and Facebook page through Meta’s official connection.' },
+  { q: 'Do I need someone dedicated to run this?', a: 'No. AI drafts the first reply and the follow-ups; your team approves in batches. Or let Jwero’s team run it for you.' },
+];
+
 const instagram = {
   slug: 'products/instagram-facebook',
-  title: 'Instagram & Facebook Commerce for Jewellery Business | Jwero',
-  description: 'Turn Instagram DMs and Facebook messages into sales conversations with memory: official APIs, AI-drafted replies with approval, and one inbox for every channel.',
+  title: 'Instagram DM & Facebook Messenger Automation for Jewellers | Jwero',
+  description: 'Instagram and Facebook commerce for jewellers: DMs, comments, story replies, mentions and Messenger in one inbox, price comments turned into DMs, AI replies at today’s rate, and payment links inside the DM.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Instagram & Facebook Commerce', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Official Instagram and Facebook messaging turned into tracked sales conversations, with AI-drafted replies under approval, in one inbox with WhatsApp.',
+    name: 'Jwero Instagram & Facebook Commerce', alternateName: ['Instagram DM automation for jewellers', 'Facebook Messenger for jewellery shops'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Instagram and Facebook commerce for jewellers: DMs, comments, story replies, mentions and Messenger in one team inbox; comments turned into DMs automatically; AI replies from the customer record with prices at today’s rate, approved by your team; payment links inside the DM; catalogue synced to Instagram and Facebook shops; sales traced to posts and ads.',
     url: 'https://jwero.ai/products/instagram-facebook', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to turn Instagram DMs into sales for a jewellery shop', step: IG_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Instagram & Facebook'),
-  faqs: [
-    { q: 'Can Jwero reply to Instagram DMs automatically?', a: 'The AI workforce drafts replies to DMs and comments using the customer’s record and your catalogue; drafts wait for approval until you promote them. Every conversation lands in the same inbox as WhatsApp and web chat.' },
-    { q: 'We get hundreds of "price?" comments. Can Jwero handle them?', a: 'Yes — that exact flood is the point. Price enquiries get a courteous reply that moves the conversation to DM or WhatsApp with a live-price catalogue link, automatically attached to a customer record so the follow-up actually happens.' },
-    { q: 'Do I need a new Instagram account?', a: 'No. Jwero connects to your existing professional account through the official Meta APIs.' },
-    { q: 'Will this feel impersonal compared to how we reply now?', a: 'The AI drafts from the same customer record WhatsApp uses — her taste, her history — and every reply waits for your team’s approval. It should feel more informed, not less personal.' },
-    { q: 'Do I need someone dedicated to run this?', a: 'No — the AI workforce handles first response and routine follow-up. Your team reviews and approves; nobody needs to sit refreshing DMs all day.' },
-  ],
+  faqs: igFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'INSTAGRAM & FACEBOOK',
-  h1: 'The showcase is Instagram. The sale needs a system.',
-  sub: 'Your reels bring the audience; then two hundred "price?" comments die in the DMs. Jwero catches every comment and message, replies with knowledge, and walks each one toward WhatsApp, an appointment, or a sale — with your approval on every word.',
-  primary: { href: '#', label: 'Show me a DM becoming an order', wa: 'instagram' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  eyebrow: 'INSTAGRAM & FACEBOOK COMMERCE',
+  h1: 'Instagram and Facebook DMs into sales: every comment answered, every lead on record.',
+  sub: 'DMs, comments, story replies, mentions and Messenger in one team inbox. “Price?” comments become DMs automatically, replies come with pieces at today’s rate, and customers pay from a link inside the DM.',
+  primary: { href: '#', label: 'Show me my DMs turning into sales', wa: 'instagram' },
 })}
 
-${L.section(
-  `${L.sectionHead('THE PROBLEM WITH PRETTY', 'Likes are not a pipeline.', '')}
-  ${L.cards([
-    { title: 'DMs are a black hole', text: 'Enquiries arrive at all hours, get answered late or never, and vanish when the intern changes.' },
-    { title: 'No memory', text: 'The person asking about that polki set bought bangles from you last year — but Instagram doesn’t know that. Your system should.' },
-    { title: 'No follow-up', text: 'She asked, you answered, she went quiet. In jewellery, the follow-up IS the sale — and nobody follows up on DMs.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE REEL, START TO FINISH', 'From “price?” to paid, inside Instagram.', '')}${igFlow()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('', 'From comment to customer record.', '')}
-  ${L.steps([
-    { title: 'Catch everything', text: 'DMs and comment enquiries from Instagram and Facebook flow into the one inbox, matched to customer records.' },
-    { title: 'Reply with knowledge', text: 'AI drafts answers with real availability and live prices, and offers the next step: catalogue, WhatsApp, appointment.' },
-    { title: 'Never lose the thread', text: 'Every conversation becomes a remembered relationship — followed up, invited to festivals, grown over years.' },
-  ])}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('SIX JOBS, ONE INBOX', 'What Instagram and Facebook commerce has to do for a jeweller.', '')}<div class="wa-jobs">
+  <article><h3>1. Every message caught</h3><p>Instagram DMs, comments, story replies and mentions, and Facebook Messenger, in one inbox your whole team shares.</p><a href="/products/social-media">Social media →</a></article>
+  <article><h3>2. “Price?” answered in seconds</h3><p>Price comments turned into DMs automatically, answered with pieces priced at today’s rate.</p><a href="/products/catalog">Live-rate catalogue →</a></article>
+  <article><h3>3. Replies that know the customer</h3><p>AI drafts from her purchases, scheme and taste; your team approves, any hour, in one tap.</p><a href="/products/crm">Customer record →</a></article>
+  <article><h3>4. Your shop on Instagram and Facebook</h3><p>Your catalogue synced to Meta automatically, with prices that follow the gold rate.</p><a href="/blog/selling-gold-jewellery-online-live-rate">Selling online at the live rate →</a></article>
+  <article><h3>5. From DM to sale</h3><p>A payment link inside the DM, a video call or a visit booked, or a move to WhatsApp. Chats from click-to-WhatsApp ads land in the same inbox.</p><a href="/products/ads-manager">Ads →</a></article>
+  <article><h3>6. Followers become customers</h3><p>Loyalty points for engagement, chats routed to the right branch, an AI call to follow up, and sales traced to the post or ad.</p><a href="/products/loyalty">Loyalty →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What slow replies cost you.', 'Your numbers, not ours.')}<div class="callc" data-igc>
+  <div class="callc-in">
+    <label>DMs and price comments a day<input type="number" inputmode="numeric" data-ig="dm" value="30" min="0"></label>
+    <label>Answered after an hour or more, %<input type="number" inputmode="decimal" data-ig="slow" value="50" min="0" max="100"></label>
+    <label>Of those, who would buy with a fast reply, %<input type="number" inputmode="decimal" data-ig="buy" value="3" min="0" max="100" step="0.5"></label>
+    <label>Average bill, ₹<input type="number" inputmode="numeric" data-ig="bill" value="30000" min="0" step="1000"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Slow replies a month</span><b data-ig-o="slow">0</b></p>
+    <p><span>Sales lost a month</span><b data-ig-o="lost">0</b></p>
+    <p class="callc-save"><span>Revenue lost a month</span><b data-ig-o="rev">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'The Instagram app, a generic social inbox, or Jwero.', '')}${igTable()}`)}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to turn Instagram DMs into sales for a jewellery shop.', 'Five steps.')}${L.steps(IG_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
-  'An Instagram DM and a WhatsApp message from the same person land on the same customer record — no "which channel did she message from" confusion.',
-  'The catalogue an AI drafts into a DM reply is the same live-priced catalogue every other channel sells from.',
+  'A DM, a WhatsApp chat and a counter visit from the same person are one customer record.',
+  'Prices in a DM come from the same catalogue and rate as the counter.',
+  'The sale is traced back to the reel, post or ad that started the conversation.',
 ])}
 
-${L.section(`${L.sectionHead('INSTAGRAM & FACEBOOK QUESTIONS', 'New accounts, personal touch, and who is running it.', '')}${L.faqBlock([
-  { q: 'Do I need a new Instagram account?', a: 'No — Jwero connects to your existing professional account through the official Meta APIs.' },
-  { q: 'Will replies feel impersonal?', a: 'Drafts come from the same customer record WhatsApp uses, and every reply waits for your approval — informed, not robotic.' },
-  { q: 'Do I need someone dedicated to run this?', a: 'No — the AI workforce handles first response and routine follow-up; your team just approves.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="instagram">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Stop losing the DMs you paid for.', 'Your reels already create demand. See how much of it a system with memory can catch.', 'instagram')}
+${L.ctaBand('Stop losing the DMs you paid for.', 'Show us last week’s DMs. We will show how many would have become sales.', 'instagram')}
 `,
 };
 

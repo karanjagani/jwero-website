@@ -1693,6 +1693,10 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - AI captions, hashtags, images and short video for posts and reels; festival content calendar; one composer publishing directly to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business.
 - One inbox for comments and DMs with AI drafts for approval; comments turned into DMs automatically; loyalty points for engagement; reach plus chats, visits and sales traced to posts. Details: ${SITE}/products/social-media
 
+## Instagram and Facebook commerce (facts)
+- Instagram DMs, comments, story replies and mentions, and Facebook Messenger in one team inbox; price comments turned into DMs automatically; AI replies from the customer record with pieces at today's rate, approved by the team.
+- Payment links inside the DM; catalogue synced automatically to Instagram and Facebook shops; chats from click-to-WhatsApp ads in the same inbox; sales traced to posts and ads. Details: ${SITE}/products/instagram-facebook
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.

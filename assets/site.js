@@ -2806,3 +2806,13 @@ document.addEventListener('click', function (e) {
     set('ph', Math.round(ph) + ' hours'); set('rh', Math.round(rh) + ' hours'); set('tot', (Math.round(ph) + Math.round(rh)) + ' hours'); }
   root.addEventListener('input', run); run();
 })();
+
+// Instagram commerce page: what slow replies cost.
+(function () {
+  var root = document.querySelector('[data-igc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-ig="' + k + '"]') || {}).value || 0; };
+  function run() { var slow = v('dm') * 30 * v('slow') / 100, lost = slow * v('buy') / 100, rev = lost * v('bill');
+    var set = function (k, t) { var el = root.querySelector('[data-ig-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('slow', Math.round(slow).toLocaleString('en-IN')); set('lost', Math.round(lost).toLocaleString('en-IN')); set('rev', '\u20b9' + Math.round(rev).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();
