@@ -76,7 +76,8 @@ const NAV = [
     match: ['products'],
     groups: [
       { title: 'Sell', items: [
-        ['/products/whatsapp', 'WhatsApp API & Commerce', 'Official Meta Business Partner'],
+        ['/products/whatsapp', 'WhatsApp Commerce & API', 'Sell and get paid in the chat'],
+        ['/whatsapp-broadcast-for-jewellers', 'WhatsApp Marketing', 'Broadcasts, campaigns, triggers'],
         ['/products/instagram-facebook', 'Instagram & Facebook', 'DMs into sales, one inbox'],
         ['/products/ai-sales-agents', 'AI Sales Agents & Voice', 'Replies and follow-up, governed'],
         ['/products/storefront', 'Ecommerce Website', 'Live-rate jewellery storefront'],
@@ -118,7 +119,7 @@ const NAV = [
         ['/products/loyalty', 'Loyalty & Referrals', 'Tiers, rules, redemptions'],
         ['/products/segmentation', 'Customer Segmentation', 'Rule-based audiences'],
         ['/products/journeys', 'Customer Journeys', 'Approval-gated automation'],
-        ['/products/campaigns', 'Campaigns & Broadcasts', 'WhatsApp, email, SMS, push'],
+        ['/products/campaigns', 'Campaigns', 'WhatsApp, email, SMS, push'],
       ]},
     ],
     footer: ['See all products', '/products'],
@@ -395,6 +396,17 @@ function journeyFix(html, p) {
   {
     const seenQ = new Set(), norm = (q) => q.replace(/<[^>]+>/g, '').toLowerCase().replace(/[^a-z0-9ऀ-ॿ]+/g, ' ').trim();
     html = html.replace(/\s*<details class="faq-item[^"]*"[^>]*>\s*<summary>([\s\S]*?)<\/summary>[\s\S]*?<\/details>/g, (m0, q) => { const k = norm(q); if (!k) return m0; if (seenQ.has(k)) return ''; seenQ.add(k); return m0; });
+  }
+  // WhatsApp articles point to the main page for their topic
+  {
+    const MKT = ['/whatsapp-broadcast-for-jewellers', 'WhatsApp marketing for jewellers', 'broadcasts, festival campaigns and reminders'];
+    const COM = ['/products/whatsapp', 'WhatsApp API for jewellers', 'selling in the chat with catalogue, payments and calls'];
+    const CRM = ['/products/crm', 'Jewellery CRM', 'every WhatsApp chat on the customer record'];
+    const PILLAR = { 'whatsapp-marketing-for-jewellers': MKT, 'akshaya-tritiya-whatsapp-campaigns-for-jewellers': MKT, 'diwali-whatsapp-campaigns-for-jewellers': MKT, 'wedding-season-whatsapp-campaigns-for-jewellers': MKT, 'whatsapp-broadcast-ideas-for-jewellery-stores': MKT, 'whatsapp-templates-for-jewellery-customers': MKT,
+      'whatsapp-business-api-for-jewellers': COM, 'whatsapp-order-management-jewellery': COM, 'jewellery-catalogue-sharing-on-whatsapp': COM, 'blog/whatsapp-for-jewellers-guide': COM,
+      'whatsapp-crm-for-jewellery-stores': CRM, 'whatsapp-crm-for-jewellers-how-to-capture-track-convert-every-chat': CRM };
+    const pl = PILLAR[slug];
+    if (pl) html = html.replace('<div class="post-body">', `<div class="post-body"><p class="post-note"><b>Looking for software for this?</b> See <a href="${pl[0]}">${pl[1]}</a>: ${pl[2]}, from an official Meta Business Partner.</p>`);
   }
   // pages never offer a button back to themselves
   if (slug === 'how-it-works') html = html.replace(/<a class="btn[^"]*" href="\/how-it-works">See how Jwero works<\/a>/g, '');

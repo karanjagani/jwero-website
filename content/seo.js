@@ -439,38 +439,107 @@ const cloud = needPage({
 // ---------------------------------------------------------------- tool landing pages
 // One page for each cluster of tools jewellers search for by name, where the
 // product page covers several at once and cannot rank for each phrase.
-const broadcast = needPage({
+// WhatsApp marketing (address kept as /whatsapp-broadcast-for-jewellers so links hold).
+// One-to-many: broadcasts, campaigns, triggers. One-to-one selling lives on /products/whatsapp.
+const MKT_STEPS = [
+  ['Audience', 'Bridal buyers from 2025 and their families · 1,240 customers'],
+  ['Consent checked', '1,180 agreed to hear from you · 60 skipped'],
+  ['Template approved', 'Akshaya Tritiya: new bridal sets, with catalogue buttons'],
+  ['Scheduled', 'Tomorrow 11 am, outside quiet hours'],
+  ['Sent and read', '1,180 delivered · 1,010 read'],
+  ['Replies to the inbox', '146 replies, each on the customer’s record'],
+  ['Follow-through', 'Unanswered interest gets an AI call at ₹7'],
+  ['Traced to sales', 'Visits booked and bills linked to this send'],
+];
+const mktStory = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">CAMPAIGN · AKSHAYA TRITIYA</p>${MKT_STEPS.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative figures.</p></div>
+  <ol class="wa-steps">${MKT_STEPS.map(([t]) => `<li><b>${t}</b></li>`).join('')}</ol>
+</div>`;
+const MKT_CMP = [
+  ['Official WhatsApp Business Platform', 'No, a paired phone', 'Yes', 'Yes, official Meta Business Partner'],
+  ['Number-ban risk', 'High', 'Low', 'Low: consent, limits and quiet hours built in'],
+  ['Audience', 'The whole contact list', 'Uploaded lists', 'Live segments from purchases, schemes, occasions'],
+  ['Messages with today’s prices', 'No', 'No', 'Catalogue cards priced at today’s rate'],
+  ['Replies', 'One phone', 'An inbox', 'Team inbox, on the customer record'],
+  ['Follow-up for silent customers', 'No', 'Some', 'Automatic, including AI calls at ₹7'],
+  ['Sales traced to the send', 'No', 'Clicks', 'Bills linked to the campaign'],
+];
+const mktTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Unofficial bulk tools</th><th>Generic API tools</th><th>Jwero</th></tr></thead><tbody>${MKT_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const MKT_HOW = [
+  ['Choose who it is for', 'A live segment: scheme members due, bridal buyers, customers quiet for a year, one city.'],
+  ['Write and approve the message', 'Use a ready template or write your own; Meta approves it. Add catalogue cards, buttons or a form.'],
+  ['Pick the time', 'Schedule outside quiet hours. Customers who heard from you recently are skipped.'],
+  ['Send and answer', 'Replies land in the team inbox on each customer’s record, with a priced reply drafted.'],
+  ['Follow up and measure', 'Silent interest gets a follow-up message or AI call; visits and bills are traced to the send.'],
+];
+const mktFaqs = [
+  { q: 'What is WhatsApp marketing for jewellers?', a: 'WhatsApp marketing means sending offers, launches, festival campaigns and reminders to many customers on WhatsApp, from your official business number, to people who agreed to hear from you, and following up the replies. Selling to one customer in a chat is WhatsApp commerce.' },
+  { q: 'What is the difference between WhatsApp marketing and WhatsApp commerce?', a: 'Marketing is one to many: broadcasts, campaigns and reminders. Commerce is one to one: a customer asks, sees pieces at today’s rate and pays in the chat. Jwero does both on the same number and the same customer record.' },
+  { q: 'How do jewellers send WhatsApp broadcasts without getting banned?', a: 'Use the official WhatsApp Business Platform with approved templates, send only to customers who agreed, honour opt-outs at once, limit how often each customer hears from you, and avoid quiet hours. Unofficial bulk tools on a paired phone are what get numbers banned.' },
+  { q: 'How many customers can I broadcast to?', a: 'WhatsApp sets a daily limit per number that rises as your quality rating holds. Sending to people who want the message keeps the rating high and the limit rising.' },
+  { q: 'What does a WhatsApp marketing message cost?', a: 'Meta charges per marketing message; Jwero passes it through at cost from a prepaid wallet, at the rate on the pricing page. Utility messages like order and payment updates cost less, and replies inside a customer’s 24-hour window are not charged.' },
+  { q: 'What should a jeweller send on WhatsApp?', a: 'Festival and launch offers, new collections, scheme reminders, birthday and anniversary greetings, rate alerts on saved pieces, and order, payment and ready-for-collection updates. Send to the customers each message is for, not the whole list.' },
+  { q: 'Can I keep my existing WhatsApp number?', a: 'Yes. Your shop’s number moves onto the official platform, so customers see the same number.' },
+  { q: 'Can marketing messages trigger automatically?', a: 'Yes. Triggers send messages when an order is confirmed, a payment arrives, a piece is ready, a scheme instalment falls due, or a birthday or anniversary approaches.' },
+];
+
+const broadcast = {
   slug: 'whatsapp-broadcast-for-jewellers',
-  title: 'WhatsApp Broadcast for Jewellers: Bulk, Safely | Jwero',
-  description: 'WhatsApp broadcast software for jewellers on the official Business API: approved templates, consent and opt-outs handled, audiences from your own customer segments, and sales traced to each send.',
-  eyebrow: 'WhatsApp broadcast for jewellers',
-  h1: 'WhatsApp broadcasts for jewellers, on the official API.',
-  sub: 'Send a festival offer, a rate alert or a new collection to the right customers, from your own number, without the bulk tools that get numbers banned.',
-  wa: 'broadcast',
-  intro: ['A broadcast that is safe, targeted and measured.', 'Who it goes to matters more than how many.'],
-  cards: [
-    { icon: 'chat', title: 'Official Business API', text: 'Sent from your own verified number through Meta’s business interfaces, with approved templates.', link: { href: '/products/whatsapp', label: 'WhatsApp' } },
-    { icon: 'shield', title: 'Consent and opt-outs', text: 'Anyone who opted out is skipped, and the reason is shown, not hidden.' },
-    { icon: 'users', title: 'Audiences from your records', text: 'Scheme members, bridal buyers, customers quiet for a year: built from live segments.', link: { href: '/products/segmentation', label: 'Segmentation' } },
-    { icon: 'megaphone', title: 'One send, four channels', text: 'WhatsApp, email, SMS and push from the same campaign.', link: { href: '/products/campaigns', label: 'Campaigns' } },
-    { icon: 'pie', title: 'What it sold', text: 'Each campaign is traced through to the bills it produced.' },
-    { icon: 'check', title: 'Replies land in one inbox', text: 'A reply to a broadcast arrives on the customer’s record, with a priced answer drafted.' },
-  ],
-  rows: [
-    { lever: 'SENDING', before: 'A bulk tool paired to a personal number, one report away from a ban.', after: 'Approved templates on the official API.' },
-    { lever: 'AUDIENCE', before: 'The whole contact list, every time.', after: 'The customers the message is actually for.' },
-    { lever: 'REPLIES', before: 'Two hundred replies on one phone, answered by whoever is free.', after: 'A shared inbox, each reply on the customer’s record.' },
-    { lever: 'RESULT', before: 'Blue ticks, and a guess.', after: 'Sales traced to the send.' },
-  ],
-  notYet: 'Meta charges for each marketing message, at the published rate on the pricing page. Jwero does not send to contacts who have not agreed to hear from you.',
-  faqs: [
-    { q: 'How do jewellers send WhatsApp broadcasts without getting banned?', a: 'Use the official WhatsApp Business API with approved templates, send only to customers who agreed, and honour opt-outs at once. Bulk tools that pair with a personal number break WhatsApp’s rules and are the usual cause of bans.' },
-    { q: 'How many customers can I broadcast to?', a: 'WhatsApp sets a daily limit per number that rises as your quality rating holds. Sending to people who want the message keeps the rating high.' },
-    { q: 'What does a WhatsApp broadcast cost?', a: 'Meta charges per marketing message; Jwero’s rate card on the pricing page shows the current price. The plan fee itself is ₹18,000 a month for every module.' },
-    { q: 'Can I keep my existing WhatsApp number?', a: 'Yes. Your shop’s number is moved onto the official API, so customers see the same number.' },
-  ],
-  links: [['/products/whatsapp', 'WhatsApp API for jewellers'], ['/products/campaigns', 'Campaigns'], ['/blog/whatsapp-for-jewellers-guide', 'WhatsApp for jewellers guide'], ['/blog/whatsapp-business-api-pricing', 'WhatsApp API pricing']],
-});
+  title: 'WhatsApp Marketing for Jewellers: Broadcasts, Campaigns | Jwero',
+  description: 'WhatsApp marketing for jewellers from an official Meta Business Partner: broadcasts and festival campaigns to live segments, triggers, approved templates, number health, replies in one inbox and sales traced to each send.',
+  breadcrumbs: [['Home', '/'], ['Jewellery software in India', '/jewellery-software-india'], ['WhatsApp marketing for jewellers']],
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Jwero WhatsApp Marketing for Jewellers', alternateName: ['WhatsApp broadcast software for jewellers', 'WhatsApp campaigns for jewellery stores'],
+    applicationCategory: 'BusinessApplication', operatingSystem: 'Web', url: 'https://jwero.ai/whatsapp-broadcast-for-jewellers',
+    description: 'WhatsApp marketing for jewellers on the official WhatsApp Business Platform: broadcasts and campaigns to live customer segments, triggered messages, approved templates with catalogue cards, consent and number health, a team inbox for replies, AI-call follow-up and sales traced to each send.',
+    isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month; Meta message fees at cost.' },
+  },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to run a WhatsApp marketing campaign for a jewellery shop', step: MKT_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  faqs: mktFaqs,
+  body: `
+${L.hero({ eyebrow: 'WHATSAPP MARKETING · OFFICIAL META BUSINESS PARTNER', h1: 'WhatsApp marketing for jewellers: broadcasts and campaigns that sell, without risking your number.', sub: 'Festival offers, new collections, scheme reminders and occasion greetings, sent from your official number to the customers each message is for. Replies land in one inbox, silent interest gets followed up, and every sale is traced to the send.', primary: { href: '#', label: 'Plan my next campaign with us', wa: 'broadcast' } })}
+
+${L.section(`<div class="which-page"><p><b>Reaching many customers?</b> You are on the right page: WhatsApp marketing.</p><p><b>Selling to one customer in a chat,</b> with catalogue, payment and calls? <a href="/products/whatsapp">See WhatsApp commerce and API →</a></p></div>`)}
+
+${L.section(`${L.sectionHead('ONE CAMPAIGN, START TO FINISH', 'From an audience to a bill.', '')}${mktStory()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, ONE NUMBER', 'What WhatsApp marketing for a jewellery shop has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. The right audience</h3><p>Live segments from your records: scheme members due, bridal buyers and their families, customers quiet for a year, one city or one branch.</p><a href="/products/segmentation">Segments →</a></article>
+  <article><h3>2. Festival and occasion campaigns</h3><p>Akshaya Tritiya, Dhanteras, Diwali, wedding season, launches, plus birthdays and anniversaries that send themselves before the date.</p><a href="/products/campaigns">Campaigns →</a></article>
+  <article><h3>3. Triggers and notifications</h3><p>Order confirmed, payment received, piece or repair ready, scheme instalment due, a rate drop on a saved piece: sent the moment it happens.</p><a href="/products/journeys">Journeys →</a></article>
+  <article><h3>4. Messages that sell</h3><p>Approved templates with catalogue cards priced at today’s rate, buttons, and WhatsApp forms for visits and scheme enrolment.</p><a href="/whatsapp-templates-for-jewellery-customers">50 templates →</a></article>
+  <article><h3>5. Your number kept healthy</h3><p>Consent recorded, opt-outs honoured at once, limits on how often each customer hears from you, and quiet hours.</p><a href="/blog/whatsapp-business-api-pricing">How WhatsApp pricing works →</a></article>
+  <article><h3>6. Replies, follow-up and results</h3><p>Replies in a team inbox with a priced answer drafted, silent interest followed up by message or an AI call at ₹7, and bills traced to each send.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What one campaign can return.', 'Your numbers, not ours.')}<div class="callc" data-mktc>
+  <div class="callc-in">
+    <label>Customers messaged<input type="number" inputmode="numeric" data-mc="sent" value="1000" min="0"></label>
+    <label>Cost per marketing message, ₹<input type="number" inputmode="decimal" data-mc="cost" value="1.05" min="0" step="0.05"></label>
+    <label>Who reply or show interest, %<input type="number" inputmode="decimal" data-mc="reply" value="10" min="0" max="100"></label>
+    <label>Interested who buy, %<input type="number" inputmode="decimal" data-mc="buy" value="15" min="0" max="100"></label>
+    <label>Average bill, ₹<input type="number" inputmode="numeric" data-mc="bill" value="40000" min="0" step="1000"></label>
+    <label>Your margin, %<input type="number" inputmode="decimal" data-mc="margin" value="12" min="0" max="100"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Campaign cost</span><b data-mc-o="cost">₹0</b></p>
+    <p><span>Customers who buy</span><b data-mc-o="buyers">0</b></p>
+    <p><span>Sales from the campaign</span><b data-mc-o="sales">₹0</b></p>
+    <p class="callc-save"><span>Margin after the cost</span><b data-mc-o="net">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs, not a promise. The message cost defaults to the marketing rate on the pricing page.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'Bulk tools, generic API tools, or Jwero.', '')}${mktTable()}`)}
+
+${L.section(`${L.sectionHead('YOUR FESTIVAL CALENDAR', 'Campaign guides for the year’s biggest moments.', '')}<div class="erp-map">${[['/akshaya-tritiya-whatsapp-campaigns-for-jewellers', 'Akshaya Tritiya campaigns'], ['/diwali-whatsapp-campaigns-for-jewellers', 'Diwali campaigns'], ['/wedding-season-whatsapp-campaigns-for-jewellers', 'Wedding season campaigns'], ['/whatsapp-broadcast-ideas-for-jewellery-stores', 'Broadcast ideas'], ['/whatsapp-marketing-for-jewellers', 'WhatsApp marketing guide'], ['/blog/birthday-anniversary-marketing-jewellers', 'Birthday and anniversary marketing']].map(([h, t]) => `<a href="${h}"><b>${t}</b><span>Guide</span></a>`).join('')}</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('HOW TO RUN A CAMPAIGN', 'How to run a WhatsApp marketing campaign for a jewellery shop.', 'Five steps.')}${L.steps(MKT_HOW.map(([title, text]) => ({ title, text })))}`)}
+
+${L.ctaBand('Plan your next campaign with us.', 'Tell us the occasion and who it is for. We will show the segment, the message and the follow-up in Jwero.', 'broadcast')}
+`,
+};
 
 const instagram = needPage({
   slug: 'instagram-for-jewellers',

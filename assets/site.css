@@ -4349,3 +4349,12 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .pf-price b { color: var(--brand); font-size: .95rem; } .pf-live b { color: #067647; }
 @media (max-width: 860px) { .p2p { grid-template-columns: 1fr; } .p2p .wa-steps { display: none; } .p2p-card { max-width: 380px; margin: 0 auto; } }
 @media (prefers-reduced-motion: reduce) { .p2p-f { opacity: 1; transform: none; transition: none; } }
+
+/* Which WhatsApp page you need */
+.which-page { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.which-page p { margin: 0; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); font-size: .9rem; }
+.which-page p:first-child { border-color: var(--brand); }
+.mkt-card { padding: 16px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); box-shadow: 0 16px 40px rgba(0, 18, 185, .1); display: grid; gap: 6px; }
+.mkt-row { max-width: none !important; background: var(--bg, #fff) !important; border: 1px solid var(--line); color: var(--ink) !important; }
+.mkt-row small { color: var(--brand) !important; }
+@media (max-width: 640px) { .which-page { grid-template-columns: 1fr; } }

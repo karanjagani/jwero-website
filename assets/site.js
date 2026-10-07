@@ -2686,3 +2686,16 @@ document.addEventListener('click', function (e) {
   }
   root.addEventListener('input', run); run();
 })();
+
+// WhatsApp marketing page: what one campaign can return.
+(function () {
+  var root = document.querySelector('[data-mktc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-mc="' + k + '"]') || {}).value || 0; };
+  var inr = function (n) { return '\u20b9' + Math.round(n).toLocaleString('en-IN'); };
+  function run() {
+    var cost = v('sent') * v('cost'), buyers = v('sent') * v('reply') / 100 * v('buy') / 100, sales = buyers * v('bill'), net = sales * v('margin') / 100 - cost;
+    var set = function (k, t) { var el = root.querySelector('[data-mc-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('cost', inr(cost)); set('buyers', Math.round(buyers).toLocaleString('en-IN')); set('sales', inr(sales)); set('net', inr(net));
+  }
+  root.addEventListener('input', run); run();
+})();

@@ -87,6 +87,8 @@ ${L.hero({
   mock: L.mockChatCatalog,
 })}
 
+${L.section(`<div class="which-page"><p><b>Selling to one customer in a chat?</b> You are on the right page: WhatsApp commerce and API.</p><p><b>Reaching many customers</b> with broadcasts, festival campaigns and reminders? <a href="/whatsapp-broadcast-for-jewellers">See WhatsApp marketing →</a></p></div>`)}
+
 ${L.section(
   `${L.sectionHead('THE LEAK YOU CANNOT SEE', 'Every unanswered enquiry buys from someone else.', '')}
   ${L.cards([
