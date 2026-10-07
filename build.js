@@ -1643,6 +1643,11 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Instalments collected automatically; failed payments followed up by WhatsApp reminder, payment link and AI call; passbook on WhatsApp; OTP-verified closure redeemed into a purchase; old gold into a scheme.
 - Scheme money held as a liability until redemption; INR 4 per instalment collected. Gold Savings Plans are part of this module. Details: ${SITE}/products/gold-schemes
 
+## Jewellery ERP (facts)
+- One system for every department: counter billing at today's rate, piece-level stock with fine weight and HUID, purchase and vendors (orders, goods received with checks, bills, returns, vendor ledgers), custom orders, repairs and karigar job work.
+- Material planning and manufacturing: bills of materials, routings, material planning, work in progress, wastage against norms, finished goods, fine-weight metal ledger and metal loans. Girvi: pledges, interest, renewals, release, auction notices.
+- Accounts: double-entry ledger with GST, GSTR-1, GSTR-3B and HSN reports, TDS, party ledgers; e-invoices are generated in Tally through the bridge. People: attendance, payroll, incentives, Form 16. Many branches and franchises, approvals and an audit trail. Details: ${SITE}/products/erp
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -1652,7 +1657,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant. Jwero does not file GST returns.
 - Counter POS (registers, shifts, cash day-close, returns, old-gold exchange), statutory payroll, karigar
   settlement, girvi/gold loans, manufacturing (BOM, routing, wastage norms) and a video counter shipped in 2026.
-- E-invoice IRN, auto-debit mandates, a full vernacular product interface (an early Hindi pilot is live on
+- E-invoice IRN (e-invoices are generated in Tally through the bridge), auto-debit for girvi interest, a full vernacular product interface (an early Hindi pilot is live on
   karigar screens), and predictive ML forecasting are on the public roadmap, not shipped today:
   ${SITE}/roadmap
 

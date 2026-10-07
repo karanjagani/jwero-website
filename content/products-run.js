@@ -417,69 +417,104 @@ ${L.ctaBand('See invoicing at today’s rate.', 'Change the rate live in a demo 
 `,
 };
 
+// The ERP page, rebuilt 2026-10-07 as the umbrella for every department page.
+// E-invoices are generated in Tally through the bridge (confirmed by Jwero);
+// material planning and manufacturing are shipped.
+const FLOW = [
+  ['Counter', 'Bridal necklace ordered · advance ₹50,000 taken', '/products/pos'],
+  ['Purchase', 'Rubies ordered from the vendor · received and checked', '/products/purchase-vendors'],
+  ['Planning', 'Material needs worked out from the design · 24K issued as 22K', '/products/manufacturing'],
+  ['Workshop', 'Issued to karigar Ramesh · 62.4 g fine · wastage against norm', '/products/manufacturing'],
+  ['Stock', 'Finished, tagged and hallmarked · HUID recorded', '/products/inventory'],
+  ['Counter', 'Billed with old gold deducted · balance paid', '/products/pos'],
+  ['Accounts', 'Posted to the ledger and GST · sent to Tally', '/products/billing-finance'],
+  ['People', 'Salesperson’s incentive credited', '/products/hr-payroll'],
+];
+const erpFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">ORDER 2231 · ONE RECORD</p>${FLOW.map(([d, t], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${d}</small>${t}</p>`).join('')}</div>
+  <ol class="wa-steps">${FLOW.map(([d, t]) => `<li><b>${d}</b><span>${t.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const ERP_CMP = [
+  ['Counter billing at today’s rate', 'Add-on', 'Yes', 'Yes'],
+  ['Stock by piece, fine weight and HUID', 'No', 'Yes', 'Yes'],
+  ['Purchase, goods received and quality checks', 'Basic', 'Yes', 'Yes'],
+  ['Material planning, BOM, karigar job work, wastage', 'No', 'Varies', 'Yes, with the metal ledger'],
+  ['Girvi and metal loans', 'No', 'Some', 'Yes'],
+  ['Payroll, attendance and incentives', 'Separate', 'Rarely', 'Yes'],
+  ['Customer record, WhatsApp and AI calls', 'No', 'No', 'Yes, same record'],
+  ['Works on any device, many branches', 'Desktop', 'Desktop or server', 'Online, every branch, keeps billing offline'],
+  ['GST returns and e-invoices', 'Yes', 'Yes', 'GST reports in Jwero; e-invoices through Tally'],
+];
+const erpTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Tally plus add-ons</th><th>Desktop jewellery ERP</th><th>Jwero</th></tr></thead><tbody>${ERP_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>
+<p class="cta-note" style="margin-top:12px">Desktop ERPs vary. See <a href="/compare/jwero-vs-ornate-nx">Jwero vs Ornate NX</a>, <a href="/compare/jwero-vs-jewelacc">JewelAcc</a>, <a href="/compare/jwero-vs-marg">Marg</a>, <a href="/compare/jwero-vs-sioniq">SIONIQ</a> and <a href="/compare/jwero-vs-synergics">Synergics</a>.</p>`;
+const ERP_MOVE = [
+  ['Bring your masters', 'Stock, customers, vendors, karigars and opening balances from your current ERP or Tally.'],
+  ['Map your way of working', 'Rates, making rules, branches, approval rules and who can do what.'],
+  ['Run both in parallel', 'Bill and record in Jwero while the old system runs, until daily totals match.'],
+  ['Reconcile the cut-over', 'Stock, metal and money balances matched on the switch date, differences listed and cleared.'],
+  ['Switch off the old system', 'Your books carry on in Jwero’s ledger or through the Tally bridge.'],
+];
+const erpFaqs = [
+  { q: 'What is jewellery ERP software?', a: 'Jewellery ERP software runs the whole jewellery business on one system: counter billing at today’s rate, stock by piece and fine weight, purchase, material planning, manufacturing and karigar job work, girvi, accounts and GST, payroll and every branch, on the same records.' },
+  { q: 'What is the best ERP for jewellers?', a: 'One that is built for jewellery (weight, purity, fine metal, HUID, making and wastage), covers every department on one record, works across branches and devices, keeps billing offline, and connects to your customers on WhatsApp. Compare a few on your own data before you choose.' },
+  { q: 'Can a jewellery ERP replace Tally?', a: 'Jwero keeps its own double-entry ledger with GST, so many shops run their books in Jwero. Others keep Tally for their CA and send entries through the bridge; e-invoices are generated in Tally that way.' },
+  { q: 'Does Jwero handle manufacturing and material planning?', a: 'Yes. Bills of materials, routings, material planning, work in progress, karigar job work with wastage norms, finished-goods receipts, and a fine-weight metal ledger with metal loans.' },
+  { q: 'Does it handle girvi?', a: 'Yes. Pledges, interest, renewals, part payments, release and auction notices are part of Jwero, on the same customer record.' },
+  { q: 'How do I switch ERP mid-year?', a: 'Import your masters and opening balances, run Jwero alongside the old system until totals match, reconcile stock, metal and money on the switch date, then switch off the old system. We do it with you.' },
+  { q: 'Will switching disrupt operations mid-order?', a: 'No. Open orders, job work and balances are brought across, and both systems run in parallel until you are ready.' },
+  { q: 'Our process is unusual. Can it be configured?', a: 'Yes. Approval rules, roles, branches, making and wastage rules and custom fields are set to how you work.' },
+  { q: 'Does Jwero generate e-invoices?', a: 'E-invoices are generated in Tally: Jwero raises the bill and sends it through the Tally bridge. GST reports such as GSTR-1, GSTR-3B and the HSN summary are prepared in Jwero.' },
+];
+
 const erp = {
   slug: 'products/erp',
-  title: 'Jewellery ERP Software: Orders, Purchase, Repairs, Job Work | Jwero',
-  description: 'Jewellery ERP software: orders, purchases and vendors, repairs and manufacturing job-work — jewellery-native, sharing one customer record.',
+  title: 'Jewellery ERP Software: One System for the Whole Business | Jwero',
+  description: 'Jewellery ERP software: counter, stock, purchase, material planning, manufacturing, girvi, accounts, GST, payroll and branches on one record, with WhatsApp and customers built in.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero ERP', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Jewellery-native operations: orders, purchases and vendors, repairs and manufacturing job-work, sharing one customer and catalogue record with the rest of Jwero.',
+    name: 'Jwero Jewellery ERP', alternateName: ['ERP for jewellers', 'Jewellery ERP software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'A jewellery ERP covering counter billing, piece-level stock with fine weight and HUID, purchase and vendors, material planning, BOM and karigar job work, fine-weight metal ledger and metal loans, girvi, accounts and GST with a Tally bridge, payroll and incentives, multi-branch and franchise, approvals and an audit trail.',
     url: 'https://jwero.ai/products/erp', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
-  breadcrumbs: BC('ERP, reconsidered'),
-  faqs: [
-    { q: 'Is Jwero a full ERP replacement?', a: 'For operations, yes; for statutory accounting, no. Jwero runs the operational backbone — orders, purchases, repairs, manufacturing job-work — and shares that data with the customer and catalogue layer, which a standalone ERP never does. Statutory accounting stays in Tally or Zoho Books via built-in bridges.' },
-    { q: 'What’s different about a jewellery-native ERP?', a: 'Purity, HUID, live gold-rate pricing, karigar job-work and gold-loss tracking are built in as first-class concepts, not bolted-on custom fields.' },
-    { q: 'Will switching disrupt operations mid-order?', a: 'Open orders, repairs and purchase records import alongside customers and catalogue during onboarding — nothing in progress gets orphaned by a switch.' },
-    { q: 'Our process is unusual — can it be configured to match?', a: 'Custom fields and price/approval rules exist for exactly this. We’ll also tell you plainly what isn’t configurable on a demo, before you commit.' },
-  ],
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to switch your jewellery ERP mid-year', step: ERP_MOVE.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Jewellery ERP'),
+  faqs: erpFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'ERP, RECONSIDERED',
-  h1: 'Orders, purchases, repairs and job-work on the same record as the customer.',
-  sub: 'A jewellery ERP usually means another silo: orders here, customers there, catalogue somewhere else. Jwero runs orders, purchases, repairs and manufacturing on the same record as the customer and the catalogue — because an operating system doesn’t get to have blind spots.',
-  primary: { href: '#', label: 'Show me an order becoming a job', wa: 'erp' },
-  secondary: { href: '/platform', label: 'See the full platform' },
+  eyebrow: 'JEWELLERY ERP · ERP FOR JEWELLERS',
+  h1: 'Jewellery ERP software: counter, stock, purchase, manufacturing, girvi, accounts and people on one record.',
+  sub: 'One system for every department, built for weight, purity, fine metal and HUID. A sale at the counter, a karigar’s wastage, a girvi renewal and a salesperson’s incentive all land on the same records, across every branch, with your customers and WhatsApp built in.',
+  primary: { href: '#', label: 'Show me one order through every department', wa: 'erp' },
 })}
 
-${L.section(
-  `${L.cards([
-    { title: 'Orders', text: 'Retail, B2B or custom — tracked from advance to delivery.', link: { href: '/products/inventory', label: 'See inventory' } },
-    { title: 'Purchases & vendors', text: 'Purchase-to-pay with GRN weigh-and-assay — what you ordered, received and owe, reconciled.', link: { href: '/products/purchase-vendors', label: 'See purchase & vendors' } },
-    { title: 'Repairs', text: 'Every repair tracked from intake to re-hallmark to return, with the hallmark gate enforced.', link: { href: '/products/repairs-service', label: 'See repairs & after-sales' } },
-    { title: 'Manufacturing', text: 'Work-in-progress, stage tracking and a gold-loss ledger — see where every gram goes.', link: { href: '/solutions/manufacturers', label: 'For manufacturers' } },
-  ], 4)}`
-)}
+${L.section(`${L.sectionHead('ONE ORDER, EVERY DEPARTMENT', 'Follow a bridal order through the whole business.', '')}${erpFlow()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('ONE SYSTEM, EVERY DEPARTMENT', 'What jewellery ERP software has to cover.', '')}<div class="wa-jobs">
+  <article><h3>1. Counter and billing</h3><p>Price at today’s rate, scan tags, old gold exchange, HUID check, split payments, returns and cash day-close.</p><a href="/products/pos">Jewellery billing software →</a></article>
+  <article><h3>2. Stock and hallmarking</h3><p>Every piece with gross, net and fine weight, stones and HUID; valuation at today’s rate, ageing, cycle counts, memos and transfers.</p><a href="/products/inventory">Jewellery inventory software →</a></article>
+  <article><h3>3. Purchase and vendors</h3><p>Purchase orders, goods received with quality checks, purchase bills and returns, vendor credits and advances, and party ledgers.</p><a href="/products/purchase-vendors">Purchase and vendors →</a></article>
+  <article><h3>4. Orders, repairs and job work</h3><p>Custom and trade orders from advance to delivery, repair job slips with turnaround, and karigar job work issued and received by weight.</p><a href="/products/repairs-service">Repairs →</a></article>
+  <article><h3>5. Material planning and manufacturing</h3><p>Bills of materials, routings, material planning, work in progress, wastage against norms, finished-goods receipts, and a fine-weight metal ledger with metal loans.</p><a href="/products/manufacturing">Jewellery manufacturing software →</a></article>
+  <article><h3>6. Girvi</h3><p>Pledges, interest, renewals, part payments, release and auction notices, with pledge receipts, on the customer’s record.</p><a href="/products/girvi">Girvi software →</a></article>
+  <article><h3>7. Accounts and GST</h3><p>A double-entry ledger with GST, GSTR-1, GSTR-3B and HSN reports, TDS, party ledgers, and a Tally bridge where e-invoices are generated.</p><a href="/products/billing-finance">GST invoicing and finance →</a></article>
+  <article><h3>8. People and branches</h3><p>Attendance, payroll, incentives and Form 16; many branches and franchises; approval rules, separation of duties and an audit trail.</p><a href="/products/multi-store">Multi-store →</a></article>
+</div>`)}
+
+
+${L.section(`${L.sectionHead('COMPARE', 'Tally plus add-ons, a desktop jewellery ERP, or Jwero.', '')}${erpTable()}`)}
+
+${L.section(`${L.sectionHead('SWITCHING ERP MID-YEAR', 'How to switch your jewellery ERP mid-year.', 'Five steps, done with you. No big-bang cut-over.')}${L.steps(ERP_MOVE.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('READ MORE', 'Guides for the back office.', '')}<div class="erp-map">${[['/guides/jewellery-erp-software', 'How to choose a jewellery ERP'], ['/blog/fine-weight-metal-ledger-jewellers', 'The fine-weight metal ledger'], ['/blog/job-work-jewellery-gst-challan', 'Job work and challans'], ['/blog/girvi-gold-loan-business-guide', 'Running a girvi business'], ['/blog/gst-on-jewellery-india', 'GST on jewellery'], ['/blog/jewellery-software-and-tally', 'Jewellery software and Tally']].map(([h, t]) => `<a href="${h}"><b>${t}</b><span>Guide</span></a>`).join('')}</div>`)}
 
 ${L.oneSystemBlock([
-  'A repair job and the customer’s purchase history live on one record — your team knows what she owns before she says a word.',
-  'Purchases and manufacturing WIP feed the same inventory truth that pricing and dead-stock visibility read from.',
+  'A karigar’s wastage, the metal ledger and the finished piece’s cost are the same numbers, not three reports to reconcile.',
+  'A sale at any branch updates stock, the ledger, GST and the salesperson’s incentive at once.',
+  'The customer who bought, the scheme she redeemed and the girvi she renewed are one record.',
 ])}
 
-${L.section(`${L.sectionHead('OPERATIONS QUESTIONS', 'Mid-order switching, and processes that do not fit the mould.', '')}${L.faqBlock([
-  { q: 'Will switching disrupt operations mid-order?', a: 'Open orders, repairs and purchase records import alongside customers and catalogue — nothing in progress gets orphaned.' },
-  { q: 'Our process is unusual — can it be configured to match?', a: 'Custom fields and approval rules exist for this. We’ll also tell you plainly what isn’t configurable, before you commit.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
-<p class="cta-note" style="margin-top:14px">Running repairs on registers today? <a href="/blog/jewellery-repair-management-custody-chain">Read the guide to repair management and the custody chain →</a> Still comparing system types? <a href="/blog/jewellery-crm-vs-erp-difference">See what separates a CRM from an ERP →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="erp">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
-
-${L.section(`${L.sectionHead('WHAT THE ERP COVERS', 'Every back-office job, on the same record as the customer.', 'One system in place of separate billing, stock, purchase, workshop and accounts software. Open any part to see it in detail.')}
-<div class="erp-map">${[
-  ['/products/billing-finance', 'Billing and accounts', 'GST bills at the live rate, old-gold exchange, ledgers, and a Tally bridge.'],
-  ['/products/inventory', 'Inventory', 'Every piece by weight, purity and tag, valued at today’s rate, with ageing.'],
-  ['/products/purchase-vendors', 'Purchase and vendors', 'Orders, goods received, bills and vendor balances in one chain.'],
-  ['/products/manufacturing', 'Workshop and karigars', 'Metal issued and returned in grams, job-work and wastage by stage.'],
-  ['/products/repairs-service', 'Repairs and service', 'Every article taken in, tracked to the karigar and back to the customer.'],
-  ['/products/girvi', 'Girvi', 'Pledges, interest and redemption on the customer’s own record.'],
-  ['/products/gold-schemes', 'Gold schemes', 'Plans, instalments, bonuses and scheme liability in one place.'],
-  ['/products/multi-store', 'Branches', 'Stock, transfers and day-close for every location on one system.'],
-  ['/products/hr-payroll', 'Team and payroll', 'Attendance, incentives and payroll tied to the sales they earned.'],
-  ['/products/reports', 'Reports', 'Sales, stock, cash and pending work, today, without building a sheet.'],
-].map(([h, t, d]) => `<a href="${h}"><b>${t}</b><span>${d}</span></a>`).join('')}</div>`, { tone: 'tint' })}
-${L.ctaBand('See operations on one record.', 'Bring one real order and follow it end to end — advance to delivery, on one screen.', 'erp')}
+${L.ctaBand('See operations on one record.', 'Bring one order from last month. We will run it through every department in Jwero.', 'erp')}
 `,
 };
 

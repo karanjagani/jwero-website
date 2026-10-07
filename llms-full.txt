@@ -3842,85 +3842,141 @@ A: GST (CGST/SGST/IGST) is computed as part of live-rate invoicing, data-driven 
 
 ---
 
-# Jewellery ERP Software: Orders, Purchase, Repairs, Job Work
+# Jewellery ERP Software: One System for the Whole Business
 URL: https://jwero.ai/products/erp
 
-Jewellery ERP software: orders, purchases and vendors, repairs and manufacturing job-work, jewellery-native, sharing one customer record.
+Jewellery ERP software: counter, stock, purchase, material planning, manufacturing, girvi, accounts, GST, payroll and branches on one record, with WhatsApp and customers built in.
 
-ERP, RECONSIDERED
+JEWELLERY ERP · ERP FOR JEWELLERS
 
-## Orders, purchases, repairs and job-work on the same record as the customer.
+## Jewellery ERP software: counter, stock, purchase, manufacturing, girvi, accounts and people on one record.
 
- A jewellery ERP usually means another silo: orders here, customers there, catalogue somewhere else. Jwero runs orders, purchases, repairs and manufacturing on the same record as the customer and the catalogue, because an operating system doesn’t get to have blind spots.
+ One system for every department, built for weight, purity, fine metal and HUID. A sale at the counter, a karigar’s wastage, a girvi renewal and a salesperson’s incentive all land on the same records, across every branch, with your customers and WhatsApp built in.
 
- Show me an order becoming a job 
- See the full platform 
+ Show me one order through every department 
 
-## Orders
+ ONE ORDER, EVERY DEPARTMENT
 
- Retail, B2B or custom, tracked from advance to delivery.
+## Follow a bridal order through the whole business.
 
- See inventory → 
+ ORDER 2231 · ONE RECORD
+ Counter Bridal necklace ordered · advance ₹50,000 taken
+ Purchase Rubies ordered from the vendor · received and checked
+ Planning Material needs worked out from the design · 24K issued as 22K
+ Workshop Issued to karigar Ramesh · 62.4 g fine · wastage against norm
+ Stock Finished, tagged and hallmarked · HUID recorded
+ Counter Billed with old gold deducted · balance paid
+ Accounts Posted to the ledger and GST · sent to Tally
+ People Salesperson’s incentive credited
 
-## Purchases & vendors
+ Counter Bridal necklace ordered 
+ Purchase Rubies ordered from the vendor 
+ Planning Material needs worked out from the design 
+ Workshop Issued to karigar Ramesh 
+ Stock Finished, tagged and hallmarked 
+ Counter Billed with old gold deducted 
+ Accounts Posted to the ledger and GST 
+ People Salesperson’s incentive credited 
 
- Purchase-to-pay with GRN weigh-and-assay, what you ordered, received and owe, reconciled.
+ ONE SYSTEM, EVERY DEPARTMENT
 
- See purchase & vendors → 
+## What jewellery ERP software has to cover.
 
-## Repairs
+## 1. Counter and billing
+ Price at today’s rate, scan tags, old gold exchange, HUID check, split payments, returns and cash day-close.
+ Jewellery billing software → 
 
- Every repair tracked from intake to re-hallmark to return, with the hallmark gate enforced.
+## 2. Stock and hallmarking
+ Every piece with gross, net and fine weight, stones and HUID; valuation at today’s rate, ageing, cycle counts, memos and transfers.
+ Jewellery inventory software → 
 
- See repairs & after-sales → 
+## 3. Purchase and vendors
+ Purchase orders, goods received with quality checks, purchase bills and returns, vendor credits and advances, and party ledgers.
+ Purchase and vendors → 
 
-## Manufacturing
+## 4. Orders, repairs and job work
+ Custom and trade orders from advance to delivery, repair job slips with turnaround, and karigar job work issued and received by weight.
+ Repairs → 
 
- Work-in-progress, stage tracking and a gold-loss ledger, see where every gram goes.
+## 5. Material planning and manufacturing
+ Bills of materials, routings, material planning, work in progress, wastage against norms, finished-goods receipts, and a fine-weight metal ledger with metal loans.
+ Jewellery manufacturing software → 
 
- For manufacturers → 
+## 6. Girvi
+ Pledges, interest, renewals, part payments, release and auction notices, with pledge receipts, on the customer’s record.
+ Girvi software → 
+
+## 7. Accounts and GST
+ A double-entry ledger with GST, GSTR-1, GSTR-3B and HSN reports, TDS, party ledgers, and a Tally bridge where e-invoices are generated.
+ GST invoicing and finance → 
+
+## 8. People and branches
+ Attendance, payroll, incentives and Form 16; many branches and franchises; approval rules, separation of duties and an audit trail.
+ Multi-store → 
+
+ COMPARE
+
+## Tally plus add-ons, a desktop jewellery ERP, or Jwero.
+
+ Tally plus add-ons Desktop jewellery ERP Jwero 
+ Counter billing at today’s rate Add-on Yes Yes 
+ Stock by piece, fine weight and HUID No Yes Yes 
+ Purchase, goods received and quality checks Basic Yes Yes 
+ Material planning, BOM, karigar job work, wastage No Varies Yes, with the metal ledger 
+ Girvi and metal loans No Some Yes 
+ Payroll, attendance and incentives Separate Rarely Yes 
+ Customer record, WhatsApp and AI calls No No Yes, same record 
+ Works on any device, many branches Desktop Desktop or server Online, every branch, keeps billing offline 
+ GST returns and e-invoices Yes Yes GST reports in Jwero; e-invoices through Tally 
+
+ Desktop ERPs vary. See Jwero vs Ornate NX , JewelAcc , Marg , SIONIQ and Synergics .
+
+ SWITCHING ERP MID-YEAR
+
+## How to switch your jewellery ERP mid-year.
+
+ Five steps, done with you. No big-bang cut-over.
+
+ 1 
+
+## Bring your masters
+ Stock, customers, vendors, karigars and opening balances from your current ERP or Tally.
+
+ 2 
+
+## Map your way of working
+ Rates, making rules, branches, approval rules and who can do what.
+
+ 3 
+
+## Run both in parallel
+ Bill and record in Jwero while the old system runs, until daily totals match.
+
+ 4 
+
+## Reconcile the cut-over
+ Stock, metal and money balances matched on the switch date, differences listed and cleared.
+
+ 5 
+
+## Switch off the old system
+ Your books carry on in Jwero’s ledger or through the Tally bridge.
+
+ READ MORE
+
+## Guides for the back office.
+
+ How to choose a jewellery ERP Guide The fine-weight metal ledger Guide Job work and challans Guide Running a girvi business Guide GST on jewellery Guide Jewellery software and Tally Guide 
 
  BECAUSE IT'S ONE SYSTEM
 
- A repair job and the customer’s purchase history live on one record, your team knows what she owns before she says a word.
- Purchases and manufacturing WIP feed the same inventory truth that pricing and dead-stock visibility read from.
-
- OPERATIONS QUESTIONS
-
-## Mid-order switching, and processes that do not fit the mould.
-
- Will switching disrupt operations mid-order? 
- Open orders, repairs and purchase records import alongside customers and catalogue, nothing in progress gets orphaned.
-
- Our process is unusual, can it be configured to match? 
- Custom fields and approval rules exist for this. We’ll also tell you plainly what isn’t configurable, before you commit.
-
- More questions? See the full FAQ → 
-
- Running repairs on registers today? Read the guide to repair management and the custody chain → Still comparing system types? See what separates a CRM from an ERP → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- This isn’t a demo video, message us here and Jwero’s own inbox answers, live.
-
- WHAT THE ERP COVERS
-
-## Every back-office job, on the same record as the customer.
-
- One system in place of separate billing, stock, purchase, workshop and accounts software. Open any part to see it in detail.
-
- Billing and accounts GST bills at the live rate, old-gold exchange, ledgers, and a Tally bridge. Inventory Every piece by weight, purity and tag, valued at today’s rate, with ageing. Purchase and vendors Orders, goods received, bills and vendor balances in one chain. Workshop and karigars Metal issued and returned in grams, job-work and wastage by stage. Repairs and service Every article taken in, tracked to the karigar and back to the customer. Girvi Pledges, interest and redemption on the customer’s own record. Gold schemes Plans, instalments, bonuses and scheme liability in one place. Branches Stock, transfers and day-close for every location on one system. Team and payroll Attendance, incentives and payroll tied to the sales they earned. Reports Sales, stock, cash and pending work, today, without building a sheet. 
+ A karigar’s wastage, the metal ledger and the finished piece’s cost are the same numbers, not three reports to reconcile.
+ A sale at any branch updates stock, the ledger, GST and the salesperson’s incentive at once.
+ The customer who bought, the scheme she redeemed and the girvi she renewed are one record.
 
 ## See operations on one record.
 
- Bring one real order and follow it end to end, advance to delivery, on one screen.
+ Bring one order from last month. We will run it through every department in Jwero.
 
  Chat or call with us 
  Book a demo 
@@ -3929,17 +3985,32 @@ ERP, RECONSIDERED
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: Is Jwero a full ERP replacement?
-A: For operations, yes; for statutory accounting, no. Jwero runs the operational backbone, orders, purchases, repairs, manufacturing job-work, and shares that data with the customer and catalogue layer, which a standalone ERP never does. Statutory accounting stays in Tally or Zoho Books via built-in bridges.
+Q: What is jewellery ERP software?
+A: Jewellery ERP software runs the whole jewellery business on one system: counter billing at today’s rate, stock by piece and fine weight, purchase, material planning, manufacturing and karigar job work, girvi, accounts and GST, payroll and every branch, on the same records.
 
-Q: What’s different about a jewellery-native ERP?
-A: Purity, HUID, live gold-rate pricing, karigar job-work and gold-loss tracking are built in as first-class concepts, not bolted-on custom fields.
+Q: What is the best ERP for jewellers?
+A: One that is built for jewellery (weight, purity, fine metal, HUID, making and wastage), covers every department on one record, works across branches and devices, keeps billing offline, and connects to your customers on WhatsApp. Compare a few on your own data before you choose.
+
+Q: Can a jewellery ERP replace Tally?
+A: Jwero keeps its own double-entry ledger with GST, so many shops run their books in Jwero. Others keep Tally for their CA and send entries through the bridge; e-invoices are generated in Tally that way.
+
+Q: Does Jwero handle manufacturing and material planning?
+A: Yes. Bills of materials, routings, material planning, work in progress, karigar job work with wastage norms, finished-goods receipts, and a fine-weight metal ledger with metal loans.
+
+Q: Does it handle girvi?
+A: Yes. Pledges, interest, renewals, part payments, release and auction notices are part of Jwero, on the same customer record.
+
+Q: How do I switch ERP mid-year?
+A: Import your masters and opening balances, run Jwero alongside the old system until totals match, reconcile stock, metal and money on the switch date, then switch off the old system. We do it with you.
 
 Q: Will switching disrupt operations mid-order?
-A: Open orders, repairs and purchase records import alongside customers and catalogue during onboarding, nothing in progress gets orphaned by a switch.
+A: No. Open orders, job work and balances are brought across, and both systems run in parallel until you are ready.
 
-Q: Our process is unusual, can it be configured to match?
-A: Custom fields and price/approval rules exist for exactly this. We’ll also tell you plainly what isn’t configurable on a demo, before you commit.
+Q: Our process is unusual. Can it be configured?
+A: Yes. Approval rules, roles, branches, making and wastage rules and custom fields are set to how you work.
+
+Q: Does Jwero generate e-invoices?
+A: E-invoices are generated in Tally: Jwero raises the bill and sends it through the Tally bridge. GST reports such as GSTR-1, GSTR-3B and the HSN summary are prepared in Jwero.
 
 ---
 
@@ -6649,7 +6720,7 @@ THE ONE-PAGE BRIEF
 
  No e-invoice IRN or e-way bill generation.
 
- No auto-debit mandates for schemes; reminders are drafted, payment is the customer’s.
+ Scheme instalments are collected automatically; girvi interest is recorded when paid.
 
  No CAD-file-to-BOM conversion; BOMs are entered by production.
 
@@ -6828,7 +6899,7 @@ FROM ERP TO OS
 
 ## What we don’t do yet
 
- E-invoice IRN and e-way bills, auto-debit mandates, CAD-to-BOM, courier integration. The public roadmap says what is shipped, rolling out and not yet.
+ E-invoice IRN and e-way bills (e-invoices run through Tally), auto-debit for girvi interest, CAD-to-BOM, courier integration. The public roadmap says what is shipped, rolling out and not yet.
 
  See the roadmap → 
 
@@ -13245,7 +13316,7 @@ FAQ
  Regional chains already run on systems like this; independent jewellers have been the ones without one. Being early on the revenue side (WhatsApp commerce, digital catalogues, gold schemes) is a customer-facing advantage today, ahead of when everyone else catches up.
 
  What does Jwero NOT do yet, honestly? 
- E-invoice/GSTR automation (IRN, e-way bills, portal filing), auto-debit mandates for scheme and girvi collections, a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens), and demand-netting MRP for the workshop. All on the public roadmap , none fully shipped, we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)
+ E-invoice/GSTR automation (IRN, e-way bills, portal filing), auto-debit for girvi interest, and a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens). All on the public roadmap , none fully shipped, we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)
 
  B
 
@@ -13634,7 +13705,7 @@ Q: My competitors don’t use anything like this, why be first?
 A: Regional chains already run on systems like this; independent jewellers have been the ones without one. Being early on the revenue side (WhatsApp commerce, digital catalogues, gold schemes) is a customer-facing advantage today, ahead of when everyone else catches up.
 
 Q: What does Jwero NOT do yet, honestly?
-A: E-invoice/GSTR automation (IRN, e-way bills, portal filing), auto-debit mandates for scheme and girvi collections, a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens), and demand-netting MRP for the workshop. All on the public roadmap, none fully shipped, we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)
+A: E-invoice/GSTR automation (IRN, e-way bills, portal filing), auto-debit for girvi interest, and a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens). All on the public roadmap, none fully shipped, we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)
 
 Q: Can customers actually buy on WhatsApp?
 A: Yes, browse the catalogue at live prices, ask questions, book appointments, and order inside the chat.
@@ -17438,7 +17509,7 @@ GUIDE · GST
 
  If you sell to other businesses and your turnover is above ₹5 crore, your B2B invoices need an IRN. Retail bills to customers do not. Here is how it works for jewellers.
 
- See e-invoicing in Jwero 
+ See the Tally bridge 
 
  Accounts and GST · 5 min read · By the Jwero editorial team · Published October 2026 
 
@@ -17470,7 +17541,7 @@ GUIDE · GST
 
 ## How Jwero does it
 
- Jwero generates e-invoices from B2B bills and prepares GSTR-1, GSTR-3B and the HSN summary from the same records. See billing and finance and the GST on jewellery guide .
+ Jwero raises the B2B bill and sends it to Tally through the bridge, where the e-invoice is generated, and prepares GSTR-1, GSTR-3B and the HSN summary reports from the same records. See the Tally bridge and billing and finance and the GST on jewellery guide .
 
  GUIDE QUESTIONS
 
@@ -17485,9 +17556,9 @@ GUIDE · GST
  Do retail jewellery bills need a QR code? 
  Only very large businesses, above ₹500 crore turnover, must print a dynamic QR code on B2C invoices. Ordinary retail bills do not need an e-invoice.
 
-## E-invoices from the same bill.
+## Bill once, e-invoice in Tally.
 
- Jwero generates the e-invoice from the B2B bill, so there is nothing to type twice.
+ Jwero raises the B2B bill and sends it to Tally through the bridge, where the e-invoice is generated, so nothing is typed twice.
 
  Chat or call with us 
  Book a demo 
@@ -27777,14 +27848,14 @@ CLOUD JEWELLERY SOFTWARE
  Can I get my data out? 
  Yes. You can export everything, any time.
 
- Is Jwero a full ERP replacement? 
- For operations, yes; for statutory accounting, no. Jwero runs the operational backbone, orders, purchases, repairs, manufacturing job-work, and shares that data with the customer and catalogue layer, which a standalone ERP never does. Statutory accounting stays in Tally or Zoho Books via built-in bridges.
+ What is jewellery ERP software? 
+ Jewellery ERP software runs the whole jewellery business on one system: counter billing at today’s rate, stock by piece and fine weight, purchase, material planning, manufacturing and karigar job work, girvi, accounts and GST, payroll and every branch, on the same records.
 
- What’s different about a jewellery-native ERP? 
- Purity, HUID, live gold-rate pricing, karigar job-work and gold-loss tracking are built in as first-class concepts, not bolted-on custom fields.
+ What is the best ERP for jewellers? 
+ One that is built for jewellery (weight, purity, fine metal, HUID, making and wastage), covers every department on one record, works across branches and devices, keeps billing offline, and connects to your customers on WhatsApp. Compare a few on your own data before you choose.
 
- Will switching disrupt operations mid-order? 
- Open orders, repairs and purchase records import alongside customers and catalogue during onboarding, nothing in progress gets orphaned by a switch.
+ Can a jewellery ERP replace Tally? 
+ Jwero keeps its own double-entry ledger with GST, so many shops run their books in Jwero. Others keep Tally for their CA and send entries through the bridge; e-invoices are generated in Tally that way.
 
  Related: Security · Multi-store jewellery software · Migration Centre · Onboarding 
 
@@ -27814,14 +27885,14 @@ A: It needs a connection. If your shop’s line is unreliable, tell us before yo
 Q: Can I get my data out?
 A: Yes. You can export everything, any time.
 
-Q: Is Jwero a full ERP replacement?
-A: For operations, yes; for statutory accounting, no. Jwero runs the operational backbone, orders, purchases, repairs, manufacturing job-work, and shares that data with the customer and catalogue layer, which a standalone ERP never does. Statutory accounting stays in Tally or Zoho Books via built-in bridges.
+Q: What is jewellery ERP software?
+A: Jewellery ERP software runs the whole jewellery business on one system: counter billing at today’s rate, stock by piece and fine weight, purchase, material planning, manufacturing and karigar job work, girvi, accounts and GST, payroll and every branch, on the same records.
 
-Q: What’s different about a jewellery-native ERP?
-A: Purity, HUID, live gold-rate pricing, karigar job-work and gold-loss tracking are built in as first-class concepts, not bolted-on custom fields.
+Q: What is the best ERP for jewellers?
+A: One that is built for jewellery (weight, purity, fine metal, HUID, making and wastage), covers every department on one record, works across branches and devices, keeps billing offline, and connects to your customers on WhatsApp. Compare a few on your own data before you choose.
 
-Q: Will switching disrupt operations mid-order?
-A: Open orders, repairs and purchase records import alongside customers and catalogue during onboarding, nothing in progress gets orphaned by a switch.
+Q: Can a jewellery ERP replace Tally?
+A: Jwero keeps its own double-entry ledger with GST, so many shops run their books in Jwero. Others keep Tally for their CA and send entries through the bridge; e-invoices are generated in Tally that way.
 
 ---
 

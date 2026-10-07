@@ -430,9 +430,9 @@ const einvoiceGuide = post({
   cluster: 'Accounts and GST',
   mins: 5,
   sub: 'If you sell to other businesses and your turnover is above ₹5 crore, your B2B invoices need an IRN. Retail bills to customers do not. Here is how it works for jewellers.',
-  product: ['/products/billing-finance', 'See e-invoicing in Jwero'],
+  product: ['/platform/integrations/tally', 'See the Tally bridge'],
   wa: 'blog-einvoice',
-  close: ['E-invoices from the same bill.', 'Jwero generates the e-invoice from the B2B bill, so there is nothing to type twice.'],
+  close: ['Bill once, e-invoice in Tally.', 'Jwero raises the B2B bill and sends it to Tally through the bridge, where the e-invoice is generated, so nothing is typed twice.'],
   faqs: [
     { q: 'Is e-invoicing mandatory for jewellers?', a: 'For B2B invoices, if your aggregate turnover in any financial year since 2017-18 has been above ₹5 crore. Retail bills to customers (B2C) do not need an e-invoice.' },
     { q: 'What is the 30-day rule?', a: 'Businesses with turnover of ₹10 crore or more must report an invoice to the e-invoice portal within 30 days of its date. After that, the portal will not accept it.' },
@@ -460,7 +460,7 @@ const einvoiceGuide = post({
   </ul>
 
   <h2>How Jwero does it</h2>
-  <p>Jwero generates e-invoices from B2B bills and prepares GSTR-1, GSTR-3B and the HSN summary from the same records. See <a href="/products/billing-finance">billing and finance</a> and the <a href="/blog/gst-on-jewellery-india">GST on jewellery guide</a>.</p>`,
+  <p>Jwero raises the B2B bill and sends it to Tally through the bridge, where the e-invoice is generated, and prepares GSTR-1, GSTR-3B and the HSN summary reports from the same records. See <a href="/platform/integrations/tally">the Tally bridge</a> and <a href="/products/billing-finance">billing and finance</a> and the <a href="/blog/gst-on-jewellery-india">GST on jewellery guide</a>.</p>`,
 });
 
 module.exports = [priceGuide, gstGuide, makingGuide, oldGoldGuide, cashGuide, huidCounterGuide, ewayGuide, einvoiceGuide];

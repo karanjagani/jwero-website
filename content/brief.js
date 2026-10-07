@@ -44,7 +44,7 @@ ${L.section(`
       <h2>What it does not do yet</h2>
       <ul>
         <li>No e-invoice IRN or e-way bill generation.</li>
-        <li>No auto-debit mandates for schemes; reminders are drafted, payment is the customer’s.</li>
+        <li>Scheme instalments are collected automatically; girvi interest is recorded when paid.</li>
         <li>No CAD-file-to-BOM conversion; BOMs are entered by production.</li>
         <li>No courier integration.</li>
         <li>India-first rails: rate feed, GST shapes, +91 defaults.</li>

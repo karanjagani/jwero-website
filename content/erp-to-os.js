@@ -211,7 +211,7 @@ ${L.section(
   ${L.cards([
     { title: 'What you keep', text: 'Orders, purchase, vendors, job work, stock, GST invoicing, a ledger, Tally and Zoho Books bridges — the ERP jobs are inside Jwero, on the same record as everything else.', link: { href: '/products/erp', label: 'See ERP, reconsidered' } },
     { title: 'What you lose', text: 'The gap. The re-typing between the sheet and the ERP, the WhatsApp thread nobody can see at the counter, the PDF with last week’s price.' },
-    { title: 'What we don’t do yet', text: 'E-invoice IRN and e-way bills, auto-debit mandates, CAD-to-BOM, courier integration. The public roadmap says what is shipped, rolling out and not yet.', link: { href: '/roadmap', label: 'See the roadmap' } },
+    { title: 'What we don’t do yet', text: 'E-invoice IRN and e-way bills (e-invoices run through Tally), auto-debit for girvi interest, CAD-to-BOM, courier integration. The public roadmap says what is shipped, rolling out and not yet.', link: { href: '/roadmap', label: 'See the roadmap' } },
   ])}`
 , { tone: 'tint' })}
 
