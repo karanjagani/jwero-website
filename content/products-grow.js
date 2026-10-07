@@ -1,149 +1,102 @@
 const L = require('../lib');
 const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
+// Gold schemes, rebuilt 2026-10-07. The Gold Savings Plans page is merged in here.
+// Confirmed by Jwero: instalments collected automatically; enrolment through the
+// website, mobile apps, WhatsApp and the showroom.
+const PASS = [
+  ['Joined', 'Enrolled on WhatsApp with OTP · 11+1 plan · ₹5,000 a month'],
+  ['Month 1', 'Collected automatically · ₹5,000'],
+  ['Month 2', 'Collected automatically · ₹10,000'],
+  ['Month 3', 'Collected automatically · ₹15,000'],
+  ['Month 4', 'Payment failed · reminder on WhatsApp and an AI call'],
+  ['Month 4', 'Paid by link the same day · ₹20,000'],
+  ['Month 11', 'Final instalment · ₹55,000'],
+  ['Maturity', 'Bonus added · ₹60,000 to redeem against a bridal set'],
+];
+const passbook = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">GOLD SCHEME · PASSBOOK</p><b style="font-size:1.05rem">Priya Iyer</b>${PASS.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}</div>
+  <ol class="wa-steps">${PASS.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const SCH_CMP = [
+  ['Enrolment', 'Form and photocopy', 'At the counter', 'Website, mobile app, WhatsApp or showroom, with OTP and KYC'],
+  ['Collecting instalments', 'Calls and cash', 'Payment links', 'Automatic collection, plus links, reminders and AI calls'],
+  ['Member’s balance', 'Ask the shop', 'A receipt', 'Passbook on WhatsApp, any time'],
+  ['Missed instalments', 'Found at maturity', 'A report', 'Followed up the same day'],
+  ['Plans', 'One, on paper', 'Fixed', '11+1 instalment or gram accumulation, your rules'],
+  ['Maturity', 'Disputes', 'Manual', 'OTP-verified, redeemed into a purchase'],
+  ['Accounts', 'Mixed with sales', 'Separate', 'Held as a liability until redemption'],
+];
+const schTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Paper register</th><th>Generic collection app</th><th>Jwero</th></tr></thead><tbody>${SCH_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const SCH_MOVE = [
+  ['Send us your register', 'Members, plans, instalments paid so far and maturity dates, from paper, Excel or your software.'],
+  ['We load each member mid-cycle', 'Every member continues from the instalment they are on; nobody restarts.'],
+  ['Members confirm their balance', 'Each member gets their passbook on WhatsApp and confirms it.'],
+  ['Switch on automatic collection', 'Members set up automatic payment; others get links and reminders.'],
+  ['Run new enrolments everywhere', 'Website, mobile app, WhatsApp and showroom, with OTP and KYC.'],
+];
+const schFaqs = [
+  { q: 'What is gold scheme software?', a: 'Gold scheme software runs a jeweller’s savings schemes: enrolment with KYC, automatic instalment collection, reminders, a passbook members can check, maturity and redemption into a purchase, and the accounting that keeps scheme money separate from sales.' },
+  { q: 'How does an 11+1 gold scheme work?', a: 'The customer pays a fixed amount every month for 11 months, the jeweller adds a bonus, often one instalment, at maturity, and the total is redeemed against jewellery. Jwero also runs gram-accumulation plans, where each instalment buys gold at that day’s rate.' },
+  { q: 'How do jewellers collect scheme instalments automatically?', a: 'Members set up automatic payment once at enrolment, and Jwero collects each instalment on its due date. If a payment fails, the member gets a WhatsApp reminder and a payment link, and an AI call if needed.' },
+  { q: 'Where can customers enrol in a gold scheme?', a: 'On your website, your mobile app, WhatsApp or in the showroom, with OTP verification and KYC on the customer record.' },
+  { q: 'Can members check their balance themselves?', a: 'Yes. Each member gets a passbook on WhatsApp showing every instalment and their balance, any time they ask.' },
+  { q: 'Are gold savings schemes legal in India?', a: 'Gold schemes are a long-standing trade practice, but whether your specific scheme needs registration or disclosures depends on its structure. Confirm with your CA or lawyer; Jwero keeps the KYC, written terms, audit trail and OTP-verified closures that reduce risk.' },
+  { q: 'How should scheme money be accounted for?', a: 'Instalments are advances from customers and sit as a liability until the member redeems; the sale is recorded at redemption. Jwero accounts for scheme money this way and reconciles member balances to the books.' },
+  { q: 'Can I move a paper scheme mid-cycle?', a: 'Yes. Each member is loaded with the instalments already paid and continues from where they are; nobody restarts.' },
+  { q: 'Can a customer put old gold into a scheme?', a: 'Yes. Old gold can be valued and added to a scheme balance, then redeemed with it.' },
+  { q: 'What does it cost?', a: 'Jwero One is ₹18,000 a month with every module, first month ₹3,600, and each instalment collected costs ₹4 from the wallet. AI reminder calls are ₹7 a call, all inclusive.' },
+  { q: 'What if a customer disputes her balance?', a: 'Every instalment is receipted and recorded on her ledger, and closures are OTP-verified, so the balance can be shown and checked at any time.' },
+];
+
 const schemes = {
   slug: 'products/gold-schemes',
-  title: 'Gold Savings Scheme Software for Jewellers | Jwero',
-  description: 'Gold savings scheme software: KYC enrolment, instalment reminders, transparent balances, disciplined maturity and closure — no more paper disputes.',
+  title: 'Gold Scheme Software for Jewellers: 11+1 & Gram Plans | Jwero',
+  description: 'Gold scheme software for jewellers: enrol on website, app, WhatsApp or showroom, collect instalments automatically, passbook on WhatsApp, 11+1 and gram plans, maturity and liability accounting.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Gold Savings Schemes', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Digital gold savings scheme management: KYC enrolment, instalment reminders, transparent balances, and disciplined maturity and closure.',
+    name: 'Jwero Gold Scheme Software', alternateName: ['Gold savings scheme software', 'Jewellery scheme software', 'Gold savings plans for jewellers'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Gold savings scheme software: 11+1 instalment and gram-accumulation plans, enrolment with OTP and KYC on website, mobile app, WhatsApp or showroom, automatic instalment collection, WhatsApp passbook, missed-instalment follow-up, maturity and redemption, old gold into schemes, and scheme liability accounting.',
     url: 'https://jwero.ai/products/gold-schemes', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month; ₹4 per instalment collected.' },
   },
-  breadcrumbs: BC('Gold Savings Schemes'),
-  faqs: [
-    { q: 'Can I run my traditional 11+1 monthly scheme on Jwero?', a: 'Yes — fixed monthly-amount plans with a bonus month are the default plan shape. Gram-based plans are being corrected and are not offered yet. Duration, grace days and maturity benefits are configurable per plan.' },
-    { q: 'How do customers pay instalments?', a: 'Customers get reminders on WhatsApp with payment links, can check their balance anytime, and your staff can record counter payments — every entry on an auditable trail.' },
-    { q: 'What about compliance?', a: 'Plans carry KYC capture, configurable terms, OTP-verified closures and a full audit trail. Scheme rules vary by market — Jwero gives you the controls and the records; your CA sets the policy.' },
-    { q: 'Can I migrate paper schemes mid-cycle?', a: 'Yes. Existing members import with their paid-instalment history, so nobody restarts a plan and nobody’s record is lost.' },
-    { q: 'Will my long-time scheme members trust a digital system over the paper register they know?', a: 'Most already trust WhatsApp reminders more than a register they can’t check themselves — transparent balances they can see anytime tend to build trust faster than paper, not slower.' },
-    { q: 'What if scheme rules differ by state or by our own policy?', a: 'Duration, grace days and maturity benefits are configurable per plan — Jwero gives you the controls and the audit trail; your CA still sets the policy.' },
-  ],
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to move a paper gold scheme into software', step: SCH_MOVE.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Gold scheme software'),
+  faqs: schFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'GOLD SAVINGS SCHEMES',
-  h1: 'Run your gold scheme with no paper register, no missed instalment, no maturity dispute.',
-  sub: 'A savings plan is a promise held for eleven months. Paper registers break that promise: missed entries, disputed balances, silent dropouts. Jwero runs enrolment, reminders, balances and maturity with bank-grade discipline — and turns every maturity into your next sale.',
-  primary: { href: '#', label: 'Show me a scheme from enrolment to maturity', wa: 'schemes' },
-  secondary: { href: '/tools/gold-scheme-calculator', label: 'Try the Scheme Calculator' },
+  eyebrow: 'GOLD SCHEME SOFTWARE · GOLD SAVINGS PLANS',
+  h1: 'Gold scheme software for jewellers: no paper register, no missed instalment, no maturity dispute.',
+  sub: 'Members enrol on your website, app, WhatsApp or in the showroom. Instalments are collected automatically, members check their passbook on WhatsApp, missed payments are followed up the same day, and every scheme ends in a purchase at your counter.',
+  primary: { href: '#', label: 'Show me a member’s passbook', wa: 'schemes' },
 })}
 
-${L.section(
-  `${L.sectionHead('WHY SCHEMES LEAK', 'The paper register is the problem.', '')}
-  ${L.cards([
-    { title: 'Silent dropouts', text: 'A member misses month four. Nobody notices until month eight. The plan dies quietly, and so does the future sale it carried.' },
-    { title: 'Disputed balances', text: '"I paid that month." Without a shared, verifiable record, every dispute costs you either money or a relationship.' },
-    { title: 'Invisible economics', text: 'How many active members? How much corpus? How many maturities next quarter? On paper, nobody truly knows.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE MEMBER, ELEVEN MONTHS', 'A scheme that runs itself, month by month.', '')}${passbook()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('', 'Enrolment to maturity, with discipline.', '')}
-  ${L.steps([
-    { title: 'Enrol digitally', text: 'Plan selection, KYC capture and first payment in minutes — at the counter or over WhatsApp.' },
-    { title: 'Collect reliably', text: 'Automatic reminders before every due date, payment links in chat, missed-instalment follow-ups by message and AI voice call.' },
-    { title: 'Mature gracefully', text: 'Balance transparency all year, OTP-verified closures, and a maturity conversation that walks the member to the showcase.' },
-  ])}
-  ${L.stats([
-    { n: '11+1', l: 'classic plan shape, supported natively' },
-    { n: '11+1', l: 'monthly plans with a bonus month, the default shape' },
-    { n: 'OTP', l: 'verified closures — no disputed endings' },
-    { n: '100%', l: 'of entries on an auditable trail' },
-  ])}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('SIX JOBS, ONE SCHEME BOOK', 'What gold scheme software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Plans your way</h3><p>Traditional 11+1 instalment plans and gram-accumulation plans, with your own bonus, duration and maturity rules.</p><a href="/blog/gold-scheme-types-11-plus-1-vs-grams">11+1 vs gram plans →</a></article>
+  <article><h3>2. Enrol anywhere, in a minute</h3><p>On your website, mobile app, WhatsApp or in the showroom, with OTP verification and KYC documents on the customer record.</p><a href="/products/crm">Customer record →</a></article>
+  <article><h3>3. Collection without chasing</h3><p>Instalments collected automatically on the due date. Failed payments get a WhatsApp reminder, a payment link and, if needed, an AI call at ₹7.</p><a href="/ai-calling-for-jewellers">AI reminder calls →</a></article>
+  <article><h3>4. A passbook members trust</h3><p>Every instalment receipted, and the balance on WhatsApp whenever the member asks. No “please check the register”.</p><a href="/products/whatsapp">WhatsApp →</a></article>
+  <article><h3>5. Maturity that becomes a sale</h3><p>OTP-verified closure, the balance redeemed into a purchase, old gold added to a scheme, loyalty points, and a view of members at risk of stopping.</p><a href="/products/loyalty">Loyalty →</a></article>
+  <article><h3>6. Books that stay right</h3><p>Scheme money held as a liability until redemption, member balances reconciled to the accounts, and scheme reports for the owner.</p><a href="/blog/gold-scheme-accounting-liability">Scheme accounting →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('RUN YOUR NUMBERS', 'What your scheme book is worth.', '')}${require('./tools').schemeCalcHtml || '<p class="cta-note"><a href="/tools/gold-scheme-calculator">Open the gold scheme calculator →</a></p>'}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'Paper register, a collection app, or Jwero.', '')}${schTable()}`)}
+
+${L.section(`${L.sectionHead('IS IT LEGAL, AND HOW IS IT ACCOUNTED FOR?', 'The two questions every owner asks.', '')}<div class="jb-blogline"><p><b>Legality:</b> gold schemes are a long-standing trade practice; whether your structure needs registration or disclosure is a question for your CA or lawyer. What reduces risk either way: KYC at enrolment, written terms, a full audit trail and OTP-verified closures, all built in. <a href="/blog/are-gold-savings-schemes-legal">Are gold savings schemes legal? →</a></p><p><b>Accounting:</b> instalments are the member’s money, held as a liability until they redeem. <a href="/blog/gold-scheme-accounting-liability">Gold scheme accounting →</a> · <a href="/blog/gold-savings-scheme-guide">The full gold scheme guide →</a></p></div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('MOVING FROM PAPER', 'How to move a paper gold scheme into software.', 'Five steps, mid-cycle, with nobody restarting.')}${L.steps(SCH_MOVE.map(([title, text]) => ({ title, text })))}`)}
 
 ${L.oneSystemBlock([
-  'A scheme balance shown to the customer on WhatsApp is the same field the AI workforce checks before sending a reminder — never a stale copy.',
-  'A matured scheme automatically becomes a lead in the CRM, with the redemption conversation ready to go.',
+  'A member’s scheme balance shows on her customer record, so the counter and WhatsApp know she is saving towards something big.',
+  'At maturity, the balance is applied on the bill like any payment, and the liability clears in the books.',
+  'A missed instalment can trigger a WhatsApp reminder and an AI call, on the same record.',
 ])}
 
-${L.section(
-  `<div class="stack-verdict"><strong>The lock-in nobody resents:</strong> a healthy scheme book is next year’s revenue, banked this year. Run the <a href="/tools/gold-scheme-calculator">Gold Scheme Calculator</a> to see what your enrolment rate is worth in locked-in future sales. Want the full picture first? <a href="/blog/gold-savings-scheme-guide">Read the practical guide to running a scheme digitally →</a></div>`
-)}
-
-${L.section(`${L.sectionHead('SCHEME QUESTIONS', 'Trust in digital, and who still sets the rules.', '')}${L.faqBlock([
-  { q: 'Will long-time members trust digital over the paper register?', a: 'Transparent balances they can check themselves tend to build trust faster than paper, not slower.' },
-  { q: 'What if scheme rules differ by our own policy?', a: 'Duration, grace days and maturity benefits are configurable per plan — you set the policy, Jwero gives you the controls and the audit trail.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.honestGapsBlock([
-  'Applying a scheme balance at the ecommerce website checkout — balances live on the customer record and are visible to your team and the member today; online redemption is on the roadmap, not wired yet.',
-])}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="schemes">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Digitise the promise.', 'Bring your current scheme rules to a demo — we will show them running digitally, mid-cycle members included.', 'schemes')}
-`,
-};
-
-const digitalGold = {
-  slug: 'products/digital-gold',
-  title: 'Gold Savings Plans for Jewellers | Jwero',
-  description: 'Run gold savings plans with a clear ledger for every customer, KYC and cash controls, and redemption into jewellery at your counter.',
-  schema: {
-    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Digital Gold', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Gold savings plans with a ledger per customer, KYC and cash controls, OTP-verified redemption and GL posting.',
-    url: 'https://jwero.ai/products/digital-gold', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
-  },
-  breadcrumbs: BC('Digital Gold'),
-  faqs: [
-    { q: 'How do gold savings plans work for my customers?', a: 'A customer joins a plan, pays at the desk or by link, and every payment is recorded on her ledger. At the end she redeems into jewellery at your counter, confirmed by OTP. Gram-based plans are being corrected and are not offered yet.' },
-    { q: 'How do rates stay current?', a: 'Live rate feeds keep buy prices honest and current, and every transaction is recorded on the customer’s ledger with a full history.' },
-    { q: 'Why offer digital gold at all?', a: 'Because someone will hold your customer’s monthly savings habit — a bank, an app, or you. Whoever holds the savings gets the wedding order.' },
-    { q: 'Is digital gold regulated, and are we exposed if something goes wrong?', a: 'KYC capture, transaction ledgers and OTP-verified redemptions keep every step auditable. Confirm current regulatory scope for your specific state and setup on a demo before launching — this is a compliance-sensitive product and deserves that conversation.' },
-    { q: 'What if a customer disputes her balance?', a: 'Every transaction is recorded on the customer’s ledger with a full history — balances are transparent and checkable by the customer at any time, which is what prevents most disputes before they start.' },
-  ],
-  body: `
-${L.hero({
-  eyebrow: 'DIGITAL GOLD',
-  h1: 'Gold savings plans, recorded properly, and redeemed at your counter.',
-  sub: 'People love saving towards gold. Jwero records every plan, payment and redemption on the customer’s own record, with KYC, cash limits and dual control on closures. Gram-based plans are being corrected and are not offered until they are.',
-  primary: { href: '#', label: 'Show me gold bought from a phone', wa: 'digitalgold' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
-})}
-
-${L.section(
-  `${L.cards([
-    { title: 'Payments on record', text: 'Every instalment is recorded on the customer’s ledger, at the desk or by payment link.' },
-    { title: 'Transparent balances', text: 'Each customer’s balance and history are on her record, ready to show her at any time.' },
-    { title: 'KYC & records', text: 'Identity capture with real scanned documents attached to the record, transaction ledgers and OTP-verified redemptions keep everything auditable.' },
-    { title: 'Redemption at your counter', text: 'Balances convert into jewellery purchases — the digital habit becomes a physical visit.' },
-    { title: 'On the customer record', text: 'Plan balances live on the same customer record, so your team knows who is saving towards something big.' },
-    { title: 'Runs with your schemes', text: 'Runs inside the gold scheme module: the same discipline, controls and reports.' },
-  ])}`
-)}
-
-${L.section(
-  `${L.sectionHead('COMPLIANCE & CONTROLS', 'Built for the audit, not just the sale.', 'The parts of digital gold that finance and compliance actually ask about.')}
-  ${L.cards([
-    { title: 'Statutory cash & PAN controls', text: 'Section 269ST cash-receipt limits are enforced at the point of collection, and Form 60/61 is accepted for customers without a PAN — built in, not left to a staff member to police by memory.' },
-    { title: 'Maker-checker on closures', text: 'Plan closures require dual control, and collections can be configured for maker-checker approval too — segregation of duties on money movement, not just OTP confirmation from the customer.' },
-    { title: 'GL posting & GST invoicing', text: 'Scheme money posts to the general ledger, and closure invoices are cut on the correct per-GSTIN series with tax calculated by place of supply.' },
-    { title: 'Dormancy tracking & GST reporting', text: 'Inactive plans are tracked as a distinct lifecycle state, and a GSTR-shaped tax report plus an outstanding-liability report (customer liability, gold owed, GST) are both one view.' },
-  ], 4)}`
-, { tone: 'tint' })}
-
-${L.oneSystemBlock([
-  'A digital gold balance nearing a milestone is visible to the same AI workforce that drafts occasion invitations — the redemption conversation starts itself.',
-  'A digital gold or scheme balance nearing maturity surfaces automatically on the showroom’s Expected Visits list, landed at the customer’s nearest branch with the balance and date noted for the redemption conversation.',
-])}
-
-${L.section(`${L.sectionHead('DIGITAL GOLD QUESTIONS', 'Regulation, exposure, and disputed balances.', '')}${L.faqBlock([
-  { q: 'Is this regulated, and are we exposed if something goes wrong?', a: 'Section 269ST cash-limit enforcement, Form 60/61 for PAN-less customers, dual control on closures, full KYC with document scans, and GL posting are all built in. Confirm current regulatory scope for your specific state and setup on a demo before launching — this is a compliance-sensitive product and deserves that conversation.' },
-  { q: 'What if a customer disputes her balance?', a: 'Balances are transparent and checkable by the customer at any time, which prevents most disputes before they start.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.honestGapsBlock([
-  'Buying or redeeming digital gold directly at the ecommerce website checkout — digital gold runs through your team and the customer’s record today; online checkout integration is on the roadmap.',
-])}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="digitalgold">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Your name, your gold, your customers.', 'See a gold savings plan from first payment to redemption at the counter.', 'digitalgold')}
+${L.ctaBand('Digitise the promise.', 'Bring your scheme register. We will show every member, balance and due date in Jwero.', 'schemes')}
 `,
 };
 
@@ -447,4 +400,4 @@ ${L.ctaBand('Send it, then know what it sold.', 'Bring one segment and one offer
 `,
 };
 
-module.exports = [schemes, digitalGold, multiStore, loyalty, journeys, campaigns];
+module.exports = [schemes, multiStore, loyalty, journeys, campaigns];

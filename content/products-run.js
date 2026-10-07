@@ -554,7 +554,7 @@ ${L.section(
 ${L.oneSystemBlock([
   'A walk-in checked in on the tablet is matched to their existing customer record — occasions, scheme balance and past visits are already there, not a blank slate.',
   'A Walkout Rescue draft is written from the same customer record and catalogue pricing the CRM and catalogue already share — not a separate database that goes stale.',
-  'A digital gold or scheme balance nearing maturity auto-populates the Expected Visits list, landed at the customer’s nearest branch with the balance and date noted — see <a href="/products/digital-gold">Digital Gold</a> and <a href="/products/gold-schemes">Gold Savings Schemes</a>.',
+  'A digital gold or scheme balance nearing maturity auto-populates the Expected Visits list, landed at the customer’s nearest branch with the balance and date noted — see <a href="/products/gold-schemes">Digital Gold</a> and <a href="/products/gold-schemes">Gold Savings Schemes</a>.',
 ])}
 
 ${L.section(`${L.sectionHead('SHOWROOM QUESTIONS', 'What sends automatically, and what still needs a person.', '')}${L.faqBlock([

@@ -74,7 +74,6 @@ ${L.section(
   `${L.sectionHead('GROW', 'The money products, run digitally.', '')}
   ${L.cards([
     { title: 'Gold Savings Schemes', text: 'Enrol, collect, remind and mature gold schemes digitally — balances your customers can see.', link: { href: '/products/gold-schemes', label: 'Explore' } },
-    { title: 'Digital Gold', text: 'Sell gold savings digitally with KYC and OTP-verified closures built in.', link: { href: '/products/digital-gold', label: 'Explore' } },
     { title: 'Girvi / Gold Loans', text: 'Pledge intake with a printed receipt, interest schemes that accrue on schedule, collection, renewal and release — posted to the books, on the customer record.', link: { href: '/products/girvi', label: 'Explore' } },
     { title: 'Loyalty & Referrals', text: 'Tiers, earning rules and referral tracking — reward the customers who keep coming back and bringing others.', link: { href: '/products/loyalty', label: 'Explore' } },
     { title: 'Customer Segmentation', text: 'Live, rule-based audiences from RFM tier, tags and custom fields — reachable count and revenue shown before you save.', link: { href: '/products/segmentation', label: 'Explore' } },

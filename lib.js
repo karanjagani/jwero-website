@@ -79,7 +79,7 @@ const LINK_ICONS = {
   '/products/catalog': 'book', '/products/inventory': 'box', '/products/billing-finance': 'receipt',
   '/products/erp': 'flow', '/products/multi-store': 'branches', '/products/hr-payroll': 'badge',
   '/products/repairs-service': 'tools', '/products/purchase-vendors': 'truck', '/products/gold-schemes': 'coins',
-  '/products/digital-gold': 'wallet', '/products/loyalty': 'gift', '/products/segmentation': 'pie',
+  '/products/gold-schemes': 'wallet', '/products/loyalty': 'gift', '/products/segmentation': 'pie',
   '/products/journeys': 'route', '/products/campaigns': 'send',
   '/solutions/diamond-traders': 'gem',
   '/products/pos': 'till', '/products/manufacturing': 'scale', '/products/girvi': 'vault', '/products/meetings': 'video',
@@ -606,7 +606,7 @@ function oneSystemBlock(lines) {
 const PILLARS = [
   {
     key: 'remember', title: 'REMEMBER', promise: 'Every customer, occasion, taste, scheme balance and conversation in one record that belongs to the business — not a salesman’s phone.',
-    chips: [['Jewellery CRM', '/products/crm'], ['Customer Memory', '/platform/customer-memory'], ['Loyalty', '/products/gold-schemes'], ['Gold Schemes', '/products/gold-schemes'], ['Digital Gold', '/products/digital-gold']],
+    chips: [['Jewellery CRM', '/products/crm'], ['Customer Memory', '/platform/customer-memory'], ['Loyalty', '/products/gold-schemes'], ['Gold Schemes', '/products/gold-schemes'], ['Digital Gold', '/products/gold-schemes']],
     proof: 'Every visit, message and instalment scored on one card — 11 live scores decide who to reach and when.',
   },
   {

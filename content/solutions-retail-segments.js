@@ -147,7 +147,7 @@ ${L.section(
   ${L.cards([
     { title: 'Rate-linked pricing', text: 'Every catalogue price, quote and invoice follows the live gold rate automatically — no manual repricing.' },
     { title: 'Gold savings schemes', text: 'Enrolment, reminders and maturity run digitally, with balances customers can check themselves.', link: { href: '/products/gold-schemes', label: 'See schemes' } },
-    { title: 'Digital gold', text: 'Offer gram-based savings alongside classic schemes — the same discipline, a modern format.', link: { href: '/products/digital-gold', label: 'See digital gold' } },
+    { title: 'Digital gold', text: 'Offer gram-based savings alongside classic schemes — the same discipline, a modern format.', link: { href: '/products/gold-schemes', label: 'See digital gold' } },
     { title: 'Exchange & repair tracking', text: 'Old-gold exchange and repairs stay on the customer record, not a separate register.' },
   ])}`
 )}
