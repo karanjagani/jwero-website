@@ -4247,3 +4247,31 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .call-bar b { text-align: right; font-variant-numeric: tabular-nums; }
 @media (max-width: 860px) { .call-demo { grid-template-columns: 1fr; } .call-bar { grid-template-columns: 120px 1fr 40px; } }
 @media (prefers-reduced-motion: reduce) { .call-line, .call-out { opacity: 1; transform: none; transition: none; } .call-demo .call-wave span { animation: none; height: 50%; } .call-bar i { width: var(--w); transition: none; } }
+/* AI calling: one call two ways, the calculator. */
+.two-ways { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.tw { padding: 18px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); }
+.tw-ai { border-color: var(--brand); box-shadow: 0 0 0 1px var(--brand) inset; }
+.tw-tag { margin: 0 0 8px; font: 600 .75rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
+.tw-ai .tw-tag { color: var(--brand); }
+.tw ol { margin: 0 0 12px; padding-left: 18px; display: grid; gap: 4px; font-size: .875rem; }
+.tw-out { margin: 0; padding-top: 10px; border-top: 1px dashed var(--line-2); font-size: .8125rem; color: var(--ink-2); }
+.tw-out b { display: block; color: var(--ink); font-size: .9375rem; }
+.tw-human .tw-out b { color: #b42318; } .tw-ai .tw-out b { color: #067647; }
+.tw-gains { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.tw-gains li { padding: 12px; border-radius: 12px; background: var(--card); font-size: .8125rem; color: var(--ink-2); }
+.tw-gains b { display: block; color: var(--ink); font-size: .875rem; margin-bottom: 2px; }
+.callc { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+.callc-in { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.callc-in label { display: grid; gap: 6px; font-size: .78rem; color: var(--ink-2); }
+.callc-in input { height: 40px; padding: 0 10px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--bg, #fff); color: var(--ink); font: inherit; }
+.callc-out { display: grid; gap: 8px; align-content: start; padding: 14px; border-radius: 12px; background: var(--panel); color: #fff; }
+.callc-out p { display: flex; justify-content: space-between; gap: 10px; margin: 0; font-size: .875rem; }
+.callc-out b { font-variant-numeric: tabular-nums; }
+.callc-save { padding: 10px 0; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); font-size: 1rem !important; }
+.callc-save b { color: var(--amber); font-size: 1.25rem; }
+.callc-out .cta-note { display: block; color: rgba(255,255,255,.7); font-size: .72rem; }
+@media (max-width: 860px) { .two-ways, .callc { grid-template-columns: 1fr; } .tw-gains { grid-template-columns: 1fr 1fr; } }
+
+.callc-out p span { color: rgba(255,255,255,.85); }
+.callc-out p b { color: #fff; }
+.callc-out .callc-save b { color: var(--amber); }

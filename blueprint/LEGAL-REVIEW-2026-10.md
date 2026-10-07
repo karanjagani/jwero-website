@@ -132,4 +132,4 @@ terms, or need to be withdrawn:
 
 ## K. WhatsApp and AI calling pages (added 2026-10-07)
 - Stated as confirmed by Jwero: official Meta Business Partner; native WhatsApp payments; bulk inbound and outbound voice AI calling; triggers and campaigns.
-- To confirm: "usually within a day of your Meta verification" (WhatsApp setup); TRAI wording on /ai-calling-for-jewellers ("Is AI calling legal in India?"); the 11 phone languages (not listed by name until confirmed); calling concurrency (not stated as a number).
+- Confirmed 2026-10-07: up to 8 concurrent calls inbound and outbound; all languages of the speech provider (11 named, provider not named on the page); AI call ₹6 per call (pricing page changed from per minute to per call). To confirm: "usually within a day of your Meta verification"; TRAI wording; whether ₹6 includes the phone line minutes (page says line charges are separate).

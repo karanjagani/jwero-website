@@ -1604,7 +1604,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Jwero is an official Meta Business Partner. It connects a jeweller's existing number to the official WhatsApp Business Platform.
 - Customers browse catalogues priced at today's gold rate, add to cart and pay with WhatsApp's native payment experience inside the chat; the order, invoice and stock update on the customer's record.
 - WhatsApp Flows forms (visits, video calls, scheme enrolment), broadcasts with approved templates and consent, and a shared inbox for WhatsApp, Instagram and Facebook with AI drafts under approval.
-- Voice AI agents answer inbound calls in bulk and run outbound AI calling campaigns in bulk (scheme reminders, follow-ups, invitations) in Indian languages, on the same customer record. Triggered WhatsApp notifications (order, payment, ready, scheme due) and segment campaigns run from the same system.
+- Voice AI agents handle up to 8 calls at once, inbound and outbound, 24x7, at INR 6 a call, in Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia; they run bulk calling campaigns (scheme reminders, follow-ups, invitations) on the same customer record. Details: ${SITE}/ai-calling-for-jewellers Triggered WhatsApp notifications (order, payment, ready, scheme due) and segment campaigns run from the same system.
 - Cost: Jwero One at INR 18,000 a month (first month INR 3,600) plus Meta's per-message fees passed through at cost. Details: ${SITE}/products/whatsapp
 
 ## What Jwero is not (honesty)

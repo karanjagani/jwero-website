@@ -2580,3 +2580,18 @@ document.addEventListener('click', function (e) {
   }); }, { threshold: .35 });
   io.observe(root);
 })();
+
+// AI calling calculator: staff time on calls by hand vs ₹6 a call.
+(function () {
+  var root = document.querySelector('[data-callc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-cc="' + k + '"]') || {}).value || 0; };
+  var inr = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+  function run() {
+    var calls = v('calls'), mins = v('talk') + v('people') * v('each'), perHour = v('salary') / (26 * 9);
+    var hours = calls * mins / 60, manual = hours * perHour, ai = calls * 6;
+    var set = function (k, t) { var el = root.querySelector('[data-cc-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('hours', Math.round(hours).toLocaleString('en-IN') + ' hours'); set('manual', inr(manual)); set('ai', inr(ai));
+    set('save', manual > ai ? inr(manual - ai) : '₹0'); set('miss', Math.round(calls * v('missed') / 100).toLocaleString('en-IN') + ' calls');
+  }
+  root.addEventListener('input', run); run();
+})();

@@ -2169,7 +2169,7 @@ WHATSAPP COMMERCE · OFFICIAL META BUSINESS PARTNER
  Campaigns → 
 
 ## 6. One inbox, and AI calling in bulk
- WhatsApp, Instagram and Facebook in one team inbox, with AI drafts that wait for approval. Voice AI agents answer inbound calls in bulk, and run outbound call campaigns in bulk for reminders, follow-ups and invitations, all on the same customer record.
+ WhatsApp, Instagram and Facebook in one team inbox, with AI drafts that wait for approval. Voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, at ₹6 a call: reminders, follow-ups and invitations, all on the same customer record.
  AI calling → 
 
  COMPARE
@@ -7211,7 +7211,7 @@ PRICING
  SMS ₹0.30 per message 
  Email ₹0.03 per email 
  Push notification Included 
- AI voice agent call ₹6 per minute 
+ AI voice agent call ₹6 per call 
  Outbound call ₹1.50 per minute 
  Inbound call ₹1 per minute 
  Video recording ₹3.50 per recorded minute 
@@ -28683,13 +28683,13 @@ A: Not yet. Today the owner or manager opens the Daily Brief to see the morning 
 # AI Calling for Jewellers: Voice AI Agents, Bulk Calls
 URL: https://jwero.ai/ai-calling-for-jewellers
 
-AI calling for jewellers: voice AI agents that answer inbound calls in bulk and run outbound calling campaigns, with triggers, 11 Indian languages and every call on the customer record.
+AI calling for jewellers at ₹6 a call: voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, in 11 Indian languages, with triggers, campaigns and every call on the record.
 
 AI CALLING FOR JEWELLERS
 
 ## AI calling for jewellers: voice AI agents for every call, in bulk.
 
- Voice AI agents that answer every inbound call at once and run outbound calling campaigns for reminders, follow-ups and invitations, in the customer’s language, with the outcome on her record and a WhatsApp follow-through.
+ Up to 8 calls at once, inbound and outbound, 24×7, in the customer’s own language. The AI answers, checks stock, rates and balances, books visits and sends payment links within seconds, for ₹6 a call.
 
  Hear it on a call with us 
 
@@ -28734,9 +28734,97 @@ AI CALLING FOR JEWELLERS
 
  Illustrative figures to show how a campaign reads, not results from a customer.
 
+ ONE CALL, TWO WAYS
+
+## When a person picks up, and when the AI does.
+
+ A customer calls: “Do you have a 20 gram 22K bangle, what is today’s price, and how much is left on my scheme?”
+
+ A person picks up
+ Puts the customer on hold
+ Asks the stock room if the bangle is there
+ Asks accounts for the scheme balance
+ Checks today’s rate
+ Calls the customer back, if they are free
+ Minutes to hours · 2 to 3 people Many customers hang up or buy elsewhere while waiting.
+
+ The AI picks up
+ Knows the customer from the number
+ Checks the bangle in live stock
+ Reads today’s rate and the scheme balance
+ Quotes the price and books a visit
+ Sends photos and a payment link on WhatsApp
+ Seconds · nobody else needed Day or night, 8 callers at a time.
+
+ Team time back No one leaves a customer at the counter to chase an answer.
+ Happier customers An answer now, not a call-back.
+ Fewer drop-outs No hold music, no missed calls, no “I will call you back”.
+ 24×7 sales and support Enquiries at 11 pm become visits and payments.
+
+ THE ARITHMETIC
+
+## What your calls cost today, and at ₹6 a call.
+
+ Change the numbers to match your shop.
+
+ Calls a month (in and out) 
+ Minutes a person spends on the call 
+ Colleagues they need to ask 
+ Minutes each colleague spends 
+ Monthly salary of the staff involved, ₹ 
+ Calls missed or dropped today, % 
+
+ Staff time on calls today 0 
+
+ What that time costs today ₹0 
+
+ The same calls with AI, at ₹6 a call ₹0 
+
+ Saved every month ₹0 
+
+ Calls you miss today that AI would answer 0 
+
+ Staff cost is worked out on 26 days of 9 hours. Phone line charges apply to both and are left out.
+
+ YOUR WORRIES, ANSWERED
+
+## Everything jewellers ask before switching it on.
+
+## “Will customers mind talking to AI?”
+
+ It speaks naturally, in their language, and gets them an answer in seconds. Anyone who wants a person is handed over at once.
+
+## “What if it says something wrong?”
+
+ It only answers from your live stock, rates and customer records, and only takes the actions you allow. It never negotiates price.
+
+## “Do I need new numbers or machines?”
+
+ No. It works on a phone line connected to Jwero. No hardware, nothing to install in the shop.
+
+## “Is it expensive?”
+
+ ₹6 a call. A call handled by hand ties up 2 to 3 people. Use the calculator above with your own numbers.
+
+## “Will it speak my customers’ language?”
+
+ Yes: Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia.
+
+## “Can I stop it or check what it said?”
+
+ Every call is recorded as a transcript on the customer’s record. One switch stops all calling.
+
+## “Is it allowed?”
+
+ Calls about a customer’s own account are fine. Promotional calls follow TRAI’s rules; we set this up with you.
+
+## “How long to start?”
+
+ Days, not months: connect the line, choose what it may do, write the scripts with us, switch on.
+
  OUTBOUND, IN BULK
 
-## Calling campaigns that run themselves.
+## Calling campaigns that run themselves, 8 calls at a time.
 
 ## Scheme instalment reminders
  Every member whose instalment is due gets a call on the day, with a payment link on WhatsApp if they want one.
@@ -28758,8 +28846,8 @@ AI CALLING FOR JEWELLERS
 
 ## Every call answered, even in the rush.
 
-## Answered at once
- Many calls at the same time, so nobody hears a busy tone on a festival morning.
+## Up to 8 calls at once
+ Eight customers can call at the same time and all are answered, day or night, so nobody hears a busy tone on a festival morning.
 
 ## Today’s rate, timings and stock
  The questions that fill the day, answered from your live rate, catalogue and stock.
@@ -28813,7 +28901,10 @@ AI CALLING FOR JEWELLERS
 ## Telecaller, IVR robocall, or voice AI.
 
  Human telecaller IVR or robocall Jwero voice AI 
- Calls at once One per person Many Many, inbound and outbound 
+ Calls at once One per person Many Up to 8 at once, inbound and outbound 
+ Hours Shop hours Any time Any time, 24×7 
+ Time to answer a question about stock or a balance Minutes to hours, 2 to 3 people Cannot answer Seconds, no one else needed 
+ Cost per call Staff time of 2 to 3 people Low ₹6 a call 
  Sounds like Your staff A recording A natural voice in the customer’s language 
  Understands replies Yes Press 1 or 2 Yes, spoken answers 
  Knows the customer If they remember No Purchases, scheme balance, last visit 
@@ -28864,9 +28955,9 @@ AI CALLING FOR JEWELLERS
 
  WHAT YOU PAY
 
-## Platform, minutes, and your line.
+## ₹6 a call. That is the whole idea.
 
- Jwero One: ₹18,000 a month with every module, first month ₹3,600. Calling: charged per minute at the rate on the pricing page , from a prepaid wallet. Your line: your telephony provider’s own charges. Or let Jwero run the calling for you , with every tool included.
+ AI calls: ₹6 a call, from a prepaid wallet you can see. Phone line: the line’s per-minute charge, shown on the pricing page . Platform: Jwero One, ₹18,000 a month with every module, first month ₹3,600. Or let Jwero run the calling for you , with every tool included.
 
 ## Hear it before you decide.
 
@@ -28886,7 +28977,7 @@ Q: What is a voice AI agent?
 A: A voice AI agent is software that holds a real phone conversation: it listens, understands, answers from what it knows about the customer and your shop, takes actions like booking a visit or sending a payment link, and hands over to a person when needed.
 
 Q: Can AI make bulk calls to customers?
-A: Yes. Jwero runs outbound AI calling campaigns in bulk, for example calling every scheme member whose instalment is due this week, and answers inbound calls in bulk so no customer gets a busy tone in the festival rush.
+A: Yes. Jwero handles up to 8 calls at the same time, inbound and outbound. It runs calling campaigns in bulk, for example every scheme member whose instalment is due this week, and answers several callers at once so nobody gets a busy tone in the festival rush.
 
 Q: Can AI answer calls for my jewellery shop?
 A: Yes. The voice agent answers rate, timing, stock and order questions, books visits, and passes the call to a person with a summary when the customer needs one, including after hours.
@@ -28895,13 +28986,16 @@ Q: Can calls happen automatically when something happens?
 A: Yes. Triggers place calls on events such as an instalment falling due, a failed payment, an unanswered WhatsApp message or a repair being ready. If a call is not answered, a WhatsApp message can follow.
 
 Q: Which languages does the voice agent speak?
-A: The phone agent speaks 11 Indian languages today, so each customer can be called in the language they speak at home. The chat and voice assistant on WhatsApp and web chat covers 14.
+A: The phone agent speaks Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia, so each customer can be called in the language they speak at home.
 
 Q: Is AI calling legal in India?
 A: Calls to your own customers about their account, such as scheme reminders, are treated differently from promotional calls. Promotional calls must follow TRAI’s rules on registration, consent and do-not-disturb preferences. Confirm your setup with your advisor before calling at scale.
 
 Q: How much does AI calling cost?
-A: Calling is charged per minute at the rate on the pricing page, plus your telephony provider’s charges, on top of Jwero One at ₹18,000 a month (first month ₹3,600). Or let Jwero run the calling for you, with every tool included.
+A: The AI agent costs ₹6 a call, from a prepaid wallet, plus the phone line’s per-minute charge. A call handled by hand usually takes 2 to 3 people several minutes each, so ₹6 a call is far cheaper. It runs on Jwero One at ₹18,000 a month (first month ₹3,600), or let Jwero run the calling for you.
+
+Q: Why is an AI call faster than a person picking up?
+A: When a person answers, they often have to ask 2 or 3 colleagues for the stock, the rate or the customer’s balance, then call back. The AI agent reads all of that from the customer’s record and the live catalogue, and answers, books or sends a link within seconds, at any hour.
 
 Q: Will the AI negotiate prices or give discounts?
 A: No. Price negotiation and discounts go to a person. The agent works only inside the actions, caps and hours you allow, and one switch stops all calls.
