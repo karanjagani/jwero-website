@@ -2803,6 +2803,6 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-sc="' + k + '"]') || {}).value || 0; };
   function run() { var ph = v('posts') * 4.33 * v('pm') / 60, rh = v('cm') * 26 * v('rm') / 60;
     var set = function (k, t) { var el = root.querySelector('[data-sc-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('ph', Math.round(ph) + ' hours'); set('rh', Math.round(rh) + ' hours'); set('tot', Math.round(ph + rh) + ' hours'); }
+    set('ph', Math.round(ph) + ' hours'); set('rh', Math.round(rh) + ' hours'); set('tot', (Math.round(ph) + Math.round(rh)) + ' hours'); }
   root.addEventListener('input', run); run();
 })();
