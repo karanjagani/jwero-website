@@ -839,7 +839,7 @@ CUSTOMER MEMORY
 
  Best time to reach Weekdays, evening · WhatsApp 
 
- 198 kinds of signal feed a record like this, 11 live scores, each with a “why”, decide who to reach and when.
+ One record per customer and family, with 11 scores, from intent to churn risk, that tell your team who to reach and when.
 
  WHAT THE RECORD KNOWS
 
@@ -3168,19 +3168,18 @@ A: No, the unified inbox collects every comment and DM in one place, and AI draf
 
 ---
 
-# Jewellery CRM Software: Customer & Lead Management
+# Jewellery CRM Software: CRM for Jewellers
 URL: https://jwero.ai/products/crm
 
-Jewellery CRM software: gold-plan balances, occasions, taste and churn risk as structured fields, with explainable scores and win-back journeys.
+Jewellery CRM software for jewellers: families, scheme balances, occasions, loyalty, WhatsApp and AI calls on one customer record, with scores that tell your team who to contact.
 
-JEWELLERY CRM & CUSTOMER 360
+JEWELLERY CRM · CRM FOR JEWELLERS
 
-## The CRM that remembers what she bought, what she’s saving for, and when her daughter’s wedding is.
+## Jewellery CRM that remembers what she bought, what she’s saving for, and when her daughter’s wedding is.
 
- Every visit, message and instalment read as a signal, 198 kinds, scored into 11 live scores with a visible why, on a record your business owns, not a salesman’s phone. Every reply, quote and follow-up drafts from it.
+ One record per customer and family, kept by your business, not a salesperson’s phone: purchases, scheme balances, occasions, loyalty, and every WhatsApp message and AI call, with scores that tell your team who to contact today.
 
  Send me a sample customer record 
- Explore Customer Memory 
 
  Customer · Meera K. 
 
@@ -3192,187 +3191,156 @@ JEWELLERY CRM & CUSTOMER 360
 
  Best time to reach Weekdays, evening · WhatsApp 
 
- 198 kinds of signal feed a record like this, 11 live scores, each with a “why”, decide who to reach and when.
+ One record per customer and family, with 11 scores, from intent to churn risk, that tell your team who to reach and when.
 
- WHAT MAKES IT JEWELLERY-NATIVE
+ ONE CUSTOMER, A YEAR ON ONE RECORD
 
-## Fields a generic CRM has never heard of.
+## Watch a customer record fill itself in.
 
-## Plans & balances
+ M Meera Shah Household: Shah family · 3 members · 1 shared number 
 
- Gold scheme status, instalments, missed payments and maturity dates on the record, because the plan IS the relationship.
+ 22K preferred Bridal Gold scheme Gold tier Hindi 
 
-## Occasions
+ Intent 
+ Churn risk 
+ Opportunity 
 
- Weddings, birthdays, anniversaries and festivals drive jewellery purchases. Here they are data, not diary entries.
+ Walk-in Meera visits for a bridal set. Phone captured at the counter. 
+ WhatsApp Asks for 22K necklace options. Catalogue sent at today’s rate. 
+ Scheme Joins the 11-month gold scheme. Balance on her record. 
+ Purchase Buys earrings. Points added to her loyalty tier. 
+ Family Her daughter’s wedding in February added to the household. 
+ Alert Three weeks before her anniversary, a reminder drafted for approval. 
 
-## Explainable scores
+ SIX JOBS, ONE RECORD
 
- Churn risk, buying intent, value tier, each with a visible "why", so your team trusts what the system says.
+## What a jewellery CRM has to do.
 
-## Journeys & campaigns
+## 1. One record per customer and family
+ Households link the bride, her mother and the father who pays. One phone number can belong to several family members. Duplicates entered by different salespeople are found and merged.
+ Customer memory → 
 
- Win-back, welcome, occasion and scheme journeys that draft themselves and wait for approval, including pre-built recipes like VIP-at-risk rescue and new-lead nurture.
+## 2. Occasions that remind you
+ Birthdays, anniversaries and family weddings, with a message or call drafted before each date for your team to approve.
+ Journeys → 
 
- See the journey builder → 
+## 3. Schemes and purchases remembered
+ Scheme balances and maturity dates, what they bought and at what rate, what they asked about on WhatsApp.
+ Gold schemes → 
 
-## One inbox attached
+## 4. Segments and who to call this week
+ Group customers by purchases, occasions, schemes or city, and see who is about to stop coming. Each morning, every salesperson gets their list.
+ Segments → 
 
- Every WhatsApp, Instagram and web conversation lives on the record, context nobody has to ask for.
+## 5. Loyalty that brings them back
+ Points on every purchase, tiers, redemption, anniversary rewards and referral benefits, with points expiring after the period you set.
+ Loyalty → 
 
-## Action console
+## 6. Leads, quotes, WhatsApp and calls
+ Walk-ins, WhatsApp and Instagram enquiries routed to the right salesperson, quotes accepted online, and every chat and AI call written to the record.
+ WhatsApp API for jewellers → · AI calling → 
 
- Each morning, every salesperson sees exactly who to contact and why. Memory turned into a to-do list.
+ KINDS OF SCORE
 
- HOW JWERO DECIDES
+## Eleven scores on every customer, in plain words.
 
-## Who to reach, with what, and when, decided from what she actually did.
+ What each one tells your team about a customer.
 
- Not a list of fields. A reading of every signal she gives you, scored in rules you can inspect, turned into a draft that waits for your tap.
+ Intent How ready they are to buy now. 
+ Conversion How likely an enquiry is to become a sale. 
+ Engagement How actively they respond to you. 
+ Relationship health How the relationship is doing overall. 
+ Churn risk Whether they are drifting away. 
+ Opportunity What is possible with them next. 
+ Trust risk Records that need care before you act. 
+ Message fatigue Whether they are hearing from you too often. 
+ Confidence How complete and reliable the record is. 
+ Next action Who needs a step from your team today. 
+ And more Each score updates as customers buy, message and visit. 
 
- 1 · SIGNALS
+ THE ARITHMETIC
 
- 198 kinds of customer signal 
+## What keeping more customers is worth.
 
- From 36 sources, the counter, WhatsApp, the website, schemes, girvi, the workshop, calls, Instagram, occasions. Many of them move a score the moment they land.
+ Your numbers, not ours.
 
- WhatsApp Website Counter POS Gold schemes Girvi Karigar Calls Instagram Loyalty Occasions Referrals Email & SMS Ads Staff 
+ Customers who bought in the last two years 
+ Average bill, ₹ 
+ Purchases a year per returning customer 
+ Customers who come back today, % 
+ Extra customers kept, % points 
+ Your margin on a sale, % 
 
- 2 · STATES
+ Returning customers today 0 
 
- 5 lifecycle stages × 
- 11 RFM segments × 
- 4 value tiers × 
- 6 channels × 
- 5 occasions 
- = 6,600 customer states 
+ Returning with a 5-point lift 0 
 
- Every customer sits in exactly one, new or lapsed, champion or about-to-sleep, WhatsApp or call, birthday or wedding, before a single score is read.
+ Extra sales a year ₹0 
 
- 3 · SCORES
+ Extra margin a year ₹0 
 
- 11 live scores, each with a visible why 
+ A planning estimate from your own inputs, not a promise of results.
 
- Intent
- Conversion
- Churn risk
- Trust
- Health
- Opportunity
- … and five more
- 
- Rules you can read, not a black box. Scores fade when she goes quiet, so the list stays honest. Ask “why is she at risk?” and the record shows its reasons.
+ COMPARE
 
- 4 · THE DECISION
+## Excel, a generic CRM, or a jewellery CRM.
 
- Who 41 ready segments in 13 families, high-intent enquiry, bridal enquiry, abandoned cart, viewers who never bought, VIP at risk, scheme maturing. 
+ Excel or a register Generic CRM (Zoho, Salesforce) Jwero 
+ Families and shared phone numbers No Custom work Yes, households and shared numbers 
+ Gold scheme balances and maturity Separate sheet Custom fields Yes, on the record 
+ Purchases at the rate they paid Sometimes If integrated Yes, from billing 
+ Birthdays, anniversaries, weddings A column A field Yes, with reminders that send themselves 
+ WhatsApp, Instagram and AI calls on the record No Add-ons Yes, one record 
+ Loyalty points and tiers No Add-on Yes, built in 
+ Duplicates found and merged By hand Some Yes, flagged for review 
+ Consent per channel, data requests No Some Yes 
 
- What Six plays, nurture, engage, upsell VIP, retain, reactivate, win back, with an expected outcome and ₹ potential on every record, and a taste profile from her very first purchase. 
+ See Jwero vs Zoho CRM and Jwero vs Zithara .
 
- When Her best hour on her best channel; the shop’s windows re-learnt from real reads and replies; one fatigue cap across every send engine. 
+ MOVING FROM EXCEL OR ANOTHER CRM
 
- How 21 journey recipes and 30 personalisation fields draft the message. Nothing sends until you widen what may run alone. 
+## How to move your customer list into a jewellery CRM.
 
- TRY IT · MEERA’S WEEK
+ Five steps. We do them with you during onboarding.
 
-## Tap what she did. Watch the scores move, and the decision change.
+ 1 
 
- Illustrative weights. The engine’s own weights and decision rules are tuned per business and not published.
+## Send us your list
+ Excel, CSV, phone contacts or an export from your current software.
 
- Viewed a bangle for 45 seconds Searched “22k temple” Added it to her wishlist Added it to cart Asked the price on WhatsApp Tried it on at the counter Booked an appointment Her gold plan matures next month Missed a scheme instalment Raised a complaint Reset the week 
+ 2 
 
- Intent 0 
- Conversion 0 
- Confidence 0 
- Trust risk 0 
+## We clean and match it
+ Duplicates are found and merged, families and shared numbers are linked.
 
- Segment New customer · listening 
+ 3 
 
- Play Nurture, no send yet 
+## History comes across
+ Purchases, notes, scheme balances and occasions land on each customer’s record.
 
- Channel · hour WhatsApp · 18:00–20:00 
+ 4 
 
- Waiting for your tap Nothing. Jwero keeps listening. 
+## Consent is recorded
+ Who agreed to hear from you, on which channel, is kept with the record.
 
- WHAT ACTUALLY WORKED
+ 5 
 
-## Proof, not a vanity open-rate.
+## Your team starts with today’s list
+ Each salesperson sees who to contact and why from the first morning.
 
- The record doesn’t just log activity, it reports on it.
+ PRIVACY AND CONSENT
 
-## VIP-at-risk rescue
+## Your customers’ trust, kept.
 
- A pre-built recipe detects at-risk high-value customers and runs a rescue journey automatically, not something you have to design from a blank canvas.
-
-## New-lead nurture
-
- A second pre-built recipe nurtures new leads and can join in a maturing scheme balance along the way, rather than treating every lead the same.
-
-## Cohort retention reporting
-
- See how a given cohort of customers actually comes back over time, not just this month’s total, but the shape of retention itself.
-
-## Deal attribution
-
- A spine of action-outcome records ties a completed sale back to the specific journey send or follow-up that preceded it, so you can see which action actually produced a deal, not just which campaign was live at the time.
+ Consent per channel: who agreed to hear from you on WhatsApp, SMS, email or calls, kept with the record. Messages and calls respect it automatically.
+ Customer requests: when a customer asks to see or delete their data, the request is handled and recorded.
+ Your data: your own database, never shared with another jeweller, exportable any time. Security → 
 
  BECAUSE IT'S ONE SYSTEM
 
- A pipeline card and a WhatsApp thread for the same buyer are the same record, no re-typing between "sales" and "chat".
- The customer intelligence score visible here is the same score AI staff read before deciding who gets a win-back message.
- Suggested next-best-actions are consent-gated the same way every AI-drafted message on this site is, a suggestion never bypasses an opt-out or DND status.
-
-## Built on the same customer record.
-
- Everything below reads and writes the one record above, nothing here is a bolted-on module with its own copy of your customers.
-
-## Quotations
-
- A formal quote moves from draft to sent to accepted or declined, with a number, line items and a PDF. Share the link and the customer can accept or decline it themselves, no call required.
-
-## Smart lead routing
-
- New enquiries route automatically to the right salesperson, round-robin, whoever has the lightest workload, or by territory rules your business sets.
-
-## Next-best-action
-
- A small set of suggested next actions per customer: "due for a follow-up," "scheme is maturing", one tap to act, with the reasoning behind each score visible, not just the number.
-
-## Search across everything
-
- One search box finds a customer, a deal, a product or an order, instead of hunting through separate screens.
-
-## Duplicate detection
-
- Likely-duplicate customer records get flagged for a person to review and merge, keeping the record clean as data arrives from every channel.
-
- CRM QUESTIONS
-
-## Why switch, and what happens to your history.
-
- I already use a CRM or Excel. Why switch? 
- A generic CRM has no idea what a scheme balance or purity preference is, you’d spend years bolting on custom fields to get half of what’s native here.
-
- Will I lose my existing customer history? 
- No, we import it. Purchase history and contact details come across, deduplicated, during onboarding.
-
- Can I send a formal quote a customer can accept online? 
- Yes, a quotation moves from draft to sent to accepted or declined, with a number, line items and a PDF, shared as a link the customer can act on without a call.
-
- More questions? See the full FAQ → 
-
- Still deciding whether you need a CRM, an ERP, or both? Read the plain-language guide to the CRM vs ERP difference → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- This isn’t a demo video, message us here and Jwero’s own inbox answers, live.
+ The WhatsApp reply knows her scheme balance because the chat and the scheme share one record.
+ When she buys at the counter, her purchase, points and tier update on the same record her next AI call will read.
+ Her daughter’s wedding, added once, drives the reminder, the invitation and the bridal catalogue next year.
 
 ## Own your customer list. Finally.
 
@@ -3385,23 +3353,35 @@ JEWELLERY CRM & CUSTOMER 360
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: How is Jwero different from Zoho or Salesforce for a jewellery business?
-A: Generic CRMs know names, notes and deals. Jwero’s record is jewellery-native: scheme balances, wedding months, metal preferences and live-rate context are structured fields the whole system acts on. You would spend years customising a generic CRM to get half of it.
+Q: What is a jewellery CRM?
+A: A jewellery CRM is customer software built for how jewellery is bought: it keeps families, scheme balances, purchases, occasions like weddings and anniversaries, and every WhatsApp message and call on one customer record, and tells your team who to contact and why.
+
+Q: What is the best CRM for jewellers?
+A: Look for a CRM that knows families and shared phone numbers, gold scheme balances, purchases from billing, occasions, loyalty, and WhatsApp and calls on the same record, with consent kept per channel. Generic CRMs need years of custom work to get close.
+
+Q: How do jewellers increase repeat customers?
+A: Remember every customer and family, reach them before their occasions, keep scheme members engaged to maturity, reward them through a loyalty tier, and call or message the ones drifting away before they buy elsewhere.
+
+Q: How does a jewellery loyalty programme work in Jwero?
+A: Customers earn points on purchases, move up tiers, redeem points on later purchases, get anniversary rewards and referral benefits. Points can expire after the period you set, and everything sits on the same customer record.
+
+Q: Can several family members share one phone number?
+A: Yes. Jwero links a household and lets one phone number belong to several family members, so the mother, the bride and the father who pays are each recognised correctly.
+
+Q: Do I need customer consent under India’s data protection law?
+A: You should record consent before marketing to customers, and honour requests to see or delete their data. Jwero keeps consent per channel and handles these requests. Confirm your obligations with your advisor.
+
+Q: What kinds of scores does Jwero give each customer?
+A: Each customer carries scores for intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and the next action due, so your team knows who to contact and why.
 
 Q: Can I import my existing customer list?
-A: Yes, from Excel, CSV, phone contacts or exports from practically any jewellery software. Deduplication and cleanup happen during import, and we do it for you during onboarding.
+A: Yes, from Excel, CSV, phone contacts or another software. We clean it, merge duplicates and link families during onboarding, and your history comes across.
 
-Q: What are journeys?
-A: Automated relationship sequences, welcome series, occasion greetings, win-back campaigns, scheme-maturity conversations, that run on the customer record with your approval settings.
+Q: How is Jwero different from Zoho or Salesforce?
+A: Generic CRMs know names, notes and deals. Jwero’s customer record already knows schemes, purchases at the rate paid, families, occasions, loyalty, and every WhatsApp message and call, because billing, chat and calling share one system.
 
-Q: I already use a CRM (or Excel). Why switch?
-A: A generic CRM or spreadsheet has no idea what a scheme balance or a purity preference is, you’d spend years bolting on custom fields to get half of what’s native here. And it still wouldn’t sell on WhatsApp for you.
-
-Q: Will I lose my existing customer history when I switch?
-A: No, we import it. Purchase history, notes and contact details from Excel, CSV or your current software come across, deduplicated, during onboarding.
-
-Q: Can I send a formal quote a customer can accept online?
-A: Yes, a quotation moves from draft to sent to accepted or declined, with a number, line items and a PDF. Share the link and the customer can review and accept or decline it themselves, without needing to be on a call.
+Q: Can I send a quote a customer accepts online?
+A: Yes. A quote is sent as a link with line items and a PDF, and the customer accepts or declines it themselves.
 
 ---
 

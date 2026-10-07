@@ -2595,3 +2595,30 @@ document.addEventListener('click', function (e) {
   }
   root.addEventListener('input', run); run();
 })();
+
+// CRM page: the record fills in as the year plays out.
+(function () {
+  var root = document.querySelector('[data-crm-story]'); if (!root) return;
+  var steps = root.querySelectorAll('.crm-tl li'), tags = root.querySelectorAll('.crm-rec-tags span'), i = -1, timer;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(k) { Array.prototype.forEach.call(steps, function (s, j) { s.classList.toggle('is-on', j === k); }); Array.prototype.forEach.call(tags, function (t, j) { t.classList.toggle('is-on', j <= k); }); }
+  if (reduce) { root.classList.add('is-live'); show(steps.length - 1); return; }
+  function tick() { i = (i + 1) % (steps.length + 1); show(Math.min(i, steps.length - 1)); }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { clearInterval(timer); if (e.isIntersecting) { root.classList.add('is-live'); tick(); timer = setInterval(tick, 1800); } }); }, { threshold: .35 });
+  io.observe(root);
+})();
+// CRM page: what keeping more customers is worth.
+(function () {
+  var root = document.querySelector('[data-repeatc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-rc="' + k + '"]') || {}).value || 0; };
+  var inr = function (n) { return '\u20b9' + Math.round(n).toLocaleString('en-IN'); };
+  function run() {
+    var c = v('cust'), now = c * v('back') / 100, then = c * Math.min(100, v('back') + v('lift')) / 100;
+    var sales = (then - now) * v('freq') * v('bill'), margin = sales * v('margin') / 100;
+    var set = function (k, t) { var el = root.querySelector('[data-rc-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('now', Math.round(now).toLocaleString('en-IN')); set('then', Math.round(then).toLocaleString('en-IN'));
+    set('sales', inr(sales)); set('margin', inr(margin));
+    var lab = root.querySelectorAll('.callc-out p span')[1]; if (lab) lab.textContent = 'Returning with a ' + v('lift') + '-point lift';
+  }
+  root.addEventListener('input', run); run();
+})();

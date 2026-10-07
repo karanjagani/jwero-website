@@ -906,7 +906,7 @@ const mockMemory = `
   <div class="mock-kv"><span>Daughter’s wedding</span><strong>November</strong></div>
   <div class="mock-kv"><span>Prefers</span><strong>Temple work · 22k · yellow</strong></div>
   <div class="mock-kv"><span>Best time to reach</span><strong>Weekdays, evening · WhatsApp</strong></div>
-  <div class="mock-foot">198 kinds of signal feed a record like this — 11 live scores, each with a “why”, decide who to reach and when.</div>
+  <div class="mock-foot">One record per customer and family, with 11 scores, from intent to churn risk, that tell your team who to reach and when.</div>
 </div>`;
 
 // The shop's day on one screen: counter, stock and day-close. Illustrative

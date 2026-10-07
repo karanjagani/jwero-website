@@ -1,90 +1,136 @@
 const L = require('../lib');
 const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
+// The CRM page, rebuilt 2026-10-07: six jobs, kinds of score (never how they are
+// worked out), families and shared numbers, loyalty, consent, a repeat-customer
+// calculator and an animated customer record. Only pim-app features are named.
+const CRM_SCORES = [
+  ['Intent', 'How ready they are to buy now.'], ['Conversion', 'How likely an enquiry is to become a sale.'], ['Engagement', 'How actively they respond to you.'],
+  ['Relationship health', 'How the relationship is doing overall.'], ['Churn risk', 'Whether they are drifting away.'], ['Opportunity', 'What is possible with them next.'],
+  ['Trust risk', 'Records that need care before you act.'], ['Message fatigue', 'Whether they are hearing from you too often.'], ['Confidence', 'How complete and reliable the record is.'],
+  ['Next action', 'Who needs a step from your team today.'],
+];
+const CRM_STORY = [
+  ['Walk-in', 'Meera visits for a bridal set. Phone captured at the counter.'],
+  ['WhatsApp', 'Asks for 22K necklace options. Catalogue sent at today’s rate.'],
+  ['Scheme', 'Joins the 11-month gold scheme. Balance on her record.'],
+  ['Purchase', 'Buys earrings. Points added to her loyalty tier.'],
+  ['Family', 'Her daughter’s wedding in February added to the household.'],
+  ['Alert', 'Three weeks before her anniversary, a reminder drafted for approval.'],
+];
+const crmStory = () => `<div class="crm-story" data-crm-story>
+  <div class="crm-rec" aria-hidden="true">
+    <div class="crm-rec-head"><span class="crm-av">M</span><div><b>Meera Shah</b><i>Household: Shah family · 3 members · 1 shared number</i></div></div>
+    <div class="crm-rec-tags">${['22K preferred', 'Bridal', 'Gold scheme', 'Gold tier', 'Hindi'].map((t, k) => `<span data-k="${k}">${t}</span>`).join('')}</div>
+    <div class="crm-rec-scores">${[['Intent', 82], ['Churn risk', 12], ['Opportunity', 74]].map(([n, v]) => `<p><span>${n}</span><i style="--v:${v}%"></i></p>`).join('')}</div>
+  </div>
+  <ol class="crm-tl">${CRM_STORY.map(([t, d], k) => `<li data-k="${k}"><b>${t}</b><span>${d}</span></li>`).join('')}</ol>
+</div>`;
+
+const CRM_CMP = [
+  ['Families and shared phone numbers', 'No', 'Custom work', 'Yes, households and shared numbers'],
+  ['Gold scheme balances and maturity', 'Separate sheet', 'Custom fields', 'Yes, on the record'],
+  ['Purchases at the rate they paid', 'Sometimes', 'If integrated', 'Yes, from billing'],
+  ['Birthdays, anniversaries, weddings', 'A column', 'A field', 'Yes, with reminders that send themselves'],
+  ['WhatsApp, Instagram and AI calls on the record', 'No', 'Add-ons', 'Yes, one record'],
+  ['Loyalty points and tiers', 'No', 'Add-on', 'Yes, built in'],
+  ['Duplicates found and merged', 'By hand', 'Some', 'Yes, flagged for review'],
+  ['Consent per channel, data requests', 'No', 'Some', 'Yes'],
+];
+const crmTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Excel or a register</th><th>Generic CRM (Zoho, Salesforce)</th><th>Jwero</th></tr></thead><tbody>${CRM_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>
+<p class="cta-note" style="margin-top:12px">See <a href="/compare/jwero-vs-zoho-crm">Jwero vs Zoho CRM</a> and <a href="/compare/jwero-vs-zithara">Jwero vs Zithara</a>.</p>`;
+
+const CRM_MOVE = [
+  ['Send us your list', 'Excel, CSV, phone contacts or an export from your current software.'],
+  ['We clean and match it', 'Duplicates are found and merged, families and shared numbers are linked.'],
+  ['History comes across', 'Purchases, notes, scheme balances and occasions land on each customer’s record.'],
+  ['Consent is recorded', 'Who agreed to hear from you, on which channel, is kept with the record.'],
+  ['Your team starts with today’s list', 'Each salesperson sees who to contact and why from the first morning.'],
+];
+
+const crmFaqs = [
+  { q: 'What is a jewellery CRM?', a: 'A jewellery CRM is customer software built for how jewellery is bought: it keeps families, scheme balances, purchases, occasions like weddings and anniversaries, and every WhatsApp message and call on one customer record, and tells your team who to contact and why.' },
+  { q: 'What is the best CRM for jewellers?', a: 'Look for a CRM that knows families and shared phone numbers, gold scheme balances, purchases from billing, occasions, loyalty, and WhatsApp and calls on the same record, with consent kept per channel. Generic CRMs need years of custom work to get close.' },
+  { q: 'How do jewellers increase repeat customers?', a: 'Remember every customer and family, reach them before their occasions, keep scheme members engaged to maturity, reward them through a loyalty tier, and call or message the ones drifting away before they buy elsewhere.' },
+  { q: 'How does a jewellery loyalty programme work in Jwero?', a: 'Customers earn points on purchases, move up tiers, redeem points on later purchases, get anniversary rewards and referral benefits. Points can expire after the period you set, and everything sits on the same customer record.' },
+  { q: 'Can several family members share one phone number?', a: 'Yes. Jwero links a household and lets one phone number belong to several family members, so the mother, the bride and the father who pays are each recognised correctly.' },
+  { q: 'Do I need customer consent under India’s data protection law?', a: 'You should record consent before marketing to customers, and honour requests to see or delete their data. Jwero keeps consent per channel and handles these requests. Confirm your obligations with your advisor.' },
+  { q: 'What kinds of scores does Jwero give each customer?', a: 'Each customer carries scores for intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and the next action due, so your team knows who to contact and why.' },
+  { q: 'Can I import my existing customer list?', a: 'Yes, from Excel, CSV, phone contacts or another software. We clean it, merge duplicates and link families during onboarding, and your history comes across.' },
+  { q: 'How is Jwero different from Zoho or Salesforce?', a: 'Generic CRMs know names, notes and deals. Jwero’s customer record already knows schemes, purchases at the rate paid, families, occasions, loyalty, and every WhatsApp message and call, because billing, chat and calling share one system.' },
+  { q: 'Can I send a quote a customer accepts online?', a: 'Yes. A quote is sent as a link with line items and a PDF, and the customer accepts or declines it themselves.' },
+];
+
 const crm = {
   slug: 'products/crm',
-  title: 'Jewellery CRM Software: Customer & Lead Management | Jwero',
-  description: 'Jewellery CRM software: gold-plan balances, occasions, taste and churn risk as structured fields, with explainable scores and win-back journeys.',
+  title: 'Jewellery CRM Software: CRM for Jewellers | Jwero',
+  description: 'Jewellery CRM software for jewellers: families, scheme balances, occasions, loyalty, WhatsApp and AI calls on one customer record, with scores that tell your team who to contact.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Jewellery CRM', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'A jewellery-specific CRM that reads 198 kinds of customer signal into 11 explainable scores — gold-plan balances, occasions, taste and churn risk on one record — and decides who to reach, with what and when. Explainable scores — driving journeys under approval.',
+    name: 'Jwero Jewellery CRM', alternateName: ['CRM for jewellers', 'Jewellery customer management software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'A jewellery CRM with households and shared numbers, gold scheme balances, purchases, occasions, loyalty tiers, segments and journeys, and WhatsApp and AI calls on one customer record, with consent per channel.',
     url: 'https://jwero.ai/products/crm', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
+  extraSchema: [{
+    '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to move your customer list into a jewellery CRM',
+    step: CRM_MOVE.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })),
+  }],
   breadcrumbs: BC('Jewellery CRM'),
-  faqs: [
-    { q: 'How is Jwero different from Zoho or Salesforce for a jewellery business?', a: 'Generic CRMs know names, notes and deals. Jwero’s record is jewellery-native: scheme balances, wedding months, metal preferences and live-rate context are structured fields the whole system acts on. You would spend years customising a generic CRM to get half of it.' },
-    { q: 'Can I import my existing customer list?', a: 'Yes — from Excel, CSV, phone contacts or exports from practically any jewellery software. Deduplication and cleanup happen during import, and we do it for you during onboarding.' },
-    { q: 'What are journeys?', a: 'Automated relationship sequences — welcome series, occasion greetings, win-back campaigns, scheme-maturity conversations — that run on the customer record with your approval settings.' },
-    { q: 'I already use a CRM (or Excel). Why switch?', a: 'A generic CRM or spreadsheet has no idea what a scheme balance or a purity preference is — you’d spend years bolting on custom fields to get half of what’s native here. And it still wouldn’t sell on WhatsApp for you.' },
-    { q: 'Will I lose my existing customer history when I switch?', a: 'No — we import it. Purchase history, notes and contact details from Excel, CSV or your current software come across, deduplicated, during onboarding.' },
-    { q: 'Can I send a formal quote a customer can accept online?', a: 'Yes — a quotation moves from draft to sent to accepted or declined, with a number, line items and a PDF. Share the link and the customer can review and accept or decline it themselves, without needing to be on a call.' },
-  ],
+  faqs: crmFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'JEWELLERY CRM & CUSTOMER 360',
-  h1: 'The CRM that remembers what she bought, what she’s saving for, and when her daughter’s wedding is.',
-  sub: 'Every visit, message and instalment read as a signal — 198 kinds, scored into 11 live scores with a visible why — on a record your business owns, not a salesman’s phone. Every reply, quote and follow-up drafts from it.',
+  eyebrow: 'JEWELLERY CRM · CRM FOR JEWELLERS',
+  h1: 'Jewellery CRM that remembers what she bought, what she’s saving for, and when her daughter’s wedding is.',
+  sub: 'One record per customer and family, kept by your business, not a salesperson’s phone: purchases, scheme balances, occasions, loyalty, and every WhatsApp message and AI call, with scores that tell your team who to contact today.',
   primary: { href: '#', label: 'Send me a sample customer record', wa: 'crm' },
-  secondary: { href: '/platform/customer-memory', label: 'Explore Customer Memory' },
   mock: L.mockMemory,
 })}
 
-${L.section(
-  `${L.sectionHead('WHAT MAKES IT JEWELLERY-NATIVE', 'Fields a generic CRM has never heard of.', '')}
-  ${L.cards([
-    { title: 'Plans & balances', text: 'Gold scheme status, instalments, missed payments and maturity dates on the record — because the plan IS the relationship.' },
-    { title: 'Occasions', text: 'Weddings, birthdays, anniversaries and festivals drive jewellery purchases. Here they are data, not diary entries.' },
-    { title: 'Explainable scores', text: 'Churn risk, buying intent, value tier — each with a visible "why", so your team trusts what the system says.' },
-    { title: 'Journeys & campaigns', text: 'Win-back, welcome, occasion and scheme journeys that draft themselves and wait for approval — including pre-built recipes like VIP-at-risk rescue and new-lead nurture.', link: { href: '/products/journeys', label: 'See the journey builder' } },
-    { title: 'One inbox attached', text: 'Every WhatsApp, Instagram and web conversation lives on the record — context nobody has to ask for.' },
-    { title: 'Action console', text: 'Each morning, every salesperson sees exactly who to contact and why. Memory turned into a to-do list.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE CUSTOMER, A YEAR ON ONE RECORD', 'Watch a customer record fill itself in.', '')}${crmStory()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('HOW JWERO DECIDES', 'Who to reach, with what, and when — decided from what she actually did.', 'Not a list of fields. A reading of every signal she gives you, scored in rules you can inspect, turned into a draft that waits for your tap.')}
-  ${L.intelligence()}`
-)}
+${L.section(`${L.sectionHead('SIX JOBS, ONE RECORD', 'What a jewellery CRM has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. One record per customer and family</h3><p>Households link the bride, her mother and the father who pays. One phone number can belong to several family members. Duplicates entered by different salespeople are found and merged.</p><a href="/platform/customer-memory">Customer memory →</a></article>
+  <article><h3>2. Occasions that remind you</h3><p>Birthdays, anniversaries and family weddings, with a message or call drafted before each date for your team to approve.</p><a href="/products/journeys">Journeys →</a></article>
+  <article><h3>3. Schemes and purchases remembered</h3><p>Scheme balances and maturity dates, what they bought and at what rate, what they asked about on WhatsApp.</p><a href="/products/gold-schemes">Gold schemes →</a></article>
+  <article><h3>4. Segments and who to call this week</h3><p>Group customers by purchases, occasions, schemes or city, and see who is about to stop coming. Each morning, every salesperson gets their list.</p><a href="/products/segmentation">Segments →</a></article>
+  <article><h3>5. Loyalty that brings them back</h3><p>Points on every purchase, tiers, redemption, anniversary rewards and referral benefits, with points expiring after the period you set.</p><a href="/products/loyalty">Loyalty →</a></article>
+  <article><h3>6. Leads, quotes, WhatsApp and calls</h3><p>Walk-ins, WhatsApp and Instagram enquiries routed to the right salesperson, quotes accepted online, and every chat and AI call written to the record.</p><a href="/products/whatsapp">WhatsApp API for jewellers →</a> · <a href="/ai-calling-for-jewellers">AI calling →</a></article>
+</div>`)}
 
-${L.section(
-  `${L.sectionHead('WHAT ACTUALLY WORKED', 'Proof, not a vanity open-rate.', 'The record doesn’t just log activity — it reports on it.')}
-  ${L.cards([
-    { title: 'VIP-at-risk rescue', text: 'A pre-built recipe detects at-risk high-value customers and runs a rescue journey automatically — not something you have to design from a blank canvas.' },
-    { title: 'New-lead nurture', text: 'A second pre-built recipe nurtures new leads and can join in a maturing scheme balance along the way, rather than treating every lead the same.' },
-    { title: 'Cohort retention reporting', text: 'See how a given cohort of customers actually comes back over time — not just this month’s total, but the shape of retention itself.' },
-    { title: 'Deal attribution', text: 'A spine of action-outcome records ties a completed sale back to the specific journey send or follow-up that preceded it — so you can see which action actually produced a deal, not just which campaign was live at the time.' },
-  ])}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('KINDS OF SCORE', 'Eleven scores on every customer, in plain words.', 'What each one tells your team about a customer.')}<div class="crm-scores">${CRM_SCORES.map(([n, d]) => `<p><b>${n}</b><span>${d}</span></p>`).join('')}<p class="crm-scores-more"><b>And more</b><span>Each score updates as customers buy, message and visit.</span></p></div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What keeping more customers is worth.', 'Your numbers, not ours.')}<div class="callc" data-repeatc>
+  <div class="callc-in">
+    <label>Customers who bought in the last two years<input type="number" inputmode="numeric" data-rc="cust" value="3000" min="0"></label>
+    <label>Average bill, ₹<input type="number" inputmode="numeric" data-rc="bill" value="45000" min="0" step="1000"></label>
+    <label>Purchases a year per returning customer<input type="number" inputmode="decimal" data-rc="freq" value="1" min="0" step="0.1"></label>
+    <label>Customers who come back today, %<input type="number" inputmode="decimal" data-rc="back" value="30" min="0" max="100"></label>
+    <label>Extra customers kept, % points<input type="number" inputmode="decimal" data-rc="lift" value="5" min="0" max="50"></label>
+    <label>Your margin on a sale, %<input type="number" inputmode="decimal" data-rc="margin" value="12" min="0" max="100"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Returning customers today</span><b data-rc-o="now">0</b></p>
+    <p><span>Returning with a 5-point lift</span><b data-rc-o="then">0</b></p>
+    <p><span>Extra sales a year</span><b data-rc-o="sales">₹0</b></p>
+    <p class="callc-save"><span>Extra margin a year</span><b data-rc-o="margin">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs, not a promise of results.</p>
+  </div>
+</div>`)}
+
+${L.section(`${L.sectionHead('COMPARE', 'Excel, a generic CRM, or a jewellery CRM.', '')}${crmTable()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('MOVING FROM EXCEL OR ANOTHER CRM', 'How to move your customer list into a jewellery CRM.', 'Five steps. We do them with you during onboarding.')}${L.steps(CRM_MOVE.map(([title, text]) => ({ title, text })))}`)}
+
+${L.section(`${L.sectionHead('PRIVACY AND CONSENT', 'Your customers’ trust, kept.', '')}<div class="jb-blogline"><p><b>Consent per channel:</b> who agreed to hear from you on WhatsApp, SMS, email or calls, kept with the record. Messages and calls respect it automatically.</p><p><b>Customer requests:</b> when a customer asks to see or delete their data, the request is handled and recorded.</p><p><b>Your data:</b> your own database, never shared with another jeweller, exportable any time. <a href="/trust/security">Security →</a></p></div>`, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
-  'A pipeline card and a WhatsApp thread for the same buyer are the same record — no re-typing between "sales" and "chat".',
-  'The customer intelligence score visible here is the same score AI staff read before deciding who gets a win-back message.',
-  'Suggested next-best-actions are consent-gated the same way every AI-drafted message on this site is — a suggestion never bypasses an opt-out or DND status.',
+  'The WhatsApp reply knows her scheme balance because the chat and the scheme share one record.',
+  'When she buys at the counter, her purchase, points and tier update on the same record her next AI call will read.',
+  'Her daughter’s wedding, added once, drives the reminder, the invitation and the bridal catalogue next year.',
 ])}
 
-${L.section(
-  `${L.sectionHead('', 'Built on the same customer record.', 'Everything below reads and writes the one record above — nothing here is a bolted-on module with its own copy of your customers.')}
-  ${L.cards([
-    { title: 'Quotations', text: 'A formal quote moves from draft to sent to accepted or declined, with a number, line items and a PDF. Share the link and the customer can accept or decline it themselves — no call required.' },
-    { title: 'Smart lead routing', text: 'New enquiries route automatically to the right salesperson — round-robin, whoever has the lightest workload, or by territory rules your business sets.' },
-    { title: 'Next-best-action', text: 'A small set of suggested next actions per customer: "due for a follow-up," "scheme is maturing" — one tap to act, with the reasoning behind each score visible, not just the number.' },
-    { title: 'Search across everything', text: 'One search box finds a customer, a deal, a product or an order — instead of hunting through separate screens.' },
-    { title: 'Duplicate detection', text: 'Likely-duplicate customer records get flagged for a person to review and merge, keeping the record clean as data arrives from every channel.' },
-  ])}`
-)}
-
-${L.section(`${L.sectionHead('CRM QUESTIONS', 'Why switch, and what happens to your history.', '')}${L.faqBlock([
-  { q: 'I already use a CRM or Excel. Why switch?', a: 'A generic CRM has no idea what a scheme balance or purity preference is — you’d spend years bolting on custom fields to get half of what’s native here.' },
-  { q: 'Will I lose my existing customer history?', a: 'No — we import it. Purchase history and contact details come across, deduplicated, during onboarding.' },
-  { q: 'Can I send a formal quote a customer can accept online?', a: 'Yes — a quotation moves from draft to sent to accepted or declined, with a number, line items and a PDF, shared as a link the customer can act on without a call.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
-<p class="cta-note" style="margin-top:14px">Still deciding whether you need a CRM, an ERP, or both? <a href="/blog/jewellery-crm-vs-erp-difference">Read the plain-language guide to the CRM vs ERP difference →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="crm">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Own your customer list. Finally.', 'We import your customers for you — from any software, any spreadsheet, any phone.', 'crm')}
+${L.ctaBand('Own your customer list. Finally.', 'We import your customers for you, from any software, any spreadsheet, any phone.', 'crm')}
 `,
 };
 

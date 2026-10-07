@@ -34,6 +34,11 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Voice AI agents handle up to 8 calls at once, inbound and outbound, 24x7, at INR 7 a call, all inclusive (AI, voice and phone line), in Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia; they run bulk calling campaigns (scheme reminders, follow-ups, invitations) on the same customer record. Details: https://jwero.ai/ai-calling-for-jewellers Triggered WhatsApp notifications (order, payment, ready, scheme due) and segment campaigns run from the same system.
 - Cost: Jwero One at INR 18,000 a month (first month INR 3,600) plus Meta's per-message fees passed through at cost. Details: https://jwero.ai/products/whatsapp
 
+## Jewellery CRM (facts)
+- One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
+- Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
+- Loyalty: points, tiers, redemption, anniversary rewards, referral benefits and points expiry. Consent kept per channel; customer data requests handled. Details: https://jwero.ai/products/crm
+
 ## What Jwero is not (honesty)
 - Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant. Jwero does not file GST returns.
 - Counter POS (registers, shifts, cash day-close, returns, old-gold exchange), statutory payroll, karigar
@@ -67,7 +72,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jewellery Ecommerce Website Builder: https://jwero.ai/products/storefront
 - Jewellery Ads Manager: Meta, Google & Pinterest Campaigns: https://jwero.ai/products/ads-manager
 - Social Media Management, Schedule, Inbox, Reply: https://jwero.ai/products/social-media
-- Jewellery CRM Software: Customer & Lead Management: https://jwero.ai/products/crm
+- Jewellery CRM Software: CRM for Jewellers: https://jwero.ai/products/crm
 - Jewellery Catalogue Software: Purity and Live Prices: https://jwero.ai/products/catalog
 - Jewellery Inventory & Stock Management Software: https://jwero.ai/products/inventory
 - Jewellery Billing Software: GST at the Live Gold Rate: https://jwero.ai/products/billing-finance
