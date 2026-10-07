@@ -1612,6 +1612,11 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Voice AI agents handle up to 8 calls at once, inbound and outbound, 24x7, at INR 7 a call, all inclusive (AI, voice and phone line), in Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia; they run bulk calling campaigns (scheme reminders, follow-ups, invitations) on the same customer record. Details: ${SITE}/ai-calling-for-jewellers Triggered WhatsApp notifications (order, payment, ready, scheme due) and segment campaigns run from the same system.
 - Cost: Jwero One at INR 18,000 a month (first month INR 3,600) plus Meta's per-message fees passed through at cost. Details: ${SITE}/products/whatsapp
 
+## Jewellery billing software and POS (facts)
+- Prices every bill from today's rate, purity, net weight, making, stones and 3% GST; tag scanning and search by local product names; estimates that become bills.
+- Old gold exchange vouchers with stone deduction applied as credit; scheme balances redeemed on the bill; HUID check that warns or blocks; manager approval for discounts; returns under each branch's policy.
+- Split payments across cash, card, UPI and credit (card machines are recorded, not driven); receipts on WhatsApp; registers, shifts and cash day-close; keeps billing offline and syncs later. Details: ${SITE}/products/pos
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.

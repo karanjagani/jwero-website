@@ -464,3 +464,5 @@ const einvoiceGuide = post({
 });
 
 module.exports = [priceGuide, gstGuide, makingGuide, oldGoldGuide, cashGuide, huidCounterGuide, ewayGuide, einvoiceGuide];
+
+module.exports.priceCalc = priceCalc;

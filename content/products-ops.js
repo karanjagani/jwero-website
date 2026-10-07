@@ -4,77 +4,128 @@
 const L = require('../lib');
 const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
+// The POS page, rebuilt 2026-10-07 around "jewellery billing software", the search
+// jewellers actually use. Hardware, built-in UPI terminals and a PAN prompt are not
+// claimed until confirmed; offline billing and recorded card tenders are shipped.
+const BILL_LINES = [
+  ['scan', 'Tag scanned', 'Necklace · 22K (916) · net 18.40 g · HUID verified'],
+  ['metal', 'Metal at today’s rate', '18.40 g × ₹6,875 = ₹1,26,500'],
+  ['make', 'Making, 12%', '₹15,180'],
+  ['gst', 'GST, 3%', '₹4,250'],
+  ['old', 'Old gold exchange', '− ₹42,000 (voucher, 6.1 g after stone deduction)'],
+  ['pay', 'Paid', 'UPI ₹80,000 · Cash ₹23,930'],
+  ['rec', 'Receipt', 'Sent to Meera on WhatsApp · points added'],
+];
+const billDemo = () => `<div class="bill-demo" data-bill-demo>
+  <div class="bill-paper" aria-hidden="true"><div class="bill-head"><b>Shree Jewellers</b><i>Counter 2 · Shift open</i></div>
+    ${BILL_LINES.map(([k, l, v], i) => `<p class="bill-line bl-${k}" data-i="${i}"><span>${l}</span><b>${v}</b></p>`).join('')}
+    <p class="bill-total"><span>Total</span><b>₹1,03,930</b></p></div>
+  <ol class="wa-steps">${['Scan or search the piece', 'Price at today’s rate', 'Making and stones', 'GST added', 'Old gold deducted', 'Split payment', 'Receipt on WhatsApp'].map((t) => `<li><b>${t}</b></li>`).join('')}</ol>
+</div>`;
+
+const POS_CMP = [
+  ['Price at today’s rate', 'Calculator', 'Typed in', 'Automatic, every bill'],
+  ['Scan a tag to bill', 'No', 'Often', 'Yes, or search by local name'],
+  ['Old gold exchange on the bill', 'Slip and calculator', 'Separate entry', 'Voucher, applied as credit'],
+  ['HUID check before sale', 'No', 'Rarely', 'Warns or blocks, your choice'],
+  ['Estimates that become bills', 'Rewrite', 'Sometimes', 'Yes, one tap'],
+  ['Customer remembered', 'Name on a copy', 'A ledger', 'Full record: purchases, scheme, occasions'],
+  ['Receipt on WhatsApp', 'No', 'Rarely', 'Yes'],
+  ['Cash day-close', 'Count and hope', 'Report', 'Declared count, variance on screen'],
+  ['Works if the internet drops', 'Yes', 'Yes', 'Yes, sales sync when it returns'],
+];
+const posTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Bill book and calculator</th><th>Desktop billing software</th><th>Jwero</th></tr></thead><tbody>${POS_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+
+const POS_MOVE = [
+  ['Bring your stock and customers', 'We import pieces with weights and tags, and your customers, from your current software or Excel.'],
+  ['Set your rates and making rules', 'Today’s rate source, purities, making and wastage rules, by category.'],
+  ['Set up counters and people', 'Registers, cashiers, salespeople, and who can approve discounts and returns.'],
+  ['Run both for a week', 'Bill in Jwero while your old software runs alongside, until the totals match.'],
+  ['Keep your books where your CA likes them', 'Jwero’s own ledger, or a bridge to Tally or Zoho Books.'],
+];
+
+const posFaqs = [
+  { q: 'What is jewellery billing software?', a: 'Jewellery billing software prices and bills pieces the way a jewellery counter works: by net weight and purity at today’s gold rate, plus making, stones and 3% GST, with old gold exchange, estimates, HUID checks, returns and the cash day-close.' },
+  { q: 'Which is the best billing software for a jewellery shop?', a: 'Look for automatic pricing at today’s rate, tag scanning, old gold exchange on the same bill, a HUID check, estimates, returns, cash day-close, billing that keeps working offline, and the customer record behind every bill. Jwero does all of these on one system.' },
+  { q: 'How is the gold price calculated on a bill?', a: 'Metal value is today’s 24K rate × karat ÷ 24 × net weight. Add making, stones and other charges, then 3% GST. Jwero does this on every bill automatically; try the calculator on this page.' },
+  { q: 'Does it handle HUID and old gold?', a: 'Yes. The counter checks each piece’s HUID and can warn or block an unhallmarked sale. Old gold is taken in on an exchange voucher with weight, purity and stone deduction, and applied as credit on the new bill.' },
+  { q: 'What is the difference between jewellery POS and billing software?', a: 'They are the same job at the counter. Jewellery POS usually means the whole till: scanning, pricing, payments, returns and the cash day-close. Jewellery billing software is how many jewellers search for it. Jwero does both on one screen.' },
+  { q: 'Can I use it without internet?', a: 'Yes. The counter installs on the till device and keeps billing through a dropout; each sale syncs once the connection returns, without duplicates.' },
+  { q: 'Can a customer pay with UPI, card and cash on one bill?', a: 'Yes. The cashier records cash, card, UPI and credit, split across one bill. Card machines are not driven by Jwero; the cashier records the amount taken on the machine.' },
+  { q: 'Can I give an estimate and turn it into a bill later?', a: 'Yes. Estimates are saved on the customer’s record and become a bill in one step, repriced at that day’s rate.' },
+  { q: 'Do I still need my old billing software?', a: 'Not for the sale, the return or the till. Your books can stay in Tally or Zoho Books through the bridge, or run on Jwero’s own ledger.' },
+  { q: 'Can two cashiers share a register?', a: 'A register has one open shift at a time, so takings are always attributable to the person who opened it.' },
+  { q: 'Can a salesperson be credited for the sale?', a: 'Yes. The salesperson on the bill feeds incentives and the sales reports.' },
+];
+
 const pos = {
   slug: 'products/pos',
-  title: 'Jewellery POS Software: Billing, Exchange, Day-Close | Jwero',
-  description: 'A jewellery counter POS: scan-to-sale at the live gold rate, weight-based sales, old-gold exchange vouchers, returns, register shifts with cash day-close — on the same customer record as everything else.',
+  title: 'Jewellery Billing Software & POS for Jewellery Shops | Jwero',
+  description: 'Jewellery billing software and POS: price at today’s gold rate, scan tags, old gold exchange, HUID check, estimates, split payments, WhatsApp receipts and cash day-close.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero POS', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Jewellery point-of-sale with live-rate pricing, weight-based sales, old-gold exchange, returns, register shifts and cash day-close.',
+    name: 'Jwero Jewellery Billing Software & POS', alternateName: ['Jewellery POS software', 'Jewellery billing software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Jewellery billing and point of sale: live-rate pricing by weight and purity, tag scanning and local-name search, old gold exchange vouchers, HUID check, estimates, split payments, returns, registers and cash day-close, offline-capable.',
     url: 'https://jwero.ai/products/pos', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
-  breadcrumbs: BC('Counter POS'),
-  faqs: [
-    { q: 'Is this a full POS with a cash drawer and day-close?', a: 'Yes. Each physical counter is a register; a cashier opens a shift, rings sales, and closes it with a declared cash count. Jwero computes the variance against what it expected, per currency, and keeps every shift on file.' },
-    { q: 'Can I take a return or an exchange at the counter?', a: 'Yes. Returns follow the branch’s return policy, and old gold is taken in on an exchange voucher — once approved, the voucher becomes credit on the new invoice.' },
-    { q: 'What if the internet drops mid-sale?', a: 'The counter app is installable on the till device and keeps ringing sales through a dropout; each sale replays to the server once the connection returns, without duplicates. Reports and the customer record catch up the moment it syncs.' },
-    { q: 'Does it price by weight at today’s rate?', a: 'Yes — weight-based sales and quotes use the same live-rate pricing engine as the catalogue and the WhatsApp replies, so the counter never quotes a stale number.' },
-    { q: 'Do I still need my old billing software?', a: 'Not for the sale, the return or the till. Your statutory books can stay in Tally or Zoho Books through the bridge, or run on Jwero’s own ledger.' },
-  ],
+  extraSchema: [{
+    '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to switch your jewellery shop billing to Jwero',
+    step: POS_MOVE.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })),
+  }],
+  breadcrumbs: BC('Jewellery billing & POS'),
+  faqs: posFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'COUNTER POS',
-  h1: 'The counter, end to end. Scan, sell, exchange, return, close the till.',
-  sub: 'One screen at the counter: scan or search a piece, price it at this minute’s gold rate, take old gold in exchange, bill it with GST — then close the shift with a cash count that reconciles itself. Every sale lands on the customer’s record before she reaches the door.',
+  eyebrow: 'JEWELLERY BILLING SOFTWARE · JEWELLERY POS',
+  h1: 'Jewellery billing software and POS: scan, sell, exchange, return, close the till.',
+  sub: 'One screen at the counter: scan or search a piece, price it at today’s gold rate, take old gold in exchange, check the HUID, bill with GST, take payment and send the receipt on WhatsApp. Then close the shift with a cash count that reconciles itself.',
   primary: { href: '#', label: 'Show me a till close', wa: 'pos' },
-  secondary: { href: '/products/billing-finance', label: 'See Billing & Finance' },
-  note: 'The demo IS a WhatsApp conversation — ask for the counter walkthrough.',
 })}
 
-${L.section(
-  `${L.sectionHead('WHAT THE TILL DOES', 'Built for the way a jewellery counter actually works.', 'Not a retail POS with a gold field bolted on. Weight, purity, rate, exchange and hallmark are first-class at every step.')}
-  ${L.cards([
-    { icon: '▣', title: 'Scan-to-sale', text: 'Scan the tag or search by name — even in Hindi, Gujarati or Tamil transliteration — and the piece, its weight and its certificate are on the bill.' },
-    { icon: '⇄', title: 'Old-gold exchange', text: 'Take old gold in on an exchange voucher: weight, purity, deduction. Once approved, it is credit on the new invoice, and the intake is on file for the assayer.' },
-    { icon: '↺', title: 'Returns at the counter', text: 'Sales returns follow the branch’s own return policy — window, restocking, who may approve — and reverse the stock and the books in one step.' },
-    { icon: '✓', title: 'Register shifts & day-close', text: 'Open a shift, ring sales, close with a declared cash count. Jwero computes the variance against expected takings, per currency, and stores every shift.' },
-    { icon: '☑', title: 'Weight-based sales & quotes', text: 'Price by weight at the live rate for coins, bars and unbadged pieces — and hand over a quote that expires on schedule.' },
-    { icon: '⏻', title: 'Keeps going offline', text: 'The counter installs on the till device and keeps ringing sales through a dropout; each sale replays once the connection returns, without duplicates.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE BILL, START TO FINISH', 'A real counter sale, line by line.', 'Scan, price, exchange, pay, receipt.')}${billDemo()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('WHAT CHANGES AT THE COUNTER', 'For the cashier, the manager and the owner.', '')}
-  ${L.impactGrid([
-    { lever: 'Repricing', before: 'The rate moves at noon; the cashier reprices three invoices by hand and keeps a customer waiting.', after: 'Every bill prices itself at this minute’s rate — the same number the catalogue and WhatsApp quoted her.' },
-    { lever: 'Day-close', before: 'The drawer is counted against a printout from the other software; mismatches surface next week.', after: 'The shift closes with a declared count; the variance is on screen before the cashier goes home.' },
-    { lever: 'Exchange', before: 'Old gold is weighed, noted on a slip, and deducted from a total someone worked out on a calculator.', after: 'An exchange voucher with weight, purity and deduction — approved, then applied as credit, with the intake on file.' },
-    { lever: 'The customer', before: 'The sale lives on the bill. Who bought it is a name on a copy.', after: 'The sale writes to her record: what she bought, what she exchanged, what to remember next time.' },
-  ])}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('SIX JOBS AT THE COUNTER', 'What jewellery billing software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Find the piece in a second</h3><p>Scan the tag, or search by name, even by local names like “jhumka” or “kada”. The customer is recognised from their number, with their history on screen.</p><a href="/products/inventory">Inventory and tags →</a></article>
+  <article><h3>2. Price at today’s rate</h3><p>Net weight, purity, making, stones and GST, priced from today’s rate automatically. Estimates are saved and become a bill in one step.</p><a href="/blog/how-to-calculate-gold-jewellery-price">How the price is worked out →</a></article>
+  <article><h3>3. Old gold and schemes on the same bill</h3><p>Old gold on an exchange voucher with weight, purity and stone deduction, applied as credit. Scheme balances redeemed against the purchase.</p><a href="/blog/old-gold-exchange-jewellers">Old gold exchange →</a></article>
+  <article><h3>4. Take payment your customer’s way</h3><p>Cash, card, UPI and credit, split across one bill, with coupons where you allow them. The receipt goes to the customer on WhatsApp.</p><a href="/products/whatsapp">WhatsApp API for jewellers →</a></article>
+  <article><h3>5. Rules at the till</h3><p>A HUID check that warns or blocks an unhallmarked sale, discounts above a limit sent to a manager, and returns under each branch’s own policy.</p><a href="/blog/huid-hallmarking-rules-jewellers">HUID rules →</a></article>
+  <article><h3>6. Close the day in minutes</h3><p>Registers and shifts per counter, a declared cash count, the variance on screen before the cashier goes home, per currency if you take foreign notes.</p><a href="/products/billing-finance">Billing and finance →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('TRY THE ARITHMETIC', 'This is the bill your counter will print.', 'Change the rate, purity, weight and making.')}${require('./blog-rules').priceCalc}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('TIME AT THE COUNTER', 'What faster bills give back.', 'Your numbers, not ours.')}<div class="callc" data-tillc>
+  <div class="callc-in">
+    <label>Bills a day<input type="number" inputmode="numeric" data-tc="bills" value="25" min="0"></label>
+    <label>Minutes saved per bill<input type="number" inputmode="decimal" data-tc="mins" value="4" min="0" step="0.5"></label>
+    <label>Counter staff salary a month, ₹<input type="number" inputmode="numeric" data-tc="salary" value="22000" min="0" step="1000"></label>
+    <label>Days open a month<input type="number" inputmode="numeric" data-tc="days" value="26" min="0" max="31"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Hours back every month</span><b data-tc-o="hours">0</b></p>
+    <p class="callc-save"><span>Staff time saved a month</span><b data-tc-o="money">₹0</b></p>
+    <p><span>Customers waiting less, every day</span><b data-tc-o="bills">0</b></p>
+    <p class="cta-note">Minutes saved come from no repricing by hand, no hunting for tags and no exchange sums on a calculator. Staff cost is worked out on 9-hour days.</p>
+  </div>
+</div>`)}
+
+${L.section(`${L.sectionHead('COMPARE', 'Bill book, desktop billing software, or Jwero.', '')}${posTable()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('MOVING FROM DESKTOP BILLING OR TALLY', 'How to switch your jewellery shop billing to Jwero.', 'Five steps, done with you. Nothing about your books has to change on day one.')}${L.steps(POS_MOVE.map(([title, text]) => ({ title, text })))}`)}
 
 ${L.oneSystemBlock([
-  'A counter sale, a WhatsApp order and a storefront checkout all post through the same invoice and the same ledger — one set of books, whichever door the sale came through.',
-  'The piece scanned at the till is the same record the catalogue publishes and the inventory values — sell it here and it disappears from the storefront at once.',
-  'Hallmark and HUID are checked at the till, from the catalogue record, before an unhallmarked piece can be billed.',
+  'A counter sale, a WhatsApp order and a storefront checkout post through the same invoice and the same ledger.',
+  'The piece scanned at the till is the record the catalogue publishes and the inventory values; sell it here and it disappears from the storefront at once.',
+  'The bill writes to the customer’s record: what she bought, what she exchanged, her points, and what to remember next time.',
 ])}
 
 ${L.honestGapsBlock([
-  'E-invoice IRN and e-way bill generation are not built in yet — GST invoices are generated; IRP registration stays with your CA’s tool for now.',
-  'Card-machine (EDC) integration is manual: the cashier records the tender; the terminal is not driven by Jwero.',
+  'Card machines are not driven by Jwero: the cashier records the amount taken on the machine.',
 ])}
 
-${L.section(`${L.sectionHead('COUNTER QUESTIONS', 'Cash, returns and the internet.', '')}${L.faqBlock([
-  { q: 'Can two cashiers share a register?', a: 'A register has one open shift at a time — enforced by the database, not just the screen — so takings are always attributable to the person who opened it.' },
-  { q: 'Does it handle multiple currencies?', a: 'Yes; cash figures and variance are kept per currency, for showrooms that take foreign notes.' },
-  { q: 'Can a salesperson be credited for the sale?', a: 'Yes — the salesperson on the invoice feeds incentives in HR and the growth report.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the chat button on this page — it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('See a sale rung up, returned and closed.', 'Bring one real bill from last week. We will run it through the counter — exchange, GST, till close — live.', 'pos')}
+${L.ctaBand('See a sale rung up, returned and closed.', 'Bring one real bill from last week. We will run it through the counter, exchange, GST and till close, live.', 'pos')}
 `,
 };
 

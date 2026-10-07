@@ -265,8 +265,8 @@ ${L.ctaBand('Find the sleeping capital.', 'Bring last year’s stock summary to 
 
 const billingFinance = {
   slug: 'products/billing-finance',
-  title: 'Jewellery Billing Software: GST at the Live Gold Rate | Jwero',
-  description: 'Jewellery billing software: GST invoices at the live gold rate, receivables tracking and payment reminders — with an honest note on what’s roadmap.',
+  title: 'Jewellery GST Invoicing & Finance: Receivables, Ledger | Jwero',
+  description: 'Jewellery GST invoicing and finance: invoices at the live gold rate, receivables and payment reminders, and the books behind them. For counter billing, see Jwero’s jewellery billing software and POS.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Billing & Finance', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',

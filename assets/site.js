@@ -2622,3 +2622,26 @@ document.addEventListener('click', function (e) {
   }
   root.addEventListener('input', run); run();
 })();
+
+// POS page: the bill builds line by line.
+(function () {
+  var root = document.querySelector('[data-bill-demo]'); if (!root) return;
+  var lines = root.querySelectorAll('.bill-line'), steps = root.querySelectorAll('.wa-steps li'), n = lines.length, i = -1, timer;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(k) { Array.prototype.forEach.call(lines, function (l, j) { l.classList.toggle('is-on', j <= k); }); Array.prototype.forEach.call(steps, function (s, j) { s.classList.toggle('is-on', j === k); }); root.classList.toggle('is-done', k >= n - 1); }
+  if (reduce) { show(n - 1); return; }
+  function tick() { i = (i + 1) % (n + 2); show(Math.min(i, n - 1)); }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { clearInterval(timer); if (e.isIntersecting) { tick(); timer = setInterval(tick, 1500); } }); }, { threshold: .35 });
+  io.observe(root);
+})();
+// POS page: time at the counter.
+(function () {
+  var root = document.querySelector('[data-tillc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-tc="' + k + '"]') || {}).value || 0; };
+  function run() {
+    var hours = v('bills') * v('mins') * v('days') / 60, money = hours * v('salary') / (Math.max(v('days'), 1) * 9);
+    var set = function (k, t) { var el = root.querySelector('[data-tc-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('hours', Math.round(hours).toLocaleString('en-IN') + ' hours'); set('money', '\u20b9' + Math.round(money).toLocaleString('en-IN')); set('bills', v('bills') + ' customers');
+  }
+  root.addEventListener('input', run); run();
+})();
