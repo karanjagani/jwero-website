@@ -4452,3 +4452,35 @@ body.is-scrolled.on-panel .site-header .logo-wm-light, .on-dark .logo-wm-light {
 .js .f-logo.is-in .mark-logo .mark-flame { animation: logo-lift 1.2s cubic-bezier(.2,.8,.2,1) both, mark-flicker .45s ease-in-out .2s 6; }
 @keyframes logo-lift { 0% { transform: translate(-10px, 14px); opacity: 0; } 100% { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .js body.logo-intro .site-header .logo .mark-logo, .js body.logo-intro .site-header .logo-word, .js body.logo-intro .site-header .logo::after, .js .f-logo.is-in .mark-logo img { animation: none !important; } .js .f-logo .logo-word { clip-path: none; transition: none; } }
+/* Home: who it is for */
+.home-who a { gap: 8px; }
+.home-who-ico { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: color-mix(in srgb, var(--brand) 10%, transparent); color: var(--brand); }
+.home-who-ico .ico { width: 22px; height: 22px; }
+.home-who span:not(.home-who-ico) { font-size: .9rem; color: var(--ink-2); }
+/* Home: "What changes" as tabs with an animated before and after (JS adds .cmp-tabbed) */
+.cmp-tabs { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 14px; scrollbar-width: none; }
+.cmp-tabs::-webkit-scrollbar { display: none; }
+.cmp-tabs button { flex: 0 0 auto; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); font: inherit; font-size: .85rem; font-weight: 600; letter-spacing: .04em; cursor: pointer; position: relative; overflow: hidden; }
+.cmp-tabs button.is-on { background: var(--brand); border-color: var(--brand); color: #fff; }
+.cmp-tabs button.is-on::after { content: ''; position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: #F6B11C; transform-origin: left; animation: cmp-timer var(--cmp-t, 7s) linear both; }
+.cmp-tabbed.is-paused .cmp-tabs button.is-on::after { animation: none; width: 0; }
+@keyframes cmp-timer { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.cmp-tabbed .cmp-head { display: none; }
+.cmp-tabbed .cmp-row { display: none; }
+.cmp-tabbed .cmp-row.is-on { display: grid; grid-template-columns: 1fr 64px 1.25fr; gap: 0; align-items: stretch; border: 0; padding: 0; }
+.cmp-tabbed .cmp-row.is-on .cmp-lever { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+.cmp-tabbed .cmp-before, .cmp-tabbed .cmp-after { margin: 0; padding: 22px; border-radius: 16px; border: 1px solid var(--line); font-size: 1.02rem; line-height: 1.5; }
+.cmp-tabbed .cmp-before { background: var(--surface); color: var(--ink-2); grid-column: 1; }
+.cmp-tabbed .cmp-after { background: var(--card); border-color: var(--brand); box-shadow: 0 12px 30px -18px rgba(0,19,183,.45); grid-column: 3; }
+.cmp-tabbed .cmp-row.is-on::before { content: ''; grid-column: 2; grid-row: 2; align-self: center; justify-self: center; width: 40px; height: 2px; background: linear-gradient(90deg, var(--line), var(--brand)); }
+.cmp-tabbed .cmp-row.is-on::after { content: '→'; grid-column: 2; grid-row: 2; align-self: center; justify-self: center; color: var(--brand); font-weight: 700; transform: translateX(14px); }
+.cmp-tabbed .cmp-row.is-on .cmp-before { grid-row: 2; animation: cmp-in .5s cubic-bezier(.2,.8,.2,1) both; }
+.cmp-tabbed .cmp-row.is-on .cmp-after { grid-row: 2; animation: cmp-in .6s .25s cubic-bezier(.2,.8,.2,1) both; }
+.cmp-tabbed .cmp-before { text-decoration: line-through; text-decoration-color: rgba(200,60,60,.35); text-decoration-thickness: 1px; }
+.cmp-tabbed .cmp-managed { display: block; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); font-size: .9rem; color: var(--ink-2); }
+@keyframes cmp-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (max-width: 760px) { .cmp-tabbed .cmp-row.is-on { grid-template-columns: 1fr; } .cmp-tabbed .cmp-row.is-on::before, .cmp-tabbed .cmp-row.is-on::after { display: none; } .cmp-tabbed .cmp-before, .cmp-tabbed .cmp-after { grid-column: 1; } .cmp-tabbed .cmp-row.is-on .cmp-after { grid-row: 3; margin-top: 10px; } }
+@media (prefers-reduced-motion: reduce) { .cmp-tabbed .cmp-row.is-on .cmp-before, .cmp-tabbed .cmp-row.is-on .cmp-after, .cmp-tabs button.is-on::after { animation: none; } }
+.cmp-tabbed .cmp-row.is-on .cmp-lever b { visibility: hidden; }
+.cmp-tabbed .cmp-row.is-on .cmp-lever { margin-bottom: 8px; }
+.cmp-tabs { position: relative; }

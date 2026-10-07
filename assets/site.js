@@ -2987,3 +2987,19 @@ document.addEventListener('click', function (e) {
   var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { f.classList.add('is-in'); io.disconnect(); } }); }, { threshold: 0.4 });
   io.observe(f);
 })();
+// "What changes": one department at a time, with tabs, auto-advancing until the visitor takes over.
+(function () {
+  [].forEach.call(document.querySelectorAll('[data-cmp-tabs]'), function (wrap) {
+    var rows = [].slice.call(wrap.querySelectorAll('.cmp-row')); if (rows.length < 2) return;
+    var cmp = wrap.querySelector('.cmp'); cmp.classList.add('cmp-tabbed');
+    var bar = document.createElement('div'); bar.className = 'cmp-tabs'; bar.setAttribute('role', 'tablist');
+    var btns = rows.map(function (r, i) { var b = document.createElement('button'); b.type = 'button'; b.setAttribute('role', 'tab'); b.textContent = (r.querySelector('.cmp-lever b') || {}).textContent || ('Part ' + (i + 1)); b.addEventListener('click', function () { stop(); show(i); }); bar.appendChild(b); return b; });
+    cmp.insertBefore(bar, cmp.firstChild);
+    var cur = 0, timer = null, T = 7000, reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function show(i) { cur = i; rows.forEach(function (r, k) { r.classList.toggle('is-on', k === i); }); btns.forEach(function (b, k) { b.classList.toggle('is-on', k === i); b.setAttribute('aria-selected', k === i ? 'true' : 'false'); }); var on = btns[i]; if (on && bar.scrollWidth > bar.clientWidth) { var l = on.offsetLeft - bar.offsetLeft - 20; bar.scrollTo({ left: Math.max(0, l), behavior: 'smooth' }); } }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } cmp.classList.add('is-paused'); }
+    function start() { if (reduce || timer) return; cmp.style.setProperty('--cmp-t', (T / 1000) + 's'); timer = setInterval(function () { show((cur + 1) % rows.length); }, T); }
+    show(0);
+    if ('IntersectionObserver' in window) { var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting && !cmp.classList.contains('is-paused')) start(); else if (!en.isIntersecting && timer) { clearInterval(timer); timer = null; } }); }, { threshold: 0.3 }); io.observe(cmp); } else start();
+  });
+})();

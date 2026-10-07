@@ -23,29 +23,45 @@ const home = {
 ${L.homeHero({
   kicker: 'The Autonomous Jewellery OS, run by AI',
   h1: 'Jewellery software that runs the whole business: customers, counter, stock, team and books.',
-  sub: 'One system from the first enquiry to the closed books: CRM, showroom, POS and billing, inventory, purchase, manufacturing, accounts, HR, marketing, sales, promotions, automations and reports on one record. AI drafts the work and flags what is slipping, and nothing goes out without your yes.',
+  sub: 'Customers, counter, stock, workshop, books and team on one record. AI drafts the routine work and flags what is slipping, and nothing goes out without your yes.',
 })}
 
 <section class="pz-logos">${L.customerLogos()}</section>
 
-${require('./jbaas').section()}
-
 ${require('./positioning').quotes(3)}
 
-${L.section(
-  `<span id="count-yours"></span>${L.sectionHead('COUNT YOUR TOOLS', `${L.STACK_N} separate tools become one.`, 'Pick your kind of business, or answer yes for each area you pay software for. See what it costs and what Jwero saves.')}
-  ${L.stackMerge()}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too: the people it takes, and what Jwero would cost →</a></p>`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('WHO IT IS FOR', 'Built for your kind of jewellery business.', 'The same Jwero, set up the way your business works.')}
+  <div class="bl-goals bl-goals-3 home-who">${[
+    ['store', 'One showroom', 'Counter, stock, schemes and every customer, without the owner remembering everything.', '/solutions/single-store'],
+    ['branches', 'A chain of stores', 'Every branch on one record: prices, stock, transfers and reports.', '/solutions/multi-store-chains'],
+    ['layers', 'A manufacturer', 'Orders, karigars, wastage by stage and metal accounts.', '/solutions/manufacturers'],
+    ['truck', 'A wholesaler', 'Buyer catalogues, memo, buyer pricing and follow-ups.', '/solutions/b2b-jewellery'],
+    ['send', 'An online brand', 'Your own store at today’s rate, plus WhatsApp and Instagram.', '/solutions/d2c-brands'],
+    ['sparkle', 'Just starting', 'Start with the system chains took decades to build.', '/solutions/startups'],
+  ].map(([i, t, d, h]) => `<a href="${h}"><span class="home-who-ico">${L.icon(i)}</span><b>${t}</b><span>${d}</span><i>See how it works →</i></a>`).join('')}</div>
+  <p class="cta-note" style="margin-top:14px;text-align:center"><a href="/solutions">All 45 businesses, problems and roles →</a></p>`)}
 
 ${L.section(
   `${L.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole jewellery business.', 'Not only how you sell. The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}
-  ${L.compareRows(L.DEPARTMENTS)}`
+  <div data-cmp-tabs>${L.compareRows(L.DEPARTMENTS)}</div>`
 )}
 
 ${L.section(
   `<span id="one-record"></span><div class="gem-head"><h2>One record. Every department. Your approval.</h2><p>Play a week, run a full day, or break it into the tools it lives in today. <a href="/platform">See the full platform →</a></p></div>
   ${L.gemStage2()}`
 , { tone: 'tint' })}
+
+${require('./jbaas').section()}
+
+${L.section(
+  `<span id="count-yours"></span>${L.sectionHead('COUNT YOUR TOOLS', `${L.STACK_N} separate tools become one.`, 'Pick your kind of business, or answer yes for each area you pay software for. See what it costs and what Jwero saves.')}
+  ${L.stackMerge()}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too: the people it takes, and what Jwero would cost →</a></p>`
+, { tone: 'tint' })}
+
+
+
+
+
 
 ${L.section(
   `<div class="gem-head"><h2>Security and privacy delivered, just as you want.</h2></div>
