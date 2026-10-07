@@ -21,7 +21,7 @@ const TAGLINE = 'You focus on jewellery. We handle the chaos';
 const WEBCHAT = { origin: process.env.JWERO_WEBCHAT_ORIGIN || 'https://os.jwero.ai', siteKey: process.env.JWERO_SITE_KEY || '' };
 const SIGNATURE = 'Markets change. Customers change. Technology changes. Your business shouldn’t have to chase every change.';
 const ORG_DESCRIPTION =
-  'Jwero is the Autonomous Jewellery OS, run by AI: customers, catalogue, stock, counter billing, purchase, manufacturing, accounts and team on one record, with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and governed AI staff, in one place.';
+  'Jwero is the Autonomous Jewellery OS, run by AI: customers, catalogue, stock, counter billing, purchase, manufacturing, accounts and team on one record, with WhatsApp and Instagram commerce, gold schemes and savings plans, and governed AI staff, in one place.';
 
 // ---------------------------------------------------------------- company facts (single source of truth)
 const LEGAL_ENTITY = 'Tanika Tech Jewels Private Limited';
@@ -1594,7 +1594,7 @@ Sitemap: ${SITE}/sitemap.xml
 > Jwero is the Autonomous Jewellery OS, run by AI: jewellery software that runs the whole business on one
 > record. Counter billing (POS) at the live gold rate, inventory, purchase and vendors, manufacturing and
 > karigar accounts, accounting, HR and payroll, reports, CRM (198 kinds of customer signal scored into 11
-> explainable scores), gold savings schemes, girvi, digital gold, and WhatsApp, Instagram and ecommerce website
+> explainable scores), gold schemes and savings plans, girvi, and WhatsApp, Instagram and ecommerce website
 > selling, with an AI workforce that acts only inside approval queues, daily caps, quiet hours and a
 > five-scope kill switch ("AI that waits for your yes").
 > Price: ₹18,000 a month, every module included. The first month is ₹3,600. Enterprise is custom priced. There is no free trial.
@@ -1752,7 +1752,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - GST invoices priced at today's gold rate: metal, purity, making charges, stones, CGST/SGST/IGST.
 - Double-entry ledger for sales, returns, payments and expenses; party ledgers; GSTR-1, GSTR-3B, HSN and TDS reports. Filing stays with the CA.
 - Receivables by customer and age; automatic payment reminders on dues; discounts and overrides routed through approvals.
-- Tally bridge: sales, returns, payments and expenses sync to Tally so nothing is entered twice; ledgers map once; e-invoices are generated in Tally from synced entries.
+- Tally bridge: sales, returns, payments and expenses sync to Tally so nothing is entered twice; ledgers map once; e-invoices are generated in Tally from synced entries. A Zoho Books bridge works the same way.
 
 ## Email marketing and business email for jewellers (facts)
 

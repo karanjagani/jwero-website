@@ -7,7 +7,7 @@
 const NAMES = {
   '/products/whatsapp': 'WhatsApp Commerce', '/products/instagram-facebook': 'Instagram & Facebook', '/products/ai-sales-agents': 'AI Sales Agents',
   '/products/crm': 'Jewellery CRM', '/products/catalog': 'Catalogue (PIM)', '/products/inventory': 'Inventory', '/products/pos': 'Counter POS',
-  '/products/billing-finance': 'Billing & Finance', '/products/erp': 'ERP', '/products/gold-schemes': 'Gold Savings Schemes', '/products/digital-gold': 'Digital Gold',
+  '/products/billing-finance': 'Billing & Finance', '/products/erp': 'ERP', '/products/gold-schemes': 'Gold Savings Schemes', 
   '/products/girvi': 'Girvi / Gold Loans', '/products/multi-store': 'Multi-store', '/products/showroom': 'Showroom & Floor', '/products/loyalty': 'Loyalty & Referrals',
   '/products/hr-payroll': 'HR & Payroll', '/products/repairs-service': 'Repairs & Service', '/products/purchase-vendors': 'Purchase & Vendors', '/products/ecommerce': 'Ecommerce Website',
   '/products/journeys': 'Journeys', '/products/campaigns': 'Campaigns & Broadcasts', '/products/segmentation': 'Segmentation', '/products/ads-manager': 'Ads Manager',

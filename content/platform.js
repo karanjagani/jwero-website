@@ -576,7 +576,7 @@ ${L.section(
       </div>
       <div class="road-group">
         <p class="road-group-label">Ecommerce website</p>
-        <div class="road-item"><strong>Scheme & digital-gold redemption at checkout</strong>website enrolment and instalment payments are live; applying a balance at checkout isn’t wired yet</div>
+        <div class="road-item"><strong>Scheme redemption at website checkout</strong>website enrolment and instalment payments are live; applying a balance at checkout isn’t wired yet</div>
         <div class="road-item"><strong>Google Shopping sync</strong>not built</div>
         <div class="road-item"><strong>HUID / certificate verification widget</strong>the catalogue carries the data; the widget isn’t built</div>
         <div class="road-item"><strong>Old-gold exchange / buyback calculator online</strong></div>

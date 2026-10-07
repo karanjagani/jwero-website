@@ -606,7 +606,7 @@ function oneSystemBlock(lines) {
 const PILLARS = [
   {
     key: 'remember', title: 'REMEMBER', promise: 'Every customer, occasion, taste, scheme balance and conversation in one record that belongs to the business — not a salesman’s phone.',
-    chips: [['Jewellery CRM', '/products/crm'], ['Customer Memory', '/platform/customer-memory'], ['Loyalty', '/products/gold-schemes'], ['Gold Schemes', '/products/gold-schemes'], ['Digital Gold', '/products/gold-schemes']],
+    chips: [['Jewellery CRM', '/products/crm'], ['Customer Memory', '/platform/customer-memory'], ['Loyalty', '/products/gold-schemes'], ['Gold Schemes', '/products/gold-schemes'], ['Gold Savings Plans', '/products/gold-schemes']],
     proof: 'Every visit, message and instalment scored on one card — 11 live scores decide who to reach and when.',
   },
   {

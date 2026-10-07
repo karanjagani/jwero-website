@@ -124,7 +124,7 @@ ${L.ctaBand('See a certified stone, sold end to end.', 'Bring one solitaire enqu
 
 const goldRetailFaqs = [
   { q: 'How does pricing stay accurate as the rate moves?', a: 'Catalogue prices are formulas: rate × weight × purity plus making charges — resolved live wherever the product appears. Change the rate once; everything follows.' },
-  { q: 'Can I run my gold savings scheme alongside daily selling?', a: 'Yes — schemes, digital gold and everyday catalogue selling share the same customer record and pricing engine.' },
+  { q: 'Can I run my gold savings scheme alongside daily selling?', a: 'Yes — schemes, savings plans and everyday catalogue selling share the same customer record and pricing engine.' },
   { q: 'What if we mis-price something because the rate updated mid-conversation?', a: 'Prices resolve live at the moment they’re shown or invoiced, not cached from earlier in the day — that specific risk is what rate-linked pricing is built to remove.' },
 ];
 
@@ -147,7 +147,7 @@ ${L.section(
   ${L.cards([
     { title: 'Rate-linked pricing', text: 'Every catalogue price, quote and invoice follows the live gold rate automatically — no manual repricing.' },
     { title: 'Gold savings schemes', text: 'Enrolment, reminders and maturity run digitally, with balances customers can check themselves.', link: { href: '/products/gold-schemes', label: 'See schemes' } },
-    { title: 'Digital gold', text: 'Offer gram-based savings alongside classic schemes — the same discipline, a modern format.', link: { href: '/products/gold-schemes', label: 'See digital gold' } },
+    { title: 'Gold savings plans', text: 'Offer gram-based savings plans alongside classic schemes — the same discipline, a modern format.', link: { href: '/products/gold-schemes', label: 'See gold schemes' } },
     { title: 'Exchange & repair tracking', text: 'Old-gold exchange and repairs stay on the customer record, not a separate register.' },
   ])}`
 )}

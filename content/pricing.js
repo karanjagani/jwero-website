@@ -14,7 +14,7 @@ const inr = (n) => '₹' + Number(n).toLocaleString('en-IN');
 
 const MODULES = [
   ['CRM, pipeline & showroom', '/products/crm'], ['Omnichannel inbox', '/products/whatsapp'], ['Marketing, campaigns & loyalty', '/products/campaigns'],
-  ['Social & ads', '/products/ads-manager'], ['Digital gold & gold schemes', '/products/gold-schemes'], ['Jwero Optimize', '/products/optimize'],
+  ['Social & ads', '/products/ads-manager'], ['Gold schemes & savings plans', '/products/gold-schemes'], ['Jwero Optimize', '/products/optimize'],
   ['Catalogues + product engine', '/products/catalog'], ['Inventory, POS & quotations', '/products/pos'], ['Manufacturing, materials & workshop', '/products/manufacturing'],
   ['Finance & accounting', '/products/billing-finance'], ['Online store & visual selling', '/products/ecommerce'], ['Girvi, HR & payroll', '/products/hr-payroll'],
 ];

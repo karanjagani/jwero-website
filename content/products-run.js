@@ -407,6 +407,7 @@ const bfFaqs = [
   { q: 'What is jewellery billing and accounting software?', a: 'Software that bills each piece at today’s gold rate with GST, keeps the books, and tracks who owes what. Jwero does all three and keeps Tally in step through a bridge.' },
   { q: 'Do my books move to Jwero, or stay in Tally?', a: 'Your choice. Every sale, return, payment and expense posts to Jwero’s double-entry ledger, and the Tally bridge syncs it across so your CA keeps working in Tally.' },
   { q: 'What does the Tally bridge do?', a: 'It syncs sales, returns, payments and expenses from Jwero to Tally, so nothing is typed twice. E-invoices are generated in Tally from the synced entries.' },
+  { q: 'Do you work with Zoho Books?', a: 'Yes. A Zoho Books bridge carries entries across the same way, if your accountant uses Zoho Books instead of Tally.' },
   { q: 'Can it price invoices at today’s gold rate automatically?', a: 'Yes. Invoices use the same pricing as the catalogue: metal at today’s rate, purity, making charges, stones and GST.' },
   { q: 'Is GST computed correctly?', a: 'CGST, SGST and IGST are worked out on every invoice, with GSTR-1, GSTR-3B, HSN and TDS reports and party ledgers. Filing itself stays with your CA.' },
   { q: 'Does it chase payments for me?', a: 'Yes. Reminders go out on outstanding dues on the schedule you set.' },

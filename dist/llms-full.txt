@@ -1,6 +1,6 @@
 # Jwero, You focus on jewellery. We handle the chaos
 
-Jwero is the Autonomous Jewellery OS, run by AI: customers, catalogue, stock, counter billing, purchase, manufacturing, accounts and team on one record, with WhatsApp and Instagram commerce, gold savings schemes, digital gold, and governed AI staff, in one place.
+Jwero is the Autonomous Jewellery OS, run by AI: customers, catalogue, stock, counter billing, purchase, manufacturing, accounts and team on one record, with WhatsApp and Instagram commerce, gold schemes and savings plans, and governed AI staff, in one place.
 
 ---
 
@@ -643,7 +643,7 @@ PLATFORM
 
  Every customer, occasion, taste, scheme balance and conversation in one record that belongs to the business, not a salesman’s phone.
 
- Jewellery CRM Customer Memory Loyalty Gold Schemes Digital Gold 
+ Jewellery CRM Customer Memory Loyalty Gold Schemes Gold Savings Plans 
 
  Every visit, message and instalment scored on one card, 11 live scores decide who to reach and when.
 
@@ -1787,7 +1787,7 @@ PUBLIC ROADMAP
 
  Ecommerce website
 
- Scheme & digital-gold redemption at checkout website enrolment and instalment payments are live; applying a balance at checkout isn’t wired yet
+ Scheme redemption at website checkout website enrolment and instalment payments are live; applying a balance at checkout isn’t wired yet
 
  Google Shopping sync not built
 
@@ -4208,6 +4208,9 @@ A: Your choice. Every sale, return, payment and expense posts to Jwero’s doubl
 
 Q: What does the Tally bridge do?
 A: It syncs sales, returns, payments and expenses from Jwero to Tally, so nothing is typed twice. E-invoices are generated in Tally from the synced entries.
+
+Q: Do you work with Zoho Books?
+A: Yes. A Zoho Books bridge carries entries across the same way, if your accountant uses Zoho Books instead of Tally.
 
 Q: Can it price invoices at today’s gold rate automatically?
 A: Yes. Invoices use the same pricing as the catalogue: metal at today’s rate, purity, making charges, stones and GST.
@@ -8777,7 +8780,7 @@ PRICING
 
 ## Social & ads
 
-## Digital gold & gold schemes
+## Gold schemes & savings plans
 
 ## Jwero Optimize
 
@@ -9333,7 +9336,7 @@ INDUSTRY · RETAIL
 
  Every customer, occasion, taste, scheme balance and conversation in one record that belongs to the business, not a salesman’s phone.
 
- Jewellery CRM Customer Memory Loyalty Gold Schemes Digital Gold 
+ Jewellery CRM Customer Memory Loyalty Gold Schemes Gold Savings Plans 
 
  Every visit, message and instalment scored on one card, 11 live scores decide who to reach and when.
 
@@ -10331,11 +10334,11 @@ FOR GOLD RETAIL
 
  See schemes → 
 
-## Digital gold
+## Gold savings plans
 
- Offer gram-based savings alongside classic schemes, the same discipline, a modern format.
+ Offer gram-based savings plans alongside classic schemes, the same discipline, a modern format.
 
- See digital gold → 
+ See gold schemes → 
 
 ## Exchange & repair tracking
 
@@ -10353,7 +10356,7 @@ FOR GOLD RETAIL
  Catalogue prices are formulas: rate × weight × purity plus making charges, resolved live wherever the product appears. Change the rate once; everything follows.
 
  Can I run my gold savings scheme alongside daily selling? 
- Yes, schemes, digital gold and everyday catalogue selling share the same customer record and pricing engine.
+ Yes, schemes, savings plans and everyday catalogue selling share the same customer record and pricing engine.
 
  What if we mis-price something because the rate updated mid-conversation? 
  Prices resolve live at the moment they’re shown or invoiced, not cached from earlier in the day, that specific risk is what rate-linked pricing is built to remove.
@@ -10386,7 +10389,7 @@ Q: How does pricing stay accurate as the rate moves?
 A: Catalogue prices are formulas: rate × weight × purity plus making charges, resolved live wherever the product appears. Change the rate once; everything follows.
 
 Q: Can I run my gold savings scheme alongside daily selling?
-A: Yes, schemes, digital gold and everyday catalogue selling share the same customer record and pricing engine.
+A: Yes, schemes, savings plans and everyday catalogue selling share the same customer record and pricing engine.
 
 Q: What if we mis-price something because the rate updated mid-conversation?
 A: Prices resolve live at the moment they’re shown or invoiced, not cached from earlier in the day, that specific risk is what rate-linked pricing is built to remove.
@@ -22763,9 +22766,9 @@ FINANCE & OPERATIONS · ACCOUNTANT
 
  Reconciling gold scheme float See Gold Schemes → 
 
- Today Instalments collected against gold savings schemes and digital gold get tracked separately from day-to-day billing, making the float easy to lose track of.
+ Today Instalments collected against gold schemes and savings plans get tracked separately from day-to-day billing, making the float easy to lose track of.
 
- With Jwero Scheme and digital gold balances are tracked digitally on the customer record, giving a clearer running number to reconcile against rather than a separate paper register.
+ With Jwero Scheme and savings plan balances are tracked digitally on the customer record, giving a clearer running number to reconcile against rather than a separate paper register.
 
  WHAT THIS ROLE GAINS
 
@@ -22809,7 +22812,7 @@ FINANCE & OPERATIONS · ACCOUNTANT
 
  3 
 
-## Track scheme and digital gold float against the ledger
+## Track scheme and savings plan float against the ledger
  Use the digitally tracked scheme balances as a running cross-check against the float you’re carrying in the books.
 
  4 
@@ -23537,7 +23540,7 @@ GLOSSARY
 
  Gold bought in grams (or fractions) through an app, held on the customer’s behalf, and convertible to jewellery or cash at a live rate.
 
- In Jwero: Digital Gold → 
+ In Jwero: Gold Savings Plans → 
 
 ## Live rate
 

@@ -48,8 +48,8 @@ ${L.section(
     },
     {
       lever: 'Reconciling gold scheme float',
-      before: 'Instalments collected against gold savings schemes and digital gold get tracked separately from day-to-day billing, making the float easy to lose track of.',
-      after: 'Scheme and digital gold balances are tracked digitally on the customer record, giving a clearer running number to reconcile against rather than a separate paper register.',
+      before: 'Instalments collected against gold schemes and savings plans get tracked separately from day-to-day billing, making the float easy to lose track of.',
+      after: 'Scheme and savings plan balances are tracked digitally on the customer record, giving a clearer running number to reconcile against rather than a separate paper register.',
       link: { href: '/products/gold-schemes', label: 'See Gold Schemes' },
     },
   ])}`
@@ -75,7 +75,7 @@ ${L.section(
   ${L.steps([
     { title: 'Reconcile from the invoice feed, not the counterfoil', text: 'Use the Tally/Zoho bridge sync as your starting reconciliation list each day, and spend the saved time on the entries that actually need judgment.' },
     { title: 'Review the receivables ledger weekly', text: 'Check who’s overdue past the automated reminder schedule and decide which accounts need a personal call, instead of rebuilding the list from scratch.' },
-    { title: 'Track scheme and digital gold float against the ledger', text: 'Use the digitally tracked scheme balances as a running cross-check against the float you’re carrying in the books.' },
+    { title: 'Track scheme and savings plan float against the ledger', text: 'Use the digitally tracked scheme balances as a running cross-check against the float you’re carrying in the books.' },
     { title: 'Flag GST edge cases early', text: 'Since GST computation is data-driven off live pricing, review unusual invoices (large discounts, price overrides) for correct treatment before they’re filed, not after.' },
   ])}`
 , { tone: 'tint' })}
