@@ -4418,3 +4418,9 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .bl-more { text-align: center; margin-top: 24px; }
 @media (max-width: 900px) { .bl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .bl-goals { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .bl-grid { grid-template-columns: 1fr; } .bl-goals { grid-template-columns: 1fr; } .bl-chips { top: 56px; } }
+.bl-goals-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.bl-goals a { display: grid; gap: 6px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); color: var(--ink); text-decoration: none; }
+.bl-goals a:hover { border-color: var(--brand); }
+.bl-goals a i { font-style: normal; color: var(--brand); font-size: .85rem; }
+@media (max-width: 900px) { .bl-goals-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .bl-goals-3 { grid-template-columns: 1fr; } }

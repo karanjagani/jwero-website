@@ -487,30 +487,68 @@ const manufacturing = guide({
 });
 
 const GUIDES = [billing, erp, inventory, crm, manufacturing];
+// Guides hub, redesigned 2026-10-07 like the blog hub: search, need filters and
+// one grid of every buyer's guide, software-by-need page, city page and complete
+// guide, with covers. Reuses the blog hub's markup and script ([data-blog-hub]).
+const G_TOPICS = [['core', 'Buyer’s guides'], ['sell', 'Selling and marketing'], ['floor', 'Customers and showroom'], ['office', 'Back office'], ['long', 'Complete guides'], ['city', 'By city']];
+const G_NEED = {
+  'whatsapp-broadcast-for-jewellers': 'sell', 'instagram-for-jewellers': 'sell', 'ads-for-jewellers': 'sell', 'sms-marketing-for-jewellers': 'sell', 'ai-calling-for-jewellers': 'sell', 'jewellery-website-analytics': 'sell',
+  'jewellery-showroom-footfall-counting': 'floor', 'ai-cctv-footfall-analytics-jewellery-showrooms': 'floor', 'jewellery-appointment-booking-software': 'floor',
+  'jewellery-accounting-software': 'office', 'jewellery-barcode-tagging-software': 'office', 'cloud-jewellery-software': 'office', 'jewellery-staff-management-software': 'office',
+};
+const G_PICK = [
+  ['Bills take too long, or rates are typed by hand', '/guides/jewellery-billing-software', 'Billing'],
+  ['You do not know what is on the shelf or what it is worth', '/guides/jewellery-inventory-software', 'Inventory'],
+  ['Customers buy once and never come back', '/guides/jewellery-crm-software', 'CRM'],
+  ['Gold goes missing between workshop and shop', '/guides/jewellery-manufacturing-software', 'Manufacturing'],
+  ['You want one system for everything', '/guides/jewellery-erp-software', 'ERP'],
+  ['Enquiries on WhatsApp and Instagram go unanswered', '/whatsapp-broadcast-for-jewellers', 'WhatsApp'],
+];
+const gImg = (key) => { const fs = require('fs'), p = require('path'); const root = p.join(__dirname, '..', 'assets');
+  if (fs.existsSync(p.join(root, 'covers', key + '.svg'))) return `/assets/covers/${key}.svg`;
+  if (fs.existsSync(p.join(root, 'og', key + '.jpg'))) return `/assets/og/${key}.jpg`; return ''; };
+const gEsc = (s) => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+const gCard = (a) => `<a class="bl-card" href="${a.href}" data-t="${a.t}" data-q="${gEsc((a.title + ' ' + a.desc).toLowerCase())}">${a.img ? `<img src="${a.img}" alt="" loading="lazy" width="1200" height="630">` : ''}<span class="bl-tag">${a.tl}</span><b>${gEsc(a.title)}</b><span class="bl-desc">${gEsc(a.desc)}</span></a>`;
+function guidesHubBody(guides) {
+  const TL = Object.fromEntries(G_TOPICS); const all = [];
+  const add = (slug, title, desc, t) => all.push({ href: '/' + slug, title: String(title).split(' | ')[0], desc: String(desc || '').replace(/\s+/g, ' ').slice(0, 220), t, tl: TL[t], img: gImg(slug.replace(/\//g, '--')) });
+  guides.forEach((g) => add(g.slug, g.title, g.description, 'core'));
+  const seo = require('./seo');
+  seo.filter((p) => G_NEED[p.slug]).forEach((p) => add(p.slug, p.title, p.description, G_NEED[p.slug]));
+  const ps = require('./legacy-posts.json'); (ps.posts || ps).filter((p) => /guide/.test(p.slug)).forEach((p) => add(p.slug, p.title, p.description, 'long'));
+  seo.filter((p) => /^jewellery-software-india/.test(p.slug)).forEach((p) => add(p.slug, p.title, p.description, 'city'));
+  const count = (t) => all.filter((a) => a.t === t).length;
+  return `
+<section class="hero bl-hero"><div class="container hero-inner">
+  <p class="eyebrow">BUYER’S GUIDES</p>
+  <h1>Jewellery software guides: find what to look for, before you buy.</h1>
+  <p class="sub">${all.length} plain guides: what each kind of software must do, a checklist, and the questions to ask any vendor, including us. For how-to articles, see the <a href="/blog">blog</a>.</p>
+  <form class="bl-search" role="search" onsubmit="return false"><label for="bl-q" class="sr-only">Search guides</label><input id="bl-q" type="search" placeholder="Search: billing, girvi, WhatsApp, Surat…" autocomplete="off" data-bl-q></form>
+</div></section>
+<section class="section bl-wrap" data-blog-hub>
+<div class="container">
+  <nav class="bl-chips" aria-label="Filter guides"><button type="button" class="is-on" data-bl-t="">All <i>${all.length}</i></button>${G_TOPICS.map(([k, l]) => `<button type="button" data-bl-t="${k}">${l} <i>${count(k)}</i></button>`).join('')}</nav>
+  <div class="bl-start" data-bl-start>
+    <div class="section-head"><p class="eyebrow">START HERE</p><h2>Which guide first?</h2><p>Pick the problem that costs you most.</p></div>
+    <div class="bl-goals bl-goals-3">${G_PICK.map(([p, h, l]) => `<a href="${h}"><b>${p}</b><i>${l} guide →</i></a>`).join('')}</div>
+  </div>
+  <div class="section-head" style="margin-top:44px"><p class="eyebrow">ALL GUIDES</p><h2 data-bl-title>Every guide.</h2><p class="bl-count" aria-live="polite" data-bl-count>${all.length} guides</p></div>
+  <div class="bl-grid" data-bl-grid>${all.map(gCard).join('')}</div>
+  <p class="bl-empty" data-bl-empty hidden>No guide matches that yet. <a href="#" data-wa="guides">Ask us on WhatsApp</a> and we will point you to the right page.</p>
+  <p class="bl-more"><button type="button" class="btn btn-ghost" data-bl-more hidden>Show more guides</button></p>
+</div>
+</section>
+${L.section(`${L.sectionHead('IN THE PRODUCT', 'Where each guide leads in Jwero.', '')}<div class="erp-map">${[['/products/billing-finance', 'Billing and accounts'], ['/products/erp', 'ERP'], ['/products/inventory', 'Inventory'], ['/products/crm', 'CRM'], ['/products/manufacturing', 'Manufacturing'], ['/pricing', 'Pricing']].map(([h, t]) => `<a href="${h}"><b>${t}</b><span>See it in Jwero →</span></a>`).join('')}</div>`, { tone: 'tint' })}
+${L.ctaBand('Not sure where to start?', 'Tell us what you run today and we will point you to the right page.', 'guides')}
+`;
+}
 const hub = {
   slug: 'guides',
   title: 'Jewellery Software Guides: Billing, ERP, Stock, CRM | Jwero',
-  description: 'Plain buyer’s guides for jewellers choosing software: billing, ERP, inventory and stock, CRM and manufacturing. What each must do, a checklist and the questions to ask any vendor.',
+  description: 'Buyer’s guides for jewellers choosing software: billing, ERP, inventory, CRM, manufacturing, WhatsApp, showroom, accounting and more, plus guides by city. Search or filter by need.',
   breadcrumbs: [['Home', '/'], ['Guides']],
-  body: `
-${L.hero({
-  eyebrow: 'GUIDES',
-  h1: 'Buyer’s guides for jewellery software.',
-  sub: 'One long, plain guide for each thing a jeweller looks for. What it must do, a checklist, and the questions to ask any vendor, including us.',
-  primary: { href: '#', label: 'Chat or call with us', wa: 'guides' },
-  secondary: { href: '#start', label: 'Which guide first?' },
-})}
-${L.section(`${L.sectionHead('START HERE', 'Which guide first?', '')}<div class="jb-blogline" id="start"><p><b>Bills take too long, or rates are typed by hand:</b> <a href="/guides/jewellery-billing-software">billing</a>.</p><p><b>You don’t know what is on the shelf or what it is worth today:</b> <a href="/guides/jewellery-inventory-software">inventory</a>.</p><p><b>Customers buy once and never come back:</b> <a href="/guides/jewellery-crm-software">CRM</a>.</p><p><b>Gold goes missing between the workshop and the shop:</b> <a href="/guides/jewellery-manufacturing-software">manufacturing</a>.</p><p><b>You want one system for everything:</b> <a href="/guides/jewellery-erp-software">ERP</a>.</p></div>`)}
-${L.section(L.cards(GUIDES.map((g) => ({ title: g.title.split(' | ')[0].split(':')[0], text: g.description, link: { href: '/' + g.slug, label: 'Read the guide' } })), 2))}
-${L.section(L.cards([
-  { title: 'Accounting', text: 'Books that post themselves, with a Tally and Zoho Books bridge.', link: { href: '/jewellery-accounting-software', label: 'Open' } },
-  { title: 'Barcode and tagging', text: 'Tag once, scan to bill and to count.', link: { href: '/jewellery-barcode-tagging-software', label: 'Open' } },
-  { title: 'Cloud and mobile', text: 'Online software on any phone or computer.', link: { href: '/cloud-jewellery-software', label: 'Open' } },
-]), { tone: 'tint' })}
-${L.section(`${L.sectionHead('IN THE PRODUCT', 'Where each guide leads in Jwero.', '')}<div class="erp-map">${[['/products/billing-finance', 'Billing and accounts'], ['/products/erp', 'ERP'], ['/products/inventory', 'Inventory'], ['/products/crm', 'CRM'], ['/products/manufacturing', 'Manufacturing'], ['/pricing', 'Pricing']].map(([h, t]) => `<a href="${h}"><b>${t}</b><span>${h.replace(/^\//, 'jwero.ai/')}</span></a>`).join('')}</div>`, { tone: 'tint' })}
-${COMPLETE()}
-${L.ctaBand('Not sure where to start?', 'Tell us what you run today and we will point you to the right page.', 'guides')}
-`,
+  body: '',
 };
+hub.body = guidesHubBody(GUIDES);
 
 module.exports = [hub, ...GUIDES];

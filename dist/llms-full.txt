@@ -30992,108 +30992,41 @@ A: नहीं। AI जो भी लिखता है वह आपकी �
 # Jewellery Software Guides: Billing, ERP, Stock, CRM
 URL: https://jwero.ai/guides
 
-Plain buyer’s guides for jewellers choosing software: billing, ERP, inventory and stock, CRM and manufacturing. What each must do, a checklist and the questions to ask any vendor.
+Buyer’s guides for jewellers choosing software: billing, ERP, inventory, CRM, manufacturing, WhatsApp, showroom, accounting and more, plus guides by city. Search or filter by need.
 
-GUIDES
+BUYER’S GUIDES
 
-## Buyer’s guides for jewellery software.
+## Jewellery software guides: find what to look for, before you buy.
 
- One long, plain guide for each thing a jeweller looks for. What it must do, a checklist, and the questions to ask any vendor, including us.
+ 71 plain guides: what each kind of software must do, a checklist, and the questions to ask any vendor, including us. For how-to articles, see the blog .
 
- Chat or call with us 
- Which guide first? 
+ Search guides 
 
+ All 71 Buyer’s guides 5 Selling and marketing 6 Customers and showroom 3 Back office 4 Complete guides 23 By city 30 
+ 
  START HERE
 
 ## Which guide first?
+ Pick the problem that costs you most.
 
- Bills take too long, or rates are typed by hand: billing .
- You don’t know what is on the shelf or what it is worth today: inventory .
- Customers buy once and never come back: CRM .
- Gold goes missing between the workshop and the shop: manufacturing .
- You want one system for everything: ERP .
+ Bills take too long, or rates are typed by hand Billing guide → You do not know what is on the shelf or what it is worth Inventory guide → Customers buy once and never come back CRM guide → Gold goes missing between workshop and shop Manufacturing guide → You want one system for everything ERP guide → Enquiries on WhatsApp and Instagram go unanswered WhatsApp guide → 
 
-## Jewellery Billing Software
+ ALL GUIDES
 
- How jewellery billing software works and how to choose it: live gold rate, making charges, wastage, stones, old-gold exchange, HUID, GST, schemes at the counter and day-close, with a feature checklist and questions to ask.
+## Every guide.
+ 71 guides
 
- Read the guide → 
+ Buyer’s guides Jewellery Billing Software: Buyer’s Guide (2026) How jewellery billing software works and how to choose it: live gold rate, making charges, wastage, stones, old-gold exchange, HUID, GST, schemes at the counter and day-close, with a feature checklist and questions to as Buyer’s guides Jewellery ERP Software: How to Choose (2026) A plain guide to jewellery ERP software: the modules a jeweller needs, retail versus manufacturing ERP, what an ERP leaves out, how to run a selection, and the mistakes that make ERP projects fail. Buyer’s guides Jewellery Inventory Software: Stock Management Guide (2026) How to manage jewellery stock with software: piece-level records, gross and net weight, tagging, valuation at today’s rate, ageing and dead stock, stock counts, memo and branch transfers, with a checklist. Buyer’s guides Jewellery CRM Software: A Practical Guide (2026) What a jewellery CRM should record, how it differs from a general CRM, how to follow up leads from WhatsApp, Instagram and walk-ins, occasions, schemes, consent and what to measure, with a checklist. Buyer’s guides Jewellery Manufacturing Software: A Buyer’s Guide How jewellery manufacturing software controls gold on the workshop floor: orders, bills of materials, issue and return in fine weight, karigar accounts, wastage norms by stage, job work for clients, QC and hallmarking. Back office Jewellery Accounting Software: GST Books Jewellery accounting software where every sale, purchase, return and payment posts to a double-entry ledger with GST handled, party ledgers in grams and rupees, and a bridge to Tally and Zoho Books. Back office Jewellery Barcode & Tagging Software: Tags, Scan, Count Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect weighing scales. Back office Cloud Jewellery Software: Online, on Any Phone or Computer Cloud-based jewellery software that runs in the browser on a computer, tablet or phone: nothing to install on a server, every branch on the same live data, your own isolated database and export any time. Selling and marketing WhatsApp Marketing for Jewellers: Broadcasts, Campaigns WhatsApp marketing for jewellers from an official Meta Business Partner: broadcasts and festival campaigns to live segments, triggers, approved templates, number health, replies in one inbox and sales traced to each send Selling and marketing Instagram for Jewellers: DMs, Comments, Reels and Stories Instagram software for jewellers: every DM, comment, Reel and Story reply in one shared inbox, a priced answer drafted from your catalogue, posts scheduled across channels, and each enquiry kept on the customer’s record. Selling and marketing Google and Instagram Ads for Jewellers Ads software for jewellers: build Google Search, Performance Max and Shopping campaigns and Meta and Instagram ads from one place, approve before any spend, get budget alerts, and see which ad led to a sale. Selling and marketing SMS, RCS & Push Notifications for Jewellers SMS, RCS and push notification software for jewellers: payment and order alerts, scheme reminders and offers sent from the same campaign as WhatsApp and email, with consent handled and results measured. Customers and showroom Footfall Counting & Walk-in Tracking for Jewellery Showrooms Footfall counting and walk-in tracking for jewellery showrooms: tablet check-in or camera counting through IP cameras, a live view of the floor, what each visitor tried, why they left, and conversion by store and salespe Customers and showroom AI CCTV Footfall Analytics for Jewellery Showrooms AI CCTV footfall analytics for jewellery showrooms: count entries, exits and floor occupancy from your existing Hikvision, Dahua, CP Plus or ONVIF cameras, match footfall to bills, and see conversion by hour and branch. Selling and marketing AI Calling for Jewellers: Voice AI Agents, Bulk Calls AI calling for jewellers at ₹7 a call: voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, in 14 languages, with triggers, campaigns and every call on the record. Customers and showroom Jewellery Appointment Booking Software Appointment booking software for jewellers: customers book a showroom or video visit against real availability, the shortlist is ready when they arrive, reminders go out, and every visit is on one calendar. Back office Jewellery Staff Management Software Staff management software for jewellery showrooms: phone and kiosk attendance, daily task lists, sales targets, incentives worked out from real bills, hiring, training and payroll, on the same record as sales. Selling and marketing Jewellery Website Analytics: Heatmaps, A/B Website analytics for jewellery stores: visitor tracking, funnels, heatmaps and session recordings, A/B tests, pop-ups and lead forms, and web push, so you see why visitors leave and catch the next one. Complete guides What Is Jewellery PIM? Complete Guide for Jewellers Managing jewellery products is becoming increasingly difficult. Today’s jewellery businesses sell across: Each channel requires accurate product… Complete guides Jewellery Automation Guide: Complete Guide Automation is becoming one of the most important competitive advantages in jewellery retail. As customer expectations increase, manually managing leads, Complete guides JewelTech: Complete Guide The jewellery industry is undergoing a massive technological transformation. For decades, jewellery businesses relied on: Today, technology is reshaping how Complete guides Jewellery Demand Forecasting: Complete Guide One of the biggest challenges in jewellery retail is knowing: What inventory to buy, how much to buy, and when Complete guides Omnichannel Jewellery Inventory: Complete Guide Modern jewellery customers no longer buy through a single channel. A customer may: To support this journey, inventory must remain Complete guides Jewellery Barcode Inventory: Complete Guide Inventory accuracy is critical in the jewellery industry. With thousands of products, multiple categories, and frequent stock movements, manual inventory Complete guides Jewellery POS Software: Complete Guide A Point of Sale (POS) system is one of the most important technologies inside a jewellery store. Every sale, billing Complete guides Jewellery Inventory Management: Complete Guide Inventory is one of the largest investments for any jewellery retailer. Whether you sell gold, diamonds, silver, or custom jewellery, Complete guides Jewellery Inventory and ERP: Complete Guide Inventory is the backbone of every jewellery business. Whether you operate a single showroom or multiple stores, accurate inventory management Complete guides Jewellery Appointment Booking: Complete Guide Appointment booking has become one of the most effective ways for jewellery retailers to improve customer experience and increase sales Complete guides Jewellery Sales Pipeline Guide: Complete Guide A jewellery sales pipeline gives retailers complete visibility into every sales opportunity. Without a structured pipeline, leads often get lost, Complete guides Jewellery Store Analytics Guide: Complete Guide Modern jewellery retail is driven by data. The most successful retailers do not rely on assumptions. They use analytics to Complete guides Jewellery Customer Journey Guide: From Lead to Loyal Customer Modern jewellery customers do not purchase immediately. Most customers interact with multiple touchpoints before making a decision. A typical jewellery Complete guides Jewellery Retail Operations: Complete Guide Running a successful jewellery store requires more than beautiful collections and competitive pricing. The most successful jewellery retailers operate with Complete guides Jewellery Instagram Marketing Guide Instagram has become one of the most powerful marketing channels for jewellery retailers. Customers discover brands, browse collections, compare designs, Complete guides Jewellery Marketing: Complete Guide Marketing is no longer optional for jewellery retailers. Today’s customers discover jewellery through: The jewellers who consistently attract customers are Complete guides Omnichannel Jewellery Ecommerce Guide Today’s jewellery customers do not shop through a single channel. A customer may: This is omnichannel commerce. The businesses that Complete guides Jewellery Ecommerce Conversion Guide Getting traffic to your jewellery website is only half the challenge. The real goal is converting visitors into: This guide Complete guides Jewellery Ecommerce: Complete Guide The jewellery industry is rapidly moving online. Modern customers no longer begin their buying journey inside a showroom. Instead, they: Complete guides Jewellery Customer Follow-Up Guide to Convert More Buyers Many jewellery sales are not lost because customers are uninterested. They are lost because businesses fail to follow up. A Complete guides Jewellery Customer Segmentation Guide for Personalised Engagement Most jewellery businesses communicate with all customers the same way. The same promotions The same WhatsApp campaigns The same product Complete guides Jewellery Lead Management Guide: Convert More Enquiries Most jewellery businesses do not have a lead generation problem. They have a lead management problem. Every day, potential customers Complete guides Jewellery Lead Automation: The Complete Guide to Capturing & Converting High-Value Customers Why Jewellery Businesses Are Losing Leads, Even While Sales Grow Most jewellery businesses don’t suffer from lack of demand. By city Jewellery Software in India: By City and By Need Jewellery software for Indian jewellers, by city and by need: billing, stock, CRM, manufacturing, schemes, WhatsApp and books on one record. Find your city and the page for what you are looking for. By city Jewellery Software in Mumbai: Billing, Stock, CRM in One Jewellery software for jewellers in Mumbai: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Surat: Billing, Stock, CRM in One Jewellery software for jewellers in Surat: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Jaipur: Billing, Stock, CRM in One Jewellery software for jewellers in Jaipur: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Rajkot: Billing, Stock, CRM in One Jewellery software for jewellers in Rajkot: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Ahmedabad: Billing, Stock, CRM in One Jewellery software for jewellers in Ahmedabad: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Delhi: Billing, Stock, CRM in One Jewellery software for jewellers in Delhi: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Kolkata: Billing, Stock, CRM in One Jewellery software for jewellers in Kolkata: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Hyderabad: Billing, Stock, CRM in One Jewellery software for jewellers in Hyderabad: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Chennai: Billing, Stock, CRM in One Jewellery software for jewellers in Chennai: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Coimbatore: Billing, Stock, CRM in One Jewellery software for jewellers in Coimbatore: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Bangalore: Billing, Stock, CRM in One Jewellery software for jewellers in Bangalore (Bengaluru): counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Thrissur: Billing, Stock, CRM in One Jewellery software for jewellers in Thrissur: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Pune: Billing, Stock, CRM in One Jewellery software for jewellers in Pune: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Kochi: Billing, Stock, CRM in One Jewellery software for jewellers in Kochi: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Kozhikode: Billing, Stock, CRM in One Jewellery software for jewellers in Kozhikode: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Madurai: Billing, Stock, CRM in One Jewellery software for jewellers in Madurai: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Vijayawada: Billing, Stock, CRM in One Jewellery software for jewellers in Vijayawada: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Lucknow: Billing, Stock, CRM in One Jewellery software for jewellers in Lucknow: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Indore: Billing, Stock, CRM in One Jewellery software for jewellers in Indore: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Nagpur: Billing, Stock, CRM in One Jewellery software for jewellers in Nagpur: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Jalgaon: Billing, Stock, CRM in One Jewellery software for jewellers in Jalgaon: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Amritsar: Billing, Stock, CRM in One Jewellery software for jewellers in Amritsar: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Bikaner: Billing, Stock, CRM in One Jewellery software for jewellers in Bikaner: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Varanasi: Billing, Stock, CRM in One Jewellery software for jewellers in Varanasi: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Cuttack: Billing, Stock, CRM in One Jewellery software for jewellers in Cuttack: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Patna: Billing, Stock, CRM in One Jewellery software for jewellers in Patna: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Kolhapur: Billing, Stock, CRM in One Jewellery software for jewellers in Kolhapur: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Agra: Billing, Stock, CRM in One Jewellery software for jewellers in Agra: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. By city Jewellery Software in Salem: Billing, Stock, CRM in One Jewellery software for jewellers in Salem: counter billing at the live gold rate, stock, purchase, karigar accounts, schemes, WhatsApp and books on one record. First month ₹3,600. 
 
-## Jewellery ERP Software
+ No guide matches that yet. Ask us on WhatsApp and we will point you to the right page.
 
- A plain guide to jewellery ERP software: the modules a jeweller needs, retail versus manufacturing ERP, what an ERP leaves out, how to run a selection, and the mistakes that make ERP projects fail.
-
- Read the guide → 
-
-## Jewellery Inventory Software
-
- How to manage jewellery stock with software: piece-level records, gross and net weight, tagging, valuation at today’s rate, ageing and dead stock, stock counts, memo and branch transfers, with a checklist.
-
- Read the guide → 
-
-## Jewellery CRM Software
-
- What a jewellery CRM should record, how it differs from a general CRM, how to follow up leads from WhatsApp, Instagram and walk-ins, occasions, schemes, consent and what to measure, with a checklist.
-
- Read the guide → 
-
-## Jewellery Manufacturing Software
-
- How jewellery manufacturing software controls gold on the workshop floor: orders, bills of materials, issue and return in fine weight, karigar accounts, wastage norms by stage, job work for clients, QC and hallmarking.
-
- Read the guide → 
-
-## Accounting
-
- Books that post themselves, with a Tally and Zoho Books bridge.
-
- Open → 
-
-## Barcode and tagging
-
- Tag once, scan to bill and to count.
-
- Open → 
-
-## Cloud and mobile
-
- Online software on any phone or computer.
-
- Open → 
+ Show more guides 
 
  IN THE PRODUCT
 
 ## Where each guide leads in Jwero.
 
- Billing and accounts jwero.ai/products/billing-finance ERP jwero.ai/products/erp Inventory jwero.ai/products/inventory CRM jwero.ai/products/crm Manufacturing jwero.ai/products/manufacturing Pricing jwero.ai/pricing 
-
- COMPLETE GUIDES
-
-## Longer reads, by topic.
-
- What Is Jewellery PIM? Complete Guide for Jewellers 
- Jewellery Automation Guide: Complete Guide 
- JewelTech: Complete Guide 
- Jewellery Demand Forecasting: Complete Guide 
- Omnichannel Jewellery Inventory: Complete Guide 
- Jewellery Barcode Inventory: Complete Guide 
- Jewellery POS Software: Complete Guide 
- Jewellery Inventory Management: Complete Guide 
- Jewellery Inventory and ERP: Complete Guide 
- Jewellery Appointment Booking: Complete Guide 
- Jewellery Sales Pipeline Guide: Complete Guide 
- Jewellery Store Analytics Guide: Complete Guide 
- Jewellery Customer Journey Guide: From Lead to Loyal Customer 
- Jewellery Retail Operations: Complete Guide 
- Jewellery Instagram Marketing Guide 
- Jewellery Marketing: Complete Guide 
- Omnichannel Jewellery Ecommerce Guide 
- Jewellery Ecommerce Conversion Guide 
- Jewellery Ecommerce: Complete Guide 
- Jewellery Customer Follow-Up Guide to Convert More Buyers 
- Jewellery Customer Segmentation Guide for Personalised Engagement 
- Jewellery Lead Management Guide: Convert More Enquiries 
- Jewellery Lead Automation: The Complete Guide to Capturing & Converting High-Value Customers 
+ Billing and accounts See it in Jwero → ERP See it in Jwero → Inventory See it in Jwero → CRM See it in Jwero → Manufacturing See it in Jwero → Pricing See it in Jwero → 
 
 ## Not sure where to start?
 
