@@ -76,7 +76,7 @@ const NAV = [
     match: ['products'],
     groups: [
       { title: 'Sell', items: [
-        ['/products/whatsapp', 'WhatsApp Commerce', 'Sell on your official number'],
+        ['/products/whatsapp', 'WhatsApp API & Commerce', 'Official Meta Business Partner'],
         ['/products/instagram-facebook', 'Instagram & Facebook', 'DMs into sales, one inbox'],
         ['/products/ai-sales-agents', 'AI Sales Agents & Voice', 'Replies and follow-up, governed'],
         ['/products/storefront', 'Ecommerce Website', 'Live-rate jewellery storefront'],
@@ -305,6 +305,7 @@ function footerHTML() {
       <div class="f-brand">
         <p class="logo">${mark()}<span class="logo-word">Jwero</span></p>
         <p class="f-tag">${SIGNATURE}<br>${TAGLINE}.</p>
+        ${require('./lib').partnerBadge('is-footer')}
         <p class="f-enemy">“You shouldn’t have to become an expert in everything to remain an expert in jewellery.”</p>
         <p class="f-made">Made with <span aria-hidden="true">❤</span><span class="sr-only">love</span> for Jewellers</p>
       </div>

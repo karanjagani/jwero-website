@@ -781,6 +781,7 @@ function trustStrip() {
 <div class="tstrip">
   <div class="tstrip-seals">${TRUST_BADGES.map(([s, n, st, d, h]) => `<a class="tseal tb-${st}" href="${h}" title="${esc(n)}: ${esc(TRUST_STATUS[st])}. ${esc(d)}"><span class="tseal-mark" aria-hidden="true"><b>${s}</b></span><span class="tseal-name">${n.replace('India’s ', '').replace(', 2023', '').replace(' and penetration test', '').replace('ISO/IEC', 'ISO')}</span><em>${TRUST_STATUS[st]}</em></a>`).join('')}</div>
   <ul class="tstrip-facts">
+    <li>${icon('check')}<span><b>Official Meta Business Partner.</b> Your number runs on the official WhatsApp Business Platform.</span></li>
     <li>${icon('shield')}<span><b>Your own database.</b> Never stored with another jeweller’s.</span></li>
     <li>${icon('key')}<span><b>Encrypted</b> in transit and at rest, with roles you control.</span></li>
     <li>${icon('download')}<span><b>Export any time.</b> Your data leaves with you.</span></li>
@@ -1584,6 +1585,8 @@ const CUSTOMER_LOGOS = [
   { name: 'L Sunderdas Zaveri', file: 'ls-zaveri.png' },
 ];
 
+// Official Meta Business Partner, as a plain text badge (Meta's own badge artwork can replace it).
+const partnerBadge = (cls = '') => `<a class="partner-badge ${cls}" href="/products/whatsapp">${icon('check')}<span>Official Meta Business Partner</span><em>WhatsApp Business Platform</em></a>`;
 function customerLogos() {
   const chip = (c) => `<div class="logo-chip" title="${esc(c.name)}"><img src="/assets/logos/customers/${c.file.replace(/\.png$/, ".webp")}" alt="${esc(c.name)} logo" loading="lazy" width="140" height="60"></div>`;
   return `
@@ -1593,10 +1596,12 @@ function customerLogos() {
     ${CUSTOMER_LOGOS.map(chip).join('')}
     ${CUSTOMER_LOGOS.map(chip).join('')}
   </div>
-</div>`;
+</div>
+<div class="partner-row">${partnerBadge()}</div>`;
 }
 
 module.exports = {
+  partnerBadge,
   esc, icon, autoIcon, sim, controlSplit, mockMemo, LINK_ICONS, PERSONAS, personaSlot, personaSwitch, systemSplit, gemStage, heroSchematic, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
   mark, homeHero, STACK, STACK_COST, trustStrip, proofGrid, trustBadges, SECURITY_CONTROLS, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,

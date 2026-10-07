@@ -102,7 +102,7 @@ const regional = post({
   <p>As jewellers grow beyond their first city, the second showroom is often in a different language area. A system that works in one language holds that growth back.</p>
 
   <h2>How Jwero does it</h2>
-  <p>Jwero’s counter search finds products by vernacular names, and its calling works with Indian-language speech recognition and voice. See <a href="/products/pos">the counter</a> and <a href="/products/whatsapp">WhatsApp</a>.</p>`,
+  <p>Jwero’s counter search finds products by vernacular names, and its calling works with Indian-language speech recognition and voice. See <a href="/products/pos">the counter</a> and <a href="/products/whatsapp">WhatsApp API for jewellers</a>.</p>`,
 });
 
 const aiCalls = post({
