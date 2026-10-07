@@ -270,7 +270,7 @@ function navHTML(page) {
   return `
 <header class="site-header">
   <div class="header-row">
-    <a class="logo" href="/" aria-label="Jwero home">${mark()}<span class="logo-word">Jwero</span></a>
+    <a class="logo" href="/" aria-label="Jwero home">${mark('mark-logo')}<span class="logo-word"><img class="logo-wm logo-wm-dark" src="/assets/brand/jwero-wordmark.webp" alt="Jwero" width="1493" height="329"><img class="logo-wm logo-wm-light" src="/assets/brand/jwero-wordmark-white.webp" alt="" aria-hidden="true" width="1493" height="329"></span></a>
     <button type="button" class="icp-chip" data-icp-open aria-haspopup="dialog"><span data-icp-label>I run a…</span>${icon('updown')}</button>
     <nav class="main-nav" aria-label="Main">
       ${NAV.map(dd).join('')}
@@ -303,7 +303,7 @@ function footerHTML() {
   <div class="f-wrap">
     <div class="f-top">
       <div class="f-brand">
-        <p class="logo">${mark()}<span class="logo-word">Jwero</span></p>
+        <p class="logo f-logo" data-f-logo>${mark('mark-logo')}<span class="logo-word f-lockup"><img class="logo-wm logo-wm-dark" src="/assets/brand/jwero-wordmark-tagline.webp" alt="Jwero. Building jewelry rocketships" width="1493" height="473"><img class="logo-wm logo-wm-light" src="/assets/brand/jwero-wordmark-tagline-white.webp" alt="" aria-hidden="true" width="1493" height="473"></span></p>
         <p class="f-tag">${SIGNATURE}<br>${TAGLINE}.</p>
         ${require('./lib').partnerBadge('is-footer')}
         <p class="f-enemy">“You shouldn’t have to become an expert in everything to remain an expert in jewellery.”</p>
@@ -462,7 +462,7 @@ function orgSchema() {
     name: BRAND, legalName: LEGAL_ENTITY, url: SITE, slogan: TAGLINE, description: ORG_DESCRIPTION,
     alternateName: ['Jwero — the Autonomous Jewellery OS', 'Jwero — the Autonomous Jewelry OS'],
     areaServed: ['IN', 'AE', 'GB', 'SG', 'US', 'AU', 'CA'],
-    logo: SITE + '/assets/jwero-mark.png',
+    logo: SITE + '/assets/brand/jwero-logo.png',
     sameAs: SOCIALS.map(([h]) => h),
     address: { '@type': 'PostalAddress', streetAddress: 'Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road', addressLocality: 'Bhayandar (West), Thane', addressRegion: 'Maharashtra', postalCode: '401101', addressCountry: 'IN' },
     contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: 'care@jwero.ai', telephone: '+91-91699-59959', url: SITE + '/book-demo' },

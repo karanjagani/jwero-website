@@ -4424,3 +4424,31 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .bl-goals a i { font-style: normal; color: var(--brand); font-size: .85rem; }
 @media (max-width: 900px) { .bl-goals-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .bl-goals-3 { grid-template-columns: 1fr; } }
+/* Brand logo: animated rocket mark + JWERO wordmark image (2026-10-07) */
+.logo { gap: 8px; }
+.logo .mark-logo { width: 26px; height: 38px; }
+.logo-word { display: inline-flex; align-items: center; position: relative; }
+.logo-wm { display: block; height: 22px; width: auto; }
+.logo-wm-light { display: none; }
+body.is-scrolled.on-panel .site-header .logo-wm-dark, .on-dark .logo-wm-dark { display: none; }
+body.is-scrolled.on-panel .site-header .logo-wm-light, .on-dark .logo-wm-light { display: block; }
+.f-logo { margin: 0 0 14px; align-items: flex-end; gap: 10px; }
+.f-logo .mark-logo { width: 34px; height: 48px; }
+.f-lockup .logo-wm { height: 50px; }
+@media (max-width: 560px) { .logo-wm { height: 19px; } .logo .mark-logo { width: 22px; height: 32px; } }
+/* Motion: rocket flies into place, wordmark wipes in. Once per session. */
+.js body.logo-intro .site-header .logo .mark-logo { animation: logo-rocket-in 1.1s cubic-bezier(.2,.8,.2,1) both; }
+.js body.logo-intro .site-header .logo .mark-logo .mark-flame { animation: mark-flicker .4s ease-in-out infinite; animation-iteration-count: 4; }
+.js body.logo-intro .site-header .logo-word { animation: logo-wipe .9s .35s cubic-bezier(.2,.8,.2,1) both; }
+.js body.logo-intro .site-header .logo::after { content: ''; position: absolute; left: 6px; top: 24px; width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle, rgba(246,177,28,.9), rgba(246,177,28,0) 70%); animation: logo-puff 1s .1s ease-out both; pointer-events: none; }
+.site-header .logo { position: relative; }
+@keyframes logo-rocket-in { 0% { transform: translate(-18px, 22px) scale(.55) rotate(-8deg); opacity: 0; } 55% { transform: translate(3px, -5px) scale(1.08) rotate(2deg); opacity: 1; } 100% { transform: none; opacity: 1; } }
+@keyframes logo-wipe { 0% { clip-path: inset(0 100% 0 0); transform: translateX(-6px); } 100% { clip-path: inset(0 0 0 0); transform: none; } }
+@keyframes logo-puff { 0% { transform: scale(.4); opacity: .9; } 100% { transform: translate(-16px, 20px) scale(2.6); opacity: 0; } }
+/* Footer: lockup wipes in and the rocket lifts when it scrolls into view. */
+.js .f-logo .logo-word { clip-path: inset(0 100% 0 0); transition: clip-path 1s cubic-bezier(.2,.8,.2,1) .2s; }
+.js .f-logo.is-in .logo-word { clip-path: inset(0 0 0 0); }
+.js .f-logo.is-in .mark-logo .mark-body, .js .f-logo.is-in .mark-logo .mark-flame { animation: logo-lift 1.2s cubic-bezier(.2,.8,.2,1) both; }
+.js .f-logo.is-in .mark-logo .mark-flame { animation: logo-lift 1.2s cubic-bezier(.2,.8,.2,1) both, mark-flicker .45s ease-in-out .2s 6; }
+@keyframes logo-lift { 0% { transform: translate(-10px, 14px); opacity: 0; } 100% { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .js body.logo-intro .site-header .logo .mark-logo, .js body.logo-intro .site-header .logo-word, .js body.logo-intro .site-header .logo::after, .js .f-logo.is-in .mark-logo img { animation: none !important; } .js .f-logo .logo-word { clip-path: none; transition: none; } }

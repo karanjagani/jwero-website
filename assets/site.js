@@ -2979,3 +2979,11 @@ document.addEventListener('click', function (e) {
   try { var p = new URLSearchParams(location.search); topic = p.get('t') || ''; term = p.get('q') || ''; if (q && term) q.value = term; } catch (e) {}
   render();
 })();
+// Brand logo motion: the intro plays once per session; the footer lockup animates in view.
+(function () {
+  try { if (!sessionStorage.getItem('jw-logo-intro')) { document.body.classList.add('logo-intro'); sessionStorage.setItem('jw-logo-intro', '1'); } } catch (e) { document.body.classList.add('logo-intro'); }
+  var f = document.querySelector('[data-f-logo]'); if (!f) return;
+  if (!('IntersectionObserver' in window)) { f.classList.add('is-in'); return; }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { f.classList.add('is-in'); io.disconnect(); } }); }, { threshold: 0.4 });
+  io.observe(f);
+})();

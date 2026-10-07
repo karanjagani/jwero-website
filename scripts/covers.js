@@ -13,6 +13,8 @@ const TOPIC_RULES = [['Order management', /\boms\b|order/], ['Product data and c
 const topicOf = (slug) => (TOPIC_RULES.find(([, r]) => r.test(slug)) || ['Guides'])[0];
 
 const G = '#F6B11C', W = '#ffffff';
+const LOCKUP = fs.readFileSync(path.join(ROOT, 'assets', 'brand', 'cover-lockup-white.b64'), 'utf8').trim();
+const LOCKW = Math.round(80 * 1872 / 542);
 const ICON = {
   'Leads and conversion': `<path d="M0 0h260l-100 120v110l-60 40V120z" />`,
   'Product data and catalogues': `<path d="M0 60 60 0h150v150l-60 60H0z" transform="rotate(-8 105 105)"/><circle cx="160" cy="45" r="16"/>`,
@@ -45,8 +47,7 @@ function svg(title, topic) {
 ${lines.map((l, i) => `<text x="72" y="${top + i * size * 1.12}" font-family="Inter, 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="${size}" font-weight="650" letter-spacing="-1.5" fill="${W}">${esc(l)}</text>`).join('\n')}
 <g transform="translate(850 170)" fill="none" stroke="${W}" stroke-opacity=".9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">${ICON[topic] || ICON.Guides}</g>
 <g transform="translate(850 170)" fill="none" stroke="${G}" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 22" opacity=".9"><circle cx="130" cy="130" r="175"/></g>
-<text x="72" y="566" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="24" font-weight="600" fill="${W}">Jwero</text>
-<text x="160" y="566" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" fill="${W}" fill-opacity=".7">You focus on jewellery. We handle the chaos.</text>
+<image x="72" y="500" height="80" width="${LOCKW}" href="data:image/png;base64,${LOCKUP}"/>
 </svg>`;
 }
 const items = [...posts.map((p) => ({ key: p.slug, title: p.title, topic: p.topic in ICON ? p.topic : topicOf(p.slug) })),
