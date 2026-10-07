@@ -1836,6 +1836,15 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Footfall is matched to bills for conversion by hour, day, branch and salesperson; alerts for camera offline, counting gaps and footfall without sales.
 - No face recognition, no identification of customers, no repeat-visitor detection by camera. Retention, consent signage and a capture switch in privacy settings. Charged per camera; Jwero does not sell cameras.
 
+## More AI in Jwero (facts)
+
+- Shoppers on a Jwero ecommerce website can search by photo and see matching products; signed-in shoppers see pieces picked for them.
+- AI lead finder: searches for companies and people to approach (corporate gifting, retailers, planners), ₹1 a search, added to the CRM.
+- AI segment builder: describe an audience in plain words and AI turns it into a segment.
+- Call transcript analysis: AI reads call transcripts, notes the customer's interest and updates scores.
+- Twelve ready AI agent teams (Revenue, Sales, Seller, Marketing, Growth, CX, Operations, Inventory, Finance, Reporting, HR, Payroll and Settlement), most asking for approval by default.
+- In-app assistant takes spoken or typed instructions, including Hindi and Hinglish; a staff voice assistant wakes on a wake word.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.

@@ -662,4 +662,56 @@ const journeysAi = post({
   <p>Journeys generated in plain English, 300+ ready ones, triggers from Instagram, the website and the showroom. See <a href="/products/journeys">journeys</a>.</p>`,
 });
 
-module.exports = [agents, waBot, igAi, voice, schemes, prompts, listings, images, video, ads, email, segments, scores, reportsAi, mcp, safe, cost, site, showroomAi, wholesale, tryOn, forecast, mistakes, journeysAi];
+const photoSearch = post({
+  slug: 'jewellery-search-by-photo-visual-search',
+  title: 'Search by Photo for Jewellery Websites: Visual Search Explained | Jwero',
+  description: 'How visual search helps a jewellery store: a shopper uploads a photo of a piece she likes and sees similar designs from your catalogue, instead of guessing keywords.',
+  h1: 'Search by photo for jewellery websites',
+  mins: 4,
+  sub: 'Customers rarely know what a design is called. They have a screenshot from Instagram or a photo from a wedding. Visual search lets that photo do the searching.',
+  product: ['/products/ecommerce', 'See the ecommerce website'],
+  wa: 'blog-ai-visual',
+  close: ['Let the photo search.', 'Jwero’s ecommerce website finds matching pieces from a shopper’s photo.'],
+  faqs: [
+    { q: 'What is visual search for jewellery?', a: 'A shopper uploads a photo and the store shows pieces from its own catalogue that look similar, by shape, style and stones.' },
+    { q: 'Does Jwero have photo search?', a: 'Yes. Shoppers on a Jwero ecommerce website can search by photo and see matching products.' },
+    { q: 'Will it find the exact piece?', a: 'Only if you stock it. Otherwise it shows the closest designs you have, which is often enough to start a conversation or a custom order.' },
+  ],
+  body: `
+  <h2>Why keywords fail for jewellery</h2>
+  <p>“Temple necklace with green stones and a peacock pendant” is how a shopper describes it, if she can. Most just have a picture.</p>
+  <h2>What visual search does</h2>
+  <ul><li>Reads the shape, style and stones in the photo.</li><li>Shows the closest pieces you have.</li><li>Lets her ask, compare or book a visit from there.</li></ul>
+  <h2>Turn near-misses into orders</h2>
+  <p>When the exact piece is not in stock, a similar one or a custom order is the next step. Follow up on WhatsApp with the photo she sent.</p>
+  <h2>How Jwero does it</h2>
+  <p>Search by photo on the ecommerce website, with pieces picked for signed-in shoppers and prices at today’s rate. See <a href="/products/ecommerce">ecommerce website</a>.</p>`,
+});
+
+const leadFinder = post({
+  slug: 'ai-lead-finder-jewellers',
+  title: 'AI Lead Finder for Jewellers: Corporate Gifting, Retailers and B2B Buyers | Jwero',
+  description: 'How jewellers use an AI lead finder to discover companies and people to approach, such as corporate gifting buyers, wedding planners and retailers, and add them to the CRM.',
+  h1: 'AI lead finder for jewellers',
+  mins: 4,
+  sub: 'Walk-ins and Instagram bring retail buyers. Corporate gifting, wedding planners and retailers for a wholesaler have to be found. An AI lead finder does the finding.',
+  product: ['/products/crm', 'See the CRM'],
+  wa: 'blog-ai-leadfinder',
+  close: ['Find the buyers who will not walk in.', 'Jwero’s lead finder searches for companies and people, at ₹1 a search, and adds them to your CRM.'],
+  faqs: [
+    { q: 'What is an AI lead finder?', a: 'A search that discovers companies and people matching who you want to sell to, with their details, so you can contact them.' },
+    { q: 'What does it cost in Jwero?', a: '₹1 a search, from the wallet.' },
+    { q: 'Can I message them straight away?', a: 'Treat them as new contacts: introduce yourself personally and respect consent rules before adding them to campaigns.' },
+  ],
+  body: `
+  <h2>Who to look for</h2>
+  <ul><li>HR and admin heads for corporate gifting at Diwali and work anniversaries.</li><li>Wedding planners and event managers.</li><li>Retail jewellers in new cities, for wholesalers and manufacturers.</li><li>Hotels and boutiques for consignment.</li></ul>
+  <h2>A simple process</h2>
+  <ol><li>Describe the buyer and the city.</li><li>Review the list and keep the good fits.</li><li>Add them to the CRM with a source.</li><li>Approach one by one, with a catalogue link.</li></ol>
+  <h2>Respect consent</h2>
+  <p>A found contact has not opted in to your broadcasts. Start with a personal message; add them to campaigns only when they agree.</p>
+  <h2>How Jwero does it</h2>
+  <p>The lead finder adds contacts to the CRM, private catalogue links show what they viewed, and follow-ups are drafted for approval. See <a href="/products/crm">CRM</a> and <a href="/products/digital-catalogues">digital catalogues</a>.</p>`,
+});
+
+module.exports = [agents, waBot, igAi, voice, schemes, prompts, listings, images, video, ads, email, segments, scores, reportsAi, mcp, safe, cost, site, showroomAi, wholesale, tryOn, forecast, mistakes, journeysAi, photoSearch, leadFinder];

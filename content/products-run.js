@@ -49,6 +49,7 @@ const CRM_MOVE = [
 ];
 
 const crmFaqs = [
+  { q: 'Can Jwero find new leads for me?', a: 'Yes. The AI lead finder searches for companies and people to approach, such as corporate gifting buyers or retailers for a wholesaler, at ₹1 a search, and adds them to the CRM.' },
   { q: 'What is a jewellery CRM?', a: 'A jewellery CRM is customer software built for how jewellery is bought: it keeps families, scheme balances, purchases, occasions like weddings and anniversaries, and every WhatsApp message and call on one customer record, and tells your team who to contact and why.' },
   { q: 'What is the best CRM for jewellers?', a: 'Look for a CRM that knows families and shared phone numbers, gold scheme balances, purchases from billing, occasions, loyalty, and WhatsApp and calls on the same record, with consent kept per channel. Generic CRMs need years of custom work to get close.' },
   { q: 'How do jewellers increase repeat customers?', a: 'Remember every customer and family, reach them before their occasions, keep scheme members engaged to maturity, reward them through a loyalty tier, and call or message the ones drifting away before they buy elsewhere.' },
@@ -743,6 +744,7 @@ const SEG_HOW = [
   ['Send it', 'To a journey, a WhatsApp campaign, AI calls, a loyalty offer or an ad generated automatically.'],
 ];
 const segFaqs = [
+  { q: 'Can I describe a segment in plain words?', a: 'Yes. Type who you want, such as “bridal buyers in Surat who have not visited in six months”, and AI turns it into a segment, with suggestions to refine it.' },
   { q: 'What is customer segmentation for jewellers?', a: 'Grouping customers by what they bought, what they are saving for, when their occasions are, where they live and how engaged they are, so each message or offer goes to the people it is for instead of the whole list.' },
   { q: 'Which segments should a jeweller use?', a: 'Bridal buyers, scheme members due or maturing, anniversaries and birthdays this month, high-value customers at risk, customers quiet for a year, abandoned carts, and followers who have never bought. Jwero has 41 ready segments to start from.' },
   { q: 'What is RFM segmentation?', a: 'RFM groups customers by recency (how recently they bought), frequency (how often) and monetary value (how much). It is a quick way to find your best customers and the ones drifting away.' },

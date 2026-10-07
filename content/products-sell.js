@@ -288,6 +288,9 @@ const aiFaqs = [
   { q: 'Will this replace my sales staff?', a: 'No. The AI does the remembering and the follow-up; your people do the selling, and every customer walks in already known.' },
   { q: 'Can it give a discount without me knowing?', a: 'No. Prices and discounts follow your price rules and staff permissions. The AI drafts messages; it does not set prices.' },
   { q: 'How do I know what the AI did?', a: 'Every action is logged: what, when, why, and who approved it.' },
+  { q: 'Which AI agents come ready?', a: 'Twelve agent teams: Revenue, Sales, Seller, Marketing, Growth, CX, Operations, Inventory, Finance, Reporting, HR, and Payroll and Settlement. Most ask for approval by default.' },
+  { q: 'Can staff talk to Jwero instead of clicking?', a: 'Yes. An in-app assistant takes spoken or typed instructions, including Hindi and Hinglish phrases, and a staff voice assistant wakes on a wake word.' },
+  { q: 'Does AI read call transcripts?', a: 'Yes. After a call, AI reads the transcript, notes how interested the customer was, and updates her scores.' },
 ];
 const aiAgents = {
   slug: 'products/ai-sales-agents',
@@ -505,6 +508,8 @@ const ecFaqs = [
   { q: 'Can I use my own domain?', a: 'Yes. A custom domain is included, with your brand, colours and logo on jewellery-styled themes.' },
   { q: 'Can customers book try-at-home or a showroom appointment?', a: 'Yes. Both are booked from the website and land on the customer’s record for your team.' },
   { q: 'Do customers need a password?', a: 'No. They sign in with an OTP over WhatsApp, SMS or email.' },
+  { q: 'Can customers search by photo?', a: 'Yes. A shopper uploads a photo of a piece she likes and sees matching products from your catalogue.' },
+  { q: 'Does the website recommend pieces?', a: 'Yes. Signed-in shoppers see pieces picked for them from what they browsed and bought.' },
   { q: 'Will the website help me rank on Google?', a: 'It gives you what ranking needs: product pages, a blog, landing pages and customer reviews, and products synced to Google Shopping automatically.' },
   { q: 'Who looks after hosting, updates and security?', a: 'Jwero. There are no plugins to update or servers to manage, and customers sign in without passwords.' },
 ];
@@ -536,7 +541,7 @@ ${L.section(`${L.sectionHead('ONE RATE CHANGE, START TO FINISH', 'From the gold 
 ${L.section(`${L.sectionHead('SIX JOBS, ONE WEBSITE', 'What a jewellery ecommerce website has to do.', '')}<div class="wa-jobs">
   <article><h3>1. Prices at today’s rate</h3><p>Every product repriced from the gold rate, with metal, making charges, stones and GST shown line by line.</p><a href="/platform/pricing-engine">Pricing engine →</a></article>
   <article><h3>2. Stock that matches the showroom</h3><p>The same catalogue and stock as your POS, so the website never sells a piece already sold at the counter.</p><a href="/products/inventory">Inventory →</a></article>
-  <article><h3>3. Easy to buy</h3><p>Cart, wishlist, compare and checkout with online payment; sign-in by OTP over WhatsApp, SMS or email.</p><a href="/products/whatsapp">WhatsApp →</a></article>
+  <article><h3>3. Easy to buy</h3><p>Search by photo, cart, wishlist, compare and checkout with online payment; sign-in by OTP over WhatsApp, SMS or email.</p><a href="/products/whatsapp">WhatsApp →</a></article>
   <article><h3>4. Try-at-home and appointments</h3><p>Booked from the website, on her record, on the list your team already works from.</p><a href="/products/crm">Customer record →</a></article>
   <article><h3>5. Found on Google and Instagram</h3><p>Product pages, blog, reviews and landing pages; products synced to Google Shopping and Meta automatically.</p><a href="/products/catalog">Catalogue sync →</a></article>
   <article><h3>6. Your brand, your domain</h3><p>Jewellery-styled themes and page templates, your colours and logo, on your own domain. Gold scheme enrolment online too.</p><a href="/products/gold-schemes">Gold schemes →</a></article>
