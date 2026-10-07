@@ -355,85 +355,111 @@ ${L.ctaBand('Hire staff that scale like software.', 'Start with one agent in Ass
 `,
 };
 
+// Optimize, rebuilt 2026-10-07. Confirmed by Jwero: the pixel works on any
+// website; session recordings mask sensitive fields; events go to the Meta pixel
+// and Google Analytics. Not claimed: iPhone web push, SEO audits or speed checks.
+const OP_FLOW = [
+  ['Traffic', '1,200 visitors from a Diwali ad'],
+  ['Heatmap', '70% never scroll past the banner'],
+  ['A/B test', 'Price breakup moved up · the new version wins'],
+  ['Exit popup', 'A leaving visitor sees the festive offer'],
+  ['AI webchat', '“Is this hallmarked?” answered from your catalogue'],
+  ['Lead', 'She leaves her number · on her customer record'],
+  ['Follow-up', 'A WhatsApp follow-up drafted for approval'],
+];
+const opFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">WEBSITE · VISIT TO LEAD</p>${OP_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${OP_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const OP_CMP = [
+  ['Tools to install', 'Four or five scripts', 'One pixel'],
+  ['Analytics and funnels', 'Google Analytics', 'Built in, and sent to Google Analytics'],
+  ['Heatmaps and recordings', 'Hotjar or Clarity', 'Built in, with sensitive fields masked'],
+  ['A/B tests and personalisation', 'VWO or similar', 'Built in, by segment, scheme or loyalty'],
+  ['Popups and lead forms', 'A popup plugin', 'Visual editor'],
+  ['Chat', 'A chat widget', 'AI webchat in the same inbox as WhatsApp'],
+  ['Who the visitor is', 'Anonymous in each tool', 'One customer record'],
+  ['Ads', 'Pixel set up separately', 'Events sent to the Meta pixel'],
+];
+const opTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Separate tools</th><th>Jwero Optimize</th></tr></thead><tbody>${OP_CMP.map(([r, a, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const OP_HOW = [
+  ['Add one pixel', 'On any website: Jwero, Shopify, WooCommerce, WordPress or custom.'],
+  ['Define your funnel', 'Product view, enquiry, cart, order; see where people drop out.'],
+  ['Watch the heatmaps', 'Find what visitors miss, with recordings to see why.'],
+  ['Test the fix', 'A/B test the page or offer, and keep the winner.'],
+  ['Catch who is leaving', 'Exit popups, lead forms and AI webchat turn visits into leads.'],
+];
+const opFaqs = [
+  { q: 'What is website analytics for jewellers?', a: 'Seeing who visits your website, what they look at, and where they leave, so you can fix it. Jwero Optimize adds heatmaps, recordings, A/B tests, popups and AI webchat, with every lead on the customer record.' },
+  { q: 'Does it work on my existing website?', a: 'Yes. One pixel works on any website, including Shopify, WooCommerce, WordPress, custom sites and the Jwero ecommerce website.' },
+  { q: 'Do I still need Hotjar, VWO or a chat widget?', a: 'No. Heatmaps, recordings, A/B tests, popups, web push and AI webchat come with the one pixel, and a visitor who becomes a lead is the same record as on WhatsApp.' },
+  { q: 'Does it work with Google Analytics and the Meta pixel?', a: 'Yes. Optimize sends visitor details and events to Google Analytics and the Meta pixel, so ads can optimise for people who enquire or buy.' },
+  { q: 'Are session recordings private?', a: 'Sensitive fields are masked in recordings, consent settings are built in, and tracking only runs on domains you approve.' },
+  { q: 'How do I A/B test my jewellery website?', a: 'Create two versions of a page or popup, split visitors between them, and keep the one that brings more enquiries or orders.' },
+  { q: 'Can the AI answer webchat questions?', a: 'Yes. AIVA answers from your catalogue and knowledge base, and hands the chat to a person when needed.' },
+  { q: 'Can I run ads from here?', a: 'Ads run from <a href="/products/ads-manager">Ads Manager</a>; Optimize shows what visitors from those ads did.' },
+];
 const optimize = {
   slug: 'products/optimize',
-  title: 'Optimize — See Why Website Visitors Leave, Before They Do | Jwero',
-  description: 'Optimize shows why visitors leave your website and catches them first: heatmaps, A/B tests, popups, web push and an AI webchat — on your customer record.',
+  title: 'Website Analytics, Heatmaps & Live Chat for Jewellery Websites | Jwero',
+  description: 'Website analytics and conversion tools for jewellers: heatmaps, masked session recordings, A/B tests, popups, AI webchat and web push from one pixel on any website, with events sent to Google Analytics and the Meta pixel.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Optimize', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Website conversion optimization built into Jwero: visitor analytics, heatmaps, session recordings, A/B experiments, personalization and an AI webchat on the customer record.',
+    name: 'Jwero Optimize', alternateName: ['Website analytics for jewellers', 'Heatmaps for jewellery websites', 'Live chat for jewellery websites'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Website conversion tools for jewellers from one pixel on any website: visitor analytics and funnels, heatmaps, session recordings with sensitive fields masked, A/B tests, personalisation, popups and lead forms, web push and an AI webchat, with events sent to Google Analytics and the Meta pixel and every lead on the customer record.',
     url: 'https://jwero.ai/products/optimize', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to increase conversions on a jewellery website', step: OP_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Optimize'),
-  faqs: [
-    { q: 'What is Optimize?', a: 'The toolkit that shows you why a website visitor left without buying, and helps you catch the next one before they do: visitor analytics, heatmaps, session recordings, A/B experiments, personalization rules, popups and lead forms, web push, and an AI webchat widget — in the trade, this category is called "CRO" (conversion-rate optimization). It’s the class of stack you’d otherwise stitch together from Hotjar, VWO and OneSignal.' },
-    { q: 'Do I need to install anything extra?', a: 'No separate tools or contracts. One pixel on your website turns on analytics, heatmaps, recordings, experiments, popups, push and webchat together.' },
-    { q: 'How is this different from just installing Hotjar or VWO?', a: 'Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your WhatsApp, scheme and billing modules already use — not a separate export you have to reconcile.' },
-    { q: 'Can the AI actually answer webchat questions?', a: 'Yes — AIVA (Jwero’s AI webchat assistant) drafts and sends replies on the widget using your catalogue and knowledge base, and marks a conversation for human takeover the moment it needs a person.' },
-    { q: 'What can I personalize?', a: 'Personalization rules can target by behaviour tracked on your site — pages viewed, funnel stage — and, because it shares the customer record, by data like scheme or loyalty membership, so a returning scheme member can see different content than a first-time visitor.' },
-    { q: 'What does this replace, work with, and cost?', a: 'It replaces the need for separate analytics, heatmap, A/B testing and push tools. It works alongside your existing website — one pixel, no rebuild. Pricing sits inside Jwero’s tiers — see /pricing for the structure.' },
-    { q: 'Is visitor data handled with consent?', a: 'Yes — consent settings, a domain guard and a CSS sanitizer are built into the suite, so tracking and on-site widgets respect visitor consent and stay scoped to domains you approve.' },
-    { q: 'Can I manage my Meta/Google ad campaigns from here too?', a: 'Not inside Optimize itself — that lives in Ads Manager, a dedicated part of Jwero for Meta, Google and Pinterest campaigns, with budget alerts and an AI strategist that drafts, never spends. Optimize tells you what happens after the click; Ads Manager runs the campaign that brought the click.' },
-  ],
+  faqs: opFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'OPTIMIZE',
-  h1: 'See why visitors leave your website — and catch them before they do.',
-  sub: 'Visitors arrive, look around, and leave. Optimize shows you exactly where, and helps you catch the next one before they go: heatmaps, recordings, A/B experiments, personalization, popups, push and an AI webchat — reading and writing the same customer record as everything else.',
+  eyebrow: 'OPTIMIZE · WEBSITE ANALYTICS',
+  h1: 'Website analytics for jewellers: see why visitors leave, and turn them into leads.',
+  sub: 'One pixel on any website gives you heatmaps, recordings, A/B tests, popups and an AI webchat. Every visitor who leaves a number becomes a customer record, in the same inbox as WhatsApp.',
   primary: { href: '#', label: 'Show me why visitors leave', wa: 'optimize' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  secondary: { href: '/jewellery-website-analytics', label: 'Website analytics guide' },
 })}
 
-${L.section(
-  `${L.sectionHead('SEE WHERE VISITORS DROP OFF', 'You cannot fix a leak you cannot see.', '')}
-  ${L.cards([
-    { title: 'Visitor analytics', text: 'Traffic, retention and geo on every visit — who’s coming back, and from where.' },
-    { title: 'Events, goals & funnels', text: 'Define the path: browse, enquire, checkout — and see exactly which step loses people.' },
-    { title: 'Heatmaps & session recordings', text: 'Grid-based heatmaps and full session recordings with snapshots show what visitors actually do on a product page, not what you assume they do.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE CAMPAIGN, START TO FINISH', 'From an ad click to a lead on WhatsApp.', '')}${opFlow()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('TEST WHAT ACTUALLY WORKS', 'Stop guessing which page wins.', '')}
-  ${L.steps([
-    { title: 'Run an experiment', text: 'A/B experiments use deterministic bucketing so every visitor sees a consistent variant, with results computed for you — no spreadsheet needed.' },
-    { title: 'Personalize by who they are', text: 'Personalization rules show different content to different segments — a returning scheme member sees a different message than a first-time browser.' },
-    { title: 'Read the uplift', text: 'Metrics on every rule and experiment tell you what to keep, what to kill, and what to try next.' },
-  ])}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('SIX JOBS, ONE PIXEL', 'What a jewellery website needs to convert.', '')}<div class="wa-jobs">
+  <article><h3>1. Know your visitors</h3><p>Traffic, returning visitors, location, goals and funnels from product view to order.</p><a href="/products/reports">Reports →</a></article>
+  <article><h3>2. See what they do</h3><p>Heatmaps and session recordings, with sensitive fields masked.</p><a href="/trust/security">Privacy →</a></article>
+  <article><h3>3. Test what works</h3><p>A/B tests and personalisation by behaviour, segment, scheme or loyalty membership.</p><a href="/products/segmentation">Segments →</a></article>
+  <article><h3>4. Catch them leaving</h3><p>Exit popups, lead forms and polls built in a visual editor, plus web push.</p><a href="/products/journeys">Journeys →</a></article>
+  <article><h3>5. Answer them live</h3><p>AI webchat from your catalogue, handed to your team when needed, in the same inbox as WhatsApp.</p><a href="/products/ai-sales-agents">AI agents →</a></article>
+  <article><h3>6. Feed your ads</h3><p>Events sent to Google Analytics and the Meta pixel, so ads find people who enquire and buy.</p><a href="/products/ads-manager">Ads →</a></article>
+</div>`)}
 
-${L.section(
-  `${L.sectionHead('CATCH THE VISITOR BEFORE THEY LEAVE', 'Anonymous traffic becomes a lead instead of a lost tab.', '')}
-  ${L.cards([
-    { title: 'Popups & lead forms', text: 'A visual editor with design presets — exit-intent offers, lead capture and polls, built without a developer.' },
-    { title: 'Web push', text: 'Visitors who decline chat can still opt into push — so a new collection or a scheme update can bring them back without ad spend.' },
-    { title: 'Webchat with AIVA', text: 'AIVA answers on the webchat widget instantly and marks the conversation for human takeover the moment a person is needed — after-hours leads no longer wait until morning.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What a better conversion rate is worth.', 'Your numbers, not ours.')}<div class="callc" data-opc>
+  <div class="callc-in">
+    <label>Website visitors a month<input type="number" inputmode="numeric" data-op="v" value="10000" min="0" step="500"></label>
+    <label>Who enquire or buy today, %<input type="number" inputmode="decimal" data-op="now" value="0.5" min="0" max="100" step="0.1"></label>
+    <label>Who could, after fixes, %<input type="number" inputmode="decimal" data-op="next" value="1" min="0" max="100" step="0.1"></label>
+    <label>Of those enquiries, who buy, %<input type="number" inputmode="decimal" data-op="buy" value="20" min="0" max="100"></label>
+    <label>Average order, ₹<input type="number" inputmode="numeric" data-op="bill" value="40000" min="0" step="1000"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Extra leads a month</span><b data-op-o="leads">0</b></p>
+    <p><span>Extra sales a month</span><b data-op-o="sales">0</b></p>
+    <p class="callc-save"><span>Extra revenue a month</span><b data-op-o="rev">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs.</p>
+  </div>
+</div>`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('MANAGE THE SPEND THAT BRINGS THEM HERE', 'From watching traffic to running the ads that create it.', '')}
-  <p>Optimize tells you where visitors drop off — but the ads that brought them here live in their own workspace, with budget alerts and an AI strategist that drafts, never spends. Need to manage that spend? See <a href="/products/ads-manager">Ads Manager →</a>.</p>`
-)}
+${L.section(`${L.sectionHead('COMPARE', 'Separate tools, or one pixel.', '')}${opTable()}`)}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to increase conversions on a jewellery website.', 'Five steps.')}${L.steps(OP_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
-  'A lead captured through a webchat conversation or a popup becomes a CRM contact instantly — no export, no re-entry.',
-  'Personalization rules can key off scheme or loyalty membership from the same customer record your WhatsApp and billing modules already update.',
-  'The visitor an A/B experiment bucketed and the customer who eventually buys are the same record, start to finish.',
+  'A lead from a popup or webchat is a customer record at once, with no export.',
+  'Personalisation can use scheme and loyalty membership from the same record as WhatsApp and billing.',
+  'The visitor in an A/B test and the customer who buys are the same record, start to finish.',
 ])}
 
-${L.section(`${L.sectionHead('OPTIMIZE QUESTIONS', 'Consent, AI webchat, and what this replaces.', '')}${L.faqBlock([
-  { q: 'How is this different from installing Hotjar or VWO myself?', a: 'Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your other modules use.' },
-  { q: 'Can the AI answer webchat questions?', a: 'Yes — AIVA drafts and sends replies using your catalogue and knowledge base, and marks a conversation for human takeover the moment it needs a person.' },
-  { q: 'Is visitor data handled with consent?', a: 'Yes — consent settings, a domain guard and a CSS sanitizer are built into the suite.' },
-  { q: 'Can I manage my Meta/Google ad campaigns from here too?', a: 'Not inside Optimize — see <a href="/products/ads-manager">Ads Manager</a> for Meta, Google and Pinterest campaigns, budget alerts and an AI strategist that only drafts and never commits spend on its own.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="optimize">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('See where your own visitors drop off.', 'One pixel turns on analytics, heatmaps, experiments, popups, push and webchat together — on your existing website.', 'optimize')}
+${L.ctaBand('See where your own visitors drop off.', 'One pixel on your existing website turns on analytics, heatmaps, tests, popups and webchat together.', 'optimize')}
 `,
 };
 

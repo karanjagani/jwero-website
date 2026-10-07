@@ -2695,115 +2695,144 @@ A: Every action is logged: what, when, why, and who approved it.
 
 ---
 
-# Optimize, See Why Website Visitors Leave, Before They Do
+# Website Analytics, Heatmaps & Live Chat for Jewellery Websites
 URL: https://jwero.ai/products/optimize
 
-Optimize shows why visitors leave your website and catches them first: heatmaps, A/B tests, popups, web push and an AI webchat, on your customer record.
+Website analytics and conversion tools for jewellers: heatmaps, masked session recordings, A/B tests, popups, AI webchat and web push from one pixel on any website, with events sent to Google Analytics and the Meta pixel.
 
-OPTIMIZE
+OPTIMIZE · WEBSITE ANALYTICS
 
-## See why visitors leave your website, and catch them before they do.
+## Website analytics for jewellers: see why visitors leave, and turn them into leads.
 
- Visitors arrive, look around, and leave. Optimize shows you exactly where, and helps you catch the next one before they go: heatmaps, recordings, A/B experiments, personalization, popups, push and an AI webchat, reading and writing the same customer record as everything else.
+ One pixel on any website gives you heatmaps, recordings, A/B tests, popups and an AI webchat. Every visitor who leaves a number becomes a customer record, in the same inbox as WhatsApp.
 
  Show me why visitors leave 
- Book a demo 
+ Website analytics guide 
 
- SEE WHERE VISITORS DROP OFF
+ ONE CAMPAIGN, START TO FINISH
 
-## You cannot fix a leak you cannot see.
+## From an ad click to a lead on WhatsApp.
 
-## Visitor analytics
+ WEBSITE · VISIT TO LEAD
+ Traffic 1,200 visitors from a Diwali ad
+ Heatmap 70% never scroll past the banner
+ A/B test Price breakup moved up · the new version wins
+ Exit popup A leaving visitor sees the festive offer
+ AI webchat “Is this hallmarked?” answered from your catalogue
+ Lead She leaves her number · on her customer record
+ Follow-up A WhatsApp follow-up drafted for approval
+ Illustrative.
 
- Traffic, retention and geo on every visit, who’s coming back, and from where.
+ Traffic 1,200 visitors from a Diwali ad 
+ Heatmap 70% never scroll past the banner 
+ A/B test Price breakup moved up 
+ Exit popup A leaving visitor sees the festive offer 
+ AI webchat “Is this hallmarked?” answered from your catalogue 
+ Lead She leaves her number 
+ Follow-up A WhatsApp follow-up drafted for approval 
 
-## Events, goals & funnels
+ SIX JOBS, ONE PIXEL
 
- Define the path: browse, enquire, checkout, and see exactly which step loses people.
+## What a jewellery website needs to convert.
 
-## Heatmaps & session recordings
+## 1. Know your visitors
+ Traffic, returning visitors, location, goals and funnels from product view to order.
+ Reports → 
 
- Grid-based heatmaps and full session recordings with snapshots show what visitors actually do on a product page, not what you assume they do.
+## 2. See what they do
+ Heatmaps and session recordings, with sensitive fields masked.
+ Privacy → 
 
- TEST WHAT ACTUALLY WORKS
+## 3. Test what works
+ A/B tests and personalisation by behaviour, segment, scheme or loyalty membership.
+ Segments → 
 
-## Stop guessing which page wins.
+## 4. Catch them leaving
+ Exit popups, lead forms and polls built in a visual editor, plus web push.
+ Journeys → 
+
+## 5. Answer them live
+ AI webchat from your catalogue, handed to your team when needed, in the same inbox as WhatsApp.
+ AI agents → 
+
+## 6. Feed your ads
+ Events sent to Google Analytics and the Meta pixel, so ads find people who enquire and buy.
+ Ads → 
+
+ THE ARITHMETIC
+
+## What a better conversion rate is worth.
+
+ Your numbers, not ours.
+
+ Website visitors a month 
+ Who enquire or buy today, % 
+ Who could, after fixes, % 
+ Of those enquiries, who buy, % 
+ Average order, ₹ 
+
+ Extra leads a month 0 
+
+ Extra sales a month 0 
+
+ Extra revenue a month ₹0 
+
+ A planning estimate from your own inputs.
+
+ COMPARE
+
+## Separate tools, or one pixel.
+
+ Separate tools Jwero Optimize 
+ Tools to install Four or five scripts One pixel 
+ Analytics and funnels Google Analytics Built in, and sent to Google Analytics 
+ Heatmaps and recordings Hotjar or Clarity Built in, with sensitive fields masked 
+ A/B tests and personalisation VWO or similar Built in, by segment, scheme or loyalty 
+ Popups and lead forms A popup plugin Visual editor 
+ Chat A chat widget AI webchat in the same inbox as WhatsApp 
+ Who the visitor is Anonymous in each tool One customer record 
+ Ads Pixel set up separately Events sent to the Meta pixel 
+
+ GETTING STARTED
+
+## How to increase conversions on a jewellery website.
+
+ Five steps.
 
  1 
 
-## Run an experiment
- A/B experiments use deterministic bucketing so every visitor sees a consistent variant, with results computed for you, no spreadsheet needed.
+## Add one pixel
+ On any website: Jwero, Shopify, WooCommerce, WordPress or custom.
 
  2 
 
-## Personalize by who they are
- Personalization rules show different content to different segments, a returning scheme member sees a different message than a first-time browser.
+## Define your funnel
+ Product view, enquiry, cart, order; see where people drop out.
 
  3 
 
-## Read the uplift
- Metrics on every rule and experiment tell you what to keep, what to kill, and what to try next.
+## Watch the heatmaps
+ Find what visitors miss, with recordings to see why.
 
- CATCH THE VISITOR BEFORE THEY LEAVE
+ 4 
 
-## Anonymous traffic becomes a lead instead of a lost tab.
+## Test the fix
+ A/B test the page or offer, and keep the winner.
 
-## Popups & lead forms
+ 5 
 
- A visual editor with design presets, exit-intent offers, lead capture and polls, built without a developer.
-
-## Web push
-
- Visitors who decline chat can still opt into push, so a new collection or a scheme update can bring them back without ad spend.
-
-## Webchat with AIVA
-
- AIVA answers on the webchat widget instantly and marks the conversation for human takeover the moment a person is needed, after-hours leads no longer wait until morning.
-
- MANAGE THE SPEND THAT BRINGS THEM HERE
-
-## From watching traffic to running the ads that create it.
-
- Optimize tells you where visitors drop off, but the ads that brought them here live in their own workspace, with budget alerts and an AI strategist that drafts, never spends. Need to manage that spend? See Ads Manager → .
+## Catch who is leaving
+ Exit popups, lead forms and AI webchat turn visits into leads.
 
  BECAUSE IT'S ONE SYSTEM
 
- A lead captured through a webchat conversation or a popup becomes a CRM contact instantly, no export, no re-entry.
- Personalization rules can key off scheme or loyalty membership from the same customer record your WhatsApp and billing modules already update.
- The visitor an A/B experiment bucketed and the customer who eventually buys are the same record, start to finish.
-
- OPTIMIZE QUESTIONS
-
-## Consent, AI webchat, and what this replaces.
-
- How is this different from installing Hotjar or VWO myself? 
- Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your other modules use.
-
- Can the AI answer webchat questions? 
- Yes, AIVA drafts and sends replies using your catalogue and knowledge base, and marks a conversation for human takeover the moment it needs a person.
-
- Is visitor data handled with consent? 
- Yes, consent settings, a domain guard and a CSS sanitizer are built into the suite.
-
- Can I manage my Meta/Google ad campaigns from here too? 
- Not inside Optimize, see Ads Manager for Meta, Google and Pinterest campaigns, budget alerts and an AI strategist that only drafts and never commits spend on its own.
-
- More questions? See the full FAQ → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Every chat button on this site is the actual product, not a mockup, send one message and see for yourself.
+ A lead from a popup or webchat is a customer record at once, with no export.
+ Personalisation can use scheme and loyalty membership from the same record as WhatsApp and billing.
+ The visitor in an A/B test and the customer who buys are the same record, start to finish.
 
 ## See where your own visitors drop off.
 
- One pixel turns on analytics, heatmaps, experiments, popups, push and webchat together, on your existing website.
+ One pixel on your existing website turns on analytics, heatmaps, tests, popups and webchat together.
 
  Chat or call with us 
  Book a demo 
@@ -2812,29 +2841,29 @@ OPTIMIZE
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: What is Optimize?
-A: The toolkit that shows you why a website visitor left without buying, and helps you catch the next one before they do: visitor analytics, heatmaps, session recordings, A/B experiments, personalization rules, popups and lead forms, web push, and an AI webchat widget, in the trade, this category is called "CRO" (conversion-rate optimization). It’s the class of stack you’d otherwise stitch together from Hotjar, VWO and OneSignal.
+Q: What is website analytics for jewellers?
+A: Seeing who visits your website, what they look at, and where they leave, so you can fix it. Jwero Optimize adds heatmaps, recordings, A/B tests, popups and AI webchat, with every lead on the customer record.
 
-Q: Do I need to install anything extra?
-A: No separate tools or contracts. One pixel on your website turns on analytics, heatmaps, recordings, experiments, popups, push and webchat together.
+Q: Does it work on my existing website?
+A: Yes. One pixel works on any website, including Shopify, WooCommerce, WordPress, custom sites and the Jwero ecommerce website.
 
-Q: How is this different from just installing Hotjar or VWO?
-A: Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your WhatsApp, scheme and billing modules already use, not a separate export you have to reconcile.
+Q: Do I still need Hotjar, VWO or a chat widget?
+A: No. Heatmaps, recordings, A/B tests, popups, web push and AI webchat come with the one pixel, and a visitor who becomes a lead is the same record as on WhatsApp.
 
-Q: Can the AI actually answer webchat questions?
-A: Yes, AIVA (Jwero’s AI webchat assistant) drafts and sends replies on the widget using your catalogue and knowledge base, and marks a conversation for human takeover the moment it needs a person.
+Q: Does it work with Google Analytics and the Meta pixel?
+A: Yes. Optimize sends visitor details and events to Google Analytics and the Meta pixel, so ads can optimise for people who enquire or buy.
 
-Q: What can I personalize?
-A: Personalization rules can target by behaviour tracked on your site, pages viewed, funnel stage, and, because it shares the customer record, by data like scheme or loyalty membership, so a returning scheme member can see different content than a first-time visitor.
+Q: Are session recordings private?
+A: Sensitive fields are masked in recordings, consent settings are built in, and tracking only runs on domains you approve.
 
-Q: What does this replace, work with, and cost?
-A: It replaces the need for separate analytics, heatmap, A/B testing and push tools. It works alongside your existing website, one pixel, no rebuild. Pricing sits inside Jwero’s tiers, see /pricing for the structure.
+Q: How do I A/B test my jewellery website?
+A: Create two versions of a page or popup, split visitors between them, and keep the one that brings more enquiries or orders.
 
-Q: Is visitor data handled with consent?
-A: Yes, consent settings, a domain guard and a CSS sanitizer are built into the suite, so tracking and on-site widgets respect visitor consent and stay scoped to domains you approve.
+Q: Can the AI answer webchat questions?
+A: Yes. AIVA answers from your catalogue and knowledge base, and hands the chat to a person when needed.
 
-Q: Can I manage my Meta/Google ad campaigns from here too?
-A: Not inside Optimize itself, that lives in Ads Manager, a dedicated part of Jwero for Meta, Google and Pinterest campaigns, with budget alerts and an AI strategist that drafts, never spends. Optimize tells you what happens after the click; Ads Manager runs the campaign that brought the click.
+Q: Can I run ads from here?
+A: Ads run from Ads Manager; Optimize shows what visitors from those ads did.
 
 ---
 
@@ -30805,14 +30834,14 @@ JEWELLERY WEBSITE ANALYTICS
  Do I still need Google Analytics? 
  You can keep it; it connects. Optimize adds the recordings, heatmaps, tests and forms beside your customer records.
 
- What is Optimize? 
- The toolkit that shows you why a website visitor left without buying, and helps you catch the next one before they do: visitor analytics, heatmaps, session recordings, A/B experiments, personalization rules, popups and lead forms, web push, and an AI webchat widget, in the trade, this category is called "CRO" (conversion-rate optimization). It’s the class of stack you’d otherwise stitch together from Hotjar, VWO and OneSignal.
+ What is website analytics for jewellers? 
+ Seeing who visits your website, what they look at, and where they leave, so you can fix it. Jwero Optimize adds heatmaps, recordings, A/B tests, popups and AI webchat, with every lead on the customer record.
 
- Do I need to install anything extra? 
- No separate tools or contracts. One pixel on your website turns on analytics, heatmaps, recordings, experiments, popups, push and webchat together.
+ Does it work on my existing website? 
+ Yes. One pixel works on any website, including Shopify, WooCommerce, WordPress, custom sites and the Jwero ecommerce website.
 
- How is this different from just installing Hotjar or VWO? 
- Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your WhatsApp, scheme and billing modules already use, not a separate export you have to reconcile.
+ Do I still need Hotjar, VWO or a chat widget? 
+ No. Heatmaps, recordings, A/B tests, popups, web push and AI webchat come with the one pixel, and a visitor who becomes a lead is the same record as on WhatsApp.
 
  Related: Optimize · Jewellery website builder · Ads for jewellers · Ads Manager 
 
@@ -30842,14 +30871,14 @@ A: Visitor tracking shows sources, returning visitors and locations. A visitor b
 Q: Do I still need Google Analytics?
 A: You can keep it; it connects. Optimize adds the recordings, heatmaps, tests and forms beside your customer records.
 
-Q: What is Optimize?
-A: The toolkit that shows you why a website visitor left without buying, and helps you catch the next one before they do: visitor analytics, heatmaps, session recordings, A/B experiments, personalization rules, popups and lead forms, web push, and an AI webchat widget, in the trade, this category is called "CRO" (conversion-rate optimization). It’s the class of stack you’d otherwise stitch together from Hotjar, VWO and OneSignal.
+Q: What is website analytics for jewellers?
+A: Seeing who visits your website, what they look at, and where they leave, so you can fix it. Jwero Optimize adds heatmaps, recordings, A/B tests, popups and AI webchat, with every lead on the customer record.
 
-Q: Do I need to install anything extra?
-A: No separate tools or contracts. One pixel on your website turns on analytics, heatmaps, recordings, experiments, popups, push and webchat together.
+Q: Does it work on my existing website?
+A: Yes. One pixel works on any website, including Shopify, WooCommerce, WordPress, custom sites and the Jwero ecommerce website.
 
-Q: How is this different from just installing Hotjar or VWO?
-A: Those tools watch an anonymous visitor. Jwero’s webchat lead, the popup that converted, and the visitor an experiment bucketed all become the same customer record your WhatsApp, scheme and billing modules already use, not a separate export you have to reconcile.
+Q: Do I still need Hotjar, VWO or a chat widget?
+A: No. Heatmaps, recordings, A/B tests, popups, web push and AI webchat come with the one pixel, and a visitor who becomes a lead is the same record as on WhatsApp.
 
 ---
 

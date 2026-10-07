@@ -2897,3 +2897,12 @@ document.addEventListener('click', function (e) {
     set('sales', s.toLocaleString('en-IN')); set('rev', '₹' + (s * v('bill')).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+// Optimize page: what a better conversion rate is worth.
+(function () {
+  var root = document.querySelector('[data-opc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-op="' + k + '"]') || {}).value || 0; };
+  function run() { var l = Math.max(0, Math.round(v('v') * (v('next') - v('now')) / 100)), s = Math.round(l * v('buy') / 100);
+    var set = function (k, t) { var el = root.querySelector('[data-op-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('leads', l.toLocaleString('en-IN')); set('sales', s.toLocaleString('en-IN')); set('rev', '₹' + (s * v('bill')).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();

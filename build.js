@@ -1788,6 +1788,14 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Waiting room with a short form and admit control; signed, time-bound, revocable links tied to the first device.
 - Recording optional, with an in-room indicator and a notice before joining; reminders and no-show follow-ups with a fresh link; outcome on the customer record.
 
+## Website analytics and conversion for jewellers: Optimize (facts)
+
+- Page: https://jwero.ai/products/optimize
+- One pixel on any website (Jwero ecommerce, Shopify, WooCommerce, WordPress, custom) turns on visitor analytics, goals and funnels, heatmaps, session recordings, A/B tests, personalisation, popups and lead forms, web push and AI webchat.
+- Session recordings mask sensitive fields; consent settings and a domain guard are built in.
+- Visitor details and events are sent to Google Analytics and the Meta pixel.
+- Leads from popups and webchat become customer records in the same inbox as WhatsApp; personalisation can use segment, scheme and loyalty membership.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.

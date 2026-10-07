@@ -6,10 +6,9 @@
 // product already does; where something is not done, it says so.
 const TOOL_QA = {
   'products/optimize': [
-    { q: 'How do I A/B test my jewellery website?', a: 'In Optimize you set up two versions of a page or a pop-up, split visitors between them, and see which one led to more enquiries or orders. It sits beside the heatmaps and recordings, so you can see why one version won.' },
-    { q: 'How do I capture enquiries on my jewellery website?', a: 'Add a lead form or a pop-up from the visual editor: an exit offer, a callback request or a custom order form. Each enquiry lands on the customer’s record in the same inbox as WhatsApp and Instagram.' },
+        { q: 'How do I capture enquiries on my jewellery website?', a: 'Add a lead form or a pop-up from the visual editor: an exit offer, a callback request or a custom order form. Each enquiry lands on the customer’s record in the same inbox as WhatsApp and Instagram.' },
     { q: 'How do I track conversions on a jewellery website?', a: 'Define the steps that matter, such as viewed a product, sent an enquiry, placed an order, and Optimize shows where visitors drop out. Google Tag Manager and Google Analytics can be connected if you already use them.' },
-    { q: 'How do I set up the Meta pixel on a jewellery website?', a: 'On a Jwero ecommerce website you add your pixel once in settings and it fires on product views, carts and orders. That lets Meta ads optimise for people who actually enquire or buy, not only for clicks.' },
+    { q: 'How do I set up the Meta pixel on a jewellery website?', a: 'Add the Jwero pixel to any website and Optimize sends visitor details and events to your Meta pixel, including product views, carts and orders. That lets Meta ads optimise for people who actually enquire or buy, not only for clicks.' },
   ],
   'products/social-media': [
     { q: 'Can AI write jewellery captions and descriptions?', a: 'Yes. AI drafts captions, post text and replies from your catalogue and your tone, and a person approves before anything is published. It is a draft to edit, not an automatic post.' },
