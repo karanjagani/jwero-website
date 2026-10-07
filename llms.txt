@@ -322,7 +322,6 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jewellery Catalogue Management Software: Complete Guide: https://jwero.ai/jewellery-catalog-management-software
 - Best Jewellery PIM Software Features: Complete Guide: https://jwero.ai/best-jewellery-pim-software-features
 - Jewellery Digital Asset Management: Complete Guide: https://jwero.ai/jewellery-digital-asset-management-pim
-- Jewellery Product Readiness Score: Complete Guide: https://jwero.ai/jewellery-product-readiness-score
 - How to Create Channel-Ready Jewellery Products: https://jwero.ai/channel-ready-jewellery-products
 - Image-to-Product Data AI for Jewellery Catalogues: https://jwero.ai/image-to-product-data-jewellery-ai
 - AI Jewellery Product Descriptions: Complete Guide: https://jwero.ai/ai-jewellery-product-descriptions-tags-captions
