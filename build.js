@@ -1712,6 +1712,15 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Hosting, updates and security handled by Jwero; no third-party plugins.
 - Shopify or WooCommerce stores can stay and be connected instead.
 
+## Digital jewellery catalogues (facts)
+
+- Page: https://jwero.ai/products/digital-catalogues
+- Shareable catalogue links of chosen pieces, sent on WhatsApp with an AI-written caption.
+- Prices at today's gold rate, held for a named customer, hidden, or shown on request.
+- Links can be password protected; B2B buyer links carry their own pricing.
+- The team is notified when a customer opens a link; opens, pieces viewed and time spent go on the customer record.
+- A request becomes a numbered quotation; customers pay an advance or in full on the link.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.

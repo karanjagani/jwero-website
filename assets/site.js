@@ -2825,3 +2825,12 @@ document.addEventListener('click', function (e) {
     set('hrs', Math.round(hrs).toLocaleString('en-IN')); set('cost', '₹' + Math.round(Math.round(hrs) * v('cost')).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+// Digital catalogues page: what a PDF catalogue costs.
+(function () {
+  var root = document.querySelector('[data-dcc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-dc="' + k + '"]') || {}).value || 0; };
+  function run() { var enq = Math.max(0, Math.round(v('n') * (v('link') - v('pdf')) / 100)), sales = Math.round(enq * v('buy') / 100);
+    var set = function (k, t) { var el = root.querySelector('[data-dc-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('enq', enq.toLocaleString('en-IN')); set('sales', sales.toLocaleString('en-IN')); set('rev', '₹' + (sales * v('bill')).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();

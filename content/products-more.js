@@ -199,47 +199,111 @@ const mockShare = `
   <div class="mock-foot">A catalogue is a first-party page: every open, view and request writes to the record — no snippet to install.</div>
 </div>`;
 
+// Digital catalogues, rebuilt 2026-10-07. Confirmed by Jwero: prices hidden or
+// shown on request; password-protected links; B2B links with their own pricing;
+// team notified when a customer opens the link. Expiry and PDF download not claimed.
+const DC_FLOW = [
+  ['Picked', '12 bridal necklaces for the Shah family'],
+  ['Shared', 'Link sent on WhatsApp · caption written by AI'],
+  ['Opened', 'Opened 6 times by the family · your team is notified'],
+  ['Viewed', '3 minutes on one temple necklace'],
+  ['Requested', 'Quote requested for that piece'],
+  ['Quoted', 'Numbered quotation at today’s rate'],
+  ['Paid', 'Advance paid on the link · piece reserved'],
+];
+const dcFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">DIGITAL CATALOGUE · SHARE TO ORDER</p>${DC_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${DC_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const DC_CMP = [
+  ['Prices', 'Fixed the day it was made', 'Updated by hand', 'Today’s rate, or held for a named customer'],
+  ['Hide prices', 'Make another PDF', 'Yes', 'Hidden, shown, or on request'],
+  ['Who viewed what', 'No idea', 'Views', 'Opens, pieces and time spent, on her record'],
+  ['When she opens it', 'You never know', 'Some apps', 'Your team is notified'],
+  ['Private links', 'Forwarded anywhere', 'Varies', 'Password protected'],
+  ['B2B buyers', 'One PDF for all', 'Price lists', 'Each buyer link carries its own pricing'],
+  ['From interest to order', 'Back to chat', 'Order form', 'Request to quotation to advance payment'],
+  ['Same record as the counter', 'No', 'Separate app', 'Yes, one catalogue and one customer record'],
+];
+const dcTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>PDF or photos on WhatsApp</th><th>A generic catalogue app</th><th>Jwero</th></tr></thead><tbody>${DC_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>
+<p class="cta-note" style="margin-top:12px">See <a href="/compare/jwero-vs-quicksell">Jwero vs QuickSell</a>.</p>`;
+const DC_HOW = [
+  ['Pick the pieces', 'Choose from your catalogue, or start from a segment or a season.'],
+  ['Set prices and privacy', 'Today’s rate, a held price, prices hidden or on request; add a password if it is private.'],
+  ['Share on WhatsApp', 'The caption is written for you; edit and send to one customer or a segment.'],
+  ['Watch what happens', 'Your team is notified when she opens it and sees what she looked at.'],
+  ['Close it', 'Her request becomes a quotation, and she pays an advance or in full on the link.'],
+];
+const dcFaqs = [
+  { q: 'What is a digital jewellery catalogue?', a: 'A live link of chosen pieces you share instead of a PDF. With Jwero it prices at today’s rate, shows who viewed what, and lets the customer request a quote or pay on the link.' },
+  { q: 'How do I share a jewellery catalogue on WhatsApp?', a: 'Pick the pieces, and Jwero creates the link with a caption written for you. Send it to one customer or a whole segment.' },
+  { q: 'Can I see who viewed my catalogue?', a: 'Yes. Opens, the pieces viewed and the time spent are written to the customer’s record, and your team is notified when she opens it.' },
+  { q: 'Can I hide prices?', a: 'Yes. Show prices at today’s rate, hide them, or show them on request.' },
+  { q: 'Can a catalogue be private?', a: 'Yes. Protect a link with a password so only the people you choose can open it.' },
+  { q: 'Can wholesale buyers get their own prices?', a: 'Yes. Each B2B buyer link carries its own pricing and terms.' },
+  { q: 'Why not just send a PDF?', a: 'A PDF has yesterday’s prices, can be forwarded anywhere, and tells you nothing. A link stays at today’s rate, can be private, and reports back.' },
+  { q: 'How is this different from the Catalogue (PIM)?', a: 'The catalogue holds every piece once. A digital catalogue is a chosen set from it, shared with one customer, family, buyer or season.' },
+];
 const digitalCatalogues = {
   slug: 'products/digital-catalogues',
-  title: 'Digital Catalogue App for Jewellers: Live Prices | Jwero',
-  description: 'Curated catalogue links per customer, buyer or season, priced at the live rate, shared on WhatsApp with a ready caption; every open and view tracked on the record; requests become quotations; checkout with advance payment; the same products published to Meta commerce catalogues.',
-  schema: app('Jwero Digital Catalogues', 'digital-catalogues', 'Shareable, tracked, live-priced catalogue links for jewellers with enquiry-to-quotation and checkout.'),
+  title: 'Digital Catalogue App for Jewellers: Share on WhatsApp, Live Prices | Jwero',
+  description: 'Digital jewellery catalogues: share an online catalogue on WhatsApp at today’s gold rate, hide prices or password protect it, give B2B buyers their own pricing, see who viewed what, and take quotes and advance payments.',
+  schema: { ...app('Jwero Digital Catalogues', 'digital-catalogues', 'Shareable digital jewellery catalogues: live-rate prices or hidden prices, password-protected links, B2B buyer pricing, view tracking with notifications, request to quotation and advance payment, shared on WhatsApp.'), alternateName: ['Digital catalogue for jewellers', 'Online jewellery catalogue', 'WhatsApp catalogue sharing for jewellers', 'Jewellery catalogue app'] },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to make a digital jewellery catalogue', step: DC_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Digital Catalogues'),
-  faqs: [
-    { q: 'How is this different from the Catalogue (PIM)?', a: 'The PIM is the master: every design, purity, stone and certificate, once. A digital catalogue is a curated, shareable slice of it — a Diwali edit, a bridal shortlist for one family, a buyer link for one retailer — with its own numbering, its own visibility and its own analytics.' },
-    { q: 'Are prices live?', a: 'Yes. A catalogue prices from the same engine as the counter, so a rate change reprices every open link. You can hold a price for a named customer inside a validity window.' },
-    { q: 'What do I learn from a share?', a: 'Who opened, what she viewed and for how long, what she requested, what she checked out. Catalogues are first-party pages, so tracking is automatic — nothing to install — and it all writes to her record and her intent score.' },
-    { q: 'Can a customer buy from it?', a: 'Yes — request a quotation, or check out with an advance or full payment. Orders and payments post to the same ledger as everything else.' },
-    { q: 'Does it feed Instagram and Facebook shops?', a: 'The same products publish to Meta commerce catalogues, so a product tagged in a post is the product on your record.' },
-  ],
+  faqs: dcFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'DIGITAL CATALOGUES',
-  h1: 'Share a catalogue. Know exactly who looked, at what, for how long.',
-  sub: 'Curated links per customer, per family, per buyer or per season — priced live, shared on WhatsApp with the caption written for you, and reporting every open and request back to the record.',
+  eyebrow: 'DIGITAL JEWELLERY CATALOGUE',
+  h1: 'Digital catalogue for jewellers: share on WhatsApp, see who viewed what, take the order.',
+  sub: 'A live link instead of a PDF. Prices at today’s rate or hidden, private with a password, buyer pricing for B2B, and your team told the moment she opens it.',
   primary: { href: '#', label: 'Send me a live catalogue link', wa: 'catalogues' },
   secondary: { href: '/products/catalog', label: 'See the Catalogue (PIM)' },
   mock: mockShare,
 })}
 
-${L.section(
-  `${L.cards([
-    { title: 'Curated, not the whole shop', text: 'A slice of the master catalogue with its own number and visibility — one client, one family, one retailer, one season.' },
-    { title: 'Live-rate pricing', text: 'Same engine as the counter. A rate move reprices every open link; a held price has a validity window.' },
-    { title: 'Share with a caption', text: 'The WhatsApp caption drafts from the pieces inside; you edit, approve, send.' },
-    { title: 'Tracked without a snippet', text: 'Opens, views, dwell time, requests — first-party pages, so it just works. Everything writes to her record and her intent score.' },
-    { title: 'Request → quotation', text: 'A request from the link becomes a numbered quotation in one call.', link: { href: '/products/quotations', label: 'See Quotations' } },
-    { title: 'Checkout & advance', text: 'Full or advance payment on the link; order, payment and stock post once.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE SHARE, START TO FINISH', 'From a WhatsApp link to an advance paid.', '')}${dcFlow()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, ONE LINK', 'What a digital jewellery catalogue has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. The right pieces for each person</h3><p>A chosen set for one customer, family, buyer or season, taken from your catalogue.</p><a href="/products/catalog">Catalogue →</a></article>
+  <article><h3>2. Prices your way</h3><p>Today’s rate, a price held for a named customer, hidden, or on request.</p><a href="/platform/pricing-engine">Pricing engine →</a></article>
+  <article><h3>3. Shared on WhatsApp</h3><p>The caption is written for you; send to one customer or a segment.</p><a href="/products/whatsapp">WhatsApp →</a></article>
+  <article><h3>4. Know who looked</h3><p>Your team is notified when she opens it; pieces viewed and time spent go on her record.</p><a href="/products/crm">Customer record →</a></article>
+  <article><h3>5. From interest to order</h3><p>A request becomes a numbered quotation, and she pays an advance or in full on the link.</p><a href="/products/quotations">Quotations →</a></article>
+  <article><h3>6. Private and B2B ready</h3><p>Password-protected links, and buyer links that carry each buyer’s own pricing.</p><a href="/solutions/b2b-jewellery">Wholesale and B2B →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What a PDF catalogue costs you.', 'Your numbers, not ours.')}<div class="callc" data-dcc>
+  <div class="callc-in">
+    <label>Customers you send a catalogue to, a month<input type="number" inputmode="numeric" data-dc="n" value="400" min="0"></label>
+    <label>Who ask about a piece from a PDF, %<input type="number" inputmode="decimal" data-dc="pdf" value="1" min="0" max="100" step="0.5"></label>
+    <label>Who ask when you follow up the ones who looked, %<input type="number" inputmode="decimal" data-dc="link" value="3" min="0" max="100" step="0.5"></label>
+    <label>Of those, who buy, %<input type="number" inputmode="decimal" data-dc="buy" value="25" min="0" max="100"></label>
+    <label>Average bill, ₹<input type="number" inputmode="numeric" data-dc="bill" value="60000" min="0" step="1000"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Extra enquiries a month</span><b data-dc-o="enq">0</b></p>
+    <p><span>Extra sales a month</span><b data-dc-o="sales">0</b></p>
+    <p class="callc-save"><span>Extra revenue a month</span><b data-dc-o="rev">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'A PDF, a generic catalogue app, or Jwero.', '')}${dcTable()}`)}
 
 ${L.impactGrid([
-  { lever: 'A retailer asks for the new line', before: 'A PDF with last week’s prices.', after: 'A buyer link with their terms and today’s rate; you see what they lingered on.', link: { href: '/solutions/b2b-jewellery', label: 'See Wholesale & B2B' } },
+  { lever: 'A retailer asks for the new line', before: 'A PDF with last week’s prices.', after: 'A buyer link with their own pricing and today’s rate; you see what they lingered on.', link: { href: '/solutions/b2b-jewellery', label: 'See Wholesale & B2B' } },
   { lever: 'A bride’s family wants to compare', before: 'Forty photos in three chats.', after: 'One shortlist link the whole family opens; requests become one quotation.', link: { href: '/solutions/bridal', label: 'See bridal' } },
-  { lever: 'Festival edit to 400 customers', before: 'A forwarded PDF; no idea who cared.', after: 'A segment gets the link; 29 opens and 7 requests are on the records by evening.', link: { href: '/products/segmentation', label: 'See Segmentation' } },
+  { lever: 'Festival edit to 400 customers', before: 'A forwarded PDF; no idea who cared.', after: 'A segment gets the link; the opens and requests are on the records by evening.', link: { href: '/products/segmentation', label: 'See Segmentation' } },
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Message us — we will send a real catalogue link and show you what it reports back.</p>`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to make a digital jewellery catalogue.', 'Five steps.')}${L.steps(DC_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
+
+${L.oneSystemBlock([
+  'The catalogue link prices from the same rate and record as the counter.',
+  'What she viewed sits on her record, ready for the next call or message.',
+  'Your full public store is the <a href="/products/ecommerce">ecommerce website</a>; a digital catalogue is the private, chosen set.',
+])}
 
 ${L.ctaBand('Your next catalogue share, with the report attached.', 'Tell us the pieces. We will build the link on the call and send it to you the way a customer gets it.', 'catalogues')}
 `,
