@@ -96651,75 +96651,31 @@ LEADS AND CONVERSION
 
  Anything that flips this order increases resistance and data loss.
 
-## 5. Systems That Track Walk‑Ins Without Staff Input 
+## 5. Systems That Track Walk‑Ins With Little Staff Effort 
 
-## 1. Footfall & Dwell Tracking 
+## 1. Camera footfall counting 
 
- Tracks:
+ Your existing CCTV or NVR cameras count:
 
- Entry counts
+ Entries and exits
 
- Zone dwell time
+ How full the floor is, hour by hour
 
- Repeat visits
+ Busy hours against sales
 
- Engagement hotspots
+ Cameras count people; they do not recognise faces or tell a repeat visitor from a new one.
 
- This answers:
+## 2. A quick check-in at the door 
 
- “Did interest happen, even if no one spoke?”
+ A tablet check-in by phone number takes seconds and shows staff her past visits, what she tried, and any scheme nearing maturity.
 
-## 2. CCTV‑Based Behaviour Intelligence 
+## 3. Scan what she tries 
 
- Captures:
+ Scanning a piece by barcode , RFID or HUID logs it to her visit in one motion, with no typing.
 
- Counter engagement
+## 4. Bills linked to visits 
 
- Repeat handling
-
- Visit duration
-
- Return patterns
-
- This reveals:
-
- “Who is buying in progress, not just browsing.”
-
- No staff action required.
-
-## 3. In‑Store QR Codes 
-
- Placed at:
-
- Design trays
-
- Mirrors
-
- Collection signage
-
- Exit points (“Continue later”)
-
- QR scans act as:
-
- Silent self‑identification at peak interest
-
- Staff don’t ask.
-
- Customers opt in.
-
-## 4. Wi‑Fi / App / WhatsApp Touchpoints 
-
- When customers:
-
- Connect to Wi‑Fi
-
- Open catalog links
-
- Message later on WhatsApp
-
- Their visit becomes:
-
- A connected journey, not an isolated event.
+ Bills link to the visit on their own, so footfall , visits and sales finally meet, and conversion stops being a guess.
 
 ## 6. When Staff  Should  Be Involved (And When They Shouldn’t) 
 
