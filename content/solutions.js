@@ -221,6 +221,9 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', 'What IT, finance and operations will ask.', '')}${L.faqBlock([
+  { q: 'How does rollout work for a multi-store business?', a: 'One pilot branch first, with success criteria you set. Then a staged rollout, branch by branch, with per-branch configuration and training, without disrupting the season.' },
+  { q: 'Can head office control what branches do?', a: 'Yes. Central price rules, campaign templates and role-based permissions per branch, with local flexibility only where you grant it.' },
+  { q: 'We have an evaluation committee. What do you provide?', a: 'A security overview for IT, a migration plan for operations, an accounting note on keeping Tally for finance, and a pilot proposal with the success criteria written down.' },
   { q: 'We already invested in an ERP or CRM. Why change now?', a: 'You likely don’t need to — most multi-store businesses keep their ERP for the ledger and add Jwero for the revenue side, synced across branches.' },
   { q: 'Won’t staff at different branches resist differently?', a: 'Training is role-based and staged with the rollout — each branch gets the same onboarding as the pilot.' },
 ])}

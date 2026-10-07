@@ -360,6 +360,23 @@ function trimLong(html, slug) {
   if (blogLinks) m = m.replace(/(<section class="section related"[\s\S]*?)(<\/div>\s*<\/section>)/, `$1<p class="cta-note" style="margin-top:14px">From the blog: ${blogLinks}</p>$2`);
   return html.slice(0, ms) + m + html.slice(me);
 }
+// Top-level <section> ranges of a page, nesting-aware: [start, end) pairs.
+function topSections(html) {
+  const out = []; const re = /<section[\s>]/g; let m;
+  while ((m = re.exec(html))) {
+    let d = 1; const tag = /<section[\s>]|<\/section>/g; tag.lastIndex = m.index + 8; let t;
+    while ((t = tag.exec(html))) { d += t[0] === '</section>' ? -1 : 1; if (!d) { out.push([m.index, t.index + 10]); re.lastIndex = t.index + 10; break; } }
+    if (d) break;
+  }
+  return out;
+}
+// The three-tier price block as one compact line; the full comparison lives on /pricing.
+function compactTiers(html) {
+  return html.replace(/<section class="[^"]*" id="tiers">[\s\S]*?Use it yourself, or let Jwero run it\.[\s\S]*?<\/section>/, () => `<section class="section section-tint" id="tiers"><div class="container"><div class="price-line">
+  <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Use it yourself, or let Jwero run it.</h2><p>Run Jwero yourself for ₹18,000 a month with every module, first month ₹3,600. Or let Jwero’s specialists and AI run the work for you, with no subscription and every tool included.</p></div>
+  <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=product-price">Start for ₹3,600</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
+</div></div></section>`);
+}
 function journeyFix(html, p) {
   // Product pages: a visible question whose answer repeats a job card is dropped
   // from the page (it stays in the FAQ schema for search and AI answers).
@@ -375,6 +392,26 @@ function journeyFix(html, p) {
         return best >= 0.85 ? '' : m;
       });
     }
+  }
+  // Solution and role pages: the generic simulator moves after the page's own
+  // content, the three-tier price block becomes one line, and solution pages
+  // that had no problem section get one.
+  if (/^solutions\/(?!pain)[^/]+$/.test(p.slug || '') || /^roles\/[^/]+$/.test(p.slug || '')) {
+    const isRole = /^roles\//.test(p.slug);
+    const at = (re) => topSections(html).find(([a, b]) => re.test(html.slice(a, Math.min(b, a + 2000))));
+    const LEAKS = require('./content/solution-leaks');
+    if (!isRole && LEAKS[p.slug]) {
+      const uc = at(/>USE CASES</);
+      if (uc) { const L5 = require('./lib'); html = html.slice(0, uc[1]) + '\n' + L5.section(`${L5.sectionHead('', LEAKS[p.slug][0], '')}${L5.painRows(LEAKS[p.slug][1])}`) + html.slice(uc[1]); }
+    }
+    const sim = at(/class="section sim-section"/);
+    if (sim) {
+      const simHtml = html.slice(sim[0], sim[1]); html = html.slice(0, sim[0]) + html.slice(sim[1]);
+      const target = isRole ? at(/>A DAY IN THIS ROLE</) : at(/>COUNT YOUR TOOLS</);
+      if (target) html = isRole ? html.slice(0, target[1]) + '\n' + simHtml + html.slice(target[1]) : html.slice(0, target[0]) + simHtml + '\n' + html.slice(target[0]);
+      else html = html.slice(0, sim[0]) + simHtml + html.slice(sim[0]);
+    }
+    html = compactTiers(html);
   }
   // Product pages: the three-tier price block becomes one compact line; the full
   // comparison lives on the pricing and JBaaS pages.

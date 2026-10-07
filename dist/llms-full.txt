@@ -9524,6 +9524,15 @@ FOR MULTI-STORE BUSINESSES & CHAINS
 
 ## What IT, finance and operations will ask.
 
+ How does rollout work for a multi-store business? 
+ One pilot branch first, with success criteria you set. Then a staged rollout, branch by branch, with per-branch configuration and training, without disrupting the season.
+
+ Can head office control what branches do? 
+ Yes. Central price rules, campaign templates and role-based permissions per branch, with local flexibility only where you grant it.
+
+ We have an evaluation committee. What do you provide? 
+ A security overview for IT, a migration plan for operations, an accounting note on keeping Tally for finance, and a pilot proposal with the success criteria written down.
+
  We already invested in an ERP or CRM. Why change now? 
  You likely don’t need to, most multi-store businesses keep their ERP for the ledger and add Jwero for the revenue side, synced across branches.
 

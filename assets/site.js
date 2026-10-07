@@ -2989,9 +2989,10 @@ document.addEventListener('click', function (e) {
 })();
 // "What changes": one department at a time, with tabs, auto-advancing until the visitor takes over.
 (function () {
-  [].forEach.call(document.querySelectorAll('[data-cmp-tabs]'), function (wrap) {
-    var rows = [].slice.call(wrap.querySelectorAll('.cmp-row')); if (rows.length < 2) return;
-    var cmp = wrap.querySelector('.cmp'); cmp.classList.add('cmp-tabbed');
+  [].forEach.call(document.querySelectorAll('.cmp'), function (cmp) {
+    if (cmp.classList.contains('cmp-tabbed')) return;
+    var rows = [].slice.call(cmp.querySelectorAll('.cmp-row')); if (rows.length < (cmp.closest('[data-cmp-tabs]') ? 2 : 3)) return;
+    cmp.classList.add('cmp-tabbed');
     var bar = document.createElement('div'); bar.className = 'cmp-tabs'; bar.setAttribute('role', 'tablist');
     var btns = rows.map(function (r, i) { var b = document.createElement('button'); b.type = 'button'; b.setAttribute('role', 'tab'); b.textContent = (r.querySelector('.cmp-lever b') || {}).textContent || ('Part ' + (i + 1)); b.addEventListener('click', function () { stop(); show(i); }); bar.appendChild(b); return b; });
     cmp.insertBefore(bar, cmp.firstChild);

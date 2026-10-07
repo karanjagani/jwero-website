@@ -19,10 +19,10 @@ ${L.section(
   `<div class="router-grid">
     <a class="router-card" href="/solutions/pain/dead-stock"><h3>Dead stock</h3><p>Lakhs frozen in designs nobody wants.</p></a>
     <a class="router-card" href="/solutions/pain/lead-leakage"><h3>Lead leakage</h3><p>Enquiries dying in salesmen's chats.</p></a>
-    <a class="router-card" href="/products/crm"><h3>No follow-up system</h3><p>Warm prospects go cold; repeat purchase missed.</p></a>
+    <a class="router-card" href="/products/journeys"><h3>No follow-up system</h3><p>Warm prospects go cold; repeat purchase missed.</p></a>
     <a class="router-card" href="/products/crm"><h3>Customer data on staff phones</h3><p>Staff leaves → customers leave with them.</p></a>
     <a class="router-card" href="/products/gold-schemes"><h3>Scheme leakage</h3><p>Instalments missed, maturity disputes.</p></a>
-    <a class="router-card" href="/products/crm"><h3>Festival marketing, zero attribution</h3><p>Spend with no idea what returned.</p></a>
+    <a class="router-card" href="/products/campaigns"><h3>Festival marketing, zero attribution</h3><p>Spend with no idea what returned.</p></a>
     <a class="router-card" href="/solutions/manufacturers"><h3>Manufacturing gold loss</h3><p>Direct gold loss, unmeasured.</p></a>
     <a class="router-card" href="/trust/security"><h3>Data security fear</h3><p>"Family business data leaving us."</p></a>
   </div>
