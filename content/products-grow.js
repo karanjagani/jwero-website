@@ -213,6 +213,7 @@ ${L.ctaBand('Bring network discipline to your business.', 'Tell us how many bran
 const CLIMB = [
   ['Purchase', 'Earrings, ₹42,000 · 420 points earned'],
   ['Referral', 'Her friend Anjali buys a chain · 500 bonus points'],
+  ['Social', 'Comments on your Instagram reel and follows you on YouTube · 50 points'],
   ['Anniversary', 'Reward sent a week before the date · 250 points'],
   ['Tier up', 'Moves from Silver to Gold tier · better rewards from today'],
   ['Redeem', '1,170 points redeemed against making charges online'],
@@ -228,6 +229,7 @@ const LOY_CMP = [
   ['Anniversary and birthday rewards', 'No', 'Birthday only', 'Both, sent before the date'],
   ['Works at counter, online and WhatsApp', 'Counter only', 'App only', 'All, one balance'],
   ['Referrals tracked to a sale', 'No', 'Codes', 'Yes'],
+  ['Points for social engagement', 'No', 'Rarely', 'Yes: comments, follows, likes and shares on Instagram, Facebook, YouTube and more'],
   ['Coupons and gift vouchers', 'Paper', 'Some', 'Yes, with limits and approvals'],
   ['Points outstanding as a liability', 'Unknown', 'Report', 'Yes, with expiry'],
   ['Same record as schemes and CRM', 'No', 'No', 'Yes'],
@@ -246,6 +248,7 @@ const loyFaqs = [
   { q: 'Do loyalty points expire?', a: 'Yes, after the period you set. Customers get a reminder before points expire, and points outstanding are tracked as a liability.' },
   { q: 'How do anniversary rewards work?', a: 'Jwero sends a reward a few days before each customer’s anniversary, on WhatsApp, which is often the moment they plan a purchase.' },
   { q: 'Is loyalty the same as a gold scheme?', a: 'No. A scheme is the customer’s money saved towards a purchase; loyalty is your reward for coming back. A customer can have both on the same record, and both can be used on one bill.' },
+  { q: 'Can customers earn points for following or commenting on social media?', a: 'Yes. You can give points for comments, follows, likes and shares on Instagram, Facebook, YouTube and other channels, matched to the customer’s record, so engagement online turns into a reason to visit.' },
   { q: 'How does referral tracking work?', a: 'A customer refers a friend; when the friend buys, the referrer gets the reward you set, and the link between them stays on both records.' },
   { q: 'Can we tell if the programme pays for itself?', a: 'Yes. Repeat visits and sales by tier, points earned and redeemed, and points outstanding show what the programme costs and what it brings back.' },
   { q: 'How does a customer move up a tier?', a: 'By the rule you set, such as spend in a year or number of purchases. The tier and its rewards change automatically, and staff see it at the counter.' },
@@ -269,14 +272,14 @@ const loyalty = {
 ${L.hero({
   eyebrow: 'JEWELLERY LOYALTY PROGRAMME SOFTWARE',
   h1: 'Jewellery loyalty programme software: reward every visit, not just every gold instalment.',
-  sub: 'Points and tiers on your rules, redemption limited to making charges so your gold margin is safe, rewards before anniversaries and birthdays, referrals traced to sales, and coupons and gift vouchers, at the counter, online and on WhatsApp.',
+  sub: 'Points and tiers on your rules, for purchases and for social engagement on Instagram, Facebook and YouTube. Redemption limited to making charges so your gold margin is safe, rewards before anniversaries and birthdays, referrals traced to sales, and coupons and gift vouchers, at the counter, online and on WhatsApp.',
   primary: { href: '#', label: 'Show me a loyalty programme for my shop', wa: 'loyalty' },
 })}
 
 ${L.section(`${L.sectionHead('ONE CUSTOMER, ONE YEAR', 'Watch a customer climb a tier.', '')}${climb()}`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('SIX JOBS, ONE PROGRAMME', 'What a jewellery loyalty programme has to do.', '')}<div class="wa-jobs">
-  <article><h3>1. Your programme, your rules</h3><p>Points, tiers or both; earning rates by category; the rule that moves a customer up a tier.</p><a href="/products/segmentation">Segments →</a></article>
+  <article><h3>1. Your programme, your rules</h3><p>Points, tiers or both; earning rates by category; the rule that moves a customer up a tier. Points for purchases, and for engagement too: Instagram, Facebook and YouTube comments, follows, likes and shares.</p><a href="/products/segmentation">Segments →</a></article>
   <article><h3>2. Protect your gold margin</h3><p>Redemption can be limited to making charges, so points come off the part of the bill where your margin is, not the gold value.</p><a href="/blog/making-charges-explained">Making charges →</a></article>
   <article><h3>3. Rewards on the moments that matter</h3><p>Anniversary and birthday rewards sent a few days before the date, on WhatsApp, when customers plan to buy.</p><a href="/blog/birthday-anniversary-marketing-jewellers">Occasion marketing →</a></article>
   <article><h3>4. Redeem anywhere</h3><p>One balance at the counter, on your online store and on WhatsApp. Staff see the tier and points as the customer walks in.</p><a href="/products/storefront">Online store →</a></article>
@@ -335,6 +338,7 @@ const jrnFlow = () => `<div class="wa-story" data-wa-story>
 const READY = ['Welcome a new customer', 'New-lead nurture', 'Birthday', 'Anniversary', 'Family wedding coming up', 'Abandoned cart', 'Browsed but did not buy', 'Scheme instalment due', 'Scheme maturity', 'Repair ready for collection', 'Win back a quiet customer', 'VIP at risk', 'Loyalty tier up', 'Points about to expire', 'After a purchase', 'Festival invitation'];
 const JRN_CMP = [
   ['Ready-made journeys for jewellers', 'No', 'Generic templates', '300+ ready journeys'],
+  ['Journeys created automatically, across channels and journeys', 'No', 'No', 'Yes, from the goal you describe'],
   ['Knows purchases, schemes, occasions', 'No', 'If you sync data', 'Yes, one record'],
   ['WhatsApp, SMS, email, push and AI calls', 'WhatsApp only', 'Email and SMS', 'All, in one flow'],
   ['Abandoned cart and browse', 'No', 'Online only', 'Yes, with WhatsApp and calls'],
@@ -357,6 +361,7 @@ const jrnFaqs = [
   { q: 'Can a journey send messages without approval?', a: 'Not unless you allow it. Every message waits for your team’s approval at first; once you trust a step, you can let it send on its own, inside quiet hours and frequency limits. One switch stops everything.' },
   { q: 'How is a journey different from a broadcast?', a: 'A broadcast sends one message to many people at once. A journey runs for each customer on their own timeline, reacts to what they do, and moves them step by step towards a purchase.' },
   { q: 'Are there journeys for abandoned carts and browsing?', a: 'Yes. When a customer leaves pieces in an online cart, or keeps looking at the same pieces, a journey follows up on WhatsApp and can place an AI call.' },
+  { q: 'Can Jwero create journeys automatically?', a: 'Yes. Describe the goal, such as bringing back customers who bought bridal two years ago, and Jwero creates a detailed journey across WhatsApp, SMS, email, push and AI calls, including when to hand a customer on to another journey. Your team reviews it before it runs.' },
   { q: 'Can a journey include phone calls?', a: 'Yes. An AI call at ₹7 can be a step, for example when a WhatsApp message is not read, and the outcome decides the next step.' },
   { q: 'Can I see what a journey is doing right now?', a: 'Yes. You see how many customers are at each step, what was sent, what is waiting for approval, and the visits and bills it produced.' },
   { q: 'Are the recommended pieces personal, or bestsellers?', a: 'Personal. Each customer gets pieces matched to their purchases, taste and budget, priced at today’s rate.' },
@@ -380,7 +385,7 @@ const journeys = {
 ${L.hero({
   eyebrow: 'JEWELLERY MARKETING AUTOMATION · CUSTOMER JOURNEYS',
   h1: 'Jewellery marketing automation: customer journeys your team can see, and can stop.',
-  sub: 'Start from 300+ ready journeys: anniversaries, abandoned carts, scheme maturity, repairs ready, quiet customers. Each runs for every customer on their own timeline across WhatsApp, SMS, email and AI calls, with your approval before anything sends.',
+  sub: 'Start from 300+ ready journeys, or describe the goal and Jwero creates a detailed journey automatically, across channels and across journeys. Each runs for every customer on their own timeline across WhatsApp, SMS, email and AI calls, with your approval before anything sends.',
   primary: { href: '#', label: 'Show me the journeys for my shop', wa: 'journeys' },
 })}
 
@@ -388,7 +393,7 @@ ${L.section(`${L.sectionHead('ONE JOURNEY, START TO FINISH', 'An anniversary tha
 
 ${L.section(`${L.sectionHead('SIX JOBS, ONE CANVAS', 'What jewellery marketing automation has to do.', '')}<div class="wa-jobs">
   <article><h3>1. Start from a ready journey</h3><p>More than 300 ready journeys for jewellers: welcome, new-lead nurture, birthdays, anniversaries, abandoned cart, browse, scheme maturity, repair ready, win-back, VIP at risk and more.</p><a href="#ready">See some →</a></article>
-  <article><h3>2. Build your own on a canvas</h3><p>Triggers, waits, conditions and branches, laid out as a flow you can read, change and copy.</p><a href="/platform/ai-workforce">AI workforce →</a></article>
+  <article><h3>2. Built for you, or by you</h3><p>Describe the goal and Jwero creates the journey automatically: detailed, across channels, and handing customers from one journey to the next. Or build your own on a canvas of triggers, waits, conditions and branches.</p><a href="/platform/ai-workforce">AI workforce →</a></article>
   <article><h3>3. Every channel in one flow</h3><p>WhatsApp, SMS, email, push and AI calls at ₹7 as steps, so a message that is not read can become a call.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
   <article><h3>4. Personal, not a blast</h3><p>Each customer gets pieces matched to their purchases, taste and budget, priced at today’s rate, on the day that matters to them.</p><a href="/products/crm">Customer record →</a></article>
   <article><h3>5. Nothing goes out without your yes</h3><p>Approval gates on every message until you trust a step, quiet hours, frequency limits and one switch to stop it all.</p><a href="/whatsapp-broadcast-for-jewellers">WhatsApp marketing →</a></article>

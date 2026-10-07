@@ -4654,7 +4654,7 @@ JEWELLERY LOYALTY PROGRAMME SOFTWARE
 
 ## Jewellery loyalty programme software: reward every visit, not just every gold instalment.
 
- Points and tiers on your rules, redemption limited to making charges so your gold margin is safe, rewards before anniversaries and birthdays, referrals traced to sales, and coupons and gift vouchers, at the counter, online and on WhatsApp.
+ Points and tiers on your rules, for purchases and for social engagement on Instagram, Facebook and YouTube. Redemption limited to making charges so your gold margin is safe, rewards before anniversaries and birthdays, referrals traced to sales, and coupons and gift vouchers, at the counter, online and on WhatsApp.
 
  Show me a loyalty programme for my shop 
 
@@ -4665,6 +4665,7 @@ JEWELLERY LOYALTY PROGRAMME SOFTWARE
  LOYALTY · MEERA SHAH
  Purchase Earrings, ₹42,000 · 420 points earned
  Referral Her friend Anjali buys a chain · 500 bonus points
+ Social Comments on your Instagram reel and follows you on YouTube · 50 points
  Anniversary Reward sent a week before the date · 250 points
  Tier up Moves from Silver to Gold tier · better rewards from today
  Redeem 1,170 points redeemed against making charges online
@@ -4673,6 +4674,7 @@ JEWELLERY LOYALTY PROGRAMME SOFTWARE
 
  Purchase Earrings, ₹42,000 
  Referral Her friend Anjali buys a chain 
+ Social Comments on your Instagram reel and follows you on YouTube 
  Anniversary Reward sent a week before the date 
  Tier up Moves from Silver to Gold tier 
  Redeem 1,170 points redeemed against making charges online 
@@ -4683,7 +4685,7 @@ JEWELLERY LOYALTY PROGRAMME SOFTWARE
 ## What a jewellery loyalty programme has to do.
 
 ## 1. Your programme, your rules
- Points, tiers or both; earning rates by category; the rule that moves a customer up a tier.
+ Points, tiers or both; earning rates by category; the rule that moves a customer up a tier. Points for purchases, and for engagement too: Instagram, Facebook and YouTube comments, follows, likes and shares.
  Segments → 
 
 ## 2. Protect your gold margin
@@ -4738,6 +4740,7 @@ JEWELLERY LOYALTY PROGRAMME SOFTWARE
  Anniversary and birthday rewards No Birthday only Both, sent before the date 
  Works at counter, online and WhatsApp Counter only App only All, one balance 
  Referrals tracked to a sale No Codes Yes 
+ Points for social engagement No Rarely Yes: comments, follows, likes and shares on Instagram, Facebook, YouTube and more 
  Coupons and gift vouchers Paper Some Yes, with limits and approvals 
  Points outstanding as a liability Unknown Report Yes, with expiry 
  Same record as schemes and CRM No No Yes 
@@ -4811,6 +4814,9 @@ A: Jwero sends a reward a few days before each customer’s anniversary, on What
 Q: Is loyalty the same as a gold scheme?
 A: No. A scheme is the customer’s money saved towards a purchase; loyalty is your reward for coming back. A customer can have both on the same record, and both can be used on one bill.
 
+Q: Can customers earn points for following or commenting on social media?
+A: Yes. You can give points for comments, follows, likes and shares on Instagram, Facebook, YouTube and other channels, matched to the customer’s record, so engagement online turns into a reason to visit.
+
 Q: How does referral tracking work?
 A: A customer refers a friend; when the friend buys, the referrer gets the reward you set, and the link between them stays on both records.
 
@@ -4831,7 +4837,7 @@ JEWELLERY MARKETING AUTOMATION · CUSTOMER JOURNEYS
 
 ## Jewellery marketing automation: customer journeys your team can see, and can stop.
 
- Start from 300+ ready journeys: anniversaries, abandoned carts, scheme maturity, repairs ready, quiet customers. Each runs for every customer on their own timeline across WhatsApp, SMS, email and AI calls, with your approval before anything sends.
+ Start from 300+ ready journeys, or describe the goal and Jwero creates a detailed journey automatically, across channels and across journeys. Each runs for every customer on their own timeline across WhatsApp, SMS, email and AI calls, with your approval before anything sends.
 
  Show me the journeys for my shop 
 
@@ -4865,8 +4871,8 @@ JEWELLERY MARKETING AUTOMATION · CUSTOMER JOURNEYS
  More than 300 ready journeys for jewellers: welcome, new-lead nurture, birthdays, anniversaries, abandoned cart, browse, scheme maturity, repair ready, win-back, VIP at risk and more.
  See some → 
 
-## 2. Build your own on a canvas
- Triggers, waits, conditions and branches, laid out as a flow you can read, change and copy.
+## 2. Built for you, or by you
+ Describe the goal and Jwero creates the journey automatically: detailed, across channels, and handing customers from one journey to the next. Or build your own on a canvas of triggers, waits, conditions and branches.
  AI workforce → 
 
 ## 3. Every channel in one flow
@@ -4919,6 +4925,7 @@ JEWELLERY MARKETING AUTOMATION · CUSTOMER JOURNEYS
 
  WhatsApp by hand Generic marketing automation Jwero journeys 
  Ready-made journeys for jewellers No Generic templates 300+ ready journeys 
+ Journeys created automatically, across channels and journeys No No Yes, from the goal you describe 
  Knows purchases, schemes, occasions No If you sync data Yes, one record 
  WhatsApp, SMS, email, push and AI calls WhatsApp only Email and SMS All, in one flow 
  Abandoned cart and browse No Online only Yes, with WhatsApp and calls 
@@ -4991,6 +4998,9 @@ A: A broadcast sends one message to many people at once. A journey runs for each
 
 Q: Are there journeys for abandoned carts and browsing?
 A: Yes. When a customer leaves pieces in an online cart, or keeps looking at the same pieces, a journey follows up on WhatsApp and can place an AI call.
+
+Q: Can Jwero create journeys automatically?
+A: Yes. Describe the goal, such as bringing back customers who bought bridal two years ago, and Jwero creates a detailed journey across WhatsApp, SMS, email, push and AI calls, including when to hand a customer on to another journey. Your team reviews it before it runs.
 
 Q: Can a journey include phone calls?
 A: Yes. An AI call at ₹7 can be a step, for example when a WhatsApp message is not read, and the outcome decides the next step.

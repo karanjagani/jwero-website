@@ -77,12 +77,13 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 
 ## Jewellery loyalty programme (facts)
 - Points and tiers with your rules and earning rates by category; redemption can be limited to making charges to protect gold margins.
+- Points for purchases and for social engagement (comments, follows, likes and shares on Instagram, Facebook, YouTube and other channels).
 - Anniversary and birthday rewards sent before the date; referrals traced to the friend's purchase; coupons and gift vouchers with limits and approvals; points expiry with a reminder, and points outstanding as a liability.
 - One balance at the counter, online store and WhatsApp; works alongside gold schemes on the same record. Details: https://jwero.ai/products/loyalty
 
 ## Jewellery marketing automation and journeys (facts)
 - 300+ ready customer journeys for jewellers, including welcome, new-lead nurture, birthday, anniversary, family wedding, abandoned cart, browse, scheme instalment and maturity, repair ready, win-back, VIP at risk and loyalty moments.
-- A canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; pieces matched to each customer at today's rate; approval before anything sends until you allow it, quiet hours, frequency limits and a stop switch; live view of each step and sales traced to the journey. Details: https://jwero.ai/products/journeys
+- Jwero can create detailed journeys automatically from a goal you describe, across channels and handing customers between journeys; or build on a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; pieces matched to each customer at today's rate; approval before anything sends until you allow it, quiet hours, frequency limits and a stop switch; live view of each step and sales traced to the journey. Details: https://jwero.ai/products/journeys
 
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
