@@ -693,6 +693,7 @@ ${L.section(`${L.sectionHead('ONE CALL, TWO WAYS', 'When a person picks up, and 
   <div class="tw tw-human"><p class="tw-tag">A person picks up</p><ol><li>Puts the customer on hold</li><li>Asks the stock room if the bangle is there</li><li>Asks accounts for the scheme balance</li><li>Checks today’s rate</li><li>Calls the customer back, if they are free</li></ol><p class="tw-out"><b>Minutes to hours · 2 to 3 people</b> Many customers hang up or buy elsewhere while waiting.</p></div>
   <div class="tw tw-ai"><p class="tw-tag">The AI picks up</p><ol><li>Knows the customer from the number</li><li>Checks the bangle in live stock</li><li>Reads today’s rate and the scheme balance</li><li>Quotes the price and books a visit</li><li>Sends photos and a payment link on WhatsApp</li></ol><p class="tw-out"><b>Seconds · nobody else needed</b> Day or night, 8 callers at a time.</p></div>
 </div>
+${callTable()}
 <ul class="tw-gains"><li><b>Team time back</b> No one leaves a customer at the counter to chase an answer.</li><li><b>Happier customers</b> An answer now, not a call-back.</li><li><b>Fewer drop-outs</b> No hold music, no missed calls, no “I will call you back”.</li><li><b>24×7 sales and support</b> Enquiries at 11 pm become visits and payments.</li></ul>`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('THE ARITHMETIC', 'What your calls cost today, and at ₹7 a call.', 'Change the numbers to match your shop.')}<div class="callc" data-callc>
@@ -730,7 +731,7 @@ ${L.section(`${L.sectionHead('OUTBOUND, IN BULK', 'Calling campaigns that run th
   <article><h3>Festival and wedding invitations</h3><p>Akshaya Tritiya, Dhanteras, a new bridal collection: invite a segment by call, then book their visit.</p><a href="/products/campaigns">Campaigns →</a></article>
   <article><h3>Win-backs and follow-ups</h3><p>Customers who have gone quiet, enquiries that did not buy, walk-outs from last week, called in their language.</p><a href="/products/journeys">Journeys →</a></article>
   <article><h3>Ready, due and overdue</h3><p>“Your piece is ready”, “your repair is done”, “your payment is pending”: the calls that bring customers back to the counter.</p><a href="/products/repairs-service">Repairs →</a></article>
-</div>`)}
+</div><p class="cta-note" style="margin-top:14px">Pays off first for <a href="/solutions/single-store">single showrooms</a> (reminders and invitations without a telecaller), <a href="/solutions/multi-store-chains">chains</a> (one calling team for every branch), <a href="/solutions/b2b-jewellery">wholesalers and manufacturers</a> (payment and karigar follow-ups) and families abroad, called at a sensible hour in their time zone.</p>`)}
 
 ${L.section(`${L.sectionHead('INBOUND, IN BULK', 'Every call answered, even in the rush.', '')}<div class="wa-jobs">
   <article><h3>Up to 8 calls at once</h3><p>Eight customers can call at the same time and all are answered, day or night, so nobody hears a busy tone on a festival morning.</p></article>
@@ -743,15 +744,6 @@ ${L.section(`${L.sectionHead('TRIGGERS AND CAMPAIGNS', 'Calls that place themsel
   <p><b>Triggers:</b> an instalment falling due, a failed payment, an unanswered WhatsApp message, a piece or repair ready, a customer’s anniversary. Each can place a call automatically, and if the call is not answered, a WhatsApp message follows.</p>
   <p><b>Campaigns:</b> choose a segment (scheme members due, customers who bought bridal last year, quiet customers in one city), a script, a language and a calling window. Watch answered, paid and booked as they happen.</p>
   <p><b>WhatsApp in the same flow:</b> the call and the chat share one record, so the payment link, catalogue or booking confirmation goes out the moment the customer says yes. <a href="/products/whatsapp">WhatsApp API for jewellers →</a></p></div>`)}
-
-${L.section(`${L.sectionHead('BY KIND OF BUSINESS', 'Where AI calling pays off first.', '')}${L.cards([
-  { title: 'Single showroom', text: 'Scheme reminders and festival invitations without a telecaller.', link: { href: '/solutions/single-store', label: 'Single store' } },
-  { title: 'Chains', text: 'One calling team for every branch, with calls routed to the right store.', link: { href: '/solutions/multi-store-chains', label: 'Chains' } },
-  { title: 'Wholesalers and manufacturers', text: 'Payment follow-ups with trade buyers and due-date calls to karigars.', link: { href: '/solutions/b2b-jewellery', label: 'Wholesale' } },
-  { title: 'Overseas customers', text: 'Families abroad called at a sensible hour in their time zone, then served on WhatsApp.', link: { href: '/products/whatsapp', label: 'WhatsApp' } },
-], 4)}`, { tone: 'tint' })}
-
-${L.section(`${L.sectionHead('COMPARE', 'Telecaller, IVR robocall, or voice AI.', '')}${callTable()}`)}
 
 ${L.section(`${L.sectionHead('HOW IT STAYS SAFE', 'Inside your rules, and the law’s.', '')}<div class="jb-blogline">
   <p><b>Your rules:</b> daily caps, calling hours, which actions the agent may take, and an approval queue for anything new. One switch stops all calling.</p>

@@ -612,7 +612,7 @@ const PILLARS = [
   {
     key: 'sell', title: 'SELL', promise: 'The counter that never closes: WhatsApp, Instagram, Messenger, storefront and video — with AI that answers in seconds and follows up without being told.',
     chips: [['WhatsApp Commerce', '/products/whatsapp'], ['Instagram & Facebook', '/products/instagram-facebook'], ['AI Sales Agents', '/products/ai-sales-agents'], ['Catalogue', '/products/catalog']],
-    proof: 'WhatsApp Business API + Meta channels; 240+ governed AI actions; AI voice in 14 languages.',
+    proof: 'WhatsApp Business API + Meta channels; 240+ governed AI actions; AI chat in 14 languages; AI calls in 11.',
   },
   {
     key: 'run', title: 'RUN', promise: 'Inventory, orders, billing, manufacturing, branches, staff and money — one truth, visible from anywhere.',
@@ -1292,6 +1292,7 @@ function homeHero({ kicker, h1, sub }) {
           <a class="hero-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b><em>No team to hire. No tools to buy.</em></a>
         </div>
         <p class="cta-note"><a href="#jbaas">Compare the three ways</a> · A real person replies on WhatsApp within minutes</p>
+        <p class="usp-line"><a href="/products/whatsapp">Official Meta Business Partner</a><a href="/products/whatsapp#wa-payments">Pay inside WhatsApp</a><a href="/ai-calling-for-jewellers">AI calls at ₹7, 8 at a time</a></p>
       </div>
       <div class="hero-home-piece">
         ${gemStage2({ hero: true })}
@@ -1495,7 +1496,7 @@ const CTA_TICKER = [
   ['record', '198 customer signals · 11 live scores, each with a why'],
   ['sparkle', '41 ready segments · 21 journey recipes'],
   ['shield', '240+ governed AI actions'],
-  ['phone', 'AI voice in 14 languages'],
+  ['phone', 'AI calls in 11 Indian languages'],
   ['power', 'Kill switch at five scopes'],
   ['swap', 'Tally & Zoho Books bridges built in'],
   ['chat', 'Official WhatsApp Business API'],

@@ -4275,3 +4275,8 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .callc-out p span { color: rgba(255,255,255,.85); }
 .callc-out p b { color: #fff; }
 .callc-out .callc-save b { color: var(--amber); }
+
+/* Three differentiators under the top section */
+.usp-line { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; }
+.usp-line a { padding: 5px 11px; border-radius: 999px; background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .28); color: #fff; font-size: .78rem; font-weight: 500; text-decoration: none; }
+.usp-line a:hover { background: rgba(255, 255, 255, .22); }

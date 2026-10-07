@@ -320,7 +320,7 @@ function footerHTML() {
       </div>
       </div>
     </div>
-    <div class="f-proof">198 customer signals · 11 explainable scores · 240+ governed AI actions · AI voice in 14 languages · 5 kill-switch scopes · Tally, Zoho Books, Shopify, WooCommerce, Unicommerce &amp; Meta connectors built in.</div>
+    <div class="f-proof">198 customer signals · 11 explainable scores · 240+ governed AI actions · AI chat in 14 languages · AI calls in 11 · 5 kill-switch scopes · Tally, Zoho Books, Shopify, WooCommerce, Unicommerce &amp; Meta connectors built in.</div>
     <div class="f-bottom">
       <p>© <span data-year></span> Jwero. All rights reserved.</p>
       <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank">${l}</a>`).join('')}<a href="#" data-share="Thought of you. Jwero takes the marketing, technology and follow-up chaos off a jeweller:">Refer a jeweller, save 10%</a><a href="mailto:care@jwero.ai">care@jwero.ai</a><a href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=footer" rel="noopener">Log in to Jwero</a></p>
@@ -391,6 +391,11 @@ function journeyFix(html, p) {
   }
   // product pages: one main button and the two doors at the top, nothing else
   if (/^products\//.test(slug)) html = html.replace(/(<section class="hero[^"]*">[\s\S]*?)(<div class="doors-strip)/, (m0, top, rest) => top.replace(/\s*<a class="btn btn-ghost[^"]*"[^>]*>[^<]*<\/a>/g, '').replace(/\s*<p class="cta-note">[\s\S]*?<\/p>/, '') + rest);
+  // the same question never appears twice on a page
+  {
+    const seenQ = new Set(), norm = (q) => q.replace(/<[^>]+>/g, '').toLowerCase().replace(/[^a-z0-9ऀ-ॿ]+/g, ' ').trim();
+    html = html.replace(/\s*<details class="faq-item[^"]*"[^>]*>\s*<summary>([\s\S]*?)<\/summary>[\s\S]*?<\/details>/g, (m0, q) => { const k = norm(q); if (!k) return m0; if (seenQ.has(k)) return ''; seenQ.add(k); return m0; });
+  }
   // pages never offer a button back to themselves
   if (slug === 'how-it-works') html = html.replace(/<a class="btn[^"]*" href="\/how-it-works">See how Jwero works<\/a>/g, '');
   if (slug === 'self-managed') html = html.replace(/<a class="btn[^"]*" href="\/self-managed">Run it yourself<\/a>/g, '').replace(/<a class="btn[^"]*" href="\/pricing">Ways to work with Jwero<\/a>/g, '');
