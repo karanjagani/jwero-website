@@ -530,7 +530,7 @@ ${L.section(
       </div>
       <div class="road-group">
         <p class="road-group-label">Operations</p>
-        <div class="road-item"><strong>Jewellery catalogue (PIM)</strong>purity, certificates, HUID-aware, RFID</div>
+        <div class="road-item"><strong>Jewellery catalogue (PIM)</strong>purity, certificates, HUID-aware</div>
         <div class="road-item"><strong>Inventory intelligence</strong>valuation, ageing, dead-stock visibility</div>
         <div class="road-item"><strong>GST invoicing at live metal rates</strong>AR ledger, payment reminders</div>
         <div class="road-item"><strong>GSTR-1/3B report export</strong>GSTN-offline-tool format, for manual upload</div>

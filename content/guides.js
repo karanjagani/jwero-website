@@ -295,13 +295,13 @@ const inventory = guide({
 
   <h2>How Jwero does it, and what it does not do</h2>
   <p>Jwero keeps a record for every piece, lot and stone, values stock at today’s rate, shows ageing bands, prints tags and counts by scan, and tracks memo, supplier memo, transfers and karigar stock on the same record the counter bills from. Idle pieces can be matched to customers whose taste fits them. Details are on the <a href="/products/inventory">inventory page</a>.</p>
-  <p>It does not sell hardware. Tag printers, scanners, RFID readers and scales are bought separately and connected; ask which models are supported before you order.</p>
+  <p>It does not sell hardware. Tag printers, scanners and scales are bought separately and connected; ask which models are supported before you order. Jwero does not support RFID today.</p>
   `,
   faqs: [
     { q: 'What is jewellery inventory software?', a: 'Software that keeps a record of every piece of jewellery with its weights, purity, stones and location, values the stock at the current rate, and tracks what has aged, moved or gone missing.' },
     { q: 'How is jewellery stock valued?', a: 'Metal at the current rate for its purity and net weight, plus stone value, plus making where you account for it. The total changes daily with the rate, which is why a live valuation matters.' },
     { q: 'What is dead stock in a jewellery shop?', a: 'Pieces that have not sold for a long period, commonly taken as more than 180 days, though slower categories such as bridal are judged on a longer period.' },
-    { q: 'Is RFID necessary?', a: 'No. Barcode or QR tags are enough for most shops. RFID helps when there are many pieces to count often, because a whole tray can be read at once.' },
+    { q: 'Is RFID necessary?', a: 'No. Barcode or QR tags are enough for most shops. RFID helps when there are many pieces to count often, because a whole tray can be read at once. Jwero does not support RFID today; it counts by scanning barcode or QR tags.' },
     { q: 'How often should I count stock?', a: 'A little, often. Counting one category each week by scanning finds a variance while it can still be traced.' },
   ],
   related: [['/products/inventory', 'Jewellery inventory software'], ['/jewellery-barcode-tagging-software', 'Barcode and tagging'], ['/tools/dead-stock-calculator', 'Dead stock calculator'], ['/guides/jewellery-billing-software', 'Billing guide']],
@@ -504,7 +504,7 @@ ${L.section(`${L.sectionHead('START HERE', 'Which guide first?', '')}<div class=
 ${L.section(L.cards(GUIDES.map((g) => ({ title: g.title.split(' | ')[0].split(':')[0], text: g.description, link: { href: '/' + g.slug, label: 'Read the guide' } })), 2))}
 ${L.section(L.cards([
   { title: 'Accounting', text: 'Books that post themselves, with a Tally and Zoho Books bridge.', link: { href: '/jewellery-accounting-software', label: 'Open' } },
-  { title: 'Barcode, tagging and RFID', text: 'Tag once, scan to bill and to count.', link: { href: '/jewellery-barcode-tagging-software', label: 'Open' } },
+  { title: 'Barcode and tagging', text: 'Tag once, scan to bill and to count.', link: { href: '/jewellery-barcode-tagging-software', label: 'Open' } },
   { title: 'Cloud and mobile', text: 'Online software on any phone or computer.', link: { href: '/cloud-jewellery-software', label: 'Open' } },
 ]), { tone: 'tint' })}
 ${L.section(`${L.sectionHead('IN THE PRODUCT', 'Where each guide leads in Jwero.', '')}<div class="erp-map">${[['/products/billing-finance', 'Billing and accounts'], ['/products/erp', 'ERP'], ['/products/inventory', 'Inventory'], ['/products/crm', 'CRM'], ['/products/manufacturing', 'Manufacturing'], ['/pricing', 'Pricing']].map(([h, t]) => `<a href="${h}"><b>${t}</b><span>${h.replace(/^\//, 'jwero.ai/')}</span></a>`).join('')}</div>`, { tone: 'tint' })}

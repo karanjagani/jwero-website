@@ -24,7 +24,7 @@ const TOOL_QA = {
     { q: 'Should a jewellery brand be on Threads?', a: 'Only if your customers are there. It costs little to cross-post from the same composer, but it should not take time from Instagram and WhatsApp, where jewellery is actually bought.' },
   ],
   'products/catalog': [
-    { q: 'Can AI create jewellery product photos?', a: 'Jwero can generate or edit a product image and create a virtual try-on image from a product photo, each charged per image. They should be used to present a real piece, not to show something you cannot supply.' },
+    { q: 'Can AI create jewellery product photos?', a: 'Jwero can generate or edit a product image from a product photo, charged per image. They should be used to present a real piece, not to show something you cannot supply.' },
     { q: 'Where do I store jewellery photos and videos?', a: 'In the asset library, attached to the piece they belong to, so the same photo serves the catalogue, WhatsApp shares, the website and social posts. Google Drive, OneDrive and Dropbox can be connected.' },
   ],
   'products/ai-sales-agents': [

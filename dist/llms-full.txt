@@ -1722,7 +1722,7 @@ PUBLIC ROADMAP
 
  Operations
 
- Jewellery catalogue (PIM) purity, certificates, HUID-aware, RFID
+ Jewellery catalogue (PIM) purity, certificates, HUID-aware
 
  Inventory intelligence valuation, ageing, dead-stock visibility
 
@@ -3385,79 +3385,153 @@ A: Yes. A quote is sent as a link with line items and a PDF, and the customer ac
 
 ---
 
-# Jewellery Catalogue Software: Purity and Live Prices
+# Jewellery Catalogue & PIM Software: Live Prices, AI Listings
 URL: https://jwero.ai/products/catalog
 
-A product catalogue built for jewellery: metal, purity, stones, certifications and HUID-aware records, live metal-rate pricing, and controlled sharing.
+Jewellery catalogue and PIM software: one record per piece, priced at today’s gold rate, listings from photos with AI, and automatic sync to Google Shopping, Meta, POS, ecommerce and marketplaces.
 
-CATALOGUE, JEWELLERY PIM
+JEWELLERY CATALOGUE · JEWELLERY PIM
 
-## One catalogue, every piece priced at this minute’s gold rate, on WhatsApp, the counter and your website.
+## Jewellery catalogue software: every piece described once, priced at today’s rate, everywhere.
 
- Jewellery is the only retail where the price changes twice a day and the product has a certificate. Jwero’s catalogue treats purity, stones, certification and rate-linked pricing as first-class, so every channel always shows the truth.
+ One record per piece with its purity, weights, stones and certificates. AI turns a photo into a listing, every price follows today’s gold rate, and the catalogue syncs automatically to your website, WhatsApp, POS, mobile app, Google Shopping, Meta and marketplaces.
 
  Send me a live-priced catalogue 
- Book a demo 
 
-## Jewellery DNA
+ FROM A PHOTO TO EVERY CHANNEL
 
- Metal, purity, gross and net weight, stone details, design attributes, certifications, structured, searchable, consistent.
+## Watch a photo become a product.
 
-## Formula pricing
+ 📷 
 
- Live metal-rate pricing with making charges and price rules. Change the rate once; everything follows.
+ Type Necklace · temple work 
+ Metal and purity 22K gold (916) 
+ Weights Gross 21.4 g · net 20.8 g 
+ Stones Rubies, 12 · 1.2 ct 
+ Description A temple-work necklace in 22K gold with ruby accents, made for weddings and festivals. 
+ Price at today’s rate ₹1,64,250 
+ Published Website · WhatsApp · Google Shopping · Meta · POS 
 
- See the pricing engine → 
+ Add a photo 
+ AI reads the type 
+ Metal and purity 
+ Weights from your record 
+ Stones listed 
+ Description written 
+ Priced at today’s rate 
+ Published everywhere 
 
-## Approval-gated overrides
+ SIX JOBS, ONE CATALOGUE
 
- Discounts and price exceptions route through approvals, the end of quiet margin leaks.
+## What jewellery catalogue software has to do.
 
-## Shareable catalogues
+## 1. Every piece described once
+ Metal, purity, gross and net weight, stones, certificates, HUID, sizes and variants, and custom fields for one-of-a-kind pieces.
+ Jewellery PIM, explained → 
 
- Curated live links for WhatsApp, with stock and price sync, view tracking and follow-up built in.
+## 2. Priced at today’s rate, everywhere
+ Each price is worked out from the rate, purity, weight, making and stones, and updates on every channel when the rate moves.
+ How the price is worked out → 
 
-## RFID-ready
+## 3. AI does the listing work
+ From a photo, AI reads the type of piece and writes the description and captions; your stock record supplies the weights and stones. AI can also generate or edit product images.
+ Listings from photos → 
 
- Tagging and fast stock-take support for high-piece-count inventories.
+## 4. Photos and designs in one library
+ A photo and video library and a design bank, linked to every product and reused on every channel.
+ Photo library → 
 
-## Feeds every channel
+## 5. Share without giving away your stock
+ Private catalogues as live links, prices shown or hidden, who viewed what, enquiries turned into quotes, and payment inside the catalogue.
+ Digital catalogues → 
 
- One catalogue powers the website, WhatsApp, Instagram replies and invoices. Enter once, sell everywhere.
+## 6. Synced to every channel, automatically
+ Your website, Shopify or WooCommerce, POS, mobile app, WhatsApp, Google Shopping, Meta catalogues and marketplaces. Sell a piece in one place and it disappears everywhere.
+ Selling online at the live rate → 
+
+ TIME TO LIST
+
+## What listing by hand costs you.
+
+ Your numbers, not ours.
+
+ Pieces to list 
+ Minutes per piece by hand 
+ Minutes per piece to check an AI listing 
+ Monthly salary of the person listing, ₹ 
+
+ Hours by hand 0 
+
+ Hours with AI from photos 0 
+
+ Hours saved 0 
+
+ Staff time saved ₹0 
+
+ By hand means editing the photo, typing details, writing a description and pricing. Staff cost is worked out on 26 days of 9 hours. AI listing is charged per product from the wallet; see the pricing page .
+
+ COMPARE
+
+## Photo folders, a generic tool, or a jewellery catalogue.
+
+ Photo folders and PDFs Generic product tool or Shopify admin Jwero 
+ One record per piece with purity, weights, stones, HUID Folders and PDFs Generic fields Yes, built for jewellery 
+ Price at today’s rate on every channel Retype every day Fixed price Automatic, everywhere 
+ Listing from a photo No No Yes, AI fills the details and writes the description 
+ One-of-a-kind pieces A note Awkward Yes, custom fields per piece 
+ Google Shopping, Meta catalogues, marketplaces Manual uploads Apps per channel Automatic sync 
+ POS, website and mobile app in step No If integrated Yes, one catalogue 
+ Private catalogues, who viewed them, enquiry to quote No No Yes 
+ Stock sells in one place, disappears everywhere No Partly Yes 
+
+ See Jwero vs Shopify and Jwero vs QuickSell .
+
+ MOVING THOUSANDS OF PIECES IN
+
+## How to build a jewellery catalogue from photos.
+
+ Five steps, done with you.
+
+ 1 
+
+## Send us what you have
+ Product sheets, a software export, or just folders of photos.
+
+ 2 
+
+## Import in bulk
+ Thousands of pieces at once, matched to your stock and tags.
+
+ 3 
+
+## Let AI fill the gaps
+ Missing types, details and descriptions completed from the photos, for your team to check.
+
+ 4 
+
+## Set your price rules
+ Rate source, purities, making and stone prices, so every piece prices itself.
+
+ 5 
+
+## Switch on your channels
+ Website, WhatsApp, POS, your mobile app, Google Shopping, Meta and marketplaces, all synced automatically.
+
+ JEWELLERY PIM, EXPLAINED
+
+## Read more about product information for jewellers.
+
+ Jewellery PIM: the complete guide Guide Product data from images with AI Guide AI product descriptions Guide PIM vs ERP Guide Catalogue sharing on WhatsApp Guide Product page SEO Guide 
 
  BECAUSE IT'S ONE SYSTEM
 
- A price update to today’s gold rate reprices the WhatsApp catalogue, the website and every open invoice draft, because they read the same catalogue, not a copy of it.
- A curated share link is built from the same customer-taste fields the CRM already holds.
-
- CATALOGUE QUESTIONS
-
-## Setup time, and pieces that do not fit a template.
-
- I have thousands of SKUs. Will setup take forever? 
- We import from your existing product sheets or software export, bulk tools handle high piece counts, not one-by-one entry.
-
- Can it handle unique, one-of-a-kind pieces? 
- Yes, custom fields record provenance and story details per piece where a standard template doesn’t fit.
-
- More questions? See the full FAQ → 
-
- Getting your records audit-ready? Use the HUID & hallmarking records audit checklist → And before you send another PDF, read why live digital catalogues outsell PDFs → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- This site’s own chat button runs on Jwero, test our inbox before you take our word for anything else.
+ The price a customer sees on WhatsApp, the website and the counter comes from the same record and the same rate.
+ Sell a piece at the counter and it disappears from the website, Google Shopping and marketplaces at once.
+ A slow piece in inventory can be pushed to the customers whose taste fits it, straight from the catalogue.
 
 ## Retire the PDF catalogue.
 
- See a live catalogue share, with prices that update while you watch.
+ Send us twenty photos. We will show them as live-priced listings on every channel.
 
  Chat or call with us 
  Book a demo 
@@ -3466,20 +3540,32 @@ CATALOGUE, JEWELLERY PIM
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: What is jewellery PIM?
+A: Jewellery PIM (product information management) is one master record for every piece, with metal, purity, weights, stones, certificates, photos and descriptions, that feeds every place you sell, from the counter to the website, WhatsApp, Google Shopping and marketplaces.
+
+Q: What is jewellery catalogue software?
+A: Software that keeps your jewellery catalogue in one place, prices every piece from today’s gold rate, and publishes it to your website, WhatsApp, POS, mobile app and marketplaces, so the same piece shows the same price everywhere.
+
+Q: How do I create product listings from photos?
+A: Add the photo. Jwero’s AI reads the type of piece and writes the description, and the weights, purity and stones come from your stock record. Your team checks and publishes.
+
+Q: How do I sync jewellery prices to Shopify, Google Shopping and Meta?
+A: Jwero recalculates each price from today’s rate and syncs automatically to your website, Shopify or WooCommerce, Google Shopping, Meta catalogues, POS, mobile apps and marketplaces whenever the rate or the product changes.
+
+Q: Can it handle one-of-a-kind pieces?
+A: Yes. Custom fields record provenance, unique certificates and the story of each piece, where a standard template does not fit.
+
 Q: Can the catalogue handle certificates and hallmarking details?
-A: Yes. Purity, gemstone details, certification numbers and hallmark-related fields are structured attributes, not free text, searchable, filterable and printable.
+A: Yes. Purity, stone details, certificate numbers and HUID are structured fields you can search and filter, not free text.
 
-Q: How does live pricing work?
-A: Prices are formulas, metal rate × weight × purity plus making charges and stone values, resolved at today’s rate wherever the product appears: catalogue shares, website, WhatsApp and invoices. Overrides require approval.
+Q: Can I share a catalogue without showing all my stock?
+A: Yes. Share chosen pieces as a private live link, decide whether prices show, and see who viewed what. Enquiries turn into quotes, and customers can pay inside the catalogue.
 
-Q: Can I share a catalogue without exposing my full stock?
-A: Yes, share curated selections as live links with price visibility you control, and see who viewed what.
+Q: I have thousands of products. Will setup take forever?
+A: No. We import from your product sheets, software export or photo folders in bulk, and AI fills missing details for your team to check.
 
-Q: I have thousands of SKUs. Will setup take forever?
-A: No. We do the import for you from your existing product sheets or software export, bulk tools handle high piece counts rather than one-by-one manual entry.
-
-Q: Can it handle unusual or one-of-a-kind pieces, not just standard stock?
-A: Yes, custom fields let you record provenance, unique certification and story details per piece where a standard template doesn’t fit.
+Q: Can AI create jewellery product photos?
+A: Jwero can generate or edit a product image from a product photo, charged per image from the wallet. It does not create virtual try-on images.
 
 ---
 
@@ -3920,7 +4006,7 @@ SHOWROOM INTELLIGENCE
 
 ## Scan-to-log
 
- Log a tried piece by RFID, SKU or barcode scan in one motion, search is the fallback for a miss, not the default way of logging a visit.
+ Log a tried piece by SKU or barcode scan in one motion, search is the fallback for a miss, not the default way of logging a visit.
 
 ## Visit journey capture
 
@@ -7329,7 +7415,6 @@ PRICING
  AI report ≈ ₹8 per report 
  Meeting summary ≈ ₹30 per meeting 
  AI image, generate or edit ₹10 per image 
- Virtual try-on image ₹25 per image 
  AI video clip, up to 8 seconds ₹99 per clip 
  Lead finder search ₹1 per search 
 
@@ -7345,7 +7430,7 @@ PRICING
  Extra organization ₹4,999 per organization / month 
  Extra POS register (2 included) ₹499 per register / month 
  Showroom camera ₹799 per camera / month 
- RFID reader, scale or print agent ₹249 per device / month 
+ Scale or print agent ₹249 per device / month 
  Vendor portal login ₹149 per active login / month 
  Payslip ₹40 per payslip 
  Single sign-on & user provisioning ₹4,999 per organization / month 
@@ -8934,7 +9019,7 @@ FOR SILVER RETAIL
 ## What silver retailers ask about volume selling.
 
  Can it handle a very large SKU count? 
- Yes, the catalogue is built for high piece counts, with bulk tools and RFID-ready stock-take for exactly this kind of volume.
+ Yes, the catalogue is built for high piece counts, with bulk tools and stock counts by scanning for exactly this kind of volume.
 
  Does Jwero do counter billing for high-volume silver sales? 
  Scan-to-sale checkout is live, scan or search a piece, build the cart, price it at the live rate, apply a discount, take payment and generate the GST invoice, all in one flow. Returns and a reconciled cash day-close are in the same counter, and search works in transliterated Hindi, Gujarati or Tamil for fast tills. See the Counter POS .
@@ -8967,7 +9052,7 @@ FOR SILVER RETAIL
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
 Q: Can it handle a very large SKU count?
-A: Yes, the catalogue is built for high piece counts, with bulk tools and RFID-ready stock-take for exactly this kind of volume.
+A: Yes, the catalogue is built for high piece counts, with bulk tools and stock counts by scanning for exactly this kind of volume.
 
 Q: Does Jwero do counter billing for high-volume silver sales?
 A: Scan-to-sale checkout is live, scan or search a piece, build the cart, price it at the live rate, apply a discount, take payment and generate the GST invoice, all in one flow. Returns and a reconciled cash day-close are in the same counter, and search works in transliterated Hindi, Gujarati or Tamil for fast tills. See the Counter POS.
@@ -11591,7 +11676,7 @@ COMPARE · JWERO VS JEWELACC
  Capability Jwero JewelAcc 
  
  Hardware pre-integration (scales, barcode, RFID) 
- No named hardware partner yet, a device-reading API for scales/RFID/XRF exists 
+ No named hardware partner yet, and no RFID support 
  Yes, a named strength 
  Deployment flexibility (cloud / on-premise / hybrid) 
  Cloud only 
@@ -13491,7 +13576,7 @@ FAQ
  Yes, share links with price visibility you control; wholesale and retail audiences can see different views of the same catalogue.
 
  Does it support RFID stocktakes? 
- Structured stocktake workflows are live. Confirm current RFID hardware support for your specific setup on a demo before assuming compatibility.
+ No. Jwero does not support RFID today. Stock counts are done by scanning barcode or QR tags, showcase by showcase, without closing the shop.
 
  Can it track repairs? 
  Yes, repair jobs with status tracking, and customers get WhatsApp updates instead of calling the counter to ask.
@@ -13852,7 +13937,7 @@ Q: Can I share my catalogue without losing price control?
 A: Yes, share links with price visibility you control; wholesale and retail audiences can see different views of the same catalogue.
 
 Q: Does it support RFID stocktakes?
-A: Structured stocktake workflows are live. Confirm current RFID hardware support for your specific setup on a demo before assuming compatibility.
+A: No. Jwero does not support RFID today. Stock counts are done by scanning barcode or QR tags, showcase by showcase, without closing the shop.
 
 Q: Can it track repairs?
 A: Yes, repair jobs with status tracking, and customers get WhatsApp updates instead of calling the counter to ask.
@@ -22681,7 +22766,7 @@ JEWELLERY SOFTWARE IN INDIA
 ## Counter and billing
  Jewellery billing software 
  Jewellery POS software 
- Barcode, tagging and RFID 
+ Barcode and tagging 
  Quotation and estimate software 
  Live gold rate pricing 
 
@@ -27416,16 +27501,16 @@ A: Yes, automated reminders run on receivables so collection doesn’t depend on
 
 ---
 
-# Jewellery Barcode, Tagging & RFID Software
+# Jewellery Barcode & Tagging Software: Tags, Scan, Count
 URL: https://jwero.ai/jewellery-barcode-tagging-software
 
-Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect RFID readers and weighing scales.
+Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect weighing scales.
 
 JEWELLERY BARCODE AND TAGGING SOFTWARE
 
 ## Tag every piece once. Scan it everywhere after that.
 
- Design and print jewellery tags, scan a piece to bill it at the live rate, and count the stock by scanning instead of by register. RFID readers and weighing scales connect as devices.
+ Design and print jewellery tags, scan a piece to bill it at the live rate, and count the stock by scanning instead of by register. Weighing scales and print stations connect as devices.
 
  Chat or call with us 
  See the price 
@@ -27433,7 +27518,7 @@ JEWELLERY BARCODE AND TAGGING SOFTWARE
  In short
 
 ## What is the best barcode and tagging software for jewellers?
- Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect RFID readers and weighing scales. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+ Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect weighing scales. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  WHAT IT DOES
 
@@ -27465,9 +27550,9 @@ JEWELLERY BARCODE AND TAGGING SOFTWARE
 
  A phone camera reads the tag, so a second counter or an exhibition needs no extra scanner.
 
-## RFID readers and scales
+## Scales and print stations
 
- RFID readers, weighing scales and print stations connect as devices, charged per connected device.
+ Weighing scales and print stations connect as devices, charged per connected device.
 
  Device pricing → 
 
@@ -27543,17 +27628,17 @@ JEWELLERY BARCODE AND TAGGING SOFTWARE
 
 ## What it does not do yet.
 
- Jwero does not sell tag printers, RFID readers or scales. It connects to devices you buy; ask us which models are supported before you order hardware. The public roadmap says what is shipped, rolling out and not yet.
+ Jwero does not sell tag printers or scales, and does not support RFID today. It connects to devices you buy; ask us which models are supported before you order hardware. The public roadmap says what is shipped, rolling out and not yet.
 
  QUESTIONS
 
 ## What jewellers ask.
 
  What is the best barcode and tagging software for jewellers? 
- Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect RFID readers and weighing scales. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+ Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect weighing scales. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
  Does Jwero support RFID for jewellery? 
- Yes. RFID readers connect as devices, alongside weighing scales and print stations. Each connected device is charged monthly at the published rate. Ask us about supported models before buying readers.
+ No, not today. Jwero uses barcode or QR tags: print them from the record, scan to bill, and count stock by scanning, showcase by showcase.
 
  Can I print my own jewellery tags? 
  Yes. You design a tag template with barcode or QR and the fields you want, and print for a single piece or a batch.
@@ -27564,14 +27649,14 @@ JEWELLERY BARCODE AND TAGGING SOFTWARE
  Can I count stock with a phone? 
  Yes. A phone camera can scan tags, which is enough for a small shop or an exhibition counter.
 
- Can the catalogue handle certificates and hallmarking details? 
- Yes. Purity, gemstone details, certification numbers and hallmark-related fields are structured attributes, not free text, searchable, filterable and printable.
+ What is jewellery PIM? 
+ Jewellery PIM (product information management) is one master record for every piece, with metal, purity, weights, stones, certificates, photos and descriptions, that feeds every place you sell, from the counter to the website, WhatsApp, Google Shopping and marketplaces.
 
- How does live pricing work? 
- Prices are formulas, metal rate × weight × purity plus making charges and stone values, resolved at today’s rate wherever the product appears: catalogue shares, website, WhatsApp and invoices. Overrides require approval.
+ What is jewellery catalogue software? 
+ Software that keeps your jewellery catalogue in one place, prices every piece from today’s gold rate, and publishes it to your website, WhatsApp, POS, mobile app and marketplaces, so the same piece shows the same price everywhere.
 
- Can I share a catalogue without exposing my full stock? 
- Yes, share curated selections as live links with price visibility you control, and see who viewed what.
+ How do I create product listings from photos? 
+ Add the photo. Jwero’s AI reads the type of piece and writes the description, and the weights, purity and stones come from your stock record. Your team checks and publishes.
 
  Related: Inventory and stock management · Jewellery POS software · HUID records checklist · For the inventory manager 
 
@@ -27587,10 +27672,10 @@ JEWELLERY BARCODE AND TAGGING SOFTWARE
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
 Q: What is the best barcode and tagging software for jewellers?
-A: Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect RFID readers and weighing scales. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
+A: Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect weighing scales. It is part of Jwero: run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it for you.
 
 Q: Does Jwero support RFID for jewellery?
-A: Yes. RFID readers connect as devices, alongside weighing scales and print stations. Each connected device is charged monthly at the published rate. Ask us about supported models before buying readers.
+A: No, not today. Jwero uses barcode or QR tags: print them from the record, scan to bill, and count stock by scanning, showcase by showcase.
 
 Q: Can I print my own jewellery tags?
 A: Yes. You design a tag template with barcode or QR and the fields you want, and print for a single piece or a batch.
@@ -27601,14 +27686,14 @@ A: No, and that is deliberate. The tag identifies the piece; the price is calcul
 Q: Can I count stock with a phone?
 A: Yes. A phone camera can scan tags, which is enough for a small shop or an exhibition counter.
 
-Q: Can the catalogue handle certificates and hallmarking details?
-A: Yes. Purity, gemstone details, certification numbers and hallmark-related fields are structured attributes, not free text, searchable, filterable and printable.
+Q: What is jewellery PIM?
+A: Jewellery PIM (product information management) is one master record for every piece, with metal, purity, weights, stones, certificates, photos and descriptions, that feeds every place you sell, from the counter to the website, WhatsApp, Google Shopping and marketplaces.
 
-Q: How does live pricing work?
-A: Prices are formulas, metal rate × weight × purity plus making charges and stone values, resolved at today’s rate wherever the product appears: catalogue shares, website, WhatsApp and invoices. Overrides require approval.
+Q: What is jewellery catalogue software?
+A: Software that keeps your jewellery catalogue in one place, prices every piece from today’s gold rate, and publishes it to your website, WhatsApp, POS, mobile app and marketplaces, so the same piece shows the same price everywhere.
 
-Q: Can I share a catalogue without exposing my full stock?
-A: Yes, share curated selections as live links with price visibility you control, and see who viewed what.
+Q: How do I create product listings from photos?
+A: Add the photo. Jwero’s AI reads the type of piece and writes the description, and the weights, purity and stones come from your stock record. Your team checks and publishes.
 
 ---
 
@@ -29845,7 +29930,7 @@ GUIDES
 
  Open → 
 
-## Barcode, tagging and RFID
+## Barcode and tagging
 
  Tag once, scan to bill and to count.
 
@@ -30374,7 +30459,7 @@ BUYER’S GUIDE
 
  Jwero keeps a record for every piece, lot and stone, values stock at today’s rate, shows ageing bands, prints tags and counts by scan, and tracks memo, supplier memo, transfers and karigar stock on the same record the counter bills from. Idle pieces can be matched to customers whose taste fits them. Details are on the inventory page .
 
- It does not sell hardware. Tag printers, scanners, RFID readers and scales are bought separately and connected; ask which models are supported before you order.
+ It does not sell hardware. Tag printers, scanners and scales are bought separately and connected; ask which models are supported before you order. Jwero does not support RFID today.
 
  WHERE THIS IS IN JWERO
 
@@ -30407,7 +30492,7 @@ BUYER’S GUIDE
  Pieces that have not sold for a long period, commonly taken as more than 180 days, though slower categories such as bridal are judged on a longer period.
 
  Is RFID necessary? 
- No. Barcode or QR tags are enough for most shops. RFID helps when there are many pieces to count often, because a whole tray can be read at once.
+ No. Barcode or QR tags are enough for most shops. RFID helps when there are many pieces to count often, because a whole tray can be read at once. Jwero does not support RFID today; it counts by scanning barcode or QR tags.
 
  How often should I count stock? 
  A little, often. Counting one category each week by scanning finds a variance while it can still be traced.
@@ -30438,7 +30523,7 @@ Q: What is dead stock in a jewellery shop?
 A: Pieces that have not sold for a long period, commonly taken as more than 180 days, though slower categories such as bridal are judged on a longer period.
 
 Q: Is RFID necessary?
-A: No. Barcode or QR tags are enough for most shops. RFID helps when there are many pieces to count often, because a whole tray can be read at once.
+A: No. Barcode or QR tags are enough for most shops. RFID helps when there are many pieces to count often, because a whole tray can be read at once. Jwero does not support RFID today; it counts by scanning barcode or QR tags.
 
 Q: How often should I count stock?
 A: A little, often. Counting one category each week by scanning finds a variance while it can still be traced.

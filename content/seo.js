@@ -237,7 +237,7 @@ ${L.ctaBand(`See it on a ${name} jeweller’s own data.`, 'Tell us what you run 
 // ---------------------------------------------------------------- need index
 // What a jeweller searches for → the page that answers it.
 const NEEDS = [
-  ['Counter and billing', [['/products/billing-finance', 'Jewellery billing software'], ['/products/pos', 'Jewellery POS software'], ['/jewellery-barcode-tagging-software', 'Barcode, tagging and RFID'], ['/products/quotations', 'Quotation and estimate software'], ['/platform/pricing-engine', 'Live gold rate pricing']]],
+  ['Counter and billing', [['/products/billing-finance', 'Jewellery billing software'], ['/products/pos', 'Jewellery POS software'], ['/jewellery-barcode-tagging-software', 'Barcode and tagging'], ['/products/quotations', 'Quotation and estimate software'], ['/platform/pricing-engine', 'Live gold rate pricing']]],
   ['Stock and purchase', [['/products/inventory', 'Inventory and stock management'], ['/products/purchase-vendors', 'Purchase and vendor management'], ['/products/catalog', 'Jewellery catalogue software'], ['/products/digital-catalogues', 'Digital catalogue app'], ['/products/erp', 'Jewellery ERP software']]],
   ['Workshop', [['/products/manufacturing', 'Manufacturing and karigar management'], ['/products/repairs-service', 'Repair management'], ['/solutions/casting-units', 'Casting software'], ['/tools/gold-loss-calculator', 'Gold loss calculator']]],
   ['Customers', [['/products/crm', 'Jewellery CRM software'], ['/products/gold-schemes', 'Gold scheme software'], ['/products/girvi', 'Girvi and gold loan software'], ['/products/loyalty', 'Loyalty program software'], ['/products/showroom', 'Showroom and walk-in tracking'], ['/jewellery-showroom-footfall-counting', 'Footfall counting'], ['/jewellery-appointment-booking-software', 'Appointment booking'], ['/products/meetings', 'Appointments and video calls']]],
@@ -372,11 +372,11 @@ const accounting = needPage({
 
 const barcode = needPage({
   slug: 'jewellery-barcode-tagging-software',
-  title: 'Jewellery Barcode, Tagging & RFID Software | Jwero',
-  description: 'Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect RFID readers and weighing scales.',
+  title: 'Jewellery Barcode & Tagging Software: Tags, Scan, Count | Jwero',
+  description: 'Jewellery barcode and tagging software: design and print tags with barcode or QR, scan to bill at the live gold rate, count stock by scanning, and connect weighing scales.',
   eyebrow: 'Jewellery barcode and tagging software',
   h1: 'Tag every piece once. Scan it everywhere after that.',
-  sub: 'Design and print jewellery tags, scan a piece to bill it at the live rate, and count the stock by scanning instead of by register. RFID readers and weighing scales connect as devices.',
+  sub: 'Design and print jewellery tags, scan a piece to bill it at the live rate, and count the stock by scanning instead of by register. Weighing scales and print stations connect as devices.',
   wa: 'barcode',
   intro: ['One tag, from stock room to counter to stock count.', 'The tag identifies the piece. The price comes from today’s rate, so a tag never goes stale.'],
   cards: [
@@ -385,7 +385,7 @@ const barcode = needPage({
     { icon: 'store', title: 'Scan to bill', text: 'Scan the tag at the counter and the piece is priced at this minute’s rate with your making rule.', link: { href: '/products/pos', label: 'The counter' } },
     { icon: 'box', title: 'Stock count by scanning', text: 'Count a tray or a whole shop by scanning. What is missing and what is extra shows up as a variance.', link: { href: '/products/inventory', label: 'Inventory' } },
     { icon: 'camera', title: 'Scan with a phone', text: 'A phone camera reads the tag, so a second counter or an exhibition needs no extra scanner.' },
-    { icon: 'scale', title: 'RFID readers and scales', text: 'RFID readers, weighing scales and print stations connect as devices, charged per connected device.', link: { href: '/pricing', label: 'Device pricing' } },
+    { icon: 'scale', title: 'Scales and print stations', text: 'Weighing scales and print stations connect as devices, charged per connected device.', link: { href: '/pricing', label: 'Device pricing' } },
   ],
   rows: [
     { lever: 'TAGS', before: 'Price written on the tag by hand and wrong the moment the rate moves.', after: 'The tag carries the identity. The price is worked out when it is scanned.' },
@@ -393,9 +393,9 @@ const barcode = needPage({
     { lever: 'COUNTING', before: 'A stock count that shuts the shop for a day.', after: 'Scan tray by tray and see the variance as you go.' },
     { lever: 'REPRINTS', before: 'Nobody knows who reprinted a tag or why.', after: 'Every print is on the record.' },
   ],
-  notYet: 'Jwero does not sell tag printers, RFID readers or scales. It connects to devices you buy; ask us which models are supported before you order hardware.',
+  notYet: 'Jwero does not sell tag printers or scales, and does not support RFID today. It connects to devices you buy; ask us which models are supported before you order hardware.',
   faqs: [
-    { q: 'Does Jwero support RFID for jewellery?', a: 'Yes. RFID readers connect as devices, alongside weighing scales and print stations. Each connected device is charged monthly at the published rate. Ask us about supported models before buying readers.' },
+    { q: 'Does Jwero support RFID for jewellery?', a: 'No, not today. Jwero uses barcode or QR tags: print them from the record, scan to bill, and count stock by scanning, showcase by showcase.' },
     { q: 'Can I print my own jewellery tags?', a: 'Yes. You design a tag template with barcode or QR and the fields you want, and print for a single piece or a batch.' },
     { q: 'Does the barcode hold the price?', a: 'No, and that is deliberate. The tag identifies the piece; the price is calculated from the live rate at the moment of scanning.' },
     { q: 'Can I count stock with a phone?', a: 'Yes. A phone camera can scan tags, which is enough for a small shop or an exhibition counter.' },

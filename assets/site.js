@@ -2662,3 +2662,27 @@ document.addEventListener('click', function (e) {
   var io = new IntersectionObserver(function (es) { es.forEach(function (e) { clearInterval(timer); if (e.isIntersecting) { tick(); timer = setInterval(tick, 1600); } }); }, { threshold: .35 });
   io.observe(root);
 })();
+
+// Catalogue page: a photo fills in as a product.
+(function () {
+  var root = document.querySelector('[data-p2p]'); if (!root) return;
+  var f = root.querySelectorAll('.p2p-f'), steps = root.querySelectorAll('.wa-steps li'), n = steps.length, i = -1, timer;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(k) { Array.prototype.forEach.call(f, function (x, j) { x.classList.toggle('is-on', j < k); }); Array.prototype.forEach.call(steps, function (s, j) { s.classList.toggle('is-on', j === k); }); }
+  if (reduce) { show(n); return; }
+  function tick() { i = (i + 1) % (n + 1); show(Math.min(i, n - 1) + (i >= n - 1 ? 1 : 0)); }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { clearInterval(timer); if (e.isIntersecting) { tick(); timer = setInterval(tick, 1400); } }); }, { threshold: .35 });
+  io.observe(root);
+})();
+// Catalogue page: time to list.
+(function () {
+  var root = document.querySelector('[data-listc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-lc="' + k + '"]') || {}).value || 0; };
+  function run() {
+    var hand = v('pieces') * v('mins') / 60, ai = v('pieces') * v('check') / 60, saved = Math.max(0, hand - ai), money = saved * v('salary') / (26 * 9);
+    var set = function (k, t) { var el = root.querySelector('[data-lc-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('hand', Math.round(hand).toLocaleString('en-IN') + ' hours'); set('ai', Math.round(ai).toLocaleString('en-IN') + ' hours');
+    set('saved', Math.round(saved).toLocaleString('en-IN') + ' hours'); set('money', '\u20b9' + Math.round(money).toLocaleString('en-IN'));
+  }
+  root.addEventListener('input', run); run();
+})();

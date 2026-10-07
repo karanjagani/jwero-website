@@ -134,59 +134,125 @@ ${L.ctaBand('Own your customer list. Finally.', 'We import your customers for yo
 `,
 };
 
+// The catalogue (PIM) page, rebuilt 2026-10-07: the hub for the PIM articles.
+// Confirmed by Jwero: syncs to Google Shopping, Meta catalogues, POS, ecommerce,
+// mobile apps and marketplaces are automatic. No RFID, no readiness score, no try-on.
+const P2P = [
+  ['photo', 'Photo added', 'necklace_0148.jpg'],
+  ['type', 'Type', 'Necklace · temple work'],
+  ['metal', 'Metal and purity', '22K gold (916)'],
+  ['weight', 'Weights', 'Gross 21.4 g · net 20.8 g'],
+  ['stones', 'Stones', 'Rubies, 12 · 1.2 ct'],
+  ['desc', 'Description', 'A temple-work necklace in 22K gold with ruby accents, made for weddings and festivals.'],
+  ['price', 'Price at today’s rate', '₹1,64,250'],
+  ['live', 'Published', 'Website · WhatsApp · Google Shopping · Meta · POS'],
+];
+const photoToProduct = () => `<div class="p2p" data-p2p>
+  <div class="p2p-card" aria-hidden="true"><div class="p2p-img"><span>📷</span></div>
+    ${P2P.slice(1).map(([k, l, v]) => `<p class="p2p-f pf-${k}"><span>${l}</span><b>${v}</b></p>`).join('')}</div>
+  <ol class="wa-steps">${['Add a photo', 'AI reads the type', 'Metal and purity', 'Weights from your record', 'Stones listed', 'Description written', 'Priced at today’s rate', 'Published everywhere'].map((t) => `<li><b>${t}</b></li>`).join('')}</ol>
+</div>`;
+const CAT_CMP = [
+  ['One record per piece with purity, weights, stones, HUID', 'Folders and PDFs', 'Generic fields', 'Yes, built for jewellery'],
+  ['Price at today’s rate on every channel', 'Retype every day', 'Fixed price', 'Automatic, everywhere'],
+  ['Listing from a photo', 'No', 'No', 'Yes, AI fills the details and writes the description'],
+  ['One-of-a-kind pieces', 'A note', 'Awkward', 'Yes, custom fields per piece'],
+  ['Google Shopping, Meta catalogues, marketplaces', 'Manual uploads', 'Apps per channel', 'Automatic sync'],
+  ['POS, website and mobile app in step', 'No', 'If integrated', 'Yes, one catalogue'],
+  ['Private catalogues, who viewed them, enquiry to quote', 'No', 'No', 'Yes'],
+  ['Stock sells in one place, disappears everywhere', 'No', 'Partly', 'Yes'],
+];
+const catTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Photo folders and PDFs</th><th>Generic product tool or Shopify admin</th><th>Jwero</th></tr></thead><tbody>${CAT_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>
+<p class="cta-note" style="margin-top:12px">See <a href="/compare/jwero-vs-shopify">Jwero vs Shopify</a> and <a href="/compare/jwero-vs-quicksell">Jwero vs QuickSell</a>.</p>`;
+const CAT_MOVE = [
+  ['Send us what you have', 'Product sheets, a software export, or just folders of photos.'],
+  ['Import in bulk', 'Thousands of pieces at once, matched to your stock and tags.'],
+  ['Let AI fill the gaps', 'Missing types, details and descriptions completed from the photos, for your team to check.'],
+  ['Set your price rules', 'Rate source, purities, making and stone prices, so every piece prices itself.'],
+  ['Switch on your channels', 'Website, WhatsApp, POS, your mobile app, Google Shopping, Meta and marketplaces, all synced automatically.'],
+];
+const PIM_READS = [
+  ['/what-is-jewellery-pim-complete-guide-for-jewellers', 'Jewellery PIM: the complete guide'], ['/image-to-product-data-jewellery-ai', 'Product data from images with AI'],
+  ['/ai-jewellery-product-descriptions-tags-captions', 'AI product descriptions'], ['/jewellery-pim-vs-erp', 'PIM vs ERP'],
+  ['/jewellery-catalogue-sharing-on-whatsapp', 'Catalogue sharing on WhatsApp'], ['/jewellery-product-page-seo', 'Product page SEO'],
+];
+const catFaqs = [
+  { q: 'What is jewellery PIM?', a: 'Jewellery PIM (product information management) is one master record for every piece, with metal, purity, weights, stones, certificates, photos and descriptions, that feeds every place you sell, from the counter to the website, WhatsApp, Google Shopping and marketplaces.' },
+  { q: 'What is jewellery catalogue software?', a: 'Software that keeps your jewellery catalogue in one place, prices every piece from today’s gold rate, and publishes it to your website, WhatsApp, POS, mobile app and marketplaces, so the same piece shows the same price everywhere.' },
+  { q: 'How do I create product listings from photos?', a: 'Add the photo. Jwero’s AI reads the type of piece and writes the description, and the weights, purity and stones come from your stock record. Your team checks and publishes.' },
+  { q: 'How do I sync jewellery prices to Shopify, Google Shopping and Meta?', a: 'Jwero recalculates each price from today’s rate and syncs automatically to your website, Shopify or WooCommerce, Google Shopping, Meta catalogues, POS, mobile apps and marketplaces whenever the rate or the product changes.' },
+  { q: 'Can it handle one-of-a-kind pieces?', a: 'Yes. Custom fields record provenance, unique certificates and the story of each piece, where a standard template does not fit.' },
+  { q: 'Can the catalogue handle certificates and hallmarking details?', a: 'Yes. Purity, stone details, certificate numbers and HUID are structured fields you can search and filter, not free text.' },
+  { q: 'Can I share a catalogue without showing all my stock?', a: 'Yes. Share chosen pieces as a private live link, decide whether prices show, and see who viewed what. Enquiries turn into quotes, and customers can pay inside the catalogue.' },
+  { q: 'I have thousands of products. Will setup take forever?', a: 'No. We import from your product sheets, software export or photo folders in bulk, and AI fills missing details for your team to check.' },
+  { q: 'Can AI create jewellery product photos?', a: 'Jwero can generate or edit a product image from a product photo, charged per image from the wallet. It does not create virtual try-on images.' },
+];
+
 const catalog = {
   slug: 'products/catalog',
-  title: 'Jewellery Catalogue Software: Purity and Live Prices | Jwero',
-  description: 'A product catalogue built for jewellery: metal, purity, stones, certifications and HUID-aware records, live metal-rate pricing, and controlled sharing.',
+  title: 'Jewellery Catalogue & PIM Software: Live Prices, AI Listings | Jwero',
+  description: 'Jewellery catalogue and PIM software: one record per piece, priced at today’s gold rate, listings from photos with AI, and automatic sync to Google Shopping, Meta, POS, ecommerce and marketplaces.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Catalogue (PIM)', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'A jewellery product-information catalogue with metal, purity, stones and certification data, live metal-rate pricing, and controlled shareable links.',
+    name: 'Jwero Jewellery Catalogue & PIM', alternateName: ['Jewellery PIM software', 'Jewellery catalogue management software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Jewellery product information management: one record per piece with metal, purity, weights, stones, certificates and HUID, live-rate pricing, AI listings from photos, design bank, private shareable catalogues, and automatic sync to Google Shopping, Meta catalogues, POS, ecommerce, mobile apps and marketplaces.',
     url: 'https://jwero.ai/products/catalog', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
-  breadcrumbs: BC('Catalogue (PIM)'),
-  faqs: [
-    { q: 'Can the catalogue handle certificates and hallmarking details?', a: 'Yes. Purity, gemstone details, certification numbers and hallmark-related fields are structured attributes, not free text — searchable, filterable and printable.' },
-    { q: 'How does live pricing work?', a: 'Prices are formulas — metal rate × weight × purity plus making charges and stone values — resolved at today’s rate wherever the product appears: catalogue shares, website, WhatsApp and invoices. Overrides require approval.' },
-    { q: 'Can I share a catalogue without exposing my full stock?', a: 'Yes — share curated selections as live links with price visibility you control, and see who viewed what.' },
-    { q: 'I have thousands of SKUs. Will setup take forever?', a: 'No. We do the import for you from your existing product sheets or software export — bulk tools handle high piece counts rather than one-by-one manual entry.' },
-    { q: 'Can it handle unusual or one-of-a-kind pieces, not just standard stock?', a: 'Yes — custom fields let you record provenance, unique certification and story details per piece where a standard template doesn’t fit.' },
-  ],
+  extraSchema: [{
+    '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to build a jewellery catalogue from photos',
+    step: CAT_MOVE.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })),
+  }],
+  breadcrumbs: BC('Catalogue and PIM'),
+  faqs: catFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'CATALOGUE — JEWELLERY PIM',
-  h1: 'One catalogue, every piece priced at this minute’s gold rate — on WhatsApp, the counter and your website.',
-  sub: 'Jewellery is the only retail where the price changes twice a day and the product has a certificate. Jwero’s catalogue treats purity, stones, certification and rate-linked pricing as first-class — so every channel always shows the truth.',
+  eyebrow: 'JEWELLERY CATALOGUE · JEWELLERY PIM',
+  h1: 'Jewellery catalogue software: every piece described once, priced at today’s rate, everywhere.',
+  sub: 'One record per piece with its purity, weights, stones and certificates. AI turns a photo into a listing, every price follows today’s gold rate, and the catalogue syncs automatically to your website, WhatsApp, POS, mobile app, Google Shopping, Meta and marketplaces.',
   primary: { href: '#', label: 'Send me a live-priced catalogue', wa: 'catalog' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
-${L.section(
-  `${L.cards([
-    { title: 'Jewellery DNA', text: 'Metal, purity, gross and net weight, stone details, design attributes, certifications — structured, searchable, consistent.' },
-    { title: 'Formula pricing', text: 'Live metal-rate pricing with making charges and price rules. Change the rate once; everything follows.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
-    { title: 'Approval-gated overrides', text: 'Discounts and price exceptions route through approvals — the end of quiet margin leaks.' },
-    { title: 'Shareable catalogues', text: 'Curated live links for WhatsApp — with stock and price sync, view tracking and follow-up built in.' },
-    { title: 'RFID-ready', text: 'Tagging and fast stock-take support for high-piece-count inventories.' },
-    { title: 'Feeds every channel', text: 'One catalogue powers the website, WhatsApp, Instagram replies and invoices. Enter once, sell everywhere.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('FROM A PHOTO TO EVERY CHANNEL', 'Watch a photo become a product.', '')}${photoToProduct()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, ONE CATALOGUE', 'What jewellery catalogue software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Every piece described once</h3><p>Metal, purity, gross and net weight, stones, certificates, HUID, sizes and variants, and custom fields for one-of-a-kind pieces.</p><a href="/what-is-jewellery-pim-complete-guide-for-jewellers">Jewellery PIM, explained →</a></article>
+  <article><h3>2. Priced at today’s rate, everywhere</h3><p>Each price is worked out from the rate, purity, weight, making and stones, and updates on every channel when the rate moves.</p><a href="/blog/how-to-calculate-gold-jewellery-price">How the price is worked out →</a></article>
+  <article><h3>3. AI does the listing work</h3><p>From a photo, AI reads the type of piece and writes the description and captions; your stock record supplies the weights and stones. AI can also generate or edit product images.</p><a href="/image-to-product-data-jewellery-ai">Listings from photos →</a></article>
+  <article><h3>4. Photos and designs in one library</h3><p>A photo and video library and a design bank, linked to every product and reused on every channel.</p><a href="/jewellery-digital-asset-management-pim">Photo library →</a></article>
+  <article><h3>5. Share without giving away your stock</h3><p>Private catalogues as live links, prices shown or hidden, who viewed what, enquiries turned into quotes, and payment inside the catalogue.</p><a href="/products/digital-catalogues">Digital catalogues →</a></article>
+  <article><h3>6. Synced to every channel, automatically</h3><p>Your website, Shopify or WooCommerce, POS, mobile app, WhatsApp, Google Shopping, Meta catalogues and marketplaces. Sell a piece in one place and it disappears everywhere.</p><a href="/blog/selling-gold-jewellery-online-live-rate">Selling online at the live rate →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('TIME TO LIST', 'What listing by hand costs you.', 'Your numbers, not ours.')}<div class="callc" data-listc>
+  <div class="callc-in">
+    <label>Pieces to list<input type="number" inputmode="numeric" data-lc="pieces" value="2000" min="0"></label>
+    <label>Minutes per piece by hand<input type="number" inputmode="decimal" data-lc="mins" value="12" min="0"></label>
+    <label>Minutes per piece to check an AI listing<input type="number" inputmode="decimal" data-lc="check" value="2" min="0" step="0.5"></label>
+    <label>Monthly salary of the person listing, ₹<input type="number" inputmode="numeric" data-lc="salary" value="20000" min="0" step="1000"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Hours by hand</span><b data-lc-o="hand">0</b></p>
+    <p><span>Hours with AI from photos</span><b data-lc-o="ai">0</b></p>
+    <p class="callc-save"><span>Hours saved</span><b data-lc-o="saved">0</b></p>
+    <p><span>Staff time saved</span><b data-lc-o="money">₹0</b></p>
+    <p class="cta-note">By hand means editing the photo, typing details, writing a description and pricing. Staff cost is worked out on 26 days of 9 hours. AI listing is charged per product from the wallet; see the <a href="/pricing" style="color:#fff">pricing page</a>.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'Photo folders, a generic tool, or a jewellery catalogue.', '')}${catTable()}`)}
+
+${L.section(`${L.sectionHead('MOVING THOUSANDS OF PIECES IN', 'How to build a jewellery catalogue from photos.', 'Five steps, done with you.')}${L.steps(CAT_MOVE.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('JEWELLERY PIM, EXPLAINED', 'Read more about product information for jewellers.', '')}<div class="erp-map">${PIM_READS.map(([h, t]) => `<a href="${h}"><b>${t}</b><span>Guide</span></a>`).join('')}</div>`)}
 
 ${L.oneSystemBlock([
-  'A price update to today’s gold rate reprices the WhatsApp catalogue, the website and every open invoice draft — because they read the same catalogue, not a copy of it.',
-  'A curated share link is built from the same customer-taste fields the CRM already holds.',
+  'The price a customer sees on WhatsApp, the website and the counter comes from the same record and the same rate.',
+  'Sell a piece at the counter and it disappears from the website, Google Shopping and marketplaces at once.',
+  'A slow piece in inventory can be pushed to the customers whose taste fits it, straight from the catalogue.',
 ])}
 
-${L.section(`${L.sectionHead('CATALOGUE QUESTIONS', 'Setup time, and pieces that do not fit a template.', '')}${L.faqBlock([
-  { q: 'I have thousands of SKUs. Will setup take forever?', a: 'We import from your existing product sheets or software export — bulk tools handle high piece counts, not one-by-one entry.' },
-  { q: 'Can it handle unique, one-of-a-kind pieces?', a: 'Yes — custom fields record provenance and story details per piece where a standard template doesn’t fit.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
-<p class="cta-note" style="margin-top:14px">Getting your records audit-ready? <a href="/blog/huid-hallmarking-records-audit-checklist">Use the HUID & hallmarking records audit checklist →</a> And before you send another PDF, <a href="/blog/digital-catalog-vs-pdf-jewellery">read why live digital catalogues outsell PDFs →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own chat button runs on Jwero — <a href="#" data-wa="catalog">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Retire the PDF catalogue.', 'See a live catalogue share — with prices that update while you watch.', 'catalog')}
+${L.ctaBand('Retire the PDF catalogue.', 'Send us twenty photos. We will show them as live-priced listings on every channel.', 'catalog')}
 `,
 };
 
@@ -476,7 +542,7 @@ ${L.section(
     { title: 'Walk-in Register', text: 'Tablet check-in and check-out at the store entrance the moment a customer walks in, with a consent-labelled photo captured on the tablet’s camera and shown on the Live Floor card — never stored as a permanently public file.' },
     { title: 'Check-in intelligence', text: 'Type a phone number at the register — before check-in even completes — and see visit count, why they left last time, pieces tried-not-bought, category preferences, a maturing gold scheme, and a salesperson suggestion ranked by 90-day conversion.' },
     { title: 'Live Floor', text: 'A real-time view for staff and owner of who is currently in the store, updating live.' },
-    { title: 'Scan-to-log', text: 'Log a tried piece by RFID, SKU or barcode scan in one motion — search is the fallback for a miss, not the default way of logging a visit.' },
+    { title: 'Scan-to-log', text: 'Log a tried piece by SKU or barcode scan in one motion — search is the fallback for a miss, not the default way of logging a visit.' },
     { title: 'Visit journey capture', text: 'Log which pieces were shown and tried, note a quote given, add notes, log a handover, and check the customer out — a per-visit record.' },
     { title: 'Per-person recommendations', text: 'Product suggestions with a stated reason — "new in necklaces," "tried 14 times this month" — derived from that customer’s actual visit and purchase behaviour, not a generic bestseller list.' },
     { title: 'Shown, tried, bought', text: 'The products view shows which pieces get shown often, tried often, and actually bought — surfacing a "tried often, rarely bought" merchandising signal.' },

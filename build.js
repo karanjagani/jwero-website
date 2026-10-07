@@ -1593,7 +1593,7 @@ Sitemap: ${SITE}/sitemap.xml
 - CRM: https://jwero.ai/products/crm · guide https://jwero.ai/guides/jewellery-crm-software
 - Manufacturing: https://jwero.ai/products/manufacturing · guide https://jwero.ai/guides/jewellery-manufacturing-software
 - Accounting: https://jwero.ai/jewellery-accounting-software
-- Barcode, tagging, RFID: https://jwero.ai/jewellery-barcode-tagging-software
+- Barcode and tagging: https://jwero.ai/jewellery-barcode-tagging-software
 - By city (29 Indian trade cities): https://jwero.ai/jewellery-software-india
 - Compared with named alternatives: https://jwero.ai/compare
 - Pricing: https://jwero.ai/pricing · Hindi: https://jwero.ai/hi
@@ -1621,6 +1621,11 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Every piece has its own tag and barcode label, gross, net and fine weight, metal and stone breakdown and HUID (duplicates refused); stock valued at today's rate by branch, category and purity.
 - Ageing bands (0-30 to 180+ days), slow-mover views and markdowns; scheduled cycle counts by scanning with discrepancy investigation; hallmarking queue and batches.
 - Every way a piece leaves and returns: branch transfers on challans, vaults, approval memos, consignments with settlement, exhibitions, trials, karigar job work and customers' repairs in custody. Details: ${SITE}/products/inventory
+
+## Jewellery catalogue and PIM (facts)
+- One record per piece: metal, purity, gross and net weight, stones, certificates, HUID, variants and custom fields for one-of-a-kind pieces; photo library and design bank.
+- Prices worked out from today's rate everywhere; AI turns a photo into a listing (type and description) and can generate or edit product images. No virtual try-on, no RFID.
+- Automatic sync to the website, Shopify or WooCommerce, POS, mobile apps, WhatsApp, Google Shopping, Meta catalogues and marketplaces; private shareable catalogues with viewer tracking, quotes and payment. Details: ${SITE}/products/catalog
 
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.

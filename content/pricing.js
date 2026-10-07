@@ -32,7 +32,7 @@ const RATES = {
   'AI': [
     ['Inbox reply or follow-up draft', '≈ ₹2–3', 'per draft'], ['Campaign, ad or catalogue copy', '≈ ₹3', 'per generation'], ['Product created from a photo', '≈ ₹6', 'per product'],
     ['Customer insights summary', '≈ ₹4', 'per summary'], ['AI report', '≈ ₹8', 'per report'], ['Meeting summary', '≈ ₹30', 'per meeting'],
-    ['AI image, generate or edit', '₹10', 'per image'], ['Virtual try-on image', '₹25', 'per image'], ['AI video clip, up to 8 seconds', '₹99', 'per clip'], ['Lead finder search', '₹1', 'per search'],
+    ['AI image, generate or edit', '₹10', 'per image'], ['AI video clip, up to 8 seconds', '₹99', 'per clip'], ['Lead finder search', '₹1', 'per search'],
   ],
   'Payments & orders': [
     ['Gold scheme instalment collected', '₹4', 'per instalment'], ['Payment link paid', '₹3', 'per payment'], ['Vendor or karigar payout', '₹2', 'per payout'],
@@ -40,7 +40,7 @@ const RATES = {
   ],
   'Locations, devices & logins': [
     ['Extra location', '₹2,999', 'per location / month'], ['Extra brand', '₹999', 'per brand / month'], ['Extra organization', '₹4,999', 'per organization / month'],
-    ['Extra POS register (2 included)', '₹499', 'per register / month'], ['Showroom camera', '₹799', 'per camera / month'], ['RFID reader, scale or print agent', '₹249', 'per device / month'],
+    ['Extra POS register (2 included)', '₹499', 'per register / month'], ['Showroom camera', '₹799', 'per camera / month'], ['Scale or print agent', '₹249', 'per device / month'],
     ['Vendor portal login', '₹149', 'per active login / month'], ['Payslip', '₹40', 'per payslip'], ['Single sign-on & user provisioning', '₹4,999', 'per organization / month'],
   ],
   'Space & capacity': [

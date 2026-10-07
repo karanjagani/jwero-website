@@ -163,7 +163,7 @@ ${L.ctaBand('Change the rate. Watch it update.', 'In a demo, we change today’s
 };
 
 const silverRetailFaqs = [
-  { q: 'Can it handle a very large SKU count?', a: 'Yes — the catalogue is built for high piece counts, with bulk tools and RFID-ready stock-take for exactly this kind of volume.' },
+  { q: 'Can it handle a very large SKU count?', a: 'Yes — the catalogue is built for high piece counts, with bulk tools and stock counts by scanning for exactly this kind of volume.' },
   { q: 'Does Jwero do counter billing for high-volume silver sales?', a: 'Scan-to-sale checkout is live — scan or search a piece, build the cart, price it at the live rate, apply a discount, take payment and generate the GST invoice, all in one flow. Returns and a reconciled cash day-close are in the same counter, and search works in transliterated Hindi, Gujarati or Tamil for fast tills. <a href="/products/pos">See the Counter POS</a>.' },
   { q: 'Our margins are thin — can we really afford new software?', a: 'Measure it against the manual hours currently spent reconciling volume sales, not against a line-item cost. The <a href="/tools/dead-stock-calculator">Dead Stock Calculator</a> alone often surfaces more than the subscription costs.' },
 ];

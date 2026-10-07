@@ -136,7 +136,7 @@ const CATEGORIES = [
       { q: 'How does live gold-rate pricing work?', a: 'Catalogue prices are formulas: rate × weight × purity plus making charges — resolved live wherever the product appears. Change the rate once; everything follows.' },
       { q: 'Can it handle purity, HUID and certificates?', a: 'Yes — purity, HUID-related fields and certification numbers are structured catalogue attributes rather than free text.' },
       { q: 'Can I share my catalogue without losing price control?', a: 'Yes — share links with price visibility you control; wholesale and retail audiences can see different views of the same catalogue.' },
-      { q: 'Does it support RFID stocktakes?', a: 'Structured stocktake workflows are live. Confirm current RFID hardware support for your specific setup on a demo before assuming compatibility.' },
+      { q: 'Does it support RFID stocktakes?', a: 'No. Jwero does not support RFID today. Stock counts are done by scanning barcode or QR tags, showcase by showcase, without closing the shop.' },
       { q: 'Can it track repairs?', a: 'Yes — repair jobs with status tracking, and customers get WhatsApp updates instead of calling the counter to ask.' },
       { q: 'Custom orders — design to karigar to delivery?', a: 'Yes — order stages are tracked end to end with dates, so a wedding order doesn’t depend on someone remembering where it is.' },
       { q: 'Purchase orders and vendors?', a: 'Yes — POs, vendor records and receiving, with weigh-and-assay intake for raw materials.' },

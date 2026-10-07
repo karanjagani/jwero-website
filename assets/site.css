@@ -4339,3 +4339,13 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .age-grid i { display: grid; place-items: center; height: 44px; border-radius: 8px; font-style: normal; font-weight: 600; color: #fff; background: rgba(0, 18, 185, var(--a)); }
 .age-grid i.is-hot { background: color-mix(in srgb, var(--amber) calc(var(--a) * 100%), #fff); color: #1a1a1a; box-shadow: 0 0 0 2px var(--amber) inset; }
 @media (max-width: 860px) { .piece-story { grid-template-columns: 1fr; } .age-grid { grid-template-columns: 78px repeat(4, 1fr); } }
+
+/* Catalogue page: a photo becomes a product. */
+.p2p { display: grid; grid-template-columns: minmax(260px, 360px) 1fr; gap: 28px; align-items: center; }
+.p2p-card { padding: 16px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); box-shadow: 0 16px 40px rgba(0, 18, 185, .1); }
+.p2p-img { height: 120px; border-radius: 12px; margin-bottom: 10px; display: grid; place-items: center; font-size: 2rem; background: linear-gradient(135deg, #fff4d6, #f6d78b); }
+.p2p-f { display: grid; gap: 1px; margin: 0; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: .78rem; opacity: .15; transform: translateY(4px); transition: opacity .4s ease, transform .4s ease; }
+.p2p-f span { color: var(--ink-2); font-size: .68rem; } .p2p-f.is-on { opacity: 1; transform: none; }
+.pf-price b { color: var(--brand); font-size: .95rem; } .pf-live b { color: #067647; }
+@media (max-width: 860px) { .p2p { grid-template-columns: 1fr; } .p2p .wa-steps { display: none; } .p2p-card { max-width: 380px; margin: 0 auto; } }
+@media (prefers-reduced-motion: reduce) { .p2p-f { opacity: 1; transform: none; transition: none; } }
