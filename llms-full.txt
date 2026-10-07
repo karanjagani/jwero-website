@@ -3483,115 +3483,148 @@ A: Yes, custom fields let you record provenance, unique certification and story 
 
 ---
 
-# Jewellery Inventory & Stock Management Software
+# Jewellery Inventory Software: Stock, Barcode & Valuation
 URL: https://jwero.ai/products/inventory
 
-Know what your stock is worth at today’s rate, what is ageing, and what is quietly eating your capital, across every branch.
+Jewellery inventory software: every piece tagged with weights, stones and HUID, stock valued at today’s rate, ageing and dead stock, cycle counts, memos, consignments and branch transfers.
 
-INVENTORY
+JEWELLERY INVENTORY SOFTWARE
 
-## Know what your stock is worth today, and which pieces stopped moving 180 days ago.
+## Jewellery inventory software: know what your stock is worth today, and which pieces stopped moving.
 
- Live valuation at today’s rate, ageing bands from 0–30 to 180+ days, and the number most owners have never seen: how much capital is sitting in pieces that stopped moving. Then the customers whose taste fits them.
+ Every piece tagged with its weights, stones and HUID, valued at today’s rate, and followed everywhere it goes: showcase, vault, memo, exhibition, karigar, repair, another branch. Plus the number most owners have never seen: how much capital is sitting in pieces that stopped moving.
 
  Show me my dead stock number 
- Try the Dead Stock Calculator 
 
-## Live valuation
+ ONE PIECE, ITS WHOLE LIFE
 
- Metal- and purity-aware stock value at current rates, per piece, per category, per branch.
+## Follow a bangle from receiving to sold.
 
-## Ageing bands
+ TAG 22K-0148
+ Temple bangle Where Receiving 
+ Status Tagged 
 
- 0–30, 31–90, 91–180 and 180+ days, the honest x-ray of what is sitting.
+ Tagged Barcode label printed · 22K · gross 21.4 g · net 20.8 g · fine 19.05 g 
+ Hallmarked Back from the centre · HUID AB12C3 recorded 
+ On the floor Valued at today’s rate 
+ On approval Memo to Mehta Jewellers, due back Friday 
+ Back Returned against the memo, scanned in 
+ Transferred Sent to the Andheri branch on a challan 
+ 120 days old Flagged as slowing down 
+ Marked down Making reduced, offered to matching customers 
+ Sold Billed at the counter, gone from every channel 
 
-## Fast & slow movers
+ SIX JOBS, ONE STOCK
 
- What flies and what sleeps, by category and design, so buying follows evidence, not habit.
+## What jewellery inventory software has to do.
 
-## Branch transfers
+## 1. Every piece known
+ A unique tag and barcode label, gross, net and fine weight, metal and stone breakdown, HUID, design and photo, on one record.
+ Jewellery barcode software → 
 
- Tracked inter-branch movement with a documented trail for every high-value transit.
+## 2. Worth at today’s rate
+ Stock valued from today’s rate by branch, category and purity, in rupees and fine grams, the same way the counter prices it.
+ Fine weight → 
 
-## Dead-stock summary
+## 3. What is slowing down
+ Ageing bands from 0–30 to 180+ days, slow-mover views, markdowns, and slow pieces matched to customers whose taste fits.
+ Dead stock → 
 
- The number most owners have never seen: how much capital is locked in pieces that stopped moving.
+## 4. Counts without closing the shop
+ Scheduled cycle counts, showcase by showcase, by scanning. Every mismatch becomes a discrepancy to investigate.
+ Inventory guide → 
 
-## RFID stock-take
+## 5. Every way a piece leaves and returns
+ Branch transfers on challans, vaults, approval memos, consignments with settlement, exhibitions, trials, karigar job work and customers’ repairs in your custody.
+ Memo stock → 
 
- Count a showcase in minutes, not weekends.
+## 6. Hallmarking under control
+ A hallmarking queue, batches out and back, and a HUID register that refuses duplicates, checked again at the counter.
+ HUID rules → 
 
- EVERY DOOR
+ WHAT IS SITTING
 
-## Every way a piece leaves the vault, and comes back.
+## Where your capital is resting.
 
- Jewellery stock rarely just sits or sells. It goes out on memo, to an exhibition, on approval to a good customer, to a karigar, to another branch. Each door is a ledger entry, not a sticky note.
+ Stock value by age, illustrated
+ 0–30 days 31–90 91–180 180+ Bangles 9 6 3 2 Necklaces 7 5 4 6 Earrings 8 4 2 1 Rings 6 5 5 4 Chains 9 3 1 1 
+ Illustrative. Cells in amber are value sitting longer than 90 days.
 
-## Memo & approval
+ RUN YOUR OWN NUMBER
 
- Pieces out on approval memo to a customer or the trade, with due dates and a return-or-bill close.
+## What your dead stock costs you every month.
 
-## Consignment
+ Move the sliders to your shop.
 
- Stock placed with a partner store or taken from a supplier, valued and reconciled as its own ledger.
+ Currency 
+ ₹ INR $ USD £ GBP AED € EUR 
 
-## Exhibitions
+ Total inventory value thousand 
 
- A show’s stock goes out as a set, sells or returns piece by piece, and reconciles when the stand closes.
+ Share unsold for 180+ days 
 
-## Trials & reservations
+ Your financing / capital rate (yearly) 
 
- Held for a customer with an expiry, released automatically if she does not come back.
+ Assumptions (editable thinking) 
+ Carrying cost = dead value × (financing rate + 2.5% insurance/storage/handling). Freed capital assumes a 40% recovery through matched selling and disciplined clearance. Opportunity cost of capital is deliberately excluded, the true number is higher., capital locked in dead stock, bleeding away every month, every year, silently, realistic freed capital with a clearance program
 
-## Vaults & transfers
+ Send my numbers to Jwero 
+ We reply with the playbook for your bracket, matched selling first, markdowns last.
 
- Vault to showcase, branch to branch, with a documented trail for every high-value transit.
+ COMPARE
 
-## Counts & discrepancies
+## Excel, generic inventory software, or Jwero.
 
- Scheduled or spot counts; every mismatch becomes a discrepancy to resolve, not a shrug.
+ Excel or a register Generic inventory software Jwero 
+ Every piece with its own tag and record A row, maybe SKU counts Yes, gross, net and fine weight, stones, HUID 
+ Worth at today’s gold rate Recalculate by hand Fixed cost Automatic, by branch, category and purity 
+ Ageing and slow stock Rarely Basic Ageing bands, markdowns, slow stock flagged 
+ Approval memos, consignments, exhibitions Separate notebook No Yes, out and back against each document 
+ Repairs and customers’ pieces you hold A register No Yes, with who held it and when 
+ Hallmarking batches and HUID Separate sheet No Yes, duplicates refused 
+ Counts without closing the shop Weekend stocktake Full counts Scheduled cycle counts by scanning 
+ Same stock as the counter and online No If integrated Yes, one stock everywhere 
 
-## Hallmarking
+ STARTING FROM MESSY RECORDS
 
- HUID and hallmark status carried on the piece; unhallmarked stock is flagged before it reaches the counter.
+## How to move your jewellery stock into Jwero.
 
-## Labels & item ledger
+ Five steps, done with you. Inconsistent records are a normal starting point.
 
- Print tags from the record; every movement of a piece, from receipt to sale, on one ledger line.
+ 1 
+
+## Send us what you have
+ Stock lists from your current software or Excel, branch by branch, however inconsistent.
+
+ 2 
+
+## We match and reconcile
+ Pieces are matched to the old records and differences listed, so you start from a known position.
+
+ 3 
+
+## Tag what has no tag
+ Barcode labels printed from the record for any piece without one.
+
+ 4 
+
+## First count by scanning
+ A cycle count, showcase by showcase, without closing the shop.
+
+ 5 
+
+## Go live
+ From the next bill, stock moves with every sale, transfer, memo and return.
 
  BECAUSE IT'S ONE SYSTEM
 
- A piece flagged as slow-moving here can be matched to a customer whose taste fits it, straight from the CRM, no export to a spreadsheet.
- The valuation shown is the same live-rate pricing formula the catalogue and billing use.
-
- Run your own number first. The Dead Stock Calculator estimates what idle inventory costs you per month at your financing rate. Most owners are off by 3×. It takes 60 seconds and the result goes to your WhatsApp. Then, for the full playbook on finding and moving it, read the dead-stock guide for jewellery businesses → 
-
- INVENTORY QUESTIONS
-
-## Stocktakes, and starting from messy records.
-
- Will this replace our physical stocktake? 
- It makes stocktakes faster and less of a surprise-finding exercise, ageing and valuation are visible continuously.
-
- Our stock records are inconsistent across branches. Can you still start? 
- Yes, we import what exists per branch and reconcile during onboarding. Normal starting point, not disqualifying.
-
- More questions? See the full FAQ → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- You don’t have to take our word for it, try the chat button on this page ; it’s Jwero, live, answering.
+ A slow piece here can be matched to a customer whose taste fits it, straight from the CRM.
+ The valuation shown is the same live-rate pricing the catalogue and the counter use.
+ Sell a piece at the counter and it disappears from the online store and WhatsApp catalogue at once.
 
 ## Find the sleeping capital.
 
- Bring last year’s stock summary to a demo, we will show you what a memory-driven system sees in it.
+ Bring last year’s stock summary to a demo. We will show you what is sitting, and what it is worth today.
 
  Chat or call with us 
  Book a demo 
@@ -3600,20 +3633,35 @@ INVENTORY
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: What is jewellery inventory software?
+A: Jewellery inventory software keeps a record for every piece, with its tag, gross, net and fine weight, stones and HUID, values stock at today’s gold rate, shows what is ageing, and tracks every piece out on memo, at exhibitions, with karigars or in for repair.
+
+Q: How do jewellers manage stock?
+A: Tag every piece, value stock at today’s rate by purity, review ageing every month, count a few showcases every week by scanning, and record every piece that leaves the shop on a memo, challan or job card so it comes back or gets billed.
+
+Q: What is fine weight in jewellery stock?
+A: Fine weight is the pure gold in a piece: gross weight minus stones, times purity. It lets stock of different purities be added up and compared, and it does not change with the gold rate.
+
+Q: How often should a jewellery shop count stock?
+A: Count a part of the stock every week or month by scanning, so the whole shop is covered over a cycle, instead of closing for a once-a-year stocktake.
+
+Q: What is dead stock in jewellery?
+A: Pieces that have not sold for a long time, often 180 days or more. They tie up capital and lose appeal. Jwero shows them by ageing band and lets you mark them down or offer them to matching customers.
+
 Q: Can Jwero tell me my dead stock?
-A: Yes. Ageing bands (0–30, 31–90, 91–180, 180+ days) and fast/slow-mover views show exactly which pieces are sitting, for how long, and what they are worth at today’s rate.
+A: Yes. Ageing bands from 0–30 to 180+ days and slow-mover views show which pieces are sitting, for how long, and what they are worth at today’s rate.
 
 Q: Does it work across branches?
-A: Yes, stock, transfers and valuation are branch-aware, with the full picture rolled up for the owner.
+A: Yes. Stock, transfers and valuation are by branch, with the whole picture for the owner.
+
+Q: Our stock records are inconsistent. Can we still start?
+A: Yes. We import what exists per branch and reconcile against your old records during onboarding. Inconsistent starting data is normal.
+
+Q: Can I manage jewellery stock in Excel?
+A: For a few hundred pieces, maybe. Excel cannot value stock at today’s rate automatically, track pieces on memo or at karigars, or stop a piece being sold twice across the counter and online.
 
 Q: Can it forecast demand?
-A: Not yet, predictive demand forecasting is on the roadmap, and we will say so until it ships. Today Jwero gives you valuation, ageing and mover analysis: the visibility layer that shows what to buy next.
-
-Q: Will this replace our physical stocktake?
-A: It makes stocktakes faster (RFID-ready counting) and less necessary as a surprise-finding exercise, ageing and valuation are visible continuously, not just once a year.
-
-Q: Our stock records are inconsistent across branches. Can you still start?
-A: Yes, we import what exists per branch and reconcile during onboarding. Inconsistent starting data is normal, not disqualifying.
+A: Not yet. Demand forecasting is on the roadmap. Today Jwero gives valuation, ageing and slow-mover views to guide buying.
 
 ---
 

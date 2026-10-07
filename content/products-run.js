@@ -190,76 +190,110 @@ ${L.ctaBand('Retire the PDF catalogue.', 'See a live catalogue share — with pr
 `,
 };
 
+// The inventory page, rebuilt 2026-10-07. RFID, posting count variances, scale
+// integration and where slow stock is auto-listed are not claimed until confirmed.
+const PIECE_STEPS = [
+  ['Tagged', 'Barcode label printed · 22K · gross 21.4 g · net 20.8 g · fine 19.05 g', 'Receiving'],
+  ['Hallmarked', 'Back from the centre · HUID AB12C3 recorded', 'Hallmark batch'],
+  ['On the floor', 'Valued at today’s rate', 'Showcase 4'],
+  ['On approval', 'Memo to Mehta Jewellers, due back Friday', 'Out on memo'],
+  ['Back', 'Returned against the memo, scanned in', 'Vault'],
+  ['Transferred', 'Sent to the Andheri branch on a challan', 'Branch 2'],
+  ['120 days old', 'Flagged as slowing down', 'Branch 2'],
+  ['Marked down', 'Making reduced, offered to matching customers', 'Branch 2'],
+  ['Sold', 'Billed at the counter, gone from every channel', 'Sold'],
+];
+const pieceStory = () => `<div class="piece-story" data-piece-story>
+  <div class="piece-card" aria-hidden="true"><p class="pc-tag">TAG 22K-0148</p><b>Temple bangle</b><p class="pc-loc"><span>Where</span><i data-pc-where>Receiving</i></p><p class="pc-st"><span>Status</span><i data-pc-status>Tagged</i></p><div class="pc-age"><i></i></div></div>
+  <ol class="wa-steps">${PIECE_STEPS.map(([t, d, w]) => `<li data-where="${w}"><b>${t}</b><span>${d}</span></li>`).join('')}</ol>
+</div>`;
+const heatmap = () => {
+  const cats = ['Bangles', 'Necklaces', 'Earrings', 'Rings', 'Chains'], bands = ['0–30 days', '31–90', '91–180', '180+'];
+  const v = [[9, 6, 3, 2], [7, 5, 4, 6], [8, 4, 2, 1], [6, 5, 5, 4], [9, 3, 1, 1]];
+  return `<div class="age-map"><p class="in-short-tag">Stock value by age, illustrated</p><div class="age-grid"><span></span>${bands.map((b) => `<b>${b}</b>`).join('')}${cats.map((c, r) => `<b>${c}</b>${v[r].map((x, k) => `<i class="${k >= 2 && x >= 4 ? 'is-hot' : ''}" style="--a:${0.1 + x / 11}">${x}</i>`).join('')}`).join('')}</div><p class="cta-note">Illustrative. Cells in amber are value sitting longer than 90 days.</p></div>`;
+};
+const INV_CMP = [
+  ['Every piece with its own tag and record', 'A row, maybe', 'SKU counts', 'Yes, gross, net and fine weight, stones, HUID'],
+  ['Worth at today’s gold rate', 'Recalculate by hand', 'Fixed cost', 'Automatic, by branch, category and purity'],
+  ['Ageing and slow stock', 'Rarely', 'Basic', 'Ageing bands, markdowns, slow stock flagged'],
+  ['Approval memos, consignments, exhibitions', 'Separate notebook', 'No', 'Yes, out and back against each document'],
+  ['Repairs and customers’ pieces you hold', 'A register', 'No', 'Yes, with who held it and when'],
+  ['Hallmarking batches and HUID', 'Separate sheet', 'No', 'Yes, duplicates refused'],
+  ['Counts without closing the shop', 'Weekend stocktake', 'Full counts', 'Scheduled cycle counts by scanning'],
+  ['Same stock as the counter and online', 'No', 'If integrated', 'Yes, one stock everywhere'],
+];
+const invTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Excel or a register</th><th>Generic inventory software</th><th>Jwero</th></tr></thead><tbody>${INV_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const INV_MOVE = [
+  ['Send us what you have', 'Stock lists from your current software or Excel, branch by branch, however inconsistent.'],
+  ['We match and reconcile', 'Pieces are matched to the old records and differences listed, so you start from a known position.'],
+  ['Tag what has no tag', 'Barcode labels printed from the record for any piece without one.'],
+  ['First count by scanning', 'A cycle count, showcase by showcase, without closing the shop.'],
+  ['Go live', 'From the next bill, stock moves with every sale, transfer, memo and return.'],
+];
+const invFaqs = [
+  { q: 'What is jewellery inventory software?', a: 'Jewellery inventory software keeps a record for every piece, with its tag, gross, net and fine weight, stones and HUID, values stock at today’s gold rate, shows what is ageing, and tracks every piece out on memo, at exhibitions, with karigars or in for repair.' },
+  { q: 'How do jewellers manage stock?', a: 'Tag every piece, value stock at today’s rate by purity, review ageing every month, count a few showcases every week by scanning, and record every piece that leaves the shop on a memo, challan or job card so it comes back or gets billed.' },
+  { q: 'What is fine weight in jewellery stock?', a: 'Fine weight is the pure gold in a piece: gross weight minus stones, times purity. It lets stock of different purities be added up and compared, and it does not change with the gold rate.' },
+  { q: 'How often should a jewellery shop count stock?', a: 'Count a part of the stock every week or month by scanning, so the whole shop is covered over a cycle, instead of closing for a once-a-year stocktake.' },
+  { q: 'What is dead stock in jewellery?', a: 'Pieces that have not sold for a long time, often 180 days or more. They tie up capital and lose appeal. Jwero shows them by ageing band and lets you mark them down or offer them to matching customers.' },
+  { q: 'Can Jwero tell me my dead stock?', a: 'Yes. Ageing bands from 0–30 to 180+ days and slow-mover views show which pieces are sitting, for how long, and what they are worth at today’s rate.' },
+  { q: 'Does it work across branches?', a: 'Yes. Stock, transfers and valuation are by branch, with the whole picture for the owner.' },
+  { q: 'Our stock records are inconsistent. Can we still start?', a: 'Yes. We import what exists per branch and reconcile against your old records during onboarding. Inconsistent starting data is normal.' },
+  { q: 'Can I manage jewellery stock in Excel?', a: 'For a few hundred pieces, maybe. Excel cannot value stock at today’s rate automatically, track pieces on memo or at karigars, or stop a piece being sold twice across the counter and online.' },
+  { q: 'Can it forecast demand?', a: 'Not yet. Demand forecasting is on the roadmap. Today Jwero gives valuation, ageing and slow-mover views to guide buying.' },
+];
+
 const inventory = {
   slug: 'products/inventory',
-  title: 'Jewellery Inventory & Stock Management Software | Jwero',
-  description: 'Know what your stock is worth at today’s rate, what is ageing, and what is quietly eating your capital — across every branch.',
+  title: 'Jewellery Inventory Software: Stock, Barcode & Valuation | Jwero',
+  description: 'Jewellery inventory software: every piece tagged with weights, stones and HUID, stock valued at today’s rate, ageing and dead stock, cycle counts, memos, consignments and branch transfers.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Inventory', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Jewellery inventory valuation, ageing and dead-stock visibility at today’s metal rate, across every branch.',
+    name: 'Jwero Jewellery Inventory Software', alternateName: ['Jewellery stock management software', 'Jewellery inventory management'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Piece-level jewellery inventory with barcode labels, gross, net and fine weight, stones and HUID, live-rate valuation, ageing and markdowns, cycle counts, memos, consignments, exhibitions, trials, repairs custody, hallmarking batches and branch transfers.',
     url: 'https://jwero.ai/products/inventory', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
-  breadcrumbs: BC('Inventory'),
-  faqs: [
-    { q: 'Can Jwero tell me my dead stock?', a: 'Yes. Ageing bands (0–30, 31–90, 91–180, 180+ days) and fast/slow-mover views show exactly which pieces are sitting, for how long, and what they are worth at today’s rate.' },
-    { q: 'Does it work across branches?', a: 'Yes — stock, transfers and valuation are branch-aware, with the full picture rolled up for the owner.' },
-    { q: 'Can it forecast demand?', a: 'Not yet — predictive demand forecasting is on the roadmap, and we will say so until it ships. Today Jwero gives you valuation, ageing and mover analysis: the visibility layer that shows what to buy next.' },
-    { q: 'Will this replace our physical stocktake?', a: 'It makes stocktakes faster (RFID-ready counting) and less necessary as a surprise-finding exercise — ageing and valuation are visible continuously, not just once a year.' },
-    { q: 'Our stock records are inconsistent across branches. Can you still start?', a: 'Yes — we import what exists per branch and reconcile during onboarding. Inconsistent starting data is normal, not disqualifying.' },
-  ],
+  extraSchema: [{
+    '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to move your jewellery stock into Jwero',
+    step: INV_MOVE.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })),
+  }],
+  breadcrumbs: BC('Jewellery inventory'),
+  faqs: invFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'INVENTORY',
-  h1: 'Know what your stock is worth today, and which pieces stopped moving 180 days ago.',
-  sub: 'Live valuation at today’s rate, ageing bands from 0–30 to 180+ days, and the number most owners have never seen: how much capital is sitting in pieces that stopped moving. Then the customers whose taste fits them.',
+  eyebrow: 'JEWELLERY INVENTORY SOFTWARE',
+  h1: 'Jewellery inventory software: know what your stock is worth today, and which pieces stopped moving.',
+  sub: 'Every piece tagged with its weights, stones and HUID, valued at today’s rate, and followed everywhere it goes: showcase, vault, memo, exhibition, karigar, repair, another branch. Plus the number most owners have never seen: how much capital is sitting in pieces that stopped moving.',
   primary: { href: '#', label: 'Show me my dead stock number', wa: 'inventory' },
-  secondary: { href: '/tools/dead-stock-calculator', label: 'Try the Dead Stock Calculator' },
 })}
 
-${L.section(
-  `${L.cards([
-    { title: 'Live valuation', text: 'Metal- and purity-aware stock value at current rates, per piece, per category, per branch.' },
-    { title: 'Ageing bands', text: '0–30, 31–90, 91–180 and 180+ days — the honest x-ray of what is sitting.' },
-    { title: 'Fast & slow movers', text: 'What flies and what sleeps, by category and design — so buying follows evidence, not habit.' },
-    { title: 'Branch transfers', text: 'Tracked inter-branch movement with a documented trail for every high-value transit.' },
-    { title: 'Dead-stock summary', text: 'The number most owners have never seen: how much capital is locked in pieces that stopped moving.' },
-    { title: 'RFID stock-take', text: 'Count a showcase in minutes, not weekends.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE PIECE, ITS WHOLE LIFE', 'Follow a bangle from receiving to sold.', '')}${pieceStory()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('EVERY DOOR', 'Every way a piece leaves the vault — and comes back.', 'Jewellery stock rarely just sits or sells. It goes out on memo, to an exhibition, on approval to a good customer, to a karigar, to another branch. Each door is a ledger entry, not a sticky note.')}
-  ${L.cards([
-    { title: 'Memo & approval', text: 'Pieces out on approval memo to a customer or the trade, with due dates and a return-or-bill close.' },
-    { title: 'Consignment', text: 'Stock placed with a partner store or taken from a supplier, valued and reconciled as its own ledger.' },
-    { title: 'Exhibitions', text: 'A show’s stock goes out as a set, sells or returns piece by piece, and reconciles when the stand closes.' },
-    { title: 'Trials & reservations', text: 'Held for a customer with an expiry — released automatically if she does not come back.' },
-    { title: 'Vaults & transfers', text: 'Vault to showcase, branch to branch, with a documented trail for every high-value transit.' },
-    { title: 'Counts & discrepancies', text: 'Scheduled or spot counts; every mismatch becomes a discrepancy to resolve, not a shrug.' },
-    { title: 'Hallmarking', text: 'HUID and hallmark status carried on the piece; unhallmarked stock is flagged before it reaches the counter.' },
-    { title: 'Labels & item ledger', text: 'Print tags from the record; every movement of a piece, from receipt to sale, on one ledger line.' },
-  ], 4)}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('SIX JOBS, ONE STOCK', 'What jewellery inventory software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Every piece known</h3><p>A unique tag and barcode label, gross, net and fine weight, metal and stone breakdown, HUID, design and photo, on one record.</p><a href="/jewellery-barcode-tagging-software">Jewellery barcode software →</a></article>
+  <article><h3>2. Worth at today’s rate</h3><p>Stock valued from today’s rate by branch, category and purity, in rupees and fine grams, the same way the counter prices it.</p><a href="/blog/fine-weight-metal-ledger-jewellers">Fine weight →</a></article>
+  <article><h3>3. What is slowing down</h3><p>Ageing bands from 0–30 to 180+ days, slow-mover views, markdowns, and slow pieces matched to customers whose taste fits.</p><a href="/blog/dead-stock-jewellery-business-guide">Dead stock →</a></article>
+  <article><h3>4. Counts without closing the shop</h3><p>Scheduled cycle counts, showcase by showcase, by scanning. Every mismatch becomes a discrepancy to investigate.</p><a href="/guides/jewellery-inventory-software">Inventory guide →</a></article>
+  <article><h3>5. Every way a piece leaves and returns</h3><p>Branch transfers on challans, vaults, approval memos, consignments with settlement, exhibitions, trials, karigar job work and customers’ repairs in your custody.</p><a href="/blog/approval-memo-stock-jewellery-wholesale">Memo stock →</a></article>
+  <article><h3>6. Hallmarking under control</h3><p>A hallmarking queue, batches out and back, and a HUID register that refuses duplicates, checked again at the counter.</p><a href="/blog/huid-hallmarking-rules-jewellers">HUID rules →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('WHAT IS SITTING', 'Where your capital is resting.', '')}${heatmap()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('RUN YOUR OWN NUMBER', 'What your dead stock costs you every month.', 'Move the sliders to your shop.')}${require('./tools').deadStockCalcHtml}`)}
+
+${L.section(`${L.sectionHead('COMPARE', 'Excel, generic inventory software, or Jwero.', '')}${invTable()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('STARTING FROM MESSY RECORDS', 'How to move your jewellery stock into Jwero.', 'Five steps, done with you. Inconsistent records are a normal starting point.')}${L.steps(INV_MOVE.map(([title, text]) => ({ title, text })))}`)}
 
 ${L.oneSystemBlock([
-  'A piece flagged as slow-moving here can be matched to a customer whose taste fits it, straight from the CRM — no export to a spreadsheet.',
-  'The valuation shown is the same live-rate pricing formula the catalogue and billing use.',
+  'A slow piece here can be matched to a customer whose taste fits it, straight from the CRM.',
+  'The valuation shown is the same live-rate pricing the catalogue and the counter use.',
+  'Sell a piece at the counter and it disappears from the online store and WhatsApp catalogue at once.',
 ])}
 
-${L.section(
-  `<div class="stack-verdict"><strong>Run your own number first.</strong> The <a href="/tools/dead-stock-calculator">Dead Stock Calculator</a> estimates what idle inventory costs you per month at your financing rate. Most owners are off by 3×. It takes 60 seconds and the result goes to your WhatsApp. Then, for the full playbook on finding and moving it, <a href="/blog/dead-stock-jewellery-business-guide">read the dead-stock guide for jewellery businesses →</a></div>`
-, { tone: 'tint' })}
-
-${L.section(`${L.sectionHead('INVENTORY QUESTIONS', 'Stocktakes, and starting from messy records.', '')}${L.faqBlock([
-  { q: 'Will this replace our physical stocktake?', a: 'It makes stocktakes faster and less of a surprise-finding exercise — ageing and valuation are visible continuously.' },
-  { q: 'Our stock records are inconsistent across branches. Can you still start?', a: 'Yes — we import what exists per branch and reconcile during onboarding. Normal starting point, not disqualifying.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="inventory">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Find the sleeping capital.', 'Bring last year’s stock summary to a demo — we will show you what a memory-driven system sees in it.', 'inventory')}
+${L.ctaBand('Find the sleeping capital.', 'Bring last year’s stock summary to a demo. We will show you what is sitting, and what it is worth today.', 'inventory')}
 `,
 };
 

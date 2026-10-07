@@ -2645,3 +2645,20 @@ document.addEventListener('click', function (e) {
   }
   root.addEventListener('input', run); run();
 })();
+
+// Inventory page: one piece moves through its life.
+(function () {
+  var root = document.querySelector('[data-piece-story]'); if (!root) return;
+  var steps = root.querySelectorAll('.wa-steps li'), where = root.querySelector('[data-pc-where]'), status = root.querySelector('[data-pc-status]'), age = root.querySelector('.pc-age'), n = steps.length, i = -1, timer;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(k) {
+    Array.prototype.forEach.call(steps, function (s, j) { s.classList.toggle('is-on', j === k); });
+    where.textContent = steps[k].getAttribute('data-where'); status.textContent = steps[k].querySelector('b').textContent;
+    age.style.setProperty('--age', Math.round((k + 1) / n * 100) + '%');
+    root.classList.toggle('is-old', k >= 6 && k < n - 1); root.classList.toggle('is-sold', k === n - 1);
+  }
+  if (reduce) { show(n - 1); return; }
+  function tick() { i = (i + 1) % n; show(i); }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { clearInterval(timer); if (e.isIntersecting) { tick(); timer = setInterval(tick, 1600); } }); }, { threshold: .35 });
+  io.observe(root);
+})();

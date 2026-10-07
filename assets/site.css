@@ -4319,3 +4319,23 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .bill-demo .wa-steps li { padding-top: 8px; padding-bottom: 8px; }
 @media (max-width: 860px) { .bill-demo { grid-template-columns: 1fr; } .bill-demo .wa-steps { display: none; } .bill-paper { max-width: 420px; margin: 0 auto; } }
 @media (prefers-reduced-motion: reduce) { .bill-line, .bill-total { opacity: 1; transform: none; transition: none; } }
+
+/* Inventory page: one piece's life, the ageing map. */
+.piece-story { display: grid; grid-template-columns: minmax(240px, 320px) 1fr; gap: 28px; align-items: center; }
+.piece-card { padding: 20px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); box-shadow: 0 16px 40px rgba(0, 18, 185, .1); }
+.pc-tag { margin: 0 0 6px; font: 600 .7rem/1 var(--mono); letter-spacing: .08em; color: var(--brand); }
+.piece-card > b { display: block; font-size: 1.125rem; margin-bottom: 12px; }
+.pc-loc, .pc-st { display: flex; justify-content: space-between; margin: 6px 0; font-size: .8125rem; }
+.pc-loc span, .pc-st span { color: var(--ink-2); }
+.pc-loc i, .pc-st i { font-style: normal; font-weight: 600; transition: color .3s ease; }
+.pc-age { height: 8px; margin-top: 12px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.pc-age i { display: block; height: 100%; width: var(--age, 0%); background: var(--brand); transition: width .6s ease, background .3s ease; }
+.piece-story.is-old .pc-age i { background: var(--amber); }
+.piece-story.is-sold .pc-st i { color: #067647; }
+.piece-story .wa-steps li { padding-top: 7px; padding-bottom: 7px; }
+.age-map { max-width: 720px; margin: 0 auto; }
+.age-grid { display: grid; grid-template-columns: 110px repeat(4, 1fr); gap: 6px; font-size: .78rem; }
+.age-grid b { font-weight: 600; align-self: center; }
+.age-grid i { display: grid; place-items: center; height: 44px; border-radius: 8px; font-style: normal; font-weight: 600; color: #fff; background: rgba(0, 18, 185, var(--a)); }
+.age-grid i.is-hot { background: color-mix(in srgb, var(--amber) calc(var(--a) * 100%), #fff); color: #1a1a1a; box-shadow: 0 0 0 2px var(--amber) inset; }
+@media (max-width: 860px) { .piece-story { grid-template-columns: 1fr; } .age-grid { grid-template-columns: 78px repeat(4, 1fr); } }

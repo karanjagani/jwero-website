@@ -1617,6 +1617,11 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Old gold exchange vouchers with stone deduction applied as credit; scheme balances redeemed on the bill; HUID check that warns or blocks; manager approval for discounts; returns under each branch's policy.
 - Split payments across cash, card, UPI and credit (card machines are recorded, not driven); receipts on WhatsApp; registers, shifts and cash day-close; keeps billing offline and syncs later. Details: ${SITE}/products/pos
 
+## Jewellery inventory software (facts)
+- Every piece has its own tag and barcode label, gross, net and fine weight, metal and stone breakdown and HUID (duplicates refused); stock valued at today's rate by branch, category and purity.
+- Ageing bands (0-30 to 180+ days), slow-mover views and markdowns; scheduled cycle counts by scanning with discrepancy investigation; hallmarking queue and batches.
+- Every way a piece leaves and returns: branch transfers on challans, vaults, approval memos, consignments with settlement, exhibitions, trials, karigar job work and customers' repairs in custody. Details: ${SITE}/products/inventory
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
