@@ -2754,3 +2754,24 @@ document.addEventListener('click', function (e) {
     set('miss', Math.round(miss).toLocaleString('en-IN')); set('visits', Math.round(visits).toLocaleString('en-IN')); set('sales', '\u20b9' + Math.round(sales).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+
+// Segmentation page: filters narrow the audience, then it is sent.
+(function () {
+  var root = document.querySelector('[data-seg]'); if (!root) return;
+  var rows = root.querySelectorAll('.seg-row'), n = rows.length, i = -1, timer;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(k) { Array.prototype.forEach.call(rows, function (r, j) { r.classList.toggle('is-on', j <= k); }); root.classList.toggle('is-done', k >= n - 1); }
+  if (reduce) { show(n - 1); return; }
+  function tick() { i = (i + 1) % (n + 2); show(Math.min(i, n - 1)); }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { clearInterval(timer); if (e.isIntersecting) { tick(); timer = setInterval(tick, 1500); } }); }, { threshold: .35 });
+  io.observe(root);
+})();
+// Segmentation page: right audience vs everyone.
+(function () {
+  var root = document.querySelector('[data-segc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-sg="' + k + '"]') || {}).value || 0; };
+  function run() { var m = Math.max(0, v('all') - v('seg')) * v('n') * 12;
+    var set = function (k, t) { var el = root.querySelector('[data-sg-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('msgs', Math.round(m).toLocaleString('en-IN')); set('cost', '\u20b9' + Math.round(m * v('cost')).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();

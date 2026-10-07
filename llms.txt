@@ -85,6 +85,10 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - 300+ ready customer journeys for jewellers, including welcome, new-lead nurture, birthday, anniversary, family wedding, abandoned cart, browse, scheme instalment and maturity, repair ready, win-back, VIP at risk and loyalty moments.
 - Jwero can create detailed journeys automatically from a goal you describe, across channels and handing customers between journeys; or build on a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; pieces matched to each customer at today's rate; approval before anything sends until you allow it, quiet hours, frequency limits and a stop switch; live view of each step and sales traced to the journey. Details: https://jwero.ai/products/journeys
 
+## Customer segmentation for jewellers (facts)
+- 41 ready segments and AI-suggested segments; filters for purchases (category, metal, value, date), schemes, occasions, city, branch, loyalty tier, social engagement, RFM and customer scores such as intent and churn risk.
+- Reachable count and value with consent checked before saving; segments stay live; sent to journeys, WhatsApp campaigns, AI calls, loyalty offers, and ad audiences with ads generated automatically. Details: https://jwero.ai/products/segmentation
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -129,7 +133,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jewellery GST Invoicing & Finance: Receivables, Ledger: https://jwero.ai/products/billing-finance
 - Jewellery ERP Software: One System for the Whole Business: https://jwero.ai/products/erp
 - Jewellery Showroom Software: Walk-in Tracking and Floor View: https://jwero.ai/products/showroom
-- Jewellery Customer Segmentation Software: RFM and Live Rules: https://jwero.ai/products/segmentation
+- Jewellery Customer Segmentation Software: Live Segments: https://jwero.ai/products/segmentation
 - Gold Scheme Software for Jewellers: 11+1 & Gram Plans: https://jwero.ai/products/gold-schemes
 - Multi-Store Jewellery Software for Chains & Franchises: https://jwero.ai/products/multi-store
 - Jewellery Loyalty Program Software: Points, Tiers, Rewards: https://jwero.ai/products/loyalty

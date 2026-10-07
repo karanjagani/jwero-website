@@ -4153,112 +4153,138 @@ A: Expected Visits is created automatically whenever someone books via webchat, 
 
 ---
 
-# Jewellery Customer Segmentation Software: RFM and Live Rules
+# Jewellery Customer Segmentation Software: Live Segments
 URL: https://jwero.ai/products/segmentation
 
-Build live customer segments from RFM tier, tags, CRM stage and custom fields, reachable counts and revenue shown before you save, AI-suggested to start.
+Customer segmentation for jewellers: 41 ready segments, filters for purchases, schemes, occasions, loyalty, social engagement and scores, live counts before you send, and ads generated from segments.
 
-CUSTOMER SEGMENTATION
+JEWELLERY CUSTOMER SEGMENTATION
 
-## Every audience, defined once. Live, not a stale export.
+## Customer segmentation for jewellers: the right two hundred, not everyone.
 
- A segment here is a rule, RFM tier, tags, CRM stage, custom fields, that recalculates live against your actual customer records, so the audience is always current when a journey or campaign reads it.
+ Start from 41 ready segments or build your own from purchases, schemes, occasions, city, loyalty tier, social engagement and scores like churn risk. See the size before you send, and send it to a journey, WhatsApp, AI calls, or an ad generated automatically.
 
- Show me a live audience 
- See the Jewellery CRM 
+ Show me segments from my customers 
 
- WHAT A STALE LIST COSTS TODAY
+ FROM EVERYONE TO THE RIGHT 380
 
-## The export that was already wrong by the time you used it.
+## Watch a segment narrow itself.
 
- Today With Jwero 
+ All customers 12,400 
+ + Bought bridal in 2024 2,150 
+ + Lives in Mumbai 1,240 
+ + Churn risk high 520 
+ + Agreed to WhatsApp 380 
 
- Who is actually in an audience 
+ SEND THIS SEGMENT TO
+ An anniversary journey A WhatsApp campaign AI calls at ₹7 An ad, generated automatically 
 
- Today A segment is a one-time export, customers who joined, upgraded a tier or changed stage since are simply missing.
+ Illustrative counts.
 
- With Jwero Segments are dynamic by default, recalculated live from RFM tier, tags, CRM stage and custom fields, no re-export, ever.
+ SIX JOBS, ONE AUDIENCE BUILDER
 
- Building the rule itself 
+## What customer segmentation has to do for a jeweller.
 
- Today Someone hand-filters a spreadsheet, or a developer writes a one-off query nobody else can adjust.
+## 1. Start from a ready segment
+ 41 ready segments for jewellers, from bridal buyers to scheme members due, and AI-suggested segments your team reviews.
+ See some → 
 
- With Jwero A visual rule builder with typed operators (equals, in-list, contains, between) and AND/OR logic, no code required.
+## 2. Slice by what jewellers care about
+ Purchases by category, metal, value and date; schemes; occasions; city and branch; loyalty tier; social engagement.
+ Customer record → 
 
- Knowing if a segment is worth sending to 
+## 3. Use the scores
+ Filter by intent, churn risk, opportunity and message fatigue, so you reach people who are ready and spare those who are tired.
+ Kinds of score → 
 
- Today You save first and find out the audience was too small, or too low-value, after a campaign already went out.
+## 4. See the size before you send
+ Reachable count on each channel, with consent checked, and the value of the customers in the segment.
+ WhatsApp marketing → 
 
- With Jwero Estimated reachable count and estimated revenue/ROI are shown before you save, so you decide with numbers, not a guess.
+## 5. Always current
+ A segment is a live rule: customers move in and out as they buy, engage and age. No stale exports.
+ Journeys → 
 
- Finding a starting point 
+## 6. Send it anywhere
+ To a journey, a WhatsApp campaign, AI calls, a loyalty offer, or an ad audience with the ad generated automatically.
+ Ads → 
 
- Today Every segment starts from a blank rule builder, even when the useful groupings are already visible in your data.
+ READY SEGMENTS
 
- With Jwero AI-suggested segments propose candidates from existing data for a person to review: a starting point rather than an auto-send.
+## A few of the 41 ready segments.
 
- HOW A SEGMENT GETS BUILT
+ Bridal buyers, last 2 years Scheme members due this week Schemes maturing in 60 days Quiet for 12 months High value, churn risk Anniversary next month Birthday this month Diamond buyers above ₹2 lakh Gold coin buyers Abandoned cart Viewed but never bought Instagram followers who never bought Repair waiting for collection Gold loyalty tier New customers this month One city or branch and 25 more 
 
-## One rule builder, several ways to slice the same record.
+ THE ARITHMETIC
 
-## RFM tier rules
+## Sending to the right customers instead of everyone.
 
- Filter on the classic recency/frequency/monetary tier already computed on the customer record: a 5x5 grid instead of a hand-rolled score.
+ Your numbers, not ours.
 
-## Tags, CRM stage & custom fields
+ Customers on your list 
+ Customers in the right segment 
+ Cost per marketing message, ₹ 
+ Campaigns a month 
 
- Combine tags, pipeline stage and any custom field with typed operators and AND/OR matching in one visual builder.
+ Messages not sent to the wrong people, a year 0 
 
-## AI-suggested segments
+ Message cost saved a year ₹0 
 
- The system proposes candidate segments from patterns already in your data, a person reviews before it is used anywhere.
+ Fewer irrelevant messages also mean fewer opt-outs and a healthier WhatsApp number. An estimate from your inputs.
 
-## Reachable count & revenue before you save
+ COMPARE
 
- See an estimated audience size and estimated revenue/ROI for the segment as you build it, before it goes live.
+## Excel lists, a generic CRM, or Jwero.
 
-## Geo segmentation
+ Excel lists Generic CRM Jwero 
+ Always current Stale the day it is made Some Yes, customers move in and out live 
+ Purchases by category, metal and value If typed in If synced Yes, from billing 
+ Schemes, occasions, loyalty tier Separate sheets Custom fields Yes, on the record 
+ Scores like intent and churn risk No Some Yes, as filters 
+ Size and value before sending Count rows Count Reachable count and value, consent checked 
+ Send to journeys, WhatsApp, calls Copy and paste Email One click 
+ Ads from a segment Upload a list Upload a list Audiences and ads generated automatically 
 
- Build location-based audiences with a vector-map view alongside the rule-based filters.
+ YOUR FIRST SEGMENT
 
-## Segment relationship graph
+## How to build a customer segment for a jewellery shop.
 
- A graph view shows how your segments overlap, so you can see what a rule change would actually affect.
+ Five steps.
+
+ 1 
+
+## Start from a ready segment
+ Pick one of 41, such as bridal buyers or quiet for 12 months, or start blank.
+
+ 2 
+
+## Add filters
+ Purchases, schemes, occasions, city, branch, loyalty tier, social engagement and scores.
+
+ 3 
+
+## Check the size and value
+ See how many customers are reachable on each channel, with consent, before you save.
+
+ 4 
+
+## Save it as a live segment
+ Customers move in and out as they buy, engage and age.
+
+ 5 
+
+## Send it
+ To a journey, a WhatsApp campaign, AI calls, a loyalty offer or an ad generated automatically.
 
  BECAUSE IT'S ONE SYSTEM
 
- A segment built here reads RFM tier, tags and stage straight off the same customer record CRM keeps, rather than a separate, exportable copy that drifts out of date.
- The audience a journey triggers on, or a campaign sends to, is this exact live segment, recalculated at send time, no matter what it looked like when someone last exported a list.
+ A segment reads the same record as the counter, schemes, loyalty and WhatsApp, so it is right the moment a customer buys.
+ The segment that receives a WhatsApp campaign is the same audience the ad reaches online.
+ Customers who opted out of a channel are left out of that channel automatically.
 
- SEGMENTATION QUESTIONS
+## Stop sending to everyone.
 
-## Live rules, reviewed suggestions, no guessing on size.
-
- Is a segment a one-time export, or does it stay current? 
- Segments are dynamic by default: they recalculate live against your customer records instead of sitting as a stale list exported once and forgotten.
-
- What do the "AI-suggested" segments do? 
- The system proposes candidate segments from patterns already in your data. It is not a prediction or forecasting engine, and a person reviews before use.
-
- Do I know how big or valuable an audience is before I save it? 
- Yes, an estimated reachable count and estimated revenue/ROI are shown before you save.
-
- More questions? See the full FAQ → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- You don’t have to take our word for it, try the chat button on this page ; it’s Jwero, live, answering.
-
-## Stop exporting lists that are already wrong.
-
- Bring one audience you send to often, we will show you the live rule that replaces the spreadsheet.
+ Tell us who you want to reach. We will show that segment from your own customers.
 
  Chat or call with us 
  Book a demo 
@@ -4267,23 +4293,26 @@ CUSTOMER SEGMENTATION
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: Is a segment a one-time export, or does it stay current?
-A: Segments are dynamic by default, they recalculate live against your customer records, not a stale list exported once and forgotten. Add a customer who now matches the rules, and they show up automatically.
+Q: What is customer segmentation for jewellers?
+A: Grouping customers by what they bought, what they are saving for, when their occasions are, where they live and how engaged they are, so each message or offer goes to the people it is for instead of the whole list.
 
-Q: What can I build a segment out of?
-A: RFM tier from the recency/frequency/monetary grid, tags, CRM stage or pipeline membership, and custom fields, combined with typed operators (equals, not-equals, in-list, contains, has-all, between) and AND/OR matching in a visual rule builder.
+Q: Which segments should a jeweller use?
+A: Bridal buyers, scheme members due or maturing, anniversaries and birthdays this month, high-value customers at risk, customers quiet for a year, abandoned carts, and followers who have never bought. Jwero has 41 ready segments to start from.
 
-Q: What do the "AI-suggested" segments actually do?
-A: The system proposes candidate segments from patterns already in your data, it is not a prediction or forecasting engine. A person reviews a suggestion before it becomes a segment anyone uses.
+Q: What is RFM segmentation?
+A: RFM groups customers by recency (how recently they bought), frequency (how often) and monetary value (how much). It is a quick way to find your best customers and the ones drifting away.
 
-Q: Do I know how big or valuable an audience is before I save it?
-A: Yes, before you save, the builder shows an estimated reachable count and an estimated revenue/ROI figure for that audience, so you are not saving blind.
+Q: Do segments stay up to date?
+A: Yes. A segment is a live rule, so customers move in and out as they buy, engage and age, not a list frozen on the day it was made.
 
-Q: Can I see how my segments overlap with each other?
-A: Yes, a segment relationship graph shows overlap between segments, and geo segmentation is available with a vector-map view for location-based audiences.
+Q: Can I see how big a segment is before I use it?
+A: Yes. You see the reachable count on each channel, with consent checked, and the value of the customers in it, before you save or send.
 
-Q: Where do segments get used?
-A: They are the audience source for journeys and campaigns, and they read the exact same customer record the CRM keeps, no separate, out-of-sync copy of your customers.
+Q: Can ads be created from a segment?
+A: Yes. A segment can become an ad audience, and Jwero can generate the ad for it automatically, so the people you target online match the ones you message.
+
+Q: What do AI-suggested segments do?
+A: Jwero suggests segments worth acting on, such as high-value customers at risk; your team reviews them before they are saved or used.
 
 ---
 

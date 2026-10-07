@@ -604,87 +604,102 @@ ${L.ctaBand('See who is on your floor, right now.', 'Bring one real walkout from
 `,
 };
 
+// Segmentation, rebuilt 2026-10-07. Confirmed by Jwero: ads can be generated
+// automatically from segments.
+const SEG_STEPS = [['All customers', 12400], ['Bought bridal in 2024', 2150], ['Lives in Mumbai', 1240], ['Churn risk high', 520], ['Agreed to WhatsApp', 380]];
+const segBuilder = () => `<div class="seg-b" data-seg>
+  <div class="seg-rows">${SEG_STEPS.map(([t, n], k) => `<p class="seg-row" data-k="${k}"><span>${k ? '+ ' + t : t}</span><b>${n.toLocaleString('en-IN')}</b><i style="--w:${Math.max(3, n / 124)}%"></i></p>`).join('')}</div>
+  <div class="seg-out"><p class="pc-tag">SEND THIS SEGMENT TO</p><span>An anniversary journey</span><span>A WhatsApp campaign</span><span>AI calls at ₹7</span><span>An ad, generated automatically</span></div>
+  <p class="cta-note">Illustrative counts.</p>
+</div>`;
+const READY_SEG = ['Bridal buyers, last 2 years', 'Scheme members due this week', 'Schemes maturing in 60 days', 'Quiet for 12 months', 'High value, churn risk', 'Anniversary next month', 'Birthday this month', 'Diamond buyers above ₹2 lakh', 'Gold coin buyers', 'Abandoned cart', 'Viewed but never bought', 'Instagram followers who never bought', 'Repair waiting for collection', 'Gold loyalty tier', 'New customers this month', 'One city or branch'];
+const SEG_CMP = [
+  ['Always current', 'Stale the day it is made', 'Some', 'Yes, customers move in and out live'],
+  ['Purchases by category, metal and value', 'If typed in', 'If synced', 'Yes, from billing'],
+  ['Schemes, occasions, loyalty tier', 'Separate sheets', 'Custom fields', 'Yes, on the record'],
+  ['Scores like intent and churn risk', 'No', 'Some', 'Yes, as filters'],
+  ['Size and value before sending', 'Count rows', 'Count', 'Reachable count and value, consent checked'],
+  ['Send to journeys, WhatsApp, calls', 'Copy and paste', 'Email', 'One click'],
+  ['Ads from a segment', 'Upload a list', 'Upload a list', 'Audiences and ads generated automatically'],
+];
+const segTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Excel lists</th><th>Generic CRM</th><th>Jwero</th></tr></thead><tbody>${SEG_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const SEG_HOW = [
+  ['Start from a ready segment', 'Pick one of 41, such as bridal buyers or quiet for 12 months, or start blank.'],
+  ['Add filters', 'Purchases, schemes, occasions, city, branch, loyalty tier, social engagement and scores.'],
+  ['Check the size and value', 'See how many customers are reachable on each channel, with consent, before you save.'],
+  ['Save it as a live segment', 'Customers move in and out as they buy, engage and age.'],
+  ['Send it', 'To a journey, a WhatsApp campaign, AI calls, a loyalty offer or an ad generated automatically.'],
+];
+const segFaqs = [
+  { q: 'What is customer segmentation for jewellers?', a: 'Grouping customers by what they bought, what they are saving for, when their occasions are, where they live and how engaged they are, so each message or offer goes to the people it is for instead of the whole list.' },
+  { q: 'Which segments should a jeweller use?', a: 'Bridal buyers, scheme members due or maturing, anniversaries and birthdays this month, high-value customers at risk, customers quiet for a year, abandoned carts, and followers who have never bought. Jwero has 41 ready segments to start from.' },
+  { q: 'What is RFM segmentation?', a: 'RFM groups customers by recency (how recently they bought), frequency (how often) and monetary value (how much). It is a quick way to find your best customers and the ones drifting away.' },
+  { q: 'Do segments stay up to date?', a: 'Yes. A segment is a live rule, so customers move in and out as they buy, engage and age, not a list frozen on the day it was made.' },
+  { q: 'Can I see how big a segment is before I use it?', a: 'Yes. You see the reachable count on each channel, with consent checked, and the value of the customers in it, before you save or send.' },
+  { q: 'Can ads be created from a segment?', a: 'Yes. A segment can become an ad audience, and Jwero can generate the ad for it automatically, so the people you target online match the ones you message.' },
+  { q: 'What do AI-suggested segments do?', a: 'Jwero suggests segments worth acting on, such as high-value customers at risk; your team reviews them before they are saved or used.' },
+];
+
 const segmentation = {
   slug: 'products/segmentation',
-  title: 'Jewellery Customer Segmentation Software: RFM and Live Rules | Jwero',
-  description: 'Build live customer segments from RFM tier, tags, CRM stage and custom fields — reachable counts and revenue shown before you save, AI-suggested to start.',
+  title: 'Jewellery Customer Segmentation Software: Live Segments | Jwero',
+  description: 'Customer segmentation for jewellers: 41 ready segments, filters for purchases, schemes, occasions, loyalty, social engagement and scores, live counts before you send, and ads generated from segments.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Customer Segmentation', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'A visual rule builder for live, dynamically-recalculated customer segments from RFM tier, tags, CRM stage and custom fields, with reachable-count and revenue estimates before you save.',
+    name: 'Jwero Jewellery Customer Segmentation', alternateName: ['Customer segmentation for jewellers', 'Jewellery RFM segmentation'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Live customer segments for jewellers: 41 ready segments; filters for purchases, schemes, occasions, city, branch, loyalty tier, social engagement, RFM and customer scores; reachable counts and value with consent before saving; AI-suggested segments; sent to journeys, WhatsApp campaigns, AI calls, loyalty offers and automatically generated ads.',
     url: 'https://jwero.ai/products/segmentation', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
-  breadcrumbs: BC('Customer Segmentation'),
-  faqs: [
-    { q: 'Is a segment a one-time export, or does it stay current?', a: 'Segments are dynamic by default — they recalculate live against your customer records, not a stale list exported once and forgotten. Add a customer who now matches the rules, and they show up automatically.' },
-    { q: 'What can I build a segment out of?', a: 'RFM tier from the recency/frequency/monetary grid, tags, CRM stage or pipeline membership, and custom fields — combined with typed operators (equals, not-equals, in-list, contains, has-all, between) and AND/OR matching in a visual rule builder.' },
-    { q: 'What do the "AI-suggested" segments actually do?', a: 'The system proposes candidate segments from patterns already in your data — it is not a prediction or forecasting engine. A person reviews a suggestion before it becomes a segment anyone uses.' },
-    { q: 'Do I know how big or valuable an audience is before I save it?', a: 'Yes — before you save, the builder shows an estimated reachable count and an estimated revenue/ROI figure for that audience, so you are not saving blind.' },
-    { q: 'Can I see how my segments overlap with each other?', a: 'Yes — a segment relationship graph shows overlap between segments, and geo segmentation is available with a vector-map view for location-based audiences.' },
-    { q: 'Where do segments get used?', a: 'They are the audience source for journeys and campaigns, and they read the exact same customer record the CRM keeps — no separate, out-of-sync copy of your customers.' },
-  ],
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to build a customer segment for a jewellery shop', step: SEG_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Segmentation'),
+  faqs: segFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'CUSTOMER SEGMENTATION',
-  h1: 'Every audience, defined once. Live, not a stale export.',
-  sub: 'A segment here is a rule — RFM tier, tags, CRM stage, custom fields — that recalculates live against your actual customer records, so the audience is always current when a journey or campaign reads it.',
-  primary: { href: '#', label: 'Show me a live audience', wa: 'segmentation' },
-  secondary: { href: '/products/crm', label: 'See the Jewellery CRM' },
+  eyebrow: 'JEWELLERY CUSTOMER SEGMENTATION',
+  h1: 'Customer segmentation for jewellers: the right two hundred, not everyone.',
+  sub: 'Start from 41 ready segments or build your own from purchases, schemes, occasions, city, loyalty tier, social engagement and scores like churn risk. See the size before you send, and send it to a journey, WhatsApp, AI calls, or an ad generated automatically.',
+  primary: { href: '#', label: 'Show me segments from my customers', wa: 'segments' },
 })}
 
-${L.section(
-  `${L.sectionHead('WHAT A STALE LIST COSTS TODAY', 'The export that was already wrong by the time you used it.', '')}
-  ${L.impactGrid([
-    {
-      lever: 'Who is actually in an audience',
-      before: 'A segment is a one-time export — customers who joined, upgraded a tier or changed stage since are simply missing.',
-      after: 'Segments are dynamic by default, recalculated live from RFM tier, tags, CRM stage and custom fields — no re-export, ever.',
-    },
-    {
-      lever: 'Building the rule itself',
-      before: 'Someone hand-filters a spreadsheet, or a developer writes a one-off query nobody else can adjust.',
-      after: 'A visual rule builder with typed operators (equals, in-list, contains, between) and AND/OR logic — no code required.',
-    },
-    {
-      lever: 'Knowing if a segment is worth sending to',
-      before: 'You save first and find out the audience was too small, or too low-value, after a campaign already went out.',
-      after: 'Estimated reachable count and estimated revenue/ROI are shown before you save — so you decide with numbers, not a guess.',
-    },
-    {
-      lever: 'Finding a starting point',
-      before: 'Every segment starts from a blank rule builder, even when the useful groupings are already visible in your data.',
-      after: 'AI-suggested segments propose candidates from existing data for a person to review: a starting point rather than an auto-send.',
-    },
-  ])}`
-)}
+${L.section(`${L.sectionHead('FROM EVERYONE TO THE RIGHT 380', 'Watch a segment narrow itself.', '')}${segBuilder()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('HOW A SEGMENT GETS BUILT', 'One rule builder, several ways to slice the same record.', '')}
-  ${L.cards([
-    { title: 'RFM tier rules', text: 'Filter on the classic recency/frequency/monetary tier already computed on the customer record: a 5x5 grid instead of a hand-rolled score.' },
-    { title: 'Tags, CRM stage & custom fields', text: 'Combine tags, pipeline stage and any custom field with typed operators and AND/OR matching in one visual builder.' },
-    { title: 'AI-suggested segments', text: 'The system proposes candidate segments from patterns already in your data — a person reviews before it is used anywhere.' },
-    { title: 'Reachable count & revenue before you save', text: 'See an estimated audience size and estimated revenue/ROI for the segment as you build it, before it goes live.' },
-    { title: 'Geo segmentation', text: 'Build location-based audiences with a vector-map view alongside the rule-based filters.' },
-    { title: 'Segment relationship graph', text: 'A graph view shows how your segments overlap, so you can see what a rule change would actually affect.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('SIX JOBS, ONE AUDIENCE BUILDER', 'What customer segmentation has to do for a jeweller.', '')}<div class="wa-jobs">
+  <article><h3>1. Start from a ready segment</h3><p>41 ready segments for jewellers, from bridal buyers to scheme members due, and AI-suggested segments your team reviews.</p><a href="#ready-seg">See some →</a></article>
+  <article><h3>2. Slice by what jewellers care about</h3><p>Purchases by category, metal, value and date; schemes; occasions; city and branch; loyalty tier; social engagement.</p><a href="/products/crm">Customer record →</a></article>
+  <article><h3>3. Use the scores</h3><p>Filter by intent, churn risk, opportunity and message fatigue, so you reach people who are ready and spare those who are tired.</p><a href="/products/crm">Kinds of score →</a></article>
+  <article><h3>4. See the size before you send</h3><p>Reachable count on each channel, with consent checked, and the value of the customers in the segment.</p><a href="/whatsapp-broadcast-for-jewellers">WhatsApp marketing →</a></article>
+  <article><h3>5. Always current</h3><p>A segment is a live rule: customers move in and out as they buy, engage and age. No stale exports.</p><a href="/products/journeys">Journeys →</a></article>
+  <article><h3>6. Send it anywhere</h3><p>To a journey, a WhatsApp campaign, AI calls, a loyalty offer, or an ad audience with the ad generated automatically.</p><a href="/products/ads-manager">Ads →</a></article>
+</div>`)}
+
+${L.section(`<span id="ready-seg"></span>${L.sectionHead('READY SEGMENTS', 'A few of the 41 ready segments.', '')}<div class="jrn-chips">${READY_SEG.map((r) => `<span>${r}</span>`).join('')}<span class="is-more">and 25 more</span></div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'Sending to the right customers instead of everyone.', 'Your numbers, not ours.')}<div class="callc" data-segc>
+  <div class="callc-in">
+    <label>Customers on your list<input type="number" inputmode="numeric" data-sg="all" value="12400" min="0"></label>
+    <label>Customers in the right segment<input type="number" inputmode="numeric" data-sg="seg" value="380" min="0"></label>
+    <label>Cost per marketing message, ₹<input type="number" inputmode="decimal" data-sg="cost" value="1.05" min="0" step="0.05"></label>
+    <label>Campaigns a month<input type="number" inputmode="numeric" data-sg="n" value="4" min="0"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Messages not sent to the wrong people, a year</span><b data-sg-o="msgs">0</b></p>
+    <p class="callc-save"><span>Message cost saved a year</span><b data-sg-o="cost">₹0</b></p>
+    <p class="cta-note">Fewer irrelevant messages also mean fewer opt-outs and a healthier WhatsApp number. An estimate from your inputs.</p>
+  </div>
+</div>`)}
+
+${L.section(`${L.sectionHead('COMPARE', 'Excel lists, a generic CRM, or Jwero.', '')}${segTable()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('YOUR FIRST SEGMENT', 'How to build a customer segment for a jewellery shop.', 'Five steps.')}${L.steps(SEG_HOW.map(([title, text]) => ({ title, text })))}`)}
 
 ${L.oneSystemBlock([
-  'A segment built here reads RFM tier, tags and stage straight off the same customer record CRM keeps, rather than a separate, exportable copy that drifts out of date.',
-  'The audience a journey triggers on, or a campaign sends to, is this exact live segment — recalculated at send time, no matter what it looked like when someone last exported a list.',
+  'A segment reads the same record as the counter, schemes, loyalty and WhatsApp, so it is right the moment a customer buys.',
+  'The segment that receives a WhatsApp campaign is the same audience the ad reaches online.',
+  'Customers who opted out of a channel are left out of that channel automatically.',
 ])}
 
-${L.section(`${L.sectionHead('SEGMENTATION QUESTIONS', 'Live rules, reviewed suggestions, no guessing on size.', '')}${L.faqBlock([
-  { q: 'Is a segment a one-time export, or does it stay current?', a: 'Segments are dynamic by default: they recalculate live against your customer records instead of sitting as a stale list exported once and forgotten.' },
-  { q: 'What do the "AI-suggested" segments do?', a: 'The system proposes candidate segments from patterns already in your data. It is not a prediction or forecasting engine, and a person reviews before use.' },
-  { q: 'Do I know how big or valuable an audience is before I save it?', a: 'Yes — an estimated reachable count and estimated revenue/ROI are shown before you save.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="segmentation">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Stop exporting lists that are already wrong.', 'Bring one audience you send to often — we will show you the live rule that replaces the spreadsheet.', 'segmentation')}
+${L.ctaBand('Stop sending to everyone.', 'Tell us who you want to reach. We will show that segment from your own customers.', 'segments')}
 `,
 };
 

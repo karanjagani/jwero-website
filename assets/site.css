@@ -4372,3 +4372,18 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .jrn-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 .jrn-chips span { padding: 8px 14px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); font-size: .875rem; }
 .jrn-chips .is-more { background: var(--brand); border-color: var(--brand); color: #fff; font-weight: 600; }
+
+/* Segmentation: a segment narrows itself. */
+.seg-b { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; align-items: center; }
+.seg-rows { display: grid; gap: 8px; }
+.seg-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; margin: 0; padding: 10px 12px; border-radius: 10px; background: var(--card); border: 1px solid var(--line); opacity: .2; transition: opacity .4s ease; }
+.seg-row b { font-variant-numeric: tabular-nums; color: var(--brand); }
+.seg-row i { grid-column: 1 / -1; height: 6px; border-radius: 3px; background: var(--brand); width: var(--w); }
+.seg-row.is-on { opacity: 1; }
+.seg-out { display: grid; gap: 6px; padding: 16px; border-radius: 14px; background: var(--panel); color: #fff; opacity: .25; transition: opacity .4s ease; }
+.seg-out .pc-tag { color: var(--amber); margin: 0; }
+.seg-out span { padding: 8px 10px; border-radius: 8px; background: rgba(255,255,255,.12); font-size: .875rem; }
+.seg-b.is-done .seg-out { opacity: 1; }
+.seg-b > .cta-note { grid-column: 1 / -1; }
+@media (max-width: 760px) { .seg-b { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .seg-row, .seg-out { opacity: 1; transition: none; } }
