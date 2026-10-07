@@ -157,7 +157,9 @@ const CAT_CMP = [
   ['Price at today’s rate on every channel', 'Retype every day', 'Fixed price', 'Automatic, everywhere'],
   ['Listing from a photo', 'No', 'No', 'Yes, AI fills the details and writes the description'],
   ['One-of-a-kind pieces', 'A note', 'Awkward', 'Yes, custom fields per piece'],
+  ['WhatsApp catalogue', 'Uploaded piece by piece', 'Separate app', 'Filled by the Meta sync, priced at today’s rate'],
   ['Google Shopping, Meta catalogues, marketplaces', 'Manual uploads', 'Apps per channel', 'Automatic sync'],
+  ['Bulk import', 'Retyped', 'CSV only', 'Excel, APIs, webhooks, Shopify and WooCommerce'],
   ['POS, website and mobile app in step', 'No', 'If integrated', 'Yes, one catalogue'],
   ['Private catalogues, who viewed them, enquiry to quote', 'No', 'No', 'Yes'],
   ['Stock sells in one place, disappears everywhere', 'No', 'Partly', 'Yes'],
@@ -165,8 +167,8 @@ const CAT_CMP = [
 const catTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Photo folders and PDFs</th><th>Generic product tool or Shopify admin</th><th>Jwero</th></tr></thead><tbody>${CAT_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>
 <p class="cta-note" style="margin-top:12px">See <a href="/compare/jwero-vs-shopify">Jwero vs Shopify</a> and <a href="/compare/jwero-vs-quicksell">Jwero vs QuickSell</a>.</p>`;
 const CAT_MOVE = [
-  ['Send us what you have', 'Product sheets, a software export, or just folders of photos.'],
-  ['Import in bulk', 'Thousands of pieces at once, matched to your stock and tags.'],
+  ['Send us what you have', 'Excel sheets, your Shopify or WooCommerce store, a software export, or just folders of photos.'],
+  ['Import in bulk', 'Thousands of pieces at once from Excel, Shopify or WooCommerce, or kept in step through APIs and webhooks.'],
   ['Let AI fill the gaps', 'Missing types, details and descriptions completed from the photos, for your team to check.'],
   ['Set your price rules', 'Rate source, purities, making and stone prices, so every piece prices itself.'],
   ['Switch on your channels', 'Website, WhatsApp, POS, your mobile app, Google Shopping, Meta and marketplaces, all synced automatically.'],
@@ -184,17 +186,20 @@ const catFaqs = [
   { q: 'Can it handle one-of-a-kind pieces?', a: 'Yes. Custom fields record provenance, unique certificates and the story of each piece, where a standard template does not fit.' },
   { q: 'Can the catalogue handle certificates and hallmarking details?', a: 'Yes. Purity, stone details, certificate numbers and HUID are structured fields you can search and filter, not free text.' },
   { q: 'Can I share a catalogue without showing all my stock?', a: 'Yes. Share chosen pieces as a private live link, decide whether prices show, and see who viewed what. Enquiries turn into quotes, and customers can pay inside the catalogue.' },
-  { q: 'I have thousands of products. Will setup take forever?', a: 'No. We import from your product sheets, software export or photo folders in bulk, and AI fills missing details for your team to check.' },
+  { q: 'I have thousands of products. Will setup take forever?', a: 'No. We import in bulk from Excel, Shopify, WooCommerce, a software export or photo folders, and AI fills missing details for your team to check.' },
+  { q: 'Does my catalogue show inside WhatsApp?', a: 'Yes. The Meta sync fills your WhatsApp Business catalogue, so customers browse pieces inside the chat, priced at today’s rate and removed when sold.' },
+  { q: 'Can the catalogue connect to my other software?', a: 'Yes. Bulk import from Excel, Shopify and WooCommerce, and APIs and webhooks to keep other systems in step.' },
+  { q: 'What is catalogue management software for jewellers?', a: 'Catalog management software (also spelt catalogue) keeps every piece in one record and publishes it to every channel. For jewellers it also prices from the gold rate and stores purity, stones, certificates and HUID. Jwero does this as its catalogue and PIM module.' },
   { q: 'Can AI create jewellery product photos?', a: 'Jwero can generate or edit a product image from a product photo, charged per image from the wallet. It does not create virtual try-on images.' },
 ];
 
 const catalog = {
   slug: 'products/catalog',
   title: 'Jewellery Catalogue & PIM Software: Live Prices, AI Listings | Jwero',
-  description: 'Jewellery catalogue and PIM software: one record per piece, priced at today’s gold rate, listings from photos with AI, and automatic sync to Google Shopping, Meta, POS, ecommerce and marketplaces.',
+  description: 'Jewellery catalogue management software and PIM: one record per piece, priced at today’s gold rate, AI listings from photos, bulk import from Excel, Shopify or WooCommerce, and automatic sync to your WhatsApp catalogue, Google Shopping, Meta, POS, ecommerce and marketplaces.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Jewellery Catalogue & PIM', alternateName: ['Jewellery PIM software', 'Jewellery catalogue management software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    name: 'Jwero Jewellery Catalogue & PIM', alternateName: ['Jewellery PIM software', 'Jewellery catalogue management software', 'Jewellery catalog management software', 'WhatsApp catalogue for jewellers', 'Online jewellery catalogue', 'Jewellery product management software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
     description: 'Jewellery product information management: one record per piece with metal, purity, weights, stones, certificates and HUID, live-rate pricing, AI listings from photos, design bank, private shareable catalogues, and automatic sync to Google Shopping, Meta catalogues, POS, ecommerce, mobile apps and marketplaces.',
     url: 'https://jwero.ai/products/catalog', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
     offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
@@ -221,7 +226,7 @@ ${L.section(`${L.sectionHead('SIX JOBS, ONE CATALOGUE', 'What jewellery catalogu
   <article><h3>3. AI does the listing work</h3><p>From a photo, AI reads the type of piece and writes the description and captions; your stock record supplies the weights and stones. AI can also generate or edit product images.</p><a href="/image-to-product-data-jewellery-ai">Listings from photos →</a></article>
   <article><h3>4. Photos and designs in one library</h3><p>A photo and video library and a design bank, linked to every product and reused on every channel.</p><a href="/jewellery-digital-asset-management-pim">Photo library →</a></article>
   <article><h3>5. Share without giving away your stock</h3><p>Private catalogues as live links, prices shown or hidden, who viewed what, enquiries turned into quotes, and payment inside the catalogue.</p><a href="/products/digital-catalogues">Digital catalogues →</a></article>
-  <article><h3>6. Synced to every channel, automatically</h3><p>Your website, Shopify or WooCommerce, POS, mobile app, WhatsApp, Google Shopping, Meta catalogues and marketplaces. Sell a piece in one place and it disappears everywhere.</p><a href="/blog/selling-gold-jewellery-online-live-rate">Selling online at the live rate →</a></article>
+  <article><h3>6. Synced to every channel, automatically</h3><p>Your website, Shopify or WooCommerce, POS, mobile app, your WhatsApp catalogue, Google Shopping, Meta catalogues and marketplaces. Sell a piece in one place and it disappears everywhere.</p><a href="/blog/selling-gold-jewellery-online-live-rate">Selling online at the live rate →</a></article>
 </div>`)}
 
 ${L.section(`${L.sectionHead('TIME TO LIST', 'What listing by hand costs you.', 'Your numbers, not ours.')}<div class="callc" data-listc>
@@ -248,7 +253,8 @@ ${L.section(`${L.sectionHead('JEWELLERY PIM, EXPLAINED', 'Read more about produc
 
 ${L.oneSystemBlock([
   'The price a customer sees on WhatsApp, the website and the counter comes from the same record and the same rate.',
-  'Sell a piece at the counter and it disappears from the website, Google Shopping and marketplaces at once.',
+  'Sell a piece at the counter and it disappears from the website, your WhatsApp catalogue, Google Shopping and marketplaces at once.',
+  'The catalogue is the source; your <a href="/products/ecommerce">ecommerce website</a>, WhatsApp, Google and marketplaces all sell from it.',
   'A slow piece in inventory can be pushed to the customers whose taste fits it, straight from the catalogue.',
 ])}
 

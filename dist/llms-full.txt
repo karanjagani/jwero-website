@@ -3594,7 +3594,7 @@ A: Yes. A quote is sent as a link with line items and a PDF, and the customer ac
 # Jewellery Catalogue & PIM Software: Live Prices, AI Listings
 URL: https://jwero.ai/products/catalog
 
-Jewellery catalogue and PIM software: one record per piece, priced at today’s gold rate, listings from photos with AI, and automatic sync to Google Shopping, Meta, POS, ecommerce and marketplaces.
+Jewellery catalogue management software and PIM: one record per piece, priced at today’s gold rate, AI listings from photos, bulk import from Excel, Shopify or WooCommerce, and automatic sync to your WhatsApp catalogue, Google Shopping, Meta, POS, ecommerce and marketplaces.
 
 JEWELLERY CATALOGUE · JEWELLERY PIM
 
@@ -3652,7 +3652,7 @@ JEWELLERY CATALOGUE · JEWELLERY PIM
  Digital catalogues → 
 
 ## 6. Synced to every channel, automatically
- Your website, Shopify or WooCommerce, POS, mobile app, WhatsApp, Google Shopping, Meta catalogues and marketplaces. Sell a piece in one place and it disappears everywhere.
+ Your website, Shopify or WooCommerce, POS, mobile app, your WhatsApp catalogue, Google Shopping, Meta catalogues and marketplaces. Sell a piece in one place and it disappears everywhere.
  Selling online at the live rate → 
 
  TIME TO LIST
@@ -3685,7 +3685,9 @@ JEWELLERY CATALOGUE · JEWELLERY PIM
  Price at today’s rate on every channel Retype every day Fixed price Automatic, everywhere 
  Listing from a photo No No Yes, AI fills the details and writes the description 
  One-of-a-kind pieces A note Awkward Yes, custom fields per piece 
+ WhatsApp catalogue Uploaded piece by piece Separate app Filled by the Meta sync, priced at today’s rate 
  Google Shopping, Meta catalogues, marketplaces Manual uploads Apps per channel Automatic sync 
+ Bulk import Retyped CSV only Excel, APIs, webhooks, Shopify and WooCommerce 
  POS, website and mobile app in step No If integrated Yes, one catalogue 
  Private catalogues, who viewed them, enquiry to quote No No Yes 
  Stock sells in one place, disappears everywhere No Partly Yes 
@@ -3701,12 +3703,12 @@ JEWELLERY CATALOGUE · JEWELLERY PIM
  1 
 
 ## Send us what you have
- Product sheets, a software export, or just folders of photos.
+ Excel sheets, your Shopify or WooCommerce store, a software export, or just folders of photos.
 
  2 
 
 ## Import in bulk
- Thousands of pieces at once, matched to your stock and tags.
+ Thousands of pieces at once from Excel, Shopify or WooCommerce, or kept in step through APIs and webhooks.
 
  3 
 
@@ -3732,7 +3734,8 @@ JEWELLERY CATALOGUE · JEWELLERY PIM
  BECAUSE IT'S ONE SYSTEM
 
  The price a customer sees on WhatsApp, the website and the counter comes from the same record and the same rate.
- Sell a piece at the counter and it disappears from the website, Google Shopping and marketplaces at once.
+ Sell a piece at the counter and it disappears from the website, your WhatsApp catalogue, Google Shopping and marketplaces at once.
+ The catalogue is the source; your ecommerce website , WhatsApp, Google and marketplaces all sell from it.
  A slow piece in inventory can be pushed to the customers whose taste fits it, straight from the catalogue.
 
 ## Retire the PDF catalogue.
@@ -3768,7 +3771,16 @@ Q: Can I share a catalogue without showing all my stock?
 A: Yes. Share chosen pieces as a private live link, decide whether prices show, and see who viewed what. Enquiries turn into quotes, and customers can pay inside the catalogue.
 
 Q: I have thousands of products. Will setup take forever?
-A: No. We import from your product sheets, software export or photo folders in bulk, and AI fills missing details for your team to check.
+A: No. We import in bulk from Excel, Shopify, WooCommerce, a software export or photo folders, and AI fills missing details for your team to check.
+
+Q: Does my catalogue show inside WhatsApp?
+A: Yes. The Meta sync fills your WhatsApp Business catalogue, so customers browse pieces inside the chat, priced at today’s rate and removed when sold.
+
+Q: Can the catalogue connect to my other software?
+A: Yes. Bulk import from Excel, Shopify and WooCommerce, and APIs and webhooks to keep other systems in step.
+
+Q: What is catalogue management software for jewellers?
+A: Catalog management software (also spelt catalogue) keeps every piece in one record and publishes it to every channel. For jewellers it also prices from the gold rate and stores purity, stones, certificates and HUID. Jwero does this as its catalogue and PIM module.
 
 Q: Can AI create jewellery product photos?
 A: Jwero can generate or edit a product image from a product photo, charged per image from the wallet. It does not create virtual try-on images.

@@ -1639,6 +1639,8 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - One record per piece: metal, purity, gross and net weight, stones, certificates, HUID, variants and custom fields for one-of-a-kind pieces; photo library and design bank.
 - Prices worked out from today's rate everywhere; AI turns a photo into a listing (type and description) and can generate or edit product images. No virtual try-on, no RFID.
 - Automatic sync to the website, Shopify or WooCommerce, POS, mobile apps, WhatsApp, Google Shopping, Meta catalogues and marketplaces; private shareable catalogues with viewer tracking, quotes and payment. Details: ${SITE}/products/catalog
+- The Meta sync also fills the WhatsApp Business catalogue, priced at today's rate.
+- Bulk import from Excel, Shopify and WooCommerce; APIs and webhooks keep other systems in step.
 
 ## Gold scheme software (facts)
 - 11+1 instalment plans and gram-accumulation plans with your own bonus and maturity rules; enrolment with OTP and KYC on the website, mobile apps, WhatsApp or in the showroom.

@@ -3,7 +3,7 @@
 > Jwero is the Autonomous Jewellery OS, run by AI: jewellery software that runs the whole business on one
 > record. Counter billing (POS) at the live gold rate, inventory, purchase and vendors, manufacturing and
 > karigar accounts, accounting, HR and payroll, reports, CRM (198 kinds of customer signal scored into 11
-> explainable scores), gold savings schemes, girvi, digital gold, and WhatsApp, Instagram and storefront
+> explainable scores), gold savings schemes, girvi, digital gold, and WhatsApp, Instagram and ecommerce website
 > selling, with an AI workforce that acts only inside approval queues, daily caps, quiet hours and a
 > five-scope kill switch ("AI that waits for your yes").
 > Price: ₹18,000 a month, every module included. The first month is ₹3,600. Enterprise is custom priced. There is no free trial.
@@ -106,6 +106,19 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Instagram DMs, comments, story replies and mentions, and Facebook Messenger in one team inbox; price comments turned into DMs automatically; AI replies from the customer record with pieces at today's rate, approved by the team.
 - Payment links inside the DM; catalogue synced automatically to Instagram and Facebook shops; chats from click-to-WhatsApp ads in the same inbox; sales traced to posts and ads. Details: https://jwero.ai/products/instagram-facebook
 
+## Jewellery ecommerce website (facts)
+
+- Page: https://jwero.ai/products/ecommerce (formerly /products/storefront).
+- Jwero's ecommerce website module is a complete online jewellery store: catalogue, cart, wishlist, compare, checkout and online payment.
+- Every product reprices automatically from today's gold rate; the price breakup shows metal, making charges, stones and GST.
+- Stock and catalogue are shared with the Jwero POS, so the website matches the showroom.
+- Customers sign in by OTP over WhatsApp, SMS or email; no password.
+- Try-at-home and showroom appointments are booked from the website onto the customer record.
+- Custom domain included; jewellery-styled themes and page templates.
+- Product pages, blog, landing pages and reviews; products sync automatically to Google Shopping and Meta.
+- Hosting, updates and security handled by Jwero; no third-party plugins.
+- Shopify or WooCommerce stores can stay and be connected instead.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -141,7 +154,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Instagram DM & Facebook Messenger Automation for Jewellers: https://jwero.ai/products/instagram-facebook
 - AI for Jewellers: AI Chatbot, Sales Agents & Voice AI: https://jwero.ai/products/ai-sales-agents
 - Optimize, See Why Website Visitors Leave, Before They Do: https://jwero.ai/products/optimize
-- Jewellery Ecommerce Website Builder: https://jwero.ai/products/storefront
+- Jewellery Ecommerce Website Builder with Live Gold Rate: https://jwero.ai/products/ecommerce
 - Jewellery Ads Manager: Meta, Google, Click-to-WhatsApp: https://jwero.ai/products/ads-manager
 - Social Media Management for Jewellers: Schedule, AI, Inbox: https://jwero.ai/products/social-media
 - Jewellery CRM Software: CRM for Jewellers: https://jwero.ai/products/crm
