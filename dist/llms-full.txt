@@ -7680,13 +7680,13 @@ A: The catalogue holds every piece once. A digital catalogue is a chosen set fro
 # Jewellery MIS Reports & Dashboard Software
 URL: https://jwero.ai/products/reports
 
-A report builder with filters and charts over every module, an AI prompt that turns a question into a report, dashboards you pin to, the full report library, and exports, on the one record everything writes to.
+Jewellery MIS reports and dashboards: ask a question and AI builds the report, pin it to an owner’s dashboard on your phone, schedule it, export to Excel. Sales, stock ageing, schemes, receivables and staff across every branch.
 
-REPORTS & DASHBOARDS
+MIS REPORTS · DASHBOARDS
 
-## Ask the business a question. Get a report, not a spreadsheet.
+## Jewellery MIS reports and dashboards: ask a question, get the answer, across every branch.
 
- Every module writes to one record, so one builder reads them all, sales, stock, customers, schemes, finance, people. Type the question or set the filters; pin the answer to a dashboard; export when the CA asks.
+ Every module writes to one record, so one place answers it all: sales, stock, customers, schemes, money and people. Type the question, pin the answer to your phone, schedule it, and export to Excel when the CA asks.
 
  Show me a report on my kind of business 
  See the platform tour 
@@ -7703,51 +7703,127 @@ REPORTS & DASHBOARDS
 
  Ask it in a sentence or build it with filters; pin it to a dashboard; export it. Same data every module writes.
 
-## Builder
+ ONE QUESTION, START TO FINISH
 
- Pick a source, add filter rows, choose a chart, preview live. Save it to the library.
+## From a question at 9am to stock moving by noon.
 
-## Ask in a sentence
+ REPORTS · QUESTION TO ACTION
+ 9:00 am The owner asks: “Which branch holds the most 180-day bangles?”
+ Drafted AI drafts the source, filters and chart
+ Pinned Approved, saved, pinned to the morning dashboard on her phone
+ Answer Branch 2 · 43 pieces · ₹38 lakh
+ Action Moved to Branch 1 and offered to matching customers
+ Shared Exported to Excel for the partners · scheduled every Monday
+ Illustrative.
 
- An AI prompt turns a plain question into source, filters and chart, you approve the draft like everything else.
+ 9:00 am The owner asks: “Which branch holds the most 180-day bangles?” 
+ Drafted AI drafts the source, filters and chart 
+ Pinned Approved, saved, pinned to the morning dashboard on her phone 
+ Answer Branch 2 
+ Action Moved to Branch 1 and offered to matching customers 
+ Shared Exported to Excel for the partners 
 
-## Dashboards
+ SIX JOBS, ONE RECORD
 
- Pin reports to dashboards per role: the owner’s morning, the branch manager’s week, the scheme desk’s dues.
+## What jewellery MIS software has to do.
 
-## The library
+## 1. Ask in a sentence
+ AI turns a plain question into a report you approve.
+ AI → 
 
- Every saved report and the built-ins, ageing, RFM, collections, digital gold, receivables, payroll, in one place.
+## 2. Build your own
+ Pick a source, add filters, choose a chart, preview live, save.
+ ERP → 
 
-## Exports
+## 3. Dashboards for each role
+ The owner’s morning on your phone, the branch manager’s week, the scheme desk’s dues.
+ Branches → 
 
- CSV and PDF for the accountant, the bank or the board.
+## 4. Jewellery reports built in
+ Stock ageing, dead stock, RFM, scheme collections, receivables and payroll.
+ Stock ageing → 
 
-## Intelligence, not just totals
+## 5. On time, every time
+ Scheduled reports, and exports to Excel, CSV and PDF.
+ Accounts → 
 
- Customer scores, opportunity boards and the ads engine feed the same dashboards, what to do next, beside what happened.
+## 6. What to do next
+ Customer scores and opportunities beside the totals, not just what happened.
+ Customer intelligence → 
 
- See how Jwero decides → 
+ REPORTS EVERY JEWELLER NEEDS
+
+## Ready on day one.
+
+ Sales By branch, channel, salesperson and category Stock ageing What has sat for 90, 180 and 365 days, and where Dead stock Value tied up in pieces that do not move Customer value RFM, segments and scores Gold schemes Collections, dues and maturity Receivables Who owes what, and since when Team Attendance, payroll and incentives Marketing Ad spend against the sales it brought 
+
+ THE ARITHMETIC
+
+## What building reports in Excel costs you.
+
+ Your numbers, not ours.
+
+ Reports made by hand a week 
+ Hours each, exporting and formatting 
+ Cost an hour, ₹ 
+
+ Hours a year 0 
+
+ Cost a year ₹0 
+
+ A planning estimate from your own inputs.
+
+ COMPARE
+
+## Excel exports, billing software reports, or Jwero.
+
+ Excel exports Reports in billing software Jwero 
+ Getting an answer Export, paste, format Fixed reports only Ask in a sentence 
+ Data Whatever was exported Billing only Sales, stock, customers, schemes, finance, people 
+ Branches One file per branch Per branch All branches, by role 
+ On your phone No Sometimes Owner’s dashboard on mobile 
+ Every Monday Someone makes it No Scheduled reports 
+ For the CA and bank Excel PDF Excel, CSV and PDF 
+ What to do next No No Scores and opportunities beside the totals 
+
+ GETTING STARTED
+
+## How to set up a daily owner’s dashboard.
+
+ Five steps.
+
+ 1 
+
+## Pick five numbers
+ Yesterday’s sales, stock ageing, scheme dues, receivables and walk-ins.
+
+ 2 
+
+## Ask for each one
+ Type the question; AI drafts the report for you to approve.
+
+ 3 
+
+## Pin them
+ Add them to the owner’s dashboard, on desktop and phone.
+
+ 4 
+
+## Give each role theirs
+ Branch managers see their branch; finance reports stay with finance.
+
+ 5 
+
+## Schedule the rest
+ Weekly reports go out on their own; export to Excel when needed.
 
  WHAT WE DON'T DO YET
 
  Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
 
- Scheduled email delivery of reports is built and rolling out tenant by tenant; until it reaches yours, dashboards and exports are the way.
- No predictive forecasting, the numbers are what happened, plus rule-based scores you can read.
+ No predictive forecasting yet: the numbers are what happened, plus rule-based scores you can read.
  
  See the full public roadmap → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Ask the chat button for a report on your business type.
 
 ## One question you have never had a clean answer to.
 
@@ -7760,20 +7836,29 @@ REPORTS & DASHBOARDS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: What can I report on?
-A: Anything on the record: sales by door and branch, inventory ageing and dead stock, customers by segment and score, scheme collections and maturity, digital gold, finance and receivables, attendance and payroll, ad spend and conversions.
+Q: What is MIS for a jewellery business?
+A: Management information: the reports an owner uses to run the business, such as sales, stock ageing, scheme dues and receivables. Jwero builds them from one record, across every branch.
+
+Q: Which reports should a jewellery owner see daily?
+A: Yesterday’s sales by branch, stock ageing, scheme collections due, receivables, and walk-ins against sales. Pin them to the owner’s dashboard.
 
 Q: Do I need to know how to build reports?
-A: No. Type the question, “which branch holds the most 180-day bangles?”, and the AI prompt drafts the report’s source, filters and chart. Adjust, save, pin.
+A: No. Type the question and AI drafts the report’s source, filters and chart. Adjust, save and pin.
 
-Q: Can I schedule a report by email?
-A: Scheduled delivery is built and rolling out; ask us about your tenant. Exports and pinned dashboards are available today.
+Q: Can I see reports on my phone?
+A: Yes. The owner’s dashboard works on mobile.
+
+Q: Can reports be scheduled?
+A: Yes. Schedule a report and it is delivered on its own, every day, week or month.
+
+Q: Can I export to Excel?
+A: Yes. Excel, CSV and PDF.
 
 Q: Who can see what?
-A: Reports respect roles: a branch manager sees her branch; head office sees all. Finance and payroll reports stay with the roles that own them.
+A: Reports follow roles: a branch manager sees her branch, head office sees all, and finance and payroll stay with the roles that own them.
 
 Q: Will my accountant use this?
-A: Books bridge to Tally and Zoho Books; the reports here are for running the business day to day, not for replacing the CA’s tools.
+A: Your books sync to Tally for the accountant; these reports are for running the business day to day.
 
 ---
 

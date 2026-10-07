@@ -478,46 +478,109 @@ const mockReports = `
   <div class="mock-foot">Ask it in a sentence or build it with filters; pin it to a dashboard; export it. Same data every module writes.</div>
 </div>`;
 
+// Reports, rebuilt 2026-10-07. Confirmed by Jwero: scheduled reports live,
+// mobile owner's dashboard, Excel export. Not claimed: WhatsApp delivery of
+// scheduled reports, Zoho Books. Predictive forecasting stays listed as not built.
+const RE_FLOW = [
+  ['9:00 am', 'The owner asks: “Which branch holds the most 180-day bangles?”'],
+  ['Drafted', 'AI drafts the source, filters and chart'],
+  ['Pinned', 'Approved, saved, pinned to the morning dashboard on her phone'],
+  ['Answer', 'Branch 2 · 43 pieces · ₹38 lakh'],
+  ['Action', 'Moved to Branch 1 and offered to matching customers'],
+  ['Shared', 'Exported to Excel for the partners · scheduled every Monday'],
+];
+const reFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">REPORTS · QUESTION TO ACTION</p>${RE_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${RE_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const RE_LIST = [
+  ['Sales', 'By branch, channel, salesperson and category', '/products/pos'],
+  ['Stock ageing', 'What has sat for 90, 180 and 365 days, and where', '/products/inventory'],
+  ['Dead stock', 'Value tied up in pieces that do not move', '/tools/dead-stock-calculator'],
+  ['Customer value', 'RFM, segments and scores', '/products/segmentation'],
+  ['Gold schemes', 'Collections, dues and maturity', '/products/gold-schemes'],
+  ['Receivables', 'Who owes what, and since when', '/products/billing-finance'],
+  ['Team', 'Attendance, payroll and incentives', '/products/hr-payroll'],
+  ['Marketing', 'Ad spend against the sales it brought', '/products/ads-manager'],
+];
+const RE_CMP = [
+  ['Getting an answer', 'Export, paste, format', 'Fixed reports only', 'Ask in a sentence'],
+  ['Data', 'Whatever was exported', 'Billing only', 'Sales, stock, customers, schemes, finance, people'],
+  ['Branches', 'One file per branch', 'Per branch', 'All branches, by role'],
+  ['On your phone', 'No', 'Sometimes', 'Owner’s dashboard on mobile'],
+  ['Every Monday', 'Someone makes it', 'No', 'Scheduled reports'],
+  ['For the CA and bank', 'Excel', 'PDF', 'Excel, CSV and PDF'],
+  ['What to do next', 'No', 'No', 'Scores and opportunities beside the totals'],
+];
+const reTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Excel exports</th><th>Reports in billing software</th><th>Jwero</th></tr></thead><tbody>${RE_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const RE_HOW = [
+  ['Pick five numbers', 'Yesterday’s sales, stock ageing, scheme dues, receivables and walk-ins.'],
+  ['Ask for each one', 'Type the question; AI drafts the report for you to approve.'],
+  ['Pin them', 'Add them to the owner’s dashboard, on desktop and phone.'],
+  ['Give each role theirs', 'Branch managers see their branch; finance reports stay with finance.'],
+  ['Schedule the rest', 'Weekly reports go out on their own; export to Excel when needed.'],
+];
+const reFaqs = [
+  { q: 'What is MIS for a jewellery business?', a: 'Management information: the reports an owner uses to run the business, such as sales, stock ageing, scheme dues and receivables. Jwero builds them from one record, across every branch.' },
+  { q: 'Which reports should a jewellery owner see daily?', a: 'Yesterday’s sales by branch, stock ageing, scheme collections due, receivables, and walk-ins against sales. Pin them to the owner’s dashboard.' },
+  { q: 'Do I need to know how to build reports?', a: 'No. Type the question and AI drafts the report’s source, filters and chart. Adjust, save and pin.' },
+  { q: 'Can I see reports on my phone?', a: 'Yes. The owner’s dashboard works on mobile.' },
+  { q: 'Can reports be scheduled?', a: 'Yes. Schedule a report and it is delivered on its own, every day, week or month.' },
+  { q: 'Can I export to Excel?', a: 'Yes. Excel, CSV and PDF.' },
+  { q: 'Who can see what?', a: 'Reports follow roles: a branch manager sees her branch, head office sees all, and finance and payroll stay with the roles that own them.' },
+  { q: 'Will my accountant use this?', a: 'Your books sync to Tally for the accountant; these reports are for running the business day to day.' },
+];
 const reports = {
   slug: 'products/reports',
   title: 'Jewellery MIS Reports & Dashboard Software | Jwero',
-  description: 'A report builder with filters and charts over every module, an AI prompt that turns a question into a report, dashboards you pin to, the full report library, and exports — on the one record everything writes to.',
-  schema: app('Jwero Reports', 'reports', 'Report builder, dashboards and AI-prompted reports over sales, inventory, customers, schemes, finance and HR for jewellery businesses.'),
+  description: 'Jewellery MIS reports and dashboards: ask a question and AI builds the report, pin it to an owner’s dashboard on your phone, schedule it, export to Excel. Sales, stock ageing, schemes, receivables and staff across every branch.',
+  schema: { ...app('Jwero Reports', 'reports', 'Jewellery MIS reports and dashboards: AI-drafted reports from a plain question, a report builder, role-based dashboards including a mobile owner’s dashboard, scheduled reports, Excel, CSV and PDF exports, over sales, stock ageing, customers, schemes, receivables and staff across branches.'), alternateName: ['Jewellery MIS software', 'Jewellery sales reports', 'Jewellery business dashboard'] },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up a daily dashboard for a jewellery business', step: RE_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Reports & Dashboards'),
-  faqs: [
-    { q: 'What can I report on?', a: 'Anything on the record: sales by door and branch, inventory ageing and dead stock, customers by segment and score, scheme collections and maturity, digital gold, finance and receivables, attendance and payroll, ad spend and conversions.' },
-    { q: 'Do I need to know how to build reports?', a: 'No. Type the question — “which branch holds the most 180-day bangles?” — and the AI prompt drafts the report’s source, filters and chart. Adjust, save, pin.' },
-    { q: 'Can I schedule a report by email?', a: 'Scheduled delivery is built and rolling out; ask us about your tenant. Exports and pinned dashboards are available today.' },
-    { q: 'Who can see what?', a: 'Reports respect roles: a branch manager sees her branch; head office sees all. Finance and payroll reports stay with the roles that own them.' },
-    { q: 'Will my accountant use this?', a: 'Books bridge to Tally and Zoho Books; the reports here are for running the business day to day, not for replacing the CA’s tools.' },
-  ],
+  faqs: reFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'REPORTS & DASHBOARDS',
-  h1: 'Ask the business a question. Get a report, not a spreadsheet.',
-  sub: 'Every module writes to one record, so one builder reads them all — sales, stock, customers, schemes, finance, people. Type the question or set the filters; pin the answer to a dashboard; export when the CA asks.',
+  eyebrow: 'MIS REPORTS · DASHBOARDS',
+  h1: 'Jewellery MIS reports and dashboards: ask a question, get the answer, across every branch.',
+  sub: 'Every module writes to one record, so one place answers it all: sales, stock, customers, schemes, money and people. Type the question, pin the answer to your phone, schedule it, and export to Excel when the CA asks.',
   primary: { href: '#', label: 'Show me a report on my kind of business', wa: 'reports' },
   secondary: { href: '/platform', label: 'See the platform tour' },
   mock: mockReports,
 })}
 
-${L.section(
-  `${L.cards([
-    { title: 'Builder', text: 'Pick a source, add filter rows, choose a chart, preview live. Save it to the library.' },
-    { title: 'Ask in a sentence', text: 'An AI prompt turns a plain question into source, filters and chart — you approve the draft like everything else.' },
-    { title: 'Dashboards', text: 'Pin reports to dashboards per role: the owner’s morning, the branch manager’s week, the scheme desk’s dues.' },
-    { title: 'The library', text: 'Every saved report and the built-ins — ageing, RFM, collections, digital gold, receivables, payroll — in one place.' },
-    { title: 'Exports', text: 'CSV and PDF for the accountant, the bank or the board.' },
-    { title: 'Intelligence, not just totals', text: 'Customer scores, opportunity boards and the ads engine feed the same dashboards — what to do next, beside what happened.', link: { href: '/platform/customer-memory', label: 'See how Jwero decides' } },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE QUESTION, START TO FINISH', 'From a question at 9am to stock moving by noon.', '')}${reFlow()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, ONE RECORD', 'What jewellery MIS software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Ask in a sentence</h3><p>AI turns a plain question into a report you approve.</p><a href="/platform/ai-workforce">AI →</a></article>
+  <article><h3>2. Build your own</h3><p>Pick a source, add filters, choose a chart, preview live, save.</p><a href="/products/erp">ERP →</a></article>
+  <article><h3>3. Dashboards for each role</h3><p>The owner’s morning on your phone, the branch manager’s week, the scheme desk’s dues.</p><a href="/products/multi-store">Branches →</a></article>
+  <article><h3>4. Jewellery reports built in</h3><p>Stock ageing, dead stock, RFM, scheme collections, receivables and payroll.</p><a href="/products/inventory">Stock ageing →</a></article>
+  <article><h3>5. On time, every time</h3><p>Scheduled reports, and exports to Excel, CSV and PDF.</p><a href="/products/billing-finance">Accounts →</a></article>
+  <article><h3>6. What to do next</h3><p>Customer scores and opportunities beside the totals, not just what happened.</p><a href="/platform/customer-memory">Customer intelligence →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('REPORTS EVERY JEWELLER NEEDS', 'Ready on day one.', '')}<div class="erp-map">${RE_LIST.map(([t, d, h]) => `<a href="${h}"><b>${t}</b><span>${d}</span></a>`).join('')}</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What building reports in Excel costs you.', 'Your numbers, not ours.')}<div class="callc" data-rec>
+  <div class="callc-in">
+    <label>Reports made by hand a week<input type="number" inputmode="numeric" data-re="n" value="6" min="0"></label>
+    <label>Hours each, exporting and formatting<input type="number" inputmode="decimal" data-re="h" value="1.5" min="0" step="0.5"></label>
+    <label>Cost an hour, ₹<input type="number" inputmode="numeric" data-re="cost" value="300" min="0" step="50"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Hours a year</span><b data-re-o="hrs">0</b></p>
+    <p class="callc-save"><span>Cost a year</span><b data-re-o="yr">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs.</p>
+  </div>
+</div>`)}
+
+${L.section(`${L.sectionHead('COMPARE', 'Excel exports, billing software reports, or Jwero.', '')}${reTable()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to set up a daily owner’s dashboard.', 'Five steps.')}${L.steps(RE_HOW.map(([title, text]) => ({ title, text })))}`)}
 
 ${L.honestGapsBlock([
-  'Scheduled email delivery of reports is built and rolling out tenant by tenant; until it reaches yours, dashboards and exports are the way.',
-  'No predictive forecasting — the numbers are what happened, plus rule-based scores you can read.',
+  'No predictive forecasting yet: the numbers are what happened, plus rule-based scores you can read.',
 ])}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Ask the chat button for a report on your business type.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('One question you have never had a clean answer to.', 'Bring it. We will build the report on the call, on your kind of data.', 'reports')}
 `,

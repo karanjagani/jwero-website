@@ -2915,3 +2915,12 @@ document.addEventListener('click', function (e) {
     set('hrs', h.toLocaleString('en-IN')); set('yr', '₹' + (v('disp') * v('cost') * 12).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+// Reports page: what building reports in Excel costs.
+(function () {
+  var root = document.querySelector('[data-rec]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-re="' + k + '"]') || {}).value || 0; };
+  function run() { var h = Math.round(v('n') * v('h') * 52);
+    var set = function (k, t) { var el = root.querySelector('[data-re-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('hrs', h.toLocaleString('en-IN')); set('yr', '₹' + (h * v('cost')).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();

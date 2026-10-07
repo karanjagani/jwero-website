@@ -213,6 +213,14 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - A re-hallmark flag blocks "ready for delivery" until handled; alerts for ready, overdue and unclaimed jobs on WhatsApp, SMS and email.
 - Warranty and AMC tied to the original invoice and HUID; appraisal certificates as PDF; old-gold exchange in store only.
 
+## Jewellery MIS reports and dashboards (facts)
+
+- Page: https://jwero.ai/products/reports
+- AI drafts a report from a plain question; a builder with sources, filters and charts; reports saved to a library.
+- Dashboards per role, including a mobile owner's dashboard; reports follow branch and role permissions.
+- Built-in reports: sales, stock ageing, dead stock, RFM, scheme collections and maturity, receivables, attendance and payroll, ad spend to sales.
+- Scheduled reports are live; exports to Excel, CSV and PDF. No predictive forecasting yet.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
