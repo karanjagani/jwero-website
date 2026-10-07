@@ -2967,7 +2967,7 @@ document.addEventListener('click', function (e) {
     var on = chips.filter(function (b) { return b.getAttribute('data-bl-t') === topic; })[0];
     chips.forEach(function (b) { b.classList.toggle('is-on', b === on); b.setAttribute('aria-pressed', b === on ? 'true' : 'false'); });
     if (title) title.textContent = topic && on ? on.firstChild.textContent.trim() + '.' : (words.length ? 'Search results.' : 'Every guide.');
-    count.textContent = match.length + (match.length === 1 ? ' guide' : ' guides') + (words.length ? ' for “' + term.trim() + '”' : '');
+    var unit = (hub.getAttribute('data-unit') || 'guide|guides').split('|'); count.textContent = match.length + ' ' + (match.length === 1 ? unit[0] : unit[1]) + (words.length ? ' for “' + term.trim() + '”' : '');
     empty.hidden = match.length > 0;
     more.hidden = filtering || shown >= match.length;
     try { var u = new URL(location.href); topic ? u.searchParams.set('t', topic) : u.searchParams.delete('t'); words.length ? u.searchParams.set('q', term.trim()) : u.searchParams.delete('q'); history.replaceState(null, '', u); } catch (e) {}

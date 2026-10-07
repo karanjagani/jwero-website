@@ -323,7 +323,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jwero Pricing: Subscription, Managed or Enterprise: https://jwero.ai/pricing
 - Diamond Trading Software: Inventory, Memo and Your Rate Grid: https://jwero.ai/solutions/diamond-traders
 - Jewellery Retail Software, Single Store to Chain: https://jwero.ai/industries/retail
-- Solutions, Jwero for Every Kind of Jewellery Business: https://jwero.ai/solutions
+- Solutions: Jwero for Every Kind of Jewellery Business: https://jwero.ai/solutions
 - Jewellery Shop Software for a Single Store or Small Shop: https://jwero.ai/solutions/single-store
 - Multi-Store Jewellery Software for Chains: https://jwero.ai/solutions/multi-store-chains
 - Jewellery Manufacturing Software: Job Work, Gold Loss: https://jwero.ai/solutions/manufacturers

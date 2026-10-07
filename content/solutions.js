@@ -1,85 +1,98 @@
 const L = require('../lib');
 const BC = (label) => [['Home', '/'], ['Solutions', '/solutions'], [label]];
 
+// Solutions hub, redesigned 2026-10-07 like the blog and guides hubs: search,
+// filters by kind of business, problem and role, quick "I run…" picks, and one
+// grid of every solution, problem and role page. Reuses [data-blog-hub].
+const S_TOPICS = [['retail', 'Retail'], ['trade', 'Wholesale and trade'], ['mfg', 'Manufacturing'], ['brand', 'Brands and networks'], ['pain', 'By problem'], ['role', 'By role']];
+const S_ITEMS = [
+  ['retail', '/solutions/single-store', 'Single store', 'Counter, stock, books and customers together, without the owner remembering everything.'],
+  ['retail', '/solutions/multi-store-chains', 'Multi-store and chains', 'Every branch on one system: prices, stock, schemes and reports.'],
+  ['retail', '/solutions/gold-retail', 'Gold retail', 'Live-rate pricing, schemes and old gold exchange.'],
+  ['retail', '/solutions/bridal', 'Bridal and wedding', 'Win the wedding, keep the family: shortlists, quotations and appointments.'],
+  ['retail', '/solutions/diamond-retail', 'Diamond retail', 'Certified stones and certificate-first selling.'],
+  ['retail', '/solutions/luxury-boutique', 'Luxury and boutique', 'Clienteling for high-value customers.'],
+  ['retail', '/solutions/silver-retail', 'Silver retail', 'High volume, low margin, sold by weight.'],
+  ['retail', '/solutions/lab-grown-diamond', 'Lab-grown diamond', 'Fast-moving stock with clear disclosure.'],
+  ['retail', '/solutions/gemstone-retail', 'Gemstone retail', 'Every stone, its details and its story.'],
+  ['retail', '/industries/retail', 'Jewellery retail overview', 'How Jwero fits every retail format, single store to chain.'],
+  ['trade', '/solutions/diamond-traders', 'Loose diamond traders', 'Parcels by carat and count, certified stones, memo and your rate grid.'],
+  ['trade', '/solutions/diamond-wholesale', 'Diamond jewellery wholesale', 'Private buyer catalogues on WhatsApp, memo and approval tracking.'],
+  ['trade', '/solutions/gold-wholesale', 'Gold wholesale', 'Weight-based trade, buyer pricing and fine-metal accounts.'],
+  ['trade', '/solutions/b2b-jewellery', 'B2B jewellery: silver, gemstone, pearl', 'Sell to retailers without living on the phone.'],
+  ['trade', '/solutions/bullion-gold-traders', 'Bullion dealers and gold traders', 'Volume trades with nothing left ambiguous.'],
+  ['mfg', '/solutions/manufacturers', 'Jewellery manufacturers', 'From jangad to despatch: orders, karigars, wastage and QC.'],
+  ['mfg', '/solutions/casting-units', 'Casting units', 'Every tree and flask accounted, metal in and out.'],
+  ['mfg', '/solutions/cad-services', 'CAD services', 'Design files to job files, revisions and approvals tracked.'],
+  ['mfg', '/solutions/oem-manufacturers', 'OEM manufacturers', 'Making for other brands, with their orders and specs.'],
+  ['mfg', '/solutions/export-houses', 'Export houses', 'Export orders, documents and process discipline.'],
+  ['brand', '/solutions/jewellery-brands', 'Jewellery brands', 'One brand voice across every store and channel.'],
+  ['brand', '/solutions/d2c-brands', 'D2C and online-first', 'Your own store plus the channels a website cannot do alone.'],
+  ['brand', '/solutions/startups', 'Startups and first-time founders', 'Start with the system chains took decades to build.'],
+  ['brand', '/solutions/franchise-networks', 'Franchise networks', 'Franchisor control, franchisee freedom.'],
+  ['pain', '/solutions/pain/dead-stock', 'Dead stock', 'Lakhs frozen in designs nobody buys: see it, price it, clear it.'],
+  ['pain', '/solutions/pain/lead-leakage', 'Lost enquiries', 'Enquiries dying in salespeople’s phones and chats.'],
+  ['pain', '/solutions/pain', 'Every problem we solve', 'Follow-ups, scheme leakage, festival rush and more.'],
+  ['role', '/roles/owner', 'Owner', 'Today’s sales, cash and stock on one screen.'],
+  ['role', '/roles/next-gen-successor', 'Next-generation successor', 'Turn decades of memory into a business you can run.'],
+  ['role', '/roles/chain-owner', 'Chain owner', 'Central prices, branch exceptions and one view of every store.'],
+  ['role', '/roles/store-manager', 'Store manager', 'Run the floor on today’s numbers.'],
+  ['role', '/roles/sales-associate', 'Sales associate', 'Walk up already knowing the customer.'],
+  ['role', '/roles/cashier', 'Cashier', 'Bills at the live rate, payments and day close.'],
+  ['role', '/roles/crm-executive', 'CRM and telecalling', 'Prioritised follow-ups, drafted for you.'],
+  ['role', '/roles/marketing-manager', 'Marketing manager', 'One campaign, every channel, one record.'],
+  ['role', '/roles/ecommerce-manager', 'Ecommerce manager', 'Synced stock and live-rate prices online.'],
+  ['role', '/roles/inventory-manager', 'Inventory manager', 'See what is dying on the shelf, in every branch.'],
+  ['role', '/roles/purchase-manager', 'Purchase manager', 'Reorder on data, not gut feel.'],
+  ['role', '/roles/accountant', 'Accountant', 'Books that reconcile, with the Tally bridge.'],
+  ['role', '/roles/b2b-manager', 'Wholesale and B2B manager', 'Every buyer on one thread, memo and orders tracked.'],
+  ['role', '/roles/franchise-partner', 'Franchise partner', 'Brand pricing and catalogue, your own store.'],
+  ['role', '/roles/production-manager', 'Production manager', 'Every job’s stage, gold in and out.'],
+  ['role', '/roles/karigar', 'Karigar', 'Traceable jobs and accounted loss.'],
+  ['role', '/roles/cad-designer', 'CAD designer', 'Files that do not die in chat.'],
+  ['role', '/roles/quality-hallmarking', 'Quality and hallmarking', 'Certification and HUID status tracked.'],
+];
+const S_PICK = [
+  ['I run one shop', '/solutions/single-store'], ['I run several branches', '/solutions/multi-store-chains'], ['I make jewellery', '/solutions/manufacturers'],
+  ['I sell to retailers', '/solutions/b2b-jewellery'], ['I sell mostly online', '/solutions/d2c-brands'], ['I am just starting', '/solutions/startups'],
+];
+const sImg = (href) => { const fs = require('fs'), p = require('path'); const key = href.replace(/^\//, '').replace(/\//g, '--');
+  return fs.existsSync(p.join(__dirname, '..', 'assets', 'og', key + '.jpg')) ? `/assets/og/${key}.jpg` : ''; };
+const sEsc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+function solutionsHubBody() {
+  const TL = Object.fromEntries(S_TOPICS); const count = (t) => S_ITEMS.filter((i) => i[0] === t).length;
+  const card = ([t, h, title, d]) => { const img = sImg(h); return `<a class="bl-card" href="${h}" data-t="${t}" data-q="${sEsc((title + ' ' + d + ' ' + TL[t]).toLowerCase())}">${img ? `<img src="${img}" alt="" loading="lazy" width="1200" height="630">` : ''}<span class="bl-tag">${TL[t]}</span><b>${sEsc(title)}</b><span class="bl-desc">${sEsc(d)}</span></a>`; };
+  return `
+<section class="hero bl-hero"><div class="container hero-inner">
+  <p class="eyebrow">SOLUTIONS</p>
+  <h1>Find the page written for your jewellery business.</h1>
+  <p class="sub">The same Jwero runs a single counter, a hundred-branch chain and a manufacturing floor. Pick your business, the problem you want solved, or your role.</p>
+  <form class="bl-search" role="search" onsubmit="return false"><label for="bl-q" class="sr-only">Search solutions</label><input id="bl-q" type="search" placeholder="Search: bridal, wholesale, karigar, dead stock…" autocomplete="off" data-bl-q></form>
+</div></section>
+<section class="section bl-wrap" data-blog-hub data-unit="page|pages">
+<div class="container">
+  <nav class="bl-chips" aria-label="Filter solutions"><button type="button" class="is-on" data-bl-t="">All <i>${S_ITEMS.length}</i></button>${S_TOPICS.map(([k, l]) => `<button type="button" data-bl-t="${k}">${l} <i>${count(k)}</i></button>`).join('')}</nav>
+  <div class="bl-start" data-bl-start>
+    <div class="section-head"><p class="eyebrow">QUICK PICK</p><h2>Which describes you?</h2></div>
+    <div class="bl-goals bl-goals-3">${S_PICK.map(([l, h]) => `<a href="${h}"><b>${l}</b><i>See your page →</i></a>`).join('')}</div>
+  </div>
+  <div class="section-head" style="margin-top:44px"><p class="eyebrow">EVERY PAGE</p><h2 data-bl-title>Every solution.</h2><p class="bl-count" aria-live="polite" data-bl-count>${S_ITEMS.length} pages</p></div>
+  <div class="bl-grid" data-bl-grid>${S_ITEMS.map(card).join('')}</div>
+  <p class="bl-empty" data-bl-empty hidden>Nothing matches that yet. <a href="#" data-wa="solutions">Tell us on WhatsApp what you run</a> and we will point you to the right page.</p>
+  <p class="bl-more"><button type="button" class="btn btn-ghost" data-bl-more hidden>Show more</button></p>
+</div>
+</section>
+${L.ctaBand('Not sure which page is yours?', 'Tell us what you sell and how; we will point you to the right page in one message.', 'solutions')}
+`;
+}
 const solutionsHub = {
   slug: 'solutions',
-  title: 'Solutions — Jwero for Every Kind of Jewellery Business | Jwero',
-  description: 'One operating system, routed to your business: 23 segments across retail, wholesale, manufacturing and beyond — plus every pain we solve.',
+  title: 'Solutions: Jwero for Every Kind of Jewellery Business | Jwero',
+  description: 'Find the Jwero page for your jewellery business: retail, wholesale, manufacturing, brands and franchises, the problem you want solved, or your role. Search or filter.',
   breadcrumbs: [['Home', '/'], ['Solutions']],
-  body: `
-${L.hero({
-  eyebrow: 'SOLUTIONS',
-  h1: 'Find the page written for your kind of jewellery business.',
-  sub: 'The same operating system runs a single counter, a hundred-branch chain, and a manufacturing bench. Find the page written in your language — 23 segments, all equal-status.',
-  primary: { href: '#', label: 'Tell me which page is mine', wa: 'solutions' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
-})}
-
-${L.section(
-  `${L.sectionHead('RETAIL', 'Every retail format, on one system.', '')}
-  <div class="filter-chips">
-    <a href="#retail" class="active">Retail</a><a href="#wholesale">Wholesale</a><a href="#manufacturing">Manufacturing</a><a href="#other">Brands, D2C & networks</a><a href="#pain">By pain</a>
-  </div>
-  <div class="router-grid" id="retail">
-    <a class="router-card" href="/solutions/single-store"><div class="r-icon">◆</div><h3>Single store</h3><p>Everything lives in the owner’s head and staff phones — until now.</p></a>
-    <a class="router-card" href="/solutions/multi-store-chains"><div class="r-icon">◇</div><h3>Multi-store & chains</h3><p>One spine — no more calling every branch to see what's happening.</p></a>
-    <a class="router-card" href="/industries/retail"><div class="r-icon">✦</div><h3>Retail (hub)</h3><p>Orientation page routing every retail material and format.</p></a>
-    <a class="router-card" href="/solutions/luxury-boutique"><div class="r-icon">✦</div><h3>Luxury & boutique</h3><p>Clienteling worthy of what you sell.</p></a>
-    <a class="router-card" href="/solutions/bridal"><div class="r-icon">♥</div><h3>Bridal & wedding</h3><p>Win the wedding, keep the family.</p></a>
-    <a class="router-card" href="/solutions/diamond-retail"><div class="r-icon">◈</div><h3>Diamond retail</h3><p>Certified stock, certified follow-up.</p></a>
-    <a class="router-card" href="/solutions/gold-retail"><div class="r-icon">●</div><h3>Gold retail</h3><p>Gold moves fast. Your system should too.</p></a>
-    <a class="router-card" href="/solutions/silver-retail"><div class="r-icon">○</div><h3>Silver retail</h3><p>High volume, low margin — automated.</p></a>
-    <a class="router-card" href="/solutions/lab-grown-diamond"><div class="r-icon">◉</div><h3>Lab-grown diamond</h3><p>Built for the fastest-moving segment in jewellery.</p></a>
-    <a class="router-card" href="/solutions/gemstone-retail"><div class="r-icon">◆</div><h3>Gemstone retail</h3><p>Every stone has a story. Keep both.</p></a>
-  </div>`
-)}
-
-${L.section(
-  `${L.sectionHead('WHOLESALE', 'Selling to the trade, built to order.', '')}
-  <div class="router-grid" id="wholesale">
-    <a class="router-card" href="/solutions/diamond-traders"><h3>Diamond traders</h3><p>Every stone, every parcel, every memo. Known to the carat.</p></a>
-    <a class="router-card" href="/solutions/diamond-wholesale"><h3>Diamond wholesale &amp; traders</h3><p>Your inventory, in every buyer’s pocket — certificate-first, memo-tracked.</p></a>
-    <a class="router-card" href="/solutions/gold-wholesale"><h3>Gold wholesale</h3><p>Wholesale gold, retail-grade systems.</p></a>
-    <a class="router-card" href="/solutions/b2b-jewellery"><h3>B2B jewellery (silver, gemstone, pearl)</h3><p>Sell to the trade without living on the phone.</p></a>
-  </div>`
-, { tone: 'tint' })}
-
-${L.section(
-  `${L.sectionHead('MANUFACTURING', 'Every stage of production, connected.', '')}
-  <div class="router-grid" id="manufacturing">
-    <a class="router-card" href="/solutions/manufacturers"><h3>Manufacturers (hub)</h3><p>From jangad to despatch, one ledger.</p></a>
-    <a class="router-card" href="/solutions/casting-units"><h3>Casting units</h3><p>Every tree, every flask, accounted.</p></a>
-    <a class="router-card" href="/solutions/cad-services"><h3>CAD services</h3><p>Design files to job files, connected.</p></a>
-    <a class="router-card" href="/solutions/oem-manufacturers"><h3>OEM manufacturers</h3><p>Your buyers’ brands. Your system.</p></a>
-    <a class="router-card" href="/solutions/export-houses"><h3>Export houses</h3><p>Export-grade process discipline.</p></a>
-  </div>`
-)}
-
-${L.section(
-  `${L.sectionHead('BRANDS, D2C & NETWORKS', 'Built for brands beyond one counter.', '')}
-  <div class="router-grid" id="other">
-    <a class="router-card" href="/solutions/bullion-gold-traders"><h3>Bullion dealers & gold traders</h3><p>Volume trades, zero ambiguity.</p></a>
-    <a class="router-card" href="/solutions/jewellery-brands"><h3>Jewellery brands</h3><p>One brand voice across every counter and channel.</p></a>
-    <a class="router-card" href="/solutions/d2c-brands"><h3>D2C & ecommerce-first</h3><p>Keep Shopify. Add the channels it can’t do.</p></a>
-    <a class="router-card" href="/solutions/startups"><h3>Startups & first-time founders</h3><p>Start with the system chains took decades to build.</p></a>
-    <a class="router-card" href="/solutions/franchise-networks"><h3>Franchise networks</h3><p>Franchisor control. Franchisee freedom.</p></a>
-  </div>`
-, { tone: 'tint' })}
-
-${L.section(
-  `${L.sectionHead('BY PAIN', "What's eating your business?", '')}
-  <div class="router-grid" id="pain">
-    <a class="router-card" href="/solutions/pain/dead-stock"><div class="r-icon">▣</div><h3>Dead stock</h3><p>Lakhs frozen in designs nobody wants.</p></a>
-    <a class="router-card" href="/solutions/pain/lead-leakage"><div class="r-icon">✉</div><h3>Lead leakage</h3><p>Enquiries dying in salesmen's chats.</p></a>
-    <a class="router-card" href="/solutions/pain"><div class="r-icon">…</div><h3>All pains</h3><p>Follow-up, scheme leakage, festival chaos and more.</p></a>
-  </div>`
-)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="solutions">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Not sure which page is yours?', 'Tell us what you sell and how — we’ll route you in one message.', 'solutions')}
-`,
+  body: '',
 };
+solutionsHub.body = solutionsHubBody();
 
 const singleStore = {
   slug: 'solutions/single-store',

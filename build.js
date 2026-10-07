@@ -1027,7 +1027,7 @@ function withIcpHome(html, slug) {
 }
 
 function withDoors(html, slug) {
-  if (DOORS_SKIP.includes((slug || '').split('/')[0]) || slug === 'guides' || LEGACY_SLUGS.has(slug)) return html;
+  if (DOORS_SKIP.includes((slug || '').split('/')[0]) || slug === 'guides' || slug === 'solutions' || LEGACY_SLUGS.has(slug)) return html;
   const end = html.indexOf('</section>');
   if (end < 0) return html;
   const strip = `<div class="doors-strip"><div class="container"><p>Two ways to work with Jwero</p><a class="ds-door" href="${require('./lib').TRIAL_URL}doors-strip" rel="noopener" data-trial><span>Run it yourself</span><b>Start for ₹3,600</b></a><a class="ds-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b></a><a class="ds-more" href="/pricing">Compare →</a></div></div>`;
