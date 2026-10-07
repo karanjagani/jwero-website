@@ -275,7 +275,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 
 ## All pages
 - Jewellery Software: CRM, ERP, POS and WhatsApp in One: https://jwero.ai/
-- The Jewellery Business Operating System, How Jwero Works: https://jwero.ai/platform
+- The Jewellery Business Operating System: How Jwero Works: https://jwero.ai/platform
 - Customer Memory: 198 Signals, 11 Scores, One Record: https://jwero.ai/platform/customer-memory
 - Live Gold Rate Pricing: Rate, Making Charge & Stone Rules: https://jwero.ai/platform/pricing-engine
 - AI Workforce & Governance, AI That Waits for Your Yes: https://jwero.ai/platform/ai-workforce

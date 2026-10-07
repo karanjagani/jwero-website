@@ -519,7 +519,7 @@ A: You do. Every business runs in its own isolated database, and you can export 
 
 ---
 
-# The Jewellery Business Operating System, How Jwero Works
+# The Jewellery Business Operating System: How Jwero Works
 URL: https://jwero.ai/platform
 
 How Jwero runs a jewellery business on one record: customers, catalogue, stock, counter billing, purchase, workshop, accounts and team, with an AI workforce that waits for your approval.
@@ -546,6 +546,14 @@ PLATFORM
  📒 Books
 
  Every module reads and writes this one record. That's the operating system.
+
+ INSIDE THE PLATFORM
+
+## Pick the question you came with.
+
+ How does a price follow the gold rate? Read the answer → How does Jwero know who to call first? Read the answer → How do I stop AI doing something I did not approve? Read the answer → Will it work with Tally and my website? Read the answer → How long does it take to get started? Read the answer → Is my data safe? Read the answer → 
+
+ Platform Pricing engine Purity rate cards, making-charge models, wastage and stone rules: every price follows today’s rate. Platform Customer memory 198 signals and 11 scores, each with its reason, on one record your business owns. Platform AI workforce and governance AI agents that ask first: approvals, daily and money caps, kill switches and a full log. Platform Integrations Tally and Zoho Books, Shopify, WooCommerce, Unicommerce, Meta, payments and an MCP connection for AI assistants. Platform Tally bridge Keep your books in Tally; sales, returns, payments and expenses sync without retyping. Platform Onboarding and support What we import for you, how training runs, and how fast you go live. Platform Security and your data Who can see what, where data lives, and how to export it any time. Platform Every product 35 products that read and write this one record. 
 
  THE SYNC TAX
 

@@ -3,7 +3,7 @@ const BC = (label) => [['Home', '/'], ['Platform', '/platform'], [label]];
 
 const platform = {
   slug: 'platform',
-  title: 'The Jewellery Business Operating System — How Jwero Works | Jwero',
+  title: 'The Jewellery Business Operating System: How Jwero Works | Jwero',
   description: 'How Jwero runs a jewellery business on one record: customers, catalogue, stock, counter billing, purchase, workshop, accounts and team, with an AI workforce that waits for your approval.',
   breadcrumbs: [['Home', '/'], ['Platform']],
   faqs: [
@@ -23,6 +23,25 @@ ${L.hero({
   secondary: { href: '/book-demo', label: 'Book a demo' },
   mock: L.mockOneRecord,
 })}
+
+${(() => {
+  const fs = require('fs'), path = require('path');
+  const img = (h) => { const k = h.replace(/^\//, '').replace(/\//g, '--'); return fs.existsSync(path.join(__dirname, '..', 'assets', 'og', k + '.jpg')) ? `<img src="/assets/og/${k}.jpg" alt="" loading="lazy" width="1200" height="630">` : ''; };
+  const Q = [['How does a price follow the gold rate?', '/platform/pricing-engine'], ['How does Jwero know who to call first?', '/platform/customer-memory'], ['How do I stop AI doing something I did not approve?', '/platform/ai-workforce'], ['Will it work with Tally and my website?', '/platform/integrations'], ['How long does it take to get started?', '/platform/onboarding'], ['Is my data safe?', '/trust/security']];
+  const C = [
+    ['/platform/pricing-engine', 'Pricing engine', 'Purity rate cards, making-charge models, wastage and stone rules: every price follows today’s rate.'],
+    ['/platform/customer-memory', 'Customer memory', '198 signals and 11 scores, each with its reason, on one record your business owns.'],
+    ['/platform/ai-workforce', 'AI workforce and governance', 'AI agents that ask first: approvals, daily and money caps, kill switches and a full log.'],
+    ['/platform/integrations', 'Integrations', 'Tally and Zoho Books, Shopify, WooCommerce, Unicommerce, Meta, payments and an MCP connection for AI assistants.'],
+    ['/platform/integrations/tally', 'Tally bridge', 'Keep your books in Tally; sales, returns, payments and expenses sync without retyping.'],
+    ['/platform/onboarding', 'Onboarding and support', 'What we import for you, how training runs, and how fast you go live.'],
+    ['/trust/security', 'Security and your data', 'Who can see what, where data lives, and how to export it any time.'],
+    ['/products', 'Every product', '35 products that read and write this one record.'],
+  ];
+  return L.section(`${L.sectionHead('INSIDE THE PLATFORM', 'Pick the question you came with.', '')}
+  <div class="bl-goals bl-goals-3">${Q.map(([q, h]) => `<a href="${h}"><b>${q}</b><i>Read the answer →</i></a>`).join('')}</div>
+  <div class="bl-grid" style="margin-top:28px">${C.map(([h, t, d]) => `<a class="bl-card" href="${h}">${img(h)}<span class="bl-tag">Platform</span><b>${t}</b><span class="bl-desc">${d}</span></a>`).join('')}</div>`, { tone: 'tint' });
+})()}
 
 ${L.section(
   `${L.sectionHead('THE SYNC TAX', 'What five disconnected tools cost you, in minutes.', 'Nine ordinary questions, answered two ways.')}
