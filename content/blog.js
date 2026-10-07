@@ -17,66 +17,78 @@ function postMeta(readMins, cluster) {
   return `<p class="post-meta"><span>${cluster}</span> · <span>${readMins} min read</span> · <span>By the Jwero editorial team</span> · <span>Published July 2026</span> · <span>Reviewed October 2026</span></p>`;
 }
 
+// Blog hub, redesigned 2026-10-07 for finding a guide fast: search, topic
+// filters, goal shortcuts and one grid of every article with its cover.
+// Without JS every card is visible; site.js adds search, filters and "show more".
 const blogHub = {
   slug: 'blog',
   title: 'Jwero Blog: Guides for Jewellery Business Owners | Jwero',
-  description: 'Honest guides on WhatsApp selling, dead stock and gold schemes for jewellery business — no fluff, no fabricated stats, calculators where the numbers matter.',
+  description: 'Practical guides for jewellery business owners: WhatsApp selling, gold pricing and GST, schemes, girvi, stock, CRM, marketing and choosing software. Search or filter by topic.',
   breadcrumbs: [['Home', '/'], ['Blog']],
-  body: `
-${L.hero({
-  eyebrow: 'THE JWERO BLOG',
-  h1: 'Practical guides, not content marketing filler.',
-  sub: 'Every article here exists to answer a real question jewellery business owners search for — written the same way the rest of this site is: honestly, with calculators where the topic has a number worth running, and no invented statistics.',
-})}
-${L.section(
-  `${L.sectionHead('START HERE', 'Three questions we hear most.', '')}
-  ${L.cards([
-    { title: 'WhatsApp for Jewellers: The Complete Guide', text: 'Official API vs personal number, catalogue pricing, reply speed, and where jewellers most often get it wrong.', link: { href: '/blog/whatsapp-for-jewellers-guide', label: 'Read the guide' } },
-    { title: 'Dead Stock in Jewellery: Calculate It, Then Clear It', text: 'What counts as dead stock, how the carrying cost is actually calculated, and clearance without a fire sale.', link: { href: '/blog/dead-stock-jewellery-business-guide', label: 'Read the guide' } },
-    { title: 'Gold Savings Schemes: A Practical Guide to Running One Digitally', text: 'Why schemes lock in revenue, why most leak members through drift, and what digital collection actually fixes.', link: { href: '/blog/gold-savings-scheme-guide', label: 'Read the guide' } },
-  ])}`
-)}
-${L.section(
-  `${L.sectionHead('MORE GUIDES', 'For the accountant, the factory floor and the counter.', '')}
-  ${L.cards([
-    { title: 'Jewellery Software and Tally: What Should and Shouldn’t Move', text: 'What actually syncs automatically, what still needs a manual voucher, and how to talk to your CA about it.', link: { href: '/blog/jewellery-software-and-tally', label: 'Read the guide' } },
-    { title: 'Gold Loss (Wastage) Control in Jewellery Manufacturing', text: 'A working ledger: per-movement, per-karigar weight tracking, the old-gold chain, and what it does and doesn’t fix.', link: { href: '/blog/gold-loss-wastage-control-jewellery-manufacturing', label: 'Read the guide' } },
-    { title: 'Jewellery Repair Management: The Custody-Chain Method', text: 'Why repair intake needs a documented custody chain — condition notes, a stone chart and a weight record.', link: { href: '/blog/jewellery-repair-management-custody-chain', label: 'Read the guide' } },
-    { title: 'HUID and Hallmarking Records: The Audit-Day Checklist', text: 'Keep hallmarking and HUID records organized so a compliance check is a retrieval, not a scramble.', link: { href: '/blog/huid-hallmarking-records-audit-checklist', label: 'Read the guide' } },
-    { title: 'Digital Catalog vs PDF: Why Shareable Checkout Links Sell More', text: 'A PDF catalogue is wrong the moment gold rates move. A live catalogue never is — and it can take the payment.', link: { href: '/blog/digital-catalog-vs-pdf-jewellery', label: 'Read the guide' } },
-    { title: 'Jewellery CRM vs ERP: The Real Difference', text: 'What each system actually does, where the line blurs in a jewellery business, and why most need both, on one record.', link: { href: '/blog/jewellery-crm-vs-erp-difference', label: 'Read the guide' } },
-    { title: 'Jewellery Software Buyer’s Checklist: 15 Questions', text: 'A vendor-agnostic checklist — pricing depth, data ownership, WhatsApp compliance, AI governance and honest roadmaps.', link: { href: '/blog/jewellery-software-buyer-checklist', label: 'Read the guide' } },
-    { title: 'Jewellery Software for Wedding Season', text: 'Enquiry speed, appointment load, scheme maturities, dead-stock timing — and why not to switch systems mid-season.', link: { href: '/blog/jewellery-software-wedding-season', label: 'Read the guide' } },
-  ], 4)}`
-, { tone: 'tint' })}
-${L.section(
-  `${L.sectionHead('RULES AND CALCULATIONS', 'Pricing, GST and compliance, worked through.', 'The questions every counter faces each season, with examples and what to confirm with your CA.')}
-  ${L.cards(require('./blog-rules').map((p) => ({ title: p.title.split(' | ')[0], text: p.description, link: { href: '/' + p.slug, label: 'Read' } })), 4)}`
-)}
-${L.section(
-  `${L.sectionHead('RUNNING THE BUSINESS', 'Girvi, karigars, memo, stones, schemes and branches.', 'The day-to-day work, by kind of jewellery business.')}
-  ${L.cards(require('./blog-ops').map((p) => ({ title: p.title.split(' | ')[0], text: p.description, link: { href: '/' + p.slug, label: 'Read' } })), 3)}`
-, { tone: 'tint' })}
-${L.section(
-  `${L.sectionHead('GROWING THE BUSINESS', 'Occasions, languages, calls, footfall, online, team and new categories.', '')}
-  ${L.cards(require('./blog-growth').map((p) => ({ title: p.title.split(' | ')[0], text: p.description, link: { href: '/' + p.slug, label: 'Read' } })), 3)}`
-)}
-${L.section(
-  `${L.sectionHead('BUYING AND STARTING UP', 'Cost, comparisons and getting started, honestly.', '')}
-  ${L.cards([
-    { title: 'How Much Does Jewellery Software Cost in India?', text: 'The real cost anatomy — what a Frankenstack of separate tools adds up to, and what a unified platform changes.', link: { href: '/blog/jewellery-software-cost-india', label: 'Read the guide' } },
-    { title: 'Best Jewellery Software in India: How to Actually Compare', text: 'Not a ranked listicle — the criteria that actually separate jewellery-built software from generic retail tools.', link: { href: '/blog/best-jewellery-software-india', label: 'Read the guide' } },
-    { title: 'Where Does the Live Gold Rate Come From?', text: 'Manual entry vs a live feed, morning/evening rate sessions, and why purity-specific rates matter.', link: { href: '/blog/gold-rate-api-live-pricing', label: 'Read the guide' } },
-    { title: 'How to Start a Jewellery Business Online', text: 'Registration basics, sourcing, photography, and the honest tradeoff of starting lean.', link: { href: '/blog/start-jewellery-business-online', label: 'Read the guide' } },
-    { title: 'WhatsApp Business API Pricing for Jewellers', text: 'How Meta’s per-message pricing model actually works — without inventing a rate that will be stale by tomorrow.', link: { href: '/blog/whatsapp-business-api-pricing', label: 'Read the guide' } },
-    { title: 'Are Gold Savings Schemes Legal in India?', text: 'A common trade practice with a real compliance question behind it — and the practices that reduce risk either way.', link: { href: '/blog/are-gold-savings-schemes-legal', label: 'Read the guide' } },
-  ], 3)}`
-, { tone: 'tint' })}
-${L.section(`<p style="font-size:.85rem; color:var(--ink-2);">More guides are coming — starting with the topics jewellers ask us about most on WhatsApp. <a href="#" data-wa="blog-hub">Tell us what you’d want covered</a>.</p>`)}
-${L.section(`${L.sectionHead('ALL ARTICLES', 'Every article, by topic.', 'Practical articles for jewellery business owners, from leads and WhatsApp to product data, orders and stock.')}
-<div class="blog-topics">${(() => { const P = require('./legacy-blog').POSTS; const T = {}; P.forEach((p) => { (T[p.topic] = T[p.topic] || []).push(p); }); return Object.entries(T).sort((a, b) => b[1].length - a[1].length).map(([t, list]) => `<details class="blog-topic"><summary><b>${t}</b><span>${list.length} articles</span></summary><ul>${list.sort((a, b) => b.date.localeCompare(a.date)).map((p) => `<li><a href="/${p.slug}">${p.title}</a></li>`).join('')}</ul></details>`).join(''); })()}</div>`, { tone: 'tint' })}
-`,
+  body: '',
 };
+const HUB_TOPICS = [
+  ['sell', 'Selling and leads'], ['wa', 'WhatsApp'], ['mkt', 'Marketing'], ['crm', 'Customers and CRM'],
+  ['online', 'Online and catalogues'], ['stock', 'Stock, POS and ERP'], ['rules', 'Pricing, GST and rules'],
+  ['ops', 'Schemes, girvi and workshop'], ['buy', 'Choosing software and AI'],
+];
+const LEGACY_TOPIC = { 'Leads and conversion': 'sell', 'Retail operations and sales': 'sell', WhatsApp: 'wa', 'Marketing and campaigns': 'mkt', 'CRM and customers': 'crm', 'Ecommerce and websites': 'online', 'Product data and catalogues': 'online', 'Inventory, POS and ERP': 'stock', 'Order management': 'stock', 'Technology and strategy': 'buy', AI: 'buy' };
+const guessTopic = (s) => (/gst|price|making-charge|huid|hallmark|cash-limit|e-way|e-invoic|legal|old-gold/.test(s) ? 'rules'
+  : /scheme|girvi|karigar|wastage|gold-loss|job-work|memo|diamond|gemstone|repair|fine-weight|exhibition|custom/.test(s) ? 'ops'
+  : /whatsapp/.test(s) ? 'wa' : /instagram|marketing|birthday|wedding|ads|social|festival|diwali/.test(s) ? 'mkt'
+  : /crm|customer|loyalty/.test(s) ? 'crm' : /catalog|online|ecommerce|website|shopify/.test(s) ? 'online'
+  : /stock|inventory|tally|pos|erp|barcode|branch|gold-rate|transfer/.test(s) ? 'stock'
+  : /cost|best|compare|checklist|software|ai|start/.test(s) ? 'buy' : 'sell');
+const HUB_FEATURED = ['blog/whatsapp-for-jewellers-guide', 'blog/how-to-calculate-gold-jewellery-price', 'blog/gold-savings-scheme-guide'];
+const HUB_GOALS = [
+  ['sell', 'Get more customers', 'WhatsApp, leads, walk-ins and follow-ups.'],
+  ['rules', 'Price and stay compliant', 'Gold price, making charges, GST, HUID and cash rules.'],
+  ['ops', 'Run the shop and workshop', 'Schemes, girvi, karigars, memo, stones and repairs.'],
+  ['buy', 'Choose the right software', 'Costs, comparisons, checklists and AI.'],
+];
+const hubCovers = (() => { try { return new Set(require('../assets/covers/index.json')); } catch (e) { return new Set(); } })();
+const hubEsc = (s) => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+const hubCard = (a) => `<a class="bl-card" href="${a.href}" data-t="${a.t}" data-q="${hubEsc((a.title + ' ' + a.desc).toLowerCase())}">${a.cover ? `<img src="${a.cover}" alt="" loading="lazy" width="1200" height="630">` : ''}<span class="bl-tag">${a.tl}</span><b>${hubEsc(a.title)}</b><span class="bl-desc">${hubEsc(a.desc)}</span></a>`;
+function hubBody(posts) {
+  const TL = Object.fromEntries(HUB_TOPICS);
+  const seen = new Set();
+  const all = [];
+  const add = (slug, title, desc, t) => {
+    if (seen.has(slug)) return; seen.add(slug);
+    const key = slug.replace(/\//g, '--');
+    all.push({ slug, href: '/' + slug, title: String(title).split(' | ')[0], desc: String(desc || '').replace(/\s+/g, ' ').slice(0, 220), t, tl: TL[t], cover: hubCovers.has(key) ? `/assets/covers/${key}.svg` : '' });
+  };
+  posts.forEach((p) => add(p.slug, p.title, p.description, guessTopic(p.slug)));
+  require('./guides').filter((p) => /^guides\/./.test(p.slug)).forEach((p) => add(p.slug, p.title, p.description, 'buy'));
+  require('./legacy-blog').POSTS.forEach((p) => add(p.slug, p.title, p.description, LEGACY_TOPIC[p.topic] || guessTopic(p.slug)));
+  const count = (t) => all.filter((a) => a.t === t).length;
+  const featured = HUB_FEATURED.map((s) => all.find((a) => a.slug === s)).filter(Boolean);
+  return `
+<section class="hero bl-hero"><div class="container hero-inner">
+  <p class="eyebrow">THE JWERO BLOG</p>
+  <h1>Guides for jewellery business owners.</h1>
+  <p class="sub">${all.length} practical guides on selling, pricing, GST, schemes, stock and software. Search, or pick a topic.</p>
+  <form class="bl-search" role="search" onsubmit="return false"><label for="bl-q" class="sr-only">Search guides</label><input id="bl-q" type="search" placeholder="Search: GST on making charges, girvi interest, WhatsApp…" autocomplete="off" data-bl-q></form>
+</div></section>
+<section class="section bl-wrap" data-blog-hub>
+<div class="container">
+  <nav class="bl-chips" aria-label="Filter by topic"><button type="button" class="is-on" data-bl-t="">All <i>${all.length}</i></button>${HUB_TOPICS.map(([k, l]) => `<button type="button" data-bl-t="${k}">${l} <i>${count(k)}</i></button>`).join('')}</nav>
+  <div class="bl-start" data-bl-start>
+    <div class="section-head"><p class="eyebrow">START HERE</p><h2>Most read.</h2></div>
+    <div class="bl-grid bl-grid-3">${featured.map(hubCard).join('')}</div>
+    <div class="section-head" style="margin-top:44px"><p class="eyebrow">BY GOAL</p><h2>What do you want to get done?</h2></div>
+    <div class="bl-goals">${HUB_GOALS.map(([k, t, d]) => `<button type="button" data-bl-t="${k}"><b>${t}</b><span>${d}</span><i>${count(k)} guides →</i></button>`).join('')}</div>
+  </div>
+  <div class="section-head" style="margin-top:44px"><p class="eyebrow">ALL GUIDES</p><h2 data-bl-title>Every guide.</h2><p class="bl-count" aria-live="polite" data-bl-count>${all.length} guides</p></div>
+  <div class="bl-grid" data-bl-grid>${all.map(hubCard).join('')}</div>
+  <p class="bl-empty" data-bl-empty hidden>No guide matches that yet. <a href="#" data-wa="blog-hub">Ask us on WhatsApp</a> and we will answer, and may write it.</p>
+  <p class="bl-more"><button type="button" class="btn btn-ghost" data-bl-more hidden>Show more guides</button></p>
+</div>
+</section>
+${L.section(`${L.sectionHead('WORK IT OUT', 'Calculators jewellers use.', '')}<div class="erp-map">${[['/tools/dead-stock-calculator', 'Dead stock cost'], ['/tools/gold-scheme-calculator', 'Gold scheme maturity'], ['/tools/gold-loss-calculator', 'Gold loss in manufacturing'], ['/tools/whatsapp-revenue-estimator', 'WhatsApp revenue'], ['/count-your-team', 'Count your team and price'], ['/tools', 'Every tool']].map(([h, t]) => `<a href="${h}"><b>${t}</b><span>Calculator</span></a>`).join('')}</div>`, { tone: 'tint' })}
+${L.ctaBand('Did not find your question?', 'Ask us on WhatsApp. We answer, and the best questions become the next guide.', 'blog-hub')}
+`;
+}
 
 // ---------------------------------------------------------------- Article 1: WhatsApp
 const whatsappGuideFaqs = [
@@ -1171,5 +1183,8 @@ ${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo vide
 ${L.ctaBand('See the compliance controls in a demo.', 'Bring your current scheme structure — we’ll show KYC, documented terms, the audit trail and OTP closures running on it.', 'blog-schemeslegal')}
 `,
 };
+
+const BLOG_ARTICLES = [whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide, crmErpGuide, checklistGuide, weddingGuide, costGuide, bestSoftwareGuide, goldRateGuide, startOnlineGuide, waPricingGuide, schemesLegalGuide].concat(require('./blog-rules'), require('./blog-ops'), require('./blog-growth'));
+blogHub.body = hubBody(BLOG_ARTICLES);
 
 module.exports = [blogHub, whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide, crmErpGuide, checklistGuide, weddingGuide, costGuide, bestSoftwareGuide, goldRateGuide, startOnlineGuide, waPricingGuide, schemesLegalGuide].concat(require('./blog-rules'), require('./blog-ops'), require('./blog-growth'));

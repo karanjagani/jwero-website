@@ -2951,3 +2951,31 @@ document.addEventListener('click', function (e) {
     set('miss', Math.max(0, cam - reg).toLocaleString('en-IN')); set('regc', reg ? pct(b / reg * 100) : '0%'); set('real', cam ? pct(b / cam * 100) : '0%'); }
   root.addEventListener('input', run); run();
 })();
+// Blog hub: search, topic filter, goal shortcuts, show more. Deep links: ?t=topic&q=words
+(function () {
+  var hub = document.querySelector('[data-blog-hub]'); if (!hub) return;
+  var q = document.querySelector('[data-bl-q]'), cards = [].slice.call(hub.querySelectorAll('[data-bl-grid] .bl-card'));
+  var more = hub.querySelector('[data-bl-more]'), count = hub.querySelector('[data-bl-count]'), empty = hub.querySelector('[data-bl-empty]');
+  var start = hub.querySelector('[data-bl-start]'), title = hub.querySelector('[data-bl-title]'), chips = [].slice.call(hub.querySelectorAll('.bl-chips [data-bl-t]'));
+  var PAGE = 24, shown = PAGE, topic = '', term = '';
+  function render() {
+    var words = term.toLowerCase().split(/\s+/).filter(Boolean), match = [];
+    cards.forEach(function (c) { var ok = (!topic || c.getAttribute('data-t') === topic) && words.every(function (w) { return c.getAttribute('data-q').indexOf(w) > -1; }); if (ok) match.push(c); c.classList.add('is-hidden'); });
+    var filtering = !!(topic || words.length), limit = filtering ? match.length : shown;
+    match.slice(0, limit).forEach(function (c) { c.classList.remove('is-hidden'); });
+    if (start) start.hidden = filtering;
+    var on = chips.filter(function (b) { return b.getAttribute('data-bl-t') === topic; })[0];
+    chips.forEach(function (b) { b.classList.toggle('is-on', b === on); b.setAttribute('aria-pressed', b === on ? 'true' : 'false'); });
+    if (title) title.textContent = topic && on ? on.firstChild.textContent.trim() + '.' : (words.length ? 'Search results.' : 'Every guide.');
+    count.textContent = match.length + (match.length === 1 ? ' guide' : ' guides') + (words.length ? ' for “' + term.trim() + '”' : '');
+    empty.hidden = match.length > 0;
+    more.hidden = filtering || shown >= match.length;
+    try { var u = new URL(location.href); topic ? u.searchParams.set('t', topic) : u.searchParams.delete('t'); words.length ? u.searchParams.set('q', term.trim()) : u.searchParams.delete('q'); history.replaceState(null, '', u); } catch (e) {}
+  }
+  function setTopic(t, scroll) { topic = t; render(); if (scroll) { var g = hub.querySelector('[data-bl-grid]'); window.scrollTo({ top: g.getBoundingClientRect().top + window.scrollY - 140, behavior: 'smooth' }); } }
+  hub.addEventListener('click', function (e) { var b = e.target.closest('[data-bl-t]'); if (b) { setTopic(b.getAttribute('data-bl-t'), !!b.closest('.bl-goals')); } });
+  more.addEventListener('click', function () { shown += PAGE; render(); });
+  var timer; if (q) q.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(function () { term = q.value; render(); }, 120); });
+  try { var p = new URLSearchParams(location.search); topic = p.get('t') || ''; term = p.get('q') || ''; if (q && term) q.value = term; } catch (e) {}
+  render();
+})();
