@@ -396,6 +396,7 @@ function journeyFix(html, p) {
     const seenQ = new Set(), norm = (q) => q.replace(/<[^>]+>/g, '').toLowerCase().replace(/[^a-z0-9ऀ-ॿ]+/g, ' ').trim();
     html = html.replace(/\s*<details class="faq-item[^"]*"[^>]*>\s*<summary>([\s\S]*?)<\/summary>[\s\S]*?<\/details>/g, (m0, q) => { const k = norm(q); if (!k) return m0; if (seenQ.has(k)) return ''; seenQ.add(k); return m0; });
   }
+  if (slug === 'instagram-for-jewellers' || slug === 'products/instagram-facebook') html = html.replace(/(<section class="hero[^"]*">[\s\S]*?<\/section>)/, slug === 'instagram-for-jewellers' ? `$1<section class="section"><div class="container"><div class="which-page"><p><b>Looking for the software?</b> <a href="/products/social-media">Social media management →</a> for posting and one inbox, or <a href="/products/instagram-facebook">Instagram & Facebook commerce →</a> for turning DMs into sales.</p><p><b>Reading up first?</b> This page explains how jewellers use Instagram.</p></div></div></section>` : `$1<section class="section"><div class="container"><div class="which-page"><p><b>Turning DMs and comments into sales?</b> You are on the right page.</p><p><b>Planning and publishing posts?</b> <a href="/products/social-media">Social media management →</a></p></div></div></section>`);
   if (slug === 'ads-for-jewellers') html = html.replace(/(<section class="hero[^"]*">[\s\S]*?<\/section>)/, `$1<section class="section"><div class="container"><div class="which-page"><p><b>Looking for the software?</b> <a href="/products/ads-manager">Jewellery ads manager →</a>: Meta and Google ads, click-to-WhatsApp, AI creatives and sales reported back.</p><p><b>Reading up first?</b> This page explains how jewellers use Google and Instagram ads.</p></div></div></section>`);
   // WhatsApp articles point to the main page for their topic
   {
@@ -1687,6 +1688,10 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Meta (Instagram, Facebook, Advantage+, lead forms) and Google (Search, Performance Max, Shopping) published directly after approval; Pinterest rolling out.
 - Click-to-WhatsApp ads into the team inbox, answered with prices at today's rate; audiences and ads generated from customer segments; AI image, copy and short-video creatives.
 - Approvals, budget caps, alerts and autopilot within limits; counter and online sales reported back to Meta and Google; return on spend in rupees of bills. Details: ${SITE}/products/ads-manager
+
+## Social media management for jewellers (facts)
+- AI captions, hashtags, images and short video for posts and reels; festival content calendar; one composer publishing directly to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business.
+- One inbox for comments and DMs with AI drafts for approval; comments turned into DMs automatically; loyalty points for engagement; reach plus chats, visits and sales traced to posts. Details: ${SITE}/products/social-media
 
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.

@@ -3111,84 +3111,146 @@ A: No. Your Meta and Google accounts stay yours; Jwero connects to them.
 
 ---
 
-# Social Media Management, Schedule, Inbox, Reply
+# Social Media Management for Jewellers: Schedule, AI, Inbox
 URL: https://jwero.ai/products/social-media
 
-Schedule posts, manage one inbox for every comment and DM, and let AI draft replies your team approves, across your social channels in one place.
+Social media management for jewellers: AI captions, images and video, one calendar publishing to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business, and one inbox for comments and DMs.
 
-SOCIAL MEDIA MANAGEMENT
+SOCIAL MEDIA MANAGEMENT FOR JEWELLERS
 
-## Every platform, one inbox, one calendar.
+## Social media management for jewellers: every platform, one calendar, one inbox.
 
- Schedule posts across your channels with a preview of how each will look before it goes live, and answer every comment and DM from a single inbox, with AI drafting the reply and your team approving it.
+ AI makes the captions, images and reels from your catalogue. One composer publishes to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business. Every comment and DM lands in one inbox, “price?” comments become DMs, and followers earn loyalty points.
 
- Show me one inbox for every DM 
- Book a demo 
+ Show me a month of posts for my shop 
 
- SCHEDULE, PREVIEW, PUBLISH
+ Planning, making and publishing posts, and one inbox for comments? You are on the right page.
+ Turning DMs and comments into sales? Instagram & Facebook commerce → · Reading up first? Instagram for jewellers → 
 
-## One composer for every channel.
+ ONE REEL, START TO FINISH
 
-## Multi-platform composer
+## From the calendar to a visit.
 
- Write once, schedule across your connected channels from a single screen.
+ POST · DIWALI REEL
+ Planned Diwali reel on the festival calendar, three weeks ahead
+ Made by AI A short video from your catalogue photos, caption and hashtags in English and Hindi
+ Scheduled Instagram, Facebook and YouTube Shorts, Friday 7 pm
+ Comments 84 comments in one inbox · AI drafts replies for approval
+ Price? “Price?” comments turned into DMs automatically
+ Reply Pieces priced at today’s rate · moved to WhatsApp
+ Loyalty Followers who commented earn loyalty points
+ Visit Visits booked from the reel · traced to the post
+ Illustrative.
 
-## Multi-channel preview
+ Planned Diwali reel on the festival calendar, three weeks ahead 
+ Made by AI A short video from your catalogue photos, caption and hashtags in English and Hindi 
+ Scheduled Instagram, Facebook and YouTube Shorts, Friday 7 pm 
+ Comments 84 comments in one inbox 
+ Price? “Price?” comments turned into DMs automatically 
+ Reply Pieces priced at today’s rate 
+ Loyalty Followers who commented earn loyalty points 
+ Visit Visits booked from the reel 
 
- See how a post will actually look on each platform before it goes out, not a guess after publishing.
+ SIX JOBS, ONE CALENDAR
 
-## Unified inbox
+## What social media management for a jeweller has to do.
 
- Every comment and DM, across every connected channel, in one inbox instead of a rotation of apps.
+## 1. Plan the festival calendar
+ Akshaya Tritiya, Diwali, wedding season, launches and weekly posts, drafted weeks ahead.
+ Campaigns → 
 
-## Instagram private replies
+## 2. Content made for you
+ AI captions and hashtags in English and Indian languages, images and short videos from your catalogue photos, for posts and reels.
+ Catalogue → 
 
- Comment-to-DM handling on Instagram is built in, so a public "price?" comment can move to a private conversation cleanly.
+## 3. One composer, every platform
+ Schedule and publish to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business.
+ Instagram for jewellers → 
 
-## AI-drafted replies, human approval
+## 4. One inbox for every comment and DM
+ AI drafts replies for your team’s approval; “price?” comments are turned into DMs automatically.
+ Instagram & Facebook commerce → 
 
- AI drafts the reply to a comment or DM using your knowledge base; a person approves before it sends, the same governance as the rest of Jwero.
+## 5. Followers into customers
+ Loyalty points for comments, follows, likes and shares, price replies at today’s rate, and a move to WhatsApp.
+ Loyalty → 
 
-## Analytics
+## 6. See what works
+ Reach and engagement by post and platform, plus the chats, visits and sales each post started.
+ Reports → 
 
- Performance across your scheduled posts and channels, next to the same inbox you reply from.
+ THE ARITHMETIC
+
+## The hours social media takes today.
+
+ Your numbers, not ours.
+
+ Posts and reels a week 
+ Minutes to make and post each, by hand 
+ Comments and DMs a day 
+ Minutes per reply, by hand 
+
+ Hours a month on posts 0 
+
+ Hours a month on replies 0 
+
+ Hours a month, by hand 0 
+
+ With AI making content and drafting replies, your team reviews instead of creating from scratch. An estimate from your inputs.
+
+ COMPARE
+
+## Posting by hand, a generic scheduler, or Jwero.
+
+ Posting by hand A generic scheduler Jwero 
+ Content Designer or agency You make it AI captions, hashtags, images and video 
+ Publishing One app per platform Scheduler Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads, Google Business 
+ Comments and DMs One phone Shared inbox One inbox, AI drafts for approval 
+ “Price?” comments Missed Manual Turned into DMs automatically 
+ Prices in replies Typed in Typed in Today’s rate, from the catalogue 
+ Followers into customers No No Loyalty points for engagement, WhatsApp, visits 
+ What a post sold Likes Reach Chats, visits and sales traced to the post 
+
+ GETTING STARTED
+
+## How to run social media for a jewellery shop.
+
+ Five steps.
+
+ 1 
+
+## Connect your accounts
+ Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business.
+
+ 2 
+
+## Fill the calendar
+ Festivals, launches and weekly posts, drafted ahead.
+
+ 3 
+
+## Let AI make the content
+ Captions, hashtags, images and short video from your catalogue; edit what you like.
+
+ 4 
+
+## Approve and schedule
+ One composer publishes to every platform at the time you choose.
+
+ 5 
+
+## Answer and convert
+ Comments and DMs in one inbox; price questions become DMs and then WhatsApp chats.
 
  BECAUSE IT'S ONE SYSTEM
 
- A DM answered in the unified inbox lands on the same customer record your WhatsApp and CRM already use, no separate export.
- The AI drafting a reply here follows the same "AI drafts, human approves" governance as the AI Sales Agents elsewhere on Jwero.
- Instagram and Facebook here are the same official integrations behind Instagram & Facebook Commerce, this page is the broader, multi-platform version of that experience.
- Paying to promote a post? Ads Manager runs the paid campaigns on the same platform, with its own budget alerts and approvals.
-
- SOCIAL MEDIA QUESTIONS
-
-## Platform coverage and who approves what.
-
- Which platforms are supported? 
- Instagram, Facebook, X, LinkedIn, Pinterest, YouTube and Google Business are live.
-
- Does the AI reply on its own? 
- It drafts; your team approves before anything sends, until you choose to promote a reply type, same governance as the rest of Jwero.
-
- How is this different from Instagram & Facebook Commerce? 
- That page is the focused Instagram/Facebook experience; this is the broader multi-platform scheduling, inbox and analytics layer built on the same foundation.
-
- More questions? See the full FAQ → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- You don’t have to take our word for it, try the chat button on this page ; it’s Jwero, live, answering.
+ A comment, a DM and a WhatsApp chat from the same person land on one customer record.
+ Posts use the same catalogue and prices as the website and the counter.
+ Engagement earns loyalty points the customer can use at the counter.
 
 ## One inbox for every comment and DM.
 
- Schedule across channels, reply from one place, and let AI draft the first response while your team approves. Ask which platforms are live for your account.
+ Tell us your platforms. We will show a month of posts and replies in Jwero.
 
  Chat or call with us 
  Book a demo 
@@ -3197,23 +3259,32 @@ SOCIAL MEDIA MANAGEMENT
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: What can I actually schedule and manage from Jwero?
-A: Posts across your social platforms from one composer, with a preview of how each post will look on each channel before it goes out, plus a unified inbox for the comments and DMs that come back.
+Q: What is social media management for jewellers?
+A: Planning, creating, scheduling and publishing posts across Instagram, Facebook, YouTube and other platforms, and answering every comment and DM, so followers become customers. Jwero does all of it in one place, with AI making the content and drafting replies for approval.
+
+Q: Which platforms can Jwero publish to?
+A: Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business, from one composer and one calendar.
+
+Q: Can AI make jewellery posts and reels?
+A: Yes. AI makes captions, hashtags, images and short videos from your catalogue photos, in English and Indian languages. Your team edits and approves before anything is published.
+
+Q: How often should a jeweller post?
+A: Consistency matters more than volume: a few good posts a week, more around festivals and launches. A calendar planned ahead keeps it steady.
+
+Q: What happens when someone comments “price?”
+A: The comment is turned into a DM automatically, answered with pieces priced at today’s rate, and moved to WhatsApp if the customer wants.
 
 Q: Does the AI reply to comments and DMs on its own?
-A: It drafts replies, including handling Instagram private replies, using the same "AI drafts, human approves" governance as the rest of Jwero. Your team approves before anything sends, until you choose to promote a reply type.
+A: It drafts replies that wait for your team’s approval. Once you trust a type of reply, you can let it send on its own.
 
-Q: Which platforms are supported?
-A: Instagram, Facebook, X, LinkedIn, Pinterest, YouTube and Google Business are live, each through its official integration.
+Q: Can followers earn loyalty points?
+A: Yes. Comments, follows, likes and shares can earn loyalty points, matched to the customer’s record.
 
-Q: Is this different from Instagram & Facebook Commerce?
-A: That page is the focused Instagram/Facebook experience. Social Media Management is the broader version: scheduling, preview and analytics across channels, with the same unified inbox and AI-drafted replies underneath.
+Q: How is this different from Instagram & Facebook commerce?
+A: This page is about planning, making and publishing posts and keeping one inbox. Instagram & Facebook commerce is about turning DMs and comments into sales.
 
-Q: Can I see how my posts and replies are performing?
-A: Yes, analytics sit alongside the composer and inbox, so scheduling, replying and measuring stay in the same place instead of a separate reporting tool.
-
-Q: Do I need someone watching every channel all day?
-A: No, the unified inbox collects every comment and DM in one place, and AI drafts the first response; your team reviews and approves rather than monitoring each platform separately.
+Q: Can I see what my posts achieve?
+A: Yes. Reach and engagement per post and platform, plus the chats, visits and sales each post started.
 
 ---
 

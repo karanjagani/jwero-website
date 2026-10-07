@@ -579,64 +579,113 @@ ${L.ctaBand('Run ads without losing sight of the budget.', 'Tell us your budget 
 `,
 };
 
+// Social media management, rebuilt 2026-10-07. Confirmed by Jwero: AI video for
+// posts; direct publishing to Instagram, Facebook, YouTube, Pinterest, LinkedIn,
+// X, Threads and Google Business; comments turned into DMs automatically.
+const SOC_FLOW = [
+  ['Planned', 'Diwali reel on the festival calendar, three weeks ahead'],
+  ['Made by AI', 'A short video from your catalogue photos, caption and hashtags in English and Hindi'],
+  ['Scheduled', 'Instagram, Facebook and YouTube Shorts, Friday 7 pm'],
+  ['Comments', '84 comments in one inbox · AI drafts replies for approval'],
+  ['Price?', '“Price?” comments turned into DMs automatically'],
+  ['Reply', 'Pieces priced at today’s rate · moved to WhatsApp'],
+  ['Loyalty', 'Followers who commented earn loyalty points'],
+  ['Visit', 'Visits booked from the reel · traced to the post'],
+];
+const socFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">POST · DIWALI REEL</p>${SOC_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${SOC_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const SOC_CMP = [
+  ['Content', 'Designer or agency', 'You make it', 'AI captions, hashtags, images and video'],
+  ['Publishing', 'One app per platform', 'Scheduler', 'Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads, Google Business'],
+  ['Comments and DMs', 'One phone', 'Shared inbox', 'One inbox, AI drafts for approval'],
+  ['“Price?” comments', 'Missed', 'Manual', 'Turned into DMs automatically'],
+  ['Prices in replies', 'Typed in', 'Typed in', 'Today’s rate, from the catalogue'],
+  ['Followers into customers', 'No', 'No', 'Loyalty points for engagement, WhatsApp, visits'],
+  ['What a post sold', 'Likes', 'Reach', 'Chats, visits and sales traced to the post'],
+];
+const socTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Posting by hand</th><th>A generic scheduler</th><th>Jwero</th></tr></thead><tbody>${SOC_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const SOC_HOW = [
+  ['Connect your accounts', 'Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business.'],
+  ['Fill the calendar', 'Festivals, launches and weekly posts, drafted ahead.'],
+  ['Let AI make the content', 'Captions, hashtags, images and short video from your catalogue; edit what you like.'],
+  ['Approve and schedule', 'One composer publishes to every platform at the time you choose.'],
+  ['Answer and convert', 'Comments and DMs in one inbox; price questions become DMs and then WhatsApp chats.'],
+];
+const socFaqs = [
+  { q: 'What is social media management for jewellers?', a: 'Planning, creating, scheduling and publishing posts across Instagram, Facebook, YouTube and other platforms, and answering every comment and DM, so followers become customers. Jwero does all of it in one place, with AI making the content and drafting replies for approval.' },
+  { q: 'Which platforms can Jwero publish to?', a: 'Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business, from one composer and one calendar.' },
+  { q: 'Can AI make jewellery posts and reels?', a: 'Yes. AI makes captions, hashtags, images and short videos from your catalogue photos, in English and Indian languages. Your team edits and approves before anything is published.' },
+  { q: 'How often should a jeweller post?', a: 'Consistency matters more than volume: a few good posts a week, more around festivals and launches. A calendar planned ahead keeps it steady.' },
+  { q: 'What happens when someone comments “price?”', a: 'The comment is turned into a DM automatically, answered with pieces priced at today’s rate, and moved to WhatsApp if the customer wants.' },
+  { q: 'Does the AI reply to comments and DMs on its own?', a: 'It drafts replies that wait for your team’s approval. Once you trust a type of reply, you can let it send on its own.' },
+  { q: 'Can followers earn loyalty points?', a: 'Yes. Comments, follows, likes and shares can earn loyalty points, matched to the customer’s record.' },
+  { q: 'How is this different from Instagram & Facebook commerce?', a: 'This page is about planning, making and publishing posts and keeping one inbox. Instagram & Facebook commerce is about turning DMs and comments into sales.' },
+  { q: 'Can I see what my posts achieve?', a: 'Yes. Reach and engagement per post and platform, plus the chats, visits and sales each post started.' },
+];
+
 const socialMedia = {
   slug: 'products/social-media',
-  title: 'Social Media Management — Schedule, Inbox, Reply | Jwero',
-  description: 'Schedule posts, manage one inbox for every comment and DM, and let AI draft replies your team approves — across your social channels in one place.',
+  title: 'Social Media Management for Jewellers: Schedule, AI, Inbox | Jwero',
+  description: 'Social media management for jewellers: AI captions, images and video, one calendar publishing to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business, and one inbox for comments and DMs.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Social Media Management', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Multi-platform post scheduling with a multi-channel preview, a unified inbox for comments and DMs with AI-drafted replies under approval, and analytics.',
+    name: 'Jwero Social Media Management for Jewellers', alternateName: ['Social media scheduler for jewellers', 'Jewellery social media software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Social media for jewellers: festival content calendar; AI captions, hashtags, images and short video; one composer publishing to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business; one inbox for comments and DMs with AI drafts for approval; comments turned into DMs automatically; loyalty points for engagement; results traced to chats and sales.',
     url: 'https://jwero.ai/products/social-media', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month; AI images and video from the wallet.' },
   },
-  breadcrumbs: BC('Social Media Management'),
-  faqs: [
-    { q: 'What can I actually schedule and manage from Jwero?', a: 'Posts across your social platforms from one composer, with a preview of how each post will look on each channel before it goes out, plus a unified inbox for the comments and DMs that come back.' },
-    { q: 'Does the AI reply to comments and DMs on its own?', a: 'It drafts replies — including handling Instagram private replies — using the same "AI drafts, human approves" governance as the rest of Jwero. Your team approves before anything sends, until you choose to promote a reply type.' },
-    { q: 'Which platforms are supported?', a: 'Instagram, Facebook, X, LinkedIn, Pinterest, YouTube and Google Business are live, each through its official integration.' },
-    { q: 'Is this different from Instagram & Facebook Commerce?', a: 'That page is the focused Instagram/Facebook experience. Social Media Management is the broader version: scheduling, preview and analytics across channels, with the same unified inbox and AI-drafted replies underneath.' },
-    { q: 'Can I see how my posts and replies are performing?', a: 'Yes — analytics sit alongside the composer and inbox, so scheduling, replying and measuring stay in the same place instead of a separate reporting tool.' },
-    { q: 'Do I need someone watching every channel all day?', a: 'No — the unified inbox collects every comment and DM in one place, and AI drafts the first response; your team reviews and approves rather than monitoring each platform separately.' },
-  ],
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to run social media for a jewellery shop', step: SOC_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Social media'),
+  faqs: socFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'SOCIAL MEDIA MANAGEMENT',
-  h1: 'Every platform, one inbox, one calendar.',
-  sub: 'Schedule posts across your channels with a preview of how each will look before it goes live, and answer every comment and DM from a single inbox — with AI drafting the reply and your team approving it.',
-  primary: { href: '#', label: 'Show me one inbox for every DM', wa: 'socialmedia' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  eyebrow: 'SOCIAL MEDIA MANAGEMENT FOR JEWELLERS',
+  h1: 'Social media management for jewellers: every platform, one calendar, one inbox.',
+  sub: 'AI makes the captions, images and reels from your catalogue. One composer publishes to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business. Every comment and DM lands in one inbox, “price?” comments become DMs, and followers earn loyalty points.',
+  primary: { href: '#', label: 'Show me a month of posts for my shop', wa: 'social' },
 })}
 
-${L.section(
-  `${L.sectionHead('SCHEDULE, PREVIEW, PUBLISH', 'One composer for every channel.', '')}
-  ${L.cards([
-    { title: 'Multi-platform composer', text: 'Write once, schedule across your connected channels from a single screen.' },
-    { title: 'Multi-channel preview', text: 'See how a post will actually look on each platform before it goes out — not a guess after publishing.' },
-    { title: 'Unified inbox', text: 'Every comment and DM, across every connected channel, in one inbox instead of a rotation of apps.' },
-    { title: 'Instagram private replies', text: 'Comment-to-DM handling on Instagram is built in, so a public "price?" comment can move to a private conversation cleanly.' },
-    { title: 'AI-drafted replies, human approval', text: 'AI drafts the reply to a comment or DM using your knowledge base; a person approves before it sends — the same governance as the rest of Jwero.' },
-    { title: 'Analytics', text: 'Performance across your scheduled posts and channels, next to the same inbox you reply from.' },
-  ])}`
-)}
+${L.section(`<div class="which-page"><p><b>Planning, making and publishing posts,</b> and one inbox for comments? You are on the right page.</p><p><b>Turning DMs and comments into sales?</b> <a href="/products/instagram-facebook">Instagram & Facebook commerce →</a> · Reading up first? <a href="/instagram-for-jewellers">Instagram for jewellers →</a></p></div>`)}
+
+${L.section(`${L.sectionHead('ONE REEL, START TO FINISH', 'From the calendar to a visit.', '')}${socFlow()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, ONE CALENDAR', 'What social media management for a jeweller has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Plan the festival calendar</h3><p>Akshaya Tritiya, Diwali, wedding season, launches and weekly posts, drafted weeks ahead.</p><a href="/products/campaigns">Campaigns →</a></article>
+  <article><h3>2. Content made for you</h3><p>AI captions and hashtags in English and Indian languages, images and short videos from your catalogue photos, for posts and reels.</p><a href="/products/catalog">Catalogue →</a></article>
+  <article><h3>3. One composer, every platform</h3><p>Schedule and publish to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business.</p><a href="/instagram-for-jewellers">Instagram for jewellers →</a></article>
+  <article><h3>4. One inbox for every comment and DM</h3><p>AI drafts replies for your team’s approval; “price?” comments are turned into DMs automatically.</p><a href="/products/instagram-facebook">Instagram & Facebook commerce →</a></article>
+  <article><h3>5. Followers into customers</h3><p>Loyalty points for comments, follows, likes and shares, price replies at today’s rate, and a move to WhatsApp.</p><a href="/products/loyalty">Loyalty →</a></article>
+  <article><h3>6. See what works</h3><p>Reach and engagement by post and platform, plus the chats, visits and sales each post started.</p><a href="/products/reports">Reports →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'The hours social media takes today.', 'Your numbers, not ours.')}<div class="callc" data-socc>
+  <div class="callc-in">
+    <label>Posts and reels a week<input type="number" inputmode="numeric" data-sc="posts" value="5" min="0"></label>
+    <label>Minutes to make and post each, by hand<input type="number" inputmode="numeric" data-sc="pm" value="60" min="0"></label>
+    <label>Comments and DMs a day<input type="number" inputmode="numeric" data-sc="cm" value="40" min="0"></label>
+    <label>Minutes per reply, by hand<input type="number" inputmode="decimal" data-sc="rm" value="2" min="0" step="0.5"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Hours a month on posts</span><b data-sc-o="ph">0</b></p>
+    <p><span>Hours a month on replies</span><b data-sc-o="rh">0</b></p>
+    <p class="callc-save"><span>Hours a month, by hand</span><b data-sc-o="tot">0</b></p>
+    <p class="cta-note">With AI making content and drafting replies, your team reviews instead of creating from scratch. An estimate from your inputs.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'Posting by hand, a generic scheduler, or Jwero.', '')}${socTable()}`)}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to run social media for a jewellery shop.', 'Five steps.')}${L.steps(SOC_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
-  'A DM answered in the unified inbox lands on the same customer record your WhatsApp and CRM already use — no separate export.',
-  'The AI drafting a reply here follows the same "AI drafts, human approves" governance as the AI Sales Agents elsewhere on Jwero.',
-  'Instagram and Facebook here are the same official integrations behind <a href="/products/instagram-facebook">Instagram & Facebook Commerce</a> — this page is the broader, multi-platform version of that experience.',
-  'Paying to promote a post? <a href="/products/ads-manager">Ads Manager</a> runs the paid campaigns on the same platform, with its own budget alerts and approvals.',
+  'A comment, a DM and a WhatsApp chat from the same person land on one customer record.',
+  'Posts use the same catalogue and prices as the website and the counter.',
+  'Engagement earns loyalty points the customer can use at the counter.',
 ])}
 
-
-${L.section(`${L.sectionHead('SOCIAL MEDIA QUESTIONS', 'Platform coverage and who approves what.', '')}${L.faqBlock([
-  { q: 'Which platforms are supported?', a: 'Instagram, Facebook, X, LinkedIn, Pinterest, YouTube and Google Business are live.' },
-  { q: 'Does the AI reply on its own?', a: 'It drafts; your team approves before anything sends, until you choose to promote a reply type — same governance as the rest of Jwero.' },
-  { q: 'How is this different from Instagram & Facebook Commerce?', a: 'That page is the focused Instagram/Facebook experience; this is the broader multi-platform scheduling, inbox and analytics layer built on the same foundation.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="socialmedia">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('One inbox for every comment and DM.', 'Schedule across channels, reply from one place, and let AI draft the first response while your team approves. Ask which platforms are live for your account.', 'socialmedia')}
+${L.ctaBand('One inbox for every comment and DM.', 'Tell us your platforms. We will show a month of posts and replies in Jwero.', 'social')}
 `,
 };
 

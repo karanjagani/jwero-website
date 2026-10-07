@@ -2796,3 +2796,13 @@ document.addEventListener('click', function (e) {
     set('chats', Math.round(chats).toLocaleString('en-IN')); set('buyers', Math.round(buyers).toLocaleString('en-IN')); set('sales', '\u20b9' + Math.round(sales).toLocaleString('en-IN')); set('roas', '\u20b9' + roas.toFixed(1)); }
   root.addEventListener('input', run); run();
 })();
+
+// Social media page: hours spent today.
+(function () {
+  var root = document.querySelector('[data-socc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-sc="' + k + '"]') || {}).value || 0; };
+  function run() { var ph = v('posts') * 4.33 * v('pm') / 60, rh = v('cm') * 26 * v('rm') / 60;
+    var set = function (k, t) { var el = root.querySelector('[data-sc-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('ph', Math.round(ph) + ' hours'); set('rh', Math.round(rh) + ' hours'); set('tot', Math.round(ph + rh) + ' hours'); }
+  root.addEventListener('input', run); run();
+})();
