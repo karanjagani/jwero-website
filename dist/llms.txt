@@ -710,3 +710,4 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Self Managed: Your Team Runs It, Jwero Powers It: https://jwero.ai/self-managed
 - Count Your Team: What a Jewellery Business Spends to Keep Up: https://jwero.ai/count-your-team
 - Success Stories: What Jwero Took Responsibility For: https://jwero.ai/success-stories
+- Refer a Jeweller to Jwero: Save 10% for Each One Who Joins: https://jwero.ai/refer

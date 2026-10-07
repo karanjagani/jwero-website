@@ -10,6 +10,8 @@ const path = require('path');
 
 const ROOT = __dirname;
 const DIST = path.join(ROOT, 'dist');
+// Tracking IDs. Leave empty until the accounts exist; env JW_GTM / JW_GA4 / JW_META override.
+const ANALYTICS = { gtm: '', ga4: '', meta: '' };
 const SITE = 'https://jwero.ai';
 const BRAND = 'Jwero';
 const TAGLINE = 'You focus on jewellery. We handle the chaos';
@@ -41,8 +43,7 @@ const CONTENT_FILES = [
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
   'roles-leadership', 'roles-frontline', 'roles-growth', 'roles-manufacturing',
-  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal', 'jbaas', 'legacy-blog', 'positioning',
-];
+  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal', 'jbaas', 'legacy-blog', 'positioning', 'landing'];
 const pages = [];
 for (const f of CONTENT_FILES) {
   const lastmod = fs.statSync(path.join(ROOT, 'content', `${f}.js`)).mtime.toISOString().slice(0, 10);
@@ -378,6 +379,14 @@ function compactTiers(html) {
 </div></div></section>`);
 }
 function journeyFix(html, p) {
+  if (p.slug === 'customers') {
+    let STORIES = []; try { STORIES = require('./content/stories'); } catch (e) {}
+    if (STORIES.length) {
+      const L6 = require('./lib');
+      const blk = L6.section(`${L6.sectionHead('RESULTS', 'What changed, in their numbers.', '')}<div class="bl-grid">${STORIES.map((st) => `<div class="bl-card" style="padding:18px"><span class="bl-tag">${st.kind}</span><b>${st.business}, ${st.city}</b><span class="bl-desc">${st.before} → ${st.after}</span>${st.quote ? `<p class="cta-note" style="margin:8px 0 0">“${st.quote}”</p>` : ''}</div>`).join('')}</div>`, { tone: 'tint' });
+      const first = html.indexOf('</section>', html.indexOf('<section class="hero')) + 10; html = html.slice(0, first) + blk + html.slice(first);
+    }
+  }
   // Product pages: a visible question whose answer repeats a job card is dropped
   // from the page (it stays in the FAQ schema for search and AI answers).
   if (/^products\/[^/]+$/.test(p.slug || '')) {
@@ -501,6 +510,30 @@ function journeyFix(html, p) {
     if (s.length > 65) { s = s.slice(0, 62); s = s.slice(0, s.lastIndexOf(' ')).replace(/[\s,:;&-]+$/, ''); }
     return `<title>${s}</title>`;
   });
+  if (/^lp\//.test(p.slug || '')) {
+    html = html.replace(/<div class="doors-strip[\s\S]*?<\/div>\s*<\/div>/, '').replace(/<div class="sticky-bar"[\s\S]*?<\/div>/, '');
+  }
+  // Self-serve start is a waitlist today: every start button joins the waitlist on WhatsApp.
+  html = html.replace(/<a([^>]*?)href="(?:https:\/\/os\.jwero\.ai\/signup[^"]*|\/start(?:\?[^"]*)?)"([^>]*)>([\s\S]*?)<\/a>/g, (m0, pre, post, inner) => {
+    if (p.slug === 'start' && /data-start-go/.test(pre + post)) return m0;
+    const attrs = (pre + ' ' + post).replace(/\s*(rel|target|data-trial|data-start-go)(="[^"]*")?/g, '').replace(/\s+/g, ' ').trim();
+    let text = inner.replace(/<b>[^<]*<\/b>/, '<b>Join the waitlist</b>').replace(/<small>[^<]*<\/small>/, '<small>First month ₹3,600 when your account opens</small>');
+    text = text.replace(/Create your workspace[^<]*/, 'Join the waitlist').replace(/Start in three steps/, 'Get your account');
+    text = text.replace(/Start for ₹3,600|Start ₹3,600/g, 'Join the waitlist');
+    if (!/<b>|<span/.test(inner)) text = /₹3,600|Start|Create your workspace|Join/.test(inner) ? 'Join the waitlist' : inner;
+    return `<a ${attrs} href="#" data-wa="waitlist" data-waitlist>${text}</a>`;
+  });
+  html = html.replace(/(<a class="sb-start"[^>]*>)[^<]*(<\/a>)/, '$1Waitlist$2');
+  // Articles end with the reader's own next step: the calculator or page for the topic.
+  if (/^blog\//.test(p.slug || '') || p.legacy) {
+    const NEXT = [[/girvi|gold-loan/, '/products/girvi#girvi-calc', 'Work out girvi interest with the calculator'], [/dead-stock|ageing|inventory|stock/, '/tools/dead-stock-calculator', 'Put your own stock into the dead stock calculator'], [/scheme/, '/tools/gold-scheme-calculator', 'Work out a scheme maturity with the calculator'], [/wastage|gold-loss|karigar|manufactur|job-work|fine-weight/, '/tools/gold-loss-calculator', 'Measure your gold loss with the calculator'], [/whatsapp|chatbot|instagram|dm/, '/tools/whatsapp-revenue-estimator', 'Estimate what faster WhatsApp replies are worth'], [/incentive|staff|payroll|hr/, '/products/hr-payroll#hr-calc', 'Work out a salesperson’s incentive'], [/price|making-charge|gst|cash-limit|old-gold|huid|e-way|e-invoic|billing|pos/, '/blog/how-to-calculate-gold-jewellery-price', 'Price a piece with the gold price calculator'], [/footfall|showroom|walkout|cctv/, '/products/showroom', 'See footfall and walkouts in the showroom software'], [/ads|campaign|email|marketing|segment|journey|occasion|birthday/, '/products/campaigns', 'See campaigns and journeys in Jwero'], [/ai|agent|voice|chatgpt|claude/, '/products/ai-sales-agents', 'See AI agents with approvals in Jwero']];
+    const hit = NEXT.find(([r]) => r.test(p.slug));
+    if (hit && !/post-next/.test(html)) {
+      const box = `<section class="section"><div class="container"><div class="post-next"><p class="in-short-tag">Your next step</p><p><a class="btn btn-primary btn-sm" href="${hit[1]}">${hit[2]} →</a> <a class="btn btn-ghost btn-sm" href="#" data-wa="blog-${p.slug.replace(/^blog\//, '').slice(0, 30)}">Ask us about this on WhatsApp</a></p></div></div></section>`;
+      const at = html.lastIndexOf('<section class="cta-band">'); if (at > 0) html = html.slice(0, at) + box + html.slice(at);
+    }
+  }
+
   return html;
 }
 
@@ -539,6 +572,7 @@ function orgSchema() {
     areaServed: ['IN', 'AE', 'GB', 'SG', 'US', 'AU', 'CA'],
     logo: SITE + '/assets/brand/jwero-logo.png',
     sameAs: SOCIALS.map(([h]) => h),
+    founder: [{ '@type': 'Person', name: 'Mahendra Jagani', url: SITE + '/company' }, { '@type': 'Person', name: 'Karan Jagani', jobTitle: 'Co-Founder & CEO', url: SITE + '/company' }, { '@type': 'Person', name: 'Manav Jagani', jobTitle: 'Co-Founder & CTO', url: SITE + '/company' }],
     address: { '@type': 'PostalAddress', streetAddress: 'Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road', addressLocality: 'Bhayandar (West), Thane', addressRegion: 'Maharashtra', postalCode: '401101', addressCountry: 'IN' },
     contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: 'care@jwero.ai', telephone: '+91-91699-59959', url: SITE + '/book-demo' },
   };
@@ -1054,7 +1088,7 @@ function withIcpHome(html, slug) {
   const rows = pre ? pre[1].map((k) => L4.DEPARTMENTS.find((d) => d.lever === k)).filter(Boolean) : L4.DEPARTMENTS;
   const hooks = L4.section(`<span id="count-yours"></span>${L4.sectionHead('COUNT YOUR TOOLS', cfg[2], pre ? `We have ticked what ${cfg[3] || pre[2]} usually runs. Tap to change it to match yours, or <a href="#" data-stackm-clear-link>clear and pick your own</a>.` : 'Tap the ones you run today and watch what they cost you.')}${L4.stackMerge(ICP_TOOLS[cfg[0]] && [...new Set([...ICP_TOOLS[cfg[0]], ...(pre ? pre[0] : [])])]).replace('<div class="stackm" data-stackm', `<div class="stackm" data-stackm-preset="${pre ? pre[0].join('|').replace(/&/g, '&amp;') : ''}" data-stackm`)}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too →</a></p>`, { tone: 'tint' })
     + L4.section(`${L4.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole business.', 'The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}${L4.compareRows(rows)}`);
-  const security = L4.section(`<div class="gem-head"><h2>Security and privacy delivered, just as you want.</h2></div>${L4.trustStrip()}`, { tone: 'tint' });
+  const security = L4.section(`<div class="gem-head"><h2>Security and privacy delivered, just as you want.</h2></div>${L4.trustStrip({ inOnly: true })}`, { tone: 'tint' });
   const ti = html.indexOf('id="tiers"');
   if (ti > 0) { const ts = html.lastIndexOf('<section', ti); const te = html.indexOf('</section>', ti) + 10; html = html.slice(0, ts) + hooks + html.slice(ts, te) + security + html.slice(te); }
   // trim to about a dozen sections, in the home page's order
@@ -1514,6 +1548,13 @@ function layout(page) {
     schemas.push(page.schema);
   }
   const robotsMeta = page.noindex ? `<meta name="robots" content="noindex,follow">` : '';
+  // Tracking: set the IDs in ANALYTICS (or env JW_GTM / JW_GA4 / JW_META) and the snippets render on every page.
+  const A = { gtm: process.env.JW_GTM || ANALYTICS.gtm, ga4: process.env.JW_GA4 || ANALYTICS.ga4, meta: process.env.JW_META || ANALYTICS.meta };
+  const analyticsHead = [
+    A.gtm ? `<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${A.gtm}');</script>` : '',
+    A.ga4 && !A.gtm ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${A.ga4}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${A.ga4}');</script>` : '',
+    A.meta ? `<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${A.meta}');fbq('track','PageView');</script>` : '',
+  ].join('');
   return `<!doctype html>
 <html lang="${page.lang || 'en'}" data-webchat="${WEBCHAT.siteKey ? 'on' : 'off'}">
 <head>
@@ -1521,7 +1562,7 @@ function layout(page) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${serpTitle(page.title)}</title>
 <meta name="description" content="${serpDesc(page.description)}">
-${robotsMeta}
+${robotsMeta}${analyticsHead}
 <link rel="canonical" href="${canonical}">${page.slug === 'index' || page.slug === 'hi' ? `\n<link rel="alternate" hreflang="en" href="${SITE}/">\n<link rel="alternate" hreflang="hi" href="${SITE}/hi">\n<link rel="alternate" hreflang="x-default" href="${SITE}/">` : ''}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${BRAND}">

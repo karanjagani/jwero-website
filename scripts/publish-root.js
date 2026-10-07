@@ -23,6 +23,7 @@ if (fs.existsSync(MANIFEST)) for (const e of JSON.parse(fs.readFileSync(MANIFEST
 
 const withBase = (html) => !BASE ? html : html
   .replace(/<html /, `<html data-base="${BASE}" `)
+  .replace(/<\/head>/, BASE ? '<meta name="robots" content="noindex, nofollow"></head>' : '</head>')
   .replace(/\b(href|src|action|poster)="\/(?!\/)/g, `$1="${BASE}/`)
   .replace(/url\((['"]?)\/assets\//g, `url($1${BASE}/assets/`)
   .replace(/content="0;\s*url=\/(?!\/)/g, `content="0; url=${BASE}/`);

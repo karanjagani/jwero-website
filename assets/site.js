@@ -18,6 +18,8 @@
     referral: 'Hi Jwero, I am a customer and I have referred a jeweller to you. Their name and business:',
     one: 'Hi Jwero, I would like to start with just one function. The one I have in mind is:',
     call: 'Hi Jwero, please call me about my jewellery business.',
+    waitlist: 'Hi Jwero, please add me to the waitlist for a Jwero account. My business:',
+    refer: 'Hi Jwero, I am a jeweller referring another jeweller. Their name and city:',
     start: 'Hi Jwero, this is what I want to achieve for my jewellery business:',
     plan: 'Hi Jwero, I would like a Jwero business plan for my jewellery business.',
     guarantee: 'Hi Jwero, I want to know more about the Jwero Efficiency Guarantee for my jewellery business.',
@@ -165,9 +167,16 @@
 
   var PERSONA_NAMES = { single: 'a single-store jeweller', chain: 'a multi-store chain', maker: 'a manufacturer', b2b: 'a wholesaler / B2B business', d2c: 'a D2C brand', franchise: 'a franchise network', trader: 'a diamond trader', staff: 'on the staff of a jewellery business' };
   function personaKey() { var q = /[?&]p=(single|chain|maker|b2b|d2c|franchise|trader|staff)/.exec(location.search); if (q) return q[1]; try { return localStorage.getItem('jwero-persona') || ''; } catch (e) { return ''; } }
+  // Where the visitor came from, kept for the session and sent along in the WhatsApp message.
+  var SRC = (function () { try { var p = new URLSearchParams(location.search); var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'ref', 'gclid', 'fbclid']; var got = {}; keys.forEach(function (k) { if (p.get(k)) got[k] = p.get(k).slice(0, 60); }); if (!Object.keys(got).length && document.referrer && document.referrer.indexOf(location.host) < 0) { try { got.referrer = new URL(document.referrer).hostname; } catch (e) {} } var prev = JSON.parse(sessionStorage.getItem('jw-src') || '{}'); var out = Object.keys(got).length ? got : prev; sessionStorage.setItem('jw-src', JSON.stringify(out)); return out; } catch (e) { return {}; } })();
+  function srcNote() { var parts = []; if (SRC.ref) parts.push('referred by ' + SRC.ref); if (SRC.utm_source) parts.push('via ' + SRC.utm_source + (SRC.utm_medium ? '/' + SRC.utm_medium : '') + (SRC.utm_campaign ? '/' + SRC.utm_campaign : '')); else if (SRC.referrer) parts.push('via ' + SRC.referrer); return parts.length ? ' (' + parts.join(', ') + ')' : ''; }
+  window.dataLayer = window.dataLayer || [];
+  function track(name, data) { try { var ev = { event: name, page: HERE || '/', persona: personaKey() || '', ts: Date.now() }; for (var k in data) ev[k] = data[k]; for (var j in SRC) ev['src_' + j] = SRC[j]; window.dataLayer.push(ev); if (window.gtag) window.gtag('event', name, ev); if (window.fbq && /wa_click|waitlist|demo|callback/.test(name)) window.fbq('trackCustom', name, ev); } catch (e) {} }
+  window.jweroTrack = track;
+  track('page_view', { title: document.title.slice(0, 80) });
   function waLink(ctx, extra) {
     var who = PERSONA_NAMES[personaKey()];
-    var msg = (WA_MESSAGES[ctx] || WA_MESSAGES.default) + (extra || '') + (who && ctx !== 'announce' ? ' (I am ' + who + '.)' : '');
+    var msg = (WA_MESSAGES[ctx] || WA_MESSAGES.default) + (extra || '') + (who && ctx !== 'announce' ? ' (I am ' + who + '.)' : '') + srcNote();
     var page = HERE.replace(/\W+/g, '-').replace(/^-|-$/g, '') || 'home';
     return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg + ' [ref:' + page + '/' + ctx + ']');
   }
@@ -266,6 +275,7 @@
       var isDemo = /^\/book-demo\/?$/.test(href), isTel = href.indexOf('tel:') === 0;
       if (!isWa && !isDemo && !isTel && mode === null) return;
       e.preventDefault();
+      track(isDemo ? 'demo_click' : isTel ? 'call_click' : 'wa_click', { ctx: a.getAttribute('data-wa') || mode || (isTel ? 'tel' : 'wa'), label: (a.textContent || '').trim().slice(0, 60) });
       var msg = '';
       if (href.indexOf('https://wa.me/') === 0) { try { msg = decodeURIComponent((href.split('text=')[1] || '')).replace(/\s*\[ref:[^\]]*\]\s*$/, ''); } catch (x) {} }
       open({ mode: mode || (isDemo ? 'video' : isTel ? 'voice' : ''), direct: isDemo, wa: a.getAttribute('data-wa-extra') ? waLink(a.getAttribute('data-wa') || 'default', a.getAttribute('data-wa-extra')) : isWa && href.indexOf('https://') === 0 ? href : '', ctx: a.getAttribute('data-wa') || (isDemo ? 'book-demo' : isTel ? 'call' : ''), msg: isWa ? msg : '' });
@@ -3003,4 +3013,19 @@ document.addEventListener('click', function (e) {
     show(0);
     if ('IntersectionObserver' in window) { var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting && !cmp.classList.contains('is-paused')) start(); else if (!en.isIntersecting && timer) { clearInterval(timer); timer = null; } }); }, { threshold: 0.3 }); io.observe(cmp); } else start();
   });
+})();
+
+// Measurement: waitlist, share and calculator use, and any outbound link, as dataLayer events.
+(function () {
+  var t = window.jweroTrack; if (!t) return;
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a, button'); if (!a) return;
+    if (a.hasAttribute('data-waitlist')) t('waitlist_click', { label: (a.textContent || '').trim().slice(0, 60) });
+    else if (a.hasAttribute('data-share')) t('share_click', {});
+    else if (a.tagName === 'A' && /^https?:/.test(a.getAttribute('href') || '') && a.hostname !== location.hostname) t('outbound_click', { url: a.href.slice(0, 120) });
+  }, true);
+  var calcs = document.querySelectorAll('.callc, [data-stackm], [data-sim], .tool-calc'); var seen = {};
+  calcs.forEach(function (c, i) { c.addEventListener('input', function () { if (seen[i]) return; seen[i] = 1; t('calc_used', { calc: c.id || c.className.split(' ')[0] }); }); });
+  var marks = [25, 50, 75, 100], done = {};
+  window.addEventListener('scroll', function () { var p = Math.round((scrollY + innerHeight) / document.body.scrollHeight * 100); marks.forEach(function (m) { if (p >= m && !done[m]) { done[m] = 1; t('scroll_depth', { depth: m }); } }); }, { passive: true });
 })();

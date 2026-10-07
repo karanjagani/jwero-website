@@ -11,6 +11,7 @@ const home = {
     description: 'The Autonomous Jewellery OS, run by AI: CRM, showroom, POS and billing, inventory, purchase, manufacturing, accounts, HR and reports on one record, with WhatsApp and Instagram commerce, gold savings schemes and a governed AI workforce.',
     url: 'https://jwero.ai',
     offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Per month, billed monthly, excluding GST. Every module. First month ₹3,600.' },
+    review: require('./positioning').QUOTES.slice(0, 5).map(([body, name, biz]) => ({ '@type': 'Review', reviewBody: body, author: { '@type': 'Person', name: String(name).replace(/<[^>]*>/g, '') }, publisher: { '@type': 'Organization', name: String(biz || '').replace(/<[^>]*>/g, '') } })),
   },
   faqs: [
     { q: 'What is Jwero?', a: 'Jwero is the Autonomous Jewellery OS, run by AI — one system where customers, catalogue, stock, counter billing, purchase, workshop, accounts and team share one record with every selling channel, and an AI workforce drafts the work under your approval.' },
@@ -21,7 +22,7 @@ const home = {
   ],
   body: `
 ${L.homeHero({
-  kicker: 'The Autonomous Jewellery OS, run by AI',
+  kicker: 'You focus on jewellery. We handle the chaos.',
   h1: 'Jewellery software that runs the whole business: customers, counter, stock, team and books.',
   sub: 'Customers, counter, stock, workshop, books and team on one record. AI drafts the routine work and flags what is slipping, and nothing goes out without your yes.',
 })}
@@ -41,6 +42,14 @@ ${L.section(`${L.sectionHead('WHO IT IS FOR', 'Built for your kind of jewellery 
   ].map(([i, t, d, h]) => `<a href="${h}"><span class="home-who-ico">${L.icon(i)}</span><b>${t}</b><span>${d}</span><i>See how it works →</i></a>`).join('')}</div>
   <p class="cta-note" style="margin-top:14px;text-align:center"><a href="/solutions">All 45 businesses, problems and roles →</a></p>`)}
 
+${L.section(`${L.sectionHead('WHERE MOST SHOPS START', 'Three things on day one. The rest when you need it.', 'You do not switch on 35 products. You switch on the three that cost you sales today, and each one replaces something you pay for now.')}
+  <div class="bl-goals bl-goals-3 home-three">${[
+    ['chat', 'WhatsApp, answered', 'Your business number on the official API, the catalogue at today’s rate, replies drafted by AI for your approval, payments in the chat.', 'Replaces: a personal number, a bulk-message tool, a payment link app', '/products/whatsapp'],
+    ['till', 'Billing at the live rate', 'Scan to bill with the price breakup, old gold exchange, GST and day close, with the books kept in step with Tally.', 'Replaces: the calculator, the rate board, a billing package, re-entry into Tally', '/products/pos'],
+    ['box', 'Stock you can see', 'Every piece by weight, purity and HUID, valued today, with ageing and dead stock flagged.', 'Replaces: the stock sheet, the yearly stocktake surprise', '/products/inventory'],
+  ].map(([i, t, d, r, h]) => `<a href="${h}"><span class="home-who-ico">${L.icon(i)}</span><b>${t}</b><span>${d}</span><i>${r}</i></a>`).join('')}</div>
+  <p class="cta-note" style="margin-top:14px;text-align:center">Customers, catalogue and stock are imported for you. Most shops go live in a day. <a href="/products">See every product →</a></p>`)}
+
 ${L.section(
   `${L.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole jewellery business.', 'Not only how you sell. The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}
   <div data-cmp-tabs>${L.compareRows(L.DEPARTMENTS)}</div>`
@@ -51,7 +60,10 @@ ${L.section(
   ${L.gemStage2()}`
 , { tone: 'tint' })}
 
-${require('./jbaas').section()}
+${L.section(`<div class="price-line">
+  <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Run it yourself, or let Jwero run it.</h2><p>Every module for ₹18,000 a month, first month ₹3,600, when your account opens. Or let Jwero’s specialists and AI run the work for you, with no subscription and every tool included.</p></div>
+  <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=home-price">Join the waitlist</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
+</div>`, { tone: 'tint' })}
 
 ${L.section(
   `<span id="count-yours"></span>${L.sectionHead('COUNT YOUR TOOLS', `${L.STACK_N} separate tools become one.`, 'Pick your kind of business, or answer yes for each area you pay software for. See what it costs and what Jwero saves.')}
@@ -65,7 +77,7 @@ ${L.section(
 
 ${L.section(
   `<div class="gem-head"><h2>Security and privacy delivered, just as you want.</h2></div>
-  ${L.trustStrip()}`
+  ${L.trustStrip({ inOnly: true })}`
 , { tone: 'tint' })}
 
 ${require('./positioning').refer()}

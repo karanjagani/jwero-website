@@ -774,11 +774,12 @@ function trustBadges() {
 
 // The short trust strip for the home page: every standard as a small seal with
 // its real status, three facts, and a door to each trust document.
-function trustStrip() {
+function trustStrip(opts = {}) {
+  const badges = opts.inOnly ? TRUST_BADGES.filter(([, , st]) => st === 'in') : TRUST_BADGES;
   const docs = [['/trust', 'Trust Centre'], ['/trust/security', 'Security'], ['/legal/privacy', 'Privacy Policy'], ['/legal/terms', 'Terms of Use'], ['/legal/data-policy', 'Data Policy'], ['/legal/sub-processors', 'Sub-processors'], ['/legal/dpdp', 'DPDP statement']];
   return `
 <div class="tstrip">
-  <div class="tstrip-seals">${TRUST_BADGES.map(([s, n, st, d, h]) => `<a class="tseal tb-${st}" href="${h}" title="${esc(n)}: ${esc(TRUST_STATUS[st])}. ${esc(d)}"><span class="tseal-mark" aria-hidden="true"><b>${s}</b></span><span class="tseal-name">${n.replace('India’s ', '').replace(', 2023', '').replace(' and penetration test', '').replace('ISO/IEC', 'ISO')}</span><em>${TRUST_STATUS[st]}</em></a>`).join('')}</div>
+  <div class="tstrip-seals">${badges.map(([s, n, st, d, h]) => `<a class="tseal tb-${st}" href="${h}" title="${esc(n)}: ${esc(TRUST_STATUS[st])}. ${esc(d)}"><span class="tseal-mark" aria-hidden="true"><b>${s}</b></span><span class="tseal-name">${n.replace('India’s ', '').replace(', 2023', '').replace(' and penetration test', '').replace('ISO/IEC', 'ISO')}</span><em>${TRUST_STATUS[st]}</em></a>`).join('')}</div>
   <ul class="tstrip-facts">
     <li>${icon('shield')}<span><b>Your own database.</b> Never stored with another jeweller’s.</span></li>
     <li>${icon('key')}<span><b>Encrypted</b> in transit and at rest, with roles you control.</span></li>
@@ -1504,6 +1505,7 @@ function ctaBand(title, sub, waContext, opts = {}) {
     ? `<a class="btn btn-ghost-light" href="/enterprise">Talk to a specialist</a>`
     : `<a class="btn btn-ghost-light" href="/book-demo">Book a demo</a>`;
   const label = opts.label || 'Chat or call with us';
+  const after = `<p class="cta-after">You message first; a Jwero specialist replies on WhatsApp in working hours. Prefer a call? <a href="#" data-wa="call">Ask for a call back</a>.</p>`;
   const ticker = CTA_TICKER.map(([i, t]) => `<span>${icon(i)}${t}</span>`).join('');
   return `
 <section class="cta-band">
@@ -1519,6 +1521,7 @@ function ctaBand(title, sub, waContext, opts = {}) {
         ${secondary}
       </div>
       <p class="cta-note">You message us first; we never message you uninvited. <a class="cta-hindi" lang="hi" href="#" data-wa="hindi" data-direct>हिन्दी में बात करें →</a></p>
+      ${after}
     </div>
     <div class="cta-ticker" aria-hidden="true"><div class="cta-track">${ticker}${ticker}</div></div>
   </div>

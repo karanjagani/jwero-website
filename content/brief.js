@@ -20,7 +20,7 @@ ${L.hero({
 ${L.section(`
 <article class="brief" id="brief">
   <header class="brief-head">
-    <div>${L.mark('brief-mark')}<strong>Jwero</strong> · The Autonomous Jewellery OS, run by AI</div>
+    <div>${L.mark('brief-mark')}<strong>Jwero</strong> · You focus on jewellery. We handle the chaos.</div>
     <span>jwero.ai · care@jwero.ai · +91 91699 59959</span>
   </header>
 
