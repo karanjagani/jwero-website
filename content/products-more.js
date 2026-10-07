@@ -281,7 +281,7 @@ const qFaqs = [
   { q: 'What is a jewellery estimate?', a: 'A written price for chosen pieces before the sale: metal at today’s rate, making charges and stones. In Jwero it is a numbered quotation the customer can accept from her phone.' },
   { q: 'How do I make a jewellery estimate?', a: 'Pick the pieces from your catalogue; Jwero prices them at today’s rate with your making and wastage rules, and sends a numbered link and PDF on WhatsApp or email.' },
   { q: 'What is the difference between a quotation, an estimate and an invoice?', a: 'An estimate or quotation is the price offered before she decides. An invoice is the bill after the sale. In Jwero an accepted quotation converts to an order, and the invoice follows.' },
-  { q: 'How does a quotation get created?', a: 'From her record, from a catalogue enquiry in one step, by voice at the counter in English, Hindi or Hinglish, or by an automation. Sending always needs your confirm.' },
+  { q: 'How does a quotation get created?', a: 'From her record, from a catalogue enquiry in one step, or by an automation. Sending always needs your confirm.' },
   { q: 'Can the customer accept it online?', a: 'Yes. She opens the link, sees the numbered quotation with its lines and PDF, and accepts or declines. It is written to her record.' },
   { q: 'Is the rate locked?', a: 'Every quotation has a validity window. Whether the rate is held inside it is your rule.' },
   { q: 'What happens if she goes quiet?', a: 'A follow-up is drafted after the interval you set and waits for your approval.' },
@@ -310,7 +310,7 @@ ${L.section(`${L.sectionHead('ONE ENQUIRY, START TO FINISH', 'From “how much?�
 
 ${L.section(`${L.sectionHead('SIX JOBS, ONE QUOTATION', 'What jewellery quotation software has to do.', '')}<div class="wa-jobs">
   <article><h3>1. Priced at today’s rate</h3><p>Lines from your catalogue, priced from the rate with your making and wastage rules.</p><a href="/platform/pricing-engine">Pricing engine →</a></article>
-  <article><h3>2. Made four ways</h3><p>From her record, a catalogue enquiry, by voice at the counter in English, Hindi or Hinglish, or by automation.</p><a href="/products/digital-catalogues">Digital catalogues →</a></article>
+  <article><h3>2. Made three ways</h3><p>From her record, a catalogue enquiry, or by automation.</p><a href="/products/digital-catalogues">Digital catalogues →</a></article>
   <article><h3>3. Sent as a numbered link</h3><p>A link and PDF on WhatsApp or email, after your tap, with a validity window.</p><a href="/products/whatsapp">WhatsApp →</a></article>
   <article><h3>4. Decided from her phone</h3><p>She accepts or declines online, and it is written to her record.</p><a href="/products/crm">Customer record →</a></article>
   <article><h3>5. Followed up</h3><p>Quiet after the interval you set? A nudge is drafted and waits for your approval.</p><a href="/products/journeys">Journeys →</a></article>

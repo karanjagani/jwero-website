@@ -1865,7 +1865,7 @@ PRODUCTS
 
 ## Quotations
 
- Numbered quotations at the live rate, sent as a link and a PDF, accepted or declined online, created from an enquiry, a catalogue request or by voice at the counter.
+ Numbered quotations at the live rate, sent as a link and a PDF, accepted or declined online, created from an enquiry or a catalogue request.
 
  Explore → 
 
@@ -7426,8 +7426,8 @@ JEWELLERY QUOTATIONS AND ESTIMATES
  Lines from your catalogue, priced from the rate with your making and wastage rules.
  Pricing engine → 
 
-## 2. Made four ways
- From her record, a catalogue enquiry, by voice at the counter in English, Hindi or Hinglish, or by automation.
+## 2. Made three ways
+ From her record, a catalogue enquiry, or by automation.
  Digital catalogues → 
 
 ## 3. Sent as a numbered link
@@ -7536,7 +7536,7 @@ Q: What is the difference between a quotation, an estimate and an invoice?
 A: An estimate or quotation is the price offered before she decides. An invoice is the bill after the sale. In Jwero an accepted quotation converts to an order, and the invoice follows.
 
 Q: How does a quotation get created?
-A: From her record, from a catalogue enquiry in one step, by voice at the counter in English, Hindi or Hinglish, or by an automation. Sending always needs your confirm.
+A: From her record, from a catalogue enquiry in one step, or by an automation. Sending always needs your confirm.
 
 Q: Can the customer accept it online?
 A: Yes. She opens the link, sees the numbered quotation with its lines and PDF, and accepts or declines. It is written to her record.

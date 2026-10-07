@@ -142,7 +142,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 
 - Page: https://jwero.ai/products/quotations
 - Numbered quotations priced from the catalogue at today's gold rate with the jeweller's making and wastage rules; a validity window on each.
-- Created from the customer record, a catalogue enquiry, by voice at the counter (English, Hindi, Hinglish) or by automation; sending needs a human confirm.
+- Created from the customer record, a catalogue enquiry or by automation; sending needs a human confirm.
 - Sent as a link and PDF on WhatsApp or email; the customer accepts or declines online; result written to her record.
 - Follow-ups drafted for approval when she goes quiet; every revision numbered; accepted quotes convert to a sales order.
 
