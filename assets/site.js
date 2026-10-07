@@ -2775,3 +2775,14 @@ document.addEventListener('click', function (e) {
     set('msgs', Math.round(m).toLocaleString('en-IN')); set('cost', '\u20b9' + Math.round(m * v('cost')).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+
+// Campaigns page: what a campaign costs before you send it.
+(function () {
+  var root = document.querySelector('[data-chc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-ch="' + k + '"]') || {}).value || 0; };
+  var inr = function (n) { return '\u20b9' + Math.round(n).toLocaleString('en-IN'); };
+  function run() { var n = v('n'), wa = v('wa') * n * 1.05, sms = v('sms') * n * 0.30, em = v('em') * n * 0.03;
+    var set = function (k, t) { var el = root.querySelector('[data-ch-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('wa', inr(wa)); set('sms', inr(sms)); set('em', inr(em)); set('tot', inr(wa + sms + em)); }
+  root.addEventListener('input', run); run();
+})();

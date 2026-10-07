@@ -432,73 +432,114 @@ ${L.ctaBand('Build a journey your team can watch.', 'Tell us which moment you mi
 `,
 };
 
+// Campaigns, rebuilt 2026-10-07. Confirmed by Jwero: RCS live; A/B testing in
+// campaigns. Ads and social posts are NOT part of campaigns (they have their own pages).
+const CMP_FLOW = [
+  ['Plan', 'Diwali campaign drafted by the AI strategist three weeks ahead'],
+  ['Audience', 'Bridal buyers and scheme members · 2,400 customers, consent checked'],
+  ['A/B test', 'Two versions of the message to 10% · the winner goes to the rest'],
+  ['WhatsApp', 'Catalogue cards priced at today’s rate'],
+  ['RCS and SMS', 'For customers not on WhatsApp'],
+  ['Email and push', 'To online customers and app users'],
+  ['Offer', 'Festival coupon, valid till Bhai Dooj'],
+  ['Results', 'Visits, bills and revenue traced to the campaign, by channel'],
+];
+const cmpFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">CAMPAIGN · DIWALI</p>${CMP_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${CMP_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const CMPN_CMP = [
+  ['Channels in one campaign', 'Separate tools', 'Email and SMS', 'WhatsApp, RCS, SMS, email and push'],
+  ['Festival calendar planned ahead', 'Last-minute', 'No', 'AI strategist drafts it'],
+  ['Audience from purchases, schemes, occasions', 'Whole list', 'Uploaded lists', 'Live segments'],
+  ['A/B testing', 'No', 'Some', 'Yes, winner sent to the rest'],
+  ['Prices at today’s rate in the message', 'No', 'No', 'Yes, catalogue cards'],
+  ['Coupons, gift vouchers, loyalty points', 'Separate', 'Some', 'Yes'],
+  ['What it sold', 'Guess', 'Opens and clicks', 'Visits and bills, by channel'],
+];
+const cmpnTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Agency and separate tools</th><th>Generic marketing tool</th><th>Jwero campaigns</th></tr></thead><tbody>${CMPN_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const CMPN_HOW = [
+  ['Pick the moment', 'A festival, launch or season from the calendar, three weeks ahead.'],
+  ['Let the AI draft it', 'The strategist proposes the audience, message, offer and channels; your team edits.'],
+  ['Choose the audience', 'A live segment, with consent and frequency limits checked on every channel.'],
+  ['Test two versions', 'Send both to a small share; the better one goes to everyone else.'],
+  ['Send and measure', 'WhatsApp, RCS, SMS, email and push, then visits, bills and revenue by channel.'],
+];
+const cmpnFaqs = [
+  { q: 'What is jewellery marketing software?', a: 'Software that plans and sends a jeweller’s campaigns across WhatsApp, RCS, SMS, email and push to the right customers, with offers like coupons and gift vouchers, and shows what each campaign sold.' },
+  { q: 'How should a jeweller plan festival campaigns?', a: 'Plan from the calendar three weeks ahead: Akshaya Tritiya, Dhanteras, Diwali, wedding season and launches. Pick the audience for each, test two versions of the message, send on the channels each customer uses, and measure visits and bills.' },
+  { q: 'Which marketing channels work best for jewellers?', a: 'WhatsApp for most customers, RCS and SMS for those not on WhatsApp, email and push for online customers. Jwero sends each customer on the channels they agreed to.' },
+  { q: 'Can I A/B test a campaign?', a: 'Yes. Send two versions to a small share of the audience, and the version that performs better goes to everyone else.' },
+  { q: 'How do jewellers measure what a campaign sold?', a: 'By tracing visits and bills back to the campaign and channel that reached the customer. Jwero shows revenue by campaign and by channel, not just opens.' },
+  { q: 'Can AI plan and write jewellery campaigns?', a: 'Yes. The AI campaign strategist drafts the plan, audience, message and offer ahead of each festival. Nothing is sent until your team approves it.' },
+  { q: 'Do campaigns include ads and social media posts?', a: 'No. Ads and social posts run from their own tools in Jwero, using the same segments, so the people you target online match the ones you message.' },
+  { q: 'Is RCS available?', a: 'Yes. RCS rich messages are live for campaigns, for customers on Android phones who are not reachable on WhatsApp.' },
+  { q: 'What is the difference between a campaign and a journey?', a: 'A campaign goes to an audience at a planned time, like a Diwali offer. A journey runs for each customer on their own timeline, like an anniversary or an abandoned cart.' },
+];
+
 const campaigns = {
   slug: 'products/campaigns',
-  title: 'Jewellery Marketing Software: WhatsApp, Email, SMS Campaigns | Jwero',
-  description: 'Send consent-aware broadcasts across WhatsApp, email, SMS and push to any segment, then see exactly what each campaign sold, attributed to the send.',
+  title: 'Jewellery Marketing Software: Campaigns on WhatsApp, RCS, SMS | Jwero',
+  description: 'Jewellery marketing software: festival campaigns planned by AI, sent on WhatsApp, RCS, SMS, email and push to live segments, with A/B testing, coupons and sales traced to each campaign.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Campaigns & Broadcasts', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Consent-aware broadcasts across WhatsApp, email, SMS and push to any segment, group or tag, wrapped in campaigns with UTM-based attribution and an AI campaign-strategist for drafting plans.',
+    name: 'Jwero Jewellery Marketing Campaigns', alternateName: ['Jewellery marketing software', 'Jewellery campaign software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Marketing campaigns for jewellers: festival calendar with an AI campaign strategist, WhatsApp, RCS, SMS, email and push in one campaign, live segments with consent and frequency limits, A/B testing, catalogue cards at today’s rate, coupons and gift vouchers, and revenue traced by campaign and channel.',
     url: 'https://jwero.ai/products/campaigns', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month; message fees at the published rates.' },
   },
-  breadcrumbs: BC('Campaigns & Broadcasts'),
-  faqs: [
-    { q: 'What is a Broadcast?', a: 'A single send — WhatsApp, email, SMS or push — to an audience built from a segment, a group or a tag. WhatsApp sends are template-linked, following the same approved-template discipline as the rest of Jwero’s WhatsApp story.' },
-    { q: 'What does "consent-aware" actually mean?', a: 'A delivery automatically skips a recipient who has opted out, is on DND, or is missing a required template — a structured skip-reason system, not a manual checklist someone has to remember to run.' },
-    { q: 'What is a Campaign, and how is it different from a Broadcast?', a: 'A campaign wraps one or more broadcasts and journeys with UTM-based attribution and a reporting layer, so you see what a campaign actually sold — not just how many messages went out.' },
-    { q: 'Where does the audience for a broadcast or campaign come from?', a: 'From segments — built in Jwero’s segmentation tool — or from groups and tags. The same segments feed both journeys and campaigns.' },
-    { q: 'Does the AI write and send campaigns on its own?', a: 'No. The AI campaign-strategist turns a brief into a draft plan — audience, message angles, timing — but a person still reviews, builds and sends it. Nothing goes out without your team’s action, the same "AI drafts, human approves" rule used across Jwero.' },
-    { q: 'Can a campaign target a loyalty tier?', a: 'Yes — loyalty tiers are one of the ways to build an audience, so a campaign can target your top tier specifically rather than everyone at once.' },
-  ],
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to plan a festival campaign for a jewellery shop', step: CMPN_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Campaigns'),
+  faqs: cmpnFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'CAMPAIGNS & BROADCASTS',
-  h1: 'One send, every channel, one number for what it sold.',
-  sub: 'A broadcast that ignores opt-outs is a ban risk. A campaign with no attribution is a guess about what worked. Jwero sends consent-aware broadcasts across WhatsApp, email, SMS and push, then wraps them in campaigns that report what each one actually sold.',
-  primary: { href: '#', label: 'Show me what one campaign sold', wa: 'campaigns' },
-  secondary: { href: '/products/loyalty', label: 'Target a loyalty tier' },
+  eyebrow: 'JEWELLERY MARKETING SOFTWARE · CAMPAIGNS',
+  h1: 'Jewellery marketing software: one festival, every channel, one number for what it sold.',
+  sub: 'The AI strategist drafts each festival campaign ahead. Send it on WhatsApp, RCS, SMS, email and push to the right segment, test two versions, add a coupon, and see the visits, bills and revenue each campaign brought in.',
+  primary: { href: '#', label: 'Plan my next festival with us', wa: 'campaigns' },
 })}
 
-${L.section(
-  `${L.sectionHead('BROADCASTS', 'One send, four channels, consent built in.', '')}
-  ${L.cards([
-    { title: 'Any audience', text: 'Build the send list from a segment, a group, or a tag — the same audience tools that feed journeys.', link: { href: '/products/segmentation', label: 'See segmentation' } },
-    { title: 'Four channels', text: 'WhatsApp, email, SMS and push from one broadcast — no separate tool per channel.' },
-    { title: 'Template-linked WhatsApp', text: 'WhatsApp sends link to approved templates, the same discipline that keeps the rest of Jwero’s WhatsApp use out of ban-risk territory.' },
-    { title: 'Consent-aware delivery', text: 'A send automatically skips anyone opted out, on DND, or missing a required template — with a structured, visible skip reason, not a silent drop.' },
-  ], 4)}`
-)}
+${L.section(`<div class="which-page"><p><b>A campaign</b> goes to an audience at a planned time, like a Diwali offer. You are on the right page.</p><p><b>A journey</b> runs for each customer on their own timeline, like an anniversary. <a href="/products/journeys">See journeys →</a> · Only WhatsApp? <a href="/whatsapp-broadcast-for-jewellers">WhatsApp marketing →</a></p></div>`)}
 
-${L.section(
-  `${L.sectionHead('CAMPAIGNS', 'What it sold, not just what it sent.', '')}
-  ${L.cards([
-    { title: 'Wraps broadcasts and journeys', text: 'A campaign is a container: one or more broadcasts and journeys, organised around one goal.' },
-    { title: 'UTM-based attribution', text: 'Every campaign carries UTM tracking through to the sale, so revenue rolls up to the send that drove it.' },
-    { title: 'Real reporting', text: 'See what a campaign actually sold, attributed to the campaign, rather than an open-rate proxy for revenue.' },
-    { title: 'AI campaign-strategist', text: 'Give it a brief and it drafts a campaign plan — audience, angles, timing. A person still builds and sends it; nothing ships on its own.' },
-  ], 4)}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('ONE FESTIVAL, START TO FINISH', 'A Diwali campaign, planned to measured.', '')}${cmpFlow()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, ONE CAMPAIGN', 'What jewellery marketing software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Plan the year</h3><p>A festival calendar of Akshaya Tritiya, Dhanteras, Diwali, wedding season and launches, with each campaign drafted ahead by the AI strategist.</p><a href="/whatsapp-broadcast-for-jewellers">Festival guides →</a></article>
+  <article><h3>2. Every message channel in one campaign</h3><p>WhatsApp, RCS, SMS, email and push, each customer reached on the channels they agreed to.</p><a href="/sms-marketing-for-jewellers">SMS, RCS and push →</a></article>
+  <article><h3>3. The right audience</h3><p>Live segments from purchases, schemes, occasions and loyalty, with consent and frequency limits checked on every channel.</p><a href="/products/segmentation">Segments →</a></article>
+  <article><h3>4. Test, then send</h3><p>A/B test two versions on a small share; the winner goes to everyone else. Messages carry catalogue cards priced at today’s rate.</p><a href="/products/catalog">Catalogue →</a></article>
+  <article><h3>5. Offers that sell</h3><p>Festival coupons, gift vouchers and loyalty points, with limits and validity, redeemable at the counter and online.</p><a href="/products/loyalty">Loyalty →</a></article>
+  <article><h3>6. Know what it sold</h3><p>Visits, bills and revenue traced to each campaign and each channel, not just opens and clicks.</p><a href="/products/reports">Reports →</a></article>
+</div>
+<p class="cta-note" style="margin-top:14px">Ads and social posts run from their own tools, on the same segments: <a href="/products/ads-manager">ads</a> · <a href="/products/social-media">social media</a>.</p>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What a campaign costs before you send it.', 'Your numbers; rates from the pricing page.')}<div class="callc" data-chc>
+  <div class="callc-in">
+    <label>Customers on WhatsApp<input type="number" inputmode="numeric" data-ch="wa" value="2000" min="0"></label>
+    <label>Customers on RCS or SMS only<input type="number" inputmode="numeric" data-ch="sms" value="400" min="0"></label>
+    <label>Customers by email<input type="number" inputmode="numeric" data-ch="em" value="1500" min="0"></label>
+    <label>Messages per customer in the campaign<input type="number" inputmode="numeric" data-ch="n" value="2" min="1"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>WhatsApp at ₹1.05</span><b data-ch-o="wa">₹0</b></p>
+    <p><span>SMS at ₹0.30</span><b data-ch-o="sms">₹0</b></p>
+    <p><span>Email at ₹0.03</span><b data-ch-o="em">₹0</b></p>
+    <p class="callc-save"><span>Campaign cost</span><b data-ch-o="tot">₹0</b></p>
+    <p class="cta-note">Push notifications are included. RCS is priced on the pricing page. Rates as published; Meta’s fees pass through at cost.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'An agency and separate tools, a generic marketing tool, or Jwero.', '')}${cmpnTable()}`)}
+
+${L.section(`${L.sectionHead('YOUR NEXT FESTIVAL', 'How to plan a festival campaign for a jewellery shop.', 'Five steps.')}${L.steps(CMPN_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
-  'Broadcasts and journeys share the same channel router and the same consent state — an opt-out recorded anywhere is honoured everywhere.',
-  'Campaign audiences are built from the same segments, groups and tags Jwero uses for journeys — no separate list to export and re-upload.',
-  'A campaign can target a loyalty tier directly, because loyalty tier already lives on the same customer record campaigns read from.',
+  'A campaign reads the same segments as journeys, ads and AI calls.',
+  'A coupon used at the counter or online is traced back to the campaign that sent it.',
+  'Customers who opted out of a channel are left out of that channel automatically.',
 ])}
 
-${L.section(`${L.sectionHead('CAMPAIGN QUESTIONS', 'Consent, attribution, and what the AI can touch.', '')}${L.faqBlock([
-  { q: 'Does a broadcast risk sending to someone who opted out?', a: 'No — delivery automatically skips anyone opted out, on DND, or missing a required template, with a structured skip reason recorded.' },
-  { q: 'Does the AI campaign-strategist send campaigns by itself?', a: 'No. It drafts a plan from a brief; a person still reviews, builds and sends it — the same "AI drafts, human approves" rule used across Jwero.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.honestGapsBlock([
-  'The owner’s weekly growth-report dashboard — campaign-level UTM attribution is live today; the productised owner dashboard built on top of it is rolling out. See <a href="/roadmap">the roadmap</a>.',
-])}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="campaigns">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Send it, then know what it sold.', 'Bring one segment and one offer — we’ll build the broadcast, wire the attribution, and show you the report it produces.', 'campaigns')}
+${L.ctaBand('Send it, then know what it sold.', 'Tell us your next festival. We will show the campaign, the audience and the cost in Jwero.', 'campaigns')}
 `,
 };
 

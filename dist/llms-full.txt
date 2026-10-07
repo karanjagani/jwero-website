@@ -5042,102 +5042,150 @@ A: Personal. Each customer gets pieces matched to their purchases, taste and bud
 
 ---
 
-# Jewellery Marketing Software: WhatsApp, Email, SMS Campaigns
+# Jewellery Marketing Software: Campaigns on WhatsApp, RCS, SMS
 URL: https://jwero.ai/products/campaigns
 
-Send consent-aware broadcasts across WhatsApp, email, SMS and push to any segment, then see exactly what each campaign sold, attributed to the send.
+Jewellery marketing software: festival campaigns planned by AI, sent on WhatsApp, RCS, SMS, email and push to live segments, with A/B testing, coupons and sales traced to each campaign.
 
-CAMPAIGNS & BROADCASTS
+JEWELLERY MARKETING SOFTWARE · CAMPAIGNS
 
-## One send, every channel, one number for what it sold.
+## Jewellery marketing software: one festival, every channel, one number for what it sold.
 
- A broadcast that ignores opt-outs is a ban risk. A campaign with no attribution is a guess about what worked. Jwero sends consent-aware broadcasts across WhatsApp, email, SMS and push, then wraps them in campaigns that report what each one actually sold.
+ The AI strategist drafts each festival campaign ahead. Send it on WhatsApp, RCS, SMS, email and push to the right segment, test two versions, add a coupon, and see the visits, bills and revenue each campaign brought in.
 
- Show me what one campaign sold 
- Target a loyalty tier 
+ Plan my next festival with us 
 
- BROADCASTS
+ A campaign goes to an audience at a planned time, like a Diwali offer. You are on the right page.
+ A journey runs for each customer on their own timeline, like an anniversary. See journeys → · Only WhatsApp? WhatsApp marketing → 
 
-## One send, four channels, consent built in.
+ ONE FESTIVAL, START TO FINISH
 
-## Any audience
+## A Diwali campaign, planned to measured.
 
- Build the send list from a segment, a group, or a tag, the same audience tools that feed journeys.
+ CAMPAIGN · DIWALI
+ Plan Diwali campaign drafted by the AI strategist three weeks ahead
+ Audience Bridal buyers and scheme members · 2,400 customers, consent checked
+ A/B test Two versions of the message to 10% · the winner goes to the rest
+ WhatsApp Catalogue cards priced at today’s rate
+ RCS and SMS For customers not on WhatsApp
+ Email and push To online customers and app users
+ Offer Festival coupon, valid till Bhai Dooj
+ Results Visits, bills and revenue traced to the campaign, by channel
+ Illustrative.
 
- See segmentation → 
+ Plan Diwali campaign drafted by the AI strategist three weeks ahead 
+ Audience Bridal buyers and scheme members 
+ A/B test Two versions of the message to 10% 
+ WhatsApp Catalogue cards priced at today’s rate 
+ RCS and SMS For customers not on WhatsApp 
+ Email and push To online customers and app users 
+ Offer Festival coupon, valid till Bhai Dooj 
+ Results Visits, bills and revenue traced to the campaign, by channel 
 
-## Four channels
+ SIX JOBS, ONE CAMPAIGN
 
- WhatsApp, email, SMS and push from one broadcast, no separate tool per channel.
+## What jewellery marketing software has to do.
 
-## Template-linked WhatsApp
+## 1. Plan the year
+ A festival calendar of Akshaya Tritiya, Dhanteras, Diwali, wedding season and launches, with each campaign drafted ahead by the AI strategist.
+ Festival guides → 
 
- WhatsApp sends link to approved templates, the same discipline that keeps the rest of Jwero’s WhatsApp use out of ban-risk territory.
+## 2. Every message channel in one campaign
+ WhatsApp, RCS, SMS, email and push, each customer reached on the channels they agreed to.
+ SMS, RCS and push → 
 
-## Consent-aware delivery
+## 3. The right audience
+ Live segments from purchases, schemes, occasions and loyalty, with consent and frequency limits checked on every channel.
+ Segments → 
 
- A send automatically skips anyone opted out, on DND, or missing a required template, with a structured, visible skip reason, not a silent drop.
+## 4. Test, then send
+ A/B test two versions on a small share; the winner goes to everyone else. Messages carry catalogue cards priced at today’s rate.
+ Catalogue → 
 
- CAMPAIGNS
+## 5. Offers that sell
+ Festival coupons, gift vouchers and loyalty points, with limits and validity, redeemable at the counter and online.
+ Loyalty → 
 
-## What it sold, not just what it sent.
+## 6. Know what it sold
+ Visits, bills and revenue traced to each campaign and each channel, not just opens and clicks.
+ Reports → 
 
-## Wraps broadcasts and journeys
+ Ads and social posts run from their own tools, on the same segments: ads · social media .
 
- A campaign is a container: one or more broadcasts and journeys, organised around one goal.
+ THE ARITHMETIC
 
-## UTM-based attribution
+## What a campaign costs before you send it.
 
- Every campaign carries UTM tracking through to the sale, so revenue rolls up to the send that drove it.
+ Your numbers; rates from the pricing page.
 
-## Real reporting
+ Customers on WhatsApp 
+ Customers on RCS or SMS only 
+ Customers by email 
+ Messages per customer in the campaign 
 
- See what a campaign actually sold, attributed to the campaign, rather than an open-rate proxy for revenue.
+ WhatsApp at ₹1.05 ₹0 
 
-## AI campaign-strategist
+ SMS at ₹0.30 ₹0 
 
- Give it a brief and it drafts a campaign plan, audience, angles, timing. A person still builds and sends it; nothing ships on its own.
+ Email at ₹0.03 ₹0 
+
+ Campaign cost ₹0 
+
+ Push notifications are included. RCS is priced on the pricing page. Rates as published; Meta’s fees pass through at cost.
+
+ COMPARE
+
+## An agency and separate tools, a generic marketing tool, or Jwero.
+
+ Agency and separate tools Generic marketing tool Jwero campaigns 
+ Channels in one campaign Separate tools Email and SMS WhatsApp, RCS, SMS, email and push 
+ Festival calendar planned ahead Last-minute No AI strategist drafts it 
+ Audience from purchases, schemes, occasions Whole list Uploaded lists Live segments 
+ A/B testing No Some Yes, winner sent to the rest 
+ Prices at today’s rate in the message No No Yes, catalogue cards 
+ Coupons, gift vouchers, loyalty points Separate Some Yes 
+ What it sold Guess Opens and clicks Visits and bills, by channel 
+
+ YOUR NEXT FESTIVAL
+
+## How to plan a festival campaign for a jewellery shop.
+
+ Five steps.
+
+ 1 
+
+## Pick the moment
+ A festival, launch or season from the calendar, three weeks ahead.
+
+ 2 
+
+## Let the AI draft it
+ The strategist proposes the audience, message, offer and channels; your team edits.
+
+ 3 
+
+## Choose the audience
+ A live segment, with consent and frequency limits checked on every channel.
+
+ 4 
+
+## Test two versions
+ Send both to a small share; the better one goes to everyone else.
+
+ 5 
+
+## Send and measure
+ WhatsApp, RCS, SMS, email and push, then visits, bills and revenue by channel.
 
  BECAUSE IT'S ONE SYSTEM
 
- Broadcasts and journeys share the same channel router and the same consent state, an opt-out recorded anywhere is honoured everywhere.
- Campaign audiences are built from the same segments, groups and tags Jwero uses for journeys, no separate list to export and re-upload.
- A campaign can target a loyalty tier directly, because loyalty tier already lives on the same customer record campaigns read from.
-
- CAMPAIGN QUESTIONS
-
-## Consent, attribution, and what the AI can touch.
-
- Does a broadcast risk sending to someone who opted out? 
- No, delivery automatically skips anyone opted out, on DND, or missing a required template, with a structured skip reason recorded.
-
- Does the AI campaign-strategist send campaigns by itself? 
- No. It drafts a plan from a brief; a person still reviews, builds and sends it, the same "AI drafts, human approves" rule used across Jwero.
-
- More questions? See the full FAQ → 
-
- WHAT WE DON'T DO YET
-
- Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
-
- The owner’s weekly growth-report dashboard, campaign-level UTM attribution is live today; the productised owner dashboard built on top of it is rolling out. See the roadmap .
- 
- See the full public roadmap → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Every chat button on this site is the actual product, not a mockup, send one message and see for yourself.
+ A campaign reads the same segments as journeys, ads and AI calls.
+ A coupon used at the counter or online is traced back to the campaign that sent it.
+ Customers who opted out of a channel are left out of that channel automatically.
 
 ## Send it, then know what it sold.
 
- Bring one segment and one offer, we’ll build the broadcast, wire the attribution, and show you the report it produces.
+ Tell us your next festival. We will show the campaign, the audience and the cost in Jwero.
 
  Chat or call with us 
  Book a demo 
@@ -5146,23 +5194,32 @@ CAMPAIGNS & BROADCASTS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: What is a Broadcast?
-A: A single send, WhatsApp, email, SMS or push, to an audience built from a segment, a group or a tag. WhatsApp sends are template-linked, following the same approved-template discipline as the rest of Jwero’s WhatsApp story.
+Q: What is jewellery marketing software?
+A: Software that plans and sends a jeweller’s campaigns across WhatsApp, RCS, SMS, email and push to the right customers, with offers like coupons and gift vouchers, and shows what each campaign sold.
 
-Q: What does "consent-aware" actually mean?
-A: A delivery automatically skips a recipient who has opted out, is on DND, or is missing a required template, a structured skip-reason system, not a manual checklist someone has to remember to run.
+Q: How should a jeweller plan festival campaigns?
+A: Plan from the calendar three weeks ahead: Akshaya Tritiya, Dhanteras, Diwali, wedding season and launches. Pick the audience for each, test two versions of the message, send on the channels each customer uses, and measure visits and bills.
 
-Q: What is a Campaign, and how is it different from a Broadcast?
-A: A campaign wraps one or more broadcasts and journeys with UTM-based attribution and a reporting layer, so you see what a campaign actually sold, not just how many messages went out.
+Q: Which marketing channels work best for jewellers?
+A: WhatsApp for most customers, RCS and SMS for those not on WhatsApp, email and push for online customers. Jwero sends each customer on the channels they agreed to.
 
-Q: Where does the audience for a broadcast or campaign come from?
-A: From segments, built in Jwero’s segmentation tool, or from groups and tags. The same segments feed both journeys and campaigns.
+Q: Can I A/B test a campaign?
+A: Yes. Send two versions to a small share of the audience, and the version that performs better goes to everyone else.
 
-Q: Does the AI write and send campaigns on its own?
-A: No. The AI campaign-strategist turns a brief into a draft plan, audience, message angles, timing, but a person still reviews, builds and sends it. Nothing goes out without your team’s action, the same "AI drafts, human approves" rule used across Jwero.
+Q: How do jewellers measure what a campaign sold?
+A: By tracing visits and bills back to the campaign and channel that reached the customer. Jwero shows revenue by campaign and by channel, not just opens.
 
-Q: Can a campaign target a loyalty tier?
-A: Yes, loyalty tiers are one of the ways to build an audience, so a campaign can target your top tier specifically rather than everyone at once.
+Q: Can AI plan and write jewellery campaigns?
+A: Yes. The AI campaign strategist drafts the plan, audience, message and offer ahead of each festival. Nothing is sent until your team approves it.
+
+Q: Do campaigns include ads and social media posts?
+A: No. Ads and social posts run from their own tools in Jwero, using the same segments, so the people you target online match the ones you message.
+
+Q: Is RCS available?
+A: Yes. RCS rich messages are live for campaigns, for customers on Android phones who are not reachable on WhatsApp.
+
+Q: What is the difference between a campaign and a journey?
+A: A campaign goes to an audience at a planned time, like a Diwali offer. A journey runs for each customer on their own timeline, like an anniversary or an abandoned cart.
 
 ---
 
@@ -28824,14 +28881,14 @@ SMS, RCS AND PUSH FOR JEWELLERS
  Which channel should I use? 
  WhatsApp for conversation, SMS for certainty, push for free reach, email for detail. One campaign can use all four.
 
- What is a Broadcast? 
- A single send, WhatsApp, email, SMS or push, to an audience built from a segment, a group or a tag. WhatsApp sends are template-linked, following the same approved-template discipline as the rest of Jwero’s WhatsApp story.
+ What is jewellery marketing software? 
+ Software that plans and sends a jeweller’s campaigns across WhatsApp, RCS, SMS, email and push to the right customers, with offers like coupons and gift vouchers, and shows what each campaign sold.
 
- What does "consent-aware" actually mean? 
- A delivery automatically skips a recipient who has opted out, is on DND, or is missing a required template, a structured skip-reason system, not a manual checklist someone has to remember to run.
+ How should a jeweller plan festival campaigns? 
+ Plan from the calendar three weeks ahead: Akshaya Tritiya, Dhanteras, Diwali, wedding season and launches. Pick the audience for each, test two versions of the message, send on the channels each customer uses, and measure visits and bills.
 
- What is a Campaign, and how is it different from a Broadcast? 
- A campaign wraps one or more broadcasts and journeys with UTM-based attribution and a reporting layer, so you see what a campaign actually sold, not just how many messages went out.
+ Which marketing channels work best for jewellers? 
+ WhatsApp for most customers, RCS and SMS for those not on WhatsApp, email and push for online customers. Jwero sends each customer on the channels they agreed to.
 
  Related: Campaigns · WhatsApp broadcasts · Customer journeys · Message rates 
 
@@ -28861,14 +28918,14 @@ A: They work for people who opted in on your website or app, and cost nothing pe
 Q: Which channel should I use?
 A: WhatsApp for conversation, SMS for certainty, push for free reach, email for detail. One campaign can use all four.
 
-Q: What is a Broadcast?
-A: A single send, WhatsApp, email, SMS or push, to an audience built from a segment, a group or a tag. WhatsApp sends are template-linked, following the same approved-template discipline as the rest of Jwero’s WhatsApp story.
+Q: What is jewellery marketing software?
+A: Software that plans and sends a jeweller’s campaigns across WhatsApp, RCS, SMS, email and push to the right customers, with offers like coupons and gift vouchers, and shows what each campaign sold.
 
-Q: What does "consent-aware" actually mean?
-A: A delivery automatically skips a recipient who has opted out, is on DND, or is missing a required template, a structured skip-reason system, not a manual checklist someone has to remember to run.
+Q: How should a jeweller plan festival campaigns?
+A: Plan from the calendar three weeks ahead: Akshaya Tritiya, Dhanteras, Diwali, wedding season and launches. Pick the audience for each, test two versions of the message, send on the channels each customer uses, and measure visits and bills.
 
-Q: What is a Campaign, and how is it different from a Broadcast?
-A: A campaign wraps one or more broadcasts and journeys with UTM-based attribution and a reporting layer, so you see what a campaign actually sold, not just how many messages went out.
+Q: Which marketing channels work best for jewellers?
+A: WhatsApp for most customers, RCS and SMS for those not on WhatsApp, email and push for online customers. Jwero sends each customer on the channels they agreed to.
 
 ---
 

@@ -1678,6 +1678,10 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - 41 ready segments and AI-suggested segments; filters for purchases (category, metal, value, date), schemes, occasions, city, branch, loyalty tier, social engagement, RFM and customer scores such as intent and churn risk.
 - Reachable count and value with consent checked before saving; segments stay live; sent to journeys, WhatsApp campaigns, AI calls, loyalty offers, and ad audiences with ads generated automatically. Details: ${SITE}/products/segmentation
 
+## Jewellery marketing campaigns (facts)
+- Festival calendar with an AI campaign strategist drafting campaigns ahead; WhatsApp, RCS (live), SMS, email and push in one campaign; live segments with consent and frequency limits; A/B testing with the winner sent to the rest.
+- Catalogue cards at today's rate, coupons, gift vouchers and loyalty points; visits, bills and revenue traced by campaign and channel. Ads and social posts are run from their own tools, not from campaigns. Details: ${SITE}/products/campaigns
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
