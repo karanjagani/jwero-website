@@ -1796,6 +1796,14 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Visitor details and events are sent to Google Analytics and the Meta pixel.
 - Leads from popups and webchat become customer records in the same inbox as WhatsApp; personalisation can use segment, scheme and loyalty membership.
 
+## Jewellery repair software (facts)
+
+- Page: https://jwero.ai/products/repairs-service
+- Repair job cards with a claim tag, condition photos and weight-in; an append-only custody chain of every handoff to karigars, vendors and the counter.
+- Weight-in vs weight-out reconciliation; estimates the customer approves before work starts; promised dates and a kanban board.
+- A re-hallmark flag blocks "ready for delivery" until handled; alerts for ready, overdue and unclaimed jobs on WhatsApp, SMS and email.
+- Warranty and AMC tied to the original invoice and HUID; appraisal certificates as PDF; old-gold exchange in store only.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.

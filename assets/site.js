@@ -2906,3 +2906,12 @@ document.addEventListener('click', function (e) {
     set('leads', l.toLocaleString('en-IN')); set('sales', s.toLocaleString('en-IN')); set('rev', '₹' + (s * v('bill')).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+// Repairs page: what untracked repairs cost.
+(function () {
+  var root = document.querySelector('[data-rpc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-rp="' + k + '"]') || {}).value || 0; };
+  function run() { var h = Math.round(v('n') * v('call') / 100 * v('min') / 60);
+    var set = function (k, t) { var el = root.querySelector('[data-rp-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('hrs', h.toLocaleString('en-IN')); set('yr', '₹' + (v('disp') * v('cost') * 12).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();

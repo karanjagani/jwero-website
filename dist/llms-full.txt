@@ -5604,126 +5604,149 @@ A: A campaign goes to an audience at a planned time, like a Diwali offer. A jour
 
 ---
 
-# Repairs & After-Sales Service Software for Jewellers
+# Jewellery Repair Software: Job Cards, Tracking & After-Sales
 URL: https://jwero.ai/products/repairs-service
 
-Repair and service tracking with a custody chain, weight reconciliation, an auto re-hallmark flag, warranty tied to the original invoice, and old-gold buyback.
+Jewellery repair software: job cards with tags, photos and weight, a custody chain that cannot be edited, weight in vs out, estimates customers approve, re-hallmark flags, WhatsApp alerts, and warranty on the original invoice.
 
-REPAIRS & AFTER-SALES SERVICE
+JEWELLERY REPAIRS · AFTER-SALES
 
-## Every repair leaves a paper trail your customer can trust.
+## Jewellery repair software: job cards, custody chain and weight checked, intake to delivery.
 
- A repair ticket that just says "in progress" is a liability the moment a customer asks where their gold went. Jwero tracks every handoff, reconciles weight in against weight out, and won't let a re-hallmark-eligible job reach delivery unaddressed.
+ A repair slip that says “in progress” is a problem the moment a customer asks where her gold went. Jwero tags the piece, logs every handoff, checks weight in against weight out, and tells her on WhatsApp when it is ready.
 
  Show me a repair’s custody chain 
- See the full ERP 
+ Repair management guide 
 
- INTAKE TO DELIVERY
+ ONE REPAIR, START TO FINISH
 
-## A custody chain, not a paper ticket.
+## From a ring at the counter to a ring back on her finger.
 
-## Claim-check intake
+ REPAIR · INTAKE TO DELIVERY
+ Intake Ring for resizing · job card and tag printed
+ Recorded Condition photos · weight-in 4.82g
+ Estimate Sent on WhatsApp · she approves
+ Assigned To a karigar · handoff logged
+ Returned Weight-out 4.79g · 0.03g loss noted
+ Ready Ready alert on WhatsApp
+ Delivered Handed over · job closed on her record
+ Illustrative.
 
- Every job generates a tag at intake, like a Jangad tag, with condition photos and a captured weight-in.
+ Intake Ring for resizing 
+ Recorded Condition photos 
+ Estimate Sent on WhatsApp 
+ Assigned To a karigar 
+ Returned Weight-out 4.79g 
+ Ready Ready alert on WhatsApp 
+ Delivered Handed over 
 
-## Append-only custody chain
+ SIX JOBS, ONE JOB CARD
 
- Every handoff, to a karigar, an external vendor, back to the counter, is logged permanently. Nothing in the chain can be edited or deleted.
+## What jewellery repair software has to do.
 
-## Weight-in / weight-out reconciliation
+## 1. A job card at intake
+ A claim tag, condition photos and the weight, recorded before the piece leaves the counter.
+ POS → 
 
- What went in is checked against what comes out, catching shrinkage or loss during the repair before it becomes a dispute.
+## 2. A custody chain
+ Every handoff, to a karigar, a vendor or back to the counter, logged and never edited.
+ Karigars → 
 
-## Karigar, vendor or outsourced
+## 3. Weight in, weight out
+ What went in is checked against what came back, and any loss noted before she collects.
+ Inventory → 
 
- Assign a job to an in-house karigar, an external vendor, or mark it outsourced, with the assignment visible on the record.
+## 4. Approved before work starts
+ An estimate she approves, declines or asks to revise; work starts only on approval.
+ Quotations → 
 
-## SLA & promised-date tracking
+## 5. Nothing forgotten
+ Promised dates, one board for every job, a re-hallmark flag, and alerts for ready, overdue and unclaimed jobs.
+ WhatsApp → 
 
- Every job carries a promised date, so overdue work is visible before the customer has to ask.
+## 6. After the sale
+ Warranty and AMC on the original invoice and HUID, appraisal certificates, and old gold exchange in store.
+ Customer record → 
 
-## Kanban across the operation
+ THE ARITHMETIC
 
- One board shows every job's status, intake, in-progress, awaiting parts, ready, across the whole shop.
+## What untracked repairs cost you.
 
- THE RE-HALLMARK GATE
+ Your numbers, not ours.
 
-## A compliance rule, enforced. Not a memory test.
+ Repairs a month 
+ Where she has to call to ask about status, % 
+ Minutes to find the answer 
+ Weight disputes a month 
+ Average cost of settling a dispute, ₹ 
 
- When a repair changes enough metal to trigger BIS re-hallmarking, a 2-gram or 50%-of-melt threshold, the job is flagged automatically, and it cannot move to "ready for delivery" until the flag is addressed. Most repair-tracking tools have no idea this rule exists. Here it is built into the status flow itself, so a busy counter can't accidentally hand back a piece that legally needed re-testing.
+ Staff hours on status calls a month 0 
 
- ESTIMATES, WARRANTY & CERTIFICATES
+ Disputes settled a year ₹0 
 
-## What ties a repair back to what was actually sold.
+ A planning estimate from your own inputs.
 
-## Versioned estimates
+ COMPARE
 
- A per-job estimate is sent to the customer, who approves, declines, or asks for a revision, the job's task list only starts once the current version is approved.
+## A paper slip, generic job-card software, or Jwero.
 
-## Warranty & AMC on the original invoice
+ Paper repair slip Generic job-card software Jwero 
+ Intake A paper slip A job card Job card, tag, photos and weight-in 
+ Who has it now Ask around Status field Every handoff logged, never edited 
+ Weight Not checked Sometimes Weight in vs weight out, loss noted 
+ Cost approval A phone call A note Estimate she approves before work starts 
+ Re-hallmarking Remembered, or not No Flagged, and blocks delivery until handled 
+ Ready, overdue, unclaimed Someone calls SMS Alerts on WhatsApp, SMS and email 
+ Warranty A card that goes missing Separate On the original invoice and HUID 
 
- Warranty plans and entitlements are tied to the original invoice and HUID of the piece, so a claim or a scheduled inspection is linked to exactly what was sold and when.
+ GETTING STARTED
 
-## Appraisal & valuation certificates
+## How to manage jewellery repairs.
 
- Issue a formal appraisal or valuation certificate for a piece as a PDF.
+ Five steps.
 
-## Automated status notifications
+ 1 
 
- Job-ready, overdue and unclaimed-item states trigger automated notifications across WhatsApp, SMS and email.
+## Open a job card
+ Tag the piece, take condition photos, and record the weight.
 
- OLD-GOLD EXCHANGE & BUYBACK
+ 2 
 
-## A real lifecycle, done correctly, in-store, for now.
+## Send the estimate
+ She approves on WhatsApp before any work starts.
 
- Old-gold exchange or cash buyback runs a genuine test → value → approve → settle → post lifecycle: it records whether the metal comes in as-is or melted (which determines the correct GST margin-scheme/HSN treatment, 7113 vs 7108), the purity-testing method used (touchstone, XRF or fire assay vs melt assay), and a snapshot of the live rate applied. High-value transactions capture PAN/KYC per Income Tax Rule 114B. It supports a standalone walk-in cash buyback or using old gold as exchange-credit against a new sale, and on completion it posts to a raw-material inventory lot and a finance document automatically.
+ 3 
 
- Honest limitation: this is a staff-operated, in-store flow today. There is no customer-facing online or self-service old-gold valuation form on the website, a customer still has to bring the piece in.
+## Assign the work
+ To a karigar or vendor, with a promised date; every handoff is logged.
+
+ 4 
+
+## Check it back in
+ Weigh it, compare with weight-in, and handle any re-hallmark flag.
+
+ 5 
+
+## Tell her and hand over
+ A ready alert goes out; delivery closes the job on her record.
 
  WHAT WE DON'T DO YET
 
  Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
 
- Old-gold exchange/buyback is in-store only, no online self-service valuation form on the website yet.
+ Old gold exchange is done in store; there is no online valuation form yet.
  
  See the full public roadmap → 
 
  BECAUSE IT'S ONE SYSTEM
 
- A repair job and the customer's purchase history live on the same record, your team knows what she owns and what she has already paid for before she says a word.
- Warranty entitlements read the same invoice and HUID data the billing and catalogue layers already keep, not a separate warranty card that can go missing.
-
- REPAIRS QUESTIONS
-
-## The custody chain, the re-hallmark flag, and old-gold buyback.
-
- What gets recorded on a repair job? 
- A claim-check tag, condition photos, weight-in, and an append-only custody chain logging every handoff, nothing in it can be edited or deleted. Weight-out is reconciled before close.
-
- Does it catch repairs that need re-hallmarking? 
- Yes, jobs crossing the BIS 2-gram or 50%-of-melt threshold are flagged automatically, and cannot reach "ready for delivery" until addressed.
-
- Can old-gold buyback be done online? 
- Not yet, it is a staff-operated, in-store flow only. There is no customer-facing self-service valuation form on the website.
-
- More questions? See the full FAQ → 
-
- Still running repairs on registers? Read the guide to repair management and the custody chain → Repairs is one part of the wider operations layer, see the full ERP → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- This isn't a demo video, message us here and Jwero's own inbox answers, live.
+ A repair and her purchase history are on the same record, so your team knows what she owns before she says a word.
+ Warranty reads the same invoice and HUID data the billing and catalogue keep.
+ Weight going out to a karigar and coming back is in the same metal records as manufacturing.
 
 ## See a repair, tracked properly.
 
- Bring one real repair job, we will show you the custody chain it would have generated here.
+ Bring one real repair job; we will show you the custody chain it would have created.
 
  Chat or call with us 
  Book a demo 
@@ -5732,23 +5755,26 @@ REPAIRS & AFTER-SALES SERVICE
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: What actually gets recorded when a repair job comes in?
-A: Intake generates a claim-check tag, condition photos are attached, and weight-in is captured. Every handoff after that, to a karigar, a vendor, back to the front desk, is logged in an append-only custody chain nobody can edit or delete. Weight-out is reconciled against weight-in before the job can close.
+Q: What is a jewellery repair job card?
+A: The record created when a piece comes in for repair: a tag, photos, weight, the work needed and the promised date. In Jwero it then logs every handoff until delivery.
+
+Q: How do I track jewellery repairs?
+A: Open a job card at intake, assign it with a promised date, and follow it on one board from intake to ready. Overdue and unclaimed jobs are flagged, and customers are alerted on WhatsApp, SMS or email.
+
+Q: How do I stop weight disputes on repairs?
+A: Record the weight when the piece comes in and when it comes back. Jwero compares the two and notes any loss before the customer collects.
 
 Q: Does it know when a repair needs re-hallmarking?
-A: Yes. When a job crosses the BIS threshold for re-hallmarking, a 2-gram or 50%-of-melt rule, it is flagged automatically, and the job cannot reach "ready for delivery" until that flag is cleared. This is built into the workflow, not a checklist someone has to remember.
+A: Yes. A job that changes enough metal is flagged for re-hallmarking, and cannot be marked ready for delivery until the flag is handled.
 
-Q: How does a customer approve what a repair will cost?
-A: A versioned estimate is sent to the customer, who approves, declines, or asks for a revision. Work on the job's task list only starts once the current estimate version is approved.
+Q: How does a customer approve the cost?
+A: An estimate is sent to her; she approves, declines or asks for a revision, and work starts only after approval.
 
-Q: Is warranty tracking connected to what was actually sold?
-A: Yes, warranty and AMC entitlements are tied to the original invoice and HUID of the piece, so a claim or a scheduled inspection is linked back to exactly what was sold and when, not a separate promise nobody can verify.
+Q: Is warranty tied to what was sold?
+A: Yes. Warranty and AMC are tied to the original invoice and HUID of the piece.
 
-Q: Can I do old-gold exchange or buyback through Jwero?
-A: Yes, as a staff-operated, in-store flow: test, value, approve, settle and post, with purity-testing method, live rate and PAN/KYC captured where required. There is no customer-facing online self-service valuation form on the website yet.
-
-Q: How do customers know their repair is ready?
-A: Automated notifications go out on WhatsApp, SMS and email for job-ready, overdue and unclaimed-item states, nobody has to remember to call.
+Q: Can I do old gold exchange through Jwero?
+A: Yes, in store: test, value, approve and settle, with purity method, today’s rate and KYC recorded. There is no online valuation form yet.
 
 ---
 

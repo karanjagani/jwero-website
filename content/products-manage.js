@@ -1,88 +1,113 @@
 const L = require('../lib');
 const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
+// Repairs, rebuilt 2026-10-07. The re-hallmark rule is described as a threshold
+// flag without citing BIS figures (unconfirmed whether law or setting). Not
+// claimed: customer tracking links, repair billing through POS, courier pickup.
+// Old-gold exchange stays in-store only.
+const RP_FLOW = [
+  ['Intake', 'Ring for resizing · job card and tag printed'],
+  ['Recorded', 'Condition photos · weight-in 4.82g'],
+  ['Estimate', 'Sent on WhatsApp · she approves'],
+  ['Assigned', 'To a karigar · handoff logged'],
+  ['Returned', 'Weight-out 4.79g · 0.03g loss noted'],
+  ['Ready', 'Ready alert on WhatsApp'],
+  ['Delivered', 'Handed over · job closed on her record'],
+];
+const rpFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">REPAIR · INTAKE TO DELIVERY</p>${RP_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${RP_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const RP_CMP = [
+  ['Intake', 'A paper slip', 'A job card', 'Job card, tag, photos and weight-in'],
+  ['Who has it now', 'Ask around', 'Status field', 'Every handoff logged, never edited'],
+  ['Weight', 'Not checked', 'Sometimes', 'Weight in vs weight out, loss noted'],
+  ['Cost approval', 'A phone call', 'A note', 'Estimate she approves before work starts'],
+  ['Re-hallmarking', 'Remembered, or not', 'No', 'Flagged, and blocks delivery until handled'],
+  ['Ready, overdue, unclaimed', 'Someone calls', 'SMS', 'Alerts on WhatsApp, SMS and email'],
+  ['Warranty', 'A card that goes missing', 'Separate', 'On the original invoice and HUID'],
+];
+const rpTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Paper repair slip</th><th>Generic job-card software</th><th>Jwero</th></tr></thead><tbody>${RP_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const RP_HOW = [
+  ['Open a job card', 'Tag the piece, take condition photos, and record the weight.'],
+  ['Send the estimate', 'She approves on WhatsApp before any work starts.'],
+  ['Assign the work', 'To a karigar or vendor, with a promised date; every handoff is logged.'],
+  ['Check it back in', 'Weigh it, compare with weight-in, and handle any re-hallmark flag.'],
+  ['Tell her and hand over', 'A ready alert goes out; delivery closes the job on her record.'],
+];
+const rpFaqs = [
+  { q: 'What is a jewellery repair job card?', a: 'The record created when a piece comes in for repair: a tag, photos, weight, the work needed and the promised date. In Jwero it then logs every handoff until delivery.' },
+  { q: 'How do I track jewellery repairs?', a: 'Open a job card at intake, assign it with a promised date, and follow it on one board from intake to ready. Overdue and unclaimed jobs are flagged, and customers are alerted on WhatsApp, SMS or email.' },
+  { q: 'How do I stop weight disputes on repairs?', a: 'Record the weight when the piece comes in and when it comes back. Jwero compares the two and notes any loss before the customer collects.' },
+  { q: 'Does it know when a repair needs re-hallmarking?', a: 'Yes. A job that changes enough metal is flagged for re-hallmarking, and cannot be marked ready for delivery until the flag is handled.' },
+  { q: 'How does a customer approve the cost?', a: 'An estimate is sent to her; she approves, declines or asks for a revision, and work starts only after approval.' },
+  { q: 'Is warranty tied to what was sold?', a: 'Yes. Warranty and AMC are tied to the original invoice and HUID of the piece.' },
+  { q: 'Can I do old gold exchange through Jwero?', a: 'Yes, in store: test, value, approve and settle, with purity method, today’s rate and KYC recorded. There is no online valuation form yet.' },
+];
 const repairsService = {
   slug: 'products/repairs-service',
-  title: 'Repairs & After-Sales Service Software for Jewellers | Jwero',
-  description: 'Repair and service tracking with a custody chain, weight reconciliation, an auto re-hallmark flag, warranty tied to the original invoice, and old-gold buyback.',
+  title: 'Jewellery Repair Software: Job Cards, Tracking & After-Sales | Jwero',
+  description: 'Jewellery repair software: job cards with tags, photos and weight, a custody chain that cannot be edited, weight in vs out, estimates customers approve, re-hallmark flags, WhatsApp alerts, and warranty on the original invoice.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Repairs & After-Sales Service', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Repair job intake, an append-only custody chain, weight-in/weight-out reconciliation, an automatic BIS re-hallmarking flag, versioned estimates, warranty tied to the original invoice, appraisal certificates, and in-store old-gold exchange/buyback.',
+    name: 'Jwero Repairs & After-Sales Service', alternateName: ['Jewellery repair software', 'Jewellery repair job card software', 'Jewellery repair tracking'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Jewellery repair job cards with tag, condition photos and weight-in; an append-only custody chain; weight-in vs weight-out reconciliation; estimates the customer approves; a re-hallmark flag that blocks delivery; promised dates and a kanban board; alerts on WhatsApp, SMS and email; warranty and AMC on the original invoice and HUID; appraisal certificates; in-store old-gold exchange.',
     url: 'https://jwero.ai/products/repairs-service', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to manage jewellery repairs', step: RP_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Repairs & After-Sales Service'),
-  faqs: [
-    { q: 'What actually gets recorded when a repair job comes in?', a: 'Intake generates a claim-check tag, condition photos are attached, and weight-in is captured. Every handoff after that — to a karigar, a vendor, back to the front desk — is logged in an append-only custody chain nobody can edit or delete. Weight-out is reconciled against weight-in before the job can close.' },
-    { q: 'Does it know when a repair needs re-hallmarking?', a: 'Yes. When a job crosses the BIS threshold for re-hallmarking — a 2-gram or 50%-of-melt rule — it is flagged automatically, and the job cannot reach "ready for delivery" until that flag is cleared. This is built into the workflow, not a checklist someone has to remember.' },
-    { q: 'How does a customer approve what a repair will cost?', a: 'A versioned estimate is sent to the customer, who approves, declines, or asks for a revision. Work on the job\'s task list only starts once the current estimate version is approved.' },
-    { q: 'Is warranty tracking connected to what was actually sold?', a: 'Yes — warranty and AMC entitlements are tied to the original invoice and HUID of the piece, so a claim or a scheduled inspection is linked back to exactly what was sold and when, not a separate promise nobody can verify.' },
-    { q: 'Can I do old-gold exchange or buyback through Jwero?', a: 'Yes, as a staff-operated, in-store flow: test, value, approve, settle and post, with purity-testing method, live rate and PAN/KYC captured where required. There is no customer-facing online self-service valuation form on the website yet.' },
-    { q: 'How do customers know their repair is ready?', a: 'Automated notifications go out on WhatsApp, SMS and email for job-ready, overdue and unclaimed-item states — nobody has to remember to call.' },
-  ],
+  faqs: rpFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'REPAIRS & AFTER-SALES SERVICE',
-  h1: 'Every repair leaves a paper trail your customer can trust.',
-  sub: 'A repair ticket that just says "in progress" is a liability the moment a customer asks where their gold went. Jwero tracks every handoff, reconciles weight in against weight out, and won\'t let a re-hallmark-eligible job reach delivery unaddressed.',
+  eyebrow: 'JEWELLERY REPAIRS · AFTER-SALES',
+  h1: 'Jewellery repair software: job cards, custody chain and weight checked, intake to delivery.',
+  sub: 'A repair slip that says “in progress” is a problem the moment a customer asks where her gold went. Jwero tags the piece, logs every handoff, checks weight in against weight out, and tells her on WhatsApp when it is ready.',
   primary: { href: '#', label: 'Show me a repair’s custody chain', wa: 'repairsservice' },
-  secondary: { href: '/products/erp', label: 'See the full ERP' },
+  secondary: { href: '/blog/jewellery-repair-management-custody-chain', label: 'Repair management guide' },
 })}
 
-${L.section(
-  `${L.sectionHead('INTAKE TO DELIVERY', 'A custody chain, not a paper ticket.', '')}
-  ${L.cards([
-    { title: 'Claim-check intake', text: 'Every job generates a tag at intake — like a Jangad tag — with condition photos and a captured weight-in.' },
-    { title: 'Append-only custody chain', text: 'Every handoff — to a karigar, an external vendor, back to the counter — is logged permanently. Nothing in the chain can be edited or deleted.' },
-    { title: 'Weight-in / weight-out reconciliation', text: 'What went in is checked against what comes out, catching shrinkage or loss during the repair before it becomes a dispute.' },
-    { title: 'Karigar, vendor or outsourced', text: 'Assign a job to an in-house karigar, an external vendor, or mark it outsourced — with the assignment visible on the record.' },
-    { title: 'SLA & promised-date tracking', text: 'Every job carries a promised date, so overdue work is visible before the customer has to ask.' },
-    { title: 'Kanban across the operation', text: 'One board shows every job\'s status — intake, in-progress, awaiting parts, ready — across the whole shop.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE REPAIR, START TO FINISH', 'From a ring at the counter to a ring back on her finger.', '')}${rpFlow()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('THE RE-HALLMARK GATE', 'A compliance rule, enforced. Not a memory test.', '')}
-  <div class="stack-verdict"><strong>When a repair changes enough metal to trigger BIS re-hallmarking — a 2-gram or 50%-of-melt threshold — the job is flagged automatically, and it cannot move to "ready for delivery" until the flag is addressed.</strong> Most repair-tracking tools have no idea this rule exists. Here it is built into the status flow itself, so a busy counter can't accidentally hand back a piece that legally needed re-testing.</div>`,
-  { tone: 'tint' }
-)}
+${L.section(`${L.sectionHead('SIX JOBS, ONE JOB CARD', 'What jewellery repair software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. A job card at intake</h3><p>A claim tag, condition photos and the weight, recorded before the piece leaves the counter.</p><a href="/products/pos">POS →</a></article>
+  <article><h3>2. A custody chain</h3><p>Every handoff, to a karigar, a vendor or back to the counter, logged and never edited.</p><a href="/products/manufacturing">Karigars →</a></article>
+  <article><h3>3. Weight in, weight out</h3><p>What went in is checked against what came back, and any loss noted before she collects.</p><a href="/products/inventory">Inventory →</a></article>
+  <article><h3>4. Approved before work starts</h3><p>An estimate she approves, declines or asks to revise; work starts only on approval.</p><a href="/products/quotations">Quotations →</a></article>
+  <article><h3>5. Nothing forgotten</h3><p>Promised dates, one board for every job, a re-hallmark flag, and alerts for ready, overdue and unclaimed jobs.</p><a href="/products/whatsapp">WhatsApp →</a></article>
+  <article><h3>6. After the sale</h3><p>Warranty and AMC on the original invoice and HUID, appraisal certificates, and old gold exchange in store.</p><a href="/products/crm">Customer record →</a></article>
+</div>`)}
 
-${L.section(
-  `${L.sectionHead('ESTIMATES, WARRANTY & CERTIFICATES', 'What ties a repair back to what was actually sold.', '')}
-  ${L.cards([
-    { title: 'Versioned estimates', text: 'A per-job estimate is sent to the customer, who approves, declines, or asks for a revision — the job\'s task list only starts once the current version is approved.' },
-    { title: 'Warranty & AMC on the original invoice', text: 'Warranty plans and entitlements are tied to the original invoice and HUID of the piece, so a claim or a scheduled inspection is linked to exactly what was sold and when.' },
-    { title: 'Appraisal & valuation certificates', text: 'Issue a formal appraisal or valuation certificate for a piece as a PDF.' },
-    { title: 'Automated status notifications', text: 'Job-ready, overdue and unclaimed-item states trigger automated notifications across WhatsApp, SMS and email.' },
-  ], 4)}`
-)}
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What untracked repairs cost you.', 'Your numbers, not ours.')}<div class="callc" data-rpc>
+  <div class="callc-in">
+    <label>Repairs a month<input type="number" inputmode="numeric" data-rp="n" value="120" min="0"></label>
+    <label>Where she has to call to ask about status, %<input type="number" inputmode="decimal" data-rp="call" value="40" min="0" max="100"></label>
+    <label>Minutes to find the answer<input type="number" inputmode="numeric" data-rp="min" value="10" min="0"></label>
+    <label>Weight disputes a month<input type="number" inputmode="numeric" data-rp="disp" value="3" min="0"></label>
+    <label>Average cost of settling a dispute, ₹<input type="number" inputmode="numeric" data-rp="cost" value="2000" min="0" step="100"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Staff hours on status calls a month</span><b data-rp-o="hrs">0</b></p>
+    <p><span>Disputes settled a year</span><b data-rp-o="yr">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs.</p>
+  </div>
+</div>`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('OLD-GOLD EXCHANGE & BUYBACK', 'A real lifecycle, done correctly — in-store, for now.', '')}
-  <p>Old-gold exchange or cash buyback runs a genuine test → value → approve → settle → post lifecycle: it records whether the metal comes in as-is or melted (which determines the correct GST margin-scheme/HSN treatment — 7113 vs 7108), the purity-testing method used (touchstone, XRF or fire assay vs melt assay), and a snapshot of the live rate applied. High-value transactions capture PAN/KYC per Income Tax Rule 114B. It supports a standalone walk-in cash buyback or using old gold as exchange-credit against a new sale, and on completion it posts to a raw-material inventory lot and a finance document automatically.</p>
-  <p><strong>Honest limitation:</strong> this is a staff-operated, in-store flow today. There is no customer-facing online or self-service old-gold valuation form on the website — a customer still has to bring the piece in.</p>`
-)}
+${L.section(`${L.sectionHead('COMPARE', 'A paper slip, generic job-card software, or Jwero.', '')}${rpTable()}`)}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to manage jewellery repairs.', 'Five steps.')}${L.steps(RP_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
 ${L.honestGapsBlock([
-  'Old-gold exchange/buyback is in-store only — no online self-service valuation form on the website yet.',
+  'Old gold exchange is done in store; there is no online valuation form yet.',
 ])}
 
 ${L.oneSystemBlock([
-  'A repair job and the customer\'s purchase history live on the same record — your team knows what she owns and what she has already paid for before she says a word.',
-  'Warranty entitlements read the same invoice and HUID data the billing and catalogue layers already keep — not a separate warranty card that can go missing.',
+  'A repair and her purchase history are on the same record, so your team knows what she owns before she says a word.',
+  'Warranty reads the same invoice and HUID data the billing and catalogue keep.',
+  'Weight going out to a karigar and coming back is in the same metal records as manufacturing.',
 ])}
 
-${L.section(`${L.sectionHead('REPAIRS QUESTIONS', 'The custody chain, the re-hallmark flag, and old-gold buyback.', '')}${L.faqBlock([
-  { q: 'What gets recorded on a repair job?', a: 'A claim-check tag, condition photos, weight-in, and an append-only custody chain logging every handoff — nothing in it can be edited or deleted. Weight-out is reconciled before close.' },
-  { q: 'Does it catch repairs that need re-hallmarking?', a: 'Yes — jobs crossing the BIS 2-gram or 50%-of-melt threshold are flagged automatically, and cannot reach "ready for delivery" until addressed.' },
-  { q: 'Can old-gold buyback be done online?', a: 'Not yet — it is a staff-operated, in-store flow only. There is no customer-facing self-service valuation form on the website.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
-<p class="cta-note" style="margin-top:14px">Still running repairs on registers? <a href="/blog/jewellery-repair-management-custody-chain">Read the guide to repair management and the custody chain →</a> Repairs is one part of the wider operations layer — <a href="/products/erp">see the full ERP →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn't a demo video — <a href="#" data-wa="repairsservice">message us here</a> and Jwero's own inbox answers, live.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('See a repair, tracked properly.', 'Bring one real repair job — we will show you the custody chain it would have generated here.', 'repairsservice')}
+${L.ctaBand('See a repair, tracked properly.', 'Bring one real repair job; we will show you the custody chain it would have created.', 'repairsservice')}
 `,
 };
 
