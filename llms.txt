@@ -64,6 +64,11 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Karigars and outside units: metal issued and received by weight and purity, job work on challans, due-date sweeps, scorecards; wastage norms per stage with capped recovery; an order cannot close while its metal is short.
 - Fine-weight metal ledger with karigar balances and metal loans, reconciled monthly; diamond and stone flows reconciled on the same order. Details: https://jwero.ai/products/manufacturing
 
+## Jewellery purchase and vendor management (facts)
+- AI-drafted purchase orders from what is selling and ageing, with per-vendor prices; unfixed-rate purchases (buy now, fix the rate later); advance shipping notices; goods received by weight and purity with quality checks and discrepancies.
+- Purchase bills matched to the order and receipt, returns and credit notes, vendor advances and payments; purchases reconciled with GSTR-2B for input credit; metal purchases and metal loans in fine grams; consignment stock taken in from suppliers.
+- A vendor portal where suppliers see their orders, bills and payment status. Details: https://jwero.ai/products/purchase-vendors
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.

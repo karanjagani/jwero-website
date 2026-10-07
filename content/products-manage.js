@@ -86,72 +86,111 @@ ${L.ctaBand('See a repair, tracked properly.', 'Bring one real repair job — we
 `,
 };
 
+// Purchase and vendors, rebuilt 2026-10-07. AI-drafted purchase orders and
+// unfixed-rate purchases confirmed by Jwero.
+const P2P_FLOW = [
+  ['Drafted by AI', 'Reorder 40 pairs of 22K jhumkas · fast movers, low stock'],
+  ['Order sent', 'PO 0412 to Shree Chains · 252 g · rate unfixed, to be fixed on delivery'],
+  ['Shipping notice', 'Vendor confirms dispatch on the portal'],
+  ['Received', '250.4 g received against 252 g ordered · shortfall flagged'],
+  ['Quality check', 'Purity tested 916 · passed'],
+  ['Rate fixed', 'Rate fixed today at ₹6,875 a gram'],
+  ['Bill matched', 'Bill matched to the order and receipt · shortfall credited'],
+  ['GST credit', 'Matched against GSTR-2B · input credit confirmed'],
+  ['Paid', 'Payment visible to the vendor on the portal'],
+];
+const p2pFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">PURCHASE ORDER 0412</p>${P2P_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}</div>
+  <ol class="wa-steps">${P2P_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const PUR_CMP = [
+  ['What to buy', 'Gut feel', 'Reorder levels', 'AI-drafted orders from what is selling and ageing'],
+  ['Gold bought before the rate is fixed', 'A note in the book', 'Rarely', 'Unfixed-rate purchases, fixed later'],
+  ['Receiving', 'Weigh and write', 'Quantity', 'By weight and purity, with quality checks'],
+  ['Bill matched to order and receipt', 'By hand', 'Yes', 'Yes, with shortfalls credited'],
+  ['GST input credit checked against GSTR-2B', 'CA, later', 'Some', 'Yes'],
+  ['Metal purchases and metal loans in fine grams', 'Separate book', 'No', 'Yes'],
+  ['Consignment stock from suppliers', 'Notebook', 'No', 'Yes'],
+  ['Vendors see their own payment status', 'They call', 'No', 'Vendor portal'],
+];
+const purTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>WhatsApp, notebook and Tally</th><th>Generic purchase software</th><th>Jwero</th></tr></thead><tbody>${PUR_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const PUR_MOVE = [
+  ['List your vendors', 'Suppliers, karigars-as-suppliers and bullion dealers, with their GSTIN, terms and prices.'],
+  ['Bring open orders and balances', 'Open purchase orders, unpaid bills, advances, metal loans and unfixed-rate balances.'],
+  ['Set your buying rules', 'Who approves orders, rate-fixing practice, and quality checks at receiving.'],
+  ['Invite vendors to the portal', 'Each supplier gets a login to see orders, bills and payments; nothing to install.'],
+  ['Reconcile with GSTR-2B monthly', 'Purchases matched to the portal data, so input credit is claimed in full.'],
+];
+const purFaqs = [
+  { q: 'What is jewellery purchase management software?', a: 'Software for buying jewellery, gold and stones: purchase orders with per-vendor prices, receiving by weight and purity with quality checks, bills matched to the order and receipt, returns, vendor advances and payments, GST input credit checked against GSTR-2B, and metal purchases in fine grams.' },
+  { q: 'Can AI draft purchase orders?', a: 'Yes. Jwero drafts purchase orders from what is selling fast, what is running low and what is ageing, with each vendor’s prices. Your team reviews and sends them.' },
+  { q: 'Can I buy gold before the rate is fixed?', a: 'Yes. Record an unfixed-rate purchase by weight and purity, and fix the rate later, as is common with bullion dealers and suppliers. The bill and the metal ledger update when the rate is fixed.' },
+  { q: 'How do jewellers reconcile purchases with GSTR-2B?', a: 'Match every purchase bill against GSTR-2B each month. Bills a supplier has not filed show up as gaps, so you can chase them before claiming input credit. Jwero does this matching for you.' },
+  { q: 'Should gold purchases be recorded in fine grams or rupees?', a: 'Both. Rupees for the accounts, and fine grams for the metal ledger, so metal bought, issued, sold and owed can be compared whatever the rate.' },
+  { q: 'What is a vendor portal?', a: 'A separate login where each supplier sees their orders, delivery status, bills and payments, so they stop calling to ask. Nothing to install.' },
+  { q: 'How do jewellers handle consignment stock from suppliers?', a: 'Record it as stock you hold but do not own, sell from it, and settle with the supplier for what sold. Jwero keeps consignment stock separate and produces the settlement.' },
+  { q: 'Can I set different prices per vendor?', a: 'Yes. Each vendor’s prices and terms are kept on their record and used on their orders.' },
+  { q: 'Is this the same as manufacturing job work?', a: 'No. Purchase is buying from suppliers. Sending metal to karigars for making is job work, handled in manufacturing on challans.' },
+];
+
 const purchaseVendors = {
   slug: 'products/purchase-vendors',
   title: 'Jewellery Purchase & Vendor Management Software | Jwero',
-  description: 'Purchase orders, GRN, bills and vendor credit notes, plus a self-serve vendor portal — suppliers check their own PO and payment status.',
+  description: 'Jewellery purchase and vendor management software: AI-drafted orders, unfixed-rate gold purchases, receiving with quality checks, bill matching, GSTR-2B reconciliation, metal loans and a vendor portal.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Purchase Orders & Vendor Management', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Purchase-to-pay cycle covering purchase orders, goods-received notes, purchase bills, returns and vendor credit notes, a vendor master with per-vendor pricing rules, and a self-serve vendor portal for PO status, invoice submission and a shared design bank.',
+    name: 'Jwero Jewellery Purchase & Vendor Management', alternateName: ['Jewellery purchase management software', 'Jewellery vendor management software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Jewellery purchasing: AI-drafted purchase orders, per-vendor prices, unfixed-rate purchases, advance shipping notices, goods received by weight and purity with quality checks, bill matching, returns, vendor advances and payments, GSTR-2B reconciliation, metal purchases and loans in fine grams, consignment stock, and a vendor portal.',
     url: 'https://jwero.ai/products/purchase-vendors', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
-  breadcrumbs: BC('Purchase Orders & Vendors'),
-  faqs: [
-    { q: 'Do vendors need to install anything to use the portal?', a: 'No — it\'s a web login. A vendor signs in to see their own purchase orders, submit invoices against those POs, check payment status, and access a shared design bank, without calling or emailing your team.' },
-    { q: 'Can I set different prices per vendor?', a: 'Yes — the vendor master record holds configurable per-vendor pricing rules, so the same item can carry different agreed terms by supplier.' },
-    { q: 'Is this the same as manufacturing job-work with karigars?', a: 'No — this module is for buying from external suppliers (raw material, finished goods). Internal production and karigar job-work run as a separate system, covered on the ERP and HR & Payroll pages.' },
-    { q: 'What does the purchase-to-pay cycle actually cover?', a: 'Purchase orders, goods-received notes (GRN), purchase bills, purchase returns and vendor credit notes — a full cycle from ordering through to reconciling what was received against what was billed.' },
-    { q: 'Can a vendor see their payment status themselves?', a: 'Yes — that\'s part of the portal. A vendor can check whether a submitted invoice has been paid without needing to call your accounts team.' },
-    { q: 'Does the portal replace phone or email with vendors entirely?', a: 'It removes the routine "where\'s my PO / where\'s my payment" calls, since vendors can check status themselves. It doesn\'t block you from still calling or emailing when something needs a conversation.' },
-  ],
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to move your jewellery purchasing and vendors into Jwero', step: PUR_MOVE.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Purchase and vendors'),
+  faqs: purFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'PURCHASE ORDERS & VENDOR MANAGEMENT',
-  h1: 'Your suppliers stop calling to ask "where\'s my payment."',
-  sub: 'Most jewellery ERPs stop at raising a purchase order. Jwero gives vendors their own login — to see their POs, submit invoices against them, and check payment status themselves — so the routine calls disappear.',
-  primary: { href: '#', label: 'Show me the vendor portal', wa: 'purchasevendors' },
-  secondary: { href: '/products/erp', label: 'See the full ERP' },
+  eyebrow: 'JEWELLERY PURCHASE & VENDOR MANAGEMENT',
+  h1: 'Jewellery purchase and vendor management: buy, receive, match, pay, and suppliers who stop calling.',
+  sub: 'AI drafts the order from what is selling. Buy gold now and fix the rate later. Receive by weight and purity, check quality, match the bill, claim every rupee of GST input credit, and let suppliers see their own payment status.',
+  primary: { href: '#', label: 'Show me a purchase, order to paid', wa: 'purchase' },
 })}
 
-${L.section(
-  `${L.sectionHead('THE PURCHASE-TO-PAY CYCLE', 'Ordered, received, billed, reconciled.', '')}
-  ${L.cards([
-    { title: 'Purchase orders', text: 'Raise a PO against a vendor, with items, quantities and agreed terms.' },
-    { title: 'Goods-received notes', text: 'Record what actually arrived against the PO — the check before a bill gets approved.' },
-    { title: 'Purchase bills', text: 'Bill the PO and GRN together, so what you\'re paying for matches what was ordered and received.' },
-    { title: 'Returns & credit notes', text: 'Purchase returns and vendor credit notes close the loop when something doesn\'t match or needs to go back.' },
-    { title: 'Vendor master', text: 'One record per supplier, with configurable per-vendor pricing rules.' },
-    { title: 'Design Bank', text: 'A supplier shares a design; you adopt it into your catalogue with your own templates and master rules applied at the door — no retyping, no rule-breaking SKUs.' },
-  ], 3)}`
-)}
+${L.section(`${L.sectionHead('ONE ORDER, START TO FINISH', 'From an AI-drafted order to a vendor who is paid.', '')}${p2pFlow()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('THE VENDOR PORTAL', 'A separate login, so vendors stop calling you.', 'Most competitor jewellery ERPs don\'t have this — vendors are left emailing and calling to check basic status.')}
-  <div class="stack-verdict"><strong>Vendors get their own login</strong> where they can view their own purchase orders, submit their own invoices against those POs, see payment status, and access a shared design bank — real self-service, not a promise to "get back to them."</div>`,
-  { tone: 'tint' }
-)}
+${L.section(`${L.sectionHead('SIX JOBS, ONE PURCHASE BOOK', 'What jewellery purchase software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Buy what sells</h3><p>AI drafts purchase orders from fast movers, low stock and ageing, with each vendor’s prices and terms. Your team reviews and sends.</p><a href="/products/inventory">Stock and ageing →</a></article>
+  <article><h3>2. Buy gold, fix the rate later</h3><p>Unfixed-rate purchases recorded by weight and purity, with the rate fixed later; the bill and metal ledger update when it is.</p><a href="/blog/fine-weight-metal-ledger-jewellers">Fine weight →</a></article>
+  <article><h3>3. Receive and check</h3><p>Shipping notices from vendors, goods received by weight and purity, quality checks, and shortfalls raised with the vendor.</p><a href="/products/manufacturing">Manufacturing →</a></article>
+  <article><h3>4. Bills that match</h3><p>Purchase bills matched to the order and what was received, returns and credit notes, vendor advances and payments.</p><a href="/products/billing-finance">Finance →</a></article>
+  <article><h3>5. Claim every rupee of GST</h3><p>Purchases reconciled with GSTR-2B each month, so bills your suppliers have not filed are chased before you claim input credit.</p><a href="/blog/gst-on-jewellery-india">GST on jewellery →</a></article>
+  <article><h3>6. Metal, consignment and the vendor portal</h3><p>Metal purchases and metal loans in fine grams, consignment stock from suppliers settled for what sold, and a portal where vendors see their own orders and payments.</p><a href="/blog/approval-memo-stock-jewellery-wholesale">Memo and consignment →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'GST input credit you might be missing.', 'Your numbers, not ours.')}<div class="callc" data-itcc>
+  <div class="callc-in">
+    <label>Purchases a month, ₹<input type="number" inputmode="numeric" data-ic="buy" value="5000000" min="0" step="100000"></label>
+    <label>GST rate on purchases, %<input type="number" inputmode="decimal" data-ic="gst" value="3" min="0" step="0.25"></label>
+    <label>Bills not matched or claimed late, %<input type="number" inputmode="decimal" data-ic="miss" value="5" min="0" max="100"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>GST paid on purchases a month</span><b data-ic-o="gst">₹0</b></p>
+    <p><span>Input credit at risk a month</span><b data-ic-o="month">₹0</b></p>
+    <p class="callc-save"><span>Input credit at risk a year</span><b data-ic-o="year">₹0</b></p>
+    <p class="cta-note">An estimate from your own inputs. Confirm input credit rules with your CA.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'Notebook and Tally, generic purchase software, or Jwero.', '')}${purTable()}`)}
+
+${L.section(`${L.sectionHead('MOVING YOUR VENDORS IN', 'How to move your jewellery purchasing and vendors into Jwero.', 'Five steps, done with you.')}${L.steps(PUR_MOVE.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
-  'A GRN posted here updates the same inventory the catalogue and dead-stock views read from — no separate spreadsheet to reconcile later.',
-  'A purchase bill feeds the same finance layer billing and receivables already use, so what you owe a vendor and what a customer owes you sit in one place.',
+  'What you buy comes from what the counter, the website and WhatsApp are selling, on the same stock.',
+  'Gold bought on an unfixed rate sits on the same fine-weight ledger as karigar balances and metal loans.',
+  'A supplier’s bill, the GST credit and the payment are one trail your CA can follow.',
 ])}
 
-${L.section(
-  `<p class="cta-note">This is a separate system from manufacturing job-work — purchases and vendors cover buying from external suppliers (raw material, finished goods), while internal production and karigar wage settlement are covered on <a href="/products/erp">the ERP page</a> and <a href="/products/hr-payroll">HR & Payroll</a>.</p>`
-)}
-
-${L.section(`${L.sectionHead('PURCHASE & VENDOR QUESTIONS', 'Portal access, per-vendor pricing, and job-work.', '')}${L.faqBlock([
-  { q: 'Do vendors need to install anything?', a: 'No — the portal is a web login. Vendors check their own POs, submit invoices, and see payment status without calling or emailing.' },
-  { q: 'Can I set different prices per vendor?', a: 'Yes — the vendor master holds configurable per-vendor pricing rules.' },
-  { q: 'Is this the same as manufacturing job-work?', a: 'No — this covers buying from external suppliers. Internal production and karigar job-work run as a separate system.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
-<p class="cta-note" style="margin-top:14px">Purchases and vendors are one part of the wider operations layer — <a href="/products/erp">see the full ERP →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don't have to take our word for it — <a href="#" data-wa="purchasevendors">try the chat button on this page</a>; it's Jwero, live, answering.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Let your vendors check their own status.', 'Bring one supplier relationship you manage over calls and email — we will show you the portal that replaces it.', 'purchasevendors')}
+${L.ctaBand('Let your vendors check their own status.', 'Bring one supplier’s orders and bills from last month. We will show the full trail in Jwero.', 'purchase')}
 `,
 };
 

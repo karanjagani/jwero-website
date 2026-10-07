@@ -715,7 +715,7 @@ const SIM_PAGES = {
   'products/inventory': 'shelf', 'solutions/pain/dead-stock': 'shelf', 'roles/inventory-manager': 'shelf',
   'products/pos': 'till', 'roles/cashier': 'till', 'products/billing-finance': 'till',
   'solutions/diamond-traders': 'shelf', 'roles/accountant': 'till', 'roles/store-manager': 'shelf', 'roles/chain-owner': 'approve', 'roles/purchase-manager': 'shelf', 'roles/crm-executive': 'memory', 'roles/marketing-manager': 'approve', 'roles/b2b-manager': 'rate', 'roles/ecommerce-manager': 'rate', 'roles/quality-hallmarking': 'grams', 'roles/franchise-partner': 'approve', 'roles/next-gen-successor': 'memory', 'roles/cad-designer': 'approve', 'solutions/pain/lead-leakage': 'memory',
-  'products/erp': 'grams', 'products/manufacturing': 'grams', 'products/purchase-vendors': 'grams', 'products/multi-store': 'shelf', 'products/gold-schemes': 'memory', 'products/repairs-service': 'memory',
+  'products/erp': 'grams', 'products/manufacturing': 'grams', 'products/multi-store': 'shelf', 'products/gold-schemes': 'memory', 'products/repairs-service': 'memory',
   'products/manufacturing': 'grams', 'solutions/manufacturers': 'grams', 'roles/production-manager': 'grams', 'roles/karigar': 'grams',
 };
 // Solution playbooks: the day loop + module map after the simulation, the fit
@@ -1652,6 +1652,11 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Custom, trade and export orders; bills of materials and routings; material planning from open orders; job cards and work in progress by stage; quality checks; finished goods tagged with HUID.
 - Karigars and outside units: metal issued and received by weight and purity, job work on challans, due-date sweeps, scorecards; wastage norms per stage with capped recovery; an order cannot close while its metal is short.
 - Fine-weight metal ledger with karigar balances and metal loans, reconciled monthly; diamond and stone flows reconciled on the same order. Details: ${SITE}/products/manufacturing
+
+## Jewellery purchase and vendor management (facts)
+- AI-drafted purchase orders from what is selling and ageing, with per-vendor prices; unfixed-rate purchases (buy now, fix the rate later); advance shipping notices; goods received by weight and purity with quality checks and discrepancies.
+- Purchase bills matched to the order and receipt, returns and credit notes, vendor advances and payments; purchases reconciled with GSTR-2B for input credit; metal purchases and metal loans in fine grams; consignment stock taken in from suppliers.
+- A vendor portal where suppliers see their orders, bills and payment status. Details: ${SITE}/products/purchase-vendors
 
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.

@@ -2712,3 +2712,14 @@ document.addEventListener('click', function (e) {
   var io = new IntersectionObserver(function (es) { es.forEach(function (e) { clearInterval(timer); if (e.isIntersecting) { tick(); timer = setInterval(tick, 1600); } }); }, { threshold: .35 });
   io.observe(root);
 })();
+
+// Purchase page: GST input credit at risk.
+(function () {
+  var root = document.querySelector('[data-itcc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-ic="' + k + '"]') || {}).value || 0; };
+  var inr = function (n) { return '\u20b9' + Math.round(n).toLocaleString('en-IN'); };
+  function run() { var g = v('buy') * v('gst') / 100, m = g * v('miss') / 100;
+    var set = function (k, t) { var el = root.querySelector('[data-ic-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('gst', inr(g)); set('month', inr(m)); set('year', inr(m * 12)); }
+  root.addEventListener('input', run); run();
+})();

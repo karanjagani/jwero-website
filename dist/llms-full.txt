@@ -5193,91 +5193,141 @@ A: Automated notifications go out on WhatsApp, SMS and email for job-ready, over
 # Jewellery Purchase & Vendor Management Software
 URL: https://jwero.ai/products/purchase-vendors
 
-Purchase orders, GRN, bills and vendor credit notes, plus a self-serve vendor portal, suppliers check their own PO and payment status.
+Jewellery purchase and vendor management software: AI-drafted orders, unfixed-rate gold purchases, receiving with quality checks, bill matching, GSTR-2B reconciliation, metal loans and a vendor portal.
 
-PURCHASE ORDERS & VENDOR MANAGEMENT
+JEWELLERY PURCHASE & VENDOR MANAGEMENT
 
-## Your suppliers stop calling to ask "where's my payment."
+## Jewellery purchase and vendor management: buy, receive, match, pay, and suppliers who stop calling.
 
- Most jewellery ERPs stop at raising a purchase order. Jwero gives vendors their own login, to see their POs, submit invoices against them, and check payment status themselves, so the routine calls disappear.
+ AI drafts the order from what is selling. Buy gold now and fix the rate later. Receive by weight and purity, check quality, match the bill, claim every rupee of GST input credit, and let suppliers see their own payment status.
 
- Show me the vendor portal 
- See the full ERP 
+ Show me a purchase, order to paid 
 
- THE PURCHASE-TO-PAY CYCLE
+ ONE ORDER, START TO FINISH
 
-## Ordered, received, billed, reconciled.
+## From an AI-drafted order to a vendor who is paid.
 
-## Purchase orders
+ PURCHASE ORDER 0412
+ Drafted by AI Reorder 40 pairs of 22K jhumkas · fast movers, low stock
+ Order sent PO 0412 to Shree Chains · 252 g · rate unfixed, to be fixed on delivery
+ Shipping notice Vendor confirms dispatch on the portal
+ Received 250.4 g received against 252 g ordered · shortfall flagged
+ Quality check Purity tested 916 · passed
+ Rate fixed Rate fixed today at ₹6,875 a gram
+ Bill matched Bill matched to the order and receipt · shortfall credited
+ GST credit Matched against GSTR-2B · input credit confirmed
+ Paid Payment visible to the vendor on the portal
 
- Raise a PO against a vendor, with items, quantities and agreed terms.
+ Drafted by AI Reorder 40 pairs of 22K jhumkas 
+ Order sent PO 0412 to Shree Chains 
+ Shipping notice Vendor confirms dispatch on the portal 
+ Received 250.4 g received against 252 g ordered 
+ Quality check Purity tested 916 
+ Rate fixed Rate fixed today at ₹6,875 a gram 
+ Bill matched Bill matched to the order and receipt 
+ GST credit Matched against GSTR-2B 
+ Paid Payment visible to the vendor on the portal 
 
-## Goods-received notes
+ SIX JOBS, ONE PURCHASE BOOK
 
- Record what actually arrived against the PO, the check before a bill gets approved.
+## What jewellery purchase software has to do.
 
-## Purchase bills
+## 1. Buy what sells
+ AI drafts purchase orders from fast movers, low stock and ageing, with each vendor’s prices and terms. Your team reviews and sends.
+ Stock and ageing → 
 
- Bill the PO and GRN together, so what you're paying for matches what was ordered and received.
+## 2. Buy gold, fix the rate later
+ Unfixed-rate purchases recorded by weight and purity, with the rate fixed later; the bill and metal ledger update when it is.
+ Fine weight → 
 
-## Returns & credit notes
+## 3. Receive and check
+ Shipping notices from vendors, goods received by weight and purity, quality checks, and shortfalls raised with the vendor.
+ Manufacturing → 
 
- Purchase returns and vendor credit notes close the loop when something doesn't match or needs to go back.
+## 4. Bills that match
+ Purchase bills matched to the order and what was received, returns and credit notes, vendor advances and payments.
+ Finance → 
 
-## Vendor master
+## 5. Claim every rupee of GST
+ Purchases reconciled with GSTR-2B each month, so bills your suppliers have not filed are chased before you claim input credit.
+ GST on jewellery → 
 
- One record per supplier, with configurable per-vendor pricing rules.
+## 6. Metal, consignment and the vendor portal
+ Metal purchases and metal loans in fine grams, consignment stock from suppliers settled for what sold, and a portal where vendors see their own orders and payments.
+ Memo and consignment → 
 
-## Design Bank
+ THE ARITHMETIC
 
- A supplier shares a design; you adopt it into your catalogue with your own templates and master rules applied at the door, no retyping, no rule-breaking SKUs.
+## GST input credit you might be missing.
 
- THE VENDOR PORTAL
+ Your numbers, not ours.
 
-## A separate login, so vendors stop calling you.
+ Purchases a month, ₹ 
+ GST rate on purchases, % 
+ Bills not matched or claimed late, % 
 
- Most competitor jewellery ERPs don't have this, vendors are left emailing and calling to check basic status.
+ GST paid on purchases a month ₹0 
 
- Vendors get their own login where they can view their own purchase orders, submit their own invoices against those POs, see payment status, and access a shared design bank, real self-service, not a promise to "get back to them."
+ Input credit at risk a month ₹0 
+
+ Input credit at risk a year ₹0 
+
+ An estimate from your own inputs. Confirm input credit rules with your CA.
+
+ COMPARE
+
+## Notebook and Tally, generic purchase software, or Jwero.
+
+ WhatsApp, notebook and Tally Generic purchase software Jwero 
+ What to buy Gut feel Reorder levels AI-drafted orders from what is selling and ageing 
+ Gold bought before the rate is fixed A note in the book Rarely Unfixed-rate purchases, fixed later 
+ Receiving Weigh and write Quantity By weight and purity, with quality checks 
+ Bill matched to order and receipt By hand Yes Yes, with shortfalls credited 
+ GST input credit checked against GSTR-2B CA, later Some Yes 
+ Metal purchases and metal loans in fine grams Separate book No Yes 
+ Consignment stock from suppliers Notebook No Yes 
+ Vendors see their own payment status They call No Vendor portal 
+
+ MOVING YOUR VENDORS IN
+
+## How to move your jewellery purchasing and vendors into Jwero.
+
+ Five steps, done with you.
+
+ 1 
+
+## List your vendors
+ Suppliers, karigars-as-suppliers and bullion dealers, with their GSTIN, terms and prices.
+
+ 2 
+
+## Bring open orders and balances
+ Open purchase orders, unpaid bills, advances, metal loans and unfixed-rate balances.
+
+ 3 
+
+## Set your buying rules
+ Who approves orders, rate-fixing practice, and quality checks at receiving.
+
+ 4 
+
+## Invite vendors to the portal
+ Each supplier gets a login to see orders, bills and payments; nothing to install.
+
+ 5 
+
+## Reconcile with GSTR-2B monthly
+ Purchases matched to the portal data, so input credit is claimed in full.
 
  BECAUSE IT'S ONE SYSTEM
 
- A GRN posted here updates the same inventory the catalogue and dead-stock views read from, no separate spreadsheet to reconcile later.
- A purchase bill feeds the same finance layer billing and receivables already use, so what you owe a vendor and what a customer owes you sit in one place.
-
- This is a separate system from manufacturing job-work, purchases and vendors cover buying from external suppliers (raw material, finished goods), while internal production and karigar wage settlement are covered on the ERP page and HR & Payroll .
-
- PURCHASE & VENDOR QUESTIONS
-
-## Portal access, per-vendor pricing, and job-work.
-
- Do vendors need to install anything? 
- No, the portal is a web login. Vendors check their own POs, submit invoices, and see payment status without calling or emailing.
-
- Can I set different prices per vendor? 
- Yes, the vendor master holds configurable per-vendor pricing rules.
-
- Is this the same as manufacturing job-work? 
- No, this covers buying from external suppliers. Internal production and karigar job-work run as a separate system.
-
- More questions? See the full FAQ → 
-
- Purchases and vendors are one part of the wider operations layer, see the full ERP → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- You don't have to take our word for it, try the chat button on this page ; it's Jwero, live, answering.
+ What you buy comes from what the counter, the website and WhatsApp are selling, on the same stock.
+ Gold bought on an unfixed rate sits on the same fine-weight ledger as karigar balances and metal loans.
+ A supplier’s bill, the GST credit and the payment are one trail your CA can follow.
 
 ## Let your vendors check their own status.
 
- Bring one supplier relationship you manage over calls and email, we will show you the portal that replaces it.
+ Bring one supplier’s orders and bills from last month. We will show the full trail in Jwero.
 
  Chat or call with us 
  Book a demo 
@@ -5286,23 +5336,32 @@ PURCHASE ORDERS & VENDOR MANAGEMENT
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: Do vendors need to install anything to use the portal?
-A: No, it's a web login. A vendor signs in to see their own purchase orders, submit invoices against those POs, check payment status, and access a shared design bank, without calling or emailing your team.
+Q: What is jewellery purchase management software?
+A: Software for buying jewellery, gold and stones: purchase orders with per-vendor prices, receiving by weight and purity with quality checks, bills matched to the order and receipt, returns, vendor advances and payments, GST input credit checked against GSTR-2B, and metal purchases in fine grams.
+
+Q: Can AI draft purchase orders?
+A: Yes. Jwero drafts purchase orders from what is selling fast, what is running low and what is ageing, with each vendor’s prices. Your team reviews and sends them.
+
+Q: Can I buy gold before the rate is fixed?
+A: Yes. Record an unfixed-rate purchase by weight and purity, and fix the rate later, as is common with bullion dealers and suppliers. The bill and the metal ledger update when the rate is fixed.
+
+Q: How do jewellers reconcile purchases with GSTR-2B?
+A: Match every purchase bill against GSTR-2B each month. Bills a supplier has not filed show up as gaps, so you can chase them before claiming input credit. Jwero does this matching for you.
+
+Q: Should gold purchases be recorded in fine grams or rupees?
+A: Both. Rupees for the accounts, and fine grams for the metal ledger, so metal bought, issued, sold and owed can be compared whatever the rate.
+
+Q: What is a vendor portal?
+A: A separate login where each supplier sees their orders, delivery status, bills and payments, so they stop calling to ask. Nothing to install.
+
+Q: How do jewellers handle consignment stock from suppliers?
+A: Record it as stock you hold but do not own, sell from it, and settle with the supplier for what sold. Jwero keeps consignment stock separate and produces the settlement.
 
 Q: Can I set different prices per vendor?
-A: Yes, the vendor master record holds configurable per-vendor pricing rules, so the same item can carry different agreed terms by supplier.
+A: Yes. Each vendor’s prices and terms are kept on their record and used on their orders.
 
-Q: Is this the same as manufacturing job-work with karigars?
-A: No, this module is for buying from external suppliers (raw material, finished goods). Internal production and karigar job-work run as a separate system, covered on the ERP and HR & Payroll pages.
-
-Q: What does the purchase-to-pay cycle actually cover?
-A: Purchase orders, goods-received notes (GRN), purchase bills, purchase returns and vendor credit notes, a full cycle from ordering through to reconciling what was received against what was billed.
-
-Q: Can a vendor see their payment status themselves?
-A: Yes, that's part of the portal. A vendor can check whether a submitted invoice has been paid without needing to call your accounts team.
-
-Q: Does the portal replace phone or email with vendors entirely?
-A: It removes the routine "where's my PO / where's my payment" calls, since vendors can check status themselves. It doesn't block you from still calling or emailing when something needs a conversation.
+Q: Is this the same as manufacturing job work?
+A: No. Purchase is buying from suppliers. Sending metal to karigars for making is job work, handled in manufacturing on challans.
 
 ---
 
