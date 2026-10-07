@@ -465,7 +465,7 @@ function intelligence(opts = {}) {
         <div><dt>Who</dt><dd>41 ready segments in 13 families — high-intent enquiry, bridal enquiry, abandoned cart, viewers who never bought, VIP at risk, scheme maturing.</dd></div>
         <div><dt>What</dt><dd>Six plays — nurture, engage, upsell VIP, retain, reactivate, win back — with an expected outcome and ₹ potential on every record, and a taste profile from her very first purchase.</dd></div>
         <div><dt>When</dt><dd>Her best hour on her best channel; the shop’s windows re-learnt from real reads and replies; one fatigue cap across every send engine.</dd></div>
-        <div><dt>How</dt><dd>21 journey recipes and 30 personalisation fields draft the message. Nothing sends until you widen what may run alone.</dd></div>
+        <div><dt>How</dt><dd>300+ ready journeys and 30 personalisation fields draft the message. Nothing sends until you widen what may run alone.</dd></div>
       </dl>
     </div>
   </div>
@@ -1494,7 +1494,7 @@ const mockMemo = `
 const CTA_TILES = ['shield', 'chat', 'gem', 'record', 'sparkle', 'coins'];
 const CTA_TICKER = [
   ['record', '198 customer signals · 11 live scores, each with a why'],
-  ['sparkle', '41 ready segments · 21 journey recipes'],
+  ['sparkle', '41 ready segments · 300+ ready journeys'],
   ['shield', '240+ governed AI actions'],
   ['phone', 'AI calls in 11 Indian languages'],
   ['power', 'Kill switch at five scopes'],

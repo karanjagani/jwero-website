@@ -317,88 +317,113 @@ ${L.ctaBand('Reward regulars, not just savers.', 'Tell us how your customers buy
 `,
 };
 
+// Journeys, rebuilt 2026-10-07. Confirmed by Jwero: 300+ ready journeys,
+// abandoned-cart and browse journeys. A/B testing not claimed.
+const JRN = [
+  ['Trigger', 'Meera’s anniversary is in 10 days'],
+  ['WhatsApp', 'Three pieces matched to her taste and budget, priced at today’s rate'],
+  ['Wait', '2 days'],
+  ['Condition', 'Not read? Go to the next step'],
+  ['AI call', 'A call in Hindi at ₹7 · she is interested'],
+  ['Visit booked', 'Saturday 5 pm, confirmed on WhatsApp'],
+  ['Bought', 'Loyalty points added · the journey ends'],
+];
+const jrnFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">JOURNEY · ANNIVERSARY</p>${JRN.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Every message waits for approval until you let it run alone.</p></div>
+  <ol class="wa-steps">${JRN.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const READY = ['Welcome a new customer', 'New-lead nurture', 'Birthday', 'Anniversary', 'Family wedding coming up', 'Abandoned cart', 'Browsed but did not buy', 'Scheme instalment due', 'Scheme maturity', 'Repair ready for collection', 'Win back a quiet customer', 'VIP at risk', 'Loyalty tier up', 'Points about to expire', 'After a purchase', 'Festival invitation'];
+const JRN_CMP = [
+  ['Ready-made journeys for jewellers', 'No', 'Generic templates', '300+ ready journeys'],
+  ['Knows purchases, schemes, occasions', 'No', 'If you sync data', 'Yes, one record'],
+  ['WhatsApp, SMS, email, push and AI calls', 'WhatsApp only', 'Email and SMS', 'All, in one flow'],
+  ['Abandoned cart and browse', 'No', 'Online only', 'Yes, with WhatsApp and calls'],
+  ['Pieces matched to each customer', 'Same message to all', 'Some', 'Yes, priced at today’s rate'],
+  ['Approval before anything sends', 'You send it', 'Rarely', 'Yes, until you let it run alone'],
+  ['What it sold', 'Guess', 'Clicks', 'Visits and bills traced to the journey'],
+];
+const jrnTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>WhatsApp by hand</th><th>Generic marketing automation</th><th>Jwero journeys</th></tr></thead><tbody>${JRN_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const JRN_HOW = [
+  ['Pick a ready journey', 'Start from one of 300+ ready journeys, such as anniversary, abandoned cart or scheme maturity.'],
+  ['Choose who it is for', 'A segment from your records: bridal buyers, scheme members, quiet customers, one branch.'],
+  ['Adjust the steps', 'Messages, waits, conditions, AI calls and branches on the canvas.'],
+  ['Keep approval on', 'Every message waits for your team’s yes, with quiet hours and frequency limits.'],
+  ['Switch it on and watch', 'See who is at which step, what was sent and what it sold; stop it with one switch.'],
+];
+const jrnFaqs = [
+  { q: 'What is marketing automation for jewellers?', a: 'Marketing automation sends the right message to each customer at the right moment without someone remembering to: before an anniversary, after an abandoned cart, when a scheme matures or a repair is ready. Jwero runs it as journeys across WhatsApp, SMS, email, push and AI calls, with your approval.' },
+  { q: 'What is a customer journey?', a: 'A sequence of steps that runs for each customer: a trigger, such as a birthday or an abandoned cart, then messages, waits, conditions and calls, until the customer buys or the journey ends.' },
+  { q: 'Which journeys should a jewellery shop automate first?', a: 'Anniversary and birthday, scheme instalment and maturity, repair ready, abandoned cart and browse, and win-back for quiet customers. Jwero has these and more among 300+ ready journeys.' },
+  { q: 'Can a journey send messages without approval?', a: 'Not unless you allow it. Every message waits for your team’s approval at first; once you trust a step, you can let it send on its own, inside quiet hours and frequency limits. One switch stops everything.' },
+  { q: 'How is a journey different from a broadcast?', a: 'A broadcast sends one message to many people at once. A journey runs for each customer on their own timeline, reacts to what they do, and moves them step by step towards a purchase.' },
+  { q: 'Are there journeys for abandoned carts and browsing?', a: 'Yes. When a customer leaves pieces in an online cart, or keeps looking at the same pieces, a journey follows up on WhatsApp and can place an AI call.' },
+  { q: 'Can a journey include phone calls?', a: 'Yes. An AI call at ₹7 can be a step, for example when a WhatsApp message is not read, and the outcome decides the next step.' },
+  { q: 'Can I see what a journey is doing right now?', a: 'Yes. You see how many customers are at each step, what was sent, what is waiting for approval, and the visits and bills it produced.' },
+  { q: 'Are the recommended pieces personal, or bestsellers?', a: 'Personal. Each customer gets pieces matched to their purchases, taste and budget, priced at today’s rate.' },
+];
+
 const journeys = {
   slug: 'products/journeys',
-  title: 'Jewellery Marketing Automation: Customer Journeys | Jwero',
-  description: 'Build multi-step customer journeys: triggers, branches, wait steps, messages — with a human-approval gate before anything reaches a customer.',
+  title: 'Jewellery Marketing Automation & Customer Journeys | Jwero',
+  description: 'Jewellery marketing automation: 300+ ready customer journeys for anniversaries, abandoned carts, schemes, repairs and win-backs, across WhatsApp, SMS, email and AI calls, with approval before anything sends.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Customer Journeys', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'A visual, drag-and-drop journey builder for multi-step customer automation, with an approval node that routes any step through the same human-approval governance used across Jwero.',
+    name: 'Jwero Jewellery Marketing Automation', alternateName: ['Customer journeys for jewellers', 'Jewellery marketing automation software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Marketing automation for jewellers: 300+ ready customer journeys including anniversary, birthday, abandoned cart, browse, scheme maturity, repair ready and win-back; a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; personalised pieces at today’s rate; approval gates and live visibility.',
     url: 'https://jwero.ai/products/journeys', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
-  breadcrumbs: BC('Customer Journeys'),
-  faqs: [
-    { q: 'What is a customer journey in Jwero?', a: 'A visual, drag-and-drop flow you build on a canvas: an entry point, then steps like event triggers, filter and score gates, conditions, branches, wait delays, messages, manual tasks, webhooks, CRM updates, calls, approvals and exits.' },
-    { q: 'Can a journey send a message without anyone checking it first?', a: 'Only if you let it. Add an approval node anywhere in the flow and the journey pauses until a person approves — the same approval-queue governance and kill switch described on the AI workforce page, not a separate system.' },
-    { q: 'Which channels can a journey message step use?', a: 'Message steps route through the shared channel router into WhatsApp, email, SMS and push — the same channels Broadcasts uses.' },
-    { q: 'How does an occasion like a birthday actually get triggered?', a: 'A recurring sweep derives each customer’s next occasion from three sources: a recorded birthday or anniversary date, an inferred purchase-anniversary (a past significant purchase above a value threshold, treated as a recurring date even if the customer never told you), and a built-in Indian jewellery-festival calendar. A date a salesperson has entered by hand always wins — the automation never overwrites it.' },
-    { q: 'What does the occasion journey actually send?', a: 'It’s enriched first: the customer’s top AI-recommended products and their lifetime spend are attached before anything goes out. The pre-built template sends curated WhatsApp product picks; if there’s no response in 2 days, it escalates to an AI voice call; either way it ends in a store-visit-booking task for staff — the automation itself never messages the customer directly, it feeds the journey.' },
-    { q: 'Are the recommended products actually personalized, or generic bestsellers?', a: 'A co-purchase pattern engine looks at what products actually sell together across 24 months of real order history to build per-customer recommendations. Where there isn’t enough behavioral signal for a customer, the system falls back to category-level suggestions — and marks internally which is which, rather than presenting a fallback as if it were personalized.' },
-    { q: 'Can I see what a journey is actually doing right now?', a: 'Yes. Journeys have live run monitoring, replay of past runs, staged rollout, and an incidents view — so a journey running in production is never a black box.' },
-    { q: 'How is this different from a simple autoresponder?', a: 'Branching conditions, score and filter gates, wait steps and CRM updates let a journey react to who a customer is and what they do — not just fire on a timer.' },
-    { q: 'What do the filter and score gates actually check?', a: 'A deterministic, rule-based scoring system computes intent, confidence, conversion likelihood, ROI probability, message-fatigue and trust-risk per customer from real behavioural signals. Those scores can gate entry to a journey — a customer already scoring high on message-fatigue, for instance, won’t be dropped into another one.' },
-    { q: 'Can a journey require someone to approve before it continues?', a: 'Yes — that is what the approval node is for. It is not a workaround; it is a first-class step type in the builder.' },
-  ],
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up your first customer journey', step: JRN_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Journeys'),
+  faqs: jrnFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'CUSTOMER JOURNEYS',
-  h1: 'Automation your team can see, and can stop.',
-  sub: 'Most journey builders are a black box once you publish them. Jwero’s is a visual canvas you build, watch and can pause at any step — including an approval node that puts a person between a draft and a customer, wired into the same governance spine as the rest of your AI workforce.',
-  primary: { href: '#', label: 'Show me a journey waiting for approval', wa: 'journeys' },
-  secondary: { href: '/platform/ai-workforce', label: 'How Jwero governs AI actions' },
+  eyebrow: 'JEWELLERY MARKETING AUTOMATION · CUSTOMER JOURNEYS',
+  h1: 'Jewellery marketing automation: customer journeys your team can see, and can stop.',
+  sub: 'Start from 300+ ready journeys: anniversaries, abandoned carts, scheme maturity, repairs ready, quiet customers. Each runs for every customer on their own timeline across WhatsApp, SMS, email and AI calls, with your approval before anything sends.',
+  primary: { href: '#', label: 'Show me the journeys for my shop', wa: 'journeys' },
 })}
 
-${L.section(
-  `${L.sectionHead('THE BUILDER', 'A real canvas, not a config form.', '')}
-  ${L.cards([
-    { title: 'Entry & triggers', text: 'Start a journey from an event: a purchase, a scheme instalment due, an occasion, a form submit — or drop a customer in manually.' },
-    { title: 'Filter & score gates', text: 'A deterministic, rule-based score — intent, confidence, conversion likelihood, ROI probability, message-fatigue, trust-risk — gates entry, so a customer already fatigued on messages won’t be added to another journey.' },
-    { title: 'Branches & conditions', text: 'Split the flow on any condition, so different customers take different paths through the same journey.' },
-    { title: 'Wait & message steps', text: 'Add time delays between steps, and send messages through the shared channel router into WhatsApp, email, SMS or push.' },
-    { title: 'Approval node', text: 'Insert a human-approval step anywhere — the flow pauses until someone in your team approves, the same queue used across the AI workforce.', link: { href: '/platform/ai-workforce', label: 'See the approval queue' } },
-    { title: 'Manual task, webhook, CRM update, call', text: 'Hand a step to a person, call out to another system, update a customer record, or trigger an AI voice call — all as steps in the same flow.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE JOURNEY, START TO FINISH', 'An anniversary that becomes a sale.', '')}${jrnFlow()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('THE OCCASION ENGINE', 'Not a festival blast. A real per-customer derivation.', 'A recurring sweep finds each customer’s next occasion from three sources, then hands it to a journey — the automation itself never messages anyone directly.')}
-  ${L.cards([
-    { title: 'Three sources, one date', text: 'A recorded birthday or anniversary on the customer record; an inferred purchase-anniversary — a past significant purchase above a value threshold, treated as a recurring occasion even if the customer never told anyone; and a built-in Indian jewellery-festival calendar.' },
-    { title: 'Manual entries always win', text: 'If a salesperson has entered a date on the customer record by hand, the automatic sweep never overwrites it. A person’s knowledge of their own customer outranks the inference.' },
-    { title: 'Enriched before it sends', text: 'Each triggered occasion is attached to the customer’s top AI-recommended products and their lifetime spend before a journey template does anything with it.' },
-    { title: 'Curated picks, then escalation', text: 'The pre-built journey sends curated WhatsApp product picks first. No response in 2 days escalates to an AI voice call. Either path ends in a store-visit-booking task for staff — a human closes it, the automation only opens the door.' },
-  ], 4)}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('SIX JOBS, ONE CANVAS', 'What jewellery marketing automation has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Start from a ready journey</h3><p>More than 300 ready journeys for jewellers: welcome, new-lead nurture, birthdays, anniversaries, abandoned cart, browse, scheme maturity, repair ready, win-back, VIP at risk and more.</p><a href="#ready">See some →</a></article>
+  <article><h3>2. Build your own on a canvas</h3><p>Triggers, waits, conditions and branches, laid out as a flow you can read, change and copy.</p><a href="/platform/ai-workforce">AI workforce →</a></article>
+  <article><h3>3. Every channel in one flow</h3><p>WhatsApp, SMS, email, push and AI calls at ₹7 as steps, so a message that is not read can become a call.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
+  <article><h3>4. Personal, not a blast</h3><p>Each customer gets pieces matched to their purchases, taste and budget, priced at today’s rate, on the day that matters to them.</p><a href="/products/crm">Customer record →</a></article>
+  <article><h3>5. Nothing goes out without your yes</h3><p>Approval gates on every message until you trust a step, quiet hours, frequency limits and one switch to stop it all.</p><a href="/whatsapp-broadcast-for-jewellers">WhatsApp marketing →</a></article>
+  <article><h3>6. Watch it work</h3><p>Who is at which step, what was sent, what waits for approval, and the visits and bills each journey produced.</p><a href="/products/reports">Reports →</a></article>
+</div>`)}
 
-${L.section(
-  `${L.sectionHead('RUNNING IN PRODUCTION', 'Not a black box once it’s live.', '')}
-  ${L.cards([
-    { title: 'Live run monitoring', text: 'Watch customers move through a journey in real time — where they are, what fired, what’s waiting.' },
-    { title: 'Replay', text: 'Step back through a past run to see exactly what happened and why, node by node.' },
-    { title: 'Staged rollout', text: 'Publish a journey to a small slice of customers before it runs on everyone.' },
-    { title: 'Incidents view', text: 'A journey that errors or stalls shows up as an incident, not a silent failure.' },
-  ], 4)}`
-, { tone: 'tint' })}
+${L.section(`<span id="ready"></span>${L.sectionHead('READY JOURNEYS', 'A few of the 300+ ready journeys.', 'Pick one, adjust it, switch it on.')}<div class="jrn-chips">${READY.map((r) => `<span>${r}</span>`).join('')}<span class="is-more">and 280+ more</span></div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'The follow-ups your team never gets to.', 'Your numbers, not ours.')}<div class="callc" data-jrc>
+  <div class="callc-in">
+    <label>Customers with a birthday or anniversary on record<input type="number" inputmode="numeric" data-jr="cust" value="3000" min="0"></label>
+    <label>Reached before the date today, %<input type="number" inputmode="decimal" data-jr="now" value="10" min="0" max="100"></label>
+    <label>Reached customers who visit, %<input type="number" inputmode="decimal" data-jr="visit" value="8" min="0" max="100"></label>
+    <label>Visitors who buy, %<input type="number" inputmode="decimal" data-jr="buy" value="40" min="0" max="100"></label>
+    <label>Average bill, ₹<input type="number" inputmode="numeric" data-jr="bill" value="35000" min="0" step="1000"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Customers missed today</span><b data-jr-o="miss">0</b></p>
+    <p><span>Extra visits a year if all are reached</span><b data-jr-o="visits">0</b></p>
+    <p class="callc-save"><span>Extra sales a year</span><b data-jr-o="sales">₹0</b></p>
+    <p class="cta-note">Each customer has two occasions a year in this estimate. A planning figure from your own inputs, not a promise.</p>
+  </div>
+</div>`)}
+
+${L.section(`${L.sectionHead('COMPARE', 'WhatsApp by hand, a generic automation tool, or Jwero journeys.', '')}${jrnTable()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('YOUR FIRST JOURNEY', 'How to set up your first customer journey.', 'Five steps.')}${L.steps(JRN_HOW.map(([title, text]) => ({ title, text })))}`)}
 
 ${L.oneSystemBlock([
-  'A journey’s approval node opens the same approval queue an AI-drafted WhatsApp reply uses: one governance system shared everywhere, rather than a separate one per feature.',
-  'Message steps share the channel router with Broadcasts, so a journey and a broadcast never fight over template rules or send limits.',
-  'A journey can update the same customer record the rest of Jwero reads from — a CRM-update step is not a copy, it is the record.',
-  'The occasion engine’s product picks come from the same co-purchase recommendation engine used elsewhere in Jwero — built on 24 months of real order history, and marked internally when it has to fall back to a category-level suggestion instead of a personalized one.',
+  'A journey reads the same record as the counter: what she bought, her scheme, her points, her family’s dates.',
+  'A message not read can become an AI call, and the call’s outcome decides the next step.',
+  'Visits and bills are traced back to the journey that brought them.',
 ])}
 
-${L.section(`${L.sectionHead('JOURNEY QUESTIONS', 'Approval gates, channels and visibility.', '')}${L.faqBlock([
-  { q: 'Can a journey send something without a human checking it?', a: 'Only if you design it that way. Drop in an approval node and the flow waits for a person — the same governance and kill switch used across the AI workforce.' },
-  { q: 'Can I watch a journey while it runs, or only see it after?', a: 'Live run monitoring shows customers moving through the flow in real time, plus replay of past runs and an incidents view.' },
-  { q: 'How does the occasion engine find a customer’s birthday or anniversary?', a: 'From three sources — a recorded date, an inferred purchase-anniversary from a past significant purchase, or the built-in festival calendar — and a manual date a salesperson entered always takes priority over any of them.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="journeys">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Build a journey your team can watch.', 'Bring one real flow: a scheme reminder sequence, a festival invite, a win-back — and we’ll build it live with an approval gate in place.', 'journeys')}
+${L.ctaBand('Build a journey your team can watch.', 'Tell us which moment you miss most. We will show the ready journey for it.', 'journeys')}
 `,
 };
 

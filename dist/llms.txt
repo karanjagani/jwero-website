@@ -80,6 +80,10 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Anniversary and birthday rewards sent before the date; referrals traced to the friend's purchase; coupons and gift vouchers with limits and approvals; points expiry with a reminder, and points outstanding as a liability.
 - One balance at the counter, online store and WhatsApp; works alongside gold schemes on the same record. Details: https://jwero.ai/products/loyalty
 
+## Jewellery marketing automation and journeys (facts)
+- 300+ ready customer journeys for jewellers, including welcome, new-lead nurture, birthday, anniversary, family wedding, abandoned cart, browse, scheme instalment and maturity, repair ready, win-back, VIP at risk and loyalty moments.
+- A canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; pieces matched to each customer at today's rate; approval before anything sends until you allow it, quiet hours, frequency limits and a stop switch; live view of each step and sales traced to the journey. Details: https://jwero.ai/products/journeys
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -128,7 +132,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Gold Scheme Software for Jewellers: 11+1 & Gram Plans: https://jwero.ai/products/gold-schemes
 - Multi-Store Jewellery Software for Chains & Franchises: https://jwero.ai/products/multi-store
 - Jewellery Loyalty Program Software: Points, Tiers, Rewards: https://jwero.ai/products/loyalty
-- Jewellery Marketing Automation: Customer Journeys: https://jwero.ai/products/journeys
+- Jewellery Marketing Automation & Customer Journeys: https://jwero.ai/products/journeys
 - Jewellery Marketing Software: WhatsApp, Email, SMS Campaigns: https://jwero.ai/products/campaigns
 - Repairs & After-Sales Service Software for Jewellers: https://jwero.ai/products/repairs-service
 - Jewellery Purchase & Vendor Management Software: https://jwero.ai/products/purchase-vendors

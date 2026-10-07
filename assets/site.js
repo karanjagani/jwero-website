@@ -2744,3 +2744,13 @@ document.addEventListener('click', function (e) {
     set('n', Math.round(n).toLocaleString('en-IN')); set('sales', inr(sales)); set('cost', inr(cost)); set('net', inr(net)); }
   root.addEventListener('input', run); run();
 })();
+
+// Journeys page: follow-ups the team never gets to.
+(function () {
+  var root = document.querySelector('[data-jrc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-jr="' + k + '"]') || {}).value || 0; };
+  function run() { var occ = v('cust') * 2, miss = occ * (1 - v('now') / 100), visits = miss * v('visit') / 100, sales = visits * v('buy') / 100 * v('bill');
+    var set = function (k, t) { var el = root.querySelector('[data-jr-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('miss', Math.round(miss).toLocaleString('en-IN')); set('visits', Math.round(visits).toLocaleString('en-IN')); set('sales', '\u20b9' + Math.round(sales).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();
