@@ -34,7 +34,7 @@ const TIERS = () => `
     <a class="btn btn-ghost" href="#" data-wa="enterprise">Talk to us</a>
   </article>
 </div>
-<p class="jb-promise">A real person replies on WhatsApp within minutes · Onboarding in a day · Refer a jeweller, save 10%</p>`;
+<p class="jb-promise">Onboarding in a day · Refer a jeweller, save 10%</p>`;
 
 const section = () => L.section(`<span id="jbaas"></span>${L.sectionHead('JEWELLERY BUSINESS AS A SERVICE', 'Use the platform.<br>Or let Jwero run it for you.', 'The same platform, three ways to buy it. Run it with your own team, or hand the work to Jwero’s specialists and AI with every tool included.')}${TIERS()}<p class="jb-more"><a href="/jewellery-business-as-a-service">See how Jewellery Business as a Service works →</a></p>`, { tone: 'tint' });
 
@@ -52,9 +52,9 @@ const page = {
   description: 'Jwero runs the marketing, sales follow-up, customer engagement, ecommerce and back office of a jewellery business with specialists and AI. No subscription, every tool included, priced on the work. Or run the platform yourself for ₹18,000 a month.',
   breadcrumbs: [['Home', '/'], ['Jewellery Business as a Service']],
   body: `
-${L.hero({ eyebrow: 'Jewellery Business as a Service', panel: true, h1: 'You focus on jewellery. We handle the rest.', sub: 'Jwero’s specialists and AI run the work around your jewellery, on the same platform you see on this site. No team to hire, no tools to buy, no subscription.', primary: { href: '#', wa: 'handle', label: 'Let Jwero handle it' }, secondary: { href: '#pricing', label: 'See pricing' }, note: 'A real person replies on WhatsApp within minutes. Onboarding in a day.' })}
+${L.hero({ eyebrow: 'Jewellery Business as a Service', panel: true, h1: 'You focus on jewellery. We handle the rest.', sub: 'Jwero’s specialists and AI run the work around your jewellery, on the same platform you see on this site. No team to hire, no tools to buy, no subscription.', primary: { href: '#', wa: 'handle', label: 'Let Jwero handle it' }, secondary: { href: '#pricing', label: 'See pricing' }, note: ' Onboarding in a day.' })}
 ${L.section(`${L.sectionHead('WHAT JWERO RUNS', 'Hand over one function, or all of them.', '')}<div class="jb-what">${WHAT.map(([t, d]) => `<div><b>${t}</b><p>${d}</p></div>`).join('')}</div>`)}
-${L.section(`${L.sectionHead('HOW IT STARTS', 'From a first message to work getting done.', '')}<ol class="jb-steps"><li><b>You message us</b>A real person replies within minutes.</li><li><b>A short call</b>Your business, your team, what you would rather not manage.</li><li><b>Your plan in writing</b>What Jwero takes on, who does it, what it costs.</li><li><b>Onboarded in a day</b>Start with one function. Add more when ready.</li></ol>`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('HOW IT STARTS', 'From a first message to work getting done.', '')}<ol class="jb-steps"><li><b>You message us</b>Say what you want, in your own words.</li><li><b>A short call</b>Your business, your team, what you would rather not manage.</li><li><b>Your plan in writing</b>What Jwero takes on, who does it, what it costs.</li><li><b>Onboarded in a day</b>Start with one function. Add more when ready.</li></ol>`, { tone: 'tint' })}
 ${L.section(`<span id="pricing"></span>${L.sectionHead('PRICING', 'Subscription, managed, or enterprise.', '')}${TIERS()}`)}
 ${L.section(L.customerLogos())}
 ${L.section(`<div class="home-price"><div><p class="eyebrow">THE FULL STORY</p><h2>Why Jwero runs it, not just sells it.</h2><p>See the whole idea, the AI team and the calculator on the Jwero Focus site.</p></div><div class="cta-row"><a class="btn btn-primary" href="/focus/">Open Jwero Focus</a><a class="btn btn-ghost" href="/count-your-team">Count your team</a></div></div>`, { tone: 'tint' })}

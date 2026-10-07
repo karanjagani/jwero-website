@@ -418,7 +418,7 @@ function journeyFix(html, p) {
   if (slug === 'hi') html = html.replace(/>Chat or call with us</g, '>हमसे चैट या कॉल करें<').replace(/>Book a demo</g, '>डेमो बुक करें<');
   if (HINDI_CITIES.test(slug)) html = html.replace('</main>', '<section class="section"><div class="container"><p class="cta-note" style="text-align:center"><a href="/hi" lang="hi">यह पेज हिंदी में पढ़ें →</a></p></div></section></main>');
   // 5. legal pages are not dead ends
-  if (/^legal\//.test(slug)) html = html.replace('</main>', '<section class="section"><div class="container"><p class="cta-note" style="text-align:center">Questions about this? <a href="#" data-wa="legal">Ask us on WhatsApp</a>. A real person replies within minutes. See also <a href="/trust">Trust</a> and <a href="/trust/security">Security</a>.</p></div></section></main>');
+  if (/^legal\//.test(slug)) html = html.replace('</main>', '<section class="section"><div class="container"><p class="cta-note" style="text-align:center">Questions about this? <a href="#" data-wa="legal">Ask us on WhatsApp</a>. See also <a href="/trust">Trust</a> and <a href="/trust/security">Security</a>.</p></div></section></main>');
   // 6. titles that fit in search results
   html = html.replace(/<title>([^<]*)<\/title>/, (m0, t) => {
     if (t.length <= 65) return m0;
@@ -526,7 +526,7 @@ const HUB_SHORT = {
   'erp-to-os/make-do': { q: 'Can I keep my current jewellery ERP and still grow?', a: 'You can, if it covers your counter and books well. The gaps usually show in customers, WhatsApp, follow-up and online sales. Jwero can sit alongside your ERP for those, with Tally kept for the books.' },
   'erp-to-os/switching': { q: 'How do I switch from my jewellery ERP to Jwero?', a: 'Customers, products and stock are imported for you, set-up takes a day, and you can run both systems side by side while your team settles in. Switch outside your busiest season.' },
   'why-an-os': { q: 'Why does a jewellery business need one operating system?', a: 'Because separate tools for billing, stock, WhatsApp, marketing and reports do not know about each other. One system on one record means a sale updates stock, the customer’s history and the books together, and nobody types the same thing twice.' },
-  'how-it-goes': { q: 'What happens after I contact Jwero?', a: 'A real person replies on WhatsApp within minutes. A short call follows about your business and what you would rather not manage, then a written plan with what Jwero takes on and what it costs. Set-up takes a day, starting with one function if you like.' },
+  'how-it-goes': { q: 'What happens after I contact Jwero?', a: ' A short call follows about your business and what you would rather not manage, then a written plan with what Jwero takes on and what it costs. Set-up takes a day, starting with one function if you like.' },
   'industries/retail': { q: 'What jewellery retail software does Jwero offer?', a: 'Counter billing at the live gold rate with old-gold exchange, stock by piece and weight, schemes, customer follow-up on WhatsApp and Instagram, and reports, for single stores and chains. Run it yourself for ₹18,000 a month, or let Jwero run it.' },
   brief: { q: 'What is the Jwero brief?', a: 'A short summary of what Jwero is, what it costs and how it works, written to share with a partner, family member or manager who will help decide.' },
   pricing: { q: 'How much does Jwero cost?', a: 'There are three ways to buy. Run it yourself: ₹18,000 a month with every module, first month ₹3,600, extra locations ₹2,999 each. Let Jwero run it: no subscription, every tool included, priced on the work, about half of what that work costs you today. Enterprise for groups and chains: custom. Messages, AI and calls are charged from a prepaid wallet at published rates.' },
@@ -1097,7 +1097,7 @@ const POST_NEXT = {
 };
 const TOPIC_FAQ = (t) => [
   { q: `Does Jwero handle ${t === 'Technology and strategy' ? 'this' : t.toLowerCase().replace('ai', 'AI').replace('pos', 'POS').replace('erp', 'ERP').replace('crm', 'CRM').replace('whatsapp', 'WhatsApp')} for jewellers?`, a: 'Yes. You can run it yourself on the platform from ₹3,600 for the first month, or let Jwero’s specialists and AI run it for you, with every tool included.' },
-  { q: 'How fast can a jeweller start?', a: 'Onboarding takes a day for most shops. Jwero sets up your stock, rates and customers with you, and a real person replies on WhatsApp within minutes.' },
+  { q: 'How fast can a jeweller start?', a: 'Onboarding takes a day for most shops. Jwero sets up your stock, rates and customers with you.' },
 ];
 
 function withBlogTop(body, page) {

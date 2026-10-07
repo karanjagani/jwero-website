@@ -18,7 +18,7 @@ const page = (p) => ({
 ${L.hero({ eyebrow: p.topic.toUpperCase(), h1: p.title, sub: p.description, secondary: { href: '/blog', label: 'All articles' } })}
 ${L.section(`<p class="post-meta"><span>${p.topic}</span> · <span>${Math.max(2, Math.round(p.words / 220))} min read</span> · <span>By the Jwero editorial team</span> · <span>Published ${fmt(p.date)}</span> · <span>Reviewed October 2026</span></p>`)}
 ${L.section(`<div class="post-body">${link(p.body, '/' + p.slug).html}</div>`)}
-${L.ctaBand('Want this running in your business?', 'Tell us what you want to achieve. A real person replies on WhatsApp within minutes.', 'blog-' + p.slug.slice(0, 40))}
+${L.ctaBand('Want this running in your business?', 'Tell us what you want to achieve.', 'blog-' + p.slug.slice(0, 40))}
 `,
 });
 module.exports = posts.map(page);

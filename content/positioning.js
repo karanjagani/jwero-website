@@ -36,7 +36,7 @@ const hero = () => `
         <a class="btn pz-btn-line" href="/how-it-works">See how Jwero works</a>
       </div>
       <p class="pz-hero-third"><a href="/self-managed">I want to run it myself →</a></p>
-      <p class="pz-hero-ease">A real person replies on WhatsApp within minutes. Onboarding takes a day.</p>
+      <p class="pz-hero-ease">Onboarding takes a day.</p>
       <p class="pz-hero-note">You run it. We run it together. Or we run it for you.</p>
     </div>
   </div>
@@ -57,7 +57,7 @@ const heroHome = () => `
           <a class="hero-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b><em>Priced on the work. Every tool included.</em></a>
           <a class="hero-door" href="#count-your-team"><span>See your number</span><b>Count your team</b><em>What the work costs today, and with Jwero.</em></a>
         </div>
-        <p class="cta-note">A real person replies on WhatsApp within minutes · Onboarding in a day · <a href="/self-managed">Run it yourself instead</a></p>
+        <p class="cta-note">Onboarding in a day · <a href="/self-managed">Run it yourself instead</a></p>
       </div>
       <div class="jbs-flow">
         <div class="pz-split" aria-label="Everything that keeps changing flows through Jwero into what you focus on">
@@ -784,7 +784,7 @@ const adapt = () => L.section(`
 // for?" and "who else should see this?". No times are promised beyond the
 // reply, which the site already states.
 const NEXT = [
-  ['You message us', 'Say what you want to achieve, in your own words. A real person replies on WhatsApp within minutes.'],
+  ['You message us', 'Say what you want to achieve, in your own words.'],
   ['A short call', 'We ask about your business, your team and what you would rather not manage. No preparation needed.'],
   ['Your plan, in writing', 'What Jwero would take on, who does it, what is measured, and what it costs. Nothing starts before you agree.'],
   ['Onboarded in a day', 'We set you up and bring your data in, in a day. Start with one function and give us more when you are ready.'],

@@ -1291,7 +1291,7 @@ function homeHero({ kicker, h1, sub }) {
           <a class="hero-door" href="${TRIAL_URL}home-hero" rel="noopener" data-trial><span>Run it yourself</span><b>Start for ₹3,600</b><em>Every module. Then ₹18,000 a month.</em></a>
           <a class="hero-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b><em>No team to hire. No tools to buy.</em></a>
         </div>
-        <p class="cta-note"><a href="#jbaas">Compare the three ways</a> · A real person replies on WhatsApp within minutes</p>
+        <p class="cta-note"><a href="#jbaas">Compare the three ways</a></p>
         <p class="usp-line"><a href="/products/whatsapp">Official Meta Business Partner</a><a href="/products/whatsapp#wa-payments">Pay inside WhatsApp</a><a href="/ai-calling-for-jewellers">AI calls at ₹7, 8 at a time</a></p>
       </div>
       <div class="hero-home-piece">
