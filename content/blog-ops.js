@@ -12,7 +12,11 @@ const schema = (headline, description) => ({
 });
 const meta = (mins, cluster) => `<p class="post-meta"><span>${cluster}</span> · <span>${mins} min read</span> · <span>By the Jwero editorial team</span> · <span>Published October 2026</span></p>`;
 const check = (who, what) => `<p class="post-note"><b>Check with your ${who}.</b> ${what} Rules here are as we understand them in October 2026, and they differ by state and change over time.</p>`;
-const post = ({ slug, title, description, h1, sub, eyebrow, cluster, mins, body, faqs, product, wa, close }) => ({
+const MORE = require('./blog-more');
+const post = ({ slug, title, description, h1, sub, eyebrow, cluster, mins, body, faqs, product, wa, close }) => {
+  const more = MORE[slug] || { body: '', faqs: [] };
+  body += more.body; faqs = faqs.concat(more.faqs); if (more.body) mins += 3;
+  return ({
   slug: `blog/${slug}`, title, description, breadcrumbs: BC(h1), schema: schema(h1, description), faqs,
   body: `
 ${L.hero({ eyebrow, h1, sub, secondary: { href: product[0], label: product[1] } })}
@@ -21,7 +25,7 @@ ${L.section(`<div class="post-body">${body}</div>`)}
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'What jewellers ask about this.', '')}${L.faqBlock(faqs)}`)}
 ${L.ctaBand(close[0], close[1], wa)}
 `,
-});
+}); };
 
 const girvi = post({
   slug: 'girvi-gold-loan-business-guide',
