@@ -2933,3 +2933,12 @@ document.addEventListener('click', function (e) {
     set('out', out.toLocaleString('en-IN')); set('won', won.toLocaleString('en-IN')); set('rev', '₹' + (won * v('bill')).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+// Training page: what training by shadowing costs.
+(function () {
+  var root = document.querySelector('[data-lmc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-lm="' + k + '"]') || {}).value || 0; };
+  function run() { var wk = v('n') * v('w'), cost = wk * v('pct') / 100 * v('sal') * 12 / 52;
+    var set = function (k, t) { var el = root.querySelector('[data-lm-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('wk', (Math.round(wk * 10) / 10).toLocaleString('en-IN')); set('cost', '₹' + Math.round(cost).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();

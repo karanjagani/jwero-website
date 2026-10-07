@@ -7922,16 +7922,16 @@ A: Your books sync to Tally for the accountant; these reports are for running th
 
 ---
 
-# Jewellery Staff Training Software (LMS)
+# Jewellery Staff Training Software (LMS): Sales & Product Training
 URL: https://jwero.ai/products/training-lms
 
-Courses with ordered lessons, assessments scored securely, enrolments with progress, certificates on completion, learning paths per role, and a performance-to-learning loop that suggests the next course from what happened on the floor.
+Jewellery staff training software: product knowledge and sales training courses, quizzes scored securely, certificates on the staff profile, learning paths per role, and courses suggested when performance dips.
 
-TRAINING & LMS
+STAFF TRAINING · LMS
 
-## Train the counter the way you train a karigar. With a record.
+## Jewellery staff training software: product knowledge and sales training, with quizzes and certificates.
 
- Courses for the things a jewellery floor gets wrong, hallmarking, exchange valuation, scheme rules, how to say the price. Assessments scored honestly, certificates that land on the profile, and the next course suggested by what actually happened on the floor.
+ Courses for what a jewellery floor gets wrong: hallmarking, making charges, scheme rules, old gold, how to say the price. Quizzes scored honestly, certificates on the profile, and the next course suggested when performance slips.
 
  Show me a course my staff would take 
  See HR & Payroll 
@@ -7948,49 +7948,122 @@ TRAINING & LMS
 
  A low score on the floor suggests the course; a passed course updates the skill. The loop closes on the employee record.
 
-## Courses & lessons
+ ONE NEW HIRE, START TO FINISH
 
- Ordered lessons per course; progress per learner; completion only when every lesson and assessment is done.
+## From day one to a skill on her profile.
 
-## Assessments
+ TRAINING · JOIN TO SKILLED
+ Day one Priya joins as a sales associate
+ Path “New sales associate” path on her phone
+ Lessons Hallmarking and HUID · making charges · schemes · old gold
+ Quiz Passed at 85% · certificate on her profile
+ A month on Her bangle conversion dips on the scorecard
+ Suggested The matching course is suggested · passed · skill updated
+ Illustrative.
 
- Question banks scored securely; pass marks per course; attempts kept.
+ Day one Priya joins as a sales associate 
+ Path “New sales associate” path on her phone 
+ Lessons Hallmarking and HUID 
+ Quiz Passed at 85% 
+ A month on Her bangle conversion dips on the scorecard 
+ Suggested The matching course is suggested 
 
-## Certificates
+ SIX JOBS, ONE STAFF RECORD
 
- Issued on completion, once per employee per course, visible on the profile.
+## What jewellery staff training software has to do.
 
-## Learning paths
+## 1. Courses that fit the trade
+ Ordered lessons with text, images and video links, on hallmarking, pricing, schemes and selling.
+ Gold pricing → 
 
- Courses strung together per role, so day one has a syllabus.
+## 2. Quizzes that count
+ Scored securely with a pass mark; attempts kept; answers never shown.
+ Security → 
 
-## Performance → learning
+## 3. Certificates on the profile
+ Issued on completion, once per person per course.
+ HR → 
 
- Scorecards and skills suggest the next course; a pass updates the skill.
+## 4. A path for each role
+ Sales associate, cashier, manager: day one has a syllabus.
+ Branches → 
 
-## Inside self-service
+## 5. Linked to performance
+ A scorecard dip suggests the course; a pass updates the skill.
+ Reports → 
 
- Staff take courses where they see payslips and leave, Teams, on their phone.
+## 6. On their phone
+ In the staff app, beside attendance, leave and payslips.
+ Staff app → 
+
+ THE ARITHMETIC
+
+## What training by shadowing costs you.
+
+ Your numbers, not ours.
+
+ New sales staff a year 
+ Weeks a senior spends shadowing each 
+ Share of the senior’s time it takes, % 
+ Senior’s monthly salary, ₹ 
+
+ Senior weeks spent a year 0 
+
+ Senior time cost a year ₹0 
+
+ A planning estimate from your own inputs; it leaves out sales lost while a new hire learns.
+
+ COMPARE
+
+## Shadowing a senior, a generic LMS, or Jwero.
+
+ Shadowing a senior A generic LMS Jwero 
+ What a new hire learns Whatever the senior remembers Generic courses Your courses, per role 
+ Checking she learnt it No Quizzes Quizzes scored securely, answers hidden 
+ Proof None A certificate Certificate on her staff profile 
+ When she slips Noticed late No link A scorecard dip suggests the course 
+ Where she learns On the floor Another app The staff app she already uses 
+ Same record as HR No No Yes, beside attendance and payslips 
+
+ GETTING STARTED
+
+## How to train jewellery sales staff.
+
+ Five steps.
+
+ 1 
+
+## List what new staff get wrong
+ Hallmarking, making charges, scheme rules, old gold, how to say the price.
+
+ 2 
+
+## Make a course for each
+ Ordered lessons with text, images and video links.
+
+ 3 
+
+## Add a quiz
+ Set a pass mark; attempts are kept.
+
+ 4 
+
+## Build a path per role
+ Sales associate, cashier, manager: day one has a syllabus.
+
+ 5 
+
+## Link it to performance
+ A dip on the scorecard suggests the course; a pass updates the skill.
 
  BECAUSE IT'S ONE SYSTEM
 
- A cashier’s exchange-valuation errors on the counter show up on her scorecard; the LMS suggests the course; her pass updates the skill the roster reads.
- Karigar onboarding and hallmarking refreshers sit beside statutory payroll, one people record, not an HR tool plus a training tool.
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Every chat button on this site is the live product.
+ A cashier’s exchange-valuation errors show on her scorecard; the course is suggested; her pass updates the skill.
+ Training sits beside attendance and payroll on one staff record, not in a separate tool.
 
 ## The mistakes your floor repeats have a course.
 
- Tell us the three things new staff get wrong. We will show the course, the test and the certificate on a call.
+ Tell us the three things new staff get wrong. We will show the course, the quiz and the certificate on a call.
 
  Chat or call with us 
  Book a demo 
@@ -7999,20 +8072,26 @@ TRAINING & LMS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: What is a course made of?
-A: An ordered set of lessons, text, images, video links, plus optional assessments. An enrolment completes only when every lesson is done and every active assessment has a passed attempt; a certificate can issue automatically.
+Q: What should jewellery sales staff be trained on?
+A: Hallmarking and HUID, how the price is worked out from the gold rate and making charges, gold scheme rules, old gold exchange, and how to present the price with confidence.
 
-Q: Are the answers safe?
-A: Assessments are scored securely; learners never see the answer key.
+Q: What is an LMS for a jewellery business?
+A: A learning management system: courses, quizzes and certificates for your staff, with progress tracked. Jwero’s sits inside HR, beside attendance and payroll.
+
+Q: What is a course made of?
+A: Ordered lessons with text, images and video links, plus quizzes. It completes only when every lesson is done and every quiz passed.
+
+Q: Are quiz answers safe?
+A: Yes. Quizzes are scored securely and staff never see the answer key.
 
 Q: Can I set a path per role?
-A: Yes, learning paths string courses together for a role: a new sales associate, a cashier, a karigar supervisor.
+A: Yes. Learning paths string courses together for a role, such as a new sales associate, a cashier or a manager.
 
 Q: Does it connect to performance?
-A: Yes. A dip on a scorecard, hallmarking errors, low conversion on a category, suggests the matching course; a pass updates the skill on the employee profile.
+A: Yes. A dip on a scorecard suggests the matching course, and a pass updates the skill on the staff profile.
 
-Q: Where do staff see it?
-A: In Teams, their self-service space: My Day, attendance, leave, payslips, and their courses.
+Q: Where do staff take courses?
+A: In the staff app on their phone, beside attendance, leave and payslips.
 
 ---
 

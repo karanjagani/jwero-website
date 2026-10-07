@@ -1822,6 +1822,13 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Expected visits from website bookings, chat, AI calls, appointments, WhatsApp, campaigns and maturing gold schemes; automatic no-show marking.
 - Bills auto-link to visits; conversion by branch, hour and salesperson; revenue per square foot; rule-based insights; morning and evening brief in the app (not pushed to WhatsApp).
 
+## Jewellery staff training and LMS (facts)
+
+- Page: https://jwero.ai/products/training-lms
+- Courses of ordered lessons (text, images, video links) with quizzes scored securely, pass marks and kept attempts; certificates issued on completion onto the staff profile.
+- Learning paths per role; a scorecard dip suggests the matching course and a pass updates the skill.
+- Staff take courses in the staff app beside attendance, leave and payslips. Part of HR; nothing for karigars.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.

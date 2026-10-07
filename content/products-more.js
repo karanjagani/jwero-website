@@ -597,48 +597,99 @@ const mockLms = `
   <div class="mock-foot">A low score on the floor suggests the course; a passed course updates the skill. The loop closes on the employee record.</div>
 </div>`;
 
+// Training & LMS, rebuilt 2026-10-07. Not claimed (unconfirmed): AI-made courses
+// or quizzes, a ready-made course library, video uploads (links only), courses
+// in the staff's language, AI role-play. HR has nothing for karigars.
+const LM_FLOW = [
+  ['Day one', 'Priya joins as a sales associate'],
+  ['Path', '“New sales associate” path on her phone'],
+  ['Lessons', 'Hallmarking and HUID · making charges · schemes · old gold'],
+  ['Quiz', 'Passed at 85% · certificate on her profile'],
+  ['A month on', 'Her bangle conversion dips on the scorecard'],
+  ['Suggested', 'The matching course is suggested · passed · skill updated'],
+];
+const lmFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">TRAINING · JOIN TO SKILLED</p>${LM_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${LM_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const LM_CMP = [
+  ['What a new hire learns', 'Whatever the senior remembers', 'Generic courses', 'Your courses, per role'],
+  ['Checking she learnt it', 'No', 'Quizzes', 'Quizzes scored securely, answers hidden'],
+  ['Proof', 'None', 'A certificate', 'Certificate on her staff profile'],
+  ['When she slips', 'Noticed late', 'No link', 'A scorecard dip suggests the course'],
+  ['Where she learns', 'On the floor', 'Another app', 'The staff app she already uses'],
+  ['Same record as HR', 'No', 'No', 'Yes, beside attendance and payslips'],
+];
+const lmTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Shadowing a senior</th><th>A generic LMS</th><th>Jwero</th></tr></thead><tbody>${LM_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const LM_HOW = [
+  ['List what new staff get wrong', 'Hallmarking, making charges, scheme rules, old gold, how to say the price.'],
+  ['Make a course for each', 'Ordered lessons with text, images and video links.'],
+  ['Add a quiz', 'Set a pass mark; attempts are kept.'],
+  ['Build a path per role', 'Sales associate, cashier, manager: day one has a syllabus.'],
+  ['Link it to performance', 'A dip on the scorecard suggests the course; a pass updates the skill.'],
+];
+const lmFaqs = [
+  { q: 'What should jewellery sales staff be trained on?', a: 'Hallmarking and HUID, how the price is worked out from the gold rate and making charges, gold scheme rules, old gold exchange, and how to present the price with confidence.' },
+  { q: 'What is an LMS for a jewellery business?', a: 'A learning management system: courses, quizzes and certificates for your staff, with progress tracked. Jwero’s sits inside HR, beside attendance and payroll.' },
+  { q: 'What is a course made of?', a: 'Ordered lessons with text, images and video links, plus quizzes. It completes only when every lesson is done and every quiz passed.' },
+  { q: 'Are quiz answers safe?', a: 'Yes. Quizzes are scored securely and staff never see the answer key.' },
+  { q: 'Can I set a path per role?', a: 'Yes. Learning paths string courses together for a role, such as a new sales associate, a cashier or a manager.' },
+  { q: 'Does it connect to performance?', a: 'Yes. A dip on a scorecard suggests the matching course, and a pass updates the skill on the staff profile.' },
+  { q: 'Where do staff take courses?', a: 'In the staff app on their phone, beside attendance, leave and payslips.' },
+];
 const trainingLms = {
   slug: 'products/training-lms',
-  title: 'Jewellery Staff Training Software (LMS) | Jwero',
-  description: 'Courses with ordered lessons, assessments scored securely, enrolments with progress, certificates on completion, learning paths per role, and a performance-to-learning loop that suggests the next course from what happened on the floor.',
-  schema: app('Jwero Training & LMS', 'training-lms', 'Learning management for jewellery staff: courses, assessments, certificates, learning paths and performance-linked suggestions inside the HR module.'),
+  title: 'Jewellery Staff Training Software (LMS): Sales & Product Training | Jwero',
+  description: 'Jewellery staff training software: product knowledge and sales training courses, quizzes scored securely, certificates on the staff profile, learning paths per role, and courses suggested when performance dips.',
+  schema: { ...app('Jwero Training & LMS', 'training-lms', 'Learning management for jewellery staff: courses with lessons and video links, quizzes scored securely, certificates, learning paths per role, and performance-linked course suggestions inside HR.'), alternateName: ['Jewellery sales training software', 'Jewellery staff LMS', 'Product knowledge training for jewellery staff'] },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to train jewellery sales staff', step: LM_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Training & LMS'),
-  faqs: [
-    { q: 'What is a course made of?', a: 'An ordered set of lessons — text, images, video links — plus optional assessments. An enrolment completes only when every lesson is done and every active assessment has a passed attempt; a certificate can issue automatically.' },
-    { q: 'Are the answers safe?', a: 'Assessments are scored securely; learners never see the answer key.' },
-    { q: 'Can I set a path per role?', a: 'Yes — learning paths string courses together for a role: a new sales associate, a cashier, a karigar supervisor.' },
-    { q: 'Does it connect to performance?', a: 'Yes. A dip on a scorecard — hallmarking errors, low conversion on a category — suggests the matching course; a pass updates the skill on the employee profile.' },
-    { q: 'Where do staff see it?', a: 'In Teams, their self-service space: My Day, attendance, leave, payslips — and their courses.' },
-  ],
+  faqs: lmFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'TRAINING & LMS',
-  h1: 'Train the counter the way you train a karigar. With a record.',
-  sub: 'Courses for the things a jewellery floor gets wrong — hallmarking, exchange valuation, scheme rules, how to say the price. Assessments scored honestly, certificates that land on the profile, and the next course suggested by what actually happened on the floor.',
+  eyebrow: 'STAFF TRAINING · LMS',
+  h1: 'Jewellery staff training software: product knowledge and sales training, with quizzes and certificates.',
+  sub: 'Courses for what a jewellery floor gets wrong: hallmarking, making charges, scheme rules, old gold, how to say the price. Quizzes scored honestly, certificates on the profile, and the next course suggested when performance slips.',
   primary: { href: '#', label: 'Show me a course my staff would take', wa: 'training' },
   secondary: { href: '/products/hr-payroll', label: 'See HR & Payroll' },
   mock: mockLms,
 })}
 
-${L.section(
-  `${L.cards([
-    { title: 'Courses & lessons', text: 'Ordered lessons per course; progress per learner; completion only when every lesson and assessment is done.' },
-    { title: 'Assessments', text: 'Question banks scored securely; pass marks per course; attempts kept.' },
-    { title: 'Certificates', text: 'Issued on completion, once per employee per course — visible on the profile.' },
-    { title: 'Learning paths', text: 'Courses strung together per role, so day one has a syllabus.' },
-    { title: 'Performance → learning', text: 'Scorecards and skills suggest the next course; a pass updates the skill.' },
-    { title: 'Inside self-service', text: 'Staff take courses where they see payslips and leave — Teams, on their phone.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE NEW HIRE, START TO FINISH', 'From day one to a skill on her profile.', '')}${lmFlow()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, ONE STAFF RECORD', 'What jewellery staff training software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Courses that fit the trade</h3><p>Ordered lessons with text, images and video links, on hallmarking, pricing, schemes and selling.</p><a href="/blog/how-to-calculate-gold-jewellery-price">Gold pricing →</a></article>
+  <article><h3>2. Quizzes that count</h3><p>Scored securely with a pass mark; attempts kept; answers never shown.</p><a href="/trust/security">Security →</a></article>
+  <article><h3>3. Certificates on the profile</h3><p>Issued on completion, once per person per course.</p><a href="/products/hr-payroll">HR →</a></article>
+  <article><h3>4. A path for each role</h3><p>Sales associate, cashier, manager: day one has a syllabus.</p><a href="/products/multi-store">Branches →</a></article>
+  <article><h3>5. Linked to performance</h3><p>A scorecard dip suggests the course; a pass updates the skill.</p><a href="/products/reports">Reports →</a></article>
+  <article><h3>6. On their phone</h3><p>In the staff app, beside attendance, leave and payslips.</p><a href="/products/hr-payroll">Staff app →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What training by shadowing costs you.', 'Your numbers, not ours.')}<div class="callc" data-lmc>
+  <div class="callc-in">
+    <label>New sales staff a year<input type="number" inputmode="numeric" data-lm="n" value="8" min="0"></label>
+    <label>Weeks a senior spends shadowing each<input type="number" inputmode="decimal" data-lm="w" value="3" min="0" step="0.5"></label>
+    <label>Share of the senior’s time it takes, %<input type="number" inputmode="decimal" data-lm="pct" value="30" min="0" max="100"></label>
+    <label>Senior’s monthly salary, ₹<input type="number" inputmode="numeric" data-lm="sal" value="35000" min="0" step="1000"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Senior weeks spent a year</span><b data-lm-o="wk">0</b></p>
+    <p class="callc-save"><span>Senior time cost a year</span><b data-lm-o="cost">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs; it leaves out sales lost while a new hire learns.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'Shadowing a senior, a generic LMS, or Jwero.', '')}${lmTable()}`)}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to train jewellery sales staff.', 'Five steps.')}${L.steps(LM_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
-  'A cashier’s exchange-valuation errors on the counter show up on her scorecard; the LMS suggests the course; her pass updates the skill the roster reads.',
-  'Karigar onboarding and hallmarking refreshers sit beside statutory payroll — one people record, not an HR tool plus a training tool.',
+  'A cashier’s exchange-valuation errors show on her scorecard; the course is suggested; her pass updates the skill.',
+  'Training sits beside attendance and payroll on one staff record, not in a separate tool.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the live product.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('The mistakes your floor repeats have a course.', 'Tell us the three things new staff get wrong. We will show the course, the test and the certificate on a call.', 'training')}
+${L.ctaBand('The mistakes your floor repeats have a course.', 'Tell us the three things new staff get wrong. We will show the course, the quiz and the certificate on a call.', 'training')}
 `,
 };
 
