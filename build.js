@@ -361,6 +361,22 @@ function trimLong(html, slug) {
   return html.slice(0, ms) + m + html.slice(me);
 }
 function journeyFix(html, p) {
+  // Product pages lead with the product: the template's shift, try-it and use-case
+  // blocks move from straight after the hero to after the page's six jobs.
+  if (/^products\/[^/]+$/.test(p.slug || '')) {
+    const secs = () => { const out = []; const re = /<section[\s>]/g; let m; while ((m = re.exec(html))) { let d = 1, i = m.index + 8; const tag = /<section[\s>]|<\/section>/g; tag.lastIndex = i; let t; while ((t = tag.exec(html))) { d += t[0] === '</section>' ? -1 : 1; if (!d) { out.push([m.index, t.index + 10]); break; } } re.lastIndex = m.index + 8; } return out; };
+    const all = secs();
+    const head = (a, b) => html.slice(a, Math.min(b, a + 1600));
+    const generic = all.filter(([a, b]) => /THE SHIFT|TRY IT|>USE CASES</.test(head(a, b)) && !/<section[\s>]/.test(html.slice(a + 8, b - 10)));
+    const isJobs = ([a, b]) => /SIX JOBS/.test(head(a, b)) || html.slice(a, b).includes('class="wa-jobs"');
+    const jobs = all.find(isJobs);
+    if (generic.length && jobs && generic.every(([a]) => a < jobs[0])) {
+      const moved = generic.map(([a, b]) => html.slice(a, b)).join('\n');
+      for (const [a, b] of generic.slice().reverse()) html = html.slice(0, a) + html.slice(b);
+      const j = secs().find(isJobs);
+      if (j) html = html.slice(0, j[1]) + '\n' + moved + html.slice(j[1]);
+    }
+  }
   const slug = p.slug || '';
   html = trimLong(html, slug);
   // 1. every self-serve start goes through /start, which explains the first month
@@ -710,7 +726,7 @@ const SIM_PAGES = {
   // every solution page carries the simulation its mindset lives in
   ...Object.fromEntries(Object.entries(require('./content/solution-playbooks').PLAYBOOKS).map(([slug, pb]) => [slug, pb.sim])),
   'products/catalog': 'rate', 'platform/pricing-engine': 'rate', 'solutions/gold-retail': 'rate', 'products/digital-catalogues': 'rate', 'products/quotations': 'rate',
-  'products/email': 'approve', 'products/marketplaces': 'shelf', 'products/reports': 'shelf', 'products/training-lms': 'approve',
+  'products/email': 'approve', 'products/marketplaces': 'rate', 'products/reports': 'shelf',
   'platform/ai-workforce': 'approve', 'products/ai-sales-agents': 'approve', 'products/journeys': 'approve', 'roles/owner': 'approve',
   'products/crm': 'memory', 'platform/customer-memory': 'memory', 'roles/sales-associate': 'memory', 'products/whatsapp': 'memory',
   'products/inventory': 'shelf', 'solutions/pain/dead-stock': 'shelf', 'roles/inventory-manager': 'shelf',
