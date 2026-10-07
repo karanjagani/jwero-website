@@ -793,7 +793,7 @@ const nextSteps = () => L.section(`
 ${eyebrow('What happens next')}
 <h2 class="pz-h pz-center">From a first message to work getting done.</h2>
 <ol class="pz-how pz-how-4">${NEXT.map(([t, d], i) => `<li><span>${String(i + 1).padStart(2, '0')}</span><b>${t}</b><p>${d}</p></li>`).join('')}</ol>
-<ul class="pz-ease"><li>A reply within minutes</li><li>Onboarding in a day</li><li>Your data stays yours</li><li>Take a function back whenever you like</li></ul>
+<ul class="pz-ease"><li>Onboarding in a day</li><li>Your data stays yours</li><li>Take a function back whenever you like</li></ul>
 <p class="pz-cta-center">Rather speak first? <a href="#" data-wa="call" data-connect="voice">Call us instead</a>.</p>`, { id: 'next' });
 
 const refer = () => `

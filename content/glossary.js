@@ -64,7 +64,7 @@ ${L.section(
   </div>`
 )}
 
-${L.ctaBand('Every term above lives on one record in Jwero.', 'Ask us how any of them works in practice — a real person and our AI reply within minutes.', 'faq')}
+${L.ctaBand('Every term above lives on one record in Jwero.', 'Ask us how any of them works in practice.', 'faq')}
 `,
 };
 

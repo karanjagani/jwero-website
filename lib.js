@@ -395,7 +395,7 @@ ${section(`${sectionHead('DOES THIS SOUND LIKE YOU?', 'Five things we hear from 
   ${fitCheck(pb.fit, pb.wa, pb.modules, names)}`)}
 ${section(`${sectionHead('WHAT HAPPENS AFTER YOU TAP', 'Three steps. No mystery.', '')}
   ${steps([
-    { title: 'Minutes — a reply', text: 'A real person and our AI answer in the chat. Bring one real situation from your day above.' },
+    { title: 'First, a reply', text: 'A real person and our AI answer in the chat. Bring one real situation from your day above.' },
     { title: 'Day 1 — fifteen minutes, your scenario', text: 'We run it through Jwero live. If we cannot help, we say so on the call.' },
     { title: 'Days 2–5 — a pilot on your own data', text: 'Your customers, your catalogue, your stock — however messy. You judge on your evidence, then it is your call.' },
   ])}
@@ -1521,7 +1521,7 @@ function ctaBand(title, sub, waContext, opts = {}) {
         <a class="btn btn-primary" href="#" data-wa="${esc(waContext)}">${label}</a>
         ${secondary}
       </div>
-      <p class="cta-note">A real person + our AI reply within minutes — that's the product. You message us first; we never message you uninvited. <a class="cta-hindi" lang="hi" href="#" data-wa="hindi" data-direct>हिन्दी में बात करें →</a></p>
+      <p class="cta-note">You message us first; we never message you uninvited. <a class="cta-hindi" lang="hi" href="#" data-wa="hindi" data-direct>हिन्दी में बात करें →</a></p>
     </div>
     <div class="cta-ticker" aria-hidden="true"><div class="cta-track">${ticker}${ticker}</div></div>
   </div>

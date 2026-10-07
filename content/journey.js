@@ -67,7 +67,7 @@ ${L.ctaBand('See one record run the whole business.', 'Bring one customer’s na
 const howItGoes = {
   slug: 'how-it-goes',
   title: 'What Happens After You Message — The First 30 Days with Jwero | Jwero',
-  description: 'The literal sequence after your first message: a reply within minutes, a 15-minute call, a pilot on your own data, a written change-freeze around your season, a go-live date, and your first growth report.',
+  description: 'The literal sequence after your first message: a 15-minute call, a pilot on your own data, a written change-freeze around your season, a go-live date, and your first growth report.',
   breadcrumbs: [['Home', '/'], ['How it goes']],
   faqs: [
     { q: 'Who do I actually talk to?', a: 'A real person on the founders’ WhatsApp desk, with our AI drafting alongside. Not a call centre.' },
@@ -87,7 +87,7 @@ ${L.hero({
 ${L.section(
   `${L.sectionHead('THE SEQUENCE', 'From first message to first report.', '')}
   ${L.steps([
-    { title: 'Minutes — a reply', text: 'A real person and our AI reply in the chat. You get a straight answer to whatever you asked, and a slot for a call if you want one.' },
+    { title: 'First, a reply', text: 'A real person and our AI reply in the chat. You get a straight answer to whatever you asked, and a slot for a call if you want one.' },
     { title: 'Day 1 — fifteen minutes, your scenario', text: 'You bring one real situation: a quiet customer list, a leaking scheme book, a flooded inbox. We run it through Jwero live. If we cannot help, we say so here.' },
     { title: 'Days 2–5 — a pilot on your own data', text: 'We import what exists — customers, catalogue, stock, however messy — and reconcile it with you. You evaluate on your customers, not a demo dataset.' },
     { title: 'Day 5 — the written plan', text: 'What Jwero would change, the migration path, a straight price, and a written change-freeze around your season. Then it is your call.' },
@@ -108,7 +108,7 @@ ${L.section(
 
 ${L.section(L.safeToTryStrip())}
 
-${L.ctaBand('Start the sequence.', 'One message. A reply within minutes. Everything above follows, in that order.', 'bookdemo')}
+${L.ctaBand('Start the sequence.', 'One message. Everything above follows, in that order.', 'bookdemo')}
 `,
 };
 

@@ -237,7 +237,7 @@ const switching = {
   faqs: [
     { q: 'Can I keep my ERP for accounts and use Jwero for everything customer-facing?', a: 'Yes — that is how most businesses start. Jwero takes WhatsApp, Instagram, the catalogue, the counter and schemes; books bridge to Tally or Zoho Books, or to your ERP’s ledger via export, for as long as you want to run both.' },
     { q: 'What if the pilot fails?', a: 'Then we stop, at the exit test, and your data leaves with you as CSV. A pilot on your own data is the point: you decide on your evidence, not our claims.' },
-    { q: 'How long does a single store take?', a: 'Reply within minutes, a fifteen-minute call on day one, a pilot on your own data in days 2–5, a written plan on day 5, go-live with approvals on by day 14, your first growth report at day 30. The full sequence is on the “How it goes” page.' },
+    { q: 'How long does a single store take?', a: 'A fifteen-minute call on day one, a pilot on your own data in days 2–5, a written plan on day 5, go-live with approvals on by day 14, your first growth report at day 30. The full sequence is on the “How it goes” page.' },
     { q: 'Will we lose the history in the old system?', a: 'No. Purchase history, customers, catalogue and stock import from Excel, CSV or the ERP’s export, deduplicated and reconciled with you. The old system can stay readable for as long as you keep it.' },
     { q: 'What changes for my CA?', a: 'Nothing she will notice. Books post to Jwero’s ledger and bridge to Tally or Zoho Books. GST-ready invoices, credit and debit notes and the audit trail are there; e-invoice IRN generation is not yet, and we say so.' },
   ],
@@ -287,7 +287,7 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
-${L.ctaBand('Start with the risk that worries you most.', 'Tell us which line on the left you tapped last. We answer that one first — on WhatsApp, within minutes.', 'erpswitch')}
+${L.ctaBand('Start with the risk that worries you most.', 'Tell us which line on the left you tapped last. We answer that one first, on WhatsApp.', 'erpswitch')}
 `,
 };
 

@@ -1310,7 +1310,7 @@ function connectDialog() {
   return `
 <dialog class="connect" aria-labelledby="connect-title">
   <button type="button" class="connect-close icon-btn" aria-label="Close">${icon('close')}</button>
-  <div class="connect-head">${mark('connect-mark')}<div><h2 id="connect-title" data-connect-title>Talk to Jwero</h2><p data-connect-sub>A real person and our AI, within minutes. Pick how.</p></div></div>
+  <div class="connect-head">${mark('connect-mark')}<div><h2 id="connect-title" data-connect-title>Talk to Jwero</h2><p data-connect-sub>Chat, call or book a video demo. Pick how.</p></div></div>
   <p class="connect-ctx" data-connect-ctx hidden></p>
   <div class="connect-opts">
     ${opt('chat', 'chat', 'Chat', 'Opens right here')}
@@ -1563,7 +1563,7 @@ ${require('./lib').section(`
     body: `${require('./lib').section(`<div class="section-head"><h1>Search Jwero</h1></div>
   <form class="search-box search-box-page" method="get" action="/search" role="search">${icon('search')}<input type="search" name="q" placeholder="Search products, solutions, questions…" aria-label="Search" autocomplete="off"></form>
   <div class="search-results search-results-page" data-search-page role="list"></div>
-  <p class="cta-note" style="margin-top:18px">Can’t find it? <a href="#" data-wa="faq">Ask us now</a> — a real person and our AI reply within minutes.</p>
+  <p class="cta-note" style="margin-top:18px">Can’t find it? <a href="#" data-wa="faq">Ask us now</a>.</p>
   <div class="jb-blogline" style="margin-top:22px"><p><b>Popular:</b> <a href="/pricing">Pricing</a> · <a href="/book-demo">Book a demo</a> · <a href="/jewellery-business-as-a-service">Let Jwero run it</a> · <a href="/count-your-team">Count your team</a> · <a href="/tools">Free calculators</a> · <a href="/compare">Compare</a> · <a href="/guides">Buyer’s guides</a> · <a href="/trust/security">Security</a></p></div>`)}`,
   }), { slug: 'search' }));
 

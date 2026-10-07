@@ -238,7 +238,7 @@
       if (!dlg || typeof dlg.showModal !== 'function') return fallback(opts.mode || 'chat');
       var desk = deskOpen();
       set('[data-connect-title]', opts.mode === 'video' ? 'A demo on video' : opts.mode === 'voice' ? 'Call Jwero' : 'Talk to Jwero');
-      set('[data-connect-sub]', opts.mode === 'video' ? 'Fifteen minutes, your scenario, a real person on camera.' : 'A real person and our AI, within minutes. Pick how.');
+      set('[data-connect-sub]', opts.mode === 'video' ? 'Fifteen minutes, your scenario, a real person on camera.' : 'Chat, call or book a video demo. Pick how.');
       set('[data-connect-note="chat"]', WEBCHAT_ON ? 'Opens right here' : 'Opens WhatsApp');
       set('[data-connect-note="voice"]', WEBCHAT_ON && desk ? 'From your browser, no app' : desk ? 'Dials +91 91699 59959' : 'We call you back');
       set('[data-connect-note="video"]', WEBCHAT_ON && desk ? 'See the product, face to face' : 'Pick a time for a video demo');
@@ -1641,7 +1641,7 @@
       shown = true;
       var n = document.createElement('div');
       n.className = 'nudge'; n.setAttribute('role', 'status');
-      n.innerHTML = '<p>Still deciding? Ask one question, a real person and our AI reply within minutes.</p><a class="btn btn-primary btn-sm" href="#" data-wa="nudge">Ask us now</a><button type="button" class="nudge-x" aria-label="Dismiss">×</button>';
+      n.innerHTML = '<p>Still deciding? Ask us one question.</p><a class="btn btn-primary btn-sm" href="#" data-wa="nudge">Ask us now</a><button type="button" class="nudge-x" aria-label="Dismiss">×</button>';
       document.body.appendChild(n);
       var a = n.querySelector('[data-wa]'); a.setAttribute('href', waLink('nudge')); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
       n.querySelector('.nudge-x').addEventListener('click', function () { n.remove(); });

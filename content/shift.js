@@ -109,7 +109,7 @@ const SHIFTS = {
     title: 'From “someone will get back to you” to a sequence with dates.',
     today: 'You message a vendor and wait. A call, a deck, a proposal, a month.',
     gone: 'The mystery between the first message and the first result.',
-    now: 'A reply in minutes, a 15-minute call, a pilot on your own data, a written plan, go-live inside two weeks, a growth report at day 30.',
+    now: 'A 15-minute call, a pilot on your own data, a written plan, go-live inside two weeks, a growth report at day 30.',
     tempo: ['Weeks of waiting', 'Day 30 report'],
   },
 

@@ -18,7 +18,7 @@ const start = {
   faqs: [
     { q: 'Do I pay on this page?', a: 'No. You create the account with Google, LinkedIn or email, and billing is set up inside Jwero. The first month of Jwero One is ₹3,600 instead of ₹18,000; after that it bills monthly, and you can export everything, any time.' },
     { q: 'How long until I am live?', a: 'Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one. Everything else follows in stages.' },
-    { q: 'Can I get help instead of doing it myself?', a: 'Yes — every step below has a chat-or-call button; a real person and our AI reply within minutes, and we can run onboarding with you.' },
+    { q: 'Can I get help instead of doing it myself?', a: 'Yes — every step below has a chat-or-call button; we can run onboarding with you.' },
   ],
   body: `
 ${L.hero({
@@ -64,7 +64,7 @@ ${L.section(L.safeToTryStrip(), { tone: 'tint' })}
 ${L.section(`${L.sectionHead('BEFORE YOU START', 'Three questions people ask on this page.', '')}${L.faqBlock([
   { q: 'Do I pay on this page?', a: 'No. You create the account with Google, LinkedIn or email, and billing is set up inside Jwero. The first month of Jwero One is ₹3,600 instead of ₹18,000; after that it bills monthly, and you can export everything, any time.' },
   { q: 'How long until I am live?', a: 'Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one. Everything else follows in stages.' },
-  { q: 'Can I get help instead of doing it myself?', a: 'Yes — every step has a chat-or-call button; a real person and our AI reply within minutes, and we can run onboarding with you.' },
+  { q: 'Can I get help instead of doing it myself?', a: 'Yes — every step has a chat-or-call button; we can run onboarding with you.' },
 ])}`)}
 `,
 };

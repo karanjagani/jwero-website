@@ -407,7 +407,7 @@ ${L.honestGapsBlock([
   'No predictive forecasting — the numbers are what happened, plus rule-based scores you can read.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Ask the chat button for a report on your business type — a real person and our AI reply within minutes.</p>`, { tone: 'tint' })}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">Ask the chat button for a report on your business type.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('One question you have never had a clean answer to.', 'Bring it. We will build the report on the call, on your kind of data.', 'reports')}
 `,
