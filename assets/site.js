@@ -2516,7 +2516,7 @@ document.addEventListener('click', function (e) {
         var n = Array.prototype.filter.call(gEl.querySelectorAll('.stackm-chip'), on).length;
         gEl.querySelector('[data-grp-n]').textContent = n;
         gEl.classList.toggle('has-some', n > 0);
-        gEl.querySelector('[data-grp-all]').textContent = n ? '✓ Yes' : 'Yes, we use';
+        gEl.querySelector('[data-grp-all]').textContent = n === gEl.querySelectorAll('.stackm-chip').length ? 'Clear' : 'Tick all';
       });
       if (send) {
         var k = chips().filter(on).length, txt = function (sel) { var el = root.querySelector(sel); return el ? el.textContent.trim() : ''; };
@@ -2528,7 +2528,8 @@ document.addEventListener('click', function (e) {
       if (all) {
         e.preventDefault(); e.stopPropagation();
         var g = all.closest('.stackm-grp'), list = Array.prototype.slice.call(g.querySelectorAll('.stackm-chip'));
-        if (list.some(on)) list.filter(on).forEach(function (c) { c.click(); });
+        if (list.every(on)) list.forEach(function (c) { c.click(); });
+        else if (all.getAttribute('data-mode') === 'all') list.filter(function (c) { return !on(c); }).forEach(function (c) { c.click(); });
         else { var want = (all.getAttribute('data-common') || '').split('|').filter(Boolean); list.filter(function (c) { return !want.length || want.indexOf(c.textContent.trim()) !== -1; }).forEach(function (c) { c.click(); }); }
       } else if (quick) {
         e.preventDefault(); e.stopPropagation();

@@ -141,33 +141,32 @@ The Autonomous Jewellery OS, run by AI
  0 → 1 Results ↓ 
  Start from a business like yours
  Single showroom Chain of stores Manufacturer Wholesaler Online brand 
- or answer for each area below
+ or tick the tools you run below
 
- Selling and chat tools? DMs, Ecommerce website, Google Shopping, Marketplace seller panels… 0 of 18 Yes, we use 
+ Selling DMs, Ecommerce website, Google Shopping, Marketplace seller panels… 0 of 18 Tick all 
  Business email Calendar DMs Document viewer Ecommerce website Facebook page inbox Forms Franchise management Google Shopping Marketplace seller panels Meetings Quotation maker Shareable live catalogues Shopify integration Video call app Website live chat WhatsApp API WooCommerce integration 
 
- Billing, stock and workshop (ERP)? Barcode & tagging, Billing software, ERP, Estimate pad… 0 of 14 Yes, we use 
+ ERP Barcode & tagging, Billing software, ERP, Estimate pad… 0 of 14 Tick all 
  Barcode & tagging Billing software ERP Estimate pad Gold rate updates Hallmark tracker Inventory intelligence Inventory software Karigar portal Old gold management POS counter Pricing engine Repairs management Vendor portal 
 
- Customer and scheme tools? CRM, Gold scheme register, Appointment diary, CCTV tracking… 0 of 14 Yes, we use 
+ Customers CRM, Gold scheme register, Appointment diary, CCTV tracking… 0 of 14 Tick all 
  Appointment diary CCTV tracking CRM Customer journeys Customer personalisation engine Customer segmentation Digital gold app Girvi register Gold scheme register Lead finder Loyalty cards Occasion diary RFM Walk-in register 
 
- Marketing and ads tools? Coupons management, Email marketing tool, Google Ads, Google Business reviews… 0 of 29 Yes, we use 
+ Marketing Coupons management, Email marketing tool, Google Ads, Google Business reviews… 0 of 29 Tick all 
  A/B testing Ads creator Asset library Broadcasts Campaigns ChatGPT Ads Comments management Coupons management Email marketing tool Google Ads Google Business reviews Google Tag Manager LinkedIn Marketing automation Meta Ads Pinterest Pixels Push notifications RCS Reels SMS Social media post creator Social media scheduler Stories Threads Visitor tracking Website heatmaps X YouTube 
 
- AI and automation tools? AI agents, AI content creation, AI image generation, AI inbound calling… 0 of 9 Yes, we use 
+ AI AI agents, AI content creation, AI image generation, AI inbound calling… 0 of 9 Tick all 
  AI agents AI content creation AI image generation AI inbound calling AI outbound calling campaigns Automation rules Autonomous customer follow-ups MCP tools Webhooks & APIs 
 
- Accounting links? Payment reminders, Tally integration, Zoho integration 0 of 3 Yes, we use 
+ Books Payment reminders, Tally integration, Zoho integration 0 of 3 Tick all 
  Payment reminders Tally integration Zoho integration 
 
- Staff and payroll tools? Attendance register, HR, Incentive sheet, Payroll software… 0 of 8 Yes, we use 
+ Team Attendance register, HR, Incentive sheet, Payroll software… 0 of 8 Tick all 
  Attendance register HR Incentive sheet LMS Payroll software Recruitment management Task management Team chat app 
 
- Reports and MIS? Branch report calls, Google Sheets, MIS reports, Call tracking tool 0 of 4 Yes, we use 
+ Decisions Branch report calls, Google Sheets, MIS reports, Call tracking tool 0 of 4 Tick all 
  Branch report calls Call tracking tool Google Sheets MIS reports 
 
- Choose exact tools ↓ 
  Show all 99 
 
  Showrooms − + 

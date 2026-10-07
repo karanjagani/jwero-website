@@ -1201,10 +1201,10 @@ function stackMerge(only) {
   const N = only ? STACK.flatMap(([, , items]) => items).filter(pool).length : STACK_N;
   const tip = (k) => `<button type="button" class="stackm-tip" aria-label="How this is worked out"><span role="tooltip" data-stackm-tip="${k}"></span></button>`;
   return `
-<div class="stackm" data-stackm data-total="${N}">
+<div class="stackm is-detail" data-stackm data-total="${N}">
   <div class="stackm-main">
     <a class="stackm-mini" href="#stackm-out" data-stackm-mini hidden><b data-mini-n>0</b><em>→ 1</em><span data-mini-save></span><i>Results ↓</i></a>
-    ${only ? '' : `<div class="stackm-quick"><p>Start from a business like yours</p><div class="stackm-quick-row" data-default="single">${STACK_QUICK.map(([k, l, tools]) => `<button type="button" data-stackm-quick="${k}" data-tools="${tools.join('|').replace(/&/g, '&amp;')}">${l}</button>`).join('')}</div><p class="stackm-quick-or">or answer for each area below</p></div>`}
+    ${only ? '' : `<div class="stackm-quick"><p>Start from a business like yours</p><div class="stackm-quick-row" data-default="single">${STACK_QUICK.map(([k, l, tools]) => `<button type="button" data-stackm-quick="${k}" data-tools="${tools.join('|').replace(/&/g, '&amp;')}">${l}</button>`).join('')}</div><p class="stackm-quick-or">or tick the tools you run below</p></div>`}
     <div class="stackm-cloud" data-stackm-cloud>
       ${(() => {
         // Counter, Stock and Workshop show as one ERP group; each chip keeps its own group for the maths.
@@ -1215,9 +1215,8 @@ function stackMerge(only) {
           else out.push([label, ic, tools, g]);
         });
         return out.map(([l, ic, tools, g]) => [l, ic, tools.sort((x, y) => x[0].localeCompare(y[0], 'en', { sensitivity: 'base' })), g]);
-      })().filter(([, , items]) => items.length).map(([label, ic, items, g], k) => `<div class="stackm-grp" data-stackm-grp="${g}"><div class="stackm-grp-head"><span class="stackm-grp-name">${icon(ic)}<span><b>${GROUP_Q[label] || label}</b><em class="stackm-grp-eg">${items.map(([t]) => t).filter((t) => STACK_COMMON.includes(t.replace(/&amp;/g, '&'))).concat(items.map(([t]) => t)).filter((t, i, a) => a.indexOf(t) === i).slice(0, 4).join(', ')}${items.length > 4 ? '…' : ''}</em></span></span><span class="stackm-grp-n"><b data-grp-n>0</b> of ${items.length}</span><button type="button" class="stackm-grp-all" data-grp-all data-common="${items.map(([t]) => t).filter((t) => STACK_COMMON.includes(t.replace(/&amp;/g, '&'))).join('|')}">Yes, we use</button></div><div class="stackm-grp-chips">${items.map(([t, g]) => `<button type="button" class="stackm-chip" data-g="${g}" data-c="${(STACK_COST[t] || [0, 1])[0]}" data-h="${(STACK_COST[t] || [0, 1])[1]}" data-grp="${(STACK_COST[t] || [])[3] || ''}" data-s="${(STACK_COST[t] || [])[5] || ''}" aria-pressed="false">${t}</button>`).join('')}</div></div>`).join('')}
+      })().filter(([, , items]) => items.length).map(([label, ic, items, g], k) => `<div class="stackm-grp" data-stackm-grp="${g}"><div class="stackm-grp-head"><span class="stackm-grp-name">${icon(ic)}<span><b>${label}</b><em class="stackm-grp-eg">${items.map(([t]) => t).filter((t) => STACK_COMMON.includes(t.replace(/&amp;/g, '&'))).concat(items.map(([t]) => t)).filter((t, i, a) => a.indexOf(t) === i).slice(0, 4).join(', ')}${items.length > 4 ? '…' : ''}</em></span></span><span class="stackm-grp-n"><b data-grp-n>0</b> of ${items.length}</span><button type="button" class="stackm-grp-all" data-grp-all data-mode="all" data-common="${items.map(([t]) => t).filter((t) => STACK_COMMON.includes(t.replace(/&amp;/g, '&'))).join('|')}">Tick all</button></div><div class="stackm-grp-chips">${items.map(([t, g]) => `<button type="button" class="stackm-chip" data-g="${g}" data-c="${(STACK_COST[t] || [0, 1])[0]}" data-h="${(STACK_COST[t] || [0, 1])[1]}" data-grp="${(STACK_COST[t] || [])[3] || ''}" data-s="${(STACK_COST[t] || [])[5] || ''}" aria-pressed="false">${t}</button>`).join('')}</div></div>`).join('')}
     </div>
-    <button type="button" class="stackm-detail" data-stackm-detail>Choose exact tools ↓</button>
     <button type="button" class="stackm-more" data-stackm-more>Show all ${N}</button>
   </div>
   <aside class="stackm-panel" id="stackm-out" data-stackm-panel data-stackm-out data-plan="${STACK_PLAN}" data-locfee="${STACK_LOC}" data-base="${STACK_TEAM}" data-share="${STACK_HOUR_SHARE}" data-match="${STACK_MATCH}" data-week="${STACK_WEEK}">

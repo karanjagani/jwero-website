@@ -4166,3 +4166,16 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
   .stackm-quick-row { gap: 5px; }
   .stackm-quick-row button { padding: 6px 11px; font-size: .75rem; }
 }
+
+/* Back to the categorised list: group name, count and Tick all on one line; tools listed below. */
+.stackm.is-detail .stackm-grp-eg { display: none; }
+.stackm.is-detail .stackm-grp-name b { font-size: .8125rem; }
+.stackm.is-detail .stackm-grp-head { display: flex; align-items: center; gap: 8px; padding: 8px 10px 6px; }
+.stackm.is-detail .stackm-grp-n { margin-left: auto; }
+.stackm.is-detail .stackm-grp-all { min-width: 0; padding: 4px 10px; font-size: .6875rem; font-weight: 500; }
+.stackm.is-detail .stackm-grp.has-some .stackm-grp-all { background: transparent; color: var(--brand); border-color: var(--line-2); }
+@media (max-width: 640px) {
+  .stackm.is-detail .stackm-grp-head { flex-wrap: wrap; gap: 4px 6px; padding: 7px 8px 5px; }
+  .stackm.is-detail .stackm-grp-n { margin-left: 0; }
+  .stackm.is-detail .stackm-grp-all { margin-left: auto; padding: 3px 8px; }
+}
