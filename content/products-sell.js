@@ -247,80 +247,111 @@ ${L.ctaBand('Stop losing the DMs you paid for.', 'Show us last week’s DMs. We 
 `,
 };
 
+// AI sales agents, rebuilt 2026-10-07. Confirmed by Jwero: 14 languages across
+// chat, voice and calls; telephony provider kept generic. "240+ actions" not
+// repeated here (unconfirmed as current). Video selling lives on /products/meetings.
+const AI_FLOW = [
+  ['11:04 pm', 'A WhatsApp message: “Light bridal necklace, under 3 lakh?”'],
+  ['AI reply', 'Three pieces at today’s rate, from her taste and past purchases'],
+  ['Quiet', 'No reply by morning · a follow-up is drafted'],
+  ['Approved', 'Your manager approves in one tap'],
+  ['AI call', 'Next day, an AI call in Hindi · a visit booked for Saturday'],
+  ['Walk-in', 'She arrives; your salesperson already knows what she liked'],
+];
+const aiFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">AI SALES AGENT · 11PM TO WALK-IN</p>${AI_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${AI_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const AI_CMP = [
+  ['After hours', 'Waits for morning', 'Canned menu', 'Answers with real pieces and prices'],
+  ['Prices', 'Typed by hand', 'None or fixed', 'Today’s rate, from your catalogue'],
+  ['Knows the customer', 'Your memory', 'No', 'Purchases, scheme and taste on her record'],
+  ['Follow-ups', 'When someone remembers', 'No', 'Drafted on schedule'],
+  ['Voice and calls', 'No', 'No', 'AI voice on WhatsApp, web chat and phone, in 14 languages'],
+  ['Control', 'n/a', 'Runs as built', 'Approvals, daily caps, kill switch, full log'],
+  ['Channels', 'WhatsApp only', 'One channel', 'WhatsApp, Instagram, web chat and phone'],
+];
+const aiTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>WhatsApp Business app</th><th>A generic chatbot</th><th>Jwero</th></tr></thead><tbody>${AI_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const AI_HOW = [
+  ['Pick a duty', 'Start with one: the night shift, follow-ups or scheme reminders.'],
+  ['Give it your knowledge', 'Your catalogue, prices, policies and the answers you give every day.'],
+  ['Start in Assist mode', 'It drafts; your team approves every message.'],
+  ['Set the limits', 'Daily caps, what it may never do, and a kill switch.'],
+  ['Promote it', 'When it earns your trust, let chosen actions run on their own, with every action logged.'],
+];
+const aiFaqs = [
+  { q: 'What is an AI chatbot for jewellers?', a: 'An assistant that answers customers on WhatsApp, Instagram and your website with real pieces at today’s rate, follows up, and books visits. Jwero’s also speaks and calls, in 14 languages, under your approval.' },
+  { q: 'What is an AI sales agent in Jwero?', a: 'A member of the AI workforce with a set of allowed actions, a knowledge base, limits, an approval workflow and an activity log. It drafts replies, follow-ups, reminders and invitations within the limits you set.' },
+  { q: 'Does it speak Hindi and other languages?', a: 'Yes. Chat, voice and phone calls run in 14 languages, including Hindi, Gujarati, Marathi, Tamil, Telugu, Bengali and English.' },
+  { q: 'Can the AI make phone calls?', a: 'Yes. AI voice is built into WhatsApp and web chat, and phone calls and IVR run over your telephony provider, with transcripts on the customer record.' },
+  { q: 'Does it share products and prices?', a: 'Yes. Replies include pieces from your catalogue at today’s rate, chosen from her taste and past purchases.' },
+  { q: 'Will this replace my sales staff?', a: 'No. The AI does the remembering and the follow-up; your people do the selling, and every customer walks in already known.' },
+  { q: 'Can it give a discount without me knowing?', a: 'No. Prices and discounts follow your price rules and staff permissions. The AI drafts messages; it does not set prices.' },
+  { q: 'How do I know what the AI did?', a: 'Every action is logged: what, when, why, and who approved it.' },
+];
 const aiAgents = {
   slug: 'products/ai-sales-agents',
   title: 'AI for Jewellers: AI Chatbot, Sales Agents & Voice AI | Jwero',
-  description: 'AI sales agents that answer, follow up, and call customers back in 14 languages — on WhatsApp, web chat, and phone/IVR via Exotel or Tata Tele — governed by approval queues, daily caps and kill switches.',
+  description: 'AI chatbot and voice AI for jewellers: answers on WhatsApp, Instagram and web chat with pieces at today’s rate, follows up and calls back in 14 languages, 24/7, under your approvals, daily caps and kill switch.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero AI Sales Agents & Voice', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Governed AI sales agents and a voice assistant speaking 14 languages, drafting replies and follow-ups across WhatsApp, web chat and phone/IVR, inside approval queues, daily caps and a kill switch.',
+    name: 'Jwero AI Sales Agents & Voice', alternateName: ['AI chatbot for jewellers', 'WhatsApp chatbot for jewellery shops', 'Voice AI for jewellers'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'AI sales agents for jewellers that answer on WhatsApp, Instagram and web chat with pieces at today’s rate, follow up, remind and call back in 14 languages, with AI voice on WhatsApp and web chat and phone calls over the jeweller’s telephony provider, inside approval queues, daily caps and a kill switch.',
     url: 'https://jwero.ai/products/ai-sales-agents', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to start with an AI sales agent in a jewellery shop', step: AI_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('AI Sales Agents & Voice'),
-  faqs: [
-    { q: 'What is an AI sales agent in Jwero?', a: 'A configured member of the AI workforce: a scope of allowed actions, a knowledge base, guardrails, an approval workflow and an activity log. It drafts replies, follows up, reminds and invites — within the limits you set.' },
-    { q: 'Can the AI really speak on calls?', a: 'Yes, in two ways. On WhatsApp and your website’s web chat, AI voice is native to Jwero — no third party involved — and converses in 14 languages, with transcripts filed on the customer record. For actual phone calls (instalment reminders, outbound follow-ups, IVR), the AI agent speaks over a telephony line you connect, currently in 11 Indian languages.' },
-    { q: 'Does Jwero do IVR?', a: 'Yes, through your telephony provider — Jwero’s AI voice agent runs outbound and inbound phone calls, including IVR menus, over a connected line from Exotel, Tata Tele, or most other telephony/CPaaS providers on request. That’s different from voice on WhatsApp and web chat, which is fully native to Jwero and needs no telephony connection at all. See <a href="/platform/integrations">Integrations</a> for the telephony connectors.' },
-    { q: 'How do I know what the AI did?', a: 'Every action is logged: what, when, why, and who approved it. You can review any day’s activity in minutes.' },
-    { q: 'Will this replace my sales staff?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the actual selling. Salespeople close more when every customer walks in already known, not fewer.' },
-    { q: 'My salespeople are worried about being watched or replaced. What do I tell them?', a: 'That the AI does the tedious remembering — who to follow up, what she bought last time — so they spend their time selling instead of searching for notes. It works for them, not on them.' },
-    { q: 'Can it give a discount without me knowing?', a: 'No — pricing and discounts follow your price rules and staff permissions. The agents draft messages; they don’t set prices.' },
-    { q: 'Can customers video-call or watch a live stream to see a piece?', a: 'Yes — customers can join a live stream and buy what they see, start a video call with your team to look at a piece up close, or scan a video-QR code to open a video interaction on the spot. These are live-video connections to your people, not an AI-hosted stream; the AI’s role stays where it is elsewhere on this page — drafting the surrounding text follow-ups, under approval.' },
-  ],
+  faqs: aiFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'AI SALES AGENTS & VOICE',
-  h1: 'Staff who remember everyone, work all night, and ask first.',
-  sub: 'An AI workforce with 240+ individually permissioned actions, speaking 14 languages by chat and voice — drafting replies, follow-ups, reminders and invitations that wait in your approval queue until you say which may run alone.',
+  eyebrow: 'AI CHATBOT · AI SALES AGENTS · VOICE AI',
+  h1: 'AI chatbot and voice AI for jewellers: answers, follows up and calls back, 24/7, with your approval.',
+  sub: 'AI staff that reply on WhatsApp, Instagram and your website with real pieces at today’s rate, chase every quiet enquiry, and call customers in 14 languages. Every action waits for your approval until you decide it may run alone.',
   primary: { href: '#', label: 'Show me an AI draft waiting for approval', wa: 'aiagents' },
   secondary: { href: '/platform/ai-workforce', label: 'How governance works' },
   mock: L.mockApproval,
 })}
 
-${L.section(
-  `${L.sectionHead('THE DUTIES', 'What you can hire them for.', '')}
-  ${L.cards([
-    { title: 'Enquiry desk', text: 'First response on WhatsApp, Instagram and web chat — knowledgeable, priced, polite, in minutes.' },
-    { title: 'Follow-up clerk', text: 'Every quiet conversation, unclosed quote and abandoned enquiry chased on schedule, forever.' },
-    { title: 'Scheme collections', text: 'Instalment reminders by message and voice call — the polite persistence that keeps plans healthy.' },
-    { title: 'Occasion concierge', text: 'Birthday and anniversary outreach, festival invitations, wedding-season campaigns — proposed weeks ahead for your approval.' },
-    { title: 'Voice caller', text: 'Outbound and inbound reminder and follow-up calls in the customer’s language, placed over your connected telephony line, transcribed onto the record.' },
-    { title: 'Night shift', text: 'The 11pm enquiry answered at 11:01pm. This one duty pays for the rest.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE ENQUIRY, START TO FINISH', 'From an 11pm message to a known customer at the counter.', '')}${aiFlow()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('THE CHANNELS', 'One AI workforce, wherever she reaches you.', 'Same customer record, same approval queue, same voice — whichever channel she picks.')}
-  ${L.cards([
-    { title: 'WhatsApp', text: 'Catalogue, replies, appointments and payments on your official WhatsApp Business number — text and native AI voice, both built into Jwero, no third-party add-on.', link: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' } },
-    { title: 'Web chat', text: 'AIVA answers on your website’s chat widget by text or native voice — Jwero’s own assistant, not a bolted-on plugin — and hands off to a person the moment one is needed.', link: { href: '/products/optimize', label: 'See web chat (Optimize)' } },
-    { title: 'Phone & IVR', text: 'Outbound and inbound AI voice calls — reminders, follow-ups, IVR menus — run over a telephony line you connect (Exotel, Tata Tele, or most other providers on request). This is the one channel where Jwero drives the conversation over a line someone else carries; WhatsApp and web voice above are fully native.', link: { href: '/platform/integrations', label: 'See telephony integrations' } },
-  ])}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('SIX JOBS, ONE AI WORKFORCE', 'What you can hire AI for in a jewellery shop.', '')}<div class="wa-jobs">
+  <article><h3>1. The night shift</h3><p>Enquiries on WhatsApp, Instagram and web chat answered at any hour, with pieces at today’s rate.</p><a href="/products/whatsapp">WhatsApp →</a></article>
+  <article><h3>2. Follow-ups</h3><p>Every quiet chat, open quotation and abandoned enquiry chased on schedule.</p><a href="/products/quotations">Quotations →</a></article>
+  <article><h3>3. Scheme collections</h3><p>Instalment reminders by message and AI call, politely and on time.</p><a href="/products/gold-schemes">Gold schemes →</a></article>
+  <article><h3>4. Occasions</h3><p>Birthdays, anniversaries and festival invitations, proposed weeks ahead for your approval.</p><a href="/products/journeys">Journeys →</a></article>
+  <article><h3>5. Voice in 14 languages</h3><p>AI voice on WhatsApp and web chat, and phone calls and IVR over your telephony provider, transcribed onto her record.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
+  <article><h3>6. You stay in charge</h3><p>Approvals, daily caps, a kill switch, and a log of every action and who approved it.</p><a href="/platform/ai-workforce">AI governance →</a></article>
+</div>`)}
 
 ${L.governanceStrip()}
 
-${L.section(
-  `${L.sectionHead('BEYOND TEXT', 'Staff that never sleep — now on video too.', '')}
-  ${L.cards([
-    { title: 'Live streaming & shoppable video', text: 'Run a live stream of new arrivals or a festival launch; customers watch and buy the pieces they see, in the moment.' },
-    { title: 'Video calls with your team', text: 'A customer who wants to see a piece up close before deciding can move straight into a video call with your salesperson, no separate app to install.' },
-    { title: 'Video-QR', text: 'A QR code — on a poster, an invoice, a catalogue page — that opens a video interaction instead of a webpage, so an in-store or offline moment can lead straight into a live conversation.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What answering late costs you.', 'Your numbers, not ours.')}<div class="callc" data-aic>
+  <div class="callc-in">
+    <label>Enquiries a month after hours or unanswered for an hour<input type="number" inputmode="numeric" data-ai="n" value="300" min="0"></label>
+    <label>Who would buy with a fast, priced reply, %<input type="number" inputmode="decimal" data-ai="buy" value="3" min="0" max="100" step="0.5"></label>
+    <label>Average bill, ₹<input type="number" inputmode="numeric" data-ai="bill" value="40000" min="0" step="1000"></label>
+    <label>Monthly salary of a night or follow-up hire, ₹<input type="number" inputmode="numeric" data-ai="sal" value="18000" min="0" step="1000"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Sales lost a month</span><b data-ai-o="lost">0</b></p>
+    <p class="callc-save"><span>Revenue lost a month</span><b data-ai-o="rev">₹0</b></p>
+    <p><span>A hire to cover it, a year</span><b data-ai-o="hire">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs. AI use is charged from the wallet; see <a href="/pricing" style="color:#fff">pricing</a>.</p>
+  </div>
+</div>`, { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('THE STAFF QUESTION', 'What your salespeople should worry about.', '')}${L.faqBlock([
-  { q: 'Will this replace my sales staff?', a: 'No. The AI workforce does the remembering and follow-up; your people do the selling. Salespeople close more when every customer walks in already known.' },
-  { q: 'My salespeople are worried about being watched or replaced. What do I tell them?', a: 'It works for them, not on them — it does the tedious remembering so they spend their time on the sale itself.' },
-  { q: 'Can it give a discount without me knowing?', a: 'No — pricing and discounts follow your price rules and staff permissions, always.' },
-  { q: 'Can customers video-call or watch a live stream to see a piece?', a: 'Yes — live streams, shoppable video and video-QR all connect customers with your team on camera. These are live-video capabilities, not an AI-hosted stream; only the surrounding text is AI-drafted, and always under approval.' },
+${L.section(`${L.sectionHead('COMPARE', 'The WhatsApp Business app, a generic chatbot, or Jwero.', '')}${aiTable()}`)}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to start with an AI sales agent.', 'Five steps, at your pace.')}${L.steps(AI_HOW.map(([title, text]) => ({ title, text })))}<p class="cta-note" style="margin-top:14px">Want customers to see a piece on video? See <a href="/products/meetings">video calls and live selling</a>.</p>`, { tone: 'tint' })}
+
+${L.oneSystemBlock([
+  'The AI reads the same customer record your team does: purchases, scheme, taste and every past chat.',
+  'Prices in its replies come from the same catalogue and rate as the counter.',
+  'Every action it takes is logged, with who approved it.',
 ])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#ai-trust">See every AI trust question →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="aiagents">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Hire staff that scale like software.', 'Start with one agent on Assist mode — drafts only, approvals on. Promote it when it earns your trust.', 'aiagents')}
+${L.ctaBand('Hire staff that scale like software.', 'Start with one agent in Assist mode: drafts only, approvals on. Promote it when it earns your trust.', 'aiagents')}
 `,
 };
 

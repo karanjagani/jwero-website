@@ -6852,13 +6852,13 @@ A: No. The sync is built in and runs from your Jwero catalogue.
 # Jewellery Quotation & Estimate Software at the Live Rate
 URL: https://jwero.ai/products/quotations
 
-Numbered quotations with line items and a PDF, priced from the catalogue at the live rate, sent on WhatsApp or email, accepted or declined by the customer on a public link, created from an enquiry, from a catalogue request, or by voice at the counter.
+Jewellery quotation and estimate software: numbered quotes priced at today’s gold rate with your making and wastage rules, sent on WhatsApp or email, accepted from her phone, followed up and converted to an order.
 
-QUOTATIONS
+JEWELLERY QUOTATIONS AND ESTIMATES
 
-## A quote she can accept from her phone. Numbered, priced, on the record.
+## Jewellery quotation and estimate software: priced at today’s rate, accepted from her phone.
 
- No more prices typed into WhatsApp and revised four times. A quotation drafts from the catalogue at the live rate, goes out as a link and a PDF, and comes back accepted, declined or quietly waiting, with the follow-up already drafted.
+ No more prices typed into WhatsApp and revised four times. An estimate drafts from your catalogue at today’s rate, goes out as a numbered link and PDF, and comes back accepted, declined or waiting, with the follow-up already drafted.
 
  Send me a sample quotation 
  See the CRM 
@@ -6875,58 +6875,124 @@ QUOTATIONS
 
  She opens the link, accepts or declines. Acceptance moves her conversion score; a decline drafts a follow-up for your tap.
 
- THE LIFECYCLE
+ ONE ENQUIRY, START TO FINISH
 
-## Draft → sent → accepted or declined → order.
+## From “how much?” to an order, on one record.
+
+ QUOTATION · ENQUIRY TO ORDER
+ Enquiry Asks on WhatsApp for a 20g temple necklace
+ Drafted Estimate at today’s rate · metal, making, stones line by line
+ Sent Numbered link and PDF on WhatsApp · after your tap
+ Quiet Two days, no reply · a nudge is drafted for approval
+ Revised Version 2 with a lighter design
+ Accepted Accepted from her phone · written to her record
+ Order Converted to a sales order with the same lines
+ Illustrative.
+
+ Enquiry Asks on WhatsApp for a 20g temple necklace 
+ Drafted Estimate at today’s rate 
+ Sent Numbered link and PDF on WhatsApp 
+ Quiet Two days, no reply 
+ Revised Version 2 with a lighter design 
+ Accepted Accepted from her phone 
+ Order Converted to a sales order with the same lines 
+
+ SIX JOBS, ONE QUOTATION
+
+## What jewellery quotation software has to do.
+
+## 1. Priced at today’s rate
+ Lines from your catalogue, priced from the rate with your making and wastage rules.
+ Pricing engine → 
+
+## 2. Made four ways
+ From her record, a catalogue enquiry, by voice at the counter in English, Hindi or Hinglish, or by automation.
+ Digital catalogues → 
+
+## 3. Sent as a numbered link
+ A link and PDF on WhatsApp or email, after your tap, with a validity window.
+ WhatsApp → 
+
+## 4. Decided from her phone
+ She accepts or declines online, and it is written to her record.
+ Customer record → 
+
+## 5. Followed up
+ Quiet after the interval you set? A nudge is drafted and waits for your approval.
+ Journeys → 
+
+## 6. One version, one order
+ Every revision numbered; the accepted one converts to an order with the same lines.
+ POS and billing → 
+
+ THE ARITHMETIC
+
+## What quotes without follow-up cost you.
+
+ Your numbers, not ours.
+
+ Quotes or estimates a month 
+ That go quiet, % 
+ Of those, won back by a follow-up, % 
+ Average bill, ₹ 
+
+ Quotes going quiet a month 0 
+
+ Sales a follow-up wins back 0 
+
+ Revenue a month ₹0 
+
+ A planning estimate from your own inputs.
+
+ COMPARE
+
+## Prices in chat, an Excel estimate, or Jwero.
+
+ Prices typed in WhatsApp An Excel or Word estimate Jwero 
+ Price Typed from memory Worked out by hand From the catalogue at today’s rate 
+ Making and wastage Varies by who types A formula someone set up Your rules, every time 
+ Which price was final Lost in the chat File names Every version numbered 
+ Customer decides Replies in chat Prints or forwards Accepts or declines on a link 
+ If she goes quiet Forgotten Forgotten A follow-up drafted for approval 
+ To an order Retyped Retyped Converted with the same lines 
+ On her record No No Yes, with the history 
+
+ GETTING STARTED
+
+## How to make a jewellery estimate.
+
+ Five steps.
 
  1 
 
-## Draft
- From her record, from a catalogue enquiry, or by voice at the counter. Lines priced from the catalogue at today’s rate with your making and wastage rules.
+## Start from the enquiry
+ Open her record, a catalogue request, or say it at the counter.
 
  2 
 
-## Send
- A numbered quotation with a PDF, on WhatsApp or email, after your tap. Validity window on every one.
+## Pick the pieces
+ Lines come from your catalogue with weights, purity and stones.
 
  3 
 
-## Accept or decline
- She opens the public link and decides. Acceptance and decline write to her record and move her scores.
+## Let the rate price it
+ Today’s rate with your making and wastage rules, and a validity window.
 
  4 
 
-## Follow up or convert
- Quiet? The quote follow-up journey drafts a nudge. Accepted? Convert to a sales order with the quoted lines.
+## Send it
+ A numbered link and PDF on WhatsApp or email, after your tap.
 
-## Voice at the counter
+ 5 
 
- Say it at the counter, find products, look up a customer, draft, send, convert, checkout, in English, Hindi or Hinglish. Sending still needs your confirm.
+## Follow up and convert
+ A nudge if she goes quiet; an order with the same lines when she accepts.
 
-## Enquiry to quote, one call
+ BECAUSE IT'S ONE SYSTEM
 
- A public catalogue enquiry with the pieces she picked becomes a quotation with those lines, from the admin sheet, an assistant tool or an automation.
-
-## Revisions kept in order
-
- Every version numbered; the one she accepted is the one that ships.
-
-## Bridal and B2B ready
-
- Family committees and trade buyers see the same numbered document, no argument about which WhatsApp price was final.
-
- See bridal → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Message us and we will send you a real quotation link, the way your customer gets one.
+ The quote prices from the same catalogue and rate as the counter and website.
+ Accepted or declined, it is on her record for the next conversation.
+ Bridal families and trade buyers all see the same numbered document.
 
 ## Stop typing prices into chat.
 
@@ -6939,20 +7005,32 @@ QUOTATIONS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: What is a jewellery estimate?
+A: A written price for chosen pieces before the sale: metal at today’s rate, making charges and stones. In Jwero it is a numbered quotation the customer can accept from her phone.
+
+Q: How do I make a jewellery estimate?
+A: Pick the pieces from your catalogue; Jwero prices them at today’s rate with your making and wastage rules, and sends a numbered link and PDF on WhatsApp or email.
+
+Q: What is the difference between a quotation, an estimate and an invoice?
+A: An estimate or quotation is the price offered before she decides. An invoice is the bill after the sale. In Jwero an accepted quotation converts to an order, and the invoice follows.
+
 Q: How does a quotation get created?
-A: Four ways: from the customer record, from a catalogue enquiry in one call, from the counter’s sell cockpit, say “Priya ke liye quotation banao aur bhejo” in English, Hindi or Hinglish, or by an automation. Every outward step (send, convert) still needs a human confirm.
+A: From her record, from a catalogue enquiry in one step, by voice at the counter in English, Hindi or Hinglish, or by an automation. Sending always needs your confirm.
 
 Q: Can the customer accept it online?
-A: Yes. She receives a link, sees the numbered quotation with line items and a PDF, and accepts or declines. The status moves on her record and her scores move with it.
+A: Yes. She opens the link, sees the numbered quotation with its lines and PDF, and accepts or declines. It is written to her record.
+
+Q: Is the rate locked?
+A: Every quotation has a validity window. Whether the rate is held inside it is your rule.
 
 Q: What happens if she goes quiet?
-A: The quote follow-up journey drafts a nudge after the interval you set; it waits in your approval queue like every other send.
+A: A follow-up is drafted after the interval you set and waits for your approval.
 
 Q: Does an accepted quote become an order?
-A: Yes, convert to a sales order with the quoted lines; the invoice follows at the counter or online.
+A: Yes. It converts to a sales order with the quoted lines.
 
-Q: Is the price locked?
-A: A validity window is on every quotation. Whether the rate is protected inside it is your rule, most jewellers protect for a few days and reprice after.
+Q: Can a bridal family see one quotation?
+A: Yes. Everyone opens the same numbered document, so there is no argument about which price was final.
 
 ---
 

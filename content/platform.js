@@ -261,7 +261,7 @@ const aiWorkforce = {
     { q: 'What if it says something embarrassing to a customer I’ve known for twenty years?', a: 'That fear is exactly what the approval queue exists for. Nothing reaches her until your team has seen it. Quiet hours mean nobody, old customer or new, gets a message at 11pm either.' },
     { q: 'How does it know how to sound like MY shop, not a generic chatbot?', a: 'It drafts from your catalogue, your prices, your policies and your past conversations — the same context a new employee would need, except it never forgets any of it.' },
     { q: 'Is this the same risk as an AI chatbot going rogue online?', a: 'No. Nothing sends without approval by default, ever. The entire governance layer (approvals, caps, kill switch) exists because a jewellery relationship can’t survive an ungoverned bot near it.' },
-    { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Not yet, and we’d rather say so than blur it: the chat/voice assistant speaks 14 languages; the separate outbound/inbound phone-calling agent (running over a connected telephony line — Exotel, Tata Tele, or another provider) currently covers 11 Indian languages.' },
+    { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Yes. Chat, voice and phone calls all run in the same 14 languages.' },
   ],
   body: `
 ${L.hero({
@@ -312,7 +312,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('THE 14 LANGUAGES, NAMED', 'Not a marketing round number — the actual list.', 'The AI assistant’s chat and voice conversations — native on WhatsApp and web chat, no telephony provider involved — run in these 14 languages today. (A separate phone-calling voice agent for outbound/inbound calls and IVR, which runs over a connected telephony line such as Exotel or Tata Tele, currently covers 11 Indian languages — fewer than the native assistant above — and we’d rather say that plainly than let the two get conflated.)')}
+  `${L.sectionHead('THE 14 LANGUAGES, NAMED', 'Not a marketing round number — the actual list.', 'The AI assistant’s chat and voice conversations — native on WhatsApp and web chat, no telephony provider involved — run in these 14 languages. Phone calls and IVR, over your connected telephony provider, use the same 14 languages.')}
   <div class="chip-row" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;">
     ${['English','Hindi','Marathi','Gujarati','Tamil','Telugu','Kannada','Bengali','Malayalam','Punjabi','Odia','Arabic','Spanish','French'].map((l) => `<span class="chip">${l}</span>`).join('')}
   </div>`
@@ -324,7 +324,7 @@ ${L.section(`${L.sectionHead('QUESTIONS OWNERS ASK', 'Answers, not reassurance.'
   { q: 'Can I turn it all off?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything.' },
   { q: 'Can the AI give a discount without my knowledge?', a: 'No — pricing and discounts follow your price rules and staff permissions; the AI drafts messages, it does not set prices.' },
   { q: 'What if it embarrasses me with a longtime customer?', a: 'The approval queue exists for exactly this. Nothing reaches her until your team has seen and approved it.' },
-  { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Not yet, and we’d rather say so than blur it: the chat/voice assistant above speaks 14 languages; the separate outbound/inbound phone-calling agent (running over a connected telephony line — Exotel, Tata Tele, or another provider) currently covers 11 Indian languages.' },
+  { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Yes. Chat, voice and phone calls all run in the same 14 languages.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More on AI trust and control? <a href="/faq#ai-trust">See every AI question we’ve been asked →</a></p>`)}
 
@@ -335,13 +335,13 @@ ${L.ctaBand('Meet your first AI workforce member.', 'Watch it draft, watch it wa
 const integrations = {
   slug: 'platform/integrations',
   title: 'Jwero Integrations: Tally, Shopify, Meta, Razorpay, MCP | Jwero',
-  description: 'Jwero bridges to Tally and Zoho Books, connects Shopify, WooCommerce and Unicommerce, collects via Razorpay and Cashfree, sells on official Meta channels, connects to telephony providers like Exotel and Tata Tele for AI voice calls and IVR, and exposes a first-party MCP server for your own AI agents.',
+  description: 'Jwero bridges to Tally and Zoho Books, connects Shopify, WooCommerce and Unicommerce, collects via Razorpay and Cashfree, sells on official Meta channels, connects to your telephony provider for AI voice calls and IVR, and exposes a first-party MCP server for your own AI agents.',
   breadcrumbs: BC('Integrations'),
   faqs: [
     { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Jwero connects to it, imports masters and checks records against it; sales vouchers are still entered in Tally, so your accountant’s world doesn’t change.' },
     { q: 'Can I keep my Shopify store?', a: 'Yes. Connect Shopify and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
     { q: 'Is the WhatsApp integration official?', a: 'Yes — Jwero uses the official WhatsApp Business API, with template approvals, consent management and opt-out handling built in.' },
-    { q: 'Which telephony providers work for AI voice calls and IVR?', a: 'Exotel and Tata Tele are wired in today; most other telephony/CPaaS providers can be connected on request. This only applies to actual phone calls and IVR — voice on WhatsApp and web chat is native to Jwero and needs no telephony provider at all. For the phone channel, Jwero drives the AI conversation and IVR logic — the call itself runs over the line you connect, the same division of labour as WhatsApp (Meta’s API) or payments (Razorpay/Cashfree).' },
+    { q: 'Which telephony providers work for AI voice calls and IVR?', a: 'Jwero connects to your telephony provider; most telephony/CPaaS providers can be connected on request. This only applies to actual phone calls and IVR — voice on WhatsApp and web chat is native to Jwero and needs no telephony provider at all. For the phone channel, Jwero drives the AI conversation and IVR logic — the call itself runs over the line you connect, the same division of labour as WhatsApp (Meta’s API) or payments (Razorpay/Cashfree).' },
   ],
   body: `
 ${L.hero({
@@ -361,7 +361,7 @@ ${L.section(
     { title: 'Unicommerce', text: 'Publish products to Unicommerce for marketplace-heavy operations.' },
     { title: 'Razorpay & Cashfree', text: 'Payment collection for website checkout, verified end to end.' },
     { title: 'Meta (WhatsApp, Instagram, Facebook)', text: 'Official APIs for the channels where jewellery actually sells today.' },
-    { title: 'Exotel & Tata Tele', text: 'Telephony connectors that carry Jwero’s AI voice agent — outbound/inbound calls and IVR menus — over a line you already run.', link: { href: '/products/ai-sales-agents', label: 'See voice & IVR' } },
+    { title: 'Your telephony provider', text: 'Telephony connectors that carry Jwero’s AI voice agent — outbound/inbound calls and IVR menus — over a line you already run.', link: { href: '/products/ai-sales-agents', label: 'See voice & IVR' } },
     { title: 'Your ERP export', text: 'Customers and catalogue import from Excel/CSV exports of practically any jewellery ERP.' },
   ], 4)}`
 )}
@@ -384,7 +384,7 @@ ${L.section(`${L.sectionHead('INTEGRATION QUESTIONS', 'What changes in your stac
   { q: 'Can I keep my Shopify store?', a: 'Yes. Connect Shopify and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
   { q: 'Is the WhatsApp integration official, or a ban risk?', a: 'Official WhatsApp Business API — template approvals, consent management and opt-out handling are built in, which is what keeps it out of ban-risk territory.' },
   { q: 'Can I connect my own AI agent to Jwero data?', a: 'Yes — a first-party MCP server exposes scoped CRM, inbox, HR, inventory, finance, marketing, org and reporting tools to any MCP-compatible agent, with a guided connect flow and an API-keys page in-product.' },
-  { q: 'Does Jwero support IVR and AI voice calls?', a: 'Yes — connect Exotel, Tata Tele, or most other telephony providers on request, and Jwero’s AI voice agent runs outbound/inbound phone calls and IVR menus over that line. Voice on WhatsApp and web chat is separate and fully native to Jwero, with no telephony connection needed. See <a href="/products/ai-sales-agents">AI Sales Agents & Voice</a> for what the agent actually does on each channel.' },
+  { q: 'Does Jwero support IVR and AI voice calls?', a: 'Yes — connect your telephony provider, and Jwero’s AI voice agent runs outbound/inbound phone calls and IVR menus over that line. Voice on WhatsApp and web chat is separate and fully native to Jwero, with no telephony connection needed. See <a href="/products/ai-sales-agents">AI Sales Agents & Voice</a> for what the agent actually does on each channel.' },
 ])}`)}
 
 ${L.ctaBand('Tell us your stack.', 'Send the list of tools you run today — we will map exactly what stays, what bridges, and what Jwero takes over.', 'integrations')}

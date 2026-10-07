@@ -1737,6 +1737,15 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Sent as a link and PDF on WhatsApp or email; the customer accepts or declines online; result written to her record.
 - Follow-ups drafted for approval when she goes quiet; every revision numbered; accepted quotes convert to a sales order.
 
+## AI chatbot and AI sales agents for jewellers (facts)
+
+- Page: https://jwero.ai/products/ai-sales-agents
+- AI agents answer on WhatsApp, Instagram and web chat with pieces from the catalogue at today's gold rate, chosen from the customer's taste and purchases.
+- Duties: after-hours enquiries, follow-ups, scheme instalment reminders, occasion outreach, AI voice and calls.
+- Chat, voice and phone calls run in 14 languages: English, Hindi, Marathi, Gujarati, Tamil, Telugu, Kannada, Bengali, Malayalam, Punjabi, Odia, Arabic, Spanish, French.
+- AI voice is built into WhatsApp and web chat; phone calls and IVR run over the jeweller's own telephony provider.
+- Governance: approval queues, daily caps, kill switch, and a log of every action and approver. AI does not set prices or discounts.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.

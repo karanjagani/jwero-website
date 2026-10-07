@@ -2843,3 +2843,12 @@ document.addEventListener('click', function (e) {
     set('quiet', quiet.toLocaleString('en-IN')); set('won', won.toLocaleString('en-IN')); set('rev', '₹' + (won * v('bill')).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+// AI sales agents page: what answering late costs.
+(function () {
+  var root = document.querySelector('[data-aic]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-ai="' + k + '"]') || {}).value || 0; };
+  function run() { var lost = Math.round(v('n') * v('buy') / 100);
+    var set = function (k, t) { var el = root.querySelector('[data-ai-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('lost', lost.toLocaleString('en-IN')); set('rev', '₹' + (lost * v('bill')).toLocaleString('en-IN')); set('hire', '₹' + (v('sal') * 12).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();

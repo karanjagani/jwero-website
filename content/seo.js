@@ -710,7 +710,7 @@ const CALL_CMP = [
 const callTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Human telecaller</th><th>IVR or robocall</th><th>Jwero voice AI</th></tr></thead><tbody>${CALL_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
 
 const CALL_SETUP = [
-  ['Connect a telephony line', 'Link a number from a provider such as Exotel or Tata Tele. Calls run over this line and are charged per minute.'],
+  ['Connect a telephony line', 'Link a number from your telephony provider. Calls run over this line and are charged per minute.'],
   ['Choose what the agent may do', 'Answer questions, book visits, send links, remind about dues. Set daily caps, calling hours and when to hand over to a person.'],
   ['Write the scripts in your words', 'Greeting, reminder and invitation scripts, in the languages your customers speak. Jwero drafts them with you.'],
   ['Set triggers and campaigns', 'Calls that place themselves (instalment due, payment failed, piece ready) and campaigns to segments you choose.'],
@@ -723,7 +723,7 @@ const callFaqs = [
   { q: 'Can AI make bulk calls to customers?', a: 'Yes. Jwero handles up to 8 calls at the same time, inbound and outbound. It runs calling campaigns in bulk, for example every scheme member whose instalment is due this week, and answers several callers at once so nobody gets a busy tone in the festival rush.' },
   { q: 'Can AI answer calls for my jewellery shop?', a: 'Yes. The voice agent answers rate, timing, stock and order questions, books visits, and passes the call to a person with a summary when the customer needs one, including after hours.' },
   { q: 'Can calls happen automatically when something happens?', a: 'Yes. Triggers place calls on events such as an instalment falling due, a failed payment, an unanswered WhatsApp message or a repair being ready. If a call is not answered, a WhatsApp message can follow.' },
-  { q: 'Which languages does the voice agent speak?', a: 'The phone agent speaks Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia, so each customer can be called in the language they speak at home.' },
+  { q: 'Which languages does the voice agent speak?', a: 'The phone agent speaks 14 languages: Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi, Odia, Arabic, Spanish and French, so each customer can be called in the language they speak at home.' },
   { q: 'Is AI calling legal in India?', a: 'Calls to your own customers about their account, such as scheme reminders, are treated differently from promotional calls. Promotional calls must follow TRAI’s rules on registration, consent and do-not-disturb preferences. Confirm your setup with your advisor before calling at scale.' },
   { q: 'How much does AI calling cost?', a: 'The AI agent costs ₹7 a call, all inclusive: the AI, the voice and the phone line, from a prepaid wallet. A call handled by hand usually takes 2 to 3 people several minutes each, so ₹7 a call is far cheaper. It runs on Jwero One at ₹18,000 a month (first month ₹3,600), or let Jwero run the calling for you.' },
   { q: 'Why is an AI call faster than a person picking up?', a: 'When a person answers, they often have to ask 2 or 3 colleagues for the stock, the rate or the customer’s balance, then call back. The AI agent reads all of that from the customer’s record and the live catalogue, and answers, books or sends a link within seconds, at any hour.' },
@@ -733,12 +733,12 @@ const callFaqs = [
 const aiCalling = {
   slug: 'ai-calling-for-jewellers',
   title: 'AI Calling for Jewellers: Voice AI Agents, Bulk Calls | Jwero',
-  description: 'AI calling for jewellers at ₹7 a call: voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, in 11 Indian languages, with triggers, campaigns and every call on the record.',
+  description: 'AI calling for jewellers at ₹7 a call: voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, in 14 languages, with triggers, campaigns and every call on the record.',
   breadcrumbs: [['Home', '/'], ['Jewellery software in India', '/jewellery-software-india'], ['AI calling for jewellers']],
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Jwero AI Calling for Jewellers', alternateName: ['Jwero voice AI agents', 'AI telecaller for jewellers'],
     applicationCategory: 'BusinessApplication', operatingSystem: 'Web', url: 'https://jwero.ai/ai-calling-for-jewellers',
-    description: 'Voice AI agents for jewellers: bulk inbound call answering, bulk outbound calling campaigns, event triggers, WhatsApp follow-through and transcripts on the customer record, in 11 Indian languages.',
+    description: 'Voice AI agents for jewellers: bulk inbound call answering, bulk outbound calling campaigns, event triggers, WhatsApp follow-through and transcripts on the customer record, in 14 languages.',
     isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
     offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month; AI calls at ₹7 a call, all inclusive.' },
   },
@@ -817,7 +817,7 @@ ${L.section(`${L.sectionHead('TRIGGERS AND CAMPAIGNS', 'Calls that place themsel
 ${L.section(`${L.sectionHead('HOW IT STAYS SAFE', 'Inside your rules, and the law’s.', '')}<div class="jb-blogline">
   <p><b>Your rules:</b> daily caps, calling hours, which actions the agent may take, and an approval queue for anything new. One switch stops all calling.</p>
   <p><b>The law’s:</b> calls about a customer’s own account, such as reminders, are treated differently from promotional calls, which follow TRAI’s rules on registration, consent and do-not-disturb preferences. Tell customers calls are recorded. <a href="/blog/ai-calling-jewellers-scheme-reminders">Read the AI calling guide →</a></p>
-  <p><b>What it will not do:</b> negotiate prices or give discounts. Those go to a person. Calls run over a telephony line you connect, from a provider such as Exotel or Tata Tele.</p></div>`, { tone: 'tint' })}
+  <p><b>What it will not do:</b> negotiate prices or give discounts. Those go to a person. Calls run over a telephony line you connect, from your telephony provider.</p></div>`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('HOW TO SET IT UP', 'How to set up AI calling for a jewellery shop.', 'Five steps, done with you.')}${L.steps(CALL_SETUP.map(([title, text]) => ({ title, text })))}`)}
 

@@ -1496,7 +1496,7 @@ const CTA_TICKER = [
   ['record', '198 customer signals · 11 live scores, each with a why'],
   ['sparkle', '41 ready segments · 300+ ready journeys'],
   ['shield', '240+ governed AI actions'],
-  ['phone', 'AI calls in 11 Indian languages'],
+  ['phone', 'AI calls in 14 languages'],
   ['power', 'Kill switch at five scopes'],
   ['swap', 'Tally & Zoho Books bridges built in'],
   ['chat', 'Official WhatsApp Business API'],
