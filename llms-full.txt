@@ -4437,7 +4437,7 @@ SHOWROOM · FOOTFALL · CONVERSION
 
 ## 1. Footfall from your cameras
  Existing CCTV or NVR (Hikvision, Dahua, CP Plus, ONVIF) counts entries, exits and how full the floor is, through an on-site connector.
- Privacy → 
+ AI CCTV footfall → 
 
 ## 2. Know who walked in
  Tablet check-in by phone number shows past visits, what she tried, and a maturing scheme. Photos only with consent.
@@ -30219,7 +30219,7 @@ SHOWROOM FOOTFALL AND WALK-IN TRACKING
  Does it recognise customers’ faces? 
  No. Cameras count people; they do not identify them. Customers are identified only when staff check them in, and photos are taken only with consent.
 
- Related: Showroom software · Jewellery CRM · For the store manager · Trust Centre 
+ Related: AI CCTV footfall analytics · Showroom software · Jewellery CRM · Trust Centre 
 
 ## See it on your own data.
 
@@ -30255,6 +30255,182 @@ A: IP cameras and NVRs over RTSP, including Hikvision, Dahua and CP Plus, and ON
 
 Q: Does it recognise customers’ faces?
 A: No. Cameras count people; they do not identify them. Customers are identified only when staff check them in, and photos are taken only with consent.
+
+---
+
+# AI CCTV Footfall Analytics for Jewellery Showrooms
+URL: https://jwero.ai/ai-cctv-footfall-analytics-jewellery-showrooms
+
+AI CCTV footfall analytics for jewellery showrooms: count entries, exits and floor occupancy from your existing Hikvision, Dahua, CP Plus or ONVIF cameras, match footfall to bills, and see conversion by hour and branch. No face recognition.
+
+AI CCTV · FOOTFALL ANALYTICS
+
+## AI CCTV footfall analytics for jewellery showrooms: count every visitor with the cameras you already have.
+
+ AI counts who comes in and goes out, and how full the floor is, from your existing CCTV. Footfall is matched to bills, so you finally see conversion by hour, day and branch. It counts people; it never recognises faces.
+
+ Count footfall on my cameras 
+ See Showroom software 
+
+ ONE DAY, START TO FINISH
+
+## From the camera over the door to a conversion rate you can trust.
+
+ AI CCTV · CAMERA TO CONVERSION
+ Connected Your Hikvision NVR joins through the on-site connector
+ Line drawn An entry line drawn once across the door
+ Counting AI detects people · in and out counted, even half-hidden
+ Floor How full the floor is, every interval · peak at 6 pm
+ Matched 212 people in, 41 bills · conversion 19%
+ Alert Footfall up, sales flat on Saturday · staffing gap flagged
+ Illustrative.
+
+ Connected Your Hikvision NVR joins through the on-site connector 
+ Line drawn An entry line drawn once across the door 
+ Counting AI detects people 
+ Floor How full the floor is, every interval 
+ Matched 212 people in, 41 bills 
+ Alert Footfall up, sales flat on Saturday 
+
+ SIX JOBS, YOUR CAMERAS
+
+## What AI CCTV footfall analytics does for a jeweller.
+
+## 1. Uses the cameras you have
+ IP cameras and NVRs over RTSP: Hikvision, Dahua, CP Plus and ONVIF. Nothing new above the door.
+ Showroom → 
+
+## 2. Counts in and out
+ AI detects people crossing the entry line, including those partly hidden, with a small on-site connector.
+ Footfall counting → 
+
+## 3. Shows how full the floor is
+ Occupancy through the day and peak hours, with zones if you split the floor.
+ Branches → 
+
+## 4. Matches footfall to bills
+ Conversion by hour, day, branch and salesperson, from footfall and the bills raised.
+ Reports → 
+
+## 5. Flags what is wrong
+ Footfall up but sales flat, staffing gaps, a camera offline or a gap in counting.
+ Store insights → 
+
+## 6. Private by design
+ No face recognition; retention, signage and a capture switch in the privacy settings.
+ Trust → 
+
+ THE ARITHMETIC
+
+## What your register is not telling you.
+
+ Your numbers, not ours.
+
+ People in through the door a month (camera) 
+ Walk-ins written in your register 
+ Bills a month 
+
+ Walk-ins never recorded 0 
+
+ Conversion your register shows 0% 
+
+ Real conversion 0% 
+
+ Families come in groups, so count what your cameras see, not only buyers. A planning estimate from your own inputs.
+
+ COMPARE
+
+## CCTV on its own, a door counter, or Jwero AI CCTV.
+
+ CCTV on its own A door people counter Jwero AI CCTV 
+ Hardware Your CCTV A sensor above the door Your existing CCTV or NVR 
+ What it counts Nothing; footage only Entries Entries, exits and how full the floor is 
+ Against sales No Export and compare Matched to bills, by hour and branch 
+ Who walked in Watch the footage No Check-in shows her history (not by camera) 
+ Camera down Found out later Sometimes Offline and gap alerts 
+ Faces Recorded No Not recognised or stored for matching 
+ Many branches One DVR each Per device Every branch side by side 
+
+ GETTING STARTED
+
+## How to set up CCTV footfall counting in a showroom.
+
+ Five steps.
+
+ 1 
+
+## Check your cameras
+ IP cameras or an NVR that streams over RTSP; Hikvision, Dahua, CP Plus and ONVIF cameras work.
+
+ 2 
+
+## Install the connector
+ A small on-site connector finds the cameras on your network and sends counts securely.
+
+ 3 
+
+## Draw the entry line
+ Mark the door once; set zones if you want the floor split up.
+
+ 4 
+
+## Put up the notice
+ Set retention and consent signage in the privacy settings.
+
+ 5 
+
+## Read footfall against sales
+ Footfall, how full the floor is and conversion, by hour, day and branch.
+
+ WHAT WE DON'T DO YET
+
+ Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
+
+ Cameras count people; they do not recognise faces, identify customers or tell a repeat visitor from a new one.
+ Jwero does not sell cameras; counting works with the IP cameras and NVRs you have.
+ 
+ See the full public roadmap → 
+
+ BECAUSE IT'S ONE SYSTEM
+
+ Camera footfall sits beside tablet check-ins, so a walk-in counted by the camera can also be a customer on record.
+ Conversion uses the same bills the counter raises, not a separate export.
+ Every branch’s footfall and conversion sit side by side for the owner.
+
+## Find out how many visitors you never knew about.
+
+ Tell us your camera brand. We will show footfall from cameras like yours against a day of bills.
+
+ Chat or call with us 
+ Book a demo 
+
+ You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: What is AI CCTV footfall analytics?
+A: Using AI on your existing CCTV footage to count the people who enter and leave, and how full the floor is, then comparing it with sales. Jwero does this for jewellery showrooms and matches footfall to bills.
+
+Q: Can I use my existing CCTV cameras?
+A: Yes. IP cameras and NVRs that stream over RTSP work, including Hikvision, Dahua and CP Plus, and ONVIF cameras. Nothing new to buy for counting.
+
+Q: Do I need a separate people counter?
+A: No. The AI counts from the camera already pointing at your door, through a small on-site connector.
+
+Q: Does it recognise faces?
+A: No. It counts people; it does not recognise faces, identify customers or tell a repeat visitor from a new one. Customers are identified only when staff check them in.
+
+Q: How is footfall turned into conversion?
+A: Footfall is matched to the bills raised in the same hours, so you see conversion by hour, day, branch and salesperson.
+
+Q: What if a camera goes offline?
+A: You get an alert, and gaps in counting are flagged so a bad day is not mistaken for a quiet one.
+
+Q: Is CCTV footfall counting legal?
+A: Showrooms may use cameras, but visitors should be told and personal data handled under the data protection law. Jwero has retention, signage and capture settings; take advice for your own case.
+
+Q: How is it charged?
+A: Camera counting is charged per camera. See pricing.
 
 ---
 

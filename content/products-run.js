@@ -667,7 +667,7 @@ ${L.hero({
 ${L.section(`${L.sectionHead('ONE VISIT, START TO FINISH', 'From the door camera to a bill on Saturday.', '')}${shFlow()}`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('SIX JOBS, ONE FLOOR', 'What showroom software has to do for a jeweller.', '')}<div class="wa-jobs">
-  <article><h3>1. Footfall from your cameras</h3><p>Existing CCTV or NVR (Hikvision, Dahua, CP Plus, ONVIF) counts entries, exits and how full the floor is, through an on-site connector.</p><a href="/trust/security">Privacy →</a></article>
+  <article><h3>1. Footfall from your cameras</h3><p>Existing CCTV or NVR (Hikvision, Dahua, CP Plus, ONVIF) counts entries, exits and how full the floor is, through an on-site connector.</p><a href="/ai-cctv-footfall-analytics-jewellery-showrooms">AI CCTV footfall →</a></article>
   <article><h3>2. Know who walked in</h3><p>Tablet check-in by phone number shows past visits, what she tried, and a maturing scheme. Photos only with consent.</p><a href="/products/crm">Customer record →</a></article>
   <article><h3>3. Nobody left waiting</h3><p>A live floor view, an alert after 10 minutes unattended, and a list of who could come in today.</p><a href="/products/multi-store">Branches →</a></article>
   <article><h3>4. Every piece tried, logged</h3><p>Scan by RFID, barcode, SKU or HUID; make an estimate or send her to the counter.</p><a href="/products/inventory">Inventory →</a></article>

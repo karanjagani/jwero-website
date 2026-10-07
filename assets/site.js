@@ -2942,3 +2942,12 @@ document.addEventListener('click', function (e) {
     set('wk', (Math.round(wk * 10) / 10).toLocaleString('en-IN')); set('cost', '₹' + Math.round(cost).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+// AI CCTV page: what the register is not telling you.
+(function () {
+  var root = document.querySelector('[data-ccc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-cc="' + k + '"]') || {}).value || 0; };
+  function run() { var cam = v('cam'), reg = v('reg'), b = v('bills'), pct = function (x) { return (Math.round(x * 10) / 10) + '%'; };
+    var set = function (k, t) { var el = root.querySelector('[data-cc-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('miss', Math.max(0, cam - reg).toLocaleString('en-IN')); set('regc', reg ? pct(b / reg * 100) : '0%'); set('real', cam ? pct(b / cam * 100) : '0%'); }
+  root.addEventListener('input', run); run();
+})();

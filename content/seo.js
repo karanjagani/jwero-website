@@ -670,7 +670,7 @@ const footfall = needPage({
     { q: 'What is a good conversion rate for a jewellery showroom?', a: 'It varies by store and category, so compare your own stores, salespeople and months with each other. The useful number is the trend.' },
     { q: 'Is camera tracking legal?', a: 'Showrooms may use cameras, but visitors should be told, and personal data must be handled under the data protection law. Take advice for your own case.' },
   ],
-  links: [['/products/showroom', 'Showroom software'], ['/products/crm', 'Jewellery CRM'], ['/roles/store-manager', 'For the store manager'], ['/trust', 'Trust Centre']],
+  links: [['/ai-cctv-footfall-analytics-jewellery-showrooms', 'AI CCTV footfall analytics'], ['/products/showroom', 'Showroom software'], ['/products/crm', 'Jewellery CRM'], ['/trust', 'Trust Centre']],
 });
 
 // AI calling: rebuilt 2026-10-07 around bulk inbound and outbound voice AI agents,
@@ -989,4 +989,116 @@ ${L.ctaBand('अपनी दुकान के डेटा पर देख�
 `,
 };
 
-module.exports = [hub, ...CITIES.map(cityPage), accounting, barcode, cloud, broadcast, instagram, adsLanding, smsLanding, footfall, aiCalling, appointments, staff, webAnalytics, hi];
+// AI CCTV footfall analytics, created 2026-10-07 from pim-app origin/siddh-dev
+// (commit 8e82e86e5 and workers/showroom-ai, showroom-connector). Claimed:
+// existing CCTV/NVR over RTSP, Hikvision, Dahua/CP Plus alarms, ONVIF; on-site
+// connector; AI person detection; entry/exit and occupancy by interval; zones;
+// camera-offline and capture-gap alerts; footfall vs bills; retention and a
+// capture kill switch; charged per camera. Not claimed: face recognition,
+// repeat-visitor detection by camera, age or gender estimates, accuracy figures.
+const CC_FLOW = [
+  ['Connected', 'Your Hikvision NVR joins through the on-site connector'],
+  ['Line drawn', 'An entry line drawn once across the door'],
+  ['Counting', 'AI detects people · in and out counted, even half-hidden'],
+  ['Floor', 'How full the floor is, every interval · peak at 6 pm'],
+  ['Matched', '212 people in, 41 bills · conversion 19%'],
+  ['Alert', 'Footfall up, sales flat on Saturday · staffing gap flagged'],
+];
+const ccFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">AI CCTV · CAMERA TO CONVERSION</p>${CC_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${CC_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const CC_CMP = [
+  ['Hardware', 'Your CCTV', 'A sensor above the door', 'Your existing CCTV or NVR'],
+  ['What it counts', 'Nothing; footage only', 'Entries', 'Entries, exits and how full the floor is'],
+  ['Against sales', 'No', 'Export and compare', 'Matched to bills, by hour and branch'],
+  ['Who walked in', 'Watch the footage', 'No', 'Check-in shows her history (not by camera)'],
+  ['Camera down', 'Found out later', 'Sometimes', 'Offline and gap alerts'],
+  ['Faces', 'Recorded', 'No', 'Not recognised or stored for matching'],
+  ['Many branches', 'One DVR each', 'Per device', 'Every branch side by side'],
+];
+const ccTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>CCTV on its own</th><th>A door people counter</th><th>Jwero AI CCTV</th></tr></thead><tbody>${CC_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const CC_HOW = [
+  ['Check your cameras', 'IP cameras or an NVR that streams over RTSP; Hikvision, Dahua, CP Plus and ONVIF cameras work.'],
+  ['Install the connector', 'A small on-site connector finds the cameras on your network and sends counts securely.'],
+  ['Draw the entry line', 'Mark the door once; set zones if you want the floor split up.'],
+  ['Put up the notice', 'Set retention and consent signage in the privacy settings.'],
+  ['Read footfall against sales', 'Footfall, how full the floor is and conversion, by hour, day and branch.'],
+];
+const ccFaqs = [
+  { q: 'What is AI CCTV footfall analytics?', a: 'Using AI on your existing CCTV footage to count the people who enter and leave, and how full the floor is, then comparing it with sales. Jwero does this for jewellery showrooms and matches footfall to bills.' },
+  { q: 'Can I use my existing CCTV cameras?', a: 'Yes. IP cameras and NVRs that stream over RTSP work, including Hikvision, Dahua and CP Plus, and ONVIF cameras. Nothing new to buy for counting.' },
+  { q: 'Do I need a separate people counter?', a: 'No. The AI counts from the camera already pointing at your door, through a small on-site connector.' },
+  { q: 'Does it recognise faces?', a: 'No. It counts people; it does not recognise faces, identify customers or tell a repeat visitor from a new one. Customers are identified only when staff check them in.' },
+  { q: 'How is footfall turned into conversion?', a: 'Footfall is matched to the bills raised in the same hours, so you see conversion by hour, day, branch and salesperson.' },
+  { q: 'What if a camera goes offline?', a: 'You get an alert, and gaps in counting are flagged so a bad day is not mistaken for a quiet one.' },
+  { q: 'Is CCTV footfall counting legal?', a: 'Showrooms may use cameras, but visitors should be told and personal data handled under the data protection law. Jwero has retention, signage and capture settings; take advice for your own case.' },
+  { q: 'How is it charged?', a: 'Camera counting is charged per camera. See pricing.' },
+];
+const cctv = {
+  slug: 'ai-cctv-footfall-analytics-jewellery-showrooms',
+  title: 'AI CCTV Footfall Analytics for Jewellery Showrooms | Jwero',
+  description: 'AI CCTV footfall analytics for jewellery showrooms: count entries, exits and floor occupancy from your existing Hikvision, Dahua, CP Plus or ONVIF cameras, match footfall to bills, and see conversion by hour and branch. No face recognition.',
+  breadcrumbs: [['Home', '/'], ['Showroom software', '/products/showroom'], ['AI CCTV footfall analytics']],
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Jwero AI CCTV Footfall Analytics', alternateName: ['CCTV footfall counter for jewellery shops', 'AI people counting for showrooms', 'Hikvision footfall analytics'],
+    applicationCategory: 'BusinessApplication', operatingSystem: 'Web', url: 'https://jwero.ai/ai-cctv-footfall-analytics-jewellery-showrooms',
+    description: 'AI footfall counting from existing CCTV and NVR cameras (RTSP; Hikvision, Dahua, CP Plus, ONVIF) through an on-site connector: entries, exits and floor occupancy, zones, camera-offline alerts, footfall matched to bills for conversion by hour and branch, with retention and consent settings and no face recognition.',
+    isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+  },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up CCTV footfall counting in a jewellery showroom', step: CC_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  faqs: ccFaqs,
+  body: `
+${L.hero({
+  eyebrow: 'AI CCTV · FOOTFALL ANALYTICS',
+  h1: 'AI CCTV footfall analytics for jewellery showrooms: count every visitor with the cameras you already have.',
+  sub: 'AI counts who comes in and goes out, and how full the floor is, from your existing CCTV. Footfall is matched to bills, so you finally see conversion by hour, day and branch. It counts people; it never recognises faces.',
+  primary: { href: '#', label: 'Count footfall on my cameras', wa: 'footfall' },
+  secondary: { href: '/products/showroom', label: 'See Showroom software' },
+})}
+
+${L.section(`${L.sectionHead('ONE DAY, START TO FINISH', 'From the camera over the door to a conversion rate you can trust.', '')}${ccFlow()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, YOUR CAMERAS', 'What AI CCTV footfall analytics does for a jeweller.', '')}<div class="wa-jobs">
+  <article><h3>1. Uses the cameras you have</h3><p>IP cameras and NVRs over RTSP: Hikvision, Dahua, CP Plus and ONVIF. Nothing new above the door.</p><a href="/products/showroom">Showroom →</a></article>
+  <article><h3>2. Counts in and out</h3><p>AI detects people crossing the entry line, including those partly hidden, with a small on-site connector.</p><a href="/jewellery-showroom-footfall-counting">Footfall counting →</a></article>
+  <article><h3>3. Shows how full the floor is</h3><p>Occupancy through the day and peak hours, with zones if you split the floor.</p><a href="/products/multi-store">Branches →</a></article>
+  <article><h3>4. Matches footfall to bills</h3><p>Conversion by hour, day, branch and salesperson, from footfall and the bills raised.</p><a href="/products/reports">Reports →</a></article>
+  <article><h3>5. Flags what is wrong</h3><p>Footfall up but sales flat, staffing gaps, a camera offline or a gap in counting.</p><a href="/products/showroom">Store insights →</a></article>
+  <article><h3>6. Private by design</h3><p>No face recognition; retention, signage and a capture switch in the privacy settings.</p><a href="/trust/security">Trust →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What your register is not telling you.', 'Your numbers, not ours.')}<div class="callc" data-ccc>
+  <div class="callc-in">
+    <label>People in through the door a month (camera)<input type="number" inputmode="numeric" data-cc="cam" value="1500" min="0" step="50"></label>
+    <label>Walk-ins written in your register<input type="number" inputmode="numeric" data-cc="reg" value="600" min="0" step="50"></label>
+    <label>Bills a month<input type="number" inputmode="numeric" data-cc="bills" value="240" min="0" step="10"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Walk-ins never recorded</span><b data-cc-o="miss">0</b></p>
+    <p><span>Conversion your register shows</span><b data-cc-o="regc">0%</b></p>
+    <p class="callc-save"><span>Real conversion</span><b data-cc-o="real">0%</b></p>
+    <p class="cta-note">Families come in groups, so count what your cameras see, not only buyers. A planning estimate from your own inputs.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'CCTV on its own, a door counter, or Jwero AI CCTV.', '')}${ccTable()}`)}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to set up CCTV footfall counting in a showroom.', 'Five steps.')}${L.steps(CC_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
+
+${L.honestGapsBlock([
+  'Cameras count people; they do not recognise faces, identify customers or tell a repeat visitor from a new one.',
+  'Jwero does not sell cameras; counting works with the IP cameras and NVRs you have.',
+])}
+
+${L.oneSystemBlock([
+  'Camera footfall sits beside tablet check-ins, so a walk-in counted by the camera can also be a customer on record.',
+  'Conversion uses the same bills the counter raises, not a separate export.',
+  'Every branch’s footfall and conversion sit side by side for the owner.',
+])}
+
+${L.ctaBand('Find out how many visitors you never knew about.', 'Tell us your camera brand. We will show footfall from cameras like yours against a day of bills.', 'footfall')}
+`,
+};
+
+module.exports = [hub, ...CITIES.map(cityPage), accounting, barcode, cloud, broadcast, instagram, adsLanding, smsLanding, footfall, cctv, aiCalling, appointments, staff, webAnalytics, hi];

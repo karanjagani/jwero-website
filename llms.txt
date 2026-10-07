@@ -238,6 +238,13 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Learning paths per role; a scorecard dip suggests the matching course and a pass updates the skill.
 - Staff take courses in the staff app beside attendance, leave and payslips. Part of HR; nothing for karigars.
 
+## AI CCTV footfall analytics for jewellery showrooms (facts)
+
+- Page: https://jwero.ai/ai-cctv-footfall-analytics-jewellery-showrooms
+- AI person detection on existing CCTV/NVR cameras over RTSP (Hikvision, Dahua, CP Plus, ONVIF) through a small on-site connector; counts entries, exits and floor occupancy; zones.
+- Footfall is matched to bills for conversion by hour, day, branch and salesperson; alerts for camera offline, counting gaps and footfall without sales.
+- No face recognition, no identification of customers, no repeat-visitor detection by camera. Retention, consent signage and a capture switch in privacy settings. Charged per camera; Jwero does not sell cameras.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -471,6 +478,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Google and Instagram Ads for Jewellers: https://jwero.ai/ads-for-jewellers
 - SMS, RCS & Push Notifications for Jewellers: https://jwero.ai/sms-marketing-for-jewellers
 - Footfall Counting & Walk-in Tracking for Jewellery Showrooms: https://jwero.ai/jewellery-showroom-footfall-counting
+- AI CCTV Footfall Analytics for Jewellery Showrooms: https://jwero.ai/ai-cctv-footfall-analytics-jewellery-showrooms
 - AI Calling for Jewellers: Voice AI Agents, Bulk Calls: https://jwero.ai/ai-calling-for-jewellers
 - Jewellery Appointment Booking Software: https://jwero.ai/jewellery-appointment-booking-software
 - Jewellery Staff Management Software: https://jwero.ai/jewellery-staff-management-software
