@@ -2699,3 +2699,16 @@ document.addEventListener('click', function (e) {
   }
   root.addEventListener('input', run); run();
 })();
+
+// Manufacturing page: metal moves stage by stage; the last stage goes over its norm.
+(function () {
+  var root = document.querySelector('[data-mf]'); if (!root) return;
+  var st = root.querySelectorAll('.mf-st'), note = root.querySelector('[data-mf-note]'), n = st.length, i = -1, timer;
+  var msgs = ['Order 2231 · 100 g fine issued to karigar Ramesh', 'Casting: within the 1.5% norm', 'Filing: within the 1.0% norm', 'Setting: within the 0.4% norm', 'Polishing: 1.0 g lost, over the 0.6% norm. The order will not close until it is settled.'];
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(k) { Array.prototype.forEach.call(st, function (s, j) { s.classList.toggle('is-on', j <= k); s.classList.toggle('is-over', j === n - 1 && k >= n - 1); }); note.textContent = msgs[Math.min(k, msgs.length - 1)]; }
+  if (reduce) { show(n - 1); return; }
+  function tick() { i = (i + 1) % (n + 2); show(Math.min(i, n - 1)); }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { clearInterval(timer); if (e.isIntersecting) { tick(); timer = setInterval(tick, 1600); } }); }, { threshold: .35 });
+  io.observe(root);
+})();

@@ -59,6 +59,11 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Material planning and manufacturing: bills of materials, routings, material planning, work in progress, wastage against norms, finished goods, fine-weight metal ledger and metal loans. Girvi: pledges, interest, renewals, release, auction notices.
 - Accounts: double-entry ledger with GST, GSTR-1, GSTR-3B and HSN reports, TDS, party ledgers; e-invoices are generated in Tally through the bridge. People: attendance, payroll, incentives, Form 16. Many branches and franchises, approvals and an audit trail. Details: https://jwero.ai/products/erp
 
+## Jewellery manufacturing software (facts)
+- Custom, trade and export orders; bills of materials and routings; material planning from open orders; job cards and work in progress by stage; quality checks; finished goods tagged with HUID.
+- Karigars and outside units: metal issued and received by weight and purity, job work on challans, due-date sweeps, scorecards; wastage norms per stage with capped recovery; an order cannot close while its metal is short.
+- Fine-weight metal ledger with karigar balances and metal loans, reconciled monthly; diamond and stone flows reconciled on the same order. Details: https://jwero.ai/products/manufacturing
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -113,7 +118,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jewellery Purchase & Vendor Management Software: https://jwero.ai/products/purchase-vendors
 - Jewellery HR & Payroll Software: Attendance, Karigar Wages: https://jwero.ai/products/hr-payroll
 - Jewellery Billing Software & POS for Jewellery Shops: https://jwero.ai/products/pos
-- Jewellery Manufacturing Software: Karigar, BOM, Wastage: https://jwero.ai/products/manufacturing
+- Jewellery Manufacturing Software: Karigar, Wastage, Planning: https://jwero.ai/products/manufacturing
 - Girvi, Gold Loan & Pawn Broking Software for Jewellers: https://jwero.ai/products/girvi
 - Jewellery Appointment & Video Call Software: https://jwero.ai/products/meetings
 - Business Email on Your Own Domain, Inside the Same Inbox: https://jwero.ai/products/email

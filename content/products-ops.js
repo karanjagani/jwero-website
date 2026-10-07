@@ -129,78 +129,92 @@ ${L.ctaBand('See a sale rung up, returned and closed.', 'Bring one real bill fro
 `,
 };
 
+// Manufacturing, rebuilt 2026-10-07. Material planning confirmed by Jwero.
+const STAGES = [['Issued', 100.0, null], ['Casting', 98.9, 1.5], ['Filing', 98.1, 1.0], ['Setting', 97.9, 0.4], ['Polishing', 96.9, 0.6]];
+const metalFlow = () => `<div class="mf" data-mf>
+  <div class="mf-row">${STAGES.map(([n, g, norm], k) => `<div class="mf-st" data-k="${k}"><b>${n}</b><i>${g.toFixed(1)} g fine</i><span>${norm === null ? 'start' : `norm ${norm}%`}</span></div>`).join('')}</div>
+  <p class="mf-note" data-mf-note>Order 2231 · 22K bangles · issued to karigar Ramesh</p>
+  <p class="cta-note">Illustrative: at polishing the loss of 1.0 g is over the 0.6% norm, so the order will not close until the difference is settled.</p>
+</div>`;
+const MFG_CMP = [
+  ['Gold tracked', 'In and out, in a khata', 'By stage, sometimes', 'Every stage, in fine grams'],
+  ['Wastage norms per stage', 'In the owner’s head', 'Yes', 'Yes, with capped recovery'],
+  ['Order closes only when metal closes', 'No', 'Rarely', 'Yes'],
+  ['Material planning from orders and BOM', 'Guesswork', 'Yes', 'Yes'],
+  ['Karigars and outside units on challans', 'Notebook', 'Yes', 'Yes, with due dates and scorecards'],
+  ['Metal loans with suppliers', 'Separate book', 'Some', 'Yes, on the metal ledger'],
+  ['Same system as sales, stock and customers', 'No', 'Separate modules', 'Yes, one record'],
+  ['Works on the workshop floor', 'Paper', 'Desktop', 'Any device, Hindi on karigar screens'],
+];
+const mfgTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Khata and Excel</th><th>Desktop manufacturing ERP</th><th>Jwero</th></tr></thead><tbody>${MFG_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>
+<p class="cta-note" style="margin-top:12px">See <a href="/compare/jwero-vs-synergics">Jwero vs Synergics</a> and <a href="/compare/jwero-vs-jewelacc">Jwero vs JewelAcc</a>.</p>`;
+const MFG_MOVE = [
+  ['Bring your khatas', 'Each karigar’s current balance in fine grams, open jobs and metal loans, from paper or Excel.'],
+  ['Set your norms', 'Wastage norm per stage and per kind of design, and the cap on recovery.'],
+  ['Map your routings', 'The stages your jobs go through; designs without a routing can still run on a simple job card.'],
+  ['Issue the next job in Jwero', 'Metal issued by weight and purity, with a due date, on a job card or challan.'],
+  ['Settle and reconcile monthly', 'Each job settles against its norm; the metal ledger reconciles every month.'],
+];
+const mfgFaqs = [
+  { q: 'What is jewellery manufacturing software?', a: 'Software that runs a jewellery workshop or factory: orders, bills of materials and routings, material planning, issuing metal to karigars and outside units, work in progress stage by stage, wastage against norms, quality checks, finished goods, and a metal ledger in fine grams.' },
+  { q: 'How do jewellers control gold loss in manufacturing?', a: 'Weigh at every hand-off, convert to fine grams, set a wastage norm per stage, settle every job against its norm when it comes back, and do not let an order close until its metal does. Look at loss by karigar over time, not one job.' },
+  { q: 'What is a normal wastage percentage?', a: 'It depends on the process and design. Set norms per stage from your own history; Jwero then flags every job above its norm and caps what is recovered from the karigar.' },
+  { q: 'What is material planning in jewellery manufacturing?', a: 'Working out the gold, stones and findings your open orders need from their bills of materials, so you buy or issue the right amounts at the right time. Jwero does this from your orders and BOMs.' },
+  { q: 'How is karigar job work recorded for GST?', a: 'Metal sent for job work moves on a delivery challan without GST and must come back, as jewellery or scrap, within the time the rules allow. A registered karigar bills you for making as a job-work service.' },
+  { q: 'Can a job go through an outside workshop?', a: 'Yes. Issue it on a challan to an outside unit, track the due date, and receive and settle it by weight like an in-house job.' },
+  { q: 'Does it work for diamond and gemstone manufacturing?', a: 'Yes. Stone lots, setting stages and sorting loss are tracked, and the gold and stone flows reconcile on the same order.' },
+  { q: 'We have years of khatas on paper. Can we start?', a: 'Yes. Bring each karigar’s current balance, open jobs and metal loans. You start from today’s balances; old history can follow.' },
+  { q: 'Can I run designs without a routing?', a: 'Yes. Simple designs can run on a job card; routings are for the products where stage-by-stage control matters.' },
+  { q: 'Does it forecast what to make?', a: 'It plans the material your open orders need and sweeps job due dates for lateness. It does not forecast demand to suggest new designs to make.' },
+];
+
 const manufacturing = {
   slug: 'products/manufacturing',
-  title: 'Jewellery Manufacturing Software: Karigar, BOM, Wastage | Jwero',
-  description: 'Manufacturing for jewellery: bill of materials, routings, production orders, stage-wise wastage norms with a metal-closure check, job cards, QC, raw-material lots and a karigar khata that settles wages against gold.',
+  title: 'Jewellery Manufacturing Software: Karigar, Wastage, Planning | Jwero',
+  description: 'Jewellery manufacturing software: orders, BOM and routings, material planning, karigar and outside job work, work in progress, wastage norms, metal ledger in fine grams and metal loans.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Manufacturing & Workshop', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Jewellery manufacturing: BOM, routings, production orders, wastage norms, metal closure, job cards, QC, raw materials and karigar settlement.',
+    name: 'Jwero Jewellery Manufacturing Software', alternateName: ['Jewellery manufacturing ERP', 'Karigar management software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Jewellery manufacturing: custom, B2B and export orders, bills of materials and routings, material planning, karigar and outside-unit job work on challans, work in progress by stage, wastage norms with capped recovery, quality checks, finished goods with HUID, a fine-weight metal ledger and metal loans.',
     url: 'https://jwero.ai/products/manufacturing', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
-  breadcrumbs: BC('Manufacturing & Workshop'),
-  faqs: [
-    { q: 'Does it track gold through every stage, or just in and out?', a: 'Every stage. A production order carries a routing; each stage has a wastage norm; issue and receipt are weighed at each hand-off. The order cannot close until the metal balances — issued equals received plus recorded loss within norm.' },
-    { q: 'How does it work with my karigars?', a: 'Each karigar has a directory entry, open jobs, a khata of metal issued and returned, and a settlement that converts work to wages under your wastage policy — posted to the books in the same step.' },
-    { q: 'Can I run it without a routing for every design?', a: 'Yes. Routing templates resolve automatically from the product’s category and metal, in a fixed, auditable order, so a new design gets a sensible routing without a planner.' },
-    { q: 'What about stones and raw metal?', a: 'Metal and stone masters, raw-material purchase orders, receiving QC and lots feed the same BOM — so a finished piece knows which lot its metal and stones came from.' },
-    { q: 'Does it plan capacity or forecast what to make?', a: 'Capacity per stage is modelled and job due-dates are swept for lateness. It does not yet net demand against stock and work-in-progress into a make list — that decision is still yours, and we say so plainly.' },
-  ],
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to move karigar khatas into manufacturing software', step: MFG_MOVE.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Jewellery manufacturing'),
+  faqs: mfgFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'MANUFACTURING & WORKSHOP',
-  h1: 'Every milligram from bench to finished piece — and a karigar khata that closes.',
-  sub: 'A workshop spine that speaks the bench’s language: bill of materials, routing, issue desk, stage-wise wastage norms, job cards, QC — and a karigar khata that settles wages against the metal that came back. The order does not close until the metal balances.',
-  primary: { href: '#', label: 'Show me one job, gram by gram', wa: 'manufacturers' },
-  secondary: { href: '/solutions/manufacturers', label: 'For manufacturers' },
+  eyebrow: 'JEWELLERY MANUFACTURING SOFTWARE',
+  h1: 'Jewellery manufacturing software: every milligram from bench to finished piece, and a karigar khata that closes.',
+  sub: 'Orders in, material planned, metal issued to karigars and outside units, every stage weighed in fine grams against its wastage norm, and an order that will not close until its metal does. On the same system as your stock, sales and customers.',
+  primary: { href: '#', label: 'Show me one job, gram by gram', wa: 'manufacturing' },
 })}
 
-${L.section(
-  `${L.sectionHead('FROM DESIGN TO FINISHED PIECE', 'One production order, weighed at every hand-off.', '')}
-  ${L.steps([
-    { title: 'Bill of materials', text: 'Metal, stones, findings and their expected weights per design — the composition every later step is checked against.' },
-    { title: 'Routing & release', text: 'Casting, filing, setting, polishing, hallmarking: the routing resolves from the design’s category and metal, and release explodes BOM and routing in one step.' },
-    { title: 'Issue desk', text: 'Metal and stones issued to a karigar or a stage, pre-filled from the BOM and the sales order, weighed on the way out.' },
-    { title: 'Wastage norms', text: 'Each stage has a norm. Loss beyond it is flagged; loss within it is booked. Nothing disappears into “process loss”.' },
-    { title: 'QC & hallmarking', text: 'Inspection with dispositions — pass, rework, scrap — and HUID/hallmark recorded on the piece before it can be sold.' },
-    { title: 'Finished-goods receipt', text: 'The finished piece is minted into inventory with its identity, its lots and its cost — ready for the catalogue and the counter.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE JOB, GRAM BY GRAM', 'Watch the metal move through the workshop.', '')}${metalFlow()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('THE KARIGAR SIDE', 'A khata that closes, not a notebook that argues.', 'Karigar wages in jewellery are settled against metal, not hours. Jwero keeps that ledger the way the trade keeps it — and posts it to the books.')}
-  ${L.cards([
-    { title: 'Karigar directory & open jobs', text: 'Who is holding what, since when, and when it is due — swept daily for jobs running late.' },
-    { title: 'Metal reconciliation', text: 'Issued, returned, wastage within norm, wastage beyond norm — per karigar, per job, per period.' },
-    { title: 'Settlement under your policy', text: 'Making charges and wastage allowances by policy; settlement converts finished work to a payable and posts it to the ledger in the same step.' },
-    { title: 'Karigar self-service', text: 'My Work, Khata, Loans and Assets on the karigar’s own phone — with an early Hindi pilot on these screens.' },
-    { title: 'Scorecards', text: 'Turnaround, rework rate and loss per karigar, so the next job goes to the right bench.' },
-    { title: 'Job cards & documents', text: 'Printable job cards, BOM sheets and finished-goods receipts, generated from the order — not retyped.' },
-  ])}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('SIX JOBS, ONE WORKSHOP', 'What jewellery manufacturing software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Orders in</h3><p>Custom, trade and export orders with design, purity, weight, stones and due date, from the counter, WhatsApp or a buyer’s quote.</p><a href="/blog/custom-jewellery-order-process">Custom orders →</a></article>
+  <article><h3>2. Material planning</h3><p>Gold, stones and findings worked out from open orders and their bills of materials, then purchased or issued in the right amounts.</p><a href="/products/purchase-vendors">Purchase →</a></article>
+  <article><h3>3. Production, stage by stage</h3><p>Routings and job cards, work in progress at each stage, quality checks, and finished goods tagged with their HUID.</p><a href="/products/inventory">Finished stock →</a></article>
+  <article><h3>4. Karigars and outside units</h3><p>Metal issued and received by weight and purity, outside job work on challans, due dates swept for lateness, and a scorecard per karigar.</p><a href="/blog/job-work-jewellery-gst-challan">Job work and challans →</a></article>
+  <article><h3>5. Loss under control</h3><p>Wastage norms per stage, settlement of every job against its norm, capped recovery, and an order that cannot close while its metal is short.</p><a href="/blog/karigar-wastage-norms-settlement">Karigar wastage →</a></article>
+  <article><h3>6. Metal in fine grams</h3><p>A metal ledger in fine grams beside the books: karigar balances, metal loans with suppliers, and a monthly reconciliation.</p><a href="/blog/fine-weight-metal-ledger-jewellers">The metal ledger →</a></article>
+</div>
+<p class="cta-note" style="margin-top:14px">By kind of manufacturer: <a href="/solutions/manufacturers">manufacturers</a> · <a href="/solutions/casting-units">casting units</a> · <a href="/solutions/cad-services">CAD studios</a> · <a href="/solutions/oem-manufacturers">OEM manufacturers</a> · <a href="/solutions/export-houses">export houses</a></p>`)}
+
+${L.section(`${L.sectionHead('RUN YOUR NUMBERS', 'What loss above your norm is worth.', 'Move the sliders to your workshop.')}${require('./tools').goldLossCalcHtml}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'Khata and Excel, a desktop manufacturing ERP, or Jwero.', '')}${mfgTable()}`)}
+
+${L.section(`${L.sectionHead('STARTING FROM PAPER KHATAS', 'How to move karigar khatas into manufacturing software.', 'Five steps, starting from today’s balances.')}${L.steps(MFG_MOVE.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
-  'A custom order taken on WhatsApp becomes the production order — the customer’s size, stone and deadline carry through without re-entry.',
-  'The finished piece is the same record the catalogue publishes, the storefront sells and the counter scans.',
-  'Karigar settlement, stone loss and work-in-progress post to the same ledger as sales — the workshop is inside the books, not beside them.',
+  'The finished piece’s cost, its wastage and the karigar’s balance are the same numbers, not three reports to reconcile.',
+  'A custom order taken at the counter becomes a job card, a material plan and, when it is done, a piece on the shelf and a bill.',
+  'Metal loans with suppliers sit on the same fine-weight ledger as karigar balances.',
 ])}
 
-${L.honestGapsBlock([
-  'CAD files do not yet become bills of materials automatically — the BOM is entered or copied from a similar design.',
-  'There is no demand-netting MRP yet: Jwero models capacity and flags late jobs, but does not decide what to make next.',
-])}
-
-${L.section(`${L.sectionHead('WORKSHOP QUESTIONS', 'Loss, karigars and starting from a paper register.', '')}${L.faqBlock([
-  { q: 'We have years of karigar khatas on paper. Can we start?', a: 'Yes — opening balances per karigar are entered at onboarding; the ledger runs forward from there.' },
-  { q: 'Can a job go through an outside workshop?', a: 'Yes — job-work issues and receipts are tracked the same way as internal stages, with the party’s ledger alongside.' },
-  { q: 'Does it work for diamond and gemstone manufacturing too?', a: 'Stone lots, setting stages and sorting loss are modelled; the gold flow and the stone flow reconcile on the same order.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the chat button on this page — it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Bring one job that lost gold.', 'We will run it through the routing, the norms and the karigar settlement — and show you where the milligrams went.', 'manufacturers')}
+${L.ctaBand('Bring one job that lost gold.', 'We will run it through Jwero, stage by stage, and show where the grams went.', 'manufacturing')}
 `,
 };
 

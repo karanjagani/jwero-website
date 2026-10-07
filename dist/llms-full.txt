@@ -5695,128 +5695,142 @@ A: Yes. The salesperson on the bill feeds incentives and the sales reports.
 
 ---
 
-# Jewellery Manufacturing Software: Karigar, BOM, Wastage
+# Jewellery Manufacturing Software: Karigar, Wastage, Planning
 URL: https://jwero.ai/products/manufacturing
 
-Manufacturing for jewellery: bill of materials, routings, production orders, stage-wise wastage norms with a metal-closure check, job cards, QC, raw-material lots and a karigar khata that settles wages against gold.
+Jewellery manufacturing software: orders, BOM and routings, material planning, karigar and outside job work, work in progress, wastage norms, metal ledger in fine grams and metal loans.
 
-MANUFACTURING & WORKSHOP
+JEWELLERY MANUFACTURING SOFTWARE
 
-## Every milligram from bench to finished piece, and a karigar khata that closes.
+## Jewellery manufacturing software: every milligram from bench to finished piece, and a karigar khata that closes.
 
- A workshop spine that speaks the bench’s language: bill of materials, routing, issue desk, stage-wise wastage norms, job cards, QC, and a karigar khata that settles wages against the metal that came back. The order does not close until the metal balances.
+ Orders in, material planned, metal issued to karigars and outside units, every stage weighed in fine grams against its wastage norm, and an order that will not close until its metal does. On the same system as your stock, sales and customers.
 
  Show me one job, gram by gram 
- For manufacturers 
 
- FROM DESIGN TO FINISHED PIECE
+ ONE JOB, GRAM BY GRAM
 
-## One production order, weighed at every hand-off.
+## Watch the metal move through the workshop.
+
+ Issued 100.0 g fine start 
+ Casting 98.9 g fine norm 1.5% 
+ Filing 98.1 g fine norm 1% 
+ Setting 97.9 g fine norm 0.4% 
+ Polishing 96.9 g fine norm 0.6% 
+
+ Order 2231 · 22K bangles · issued to karigar Ramesh
+
+ Illustrative: at polishing the loss of 1.0 g is over the 0.6% norm, so the order will not close until the difference is settled.
+
+ SIX JOBS, ONE WORKSHOP
+
+## What jewellery manufacturing software has to do.
+
+## 1. Orders in
+ Custom, trade and export orders with design, purity, weight, stones and due date, from the counter, WhatsApp or a buyer’s quote.
+ Custom orders → 
+
+## 2. Material planning
+ Gold, stones and findings worked out from open orders and their bills of materials, then purchased or issued in the right amounts.
+ Purchase → 
+
+## 3. Production, stage by stage
+ Routings and job cards, work in progress at each stage, quality checks, and finished goods tagged with their HUID.
+ Finished stock → 
+
+## 4. Karigars and outside units
+ Metal issued and received by weight and purity, outside job work on challans, due dates swept for lateness, and a scorecard per karigar.
+ Job work and challans → 
+
+## 5. Loss under control
+ Wastage norms per stage, settlement of every job against its norm, capped recovery, and an order that cannot close while its metal is short.
+ Karigar wastage → 
+
+## 6. Metal in fine grams
+ A metal ledger in fine grams beside the books: karigar balances, metal loans with suppliers, and a monthly reconciliation.
+ The metal ledger → 
+
+ By kind of manufacturer: manufacturers · casting units · CAD studios · OEM manufacturers · export houses 
+
+ RUN YOUR NUMBERS
+
+## What loss above your norm is worth.
+
+ Move the sliders to your workshop.
+
+ Currency 
+ ₹ INR $ USD £ GBP AED € EUR 
+
+ Monthly production / job-work volume (grams) 
+
+ Gold rate, per gram 
+
+ Total loss seen at stocktake 
+
+ Loss you can explain per stage today 
+
+ Assumptions (editable thinking) 
+ Unexplained loss = total loss observed at stocktake − loss you can currently explain per stage, applied to your monthly volume. This is your own self-assessment, rather than an industry-average benchmark. A per-stage WIP ledger doesn’t reduce physical loss on its own: it makes the unexplained portion visible the day it happens, not just at annual stocktake., unaccounted grams per month, value lost every month, value lost every year
+
+ Send my numbers to Jwero 
+ We reply with how per-stage loss tracking would flag this in your workflow.
+
+ COMPARE
+
+## Khata and Excel, a desktop manufacturing ERP, or Jwero.
+
+ Khata and Excel Desktop manufacturing ERP Jwero 
+ Gold tracked In and out, in a khata By stage, sometimes Every stage, in fine grams 
+ Wastage norms per stage In the owner’s head Yes Yes, with capped recovery 
+ Order closes only when metal closes No Rarely Yes 
+ Material planning from orders and BOM Guesswork Yes Yes 
+ Karigars and outside units on challans Notebook Yes Yes, with due dates and scorecards 
+ Metal loans with suppliers Separate book Some Yes, on the metal ledger 
+ Same system as sales, stock and customers No Separate modules Yes, one record 
+ Works on the workshop floor Paper Desktop Any device, Hindi on karigar screens 
+
+ See Jwero vs Synergics and Jwero vs JewelAcc .
+
+ STARTING FROM PAPER KHATAS
+
+## How to move karigar khatas into manufacturing software.
+
+ Five steps, starting from today’s balances.
 
  1 
 
-## Bill of materials
- Metal, stones, findings and their expected weights per design, the composition every later step is checked against.
+## Bring your khatas
+ Each karigar’s current balance in fine grams, open jobs and metal loans, from paper or Excel.
 
  2 
 
-## Routing & release
- Casting, filing, setting, polishing, hallmarking: the routing resolves from the design’s category and metal, and release explodes BOM and routing in one step.
+## Set your norms
+ Wastage norm per stage and per kind of design, and the cap on recovery.
 
  3 
 
-## Issue desk
- Metal and stones issued to a karigar or a stage, pre-filled from the BOM and the sales order, weighed on the way out.
+## Map your routings
+ The stages your jobs go through; designs without a routing can still run on a simple job card.
 
  4 
 
-## Wastage norms
- Each stage has a norm. Loss beyond it is flagged; loss within it is booked. Nothing disappears into “process loss”.
+## Issue the next job in Jwero
+ Metal issued by weight and purity, with a due date, on a job card or challan.
 
  5 
 
-## QC & hallmarking
- Inspection with dispositions, pass, rework, scrap, and HUID/hallmark recorded on the piece before it can be sold.
-
- 6 
-
-## Finished-goods receipt
- The finished piece is minted into inventory with its identity, its lots and its cost, ready for the catalogue and the counter.
-
- THE KARIGAR SIDE
-
-## A khata that closes, not a notebook that argues.
-
- Karigar wages in jewellery are settled against metal, not hours. Jwero keeps that ledger the way the trade keeps it, and posts it to the books.
-
-## Karigar directory & open jobs
-
- Who is holding what, since when, and when it is due, swept daily for jobs running late.
-
-## Metal reconciliation
-
- Issued, returned, wastage within norm, wastage beyond norm, per karigar, per job, per period.
-
-## Settlement under your policy
-
- Making charges and wastage allowances by policy; settlement converts finished work to a payable and posts it to the ledger in the same step.
-
-## Karigar self-service
-
- My Work, Khata, Loans and Assets on the karigar’s own phone, with an early Hindi pilot on these screens.
-
-## Scorecards
-
- Turnaround, rework rate and loss per karigar, so the next job goes to the right bench.
-
-## Job cards & documents
-
- Printable job cards, BOM sheets and finished-goods receipts, generated from the order, not retyped.
+## Settle and reconcile monthly
+ Each job settles against its norm; the metal ledger reconciles every month.
 
  BECAUSE IT'S ONE SYSTEM
 
- A custom order taken on WhatsApp becomes the production order, the customer’s size, stone and deadline carry through without re-entry.
- The finished piece is the same record the catalogue publishes, the storefront sells and the counter scans.
- Karigar settlement, stone loss and work-in-progress post to the same ledger as sales, the workshop is inside the books, not beside them.
-
- WHAT WE DON'T DO YET
-
- Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
-
- CAD files do not yet become bills of materials automatically, the BOM is entered or copied from a similar design.
- There is no demand-netting MRP yet: Jwero models capacity and flags late jobs, but does not decide what to make next.
- 
- See the full public roadmap → 
-
- WORKSHOP QUESTIONS
-
-## Loss, karigars and starting from a paper register.
-
- We have years of karigar khatas on paper. Can we start? 
- Yes, opening balances per karigar are entered at onboarding; the ledger runs forward from there.
-
- Can a job go through an outside workshop? 
- Yes, job-work issues and receipts are tracked the same way as internal stages, with the party’s ledger alongside.
-
- Does it work for diamond and gemstone manufacturing too? 
- Stone lots, setting stages and sorting loss are modelled; the gold flow and the stone flow reconcile on the same order.
-
- More questions? See the full FAQ → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Try the chat button on this page, it’s Jwero, live, answering.
+ The finished piece’s cost, its wastage and the karigar’s balance are the same numbers, not three reports to reconcile.
+ A custom order taken at the counter becomes a job card, a material plan and, when it is done, a piece on the shelf and a bill.
+ Metal loans with suppliers sit on the same fine-weight ledger as karigar balances.
 
 ## Bring one job that lost gold.
 
- We will run it through the routing, the norms and the karigar settlement, and show you where the milligrams went.
+ We will run it through Jwero, stage by stage, and show where the grams went.
 
  Chat or call with us 
  Book a demo 
@@ -5825,20 +5839,35 @@ MANUFACTURING & WORKSHOP
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: Does it track gold through every stage, or just in and out?
-A: Every stage. A production order carries a routing; each stage has a wastage norm; issue and receipt are weighed at each hand-off. The order cannot close until the metal balances, issued equals received plus recorded loss within norm.
+Q: What is jewellery manufacturing software?
+A: Software that runs a jewellery workshop or factory: orders, bills of materials and routings, material planning, issuing metal to karigars and outside units, work in progress stage by stage, wastage against norms, quality checks, finished goods, and a metal ledger in fine grams.
 
-Q: How does it work with my karigars?
-A: Each karigar has a directory entry, open jobs, a khata of metal issued and returned, and a settlement that converts work to wages under your wastage policy, posted to the books in the same step.
+Q: How do jewellers control gold loss in manufacturing?
+A: Weigh at every hand-off, convert to fine grams, set a wastage norm per stage, settle every job against its norm when it comes back, and do not let an order close until its metal does. Look at loss by karigar over time, not one job.
 
-Q: Can I run it without a routing for every design?
-A: Yes. Routing templates resolve automatically from the product’s category and metal, in a fixed, auditable order, so a new design gets a sensible routing without a planner.
+Q: What is a normal wastage percentage?
+A: It depends on the process and design. Set norms per stage from your own history; Jwero then flags every job above its norm and caps what is recovered from the karigar.
 
-Q: What about stones and raw metal?
-A: Metal and stone masters, raw-material purchase orders, receiving QC and lots feed the same BOM, so a finished piece knows which lot its metal and stones came from.
+Q: What is material planning in jewellery manufacturing?
+A: Working out the gold, stones and findings your open orders need from their bills of materials, so you buy or issue the right amounts at the right time. Jwero does this from your orders and BOMs.
 
-Q: Does it plan capacity or forecast what to make?
-A: Capacity per stage is modelled and job due-dates are swept for lateness. It does not yet net demand against stock and work-in-progress into a make list, that decision is still yours, and we say so plainly.
+Q: How is karigar job work recorded for GST?
+A: Metal sent for job work moves on a delivery challan without GST and must come back, as jewellery or scrap, within the time the rules allow. A registered karigar bills you for making as a job-work service.
+
+Q: Can a job go through an outside workshop?
+A: Yes. Issue it on a challan to an outside unit, track the due date, and receive and settle it by weight like an in-house job.
+
+Q: Does it work for diamond and gemstone manufacturing?
+A: Yes. Stone lots, setting stages and sorting loss are tracked, and the gold and stone flows reconcile on the same order.
+
+Q: We have years of khatas on paper. Can we start?
+A: Yes. Bring each karigar’s current balance, open jobs and metal loans. You start from today’s balances; old history can follow.
+
+Q: Can I run designs without a routing?
+A: Yes. Simple designs can run on a job card; routings are for the products where stage-by-stage control matters.
+
+Q: Does it forecast what to make?
+A: It plans the material your open orders need and sweeps job due dates for lateness. It does not forecast demand to suggest new designs to make.
 
 ---
 

@@ -4358,3 +4358,13 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .mkt-row { max-width: none !important; background: var(--bg, #fff) !important; border: 1px solid var(--line); color: var(--ink) !important; }
 .mkt-row small { color: var(--brand) !important; }
 @media (max-width: 640px) { .which-page { grid-template-columns: 1fr; } }
+
+/* Manufacturing: metal through the stages. */
+.mf-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.mf-st { padding: 14px 10px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); text-align: center; opacity: .3; transition: opacity .4s ease, border-color .3s ease, background .3s ease; position: relative; }
+.mf-st b { display: block; font-size: .875rem; } .mf-st i { display: block; font-style: normal; font-weight: 700; font-size: 1.05rem; color: var(--brand); margin: 4px 0; font-variant-numeric: tabular-nums; } .mf-st span { font-size: .7rem; color: var(--ink-2); }
+.mf-st.is-on { opacity: 1; }
+.mf-st.is-over { border-color: #d92d20; background: #fef3f2; } .mf-st.is-over i { color: #d92d20; }
+.mf-note { margin: 12px 0 0; text-align: center; font-weight: 600; }
+@media (max-width: 640px) { .mf-row { grid-template-columns: 1fr 1fr; } }
+@media (prefers-reduced-motion: reduce) { .mf-st { opacity: 1; transition: none; } }
