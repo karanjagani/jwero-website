@@ -604,38 +604,127 @@ const footfall = needPage({
   links: [['/products/showroom', 'Showroom software'], ['/products/crm', 'Jewellery CRM'], ['/roles/store-manager', 'For the store manager'], ['/trust', 'Trust Centre']],
 });
 
-const aiCalling = needPage({
+// AI calling: rebuilt 2026-10-07 around bulk inbound and outbound voice AI agents,
+// triggers and campaigns (confirmed by Jwero). Concurrency, per-minute rate and the
+// exact language list are not stated until confirmed.
+const CALL_LINES = [
+  ['ai', 'Jwero voice agent', 'Namaste Sunita ji, Jwero se, Shree Jewellers ki taraf se. Aapki gold scheme ki kist kal due hai.'],
+  ['in', 'Customer', 'Haan, kal bhar dungi. Link bhej do.'],
+  ['ai', 'Jwero voice agent', 'Ji, WhatsApp par payment link bhej rahi hoon. Kuch aur madad?'],
+  ['in', 'Customer', 'Naya mangalsutra dekhna hai, Saturday aa sakti hoon?'],
+  ['ai', 'Jwero voice agent', 'Saturday 5 baje ka slot book kar diya. Dhanyavaad!'],
+];
+const callCard = () => `<div class="call-demo" data-call-demo>
+  <div class="call-card" aria-hidden="true">
+    <div class="call-top"><span class="call-dot"></span><b>Outbound · scheme reminder</b><i data-call-time>00:00</i></div>
+    <div class="call-wave">${Array.from({ length: 28 }, (_, k) => `<span style="--k:${k}"></span>`).join('')}</div>
+    <div class="call-lines">${CALL_LINES.map(([who, name, line], k) => `<p class="call-line is-${who}" data-k="${k}"><small>${name}</small>${line}</p>`).join('')}</div>
+    <div class="call-out"><span>Outcome</span><b>Payment link sent on WhatsApp ✓</b><b>Visit booked, Saturday 5 pm ✓</b><em>Written to Sunita’s record</em></div>
+  </div>
+  <div class="call-funnel"><p class="in-short-tag">A reminder campaign, illustrated</p>
+    ${[['Members due this week', 500, 100], ['Calls answered', 412, 82], ['Paid or promised', 296, 59], ['Visits booked', 61, 12]].map(([l, n, w]) => `<div class="call-bar"><span>${l}</span><i style="--w:${w}%"></i><b>${n}</b></div>`).join('')}
+    <p class="cta-note">Illustrative figures to show how a campaign reads, not results from a customer.</p></div>
+</div>`;
+
+const CALL_CMP = [
+  ['Calls at once', 'One per person', 'Many', 'Many, inbound and outbound'],
+  ['Sounds like', 'Your staff', 'A recording', 'A natural voice in the customer’s language'],
+  ['Understands replies', 'Yes', 'Press 1 or 2', 'Yes, spoken answers'],
+  ['Knows the customer', 'If they remember', 'No', 'Purchases, scheme balance, last visit'],
+  ['Follows through on WhatsApp', 'Sometimes', 'No', 'Payment link, catalogue or booking, automatically'],
+  ['Record of the call', 'Rarely', 'A log', 'Transcript and summary on the customer record'],
+  ['Hands over to a person', 'n/a', 'Rarely', 'Yes, with what was said'],
+];
+const callTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Human telecaller</th><th>IVR or robocall</th><th>Jwero voice AI</th></tr></thead><tbody>${CALL_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+
+const CALL_SETUP = [
+  ['Connect a telephony line', 'Link a number from a provider such as Exotel or Tata Tele. Calls run over this line and are charged per minute.'],
+  ['Choose what the agent may do', 'Answer questions, book visits, send links, remind about dues. Set daily caps, calling hours and when to hand over to a person.'],
+  ['Write the scripts in your words', 'Greeting, reminder and invitation scripts, in the languages your customers speak. Jwero drafts them with you.'],
+  ['Set triggers and campaigns', 'Calls that place themselves (instalment due, payment failed, piece ready) and campaigns to segments you choose.'],
+  ['Go live and review', 'Watch answered, paid and booked numbers, read transcripts, and adjust. One switch stops all calling.'],
+];
+
+const callFaqs = [
+  { q: 'What is AI calling?', a: 'AI calling means a voice AI agent makes and answers phone calls for a business: it speaks naturally, understands spoken replies, follows a script and the rules you set, and records the outcome. For jewellers that means scheme reminders, follow-ups, invitations and answering enquiries without a team of telecallers.' },
+  { q: 'What is a voice AI agent?', a: 'A voice AI agent is software that holds a real phone conversation: it listens, understands, answers from what it knows about the customer and your shop, takes actions like booking a visit or sending a payment link, and hands over to a person when needed.' },
+  { q: 'Can AI make bulk calls to customers?', a: 'Yes. Jwero runs outbound AI calling campaigns in bulk, for example calling every scheme member whose instalment is due this week, and answers inbound calls in bulk so no customer gets a busy tone in the festival rush.' },
+  { q: 'Can AI answer calls for my jewellery shop?', a: 'Yes. The voice agent answers rate, timing, stock and order questions, books visits, and passes the call to a person with a summary when the customer needs one, including after hours.' },
+  { q: 'Can calls happen automatically when something happens?', a: 'Yes. Triggers place calls on events such as an instalment falling due, a failed payment, an unanswered WhatsApp message or a repair being ready. If a call is not answered, a WhatsApp message can follow.' },
+  { q: 'Which languages does the voice agent speak?', a: 'The phone agent speaks 11 Indian languages today, so each customer can be called in the language they speak at home. The chat and voice assistant on WhatsApp and web chat covers 14.' },
+  { q: 'Is AI calling legal in India?', a: 'Calls to your own customers about their account, such as scheme reminders, are treated differently from promotional calls. Promotional calls must follow TRAI’s rules on registration, consent and do-not-disturb preferences. Confirm your setup with your advisor before calling at scale.' },
+  { q: 'How much does AI calling cost?', a: 'Calling is charged per minute at the rate on the pricing page, plus your telephony provider’s charges, on top of Jwero One at ₹18,000 a month (first month ₹3,600). Or let Jwero run the calling for you, with every tool included.' },
+  { q: 'Will the AI negotiate prices or give discounts?', a: 'No. Price negotiation and discounts go to a person. The agent works only inside the actions, caps and hours you allow, and one switch stops all calls.' },
+];
+
+const aiCalling = {
   slug: 'ai-calling-for-jewellers',
-  title: 'AI Calling for Jewellers: Inbound Calls & Reminder Campaigns | Jwero',
-  description: 'AI voice calling for jewellers: an AI agent answers inbound calls and places reminder and follow-up calls in Indian languages over your telephony line, with every call transcribed onto the customer’s record.',
-  eyebrow: 'AI calling for jewellers',
-  h1: 'AI that answers the phone and makes the reminder calls.',
-  sub: 'Inbound calls answered and scheme, payment and follow-up calls placed in the customer’s language, with the outcome written on her record.',
-  wa: 'ai-calling',
-  intro: ['The calls nobody has time to make.', 'Polite, on schedule, and in her language.'],
-  cards: [
-    { icon: 'chat', title: 'Inbound calls answered', text: 'Shop timings, today’s rate, order status and appointments, with a hand-over to a person when needed.', link: { href: '/products/ai-sales-agents', label: 'AI agents' } },
-    { icon: 'megaphone', title: 'Outbound calling campaigns', text: 'Scheme instalment reminders, payment follow-ups and festival invitations.' },
-    { icon: 'users', title: 'Indian languages', text: 'The phone agent speaks 11 Indian languages over a line you connect.' },
-    { icon: 'record', title: 'On the record', text: 'Each call is transcribed and summarised on the customer’s record.' },
-    { icon: 'shield', title: 'Inside your limits', text: 'Daily caps, quiet hours and an approval queue apply. One switch stops it.', link: { href: '/platform/ai-workforce', label: 'AI governance' } },
-    { icon: 'route', title: 'Part of a journey', text: 'A call can follow an unread WhatsApp message, automatically.', link: { href: '/products/journeys', label: 'Journeys' } },
-  ],
-  rows: [
-    { lever: 'MISSED CALLS', before: 'The phone rings during a sale and nobody picks up.', after: 'Answered every time, with a hand-over when needed.' },
-    { lever: 'REMINDERS', before: 'A staff member calls forty scheme members, when free.', after: 'Every due instalment gets a call, on the day.' },
-    { lever: 'LANGUAGE', before: 'Depends on who is in the shop.', after: 'The customer’s own language.' },
-    { lever: 'RECORD', before: 'Nobody knows what was said.', after: 'A transcript on her record.' },
-  ],
-  notYet: 'Calls run over a telephony line you connect from a provider such as Exotel or Tata Tele, and are charged per minute. The AI does not negotiate prices or give discounts; it hands those to a person.',
-  faqs: [
-    { q: 'Can AI answer calls for my jewellery shop?', a: 'Yes. An AI voice agent answers common questions, takes appointments and passes the call to a person when the customer needs one.' },
-    { q: 'Can AI call my customers for scheme reminders?', a: 'Yes. It calls each member whose instalment is due, in her language, and records the outcome.' },
-    { q: 'Which languages does it speak?', a: 'The phone agent covers 11 Indian languages today. The chat and voice assistant inside WhatsApp and web chat covers 14.' },
-    { q: 'What does AI calling cost?', a: 'It is charged per minute at the rate on the pricing page, on top of your telephony provider’s charges.' },
-  ],
-  links: [['/products/ai-sales-agents', 'AI agents and voice'], ['/platform/ai-workforce', 'AI governance'], ['/products/gold-schemes', 'Gold schemes'], ['/pricing', 'Calling rates']],
-});
+  title: 'AI Calling for Jewellers: Voice AI Agents, Bulk Calls | Jwero',
+  description: 'AI calling for jewellers: voice AI agents that answer inbound calls in bulk and run outbound calling campaigns, with triggers, 11 Indian languages and every call on the customer record.',
+  breadcrumbs: [['Home', '/'], ['Jewellery software in India', '/jewellery-software-india'], ['AI calling for jewellers']],
+  schema: {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Jwero AI Calling for Jewellers', alternateName: ['Jwero voice AI agents', 'AI telecaller for jewellers'],
+    applicationCategory: 'BusinessApplication', operatingSystem: 'Web', url: 'https://jwero.ai/ai-calling-for-jewellers',
+    description: 'Voice AI agents for jewellers: bulk inbound call answering, bulk outbound calling campaigns, event triggers, WhatsApp follow-through and transcripts on the customer record, in 11 Indian languages.',
+    isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month; calling charged per minute.' },
+  },
+  extraSchema: [{
+    '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up AI calling for a jewellery shop',
+    step: CALL_SETUP.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })),
+  }],
+  faqs: callFaqs,
+  body: `
+${L.hero({ eyebrow: 'AI CALLING FOR JEWELLERS', h1: 'AI calling for jewellers: voice AI agents for every call, in bulk.', sub: 'Voice AI agents that answer every inbound call at once and run outbound calling campaigns for reminders, follow-ups and invitations, in the customer’s language, with the outcome on her record and a WhatsApp follow-through.', primary: { href: '#', label: 'Hear it on a call with us', wa: 'ai-calling' } })}
+
+${L.section(`${L.sectionHead('THE CALLS NOBODY HAS TIME FOR', 'Hundreds of calls a month, and two people to make them.', '')}${L.cards([
+  { title: 'Scheme reminders', text: 'Five hundred members, one due date each. A staff member calls forty, when free.' },
+  { title: 'The festival rush', text: 'On Dhanteras the phone rings during every sale. Half the calls go unanswered.' },
+  { title: 'Follow-ups that never happen', text: 'Enquiries, walk-outs and repairs ready for collection wait for someone to remember.' },
+])}`)}
+
+${L.section(`${L.sectionHead('ONE CALL, START TO FINISH', 'A reminder that ends in a payment and a visit.', 'What the customer hears, and what Jwero writes down.')}${callCard()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('OUTBOUND, IN BULK', 'Calling campaigns that run themselves.', '')}<div class="wa-jobs">
+  <article><h3>Scheme instalment reminders</h3><p>Every member whose instalment is due gets a call on the day, with a payment link on WhatsApp if they want one.</p><a href="/products/gold-schemes">Gold schemes →</a></article>
+  <article><h3>Festival and wedding invitations</h3><p>Akshaya Tritiya, Dhanteras, a new bridal collection: invite a segment by call, then book their visit.</p><a href="/products/campaigns">Campaigns →</a></article>
+  <article><h3>Win-backs and follow-ups</h3><p>Customers who have gone quiet, enquiries that did not buy, walk-outs from last week, called in their language.</p><a href="/products/journeys">Journeys →</a></article>
+  <article><h3>Ready, due and overdue</h3><p>“Your piece is ready”, “your repair is done”, “your payment is pending”: the calls that bring customers back to the counter.</p><a href="/products/repairs-service">Repairs →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('INBOUND, IN BULK', 'Every call answered, even in the rush.', '')}<div class="wa-jobs">
+  <article><h3>Answered at once</h3><p>Many calls at the same time, so nobody hears a busy tone on a festival morning.</p></article>
+  <article><h3>Today’s rate, timings and stock</h3><p>The questions that fill the day, answered from your live rate, catalogue and stock.</p></article>
+  <article><h3>Visits and video calls booked</h3><p>The agent books a showroom visit or a video call into the calendar and confirms on WhatsApp.</p></article>
+  <article><h3>Handed over with context</h3><p>When the customer wants a person, the call goes to your team with a summary of what was said.</p></article>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('TRIGGERS AND CAMPAIGNS', 'Calls that place themselves.', '')}<div class="jb-blogline">
+  <p><b>Triggers:</b> an instalment falling due, a failed payment, an unanswered WhatsApp message, a piece or repair ready, a customer’s anniversary. Each can place a call automatically, and if the call is not answered, a WhatsApp message follows.</p>
+  <p><b>Campaigns:</b> choose a segment (scheme members due, customers who bought bridal last year, quiet customers in one city), a script, a language and a calling window. Watch answered, paid and booked as they happen.</p>
+  <p><b>WhatsApp in the same flow:</b> the call and the chat share one record, so the payment link, catalogue or booking confirmation goes out the moment the customer says yes. <a href="/products/whatsapp">WhatsApp API for jewellers →</a></p></div>`)}
+
+${L.section(`${L.sectionHead('BY KIND OF BUSINESS', 'Where AI calling pays off first.', '')}${L.cards([
+  { title: 'Single showroom', text: 'Scheme reminders and festival invitations without a telecaller.', link: { href: '/solutions/single-store', label: 'Single store' } },
+  { title: 'Chains', text: 'One calling team for every branch, with calls routed to the right store.', link: { href: '/solutions/multi-store-chains', label: 'Chains' } },
+  { title: 'Wholesalers and manufacturers', text: 'Payment follow-ups with trade buyers and due-date calls to karigars.', link: { href: '/solutions/b2b-jewellery', label: 'Wholesale' } },
+  { title: 'Overseas customers', text: 'Families abroad called at a sensible hour in their time zone, then served on WhatsApp.', link: { href: '/products/whatsapp', label: 'WhatsApp' } },
+], 4)}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'Telecaller, IVR robocall, or voice AI.', '')}${callTable()}`)}
+
+${L.section(`${L.sectionHead('HOW IT STAYS SAFE', 'Inside your rules, and the law’s.', '')}<div class="jb-blogline">
+  <p><b>Your rules:</b> daily caps, calling hours, which actions the agent may take, and an approval queue for anything new. One switch stops all calling.</p>
+  <p><b>The law’s:</b> calls about a customer’s own account, such as reminders, are treated differently from promotional calls, which follow TRAI’s rules on registration, consent and do-not-disturb preferences. Tell customers calls are recorded. <a href="/blog/ai-calling-jewellers-scheme-reminders">Read the AI calling guide →</a></p>
+  <p><b>What it will not do:</b> negotiate prices or give discounts. Those go to a person. Calls run over a telephony line you connect, from a provider such as Exotel or Tata Tele.</p></div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('HOW TO SET IT UP', 'How to set up AI calling for a jewellery shop.', 'Five steps, done with you.')}${L.steps(CALL_SETUP.map(([title, text]) => ({ title, text })))}`)}
+
+${L.section(`${L.sectionHead('WHAT YOU PAY', 'Platform, minutes, and your line.', '')}<div class="jb-blogline"><p><b>Jwero One:</b> ₹18,000 a month with every module, first month ₹3,600. <b>Calling:</b> charged per minute at the rate on the <a href="/pricing">pricing page</a>, from a prepaid wallet. <b>Your line:</b> your telephony provider’s own charges. <b>Or</b> <a href="/jewellery-business-as-a-service">let Jwero run the calling for you</a>, with every tool included.</p></div>`, { tone: 'tint' })}
+
+${L.ctaBand('Hear it before you decide.', 'Message us and we will call you with the voice agent, in your language.', 'ai-calling')}
+`,
+};
 
 const appointments = needPage({
   slug: 'jewellery-appointment-booking-software',

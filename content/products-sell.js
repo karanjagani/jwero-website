@@ -27,7 +27,9 @@ const WA_COMPARE = [
   ['Knows the customer’s purchases and scheme balance', 'No', 'No', 'Yes, one record with billing and schemes'],
   ['Stock updates when a piece sells', 'No', 'No', 'Yes, same stock as the counter'],
   ['AI replies with your approval', 'No', 'Some', 'Yes, drafts wait for your team'],
-  ['Voice AI calls, inbound and outbound', 'No', 'No', 'Yes, on the same customer record'],
+  ['Triggered notifications (order, payment, ready, scheme due)', 'No', 'Some', 'Yes, from billing, repairs and schemes'],
+  ['Campaigns to customer segments', 'Broadcast lists', 'Yes', 'Yes, by purchase, occasion and scheme'],
+  ['Bulk AI calling, inbound and outbound', 'No', 'No', 'Yes, voice AI agents on the same record'],
   ['Forms for appointments and scheme enrolment', 'No', 'Some', 'Yes, WhatsApp Flows'],
 ];
 const waTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>WhatsApp Business app</th><th>Generic API tools</th><th>Jwero</th></tr></thead><tbody>${WA_COMPARE.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>
@@ -51,7 +53,8 @@ const whatsappFaqs = [
   { q: 'Can I keep my existing WhatsApp number?', a: 'Yes. Your number moves onto the official platform and customers keep messaging the same number. We check first whether it can also keep the WhatsApp Business app alongside.' },
   { q: 'How much does WhatsApp API cost for a jewellery shop?', a: 'Two parts: Jwero One at ₹18,000 a month (first month ₹3,600) with every module, and Meta’s per-message fees for template messages, passed through at cost from a prepaid wallet. Replies inside a customer’s 24-hour window are not charged by Meta. See the WhatsApp pricing guide.' },
   { q: 'How is Jwero different from WATI, Interakt or DoubleTick?', a: 'Those tools send and receive messages. Jwero’s WhatsApp is part of the jewellery system: the catalogue follows the gold rate, payments and orders update stock and the customer record, and replies know purchases and scheme balances.' },
-  { q: 'Does Jwero also handle phone calls?', a: 'Yes. Jwero’s voice AI agents answer inbound calls and make outbound calls, such as scheme reminders and follow-ups, in Indian languages, writing every call to the same customer record as WhatsApp.' },
+  { q: 'Does Jwero also handle phone calls?', a: 'Yes. Jwero’s voice AI agents answer inbound calls in bulk and run outbound AI calling campaigns in bulk, such as scheme reminders, follow-ups and event invitations, in Indian languages, writing every call to the same customer record as WhatsApp.' },
+  { q: 'Can WhatsApp messages send automatically when something happens?', a: 'Yes. Triggers send notifications when an order is confirmed, a payment arrives, a piece or repair is ready, or a scheme instalment is due. Campaigns go to segments you choose, by purchase, occasion or scheme.' },
   { q: 'What if Meta changes WhatsApp’s rules?', a: 'Your customers, catalogue and history live in Jwero, not inside the channel. As a Meta Business Partner, Jwero follows rule changes and updates the platform; your data stays yours.' },
   { q: 'Will older customers really buy this way?', a: 'They already ask “rate kya hai?” on WhatsApp. Jwero makes sure those chats are answered fast, in their language, recorded, and closed.' },
   { q: 'Do I have to approve every AI reply?', a: 'At first, yes, in batches when it suits you. Once you trust a type of reply, you can let it send on its own. You set the pace.' },
@@ -60,11 +63,11 @@ const whatsappFaqs = [
 const whatsapp = {
   slug: 'products/whatsapp',
   title: 'WhatsApp API for Jewellers: Catalogue, Payments and CRM | Jwero',
-  description: 'WhatsApp API for jewellers from an official Meta Business Partner: WhatsApp commerce with live-rate catalogues, native payments, a shared inbox, broadcasts and voice AI.',
+  description: 'WhatsApp API for jewellers from an official Meta Business Partner: WhatsApp commerce with live-rate catalogues, native payments, a shared inbox, triggers, campaigns and bulk AI calling.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero WhatsApp API for Jewellers', alternateName: ['Jwero WhatsApp Commerce', 'WhatsApp API for jewellery business'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'WhatsApp commerce for jewellers from an official Meta Business Partner: live-rate catalogues, native WhatsApp payments, a shared inbox with AI drafts under approval, broadcasts, WhatsApp Flows and voice AI calls on one customer record.',
+    description: 'WhatsApp commerce for jewellers from an official Meta Business Partner: live-rate catalogues, native WhatsApp payments, a shared inbox with AI drafts under approval, triggered notifications, campaigns, broadcasts, WhatsApp Flows and bulk inbound and outbound voice AI calling on one customer record.',
     url: 'https://jwero.ai/products/whatsapp', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
     offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module; Meta message fees at cost.' },
   },
@@ -96,13 +99,14 @@ ${L.section(
 ${L.section(`${L.sectionHead('ONE CHAT, START TO FINISH', 'From an Instagram tap to a paid order.', 'What your customer sees, and what Jwero does at each step.')}${waStory()}`, { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('FIVE JOBS, ONE NUMBER', 'WhatsApp commerce: everything a jewellery counter does, inside WhatsApp.', '')}
+  `${L.sectionHead('SIX JOBS, ONE NUMBER', 'WhatsApp commerce: everything a jewellery counter does, inside WhatsApp.', '')}
   <div class="wa-jobs">
     <article id="wa-catalogue"><h3>1. A catalogue at today’s rate</h3><p>Send several pieces in one message, straight from your stock, priced from today’s rate, purity and weight. When the rate moves, the prices move with it. No stale PDFs, no “price on request”.</p><a href="/products/catalog">Catalogues →</a></article>
     <article id="wa-payments"><h3>2. Order and pay without leaving the chat</h3><p>Customers add pieces to a cart and pay with WhatsApp’s native payment experience. The order, the invoice and the stock update land on the same record as a counter sale.</p><a href="/products/pos">Billing →</a></article>
     <article id="wa-forms"><h3>3. Forms inside WhatsApp</h3><p>WhatsApp Flows for booking a showroom visit or a video call, enrolling in a gold scheme, or asking for a custom design, filled in without leaving the chat.</p><a href="/products/gold-schemes">Schemes →</a></article>
     <article id="wa-broadcasts"><h3>4. Broadcasts that keep your number healthy</h3><p>Approved templates, recorded consent, limits on how often each customer hears from you, quiet hours and instant opt-out. Reach thousands for Akshaya Tritiya or Diwali without burning your number.</p><a href="/whatsapp-broadcast-for-jewellers">Broadcasts →</a></article>
-    <article id="wa-inbox"><h3>5. One inbox, and voice AI for the calls</h3><p>WhatsApp, Instagram and Facebook in one team inbox, with AI drafts that know the customer and wait for approval. Voice AI agents answer inbound calls and make outbound ones, on the same record.</p><a href="/ai-calling-for-jewellers">Voice AI calling →</a></article>
+    <article id="wa-auto"><h3>5. Triggers, notifications and campaigns</h3><p>Messages that send themselves when something happens: order confirmed, payment received, piece ready for collection, repair done, scheme instalment due, rate drop on a saved piece. Plus planned campaigns for festivals, launches and occasions, to segments you choose.</p><a href="/products/campaigns">Campaigns →</a></article>
+    <article id="wa-inbox"><h3>6. One inbox, and AI calling in bulk</h3><p>WhatsApp, Instagram and Facebook in one team inbox, with AI drafts that wait for approval. Voice AI agents answer inbound calls in bulk, and run outbound call campaigns in bulk for reminders, follow-ups and invitations, all on the same customer record.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
   </div>`
 )}
 

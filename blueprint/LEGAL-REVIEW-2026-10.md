@@ -129,3 +129,7 @@ terms, or need to be withdrawn:
 - /blog/silver-jewellery-business-pricing: silver hallmarking stated as voluntary.
 - /blog/lab-grown-diamond-jewellery-selling: disclosure wording, GST on loose lab-grown stones.
 - /blog/jewellery-franchise-control: says royalty tooling availability should be asked; matches the enterprise page's stated gap.
+
+## K. WhatsApp and AI calling pages (added 2026-10-07)
+- Stated as confirmed by Jwero: official Meta Business Partner; native WhatsApp payments; bulk inbound and outbound voice AI calling; triggers and campaigns.
+- To confirm: "usually within a day of your Meta verification" (WhatsApp setup); TRAI wording on /ai-calling-for-jewellers ("Is AI calling legal in India?"); the 11 phone languages (not listed by name until confirmed); calling concurrency (not stated as a number).

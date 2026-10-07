@@ -2564,3 +2564,19 @@ document.addEventListener('click', function (e) {
   var io = new IntersectionObserver(function (es) { es.forEach(function (e) { clearInterval(timer); if (e.isIntersecting) { tick(); timer = setInterval(tick, 1700); } }); }, { threshold: .35 });
   io.observe(root);
 })();
+
+// AI calling page: play the call when it scrolls into view.
+(function () {
+  var root = document.querySelector('[data-call-demo]'); if (!root) return;
+  var lines = root.querySelectorAll('.call-line'), time = root.querySelector('[data-call-time]'), k = -1, t0, timer, clock;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(n) { Array.prototype.forEach.call(lines, function (l, j) { l.classList.toggle('is-on', j <= n); }); root.classList.toggle('is-done', n >= lines.length - 1); }
+  if (reduce) { root.classList.add('is-live'); show(lines.length - 1); return; }
+  function step() { k++; if (k > lines.length + 1) { k = 0; t0 = Date.now(); } show(Math.min(k, lines.length - 1)); }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) {
+    clearInterval(timer); clearInterval(clock);
+    if (e.isIntersecting) { root.classList.add('is-live'); t0 = t0 || Date.now(); step(); timer = setInterval(step, 1800);
+      clock = setInterval(function () { var s = Math.floor((Date.now() - t0) / 1000); time.textContent = ('0' + Math.floor(s / 60)).slice(-2) + ':' + ('0' + (s % 60)).slice(-2); }, 500); }
+  }); }, { threshold: .35 });
+  io.observe(root);
+})();
