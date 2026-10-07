@@ -1763,6 +1763,14 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Journeys send abandoned cart, browse and occasion emails. Unsubscribes enforced; bounces stop future sends.
 - AI drafts replies for approval; receipts, OTPs and reminders go on branded templates.
 
+## Girvi and gold loan software (facts)
+
+- Page: https://jwero.ai/products/girvi
+- Pledge intake with photos, weight, purity, valuation at today's rate, KYC and a printed receipt; LTV limit checked on every loan.
+- Interest schemes (rate, simple or compound, grace), accrued on schedule and collected automatically, with reminders.
+- Part payments of principal, renewals, release with a printed document, default steps with notices and auctions.
+- Every disbursal, interest entry, collection, release and auction posts to the ledger; the loan sits on the customer record.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -1772,7 +1780,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant. Jwero does not file GST returns.
 - Counter POS (registers, shifts, cash day-close, returns, old-gold exchange), statutory payroll, karigar
   settlement, girvi/gold loans, manufacturing (BOM, routing, wastage norms) and a video counter shipped in 2026.
-- E-invoice IRN (e-invoices are generated in Tally through the bridge), auto-debit for girvi interest, a full vernacular product interface (an early Hindi pilot is live on
+- E-invoice IRN (e-invoices are generated in Tally through the bridge), a full vernacular product interface (an early Hindi pilot is live on
   karigar screens), and predictive ML forecasting are on the public roadmap, not shipped today:
   ${SITE}/roadmap
 

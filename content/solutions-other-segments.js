@@ -3,7 +3,7 @@ const BC = (label) => [['Home', '/'], ['Solutions', '/solutions'], [label]];
 
 const bullionFaqs = [
   { q: 'Can deals be captured at a locked rate?', a: 'Yes — deal capture records the rate at the moment of agreement, with a clean ledger of every settlement against it.' },
-  { q: 'Do you offer girvi / gold-loan functionality?', a: 'Yes — pledge intake with a printed receipt, interest schemes that accrue on schedule, collection, renewal and release, posted to the books and on the customer’s record. Auto-debit mandates for interest are not there yet. <a href="/products/girvi">See Girvi / Gold Loans</a>.' },
+  { q: 'Do you offer girvi / gold-loan functionality?', a: 'Yes — pledge intake with a printed receipt, interest schemes that accrue on schedule, collection, renewal and release, posted to the books and on the customer’s record. Interest can be collected automatically, and defaulted pledges move through to auction. <a href="/products/girvi">See Girvi / Gold Loans</a>.' },
   { q: 'Our trades depend on speed. Won’t logging deals slow us down?', a: 'Deal capture is built to be fast at the point of agreement, not a paperwork step afterward — it replaces reconstructing terms from memory later, which costs more time than it saves.' },
 ];
 
@@ -27,7 +27,7 @@ ${L.section(
     { quote: 'Rate-lock disputes are constant and hard to prove.', title: 'Rate-locked, auditable deal capture', text: 'The agreed rate and terms are recorded at the moment of the deal, not reconstructed afterward.' },
   ])}`
 )}
-${L.honestGapsBlock(['Girvi auto-debit (e-mandate) for interest collections and auction/forfeiture workflows for defaulted pledges are not built yet — pledge, accrual, collection, renewal and release are.'])}
+
 ${L.section(`${L.sectionHead('QUESTIONS TRADERS ASK', 'Rate locks, girvi and deal speed — answered.', '')}${L.faqBlock(bullionFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="bullion">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 

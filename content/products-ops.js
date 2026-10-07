@@ -218,66 +218,116 @@ ${L.ctaBand('Bring one job that lost gold.', 'We will run it through Jwero, stag
 `,
 };
 
+// Girvi, rebuilt 2026-10-07. Confirmed by Jwero: auctions, automatic interest
+// collection, LTV limits, photos at intake, part payments. Not claimed: partial
+// release of items, state money-lending licence forms.
+const GV_FLOW = [
+  ['Pledge', '22K chain, 18g · photographed and valued at today’s rate'],
+  ['Limit', 'Loan checked against your LTV limit · within it'],
+  ['Disbursed', '₹60,000 · printed pledge receipt · journal posted'],
+  ['Interest', 'Accrues monthly · collected automatically'],
+  ['Part payment', '₹20,000 of principal paid · interest recalculated'],
+  ['Renewed', 'Renewed at term on the same pledge'],
+  ['Released', 'Balance settled · release document printed · loan closed in the books'],
+];
+const gvFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">GIRVI · PLEDGE TO RELEASE</p>${GV_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${GV_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const GV_CMP = [
+  ['Valuation', 'By eye and calculator', 'Entered by hand', 'Today’s rate, purity and weight, with photos'],
+  ['Loan limit', 'Judgement', 'Sometimes', 'LTV limit you set, checked on every loan'],
+  ['Interest due today', 'Worked out at the counter', 'Report', 'On screen, by scheme, any day'],
+  ['Collecting interest', 'Customer walks in', 'Recorded when paid', 'Collected automatically, with reminders'],
+  ['Part payments and renewals', 'Notes in the margin', 'Basic', 'Recorded, with interest recalculated'],
+  ['Default and auction', 'Notices on paper', 'Often missing', 'Default steps, notices and auction recorded'],
+  ['Books', 'A separate register', 'Export', 'Every entry posted to the ledger'],
+  ['The customer', 'A slip in a drawer', 'A loan number', 'On her record beside purchases and schemes'],
+];
+const gvTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>A paper register</th><th>Basic girvi software</th><th>Jwero</th></tr></thead><tbody>${GV_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const GV_HOW = [
+  ['Set your schemes and limits', 'Interest rates, compounding, grace and your LTV limit.'],
+  ['Bring in open pledges', 'Each loan from the register with its item, weight, amount and date.'],
+  ['Take new pledges in Jwero', 'Photos, valuation at today’s rate, KYC and a printed receipt.'],
+  ['Switch on collection and reminders', 'Interest collected automatically; reminders before each due date.'],
+  ['Renew, release or auction', 'Each step recorded, printed and posted to the books.'],
+];
+const gvFaqs = [
+  { q: 'What is girvi?', a: 'Girvi is a loan against pledged gold or silver jewellery, given by a jeweller or pawnbroker. The customer gets the jewellery back when the loan and interest are paid.' },
+  { q: 'Which software is used for girvi?', a: 'Girvi or gold loan software records each pledge, works out interest, and tracks renewals, release and auctions. Jwero does this on the same customer record and books as the rest of the jewellery business.' },
+  { q: 'How is girvi interest calculated?', a: 'By the scheme on each loan: the rate, simple or compound, and any grace period. Jwero accrues it on schedule, so the amount due on any day is on screen. Try the calculator on this page.' },
+  { q: 'Can interest be collected automatically?', a: 'Yes. Interest is collected automatically, with reminders before each due date.' },
+  { q: 'Can I set a maximum loan against the gold’s value?', a: 'Yes. Set an LTV limit, and each loan is checked against today’s value of the pledge.' },
+  { q: 'Can customers pay part of the loan?', a: 'Yes. Part payments of principal are recorded, and interest is recalculated on the balance.' },
+  { q: 'What happens if a loan is not repaid?', a: 'The loan moves through default steps with notices, and the auction and how the proceeds were applied are recorded. Follow your state’s notice rules.' },
+  { q: 'Does it post to the books?', a: 'Yes. Every disbursal, interest entry, collection, release and auction posts to the ledger.' },
+];
 const girvi = {
   slug: 'products/girvi',
   title: 'Girvi, Gold Loan & Pawn Broking Software for Jewellers | Jwero',
-  description: 'Girvi for jewellers: pledge intake with a printed receipt, interest schemes that accrue on schedule, collections, renewals and release — with every entry posted to the books and the loan on the customer’s record.',
+  description: 'Girvi and gold loan software for jewellers: photos and valuation at today’s rate, LTV limits, printed receipts, interest collected automatically, part payments, renewals, release and auctions, all posted to the books.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Girvi', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Girvi / gold-loan management for jewellers: pledge, receipt, interest accrual, collection, renewal and release, posted to the ledger.',
+    name: 'Jwero Girvi', alternateName: ['Girvi software', 'Gold loan software for jewellers', 'Pawn broking software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Girvi and gold loan management for jewellers: pledge intake with photos, valuation at the live rate and KYC, LTV limits, printed receipts, interest schemes with automatic collection, part payments, renewals, release, default steps and auctions, posted to the ledger.',
     url: 'https://jwero.ai/products/girvi', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to move a girvi register into software', step: GV_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Girvi / Gold Loans'),
-  faqs: [
-    { q: 'Is girvi actually in the product now?', a: 'Yes. Earlier versions of this site said it was on the long-term roadmap; the module shipped in 2026. Pledge, receipt, interest schemes, accrual, collection, renewal and release are live.' },
-    { q: 'How is interest calculated?', a: 'By the scheme you define per loan — rate, compounding and grace — and accrued on schedule, so the payable amount on any day is on screen without a calculator. Unaccrued interest to date is shown separately.' },
-    { q: 'What happens at release?', a: 'Settle the balance, release the pledge, print the release document; the item leaves the pledge vault and the ledger closes the loan in the same step.' },
-    { q: 'Does it post to the books?', a: 'Every disbursement, interest accrual, collection and release posts a journal to the ledger — and the loan sits on the customer’s record next to her purchases and her scheme.' },
-    { q: 'Can customers pay interest automatically?', a: 'Not yet — there is no auto-debit mandate; collections are recorded when paid, and reminders go out on schedule. We say so plainly rather than imply otherwise.' },
-  ],
+  faqs: gvFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'GIRVI / GOLD LOANS',
-  h1: 'Pledge, interest, renewal, release — on the books and on her record.',
-  sub: 'Take a pledge, print the receipt, let interest accrue on its scheme, collect, renew, release — with every rupee posted to the books and the loan on the same customer record as her purchases and her gold scheme.',
+  eyebrow: 'GIRVI · GOLD LOANS · PAWN BROKING',
+  h1: 'Girvi and gold loan software for jewellers: pledge to release, interest collected, on the books.',
+  sub: 'Photograph and value the pledge at today’s rate, check it against your LTV limit, print the receipt. Interest accrues and is collected automatically; part payments, renewals, release and auctions are recorded and posted to the books.',
   primary: { href: '#', label: 'Show me a pledge from intake to release', wa: 'girvi' },
-  secondary: { href: '/products/gold-schemes', label: 'See Gold Savings Schemes' },
+  secondary: { href: '/blog/girvi-gold-loan-business-guide', label: 'Girvi rules explained' },
 })}
 
-${L.section(
-  `${L.sectionHead('THE LOAN LIFECYCLE', 'Pledge to release, without a paper register.', '')}
-  ${L.steps([
-    { title: 'Pledge intake', text: 'Item, weight, purity, valuation, customer KYC — and a printed pledge receipt the customer keeps.' },
-    { title: 'Scheme & disbursal', text: 'Choose the interest scheme, set the term and grace, disburse — the journal posts itself.' },
-    { title: 'Interest on schedule', text: 'Accrual runs on schedule; the amount due on any day, and interest not yet accrued, are always on screen.' },
-    { title: 'Collect, renew, release', text: 'Record collections, renew at term, release the pledge with a document — and the ledger closes the loan.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE LOAN, START TO FINISH', 'From a pledged chain to a closed loan.', '')}${gvFlow()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('WHAT CHANGES', 'For the counter and for the owner.', '')}
-  ${L.impactGrid([
-    { lever: 'Disputes', before: 'A customer disputes the interest on a two-year-old pledge; the register and the calculator disagree.', after: 'The scheme, the accrual and every collection are on the loan — printable, dated, undisputed.' },
-    { lever: 'Due dates', before: 'Renewals are remembered, or not.', after: 'Due and renewal sweeps run daily; reminders go out on the customer’s channel.' },
-    { lever: 'The books', before: 'Girvi lives in a separate register that the accountant reconciles at year-end.', after: 'Disbursal, interest, collection and release post journals as they happen.' },
-    { lever: 'The customer', before: 'The pledge is a slip in a drawer; nobody at the sales counter knows.', after: 'The loan is on her record beside her purchases and her scheme — the follow-up knows both.' },
-  ])}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('SIX JOBS, ONE REGISTER', 'What girvi software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Pledge intake</h3><p>Photos, weight, purity and valuation at today’s rate, customer KYC, and a printed receipt.</p><a href="/platform/pricing-engine">Live rate →</a></article>
+  <article><h3>2. Safe lending</h3><p>An LTV limit you set, checked against the pledge’s value on every loan.</p><a href="/products/reports">Reports →</a></article>
+  <article><h3>3. Interest worked out</h3><p>Schemes with rate, simple or compound, and grace; the amount due on any day on screen.</p><a href="#girvi-calc">Interest calculator →</a></article>
+  <article><h3>4. Collected automatically</h3><p>Interest collected on schedule, reminders before each due date, part payments recorded.</p><a href="/products/whatsapp">WhatsApp →</a></article>
+  <article><h3>5. Renew, release, or auction</h3><p>Renewals at term, release with a printed document, and default steps through to auction.</p><a href="/blog/girvi-gold-loan-business-guide">Girvi rules →</a></article>
+  <article><h3>6. On the books and her record</h3><p>Every entry posted to the ledger; the loan beside her purchases and gold scheme.</p><a href="/products/billing-finance">Billing and accounts →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('GIRVI INTEREST CALCULATOR', 'Work out interest on a gold loan.', 'Monthly rate, as most girvi is quoted.')}<div class="callc" id="girvi-calc" data-gvc>
+  <div class="callc-in">
+    <label>Loan amount, ₹<input type="number" inputmode="numeric" data-gv="p" value="60000" min="0" step="1000"></label>
+    <label>Interest rate a month, %<input type="number" inputmode="decimal" data-gv="r" value="1.5" min="0" step="0.25"></label>
+    <label>Months<input type="number" inputmode="numeric" data-gv="m" value="12" min="0"></label>
+    <label>Method<select data-gv="c"><option value="0">Simple</option><option value="1">Compound monthly</option></select></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Interest</span><b data-gv-o="int">₹0</b></p>
+    <p class="callc-save"><span>Amount payable</span><b data-gv-o="tot">₹0</b></p>
+    <p class="cta-note">Check your state’s interest cap. Jwero accrues interest on each loan’s own scheme.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'A paper register, basic girvi software, or Jwero.', '')}${gvTable()}`)}
+
+${L.impactGrid([
+  { lever: 'Disputes', before: 'A customer disputes the interest on a two-year-old pledge; the register and the calculator disagree.', after: 'The scheme, the accrual and every payment are on the loan: printable, dated, settled.' },
+  { lever: 'Due dates', before: 'Interest is collected when the customer remembers to come in.', after: 'Collected automatically, with reminders on her channel.' },
+  { lever: 'The books', before: 'Girvi lives in a separate register the accountant reconciles at year end.', after: 'Disbursal, interest, collection, release and auction post as they happen.' },
+  { lever: 'The customer', before: 'The pledge is a slip in a drawer; nobody at the sales counter knows.', after: 'The loan is on her record beside her purchases and her scheme.' },
+])}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to move your girvi register into software.', 'Five steps.')}${L.steps(GV_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
-  'A girvi customer is the same record the counter, WhatsApp and the scheme use — one KYC, one history.',
-  'Valuation at pledge uses the same live metal rate as the catalogue and the counter.',
+  'A girvi customer is the same record the counter, WhatsApp and the gold scheme use: one KYC, one history.',
+  'Valuation uses the same live metal rate as the catalogue and the counter.',
+  'Every rupee lent, collected or recovered is in the same books as the shop.',
 ])}
 
-${L.honestGapsBlock([
-  'No auto-debit / e-mandate for interest yet — collections are recorded when paid.',
-  'Auction and forfeiture workflows for defaulted pledges are not built; release and renewal are.',
-])}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the chat button on this page — it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Bring your pledge register.', 'We will show you one loan from intake to release — receipt, accrual, collection, journal — on your own numbers.', 'girvi')}
+${L.ctaBand('Bring your pledge register.', 'We will show you one loan from intake to release on your own numbers.', 'girvi')}
 `,
 };
 

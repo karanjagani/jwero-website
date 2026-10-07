@@ -2870,3 +2870,12 @@ document.addEventListener('click', function (e) {
     set('won', won.toLocaleString('en-IN')); set('rev', '₹' + (won * v('bill')).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+// Girvi page: interest calculator.
+(function () {
+  var root = document.querySelector('[data-gvc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-gv="' + k + '"]') || {}).value || 0; };
+  function run() { var p = v('p'), r = v('r') / 100, m = v('m'), i = v('c') ? p * (Math.pow(1 + r, m) - 1) : p * r * m;
+    var set = function (k, t) { var el = root.querySelector('[data-gv-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('int', '₹' + Math.round(i).toLocaleString('en-IN')); set('tot', '₹' + Math.round(p + i).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); root.addEventListener('change', run); run();
+})();

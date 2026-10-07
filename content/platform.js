@@ -573,7 +573,7 @@ ${L.section(
         <div class="road-item"><strong>Direct e-invoice filing, e-way bills & GSTR auto-filing</strong>the e-invoice file is prepared for the portal and the IRN recorded on the bill; filing stays with your CA today</div>
         <div class="road-item"><strong>Tally auto-posting</strong>sales and payment vouchers are still entered in Tally</div>
         <div class="road-item"><strong>Metal reconciliation & physical metal count</strong>metal balances by party are live; a full reconciliation is not</div>
-        <div class="road-item"><strong>Girvi / gold-loan module</strong>pledge, interest schemes, collection, renewal, release — <a href="/products/girvi">shipped</a>; auto-debit mandates are not</div>
+        <div class="road-item"><strong>Girvi / gold-loan module</strong>pledge, interest schemes, automatic interest collection, renewal, release and auctions, <a href="/products/girvi">shipped</a></div>
       </div>
       <div class="road-group">
         <p class="road-group-label">Ecommerce website</p>
