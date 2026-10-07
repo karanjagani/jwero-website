@@ -305,7 +305,6 @@ function footerHTML() {
       <div class="f-brand">
         <p class="logo f-logo" data-f-logo>${mark('mark-logo')}<span class="logo-word f-lockup"><img class="logo-wm logo-wm-dark" src="/assets/brand/jwero-wordmark-tagline.webp" alt="Jwero. Building jewelry rocketships" width="1493" height="473"><img class="logo-wm logo-wm-light" src="/assets/brand/jwero-wordmark-tagline-white.webp" alt="" aria-hidden="true" width="1493" height="473"></span></p>
         <p class="f-tag">${SIGNATURE}<br>${TAGLINE}.</p>
-        ${require('./lib').partnerBadge('is-footer')}
         <p class="f-enemy">“You shouldn’t have to become an expert in everything to remain an expert in jewellery.”</p>
         <p class="f-made">Made with <span aria-hidden="true">❤</span><span class="sr-only">love</span> for Jewellers</p>
       </div>

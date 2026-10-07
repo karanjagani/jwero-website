@@ -751,7 +751,6 @@ const TRUST_BADGES = [
   ['DPDP', 'India’s DPDP Act, 2023', 'in', 'Data protection statement, processor terms, consent records, export and erasure tools.', '/legal/dpdp'],
   ['IN', 'Data hosted in India', 'in', 'Each business in its own database on Microsoft Azure, India region.', '/legal/sub-processors'],
   ['PCI', 'Card data (PCI DSS)', 'in', 'Card details never reach Jwero. Payments run through PCI DSS certified providers.', '/legal/sub-processors'],
-  ['META', 'WhatsApp Business API', 'in', 'Messaging runs on Meta’s official business interfaces, with consent and opt-outs.', '/products/whatsapp'],
   ['GST', 'GST record keeping', 'in', 'Invoices, orders, payments, purchases and payroll are never deleted on a schedule.', '/legal/data-policy'],
   ['BIS', 'BIS hallmarking and HUID', 'in', 'HUID and certificate details recorded on each piece.', '/products/catalog'],
   ['ISO', 'ISO/IEC 27001', 'prog', 'Not certified. Security policy and control mapping are drafted; certification is being prepared.', '/trust/security'],
@@ -781,7 +780,6 @@ function trustStrip() {
 <div class="tstrip">
   <div class="tstrip-seals">${TRUST_BADGES.map(([s, n, st, d, h]) => `<a class="tseal tb-${st}" href="${h}" title="${esc(n)}: ${esc(TRUST_STATUS[st])}. ${esc(d)}"><span class="tseal-mark" aria-hidden="true"><b>${s}</b></span><span class="tseal-name">${n.replace('India’s ', '').replace(', 2023', '').replace(' and penetration test', '').replace('ISO/IEC', 'ISO')}</span><em>${TRUST_STATUS[st]}</em></a>`).join('')}</div>
   <ul class="tstrip-facts">
-    <li>${icon('check')}<span><b>Official Meta Business Partner.</b> Your number runs on the official WhatsApp Business Platform.</span></li>
     <li>${icon('shield')}<span><b>Your own database.</b> Never stored with another jeweller’s.</span></li>
     <li>${icon('key')}<span><b>Encrypted</b> in transit and at rest, with roles you control.</span></li>
     <li>${icon('download')}<span><b>Export any time.</b> Your data leaves with you.</span></li>
@@ -1292,7 +1290,6 @@ function homeHero({ kicker, h1, sub }) {
           <a class="hero-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b><em>No team to hire. No tools to buy.</em></a>
         </div>
         <p class="cta-note"><a href="#jbaas">Compare the three ways</a></p>
-        <p class="usp-line"><a href="/products/whatsapp">Official Meta Business Partner</a><a href="/products/whatsapp#wa-payments">Pay inside WhatsApp</a><a href="/ai-calling-for-jewellers">AI calls at ₹7, 8 at a time</a></p>
       </div>
       <div class="hero-home-piece">
         ${gemStage2({ hero: true })}
@@ -1597,8 +1594,7 @@ function customerLogos() {
     ${CUSTOMER_LOGOS.map(chip).join('')}
     ${CUSTOMER_LOGOS.map(chip).join('')}
   </div>
-</div>
-<div class="partner-row">${partnerBadge()}</div>`;
+</div>`;
 }
 
 module.exports = {

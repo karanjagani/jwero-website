@@ -22,7 +22,7 @@ ${L.hero({
   primary: { href: '#', label: 'Request the security pack', wa: 'securitypack' },
   secondary: { href: '/legal/data-policy', label: 'Read the Data Policy' },
 })}
-${L.section(`<div class="partner-row" style="margin:0">${L.partnerBadge()}</div>`)}
+
 
 ${L.section(
   `${L.sectionHead('STANDARDS AND COMPLIANCE', 'Every standard, with its real status.', 'Six are in place. Four are not yet, and are shown as such. We will not display a certification mark we have not earned.')}
