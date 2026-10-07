@@ -93,6 +93,11 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Festival calendar with an AI campaign strategist drafting campaigns ahead; WhatsApp, RCS (live), SMS, email and push in one campaign; live segments with consent and frequency limits; A/B testing with the winner sent to the rest.
 - Catalogue cards at today's rate, coupons, gift vouchers and loyalty points; visits, bills and revenue traced by campaign and channel. Ads and social posts are run from their own tools, not from campaigns. Details: https://jwero.ai/products/campaigns
 
+## Jewellery ads manager (facts)
+- Meta (Instagram, Facebook, Advantage+, lead forms) and Google (Search, Performance Max, Shopping) published directly after approval; Pinterest rolling out.
+- Click-to-WhatsApp ads into the team inbox, answered with prices at today's rate; audiences and ads generated from customer segments; AI image, copy and short-video creatives.
+- Approvals, budget caps, alerts and autopilot within limits; counter and online sales reported back to Meta and Google; return on spend in rupees of bills. Details: https://jwero.ai/products/ads-manager
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -129,7 +134,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - AI for Jewellers: AI Chatbot, Sales Agents & Voice AI: https://jwero.ai/products/ai-sales-agents
 - Optimize, See Why Website Visitors Leave, Before They Do: https://jwero.ai/products/optimize
 - Jewellery Ecommerce Website Builder: https://jwero.ai/products/storefront
-- Jewellery Ads Manager: Meta, Google & Pinterest Campaigns: https://jwero.ai/products/ads-manager
+- Jewellery Ads Manager: Meta, Google, Click-to-WhatsApp: https://jwero.ai/products/ads-manager
 - Social Media Management, Schedule, Inbox, Reply: https://jwero.ai/products/social-media
 - Jewellery CRM Software: CRM for Jewellers: https://jwero.ai/products/crm
 - Jewellery Catalogue & PIM Software: Live Prices, AI Listings: https://jwero.ai/products/catalog

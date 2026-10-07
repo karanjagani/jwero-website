@@ -470,71 +470,112 @@ ${L.ctaBand('Bring your ecommerce website onto one system.', 'A live-rate price 
 `,
 };
 
+// Ads manager, rebuilt 2026-10-07. Confirmed by Jwero: click-to-WhatsApp ads, sales
+// reported back to the platforms, AI video creatives. Pinterest still rolling out.
+const AD_FLOW = [
+  ['Audience', 'From the segment “bridal buyers, last 2 years” and people like them'],
+  ['Creatives', 'AI makes three images and a short video from your catalogue photos'],
+  ['Approved', 'You approve the plan and the budget cap'],
+  ['Published', 'Live on Meta: Instagram and Facebook'],
+  ['Click to WhatsApp', 'Each click opens a chat in your team inbox'],
+  ['Priced reply', 'The chat gets pieces at today’s rate · visit booked'],
+  ['Bill', 'She buys at the counter · ₹1,40,000'],
+  ['Reported back', 'The sale is sent to Meta, so it finds more buyers like her'],
+];
+const adFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">AD · BRIDAL SEASON</p>${AD_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${AD_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const ADS_CMP = [
+  ['Meta and Google from one place', 'The agency’s logins', 'Two ad managers', 'Yes, plus Pinterest rolling out'],
+  ['Click-to-WhatsApp ads into a team inbox', 'Chats on someone’s phone', 'Chats on one phone', 'Yes, answered with prices at today’s rate'],
+  ['Audiences from your own customers', 'Rarely', 'Uploaded lists', 'Segments, with ads generated for them'],
+  ['Creatives', 'Agency fee', 'You make them', 'AI images, copy and short video'],
+  ['Budget control', 'Monthly report', 'You watch it', 'Approval, caps, alerts and one switch to stop'],
+  ['Sales from the counter sent back to the platforms', 'No', 'Manual uploads', 'Yes, automatically'],
+  ['Return on spend', 'Clicks and leads', 'Clicks', 'Rupees of bills per rupee spent'],
+];
+const adsTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>An agency</th><th>Doing it in Meta and Google</th><th>Jwero ads manager</th></tr></thead><tbody>${ADS_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const ADS_HOW = [
+  ['Connect your ad accounts', 'Your own Meta and Google accounts stay yours; Jwero connects to them.'],
+  ['Pick the audience', 'A segment from your customers, or people like them.'],
+  ['Let AI make the creatives', 'Images, copy and short video from your catalogue photos; edit what you like.'],
+  ['Set the budget and approve', 'A cap per campaign and per day; nothing publishes until you approve.'],
+  ['Watch what it sold', 'Chats, visits and bills, with sales sent back to Meta and Google automatically.'],
+];
+const adsFaqs = [
+  { q: 'What is the best way to advertise a jewellery shop?', a: 'Ads that start a conversation usually work best for jewellery: click-to-WhatsApp ads on Instagram and Facebook, Google Search for people looking for a jeweller nearby, and Google Shopping with prices that follow the gold rate. Target your own customers and people like them, and judge ads by the bills they produce.' },
+  { q: 'Do click-to-WhatsApp ads work for jewellers?', a: 'They suit jewellery well, because customers want to ask about a piece and a price before visiting. Jwero runs them so each click becomes a chat in your team inbox, answered with pieces priced at today’s rate.' },
+  { q: 'How do jewellers measure return on ad spend?', a: 'By tracing ads to chats, visits and bills, not clicks. Jwero reports the rupees of sales per rupee spent and sends counter and online sales back to Meta and Google, so the platforms find more real buyers.' },
+  { q: 'Should I use an agency or run ads myself?', a: 'Run them yourself in Jwero, with AI making the creatives and your budget capped, or let Jwero’s team run them for you. Either way the ads, chats and sales stay on your own records.' },
+  { q: 'How much should a jeweller spend on ads?', a: 'Start small, with a daily cap, on one audience and one ad type, measure the bills it brings, and increase only what pays. There is no right number without your own results.' },
+  { q: 'Which ad platforms does Jwero cover?', a: 'Meta (Instagram and Facebook, including Advantage+ and lead forms) and Google (Search, Performance Max and Shopping), published directly once you approve. Pinterest publishing is rolling out.' },
+  { q: 'Can AI make jewellery ad creatives?', a: 'Yes. AI makes images, ad copy and short video clips from your catalogue photos; you edit and approve them before they run.' },
+  { q: 'Can the AI spend my budget without me knowing?', a: 'No. Nothing publishes without your approval, every campaign has a cap, you get alerts as spend grows, and one switch stops it all.' },
+  { q: 'Does this replace my existing ad accounts?', a: 'No. Your Meta and Google accounts stay yours; Jwero connects to them.' },
+];
+
 const adsManager = {
   slug: 'products/ads-manager',
-  title: 'Jewellery Ads Manager: Meta, Google & Pinterest Campaigns | Jwero',
-  description: 'Create ad campaigns across Meta, Google and Pinterest from one place — approve in the wizard and Jwero publishes straight to Meta and Google, with budget alerts and an approval step before spend.',
+  title: 'Jewellery Ads Manager: Meta, Google, Click-to-WhatsApp | Jwero',
+  description: 'Jewellery ads manager: Meta and Google ads from one place, click-to-WhatsApp ads into your team inbox, audiences from your customers, AI image and video creatives, budget caps, and sales reported back.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Ads Manager', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Ad-campaign management across Meta, Google and Pinterest, with a create/edit wizard, automated publishing to Meta Ads and Google Ads (Search, Performance Max, Shopping) via their APIs once approved, budget-alert monitoring and AI-assisted opportunity analysis.',
+    name: 'Jwero Jewellery Ads Manager', alternateName: ['Jewellery ads software', 'Meta and Google ads for jewellers'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Ads for jewellers: Meta and Google campaigns published from one place with Pinterest rolling out; click-to-WhatsApp ads into a team inbox; audiences and ads generated from customer segments; AI image, copy and video creatives; approvals, caps, alerts and autopilot within limits; counter and online sales reported back to the platforms; return on spend in rupees of bills.',
     url: 'https://jwero.ai/products/ads-manager', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month; ad spend paid to the platforms.' },
   },
-  breadcrumbs: BC('Ads Manager'),
-  faqs: [
-    { q: 'Which ad platforms does Jwero manage?', a: 'Meta Ads, Google Ads and Pinterest — each with its own integration and campaign-type catalogue. Google covers Search, Performance Max and Shopping (linked to your jewellery catalogue); Meta covers standard campaigns, Advantage+ automated campaigns and lead-gen ad forms.' },
-    { q: 'Does Jwero publish my campaign straight to the ad platform?', a: 'Yes, for Meta and Google. Once you approve a campaign in the wizard, Jwero calls the Meta Graph API and Google Ads API directly to create the live budget, campaign, ad sets and creatives — it doesn\'t hand you a draft to copy-paste. Pinterest publishing is still rolling out; ask us for its current status on your account.' },
-    { q: 'Can the AI spend my budget without me knowing?', a: 'No. The AI strategist analyzes performance and surfaces opportunities and learnings for you to review — it does not write your ad headlines or copy, and it never spends on its own. Approval happens in the wizard before Jwero ever calls the ad platform; nothing goes live without you saying yes first.' },
-    { q: 'What happens if I go over budget?', a: 'An automated monitoring worker watches spend and alerts you as campaigns approach their limits, so overspend is something you catch early, not something you discover on the invoice.' },
-    { q: 'How is this different from managing ads inside Meta or Google directly?', a: 'You get one wizard for campaign creation across all three platforms, one place for budget alerts and approvals, and — for Meta and Google — automatic publishing straight from that wizard, instead of three separate ad managers with three separate logins.' },
-    { q: 'Does this replace my existing ad accounts?', a: 'No — it connects to and manages your existing Meta, Google and Pinterest ad accounts from inside Jwero, rather than replacing them.' },
-  ],
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to run ads for a jewellery shop', step: ADS_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Ads manager'),
+  faqs: adsFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'ADS MANAGER',
-  h1: 'Run the ads. Keep your hand on the budget.',
-  sub: 'Meta, Google and Pinterest campaigns — created, configured and analyzed from one place. Approve a campaign in the wizard and Jwero publishes it straight to Meta and Google through their own APIs, no manual copy-paste into another ad manager. A budget alert flags overspend early, and nothing goes live until you approve it.',
-  primary: { href: '#', label: 'Show me a campaign with an approval step', wa: 'adsmanager' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  eyebrow: 'JEWELLERY ADS MANAGER · META · GOOGLE',
+  h1: 'Jewellery ads manager: ads that start WhatsApp chats, and show what they sold.',
+  sub: 'Meta and Google ads from one place. Click-to-WhatsApp ads land in your team inbox and are answered at today’s rate, audiences come from your own customers, AI makes the images and video, your budget is capped, and every sale is reported back so the platforms find more buyers.',
+  primary: { href: '#', label: 'Plan my first ad with us', wa: 'ads' },
 })}
 
-${L.section(
-  `${L.sectionHead('ONE WORKSPACE, THREE PLATFORMS', 'Stop juggling three ad managers.', '')}
-  ${L.cards([
-    { title: 'Meta, Google & Pinterest', text: 'Each platform has its own integration and its own catalogue of supported campaign types — built for that platform, not a lowest-common-denominator form.' },
-    { title: 'Automatic publishing to Meta & Google', text: 'Approve a campaign in the wizard and Jwero calls the Meta Graph API and Google Ads API directly to create the live budget, campaign, ad sets and creatives — not a draft you copy-paste in elsewhere.' },
-    { title: 'Google Search, Performance Max & Shopping', text: 'Google campaigns cover Search (with server-side checks — e.g. at least three headlines before it lets you submit), Performance Max, and Shopping campaigns linked to your jewellery catalogue.' },
-    { title: 'Meta Advantage+ & lead-gen forms', text: 'Meta campaigns include Advantage+ automated campaigns and native lead-gen ad forms, alongside standard campaign types.' },
-    { title: 'Create/edit wizard', text: 'One guided flow to build and adjust a campaign, instead of relearning three different ad-platform interfaces.' },
-    { title: 'Budget alerts', text: 'An automated monitoring worker watches spend and flags a campaign as it approaches its limit, before the spend can surprise you.' },
-    { title: 'Approval before spend', text: 'Every campaign passes an approval step in the wizard before Jwero submits it to the ad platform. Nobody spends the marketing budget by accident.' },
-    { title: 'AI opportunity analysis', text: 'The AI strategist surfaces where a campaign is underperforming or where there’s budget headroom worth using, based on your performance data — a draft recommendation you review, not generative copywriting. It doesn’t write your ad headlines or body copy; those are still entered by hand in the wizard.' },
-    { title: 'Learnings dashboards', text: 'Performance and learnings in one view across platforms, so you compare Meta against Google against Pinterest without exporting three reports.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE AD, START TO FINISH', 'From an audience to a bill, and back to Meta.', '')}${adFlow()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, ONE ADS MANAGER', 'What jewellery ads software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Meta and Google, one place</h3><p>Plan, approve and publish to Instagram, Facebook, Google Search, Performance Max and Shopping. Pinterest is rolling out.</p><a href="/products/catalog">Google Shopping feed →</a></article>
+  <article><h3>2. Ads that start a WhatsApp chat</h3><p>Click-to-WhatsApp ads open a chat in your team inbox, answered with pieces priced at today’s rate, and followed up until a visit or a bill.</p><a href="/products/whatsapp">WhatsApp API for jewellers →</a></article>
+  <article><h3>3. Audiences from your customers</h3><p>Segments such as bridal buyers or quiet customers become audiences, with people like them, and ads are generated for each.</p><a href="/products/segmentation">Segments →</a></article>
+  <article><h3>4. Creatives made for you</h3><p>AI makes images, copy and short video clips from your catalogue photos. You edit and approve.</p><a href="/products/social-media">Social media →</a></article>
+  <article><h3>5. Your budget, protected</h3><p>Approval before anything publishes, caps per campaign and day, alerts as spend grows, autopilot only within your limits, and one switch to stop.</p><a href="/platform/ai-workforce">AI governance →</a></article>
+  <article><h3>6. What the ads actually sold</h3><p>Chats, visits and bills traced to each ad, return on spend in rupees, and sales reported back to Meta and Google automatically.</p><a href="/products/reports">Reports →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'The real return on your ad spend.', 'Your numbers, not ours.')}<div class="callc" data-adc>
+  <div class="callc-in">
+    <label>Ad spend a month, ₹<input type="number" inputmode="numeric" data-ad="spend" value="50000" min="0" step="5000"></label>
+    <label>WhatsApp chats per ₹1,000<input type="number" inputmode="decimal" data-ad="chats" value="3" min="0" step="0.5"></label>
+    <label>Chats that visit, %<input type="number" inputmode="decimal" data-ad="visit" value="15" min="0" max="100"></label>
+    <label>Visitors who buy, %<input type="number" inputmode="decimal" data-ad="buy" value="35" min="0" max="100"></label>
+    <label>Average bill, ₹<input type="number" inputmode="numeric" data-ad="bill" value="45000" min="0" step="1000"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>WhatsApp chats</span><b data-ad-o="chats">0</b></p>
+    <p><span>Customers who buy</span><b data-ad-o="buyers">0</b></p>
+    <p><span>Sales from the ads</span><b data-ad-o="sales">₹0</b></p>
+    <p class="callc-save"><span>Sales per ₹1 spent</span><b data-ad-o="roas">0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs. Results depend on your market, offer and creatives.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'An agency, doing it yourself, or Jwero.', '')}${adsTable()}`)}
+
+${L.section(`${L.sectionHead('YOUR FIRST AD', 'How to run ads for a jewellery shop.', 'Five steps.')}${L.steps(ADS_HOW.map(([title, text]) => ({ title, text })))}<p class="cta-note" style="margin-top:14px">More: <a href="/ads-for-jewellers">Google and Instagram ads for jewellers</a> · <a href="/google-ads-for-jewellery-stores">Google Ads for jewellery stores</a> · <a href="/facebook-ads-for-jewellery-stores">Facebook ads for jewellery stores</a></p>`, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
-  'The lead a campaign brings in lands on the same customer record your WhatsApp, Instagram and CRM already use — no separate ads dashboard to reconcile.',
-  'Budget alerts and approvals sit next to the same governance pattern the AI workforce uses everywhere else on Jwero: drafts, never spends, without a human saying yes.',
-  'Traffic Optimize tracks on your website often started as a click on one of these campaigns — see <a href="/products/optimize">Optimize</a> for what happens after the click.',
-  'Running organic posts alongside paid campaigns? <a href="/products/social-media">Social Media Management</a> covers scheduling and the unified inbox on the same customer record.',
+  'The audience an ad reaches is the same segment your WhatsApp campaign and journeys use.',
+  'A chat from an ad lands on the customer’s record, so the sale at the counter is traced back to the ad.',
+  'Sales reported back to Meta and Google teach the platforms who your real buyers are.',
 ])}
 
-${L.honestGapsBlock([
-  'Pinterest publishing is still rolling out and not yet uniformly live — Meta and Google campaigns publish directly to the ad platform once approved; ask us for Pinterest\'s current status on your account.',
-  'The AI strategist analyzes performance and drafts opportunities for you to review — it does not write your ad headlines or body copy today; those are still entered by hand in the campaign wizard.',
-])}
-
-${L.section(`${L.sectionHead('ADS MANAGER QUESTIONS', 'Budget control, publishing, and what the AI does.', '')}${L.faqBlock([
-  { q: 'Does Jwero publish my campaign straight to the ad platform?', a: 'Yes, for Meta and Google — approve a campaign in the wizard and Jwero submits it directly via the Meta Graph API and Google Ads API to create the budget, campaign, ad sets and creatives. Pinterest publishing is still rolling out.' },
-  { q: 'Can the AI spend my budget without me knowing?', a: 'No — it drafts opportunity analysis and learnings, not ad copy, and never spends. Every campaign needs your approval in the wizard before Jwero calls the ad platform.' },
-  { q: 'Which platforms are covered?', a: 'Meta Ads, Google Ads and Pinterest. Google spans Search, Performance Max and Shopping; Meta spans standard campaigns, Advantage+ and lead-gen forms.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="adsmanager">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Run ads without losing sight of the budget.', 'Approve a campaign in the wizard and Jwero publishes it straight to Meta and Google — budget alerts and an approval step keep you in control. See it work on your own accounts.', 'adsmanager')}
+${L.ctaBand('Run ads without losing sight of the budget.', 'Tell us your budget and who you want to reach. We will show the plan and the creatives.', 'ads')}
 `,
 };
 

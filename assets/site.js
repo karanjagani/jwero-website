@@ -2786,3 +2786,13 @@ document.addEventListener('click', function (e) {
     set('wa', inr(wa)); set('sms', inr(sms)); set('em', inr(em)); set('tot', inr(wa + sms + em)); }
   root.addEventListener('input', run); run();
 })();
+
+// Ads page: the real return on ad spend.
+(function () {
+  var root = document.querySelector('[data-adc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-ad="' + k + '"]') || {}).value || 0; };
+  function run() { var chats = v('spend') / 1000 * v('chats'), buyers = chats * v('visit') / 100 * v('buy') / 100, sales = buyers * v('bill'), roas = v('spend') ? sales / v('spend') : 0;
+    var set = function (k, t) { var el = root.querySelector('[data-ad-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('chats', Math.round(chats).toLocaleString('en-IN')); set('buyers', Math.round(buyers).toLocaleString('en-IN')); set('sales', '\u20b9' + Math.round(sales).toLocaleString('en-IN')); set('roas', '\u20b9' + roas.toFixed(1)); }
+  root.addEventListener('input', run); run();
+})();

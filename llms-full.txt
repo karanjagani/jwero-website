@@ -2932,105 +2932,148 @@ A: Startups, first-time founders and single stores without a website today are t
 
 ---
 
-# Jewellery Ads Manager: Meta, Google & Pinterest Campaigns
+# Jewellery Ads Manager: Meta, Google, Click-to-WhatsApp
 URL: https://jwero.ai/products/ads-manager
 
-Create ad campaigns across Meta, Google and Pinterest from one place, approve in the wizard and Jwero publishes straight to Meta and Google, with budget alerts and an approval step before spend.
+Jewellery ads manager: Meta and Google ads from one place, click-to-WhatsApp ads into your team inbox, audiences from your customers, AI image and video creatives, budget caps, and sales reported back.
 
-ADS MANAGER
+JEWELLERY ADS MANAGER · META · GOOGLE
 
-## Run the ads. Keep your hand on the budget.
+## Jewellery ads manager: ads that start WhatsApp chats, and show what they sold.
 
- Meta, Google and Pinterest campaigns, created, configured and analyzed from one place. Approve a campaign in the wizard and Jwero publishes it straight to Meta and Google through their own APIs, no manual copy-paste into another ad manager. A budget alert flags overspend early, and nothing goes live until you approve it.
+ Meta and Google ads from one place. Click-to-WhatsApp ads land in your team inbox and are answered at today’s rate, audiences come from your own customers, AI makes the images and video, your budget is capped, and every sale is reported back so the platforms find more buyers.
 
- Show me a campaign with an approval step 
- Book a demo 
+ Plan my first ad with us 
 
- ONE WORKSPACE, THREE PLATFORMS
+ ONE AD, START TO FINISH
 
-## Stop juggling three ad managers.
+## From an audience to a bill, and back to Meta.
 
-## Meta, Google & Pinterest
+ AD · BRIDAL SEASON
+ Audience From the segment “bridal buyers, last 2 years” and people like them
+ Creatives AI makes three images and a short video from your catalogue photos
+ Approved You approve the plan and the budget cap
+ Published Live on Meta: Instagram and Facebook
+ Click to WhatsApp Each click opens a chat in your team inbox
+ Priced reply The chat gets pieces at today’s rate · visit booked
+ Bill She buys at the counter · ₹1,40,000
+ Reported back The sale is sent to Meta, so it finds more buyers like her
+ Illustrative.
 
- Each platform has its own integration and its own catalogue of supported campaign types, built for that platform, not a lowest-common-denominator form.
+ Audience From the segment “bridal buyers, last 2 years” and people like them 
+ Creatives AI makes three images and a short video from your catalogue photos 
+ Approved You approve the plan and the budget cap 
+ Published Live on Meta: Instagram and Facebook 
+ Click to WhatsApp Each click opens a chat in your team inbox 
+ Priced reply The chat gets pieces at today’s rate 
+ Bill She buys at the counter 
+ Reported back The sale is sent to Meta, so it finds more buyers like her 
 
-## Automatic publishing to Meta & Google
+ SIX JOBS, ONE ADS MANAGER
 
- Approve a campaign in the wizard and Jwero calls the Meta Graph API and Google Ads API directly to create the live budget, campaign, ad sets and creatives, not a draft you copy-paste in elsewhere.
+## What jewellery ads software has to do.
 
-## Google Search, Performance Max & Shopping
+## 1. Meta and Google, one place
+ Plan, approve and publish to Instagram, Facebook, Google Search, Performance Max and Shopping. Pinterest is rolling out.
+ Google Shopping feed → 
 
- Google campaigns cover Search (with server-side checks, e.g. at least three headlines before it lets you submit), Performance Max, and Shopping campaigns linked to your jewellery catalogue.
+## 2. Ads that start a WhatsApp chat
+ Click-to-WhatsApp ads open a chat in your team inbox, answered with pieces priced at today’s rate, and followed up until a visit or a bill.
+ WhatsApp API for jewellers → 
 
-## Meta Advantage+ & lead-gen forms
+## 3. Audiences from your customers
+ Segments such as bridal buyers or quiet customers become audiences, with people like them, and ads are generated for each.
+ Segments → 
 
- Meta campaigns include Advantage+ automated campaigns and native lead-gen ad forms, alongside standard campaign types.
+## 4. Creatives made for you
+ AI makes images, copy and short video clips from your catalogue photos. You edit and approve.
+ Social media → 
 
-## Create/edit wizard
+## 5. Your budget, protected
+ Approval before anything publishes, caps per campaign and day, alerts as spend grows, autopilot only within your limits, and one switch to stop.
+ AI governance → 
 
- One guided flow to build and adjust a campaign, instead of relearning three different ad-platform interfaces.
+## 6. What the ads actually sold
+ Chats, visits and bills traced to each ad, return on spend in rupees, and sales reported back to Meta and Google automatically.
+ Reports → 
 
-## Budget alerts
+ THE ARITHMETIC
 
- An automated monitoring worker watches spend and flags a campaign as it approaches its limit, before the spend can surprise you.
+## The real return on your ad spend.
 
-## Approval before spend
+ Your numbers, not ours.
 
- Every campaign passes an approval step in the wizard before Jwero submits it to the ad platform. Nobody spends the marketing budget by accident.
+ Ad spend a month, ₹ 
+ WhatsApp chats per ₹1,000 
+ Chats that visit, % 
+ Visitors who buy, % 
+ Average bill, ₹ 
 
-## AI opportunity analysis
+ WhatsApp chats 0 
 
- The AI strategist surfaces where a campaign is underperforming or where there’s budget headroom worth using, based on your performance data, a draft recommendation you review, not generative copywriting. It doesn’t write your ad headlines or body copy; those are still entered by hand in the wizard.
+ Customers who buy 0 
 
-## Learnings dashboards
+ Sales from the ads ₹0 
 
- Performance and learnings in one view across platforms, so you compare Meta against Google against Pinterest without exporting three reports.
+ Sales per ₹1 spent 0 
+
+ A planning estimate from your own inputs. Results depend on your market, offer and creatives.
+
+ COMPARE
+
+## An agency, doing it yourself, or Jwero.
+
+ An agency Doing it in Meta and Google Jwero ads manager 
+ Meta and Google from one place The agency’s logins Two ad managers Yes, plus Pinterest rolling out 
+ Click-to-WhatsApp ads into a team inbox Chats on someone’s phone Chats on one phone Yes, answered with prices at today’s rate 
+ Audiences from your own customers Rarely Uploaded lists Segments, with ads generated for them 
+ Creatives Agency fee You make them AI images, copy and short video 
+ Budget control Monthly report You watch it Approval, caps, alerts and one switch to stop 
+ Sales from the counter sent back to the platforms No Manual uploads Yes, automatically 
+ Return on spend Clicks and leads Clicks Rupees of bills per rupee spent 
+
+ YOUR FIRST AD
+
+## How to run ads for a jewellery shop.
+
+ Five steps.
+
+ 1 
+
+## Connect your ad accounts
+ Your own Meta and Google accounts stay yours; Jwero connects to them.
+
+ 2 
+
+## Pick the audience
+ A segment from your customers, or people like them.
+
+ 3 
+
+## Let AI make the creatives
+ Images, copy and short video from your catalogue photos; edit what you like.
+
+ 4 
+
+## Set the budget and approve
+ A cap per campaign and per day; nothing publishes until you approve.
+
+ 5 
+
+## Watch what it sold
+ Chats, visits and bills, with sales sent back to Meta and Google automatically.
+
+ More: Google and Instagram ads for jewellers · Google Ads for jewellery stores · Facebook ads for jewellery stores 
 
  BECAUSE IT'S ONE SYSTEM
 
- The lead a campaign brings in lands on the same customer record your WhatsApp, Instagram and CRM already use, no separate ads dashboard to reconcile.
- Budget alerts and approvals sit next to the same governance pattern the AI workforce uses everywhere else on Jwero: drafts, never spends, without a human saying yes.
- Traffic Optimize tracks on your website often started as a click on one of these campaigns, see Optimize for what happens after the click.
- Running organic posts alongside paid campaigns? Social Media Management covers scheduling and the unified inbox on the same customer record.
-
- WHAT WE DON'T DO YET
-
- Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
-
- Pinterest publishing is still rolling out and not yet uniformly live, Meta and Google campaigns publish directly to the ad platform once approved; ask us for Pinterest's current status on your account.
- The AI strategist analyzes performance and drafts opportunities for you to review, it does not write your ad headlines or body copy today; those are still entered by hand in the campaign wizard.
- 
- See the full public roadmap → 
-
- ADS MANAGER QUESTIONS
-
-## Budget control, publishing, and what the AI does.
-
- Does Jwero publish my campaign straight to the ad platform? 
- Yes, for Meta and Google, approve a campaign in the wizard and Jwero submits it directly via the Meta Graph API and Google Ads API to create the budget, campaign, ad sets and creatives. Pinterest publishing is still rolling out.
-
- Can the AI spend my budget without me knowing? 
- No, it drafts opportunity analysis and learnings, not ad copy, and never spends. Every campaign needs your approval in the wizard before Jwero calls the ad platform.
-
- Which platforms are covered? 
- Meta Ads, Google Ads and Pinterest. Google spans Search, Performance Max and Shopping; Meta spans standard campaigns, Advantage+ and lead-gen forms.
-
- More questions? See the full FAQ → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Every chat button on this site is the actual product, not a mockup, send one message and see for yourself.
+ The audience an ad reaches is the same segment your WhatsApp campaign and journeys use.
+ A chat from an ad lands on the customer’s record, so the sale at the counter is traced back to the ad.
+ Sales reported back to Meta and Google teach the platforms who your real buyers are.
 
 ## Run ads without losing sight of the budget.
 
- Approve a campaign in the wizard and Jwero publishes it straight to Meta and Google, budget alerts and an approval step keep you in control. See it work on your own accounts.
+ Tell us your budget and who you want to reach. We will show the plan and the creatives.
 
  Chat or call with us 
  Book a demo 
@@ -3039,23 +3082,32 @@ ADS MANAGER
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: Which ad platforms does Jwero manage?
-A: Meta Ads, Google Ads and Pinterest, each with its own integration and campaign-type catalogue. Google covers Search, Performance Max and Shopping (linked to your jewellery catalogue); Meta covers standard campaigns, Advantage+ automated campaigns and lead-gen ad forms.
+Q: What is the best way to advertise a jewellery shop?
+A: Ads that start a conversation usually work best for jewellery: click-to-WhatsApp ads on Instagram and Facebook, Google Search for people looking for a jeweller nearby, and Google Shopping with prices that follow the gold rate. Target your own customers and people like them, and judge ads by the bills they produce.
 
-Q: Does Jwero publish my campaign straight to the ad platform?
-A: Yes, for Meta and Google. Once you approve a campaign in the wizard, Jwero calls the Meta Graph API and Google Ads API directly to create the live budget, campaign, ad sets and creatives, it doesn't hand you a draft to copy-paste. Pinterest publishing is still rolling out; ask us for its current status on your account.
+Q: Do click-to-WhatsApp ads work for jewellers?
+A: They suit jewellery well, because customers want to ask about a piece and a price before visiting. Jwero runs them so each click becomes a chat in your team inbox, answered with pieces priced at today’s rate.
+
+Q: How do jewellers measure return on ad spend?
+A: By tracing ads to chats, visits and bills, not clicks. Jwero reports the rupees of sales per rupee spent and sends counter and online sales back to Meta and Google, so the platforms find more real buyers.
+
+Q: Should I use an agency or run ads myself?
+A: Run them yourself in Jwero, with AI making the creatives and your budget capped, or let Jwero’s team run them for you. Either way the ads, chats and sales stay on your own records.
+
+Q: How much should a jeweller spend on ads?
+A: Start small, with a daily cap, on one audience and one ad type, measure the bills it brings, and increase only what pays. There is no right number without your own results.
+
+Q: Which ad platforms does Jwero cover?
+A: Meta (Instagram and Facebook, including Advantage+ and lead forms) and Google (Search, Performance Max and Shopping), published directly once you approve. Pinterest publishing is rolling out.
+
+Q: Can AI make jewellery ad creatives?
+A: Yes. AI makes images, ad copy and short video clips from your catalogue photos; you edit and approve them before they run.
 
 Q: Can the AI spend my budget without me knowing?
-A: No. The AI strategist analyzes performance and surfaces opportunities and learnings for you to review, it does not write your ad headlines or copy, and it never spends on its own. Approval happens in the wizard before Jwero ever calls the ad platform; nothing goes live without you saying yes first.
-
-Q: What happens if I go over budget?
-A: An automated monitoring worker watches spend and alerts you as campaigns approach their limits, so overspend is something you catch early, not something you discover on the invoice.
-
-Q: How is this different from managing ads inside Meta or Google directly?
-A: You get one wizard for campaign creation across all three platforms, one place for budget alerts and approvals, and, for Meta and Google, automatic publishing straight from that wizard, instead of three separate ad managers with three separate logins.
+A: No. Nothing publishes without your approval, every campaign has a cap, you get alerts as spend grows, and one switch stops it all.
 
 Q: Does this replace my existing ad accounts?
-A: No, it connects to and manages your existing Meta, Google and Pinterest ad accounts from inside Jwero, rather than replacing them.
+A: No. Your Meta and Google accounts stay yours; Jwero connects to them.
 
 ---
 
@@ -28685,14 +28737,14 @@ ADS FOR JEWELLERS
  Can I advertise my jewellery shop on ChatGPT? 
  Advertising inside AI assistants is new. Ask us about its status for your account before planning a budget around it.
 
- Which ad platforms does Jwero manage? 
- Meta Ads, Google Ads and Pinterest, each with its own integration and campaign-type catalogue. Google covers Search, Performance Max and Shopping (linked to your jewellery catalogue); Meta covers standard campaigns, Advantage+ automated campaigns and lead-gen ad forms.
+ What is the best way to advertise a jewellery shop? 
+ Ads that start a conversation usually work best for jewellery: click-to-WhatsApp ads on Instagram and Facebook, Google Search for people looking for a jeweller nearby, and Google Shopping with prices that follow the gold rate. Target your own customers and people like them, and judge ads by the bills they produce.
 
- Does Jwero publish my campaign straight to the ad platform? 
- Yes, for Meta and Google. Once you approve a campaign in the wizard, Jwero calls the Meta Graph API and Google Ads API directly to create the live budget, campaign, ad sets and creatives, it doesn't hand you a draft to copy-paste. Pinterest publishing is still rolling out; ask us for its current status on your account.
+ Do click-to-WhatsApp ads work for jewellers? 
+ They suit jewellery well, because customers want to ask about a piece and a price before visiting. Jwero runs them so each click becomes a chat in your team inbox, answered with pieces priced at today’s rate.
 
- Can the AI spend my budget without me knowing? 
- No. The AI strategist analyzes performance and surfaces opportunities and learnings for you to review, it does not write your ad headlines or copy, and it never spends on its own. Approval happens in the wizard before Jwero ever calls the ad platform; nothing goes live without you saying yes first.
+ How do jewellers measure return on ad spend? 
+ By tracing ads to chats, visits and bills, not clicks. Jwero reports the rupees of sales per rupee spent and sends counter and online sales back to Meta and Google, so the platforms find more real buyers.
 
  Related: Ads Manager · Website analytics · Instagram and Facebook · Instagram for jewellers 
 
@@ -28722,14 +28774,14 @@ A: There is no one figure. Start small, measure which ad produces bills, not cli
 Q: Can I advertise my jewellery shop on ChatGPT?
 A: Advertising inside AI assistants is new. Ask us about its status for your account before planning a budget around it.
 
-Q: Which ad platforms does Jwero manage?
-A: Meta Ads, Google Ads and Pinterest, each with its own integration and campaign-type catalogue. Google covers Search, Performance Max and Shopping (linked to your jewellery catalogue); Meta covers standard campaigns, Advantage+ automated campaigns and lead-gen ad forms.
+Q: What is the best way to advertise a jewellery shop?
+A: Ads that start a conversation usually work best for jewellery: click-to-WhatsApp ads on Instagram and Facebook, Google Search for people looking for a jeweller nearby, and Google Shopping with prices that follow the gold rate. Target your own customers and people like them, and judge ads by the bills they produce.
 
-Q: Does Jwero publish my campaign straight to the ad platform?
-A: Yes, for Meta and Google. Once you approve a campaign in the wizard, Jwero calls the Meta Graph API and Google Ads API directly to create the live budget, campaign, ad sets and creatives, it doesn't hand you a draft to copy-paste. Pinterest publishing is still rolling out; ask us for its current status on your account.
+Q: Do click-to-WhatsApp ads work for jewellers?
+A: They suit jewellery well, because customers want to ask about a piece and a price before visiting. Jwero runs them so each click becomes a chat in your team inbox, answered with pieces priced at today’s rate.
 
-Q: Can the AI spend my budget without me knowing?
-A: No. The AI strategist analyzes performance and surfaces opportunities and learnings for you to review, it does not write your ad headlines or copy, and it never spends on its own. Approval happens in the wizard before Jwero ever calls the ad platform; nothing goes live without you saying yes first.
+Q: How do jewellers measure return on ad spend?
+A: By tracing ads to chats, visits and bills, not clicks. Jwero reports the rupees of sales per rupee spent and sends counter and online sales back to Meta and Google, so the platforms find more real buyers.
 
 ---
 

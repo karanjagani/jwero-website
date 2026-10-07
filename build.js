@@ -396,6 +396,7 @@ function journeyFix(html, p) {
     const seenQ = new Set(), norm = (q) => q.replace(/<[^>]+>/g, '').toLowerCase().replace(/[^a-z0-9ऀ-ॿ]+/g, ' ').trim();
     html = html.replace(/\s*<details class="faq-item[^"]*"[^>]*>\s*<summary>([\s\S]*?)<\/summary>[\s\S]*?<\/details>/g, (m0, q) => { const k = norm(q); if (!k) return m0; if (seenQ.has(k)) return ''; seenQ.add(k); return m0; });
   }
+  if (slug === 'ads-for-jewellers') html = html.replace(/(<section class="hero[^"]*">[\s\S]*?<\/section>)/, `$1<section class="section"><div class="container"><div class="which-page"><p><b>Looking for the software?</b> <a href="/products/ads-manager">Jewellery ads manager →</a>: Meta and Google ads, click-to-WhatsApp, AI creatives and sales reported back.</p><p><b>Reading up first?</b> This page explains how jewellers use Google and Instagram ads.</p></div></div></section>`);
   // WhatsApp articles point to the main page for their topic
   {
     const MKT = ['/whatsapp-broadcast-for-jewellers', 'WhatsApp marketing for jewellers', 'broadcasts, festival campaigns and reminders'];
@@ -1681,6 +1682,11 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 ## Jewellery marketing campaigns (facts)
 - Festival calendar with an AI campaign strategist drafting campaigns ahead; WhatsApp, RCS (live), SMS, email and push in one campaign; live segments with consent and frequency limits; A/B testing with the winner sent to the rest.
 - Catalogue cards at today's rate, coupons, gift vouchers and loyalty points; visits, bills and revenue traced by campaign and channel. Ads and social posts are run from their own tools, not from campaigns. Details: ${SITE}/products/campaigns
+
+## Jewellery ads manager (facts)
+- Meta (Instagram, Facebook, Advantage+, lead forms) and Google (Search, Performance Max, Shopping) published directly after approval; Pinterest rolling out.
+- Click-to-WhatsApp ads into the team inbox, answered with prices at today's rate; audiences and ads generated from customer segments; AI image, copy and short-video creatives.
+- Approvals, budget caps, alerts and autopilot within limits; counter and online sales reported back to Meta and Google; return on spend in rupees of bills. Details: ${SITE}/products/ads-manager
 
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
