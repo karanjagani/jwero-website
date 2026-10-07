@@ -4395,120 +4395,171 @@ A: E-invoices are generated in Tally: Jwero raises the bill and sends it through
 
 ---
 
-# Jewellery Showroom Software: Walk-in Tracking and Floor View
+# Jewellery Showroom Software: Footfall Counter, Walk-ins & Conversion
 URL: https://jwero.ai/products/showroom
 
-Walk-in check-in, a live floor view, Walkout Rescue drafts and rule-based store alerts, showroom visibility built from real visit data.
+Jewellery showroom software: count footfall from your existing CCTV, check walk-ins in with their history, alert on waiting customers, log what they try, follow up walkouts, and see conversion by branch, hour and salesperson.
 
-SHOWROOM INTELLIGENCE
+SHOWROOM · FOOTFALL · CONVERSION
 
-## Know who’s on your floor, and who left without buying.
+## Jewellery showroom software: count footfall, know every walk-in, win back the ones who leave.
 
- A showroom visit is the highest-intent moment in the whole business, and most stores remember none of it. Jwero checks walk-ins in, shows who is on the floor live, records what was shown and tried, and drafts a follow-up the moment someone leaves without buying.
+ Your existing CCTV counts who comes in. The tablet at the door shows who she is and what she tried last time. Every piece shown is logged, waiting customers are flagged, and walkouts get a follow-up that names what they liked.
 
  Show me the live floor view 
  See the Jewellery CRM 
 
- WHAT A SHOWROOM LOSES TODAY
+ ONE VISIT, START TO FINISH
 
-## The visit that nobody wrote down.
+## From the door camera to a bill on Saturday.
+
+ SHOWROOM · WALK-IN TO SALE
+ 4:10 pm The door camera counts a walk-in · Meera checks in on the tablet
+ Known 3 past visits · scheme matures in 12 days · tried a necklace last time
+ On the floor Waiting 10 minutes · the floor alert calls a salesperson
+ Tried 4 pieces scanned as she tries them · an estimate for one
+ Walkout Leaves without buying · reason: price
+ Rescue A WhatsApp naming those pieces drafted · staff send it that evening
+ Sold Back on Saturday · the bill links to her visit
+ Illustrative.
+
+ 4:10 pm The door camera counts a walk-in 
+ Known 3 past visits 
+ On the floor Waiting 10 minutes 
+ Tried 4 pieces scanned as she tries them 
+ Walkout Leaves without buying 
+ Rescue A WhatsApp naming those pieces drafted 
+ Sold Back on Saturday 
+
+ SIX JOBS, ONE FLOOR
+
+## What showroom software has to do for a jeweller.
+
+## 1. Footfall from your cameras
+ Existing CCTV or NVR (Hikvision, Dahua, CP Plus, ONVIF) counts entries, exits and how full the floor is, through an on-site connector.
+ Privacy → 
+
+## 2. Know who walked in
+ Tablet check-in by phone number shows past visits, what she tried, and a maturing scheme. Photos only with consent.
+ Customer record → 
+
+## 3. Nobody left waiting
+ A live floor view, an alert after 10 minutes unattended, and a list of who could come in today.
+ Branches → 
+
+## 4. Every piece tried, logged
+ Scan by RFID, barcode, SKU or HUID; make an estimate or send her to the counter.
+ Inventory → 
+
+## 5. Walkouts won back
+ Rescue drafts a follow-up naming the pieces she tried; staff send it, with an evening list of who to message.
+ WhatsApp → 
+
+## 6. Conversion you can trust
+ Bills auto-link to visits; conversion by branch, hour and salesperson, revenue per square foot, and a daily brief.
+ Reports → 
+
+ THE ARITHMETIC
+
+## What walkouts cost you.
+
+ Your numbers, not ours.
+
+ Walk-ins a month 
+ Who buy today, % 
+ Walkouts won back by a follow-up, % 
+ Average bill, ₹ 
+
+ Walkouts a month 0 
+
+ Sales won back a month 0 
+
+ Revenue a month ₹0 
+
+ A planning estimate from your own inputs.
+
+ COMPARE
+
+## A register, a people counter, or Jwero.
+
+ A walk-in register A people counter Jwero 
+ Footfall A register, if filled Counted, nothing more Counted by your CCTV, and matched to visits and bills 
+ Who walked in Unknown Unknown Checked in, with her history on screen 
+ What she tried Memory No Scanned by RFID, barcode, SKU or HUID 
+ Waiting customers Noticed late No Alert after 10 minutes unattended 
+ Walkouts Gone A number A follow-up drafted naming the pieces she tried 
+ Conversion Guessed Footfall only Walk-ins to bills, by branch, hour and salesperson 
+ Who is coming Scattered No Bookings from website, calls, chat and schemes in one list 
 
  Today With Jwero 
 
- Knowing who is in the store 
-
- Today Staff eyeball the floor; there is no real headcount and no record of what a visit involved.
-
- With Jwero Walk-in Register checks customers in and out at the entrance tablet; Live Floor shows who is on the floor right now.
-
- Customers who leave without buying 
-
- Today A visit ends, the lead goes cold, and nobody follows up on what was actually shown.
-
- With Jwero Walkout Rescue queues them for follow-up and drafts a WhatsApp message naming the exact pieces tried, a staff member reviews and sends it.
-
  Knowing who is coming 
 
- Today Bookings from webchat, appointments, CRM follow-ups and calls sit in separate places; staff are caught off guard.
+ Today Bookings from the website, calls and chat sit in separate places; staff are caught off guard.
 
- With Jwero Expected Visits pulls every booking channel into one list, auto-closes it on check-in, and flags a no-show after a grace period.
+ With Jwero Expected visits gather every booking, maturing schemes included, and mark no-shows on their own.
 
- End-of-day visibility 
+ Sales without a visit 
 
- Today An owner pieces together how the day went from memory and a register, hours after it mattered.
+ Today Footfall and billing never meet, so conversion is a guess.
 
- With Jwero Daily Brief summarises footfall, conversions, walkouts and the best-performing salesperson, open it each morning and evening.
+ With Jwero Bills link to visits automatically, and unlinked sales are flagged to fix.
 
-## Every visit, from walk-in to walkout.
+ Which pieces fail 
 
-## Walk-in Register
+ Today Nobody knows what gets tried and never bought.
 
- Tablet check-in and check-out at the store entrance the moment a customer walks in, with a consent-labelled photo captured on the tablet’s camera and shown on the Live Floor card, never stored as a permanently public file.
+ With Jwero Shown, tried and bought counts per piece show what to re-price or move.
 
-## Check-in intelligence
+ GETTING STARTED
 
- Type a phone number at the register, before check-in even completes, and see visit count, why they left last time, pieces tried-not-bought, category preferences, a maturing gold scheme, and a salesperson suggestion ranked by 90-day conversion.
+## How to track footfall and conversion in a showroom.
 
-## Live Floor
+ Five steps.
 
- A real-time view for staff and owner of who is currently in the store, updating live.
+ 1 
 
-## Scan-to-log
+## Connect your cameras
+ Your existing CCTV or NVR joins through a small on-site connector; entry lines are drawn once.
 
- Log a tried piece by SKU or barcode scan in one motion, search is the fallback for a miss, not the default way of logging a visit.
+ 2 
 
-## Visit journey capture
+## Put a tablet at the door
+ Staff check customers in by phone number and see what Jwero already knows.
 
- Log which pieces were shown and tried, note a quote given, add notes, log a handover, and check the customer out, a per-visit record.
+ 3 
 
-## Per-person recommendations
+## Log what is tried
+ Scan pieces as they are shown and tried; send to the counter or make an estimate.
 
- Product suggestions with a stated reason, "new in necklaces," "tried 14 times this month", derived from that customer’s actual visit and purchase behaviour, not a generic bestseller list.
+ 4 
 
-## Shown, tried, bought
+## Follow up walkouts
+ Rescue drafts the message; staff send it the same evening.
 
- The products view shows which pieces get shown often, tried often, and actually bought, surfacing a "tried often, rarely bought" merchandising signal.
+ 5 
 
-## Store insights
+## Read the brief
+ Each morning and evening: footfall, conversion, who is expected and who to call.
 
- A small set of rule-based alerts, conversion drop, dead stock, staffing gap, walkout-reason spike, repeat non-buyer, unclosed-visit backlog. Deterministic rules, not predictive AI.
+ WHAT WE DON'T DO YET
 
-## Multi-branch comparison
+ Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
 
- For chains: revenue-per-square-foot by store, a salesperson leaderboard, walkout-reason ranking, busiest hours and conversion-by-visit-purpose, rolled up centrally.
+ Cameras count people; they do not recognise faces or identify customers.
+ Walkout follow-ups are sent by staff, and the daily brief is opened in the app; neither goes out on its own.
+ 
+ See the full public roadmap → 
 
  BECAUSE IT'S ONE SYSTEM
 
- A walk-in checked in on the tablet is matched to their existing customer record, occasions, scheme balance and past visits are already there, not a blank slate.
- A Walkout Rescue draft is written from the same customer record and catalogue pricing the CRM and catalogue already share, not a separate database that goes stale.
- A digital gold or scheme balance nearing maturity auto-populates the Expected Visits list, landed at the customer’s nearest branch with the balance and date noted, see Digital Gold and Gold Savings Schemes .
-
- SHOWROOM QUESTIONS
-
-## What sends automatically, and what still needs a person.
-
- Is Walkout Rescue automatic, or does it message customers without anyone checking? 
- No. It drafts the WhatsApp follow-up naming the pieces tried, but a staff member reviews and sends it. A rescue only counts as successful once linked to a completed sales order, never estimated.
-
- Does the Daily Brief get pushed to WhatsApp automatically? 
- Not yet, today someone has to open the Daily Brief to see it. Automatic push delivery is not built yet.
-
- More questions? See the full FAQ → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- You don’t have to take our word for it, try the chat button on this page ; it’s Jwero, live, answering.
+ A walk-in is matched to her existing customer record: occasions, scheme balance and past visits are already there.
+ Rescue messages use the same catalogue and prices as every other channel.
+ A gold scheme nearing maturity puts her on the expected-visits list at her nearest branch.
 
 ## See who is on your floor, right now.
 
- Bring one real walkout from last week, we will show you what Walkout Rescue would have drafted.
+ Bring one real walkout from last week; we will show what Walkout Rescue would have drafted.
 
  Chat or call with us 
  Book a demo 
@@ -4517,20 +4568,29 @@ SHOWROOM INTELLIGENCE
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: Does the tablet check-in use facial recognition or special hardware?
-A: No. Walk-in Register runs off a tablet at the entrance where a walk-in is checked in and out, there is no CCTV or facial-recognition automatic detection today, and no footfall door-counter hardware integration.
+Q: What is walk-in conversion in a jewellery showroom?
+A: The share of people who walk in and buy. Jwero works it out from footfall, check-ins and the bills linked to each visit, by branch, hour and salesperson.
 
-Q: Is Walkout Rescue automatic, does it message customers without anyone checking?
-A: No. It drafts a WhatsApp follow-up naming the exact pieces a customer tried, but a person on staff reviews and sends it, nothing goes out unapproved. A rescue only counts as successful once it is linked to a completed sales order afterward; it is never estimated or guessed.
+Q: How do I count footfall in my jewellery showroom?
+A: Connect your existing CCTV or NVR to Jwero through an on-site connector. Entries, exits and how full the floor is are counted; with no cameras, footfall comes from tablet check-ins.
 
-Q: Does the Daily Brief get pushed to WhatsApp automatically?
-A: Not yet. Today the owner or manager opens the Daily Brief to see the morning and evening summary, automatic push delivery to WhatsApp is not built yet.
+Q: Which cameras work?
+A: IP cameras and NVRs over RTSP, including Hikvision, Dahua and CP Plus, and ONVIF cameras.
 
-Q: Are the store insights predictive AI, or something else?
-A: They are rule-based alerts, a conversion-rate drop, dead stock needing attention, a staffing gap, a spike in a walkout reason, a repeat visitor who still has not purchased, an unclosed-visit backlog. Deterministic rules, not predictive machine learning.
+Q: Does it recognise customers’ faces?
+A: No. Cameras count people; they do not identify them. Customers are identified only when staff check them in, and photos are taken only with consent.
 
-Q: How does Jwero know a customer is coming before they walk in?
-A: Expected Visits is created automatically whenever someone books via webchat, an appointment, a CRM follow-up, a campaign, a phone call, WhatsApp, a catalogue order or the lead-finder tool. It auto-closes when they check in, and flags a no-show after a grace period, and tracks show-up rate by booking channel.
+Q: Is Walkout Rescue automatic?
+A: It drafts the follow-up naming the pieces she tried, on WhatsApp, SMS, email or a call. A staff member sends it and marks it sent; nothing goes out on its own.
+
+Q: How does Jwero know a customer is coming?
+A: Expected visits gather bookings from your website, chat, AI calls, appointments, WhatsApp, campaigns and maturing gold schemes, and mark no-shows on their own.
+
+Q: Is the daily brief sent on WhatsApp?
+A: Not yet. The morning and evening brief is opened in the app.
+
+Q: Are store insights AI?
+A: They are clear rules: conversion drops, footfall without sales, staffing gaps, walkout reasons, repeat visitors who have not bought, and cameras offline.
 
 ---
 
@@ -30071,14 +30131,14 @@ SHOWROOM FOOTFALL AND WALK-IN TRACKING
  Is camera tracking legal? 
  Showrooms may use cameras, but visitors should be told, and personal data must be handled under the data protection law. Take advice for your own case.
 
- Does the tablet check-in use facial recognition or special hardware? 
- No. Walk-in Register runs off a tablet at the entrance where a walk-in is checked in and out, there is no CCTV or facial-recognition automatic detection today, and no footfall door-counter hardware integration.
+ What is walk-in conversion in a jewellery showroom? 
+ The share of people who walk in and buy. Jwero works it out from footfall, check-ins and the bills linked to each visit, by branch, hour and salesperson.
 
- Is Walkout Rescue automatic, does it message customers without anyone checking? 
- No. It drafts a WhatsApp follow-up naming the exact pieces a customer tried, but a person on staff reviews and sends it, nothing goes out unapproved. A rescue only counts as successful once it is linked to a completed sales order afterward; it is never estimated or guessed.
+ Which cameras work? 
+ IP cameras and NVRs over RTSP, including Hikvision, Dahua and CP Plus, and ONVIF cameras.
 
- Does the Daily Brief get pushed to WhatsApp automatically? 
- Not yet. Today the owner or manager opens the Daily Brief to see the morning and evening summary, automatic push delivery to WhatsApp is not built yet.
+ Does it recognise customers’ faces? 
+ No. Cameras count people; they do not identify them. Customers are identified only when staff check them in, and photos are taken only with consent.
 
  Related: Showroom software · Jewellery CRM · For the store manager · Trust Centre 
 
@@ -30108,14 +30168,14 @@ A: It varies by store and category, so compare your own stores, salespeople and 
 Q: Is camera tracking legal?
 A: Showrooms may use cameras, but visitors should be told, and personal data must be handled under the data protection law. Take advice for your own case.
 
-Q: Does the tablet check-in use facial recognition or special hardware?
-A: No. Walk-in Register runs off a tablet at the entrance where a walk-in is checked in and out, there is no CCTV or facial-recognition automatic detection today, and no footfall door-counter hardware integration.
+Q: What is walk-in conversion in a jewellery showroom?
+A: The share of people who walk in and buy. Jwero works it out from footfall, check-ins and the bills linked to each visit, by branch, hour and salesperson.
 
-Q: Is Walkout Rescue automatic, does it message customers without anyone checking?
-A: No. It drafts a WhatsApp follow-up naming the exact pieces a customer tried, but a person on staff reviews and sends it, nothing goes out unapproved. A rescue only counts as successful once it is linked to a completed sales order afterward; it is never estimated or guessed.
+Q: Which cameras work?
+A: IP cameras and NVRs over RTSP, including Hikvision, Dahua and CP Plus, and ONVIF cameras.
 
-Q: Does the Daily Brief get pushed to WhatsApp automatically?
-A: Not yet. Today the owner or manager opens the Daily Brief to see the morning and evening summary, automatic push delivery to WhatsApp is not built yet.
+Q: Does it recognise customers’ faces?
+A: No. Cameras count people; they do not identify them. Customers are identified only when staff check them in, and photos are taken only with consent.
 
 ---
 

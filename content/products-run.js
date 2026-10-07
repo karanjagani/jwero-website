@@ -590,89 +590,128 @@ ${L.ctaBand('See operations on one record.', 'Bring one order from last month. W
 `,
 };
 
+// Showroom, rebuilt 2026-10-07 from pim-app origin/siddh-dev (commit 8e82e86e5).
+// Built: camera footfall from existing CCTV/NVR (RTSP, Hikvision, Dahua/CP Plus,
+// ONVIF) via an on-site connector; entry/exit and occupancy; tablet register
+// with consented photo and phone lookup; live floor with 10-minute wait alert;
+// visit capture by RFID/SKU/barcode/HUID scan; estimate and send-to-counter;
+// Walkout Rescue drafts marked sent by staff (never auto-sent); in-app
+// morning/evening brief; expected visits from many sources; bills auto-linked
+// within 8h; analytics incl. revenue per sq ft and salesperson leaderboard;
+// rule-based insights. NOT claimed: face recognition or recognising customers
+// by camera, QR self check-in, auto-sent rescue, brief pushed to WhatsApp,
+// AI insights, age/gender estimates (unverified live).
+const SH_FLOW = [
+  ['4:10 pm', 'The door camera counts a walk-in · Meera checks in on the tablet'],
+  ['Known', '3 past visits · scheme matures in 12 days · tried a necklace last time'],
+  ['On the floor', 'Waiting 10 minutes · the floor alert calls a salesperson'],
+  ['Tried', '4 pieces scanned as she tries them · an estimate for one'],
+  ['Walkout', 'Leaves without buying · reason: price'],
+  ['Rescue', 'A WhatsApp naming those pieces drafted · staff send it that evening'],
+  ['Sold', 'Back on Saturday · the bill links to her visit'],
+];
+const shFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">SHOWROOM · WALK-IN TO SALE</p>${SH_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${SH_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const SH_CMP = [
+  ['Footfall', 'A register, if filled', 'Counted, nothing more', 'Counted by your CCTV, and matched to visits and bills'],
+  ['Who walked in', 'Unknown', 'Unknown', 'Checked in, with her history on screen'],
+  ['What she tried', 'Memory', 'No', 'Scanned by RFID, barcode, SKU or HUID'],
+  ['Waiting customers', 'Noticed late', 'No', 'Alert after 10 minutes unattended'],
+  ['Walkouts', 'Gone', 'A number', 'A follow-up drafted naming the pieces she tried'],
+  ['Conversion', 'Guessed', 'Footfall only', 'Walk-ins to bills, by branch, hour and salesperson'],
+  ['Who is coming', 'Scattered', 'No', 'Bookings from website, calls, chat and schemes in one list'],
+];
+const shTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>A walk-in register</th><th>A people counter</th><th>Jwero</th></tr></thead><tbody>${SH_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const SH_HOW = [
+  ['Connect your cameras', 'Your existing CCTV or NVR joins through a small on-site connector; entry lines are drawn once.'],
+  ['Put a tablet at the door', 'Staff check customers in by phone number and see what Jwero already knows.'],
+  ['Log what is tried', 'Scan pieces as they are shown and tried; send to the counter or make an estimate.'],
+  ['Follow up walkouts', 'Rescue drafts the message; staff send it the same evening.'],
+  ['Read the brief', 'Each morning and evening: footfall, conversion, who is expected and who to call.'],
+];
+const shFaqs = [
+  { q: 'What is walk-in conversion in a jewellery showroom?', a: 'The share of people who walk in and buy. Jwero works it out from footfall, check-ins and the bills linked to each visit, by branch, hour and salesperson.' },
+  { q: 'How do I count footfall in my jewellery showroom?', a: 'Connect your existing CCTV or NVR to Jwero through an on-site connector. Entries, exits and how full the floor is are counted; with no cameras, footfall comes from tablet check-ins.' },
+  { q: 'Which cameras work?', a: 'IP cameras and NVRs over RTSP, including Hikvision, Dahua and CP Plus, and ONVIF cameras.' },
+  { q: 'Does it recognise customers’ faces?', a: 'No. Cameras count people; they do not identify them. Customers are identified only when staff check them in, and photos are taken only with consent.' },
+  { q: 'Is Walkout Rescue automatic?', a: 'It drafts the follow-up naming the pieces she tried, on WhatsApp, SMS, email or a call. A staff member sends it and marks it sent; nothing goes out on its own.' },
+  { q: 'How does Jwero know a customer is coming?', a: 'Expected visits gather bookings from your website, chat, AI calls, appointments, WhatsApp, campaigns and maturing gold schemes, and mark no-shows on their own.' },
+  { q: 'Is the daily brief sent on WhatsApp?', a: 'Not yet. The morning and evening brief is opened in the app.' },
+  { q: 'Are store insights AI?', a: 'They are clear rules: conversion drops, footfall without sales, staffing gaps, walkout reasons, repeat visitors who have not bought, and cameras offline.' },
+];
 const showroom = {
   slug: 'products/showroom',
-  title: 'Jewellery Showroom Software: Walk-in Tracking and Floor View | Jwero',
-  description: 'Walk-in check-in, a live floor view, Walkout Rescue drafts and rule-based store alerts — showroom visibility built from real visit data.',
+  title: 'Jewellery Showroom Software: Footfall Counter, Walk-ins & Conversion | Jwero',
+  description: 'Jewellery showroom software: count footfall from your existing CCTV, check walk-ins in with their history, alert on waiting customers, log what they try, follow up walkouts, and see conversion by branch, hour and salesperson.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Showroom Intelligence', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Walk-in check-in, a live floor view, expected-visit tracking, Walkout Rescue drafts and rule-based store alerts, sharing the same customer record as the rest of Jwero.',
+    name: 'Jwero Showroom Intelligence', alternateName: ['Footfall counter for jewellery showrooms', 'Jewellery walk-in tracking software', 'Showroom conversion analytics'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Showroom software for jewellers: footfall counted from existing CCTV or NVR cameras through an on-site connector; tablet check-in with customer history; live floor with wait alerts; visit capture by RFID, barcode, SKU or HUID scan; estimates and send-to-counter; Walkout Rescue follow-up drafts; expected visits from every booking source; bills linked to visits; conversion by branch, hour and salesperson; revenue per square foot; rule-based store insights.',
     url: 'https://jwero.ai/products/showroom', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to track footfall and conversion in a jewellery showroom', step: SH_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Showroom Intelligence'),
-  faqs: [
-    { q: 'Does the tablet check-in use facial recognition or special hardware?', a: 'No. Walk-in Register runs off a tablet at the entrance where a walk-in is checked in and out — there is no CCTV or facial-recognition automatic detection today, and no footfall door-counter hardware integration.' },
-    { q: 'Is Walkout Rescue automatic — does it message customers without anyone checking?', a: 'No. It drafts a WhatsApp follow-up naming the exact pieces a customer tried, but a person on staff reviews and sends it — nothing goes out unapproved. A rescue only counts as successful once it is linked to a completed sales order afterward; it is never estimated or guessed.' },
-    { q: 'Does the Daily Brief get pushed to WhatsApp automatically?', a: 'Not yet. Today the owner or manager opens the Daily Brief to see the morning and evening summary — automatic push delivery to WhatsApp is not built yet.' },
-    { q: 'Are the store insights predictive AI, or something else?', a: 'They are rule-based alerts — a conversion-rate drop, dead stock needing attention, a staffing gap, a spike in a walkout reason, a repeat visitor who still has not purchased, an unclosed-visit backlog. Deterministic rules, not predictive machine learning.' },
-    { q: 'How does Jwero know a customer is coming before they walk in?', a: 'Expected Visits is created automatically whenever someone books via webchat, an appointment, a CRM follow-up, a campaign, a phone call, WhatsApp, a catalogue order or the lead-finder tool. It auto-closes when they check in, and flags a no-show after a grace period — and tracks show-up rate by booking channel.' },
-  ],
+  faqs: shFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'SHOWROOM INTELLIGENCE',
-  h1: 'Know who’s on your floor — and who left without buying.',
-  sub: 'A showroom visit is the highest-intent moment in the whole business, and most stores remember none of it. Jwero checks walk-ins in, shows who is on the floor live, records what was shown and tried, and drafts a follow-up the moment someone leaves without buying.',
+  eyebrow: 'SHOWROOM · FOOTFALL · CONVERSION',
+  h1: 'Jewellery showroom software: count footfall, know every walk-in, win back the ones who leave.',
+  sub: 'Your existing CCTV counts who comes in. The tablet at the door shows who she is and what she tried last time. Every piece shown is logged, waiting customers are flagged, and walkouts get a follow-up that names what they liked.',
   primary: { href: '#', label: 'Show me the live floor view', wa: 'showroom' },
   secondary: { href: '/products/crm', label: 'See the Jewellery CRM' },
 })}
 
-${L.section(
-  `${L.sectionHead('WHAT A SHOWROOM LOSES TODAY', 'The visit that nobody wrote down.', '')}
-  ${L.impactGrid([
-    {
-      lever: 'Knowing who is in the store',
-      before: 'Staff eyeball the floor; there is no real headcount and no record of what a visit involved.',
-      after: 'Walk-in Register checks customers in and out at the entrance tablet; Live Floor shows who is on the floor right now.',
-    },
-    {
-      lever: 'Customers who leave without buying',
-      before: 'A visit ends, the lead goes cold, and nobody follows up on what was actually shown.',
-      after: 'Walkout Rescue queues them for follow-up and drafts a WhatsApp message naming the exact pieces tried — a staff member reviews and sends it.',
-    },
-    {
-      lever: 'Knowing who is coming',
-      before: 'Bookings from webchat, appointments, CRM follow-ups and calls sit in separate places; staff are caught off guard.',
-      after: 'Expected Visits pulls every booking channel into one list, auto-closes it on check-in, and flags a no-show after a grace period.',
-    },
-    {
-      lever: 'End-of-day visibility',
-      before: 'An owner pieces together how the day went from memory and a register, hours after it mattered.',
-      after: 'Daily Brief summarises footfall, conversions, walkouts and the best-performing salesperson — open it each morning and evening.',
-    },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE VISIT, START TO FINISH', 'From the door camera to a bill on Saturday.', '')}${shFlow()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('', 'Every visit, from walk-in to walkout.', '')}
-  ${L.cards([
-    { title: 'Walk-in Register', text: 'Tablet check-in and check-out at the store entrance the moment a customer walks in, with a consent-labelled photo captured on the tablet’s camera and shown on the Live Floor card — never stored as a permanently public file.' },
-    { title: 'Check-in intelligence', text: 'Type a phone number at the register — before check-in even completes — and see visit count, why they left last time, pieces tried-not-bought, category preferences, a maturing gold scheme, and a salesperson suggestion ranked by 90-day conversion.' },
-    { title: 'Live Floor', text: 'A real-time view for staff and owner of who is currently in the store, updating live.' },
-    { title: 'Scan-to-log', text: 'Log a tried piece by SKU or barcode scan in one motion — search is the fallback for a miss, not the default way of logging a visit.' },
-    { title: 'Visit journey capture', text: 'Log which pieces were shown and tried, note a quote given, add notes, log a handover, and check the customer out — a per-visit record.' },
-    { title: 'Per-person recommendations', text: 'Product suggestions with a stated reason — "new in necklaces," "tried 14 times this month" — derived from that customer’s actual visit and purchase behaviour, not a generic bestseller list.' },
-    { title: 'Shown, tried, bought', text: 'The products view shows which pieces get shown often, tried often, and actually bought — surfacing a "tried often, rarely bought" merchandising signal.' },
-    { title: 'Store insights', text: 'A small set of rule-based alerts — conversion drop, dead stock, staffing gap, walkout-reason spike, repeat non-buyer, unclosed-visit backlog. Deterministic rules, not predictive AI.' },
-    { title: 'Multi-branch comparison', text: 'For chains: revenue-per-square-foot by store, a salesperson leaderboard, walkout-reason ranking, busiest hours and conversion-by-visit-purpose, rolled up centrally.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('SIX JOBS, ONE FLOOR', 'What showroom software has to do for a jeweller.', '')}<div class="wa-jobs">
+  <article><h3>1. Footfall from your cameras</h3><p>Existing CCTV or NVR (Hikvision, Dahua, CP Plus, ONVIF) counts entries, exits and how full the floor is, through an on-site connector.</p><a href="/trust/security">Privacy →</a></article>
+  <article><h3>2. Know who walked in</h3><p>Tablet check-in by phone number shows past visits, what she tried, and a maturing scheme. Photos only with consent.</p><a href="/products/crm">Customer record →</a></article>
+  <article><h3>3. Nobody left waiting</h3><p>A live floor view, an alert after 10 minutes unattended, and a list of who could come in today.</p><a href="/products/multi-store">Branches →</a></article>
+  <article><h3>4. Every piece tried, logged</h3><p>Scan by RFID, barcode, SKU or HUID; make an estimate or send her to the counter.</p><a href="/products/inventory">Inventory →</a></article>
+  <article><h3>5. Walkouts won back</h3><p>Rescue drafts a follow-up naming the pieces she tried; staff send it, with an evening list of who to message.</p><a href="/products/whatsapp">WhatsApp →</a></article>
+  <article><h3>6. Conversion you can trust</h3><p>Bills auto-link to visits; conversion by branch, hour and salesperson, revenue per square foot, and a daily brief.</p><a href="/products/reports">Reports →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What walkouts cost you.', 'Your numbers, not ours.')}<div class="callc" data-shc>
+  <div class="callc-in">
+    <label>Walk-ins a month<input type="number" inputmode="numeric" data-sh="n" value="900" min="0" step="50"></label>
+    <label>Who buy today, %<input type="number" inputmode="decimal" data-sh="conv" value="25" min="0" max="100"></label>
+    <label>Walkouts won back by a follow-up, %<input type="number" inputmode="decimal" data-sh="won" value="4" min="0" max="100" step="0.5"></label>
+    <label>Average bill, ₹<input type="number" inputmode="numeric" data-sh="bill" value="60000" min="0" step="1000"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Walkouts a month</span><b data-sh-o="out">0</b></p>
+    <p><span>Sales won back a month</span><b data-sh-o="won">0</b></p>
+    <p class="callc-save"><span>Revenue a month</span><b data-sh-o="rev">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'A register, a people counter, or Jwero.', '')}${shTable()}`)}
+
+${L.impactGrid([
+  { lever: 'Knowing who is coming', before: 'Bookings from the website, calls and chat sit in separate places; staff are caught off guard.', after: 'Expected visits gather every booking, maturing schemes included, and mark no-shows on their own.' },
+  { lever: 'Sales without a visit', before: 'Footfall and billing never meet, so conversion is a guess.', after: 'Bills link to visits automatically, and unlinked sales are flagged to fix.' },
+  { lever: 'Which pieces fail', before: 'Nobody knows what gets tried and never bought.', after: 'Shown, tried and bought counts per piece show what to re-price or move.' },
+])}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to track footfall and conversion in a showroom.', 'Five steps.')}${L.steps(SH_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
+
+${L.honestGapsBlock([
+  'Cameras count people; they do not recognise faces or identify customers.',
+  'Walkout follow-ups are sent by staff, and the daily brief is opened in the app; neither goes out on its own.',
+])}
 
 ${L.oneSystemBlock([
-  'A walk-in checked in on the tablet is matched to their existing customer record — occasions, scheme balance and past visits are already there, not a blank slate.',
-  'A Walkout Rescue draft is written from the same customer record and catalogue pricing the CRM and catalogue already share — not a separate database that goes stale.',
-  'A digital gold or scheme balance nearing maturity auto-populates the Expected Visits list, landed at the customer’s nearest branch with the balance and date noted — see <a href="/products/gold-schemes">Digital Gold</a> and <a href="/products/gold-schemes">Gold Savings Schemes</a>.',
+  'A walk-in is matched to her existing customer record: occasions, scheme balance and past visits are already there.',
+  'Rescue messages use the same catalogue and prices as every other channel.',
+  'A <a href="/products/gold-schemes">gold scheme</a> nearing maturity puts her on the expected-visits list at her nearest branch.',
 ])}
 
-${L.section(`${L.sectionHead('SHOWROOM QUESTIONS', 'What sends automatically, and what still needs a person.', '')}${L.faqBlock([
-  { q: 'Is Walkout Rescue automatic, or does it message customers without anyone checking?', a: 'No. It drafts the WhatsApp follow-up naming the pieces tried, but a staff member reviews and sends it. A rescue only counts as successful once linked to a completed sales order — never estimated.' },
-  { q: 'Does the Daily Brief get pushed to WhatsApp automatically?', a: 'Not yet — today someone has to open the Daily Brief to see it. Automatic push delivery is not built yet.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="showroom">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('See who is on your floor, right now.', 'Bring one real walkout from last week — we will show you what Walkout Rescue would have drafted.', 'showroom')}
+${L.ctaBand('See who is on your floor, right now.', 'Bring one real walkout from last week; we will show what Walkout Rescue would have drafted.', 'showroom')}
 `,
 };
 
