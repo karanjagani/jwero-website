@@ -361,6 +361,29 @@ function trimLong(html, slug) {
   return html.slice(0, ms) + m + html.slice(me);
 }
 function journeyFix(html, p) {
+  // Product pages: a visible question whose answer repeats a job card is dropped
+  // from the page (it stays in the FAQ schema for search and AI answers).
+  if (/^products\/[^/]+$/.test(p.slug || '')) {
+    const W = (t) => new Set((t.replace(/<[^>]*>/g, ' ').toLowerCase().match(/[a-z’]{4,}/g) || []));
+    const jobs = [...html.matchAll(/<article><h3>[\s\S]*?<\/h3><p>([\s\S]*?)<\/p>/g)].map((m) => W(m[1]));
+    if (jobs.length) {
+      let firstSeen = false;
+      html = html.replace(/<details class="faq-item"( open)?>\s*<summary>([\s\S]*?)<\/summary>\s*<div class="faq-a"><p>([\s\S]*?)<\/p><\/div>\s*<\/details>/g, (m, open, q, ans) => {
+        if (open || !firstSeen) { firstSeen = true; return m; }
+        const w = W(ans); if (w.size < 6) return m;
+        const best = Math.max(...jobs.map((j) => [...w].filter((x) => j.has(x)).length / w.size));
+        return best >= 0.85 ? '' : m;
+      });
+    }
+  }
+  // Product pages: the three-tier price block becomes one compact line; the full
+  // comparison lives on the pricing and JBaaS pages.
+  if (/^products\/[^/]+$/.test(p.slug || '')) {
+    html = html.replace(/<section class="section section-tint" id="tiers">[\s\S]*?Use it yourself, or let Jwero run it\.[\s\S]*?<\/section>/, () => `<section class="section section-tint" id="tiers"><div class="container"><div class="price-line">
+  <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Use it yourself, or let Jwero run it.</h2><p>Run Jwero yourself for ₹18,000 a month with every module, first month ₹3,600. Or let Jwero’s specialists and AI run the work for you, with no subscription and every tool included.</p></div>
+  <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=product-price">Start for ₹3,600</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
+</div></div></section>`);
+  }
   // Product pages lead with the product: the template's shift, try-it and use-case
   // blocks move from straight after the hero to after the page's six jobs.
   if (/^products\/[^/]+$/.test(p.slug || '')) {
@@ -1191,24 +1214,44 @@ function withInterlinks(body, page) {
   const pltopics = PLAT_TOPICS[slug] || TOOL_TOPICS[slug] || (ckind && CMP_TOPICS[ckind]) || null;
   const ptopics = /^products\//.test(slug) ? ((PROD_TOPICS.find(([r]) => r.test(slug)) || [, ['Technology and strategy']])[1]) : null;
   const list = (BACK['/' + slug] || []).concat(/^solutions\/(?!pain)/.test(slug) ? LEGACY.filter((p) => SOL_TOPICS[kind].includes(p.topic)) : cityKind ? LEGACY.filter((p) => SOL_TOPICS[cityKind].includes(p.topic)) : rtopics ? LEGACY.filter((p) => rtopics.includes(p.topic)) : pltopics ? LEGACY.filter((p) => pltopics.includes(p.topic)) : ptopics ? LEGACY.filter((p) => ptopics.includes(p.topic)) : []).filter((p, k, arr) => arr.indexOf(p) === k);
-  if ((!list.length && !(NEWBACK['/' + slug] || []).length) || !/^(products|solutions|platform|tools|guides|roles)\/|^platform$|^tools$|^compare|^(pricing|trust|customers|migration|enterprise|company|partners)$|^trust\/|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^cloud-|^jewellery-business-as-a-service$/.test(slug)) return body;
+  if ((!list.length && !(NEWBACK['/' + slug] || []).length && !/^products\/[^/]+$/.test(slug)) || !/^(products|solutions|platform|tools|guides|roles)\/|^platform$|^tools$|^compare|^(pricing|trust|customers|migration|enterprise|company|partners)$|^trust\/|^jewellery-|^whatsapp-|^instagram-|^ads-|^sms-|^ai-calling|^cloud-|^jewellery-business-as-a-service$/.test(slug)) return body;
   const INHERIT = { 'solutions/manufacturers': 'products/manufacturing', 'solutions/cad-services': 'products/manufacturing', 'solutions/casting-units': 'products/manufacturing', 'solutions/oem-manufacturers': 'products/manufacturing', 'solutions/export-houses': 'products/manufacturing',
     'solutions/single-store': 'products/pos', 'solutions/gold-retail': 'products/pos', 'solutions/diamond-retail': 'products/pos', 'solutions/bridal': 'products/pos', 'solutions/gemstone-retail': 'products/pos', 'solutions/luxury-boutique': 'products/pos', 'solutions/startups': 'products/pos',
     'solutions/multi-store-chains': 'products/multi-store', 'solutions/gold-wholesale': 'products/inventory', 'solutions/bullion-gold-traders': 'products/inventory', 'solutions/diamond-wholesale': 'products/inventory',
     'roles/accountant': 'products/billing-finance', 'roles/cashier': 'products/pos', 'roles/inventory-manager': 'products/inventory', 'roles/production-manager': 'products/manufacturing', 'roles/karigar': 'products/manufacturing', 'roles/quality-hallmarking': 'products/inventory', 'roles/b2b-manager': 'products/inventory', 'roles/purchase-manager': 'products/inventory', 'roles/store-manager': 'products/pos', 'roles/owner': 'products/billing-finance', 'roles/chain-owner': 'products/multi-store', 'roles/crm-executive': 'products/crm', 'roles/sales-associate': 'products/pos' };
   const PIN = {
     'products/pos': ['how-to-calculate-gold-jewellery-price', 'old-gold-exchange-jewellers'],
-    'products/billing-finance': ['gst-on-jewellery-india', 'cash-limit-pan-jewellery-sale'],
-    'products/erp': ['girvi-gold-loan-business-guide', 'fine-weight-metal-ledger-jewellers'],
-    'products/manufacturing': ['karigar-wastage-norms-settlement', 'job-work-jewellery-gst-challan'],
-    'products/inventory': ['huid-hallmarking-rules-jewellers', 'approval-memo-stock-jewellery-wholesale'],
-    'products/gold-schemes': ['gold-scheme-types-11-plus-1-vs-grams', 'gold-scheme-accounting-liability'],
-    'products/multi-store': ['branch-stock-transfer-jewellery', 'jewellery-exhibition-stock-control'],
-    'products/crm': ['birthday-anniversary-marketing-jewellers', 'selling-jewellery-regional-languages'],
-    'products/journeys': ['birthday-anniversary-marketing-jewellers', 'ai-calling-jewellers-scheme-reminders'],
-    'products/whatsapp': ['selling-jewellery-regional-languages', 'birthday-anniversary-marketing-jewellers'],
-    'products/ecommerce': ['selling-gold-jewellery-online-live-rate', 'how-to-calculate-gold-jewellery-price'],
-    'products/catalog': ['selling-gold-jewellery-online-live-rate', 'making-charges-explained'],
+    'products/billing-finance': ['gst-on-jewellery-india', 'jewellery-software-and-tally'],
+    'products/erp': ['jewellery-crm-vs-erp-difference', 'fine-weight-metal-ledger-jewellers'],
+    'products/whatsapp': ['ai-whatsapp-chatbot-jewellery-shop', 'whatsapp-for-jewellers-guide'],
+    'products/instagram-facebook': ['ai-instagram-dm-automation-jewellers', 'ai-video-jewellery-reels'],
+    'products/ai-sales-agents': ['ai-agents-for-jewellers', 'is-ai-safe-for-jewellery-business'],
+    'products/meetings': ['virtual-try-on-jewellery-explained', 'custom-jewellery-order-process'],
+    'products/ecommerce': ['ai-website-builder-jewellery-store', 'jewellery-search-by-photo-visual-search'],
+    'products/quotations': ['how-to-calculate-gold-jewellery-price', 'making-charges-explained'],
+    'products/digital-catalogues': ['digital-catalog-vs-pdf-jewellery', 'approval-memo-stock-jewellery-wholesale'],
+    'products/marketplaces': ['selling-gold-jewellery-online-live-rate', 'ai-jewellery-listings-from-photos'],
+    'products/ads-manager': ['ai-ads-for-jewellers', 'ai-customer-segmentation-jewellers'],
+    'products/social-media': ['ai-video-jewellery-reels', 'chatgpt-prompts-for-jewellers'],
+    'products/optimize': ['jewellery-search-by-photo-visual-search', 'ai-website-builder-jewellery-store'],
+    'products/email': ['ai-email-marketing-jewellers', 'ai-marketing-automation-jewellers'],
+    'products/campaigns': ['ai-marketing-automation-jewellers', 'birthday-anniversary-marketing-jewellers'],
+    'products/journeys': ['ai-marketing-automation-jewellers', 'birthday-anniversary-marketing-jewellers'],
+    'products/crm': ['ai-customer-scoring-jewellers', 'ai-lead-finder-jewellers'],
+    'products/segmentation': ['ai-customer-segmentation-jewellers', 'birthday-anniversary-marketing-jewellers'],
+    'products/loyalty': ['birthday-anniversary-marketing-jewellers', 'ai-customer-segmentation-jewellers'],
+    'products/showroom': ['ai-showroom-walkout-recovery', 'jewellery-showroom-footfall-conversion'],
+    'products/reports': ['ai-reports-jewellery-business', 'jewellery-demand-forecasting-ai-explained'],
+    'products/catalog': ['ai-jewellery-listings-from-photos', 'ai-jewellery-product-photos'],
+    'products/inventory': ['dead-stock-jewellery-business-guide', 'branch-stock-transfer-jewellery'],
+    'products/multi-store': ['branch-stock-transfer-jewellery', 'jewellery-franchise-control'],
+    'products/manufacturing': ['gold-loss-wastage-control-jewellery-manufacturing', 'karigar-wastage-norms-settlement'],
+    'products/purchase-vendors': ['ai-for-jewellery-wholesalers', 'approval-memo-stock-jewellery-wholesale'],
+    'products/repairs-service': ['jewellery-repair-management-custody-chain', 'jewellery-repair-job-slip-tat'],
+    'products/gold-schemes': ['ai-gold-scheme-collections', 'gold-scheme-types-11-plus-1-vs-grams'],
+    'products/girvi': ['girvi-gold-loan-business-guide', 'girvi-register-software'],
+    'products/hr-payroll': ['jewellery-staff-incentives-targets', 'selling-jewellery-regional-languages'],
+    'products/training-lms': ['jewellery-staff-incentives-targets', 'how-to-calculate-gold-jewellery-price'],
     'solutions/single-store': ['how-to-calculate-gold-jewellery-price', 'girvi-gold-loan-business-guide'],
     'solutions/gold-retail': ['how-to-calculate-gold-jewellery-price', 'old-gold-exchange-jewellers'],
     'solutions/silver-retail': ['silver-jewellery-business-pricing', 'making-charges-explained'],
@@ -1250,7 +1293,7 @@ function withInterlinks(body, page) {
     'jewellery-barcode-tagging-software': ['huid-hallmarking-rules-jewellers', 'branch-stock-transfer-jewellery'],
     'jewellery-staff-management-software': ['jewellery-staff-incentives-targets', 'jewellery-showroom-footfall-conversion'],
   };
-  const ALLNEW = [].concat(require('./content/blog-rules'), require('./content/blog-ops'), require('./content/blog-growth')).map((p) => ({ slug: p.slug, title: p.title.split(' | ')[0], topic: (p.body.match(/<span>([^<]+)<\/span> · <span>\d+ min read/) || [])[1] || 'Guide', date: '2026-10-06' }));
+  const ALLNEW = require('./content/blog').filter((p) => /^blog\/./.test(p.slug)).map((p) => ({ slug: p.slug, title: p.title.split(' | ')[0], topic: (p.body.match(/<span>([^<]+)<\/span> · <span>\d+ min read/) || [])[1] || 'Guide', date: '2026-10-06' }));
   const pinned = (PIN[slug] || []).map((k) => ALLNEW.find((p) => p.slug === 'blog/' + k)).filter(Boolean);
   const fresh = pinned.length ? pinned : [...new Set((NEWBACK['/' + slug] || []).concat(INHERIT[slug] ? NEWBACK['/' + INHERIT[slug]] || [] : []))].slice(0, 2);
   const pick = fresh.concat(list.filter((p) => !fresh.includes(p)).slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4 - fresh.length));

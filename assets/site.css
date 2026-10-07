@@ -4484,3 +4484,9 @@ body.is-scrolled.on-panel .site-header .logo-wm-light, .on-dark .logo-wm-light {
 .cmp-tabbed .cmp-row.is-on .cmp-lever b { visibility: hidden; }
 .cmp-tabbed .cmp-row.is-on .cmp-lever { margin-bottom: 8px; }
 .cmp-tabs { position: relative; }
+/* Product pages: compact price line in place of the three tier cards */
+.price-line { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); }
+.price-line h2 { margin: 6px 0 10px; font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
+.price-line p:not(.eyebrow) { color: var(--ink-2); margin: 0; }
+.price-line-cta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: flex-end; }
+@media (max-width: 760px) { .price-line { grid-template-columns: 1fr; } .price-line-cta { justify-content: flex-start; } }
