@@ -2960,7 +2960,7 @@ document.addEventListener('click', function (e) {
   var PAGE = 24, shown = PAGE, topic = '', term = '';
   function render() {
     var words = term.toLowerCase().split(/\s+/).filter(Boolean), match = [];
-    cards.forEach(function (c) { var ok = (!topic || c.getAttribute('data-t') === topic) && words.every(function (w) { return c.getAttribute('data-q').indexOf(w) > -1; }); if (ok) match.push(c); c.classList.add('is-hidden'); });
+    cards.forEach(function (c) { var ok = (!topic || c.getAttribute('data-t') === topic) && words.every(function (w) { return (' ' + c.getAttribute('data-q').replace(/[^a-z0-9\u0900-\u097f]+/g, ' ')).indexOf(' ' + w) > -1; }); if (ok) match.push(c); c.classList.add('is-hidden'); });
     var filtering = !!(topic || words.length), limit = filtering ? match.length : shown;
     match.slice(0, limit).forEach(function (c) { c.classList.remove('is-hidden'); });
     if (start) start.hidden = filtering;

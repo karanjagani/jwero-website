@@ -1184,7 +1184,7 @@ ${L.ctaBand('See the compliance controls in a demo.', 'Bring your current scheme
 `,
 };
 
-const BLOG_ARTICLES = [whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide, crmErpGuide, checklistGuide, weddingGuide, costGuide, bestSoftwareGuide, goldRateGuide, startOnlineGuide, waPricingGuide, schemesLegalGuide].concat(require('./blog-rules'), require('./blog-ops'), require('./blog-growth'));
+const BLOG_ARTICLES = [whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide, crmErpGuide, checklistGuide, weddingGuide, costGuide, bestSoftwareGuide, goldRateGuide, startOnlineGuide, waPricingGuide, schemesLegalGuide].concat(require('./blog-rules'), require('./blog-ops'), require('./blog-growth'), require('./blog-ai'));
 blogHub.body = hubBody(BLOG_ARTICLES);
 
-module.exports = [blogHub, whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide, crmErpGuide, checklistGuide, weddingGuide, costGuide, bestSoftwareGuide, goldRateGuide, startOnlineGuide, waPricingGuide, schemesLegalGuide].concat(require('./blog-rules'), require('./blog-ops'), require('./blog-growth'));
+module.exports = [blogHub, whatsappGuide, deadStockGuide, schemeGuide, tallyGuide, goldLossGuide, repairGuide, huidGuide, catalogGuide, crmErpGuide, checklistGuide, weddingGuide, costGuide, bestSoftwareGuide, goldRateGuide, startOnlineGuide, waPricingGuide, schemesLegalGuide].concat(require('./blog-rules'), require('./blog-ops'), require('./blog-growth'), require('./blog-ai'));

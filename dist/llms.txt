@@ -417,6 +417,30 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Running a Jewellery Franchise: What the Franchisor Should Control: https://jwero.ai/blog/jewellery-franchise-control
 - Silver Jewellery Business: Pricing, Making, Wastage and Margins: https://jwero.ai/blog/silver-jewellery-business-pricing
 - Lab-Grown Diamonds: Pricing, Disclosure and Selling Them Next to Natural: https://jwero.ai/blog/lab-grown-diamond-jewellery-selling
+- AI Agents for Jewellers: What They Do, and How You Stay in Control: https://jwero.ai/blog/ai-agents-for-jewellers
+- AI WhatsApp Chatbot for a Jewellery Shop: What It Should Answer: https://jwero.ai/blog/ai-whatsapp-chatbot-jewellery-shop
+- AI Instagram DM Automation for Jewellers: Comments to Sales: https://jwero.ai/blog/ai-instagram-dm-automation-jewellers
+- Voice AI in Hindi and Regional Languages for Jewellers: https://jwero.ai/blog/voice-ai-hindi-jewellery-business
+- AI for Gold Scheme Collections: Reminders, Calls and Auto-Collect: https://jwero.ai/blog/ai-gold-scheme-collections
+- ChatGPT Prompts for Jewellers, and When a Jewellery Tool Is Better: https://jwero.ai/blog/chatgpt-prompts-for-jewellers
+- AI Jewellery Listings from Photos: Descriptions, Tags and Captions: https://jwero.ai/blog/ai-jewellery-listings-from-photos
+- AI Jewellery Product Photos: Clean Backgrounds and Edits Without a Studio: https://jwero.ai/blog/ai-jewellery-product-photos
+- AI Video for Jewellery Reels and Social Posts: https://jwero.ai/blog/ai-video-jewellery-reels
+- AI Ads for Jewellers: Creatives, Audiences and Budgets: https://jwero.ai/blog/ai-ads-for-jewellers
+- AI Email Marketing for Jewellers: Write, Test and Track: https://jwero.ai/blog/ai-email-marketing-jewellers
+- AI Customer Segmentation for Jewellers: Who to Contact, and Why: https://jwero.ai/blog/ai-customer-segmentation-jewellers
+- Customer Scoring for Jewellers: Who Is Ready to Buy, Explained: https://jwero.ai/blog/ai-customer-scoring-jewellers
+- Ask Your Jewellery Business a Question: AI Reports: https://jwero.ai/blog/ai-reports-jewellery-business
+- Connect ChatGPT or Claude to Your Jewellery Business Data: https://jwero.ai/blog/connect-chatgpt-claude-to-jewellery-business
+- Is AI Safe for a Jewellery Business? Approvals, Limits and Data: https://jwero.ai/blog/is-ai-safe-for-jewellery-business
+- What Does AI Cost a Jewellery Business?: https://jwero.ai/blog/ai-cost-for-jewellers
+- AI Website Builder for a Jewellery Store: Sections in Minutes: https://jwero.ai/blog/ai-website-builder-jewellery-store
+- AI in the Jewellery Showroom: Footfall, Walkouts and Follow-Ups: https://jwero.ai/blog/ai-showroom-walkout-recovery
+- AI for Jewellery Wholesalers and Manufacturers: https://jwero.ai/blog/ai-for-jewellery-wholesalers
+- Virtual Try-On for Jewellery: What It Is and Who Needs It: https://jwero.ai/blog/virtual-try-on-jewellery-explained
+- AI Demand Forecasting for Jewellery: What Works Today: https://jwero.ai/blog/jewellery-demand-forecasting-ai-explained
+- 7 AI Mistakes Jewellers Make, and How to Avoid Them: https://jwero.ai/blog/ai-mistakes-jewellers-make
+- AI Marketing Automation for Jewellers: Journeys in Plain English: https://jwero.ai/blog/ai-marketing-automation-jewellers
 - Roles, Everyone Jwero Touches in a Jewellery Business: https://jwero.ai/roles
 - Owner / Proprietor, Run the Shop From a Record You Own: https://jwero.ai/roles/owner
 - Multi-Store & Chain Owner, One System, Every Branch: https://jwero.ai/roles/chain-owner
