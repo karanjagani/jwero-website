@@ -6867,16 +6867,16 @@ A: A validity window is on every quotation. Whether the rate is protected inside
 
 ---
 
-# Digital Catalogue App for Jewellers: Live Prices
+# Digital Catalogue App for Jewellers: Share on WhatsApp, Live Prices
 URL: https://jwero.ai/products/digital-catalogues
 
-Curated catalogue links per customer, buyer or season, priced at the live rate, shared on WhatsApp with a ready caption; every open and view tracked on the record; requests become quotations; checkout with advance payment; the same products published to Meta commerce catalogues.
+Digital jewellery catalogues: share an online catalogue on WhatsApp at today’s gold rate, hide prices or password protect it, give B2B buyers their own pricing, see who viewed what, and take quotes and advance payments.
 
-DIGITAL CATALOGUES
+DIGITAL JEWELLERY CATALOGUE
 
-## Share a catalogue. Know exactly who looked, at what, for how long.
+## Digital catalogue for jewellers: share on WhatsApp, see who viewed what, take the order.
 
- Curated links per customer, per family, per buyer or per season, priced live, shared on WhatsApp with the caption written for you, and reporting every open and request back to the record.
+ A live link instead of a PDF. Prices at today’s rate or hidden, private with a password, buyer pricing for B2B, and your team told the moment she opens it.
 
  Send me a live catalogue link 
  See the Catalogue (PIM) 
@@ -6893,31 +6893,91 @@ DIGITAL CATALOGUES
 
  A catalogue is a first-party page: every open, view and request writes to the record, no snippet to install.
 
-## Curated, not the whole shop
+ ONE SHARE, START TO FINISH
 
- A slice of the master catalogue with its own number and visibility, one client, one family, one retailer, one season.
+## From a WhatsApp link to an advance paid.
 
-## Live-rate pricing
+ DIGITAL CATALOGUE · SHARE TO ORDER
+ Picked 12 bridal necklaces for the Shah family
+ Shared Link sent on WhatsApp · caption written by AI
+ Opened Opened 6 times by the family · your team is notified
+ Viewed 3 minutes on one temple necklace
+ Requested Quote requested for that piece
+ Quoted Numbered quotation at today’s rate
+ Paid Advance paid on the link · piece reserved
+ Illustrative.
 
- Same engine as the counter. A rate move reprices every open link; a held price has a validity window.
+ Picked 12 bridal necklaces for the Shah family 
+ Shared Link sent on WhatsApp 
+ Opened Opened 6 times by the family 
+ Viewed 3 minutes on one temple necklace 
+ Requested Quote requested for that piece 
+ Quoted Numbered quotation at today’s rate 
+ Paid Advance paid on the link 
 
-## Share with a caption
+ SIX JOBS, ONE LINK
 
- The WhatsApp caption drafts from the pieces inside; you edit, approve, send.
+## What a digital jewellery catalogue has to do.
 
-## Tracked without a snippet
+## 1. The right pieces for each person
+ A chosen set for one customer, family, buyer or season, taken from your catalogue.
+ Catalogue → 
 
- Opens, views, dwell time, requests, first-party pages, so it just works. Everything writes to her record and her intent score.
+## 2. Prices your way
+ Today’s rate, a price held for a named customer, hidden, or on request.
+ Pricing engine → 
 
-## Request → quotation
+## 3. Shared on WhatsApp
+ The caption is written for you; send to one customer or a segment.
+ WhatsApp → 
 
- A request from the link becomes a numbered quotation in one call.
+## 4. Know who looked
+ Your team is notified when she opens it; pieces viewed and time spent go on her record.
+ Customer record → 
 
- See Quotations → 
+## 5. From interest to order
+ A request becomes a numbered quotation, and she pays an advance or in full on the link.
+ Quotations → 
 
-## Checkout & advance
+## 6. Private and B2B ready
+ Password-protected links, and buyer links that carry each buyer’s own pricing.
+ Wholesale and B2B → 
 
- Full or advance payment on the link; order, payment and stock post once.
+ THE ARITHMETIC
+
+## What a PDF catalogue costs you.
+
+ Your numbers, not ours.
+
+ Customers you send a catalogue to, a month 
+ Who ask about a piece from a PDF, % 
+ Who ask when you follow up the ones who looked, % 
+ Of those, who buy, % 
+ Average bill, ₹ 
+
+ Extra enquiries a month 0 
+
+ Extra sales a month 0 
+
+ Extra revenue a month ₹0 
+
+ A planning estimate from your own inputs.
+
+ COMPARE
+
+## A PDF, a generic catalogue app, or Jwero.
+
+ PDF or photos on WhatsApp A generic catalogue app Jwero 
+ Prices Fixed the day it was made Updated by hand Today’s rate, or held for a named customer 
+ Hide prices Make another PDF Yes Hidden, shown, or on request 
+ Who viewed what No idea Views Opens, pieces and time spent, on her record 
+ When she opens it You never know Some apps Your team is notified 
+ Private links Forwarded anywhere Varies Password protected 
+ B2B buyers One PDF for all Price lists Each buyer link carries its own pricing 
+ From interest to order Back to chat Order form Request to quotation to advance payment 
+ Same record as the counter No Separate app Yes, one catalogue and one customer record 
+
+ See Jwero vs QuickSell .
 
  Today With Jwero 
 
@@ -6925,7 +6985,7 @@ DIGITAL CATALOGUES
 
  Today A PDF with last week’s prices.
 
- With Jwero A buyer link with their terms and today’s rate; you see what they lingered on.
+ With Jwero A buyer link with their own pricing and today’s rate; you see what they lingered on.
 
  A bride’s family wants to compare See bridal → 
 
@@ -6937,18 +6997,44 @@ DIGITAL CATALOGUES
 
  Today A forwarded PDF; no idea who cared.
 
- With Jwero A segment gets the link; 29 opens and 7 requests are on the records by evening.
+ With Jwero A segment gets the link; the opens and requests are on the records by evening.
 
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Message us, we will send a real catalogue link and show you what it reports back.
+ GETTING STARTED
+
+## How to make a digital jewellery catalogue.
+
+ Five steps.
+
+ 1 
+
+## Pick the pieces
+ Choose from your catalogue, or start from a segment or a season.
+
+ 2 
+
+## Set prices and privacy
+ Today’s rate, a held price, prices hidden or on request; add a password if it is private.
+
+ 3 
+
+## Share on WhatsApp
+ The caption is written for you; edit and send to one customer or a segment.
+
+ 4 
+
+## Watch what happens
+ Your team is notified when she opens it and sees what she looked at.
+
+ 5 
+
+## Close it
+ Her request becomes a quotation, and she pays an advance or in full on the link.
+
+ BECAUSE IT'S ONE SYSTEM
+
+ The catalogue link prices from the same rate and record as the counter.
+ What she viewed sits on her record, ready for the next call or message.
+ Your full public store is the ecommerce website ; a digital catalogue is the private, chosen set.
 
 ## Your next catalogue share, with the report attached.
 
@@ -6961,20 +7047,29 @@ DIGITAL CATALOGUES
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: What is a digital jewellery catalogue?
+A: A live link of chosen pieces you share instead of a PDF. With Jwero it prices at today’s rate, shows who viewed what, and lets the customer request a quote or pay on the link.
+
+Q: How do I share a jewellery catalogue on WhatsApp?
+A: Pick the pieces, and Jwero creates the link with a caption written for you. Send it to one customer or a whole segment.
+
+Q: Can I see who viewed my catalogue?
+A: Yes. Opens, the pieces viewed and the time spent are written to the customer’s record, and your team is notified when she opens it.
+
+Q: Can I hide prices?
+A: Yes. Show prices at today’s rate, hide them, or show them on request.
+
+Q: Can a catalogue be private?
+A: Yes. Protect a link with a password so only the people you choose can open it.
+
+Q: Can wholesale buyers get their own prices?
+A: Yes. Each B2B buyer link carries its own pricing and terms.
+
+Q: Why not just send a PDF?
+A: A PDF has yesterday’s prices, can be forwarded anywhere, and tells you nothing. A link stays at today’s rate, can be private, and reports back.
+
 Q: How is this different from the Catalogue (PIM)?
-A: The PIM is the master: every design, purity, stone and certificate, once. A digital catalogue is a curated, shareable slice of it, a Diwali edit, a bridal shortlist for one family, a buyer link for one retailer, with its own numbering, its own visibility and its own analytics.
-
-Q: Are prices live?
-A: Yes. A catalogue prices from the same engine as the counter, so a rate change reprices every open link. You can hold a price for a named customer inside a validity window.
-
-Q: What do I learn from a share?
-A: Who opened, what she viewed and for how long, what she requested, what she checked out. Catalogues are first-party pages, so tracking is automatic, nothing to install, and it all writes to her record and her intent score.
-
-Q: Can a customer buy from it?
-A: Yes, request a quotation, or check out with an advance or full payment. Orders and payments post to the same ledger as everything else.
-
-Q: Does it feed Instagram and Facebook shops?
-A: The same products publish to Meta commerce catalogues, so a product tagged in a post is the product on your record.
+A: The catalogue holds every piece once. A digital catalogue is a chosen set from it, shared with one customer, family, buyer or season.
 
 ---
 

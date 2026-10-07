@@ -130,6 +130,14 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - The team is notified when a customer opens a link; opens, pieces viewed and time spent go on the customer record.
 - A request becomes a numbered quotation; customers pay an advance or in full on the link.
 
+## Google Shopping, Meta catalogue and Unicommerce (facts)
+
+- Page: https://jwero.ai/products/marketplaces
+- Integrated channels: Google Shopping (via Google Merchant Center), the Meta catalogue (Instagram shop, Facebook shop and WhatsApp catalogue) and Unicommerce.
+- Prices on every channel follow today's gold rate from the Jwero catalogue; no feed tool or plugin.
+- A piece sold at the counter or online is removed from every connected channel.
+- Jwero does not claim direct Amazon or Flipkart connectors.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -188,7 +196,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Girvi, Gold Loan & Pawn Broking Software for Jewellers: https://jwero.ai/products/girvi
 - Jewellery Appointment & Video Call Software: https://jwero.ai/products/meetings
 - Business Email on Your Own Domain, Inside the Same Inbox: https://jwero.ai/products/email
-- Jewellery Marketplace Integration: Amazon, Flipkart: https://jwero.ai/products/marketplaces
+- Google Shopping & Meta Catalogue Sync for Jewellers: https://jwero.ai/products/marketplaces
 - Jewellery Quotation & Estimate Software at the Live Rate: https://jwero.ai/products/quotations
 - Digital Catalogue App for Jewellers: Share on WhatsApp, Live Prices: https://jwero.ai/products/digital-catalogues
 - Jewellery MIS Reports & Dashboard Software: https://jwero.ai/products/reports

@@ -380,7 +380,7 @@
  "ecommerce-manager": {
   "short": {
    "q": "What does Jwero do for a jewellery ecommerce manager?",
-   "a": "Jwero runs a jeweller's online store from the same stock and prices as the shop. Open a Jwero store with your own design and domain, or connect Shopify, WooCommerce, Amazon or Flipkart. Publish products to channels from one screen, see orders and abandoned carts, build landing pages, and use analytics, heatmaps and A/B tests to improve the site."
+   "a": "Jwero runs a jeweller's online store from the same stock and prices as the shop. Open a Jwero store with your own design and domain, or connect Shopify or WooCommerce. Sync products to Google Shopping and the Meta catalogue, publish products to channels from one screen, see orders and abandoned carts, build landing pages, and use analytics, heatmaps and A/B tests to improve the site."
   },
   "usecases": [
    {
@@ -407,11 +407,11 @@
   "faqs": [
    {
     "q": "Can I list on Google Shopping from Jwero?",
-    "a": "Not yet. Jwero connects to Shopify, WooCommerce, Amazon and Flipkart, but Google Shopping sync is not available today, so listings there are managed outside Jwero."
+    "a": "Yes. Your catalogue syncs to Google Shopping automatically, with prices that follow today's gold rate."
    },
    {
-    "q": "Do marketplace orders come in automatically?",
-    "a": "Yes. Once Amazon and Flipkart are connected, their orders come into Jwero as sales orders, and store orders land in one order list with payment and status."
+    "q": "Do orders from other channels come in automatically?",
+    "a": "Yes. Orders from your Jwero website, Shopify, WooCommerce and Unicommerce land in one order list with payment and status."
    },
    {
     "q": "Will the AI chat agent promise customers things I cannot deliver?",

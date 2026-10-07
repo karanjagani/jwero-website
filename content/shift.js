@@ -314,11 +314,11 @@ const SHIFTS = {
     tempo: ['Someone’s Gmail', 'One inbox'],
   },
   'products/marketplaces': {
-    title: 'From three seller panels to one order ledger.',
-    today: 'Amazon and Flipkart orders are copied into a sheet; stock on the marketplace is a guess until an oversell.',
-    gone: 'The oversold piece and the re-typed order.',
-    now: 'Orders poll into the same pipeline as the counter; available stock pushes back so every door lowers one truth.',
-    tempo: ['Copied nightly', 'Polled continuously'],
+    title: 'From feeds edited by hand to one catalogue on every channel.',
+    today: 'Google Shopping and Instagram show last week’s prices, and a piece sold at the counter is still listed.',
+    gone: 'The stale price and the oversold piece.',
+    now: 'Google Shopping, the Meta catalogue and Unicommerce read from one catalogue at today’s rate; a sale anywhere removes it everywhere.',
+    tempo: ['Edited by hand', 'Synced automatically'],
   },
   'products/quotations': {
     title: 'From a price typed in chat to a quotation she accepts.',

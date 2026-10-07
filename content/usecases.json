@@ -463,8 +463,8 @@
  ],
  "marketplaces": [
   {
-   "hook": "Amazon orders get missed because nobody checks the seller panel.",
-   "does": "Connect Amazon and Flipkart; orders come into Jwero as sales orders automatically.",
+   "hook": "Google Shopping and Instagram show last week's prices.",
+   "does": "Sync your catalogue to Google Shopping and the Meta catalogue; prices follow today's rate.",
    "changes": "Marketplace orders land with your other orders.",
    "source": "app/[orgId]/settings/integrations/marketplaces/page.tsx"
   },
@@ -481,8 +481,8 @@
    "source": "app/[orgId]/operations/products/list/components/PublishDialog.tsx"
   },
   {
-   "hook": "Stock on Flipkart doesn't match what's in your drawer.",
-   "does": "Optional inventory push sends your stock levels to connected marketplaces.",
+   "hook": "A piece sold at the counter is still listed online.",
+   "does": "A sale anywhere removes the piece from Google Shopping, the Meta catalogue and Unicommerce.",
    "changes": "Fewer orders for pieces you no longer have.",
    "source": "app/[orgId]/settings/integrations/marketplaces/page.tsx"
   }

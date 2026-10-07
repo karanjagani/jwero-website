@@ -73,59 +73,107 @@ ${L.ctaBand('Put the trade’s email where the trade’s WhatsApp already is.', 
 };
 
 // ---------------------------------------------------------------- marketplaces
+// Marketplaces, rebuilt 2026-10-07 on Jwero's instruction: show only Google
+// Shopping, Meta catalogue and Unicommerce as integrated. Amazon and Flipkart
+// direct connectors are not claimed anywhere on the site.
 const mockMarket = `
-<div class="mock" role="img" aria-label="Illustration of marketplace orders landing on one order ledger">
-  <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">Orders · all doors · today</span></div>
-  <div class="mock-kv"><span>Amazon.in</span><strong>#403-118 · Silver anklet pair · ₹2,180</strong></div>
-  <div class="mock-kv"><span>Flipkart</span><strong>OD31 · 2 shipments → 1 order · ₹6,400</strong></div>
-  <div class="mock-kv"><span>Counter · Branch 2</span><strong>INV-2291 · 22k bangle · ₹1,14,300</strong></div>
-  <div class="mock-kv"><span>WhatsApp</span><strong>Meera K. · advance ₹25,000</strong></div>
-  <div class="mock-foot">Every door lowers the same stock. Available quantity pushes back to the marketplaces that opted in.</div>
+<div class="mock" role="img" aria-label="Illustration of one catalogue feeding Google Shopping, Meta and Unicommerce">
+  <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">Channels · today’s 22K rate</span></div>
+  <div class="mock-kv"><span>Google Shopping</span><strong>1,240 products · repriced 10:02</strong></div>
+  <div class="mock-kv"><span>Meta catalogue</span><strong>Instagram, Facebook, WhatsApp · in step</strong></div>
+  <div class="mock-kv"><span>Unicommerce</span><strong>Orders and stock · in step</strong></div>
+  <div class="mock-kv"><span>Counter · Branch 2</span><strong>22k bangle sold · removed everywhere</strong></div>
+  <div class="mock-foot">Illustrative. One catalogue, one stock, every channel.</div>
 </div>`;
-
+const MK_FLOW = [
+  ['Gold rate', 'Today’s rate moves up ₹60 a gram'],
+  ['Repriced', '1,240 products repriced in your catalogue'],
+  ['Google', 'Google Shopping prices updated · ads show the right price'],
+  ['Meta', 'Instagram, Facebook and WhatsApp catalogues updated'],
+  ['Sold', 'A bangle sells at the counter'],
+  ['Removed', 'Gone from Google, Meta and Unicommerce · no oversell'],
+];
+const mkFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">ONE CATALOGUE · EVERY CHANNEL</p>${MK_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${MK_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const MK_CMP = [
+  ['Prices when gold moves', 'Feeds edited by hand', 'Fixed price in the feed', 'Every channel repriced automatically'],
+  ['Google Shopping', 'Spreadsheet upload', 'An app or plugin', 'Synced from your catalogue'],
+  ['Instagram, Facebook and WhatsApp catalogues', 'Uploaded piece by piece', 'Separate setup', 'One Meta sync fills all three'],
+  ['A piece sold at the counter', 'Still listed', 'Still listed until someone notices', 'Removed everywhere'],
+  ['Unicommerce', 'Re-keyed', 'Middleware', 'Connected to the same stock and orders'],
+  ['Purity, weight, stones, HUID', 'Lost in the feed', 'Generic fields', 'From the jewellery record'],
+];
+const mkTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>By hand</th><th>Generic feed tools</th><th>Jwero</th></tr></thead><tbody>${MK_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const MK_HOW = [
+  ['Get your catalogue ready', 'Every piece once, with purity, weights, stones and photos.'],
+  ['Set your pricing rules', 'Today’s rate, making charges and GST, so every channel prices itself.'],
+  ['Connect Google Merchant Center', 'Your products go to Google Shopping and stay at today’s price.'],
+  ['Connect your Meta catalogue', 'One sync fills your Instagram shop, Facebook shop and WhatsApp catalogue.'],
+  ['Connect Unicommerce if you use it', 'Orders and stock stay in step with your counter and website.'],
+];
+const mkFaqs = [
+  { q: 'How do I list jewellery on Google Shopping?', a: 'Connect Google Merchant Center to Jwero. Your catalogue syncs automatically, and prices follow today’s gold rate so the price in the ad matches your site.' },
+  { q: 'How do I set up an Instagram and Facebook shop for jewellery?', a: 'Connect your Meta catalogue. One sync fills your Instagram shop, Facebook shop and WhatsApp catalogue, priced at today’s rate.' },
+  { q: 'Which channels does Jwero sync with?', a: 'Google Shopping, the Meta catalogue (Instagram, Facebook and WhatsApp) and Unicommerce, alongside your Jwero ecommerce website, POS and mobile apps.' },
+  { q: 'Do prices update when the gold rate changes?', a: 'Yes. Every channel is repriced from the same catalogue and rate, with no feed to edit.' },
+  { q: 'What happens when a piece sells at the counter?', a: 'It is removed from every connected channel, so you do not sell the same piece twice.' },
+  { q: 'Do you connect to Unicommerce?', a: 'Yes. Orders and stock stay in step with your counter, website and catalogue.' },
+  { q: 'Do I need a feed tool or plugin?', a: 'No. The sync is built in and runs from your Jwero catalogue.' },
+];
 const marketplaces = {
   slug: 'products/marketplaces',
-  title: 'Jewellery Marketplace Integration: Amazon, Flipkart | Jwero',
-  description: 'Connect Amazon Seller (SP-API) and Flipkart Seller accounts: orders poll into the same sales-order ledger as your counter and WhatsApp sales, and available stock across warehouses pushes back so a sale on any door lowers what the marketplace can sell.',
-  schema: app('Jwero Marketplaces', 'marketplaces', 'Amazon and Flipkart order intake and inventory push on one order ledger and one stock truth for jewellery sellers.'),
-  breadcrumbs: BC('Marketplaces'),
-  faqs: [
-    { q: 'Which marketplaces are supported?', a: 'Amazon Seller Central and Flipkart Seller, through their official seller integrations. Both connect from Settings → Integrations → Marketplaces; amazon.in is the default, other Amazon regions are supported.' },
-    { q: 'What flows in?', a: 'Orders. Jwero keeps each connection in sync — Flipkart’s multiple shipments fold back into one order — and hands every order to the same pipeline your counter and WhatsApp orders use. Stock, ledger and the customer record update once.' },
-    { q: 'What flows out?', a: 'Available quantity per SKU, summed across your warehouses, to any connection that opts in — so a piece sold at the counter stops being sellable on Amazon within the next push. Listings themselves are still created on the marketplace.' },
-    { q: 'Does it create or edit my listings?', a: 'Not yet. Listing creation and content sync are on the roadmap; today the integration is orders in, stock out.' },
-    { q: 'Do marketplace buyers become customers in Jwero?', a: 'Yes — as contacts on the same record model, within what each marketplace shares. Consent for marketing is never assumed from a marketplace order.' },
-  ],
+  title: 'Google Shopping & Meta Catalogue Sync for Jewellers | Jwero',
+  description: 'Sync your jewellery catalogue to Google Shopping and the Meta catalogue for Instagram, Facebook and WhatsApp, and connect Unicommerce: prices follow today’s gold rate, and a piece sold anywhere is removed everywhere.',
+  schema: { ...app('Jwero Channel Sync', 'marketplaces', 'Jewellery catalogue sync to Google Shopping, the Meta catalogue (Instagram, Facebook and WhatsApp) and Unicommerce, priced at today’s gold rate, with stock removed everywhere when a piece sells.'), alternateName: ['Google Shopping for jewellers', 'Meta catalogue sync for jewellery', 'Instagram shop for jewellers', 'Jewellery product feed'] },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to list jewellery on Google Shopping and Instagram', step: MK_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Google Shopping & Meta'),
+  faqs: mkFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'MARKETPLACES',
-  h1: 'Amazon and Flipkart orders, on the same ledger as the counter.',
-  sub: 'Connect your seller accounts once. Orders poll in and become the same sales orders your counter and WhatsApp raise; available stock pushes back, so every door lowers one truth.',
-  primary: { href: '#', label: 'Connect my seller accounts', wa: 'marketplaces' },
-  secondary: { href: '/products/inventory', label: 'See Inventory' },
+  eyebrow: 'GOOGLE SHOPPING · META CATALOGUE · UNICOMMERCE',
+  h1: 'Your jewellery on Google Shopping, Instagram and WhatsApp, at today’s gold rate.',
+  sub: 'One catalogue syncs to Google Shopping and the Meta catalogue for Instagram, Facebook and WhatsApp, and connects to Unicommerce. Prices follow the rate on their own, and a piece sold anywhere is removed everywhere.',
+  primary: { href: '#', label: 'Show me my products on Google', wa: 'marketplaces' },
+  secondary: { href: '/products/catalog', label: 'See the Catalogue' },
   mock: mockMarket,
 })}
 
-${L.section(
-  `${L.sectionHead('ORDERS IN, STOCK OUT', 'Two directions. One truth.', '')}
-  ${L.cards([
-    { title: 'Amazon Seller', text: 'Connect your Seller Central account once; orders and items sync on their own. amazon.in by default; other regions supported.' },
-    { title: 'Flipkart Seller', text: 'Flipkart ships one order in several shipments; Jwero folds them back into one sales order and keeps the shipment references.' },
-    { title: 'One order pipeline', text: 'Marketplace orders go through the same pipeline as every other door — stock deducted, ledger posted, customer created or matched.' },
-    { title: 'Inventory push', text: 'Available quantity per SKU across warehouses, pushed to each connection that opts in. A counter sale lowers the marketplace quantity on the next sweep.' },
-    { title: 'Nothing skipped', text: 'A failed sync is retried, never skipped; a broken connection is surfaced to you, not silently ignored.' },
-    { title: 'Shopping carts too', text: 'Shopify and WooCommerce connect the same way for your own store; Unicommerce for OMS-heavy operations.', link: { href: '/platform/integrations', label: 'See Integrations' } },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE RATE CHANGE, EVERY CHANNEL', 'Move the rate. Every channel follows.', '')}${mkFlow()}`, { tone: 'tint' })}
 
-${L.honestGapsBlock([
-  'Listing creation and content sync to marketplaces are not built — listings are managed on the marketplace; Jwero syncs orders and available quantity.',
-  'Marketplace fees and settlements are not reconciled automatically yet; payouts are posted as receipts.',
+${L.section(`${L.sectionHead('WHAT IS CONNECTED', 'Three integrations, one catalogue.', '')}<div class="wa-jobs">
+  <article><h3>Google Shopping</h3><p>Your products in Google’s shopping results and Shopping ads, with prices that match your website because both come from today’s rate.</p><a href="/products/ads-manager">Ads →</a></article>
+  <article><h3>Meta catalogue</h3><p>One sync fills your Instagram shop, Facebook shop and WhatsApp catalogue, so posts, ads and chats show the same piece and price.</p><a href="/products/instagram-facebook">Instagram and Facebook →</a></article>
+  <article><h3>Unicommerce</h3><p>For businesses that run orders through Unicommerce: orders and stock stay in step with your counter and website.</p><a href="/platform/integrations">Integrations →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('WHY IT IS DIFFERENT', 'What a generic feed cannot do for a jeweller.', '')}${L.cards([
+  { title: 'Prices that follow gold', text: 'A generic feed holds a fixed price. Jwero reprices every channel from today’s rate, so Google never shows yesterday’s price.' },
+  { title: 'No overselling one-of-a-kind pieces', text: 'Sell a piece at the counter and it is removed from Google, Meta and Unicommerce.' },
+  { title: 'Jewellery details intact', text: 'Purity, weight, stones and certificates come from the jewellery record, not squeezed into generic fields.' },
+  { title: 'No feed tool, no plugin', text: 'The sync is built into the catalogue, with nothing extra to pay for or maintain.' },
+  { title: 'Sales traced back', text: 'A sale from a Google or Meta ad is traced back to it, on the customer record.' },
+  { title: 'One catalogue', text: 'The same record feeds your counter, ecommerce website, mobile apps and every connected channel.' },
+])}`, { tone: 'tint' })}
+
+${L.impactGrid([
+  { lever: 'Gold jumps before Diwali', before: 'Google Shopping shows last week’s prices; customers find a lower price than you can sell at.', after: 'Every channel repriced from today’s rate, without anyone touching a feed.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
+  { lever: 'A bridal reel goes viral', before: 'The tagged necklace sold yesterday; buyers ask for a piece you no longer have.', after: 'Sold at the counter, removed from Instagram, Facebook and WhatsApp at once.', link: { href: '/products/inventory', label: 'See Inventory' } },
+  { lever: 'Running Google Shopping ads', before: 'The ad price and the website price disagree, and clicks are wasted.', after: 'Ad, website and counter show one price; sales are traced to the ad.', link: { href: '/products/ads-manager', label: 'See Ads Manager' } },
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the live product, not a form.</p>`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('COMPARE', 'By hand, a generic feed tool, or Jwero.', '')}${mkTable()}`)}
 
-${L.ctaBand('See a marketplace order land next to a counter bill.', 'Bring your seller account. We connect it on the call and watch the first orders arrive.', 'marketplaces')}
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to list jewellery on Google Shopping and Instagram.', 'Five steps.')}${L.steps(MK_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
+
+${L.oneSystemBlock([
+  'Google, Meta and Unicommerce all read from the same catalogue as your counter.',
+  'A rate change reprices every channel at once.',
+  'A sale anywhere lowers the same stock everywhere.',
+])}
+
+${L.ctaBand('Put your catalogue everywhere buyers look.', 'Send us a few products. We will show them on Google Shopping and Instagram at today’s rate.', 'marketplaces')}
 `,
 };
 

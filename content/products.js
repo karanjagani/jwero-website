@@ -24,7 +24,7 @@ ${L.section(
     { title: 'Ecommerce Website', text: 'A native jewellery ecommerce website: live-rate pricing, cart, wishlist, checkout, blog and reviews — for businesses that don’t have one yet, or want the jewellery-native alternative.', link: { href: '/products/ecommerce', label: 'Explore' } },
     { title: 'Quotations', text: 'Numbered quotations at the live rate, sent as a link and a PDF, accepted or declined online — created from an enquiry, a catalogue request or by voice at the counter.', link: { href: '/products/quotations', label: 'Explore' } },
     { title: 'Digital Catalogues', text: 'Curated, shareable catalogue links priced live — every open, view and request tracked on the record; requests become quotations; checkout on the link.', link: { href: '/products/digital-catalogues', label: 'Explore' } },
-    { title: 'Marketplaces', text: 'Amazon and Flipkart orders poll into the same ledger as the counter; available stock pushes back so no door oversells.', link: { href: '/products/marketplaces', label: 'Explore' } },
+    { title: 'Google Shopping & Meta', text: 'Your catalogue on Google Shopping, Instagram, Facebook and WhatsApp at today’s rate, plus Unicommerce.', link: { href: '/products/marketplaces', label: 'Explore' } },
   ], 4)}`
 )}
 

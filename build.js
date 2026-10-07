@@ -86,7 +86,7 @@ const NAV = [
         ['/products/digital-catalogues', 'Digital Catalogues', 'Shareable links, every view tracked'],
       ]},
       { title: 'Market', items: [
-        ['/products/marketplaces', 'Marketplaces', 'Amazon & Flipkart on one ledger'],
+        ['/products/marketplaces', 'Google Shopping & Meta', 'Catalogue on every channel'],
         ['/products/ads-manager', 'Ads Manager', 'Meta, Google & Pinterest'],
         ['/products/social-media', 'Social Media Management', 'Schedule, inbox, reply'],
         ['/products/optimize', 'Optimize (Website Visitors)', 'Heatmaps, A/B tests, webchat'],
@@ -492,7 +492,7 @@ const IN_SHORT_Q = {
   'platform/ai-workforce': 'What is Jwero’s AI workforce?',
   'platform/onboarding': 'How does onboarding with Jwero work?',
   'products/email': 'What does Jwero’s business email do?',
-  'products/marketplaces': 'How does Jwero handle Amazon and Flipkart orders?',
+  'products/marketplaces': 'How does Jwero sync with Google Shopping and Meta?',
   'products/quotations': 'What does Jwero’s jewellery quotation and estimate software do?',
 };
 function inShortQuestion(page) {
@@ -1720,6 +1720,14 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Links can be password protected; B2B buyer links carry their own pricing.
 - The team is notified when a customer opens a link; opens, pieces viewed and time spent go on the customer record.
 - A request becomes a numbered quotation; customers pay an advance or in full on the link.
+
+## Google Shopping, Meta catalogue and Unicommerce (facts)
+
+- Page: https://jwero.ai/products/marketplaces
+- Integrated channels: Google Shopping (via Google Merchant Center), the Meta catalogue (Instagram shop, Facebook shop and WhatsApp catalogue) and Unicommerce.
+- Prices on every channel follow today's gold rate from the Jwero catalogue; no feed tool or plugin.
+- A piece sold at the counter or online is removed from every connected channel.
+- Jwero does not claim direct Amazon or Flipkart connectors.
 
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.

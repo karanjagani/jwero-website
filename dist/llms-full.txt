@@ -1878,9 +1878,9 @@ PRODUCTS
 
  Explore → 
 
-## Marketplaces
+## Google Shopping & Meta
 
- Amazon and Flipkart orders poll into the same ledger as the counter; available stock pushes back so no door oversells.
+ Your catalogue on Google Shopping, Instagram, Facebook and WhatsApp at today’s rate, plus Unicommerce.
 
  Explore → 
 
@@ -6656,85 +6656,168 @@ A: A self-serve mailbox wizard: today your mailboxes are provisioned for you dur
 
 ---
 
-# Jewellery Marketplace Integration: Amazon, Flipkart
+# Google Shopping & Meta Catalogue Sync for Jewellers
 URL: https://jwero.ai/products/marketplaces
 
-Connect Amazon Seller (SP-API) and Flipkart Seller accounts: orders poll into the same sales-order ledger as your counter and WhatsApp sales, and available stock across warehouses pushes back so a sale on any door lowers what the marketplace can sell.
+Sync your jewellery catalogue to Google Shopping and the Meta catalogue for Instagram, Facebook and WhatsApp, and connect Unicommerce: prices follow today’s gold rate, and a piece sold anywhere is removed everywhere.
 
-MARKETPLACES
+GOOGLE SHOPPING · META CATALOGUE · UNICOMMERCE
 
-## Amazon and Flipkart orders, on the same ledger as the counter.
+## Your jewellery on Google Shopping, Instagram and WhatsApp, at today’s gold rate.
 
- Connect your seller accounts once. Orders poll in and become the same sales orders your counter and WhatsApp raise; available stock pushes back, so every door lowers one truth.
+ One catalogue syncs to Google Shopping and the Meta catalogue for Instagram, Facebook and WhatsApp, and connects to Unicommerce. Prices follow the rate on their own, and a piece sold anywhere is removed everywhere.
 
- Connect my seller accounts 
- See Inventory 
+ Show me my products on Google 
+ See the Catalogue 
 
- Orders · all doors · today 
+ Channels · today’s 22K rate 
 
- Amazon.in #403-118 · Silver anklet pair · ₹2,180 
+ Google Shopping 1,240 products · repriced 10:02 
 
- Flipkart OD31 · 2 shipments → 1 order · ₹6,400 
+ Meta catalogue Instagram, Facebook, WhatsApp · in step 
 
- Counter · Branch 2 INV-2291 · 22k bangle · ₹1,14,300 
+ Unicommerce Orders and stock · in step 
 
- WhatsApp Meera K. · advance ₹25,000 
+ Counter · Branch 2 22k bangle sold · removed everywhere 
 
- Every door lowers the same stock. Available quantity pushes back to the marketplaces that opted in.
+ Illustrative. One catalogue, one stock, every channel.
 
- ORDERS IN, STOCK OUT
+ ONE RATE CHANGE, EVERY CHANNEL
 
-## Two directions. One truth.
+## Move the rate. Every channel follows.
 
-## Amazon Seller
+ ONE CATALOGUE · EVERY CHANNEL
+ Gold rate Today’s rate moves up ₹60 a gram
+ Repriced 1,240 products repriced in your catalogue
+ Google Google Shopping prices updated · ads show the right price
+ Meta Instagram, Facebook and WhatsApp catalogues updated
+ Sold A bangle sells at the counter
+ Removed Gone from Google, Meta and Unicommerce · no oversell
+ Illustrative.
 
- Connect your Seller Central account once; orders and items sync on their own. amazon.in by default; other regions supported.
+ Gold rate Today’s rate moves up ₹60 a gram 
+ Repriced 1,240 products repriced in your catalogue 
+ Google Google Shopping prices updated 
+ Meta Instagram, Facebook and WhatsApp catalogues updated 
+ Sold A bangle sells at the counter 
+ Removed Gone from Google, Meta and Unicommerce 
 
-## Flipkart Seller
+ WHAT IS CONNECTED
 
- Flipkart ships one order in several shipments; Jwero folds them back into one sales order and keeps the shipment references.
+## Three integrations, one catalogue.
 
-## One order pipeline
+## Google Shopping
+ Your products in Google’s shopping results and Shopping ads, with prices that match your website because both come from today’s rate.
+ Ads → 
 
- Marketplace orders go through the same pipeline as every other door, stock deducted, ledger posted, customer created or matched.
+## Meta catalogue
+ One sync fills your Instagram shop, Facebook shop and WhatsApp catalogue, so posts, ads and chats show the same piece and price.
+ Instagram and Facebook → 
 
-## Inventory push
+## Unicommerce
+ For businesses that run orders through Unicommerce: orders and stock stay in step with your counter and website.
+ Integrations → 
 
- Available quantity per SKU across warehouses, pushed to each connection that opts in. A counter sale lowers the marketplace quantity on the next sweep.
+ WHY IT IS DIFFERENT
 
-## Nothing skipped
+## What a generic feed cannot do for a jeweller.
 
- A failed sync is retried, never skipped; a broken connection is surfaced to you, not silently ignored.
+## Prices that follow gold
 
-## Shopping carts too
+ A generic feed holds a fixed price. Jwero reprices every channel from today’s rate, so Google never shows yesterday’s price.
 
- Shopify and WooCommerce connect the same way for your own store; Unicommerce for OMS-heavy operations.
+## No overselling one-of-a-kind pieces
 
- See Integrations → 
+ Sell a piece at the counter and it is removed from Google, Meta and Unicommerce.
 
- WHAT WE DON'T DO YET
+## Jewellery details intact
 
- Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
+ Purity, weight, stones and certificates come from the jewellery record, not squeezed into generic fields.
 
- Listing creation and content sync to marketplaces are not built, listings are managed on the marketplace; Jwero syncs orders and available quantity.
- Marketplace fees and settlements are not reconciled automatically yet; payouts are posted as receipts.
- 
- See the full public roadmap → 
+## No feed tool, no plugin
 
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Every chat button on this site is the live product, not a form.
+ The sync is built into the catalogue, with nothing extra to pay for or maintain.
 
-## See a marketplace order land next to a counter bill.
+## Sales traced back
 
- Bring your seller account. We connect it on the call and watch the first orders arrive.
+ A sale from a Google or Meta ad is traced back to it, on the customer record.
+
+## One catalogue
+
+ The same record feeds your counter, ecommerce website, mobile apps and every connected channel.
+
+ Today With Jwero 
+
+ Gold jumps before Diwali See the pricing engine → 
+
+ Today Google Shopping shows last week’s prices; customers find a lower price than you can sell at.
+
+ With Jwero Every channel repriced from today’s rate, without anyone touching a feed.
+
+ A bridal reel goes viral See Inventory → 
+
+ Today The tagged necklace sold yesterday; buyers ask for a piece you no longer have.
+
+ With Jwero Sold at the counter, removed from Instagram, Facebook and WhatsApp at once.
+
+ Running Google Shopping ads See Ads Manager → 
+
+ Today The ad price and the website price disagree, and clicks are wasted.
+
+ With Jwero Ad, website and counter show one price; sales are traced to the ad.
+
+ COMPARE
+
+## By hand, a generic feed tool, or Jwero.
+
+ By hand Generic feed tools Jwero 
+ Prices when gold moves Feeds edited by hand Fixed price in the feed Every channel repriced automatically 
+ Google Shopping Spreadsheet upload An app or plugin Synced from your catalogue 
+ Instagram, Facebook and WhatsApp catalogues Uploaded piece by piece Separate setup One Meta sync fills all three 
+ A piece sold at the counter Still listed Still listed until someone notices Removed everywhere 
+ Unicommerce Re-keyed Middleware Connected to the same stock and orders 
+ Purity, weight, stones, HUID Lost in the feed Generic fields From the jewellery record 
+
+ GETTING STARTED
+
+## How to list jewellery on Google Shopping and Instagram.
+
+ Five steps.
+
+ 1 
+
+## Get your catalogue ready
+ Every piece once, with purity, weights, stones and photos.
+
+ 2 
+
+## Set your pricing rules
+ Today’s rate, making charges and GST, so every channel prices itself.
+
+ 3 
+
+## Connect Google Merchant Center
+ Your products go to Google Shopping and stay at today’s price.
+
+ 4 
+
+## Connect your Meta catalogue
+ One sync fills your Instagram shop, Facebook shop and WhatsApp catalogue.
+
+ 5 
+
+## Connect Unicommerce if you use it
+ Orders and stock stay in step with your counter and website.
+
+ BECAUSE IT'S ONE SYSTEM
+
+ Google, Meta and Unicommerce all read from the same catalogue as your counter.
+ A rate change reprices every channel at once.
+ A sale anywhere lowers the same stock everywhere.
+
+## Put your catalogue everywhere buyers look.
+
+ Send us a few products. We will show them on Google Shopping and Instagram at today’s rate.
 
  Chat or call with us 
  Book a demo 
@@ -6743,20 +6826,26 @@ MARKETPLACES
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: Which marketplaces are supported?
-A: Amazon Seller Central and Flipkart Seller, through their official seller integrations. Both connect from Settings → Integrations → Marketplaces; amazon.in is the default, other Amazon regions are supported.
+Q: How do I list jewellery on Google Shopping?
+A: Connect Google Merchant Center to Jwero. Your catalogue syncs automatically, and prices follow today’s gold rate so the price in the ad matches your site.
 
-Q: What flows in?
-A: Orders. Jwero keeps each connection in sync, Flipkart’s multiple shipments fold back into one order, and hands every order to the same pipeline your counter and WhatsApp orders use. Stock, ledger and the customer record update once.
+Q: How do I set up an Instagram and Facebook shop for jewellery?
+A: Connect your Meta catalogue. One sync fills your Instagram shop, Facebook shop and WhatsApp catalogue, priced at today’s rate.
 
-Q: What flows out?
-A: Available quantity per SKU, summed across your warehouses, to any connection that opts in, so a piece sold at the counter stops being sellable on Amazon within the next push. Listings themselves are still created on the marketplace.
+Q: Which channels does Jwero sync with?
+A: Google Shopping, the Meta catalogue (Instagram, Facebook and WhatsApp) and Unicommerce, alongside your Jwero ecommerce website, POS and mobile apps.
 
-Q: Does it create or edit my listings?
-A: Not yet. Listing creation and content sync are on the roadmap; today the integration is orders in, stock out.
+Q: Do prices update when the gold rate changes?
+A: Yes. Every channel is repriced from the same catalogue and rate, with no feed to edit.
 
-Q: Do marketplace buyers become customers in Jwero?
-A: Yes, as contacts on the same record model, within what each marketplace shares. Consent for marketing is never assumed from a marketplace order.
+Q: What happens when a piece sells at the counter?
+A: It is removed from every connected channel, so you do not sell the same piece twice.
+
+Q: Do you connect to Unicommerce?
+A: Yes. Orders and stock stay in step with your counter, website and catalogue.
+
+Q: Do I need a feed tool or plugin?
+A: No. The sync is built in and runs from your Jwero catalogue.
 
 ---
 

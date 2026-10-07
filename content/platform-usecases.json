@@ -85,8 +85,8 @@
    "source": "app/[orgId]/finance/accounting/page.tsx; app/[orgId]/finance/accounting/reconciliation/page.tsx; TALLY_ERP_INTEGRATION_ANALYSIS.md"
   },
   {
-   "hook": "Amazon orders get missed because nobody checks the seller panel.",
-   "does": "Connect Amazon and Flipkart; orders come into Jwero as sales orders automatically.",
+   "hook": "Google Shopping and Instagram show last week's prices.",
+   "does": "Sync your catalogue to Google Shopping and the Meta catalogue; prices follow today's rate.",
    "changes": "Marketplace orders land with your other orders.",
    "source": "app/[orgId]/settings/integrations/marketplaces/page.tsx"
   },
