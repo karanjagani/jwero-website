@@ -68,7 +68,7 @@ const CITIES = [
   ['coimbatore', 'Coimbatore',
     'Coimbatore is a major gold jewellery manufacturing city, supplying machine-made, cast and handcrafted jewellery to retailers across South India and for export. Its units range from small job workers to large factories.',
     'Manufacturing at volume needs stage-wise control: what metal went into each job, what came out, and where the loss happened. Many units make for several retail brands at once and must keep each client’s metal and jobs apart.',
-    [['/solutions/manufacturers', 'Manufacturers', 'Jobs, routing and wastage against the norm.'], ['/solutions/casting-units', 'Casting units', 'Flasks, trees and metal loss by stage.'], ['/solutions/oem-manufacturers', 'OEM manufacturers', 'Client-wise job work and metal.'], ['/products/hr-payroll', 'HR and payroll', 'Attendance, payroll and karigar wage settlement.']],
+    [['/solutions/manufacturers', 'Manufacturers', 'Jobs, routing and wastage against the norm.'], ['/solutions/casting-units', 'Casting units', 'Flasks, trees and metal loss by stage.'], ['/solutions/oem-manufacturers', 'OEM manufacturers', 'Client-wise job work and metal.'], ['/products/hr-payroll', 'HR and payroll', 'Attendance, payroll and incentives.']],
     'We make for several brands. Is each client’s gold kept separate?', 'Yes. Client-supplied metal, jobs and settlement are held client by client, so one buyer’s account never mixes with another’s.'],
   ['bangalore', 'Bengaluru',
     'Bengaluru has one of the most organised jewellery markets in India: large chains on Commercial Street, Jayanagar and Dickenson Road, long-standing family jewellers, and a cluster of online-first jewellery brands.',
@@ -163,7 +163,7 @@ const CITIES = [
   ['salem', 'Salem',
     'Salem in Tamil Nadu is a major centre for silver anklets, with thousands of small units making kolusu for wholesalers across South India and beyond.',
     'The work is spread across many small job workers. Silver is issued, worked and returned many times over, and the maker’s margin depends on accounting for every gram across those handovers.',
-    [['/solutions/manufacturers', 'Makers', 'Issue, return and loss by stage.'], ['/solutions/oem-manufacturers', 'Job work', 'Each client’s metal kept apart.'], ['/solutions/silver-retail', 'Silver', 'Lots and weight sales.'], ['/products/hr-payroll', 'Wages', 'Karigar wage settlement.']],
+    [['/solutions/manufacturers', 'Makers', 'Issue, return and loss by stage.'], ['/solutions/oem-manufacturers', 'Job work', 'Each client’s metal kept apart.'], ['/solutions/silver-retail', 'Silver', 'Lots and weight sales.'], ['/products/manufacturing', 'Karigar wages', 'Karigar wage settlement.']],
     'Work goes to many small job workers. Can each have an account?', 'Yes. Each job worker has an account of metal issued and returned and the wages due.'],
 ];
 
@@ -883,7 +883,7 @@ const staff = needPage({
     { lever: 'INCENTIVES', before: 'Argued at month end from memory.', after: 'Calculated from the bills.' },
     { lever: 'HIRING', before: 'CVs in WhatsApp chats.', after: 'A pipeline from application to onboarding.' },
   ],
-  notYet: 'Attendance is by phone or kiosk; there is no fingerprint or face-scanner hardware. Payroll produces the bank file and statutory files, which your accountant uploads and files.',
+  notYet: 'Payroll produces the bank file and statutory files, which your accountant uploads and files.',
   faqs: [
     { q: 'How do I track staff attendance in a jewellery shop?', a: 'Staff punch in on their own phone or a kiosk in the shop. Optional location and selfie checks confirm they are on site.' },
     { q: 'How do I calculate sales incentives in a jewellery shop?', a: 'Set the rule once and incentives are worked out from the bills each salesperson made, with no separate sheet.' },

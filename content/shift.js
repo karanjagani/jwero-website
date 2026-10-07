@@ -243,9 +243,9 @@ const SHIFTS = {
   // ---------------------------------------------------------------- products · manage
   'products/hr-payroll': {
     title: 'From an Excel payroll to one people record.',
-    today: 'Attendance in a register, salary in a spreadsheet, karigar wages in a notebook — three sources that never agree.',
+    today: 'Attendance in a register, salary in a spreadsheet, incentives in a notebook — three sources that never agree.',
     gone: 'The month-end salary scramble and the karigar dispute.',
-    now: 'Attendance, leave, statutory payroll with PF/ESI/PT/TDS, and a separate karigar settlement ledger — on the same record as the sale each person made.',
+    now: 'Biometric or phone attendance, leave, statutory payroll with PF/ESI/PT/TDS, payslips on WhatsApp, and incentives from the sale each person made.',
     tempo: ['Three days a month', 'One run'],
   },
   'products/repairs-service': {

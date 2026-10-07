@@ -226,7 +226,7 @@ const sioniq = comparePage({
   waCtx: 'sioniq',
   researchNote: 'SIONIQ facts are sourced from sioniqerp.com and Capterra (checked July 2026), including its own "AI and machine learning" claim, quoted as SIONIQ’s own positioning. SIONIQ does not publish pricing publicly. Jwero-side claims re-verified against the product on 2026-08-01.',
   rows: [
-    { label: 'Module breadth (incl. HR, repair, schemes)', jwero: 'Yes — including a full payroll engine and a separate karigar wage-settlement ledger', jweroRoadmap: false, other: 'Broadest module list found in this research — a named strength' },
+    { label: 'Module breadth (incl. HR, repair, schemes)', jwero: 'Yes — including a full payroll engine, and karigar wage settlement in manufacturing', jweroRoadmap: false, other: 'Broadest module list found in this research — a named strength' },
     { label: 'Serves manufacturers through bullion traders in one platform', jwero: 'Yes — same platform across segments', other: 'Yes — stated as a core positioning point' },
     { label: 'One-record architecture demonstrated, not just listed', jwero: 'Yes — see /platform for the live demo', other: '[VERIFY — modules are listed; a unified-record demo was not found publicly]' },
     { label: 'Governed AI workforce (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes, all product-verified', other: '"AI and machine learning" claimed for analytics; approval/governance model [VERIFY]' },

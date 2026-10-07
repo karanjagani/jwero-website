@@ -755,8 +755,7 @@ PLATFORM
 
  Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
 
- E-invoice IRN and e-way bill generation, GST invoices are generated at the counter and online; IRP registration still runs in your CA’s tool.
- A vernacular product interface, the AI voice speaks 14 languages today; product screens are English, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets).
+ E-way bill generation, e-invoices are generated in Tally through the bridge.
  Offline mode, Jwero is a connected product today.
  
  See the full public roadmap → 
@@ -1800,8 +1799,6 @@ PUBLIC ROADMAP
 
  CAD file storage & design approval stage not built
 
- Vernacular product interface the voice assistant speaks 14 languages; product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets)
-
  Predictive ML forecasting today’s inventory intelligence is ageing/valuation-based, not predictive
 
 ## Need something on this list?
@@ -1992,7 +1989,7 @@ PRODUCTS
 
 ## HR & Payroll
 
- Attendance, leave, recruitment, performance and a full statutory payroll run, plus a separate karigar wage-settlement ledger, on the same record as the job.
+ Attendance, leave, recruitment, performance and a full statutory payroll run, with biometric attendance and payslips on WhatsApp.
 
  Explore → 
 
@@ -5901,148 +5898,149 @@ A: No. Purchase is buying from suppliers. Sending metal to karigars for making i
 
 ---
 
-# Jewellery HR & Payroll Software: Attendance, Karigar Wages
+# Jewellery HR & Payroll Software: Attendance, Payroll, Incentives
 URL: https://jwero.ai/products/hr-payroll
 
-Payroll, karigar wage settlement, attendance, leave, onboarding, recruitment and performance, on the same record as your customers and sales.
+HR and payroll software for jewellery shops: biometric and face-scanner attendance, payroll with PF, ESI, PT and TDS, sales incentives from real sales, payslips on WhatsApp, and a staff app in multiple languages.
 
-HR & PAYROLL
+HR · PAYROLL · ATTENDANCE
 
-## Attendance, statutory payroll and karigar settlement, on the same record as the sale.
+## Jewellery HR and payroll software: attendance, salaries and sales incentives, in one place.
 
- Most jewellers run payroll in one tool, attendance in another, and karigar wages on paper, none of it talking to sales or the customer record. Jwero runs HR and payroll on the same platform as everything else: one login, one record, one place approvals happen.
+ Biometric or phone attendance, payroll with PF, ESI, PT and TDS, incentives from each person’s real sales, and payslips on WhatsApp. On the same record as the sales your team makes.
 
  Show me a payroll run 
  See the full platform 
 
- THE TWO HEADLINE CAPABILITIES
+ ONE MONTH END, START TO FINISH
 
-## Staff payroll, and a karigar wage system no generic HRMS has.
+## From punches to payslips, without Excel.
 
-## Payroll
+ PAYROLL · MONTH END
+ Attendance Month closes · face scanner and phone punches · 2 late punches regularised
+ Leave Leave and comp-off counted from approved requests
+ Incentive Priya sold ₹18 lakh · incentive worked out from her real sales
+ Payroll PF, ESI, PT and TDS worked out · run approved
+ Payslips Sent to every staff member on WhatsApp
+ Files Bank file and PF, ESI and PT files ready for your accountant
+ Illustrative.
 
- Attendance-aware, with PF, ESI, PT and TDS computed through an admin-configurable statutory pack. Multiple salary structures, overtime, incentives, loan EMIs and reimbursements fold in automatically each run, through compute → submit → approve → pay with maker-checker approval.
+ Attendance Month closes 
+ Leave Leave and comp-off counted from approved requests 
+ Incentive Priya sold ₹18 lakh 
+ Payroll PF, ESI, PT and TDS worked out 
+ Payslips Sent to every staff member on WhatsApp 
+ Files Bank file and PF, ESI and PT files ready for your accountant 
 
-## Bank file & statutory exports
+ SIX JOBS, ONE TEAM RECORD
 
- Payroll produces payslips, a ready-to-upload NEFT-style bank file, and statutory export files, PF ECR, ESI CSV, PT CSV, muster roll, Form 16 / Form 24Q, for your accountant to file.
+## What HR and payroll software has to do in a jewellery shop.
 
-## Karigar wage settlement
+## 1. Attendance you can trust
+ Biometric and face-scanner devices, or phone and kiosk punches with geo-fence and selfie; leave, shifts and comp-off.
+ Branches → 
 
- A rate-card system for artisans, piece-rate, weight-rate, hourly or daily, with logged work, supervisor approval, advance recovery and contractor TDS (194C/194J), through the same compute-approve-pay lifecycle.
+## 2. Payroll done right
+ Salary structures, overtime, PF, ESI, PT and TDS; a bank file and statutory files for your accountant.
+ Accounts → 
 
- See the karigar role page → 
+## 3. Incentives from real sales
+ Worked out from each person’s sales or margin on your slabs, with clawback on returns.
+ Incentives and targets → 
 
-## Attendance & leave
+## 4. Payslips on WhatsApp
+ Every payslip sent on WhatsApp, and in the staff app.
+ WhatsApp → 
 
- Self-punch, kiosk punch and bulk import, with optional geo-fencing and selfie verification, regularization requests and an automated day-close. Leave covers apply/decide/cancel, monthly accrual, carry-forward, encashment and comp-off.
+## 5. Hiring to exit
+ Recruitment, onboarding checklists, documents, reviews, loans and reimbursements, and full and final settlement.
+ Training → 
 
- BECAUSE IT'S ONE SYSTEM
+## 6. A staff app in their language
+ Attendance, leave, payslips, loans and tax declarations on their phone, in multiple languages; salaries visible only to those you allow.
+ Permissions → 
 
- A karigar’s settlement approval and a staff payroll run sit in the same approval queue, on the same platform record, not a separate wage register nobody else can see.
- The manager who decides a leave request is governed by the same role-based access that keeps salary data out of reach unless payroll access is explicitly assigned.
+ SALES INCENTIVE CALCULATOR
 
- THE FULL EMPLOYEE LIFECYCLE
+## Work out a salesperson’s incentive.
 
-## From application to final settlement, on one record.
+ Your slabs, your numbers.
 
-## Recruitment
+ Sales this month, ₹ 
+ Monthly target, ₹ 
+ Incentive up to target, % 
+ Incentive above target, % 
 
- A real pipeline, applied, screening, interview, offer, hired, with reject/withdraw states, feeding automatically into onboarding the moment someone is hired.
+ On sales up to target ₹0 
 
-## Onboarding
+ On sales above target ₹0 
 
- Template-driven checklists with due-date offsets from the joining date and role-based task assignment. A hired candidate starts onboarding automatically from the org’s default template, no manual re-entry. Switching from another HR system? A bulk employee CSV import brings your existing roster in at once, not one profile at a time.
+ Incentive this month ₹0 
 
-## Documents
+ Jwero works this out from real sales each month, and claws back on returns.
 
- Typed employee documents, PAN, Aadhaar, passport, offer letter, contract, certificates and more, uploaded, listed and deleted per employee.
+ COMPARE
 
-## Offboarding
+## Excel and a register, a generic HR app, or Jwero.
 
- A genuine full-and-final settlement engine, prorated final salary, leave encashment, statutory gratuity, advance recovery, through the same compute-approve-pay lifecycle, deactivating the employee record once paid.
+ Excel and a register A generic HR app Jwero 
+ Attendance A register App or device Biometric, face scanner, phone or kiosk, with geo-fence and selfie 
+ Salary Excel formulas Payroll Payroll with PF, ESI, PT and TDS 
+ Sales incentives Worked out by hand Imported From real sales or margin, with clawback 
+ Payslips Printed Email or portal On WhatsApp 
+ Staff app None English Self-service in multiple languages 
+ Hiring to exit Files and folders Separate modules Recruitment to full and final, one record 
+ Who sees salaries Whoever opens the file Admin Separate view, edit and approve permissions 
 
-## Shift scheduling & directory
+ GETTING STARTED
 
- Roster and shift assignment with a dedicated UI, alongside a full employee directory and profile system.
+## How to move payroll and attendance off Excel.
 
-## Employee self-service
+ Five steps.
 
- My Day, attendance, leave, payslips, loans, tax declarations, Form 16 and learning, 22 screens on the employee’s own phone, with an early Hindi pilot on karigar screens.
+ 1 
 
-## Asset management
+## Add your staff
+ Import employees, salary structures and documents.
 
- Company-asset issue, return and report-lost-or-damaged tracking, per employee.
+ 2 
 
- PERFORMANCE, LEARNING & INCENTIVES
+## Set up attendance
+ Connect biometric or face-scanner devices, or use phone and kiosk punches.
 
-## Where HR meets the sales floor.
+ 3 
 
-## Performance reviews
+## Set your rules
+ Leave policy, shifts, statutory deductions and incentive slabs.
 
- Review cycles group goals with self, manager and peer reviews and a competency roll-up; individual goals auto-complete at 100% progress.
+ 4 
 
-## Learning & certifications
+## Run the first payroll
+ Check, approve, and send payslips on WhatsApp.
 
- Courses built from ordered lessons and assessments, scored securely, with certificates auto-issued on completion.
+ 5 
 
-## Sales & production incentives
-
- Commission computed from real sales-order data, true margin (excluding rather than guessing when cost data is missing), or settled karigar work value, on tiered rate ladders, with a genuine clawback engine if a paid-commission sale is later returned.
-
- See the CRM this reads from → 
-
-## Loans & reimbursements
-
- Flat-interest EMI loans recovered automatically as a payroll deduction, and expense reimbursement claims paid as a non-taxable line, both maker-checker approved.
-
- BECAUSE IT'S ONE SYSTEM
-
- Incentive commission is computed from the same sales-order data the CRM and billing already hold, not a separate spreadsheet reconciled at month-end.
- Every HR mutation, payroll runs, leave, karigar settlements, incentives, onboarding, shifts, salary structures, lands in the platform’s one shared activity log, with an HR filter to see it all in one click.
+## Hand over the files
+ Bank file and PF, ESI, PT and Form 16 files go to your accountant.
 
  WHAT WE DON'T DO YET
 
  Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
 
- The payroll bank file is not bank-integrated, it does not move money; a person uploads it in their own banking portal.
- Statutory exports (PF ECR, ESI, PT, Form 16 / 24Q) are not filed with the government automatically, they are generated for your accountant to file.
- Compliance-profile registration numbers (PF establishment code, ESI employer code, PT registration, TAN) are reference identifiers for your accountant, they do not drive calculations or auto-file anything themselves.
- Approval routing is a single org-wide fallback approver for unassigned cases, not a multi-step or threshold-based approval chain.
- A karigar can flag a work log as disputed, which notifies their manager, there is no approve/reject resolution workflow or ledger mutation from a dispute yet.
- Karigar settlement payout is a ledger (khata) balance only, there is no bank-file generation for karigar settlements, unlike staff payroll.
+ The bank file is uploaded by a person in your banking portal; Jwero does not move money.
+ PF, ESI, PT and Form 16 files are prepared for your accountant to file.
  
  See the full public roadmap → 
 
- HR & PAYROLL QUESTIONS
+ BECAUSE IT'S ONE SYSTEM
 
-## What runs automatically, and what still needs a person.
+ Incentives come from the same sales the counter and CRM record, not a spreadsheet at month end.
+ Payroll, leave and approvals sit in the same activity log as the rest of the business.
+ Karigar wages are settled in manufacturing , against the work and the gold.
 
- Does the bank file actually pay people? 
- No, it’s a ready-to-upload NEFT-style file. A person executes it in their own banking portal; nothing here moves money automatically.
+## Run payroll without Excel.
 
- Is this a full biometric attendance system? 
- No, attendance is phone- and kiosk-based with optional geo-fencing and selfie verification, not fingerprint or face-scanner hardware.
-
- Can I run payroll for karigars the same way as staff? 
- A matching lifecycle, not the same system, karigar settlement is a rate-card engine ending in a ledger balance, with no bank-file generation like staff payroll has.
-
- More questions? See the full FAQ → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- This isn’t a demo video, message us here and Jwero’s own inbox answers, live.
-
-## Run payroll and karigar wages on one system.
-
- Bring last month’s payroll and one karigar settlement, we will show you both on the same platform.
+ Bring last month’s attendance and salaries; we will run them in Jwero with you.
 
  Chat or call with us 
  Book a demo 
@@ -6051,23 +6049,32 @@ HR & PAYROLL
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: What is HR and payroll software for a jewellery shop?
+A: Software that records attendance, works out salaries with PF, ESI, PT and TDS, pays sales incentives, and keeps staff records from hiring to exit. Jwero does this on the same record as your sales.
+
+Q: How do I track staff attendance in a jewellery shop?
+A: With biometric or face-scanner devices, or punches from a phone or kiosk with geo-fencing and a selfie. Late punches can be regularised and leave is counted automatically.
+
+Q: How are sales incentives calculated?
+A: From each person’s real sales or margin, on the slabs you set, with clawback if a sale is returned. Try the calculator on this page.
+
+Q: Do staff get payslips on WhatsApp?
+A: Yes. Payslips go to each staff member on WhatsApp, and are also in the staff app.
+
+Q: Can staff use the app in their language?
+A: Yes. Staff self-service screens are available in multiple languages.
+
+Q: Does the bank file pay people?
+A: It prepares a ready-to-upload bank file; a person uploads it in your banking portal.
+
 Q: Does this replace my accountant?
-A: No. Payroll computes PF, ESI, PT and TDS and generates the statutory export files, PF ECR, ESI CSV, PT CSV, Form 16 / Form 24Q, but your accountant still files them with the government. Nothing here has a government-portal integration.
-
-Q: Does the bank file actually pay people?
-A: No. Payroll produces a ready-to-upload NEFT-style bank file, but it does not move money or connect to any bank API. A person uploads it in your own banking portal.
-
-Q: Is this a full biometric attendance system?
-A: No. Attendance is phone- and kiosk-based, with optional geo-fencing and selfie-on-punch verification. There is no fingerprint or face-scanner hardware, and no biometric-device SDK involved.
-
-Q: Can I run payroll for karigars the same way as staff?
-A: Not the same system, but a matching one. Karigars settle through a separate piece-rate, weight-rate, hourly or daily rate-card engine, with its own compute-approve-pay lifecycle, advance recovery and contractor TDS. The difference: settlement is a ledger (khata) entry, not a bank file, there is no bank-file generation for karigar payouts.
-
-Q: Can a karigar dispute a work log?
-A: They can flag an entry as disputed, which notifies their reporting manager. That is a flag for review, not a resolution workflow, there is no approve/reject step or ledger mutation tied to a dispute today.
+A: No. PF, ESI, PT and TDS are worked out and the files prepared, and your accountant files them.
 
 Q: Who can see salary data?
-A: Payroll visibility, editing and approval are three separate, independently assignable permissions. A manager can see team attendance and decide approvals without ever getting access to compensation or salary figures.
+A: Seeing, editing and approving payroll are separate permissions, so a manager can approve leave without seeing salaries.
+
+Q: Does it pay karigars?
+A: Karigar wages are settled in the manufacturing module, by piece, weight or day.
 
 ---
 
@@ -12983,7 +12990,7 @@ COMPARE · JWERO VS SIONIQ
  Capability Jwero SIONIQ 
  
  Module breadth (incl. HR, repair, schemes) 
- Yes, including a full payroll engine and a separate karigar wage-settlement ledger 
+ Yes, including a full payroll engine, and karigar wage settlement in manufacturing 
  Broadest module list found in this research, a named strength 
  Serves manufacturers through bullion traders in one platform 
  Yes, same platform across segments 
@@ -14350,7 +14357,7 @@ FAQ
  Regional chains already run on systems like this; independent jewellers have been the ones without one. Being early on the revenue side (WhatsApp commerce, digital catalogues, gold schemes) is a customer-facing advantage today, ahead of when everyone else catches up.
 
  What does Jwero NOT do yet, honestly? 
- E-invoice/GSTR automation (IRN, e-way bills, portal filing), and a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens). All on the public roadmap , none fully shipped, we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)
+ E-invoice/GSTR automation (IRN, e-way bills, portal filing). All on the public roadmap , none fully shipped, we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)
 
  B
 
@@ -14578,7 +14585,7 @@ FAQ
  Yes, an append-only WIP ledger tracks fine weight through every stage, with per-stage loss norms and abnormal-loss flags.
 
  Does it handle karigar wages and payroll? 
- Yes, a karigar khata/settlement engine (rate cards, work logs, settlement runs) runs alongside job-work tracking and weight-reconciliation records, and a full staff payroll engine (attendance, statutory pack, maker-checker approval, payslips and bank-file generation) is also live.
+ Yes, a karigar khata/settlement engine (rate cards, work logs, settlement runs) runs alongside job-work tracking and weight-reconciliation records, in manufacturing; staff payroll (attendance, statutory pack, approval, payslips and bank file) runs in HR and payroll.
 
  Is Jwero suitable for luxury or boutique brands? 
  Yes, appointment-led selling, video-assisted remote consultations, occasion tracking and private catalogue previews suit high-touch, high-ticket retail. See luxury & boutique .
@@ -14649,7 +14656,7 @@ FAQ
  WhatsApp-first support with a named onboarding contact from day one, never a ticket queue you shout into.
 
  Do you support in Hindi, Gujarati or other regional languages? 
- Support conversations, yes, in your language. Product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets); broader vernacular UI is on the roadmap, and we say so rather than pretend otherwise.
+ Yes. Support helps in your language, staff screens are available in multiple languages, and the AI voice assistant speaks 14 languages.
 
  Who helps during the festival rush, when everything is chaos? 
  Support is staffed for the trade’s calendar, festivals are exactly when we don’t disappear. The season change-freeze policy exists to protect you from disruptive changes at the worst possible time.
@@ -14671,7 +14678,7 @@ FAQ
 ## Languages & customer experience
 
  Does the product work in Hindi, Gujarati or Tamil for my team? 
- Honestly: product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets); a broader vernacular interface is on the public roadmap. The AI voice assistant already speaks 14 languages, and support helps in yours.
+ Yes. Staff screens are available in multiple languages, the AI voice assistant speaks 14 languages, and support helps in yours.
 
  Can the AI talk to my customers in their own language? 
  Yes, the AI voice assistant covers 14 languages, and chat replies follow the customer’s language where supported.
@@ -14739,7 +14746,7 @@ Q: My competitors don’t use anything like this, why be first?
 A: Regional chains already run on systems like this; independent jewellers have been the ones without one. Being early on the revenue side (WhatsApp commerce, digital catalogues, gold schemes) is a customer-facing advantage today, ahead of when everyone else catches up.
 
 Q: What does Jwero NOT do yet, honestly?
-A: E-invoice/GSTR automation (IRN, e-way bills, portal filing), and a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens). All on the public roadmap, none fully shipped, we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)
+A: E-invoice/GSTR automation (IRN, e-way bills, portal filing). All on the public roadmap, none fully shipped, we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)
 
 Q: Can customers actually buy on WhatsApp?
 A: Yes, browse the catalogue at live prices, ask questions, book appointments, and order inside the chat.
@@ -14943,7 +14950,7 @@ Q: Can it track gold loss and wastage in manufacturing?
 A: Yes, an append-only WIP ledger tracks fine weight through every stage, with per-stage loss norms and abnormal-loss flags.
 
 Q: Does it handle karigar wages and payroll?
-A: Yes, a karigar khata/settlement engine (rate cards, work logs, settlement runs) runs alongside job-work tracking and weight-reconciliation records, and a full staff payroll engine (attendance, statutory pack, maker-checker approval, payslips and bank-file generation) is also live.
+A: Yes, a karigar khata/settlement engine (rate cards, work logs, settlement runs) runs alongside job-work tracking and weight-reconciliation records, in manufacturing; staff payroll (attendance, statutory pack, approval, payslips and bank file) runs in HR and payroll.
 
 Q: Is Jwero suitable for luxury or boutique brands?
 A: Yes, appointment-led selling, video-assisted remote consultations, occasion tracking and private catalogue previews suit high-touch, high-ticket retail. See luxury & boutique.
@@ -15006,7 +15013,7 @@ Q: What support do I get after going live?
 A: WhatsApp-first support with a named onboarding contact from day one, never a ticket queue you shout into.
 
 Q: Do you support in Hindi, Gujarati or other regional languages?
-A: Support conversations, yes, in your language. Product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets); broader vernacular UI is on the roadmap, and we say so rather than pretend otherwise.
+A: Yes. Support helps in your language, staff screens are available in multiple languages, and the AI voice assistant speaks 14 languages.
 
 Q: Who helps during the festival rush, when everything is chaos?
 A: Support is staffed for the trade’s calendar, festivals are exactly when we don’t disappear. The season change-freeze policy exists to protect you from disruptive changes at the worst possible time.
@@ -15024,7 +15031,7 @@ Q: Do I get a dedicated account manager?
 A: Enterprise includes dedicated support. On Jwero One you get the shared support team and your onboarding contact; priority support and a dedicated success manager are available as priced add-ons on the pricing page.
 
 Q: Does the product work in Hindi, Gujarati or Tamil for my team?
-A: Honestly: product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets); a broader vernacular interface is on the public roadmap. The AI voice assistant already speaks 14 languages, and support helps in yours.
+A: Yes. Staff screens are available in multiple languages, the AI voice assistant speaks 14 languages, and support helps in yours.
 
 Q: Can the AI talk to my customers in their own language?
 A: Yes, the AI voice assistant covers 14 languages, and chat replies follow the customer’s language where supported.
@@ -25357,7 +25364,7 @@ JEWELLERY SOFTWARE · COIMBATORE
 
 ## HR and payroll
 
- Attendance, payroll and karigar wage settlement.
+ Attendance, payroll and incentives.
 
  Open → 
 
@@ -28270,7 +28277,7 @@ JEWELLERY SOFTWARE · SALEM
 
  Open → 
 
-## Wages
+## Karigar wages
 
  Karigar wage settlement.
 
@@ -30498,7 +30505,7 @@ JEWELLERY STAFF MANAGEMENT
 
 ## What it does not do yet.
 
- Attendance is by phone or kiosk; there is no fingerprint or face-scanner hardware. Payroll produces the bank file and statutory files, which your accountant uploads and files. The public roadmap says what is shipped, rolling out and not yet.
+ Payroll produces the bank file and statutory files, which your accountant uploads and files. The public roadmap says what is shipped, rolling out and not yet.
 
  QUESTIONS
 
@@ -30519,14 +30526,14 @@ JEWELLERY STAFF MANAGEMENT
  Does it cover karigars? 
  Yes. Karigar wages are settled by piece, weight, hour or day, with advances recovered.
 
- Does this replace my accountant? 
- No. Payroll computes PF, ESI, PT and TDS and generates the statutory export files, PF ECR, ESI CSV, PT CSV, Form 16 / Form 24Q, but your accountant still files them with the government. Nothing here has a government-portal integration.
+ What is HR and payroll software for a jewellery shop? 
+ Software that records attendance, works out salaries with PF, ESI, PT and TDS, pays sales incentives, and keeps staff records from hiring to exit. Jwero does this on the same record as your sales.
 
- Does the bank file actually pay people? 
- No. Payroll produces a ready-to-upload NEFT-style bank file, but it does not move money or connect to any bank API. A person uploads it in your own banking portal.
+ How are sales incentives calculated? 
+ From each person’s real sales or margin, on the slabs you set, with clawback if a sale is returned. Try the calculator on this page.
 
- Is this a full biometric attendance system? 
- No. Attendance is phone- and kiosk-based, with optional geo-fencing and selfie-on-punch verification. There is no fingerprint or face-scanner hardware, and no biometric-device SDK involved.
+ Do staff get payslips on WhatsApp? 
+ Yes. Payslips go to each staff member on WhatsApp, and are also in the staff app.
 
  Related: HR and payroll · Staff management · Staff training · For the store manager · For sales staff 
 
@@ -30556,14 +30563,14 @@ A: Each person gets a daily list built from what is due, and managers can add ta
 Q: Does it cover karigars?
 A: Yes. Karigar wages are settled by piece, weight, hour or day, with advances recovered.
 
-Q: Does this replace my accountant?
-A: No. Payroll computes PF, ESI, PT and TDS and generates the statutory export files, PF ECR, ESI CSV, PT CSV, Form 16 / Form 24Q, but your accountant still files them with the government. Nothing here has a government-portal integration.
+Q: What is HR and payroll software for a jewellery shop?
+A: Software that records attendance, works out salaries with PF, ESI, PT and TDS, pays sales incentives, and keeps staff records from hiring to exit. Jwero does this on the same record as your sales.
 
-Q: Does the bank file actually pay people?
-A: No. Payroll produces a ready-to-upload NEFT-style bank file, but it does not move money or connect to any bank API. A person uploads it in your own banking portal.
+Q: How are sales incentives calculated?
+A: From each person’s real sales or margin, on the slabs you set, with clawback if a sale is returned. Try the calculator on this page.
 
-Q: Is this a full biometric attendance system?
-A: No. Attendance is phone- and kiosk-based, with optional geo-fencing and selfie-on-punch verification. There is no fingerprint or face-scanner hardware, and no biometric-device SDK involved.
+Q: Do staff get payslips on WhatsApp?
+A: Yes. Payslips go to each staff member on WhatsApp, and are also in the staff app.
 
 ---
 

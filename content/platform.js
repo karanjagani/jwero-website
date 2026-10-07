@@ -77,8 +77,7 @@ ${L.section(
 )}
 
 ${L.honestGapsBlock([
-  'E-invoice IRN and e-way bill generation — GST invoices are generated at the counter and online; IRP registration still runs in your CA’s tool.',
-  'A vernacular product interface — the AI voice speaks 14 languages today; product screens are English, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets).',
+  'E-way bill generation — e-invoices are generated in Tally through the bridge.',
   'Offline mode — Jwero is a connected product today.',
 ])}
 
@@ -585,8 +584,6 @@ ${L.section(
       <div class="road-group">
         <p class="road-group-label">Operations & platform</p>
         <div class="road-item"><strong>CAD file storage & design approval stage</strong>not built</div>
-        
-        <div class="road-item"><strong>Vernacular product interface</strong>the voice assistant speaks 14 languages; product screens are English today, with an early Hindi pilot live on karigar self-service screens (My Work & Khata, Loans, Assets)</div>
         <div class="road-item"><strong>Predictive ML forecasting</strong>today’s inventory intelligence is ageing/valuation-based, not predictive</div>
       </div>
     </div>

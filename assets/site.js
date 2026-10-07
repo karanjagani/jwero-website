@@ -2879,3 +2879,12 @@ document.addEventListener('click', function (e) {
     set('int', '₹' + Math.round(i).toLocaleString('en-IN')); set('tot', '₹' + Math.round(p + i).toLocaleString('en-IN')); }
   root.addEventListener('input', run); root.addEventListener('change', run); run();
 })();
+// HR page: sales incentive calculator.
+(function () {
+  var root = document.querySelector('[data-hrc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-hr="' + k + '"]') || {}).value || 0; };
+  function run() { var s = v('s'), t = v('t'), a = Math.min(s, t) * v('a') / 100, b = Math.max(0, s - t) * v('b') / 100;
+    var set = function (k, x) { var el = root.querySelector('[data-hr-o="' + k + '"]'); if (el) el.textContent = '₹' + Math.round(x).toLocaleString('en-IN'); };
+    set('a', a); set('b', b); set('t', a + b); }
+  root.addEventListener('input', run); run();
+})();

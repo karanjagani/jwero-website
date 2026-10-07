@@ -1784,7 +1784,7 @@ PUBLIC ROADMAP
 
  Metal reconciliation & physical metal count metal balances by party are live; a full reconciliation is not
 
- Girvi / gold-loan module pledge, interest schemes, collection, renewal, release, shipped ; auto-debit mandates are not
+ Girvi / gold-loan module pledge, interest schemes, automatic interest collection, renewal, release and auctions, shipped 
 
  Ecommerce website
 
@@ -6469,44 +6469,97 @@ A: It plans the material your open orders need and sweeps job due dates for late
 # Girvi, Gold Loan & Pawn Broking Software for Jewellers
 URL: https://jwero.ai/products/girvi
 
-Girvi for jewellers: pledge intake with a printed receipt, interest schemes that accrue on schedule, collections, renewals and release, with every entry posted to the books and the loan on the customer’s record.
+Girvi and gold loan software for jewellers: photos and valuation at today’s rate, LTV limits, printed receipts, interest collected automatically, part payments, renewals, release and auctions, all posted to the books.
 
-GIRVI / GOLD LOANS
+GIRVI · GOLD LOANS · PAWN BROKING
 
-## Pledge, interest, renewal, release, on the books and on her record.
+## Girvi and gold loan software for jewellers: pledge to release, interest collected, on the books.
 
- Take a pledge, print the receipt, let interest accrue on its scheme, collect, renew, release, with every rupee posted to the books and the loan on the same customer record as her purchases and her gold scheme.
+ Photograph and value the pledge at today’s rate, check it against your LTV limit, print the receipt. Interest accrues and is collected automatically; part payments, renewals, release and auctions are recorded and posted to the books.
 
  Show me a pledge from intake to release 
- See Gold Savings Schemes 
+ Girvi rules explained 
 
- THE LOAN LIFECYCLE
+ ONE LOAN, START TO FINISH
 
-## Pledge to release, without a paper register.
+## From a pledged chain to a closed loan.
 
- 1 
+ GIRVI · PLEDGE TO RELEASE
+ Pledge 22K chain, 18g · photographed and valued at today’s rate
+ Limit Loan checked against your LTV limit · within it
+ Disbursed ₹60,000 · printed pledge receipt · journal posted
+ Interest Accrues monthly · collected automatically
+ Part payment ₹20,000 of principal paid · interest recalculated
+ Renewed Renewed at term on the same pledge
+ Released Balance settled · release document printed · loan closed in the books
+ Illustrative.
 
-## Pledge intake
- Item, weight, purity, valuation, customer KYC, and a printed pledge receipt the customer keeps.
+ Pledge 22K chain, 18g 
+ Limit Loan checked against your LTV limit 
+ Disbursed ₹60,000 
+ Interest Accrues monthly 
+ Part payment ₹20,000 of principal paid 
+ Renewed Renewed at term on the same pledge 
+ Released Balance settled 
 
- 2 
+ SIX JOBS, ONE REGISTER
 
-## Scheme & disbursal
- Choose the interest scheme, set the term and grace, disburse, the journal posts itself.
+## What girvi software has to do.
 
- 3 
+## 1. Pledge intake
+ Photos, weight, purity and valuation at today’s rate, customer KYC, and a printed receipt.
+ Live rate → 
 
-## Interest on schedule
- Accrual runs on schedule; the amount due on any day, and interest not yet accrued, are always on screen.
+## 2. Safe lending
+ An LTV limit you set, checked against the pledge’s value on every loan.
+ Reports → 
 
- 4 
+## 3. Interest worked out
+ Schemes with rate, simple or compound, and grace; the amount due on any day on screen.
+ Interest calculator → 
 
-## Collect, renew, release
- Record collections, renew at term, release the pledge with a document, and the ledger closes the loan.
+## 4. Collected automatically
+ Interest collected on schedule, reminders before each due date, part payments recorded.
+ WhatsApp → 
 
- WHAT CHANGES
+## 5. Renew, release, or auction
+ Renewals at term, release with a printed document, and default steps through to auction.
+ Girvi rules → 
 
-## For the counter and for the owner.
+## 6. On the books and her record
+ Every entry posted to the ledger; the loan beside her purchases and gold scheme.
+ Billing and accounts → 
+
+ GIRVI INTEREST CALCULATOR
+
+## Work out interest on a gold loan.
+
+ Monthly rate, as most girvi is quoted.
+
+ Loan amount, ₹ 
+ Interest rate a month, % 
+ Months 
+ Method Simple Compound monthly 
+
+ Interest ₹0 
+
+ Amount payable ₹0 
+
+ Check your state’s interest cap. Jwero accrues interest on each loan’s own scheme.
+
+ COMPARE
+
+## A paper register, basic girvi software, or Jwero.
+
+ A paper register Basic girvi software Jwero 
+ Valuation By eye and calculator Entered by hand Today’s rate, purity and weight, with photos 
+ Loan limit Judgement Sometimes LTV limit you set, checked on every loan 
+ Interest due today Worked out at the counter Report On screen, by scheme, any day 
+ Collecting interest Customer walks in Recorded when paid Collected automatically, with reminders 
+ Part payments and renewals Notes in the margin Basic Recorded, with interest recalculated 
+ Default and auction Notices on paper Often missing Default steps, notices and auction recorded 
+ Books A separate register Export Every entry posted to the ledger 
+ The customer A slip in a drawer A loan number On her record beside purchases and schemes 
 
  Today With Jwero 
 
@@ -6514,54 +6567,66 @@ GIRVI / GOLD LOANS
 
  Today A customer disputes the interest on a two-year-old pledge; the register and the calculator disagree.
 
- With Jwero The scheme, the accrual and every collection are on the loan, printable, dated, undisputed.
+ With Jwero The scheme, the accrual and every payment are on the loan: printable, dated, settled.
 
  Due dates 
 
- Today Renewals are remembered, or not.
+ Today Interest is collected when the customer remembers to come in.
 
- With Jwero Due and renewal sweeps run daily; reminders go out on the customer’s channel.
+ With Jwero Collected automatically, with reminders on her channel.
 
  The books 
 
- Today Girvi lives in a separate register that the accountant reconciles at year-end.
+ Today Girvi lives in a separate register the accountant reconciles at year end.
 
- With Jwero Disbursal, interest, collection and release post journals as they happen.
+ With Jwero Disbursal, interest, collection, release and auction post as they happen.
 
  The customer 
 
  Today The pledge is a slip in a drawer; nobody at the sales counter knows.
 
- With Jwero The loan is on her record beside her purchases and her scheme, the follow-up knows both.
+ With Jwero The loan is on her record beside her purchases and her scheme.
+
+ GETTING STARTED
+
+## How to move your girvi register into software.
+
+ Five steps.
+
+ 1 
+
+## Set your schemes and limits
+ Interest rates, compounding, grace and your LTV limit.
+
+ 2 
+
+## Bring in open pledges
+ Each loan from the register with its item, weight, amount and date.
+
+ 3 
+
+## Take new pledges in Jwero
+ Photos, valuation at today’s rate, KYC and a printed receipt.
+
+ 4 
+
+## Switch on collection and reminders
+ Interest collected automatically; reminders before each due date.
+
+ 5 
+
+## Renew, release or auction
+ Each step recorded, printed and posted to the books.
 
  BECAUSE IT'S ONE SYSTEM
 
- A girvi customer is the same record the counter, WhatsApp and the scheme use, one KYC, one history.
- Valuation at pledge uses the same live metal rate as the catalogue and the counter.
-
- WHAT WE DON'T DO YET
-
- Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
-
- No auto-debit / e-mandate for interest yet, collections are recorded when paid.
- Auction and forfeiture workflows for defaulted pledges are not built; release and renewal are.
- 
- See the full public roadmap → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Try the chat button on this page, it’s Jwero, live, answering.
+ A girvi customer is the same record the counter, WhatsApp and the gold scheme use: one KYC, one history.
+ Valuation uses the same live metal rate as the catalogue and the counter.
+ Every rupee lent, collected or recovered is in the same books as the shop.
 
 ## Bring your pledge register.
 
- We will show you one loan from intake to release, receipt, accrual, collection, journal, on your own numbers.
+ We will show you one loan from intake to release on your own numbers.
 
  Chat or call with us 
  Book a demo 
@@ -6570,20 +6635,29 @@ GIRVI / GOLD LOANS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: Is girvi actually in the product now?
-A: Yes. Earlier versions of this site said it was on the long-term roadmap; the module shipped in 2026. Pledge, receipt, interest schemes, accrual, collection, renewal and release are live.
+Q: What is girvi?
+A: Girvi is a loan against pledged gold or silver jewellery, given by a jeweller or pawnbroker. The customer gets the jewellery back when the loan and interest are paid.
 
-Q: How is interest calculated?
-A: By the scheme you define per loan, rate, compounding and grace, and accrued on schedule, so the payable amount on any day is on screen without a calculator. Unaccrued interest to date is shown separately.
+Q: Which software is used for girvi?
+A: Girvi or gold loan software records each pledge, works out interest, and tracks renewals, release and auctions. Jwero does this on the same customer record and books as the rest of the jewellery business.
 
-Q: What happens at release?
-A: Settle the balance, release the pledge, print the release document; the item leaves the pledge vault and the ledger closes the loan in the same step.
+Q: How is girvi interest calculated?
+A: By the scheme on each loan: the rate, simple or compound, and any grace period. Jwero accrues it on schedule, so the amount due on any day is on screen. Try the calculator on this page.
+
+Q: Can interest be collected automatically?
+A: Yes. Interest is collected automatically, with reminders before each due date.
+
+Q: Can I set a maximum loan against the gold’s value?
+A: Yes. Set an LTV limit, and each loan is checked against today’s value of the pledge.
+
+Q: Can customers pay part of the loan?
+A: Yes. Part payments of principal are recorded, and interest is recalculated on the balance.
+
+Q: What happens if a loan is not repaid?
+A: The loan moves through default steps with notices, and the auction and how the proceeds were applied are recorded. Follow your state’s notice rules.
 
 Q: Does it post to the books?
-A: Every disbursement, interest accrual, collection and release posts a journal to the ledger, and the loan sits on the customer’s record next to her purchases and her scheme.
-
-Q: Can customers pay interest automatically?
-A: Not yet, there is no auto-debit mandate; collections are recorded when paid, and reminders go out on schedule. We say so plainly rather than imply otherwise.
+A: Yes. Every disbursal, interest entry, collection, release and auction posts to the ledger.
 
 ---
 
@@ -7867,7 +7941,7 @@ FROM ERP TO OS
 
 ## What we don’t do yet
 
- E-invoice IRN and e-way bills (e-invoices run through Tally), auto-debit for girvi interest, CAD-to-BOM, courier integration. The public roadmap says what is shipped, rolling out and not yet.
+ E-invoice IRN and e-way bills (e-invoices run through Tally), CAD-to-BOM, courier integration. The public roadmap says what is shipped, rolling out and not yet.
 
  See the roadmap → 
 
@@ -10819,14 +10893,6 @@ FOR BULLION DEALERS & GOLD TRADERS
 ## Rate-locked, auditable deal capture
  The agreed rate and terms are recorded at the moment of the deal, not reconstructed afterward.
 
- WHAT WE DON'T DO YET
-
- Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
-
- Girvi auto-debit (e-mandate) for interest collections and auction/forfeiture workflows for defaulted pledges are not built yet, pledge, accrual, collection, renewal and release are.
- 
- See the full public roadmap → 
-
  QUESTIONS TRADERS ASK
 
 ## Rate locks, girvi and deal speed, answered.
@@ -10835,7 +10901,7 @@ FOR BULLION DEALERS & GOLD TRADERS
  Yes, deal capture records the rate at the moment of agreement, with a clean ledger of every settlement against it.
 
  Do you offer girvi / gold-loan functionality? 
- Yes, pledge intake with a printed receipt, interest schemes that accrue on schedule, collection, renewal and release, posted to the books and on the customer’s record. Auto-debit mandates for interest are not there yet. See Girvi / Gold Loans .
+ Yes, pledge intake with a printed receipt, interest schemes that accrue on schedule, collection, renewal and release, posted to the books and on the customer’s record. Interest can be collected automatically, and defaulted pledges move through to auction. See Girvi / Gold Loans .
 
  Our trades depend on speed. Won’t logging deals slow us down? 
  Deal capture is built to be fast at the point of agreement, not a paperwork step afterward, it replaces reconstructing terms from memory later, which costs more time than it saves.
@@ -10868,7 +10934,7 @@ Q: Can deals be captured at a locked rate?
 A: Yes, deal capture records the rate at the moment of agreement, with a clean ledger of every settlement against it.
 
 Q: Do you offer girvi / gold-loan functionality?
-A: Yes, pledge intake with a printed receipt, interest schemes that accrue on schedule, collection, renewal and release, posted to the books and on the customer’s record. Auto-debit mandates for interest are not there yet. See Girvi / Gold Loans.
+A: Yes, pledge intake with a printed receipt, interest schemes that accrue on schedule, collection, renewal and release, posted to the books and on the customer’s record. Interest can be collected automatically, and defaulted pledges move through to auction. See Girvi / Gold Loans.
 
 Q: Our trades depend on speed. Won’t logging deals slow us down?
 A: Deal capture is built to be fast at the point of agreement, not a paperwork step afterward, it replaces reconstructing terms from memory later, which costs more time than it saves.
@@ -14284,7 +14350,7 @@ FAQ
  Regional chains already run on systems like this; independent jewellers have been the ones without one. Being early on the revenue side (WhatsApp commerce, digital catalogues, gold schemes) is a customer-facing advantage today, ahead of when everyone else catches up.
 
  What does Jwero NOT do yet, honestly? 
- E-invoice/GSTR automation (IRN, e-way bills, portal filing), auto-debit for girvi interest, and a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens). All on the public roadmap , none fully shipped, we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)
+ E-invoice/GSTR automation (IRN, e-way bills, portal filing), and a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens). All on the public roadmap , none fully shipped, we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)
 
  B
 
@@ -14673,7 +14739,7 @@ Q: My competitors don’t use anything like this, why be first?
 A: Regional chains already run on systems like this; independent jewellers have been the ones without one. Being early on the revenue side (WhatsApp commerce, digital catalogues, gold schemes) is a customer-facing advantage today, ahead of when everyone else catches up.
 
 Q: What does Jwero NOT do yet, honestly?
-A: E-invoice/GSTR automation (IRN, e-way bills, portal filing), auto-debit for girvi interest, and a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens). All on the public roadmap, none fully shipped, we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)
+A: E-invoice/GSTR automation (IRN, e-way bills, portal filing), and a full vernacular product interface (beyond an early Hindi pilot on karigar self-service screens). All on the public roadmap, none fully shipped, we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)
 
 Q: Can customers actually buy on WhatsApp?
 A: Yes, browse the catalogue at live prices, ask questions, book appointments, and order inside the chat.

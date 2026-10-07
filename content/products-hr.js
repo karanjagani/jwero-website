@@ -1,96 +1,114 @@
 const L = require('../lib');
 const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
+// HR & payroll, rebuilt 2026-10-07. Confirmed by Jwero: payslips on WhatsApp,
+// staff screens in multiple languages, biometric and face-scanner devices.
+// HR has nothing for karigars; karigar wages live in manufacturing.
+const HR_FLOW = [
+  ['Attendance', 'Month closes · face scanner and phone punches · 2 late punches regularised'],
+  ['Leave', 'Leave and comp-off counted from approved requests'],
+  ['Incentive', 'Priya sold ₹18 lakh · incentive worked out from her real sales'],
+  ['Payroll', 'PF, ESI, PT and TDS worked out · run approved'],
+  ['Payslips', 'Sent to every staff member on WhatsApp'],
+  ['Files', 'Bank file and PF, ESI and PT files ready for your accountant'],
+];
+const hrFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">PAYROLL · MONTH END</p>${HR_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${HR_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const HR_CMP = [
+  ['Attendance', 'A register', 'App or device', 'Biometric, face scanner, phone or kiosk, with geo-fence and selfie'],
+  ['Salary', 'Excel formulas', 'Payroll', 'Payroll with PF, ESI, PT and TDS'],
+  ['Sales incentives', 'Worked out by hand', 'Imported', 'From real sales or margin, with clawback'],
+  ['Payslips', 'Printed', 'Email or portal', 'On WhatsApp'],
+  ['Staff app', 'None', 'English', 'Self-service in multiple languages'],
+  ['Hiring to exit', 'Files and folders', 'Separate modules', 'Recruitment to full and final, one record'],
+  ['Who sees salaries', 'Whoever opens the file', 'Admin', 'Separate view, edit and approve permissions'],
+];
+const hrTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Excel and a register</th><th>A generic HR app</th><th>Jwero</th></tr></thead><tbody>${HR_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const HR_HOW = [
+  ['Add your staff', 'Import employees, salary structures and documents.'],
+  ['Set up attendance', 'Connect biometric or face-scanner devices, or use phone and kiosk punches.'],
+  ['Set your rules', 'Leave policy, shifts, statutory deductions and incentive slabs.'],
+  ['Run the first payroll', 'Check, approve, and send payslips on WhatsApp.'],
+  ['Hand over the files', 'Bank file and PF, ESI, PT and Form 16 files go to your accountant.'],
+];
+const hrFaqs = [
+  { q: 'What is HR and payroll software for a jewellery shop?', a: 'Software that records attendance, works out salaries with PF, ESI, PT and TDS, pays sales incentives, and keeps staff records from hiring to exit. Jwero does this on the same record as your sales.' },
+  { q: 'How do I track staff attendance in a jewellery shop?', a: 'With biometric or face-scanner devices, or punches from a phone or kiosk with geo-fencing and a selfie. Late punches can be regularised and leave is counted automatically.' },
+  { q: 'How are sales incentives calculated?', a: 'From each person’s real sales or margin, on the slabs you set, with clawback if a sale is returned. Try the calculator on this page.' },
+  { q: 'Do staff get payslips on WhatsApp?', a: 'Yes. Payslips go to each staff member on WhatsApp, and are also in the staff app.' },
+  { q: 'Can staff use the app in their language?', a: 'Yes. Staff self-service screens are available in multiple languages.' },
+  { q: 'Does the bank file pay people?', a: 'It prepares a ready-to-upload bank file; a person uploads it in your banking portal.' },
+  { q: 'Does this replace my accountant?', a: 'No. PF, ESI, PT and TDS are worked out and the files prepared, and your accountant files them.' },
+  { q: 'Who can see salary data?', a: 'Seeing, editing and approving payroll are separate permissions, so a manager can approve leave without seeing salaries.' },
+  { q: 'Does it pay karigars?', a: 'Karigar wages are settled in the manufacturing module, by piece, weight or day.' },
+];
 const hrPayroll = {
   slug: 'products/hr-payroll',
-  title: 'Jewellery HR & Payroll Software: Attendance, Karigar Wages | Jwero',
-  description: 'Payroll, karigar wage settlement, attendance, leave, onboarding, recruitment and performance — on the same record as your customers and sales.',
+  title: 'Jewellery HR & Payroll Software: Attendance, Payroll, Incentives | Jwero',
+  description: 'HR and payroll software for jewellery shops: biometric and face-scanner attendance, payroll with PF, ESI, PT and TDS, sales incentives from real sales, payslips on WhatsApp, and a staff app in multiple languages.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero HR & Payroll', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Attendance-aware payroll with statutory deductions, karigar rate-card wage settlement, attendance and leave, onboarding through offboarding, recruitment, performance, learning, incentives, loans and reimbursements — on the same platform record as sales and customers.',
+    name: 'Jwero HR & Payroll', alternateName: ['Payroll software for jewellery shops', 'Staff attendance app for jewellers', 'Sales incentive software for jewellers'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'HR and payroll for jewellery businesses: biometric, face-scanner, phone and kiosk attendance with geo-fencing and selfie; leave and shifts; payroll with PF, ESI, PT and TDS; payslips on WhatsApp; bank and statutory files; sales incentives with clawback; loans and reimbursements; recruitment to full and final; a staff app in multiple languages.',
     url: 'https://jwero.ai/products/hr-payroll', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to move jewellery shop payroll and attendance off Excel', step: HR_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('HR & Payroll'),
-  faqs: [
-    { q: 'Does this replace my accountant?', a: 'No. Payroll computes PF, ESI, PT and TDS and generates the statutory export files — PF ECR, ESI CSV, PT CSV, Form 16 / Form 24Q — but your accountant still files them with the government. Nothing here has a government-portal integration.' },
-    { q: 'Does the bank file actually pay people?', a: 'No. Payroll produces a ready-to-upload NEFT-style bank file, but it does not move money or connect to any bank API. A person uploads it in your own banking portal.' },
-    { q: 'Is this a full biometric attendance system?', a: 'No. Attendance is phone- and kiosk-based, with optional geo-fencing and selfie-on-punch verification. There is no fingerprint or face-scanner hardware, and no biometric-device SDK involved.' },
-    { q: 'Can I run payroll for karigars the same way as staff?', a: 'Not the same system, but a matching one. Karigars settle through a separate piece-rate, weight-rate, hourly or daily rate-card engine, with its own compute-approve-pay lifecycle, advance recovery and contractor TDS. The difference: settlement is a ledger (khata) entry, not a bank file — there is no bank-file generation for karigar payouts.' },
-    { q: 'Can a karigar dispute a work log?', a: 'They can flag an entry as disputed, which notifies their reporting manager. That is a flag for review, not a resolution workflow — there is no approve/reject step or ledger mutation tied to a dispute today.' },
-    { q: 'Who can see salary data?', a: 'Payroll visibility, editing and approval are three separate, independently assignable permissions. A manager can see team attendance and decide approvals without ever getting access to compensation or salary figures.' },
-  ],
+  faqs: hrFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'HR & PAYROLL',
-  h1: 'Attendance, statutory payroll and karigar settlement — on the same record as the sale.',
-  sub: 'Most jewellers run payroll in one tool, attendance in another, and karigar wages on paper — none of it talking to sales or the customer record. Jwero runs HR and payroll on the same platform as everything else: one login, one record, one place approvals happen.',
+  eyebrow: 'HR · PAYROLL · ATTENDANCE',
+  h1: 'Jewellery HR and payroll software: attendance, salaries and sales incentives, in one place.',
+  sub: 'Biometric or phone attendance, payroll with PF, ESI, PT and TDS, incentives from each person’s real sales, and payslips on WhatsApp. On the same record as the sales your team makes.',
   primary: { href: '#', label: 'Show me a payroll run', wa: 'hrpayroll' },
   secondary: { href: '/platform', label: 'See the full platform' },
 })}
 
-${L.section(
-  `${L.sectionHead('THE TWO HEADLINE CAPABILITIES', 'Staff payroll, and a karigar wage system no generic HRMS has.', '')}
-  ${L.cards([
-    { title: 'Payroll', text: 'Attendance-aware, with PF, ESI, PT and TDS computed through an admin-configurable statutory pack. Multiple salary structures, overtime, incentives, loan EMIs and reimbursements fold in automatically each run, through compute → submit → approve → pay with maker-checker approval.' },
-    { title: 'Bank file & statutory exports', text: 'Payroll produces payslips, a ready-to-upload NEFT-style bank file, and statutory export files — PF ECR, ESI CSV, PT CSV, muster roll, Form 16 / Form 24Q — for your accountant to file.' },
-    { title: 'Karigar wage settlement', text: 'A rate-card system for artisans — piece-rate, weight-rate, hourly or daily — with logged work, supervisor approval, advance recovery and contractor TDS (194C/194J), through the same compute-approve-pay lifecycle.', link: { href: '/roles/karigar', label: 'See the karigar role page' } },
-    { title: 'Attendance & leave', text: 'Self-punch, kiosk punch and bulk import, with optional geo-fencing and selfie verification, regularization requests and an automated day-close. Leave covers apply/decide/cancel, monthly accrual, carry-forward, encashment and comp-off.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE MONTH END, START TO FINISH', 'From punches to payslips, without Excel.', '')}${hrFlow()}`, { tone: 'tint' })}
 
-${L.oneSystemBlock([
-  'A karigar’s settlement approval and a staff payroll run sit in the same approval queue, on the same platform record — not a separate wage register nobody else can see.',
-  'The manager who decides a leave request is governed by the same role-based access that keeps salary data out of reach unless payroll access is explicitly assigned.',
-])}
+${L.section(`${L.sectionHead('SIX JOBS, ONE TEAM RECORD', 'What HR and payroll software has to do in a jewellery shop.', '')}<div class="wa-jobs">
+  <article><h3>1. Attendance you can trust</h3><p>Biometric and face-scanner devices, or phone and kiosk punches with geo-fence and selfie; leave, shifts and comp-off.</p><a href="/products/multi-store">Branches →</a></article>
+  <article><h3>2. Payroll done right</h3><p>Salary structures, overtime, PF, ESI, PT and TDS; a bank file and statutory files for your accountant.</p><a href="/products/billing-finance">Accounts →</a></article>
+  <article><h3>3. Incentives from real sales</h3><p>Worked out from each person’s sales or margin on your slabs, with clawback on returns.</p><a href="/blog/jewellery-staff-incentives-targets">Incentives and targets →</a></article>
+  <article><h3>4. Payslips on WhatsApp</h3><p>Every payslip sent on WhatsApp, and in the staff app.</p><a href="/products/whatsapp">WhatsApp →</a></article>
+  <article><h3>5. Hiring to exit</h3><p>Recruitment, onboarding checklists, documents, reviews, loans and reimbursements, and full and final settlement.</p><a href="/products/training-lms">Training →</a></article>
+  <article><h3>6. A staff app in their language</h3><p>Attendance, leave, payslips, loans and tax declarations on their phone, in multiple languages; salaries visible only to those you allow.</p><a href="/platform/ai-workforce">Permissions →</a></article>
+</div>`)}
 
-${L.section(
-  `${L.sectionHead('THE FULL EMPLOYEE LIFECYCLE', 'From application to final settlement, on one record.', '')}
-  ${L.cards([
-    { title: 'Recruitment', text: 'A real pipeline — applied, screening, interview, offer, hired — with reject/withdraw states, feeding automatically into onboarding the moment someone is hired.' },
-    { title: 'Onboarding', text: 'Template-driven checklists with due-date offsets from the joining date and role-based task assignment. A hired candidate starts onboarding automatically from the org’s default template — no manual re-entry. Switching from another HR system? A bulk employee CSV import brings your existing roster in at once, not one profile at a time.' },
-    { title: 'Documents', text: 'Typed employee documents — PAN, Aadhaar, passport, offer letter, contract, certificates and more — uploaded, listed and deleted per employee.' },
-    { title: 'Offboarding', text: 'A genuine full-and-final settlement engine — prorated final salary, leave encashment, statutory gratuity, advance recovery — through the same compute-approve-pay lifecycle, deactivating the employee record once paid.' },
-    { title: 'Shift scheduling & directory', text: 'Roster and shift assignment with a dedicated UI, alongside a full employee directory and profile system.' },
-    { title: 'Employee self-service', text: 'My Day, attendance, leave, payslips, loans, tax declarations, Form 16 and learning — 22 screens on the employee’s own phone, with an early Hindi pilot on karigar screens.' },
-    { title: 'Asset management', text: 'Company-asset issue, return and report-lost-or-damaged tracking, per employee.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('SALES INCENTIVE CALCULATOR', 'Work out a salesperson’s incentive.', 'Your slabs, your numbers.')}<div class="callc" data-hrc>
+  <div class="callc-in">
+    <label>Sales this month, ₹<input type="number" inputmode="numeric" data-hr="s" value="1800000" min="0" step="10000"></label>
+    <label>Monthly target, ₹<input type="number" inputmode="numeric" data-hr="t" value="1500000" min="0" step="10000"></label>
+    <label>Incentive up to target, %<input type="number" inputmode="decimal" data-hr="a" value="0.5" min="0" step="0.1"></label>
+    <label>Incentive above target, %<input type="number" inputmode="decimal" data-hr="b" value="1" min="0" step="0.1"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>On sales up to target</span><b data-hr-o="a">₹0</b></p>
+    <p><span>On sales above target</span><b data-hr-o="b">₹0</b></p>
+    <p class="callc-save"><span>Incentive this month</span><b data-hr-o="t">₹0</b></p>
+    <p class="cta-note">Jwero works this out from real sales each month, and claws back on returns.</p>
+  </div>
+</div>`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('PERFORMANCE, LEARNING & INCENTIVES', 'Where HR meets the sales floor.', '')}
-  ${L.cards([
-    { title: 'Performance reviews', text: 'Review cycles group goals with self, manager and peer reviews and a competency roll-up; individual goals auto-complete at 100% progress.' },
-    { title: 'Learning & certifications', text: 'Courses built from ordered lessons and assessments, scored securely, with certificates auto-issued on completion.' },
-    { title: 'Sales & production incentives', text: 'Commission computed from real sales-order data, true margin (excluding rather than guessing when cost data is missing), or settled karigar work value, on tiered rate ladders — with a genuine clawback engine if a paid-commission sale is later returned.', link: { href: '/products/crm', label: 'See the CRM this reads from' } },
-    { title: 'Loans & reimbursements', text: 'Flat-interest EMI loans recovered automatically as a payroll deduction, and expense reimbursement claims paid as a non-taxable line — both maker-checker approved.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('COMPARE', 'Excel and a register, a generic HR app, or Jwero.', '')}${hrTable()}`)}
 
-${L.oneSystemBlock([
-  'Incentive commission is computed from the same sales-order data the CRM and billing already hold — not a separate spreadsheet reconciled at month-end.',
-  'Every HR mutation — payroll runs, leave, karigar settlements, incentives, onboarding, shifts, salary structures — lands in the platform’s one shared activity log, with an HR filter to see it all in one click.',
-])}
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to move payroll and attendance off Excel.', 'Five steps.')}${L.steps(HR_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
 ${L.honestGapsBlock([
-  'The payroll bank file is not bank-integrated — it does not move money; a person uploads it in their own banking portal.',
-  'Statutory exports (PF ECR, ESI, PT, Form 16 / 24Q) are not filed with the government automatically — they are generated for your accountant to file.',
-  'Compliance-profile registration numbers (PF establishment code, ESI employer code, PT registration, TAN) are reference identifiers for your accountant — they do not drive calculations or auto-file anything themselves.',
-  'Approval routing is a single org-wide fallback approver for unassigned cases, not a multi-step or threshold-based approval chain.',
-  'A karigar can flag a work log as disputed, which notifies their manager — there is no approve/reject resolution workflow or ledger mutation from a dispute yet.',
-  'Karigar settlement payout is a ledger (khata) balance only — there is no bank-file generation for karigar settlements, unlike staff payroll.',
+  'The bank file is uploaded by a person in your banking portal; Jwero does not move money.',
+  'PF, ESI, PT and Form 16 files are prepared for your accountant to file.',
 ])}
 
-${L.section(`${L.sectionHead('HR & PAYROLL QUESTIONS', 'What runs automatically, and what still needs a person.', '')}${L.faqBlock([
-  { q: 'Does the bank file actually pay people?', a: 'No — it’s a ready-to-upload NEFT-style file. A person executes it in their own banking portal; nothing here moves money automatically.' },
-  { q: 'Is this a full biometric attendance system?', a: 'No — attendance is phone- and kiosk-based with optional geo-fencing and selfie verification, not fingerprint or face-scanner hardware.' },
-  { q: 'Can I run payroll for karigars the same way as staff?', a: 'A matching lifecycle, not the same system — karigar settlement is a rate-card engine ending in a ledger balance, with no bank-file generation like staff payroll has.' },
+${L.oneSystemBlock([
+  'Incentives come from the same sales the counter and CRM record, not a spreadsheet at month end.',
+  'Payroll, leave and approvals sit in the same activity log as the rest of the business.',
+  'Karigar wages are settled in <a href="/products/manufacturing">manufacturing</a>, against the work and the gold.',
 ])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="hrpayroll">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Run payroll and karigar wages on one system.', 'Bring last month’s payroll and one karigar settlement — we will show you both on the same platform.', 'hrpayroll')}
+${L.ctaBand('Run payroll without Excel.', 'Bring last month’s attendance and salaries; we will run them in Jwero with you.', 'hrpayroll')}
 `,
 };
 

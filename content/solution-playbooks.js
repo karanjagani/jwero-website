@@ -199,7 +199,7 @@ const PLAYBOOKS = {
       ['17:00', 'Hallmarking batch', 'A list on paper.', 'Batch with HUIDs attached to pieces as they return.'],
       ['19:30', 'Month-end metal closure', 'Three days of reconciliation.', 'Metal closure by stage, by karigar, tonight.'],
     ],
-    modules: [['/products/manufacturing', 'BOM, routing, wastage norms, metal closure.'], ['/products/purchase-vendors', 'Raw material and findings from vendors, in grams.'], ['/products/inventory', 'FG receipt to piece, memo to retailers.'], ['/products/hr-payroll', 'Karigar settlement and statutory payroll.'], ['/products/billing-finance', 'Job work and B2B invoicing.'], ['/products/erp', 'The spine that ties issue, return and sale together.']],
+    modules: [['/products/manufacturing', 'BOM, routing, wastage norms, metal closure.'], ['/products/purchase-vendors', 'Raw material and findings from vendors, in grams.'], ['/products/inventory', 'FG receipt to piece, memo to retailers.'], ['/products/manufacturing', 'Karigar settlement by weight or piece.'], ['/products/billing-finance', 'Job work and B2B invoicing.'], ['/products/erp', 'The spine that ties issue, return and sale together.']],
     fit: ['Karigar khatas are reconciled at month end', 'Wastage is argued job by job', 'Delivery dates are guesses', 'Hallmarking batches live on paper', 'Metal closure takes days'],
   },
   'solutions/oem-manufacturers': {
@@ -211,7 +211,7 @@ const PLAYBOOKS = {
       ['16:30', 'Costing for the next quote', 'Last quarter’s numbers.', 'Costing from actual metal, wastage and labour on the last run.'],
       ['19:00', 'Settlement with the brand', 'Metal received vs delivered, argued.', 'Party metal account: received, consumed, delivered, balance.'],
     ],
-    modules: [['/products/manufacturing', 'Jobs from POs, routing, QC, costing from actuals.'], ['/products/billing-finance', 'B2B invoicing and party accounts in grams and rupees.'], ['/products/purchase-vendors', 'Client-supplied metal and findings tracked as job work.'], ['/products/inventory', 'FG by client, memo and dispatch.'], ['/products/hr-payroll', 'Karigar settlement by weight or piece.'], ['/products/erp', 'One spine from PO to dispatch.']],
+    modules: [['/products/manufacturing', 'Jobs from POs, routing, QC, costing from actuals.'], ['/products/billing-finance', 'B2B invoicing and party accounts in grams and rupees.'], ['/products/purchase-vendors', 'Client-supplied metal and findings tracked as job work.'], ['/products/inventory', 'FG by client, memo and dispatch.'], ['/products/manufacturing', 'Karigar settlement by weight or piece.'], ['/products/erp', 'One spine from PO to dispatch.']],
     fit: ['Brand POs are re-typed into a register', 'Order status needs a call to the floor', 'Costing uses last quarter’s numbers', 'Client metal accounts are settled by argument', 'QC is a checklist when there’s time'],
   },
   'solutions/casting-units': {
@@ -223,7 +223,7 @@ const PLAYBOOKS = {
       ['16:30', 'Scrap and sprues', 'A tin.', 'Scrap weighed back into stock; the loop closes.'],
       ['19:00', 'Client billing', 'Per-gram charge on a guess of grams.', 'Job-work invoice from actual weights, GST-ready.'],
     ],
-    modules: [['/products/manufacturing', 'Trees as jobs, wastage norms per stage, metal closure.'], ['/products/purchase-vendors', 'Client metal received as job work.'], ['/products/billing-finance', 'Job-work invoices from actual weights.'], ['/products/inventory', 'Scrap, sprues and alloy stock by lot.'], ['/products/hr-payroll', 'Operator and karigar settlement.'], ['/products/erp', 'Every gram accounted from wax to return.']],
+    modules: [['/products/manufacturing', 'Trees as jobs, wastage norms per stage, metal closure.'], ['/products/purchase-vendors', 'Client metal received as job work.'], ['/products/billing-finance', 'Job-work invoices from actual weights.'], ['/products/inventory', 'Scrap, sprues and alloy stock by lot.'], ['/products/manufacturing', 'Operator and karigar settlement.'], ['/products/erp', 'Every gram accounted from wax to return.']],
     fit: ['Loss is known only at month end', 'Client metal is sorted by memory', 'Scrap lives in a tin', 'Job-work billing guesses the grams', 'No one can say which tree lost the most'],
   },
   'solutions/cad-services': {

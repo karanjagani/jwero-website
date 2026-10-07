@@ -1771,6 +1771,15 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Part payments of principal, renewals, release with a printed document, default steps with notices and auctions.
 - Every disbursal, interest entry, collection, release and auction posts to the ledger; the loan sits on the customer record.
 
+## HR and payroll for jewellery shops (facts)
+
+- Page: https://jwero.ai/products/hr-payroll
+- Attendance from biometric and face-scanner devices, or phone and kiosk punches with geo-fencing and selfie; leave, shifts, comp-off, regularisation.
+- Payroll with salary structures, overtime, PF, ESI, PT and TDS; payslips sent on WhatsApp; a bank file a person uploads; PF, ESI, PT and Form 16 files for the accountant to file.
+- Sales incentives from real sales or margin on tiered slabs, with clawback; loans and reimbursements in payroll.
+- Recruitment, onboarding, documents, reviews, learning and full-and-final settlement. Staff self-service app in multiple languages; salary visibility by permission.
+- Karigar wages are not in HR; they are settled in the manufacturing module.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -1780,8 +1789,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant. Jwero does not file GST returns.
 - Counter POS (registers, shifts, cash day-close, returns, old-gold exchange), statutory payroll, karigar
   settlement, girvi/gold loans, manufacturing (BOM, routing, wastage norms) and a video counter shipped in 2026.
-- E-invoice IRN (e-invoices are generated in Tally through the bridge), a full vernacular product interface (an early Hindi pilot is live on
-  karigar screens), and predictive ML forecasting are on the public roadmap, not shipped today:
+- E-invoice IRN (e-invoices are generated in Tally through the bridge), and predictive ML forecasting are on the public roadmap, not shipped today:
   ${SITE}/roadmap
 
 ## Company

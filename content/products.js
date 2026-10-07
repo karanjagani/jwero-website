@@ -64,7 +64,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('MANAGE', 'The back office, on the same record.', '')}
   ${L.cards([
-    { title: 'HR & Payroll', text: 'Attendance, leave, recruitment, performance and a full statutory payroll run — plus a separate karigar wage-settlement ledger, on the same record as the job.', link: { href: '/products/hr-payroll', label: 'Explore' } },
+    { title: 'HR & Payroll', text: 'Attendance, leave, recruitment, performance and a full statutory payroll run, with biometric attendance and payslips on WhatsApp.', link: { href: '/products/hr-payroll', label: 'Explore' } },
     { title: 'Repairs & After-Sales', text: 'Every repair tracked from intake to delivery with a photographic custody chain, warranty/AMC entitlements, and in-store old-gold exchange.', link: { href: '/products/repairs-service', label: 'Explore' } },
     { title: 'Purchase & Vendors', text: 'Purchase orders, goods-received notes, vendor bills and credit notes, with a self-serve portal so suppliers track their own POs.', link: { href: '/products/purchase-vendors', label: 'Explore' } },
   ])}`
