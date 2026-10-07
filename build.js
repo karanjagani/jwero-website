@@ -406,7 +406,7 @@ function journeyFix(html, p) {
       'whatsapp-business-api-for-jewellers': COM, 'whatsapp-order-management-jewellery': COM, 'jewellery-catalogue-sharing-on-whatsapp': COM, 'blog/whatsapp-for-jewellers-guide': COM,
       'whatsapp-crm-for-jewellery-stores': CRM, 'whatsapp-crm-for-jewellers-how-to-capture-track-convert-every-chat': CRM };
     const pl = PILLAR[slug];
-    if (pl) html = html.replace('<div class="post-body">', `<div class="post-body"><p class="post-note"><b>Looking for software for this?</b> See <a href="${pl[0]}">${pl[1]}</a>: ${pl[2]}, from an official Meta Business Partner.</p>`);
+    if (pl) html = html.replace('<div class="post-body">', `<div class="post-body"><p class="post-note"><b>Looking for software for this?</b> See <a href="${pl[0]}">${pl[1]}</a>: ${pl[2]}, on the official WhatsApp Business Platform.</p>`);
   }
   // pages never offer a button back to themselves
   if (slug === 'how-it-works') html = html.replace(/<a class="btn[^"]*" href="\/how-it-works">See how Jwero works<\/a>/g, '');
@@ -1618,7 +1618,7 @@ platinum/lab-grown/gemstone retailers, wholesalers, manufacturers (gold, diamond
 export), and jewellery brands, D2C startups and franchise networks alike.
 
 ## WhatsApp, payments and voice (facts)
-- Jwero is an official Meta Business Partner. It connects a jeweller's existing number to the official WhatsApp Business Platform.
+- Jwero connects a jeweller's existing number to the official WhatsApp Business Platform.
 - Customers browse catalogues priced at today's gold rate, add to cart and pay with WhatsApp's native payment experience inside the chat; the order, invoice and stock update on the customer's record.
 - WhatsApp Flows forms (visits, video calls, scheme enrolment), broadcasts with approved templates and consent, and a shared inbox for WhatsApp, Instagram and Facebook with AI drafts under approval.
 - Voice AI agents handle up to 8 calls at once, inbound and outbound, 24x7, at INR 7 a call, all inclusive (AI, voice and phone line), in Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia; they run bulk calling campaigns (scheme reminders, follow-ups, invitations) on the same customer record. Details: ${SITE}/ai-calling-for-jewellers Triggered WhatsApp notifications (order, payment, ready, scheme due) and segment campaigns run from the same system.

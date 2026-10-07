@@ -1583,8 +1583,6 @@ const CUSTOMER_LOGOS = [
   { name: 'L Sunderdas Zaveri', file: 'ls-zaveri.png' },
 ];
 
-// Official Meta Business Partner, as a plain text badge (Meta's own badge artwork can replace it).
-const partnerBadge = (cls = '') => `<a class="partner-badge ${cls}" href="/products/whatsapp">${icon('check')}<span>Official Meta Business Partner</span><em>WhatsApp Business Platform</em></a>`;
 function customerLogos() {
   const chip = (c) => `<div class="logo-chip" title="${esc(c.name)}"><img src="/assets/logos/customers/${c.file.replace(/\.png$/, ".webp")}" alt="${esc(c.name)} logo" loading="lazy" width="140" height="60"></div>`;
   return `
@@ -1598,7 +1596,6 @@ function customerLogos() {
 }
 
 module.exports = {
-  partnerBadge,
   esc, icon, autoIcon, sim, controlSplit, mockMemo, LINK_ICONS, PERSONAS, personaSlot, personaSwitch, systemSplit, gemStage, heroSchematic, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
   mark, homeHero, STACK, STACK_COST, trustStrip, proofGrid, trustBadges, SECURITY_CONTROLS, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,

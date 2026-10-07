@@ -456,7 +456,7 @@ const mktStory = () => `<div class="wa-story" data-wa-story>
   <ol class="wa-steps">${MKT_STEPS.map(([t]) => `<li><b>${t}</b></li>`).join('')}</ol>
 </div>`;
 const MKT_CMP = [
-  ['Official WhatsApp Business Platform', 'No, a paired phone', 'Yes', 'Yes, official Meta Business Partner'],
+  ['Official WhatsApp Business Platform', 'No, a paired phone', 'Yes', 'Yes, on your own number'],
   ['Number-ban risk', 'High', 'Low', 'Low: consent, limits and quiet hours built in'],
   ['Audience', 'The whole contact list', 'Uploaded lists', 'Live segments from purchases, schemes, occasions'],
   ['Messages with today’s prices', 'No', 'No', 'Catalogue cards priced at today’s rate'],
@@ -486,7 +486,7 @@ const mktFaqs = [
 const broadcast = {
   slug: 'whatsapp-broadcast-for-jewellers',
   title: 'WhatsApp Marketing for Jewellers: Broadcasts, Campaigns | Jwero',
-  description: 'WhatsApp marketing for jewellers from an official Meta Business Partner: broadcasts and festival campaigns to live segments, triggers, approved templates, number health, replies in one inbox and sales traced to each send.',
+  description: 'WhatsApp marketing for jewellers on the official WhatsApp Business Platform: broadcasts and festival campaigns to live segments, triggers, approved templates, number health, replies in one inbox and sales traced to each send.',
   breadcrumbs: [['Home', '/'], ['Jewellery software in India', '/jewellery-software-india'], ['WhatsApp marketing for jewellers']],
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Jwero WhatsApp Marketing for Jewellers', alternateName: ['WhatsApp broadcast software for jewellers', 'WhatsApp campaigns for jewellery stores'],

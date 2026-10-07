@@ -2,7 +2,7 @@ const L = require('../lib');
 const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 // The WhatsApp page: what a jeweller searches for, in the order they decide.
-// Facts confirmed by Jwero (2026-10-07): official Meta Business Partner; native
+// Facts confirmed by Jwero (2026-10-07): official WhatsApp Business Platform; native
 // WhatsApp payments; voice AI agents for inbound and outbound calls.
 const WA_STEPS = [
   ['ig', 'Instagram ad', 'She taps “Chat on WhatsApp” under your reel.'],
@@ -20,7 +20,7 @@ const waStory = () => `<div class="wa-story" data-wa-story>
 </div>`;
 
 const WA_COMPARE = [
-  ['Official WhatsApp Business Platform (API)', 'No', 'Yes', 'Yes, through an official Meta Business Partner'],
+  ['Official WhatsApp Business Platform (API)', 'No', 'Yes', 'Yes, on your own number'],
   ['Shared inbox for the whole team', 'One phone', 'Yes', 'Yes, with WhatsApp, Instagram and Facebook together'],
   ['Catalogue priced at today’s gold rate', 'No', 'No', 'Yes, prices follow the rate'],
   ['Cart and payment inside WhatsApp', 'No', 'Partly', 'Yes, native WhatsApp payments'],
@@ -37,25 +37,25 @@ const waTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><t
 
 const WA_SETUP = [
   ['Check your number', 'We check whether your current WhatsApp number can move to the official platform, and whether it can keep the WhatsApp Business app alongside.'],
-  ['Verify your business with Meta', 'Your business details are verified in Meta Business Manager. As an official Meta Business Partner, Jwero guides this step with you.'],
+  ['Verify your business with Meta', 'Your business details are verified in Meta Business Manager. Jwero guides this step with you.'],
   ['Connect the number to Jwero', 'The number moves onto the WhatsApp Business Platform. Customers keep messaging the same number.'],
   ['Load your catalogue and templates', 'Your products, priced at today’s rate, and your approved message templates for reminders and offers.'],
   ['Switch on payments and the inbox', 'WhatsApp payments, the shared inbox for your team, and AI drafts that wait for approval.'],
 ];
 
 const whatsappFaqs = [
-  { q: 'What is the WhatsApp API?', a: 'The WhatsApp API, officially the WhatsApp Business Platform, is Meta’s version of WhatsApp for businesses that need more than one phone: a shared team inbox, approved templates for reminders and offers, broadcasts, catalogues, payments and integration with business software. It is used through a Meta Business Partner such as Jwero.' },
+  { q: 'What is the WhatsApp API?', a: 'The WhatsApp API, officially the WhatsApp Business Platform, is Meta’s version of WhatsApp for businesses that need more than one phone: a shared team inbox, approved templates for reminders and offers, broadcasts, catalogues, payments and integration with business software. It is used through a provider such as Jwero.' },
   { q: 'What is WhatsApp commerce for jewellers?', a: 'WhatsApp commerce means selling inside WhatsApp: the customer asks, sees pieces priced at today’s gold rate, adds them to a cart and pays without leaving the chat. For jewellers it also includes booking visits or video calls, scheme reminders and follow-ups on the same number.' },
-  { q: 'Which is the best WhatsApp API for jewellers?', a: 'Look for an official Meta Business Partner, a catalogue that follows the gold rate, payments inside WhatsApp, a team inbox, and a link to your billing, stock and customer records. Generic API tools cover messaging; Jwero covers the jewellery business behind it.' },
+  { q: 'Which is the best WhatsApp API for jewellers?', a: 'Look for the official WhatsApp Business Platform, a catalogue that follows the gold rate, payments inside WhatsApp, a team inbox, and a link to your billing, stock and customer records. Generic API tools cover messaging; Jwero covers the jewellery business behind it.' },
   { q: 'Can customers buy and pay inside WhatsApp?', a: 'Yes. Customers browse a catalogue priced at today’s rate, add pieces to a cart and pay with WhatsApp’s native payment experience, without leaving the chat. The order and invoice land on their customer record. For high-value pieces, the chat can book a visit or a video call instead.' },
-  { q: 'Is Jwero an official WhatsApp partner?', a: 'Yes. Jwero is an official Meta Business Partner, and connects your number to the official WhatsApp Business Platform. That is what makes templates, broadcasts, catalogues and payments work within Meta’s rules.' },
+  { q: 'Does Jwero use the official WhatsApp API?', a: 'Yes. Jwero connects your number to the official WhatsApp Business Platform. That is what makes templates, broadcasts, catalogues and payments work within Meta’s rules.' },
   { q: 'Will my number get banned?', a: 'Numbers get restricted for spam-like behaviour. Jwero uses the official platform, approved templates, recorded consent, limits on how often each customer is messaged, and instant opt-out, which is how numbers stay healthy.' },
   { q: 'Can I keep my existing WhatsApp number?', a: 'Yes. Your number moves onto the official platform and customers keep messaging the same number. We check first whether it can also keep the WhatsApp Business app alongside.' },
   { q: 'How much does WhatsApp API cost for a jewellery shop?', a: 'Two parts: Jwero One at ₹18,000 a month (first month ₹3,600) with every module, and Meta’s per-message fees for template messages, passed through at cost from a prepaid wallet. Replies inside a customer’s 24-hour window are not charged by Meta. See the WhatsApp pricing guide.' },
   { q: 'How is Jwero different from WATI, Interakt or DoubleTick?', a: 'Those tools send and receive messages. Jwero’s WhatsApp is part of the jewellery system: the catalogue follows the gold rate, payments and orders update stock and the customer record, and replies know purchases and scheme balances.' },
   { q: 'Does Jwero also handle phone calls?', a: 'Yes. Jwero’s voice AI agents answer inbound calls in bulk and run outbound AI calling campaigns in bulk, such as scheme reminders, follow-ups and event invitations, in Indian languages, writing every call to the same customer record as WhatsApp.' },
   { q: 'Can WhatsApp messages send automatically when something happens?', a: 'Yes. Triggers send notifications when an order is confirmed, a payment arrives, a piece or repair is ready, or a scheme instalment is due. Campaigns go to segments you choose, by purchase, occasion or scheme.' },
-  { q: 'What if Meta changes WhatsApp’s rules?', a: 'Your customers, catalogue and history live in Jwero, not inside the channel. As a Meta Business Partner, Jwero follows rule changes and updates the platform; your data stays yours.' },
+  { q: 'What if Meta changes WhatsApp’s rules?', a: 'Your customers, catalogue and history live in Jwero, not inside the channel. Jwero follows rule changes and updates the platform; your data stays yours.' },
   { q: 'Will older customers really buy this way?', a: 'They already ask “rate kya hai?” on WhatsApp. Jwero makes sure those chats are answered fast, in their language, recorded, and closed.' },
   { q: 'Do I have to approve every AI reply?', a: 'At first, yes, in batches when it suits you. Once you trust a type of reply, you can let it send on its own. You set the pace.' },
 ];
@@ -63,11 +63,11 @@ const whatsappFaqs = [
 const whatsapp = {
   slug: 'products/whatsapp',
   title: 'WhatsApp API for Jewellers: Catalogue, Payments and CRM | Jwero',
-  description: 'WhatsApp API for jewellers from an official Meta Business Partner: WhatsApp commerce with live-rate catalogues, native payments, a shared inbox, triggers, campaigns and bulk AI calling.',
+  description: 'WhatsApp API for jewellers on the official WhatsApp Business Platform: WhatsApp commerce with live-rate catalogues, native payments, a shared inbox, triggers, campaigns and bulk AI calling.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero WhatsApp API for Jewellers', alternateName: ['Jwero WhatsApp Commerce', 'WhatsApp API for jewellery business'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'WhatsApp commerce for jewellers from an official Meta Business Partner: live-rate catalogues, native WhatsApp payments, a shared inbox with AI drafts under approval, triggered notifications, campaigns, broadcasts, WhatsApp Flows and bulk inbound and outbound voice AI calling on one customer record.',
+    description: 'WhatsApp commerce for jewellers on the official WhatsApp Business Platform: live-rate catalogues, native WhatsApp payments, a shared inbox with AI drafts under approval, triggered notifications, campaigns, broadcasts, WhatsApp Flows and bulk inbound and outbound voice AI calling on one customer record.',
     url: 'https://jwero.ai/products/whatsapp', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
     offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module; Meta message fees at cost.' },
   },

@@ -74,7 +74,7 @@ const waBot = post({
   close: ['Every WhatsApp answered, with a real price.', 'Jwero’s AI replies from your catalogue and today’s rate, and your team approves.'],
   faqs: [
     { q: 'Can a WhatsApp chatbot tell customers today’s gold rate?', a: 'Yes, if it reads your rate. Jwero’s replies use the same rate and pricing rules as your counter, so the price in the chat matches the bill.' },
-    { q: 'Do I need the WhatsApp Business API for an AI chatbot?', a: 'Yes. The free Business app does not support a shared team inbox or automated replies at scale. Jwero is a Meta Business Partner and sets up the official API on your number.' },
+    { q: 'Do I need the WhatsApp Business API for an AI chatbot?', a: 'Yes. The free Business app does not support a shared team inbox or automated replies at scale. Jwero sets up the official API on your number.' },
     { q: 'What if the chatbot cannot answer?', a: 'It hands the chat to a person with the conversation and the customer’s history, rather than guessing.' },
   ],
   body: `

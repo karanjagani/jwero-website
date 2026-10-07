@@ -28,7 +28,7 @@ platinum/lab-grown/gemstone retailers, wholesalers, manufacturers (gold, diamond
 export), and jewellery brands, D2C startups and franchise networks alike.
 
 ## WhatsApp, payments and voice (facts)
-- Jwero is an official Meta Business Partner. It connects a jeweller's existing number to the official WhatsApp Business Platform.
+- Jwero connects a jeweller's existing number to the official WhatsApp Business Platform.
 - Customers browse catalogues priced at today's gold rate, add to cart and pay with WhatsApp's native payment experience inside the chat; the order, invoice and stock update on the customer's record.
 - WhatsApp Flows forms (visits, video calls, scheme enrolment), broadcasts with approved templates and consent, and a shared inbox for WhatsApp, Instagram and Facebook with AI drafts under approval.
 - Voice AI agents handle up to 8 calls at once, inbound and outbound, 24x7, at INR 7 a call, all inclusive (AI, voice and phone line), in Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia; they run bulk calling campaigns (scheme reminders, follow-ups, invitations) on the same customer record. Details: https://jwero.ai/ai-calling-for-jewellers Triggered WhatsApp notifications (order, payment, ready, scheme due) and segment campaigns run from the same system.
