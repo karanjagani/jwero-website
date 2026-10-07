@@ -2723,3 +2723,13 @@ document.addEventListener('click', function (e) {
     set('gst', inr(g)); set('month', inr(m)); set('year', inr(m * 12)); }
   root.addEventListener('input', run); run();
 })();
+
+// Multi-store page: head-office time chasing branches.
+(function () {
+  var root = document.querySelector('[data-hoc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-hc="' + k + '"]') || {}).value || 0; };
+  function run() { var n = v('br') * v('calls') * v('days'), h = n * v('mins') / 60;
+    var set = function (k, t) { var el = root.querySelector('[data-hc-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('n', Math.round(n).toLocaleString('en-IN')); set('hours', Math.round(h).toLocaleString('en-IN') + ' hours'); }
+  root.addEventListener('input', run); run();
+})();

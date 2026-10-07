@@ -715,7 +715,7 @@ const SIM_PAGES = {
   'products/inventory': 'shelf', 'solutions/pain/dead-stock': 'shelf', 'roles/inventory-manager': 'shelf',
   'products/pos': 'till', 'roles/cashier': 'till', 'products/billing-finance': 'till',
   'solutions/diamond-traders': 'shelf', 'roles/accountant': 'till', 'roles/store-manager': 'shelf', 'roles/chain-owner': 'approve', 'roles/purchase-manager': 'shelf', 'roles/crm-executive': 'memory', 'roles/marketing-manager': 'approve', 'roles/b2b-manager': 'rate', 'roles/ecommerce-manager': 'rate', 'roles/quality-hallmarking': 'grams', 'roles/franchise-partner': 'approve', 'roles/next-gen-successor': 'memory', 'roles/cad-designer': 'approve', 'solutions/pain/lead-leakage': 'memory',
-  'products/erp': 'grams', 'products/manufacturing': 'grams', 'products/multi-store': 'shelf', 'products/gold-schemes': 'memory', 'products/repairs-service': 'memory',
+  'products/erp': 'grams', 'products/manufacturing': 'grams', 'products/gold-schemes': 'memory', 'products/repairs-service': 'memory',
   'products/manufacturing': 'grams', 'solutions/manufacturers': 'grams', 'roles/production-manager': 'grams', 'roles/karigar': 'grams',
 };
 // Solution playbooks: the day loop + module map after the simulation, the fit
@@ -811,7 +811,7 @@ function withManaged(body, page) {
   const TOOL_QUOTE = { 'ads-for-jewellers': 3, 'jewellery-website-analytics': 3, 'instagram-for-jewellers': 3, 'jewellery-appointment-booking-software': 2, 'whatsapp-broadcast-for-jewellers': 2, 'ai-calling-for-jewellers': 2, 'sms-marketing-for-jewellers': 2, 'jewellery-accounting-software': 0, 'jewellery-barcode-tagging-software': 0, 'cloud-jewellery-software': 0, 'jewellery-staff-management-software': 0, 'jewellery-showroom-footfall-counting': 1, 'tools/dead-stock-calculator': 1, 'tools/gold-scheme-calculator': 1, 'tools/gold-loss-calculator': 0, 'tools/whatsapp-revenue-estimator': 2 };
   const CMP_QUOTE = { 'compare/jwero-vs-ornate-nx': 1, 'compare/jwero-vs-synergics': 0, 'compare/jwero-vs-jewelacc': 0, 'compare/jwero-vs-marg': 0, 'compare/jwero-vs-sioniq': 1, 'compare/jwero-vs-wati': 2, 'compare/jwero-vs-interakt': 2, 'compare/jwero-vs-doubletick': 2, 'compare/whatsapp-tools-vs-jewellery-os': 2, 'compare/jwero-vs-shopify': 3, 'compare/jwero-vs-quicksell': 3, 'compare/jwero-vs-zoho-crm': 4, 'compare/jwero-vs-zithara': 4, compare: 1 };
   const GUIDE_QUOTE = { guides: 1, 'guides/jewellery-billing-software': 0, 'guides/jewellery-erp-software': 0, 'guides/jewellery-inventory-software': 0, 'guides/jewellery-manufacturing-software': 1, 'guides/jewellery-crm-software': 4 };
-  const PROD_QUOTE = { whatsapp: 2, 'instagram-facebook': 2, 'ai-sales-agents': 2, storefront: 3, catalog: 3, 'digital-catalogues': 3, marketplaces: 3, erp: 0, inventory: 0, pos: 0, 'billing-finance': 0, 'purchase-vendors': 0, manufacturing: 1, 'multi-store': 0, crm: 4, journeys: 1, loyalty: 1, segmentation: 1, 'gold-schemes': 4 };
+  const PROD_QUOTE = { whatsapp: 2, 'instagram-facebook': 2, 'ai-sales-agents': 2, storefront: 3, catalog: 3, 'digital-catalogues': 3, marketplaces: 3, erp: 0, inventory: 0, pos: 0, 'billing-finance': 0, 'purchase-vendors': 0, manufacturing: 1, 'multi-store': 4, crm: 4, journeys: 1, loyalty: 1, segmentation: 1, 'gold-schemes': 4 };
   const k2 = slug.split('/')[1];
   const R = P.ROTATE, qi = slug.startsWith('solutions/') && SOL_QUOTE[k2] !== undefined ? SOL_QUOTE[k2] : slug.startsWith('products/') && PROD_QUOTE[k2] !== undefined ? PROD_QUOTE[k2] : slug.startsWith('roles/') && ROLE_QUOTE[k2] !== undefined ? ROLE_QUOTE[k2] : PLAT_QUOTE[slug] !== undefined ? PLAT_QUOTE[slug] : TOOL_QUOTE[slug] !== undefined ? TOOL_QUOTE[slug] : CMP_QUOTE[slug] !== undefined ? CMP_QUOTE[slug] : GUIDE_QUOTE[slug] !== undefined ? GUIDE_QUOTE[slug] : R[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % R.length];
   let block;
@@ -1657,6 +1657,12 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - AI-drafted purchase orders from what is selling and ageing, with per-vendor prices; unfixed-rate purchases (buy now, fix the rate later); advance shipping notices; goods received by weight and purity with quality checks and discrepancies.
 - Purchase bills matched to the order and receipt, returns and credit notes, vendor advances and payments; purchases reconciled with GSTR-2B for input credit; metal purchases and metal loans in fine grams; consignment stock taken in from suppliers.
 - A vendor portal where suppliers see their orders, bills and payment status. Details: ${SITE}/products/purchase-vendors
+
+## Multi-store jewellery software (facts)
+- Holding, brands, branches and franchises in one network, with roles and permissions at each level, single sign-on and an audit trail.
+- Central price rules, catalogue and campaigns with branch exceptions through approvals; one stock across branches with transfers on challans, vaults and warehouses.
+- Customers, gold schemes and loyalty follow the customer to any branch: enrol at one branch, pay or redeem at another. One WhatsApp number with chats routed to the right branch; AI calling for every branch.
+- Branch comparison reports (sales, footfall, ageing, staff incentives); offline billing and cash close per branch; consolidated books. Franchise royalty calculation is not built yet. Details: ${SITE}/products/multi-store
 
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.

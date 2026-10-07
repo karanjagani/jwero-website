@@ -4473,129 +4473,175 @@ A: Every instalment is receipted and recorded on her ledger, and closures are OT
 
 ---
 
-# Multi-store & Franchise Jewellery Software
+# Multi-Store Jewellery Software for Chains & Franchises
 URL: https://jwero.ai/products/multi-store
 
-Holdings, brands and branches on one platform: branch-consistent pricing, role-based access, central campaigns, and customers recognised at every counter.
+Multi-store jewellery software: one customer, one stock and central prices across branches, schemes redeemable anywhere, one WhatsApp number routed to the right branch, branch reports and roles.
 
-MULTI-STORE & FRANCHISE
+MULTI-STORE JEWELLERY SOFTWARE · CHAINS AND FRANCHISES
 
-## Grow to ten stores without losing the one-store touch.
+## Multi-store jewellery software: grow to ten stores without losing the one-store touch.
 
- Chains win because every branch runs the same system and every customer is known everywhere. Jwero gives your network the same spine: holdings, brands and branches, consistent pricing, central campaigns, and one report the owner reads.
+ One customer, one stock and one set of prices across every branch. A piece found in another store and transferred in minutes, schemes redeemable anywhere, one WhatsApp number routed to the right branch, and head office seeing every branch side by side.
 
- Show me the owner’s view of every branch 
- The multi-store playbook 
+ Show me my network on one screen 
 
-## Network structure
+ ONE SALE, FOUR BRANCHES
 
- Holdings → brands → branches modelled properly, with settings inherited and overridden deliberately.
+## A customer, a piece and a scheme from three different stores.
 
-## One customer, every counter
+ ONE NETWORK · FOUR BRANCHES
+ Branch 2 · Andheri Customer asks for the temple necklace from the catalogue
+ Stock search Found at Branch 4 · Borivali, in the showcase
+ Transfer Sent to Andheri on a challan, received and scanned
+ Counter Billed at Andheri at today’s rate
+ Scheme Her scheme from Branch 1 · Thane redeemed on this bill
+ WhatsApp Receipt sent; her next message routed to Andheri
+ Head office Sales, stock and the scheme liability update for the whole network
 
- Purchase history, plans and preferences follow the customer across branches.
+ Branch 2 Customer asks for the temple necklace from the catalogue 
+ Stock search Found at Branch 4 
+ Transfer Sent to Andheri on a challan, received and scanned 
+ Counter Billed at Andheri at today’s rate 
+ Scheme Her scheme from Branch 1 
+ WhatsApp Receipt sent; her next message routed to Andheri 
+ Head office Sales, stock and the scheme liability update for the whole network 
 
-## Branch-consistent pricing
+ SIX JOBS, ONE NETWORK
 
- Central price rules with controlled local exceptions, approvals required, drift impossible.
+## What multi-store jewellery software has to do.
 
- See the pricing engine → 
+## 1. One network
+ Holding, brands, branches and franchises, with roles and permissions at each level, single sign-on and an audit trail.
+ Enterprise → 
 
-## Role-based control
+## 2. Head office decides, branches run
+ Central price rules, catalogue and campaigns. Branches request exceptions, which go to a manager for approval.
+ Catalogue → 
 
- ~150 permissions decide who sees customers, costs, schemes and reports, per role, per branch.
+## 3. One stock across branches
+ Find a piece in any branch, transfer it on a challan and receive it by scanning; vaults and warehouses too.
+ Branch transfers → 
 
-## Central marketing
+## 4. One customer everywhere
+ History, schemes and loyalty follow the customer: enrol at one branch, pay or redeem at another. One WhatsApp number with chats routed to the right branch, and AI calling for every branch.
+ Schemes across branches → 
 
- Campaigns and festival journeys run centrally, execute locally, and report by branch.
+## 5. Compare branches
+ Sales, footfall and conversion, ageing stock and staff incentives, branch by branch, side by side.
+ Footfall → 
 
-## Owner’s rollup
+## 6. Every branch keeps billing
+ Offline billing and a cash close per branch, with consolidated books for the network.
+ Billing → 
 
- Stock, sales, schemes and customer movement across the network, in one view.
+ THE ARITHMETIC
+
+## The time head office spends chasing branches.
+
+ Your numbers, not ours.
+
+ Branches 
+ Calls and sheets per branch a day 
+ Minutes each 
+ Days a month 
+
+ Branch calls and sheets a month 0 
+
+ Hours back for head office 0 
+
+ Time spent asking branches for sales, stock and cash figures that a shared system shows live. An estimate from your inputs.
+
+ COMPARE
+
+## A system per branch, a desktop ERP on a server, or Jwero.
+
+ A separate system per branch Desktop ERP on a server Jwero 
+ One customer across branches Separate lists Sometimes Yes, with schemes and loyalty 
+ Find a piece in another branch Phone around If on the server Yes, live 
+ Transfers between branches A slip Yes Yes, on challans, received by scanning 
+ Central prices with branch exceptions No Some Yes, exceptions through approvals 
+ One WhatsApp number for the chain No No Yes, chats routed to the right branch 
+ Branch comparison reports Spreadsheets Basic Sales, footfall, ageing, staff, side by side 
+ Branch keeps billing if the internet drops Yes Depends on the server Yes, offline billing 
+ Single sign-on and audit trail No Rarely Yes 
+
+ ADDING A BRANCH
+
+## How to add a new branch to your jewellery chain.
+
+ Five steps.
+
+ 1 
+
+## Set up the branch
+ Name, address, GSTIN if in another state, counters and cash registers.
+
+ 2 
+
+## Give people their roles
+ Branch manager, cashiers and sales staff, each seeing only what they should.
+
+ 3 
+
+## Load or transfer its stock
+ Opening stock imported, or pieces transferred in from other branches on challans.
+
+ 4 
+
+## Apply the network’s rules
+ Central prices, catalogue, schemes and campaigns, with any branch exceptions approved.
+
+ 5 
+
+## Open the doors
+ The branch bills, takes scheme payments and gets its WhatsApp chats from day one.
+
+ For franchise networks: partners run their own stores on the network’s rules and see only their store. Franchise royalty calculation is not built yet. What a franchisor should control → · Jwero for franchise networks → · Jwero for chains → 
 
  BECAUSE IT'S ONE SYSTEM
 
- A customer who buys at branch A is recognised at branch B on the same record, there’s only one Meera in the system, not one per branch.
- Branch-level performance data feeds the same reports the owner’s rollup reads from, no separate export per store.
-
- WHO SETS WHAT
-
-## Head office decides. The branch runs. Flip a line and see the network re-balance.
-
- Central control and local flexibility are not opposites, they are a switch per line.
-
- Head office sets
-
- The catalogue and the price rules HQ Branch 
- Discount limits per role HQ Branch 
- Brand campaigns and the festival calendar HQ Branch 
- Who may approve what, at every branch HQ Branch 
-
- The branch runs
-
- Discounts inside the limit, at the counter HQ Branch 
- Local follow-ups and appointments HQ Branch 
- Stock counts, transfers and memo for its own vault HQ Branch 
- Its own shift, till and day-close HQ Branch 
-
- 4 decided centrally · 4 left to the branch. Flip any line, the network re-balances, and every branch sees the same customer either way.
-
- MULTI-STORE QUESTIONS
-
-## Autonomy, exceptions, and who stays in control.
-
- Will branch managers resist losing autonomy? 
- Central control applies to pricing consistency and brand standards; day-to-day counter operation stays with the branch.
-
- What if one branch genuinely needs different rules? 
- Controlled local exceptions route through approvals rather than silently drifting into inconsistency.
-
- More questions? See every multi-store question → 
-
- WHAT WE DON'T DO YET
-
- Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
-
- A single unified, immutable audit trail across every module, per-module activity logging exists today; consolidation is in progress.
- 
- See the full public roadmap → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- This isn’t a demo video, message us here and Jwero’s own inbox answers, live.
+ A scheme paid at one branch and redeemed at another is one record and one liability in the books.
+ A piece transferred between branches is the same piece on the catalogue, the website and WhatsApp.
+ Every branch’s chats arrive on one number and reach the right team, with the customer’s history attached.
 
 ## Bring network discipline to your business.
 
- Multi-store deployments get staged rollouts: one pilot branch, then the network. Ask how.
+ Tell us how many branches you run. We will show them as one network in Jwero.
 
  Chat or call with us 
- Talk to a specialist 
+ Book a demo 
 
  A real person + our AI reply within minutes, that's the product. You message us first; we never message you uninvited. हिन्दी में बात करें → 
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: Can each branch have different prices and stock?
-A: Yes. Branch-level stock, transfer tracking and price rules with central control, consistency where you want it, local flexibility where you allow it.
+Q: What is multi-store jewellery software?
+A: Software that runs a chain of jewellery showrooms as one business: one customer record, one stock you can see and transfer across branches, central prices and campaigns, branch-by-branch reports, and roles so each branch sees what it should.
 
-Q: Can franchise partners use it without seeing everything?
-A: Yes. Role-based access with ~150 fine-grained permissions controls exactly what each role, branch and partner can see and do.
+Q: How do jewellery chains control prices across branches?
+A: Set price rules centrally, from the rate, making and stones, and let branches request exceptions that go to a manager for approval. Every branch then quotes the same piece the same way.
 
-Q: Does a customer’s history follow them between branches?
-A: Yes, one customer record across the network. She is known at every counter, and the whole relationship rolls up to one view for the owner.
+Q: Can a customer redeem a scheme at any branch?
+A: Yes. A member can enrol at one branch, pay instalments at another and redeem at any branch in the network, on the same scheme record.
+
+Q: Can one WhatsApp number serve the whole chain?
+A: Yes. Customers message one number and each chat is routed to the right branch, with the customer’s history visible to whoever answers.
+
+Q: How are stock transfers between branches handled for GST?
+A: Within one state, transfers move on a delivery challan. Between states, branches have different GSTINs and the transfer is billed with GST. Confirm your setup with your CA.
+
+Q: Can franchise partners see only their own store?
+A: Yes. Roles and permissions are set at each level, so a franchise partner sees their store while head office sees the network. Franchise royalty calculation is not built yet.
 
 Q: Will branch managers resist losing autonomy?
-A: Central control applies to pricing consistency and brand standards; day-to-day counter operation stays with the branch. Most managers experience it as less admin work, not less authority.
+A: Branches keep running their day. Head office sets the rules that customers expect to be the same everywhere, and branches request exceptions through approvals.
 
-Q: What if one branch genuinely needs different rules than the rest?
-A: Controlled local exceptions exist for exactly this, they route through approvals rather than silently drifting, so flexibility doesn’t become inconsistency nobody can see.
+Q: Does a customer’s history follow them between branches?
+A: Yes. Purchases, schemes, loyalty points and conversations are on one record, visible at every counter.
+
+Q: Can each branch keep billing if the internet drops?
+A: Yes. Each counter keeps billing offline, and sales sync when the connection returns.
 
 ---
 

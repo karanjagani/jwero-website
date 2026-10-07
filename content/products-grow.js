@@ -100,64 +100,111 @@ ${L.ctaBand('Digitise the promise.', 'Bring your scheme register. We will show e
 `,
 };
 
+// Multi-store, rebuilt 2026-10-07. Confirmed by Jwero: schemes across branches,
+// WhatsApp chats routed to the right branch. Franchise royalties not built yet.
+const NET = [
+  ['Branch 2 · Andheri', 'Customer asks for the temple necklace from the catalogue'],
+  ['Stock search', 'Found at Branch 4 · Borivali, in the showcase'],
+  ['Transfer', 'Sent to Andheri on a challan, received and scanned'],
+  ['Counter', 'Billed at Andheri at today’s rate'],
+  ['Scheme', 'Her scheme from Branch 1 · Thane redeemed on this bill'],
+  ['WhatsApp', 'Receipt sent; her next message routed to Andheri'],
+  ['Head office', 'Sales, stock and the scheme liability update for the whole network'],
+];
+const netMap = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">ONE NETWORK · FOUR BRANCHES</p>${NET.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}</div>
+  <ol class="wa-steps">${NET.map(([t, d]) => `<li><b>${t.split(' · ')[0]}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const MS_CMP = [
+  ['One customer across branches', 'Separate lists', 'Sometimes', 'Yes, with schemes and loyalty'],
+  ['Find a piece in another branch', 'Phone around', 'If on the server', 'Yes, live'],
+  ['Transfers between branches', 'A slip', 'Yes', 'Yes, on challans, received by scanning'],
+  ['Central prices with branch exceptions', 'No', 'Some', 'Yes, exceptions through approvals'],
+  ['One WhatsApp number for the chain', 'No', 'No', 'Yes, chats routed to the right branch'],
+  ['Branch comparison reports', 'Spreadsheets', 'Basic', 'Sales, footfall, ageing, staff, side by side'],
+  ['Branch keeps billing if the internet drops', 'Yes', 'Depends on the server', 'Yes, offline billing'],
+  ['Single sign-on and audit trail', 'No', 'Rarely', 'Yes'],
+];
+const msTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>A separate system per branch</th><th>Desktop ERP on a server</th><th>Jwero</th></tr></thead><tbody>${MS_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const MS_MOVE = [
+  ['Set up the branch', 'Name, address, GSTIN if in another state, counters and cash registers.'],
+  ['Give people their roles', 'Branch manager, cashiers and sales staff, each seeing only what they should.'],
+  ['Load or transfer its stock', 'Opening stock imported, or pieces transferred in from other branches on challans.'],
+  ['Apply the network’s rules', 'Central prices, catalogue, schemes and campaigns, with any branch exceptions approved.'],
+  ['Open the doors', 'The branch bills, takes scheme payments and gets its WhatsApp chats from day one.'],
+];
+const msFaqs = [
+  { q: 'What is multi-store jewellery software?', a: 'Software that runs a chain of jewellery showrooms as one business: one customer record, one stock you can see and transfer across branches, central prices and campaigns, branch-by-branch reports, and roles so each branch sees what it should.' },
+  { q: 'How do jewellery chains control prices across branches?', a: 'Set price rules centrally, from the rate, making and stones, and let branches request exceptions that go to a manager for approval. Every branch then quotes the same piece the same way.' },
+  { q: 'Can a customer redeem a scheme at any branch?', a: 'Yes. A member can enrol at one branch, pay instalments at another and redeem at any branch in the network, on the same scheme record.' },
+  { q: 'Can one WhatsApp number serve the whole chain?', a: 'Yes. Customers message one number and each chat is routed to the right branch, with the customer’s history visible to whoever answers.' },
+  { q: 'How are stock transfers between branches handled for GST?', a: 'Within one state, transfers move on a delivery challan. Between states, branches have different GSTINs and the transfer is billed with GST. Confirm your setup with your CA.' },
+  { q: 'Can franchise partners see only their own store?', a: 'Yes. Roles and permissions are set at each level, so a franchise partner sees their store while head office sees the network. Franchise royalty calculation is not built yet.' },
+  { q: 'Will branch managers resist losing autonomy?', a: 'Branches keep running their day. Head office sets the rules that customers expect to be the same everywhere, and branches request exceptions through approvals.' },
+  { q: 'Does a customer’s history follow them between branches?', a: 'Yes. Purchases, schemes, loyalty points and conversations are on one record, visible at every counter.' },
+  { q: 'Can each branch keep billing if the internet drops?', a: 'Yes. Each counter keeps billing offline, and sales sync when the connection returns.' },
+];
+
 const multiStore = {
   slug: 'products/multi-store',
-  title: 'Multi-store & Franchise Jewellery Software | Jwero',
-  description: 'Holdings, brands and branches on one platform: branch-consistent pricing, role-based access, central campaigns, and customers recognised at every counter.',
+  title: 'Multi-Store Jewellery Software for Chains & Franchises | Jwero',
+  description: 'Multi-store jewellery software: one customer, one stock and central prices across branches, schemes redeemable anywhere, one WhatsApp number routed to the right branch, branch reports and roles.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Multi-store & Franchise', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Multi-store and franchise structure on one platform: central price rules with branch exceptions, role-based access, and customers recognised at every branch.',
+    name: 'Jwero Multi-Store Jewellery Software', alternateName: ['Jewellery chain software', 'Jewellery franchise software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Multi-store and franchise jewellery software: holding, brand and branch hierarchy with roles, single sign-on and audit trail; central prices, catalogue and campaigns with approved exceptions; stock visible and transferable across branches; schemes and loyalty across branches; one WhatsApp number routed by branch; branch comparison reports; offline billing per branch.',
     url: 'https://jwero.ai/products/multi-store', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month; extra locations at the published rate.' },
   },
-  breadcrumbs: BC('Multi-store & Franchise'),
-  faqs: [
-    { q: 'Can each branch have different prices and stock?', a: 'Yes. Branch-level stock, transfer tracking and price rules with central control — consistency where you want it, local flexibility where you allow it.' },
-    { q: 'Can franchise partners use it without seeing everything?', a: 'Yes. Role-based access with ~150 fine-grained permissions controls exactly what each role, branch and partner can see and do.' },
-    { q: 'Does a customer’s history follow them between branches?', a: 'Yes — one customer record across the network. She is known at every counter, and the whole relationship rolls up to one view for the owner.' },
-    { q: 'Will branch managers resist losing autonomy?', a: 'Central control applies to pricing consistency and brand standards; day-to-day counter operation stays with the branch. Most managers experience it as less admin work, not less authority.' },
-    { q: 'What if one branch genuinely needs different rules than the rest?', a: 'Controlled local exceptions exist for exactly this — they route through approvals rather than silently drifting, so flexibility doesn’t become inconsistency nobody can see.' },
-  ],
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to add a new branch to your jewellery chain', step: MS_MOVE.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Multi-store'),
+  faqs: msFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'MULTI-STORE & FRANCHISE',
-  h1: 'Grow to ten stores without losing the one-store touch.',
-  sub: 'Chains win because every branch runs the same system and every customer is known everywhere. Jwero gives your network the same spine: holdings, brands and branches, consistent pricing, central campaigns — and one report the owner reads.',
-  primary: { href: '#', label: 'Show me the owner’s view of every branch', wa: 'multistore' },
-  secondary: { href: '/solutions/multi-store-chains', label: 'The multi-store playbook' },
+  eyebrow: 'MULTI-STORE JEWELLERY SOFTWARE · CHAINS AND FRANCHISES',
+  h1: 'Multi-store jewellery software: grow to ten stores without losing the one-store touch.',
+  sub: 'One customer, one stock and one set of prices across every branch. A piece found in another store and transferred in minutes, schemes redeemable anywhere, one WhatsApp number routed to the right branch, and head office seeing every branch side by side.',
+  primary: { href: '#', label: 'Show me my network on one screen', wa: 'multistore' },
 })}
 
-${L.section(
-  `${L.cards([
-    { title: 'Network structure', text: 'Holdings → brands → branches modelled properly, with settings inherited and overridden deliberately.' },
-    { title: 'One customer, every counter', text: 'Purchase history, plans and preferences follow the customer across branches.' },
-    { title: 'Branch-consistent pricing', text: 'Central price rules with controlled local exceptions — approvals required, drift impossible.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
-    { title: 'Role-based control', text: '~150 permissions decide who sees customers, costs, schemes and reports — per role, per branch.' },
-    { title: 'Central marketing', text: 'Campaigns and festival journeys run centrally, execute locally, and report by branch.' },
-    { title: 'Owner’s rollup', text: 'Stock, sales, schemes and customer movement across the network, in one view.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE SALE, FOUR BRANCHES', 'A customer, a piece and a scheme from three different stores.', '')}${netMap()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, ONE NETWORK', 'What multi-store jewellery software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. One network</h3><p>Holding, brands, branches and franchises, with roles and permissions at each level, single sign-on and an audit trail.</p><a href="/enterprise">Enterprise →</a></article>
+  <article><h3>2. Head office decides, branches run</h3><p>Central price rules, catalogue and campaigns. Branches request exceptions, which go to a manager for approval.</p><a href="/products/catalog">Catalogue →</a></article>
+  <article><h3>3. One stock across branches</h3><p>Find a piece in any branch, transfer it on a challan and receive it by scanning; vaults and warehouses too.</p><a href="/blog/branch-stock-transfer-jewellery">Branch transfers →</a></article>
+  <article><h3>4. One customer everywhere</h3><p>History, schemes and loyalty follow the customer: enrol at one branch, pay or redeem at another. One WhatsApp number with chats routed to the right branch, and AI calling for every branch.</p><a href="/products/gold-schemes">Schemes across branches →</a></article>
+  <article><h3>5. Compare branches</h3><p>Sales, footfall and conversion, ageing stock and staff incentives, branch by branch, side by side.</p><a href="/jewellery-showroom-footfall-counting">Footfall →</a></article>
+  <article><h3>6. Every branch keeps billing</h3><p>Offline billing and a cash close per branch, with consolidated books for the network.</p><a href="/products/pos">Billing →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'The time head office spends chasing branches.', 'Your numbers, not ours.')}<div class="callc" data-hoc>
+  <div class="callc-in">
+    <label>Branches<input type="number" inputmode="numeric" data-hc="br" value="5" min="1"></label>
+    <label>Calls and sheets per branch a day<input type="number" inputmode="decimal" data-hc="calls" value="4" min="0"></label>
+    <label>Minutes each<input type="number" inputmode="decimal" data-hc="mins" value="10" min="0"></label>
+    <label>Days a month<input type="number" inputmode="numeric" data-hc="days" value="26" min="0" max="31"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Branch calls and sheets a month</span><b data-hc-o="n">0</b></p>
+    <p class="callc-save"><span>Hours back for head office</span><b data-hc-o="hours">0</b></p>
+    <p class="cta-note">Time spent asking branches for sales, stock and cash figures that a shared system shows live. An estimate from your inputs.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'A system per branch, a desktop ERP on a server, or Jwero.', '')}${msTable()}`)}
+
+${L.section(`${L.sectionHead('ADDING A BRANCH', 'How to add a new branch to your jewellery chain.', 'Five steps.')}${L.steps(MS_MOVE.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
+
+${L.section(`<div class="jb-blogline"><p><b>For franchise networks:</b> partners run their own stores on the network’s rules and see only their store. Franchise royalty calculation is not built yet. <a href="/blog/jewellery-franchise-control">What a franchisor should control →</a> · <a href="/solutions/franchise-networks">Jwero for franchise networks →</a> · <a href="/solutions/multi-store-chains">Jwero for chains →</a></p></div>`)}
 
 ${L.oneSystemBlock([
-  'A customer who buys at branch A is recognised at branch B on the same record — there’s only one Meera in the system, not one per branch.',
-  'Branch-level performance data feeds the same reports the owner’s rollup reads from — no separate export per store.',
+  'A scheme paid at one branch and redeemed at another is one record and one liability in the books.',
+  'A piece transferred between branches is the same piece on the catalogue, the website and WhatsApp.',
+  'Every branch’s chats arrive on one number and reach the right team, with the customer’s history attached.',
 ])}
 
-${L.section(`${L.sectionHead('WHO SETS WHAT', 'Head office decides. The branch runs. Flip a line and see the network re-balance.', 'Central control and local flexibility are not opposites — they are a switch per line.')}${L.controlSplit()}`, { tone: 'tint' })}
-
-${L.section(`${L.sectionHead('MULTI-STORE QUESTIONS', 'Autonomy, exceptions, and who stays in control.', '')}${L.faqBlock([
-  { q: 'Will branch managers resist losing autonomy?', a: 'Central control applies to pricing consistency and brand standards; day-to-day counter operation stays with the branch.' },
-  { q: 'What if one branch genuinely needs different rules?', a: 'Controlled local exceptions route through approvals rather than silently drifting into inconsistency.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#segments">See every multi-store question →</a></p>`)}
-
-${L.honestGapsBlock([
-  'A single unified, immutable audit trail across every module — per-module activity logging exists today; consolidation is in progress.',
-])}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="multistore">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Bring network discipline to your business.', 'Multi-store deployments get staged rollouts: one pilot branch, then the network. Ask how.', 'multistore', { enterprise: true })}
+${L.ctaBand('Bring network discipline to your business.', 'Tell us how many branches you run. We will show them as one network in Jwero.', 'multistore')}
 `,
 };
 

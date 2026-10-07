@@ -69,6 +69,12 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Purchase bills matched to the order and receipt, returns and credit notes, vendor advances and payments; purchases reconciled with GSTR-2B for input credit; metal purchases and metal loans in fine grams; consignment stock taken in from suppliers.
 - A vendor portal where suppliers see their orders, bills and payment status. Details: https://jwero.ai/products/purchase-vendors
 
+## Multi-store jewellery software (facts)
+- Holding, brands, branches and franchises in one network, with roles and permissions at each level, single sign-on and an audit trail.
+- Central price rules, catalogue and campaigns with branch exceptions through approvals; one stock across branches with transfers on challans, vaults and warehouses.
+- Customers, gold schemes and loyalty follow the customer to any branch: enrol at one branch, pay or redeem at another. One WhatsApp number with chats routed to the right branch; AI calling for every branch.
+- Branch comparison reports (sales, footfall, ageing, staff incentives); offline billing and cash close per branch; consolidated books. Franchise royalty calculation is not built yet. Details: https://jwero.ai/products/multi-store
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -115,7 +121,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jewellery Showroom Software: Walk-in Tracking and Floor View: https://jwero.ai/products/showroom
 - Jewellery Customer Segmentation Software: RFM and Live Rules: https://jwero.ai/products/segmentation
 - Gold Scheme Software for Jewellers: 11+1 & Gram Plans: https://jwero.ai/products/gold-schemes
-- Multi-store & Franchise Jewellery Software: https://jwero.ai/products/multi-store
+- Multi-Store Jewellery Software for Chains & Franchises: https://jwero.ai/products/multi-store
 - Jewellery Loyalty Program Software: Tiers, Points, Referrals: https://jwero.ai/products/loyalty
 - Jewellery Marketing Automation: Customer Journeys: https://jwero.ai/products/journeys
 - Jewellery Marketing Software: WhatsApp, Email, SMS Campaigns: https://jwero.ai/products/campaigns
