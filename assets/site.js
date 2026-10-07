@@ -2733,3 +2733,14 @@ document.addEventListener('click', function (e) {
     set('n', Math.round(n).toLocaleString('en-IN')); set('hours', Math.round(h).toLocaleString('en-IN') + ' hours'); }
   root.addEventListener('input', run); run();
 })();
+
+// Loyalty page: does the programme pay for itself.
+(function () {
+  var root = document.querySelector('[data-loyc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-lc2="' + k + '"]') || {}).value || 0; };
+  var inr = function (n) { return '\u20b9' + Math.round(n).toLocaleString('en-IN'); };
+  function run() { var n = v('mem') * v('lift') / 100, sales = n * v('bill'), cost = sales * v('cost') / 100, net = sales * v('margin') / 100 - cost;
+    var set = function (k, t) { var el = root.querySelector('[data-lc2-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('n', Math.round(n).toLocaleString('en-IN')); set('sales', inr(sales)); set('cost', inr(cost)); set('net', inr(net)); }
+  root.addEventListener('input', run); run();
+})();

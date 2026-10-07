@@ -4645,129 +4645,149 @@ A: Yes. Each counter keeps billing offline, and sales sync when the connection r
 
 ---
 
-# Jewellery Loyalty Program Software: Tiers, Points, Referrals
+# Jewellery Loyalty Program Software: Points, Tiers, Rewards
 URL: https://jwero.ai/products/loyalty
 
-Configure loyalty tiers, earning rules and redemptions, and track customer referrals, all on the same customer record your team already uses.
+Jewellery loyalty programme software: points and tiers, redemption limited to making charges, anniversary and birthday rewards, referrals, coupons and gift vouchers, at the counter, online and on WhatsApp.
 
-LOYALTY & REFERRALS
+JEWELLERY LOYALTY PROGRAMME SOFTWARE
 
-## Reward every visit, not just every gold instalment.
+## Jewellery loyalty programme software: reward every visit, not just every gold instalment.
 
- Gold schemes reward saving. Loyalty rewards everything else: repeat purchases, referrals, being a regular. Jwero lets you define tiers, earning rules and redemptions, and track who referred whom, all landing on the same customer record your team already reads.
+ Points and tiers on your rules, redemption limited to making charges so your gold margin is safe, rewards before anniversaries and birthdays, referrals traced to sales, and coupons and gift vouchers, at the counter, online and on WhatsApp.
 
- Show me rewards on the record 
- Book a demo 
+ Show me a loyalty programme for my shop 
 
- WHY A SEPARATE LAYER
+ ONE CUSTOMER, ONE YEAR
 
-## Not every reward is about gold.
+## Watch a customer climb a tier.
 
-## Loyalty isn’t savings
+ LOYALTY · MEERA SHAH
+ Purchase Earrings, ₹42,000 · 420 points earned
+ Referral Her friend Anjali buys a chain · 500 bonus points
+ Anniversary Reward sent a week before the date · 250 points
+ Tier up Moves from Silver to Gold tier · better rewards from today
+ Redeem 1,170 points redeemed against making charges online
+ Expiry Older points expire after the period you set · reminder sent first
+ Illustrative points and rules.
 
- A scheme rewards a savings habit toward gold. Loyalty can reward any purchase, any visit, any referral, it doesn’t require the customer to be saving toward anything.
+ Purchase Earrings, ₹42,000 
+ Referral Her friend Anjali buys a chain 
+ Anniversary Reward sent a week before the date 
+ Tier up Moves from Silver to Gold tier 
+ Redeem 1,170 points redeemed against making charges online 
+ Expiry Older points expire after the period you set 
 
-## Referrals go untracked
+ SIX JOBS, ONE PROGRAMME
 
- A customer sends a friend your way and nobody records it. The referral happens, the credit doesn’t, and the habit of referring quietly stops.
+## What a jewellery loyalty programme has to do.
 
-## Status lives in someone’s head
+## 1. Your programme, your rules
+ Points, tiers or both; earning rates by category; the rule that moves a customer up a tier.
+ Segments → 
 
- Who’s a regular, who’s owed something, who referred whom, without a record, it’s whatever the counter staff on duty happens to remember.
+## 2. Protect your gold margin
+ Redemption can be limited to making charges, so points come off the part of the bill where your margin is, not the gold value.
+ Making charges → 
 
- WHAT’S CONFIGURABLE
+## 3. Rewards on the moments that matter
+ Anniversary and birthday rewards sent a few days before the date, on WhatsApp, when customers plan to buy.
+ Occasion marketing → 
 
-## Program type, tiers, earning and redemption, set by you.
+## 4. Redeem anywhere
+ One balance at the counter, on your online store and on WhatsApp. Staff see the tier and points as the customer walks in.
+ Online store → 
 
-## Program type
+## 5. Referrals, coupons and gift vouchers
+ Referrals traced to the friend’s purchase, festival coupons and gift vouchers with limits, validity and approvals.
+ Campaigns → 
 
- Points-based, tiered-membership, visit-based or spend-based, pick the structure that fits your store, not one fixed points model.
+## 6. Know it pays
+ Repeat visits and sales by tier, points earned and redeemed, points outstanding as a liability, and expiry with a reminder first.
+ Reports → 
 
-## Loyalty tiers
+ THE ARITHMETIC
 
- Define the tiers that make sense for your business, how many, what they’re called, what each one unlocks.
+## Does a loyalty programme pay for itself?
 
-## Earning rules
+ Your numbers, not ours.
 
- Set how customers move up: by purchase, by visit, by referral, configured to your policy, not a fixed formula.
+ Customers in the programme 
+ Extra purchases a year it brings, % 
+ Average bill, ₹ 
+ Your margin, % 
+ Rewards given, % of those sales 
 
-## Redemptions
+ Extra purchases a year 0 
 
- Customers redeem what they’ve earned; what’s redeemable is yours to define.
+ Extra sales a year ₹0 
 
-## Automatic tier recalculation
+ Cost of rewards ₹0 
 
- A member’s tier is qualified by points balance, total spend or redeemed points, whichever you set, and recalculated after every point-earning event. Moving up a tier fires an event that can trigger a journey, like a “you’ve been upgraded” message. No one assigns the badge by hand.
+ Margin after rewards ₹0 
 
-## Referral tracking
+ A planning estimate from your own inputs, not a promise of results.
 
- A referral is tracked as a referrer→referee pair, with self-referral blocked. It starts pending and only qualifies once the referred customer completes a matching purchase, the reward is then credited via an idempotent ledger entry, so one order can never double-reward the referrer.
+ COMPARE
 
- DOES YOUR PROGRAM PAY FOR ITSELF
+## A punch card, a generic loyalty app, or Jwero.
 
-## Loyalty ROI reporting, not just a points ledger.
+ Punch card Generic loyalty app Jwero 
+ Who is a member Whoever kept the card App sign-ups Every customer on your record 
+ Protects gold margins No Rarely Redemption limited to making charges if you choose 
+ Anniversary and birthday rewards No Birthday only Both, sent before the date 
+ Works at counter, online and WhatsApp Counter only App only All, one balance 
+ Referrals tracked to a sale No Codes Yes 
+ Coupons and gift vouchers Paper Some Yes, with limits and approvals 
+ Points outstanding as a liability Unknown Report Yes, with expiry 
+ Same record as schemes and CRM No No Yes 
 
- Most loyalty tools show you a balance. This shows you the business case.
+ LOYALTY AND GOLD SCHEMES
 
-## Points liability
+## Two different things, on one customer.
 
- What you currently owe members in outstanding, unredeemed points, the number a finance conversation actually needs.
+ A gold scheme is the customer’s own money, saved towards a purchase. Loyalty is your reward for coming back. A customer can have both on the same record, and use a scheme balance and loyalty points on the same bill. Scheme members can earn loyalty points too, if you choose.
 
-## Redemption / breakage rate
+ LAUNCHING IT
 
- Points earned versus points actually redeemed, so you know how much of the liability is real versus points that quietly expire unused.
+## How to launch a loyalty programme in a jewellery shop.
 
-## Member vs. non-member spend
+ Five steps.
 
- Average spend for loyalty members compared with non-members, the closest thing to a direct answer on whether the program is worth running.
+ 1 
 
-## AI program-design copilot
+## Decide what you reward
+ Purchases, referrals, anniversaries, birthdays; points, tiers or both.
 
- A merchant-facing AI feature reviews how your program is structured and suggests specific reward ideas, a tool for whoever is designing the program, not something customers ever see.
+ 2 
+
+## Protect your margin
+ Set earning rates by category, and limit redemption to making charges if you want.
+
+ 3 
+
+## Set tiers and expiry
+ What moves a customer up, what each tier gets, and when points expire.
+
+ 4 
+
+## Enrol everyone you already know
+ Existing customers join automatically from your records.
+
+ 5 
+
+## Tell customers and track it
+ A WhatsApp message with their points; repeat visits and sales by tier from day one.
 
  BECAUSE IT'S ONE SYSTEM
 
- A customer’s loyalty tier sits on the same record as their scheme balance, purchase history and occasions, staff check one card, not a separate loyalty app.
- A referral is recorded against the referring customer’s record, so a regular who sends you business is visible as one, not just remembered by whoever was at the counter.
- A tier upgrade is an event the same journey engine can act on, the “you’ve been upgraded” message is a journey trigger, not a separate notification system.
-
- LOYALTY QUESTIONS
-
-## How it differs from schemes, and what you control.
-
- Is this the same as gold savings schemes? 
- No, schemes are gold savings; loyalty is a separate points/tier layer for any purchase. They run side by side on one record.
-
- Do we set our own tiers and rules? 
- Yes, tiers, earning rules and redemptions are configurable to your business; nothing is fixed by Jwero.
-
- Can we see if the loyalty program is worth what it costs? 
- Yes, the ROI report shows points liability, redemption/breakage rate, and member-vs-non-member spend in one view.
-
- More questions? See the full FAQ → 
-
- WHAT WE DON'T DO YET
-
- Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
-
- Predictive analytics on loyalty behaviour, loyalty reporting today is rule-based and factual, not a machine-learning prediction of who will churn or redeem.
- 
- See the full public roadmap → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Every chat button on this site is the actual product, not a mockup, send one message and see for yourself.
+ Points earned at the counter show up online and on WhatsApp at once.
+ The anniversary reward, the occasion journey and the next AI call read the same record.
+ A merged duplicate customer keeps all their points on one record.
 
 ## Reward regulars, not just savers.
 
- Bring your idea of tiers and rewards to a demo, we will show how they’re configured and where they show up on the customer record.
+ Tell us how your customers buy. We will show a programme that protects your margin.
 
  Chat or call with us 
  Book a demo 
@@ -4776,29 +4796,29 @@ LOYALTY & REFERRALS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 21 journey recipes 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: Is this the same thing as your gold savings schemes?
-A: No. Gold schemes are savings plans towards jewellery. Loyalty is a separate points/tier layer that can apply to any purchase, the two are designed to run side by side, both visible on the same customer record.
+Q: What is a jewellery loyalty programme?
+A: A way to reward customers for coming back: points on purchases, tiers with better rewards, anniversary and birthday rewards, referral bonuses, and coupons or gift vouchers, all on the customer’s record and redeemable at the counter, online or on WhatsApp.
 
-Q: Can we set our own tiers and earning rules?
-A: Yes, tiers, how customers earn toward them, and what they can redeem are all configurable to your business. We don’t ship a fixed set of tier names or point values; you define what fits your store.
+Q: How can a jeweller reward points without hurting gold margins?
+A: Set earning rates by category and limit redemption to making charges, so points come off the part of the bill where your margin is, not the gold value. Jwero supports this.
 
-Q: What kind of loyalty program can we run, just points?
-A: No, points-based, tiered-membership, visit-based and spend-based programs are all supported. Pick the structure that fits your store, or combine them.
+Q: Do loyalty points expire?
+A: Yes, after the period you set. Customers get a reminder before points expire, and points outstanding are tracked as a liability.
 
-Q: How does a customer actually move up a tier?
-A: Automatically. A tier can be qualified by points balance, total spend, or redeemed points, whichever thresholds you set, and it is recalculated after every point-earning event. There is no manual badge-assignment step.
+Q: How do anniversary rewards work?
+A: Jwero sends a reward a few days before each customer’s anniversary, on WhatsApp, which is often the moment they plan a purchase.
+
+Q: Is loyalty the same as a gold scheme?
+A: No. A scheme is the customer’s money saved towards a purchase; loyalty is your reward for coming back. A customer can have both on the same record, and both can be used on one bill.
 
 Q: How does referral tracking work?
-A: A referral is tracked as a pair, who referred whom, with self-referral blocked outright. It starts pending and only flips to qualified once the referred customer actually completes a purchase that matches your earning rules; the reward is then credited to the referrer through an idempotent ledger entry, so the same order can never double-reward them.
+A: A customer refers a friend; when the friend buys, the referrer gets the reward you set, and the link between them stays on both records.
 
-Q: Can we tell if our loyalty program is actually paying for itself?
-A: Yes, a loyalty ROI report shows points liability (what you currently owe members), the redemption/breakage rate (points earned vs. actually redeemed), and member-vs-non-member average spend, in one view.
+Q: Can we tell if the programme pays for itself?
+A: Yes. Repeat visits and sales by tier, points earned and redeemed, and points outstanding show what the programme costs and what it brings back.
 
-Q: Where do loyalty tier and referral status show up for staff?
-A: On the same customer record as scheme balances, purchase history and occasions, one card, not a separate loyalty app to check.
-
-Q: Can we run a loyalty program and a gold scheme for the same customer?
-A: Yes, they’re independent layers on one record. A customer can hold a scheme balance and a loyalty tier at the same time, and staff see both in one place.
+Q: How does a customer move up a tier?
+A: By the rule you set, such as spend in a year or number of purchases. The tier and its rewards change automatically, and staff see it at the counter.
 
 ---
 

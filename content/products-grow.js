@@ -208,87 +208,112 @@ ${L.ctaBand('Bring network discipline to your business.', 'Tell us how many bran
 `,
 };
 
+// Loyalty, rebuilt 2026-10-07. Confirmed by Jwero: redemption can be limited to
+// making charges; gift vouchers and coupons are shipped.
+const CLIMB = [
+  ['Purchase', 'Earrings, ₹42,000 · 420 points earned'],
+  ['Referral', 'Her friend Anjali buys a chain · 500 bonus points'],
+  ['Anniversary', 'Reward sent a week before the date · 250 points'],
+  ['Tier up', 'Moves from Silver to Gold tier · better rewards from today'],
+  ['Redeem', '1,170 points redeemed against making charges online'],
+  ['Expiry', 'Older points expire after the period you set · reminder sent first'],
+];
+const climb = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">LOYALTY · MEERA SHAH</p>${CLIMB.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative points and rules.</p></div>
+  <ol class="wa-steps">${CLIMB.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const LOY_CMP = [
+  ['Who is a member', 'Whoever kept the card', 'App sign-ups', 'Every customer on your record'],
+  ['Protects gold margins', 'No', 'Rarely', 'Redemption limited to making charges if you choose'],
+  ['Anniversary and birthday rewards', 'No', 'Birthday only', 'Both, sent before the date'],
+  ['Works at counter, online and WhatsApp', 'Counter only', 'App only', 'All, one balance'],
+  ['Referrals tracked to a sale', 'No', 'Codes', 'Yes'],
+  ['Coupons and gift vouchers', 'Paper', 'Some', 'Yes, with limits and approvals'],
+  ['Points outstanding as a liability', 'Unknown', 'Report', 'Yes, with expiry'],
+  ['Same record as schemes and CRM', 'No', 'No', 'Yes'],
+];
+const loyTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Punch card</th><th>Generic loyalty app</th><th>Jwero</th></tr></thead><tbody>${LOY_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const LOY_HOW = [
+  ['Decide what you reward', 'Purchases, referrals, anniversaries, birthdays; points, tiers or both.'],
+  ['Protect your margin', 'Set earning rates by category, and limit redemption to making charges if you want.'],
+  ['Set tiers and expiry', 'What moves a customer up, what each tier gets, and when points expire.'],
+  ['Enrol everyone you already know', 'Existing customers join automatically from your records.'],
+  ['Tell customers and track it', 'A WhatsApp message with their points; repeat visits and sales by tier from day one.'],
+];
+const loyFaqs = [
+  { q: 'What is a jewellery loyalty programme?', a: 'A way to reward customers for coming back: points on purchases, tiers with better rewards, anniversary and birthday rewards, referral bonuses, and coupons or gift vouchers, all on the customer’s record and redeemable at the counter, online or on WhatsApp.' },
+  { q: 'How can a jeweller reward points without hurting gold margins?', a: 'Set earning rates by category and limit redemption to making charges, so points come off the part of the bill where your margin is, not the gold value. Jwero supports this.' },
+  { q: 'Do loyalty points expire?', a: 'Yes, after the period you set. Customers get a reminder before points expire, and points outstanding are tracked as a liability.' },
+  { q: 'How do anniversary rewards work?', a: 'Jwero sends a reward a few days before each customer’s anniversary, on WhatsApp, which is often the moment they plan a purchase.' },
+  { q: 'Is loyalty the same as a gold scheme?', a: 'No. A scheme is the customer’s money saved towards a purchase; loyalty is your reward for coming back. A customer can have both on the same record, and both can be used on one bill.' },
+  { q: 'How does referral tracking work?', a: 'A customer refers a friend; when the friend buys, the referrer gets the reward you set, and the link between them stays on both records.' },
+  { q: 'Can we tell if the programme pays for itself?', a: 'Yes. Repeat visits and sales by tier, points earned and redeemed, and points outstanding show what the programme costs and what it brings back.' },
+  { q: 'How does a customer move up a tier?', a: 'By the rule you set, such as spend in a year or number of purchases. The tier and its rewards change automatically, and staff see it at the counter.' },
+];
+
 const loyalty = {
   slug: 'products/loyalty',
-  title: 'Jewellery Loyalty Program Software: Tiers, Points, Referrals | Jwero',
-  description: 'Configure loyalty tiers, earning rules and redemptions, and track customer referrals — all on the same customer record your team already uses.',
+  title: 'Jewellery Loyalty Program Software: Points, Tiers, Rewards | Jwero',
+  description: 'Jewellery loyalty programme software: points and tiers, redemption limited to making charges, anniversary and birthday rewards, referrals, coupons and gift vouchers, at the counter, online and on WhatsApp.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Loyalty & Referrals', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Configurable loyalty tiers, earning rules and redemptions, plus referral tracking, on the shared Jwero customer record.',
+    name: 'Jwero Jewellery Loyalty Programme', alternateName: ['Jewellery loyalty software', 'Loyalty program for jewellery stores'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Jewellery loyalty: points and tiers with your rules, redemption limited to making charges, anniversary and birthday rewards, referrals tracked to sales, coupons and gift vouchers, points expiry and liability, redeemable at the counter, online and on WhatsApp.',
     url: 'https://jwero.ai/products/loyalty', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
-  breadcrumbs: BC('Loyalty & Referrals'),
-  faqs: [
-    { q: 'Is this the same thing as your gold savings schemes?', a: 'No. Gold schemes are savings plans towards jewellery. Loyalty is a separate points/tier layer that can apply to any purchase — the two are designed to run side by side, both visible on the same customer record.' },
-    { q: 'Can we set our own tiers and earning rules?', a: 'Yes — tiers, how customers earn toward them, and what they can redeem are all configurable to your business. We don’t ship a fixed set of tier names or point values; you define what fits your store.' },
-    { q: 'What kind of loyalty program can we run — just points?', a: 'No — points-based, tiered-membership, visit-based and spend-based programs are all supported. Pick the structure that fits your store, or combine them.' },
-    { q: 'How does a customer actually move up a tier?', a: 'Automatically. A tier can be qualified by points balance, total spend, or redeemed points — whichever thresholds you set — and it is recalculated after every point-earning event. There is no manual badge-assignment step.' },
-    { q: 'How does referral tracking work?', a: 'A referral is tracked as a pair — who referred whom — with self-referral blocked outright. It starts pending and only flips to qualified once the referred customer actually completes a purchase that matches your earning rules; the reward is then credited to the referrer through an idempotent ledger entry, so the same order can never double-reward them.' },
-    { q: 'Can we tell if our loyalty program is actually paying for itself?', a: 'Yes — a loyalty ROI report shows points liability (what you currently owe members), the redemption/breakage rate (points earned vs. actually redeemed), and member-vs-non-member average spend, in one view.' },
-    { q: 'Where do loyalty tier and referral status show up for staff?', a: 'On the same customer record as scheme balances, purchase history and occasions — one card, not a separate loyalty app to check.' },
-    { q: 'Can we run a loyalty program and a gold scheme for the same customer?', a: 'Yes — they’re independent layers on one record. A customer can hold a scheme balance and a loyalty tier at the same time, and staff see both in one place.' },
-  ],
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to launch a loyalty programme in a jewellery shop', step: LOY_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Loyalty'),
+  faqs: loyFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'LOYALTY & REFERRALS',
-  h1: 'Reward every visit, not just every gold instalment.',
-  sub: 'Gold schemes reward saving. Loyalty rewards everything else: repeat purchases, referrals, being a regular. Jwero lets you define tiers, earning rules and redemptions, and track who referred whom — all landing on the same customer record your team already reads.',
-  primary: { href: '#', label: 'Show me rewards on the record', wa: 'loyalty' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  eyebrow: 'JEWELLERY LOYALTY PROGRAMME SOFTWARE',
+  h1: 'Jewellery loyalty programme software: reward every visit, not just every gold instalment.',
+  sub: 'Points and tiers on your rules, redemption limited to making charges so your gold margin is safe, rewards before anniversaries and birthdays, referrals traced to sales, and coupons and gift vouchers, at the counter, online and on WhatsApp.',
+  primary: { href: '#', label: 'Show me a loyalty programme for my shop', wa: 'loyalty' },
 })}
 
-${L.section(
-  `${L.sectionHead('WHY A SEPARATE LAYER', 'Not every reward is about gold.', '')}
-  ${L.cards([
-    { title: 'Loyalty isn’t savings', text: 'A scheme rewards a savings habit toward gold. Loyalty can reward any purchase, any visit, any referral — it doesn’t require the customer to be saving toward anything.' },
-    { title: 'Referrals go untracked', text: 'A customer sends a friend your way and nobody records it. The referral happens, the credit doesn’t — and the habit of referring quietly stops.' },
-    { title: 'Status lives in someone’s head', text: 'Who’s a regular, who’s owed something, who referred whom — without a record, it’s whatever the counter staff on duty happens to remember.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE CUSTOMER, ONE YEAR', 'Watch a customer climb a tier.', '')}${climb()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('WHAT’S CONFIGURABLE', 'Program type, tiers, earning and redemption — set by you.', '')}
-  ${L.cards([
-    { title: 'Program type', text: 'Points-based, tiered-membership, visit-based or spend-based — pick the structure that fits your store, not one fixed points model.' },
-    { title: 'Loyalty tiers', text: 'Define the tiers that make sense for your business — how many, what they’re called, what each one unlocks.' },
-    { title: 'Earning rules', text: 'Set how customers move up: by purchase, by visit, by referral — configured to your policy, not a fixed formula.' },
-    { title: 'Redemptions', text: 'Customers redeem what they’ve earned; what’s redeemable is yours to define.' },
-    { title: 'Automatic tier recalculation', text: 'A member’s tier is qualified by points balance, total spend or redeemed points — whichever you set — and recalculated after every point-earning event. Moving up a tier fires an event that can trigger a journey, like a “you’ve been upgraded” message. No one assigns the badge by hand.' },
-    { title: 'Referral tracking', text: 'A referral is tracked as a referrer→referee pair, with self-referral blocked. It starts pending and only qualifies once the referred customer completes a matching purchase — the reward is then credited via an idempotent ledger entry, so one order can never double-reward the referrer.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('SIX JOBS, ONE PROGRAMME', 'What a jewellery loyalty programme has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Your programme, your rules</h3><p>Points, tiers or both; earning rates by category; the rule that moves a customer up a tier.</p><a href="/products/segmentation">Segments →</a></article>
+  <article><h3>2. Protect your gold margin</h3><p>Redemption can be limited to making charges, so points come off the part of the bill where your margin is, not the gold value.</p><a href="/blog/making-charges-explained">Making charges →</a></article>
+  <article><h3>3. Rewards on the moments that matter</h3><p>Anniversary and birthday rewards sent a few days before the date, on WhatsApp, when customers plan to buy.</p><a href="/blog/birthday-anniversary-marketing-jewellers">Occasion marketing →</a></article>
+  <article><h3>4. Redeem anywhere</h3><p>One balance at the counter, on your online store and on WhatsApp. Staff see the tier and points as the customer walks in.</p><a href="/products/storefront">Online store →</a></article>
+  <article><h3>5. Referrals, coupons and gift vouchers</h3><p>Referrals traced to the friend’s purchase, festival coupons and gift vouchers with limits, validity and approvals.</p><a href="/products/campaigns">Campaigns →</a></article>
+  <article><h3>6. Know it pays</h3><p>Repeat visits and sales by tier, points earned and redeemed, points outstanding as a liability, and expiry with a reminder first.</p><a href="/products/reports">Reports →</a></article>
+</div>`)}
 
-${L.section(
-  `${L.sectionHead('DOES YOUR PROGRAM PAY FOR ITSELF', 'Loyalty ROI reporting, not just a points ledger.', 'Most loyalty tools show you a balance. This shows you the business case.')}
-  ${L.cards([
-    { title: 'Points liability', text: 'What you currently owe members in outstanding, unredeemed points — the number a finance conversation actually needs.' },
-    { title: 'Redemption / breakage rate', text: 'Points earned versus points actually redeemed, so you know how much of the liability is real versus points that quietly expire unused.' },
-    { title: 'Member vs. non-member spend', text: 'Average spend for loyalty members compared with non-members — the closest thing to a direct answer on whether the program is worth running.' },
-    { title: 'AI program-design copilot', text: 'A merchant-facing AI feature reviews how your program is structured and suggests specific reward ideas — a tool for whoever is designing the program, not something customers ever see.' },
-  ])}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'Does a loyalty programme pay for itself?', 'Your numbers, not ours.')}<div class="callc" data-loyc>
+  <div class="callc-in">
+    <label>Customers in the programme<input type="number" inputmode="numeric" data-lc2="mem" value="2000" min="0"></label>
+    <label>Extra purchases a year it brings, %<input type="number" inputmode="decimal" data-lc2="lift" value="8" min="0" max="100"></label>
+    <label>Average bill, ₹<input type="number" inputmode="numeric" data-lc2="bill" value="40000" min="0" step="1000"></label>
+    <label>Your margin, %<input type="number" inputmode="decimal" data-lc2="margin" value="12" min="0" max="100"></label>
+    <label>Rewards given, % of those sales<input type="number" inputmode="decimal" data-lc2="cost" value="1" min="0" max="100" step="0.5"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Extra purchases a year</span><b data-lc2-o="n">0</b></p>
+    <p><span>Extra sales a year</span><b data-lc2-o="sales">₹0</b></p>
+    <p><span>Cost of rewards</span><b data-lc2-o="cost">₹0</b></p>
+    <p class="callc-save"><span>Margin after rewards</span><b data-lc2-o="net">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs, not a promise of results.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'A punch card, a generic loyalty app, or Jwero.', '')}${loyTable()}`)}
+
+${L.section(`${L.sectionHead('LOYALTY AND GOLD SCHEMES', 'Two different things, on one customer.', '')}<div class="jb-blogline"><p>A <a href="/products/gold-schemes">gold scheme</a> is the customer’s own money, saved towards a purchase. Loyalty is your reward for coming back. A customer can have both on the same record, and use a scheme balance and loyalty points on the same bill. Scheme members can earn loyalty points too, if you choose.</p></div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('LAUNCHING IT', 'How to launch a loyalty programme in a jewellery shop.', 'Five steps.')}${L.steps(LOY_HOW.map(([title, text]) => ({ title, text })))}`)}
 
 ${L.oneSystemBlock([
-  'A customer’s loyalty tier sits on the same record as their scheme balance, purchase history and occasions — staff check one card, not a separate loyalty app.',
-  'A referral is recorded against the referring customer’s record, so a regular who sends you business is visible as one, not just remembered by whoever was at the counter.',
-  'A tier upgrade is an event the same journey engine can act on — the “you’ve been upgraded” message is a journey trigger, not a separate notification system.',
+  'Points earned at the counter show up online and on WhatsApp at once.',
+  'The anniversary reward, the occasion journey and the next AI call read the same record.',
+  'A merged duplicate customer keeps all their points on one record.',
 ])}
 
-${L.section(`${L.sectionHead('LOYALTY QUESTIONS', 'How it differs from schemes, and what you control.', '')}${L.faqBlock([
-  { q: 'Is this the same as gold savings schemes?', a: 'No — schemes are gold savings; loyalty is a separate points/tier layer for any purchase. They run side by side on one record.' },
-  { q: 'Do we set our own tiers and rules?', a: 'Yes — tiers, earning rules and redemptions are configurable to your business; nothing is fixed by Jwero.' },
-  { q: 'Can we see if the loyalty program is worth what it costs?', a: 'Yes — the ROI report shows points liability, redemption/breakage rate, and member-vs-non-member spend in one view.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.honestGapsBlock([
-  'Predictive analytics on loyalty behaviour — loyalty reporting today is rule-based and factual, not a machine-learning prediction of who will churn or redeem.',
-])}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="loyalty">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Reward regulars, not just savers.', 'Bring your idea of tiers and rewards to a demo — we will show how they’re configured and where they show up on the customer record.', 'loyalty')}
+${L.ctaBand('Reward regulars, not just savers.', 'Tell us how your customers buy. We will show a programme that protects your margin.', 'loyalty')}
 `,
 };
 
