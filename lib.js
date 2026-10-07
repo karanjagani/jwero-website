@@ -612,7 +612,7 @@ const PILLARS = [
   {
     key: 'sell', title: 'SELL', promise: 'The counter that never closes: WhatsApp, Instagram, Messenger, website and video — with AI that answers in seconds and follows up without being told.',
     chips: [['WhatsApp Commerce', '/products/whatsapp'], ['Instagram & Facebook', '/products/instagram-facebook'], ['AI Sales Agents', '/products/ai-sales-agents'], ['Catalogue', '/products/catalog']],
-    proof: 'WhatsApp Business API + Meta channels; 240+ governed AI actions; AI chat in 14 languages; AI calls in 11.',
+    proof: 'WhatsApp Business API + Meta channels; 240+ governed AI actions; AI chat and calls in 14 languages.',
   },
   {
     key: 'run', title: 'RUN', promise: 'Inventory, orders, billing, manufacturing, branches, staff and money — one truth, visible from anywhere.',

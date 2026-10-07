@@ -653,7 +653,7 @@ PLATFORM
 
  WhatsApp Commerce Instagram & Facebook AI Sales Agents Catalogue 
 
- WhatsApp Business API + Meta channels; 240+ governed AI actions; AI chat in 14 languages; AI calls in 11.
+ WhatsApp Business API + Meta channels; 240+ governed AI actions; AI chat and calls in 14 languages.
 
  RUN
 
@@ -9204,7 +9204,7 @@ INDUSTRY · RETAIL
 
  WhatsApp Commerce Instagram & Facebook AI Sales Agents Catalogue 
 
- WhatsApp Business API + Meta channels; 240+ governed AI actions; AI chat in 14 languages; AI calls in 11.
+ WhatsApp Business API + Meta channels; 240+ governed AI actions; AI chat and calls in 14 languages.
 
  RUN
 

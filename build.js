@@ -320,7 +320,7 @@ function footerHTML() {
       </div>
       </div>
     </div>
-    <div class="f-proof">198 customer signals · 11 explainable scores · 240+ governed AI actions · AI chat in 14 languages · AI calls in 11 · 5 kill-switch scopes · Tally, Zoho Books, Shopify, WooCommerce, Unicommerce &amp; Meta connectors built in.</div>
+    <div class="f-proof">198 customer signals · 11 explainable scores · 240+ governed AI actions · AI chat and calls in 14 languages · 5 kill-switch scopes · Tally, Zoho Books, Shopify, WooCommerce, Unicommerce &amp; Meta connectors built in.</div>
     <div class="f-bottom">
       <p>© <span data-year></span> Jwero. All rights reserved.</p>
       <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank">${l}</a>`).join('')}<a href="#" data-share="Thought of you. Jwero takes the marketing, technology and follow-up chaos off a jeweller:">Refer a jeweller, save 10%</a><a href="mailto:care@jwero.ai">care@jwero.ai</a><a href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=footer" rel="noopener">Log in to Jwero</a></p>
