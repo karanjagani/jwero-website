@@ -3991,75 +3991,181 @@ A: Not yet. Demand forecasting is on the roadmap. Today Jwero gives valuation, a
 
 ---
 
-# Jewellery GST Invoicing & Finance: Receivables, Ledger
+# Jewellery Billing & Accounting Software: GST, Receivables, Tally
 URL: https://jwero.ai/products/billing-finance
 
-Jewellery GST invoicing and finance: invoices at the live gold rate, receivables and payment reminders, and the books behind them. For counter billing, see Jwero’s jewellery billing software and POS.
+Jewellery billing and accounting software: GST invoices at today’s gold rate, a double-entry ledger, receivables with automatic payment reminders, GST reports, and a Tally bridge that syncs every entry so nothing is typed twice.
 
-BILLING & FINANCE
+JEWELLERY BILLING · ACCOUNTING · TALLY
 
-## GST invoices at the live gold rate, in seconds.
+## Jewellery billing and accounting software: GST invoices at today’s rate, payments chased, books in step with Tally.
 
- Rate changes twice a day; your invoices should follow instantly, not by hand. Jwero prices, invoices and tracks receivables at the rate that’s true right now, and reminds customers to pay without anyone chasing.
+ Every invoice prices itself from the gold rate with GST. Dues are tracked and chased on their own. Every entry posts to the ledger and syncs to Tally, so your CA keeps working the way they do and nothing is typed twice.
 
  Send me a live-rate GST invoice 
- See the counter-billing roadmap 
+ See the counter POS 
 
-## Live-rate GST invoicing
+ ONE SALE, START TO FINISH
 
- Metal rate, purity, making charges and GST computed together, no manual repricing when the rate moves.
+## From the invoice to the books, with no one retyping it.
 
- See the pricing engine → 
+ BILLING · SALE TO BOOKS
+ Billed Bangle at today’s rate · metal, making, stones and GST
+ Owed ₹40,000 still due on her account
+ Reminder Day 7 · a payment reminder goes out on its own
+ Paid The balance comes in · receivables cleared
+ Ledger Sale and payment posted to the double-entry ledger
+ Tally Synced to Tally through the bridge · e-invoice there
+ Month end GSTR-1, GSTR-3B and HSN reports ready for your CA
+ Illustrative.
 
-## Receivables ledger
+ Billed Bangle at today’s rate 
+ Owed ₹40,000 still due on her account 
+ Reminder Day 7 
+ Paid The balance comes in 
+ Ledger Sale and payment posted to the double-entry ledger 
+ Tally Synced to Tally through the bridge 
+ Month end GSTR-1, GSTR-3B and HSN reports ready for your CA 
 
- Who owes what, since when, one view instead of a register.
+ SIX JOBS, ONE SET OF BOOKS
 
-## Payment reminders
+## What jewellery billing and accounting software has to do.
 
- Automated reminders on outstanding receivables, sent on schedule.
+## 1. GST invoices at today’s rate
+ Metal, purity, making charges, stones and CGST, SGST or IGST worked out together.
+ Pricing engine → 
 
-## Approval-gated overrides
+## 2. A real ledger
+ Sales, returns, payments and expenses posted to a double-entry ledger, with party ledgers.
+ ERP → 
 
- Discounts and price exceptions on invoices route through approvals.
+## 3. Who owes what
+ Receivables by customer and age, in one view instead of a register.
+ Customer record → 
+
+## 4. Payments chased for you
+ Reminders on outstanding dues, sent on the schedule you set.
+ WhatsApp → 
+
+## 5. Tally in step
+ Every entry synced through the Tally bridge; e-invoices generated in Tally.
+ Jewellery software and Tally → 
+
+## 6. Reports and control
+ GSTR-1, GSTR-3B, HSN and TDS reports; discounts and overrides routed through approvals.
+ Reports → 
+
+ THE TALLY BRIDGE
+
+## Keep Tally. Stop typing into it.
+
+ Your CA keeps the books they know. Jwero sends them everything, already entered.
+
+## Nothing typed twice
+
+ Sales, returns, payments and expenses sync from Jwero to Tally, so no one re-enters a bill.
+
+## Your CA changes nothing
+
+ Ledgers map once; your accountant keeps working in Tally the way they always have.
+
+## E-invoices from Tally
+
+ E-invoices are generated in Tally from the entries Jwero has already synced.
+
+## Books that match the counter
+
+ The figure in Tally is the figure on the invoice, so there is nothing to reconcile by hand.
+
+## A faster month end
+
+ Entries are already in Tally when the month closes, with GST reports ready.
+
+## One truth across branches
+
+ Every branch bills in Jwero; the books in Tally show the whole business.
+
+ THE ARITHMETIC
+
+## What typing bills into Tally costs you.
+
+ Your numbers, not ours.
+
+ Bills, returns and payments a month 
+ Minutes to enter one into Tally 
+ Entries with a mistake to fix, % 
+ Minutes to find and fix a mistake 
+ Accounts staff cost an hour, ₹ 
+
+ Hours typing a month 0 
+
+ Hours fixing mistakes a month 0 
+
+ Cost a year ₹0 
+
+ With the Tally bridge, entries sync on their own. A planning estimate from your own inputs.
+
+ COMPARE
+
+## A register plus Tally, generic billing software, or Jwero.
+
+ A register plus Tally Generic billing software Jwero 
+ Invoice price Rate typed in Fixed item price Today’s rate, with metal, making, stones and GST 
+ Who owes what A register A report someone runs Receivables by customer, since when 
+ Chasing payments Phone calls, when remembered No Reminders sent on their own 
+ Books Re-entered into Tally Export and import Synced to Tally through the bridge 
+ E-invoices In Tally, typed again Varies Generated in Tally from synced entries 
+ GST reports Built by your CA Basic GSTR-1, GSTR-3B, HSN, TDS, party ledgers 
+ Discounts and overrides Anyone can Anyone can Routed through approvals 
+
+ GETTING STARTED
+
+## How to move billing and books to Jwero, and keep Tally.
+
+ Five steps, with your CA.
+
+ 1 
+
+## Bring in your opening balances
+ Customers, what they owe, and your ledgers.
+
+ 2 
+
+## Connect Tally
+ Set up the bridge with your CA; ledgers map once.
+
+ 3 
+
+## Bill at the counter or online
+ Every invoice prices at today’s rate with GST.
+
+ 4 
+
+## Switch on reminders
+ Choose when dues are chased and what the message says.
+
+ 5 
+
+## Close the month
+ Entries are already in Tally; GST reports are ready for your CA.
 
  WHAT WE DON'T DO YET
 
  Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
 
- E-invoice IRN and e-way bill generation, GST invoices are generated; IRP registration still runs in your CA’s tool.
- E-invoice / IRN and GSTR filing automation.
+ GST return filing itself stays with your CA; Jwero prepares the reports.
  
  See the full public roadmap → 
 
- BILLING QUESTIONS
+ BECAUSE IT'S ONE SYSTEM
 
-## Your current software, and GST accuracy.
-
- Is there a POS alternative in Jwero, or should I keep my current billing counter? 
- Jwero’s Counter POS covers the sale, the exchange, the return and the till close, you do not need a second counter.
-
- Is GST computation compliant, or an approximation? 
- It’s data-driven, not hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.
-
- More questions? See the full FAQ → 
-
- Wondering how jewellery software and Tally divide the work? Read the guide to running both without double entry → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Every chat button on this site is the actual product, not a mockup, send one message and see for yourself.
+ The invoice prices from the same rate and catalogue as the counter and website.
+ What she owes sits on her customer record, next to every chat and purchase.
+ The counter sale is on the POS ; the whole business, from purchase to payroll, is the ERP .
 
 ## See invoicing at today’s rate.
 
- Change the rate live in a demo and watch a draft invoice reprice.
+ Change the rate live in a demo and watch an invoice reprice, then see it land in Tally.
 
  Chat or call with us 
  Book a demo 
@@ -4068,20 +4174,26 @@ BILLING & FINANCE
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: Does Jwero do POS counter billing? Is there a POS alternative?
-A: Yes, a full counter: scan or search a product, build a cart at the live gold rate, apply a discount, take old gold on an exchange voucher, take payment and generate the GST invoice; returns follow your branch’s policy and each register closes its shift with a reconciled cash count. See the Counter POS.
+Q: What is jewellery billing and accounting software?
+A: Software that bills each piece at today’s gold rate with GST, keeps the books, and tracks who owes what. Jwero does all three and keeps Tally in step through a bridge.
+
+Q: Do my books move to Jwero, or stay in Tally?
+A: Your choice. Every sale, return, payment and expense posts to Jwero’s double-entry ledger, and the Tally bridge syncs it across so your CA keeps working in Tally.
+
+Q: What does the Tally bridge do?
+A: It syncs sales, returns, payments and expenses from Jwero to Tally, so nothing is typed twice. E-invoices are generated in Tally from the synced entries.
 
 Q: Can it price invoices at today’s gold rate automatically?
-A: Yes, invoicing uses the same live-rate pricing formulas as the catalogue, so a rate change is reflected instantly.
+A: Yes. Invoices use the same pricing as the catalogue: metal at today’s rate, purity, making charges, stones and GST.
+
+Q: Is GST computed correctly?
+A: CGST, SGST and IGST are worked out on every invoice, with GSTR-1, GSTR-3B, HSN and TDS reports and party ledgers. Filing itself stays with your CA.
 
 Q: Does it chase payments for me?
-A: Yes, automated reminders run on receivables so collection doesn’t depend on someone remembering to call.
+A: Yes. Reminders go out on outstanding dues on the schedule you set.
 
-Q: Do our books move to Jwero, or stay in Tally?
-A: Your choice. Every sale, return, payment and expense posts to Jwero’s own double-entry ledger with GST handled; the Tally / Zoho Books bridge carries it across if your accountant’s world should not change.
-
-Q: Is GST computation actually compliant, or an approximation?
-A: GST (CGST/SGST/IGST) is computed as part of live-rate invoicing, data-driven rather than hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.
+Q: Is this the same as the POS?
+A: The POS is the counter: the sale, old gold, returns and day close. This is what happens after: invoices, receivables and the books.
 
 ---
 
@@ -28227,14 +28339,14 @@ JEWELLERY ACCOUNTING SOFTWARE
  What does it cost? 
  Accounting is part of the one plan: ₹18,000 a month, every module included. The first month is ₹3,600.
 
- Does Jwero do POS counter billing? Is there a POS alternative? 
- Yes, a full counter: scan or search a product, build a cart at the live gold rate, apply a discount, take old gold on an exchange voucher, take payment and generate the GST invoice; returns follow your branch’s policy and each register closes its shift with a reconciled cash count. See the Counter POS .
+ What is jewellery billing and accounting software? 
+ Software that bills each piece at today’s gold rate with GST, keeps the books, and tracks who owes what. Jwero does all three and keeps Tally in step through a bridge.
 
- Can it price invoices at today’s gold rate automatically? 
- Yes, invoicing uses the same live-rate pricing formulas as the catalogue, so a rate change is reflected instantly.
+ Do my books move to Jwero, or stay in Tally? 
+ Your choice. Every sale, return, payment and expense posts to Jwero’s double-entry ledger, and the Tally bridge syncs it across so your CA keeps working in Tally.
 
- Does it chase payments for me? 
- Yes, automated reminders run on receivables so collection doesn’t depend on someone remembering to call.
+ What does the Tally bridge do? 
+ It syncs sales, returns, payments and expenses from Jwero to Tally, so nothing is typed twice. E-invoices are generated in Tally from the synced entries.
 
  Related: Jewellery billing software · Tally integration · Jewellery software and Tally · For the accountant 
 
@@ -28264,14 +28376,14 @@ A: Yes. Party ledgers for buyers, vendors and karigars can be read in grams and 
 Q: What does it cost?
 A: Accounting is part of the one plan: ₹18,000 a month, every module included. The first month is ₹3,600.
 
-Q: Does Jwero do POS counter billing? Is there a POS alternative?
-A: Yes, a full counter: scan or search a product, build a cart at the live gold rate, apply a discount, take old gold on an exchange voucher, take payment and generate the GST invoice; returns follow your branch’s policy and each register closes its shift with a reconciled cash count. See the Counter POS.
+Q: What is jewellery billing and accounting software?
+A: Software that bills each piece at today’s gold rate with GST, keeps the books, and tracks who owes what. Jwero does all three and keeps Tally in step through a bridge.
 
-Q: Can it price invoices at today’s gold rate automatically?
-A: Yes, invoicing uses the same live-rate pricing formulas as the catalogue, so a rate change is reflected instantly.
+Q: Do my books move to Jwero, or stay in Tally?
+A: Your choice. Every sale, return, payment and expense posts to Jwero’s double-entry ledger, and the Tally bridge syncs it across so your CA keeps working in Tally.
 
-Q: Does it chase payments for me?
-A: Yes, automated reminders run on receivables so collection doesn’t depend on someone remembering to call.
+Q: What does the Tally bridge do?
+A: It syncs sales, returns, payments and expenses from Jwero to Tally, so nothing is typed twice. E-invoices are generated in Tally from the synced entries.
 
 ---
 

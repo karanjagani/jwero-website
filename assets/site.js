@@ -2852,3 +2852,12 @@ document.addEventListener('click', function (e) {
     set('lost', lost.toLocaleString('en-IN')); set('rev', '₹' + (lost * v('bill')).toLocaleString('en-IN')); set('hire', '₹' + (v('sal') * 12).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+// Billing page: what typing bills into Tally costs.
+(function () {
+  var root = document.querySelector('[data-bfc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-bf="' + k + '"]') || {}).value || 0; };
+  function run() { var t = Math.round(v('n') * v('min') / 60), f = Math.round(v('n') * v('err') / 100 * v('fix') / 60);
+    var set = function (k, x) { var el = root.querySelector('[data-bf-o="' + k + '"]'); if (el) el.textContent = x; };
+    set('type', t.toLocaleString('en-IN')); set('fix', f.toLocaleString('en-IN')); set('cost', '₹' + ((t + f) * v('cost') * 12).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();

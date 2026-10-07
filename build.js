@@ -1746,6 +1746,14 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - AI voice is built into WhatsApp and web chat; phone calls and IVR run over the jeweller's own telephony provider.
 - Governance: approval queues, daily caps, kill switch, and a log of every action and approver. AI does not set prices or discounts.
 
+## Jewellery billing, accounting and Tally (facts)
+
+- Page: https://jwero.ai/products/billing-finance
+- GST invoices priced at today's gold rate: metal, purity, making charges, stones, CGST/SGST/IGST.
+- Double-entry ledger for sales, returns, payments and expenses; party ledgers; GSTR-1, GSTR-3B, HSN and TDS reports. Filing stays with the CA.
+- Receivables by customer and age; automatic payment reminders on dues; discounts and overrides routed through approvals.
+- Tally bridge: sales, returns, payments and expenses sync to Tally so nothing is entered twice; ledgers map once; e-invoices are generated in Tally from synced entries.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.

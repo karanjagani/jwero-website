@@ -369,57 +369,123 @@ ${L.ctaBand('Find the sleeping capital.', 'Bring last year’s stock summary to 
 `,
 };
 
+// Billing & finance, rebuilt 2026-10-07. E-invoices through the Tally bridge
+// (confirmed on the ERP page). Not claimed (unconfirmed): e-way bills, UPI or
+// card collection links for dues, partial payments, TCS or PAN capture, bank
+// reconciliation, P&L or balance sheet, Zoho Books.
+const BF_FLOW = [
+  ['Billed', 'Bangle at today’s rate · metal, making, stones and GST'],
+  ['Owed', '₹40,000 still due on her account'],
+  ['Reminder', 'Day 7 · a payment reminder goes out on its own'],
+  ['Paid', 'The balance comes in · receivables cleared'],
+  ['Ledger', 'Sale and payment posted to the double-entry ledger'],
+  ['Tally', 'Synced to Tally through the bridge · e-invoice there'],
+  ['Month end', 'GSTR-1, GSTR-3B and HSN reports ready for your CA'],
+];
+const bfFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">BILLING · SALE TO BOOKS</p>${BF_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${BF_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const BF_CMP = [
+  ['Invoice price', 'Rate typed in', 'Fixed item price', 'Today’s rate, with metal, making, stones and GST'],
+  ['Who owes what', 'A register', 'A report someone runs', 'Receivables by customer, since when'],
+  ['Chasing payments', 'Phone calls, when remembered', 'No', 'Reminders sent on their own'],
+  ['Books', 'Re-entered into Tally', 'Export and import', 'Synced to Tally through the bridge'],
+  ['E-invoices', 'In Tally, typed again', 'Varies', 'Generated in Tally from synced entries'],
+  ['GST reports', 'Built by your CA', 'Basic', 'GSTR-1, GSTR-3B, HSN, TDS, party ledgers'],
+  ['Discounts and overrides', 'Anyone can', 'Anyone can', 'Routed through approvals'],
+];
+const bfTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>A register plus Tally</th><th>Generic billing software</th><th>Jwero</th></tr></thead><tbody>${BF_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const BF_HOW = [
+  ['Bring in your opening balances', 'Customers, what they owe, and your ledgers.'],
+  ['Connect Tally', 'Set up the bridge with your CA; ledgers map once.'],
+  ['Bill at the counter or online', 'Every invoice prices at today’s rate with GST.'],
+  ['Switch on reminders', 'Choose when dues are chased and what the message says.'],
+  ['Close the month', 'Entries are already in Tally; GST reports are ready for your CA.'],
+];
+const bfFaqs = [
+  { q: 'What is jewellery billing and accounting software?', a: 'Software that bills each piece at today’s gold rate with GST, keeps the books, and tracks who owes what. Jwero does all three and keeps Tally in step through a bridge.' },
+  { q: 'Do my books move to Jwero, or stay in Tally?', a: 'Your choice. Every sale, return, payment and expense posts to Jwero’s double-entry ledger, and the Tally bridge syncs it across so your CA keeps working in Tally.' },
+  { q: 'What does the Tally bridge do?', a: 'It syncs sales, returns, payments and expenses from Jwero to Tally, so nothing is typed twice. E-invoices are generated in Tally from the synced entries.' },
+  { q: 'Can it price invoices at today’s gold rate automatically?', a: 'Yes. Invoices use the same pricing as the catalogue: metal at today’s rate, purity, making charges, stones and GST.' },
+  { q: 'Is GST computed correctly?', a: 'CGST, SGST and IGST are worked out on every invoice, with GSTR-1, GSTR-3B, HSN and TDS reports and party ledgers. Filing itself stays with your CA.' },
+  { q: 'Does it chase payments for me?', a: 'Yes. Reminders go out on outstanding dues on the schedule you set.' },
+  { q: 'Is this the same as the POS?', a: 'The POS is the counter: the sale, old gold, returns and day close. This is what happens after: invoices, receivables and the books.' },
+];
 const billingFinance = {
   slug: 'products/billing-finance',
-  title: 'Jewellery GST Invoicing & Finance: Receivables, Ledger | Jwero',
-  description: 'Jewellery GST invoicing and finance: invoices at the live gold rate, receivables and payment reminders, and the books behind them. For counter billing, see Jwero’s jewellery billing software and POS.',
+  title: 'Jewellery Billing & Accounting Software: GST, Receivables, Tally | Jwero',
+  description: 'Jewellery billing and accounting software: GST invoices at today’s gold rate, a double-entry ledger, receivables with automatic payment reminders, GST reports, and a Tally bridge that syncs every entry so nothing is typed twice.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Billing & Finance', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'GST invoicing priced at the live gold rate, with receivables tracking, automated payment reminders and a full counter POS — returns, old-gold exchange and cash day-close included.',
+    name: 'Jwero Billing & Finance', alternateName: ['Jewellery accounting software', 'Jewellery billing software with Tally', 'Jewellery GST billing software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'GST invoicing at the live gold rate, a double-entry ledger, receivables with automatic payment reminders, GSTR-1, GSTR-3B, HSN and TDS reports, approval-gated overrides, and a Tally bridge that syncs sales, returns, payments and expenses, with e-invoices generated in Tally.',
     url: 'https://jwero.ai/products/billing-finance', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to move jewellery billing and books to Jwero and keep Tally', step: BF_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Billing & Finance'),
-  faqs: [
-    { q: 'Does Jwero do POS counter billing? Is there a POS alternative?', a: 'Yes — a full counter: scan or search a product, build a cart at the live gold rate, apply a discount, take old gold on an exchange voucher, take payment and generate the GST invoice; returns follow your branch’s policy and each register closes its shift with a reconciled cash count. <a href="/products/pos">See the Counter POS</a>.' },
-    { q: 'Can it price invoices at today’s gold rate automatically?', a: 'Yes — invoicing uses the same live-rate pricing formulas as the catalogue, so a rate change is reflected instantly.' },
-    { q: 'Does it chase payments for me?', a: 'Yes — automated reminders run on receivables so collection doesn’t depend on someone remembering to call.' },
-    { q: 'Do our books move to Jwero, or stay in Tally?', a: 'Your choice. Every sale, return, payment and expense posts to Jwero’s own double-entry ledger with GST handled; the Tally / Zoho Books bridge carries it across if your accountant’s world should not change.' },
-    { q: 'Is GST computation actually compliant, or an approximation?', a: 'GST (CGST/SGST/IGST) is computed as part of live-rate invoicing, data-driven rather than hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.' },
-  ],
+  faqs: bfFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'BILLING & FINANCE',
-  h1: 'GST invoices at the live gold rate, in seconds.',
-  sub: 'Rate changes twice a day; your invoices should follow instantly, not by hand. Jwero prices, invoices and tracks receivables at the rate that’s true right now — and reminds customers to pay without anyone chasing.',
+  eyebrow: 'JEWELLERY BILLING · ACCOUNTING · TALLY',
+  h1: 'Jewellery billing and accounting software: GST invoices at today’s rate, payments chased, books in step with Tally.',
+  sub: 'Every invoice prices itself from the gold rate with GST. Dues are tracked and chased on their own. Every entry posts to the ledger and syncs to Tally, so your CA keeps working the way they do and nothing is typed twice.',
   primary: { href: '#', label: 'Send me a live-rate GST invoice', wa: 'billing' },
-  secondary: { href: '/roadmap', label: 'See the counter-billing roadmap' },
+  secondary: { href: '/products/pos', label: 'See the counter POS' },
 })}
 
-${L.section(
-  `${L.cards([
-    { title: 'Live-rate GST invoicing', text: 'Metal rate, purity, making charges and GST computed together — no manual repricing when the rate moves.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
-    { title: 'Receivables ledger', text: 'Who owes what, since when — one view instead of a register.' },
-    { title: 'Payment reminders', text: 'Automated reminders on outstanding receivables, sent on schedule.' },
-    { title: 'Approval-gated overrides', text: 'Discounts and price exceptions on invoices route through approvals.' },
-  ], 4)}`
-)}
+${L.section(`${L.sectionHead('ONE SALE, START TO FINISH', 'From the invoice to the books, with no one retyping it.', '')}${bfFlow()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, ONE SET OF BOOKS', 'What jewellery billing and accounting software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. GST invoices at today’s rate</h3><p>Metal, purity, making charges, stones and CGST, SGST or IGST worked out together.</p><a href="/platform/pricing-engine">Pricing engine →</a></article>
+  <article><h3>2. A real ledger</h3><p>Sales, returns, payments and expenses posted to a double-entry ledger, with party ledgers.</p><a href="/products/erp">ERP →</a></article>
+  <article><h3>3. Who owes what</h3><p>Receivables by customer and age, in one view instead of a register.</p><a href="/products/crm">Customer record →</a></article>
+  <article><h3>4. Payments chased for you</h3><p>Reminders on outstanding dues, sent on the schedule you set.</p><a href="/products/whatsapp">WhatsApp →</a></article>
+  <article><h3>5. Tally in step</h3><p>Every entry synced through the Tally bridge; e-invoices generated in Tally.</p><a href="/blog/jewellery-software-and-tally">Jewellery software and Tally →</a></article>
+  <article><h3>6. Reports and control</h3><p>GSTR-1, GSTR-3B, HSN and TDS reports; discounts and overrides routed through approvals.</p><a href="/products/reports">Reports →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE TALLY BRIDGE', 'Keep Tally. Stop typing into it.', 'Your CA keeps the books they know. Jwero sends them everything, already entered.')}${L.cards([
+  { title: 'Nothing typed twice', text: 'Sales, returns, payments and expenses sync from Jwero to Tally, so no one re-enters a bill.' },
+  { title: 'Your CA changes nothing', text: 'Ledgers map once; your accountant keeps working in Tally the way they always have.' },
+  { title: 'E-invoices from Tally', text: 'E-invoices are generated in Tally from the entries Jwero has already synced.' },
+  { title: 'Books that match the counter', text: 'The figure in Tally is the figure on the invoice, so there is nothing to reconcile by hand.' },
+  { title: 'A faster month end', text: 'Entries are already in Tally when the month closes, with GST reports ready.' },
+  { title: 'One truth across branches', text: 'Every branch bills in Jwero; the books in Tally show the whole business.' },
+])}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What typing bills into Tally costs you.', 'Your numbers, not ours.')}<div class="callc" data-bfc>
+  <div class="callc-in">
+    <label>Bills, returns and payments a month<input type="number" inputmode="numeric" data-bf="n" value="1200" min="0"></label>
+    <label>Minutes to enter one into Tally<input type="number" inputmode="decimal" data-bf="min" value="3" min="0" step="0.5"></label>
+    <label>Entries with a mistake to fix, %<input type="number" inputmode="decimal" data-bf="err" value="3" min="0" max="100" step="0.5"></label>
+    <label>Minutes to find and fix a mistake<input type="number" inputmode="numeric" data-bf="fix" value="20" min="0"></label>
+    <label>Accounts staff cost an hour, ₹<input type="number" inputmode="numeric" data-bf="cost" value="200" min="0" step="50"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Hours typing a month</span><b data-bf-o="type">0</b></p>
+    <p><span>Hours fixing mistakes a month</span><b data-bf-o="fix">0</b></p>
+    <p class="callc-save"><span>Cost a year</span><b data-bf-o="cost">₹0</b></p>
+    <p class="cta-note">With the Tally bridge, entries sync on their own. A planning estimate from your own inputs.</p>
+  </div>
+</div>`)}
+
+${L.section(`${L.sectionHead('COMPARE', 'A register plus Tally, generic billing software, or Jwero.', '')}${bfTable()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to move billing and books to Jwero, and keep Tally.', 'Five steps, with your CA.')}${L.steps(BF_HOW.map(([title, text]) => ({ title, text })))}`)}
 
 ${L.honestGapsBlock([
-  'E-invoice IRN and e-way bill generation — GST invoices are generated; IRP registration still runs in your CA’s tool.',
-  'E-invoice / IRN and GSTR filing automation.',
+  'GST return filing itself stays with your CA; Jwero prepares the reports.',
 ])}
 
-${L.section(`${L.sectionHead('BILLING QUESTIONS', 'Your current software, and GST accuracy.', '')}${L.faqBlock([
-  { q: 'Is there a POS alternative in Jwero, or should I keep my current billing counter?', a: 'Jwero’s <a href="/products/pos">Counter POS</a> covers the sale, the exchange, the return and the till close — you do not need a second counter.' },
-  { q: 'Is GST computation compliant, or an approximation?', a: 'It’s data-driven, not hardcoded. Confirm current statutory-filing scope for your state on a demo before relying on it for a specific compliance need.' },
+${L.oneSystemBlock([
+  'The invoice prices from the same rate and catalogue as the counter and website.',
+  'What she owes sits on her customer record, next to every chat and purchase.',
+  'The counter sale is on the <a href="/products/pos">POS</a>; the whole business, from purchase to payroll, is the <a href="/products/erp">ERP</a>.',
 ])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
-<p class="cta-note" style="margin-top:14px">Wondering how jewellery software and Tally divide the work? <a href="/blog/jewellery-software-and-tally">Read the guide to running both without double entry →</a></p>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="billing">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('See invoicing at today’s rate.', 'Change the rate live in a demo and watch a draft invoice reprice.', 'billing')}
+${L.ctaBand('See invoicing at today’s rate.', 'Change the rate live in a demo and watch an invoice reprice, then see it land in Tally.', 'billing')}
 `,
 };
 

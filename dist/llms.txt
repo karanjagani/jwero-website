@@ -155,6 +155,14 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - AI voice is built into WhatsApp and web chat; phone calls and IVR run over the jeweller's own telephony provider.
 - Governance: approval queues, daily caps, kill switch, and a log of every action and approver. AI does not set prices or discounts.
 
+## Jewellery billing, accounting and Tally (facts)
+
+- Page: https://jwero.ai/products/billing-finance
+- GST invoices priced at today's gold rate: metal, purity, making charges, stones, CGST/SGST/IGST.
+- Double-entry ledger for sales, returns, payments and expenses; party ledgers; GSTR-1, GSTR-3B, HSN and TDS reports. Filing stays with the CA.
+- Receivables by customer and age; automatic payment reminders on dues; discounts and overrides routed through approvals.
+- Tally bridge: sales, returns, payments and expenses sync to Tally so nothing is entered twice; ledgers map once; e-invoices are generated in Tally from synced entries.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -196,7 +204,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jewellery CRM Software: CRM for Jewellers: https://jwero.ai/products/crm
 - Jewellery Catalogue & PIM Software: Live Prices, AI Listings: https://jwero.ai/products/catalog
 - Jewellery Inventory Software: Stock, Barcode & Valuation: https://jwero.ai/products/inventory
-- Jewellery GST Invoicing & Finance: Receivables, Ledger: https://jwero.ai/products/billing-finance
+- Jewellery Billing & Accounting Software: GST, Receivables, Tally: https://jwero.ai/products/billing-finance
 - Jewellery ERP Software: One System for the Whole Business: https://jwero.ai/products/erp
 - Jewellery Showroom Software: Walk-in Tracking and Floor View: https://jwero.ai/products/showroom
 - Jewellery Customer Segmentation Software: Live Segments: https://jwero.ai/products/segmentation
