@@ -6669,19 +6669,19 @@ A: Reminders and no-show follow-ups go out on her channel, each with a fresh lin
 
 ---
 
-# Business Email on Your Own Domain, Inside the Same Inbox
+# Email Marketing & Business Email for Jewellers: Own Domain, One Inbox
 URL: https://jwero.ai/products/email
 
-Mailboxes on your own domain, provisioned by Jwero with DKIM, SPF and DMARC in place; email threads in the same shared inbox as WhatsApp and Instagram; email in campaigns and journeys with unsubscribe and bounce handling; AI drafts that wait for approval.
+Email marketing and business email for jewellers: mailboxes on your own domain, a drag-and-drop designer with AI-written campaigns, A/B testing, open and click tracking, abandoned cart emails, all in the same inbox as WhatsApp.
 
-BUSINESS EMAIL
+EMAIL MARKETING · BUSINESS EMAIL
 
-## Your own-domain email. In the same inbox as WhatsApp.
+## Email marketing and business email for jewellers: your own domain, in the same inbox as WhatsApp.
 
- care@yourshop.in, orders@, one address per salesperson, provisioned by Jwero, signed and verified, and landing in the one inbox your team already answers. Replies draft from the customer record and wait for your tap.
+ care@yourshop.in and one address per salesperson, set up in minutes. Campaigns designed by drag and drop and written by AI, A/B tested, tracked to every open and click, and every reply landing in the inbox your team already answers.
 
  Set up my business email 
- See the shared inbox 
+ See Campaigns 
 
  Inbox · all channels 
 
@@ -6695,33 +6695,85 @@ BUSINESS EMAIL
 
  One record per customer, whichever door she used. The email reply drafts from the same record as the WhatsApp one.
 
- WHAT YOU GET
+ ONE EMAIL, START TO FINISH
 
-## Email that behaves like the rest of the OS.
+## From a Diwali email to a booked visit.
 
-## Mailboxes on your domain
+ EMAIL · CAMPAIGN TO VISIT
+ Designed Diwali email built in the drag-and-drop designer · AI wrote the copy
+ A/B test Two subject lines tested · the winner goes to the rest
+ Sent To “gold buyers, last 12 months” · her name and last purchase filled in
+ Tracked Opened, and the bridal necklace clicked
+ Bounced One dead address · stopped from future sends
+ Reply “Is the necklace still there?” · threads onto her record beside WhatsApp
+ Booked AI draft approved · a visit booked for Sunday
+ Illustrative.
 
- Provisioned by Jwero, with the DNS records listed for you and verified from the app. Mail is signed and authenticated so it lands in the inbox, not in spam.
+ Designed Diwali email built in the drag-and-drop designer 
+ A/B test Two subject lines tested 
+ Sent To “gold buyers, last 12 months” 
+ Tracked Opened, and the bridal necklace clicked 
+ Bounced One dead address 
+ Reply “Is the necklace still there?” 
+ Booked AI draft approved 
 
-## One inbox, every door
+ SIX JOBS, ONE INBOX
 
- Email threads sit beside WhatsApp, Instagram and web chat, on the same customer record, no second tab, no second person.
+## What jewellery email has to do.
 
-## Bring your own mailbox
+## 1. Mailboxes on your domain
+ Created in the app, signed with DKIM, SPF and DMARC so mail reaches the inbox. Or connect Google Workspace or Zoho.
+ Pricing → 
 
- Already on Google Workspace or Zoho? Connect it over IMAP and send through its SMTP. Nothing moves.
+## 2. One inbox for everything
+ Email threads beside WhatsApp, Instagram and web chat, on the same customer record.
+ Shared inbox → 
 
-## Email in campaigns & journeys
+## 3. Campaigns that look like you
+ A drag-and-drop designer, AI-written copy, personal fields, and A/B testing.
+ Campaigns → 
 
- Templates with the same personalisation fields as WhatsApp; unsubscribe enforced; a bounce or delivery notice writes back to the contact.
+## 4. Emails that send themselves
+ Abandoned cart, browse, birthday and anniversary emails inside journeys.
+ Journeys → 
 
-## AI drafts, you approve
+## 5. Know what worked
+ Opens and clicks on her record; unsubscribes enforced and bounces stopped.
+ Segments → 
 
- Replies draft from the record, her order, her scheme balance, her last visit. Sent after your tap, inside daily caps and quiet hours.
+## 6. Replies and receipts
+ AI drafts replies from her record for your approval; receipts, OTPs and reminders on branded templates.
+ AI agents → 
 
-## Transactional mail, too
+ THE ARITHMETIC
 
- Receipts, OTPs, meeting links and reminders go out on branded templates from the same sender.
+## What abandoned carts cost without an email.
+
+ Your numbers, not ours.
+
+ Carts abandoned on your website a month 
+ Won back by a reminder email, % 
+ Average order, ₹ 
+
+ Orders won back a month 0 
+
+ Revenue a month ₹0 
+
+ A planning estimate from your own inputs.
+
+ COMPARE
+
+## Personal Gmail, Workspace plus an email tool, or Jwero.
+
+ Personal Gmail Google Workspace plus an email tool Jwero 
+ Address yourshop@gmail.com Your domain Your domain, set up in the app 
+ Where replies go One person’s phone A separate inbox The same inbox as WhatsApp and Instagram 
+ Who it goes to An exported list A list in the tool Segments from the customer record 
+ Design and copy Plain text Drag and drop Drag and drop, with AI-written copy 
+ Testing No A/B testing A/B testing 
+ Opens and clicks No In the tool On her customer record 
+ Abandoned cart and browse No With an ecommerce plugin Built into journeys 
+ Unsubscribes and bounces By hand In the tool Enforced, and written to the contact 
 
  Today With Jwero 
 
@@ -6729,42 +6781,60 @@ BUSINESS EMAIL
 
  Today It sits in someone’s personal Gmail.
 
- With Jwero It lands on the party record beside their WhatsApp thread; the order can be raised from it.
+ With Jwero It lands on the supplier’s record beside their WhatsApp thread; the order can be raised from it.
 
  A customer replies to a receipt See Customer Memory → 
 
  Today Nobody sees it for two days.
 
- With Jwero It threads onto her record; a reply drafts, waits for approval.
+ With Jwero It threads onto her record; a reply drafts and waits for approval.
 
  A festival campaign by email See Campaigns → 
 
  Today A bulk tool with its own list and no opt-out logic.
 
- With Jwero A segment from the same record, unsubscribe enforced, bounces read back.
+ With Jwero A segment from the same record, A/B tested, opens and clicks on each customer.
 
- WHAT WE DON'T DO YET
+ GETTING STARTED
 
- Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
+## How to set up business email and email marketing.
 
- Self-serve mailbox creation, aliases and seat metering are on the roadmap, today mailboxes are set up for you during onboarding.
- 
- See the full public roadmap → 
+ Five steps.
 
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Try the chat button on this page, the same inbox answers it.
+ 1 
+
+## Set up your mailboxes
+ Create care@, orders@ and one per salesperson yourself, or connect Google Workspace or Zoho.
+
+ 2 
+
+## Verify your domain
+ Add the DKIM, SPF and DMARC records from the checklist; the app confirms them.
+
+ 3 
+
+## Design your first email
+ Drag and drop, or let AI write it from your brief.
+
+ 4 
+
+## Pick a segment and test
+ Send to the right customers, with two subject lines A/B tested.
+
+ 5 
+
+## Switch on journeys
+ Abandoned cart, browse and occasion emails go out on their own.
+
+ BECAUSE IT'S ONE SYSTEM
+
+ An email, a WhatsApp chat and a counter visit from the same person are one customer record.
+ Segments, prices and products in an email come from the same record and catalogue as every other channel.
+ Opens and clicks feed the same scores your team uses to decide who to call.
 
 ## Put the trade’s email where the trade’s WhatsApp already is.
 
- Tell us your domain. We will show the DNS checklist, the first mailbox and the inbox, on a call, in fifteen minutes.
+ Tell us your domain. We will set up the first mailbox and send your first campaign with you.
 
  Chat or call with us 
  Book a demo 
@@ -6773,20 +6843,32 @@ BUSINESS EMAIL
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
+Q: What is email marketing for jewellers?
+A: Sending the right customers festival offers, new collections, occasion wishes and cart reminders by email. Jwero sends to segments from your customer record, with AI-written copy, A/B testing, and opens and clicks tracked.
+
+Q: Can AI write my email campaigns?
+A: Yes. AI writes the subject and copy from your brief; you edit in the drag-and-drop designer and approve before it sends.
+
+Q: Can I A/B test emails?
+A: Yes. Test subject lines or versions, and send the winner to the rest.
+
+Q: Are abandoned cart emails included?
+A: Yes. Abandoned cart and browse journeys send by email, alongside WhatsApp and other channels.
+
+Q: Can I see who opened and clicked?
+A: Yes. Opens and clicks are tracked and written to each customer’s record.
+
 Q: Do I need to buy email hosting separately?
-A: No. Mailboxes on your own domain, care@, orders@, a name per salesperson, are provisioned by Jwero on its own mail infrastructure, with DKIM, SPF and DMARC records given to you as a checklist and verified from inside the app.
+A: No. You create mailboxes on your own domain inside Jwero, charged per mailbox. See pricing.
 
 Q: Can I keep my existing Google Workspace or Zoho Mail?
-A: Yes. The shared inbox connects an existing mailbox over IMAP and sends through its SMTP; the built-in mailboxes are for businesses that don’t have one or want the trade’s email in the same place as the trade’s WhatsApp.
+A: Yes. Connect it, and its email lands in the same inbox as WhatsApp.
 
-Q: Does email marketing come with this?
-A: Email is a channel in Campaigns and Journeys, templates with the same 30 personalisation fields, unsubscribe links enforced, bounces and delivery notices read back onto the contact so a dead address stops being mailed.
+Q: Will my emails land in spam?
+A: Mail is signed with DKIM, SPF and DMARC, which inbox providers check, and bounced addresses stop being mailed.
 
 Q: Will the AI answer my email on its own?
-A: It drafts. Every reply and every campaign waits for approval until you widen what may run alone, per action type, the same governance as WhatsApp.
-
-Q: What is not there yet?
-A: A self-serve mailbox wizard: today your mailboxes are provisioned for you during onboarding. Aliases, seat metering and a platform-level console are on the roadmap.
+A: It drafts. Replies wait for approval until you decide which may run alone.
 
 ---
 

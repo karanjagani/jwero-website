@@ -163,6 +163,15 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Receivables by customer and age; automatic payment reminders on dues; discounts and overrides routed through approvals.
 - Tally bridge: sales, returns, payments and expenses sync to Tally so nothing is entered twice; ledgers map once; e-invoices are generated in Tally from synced entries.
 
+## Email marketing and business email for jewellers (facts)
+
+- Page: https://jwero.ai/products/email
+- Mailboxes on the jeweller's own domain, created self-serve in the app and charged per mailbox; DKIM, SPF and DMARC verified in the app. Google Workspace or Zoho Mail can be connected instead.
+- Email threads sit in the same shared inbox as WhatsApp, Instagram and web chat, on the customer record.
+- Email campaigns: drag-and-drop designer, AI-written subject and copy, personalisation, A/B testing, open and click tracking, sent to segments.
+- Journeys send abandoned cart, browse and occasion emails. Unsubscribes enforced; bounces stop future sends.
+- AI drafts replies for approval; receipts, OTPs and reminders go on branded templates.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -220,7 +229,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jewellery Manufacturing Software: Karigar, Wastage, Planning: https://jwero.ai/products/manufacturing
 - Girvi, Gold Loan & Pawn Broking Software for Jewellers: https://jwero.ai/products/girvi
 - Jewellery Appointment & Video Call Software: https://jwero.ai/products/meetings
-- Business Email on Your Own Domain, Inside the Same Inbox: https://jwero.ai/products/email
+- Email Marketing & Business Email for Jewellers: Own Domain, One Inbox: https://jwero.ai/products/email
 - Google Shopping & Meta Catalogue Sync for Jewellers: https://jwero.ai/products/marketplaces
 - Jewellery Quotation & Estimate Software at the Live Rate: https://jwero.ai/products/quotations
 - Digital Catalogue App for Jewellers: Share on WhatsApp, Live Prices: https://jwero.ai/products/digital-catalogues

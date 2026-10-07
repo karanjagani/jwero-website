@@ -2861,3 +2861,12 @@ document.addEventListener('click', function (e) {
     set('type', t.toLocaleString('en-IN')); set('fix', f.toLocaleString('en-IN')); set('cost', '₹' + ((t + f) * v('cost') * 12).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+// Email page: what abandoned carts cost without an email.
+(function () {
+  var root = document.querySelector('[data-emc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-em="' + k + '"]') || {}).value || 0; };
+  function run() { var won = Math.round(v('n') * v('won') / 100);
+    var set = function (k, t) { var el = root.querySelector('[data-em-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('won', won.toLocaleString('en-IN')); set('rev', '₹' + (won * v('bill')).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();

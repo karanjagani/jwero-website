@@ -21,54 +21,110 @@ const mockMail = `
   <div class="mock-foot">One record per customer, whichever door she used. The email reply drafts from the same record as the WhatsApp one.</div>
 </div>`;
 
+// Email, rebuilt 2026-10-07. Confirmed by Jwero: A/B testing in email campaigns,
+// AI-written campaigns, abandoned cart and browse emails, open and click
+// tracking, drag-and-drop designer, self-serve mailbox setup, mailboxes charged.
+const EM_FLOW = [
+  ['Designed', 'Diwali email built in the drag-and-drop designer · AI wrote the copy'],
+  ['A/B test', 'Two subject lines tested · the winner goes to the rest'],
+  ['Sent', 'To “gold buyers, last 12 months” · her name and last purchase filled in'],
+  ['Tracked', 'Opened, and the bridal necklace clicked'],
+  ['Bounced', 'One dead address · stopped from future sends'],
+  ['Reply', '“Is the necklace still there?” · threads onto her record beside WhatsApp'],
+  ['Booked', 'AI draft approved · a visit booked for Sunday'],
+];
+const emFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">EMAIL · CAMPAIGN TO VISIT</p>${EM_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${EM_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const EM_CMP = [
+  ['Address', 'yourshop@gmail.com', 'Your domain', 'Your domain, set up in the app'],
+  ['Where replies go', 'One person’s phone', 'A separate inbox', 'The same inbox as WhatsApp and Instagram'],
+  ['Who it goes to', 'An exported list', 'A list in the tool', 'Segments from the customer record'],
+  ['Design and copy', 'Plain text', 'Drag and drop', 'Drag and drop, with AI-written copy'],
+  ['Testing', 'No', 'A/B testing', 'A/B testing'],
+  ['Opens and clicks', 'No', 'In the tool', 'On her customer record'],
+  ['Abandoned cart and browse', 'No', 'With an ecommerce plugin', 'Built into journeys'],
+  ['Unsubscribes and bounces', 'By hand', 'In the tool', 'Enforced, and written to the contact'],
+];
+const emTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Personal Gmail</th><th>Google Workspace plus an email tool</th><th>Jwero</th></tr></thead><tbody>${EM_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const EM_HOW = [
+  ['Set up your mailboxes', 'Create care@, orders@ and one per salesperson yourself, or connect Google Workspace or Zoho.'],
+  ['Verify your domain', 'Add the DKIM, SPF and DMARC records from the checklist; the app confirms them.'],
+  ['Design your first email', 'Drag and drop, or let AI write it from your brief.'],
+  ['Pick a segment and test', 'Send to the right customers, with two subject lines A/B tested.'],
+  ['Switch on journeys', 'Abandoned cart, browse and occasion emails go out on their own.'],
+];
+const emFaqs = [
+  { q: 'What is email marketing for jewellers?', a: 'Sending the right customers festival offers, new collections, occasion wishes and cart reminders by email. Jwero sends to segments from your customer record, with AI-written copy, A/B testing, and opens and clicks tracked.' },
+  { q: 'Can AI write my email campaigns?', a: 'Yes. AI writes the subject and copy from your brief; you edit in the drag-and-drop designer and approve before it sends.' },
+  { q: 'Can I A/B test emails?', a: 'Yes. Test subject lines or versions, and send the winner to the rest.' },
+  { q: 'Are abandoned cart emails included?', a: 'Yes. Abandoned cart and browse journeys send by email, alongside WhatsApp and other channels.' },
+  { q: 'Can I see who opened and clicked?', a: 'Yes. Opens and clicks are tracked and written to each customer’s record.' },
+  { q: 'Do I need to buy email hosting separately?', a: 'No. You create mailboxes on your own domain inside Jwero, charged per mailbox. See pricing.' },
+  { q: 'Can I keep my existing Google Workspace or Zoho Mail?', a: 'Yes. Connect it, and its email lands in the same inbox as WhatsApp.' },
+  { q: 'Will my emails land in spam?', a: 'Mail is signed with DKIM, SPF and DMARC, which inbox providers check, and bounced addresses stop being mailed.' },
+  { q: 'Will the AI answer my email on its own?', a: 'It drafts. Replies wait for approval until you decide which may run alone.' },
+];
 const email = {
   slug: 'products/email',
-  title: 'Business Email on Your Own Domain, Inside the Same Inbox | Jwero',
-  description: 'Mailboxes on your own domain, provisioned by Jwero with DKIM, SPF and DMARC in place; email threads in the same shared inbox as WhatsApp and Instagram; email in campaigns and journeys with unsubscribe and bounce handling; AI drafts that wait for approval.',
-  schema: app('Jwero Business Email', 'email', 'Own-domain business mailboxes, a shared email inbox unified with WhatsApp and Instagram, and email campaigns with consent and bounce handling — for jewellery businesses.'),
-  breadcrumbs: BC('Business Email'),
-  faqs: [
-    { q: 'Do I need to buy email hosting separately?', a: 'No. Mailboxes on your own domain — care@, orders@, a name per salesperson — are provisioned by Jwero on its own mail infrastructure, with DKIM, SPF and DMARC records given to you as a checklist and verified from inside the app.' },
-    { q: 'Can I keep my existing Google Workspace or Zoho Mail?', a: 'Yes. The shared inbox connects an existing mailbox over IMAP and sends through its SMTP; the built-in mailboxes are for businesses that don’t have one or want the trade’s email in the same place as the trade’s WhatsApp.' },
-    { q: 'Does email marketing come with this?', a: 'Email is a channel in Campaigns and Journeys — templates with the same 30 personalisation fields, unsubscribe links enforced, bounces and delivery notices read back onto the contact so a dead address stops being mailed.' },
-    { q: 'Will the AI answer my email on its own?', a: 'It drafts. Every reply and every campaign waits for approval until you widen what may run alone, per action type — the same governance as WhatsApp.' },
-    { q: 'What is not there yet?', a: 'A self-serve mailbox wizard: today your mailboxes are provisioned for you during onboarding. Aliases, seat metering and a platform-level console are on the roadmap.' },
-  ],
+  title: 'Email Marketing & Business Email for Jewellers: Own Domain, One Inbox | Jwero',
+  description: 'Email marketing and business email for jewellers: mailboxes on your own domain, a drag-and-drop designer with AI-written campaigns, A/B testing, open and click tracking, abandoned cart emails, all in the same inbox as WhatsApp.',
+  schema: { ...app('Jwero Email', 'email', 'Email marketing and own-domain business email for jewellers: self-serve mailboxes with DKIM, SPF and DMARC, a shared inbox with WhatsApp and Instagram, a drag-and-drop designer, AI-written campaigns, A/B testing, open and click tracking, abandoned cart and browse journeys, and unsubscribe and bounce handling.'), alternateName: ['Email marketing for jewellers', 'Jewellery email marketing software', 'Business email for jewellery shops'] },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up business email and email marketing for a jewellery shop', step: EM_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
+  breadcrumbs: BC('Email'),
+  faqs: emFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'BUSINESS EMAIL',
-  h1: 'Your own-domain email. In the same inbox as WhatsApp.',
-  sub: 'care@yourshop.in, orders@, one address per salesperson — provisioned by Jwero, signed and verified, and landing in the one inbox your team already answers. Replies draft from the customer record and wait for your tap.',
+  eyebrow: 'EMAIL MARKETING · BUSINESS EMAIL',
+  h1: 'Email marketing and business email for jewellers: your own domain, in the same inbox as WhatsApp.',
+  sub: 'care@yourshop.in and one address per salesperson, set up in minutes. Campaigns designed by drag and drop and written by AI, A/B tested, tracked to every open and click, and every reply landing in the inbox your team already answers.',
   primary: { href: '#', label: 'Set up my business email', wa: 'email' },
-  secondary: { href: '/products/whatsapp', label: 'See the shared inbox' },
+  secondary: { href: '/products/campaigns', label: 'See Campaigns' },
   mock: mockMail,
 })}
 
-${L.section(
-  `${L.sectionHead('WHAT YOU GET', 'Email that behaves like the rest of the OS.', '')}
-  ${L.cards([
-    { title: 'Mailboxes on your domain', text: 'Provisioned by Jwero, with the DNS records listed for you and verified from the app. Mail is signed and authenticated so it lands in the inbox, not in spam.' },
-    { title: 'One inbox, every door', text: 'Email threads sit beside WhatsApp, Instagram and web chat, on the same customer record — no second tab, no second person.' },
-    { title: 'Bring your own mailbox', text: 'Already on Google Workspace or Zoho? Connect it over IMAP and send through its SMTP. Nothing moves.' },
-    { title: 'Email in campaigns & journeys', text: 'Templates with the same personalisation fields as WhatsApp; unsubscribe enforced; a bounce or delivery notice writes back to the contact.' },
-    { title: 'AI drafts, you approve', text: 'Replies draft from the record — her order, her scheme balance, her last visit. Sent after your tap, inside daily caps and quiet hours.' },
-    { title: 'Transactional mail, too', text: 'Receipts, OTPs, meeting links and reminders go out on branded templates from the same sender.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE EMAIL, START TO FINISH', 'From a Diwali email to a booked visit.', '')}${emFlow()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, ONE INBOX', 'What jewellery email has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Mailboxes on your domain</h3><p>Created in the app, signed with DKIM, SPF and DMARC so mail reaches the inbox. Or connect Google Workspace or Zoho.</p><a href="/pricing">Pricing →</a></article>
+  <article><h3>2. One inbox for everything</h3><p>Email threads beside WhatsApp, Instagram and web chat, on the same customer record.</p><a href="/products/whatsapp">Shared inbox →</a></article>
+  <article><h3>3. Campaigns that look like you</h3><p>A drag-and-drop designer, AI-written copy, personal fields, and A/B testing.</p><a href="/products/campaigns">Campaigns →</a></article>
+  <article><h3>4. Emails that send themselves</h3><p>Abandoned cart, browse, birthday and anniversary emails inside journeys.</p><a href="/products/journeys">Journeys →</a></article>
+  <article><h3>5. Know what worked</h3><p>Opens and clicks on her record; unsubscribes enforced and bounces stopped.</p><a href="/products/segmentation">Segments →</a></article>
+  <article><h3>6. Replies and receipts</h3><p>AI drafts replies from her record for your approval; receipts, OTPs and reminders on branded templates.</p><a href="/products/ai-sales-agents">AI agents →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What abandoned carts cost without an email.', 'Your numbers, not ours.')}<div class="callc" data-emc>
+  <div class="callc-in">
+    <label>Carts abandoned on your website a month<input type="number" inputmode="numeric" data-em="n" value="150" min="0"></label>
+    <label>Won back by a reminder email, %<input type="number" inputmode="decimal" data-em="won" value="5" min="0" max="100" step="0.5"></label>
+    <label>Average order, ₹<input type="number" inputmode="numeric" data-em="bill" value="35000" min="0" step="1000"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Orders won back a month</span><b data-em-o="won">0</b></p>
+    <p class="callc-save"><span>Revenue a month</span><b data-em-o="rev">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'Personal Gmail, Workspace plus an email tool, or Jwero.', '')}${emTable()}`)}
 
 ${L.impactGrid([
-  { lever: 'A supplier emails a PO', before: 'It sits in someone’s personal Gmail.', after: 'It lands on the party record beside their WhatsApp thread; the order can be raised from it.', link: { href: '/products/purchase-vendors', label: 'See Purchase & Vendors' } },
-  { lever: 'A customer replies to a receipt', before: 'Nobody sees it for two days.', after: 'It threads onto her record; a reply drafts, waits for approval.', link: { href: '/platform/customer-memory', label: 'See Customer Memory' } },
-  { lever: 'A festival campaign by email', before: 'A bulk tool with its own list and no opt-out logic.', after: 'A segment from the same record, unsubscribe enforced, bounces read back.', link: { href: '/products/campaigns', label: 'See Campaigns' } },
+  { lever: 'A supplier emails a PO', before: 'It sits in someone’s personal Gmail.', after: 'It lands on the supplier’s record beside their WhatsApp thread; the order can be raised from it.', link: { href: '/products/purchase-vendors', label: 'See Purchase & Vendors' } },
+  { lever: 'A customer replies to a receipt', before: 'Nobody sees it for two days.', after: 'It threads onto her record; a reply drafts and waits for approval.', link: { href: '/platform/customer-memory', label: 'See Customer Memory' } },
+  { lever: 'A festival campaign by email', before: 'A bulk tool with its own list and no opt-out logic.', after: 'A segment from the same record, A/B tested, opens and clicks on each customer.', link: { href: '/products/campaigns', label: 'See Campaigns' } },
 ])}
 
-${L.honestGapsBlock([
-  'Self-serve mailbox creation, aliases and seat metering are on the roadmap — today mailboxes are set up for you during onboarding.',
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to set up business email and email marketing.', 'Five steps.')}${L.steps(EM_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
+
+${L.oneSystemBlock([
+  'An email, a WhatsApp chat and a counter visit from the same person are one customer record.',
+  'Segments, prices and products in an email come from the same record and catalogue as every other channel.',
+  'Opens and clicks feed the same scores your team uses to decide who to call.',
 ])}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the chat button on this page — the same inbox answers it.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Put the trade’s email where the trade’s WhatsApp already is.', 'Tell us your domain. We will show the DNS checklist, the first mailbox and the inbox — on a call, in fifteen minutes.', 'email')}
+${L.ctaBand('Put the trade’s email where the trade’s WhatsApp already is.', 'Tell us your domain. We will set up the first mailbox and send your first campaign with you.', 'email')}
 `,
 };
 
