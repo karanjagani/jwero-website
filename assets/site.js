@@ -2834,3 +2834,12 @@ document.addEventListener('click', function (e) {
     set('enq', enq.toLocaleString('en-IN')); set('sales', sales.toLocaleString('en-IN')); set('rev', '₹' + (sales * v('bill')).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+// Quotations page: what quotes without follow-up cost.
+(function () {
+  var root = document.querySelector('[data-qc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-q="' + k + '"]') || {}).value || 0; };
+  function run() { var quiet = Math.round(v('n') * v('quiet') / 100), won = Math.round(quiet * v('won') / 100);
+    var set = function (k, t) { var el = root.querySelector('[data-q-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('quiet', quiet.toLocaleString('en-IN')); set('won', won.toLocaleString('en-IN')); set('rev', '₹' + (won * v('bill')).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();

@@ -188,49 +188,103 @@ const mockQuote = `
   <div class="mock-foot">She opens the link, accepts or declines. Acceptance moves her conversion score; a decline drafts a follow-up for your tap.</div>
 </div>`;
 
+// Quotations, rebuilt 2026-10-07. Not claimed (unconfirmed): advance payment on
+// the quote link, printed estimate slips, old gold exchange on a quote, design
+// images or karigar jobs from a quote, proforma invoices, GST lines, B2B pricing.
+const Q_FLOW = [
+  ['Enquiry', 'Asks on WhatsApp for a 20g temple necklace'],
+  ['Drafted', 'Estimate at today’s rate · metal, making, stones line by line'],
+  ['Sent', 'Numbered link and PDF on WhatsApp · after your tap'],
+  ['Quiet', 'Two days, no reply · a nudge is drafted for approval'],
+  ['Revised', 'Version 2 with a lighter design'],
+  ['Accepted', 'Accepted from her phone · written to her record'],
+  ['Order', 'Converted to a sales order with the same lines'],
+];
+const qFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">QUOTATION · ENQUIRY TO ORDER</p>${Q_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${Q_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const Q_CMP = [
+  ['Price', 'Typed from memory', 'Worked out by hand', 'From the catalogue at today’s rate'],
+  ['Making and wastage', 'Varies by who types', 'A formula someone set up', 'Your rules, every time'],
+  ['Which price was final', 'Lost in the chat', 'File names', 'Every version numbered'],
+  ['Customer decides', 'Replies in chat', 'Prints or forwards', 'Accepts or declines on a link'],
+  ['If she goes quiet', 'Forgotten', 'Forgotten', 'A follow-up drafted for approval'],
+  ['To an order', 'Retyped', 'Retyped', 'Converted with the same lines'],
+  ['On her record', 'No', 'No', 'Yes, with the history'],
+];
+const qTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Prices typed in WhatsApp</th><th>An Excel or Word estimate</th><th>Jwero</th></tr></thead><tbody>${Q_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const Q_HOW = [
+  ['Start from the enquiry', 'Open her record, a catalogue request, or say it at the counter.'],
+  ['Pick the pieces', 'Lines come from your catalogue with weights, purity and stones.'],
+  ['Let the rate price it', 'Today’s rate with your making and wastage rules, and a validity window.'],
+  ['Send it', 'A numbered link and PDF on WhatsApp or email, after your tap.'],
+  ['Follow up and convert', 'A nudge if she goes quiet; an order with the same lines when she accepts.'],
+];
+const qFaqs = [
+  { q: 'What is a jewellery estimate?', a: 'A written price for chosen pieces before the sale: metal at today’s rate, making charges and stones. In Jwero it is a numbered quotation the customer can accept from her phone.' },
+  { q: 'How do I make a jewellery estimate?', a: 'Pick the pieces from your catalogue; Jwero prices them at today’s rate with your making and wastage rules, and sends a numbered link and PDF on WhatsApp or email.' },
+  { q: 'What is the difference between a quotation, an estimate and an invoice?', a: 'An estimate or quotation is the price offered before she decides. An invoice is the bill after the sale. In Jwero an accepted quotation converts to an order, and the invoice follows.' },
+  { q: 'How does a quotation get created?', a: 'From her record, from a catalogue enquiry in one step, by voice at the counter in English, Hindi or Hinglish, or by an automation. Sending always needs your confirm.' },
+  { q: 'Can the customer accept it online?', a: 'Yes. She opens the link, sees the numbered quotation with its lines and PDF, and accepts or declines. It is written to her record.' },
+  { q: 'Is the rate locked?', a: 'Every quotation has a validity window. Whether the rate is held inside it is your rule.' },
+  { q: 'What happens if she goes quiet?', a: 'A follow-up is drafted after the interval you set and waits for your approval.' },
+  { q: 'Does an accepted quote become an order?', a: 'Yes. It converts to a sales order with the quoted lines.' },
+  { q: 'Can a bridal family see one quotation?', a: 'Yes. Everyone opens the same numbered document, so there is no argument about which price was final.' },
+];
 const quotations = {
   slug: 'products/quotations',
   title: 'Jewellery Quotation & Estimate Software at the Live Rate | Jwero',
-  description: 'Numbered quotations with line items and a PDF, priced from the catalogue at the live rate, sent on WhatsApp or email, accepted or declined by the customer on a public link — created from an enquiry, from a catalogue request, or by voice at the counter.',
-  schema: app('Jwero Quotations', 'quotations', 'Quotation lifecycle for jewellers: draft, sent, accepted or declined, with online acceptance, live-rate pricing and follow-up journeys.'),
+  description: 'Jewellery quotation and estimate software: numbered quotes priced at today’s gold rate with your making and wastage rules, sent on WhatsApp or email, accepted from her phone, followed up and converted to an order.',
+  schema: { ...app('Jwero Quotations', 'quotations', 'Jewellery quotation and estimate software: live-rate pricing from the catalogue, numbered versions with a PDF, online acceptance, follow-ups drafted for approval, and conversion to a sales order.'), alternateName: ['Jewellery estimate software', 'Jewellery estimation software', 'Jewellery quotation software'] },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to make a jewellery estimate', step: Q_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Quotations'),
-  faqs: [
-    { q: 'How does a quotation get created?', a: 'Four ways: from the customer record, from a catalogue enquiry in one call, from the counter’s sell cockpit — say “Priya ke liye quotation banao aur bhejo” in English, Hindi or Hinglish — or by an automation. Every outward step (send, convert) still needs a human confirm.' },
-    { q: 'Can the customer accept it online?', a: 'Yes. She receives a link, sees the numbered quotation with line items and a PDF, and accepts or declines. The status moves on her record and her scores move with it.' },
-    { q: 'What happens if she goes quiet?', a: 'The quote follow-up journey drafts a nudge after the interval you set; it waits in your approval queue like every other send.' },
-    { q: 'Does an accepted quote become an order?', a: 'Yes — convert to a sales order with the quoted lines; the invoice follows at the counter or online.' },
-    { q: 'Is the price locked?', a: 'A validity window is on every quotation. Whether the rate is protected inside it is your rule — most jewellers protect for a few days and reprice after.' },
-  ],
+  faqs: qFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'QUOTATIONS',
-  h1: 'A quote she can accept from her phone. Numbered, priced, on the record.',
-  sub: 'No more prices typed into WhatsApp and revised four times. A quotation drafts from the catalogue at the live rate, goes out as a link and a PDF, and comes back accepted, declined or quietly waiting — with the follow-up already drafted.',
+  eyebrow: 'JEWELLERY QUOTATIONS AND ESTIMATES',
+  h1: 'Jewellery quotation and estimate software: priced at today’s rate, accepted from her phone.',
+  sub: 'No more prices typed into WhatsApp and revised four times. An estimate drafts from your catalogue at today’s rate, goes out as a numbered link and PDF, and comes back accepted, declined or waiting, with the follow-up already drafted.',
   primary: { href: '#', label: 'Send me a sample quotation', wa: 'quotations' },
   secondary: { href: '/products/crm', label: 'See the CRM' },
   mock: mockQuote,
 })}
 
-${L.section(
-  `${L.sectionHead('THE LIFECYCLE', 'Draft → sent → accepted or declined → order.', '')}
-  ${L.steps([
-    { title: 'Draft', text: 'From her record, from a catalogue enquiry, or by voice at the counter. Lines priced from the catalogue at today’s rate with your making and wastage rules.' },
-    { title: 'Send', text: 'A numbered quotation with a PDF, on WhatsApp or email — after your tap. Validity window on every one.' },
-    { title: 'Accept or decline', text: 'She opens the public link and decides. Acceptance and decline write to her record and move her scores.' },
-    { title: 'Follow up or convert', text: 'Quiet? The quote follow-up journey drafts a nudge. Accepted? Convert to a sales order with the quoted lines.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE ENQUIRY, START TO FINISH', 'From “how much?” to an order, on one record.', '')}${qFlow()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.cards([
-    { title: 'Voice at the counter', text: 'Say it at the counter — find products, look up a customer, draft, send, convert, checkout — in English, Hindi or Hinglish. Sending still needs your confirm.' },
-    { title: 'Enquiry to quote, one call', text: 'A public catalogue enquiry with the pieces she picked becomes a quotation with those lines — from the admin sheet, an assistant tool or an automation.' },
-    { title: 'Revisions kept in order', text: 'Every version numbered; the one she accepted is the one that ships.' },
-    { title: 'Bridal and B2B ready', text: 'Family committees and trade buyers see the same numbered document — no argument about which WhatsApp price was final.', link: { href: '/solutions/bridal', label: 'See bridal' } },
-  ], 4)}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('SIX JOBS, ONE QUOTATION', 'What jewellery quotation software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Priced at today’s rate</h3><p>Lines from your catalogue, priced from the rate with your making and wastage rules.</p><a href="/platform/pricing-engine">Pricing engine →</a></article>
+  <article><h3>2. Made four ways</h3><p>From her record, a catalogue enquiry, by voice at the counter in English, Hindi or Hinglish, or by automation.</p><a href="/products/digital-catalogues">Digital catalogues →</a></article>
+  <article><h3>3. Sent as a numbered link</h3><p>A link and PDF on WhatsApp or email, after your tap, with a validity window.</p><a href="/products/whatsapp">WhatsApp →</a></article>
+  <article><h3>4. Decided from her phone</h3><p>She accepts or declines online, and it is written to her record.</p><a href="/products/crm">Customer record →</a></article>
+  <article><h3>5. Followed up</h3><p>Quiet after the interval you set? A nudge is drafted and waits for your approval.</p><a href="/products/journeys">Journeys →</a></article>
+  <article><h3>6. One version, one order</h3><p>Every revision numbered; the accepted one converts to an order with the same lines.</p><a href="/products/pos">POS and billing →</a></article>
+</div>`)}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Message us and we will send you a real quotation link, the way your customer gets one.</p>`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What quotes without follow-up cost you.', 'Your numbers, not ours.')}<div class="callc" data-qc>
+  <div class="callc-in">
+    <label>Quotes or estimates a month<input type="number" inputmode="numeric" data-q="n" value="80" min="0"></label>
+    <label>That go quiet, %<input type="number" inputmode="decimal" data-q="quiet" value="50" min="0" max="100"></label>
+    <label>Of those, won back by a follow-up, %<input type="number" inputmode="decimal" data-q="won" value="10" min="0" max="100"></label>
+    <label>Average bill, ₹<input type="number" inputmode="numeric" data-q="bill" value="75000" min="0" step="1000"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Quotes going quiet a month</span><b data-q-o="quiet">0</b></p>
+    <p><span>Sales a follow-up wins back</span><b data-q-o="won">0</b></p>
+    <p class="callc-save"><span>Revenue a month</span><b data-q-o="rev">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'Prices in chat, an Excel estimate, or Jwero.', '')}${qTable()}`)}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to make a jewellery estimate.', 'Five steps.')}${L.steps(Q_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
+
+${L.oneSystemBlock([
+  'The quote prices from the same catalogue and rate as the counter and website.',
+  'Accepted or declined, it is on her record for the next conversation.',
+  'Bridal families and trade buyers all see the same numbered document.',
+])}
 
 ${L.ctaBand('Stop typing prices into chat.', 'Send one real enquiry from last week. We will turn it into a quotation on the call and send it to your phone.', 'quotations')}
 `,

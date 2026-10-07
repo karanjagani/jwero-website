@@ -138,6 +138,14 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - A piece sold at the counter or online is removed from every connected channel.
 - Jwero does not claim direct Amazon or Flipkart connectors.
 
+## Jewellery quotations and estimates (facts)
+
+- Page: https://jwero.ai/products/quotations
+- Numbered quotations priced from the catalogue at today's gold rate with the jeweller's making and wastage rules; a validity window on each.
+- Created from the customer record, a catalogue enquiry, by voice at the counter (English, Hindi, Hinglish) or by automation; sending needs a human confirm.
+- Sent as a link and PDF on WhatsApp or email; the customer accepts or declines online; result written to her record.
+- Follow-ups drafted for approval when she goes quiet; every revision numbered; accepted quotes convert to a sales order.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
