@@ -17,7 +17,11 @@ const schema = (headline, description) => ({
   publisher: { '@type': 'Organization', name: 'Jwero' },
 });
 const meta = (mins) => `<p class="post-meta"><span>AI for jewellers</span> · <span>${mins} min read</span> · <span>By the Jwero editorial team</span> · <span>Published October 2026</span></p>`;
-const post = ({ slug, title, description, h1, sub, mins, body, faqs, product, wa, close }) => ({
+const MORE = require('./blog-ai-more');
+const post = ({ slug, title, description, h1, sub, mins, body, faqs, product, wa, close }) => {
+  const more = MORE[slug] || { body: '', faqs: [] };
+  body += more.body; faqs = faqs.concat(more.faqs); if (more.body) mins += 3;
+  return ({
   slug: `blog/${slug}`, title, description, breadcrumbs: BC(h1), schema: schema(h1, description), faqs,
   body: `
 ${L.hero({ eyebrow: 'GUIDE · AI FOR JEWELLERS', h1, sub, secondary: { href: product[0], label: product[1] } })}
@@ -27,7 +31,7 @@ ${L.section(`<div class="post-body">${body}
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'What jewellers ask about this.', '')}${L.faqBlock(faqs)}`)}
 ${L.ctaBand(close[0], close[1], wa)}
 `,
-});
+}); };
 
 const agents = post({
   slug: 'ai-agents-for-jewellers',

@@ -19960,7 +19960,7 @@ GUIDE · AI FOR JEWELLERS
 
  See AI agents in Jwero 
 
- AI for jewellers · 6 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 9 min read · By the Jwero editorial team · Published October 2026 
 
 ## A job, not a chat window
 
@@ -19988,6 +19988,40 @@ GUIDE · AI FOR JEWELLERS
 
  Jwero’s AI workforce speaks 14 languages by chat and voice, works on WhatsApp, Instagram, web chat and phone, and reads the same customer record as your team. See AI sales agents and how governance works .
 
+## A week with one agent, in a real shop
+
+ Take a two-counter showroom with 400 scheme members and a WhatsApp number that gets forty messages a day. In week one, the owner switches on a single agent for the night shift, in Assist mode. At 9pm a customer asks for the price of a 22K bangle in a photo. The agent drafts a reply with the piece, two similar ones, and the price at the evening rate. The draft waits in the approval queue; the manager approves it from her phone at 9:04pm. The customer replies, and books a visit for Saturday.
+
+ By Friday the manager has approved 112 drafts and edited nine, all for the same reason: the agent offered three pieces when the customer wanted one. The owner changes the instruction to “offer one piece, then ask”. In week two there are three edits. In week three the owner lets the agent send first replies on its own between 9pm and 9am, keeps a cap of 60 messages a night, and keeps anything involving a discount behind approval.
+
+## How to set an agent up, step by step
+
+ Pick one duty. The night shift, follow-ups on quiet quotations, or scheme reminders. One duty makes the drafts easy to judge.
+
+ Give it your facts. The catalogue, today’s rate and making-charge rules, opening hours, delivery and return policy, and the answers your staff give every day.
+
+ Write the limits. What it may never do (discounts, delivery promises), a daily cap, and the hours it works.
+
+ Start in Assist mode. Every draft waits for a person. Review them in batches, twice a day.
+
+ Fix the instruction, not the draft. If you edit the same thing three times, change the agent’s instruction.
+
+ Promote one action at a time. First replies first; follow-ups later; reminders when you trust the wording.
+
+## What to measure
+
+ Time to first reply , by hour of the day. The night shift should bring the 9pm-to-9am figure from “next morning” to minutes.
+
+ Drafts edited as a share of drafts approved. Under 5% means the instruction is right.
+
+ Visits booked and payments taken from conversations the agent started.
+
+ Handovers : how often the agent passed a chat to a person, and whether it did so for the right reasons.
+
+## Mistakes to avoid
+
+ Switching on five agents in week one; nobody can review five queues. Letting an agent quote from a price list instead of the live rate. Skipping the activity log: the log is how you find out what the agent did when you were not looking, and it is the reason you can trust it later.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20002,6 +20036,15 @@ GUIDE · AI FOR JEWELLERS
 
  Can I stop it instantly? 
  Yes. Jwero has a kill switch at several levels, from one action to the whole account, and a daily cap on how much an agent may do.
+
+ How many agents should a jewellery shop start with? 
+ One. Judge its drafts for two or three weeks, then add the next duty. Jwero ships twelve agent teams, but you switch them on when you are ready.
+
+ Does the agent learn my shop over time? 
+ It works from the instructions, catalogue and records you give it, and you refine the instructions when you see repeated edits. It does not change its own rules.
+
+ Can different branches have different agents? 
+ Yes. Limits, hours and approvals are set per agent, and chats are routed to the right branch.
 
 ## Staff that ask first.
 
@@ -20023,6 +20066,15 @@ A: Only if you allow it. In Jwero every action can wait for approval, and you ch
 Q: Can I stop it instantly?
 A: Yes. Jwero has a kill switch at several levels, from one action to the whole account, and a daily cap on how much an agent may do.
 
+Q: How many agents should a jewellery shop start with?
+A: One. Judge its drafts for two or three weeks, then add the next duty. Jwero ships twelve agent teams, but you switch them on when you are ready.
+
+Q: Does the agent learn my shop over time?
+A: It works from the instructions, catalogue and records you give it, and you refine the instructions when you see repeated edits. It does not change its own rules.
+
+Q: Can different branches have different agents?
+A: Yes. Limits, hours and approvals are set per agent, and chats are routed to the right branch.
+
 ---
 
 # AI WhatsApp Chatbot for a Jewellery Shop: What It Should Answer
@@ -20038,7 +20090,7 @@ GUIDE · AI FOR JEWELLERS
 
  See WhatsApp in Jwero 
 
- AI for jewellers · 6 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 9 min read · By the Jwero editorial team · Published October 2026 
 
 ## The questions every jeweller gets
 
@@ -20064,6 +20116,34 @@ GUIDE · AI FOR JEWELLERS
 
  On the official WhatsApp Business API, Jwero’s AI drafts replies from your catalogue and the customer’s record, can answer by voice note, takes payments in the chat, and waits for approval until you let it run. See WhatsApp and AI agents .
 
+## What a good reply looks like
+
+ A customer sends a screenshot of a necklace from your Instagram and types “price?”. A weak chatbot answers “Please visit our store for prices.” A good one answers in her language: “This is our temple necklace, 24.6 grams in 22K. At today’s rate it is ₹1,84,300 including making charges and GST. Shall I hold it for you to see on Saturday, or show it on a video call?” That reply needs four things a general chatbot does not have: the piece identified from the photo, the weight from the stock record, today’s rate, and your making-charge rule.
+
+## The five questions to script first
+
+ Today’s rate for 22K, 18K and silver, with the time it was set.
+
+ Price of a piece from a photo, a code or a description, with the breakup.
+
+ Availability at each branch, and whether a piece can be made to order.
+
+ Making charges and exchange : how you charge, and how old gold is valued.
+
+ Visits and calls : book a time, or start a video call from the chat.
+
+## Where the chatbot hands over
+
+ Negotiation, a complaint, a large custom order, anything about a repair in progress, and any customer who asks for a person. The handover should carry the conversation and her record, so the salesperson does not start with “how can I help?”.
+
+## Setting it up on the official API
+
+ Your business number moves to the WhatsApp Business Platform; your customers see the same number. Jwero connects the catalogue and the rate, you write the first replies in your own words, and the AI drafts from them. Start with drafts for approval, then let first replies send on their own at night.
+
+## What to measure
+
+ Enquiries answered within five minutes, after-hours enquiries that became visits, and payments taken inside the chat. If after-hours visits rise, the chatbot is paying for itself.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20078,6 +20158,15 @@ GUIDE · AI FOR JEWELLERS
 
  What if the chatbot cannot answer? 
  It hands the chat to a person with the conversation and the customer’s history, rather than guessing.
+
+ Can the chatbot reply in Hindi or Gujarati? 
+ Yes. Jwero’s AI replies in 14 languages, including Hindi, Gujarati, Marathi, Tamil, Telugu and Bengali, and can answer a voice note with voice.
+
+ Will the chatbot work on my existing number? 
+ Yes. The number moves to the official WhatsApp Business Platform and stays the same for customers.
+
+ What does it cost to run? 
+ Messages, AI and calls are paid from a prepaid wallet; Jwero One includes the platform for ₹18,000 a month.
 
 ## Every WhatsApp answered, with a real price.
 
@@ -20099,6 +20188,15 @@ A: Yes. The free Business app does not support a shared team inbox or automated 
 Q: What if the chatbot cannot answer?
 A: It hands the chat to a person with the conversation and the customer’s history, rather than guessing.
 
+Q: Can the chatbot reply in Hindi or Gujarati?
+A: Yes. Jwero’s AI replies in 14 languages, including Hindi, Gujarati, Marathi, Tamil, Telugu and Bengali, and can answer a voice note with voice.
+
+Q: Will the chatbot work on my existing number?
+A: Yes. The number moves to the official WhatsApp Business Platform and stays the same for customers.
+
+Q: What does it cost to run?
+A: Messages, AI and calls are paid from a prepaid wallet; Jwero One includes the platform for ₹18,000 a month.
+
 ---
 
 # AI Instagram DM Automation for Jewellers: Comments to Sales
@@ -20114,7 +20212,7 @@ GUIDE · AI FOR JEWELLERS
 
  See Instagram in Jwero 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Why “price?” comments are lost sales
 
@@ -20135,6 +20233,30 @@ GUIDE · AI FOR JEWELLERS
 
  Comments become DMs automatically, AI drafts from the customer’s taste and purchases, your team approves in one tap, and sales are traced back to the reel. See Instagram and Facebook .
 
+## From one reel to twelve conversations
+
+ A bridal reel reaches 40,000 people and gets 58 comments, 31 of them some form of “price?”. By hand, a salesperson answers twelve before closing time and the rest the next day; most of those have moved on. With comment-to-DM, each of the 31 gets a DM within a minute, with the set, its price at today’s rate, and a question: “Would you like to see it on a video call?”. Twelve reply, four book calls, one buys that week. The reel did its job; the inbox finished it.
+
+## What to automate, and what to approve
+
+ Automate: the DM to a price comment, and the thank-you to a story mention.
+
+ Draft and approve: replies that quote a price for a specific customer, and follow-ups to anyone who went quiet.
+
+ Always a person: complaints, custom orders and negotiation.
+
+## Keeping the account safe
+
+ Only Meta’s official connection can read and reply to DMs and comments on your behalf. Tools that log in with your password or scrape comments put the account at risk. With the official connection, story replies, mentions and Messenger land in the same inbox as DMs.
+
+## Closing inside Instagram
+
+ Send a payment link inside the DM for a deposit or the full amount, start a video call, or book a visit. The order and invoice land on her record, and the sale is traced back to the reel, so you know which content sells.
+
+## What to measure
+
+ Comments answered within an hour, DMs that became calls or visits, and sales traced to each reel. Post more of what sells.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20149,6 +20271,15 @@ GUIDE · AI FOR JEWELLERS
 
  Can customers pay from the DM? 
  Yes. Send a payment link inside the DM; the order and invoice land on her record.
+
+ Does comment-to-DM work on Facebook too? 
+ Yes. Facebook comments and Messenger are in the same inbox, through the same official connection.
+
+ Can a customer buy the piece shown in a reel? 
+ Yes. Your catalogue syncs to the Meta catalogue, so pieces can be tagged in posts and reels and bought or enquired about from there.
+
+ Will customers know a reply was drafted by AI? 
+ Your team approves and sends it, in your tone. Customers see a fast, accurate reply from your shop.
 
 ## Every comment answered.
 
@@ -20170,6 +20301,15 @@ A: In Jwero, story replies, mentions and Messenger land in the same inbox as DMs
 Q: Can customers pay from the DM?
 A: Yes. Send a payment link inside the DM; the order and invoice land on her record.
 
+Q: Does comment-to-DM work on Facebook too?
+A: Yes. Facebook comments and Messenger are in the same inbox, through the same official connection.
+
+Q: Can a customer buy the piece shown in a reel?
+A: Yes. Your catalogue syncs to the Meta catalogue, so pieces can be tagged in posts and reels and bought or enquired about from there.
+
+Q: Will customers know a reply was drafted by AI?
+A: Your team approves and sends it, in your tone. Customers see a fast, accurate reply from your shop.
+
 ---
 
 # Voice AI in Hindi and Regional Languages for Jewellers
@@ -20185,7 +20325,7 @@ GUIDE · AI FOR JEWELLERS
 
  See AI calling 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Why voice matters in India
 
@@ -20206,6 +20346,34 @@ GUIDE · AI FOR JEWELLERS
 
  Voice is built into WhatsApp and web chat, and phone calls run over your provider at ₹7 a call, up to 8 at once, with transcripts on the customer record. See AI calling .
 
+## A scheme reminder call, in Hindi
+
+ “Namaste Sunita ji, Shree Jewellers se. Aapki gold scheme ki kist kal due hai. Link bhej doon?” The customer says yes, the agent sends a payment link on WhatsApp, and she asks whether the new mangalsutra designs are in. The agent books her a visit for Saturday at five. The call, its transcript and the booking go on her record. That is the whole point of voice AI for a jeweller: routine calls made on time, in the language the customer speaks at home, with the follow-through done.
+
+## Where voice earns its keep
+
+ Scheme reminders before the due date, with a payment link.
+
+ Ready for collection for repairs and custom orders.
+
+ Appointment confirmations the day before.
+
+ Inbound rate and timing calls during the festival rush.
+
+ Voice notes on WhatsApp , answered with voice.
+
+## Writing scripts that sound like your shop
+
+ Use the greeting your staff use. Keep each call to one purpose. Say the shop’s name twice. End with a question that leads somewhere: a payment link, a visit, or “shall I pass you to Priya?”. Record a human version first and listen to the AI version against it.
+
+## The rules
+
+ Calls to your own customers about their own account, such as a scheme reminder, are service calls. Promotional calls follow TRAI’s rules on timing, registration and opt-out. Keep consent on the customer record, and let anyone say “do not call” once.
+
+## What to measure
+
+ Instalments paid on time, visits booked from calls, calls handed to a person, and the share of customers who asked for the language to change.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20220,6 +20388,15 @@ GUIDE · AI FOR JEWELLERS
 
  Do I need a phone line? 
  Voice on WhatsApp and web chat needs nothing extra. Phone calls run over your telephony provider.
+
+ Does the AI understand replies, or only play a message? 
+ It understands spoken replies and answers them, within the script and limits you set. It is a conversation, not a recording.
+
+ How many calls can it make at once? 
+ Up to 8 at a time, inbound and outbound, so 500 reminders are done in an evening.
+
+ What does a call cost? 
+ ₹7 a call, all inclusive, from the prepaid wallet.
 
 ## Speak her language.
 
@@ -20241,6 +20418,15 @@ A: Mixed Hindi and English is common, and staff at the counter can give instruct
 Q: Do I need a phone line?
 A: Voice on WhatsApp and web chat needs nothing extra. Phone calls run over your telephony provider.
 
+Q: Does the AI understand replies, or only play a message?
+A: It understands spoken replies and answers them, within the script and limits you set. It is a conversation, not a recording.
+
+Q: How many calls can it make at once?
+A: Up to 8 at a time, inbound and outbound, so 500 reminders are done in an evening.
+
+Q: What does a call cost?
+A: ₹7 a call, all inclusive, from the prepaid wallet.
+
 ---
 
 # AI for Gold Scheme Collections: Reminders, Calls and Auto-Collect
@@ -20256,7 +20442,7 @@ GUIDE · AI FOR JEWELLERS
 
  See gold schemes in Jwero 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Where schemes leak
 
@@ -20277,6 +20463,34 @@ GUIDE · AI FOR JEWELLERS
 
  Enrolment from the website, apps, WhatsApp or showroom; instalments collected automatically; AI reminders and calls; maturity on the expected-visits list. See gold schemes .
 
+## The arithmetic of drift
+
+ A shop with 500 members on an 11-month plan of ₹5,000 collects ₹25 lakh a month when everyone pays. If 8% of members miss a month and half of those miss the next, the shop is ₹1 lakh short this month and ₹1.5 lakh short next month, and a hundred members a year quietly stop. Most of them did not decide to leave; nobody reminded them at the right moment.
+
+## A reminder ladder that works
+
+ Three days before: a WhatsApp message with the amount and a payment link.
+
+ On the day: a short reminder, same link.
+
+ Three days after: a voice call in the member’s language, with the link sent again.
+
+ Ten days after: a message for a person to send, offering help.
+
+ Members who have agreed to automatic collection skip the ladder entirely: the instalment is collected and a receipt sent.
+
+## Maturity is a sales moment
+
+ Thirty days before maturity, the member hears what her balance buys at today’s rate, with three pieces chosen from what she has looked at. She is added to the showroom’s expected-visits list at her nearest branch, so the floor knows she is coming and what to show.
+
+## Keeping it respectful
+
+ Cap reminders at the ladder above, stop the moment a member asks, and route anyone in difficulty to a person. A scheme is a relationship; the reminders should sound like one.
+
+## What to measure
+
+ On-time collection rate, members who missed two months in a row, and maturity redemptions that became purchases above the balance.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20291,6 +20505,15 @@ GUIDE · AI FOR JEWELLERS
 
  What happens at maturity? 
  Members nearing maturity are added to the showroom’s expected-visits list at their nearest branch, with the balance noted.
+
+ Can members see their own balance? 
+ Yes. Members can enrol and see their plan from the website, the apps or WhatsApp, as well as at the showroom.
+
+ Does this work across branches? 
+ Yes. Schemes run across branches, so a member can pay at one and redeem at another.
+
+ Are scheme instalments a liability in the books? 
+ Yes, until redeemed. Jwero posts instalments to the ledger and reports the scheme liability. See the guide on scheme accounting.
 
 ## No member left to drift.
 
@@ -20312,6 +20535,15 @@ A: Yes, Jwero can collect scheme instalments automatically, with reminders befor
 Q: What happens at maturity?
 A: Members nearing maturity are added to the showroom’s expected-visits list at their nearest branch, with the balance noted.
 
+Q: Can members see their own balance?
+A: Yes. Members can enrol and see their plan from the website, the apps or WhatsApp, as well as at the showroom.
+
+Q: Does this work across branches?
+A: Yes. Schemes run across branches, so a member can pay at one and redeem at another.
+
+Q: Are scheme instalments a liability in the books?
+A: Yes, until redeemed. Jwero posts instalments to the ledger and reports the scheme liability. See the guide on scheme accounting.
+
 ---
 
 # ChatGPT Prompts for Jewellers, and When a Jewellery Tool Is Better
@@ -20327,7 +20559,7 @@ GUIDE · AI FOR JEWELLERS
 
  See Jwero’s jewellery AI 
 
- AI for jewellers · 7 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 10 min read · By the Jwero editorial team · Published October 2026 
 
 ## Prompts that work
 
@@ -20354,6 +20586,36 @@ GUIDE · AI FOR JEWELLERS
 
  Jwero’s AI writes listings from photos, captions, emails and replies using your catalogue and records, and you approve before anything is sent. You can also connect ChatGPT or Claude to Jwero .
 
+## Ten more prompts worth keeping
+
+ Collection launch: “Write a 40-word WhatsApp message announcing a new lightweight bridal collection, for customers who bought bridal jewellery in the last two years. Warm, no exclamation marks.”
+
+ Google listing: “Write a Google Business profile description for a 40-year-old family jeweller in Rajkot known for antique gold. Under 750 characters.”
+
+ Scheme explainer: “Explain an 11+1 gold savings scheme to a first-time customer in simple Hindi, in five sentences, without promising returns.”
+
+ Staff training: “Write five quiz questions on HUID hallmarking for new sales staff, with answers.”
+
+ Review reply: “Reply to a 5-star review that mentions our salesperson Priya by name.”
+
+ Email subject lines: “Ten subject lines for a Diwali email to NRI customers, under 45 characters.”
+
+ Objection handling: “A customer says our making charges are higher than the shop next door. Give three honest ways to respond.”
+
+ Product FAQ: “Write six questions and answers for a product page selling lab-grown diamond studs, including disclosure.”
+
+ Job description: “Write a job post for a jewellery sales associate in Hyderabad, fluent in Telugu and English.”
+
+ Vendor email: “Draft a polite email to a karigar about a 0.4 gram shortfall on the last job, asking for an explanation.”
+
+## Three rules for every prompt
+
+ Give the facts and never let the model invent them. Say who will read it and where. Ask for options, then choose. If a prompt needs today’s rate, a stock figure or a customer’s history, it is a job for your jewellery system, not a chat window.
+
+## Privacy, in one line
+
+ Never paste a customer’s phone number, purchase history or KYC into a public AI tool. If you want an assistant that knows your customers, connect it to your own system through a governed connection instead.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20368,6 +20630,15 @@ GUIDE · AI FOR JEWELLERS
 
  Is it safe to paste customer details into ChatGPT? 
  Avoid it. Customer phone numbers, purchases and KYC are personal data; keep them in your own system.
+
+ Is ChatGPT free for business use? 
+ There are free and paid plans. Check the current terms for how your inputs may be used before pasting anything about your business.
+
+ Can ChatGPT write in Hindi or Tamil? 
+ Yes, reasonably well. Have a native speaker read anything that goes to customers.
+
+ Should I let AI write all my content? 
+ Let it draft. Keep your own voice in the final edit, and keep anything with numbers out of its hands.
 
 ## AI that knows your shop.
 
@@ -20389,6 +20660,15 @@ A: No. It has no live gold rate, your making charges or your stock. Prices must 
 Q: Is it safe to paste customer details into ChatGPT?
 A: Avoid it. Customer phone numbers, purchases and KYC are personal data; keep them in your own system.
 
+Q: Is ChatGPT free for business use?
+A: There are free and paid plans. Check the current terms for how your inputs may be used before pasting anything about your business.
+
+Q: Can ChatGPT write in Hindi or Tamil?
+A: Yes, reasonably well. Have a native speaker read anything that goes to customers.
+
+Q: Should I let AI write all my content?
+A: Let it draft. Keep your own voice in the final edit, and keep anything with numbers out of its hands.
+
 ---
 
 # AI Jewellery Listings from Photos: Descriptions, Tags and Captions
@@ -20404,7 +20684,7 @@ GUIDE · AI FOR JEWELLERS
 
  See the catalogue in Jwero 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## What AI can read from a photo
 
@@ -20425,6 +20705,30 @@ GUIDE · AI FOR JEWELLERS
 
  AI turns the photo into the listing, the stock record fills the facts, and the catalogue syncs to your website, WhatsApp catalogue, Google Shopping and Meta. See catalogue and PIM .
 
+## Two thousand pieces, one weekend
+
+ A showroom with 2,000 pieces and no online catalogue photographs them in batches of fifty on a light box over two days. Each photo is matched to its stock record by tag. AI reads each photo, names the type of piece, writes the description and captions, and suggests tags. The stock record supplies the weight, purity and stones. Two staff check listings at about two minutes each: 66 hours of checking, against roughly 400 hours of typing.
+
+## What the listing needs
+
+ From the photo: the type of piece, style, the look of the stones, the occasion it suits, and a description in your tone.
+
+ From the stock record: gross and net weight, purity, stone weights, certificate and HUID.
+
+ From your rules: the price at today’s rate with making charges.
+
+## Writing in your tone
+
+ Give the AI three listings you like and tell it who buys from you. Ask it to avoid words you never use. Check the first twenty by hand, then spot-check one in ten.
+
+## Where the listings go
+
+ Once checked, the catalogue syncs to your website, the WhatsApp catalogue, Google Shopping and Meta, with prices that follow the rate. A listing written once sells in five places.
+
+## What to measure
+
+ Minutes per listing checked, listings edited after publishing, and the share of enquiries that come with a product code instead of a screenshot.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20439,6 +20743,15 @@ GUIDE · AI FOR JEWELLERS
 
  Is AI listing charged? 
  In Jwero, AI listing is charged per product from the wallet.
+
+ What if a photo shows two pieces? 
+ Photograph one piece per frame. AI describes what it sees, and a set should be its own record.
+
+ Can AI write captions for Instagram at the same time? 
+ Yes. Descriptions, tags and captions come from the same pass, ready for the social composer.
+
+ Does it work for loose stones? 
+ For diamonds and gemstones the certificate supplies the facts; AI writes the description around them.
 
 ## From photo to listing.
 
@@ -20460,6 +20773,15 @@ A: Minutes per piece to check instead of many minutes to type. Use the calculato
 Q: Is AI listing charged?
 A: In Jwero, AI listing is charged per product from the wallet.
 
+Q: What if a photo shows two pieces?
+A: Photograph one piece per frame. AI describes what it sees, and a set should be its own record.
+
+Q: Can AI write captions for Instagram at the same time?
+A: Yes. Descriptions, tags and captions come from the same pass, ready for the social composer.
+
+Q: Does it work for loose stones?
+A: For diamonds and gemstones the certificate supplies the facts; AI writes the description around them.
+
 ---
 
 # AI Jewellery Product Photos: Clean Backgrounds and Edits Without a Studio
@@ -20475,7 +20797,7 @@ GUIDE · AI FOR JEWELLERS
 
  See AI images in Jwero 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Start with a good photo
 
@@ -20495,6 +20817,32 @@ GUIDE · AI FOR JEWELLERS
 
  Generate or edit images from a product photo inside the catalogue, keep them in the photo library, and reuse them on every channel. See catalogue and AI jewellery photography .
 
+## A phone photo, properly taken
+
+ Shoot by a window in daylight or on a small light box, on a plain white or grey surface. Clean the piece. Fill the frame, focus on the front stone, and shoot three angles. Keep the camera level; AI can fix lighting and background, not perspective. Fifty pieces take about an hour this way.
+
+## What AI editing does well
+
+ A clean, consistent background across a whole collection.
+
+ Lighting and colour correction, so yellow gold looks yellow and white gold looks white.
+
+ Square, portrait and wide versions for the website, WhatsApp and Instagram.
+
+ A second image in a lifestyle setting, as long as the piece itself is untouched.
+
+## What it must never do
+
+ Add or remove stones, change the finish, enlarge a stone, or alter colour in a way that misleads. A customer who receives something different from the photo will not return, and may say so publicly. Keep an unedited photo on the record for every piece.
+
+## Cost and time
+
+ In Jwero, generating or editing an image is charged per image from the wallet. Against a studio day for fifty pieces, the saving is large; against doing nothing, the gain is a catalogue that looks like one shop.
+
+## What to measure
+
+ Pieces with a catalogue-grade image, enquiries per listing before and after, and returns or complaints mentioning the photo.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20509,6 +20857,15 @@ GUIDE · AI FOR JEWELLERS
 
  Is it honest to use AI images? 
  Yes, if the piece is shown as it is. Change the background and lighting, never the design, stones or colour of the metal.
+
+ Can AI remove the hand or the stand from a photo? 
+ Yes, background and props can be cleaned up. The piece itself stays as photographed.
+
+ Will customers prefer real photos? 
+ For high-value pieces, pair the clean image with a short real video. Trust comes from seeing the real thing.
+
+ Does Jwero do virtual try-on? 
+ No. Jwero offers video calls and try-at-home booking instead.
 
 ## Clean images, true pieces.
 
@@ -20530,6 +20887,15 @@ A: No. Jwero does not create virtual try-on images.
 Q: Is it honest to use AI images?
 A: Yes, if the piece is shown as it is. Change the background and lighting, never the design, stones or colour of the metal.
 
+Q: Can AI remove the hand or the stand from a photo?
+A: Yes, background and props can be cleaned up. The piece itself stays as photographed.
+
+Q: Will customers prefer real photos?
+A: For high-value pieces, pair the clean image with a short real video. Trust comes from seeing the real thing.
+
+Q: Does Jwero do virtual try-on?
+A: No. Jwero offers video calls and try-at-home booking instead.
+
 ---
 
 # AI Video for Jewellery Reels and Social Posts
@@ -20545,7 +20911,7 @@ GUIDE · AI FOR JEWELLERS
 
  See social media in Jwero 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Why video, and why it stalls
 
@@ -20565,6 +20931,30 @@ GUIDE · AI FOR JEWELLERS
 
  AI video for posts and ads, a composer that publishes to eight platforms, comments turned into DMs, and sales traced back to the post. See social media .
 
+## A month of reels without a video team
+
+ Week one: three AI videos of new arrivals, made from the product photos already in the catalogue, each eight seconds, with a caption drafted from the listing. Week two: the same, plus one real clip of the shop floor filmed on a phone. Week three: a customer trying a set, with her permission. Week four: a festive edit of the month’s best sellers. Sixteen posts, about two hours of staff time, and every reel traceable to the enquiries and sales it brought.
+
+## What AI video is good at
+
+ Turning still product photos into short motion clips: a slow turn, a light sweep, a zoom on the stone.
+
+ Versions for reels, stories and feed from one clip.
+
+ Captions and hashtags drafted from the listing, in your tone.
+
+## What it should not replace
+
+ Real footage of real people. The owner explaining a design, a karigar at work, a customer’s reaction. These are the posts that build trust; AI video keeps the calendar full between them.
+
+## Publishing from one place
+
+ Write the post once, preview it per platform, and publish to Instagram, Facebook, YouTube and the others from the same composer. Comments turn into DMs, and the DM inbox is the same one your team already answers.
+
+## What to measure
+
+ Reach and saves are vanity; measure comments turned into DMs, DMs that became visits, and sales traced to each post. Make more of what sells.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20579,6 +20969,15 @@ GUIDE · AI FOR JEWELLERS
 
  Should every post be AI video? 
  No. Mix AI video with real footage of the shop, staff and customers. Real moments build trust.
+
+ How long are AI videos? 
+ Short clips, a few seconds each, which is what reels and stories need. Longer films still need a camera.
+
+ Is AI video charged? 
+ Yes, per clip from the wallet. See pricing.
+
+ Can I schedule a month of posts? 
+ Yes. The social calendar schedules posts across all eight platforms and publishes them directly.
 
 ## A reel a day, without a video team.
 
@@ -20600,6 +20999,15 @@ A: Jwero publishes directly to eight platforms, including Instagram, Facebook an
 Q: Should every post be AI video?
 A: No. Mix AI video with real footage of the shop, staff and customers. Real moments build trust.
 
+Q: How long are AI videos?
+A: Short clips, a few seconds each, which is what reels and stories need. Longer films still need a camera.
+
+Q: Is AI video charged?
+A: Yes, per clip from the wallet. See pricing.
+
+Q: Can I schedule a month of posts?
+A: Yes. The social calendar schedules posts across all eight platforms and publishes them directly.
+
 ---
 
 # AI Ads for Jewellers: Creatives, Audiences and Budgets
@@ -20615,7 +21023,7 @@ GUIDE · AI FOR JEWELLERS
 
  See Ads Manager 
 
- AI for jewellers · 6 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 9 min read · By the Jwero editorial team · Published October 2026 
 
 ## Start from your customers
 
@@ -20637,6 +21045,32 @@ GUIDE · AI FOR JEWELLERS
 
  Audiences generated from segments, AI creatives, click-to-WhatsApp ads, budget alerts and sales reported back. See Ads Manager .
 
+## A Diwali campaign, built from your own customers
+
+ Instead of targeting “people interested in jewellery, 25 to 55”, start from a segment: customers who bought bridal or gold sets in the last two years and have not visited in six months. Jwero builds the ad audience from that segment and a lookalike of it. AI makes two image creatives and one video from the festive collection. The ad is click-to-WhatsApp, so a tap opens a chat your inbox answers at once. A person approves the campaign and the budget; alerts fire if spend runs ahead of results. At the end, sales are reported back to the ad, including the ones that ended in a chat and a bill at the counter.
+
+## Audiences that come from the record
+
+ Lapsed buyers by category and value.
+
+ Scheme members near maturity.
+
+ People who viewed a collection online but did not enquire.
+
+ Lookalikes of your top hundred customers.
+
+## Creatives that stay honest
+
+ AI can make the image and video, but the piece must be the piece. Test two creatives, keep the one that brings chats, not clicks.
+
+## Budget discipline
+
+ Set a daily cap, a cost-per-chat you will accept, and let the budget alert pause spend when it is missed. The AI strategist drafts; it does not spend without a person’s approval.
+
+## What to measure
+
+ Cost per chat, chats that became visits, and sales traced to the campaign. Return on spend is only real when the bill is counted.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20651,6 +21085,15 @@ GUIDE · AI FOR JEWELLERS
 
  How do I know an ad made a sale? 
  Jwero reports sales back to the ad, including click-to-WhatsApp ads that end in a chat and a bill.
+
+ Which ad platforms does Jwero run? 
+ Google, Meta (Facebook and Instagram) and Pinterest, from one Ads Manager.
+
+ Do I need a Meta pixel on my website? 
+ Jwero sends events to the Meta pixel and Google Analytics from its own tracking pixel, so ads can optimise for enquiries and sales.
+
+ Can a small shop run ads this way? 
+ Yes. Start with one click-to-WhatsApp campaign to one segment and a small daily cap, and read the cost per chat before scaling.
 
 ## Ads that know your customers.
 
@@ -20672,6 +21115,15 @@ A: No. Jwero’s AI strategist drafts campaigns and budgets; a person approves b
 Q: How do I know an ad made a sale?
 A: Jwero reports sales back to the ad, including click-to-WhatsApp ads that end in a chat and a bill.
 
+Q: Which ad platforms does Jwero run?
+A: Google, Meta (Facebook and Instagram) and Pinterest, from one Ads Manager.
+
+Q: Do I need a Meta pixel on my website?
+A: Jwero sends events to the Meta pixel and Google Analytics from its own tracking pixel, so ads can optimise for enquiries and sales.
+
+Q: Can a small shop run ads this way?
+A: Yes. Start with one click-to-WhatsApp campaign to one segment and a small daily cap, and read the cost per chat before scaling.
+
 ---
 
 # AI Email Marketing for Jewellers: Write, Test and Track
@@ -20687,7 +21139,7 @@ GUIDE · AI FOR JEWELLERS
 
  See email in Jwero 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Who still reads jewellery email
 
@@ -20707,6 +21159,30 @@ GUIDE · AI FOR JEWELLERS
 
  AI-written campaigns, a drag-and-drop designer, A/B tests, opens and clicks on each record, and mailboxes on your own domain. See email .
 
+## A campaign in twenty minutes
+
+ Brief: “Diwali gifting under ₹25,000 for customers who bought in the last year.” AI writes the subject and the copy; you edit two lines in the drag-and-drop designer, drop in four pieces from the catalogue with prices at today’s rate, and pick the segment. Two subject lines go to a tenth of the list; the winner goes to the rest. Opens and clicks land on each customer’s record, so the salesperson sees who looked at the bangle before she calls.
+
+## Emails worth sending
+
+ Occasions: anniversary and birthday reminders, three weeks ahead.
+
+ Abandoned cart and browse: the piece she looked at, with a way to ask a question.
+
+ New collection: to the segment that buys that category.
+
+ Scheme maturity: what the balance buys today.
+
+ Receipts and reminders: on branded templates, from your own domain.
+
+## Reaching the inbox
+
+ Send from your own domain with DKIM, SPF and DMARC set up, keep unsubscribes honoured, and stop mailing addresses that bounce. Jwero does all three, and the checklist is verified from inside the app.
+
+## What to measure
+
+ Opens and clicks per segment, replies, and orders or visits that followed within a week. Keep the segments that respond; retire the ones that do not.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20721,6 +21197,15 @@ GUIDE · AI FOR JEWELLERS
 
  Do abandoned cart emails work for jewellery? 
  They help, especially with a reminder of the piece and an easy way to ask a question or book a visit.
+
+ Do I need Mailchimp as well? 
+ No. Campaigns, journeys, the designer, A/B tests and tracking are in Jwero, on the same customer record as WhatsApp.
+
+ How much email is too much? 
+ For most jewellers, two campaigns a month plus the automatic occasion and cart emails. Watch unsubscribes; they tell you.
+
+ Can email and WhatsApp run in one journey? 
+ Yes. A journey can send on WhatsApp, email, SMS and RCS, and skip a channel the customer has not opted into.
 
 ## Emails that write themselves, and get read.
 
@@ -20742,6 +21227,15 @@ A: Yes. A/B test them and send the winner to the rest.
 Q: Do abandoned cart emails work for jewellery?
 A: They help, especially with a reminder of the piece and an easy way to ask a question or book a visit.
 
+Q: Do I need Mailchimp as well?
+A: No. Campaigns, journeys, the designer, A/B tests and tracking are in Jwero, on the same customer record as WhatsApp.
+
+Q: How much email is too much?
+A: For most jewellers, two campaigns a month plus the automatic occasion and cart emails. Watch unsubscribes; they tell you.
+
+Q: Can email and WhatsApp run in one journey?
+A: Yes. A journey can send on WhatsApp, email, SMS and RCS, and skip a channel the customer has not opted into.
+
 ---
 
 # AI Customer Segmentation for Jewellers: Who to Contact, and Why
@@ -20757,7 +21251,7 @@ GUIDE · AI FOR JEWELLERS
 
  See segmentation in Jwero 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Why one list fails
 
@@ -20778,6 +21272,32 @@ GUIDE · AI FOR JEWELLERS
 
  41 ready segments, built from purchases, chats, visits and engagement, used by campaigns, journeys and ads. See segmentation .
 
+## Segments a jeweller actually uses
+
+ Bridal buyers, last 24 months, no visit in 6: the anniversary and festive segment.
+
+ Scheme members maturing in 30 to 60 days: the maturity segment.
+
+ Daily-wear buyers under ₹30,000: new-collection and offer segment.
+
+ Enquired on WhatsApp, never bought: the follow-up segment.
+
+ Top 100 by lifetime value: the personal-invitation segment, handled by a person.
+
+ Engaged on Instagram, not yet a customer: the first-visit segment.
+
+## Building one in plain words
+
+ Type “bridal buyers in Surat who have not visited in six months” and AI turns it into a segment, with the count shown before you send and suggestions to widen or narrow it. Save it, and it stays live: customers move in and out as their records change.
+
+## One segment, every channel
+
+ The same segment feeds the WhatsApp campaign, the email, the ad audience and the journey. When the segment is the source, the message is consistent and the results can be compared.
+
+## What to measure
+
+ Response rate by segment, and revenue per customer contacted. A segment that does not respond is a hypothesis to retire.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20792,6 +21312,15 @@ GUIDE · AI FOR JEWELLERS
 
  Does social engagement count? 
  Yes. Comments, follows and likes on Instagram, Facebook and YouTube can earn loyalty points and shape segments.
+
+ How many segments should I start with? 
+ Five: lapsed high value, maturing scheme members, occasion this month, enquired but not bought, and daily-wear repeaters.
+
+ Does segmentation need clean data? 
+ It needs purchases on the record, which the counter already writes. Occasions and preferences improve it over time.
+
+ Can a segment exclude people? 
+ Yes, for example customers who bought in the last 30 days, or who opted out of promotions.
 
 ## The right customers, every time.
 
@@ -20813,6 +21342,15 @@ A: Yes. In Jwero, ads can be generated from a segment, so the audience matches y
 Q: Does social engagement count?
 A: Yes. Comments, follows and likes on Instagram, Facebook and YouTube can earn loyalty points and shape segments.
 
+Q: How many segments should I start with?
+A: Five: lapsed high value, maturing scheme members, occasion this month, enquired but not bought, and daily-wear repeaters.
+
+Q: Does segmentation need clean data?
+A: It needs purchases on the record, which the counter already writes. Occasions and preferences improve it over time.
+
+Q: Can a segment exclude people?
+A: Yes, for example customers who bought in the last 30 days, or who opted out of promotions.
+
 ---
 
 # Customer Scoring for Jewellers: Who Is Ready to Buy, Explained
@@ -20828,7 +21366,7 @@ GUIDE · AI FOR JEWELLERS
 
  See customer intelligence 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Why gut feel is not enough
 
@@ -20849,6 +21387,36 @@ GUIDE · AI FOR JEWELLERS
 
  198 customer signals and 11 live scores, each with its reason, on the customer record and in the team’s follow-up list. See customer intelligence .
 
+## Monday morning, with and without scores
+
+ Without scores, the follow-up list is whoever the salesperson remembers: the loud enquiry from Saturday, the customer who called twice. With scores, the list opens with the quiet customer who viewed the same necklace three times online, whose scheme matures in twelve days, and whose anniversary is in three weeks. The reason is printed next to the score, so the salesperson knows what to say.
+
+## The signals that matter in jewellery
+
+ Visits in the last 90 days, and pieces tried.
+
+ Catalogue links opened, and time spent on a piece.
+
+ Questions about price, size or delivery.
+
+ Scheme balance and maturity date.
+
+ Occasions in the next 30 days.
+
+ Quotations open, and their age.
+
+## Scores that explain themselves
+
+ A number without a reason gets ignored. Each of Jwero’s scores lists the signals behind it, so a manager can agree or disagree, and the team learns what the system sees. The scores are rule-based and statistical, not a black box.
+
+## Using scores without annoying customers
+
+ A high score is a reason to be useful, not pushy: a note that the piece she liked is on a video call this week, or that her balance buys more this month. Cap outreach per customer, and let a person handle the top hundred.
+
+## What to measure
+
+ Conversion of the top-scored list against the rest, and how often salespeople override the order. If they override constantly, the signals need tuning.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20863,6 +21431,15 @@ GUIDE · AI FOR JEWELLERS
 
  Is it predictive AI? 
  Jwero’s scores are rule-based and explainable, built from real signals, not a black box.
+
+ Does scoring work for a new shop with little data? 
+ Partly. Visits, chats and catalogue views start scoring from day one; purchase history adds depth over months.
+
+ Can I see why a score changed? 
+ Yes. Score history shows what moved it, such as a catalogue view or a missed instalment.
+
+ Does AI read my call recordings? 
+ After a call, AI reads the transcript, notes the customer’s interest and updates her scores.
 
 ## Call the right customer first.
 
@@ -20884,6 +21461,15 @@ A: No. A score your team cannot explain is a score they will ignore. Jwero shows
 Q: Is it predictive AI?
 A: Jwero’s scores are rule-based and explainable, built from real signals, not a black box.
 
+Q: Does scoring work for a new shop with little data?
+A: Partly. Visits, chats and catalogue views start scoring from day one; purchase history adds depth over months.
+
+Q: Can I see why a score changed?
+A: Yes. Score history shows what moved it, such as a catalogue view or a missed instalment.
+
+Q: Does AI read my call recordings?
+A: After a call, AI reads the transcript, notes the customer’s interest and updates her scores.
+
 ---
 
 # Ask Your Jewellery Business a Question: AI Reports
@@ -20899,7 +21485,7 @@ GUIDE · AI FOR JEWELLERS
 
  See reports in Jwero 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Good questions to start with
 
@@ -20916,6 +21502,40 @@ GUIDE · AI FOR JEWELLERS
 
  Type the question; AI drafts the report; pin it, schedule it, or export to Excel. See reports .
 
+## Ten questions owners ask, answered from the record
+
+ Which pieces have not sold in 180 days, by branch and value?
+
+ Which salesperson converts walk-ins best this month?
+
+ Which scheme members are two instalments behind?
+
+ What did each festival campaign bring in visits and bills?
+
+ Which categories sold by weight band this quarter?
+
+ Who owes us more than ₹50,000 for more than 30 days?
+
+ Which karigar had the highest wastage last month?
+
+ How many enquiries went unanswered for more than an hour?
+
+ What is our stock worth at today’s rate, by purity?
+
+ Which customers bought last Diwali and have not returned?
+
+## From question to dashboard
+
+ Type the question. AI drafts the report’s source, filters and chart, and shows exactly what it used. Approve it, pin it to the owner’s dashboard on your phone, and schedule it for Monday mornings. Export to Excel when the partners or the bank ask.
+
+## Why one record makes the answer trustworthy
+
+ A report is only as good as the data it can see. When billing, stock, schemes, chats and visits write to one record, “conversion by salesperson” includes the WhatsApp enquiry, the visit and the bill. When they live in five tools, the answer is a guess.
+
+## What to measure
+
+ Not the reports; the decisions. Stock moved after the ageing report, members called after the dues report, follow-ups done after the unanswered-enquiry report.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -20930,6 +21550,15 @@ GUIDE · AI FOR JEWELLERS
 
  Can I see it on my phone? 
  Yes. Pin it to the owner’s dashboard on mobile, schedule it, or export to Excel.
+
+ Can my branch manager ask questions too? 
+ Yes, within her role. A branch manager sees her branch; head office sees all; payroll stays with the roles that own it.
+
+ Can reports go to my accountant? 
+ Export to Excel, CSV or PDF, or schedule a report to arrive each month. Books sync to Tally separately.
+
+ Does it forecast? 
+ Jwero shows what happened and rule-based scores. It does not claim predictive forecasting.
 
 ## Ask, and get the answer.
 
@@ -20951,6 +21580,15 @@ A: It drafts the report’s source, filters and chart; you see exactly what it u
 Q: Can I see it on my phone?
 A: Yes. Pin it to the owner’s dashboard on mobile, schedule it, or export to Excel.
 
+Q: Can my branch manager ask questions too?
+A: Yes, within her role. A branch manager sees her branch; head office sees all; payroll stays with the roles that own it.
+
+Q: Can reports go to my accountant?
+A: Export to Excel, CSV or PDF, or schedule a report to arrive each month. Books sync to Tally separately.
+
+Q: Does it forecast?
+A: Jwero shows what happened and rule-based scores. It does not claim predictive forecasting.
+
 ---
 
 # Connect ChatGPT or Claude to Your Jewellery Business Data
@@ -20966,7 +21604,7 @@ GUIDE · AI FOR JEWELLERS
 
  See integrations 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Why not just paste data in?
 
@@ -20986,6 +21624,34 @@ GUIDE · AI FOR JEWELLERS
 
  A first-party MCP connection with the same role permissions and approvals as your team, and usage metered on the wallet. See integrations and AI governance .
 
+## What a connected assistant can do for a jeweller
+
+ “Which bridal sets over ₹2 lakh have we not sold in six months?” answered from your stock, in a chat.
+
+ “Draft a WhatsApp message to scheme members maturing in July” using the real segment, for a person to approve.
+
+ “Summarise everything we know about Meera Shah before I call her.”
+
+ “Compare this month’s walk-ins to last year’s by branch.”
+
+## How the connection works
+
+ Jwero exposes its tools through MCP, an open standard that AI assistants such as Claude and ChatGPT can use. You create a key or sign in through OAuth from Jwero’s settings, choose which members and permissions apply, and the assistant calls Jwero’s tools with the same role permissions as a staff member. Every request is logged.
+
+## Rules that keep it safe
+
+ Start with read access; add actions later, behind approval.
+
+ Use a separate login per assistant, and revoke it in one click.
+
+ Keep prices, discounts, messages and payments behind the same approvals as your AI agents.
+
+ Read the audit trail weekly.
+
+## Why this beats pasting data in
+
+ Pasting a customer list into a chat window leaks personal data and goes stale at once. A connection reads live data, respects roles, and leaves a record of what was asked.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -21000,6 +21666,15 @@ GUIDE · AI FOR JEWELLERS
 
  Does Jwero support it? 
  Jwero has a first-party MCP connection, metered with API use, governed by the same permissions as staff.
+
+ Is the connection charged? 
+ Requests are metered with API use from the wallet.
+
+ Which assistants work? 
+ Any assistant that supports MCP, including Claude and ChatGPT.
+
+ Can the assistant change prices? 
+ Only if you grant that action, and it still goes through your approvals. Most jewellers keep it read-only.
 
 ## Your assistant, your data, your rules.
 
@@ -21021,6 +21696,15 @@ A: It is safer than pasting data into a chat. Give read access first, keep sendi
 Q: Does Jwero support it?
 A: Jwero has a first-party MCP connection, metered with API use, governed by the same permissions as staff.
 
+Q: Is the connection charged?
+A: Requests are metered with API use from the wallet.
+
+Q: Which assistants work?
+A: Any assistant that supports MCP, including Claude and ChatGPT.
+
+Q: Can the assistant change prices?
+A: Only if you grant that action, and it still goes through your approvals. Most jewellers keep it read-only.
+
 ---
 
 # Is AI Safe for a Jewellery Business? Approvals, Limits and Data
@@ -21036,7 +21720,7 @@ GUIDE · AI FOR JEWELLERS
 
  See AI governance 
 
- AI for jewellers · 6 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 9 min read · By the Jwero editorial team · Published October 2026 
 
 ## The four real risks
 
@@ -21061,6 +21745,36 @@ GUIDE · AI FOR JEWELLERS
 
  AI agents ask for approval by default, with per-action switches, daily and money caps, kill switches from one action to the whole account, and a full log. See AI governance and the Trust Centre .
 
+## Four stories, and what prevents each
+
+ The wrong rate. A general chatbot quotes last week’s rate and the customer holds you to it. Prevention: prices only from your own rate and rules, never from a chat model’s memory.
+
+ The 2am broadcast. An automation sends a festive offer to 4,000 customers at two in the morning. Prevention: quiet hours, a daily cap, and a person’s approval on anything that goes to more than one customer.
+
+ The discount nobody approved. An assistant “helpfully” offers 10% off to close a chat. Prevention: discounts follow price rules and staff permissions; the AI drafts messages and cannot set prices.
+
+ The leaked list. A staff member pastes the customer list into a public AI tool to write a campaign. Prevention: an AI that works inside your system, with role permissions, and a rule that customer data never leaves it.
+
+## The controls, in plain words
+
+ Approval by default: drafts wait for a person until you say which may run alone.
+
+ Caps: a number of actions a day, and a money limit.
+
+ Kill switch: stop one action, one agent, one branch or everything, in one tap.
+
+ Log: what was done, when, why, and who approved it.
+
+ Your data: your own database, exportable any time.
+
+## A safe first month
+
+ Week one: one agent, Assist mode, review every draft. Week two: fix the instructions behind repeated edits. Week three: let first replies send at night, with a cap. Week four: read the log, then decide the next duty.
+
+## Questions to ask any vendor
+
+ Where do prices come from? Can I see every action and who approved it? Can I stop it instantly? Where is my data, and can I take it with me? If any answer is vague, wait.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -21075,6 +21789,15 @@ GUIDE · AI FOR JEWELLERS
 
  Where does customer data go? 
  Keep it in a system you control, with role permissions and the ability to export or delete. Avoid pasting it into public chat tools.
+
+ Can AI see my customers’ phone numbers? 
+ Jwero’s AI works inside Jwero, on the records your staff already see, under the same roles. It does not send your data to a public chat tool.
+
+ What if the AI makes a mistake after I let it run alone? 
+ The log shows exactly what happened, the kill switch stops it, and you can move the action back behind approval.
+
+ Is my data used to train AI for other jewellers? 
+ Each business runs in its own database. See the Trust Centre for how data is handled.
 
 ## AI that asks first.
 
@@ -21096,6 +21819,15 @@ A: It should not. In Jwero, prices and discounts follow your price rules and sta
 Q: Where does customer data go?
 A: Keep it in a system you control, with role permissions and the ability to export or delete. Avoid pasting it into public chat tools.
 
+Q: Can AI see my customers’ phone numbers?
+A: Jwero’s AI works inside Jwero, on the records your staff already see, under the same roles. It does not send your data to a public chat tool.
+
+Q: What if the AI makes a mistake after I let it run alone?
+A: The log shows exactly what happened, the kill switch stops it, and you can move the action back behind approval.
+
+Q: Is my data used to train AI for other jewellers?
+A: Each business runs in its own database. See the Trust Centre for how data is handled.
+
 ---
 
 # What Does AI Cost a Jewellery Business?
@@ -21111,7 +21843,7 @@ GUIDE · AI FOR JEWELLERS
 
  See Jwero pricing 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## The common pricing models
 
@@ -21132,6 +21864,42 @@ GUIDE · AI FOR JEWELLERS
 
  Jwero One is ₹18,000 a month with every module; AI calls, messages, listings and images run on a prepaid wallet. See pricing .
 
+## A month for a two-counter showroom
+
+ Work Volume How it is charged 
+ 
+ Scheme reminder calls 500 calls ₹7 a call, ₹3,500 
+
+ New listings from photos 120 pieces Per product, from the wallet 
+
+ Product images cleaned up 120 images Per image, from the wallet 
+
+ WhatsApp replies drafted at night 900 messages Messages and AI from the wallet 
+
+ The platform itself Every module ₹18,000 a month, first month ₹3,600 
+
+ Against this: the staff hours those calls, listings and night replies would take, and the instalments, enquiries and sales that would otherwise be missed. Put your own numbers in the calculators on the product pages before you decide.
+
+## Pricing models you will meet
+
+ Per seat: you pay for every login, used or not. Fine for a chain, wasteful for a shop.
+
+ Per conversation: common for chat tools; watch how a “conversation” is counted.
+
+ Per call or minute: read whether the line and the voice are included.
+
+ Per item: a listing, an image, a video; easy to estimate from your catalogue.
+
+ Prepaid wallet: you top up and see what each action cost; no surprise bill.
+
+## Questions before you sign
+
+ Is AI included or an add-on? Is the WhatsApp line included? What happens when the wallet runs out? Can I see per-action costs? Can I export my data if I leave?
+
+## When AI is not worth it
+
+ A shop that gets five enquiries a day and has one person free to answer them does not need a night-shift agent. Start with the one job that costs you sales today.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -21146,6 +21914,15 @@ GUIDE · AI FOR JEWELLERS
 
  Is there a separate AI subscription? 
  No. Jwero One includes every module; AI use, messages and calls are paid from a prepaid wallet.
+
+ Is there a free trial? 
+ Jwero’s first month is ₹3,600 with every module, so you can run a real month before paying the full ₹18,000.
+
+ What if I only want WhatsApp AI? 
+ Every module is included at one price. You can use only the WhatsApp inbox and AI replies and switch the rest on later.
+
+ Are camera counts and mailboxes extra? 
+ Yes. Camera counting is charged per camera and business mailboxes per mailbox. See the pricing page.
 
 ## Pay for what AI does.
 
@@ -21167,6 +21944,15 @@ A: Yes, per product listed and per image, from the wallet.
 Q: Is there a separate AI subscription?
 A: No. Jwero One includes every module; AI use, messages and calls are paid from a prepaid wallet.
 
+Q: Is there a free trial?
+A: Jwero’s first month is ₹3,600 with every module, so you can run a real month before paying the full ₹18,000.
+
+Q: What if I only want WhatsApp AI?
+A: Every module is included at one price. You can use only the WhatsApp inbox and AI replies and switch the rest on later.
+
+Q: Are camera counts and mailboxes extra?
+A: Yes. Camera counting is charged per camera and business mailboxes per mailbox. See the pricing page.
+
 ---
 
 # AI Website Builder for a Jewellery Store: Sections in Minutes
@@ -21182,7 +21968,7 @@ GUIDE · AI FOR JEWELLERS
 
  See the ecommerce website 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## What AI should build
 
@@ -21195,6 +21981,28 @@ GUIDE · AI FOR JEWELLERS
 ## How Jwero does it
 
  Generate a section with AI, pick a jewellery theme, connect your domain; products sync from the catalogue with prices at today’s rate. See ecommerce website .
+
+## A store in a week, without a developer
+
+ Day one: bring in the catalogue, with weights, purity, stones and photos. Day two: pick a jewellery theme, set the pricing rules, and connect your domain. Day three: generate the sections, a festive banner, a bridal collection, the shop’s story and an FAQ, with AI, and edit the words. Day four: switch on payments, try-at-home booking and appointments. Day five: products sync to Google Shopping and the Meta catalogue, and the store is live, priced at today’s rate.
+
+## What AI should and should not build
+
+ Should: section layouts, headlines, collection descriptions, the FAQ, the about page draft.
+
+ Should not: prices, stock, certificates or anything a customer could hold you to. Those come from the catalogue and the live rate.
+
+## What makes a jewellery store different
+
+ A price breakup of metal, making charges, stones and GST on every product. Stock that matches the showroom. Sign-in by OTP, not a password. Search by photo for customers who only have a screenshot. Try-at-home and appointment booking. A generic store builder gives you none of these without plugins.
+
+## Speed, security and search
+
+ Pages built for phones, hosting and updates handled for you, no plugins to patch, and product pages, a blog and reviews for search engines to index. Visitor analytics, heatmaps and A/B tests run from the same pixel.
+
+## What to measure
+
+ Visitors to enquiries, enquiries to visits, carts to orders, and how many customers used photo search or booked try-at-home.
 
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
@@ -21210,6 +22018,15 @@ GUIDE · AI FOR JEWELLERS
 
  Can I use my own domain? 
  Yes, a custom domain is included.
+
+ Can I keep my Shopify store? 
+ Yes. Connect it instead, and Jwero syncs stock and prices to it and reads its orders.
+
+ Does the website work for NRI customers? 
+ Yes. They browse at today’s rate, ask on WhatsApp, join a video call from the chat, and book a visit for family in India.
+
+ Who writes the product descriptions? 
+ AI drafts them from the photos and the stock record; your team checks them before publishing.
 
 ## A store that builds and prices itself.
 
@@ -21231,6 +22048,15 @@ A: Yes. Every product reprices from today’s rate, with metal, making charges, 
 Q: Can I use my own domain?
 A: Yes, a custom domain is included.
 
+Q: Can I keep my Shopify store?
+A: Yes. Connect it instead, and Jwero syncs stock and prices to it and reads its orders.
+
+Q: Does the website work for NRI customers?
+A: Yes. They browse at today’s rate, ask on WhatsApp, join a video call from the chat, and book a visit for family in India.
+
+Q: Who writes the product descriptions?
+A: AI drafts them from the photos and the stock record; your team checks them before publishing.
+
 ---
 
 # AI in the Jewellery Showroom: Footfall, Walkouts and Follow-Ups
@@ -21246,7 +22072,7 @@ GUIDE · AI FOR JEWELLERS
 
  See showroom software 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Count first
 
@@ -21259,6 +22085,26 @@ GUIDE · AI FOR JEWELLERS
 ## How Jwero does it
 
  CCTV counting, tablet check-in with history, pieces logged by scan, and Walkout Rescue drafts. See showroom and AI CCTV footfall analytics .
+
+## Saturday, 4pm, on the floor
+
+ The door camera counts the family in. Meera checks in on the tablet by phone number; the screen shows three past visits, a scheme maturing in twelve days and the necklace she tried in March. She waits ten minutes; the floor alert calls a salesperson. Four pieces are scanned as she tries them. She leaves over price. At 7pm the evening list shows her name, the four pieces and the reason. Walkout Rescue has drafted the WhatsApp; the salesperson sends it. On Tuesday she books a visit; on Saturday she buys, and the bill links to her visit.
+
+## Counting first, then converting
+
+ Without footfall, conversion is a guess. With cameras counting entries and exits and bills linked to visits, conversion is known by hour, day, branch and salesperson. A quiet Tuesday and a busy Saturday with the same number of bills tell different stories.
+
+## Why walkout follow-ups work
+
+ A customer who tried four pieces is the warmest lead in the business. A message that same evening, naming those pieces, in her language, with an offer to hold one or show it on video, brings a share of them back. The message is drafted by AI and sent by a person, so it sounds like your shop.
+
+## Privacy on the floor
+
+ Cameras count people; they do not recognise faces or identify customers. Photos at check-in are taken only with consent. Put up the notice, set retention, and keep the capture switch in your hands.
+
+## What to measure
+
+ Walk-in conversion by hour and salesperson, walkouts messaged the same day, and walkouts who returned within two weeks.
 
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
@@ -21274,6 +22120,15 @@ GUIDE · AI FOR JEWELLERS
 
  Are walkout messages sent automatically? 
  No. Walkout Rescue drafts the message naming the pieces tried; a staff member sends it.
+
+ What if a customer does not want to check in? 
+ Then she is a count, not a record. Check-in is for customers who give a number; many do, because it brings up their scheme and history.
+
+ How do bills link to visits? 
+ Automatically, within eight hours of checkout; unlinked sales are flagged so a manager can fix them.
+
+ Does the daily brief come to WhatsApp? 
+ Not yet. The morning and evening brief is opened in the app.
 
 ## No walkout forgotten.
 
@@ -21295,6 +22150,15 @@ A: No. Cameras count people; they do not identify them.
 Q: Are walkout messages sent automatically?
 A: No. Walkout Rescue drafts the message naming the pieces tried; a staff member sends it.
 
+Q: What if a customer does not want to check in?
+A: Then she is a count, not a record. Check-in is for customers who give a number; many do, because it brings up their scheme and history.
+
+Q: How do bills link to visits?
+A: Automatically, within eight hours of checkout; unlinked sales are flagged so a manager can fix them.
+
+Q: Does the daily brief come to WhatsApp?
+A: Not yet. The morning and evening brief is opened in the app.
+
 ---
 
 # AI for Jewellery Wholesalers and Manufacturers
@@ -21310,7 +22174,7 @@ GUIDE · AI FOR JEWELLERS
 
  See purchase and vendors 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Catalogues for every buyer
 
@@ -21328,6 +22192,30 @@ GUIDE · AI FOR JEWELLERS
 
  See digital catalogues , purchase and vendors and manufacturing .
 
+## A Monday at a wholesaler
+
+ Forty new designs were photographed on Saturday. By Monday morning AI has written the listings and the stock records hold the weights. Each of 120 retailers gets a private catalogue link with their own pricing; eighteen open it that day, and the system shows which designs they lingered on. AI drafts a follow-up to the six who viewed but did not request; the sales head approves them. Three retailers ask for memo; the pieces go out with return dates. Stock is low on a fast-moving chain; AI drafts the purchase order at an unfixed rate for approval.
+
+## Where AI helps most
+
+ Listings: descriptions, tags and captions from design photos.
+
+ Buyer catalogues: private, priced per buyer, password protected, with view tracking.
+
+ Follow-ups: drafted after a view, a request or a quiet week.
+
+ Purchasing: draft POs from stock and demand, including unfixed-rate purchases.
+
+ Reports: “which retailer’s memo is overdue?” answered in a sentence.
+
+## Keep the person where the margin is
+
+ Pricing per buyer, credit terms and memo decisions stay with people. AI drafts; the sales head approves.
+
+## What to measure
+
+ Catalogue views to requests, requests to orders, memo returned on time, and days from design photo to first order.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -21342,6 +22230,15 @@ GUIDE · AI FOR JEWELLERS
 
  Does AI help in the workshop? 
  Reports in plain English help track wastage and stock; metal accounts stay with your rules and approvals.
+
+ Can retailers order from the catalogue link? 
+ They can request pieces and the request becomes a quotation; with checkout on, they can pay an advance on the link.
+
+ Does it track memo and approval stock? 
+ Yes. Issues with a party, value and return date, reminders before the date, and the piece back in stock on return.
+
+ Can AI call retailers? 
+ The voice agent can make reminder and follow-up calls in the retailer’s language, with the transcript on their record.
 
 ## Less typing, more trade.
 
@@ -21363,6 +22260,15 @@ A: Yes. B2B buyer catalogue links carry each buyer’s own pricing, and can be p
 Q: Does AI help in the workshop?
 A: Reports in plain English help track wastage and stock; metal accounts stay with your rules and approvals.
 
+Q: Can retailers order from the catalogue link?
+A: They can request pieces and the request becomes a quotation; with checkout on, they can pay an advance on the link.
+
+Q: Does it track memo and approval stock?
+A: Yes. Issues with a party, value and return date, reminders before the date, and the piece back in stock on return.
+
+Q: Can AI call retailers?
+A: The voice agent can make reminder and follow-up calls in the retailer’s language, with the transcript on their record.
+
 ---
 
 # Virtual Try-On for Jewellery: What It Is and Who Needs It
@@ -21378,7 +22284,7 @@ GUIDE · AI FOR JEWELLERS
 
  See video shopping in Jwero 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## How virtual try-on works
 
@@ -21402,6 +22308,36 @@ GUIDE · AI FOR JEWELLERS
 
  Jwero does not offer virtual try-on. It offers video calls and appointments and try-at-home booking .
 
+## How the technology works
+
+ The phone camera finds the face, ear, neck or hand and overlays a 3D model of the piece, tracking as the customer moves. Rings and earrings work best; necklaces depend on the neckline; bangles are hard. Every design needs its own 3D model, built from CAD or photographs, which is the hidden cost for a shop with a thousand one-of-a-kind pieces.
+
+## Who gets value from it
+
+ Online-first brands with repeatable designs in rings and earrings.
+
+ Lab-grown and silver brands selling at prices customers decide alone.
+
+ Brands whose buyers are far from a store and used to buying online.
+
+## Who does not
+
+ Family jewellers selling bridal and heavy gold, where the family decides together, the weight matters, and the stones must be seen in real light. A 3D model cannot show a stone’s fire or a piece’s heft, and a disappointed customer blames the shop.
+
+## What sells high-value jewellery instead
+
+ A video call from the WhatsApp chat, with the real piece under good light.
+
+ A try-at-home appointment, booked from the website.
+
+ Three good photos and a ten-second video per piece.
+
+ A quotation she can accept from her phone, with a visit booked.
+
+## If you still want it
+
+ Pilot it on twenty repeatable designs, measure conversion against the same designs without it, and count the modelling cost per design before rolling it out.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -21416,6 +22352,15 @@ GUIDE · AI FOR JEWELLERS
 
  Is a video call better? 
  For high-value and bridal pieces, often yes: the customer sees the real piece, asks questions and books a visit.
+
+ Does virtual try-on reduce returns? 
+ For rings and earrings sold online, vendors report it helps. For bridal gold bought with a family, the video call and the visit do more.
+
+ What does it cost? 
+ A platform fee plus a 3D model per design. For one-of-a-kind stock, the per-design cost is the real number to check.
+
+ What does Jwero offer instead? 
+ Video calls started from any chat, try-at-home and appointment booking from the website, and search by photo.
 
 ## Show the real piece.
 
@@ -21437,6 +22382,15 @@ A: Online brands selling rings, earrings and lightweight pieces at scale, where 
 Q: Is a video call better?
 A: For high-value and bridal pieces, often yes: the customer sees the real piece, asks questions and books a visit.
 
+Q: Does virtual try-on reduce returns?
+A: For rings and earrings sold online, vendors report it helps. For bridal gold bought with a family, the video call and the visit do more.
+
+Q: What does it cost?
+A: A platform fee plus a 3D model per design. For one-of-a-kind stock, the per-design cost is the real number to check.
+
+Q: What does Jwero offer instead?
+A: Video calls started from any chat, try-at-home and appointment booking from the website, and search by photo.
+
 ---
 
 # AI Demand Forecasting for Jewellery: What Works Today
@@ -21452,7 +22406,7 @@ GUIDE · AI FOR JEWELLERS
 
  See inventory in Jwero 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## What forecasting needs
 
@@ -21469,6 +22423,38 @@ GUIDE · AI FOR JEWELLERS
 
  Jwero shows stock ageing, dead stock and showroom signals such as pieces tried but not bought. See inventory and the dead stock calculator .
 
+## Why jewellery is hard to forecast
+
+ Demand moves with the gold rate, weddings, festivals and the weather; half the stock is one of a kind; and a design that sold ten units last Diwali may not exist this year. A forecast built for packaged goods assumes repeat items and stable prices. Jewellery has neither, except in chains, coins, bands and daily-wear lines.
+
+## Where forecasting does work
+
+ Repeatable items with years of sales: chains by weight band, coins, plain bands, studs.
+
+ Seasonal planning by category: how much bridal by weight band sold in the two months before last wedding season.
+
+ Reorder points for findings, packaging and consumables.
+
+## The signals that beat a forecast for unique stock
+
+ Stock ageing by branch, category and weight band: what has sat for 90, 180 and 365 days.
+
+ Dead stock value at today’s rate, and what it costs to carry.
+
+ Tried often, rarely bought: designs customers like but do not buy, usually a price or weight problem.
+
+ Wishlists and enquiries by design: demand you have not stocked.
+
+ Sell-through by salesperson and branch : which floor moves which category.
+
+## Questions to ask a vendor who promises forecasting
+
+ Is it machine learning or statistics? What history does it need? Does it track its own accuracy? Does it handle one-of-a-kind pieces, or only repeat items? A clear answer to the last question tells you most.
+
+## How Jwero helps
+
+ Ageing and dead-stock reports, showroom signals such as tried-but-not-bought, wishlists on the customer record, and a dead stock calculator to put a number on it.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -21483,6 +22469,15 @@ GUIDE · AI FOR JEWELLERS
 
  When does forecasting work? 
  For repeatable designs with long sales history, such as chains, coins and daily-wear lines.
+
+ Should I stock what sold best last year? 
+ For repeatable lines, yes, adjusted for the rate. For design-led stock, look at what was tried and enquired about, not only what sold.
+
+ How much dead stock is normal? 
+ It varies by category, but anything unsold past a year at today’s rate is capital you are paying to hold. Use the calculator with your own figures.
+
+ Can AI tell me what to melt? 
+ It can show you what has not moved, at what value, and who might still buy it. The melt decision stays with you.
 
 ## Stock decisions from real signals.
 
@@ -21504,6 +22499,15 @@ A: Stock ageing, sell-through by category and weight band, pieces tried but not 
 Q: When does forecasting work?
 A: For repeatable designs with long sales history, such as chains, coins and daily-wear lines.
 
+Q: Should I stock what sold best last year?
+A: For repeatable lines, yes, adjusted for the rate. For design-led stock, look at what was tried and enquired about, not only what sold.
+
+Q: How much dead stock is normal?
+A: It varies by category, but anything unsold past a year at today’s rate is capital you are paying to hold. Use the calculator with your own figures.
+
+Q: Can AI tell me what to melt?
+A: It can show you what has not moved, at what value, and who might still buy it. The melt decision stays with you.
+
 ---
 
 # 7 AI Mistakes Jewellers Make, and How to Avoid Them
@@ -21519,7 +22523,7 @@ GUIDE · AI FOR JEWELLERS
 
  See AI agents in Jwero 
 
- AI for jewellers · 6 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 9 min read · By the Jwero editorial team · Published October 2026 
 
  Letting AI set prices. Prices come from your rate and rules, never a guess.
 
@@ -21539,6 +22543,34 @@ GUIDE · AI FOR JEWELLERS
 
  AI that works from your catalogue and customer records, with approvals, caps and a log. See is AI safe? 
 
+## The seven mistakes, with the fix for each
+
+ 1. Letting AI set prices. A chat model quotes a rate from memory or from last week’s message. Fix: prices come only from your rate and making-charge rules. If the AI cannot see your rate, it must not quote.
+
+ 2. Sending without approval. A broadcast to the whole list, in the wrong tone, at the wrong hour. Fix: Assist mode first; caps and quiet hours; promote one action at a time.
+
+ 3. Generic content. Captions that could be any shop’s. Fix: give AI your pieces, your facts and three posts you like; edit the final line yourself.
+
+ 4. Unofficial WhatsApp tools. A bulk sender paired to a personal number, and a banned number a month later. Fix: the official WhatsApp Business Platform on your business number.
+
+ 5. Changing the piece in AI images. A bigger stone, a different finish, and a complaint on delivery. Fix: edit the background and the light, never the piece; keep the original photo.
+
+ 6. Ten AI tools that do not share data. A chatbot that does not know the scheme balance, an ad tool that cannot see the sale. Fix: one record that every tool reads and writes.
+
+ 7. No measurement. “We use AI now” with no number behind it. Fix: time to first reply, enquiries that became visits, instalments on time, sales traced to a post or ad.
+
+## Three quieter mistakes
+
+ Pasting customer lists into public AI tools.
+
+ Switching on every agent in week one, so nobody reviews any queue properly.
+
+ Treating the activity log as optional. It is how trust is earned.
+
+## A safe order to start in
+
+ Night-shift replies, then follow-ups on quiet quotations, then scheme reminders, then content. Each one measured for a month before the next.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -21553,6 +22585,15 @@ GUIDE · AI FOR JEWELLERS
 
  How should I start with AI? 
  One job, approvals on, measured for a month.
+
+ How do I know if a vendor’s AI is safe? 
+ Ask where prices come from, whether every action is logged with an approver, whether you can stop it instantly, and where your data lives.
+
+ My staff are afraid AI will replace them. What do I say? 
+ That it does the remembering and the chasing, so they spend their time selling. Salespeople close more when every customer walks in already known.
+
+ Should a small shop use AI at all? 
+ Yes, for one job that costs sales today, usually after-hours replies or scheme reminders. Measure it before adding the next.
 
 ## AI done carefully.
 
@@ -21574,6 +22615,15 @@ A: Yes. Tools that automate a personal number are the most common way jewellers 
 Q: How should I start with AI?
 A: One job, approvals on, measured for a month.
 
+Q: How do I know if a vendor’s AI is safe?
+A: Ask where prices come from, whether every action is logged with an approver, whether you can stop it instantly, and where your data lives.
+
+Q: My staff are afraid AI will replace them. What do I say?
+A: That it does the remembering and the chasing, so they spend their time selling. Salespeople close more when every customer walks in already known.
+
+Q: Should a small shop use AI at all?
+A: Yes, for one job that costs sales today, usually after-hours replies or scheme reminders. Measure it before adding the next.
+
 ---
 
 # AI Marketing Automation for Jewellers: Journeys in Plain English
@@ -21589,7 +22639,7 @@ GUIDE · AI FOR JEWELLERS
 
  See journeys in Jwero 
 
- AI for jewellers · 5 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 8 min read · By the Jwero editorial team · Published October 2026 
 
 ## Journeys every jeweller needs
 
@@ -21607,6 +22657,36 @@ GUIDE · AI FOR JEWELLERS
 
  Journeys generated in plain English, 300+ ready ones, triggers from Instagram, the website and the showroom. See journeys .
 
+## Five journeys to switch on first
+
+ Anniversary, three weeks ahead: a WhatsApp message with three pieces in her usual budget; an email a week later; a visit booking link.
+
+ Browsed bridal twice, no enquiry: a WhatsApp with similar pieces, then an email, then an offer of a video call.
+
+ Scheme maturing in 30 days: what the balance buys today, then a reminder, then a visit on the expected list.
+
+ Walkout: the same evening, the pieces she tried, sent by a person.
+
+ Instagram story mention: a thank-you DM, and a catalogue link.
+
+## Describe it, review it, run it
+
+ Type what you want in plain words. AI builds the journey across WhatsApp, email, SMS and RCS, explains each step, checks it for safety, and lets you test-run it on one record. Review the steps, set approval on anything you want to see first, and switch it on.
+
+## Rules that keep journeys polite
+
+ One journey per customer at a time, and a cap on messages a week.
+
+ If the WhatsApp window is closed, skip the message, do not stall the journey.
+
+ Stop on purchase, on reply, or on “stop”.
+
+ Approval on the first send of every new journey.
+
+## What to measure
+
+ Replies, visits and bills per journey, and the share of steps that were skipped or stopped. A journey nobody replies to is a message problem, not a channel problem.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -21621,6 +22701,15 @@ GUIDE · AI FOR JEWELLERS
 
  What if a customer’s WhatsApp window is closed? 
  The message is skipped and the journey continues, rather than stopping.
+
+ How many ready journeys are there? 
+ More than 300, including abandoned cart, browse, occasions, scheme maturity and walkouts.
+
+ Can a journey start from the showroom? 
+ Yes. Check-ins, walkouts and appointments booked can trigger journeys, as can Instagram follows and story mentions.
+
+ Do journeys need a person? 
+ Only where you want one. Set approval per step; routine steps run on their own once you trust them.
 
 ## Describe it, and it runs.
 
@@ -21642,6 +22731,15 @@ A: Yes, more than 300, including abandoned cart and browse.
 Q: What if a customer’s WhatsApp window is closed?
 A: The message is skipped and the journey continues, rather than stopping.
 
+Q: How many ready journeys are there?
+A: More than 300, including abandoned cart, browse, occasions, scheme maturity and walkouts.
+
+Q: Can a journey start from the showroom?
+A: Yes. Check-ins, walkouts and appointments booked can trigger journeys, as can Instagram follows and story mentions.
+
+Q: Do journeys need a person?
+A: Only where you want one. Set approval per step; routine steps run on their own once you trust them.
+
 ---
 
 # Search by Photo for Jewellery Websites: Visual Search Explained
@@ -21657,7 +22755,7 @@ GUIDE · AI FOR JEWELLERS
 
  See the ecommerce website 
 
- AI for jewellers · 4 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 7 min read · By the Jwero editorial team · Published October 2026 
 
 ## Why keywords fail for jewellery
 
@@ -21677,6 +22775,34 @@ GUIDE · AI FOR JEWELLERS
 
  Search by photo on the ecommerce website, with pieces picked for signed-in shoppers and prices at today’s rate. See ecommerce website .
 
+## What customers actually have
+
+ A screenshot from Instagram, a photo from a wedding, a picture of a relative’s necklace. Not a design name, not a product code, and rarely the words to describe it. Visual search lets them upload the picture and see the closest pieces you stock, by shape, style and stones.
+
+## Three ways it makes money
+
+ The exact piece: she finds it, sees the price at today’s rate, and asks or buys.
+
+ The near miss: she finds three similar designs and asks about one.
+
+ The custom order: nothing matches, but the photo and her number land in a chat, and a quotation follows.
+
+## Setting it up well
+
+ Good photos on every listing: visual search matches what it can see.
+
+ One piece per image; sets as their own record.
+
+ A WhatsApp button next to the results for “not quite this”.
+
+## Pairing it with recommendations
+
+ Signed-in shoppers also see pieces picked for them from what they browsed and bought. Together, photo search and recommendations turn a brochure site into one that helps a customer decide.
+
+## What to measure
+
+ Searches that ended in an enquiry or order, and custom-order chats that started from a photo.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -21691,6 +22817,15 @@ GUIDE · AI FOR JEWELLERS
 
  Will it find the exact piece? 
  Only if you stock it. Otherwise it shows the closest designs you have, which is often enough to start a conversation or a custom order.
+
+ Does photo search work on WhatsApp too? 
+ On WhatsApp, a photo in the chat is answered by the AI with the matching piece and price. On the website, the shopper searches by photo herself.
+
+ Does it need a special app? 
+ No. It runs in the browser on a Jwero ecommerce website.
+
+ Will it show pieces I have sold? 
+ No. The website sells from the same stock as the showroom, so a sold piece is removed.
 
 ## Let the photo search.
 
@@ -21712,6 +22847,15 @@ A: Yes. Shoppers on a Jwero ecommerce website can search by photo and see matchi
 Q: Will it find the exact piece?
 A: Only if you stock it. Otherwise it shows the closest designs you have, which is often enough to start a conversation or a custom order.
 
+Q: Does photo search work on WhatsApp too?
+A: On WhatsApp, a photo in the chat is answered by the AI with the matching piece and price. On the website, the shopper searches by photo herself.
+
+Q: Does it need a special app?
+A: No. It runs in the browser on a Jwero ecommerce website.
+
+Q: Will it show pieces I have sold?
+A: No. The website sells from the same stock as the showroom, so a sold piece is removed.
+
 ---
 
 # AI Lead Finder for Jewellers: Corporate Gifting, Retailers and B2B Buyers
@@ -21727,7 +22871,7 @@ GUIDE · AI FOR JEWELLERS
 
  See the CRM 
 
- AI for jewellers · 4 min read · By the Jwero editorial team · Published October 2026 
+ AI for jewellers · 7 min read · By the Jwero editorial team · Published October 2026 
 
 ## Who to look for
 
@@ -21751,6 +22895,32 @@ GUIDE · AI FOR JEWELLERS
 
  The lead finder adds contacts to the CRM, private catalogue links show what they viewed, and follow-ups are drafted for approval. See CRM and digital catalogues .
 
+## Four campaigns that start with a search
+
+ Corporate Diwali gifting: HR and admin heads at companies within 20 km, approached in August with a gifting catalogue and a bulk-price quotation.
+
+ Wedding planners: planners and venues in your city, offered a bridal shortlist link and a referral arrangement.
+
+ New retailers, for a wholesaler: jewellers in a new city, sent a private buyer catalogue with their own pricing.
+
+ Hotels and boutiques: a consignment or memo arrangement for a small display.
+
+## From search to CRM
+
+ Describe the buyer and the place. Review the results and keep the fits. Add them to the CRM with a source and a tag, so every message and reply lands on their record and the campaign can be measured.
+
+## The first message
+
+ Personal, short, and useful: who you are, why them, one link. A catalogue link shows you what they looked at, and AI drafts the follow-up for a person to send. No broadcasts to found contacts until they agree.
+
+## Consent and manners
+
+ A found contact has not opted in. Introduce yourself once, make opting out easy, and move them to campaigns only when they say yes. Business contacts expect a business approach; they do not expect a festival blast.
+
+## What to measure
+
+ Replies per hundred contacts, meetings booked, and orders within a quarter, by campaign.
+
  More on AI. AI agents · Is AI safe? · What AI costs · 25 use cases 
 
  GUIDE QUESTIONS
@@ -21765,6 +22935,15 @@ GUIDE · AI FOR JEWELLERS
 
  Can I message them straight away? 
  Treat them as new contacts: introduce yourself personally and respect consent rules before adding them to campaigns.
+
+ What kind of leads does it find? 
+ Companies and people matching a description, such as corporate gifting buyers, planners or retailers, with contact details to approach them.
+
+ Can I message found leads on WhatsApp straight away? 
+ Send a personal introduction first. Add them to campaigns only after they agree; this keeps your number and your reputation safe.
+
+ Is it only for wholesalers? 
+ No. Retailers use it for corporate gifting and planners; wholesalers for retailers in new cities.
 
 ## Find the buyers who will not walk in.
 
@@ -21785,6 +22964,15 @@ A: ₹1 a search, from the wallet.
 
 Q: Can I message them straight away?
 A: Treat them as new contacts: introduce yourself personally and respect consent rules before adding them to campaigns.
+
+Q: What kind of leads does it find?
+A: Companies and people matching a description, such as corporate gifting buyers, planners or retailers, with contact details to approach them.
+
+Q: Can I message found leads on WhatsApp straight away?
+A: Send a personal introduction first. Add them to campaigns only after they agree; this keeps your number and your reputation safe.
+
+Q: Is it only for wholesalers?
+A: No. Retailers use it for corporate gifting and planners; wholesalers for retailers in new cities.
 
 ---
 
