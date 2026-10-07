@@ -20,7 +20,7 @@ const SHOP_DAY = {
     ['gem', 'Stock', [['One-of-one stones on hand', '204'], ['Sitting 180 days or more', '19']]],
     close(['Cash and card against bills', 'Matched'], ['Posted to the books', '3 bills · 1 purchase'])] },
   'solutions/lab-grown-diamond': { title: 'The brand · today, 9:00 pm', secs: [
-    ['store', 'Orders', [['Last order', '1.2 ct solitaire · storefront · paid'], ['Orders today', '9']]],
+    ['store', 'Orders', [['Last order', '1.2 ct solitaire · website · paid'], ['Orders today', '9']]],
     ['gem', 'Stock', [['Stones live on every channel', '146'], ['Low and reordered', '3']]],
     close(['Payments against orders', 'Matched'], ['Posted to the books', '9 orders · 1 purchase'])] },
   'solutions/bridal': { title: 'The showroom · today, 8:40 pm', secs: [
@@ -40,11 +40,11 @@ const SHOP_DAY = {
     ['truck', 'Replenishment', [['Orders from stores', '6'], ['Local offers awaiting approval', '1']]],
     close(['Cash against bills, by store', 'All matched'], ['Network report', 'Ready tonight'])] },
   'solutions/jewellery-brands': { title: 'The brand · today, 9:00 pm', secs: [
-    ['store', 'Orders', [['Orders today, every channel', '46'], ['Last order', 'Storefront · paid']]],
+    ['store', 'Orders', [['Orders today, every channel', '46'], ['Last order', 'Website · paid']]],
     ['box', 'Stock', [['Pieces live from one catalogue', '1,020'], ['Low and reordered', '7']]],
     close(['Payments against orders', 'Matched'], ['Posted to the books', '46 orders · 3 purchases'])] },
   'solutions/d2c-brands': { title: 'The brand · today, 9:00 pm', secs: [
-    ['store', 'Orders', [['Last order', 'Solitaire ring · came from an ad · paid'], ['Orders today, storefront and chat', '23']]],
+    ['store', 'Orders', [['Last order', 'Solitaire ring · came from an ad · paid'], ['Orders today, website and chat', '23']]],
     ['box', 'Stock', [['Pieces live on every channel', '410'], ['Low and reordered', '4']]],
     close(['Payments against orders', 'Matched'], ['Posted to the books', '23 orders · 1 purchase'])] },
   'solutions/manufacturers': { title: 'The workshop · today, 7:15 pm', secs: [

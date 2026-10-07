@@ -124,7 +124,7 @@ const GEM = {
     centre: 'Priya’s record', who: 'Priya',
     tools: ['Shopify', 'Instagram app', 'Ads manager', 'Email tool'],
     modules: [
-      ['store', 'Storefront', 'live prices and stock', 'the cart and the order', '/products/storefront', 0, 1],
+      ['store', 'Ecommerce website', 'live prices and stock', 'the cart and the order', '/products/ecommerce', 0, 1],
       ['camera', 'Instagram', 'the catalogue', 'the DM, on her record', '/products/instagram-facebook', 1, 0],
       ['chat', 'WhatsApp', 'her cart and her taste', 'the conversation', '/products/whatsapp', 1, 1],
       ['megaphone', 'Ads', 'which pieces are selling', 'which ad brought her', '/products/ads-manager', 2, 0],
@@ -137,7 +137,7 @@ const GEM = {
       ['Tue', 'Adds to cart, then leaves', 0, 'Cart abandoned · interest high', [[0, 'Added to cart'], [0, 'Cart abandoned']]],
       ['Wed', 'Gets a WhatsApp nudge with the exact ring', 4, 'Recovery drafted, sent after your tap', [[7, 'Journey entered'], [1, 'Message read']]],
       ['Wed', 'Buys', 5, 'Order, stock and the ad that earned it — on one record', [[0, 'Checkout started'], [3, 'Order created']]],
-    ['Thu', 'That ring runs low; you reorder from the maker', 5, 'Purchase order raised · storefront stock stays true', [[8, 'PO issued']]],
+    ['Thu', 'That ring runs low; you reorder from the maker', 5, 'Purchase order raised · website stock stays true', [[8, 'PO issued']]],
     ],
   },
 };

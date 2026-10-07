@@ -2816,3 +2816,12 @@ document.addEventListener('click', function (e) {
     set('slow', Math.round(slow).toLocaleString('en-IN')); set('lost', Math.round(lost).toLocaleString('en-IN')); set('rev', '\u20b9' + Math.round(rev).toLocaleString('en-IN')); }
   root.addEventListener('input', run); run();
 })();
+// Ecommerce website page: what re-pricing by hand costs.
+(function () {
+  var root = document.querySelector('[data-ecc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-ec="' + k + '"]') || {}).value || 0; };
+  function run() { var hrs = v('n') * v('ch') * v('min') / 60;
+    var set = function (k, t) { var el = root.querySelector('[data-ec-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('hrs', Math.round(hrs).toLocaleString('en-IN')); set('cost', '₹' + Math.round(Math.round(hrs) * v('cost')).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();

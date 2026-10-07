@@ -116,8 +116,8 @@ ${L.section(`${L.sectionHead('COMPARE', 'Bill book, desktop billing software, or
 ${L.section(`${L.sectionHead('MOVING FROM DESKTOP BILLING OR TALLY', 'How to switch your jewellery shop billing to Jwero.', 'Five steps, done with you. Nothing about your books has to change on day one.')}${L.steps(POS_MOVE.map(([title, text]) => ({ title, text })))}`)}
 
 ${L.oneSystemBlock([
-  'A counter sale, a WhatsApp order and a storefront checkout post through the same invoice and the same ledger.',
-  'The piece scanned at the till is the record the catalogue publishes and the inventory values; sell it here and it disappears from the storefront at once.',
+  'A counter sale, a WhatsApp order and a website checkout post through the same invoice and the same ledger.',
+  'The piece scanned at the till is the record the catalogue publishes and the inventory values; sell it here and it disappears from the website at once.',
   'The bill writes to the customer’s record: what she bought, what she exchanged, her points, and what to remember next time.',
 ])}
 

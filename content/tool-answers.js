@@ -9,7 +9,7 @@ const TOOL_QA = {
     { q: 'How do I A/B test my jewellery website?', a: 'In Optimize you set up two versions of a page or a pop-up, split visitors between them, and see which one led to more enquiries or orders. It sits beside the heatmaps and recordings, so you can see why one version won.' },
     { q: 'How do I capture enquiries on my jewellery website?', a: 'Add a lead form or a pop-up from the visual editor: an exit offer, a callback request or a custom order form. Each enquiry lands on the customer’s record in the same inbox as WhatsApp and Instagram.' },
     { q: 'How do I track conversions on a jewellery website?', a: 'Define the steps that matter, such as viewed a product, sent an enquiry, placed an order, and Optimize shows where visitors drop out. Google Tag Manager and Google Analytics can be connected if you already use them.' },
-    { q: 'How do I set up the Meta pixel on a jewellery website?', a: 'On a Jwero storefront you add your pixel once in settings and it fires on product views, carts and orders. That lets Meta ads optimise for people who actually enquire or buy, not only for clicks.' },
+    { q: 'How do I set up the Meta pixel on a jewellery website?', a: 'On a Jwero ecommerce website you add your pixel once in settings and it fires on product views, carts and orders. That lets Meta ads optimise for people who actually enquire or buy, not only for clicks.' },
   ],
   'products/social-media': [
     { q: 'Can AI write jewellery captions and descriptions?', a: 'Yes. AI drafts captions, post text and replies from your catalogue and your tone, and a person approves before anything is published. It is a draft to edit, not an automatic post.' },
@@ -65,8 +65,8 @@ const TOOL_QA = {
   'products/digital-gold': [
     { q: 'How can a jeweller offer a gold savings plan?', a: 'Run it as a plan on the customer’s own record: enrolment with KYC, payments at the desk or by link, a ledger she can be shown, and redemption into jewellery at your counter. Gram-based plans in Jwero are being corrected and are not offered yet. Check the rules that apply to you before launching.' },
   ],
-  'products/storefront': [
-    { q: 'How do I build a jewellery website with live gold rates?', a: 'Use a storefront where each piece is priced from weight, purity and the day’s rate, so prices change when the rate does. Jwero’s storefront does this from the same catalogue and stock as your counter.' },
+  'products/ecommerce': [
+    { q: 'How do I build a jewellery website with live gold rates?', a: 'Use a website where each piece is priced from weight, purity and the day’s rate, so prices change when the rate does. Jwero’s ecommerce website does this from the same catalogue and stock as your counter.' },
     { q: 'How do I list jewellery on Google Shopping?', a: 'Google needs a product feed with price, image and availability. Jwero keeps that product data accurate in one catalogue, but it does not yet send a feed to Google Merchant Center; that is on the roadmap.' },
   ],
   'products/quotations': [

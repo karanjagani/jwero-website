@@ -17,7 +17,7 @@ const repairsService = {
     { q: 'Does it know when a repair needs re-hallmarking?', a: 'Yes. When a job crosses the BIS threshold for re-hallmarking — a 2-gram or 50%-of-melt rule — it is flagged automatically, and the job cannot reach "ready for delivery" until that flag is cleared. This is built into the workflow, not a checklist someone has to remember.' },
     { q: 'How does a customer approve what a repair will cost?', a: 'A versioned estimate is sent to the customer, who approves, declines, or asks for a revision. Work on the job\'s task list only starts once the current estimate version is approved.' },
     { q: 'Is warranty tracking connected to what was actually sold?', a: 'Yes — warranty and AMC entitlements are tied to the original invoice and HUID of the piece, so a claim or a scheduled inspection is linked back to exactly what was sold and when, not a separate promise nobody can verify.' },
-    { q: 'Can I do old-gold exchange or buyback through Jwero?', a: 'Yes, as a staff-operated, in-store flow: test, value, approve, settle and post, with purity-testing method, live rate and PAN/KYC captured where required. There is no customer-facing online self-service valuation form on the storefront yet.' },
+    { q: 'Can I do old-gold exchange or buyback through Jwero?', a: 'Yes, as a staff-operated, in-store flow: test, value, approve, settle and post, with purity-testing method, live rate and PAN/KYC captured where required. There is no customer-facing online self-service valuation form on the website yet.' },
     { q: 'How do customers know their repair is ready?', a: 'Automated notifications go out on WhatsApp, SMS and email for job-ready, overdue and unclaimed-item states — nobody has to remember to call.' },
   ],
   body: `
@@ -60,11 +60,11 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('OLD-GOLD EXCHANGE & BUYBACK', 'A real lifecycle, done correctly — in-store, for now.', '')}
   <p>Old-gold exchange or cash buyback runs a genuine test → value → approve → settle → post lifecycle: it records whether the metal comes in as-is or melted (which determines the correct GST margin-scheme/HSN treatment — 7113 vs 7108), the purity-testing method used (touchstone, XRF or fire assay vs melt assay), and a snapshot of the live rate applied. High-value transactions capture PAN/KYC per Income Tax Rule 114B. It supports a standalone walk-in cash buyback or using old gold as exchange-credit against a new sale, and on completion it posts to a raw-material inventory lot and a finance document automatically.</p>
-  <p><strong>Honest limitation:</strong> this is a staff-operated, in-store flow today. There is no customer-facing online or self-service old-gold valuation form on the storefront — a customer still has to bring the piece in.</p>`
+  <p><strong>Honest limitation:</strong> this is a staff-operated, in-store flow today. There is no customer-facing online or self-service old-gold valuation form on the website — a customer still has to bring the piece in.</p>`
 )}
 
 ${L.honestGapsBlock([
-  'Old-gold exchange/buyback is in-store only — no online self-service valuation form on the storefront yet.',
+  'Old-gold exchange/buyback is in-store only — no online self-service valuation form on the website yet.',
 ])}
 
 ${L.oneSystemBlock([
@@ -75,7 +75,7 @@ ${L.oneSystemBlock([
 ${L.section(`${L.sectionHead('REPAIRS QUESTIONS', 'The custody chain, the re-hallmark flag, and old-gold buyback.', '')}${L.faqBlock([
   { q: 'What gets recorded on a repair job?', a: 'A claim-check tag, condition photos, weight-in, and an append-only custody chain logging every handoff — nothing in it can be edited or deleted. Weight-out is reconciled before close.' },
   { q: 'Does it catch repairs that need re-hallmarking?', a: 'Yes — jobs crossing the BIS 2-gram or 50%-of-melt threshold are flagged automatically, and cannot reach "ready for delivery" until addressed.' },
-  { q: 'Can old-gold buyback be done online?', a: 'Not yet — it is a staff-operated, in-store flow only. There is no customer-facing self-service valuation form on the storefront.' },
+  { q: 'Can old-gold buyback be done online?', a: 'Not yet — it is a staff-operated, in-store flow only. There is no customer-facing self-service valuation form on the website.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
 <p class="cta-note" style="margin-top:14px">Still running repairs on registers? <a href="/blog/jewellery-repair-management-custody-chain">Read the guide to repair management and the custody chain →</a> Repairs is one part of the wider operations layer — <a href="/products/erp">see the full ERP →</a></p>`)}

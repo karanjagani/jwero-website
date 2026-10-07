@@ -359,7 +359,7 @@ ${L.section(
     { title: 'Shopify', text: 'Your store works from the same product data. Keep the store, add the channels and the memory.' },
     { title: 'WooCommerce', text: 'Connector for WordPress-based stores.' },
     { title: 'Unicommerce', text: 'Publish products to Unicommerce for marketplace-heavy operations.' },
-    { title: 'Razorpay & Cashfree', text: 'Payment collection for storefront checkout, verified end to end.' },
+    { title: 'Razorpay & Cashfree', text: 'Payment collection for website checkout, verified end to end.' },
     { title: 'Meta (WhatsApp, Instagram, Facebook)', text: 'Official APIs for the channels where jewellery actually sells today.' },
     { title: 'Exotel & Tata Tele', text: 'Telephony connectors that carry Jwero’s AI voice agent — outbound/inbound calls and IVR menus — over a line you already run.', link: { href: '/products/ai-sales-agents', label: 'See voice & IVR' } },
     { title: 'Your ERP export', text: 'Customers and catalogue import from Excel/CSV exports of practically any jewellery ERP.' },
@@ -526,7 +526,7 @@ ${L.section(
         <div class="road-item"><strong>Journeys, campaigns & loyalty</strong>festival triggers, consent-aware broadcasts</div>
         <div class="road-item"><strong>Campaign attribution (UTM)</strong>what each send actually sold, on the record</div>
         <div class="road-item"><strong>Customer segmentation</strong>live rule-based audiences, RFM tiers</div>
-        <div class="road-item"><strong>Gold savings schemes</strong>enrolment → instalments → maturity, now on the storefront too. Gram-based plans are being corrected and are not promoted until they are</div>
+        <div class="road-item"><strong>Gold savings schemes</strong>enrolment → instalments → maturity, now on the website too. Gram-based plans are being corrected and are not promoted until they are</div>
       </div>
       <div class="road-group">
         <p class="road-group-label">Operations</p>
@@ -577,7 +577,7 @@ ${L.section(
       </div>
       <div class="road-group">
         <p class="road-group-label">Ecommerce website</p>
-        <div class="road-item"><strong>Scheme & digital-gold redemption at checkout</strong>storefront enrolment and instalment payments are live; applying a balance at checkout isn’t wired yet</div>
+        <div class="road-item"><strong>Scheme & digital-gold redemption at checkout</strong>website enrolment and instalment payments are live; applying a balance at checkout isn’t wired yet</div>
         <div class="road-item"><strong>Google Shopping sync</strong>not built</div>
         <div class="road-item"><strong>HUID / certificate verification widget</strong>the catalogue carries the data; the widget isn’t built</div>
         <div class="road-item"><strong>Old-gold exchange / buyback calculator online</strong></div>

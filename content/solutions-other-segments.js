@@ -51,7 +51,7 @@ const jewelleryBrands = {
 ${L.hero({
   eyebrow: 'FOR JEWELLERY BRANDS',
   h1: 'One brand voice across every counter and channel.',
-  sub: 'Central catalogue, brand-controlled campaigns and distributor visibility — so the brand stays consistent whether a customer meets it on Instagram, at a partner counter, or on your own storefront. Stock, orders, purchase and books sit behind it on one record.',
+  sub: 'Central catalogue, brand-controlled campaigns and distributor visibility — so the brand stays consistent whether a customer meets it on Instagram, at a partner counter, or on your own website. Stock, orders, purchase and books sit behind it on one record.',
   primary: { href: '#', label: 'Talk shop with us', wa: 'brands' },
   secondary: { href: '/enterprise', label: 'Talk to a specialist' },
 })}
@@ -71,7 +71,7 @@ ${L.ctaBand('Bring your channel map.', 'Show us how your brand sells today — w
 const d2cFaqs = [
   { q: 'Do I have to leave Shopify?', a: 'No — the Shopify connector keeps your store on the same product data, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
   { q: 'Is there a free trial for D2C brands?', a: 'No free trial, but the first month is ₹3,600 instead of ₹18,000. Create a workspace in three steps at <a href="/start">/start</a>, connect Shopify or WooCommerce, and evaluate on your own orders. No demo required.' },
-  { q: 'What happens to my Shopify data if I leave Jwero?', a: 'Nothing happens to Shopify — it stays the store of record for your storefront and is never modified by a disconnect. Jwero holds synced copies of orders and customers plus everything it added (WhatsApp threads, scores, occasions). All of it exports as CSV before or after you leave, and the connector is removed from Shopify in one click.' },
+  { q: 'What happens to my Shopify data if I leave Jwero?', a: 'Nothing happens to Shopify — it stays the store of record for your website and is never modified by a disconnect. Jwero holds synced copies of orders and customers plus everything it added (WhatsApp threads, scores, occasions). All of it exports as CSV before or after you leave, and the connector is removed from Shopify in one click.' },
   { q: 'We already use a lot of ecommerce tools. Won’t this just be one more?', a: 'It replaces the gap between them, not the tools themselves — the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce stack doesn’t do, added on top of what you keep.' },
 ];
 
@@ -85,7 +85,7 @@ const d2cBrands = {
 ${L.hero({
   eyebrow: 'FOR D2C & ECOMMERCE-FIRST BRANDS',
   h1: 'Keep Shopify. Add the channels it can’t do.',
-  sub: 'Ad clicks bring traffic; chat closes it, badly, without memory. Jwero adds WhatsApp and Instagram-native selling, live-rate pricing and a video counter on top of the storefront you already run, with orders, stock, purchase and books on one record behind it.',
+  sub: 'Ad clicks bring traffic; chat closes it, badly, without memory. Jwero adds WhatsApp and Instagram-native selling, live-rate pricing and a video counter on top of the website you already run, with orders, stock, purchase and books on one record behind it.',
   primary: { href: '#', label: 'Tell us about your business', wa: 'd2c' },
   secondary: { href: '/platform/integrations', label: 'See the Shopify connector' },
 })}
@@ -101,7 +101,7 @@ ${L.jtbdBlock([
   { when: 'a customer buys on Shopify after chatting on WhatsApp', want: 'have both touchpoints on one record', so: 'the relationship isn’t split across two disconnected tools' },
 ])}
 ${L.section(
-  `${L.sectionHead('ILLUSTRATIVE IMPACT MODEL', 'What this could be worth on top of your storefront.', 'Illustrative model on a D2C/lab-grown brand doing ₹4cr/year online revenue — not a measured result. Run your own numbers, or ask for a 30-day growth report once you’re live.')}
+  `${L.sectionHead('ILLUSTRATIVE IMPACT MODEL', 'What this could be worth on top of your website.', 'Illustrative model on a D2C/lab-grown brand doing ₹4cr/year online revenue — not a measured result. Run your own numbers, or ask for a 30-day growth report once you’re live.')}
   ${L.stats([
     { n: '~₹16L/yr', l: 'modelled from a +0.4pt conversion lift on a ₹4cr traffic-driven revenue base' },
     { n: '~₹6.4L/yr', l: 'modelled recovered-cart revenue — 8% of an estimated 20% cart-abandonment pool' },
@@ -141,7 +141,7 @@ ${L.section(
     { quote: 'I don’t know what jewellery software is even supposed to do.', title: 'One system, explained plainly', text: 'You start with three things: customers, WhatsApp, catalogue. We explain the rest as you need it.' },
     { quote: 'My whole team is three people wearing every hat.', title: 'An AI workforce that covers the gaps', text: 'The AI workforce handles first-response and follow-up, so a tiny team serves like a bigger one.' },
     { quote: 'I’m worried about the cost before I even have revenue.', title: 'Transparent pricing, no surprises', text: 'See the pricing structure upfront — no hidden costs, monthly billing at entry.' },
-    { quote: 'I don’t even have a website yet, and building one feels like a separate project.', title: 'Your ecommerce website, not a bolt-on', text: 'Jwero can be your website: native cart, wishlist, checkout, blog and reviews — a jewellery-native alternative to a generic ecommerce platform. See <a href="/products/storefront">Ecommerce Website</a>.' },
+    { quote: 'I don’t even have a website yet, and building one feels like a separate project.', title: 'Your ecommerce website, not a bolt-on', text: 'Jwero can be your website: native cart, wishlist, checkout, blog and reviews — a jewellery-native alternative to a generic ecommerce platform. See <a href="/products/ecommerce">Ecommerce Website</a>.' },
   ])}`
 )}
 ${L.section(`${L.sectionHead('QUESTIONS FIRST-TIME FOUNDERS ASK', 'Complexity, budget and where to start — answered.', '')}${L.faqBlock(startupsFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}

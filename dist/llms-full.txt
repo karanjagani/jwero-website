@@ -649,7 +649,7 @@ PLATFORM
 
  SELL
 
- The counter that never closes: WhatsApp, Instagram, Messenger, storefront and video, with AI that answers in seconds and follows up without being told.
+ The counter that never closes: WhatsApp, Instagram, Messenger, website and video, with AI that answers in seconds and follows up without being told.
 
  WhatsApp Commerce Instagram & Facebook AI Sales Agents Catalogue 
 
@@ -1402,7 +1402,7 @@ INTEGRATIONS
 
 ## Razorpay & Cashfree
 
- Payment collection for storefront checkout, verified end to end.
+ Payment collection for website checkout, verified end to end.
 
 ## Meta (WhatsApp, Instagram, Facebook)
 
@@ -1718,7 +1718,7 @@ PUBLIC ROADMAP
 
  Customer segmentation live rule-based audiences, RFM tiers
 
- Gold savings schemes enrolment → instalments → maturity, now on the storefront too. Gram-based plans are being corrected and are not promoted until they are
+ Gold savings schemes enrolment → instalments → maturity, now on the website too. Gram-based plans are being corrected and are not promoted until they are
 
  Operations
 
@@ -1788,7 +1788,7 @@ PUBLIC ROADMAP
 
  Ecommerce website
 
- Scheme & digital-gold redemption at checkout storefront enrolment and instalment payments are live; applying a balance at checkout isn’t wired yet
+ Scheme & digital-gold redemption at checkout website enrolment and instalment payments are live; applying a balance at checkout isn’t wired yet
 
  Google Shopping sync not built
 
@@ -2819,145 +2819,171 @@ A: Not inside Optimize itself, that lives in Ads Manager, a dedicated part of Jw
 
 ---
 
-# Jewellery Ecommerce Website Builder
-URL: https://jwero.ai/products/storefront
+# Jewellery Ecommerce Website Builder with Live Gold Rate
+URL: https://jwero.ai/products/ecommerce
 
-A jewellery-native ecommerce website: live purity-rate pricing that recalculates automatically, one CRM-linked wishlist, cart, checkout, blog and reviews.
+A jewellery ecommerce website that reprices at today’s gold rate, shows metal, making, stones and GST, matches showroom stock, takes payments, try-at-home and appointments, on your own domain.
 
-ECOMMERCE WEBSITE
+JEWELLERY ECOMMERCE WEBSITE
 
-## A jewellery website that already knows how to sell jewellery.
+## A jewellery ecommerce website that prices itself at today’s gold rate.
 
- If you don’t have a website yet, or you’re tired of forcing jewellery into a generic store builder, Jwero includes a native ecommerce website, a live-rate catalogue, cart, wishlist, comparison and checkout, built to sell rings and rates, not t-shirts.
+ Your own online jewellery store on your own domain. Every price follows the rate with metal, making charges, stones and GST shown, stock matches the showroom, and customers pay, book try-at-home or an appointment.
 
- Send me a live-priced storefront link 
+ Send me a live-priced website link 
  Book a demo 
 
- THE FIRST-WEBSITE PROBLEM
+ ONE RATE CHANGE, START TO FINISH
 
-## A brochure site isn’t an ecommerce website.
+## From the gold rate to an order, with no one editing a price.
 
-## No website yet
+ ECOMMERCE WEBSITE · RATE TO ORDER
+ Gold rate Today’s 22K rate moves up ₹60 a gram
+ Repriced Every product on the website updates · no one edits a price
+ Found She finds a necklace on Google · price matches the site
+ Breakup Metal, making charges, stones and GST shown line by line
+ Sign-in WhatsApp OTP · no password
+ Order Paid online, or try-at-home booked
+ Stock Showroom stock drops · the order lands on her record
+ Illustrative.
 
- A first-time founder or single store often has no site at all, just Instagram and word of mouth. That’s enquiries with nowhere to close.
+ Gold rate Today’s 22K rate moves up ₹60 a gram 
+ Repriced Every product on the website updates 
+ Found She finds a necklace on Google 
+ Breakup Metal, making charges, stones and GST shown line by line 
+ Sign-in WhatsApp OTP 
+ Order Paid online, or try-at-home booked 
+ Stock Showroom stock drops 
 
-## Generic builders don’t speak jewellery
+ SIX JOBS, ONE WEBSITE
 
- Prices that don’t move with the metal rate, no wishlist for a big-ticket decision, no way to compare two pieces: the builder was made for t-shirts rather than temple work.
+## What a jewellery ecommerce website has to do.
 
-## A separate system to reconcile
+## 1. Prices at today’s rate
+ Every product repriced from the gold rate, with metal, making charges, stones and GST shown line by line.
+ Pricing engine → 
 
- A store that doesn’t share the customer record means every online order is a manual re-entry into the CRM and billing you run the business on.
+## 2. Stock that matches the showroom
+ The same catalogue and stock as your POS, so the website never sells a piece already sold at the counter.
+ Inventory → 
 
- THE ONLY ONE BUILT FOR THIS
+## 3. Easy to buy
+ Cart, wishlist, compare and checkout with online payment; sign-in by OTP over WhatsApp, SMS or email.
+ WhatsApp → 
 
-## Not a theme on a generic platform. A different foundation.
+## 4. Try-at-home and appointments
+ Booked from the website, on her record, on the list your team already works from.
+ Customer record → 
 
- Every generic ecommerce platform can be dressed up to look like a jewellery store. None of them are built on a jewellery pricing engine, or share a customer record with your counter. That difference shows up the moment the gold rate moves.
+## 5. Found on Google and Instagram
+ Product pages, blog, reviews and landing pages; products synced to Google Shopping and Meta automatically.
+ Catalogue sync → 
 
- Today With Jwero 
+## 6. Your brand, your domain
+ Jewellery-styled themes and page templates, your colours and logo, on your own domain. Gold scheme enrolment online too.
+ Gold schemes → 
 
- What the price actually is See the pricing engine → 
+ BUILT TO PERFORM
 
- Today A fixed price tag, manually edited whenever someone remembers the rate has moved, on Shopify, WooCommerce, or any generic builder.
+## Fast, secure, and ready to grow.
 
- With Jwero A live breakup: metal, purity, weight, rate-per-gram, stone and making-charge lines, that recalculates automatically the moment the rate changes, from the same pricing engine every other Jwero channel uses.
+ What you get without a developer, plugins or a hosting bill.
 
- What a saved wishlist means 
+## Speed
 
- Today A cookie in a browser. Clear it, switch devices, or come back next week on a different phone, and it’s gone.
+ Pages built for phones, where most jewellery shoppers browse, so a slow site does not lose the sale.
 
- With Jwero A CRM contact record, the same one your counter and CRM already use. Save it on the website, and it’s there when she messages you on WhatsApp.
+## Security
 
- What "book a visit" does See Showroom Intelligence → 
+ OTP sign-in with no passwords to leak, and hosting and updates handled by Jwero, with no third-party plugins to patch.
 
- Today A contact form that emails someone, who may or may not follow up before she walks in somewhere else.
+## Scalability
 
- With Jwero A showroom-visit request that creates or updates her CRM contact directly, putting her on the same expected-visits list your floor staff already work from.
+ From one showroom to many branches, a few products to thousands, on the same catalogue and stock.
 
- What the theme is dressed for 
+## Customisability
 
- Today A generic retail theme, restyled with gold colours and a serif logo.
+ Themes, page templates, festive and gift-guide layouts, your colours, logo and domain.
 
- With Jwero Five jewellery-styled themes and eleven page templates built for this trade specifically, including festive, gift-guide and lookbook layouts, rather than a t-shirt store wearing different fonts.
+## SEO
 
-## Browse, decide, buy, on one site.
+ Product pages, a blog, landing pages and reviews to rank on, with products synced to Google Shopping.
 
-## Live-rate price breakup
+## One system
 
- Metal, purity, weight, stone and making-charge shown as a real breakup on the product page instead of a single stale number.
+ Orders, customers, stock and payments on the same record as your counter, WhatsApp and CRM.
 
-## Cart, wishlist & compare
+ THE ARITHMETIC
 
- The three things a jewellery buyer actually needs before a big-ticket decision, beyond just an add-to-cart button.
+## What re-pricing by hand costs you.
 
-## Checkout, quotes & payments
+ Your numbers, not ours.
 
- Public catalogue pages, quote pages and payment pages carry a browsing customer all the way to paid.
+ Products on your website 
+ Rate changes you update for, a month 
+ Minutes to re-price one product 
+ Staff cost an hour, ₹ 
 
-## Showroom-visit booking
+ Hours re-pricing a month 0 
 
- A visit request from the website creates or updates her CRM contact and lands on the same expected-visits list your floor already uses.
+ Cost a month ₹0 
 
-## Blog, reviews & landing pages
+ On Jwero, prices follow the rate on their own. A planning estimate from your own inputs.
 
- Content tools built for jewellery retail, a blog for SEO and story, reviews for trust, landing pages for campaigns.
+ COMPARE
 
-## Your brand, not a template
+## A brochure website, Shopify or WooCommerce, or Jwero.
 
- Five jewellery-styled themes and eleven page templates, so the site looks like your business rather than the software running it.
+ A brochure website Shopify or WooCommerce Jwero 
+ Prices when gold moves Edited by hand Edited by hand or a paid plugin Every product repriced automatically 
+ Price breakup None Custom work Metal, making charges, stones and GST 
+ Stock Not shown Separate from the showroom Same stock as your POS 
+ Sign-in None Password OTP over WhatsApp, SMS or email 
+ Try-at-home and appointments Contact form Apps to add Built in, on her record 
+ Google Shopping and Meta No Feeds to set up Synced automatically 
+ Customer and orders Email inbox A separate system One record with WhatsApp, CRM and billing 
+ Upkeep Your developer Plugins, updates, hosting Run and updated by Jwero 
+
+ GETTING STARTED
+
+## How to build a jewellery ecommerce website.
+
+ Five steps.
+
+ 1 
+
+## Bring in your catalogue
+ Your products, weights, purity, stones and making charges, the same catalogue your counter sells from.
+
+ 2 
+
+## Pick a theme and connect your domain
+ A jewellery-styled theme, your colours and logo, on your own domain.
+
+ 3 
+
+## Set your pricing rules
+ Today’s rate, making charges and GST; every price follows the rate from then on.
+
+ 4 
+
+## Switch on what you sell
+ Online payment, try-at-home, appointments and gold scheme enrolment.
+
+ 5 
+
+## Go live everywhere
+ Products sync to Google Shopping and Meta; orders land on the customer record.
 
  BECAUSE IT'S ONE SYSTEM
 
- An order here writes to the same customer record your WhatsApp replies and billing already update, no export, no re-entry.
- The catalogue and live-rate price breakup on the website are the same catalogue every other channel sells from.
- A wishlist saved on the website is visible the next time she messages on WhatsApp, tied to the same CRM contact rather than a separate login.
+ An order on the website writes to the same customer record your WhatsApp replies and billing already update.
+ The website sells from the same catalogue, stock and rate as the counter.
+ A wishlist saved on the website is there when she messages you on WhatsApp.
 
- WHAT WE DON'T DO YET
+## Take your showroom online.
 
- Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
-
- Certificate/HUID verification shown directly on a product page, today the catalogue carries certificate and HUID data; a customer-facing verification widget on the website itself is not built yet.
- Gold-scheme or digital-gold balance redemption at website checkout, scheme and digital-gold balances live on the customer record and are visible to your team; applying them during an online checkout isn’t wired yet.
- An old-gold exchange or buyback calculator on the website.
- 
- See the full public roadmap → 
-
- ECOMMERCE WEBSITE QUESTIONS
-
-## Shopify, branding, and what this replaces.
-
- Do I need Shopify or WooCommerce to sell online? 
- No, Jwero includes a native ecommerce website that can be your website if you don’t have one yet.
-
- I already have a store. Do I have to switch? 
- No, it’s an option rather than a replacement mandate. If you already run a store, /products/optimize and platform integrations add Jwero on top of it.
-
- What makes this jewellery-native? 
- A live metal/purity/stone price breakup that recalculates on rate change, and a wishlist backed by the same CRM contact record as your counter, well beyond a themed generic store.
-
- Can it look like my brand? 
- Yes, five jewellery-styled themes and eleven page templates brand the site to match your business.
-
- Do customers need a password? 
- No, sign-in is OTP over WhatsApp, SMS or email, tied to her phone number rather than a password.
-
- More questions? See the full FAQ → 
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- This isn’t a demo video, message us here and Jwero’s own inbox answers, live.
-
-## Bring your ecommerce website onto one system.
-
- A live-rate price breakup, cart, wishlist and checkout, as your first website, or alongside the one you already run.
+ Your catalogue, priced at today’s rate, on your own domain.
 
  Chat or call with us 
  Book a demo 
@@ -2966,29 +2992,29 @@ ECOMMERCE WEBSITE
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: Do I need Shopify or WooCommerce to sell online?
-A: No. Jwero includes a native ecommerce website, a live-price catalogue, cart, wishlist, comparison and checkout, that can be your website if you don’t have one yet.
+Q: What is a jewellery ecommerce website?
+A: A website where customers browse, price and buy jewellery online. For a jeweller it has to do more than a normal store: follow the gold rate, show the price breakup, and match the showroom stock. Jwero’s ecommerce website does all three.
 
-Q: I already have a Shopify or WooCommerce store. Do I have to switch?
-A: No. The Ecommerce Website is an option, not a replacement mandate. If you already run a store, the existing platform integrations and /products/optimize add Jwero on top of it. It’s for businesses that don’t have a website yet, or want a jewellery-native alternative.
+Q: Do I need Shopify or WooCommerce to sell jewellery online?
+A: No. Jwero includes a complete ecommerce website with catalogue, cart, wishlist, checkout and payments. If you already run Shopify or WooCommerce, you can keep it and connect it instead.
 
-Q: What actually makes this jewellery-native, not just a themed generic store?
-A: The product page price is a live breakup, metal, purity, weight and rate-per-gram, plus stone and making-charge lines, that recalculates automatically when the metal rate moves, driven by the same repricing engine as the rest of Jwero. A generic platform shows a fixed price until someone manually edits it; this one doesn’t.
+Q: Do prices update when the gold rate changes?
+A: Yes. Every product reprices automatically from today’s rate, with metal, making charges, stones and GST shown line by line.
 
-Q: Is the wishlist just a cookie, or does it follow the customer?
-A: For a signed-in shopper, it’s backed by the same CRM contact record used across your counter and CRM, not a separate guest list tied to a browser. Save it on the website, and it’s there when she messages you on WhatsApp.
+Q: Can I use my own domain?
+A: Yes. A custom domain is included, with your brand, colours and logo on jewellery-styled themes.
 
-Q: Do customers need to create a password to sign in?
-A: No, sign-in is OTP-based over WhatsApp, SMS or email, tied to her phone number rather than a password to remember or a credential to leak. One session carries across the account page, express checkout, wishlist and reviews.
+Q: Can customers book try-at-home or a showroom appointment?
+A: Yes. Both are booked from the website and land on the customer’s record for your team.
 
-Q: Can it look like my brand, not a template?
-A: Yes, five jewellery-styled themes and eleven page templates (including festive, gift-guide and lookbook layouts a generic store builder doesn’t ship with) so the site looks like your business, not repurposed retail software.
+Q: Do customers need a password?
+A: No. They sign in with an OTP over WhatsApp, SMS or email.
 
-Q: Is it just a catalogue, or a full website?
-A: A full site: public catalogue pages, quote pages and payment pages, plus a blog, customer reviews and landing pages for campaigns, content tools built for jewellery retail, not just a product list.
+Q: Will the website help me rank on Google?
+A: It gives you what ranking needs: product pages, a blog, landing pages and customer reviews, and products synced to Google Shopping automatically.
 
-Q: Who is this for?
-A: Startups, first-time founders and single stores without a website today are the clearest fit. It runs on the same customer record as your WhatsApp, CRM and billing, so an order here is never a separate system to reconcile.
+Q: Who looks after hosting, updates and security?
+A: Jwero. There are no plugins to update or servers to manage, and customers sign in without passwords.
 
 ---
 
@@ -5480,13 +5506,13 @@ REPAIRS & AFTER-SALES SERVICE
 
  Old-gold exchange or cash buyback runs a genuine test → value → approve → settle → post lifecycle: it records whether the metal comes in as-is or melted (which determines the correct GST margin-scheme/HSN treatment, 7113 vs 7108), the purity-testing method used (touchstone, XRF or fire assay vs melt assay), and a snapshot of the live rate applied. High-value transactions capture PAN/KYC per Income Tax Rule 114B. It supports a standalone walk-in cash buyback or using old gold as exchange-credit against a new sale, and on completion it posts to a raw-material inventory lot and a finance document automatically.
 
- Honest limitation: this is a staff-operated, in-store flow today. There is no customer-facing online or self-service old-gold valuation form on the storefront, a customer still has to bring the piece in.
+ Honest limitation: this is a staff-operated, in-store flow today. There is no customer-facing online or self-service old-gold valuation form on the website, a customer still has to bring the piece in.
 
  WHAT WE DON'T DO YET
 
  Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
 
- Old-gold exchange/buyback is in-store only, no online self-service valuation form on the storefront yet.
+ Old-gold exchange/buyback is in-store only, no online self-service valuation form on the website yet.
  
  See the full public roadmap → 
 
@@ -5506,7 +5532,7 @@ REPAIRS & AFTER-SALES SERVICE
  Yes, jobs crossing the BIS 2-gram or 50%-of-melt threshold are flagged automatically, and cannot reach "ready for delivery" until addressed.
 
  Can old-gold buyback be done online? 
- Not yet, it is a staff-operated, in-store flow only. There is no customer-facing self-service valuation form on the storefront.
+ Not yet, it is a staff-operated, in-store flow only. There is no customer-facing self-service valuation form on the website.
 
  More questions? See the full FAQ → 
 
@@ -5547,7 +5573,7 @@ Q: Is warranty tracking connected to what was actually sold?
 A: Yes, warranty and AMC entitlements are tied to the original invoice and HUID of the piece, so a claim or a scheduled inspection is linked back to exactly what was sold and when, not a separate promise nobody can verify.
 
 Q: Can I do old-gold exchange or buyback through Jwero?
-A: Yes, as a staff-operated, in-store flow: test, value, approve, settle and post, with purity-testing method, live rate and PAN/KYC captured where required. There is no customer-facing online self-service valuation form on the storefront yet.
+A: Yes, as a staff-operated, in-store flow: test, value, approve, settle and post, with purity-testing method, live rate and PAN/KYC captured where required. There is no customer-facing online self-service valuation form on the website yet.
 
 Q: How do customers know their repair is ready?
 A: Automated notifications go out on WhatsApp, SMS and email for job-ready, overdue and unclaimed-item states, nobody has to remember to call.
@@ -6060,8 +6086,8 @@ JEWELLERY BILLING SOFTWARE · JEWELLERY POS
 
  BECAUSE IT'S ONE SYSTEM
 
- A counter sale, a WhatsApp order and a storefront checkout post through the same invoice and the same ledger.
- The piece scanned at the till is the record the catalogue publishes and the inventory values; sell it here and it disappears from the storefront at once.
+ A counter sale, a WhatsApp order and a website checkout post through the same invoice and the same ledger.
+ The piece scanned at the till is the record the catalogue publishes and the inventory values; sell it here and it disappears from the website at once.
  The bill writes to the customer’s record: what she bought, what she exchanged, her points, and what to remember next time.
 
  WHAT WE DON'T DO YET
@@ -8378,7 +8404,7 @@ INDUSTRY · RETAIL
 
  SELL
 
- The counter that never closes: WhatsApp, Instagram, Messenger, storefront and video, with AI that answers in seconds and follows up without being told.
+ The counter that never closes: WhatsApp, Instagram, Messenger, website and video, with AI that answers in seconds and follows up without being told.
 
  WhatsApp Commerce Instagram & Facebook AI Sales Agents Catalogue 
 
@@ -9525,7 +9551,7 @@ FOR LAB-GROWN DIAMOND
 
 ## Lab-grown moves online-first. Sell it with live pricing on every channel.
 
- Lab-grown buyers research online, compare on price and clarity, and expect a digital-native experience. Educate, convert and retain them where they already are, WhatsApp, Instagram and your storefront, while stock, orders, billing and books update from the same sale.
+ Lab-grown buyers research online, compare on price and clarity, and expect a digital-native experience. Educate, convert and retain them where they already are, WhatsApp, Instagram and your website, while stock, orders, billing and books update from the same sale.
 
  Tell us about your business 
  See WhatsApp Commerce 
@@ -9536,7 +9562,7 @@ FOR LAB-GROWN DIAMOND
 
 ## Online-first selling
 
- WhatsApp and Instagram commerce, plus a storefront connector, meet buyers where they already are.
+ WhatsApp and Instagram commerce, plus a ecommerce connector, meet buyers where they already are.
 
 ## Live-rate pricing
 
@@ -9555,7 +9581,7 @@ FOR LAB-GROWN DIAMOND
 ## What lab-grown brands ask about going online-first.
 
  Is this built for online-first, D2C-style selling? 
- Yes, WhatsApp, Instagram and storefront selling with live-rate pricing are native, and connectors keep an existing Shopify or WooCommerce store in sync.
+ Yes, WhatsApp, Instagram and website selling with live-rate pricing are native, and connectors keep an existing Shopify or WooCommerce store in sync.
 
  Can AI help educate customers who are new to lab-grown? 
  The AI workforce drafts educational, catalogue-backed replies to common questions, approved before they send, consistent answers, every time.
@@ -9588,7 +9614,7 @@ FOR LAB-GROWN DIAMOND
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
 Q: Is this built for online-first, D2C-style selling?
-A: Yes, WhatsApp, Instagram and storefront selling with live-rate pricing are native, and connectors keep an existing Shopify or WooCommerce store in sync.
+A: Yes, WhatsApp, Instagram and website selling with live-rate pricing are native, and connectors keep an existing Shopify or WooCommerce store in sync.
 
 Q: Can AI help educate customers who are new to lab-grown?
 A: The AI workforce drafts educational, catalogue-backed replies to common questions, approved before they send, consistent answers, every time.
@@ -10368,7 +10394,7 @@ FOR JEWELLERY BRANDS
 
 ## One brand voice across every counter and channel.
 
- Central catalogue, brand-controlled campaigns and distributor visibility, so the brand stays consistent whether a customer meets it on Instagram, at a partner counter, or on your own storefront. Stock, orders, purchase and books sit behind it on one record.
+ Central catalogue, brand-controlled campaigns and distributor visibility, so the brand stays consistent whether a customer meets it on Instagram, at a partner counter, or on your own website. Stock, orders, purchase and books sit behind it on one record.
 
  Talk shop with us 
  Talk to a specialist 
@@ -10440,7 +10466,7 @@ FOR D2C & ECOMMERCE-FIRST BRANDS
 
 ## Keep Shopify. Add the channels it can’t do.
 
- Ad clicks bring traffic; chat closes it, badly, without memory. Jwero adds WhatsApp and Instagram-native selling, live-rate pricing and a video counter on top of the storefront you already run, with orders, stock, purchase and books on one record behind it.
+ Ad clicks bring traffic; chat closes it, badly, without memory. Jwero adds WhatsApp and Instagram-native selling, live-rate pricing and a video counter on top of the website you already run, with orders, stock, purchase and books on one record behind it.
 
  Tell us about your business 
  See the Shopify connector 
@@ -10466,7 +10492,7 @@ FOR D2C & ECOMMERCE-FIRST BRANDS
 
  ILLUSTRATIVE IMPACT MODEL
 
-## What this could be worth on top of your storefront.
+## What this could be worth on top of your website.
 
  Illustrative model on a D2C/lab-grown brand doing ₹4cr/year online revenue, not a measured result. Run your own numbers, or ask for a 30-day growth report once you’re live.
 
@@ -10493,7 +10519,7 @@ FOR D2C & ECOMMERCE-FIRST BRANDS
  No free trial, but the first month is ₹3,600 instead of ₹18,000. Create a workspace in three steps at /start , connect Shopify or WooCommerce, and evaluate on your own orders. No demo required.
 
  What happens to my Shopify data if I leave Jwero? 
- Nothing happens to Shopify, it stays the store of record for your storefront and is never modified by a disconnect. Jwero holds synced copies of orders and customers plus everything it added (WhatsApp threads, scores, occasions). All of it exports as CSV before or after you leave, and the connector is removed from Shopify in one click.
+ Nothing happens to Shopify, it stays the store of record for your website and is never modified by a disconnect. Jwero holds synced copies of orders and customers plus everything it added (WhatsApp threads, scores, occasions). All of it exports as CSV before or after you leave, and the connector is removed from Shopify in one click.
 
  We already use a lot of ecommerce tools. Won’t this just be one more? 
  It replaces the gap between them, not the tools themselves, the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce stack doesn’t do, added on top of what you keep.
@@ -10529,7 +10555,7 @@ Q: Is there a free trial for D2C brands?
 A: No free trial, but the first month is ₹3,600 instead of ₹18,000. Create a workspace in three steps at /start, connect Shopify or WooCommerce, and evaluate on your own orders. No demo required.
 
 Q: What happens to my Shopify data if I leave Jwero?
-A: Nothing happens to Shopify, it stays the store of record for your storefront and is never modified by a disconnect. Jwero holds synced copies of orders and customers plus everything it added (WhatsApp threads, scores, occasions). All of it exports as CSV before or after you leave, and the connector is removed from Shopify in one click.
+A: Nothing happens to Shopify, it stays the store of record for your website and is never modified by a disconnect. Jwero holds synced copies of orders and customers plus everything it added (WhatsApp threads, scores, occasions). All of it exports as CSV before or after you leave, and the connector is removed from Shopify in one click.
 
 Q: We already use a lot of ecommerce tools. Won’t this just be one more?
 A: It replaces the gap between them, not the tools themselves, the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce stack doesn’t do, added on top of what you keep.
@@ -11806,7 +11832,7 @@ COMPARE
 
 ## Jwero vs Shopify
 
- The category-leading ecommerce platform, from $39/month for a solo storefront.
+ The category-leading ecommerce platform, from $39/month for a solo website.
 
  Compare → 
 
@@ -11842,13 +11868,13 @@ COMPARE · JWERO VS ORNATE NX
  In short
 
 ## Jwero or Ornate NX: which should a jeweller choose?
- Choose Ornate NX if you need touchscreen counter billing, karigar and artisan contact management, and real-time financial reporting (balance sheets, MIS) refined specifically for Indian jewellery retail over years, Ornate NX is built around exactly this. Choose Jwero if you want the customer, the catalogue and every selling channel (WhatsApp, Instagram, storefront) to share one record, with a governed AI workforce handling follow-up. Most businesses run both: Ornate NX for the counter and ledger, Jwero for the revenue side.
+ Choose Ornate NX if you need touchscreen counter billing, karigar and artisan contact management, and real-time financial reporting (balance sheets, MIS) refined specifically for Indian jewellery retail over years, Ornate NX is built around exactly this. Choose Jwero if you want the customer, the catalogue and every selling channel (WhatsApp, Instagram, website) to share one record, with a governed AI workforce handling follow-up. Most businesses run both: Ornate NX for the counter and ledger, Jwero for the revenue side.
 
  CHOOSE ORNATE NX IF
  you need touchscreen counter billing, karigar and artisan contact management, and real-time financial reporting (balance sheets, MIS) refined specifically for Indian jewellery retail over years, Ornate NX is built around exactly this.
 
  CHOOSE JWERO IF
- you want the customer, the catalogue and every selling channel (WhatsApp, Instagram, storefront) to share one record, with a governed AI workforce handling follow-up. Most businesses run both: Ornate NX for the counter and ledger, Jwero for the revenue side.
+ you want the customer, the catalogue and every selling channel (WhatsApp, Instagram, website) to share one record, with a governed AI workforce handling follow-up. Most businesses run both: Ornate NX for the counter and ledger, Jwero for the revenue side.
 
  THE HONEST MATRIX
 
@@ -11864,7 +11890,7 @@ COMPARE · JWERO VS ORNATE NX
  Karigar/artisan contact management 
  Yes, via job-work module 
  Yes, built into the platform 
- One customer record across WhatsApp, Instagram, storefront 
+ One customer record across WhatsApp, Instagram, website 
  Yes, one record, 198 signal types, 11 explainable scores 
  Not stated publicly · CRM module exists; omnichannel scope not public 
  Governed AI workforce (approvals, caps, kill switch) 
@@ -11909,7 +11935,7 @@ COMPARE · JWERO VS ORNATE NX
 ## Questions about switching from Ornate NX.
 
  Jwero or Ornate NX: which should a jeweller choose? 
- Choose Ornate NX if you need touchscreen counter billing, karigar and artisan contact management, and real-time financial reporting (balance sheets, MIS) refined specifically for Indian jewellery retail over years, Ornate NX is built around exactly this. Choose Jwero if you want the customer, the catalogue and every selling channel (WhatsApp, Instagram, storefront) to share one record, with a governed AI workforce handling follow-up. Most businesses run both: Ornate NX for the counter and ledger, Jwero for the revenue side.
+ Choose Ornate NX if you need touchscreen counter billing, karigar and artisan contact management, and real-time financial reporting (balance sheets, MIS) refined specifically for Indian jewellery retail over years, Ornate NX is built around exactly this. Choose Jwero if you want the customer, the catalogue and every selling channel (WhatsApp, Instagram, website) to share one record, with a governed AI workforce handling follow-up. Most businesses run both: Ornate NX for the counter and ledger, Jwero for the revenue side.
 
  Does Jwero replace Ornate NX? 
  Not necessarily on day one, most businesses keep their billing ERP and add Jwero for the revenue side: customers, channels, schemes, follow-up. See the Migration Centre .
@@ -11943,7 +11969,7 @@ COMPARE · JWERO VS ORNATE NX
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
 Q: Jwero or Ornate NX: which should a jeweller choose?
-A: Choose Ornate NX if you need touchscreen counter billing, karigar and artisan contact management, and real-time financial reporting (balance sheets, MIS) refined specifically for Indian jewellery retail over years, Ornate NX is built around exactly this. Choose Jwero if you want the customer, the catalogue and every selling channel (WhatsApp, Instagram, storefront) to share one record, with a governed AI workforce handling follow-up. Most businesses run both: Ornate NX for the counter and ledger, Jwero for the revenue side.
+A: Choose Ornate NX if you need touchscreen counter billing, karigar and artisan contact management, and real-time financial reporting (balance sheets, MIS) refined specifically for Indian jewellery retail over years, Ornate NX is built around exactly this. Choose Jwero if you want the customer, the catalogue and every selling channel (WhatsApp, Instagram, website) to share one record, with a governed AI workforce handling follow-up. Most businesses run both: Ornate NX for the counter and ledger, Jwero for the revenue side.
 
 Q: Does Jwero replace Ornate NX?
 A: Not necessarily on day one, most businesses keep their billing ERP and add Jwero for the revenue side: customers, channels, schemes, follow-up. See the Migration Centre.
@@ -13182,13 +13208,13 @@ COMPARE · JWERO VS SHOPIFY
  In short
 
 ## Jwero or Shopify: which should a jeweller choose?
- Choose Shopify if you want the deepest ecommerce app ecosystem and storefront flexibility available anywhere, at a transparent, published price ($39–399/month for most jewellery-sized businesses), Shopify genuinely leads here, and we’re not pretending otherwise. Choose Jwero if you want live gold-rate pricing, jewellery-native catalogue fields, and WhatsApp/Instagram-native selling with a shared customer record, on top of the storefront you already have.
+ Choose Shopify if you want the deepest ecommerce app ecosystem and website flexibility available anywhere, at a transparent, published price ($39–399/month for most jewellery-sized businesses), Shopify genuinely leads here, and we’re not pretending otherwise. Choose Jwero if you want live gold-rate pricing, jewellery-native catalogue fields, and WhatsApp/Instagram-native selling with a shared customer record, on top of the website you already have.
 
  CHOOSE SHOPIFY IF
- you want the deepest ecommerce app ecosystem and storefront flexibility available anywhere, at a transparent, published price ($39–399/month for most jewellery-sized businesses), Shopify genuinely leads here, and we’re not pretending otherwise.
+ you want the deepest ecommerce app ecosystem and website flexibility available anywhere, at a transparent, published price ($39–399/month for most jewellery-sized businesses), Shopify genuinely leads here, and we’re not pretending otherwise.
 
  CHOOSE JWERO IF
- you want live gold-rate pricing, jewellery-native catalogue fields, and WhatsApp/Instagram-native selling with a shared customer record, on top of the storefront you already have.
+ you want live gold-rate pricing, jewellery-native catalogue fields, and WhatsApp/Instagram-native selling with a shared customer record, on top of the website you already have.
 
  THE HONEST MATRIX
 
@@ -13198,8 +13224,8 @@ COMPARE · JWERO VS SHOPIFY
 
  Capability Jwero Shopify 
  
- Storefront & app ecosystem 
- Bridges to Shopify rather than replacing the storefront 
+ Website & app ecosystem 
+ Bridges to Shopify rather than replacing the website 
  Deepest in the industry, genuinely ahead 
  Published pricing (entry tier) 
  ₹18,000/month, every module 
@@ -13246,13 +13272,13 @@ COMPARE · JWERO VS SHOPIFY
 ## Questions about switching from Shopify.
 
  Jwero or Shopify: which should a jeweller choose? 
- Choose Shopify if you want the deepest ecommerce app ecosystem and storefront flexibility available anywhere, at a transparent, published price ($39–399/month for most jewellery-sized businesses), Shopify genuinely leads here, and we’re not pretending otherwise. Choose Jwero if you want live gold-rate pricing, jewellery-native catalogue fields, and WhatsApp/Instagram-native selling with a shared customer record, on top of the storefront you already have.
+ Choose Shopify if you want the deepest ecommerce app ecosystem and website flexibility available anywhere, at a transparent, published price ($39–399/month for most jewellery-sized businesses), Shopify genuinely leads here, and we’re not pretending otherwise. Choose Jwero if you want live gold-rate pricing, jewellery-native catalogue fields, and WhatsApp/Instagram-native selling with a shared customer record, on top of the website you already have.
 
  Do I need to leave Shopify? 
  No, the Shopify connector keeps your store running. Jwero adds WhatsApp/Instagram-native selling, live-rate pricing and customer memory on top.
 
  How much does Shopify actually cost for a jewellery store? 
- Basic is $39/month ($29/month if billed annually) for a solo storefront; most growing stores move to Grow at $105/month. Transaction fees, payment processing and apps add to that, see Shopify’s own pricing page for your case.
+ Basic is $39/month ($29/month if billed annually) for a solo website; most growing stores move to Grow at $105/month. Transaction fees, payment processing and apps add to that, see Shopify’s own pricing page for your case.
 
  Can I move my data from Shopify to Jwero? 
  Customers, products and stock are imported for you from exports or spreadsheets, and the history you need is brought across. The Migration Centre lists what moves and how.
@@ -13277,13 +13303,13 @@ COMPARE · JWERO VS SHOPIFY
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
 Q: Jwero or Shopify: which should a jeweller choose?
-A: Choose Shopify if you want the deepest ecommerce app ecosystem and storefront flexibility available anywhere, at a transparent, published price ($39–399/month for most jewellery-sized businesses), Shopify genuinely leads here, and we’re not pretending otherwise. Choose Jwero if you want live gold-rate pricing, jewellery-native catalogue fields, and WhatsApp/Instagram-native selling with a shared customer record, on top of the storefront you already have.
+A: Choose Shopify if you want the deepest ecommerce app ecosystem and website flexibility available anywhere, at a transparent, published price ($39–399/month for most jewellery-sized businesses), Shopify genuinely leads here, and we’re not pretending otherwise. Choose Jwero if you want live gold-rate pricing, jewellery-native catalogue fields, and WhatsApp/Instagram-native selling with a shared customer record, on top of the website you already have.
 
 Q: Do I need to leave Shopify?
 A: No, the Shopify connector keeps your store running. Jwero adds WhatsApp/Instagram-native selling, live-rate pricing and customer memory on top.
 
 Q: How much does Shopify actually cost for a jewellery store?
-A: Basic is $39/month ($29/month if billed annually) for a solo storefront; most growing stores move to Grow at $105/month. Transaction fees, payment processing and apps add to that, see Shopify’s own pricing page for your case.
+A: Basic is $39/month ($29/month if billed annually) for a solo website; most growing stores move to Grow at $105/month. Transaction fees, payment processing and apps add to that, see Shopify’s own pricing page for your case.
 
 Q: Can I move my data from Shopify to Jwero?
 A: Customers, products and stock are imported for you from exports or spreadsheets, and the history you need is brought across. The Migration Centre lists what moves and how.
@@ -14002,7 +14028,7 @@ FAQ
  Yes, appointment-led selling, video-assisted remote consultations, occasion tracking and private catalogue previews suit high-touch, high-ticket retail. See luxury & boutique .
 
  I sell lab-grown diamonds online only, does this fit? 
- Yes, WhatsApp/Instagram commerce and a storefront connector, with education-first AI replies for a segment that researches heavily before buying. See lab-grown diamond .
+ Yes, WhatsApp/Instagram commerce and a ecommerce connector, with education-first AI replies for a segment that researches heavily before buying. See lab-grown diamond .
 
  Can bullion dealers or gold traders use it? 
  Rate-locked deal capture and counterparty ledgers work today. Talk to a specialist so we map the exact fit honestly rather than assume. See bullion & gold traders .
@@ -14367,7 +14393,7 @@ Q: Is Jwero suitable for luxury or boutique brands?
 A: Yes, appointment-led selling, video-assisted remote consultations, occasion tracking and private catalogue previews suit high-touch, high-ticket retail. See luxury & boutique.
 
 Q: I sell lab-grown diamonds online only, does this fit?
-A: Yes, WhatsApp/Instagram commerce and a storefront connector, with education-first AI replies for a segment that researches heavily before buying. See lab-grown diamond.
+A: Yes, WhatsApp/Instagram commerce and a ecommerce connector, with education-first AI replies for a segment that researches heavily before buying. See lab-grown diamond.
 
 Q: Can bullion dealers or gold traders use it?
 A: Rate-locked deal capture and counterparty ledgers work today. Talk to a specialist so we map the exact fit honestly rather than assume. See bullion & gold traders.
@@ -16257,7 +16283,7 @@ GUIDE · DIGITAL CATALOGUE
 
  The bigger shift is that a shared catalogue doesn't have to end in a message back to the shop asking "how do I pay." Catalogue pages can take the actual payment: Razorpay and Cashfree integration lets a customer check out on the same link they were browsing, and that order syncs straight into the order-management system, the same way any other order would. The catalogue isn't a brochure that leads to a sale elsewhere; it can be the point of sale itself.
 
- This is narrower than a full storefront on purpose. A catalogue is one curated link for one customer's conversation. For businesses that want a broader, generic online store, cart, wishlist, coupons, express checkout, that's a separate, fuller capability sitting alongside this, not a replacement for it.
+ This is narrower than a full website on purpose. A catalogue is one curated link for one customer's conversation. For businesses that want a broader, generic online store, cart, wishlist, coupons, express checkout, that's a separate, fuller capability sitting alongside this, not a replacement for it.
 
 ## Who this replaces
 
@@ -16282,7 +16308,7 @@ GUIDE · DIGITAL CATALOGUE
  Yes. With formula pricing, rate × weight + making + stones + wastage, the catalogue resolves the price live, at the moment it’s opened, against the current rate. A link sent this morning shows the correct price this evening too.
 
  Is this the same as a full online store? 
- Not quite. A catalogue is a curated link sent to one customer, closer to a tray shown to them than a public storefront. Jwero also has a fuller D2C storefront with cart, wishlist, coupons and express checkout for businesses that want a generic online store on top of this.
+ Not quite. A catalogue is a curated link sent to one customer, closer to a tray shown to them than a public website. Jwero also has a fuller D2C ecommerce website with cart, wishlist, coupons and express checkout for businesses that want a generic online store on top of this.
 
  More questions? See the full FAQ → 
 
@@ -16315,7 +16341,7 @@ Q: Does the price update automatically when gold rates change?
 A: Yes. With formula pricing, rate × weight + making + stones + wastage, the catalogue resolves the price live, at the moment it’s opened, against the current rate. A link sent this morning shows the correct price this evening too.
 
 Q: Is this the same as a full online store?
-A: Not quite. A catalogue is a curated link sent to one customer, closer to a tray shown to them than a public storefront. Jwero also has a fuller D2C storefront with cart, wishlist, coupons and express checkout for businesses that want a generic online store on top of this.
+A: Not quite. A catalogue is a curated link sent to one customer, closer to a tray shown to them than a public website. Jwero also has a fuller D2C ecommerce website with cart, wishlist, coupons and express checkout for businesses that want a generic online store on top of this.
 
 ---
 
@@ -16951,7 +16977,7 @@ A: By storing a formula instead of a number, rate × weight, plus making charge,
 # How to Start a Jewellery Business Online
 URL: https://jwero.ai/blog/start-jewellery-business-online
 
-A practical starter guide to launching a jewellery business online: registration basics, sourcing, photography, WhatsApp vs a storefront, starting lean.
+A practical starter guide to launching a jewellery business online: registration basics, sourcing, photography, WhatsApp vs a website, starting lean.
 
 GUIDE · STARTING ONLINE
 
@@ -16976,15 +17002,15 @@ GUIDE · STARTING ONLINE
 
  Jewellery photography has its own quiet rules: consistent, even lighting that doesn’t wash out stone colour, a plain or consistent background so a small catalogue doesn’t look mismatched, and multiple angles so a customer can judge proportion, not just sparkle. A phone with a steady tripod and good natural light gets a new business further than expensive equipment used badly. What matters most at this stage is consistency across the catalogue, a customer scrolling through five pieces shot five different ways reads as unprofessional even if each individual photo is fine.
 
-## WhatsApp first, or a full storefront first?
+## WhatsApp first, or a full website first?
 
  This is the real early decision, and there’s an honest tradeoff either way. WhatsApp needs no audience-building of its own, it works with whatever contacts and referrals a founder already has, and conversations there convert well because jewellery is sold on trust and back-and-forth, not a single browse-and-buy click. A full ecommerce website matters more once there’s a catalogue worth browsing and a reason for strangers to land on it, search, ads, social traffic that isn’t already a warm contact.
 
- Most founders are better served starting with WhatsApp, because it’s where the first real sales conversations happen with the least setup, and adding a website once there’s traffic worth sending somewhere, rather than building a storefront nobody visits yet. See the Ecommerce Website for what that looks like when the business is ready for it, alongside WhatsApp and Instagram commerce.
+ Most founders are better served starting with WhatsApp, because it’s where the first real sales conversations happen with the least setup, and adding a website once there’s traffic worth sending somewhere, rather than building a website nobody visits yet. See the Ecommerce Website for what that looks like when the business is ready for it, alongside WhatsApp and Instagram commerce.
 
 ## The honest tradeoff of starting lean
 
- Starting lean, smaller catalogue, made-to-order sourcing, WhatsApp before a full website, genuinely trades some things away: slower fulfilment on pieces not already in hand, a narrower range for a customer to browse, less polish than an established competitor’s storefront. What it buys in return is lower upfront capital, a faster real start, and room to learn what actually sells before committing to a large inventory position. Neither path is universally right; the honest version of this advice is that starting lean is usually the lower-risk choice for a genuinely new business, not the only correct one.
+ Starting lean, smaller catalogue, made-to-order sourcing, WhatsApp before a full website, genuinely trades some things away: slower fulfilment on pieces not already in hand, a narrower range for a customer to browse, less polish than an established competitor’s website. What it buys in return is lower upfront capital, a faster real start, and room to learn what actually sells before committing to a large inventory position. Neither path is universally right; the honest version of this advice is that starting lean is usually the lower-risk choice for a genuinely new business, not the only correct one.
 
 ## What to have in place before the first real sale
 
@@ -19369,7 +19395,7 @@ GUIDE · ONLINE
 
  A fixed price on a gold piece is wrong by the next morning. Online, that means selling below cost on a rising day and losing the sale on a falling one.
 
- See the storefront in Jwero 
+ See the website in Jwero 
 
  Online · 6 min read · By the Jwero editorial team · Published October 2026 
 
@@ -19395,7 +19421,7 @@ GUIDE · ONLINE
 
 ## How Jwero does it
 
- Jwero prices products from rate, purity, weight and making, recalculates on a schedule when rates change, and syncs with Shopify and WooCommerce, mapping metal and stone details into the store. It also runs its own storefront. See storefront and Jwero vs Shopify .
+ Jwero prices products from rate, purity, weight and making, recalculates on a schedule when rates change, and syncs with Shopify and WooCommerce, mapping metal and stone details into the store. It also runs its own website. See website and Jwero vs Shopify .
 
  GUIDE QUESTIONS
 
@@ -19797,7 +19823,7 @@ ROLES
  One campaign, every channel, one customer record.
 
 ## E-commerce / D2C manager
- Shopify for the storefront, Jwero for everything Shopify can’t do.
+ Shopify for the website, Jwero for everything Shopify can’t do.
 
  MANUFACTURING & OPERATIONS
 
@@ -21087,20 +21113,20 @@ A: No, Jwero doesn’t do predictive forecasting today. What it gives you is a c
 # For E-commerce Managers: Shopify Plus What It Lacks
 URL: https://jwero.ai/roles/ecommerce-manager
 
-Shopify for the storefront, Jwero for what Shopify can’t do: synced inventory, live-rate pricing, one customer record across channels.
+Shopify for the website, Jwero for what Shopify can’t do: synced inventory, live-rate pricing, one customer record across channels.
 
 CUSTOMER & GROWTH · E-COMMERCE / D2C MANAGER
 
-## Shopify for the storefront. Jwero for what it can’t do.
+## Shopify for the website. Jwero for what it can’t do.
 
- A gold-rate-priced storefront, WhatsApp orders and Instagram DMs usually run as three disconnected systems today, each with its own idea of what’s in stock. Jwero syncs them into one inventory and one customer record, without asking you to leave Shopify.
+ A gold-rate-priced ecommerce website, WhatsApp orders and Instagram DMs usually run as three disconnected systems today, each with its own idea of what’s in stock. Jwero syncs them into one inventory and one customer record, without asking you to leave Shopify.
 
  Show me my morning in Jwero 
  Send this page to your owner 
 
  A DAY IN THIS ROLE
 
-## What changes when the storefront and the chat share one truth.
+## What changes when the website and the chat share one truth.
 
  Today With Jwero 
 
@@ -21110,11 +21136,11 @@ CUSTOMER & GROWTH · E-COMMERCE / D2C MANAGER
 
  With Jwero The Shopify/WooCommerce/Unicommerce connector syncs stock and orders both ways, so a sale anywhere reflects everywhere.
 
- Gold-rate pricing on the storefront 
+ Gold-rate pricing on the website 
 
  Today Repricing the store for a gold-rate move means manually editing every product listing, and it usually happens late.
 
- With Jwero Catalogue prices follow the live gold rate automatically, something the storefront platform alone doesn’t handle.
+ With Jwero Catalogue prices follow the live gold rate automatically, something the ecommerce platform alone doesn’t handle.
 
  DMs and WhatsApp enquiries 
 
@@ -21134,11 +21160,11 @@ CUSTOMER & GROWTH · E-COMMERCE / D2C MANAGER
 
 ## Omnichannel inventory discipline
 
- Trusting one synced stock number across storefront, WhatsApp and counter, instead of reconciling three separate counts by hand at the end of the day.
+ Trusting one synced stock number across website, WhatsApp and counter, instead of reconciling three separate counts by hand at the end of the day.
 
 ## Managing rate-linked pricing at scale
 
- Understanding how live gold-rate pricing flows into a synced storefront, a skill a generic ecommerce manager never needs, but a jewellery one does.
+ Understanding how live gold-rate pricing flows into a synced website, a skill a generic ecommerce manager never needs, but a jewellery one does.
 
 ## Turning DMs into a managed, memoried channel
 
@@ -21152,7 +21178,7 @@ CUSTOMER & GROWTH · E-COMMERCE / D2C MANAGER
 
 ## AI drafts the replies. You own the channel strategy.
 
- What stays yours: merchandising, storefront design, and channel strategy, Jwero just removes the manual reconciliation between your storefront and your messaging channels. See why this is true for every role at Jwero → 
+ What stays yours: merchandising, website design, and channel strategy, Jwero just removes the manual reconciliation between your website and your messaging channels. See why this is true for every role at Jwero → 
 
  HOW TO CONTRIBUTE MORE
 
@@ -21166,7 +21192,7 @@ CUSTOMER & GROWTH · E-COMMERCE / D2C MANAGER
  2 
 
 ## Let catalogue pricing follow the live rate
- Stop manually repricing after every gold-rate move, let the catalogue’s live pricing carry through to the connected storefront.
+ Stop manually repricing after every gold-rate move, let the catalogue’s live pricing carry through to the connected website.
 
  3 
 
@@ -21183,16 +21209,16 @@ CUSTOMER & GROWTH · E-COMMERCE / D2C MANAGER
 ## Straight answers about this role.
 
  Do I have to leave Shopify or WooCommerce? 
- No, Jwero connects to Shopify, WooCommerce and Unicommerce and syncs stock and orders both ways. It adds channels and live-rate pricing on top of the storefront you already run; it doesn’t replace it.
+ No, Jwero connects to Shopify, WooCommerce and Unicommerce and syncs stock and orders both ways. It adds channels and live-rate pricing on top of the website you already run; it doesn’t replace it.
 
  Does stock sync automatically between my store and Jwero? 
  Yes, the Shopify/WooCommerce/Unicommerce connectors sync inventory and orders both ways, so a sale on either side reflects everywhere without manual reconciliation.
 
- Can my storefront show live gold-rate pricing? 
- Jwero’s catalogue and pricing follow the live metal rate, something a generic ecommerce platform doesn’t do natively. That pricing logic sits on top of your connected storefront.
+ Can my website show live gold-rate pricing? 
+ Jwero’s catalogue and pricing follow the live metal rate, something a generic ecommerce platform doesn’t do natively. That pricing logic sits on top of your connected website.
 
- Will this replace my role managing the storefront? 
- No, Jwero handles the connections, memory and messaging layer around your storefront. Merchandising decisions, storefront design and channel strategy stay with you; AI only drafts customer-facing messages for your approval.
+ Will this replace my role managing the website? 
+ No, Jwero handles the connections, memory and messaging layer around your website. Merchandising decisions, website design and channel strategy stay with you; AI only drafts customer-facing messages for your approval.
 
  198
  kinds of customer signal, scored into 11 live scores
@@ -21217,16 +21243,16 @@ CUSTOMER & GROWTH · E-COMMERCE / D2C MANAGER
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 11 Indian languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
 Q: Do I have to leave Shopify or WooCommerce?
-A: No, Jwero connects to Shopify, WooCommerce and Unicommerce and syncs stock and orders both ways. It adds channels and live-rate pricing on top of the storefront you already run; it doesn’t replace it.
+A: No, Jwero connects to Shopify, WooCommerce and Unicommerce and syncs stock and orders both ways. It adds channels and live-rate pricing on top of the website you already run; it doesn’t replace it.
 
 Q: Does stock sync automatically between my store and Jwero?
 A: Yes, the Shopify/WooCommerce/Unicommerce connectors sync inventory and orders both ways, so a sale on either side reflects everywhere without manual reconciliation.
 
-Q: Can my storefront show live gold-rate pricing?
-A: Jwero’s catalogue and pricing follow the live metal rate, something a generic ecommerce platform doesn’t do natively. That pricing logic sits on top of your connected storefront.
+Q: Can my website show live gold-rate pricing?
+A: Jwero’s catalogue and pricing follow the live metal rate, something a generic ecommerce platform doesn’t do natively. That pricing logic sits on top of your connected website.
 
-Q: Will this replace my role managing the storefront?
-A: No, Jwero handles the connections, memory and messaging layer around your storefront. Merchandising decisions, storefront design and channel strategy stay with you; AI only drafts customer-facing messages for your approval.
+Q: Will this replace my role managing the website?
+A: No, Jwero handles the connections, memory and messaging layer around your website. Merchandising decisions, website design and channel strategy stay with you; AI only drafts customer-facing messages for your approval.
 
 ---
 
@@ -21957,7 +21983,7 @@ FINANCE & OPERATIONS · INVENTORY MANAGER
 
  Staying in sync with online sales 
 
- Today A piece sells on the Shopify storefront but still shows available in the in-store count until someone manually updates it.
+ Today A piece sells on the Shopify website but still shows available in the in-store count until someone manually updates it.
 
  With Jwero Shopify/WooCommerce/Unicommerce connectors sync stock and orders both ways, so an online sale reflects in-store immediately.
 
@@ -22838,7 +22864,7 @@ WHY AN OS
 
 ## OS
 
- One customer record, one catalogue, one inventory truth, one ledger. Every module, WhatsApp, counter, storefront, workshop, schemes, reads and writes the same row.
+ One customer record, one catalogue, one inventory truth, one ledger. Every module, WhatsApp, counter, website, workshop, schemes, reads and writes the same row.
 
  WHAT IT IS NOT
 
@@ -24865,7 +24891,7 @@ JEWELLERY SOFTWARE · BENGALURU
 ## How jewellery is bought, made and sold in Bengaluru.
 
  Bengaluru has one of the most organised jewellery markets in India: large chains on Commercial Street, Jayanagar and Dickenson Road, long-standing family jewellers, and a cluster of online-first jewellery brands.
- Customers here research online, ask on WhatsApp or Instagram, and then walk in. Chains need every branch priced and stocked alike. Online brands need the storefront, the chat and the stock to agree with each other.
+ Customers here research online, ask on WhatsApp or Instagram, and then walk in. Chains need every branch priced and stocked alike. Online brands need the website, the chat and the stock to agree with each other.
 
  “A capable, motivated and eager team has definitely delivered on their promise of speedy deployment. The team’s availability & response is commendable. This platform has immense potential to our trade.” Manjunatha Nayak Gujjadi Swarna Jewellers, Bangalore 
 
@@ -24919,7 +24945,7 @@ JEWELLERY SOFTWARE · BENGALURU
 
 ## Online brands
 
- Keep the storefront, add chat selling and one stock.
+ Keep the website, add chat selling and one stock.
 
  Open → 
 
@@ -24943,7 +24969,7 @@ JEWELLERY SOFTWARE · BENGALURU
  For Bengaluru’s trade, which here means chains, online brands and diamond retail, Jwero runs the counter, stock, customers, karigar accounts and books on one record, priced from the live rate. It is set up in a day over chat and video, with no office visit needed. Run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it.
 
  We already sell on Shopify. Do we have to move? 
- No. Keep the storefront. Orders, stock and customers flow onto one record, and WhatsApp and Instagram selling are added beside it.
+ No. Keep the website. Orders, stock and customers flow onto one record, and WhatsApp and Instagram selling are added beside it.
 
  Do all branches share one customer list? 
  Yes. A customer who buys at one branch is known at every branch, with her purchases, schemes and occasions on one record, so any salesman can serve her.
@@ -24977,7 +25003,7 @@ Q: What is the best jewellery software for jewellers in Bengaluru?
 A: For Bengaluru’s trade, which here means chains, online brands and diamond retail, Jwero runs the counter, stock, customers, karigar accounts and books on one record, priced from the live rate. It is set up in a day over chat and video, with no office visit needed. Run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it.
 
 Q: We already sell on Shopify. Do we have to move?
-A: No. Keep the storefront. Orders, stock and customers flow onto one record, and WhatsApp and Instagram selling are added beside it.
+A: No. Keep the website. Orders, stock and customers flow onto one record, and WhatsApp and Instagram selling are added beside it.
 
 Q: Do all branches share one customer list?
 A: Yes. A customer who buys at one branch is known at every branch, with her purchases, schemes and occasions on one record, so any salesman can serve her.

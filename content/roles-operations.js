@@ -135,7 +135,7 @@ ${L.section(
     },
     {
       lever: 'Staying in sync with online sales',
-      before: 'A piece sells on the Shopify storefront but still shows available in the in-store count until someone manually updates it.',
+      before: 'A piece sells on the Shopify website but still shows available in the in-store count until someone manually updates it.',
       after: 'Shopify/WooCommerce/Unicommerce connectors sync stock and orders both ways, so an online sale reflects in-store immediately.',
     },
   ])}`

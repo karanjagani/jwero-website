@@ -80,7 +80,7 @@ const NAV = [
         ['/whatsapp-broadcast-for-jewellers', 'WhatsApp Marketing', 'Broadcasts, campaigns, triggers'],
         ['/products/instagram-facebook', 'Instagram & Facebook', 'DMs into sales, one inbox'],
         ['/products/ai-sales-agents', 'AI Sales Agents & Voice', 'Replies and follow-up, governed'],
-        ['/products/storefront', 'Ecommerce Website', 'Live-rate jewellery storefront'],
+        ['/products/ecommerce', 'Ecommerce Website', 'Live-rate jewellery online store'],
         ['/products/meetings', 'Video Counter & Appointments', 'Meet from the inbox, self-booking'],
         ['/products/quotations', 'Quotations', 'Numbered, live-rate, accepted online'],
         ['/products/digital-catalogues', 'Digital Catalogues', 'Shareable links, every view tracked'],
@@ -813,7 +813,7 @@ function withManaged(body, page) {
   const TOOL_QUOTE = { 'ads-for-jewellers': 3, 'jewellery-website-analytics': 3, 'instagram-for-jewellers': 3, 'jewellery-appointment-booking-software': 2, 'whatsapp-broadcast-for-jewellers': 2, 'ai-calling-for-jewellers': 2, 'sms-marketing-for-jewellers': 2, 'jewellery-accounting-software': 0, 'jewellery-barcode-tagging-software': 0, 'cloud-jewellery-software': 0, 'jewellery-staff-management-software': 0, 'jewellery-showroom-footfall-counting': 1, 'tools/dead-stock-calculator': 1, 'tools/gold-scheme-calculator': 1, 'tools/gold-loss-calculator': 0, 'tools/whatsapp-revenue-estimator': 2 };
   const CMP_QUOTE = { 'compare/jwero-vs-ornate-nx': 1, 'compare/jwero-vs-synergics': 0, 'compare/jwero-vs-jewelacc': 0, 'compare/jwero-vs-marg': 0, 'compare/jwero-vs-sioniq': 1, 'compare/jwero-vs-wati': 2, 'compare/jwero-vs-interakt': 2, 'compare/jwero-vs-doubletick': 2, 'compare/whatsapp-tools-vs-jewellery-os': 2, 'compare/jwero-vs-shopify': 3, 'compare/jwero-vs-quicksell': 3, 'compare/jwero-vs-zoho-crm': 4, 'compare/jwero-vs-zithara': 4, compare: 1 };
   const GUIDE_QUOTE = { guides: 1, 'guides/jewellery-billing-software': 0, 'guides/jewellery-erp-software': 0, 'guides/jewellery-inventory-software': 0, 'guides/jewellery-manufacturing-software': 1, 'guides/jewellery-crm-software': 4 };
-  const PROD_QUOTE = { whatsapp: 2, 'instagram-facebook': 2, 'ai-sales-agents': 2, storefront: 3, catalog: 3, 'digital-catalogues': 3, marketplaces: 3, erp: 0, inventory: 0, pos: 0, 'billing-finance': 0, 'purchase-vendors': 0, manufacturing: 1, 'multi-store': 4, crm: 4, journeys: 4, loyalty: 4, segmentation: 3, 'gold-schemes': 4 };
+  const PROD_QUOTE = { whatsapp: 2, 'instagram-facebook': 2, 'ai-sales-agents': 2, ecommerce: 3, catalog: 3, 'digital-catalogues': 3, marketplaces: 3, erp: 0, inventory: 0, pos: 0, 'billing-finance': 0, 'purchase-vendors': 0, manufacturing: 1, 'multi-store': 4, crm: 4, journeys: 4, loyalty: 4, segmentation: 3, 'gold-schemes': 4 };
   const k2 = slug.split('/')[1];
   const R = P.ROTATE, qi = slug.startsWith('solutions/') && SOL_QUOTE[k2] !== undefined ? SOL_QUOTE[k2] : slug.startsWith('products/') && PROD_QUOTE[k2] !== undefined ? PROD_QUOTE[k2] : slug.startsWith('roles/') && ROLE_QUOTE[k2] !== undefined ? ROLE_QUOTE[k2] : PLAT_QUOTE[slug] !== undefined ? PLAT_QUOTE[slug] : TOOL_QUOTE[slug] !== undefined ? TOOL_QUOTE[slug] : CMP_QUOTE[slug] !== undefined ? CMP_QUOTE[slug] : GUIDE_QUOTE[slug] !== undefined ? GUIDE_QUOTE[slug] : R[[...slug].reduce((n, c) => n + c.charCodeAt(0), 0) % R.length];
   let block;
@@ -1060,7 +1060,7 @@ const PLATFORM_LINKS = {
   'platform/ai-workforce': [['/products/ai-sales-agents', 'AI sales agents'], ['/products/whatsapp', 'WhatsApp'], ['/products/journeys', 'Customer journeys'], ['/products/campaigns', 'Campaigns']],
   'platform/customer-memory': [['/products/crm', 'CRM'], ['/products/segmentation', 'Segmentation'], ['/products/loyalty', 'Loyalty'], ['/products/journeys', 'Customer journeys']],
   'platform/pricing-engine': [['/products/catalog', 'Catalogue'], ['/products/pos', 'Counter POS'], ['/products/quotations', 'Quotations'], ['/products/digital-catalogues', 'Digital catalogues']],
-  'platform/integrations': [['/products/billing-finance', 'Billing and accounts'], ['/products/marketplaces', 'Marketplaces'], ['/products/storefront', 'Online store'], ['/products/whatsapp', 'WhatsApp']],
+  'platform/integrations': [['/products/billing-finance', 'Billing and accounts'], ['/products/marketplaces', 'Marketplaces'], ['/products/ecommerce', 'Online store'], ['/products/whatsapp', 'WhatsApp']],
   'platform/integrations/tally': [['/products/billing-finance', 'Billing and accounts'], ['/products/erp', 'ERP'], ['/jewellery-accounting-software', 'Accounting'], ['/products/reports', 'Reports']],
   'platform/onboarding': [['/count-your-team', 'Count your team'], ['/pricing', 'Pricing'], ['/products', 'All products'], ['/jewellery-business-as-a-service', 'Let Jwero run it']],
 };
@@ -1165,7 +1165,7 @@ function withInterlinks(body, page) {
   }
   const SOL_TOPICS = { retail: ['Marketing and campaigns', 'Leads and conversion', 'CRM and customers'], online: ['Ecommerce and websites', 'Product data and catalogues', 'Marketing and campaigns'], trade: ['Order management', 'Product data and catalogues', 'Leads and conversion'], making: ['Order management', 'Inventory, POS and ERP', 'Product data and catalogues'] };
   const kind = /d2c|brands|lab-grown|startups/.test(slug) ? 'online' : /wholesale|traders|bullion|b2b|export/.test(slug) ? 'trade' : /manufactur|casting|cad|oem/.test(slug) ? 'making' : 'retail';
-  const PROD_TOPICS = [[/ads|campaign|email|social|instagram|optimize/, ['Marketing and campaigns', 'Ecommerce and websites']], [/whatsapp|ai-sales|meetings|showroom/, ['WhatsApp', 'Leads and conversion']], [/crm|journeys|loyalty|segmentation|gold-schemes|digital-gold|girvi/, ['CRM and customers', 'Leads and conversion']], [/storefront|catalog|marketplaces/, ['Ecommerce and websites', 'Product data and catalogues']], [/erp|inventory|pos|billing|purchase|manufacturing|multi-store|repairs|quotations|reports/, ['Inventory, POS and ERP', 'Order management']], [/hr|training/, ['Retail operations and sales']]];
+  const PROD_TOPICS = [[/ads|campaign|email|social|instagram|optimize/, ['Marketing and campaigns', 'Ecommerce and websites']], [/whatsapp|ai-sales|meetings|showroom/, ['WhatsApp', 'Leads and conversion']], [/crm|journeys|loyalty|segmentation|gold-schemes|digital-gold|girvi/, ['CRM and customers', 'Leads and conversion']], [/ecommerce|catalog|marketplaces/, ['Ecommerce and websites', 'Product data and catalogues']], [/erp|inventory|pos|billing|purchase|manufacturing|multi-store|repairs|quotations|reports/, ['Inventory, POS and ERP', 'Order management']], [/hr|training/, ['Retail operations and sales']]];
   const cityKind = (() => { if (!/^jewellery-software-india\/./.test(slug)) return null; const s = (body.match(/href="\/solutions\/([a-z-]+)"/) || [])[1] || ''; return /d2c|brands|lab-grown|startups/.test(s) ? 'online' : /wholesale|traders|bullion|b2b|export|diamond/.test(s) ? 'trade' : /manufactur|casting|cad|oem/.test(s) ? 'making' : 'retail'; })();
   const ROLE_TOPICS = [[/owner|successor|franchise/, ['Technology and strategy', 'Retail operations and sales']], [/sales-associate|store-manager|crm/, ['Leads and conversion', 'CRM and customers']], [/marketing/, ['Marketing and campaigns', 'WhatsApp']], [/ecommerce/, ['Ecommerce and websites', 'Product data and catalogues']], [/inventory|purchase|cashier|accountant/, ['Inventory, POS and ERP', 'Order management']], [/b2b/, ['Order management', 'Product data and catalogues']], [/production|karigar|cad|quality/, ['Order management', 'Inventory, POS and ERP']]];
   const rtopics = /^roles\/./.test(slug) ? ((ROLE_TOPICS.find(([r]) => r.test(slug)) || [, ['Retail operations and sales']])[1]) : null;
@@ -1192,7 +1192,7 @@ function withInterlinks(body, page) {
     'products/crm': ['birthday-anniversary-marketing-jewellers', 'selling-jewellery-regional-languages'],
     'products/journeys': ['birthday-anniversary-marketing-jewellers', 'ai-calling-jewellers-scheme-reminders'],
     'products/whatsapp': ['selling-jewellery-regional-languages', 'birthday-anniversary-marketing-jewellers'],
-    'products/storefront': ['selling-gold-jewellery-online-live-rate', 'how-to-calculate-gold-jewellery-price'],
+    'products/ecommerce': ['selling-gold-jewellery-online-live-rate', 'how-to-calculate-gold-jewellery-price'],
     'products/catalog': ['selling-gold-jewellery-online-live-rate', 'making-charges-explained'],
     'solutions/single-store': ['how-to-calculate-gold-jewellery-price', 'girvi-gold-loan-business-guide'],
     'solutions/gold-retail': ['how-to-calculate-gold-jewellery-price', 'old-gold-exchange-jewellers'],
@@ -1520,7 +1520,7 @@ function build() {
     fs.writeFileSync(path.join(dir, 'index.html'), noDash(journeyFix(layout(p), p)));
   }
   // Retired addresses: the separate /focus site, /jbaas and the old /jwero-os home.
-  const MOVED = { 'products/digital-gold': '/products/gold-schemes', 'jwero-os': '/', jbaas: '/jewellery-business-as-a-service', focus: '/jewellery-business-as-a-service', 'managed-services': '/jewellery-business-as-a-service', 'focus/managed-services': '/jewellery-business-as-a-service' };
+  const MOVED = { 'products/digital-gold': '/products/gold-schemes', 'products/storefront': '/products/ecommerce', 'jwero-os': '/', jbaas: '/jewellery-business-as-a-service', focus: '/jewellery-business-as-a-service', 'managed-services': '/jewellery-business-as-a-service', 'focus/managed-services': '/jewellery-business-as-a-service' };
   for (const p of pages) if (p.slug !== 'index' && !p.slug.includes('/')) MOVED['focus/' + p.slug] = '/' + p.slug;
   MOVED['focus/jwero-os'] = '/';
   for (const [from, to] of Object.entries(require('./content/legacy-posts.json').redirects)) MOVED[from] = to.charAt(0) === '/' ? to : '/' + to;
@@ -1594,7 +1594,7 @@ Sitemap: ${SITE}/sitemap.xml
 > Jwero is the Autonomous Jewellery OS, run by AI: jewellery software that runs the whole business on one
 > record. Counter billing (POS) at the live gold rate, inventory, purchase and vendors, manufacturing and
 > karigar accounts, accounting, HR and payroll, reports, CRM (198 kinds of customer signal scored into 11
-> explainable scores), gold savings schemes, girvi, digital gold, and WhatsApp, Instagram and storefront
+> explainable scores), gold savings schemes, girvi, digital gold, and WhatsApp, Instagram and ecommerce website
 > selling, with an AI workforce that acts only inside approval queues, daily caps, quiet hours and a
 > five-scope kill switch ("AI that waits for your yes").
 > Price: ₹18,000 a month, every module included. The first month is ₹3,600. Enterprise is custom priced. There is no free trial.
@@ -1696,6 +1696,19 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 ## Instagram and Facebook commerce (facts)
 - Instagram DMs, comments, story replies and mentions, and Facebook Messenger in one team inbox; price comments turned into DMs automatically; AI replies from the customer record with pieces at today's rate, approved by the team.
 - Payment links inside the DM; catalogue synced automatically to Instagram and Facebook shops; chats from click-to-WhatsApp ads in the same inbox; sales traced to posts and ads. Details: ${SITE}/products/instagram-facebook
+
+## Jewellery ecommerce website (facts)
+
+- Page: https://jwero.ai/products/ecommerce (formerly /products/storefront).
+- Jwero's ecommerce website module is a complete online jewellery store: catalogue, cart, wishlist, compare, checkout and online payment.
+- Every product reprices automatically from today's gold rate; the price breakup shows metal, making charges, stones and GST.
+- Stock and catalogue are shared with the Jwero POS, so the website matches the showroom.
+- Customers sign in by OTP over WhatsApp, SMS or email; no password.
+- Try-at-home and showroom appointments are booked from the website onto the customer record.
+- Custom domain included; jewellery-styled themes and page templates.
+- Product pages, blog, landing pages and reviews; products sync automatically to Google Shopping and Meta.
+- Hosting, updates and security handled by Jwero; no third-party plugins.
+- Shopify or WooCommerce stores can stay and be connected instead.
 
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.

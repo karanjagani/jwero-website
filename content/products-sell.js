@@ -406,109 +406,119 @@ ${L.ctaBand('See where your own visitors drop off.', 'One pixel turns on analyti
 `,
 };
 
+// Ecommerce website (was "storefront"), rebuilt 2026-10-07. Confirmed by Jwero:
+// OTP sign-in over WhatsApp, SMS or email; custom domain included; try-at-home
+// and appointment booking; price breakup of metal, making, stones and GST.
+// Mobile apps and named marketplaces not claimed here (unconfirmed for this page).
+const EC_FLOW = [
+  ['Gold rate', 'Today’s 22K rate moves up ₹60 a gram'],
+  ['Repriced', 'Every product on the website updates · no one edits a price'],
+  ['Found', 'She finds a necklace on Google · price matches the site'],
+  ['Breakup', 'Metal, making charges, stones and GST shown line by line'],
+  ['Sign-in', 'WhatsApp OTP · no password'],
+  ['Order', 'Paid online, or try-at-home booked'],
+  ['Stock', 'Showroom stock drops · the order lands on her record'],
+];
+const ecFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">ECOMMERCE WEBSITE · RATE TO ORDER</p>${EC_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${EC_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const EC_CMP = [
+  ['Prices when gold moves', 'Edited by hand', 'Edited by hand or a paid plugin', 'Every product repriced automatically'],
+  ['Price breakup', 'None', 'Custom work', 'Metal, making charges, stones and GST'],
+  ['Stock', 'Not shown', 'Separate from the showroom', 'Same stock as your POS'],
+  ['Sign-in', 'None', 'Password', 'OTP over WhatsApp, SMS or email'],
+  ['Try-at-home and appointments', 'Contact form', 'Apps to add', 'Built in, on her record'],
+  ['Google Shopping and Meta', 'No', 'Feeds to set up', 'Synced automatically'],
+  ['Customer and orders', 'Email inbox', 'A separate system', 'One record with WhatsApp, CRM and billing'],
+  ['Upkeep', 'Your developer', 'Plugins, updates, hosting', 'Run and updated by Jwero'],
+];
+const ecTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>A brochure website</th><th>Shopify or WooCommerce</th><th>Jwero</th></tr></thead><tbody>${EC_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const EC_HOW = [
+  ['Bring in your catalogue', 'Your products, weights, purity, stones and making charges, the same catalogue your counter sells from.'],
+  ['Pick a theme and connect your domain', 'A jewellery-styled theme, your colours and logo, on your own domain.'],
+  ['Set your pricing rules', 'Today’s rate, making charges and GST; every price follows the rate from then on.'],
+  ['Switch on what you sell', 'Online payment, try-at-home, appointments and gold scheme enrolment.'],
+  ['Go live everywhere', 'Products sync to Google Shopping and Meta; orders land on the customer record.'],
+];
+const ecFaqs = [
+  { q: 'What is a jewellery ecommerce website?', a: 'A website where customers browse, price and buy jewellery online. For a jeweller it has to do more than a normal store: follow the gold rate, show the price breakup, and match the showroom stock. Jwero’s ecommerce website does all three.' },
+  { q: 'Do I need Shopify or WooCommerce to sell jewellery online?', a: 'No. Jwero includes a complete ecommerce website with catalogue, cart, wishlist, checkout and payments. If you already run Shopify or WooCommerce, you can keep it and connect it instead.' },
+  { q: 'Do prices update when the gold rate changes?', a: 'Yes. Every product reprices automatically from today’s rate, with metal, making charges, stones and GST shown line by line.' },
+  { q: 'Can I use my own domain?', a: 'Yes. A custom domain is included, with your brand, colours and logo on jewellery-styled themes.' },
+  { q: 'Can customers book try-at-home or a showroom appointment?', a: 'Yes. Both are booked from the website and land on the customer’s record for your team.' },
+  { q: 'Do customers need a password?', a: 'No. They sign in with an OTP over WhatsApp, SMS or email.' },
+  { q: 'Will the website help me rank on Google?', a: 'It gives you what ranking needs: product pages, a blog, landing pages and customer reviews, and products synced to Google Shopping automatically.' },
+  { q: 'Who looks after hosting, updates and security?', a: 'Jwero. There are no plugins to update or servers to manage, and customers sign in without passwords.' },
+];
 const storefront = {
-  slug: 'products/storefront',
-  title: 'Jewellery Ecommerce Website Builder | Jwero',
-  description: 'A jewellery-native ecommerce website: live purity-rate pricing that recalculates automatically, one CRM-linked wishlist, cart, checkout, blog and reviews.',
+  slug: 'products/ecommerce',
+  title: 'Jewellery Ecommerce Website Builder with Live Gold Rate | Jwero',
+  description: 'A jewellery ecommerce website that reprices at today’s gold rate, shows metal, making, stones and GST, matches showroom stock, takes payments, try-at-home and appointments, on your own domain.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Ecommerce Website', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'A native, standalone jewellery ecommerce website with a live purity/metal-rate price breakup that recalculates on rate change, a CRM-linked wishlist, cart, comparison, checkout, blog, reviews and jewellery-styled themes, on the same customer record as every other Jwero module.',
-    url: 'https://jwero.ai/products/storefront', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    name: 'Jwero Ecommerce Website', alternateName: ['Jewellery ecommerce website builder', 'Jewellery website builder', 'Online jewellery store software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'A jewellery ecommerce website: prices that follow today’s gold rate with a metal, making charges, stones and GST breakup; stock shared with the POS; OTP sign-in over WhatsApp, SMS or email; payments, try-at-home and appointment booking; custom domain; Google Shopping and Meta sync; on the same customer record as every Jwero module.',
+    url: 'https://jwero.ai/products/ecommerce', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to build a jewellery ecommerce website', step: EC_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Ecommerce Website'),
-  faqs: [
-    { q: 'Do I need Shopify or WooCommerce to sell online?', a: 'No. Jwero includes a native ecommerce website — a live-price catalogue, cart, wishlist, comparison and checkout — that can be your website if you don’t have one yet.' },
-    { q: 'I already have a Shopify or WooCommerce store. Do I have to switch?', a: 'No. The Ecommerce Website is an option, not a replacement mandate. If you already run a store, the existing platform integrations and /products/optimize add Jwero on top of it. It’s for businesses that don’t have a website yet, or want a jewellery-native alternative.' },
-    { q: 'What actually makes this jewellery-native, not just a themed generic store?', a: 'The product page price is a live breakup — metal, purity, weight and rate-per-gram, plus stone and making-charge lines — that recalculates automatically when the metal rate moves, driven by the same repricing engine as the rest of Jwero. A generic platform shows a fixed price until someone manually edits it; this one doesn’t.' },
-    { q: 'Is the wishlist just a cookie, or does it follow the customer?', a: 'For a signed-in shopper, it’s backed by the same CRM contact record used across your counter and CRM — not a separate guest list tied to a browser. Save it on the website, and it’s there when she messages you on WhatsApp.' },
-    { q: 'Do customers need to create a password to sign in?', a: 'No — sign-in is OTP-based over WhatsApp, SMS or email, tied to her phone number rather than a password to remember or a credential to leak. One session carries across the account page, express checkout, wishlist and reviews.' },
-    { q: 'Can it look like my brand, not a template?', a: 'Yes — five jewellery-styled themes and eleven page templates (including festive, gift-guide and lookbook layouts a generic store builder doesn’t ship with) so the site looks like your business, not repurposed retail software.' },
-    { q: 'Is it just a catalogue, or a full website?', a: 'A full site: public catalogue pages, quote pages and payment pages, plus a blog, customer reviews and landing pages for campaigns — content tools built for jewellery retail, not just a product list.' },
-    { q: 'Who is this for?', a: 'Startups, first-time founders and single stores without a website today are the clearest fit. It runs on the same customer record as your WhatsApp, CRM and billing — so an order here is never a separate system to reconcile.' },
-  ],
+  faqs: ecFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'ECOMMERCE WEBSITE',
-  h1: 'A jewellery website that already knows how to sell jewellery.',
-  sub: 'If you don’t have a website yet, or you’re tired of forcing jewellery into a generic store builder, Jwero includes a native ecommerce website, a live-rate catalogue, cart, wishlist, comparison and checkout — built to sell rings and rates, not t-shirts.',
-  primary: { href: '#', label: 'Send me a live-priced storefront link', wa: 'storefront' },
+  eyebrow: 'JEWELLERY ECOMMERCE WEBSITE',
+  h1: 'A jewellery ecommerce website that prices itself at today’s gold rate.',
+  sub: 'Your own online jewellery store on your own domain. Every price follows the rate with metal, making charges, stones and GST shown, stock matches the showroom, and customers pay, book try-at-home or an appointment.',
+  primary: { href: '#', label: 'Send me a live-priced website link', wa: 'storefront' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
-${L.section(
-  `${L.sectionHead('THE FIRST-WEBSITE PROBLEM', 'A brochure site isn’t an ecommerce website.', '')}
-  ${L.cards([
-    { title: 'No website yet', text: 'A first-time founder or single store often has no site at all — just Instagram and word of mouth. That’s enquiries with nowhere to close.' },
-    { title: 'Generic builders don’t speak jewellery', text: 'Prices that don’t move with the metal rate, no wishlist for a big-ticket decision, no way to compare two pieces: the builder was made for t-shirts rather than temple work.' },
-    { title: 'A separate system to reconcile', text: 'A store that doesn’t share the customer record means every online order is a manual re-entry into the CRM and billing you run the business on.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE RATE CHANGE, START TO FINISH', 'From the gold rate to an order, with no one editing a price.', '')}${ecFlow()}`, { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('THE ONLY ONE BUILT FOR THIS', 'Not a theme on a generic platform. A different foundation.', 'Every generic ecommerce platform can be dressed up to look like a jewellery store. None of them are built on a jewellery pricing engine, or share a customer record with your counter. That difference shows up the moment the gold rate moves.')}
-  ${L.impactGrid([
-    {
-      lever: 'What the price actually is',
-      before: 'A fixed price tag, manually edited whenever someone remembers the rate has moved — on Shopify, WooCommerce, or any generic builder.',
-      after: 'A live breakup: metal, purity, weight, rate-per-gram, stone and making-charge lines — that recalculates automatically the moment the rate changes, from the same pricing engine every other Jwero channel uses.',
-      link: { href: '/platform/pricing-engine', label: 'See the pricing engine' },
-    },
-    {
-      lever: 'What a saved wishlist means',
-      before: 'A cookie in a browser. Clear it, switch devices, or come back next week on a different phone, and it’s gone.',
-      after: 'A CRM contact record — the same one your counter and CRM already use. Save it on the website, and it’s there when she messages you on WhatsApp.',
-    },
-    {
-      lever: 'What "book a visit" does',
-      before: 'A contact form that emails someone, who may or may not follow up before she walks in somewhere else.',
-      after: 'A showroom-visit request that creates or updates her CRM contact directly, putting her on the same expected-visits list your floor staff already work from.',
-      link: { href: '/products/showroom', label: 'See Showroom Intelligence' },
-    },
-    {
-      lever: 'What the theme is dressed for',
-      before: 'A generic retail theme, restyled with gold colours and a serif logo.',
-      after: 'Five jewellery-styled themes and eleven page templates built for this trade specifically, including festive, gift-guide and lookbook layouts, rather than a t-shirt store wearing different fonts.',
-    },
-  ])}`
-, { tone: 'tint' })}
+${L.section(`${L.sectionHead('SIX JOBS, ONE WEBSITE', 'What a jewellery ecommerce website has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. Prices at today’s rate</h3><p>Every product repriced from the gold rate, with metal, making charges, stones and GST shown line by line.</p><a href="/platform/pricing-engine">Pricing engine →</a></article>
+  <article><h3>2. Stock that matches the showroom</h3><p>The same catalogue and stock as your POS, so the website never sells a piece already sold at the counter.</p><a href="/products/inventory">Inventory →</a></article>
+  <article><h3>3. Easy to buy</h3><p>Cart, wishlist, compare and checkout with online payment; sign-in by OTP over WhatsApp, SMS or email.</p><a href="/products/whatsapp">WhatsApp →</a></article>
+  <article><h3>4. Try-at-home and appointments</h3><p>Booked from the website, on her record, on the list your team already works from.</p><a href="/products/crm">Customer record →</a></article>
+  <article><h3>5. Found on Google and Instagram</h3><p>Product pages, blog, reviews and landing pages; products synced to Google Shopping and Meta automatically.</p><a href="/products/catalog">Catalogue sync →</a></article>
+  <article><h3>6. Your brand, your domain</h3><p>Jewellery-styled themes and page templates, your colours and logo, on your own domain. Gold scheme enrolment online too.</p><a href="/products/gold-schemes">Gold schemes →</a></article>
+</div>`)}
 
-${L.section(
-  `${L.sectionHead('', 'Browse, decide, buy — on one site.', '')}
-  ${L.cards([
-    { title: 'Live-rate price breakup', text: 'Metal, purity, weight, stone and making-charge shown as a real breakup on the product page instead of a single stale number.' },
-    { title: 'Cart, wishlist & compare', text: 'The three things a jewellery buyer actually needs before a big-ticket decision, beyond just an add-to-cart button.' },
-    { title: 'Checkout, quotes & payments', text: 'Public catalogue pages, quote pages and payment pages carry a browsing customer all the way to paid.' },
-    { title: 'Showroom-visit booking', text: 'A visit request from the website creates or updates her CRM contact and lands on the same expected-visits list your floor already uses.' },
-    { title: 'Blog, reviews & landing pages', text: 'Content tools built for jewellery retail — a blog for SEO and story, reviews for trust, landing pages for campaigns.' },
-    { title: 'Your brand, not a template', text: 'Five jewellery-styled themes and eleven page templates, so the site looks like your business rather than the software running it.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('BUILT TO PERFORM', 'Fast, secure, and ready to grow.', 'What you get without a developer, plugins or a hosting bill.')}${L.cards([
+  { title: 'Speed', text: 'Pages built for phones, where most jewellery shoppers browse, so a slow site does not lose the sale.' },
+  { title: 'Security', text: 'OTP sign-in with no passwords to leak, and hosting and updates handled by Jwero, with no third-party plugins to patch.' },
+  { title: 'Scalability', text: 'From one showroom to many branches, a few products to thousands, on the same catalogue and stock.' },
+  { title: 'Customisability', text: 'Themes, page templates, festive and gift-guide layouts, your colours, logo and domain.' },
+  { title: 'SEO', text: 'Product pages, a blog, landing pages and reviews to rank on, with products synced to Google Shopping.' },
+  { title: 'One system', text: 'Orders, customers, stock and payments on the same record as your counter, WhatsApp and CRM.' },
+])}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What re-pricing by hand costs you.', 'Your numbers, not ours.')}<div class="callc" data-ecc>
+  <div class="callc-in">
+    <label>Products on your website<input type="number" inputmode="numeric" data-ec="n" value="500" min="0"></label>
+    <label>Rate changes you update for, a month<input type="number" inputmode="numeric" data-ec="ch" value="20" min="0"></label>
+    <label>Minutes to re-price one product<input type="number" inputmode="decimal" data-ec="min" value="1" min="0" step="0.5"></label>
+    <label>Staff cost an hour, ₹<input type="number" inputmode="numeric" data-ec="cost" value="200" min="0" step="50"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Hours re-pricing a month</span><b data-ec-o="hrs">0</b></p>
+    <p class="callc-save"><span>Cost a month</span><b data-ec-o="cost">₹0</b></p>
+    <p class="cta-note">On Jwero, prices follow the rate on their own. A planning estimate from your own inputs.</p>
+  </div>
+</div>`)}
+
+${L.section(`${L.sectionHead('COMPARE', 'A brochure website, Shopify or WooCommerce, or Jwero.', '')}${ecTable()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to build a jewellery ecommerce website.', 'Five steps.')}${L.steps(EC_HOW.map(([title, text]) => ({ title, text })))}`)}
 
 ${L.oneSystemBlock([
-  'An order here writes to the same customer record your WhatsApp replies and billing already update — no export, no re-entry.',
-  'The catalogue and live-rate price breakup on the website are the same catalogue every other channel sells from.',
-  'A wishlist saved on the website is visible the next time she messages on WhatsApp, tied to the same CRM contact rather than a separate login.',
+  'An order on the website writes to the same customer record your WhatsApp replies and billing already update.',
+  'The website sells from the same catalogue, stock and rate as the counter.',
+  'A wishlist saved on the website is there when she messages you on WhatsApp.',
 ])}
 
-${L.honestGapsBlock([
-  'Certificate/HUID verification shown directly on a product page — today the catalogue carries certificate and HUID data; a customer-facing verification widget on the website itself is not built yet.',
-  'Gold-scheme or digital-gold balance redemption at website checkout — scheme and digital-gold balances live on the customer record and are visible to your team; applying them during an online checkout isn’t wired yet.',
-  'An old-gold exchange or buyback calculator on the website.',
-])}
-
-${L.section(`${L.sectionHead('ECOMMERCE WEBSITE QUESTIONS', 'Shopify, branding, and what this replaces.', '')}${L.faqBlock([
-  { q: 'Do I need Shopify or WooCommerce to sell online?', a: 'No — Jwero includes a native ecommerce website that can be your website if you don’t have one yet.' },
-  { q: 'I already have a store. Do I have to switch?', a: 'No, it’s an option rather than a replacement mandate. If you already run a store, /products/optimize and platform integrations add Jwero on top of it.' },
-  { q: 'What makes this jewellery-native?', a: 'A live metal/purity/stone price breakup that recalculates on rate change, and a wishlist backed by the same CRM contact record as your counter, well beyond a themed generic store.' },
-  { q: 'Can it look like my brand?', a: 'Yes — five jewellery-styled themes and eleven page templates brand the site to match your business.' },
-  { q: 'Do customers need a password?', a: 'No — sign-in is OTP over WhatsApp, SMS or email, tied to her phone number rather than a password.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="storefront">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
-
-${L.ctaBand('Bring your ecommerce website onto one system.', 'A live-rate price breakup, cart, wishlist and checkout — as your first website, or alongside the one you already run.', 'storefront')}
+${L.ctaBand('Take your showroom online.', 'Your catalogue, priced at today’s rate, on your own domain.', 'storefront')}
 `,
 };
 

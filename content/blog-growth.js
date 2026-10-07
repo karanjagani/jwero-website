@@ -200,7 +200,7 @@ const onlineRate = post({
   cluster: 'Online',
   mins: 6,
   sub: 'A fixed price on a gold piece is wrong by the next morning. Online, that means selling below cost on a rising day and losing the sale on a falling one.',
-  product: ['/products/storefront', 'See the storefront in Jwero'],
+  product: ['/products/ecommerce', 'See the website in Jwero'],
   wa: 'blog-onlinerate',
   close: ['The same price online and at the counter.', 'Jwero prices every piece from today’s rate and keeps your store in step when it moves.'],
   faqs: [
@@ -225,7 +225,7 @@ const onlineRate = post({
   <p>Weight, purity, hallmark, stone details and a price breakdown. Online buyers cannot hold the piece; detail is what builds trust.</p>
 
   <h2>How Jwero does it</h2>
-  <p>Jwero prices products from rate, purity, weight and making, recalculates on a schedule when rates change, and syncs with Shopify and WooCommerce, mapping metal and stone details into the store. It also runs its own storefront. See <a href="/products/storefront">storefront</a> and <a href="/compare/jwero-vs-shopify">Jwero vs Shopify</a>.</p>`,
+  <p>Jwero prices products from rate, purity, weight and making, recalculates on a schedule when rates change, and syncs with Shopify and WooCommerce, mapping metal and stone details into the store. It also runs its own website. See <a href="/products/ecommerce">website</a> and <a href="/compare/jwero-vs-shopify">Jwero vs Shopify</a>.</p>`,
 });
 
 const incentives = post({

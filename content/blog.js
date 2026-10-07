@@ -536,7 +536,7 @@ ${L.ctaBand('Turn audit day into a quick lookup.', 'Bring your current hallmarki
 const catalogGuideFaqs = [
   { q: 'Can a customer actually pay through a shared catalogue?', a: 'Yes. Catalogue pages support real checkout — Razorpay and Cashfree integration take the payment directly on the page, and the resulting order syncs into the order-management system rather than landing as a message someone has to key in by hand.' },
   { q: 'Does the price update automatically when gold rates change?', a: 'Yes. With formula pricing — rate × weight + making + stones + wastage — the catalogue resolves the price live, at the moment it’s opened, against the current rate. A link sent this morning shows the correct price this evening too.' },
-  { q: 'Is this the same as a full online store?', a: 'Not quite. A catalogue is a curated link sent to one customer — closer to a tray shown to them than a public storefront. Jwero also has a fuller D2C storefront with cart, wishlist, coupons and express checkout for businesses that want a generic online store on top of this.' },
+  { q: 'Is this the same as a full online store?', a: 'Not quite. A catalogue is a curated link sent to one customer — closer to a tray shown to them than a public website. Jwero also has a fuller D2C ecommerce website with cart, wishlist, coupons and express checkout for businesses that want a generic online store on top of this.' },
 ];
 
 const catalogGuide = {
@@ -574,7 +574,7 @@ ${L.section(
 
   <h2>When a catalogue becomes a sale, not just a look</h2>
   <p>The bigger shift is that a shared catalogue doesn't have to end in a message back to the shop asking "how do I pay." Catalogue pages can take the actual payment: Razorpay and Cashfree integration lets a customer check out on the same link they were browsing, and that order syncs straight into the order-management system, the same way any other order would. The catalogue isn't a brochure that leads to a sale elsewhere; it can be the point of sale itself.</p>
-  <p>This is narrower than a full storefront on purpose. A catalogue is one curated link for one customer's conversation. For businesses that want a broader, generic online store — cart, wishlist, coupons, express checkout — that's a separate, fuller capability sitting alongside this, not a replacement for it.</p>
+  <p>This is narrower than a full website on purpose. A catalogue is one curated link for one customer's conversation. For businesses that want a broader, generic online store — cart, wishlist, coupons, express checkout — that's a separate, fuller capability sitting alongside this, not a replacement for it.</p>
 
   <h2>Who this replaces</h2>
   <p>In practice, a live catalogue link replaces three habits: the screenshot of a price list forwarded from an old chat, the printed lookbook that's out of date the season it's handed out, and the static PDF that has to be remade every time rates move or stock changes. None of those were ever wrong on purpose — they were just built for a world where the price didn't need to change between the moment something was sent and the moment it was opened.</p>
@@ -996,9 +996,9 @@ const startOnlineGuideFaqs = [
 const startOnlineGuide = {
   slug: 'blog/start-jewellery-business-online',
   title: 'How to Start a Jewellery Business Online | Jwero',
-  description: 'A practical starter guide to launching a jewellery business online: registration basics, sourcing, photography, WhatsApp vs a storefront, starting lean.',
+  description: 'A practical starter guide to launching a jewellery business online: registration basics, sourcing, photography, WhatsApp vs a website, starting lean.',
   breadcrumbs: BC('Starting a Jewellery Business Online'),
-  schema: postSchema('How to Start a Jewellery Business Online', 'A practical guide for first-time founders starting a jewellery business online — registration, sourcing, photography, and the WhatsApp-vs-storefront tradeoff.'),
+  schema: postSchema('How to Start a Jewellery Business Online', 'A practical guide for first-time founders starting a jewellery business online — registration, sourcing, photography, and the WhatsApp-vs-website tradeoff.'),
   faqs: startOnlineGuideFaqs,
   body: `
 ${L.hero({
@@ -1021,12 +1021,12 @@ ${L.section(
   <h2>Photography that actually sells jewellery</h2>
   <p>Jewellery photography has its own quiet rules: consistent, even lighting that doesn’t wash out stone colour, a plain or consistent background so a small catalogue doesn’t look mismatched, and multiple angles so a customer can judge proportion, not just sparkle. A phone with a steady tripod and good natural light gets a new business further than expensive equipment used badly. What matters most at this stage is consistency across the catalogue — a customer scrolling through five pieces shot five different ways reads as unprofessional even if each individual photo is fine.</p>
 
-  <h2>WhatsApp first, or a full storefront first?</h2>
+  <h2>WhatsApp first, or a full website first?</h2>
   <p>This is the real early decision, and there’s an honest tradeoff either way. WhatsApp needs no audience-building of its own — it works with whatever contacts and referrals a founder already has, and conversations there convert well because jewellery is sold on trust and back-and-forth, not a single browse-and-buy click. A full ecommerce website matters more once there’s a catalogue worth browsing and a reason for strangers to land on it — search, ads, social traffic that isn’t already a warm contact.</p>
-  <p>Most founders are better served starting with WhatsApp, because it’s where the first real sales conversations happen with the least setup — and adding a website once there’s traffic worth sending somewhere, rather than building a storefront nobody visits yet. See <a href="/products/storefront">the Ecommerce Website</a> for what that looks like when the business is ready for it, alongside WhatsApp and Instagram commerce.</p>
+  <p>Most founders are better served starting with WhatsApp, because it’s where the first real sales conversations happen with the least setup — and adding a website once there’s traffic worth sending somewhere, rather than building a website nobody visits yet. See <a href="/products/ecommerce">the Ecommerce Website</a> for what that looks like when the business is ready for it, alongside WhatsApp and Instagram commerce.</p>
 
   <h2>The honest tradeoff of starting lean</h2>
-  <p>Starting lean — smaller catalogue, made-to-order sourcing, WhatsApp before a full website — genuinely trades some things away: slower fulfilment on pieces not already in hand, a narrower range for a customer to browse, less polish than an established competitor’s storefront. What it buys in return is lower upfront capital, a faster real start, and room to learn what actually sells before committing to a large inventory position. Neither path is universally right; the honest version of this advice is that starting lean is usually the lower-risk choice for a genuinely new business, not the only correct one.</p>
+  <p>Starting lean — smaller catalogue, made-to-order sourcing, WhatsApp before a full website — genuinely trades some things away: slower fulfilment on pieces not already in hand, a narrower range for a customer to browse, less polish than an established competitor’s website. What it buys in return is lower upfront capital, a faster real start, and room to learn what actually sells before committing to a large inventory position. Neither path is universally right; the honest version of this advice is that starting lean is usually the lower-risk choice for a genuinely new business, not the only correct one.</p>
 
   <h2>What to have in place before the first real sale</h2>
   <p>In rough order: the registration conversation started with a CA, a small but consistently photographed catalogue, a WhatsApp number set up properly (official API, not a personal number doing double duty), and a clear sense of sourcing lead times so a customer’s expectations match reality. Everything else — a full website, a scheme program, multiple channels — can be added once the first version is actually working.</p>

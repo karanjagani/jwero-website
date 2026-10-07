@@ -16,7 +16,7 @@ const MODULES = [
   ['CRM, pipeline & showroom', '/products/crm'], ['Omnichannel inbox', '/products/whatsapp'], ['Marketing, campaigns & loyalty', '/products/campaigns'],
   ['Social & ads', '/products/ads-manager'], ['Digital gold & gold schemes', '/products/gold-schemes'], ['Jwero Optimize', '/products/optimize'],
   ['Catalogues + product engine', '/products/catalog'], ['Inventory, POS & quotations', '/products/pos'], ['Manufacturing, materials & workshop', '/products/manufacturing'],
-  ['Finance & accounting', '/products/billing-finance'], ['Online store & visual selling', '/products/storefront'], ['Girvi, HR & payroll', '/products/hr-payroll'],
+  ['Finance & accounting', '/products/billing-finance'], ['Online store & visual selling', '/products/ecommerce'], ['Girvi, HR & payroll', '/products/hr-payroll'],
 ];
 const INCLUDED = [
   ['1', 'location'], ['1', 'brand'], ['25,000', 'contacts'], ['25,000', 'products'], ['2', 'POS registers'], ['2', 'connected integrations'], ['10 GB', 'storage'], ['3 years', 'of audit & analytics history'],

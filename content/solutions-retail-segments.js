@@ -198,7 +198,7 @@ ${L.ctaBand('See volume selling, simplified.', 'Bring your SKU count to a demo �
 };
 
 const labGrownFaqs = [
-  { q: 'Is this built for online-first, D2C-style selling?', a: 'Yes — WhatsApp, Instagram and storefront selling with live-rate pricing are native, and connectors keep an existing Shopify or WooCommerce store in sync.' },
+  { q: 'Is this built for online-first, D2C-style selling?', a: 'Yes — WhatsApp, Instagram and website selling with live-rate pricing are native, and connectors keep an existing Shopify or WooCommerce store in sync.' },
   { q: 'Can AI help educate customers who are new to lab-grown?', a: 'The AI workforce drafts educational, catalogue-backed replies to common questions, approved before they send — consistent answers, every time.' },
   { q: 'We already run Shopify ads and a store. Why add this?', a: 'Keep Shopify — the connector keeps your store on the same product data. Jwero adds the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce platform doesn’t do, on top of what you already have.' },
 ];
@@ -213,14 +213,14 @@ const labGrown = {
 ${L.hero({
   eyebrow: 'FOR LAB-GROWN DIAMOND',
   h1: 'Lab-grown moves online-first. Sell it with live pricing on every channel.',
-  sub: 'Lab-grown buyers research online, compare on price and clarity, and expect a digital-native experience. Educate, convert and retain them where they already are — WhatsApp, Instagram and your storefront — while stock, orders, billing and books update from the same sale.',
+  sub: 'Lab-grown buyers research online, compare on price and clarity, and expect a digital-native experience. Educate, convert and retain them where they already are — WhatsApp, Instagram and your website — while stock, orders, billing and books update from the same sale.',
   primary: { href: '#', label: 'Tell us about your business', wa: 'labgrown' },
   secondary: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' },
 })}
 ${L.section(
   `${L.cards([
     { title: 'Education at scale', text: 'Consistent, catalogue-backed answers to lab-grown questions, drafted by the AI workforce and approved by your team.' },
-    { title: 'Online-first selling', text: 'WhatsApp and Instagram commerce, plus a storefront connector — meet buyers where they already are.' },
+    { title: 'Online-first selling', text: 'WhatsApp and Instagram commerce, plus a ecommerce connector — meet buyers where they already are.' },
     { title: 'Live-rate pricing', text: 'Lab-grown pricing that reflects current rates, not a stale price list.' },
     { title: 'Retention beyond the first order', text: 'One customer record turns a single online sale into a remembered relationship.' },
   ])}`

@@ -47,7 +47,7 @@ ${L.section(
   <div class="router-grid" id="growth">
     <a class="router-card" href="/roles/crm-executive"><h3>CRM / telecalling executive</h3><p>Follow-ups that draft themselves, waiting on your yes.</p></a>
     <a class="router-card" href="/roles/marketing-manager"><h3>Marketing manager</h3><p>One campaign, every channel, one customer record.</p></a>
-    <a class="router-card" href="/roles/ecommerce-manager"><h3>E-commerce / D2C manager</h3><p>Shopify for the storefront, Jwero for everything Shopify can’t do.</p></a>
+    <a class="router-card" href="/roles/ecommerce-manager"><h3>E-commerce / D2C manager</h3><p>Shopify for the website, Jwero for everything Shopify can’t do.</p></a>
   </div>`
 )}
 

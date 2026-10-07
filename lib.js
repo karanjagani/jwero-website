@@ -74,7 +74,7 @@ const ICON_GLYPHS = {
 // Cards that point at a product page pick up that product's icon.
 const LINK_ICONS = {
   '/products/whatsapp': 'chat', '/products/instagram-facebook': 'camera', '/products/ai-sales-agents': 'bot',
-  '/products/storefront': 'store', '/products/ads-manager': 'megaphone', '/products/social-media': 'share',
+  '/products/ecommerce': 'store', '/products/ads-manager': 'megaphone', '/products/social-media': 'share',
   '/products/optimize': 'activity', '/products/crm': 'users', '/products/showroom': 'eye',
   '/products/catalog': 'book', '/products/inventory': 'box', '/products/billing-finance': 'receipt',
   '/products/erp': 'flow', '/products/multi-store': 'branches', '/products/hr-payroll': 'badge',
@@ -577,7 +577,7 @@ function agentLoop() {
     ['02', 'Decides', 'Who to answer first, what to offer, what it is worth — against her whole history.'],
     ['03', 'Drafts', 'The reply, the price, the follow-up, the campaign. Written and ready.'],
     ['04', 'Runs or asks', 'Sends on its own, or waits for your nod. You choose, agent by agent.'],
-    ['05', 'Executes', 'WhatsApp, Instagram, storefront, phone. In seconds, not mornings.'],
+    ['05', 'Executes', 'WhatsApp, Instagram, website, phone. In seconds, not mornings.'],
     ['06', 'Learns', 'What worked goes back on her record. The next decision starts better.'],
   ];
   return `<div class="loop">${steps
@@ -610,7 +610,7 @@ const PILLARS = [
     proof: 'Every visit, message and instalment scored on one card — 11 live scores decide who to reach and when.',
   },
   {
-    key: 'sell', title: 'SELL', promise: 'The counter that never closes: WhatsApp, Instagram, Messenger, storefront and video — with AI that answers in seconds and follows up without being told.',
+    key: 'sell', title: 'SELL', promise: 'The counter that never closes: WhatsApp, Instagram, Messenger, website and video — with AI that answers in seconds and follows up without being told.',
     chips: [['WhatsApp Commerce', '/products/whatsapp'], ['Instagram & Facebook', '/products/instagram-facebook'], ['AI Sales Agents', '/products/ai-sales-agents'], ['Catalogue', '/products/catalog']],
     proof: 'WhatsApp Business API + Meta channels; 240+ governed AI actions; AI chat in 14 languages; AI calls in 11.',
   },
@@ -1396,7 +1396,7 @@ const PERSONAS = [
   { key: 'chain', chat: 'chain', label: 'Multi-store chain', slug: 'solutions/multi-store-chains', products: ['/products/multi-store', '/products/pos', '/products/inventory', '/products/crm', '/products/campaigns'] },
   { key: 'maker', chat: 'workshop', label: 'Manufacturer', slug: 'solutions/manufacturers', products: ['/products/manufacturing', '/products/purchase-vendors', '/products/inventory', '/products/erp', '/products/hr-payroll'] },
   { key: 'b2b', chat: 'trade business', label: 'Wholesaler / B2B', slug: 'solutions/b2b-jewellery', products: ['/products/catalog', '/products/erp', '/products/whatsapp', '/products/crm', '/products/purchase-vendors'] },
-  { key: 'd2c', chat: 'brand', label: 'D2C brand', slug: 'solutions/d2c-brands', products: ['/products/storefront', '/products/instagram-facebook', '/products/ads-manager', '/products/optimize', '/products/journeys'] },
+  { key: 'd2c', chat: 'brand', label: 'D2C brand', slug: 'solutions/d2c-brands', products: ['/products/ecommerce', '/products/instagram-facebook', '/products/ads-manager', '/products/optimize', '/products/journeys'] },
   { key: 'franchise', chat: 'network', label: 'Franchise network', slug: 'solutions/franchise-networks', products: ['/products/multi-store', '/products/campaigns', '/products/loyalty', '/products/crm', '/products/billing-finance'] },
 ];
 function personaSlot() { return '<!--persona-switch-->'; }

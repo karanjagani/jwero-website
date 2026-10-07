@@ -9,7 +9,7 @@ const NAMES = {
   '/products/crm': 'Jewellery CRM', '/products/catalog': 'Catalogue (PIM)', '/products/inventory': 'Inventory', '/products/pos': 'Counter POS',
   '/products/billing-finance': 'Billing & Finance', '/products/erp': 'ERP', '/products/gold-schemes': 'Gold Savings Schemes', '/products/digital-gold': 'Digital Gold',
   '/products/girvi': 'Girvi / Gold Loans', '/products/multi-store': 'Multi-store', '/products/showroom': 'Showroom & Floor', '/products/loyalty': 'Loyalty & Referrals',
-  '/products/hr-payroll': 'HR & Payroll', '/products/repairs-service': 'Repairs & Service', '/products/purchase-vendors': 'Purchase & Vendors', '/products/storefront': 'Storefront',
+  '/products/hr-payroll': 'HR & Payroll', '/products/repairs-service': 'Repairs & Service', '/products/purchase-vendors': 'Purchase & Vendors', '/products/ecommerce': 'Ecommerce Website',
   '/products/journeys': 'Journeys', '/products/campaigns': 'Campaigns & Broadcasts', '/products/segmentation': 'Segmentation', '/products/ads-manager': 'Ads Manager',
   '/products/social-media': 'Social Media', '/products/manufacturing': 'Manufacturing & Workshop', '/products/meetings': 'Video Counter & Meetings', '/products/optimize': 'Optimize',
   '/products/email': 'Business Email', '/products/marketplaces': 'Marketplaces', '/products/quotations': 'Quotations', '/products/digital-catalogues': 'Digital Catalogues', '/products/reports': 'Reports & Dashboards', '/products/training-lms': 'Training & LMS',
@@ -71,11 +71,11 @@ const PLAYBOOKS = {
     day: [
       ['10:00', 'Price list update', 'A new per-carat list arrives; the website and WhatsApp catalogue lag for days.', 'A rule reprices every stone and every channel at once.'],
       ['11:45', 'An online buyer asks “is it certified?”', 'A screenshot of a certificate, if someone finds it.', 'Certificate-first stone record, lab and report number in the reply.'],
-      ['14:00', 'A D2C order from the storefront', 'Copied into a spreadsheet, then into billing.', 'Order, payment and invoice on one record, stock deducted at once.'],
+      ['14:00', 'A D2C order from the website', 'Copied into a spreadsheet, then into billing.', 'Order, payment and invoice on one record, stock deducted at once.'],
       ['16:30', 'A comparison against mined', 'Explained differently by every salesperson.', 'A consistent, approved comparison share with live prices for both.'],
       ['19:00', 'Abandoned cart', 'Nobody knows.', 'Cart abandonment journey drafts a recovery message; it waits for your tap.'],
     ],
-    modules: [['/platform/pricing-engine', 'Per-carat rules reprice every channel together.'], ['/products/storefront', 'Your own D2C store on the same catalogue and stock.'], ['/products/catalog', 'Certificate-first records for every stone.'], ['/products/journeys', 'Cart abandonment and quote follow-up recipes, approval-first.'], ['/products/ads-manager', 'Ads on catalogue winners, budget alerts included.'], ['/products/instagram-facebook', 'DMs and comments from one inbox.']],
+    modules: [['/platform/pricing-engine', 'Per-carat rules reprice every channel together.'], ['/products/ecommerce', 'Your own D2C store on the same catalogue and stock.'], ['/products/catalog', 'Certificate-first records for every stone.'], ['/products/journeys', 'Cart abandonment and quote follow-up recipes, approval-first.'], ['/products/ads-manager', 'Ads on catalogue winners, budget alerts included.'], ['/products/instagram-facebook', 'DMs and comments from one inbox.']],
     fit: ['Price lists change faster than the website does', 'Certificates are shared as screenshots', 'Online orders are re-typed into billing', 'Every salesperson explains lab-grown differently', 'Abandoned carts are invisible'],
   },
   'solutions/bullion-gold-traders': {
@@ -93,13 +93,13 @@ const PLAYBOOKS = {
   'solutions/jewellery-brands': {
     wa: 'brands', sim: 'approve',
     day: [
-      ['10:00', 'A new collection launches', 'Images to the agency, prices to the website team, a PDF to retailers — three versions drift.', 'One catalogue publishes to storefront, WhatsApp, Instagram and retailer links at once.'],
+      ['10:00', 'A new collection launches', 'Images to the agency, prices to the website team, a PDF to retailers — three versions drift.', 'One catalogue publishes to website, WhatsApp, Instagram and retailer links at once.'],
       ['12:00', 'A retailer partner asks for stock', 'Emails and calls to find what’s available where.', 'Partner sees available stock and places an order on their own link.'],
       ['14:30', 'Instagram comments on the launch post', 'Answered by an intern, or not.', 'Comments and DMs answered from the catalogue, drafts approved by brand.'],
       ['16:30', 'Campaign to past buyers', 'A blast to every number.', 'A segment by taste and value tier; the message drafts with 30 personalisation fields.'],
       ['19:00', 'Ad performance', 'A weekly agency deck.', 'Ads on catalogue winners, budget alerts, conversions attributed to orders.'],
     ],
-    modules: [['/products/catalog', 'One master catalogue for every channel and partner.'], ['/products/storefront', 'Your own store, same stock, same prices.'], ['/products/instagram-facebook', 'Social replies from the catalogue, brand-approved.'], ['/products/segmentation', '41 ready segments — taste, value, occasion.'], ['/products/ads-manager', 'Catalogue ads with budget alerts and attribution.'], ['/platform/ai-workforce', 'Who may draft, who approves, what runs alone — per action.']],
+    modules: [['/products/catalog', 'One master catalogue for every channel and partner.'], ['/products/ecommerce', 'Your own store, same stock, same prices.'], ['/products/instagram-facebook', 'Social replies from the catalogue, brand-approved.'], ['/products/segmentation', '41 ready segments — taste, value, occasion.'], ['/products/ads-manager', 'Catalogue ads with budget alerts and attribution.'], ['/platform/ai-workforce', 'Who may draft, who approves, what runs alone — per action.']],
     fit: ['Collections launch in three versions across channels', 'Retail partners ask for stock by email', 'Social comments go unanswered for days', 'Campaigns are blasts, not segments', 'Ad reporting arrives as a deck'],
   },
 
@@ -185,7 +185,7 @@ const PLAYBOOKS = {
       ['16:00', 'First ad', 'Boosted post.', 'Catalogue ad with a budget alert; conversions attributed to orders.'],
       ['19:00', 'Month one report', 'Bank balance.', 'Enquiries answered, replies approved, orders, repeat buyers — on your own data.'],
     ],
-    modules: [['/products/whatsapp', 'Start selling on the channel you already have.'], ['/products/catalog', 'One catalogue from the first ten designs.'], ['/products/storefront', 'Your own store when you’re ready, same stock.'], ['/products/crm', 'Every customer remembered from day one.'], ['/products/ads-manager', 'First ads on catalogue winners, budget-capped.'], ['/platform/onboarding', 'A self-serve start with the first month at ₹3,600; a person on WhatsApp when you want one.']],
+    modules: [['/products/whatsapp', 'Start selling on the channel you already have.'], ['/products/catalog', 'One catalogue from the first ten designs.'], ['/products/ecommerce', 'Your own store when you’re ready, same stock.'], ['/products/crm', 'Every customer remembered from day one.'], ['/products/ads-manager', 'First ads on catalogue winners, budget-capped.'], ['/platform/onboarding', 'A self-serve start with the first month at ₹3,600; a person on WhatsApp when you want one.']],
     fit: ['You’re juggling four tools before your fiftieth order', 'Enquiries are answered from the founder’s phone', 'Customers live in a notebook', 'You’ve boosted posts and can’t say what they sold', 'You want to start today, free, without a demo'],
   },
 

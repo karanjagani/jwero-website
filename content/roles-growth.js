@@ -185,29 +185,29 @@ ${L.ctaBand('See attribution on one record.', 'Bring a recent campaign — we’
 // ---------------------------------------------------------------------------
 
 const ecommerceFaqs = [
-  { q: 'Do I have to leave Shopify or WooCommerce?', a: 'No — Jwero connects to Shopify, WooCommerce and Unicommerce and syncs stock and orders both ways. It adds channels and live-rate pricing on top of the storefront you already run; it doesn’t replace it.' },
+  { q: 'Do I have to leave Shopify or WooCommerce?', a: 'No — Jwero connects to Shopify, WooCommerce and Unicommerce and syncs stock and orders both ways. It adds channels and live-rate pricing on top of the website you already run; it doesn’t replace it.' },
   { q: 'Does stock sync automatically between my store and Jwero?', a: 'Yes — the Shopify/WooCommerce/Unicommerce connectors sync inventory and orders both ways, so a sale on either side reflects everywhere without manual reconciliation.' },
-  { q: 'Can my storefront show live gold-rate pricing?', a: 'Jwero’s catalogue and pricing follow the live metal rate — something a generic ecommerce platform doesn’t do natively. That pricing logic sits on top of your connected storefront.' },
-  { q: 'Will this replace my role managing the storefront?', a: 'No — Jwero handles the connections, memory and messaging layer around your storefront. Merchandising decisions, storefront design and channel strategy stay with you; AI only drafts customer-facing messages for your approval.' },
+  { q: 'Can my website show live gold-rate pricing?', a: 'Jwero’s catalogue and pricing follow the live metal rate — something a generic ecommerce platform doesn’t do natively. That pricing logic sits on top of your connected website.' },
+  { q: 'Will this replace my role managing the website?', a: 'No — Jwero handles the connections, memory and messaging layer around your website. Merchandising decisions, website design and channel strategy stay with you; AI only drafts customer-facing messages for your approval.' },
 ];
 
 const ecommerceManagerRole = {
   slug: 'roles/ecommerce-manager',
   title: 'For E-commerce Managers: Shopify Plus What It Lacks | Jwero',
-  description: 'Shopify for the storefront, Jwero for what Shopify can’t do: synced inventory, live-rate pricing, one customer record across channels.',
+  description: 'Shopify for the website, Jwero for what Shopify can’t do: synced inventory, live-rate pricing, one customer record across channels.',
   breadcrumbs: BC('E-commerce / D2C manager'),
   faqs: ecommerceFaqs,
   body: `
 ${L.hero({
   eyebrow: 'CUSTOMER & GROWTH · E-COMMERCE / D2C MANAGER',
-  h1: 'Shopify for the storefront. Jwero for what it can’t do.',
-  sub: 'A gold-rate-priced storefront, WhatsApp orders and Instagram DMs usually run as three disconnected systems today, each with its own idea of what’s in stock. Jwero syncs them into one inventory and one customer record — without asking you to leave Shopify.',
+  h1: 'Shopify for the website. Jwero for what it can’t do.',
+  sub: 'A gold-rate-priced ecommerce website, WhatsApp orders and Instagram DMs usually run as three disconnected systems today, each with its own idea of what’s in stock. Jwero syncs them into one inventory and one customer record — without asking you to leave Shopify.',
   primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
   secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
 
 ${L.section(
-  `${L.sectionHead('A DAY IN THIS ROLE', 'What changes when the storefront and the chat share one truth.', '')}
+  `${L.sectionHead('A DAY IN THIS ROLE', 'What changes when the website and the chat share one truth.', '')}
   ${L.impactGrid([
     {
       lever: 'Inventory across channels',
@@ -216,9 +216,9 @@ ${L.section(
       link: { href: '/platform/integrations', label: 'See the Shopify connector' },
     },
     {
-      lever: 'Gold-rate pricing on the storefront',
+      lever: 'Gold-rate pricing on the website',
       before: 'Repricing the store for a gold-rate move means manually editing every product listing, and it usually happens late.',
-      after: 'Catalogue prices follow the live gold rate automatically — something the storefront platform alone doesn’t handle.',
+      after: 'Catalogue prices follow the live gold rate automatically — something the ecommerce platform alone doesn’t handle.',
     },
     {
       lever: 'DMs and WhatsApp enquiries',
@@ -236,8 +236,8 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills this role builds.', '')}
   ${L.cards([
-    { title: 'Omnichannel inventory discipline', text: 'Trusting one synced stock number across storefront, WhatsApp and counter, instead of reconciling three separate counts by hand at the end of the day.' },
-    { title: 'Managing rate-linked pricing at scale', text: 'Understanding how live gold-rate pricing flows into a synced storefront — a skill a generic ecommerce manager never needs, but a jewellery one does.' },
+    { title: 'Omnichannel inventory discipline', text: 'Trusting one synced stock number across website, WhatsApp and counter, instead of reconciling three separate counts by hand at the end of the day.' },
+    { title: 'Managing rate-linked pricing at scale', text: 'Understanding how live gold-rate pricing flows into a synced website — a skill a generic ecommerce manager never needs, but a jewellery one does.' },
     { title: 'Turning DMs into a managed, memoried channel', text: 'Directing AI-drafted replies to Instagram and WhatsApp enquiries under approval, so conversational commerce runs as a real channel, not an inbox nobody owns.' },
     { title: 'Reading one customer across every touchpoint', text: 'Seeing a buyer’s Shopify order, WhatsApp chat and Instagram DM as one history — sharper judgment on what actually drives repeat purchase.' },
   ])}`
@@ -245,14 +245,14 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts the replies. You own the channel strategy.', '')}
-  <p class="lead">What stays yours: merchandising, storefront design, and channel strategy — Jwero just removes the manual reconciliation between your storefront and your messaging channels. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
+  <p class="lead">What stays yours: merchandising, website design, and channel strategy — Jwero just removes the manual reconciliation between your website and your messaging channels. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
   `${L.sectionHead('HOW TO CONTRIBUTE MORE', 'Concrete ways to add value with Jwero.', '')}
   ${L.steps([
     { title: 'Connect Shopify/WooCommerce fully, not partially', text: 'Get the connector syncing both stock and orders — partial syncs are where the reconciliation gaps that eat your day come from.' },
-    { title: 'Let catalogue pricing follow the live rate', text: 'Stop manually repricing after every gold-rate move — let the catalogue’s live pricing carry through to the connected storefront.' },
+    { title: 'Let catalogue pricing follow the live rate', text: 'Stop manually repricing after every gold-rate move — let the catalogue’s live pricing carry through to the connected website.' },
     { title: 'Treat the approval queue as your DM front line', text: 'Review AI-drafted Instagram and WhatsApp replies quickly during the day — the faster the approval, the less an ad-driven enquiry goes cold.' },
     { title: 'Use the one-record view to judge channel ROI', text: 'Trace which channel a repeat customer actually came from using the shared record, before deciding where to put the next ad rupee.' },
   ])}`

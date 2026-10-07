@@ -38,7 +38,7 @@ ${L.section(
   ${L.cards([
     { icon: '⏻', title: 'Autonomous', text: 'The AI workforce drafts and, where you allow it, acts — inside daily caps, quiet hours and a kill switch at five scopes. Autonomy is earned one action type at a time, never assumed.' },
     { icon: '◆', title: 'Jewellery', text: 'Weight, purity, live rate, making charge, hallmark, memo, karigar, scheme, girvi — first-class in the data model, not fields bolted onto retail software.' },
-    { icon: '▣', title: 'OS', text: 'One customer record, one catalogue, one inventory truth, one ledger. Every module — WhatsApp, counter, storefront, workshop, schemes — reads and writes the same row.' },
+    { icon: '▣', title: 'OS', text: 'One customer record, one catalogue, one inventory truth, one ledger. Every module — WhatsApp, counter, website, workshop, schemes — reads and writes the same row.' },
   ])}`
 , { tone: 'tint' })}
 

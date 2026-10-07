@@ -120,7 +120,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('ECOMMERCE & GENERIC CRM', 'How Jwero compares to ecommerce and CRM platforms.', '')}
   ${L.cards([
-    { title: 'Jwero vs Shopify', text: 'The category-leading ecommerce platform, from $39/month for a solo storefront.', link: { href: '/compare/jwero-vs-shopify', label: 'Compare' } },
+    { title: 'Jwero vs Shopify', text: 'The category-leading ecommerce platform, from $39/month for a solo website.', link: { href: '/compare/jwero-vs-shopify', label: 'Compare' } },
     { title: 'Jwero vs Zoho CRM', text: 'A mature horizontal CRM, free for 3 users up to $52/user/month.', link: { href: '/compare/jwero-vs-zoho-crm', label: 'Compare' } },
   ])}`
 )}
@@ -134,13 +134,13 @@ const ornateNx = comparePage({
   slug: 'ornate-nx', name: 'Ornate NX', shortName: 'Ornate NX',
   category: 'a jewellery ERP by Ornate Software with a touchscreen POS, karigar/artisan contact management, real-time financial accounting and a CRM/loyalty module, built for Indian diamond jewellery traders',
   concedeThem: 'you need touchscreen counter billing, karigar and artisan contact management, and real-time financial reporting (balance sheets, MIS) refined specifically for Indian jewellery retail over years — Ornate NX is built around exactly this.',
-  concedeJwero: 'you want the customer, the catalogue and every selling channel (WhatsApp, Instagram, storefront) to share one record, with a governed AI workforce handling follow-up. Most businesses run both: Ornate NX for the counter and ledger, Jwero for the revenue side.',
+  concedeJwero: 'you want the customer, the catalogue and every selling channel (WhatsApp, Instagram, website) to share one record, with a governed AI workforce handling follow-up. Most businesses run both: Ornate NX for the counter and ledger, Jwero for the revenue side.',
   waCtx: 'ornate',
   researchNote: 'Ornate NX facts are sourced from ornatesoftware.com and independent listings (SoftwareSuggest, Capterra India, Techjockey) checked July 2026. Ornate NX does not publish pricing — it is quote-on-request. Jwero-side claims re-verified against the product on 2026-08-01.',
   rows: [
     { label: 'Touchscreen counter POS billing', jwero: 'Yes — registers and shifts, scan-to-sale at the live rate, sales returns, old-gold exchange vouchers, reconciled cash day-close', jweroRoadmap: false, other: 'Yes — a named feature (touchscreen, product-selection, sales returns)' },
     { label: 'Karigar/artisan contact management', jwero: 'Yes — via job-work module', other: 'Yes — built into the platform' },
-    { label: 'One customer record across WhatsApp, Instagram, storefront', jwero: 'Yes — one record, 198 signal types, 11 explainable scores', other: '[VERIFY — CRM module exists; omnichannel scope not public]' },
+    { label: 'One customer record across WhatsApp, Instagram, website', jwero: 'Yes — one record, 198 signal types, 11 explainable scores', other: '[VERIFY — CRM module exists; omnichannel scope not public]' },
     { label: 'Governed AI workforce (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: '[VERIFY — not found in public materials]' },
     { label: 'Live gold-rate catalogue pricing', jwero: 'Yes', other: '[VERIFY]' },
     { label: 'Gold savings schemes', jwero: 'Yes', other: '[VERIFY]' },
@@ -351,12 +351,12 @@ const quicksell = comparePage({
 const shopify = comparePage({
   slug: 'shopify', name: 'Shopify', shortName: 'Shopify',
   category: 'the category-leading general-purpose ecommerce platform, publicly priced from $39/month (Basic) up to $399/month (Advanced) and custom Shopify Plus pricing from $2,300/month',
-  concedeThem: 'you want the deepest ecommerce app ecosystem and storefront flexibility available anywhere, at a transparent, published price ($39–399/month for most jewellery-sized businesses) — Shopify genuinely leads here, and we’re not pretending otherwise.',
-  concedeJwero: 'you want live gold-rate pricing, jewellery-native catalogue fields, and WhatsApp/Instagram-native selling with a shared customer record — on top of the storefront you already have.',
+  concedeThem: 'you want the deepest ecommerce app ecosystem and website flexibility available anywhere, at a transparent, published price ($39–399/month for most jewellery-sized businesses) — Shopify genuinely leads here, and we’re not pretending otherwise.',
+  concedeJwero: 'you want live gold-rate pricing, jewellery-native catalogue fields, and WhatsApp/Instagram-native selling with a shared customer record — on top of the website you already have.',
   waCtx: 'shopify',
   researchNote: 'Shopify pricing is sourced from Shopify’s own pricing page and independent breakdowns (checked July 2026): Basic $39/mo ($29/mo billed annually), Grow $105/mo, Advanced $399/mo, Plus from $2,300/mo. Confirm current tiers directly as ecommerce platform pricing changes often.',
   rows: [
-    { label: 'Storefront & app ecosystem', jwero: 'Bridges to Shopify rather than replacing the storefront', other: 'Deepest in the industry — genuinely ahead' },
+    { label: 'Website & app ecosystem', jwero: 'Bridges to Shopify rather than replacing the website', other: 'Deepest in the industry — genuinely ahead' },
     { label: 'Published pricing (entry tier)', jwero: '₹18,000/month — every module', other: '$39/month (Basic), or $29/month billed annually' },
     { label: 'Live gold-rate pricing', jwero: 'Yes', other: 'No — not jewellery-specific by design' },
     { label: 'WhatsApp/Instagram-native commerce', jwero: 'Yes — official APIs, one shared inbox', other: '[VERIFY — via third-party apps, not native]' },
@@ -367,7 +367,7 @@ const shopify = comparePage({
   migrationNote: 'This isn’t a rip-and-replace pitch — most Shopify-based jewellery brands keep their store and add Jwero for the channels and pricing Shopify doesn’t do natively. See <a href="/solutions/d2c-brands">the D2C solution page</a>.',
   faqs: [
     { q: 'Do I need to leave Shopify?', a: 'No — the Shopify connector keeps your store running. Jwero adds WhatsApp/Instagram-native selling, live-rate pricing and customer memory on top.' },
-    { q: 'How much does Shopify actually cost for a jewellery store?', a: 'Basic is $39/month ($29/month if billed annually) for a solo storefront; most growing stores move to Grow at $105/month. Transaction fees, payment processing and apps add to that — see Shopify’s own pricing page for your case.' },
+    { q: 'How much does Shopify actually cost for a jewellery store?', a: 'Basic is $39/month ($29/month if billed annually) for a solo website; most growing stores move to Grow at $105/month. Transaction fees, payment processing and apps add to that — see Shopify’s own pricing page for your case.' },
   ],
 });
 

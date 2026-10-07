@@ -14,7 +14,7 @@ const KEYWORDS = [
   ['order management', '/products/erp'], ['custom order', '/products/erp'],
   ['product information management', '/products/catalog'], ['PIM', '/products/catalog'], ['product catalogue', '/products/catalog'], ['catalog management', '/products/catalog'],
   ['digital catalogue', '/products/digital-catalogues'], ['digital catalog', '/products/digital-catalogues'],
-  ['online store', '/products/storefront'], ['ecommerce website', '/products/storefront'], ['e-commerce website', '/products/storefront'],
+  ['online store', '/products/ecommerce'], ['ecommerce website', '/products/ecommerce'], ['e-commerce website', '/products/ecommerce'],
   ['marketplace', '/products/marketplaces'], ['Instagram marketing', '/instagram-for-jewellers'], ['Instagram DM', '/instagram-for-jewellers'],
   ['Google Ads', '/ads-for-jewellers'], ['Facebook ads', '/ads-for-jewellers'], ['Meta ads', '/ads-for-jewellers'],
   ['AI chatbot', '/products/ai-sales-agents'], ['AI agent', '/products/ai-sales-agents'], ['AI sales', '/products/ai-sales-agents'],

@@ -31,7 +31,7 @@ const SHIFTS = {
     title: 'From the calculator to the rule.',
     today: 'Rate, making charge, stone and discount are worked out at the counter, differently by whoever is standing there.',
     gone: 'Stale catalogue prices, mis-priced quotes after a rate move, and the argument about who allowed that discount.',
-    now: 'One pricing rule resolves every price — catalogue, WhatsApp, counter, storefront — from the live rate, with overrides routed through an approval.',
+    now: 'One pricing rule resolves every price — catalogue, WhatsApp, counter, website — from the live rate, with overrides routed through an approval.',
     tempo: ['Per bill, by hand', 'Every price, instantly'],
   },
   'platform/ai-workforce': {
@@ -135,7 +135,7 @@ const SHIFTS = {
     now: 'AI agents answer, follow up and remind in 14 languages by chat and voice — each action waiting in your approval queue until you say it may run alone.',
     tempo: ['When someone is free', 'Always'],
   },
-  'products/storefront': {
+  'products/ecommerce': {
     title: 'From a brochure site to a store that prices itself.',
     today: 'The website shows designs with yesterday’s prices, or none, and sends buyers back to WhatsApp to ask.',
     gone: 'Manual price updates and the “please call for price” dead end.',
@@ -194,7 +194,7 @@ const SHIFTS = {
     title: 'From a photo folder to one catalogue everywhere.',
     today: 'Designs live in WhatsApp galleries and a spreadsheet; prices are typed per share.',
     gone: 'Sending the same photo with a different price to three customers.',
-    now: 'One catalogue with purity, stones, certificates and HUID — priced at the live rate and published to WhatsApp, the storefront and the counter from one place.',
+    now: 'One catalogue with purity, stones, certificates and HUID — priced at the live rate and published to WhatsApp, the website and the counter from one place.',
     tempo: ['Per share', 'Once'],
   },
   'products/inventory': {
