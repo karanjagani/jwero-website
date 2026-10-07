@@ -599,6 +599,10 @@ function withInShort(page) {
 const { TOOL_QA } = require('./content/tool-answers');
 function withToolQA(page) {
   const qa = (TOOL_QA[page.slug] || []).concat(HUB_FAQ[page.slug] || [], (SEGMENT_FAQ[page.slug] || []), (ROLE_FAQ[page.slug] || []), (BLOG_FAQ[page.slug] || []), page.legacy ? TOPIC_FAQ(postTopic(page)) : []);
+  const norm = (q) => q.replace(/<[^>]+>/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const have = new Set((page.faqs || []).map((f) => norm(f.q)));
+  for (const m of page.body.matchAll(/<summary>([\s\S]*?)<\/summary>/g)) have.add(norm(m[1]));
+  qa.splice(0, qa.length, ...qa.filter((f) => { const k = norm(f.q); if (have.has(k)) return false; have.add(k); return true; }));
   if (!qa.length || /class="tool-qa"/.test(page.body)) return page;
   const block = `\n<section class="section tool-qa"><div class="container">${L3.sectionHead('', 'More questions jewellers ask.', '')}${L3.faqBlock(qa)}</div></section>\n`;
   const at = page.body.lastIndexOf('<section class="cta-band"');
@@ -1366,6 +1370,7 @@ function layout(page) {
     isPartOf: { '@type': 'WebSite', url: SITE },
   }];
   const allFaqs = (inShortQA(page) ? [inShortQA(page)] : []).concat(page.faqs || [], TOOL_QA[page.slug] || [], HUB_FAQ[page.slug] || [], SEGMENT_FAQ[page.slug] || [], ROLE_FAQ[page.slug] || [], BLOG_FAQ[page.slug] || [], page.legacy ? TOPIC_FAQ(postTopic(page)) : []);
+  { const seen = new Set(); const keep = allFaqs.filter((f) => { const key = f.q.replace(/<[^>]+>/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); if (seen.has(key)) return false; seen.add(key); return true; }); allFaqs.splice(0, allFaqs.length, ...keep); }
   if (allFaqs.length) {
     schemas.push({
       '@context': 'https://schema.org', '@type': 'FAQPage',
@@ -1375,6 +1380,7 @@ function layout(page) {
       })),
     });
   }
+  if (page.extraSchema) schemas.push(...page.extraSchema);
   if (page.breadcrumbs) schemas.push(require('./lib').breadcrumbSchema(page.breadcrumbs, SITE));
   if (/^tools\/./.test(page.slug || '')) schemas.push({ '@context': 'https://schema.org', '@type': 'WebApplication', name: (page.title || '').split('|')[0].trim(), url: SITE + '/' + page.slug, applicationCategory: 'BusinessApplication', operatingSystem: 'Web', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' }, description: page.description });
   if (!page.schema && (/^solutions\/(?!pain)/.test(page.slug || '') || /^roles\/(owner|chain-owner|franchise-partner)$/.test(page.slug || '') || /^platform\/(ai-workforce|customer-memory|pricing-engine)$/.test(page.slug || ''))) {
@@ -1592,6 +1598,13 @@ Spelling: this site uses "jewellery" (India, UK, Gulf, Commonwealth). "Jewelry" 
 It serves single stores, multi-store chains, luxury/boutique/bridal retailers, diamond/gold/silver/
 platinum/lab-grown/gemstone retailers, wholesalers, manufacturers (gold, diamond, casting, CAD, OEM,
 export), and jewellery brands, D2C startups and franchise networks alike.
+
+## WhatsApp, payments and voice (facts)
+- Jwero is an official Meta Business Partner. It connects a jeweller's existing number to the official WhatsApp Business Platform.
+- Customers browse catalogues priced at today's gold rate, add to cart and pay with WhatsApp's native payment experience inside the chat; the order, invoice and stock update on the customer's record.
+- WhatsApp Flows forms (visits, video calls, scheme enrolment), broadcasts with approved templates and consent, and a shared inbox for WhatsApp, Instagram and Facebook with AI drafts under approval.
+- Voice AI agents answer inbound calls and make outbound calls (scheme reminders, follow-ups) in Indian languages, on the same customer record.
+- Cost: Jwero One at INR 18,000 a month (first month INR 3,600) plus Meta's per-message fees passed through at cost. Details: ${SITE}/products/whatsapp
 
 ## What Jwero is not (honesty)
 - Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant. Jwero does not file GST returns.

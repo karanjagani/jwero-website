@@ -27,6 +27,13 @@ It serves single stores, multi-store chains, luxury/boutique/bridal retailers, d
 platinum/lab-grown/gemstone retailers, wholesalers, manufacturers (gold, diamond, casting, CAD, OEM,
 export), and jewellery brands, D2C startups and franchise networks alike.
 
+## WhatsApp, payments and voice (facts)
+- Jwero is an official Meta Business Partner. It connects a jeweller's existing number to the official WhatsApp Business Platform.
+- Customers browse catalogues priced at today's gold rate, add to cart and pay with WhatsApp's native payment experience inside the chat; the order, invoice and stock update on the customer's record.
+- WhatsApp Flows forms (visits, video calls, scheme enrolment), broadcasts with approved templates and consent, and a shared inbox for WhatsApp, Instagram and Facebook with AI drafts under approval.
+- Voice AI agents answer inbound calls and make outbound calls (scheme reminders, follow-ups) in Indian languages, on the same customer record.
+- Cost: Jwero One at INR 18,000 a month (first month INR 3,600) plus Meta's per-message fees passed through at cost. Details: https://jwero.ai/products/whatsapp
+
 ## What Jwero is not (honesty)
 - Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant. Jwero does not file GST returns.
 - Counter POS (registers, shifts, cash day-close, returns, old-gold exchange), statutory payroll, karigar
@@ -53,7 +60,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Onboarding & Support, Live in Days, Trained in Your Language: https://jwero.ai/platform/onboarding
 - Public Roadmap, Shipped, Building, Not Yet: https://jwero.ai/roadmap
 - Jewellery Software Products: CRM, ERP, POS, Billing and More: https://jwero.ai/products
-- WhatsApp API & CRM Software for Jewellers: https://jwero.ai/products/whatsapp
+- WhatsApp API for Jewellers: Catalogue, Payments and CRM: https://jwero.ai/products/whatsapp
 - Instagram & Facebook Commerce for Jewellery Business: https://jwero.ai/products/instagram-facebook
 - AI for Jewellers: AI Chatbot, Sales Agents & Voice AI: https://jwero.ai/products/ai-sales-agents
 - Optimize, See Why Website Visitors Leave, Before They Do: https://jwero.ai/products/optimize

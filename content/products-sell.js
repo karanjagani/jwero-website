@@ -1,87 +1,135 @@
 const L = require('../lib');
 const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
+// The WhatsApp page: what a jeweller searches for, in the order they decide.
+// Facts confirmed by Jwero (2026-10-07): official Meta Business Partner; native
+// WhatsApp payments; voice AI agents for inbound and outbound calls.
+const WA_STEPS = [
+  ['ig', 'Instagram ad', 'She taps “Chat on WhatsApp” under your reel.'],
+  ['in', 'Customer', 'Do you have this necklace in 22K? What is the price?'],
+  ['cat', 'Jwero · catalogue', 'Three pieces from your stock, priced at today’s rate.'],
+  ['rate', 'Rate update', 'Gold moved this morning. Prices in the chat updated with it.'],
+  ['cart', 'Customer', 'Added the necklace to the cart.'],
+  ['pay', 'WhatsApp payment', 'Paid inside WhatsApp. Order and invoice on her record.'],
+  ['later', 'Next year', 'Anniversary reminder, drafted for your team to approve.'],
+];
+const waStory = () => `<div class="wa-story" data-wa-story>
+  <div class="wa-phone" aria-hidden="true"><div class="wa-phone-bar"><span></span><b>Your jewellery shop</b><i>Official business account</i></div>
+    <div class="wa-phone-body">${WA_STEPS.map(([k, who, txt], i) => `<div class="wa-msg wa-${k}" data-i="${i}"><small>${who}</small><p>${txt}</p>${k === 'cat' ? '<div class="wa-cards"><span>Necklace · 22K · 18.4 g</span><span>Jhumka · 22K · 9.2 g</span><span>Bangle · 22K · 21.0 g</span></div>' : ''}${k === 'pay' ? '<div class="wa-paid">Paid ✓</div>' : ''}</div>`).join('')}</div></div>
+  <ol class="wa-steps">${WA_STEPS.map(([, who, txt], i) => `<li data-i="${i}"><b>${who}</b><span>${txt}</span></li>`).join('')}</ol>
+</div>`;
+
+const WA_COMPARE = [
+  ['Official WhatsApp Business Platform (API)', 'No', 'Yes', 'Yes, through an official Meta Business Partner'],
+  ['Shared inbox for the whole team', 'One phone', 'Yes', 'Yes, with WhatsApp, Instagram and Facebook together'],
+  ['Catalogue priced at today’s gold rate', 'No', 'No', 'Yes, prices follow the rate'],
+  ['Cart and payment inside WhatsApp', 'No', 'Partly', 'Yes, native WhatsApp payments'],
+  ['Knows the customer’s purchases and scheme balance', 'No', 'No', 'Yes, one record with billing and schemes'],
+  ['Stock updates when a piece sells', 'No', 'No', 'Yes, same stock as the counter'],
+  ['AI replies with your approval', 'No', 'Some', 'Yes, drafts wait for your team'],
+  ['Voice AI calls, inbound and outbound', 'No', 'No', 'Yes, on the same customer record'],
+  ['Forms for appointments and scheme enrolment', 'No', 'Some', 'Yes, WhatsApp Flows'],
+];
+const waTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>WhatsApp Business app</th><th>Generic API tools</th><th>Jwero</th></tr></thead><tbody>${WA_COMPARE.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>
+<p class="cta-note" style="margin-top:12px">Generic API tools vary; see <a href="/compare/jwero-vs-wati">Jwero vs WATI</a>, <a href="/compare/jwero-vs-interakt">Interakt</a>, <a href="/compare/jwero-vs-doubletick">DoubleTick</a> and <a href="/compare/whatsapp-tools-vs-jewellery-os">WhatsApp tools vs a jewellery OS</a>.</p>`;
+
+const WA_SETUP = [
+  ['Check your number', 'We check whether your current WhatsApp number can move to the official platform, and whether it can keep the WhatsApp Business app alongside.'],
+  ['Verify your business with Meta', 'Your business details are verified in Meta Business Manager. As an official Meta Business Partner, Jwero guides this step with you.'],
+  ['Connect the number to Jwero', 'The number moves onto the WhatsApp Business Platform. Customers keep messaging the same number.'],
+  ['Load your catalogue and templates', 'Your products, priced at today’s rate, and your approved message templates for reminders and offers.'],
+  ['Switch on payments and the inbox', 'WhatsApp payments, the shared inbox for your team, and AI drafts that wait for approval.'],
+];
+
+const whatsappFaqs = [
+  { q: 'Can customers buy and pay inside WhatsApp?', a: 'Yes. Customers browse a catalogue priced at today’s rate, add pieces to a cart and pay with WhatsApp’s native payment experience, without leaving the chat. The order and invoice land on their customer record. For high-value pieces, the chat can book a visit or a video call instead.' },
+  { q: 'Is Jwero an official WhatsApp partner?', a: 'Yes. Jwero is an official Meta Business Partner, and connects your number to the official WhatsApp Business Platform. That is what makes templates, broadcasts, catalogues and payments work within Meta’s rules.' },
+  { q: 'Will my number get banned?', a: 'Numbers get restricted for spam-like behaviour. Jwero uses the official platform, approved templates, recorded consent, limits on how often each customer is messaged, and instant opt-out, which is how numbers stay healthy.' },
+  { q: 'Can I keep my existing WhatsApp number?', a: 'Yes. Your number moves onto the official platform and customers keep messaging the same number. We check first whether it can also keep the WhatsApp Business app alongside.' },
+  { q: 'How much does WhatsApp API cost for a jewellery shop?', a: 'Two parts: Jwero One at ₹18,000 a month (first month ₹3,600) with every module, and Meta’s per-message fees for template messages, passed through at cost from a prepaid wallet. Replies inside a customer’s 24-hour window are not charged by Meta. See the WhatsApp pricing guide.' },
+  { q: 'How is Jwero different from WATI, Interakt or DoubleTick?', a: 'Those tools send and receive messages. Jwero’s WhatsApp is part of the jewellery system: the catalogue follows the gold rate, payments and orders update stock and the customer record, and replies know purchases and scheme balances.' },
+  { q: 'Does Jwero also handle phone calls?', a: 'Yes. Jwero’s voice AI agents answer inbound calls and make outbound calls, such as scheme reminders and follow-ups, in Indian languages, writing every call to the same customer record as WhatsApp.' },
+  { q: 'What if Meta changes WhatsApp’s rules?', a: 'Your customers, catalogue and history live in Jwero, not inside the channel. As a Meta Business Partner, Jwero follows rule changes and updates the platform; your data stays yours.' },
+  { q: 'Will older customers really buy this way?', a: 'They already ask “rate kya hai?” on WhatsApp. Jwero makes sure those chats are answered fast, in their language, recorded, and closed.' },
+  { q: 'Do I have to approve every AI reply?', a: 'At first, yes, in batches when it suits you. Once you trust a type of reply, you can let it send on its own. You set the pace.' },
+];
+
 const whatsapp = {
   slug: 'products/whatsapp',
-  title: 'WhatsApp API & CRM Software for Jewellers | Jwero',
-  description: 'Official WhatsApp Business API software for jewellers: live-rate catalogues, safe broadcasts, AI replies with approval, payments on your own number.',
+  title: 'WhatsApp API for Jewellers: Catalogue, Payments and CRM | Jwero',
+  description: 'Official Meta Business Partner. WhatsApp catalogues at today’s gold rate, native WhatsApp payments, a shared inbox with AI replies, broadcasts and voice AI calls for jewellers.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero WhatsApp Commerce', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Official WhatsApp Business API commerce for jewellery: live-rate catalogues, AI-drafted replies under approval, appointments and payments on your existing number.',
+    description: 'WhatsApp commerce for jewellers from an official Meta Business Partner: live-rate catalogues, native WhatsApp payments, a shared inbox with AI drafts under approval, broadcasts, WhatsApp Flows and voice AI calls on one customer record.',
     url: 'https://jwero.ai/products/whatsapp', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module; Meta message fees at cost.' },
   },
+  extraSchema: [{
+    '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up WhatsApp API for a jewellery shop',
+    description: 'Move a jewellery shop’s WhatsApp number onto the official WhatsApp Business Platform with catalogue, payments and a shared inbox.',
+    step: WA_SETUP.map(([n, t], i) => ({ '@type': 'HowToStep', position: i + 1, name: n, text: t })),
+  }],
   breadcrumbs: BC('WhatsApp Commerce'),
-  faqs: [
-    { q: 'Can customers actually buy on WhatsApp?', a: 'Yes. Share catalogues with live prices, take orders and collect payments in the chat. For high-value pieces, WhatsApp books the appointment or the video call — the sale closes wherever the customer is comfortable.' },
-    { q: 'Will my number get banned?', a: 'No. Jwero uses the official WhatsApp Business API with approved templates, consent tracking, per-customer message-fatigue limits and instant opt-out handling — the discipline that keeps accounts healthy.' },
-    { q: 'Can I keep my existing WhatsApp number?', a: 'Yes, and you should — that number is part of your reputation. We migrate it onto the official API.' },
-    { q: 'How is this different from WATI or other WhatsApp tools?', a: 'Those tools send messages. They don’t know her purchase history, her scheme balance, or what a gram of 22k costs today. Jwero replies come from a system that knows the customer and the jewellery — because they share one record.' },
-    { q: 'What does this replace, work with, and cost?', a: 'It replaces unofficial bulk-messaging tools and personal-phone selling. It works alongside your existing WhatsApp number and your billing software. Pricing sits inside Jwero’s tiers — see /pricing for the structure.' },
-    { q: 'What if Meta changes WhatsApp’s rules tomorrow?', a: 'Your customer records, catalogue and history live in Jwero, not inside the channel. Channels can change; your data and relationships don’t move with them — that’s the point of owning the record separately from the app.' },
-    { q: 'Will older customers actually buy this way?', a: 'They already send your salespeople "rate kya hai?" on WhatsApp today. This just makes sure those chats get answered fast, recorded properly, and actually closed.' },
-    { q: 'Do I have to manage the AI drafts myself all day?', a: 'No — approve in batches when it suits you, or promote low-risk reply types to send automatically once you trust the pattern. You set the pace.' },
-  ],
+  faqs: whatsappFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'WHATSAPP COMMERCE',
-  h1: 'Your counter is now open 24 hours a day.',
-  sub: 'Jewellery is bought on trust and conversation — which is why it is bought on WhatsApp. Jwero turns your official number into a full counter: live-rate catalogues, knowledgeable replies within minutes instead of next morning, appointments, payments and follow-up.',
+  eyebrow: 'WHATSAPP COMMERCE · OFFICIAL META BUSINESS PARTNER',
+  h1: 'WhatsApp commerce for jewellers: your counter, open 24 hours.',
+  sub: 'Jewellery is bought on trust and conversation, which is why it is bought on WhatsApp. Jwero turns your official number into a full counter: a catalogue priced at today’s rate, native WhatsApp payments, replies within minutes from a team inbox, and voice AI for the calls.',
   primary: { href: '#', label: 'Send me a live catalogue', wa: 'whatsapp' },
-  secondary: { href: '/tools/whatsapp-revenue-estimator', label: 'Try the Revenue Estimator' },
-  note: 'The demo IS a WhatsApp conversation.',
   mock: L.mockChatCatalog,
 })}
 
 ${L.section(
   `${L.sectionHead('THE LEAK YOU CANNOT SEE', 'Every unanswered enquiry buys from someone else.', '')}
   ${L.cards([
-    { title: 'The 11pm enquiry', text: 'She messages three jewellers at night. The one who answers first with a real price usually wins. Your store is asleep; your competitor’s system is not.' },
-    { title: 'The personal-phone trap', text: 'Enquiries live on salespeople’s personal numbers. No history, no handover, and when they resign — no customers.' },
-    { title: 'The broadcast graveyard', text: 'Festival blasts from unofficial tools get numbers banned and customers annoyed. Volume is not marketing.' },
+    { title: 'The 11pm enquiry', text: 'She messages three jewellers at night. The one who answers first with a real price usually wins.' },
+    { title: 'The personal-phone trap', text: 'Enquiries live on salespeople’s own phones. No history, no handover, and when they leave, the customers leave too.' },
+    { title: 'The broadcast graveyard', text: 'Festival blasts from unofficial tools get numbers restricted and customers annoyed.' },
   ])}`
 )}
 
+${L.section(`${L.sectionHead('ONE CHAT, START TO FINISH', 'From an Instagram tap to a paid order.', 'What your customer sees, and what Jwero does at each step.')}${waStory()}`, { tone: 'tint' })}
+
 ${L.section(
-  `${L.sectionHead('', 'From "do you have…?" to "see you Saturday."', '')}
-  ${L.steps([
-    { title: 'Connect your number', text: 'Your existing WhatsApp number moves onto the official Business API. Customers notice nothing — except faster answers.' },
-    { title: 'AI drafts, you approve', text: 'Every enquiry gets a draft reply that knows the customer and today’s metal rate. Your team approves with one tap — until you decide some replies can flow on their own.' },
-    { title: 'Sell in the chat', text: 'Live-price catalogues, order collection, payment links, appointment booking and automatic follow-up on every conversation that goes quiet.' },
-  ])}`
+  `${L.sectionHead('FIVE JOBS, ONE NUMBER', 'Everything a jewellery counter does, inside WhatsApp.', '')}
+  <div class="wa-jobs">
+    <article id="wa-catalogue"><h3>1. A catalogue at today’s rate</h3><p>Send several pieces in one message, straight from your stock, priced from today’s rate, purity and weight. When the rate moves, the prices move with it. No stale PDFs, no “price on request”.</p><a href="/products/catalog">Catalogues →</a></article>
+    <article id="wa-payments"><h3>2. Order and pay without leaving the chat</h3><p>Customers add pieces to a cart and pay with WhatsApp’s native payment experience. The order, the invoice and the stock update land on the same record as a counter sale.</p><a href="/products/pos">Billing →</a></article>
+    <article id="wa-forms"><h3>3. Forms inside WhatsApp</h3><p>WhatsApp Flows for booking a showroom visit or a video call, enrolling in a gold scheme, or asking for a custom design, filled in without leaving the chat.</p><a href="/products/gold-schemes">Schemes →</a></article>
+    <article id="wa-broadcasts"><h3>4. Broadcasts that keep your number healthy</h3><p>Approved templates, recorded consent, limits on how often each customer hears from you, quiet hours and instant opt-out. Reach thousands for Akshaya Tritiya or Diwali without burning your number.</p><a href="/whatsapp-broadcast-for-jewellers">Broadcasts →</a></article>
+    <article id="wa-inbox"><h3>5. One inbox, and voice AI for the calls</h3><p>WhatsApp, Instagram and Facebook in one team inbox, with AI drafts that know the customer and wait for approval. Voice AI agents answer inbound calls and make outbound ones, on the same record.</p><a href="/ai-calling-for-jewellers">Voice AI calling →</a></article>
+  </div>`
+)}
+
+${L.section(`${L.sectionHead('COMPARE', 'WhatsApp Business app, generic API tools, or Jwero.', 'What a jeweller gets with each.')}${waTable()}`, { tone: 'tint' })}
+
+${L.section(
+  `${L.sectionHead('WHAT YOU PAY', 'Two parts, both written down.', '')}
+  <div class="jb-blogline"><p><b>Jwero One:</b> ₹18,000 a month with every module, first month ₹3,600. WhatsApp, payments, the inbox, AI drafts and voice AI are included in the platform.</p><p><b>Meta’s message fees:</b> Meta charges per template message (marketing, utility, authentication). Jwero passes these through at cost from a prepaid wallet you can see. Replies inside a customer’s 24-hour window are not charged by Meta. <a href="/blog/whatsapp-business-api-pricing">How WhatsApp pricing works →</a></p><p><b>Rather not run it yourself?</b> <a href="/jewellery-business-as-a-service">Let Jwero run WhatsApp for you</a>, with every tool included.</p></div>`
+)}
+
+${L.section(
+  `${L.sectionHead('MOVING FROM THE WHATSAPP BUSINESS APP', 'How to set up WhatsApp API for a jewellery shop.', 'Five steps. Jwero does them with you, usually within a day of your Meta verification.')}
+  ${L.steps(WA_SETUP.map(([title, text]) => ({ title, text })))}
+  <p class="cta-note" style="margin-top:14px">Your chat history on the old app stays on that phone; your customers and their details come across into Jwero.</p>`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('BUILT FOR JEWELLERY, NOT JUST CHAT', 'What generic WhatsApp tools cannot do.', '')}
-  ${L.cards([
-    { title: 'Prices that breathe', text: 'Catalogue prices update with the metal rate. No more "price on request" or stale PDFs.' },
-    { title: 'Memory in every reply', text: 'Replies know her purchases, plan balance and taste — because the record and the chat are one system.' },
-    { title: 'Broadcasts with manners', text: 'Consent, fatigue limits and quiet hours per customer. Reach thousands without burning your number or your name.' },
-    { title: 'Scheme conversations', text: 'Instalment reminders, balance checks and maturity congratulations — the messages customers thank you for.' },
-    { title: 'Group selling', text: 'Curated customer groups for launches and festivals, managed from the same inbox.' },
-    { title: 'One inbox, whole team', text: 'Every conversation visible, assignable and owned by the business — with role-based access.' },
-  ])}`
+  `${L.sectionHead('CUSTOMERS ABROAD', 'Selling to overseas and NRI customers on WhatsApp.', '')}
+  <div class="jb-blogline"><p>Families in the Gulf, the UK, the US and Singapore buy from their hometown jeweller on WhatsApp, often for weddings back home. A video call from the chat, a catalogue priced at today’s rate, and payment in the chat make that sale as easy as one across the counter.</p></div>`
 )}
 
 ${L.oneSystemBlock([
-  'The AI reply knows her scheme balance because schemes and chat share one record — no integration, no sync.',
-  'When she buys, the catalogue price, the invoice and the loyalty points all write back to the same customer card.',
-  'Her occasion journey — the anniversary invite next year — reads the same channel-preference field this conversation is updating right now.',
+  'The AI reply knows her scheme balance because schemes and chat share one record.',
+  'When she pays in the chat, the order, the invoice, the stock and her loyalty points update together.',
+  'The anniversary reminder next year, and the voice call that follows it, read the same record this chat is writing now.',
 ])}
 
-${L.section(`${L.sectionHead('WHATSAPP QUESTIONS', 'Bans, rule changes, and what sets this apart.', '')}${L.faqBlock([
-  { q: 'Will my number get banned?', a: 'No. Jwero uses the official WhatsApp Business API with approved templates, consent tracking and opt-out handling — the discipline that keeps accounts healthy.' },
-  { q: 'What if Meta changes the rules?', a: 'Your customer records and catalogue live in Jwero, not inside the channel. Channels can change; your data doesn’t move with them.' },
-  { q: 'How is this different from WATI or similar tools?', a: 'They send messages. Jwero replies come from a system that knows the customer and the jewellery, because they share one record. See <a href="/compare/jwero-vs-wati">Jwero vs WATI</a>.' },
-])}
-<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq#whatsapp">See every WhatsApp & Meta question →</a></p>
-<p class="cta-note" style="margin-top:14px">Want the full picture before a demo? <a href="/blog/whatsapp-for-jewellers-guide">Read the complete WhatsApp guide for jewellers →</a> And if you still send PDF catalogues in chat, <a href="/blog/digital-catalog-vs-pdf-jewellery">here is why a live digital catalogue outsells a PDF →</a></p>`)}
+${L.section(`${L.proofStrip()}<p class="live-demo-note">This is not a demo video. <a href="#" data-wa="whatsapp">Message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
-${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="whatsapp">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
-
-${L.section(L.safeToTryStrip())}
-
-${L.ctaBand('Message us. Seriously.', 'The best demo of WhatsApp selling is a WhatsApp conversation. Send one message and watch the machine work.', 'whatsapp', { label: 'Send that first message' })}
+${L.ctaBand('Message us. Seriously.', 'The best demo of WhatsApp selling is a WhatsApp conversation. Send one message and watch it work.', 'whatsapp', { label: 'Send that first message' })}
 `,
 };
 

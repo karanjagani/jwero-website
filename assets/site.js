@@ -2551,3 +2551,16 @@ document.addEventListener('click', function (e) {
     }, 400);
   });
 })();
+
+// WhatsApp page: play the one-chat story when it scrolls into view.
+(function () {
+  var root = document.querySelector('[data-wa-story]'); if (!root) return;
+  var msgs = root.querySelectorAll('.wa-msg'), steps = root.querySelectorAll('.wa-steps li'), n = msgs.length, i = -1, timer;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(k) { Array.prototype.forEach.call(msgs, function (m, j) { m.classList.toggle('is-on', j <= k); }); Array.prototype.forEach.call(steps, function (s, j) { s.classList.toggle('is-on', j === k); }); }
+  if (reduce) { show(n - 1); return; }
+  function tick() { i = (i + 1) % (n + 2); show(Math.min(i, n - 1)); if (i === n + 1) i = -1; }
+  Array.prototype.forEach.call(steps, function (s, j) { s.addEventListener('click', function () { clearInterval(timer); i = j; show(j); }); });
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { clearInterval(timer); if (e.isIntersecting) { tick(); timer = setInterval(tick, 1700); } }); }, { threshold: .35 });
+  io.observe(root);
+})();
