@@ -27,7 +27,7 @@ const RATES = {
   'Messaging & calls': [
     ['WhatsApp marketing message', '₹1.05', 'per message'], ['WhatsApp utility or authentication message', '₹0.16', 'per message'], ['WhatsApp service reply', '₹0.16', 'per message'],
     ['SMS', '₹0.30', 'per message'], ['Email', '₹0.03', 'per email'], ['Push notification', 'Included', ''],
-    ['AI voice agent call', '₹6', 'per call'], ['Outbound call', '₹1.50', 'per minute'], ['Inbound call', '₹1', 'per minute'], ['Video recording', '₹3.50', 'per recorded minute'],
+    ['AI voice agent call', '₹7', 'per call, all inclusive'], ['Outbound call', '₹1.50', 'per minute'], ['Inbound call', '₹1', 'per minute'], ['Video recording', '₹3.50', 'per recorded minute'],
   ],
   'AI': [
     ['Inbox reply or follow-up draft', '≈ ₹2–3', 'per draft'], ['Campaign, ad or catalogue copy', '≈ ₹3', 'per generation'], ['Product created from a photo', '≈ ₹6', 'per product'],

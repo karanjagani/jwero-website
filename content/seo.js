@@ -630,7 +630,7 @@ const CALL_CMP = [
   ['Calls at once', 'One per person', 'Many', 'Up to 8 at once, inbound and outbound'],
   ['Hours', 'Shop hours', 'Any time', 'Any time, 24×7'],
   ['Time to answer a question about stock or a balance', 'Minutes to hours, 2 to 3 people', 'Cannot answer', 'Seconds, no one else needed'],
-  ['Cost per call', 'Staff time of 2 to 3 people', 'Low', '₹6 a call'],
+  ['Cost per call', 'Staff time of 2 to 3 people', 'Low', '₹7 a call'],
   ['Sounds like', 'Your staff', 'A recording', 'A natural voice in the customer’s language'],
   ['Understands replies', 'Yes', 'Press 1 or 2', 'Yes, spoken answers'],
   ['Knows the customer', 'If they remember', 'No', 'Purchases, scheme balance, last visit'],
@@ -656,7 +656,7 @@ const callFaqs = [
   { q: 'Can calls happen automatically when something happens?', a: 'Yes. Triggers place calls on events such as an instalment falling due, a failed payment, an unanswered WhatsApp message or a repair being ready. If a call is not answered, a WhatsApp message can follow.' },
   { q: 'Which languages does the voice agent speak?', a: 'The phone agent speaks Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia, so each customer can be called in the language they speak at home.' },
   { q: 'Is AI calling legal in India?', a: 'Calls to your own customers about their account, such as scheme reminders, are treated differently from promotional calls. Promotional calls must follow TRAI’s rules on registration, consent and do-not-disturb preferences. Confirm your setup with your advisor before calling at scale.' },
-  { q: 'How much does AI calling cost?', a: 'The AI agent costs ₹6 a call, from a prepaid wallet, plus the phone line’s per-minute charge. A call handled by hand usually takes 2 to 3 people several minutes each, so ₹6 a call is far cheaper. It runs on Jwero One at ₹18,000 a month (first month ₹3,600), or let Jwero run the calling for you.' },
+  { q: 'How much does AI calling cost?', a: 'The AI agent costs ₹7 a call, all inclusive: the AI, the voice and the phone line, from a prepaid wallet. A call handled by hand usually takes 2 to 3 people several minutes each, so ₹7 a call is far cheaper. It runs on Jwero One at ₹18,000 a month (first month ₹3,600), or let Jwero run the calling for you.' },
   { q: 'Why is an AI call faster than a person picking up?', a: 'When a person answers, they often have to ask 2 or 3 colleagues for the stock, the rate or the customer’s balance, then call back. The AI agent reads all of that from the customer’s record and the live catalogue, and answers, books or sends a link within seconds, at any hour.' },
   { q: 'Will the AI negotiate prices or give discounts?', a: 'No. Price negotiation and discounts go to a person. The agent works only inside the actions, caps and hours you allow, and one switch stops all calls.' },
 ];
@@ -664,14 +664,14 @@ const callFaqs = [
 const aiCalling = {
   slug: 'ai-calling-for-jewellers',
   title: 'AI Calling for Jewellers: Voice AI Agents, Bulk Calls | Jwero',
-  description: 'AI calling for jewellers at ₹6 a call: voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, in 11 Indian languages, with triggers, campaigns and every call on the record.',
+  description: 'AI calling for jewellers at ₹7 a call: voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, in 11 Indian languages, with triggers, campaigns and every call on the record.',
   breadcrumbs: [['Home', '/'], ['Jewellery software in India', '/jewellery-software-india'], ['AI calling for jewellers']],
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Jwero AI Calling for Jewellers', alternateName: ['Jwero voice AI agents', 'AI telecaller for jewellers'],
     applicationCategory: 'BusinessApplication', operatingSystem: 'Web', url: 'https://jwero.ai/ai-calling-for-jewellers',
     description: 'Voice AI agents for jewellers: bulk inbound call answering, bulk outbound calling campaigns, event triggers, WhatsApp follow-through and transcripts on the customer record, in 11 Indian languages.',
     isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
-    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month; AI calls at ₹6 a call.' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month; AI calls at ₹7 a call, all inclusive.' },
   },
   extraSchema: [{
     '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up AI calling for a jewellery shop',
@@ -679,7 +679,7 @@ const aiCalling = {
   }],
   faqs: callFaqs,
   body: `
-${L.hero({ eyebrow: 'AI CALLING FOR JEWELLERS', h1: 'AI calling for jewellers: voice AI agents for every call, in bulk.', sub: 'Up to 8 calls at once, inbound and outbound, 24×7, in the customer’s own language. The AI answers, checks stock, rates and balances, books visits and sends payment links within seconds, for ₹6 a call.', primary: { href: '#', label: 'Hear it on a call with us', wa: 'ai-calling' } })}
+${L.hero({ eyebrow: 'AI CALLING FOR JEWELLERS', h1: 'AI calling for jewellers: voice AI agents for every call, in bulk.', sub: 'Up to 8 calls at once, inbound and outbound, 24×7, in the customer’s own language. The AI answers, checks stock, rates and balances, books visits and sends payment links within seconds, for ₹7 a call.', primary: { href: '#', label: 'Hear it on a call with us', wa: 'ai-calling' } })}
 
 ${L.section(`${L.sectionHead('THE CALLS NOBODY HAS TIME FOR', 'Hundreds of calls a month, and two people to make them.', '')}${L.cards([
   { title: 'Scheme reminders', text: 'Five hundred members, one due date each. A staff member calls forty, when free.' },
@@ -695,7 +695,7 @@ ${L.section(`${L.sectionHead('ONE CALL, TWO WAYS', 'When a person picks up, and 
 </div>
 <ul class="tw-gains"><li><b>Team time back</b> No one leaves a customer at the counter to chase an answer.</li><li><b>Happier customers</b> An answer now, not a call-back.</li><li><b>Fewer drop-outs</b> No hold music, no missed calls, no “I will call you back”.</li><li><b>24×7 sales and support</b> Enquiries at 11 pm become visits and payments.</li></ul>`, { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('THE ARITHMETIC', 'What your calls cost today, and at ₹6 a call.', 'Change the numbers to match your shop.')}<div class="callc" data-callc>
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What your calls cost today, and at ₹7 a call.', 'Change the numbers to match your shop.')}<div class="callc" data-callc>
   <div class="callc-in">
     <label>Calls a month (in and out)<input type="number" inputmode="numeric" data-cc="calls" value="1000" min="0"></label>
     <label>Minutes a person spends on the call<input type="number" inputmode="decimal" data-cc="talk" value="4" min="0"></label>
@@ -707,10 +707,10 @@ ${L.section(`${L.sectionHead('THE ARITHMETIC', 'What your calls cost today, and 
   <div class="callc-out" aria-live="polite">
     <p><span>Staff time on calls today</span><b data-cc-o="hours">0</b></p>
     <p><span>What that time costs today</span><b data-cc-o="manual">₹0</b></p>
-    <p><span>The same calls with AI, at ₹6 a call</span><b data-cc-o="ai">₹0</b></p>
+    <p><span>The same calls with AI, at ₹7 a call</span><b data-cc-o="ai">₹0</b></p>
     <p class="callc-save"><span>Saved every month</span><b data-cc-o="save">₹0</b></p>
     <p><span>Calls you miss today that AI would answer</span><b data-cc-o="miss">0</b></p>
-    <p class="cta-note">Staff cost is worked out on 26 days of 9 hours. Phone line charges apply to both and are left out.</p>
+    <p class="cta-note">Staff cost is worked out on 26 days of 9 hours. ₹7 a call includes the phone line; your own phone bill for calls by hand is left out.</p>
   </div>
 </div>`)}
 
@@ -718,7 +718,7 @@ ${L.section(`${L.sectionHead('YOUR WORRIES, ANSWERED', 'Everything jewellers ask
   { title: '“Will customers mind talking to AI?”', text: 'It speaks naturally, in their language, and gets them an answer in seconds. Anyone who wants a person is handed over at once.' },
   { title: '“What if it says something wrong?”', text: 'It only answers from your live stock, rates and customer records, and only takes the actions you allow. It never negotiates price.' },
   { title: '“Do I need new numbers or machines?”', text: 'No. It works on a phone line connected to Jwero. No hardware, nothing to install in the shop.' },
-  { title: '“Is it expensive?”', text: '₹6 a call. A call handled by hand ties up 2 to 3 people. Use the calculator above with your own numbers.' },
+  { title: '“Is it expensive?”', text: '₹7 a call. A call handled by hand ties up 2 to 3 people. Use the calculator above with your own numbers.' },
   { title: '“Will it speak my customers’ language?”', text: 'Yes: Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia.' },
   { title: '“Can I stop it or check what it said?”', text: 'Every call is recorded as a transcript on the customer’s record. One switch stops all calling.' },
   { title: '“Is it allowed?”', text: 'Calls about a customer’s own account are fine. Promotional calls follow TRAI’s rules; we set this up with you.' },
@@ -760,7 +760,7 @@ ${L.section(`${L.sectionHead('HOW IT STAYS SAFE', 'Inside your rules, and the la
 
 ${L.section(`${L.sectionHead('HOW TO SET IT UP', 'How to set up AI calling for a jewellery shop.', 'Five steps, done with you.')}${L.steps(CALL_SETUP.map(([title, text]) => ({ title, text })))}`)}
 
-${L.section(`${L.sectionHead('WHAT YOU PAY', '₹6 a call. That is the whole idea.', '')}<div class="jb-blogline"><p><b>AI calls:</b> ₹6 a call, from a prepaid wallet you can see. <b>Phone line:</b> the line’s per-minute charge, shown on the <a href="/pricing">pricing page</a>. <b>Platform:</b> Jwero One, ₹18,000 a month with every module, first month ₹3,600. <b>Or</b> <a href="/jewellery-business-as-a-service">let Jwero run the calling for you</a>, with every tool included.</p></div>`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('WHAT YOU PAY', '₹7 a call, all inclusive. That is the whole idea.', '')}<div class="jb-blogline"><p><b>AI calls:</b> ₹7 a call, all inclusive (the AI, the voice and the phone line), from a prepaid wallet you can see. <b>Platform:</b> Jwero One, ₹18,000 a month with every module, first month ₹3,600. <b>Or</b> <a href="/jewellery-business-as-a-service">let Jwero run the calling for you</a>, with every tool included.</p></div>`, { tone: 'tint' })}
 
 ${L.ctaBand('Hear it before you decide.', 'Message us and we will call you with the voice agent, in your language.', 'ai-calling')}
 `,

@@ -2169,7 +2169,7 @@ WHATSAPP COMMERCE · OFFICIAL META BUSINESS PARTNER
  Campaigns → 
 
 ## 6. One inbox, and AI calling in bulk
- WhatsApp, Instagram and Facebook in one team inbox, with AI drafts that wait for approval. Voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, at ₹6 a call: reminders, follow-ups and invitations, all on the same customer record.
+ WhatsApp, Instagram and Facebook in one team inbox, with AI drafts that wait for approval. Voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, at ₹7 a call, all inclusive: reminders, follow-ups and invitations, all on the same customer record.
  AI calling → 
 
  COMPARE
@@ -7211,7 +7211,7 @@ PRICING
  SMS ₹0.30 per message 
  Email ₹0.03 per email 
  Push notification Included 
- AI voice agent call ₹6 per call 
+ AI voice agent call ₹7 per call, all inclusive 
  Outbound call ₹1.50 per minute 
  Inbound call ₹1 per minute 
  Video recording ₹3.50 per recorded minute 
@@ -28683,13 +28683,13 @@ A: Not yet. Today the owner or manager opens the Daily Brief to see the morning 
 # AI Calling for Jewellers: Voice AI Agents, Bulk Calls
 URL: https://jwero.ai/ai-calling-for-jewellers
 
-AI calling for jewellers at ₹6 a call: voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, in 11 Indian languages, with triggers, campaigns and every call on the record.
+AI calling for jewellers at ₹7 a call: voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, in 11 Indian languages, with triggers, campaigns and every call on the record.
 
 AI CALLING FOR JEWELLERS
 
 ## AI calling for jewellers: voice AI agents for every call, in bulk.
 
- Up to 8 calls at once, inbound and outbound, 24×7, in the customer’s own language. The AI answers, checks stock, rates and balances, books visits and sends payment links within seconds, for ₹6 a call.
+ Up to 8 calls at once, inbound and outbound, 24×7, in the customer’s own language. The AI answers, checks stock, rates and balances, books visits and sends payment links within seconds, for ₹7 a call.
 
  Hear it on a call with us 
 
@@ -28763,7 +28763,7 @@ AI CALLING FOR JEWELLERS
 
  THE ARITHMETIC
 
-## What your calls cost today, and at ₹6 a call.
+## What your calls cost today, and at ₹7 a call.
 
  Change the numbers to match your shop.
 
@@ -28778,13 +28778,13 @@ AI CALLING FOR JEWELLERS
 
  What that time costs today ₹0 
 
- The same calls with AI, at ₹6 a call ₹0 
+ The same calls with AI, at ₹7 a call ₹0 
 
  Saved every month ₹0 
 
  Calls you miss today that AI would answer 0 
 
- Staff cost is worked out on 26 days of 9 hours. Phone line charges apply to both and are left out.
+ Staff cost is worked out on 26 days of 9 hours. ₹7 a call includes the phone line; your own phone bill for calls by hand is left out.
 
  YOUR WORRIES, ANSWERED
 
@@ -28804,7 +28804,7 @@ AI CALLING FOR JEWELLERS
 
 ## “Is it expensive?”
 
- ₹6 a call. A call handled by hand ties up 2 to 3 people. Use the calculator above with your own numbers.
+ ₹7 a call. A call handled by hand ties up 2 to 3 people. Use the calculator above with your own numbers.
 
 ## “Will it speak my customers’ language?”
 
@@ -28904,7 +28904,7 @@ AI CALLING FOR JEWELLERS
  Calls at once One per person Many Up to 8 at once, inbound and outbound 
  Hours Shop hours Any time Any time, 24×7 
  Time to answer a question about stock or a balance Minutes to hours, 2 to 3 people Cannot answer Seconds, no one else needed 
- Cost per call Staff time of 2 to 3 people Low ₹6 a call 
+ Cost per call Staff time of 2 to 3 people Low ₹7 a call 
  Sounds like Your staff A recording A natural voice in the customer’s language 
  Understands replies Yes Press 1 or 2 Yes, spoken answers 
  Knows the customer If they remember No Purchases, scheme balance, last visit 
@@ -28955,9 +28955,9 @@ AI CALLING FOR JEWELLERS
 
  WHAT YOU PAY
 
-## ₹6 a call. That is the whole idea.
+## ₹7 a call, all inclusive. That is the whole idea.
 
- AI calls: ₹6 a call, from a prepaid wallet you can see. Phone line: the line’s per-minute charge, shown on the pricing page . Platform: Jwero One, ₹18,000 a month with every module, first month ₹3,600. Or let Jwero run the calling for you , with every tool included.
+ AI calls: ₹7 a call, all inclusive (the AI, the voice and the phone line), from a prepaid wallet you can see. Platform: Jwero One, ₹18,000 a month with every module, first month ₹3,600. Or let Jwero run the calling for you , with every tool included.
 
 ## Hear it before you decide.
 
@@ -28992,7 +28992,7 @@ Q: Is AI calling legal in India?
 A: Calls to your own customers about their account, such as scheme reminders, are treated differently from promotional calls. Promotional calls must follow TRAI’s rules on registration, consent and do-not-disturb preferences. Confirm your setup with your advisor before calling at scale.
 
 Q: How much does AI calling cost?
-A: The AI agent costs ₹6 a call, from a prepaid wallet, plus the phone line’s per-minute charge. A call handled by hand usually takes 2 to 3 people several minutes each, so ₹6 a call is far cheaper. It runs on Jwero One at ₹18,000 a month (first month ₹3,600), or let Jwero run the calling for you.
+A: The AI agent costs ₹7 a call, all inclusive: the AI, the voice and the phone line, from a prepaid wallet. A call handled by hand usually takes 2 to 3 people several minutes each, so ₹7 a call is far cheaper. It runs on Jwero One at ₹18,000 a month (first month ₹3,600), or let Jwero run the calling for you.
 
 Q: Why is an AI call faster than a person picking up?
 A: When a person answers, they often have to ask 2 or 3 colleagues for the stock, the rate or the customer’s balance, then call back. The AI agent reads all of that from the customer’s record and the live catalogue, and answers, books or sends a link within seconds, at any hour.

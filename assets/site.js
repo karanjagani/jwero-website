@@ -2588,7 +2588,7 @@ document.addEventListener('click', function (e) {
   var inr = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
   function run() {
     var calls = v('calls'), mins = v('talk') + v('people') * v('each'), perHour = v('salary') / (26 * 9);
-    var hours = calls * mins / 60, manual = hours * perHour, ai = calls * 6;
+    var hours = calls * mins / 60, manual = hours * perHour, ai = calls * 7;
     var set = function (k, t) { var el = root.querySelector('[data-cc-o="' + k + '"]'); if (el) el.textContent = t; };
     set('hours', Math.round(hours).toLocaleString('en-IN') + ' hours'); set('manual', inr(manual)); set('ai', inr(ai));
     set('save', manual > ai ? inr(manual - ai) : '₹0'); set('miss', Math.round(calls * v('missed') / 100).toLocaleString('en-IN') + ' calls');
