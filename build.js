@@ -1780,6 +1780,14 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Recruitment, onboarding, documents, reviews, learning and full-and-final settlement. Staff self-service app in multiple languages; salary visibility by permission.
 - Karigar wages are not in HR; they are settled in the manufacturing module.
 
+## Jewellery video calls and appointments (facts)
+
+- Page: https://jwero.ai/products/meetings
+- Video or voice calls started from any WhatsApp or web-chat conversation; the customer joins from a link with no app.
+- Self-booking against each host's working hours, buffers, minimum notice and daily cap; one calendar with Jwero meetings, showroom and phone appointments, Google Meet and Zoho Bookings.
+- Waiting room with a short form and admit control; signed, time-bound, revocable links tied to the first device.
+- Recording optional, with an in-room indicator and a notice before joining; reminders and no-show follow-ups with a fresh link; outcome on the customer record.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.

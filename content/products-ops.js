@@ -331,50 +331,105 @@ ${L.ctaBand('Bring your pledge register.', 'We will show you one loan from intak
 `,
 };
 
+// Meetings, rebuilt 2026-10-07. Not claimed here (unconfirmed): live streaming,
+// shoppable video, video-QR, sharing products or payment links inside a call,
+// group calls, try-at-home slots on this calendar.
+const MT_FLOW = [
+  ['Enquiry', 'A family in Dubai asks on WhatsApp about a bridal set'],
+  ['Video call', 'Started from the chat in one tap · no app to install'],
+  ['Waiting room', 'She knocks · the host sees her answers and admits her'],
+  ['On screen', 'The host has the sets she asked about in chat'],
+  ['Shown', 'Three sets shown up close on video'],
+  ['Booked', 'A showroom visit booked for the family in India · reminder sent'],
+  ['On record', 'The call, the visit and the outcome on her record'],
+];
+const mtFlow = () => `<div class="wa-story" data-wa-story>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">VIDEO COUNTER · CHAT TO VISIT</p>${MT_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
+  <ol class="wa-steps">${MT_FLOW.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
+</div>`;
+const MT_CMP = [
+  ['Starting a call', 'From a personal phone', 'Send a separate link', 'One tap from the WhatsApp or web chat'],
+  ['Booking', 'Back and forth in chat', 'A separate booking tool', 'Self-booking against real availability'],
+  ['Calendar', 'Someone’s memory', 'One more calendar', 'Jwero, Google Meet and Zoho Bookings together'],
+  ['Who joins', 'Anyone with the number', 'Anyone with the link', 'Waiting room, admit, signed links'],
+  ['What she asked about', 'Scroll up the chat', 'Not there', 'On the host’s screen when she joins'],
+  ['No-shows', 'Forgotten', 'Email reminder', 'Reminders and follow-ups on her channel'],
+  ['Afterwards', 'Nothing recorded', 'A recording somewhere', 'Outcome on her customer record'],
+];
+const mtTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>WhatsApp video call</th><th>Zoom or Google Meet</th><th>Jwero</th></tr></thead><tbody>${MT_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
+const MT_HOW = [
+  ['Set your hosts and hours', 'Working hours, buffers, minimum notice and a daily cap for each salesperson.'],
+  ['Connect your calendars', 'Google Meet and Zoho Bookings block busy slots automatically.'],
+  ['Offer a call or a booking', 'Start a video call from the chat, or send her the booking page.'],
+  ['Show the pieces', 'What she asked about is on your screen when you admit her.'],
+  ['Follow up', 'Reminders, no-show follow-ups and the outcome on her record.'],
+];
+const mtFaqs = [
+  { q: 'What is video shopping for jewellery?', a: 'Showing jewellery to a customer on a live video call, so she can see pieces up close before she buys or visits. Jwero starts the call from her WhatsApp or web chat, with no app to install.' },
+  { q: 'How do I sell jewellery on a video call?', a: 'Start the call from her chat, have the pieces she asked about ready on screen, show them up close, and book the visit or next step before you hang up. The outcome goes on her record.' },
+  { q: 'Can I sell to NRI customers on video?', a: 'Yes. Families abroad join from a link on WhatsApp, see the pieces on video, and can book a showroom visit for family in India.' },
+  { q: 'How does a customer join a video call?', a: 'From a link on WhatsApp or web chat. She fills a short form, knocks, and joins when a host admits her. No app to install.' },
+  { q: 'Can customers book appointments themselves?', a: 'Yes. Each host sets working hours, buffers, minimum notice and a daily cap, and busy time from Google Meet and Zoho Bookings blocks the slot.' },
+  { q: 'Are calls recorded?', a: 'Only if you choose to, with an indicator in the room and a notice before she joins.' },
+  { q: 'Is the link secure?', a: 'Each link is signed, valid only around the meeting, revocable, and tied to the first device that opens it.' },
+  { q: 'What if she does not turn up?', a: 'Reminders and no-show follow-ups go out on her channel with a fresh link, and the outcome is on her record.' },
+];
 const meetings = {
   slug: 'products/meetings',
-  title: 'Jewellery Appointment & Video Call Software | Jwero',
-  description: 'Start a video or voice call from any WhatsApp or web-chat conversation, let customers self-book against real availability, run a waiting room with admit control, and record with consent — all on the customer record.',
+  title: 'Jewellery Video Call & Appointment Software: Video Shopping | Jwero',
+  description: 'Video shopping and appointment software for jewellers: start a video call from WhatsApp or web chat, let customers self-book, admit them from a waiting room, show the pieces they asked about, and follow up no-shows.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
-    name: 'Jwero Meetings', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Video counter and appointment scheduling for jewellers: meet now from the inbox, self-booking, unified calendar, waiting room, recording and reminders.',
+    name: 'Jwero Meetings', alternateName: ['Video shopping for jewellers', 'Jewellery appointment software', 'Virtual jewellery appointments'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
+    description: 'Video counter and appointment scheduling for jewellers: video calls started from WhatsApp or web chat with no app, self-booking against real availability, one calendar with Google Meet and Zoho Bookings, waiting room and admit, signed links, recording with consent, reminders and no-show follow-ups, on the customer record.',
     url: 'https://jwero.ai/products/meetings', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
+    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
+  extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to sell jewellery on a video call', step: MT_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Video Counter & Appointments'),
-  faqs: [
-    { q: 'How does a customer join a video call?', a: 'From a link sent on her own channel — WhatsApp or web chat. She fills a short form your team configured, knocks, and joins when a host admits her. No app to install.' },
-    { q: 'Can customers book themselves?', a: 'Yes. Each host sets working hours, buffers, minimum notice and a daily cap; busy time comes from the unified calendar, so a Google Meet already booked blocks the slot.' },
-    { q: 'Are calls recorded?', a: 'Optionally, with an indicator for everyone in the room and a notice to the customer before she joins.' },
-    { q: 'Is the link secure?', a: 'Each link is signed, valid only around the meeting window, revocable, and bound to the first device that opens it — a later open from elsewhere still reaches the waiting room but is flagged to the host.' },
-    { q: 'What if she does not turn up?', a: 'Reminders and no-show follow-ups go out on her channel, each with a fresh link, and the outcome is on her record.' },
-  ],
+  faqs: mtFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'VIDEO COUNTER & APPOINTMENTS',
-  h1: 'The showroom, at her convenience.',
-  sub: 'Turn any WhatsApp or web-chat conversation into a video call in one tap, or let her book a slot against real availability. Waiting room, admit control, recording with consent, reminders — and the meeting on her record, next to what she asked about.',
+  eyebrow: 'VIDEO SHOPPING · APPOINTMENTS',
+  h1: 'Video shopping and appointments for jewellers: show the piece on video, book the visit.',
+  sub: 'Turn any WhatsApp or web chat into a video call in one tap, or let her book a slot against real availability. Waiting room, recording with consent, reminders, and the pieces she asked about on your screen when she joins.',
   primary: { href: '#', label: 'Send me a video counter link', wa: 'meetings' },
   secondary: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' },
 })}
 
-${L.section(
-  `${L.cards([
-    { title: 'Meet now, from the inbox', text: 'Video or voice from the conversation header; the customer gets the link on the channel she is already on.' },
-    { title: 'Self-booking', text: 'Per-host working hours, buffers, minimum notice and daily caps — and a public booking page that only offers real slots.' },
-    { title: 'One calendar', text: 'Jwero meetings, offline and phone appointments, Google Meet and Zoho Bookings on one calendar — no second diary.' },
-    { title: 'Waiting room & admit', text: 'She fills a short form, knocks, and joins only when a host admits her — the host sees her answers before opening the door.' },
-    { title: 'Recording, with consent', text: 'Optional recording with an indicator in the room and a notice before joining; recordings stay with the meeting.' },
-    { title: 'Reminders & no-shows', text: 'Reminders and no-show follow-ups on her channel, each with a fresh link; the outcome writes to her record.' },
-  ])}`
-)}
+${L.section(`${L.sectionHead('ONE CALL, START TO FINISH', 'From a WhatsApp question in Dubai to a showroom visit in India.', '')}${mtFlow()}`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('SIX JOBS, ONE VIDEO COUNTER', 'What jewellery video and appointment software has to do.', '')}<div class="wa-jobs">
+  <article><h3>1. A call from any chat</h3><p>Video or voice from the WhatsApp or web-chat conversation; she joins from a link, with no app.</p><a href="/products/whatsapp">WhatsApp →</a></article>
+  <article><h3>2. Bookings that fit</h3><p>Self-booking against each host’s real hours, buffers, notice and daily cap.</p><a href="/products/showroom">Showroom →</a></article>
+  <article><h3>3. One calendar</h3><p>Jwero meetings, showroom and phone appointments, Google Meet and Zoho Bookings together.</p><a href="/platform/integrations">Integrations →</a></article>
+  <article><h3>4. Only the right people in</h3><p>A short form, a waiting room, admit control, and signed links tied to her device.</p><a href="/trust/security">Security →</a></article>
+  <article><h3>5. Ready when she joins</h3><p>The pieces she asked about and her answers on the host’s screen; recording only with consent.</p><a href="/products/crm">Customer record →</a></article>
+  <article><h3>6. No-shows followed up</h3><p>Reminders and follow-ups on her channel with a fresh link; the outcome on her record.</p><a href="/products/journeys">Journeys →</a></article>
+</div>`)}
+
+${L.section(`${L.sectionHead('THE ARITHMETIC', 'What video calls are worth to you.', 'Your numbers, not ours.')}<div class="callc" data-mtc>
+  <div class="callc-in">
+    <label>Enquiries a month from customers who can’t visit soon<input type="number" inputmode="numeric" data-mt="n" value="40" min="0"></label>
+    <label>Who buy or book a visit after a video call, %<input type="number" inputmode="decimal" data-mt="buy" value="15" min="0" max="100"></label>
+    <label>Average bill, ₹<input type="number" inputmode="numeric" data-mt="bill" value="150000" min="0" step="5000"></label>
+  </div>
+  <div class="callc-out" aria-live="polite">
+    <p><span>Sales a month from video</span><b data-mt-o="sales">0</b></p>
+    <p class="callc-save"><span>Revenue a month</span><b data-mt-o="rev">₹0</b></p>
+    <p class="cta-note">A planning estimate from your own inputs.</p>
+  </div>
+</div>`, { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'A WhatsApp video call, Zoom or Google Meet, or Jwero.', '')}${mtTable()}`)}
+
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to sell jewellery on a video call.', 'Five steps.')}${L.steps(MT_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
-  'Form answers map to fields on the customer record — a conflicting answer becomes a suggestion your agent accepts, never a silent overwrite.',
+  'Form answers map to her customer record; a conflicting answer becomes a suggestion, never a silent overwrite.',
   'The pieces she asked about in chat are the ones the host has on screen when she joins.',
+  'A booked visit lands on the same expected-visits list your showroom works from.',
 ])}
-
-${L.section(`${L.proofStrip()}<p class="live-demo-note">Try the chat button on this page — it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.ctaBand('See the video counter from the customer’s side.', 'Message us; we will send you a meeting link the way your customers would get one.', 'meetings')}
 `,

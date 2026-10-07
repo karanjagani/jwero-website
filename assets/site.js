@@ -2888,3 +2888,12 @@ document.addEventListener('click', function (e) {
     set('a', a); set('b', b); set('t', a + b); }
   root.addEventListener('input', run); run();
 })();
+// Meetings page: what video calls are worth.
+(function () {
+  var root = document.querySelector('[data-mtc]'); if (!root) return;
+  var v = function (k) { return +(root.querySelector('[data-mt="' + k + '"]') || {}).value || 0; };
+  function run() { var s = Math.round(v('n') * v('buy') / 100);
+    var set = function (k, t) { var el = root.querySelector('[data-mt-o="' + k + '"]'); if (el) el.textContent = t; };
+    set('sales', s.toLocaleString('en-IN')); set('rev', '₹' + (s * v('bill')).toLocaleString('en-IN')); }
+  root.addEventListener('input', run); run();
+})();

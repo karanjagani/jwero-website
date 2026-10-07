@@ -2650,7 +2650,7 @@ AI CHATBOT · AI SALES AGENTS · VOICE AI
 ## Promote it
  When it earns your trust, let chosen actions run on their own, with every action logged.
 
- Want customers to see a piece on video? See video calls and live selling .
+ Want customers to see a piece on video? See video calls and appointments .
 
  BECAUSE IT'S ONE SYSTEM
 
@@ -6668,59 +6668,135 @@ A: Yes. Every disbursal, interest entry, collection, release and auction posts t
 
 ---
 
-# Jewellery Appointment & Video Call Software
+# Jewellery Video Call & Appointment Software: Video Shopping
 URL: https://jwero.ai/products/meetings
 
-Start a video or voice call from any WhatsApp or web-chat conversation, let customers self-book against real availability, run a waiting room with admit control, and record with consent, all on the customer record.
+Video shopping and appointment software for jewellers: start a video call from WhatsApp or web chat, let customers self-book, admit them from a waiting room, show the pieces they asked about, and follow up no-shows.
 
-VIDEO COUNTER & APPOINTMENTS
+VIDEO SHOPPING · APPOINTMENTS
 
-## The showroom, at her convenience.
+## Video shopping and appointments for jewellers: show the piece on video, book the visit.
 
- Turn any WhatsApp or web-chat conversation into a video call in one tap, or let her book a slot against real availability. Waiting room, admit control, recording with consent, reminders, and the meeting on her record, next to what she asked about.
+ Turn any WhatsApp or web chat into a video call in one tap, or let her book a slot against real availability. Waiting room, recording with consent, reminders, and the pieces she asked about on your screen when she joins.
 
  Send me a video counter link 
  See WhatsApp Commerce 
 
-## Meet now, from the inbox
+ ONE CALL, START TO FINISH
 
- Video or voice from the conversation header; the customer gets the link on the channel she is already on.
+## From a WhatsApp question in Dubai to a showroom visit in India.
 
-## Self-booking
+ VIDEO COUNTER · CHAT TO VISIT
+ Enquiry A family in Dubai asks on WhatsApp about a bridal set
+ Video call Started from the chat in one tap · no app to install
+ Waiting room She knocks · the host sees her answers and admits her
+ On screen The host has the sets she asked about in chat
+ Shown Three sets shown up close on video
+ Booked A showroom visit booked for the family in India · reminder sent
+ On record The call, the visit and the outcome on her record
+ Illustrative.
 
- Per-host working hours, buffers, minimum notice and daily caps, and a public booking page that only offers real slots.
+ Enquiry A family in Dubai asks on WhatsApp about a bridal set 
+ Video call Started from the chat in one tap 
+ Waiting room She knocks 
+ On screen The host has the sets she asked about in chat 
+ Shown Three sets shown up close on video 
+ Booked A showroom visit booked for the family in India 
+ On record The call, the visit and the outcome on her record 
 
-## One calendar
+ SIX JOBS, ONE VIDEO COUNTER
 
- Jwero meetings, offline and phone appointments, Google Meet and Zoho Bookings on one calendar, no second diary.
+## What jewellery video and appointment software has to do.
 
-## Waiting room & admit
+## 1. A call from any chat
+ Video or voice from the WhatsApp or web-chat conversation; she joins from a link, with no app.
+ WhatsApp → 
 
- She fills a short form, knocks, and joins only when a host admits her, the host sees her answers before opening the door.
+## 2. Bookings that fit
+ Self-booking against each host’s real hours, buffers, notice and daily cap.
+ Showroom → 
 
-## Recording, with consent
+## 3. One calendar
+ Jwero meetings, showroom and phone appointments, Google Meet and Zoho Bookings together.
+ Integrations → 
 
- Optional recording with an indicator in the room and a notice before joining; recordings stay with the meeting.
+## 4. Only the right people in
+ A short form, a waiting room, admit control, and signed links tied to her device.
+ Security → 
 
-## Reminders & no-shows
+## 5. Ready when she joins
+ The pieces she asked about and her answers on the host’s screen; recording only with consent.
+ Customer record → 
 
- Reminders and no-show follow-ups on her channel, each with a fresh link; the outcome writes to her record.
+## 6. No-shows followed up
+ Reminders and follow-ups on her channel with a fresh link; the outcome on her record.
+ Journeys → 
+
+ THE ARITHMETIC
+
+## What video calls are worth to you.
+
+ Your numbers, not ours.
+
+ Enquiries a month from customers who can’t visit soon 
+ Who buy or book a visit after a video call, % 
+ Average bill, ₹ 
+
+ Sales a month from video 0 
+
+ Revenue a month ₹0 
+
+ A planning estimate from your own inputs.
+
+ COMPARE
+
+## A WhatsApp video call, Zoom or Google Meet, or Jwero.
+
+ WhatsApp video call Zoom or Google Meet Jwero 
+ Starting a call From a personal phone Send a separate link One tap from the WhatsApp or web chat 
+ Booking Back and forth in chat A separate booking tool Self-booking against real availability 
+ Calendar Someone’s memory One more calendar Jwero, Google Meet and Zoho Bookings together 
+ Who joins Anyone with the number Anyone with the link Waiting room, admit, signed links 
+ What she asked about Scroll up the chat Not there On the host’s screen when she joins 
+ No-shows Forgotten Email reminder Reminders and follow-ups on her channel 
+ Afterwards Nothing recorded A recording somewhere Outcome on her customer record 
+
+ GETTING STARTED
+
+## How to sell jewellery on a video call.
+
+ Five steps.
+
+ 1 
+
+## Set your hosts and hours
+ Working hours, buffers, minimum notice and a daily cap for each salesperson.
+
+ 2 
+
+## Connect your calendars
+ Google Meet and Zoho Bookings block busy slots automatically.
+
+ 3 
+
+## Offer a call or a booking
+ Start a video call from the chat, or send her the booking page.
+
+ 4 
+
+## Show the pieces
+ What she asked about is on your screen when you admit her.
+
+ 5 
+
+## Follow up
+ Reminders, no-show follow-ups and the outcome on her record.
 
  BECAUSE IT'S ONE SYSTEM
 
- Form answers map to fields on the customer record, a conflicting answer becomes a suggestion your agent accepts, never a silent overwrite.
+ Form answers map to her customer record; a conflicting answer becomes a suggestion, never a silent overwrite.
  The pieces she asked about in chat are the ones the host has on screen when she joins.
-
- 198
- kinds of customer signal, scored into 11 live scores
- 240+
- governed AI actions, individually permissioned
- 14
- languages the AI voice speaks
- 5
- scopes of AI kill switch
- 
- Try the chat button on this page, it’s Jwero, live, answering.
+ A booked visit lands on the same expected-visits list your showroom works from.
 
 ## See the video counter from the customer’s side.
 
@@ -6733,20 +6809,29 @@ VIDEO COUNTER & APPOINTMENTS
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
 
-Q: How does a customer join a video call?
-A: From a link sent on her own channel, WhatsApp or web chat. She fills a short form your team configured, knocks, and joins when a host admits her. No app to install.
+Q: What is video shopping for jewellery?
+A: Showing jewellery to a customer on a live video call, so she can see pieces up close before she buys or visits. Jwero starts the call from her WhatsApp or web chat, with no app to install.
 
-Q: Can customers book themselves?
-A: Yes. Each host sets working hours, buffers, minimum notice and a daily cap; busy time comes from the unified calendar, so a Google Meet already booked blocks the slot.
+Q: How do I sell jewellery on a video call?
+A: Start the call from her chat, have the pieces she asked about ready on screen, show them up close, and book the visit or next step before you hang up. The outcome goes on her record.
+
+Q: Can I sell to NRI customers on video?
+A: Yes. Families abroad join from a link on WhatsApp, see the pieces on video, and can book a showroom visit for family in India.
+
+Q: How does a customer join a video call?
+A: From a link on WhatsApp or web chat. She fills a short form, knocks, and joins when a host admits her. No app to install.
+
+Q: Can customers book appointments themselves?
+A: Yes. Each host sets working hours, buffers, minimum notice and a daily cap, and busy time from Google Meet and Zoho Bookings blocks the slot.
 
 Q: Are calls recorded?
-A: Optionally, with an indicator for everyone in the room and a notice to the customer before she joins.
+A: Only if you choose to, with an indicator in the room and a notice before she joins.
 
 Q: Is the link secure?
-A: Each link is signed, valid only around the meeting window, revocable, and bound to the first device that opens it, a later open from elsewhere still reaches the waiting room but is flagged to the host.
+A: Each link is signed, valid only around the meeting, revocable, and tied to the first device that opens it.
 
 Q: What if she does not turn up?
-A: Reminders and no-show follow-ups go out on her channel, each with a fresh link, and the outcome is on her record.
+A: Reminders and no-show follow-ups go out on her channel with a fresh link, and the outcome is on her record.
 
 ---
 
@@ -30332,14 +30417,14 @@ APPOINTMENT BOOKING FOR JEWELLERS
  Does it suit bridal trials? 
  Yes. Trials are booked with the pieces to prepare, and each visit is kept on the family’s record.
 
+ What is video shopping for jewellery? 
+ Showing jewellery to a customer on a live video call, so she can see pieces up close before she buys or visits. Jwero starts the call from her WhatsApp or web chat, with no app to install.
+
+ Can I sell to NRI customers on video? 
+ Yes. Families abroad join from a link on WhatsApp, see the pieces on video, and can book a showroom visit for family in India.
+
  How does a customer join a video call? 
- From a link sent on her own channel, WhatsApp or web chat. She fills a short form your team configured, knocks, and joins when a host admits her. No app to install.
-
- Can customers book themselves? 
- Yes. Each host sets working hours, buffers, minimum notice and a daily cap; busy time comes from the unified calendar, so a Google Meet already booked blocks the slot.
-
- Are calls recorded? 
- Optionally, with an indicator for everyone in the room and a notice to the customer before she joins.
+ From a link on WhatsApp or web chat. She fills a short form, knocks, and joins when a host admits her. No app to install.
 
  Related: Video counter and appointments · Bridal jewellers · Showroom · Quotations 
 
@@ -30369,14 +30454,14 @@ A: Start the call from the conversation, show the shortlisted pieces, and send a
 Q: Does it suit bridal trials?
 A: Yes. Trials are booked with the pieces to prepare, and each visit is kept on the family’s record.
 
+Q: What is video shopping for jewellery?
+A: Showing jewellery to a customer on a live video call, so she can see pieces up close before she buys or visits. Jwero starts the call from her WhatsApp or web chat, with no app to install.
+
+Q: Can I sell to NRI customers on video?
+A: Yes. Families abroad join from a link on WhatsApp, see the pieces on video, and can book a showroom visit for family in India.
+
 Q: How does a customer join a video call?
-A: From a link sent on her own channel, WhatsApp or web chat. She fills a short form your team configured, knocks, and joins when a host admits her. No app to install.
-
-Q: Can customers book themselves?
-A: Yes. Each host sets working hours, buffers, minimum notice and a daily cap; busy time comes from the unified calendar, so a Google Meet already booked blocks the slot.
-
-Q: Are calls recorded?
-A: Optionally, with an indicator for everyone in the room and a notice to the customer before she joins.
+A: From a link on WhatsApp or web chat. She fills a short form, knocks, and joins when a host admits her. No app to install.
 
 ---
 

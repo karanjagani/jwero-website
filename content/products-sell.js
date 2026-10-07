@@ -343,7 +343,7 @@ ${L.section(`${L.sectionHead('THE ARITHMETIC', 'What answering late costs you.',
 
 ${L.section(`${L.sectionHead('COMPARE', 'The WhatsApp Business app, a generic chatbot, or Jwero.', '')}${aiTable()}`)}
 
-${L.section(`${L.sectionHead('GETTING STARTED', 'How to start with an AI sales agent.', 'Five steps, at your pace.')}${L.steps(AI_HOW.map(([title, text]) => ({ title, text })))}<p class="cta-note" style="margin-top:14px">Want customers to see a piece on video? See <a href="/products/meetings">video calls and live selling</a>.</p>`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('GETTING STARTED', 'How to start with an AI sales agent.', 'Five steps, at your pace.')}${L.steps(AI_HOW.map(([title, text]) => ({ title, text })))}<p class="cta-note" style="margin-top:14px">Want customers to see a piece on video? See <a href="/products/meetings">video calls and appointments</a>.</p>`, { tone: 'tint' })}
 
 ${L.oneSystemBlock([
   'The AI reads the same customer record your team does: purchases, scheme, taste and every past chat.',
