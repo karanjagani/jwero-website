@@ -8591,6 +8591,7 @@ PRICING
  Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
  Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
  AI on your terms: run models locally, or connect the models you choose.
+ Customised to your requirements: your workflows, fields, rules, screens and integrations, with no platform limits on what you can do.
  No platform risk. A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk.
  No vendors to coordinate. One system and one owner of the fix, not ten vendors pointing at each other when something breaks.
  
@@ -15461,6 +15462,10 @@ ENTERPRISE
 ## Your policies, end to end
 
  Your access rules, backups, audits and retention, with roles per branch and team, SSO, and every action logged and stoppable.
+
+## Customised to your requirements
+
+ Shape the platform to how your business works: your workflows, fields, rules, screens and integrations. No platform limits deciding what you can and cannot do.
 
 ## No platform risk
 
@@ -108023,6 +108028,7 @@ Jewellery Business as a Service
  Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
  Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
  AI on your terms: run models locally, or connect the models you choose.
+ Customised to your requirements: your workflows, fields, rules, screens and integrations, with no platform limits on what you can do.
  No platform risk. A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk.
  No vendors to coordinate. One system and one owner of the fix, not ten vendors pointing at each other when something breaks.
  
@@ -108448,6 +108454,7 @@ Why Jwero
  Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
  Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
  AI on your terms: run models locally, or connect the models you choose.
+ Customised to your requirements: your workflows, fields, rules, screens and integrations, with no platform limits on what you can do.
  No platform risk. A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk.
  No vendors to coordinate. One system and one owner of the fix, not ten vendors pointing at each other when something breaks.
  
@@ -108720,6 +108727,7 @@ How it works
  Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
  Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
  AI on your terms: run models locally, or connect the models you choose.
+ Customised to your requirements: your workflows, fields, rules, screens and integrations, with no platform limits on what you can do.
  No platform risk. A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk.
  No vendors to coordinate. One system and one owner of the fix, not ten vendors pointing at each other when something breaks.
  
@@ -109036,6 +109044,7 @@ AI + experts
  Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
  Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
  AI on your terms: run models locally, or connect the models you choose.
+ Customised to your requirements: your workflows, fields, rules, screens and integrations, with no platform limits on what you can do.
  No platform risk. A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk.
  No vendors to coordinate. One system and one owner of the fix, not ten vendors pointing at each other when something breaks.
  
@@ -109364,6 +109373,7 @@ What we handle
  Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
  Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
  AI on your terms: run models locally, or connect the models you choose.
+ Customised to your requirements: your workflows, fields, rules, screens and integrations, with no platform limits on what you can do.
  No platform risk. A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk.
  No vendors to coordinate. One system and one owner of the fix, not ten vendors pointing at each other when something breaks.
  

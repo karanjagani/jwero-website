@@ -117,6 +117,7 @@ ${L.section(
     { title: 'Every module', text: 'Counter, stock, CRM, WhatsApp, schemes, girvi, manufacturing, AI and the rest all run self-hosted. A few, such as WhatsApp and AI calling, need an internet connection to reach their channels.' },
     { title: 'AI on your terms', text: 'Run AI models locally, or connect the models and providers you choose under your own contracts.' },
     { title: 'Your policies, end to end', text: 'Your access rules, backups, audits and retention, with roles per branch and team, SSO, and every action logged and stoppable.' },
+    { title: 'Customised to your requirements', text: 'Shape the platform to how your business works: your workflows, fields, rules, screens and integrations. No platform limits deciding what you can and cannot do.' },
     { title: 'No platform risk', text: 'A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk. The system keeps running on your infrastructure, on your schedule.' },
     { title: 'No vendors to coordinate', text: 'No ten tools from ten vendors pointing at each other when something breaks. One system, one owner of the fix, and one optional support contract.' },
   ])}`
