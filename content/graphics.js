@@ -156,4 +156,11 @@ const showroomHeat = () => `
   <figcaption id="heat-cap"><b>Illustrative.</b> The cameras you already have count who comes in; Jwero matches them to bills and shows who walked out without buying.</figcaption>
 </figure>`;
 
-module.exports = { tierGlance, selfHostMap, hierarchyTree, toolCollapse, marketPicker, tallyFlow, techStack, orbit, integrationMap, showroomHeat };
+// Market pages: the market's own card, shown in the hero.
+const marketCard = (key) => { const m = MKT.find((x) => x[0] === key); if (!m) return ''; const [, t, rows] = m; return `
+<div class="mkp mkp-hero" data-gfx aria-label="Jwero in ${t}, at a glance">
+  <p class="mkp-k">${icon('gem')} Jwero in ${t}</p>
+  <ul class="mkp-rows">${rows.map(([l, v], r) => `<li style="--r:${r}">${icon(MKT_IC[l])}<small>${l}</small><b>${v}</b></li>`).join('')}</ul>
+</div>`; };
+
+module.exports = { marketCard, tierGlance, selfHostMap, hierarchyTree, toolCollapse, marketPicker, tallyFlow, techStack, orbit, integrationMap, showroomHeat };

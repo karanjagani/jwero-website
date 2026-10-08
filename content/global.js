@@ -52,7 +52,7 @@ ${L.ctaBand('Selling outside India?', 'Tell us your country and what you run; we
 const market = ({ slug, title, description, eyebrow, h1, sub, wa, points, cmp, faqs, close }) => ({
   slug, title, description, faqs, breadcrumbs: [['Home', '/'], ['Jwero worldwide', '/global'], [eyebrow]],
   body: `
-${L.hero({ eyebrow: eyebrow.toUpperCase(), h1, sub, primary: { href: '#', label: 'Show me Jwero for my market', wa }, secondary: { href: '/pricing', label: 'See pricing' } })}
+${L.hero({ eyebrow: eyebrow.toUpperCase(), h1, sub, primary: { href: '#', label: 'Show me Jwero for my market', wa }, secondary: { href: '/pricing', label: 'See pricing' }, mock: require('./graphics').marketCard({ 'jewellery-software-uae': 'gulf', 'jewellery-software-uk': 'ukeu', 'jewellery-software-usa': 'usca', 'jewellery-software-singapore': 'sea' }[slug]) })}
 ${L.section(`${L.sectionHead('BUILT FOR THIS MARKET', 'What a jeweller here needs, handled.', '')}<div class="wa-jobs">${points.map(([t, d]) => `<article><h3>${t}</h3><p>${d}</p></article>`).join('')}</div>`)}
 ${L.section(`${L.sectionHead('COMPARE', 'Separate tools, or one system.', '')}<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Separate tools</th><th>Jwero</th></tr></thead><tbody>${cmp.map(([r, a, b]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td class="wa-cmp-us">${b}</td></tr>`).join('')}</tbody></table></div>`, { tone: 'tint' })}
 ${L.section(`${L.sectionHead('EVERY MODULE', 'The whole business on one record.', '')}${L.cards([

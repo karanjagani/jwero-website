@@ -110600,6 +110600,14 @@ JWERO IN THE GULF
  Show me Jwero for my market 
  See pricing 
 
+ Jwero in The Gulf
+
+ Currency Dirhams, Saudi and Qatari riyals 
+ Tax GCC VAT on every invoice 
+ Gold rate Live, by the gram or tola 
+ Languages Arabic and English 
+ Payments Stripe and PayPal 
+
  BUILT FOR THIS MARKET
 
 ## What a jeweller here needs, handled.
@@ -110692,6 +110700,14 @@ JWERO IN THE UK AND EUROPE
 
  Show me Jwero for my market 
  See pricing 
+
+ Jwero in UK and Europe
+
+ Currency Pounds and euros 
+ Tax UK VAT and EU VAT 
+ Gold rate Live, by the gram or ounce 
+ Languages English, French and Spanish 
+ Payments Stripe and PayPal 
 
  BUILT FOR THIS MARKET
 
@@ -110786,6 +110802,14 @@ JWERO IN THE US AND CANADA
  Show me Jwero for my market 
  See pricing 
 
+ Jwero in US and Canada
+
+ Currency US dollars 
+ Tax US sales tax; Canada, ask us 
+ Gold rate Live, by the ounce or gram 
+ Languages English, Spanish and French 
+ Payments Stripe and PayPal 
+
  BUILT FOR THIS MARKET
 
 ## What a jeweller here needs, handled.
@@ -110878,6 +110902,14 @@ JWERO IN SOUTH AND SOUTHEAST ASIA
 
  Show me Jwero for my market 
  See pricing 
+
+ Jwero in South and Southeast Asia
+
+ Currency Your local currency 
+ Tax Ask us for your country 
+ Gold rate Live, by the gram or tola 
+ Languages English and 13 more 
+ Payments Stripe and PayPal 
 
  BUILT FOR THIS MARKET
 

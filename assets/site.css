@@ -4758,3 +4758,22 @@ html[data-cur="inr"] .tseal[data-reg="gl"], html:not([data-cur="inr"]) .tseal[da
 .wa-jobs article::after { content: ''; position: absolute; left: 0; top: 0; height: 3px; width: 0; background: linear-gradient(90deg, var(--brand), var(--amber)); transition: width .5s var(--ease); }
 .wa-jobs article:hover { border-color: var(--brand); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 .wa-jobs article:hover::after, .reveal-group.is-visible.wa-jobs article::after { width: 100%; transition-delay: calc(.2s + var(--i, 0) * 90ms); }
+
+/* Market hero card */
+.mkp-hero { max-width: 980px; margin: 0 auto; }
+.mkp-k { display: flex; gap: 8px; align-items: center; margin: 0 0 12px; font: 600 .75rem/1 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--brand); }
+.mkp-k .ico { width: 18px; height: 18px; color: var(--amber); }
+.gfx-arm:not(.is-in) .mkp-rows li { opacity: 0; transform: translateY(10px); }
+
+/* "Because it's one system": one action, linked to every effect */
+.one-system-list.is-linked { position: relative; padding-left: 4px; }
+.one-system-list.is-linked::before { content: ''; position: absolute; left: 8px; top: 10px; bottom: 10px; width: 2px; background: linear-gradient(var(--brand), var(--amber)); transform-origin: top; }
+.one-system-list.is-linked li { padding-left: 30px; }
+.one-system-list.is-linked li::before { content: ''; left: 3px; top: .35em; width: 12px; height: 12px; border-radius: 50%; background: var(--card); border: 2px solid var(--brand); box-sizing: border-box; }
+.gfx-arm:not(.is-in) .one-system-list.is-linked::before { transform: scaleY(0); }
+.gfx-arm .one-system-list.is-linked::before { transition: transform .9s var(--ease); }
+.gfx-arm:not(.is-in) .one-system-list.is-linked li { opacity: 0; transform: translateX(-8px); }
+.gfx-arm .one-system-list.is-linked li { transition: opacity .5s var(--ease), transform .5s var(--ease); transition-delay: calc(.3s + var(--i) * 250ms); }
+.gfx-arm.is-in .one-system-list.is-linked li::before { animation: osPing 6s ease-in-out infinite; animation-delay: calc(1.2s + var(--i) * .6s); }
+@keyframes osPing { 0%, 14%, 100% { background: var(--card); box-shadow: none; } 6% { background: var(--amber); border-color: var(--amber); box-shadow: 0 0 0 6px color-mix(in srgb, var(--amber) 25%, transparent); } }
+@media (prefers-reduced-motion: reduce) { .one-system-list.is-linked li::before { animation: none !important; } }

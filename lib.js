@@ -594,10 +594,10 @@ function agentLoop() {
 // "Because it's one system" — the fixed cross-module proof block every product page carries (BP2 §1.1.3).
 function oneSystemBlock(lines) {
   return `
-<div class="one-system">
+<div class="one-system" data-gfx>
   <p class="one-system-tag">BECAUSE IT'S ONE SYSTEM</p>
-  <ul class="one-system-list">
-    ${lines.map((l) => `<li>${l}</li>`).join('')}
+  <ul class="one-system-list is-linked">
+    ${lines.map((l, i) => `<li style="--i:${i}">${l}</li>`).join('')}
   </ul>
 </div>`;
 }
