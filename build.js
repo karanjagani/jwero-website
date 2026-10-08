@@ -1790,9 +1790,9 @@ function build() {
   Strict-Transport-Security: max-age=31536000
   X-Robots-Tag: noai, noimageai
 /assets/site.css
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 /assets/site.js
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 /assets/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 /assets/og/*
