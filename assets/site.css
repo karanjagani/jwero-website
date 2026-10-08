@@ -4812,3 +4812,8 @@ main h2[id^="sec-"] { scroll-margin-top: calc(var(--header-h) + 20px); }
 .mkt-chips span { color: var(--ink-2); padding: 5px 4px; }
 .mkt-chips a { padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--ink); text-decoration: none; }
 .mkt-chips a:hover { border-color: var(--brand); color: var(--brand); }
+
+/* "Works in" chips on the blue hero panel */
+.hero-panel .mkt-chips span { color: var(--panel-mute); }
+.hero-panel .mkt-chips a { color: #fff; border-color: rgba(255, 255, 255, .45); }
+.hero-panel .mkt-chips a:hover { border-color: var(--amber); color: #fff; }

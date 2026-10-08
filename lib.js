@@ -137,7 +137,7 @@ function hero({ eyebrow, h1, sub, primary, secondary, note, mock, panel, extra }
   <div class="panel">
     <div class="panel-glow" aria-hidden="true"></div>
     <div class="hero-inner">
-      ${eyebrow ? `<a class="hero-pill" href="#" data-wa="announce">${mark('mark-xs')}<span>${eyebrow} · Chat or call with us</span><span class="pill-arrow" aria-hidden="true">${icon('arrow')}</span></a>` : ''}
+      ${eyebrow ? `<a class="hero-pill" href="#" data-wa="announce">${mark('mark-xs')}<span>${eyebrow} · Talk to us</span><span class="pill-arrow" aria-hidden="true">${icon('arrow')}</span></a>` : ''}
       <h1>${h1}</h1>
       <p class="sub">${sub}</p>${extra || ''}${cta}
       ${mock ? `<div class="hero-mock">${mock}</div>` : ''}
@@ -1288,10 +1288,10 @@ function homeHero({ kicker, h1, sub }) {
         <h1>${h1}</h1>
         <p class="sub">${sub}</p>
         <div class="hero-doors">
-          <a class="hero-door" href="${TRIAL_URL}home-hero" rel="noopener" data-trial><span>Run it yourself</span><b>Start for ₹3,600</b><em>Every module. Then ₹18,000 a month.</em></a>
-          <a class="hero-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b><em>No team to hire. No tools to buy.</em></a>
+          <a class="hero-door" href="${TRIAL_URL}home-hero" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b><em>₹3,600 first month, then ₹18,000 a month.</em></a>
+          <a class="hero-door is-managed" href="#" data-wa="handle"><span>Jwero runs it</span><b>Let Jwero run it</b><em>No team to hire. No tools to buy.</em></a>
         </div>
-        <p class="cta-note"><a href="#jbaas">Compare the three ways</a></p>
+        <p class="cta-note"><a href="/pricing#tiers">Compare all three ways</a></p>
       </div>
       <div class="hero-home-piece">
         ${gemStage2({ hero: true })}
@@ -1492,20 +1492,20 @@ const mockMemo = `
 // ever repeats product-verified facts already stated elsewhere on the site.
 const CTA_TILES = ['shield', 'chat', 'gem', 'record', 'sparkle', 'coins'];
 const CTA_TICKER = [
-  ['record', '198 customer signals · 11 live scores, each with a why'],
-  ['sparkle', '41 ready segments · 300+ ready journeys'],
-  ['shield', '240+ governed AI actions'],
-  ['phone', 'AI calls in 14 languages'],
-  ['power', 'Kill switch at five scopes'],
-  ['swap', 'Tally & Zoho Books bridges built in'],
-  ['chat', 'Official WhatsApp Business API'],
-  ['download', 'Your data, exportable anytime'],
+  ['record', 'Every customer remembered, on one record'],
+  ['shield', 'AI asks before it sends'],
+  ['download', 'Your data leaves with you, any time'],
+  ['chat', 'Official WhatsApp Business Platform'],
+  ['swap', 'Works with Tally and Zoho Books'],
+  ['phone', 'AI chat and calls in 14 languages'],
+  ['coins', 'One price, every module'],
+  ['users', 'Set up in a day, trained in your language'],
 ];
 function ctaBand(title, sub, waContext, opts = {}) {
   const secondary = opts.enterprise
     ? `<a class="btn btn-ghost-light" href="/enterprise">Talk to a specialist</a>`
     : `<a class="btn btn-ghost-light" href="/book-demo">Book a demo</a>`;
-  const label = opts.label || 'Chat or call with us';
+  const label = opts.label || 'Talk to us';
   const after = `<p class="cta-after">You message first; a Jwero specialist replies on WhatsApp in working hours. Prefer a call? <a href="#" data-wa="call">Ask for a call back</a>.</p>`;
   const ticker = CTA_TICKER.map(([i, t]) => `<span>${icon(i)}${t}</span>`).join('');
   return `

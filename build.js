@@ -209,10 +209,10 @@ const NAV = [
     links: [['/book-demo', 'Book a demo'], ['/contact', 'Contact']],
   },
   {
-    label: 'Managed',
+    label: 'Let Jwero run it',
     match: ['jewellery-business-as-a-service', 'managed-services', 'what-we-handle', 'ai-and-experts', 'how-it-works', 'count-your-team', 'success-stories', 'why-jwero', 'self-managed'],
     items: [
-      ['/jewellery-business-as-a-service', 'Jewellery Business as a Service', 'Jwero runs it for you. Pricing and how it works.'],
+      ['/jewellery-business-as-a-service', 'The offer, in full', 'What Jwero runs for you, and how it is priced.'],
       ['/what-we-handle', 'What we handle', 'Customers, sales, online, back office.'],
       ['/ai-and-experts', 'AI + experts', 'AI does the work. Experts make it better.'],
       ['/count-your-team', 'Count your team', 'What the work costs today, and with Jwero.'],
@@ -317,12 +317,12 @@ function footerHTML() {
       ${col('Resources', [['/faq','FAQ — every objection'],['/guides','Buyer’s guides'],['/blog','Blog'],['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/tools/whatsapp-revenue-estimator','WhatsApp Revenue Estimator'],['/tools/gold-loss-calculator','Gold-Loss Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/partners','Partners'],['/customers','Customer proof']])}
       <div class="f-stack">
       ${col('Jwero', [['/why-jwero','Why Jwero'],['/how-it-works','How it works'],['/ai-and-experts','AI + experts'],['/what-we-handle','What we handle'],['/self-managed','Self managed'],['/jewellery-business-as-a-service','Managed services'],['/success-stories','Success stories'],['/jwero-os','The operating system']])}
-      ${col('Company', [['/company','About'],['/jewellery-software-india','Jewellery software by city'],['/hi','हिंदी'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
+      ${col('Company', [['/company','About'],['/refer','Refer a jeweller'],['/jewellery-software-india','Jewellery software by city'],['/hi','हिंदी'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
       ${col('Trust', [['/trust','Trust Centre'],['/trust/security','Security'],['/legal/privacy','Privacy Policy'],['/legal/terms','Terms of Use'],['/legal/data-policy','Data Policy'],['/legal/sub-processors','Sub-processors'],['/legal/dpdp','DPDP statement'],['/roadmap','Roadmap']])}
       </div>
       </div>
     </div>
-    <div class="f-proof">198 customer signals · 11 explainable scores · 240+ governed AI actions · AI chat and calls in 14 languages · 5 kill-switch scopes · Tally, Zoho Books, Shopify, WooCommerce, Unicommerce &amp; Meta connectors built in.</div>
+    <div class="f-proof">Every customer on one record · AI that asks before it sends · Chat and calls in 14 languages · Works with Tally, Zoho Books, Shopify and WooCommerce · Official WhatsApp Business Platform · Your data, exportable any time</div>
     <div class="f-bottom">
       <p>© <span data-year></span> Jwero. All rights reserved.</p>
       <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank">${l}</a>`).join('')}<a href="#" data-share="Thought of you. Jwero takes the marketing, technology and follow-up chaos off a jeweller:">Refer a jeweller, save 10%</a><a href="mailto:care@jwero.ai">care@jwero.ai</a><a href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=footer" rel="noopener">Log in to Jwero</a></p>
@@ -332,9 +332,9 @@ function footerHTML() {
   </div>
 </footer>
 <div class="sticky-bar" role="navigation" aria-label="Quick actions">
-  <a class="sb-wa" href="#" data-wa="sticky" data-connect="chat">Chat</a>
+  <a class="sb-wa" href="#" data-wa="sticky" data-connect="chat">WhatsApp</a>
   <a class="sb-start" href="${TRIAL_URL_B}sticky" rel="noopener" data-trial>Start ₹3,600</a>
-  <a class="sb-demo" href="#" data-wa="handle">Handle it for me</a>
+  <a class="sb-demo" href="#" data-wa="handle">Let Jwero run it</a>
 </div>
 <button class="to-top" type="button" aria-label="Back to top">${mark()}</button>`;
 }
@@ -549,7 +549,7 @@ function journeyFix(html, p) {
   // 2. the managed page never links to itself
   if (slug === 'jewellery-business-as-a-service') html = html.replace(/<a class="btn btn-primary" href="\/jewellery-business-as-a-service">/g, '<a class="btn btn-primary" href="#" data-wa="handle">');
   // 4. Hindi: the closing band in Hindi, and a way in from Hindi-belt city pages
-  if (slug === 'hi') html = html.replace(/>Chat or call with us</g, '>हमसे चैट या कॉल करें<').replace(/>Book a demo</g, '>डेमो बुक करें<');
+  if (slug === 'hi') html = html.replace(/>(?:Chat or call with us|Talk to us)</g, '>हमसे चैट या कॉल करें<').replace(/>Book a demo</g, '>डेमो बुक करें<');
   if (HINDI_CITIES.test(slug)) html = html.replace('</main>', '<section class="section"><div class="container"><p class="cta-note" style="text-align:center"><a href="/hi" lang="hi">यह पेज हिंदी में पढ़ें →</a></p></div></section></main>');
   // 5. legal pages are not dead ends
   if (/^legal\//.test(slug)) html = html.replace('</main>', '<section class="section"><div class="container"><p class="cta-note" style="text-align:center">Questions about this? <a href="#" data-wa="legal">Ask us on WhatsApp</a>. See also <a href="/trust">Trust</a> and <a href="/trust/security">Security</a>.</p></div></section></main>');
@@ -577,7 +577,7 @@ function journeyFix(html, p) {
     if (!/<b>|<span/.test(inner)) text = /₹3,600|Start|Create your workspace|Join/.test(inner) ? 'Join the waitlist' : inner;
     return `<a ${attrs} href="#" data-wa="waitlist" data-waitlist>${text}</a>`;
   });
-  html = html.replace(/(<a class="sb-start"[^>]*>)[^<]*(<\/a>)/, '$1Waitlist$2');
+  html = html.replace(/(<a class="sb-start"[^>]*>)[^<]*(<\/a>)/, '$1Join waitlist$2');
   // Articles end with the reader's own next step: the calculator or page for the topic.
   if (/^blog\//.test(p.slug || '') || p.legacy) {
     const NEXT = [[/girvi|gold-loan/, '/products/girvi#girvi-calc', 'Work out girvi interest with the calculator'], [/dead-stock|ageing|inventory|stock/, '/tools/dead-stock-calculator', 'Put your own stock into the dead stock calculator'], [/scheme/, '/tools/gold-scheme-calculator', 'Work out a scheme maturity with the calculator'], [/wastage|gold-loss|karigar|manufactur|job-work|fine-weight/, '/tools/gold-loss-calculator', 'Measure your gold loss with the calculator'], [/whatsapp|chatbot|instagram|dm/, '/tools/whatsapp-revenue-estimator', 'Estimate what faster WhatsApp replies are worth'], [/incentive|staff|payroll|hr/, '/products/hr-payroll#hr-calc', 'Work out a salesperson’s incentive'], [/price|making-charge|gst|cash-limit|old-gold|huid|e-way|e-invoic|billing|pos/, '/blog/how-to-calculate-gold-jewellery-price', 'Price a piece with the gold price calculator'], [/footfall|showroom|walkout|cctv/, '/products/showroom', 'See footfall and walkouts in the showroom software'], [/ads|campaign|email|marketing|segment|journey|occasion|birthday/, '/products/campaigns', 'See campaigns and journeys in Jwero'], [/ai|agent|voice|chatgpt|claude/, '/products/ai-sales-agents', 'See AI agents with approvals in Jwero']];
@@ -614,6 +614,29 @@ function journeyFix(html, p) {
       return t;
     }).join('');
   }
+
+  // One name per action, sitewide (2026-10-08): the managed plan is "Let Jwero run it", the
+  // generic contact is "Talk to us" (it opens the chat, call or video chooser), the demo is booked.
+  // Time promises ("within minutes") were withdrawn; the phrases are rewritten here so blog and
+  // legacy copy follow without a hand edit.
+  html = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>)/).map((part, k) => {
+    if (k % 2 || !part.trim()) return part;
+    return part
+      .replace(/Let Jwero handle it/g, 'Let Jwero run it').replace(/Handle it for me/g, 'Let Jwero run it')
+      .replace(/Chat or call with us/g, 'Talk to us').replace(/\bView demo\b/g, 'Book a demo')
+      .replace(/replies within minutes from a team inbox/g, 'replies from a team inbox')
+      .replace(/priced reply within minutes/g, 'priced reply').replace(/answer it within minutes/g, 'answer it')
+      .replace(/Answer every enquiry within minutes/g, 'Answer every enquiry with a real price')
+      .replace(/drafted within minutes/g, 'drafted').replace(/answered within minutes with a real price/g, 'answered with a real price')
+      .replace(/replies within minutes with a real price/g, 'replies with a real price').replace(/replied to within minutes/g, 'replied to')
+      .replace(/\s*within minutes\b/g, '')
+      .replace(/drafts replies in minutes/g, 'drafts replies').replace(/a draft in minutes/g, 'a draft')
+      .replace(/([Ee])nquiries answered in minutes/g, '$1nquiries answered').replace(/\bAnswer in minutes\b/g, 'Every enquiry answered')
+      .replace(/\) in minutes, at midnight/g, '), at midnight').replace(/answers in minutes with real prices/g, 'answers with real prices')
+      .replace(/AI-drafted replies in minutes/g, 'AI-drafted replies').replace(/replies with live prices in minutes/g, 'replies with live prices')
+      .replace(/priced reply from her record in minutes/g, 'priced reply from her record').replace(/answered in minutes by AI/g, 'answered by AI');
+  }).join('');
+  html = html.replace(/>Within minutes</g, '>Before she moves on<');
 
   // India-specific pages keep rupees and say who they are for; everything else is global.
   {
@@ -1229,10 +1252,10 @@ function withIcpHome(html, slug) {
 }
 
 function withDoors(html, slug) {
-  if (DOORS_SKIP.includes((slug || '').split('/')[0]) || slug === 'guides' || slug === 'solutions' || slug === 'products' || LEGACY_SLUGS.has(slug)) return html;
+  if (DOORS_SKIP.includes((slug || '').split('/')[0]) || slug === 'guides' || slug === 'solutions' || slug === 'products' || slug === 'pricing' || LEGACY_SLUGS.has(slug)) return html;
   const end = html.indexOf('</section>');
   if (end < 0) return html;
-  const strip = `<div class="doors-strip"><div class="container"><p>Two ways to work with Jwero</p><a class="ds-door" href="${require('./lib').TRIAL_URL}doors-strip" rel="noopener" data-trial><span>Run it yourself</span><b>Start for ₹3,600</b></a><a class="ds-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b></a><a class="ds-more" href="/pricing">Compare →</a></div></div>`;
+  const strip = `<div class="doors-strip"><div class="container"><p>Run it yourself, or let Jwero run it</p><a class="ds-door" href="${require('./lib').TRIAL_URL}doors-strip" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b></a><a class="ds-door is-managed" href="#" data-wa="handle"><span>Jwero runs it</span><b>Let Jwero run it</b></a><a class="ds-more" href="/pricing#tiers">Compare →</a></div></div>`;
   // product and solution pages: inside the top section, under the buttons and above the illustration
   if (/^(products|solutions)(\/|$)/.test(slug || '')) {
     const mock = html.lastIndexOf('<div class="container"><div class="stage hero-mock">', end);

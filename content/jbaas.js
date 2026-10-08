@@ -17,7 +17,7 @@ const TIERS = () => `${require('./graphics').tierGlance()}
     <p class="jb-price">₹18,000<span> a month</span></p>
     <p class="jb-note"><b>First month ₹3,600.</b> Billed monthly, excluding taxes.</p>
     <ul><li><b>Every product, one price.</b> WhatsApp, counter, stock, POS, schemes, girvi, workshop, books, team, marketing and communication. Nothing per module, nothing per seat.</li><li><b>Replaces the 10 to 15 tools</b> most shops pay for today, so there is no other software to buy.</li><li><b>Adds the hands you have been trying to hire:</b> AI and automation that take on the work of several people, with your team approving what matters. <a href="/count-your-team">See how many for your shop →</a></li><li><b>The systems national jewellery brands run on,</b> from your first counter. The platform is ready; your vision and execution set how far it goes.</li><li><b>Live in a day.</b> Customers, catalogue and stock imported for you.</li></ul>
-    <div class="jb-cta"><a class="btn btn-ghost jb-btn2" href="${L.TRIAL_URL}pricing-tiers" rel="noopener" data-trial><span>Start for ₹3,600</span><small>Join the waitlist</small></a><a class="jb-demo" href="/book-demo">View demo</a></div>
+    <div class="jb-cta"><a class="btn btn-ghost jb-btn2" href="${L.TRIAL_URL}pricing-tiers" rel="noopener" data-trial><span>Start for ₹3,600</span><small>Join the waitlist</small></a><a class="jb-demo" href="/book-demo">Book a demo</a></div>
     <p class="jb-fine">Messages, AI calls and listings run on a prepaid balance, at your country’s rates.</p>
   </article>
   <article class="jb-tier is-main" id="tier-2">
@@ -27,7 +27,7 @@ const TIERS = () => `${require('./graphics').tierGlance()}
     <p class="jb-price jb-price-sm">Priced on the work</p>
     <p class="jb-note"><b>No subscription. Every tool included.</b> About half of what hiring for the same work costs you.</p>
     <ul><li><b>Specialists for a function, or the whole business.</b> Enquiries, scheme collections, posting, listing, walkout follow-ups, books: Jwero’s specialists and AI handle it.</li><li><b>Start with the one job that costs you most,</b> usually enquiries or collections. Add more when you see it working.</li><li><b>An expert for every job you need.</b> No hiring, no training, no follow-ups, no quarrels. No team to hire, no tools to buy.</li><li><b>Expertise at the cost of a fresher.</b> Seasoned specialists for what a beginner would cost you.</li><li><b>Your focus stays on outcomes.</b> Your time and energy are not lost to coordinating people, making every small decision or keeping up with what changes.</li><li><b>You approve what matters.</b> Every action is on one account you can read.</li></ul>
-    <div class="jb-cta"><a class="btn btn-primary" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="jb-demo" href="/book-demo">View demo</a></div>
+    <div class="jb-cta"><a class="btn btn-primary" href="/jewellery-business-as-a-service">Let Jwero run it</a><a class="jb-demo" href="/book-demo">Book a demo</a></div>
     <p class="jb-fine">Tell us what you run and we will say which job to hand over first.</p>
   </article>
   <article class="jb-tier" id="tier-3">

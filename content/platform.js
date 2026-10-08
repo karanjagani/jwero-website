@@ -455,7 +455,7 @@ ${L.ctaBand('Bring your accountant into the conversation.', 'We are happy to wal
 
 const onboarding = {
   slug: 'platform/onboarding',
-  title: 'Onboarding & Support — Live in Days, Trained in Your Language | Jwero',
+  title: 'Onboarding & Support — Live in a Day, Trained in Your Language | Jwero',
   description: 'How Jwero implementation works: what we import for you, how training runs, and the season change-freeze that protects your busiest months.',
   breadcrumbs: BC('Onboarding & Support'),
   faqs: [

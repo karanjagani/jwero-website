@@ -299,7 +299,7 @@ const PLAYBOOKS = {
     ],
     modules: [['/products/manufacturing', 'Jobs, routing, QC and costing from actuals.'], ['/products/billing-finance', 'Multi-currency orders and party ledgers.'], ['/products/catalog', 'Buyer links with their currency.'], ['/products/inventory', 'FG by buyer, dispatch and memo.'], ['/products/crm', 'Buyers as party records with follow-ups.'], ['/products/erp', 'PO to dispatch on one spine.']],
     fit: ['USD POs are converted by hand', 'Buyers ask for status by email', 'QC is a checklist per batch', 'Catalogues go out as PDFs', 'Receivables live on a spreadsheet'],
-    note: 'Rules compute correctly outside India; the rails — rate feed, GST/TDS shapes, +91 defaults — are India-first today.',
+    note: 'Rules compute correctly in any market; the rails (rate feed, GST, VAT or sales-tax shapes, local phone defaults) follow your country.',
   },
 };
 

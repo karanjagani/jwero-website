@@ -104,9 +104,9 @@ const enterprise = {
 ${L.hero({
   eyebrow: 'ENTERPRISE',
   h1: 'One system for a hundred branches — with governance that scales to every counter.',
-  sub: 'Multi-store chains, franchise networks, wholesalers and manufacturers get a specialist evaluation track: a named contact, a buying-committee kit, and a staged rollout that starts with one pilot branch. Built India-first — GST, HUID, live Indian rates, +91 numbers — with multi-currency at the counter for showrooms abroad.',
-  primary: { href: '/book-demo', label: 'Talk to a specialist' },
-  secondary: { href: '#', label: 'Or start with a chat', wa: 'enterprise' },
+  sub: 'Multi-store chains, franchise networks, wholesalers and manufacturers get a specialist evaluation track: a named contact, a buying-committee kit, and a staged rollout that starts with one pilot branch. Built for jewellers in India and abroad: GST, VAT or sales tax, hallmark IDs, live gold rates and local currencies at every counter.',
+  primary: { href: '/book-demo', label: 'Book a demo with a specialist' },
+  secondary: { href: '#', label: 'Talk to us', wa: 'enterprise' },
 })}
 
 ${L.section(

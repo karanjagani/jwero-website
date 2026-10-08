@@ -498,7 +498,7 @@ const broadcast = {
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to run a WhatsApp marketing campaign for a jewellery shop', step: MKT_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   faqs: mktFaqs,
   body: `
-${L.hero({ eyebrow: 'WHATSAPP MARKETING · OFFICIAL META BUSINESS PARTNER', h1: 'WhatsApp marketing for jewellers: broadcasts and campaigns that sell, without risking your number.', sub: 'Festival offers, new collections, scheme reminders and occasion greetings, sent from your official number to the customers each message is for. Replies land in one inbox, silent interest gets followed up, and every sale is traced to the send.', primary: { href: '#', label: 'Plan my next campaign with us', wa: 'broadcast' } })}
+${L.hero({ eyebrow: 'WHATSAPP MARKETING · OFFICIAL WHATSAPP BUSINESS PLATFORM', h1: 'WhatsApp marketing for jewellers: broadcasts and campaigns that sell, without risking your number.', sub: 'Festival offers, new collections, scheme reminders and occasion greetings, sent from your official number to the customers each message is for. Replies land in one inbox, silent interest gets followed up, and every sale is traced to the send.', primary: { href: '#', label: 'Plan my next campaign with us', wa: 'broadcast' } })}
 
 ${L.section(`<div class="which-page"><p><b>Reaching many customers?</b> You are on the right page: WhatsApp marketing.</p><p><b>Selling to one customer in a chat,</b> with catalogue, payment and calls? <a href="/products/whatsapp">See WhatsApp commerce and API →</a></p></div>`)}
 

@@ -15,7 +15,7 @@ const ERAS = [
     couldnt: 'Reply on WhatsApp. Remember a customer. Reprice a catalogue when the rate moved. Draft anything. Know what she tried on and walked away from.' },
   { key: 'os', era: 'The operating system', when: 'Now', centre: 'One customer record — and AI working it', icon: 'record',
     served: 'The customer, and everyone who serves her', customer: 'Remembered on every door: the reply she gets at 11pm, the price she sees, the reminder she receives, the greeting at the counter.', doors: ['Counter', 'WhatsApp', 'Instagram', 'Website', 'Catalogue links', 'Video counter', 'Schemes', 'Workshop', 'Books'],
-    couldnt: 'Nothing sends without your yes. It does not replace your CA. It is India-first today.' },
+    couldnt: 'Nothing sends without your yes. It does not replace your CA. It is built for India and works abroad.' },
 ];
 function eraSlider() {
   const stops = ERAS.map((e, i) => `<button type="button" class="era-stop${i === 1 ? ' is-on' : ''}" data-era="${i}" aria-pressed="${i === 1}"><b>${e.era}</b><span>${e.when}</span></button>`).join('');

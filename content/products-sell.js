@@ -80,7 +80,7 @@ const whatsapp = {
   faqs: whatsappFaqs,
   body: `
 ${L.hero({
-  eyebrow: 'WHATSAPP COMMERCE · OFFICIAL META BUSINESS PARTNER',
+  eyebrow: 'WHATSAPP COMMERCE · OFFICIAL WHATSAPP BUSINESS PLATFORM',
   h1: 'WhatsApp API for jewellers: your counter, open 24 hours.',
   sub: 'Jewellery is bought on trust and conversation, which is why it is bought on WhatsApp. Jwero’s WhatsApp commerce turns your number, on the official WhatsApp API, into a full counter: a catalogue priced at today’s rate, native WhatsApp payments, replies within minutes from a team inbox, and voice AI for the calls.',
   primary: { href: '#', label: 'Send me a live catalogue', wa: 'whatsapp' },

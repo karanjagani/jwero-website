@@ -81,13 +81,17 @@ ${L.section(
   ${L.trustStrip({ inOnly: true })}`
 , { tone: 'tint' })}
 
-${require('./positioning').refer()}
 
 ${L.section(`${L.sectionHead('QUESTIONS JEWELLERS ASK', 'Jewellery software questions, answered straight.', '')}${L.faqBlock([
   { q: 'What is Jwero?', a: 'Jwero is the Autonomous Jewellery OS, run by AI — one system where customers, catalogue, stock, counter billing, purchase, workshop, accounts and team share one record with every selling channel, and an AI workforce drafts the work under your approval.' },
   { q: 'Do I have to replace my billing or accounting software?', a: 'No. Keep your books exactly where your accountant likes them — Jwero bridges to Tally and Zoho Books. <a href="/migration">See the Migration Centre</a>.' },
   { q: 'Will AI message my customers without asking?', a: 'No. Every AI-drafted action waits in an approval queue, inside daily caps and quiet hours, with a kill switch at five scopes. <a href="/platform/ai-workforce">See how governance works</a>.' },
   { q: 'How long does it take to go live?', a: 'Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one.' },
+  { q: 'What happens when I join the waitlist?', a: 'You send one WhatsApp message with your business name and city. A Jwero specialist replies with when your account can open and what to have ready, and your first month is ₹3,600 when it does. If you would rather not wait, Jwero can run the work for you now, with no subscription and every tool included. <a href="/jewellery-business-as-a-service">See how that works</a>.' },
+  { q: 'What if the internet drops at the counter?', a: 'Jwero runs in the browser, so the counter needs an internet connection; there is no offline mode yet, and the <a href="/roadmap">roadmap</a> says so. A phone hotspot is enough to keep billing when the broadband drops, and because nothing lives on one computer, a dead machine loses nothing.' },
+  { q: 'Can my staff use Jwero in their own language?', a: 'The staff app for attendance, leave and payslips works in multiple languages, and WhatsApp replies go out in the customer’s language. The main screens are in English today; a regional-language interface is on the roadmap. Onboarding and support are in your language.' },
+  { q: 'Will my shop stop billing while we switch?', a: 'No. Your current billing software keeps running until you choose to move. We import your customers, catalogue and stock, usually in a day, and you can bill in Jwero alongside the old system while your team settles in. A written change-freeze keeps your season untouched, and your data exports any time if you decide to stop.' },
+  { q: 'Where is Jwero, and who do I talk to?', a: 'Jwero is made by Tech Jewels Private Limited, a registered Indian company with its office in Thane, next to Mumbai; the registration number is on the <a href="/company">company page</a>. You talk to a Jwero specialist on WhatsApp, by phone on +91 91699 59959 or by email at care@jwero.ai, 10am to 8pm India time. Outside those hours a chat still reaches us and a call becomes a callback.' },
   { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time. <a href="/trust/security">Read about security</a>.' },
 ])}
 <p class="cta-note" style="margin-top:18px">More questions? <a href="/faq">Every question, answered</a> · <a href="#" data-wa="faq">ask us now</a>.</p>`)}
@@ -96,7 +100,7 @@ ${L.section(
   `<div class="close-plan">
     <h2>Every customer remembered. Every gram and rupee accounted for.</h2>
     <ol class="plan-steps">
-      <li><strong>1.</strong> Chat or call with us</li>
+      <li><strong>1.</strong> Talk to us</li>
       <li><strong>2.</strong> See it running on your own data</li>
       <li><strong>3.</strong> Go live before the season</li>
     </ol>

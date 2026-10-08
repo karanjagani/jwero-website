@@ -47,7 +47,7 @@ ${L.section(`
         <li>Scheme instalments are collected automatically; girvi interest is recorded when paid.</li>
         <li>No CAD-file-to-BOM conversion; BOMs are entered by production.</li>
         <li>No courier integration.</li>
-        <li>India-first rails: rate feed, GST shapes, +91 defaults.</li>
+        <li>Rails for every market: live rate feed, GST, VAT or sales-tax shapes, local phone defaults.</li>
       </ul>
       <p class="brief-note">The public roadmap at jwero.ai/roadmap says what is shipped, rolling out and not yet — before you buy.</p>
     </div>

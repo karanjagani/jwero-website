@@ -296,7 +296,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - AI Workforce & Governance, AI That Waits for Your Yes: https://jwero.ai/platform/ai-workforce
 - Jwero Integrations: Tally, Shopify, Meta, Stripe, PayPal, MCP: https://jwero.ai/platform/integrations
 - Tally Integration for Jewellers: Keep Your Books: https://jwero.ai/platform/integrations/tally
-- Onboarding & Support, Live in Days, Trained in Your Language: https://jwero.ai/platform/onboarding
+- Onboarding & Support, Live in a Day, Trained in Your Language: https://jwero.ai/platform/onboarding
 - Public Roadmap, Shipped, Building, Not Yet: https://jwero.ai/roadmap
 - Jewellery Software Products: CRM, ERP, POS, Billing and More: https://jwero.ai/products
 - WhatsApp API for Jewellers: Catalogue, Payments and CRM: https://jwero.ai/products/whatsapp

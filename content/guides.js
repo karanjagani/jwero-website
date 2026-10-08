@@ -218,8 +218,8 @@ const erp = guide({
   faqs: [
     { q: 'What is jewellery ERP software?', a: 'One system that records a jewellery business’s stock, sales, purchases, manufacturing, karigar accounts and books, with metal tracked by weight and purity as well as money.' },
     { q: 'Is an ERP different from billing software?', a: 'Yes. Billing software produces invoices. An ERP also runs stock, purchase, manufacturing and accounts, so a bill reduces stock and posts to the ledger in the same step.' },
-    { q: 'Do small jewellery shops need an ERP?', a: 'A single shop needs the same things at a smaller scale: correct bills, known stock, vendor dues and a day that closes. What it does not need is a long implementation. Look for something that is live in days.' },
-    { q: 'How long does a jewellery ERP take to implement?', a: 'Traditional projects take months. Jwero’s first stage is live in days, with data imported for you, and expands department by department.' },
+    { q: 'Do small jewellery shops need an ERP?', a: 'A single shop needs the same things at a smaller scale: correct bills, known stock, vendor dues and a day that closes. What it does not need is a long implementation. Look for something that is live in a day.' },
+    { q: 'How long does a jewellery ERP take to implement?', a: 'Traditional projects take months. Jwero’s first stage is live in a day, with data imported for you, and expands department by department.' },
     { q: 'Can I keep Tally with a jewellery ERP?', a: 'With Jwero, yes. Transactions post to Jwero’s own ledger and the Tally or Zoho Books bridge carries them to your accountant.' },
   ],
   related: [['/products/erp', 'Jewellery ERP software'], ['/erp-to-os', 'From ERP to operating system'], ['/guides/jewellery-manufacturing-software', 'Manufacturing guide'], ['/blog/jewellery-crm-vs-erp-difference', 'CRM vs ERP']],

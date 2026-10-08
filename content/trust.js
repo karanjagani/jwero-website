@@ -162,7 +162,7 @@ const customers = {
   breadcrumbs: [['Home', '/'], ['Customers']],
   faqs: [
     { q: 'Where are the customer logos and testimonials?', a: 'The logos are above — real jewellery businesses running on Jwero, named with their permission. Numbered case studies come next, and only after the owner verifies the figures on record. What you will never see here: stock-photo testimonials or unverifiable claims.' },
-    { q: 'What is the Lighthouse Partner program?', a: 'A founding cohort of jewellery businesses who get concierge onboarding, direct influence on the roadmap, and preferred terms — in exchange for measured, publishable results. Limited seats per region and segment.' },
+    { q: 'What is the Lighthouse Partner program?', a: 'A founding cohort of jewellery businesses who get concierge onboarding and direct influence on the roadmap, in exchange for measured, publishable results. Limited seats per region and segment.' },
     { q: 'Without case studies yet, why should I trust the ROI claims?', a: 'You shouldn’t take our word for it — that is exactly why the weekly growth report exists. It is generated from your own data once you are live, so you judge on your own evidence, not a testimonial.' },
     { q: 'How do I know the product actually works, not just the pitch?', a: 'Test the WhatsApp button on this site. It is not a form — it is Jwero’s own inbox, answered by Jwero’s own AI workforce with approvals on. That is a live demo you can run before talking to anyone.' },
   ],
@@ -210,7 +210,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('FOUNDING COHORT', 'Become a Lighthouse Partner.', 'The first businesses in each region get concierge onboarding, a direct line to the product team, preferred terms — and their verified numbers on this page, if they choose. Limited seats per region and segment, because concierge does not scale.')}
+  `${L.sectionHead('FOUNDING COHORT', 'Become a Lighthouse Partner.', 'The first businesses in each region get concierge onboarding, a direct line to the product team, and their verified numbers on this page, if they choose. Limited seats per region and segment, because concierge does not scale.')}
   <div class="cta-row"><a class="btn btn-primary" href="#" data-wa="lighthouse">Apply — chat or call</a><a class="btn btn-ghost" href="/book-demo">Book a conversation</a></div>`
 )}
 

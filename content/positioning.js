@@ -1021,7 +1021,6 @@ ${L.section(`${eyebrow('How it is worked out')}<h2 class="pz-h pz-center">No hid
 </ol>`)}
 ${L.section(`${eyebrow('Ways to work with Jwero')}<h2 class="pz-h pz-center">Start with one function.</h2>${levels()}`, { tone: 'tint' })}
 ${nextSteps()}
-${refer()}
 ${close()}
 `,
 };
@@ -1038,7 +1037,6 @@ ${L.section(`<div class="gem-head"><h2>Proof you can check.</h2><p>Who uses it, 
 ${proof(false)}
 ${dontKnow()}
 ${nextSteps()}
-${refer()}
 ${close()}
 `,
 };
