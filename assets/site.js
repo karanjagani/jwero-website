@@ -11,7 +11,7 @@
       : /^Europe\/(Dublin|Paris|Berlin|Madrid|Rome|Amsterdam|Brussels|Vienna|Lisbon|Athens|Helsinki|Luxembourg|Monaco|Malta|Tallinn|Riga|Vilnius|Bratislava|Ljubljana|Zagreb|Nicosia|Andorra|San_Marino|Vatican)/.test(tz) ? 'eur' : 'usd';
   }
   window.JW_CUR = c;
-  window.JW_CURS = { inr: { r: 1, sym: '₹', loc: 'en-IN' }, usd: { r: 85, sym: '$', loc: 'en-US' }, aed: { r: 23, sym: 'AED ', loc: 'en-AE' }, sar: { r: 22.7, sym: 'SAR ', loc: 'en-SA' }, qar: { r: 23.3, sym: 'QAR ', loc: 'en-QA' }, gbp: { r: 107, sym: '£', loc: 'en-GB' }, eur: { r: 92, sym: '€', loc: 'en-IE' } };
+  window.JW_CURS = { inr: { r: 1, sym: '₹', loc: 'en-IN' }, usd: { r: 100, sym: '$', loc: 'en-US' }, aed: { r: 27.2, sym: 'AED ', loc: 'en-AE' }, sar: { r: 26.7, sym: 'SAR ', loc: 'en-SA' }, qar: { r: 27.5, sym: 'QAR ', loc: 'en-QA' }, gbp: { r: 127, sym: '£', loc: 'en-GB' }, eur: { r: 109, sym: '€', loc: 'en-IE' } };
   window.JW_RATE = window.JW_CURS[c].r;
   document.documentElement.setAttribute('data-cur', c);
 })();
