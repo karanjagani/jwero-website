@@ -551,7 +551,7 @@ function journeyFix(html, p) {
 
   // Prices: ₹ for India, $ elsewhere. Text only (not inside tags or scripts); site.js picks by location.
   {
-    const CUR = [['₹18,000', '$180', 'AED 662', '£142', '€165', 'SAR 674', 'QAR 655'], ['₹3,600', '$36', 'AED 132', '£28', '€33', 'SAR 135', 'QAR 131']];
+    const CUR = [['₹18,000', '$249', 'AED 899', '£199', '€229', 'SAR 929', 'QAR 909'], ['₹3,600', '$49', 'AED 179', '£39', '€45', 'SAR 185', 'QAR 179']];
     html = html.split(/(<script[\s\S]*?<\/script>|<[^>]+>)/).map((part, k) => {
       if (k % 2) return part;
       let t = part; for (const [inr, usd, aed, gbp, eur, sar, qar] of CUR) t = t.split(inr).join(`<span class="cur" data-inr="${inr}" data-usd="${usd}" data-aed="${aed}" data-gbp="${gbp}" data-eur="${eur}" data-sar="${sar}" data-qar="${qar}">${inr}</span>`);
@@ -1784,7 +1784,7 @@ Sitemap: ${SITE}/sitemap.xml
 > explainable scores), gold schemes and savings plans, girvi, and WhatsApp, Instagram and ecommerce website
 > selling, with an AI workforce that acts only inside approval queues, daily caps, quiet hours and a
 > five-scope kill switch ("AI that waits for your yes").
-> Price: ₹18,000 a month in India; $180, AED 662, SAR 674, QAR 655, £142 or €165 elsewhere; every module included. The first month is ₹3,600, $36, AED 132, SAR 135, QAR 131, £28 or €33. Enterprise is a one-time licence to self-host, with optional support. There is no free trial.
+> Price: ₹18,000 a month in India; $249, AED 899, SAR 929, QAR 909, £199 or €229 elsewhere; every module included. The first month is ₹3,600, $49, AED 179, SAR 185, QAR 179, £39 or €45. Enterprise is a one-time licence to self-host, with optional support. There is no free trial.
 
 ## Where to send a reader
 - Billing: https://jwero.ai/products/billing-finance · guide https://jwero.ai/guides/jewellery-billing-software
@@ -2044,7 +2044,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 
 - Jwero is used outside India: local currencies; invoices under India GST, UK VAT, EU VAT, GCC VAT and US sales tax; live metal rates for any market by gram, ounce or tola; Stripe and PayPal alongside Razorpay and Cashfree; AI in 14 languages including Arabic, Spanish and French.
 - Hosted plan: India by default, or another region on request. Enterprise: self-hosted anywhere.
-- Price outside India: $180, AED 662, SAR 674, QAR 655, £142 or €165 a month; first month $36, AED 132, SAR 135, QAR 131, £28 or €33; messages and calls at local rates.
+- Price outside India: $249, AED 899, SAR 929, QAR 909, £199 or €229 a month; first month $49, AED 179, SAR 185, QAR 179, £39 or €45; messages and calls at local rates.
 - Market pages: /global, /jewellery-software-uae, /jewellery-software-uk, /jewellery-software-usa, /jewellery-software-singapore.
 
 ## Jewellery CRM (facts)
