@@ -21,7 +21,7 @@ ${L.hero({
   sub: 'Customers, catalogue, stock, the counter, purchase, the workshop, the books and the team. Every module in Jwero reads and writes the same data — that is what makes it an operating system, not a bundle of features.',
   primary: { href: '#', label: 'Chat or call with us', wa: 'platform' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
-  mock: L.mockOneRecord,
+  mock: require('./graphics').orbit(),
 })}
 
 ${(() => {
@@ -353,8 +353,8 @@ ${L.ctaBand('Meet your first AI workforce member.', 'Watch it draft, watch it wa
 
 const integrations = {
   slug: 'platform/integrations',
-  title: 'Jwero Integrations: Tally, Shopify, Meta, Razorpay, MCP | Jwero',
-  description: 'Jwero bridges to Tally and Zoho Books, connects Shopify, WooCommerce and Unicommerce, collects via Razorpay and Cashfree, sells on official Meta channels, connects to your telephony provider for AI voice calls and IVR, and exposes a first-party MCP server for your own AI agents.',
+  title: 'Jwero Integrations: Tally, Shopify, Meta, Stripe, PayPal, MCP | Jwero',
+  description: 'Jwero bridges to Tally and Zoho Books, connects Shopify, WooCommerce and Unicommerce, collects via Stripe, PayPal, Razorpay and Cashfree, sells on official Meta channels, connects to your telephony provider for AI voice calls and IVR, and exposes a first-party MCP server for your own AI agents.',
   breadcrumbs: BC('Integrations'),
   faqs: [
     { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Jwero connects to it, imports masters and checks records against it; sales vouchers are still entered in Tally, so your accountant’s world doesn’t change.' },
@@ -369,6 +369,7 @@ ${L.hero({
   sub: 'The fastest way to fail a jewellery business is to demand a rip-out. Jwero lands alongside your existing tools, bridges to them, and earns its place — starting with the revenue side.',
   primary: { href: '#', label: 'Ask about your stack', wa: 'integrations' },
   secondary: { href: '/migration', label: 'Visit the Migration Centre' },
+  mock: require('./graphics').integrationMap(),
 })}
 
 ${L.section(

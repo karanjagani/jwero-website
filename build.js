@@ -452,8 +452,13 @@ function journeyFix(html, p) {
       'products/erp': ['Outside India', 'One system, your country’s tax.', [['VAT and sales tax', 'Invoices, returns reports and input VAT for the Gulf, the UK, Europe, the US and Canada.'], ['Multi-currency', 'Sell and buy in local currencies, report in yours.'], ['Hosting by region', 'Data hosted in your region on request.']]],
       'products/girvi': ['Outside India', 'Pawnbroking and gold loans.', [['Pawn tickets', 'Every pledge with photos, weight, purity, the loan and the term on one record.'], ['Interest and renewals', 'Interest worked out, reminders sent, part payments and renewals recorded.'], ['Forfeits and auctions', 'Overdue loans flagged, notices sent, and the auction recorded.']]],
     };
-    if (OUT[p.slug]) { const [e, h, rows] = OUT[p.slug]; html = html.replace(/(<section class="cta-band">)/, `<section class="section"><div class="container"><div class="section-head"><p class="eyebrow">${e.toUpperCase()}</p><h2>${h}</h2></div><div class="wa-jobs">${rows.map(([t, d]) => `<article><h3>${t}</h3><p>${d}</p></article>`).join('')}</div></div></section>\n$1`); }
+    if (OUT[p.slug]) { const [e, h, rows] = OUT[p.slug]; html = html.replace(/(<section class="cta-band">)/, `<section class="section"><div class="container"><div class="section-head"><p class="eyebrow">${e.toUpperCase()}</p><h2>${h}</h2></div><p class="cur-chips" aria-label="Currencies">${['AED', 'SAR', 'QAR', 'GBP', 'EUR', 'USD', 'INR'].map((c) => `<span>${c}</span>`).join('')}</p><div class="wa-jobs">${rows.map(([t, d]) => `<article><h3>${t}</h3><p>${d}</p></article>`).join('')}</div></div></section>\n$1`); }
     html = html.replace(/(<section class="cta-band">)/, `<section class="section"><div class="container"><p class="mkt-strip"><b>Selling outside India?</b> Jwero handles VAT and sales tax, local currencies, Stripe and PayPal, and worldwide gold rates. See Jwero for <a href="/jewellery-software-uae">the Gulf</a>, <a href="/jewellery-software-uk">the UK and Europe</a>, <a href="/jewellery-software-usa">the US and Canada</a>, <a href="/jewellery-software-singapore">South and Southeast Asia</a>, or <a href="/global">worldwide</a>.</p></div></section>\n$1`);
+  }
+  // Comparison tables: Yes, No and Some read at a glance.
+  if (/^(products|solutions|compare|vs)\b|^jewellery-software/.test(p.slug || '')) {
+    html = html.replace(/<td>(Yes|No|None|Some|Partly|Basic|Rarely|Sometimes)<\/td>/g, (m, w) => `<td><span class="tk tk-${/Yes/.test(w) ? 'y' : /No|None/.test(w) ? 'n' : 'p'}">${w}</span></td>`);
+    html = html.replace(/(<td class="wa-cmp-(?:go|us)">)Yes(,| )/g, '$1<span class="tk tk-y">Yes</span>$2');
   }
   // Product pages: the three-tier price block becomes one compact line; the full
   // comparison lives on the pricing and JBaaS pages.

@@ -62,7 +62,7 @@ function productsHubBody() {
   <nav class="bl-chips" aria-label="Filter products"><button type="button" class="is-on" data-bl-t="">All <i>${P_ITEMS.length}</i></button>${P_TOPICS.map(([k, l]) => `<button type="button" data-bl-t="${k}">${l} <i>${count(k)}</i></button>`).join('')}</nav>
   <div class="bl-start" data-bl-start>
     <div class="section-head"><p class="eyebrow">START HERE</p><h2>What do you want to fix first?</h2></div>
-    <div class="bl-goals bl-goals-3">${P_PICK.map(([l, h]) => `<a href="${h}"><b>${l}</b><i>See the product →</i></a>`).join('')}</div>
+    <div class="bl-goals bl-goals-3">${P_PICK.map(([l, h], k) => `<a href="${h}"><span class="home-who-ico">${L.icon(['chat', 'till', 'box', 'heart', 'coins', 'tools'][k])}</span><b>${l}</b><i>See the product →</i></a>`).join('')}</div>
   </div>
   <div class="section-head" style="margin-top:44px"><p class="eyebrow">EVERY PRODUCT</p><h2 data-bl-title>Every product.</h2><p class="bl-count" aria-live="polite" data-bl-count>${P_ITEMS.length} products</p></div>
   <div class="bl-grid" data-bl-grid>${P_ITEMS.map(card).join('')}</div>

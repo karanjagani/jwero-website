@@ -88,14 +88,72 @@ const marketPicker = () => `
   </div>`).join('')}
 </div>`;
 
-// Platform: what crosses the Tally bridge.
-const TALLY = [['Sales bill', 'Sales voucher'], ['Return', 'Credit note'], ['Payment received', 'Receipt'], ['Expense', 'Payment voucher']];
+// Platform: what the Tally bridge does (claims match the Tally integration page).
+const TALLY = [['Your ledgers', 'Mapped to Tally ledgers'], ['Customer and item masters', 'Imported, not retyped'], ['Records', 'Checked against Tally'], ['Your accountant', 'Keeps working in Tally']];
 const tallyFlow = () => `
 <figure class="tfl" data-gfx aria-labelledby="tfl-cap">
   <div class="tfl-end"><p class="tfl-k">${icon('gem')} In Jwero</p><ul>${TALLY.map(([a], i) => `<li style="--i:${i}">${a}</li>`).join('')}</ul></div>
   <div class="tfl-bridge" aria-hidden="true">${TALLY.map((_, i) => `<span style="--i:${i}"><i></i></span>`).join('')}<em>Tally bridge</em></div>
   <div class="tfl-end is-tally"><p class="tfl-k">${icon('book')} In Tally</p><ul>${TALLY.map(([, b], i) => `<li style="--i:${i}">${b}</li>`).join('')}</ul></div>
-  <figcaption id="tfl-cap">Each entry made in Jwero reaches Tally as the matching voucher, so your accountant never retypes a bill.</figcaption>
+  <figcaption id="tfl-cap">A local connector pairs Jwero with Tally Prime, so ledgers line up, masters are not retyped and the books stay where your accountant likes them.</figcaption>
 </figure>`;
 
-module.exports = { tierGlance, selfHostMap, hierarchyTree, toolCollapse, marketPicker, tallyFlow };
+// Enterprise: the technical layer as a stack. The detailed table stays below.
+const STACK_L = [
+  ['key', 'Identity', ['SSO with OIDC or SAML 2.0', 'SCIM 2.0 provisioning']],
+  ['users', 'Access', ['150+ permissions', '5 role templates, clone and edit']],
+  ['vault', 'Data', ['Backups every 1 to 168 hours', 'Retention 1 to 365 days']],
+  ['flow', 'Integrations', ['Signed webhooks with retries', 'MCP server for your AI agents']],
+  ['bot', 'AI governance', ['6 autonomy levels', '5-scope kill switch']],
+  ['shield', 'Protection', ['Layered API rate limits', 'Encrypted in transit and at rest']],
+];
+const techStack = () => `
+<figure class="tst" data-gfx aria-label="The technical layer, from identity to protection">
+  ${STACK_L.map(([ic, t, items], i) => `<div class="tst-l" style="--i:${i}"><span class="tst-n">${icon(ic)}<b>${t}</b></span><span class="tst-items">${items.map((x) => `<em>${x}</em>`).join('')}</span></div>`).join('')}
+</figure>`;
+
+// Platform hub hero: one record with every department around it.
+const ORBIT = [['till', 'Counter'], ['chat', 'WhatsApp'], ['box', 'Stock'], ['truck', 'Purchase'], ['tools', 'Workshop'], ['book', 'Books'], ['users', 'Team'], ['megaphone', 'Marketing']];
+const orbit = () => `
+<figure class="orb" data-gfx aria-label="One record at the centre, with every department reading and writing it">
+  <div class="orb-ring" aria-hidden="true"></div>
+  <div class="orb-core"><b>One record</b><span>customers · stock · cash · team</span></div>
+  <ul class="orb-nodes">${ORBIT.map(([ic, t], i) => `<li style="--i:${i}"><span>${icon(ic)}</span>${t}</li>`).join('')}</ul>
+</figure>`;
+
+// Integrations: the stack around Jwero, grouped.
+const INTG = [
+  ['book', 'Accounting', ['Tally Prime', 'Zoho Books']],
+  ['wallet', 'Payments', ['Stripe', 'PayPal', 'Razorpay', 'Cashfree']],
+  ['store', 'Ecommerce', ['Shopify', 'WooCommerce', 'Unicommerce']],
+  ['chat', 'Meta and Google', ['WhatsApp Business Platform', 'Instagram', 'Facebook', 'Google Shopping']],
+  ['phone', 'Calls', ['Your telephony provider']],
+  ['bot', 'AI', ['MCP server', 'Your own models']],
+];
+const integrationMap = () => `
+<figure class="imap" data-gfx aria-label="What Jwero connects to, grouped by kind">
+  <div class="imap-core"><span>${icon('gem')}</span><b>Jwero</b></div>
+  <div class="imap-groups">${INTG.map(([ic, t, items], i) => `<div class="imap-g" style="--i:${i}"><p>${icon(ic)}${t}</p><ul>${items.map((x) => `<li>${x}</li>`).join('')}</ul></div>`).join('')}</div>
+</figure>`;
+
+// Showroom: visitors counted at the door, matched to bills, walkouts flagged.
+const showroomHeat = () => `
+<figure class="heat" data-gfx aria-labelledby="heat-cap">
+  <svg viewBox="0 0 600 300" role="img" aria-label="Showroom floor plan: visitors counted at the door camera, some reach a counter and buy, others walk out">
+    <rect x="10" y="10" width="580" height="280" rx="14" class="heat-floor"/>
+    <rect x="40" y="30" width="200" height="44" rx="8" class="heat-ctr"/><text x="140" y="57" class="heat-t">Gold counter</text>
+    <rect x="360" y="30" width="200" height="44" rx="8" class="heat-ctr is-bill"/><text x="460" y="57" class="heat-t">Bridal counter · billed</text>
+    <rect x="40" y="130" width="44" height="120" rx="8" class="heat-ctr"/>
+    <rect x="516" y="130" width="44" height="120" rx="8" class="heat-ctr"/>
+    <rect x="250" y="278" width="100" height="12" rx="4" class="heat-door"/><text x="300" y="266" class="heat-t heat-s">Door camera counts</text>
+    <path id="hp1" class="heat-path" d="M285 280 C 285 200, 420 160, 455 82"/>
+    <path id="hp2" class="heat-path is-out" d="M315 280 C 330 200, 200 150, 150 82 C 140 140, 320 200, 318 284"/>
+    <circle r="7" class="heat-dot"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#hp1"/></animateMotion></circle>
+    <circle r="7" class="heat-dot is-out"><animateMotion dur="6s" begin="1s" repeatCount="indefinite"><mpath href="#hp2"/></animateMotion></circle>
+    <circle r="7" class="heat-dot"><animateMotion dur="4s" begin="2s" repeatCount="indefinite"><mpath href="#hp1"/></animateMotion></circle>
+  </svg>
+  <ul class="heat-tally"><li><b>Visitors</b><span>counted at the door</span></li><li class="is-bill"><b>Bought</b><span>matched to a bill</span></li><li class="is-out"><b>Walked out</b><span>flagged for a follow-up</span></li></ul>
+  <figcaption id="heat-cap"><b>Illustrative.</b> The cameras you already have count who comes in; Jwero matches them to bills and shows who walked out without buying.</figcaption>
+</figure>`;
+
+module.exports = { tierGlance, selfHostMap, hierarchyTree, toolCollapse, marketPicker, tallyFlow, techStack, orbit, integrationMap, showroomHeat };

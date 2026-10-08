@@ -507,19 +507,16 @@ PLATFORM
  Chat or call with us 
  Book a demo 
 
- One record · the whole business 
-
- 🧾 Counter bill
-
- 📦 Stock in and out
-
  One record customers · stock · cash · team 
 
- 💬 WhatsApp reply
-
- 📒 Books
-
- Every module reads and writes this one record. That's the operating system.
+ Counter
+ WhatsApp
+ Stock
+ Purchase
+ Workshop
+ Books
+ Team
+ Marketing
 
  INSIDE THE PLATFORM
 
@@ -710,20 +707,20 @@ PLATFORM
 ## Keep your Tally. Books stay where your CA likes them.
 
  In Jwero
- Sales bill
- Return
- Payment received
- Expense
+ Your ledgers
+ Customer and item masters
+ Records
+ Your accountant
 
  Tally bridge 
 
  In Tally
- Sales voucher
- Credit note
- Receipt
- Payment voucher
+ Mapped to Tally ledgers
+ Imported, not retyped
+ Checked against Tally
+ Keeps working in Tally
 
- Each entry made in Jwero reaches Tally as the matching voucher, so your accountant never retypes a bill. 
+ A local connector pairs Jwero with Tally Prime, so ledgers line up, masters are not retyped and the books stay where your accountant likes them. 
 
 ## Tally
 
@@ -1369,10 +1366,10 @@ A: Yes. Chat, voice and phone calls all run in the same 14 languages.
 
 ---
 
-# Jwero Integrations: Tally, Shopify, Meta, Razorpay, MCP
+# Jwero Integrations: Tally, Shopify, Meta, Stripe, PayPal, MCP
 URL: https://jwero.ai/platform/integrations
 
-Jwero bridges to Tally and Zoho Books, connects Shopify, WooCommerce and Unicommerce, collects via Razorpay and Cashfree, sells on official Meta channels, connects to your telephony provider for AI voice calls and IVR, and exposes a first-party MCP server for your own AI agents.
+Jwero bridges to Tally and Zoho Books, connects Shopify, WooCommerce and Unicommerce, collects via Stripe, PayPal, Razorpay and Cashfree, sells on official Meta channels, connects to your telephony provider for AI voice calls and IVR, and exposes a first-party MCP server for your own AI agents.
 
 INTEGRATIONS
 
@@ -1382,6 +1379,36 @@ INTEGRATIONS
 
  Ask about your stack 
  Visit the Migration Centre 
+
+ Jwero 
+
+ Accounting
+ Tally Prime
+ Zoho Books
+ 
+ Payments
+ Stripe
+ PayPal
+ Razorpay
+ Cashfree
+ 
+ Ecommerce
+ Shopify
+ WooCommerce
+ Unicommerce
+ 
+ Meta and Google
+ WhatsApp Business Platform
+ Instagram
+ Facebook
+ Google Shopping
+ 
+ Calls
+ Your telephony provider
+ 
+ AI
+ MCP server
+ Your own models
 
 ## Tally
 
@@ -4268,6 +4295,12 @@ SHOWROOM · FOOTFALL · CONVERSION
 
 ## From the door camera to a bill on Saturday.
 
+ Visitors counted at the door 
+ Bought matched to a bill 
+ Walked out flagged for a follow-up 
+ 
+ Illustrative. The cameras you already have count who comes in; Jwero matches them to bills and shows who walked out without buying. 
+ 
  SHOWROOM · WALK-IN TO SALE
  4:10 pm The door camera counts a walk-in · Meera checks in on the tablet
  Known 3 past visits · scheme matures in 12 days · tried a necklace last time
@@ -15575,6 +15608,13 @@ ENTERPRISE
 ## The technical layer, in one place.
 
  Everything below is live in the product today, not a roadmap slide, verify it against your own checklist.
+
+ Identity SSO with OIDC or SAML 2.0 SCIM 2.0 provisioning 
+ Access 150+ permissions 5 role templates, clone and edit 
+ Data Backups every 1 to 168 hours Retention 1 to 365 days 
+ Integrations Signed webhooks with retries MCP server for your AI agents 
+ AI governance 6 autonomy levels 5-scope kill switch 
+ Protection Layered API rate limits Encrypted in transit and at rest 
 
  SSO Enterprise SSO is shipped and admin-configurable from an in-app settings page, choose OIDC or SAML 2.0, set an email-domain allowlist, and connect any SAML 2.0/OIDC-compliant identity provider (Okta, Microsoft Entra, Google Workspace and others) as a supported protocol. Login URL, ACS URL and SP metadata URL are shown inline for your IdP team to paste in. A "Continue with SSO" button is live on the login page. 
 

@@ -142,6 +142,7 @@ ${L.section(L.customerLogos())}
 
 ${L.section(
   `${L.sectionHead('FOR YOUR IT EVALUATOR', 'The technical layer, in one place.', 'Everything below is live in the product today, not a roadmap slide — verify it against your own checklist.')}
+  ${require('./graphics').techStack()}
   <div class="tbl-wrap"><table class="tbl">
     <tbody>
       <tr><td><strong>SSO</strong></td><td>Enterprise SSO is shipped and admin-configurable from an in-app settings page — choose OIDC or SAML 2.0, set an email-domain allowlist, and connect any SAML 2.0/OIDC-compliant identity provider (Okta, Microsoft Entra, Google Workspace and others) as a supported protocol. Login URL, ACS URL and SP metadata URL are shown inline for your IdP team to paste in. A "Continue with SSO" button is live on the login page.</td></tr>

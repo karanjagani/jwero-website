@@ -414,6 +414,18 @@ function jwFromInr(n) {
   }, { passive: true });
   onScroll();
 
+  // --- long FAQ lists: first five, then "Show all" (every answer stays in the page) ---
+  document.querySelectorAll('.tool-qa .faq').forEach(function (f) {
+    var items = f.querySelectorAll(':scope > .faq-item'); if (items.length < 8) return;
+    [].forEach.call(items, function (it, i) { if (i >= 5) it.classList.add('faq-later'); });
+    f.classList.add('faq-folded');
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'btn btn-ghost faq-all'; b.textContent = 'Show all ' + items.length + ' questions';
+    b.addEventListener('click', function () { f.classList.remove('faq-folded'); b.remove(); });
+    f.after(b);
+  });
+  // A hash link to a folded question opens the list.
+  if (location.hash) { var t = document.querySelector(location.hash.replace(/[^#\w-]/g, '')); if (t && t.closest && t.closest('.faq-folded')) { t.closest('.faq-folded').classList.remove('faq-folded'); var fb = document.querySelector('.faq-all'); if (fb) fb.remove(); } }
+
   // --- market picker tabs ---------------------------------------------
   document.querySelectorAll('[data-mkp]').forEach(function (root) {
     var tabs = [].slice.call(root.querySelectorAll('[role="tab"]'));
@@ -481,7 +493,7 @@ function jwFromInr(n) {
     var groups = document.querySelectorAll(
       '.section .cells, .section .grid:not(.cells), .section .router-grid, .section .stats, .section .pillars, .section .impact-grid, ' +
       '.section .ladder, .section .tiers, .section .team-grid, .section .steps, .section .stack-grid, .section .jtbd, .section .verdict-box, ' +
-      '.section .uc-grid, .section .pz-agents, .section .pz-groups, .section .pz-quotes, .section .pz-stories, .section .pz-levels, .section .pz-how, .section .pz-why5, .section .pz-none, .section .pz-trust, .section .pz-loop, ' +
+      '.section .uc-grid, .section .wa-jobs, .section .pz-agents, .section .pz-groups, .section .pz-quotes, .section .pz-stories, .section .pz-levels, .section .pz-how, .section .pz-why5, .section .pz-none, .section .pz-trust, .section .pz-loop, ' +
       '.section .loop, .section .speeds, .section .speed-guards, .section .safe-items, .section .quick-check-items, .faq'
     );
     Array.prototype.forEach.call(groups, function (g) {

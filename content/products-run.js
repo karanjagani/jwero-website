@@ -666,7 +666,7 @@ ${L.hero({
   secondary: { href: '/products/crm', label: 'See the Jewellery CRM' },
 })}
 
-${L.section(`${L.sectionHead('ONE VISIT, START TO FINISH', 'From the door camera to a bill on Saturday.', '')}${shFlow()}`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('ONE VISIT, START TO FINISH', 'From the door camera to a bill on Saturday.', '')}${require('./graphics').showroomHeat()}${shFlow()}`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('SIX JOBS, ONE FLOOR', 'What showroom software has to do for a jeweller.', '')}<div class="wa-jobs">
   <article><h3>1. Footfall from your cameras</h3><p>Existing CCTV or NVR (Hikvision, Dahua, CP Plus, ONVIF) counts entries, exits and how full the floor is, through an on-site connector.</p><a href="/ai-cctv-footfall-analytics-jewellery-showrooms">AI CCTV footfall →</a></article>

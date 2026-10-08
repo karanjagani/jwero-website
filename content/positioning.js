@@ -226,6 +226,7 @@ ${eyebrow('How it works')}
 <p class="pz-sub-h">Your Jwero team</p>
 <div class="pz-agents">${AGENTS.map(([n, d], i) => `
   <article class="pz-agent" style="--a:${i}">
+    <span class="pz-agent-ico">${L.icon(['trend', 'megaphone', 'chat', 'target', 'heart', 'store', 'sparkle', 'pie', 'flow'][i])}</span>
     <h3>${n}</h3>
     <p>${d}</p>
     <ol aria-label="How this agent works">${CYCLE.map((c, k) => `<li style="--k:${k}">${c}</li>`).join('')}</ol>
