@@ -176,6 +176,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('WHY ONE PLAN', 'What the pile of tools costs you today.', 'Most jewellery businesses pay for five or six disconnected tools — plus the invisible cost: customers lost to silence.')}
+  ${require('./graphics').toolCollapse(['WhatsApp bulk tool', 'Catalogue app', 'Website subscription', 'Billing and ERP', 'Agency or freelancer', 'Scheme registers and Excel'])}
   <div class="tbl-wrap"><table class="tbl">
     <thead><tr><th>What you pay for today</th><th>Typical job it does</th><th>In Jwero One</th></tr></thead>
     <tbody>

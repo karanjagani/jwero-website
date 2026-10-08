@@ -111,6 +111,7 @@ ${L.hero({
 
 ${L.section(
   `${L.sectionHead('YOUR OWN JWERO', 'On your servers, under your policies, paid for once.', 'Enterprise runs on your premises or in your own cloud. Jwero has no access to your data and charges no recurring fee.')}
+  ${require('./graphics').selfHostMap()}
   ${L.cards([
     { title: 'Hosted where you decide', text: 'On your own premises or in the cloud account you choose, in the region you choose. Your data never sits with Jwero.' },
     { title: 'One-time licence', text: 'Pay once for the platform. Support and updates are an optional contract, not a condition.' },
@@ -156,11 +157,12 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('MULTI-STORE, MULTI-BRAND, MULTI-BRANCH', 'Real hierarchy, not a label.', '')}
+  ${require('./graphics').hierarchyTree()}
   <p style="font-size:.95rem;max-width:70ch">Organisations, brands and branches are a real administrative hierarchy in Jwero, not just a business-type field at signup — role-based access control is scoped independently at each level, so a manager can be scoped to one branch while an owner sees the whole group. What this is not, today: a franchise-specific administration layer with royalty tracking or franchisor oversight of independently-owned franchisees. "Franchise" exists as a business-type label at signup, not a dedicated module — if that's what your evaluation needs, tell us and we'll be straight about the gap.</p>`
 )}
 
 ${L.honestGapsBlock([
-  'On the hosted Jwero One plan, data sits in one region (India). Enterprise customers who need another location self-host it where they choose. Physical per-tenant database isolation is real and strong on both. (Earlier note: residency-on-request isn’t available yet.',
+  'On the hosted Jwero One plan, data sits in India by default, or in your region on request. Enterprise customers self-host it where they choose. Physical per-tenant database isolation is real and strong on both.',
   'No organisation-mandated MFA policy — multi-factor authentication exists and is available to every user, but it’s opt-in per user today, not something an admin can force org-wide.',
   'No franchise-specific administration layer (royalty tracking, franchisor oversight of independently-owned franchisees) — genuine multi-store/multi-brand/multi-branch administration is real; franchise-specific tooling on top of it is not.',
   'Formal certifications: ISO 27001 and SOC 2 are in progress, not certified, and are published only when earned, same as stated on the security page.',

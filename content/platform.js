@@ -85,11 +85,12 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('INTEGRATIONS & COEXISTENCE', 'Keep your Tally. Books stay where your CA likes them.', '')}
+  ${require('./graphics').tallyFlow()}
   ${L.cards([
     { title: 'Tally', text: 'Connect Tally, map your ledgers, import masters and check records against Tally. Your accountant’s world doesn’t change.', link: { href: '/platform/integrations/tally', label: 'The accountant page' } },
     { title: 'Zoho Books', text: 'Full accounting bridge for Zoho-first businesses.' },
     { title: 'Shopify / WooCommerce / Unicommerce', text: 'Your online store works from the same product data as the shop, and products can be published to Unicommerce.' },
-    { title: 'Razorpay & Cashfree', text: 'Payment collection, verified end to end.' },
+    { title: 'Stripe, PayPal, Razorpay & Cashfree', text: 'Payment collection worldwide and in India, verified end to end.' },
     { title: 'Meta', text: 'Official WhatsApp Business API, Instagram and Facebook — the channels jewellery sells on.' },
   ], 4)}
   <p style="margin-top:20px"><a class="card-link" href="/platform/integrations">See all integrations →</a></p>`

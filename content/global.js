@@ -39,7 +39,7 @@ const globalHub = {
   body: `
 ${L.hero({ eyebrow: 'JWERO WORLDWIDE', h1: 'One system for jewellers in every market.', sub: 'Your currency, your tax system, your gold rate and your customers’ language, on the same record that runs the counter, the stock, the workshop and every chat.', primary: { href: '#', label: 'Tell us where you sell', wa: 'global' }, secondary: { href: '/pricing', label: 'See pricing' } })}
 ${L.section(`${L.sectionHead('BUILT FOR YOUR MARKET', 'What changes from country to country, handled.', '')}${factsGrid()}`)}
-${L.section(`${L.sectionHead('BY MARKET', 'Pick where you sell.', '')}<div class="bl-goals bl-goals-3">${MARKETS.map(([h, t, d]) => `<a href="${h}"><b>${t}</b><span>${d}</span><i>See Jwero for ${t.replace(/^The /, 'the ')} →</i></a>`).join('')}</div>`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('BY MARKET', 'Pick where you sell.', 'Tap a market to see what changes there, then open its page.')}${require('./graphics').marketPicker()}<div class="bl-goals bl-goals-3">${MARKETS.map(([h, t, d]) => `<a href="${h}"><b>${t}</b><span>${d}</span><i>See Jwero for ${t.replace(/^The /, 'the ')} →</i></a>`).join('')}</div>`, { tone: 'tint' })}
 ${L.section(`${L.sectionHead('THE SAME EVERYWHERE', 'What works the same in every country.', '')}${L.cards([
   { title: 'One record', text: 'Customers, catalogue, stock, counter, schemes, workshop, books and team on one system.', link: { href: '/platform', label: 'The platform' } },
   { title: 'Official WhatsApp', text: 'Your number on the official WhatsApp Business Platform, with payments in the chat where your gateway supports it.', link: { href: '/products/whatsapp', label: 'WhatsApp' } },

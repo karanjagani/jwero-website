@@ -412,6 +412,20 @@ function jwFromInr(n) {
   }, { passive: true });
   onScroll();
 
+  // --- market picker tabs ---------------------------------------------
+  document.querySelectorAll('[data-mkp]').forEach(function (root) {
+    var tabs = [].slice.call(root.querySelectorAll('[role="tab"]'));
+    function pick(t, focus) {
+      tabs.forEach(function (x) { var on = x === t; x.setAttribute('aria-selected', on ? 'true' : 'false'); x.tabIndex = on ? 0 : -1; var p = document.getElementById(x.getAttribute('aria-controls')); p.hidden = !on; if (on) { p.classList.remove('is-swap'); void p.offsetWidth; p.classList.add('is-swap'); } });
+      if (focus) t.focus();
+      if (window.jweroTrack) window.jweroTrack('market_pick', { market: t.textContent });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { pick(t); });
+      t.addEventListener('keydown', function (e) { var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (d) { e.preventDefault(); pick(tabs[(i + d + tabs.length) % tabs.length], true); } });
+    });
+  });
+
   // --- misc --------------------------------------------------------
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
@@ -477,6 +491,10 @@ function jwFromInr(n) {
     var singles = document.querySelectorAll('.section .pz-two, .section .pz-out, .section .pz-daycmd, .section .pz-vs, .section .pz-teaser, .section .pz-jbaas, .section .pz-assess, .section .pz-run, .section .pz-struck, .section .pz-shift, .section .coexist, .section .split, .section .gem-stage, .section .gem-copy, .section .tbl-wrap, .section .calc, .section .stack-verdict, .section .gaps-block, main > .gaps-block, main > .one-system, .section .safe-strip, .section .form, .trust-bar .container, .logo-marquee');
     Array.prototype.forEach.call(singles, function (el) { if (!el.closest('.reveal-group')) el.classList.add('reveal'); });
     onView(document.querySelectorAll('.reveal'), function (el) { el.classList.add('is-visible'); });
+    // Explainer graphics: arm before they scroll in, play when they arrive.
+    var gfx = document.querySelectorAll('[data-gfx]');
+    Array.prototype.forEach.call(gfx, function (g) { if (g.getBoundingClientRect().top > window.innerHeight) g.classList.add('gfx-arm'); });
+    onView(gfx, function (g) { if (g.classList.contains('gfx-arm')) requestAnimationFrame(function () { g.classList.add('is-in'); }); }, { threshold: 0.2 });
 
     // The shift plays its three beats once it is on screen.
     onView(document.querySelectorAll('[data-shift]'), function (el) { el.classList.add('is-in'); }, { threshold: 0.3 });

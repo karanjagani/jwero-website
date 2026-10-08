@@ -8,9 +8,9 @@
 // on the positioning site at /focus/count-your-team.
 const L = require('../lib');
 
-const TIERS = () => `
+const TIERS = () => `${require('./graphics').tierGlance()}
 <div class="jb-tiers">
-  <article class="jb-tier">
+  <article class="jb-tier" id="tier-1">
     <p class="jb-k">01 · Run it yourself</p>
     <h3>Your team, Jwero’s platform</h3>
     <p class="jb-who">For a showroom or small chain with its own team.</p>
@@ -20,7 +20,7 @@ const TIERS = () => `
     <div class="jb-cta"><a class="btn btn-ghost jb-btn2" href="${L.TRIAL_URL}pricing-tiers" rel="noopener" data-trial><span>Start for ₹3,600</span><small>Join the waitlist</small></a><a class="jb-demo" href="/book-demo">View demo</a></div>
     <p class="jb-fine">Messages, AI calls and listings run on a prepaid balance, at your country’s rates.</p>
   </article>
-  <article class="jb-tier is-main">
+  <article class="jb-tier is-main" id="tier-2">
     <p class="jb-k">02 · Let Jwero run it</p>
     <h3>You get the results, not the software</h3>
     <p class="jb-who">For the owner who wants the outcome, not another system to manage.</p>
@@ -30,7 +30,7 @@ const TIERS = () => `
     <div class="jb-cta"><a class="btn btn-primary" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="jb-demo" href="/book-demo">View demo</a></div>
     <p class="jb-fine">Tell us what you run and we will say which job to hand over first.</p>
   </article>
-  <article class="jb-tier">
+  <article class="jb-tier" id="tier-3">
     <p class="jb-k">03 · Chains, brands and groups</p>
     <h3>Your own Jwero, on your own servers</h3>
     <p class="jb-who">For many showrooms, brands or companies.</p>
