@@ -29,14 +29,14 @@ const P_ITEMS = [
   ['shop', '/products/manufacturing', 'Manufacturing', 'Orders, karigars, wastage by stage, metal accounts and QC.'],
   ['shop', '/products/purchase-vendors', 'Purchase and vendors', 'AI-drafted purchase orders, unfixed-rate purchases and a supplier portal.'],
   ['shop', '/products/repairs-service', 'Repairs and after-sales', 'Job cards, custody chain, weight in and out, and warranty on the original invoice.'],
-  ['shop', '/products/erp', 'ERP', 'The whole business on one system, with e-invoices through Tally and material planning.'],
-  ['money', '/products/billing-finance', 'Billing and accounting', 'GST invoices, receivables chased, GST reports and the Tally bridge.'],
+  ['shop', '/products/erp', 'ERP', 'The whole business on one system, with tax invoices, material planning and the Tally bridge in India.'],
+  ['money', '/products/billing-finance', 'Billing and accounting', 'GST, VAT or sales-tax invoices, tax returns reports, receivables chased, Stripe and PayPal.'],
   ['money', '/products/gold-schemes', 'Gold schemes and savings plans', 'Enrolment anywhere, instalments collected automatically, maturity visits.'],
   ['money', '/products/girvi', 'Girvi and gold loans', 'Pledges with photos and LTV limits, interest collected, renewals, release and auctions.'],
   ['team', '/products/hr-payroll', 'HR and payroll', 'Biometric attendance, payroll with PF and ESI, incentives and payslips on WhatsApp.'],
   ['team', '/products/training-lms', 'Training and LMS', 'Product and sales training with quizzes, certificates and paths per role.'],
   ['team', '/products/reports', 'Reports and dashboards', 'Ask a question and get the report; owner’s dashboard on your phone.'],
-  ['ai', '/products/ai-sales-agents', 'AI agents and voice', 'AI that replies, follows up and calls in 14 languages, with approvals and caps.'],
+  ['ai', '/products/ai-sales-agents', 'AI agents and voice', 'AI that replies, follows up and calls in 14 languages including Arabic, Hindi and English, with approvals and caps.'],
   ['ai', '/ai-calling-for-jewellers', 'AI calling', 'Voice AI for reminders and enquiries, ₹7 a call, up to 8 at once.'],
   ['ai', '/ai-cctv-footfall-analytics-jewellery-showrooms', 'AI CCTV footfall', 'Count visitors with the cameras you have and match footfall to bills.'],
 ];
@@ -54,7 +54,7 @@ function productsHubBody() {
 <section class="hero bl-hero"><div class="container hero-inner">
   <p class="eyebrow">PRODUCTS</p>
   <h1>Every Jwero product, on one customer record.</h1>
-  <p class="sub">${P_ITEMS.length} products for selling, marketing, the counter, stock, money and your team, all sharing the same customers, catalogue, stock and books. One price includes every module.</p>
+  <p class="sub">${P_ITEMS.length} products for selling, marketing, the counter, stock, money and your team, all sharing the same customers, catalogue, stock and books. One price includes every module. Works in India, the Gulf, the UK and Europe, North America and Southeast Asia, with local tax, currency and gold rates.</p>
   <form class="bl-search" role="search" onsubmit="return false"><label for="bl-q" class="sr-only">Search products</label><input id="bl-q" type="search" placeholder="Search: billing, girvi, WhatsApp, payroll…" autocomplete="off" data-bl-q></form>
 </div></section>
 <section class="section bl-wrap" data-blog-hub data-unit="product|products">

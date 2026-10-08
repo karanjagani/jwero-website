@@ -433,6 +433,28 @@ function journeyFix(html, p) {
       .replace(/\bkarigars?\b/, (w) => { if (!firstK) return w; firstK = false; return w + ' (goldsmith' + (w.endsWith('s') ? 's' : '') + ')'; })).join('');
     if (!isRole) html = html.replace(/(<section class="cta-band">)/, `<section class="section"><div class="container"><p class="mkt-strip"><b>Selling outside India?</b> Jwero handles VAT and sales tax, local currencies and worldwide gold rates. See Jwero for <a href="/jewellery-software-uae">the Gulf</a>, <a href="/jewellery-software-uk">the UK and Europe</a>, <a href="/jewellery-software-usa">the US and Canada</a>, <a href="/jewellery-software-singapore">South and Southeast Asia</a>, or <a href="/global">worldwide</a>.</p></div></section>\n$1`);
   }
+  // Product pages for a global audience (2026-10-08): festivals, languages, payments, tax.
+  if (/^products(\/[^/]+)?$/.test(p.slug || '')) {
+    const glob = (t) => t
+      .replace(/\bDhanteras, Diwali, wedding season\b/g, 'Diwali, Eid, Ramadan, Christmas, Valentine’s Day, Mother’s Day, wedding season')
+      .replace(/\bDiwali, wedding season\b/g, 'Diwali, Eid, Christmas, wedding season')
+      .replace(/\bDiwali (reel|offer|campaign|post|posts|email|sale|collection)\b/g, 'festive $1')
+      .replace(/\bHindi, Gujarati\b/g, 'Arabic, Hindi, Gujarati').replace(/\bHindi on karigar screens\b/g, 'The staff’s own language on workshop screens')
+      .replace(/\bUPI, card and cash\b/g, 'Card, UPI, Stripe, PayPal and cash').replace(/\bUPI, EMI\b/g, 'UPI, Stripe, PayPal, EMI').replace(/\bUPI and credit\b/g, 'UPI, Stripe, PayPal and credit');
+    html = html.split(/(<style[\s\S]*?<\/style>|<[^>]+>)/).map((part, k) => (k % 2 || !part.trim()) ? part : glob(part)).join('');
+    html = html.replace(/<script[\s\S]*?<\/script>/g, (sc) => sc.replace(/₹(\d+(?:\.\d+)?) lakh/g, (m, n) => '₹' + Math.round(+n * 100000).toLocaleString('en-IN')));
+    let firstR = true;
+    html = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>)/).map((part, k) => (k % 2 || !part.trim()) ? part : part.replace(/\bGSTR-(1|3B|2B)\b/, (m) => { if (!firstR) return m; firstR = false; return m + ' (India)'; })).join('');
+    const OUT = {
+      'products/billing-finance': ['Outside India', 'VAT and sales tax, handled the same way.', [['VAT invoices', 'Your VAT number and the buyer’s on every invoice, VAT shown per line, in your currency.'], ['VAT return reports', 'Output and input VAT totalled for the period, ready for your VAT return.'], ['Sales tax', 'Rates by state or province for the US and Canada, on every bill.'], ['Stripe and PayPal', 'Payment links and online payments through Stripe or PayPal, reconciled to the invoice.']]],
+      'products/pos': ['Outside India', 'The counter, in your currency and your tax.', [['VAT or sales tax on the bill', 'The right tax per line, shown the way your market expects.'], ['Card, Stripe and PayPal', 'Split one bill across card, cash, Stripe or PayPal and old gold.'], ['Your currency', 'Dirhams, riyals, pounds, euros or dollars, with the live gold rate in your currency.'], ['Arabic and English', 'Receipts and WhatsApp messages in the customer’s language.']]],
+      'products/purchase-vendors': ['Outside India', 'Purchases with input VAT tracked.', [['Input VAT', 'VAT on every supplier bill recorded and totalled for your VAT return.'], ['Supplier currencies', 'Buy in dollars, dirhams or euros; costs land in your own currency.'], ['Metal accounts', 'Fine-weight balances with suppliers, the same everywhere.']]],
+      'products/erp': ['Outside India', 'One system, your country’s tax.', [['VAT and sales tax', 'Invoices, returns reports and input VAT for the Gulf, the UK, Europe, the US and Canada.'], ['Multi-currency', 'Sell and buy in local currencies, report in yours.'], ['Hosting by region', 'Data hosted in your region on request.']]],
+      'products/girvi': ['Outside India', 'Pawnbroking and gold loans.', [['Pawn tickets', 'Every pledge with photos, weight, purity, the loan and the term on one record.'], ['Interest and renewals', 'Interest worked out, reminders sent, part payments and renewals recorded.'], ['Forfeits and auctions', 'Overdue loans flagged, notices sent, and the auction recorded.']]],
+    };
+    if (OUT[p.slug]) { const [e, h, rows] = OUT[p.slug]; html = html.replace(/(<section class="cta-band">)/, `<section class="section"><div class="container"><div class="section-head"><p class="eyebrow">${e.toUpperCase()}</p><h2>${h}</h2></div><div class="wa-jobs">${rows.map(([t, d]) => `<article><h3>${t}</h3><p>${d}</p></article>`).join('')}</div></div></section>\n$1`); }
+    html = html.replace(/(<section class="cta-band">)/, `<section class="section"><div class="container"><p class="mkt-strip"><b>Selling outside India?</b> Jwero handles VAT and sales tax, local currencies, Stripe and PayPal, and worldwide gold rates. See Jwero for <a href="/jewellery-software-uae">the Gulf</a>, <a href="/jewellery-software-uk">the UK and Europe</a>, <a href="/jewellery-software-usa">the US and Canada</a>, <a href="/jewellery-software-singapore">South and Southeast Asia</a>, or <a href="/global">worldwide</a>.</p></div></section>\n$1`);
+  }
   // Product pages: the three-tier price block becomes one compact line; the full
   // comparison lives on the pricing and JBaaS pages.
   if (/^products\/[^/]+$/.test(p.slug || '')) {
