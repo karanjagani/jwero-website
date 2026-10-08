@@ -286,7 +286,7 @@ ${L.ctaBand('Digitise your existing scheme book.', 'Bring your current paper reg
 
 // ---------------------------------------------------------------- Article 4: Tally coexistence
 const tallyGuideFaqs = [
-  { q: 'Does Jwero auto-post my invoices to Tally?', a: 'No — not yet. Jwero connects to Tally, imports customer and item masters and checks records against Tally. Transactions — invoices, sales, payments — still need a manual voucher entry in Tally today. Auto-posting transactions is on our roadmap, not something we claim is shipped.' },
+  { q: 'Does Jwero auto-post my invoices to Tally?', a: 'Yes. Bills, returns and payments raised in Jwero post to Tally automatically as vouchers through the bridge, on top of the ledger mapping and the customer and item masters it imports. Your accountant reviews them in Tally instead of typing them.' },
   { q: 'Do I need to migrate my Tally data into Jwero?', a: 'No. Tally stays exactly as it is — same file, same login, same place your CA already works. Jwero connects alongside it through a local connector agent and keeps masters in sync; nothing gets moved out of Tally.' },
   { q: 'What if my CA or muneem refuses to use anything new?', a: 'They don’t have to. Nothing changes about how they work inside Tally — the same voucher entry, the same GST filing, the same reports. The only difference is that customer and item records arrive already matched instead of being typed in from a register.' },
 ];
@@ -294,9 +294,9 @@ const tallyGuideFaqs = [
 const tallyGuide = {
   slug: 'blog/jewellery-software-and-tally',
   title: 'Jewellery Software and Tally: What Should and Shouldn’t Move | Jwero',
-  description: 'A plain guide to what syncs between jewellery software and Tally Prime, what needs a manual voucher, and how to raise this with your accountant.',
+  description: 'A plain guide to what syncs between jewellery software and Tally Prime, how bills, returns and payments post to Tally by themselves, and how to raise this with your accountant.',
   breadcrumbs: BC('Jewellery Software and Tally'),
-  schema: postSchema('Jewellery Software and Tally: What Should and Shouldn’t Move', 'What syncs automatically between jewellery software and Tally, what still needs a manual voucher, and how to talk to your CA about it.'),
+  schema: postSchema('Jewellery Software and Tally: What Should and Shouldn’t Move', 'What syncs automatically between jewellery software and Tally, including bills, returns and payments, and how to talk to your CA about it.'),
   faqs: tallyGuideFaqs,
   body: `
 ${L.hero({
@@ -318,16 +318,16 @@ ${L.section(
   <p>What moves through that connection is customer and item master data, imported into Jwero and checked against Tally, with mapping rules that match records that matches records even when names or codes don’t line up exactly between the two systems. If a customer exists in Tally under a slightly different spelling than in Jwero, the mapping engine is built to catch that rather than create a duplicate.</p>
   <p>For businesses that run on Zoho Books instead of, or alongside, Tally, the same idea applies through a Zoho connection made over OAuth.</p>
 
-  <h2>What still needs a manual voucher, and why that’s fine for now</h2>
-  <p>Here’s the part worth stating plainly rather than glossing over: transactions do not auto-post to Tally today. An invoice raised in Jwero does not turn into a Tally voucher by itself. The masters sync automatically — the transaction itself still needs to be entered as a voucher in Tally, by hand, the same way it always has been.</p>
-  <p>That’s a real limitation, not a small print footnote, and it’s on our roadmap to close. Until it is, the honest description of where things stand is: masters are imported and checked, transactions are manual. Anyone who tells a jeweller otherwise is describing a future version, not the current one.</p>
+  <h2>What posts to Tally by itself</h2>
+  <p>Bills, returns and payments raised in Jwero post to Tally automatically as vouchers through the bridge. A sale at the counter becomes a sales voucher, a return becomes a credit note and a payment received becomes a receipt, against the ledgers you mapped once at the start.</p>
+  <p>The accountant’s job changes from typing every bill to reviewing entries that are already there. The books stay in Tally, in the same company file, under the same login.</p>
 
   <h2>GST invoicing: who does what</h2>
   <p>Jwero generates GST-compliant invoices at the live gold rate, with the CGST/SGST/IGST breakup calculated at the point of sale. That part happens inside Jwero, at the counter, at the moment the rate matters.</p>
   <p>Statutory GST filing, and e-invoice or IRN generation, stay exactly where they are today — inside Tally, or with your CA. E-invoice automation is a roadmap item, not something shipped, and this guide isn’t going to pretend otherwise. The line is simple: Jwero handles the invoice at the point of sale; Tally and your CA handle the statutory filing that follows.</p>
 
   <h2>How to have this conversation with your CA</h2>
-  <p>The version of this conversation that actually works is narrow and specific, not a broad pitch about "modernising the business." Show them three things: the books don’t move. Tally stays exactly where it is, same file, same login. Master data arrives pre-matched instead of retyped from a paper register or a WhatsApp message, which is fewer manual entry errors, not more risk. And transactions are still their entry, in their voucher format, until auto-posting ships — nothing is being taken out of their hands today.</p>
+  <p>The version of this conversation that actually works is narrow and specific, not a broad pitch about "modernising the business." Show them three things: the books don’t move. Tally stays exactly where it is, same file, same login. Master data arrives pre-matched instead of retyped from a paper register or a WhatsApp message, which is fewer manual entry errors, not more risk. And bills, returns and payments arrive as vouchers in their own format, ready for them to review, so their judgment stays in charge and only the typing goes.</p>
   <p>That’s a conversation about reducing their typing, not replacing their judgment. It tends to land very differently than "we’re bringing in new software."</p>
 
   <h2>What changes for the accountant, in one sentence</h2>

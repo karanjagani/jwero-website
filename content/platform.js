@@ -357,7 +357,7 @@ const integrations = {
   description: 'Jwero bridges to Tally and Zoho Books, connects Shopify, WooCommerce and Unicommerce, collects via Stripe, PayPal, Razorpay and Cashfree, sells on official Meta channels, connects to your telephony provider for AI voice calls and IVR, and exposes a first-party MCP server for your own AI agents.',
   breadcrumbs: BC('Integrations'),
   faqs: [
-    { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Jwero connects to it, imports masters and checks records against it; sales vouchers are still entered in Tally, so your accountant’s world doesn’t change.' },
+    { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Jwero connects to it, imports masters, checks records against it and posts bills, returns and payments to it automatically, so your accountant reviews instead of retyping.' },
     { q: 'Can I keep my Shopify store?', a: 'Yes. Connect Shopify and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
     { q: 'Is the WhatsApp integration official?', a: 'Yes — Jwero uses the official WhatsApp Business API, with template approvals, consent management and opt-out handling built in.' },
     { q: 'Which telephony providers work for AI voice calls and IVR?', a: 'Jwero connects to your telephony provider; most telephony/CPaaS providers can be connected on request. This only applies to actual phone calls and IVR — voice on WhatsApp and web chat is native to Jwero and needs no telephony provider at all. For the phone channel, Jwero drives the AI conversation and IVR logic — the call itself runs over the line you connect, the same division of labour as WhatsApp (Meta’s API) or payments (Razorpay/Cashfree).' },
@@ -400,7 +400,7 @@ ${L.section(
 ${L.honestGapsBlock(['A general-purpose, self-serve public developer REST API is on the roadmap — the MCP server above already gives AI agents scoped access today; a broader API for custom, non-agent integrations doesn’t exist yet.'])}
 
 ${L.section(`${L.sectionHead('INTEGRATION QUESTIONS', 'What changes in your stack.', '')}${L.faqBlock([
-  { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Jwero connects to it, imports masters and checks records against it; sales vouchers are still entered in Tally, so your accountant’s world doesn’t change.' },
+  { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Jwero connects to it, imports masters, checks records against it and posts bills, returns and payments to it automatically, so your accountant reviews instead of retyping.' },
   { q: 'Can I keep my Shopify store?', a: 'Yes. Connect Shopify and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
   { q: 'Is the WhatsApp integration official, or a ban risk?', a: 'Official WhatsApp Business API — template approvals, consent management and opt-out handling are built in, which is what keeps it out of ban-risk territory.' },
   { q: 'Can I connect my own AI agent to Jwero data?', a: 'Yes — a first-party MCP server exposes scoped CRM, inbox, HR, inventory, finance, marketing, org and reporting tools to any MCP-compatible agent, with a guided connect flow and an API-keys page in-product.' },
@@ -417,8 +417,8 @@ const tally = {
   description: 'Jwero bridges to Tally so your books stay exactly where your CA likes them. Jwero runs sales, stock, purchase and the workshop; Tally keeps the ledger.',
   breadcrumbs: [['Home', '/'], ['Platform', '/platform'], ['Integrations', '/platform/integrations'], ['Tally']],
   faqs: [
-    { q: 'Will switching to Jwero disrupt my accountant’s workflow?', a: 'No. That is the point of the bridge — Jwero connects to Tally, imports customer and item masters and checks records against Tally, in the shape your accountant already expects. Invoice and payment entries are a manual voucher today; automatic transaction posting is on the roadmap, and we say so plainly.' },
-    { q: 'What exactly syncs to Tally?', a: 'Jwero connects to Tally, maps your ledgers, imports customer and item masters and checks records against Tally, so reference data is not re-typed. Sales and payment transactions still need a manual voucher in Tally today — automatic transaction posting is on the roadmap, not shipped.' },
+    { q: 'Will switching to Jwero disrupt my accountant’s workflow?', a: 'No. That is the point of the bridge — Jwero connects to Tally, imports customer and item masters and checks records against Tally, in the shape your accountant already expects. Bills, returns and payments post to Tally automatically as vouchers, so your accountant reviews entries instead of typing them.' },
+    { q: 'What exactly syncs to Tally?', a: 'Jwero connects to Tally, maps your ledgers once, imports customer and item masters, checks records against Tally, and posts bills, returns and payments to Tally automatically as vouchers. Nothing is typed twice.' },
     { q: 'Do I have to stop using Tally to start using Jwero?', a: 'No — this is the entire design. Keep Tally as your ledger of record; Jwero takes over customers, channels, schemes and follow-up alongside it.' },
     { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes. They keep filing GST exactly as they do today, in Tally — with customer and item masters imported instead of re-typed. Invite them to the demo — most objections dissolve once they see the bridge, not the sales pitch.' },
     { q: 'Does this replace GST filing or e-invoicing?', a: 'No — GST invoicing at the live gold rate happens in Jwero, but statutory filing and e-invoice/IRN stay Tally’s job (e-invoice automation is on our roadmap, not shipped). Two systems, one clean line.' },
@@ -439,7 +439,7 @@ ${L.section(
     <div class="card"><h3>Tally keeps</h3><p>Statutory books, GST filings, the ledger of record — everything your accountant already trusts, unchanged.</p></div>
     <div class="card"><h3>Jwero runs</h3><p>Customer memory, WhatsApp and Instagram selling, gold schemes, catalogue, follow-up and the AI workforce — the revenue side.</p></div>
   </div>
-  <p style="margin-top:20px; font-size:.95rem; color:var(--ink-2);">Jwero connects to Tally, maps your ledgers, imports customer and item masters and checks records against Tally. Transaction posting is a manual voucher in Tally today; auto-posting is on the roadmap, not shipped yet — so nothing about your accountant’s month-end changes without their knowledge.</p>`
+  <p style="margin-top:20px; font-size:.95rem; color:var(--ink-2);">Jwero connects to Tally, maps your ledgers, imports customer and item masters and checks records against Tally. Bills, returns and payments post to Tally automatically as vouchers, so your accountant’s month-end starts from entries that are already in the books.</p>`
 )}
 
 ${L.section(`${L.sectionHead('QUESTIONS ACCOUNTANTS ASK', 'What to tell your CA.', '')}${L.faqBlock([
@@ -591,7 +591,6 @@ ${L.section(
       <div class="road-group">
         <p class="road-group-label">Statutory & finance</p>
         <div class="road-item"><strong>Direct e-invoice filing, e-way bills & GSTR auto-filing</strong>the e-invoice file is prepared for the portal and the IRN recorded on the bill; filing stays with your CA today</div>
-        <div class="road-item"><strong>Tally auto-posting</strong>sales and payment vouchers are still entered in Tally</div>
         <div class="road-item"><strong>Metal reconciliation & physical metal count</strong>metal balances by party are live; a full reconciliation is not</div>
         <div class="road-item"><strong>Girvi / gold-loan module</strong>pledge, interest schemes, automatic interest collection, renewal, release and auctions, <a href="/products/girvi">shipped</a></div>
       </div>

@@ -88,14 +88,14 @@ const marketPicker = () => `
   </div>`).join('')}
 </div>`;
 
-// Platform: what the Tally bridge does (claims match the Tally integration page).
-const TALLY = [['Your ledgers', 'Mapped to Tally ledgers'], ['Customer and item masters', 'Imported, not retyped'], ['Records', 'Checked against Tally'], ['Your accountant', 'Keeps working in Tally']];
+// Platform: what crosses the Tally bridge (auto-posting confirmed by Jwero, 2026-10-08).
+const TALLY = [['Sales bill', 'Sales voucher'], ['Return', 'Credit note'], ['Payment received', 'Receipt'], ['Customer and item masters', 'Matched, not retyped']];
 const tallyFlow = () => `
 <figure class="tfl" data-gfx aria-labelledby="tfl-cap">
   <div class="tfl-end"><p class="tfl-k">${icon('gem')} In Jwero</p><ul>${TALLY.map(([a], i) => `<li style="--i:${i}">${a}</li>`).join('')}</ul></div>
   <div class="tfl-bridge" aria-hidden="true">${TALLY.map((_, i) => `<span style="--i:${i}"><i></i></span>`).join('')}<em>Tally bridge</em></div>
   <div class="tfl-end is-tally"><p class="tfl-k">${icon('book')} In Tally</p><ul>${TALLY.map(([, b], i) => `<li style="--i:${i}">${b}</li>`).join('')}</ul></div>
-  <figcaption id="tfl-cap">A local connector pairs Jwero with Tally Prime, so ledgers line up, masters are not retyped and the books stay where your accountant likes them.</figcaption>
+  <figcaption id="tfl-cap">Bills, returns and payments post to Tally automatically as vouchers through a local connector, so your accountant reviews entries instead of retyping them.</figcaption>
 </figure>`;
 
 // Enterprise: the technical layer as a stack. The detailed table stays below.
