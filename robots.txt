@@ -3,41 +3,41 @@
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 User-agent: *
-Allow: /
 Disallow: /.well-known/bait/
 Disallow: /search/
+Allow: /
 
 User-agent: OAI-SearchBot
-Allow: /
 Disallow: /.well-known/bait/
+Allow: /
 
 User-agent: ChatGPT-User
-Allow: /
 Disallow: /.well-known/bait/
+Allow: /
 
 User-agent: PerplexityBot
-Allow: /
 Disallow: /.well-known/bait/
+Allow: /
 
 User-agent: Perplexity-User
-Allow: /
 Disallow: /.well-known/bait/
+Allow: /
 
 User-agent: Claude-SearchBot
-Allow: /
 Disallow: /.well-known/bait/
+Allow: /
 
 User-agent: Claude-User
-Allow: /
 Disallow: /.well-known/bait/
+Allow: /
 
 User-agent: DuckAssistBot
-Allow: /
 Disallow: /.well-known/bait/
+Allow: /
 
 User-agent: YouBot
-Allow: /
 Disallow: /.well-known/bait/
+Allow: /
 
 User-agent: GPTBot
 Disallow: /

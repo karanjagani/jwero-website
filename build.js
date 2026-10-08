@@ -1838,11 +1838,11 @@ ${require('./lib').section(`
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 User-agent: *
-Allow: /
 Disallow: /.well-known/bait/
 Disallow: /search/
+Allow: /
 
-${AI_ANSWER.map((u) => `User-agent: ${u}\nAllow: /\nDisallow: /.well-known/bait/`).join('\n\n')}
+${AI_ANSWER.map((u) => `User-agent: ${u}\nDisallow: /.well-known/bait/\nAllow: /`).join('\n\n')}
 
 ${AI_TRAIN.map((u) => `User-agent: ${u}\nDisallow: /`).join('\n\n')}
 
