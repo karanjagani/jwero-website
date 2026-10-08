@@ -263,7 +263,7 @@ const ICPS = [
   { key: 'chain', label: 'Multi-store chain', icon: 'branches', sol: '/solutions/multi-store-chains', door: 'demo',
     price: ['Five branches', '₹18,000 + 4 extra locations × ₹2,999 = ₹29,996 a month. From six locations, ask for Enterprise pricing.'] },
   { key: 'franchise', label: 'Franchise network', icon: 'flow', sol: '/solutions/franchise-networks', door: 'demo',
-    price: ['Per location', '₹18,000 a month for the first location and ₹2,999 for each one after. Networks usually take Enterprise, which is custom priced.'] },
+    price: ['Per location', '₹18,000 a month for the first location and ₹2,999 for each one after in India; quoted in your currency elsewhere. Networks usually take Enterprise: a one-time licence to run Jwero on their own servers.'] },
   { key: 'maker', label: 'Workshop / manufacturer', icon: 'scale', sol: '/solutions/manufacturers', door: 'demo',
     price: ['One workshop', '₹18,000 a month, every module. Vendor portal logins are ₹149 each a month; payslips ₹40 each.'] },
   { key: 'b2b', label: 'Wholesale / trade', icon: 'truck', sol: '/solutions/b2b-jewellery', door: 'trial',

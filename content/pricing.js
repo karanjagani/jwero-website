@@ -85,7 +85,7 @@ const OBJECTIONS = [
 const pricing = {
   slug: 'pricing',
   title: `Jwero Pricing: Subscription, Managed or Enterprise | Jwero`,
-  description: `One plan with every module: ${inr(PLAN.monthly)} a month in India, $249 elsewhere, billed monthly. First month ${inr(PLAN.firstMonth)}. Per-use services — WhatsApp, AI, calls — run on a prepaid wallet at published rates. Enterprise for groups and chains is custom priced.`,
+  description: `One plan with every module: ${inr(PLAN.monthly)} a month in India, $249 elsewhere, billed monthly. First month ${inr(PLAN.firstMonth)}. Per-use services — WhatsApp, AI, calls — run on a prepaid wallet at published rates. Enterprise for groups and chains is a one-time licence to self-host.`,
   breadcrumbs: [['Home', '/'], ['Pricing']],
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Jwero One', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',

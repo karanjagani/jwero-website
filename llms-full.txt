@@ -8513,7 +8513,7 @@ A: Ask whether the module drafts a priced reply from the catalogue at the live r
 # Jwero Pricing: Subscription, Managed or Enterprise
 URL: https://jwero.ai/pricing
 
-One plan with every module: ₹18,000 a month in India, $249 elsewhere, billed monthly. First month ₹3,600. Per-use services, WhatsApp, AI, calls, run on a prepaid wallet at published rates. Enterprise for groups and chains is custom priced.
+One plan with every module: ₹18,000 a month in India, $249 elsewhere, billed monthly. First month ₹3,600. Per-use services, WhatsApp, AI, calls, run on a prepaid wallet at published rates. Enterprise for groups and chains is a one-time licence to self-host.
 
 PRICING
 
