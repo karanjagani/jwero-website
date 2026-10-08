@@ -422,6 +422,16 @@ function journeyFix(html, p) {
       else html = html.slice(0, sim[0]) + simHtml + html.slice(sim[0]);
     }
     html = compactTiers(html);
+    // Global wording inside the simulators and animations (script data), and a market strip.
+    html = html.replace(/<script[\s\S]*?<\/script>/g, (sc) => sc
+      .replace(/\bGST-ready\b/g, 'tax-ready').replace(/\bwith GST\b/g, 'with tax').replace(/\bone GST bill\b/g, 'one tax bill').replace(/\bGST bill\b/g, 'tax bill').replace(/\bGST\b/g, 'GST/VAT')
+      .replace(/\bDiwali\b/g, 'festive').replace(/\bAkshaya Tritiya\b/g, 'festival season').replace(/\bkarigars\b/g, 'goldsmiths').replace(/\bkarigar\b/g, 'goldsmith').replace(/\bKarigar\b/g, 'Goldsmith')
+      .replace(/\bcash and UPI\b/g, 'cash and card or UPI'));
+    let firstK = true;
+    html = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>)/).map((part, k) => (k % 2 || !part.trim()) ? part : part
+      .replace(/\bDiwali\b/g, 'festive').replace(/\bAkshaya Tritiya\b/g, 'the festival season').replace(/\bcash and UPI\b/g, 'cash and card or UPI')
+      .replace(/\bkarigars?\b/, (w) => { if (!firstK) return w; firstK = false; return w + ' (goldsmith' + (w.endsWith('s') ? 's' : '') + ')'; })).join('');
+    if (!isRole) html = html.replace(/(<section class="cta-band">)/, `<section class="section"><div class="container"><p class="mkt-strip"><b>Selling outside India?</b> Jwero handles VAT and sales tax, local currencies and worldwide gold rates. See Jwero for <a href="/jewellery-software-uae">the Gulf</a>, <a href="/jewellery-software-uk">the UK and Europe</a>, <a href="/jewellery-software-usa">the US and Canada</a>, <a href="/jewellery-software-singapore">South and Southeast Asia</a>, or <a href="/global">worldwide</a>.</p></div></section>\n$1`);
   }
   // Product pages: the three-tier price block becomes one compact line; the full
   // comparison lives on the pricing and JBaaS pages.

@@ -4,7 +4,7 @@ const BC = (label) => [['Home', '/'], ['Solutions', '/solutions'], [label]];
 // Solutions hub, redesigned 2026-10-07 like the blog and guides hubs: search,
 // filters by kind of business, problem and role, quick "I run…" picks, and one
 // grid of every solution, problem and role page. Reuses [data-blog-hub].
-const S_TOPICS = [['retail', 'Retail'], ['trade', 'Wholesale and trade'], ['mfg', 'Manufacturing'], ['brand', 'Brands and networks'], ['pain', 'By problem'], ['role', 'By role']];
+const S_TOPICS = [['retail', 'Retail'], ['trade', 'Wholesale and trade'], ['mfg', 'Manufacturing'], ['brand', 'Brands and networks'], ['pain', 'By problem'], ['role', 'By role'], ['market', 'By market']];
 const S_ITEMS = [
   ['retail', '/solutions/single-store', 'Single store', 'Counter, stock, books and customers together, without the owner remembering everything.'],
   ['retail', '/solutions/multi-store-chains', 'Multi-store and chains', 'Every branch on one system: prices, stock, schemes and reports.'],
@@ -21,7 +21,7 @@ const S_ITEMS = [
   ['trade', '/solutions/gold-wholesale', 'Gold wholesale', 'Weight-based trade, buyer pricing and fine-metal accounts.'],
   ['trade', '/solutions/b2b-jewellery', 'B2B jewellery: silver, gemstone, pearl', 'Sell to retailers without living on the phone.'],
   ['trade', '/solutions/bullion-gold-traders', 'Bullion dealers and gold traders', 'Volume trades with nothing left ambiguous.'],
-  ['mfg', '/solutions/manufacturers', 'Jewellery manufacturers', 'From jangad to despatch: orders, karigars, wastage and QC.'],
+  ['mfg', '/solutions/manufacturers', 'Jewellery manufacturers', 'From order to despatch: orders, craftsmen (karigars), wastage and QC.'],
   ['mfg', '/solutions/casting-units', 'Casting units', 'Every tree and flask accounted, metal in and out.'],
   ['mfg', '/solutions/cad-services', 'CAD services', 'Design files to job files, revisions and approvals tracked.'],
   ['mfg', '/solutions/oem-manufacturers', 'OEM manufacturers', 'Making for other brands, with their orders and specs.'],
@@ -52,6 +52,15 @@ const S_ITEMS = [
   ['role', '/roles/cad-designer', 'CAD designer', 'Files that do not die in chat.'],
   ['role', '/roles/quality-hallmarking', 'Quality and hallmarking', 'Certification and HUID status tracked.'],
 ];
+S_ITEMS.push(
+  ['market', '/jewellery-software-uae', 'UAE, Saudi Arabia, Qatar and the Gulf', 'VAT invoices, dirhams and riyals, gold by gram or tola, Arabic and English WhatsApp. For gold souk showrooms and chains.'],
+  ['market', '/jewellery-software-uk', 'UK and Europe', 'VAT, pounds and euros, POS and ecommerce for independent jewellers and groups.'],
+  ['market', '/jewellery-software-usa', 'US and Canada', 'Sales tax, dollars, POS, ecommerce and gold loans for independent jewellers and pawnbrokers.'],
+  ['market', '/jewellery-software-singapore', 'South and Southeast Asia', 'Local taxes and currencies, live gold rates and WhatsApp selling.'],
+  ['market', '/jewellery-software-india', 'India', 'GST, HUID, schemes, girvi and Tally, written for Indian jewellers.'],
+  ['market', '/global', 'Jwero worldwide', 'How Jwero works outside India: taxes, currencies, rates and hosting by region.'],
+);
+const S_ALIAS = { '/solutions/single-store': 'independent jeweller family jeweller', '/jewellery-software-usa': 'pawnbroker pawn shop independent jeweller', '/jewellery-software-uae': 'gold souk dubai abu dhabi riyadh doha', '/jewellery-software-uk': 'pawnbroker independent jeweller london', '/jewellery-software-singapore': 'singapore malaysia sri lanka nepal' };
 const S_PICK = [
   ['I run one shop', '/solutions/single-store'], ['I run several branches', '/solutions/multi-store-chains'], ['I make jewellery', '/solutions/manufacturers'],
   ['I sell to retailers', '/solutions/b2b-jewellery'], ['I sell mostly online', '/solutions/d2c-brands'], ['I am just starting', '/solutions/startups'],
@@ -61,13 +70,13 @@ const sImg = (href) => { const fs = require('fs'), p = require('path'); const ke
 const sEsc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 function solutionsHubBody() {
   const TL = Object.fromEntries(S_TOPICS); const count = (t) => S_ITEMS.filter((i) => i[0] === t).length;
-  const card = ([t, h, title, d]) => { const img = sImg(h); return `<a class="bl-card" href="${h}" data-t="${t}" data-q="${sEsc((title + ' ' + d + ' ' + TL[t]).toLowerCase())}">${img ? `<img src="${img}" alt="" loading="lazy" width="1200" height="630">` : ''}<span class="bl-tag">${TL[t]}</span><b>${sEsc(title)}</b><span class="bl-desc">${sEsc(d)}</span></a>`; };
+  const card = ([t, h, title, d]) => { const img = sImg(h); return `<a class="bl-card" href="${h}" data-t="${t}" data-q="${sEsc((title + ' ' + d + ' ' + TL[t] + ' ' + (S_ALIAS[h] || '')).toLowerCase())}">${img ? `<img src="${img}" alt="" loading="lazy" width="1200" height="630">` : ''}<span class="bl-tag">${TL[t]}</span><b>${sEsc(title)}</b><span class="bl-desc">${sEsc(d)}</span></a>`; };
   return `
 <section class="hero bl-hero"><div class="container hero-inner">
   <p class="eyebrow">SOLUTIONS</p>
   <h1>Find the page written for your jewellery business.</h1>
-  <p class="sub">The same Jwero runs a single counter, a hundred-branch chain and a manufacturing floor. Pick your business, the problem you want solved, or your role.</p>
-  <form class="bl-search" role="search" onsubmit="return false"><label for="bl-q" class="sr-only">Search solutions</label><input id="bl-q" type="search" placeholder="Search: bridal, wholesale, karigar, dead stock…" autocomplete="off" data-bl-q></form>
+  <p class="sub">The same Jwero runs a single counter, a hundred-branch chain and a manufacturing floor, in India, the Gulf, the UK and Europe, North America and Southeast Asia. Pick your business, the problem you want solved, or your role.</p>
+  <form class="bl-search" role="search" onsubmit="return false"><label for="bl-q" class="sr-only">Search solutions</label><input id="bl-q" type="search" placeholder="Search: bridal, wholesale, pawnbroker, Dubai, dead stock…" autocomplete="off" data-bl-q></form>
 </div></section>
 <section class="section bl-wrap" data-blog-hub data-unit="page|pages">
 <div class="container">
