@@ -513,6 +513,10 @@ function journeyFix(html, p) {
   if (/^lp\//.test(p.slug || '')) {
     html = html.replace(/<div class="doors-strip[\s\S]*?<\/div>\s*<\/div>/, '').replace(/<div class="sticky-bar"[\s\S]*?<\/div>/, '');
   }
+  if (p.slug === 'pricing') {
+    const shift = topSections(html).find(([a, e]) => />THE SHIFT</.test(html.slice(a, Math.min(e, a + 1500))));
+    if (shift) html = html.slice(0, shift[0]) + html.slice(shift[1]);
+  }
   // Self-serve start is a waitlist today: every start button joins the waitlist on WhatsApp.
   html = html.replace(/<a([^>]*?)href="(?:https:\/\/os\.jwero\.ai\/signup[^"]*|\/start(?:\?[^"]*)?)"([^>]*)>([\s\S]*?)<\/a>/g, (m0, pre, post, inner) => {
     if (p.slug === 'start' && /data-start-go/.test(pre + post)) return m0;
@@ -534,6 +538,15 @@ function journeyFix(html, p) {
     }
   }
 
+  // Prices: ₹ for India, $ elsewhere. Text only (not inside tags or scripts); site.js picks by location.
+  {
+    const CUR = [['₹18,000', '$249'], ['₹3,600', '$49']];
+    html = html.split(/(<script[\s\S]*?<\/script>|<[^>]+>)/).map((part, k) => {
+      if (k % 2) return part;
+      let t = part; for (const [inr, usd] of CUR) t = t.split(inr).join(`<span class="cur" data-inr="${inr}" data-usd="${usd}">${inr}</span>`);
+      return t;
+    }).join('');
+  }
   return html;
 }
 
@@ -638,8 +651,8 @@ const HUB_SHORT = {
   'how-it-goes': { q: 'What happens after I contact Jwero?', a: ' A short call follows about your business and what you would rather not manage, then a written plan with what Jwero takes on and what it costs. Set-up takes a day, starting with one function if you like.' },
   'industries/retail': { q: 'What jewellery retail software does Jwero offer?', a: 'Counter billing at the live gold rate with old-gold exchange, stock by piece and weight, schemes, customer follow-up on WhatsApp and Instagram, and reports, for single stores and chains. Run it yourself for ₹18,000 a month, or let Jwero run it.' },
   brief: { q: 'What is the Jwero brief?', a: 'A short summary of what Jwero is, what it costs and how it works, written to share with a partner, family member or manager who will help decide.' },
-  pricing: { q: 'How much does Jwero cost?', a: 'There are three ways to buy. Run it yourself: ₹18,000 a month with every module, first month ₹3,600, extra locations ₹2,999 each. Let Jwero run it: no subscription, every tool included, priced on the work, about half of what that work costs you today. Enterprise for groups and chains: custom. Messages, AI and calls are charged from a prepaid wallet at published rates.' },
-  enterprise: { q: 'Does Jwero work for jewellery chains and groups?', a: 'Yes. Branches, brands and roles run on one system with single sign-on and user provisioning, a staged rollout plan and a security overview for your IT team. Enterprise is custom priced, and functions can be run by your team, by Jwero, or a mix.' },
+  pricing: { q: 'How much does Jwero cost?', a: 'There are three ways to buy. Run it yourself: ₹18,000 a month with every module, first month ₹3,600, extra locations ₹2,999 each in India (quoted elsewhere). Let Jwero run it: no subscription, every tool included, priced on the work, about half of what that work costs you today. Enterprise for groups and chains: a one-time licence to run Jwero on your own servers, with optional support. Messages, AI and calls are charged from a prepaid wallet at your country’s rates.' },
+  enterprise: { q: 'Does Jwero work for jewellery chains and groups?', a: 'Yes. Branches, brands and roles run on one system with single sign-on and user provisioning, a staged rollout plan and a security overview for your IT team. Enterprise is a one-time licence to run Jwero on your own servers or cloud, and functions can be run by your team, by Jwero, or a mix.' },
   trust: { q: 'Is Jwero secure, and what is certified?', a: 'Each business has its own isolated database, hosted in India, with role-based access, approvals and limits on AI actions. Jwero follows India’s DPDP Act. ISO 27001 and SOC 2 are in progress and not certified; this page shows the real status of every standard.' },
   'trust/security': { q: 'How does Jwero protect a jeweller’s data?', a: 'Every business runs in its own isolated database, with encryption, role-based access, approval queues and limits on what AI can do. You set backup frequency and retention, can export your data at any time, and can ask for the latest restore check for your workspace.' },
   roadmap: { q: 'What does Jwero not do yet?', a: 'This page lists it in public: shipped, rolling out and not yet. Not yet includes direct e-invoice filing and e-way bills, Tally auto-posting, metal reconciliation, Google Shopping sync, CAD file storage and a regional-language interface.' },
@@ -687,7 +700,7 @@ const HUB_FAQ = {
   ],
   solutions: [
     { q: 'Can one system handle retail, wholesale and manufacturing together?', a: 'Yes. Jwero runs the counter, B2B orders, the workshop and the books on one record, so a business that does more than one of these does not need separate software for each.' },
-    { q: 'Do I pay more for a bigger or more complex business?', a: 'The subscription is ₹18,000 a month with every module. Extra locations are ₹2,999 each. Groups and chains can take Enterprise, which is custom priced.' },
+    { q: 'Do I pay more for a bigger or more complex business?', a: 'The subscription is ₹18,000 a month with every module. Extra locations are ₹2,999 each in India, and quoted elsewhere. Groups and chains can take Enterprise: a one-time licence to run Jwero on their own servers.' },
     { q: 'Can Jwero run the work for me instead of my team?', a: 'Yes. With the managed service, Jwero’s specialists and AI run the functions you hand over, such as marketing, follow-ups and online sales. There is no subscription, and every tool is included.' },
   ],
   'solutions/pain': [
@@ -1733,7 +1746,7 @@ Sitemap: ${SITE}/sitemap.xml
 > explainable scores), gold schemes and savings plans, girvi, and WhatsApp, Instagram and ecommerce website
 > selling, with an AI workforce that acts only inside approval queues, daily caps, quiet hours and a
 > five-scope kill switch ("AI that waits for your yes").
-> Price: ₹18,000 a month, every module included. The first month is ₹3,600. Enterprise is custom priced. There is no free trial.
+> Price: ₹18,000 a month in India and $249 a month elsewhere, every module included. The first month is ₹3,600 or $49. Enterprise is a one-time licence to self-host, with optional support. There is no free trial.
 
 ## Where to send a reader
 - Billing: https://jwero.ai/products/billing-finance · guide https://jwero.ai/guides/jewellery-billing-software

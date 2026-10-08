@@ -8513,7 +8513,7 @@ A: Ask whether the module drafts a priced reply from the catalogue at the live r
 # Jwero Pricing: Subscription, Managed or Enterprise
 URL: https://jwero.ai/pricing
 
-One plan with every module: ₹18,000 a month, billed monthly. First month ₹3,600. Per-use services, WhatsApp, AI, calls, run on a prepaid wallet at published rates. Enterprise for groups and chains is custom priced.
+One plan with every module: ₹18,000 a month in India, $249 elsewhere, billed monthly. First month ₹3,600. Per-use services, WhatsApp, AI, calls, run on a prepaid wallet at published rates. Enterprise for groups and chains is custom priced.
 
 PRICING
 
@@ -8524,29 +8524,7 @@ PRICING
  Start for ₹3,600 
  Let Jwero handle it 
 
- Run it yourself: first month ₹3,600, then ₹18,000 a month. Managed: no subscription, every tool included. Prices exclude GST.
-
- THE FRANKENSTACK MATH
-
-## What the pile of tools costs.
-
- Most jewellery businesses pay for five or six disconnected tools, plus the invisible cost: customers lost to silence.
-
- What you pay for today Typical job it does In Jwero One 
-
- WhatsApp bulk-message tool Sends texts; knows nothing about the customer Included, with the customer record behind every reply 
-
- Catalogue app Shares designs; prices go stale when the rate moves Included, live-rate pricing on every share 
-
- Website / ecommerce subscription A brochure or a generic store Included, a jewellery-native ecommerce website 
-
- Billing / ERP software The invoice and the ledger Included, POS, inventory, finance, with Tally and Zoho Books bridges 
-
- Agency retainer / freelancer Posts and ads, disconnected from sales data Included, social, ads and attribution on the same record 
-
- Scheme registers & Excel hours Staff time reconciling what no tool connects Gone, one record, no reconciliation 
-
- Put your own numbers in: what making do costs · the calculators .
+ ₹ India $ Outside India Run it yourself: first month ₹3,600, then ₹18,000 a month. Managed: no subscription, every tool included. Prices exclude taxes (GST in India).
 
  THREE WAYS TO BUY
 
@@ -8562,7 +8540,7 @@ PRICING
 
  ₹18,000 a month 
 
- First month ₹3,600. Billed monthly, excluding GST.
+ First month ₹3,600. Billed monthly, excluding taxes.
 
  Every product, one price. WhatsApp, counter, stock, POS, schemes, girvi, workshop, books, team, marketing and communication. Nothing per module, nothing per seat.
  Replaces the 10 to 15 tools most shops pay for today, so there is no other software to buy.
@@ -8572,7 +8550,7 @@ PRICING
  
  Start for ₹3,600 Join the waitlist View demo 
 
- Messages, AI calls (₹7 each) and listings run on a prepaid balance.
+ Messages, AI calls and listings run on a prepaid balance, at your country’s rates.
 
  02 · Let Jwero run it
 
@@ -8624,7 +8602,7 @@ PRICING
 
  ₹18,000 /month 
 
- ₹3,600 for the first month, then ₹18,000. Billed monthly, excluding GST. Cancel any time.
+ ₹3,600 for the first month, then ₹18,000. Billed monthly, excluding taxes. Cancel any time.
 
  Every module included
 
@@ -8640,6 +8618,8 @@ PRICING
 
  The plan covers the whole platform. WhatsApp, SMS, AI and other per-use services are metered from your prepaid wallet at the rates below.
 
+ Outside India: Jwero One is $249 a month , first month $49, with one location and one brand. For more locations, brands or registers, ask us for a quote in your currency .
+
  YOUR PRICE
 
 ## Work out your own number.
@@ -8654,7 +8634,7 @@ PRICING
  
  Showroom cameras 
  
- Capacity add-ons are monthly. Usage on the wallet, messages, AI, calls, is on top and depends on how much you send., Jwero One, per month, capacity add-ons, per month, a month, excluding GST and wallet usage
+ Capacity add-ons are monthly. Usage on the wallet, messages, AI, calls, is on top and depends on how much you send., Jwero One, per month, capacity add-ons, per month, a month, excluding taxes and wallet usage
 
  Send me this as a quote 
  At this size, ask for Enterprise terms, the per-location price is negotiable for networks.
@@ -8757,14 +8737,33 @@ PRICING
  Priority support ₹4,999 per organization / month 
  Dedicated success manager ₹24,999 per organization / month 
 
- Rates exclude GST. AI is metered on what an action actually uses, so “≈” shows a typical action. The live rate card for your account is inside Jwero under Billing → Rates & add-ons.
+ Rates shown are for India. Outside India, messages and calls are charged at your country’s Meta and carrier rates; ask us for your country’s rate card. Rates exclude taxes. AI is metered on what an action actually uses, so “≈” shows a typical action. The live rate card for your account is inside Jwero under Billing → Rates & add-ons.
+
+ WHY ONE PLAN
+
+## What the pile of tools costs you today.
+
+ Most jewellery businesses pay for five or six disconnected tools, plus the invisible cost: customers lost to silence.
+
+ What you pay for today Typical job it does In Jwero One 
+
+ WhatsApp bulk-message tool Sends texts; knows nothing about the customer Included, with the customer record behind every reply 
+
+ Catalogue app Shares designs; prices go stale when the rate moves Included, live-rate pricing on every share 
+
+ Website / ecommerce subscription A brochure or a generic store Included, a jewellery-native ecommerce website 
+
+ Billing / ERP software The invoice and the ledger Included, POS, inventory, finance, with Tally and Zoho Books bridges 
+
+ Agency retainer / freelancer Posts and ads, disconnected from sales data Included, social, ads and attribution on the same record 
+
+ Scheme registers & Excel hours Staff time reconciling what no tool connects Gone, one record, no reconciliation 
+
+ Put your own numbers in: what making do costs · the calculators .
 
  PRICING QUESTIONS
 
 ## Straight answers on cost and terms.
-
- What does Jwero cost? 
- One plan, Jwero One: ₹18,000 a month, billed monthly. Every module is included. Prices exclude GST. Groups and chains take Enterprise, which is custom priced.
 
  Is there a free trial? 
  No. Instead, your first month of Jwero One is ₹3,600 instead of ₹18,000, with every module. Per-use services such as WhatsApp messages and AI run on a prepaid wallet from day one. The first-month price applies once per business.
@@ -8776,7 +8775,7 @@ PRICING
  Neither. Jwero One includes every module, and there is no per-seat price for your team. You turn off the modules you do not use so the screen stays simple. What scales with you is capacity: extra locations, brands, registers and storage, at the rates shown.
 
  I run more than one store. What does that cost? 
- One location is included. Each additional location is ₹2,999 a month. Use the calculator above for your count; chains that want negotiated terms, unlimited history or dedicated support should ask for Enterprise.
+ One location is included. In India each additional location is ₹2,999 a month; outside India, ask us for a quote. Use the calculator above for your count; chains that want negotiated terms, unlimited history or dedicated support should ask for Enterprise.
 
  Is there a lock-in contract? 
  No. Billing is month to month and you can cancel any time. Your data exports whenever you ask.
@@ -8821,7 +8820,7 @@ PRICING
 
  01 Your volume Conversations, calls, posts and orders, predicted from your customer base and showrooms, or counted from your own figures.
 
- 02 Today’s cost What that work costs at the cheapest way to staff it in India: a junior hire or a freelancer.
+ 02 Today’s cost What that work costs at the cheapest way to staff it in your market: a junior hire or a freelancer.
 
  03 Jwero’s price About half of that when you let Jwero decide and execute, and about 60% when you want to approve every step.
 
@@ -8837,9 +8836,6 @@ PRICING
 
  Send this to a jeweller Tell us who you referred
 
-Q: What does Jwero cost?
-A: One plan, Jwero One: ₹18,000 a month, billed monthly. Every module is included. Prices exclude GST. Groups and chains take Enterprise, which is custom priced.
-
 Q: Is there a free trial?
 A: No. Instead, your first month of Jwero One is ₹3,600 instead of ₹18,000, with every module. Per-use services such as WhatsApp messages and AI run on a prepaid wallet from day one. The first-month price applies once per business.
 
@@ -8850,7 +8846,7 @@ Q: Do I pay per module, or per user?
 A: Neither. Jwero One includes every module, and there is no per-seat price for your team. You turn off the modules you do not use so the screen stays simple. What scales with you is capacity: extra locations, brands, registers and storage, at the rates shown.
 
 Q: I run more than one store. What does that cost?
-A: One location is included. Each additional location is ₹2,999 a month. Use the calculator above for your count; chains that want negotiated terms, unlimited history or dedicated support should ask for Enterprise.
+A: One location is included. In India each additional location is ₹2,999 a month; outside India, ask us for a quote. Use the calculator above for your count; chains that want negotiated terms, unlimited history or dedicated support should ask for Enterprise.
 
 Q: Is there a lock-in contract?
 A: No. Billing is month to month and you can cancel any time. Your data exports whenever you ask.
@@ -14773,7 +14769,7 @@ FAQ
  Your data stays yours. Export everything, customers, catalogue, stock, invoices, in standard formats at any time, before or after you stop. There is no hostage clause and no deletion-on-lapse surprise; we say so in writing before you start.
 
  Can I upgrade or downgrade tiers later? 
- There are no tiers to climb: Jwero One includes every module. You can move to Enterprise, which is custom priced, when you need terms written for a group or chain. Assist, Approve and Autopilot are not prices, they are how much the AI is allowed to do, and you change that per action type whenever you like.
+ There are no tiers to climb: Jwero One includes every module. You can move to Enterprise, a one-time licence to run Jwero on your own servers, when you need terms written for a group or chain. Assist, Approve and Autopilot are not prices, they are how much the AI is allowed to do, and you change that per action type whenever you like.
 
  Why should I trust an ROI claim from the company selling the product? 
  You shouldn’t take our word for it, that’s why the growth report exists. It’s a weekly, plain-language account of what happened, generated from your own data instead of a projection from a sales deck.
@@ -15144,7 +15140,7 @@ Q: What happens if I stop paying?
 A: Your data stays yours. Export everything, customers, catalogue, stock, invoices, in standard formats at any time, before or after you stop. There is no hostage clause and no deletion-on-lapse surprise; we say so in writing before you start.
 
 Q: Can I upgrade or downgrade tiers later?
-A: There are no tiers to climb: Jwero One includes every module. You can move to Enterprise, which is custom priced, when you need terms written for a group or chain. Assist, Approve and Autopilot are not prices, they are how much the AI is allowed to do, and you change that per action type whenever you like.
+A: There are no tiers to climb: Jwero One includes every module. You can move to Enterprise, a one-time licence to run Jwero on your own servers, when you need terms written for a group or chain. Assist, Approve and Autopilot are not prices, they are how much the AI is allowed to do, and you change that per action type whenever you like.
 
 Q: Why should I trust an ROI claim from the company selling the product?
 A: You shouldn’t take our word for it, that’s why the growth report exists. It’s a weekly, plain-language account of what happened, generated from your own data instead of a projection from a sales deck.
@@ -107971,7 +107967,7 @@ Jewellery Business as a Service
 
  ₹18,000 a month 
 
- First month ₹3,600. Billed monthly, excluding GST.
+ First month ₹3,600. Billed monthly, excluding taxes.
 
  Every product, one price. WhatsApp, counter, stock, POS, schemes, girvi, workshop, books, team, marketing and communication. Nothing per module, nothing per seat.
  Replaces the 10 to 15 tools most shops pay for today, so there is no other software to buy.
@@ -107981,7 +107977,7 @@ Jewellery Business as a Service
  
  Start for ₹3,600 Join the waitlist View demo 
 
- Messages, AI calls (₹7 each) and listings run on a prepaid balance.
+ Messages, AI calls and listings run on a prepaid balance, at your country’s rates.
 
  02 · Let Jwero run it
 
@@ -108395,7 +108391,7 @@ Why Jwero
 
  ₹18,000 a month 
 
- First month ₹3,600. Billed monthly, excluding GST.
+ First month ₹3,600. Billed monthly, excluding taxes.
 
  Every product, one price. WhatsApp, counter, stock, POS, schemes, girvi, workshop, books, team, marketing and communication. Nothing per module, nothing per seat.
  Replaces the 10 to 15 tools most shops pay for today, so there is no other software to buy.
@@ -108405,7 +108401,7 @@ Why Jwero
  
  Start for ₹3,600 Join the waitlist View demo 
 
- Messages, AI calls (₹7 each) and listings run on a prepaid balance.
+ Messages, AI calls and listings run on a prepaid balance, at your country’s rates.
 
  02 · Let Jwero run it
 
@@ -108666,7 +108662,7 @@ How it works
 
  ₹18,000 a month 
 
- First month ₹3,600. Billed monthly, excluding GST.
+ First month ₹3,600. Billed monthly, excluding taxes.
 
  Every product, one price. WhatsApp, counter, stock, POS, schemes, girvi, workshop, books, team, marketing and communication. Nothing per module, nothing per seat.
  Replaces the 10 to 15 tools most shops pay for today, so there is no other software to buy.
@@ -108676,7 +108672,7 @@ How it works
  
  Start for ₹3,600 Join the waitlist View demo 
 
- Messages, AI calls (₹7 each) and listings run on a prepaid balance.
+ Messages, AI calls and listings run on a prepaid balance, at your country’s rates.
 
  02 · Let Jwero run it
 
@@ -108981,7 +108977,7 @@ AI + experts
 
  ₹18,000 a month 
 
- First month ₹3,600. Billed monthly, excluding GST.
+ First month ₹3,600. Billed monthly, excluding taxes.
 
  Every product, one price. WhatsApp, counter, stock, POS, schemes, girvi, workshop, books, team, marketing and communication. Nothing per module, nothing per seat.
  Replaces the 10 to 15 tools most shops pay for today, so there is no other software to buy.
@@ -108991,7 +108987,7 @@ AI + experts
  
  Start for ₹3,600 Join the waitlist View demo 
 
- Messages, AI calls (₹7 each) and listings run on a prepaid balance.
+ Messages, AI calls and listings run on a prepaid balance, at your country’s rates.
 
  02 · Let Jwero run it
 
@@ -109308,7 +109304,7 @@ What we handle
 
  ₹18,000 a month 
 
- First month ₹3,600. Billed monthly, excluding GST.
+ First month ₹3,600. Billed monthly, excluding taxes.
 
  Every product, one price. WhatsApp, counter, stock, POS, schemes, girvi, workshop, books, team, marketing and communication. Nothing per module, nothing per seat.
  Replaces the 10 to 15 tools most shops pay for today, so there is no other software to buy.
@@ -109318,7 +109314,7 @@ What we handle
  
  Start for ₹3,600 Join the waitlist View demo 
 
- Messages, AI calls (₹7 each) and listings run on a prepaid balance.
+ Messages, AI calls and listings run on a prepaid balance, at your country’s rates.
 
  02 · Let Jwero run it
 

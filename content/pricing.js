@@ -59,15 +59,14 @@ const rateCard = `
   <div class="rates-panel${i === 0 ? ' is-on' : ''}" data-rate-panel="${i}" role="tabpanel">
     <div class="tbl-wrap"><table class="tbl rates-tbl"><tbody>${RATES[f].map(([l, p, u]) => `<tr><td>${l}</td><td class="rate-p">${p}</td><td class="rate-u">${u}</td></tr>`).join('')}</tbody></table></div>
   </div>`).join('')}
-  <p class="rates-note">Rates exclude GST. AI is metered on what an action actually uses, so “≈” shows a typical action. The live rate card for your account is inside Jwero under Billing → Rates &amp; add-ons.</p>
+  <p class="rates-note"><b>Rates shown are for India.</b> Outside India, messages and calls are charged at your country’s Meta and carrier rates; ask us for your country’s rate card. Rates exclude taxes. AI is metered on what an action actually uses, so “≈” shows a typical action. The live rate card for your account is inside Jwero under Billing → Rates &amp; add-ons.</p>
 </div>`;
 
 const faqs = [
-  { q: 'What does Jwero cost?', a: `One plan, Jwero One: ${inr(PLAN.monthly)} a month, billed monthly. Every module is included. Prices exclude GST. Groups and chains take Enterprise, which is custom priced.` },
   { q: 'Is there a free trial?', a: `No. Instead, your first month of Jwero One is ${inr(PLAN.firstMonth)} instead of ${inr(PLAN.monthly)}, with every module. Per-use services such as WhatsApp messages and AI run on a prepaid wallet from day one. The first-month price applies once per business.` },
   { q: 'What is the wallet?', a: 'The plan covers the whole platform. Things that cost money each time they happen — a WhatsApp marketing message, an AI image, a call minute, a payout — are metered from a prepaid wallet at the published rates on this page. You top it up; nothing is charged to a card behind your back.' },
   { q: 'Do I pay per module, or per user?', a: 'Neither. Jwero One includes every module, and there is no per-seat price for your team. You turn off the modules you do not use so the screen stays simple. What scales with you is capacity: extra locations, brands, registers and storage, at the rates shown.' },
-  { q: 'I run more than one store. What does that cost?', a: `One location is included. Each additional location is ${inr(2999)} a month. Use the calculator above for your count; chains that want negotiated terms, unlimited history or dedicated support should ask for Enterprise.` },
+  { q: 'I run more than one store. What does that cost?', a: `One location is included. In India each additional location is ${inr(2999)} a month; outside India, ask us for a quote. Use the calculator above for your count; chains that want negotiated terms, unlimited history or dedicated support should ask for Enterprise.` },
   { q: 'Is there a lock-in contract?', a: 'No. Billing is month to month and you can cancel any time. Your data exports whenever you ask.' },
   { q: 'How long is my history kept?', a: 'On Jwero One: three years of audit and analytics history, and message history kept without a limit. Enterprise keeps everything without a limit. Your books — orders, invoices, payments, purchases, payroll and GST records — are statutory and are never deleted on any plan.' },
   { q: 'Are there hidden costs?', a: 'The plan price and the rate card are both on this page. Onboarding help is priced per session if you want it; importing your data and connecting your number are part of getting started.' },
@@ -86,13 +85,14 @@ const OBJECTIONS = [
 const pricing = {
   slug: 'pricing',
   title: `Jwero Pricing: Subscription, Managed or Enterprise | Jwero`,
-  description: `One plan with every module: ${inr(PLAN.monthly)} a month, billed monthly. First month ${inr(PLAN.firstMonth)}. Per-use services — WhatsApp, AI, calls — run on a prepaid wallet at published rates. Enterprise for groups and chains is custom priced.`,
+  description: `One plan with every module: ${inr(PLAN.monthly)} a month in India, $249 elsewhere, billed monthly. First month ${inr(PLAN.firstMonth)}. Per-use services — WhatsApp, AI, calls — run on a prepaid wallet at published rates. Enterprise for groups and chains is custom priced.`,
   breadcrumbs: [['Home', '/'], ['Pricing']],
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Jwero One', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
     url: 'https://jwero.ai/pricing',
     offers: [
-      { '@type': 'Offer', name: 'Jwero One', price: String(PLAN.monthly), priceCurrency: 'INR', description: 'Per month, billed monthly, excluding GST. First month ' + PLAN.firstMonth + ' INR.' },
+      { '@type': 'Offer', name: 'Jwero One', price: String(PLAN.monthly), priceCurrency: 'INR', description: 'Per month in India, billed monthly, excluding taxes. First month ' + PLAN.firstMonth + ' INR.' },
+      { '@type': 'Offer', name: 'Jwero One (outside India)', price: '249', priceCurrency: 'USD', description: 'Per month outside India, billed monthly, excluding taxes. First month 49 USD.' },
     ],
   },
   faqs,
@@ -103,24 +103,9 @@ ${L.hero({
   sub: `Jwero One is the whole operating system — CRM, WhatsApp, catalogues, the counter, the workshop, schemes, the books and the AI workforce — for ${inr(PLAN.monthly)} a month, billed monthly. No per-module price, no per-seat price. Your first month is ${inr(PLAN.firstMonth)}.`,
   primary: { href: 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing', label: `Start for ${inr(PLAN.firstMonth)}` },
   secondary: { href: '#', label: 'Let Jwero handle it', wa: 'handle' },
-  note: `Run it yourself: first month ${inr(PLAN.firstMonth)}, then ${inr(PLAN.monthly)} a month. Managed: no subscription, every tool included. Prices exclude GST.`,
+  note: `<span class="cur-switch" role="group" aria-label="Currency"><button type="button" data-cur-pick="inr">₹ India</button><button type="button" data-cur-pick="usd">$ Outside India</button></span><br>Run it yourself: first month ${inr(PLAN.firstMonth)}, then ${inr(PLAN.monthly)} a month. Managed: no subscription, every tool included. Prices exclude taxes (GST in India).`,
 })}
 
-${L.section(
-  `${L.sectionHead('THE FRANKENSTACK MATH', 'What the pile of tools costs.', 'Most jewellery businesses pay for five or six disconnected tools — plus the invisible cost: customers lost to silence.')}
-  <div class="tbl-wrap"><table class="tbl">
-    <thead><tr><th>What you pay for today</th><th>Typical job it does</th><th>In Jwero One</th></tr></thead>
-    <tbody>
-      <tr><td><strong>WhatsApp bulk-message tool</strong></td><td>Sends texts; knows nothing about the customer</td><td>Included — with the customer record behind every reply</td></tr>
-      <tr><td><strong>Catalogue app</strong></td><td>Shares designs; prices go stale when the rate moves</td><td>Included — live-rate pricing on every share</td></tr>
-      <tr><td><strong>Website / ecommerce subscription</strong></td><td>A brochure or a generic store</td><td>Included — a jewellery-native ecommerce website</td></tr>
-      <tr><td><strong>Billing / ERP software</strong></td><td>The invoice and the ledger</td><td>Included — POS, inventory, finance, with Tally and Zoho Books bridges</td></tr>
-      <tr><td><strong>Agency retainer / freelancer</strong></td><td>Posts and ads, disconnected from sales data</td><td>Included — social, ads and attribution on the same record</td></tr>
-      <tr><td><strong>Scheme registers & Excel hours</strong></td><td>Staff time reconciling what no tool connects</td><td>Gone — one record, no reconciliation</td></tr>
-    </tbody>
-  </table></div>
-  <p class="cta-note" style="margin-top:16px">Put your own numbers in: <a href="/erp-to-os/make-do">what making do costs</a> · <a href="/tools">the calculators</a>.</p>`
-)}
 
 <div id="tiers"></div>${L.section(`${L.sectionHead('THREE WAYS TO BUY', 'Subscription, managed, or enterprise.', 'Below the three: the detail of the subscription for jewellers who run it themselves. Managed customers pay no subscription; every tool is included.')}${require('./jbaas').TIERS()}`, { tone: 'tint' })}
 ${L.section(`<div class="jb-quote2">${require('./positioning').quoteOne(0)}${require('./positioning').quoteOne(1)}</div>`)}
@@ -132,7 +117,7 @@ ${L.section(
         <h2>Jwero One</h2>
         <p class="plan-desc">Everything Jwero does, in one plan. Turn off what you don’t use.</p>
         <p class="plan-price"><b>${inr(PLAN.monthly)}</b><span>/month</span></p>
-        <p class="plan-term">${inr(PLAN.firstMonth)} for the first month, then ${inr(PLAN.monthly)}. Billed monthly, excluding GST. Cancel any time.</p>
+        <p class="plan-term">${inr(PLAN.firstMonth)} for the first month, then ${inr(PLAN.monthly)}. Billed monthly, excluding taxes. Cancel any time.</p>
         <ul class="plan-list">
           <li>Every module included</li>
           <li>AI agents &amp; Smart AI</li>
@@ -148,7 +133,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('YOUR PRICE', 'Work out your own number.', 'One location and one brand are included. Add what you run.')}
+  `<div data-cur-only="usd" class="cur-note"><p><b>Outside India:</b> Jwero One is <b>$249 a month</b>, first month $49, with one location and one brand. For more locations, brands or registers, <a href="#" data-wa="pricing">ask us for a quote in your currency</a>.</p></div><div data-cur-only="inr">${L.sectionHead('YOUR PRICE', 'Work out your own number.', 'One location and one brand are included. Add what you run.')}
   <div class="calc" id="calc-plan">
     <div class="calc-panel">
       <label for="pc-loc">Locations (stores, branches, workshops) <span class="calc-val" id="pc-loc-out"></span></label>
@@ -164,11 +149,11 @@ ${L.section(
     <div class="calc-out">
       <div class="stat"><div class="stat-n" id="pc-plan">—</div><div class="stat-l">Jwero One, per month</div></div>
       <div class="stat"><div class="stat-n" id="pc-add">—</div><div class="stat-l" id="pc-add-l">capacity add-ons, per month</div></div>
-      <div class="stat"><div class="stat-n" id="pc-total">—</div><div class="stat-l">a month, excluding GST and wallet usage</div></div>
+      <div class="stat"><div class="stat-n" id="pc-total">—</div><div class="stat-l">a month, excluding taxes and wallet usage</div></div>
       <a class="btn btn-primary" id="pc-wa" href="#" style="width:100%;text-align:center">Send me this as a quote</a>
       <p class="cta-note" id="pc-ent" hidden>At this size, ask for Enterprise terms — the per-location price is negotiable for networks.</p>
     </div>
-  </div>`
+  </div></div>`
 , { tone: 'tint' })}
 
 ${L.section(
@@ -184,11 +169,27 @@ ${L.section(
 
 
 
+${L.section(
+  `${L.sectionHead('WHY ONE PLAN', 'What the pile of tools costs you today.', 'Most jewellery businesses pay for five or six disconnected tools — plus the invisible cost: customers lost to silence.')}
+  <div class="tbl-wrap"><table class="tbl">
+    <thead><tr><th>What you pay for today</th><th>Typical job it does</th><th>In Jwero One</th></tr></thead>
+    <tbody>
+      <tr><td><strong>WhatsApp bulk-message tool</strong></td><td>Sends texts; knows nothing about the customer</td><td>Included — with the customer record behind every reply</td></tr>
+      <tr><td><strong>Catalogue app</strong></td><td>Shares designs; prices go stale when the rate moves</td><td>Included — live-rate pricing on every share</td></tr>
+      <tr><td><strong>Website / ecommerce subscription</strong></td><td>A brochure or a generic store</td><td>Included — a jewellery-native ecommerce website</td></tr>
+      <tr><td><strong>Billing / ERP software</strong></td><td>The invoice and the ledger</td><td>Included — POS, inventory, finance, with Tally and Zoho Books bridges</td></tr>
+      <tr><td><strong>Agency retainer / freelancer</strong></td><td>Posts and ads, disconnected from sales data</td><td>Included — social, ads and attribution on the same record</td></tr>
+      <tr><td><strong>Scheme registers & Excel hours</strong></td><td>Staff time reconciling what no tool connects</td><td>Gone — one record, no reconciliation</td></tr>
+    </tbody>
+  </table></div>
+  <p class="cta-note" style="margin-top:16px">Put your own numbers in: <a href="/erp-to-os/make-do">what making do costs</a> · <a href="/tools">the calculators</a>.</p>`
+)}
+
 ${L.section(`${L.sectionHead('PRICING QUESTIONS', 'Straight answers on cost and terms.', '')}${L.faqBlock(faqs.concat(OBJECTIONS))}
 <p class="cta-note" style="margin-top:14px">More objections? <a href="/faq#pricing">See every pricing question we’ve been asked →</a></p>`)}
 
 ${L.section(`${L.sectionHead('MANAGED PRICING', 'How the managed price is worked out.', 'When Jwero runs the work, there is no subscription and every tool is included. The price follows the work.')}
-<ol class="pz-how pz-how-4"><li><span>01</span><b>Your volume</b><p>Conversations, calls, posts and orders, predicted from your customer base and showrooms, or counted from your own figures.</p></li><li><span>02</span><b>Today’s cost</b><p>What that work costs at the cheapest way to staff it in India: a junior hire or a freelancer.</p></li><li><span>03</span><b>Jwero’s price</b><p>About half of that when you let Jwero decide and execute, and about 60% when you want to approve every step.</p></li><li><span>04</span><b>In writing</b><p>Your plan states the price, the work and what is measured before anything starts.</p></li></ol>
+<ol class="pz-how pz-how-4"><li><span>01</span><b>Your volume</b><p>Conversations, calls, posts and orders, predicted from your customer base and showrooms, or counted from your own figures.</p></li><li><span>02</span><b>Today’s cost</b><p>What that work costs at the cheapest way to staff it in your market: a junior hire or a freelancer.</p></li><li><span>03</span><b>Jwero’s price</b><p>About half of that when you let Jwero decide and execute, and about 60% when you want to approve every step.</p></li><li><span>04</span><b>In writing</b><p>Your plan states the price, the work and what is measured before anything starts.</p></li></ol>
 <p class="cta-note" style="text-align:center;margin-top:18px"><a class="btn btn-primary" href="/count-your-team">Count your team and see your number</a></p><p class="cta-note" style="text-align:center;margin-top:14px">Still deciding? <a href="#" data-wa="pricing">Ask us on WhatsApp</a>. Security and privacy delivered, just as you want: <a href="/trust/security">see how your data is protected</a>.</p>`, { tone: 'tint' })}
 ${require('./positioning').refer()}
 `,

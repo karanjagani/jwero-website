@@ -3029,3 +3029,16 @@ document.addEventListener('click', function (e) {
   var marks = [25, 50, 75, 100], done = {};
   window.addEventListener('scroll', function () { var p = Math.round((scrollY + innerHeight) / document.body.scrollHeight * 100); marks.forEach(function (m) { if (p >= m && !done[m]) { done[m] = 1; t('scroll_depth', { depth: m }); } }); }, { passive: true });
 })();
+
+// Currency: India sees ₹, everyone else $. Decided from the time zone, overridable with the switch.
+(function () {
+  var cur = null; try { cur = localStorage.getItem('jw-cur'); } catch (e) {}
+  if (!cur) { var tz = ''; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {} cur = /Asia\/(Kolkata|Calcutta)/.test(tz) ? 'inr' : 'usd'; }
+  function apply(c) {
+    document.documentElement.setAttribute('data-cur', c);
+    [].forEach.call(document.querySelectorAll('.cur'), function (el) { el.textContent = el.getAttribute('data-' + c) || el.textContent; });
+    [].forEach.call(document.querySelectorAll('[data-cur-pick]'), function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-cur-pick') === c ? 'true' : 'false'); });
+  }
+  apply(cur);
+  document.addEventListener('click', function (e) { var b = e.target.closest('[data-cur-pick]'); if (!b) return; cur = b.getAttribute('data-cur-pick'); try { localStorage.setItem('jw-cur', cur); } catch (x) {} apply(cur); if (window.jweroTrack) window.jweroTrack('currency_switch', { cur: cur }); });
+})();

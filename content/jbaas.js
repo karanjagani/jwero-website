@@ -15,10 +15,10 @@ const TIERS = () => `
     <h3>Your team, Jwero’s platform</h3>
     <p class="jb-who">For a showroom or small chain with its own team.</p>
     <p class="jb-price">₹18,000<span> a month</span></p>
-    <p class="jb-note"><b>First month ₹3,600.</b> Billed monthly, excluding GST.</p>
+    <p class="jb-note"><b>First month ₹3,600.</b> Billed monthly, excluding taxes.</p>
     <ul><li><b>Every product, one price.</b> WhatsApp, counter, stock, POS, schemes, girvi, workshop, books, team, marketing and communication. Nothing per module, nothing per seat.</li><li><b>Replaces the 10 to 15 tools</b> most shops pay for today, so there is no other software to buy.</li><li><b>Adds the hands you have been trying to hire:</b> AI and automation that take on the work of several people, with your team approving what matters. <a href="/count-your-team">See how many for your shop →</a></li><li><b>The systems national jewellery brands run on,</b> from your first counter. The platform is ready; your vision and execution set how far it goes.</li><li><b>Live in a day.</b> Customers, catalogue and stock imported for you.</li></ul>
     <div class="jb-cta"><a class="btn btn-ghost jb-btn2" href="${L.TRIAL_URL}pricing-tiers" rel="noopener" data-trial><span>Start for ₹3,600</span><small>Join the waitlist</small></a><a class="jb-demo" href="/book-demo">View demo</a></div>
-    <p class="jb-fine">Messages, AI calls (₹7 each) and listings run on a prepaid balance.</p>
+    <p class="jb-fine">Messages, AI calls and listings run on a prepaid balance, at your country’s rates.</p>
   </article>
   <article class="jb-tier is-main">
     <p class="jb-k">02 · Let Jwero run it</p>
