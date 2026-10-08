@@ -414,6 +414,37 @@ function jwFromInr(n) {
   }, { passive: true });
   onScroll();
 
+  // --- phone bar hides while reading down, returns on the way up ---------
+  (function () {
+    var bar = document.querySelector('.sticky-bar'); if (!bar) return;
+    var last = window.scrollY, ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () {
+        var y = window.scrollY, d = y - last;
+        if (Math.abs(d) > 8) { bar.classList.toggle('sb-hide', d > 0 && y > 400 && (window.innerHeight + y) < document.documentElement.scrollHeight - 200); last = y; }
+        ticking = false;
+      });
+    }, { passive: true });
+  })();
+
+  // --- long pages: reading progress and a jump-to menu -----------------
+  (function () {
+    var heads = [].slice.call(document.querySelectorAll('main .section-head h2, main .shift-head h2, main .tool-qa h2, main .gem-head h2')).filter(function (h) { return h.offsetParent !== null && h.textContent.trim() && !/^(Related on Jwero|Read more on this)/.test(h.textContent.trim()); });
+    if (heads.length < 7) return;
+    var prog = document.createElement('div'); prog.className = 'read-prog'; prog.setAttribute('aria-hidden', 'true'); prog.innerHTML = '<i></i>'; document.body.appendChild(prog);
+    var fill = prog.firstChild, on = false;
+    function upd() { var h = document.documentElement.scrollHeight - window.innerHeight; fill.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, window.scrollY / h) : 0) + ')'; on = false; }
+    window.addEventListener('scroll', function () { if (!on) { on = true; requestAnimationFrame(upd); } }, { passive: true }); upd();
+    var d = document.createElement('details'); d.className = 'jump';
+    var html = '<summary>Jump to</summary><ol>';
+    heads.forEach(function (h, i) { if (!h.id) h.id = 'sec-' + (i + 1); html += '<li><a href="#' + h.id + '">' + h.textContent.trim().replace(/</g, '&lt;') + '</a></li>'; });
+    d.innerHTML = html + '</ol>'; document.body.appendChild(d);
+    d.addEventListener('click', function (e) { if (e.target.closest('a')) d.open = false; });
+    var heroEnd = (document.querySelector('main .hero') || {}).offsetHeight || 500;
+    window.addEventListener('scroll', function () { d.classList.toggle('is-on', window.scrollY > heroEnd); }, { passive: true });
+  })();
+
   // --- long FAQ lists: first five, then "Show all" (every answer stays in the page) ---
   document.querySelectorAll('.tool-qa .faq').forEach(function (f) {
     var items = f.querySelectorAll(':scope > .faq-item'); if (items.length < 8) return;
@@ -515,7 +546,7 @@ function jwFromInr(n) {
     onView(document.querySelectorAll('.cta-band'), function (el) { el.classList.add('is-in'); }, { threshold: 0.25 });
 
     // Proof numbers count up once.
-    onView(document.querySelectorAll('.stats .stat-n, .intel-big .stat-n'), function (el) {
+    onView(document.querySelectorAll('.stats .stat-n, .intel-big .stat-n, .proofg-num b'), function (el) {
       var m = /^(\d{1,4})(\+?)$/.exec(el.textContent.trim());
       if (!m) return;
       var end = Number(m[1]), t0 = null;

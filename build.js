@@ -9,6 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
+try { require('./scripts/thumbs'); } catch (e) { console.warn('thumbs skipped:', e.message); }
 const DIST = path.join(ROOT, 'dist');
 // Tracking IDs. Leave empty until the accounts exist; env JW_GTM / JW_GA4 / JW_META override.
 const ANALYTICS = { gtm: '', ga4: '', meta: '' };
@@ -455,6 +456,17 @@ function journeyFix(html, p) {
     if (OUT[p.slug]) { const [e, h, rows] = OUT[p.slug]; html = html.replace(/(<section class="cta-band">)/, `<section class="section"><div class="container"><div class="section-head"><p class="eyebrow">${e.toUpperCase()}</p><h2>${h}</h2></div><p class="cur-chips" aria-label="Currencies">${['AED', 'SAR', 'QAR', 'GBP', 'EUR', 'USD', 'INR'].map((c) => `<span>${c}</span>`).join('')}</p><div class="wa-jobs">${rows.map(([t, d]) => `<article><h3>${t}</h3><p>${d}</p></article>`).join('')}</div></div></section>\n$1`); }
     html = html.replace(/(<section class="cta-band">)/, `<section class="section"><div class="container"><p class="mkt-strip"><b>Selling outside India?</b> Jwero handles VAT and sales tax, local currencies, Stripe and PayPal, and worldwide gold rates. See Jwero for <a href="/jewellery-software-uae">the Gulf</a>, <a href="/jewellery-software-uk">the UK and Europe</a>, <a href="/jewellery-software-usa">the US and Canada</a>, <a href="/jewellery-software-singapore">South and Southeast Asia</a>, or <a href="/global">worldwide</a>.</p></div></section>\n$1`);
   }
+  // Section eyebrows on product, solution and platform pages carry a small icon.
+  if (/^(products|solutions|platform)\//.test(p.slug || '')) {
+    const L6 = require('./lib');
+    const EYE = [[/USE CASE|PAYS OFF/, 'target'], [/SHIFT/, 'swap'], [/JOBS|WHAT IT DOES|HAS TO DO/, 'grid'], [/COMPAR|VERSUS|VS\b/, 'scale'], [/MOVING|SET UP|HOW TO|STEPS|ONBOARD/, 'route'], [/OUTSIDE INDIA|MARKET|WORLD/, 'send'], [/QUESTION|FAQ|ASK/, 'chat'], [/TRY IT|DEMO/, 'sparkle'], [/START TO FINISH|ONE CHAT|ONE VISIT|ONE JOB|ONE DAY|A DAY/, 'flow'], [/PRICE|COST|PLAN/, 'coins'], [/LEAK|PROBLEM/, 'activity'], [/CUSTOMER|ABROAD/, 'users'], [/TALLY|BOOKS|ACCOUNT/, 'book'], [/AI|AGENT/, 'bot'], [/SECUR|TRUST|PRIVACY/, 'shield'], [/STOCK|INVENTOR/, 'box']];
+    html = html.replace(/<p class="eyebrow">([^<]{3,80})<\/p>/g, (m, t) => { const hit = EYE.find(([re]) => re.test(t)); return hit ? `<p class="eyebrow eb-ico">${L6.icon(hit[1])}${t}</p>` : m; });
+  }
+  // Solution pages: the markets Jwero works in, under the hero.
+  if (/^solutions\/(?!pain)[^/]+$/.test(p.slug || '')) {
+    const chips = `<p class="mkt-chips"><span>Works in</span><a href="/jewellery-software-india">India</a><a href="/jewellery-software-uae">the Gulf</a><a href="/jewellery-software-uk">UK and Europe</a><a href="/jewellery-software-usa">US and Canada</a><a href="/jewellery-software-singapore">Southeast Asia</a></p>`;
+    html = html.replace(/<section class="hero[^"]*">[\s\S]*?<\/section>/, (hero) => /<div class="cta-row center">[\s\S]*?<\/div>/.test(hero) ? hero.replace(/(<div class="cta-row center">[\s\S]*?<\/div>)/, `$1${chips}`) : hero.replace(/(<p class="sub">[\s\S]*?<\/p>)/, `$1${chips}`));
+  }
   // Comparison tables: Yes, No and Some read at a glance.
   if (/^(products|solutions|compare|vs)\b|^jewellery-software/.test(p.slug || '')) {
     html = html.replace(/<td>(Yes|No|None|Some|Partly|Basic|Rarely|Sometimes)<\/td>/g, (m, w) => `<td><span class="tk tk-${/Yes/.test(w) ? 'y' : /No|None/.test(w) ? 'n' : 'p'}">${w}</span></td>`);
@@ -611,6 +623,9 @@ function journeyFix(html, p) {
       if (/^blog\//.test(p.slug)) html = html.replace(/(<div class="post-body">)/, '$1<p class="post-note"><b>Written for jewellers in India.</b> The rules, rates and amounts here are Indian. Selling elsewhere? Jwero handles VAT and sales tax too; <a href="/global">see Jwero worldwide</a>.</p>');
     }
   }
+
+  // Card images use the 480px WebP thumbnails (scripts/thumbs.js); share images stay full size.
+  html = html.replace(/<img([^>]*?) src="\/assets\/og\/([a-z0-9-]+)\.jpg"([^>]*)>/g, (m, a1, k, a2) => fs.existsSync(path.join(ROOT, 'assets', 'og', 'thumb', k + '.webp')) ? `<img${a1} src="/assets/og/thumb/${k}.webp"${a2.replace(/width="\d+"/, 'width="480"').replace(/height="\d+"/, 'height="252"')}>` : m);
 
   return html;
 }

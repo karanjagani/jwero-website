@@ -4777,3 +4777,38 @@ html[data-cur="inr"] .tseal[data-reg="gl"], html:not([data-cur="inr"]) .tseal[da
 .gfx-arm.is-in .one-system-list.is-linked li::before { animation: osPing 6s ease-in-out infinite; animation-delay: calc(1.2s + var(--i) * .6s); }
 @keyframes osPing { 0%, 14%, 100% { background: var(--card); box-shadow: none; } 6% { background: var(--amber); border-color: var(--amber); box-shadow: 0 0 0 6px color-mix(in srgb, var(--amber) 25%, transparent); } }
 @media (prefers-reduced-motion: reduce) { .one-system-list.is-linked li::before { animation: none !important; } }
+
+/* Schematic above product headlines: keep the product name inside the screen on phones */
+@media (max-width: 720px) {
+  .schematic { width: calc(100% - 32px); }
+  .sch-this span { left: 0; transform: none; white-space: normal; width: 110px; line-height: 1.25; }
+  .sch-core span { white-space: normal; text-align: center; width: 80px; line-height: 1.25; }
+}
+
+/* Phone bar slides away while reading down */
+.sticky-bar { transition: transform .3s var(--ease); }
+.sticky-bar.sb-hide { transform: translateY(110%); }
+
+/* Reading progress and jump menu */
+.read-prog { position: fixed; left: 0; right: 0; top: var(--header-h); height: 2px; z-index: 60; pointer-events: none; }
+.read-prog i { display: block; height: 100%; background: linear-gradient(90deg, var(--brand), var(--amber)); transform-origin: left; transform: scaleX(0); }
+.jump { position: fixed; left: 12px; bottom: calc(76px + env(safe-area-inset-bottom)); z-index: 56; opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity .3s, transform .3s; max-width: calc(100vw - 90px); }
+.jump.is-on { opacity: 1; pointer-events: auto; transform: none; }
+.jump summary { list-style: none; cursor: pointer; padding: 8px 14px; border-radius: 999px; background: var(--card); border: 1px solid var(--line-2); box-shadow: var(--shadow-lg); font-size: .8125rem; font-weight: 600; color: var(--ink); }
+.jump summary::-webkit-details-marker { display: none; }
+.jump summary::before { content: '≡ '; color: var(--brand); }
+.jump ol { position: absolute; bottom: calc(100% + 8px); left: 0; width: min(320px, calc(100vw - 24px)); max-height: 60vh; overflow: auto; margin: 0; padding: 8px; list-style: none; background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow-lg); }
+.jump li a { display: block; padding: 9px 10px; border-radius: 8px; font-size: .875rem; color: var(--ink); text-decoration: none; }
+.jump li a:hover { background: var(--brand-soft); }
+@media (min-width: 900px) { .jump { bottom: 24px; } }
+main h2[id^="sec-"] { scroll-margin-top: calc(var(--header-h) + 20px); }
+
+/* Eyebrow icons */
+.eyebrow.eb-ico { display: inline-flex; align-items: center; gap: 6px; }
+.eyebrow.eb-ico .ico { width: 13px; height: 13px; stroke-width: 2; }
+
+/* Market chips under solution heroes */
+.mkt-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 16px 0 0; font-size: .8125rem; }
+.mkt-chips span { color: var(--ink-2); padding: 5px 4px; }
+.mkt-chips a { padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--ink); text-decoration: none; }
+.mkt-chips a:hover { border-color: var(--brand); color: var(--brand); }
