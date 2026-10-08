@@ -749,7 +749,7 @@ const COMPLIANCE_ROWS = [
 // [short, name, status, what is true today, href]
 const TRUST_BADGES = [
   ['DPDP', 'India’s DPDP Act, 2023', 'in', 'Data protection statement, processor terms, consent records, export and erasure tools.', '/legal/dpdp'],
-  ['IN', 'Data hosted in India', 'in', 'Each business in its own database on Microsoft Azure, India region.', '/legal/sub-processors'],
+  ['IN', 'Data hosted in India or your region', 'in', 'Each business in its own database, in India by default or in your region on request; Enterprise can self-host.', '/legal/sub-processors'],
   ['PCI', 'Card data (PCI DSS)', 'in', 'Card details never reach Jwero. Payments run through PCI DSS certified providers.', '/legal/sub-processors'],
   ['GST', 'GST record keeping', 'in', 'Invoices, orders, payments, purchases and payroll are never deleted on a schedule.', '/legal/data-policy'],
   ['BIS', 'BIS hallmarking and HUID', 'in', 'HUID and certificate details recorded on each piece.', '/products/catalog'],
@@ -1128,7 +1128,7 @@ const STACK_COST = {
   "Gold rate updates": [0, 1, "Usually free from an association or a rate app", "", "low"],
   "Gold scheme register": [2000, 3, "One published price: Suniyara ₹2,499 a month", "", "low", "l"],
   "Google Ads": [0, 2, "The ads console is free; ad spend excluded", "", "high"],
-  "Google Business reviews": [2000, 1, "Indian review tools about ₹1,000 to ₹3,000", "", "low", "l"],
+  "Google Business reviews": [2000, 1, "Review tools about ₹1,000 to ₹3,000", "", "low", "l"],
   "Google Sheets": [0, 4, "Free", "", "high"],
   "Google Shopping": [0, 1, "Merchant Center is free", "", "medium"],
   "Google Tag Manager": [0, 0.5, "Free", "", "high"],
@@ -1262,7 +1262,7 @@ function stackMerge(only) {
     <h3>How it is worked out</h3>
     <div class="stackm-how-body">
         <p><strong>These are estimates, not a quote.</strong> Change the selection and the sliders to match your business.</p>
-        <p><strong>Subscriptions.</strong> Each tool carries the average monthly price of a typical paid plan from well-known vendors in India, for a business with about five people who need a login. Platforms that are free to use, such as posting on a social network, count as ₹0. Advertising spend and per-message or per-minute charges are left out on both sides, because you pay those with or without Jwero.</p>
+        <p><strong>Subscriptions.</strong> Each tool carries the average monthly price of a typical paid plan from well-known vendors (Indian market prices, shown in dollars outside India), for a business with about five people who need a login. Platforms that are free to use, such as posting on a social network, count as ₹0. Advertising spend and per-message or per-minute charges are left out on both sides, because you pay those with or without Jwero.</p>
         <p><strong>No double counting.</strong> Several items are usually one product: billing, POS, stock and ERP; WhatsApp API and broadcasts; the social inbox and scheduler; marketing automation, campaigns and journeys; HR, payroll and attendance. Each such group is charged once, at its highest price, however many of its items you pick. Where a tool is often kept on paper or a free app, the price shown is the simplest paid tool that replaces it; if you pay nothing for it today, your saving is lower.</p>
         <p><strong>Team time.</strong> Each tool carries the hours a week a team spends operating it and keeping it up to date. When more than one tool is picked, ${STACK_MATCH} hours a week per tool is added for matching it with the others: exporting, re-typing and checking that the numbers agree. Hours are priced from the salary slider at ${STACK_WEEK} hours a week. “People’s worth of time” is those hours divided by ${STACK_WEEK}.</p>
         <p><strong>Showrooms and team.</strong> Tools bought per counter or per outlet, such as billing, POS, stock, loyalty and the scheme register, are multiplied by the number of showrooms, and so are their hours. Tools bought per user, such as CRM, email, HR and payroll, are scaled by team size from a base of ${STACK_TEAM} people. Hours on the remaining tools grow with the square root of team size, between half and double the base. Each extra showroom also adds matching time, because every tool’s numbers have to be combined across branches. Total team time is capped at 60% of what the whole team can work.</p>

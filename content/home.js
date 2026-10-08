@@ -50,6 +50,7 @@ ${L.section(`${L.sectionHead('WHERE MOST SHOPS START', 'Three things on day one.
   ].map(([i, t, d, r, h]) => `<a href="${h}"><span class="home-who-ico">${L.icon(i)}</span><b>${t}</b><span>${d}</span><i>${r}</i></a>`).join('')}</div>
   <p class="cta-note" style="margin-top:14px;text-align:center">Customers, catalogue and stock are imported for you. Most shops go live in a day. <a href="/products">See every product →</a></p>`)}
 
+${L.section(`<div class="global-strip"><p class="eyebrow">WORLDWIDE</p><h2>Built for jewellers in every market.</h2><p>Your currency, GST, VAT or sales tax, your gold rate by gram, ounce or tola, 14 languages including Arabic, and hosting in your region.</p><p class="global-links"><a href="/jewellery-software-india">India</a><a href="/jewellery-software-uae">The Gulf</a><a href="/jewellery-software-uk">UK and Europe</a><a href="/jewellery-software-usa">US and Canada</a><a href="/jewellery-software-singapore">South and Southeast Asia</a><a href="/global">Jwero worldwide →</a></p></div>`, { tone: 'tint' })}
 ${L.section(
   `${L.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole jewellery business.', 'Not only how you sell. The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}
   <div data-cmp-tabs>${L.compareRows(L.DEPARTMENTS)}</div>`

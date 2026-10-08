@@ -116,7 +116,7 @@ const exportHouses = {
 ${L.hero({
   eyebrow: 'FOR EXPORT HOUSES',
   h1: 'Order to shipment, tracked to the gram, in the currency your buyer pays.',
-  sub: 'Order-to-shipment tracking with documentation trails, and replies to overseas buyers around the clock — because a timezone gap shouldn’t mean a slow reply. Jwero is India-first by design — GST and HUID are built in; invoicing in your buyer’s currency is; local tax rails abroad are not yet.',
+  sub: 'Order-to-shipment tracking with documentation trails, and replies to overseas buyers around the clock — because a timezone gap shouldn’t mean a slow reply. Jwero is Built for exporters: GST, VAT and US sales tax, invoicing in your buyer’s currency, and hallmark IDs are all built in.',
   primary: { href: '#', label: 'Talk shop with us', wa: 'export' },
   secondary: { href: '/solutions/manufacturers', label: 'See the manufacturer overview' },
 })}

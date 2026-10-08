@@ -409,7 +409,7 @@
    },
    {
     "q": "Can you sync with Google Shopping?",
-    "a": "Not yet. Jwero connects to Shopify, WooCommerce and Indian marketplaces, but Google Shopping sync is not available today. If Google Shopping matters to you, tell us; until then, listings there are managed outside Jwero."
+    "a": "Yes. Jwero syncs your catalogue to Google Shopping and the Meta catalogue at today’s gold rate, and connects to Shopify, WooCommerce and Unicommerce. If you need another channel, tell us."
    },
    {
     "q": "Can you show me which customers have stopped buying?",

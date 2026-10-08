@@ -1,3 +1,30 @@
+// Currency core: India sees ₹, everyone else $ (time zone, overridable). Calculator maths stays in
+// rupees; money inputs show dollars and read back rupees; figures in page text are converted for show.
+(function () {
+  var c = null; try { c = localStorage.getItem('jw-cur'); } catch (e) {}
+  if (!c) { var tz = ''; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {} c = /Asia\/(Kolkata|Calcutta)/.test(tz) ? 'inr' : 'usd'; }
+  window.JW_CUR = c; window.JW_RATE = 85;
+  document.documentElement.setAttribute('data-cur', c);
+})();
+function jwNice(d) { var a = Math.abs(d); var r = a >= 10000 ? 100 : a >= 1000 ? 10 : a >= 100 ? 5 : a >= 10 ? 1 : 0.1; return Math.round(d / r) * r; }
+function jwFromInr(n) {
+  n = +n || 0;
+  if (window.JW_CUR !== 'usd') return '₹' + Math.round(n).toLocaleString('en-IN');
+  var d = jwNice(n / window.JW_RATE); return '$' + (d < 10 ? d.toFixed(d % 1 ? 1 : 0) : Math.round(d).toLocaleString('en-US'));
+}
+// Money inputs: in dollars on screen, rupees to the calculator.
+(function () {
+  if (window.JW_CUR !== 'usd') return;
+  var R = window.JW_RATE, desc = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+  [].forEach.call(document.querySelectorAll('label'), function (lb) {
+    var inp = lb.querySelector('input[type="number"], input[type="range"]') || (lb.htmlFor && document.getElementById(lb.htmlFor));
+    if (!inp || inp.closest('[data-inr-keep]') || !/₹/.test(lb.textContent)) return;
+    [].forEach.call(lb.childNodes, function (nd) { if (nd.nodeType === 3) nd.nodeValue = nd.nodeValue.replace(/₹/g, '$'); });
+    var shown = jwNice((+desc.get.call(inp) || 0) / R); desc.set.call(inp, shown);
+    ['min', 'max', 'step'].forEach(function (a) { var v = inp.getAttribute(a); if (v && +v > 1) inp.setAttribute(a, a === 'step' ? Math.max(1, jwNice(+v / R)) : jwNice(+v / R)); });
+    Object.defineProperty(inp, 'value', { configurable: true, get: function () { return String((+desc.get.call(inp) || 0) * R); }, set: function (v) { desc.set.call(inp, jwNice((+v || 0) / R)); } });
+  });
+})();
 /* Jwero marketing site, shared behaviour. No frameworks, ~4 KB. */
 (function () {
   'use strict';
@@ -724,7 +751,7 @@
     // Money, hours and opportunity for the selection (or for every tool when
     // nothing is picked). Estimates from the published per-tool assumptions.
     var outEl = root.querySelector('[data-stackm-out]');
-    function inr(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+    function inr(n) { return jwFromInr(Math.round(n)); }
     function calc() {
       if (!outEl) return;
       var sel = picked(), c = sel.length, list = c ? sel : chips, n = list.length, tools = 0, hrs = 0;
@@ -1740,7 +1767,7 @@
   // Make-do leakage calculator.
   var lk = document.getElementById('calc-leak');
   if (lk) {
-    var rupee = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+    var rupee = function (n) { return jwFromInr(Math.round(n)); };
     var lkEnq = bindRange('lk-enq', 'lk-enq-out'), lkFast = bindRange('lk-fast', 'lk-fast-out', '%'), lkTicket = bindRange('lk-ticket', 'lk-ticket-out'), lkClose = bindRange('lk-close', 'lk-close-out', '%');
     function lkCalc() {
       var enq = Number(lkEnq.value), fast = Number(lkFast.value) / 100, ticket = Number(lkTicket.value), close = Number(lkClose.value) / 100;
@@ -1782,7 +1809,7 @@
   var pc = document.getElementById('calc-plan');
   if (pc) {
     var PRICE = { monthly: 18000, location: 2999, brand: 999, register: 499, camera: 799 };
-    var pcTerm = 'monthly', money = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+    var pcTerm = 'monthly', money = function (n) { return jwFromInr(Math.round(n)); };
     var pcLoc = bindRange('pc-loc', 'pc-loc-out'), pcBrand = bindRange('pc-brand', 'pc-brand-out'), pcReg = bindRange('pc-reg', 'pc-reg-out'), pcCam = bindRange('pc-cam', 'pc-cam-out');
     function pcCalc() {
       var loc = Number(pcLoc.value), brand = Number(pcBrand.value), reg = Number(pcReg.value), cam = Number(pcCam.value);
@@ -1809,7 +1836,7 @@
   // Diamond traders: the memo board. Mark a memo returned or sold; what is out, and what is late, follows.
   Array.prototype.forEach.call(document.querySelectorAll('[data-memoboard]'), function (board) {
     var rows = board.querySelectorAll('[data-memo]'), draft = board.querySelector('[data-memo-draft]');
-    var money = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+    var money = function (n) { return jwFromInr(Math.round(n)); };
     function n(k, v) { var el = board.querySelector('[data-memo-n="' + k + '"]'); if (el) el.textContent = v; }
     function tally() {
       var out = 0, value = 0, late = 0;
@@ -1832,7 +1859,7 @@
   if (grid) {
     var gState = { shape: 'round', size: '1', q: '1' }, BASE = { '0.3': 90000, '0.5': 160000, '1': 420000 };
     var gDisc = bindRange('grid-disc', 'grid-disc-out', '%'), gCt = bindRange('grid-ct', 'grid-ct-out', ' ct');
-    var rupees = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+    var rupees = function (n) { return jwFromInr(Math.round(n)); };
     function gridCalc() {
       var list = BASE[gState.size] * Number(gState.q) * (gState.shape === 'fancy' ? .8 : 1), rate = list * (1 - Number(gDisc.value) / 100), total = rate * Number(gCt.value);
       document.getElementById('grid-list').textContent = rupees(list);
@@ -2210,7 +2237,7 @@
     var NAMES = ['not counted', 'an employee', 'a freelancer or agency', 'nobody does it'], TAG = ['', 'Employee', 'Agency', 'Gap'];
     function q(s) { return root.querySelector(s); }
     function num(n) { return Math.round(n).toLocaleString('en-IN'); }
-    function inr(n) { return '₹' + (Math.round(n / 500) * 500).toLocaleString('en-IN'); }
+    function inr(n) { return jwFromInr((Math.round(n / 500) * 500)); }
     function scopeOf(b) { return root.querySelector('[data-scope="' + b.getAttribute('data-role') + '"]'); }
     // slider 0..100 on a log scale from 500 to 2,00,000 customers, two figures kept
     function base() { var x = 500 * Math.pow(400, +q('[data-pz-team-vol]').value / 100), m = Math.pow(10, Math.floor(Math.log10(x)) - 1); return Math.round(x / m) * m; }
@@ -2501,7 +2528,7 @@ document.addEventListener('click', function (e) {
 (function () {
   var root = document.querySelector('[data-price-calc]'); if (!root) return;
   var v = function (k) { var el = root.querySelector('[data-pc="' + k + '"]'); return el ? el.value : ''; };
-  var inr = function (n) { return '\u20b9' + Math.round(n).toLocaleString('en-IN'); };
+  var inr = function (n) { return jwFromInr(Math.round(n)); };
   function run() {
     var rate = +v('rate') || 0, k = +v('purity') || 22, w = +v('weight') || 0, mt = v('mtype'), mv = +v('making') || 0, st = +v('stones') || 0;
     var metal = rate * k / 24 * w;
@@ -2595,7 +2622,7 @@ document.addEventListener('click', function (e) {
 (function () {
   var root = document.querySelector('[data-callc]'); if (!root) return;
   var v = function (k) { return +(root.querySelector('[data-cc="' + k + '"]') || {}).value || 0; };
-  var inr = function (n) { return '₹' + Math.round(n).toLocaleString('en-IN'); };
+  var inr = function (n) { return jwFromInr(Math.round(n)); };
   function run() {
     var calls = v('calls'), mins = v('talk') + v('people') * v('each'), perHour = v('salary') / (26 * 9);
     var hours = calls * mins / 60, manual = hours * perHour, ai = calls * 7;
@@ -2621,7 +2648,7 @@ document.addEventListener('click', function (e) {
 (function () {
   var root = document.querySelector('[data-repeatc]'); if (!root) return;
   var v = function (k) { return +(root.querySelector('[data-rc="' + k + '"]') || {}).value || 0; };
-  var inr = function (n) { return '\u20b9' + Math.round(n).toLocaleString('en-IN'); };
+  var inr = function (n) { return jwFromInr(Math.round(n)); };
   function run() {
     var c = v('cust'), now = c * v('back') / 100, then = c * Math.min(100, v('back') + v('lift')) / 100;
     var sales = (then - now) * v('freq') * v('bill'), margin = sales * v('margin') / 100;
@@ -2651,7 +2678,7 @@ document.addEventListener('click', function (e) {
   function run() {
     var hours = v('bills') * v('mins') * v('days') / 60, money = hours * v('salary') / (Math.max(v('days'), 1) * 9);
     var set = function (k, t) { var el = root.querySelector('[data-tc-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('hours', Math.round(hours).toLocaleString('en-IN') + ' hours'); set('money', '\u20b9' + Math.round(money).toLocaleString('en-IN')); set('bills', v('bills') + ' customers');
+    set('hours', Math.round(hours).toLocaleString('en-IN') + ' hours'); set('money', jwFromInr(Math.round(money))); set('bills', v('bills') + ' customers');
   }
   root.addEventListener('input', run); run();
 })();
@@ -2692,7 +2719,7 @@ document.addEventListener('click', function (e) {
     var hand = v('pieces') * v('mins') / 60, ai = v('pieces') * v('check') / 60, saved = Math.max(0, hand - ai), money = saved * v('salary') / (26 * 9);
     var set = function (k, t) { var el = root.querySelector('[data-lc-o="' + k + '"]'); if (el) el.textContent = t; };
     set('hand', Math.round(hand).toLocaleString('en-IN') + ' hours'); set('ai', Math.round(ai).toLocaleString('en-IN') + ' hours');
-    set('saved', Math.round(saved).toLocaleString('en-IN') + ' hours'); set('money', '\u20b9' + Math.round(money).toLocaleString('en-IN'));
+    set('saved', Math.round(saved).toLocaleString('en-IN') + ' hours'); set('money', jwFromInr(Math.round(money)));
   }
   root.addEventListener('input', run); run();
 })();
@@ -2701,7 +2728,7 @@ document.addEventListener('click', function (e) {
 (function () {
   var root = document.querySelector('[data-mktc]'); if (!root) return;
   var v = function (k) { return +(root.querySelector('[data-mc="' + k + '"]') || {}).value || 0; };
-  var inr = function (n) { return '\u20b9' + Math.round(n).toLocaleString('en-IN'); };
+  var inr = function (n) { return jwFromInr(Math.round(n)); };
   function run() {
     var cost = v('sent') * v('cost'), buyers = v('sent') * v('reply') / 100 * v('buy') / 100, sales = buyers * v('bill'), net = sales * v('margin') / 100 - cost;
     var set = function (k, t) { var el = root.querySelector('[data-mc-o="' + k + '"]'); if (el) el.textContent = t; };
@@ -2727,7 +2754,7 @@ document.addEventListener('click', function (e) {
 (function () {
   var root = document.querySelector('[data-itcc]'); if (!root) return;
   var v = function (k) { return +(root.querySelector('[data-ic="' + k + '"]') || {}).value || 0; };
-  var inr = function (n) { return '\u20b9' + Math.round(n).toLocaleString('en-IN'); };
+  var inr = function (n) { return jwFromInr(Math.round(n)); };
   function run() { var g = v('buy') * v('gst') / 100, m = g * v('miss') / 100;
     var set = function (k, t) { var el = root.querySelector('[data-ic-o="' + k + '"]'); if (el) el.textContent = t; };
     set('gst', inr(g)); set('month', inr(m)); set('year', inr(m * 12)); }
@@ -2748,7 +2775,7 @@ document.addEventListener('click', function (e) {
 (function () {
   var root = document.querySelector('[data-loyc]'); if (!root) return;
   var v = function (k) { return +(root.querySelector('[data-lc2="' + k + '"]') || {}).value || 0; };
-  var inr = function (n) { return '\u20b9' + Math.round(n).toLocaleString('en-IN'); };
+  var inr = function (n) { return jwFromInr(Math.round(n)); };
   function run() { var n = v('mem') * v('lift') / 100, sales = n * v('bill'), cost = sales * v('cost') / 100, net = sales * v('margin') / 100 - cost;
     var set = function (k, t) { var el = root.querySelector('[data-lc2-o="' + k + '"]'); if (el) el.textContent = t; };
     set('n', Math.round(n).toLocaleString('en-IN')); set('sales', inr(sales)); set('cost', inr(cost)); set('net', inr(net)); }
@@ -2761,7 +2788,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-jr="' + k + '"]') || {}).value || 0; };
   function run() { var occ = v('cust') * 2, miss = occ * (1 - v('now') / 100), visits = miss * v('visit') / 100, sales = visits * v('buy') / 100 * v('bill');
     var set = function (k, t) { var el = root.querySelector('[data-jr-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('miss', Math.round(miss).toLocaleString('en-IN')); set('visits', Math.round(visits).toLocaleString('en-IN')); set('sales', '\u20b9' + Math.round(sales).toLocaleString('en-IN')); }
+    set('miss', Math.round(miss).toLocaleString('en-IN')); set('visits', Math.round(visits).toLocaleString('en-IN')); set('sales', jwFromInr(Math.round(sales))); }
   root.addEventListener('input', run); run();
 })();
 
@@ -2782,7 +2809,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-sg="' + k + '"]') || {}).value || 0; };
   function run() { var m = Math.max(0, v('all') - v('seg')) * v('n') * 12;
     var set = function (k, t) { var el = root.querySelector('[data-sg-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('msgs', Math.round(m).toLocaleString('en-IN')); set('cost', '\u20b9' + Math.round(m * v('cost')).toLocaleString('en-IN')); }
+    set('msgs', Math.round(m).toLocaleString('en-IN')); set('cost', jwFromInr(Math.round(m * v('cost')))); }
   root.addEventListener('input', run); run();
 })();
 
@@ -2790,7 +2817,7 @@ document.addEventListener('click', function (e) {
 (function () {
   var root = document.querySelector('[data-chc]'); if (!root) return;
   var v = function (k) { return +(root.querySelector('[data-ch="' + k + '"]') || {}).value || 0; };
-  var inr = function (n) { return '\u20b9' + Math.round(n).toLocaleString('en-IN'); };
+  var inr = function (n) { return jwFromInr(Math.round(n)); };
   function run() { var n = v('n'), wa = v('wa') * n * 1.05, sms = v('sms') * n * 0.30, em = v('em') * n * 0.03;
     var set = function (k, t) { var el = root.querySelector('[data-ch-o="' + k + '"]'); if (el) el.textContent = t; };
     set('wa', inr(wa)); set('sms', inr(sms)); set('em', inr(em)); set('tot', inr(wa + sms + em)); }
@@ -2803,7 +2830,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-ad="' + k + '"]') || {}).value || 0; };
   function run() { var chats = v('spend') / 1000 * v('chats'), buyers = chats * v('visit') / 100 * v('buy') / 100, sales = buyers * v('bill'), roas = v('spend') ? sales / v('spend') : 0;
     var set = function (k, t) { var el = root.querySelector('[data-ad-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('chats', Math.round(chats).toLocaleString('en-IN')); set('buyers', Math.round(buyers).toLocaleString('en-IN')); set('sales', '\u20b9' + Math.round(sales).toLocaleString('en-IN')); set('roas', '\u20b9' + roas.toFixed(1)); }
+    set('chats', Math.round(chats).toLocaleString('en-IN')); set('buyers', Math.round(buyers).toLocaleString('en-IN')); set('sales', jwFromInr(Math.round(sales))); set('roas', '\u20b9' + roas.toFixed(1)); }
   root.addEventListener('input', run); run();
 })();
 
@@ -2823,7 +2850,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-ig="' + k + '"]') || {}).value || 0; };
   function run() { var slow = v('dm') * 30 * v('slow') / 100, lost = slow * v('buy') / 100, rev = lost * v('bill');
     var set = function (k, t) { var el = root.querySelector('[data-ig-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('slow', Math.round(slow).toLocaleString('en-IN')); set('lost', Math.round(lost).toLocaleString('en-IN')); set('rev', '\u20b9' + Math.round(rev).toLocaleString('en-IN')); }
+    set('slow', Math.round(slow).toLocaleString('en-IN')); set('lost', Math.round(lost).toLocaleString('en-IN')); set('rev', jwFromInr(Math.round(rev))); }
   root.addEventListener('input', run); run();
 })();
 // Ecommerce website page: what re-pricing by hand costs.
@@ -2832,7 +2859,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-ec="' + k + '"]') || {}).value || 0; };
   function run() { var hrs = v('n') * v('ch') * v('min') / 60;
     var set = function (k, t) { var el = root.querySelector('[data-ec-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('hrs', Math.round(hrs).toLocaleString('en-IN')); set('cost', '₹' + Math.round(Math.round(hrs) * v('cost')).toLocaleString('en-IN')); }
+    set('hrs', Math.round(hrs).toLocaleString('en-IN')); set('cost', jwFromInr(Math.round(Math.round(hrs) * v('cost')))); }
   root.addEventListener('input', run); run();
 })();
 // Digital catalogues page: what a PDF catalogue costs.
@@ -2841,7 +2868,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-dc="' + k + '"]') || {}).value || 0; };
   function run() { var enq = Math.max(0, Math.round(v('n') * (v('link') - v('pdf')) / 100)), sales = Math.round(enq * v('buy') / 100);
     var set = function (k, t) { var el = root.querySelector('[data-dc-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('enq', enq.toLocaleString('en-IN')); set('sales', sales.toLocaleString('en-IN')); set('rev', '₹' + (sales * v('bill')).toLocaleString('en-IN')); }
+    set('enq', enq.toLocaleString('en-IN')); set('sales', sales.toLocaleString('en-IN')); set('rev', jwFromInr((sales * v('bill')))); }
   root.addEventListener('input', run); run();
 })();
 // Quotations page: what quotes without follow-up cost.
@@ -2850,7 +2877,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-q="' + k + '"]') || {}).value || 0; };
   function run() { var quiet = Math.round(v('n') * v('quiet') / 100), won = Math.round(quiet * v('won') / 100);
     var set = function (k, t) { var el = root.querySelector('[data-q-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('quiet', quiet.toLocaleString('en-IN')); set('won', won.toLocaleString('en-IN')); set('rev', '₹' + (won * v('bill')).toLocaleString('en-IN')); }
+    set('quiet', quiet.toLocaleString('en-IN')); set('won', won.toLocaleString('en-IN')); set('rev', jwFromInr((won * v('bill')))); }
   root.addEventListener('input', run); run();
 })();
 // AI sales agents page: what answering late costs.
@@ -2859,7 +2886,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-ai="' + k + '"]') || {}).value || 0; };
   function run() { var lost = Math.round(v('n') * v('buy') / 100);
     var set = function (k, t) { var el = root.querySelector('[data-ai-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('lost', lost.toLocaleString('en-IN')); set('rev', '₹' + (lost * v('bill')).toLocaleString('en-IN')); set('hire', '₹' + (v('sal') * 12).toLocaleString('en-IN')); }
+    set('lost', lost.toLocaleString('en-IN')); set('rev', jwFromInr((lost * v('bill')))); set('hire', jwFromInr((v('sal') * 12))); }
   root.addEventListener('input', run); run();
 })();
 // Billing page: what typing bills into Tally costs.
@@ -2868,7 +2895,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-bf="' + k + '"]') || {}).value || 0; };
   function run() { var t = Math.round(v('n') * v('min') / 60), f = Math.round(v('n') * v('err') / 100 * v('fix') / 60);
     var set = function (k, x) { var el = root.querySelector('[data-bf-o="' + k + '"]'); if (el) el.textContent = x; };
-    set('type', t.toLocaleString('en-IN')); set('fix', f.toLocaleString('en-IN')); set('cost', '₹' + ((t + f) * v('cost') * 12).toLocaleString('en-IN')); }
+    set('type', t.toLocaleString('en-IN')); set('fix', f.toLocaleString('en-IN')); set('cost', jwFromInr(((t + f) * v('cost') * 12))); }
   root.addEventListener('input', run); run();
 })();
 // Email page: what abandoned carts cost without an email.
@@ -2877,7 +2904,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-em="' + k + '"]') || {}).value || 0; };
   function run() { var won = Math.round(v('n') * v('won') / 100);
     var set = function (k, t) { var el = root.querySelector('[data-em-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('won', won.toLocaleString('en-IN')); set('rev', '₹' + (won * v('bill')).toLocaleString('en-IN')); }
+    set('won', won.toLocaleString('en-IN')); set('rev', jwFromInr((won * v('bill')))); }
   root.addEventListener('input', run); run();
 })();
 // Girvi page: interest calculator.
@@ -2886,7 +2913,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-gv="' + k + '"]') || {}).value || 0; };
   function run() { var p = v('p'), r = v('r') / 100, m = v('m'), i = v('c') ? p * (Math.pow(1 + r, m) - 1) : p * r * m;
     var set = function (k, t) { var el = root.querySelector('[data-gv-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('int', '₹' + Math.round(i).toLocaleString('en-IN')); set('tot', '₹' + Math.round(p + i).toLocaleString('en-IN')); }
+    set('int', jwFromInr(Math.round(i))); set('tot', jwFromInr(Math.round(p + i))); }
   root.addEventListener('input', run); root.addEventListener('change', run); run();
 })();
 // HR page: sales incentive calculator.
@@ -2894,7 +2921,7 @@ document.addEventListener('click', function (e) {
   var root = document.querySelector('[data-hrc]'); if (!root) return;
   var v = function (k) { return +(root.querySelector('[data-hr="' + k + '"]') || {}).value || 0; };
   function run() { var s = v('s'), t = v('t'), a = Math.min(s, t) * v('a') / 100, b = Math.max(0, s - t) * v('b') / 100;
-    var set = function (k, x) { var el = root.querySelector('[data-hr-o="' + k + '"]'); if (el) el.textContent = '₹' + Math.round(x).toLocaleString('en-IN'); };
+    var set = function (k, x) { var el = root.querySelector('[data-hr-o="' + k + '"]'); if (el) el.textContent = jwFromInr(Math.round(x)); };
     set('a', a); set('b', b); set('t', a + b); }
   root.addEventListener('input', run); run();
 })();
@@ -2904,7 +2931,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-mt="' + k + '"]') || {}).value || 0; };
   function run() { var s = Math.round(v('n') * v('buy') / 100);
     var set = function (k, t) { var el = root.querySelector('[data-mt-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('sales', s.toLocaleString('en-IN')); set('rev', '₹' + (s * v('bill')).toLocaleString('en-IN')); }
+    set('sales', s.toLocaleString('en-IN')); set('rev', jwFromInr((s * v('bill')))); }
   root.addEventListener('input', run); run();
 })();
 // Optimize page: what a better conversion rate is worth.
@@ -2913,7 +2940,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-op="' + k + '"]') || {}).value || 0; };
   function run() { var l = Math.max(0, Math.round(v('v') * (v('next') - v('now')) / 100)), s = Math.round(l * v('buy') / 100);
     var set = function (k, t) { var el = root.querySelector('[data-op-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('leads', l.toLocaleString('en-IN')); set('sales', s.toLocaleString('en-IN')); set('rev', '₹' + (s * v('bill')).toLocaleString('en-IN')); }
+    set('leads', l.toLocaleString('en-IN')); set('sales', s.toLocaleString('en-IN')); set('rev', jwFromInr((s * v('bill')))); }
   root.addEventListener('input', run); run();
 })();
 // Repairs page: what untracked repairs cost.
@@ -2922,7 +2949,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-rp="' + k + '"]') || {}).value || 0; };
   function run() { var h = Math.round(v('n') * v('call') / 100 * v('min') / 60);
     var set = function (k, t) { var el = root.querySelector('[data-rp-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('hrs', h.toLocaleString('en-IN')); set('yr', '₹' + (v('disp') * v('cost') * 12).toLocaleString('en-IN')); }
+    set('hrs', h.toLocaleString('en-IN')); set('yr', jwFromInr((v('disp') * v('cost') * 12))); }
   root.addEventListener('input', run); run();
 })();
 // Reports page: what building reports in Excel costs.
@@ -2931,7 +2958,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-re="' + k + '"]') || {}).value || 0; };
   function run() { var h = Math.round(v('n') * v('h') * 52);
     var set = function (k, t) { var el = root.querySelector('[data-re-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('hrs', h.toLocaleString('en-IN')); set('yr', '₹' + (h * v('cost')).toLocaleString('en-IN')); }
+    set('hrs', h.toLocaleString('en-IN')); set('yr', jwFromInr((h * v('cost')))); }
   root.addEventListener('input', run); run();
 })();
 // Showroom page: what walkouts cost.
@@ -2940,7 +2967,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-sh="' + k + '"]') || {}).value || 0; };
   function run() { var out = Math.round(v('n') * (100 - v('conv')) / 100), won = Math.round(out * v('won') / 100);
     var set = function (k, t) { var el = root.querySelector('[data-sh-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('out', out.toLocaleString('en-IN')); set('won', won.toLocaleString('en-IN')); set('rev', '₹' + (won * v('bill')).toLocaleString('en-IN')); }
+    set('out', out.toLocaleString('en-IN')); set('won', won.toLocaleString('en-IN')); set('rev', jwFromInr((won * v('bill')))); }
   root.addEventListener('input', run); run();
 })();
 // Training page: what training by shadowing costs.
@@ -2949,7 +2976,7 @@ document.addEventListener('click', function (e) {
   var v = function (k) { return +(root.querySelector('[data-lm="' + k + '"]') || {}).value || 0; };
   function run() { var wk = v('n') * v('w'), cost = wk * v('pct') / 100 * v('sal') * 12 / 52;
     var set = function (k, t) { var el = root.querySelector('[data-lm-o="' + k + '"]'); if (el) el.textContent = t; };
-    set('wk', (Math.round(wk * 10) / 10).toLocaleString('en-IN')); set('cost', '₹' + Math.round(cost).toLocaleString('en-IN')); }
+    set('wk', (Math.round(wk * 10) / 10).toLocaleString('en-IN')); set('cost', jwFromInr(Math.round(cost))); }
   root.addEventListener('input', run); run();
 })();
 // AI CCTV page: what the register is not telling you.
@@ -3040,5 +3067,20 @@ document.addEventListener('click', function (e) {
     [].forEach.call(document.querySelectorAll('[data-cur-pick]'), function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-cur-pick') === c ? 'true' : 'false'); });
   }
   apply(cur);
-  document.addEventListener('click', function (e) { var b = e.target.closest('[data-cur-pick]'); if (!b) return; cur = b.getAttribute('data-cur-pick'); try { localStorage.setItem('jw-cur', cur); } catch (x) {} apply(cur); if (window.jweroTrack) window.jweroTrack('currency_switch', { cur: cur }); });
+  document.addEventListener('click', function (e) { var b = e.target.closest('[data-cur-pick]'); if (!b) return; cur = b.getAttribute('data-cur-pick'); try { localStorage.setItem('jw-cur', cur); } catch (x) {} if (window.jweroTrack) window.jweroTrack('currency_switch', { cur: cur }); setTimeout(function () { location.reload(); }, 60); });
+})();
+
+// Page text: ₹ figures shown in dollars outside India, except India-specific pages and kept blocks.
+(function () {
+  if (window.JW_CUR !== 'usd' || document.documentElement.getAttribute('data-region') === 'in') return;
+  var RX = /₹\s?([\d,]+(?:\.\d+)?)(\s?(lakh|crore|L\b|Cr\b))?/g;
+  function conv(t) { return t.replace(RX, function (m, num, sp, unit) { var v = +num.replace(/,/g, ''); if (unit) v *= /crore|Cr/.test(unit) ? 1e7 : 1e5; return jwFromInr(v); }); }
+  function walk(root) {
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, { acceptNode: function (n) { return /₹/.test(n.nodeValue) && !n.parentNode.closest('[data-inr-keep], .cur, script, style, textarea') ? 1 : 2; } });
+    var list = []; while (w.nextNode()) list.push(w.currentNode);
+    list.forEach(function (n) { n.nodeValue = conv(n.nodeValue); });
+  }
+  [].forEach.call(document.querySelectorAll('.callc, .calc, [data-stackm]'), function (c) { if (c.querySelector('.cur-approx')) return; var p = document.createElement('p'); p.className = 'cta-note cur-approx'; p.setAttribute('data-inr-keep', ''); p.textContent = 'Amounts shown in US dollars, converted from Indian prices at about ₹85 to $1. Use your own figures.'; c.appendChild(p); });
+  var main = document.querySelector('main') || document.body; walk(main);
+  var busy = false; new MutationObserver(function () { if (busy) return; busy = true; walk(main); busy = false; }).observe(main, { subtree: true, childList: true, characterData: true });
 })();

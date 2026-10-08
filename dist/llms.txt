@@ -262,6 +262,13 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - AI can run on locally hosted models or on models and providers the customer chooses.
 - The hosted Jwero One plan runs on Microsoft Azure in India with per-business databases.
 
+## Jwero worldwide (facts)
+
+- Jwero is used outside India: local currencies; invoices under India GST, UK VAT, EU VAT, GCC VAT and US sales tax; live metal rates for any market by gram, ounce or tola; Stripe and PayPal alongside Razorpay and Cashfree; AI in 14 languages including Arabic, Spanish and French.
+- Hosted plan: India by default, or another region on request. Enterprise: self-hosted anywhere.
+- Price outside India: $249 a month, first month $49; messages and calls at local rates.
+- Market pages: /global, /jewellery-software-uae, /jewellery-software-uk, /jewellery-software-usa, /jewellery-software-singapore.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
@@ -719,3 +726,8 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Count Your Team: What a Jewellery Business Spends to Keep Up: https://jwero.ai/count-your-team
 - Success Stories: What Jwero Took Responsibility For: https://jwero.ai/success-stories
 - Refer a Jeweller to Jwero: Save 10% for Each One Who Joins: https://jwero.ai/refer
+- Jewellery Software Worldwide: Currencies, VAT, Sales Tax, Languages: https://jwero.ai/global
+- Jewellery Software in the UAE and the Gulf: VAT, AED, Arabic: https://jwero.ai/jewellery-software-uae
+- Jewellery Software in the UK and Europe: VAT, Pounds, Euros: https://jwero.ai/jewellery-software-uk
+- Jewellery Software in the US and Canada: Sales Tax, POS, Ecommerce: https://jwero.ai/jewellery-software-usa
+- Jewellery Software in Singapore and South and Southeast Asia: https://jwero.ai/jewellery-software-singapore

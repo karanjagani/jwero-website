@@ -53,7 +53,7 @@ const RATES = {
 };
 const families = Object.keys(RATES);
 const rateCard = `
-<div class="rates" data-rates>
+<div class="rates" data-rates data-inr-keep>
   <div class="rates-tabs" role="tablist" aria-label="Rate families">${families.map((f, i) => `<button type="button" role="tab" aria-selected="${i === 0}" data-rate-tab="${i}">${f}</button>`).join('')}</div>
   ${families.map((f, i) => `
   <div class="rates-panel${i === 0 ? ' is-on' : ''}" data-rate-panel="${i}" role="tabpanel">

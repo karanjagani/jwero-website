@@ -43,7 +43,7 @@ const CONTENT_FILES = [
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
   'roles-leadership', 'roles-frontline', 'roles-growth', 'roles-manufacturing',
-  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal', 'jbaas', 'legacy-blog', 'positioning', 'landing'];
+  'roles-operations', 'roles-trade', 'glossary', 'start', 'journey', 'seo', 'guides', 'legal', 'jbaas', 'legacy-blog', 'positioning', 'landing', 'global'];
 const pages = [];
 for (const f of CONTENT_FILES) {
   const lastmod = fs.statSync(path.join(ROOT, 'content', `${f}.js`)).mtime.toISOString().slice(0, 10);
@@ -203,6 +203,7 @@ const NAV = [
       ['/start', 'Start in three steps', 'Create your workspace, first month ₹3,600'],
       ['/brief', 'The one-page brief', 'For the owner who won’t read the site'],
       ['/company', 'About Jwero', 'The founders, by name'],
+      ['/global', 'Jwero worldwide', 'Currencies, VAT, sales tax, languages'],
     ],
     links: [['/book-demo', 'Book a demo'], ['/contact', 'Contact']],
   },
@@ -547,6 +548,33 @@ function journeyFix(html, p) {
       return t;
     }).join('');
   }
+  // Global wording on every page that is not India-specific: tax, gold loans, hallmark IDs.
+  if (!/data-region="in"/.test(html) && !/^(blog\/(how-to-calculate|gst-|making-charges|old-gold|cash-limit|huid|e-way|e-invoic|girvi|gold-scheme-accounting|are-gold|job-work)|jewellery-software-india|hi$|legal)/.test(p.slug || '')) {
+    const isGirvi = /girvi/.test(p.slug || '');
+    let firstHuid = true;
+    html = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>)/).map((part, k) => {
+      if (k % 2 || !part.trim()) return part;
+      let t = part
+        .replace(/\bGST invoices\b/g, 'GST or VAT invoices').replace(/\bGST invoice\b/g, 'GST or VAT invoice').replace(/\bGST invoicing\b/g, 'GST or VAT invoicing')
+        .replace(/\bGST-ready\b/g, 'GST, VAT or sales-tax ready').replace(/\bstones and GST\b/g, 'stones and tax').replace(/\bmaking, stones, GST\b/g, 'making, stones, tax')
+        .replace(/\bwith GST handled\b/g, 'with GST, VAT or sales tax handled');
+      if (!isGirvi) t = t.replace(/\bGirvi \/ Gold Loans\b/g, 'Gold loans').replace(/\bgirvi\b/g, 'gold loans').replace(/\bGirvi register\b/g, 'Gold loan register').replace(/\bGirvi\b/g, 'Gold loans');
+      if (!isGirvi) t = t.replace(/\b([Gg]old) loans and gold loans\b/g, '$1 loans').replace(/\b([Gg]old) loans loans\b/g, '$1 loans').replace(/\bGold loans Business\b/g, 'Gold Loan Business')
+        .replace(/\b([Gg]old) loans (renewal|renewals|business|register|software|interest|record|records|customer|customers|desk|book|module|page|ledger|receipt|book)\b/g, '$1 loan $2').replace(/\bthe gold loans she\b/g, 'the gold loan she');
+      t = t.replace(/\bHUID\b/g, () => { if (firstHuid) { firstHuid = false; return 'hallmark ID (HUID)'; } return 'hallmark ID'; });
+      return t;
+    }).join('');
+  }
+
+  // India-specific pages keep rupees and say who they are for; everything else is global.
+  {
+    const IN = /^(blog\/(how-to-calculate-gold-jewellery-price|gst-on-jewellery-india|making-charges-explained|old-gold-exchange-jewellers|cash-limit-pan-jewellery-sale|huid-hallmarking-rules-jewellers|huid-hallmarking-records-audit-checklist|e-way-bill-for-jewellery|e-invoicing-for-jewellers|girvi-gold-loan-business-guide|gold-scheme-accounting-liability|are-gold-savings-schemes-legal|job-work-jewellery-gst-challan|whatsapp-business-api-pricing|gold-rate-api-live-pricing|jewellery-software-cost-india|best-jewellery-software-india)|jewellery-software-india(\/.*)?|hi|legal(\/.*)?)$/;
+    if (IN.test(p.slug || '')) {
+      html = html.replace(/<html /, '<html data-region="in" ');
+      if (/^blog\//.test(p.slug)) html = html.replace(/(<div class="post-body">)/, '$1<p class="post-note"><b>Written for jewellers in India.</b> The rules, rates and amounts here are Indian. Selling elsewhere? Jwero handles VAT and sales tax too; <a href="/global">see Jwero worldwide</a>.</p>');
+    }
+  }
+
   return html;
 }
 
@@ -582,7 +610,7 @@ function orgSchema() {
     '@context': 'https://schema.org', '@type': 'Organization',
     name: BRAND, legalName: LEGAL_ENTITY, url: SITE, slogan: TAGLINE, description: ORG_DESCRIPTION,
     alternateName: ['Jwero — the Autonomous Jewellery OS', 'Jwero — the Autonomous Jewelry OS'],
-    areaServed: ['IN', 'AE', 'GB', 'SG', 'US', 'AU', 'CA'],
+    areaServed: ['IN', 'AE', 'SA', 'QA', 'BH', 'OM', 'KW', 'GB', 'IE', 'FR', 'DE', 'NL', 'US', 'CA', 'SG', 'MY', 'LK', 'NP', 'BD', 'AU'],
     logo: SITE + '/assets/brand/jwero-logo.png',
     sameAs: SOCIALS.map(([h]) => h),
     founder: [{ '@type': 'Person', name: 'Mahendra Jagani', url: SITE + '/company' }, { '@type': 'Person', name: 'Karan Jagani', jobTitle: 'Co-Founder & CEO', url: SITE + '/company' }, { '@type': 'Person', name: 'Manav Jagani', jobTitle: 'Co-Founder & CTO', url: SITE + '/company' }],
@@ -2001,6 +2029,13 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Every module works self-hosted; a few, such as WhatsApp messaging and AI calling, need internet to reach their channels.
 - AI can run on locally hosted models or on models and providers the customer chooses.
 - The hosted Jwero One plan runs on Microsoft Azure in India with per-business databases.
+
+## Jwero worldwide (facts)
+
+- Jwero is used outside India: local currencies; invoices under India GST, UK VAT, EU VAT, GCC VAT and US sales tax; live metal rates for any market by gram, ounce or tola; Stripe and PayPal alongside Razorpay and Cashfree; AI in 14 languages including Arabic, Spanish and French.
+- Hosted plan: India by default, or another region on request. Enterprise: self-hosted anywhere.
+- Price outside India: $249 a month, first month $49; messages and calls at local rates.
+- Market pages: /global, /jewellery-software-uae, /jewellery-software-uk, /jewellery-software-usa, /jewellery-software-singapore.
 
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.

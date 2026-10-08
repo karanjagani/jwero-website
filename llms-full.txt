@@ -100,6 +100,12 @@ You focus on jewellery. We handle the chaos.
 
  Customers, catalogue and stock are imported for you. Most shops go live in a day. See every product → 
 
+ WORLDWIDE
+
+## Built for jewellers in every market.
+ Your currency, GST, VAT or sales tax, your gold rate by gram, ounce or tola, 14 languages including Arabic, and hosting in your region.
+ India The Gulf UK and Europe US and Canada South and Southeast Asia Jwero worldwide → 
+
  FROM FIFTY LOGINS TO ONE RECORD
 
 ## What changes across the whole jewellery business.
@@ -301,7 +307,7 @@ You focus on jewellery. We handle the chaos.
 
  These are estimates, not a quote. Change the selection and the sliders to match your business.
 
- Subscriptions. Each tool carries the average monthly price of a typical paid plan from well-known vendors in India, for a business with about five people who need a login. Platforms that are free to use, such as posting on a social network, count as ₹0. Advertising spend and per-message or per-minute charges are left out on both sides, because you pay those with or without Jwero.
+ Subscriptions. Each tool carries the average monthly price of a typical paid plan from well-known vendors (Indian market prices, shown in dollars outside India), for a business with about five people who need a login. Platforms that are free to use, such as posting on a social network, count as ₹0. Advertising spend and per-message or per-minute charges are left out on both sides, because you pay those with or without Jwero.
 
  No double counting. Several items are usually one product: billing, POS, stock and ERP; WhatsApp API and broadcasts; the social inbox and scheduler; marketing automation, campaigns and journeys; HR, payroll and attendance. Each such group is charged once, at its highest price, however many of its items you pick. Where a tool is often kept on paper or a free app, the price shown is the simplest paid tool that replaces it; if you pay nothing for it today, your saving is lower.
 
@@ -356,7 +362,7 @@ You focus on jewellery. We handle the chaos.
  Gold rate updates Free 1 Usually free from an association or a rate app (estimate) 
  Gold scheme register ₹2,000 3 Showrooms One published price: Suniyara ₹2,499 a month (estimate) 
  Google Ads Free 2 The ads console is free; ad spend excluded 
- Google Business reviews ₹2,000 1 Showrooms Indian review tools about ₹1,000 to ₹3,000 (estimate) 
+ Google Business reviews ₹2,000 1 Showrooms Review tools about ₹1,000 to ₹3,000 (estimate) 
  Google Sheets Free 4 Free 
  Google Shopping Free 1 Merchant Center is free 
  Google Tag Manager Free 0.5 Free 
@@ -418,7 +424,7 @@ You focus on jewellery. We handle the chaos.
 
 ## Security and privacy delivered, just as you want.
 
- DPDP DPDP Act In place IN Data hosted in India In place PCI Card data (PCI DSS) In place GST GST record keeping In place BIS BIS hallmarking and HUID In place 
+ DPDP DPDP Act In place IN Data hosted in India or your region In place PCI Card data (PCI DSS) In place GST GST record keeping In place BIS BIS hallmarking and HUID In place 
 
  Your own database. Never stored with another jeweller’s. 
 
@@ -2083,7 +2089,7 @@ Q: How is Jwero different from WATI, Interakt or DoubleTick?
 A: Those tools send and receive messages. Jwero’s WhatsApp is part of the jewellery system: the catalogue follows the gold rate, payments and orders update stock and the customer record, and replies know purchases and scheme balances.
 
 Q: Does Jwero also handle phone calls?
-A: Yes. Jwero’s voice AI agents answer inbound calls in bulk and run outbound AI calling campaigns in bulk, such as scheme reminders, follow-ups and event invitations, in Indian languages, writing every call to the same customer record as WhatsApp.
+A: Yes. Jwero’s voice AI agents answer inbound calls in bulk and run outbound AI calling campaigns in bulk, such as scheme reminders, follow-ups and event invitations, in the customer’s language, writing every call to the same customer record as WhatsApp.
 
 Q: Can WhatsApp messages send automatically when something happens?
 A: Yes. Triggers send notifications when an order is confirmed, a payment arrives, a piece or repair is ready, or a scheme instalment is due. Campaigns go to segments you choose, by purchase, occasion or scheme.
@@ -3109,7 +3115,7 @@ SOCIAL MEDIA MANAGEMENT FOR JEWELLERS
  Campaigns → 
 
 ## 2. Content made for you
- AI captions and hashtags in English and Indian languages, images and short videos from your catalogue photos, for posts and reels.
+ AI captions and hashtags in English and 13 other languages, images and short videos from your catalogue photos, for posts and reels.
  Catalogue → 
 
 ## 3. One composer, every platform
@@ -3217,7 +3223,7 @@ Q: Which platforms can Jwero publish to?
 A: Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business, from one composer and one calendar.
 
 Q: Can AI make jewellery posts and reels?
-A: Yes. AI makes captions, hashtags, images and short videos from your catalogue photos, in English and Indian languages. Your team edits and approves before anything is published.
+A: Yes. AI makes captions, hashtags, images and short videos from your catalogue photos, in English and 13 other languages. Your team edits and approves before anything is published.
 
 Q: How often should a jeweller post?
 A: Consistency matters more than volume: a few good posts a week, more around festivals and launches. A calendar planned ahead keeps it steady.
@@ -10986,7 +10992,7 @@ FOR EXPORT HOUSES
 
 ## Order to shipment, tracked to the gram, in the currency your buyer pays.
 
- Order-to-shipment tracking with documentation trails, and replies to overseas buyers around the clock, because a timezone gap shouldn’t mean a slow reply. Jwero is India-first by design, GST and HUID are built in; invoicing in your buyer’s currency is; local tax rails abroad are not yet.
+ Order-to-shipment tracking with documentation trails, and replies to overseas buyers around the clock, because a timezone gap shouldn’t mean a slow reply. Jwero is Built for exporters: GST, VAT and US sales tax, invoicing in your buyer’s currency, and hallmark IDs are all built in.
 
  Talk shop with us 
  See the manufacturer overview 
@@ -11805,7 +11811,7 @@ TRUST CENTRE
  India’s DPDP Act, 2023 In place Data protection statement, processor terms, consent records, export and erasure tools. 
 
  IN 
- Data hosted in India In place Each business in its own database on Microsoft Azure, India region. 
+ Data hosted in India or your region In place Each business in its own database, in India by default or in your region on request; Enterprise can self-host. 
 
  PCI 
  Card data (PCI DSS) In place Card details never reach Jwero. Payments run through PCI DSS certified providers. 
@@ -11990,7 +11996,7 @@ Q: Does Jwero store card details?
 A: No. Card and bank details are entered with the payment provider. Payments run through PCI DSS certified providers and card data does not pass through Jwero.
 
 Q: Where is my data stored?
-A: In a database that belongs to your business alone, hosted on Microsoft Azure in India. Enterprise customers can self-host on their own premises or cloud, where Jwero has no access.
+A: In a database that belongs to your business alone, hosted on Microsoft Azure in India by default, or in your region on request. Enterprise customers can self-host on their own premises or cloud, where Jwero has no access.
 
 ---
 
@@ -20678,7 +20684,7 @@ GUIDE · CUSTOMERS
 
 ## Your customers’ language, everywhere.
 
- Jwero finds products by local names at the counter and supports calls in Indian languages.
+ Jwero finds products by local names at the counter and supports calls in 14 languages.
 
  Chat or call with us 
  Book a demo 
@@ -20754,7 +20760,7 @@ GUIDE · AI
 
 ## How Jwero does it
 
- Jwero’s voice agent places and answers calls through a telephony provider, with speech recognition and voice in Indian languages, and records what was said on the customer’s record. See AI calling and gold schemes .
+ Jwero’s voice agent places and answers calls through a telephony provider, with speech recognition and voice in 14 languages, and records what was said on the customer’s record. See AI calling and gold schemes .
 
 ## An evening of reminders, in numbers
 
@@ -20806,7 +20812,7 @@ GUIDE · AI
 
 ## The routine calls, made on time.
 
- Jwero’s voice agent handles reminders and follow-ups in Indian languages, under the rules you set.
+ Jwero’s voice agent handles reminders and follow-ups in 14 languages, under the rules you set.
 
  Chat or call with us 
  Book a demo 
@@ -110251,3 +110257,466 @@ A: Ten percent for each jeweller who joins through you, applied to your subscrip
 
 Q: Do I need to be a Jwero customer to refer?
 A: The saving is on your Jwero subscription, so yes. If you are not a customer yet, join the waitlist first.
+
+---
+
+# Jewellery Software Worldwide: Currencies, VAT, Sales Tax, Languages
+URL: https://jwero.ai/global
+
+Jwero runs jewellery businesses in any market: your currency, GST, VAT or sales tax, live gold rates by gram, ounce or tola, 14 languages, Stripe and PayPal, and hosting in your region.
+
+JWERO WORLDWIDE
+
+## One system for jewellers in every market.
+
+ Your currency, your tax system, your gold rate and your customers’ language, on the same record that runs the counter, the stock, the workshop and every chat.
+
+ Tell us where you sell 
+ See pricing 
+
+ BUILT FOR YOUR MARKET
+
+## What changes from country to country, handled.
+
+## Your currency
+ Price, sell and invoice in your customer’s currency: dirhams, riyals, pounds, euros, dollars or rupees.
+
+## Your tax system
+ Invoices under India GST, UK VAT, EU VAT, GCC VAT and US sales tax, set per business.
+
+## Your gold rate
+ Live metal rates for your market, by the gram, ounce or tola, repricing every channel.
+
+## Your customers’ language
+ AI chat, voice and calls in 14 languages, including English, Arabic, Hindi, Spanish and French.
+
+## Your payment gateway
+ Stripe and PayPal, as well as Razorpay and Cashfree, on the counter, the website and inside WhatsApp.
+
+## Your region
+ Hosted in India or in your region on request, or self-hosted on your own servers with Enterprise.
+
+ BY MARKET
+
+## Pick where you sell.
+
+ The Gulf UAE, Saudi Arabia, Qatar, Bahrain, Oman, Kuwait See Jwero for the Gulf → The UK and Europe United Kingdom, the EU See Jwero for the UK and Europe → The US and Canada United States, Canada See Jwero for the US and Canada → South and Southeast Asia Singapore, Malaysia, Sri Lanka, Nepal, Bangladesh See Jwero for South and Southeast Asia → India Every state, 29 cities See Jwero for India → 
+
+ THE SAME EVERYWHERE
+
+## What works the same in every country.
+
+## One record
+
+ Customers, catalogue, stock, counter, schemes, workshop, books and team on one system.
+
+ The platform → 
+
+## Official WhatsApp
+
+ Your number on the official WhatsApp Business Platform, with payments in the chat where your gateway supports it.
+
+ WhatsApp → 
+
+## AI that asks first
+
+ Replies, follow-ups and calls drafted by AI, with approvals, caps and a kill switch.
+
+ AI agents → 
+
+## Selling outside India?
+
+ Tell us your country and what you run; we will show you Jwero set up for your market.
+
+ Chat or call with us 
+ Book a demo 
+
+ You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ You message first; a Jwero specialist replies on WhatsApp in working hours. Prefer a call? Ask for a call back .
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Does Jwero work outside India?
+A: Yes. Jwero supports local currencies, GST, VAT and US sales tax, live gold rates for any market, 14 languages, Stripe and PayPal, and hosting in your region on request.
+
+Q: Which tax systems are supported?
+A: India GST, UK VAT, EU VAT, GCC VAT and US sales tax, set per business. For another country, ask us.
+
+Q: Where is my data hosted?
+A: In India by default, or in your region on request. Enterprise customers self-host on their own servers or cloud.
+
+Q: What does it cost outside India?
+A: Jwero One is $249 a month with every module, first month $49. Messages and calls are charged at your country’s rates.
+
+---
+
+# Jewellery Software in the UAE and the Gulf: VAT, AED, Arabic
+URL: https://jwero.ai/jewellery-software-uae
+
+Jewellery software for the UAE, Saudi Arabia, Qatar and the Gulf: GCC VAT invoices, AED and riyal pricing, live gold rates by gram or tola, Arabic and English WhatsApp, and hosting in your region.
+
+JWERO IN THE GULF
+
+## Jewellery software for the Gulf: VAT, dirhams, Arabic and English, on one record.
+
+ For souk showrooms, chains and wholesalers in the UAE, Saudi Arabia, Qatar and across the GCC. Prices follow the gold rate in your currency, invoices carry VAT, and customers are answered in Arabic or English.
+
+ Show me Jwero for my market 
+ See pricing 
+
+ BUILT FOR THIS MARKET
+
+## What a jeweller here needs, handled.
+
+## GCC VAT invoices
+ VAT on every bill under the GCC regime set for your business.
+
+## Dirhams, riyals and more
+ Price, sell and invoice in the customer’s currency.
+
+## Gold rate by gram or tola
+ Live rates for your market reprice the counter, the website and WhatsApp.
+
+## Arabic and English
+ AI replies, voice and calls in Arabic, English, Hindi and more, for every customer.
+
+## Tourists and NRI buyers
+ Video calls from WhatsApp and payments by Stripe or PayPal for buyers who are not in the shop.
+
+## Your region
+ Hosting in your region on request, or self-hosted on your own servers.
+
+ COMPARE
+
+## Separate tools, or one system.
+
+ Separate tools Jwero 
+ Price when gold moves Typed on the board Every piece repriced in your currency 
+ VAT Worked out on the bill On every invoice, under GCC VAT 
+ Language Whoever is at the counter Arabic, English, Hindi and more 
+ Customers abroad Photos on a personal phone Video call, catalogue link and payment in one chat 
+ Data Wherever the tool keeps it Your region, or your own servers 
+
+ EVERY MODULE
+
+## The whole business on one record.
+
+## Counter and stock
+
+ Billing at the live rate, old gold exchange, every piece by weight and purity, ageing and dead stock.
+
+ POS → 
+
+## Customers and selling
+
+ WhatsApp, Instagram, an ecommerce website, video calls and a CRM that remembers every customer.
+
+ CRM → 
+
+## Schemes, loans and the workshop
+
+ Gold savings schemes, gold loans, manufacturing and karigar work, on the same books.
+
+ Every product → 
+
+## Running a showroom in the Gulf?
+
+ Tell us your city and what you run; we will show Jwero set up for VAT, your currency and Arabic.
+
+ Chat or call with us 
+ Book a demo 
+
+ You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ You message first; a Jwero specialist replies on WhatsApp in working hours. Prefer a call? Ask for a call back .
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Does Jwero support VAT in the UAE and Saudi Arabia?
+A: Yes. Invoices can run under the GCC VAT regime, set per business.
+
+Q: Can customers be answered in Arabic?
+A: Yes. AI chat, voice and calls work in Arabic, English and 12 other languages.
+
+Q: Can my data stay in the region?
+A: Hosting in your region is available on request, and Enterprise customers can self-host.
+
+---
+
+# Jewellery Software in the UK and Europe: VAT, Pounds, Euros
+URL: https://jwero.ai/jewellery-software-uk
+
+Jewellery software for the UK and Europe: UK and EU VAT invoices, pound and euro pricing, live gold rates, hallmark records, ecommerce at the live rate, and hosting in your region.
+
+JWERO IN THE UK AND EUROPE
+
+## Jewellery software for the UK and Europe: VAT, live gold prices and every channel on one record.
+
+ For independent jewellers, multi-store groups and online brands. VAT on every invoice, prices that follow the metal rate in pounds or euros, and every customer on one record across the shop, the website and WhatsApp.
+
+ Show me Jwero for my market 
+ See pricing 
+
+ BUILT FOR THIS MARKET
+
+## What a jeweller here needs, handled.
+
+## UK and EU VAT
+ Invoices under the UK or EU VAT regime set for your business.
+
+## Pounds and euros
+ Price, sell and invoice in your customer’s currency.
+
+## Live metal prices
+ Gold and silver rates reprice the counter, the website and every channel together.
+
+## Hallmark records
+ Hallmark details stored on every piece and printed where you need them.
+
+## Ecommerce and marketplaces
+ Your own store, or Shopify and WooCommerce kept in step; Google Shopping and the Meta catalogue synced.
+
+## Your region
+ Hosting in your region on request, or self-hosted with Enterprise.
+
+ COMPARE
+
+## Separate tools, or one system.
+
+ Separate tools Jwero 
+ Prices when the metal moves Edited by hand Every channel repriced 
+ VAT In the accounting package later On every invoice at the counter and online 
+ Stock Separate for shop and website One stock everywhere 
+ Customers In the till, the email tool and a phone One record 
+ Data location Wherever the vendor hosts Your region, or your own servers 
+
+ EVERY MODULE
+
+## The whole business on one record.
+
+## Counter and stock
+
+ Billing at the live rate, old gold exchange, every piece by weight and purity, ageing and dead stock.
+
+ POS → 
+
+## Customers and selling
+
+ WhatsApp, Instagram, an ecommerce website, video calls and a CRM that remembers every customer.
+
+ CRM → 
+
+## Schemes, loans and the workshop
+
+ Gold savings schemes, gold loans, manufacturing and karigar work, on the same books.
+
+ Every product → 
+
+## Running a jewellery business in the UK or Europe?
+
+ Tell us what you run; we will show Jwero with VAT, your currency and your channels.
+
+ Chat or call with us 
+ Book a demo 
+
+ You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ You message first; a Jwero specialist replies on WhatsApp in working hours. Prefer a call? Ask for a call back .
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Does Jwero handle UK VAT?
+A: Yes. Invoices can run under the UK VAT regime, or EU VAT for European businesses, set per business.
+
+Q: Does it work with Shopify?
+A: Yes. Keep your Shopify or WooCommerce store; Jwero keeps stock and prices in step and reads the orders.
+
+Q: Which accounting software does it connect to?
+A: Jwero keeps its own ledger and bridges to Tally and Zoho Books. For other accounting software, ask us.
+
+---
+
+# Jewellery Software in the US and Canada: Sales Tax, POS, Ecommerce
+URL: https://jwero.ai/jewellery-software-usa
+
+Jewellery software for the US and Canada: US sales tax invoices, dollar pricing, live gold rates by the ounce or gram, POS, ecommerce, CRM and WhatsApp on one record.
+
+JWERO IN THE US AND CANADA
+
+## Jewellery software for the US and Canada: POS, ecommerce and every customer on one record.
+
+ For independent jewellers, bridal specialists and online brands. Sales tax on every bill, prices that follow the metal rate, and the shop, the website and every message on one customer record.
+
+ Show me Jwero for my market 
+ See pricing 
+
+ BUILT FOR THIS MARKET
+
+## What a jeweller here needs, handled.
+
+## US sales tax
+ Invoices under the US sales tax regime set for your business.
+
+## Dollar pricing
+ Price, sell and invoice in US or Canadian dollars.
+
+## Gold by the ounce or gram
+ Live rates reprice the counter, the website and every channel together.
+
+## Bridal and custom orders
+ Quotes accepted online, deposits on the record, orders tracked to delivery.
+
+## Stripe and PayPal
+ Card payments at the counter, online and inside a chat.
+
+## English, Spanish and French
+ AI replies, voice and calls in the customer’s language.
+
+ COMPARE
+
+## Separate tools, or one system.
+
+ Separate tools Jwero 
+ POS, website and CRM Three systems One record 
+ Price when gold moves Edited by hand Every channel repriced 
+ Custom orders Paper and email Quote, deposit and order on one thread 
+ Follow-ups When someone remembers Drafted by AI, approved by your team 
+ Language English only English, Spanish, French and more 
+
+ EVERY MODULE
+
+## The whole business on one record.
+
+## Counter and stock
+
+ Billing at the live rate, old gold exchange, every piece by weight and purity, ageing and dead stock.
+
+ POS → 
+
+## Customers and selling
+
+ WhatsApp, Instagram, an ecommerce website, video calls and a CRM that remembers every customer.
+
+ CRM → 
+
+## Schemes, loans and the workshop
+
+ Gold savings schemes, gold loans, manufacturing and karigar work, on the same books.
+
+ Every product → 
+
+## Running a jewellery store in the US or Canada?
+
+ Tell us what you run; we will show Jwero with sales tax, dollars and your channels.
+
+ Chat or call with us 
+ Book a demo 
+
+ You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ You message first; a Jwero specialist replies on WhatsApp in working hours. Prefer a call? Ask for a call back .
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Does Jwero handle US sales tax?
+A: Yes. Invoices can run under the US sales tax regime, set per business.
+
+Q: What about Canada?
+A: Canadian dollar pricing works today. Tell us your province and we will confirm the tax set-up for you.
+
+Q: Which payment gateways work?
+A: Stripe and PayPal, at the counter, online and in a chat.
+
+---
+
+# Jewellery Software in Singapore and South and Southeast Asia
+URL: https://jwero.ai/jewellery-software-singapore
+
+Jewellery software for Singapore, Malaysia, Sri Lanka, Nepal and Bangladesh: local currency pricing, live gold rates by gram or tola, WhatsApp and AI in many languages, and hosting in your region.
+
+JWERO IN SOUTH AND SOUTHEAST ASIA
+
+## Jewellery software for South and Southeast Asia: your currency, your gold rate, one record.
+
+ For goldsmiths, retail chains and wholesalers in Singapore, Malaysia, Sri Lanka, Nepal and Bangladesh. Prices follow the gold rate in your currency, and every customer is answered on WhatsApp in their language.
+
+ Show me Jwero for my market 
+ See pricing 
+
+ BUILT FOR THIS MARKET
+
+## What a jeweller here needs, handled.
+
+## Local currency
+ Price, sell and invoice in your customer’s currency.
+
+## Gold by gram or tola
+ Live rates for your market reprice every channel.
+
+## Gold schemes and gold loans
+ Savings plans and loans on gold, collected and tracked on the same books.
+
+## WhatsApp first
+ Official WhatsApp with a shared inbox, catalogues at today’s rate and AI replies.
+
+## Many languages
+ AI chat, voice and calls in 14 languages, including English, Hindi, Bengali and Tamil.
+
+## Your region
+ Hosting in your region on request, or self-hosted with Enterprise.
+
+ COMPARE
+
+## Separate tools, or one system.
+
+ Separate tools Jwero 
+ Price when gold moves Typed on the board Every piece repriced 
+ Schemes and loans Registers On the customer record and the books 
+ Enquiries A personal phone One inbox, answered at any hour 
+ Stock A spreadsheet Every piece by weight and purity 
+ Data Wherever the tool keeps it Your region, or your own servers 
+
+ EVERY MODULE
+
+## The whole business on one record.
+
+## Counter and stock
+
+ Billing at the live rate, old gold exchange, every piece by weight and purity, ageing and dead stock.
+
+ POS → 
+
+## Customers and selling
+
+ WhatsApp, Instagram, an ecommerce website, video calls and a CRM that remembers every customer.
+
+ CRM → 
+
+## Schemes, loans and the workshop
+
+ Gold savings schemes, gold loans, manufacturing and karigar work, on the same books.
+
+ Every product → 
+
+## Selling gold in South or Southeast Asia?
+
+ Tell us your country and what you run; we will show Jwero set up for your market.
+
+ Chat or call with us 
+ Book a demo 
+
+ You message us first; we never message you uninvited. हिन्दी में बात करें → 
+
+ You message first; a Jwero specialist replies on WhatsApp in working hours. Prefer a call? Ask for a call back .
+
+ 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Which tax system will my invoices use?
+A: Jwero supports GST, VAT and sales tax regimes per business. Tell us your country and we will confirm the set-up for you.
+
+Q: Can I price in my own currency?
+A: Yes. Price, sell and invoice in your customer’s currency.
+
+Q: Does it support gold schemes?
+A: Yes. Enrolment, instalments collected automatically, maturity and redemption, on the customer record.
