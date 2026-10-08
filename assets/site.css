@@ -4502,7 +4502,7 @@ body.is-scrolled.on-panel .site-header .logo-wm-light, .on-dark .logo-wm-light {
 .jb-price-sm { font-size: 1.55rem; line-height: 1.15; }
 
 /* Currency: India-only and outside-India blocks */
-html[data-cur="usd"] [data-cur-only="inr"], html:not([data-cur="usd"]) [data-cur-only="usd"] { display: none !important; }
+html:not([data-cur="inr"]) [data-cur-only="inr"], html[data-cur="inr"] [data-cur-only="usd"] { display: none !important; }
 .cur-note { padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
 .cur-switch { display: inline-flex; gap: 4px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); font-size: .85rem; }
 .cur-switch button { border: 0; background: transparent; padding: 5px 12px; border-radius: 999px; cursor: pointer; font: inherit; color: var(--ink-2); }

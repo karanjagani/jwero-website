@@ -8519,7 +8519,7 @@ A: Ask whether the module drafts a priced reply from the catalogue at the live r
 # Jwero Pricing: Subscription, Managed or Enterprise
 URL: https://jwero.ai/pricing
 
-One plan with every module: ₹18,000 a month in India, $249 elsewhere, billed monthly. First month ₹3,600. Per-use services, WhatsApp, AI, calls, run on a prepaid wallet at published rates. Enterprise for groups and chains is a one-time licence to self-host.
+One plan with every module: ₹18,000 a month in India, $249, AED 899, £199 or €229 elsewhere, billed monthly. First month ₹3,600. Per-use services, WhatsApp, AI, calls, run on a prepaid wallet at published rates. Enterprise for groups and chains is a one-time licence to self-host.
 
 PRICING
 
@@ -8530,7 +8530,7 @@ PRICING
  Start for ₹3,600 
  Let Jwero handle it 
 
- ₹ India $ Outside India Run it yourself: first month ₹3,600, then ₹18,000 a month. Managed: no subscription, every tool included. Prices exclude taxes (GST in India).
+ ₹ INR AED £ GBP € EUR $ USD Run it yourself: first month ₹3,600, then ₹18,000 a month. Managed: no subscription, every tool included. Prices exclude taxes (GST in India).
 
  THREE WAYS TO BUY
 
@@ -8624,7 +8624,7 @@ PRICING
 
  The plan covers the whole platform. WhatsApp, SMS, AI and other per-use services are metered from your prepaid wallet at the rates below.
 
- Outside India: Jwero One is $249 a month , first month $49, with one location and one brand. For more locations, brands or registers, ask us for a quote in your currency .
+ Outside India: Jwero One is ₹18,000 a month , first month ₹3,600, with one location and one brand. For more locations, brands or registers, ask us for a quote in your currency .
 
  YOUR PRICE
 
@@ -110347,7 +110347,7 @@ Q: Where is my data hosted?
 A: In India by default, or in your region on request. Enterprise customers self-host on their own servers or cloud.
 
 Q: What does it cost outside India?
-A: Jwero One is $249 a month with every module, first month $49. Messages and calls are charged at your country’s rates.
+A: Jwero One is $249, AED 899, £199 or €229 a month with every module; the first month is $49, AED 179, £39 or €45. Messages and calls are charged at your country’s rates.
 
 ---
 

@@ -2,24 +2,32 @@
 // rupees; money inputs show dollars and read back rupees; figures in page text are converted for show.
 (function () {
   var c = null; try { c = localStorage.getItem('jw-cur'); } catch (e) {}
-  if (!c) { var tz = ''; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {} c = /Asia\/(Kolkata|Calcutta)/.test(tz) ? 'inr' : 'usd'; }
-  window.JW_CUR = c; window.JW_RATE = 85;
+  if (!c || !/^(inr|usd|aed|gbp|eur)$/.test(c)) {
+    var tz = ''; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+    c = /Asia\/(Kolkata|Calcutta)/.test(tz) ? 'inr'
+      : /Asia\/(Dubai|Muscat|Qatar|Bahrain|Riyadh|Kuwait)/.test(tz) ? 'aed'
+      : /Europe\/(London|Belfast|Guernsey|Jersey|Isle_of_Man)/.test(tz) ? 'gbp'
+      : /^Europe\/(Dublin|Paris|Berlin|Madrid|Rome|Amsterdam|Brussels|Vienna|Lisbon|Athens|Helsinki|Luxembourg|Monaco|Malta|Tallinn|Riga|Vilnius|Bratislava|Ljubljana|Zagreb|Nicosia|Andorra|San_Marino|Vatican)/.test(tz) ? 'eur' : 'usd';
+  }
+  window.JW_CUR = c;
+  window.JW_CURS = { inr: { r: 1, sym: '₹', loc: 'en-IN' }, usd: { r: 85, sym: '$', loc: 'en-US' }, aed: { r: 23, sym: 'AED ', loc: 'en-AE' }, gbp: { r: 107, sym: '£', loc: 'en-GB' }, eur: { r: 92, sym: '€', loc: 'en-IE' } };
+  window.JW_RATE = window.JW_CURS[c].r;
   document.documentElement.setAttribute('data-cur', c);
 })();
 function jwNice(d) { var a = Math.abs(d); var r = a >= 10000 ? 100 : a >= 1000 ? 10 : a >= 100 ? 5 : a >= 10 ? 1 : 0.1; return Math.round(d / r) * r; }
 function jwFromInr(n) {
-  n = +n || 0;
-  if (window.JW_CUR !== 'usd') return '₹' + Math.round(n).toLocaleString('en-IN');
-  var d = jwNice(n / window.JW_RATE); return '$' + (d < 10 ? d.toFixed(d % 1 ? 1 : 0) : Math.round(d).toLocaleString('en-US'));
+  n = +n || 0; var C = window.JW_CURS[window.JW_CUR];
+  if (window.JW_CUR === 'inr') return '₹' + Math.round(n).toLocaleString('en-IN');
+  var d = jwNice(n / C.r); return C.sym + (d < 10 ? d.toFixed(d % 1 ? 1 : 0) : Math.round(d).toLocaleString(C.loc));
 }
-// Money inputs: in dollars on screen, rupees to the calculator.
+// Money inputs: local currency on screen, rupees to the calculator.
 (function () {
-  if (window.JW_CUR !== 'usd') return;
+  if (window.JW_CUR === 'inr') return;
   var R = window.JW_RATE, desc = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
   [].forEach.call(document.querySelectorAll('label'), function (lb) {
     var inp = lb.querySelector('input[type="number"], input[type="range"]') || (lb.htmlFor && document.getElementById(lb.htmlFor));
     if (!inp || inp.closest('[data-inr-keep]') || !/₹/.test(lb.textContent)) return;
-    [].forEach.call(lb.childNodes, function (nd) { if (nd.nodeType === 3) nd.nodeValue = nd.nodeValue.replace(/₹/g, '$'); });
+    [].forEach.call(lb.childNodes, function (nd) { if (nd.nodeType === 3) nd.nodeValue = nd.nodeValue.replace(/₹/g, window.JW_CURS[window.JW_CUR].sym.trim()); });
     var shown = jwNice((+desc.get.call(inp) || 0) / R); desc.set.call(inp, shown);
     ['min', 'max', 'step'].forEach(function (a) { var v = inp.getAttribute(a); if (v && +v > 1) inp.setAttribute(a, a === 'step' ? Math.max(1, jwNice(+v / R)) : jwNice(+v / R)); });
     Object.defineProperty(inp, 'value', { configurable: true, get: function () { return String((+desc.get.call(inp) || 0) * R); }, set: function (v) { desc.set.call(inp, jwNice((+v || 0) / R)); } });
@@ -3059,8 +3067,7 @@ document.addEventListener('click', function (e) {
 
 // Currency: India sees ₹, everyone else $. Decided from the time zone, overridable with the switch.
 (function () {
-  var cur = null; try { cur = localStorage.getItem('jw-cur'); } catch (e) {}
-  if (!cur) { var tz = ''; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {} cur = /Asia\/(Kolkata|Calcutta)/.test(tz) ? 'inr' : 'usd'; }
+  var cur = window.JW_CUR || 'usd';
   function apply(c) {
     document.documentElement.setAttribute('data-cur', c);
     [].forEach.call(document.querySelectorAll('.cur'), function (el) { el.textContent = el.getAttribute('data-' + c) || el.textContent; });
@@ -3072,7 +3079,7 @@ document.addEventListener('click', function (e) {
 
 // Page text: ₹ figures shown in dollars outside India, except India-specific pages and kept blocks.
 (function () {
-  if (window.JW_CUR !== 'usd' || document.documentElement.getAttribute('data-region') === 'in') return;
+  if (window.JW_CUR === 'inr' || document.documentElement.getAttribute('data-region') === 'in') return;
   var RX = /₹\s?([\d,]+(?:\.\d+)?)(\s?(lakh|crore|L\b|Cr\b))?/g;
   function conv(t) { return t.replace(RX, function (m, num, sp, unit) { var v = +num.replace(/,/g, ''); if (unit) v *= /crore|Cr/.test(unit) ? 1e7 : 1e5; return jwFromInr(v); }); }
   function walk(root) {
@@ -3080,7 +3087,7 @@ document.addEventListener('click', function (e) {
     var list = []; while (w.nextNode()) list.push(w.currentNode);
     list.forEach(function (n) { n.nodeValue = conv(n.nodeValue); });
   }
-  [].forEach.call(document.querySelectorAll('.callc, .calc, [data-stackm]'), function (c) { if (c.querySelector('.cur-approx')) return; var p = document.createElement('p'); p.className = 'cta-note cur-approx'; p.setAttribute('data-inr-keep', ''); p.textContent = 'Amounts shown in US dollars, converted from Indian prices at about ₹85 to $1. Use your own figures.'; c.appendChild(p); });
+  [].forEach.call(document.querySelectorAll('.callc, .calc, [data-stackm]'), function (c) { if (c.querySelector('.cur-approx')) return; var p = document.createElement('p'); p.className = 'cta-note cur-approx'; p.setAttribute('data-inr-keep', ''); var C = window.JW_CURS[window.JW_CUR]; p.textContent = 'Amounts shown in ' + ({ usd: 'US dollars', aed: 'dirhams', gbp: 'pounds', eur: 'euros' })[window.JW_CUR] + ', converted from Indian prices at about ₹' + C.r + ' to ' + C.sym + '1. Use your own figures.'; c.appendChild(p); });
   var main = document.querySelector('main') || document.body; walk(main);
   var busy = false; new MutationObserver(function () { if (busy) return; busy = true; walk(main); busy = false; }).observe(main, { subtree: true, childList: true, characterData: true });
 })();

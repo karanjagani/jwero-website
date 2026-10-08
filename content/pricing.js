@@ -85,14 +85,17 @@ const OBJECTIONS = [
 const pricing = {
   slug: 'pricing',
   title: `Jwero Pricing: Subscription, Managed or Enterprise | Jwero`,
-  description: `One plan with every module: ${inr(PLAN.monthly)} a month in India, $249 elsewhere, billed monthly. First month ${inr(PLAN.firstMonth)}. Per-use services — WhatsApp, AI, calls — run on a prepaid wallet at published rates. Enterprise for groups and chains is a one-time licence to self-host.`,
+  description: `One plan with every module: ${inr(PLAN.monthly)} a month in India, $249, AED 899, £199 or €229 elsewhere, billed monthly. First month ${inr(PLAN.firstMonth)}. Per-use services — WhatsApp, AI, calls — run on a prepaid wallet at published rates. Enterprise for groups and chains is a one-time licence to self-host.`,
   breadcrumbs: [['Home', '/'], ['Pricing']],
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Jwero One', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
     url: 'https://jwero.ai/pricing',
     offers: [
       { '@type': 'Offer', name: 'Jwero One', price: String(PLAN.monthly), priceCurrency: 'INR', description: 'Per month in India, billed monthly, excluding taxes. First month ' + PLAN.firstMonth + ' INR.' },
-      { '@type': 'Offer', name: 'Jwero One (outside India)', price: '249', priceCurrency: 'USD', description: 'Per month outside India, billed monthly, excluding taxes. First month 49 USD.' },
+      { '@type': 'Offer', name: 'Jwero One (US dollars)', price: '249', priceCurrency: 'USD', description: 'Per month, billed monthly, excluding taxes. First month 49 USD.' },
+      { '@type': 'Offer', name: 'Jwero One (UAE dirhams)', price: '899', priceCurrency: 'AED', description: 'Per month, billed monthly, excluding VAT. First month 179 AED.' },
+      { '@type': 'Offer', name: 'Jwero One (pounds)', price: '199', priceCurrency: 'GBP', description: 'Per month, billed monthly, excluding VAT. First month 39 GBP.' },
+      { '@type': 'Offer', name: 'Jwero One (euros)', price: '229', priceCurrency: 'EUR', description: 'Per month, billed monthly, excluding VAT. First month 45 EUR.' },
     ],
   },
   faqs,
@@ -103,7 +106,7 @@ ${L.hero({
   sub: `Jwero One is the whole operating system — CRM, WhatsApp, catalogues, the counter, the workshop, schemes, the books and the AI workforce — for ${inr(PLAN.monthly)} a month, billed monthly. No per-module price, no per-seat price. Your first month is ${inr(PLAN.firstMonth)}.`,
   primary: { href: 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing', label: `Start for ${inr(PLAN.firstMonth)}` },
   secondary: { href: '#', label: 'Let Jwero handle it', wa: 'handle' },
-  note: `<span class="cur-switch" role="group" aria-label="Currency"><button type="button" data-cur-pick="inr">₹ India</button><button type="button" data-cur-pick="usd">$ Outside India</button></span><br>Run it yourself: first month ${inr(PLAN.firstMonth)}, then ${inr(PLAN.monthly)} a month. Managed: no subscription, every tool included. Prices exclude taxes (GST in India).`,
+  note: `<span class="cur-switch" role="group" aria-label="Currency"><button type="button" data-cur-pick="inr">₹ INR</button><button type="button" data-cur-pick="aed">AED</button><button type="button" data-cur-pick="gbp">£ GBP</button><button type="button" data-cur-pick="eur">€ EUR</button><button type="button" data-cur-pick="usd">$ USD</button></span><br>Run it yourself: first month ${inr(PLAN.firstMonth)}, then ${inr(PLAN.monthly)} a month. Managed: no subscription, every tool included. Prices exclude taxes (GST in India).`,
 })}
 
 
@@ -133,7 +136,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `<div data-cur-only="usd" class="cur-note"><p><b>Outside India:</b> Jwero One is <b>$249 a month</b>, first month $49, with one location and one brand. For more locations, brands or registers, <a href="#" data-wa="pricing">ask us for a quote in your currency</a>.</p></div><div data-cur-only="inr">${L.sectionHead('YOUR PRICE', 'Work out your own number.', 'One location and one brand are included. Add what you run.')}
+  `<div data-cur-only="usd" class="cur-note"><p><b>Outside India:</b> Jwero One is <b>₹18,000 a month</b>, first month ₹3,600, with one location and one brand. For more locations, brands or registers, <a href="#" data-wa="pricing">ask us for a quote in your currency</a>.</p></div><div data-cur-only="inr">${L.sectionHead('YOUR PRICE', 'Work out your own number.', 'One location and one brand are included. Add what you run.')}
   <div class="calc" id="calc-plan">
     <div class="calc-panel">
       <label for="pc-loc">Locations (stores, branches, workshops) <span class="calc-val" id="pc-loc-out"></span></label>
