@@ -1,0 +1,163 @@
+# Jwero. Search engines and AI answer engines may read and cite this site.
+# Crawlers that collect text to train AI models may not. See the Terms of Use.
+# Use this file only if a physical robots.txt already exists in the web root; otherwise the plugin serves the same rules.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+User-agent: *
+Disallow: /.well-known/bait/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /?s=
+Disallow: /*?replytocom=
+Disallow: /trackback/
+Allow: /wp-admin/admin-ajax.php
+Allow: /
+
+User-agent: OAI-SearchBot
+Disallow: /.well-known/bait/
+Disallow: /wp-json/
+Allow: /
+
+User-agent: ChatGPT-User
+Disallow: /.well-known/bait/
+Disallow: /wp-json/
+Allow: /
+
+User-agent: PerplexityBot
+Disallow: /.well-known/bait/
+Disallow: /wp-json/
+Allow: /
+
+User-agent: Perplexity-User
+Disallow: /.well-known/bait/
+Disallow: /wp-json/
+Allow: /
+
+User-agent: Claude-SearchBot
+Disallow: /.well-known/bait/
+Disallow: /wp-json/
+Allow: /
+
+User-agent: Claude-User
+Disallow: /.well-known/bait/
+Disallow: /wp-json/
+Allow: /
+
+User-agent: DuckAssistBot
+Disallow: /.well-known/bait/
+Disallow: /wp-json/
+Allow: /
+
+User-agent: YouBot
+Disallow: /.well-known/bait/
+Disallow: /wp-json/
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Meta-ExternalFetcher
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: cohere-training-data-crawler
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+User-agent: Ai2Bot-Dolma
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: img2dataset
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+User-agent: webzio-extended
+Disallow: /
+
+User-agent: PanguBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: VelenPublicWebCrawler
+Disallow: /
+
+User-agent: Kangaroo Bot
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
+
+User-agent: Crawlspace
+Disallow: /
+
+User-agent: Brightbot
+Disallow: /
+
+User-agent: SemrushBot-OCOB
+Disallow: /
+
+User-agent: Sidetrade indexer bot
+Disallow: /
+
+User-agent: iaskspider
+Disallow: /
+
+User-agent: MistralAI-User
+Disallow: /
+
+Sitemap: https://www.jwero.ai/sitemap_index.xml
