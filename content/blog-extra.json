@@ -12,7 +12,7 @@
   {"q": "How do I track missed scheme instalments?", "a": "Mark instalments overdue automatically and give the desk a list of who to call. In Jwero overdue instalments are marked by the system; reminders to customers are sent through a journey you set up."}
  ],
  "blog/jewellery-software-and-tally": [
-  {"q": "Does Jwero auto-post invoices to Tally?", "a": "Not today. Jwero connects to Tally, maps your ledgers, imports customer and item masters and checks records against Tally. Sales and payment vouchers are still entered in Tally."},
+  {"q": "Does Jwero auto-post invoices to Tally?", "a": "Yes. Bills, returns and payments raised in Jwero post to Tally automatically as vouchers. Jwero also maps your ledgers, imports customer and item masters and checks records against Tally."},
   {"q": "Can my accountant keep working in Tally?", "a": "Yes. Tally stays the ledger of record and the accountant's workflow does not change. Jwero runs the counter, stock, customers and workshop alongside it."}
  ],
  "blog/gold-loss-wastage-control-jewellery-manufacturing": [
