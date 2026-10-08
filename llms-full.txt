@@ -8591,7 +8591,8 @@ PRICING
  Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
  Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
  AI on your terms: run models locally, or connect the models you choose.
- No dependence on a vendor. Our outages, price changes and roadmap stop being your risk.
+ No platform risk. A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk.
+ No vendors to coordinate. One system and one owner of the fix, not ten vendors pointing at each other when something breaks.
  
  Talk to us 
  You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.
@@ -15461,9 +15462,13 @@ ENTERPRISE
 
  Your access rules, backups, audits and retention, with roles per branch and team, SSO, and every action logged and stoppable.
 
-## No vendor dependence
+## No platform risk
 
- Our outages, price changes and roadmap stop being your risk. The system keeps running on your infrastructure.
+ A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk. The system keeps running on your infrastructure, on your schedule.
+
+## No vendors to coordinate
+
+ No ten tools from ten vendors pointing at each other when something breaks. One system, one owner of the fix, and one optional support contract.
 
  THE BUYING-COMMITTEE KIT
 
@@ -108018,7 +108023,8 @@ Jewellery Business as a Service
  Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
  Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
  AI on your terms: run models locally, or connect the models you choose.
- No dependence on a vendor. Our outages, price changes and roadmap stop being your risk.
+ No platform risk. A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk.
+ No vendors to coordinate. One system and one owner of the fix, not ten vendors pointing at each other when something breaks.
  
  Talk to us 
  You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.
@@ -108442,7 +108448,8 @@ Why Jwero
  Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
  Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
  AI on your terms: run models locally, or connect the models you choose.
- No dependence on a vendor. Our outages, price changes and roadmap stop being your risk.
+ No platform risk. A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk.
+ No vendors to coordinate. One system and one owner of the fix, not ten vendors pointing at each other when something breaks.
  
  Talk to us 
  You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.
@@ -108713,7 +108720,8 @@ How it works
  Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
  Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
  AI on your terms: run models locally, or connect the models you choose.
- No dependence on a vendor. Our outages, price changes and roadmap stop being your risk.
+ No platform risk. A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk.
+ No vendors to coordinate. One system and one owner of the fix, not ten vendors pointing at each other when something breaks.
  
  Talk to us 
  You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.
@@ -109028,7 +109036,8 @@ AI + experts
  Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
  Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
  AI on your terms: run models locally, or connect the models you choose.
- No dependence on a vendor. Our outages, price changes and roadmap stop being your risk.
+ No platform risk. A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk.
+ No vendors to coordinate. One system and one owner of the fix, not ten vendors pointing at each other when something breaks.
  
  Talk to us 
  You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.
@@ -109355,7 +109364,8 @@ What we handle
  Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
  Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
  AI on your terms: run models locally, or connect the models you choose.
- No dependence on a vendor. Our outages, price changes and roadmap stop being your risk.
+ No platform risk. A hosted platform’s downtime, price rises, policy changes and shutdowns stop being your risk.
+ No vendors to coordinate. One system and one owner of the fix, not ten vendors pointing at each other when something breaks.
  
  Talk to us 
  You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.
