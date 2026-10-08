@@ -53,7 +53,8 @@ const RATES = {
 };
 const families = Object.keys(RATES);
 const rateCard = `
-<div class="rates" data-rates data-inr-keep>
+<div class="rates-out cur-note" data-cur-only="usd"><p><b>Usage rates for your country.</b> Messages, calls and AI are charged at your country’s Meta and carrier rates, from a prepaid balance. <a href="#" data-wa="pricing">Ask us for your rate card</a> and we will send it on WhatsApp.</p></div>
+<div class="rates" data-rates data-inr-keep data-cur-only="inr">
   <div class="rates-tabs" role="tablist" aria-label="Rate families">${families.map((f, i) => `<button type="button" role="tab" aria-selected="${i === 0}" data-rate-tab="${i}">${f}</button>`).join('')}</div>
   ${families.map((f, i) => `
   <div class="rates-panel${i === 0 ? ' is-on' : ''}" data-rate-panel="${i}" role="tabpanel">
@@ -85,7 +86,7 @@ const OBJECTIONS = [
 const pricing = {
   slug: 'pricing',
   title: `Jwero Pricing: Subscription, Managed or Enterprise | Jwero`,
-  description: `One plan with every module: ${inr(PLAN.monthly)} a month in India, $249, AED 899, SAR 929, QAR 909, £199 or €229 elsewhere, billed monthly. First month ${inr(PLAN.firstMonth)}. Per-use services — WhatsApp, AI, calls — run on a prepaid wallet at published rates. Enterprise for groups and chains is a one-time licence to self-host.`,
+  description: `One plan with every module: ${inr(PLAN.monthly)} a month in India, priced in your local currency elsewhere, billed monthly. First month ${inr(PLAN.firstMonth)}. Per-use services — WhatsApp, AI, calls — run on a prepaid wallet at published rates. Enterprise for groups and chains is a one-time licence to self-host.`,
   breadcrumbs: [['Home', '/'], ['Pricing']],
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Jwero One', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
@@ -108,7 +109,7 @@ ${L.hero({
   sub: `Jwero One is the whole operating system — CRM, WhatsApp, catalogues, the counter, the workshop, schemes, the books and the AI workforce — for ${inr(PLAN.monthly)} a month, billed monthly. No per-module price, no per-seat price. Your first month is ${inr(PLAN.firstMonth)}.`,
   primary: { href: 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing', label: `Start for ${inr(PLAN.firstMonth)}` },
   secondary: { href: '#', label: 'Let Jwero handle it', wa: 'handle' },
-  note: `<span class="cur-switch" role="group" aria-label="Currency"><button type="button" data-cur-pick="inr">₹ INR</button><button type="button" data-cur-pick="aed">AED</button><button type="button" data-cur-pick="sar">SAR</button><button type="button" data-cur-pick="qar">QAR</button><button type="button" data-cur-pick="gbp">£ GBP</button><button type="button" data-cur-pick="eur">€ EUR</button><button type="button" data-cur-pick="usd">$ USD</button></span><br>Run it yourself: first month ${inr(PLAN.firstMonth)}, then ${inr(PLAN.monthly)} a month. Managed: no subscription, every tool included. Prices exclude taxes (GST in India).`,
+  note: `Run it yourself: first month ${inr(PLAN.firstMonth)}, then ${inr(PLAN.monthly)} a month. Managed: no subscription, every tool included. Prices are shown in your local currency and exclude taxes.`,
 })}
 
 
