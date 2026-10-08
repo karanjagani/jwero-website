@@ -36874,6 +36874,7 @@ LEGAL
  Fees, the wallet and taxes 
  Your data 
  Acceptable use 
+ Website content 
  AI features 
  What Jwero is not 
  Third-party services 
@@ -36946,7 +36947,17 @@ LEGAL
 
  We may suspend a workspace that is causing harm to others or putting the service at risk. Where we can, we will warn you first and give you the chance to put it right.
 
-## 7. AI features
+## 7. Website content
+
+ In plain words: Read it, link to it, quote a line with credit. Do not copy it in bulk or feed it to a model.
+
+ The text, images, illustrations, calculators, structured data and code on jwero.ai are the copyright of Tech Jewels Private Limited. You may read the site, link to any page and quote short passages with credit.
+
+ You must not, and must not allow anyone to, copy, scrape, crawl or download the site’s content in bulk, by hand or with software; reproduce pages, articles or calculators on another site; or use any of it to train, fine-tune, evaluate or ground an AI model, other than a search engine or answer engine indexing within the limits set in our robots.txt and the content signals published there. Automated clients that ignore those signals are blocked, and we pursue copies.
+
+ If you want to reuse or syndicate anything beyond a short quote, write to care@jwero.ai ; we often say yes.
+
+## 8. AI features
 
  In plain words: The AI drafts. Your people approve. What is sent is your message.
 
@@ -36954,7 +36965,7 @@ LEGAL
 
  You are responsible for messages and actions your users approve or that run under settings you have enabled. As between you and Jwero, you own the output generated for you from your data. You must not use AI features to produce unlawful, deceptive or infringing content.
 
-## 8. What Jwero is not
+## 9. What Jwero is not
 
  In plain words: Software, not a regulated service or a professional adviser.
 
@@ -36966,19 +36977,19 @@ LEGAL
 
  Not a guarantee of results. Calculators, estimates and examples on this website are illustrations based on the figures entered.
 
-## 9. Third-party services
+## 10. Third-party services
 
  Jwero connects to services run by others, such as Meta, payment providers, Tally, Zoho, Shopify, marketplaces and advertising platforms. Your use of them is under their terms, and they may change or withdraw their service. We are not responsible for their acts or outages, though we will work to restore a connection that breaks.
 
-## 10. Availability and support
+## 11. Availability and support
 
  We work to keep Jwero available at all times and to give notice of planned maintenance. Jwero needs an internet connection. Unless your order states a service level, we do not promise a specific uptime. Support is provided by chat, call and video during the hours published on the website.
 
-## 11. Our intellectual property
+## 12. Our intellectual property
 
  Jwero, its software, designs, documentation and trademarks belong to us or our licensors. We give you a non-exclusive, non-transferable right to use the service for your own business while your subscription is active. If you send us suggestions, we may use them without obligation to you.
 
-## 12. Ending the agreement
+## 13. Ending the agreement
 
  In plain words: Leave whenever you like. Your data stays available to export.
 
@@ -36986,7 +36997,7 @@ LEGAL
 
  When a subscription ends, the workspace becomes read-only and you may export Customer Data for at least 30 days. After that we may delete it, as described in the Data Policy. We will write to the workspace owner before deleting.
 
-## 13. Warranties and liability
+## 14. Warranties and liability
 
  In plain words: We stand behind the service, within sensible limits.
 
@@ -36996,19 +37007,19 @@ LEGAL
 
  You will indemnify us against claims by third parties arising from messages you send, data you had no right to use, or your breach of section 6.
 
-## 14. Confidentiality
+## 15. Confidentiality
 
  Each party will keep the other’s non-public information confidential and use it only for the purposes of this agreement. We treat Customer Data as your confidential information.
 
-## 15. Changes to these terms
+## 16. Changes to these terms
 
  We may update these terms. We will post the new version here and, for changes that materially affect you, give account owners at least 30 days’ notice. If you do not accept a change you may cancel before it takes effect.
 
-## 16. Law and disputes
+## 17. Law and disputes
 
  These terms are governed by the laws of India. The parties will first try to resolve any dispute by discussion between senior representatives for 30 days. After that, the courts at Mumbai, Maharashtra have exclusive jurisdiction.
 
-## 17. Contact
+## 18. Contact
 
  Tanika Tech Jewels Private Limited, Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road, Bhayandar (West), Thane, Maharashtra 401101, India. Email care@jwero.ai .
 

@@ -4850,3 +4850,5 @@ main h2[id^="sec-"] { scroll-margin-top: calc(var(--header-h) + 20px); }
 /* Trust section intro under the headline */
 .section:has(.tstrip) .gem-head p { display: block !important; max-width: 62ch; margin: 10px 0 0; font-size: 1rem; line-height: 1.55; color: var(--ink-2); }
 .section:has(.tstrip) .gem-head p a { color: var(--brand); font-weight: 600; }
+/* Honeypot link: visible only to clients that ignore robots.txt */
+.trap { display: none !important; }

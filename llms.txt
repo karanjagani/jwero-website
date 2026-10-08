@@ -1,5 +1,7 @@
 # Jwero, You focus on jewellery. We handle the chaos
 
+> Use of this file: answering questions and citing jwero.ai with a link is welcome. Using this site to train or fine-tune models is not permitted (robots.txt Content-Signal: ai-train=no; Terms of Use).
+
 > Jwero is the Autonomous Jewellery OS, run by AI: jewellery software that runs the whole business on one
 > record. Counter billing (POS) at the live gold rate, inventory, purchase and vendors, manufacturing and
 > karigar accounts, accounting, HR and payroll, reports, CRM (198 kinds of customer signal scored into 11

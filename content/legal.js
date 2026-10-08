@@ -188,6 +188,10 @@ const terms = doc({
       <li>use automated means to extract data from the service other than through the export tools and connections we provide.</li>
     </ul>
     <p>We may suspend a workspace that is causing harm to others or putting the service at risk. Where we can, we will warn you first and give you the chance to put it right.</p>`],
+    ['Website content', 'Read it, link to it, quote a line with credit. Do not copy it in bulk or feed it to a model.', `
+    <p>The text, images, illustrations, calculators, structured data and code on jwero.ai are the copyright of Tech Jewels Private Limited. You may read the site, link to any page and quote short passages with credit.</p>
+    <p>You must not, and must not allow anyone to, copy, scrape, crawl or download the site’s content in bulk, by hand or with software; reproduce pages, articles or calculators on another site; or use any of it to train, fine-tune, evaluate or ground an AI model, other than a search engine or answer engine indexing within the limits set in our robots.txt and the content signals published there. Automated clients that ignore those signals are blocked, and we pursue copies.</p>
+    <p>If you want to reuse or syndicate anything beyond a short quote, write to <a href="mailto:care@jwero.ai">care@jwero.ai</a>; we often say yes.</p>`],
     ['AI features', 'The AI drafts. Your people approve. What is sent is your message.', `
     <p>Jwero includes AI that drafts replies, content, images, reports and suggested actions. AI output can be wrong or incomplete and should be checked. By default every AI-drafted action waits for a person’s approval. You may allow specific kinds of action to run without approval, within limits you set, and you can stop AI activity at any time.</p>
     <p>You are responsible for messages and actions your users approve or that run under settings you have enabled. As between you and Jwero, you own the output generated for you from your data. You must not use AI features to produce unlawful, deceptive or infringing content.</p>`],

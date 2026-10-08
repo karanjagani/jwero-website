@@ -324,7 +324,8 @@ function footerHTML() {
     </div>
     <div class="f-proof">ISO/IEC 27001 certified · Penetration tested · Every customer on one record · AI that asks before it sends · Chat and calls in 14 languages · Works with Tally, Zoho Books, Shopify and WooCommerce · Official WhatsApp Business Platform · Your data, exportable any time</div>
     <div class="f-bottom">
-      <p>© <span data-year></span> Jwero. All rights reserved.</p>
+      <p>© <span data-year></span> Jwero. All rights reserved. Text, images, calculators and code are Jwero’s copyright; no bulk copying or AI training without written permission.</p>
+      <a class="trap" href="/.well-known/bait/" rel="nofollow" tabindex="-1" aria-hidden="true">Index</a>
       <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank">${l}</a>`).join('')}<a href="#" data-share="Thought of you. Jwero takes the marketing, technology and follow-up chaos off a jeweller:">Refer a jeweller, save 10%</a><a href="mailto:care@jwero.ai">care@jwero.ai</a><a href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=footer" rel="noopener">Log in to Jwero</a></p>
       <p>This site runs on Jwero — the chat button is the product.</p>
     </div>
@@ -1663,7 +1664,7 @@ function layout(page) {
     }
     schemas.push(page.schema);
   }
-  const robotsMeta = page.noindex ? `<meta name="robots" content="noindex,follow">` : '';
+  const robotsMeta = (page.noindex ? `<meta name="robots" content="noindex,follow">` : '') + `<meta name="robots" content="noai, noimageai"><meta name="tdm-reservation" content="1">`;
   // Tracking: set the IDs in ANALYTICS (or env JW_GTM / JW_GA4 / JW_META) and the snippets render on every page.
   const A = { gtm: process.env.JW_GTM || ANALYTICS.gtm, ga4: process.env.JW_GA4 || ANALYTICS.ga4, meta: process.env.JW_META || ANALYTICS.meta };
   const analyticsHead = [
@@ -1825,23 +1826,33 @@ ${require('./lib').section(`
     `# Jwero — ${TAGLINE}\n\n${ORG_DESCRIPTION}\n\n` +
     pages.filter((p) => !p.noindex).map((p) => `---\n\n# ${p.title.replace(/ \| Jwero$/, '')}\nURL: ${SITE}/${p.slug === 'index' ? '' : p.slug}\n\n${p.description}\n\n${strip(p.body)}\n${(p.faqs || []).map((f) => `\nQ: ${f.q.replace(/<[^>]+>/g, '')}\nA: ${f.a.replace(/<[^>]+>/g, '')}`).join('\n')}`).join('\n\n') + '\n');
 
-  // robots — AI crawlers explicitly welcome (GEO policy).
+  // robots.txt (2026-10-08): search engines and AI answer engines may read and
+  // cite; crawlers that collect text to train models may not. Content-Signal
+  // lines state the same for crawlers that honour them. /.well-known/bait is a
+  // honeypot: only clients that ignore this file follow the hidden link to it.
+  const AI_TRAIN = ['GPTBot', 'ClaudeBot', 'anthropic-ai', 'Claude-Web', 'CCBot', 'Google-Extended', 'Bytespider', 'Applebot-Extended', 'meta-externalagent', 'Meta-ExternalAgent', 'FacebookBot', 'Amazonbot', 'cohere-ai', 'cohere-training-data-crawler', 'AI2Bot', 'Ai2Bot-Dolma', 'Diffbot', 'ImagesiftBot', 'img2dataset', 'omgili', 'omgilibot', 'webzio-extended', 'PanguBot', 'PetalBot', 'Timpibot', 'VelenPublicWebCrawler', 'Kangaroo Bot', 'Scrapy', 'Crawlspace', 'Brightbot', 'SemrushBot-OCOB', 'Sidetrade indexer bot', 'iaskspider', 'MistralAI-User', 'Meta-ExternalFetcher'];
+  const AI_ANSWER = ['OAI-SearchBot', 'ChatGPT-User', 'PerplexityBot', 'Perplexity-User', 'Claude-SearchBot', 'Claude-User', 'DuckAssistBot', 'YouBot'];
   fs.writeFileSync(path.join(DIST, 'robots.txt'),
-`User-agent: *
+`# Jwero. Search engines and AI answer engines may read and cite this site.
+# Crawlers that collect text to train AI models may not. See /legal/terms.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+User-agent: *
 Allow: /
-User-agent: GPTBot
-Allow: /
-User-agent: ClaudeBot
-Allow: /
-User-agent: PerplexityBot
-Allow: /
-User-agent: Google-Extended
-Allow: /
+Disallow: /.well-known/bait/
+Disallow: /search/
+
+${AI_ANSWER.map((u) => `User-agent: ${u}\nAllow: /\nDisallow: /.well-known/bait/`).join('\n\n')}
+
+${AI_TRAIN.map((u) => `User-agent: ${u}\nDisallow: /`).join('\n\n')}
+
 Sitemap: ${SITE}/sitemap.xml
 `);
   // llms.txt — curated machine-readable truth (GEO/AIO).
   fs.writeFileSync(path.join(DIST, 'llms.txt'),
 `# Jwero — ${TAGLINE}
+
+> Use of this file: answering questions and citing jwero.ai with a link is welcome. Using this site to train or fine-tune models is not permitted (robots.txt Content-Signal: ai-train=no; Terms of Use).
 
 > Jwero is the Autonomous Jewellery OS, run by AI: jewellery software that runs the whole business on one
 > record. Counter billing (POS) at the live gold rate, inventory, purchase and vendors, manufacturing and

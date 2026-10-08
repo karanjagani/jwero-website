@@ -1,11 +1,147 @@
+# Jwero. Search engines and AI answer engines may read and cite this site.
+# Crawlers that collect text to train AI models may not. See /legal/terms.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
 User-agent: *
 Allow: /
-User-agent: GPTBot
+Disallow: /.well-known/bait/
+Disallow: /search/
+
+User-agent: OAI-SearchBot
 Allow: /
-User-agent: ClaudeBot
+Disallow: /.well-known/bait/
+
+User-agent: ChatGPT-User
 Allow: /
+Disallow: /.well-known/bait/
+
 User-agent: PerplexityBot
 Allow: /
-User-agent: Google-Extended
+Disallow: /.well-known/bait/
+
+User-agent: Perplexity-User
 Allow: /
+Disallow: /.well-known/bait/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /.well-known/bait/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /.well-known/bait/
+
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /.well-known/bait/
+
+User-agent: YouBot
+Allow: /
+Disallow: /.well-known/bait/
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: cohere-training-data-crawler
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+User-agent: Ai2Bot-Dolma
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: img2dataset
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+User-agent: webzio-extended
+Disallow: /
+
+User-agent: PanguBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: VelenPublicWebCrawler
+Disallow: /
+
+User-agent: Kangaroo Bot
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
+
+User-agent: Crawlspace
+Disallow: /
+
+User-agent: Brightbot
+Disallow: /
+
+User-agent: SemrushBot-OCOB
+Disallow: /
+
+User-agent: Sidetrade indexer bot
+Disallow: /
+
+User-agent: iaskspider
+Disallow: /
+
+User-agent: MistralAI-User
+Disallow: /
+
+User-agent: Meta-ExternalFetcher
+Disallow: /
+
 Sitemap: https://jwero.ai/sitemap.xml
