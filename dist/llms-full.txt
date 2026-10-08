@@ -8595,22 +8595,22 @@ PRICING
 
  03 · Chains, brands and groups
 
-## The platform you would have built in-house
+## Your own Jwero, on your own servers
 
  For many showrooms, brands or companies.
 
- Custom
+ One-time licence
 
- Your terms, rolled out branch by branch, with a pilot first and the season left alone.
+ No recurring fee to Jwero. Support is optional. Rolled out branch by branch, with a pilot first and the season left alone.
 
- The software you dreamed of building in-house, ready, with your rules, your prices and your branches on one record.
- One bill for the platform, instead of a stack of software contracts across stores and teams.
- Your data stays in your control. Your own database, roles per branch and per team, so customers and prices do not walk out in someone’s phone.
- Security and privacy on your terms: single sign-on, reviews and contracts your way, a dedicated success manager.
- Fewer unknowns. Head office sees every store; every store sees its own; every AI action is logged and can be stopped.
+ The platform you would have built in-house, ready, with every module, your rules, your prices and your branches on one record.
+ Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
+ Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
+ AI on your terms: run models locally, or connect the models you choose.
+ No dependence on a vendor. Our outages, price changes and roadmap stop being your risk.
  
  Talk to us 
- Run it, have it run, or mix by function.
+ You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.
 
  Onboarding in a day · Refer a jeweller, save 10%
 
@@ -11994,7 +11994,7 @@ Q: Does Jwero store card details?
 A: No. Card and bank details are entered with the payment provider. Payments run through PCI DSS certified providers and card data does not pass through Jwero.
 
 Q: Where is my data stored?
-A: In a database that belongs to your business alone, hosted on Microsoft Azure in India.
+A: In a database that belongs to your business alone, hosted on Microsoft Azure in India. Enterprise customers can self-host on their own premises or cloud, where Jwero has no access.
 
 ---
 
@@ -12930,7 +12930,7 @@ COMPARE · JWERO VS JEWELACC
  No named hardware partner yet, and no RFID support 
  Yes, a named strength 
  Deployment flexibility (cloud / on-premise / hybrid) 
- Cloud only 
+ Cloud (Jwero One), or self-hosted on your premises or your own cloud (Enterprise) 
  Cloud, on-premise and hybrid offered 
  Customer memory across channels 
  Yes, one record, 198 signal types, 11 explainable scores 
@@ -15422,7 +15422,7 @@ CONTACT
 # Enterprise, Multi-store, Wholesale & Manufacturing
 URL: https://jwero.ai/enterprise
 
-For chains, multi-brand groups and manufacturers: enterprise SSO/SCIM, role templates, configurable backups, a buying-committee kit, and a staged rollout plan.
+For chains, multi-brand groups and manufacturers: Jwero on your own servers or cloud with a one-time licence and no recurring fee, every module, local or chosen AI models, SSO/SCIM, and a staged rollout.
 
 ENTERPRISE
 
@@ -15432,6 +15432,36 @@ ENTERPRISE
 
  Talk to a specialist 
  Or start with a chat 
+
+ YOUR OWN JWERO
+
+## On your servers, under your policies, paid for once.
+
+ Enterprise runs on your premises or in your own cloud. Jwero has no access to your data and charges no recurring fee.
+
+## Hosted where you decide
+
+ On your own premises or in the cloud account you choose, in the region you choose. Your data never sits with Jwero.
+
+## One-time licence
+
+ Pay once for the platform. Support and updates are an optional contract, not a condition.
+
+## Every module
+
+ Counter, stock, CRM, WhatsApp, schemes, girvi, manufacturing, AI and the rest all run self-hosted. A few, such as WhatsApp and AI calling, need an internet connection to reach their channels.
+
+## AI on your terms
+
+ Run AI models locally, or connect the models and providers you choose under your own contracts.
+
+## Your policies, end to end
+
+ Your access rules, backups, audits and retention, with roles per branch and team, SSO, and every action logged and stoppable.
+
+## No vendor dependence
+
+ Our outages, price changes and roadmap stop being your risk. The system keeps running on your infrastructure.
 
  THE BUYING-COMMITTEE KIT
 
@@ -15492,7 +15522,7 @@ ENTERPRISE
 
  Here's what's on the public roadmap, not the product, said plainly, before you find out the hard way.
 
- No data-residency or multi-region hosting choice, single-region hosting today. Physical per-tenant database isolation is real and strong, but it is a separate claim from residency, and residency-on-request isn’t available yet.
+ On the hosted Jwero One plan, data sits in one region (India). Enterprise customers who need another location self-host it where they choose. Physical per-tenant database isolation is real and strong on both. (Earlier note: residency-on-request isn’t available yet.
  No organisation-mandated MFA policy, multi-factor authentication exists and is available to every user, but it’s opt-in per user today, not something an admin can force org-wide.
  No franchise-specific administration layer (royalty tracking, franchisor oversight of independently-owned franchisees), genuine multi-store/multi-brand/multi-branch administration is real; franchise-specific tooling on top of it is not.
  Formal certifications: ISO 27001 and SOC 2 are in progress, not certified, and are published only when earned, same as stated on the security page.
@@ -15529,6 +15559,18 @@ ENTERPRISE
  You message first; a Jwero specialist replies on WhatsApp in working hours. Prefer a call? Ask for a call back .
 
  198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime 198 customer signals · 11 live scores, each with a why 41 ready segments · 300+ ready journeys 240+ governed AI actions AI calls in 14 languages Kill switch at five scopes Tally & Zoho Books bridges built in Official WhatsApp Business API Your data, exportable anytime
+
+Q: Can we host Jwero on our own servers?
+A: Yes. Enterprise runs on your premises or in your own cloud, with a one-time licence and no recurring fee to Jwero. Jwero has no access to your data.
+
+Q: Do all modules work self-hosted?
+A: Yes, every module. A few, such as WhatsApp messaging and AI calling, need an internet connection to reach their channels.
+
+Q: How does AI work on a self-hosted install?
+A: Run models locally on your infrastructure, or connect the AI models and providers you choose under your own contracts.
+
+Q: What do we pay after the licence?
+A: Nothing recurring to Jwero. Support is an optional contract. You pay for your own hosting and for services you connect, such as WhatsApp messaging and telephony.
 
 Q: What’s different about the enterprise track?
 A: A named specialist instead of a self-serve funnel, a buying-committee kit addressed to each stakeholder, and a staged pilot-branch rollout with exit criteria you set.
@@ -107962,22 +108004,22 @@ Jewellery Business as a Service
 
  03 · Chains, brands and groups
 
-## The platform you would have built in-house
+## Your own Jwero, on your own servers
 
  For many showrooms, brands or companies.
 
- Custom
+ One-time licence
 
- Your terms, rolled out branch by branch, with a pilot first and the season left alone.
+ No recurring fee to Jwero. Support is optional. Rolled out branch by branch, with a pilot first and the season left alone.
 
- The software you dreamed of building in-house, ready, with your rules, your prices and your branches on one record.
- One bill for the platform, instead of a stack of software contracts across stores and teams.
- Your data stays in your control. Your own database, roles per branch and per team, so customers and prices do not walk out in someone’s phone.
- Security and privacy on your terms: single sign-on, reviews and contracts your way, a dedicated success manager.
- Fewer unknowns. Head office sees every store; every store sees its own; every AI action is logged and can be stopped.
+ The platform you would have built in-house, ready, with every module, your rules, your prices and your branches on one record.
+ Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
+ Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
+ AI on your terms: run models locally, or connect the models you choose.
+ No dependence on a vendor. Our outages, price changes and roadmap stop being your risk.
  
  Talk to us 
- Run it, have it run, or mix by function.
+ You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.
 
  Onboarding in a day · Refer a jeweller, save 10%
 
@@ -108386,22 +108428,22 @@ Why Jwero
 
  03 · Chains, brands and groups
 
-## The platform you would have built in-house
+## Your own Jwero, on your own servers
 
  For many showrooms, brands or companies.
 
- Custom
+ One-time licence
 
- Your terms, rolled out branch by branch, with a pilot first and the season left alone.
+ No recurring fee to Jwero. Support is optional. Rolled out branch by branch, with a pilot first and the season left alone.
 
- The software you dreamed of building in-house, ready, with your rules, your prices and your branches on one record.
- One bill for the platform, instead of a stack of software contracts across stores and teams.
- Your data stays in your control. Your own database, roles per branch and per team, so customers and prices do not walk out in someone’s phone.
- Security and privacy on your terms: single sign-on, reviews and contracts your way, a dedicated success manager.
- Fewer unknowns. Head office sees every store; every store sees its own; every AI action is logged and can be stopped.
+ The platform you would have built in-house, ready, with every module, your rules, your prices and your branches on one record.
+ Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
+ Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
+ AI on your terms: run models locally, or connect the models you choose.
+ No dependence on a vendor. Our outages, price changes and roadmap stop being your risk.
  
  Talk to us 
- Run it, have it run, or mix by function.
+ You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.
 
  Onboarding in a day · Refer a jeweller, save 10%
 
@@ -108657,22 +108699,22 @@ How it works
 
  03 · Chains, brands and groups
 
-## The platform you would have built in-house
+## Your own Jwero, on your own servers
 
  For many showrooms, brands or companies.
 
- Custom
+ One-time licence
 
- Your terms, rolled out branch by branch, with a pilot first and the season left alone.
+ No recurring fee to Jwero. Support is optional. Rolled out branch by branch, with a pilot first and the season left alone.
 
- The software you dreamed of building in-house, ready, with your rules, your prices and your branches on one record.
- One bill for the platform, instead of a stack of software contracts across stores and teams.
- Your data stays in your control. Your own database, roles per branch and per team, so customers and prices do not walk out in someone’s phone.
- Security and privacy on your terms: single sign-on, reviews and contracts your way, a dedicated success manager.
- Fewer unknowns. Head office sees every store; every store sees its own; every AI action is logged and can be stopped.
+ The platform you would have built in-house, ready, with every module, your rules, your prices and your branches on one record.
+ Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
+ Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
+ AI on your terms: run models locally, or connect the models you choose.
+ No dependence on a vendor. Our outages, price changes and roadmap stop being your risk.
  
  Talk to us 
- Run it, have it run, or mix by function.
+ You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.
 
  Onboarding in a day · Refer a jeweller, save 10%
 
@@ -108972,22 +109014,22 @@ AI + experts
 
  03 · Chains, brands and groups
 
-## The platform you would have built in-house
+## Your own Jwero, on your own servers
 
  For many showrooms, brands or companies.
 
- Custom
+ One-time licence
 
- Your terms, rolled out branch by branch, with a pilot first and the season left alone.
+ No recurring fee to Jwero. Support is optional. Rolled out branch by branch, with a pilot first and the season left alone.
 
- The software you dreamed of building in-house, ready, with your rules, your prices and your branches on one record.
- One bill for the platform, instead of a stack of software contracts across stores and teams.
- Your data stays in your control. Your own database, roles per branch and per team, so customers and prices do not walk out in someone’s phone.
- Security and privacy on your terms: single sign-on, reviews and contracts your way, a dedicated success manager.
- Fewer unknowns. Head office sees every store; every store sees its own; every AI action is logged and can be stopped.
+ The platform you would have built in-house, ready, with every module, your rules, your prices and your branches on one record.
+ Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
+ Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
+ AI on your terms: run models locally, or connect the models you choose.
+ No dependence on a vendor. Our outages, price changes and roadmap stop being your risk.
  
  Talk to us 
- Run it, have it run, or mix by function.
+ You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.
 
  Onboarding in a day · Refer a jeweller, save 10%
 
@@ -109299,22 +109341,22 @@ What we handle
 
  03 · Chains, brands and groups
 
-## The platform you would have built in-house
+## Your own Jwero, on your own servers
 
  For many showrooms, brands or companies.
 
- Custom
+ One-time licence
 
- Your terms, rolled out branch by branch, with a pilot first and the season left alone.
+ No recurring fee to Jwero. Support is optional. Rolled out branch by branch, with a pilot first and the season left alone.
 
- The software you dreamed of building in-house, ready, with your rules, your prices and your branches on one record.
- One bill for the platform, instead of a stack of software contracts across stores and teams.
- Your data stays in your control. Your own database, roles per branch and per team, so customers and prices do not walk out in someone’s phone.
- Security and privacy on your terms: single sign-on, reviews and contracts your way, a dedicated success manager.
- Fewer unknowns. Head office sees every store; every store sees its own; every AI action is logged and can be stopped.
+ The platform you would have built in-house, ready, with every module, your rules, your prices and your branches on one record.
+ Hosted where you decide: on your premises or in your own cloud. Jwero has no access to your data.
+ Security and privacy entirely under your policies: your access rules, backups and audits, with roles per branch and team and every action logged.
+ AI on your terms: run models locally, or connect the models you choose.
+ No dependence on a vendor. Our outages, price changes and roadmap stop being your risk.
  
  Talk to us 
- Run it, have it run, or mix by function.
+ You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.
 
  Onboarding in a day · Refer a jeweller, save 10%
 

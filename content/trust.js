@@ -12,7 +12,7 @@ const trustCentre = {
     { q: 'Has Jwero had a penetration test?', a: 'Not yet. No independent penetration test has been done. One is planned, and a summary will be published here when it is complete.' },
     { q: 'Does Jwero comply with India’s DPDP Act?', a: 'Jwero acts as data processor for jewellers and as data fiduciary for its own account holders. It publishes a DPDP statement, processing terms and its sub-processors, and the product has consent records, opt-outs, export and erasure.' },
     { q: 'Does Jwero store card details?', a: 'No. Card and bank details are entered with the payment provider. Payments run through PCI DSS certified providers and card data does not pass through Jwero.' },
-    { q: 'Where is my data stored?', a: 'In a database that belongs to your business alone, hosted on Microsoft Azure in India.' },
+    { q: 'Where is my data stored?', a: 'In a database that belongs to your business alone, hosted on Microsoft Azure in India. Enterprise customers can self-host on their own premises or cloud, where Jwero has no access.' },
   ],
   body: `
 ${L.hero({

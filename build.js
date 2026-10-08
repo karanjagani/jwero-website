@@ -1981,6 +1981,14 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Twelve ready AI agent teams (Revenue, Sales, Seller, Marketing, Growth, CX, Operations, Inventory, Finance, Reporting, HR, Payroll and Settlement), most asking for approval by default.
 - In-app assistant takes spoken or typed instructions, including Hindi and Hinglish; a staff voice assistant wakes on a wake word.
 
+## Enterprise and self-hosting (facts)
+
+- Enterprise runs self-hosted, on the customer's premises or their own cloud; Jwero has no access to the data.
+- One-time licence with no recurring fee to Jwero; support is optional.
+- Every module works self-hosted; a few, such as WhatsApp messaging and AI calling, need internet to reach their channels.
+- AI can run on locally hosted models or on models and providers the customer chooses.
+- The hosted Jwero One plan runs on Microsoft Azure in India with per-business databases.
+
 ## Jewellery CRM (facts)
 - One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
 - Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.

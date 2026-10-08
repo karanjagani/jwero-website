@@ -183,7 +183,7 @@ const jewelacc = comparePage({
   researchNote: 'JewelAcc facts are sourced from jewelacc.com and independent listings (TechnologyEvaluation, SoftwareSuggest, TechnologyCounter), checked July 2026. JewelAcc uses tiered, quote-based pricing by business size and complexity; a free trial is offered. Jwero-side claims re-verified against the product on 2026-08-01.',
   rows: [
     { label: 'Hardware pre-integration (scales, barcode, RFID)', jwero: 'No named hardware partner yet, and no RFID support', other: 'Yes — a named strength' },
-    { label: 'Deployment flexibility (cloud / on-premise / hybrid)', jwero: 'Cloud only', other: 'Cloud, on-premise and hybrid offered' },
+    { label: 'Deployment flexibility (cloud / on-premise / hybrid)', jwero: 'Cloud (Jwero One), or self-hosted on your premises or your own cloud (Enterprise)', other: 'Cloud, on-premise and hybrid offered' },
     { label: 'Customer memory across channels', jwero: 'Yes — one record, 198 signal types, 11 explainable scores', other: '[VERIFY — CRM described as a module; field depth not public]' },
     { label: 'WhatsApp/Instagram commerce', jwero: 'Yes — official APIs', other: '[VERIFY]' },
     { label: 'Governed AI workforce', jwero: 'Yes — 240+ actions, approval queues', other: '[VERIFY]' },

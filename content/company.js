@@ -82,9 +82,13 @@ ${L.section(Q(2))}
 const enterprise = {
   slug: 'enterprise',
   title: 'Enterprise — Multi-store, Wholesale & Manufacturing | Jwero',
-  description: 'For chains, multi-brand groups and manufacturers: enterprise SSO/SCIM, role templates, configurable backups, a buying-committee kit, and a staged rollout plan.',
+  description: 'For chains, multi-brand groups and manufacturers: Jwero on your own servers or cloud with a one-time licence and no recurring fee, every module, local or chosen AI models, SSO/SCIM, and a staged rollout.',
   breadcrumbs: [['Home', '/'], ['Enterprise']],
   faqs: [
+    { q: 'Can we host Jwero on our own servers?', a: 'Yes. Enterprise runs on your premises or in your own cloud, with a one-time licence and no recurring fee to Jwero. Jwero has no access to your data.' },
+    { q: 'Do all modules work self-hosted?', a: 'Yes, every module. A few, such as WhatsApp messaging and AI calling, need an internet connection to reach their channels.' },
+    { q: 'How does AI work on a self-hosted install?', a: 'Run models locally on your infrastructure, or connect the AI models and providers you choose under your own contracts.' },
+    { q: 'What do we pay after the licence?', a: 'Nothing recurring to Jwero. Support is an optional contract. You pay for your own hosting and for services you connect, such as WhatsApp messaging and telephony.' },
     { q: 'What’s different about the enterprise track?', a: 'A named specialist instead of a self-serve funnel, a buying-committee kit addressed to each stakeholder, and a staged pilot-branch rollout with exit criteria you set.' },
     { q: 'What do you need from us to start?', a: 'Roughly: number of branches, current systems (billing/ERP/WhatsApp tools), and your evaluation timeline. We’ll come back with a specific plan, not a generic deck.' },
     { q: 'Our evaluation committee will ask about SSO and audit trails. What do we tell them?', a: 'Tell them the truth: enterprise SSO/SCIM (SAML 2.0 and OIDC, with JIT provisioning) is shipped and live, admin-configurable from an in-app settings page; per-module activity logging exists today with a unified immutable audit trail being consolidated. See <a href="/trust/security">the security page</a> for the full honest list — we’d rather you find gaps here than in an audit.' },
@@ -104,6 +108,18 @@ ${L.hero({
   primary: { href: '/book-demo', label: 'Talk to a specialist' },
   secondary: { href: '#', label: 'Or start with a chat', wa: 'enterprise' },
 })}
+
+${L.section(
+  `${L.sectionHead('YOUR OWN JWERO', 'On your servers, under your policies, paid for once.', 'Enterprise runs on your premises or in your own cloud. Jwero has no access to your data and charges no recurring fee.')}
+  ${L.cards([
+    { title: 'Hosted where you decide', text: 'On your own premises or in the cloud account you choose, in the region you choose. Your data never sits with Jwero.' },
+    { title: 'One-time licence', text: 'Pay once for the platform. Support and updates are an optional contract, not a condition.' },
+    { title: 'Every module', text: 'Counter, stock, CRM, WhatsApp, schemes, girvi, manufacturing, AI and the rest all run self-hosted. A few, such as WhatsApp and AI calling, need an internet connection to reach their channels.' },
+    { title: 'AI on your terms', text: 'Run AI models locally, or connect the models and providers you choose under your own contracts.' },
+    { title: 'Your policies, end to end', text: 'Your access rules, backups, audits and retention, with roles per branch and team, SSO, and every action logged and stoppable.' },
+    { title: 'No vendor dependence', text: 'Our outages, price changes and roadmap stop being your risk. The system keeps running on your infrastructure.' },
+  ])}`
+, { tone: 'tint' })}
 
 ${L.section(
   `${L.sectionHead('THE BUYING-COMMITTEE KIT', 'One artifact per stakeholder.', '')}
@@ -142,7 +158,7 @@ ${L.section(
 )}
 
 ${L.honestGapsBlock([
-  'No data-residency or multi-region hosting choice — single-region hosting today. Physical per-tenant database isolation is real and strong, but it is a separate claim from residency, and residency-on-request isn’t available yet.',
+  'On the hosted Jwero One plan, data sits in one region (India). Enterprise customers who need another location self-host it where they choose. Physical per-tenant database isolation is real and strong on both. (Earlier note: residency-on-request isn’t available yet.',
   'No organisation-mandated MFA policy — multi-factor authentication exists and is available to every user, but it’s opt-in per user today, not something an admin can force org-wide.',
   'No franchise-specific administration layer (royalty tracking, franchisor oversight of independently-owned franchisees) — genuine multi-store/multi-brand/multi-branch administration is real; franchise-specific tooling on top of it is not.',
   'Formal certifications: ISO 27001 and SOC 2 are in progress, not certified, and are published only when earned, same as stated on the security page.',
