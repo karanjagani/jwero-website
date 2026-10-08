@@ -39,7 +39,7 @@ ${L.section(
       <tr><td><strong>CIN</strong></td><td>U74900MH2016PTC273631 — verifiable on the MCA registry</td></tr>
       <tr><td><strong>Incorporated</strong></td><td>December 2016, Registrar of Companies, Mumbai</td></tr>
       <tr><td><strong>Registered office</strong></td><td>Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road, Bhayandar (West), Thane, Maharashtra 401101</td></tr>
-      <tr><td><strong>Reach us</strong></td><td><a href="mailto:care@jwero.ai">care@jwero.ai</a> · WhatsApp <a href="tel:+919169959959">+91 91699 59959</a> · <a href="https://www.linkedin.com/company/jwero" rel="noopener" target="_blank">LinkedIn</a> · <a href="https://www.instagram.com/jwero.ai/" rel="noopener" target="_blank">Instagram</a></td></tr>
+      <tr><td><strong>Reach us</strong></td><td><a href="mailto:care@jwero.ai">care@jwero.ai</a> · WhatsApp from any country <a href="tel:+919169959959">+91 91699 59959</a> · <a href="https://www.linkedin.com/company/jwero" rel="noopener" target="_blank">LinkedIn</a> · <a href="https://www.instagram.com/jwero.ai/" rel="noopener" target="_blank">Instagram</a></td></tr>
     </tbody>
   </table></div>
   <div class="cta-row">

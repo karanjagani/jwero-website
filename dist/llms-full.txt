@@ -13,7 +13,7 @@ You focus on jewellery. We handle the chaos.
 
 ## Jewellery software that runs the whole business: customers, counter, stock, team and books.
 
- Customers, counter, stock, workshop, books and team on one record. AI drafts the routine work and flags what is slipping, and nothing goes out without your yes.
+ Customers, counter, stock, workshop, books and team on one record. AI drafts the routine work and flags what is slipping, and nothing goes out without your yes. In your currency, your tax and your customers’ language, from India to the Gulf, the UK, Europe and North America.
 
  Run it yourself Start for ₹3,600 Every module. Then ₹18,000 a month. 
  Let Jwero run it Let Jwero handle it No team to hire. No tools to buy. 
@@ -86,7 +86,7 @@ You focus on jewellery. We handle the chaos.
 
  The same Jwero, set up the way your business works.
 
- One showroom Counter, stock, schemes and every customer, without the owner remembering everything. See how it works → A chain of stores Every branch on one record: prices, stock, transfers and reports. See how it works → A manufacturer Orders, karigars, wastage by stage and metal accounts. See how it works → A wholesaler Buyer catalogues, memo, buyer pricing and follow-ups. See how it works → An online brand Your own store at today’s rate, plus WhatsApp and Instagram. See how it works → Just starting Start with the system chains took decades to build. See how it works → 
+ One showroom Counter, stock, schemes and every customer, without the owner remembering everything. See how it works → A chain of stores Every branch on one record: prices, stock, transfers and reports. See how it works → A manufacturer Orders, karigars (goldsmiths), wastage by stage and metal accounts. See how it works → A wholesaler Buyer catalogues, memo, buyer pricing and follow-ups. See how it works → An online brand Your own store at today’s rate, plus WhatsApp and Instagram. See how it works → Just starting Start with the system chains took decades to build. See how it works → 
 
  All 45 businesses, problems and roles → 
 
@@ -96,7 +96,7 @@ You focus on jewellery. We handle the chaos.
 
  You do not switch on 35 products. You switch on the three that cost you sales today, and each one replaces something you pay for now.
 
- WhatsApp, answered Your business number on the official API, the catalogue at today’s rate, replies drafted by AI for your approval, payments in the chat. Replaces: a personal number, a bulk-message tool, a payment link app Billing at the live rate Scan to bill with the price breakup, old gold exchange, GST and day close, with the books kept in step with Tally. Replaces: the calculator, the rate board, a billing package, re-entry into Tally Stock you can see Every piece by weight, purity and HUID, valued today, with ageing and dead stock flagged. Replaces: the stock sheet, the yearly stocktake surprise 
+ WhatsApp, answered Your business number on the official API, the catalogue at today’s rate, replies drafted by AI for your approval, payments in the chat. Replaces: a personal number, a bulk-message tool, a payment link app Billing at the live rate Scan to bill with the price breakup, old gold exchange, GST and day close, with the books kept in step with Tally. Replaces: the calculator, the rate board, a billing package, re-entry into Tally or your accounting software Stock you can see Every piece by weight, purity and HUID, valued today, with ageing and dead stock flagged. Replaces: the stock sheet, the yearly stocktake surprise 
 
  Customers, catalogue and stock are imported for you. Most shops go live in a day. See every product → 
 
@@ -307,7 +307,7 @@ You focus on jewellery. We handle the chaos.
 
  These are estimates, not a quote. Change the selection and the sliders to match your business.
 
- Subscriptions. Each tool carries the average monthly price of a typical paid plan from well-known vendors (Indian market prices, shown in dollars outside India), for a business with about five people who need a login. Platforms that are free to use, such as posting on a social network, count as ₹0. Advertising spend and per-message or per-minute charges are left out on both sides, because you pay those with or without Jwero.
+ Subscriptions. Each tool carries the average monthly price of a typical paid plan from well-known vendors (Indian market prices, converted outside India, where the same tools usually cost more), for a business with about five people who need a login. Platforms that are free to use, such as posting on a social network, count as ₹0. Advertising spend and per-message or per-minute charges are left out on both sides, because you pay those with or without Jwero.
 
  No double counting. Several items are usually one product: billing, POS, stock and ERP; WhatsApp API and broadcasts; the social inbox and scheduler; marketing automation, campaigns and journeys; HR, payroll and attendance. Each such group is charged once, at its highest price, however many of its items you pick. Where a tool is often kept on paper or a free app, the price shown is the simplest paid tool that replaces it; if you pay nothing for it today, your saving is lower.
 
@@ -424,7 +424,7 @@ You focus on jewellery. We handle the chaos.
 
 ## Security and privacy delivered, just as you want.
 
- DPDP DPDP Act In place IN Data hosted in India or your region In place PCI Card data (PCI DSS) In place GST GST record keeping In place BIS BIS hallmarking and HUID In place 
+ GDPR GDPR (UK and EU) In place VAT VAT and sales-tax records In place DPDP DPDP Act In place IN Data hosted in India or your region In place PCI Card data (PCI DSS) In place GST GST record keeping In place BIS BIS hallmarking and HUID In place 
 
  Your own database. Never stored with another jeweller’s. 
 
@@ -11845,6 +11845,12 @@ TRUST CENTRE
 
  In place In progress, not certified Planned, not started 
 
+ GDPR 
+ GDPR (UK and EU) In place A data processing agreement on request, export and deletion of personal data, every processor listed, and hosting in your region on request. 
+
+ VAT 
+ VAT and sales-tax records In place Invoices, orders, payments and purchases are never deleted on a schedule, ready for your tax authority. 
+
  DPDP 
  India’s DPDP Act, 2023 In place Data protection statement, processor terms, consent records, export and erasure tools. 
 
@@ -11865,9 +11871,6 @@ TRUST CENTRE
 
  SOC 2 
  SOC 2 In progress Not audited. The system description is drafted; an audit has not started. 
-
- GDPR 
- EU GDPR Planned Not assessed. Jwero is built for Indian law first. Tell us if you serve customers in the EU. 
 
  OWASP 
  OWASP Top 10 and penetration test Planned No independent penetration test has been done yet. One is planned, and the summary will be shared here. 
@@ -11990,8 +11993,8 @@ TRUST CENTRE
  Does Jwero have a SOC 2 report? 
  No. An audit has not started; the system description is drafted in preparation.
 
- Is Jwero GDPR compliant? 
- It has not been assessed against the GDPR. Jwero is built for Indian law first. If you serve customers in the EU, tell us before you start.
+ Does Jwero support GDPR? 
+ Yes: a data processing agreement on request, export and deletion of personal data on request, every processor listed, and hosting in your region on request.
 
  Has Jwero had a penetration test? 
  Not yet. One is planned, and a summary will be published here when it is complete.
@@ -12021,8 +12024,8 @@ A: No. Jwero is not ISO 27001 certified today. The security policy and control m
 Q: Does Jwero have a SOC 2 report?
 A: No. A SOC 2 audit has not started. The system description is drafted in preparation.
 
-Q: Is Jwero GDPR compliant?
-A: Jwero has not been assessed against the GDPR. It is built for Indian law first, under the Digital Personal Data Protection Act, 2023. If you serve customers in the EU, tell us before you start.
+Q: Does Jwero support GDPR?
+A: Yes. Jwero gives you a data processing agreement on request, exports and deletes a person’s data when they ask, lists every company that processes data, and hosts in your region on request. It also follows India’s Digital Personal Data Protection Act, 2023.
 
 Q: Has Jwero had a penetration test?
 A: Not yet. No independent penetration test has been done. One is planned, and a summary will be published here when it is complete.
@@ -15397,7 +15400,7 @@ ABOUT
 
  Registered office Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road, Bhayandar (West), Thane, Maharashtra 401101 
 
- Reach us care@jwero.ai · WhatsApp +91 91699 59959 · LinkedIn · Instagram 
+ Reach us care@jwero.ai · WhatsApp from any country +91 91699 59959 · LinkedIn · Instagram 
 
  Talk to us 
  Talk to the founders’ desk 

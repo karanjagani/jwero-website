@@ -24,7 +24,7 @@ const home = {
 ${L.homeHero({
   kicker: 'You focus on jewellery. We handle the chaos.',
   h1: 'Jewellery software that runs the whole business: customers, counter, stock, team and books.',
-  sub: 'Customers, counter, stock, workshop, books and team on one record. AI drafts the routine work and flags what is slipping, and nothing goes out without your yes.',
+  sub: 'Customers, counter, stock, workshop, books and team on one record. AI drafts the routine work and flags what is slipping, and nothing goes out without your yes. In your currency, your tax and your customers’ language, from India to the Gulf, the UK, Europe and North America.',
 })}
 
 <section class="pz-logos">${L.customerLogos()}</section>
@@ -35,7 +35,7 @@ ${L.section(`${L.sectionHead('WHO IT IS FOR', 'Built for your kind of jewellery 
   <div class="bl-goals bl-goals-3 home-who">${[
     ['store', 'One showroom', 'Counter, stock, schemes and every customer, without the owner remembering everything.', '/solutions/single-store'],
     ['branches', 'A chain of stores', 'Every branch on one record: prices, stock, transfers and reports.', '/solutions/multi-store-chains'],
-    ['layers', 'A manufacturer', 'Orders, karigars, wastage by stage and metal accounts.', '/solutions/manufacturers'],
+    ['layers', 'A manufacturer', 'Orders, karigars (goldsmiths), wastage by stage and metal accounts.', '/solutions/manufacturers'],
     ['truck', 'A wholesaler', 'Buyer catalogues, memo, buyer pricing and follow-ups.', '/solutions/b2b-jewellery'],
     ['send', 'An online brand', 'Your own store at today’s rate, plus WhatsApp and Instagram.', '/solutions/d2c-brands'],
     ['sparkle', 'Just starting', 'Start with the system chains took decades to build.', '/solutions/startups'],
@@ -45,7 +45,7 @@ ${L.section(`${L.sectionHead('WHO IT IS FOR', 'Built for your kind of jewellery 
 ${L.section(`${L.sectionHead('WHERE MOST SHOPS START', 'Three things on day one. The rest when you need it.', 'You do not switch on 35 products. You switch on the three that cost you sales today, and each one replaces something you pay for now.')}
   <div class="bl-goals bl-goals-3 home-three">${[
     ['chat', 'WhatsApp, answered', 'Your business number on the official API, the catalogue at today’s rate, replies drafted by AI for your approval, payments in the chat.', 'Replaces: a personal number, a bulk-message tool, a payment link app', '/products/whatsapp'],
-    ['till', 'Billing at the live rate', 'Scan to bill with the price breakup, old gold exchange, GST and day close, with the books kept in step with Tally.', 'Replaces: the calculator, the rate board, a billing package, re-entry into Tally', '/products/pos'],
+    ['till', 'Billing at the live rate', 'Scan to bill with the price breakup, old gold exchange, GST and day close, with the books kept in step with Tally.', 'Replaces: the calculator, the rate board, a billing package, re-entry into Tally or your accounting software', '/products/pos'],
     ['box', 'Stock you can see', 'Every piece by weight, purity and HUID, valued today, with ageing and dead stock flagged.', 'Replaces: the stock sheet, the yearly stocktake surprise', '/products/inventory'],
   ].map(([i, t, d, r, h]) => `<a href="${h}"><span class="home-who-ico">${L.icon(i)}</span><b>${t}</b><span>${d}</span><i>${r}</i></a>`).join('')}</div>
   <p class="cta-note" style="margin-top:14px;text-align:center">Customers, catalogue and stock are imported for you. Most shops go live in a day. <a href="/products">See every product →</a></p>`)}

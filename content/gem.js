@@ -33,7 +33,7 @@ const GEM = {
       ['box', 'Stock', 'what is ageing and what is selling', 'every piece in and out', '/products/inventory', 2, 1],
       ['truck', 'Purchase', 'what is running low', 'the order, the receipt and the vendor’s bill', '/products/purchase-vendors', 2, 0],
       ['users', 'Team', 'who is in, and what is waiting', 'attendance, targets and incentives', '/products/hr-payroll', 3, 0],
-      ['receipt', 'Books', 'every bill, purchase and payment', 'GST-ready entries', '/products/billing-finance', 0, 0],
+      ['receipt', 'Books', 'every bill, purchase and payment', 'Tax-ready entries', '/products/billing-finance', 0, 0],
     ],
     week: [
       ['Mon 10am', 'The gold rate moves', 2, 'One rate · every tag, link and quote repriced', [[4, 'Gold rate increased']]],
@@ -95,7 +95,7 @@ const GEM = {
     ],
     week: [
       ['Mon', 'A retailer orders 40 bangles', 0, 'The order became jobs against the BOM', [[7, 'Deal won']]],
-      ['Tue', '412 g issued to the karigar', 1, 'Issued in fine grams · khata updated', [[8, 'Material issued'], [8, 'Job issued']]],
+      ['Tue', '412 g issued to the goldsmith (karigar)', 1, 'Issued in fine grams · khata updated', [[8, 'Material issued'], [8, 'Job issued']]],
       ['Thu', 'A job returns 6 g over the wastage norm', 2, 'Flagged at that stage, not at month end', [[8, 'Wastage exceeded']]],
       ['Fri', 'The hallmarking batch returns', 3, 'HUIDs attached piece by piece', [[8, 'Quality passed']]],
       ['Sat', 'Dispatched and invoiced', 5, 'Stock, party ledger and books moved together', [[4, 'Shipment dispatched'], [3, 'Invoice created']]],
@@ -189,11 +189,11 @@ GEM.silver = {
     ['box', 'Lots & counts', 'what the lot should hold', 'the count and the variance', '/products/inventory', 2, 0],
     ['megaphone', 'Festival broadcast', 'who buys gifts and coins', 'who opened and who came', '/products/campaigns', 3, 0],
     ['book', 'Catalogue', 'articles, coins and jewellery', 'what she looked at', '/products/catalog', 3, 1],
-    ['receipt', 'Books', 'every bill', 'GST-ready entries', '/products/billing-finance', 0, 0],
+    ['receipt', 'Books', 'every bill', 'Tax-ready entries', '/products/billing-finance', 0, 0],
   ],
   week: [
     ['Mon', 'Buys twelve small pieces by weight', 0, 'Weighed, priced and billed on one screen', [[3, 'Invoice created'], [3, 'Payment received']]],
-    ['Wed', 'Receives the Diwali gifting message', 3, 'Reached as a gift buyer, not as everyone', [[7, 'Segment entered'], [1, 'Broadcast clicked']]],
+    ['Wed', 'Receives the festive gifting message', 3, 'Reached as a gift buyer, not as everyone', [[7, 'Segment entered'], [1, 'Broadcast clicked']]],
     ['Thu', 'Opens the coins and articles link', 4, 'Viewed coins and a pooja set', [[1, 'Catalogue viewed']]],
     ['Sat', 'Comes back for the pooja set', 0, 'Known at the counter · billed by weight', [[3, 'Repeat visit'], [3, 'Invoice created']]],
     ['Sat 9pm', 'The shop counts the category', 2, 'Count matched the lot · variance noted', [[9, 'Stock count due']]],
@@ -279,7 +279,7 @@ const GEM_PAGE = {
 const DAYS = {
   single: [
     ['09:30', 4, 'Staff punch in on their phones', 't', 6], ['10:00', 2, 'The gold rate moves; every price follows', 'a', 1], ['10:20', 0, 'Priced replies drafted for overnight enquiries', 'q', 9],
-    ['11:00', 1, 'Bills at the live rate', 't', 5], ['11:05', 5, 'Each bill posts to the books with GST', 'a', 5], ['11:10', 2, 'Sold pieces come off stock', 'a', 5],
+    ['11:00', 1, 'Bills at the live rate', 't', 5], ['11:05', 5, 'Each bill posts to the books with tax', 'a', 5], ['11:10', 2, 'Sold pieces come off stock', 'a', 5],
     ['13:00', 0, 'Scheme instalment reminders drafted', 'q', 14], ['14:00', 3, 'Low stock flagged; a reorder is drafted', 'q', 2], ['15:00', 1, 'Old gold taken in exchange, recorded as metal', 't', 2],
     ['16:00', 0, 'Follow-ups drafted for walk-outs', 'q', 3], ['17:00', 4, 'An unanswered enquiry is flagged to the owner', 'a', 1], ['18:30', 1, 'Evening bills', 't', 8],
     ['19:00', 0, 'Birthday and anniversary wishes drafted', 'q', 4], ['21:00', 5, 'Day-close: cash tallied against bills', 'a', 1],
@@ -299,7 +299,7 @@ const DAYS = {
   ],
   maker: [
     ['08:30', 2, 'Karigars punch in', 't', 22], ['09:00', 0, 'A retailer’s order becomes jobs against the BOM', 'a', 12], ['09:30', 1, 'Metal issued in fine grams', 't', 12],
-    ['09:35', 2, 'Each karigar’s balance updates', 'a', 12], ['11:00', 3, 'Finished jobs pass quality check', 't', 9], ['12:00', 2, 'A job over the wastage norm is flagged', 'a', 2],
+    ['09:35', 2, 'Each goldsmith’s balance updates', 'a', 12], ['11:00', 3, 'Finished jobs pass quality check', 't', 9], ['12:00', 2, 'A job over the wastage norm is flagged', 'a', 2],
     ['13:30', 0, 'A job running late is flagged before the due date', 'a', 1], ['13:40', 0, 'Delay notes drafted for the retailers concerned', 'q', 1], ['14:00', 3, 'A hallmarking batch returns; HUIDs attach piece by piece', 'a', 40], ['15:00', 4, 'Finished pieces enter stock at real weights', 'a', 40],
     ['16:00', 4, 'Orders dispatched', 't', 3], ['16:05', 5, 'Invoices raised; party ledgers updated', 'a', 3], ['16:30', 5, 'Payment reminders drafted for overdue parties', 'q', 4], ['17:30', 1, 'Scrap and dust weighed back', 't', 6],
     ['18:00', 2, 'Metal closes for the day, by department', 'a', 1], ['18:15', 5, 'Karigar wages worked out against gold', 'a', 22],

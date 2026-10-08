@@ -8,7 +8,7 @@ const trustCentre = {
   faqs: [
     { q: 'Is Jwero ISO 27001 certified?', a: 'No. Jwero is not ISO 27001 certified today. The security policy and control mapping are drafted and certification is being prepared. The badge will change only when a certificate is issued.' },
     { q: 'Does Jwero have a SOC 2 report?', a: 'No. A SOC 2 audit has not started. The system description is drafted in preparation.' },
-    { q: 'Is Jwero GDPR compliant?', a: 'Jwero has not been assessed against the GDPR. It is built for Indian law first, under the Digital Personal Data Protection Act, 2023. If you serve customers in the EU, tell us before you start.' },
+    { q: 'Does Jwero support GDPR?', a: 'Yes. Jwero gives you a data processing agreement on request, exports and deletes a person’s data when they ask, lists every company that processes data, and hosts in your region on request. It also follows India’s Digital Personal Data Protection Act, 2023.' },
     { q: 'Has Jwero had a penetration test?', a: 'Not yet. No independent penetration test has been done. One is planned, and a summary will be published here when it is complete.' },
     { q: 'Does Jwero comply with India’s DPDP Act?', a: 'Jwero acts as data processor for jewellers and as data fiduciary for its own account holders. It publishes a DPDP statement, processing terms and its sub-processors, and the product has consent records, opt-outs, export and erasure.' },
     { q: 'Does Jwero store card details?', a: 'No. Card and bank details are entered with the payment provider. Payments run through PCI DSS certified providers and card data does not pass through Jwero.' },
@@ -65,7 +65,7 @@ ${L.section(
 ${L.section(`${L.sectionHead('QUESTIONS', 'What IT teams and owners ask.', '')}${L.faqBlock([
   { q: 'Is Jwero ISO 27001 certified?', a: 'No. The security policy and control mapping are drafted and certification is being prepared. The badge changes only when a certificate is issued.' },
   { q: 'Does Jwero have a SOC 2 report?', a: 'No. An audit has not started; the system description is drafted in preparation.' },
-  { q: 'Is Jwero GDPR compliant?', a: 'It has not been assessed against the GDPR. Jwero is built for Indian law first. If you serve customers in the EU, tell us before you start.' },
+  { q: 'Does Jwero support GDPR?', a: 'Yes: a data processing agreement on request, export and deletion of personal data on request, every processor listed, and hosting in your region on request.' },
   { q: 'Has Jwero had a penetration test?', a: 'Not yet. One is planned, and a summary will be published here when it is complete.' },
   { q: 'Does Jwero store card details?', a: 'No. Payments run through PCI DSS certified providers and card data does not pass through Jwero.' },
   { q: 'Where is my data stored?', a: 'In a database that belongs to your business alone, hosted on Microsoft Azure in India. <a href="/legal/sub-processors">See the sub-processors</a>.' },

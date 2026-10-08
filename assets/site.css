@@ -4651,3 +4651,5 @@ html:not([data-cur="inr"]) [data-cur-only="inr"], html[data-cur="inr"] [data-cur
   .gfx-arm .tg-scale b, .gfx-arm .shm-wire, .gfx-arm .tfl-bridge i, .gfx-arm .tcol-arrow .ico { animation: none !important; }
   .gfx-arm .tg-scale b { left: 50%; }
 }
+/* Trust seals by region: India sees Indian seals, everyone else sees GDPR and VAT. */
+html[data-cur="inr"] .tseal[data-reg="gl"], html:not([data-cur="inr"]) .tseal[data-reg="in"] { display: none; }

@@ -748,14 +748,15 @@ const COMPLIANCE_ROWS = [
 // SOC 2, GDPR and an independent penetration test are not achieved and say so.
 // [short, name, status, what is true today, href]
 const TRUST_BADGES = [
-  ['DPDP', 'India’s DPDP Act, 2023', 'in', 'Data protection statement, processor terms, consent records, export and erasure tools.', '/legal/dpdp'],
+  ['GDPR', 'GDPR (UK and EU)', 'in', 'A data processing agreement on request, export and deletion of personal data, every processor listed, and hosting in your region on request.', '/legal/data-policy', 'gl'],
+  ['VAT', 'VAT and sales-tax records', 'in', 'Invoices, orders, payments and purchases are never deleted on a schedule, ready for your tax authority.', '/legal/data-policy', 'gl'],
+  ['DPDP', 'India’s DPDP Act, 2023', 'in', 'Data protection statement, processor terms, consent records, export and erasure tools.', '/legal/dpdp', 'in'],
   ['IN', 'Data hosted in India or your region', 'in', 'Each business in its own database, in India by default or in your region on request; Enterprise can self-host.', '/legal/sub-processors'],
   ['PCI', 'Card data (PCI DSS)', 'in', 'Card details never reach Jwero. Payments run through PCI DSS certified providers.', '/legal/sub-processors'],
-  ['GST', 'GST record keeping', 'in', 'Invoices, orders, payments, purchases and payroll are never deleted on a schedule.', '/legal/data-policy'],
-  ['BIS', 'BIS hallmarking and HUID', 'in', 'HUID and certificate details recorded on each piece.', '/products/catalog'],
+  ['GST', 'GST record keeping', 'in', 'Invoices, orders, payments, purchases and payroll are never deleted on a schedule.', '/legal/data-policy', 'in'],
+  ['BIS', 'BIS hallmarking and HUID', 'in', 'HUID and certificate details recorded on each piece.', '/products/catalog', 'in'],
   ['ISO', 'ISO/IEC 27001', 'prog', 'Not certified. Security policy and control mapping are drafted; certification is being prepared.', '/trust/security'],
   ['SOC 2', 'SOC 2', 'prog', 'Not audited. The system description is drafted; an audit has not started.', '/trust/security'],
-  ['GDPR', 'EU GDPR', 'plan', 'Not assessed. Jwero is built for Indian law first. Tell us if you serve customers in the EU.', '/legal/data-policy'],
   ['OWASP', 'OWASP Top 10 and penetration test', 'plan', 'No independent penetration test has been done yet. One is planned, and the summary will be shared here.', '/trust/security'],
 ];
 const TRUST_STATUS = { in: 'In place', prog: 'In progress', plan: 'Planned' };
@@ -779,7 +780,7 @@ function trustStrip(opts = {}) {
   const docs = [['/trust', 'Trust Centre'], ['/trust/security', 'Security'], ['/legal/privacy', 'Privacy Policy'], ['/legal/terms', 'Terms of Use'], ['/legal/data-policy', 'Data Policy'], ['/legal/sub-processors', 'Sub-processors'], ['/legal/dpdp', 'DPDP statement']];
   return `
 <div class="tstrip">
-  <div class="tstrip-seals">${badges.map(([s, n, st, d, h]) => `<a class="tseal tb-${st}" href="${h}" title="${esc(n)}: ${esc(TRUST_STATUS[st])}. ${esc(d)}"><span class="tseal-mark" aria-hidden="true"><b>${s}</b></span><span class="tseal-name">${n.replace('India’s ', '').replace(', 2023', '').replace(' and penetration test', '').replace('ISO/IEC', 'ISO')}</span><em>${TRUST_STATUS[st]}</em></a>`).join('')}</div>
+  <div class="tstrip-seals">${badges.map(([s, n, st, d, h, reg]) => `<a class="tseal tb-${st}"${reg ? ` data-reg="${reg}"` : ''} href="${h}" title="${esc(n)}: ${esc(TRUST_STATUS[st])}. ${esc(d)}"><span class="tseal-mark" aria-hidden="true"><b>${s}</b></span><span class="tseal-name">${n.replace('India’s ', '').replace(', 2023', '').replace(' and penetration test', '').replace('ISO/IEC', 'ISO')}</span><em>${TRUST_STATUS[st]}</em></a>`).join('')}</div>
   <ul class="tstrip-facts">
     <li>${icon('shield')}<span><b>Your own database.</b> Never stored with another jeweller’s.</span></li>
     <li>${icon('key')}<span><b>Encrypted</b> in transit and at rest, with roles you control.</span></li>
@@ -1262,7 +1263,7 @@ function stackMerge(only) {
     <h3>How it is worked out</h3>
     <div class="stackm-how-body">
         <p><strong>These are estimates, not a quote.</strong> Change the selection and the sliders to match your business.</p>
-        <p><strong>Subscriptions.</strong> Each tool carries the average monthly price of a typical paid plan from well-known vendors (Indian market prices, shown in dollars outside India), for a business with about five people who need a login. Platforms that are free to use, such as posting on a social network, count as ₹0. Advertising spend and per-message or per-minute charges are left out on both sides, because you pay those with or without Jwero.</p>
+        <p><strong>Subscriptions.</strong> Each tool carries the average monthly price of a typical paid plan from well-known vendors (Indian market prices, converted outside India, where the same tools usually cost more), for a business with about five people who need a login. Platforms that are free to use, such as posting on a social network, count as ₹0. Advertising spend and per-message or per-minute charges are left out on both sides, because you pay those with or without Jwero.</p>
         <p><strong>No double counting.</strong> Several items are usually one product: billing, POS, stock and ERP; WhatsApp API and broadcasts; the social inbox and scheduler; marketing automation, campaigns and journeys; HR, payroll and attendance. Each such group is charged once, at its highest price, however many of its items you pick. Where a tool is often kept on paper or a free app, the price shown is the simplest paid tool that replaces it; if you pay nothing for it today, your saving is lower.</p>
         <p><strong>Team time.</strong> Each tool carries the hours a week a team spends operating it and keeping it up to date. When more than one tool is picked, ${STACK_MATCH} hours a week per tool is added for matching it with the others: exporting, re-typing and checking that the numbers agree. Hours are priced from the salary slider at ${STACK_WEEK} hours a week. “People’s worth of time” is those hours divided by ${STACK_WEEK}.</p>
         <p><strong>Showrooms and team.</strong> Tools bought per counter or per outlet, such as billing, POS, stock, loyalty and the scheme register, are multiplied by the number of showrooms, and so are their hours. Tools bought per user, such as CRM, email, HR and payroll, are scaled by team size from a base of ${STACK_TEAM} people. Hours on the remaining tools grow with the square root of team size, between half and double the base. Each extra showroom also adds matching time, because every tool’s numbers have to be combined across branches. Total team time is capped at 60% of what the whole team can work.</p>

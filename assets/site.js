@@ -287,7 +287,9 @@ function jwFromInr(n) {
       set('[data-connect-note="chat"]', WEBCHAT_ON ? 'Opens right here' : 'Opens WhatsApp');
       set('[data-connect-note="voice"]', WEBCHAT_ON && desk ? 'From your browser, no app' : desk ? 'Dials +91 91699 59959' : 'We call you back');
       set('[data-connect-note="video"]', WEBCHAT_ON && desk ? 'See the product, face to face' : 'Pick a time for a video demo');
-      set('[data-connect-hours]', desk ? 'The desk is open now · 10am–8pm IST' : 'The desk is closed right now (10am–8pm IST). Chat reaches us; calls become a callback.');
+      var hrs = '10am–8pm IST';
+      try { if (Intl.DateTimeFormat().resolvedOptions().timeZone !== 'Asia/Kolkata') { var f = function (h) { var d = new Date(Date.UTC(2026, 0, 1, h, 0)); d.setUTCMinutes(d.getUTCMinutes() - 330); return d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }); }; hrs += ', ' + f(10) + ' to ' + f(20) + ' your time'; } } catch (x) {}
+      set('[data-connect-hours]', desk ? 'The desk is open now · ' + hrs : 'The desk is closed right now (' + hrs + '). Chat reaches us; calls become a callback.');
       var ctx = dlg.querySelector('[data-connect-ctx]');
       if (ctx) { ctx.hidden = !state.msg; ctx.textContent = state.msg ? '“' + state.msg + '”' : ''; }
       var alt = dlg.querySelector('[data-connect-alt="wa"]'); if (alt) alt.setAttribute('href', state.wa);
@@ -3108,5 +3110,7 @@ document.addEventListener('click', function (e) {
   }
   [].forEach.call(document.querySelectorAll('.callc, .calc, [data-stackm]'), function (c) { if (c.querySelector('.cur-approx')) return; var p = document.createElement('p'); p.className = 'cta-note cur-approx'; p.setAttribute('data-inr-keep', ''); var C = window.JW_CURS[window.JW_CUR]; p.textContent = 'Amounts shown in ' + ({ usd: 'US dollars', aed: 'dirhams', sar: 'Saudi riyals', qar: 'Qatari riyals', gbp: 'pounds', eur: 'euros' })[window.JW_CUR] + ', converted from Indian prices at about ₹' + C.r + ' to ' + C.sym + '1. Use your own figures.'; c.appendChild(p); });
   var main = document.querySelector('main') || document.body; walk(main);
-  var busy = false; new MutationObserver(function () { if (busy) return; busy = true; walk(main); busy = false; }).observe(main, { subtree: true, childList: true, characterData: true });
+  // Only the nodes that changed are checked, so animations that rewrite text every frame stay cheap.
+  function fix(n) { if (n.nodeType === 3) { if (/₹/.test(n.nodeValue) && n.parentNode && !n.parentNode.closest('[data-inr-keep], .cur, script, style, textarea')) { var v = conv(n.nodeValue); if (v !== n.nodeValue) n.nodeValue = v; } } else if (n.nodeType === 1 && /₹/.test(n.textContent)) walk(n); }
+  new MutationObserver(function (recs) { recs.forEach(function (r) { if (r.type === 'characterData') fix(r.target); else [].forEach.call(r.addedNodes, fix); }); }).observe(main, { subtree: true, childList: true, characterData: true });
 })();

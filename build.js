@@ -1520,7 +1520,7 @@ function connectDialog() {
     ${opt('video', 'video', 'Video call', 'See the product, face to face')}
   </div>
   <p class="connect-hours" data-connect-hours></p>
-  <p class="connect-alt">Prefer another way? <a href="#" data-connect-alt="wa" data-direct target="_blank" rel="noopener">WhatsApp</a><a href="tel:+919169959959" data-direct>+91 91699 59959</a><a href="/book-demo#schedule" data-direct>Pick a time</a></p>
+  <p class="connect-alt">Prefer another way? <a href="#" data-connect-alt="wa" data-direct target="_blank" rel="noopener">WhatsApp, from any country</a><a href="tel:+919169959959" data-direct>+91 91699 59959</a><a href="/book-demo#schedule" data-direct>Pick a time</a></p>
 </dialog>`;
 }
 function searchDialog() {
