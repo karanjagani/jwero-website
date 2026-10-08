@@ -55,6 +55,7 @@ function jwFromInr(n) {
     one: 'Hi Jwero, I would like to start with just one function. The one I have in mind is:',
     call: 'Hi Jwero, please call me about my jewellery business.',
     waitlist: 'Hi Jwero, please add me to the waitlist for a Jwero account. My business:',
+    footer: 'Hi Jwero, I have a question about Jwero:',
     refer: 'Hi Jwero, I am a jeweller referring another jeweller. Their name and city:',
     start: 'Hi Jwero, this is what I want to achieve for my jewellery business:',
     plan: 'Hi Jwero, I would like a Jwero business plan for my jewellery business.',
@@ -456,6 +457,20 @@ function jwFromInr(n) {
   });
   // A hash link to a folded question opens the list.
   if (location.hash) { var t = document.querySelector(location.hash.replace(/[^#\w-]/g, '')); if (t && t.closest && t.closest('.faq-folded')) { t.closest('.faq-folded').classList.remove('faq-folded'); var fb = document.querySelector('.faq-all'); if (fb) fb.remove(); } }
+
+  // --- footer: columns fold on phones; desk hours in the visitor's own time ---
+  (function () {
+    var cols = document.querySelectorAll('.site-footer details.f-col'), last = null;
+    function fit() { var open = window.innerWidth >= 900; if (open === last) return; last = open; [].forEach.call(cols, function (d) { d.open = open; }); }
+    if (cols.length) { fit(); var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(fit, 150); }); }
+    var h = document.querySelector('[data-desk-hours]');
+    if (h) { try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      var ist = new Date(Date.now() + (330 + new Date().getTimezoneOffset()) * 60000), open = ist.getHours() >= 10 && ist.getHours() < 20;
+      var f = function (hh) { var d = new Date(Date.UTC(2026, 0, 1, hh, 0)); d.setUTCMinutes(d.getUTCMinutes() - 330); return d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }); };
+      h.textContent = (open ? 'Open now · ' : 'Closed now · ') + '10am to 8pm India time' + (/Asia\/(Kolkata|Calcutta)/.test(tz) ? '' : ' (' + f(10) + ' to ' + f(20) + ' your time)');
+    } catch (e) {} }
+  })();
 
   // --- market picker tabs ---------------------------------------------
   document.querySelectorAll('[data-mkp]').forEach(function (root) {

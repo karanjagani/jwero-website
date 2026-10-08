@@ -299,37 +299,46 @@ function navHTML(page) {
 }
 
 function footerHTML() {
-  const col = (t, links) =>
-    `<div class="f-col"><p class="f-title">${t}</p>${links.map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</div>`;
+  const { seal } = require('./lib');
+  // Each column folds on phones (site.js closes them under 900px); on desktop it is a plain list.
+  const fcol = (t, links, all) =>
+    `<details class="f-col" open><summary class="f-title">${t}${icon('arrow')}</summary><div class="f-links">${links.map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}${all ? `<a class="f-all" href="${all[0]}">${all[1]} →</a>` : ''}</div></details>`;
   return `
 <footer class="site-footer">
   <div class="f-wrap">
-    <div class="f-top">
+    <div class="f-contact">
       <div class="f-brand">
         <p class="logo f-logo" data-f-logo>${mark('mark-logo')}<span class="logo-word f-lockup"><img class="logo-wm logo-wm-dark" src="/assets/brand/jwero-wordmark-tagline.webp" alt="Jwero. Building jewelry rocketships" width="1493" height="473"><img class="logo-wm logo-wm-light" src="/assets/brand/jwero-wordmark-tagline-white.webp" alt="" aria-hidden="true" width="1493" height="473"></span></p>
         <p class="f-tag">${SIGNATURE}<br>${TAGLINE}.</p>
-        <p class="f-enemy">“You shouldn’t have to become an expert in everything to remain an expert in jewellery.”</p>
-        <p class="f-made">Made with <span aria-hidden="true">❤</span><span class="sr-only">love</span> for Jewellers</p>
+        <p class="f-made">Made with <span aria-hidden="true">❤</span><span class="sr-only">love</span> for jewellers. This site runs on Jwero; the chat button is the product.</p>
       </div>
-      <div class="f-grid">
-      ${col('Products', [['/products', 'App grid'], ...NAV.find((m) => m.label === 'Products').groups.flatMap((g) => g.items)])}
-      ${col('Solutions', [['/roles','Roles — who uses Jwero'],['/solutions','All 23 solutions'],['/industries/retail','Retail'],['/solutions/single-store','Single store'],['/solutions/multi-store-chains','Multi-store & chains'],['/solutions/luxury-boutique','Luxury & boutique'],['/solutions/bridal','Bridal & wedding'],['/solutions/manufacturers','Manufacturers'],['/solutions/b2b-jewellery','Wholesale & B2B'],['/solutions/d2c-brands','D2C brands'],['/solutions/franchise-networks','Franchise networks'],['/solutions/pain/dead-stock','Dead stock'],['/solutions/pain/lead-leakage','Lead leakage']])}
-      ${col('Resources', [['/faq','FAQ — every objection'],['/guides','Buyer’s guides'],['/blog','Blog'],['/tools','Tools & Calculators'],['/tools/dead-stock-calculator','Dead Stock Calculator'],['/tools/gold-scheme-calculator','Gold Scheme Calculator'],['/tools/whatsapp-revenue-estimator','WhatsApp Revenue Estimator'],['/tools/gold-loss-calculator','Gold-Loss Calculator'],['/compare','Compare alternatives'],['/compare/jwero-vs-shopify','Jwero vs Shopify'],['/compare/jwero-vs-wati','Jwero vs WATI'],['/migration','Migration Centre'],['/partners','Partners'],['/customers','Customer proof']])}
-      <div class="f-stack">
-      ${col('Jwero', [['/why-jwero','Why Jwero'],['/how-it-works','How it works'],['/ai-and-experts','AI + experts'],['/what-we-handle','What we handle'],['/self-managed','Self managed'],['/jewellery-business-as-a-service','Managed services'],['/success-stories','Success stories'],['/jwero-os','The operating system']])}
-      ${col('Company', [['/company','About'],['/refer','Refer a jeweller'],['/jewellery-software-india','Jewellery software by city'],['/hi','हिंदी'],['/pricing','Pricing'],['/book-demo','Book a demo'],['/enterprise','Enterprise'],['/contact','Contact']])}
-      ${col('Trust', [['/trust','Trust Centre'],['/trust/security','Security'],['/legal/privacy','Privacy Policy'],['/legal/terms','Terms of Use'],['/legal/data-policy','Data Policy'],['/legal/sub-processors','Sub-processors'],['/legal/dpdp','DPDP statement'],['/roadmap','Roadmap']])}
-      </div>
+      <div class="f-talk">
+        <p class="f-title">Talk to a person</p>
+        <div class="f-talk-grid">
+          <a class="f-talk-item" href="#" data-wa="footer">${icon('chat')}<span><b>WhatsApp</b><em>From any country. The fastest way.</em></span></a>
+          <a class="f-talk-item" href="tel:+919169959959">${icon('phone')}<span><b>+91 91699 59959</b><em data-desk-hours>10am to 8pm India time</em></span></a>
+          <a class="f-talk-item" href="mailto:care@jwero.ai">${icon('mail')}<span><b>care@jwero.ai</b><em>For anything with an attachment</em></span></a>
+          <a class="f-talk-item" href="/book-demo">${icon('calendar')}<span><b>Book a demo</b><em>Fifteen minutes, your own scenario</em></span></a>
+        </div>
       </div>
     </div>
-    <div class="f-proof">ISO/IEC 27001 certified · Penetration tested · Every customer on one record · AI that asks before it sends · Chat and calls in 14 languages · Works with Tally, Zoho Books, Shopify and WooCommerce · Official WhatsApp Business Platform · Your data, exportable any time</div>
+    <div class="f-grid">
+      ${fcol('Products', [['/products/whatsapp', 'WhatsApp Commerce'], ['/products/instagram-facebook', 'Instagram & Facebook'], ['/products/ai-sales-agents', 'AI Sales Agents & Voice'], ['/products/ecommerce', 'Ecommerce Website'], ['/products/digital-catalogues', 'Digital Catalogues'], ['/products/crm', 'Jewellery CRM'], ['/products/showroom', 'Showroom Intelligence'], ['/products/pos', 'Counter POS'], ['/products/billing-finance', 'Billing & Finance'], ['/products/inventory', 'Inventory'], ['/products/manufacturing', 'Manufacturing & Workshop'], ['/products/gold-schemes', 'Gold Schemes & Gold Loans'], ['/products/hr-payroll', 'HR & Payroll']], ['/products', 'All 35 products'])}
+      ${fcol('Solutions', [['/solutions/single-store', 'Single store'], ['/solutions/multi-store-chains', 'Multi-store & chains'], ['/solutions/gold-retail', 'Gold retail'], ['/solutions/bridal', 'Bridal & wedding'], ['/solutions/diamond-retail', 'Diamond retail'], ['/solutions/manufacturers', 'Manufacturers'], ['/solutions/b2b-jewellery', 'Wholesale & B2B'], ['/solutions/d2c-brands', 'D2C brands'], ['/solutions/franchise-networks', 'Franchise networks'], ['/roles', 'By role']], ['/solutions', 'All 23 solutions'])}
+      ${fcol('Learn', [['/faq', 'FAQ, every objection'], ['/guides', 'Buyer’s guides'], ['/blog', 'Blog'], ['/tools', 'Calculators'], ['/compare', 'Compare alternatives'], ['/migration', 'Migration Centre'], ['/customers', 'Customers'], ['/partners', 'Partners'], ['/roadmap', 'Roadmap']])}
+      ${fcol('Company', [['/company', 'About'], ['/pricing', 'Pricing'], ['/jewellery-business-as-a-service', 'Let Jwero run it'], ['/enterprise', 'Enterprise'], ['/why-jwero', 'Why Jwero'], ['/refer', 'Refer a jeweller'], ['/jewellery-software-india', 'Jewellery software by city'], ['/hi', 'हिंदी'], ['/contact', 'Contact']])}
+      ${fcol('Trust', [['/trust', 'Trust Centre'], ['/trust/security', 'Security'], ['/legal/privacy', 'Privacy Policy'], ['/legal/terms', 'Terms of Use'], ['/legal/data-policy', 'Data Policy'], ['/legal/sub-processors', 'Sub-processors'], ['/legal/dpdp', 'DPDP statement']])}
+    </div>
+    <div class="f-row">
+      <p class="mkt-chips f-markets"><span>Works in</span><a href="/jewellery-software-india">India</a><a href="/jewellery-software-uae">the Gulf</a><a href="/jewellery-software-uk">UK and Europe</a><a href="/jewellery-software-usa">US and Canada</a><a href="/jewellery-software-singapore">Southeast Asia</a><a href="/global">Worldwide</a></p>
+      <a class="f-trust" href="/trust">${['ISO', 'VAPT', 'OWASP', 'SOC 2'].map((k) => `<span class="f-seal">${seal(k, k === 'SOC 2' ? 'prog' : 'in', 38)}<i>${k === 'ISO' ? 'ISO/IEC 27001' : k === 'VAPT' ? 'Penetration tested' : k === 'OWASP' ? 'OWASP Top 10' : 'SOC 2 in progress'}</i></span>`).join('')}<span class="f-facts">Your own database · AI asks before it sends · Export any time</span></a>
+    </div>
     <div class="f-bottom">
-      <p>© <span data-year></span> Jwero. All rights reserved. Text, images, calculators and code are Jwero’s copyright; no bulk copying or AI training without written permission.</p>
+      <p class="f-copy">© <span data-year></span> Jwero <a href="/legal/privacy">Privacy</a><a href="/legal/terms">Terms</a><a href="/legal/data-policy">Data Policy</a></p>
+      <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank" aria-label="${l}" title="${l}">${/instagram/i.test(l) ? '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>' : /linkedin/i.test(l) ? '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4 9h4v12H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h4v2c.6-1.2 2-2.3 4-2.3 4 0 4.5 2.6 4.5 6V21h-4v-5.5c0-1.6-.3-3-2-3s-2.5 1.3-2.5 3V21h-4z"/></svg>' : l}</a>`).join('')}<a class="f-login" href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=footer" rel="noopener">Log in to Jwero</a></p>
       <a class="trap" href="/.well-known/bait/" rel="nofollow" tabindex="-1" aria-hidden="true">Index</a>
-      <p class="f-social">${SOCIALS.map(([h, l]) => `<a href="${h}" rel="noopener" target="_blank">${l}</a>`).join('')}<a href="#" data-share="Thought of you. Jwero takes the marketing, technology and follow-up chaos off a jeweller:">Refer a jeweller, save 10%</a><a href="mailto:care@jwero.ai">care@jwero.ai</a><a href="https://os.jwero.ai/login?utm_source=jwero.ai&utm_medium=footer" rel="noopener">Log in to Jwero</a></p>
-      <p>This site runs on Jwero — the chat button is the product.</p>
     </div>
-    <p class="f-legal">Jwero is a product of ${LEGAL_ENTITY} · CIN ${LEGAL_CIN} · Registered office: ${LEGAL_ADDRESS}</p>
+    <p class="f-legal">Jwero is a product of ${LEGAL_ENTITY} · CIN ${LEGAL_CIN} · Registered office: ${LEGAL_ADDRESS}. Text, images, calculators and code are Jwero’s copyright; no bulk copying or AI training without written permission.</p>
   </div>
 </footer>
 <div class="sticky-bar" role="navigation" aria-label="Quick actions">
