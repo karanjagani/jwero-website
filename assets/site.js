@@ -2,15 +2,16 @@
 // rupees; money inputs show dollars and read back rupees; figures in page text are converted for show.
 (function () {
   var c = null; try { c = localStorage.getItem('jw-cur'); } catch (e) {}
-  if (!c || !/^(inr|usd|aed|gbp|eur)$/.test(c)) {
+  if (!c || !/^(inr|usd|aed|sar|qar|gbp|eur)$/.test(c)) {
     var tz = ''; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
     c = /Asia\/(Kolkata|Calcutta)/.test(tz) ? 'inr'
-      : /Asia\/(Dubai|Muscat|Qatar|Bahrain|Riyadh|Kuwait)/.test(tz) ? 'aed'
+      : /Asia\/Riyadh/.test(tz) ? 'sar' : /Asia\/Qatar/.test(tz) ? 'qar'
+      : /Asia\/(Dubai|Muscat|Bahrain|Kuwait)/.test(tz) ? 'aed'
       : /Europe\/(London|Belfast|Guernsey|Jersey|Isle_of_Man)/.test(tz) ? 'gbp'
       : /^Europe\/(Dublin|Paris|Berlin|Madrid|Rome|Amsterdam|Brussels|Vienna|Lisbon|Athens|Helsinki|Luxembourg|Monaco|Malta|Tallinn|Riga|Vilnius|Bratislava|Ljubljana|Zagreb|Nicosia|Andorra|San_Marino|Vatican)/.test(tz) ? 'eur' : 'usd';
   }
   window.JW_CUR = c;
-  window.JW_CURS = { inr: { r: 1, sym: '₹', loc: 'en-IN' }, usd: { r: 85, sym: '$', loc: 'en-US' }, aed: { r: 23, sym: 'AED ', loc: 'en-AE' }, gbp: { r: 107, sym: '£', loc: 'en-GB' }, eur: { r: 92, sym: '€', loc: 'en-IE' } };
+  window.JW_CURS = { inr: { r: 1, sym: '₹', loc: 'en-IN' }, usd: { r: 85, sym: '$', loc: 'en-US' }, aed: { r: 23, sym: 'AED ', loc: 'en-AE' }, sar: { r: 22.7, sym: 'SAR ', loc: 'en-SA' }, qar: { r: 23.3, sym: 'QAR ', loc: 'en-QA' }, gbp: { r: 107, sym: '£', loc: 'en-GB' }, eur: { r: 92, sym: '€', loc: 'en-IE' } };
   window.JW_RATE = window.JW_CURS[c].r;
   document.documentElement.setAttribute('data-cur', c);
 })();
@@ -3087,7 +3088,7 @@ document.addEventListener('click', function (e) {
     var list = []; while (w.nextNode()) list.push(w.currentNode);
     list.forEach(function (n) { n.nodeValue = conv(n.nodeValue); });
   }
-  [].forEach.call(document.querySelectorAll('.callc, .calc, [data-stackm]'), function (c) { if (c.querySelector('.cur-approx')) return; var p = document.createElement('p'); p.className = 'cta-note cur-approx'; p.setAttribute('data-inr-keep', ''); var C = window.JW_CURS[window.JW_CUR]; p.textContent = 'Amounts shown in ' + ({ usd: 'US dollars', aed: 'dirhams', gbp: 'pounds', eur: 'euros' })[window.JW_CUR] + ', converted from Indian prices at about ₹' + C.r + ' to ' + C.sym + '1. Use your own figures.'; c.appendChild(p); });
+  [].forEach.call(document.querySelectorAll('.callc, .calc, [data-stackm]'), function (c) { if (c.querySelector('.cur-approx')) return; var p = document.createElement('p'); p.className = 'cta-note cur-approx'; p.setAttribute('data-inr-keep', ''); var C = window.JW_CURS[window.JW_CUR]; p.textContent = 'Amounts shown in ' + ({ usd: 'US dollars', aed: 'dirhams', sar: 'Saudi riyals', qar: 'Qatari riyals', gbp: 'pounds', eur: 'euros' })[window.JW_CUR] + ', converted from Indian prices at about ₹' + C.r + ' to ' + C.sym + '1. Use your own figures.'; c.appendChild(p); });
   var main = document.querySelector('main') || document.body; walk(main);
   var busy = false; new MutationObserver(function () { if (busy) return; busy = true; walk(main); busy = false; }).observe(main, { subtree: true, childList: true, characterData: true });
 })();

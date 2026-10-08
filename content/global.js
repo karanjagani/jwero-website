@@ -34,7 +34,7 @@ const globalHub = {
     { q: 'Does Jwero work outside India?', a: 'Yes. Jwero supports local currencies, GST, VAT and US sales tax, live gold rates for any market, 14 languages, Stripe and PayPal, and hosting in your region on request.' },
     { q: 'Which tax systems are supported?', a: 'India GST, UK VAT, EU VAT, GCC VAT and US sales tax, set per business. For another country, ask us.' },
     { q: 'Where is my data hosted?', a: 'In India by default, or in your region on request. Enterprise customers self-host on their own servers or cloud.' },
-    { q: 'What does it cost outside India?', a: 'Jwero One is $249, AED 899, £199 or €229 a month with every module; the first month is $49, AED 179, £39 or €45. Messages and calls are charged at your country’s rates.' },
+    { q: 'What does it cost outside India?', a: 'Jwero One is $249, AED 899, SAR 929, QAR 909, £199 or €229 a month with every module; the first month is $49, AED 179, SAR 185, QAR 179, £39 or €45. Messages and calls are charged at your country’s rates.' },
   ],
   body: `
 ${L.hero({ eyebrow: 'JWERO WORLDWIDE', h1: 'One system for jewellers in every market.', sub: 'Your currency, your tax system, your gold rate and your customers’ language, on the same record that runs the counter, the stock, the workshop and every chat.', primary: { href: '#', label: 'Tell us where you sell', wa: 'global' }, secondary: { href: '/pricing', label: 'See pricing' } })}
