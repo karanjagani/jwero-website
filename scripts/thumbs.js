@@ -4,6 +4,8 @@
 const fs = require('fs'), path = require('path'), { execFileSync } = require('child_process');
 const SRC = path.join(__dirname, '..', 'assets', 'og'), OUT = path.join(SRC, 'thumb');
 fs.mkdirSync(OUT, { recursive: true });
+// On a build host without cwebp (Cloudflare Pages, CI) the committed thumbnails are used as they are.
+try { execFileSync('cwebp', ['-version'], { stdio: 'ignore' }); } catch (e) { return; }
 let made = 0;
 for (const f of fs.readdirSync(SRC).filter((x) => x.endsWith('.jpg'))) {
   const src = path.join(SRC, f), dst = path.join(OUT, f.replace(/\.jpg$/, '.webp'));

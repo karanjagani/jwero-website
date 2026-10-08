@@ -1778,6 +1778,30 @@ function build() {
   MOVED['focus/jwero-os'] = '/';
   for (const [from, to] of Object.entries(require('./content/legacy-posts.json').redirects)) MOVED[from] = to.charAt(0) === '/' ? to : '/' + to;
   MOVED.blogs = '/blog';
+  // Cloudflare Pages: real 301s for every moved address (the HTML stubs below stay for hosts without redirect files), and response headers.
+  const redirectLines = [];
+  for (const [from, to] of Object.entries(MOVED)) { const f = '/' + from.replace(/^\/+|\/+$/g, ''); redirectLines.push(`${f} ${to} 301`, `${f}/ ${to} 301`); }
+  fs.writeFileSync(path.join(DIST, '_redirects'), redirectLines.join('\n') + '\n');
+  fs.writeFileSync(path.join(DIST, '_headers'), `/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=31536000
+  X-Robots-Tag: noai, noimageai
+/assets/site.css
+  Cache-Control: public, max-age=3600, must-revalidate
+/assets/site.js
+  Cache-Control: public, max-age=3600, must-revalidate
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/og/*
+  Cache-Control: public, max-age=604800
+/assets/brand/*
+  Cache-Control: public, max-age=604800
+/.well-known/bait/*
+  X-Robots-Tag: noindex, nofollow
+`);
   for (const [from, to] of Object.entries(MOVED)) {
     if (pages.some((p) => p.slug === from)) continue;
     fs.mkdirSync(path.join(DIST, from), { recursive: true });
