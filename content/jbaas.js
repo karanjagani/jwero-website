@@ -11,32 +11,39 @@ const L = require('../lib');
 const TIERS = () => `
 <div class="jb-tiers">
   <article class="jb-tier">
-    <p class="jb-k">01 · Subscription</p>
-    <h3>You run it</h3>
+    <p class="jb-k">01 · Run it yourself</p>
+    <h3>Your team, Jwero’s platform</h3>
+    <p class="jb-who">For a showroom or small chain with its own team.</p>
     <p class="jb-price">₹18,000<span> a month</span></p>
-    <p class="jb-note">First month ₹3,600. Billed monthly.</p>
-    <ul><li>Every module of the platform</li><li>Official WhatsApp API, with payments in the chat</li><li>AI calls at ₹7, 8 at a time</li><li>AI agents that wait for your approval</li><li>Messages, AI and calls on a prepaid wallet</li></ul>
+    <p class="jb-note"><b>First month ₹3,600.</b> Billed monthly, excluding GST.</p>
+    <ul><li><b>Every product, one price.</b> WhatsApp, counter, stock, POS, schemes, girvi, workshop, books, team, marketing and communication. Nothing per module, nothing per seat.</li><li><b>Replaces the 10 to 15 tools</b> most shops pay for today, so there is no other software to buy.</li><li><b>Adds the hands you have been trying to hire:</b> AI and automation that do the work of four or five people on your team, with your people approving what matters.</li><li><b>Built to grow with you.</b> From one counter to a national brand, the same platform, your vision and your execution.</li><li><b>Live in a day.</b> Customers, catalogue and stock imported for you.</li></ul>
     <div class="jb-cta"><a class="btn btn-ghost jb-btn2" href="${L.TRIAL_URL}pricing-tiers" rel="noopener" data-trial><span>Start for ₹3,600</span><small>Join the waitlist</small></a><a class="jb-demo" href="/book-demo">View demo</a></div>
+    <p class="jb-fine">Messages, AI calls (₹7 each) and listings run on a prepaid balance.</p>
   </article>
   <article class="jb-tier is-main">
-    <p class="jb-k">02 · Managed (JBaaS)</p>
-    <h3>Jwero runs it</h3>
-    <p class="jb-note">No subscription. Every tool included. About half of what the same work costs you today.</p>
-    <ul><li>Jwero specialists and AI do the work</li><li>Start with one function, add more any time</li><li>No team to hire, no tools to buy</li><li>One partner, one account of what was done</li></ul>
+    <p class="jb-k">02 · Let Jwero run it</p>
+    <h3>You get the results, not the software</h3>
+    <p class="jb-who">For the owner who wants the outcome, not another system to manage.</p>
+    <p class="jb-price jb-price-sm">Priced on the work</p>
+    <p class="jb-note"><b>No subscription. Every tool included.</b> About half of what hiring for the same work costs you.</p>
+    <ul><li><b>Specialists for a function, or the whole business.</b> Enquiries, scheme collections, posting, listing, walkout follow-ups, books: Jwero’s specialists and AI handle it.</li><li><b>Start with the one job that costs you most,</b> usually enquiries or collections. Add more when you see it working.</li><li><b>You approve what matters.</b> Every action is on one account you can read.</li><li><b>No team to hire, no tools to buy.</b></li></ul>
     <div class="jb-cta"><a class="btn btn-primary" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="jb-demo" href="/book-demo">View demo</a></div>
+    <p class="jb-fine">Tell us what you run and we will say which job to hand over first.</p>
   </article>
   <article class="jb-tier">
-    <p class="jb-k">03 · Enterprise</p>
-    <h3>For chains and groups</h3>
+    <p class="jb-k">03 · Chains, brands and groups</p>
+    <h3>The platform you would have built in-house</h3>
+    <p class="jb-who">For many showrooms, brands or companies.</p>
     <p class="jb-price">Custom</p>
-    <p class="jb-note">Many showrooms, brands or companies, with your own terms.</p>
-    <ul><li>Self-run, managed, or a mix by function</li><li>Single sign-on and custom integrations</li><li>A dedicated success manager</li><li>Contracts and security reviews your way</li></ul>
+    <p class="jb-note">Your terms, rolled out branch by branch, with a pilot first and the season left alone.</p>
+    <ul><li><b>The software you dreamed of building in-house,</b> ready, with your rules, your prices and your branches on one record.</li><li><b>One bill for the platform,</b> instead of a stack of software contracts across stores and teams.</li><li><b>Your data stays in your control.</b> Your own database, roles per branch and per team, so customers and prices do not walk out in someone’s phone.</li><li><b>Security and privacy on your terms:</b> single sign-on, reviews and contracts your way, a dedicated success manager.</li><li><b>Fewer unknowns.</b> Head office sees every store; every store sees its own; every AI action is logged and can be stopped.</li></ul>
     <a class="btn btn-ghost" href="#" data-wa="enterprise">Talk to us</a>
+    <p class="jb-fine">Run it, have it run, or mix by function.</p>
   </article>
 </div>
 <p class="jb-promise">Onboarding in a day · Refer a jeweller, save 10%</p>`;
 
-const section = () => L.section(`<span id="jbaas"></span>${L.sectionHead('JEWELLERY BUSINESS AS A SERVICE', 'Use the platform.<br>Or let Jwero run it for you.', 'The same platform, three ways to buy it. Run it with your own team, or hand the work to Jwero’s specialists and AI with every tool included.')}${TIERS()}<p class="jb-more"><a href="/jewellery-business-as-a-service">See how Jewellery Business as a Service works →</a></p>`, { tone: 'tint' });
+const section = () => L.section(`<span id="jbaas"></span>${L.sectionHead('JEWELLERY BUSINESS AS A SERVICE', 'Use the platform.<br>Or let Jwero run it for you.', 'One platform, three ways to have it. Run it with your team, hand the work to Jwero’s specialists and AI, or roll it out across a chain with your own terms.')}${TIERS()}<p class="jb-more"><a href="/jewellery-business-as-a-service">See how Jewellery Business as a Service works →</a></p>`, { tone: 'tint' });
 
 const WHAT = [
   ['Get more customers', 'Ads, search, social media, content and creatives.'],

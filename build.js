@@ -374,7 +374,7 @@ function topSections(html) {
 // The three-tier price block as one compact line; the full comparison lives on /pricing.
 function compactTiers(html) {
   return html.replace(/<section class="[^"]*" id="tiers">[\s\S]*?Use it yourself, or let Jwero run it\.[\s\S]*?<\/section>/, () => `<section class="section section-tint" id="tiers"><div class="container"><div class="price-line">
-  <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Use it yourself, or let Jwero run it.</h2><p>Run Jwero yourself for ₹18,000 a month with every module, first month ₹3,600. Or let Jwero’s specialists and AI run the work for you, with no subscription and every tool included.</p></div>
+  <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Use it yourself, or let Jwero run it.</h2><p>One price, ₹18,000 a month, replaces the 10 to 15 tools you pay for today, with the first month at ₹3,600. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included, priced on the work.</p></div>
   <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=product-price">Start for ₹3,600</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
 </div></div></section>`);
 }
@@ -426,7 +426,7 @@ function journeyFix(html, p) {
   // comparison lives on the pricing and JBaaS pages.
   if (/^products\/[^/]+$/.test(p.slug || '')) {
     html = html.replace(/<section class="section section-tint" id="tiers">[\s\S]*?Use it yourself, or let Jwero run it\.[\s\S]*?<\/section>/, () => `<section class="section section-tint" id="tiers"><div class="container"><div class="price-line">
-  <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Use it yourself, or let Jwero run it.</h2><p>Run Jwero yourself for ₹18,000 a month with every module, first month ₹3,600. Or let Jwero’s specialists and AI run the work for you, with no subscription and every tool included.</p></div>
+  <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Use it yourself, or let Jwero run it.</h2><p>One price, ₹18,000 a month, replaces the 10 to 15 tools you pay for today, with the first month at ₹3,600. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included, priced on the work.</p></div>
   <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=product-price">Start for ₹3,600</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
 </div></div></section>`);
   }

@@ -4495,3 +4495,8 @@ body.is-scrolled.on-panel .site-header .logo-wm-light, .on-dark .logo-wm-light {
 .post-next p { margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .cta-after { margin-top: 10px; font-size: .9rem; opacity: .85; }
 .cta-after a { color: inherit; text-decoration: underline; }
+.jb-who { margin: 0 0 12px; font-size: .9rem; font-style: italic; color: var(--ink-2); }
+.jb-tier ul li b { font-weight: 650; }
+.jb-fine { margin: 12px 0 0; font-size: .8rem; color: var(--ink-2); }
+.jb-price span { font-size: .95rem; }
+.jb-price-sm { font-size: 1.55rem; line-height: 1.15; }
