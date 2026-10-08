@@ -166,7 +166,7 @@ ${L.honestGapsBlock([
   'On the hosted Jwero One plan, data sits in India by default, or in your region on request. Enterprise customers self-host it where they choose. Physical per-tenant database isolation is real and strong on both.',
   'No organisation-mandated MFA policy — multi-factor authentication exists and is available to every user, but it’s opt-in per user today, not something an admin can force org-wide.',
   'No franchise-specific administration layer (royalty tracking, franchisor oversight of independently-owned franchisees) — genuine multi-store/multi-brand/multi-branch administration is real; franchise-specific tooling on top of it is not.',
-  'Formal certifications: ISO 27001 and SOC 2 are in progress, not certified, and are published only when earned, same as stated on the security page.',
+  'SOC 2: the audit is in progress and the report is published when issued. ISO/IEC 27001 is certified and an independent penetration test is done; see the security page.',
 ])}
 
 ${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', 'Answers for your evaluation committee.', '')}${L.faqBlock([

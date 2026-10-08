@@ -133,3 +133,8 @@ terms, or need to be withdrawn:
 ## K. WhatsApp and AI calling pages (added 2026-10-07)
 - Stated as confirmed by Jwero: official Meta Business Partner; native WhatsApp payments; bulk inbound and outbound voice AI calling; triggers and campaigns.
 - Confirmed 2026-10-07: up to 8 concurrent calls inbound and outbound; all languages of the speech provider (11 named, provider not named on the page); AI call ₹7 per call, all inclusive of AI, voice and phone line (pricing page changed from ₹6 per minute). To confirm: "usually within a day of your Meta verification"; TRAI wording.
+
+
+## Update 2026-10-08: certification statuses
+
+The founder stated on 2026-10-08 that ISO/IEC 27001 is certified, an independent VAPT is complete, OWASP Top 10 testing is done, and SOC 2 is in progress. The site now shows these statuses on the home trust section, the Trust Centre, the security page, the enterprise gaps list, the FAQ and the legal summary. Still to collect and publish: the certification body, certificate number, issue and expiry dates, and scope statement; the VAPT firm, test date and summary; the SOC 2 type and expected date. Until a certification body's mark is supplied with permission to use it, the seals are Jwero-drawn marks naming the standard.

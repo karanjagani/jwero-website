@@ -286,7 +286,7 @@ const dataPolicy = doc({
       <li>Jwero staff access to a workspace limited to support and operations needs, and logged.</li>
       <li>A written incident response plan.</li>
     </ul>
-    <p>Jwero does not hold SOC 2 or ISO 27001 certification today. See <a href="/trust/security">Security</a> for what is in place and what is planned.</p>`],
+    <p>Jwero holds ISO/IEC 27001 certification and has completed an independent penetration test; a SOC 2 audit is in progress. See <a href="/trust/security">Security</a> for what is in place and what is planned.</p>`],
     ['Sub-processors', 'Named on a public page. We tell you before adding one.', `
     <p>The Customer authorises Jwero to use the sub-processors listed on the <a href="/legal/sub-processors">Sub-processors</a> page. Many are used only when the Customer switches on the feature that needs them. Jwero remains responsible for their work and requires them by contract to protect the data. We will update that page at least 15 days before adding a sub-processor that will handle Customer Data, and a Customer who objects may stop using the feature concerned or cancel.</p>`],
     ['Location and transfers', '', `

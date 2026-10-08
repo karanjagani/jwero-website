@@ -725,8 +725,8 @@ function impactGrid(items) { return compareRows(items); }
 
 // Security, compliance and focus, in one view. Every line is something the
 // security and enterprise pages already state and the product does. Formal
-// certifications are shown with their true status — "Planned" — and never as a
-// badge: the site says so on /trust/security and this must not contradict it.
+// certifications are shown with their true status: ISO/IEC 27001 certified,
+// VAPT and OWASP Top 10 testing done, SOC 2 in progress (stated 2026-10-08).
 const SECURITY_CONTROLS = [
   ['shield', 'Your own database', 'One isolated database per business. Your customers are never stored alongside another jeweller’s.'],
   ['key', 'Encrypted, in transit and at rest', 'Credentials are encrypted; data is encrypted on the wire and on disk.'],
@@ -740,53 +740,100 @@ const COMPLIANCE_ROWS = [
   ['GST record keeping', 'Orders, invoices, payments, purchases and payroll are never deleted, on every plan.', 'in', '/pricing'],
   ['WhatsApp Business', 'Runs on Meta’s official Business API — templates, consent and opt-outs handled.', 'in', '/products/whatsapp'],
   ['BIS hallmarking & HUID', 'HUID and certificate details are recorded on the piece itself.', 'in', '/products/catalog'],
-  ['SOC 2', 'Not certified yet. Planned, and published only when earned.', 'plan', '/trust/security'],
-  ['ISO 27001', 'Not certified yet. Planned, and published only when earned.', 'plan', '/trust/security'],
+  ['ISO/IEC 27001', 'Certified. Certificate and scope shared with your IT team on request.', 'in', '/trust/security'],
+  ['Penetration testing', 'Independent VAPT completed; tested against the OWASP Top 10. Summary on request.', 'in', '/trust/security'],
+  ['SOC 2', 'In progress. The report is published here when it is issued.', 'prog', '/trust/security'],
 ];
-// Trust badges. Jwero's own marks, never a certification body's logo: a badge
-// here states a status, and only "In place" means the thing is done. ISO 27001,
-// SOC 2, GDPR and an independent penetration test are not achieved and say so.
-// [short, name, status, what is true today, href]
+// Trust badges. Each one states a status, and only "In place", "Certified" or
+// "Tested" means the thing is done. Statuses stated by Jwero on 2026-10-08:
+// ISO/IEC 27001 certified, independent VAPT done, OWASP Top 10 tested, SOC 2
+// in progress. The certificate and test summaries are shared on request.
+// [short, name, status, what is true today, href, region ('in' | 'gl' | ''), status label]
 const TRUST_BADGES = [
-  ['GDPR', 'GDPR (UK and EU)', 'in', 'A data processing agreement on request, export and deletion of personal data, every processor listed, and hosting in your region on request.', '/legal/data-policy', 'gl'],
-  ['VAT', 'VAT and sales-tax records', 'in', 'Invoices, orders, payments and purchases are never deleted on a schedule, ready for your tax authority.', '/legal/data-policy', 'gl'],
-  ['DPDP', 'India’s DPDP Act, 2023', 'in', 'Data protection statement, processor terms, consent records, export and erasure tools.', '/legal/dpdp', 'in'],
-  ['IN', 'Data hosted in India or your region', 'in', 'Each business in its own database, in India by default or in your region on request; Enterprise can self-host.', '/legal/sub-processors'],
-  ['PCI', 'Card data (PCI DSS)', 'in', 'Card details never reach Jwero. Payments run through PCI DSS certified providers.', '/legal/sub-processors'],
-  ['GST', 'GST record keeping', 'in', 'Invoices, orders, payments, purchases and payroll are never deleted on a schedule.', '/legal/data-policy', 'in'],
-  ['BIS', 'BIS hallmarking and HUID', 'in', 'HUID and certificate details recorded on each piece.', '/products/catalog', 'in'],
-  ['ISO', 'ISO/IEC 27001', 'prog', 'Not certified. Security policy and control mapping are drafted; certification is being prepared.', '/trust/security'],
-  ['SOC 2', 'SOC 2', 'prog', 'Not audited. The system description is drafted; an audit has not started.', '/trust/security'],
-  ['OWASP', 'OWASP Top 10 and penetration test', 'plan', 'No independent penetration test has been done yet. One is planned, and the summary will be shared here.', '/trust/security'],
+  ['ISO', 'ISO/IEC 27001', 'in', 'Certified. The information security management system is audited and certified; certificate and scope shared with your IT team on request.', '/trust/security', '', 'Certified'],
+  ['VAPT', 'Penetration tested (VAPT)', 'in', 'An independent vulnerability assessment and penetration test has been completed; the summary is shared on request.', '/trust/security', '', 'Tested'],
+  ['OWASP', 'OWASP Top 10', 'in', 'The application is tested against the OWASP Top 10 web application risks.', '/trust/security', '', 'Tested'],
+  ['SOC 2', 'SOC 2', 'prog', 'In progress. The audit is under way; the report will be published here when it is issued.', '/trust/security', '', 'In progress'],
+  ['GDPR', 'GDPR (UK and EU)', 'in', 'A data processing agreement on request, export and deletion of personal data, every processor listed, and hosting in your region on request.', '/legal/data-policy', 'gl', 'In place'],
+  ['DPDP', 'India’s DPDP Act, 2023', 'in', 'Data protection statement, processor terms, consent records, export and erasure tools.', '/legal/dpdp', 'in', 'In place'],
+  ['PCI', 'Card data (PCI DSS)', 'in', 'Card details never reach Jwero. Payments run through PCI DSS certified providers.', '/legal/sub-processors', '', 'Via certified providers'],
+  ['IN', 'Your own database, in your region', 'in', 'Each business in its own database, in India by default or in your region on request; Enterprise can self-host.', '/legal/sub-processors', '', 'In place'],
+  ['VAT', 'VAT and sales-tax records', 'in', 'Invoices, orders, payments and purchases are never deleted on a schedule, ready for your tax authority.', '/legal/data-policy', 'gl', 'In place'],
+  ['GST', 'GST record keeping', 'in', 'Invoices, orders, payments, purchases and payroll are never deleted on a schedule.', '/legal/data-policy', 'in', 'In place'],
+  ['BIS', 'BIS hallmarking and HUID', 'in', 'HUID and certificate details recorded on each piece.', '/products/catalog', 'in', 'In place'],
 ];
 const TRUST_STATUS = { in: 'In place', prog: 'In progress', plan: 'Planned' };
+const TRUST_FEATURED = ['ISO', 'VAPT', 'OWASP', 'SOC 2', 'GDPR', 'DPDP', 'PCI', 'IN'];
+
+// Seals, drawn by Jwero for each standard. A certification body's own mark is
+// placed only where that body permits it; until then the seal names the
+// standard and carries the true status.
+const SEALS = {
+  ISO: { shape: 'rosette', top: 'ISO/IEC', big: '27001', sub: 'INFORMATION SECURITY', size: 20 },
+  VAPT: { shape: 'shield', top: 'INDEPENDENT', big: 'VAPT', sub: 'PENETRATION TEST', size: 19 },
+  OWASP: { shape: 'hex', top: 'TESTED AGAINST', big: 'OWASP', sub: 'TOP 10', size: 17 },
+  'SOC 2': { shape: 'shield', top: 'AUDIT', big: 'SOC 2', sub: 'IN PROGRESS', size: 19 },
+  GDPR: { shape: 'stars', top: '', big: 'GDPR', sub: 'UK · EU', size: 18 },
+  PCI: { shape: 'card', top: 'CARD DATA', big: 'PCI DSS', sub: 'CERTIFIED PROVIDERS', size: 15 },
+  DPDP: { shape: 'shield', top: 'INDIA · 2023', big: 'DPDP', sub: 'ACT', size: 19 },
+  IN: { shape: 'globe', top: 'HOSTED IN INDIA', big: 'IN', sub: 'OR YOUR REGION', size: 20 },
+  VAT: { shape: 'doc', top: 'TAX', big: 'VAT', sub: 'RECORDS KEPT', size: 19 },
+  GST: { shape: 'doc', top: 'TAX', big: 'GST', sub: 'RECORDS KEPT', size: 19 },
+  BIS: { shape: 'doc', top: 'HALLMARK', big: 'BIS', sub: 'HUID RECORDED', size: 19 },
+};
+const SEAL_Y = { rosette: [44, 70, 83], shield: [40, 66, 80], hex: [44, 68, 82], stars: [0, 66, 82], card: [37, 70, 84], globe: [44, 70, 84], doc: [46, 72, 88] };
+function sealShape(shape) {
+  const pts = (n, r1, r2) => Array.from({ length: n }, (_, i) => { const a = -Math.PI / 2 + (i * 2 * Math.PI) / n, r = i % 2 ? r2 : r1; return (60 + r * Math.cos(a)).toFixed(1) + ',' + (60 + r * Math.sin(a)).toFixed(1); }).join(' ');
+  switch (shape) {
+    case 'rosette': return `<polygon class="seal-fill" points="${pts(48, 58, 52)}"/><circle class="seal-line" cx="60" cy="60" r="45"/>`;
+    case 'shield': return `<path class="seal-fill" d="M60 6 L106 22 V58 C106 86 86 106 60 114 C34 106 14 86 14 58 V22 Z"/><path class="seal-line" d="M60 16 L97 29 V58 C97 80 81 97 60 104 C39 97 23 80 23 58 V29 Z"/>`;
+    case 'hex': return `<polygon class="seal-fill" points="${pts(6, 57, 57)}"/><polygon class="seal-line" points="${pts(6, 48, 48)}"/>`;
+    case 'stars': return `<circle class="seal-fill" cx="60" cy="60" r="57"/>${Array.from({ length: 12 }, (_, i) => { const a = (i * Math.PI) / 6; return `<text class="seal-ink seal-star" x="${(60 + 47 * Math.cos(a)).toFixed(1)}" y="${(63.5 + 47 * Math.sin(a)).toFixed(1)}" text-anchor="middle">★</text>`; }).join('')}`;
+    case 'card': return `<rect class="seal-fill" x="8" y="24" width="104" height="72" rx="10"/><rect class="seal-stripe" x="8" y="42" width="104" height="11"/><rect class="seal-line" x="20" y="60" width="28" height="7" rx="2"/>`;
+    case 'globe': return `<circle class="seal-fill" cx="60" cy="60" r="57"/><circle class="seal-line" cx="60" cy="60" r="46"/><ellipse class="seal-line" cx="60" cy="60" rx="20" ry="46"/><path class="seal-line" d="M14 60h92M22 38h76M22 82h76"/>`;
+    default: return `<path class="seal-fill" d="M30 8h44l22 22v82a6 6 0 0 1-6 6H30a6 6 0 0 1-6-6V14a6 6 0 0 1 6-6z"/><path class="seal-line" d="M74 8v22h22"/>`;
+  }
+}
+function seal(short, status, px = 64) {
+  const sp = SEALS[short] || { shape: 'globe', top: '', big: short, sub: '', size: 18 };
+  const [yt, yb, ys] = SEAL_Y[sp.shape] || [44, 70, 84];
+  const mark = status === 'in'
+    ? `<circle class="seal-ok" cx="98" cy="98" r="13"/><path class="seal-okc" d="M91 98l5 5 10-11"/>`
+    : status === 'prog' ? `<circle class="seal-wait" cx="98" cy="98" r="13"/><circle class="seal-waitc" cx="98" cy="98" r="6"/><path class="seal-waitc" d="M98 94v4l3 2"/>` : '';
+  return `<svg class="seal is-${status}" viewBox="0 0 120 120" width="${px}" height="${px}" aria-hidden="true">${sealShape(sp.shape)}${sp.top ? `<text class="seal-ink seal-top" x="60" y="${yt}" text-anchor="middle">${sp.top}</text>` : ''}<text class="seal-ink seal-big" x="60" y="${yb}" text-anchor="middle" font-size="${sp.size}">${sp.big}</text>${sp.sub ? `<text class="seal-ink seal-sub" x="60" y="${ys}" text-anchor="middle">${sp.sub}</text>` : ''}${mark}</svg>`;
+}
 function trustBadges() {
   return `
 <div class="tbadges">
-  <p class="tbadge-legend"><span class="tb-in">In place</span><span class="tb-prog">In progress, not certified</span><span class="tb-plan">Planned, not started</span></p>
-  <div class="tbadge-grid">${TRUST_BADGES.map(([s, n, st, d, h]) => `
+  <p class="tbadge-legend"><span class="tb-in">Certified, tested or in place</span><span class="tb-prog">In progress</span><span class="tb-plan">Planned</span></p>
+  <div class="tbadge-grid">${TRUST_BADGES.map(([s, n, st, d, h, reg, lab]) => `
     <a class="tbadge tb-${st}" href="${h}">
-      <span class="tbadge-seal" aria-hidden="true"><b>${s}</b></span>
-      <span class="tbadge-body"><strong>${n}</strong><em>${TRUST_STATUS[st]}</em><span>${d}</span></span>
+      <span class="tbadge-seal">${seal(s, st, 76)}</span>
+      <span class="tbadge-body"><strong>${n}</strong><em>${lab || TRUST_STATUS[st]}</em><span>${d}</span></span>
     </a>`).join('')}
   </div>
 </div>`;
 }
 
-// The short trust strip for the home page: every standard as a small seal with
-// its real status, three facts, and a door to each trust document.
+// The trust strip: seals with their real status, three facts, and a door to
+// each trust document. `featured` shows the certifications first; `only`
+// limits it to a named set.
 function trustStrip(opts = {}) {
-  const badges = opts.inOnly ? TRUST_BADGES.filter(([, , st]) => st === 'in') : TRUST_BADGES;
+  let badges = opts.only ? opts.only.map((k) => TRUST_BADGES.find((b) => b[0] === k))
+    : opts.featured ? TRUST_FEATURED.map((k) => TRUST_BADGES.find((b) => b[0] === k))
+    : opts.inOnly ? TRUST_BADGES.filter(([, , st]) => st === 'in') : TRUST_BADGES;
+  badges = badges.filter(Boolean);
   const docs = [['/trust', 'Trust Centre'], ['/trust/security', 'Security'], ['/legal/privacy', 'Privacy Policy'], ['/legal/terms', 'Terms of Use'], ['/legal/data-policy', 'Data Policy'], ['/legal/sub-processors', 'Sub-processors'], ['/legal/dpdp', 'DPDP statement']];
+  const short = (n) => n.replace('India’s ', '').replace(', 2023', '').replace('Your own database, in your region', 'Your own database');
   return `
-<div class="tstrip">
-  <div class="tstrip-seals">${badges.map(([s, n, st, d, h, reg]) => `<a class="tseal tb-${st}"${reg ? ` data-reg="${reg}"` : ''} href="${h}" title="${esc(n)}: ${esc(TRUST_STATUS[st])}. ${esc(d)}"><span class="tseal-mark" aria-hidden="true"><b>${s}</b></span><span class="tseal-name">${n.replace('India’s ', '').replace(', 2023', '').replace(' and penetration test', '').replace('ISO/IEC', 'ISO')}</span><em>${TRUST_STATUS[st]}</em></a>`).join('')}</div>
-  <ul class="tstrip-facts">
+<div class="tstrip${opts.only ? ' tstrip-certs' : ''}">
+  <div class="tstrip-seals">${badges.map(([s, n, st, d, h, reg, lab]) => `<a class="tseal tb-${st}"${reg ? ` data-reg="${reg}"` : ''} href="${h}" title="${esc(n)}: ${esc(lab || TRUST_STATUS[st])}. ${esc(d)}"><span class="tseal-mark">${seal(s, st)}</span><span class="tseal-name">${short(n)}</span><em>${lab || TRUST_STATUS[st]}</em></a>`).join('')}</div>
+  ${opts.only ? '' : `<ul class="tstrip-facts">
     <li>${icon('shield')}<span><b>Your own database.</b> Never stored with another jeweller’s.</span></li>
     <li>${icon('key')}<span><b>Encrypted</b> in transit and at rest, with roles you control.</span></li>
     <li>${icon('download')}<span><b>Export any time.</b> Your data leaves with you.</span></li>
   </ul>
-  <nav class="tstrip-docs" aria-label="Trust documents">${docs.map(([h, t], i) => `<a href="${h}"${i === 0 ? ' class="is-main"' : ''}>${t}${i === 0 ? ' →' : ''}</a>`).join('')}</nav>
+  <nav class="tstrip-docs" aria-label="Trust documents">${docs.map(([h, t], i) => `<a href="${h}"${i === 0 ? ' class="is-main"' : ''}>${t}${i === 0 ? ' →' : ''}</a>`).join('')}</nav>`}
 </div>`;
 }
 
@@ -1492,6 +1539,7 @@ const mockMemo = `
 // ever repeats product-verified facts already stated elsewhere on the site.
 const CTA_TILES = ['shield', 'chat', 'gem', 'record', 'sparkle', 'coins'];
 const CTA_TICKER = [
+  ['badge', 'ISO/IEC 27001 certified · penetration tested'],
   ['record', 'Every customer remembered, on one record'],
   ['shield', 'AI asks before it sends'],
   ['download', 'Your data leaves with you, any time'],
@@ -1499,7 +1547,6 @@ const CTA_TICKER = [
   ['swap', 'Works with Tally and Zoho Books'],
   ['phone', 'AI chat and calls in 14 languages'],
   ['coins', 'One price, every module'],
-  ['users', 'Set up in a day, trained in your language'],
 ];
 function ctaBand(title, sub, waContext, opts = {}) {
   const secondary = opts.enterprise
@@ -1601,7 +1648,7 @@ function customerLogos() {
 
 module.exports = {
   esc, icon, autoIcon, sim, controlSplit, mockMemo, LINK_ICONS, PERSONAS, personaSlot, personaSwitch, systemSplit, gemStage, heroSchematic, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
-  mark, homeHero, STACK, STACK_COST, trustStrip, proofGrid, trustBadges, SECURITY_CONTROLS, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
+  mark, homeHero, STACK, STACK_COST, trustStrip, proofGrid, trustBadges, seal, SECURITY_CONTROLS, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,
 };

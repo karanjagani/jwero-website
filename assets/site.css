@@ -4817,3 +4817,36 @@ main h2[id^="sec-"] { scroll-margin-top: calc(var(--header-h) + 20px); }
 .hero-panel .mkt-chips span { color: var(--panel-mute); }
 .hero-panel .mkt-chips a { color: #fff; border-color: rgba(255, 255, 255, .45); }
 .hero-panel .mkt-chips a:hover { border-color: var(--amber); color: #fff; }
+
+/* ---- trust seals (2026-10-08): drawn marks for each standard, status carried by colour ---- */
+.seal { display: block; width: 100%; height: auto; overflow: visible; font-family: var(--font); }
+.seal .seal-fill { fill: var(--brand); }
+.seal .seal-ink { fill: #fff; }
+.seal .seal-line { fill: none; stroke: rgba(255, 255, 255, .55); stroke-width: 1.5; }
+.seal .seal-stripe { fill: rgba(255, 255, 255, .28); }
+.seal .seal-top { font-size: 7px; font-weight: 600; letter-spacing: .08em; }
+.seal .seal-big { font-weight: 800; letter-spacing: -.01em; }
+.seal .seal-sub { font-size: 6.3px; font-weight: 600; letter-spacing: .07em; }
+.seal .seal-star { font-size: 8px; }
+.seal .seal-ok { fill: var(--wa, #16a34a); stroke: var(--card, #fff); stroke-width: 3; }
+.seal .seal-okc { fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.seal .seal-wait { fill: var(--amber); stroke: var(--card, #fff); stroke-width: 3; }
+.seal .seal-waitc { fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; }
+.seal.is-prog .seal-fill { fill: color-mix(in srgb, var(--amber) 16%, var(--card, #fff)); stroke: var(--amber); stroke-width: 2.5; }
+.seal.is-prog .seal-ink { fill: var(--ink); }
+.seal.is-prog .seal-line { stroke: color-mix(in srgb, var(--amber) 60%, transparent); }
+.seal.is-prog .seal-stripe { fill: color-mix(in srgb, var(--amber) 30%, transparent); }
+.seal.is-plan .seal-fill { fill: transparent; stroke: var(--line-2); stroke-width: 2; stroke-dasharray: 5 4; }
+.seal.is-plan .seal-ink { fill: var(--ink-2); }
+.tseal-mark, .tbadge-seal { background: none !important; border: 0 !important; box-shadow: none !important; border-radius: 0; width: 64px; height: 64px; }
+.tseal-mark::after, .tbadge-seal::after { display: none !important; }
+.tbadge-seal { width: 76px; height: 76px; }
+.tstrip-seals { grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 10px; }
+.tseal { padding: 14px 8px 12px; gap: 8px; }
+.tseal-name { font-size: .8125rem; }
+.tstrip-certs .tstrip-seals { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 720px; margin: 0 auto; }
+.tstrip-certs .tseal-mark { width: 84px; height: 84px; }
+@media (max-width: 700px) { .tseal { flex: 0 0 124px; } .tstrip-certs .tstrip-seals { display: grid; grid-template-columns: 1fr 1fr; margin-inline: 0; padding-inline: 0; } }
+/* Trust section intro under the headline */
+.section:has(.tstrip) .gem-head p { display: block !important; max-width: 62ch; margin: 10px 0 0; font-size: 1rem; line-height: 1.55; color: var(--ink-2); }
+.section:has(.tstrip) .gem-head p a { color: var(--brand); font-weight: 600; }

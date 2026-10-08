@@ -77,8 +77,8 @@ ${L.section(
 
 
 ${L.section(
-  `<div class="gem-head"><h2>Security and privacy delivered, just as you want.</h2></div>
-  ${L.trustStrip({ inOnly: true })}`
+  `<div class="gem-head"><h2>Certified, tested, and yours to check.</h2><p>ISO/IEC 27001 certified. Independently penetration tested. Tested against the OWASP Top 10. SOC 2 in progress. Your own database, encrypted, and exportable any time. <a href="/trust">See the Trust Centre →</a></p></div>
+  ${L.trustStrip({ featured: true })}`
 , { tone: 'tint' })}
 
 

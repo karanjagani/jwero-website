@@ -3,13 +3,13 @@ const L = require('../lib');
 const trustCentre = {
   slug: 'trust',
   title: 'Trust Centre: Security, Privacy and Compliance Status | Jwero',
-  description: 'Jwero’s Trust Centre: what protects a jeweller’s data, the status of DPDP, ISO 27001, SOC 2, GDPR, PCI DSS and OWASP testing stated plainly, every policy document, and the companies that process data.',
+  description: 'Jwero’s Trust Centre: what protects a jeweller’s data, the status of ISO 27001 (certified), penetration testing and OWASP Top 10 (done), SOC 2 (in progress), GDPR, DPDP and PCI DSS stated plainly, every policy document, and the companies that process data.',
   breadcrumbs: [['Home', '/'], ['Trust Centre']],
   faqs: [
-    { q: 'Is Jwero ISO 27001 certified?', a: 'No. Jwero is not ISO 27001 certified today. The security policy and control mapping are drafted and certification is being prepared. The badge will change only when a certificate is issued.' },
-    { q: 'Does Jwero have a SOC 2 report?', a: 'No. A SOC 2 audit has not started. The system description is drafted in preparation.' },
+    { q: 'Is Jwero ISO 27001 certified?', a: 'Yes. Jwero is ISO/IEC 27001 certified. The certificate and its scope are shared with your IT team on request, and the badge on this page shows the status.' },
+    { q: 'Does Jwero have a SOC 2 report?', a: 'Not yet. The SOC 2 audit is in progress, and the report will be published here when it is issued.' },
     { q: 'Does Jwero support GDPR?', a: 'Yes. Jwero gives you a data processing agreement on request, exports and deletes a person’s data when they ask, lists every company that processes data, and hosts in your region on request. It also follows India’s Digital Personal Data Protection Act, 2023.' },
-    { q: 'Has Jwero had a penetration test?', a: 'Not yet. No independent penetration test has been done. One is planned, and a summary will be published here when it is complete.' },
+    { q: 'Has Jwero had a penetration test?', a: 'Yes. An independent vulnerability assessment and penetration test (VAPT) has been completed, and the application is tested against the OWASP Top 10. The summary is shared with your IT team on request.' },
     { q: 'Does Jwero comply with India’s DPDP Act?', a: 'Jwero acts as data processor for jewellers and as data fiduciary for its own account holders. It publishes a DPDP statement, processing terms and its sub-processors, and the product has consent records, opt-outs, export and erasure.' },
     { q: 'Does Jwero store card details?', a: 'No. Card and bank details are entered with the payment provider. Payments run through PCI DSS certified providers and card data does not pass through Jwero.' },
     { q: 'Where is my data stored?', a: 'In a database that belongs to your business alone, hosted on Microsoft Azure in India by default, or in your region on request. Enterprise customers can self-host on their own premises or cloud, where Jwero has no access.' },
@@ -63,10 +63,10 @@ ${L.section(
 )}
 
 ${L.section(`${L.sectionHead('QUESTIONS', 'What IT teams and owners ask.', '')}${L.faqBlock([
-  { q: 'Is Jwero ISO 27001 certified?', a: 'No. The security policy and control mapping are drafted and certification is being prepared. The badge changes only when a certificate is issued.' },
-  { q: 'Does Jwero have a SOC 2 report?', a: 'No. An audit has not started; the system description is drafted in preparation.' },
+  { q: 'Is Jwero ISO 27001 certified?', a: 'Yes. Jwero is ISO/IEC 27001 certified; the certificate and scope are shared with your IT team on request.' },
+  { q: 'Does Jwero have a SOC 2 report?', a: 'Not yet. The audit is in progress; the report is published here when it is issued.' },
   { q: 'Does Jwero support GDPR?', a: 'Yes: a data processing agreement on request, export and deletion of personal data on request, every processor listed, and hosting in your region on request.' },
-  { q: 'Has Jwero had a penetration test?', a: 'Not yet. One is planned, and a summary will be published here when it is complete.' },
+  { q: 'Has Jwero had a penetration test?', a: 'Yes. An independent VAPT has been completed and the application is tested against the OWASP Top 10; the summary is shared on request.' },
   { q: 'Does Jwero store card details?', a: 'No. Payments run through PCI DSS certified providers and card data does not pass through Jwero.' },
   { q: 'Where is my data stored?', a: 'In a database that belongs to your business alone, hosted on Microsoft Azure in India. <a href="/legal/sub-processors">See the sub-processors</a>.' },
 ])}`, { tone: 'tint' })}
@@ -85,7 +85,7 @@ const security = {
     { q: 'Can my staff see everything?', a: 'Only what you allow. Around 150 fine-grained permissions control who sees customers, prices, schemes and reports — per role, per branch.' },
     { q: 'Can I take my data out?', a: 'Yes, at any time, in standard formats. Your customer list is your asset. That promise is a design decision, not a support favour.' },
     { q: 'What can AI do and not do with my data?', a: 'AI drafts actions inside your approval queues, daily caps and quiet hours. It cannot bypass those limits, and a kill switch can stop it at five scopes instantly.' },
-    { q: 'Is Jwero SOC 2 or ISO certified?', a: 'Not yet — formal certifications are planned as we scale, and we will publish them when earned, not before. We would rather tell you that plainly than let an audit discover it.' },
+    { q: 'Is Jwero SOC 2 or ISO certified?', a: 'ISO/IEC 27001: yes, certified. SOC 2: the audit is in progress, and we publish the report when it is issued, not before.' },
     { q: 'This is family business data — how do I know it won’t leave the family?', a: 'It runs in a database isolated to your business alone, with encrypted credentials and access controlled entirely by roles you set. Nobody outside your business can see it: not another customer of ours, not a generic support queue. That isolation is built into the architecture, not something we ask you to take on faith.' },
     { q: 'What happens to customer data if a salesperson who handled it leaves?', a: 'Deactivate their login in seconds. Every conversation and record they touched stays with the business: it was always the business’s record, never the individual’s.' },
     { q: 'What if the internet goes down at my shop?', a: 'Honestly: Jwero is cloud software and needs a connection today. Offline mode is on the public roadmap, not shipped — mobile data works as a practical backup in the meantime.' },
@@ -112,11 +112,16 @@ ${L.section(
   ])}`
 )}
 
+${L.section(`${L.sectionHead('CERTIFIED AND TESTED', 'Audited and tested by others, not only by us.', '')}${L.trustStrip({ only: ['ISO', 'VAPT', 'OWASP', 'SOC 2'] })}<p class="cta-note" style="margin-top:16px">The ISO/IEC 27001 certificate, its scope and the penetration test summary are shared with your IT team on request. <a href="#" data-wa="securitypack">Ask for the security pack</a>.</p>`, { tone: 'tint' })}
+
 ${L.section(
   `${L.sectionHead('THE TECHNICAL LAYER', 'For your IT evaluator.', '')}
   <div class="tbl-wrap"><table class="tbl">
     <tbody>
       <tr><td><strong>Hosting</strong></td><td>Microsoft Azure, India region. Providers that process data elsewhere are listed on the <a href="/legal/sub-processors">Sub-processors</a> page.</td></tr>
+      <tr><td><strong>Certification</strong></td><td>ISO/IEC 27001 certified. The certificate and its scope are shared with your IT team on request.</td></tr>
+      <tr><td><strong>Penetration testing</strong></td><td>Independent vulnerability assessment and penetration test (VAPT) completed; the application is tested against the OWASP Top 10. Summary on request.</td></tr>
+      <tr><td><strong>SOC 2</strong></td><td>Audit in progress; the report is published here when it is issued.</td></tr>
       <tr><td><strong>Tenant isolation</strong></td><td>One database per business — physical isolation, not row-level flags.</td></tr>
       <tr><td><strong>Encryption</strong></td><td>Encrypted credentials; data encrypted in transit and at rest.</td></tr>
       <tr><td><strong>Authentication</strong></td><td>Multi-factor authentication and passkeys; enterprise SSO (SAML/OIDC) with SCIM provisioning for chain deployments; sessions revocable globally in one action.</td></tr>
@@ -133,7 +138,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.honestGapsBlock([
-  'Formal certifications: ISO 27001 and SOC 2 are in progress, not certified; published only when earned.',
+  'SOC 2: the audit is in progress; the report is published here when it is issued. ISO/IEC 27001 is certified, and the independent penetration test is done.',
   'A single unified, immutable audit trail across every module — activity logging exists per module today; consolidation is in progress.',
 ])}
 
