@@ -4507,7 +4507,7 @@ html:not([data-cur="inr"]) [data-cur-only="inr"], html[data-cur="inr"] [data-cur
 .cur-switch { display: inline-flex; gap: 4px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); font-size: .85rem; }
 .cur-switch button { border: 0; background: transparent; padding: 5px 12px; border-radius: 999px; cursor: pointer; font: inherit; color: var(--ink-2); }
 .cur-switch button[aria-pressed="true"] { background: var(--brand); color: #fff; }
-.global-strip { text-align: center; } .global-strip h2 { margin: 6px 0 10px; } .global-strip > p:not(.eyebrow) { color: var(--ink-2); max-width: 62ch; margin: 0 auto; } .global-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px !important; } .global-links a { padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); text-decoration: none; font-size: .9rem; } .global-links a:hover { border-color: var(--brand); }
+.global-strip { text-align: center; } .global-strip h2 { margin: 6px auto 10px; } .global-strip > p:not(.eyebrow) { color: var(--ink-2); max-width: 62ch; margin: 0 auto; } .global-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px !important; } .global-links a { padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); text-decoration: none; font-size: .9rem; } .global-links a:hover { border-color: var(--brand); }
 .mkt-strip { margin: 0; padding: 14px 16px; border: 1px solid var(--line, rgba(0,0,0,.12)); border-radius: 10px; font-size: .9375rem; }
 
 /* ---------------------------------------------------------------- explainer graphics (2026-10-08)
@@ -5083,7 +5083,7 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 .tin-track .ico { width: 14px; height: 14px; color: var(--brand); flex: none; }
 .tin-stage:hover .tin-track { animation-play-state: paused; }
 .tin-core { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 132px; height: 132px; border-radius: 50%; display: grid; place-content: center; justify-items: center; gap: 2px; background: var(--panel); color: #fff; box-shadow: 0 0 0 10px color-mix(in srgb, var(--brand) 10%, transparent), var(--shadow-lg); z-index: 2; text-align: center; }
-.tin-core .mark { width: 30px; height: 42px; position: static; margin-bottom: 2px; }
+.tin-core .mark { width: 30px; height: 42px; position: relative; right: auto; bottom: auto; transform: none; transition: none; opacity: 1; filter: none; margin-bottom: 2px; }
 .tin-core b { font-size: 1.0625rem; letter-spacing: -.01em; }
 .tin-core em { font: 600 .625rem/1 var(--mono); font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .75); }
 .tin-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--amber); opacity: 0; animation: tinRing 2.8s ease-out infinite; }
@@ -5098,7 +5098,8 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 .gfx-arm .tin-groups li { transition: opacity .5s var(--ease), transform .5s var(--ease); transition-delay: calc(var(--i) * 60ms); }
 @media (max-width: 900px) { .tin-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .tin-core { width: 104px; height: 104px; } .tin-core .mark { width: 24px; height: 34px; } .tin-core b { font-size: .9375rem; } .tin-track li { font-size: .75rem; padding: 7px 10px; } }
-@media (prefers-reduced-motion: reduce) { .tin-track, .tin-ring { animation: none; } .tin-track { flex-wrap: wrap; width: auto; justify-content: center; } .tin-track li[aria-hidden] { display: none; } .tin-half { -webkit-mask-image: none; mask-image: none; } .tin-row { grid-template-columns: 1fr; gap: 8px; } .tin-core { position: static; transform: none; margin: 0 auto 16px; } .tin-stage { display: flex; flex-direction: column-reverse; } }
+/* Motion switched off on the device: the same picture, standing still. Chips stay in their rows and fade into the centre. */
+@media (prefers-reduced-motion: reduce) { .tin-track, .tin-ring { animation: none; } .tin-l { display: flex; justify-content: flex-end; } .tin-ring { opacity: .35; } }
 /* Tools section: the plain facts, and built in versus connects to */
 .tin-facts { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .tin-facts li { padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); font-size: .875rem; line-height: 1.4; color: var(--ink-2); }
