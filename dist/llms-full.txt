@@ -419,15 +419,14 @@ You focus on jewellery. We handle the chaos.
 
  Jwero One record 
 
- One login. For every department.
- One bill. In place of a stack of subscriptions.
- One team to call. When you need help.
- Nothing to connect. Nothing to keep in sync.
-
- Built in
+ One login. i For every department. Built in
  Customers and CRM, WhatsApp and Instagram inbox, catalogue, website, counter and billing, stock, purchase, workshop, schemes and gold loans, accounts, marketing, ads, HR and reports. All of it is one product, working from one record, so there is nothing to integrate between them.
 
- Connects to what stays outside
+ One bill. In place of a stack of subscriptions.
+
+ One team to call. When you need help.
+
+ Nothing to connect. i Nothing to keep in sync. Connects to what stays outside
  Tally or Zoho Books for your accountant, Meta for WhatsApp, Instagram and Facebook, your payment gateway, your phone line, and Shopify or WooCommerce if you keep that store. We set these up with you.
  See what Jwero connects to → 
 
