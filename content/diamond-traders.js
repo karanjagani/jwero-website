@@ -48,8 +48,8 @@ const memoBoard = `
       <p class="memo-result" hidden></p>
     </div>`).join('')}
   </div>
-  <p class="memo-draft" data-memo-draft><b>Drafted for your tap:</b> a follow-up to the Jaipur jeweller and the Delhi trader, naming the stones and the return date they agreed to.</p>
-  <p class="sim-note">Illustrative buyers and values. The mechanics are the product’s: goods on memo cannot be sold to anyone else, and an overdue memo becomes a drafted follow-up.</p>
+  <p class="memo-draft" data-memo-draft><b>Sent automatically:</b> a follow-up to the Jaipur jeweller and the Delhi trader, naming the stones and the return date they agreed to.</p>
+  <p class="sim-note">Illustrative buyers and values. The mechanics are the product’s: goods on memo cannot be sold to anyone else, and an overdue memo sets off a follow-up automatically.</p>
 </div>`;
 
 const rateGrid = `

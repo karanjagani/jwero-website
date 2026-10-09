@@ -2,7 +2,8 @@
 // withPlaybook(): a day-in-your-business loop, the modules that segment uses
 // first, a fit check that turns into a tailored CTA, and the first three steps.
 // Facts stay inside the honesty tiers (blueprint/PRODUCT-COVERAGE-AUDIT-2026-09.md):
-// AI drafts and waits for approval; nothing here promises auto-send, e-invoice
+// AI works automatically inside the owner's limits, with approval only where the
+// business asks for it; nothing here promises e-invoice
 // IRN, auto-debit, CAD→BOM, courier or predictive ML.
 const NAMES = {
   '/products/whatsapp': 'WhatsApp Commerce', '/products/instagram-facebook': 'Instagram & Facebook', '/products/ai-sales-agents': 'AI Sales Agents',
@@ -22,12 +23,12 @@ const PLAYBOOKS = {
     wa: 'gold', sim: 'rate',
     day: [
       ['10:05', 'The rate moves', 'Someone reprices the board, the catalogue and yesterday’s quotes — or forgets one.', 'One rate feed reprices every piece on every channel; an override waits for your approval.'],
-      ['11:30', 'A customer asks “22k bangle, 18 g, price?” on WhatsApp', 'A salesperson works it out on a calculator and types a reply an hour later.', 'A priced reply drafts from the catalogue at the live rate, held for your tap.'],
+      ['11:30', 'A customer asks “22k bangle, 18 g, price?” on WhatsApp', 'A salesperson works it out on a calculator and types a reply an hour later.', 'A priced reply goes out automatically from the catalogue at the live rate.'],
       ['13:00', 'Old gold at the counter', 'Weighed, tested, valued on a slip; the slip is re-keyed into the bill later.', 'Exchange voucher at tested purity, deductions applied, credit lands on the same bill.'],
-      ['17:30', 'Scheme instalment due', 'A telecaller works a register of who hasn’t paid.', 'Reminders draft for the due list; each one shows her balance and maturity date.'],
+      ['17:30', 'Scheme instalment due', 'A telecaller works a register of who hasn’t paid.', 'Reminders go out to the due list; each one shows her balance and maturity date.'],
       ['20:30', 'Day close', 'Cash counted, variance noted in a diary, GST sorted at month end.', 'Register closed with declared vs expected, invoices GST-ready, books posted.'],
     ],
-    modules: [['/platform/pricing-engine', 'Live rate on every price, one rule for making charges and wastage.'], ['/products/pos', 'Returns, old-gold exchange and day-close at the counter.'], ['/products/gold-schemes', 'Instalments, maturity and redemption on the customer record.'], ['/products/whatsapp', 'Priced replies from the catalogue, approved before they send.'], ['/products/inventory', 'Ageing by design, tag-level stock, HUID on every piece.'], ['/products/crm', 'Occasions, taste and scheme balance — 11 scores decide who to call.']],
+    modules: [['/platform/pricing-engine', 'Live rate on every price, one rule for making charges and wastage.'], ['/products/pos', 'Returns, old-gold exchange and day-close at the counter.'], ['/products/gold-schemes', 'Instalments, maturity and redemption on the customer record.'], ['/products/whatsapp', 'Priced replies from the catalogue, sent automatically.'], ['/products/inventory', 'Ageing by design, tag-level stock, HUID on every piece.'], ['/products/crm', 'Occasions, taste and scheme balance — 11 scores decide who to call.']],
     fit: ['The gold rate is repriced by hand somewhere every day', 'Scheme collections run off a register or Excel', 'Old-gold exchange is valued on a slip and re-typed', 'WhatsApp enquiries wait for a free salesperson', 'Nobody knows which designs have sat 180+ days'],
   },
   'solutions/silver-retail': {
@@ -36,10 +37,10 @@ const PLAYBOOKS = {
       ['10:30', 'A tray of 40 small pieces sells by weight', 'Each piece weighed, priced on a calculator, written on a bill pad.', 'Weight-based sale at the counter: weigh, price, bill — one screen, GST included.'],
       ['12:00', 'A wholesale buyer asks for the day’s per-gram price', 'A voice note with today’s number; tomorrow’s buyer gets a different one.', 'One published rate for silver, with the making rule per category, on the shared link.'],
       ['15:00', 'Stock check for articles, coins and gift items', 'Counted by category on paper; the count never matches the pad.', 'Tag or lot-level stock with counts, labels and a variance report.'],
-      ['18:00', 'A festival broadcast', 'A forwarded image to every number you have.', 'A segment of gift buyers and coin buyers gets a priced catalogue link — drafted, approved, sent.'],
+      ['18:00', 'A festival broadcast', 'A forwarded image to every number you have.', 'A segment of gift buyers and coin buyers gets a priced catalogue link, inside your daily caps.'],
       ['20:15', 'Cash up', 'Cash and UPI tallied by hand.', 'Shift closed with declared vs expected; the day posts to the books.'],
     ],
-    modules: [['/products/pos', 'Weight-based selling, lots, returns and day-close.'], ['/platform/pricing-engine', 'Per-gram silver pricing with making rules by category.'], ['/products/inventory', 'Lots, counts, labels and ageing for high-volume assortments.'], ['/products/campaigns', 'Festival and gifting broadcasts to the right segment, approved first.'], ['/products/catalog', 'One catalogue for articles, coins and jewellery.'], ['/products/billing-finance', 'GST-ready bills, books that post themselves.']],
+    modules: [['/products/pos', 'Weight-based selling, lots, returns and day-close.'], ['/platform/pricing-engine', 'Per-gram silver pricing with making rules by category.'], ['/products/inventory', 'Lots, counts, labels and ageing for high-volume assortments.'], ['/products/campaigns', 'Festival and gifting broadcasts to the right segment, inside your caps.'], ['/products/catalog', 'One catalogue for articles, coins and jewellery.'], ['/products/billing-finance', 'GST-ready bills, books that post themselves.']],
     fit: ['Most sales are by weight on a bill pad', 'Silver rate and making are worked out per bill', 'Counts by category never match the pad', 'Festival messages go out as forwards', 'Coins and gift items sit outside the jewellery stock'],
   },
   'solutions/diamond-retail': {
@@ -47,11 +48,11 @@ const PLAYBOOKS = {
     day: [
       ['10:15', 'A solitaire enquiry from Instagram', 'A DM answered from memory; the certificate photo comes later, if anyone finds it.', 'The stone record — 4Cs, certificate number, lab — answers the DM with a priced link.'],
       ['12:30', 'She wants to compare three stones', 'Three WhatsApp photos, three prices typed by hand.', 'A curated share with certificate-first specs and live prices, tracked when she opens it.'],
-      ['15:00', 'Memo stock from a supplier', 'A consignment register nobody reconciles until the supplier calls.', 'Consignment ledger with return dates; the overdue line is already a drafted follow-up.'],
+      ['15:00', 'Memo stock from a supplier', 'A consignment register nobody reconciles until the supplier calls.', 'Consignment ledger with return dates; an overdue line sets off its follow-up automatically.'],
       ['17:00', 'Certificate check at the counter', 'Someone searches a drawer for the IGI/GIA paper.', 'Certificate attached to the piece; a scan pulls it up on the counter screen.'],
-      ['19:30', 'Follow-up on the morning’s enquiry', 'Forgotten.', 'Intent scored from her views and her question; a follow-up drafts and waits for your yes.'],
+      ['19:30', 'Follow-up on the morning’s enquiry', 'Forgotten.', 'Intent scored from her views and her question; a follow-up goes out on its own.'],
     ],
-    modules: [['/products/catalog', 'Stone records with 4Cs, certificate number and lab, first-class.'], ['/products/instagram-facebook', 'DMs and comments answered from the same catalogue.'], ['/platform/customer-memory', 'Every view, question and visit scored — who to follow up first.'], ['/products/inventory', 'Consignment and memo ledgers with return dates.'], ['/products/whatsapp', 'Priced, certificate-first shares held for approval.'], ['/products/meetings', 'A video counter for the buyer who wants to see the stone before visiting.']],
+    modules: [['/products/catalog', 'Stone records with 4Cs, certificate number and lab, first-class.'], ['/products/instagram-facebook', 'DMs and comments answered from the same catalogue.'], ['/platform/customer-memory', 'Every view, question and visit scored — who to follow up first.'], ['/products/inventory', 'Consignment and memo ledgers with return dates.'], ['/products/whatsapp', 'Priced, certificate-first shares, with approval where you want it.'], ['/products/meetings', 'A video counter for the buyer who wants to see the stone before visiting.']],
     fit: ['Certificates live in a drawer, not on the piece record', 'Instagram enquiries are answered from memory', 'Supplier memo stock is reconciled when they call', 'High-intent enquiries get lost between salespeople', 'Comparisons are typed by hand, three prices at a time'],
   },
   'solutions/gemstone-retail': {
@@ -61,9 +62,9 @@ const PLAYBOOKS = {
       ['12:00', 'A one-of-a-kind piece is shown on WhatsApp', 'A photo and a price; no record that she saw it.', 'A private share with the stone’s story; her view is scored on her record.'],
       ['14:30', 'A repeat client returns after eight months', 'Nobody remembers what she bought or what she was hunting for.', 'Her taste profile and her wish-list are on the counter screen before she sits down.'],
       ['16:00', 'Repair or re-setting request', 'A slip in a drawer.', 'A job with photos, dates and status the client can be told about without a call.'],
-      ['18:30', 'A new arrival matches three clients', 'Nobody connects it.', 'Matched buyers are surfaced by taste; three invitations draft for your approval.'],
+      ['18:30', 'A new arrival matches three clients', 'Nobody connects it.', 'Matched buyers are surfaced by taste; three invitations go out, held for approval if you ask for that.'],
     ],
-    modules: [['/products/catalog', 'Origin, treatment, certificate and story on every piece.'], ['/platform/customer-memory', 'Taste profile from her first purchase; every view scored.'], ['/products/whatsapp', 'Private, priced shares with the story attached.'], ['/products/repairs-service', 'Re-setting and repair jobs with photos and status.'], ['/products/crm', 'Wish-lists and follow-ups that draft themselves.'], ['/products/inventory', 'One-of-a-kind pieces tracked by tag, ageing visible.']],
+    modules: [['/products/catalog', 'Origin, treatment, certificate and story on every piece.'], ['/platform/customer-memory', 'Taste profile from her first purchase; every view scored.'], ['/products/whatsapp', 'Private, priced shares with the story attached.'], ['/products/repairs-service', 'Re-setting and repair jobs with photos and status.'], ['/products/crm', 'Wish-lists and follow-ups that send themselves.'], ['/products/inventory', 'One-of-a-kind pieces tracked by tag, ageing visible.']],
     fit: ['The stone stories live in one person’s head', 'Repeat clients are recognised by luck', 'New arrivals never reach the client who asked for exactly that', 'Repairs and re-setting run on slips', 'Shares on WhatsApp leave no record'],
   },
   'solutions/lab-grown-diamond': {
@@ -73,9 +74,9 @@ const PLAYBOOKS = {
       ['11:45', 'An online buyer asks “is it certified?”', 'A screenshot of a certificate, if someone finds it.', 'Certificate-first stone record, lab and report number in the reply.'],
       ['14:00', 'A D2C order from the website', 'Copied into a spreadsheet, then into billing.', 'Order, payment and invoice on one record, stock deducted at once.'],
       ['16:30', 'A comparison against mined', 'Explained differently by every salesperson.', 'A consistent, approved comparison share with live prices for both.'],
-      ['19:00', 'Abandoned cart', 'Nobody knows.', 'Cart abandonment journey drafts a recovery message; it waits for your tap.'],
+      ['19:00', 'Abandoned cart', 'Nobody knows.', 'Cart abandonment journey sends a recovery message on its own.'],
     ],
-    modules: [['/platform/pricing-engine', 'Per-carat rules reprice every channel together.'], ['/products/ecommerce', 'Your own D2C store on the same catalogue and stock.'], ['/products/catalog', 'Certificate-first records for every stone.'], ['/products/journeys', 'Cart abandonment and quote follow-up recipes, approval-first.'], ['/products/ads-manager', 'Ads on catalogue winners, budget alerts included.'], ['/products/instagram-facebook', 'DMs and comments from one inbox.']],
+    modules: [['/platform/pricing-engine', 'Per-carat rules reprice every channel together.'], ['/products/ecommerce', 'Your own D2C store on the same catalogue and stock.'], ['/products/catalog', 'Certificate-first records for every stone.'], ['/products/journeys', 'Cart abandonment and quote follow-up recipes, approval optional.'], ['/products/ads-manager', 'Ads on catalogue winners, budget alerts included.'], ['/products/instagram-facebook', 'DMs and comments from one inbox.']],
     fit: ['Price lists change faster than the website does', 'Certificates are shared as screenshots', 'Online orders are re-typed into billing', 'Every salesperson explains lab-grown differently', 'Abandoned carts are invisible'],
   },
   'solutions/bullion-gold-traders': {
@@ -95,11 +96,11 @@ const PLAYBOOKS = {
     day: [
       ['10:00', 'A new collection launches', 'Images to the agency, prices to the website team, a PDF to retailers — three versions drift.', 'One catalogue publishes to website, WhatsApp, Instagram and retailer links at once.'],
       ['12:00', 'A retailer partner asks for stock', 'Emails and calls to find what’s available where.', 'Partner sees available stock and places an order on their own link.'],
-      ['14:30', 'Instagram comments on the launch post', 'Answered by an intern, or not.', 'Comments and DMs answered from the catalogue, drafts approved by brand.'],
-      ['16:30', 'Campaign to past buyers', 'A blast to every number.', 'A segment by taste and value tier; the message drafts with 30 personalisation fields.'],
+      ['14:30', 'Instagram comments on the launch post', 'Answered by an intern, or not.', 'Comments and DMs answered automatically from the catalogue, inside the brand’s limits.'],
+      ['16:30', 'Campaign to past buyers', 'A blast to every number.', 'A segment by taste and value tier; the message carries 30 personalisation fields.'],
       ['19:00', 'Ad performance', 'A weekly agency deck.', 'Ads on catalogue winners, budget alerts, conversions attributed to orders.'],
     ],
-    modules: [['/products/catalog', 'One master catalogue for every channel and partner.'], ['/products/ecommerce', 'Your own store, same stock, same prices.'], ['/products/instagram-facebook', 'Social replies from the catalogue, brand-approved.'], ['/products/segmentation', '41 ready segments — taste, value, occasion.'], ['/products/ads-manager', 'Catalogue ads with budget alerts and attribution.'], ['/platform/ai-workforce', 'Who may draft, who approves, what runs alone — per action.']],
+    modules: [['/products/catalog', 'One master catalogue for every channel and partner.'], ['/products/ecommerce', 'Your own store, same stock, same prices.'], ['/products/instagram-facebook', 'Social replies from the catalogue, inside brand limits.'], ['/products/segmentation', '41 ready segments — taste, value, occasion.'], ['/products/ads-manager', 'Catalogue ads with budget alerts and attribution.'], ['/platform/ai-workforce', 'What runs on its own and what needs approval, set per action.']],
     fit: ['Collections launch in three versions across channels', 'Retail partners ask for stock by email', 'Social comments go unanswered for days', 'Campaigns are blasts, not segments', 'Ad reporting arrives as a deck'],
   },
 
@@ -109,8 +110,8 @@ const PLAYBOOKS = {
     day: [
       ['10:00', 'Shutters up', 'The owner is the system: rate, stock, customers, staff — all in one head.', 'The morning list is already there: who to call, what’s due, what arrived.'],
       ['11:30', 'Regular customer walks in', 'Recognised if the owner is present; a stranger otherwise.', 'Her record is on the counter screen: taste, scheme balance, last visit.'],
-      ['13:30', 'Owner steps out', 'Enquiries wait; staff can’t quote.', 'Priced replies draft from the catalogue; staff send after the owner’s tap from anywhere.'],
-      ['17:00', 'Scheme collections', 'A register and a phone.', 'Due list with balances; reminders draft themselves.'],
+      ['13:30', 'Owner steps out', 'Enquiries wait; staff can’t quote.', 'Priced replies go out automatically from the catalogue; the owner sees each one in the log from anywhere.'],
+      ['17:00', 'Scheme collections', 'A register and a phone.', 'Due list with balances; reminders send themselves.'],
       ['20:30', 'Close', 'Cash counted; GST for the accountant at month end.', 'Day-close in minutes; the books already posted, Tally bridge ready.'],
     ],
     modules: [['/platform/customer-memory', 'Every customer remembered by the business, not the owner.'], ['/products/whatsapp', 'Enquiries answered with prices while you’re away.'], ['/products/pos', 'Bills, exchange, returns and day-close.'], ['/products/gold-schemes', 'Collections and maturity without a register.'], ['/products/inventory', 'Ageing you can see before you reorder.'], ['/platform/integrations', 'Tally and Zoho Books bridges for your accountant.']],
@@ -131,13 +132,13 @@ const PLAYBOOKS = {
   'solutions/luxury-boutique': {
     wa: 'luxury', sim: 'memory',
     day: [
-      ['11:00', 'A private client’s anniversary is next month', 'Remembered by the owner, if at all.', 'The occasion is on her record; a personal note drafts for your approval — never a blast.'],
+      ['11:00', 'A private client’s anniversary is next month', 'Remembered by the owner, if at all.', 'The occasion is on her record; a personal note is written from it, never a blast. Many jewellers keep approval on for these.'],
       ['12:30', 'A preview for one client', 'A WhatsApp photo anyone could forward.', 'A private catalogue share visible only to her, with her view tracked.'],
-      ['15:00', 'She tries three pieces and leaves', 'No one knows which three.', 'The floor view shows what she tried; a follow-up drafts from it.'],
+      ['15:00', 'She tries three pieces and leaves', 'No one knows which three.', 'The floor view shows what she tried; a follow-up is written from it.'],
       ['17:00', 'A client abroad wants to see a piece', 'A video call from someone’s phone.', 'A video counter link with the catalogue and the record beside it.'],
       ['19:00', 'Team briefing', 'Who’s coming tomorrow? Nobody is sure.', 'Tomorrow’s appointments with each client’s taste and history, on one screen.'],
     ],
-    modules: [['/platform/customer-memory', 'Sizes, taste, pieces and dates — visible only to your team.'], ['/products/whatsapp', 'Private previews, approved one by one.'], ['/products/showroom', 'What she tried, who served her, live.'], ['/products/meetings', 'A video counter for clients who aren’t in town.'], ['/products/journeys', 'Occasion recall selling, drafted, never automatic.'], ['/products/catalog', 'Curated shares with controlled visibility.']],
+    modules: [['/platform/customer-memory', 'Sizes, taste, pieces and dates — visible only to your team.'], ['/products/whatsapp', 'Private previews, approved one by one if you choose.'], ['/products/showroom', 'What she tried, who served her, live.'], ['/products/meetings', 'A video counter for clients who aren’t in town.'], ['/products/journeys', 'Occasion recall selling, with approval kept on if you prefer.'], ['/products/catalog', 'Curated shares with controlled visibility.']],
     fit: ['Client dates are remembered by one person', 'Previews go out as forwardable photos', 'Nobody records what a client tried on', 'Overseas clients get a phone video call', 'Tomorrow’s visits are a guess'],
   },
   'solutions/bridal': {
@@ -149,19 +150,19 @@ const PLAYBOOKS = {
       ['17:00', 'Advance and scheme top-up', 'A receipt book.', 'Advance on the order, scheme balance applied, GST-ready.'],
       ['Later', 'After the wedding', 'Goodbye.', 'Anniversary and occasions on the record; the bridal customer becomes a returning one.'],
     ],
-    modules: [['/products/crm', 'One thread for the whole family, from enquiry to fitting.'], ['/products/showroom', 'Appointments with the shortlist ready on the floor.'], ['/products/billing-finance', 'Quotations she can accept online; advances on the order.'], ['/products/gold-schemes', 'Scheme balances applied to the bridal bill.'], ['/products/journeys', 'Quote follow-up and occasion recall, approval-first.'], ['/products/meetings', 'Video previews for the relatives abroad.']],
+    modules: [['/products/crm', 'One thread for the whole family, from enquiry to fitting.'], ['/products/showroom', 'Appointments with the shortlist ready on the floor.'], ['/products/billing-finance', 'Quotations she can accept online; advances on the order.'], ['/products/gold-schemes', 'Scheme balances applied to the bridal bill.'], ['/products/journeys', 'Quote follow-up and occasion recall, approval optional.'], ['/products/meetings', 'Video previews for the relatives abroad.']],
     fit: ['A wedding family talks to three different salespeople', 'Quotes are typed in WhatsApp and revised endlessly', 'Trials are booked on a notepad', 'Season go-lives have burnt you before', 'The relationship ends at the wedding'],
   },
   'solutions/d2c-brands': {
     wa: 'd2c', sim: 'memory',
     day: [
       ['09:00', 'Shopify orders overnight', 'Exported to a sheet, then to billing, then to the courier.', 'Orders land on the same record and stock as your WhatsApp and counter sales — Shopify stays.'],
-      ['11:00', 'Instagram DM: “price?”', 'Answered by whoever is online.', 'A priced reply from the catalogue, drafted and approved.'],
-      ['13:30', 'Abandoned cart', 'A generic app email.', 'Cart abandonment journey drafts a WhatsApp recovery message with the exact piece.'],
+      ['11:00', 'Instagram DM: “price?”', 'Answered by whoever is online.', 'A priced reply from the catalogue, sent automatically.'],
+      ['13:30', 'Abandoned cart', 'A generic app email.', 'Cart abandonment journey sends a WhatsApp recovery message with the exact piece.'],
       ['16:00', 'Retargeting', 'A pixel audience the agency manages.', 'Ads on catalogue winners, budget alerts, conversions tied to orders.'],
-      ['19:00', 'Repeat-buyer campaign', 'Everyone gets the same email.', 'Segments by taste and value; 30 personalisation fields; approval before send.'],
+      ['19:00', 'Repeat-buyer campaign', 'Everyone gets the same email.', 'Segments by taste and value; 30 personalisation fields; approval if you want it.'],
     ],
-    modules: [['/platform/integrations', 'Keep Shopify or WooCommerce; orders flow onto one record.'], ['/products/instagram-facebook', 'DMs and comments answered from the catalogue.'], ['/products/journeys', 'Cart abandonment and quote follow-up, drafted for approval.'], ['/products/ads-manager', 'Catalogue ads with attribution to orders.'], ['/products/segmentation', 'Taste, value and occasion segments ready to use.'], ['/products/whatsapp', 'Commerce on the channel your buyers actually answer.']],
+    modules: [['/platform/integrations', 'Keep Shopify or WooCommerce; orders flow onto one record.'], ['/products/instagram-facebook', 'DMs and comments answered from the catalogue.'], ['/products/journeys', 'Cart abandonment and quote follow-up, sent automatically.'], ['/products/ads-manager', 'Catalogue ads with attribution to orders.'], ['/products/segmentation', 'Taste, value and occasion segments ready to use.'], ['/products/whatsapp', 'Commerce on the channel your buyers actually answer.']],
     fit: ['Orders are exported to a sheet before billing', 'Instagram DMs are answered by whoever is online', 'Cart recovery is a generic email', 'Ads run on the agency’s audience, not your catalogue', 'Every repeat buyer gets the same message'],
   },
   'solutions/franchise-networks': {
@@ -180,10 +181,10 @@ const PLAYBOOKS = {
     wa: 'startups', sim: 'approve',
     day: [
       ['09:00', 'Day one', 'A billing app, a WhatsApp Business number, a Shopify trial, a spreadsheet.', 'One workspace at os.jwero.ai, free for 14 days: catalogue, inbox, billing, customers — one record from the first sale.'],
-      ['11:00', 'First Instagram enquiries', 'Answered from the founder’s phone.', 'Priced replies draft from the catalogue; you approve from anywhere.'],
+      ['11:00', 'First Instagram enquiries', 'Answered from the founder’s phone.', 'Priced replies go out automatically from the catalogue; you see each one in the log.'],
       ['14:00', 'First ten customers', 'Names in a notebook.', 'Ten records with occasions and taste; the eleventh customer is already segmented.'],
       ['16:00', 'First ad', 'Boosted post.', 'Catalogue ad with a budget alert; conversions attributed to orders.'],
-      ['19:00', 'Month one report', 'Bank balance.', 'Enquiries answered, replies approved, orders, repeat buyers — on your own data.'],
+      ['19:00', 'Month one report', 'Bank balance.', 'Enquiries answered, replies sent, orders, repeat buyers — on your own data.'],
     ],
     modules: [['/products/whatsapp', 'Start selling on the channel you already have.'], ['/products/catalog', 'One catalogue from the first ten designs.'], ['/products/ecommerce', 'Your own store when you’re ready, same stock.'], ['/products/crm', 'Every customer remembered from day one.'], ['/products/ads-manager', 'First ads on catalogue winners, budget-capped.'], ['/platform/onboarding', 'A self-serve start with the first month at ₹3,600; a person on WhatsApp when you want one.']],
     fit: ['You’re juggling four tools before your fiftieth order', 'Enquiries are answered from the founder’s phone', 'Customers live in a notebook', 'You’ve boosted posts and can’t say what they sold', 'You want to start today, free, without a demo'],
@@ -233,9 +234,9 @@ const PLAYBOOKS = {
       ['12:30', 'Revision three', 'Which file is the latest?', 'Versioned files on the request; the client approves the one that ships.'],
       ['15:00', 'Client asks for an estimate', 'Typed from experience.', 'A quotation the client can accept online; the approved design becomes the catalogue entry.'],
       ['17:00', 'Design bank for a retailer', 'Folders on a drive.', 'Designs shared to retailers who adopt them into their own catalogue.'],
-      ['19:00', 'Follow-up on quiet briefs', 'Forgotten.', 'Quote follow-up drafts and waits for your tap.'],
+      ['19:00', 'Follow-up on quiet briefs', 'Forgotten.', 'Quote follow-up goes out on its own.'],
     ],
-    modules: [['/products/crm', 'Briefs, revisions and approvals on one record.'], ['/products/catalog', 'Approved designs as catalogue entries with images and specs.'], ['/products/purchase-vendors', 'Design bank: share to retailers, adopted with one tap.'], ['/products/billing-finance', 'Quotations accepted online; invoices GST-ready.'], ['/products/whatsapp', 'Client threads that become records.'], ['/products/journeys', 'Quote follow-up, drafted for approval.']],
+    modules: [['/products/crm', 'Briefs, revisions and approvals on one record.'], ['/products/catalog', 'Approved designs as catalogue entries with images and specs.'], ['/products/purchase-vendors', 'Design bank: share to retailers, adopted with one tap.'], ['/products/billing-finance', 'Quotations accepted online; invoices GST-ready.'], ['/products/whatsapp', 'Client threads that become records.'], ['/products/journeys', 'Quote follow-up, sent automatically.']],
     fit: ['Briefs arrive as screenshots and voice notes', 'Nobody knows which revision is final', 'Estimates are typed from experience', 'Designs are shared as drive folders', 'Quiet briefs are never followed up'],
     note: 'CAD files do not become BOMs automatically — the approved design is catalogued; the BOM is entered by your production team.',
   },
@@ -243,9 +244,9 @@ const PLAYBOOKS = {
     wa: 'b2b', sim: 'shelf',
     day: [
       ['10:00', 'Retailer asks for the new line', 'A PDF catalogue with last week’s prices.', 'A buyer link with live prices, their terms, their credit limit.'],
-      ['12:00', 'Memo to a retailer', 'A memo book; the return date is a memory.', 'Memo with pieces, return date and exposure; the overdue one is a drafted follow-up.'],
+      ['12:00', 'Memo to a retailer', 'A memo book; the return date is a memory.', 'Memo with pieces, return date and exposure; the overdue one gets a follow-up automatically.'],
       ['14:30', 'Buyer asks “what do I owe?”', 'The accountant is called.', 'Party ledger on their link; receipts posted the day they arrive.'],
-      ['16:30', 'A prospect list for a new city', 'Cold calls from a directory.', 'Lead Finder saves prospects to the CRM; outreach drafts for approval.'],
+      ['16:30', 'A prospect list for a new city', 'Cold calls from a directory.', 'Lead Finder saves prospects to the CRM; outreach goes out inside your caps, with approval if you want it.'],
       ['19:00', 'Exposure review', 'End of month.', 'Which buyer holds what, at list value, tonight.'],
     ],
     modules: [['/products/inventory', 'Memo and consignment ledgers with return dates.'], ['/products/billing-finance', 'Party ledgers, credit limits, receipts.'], ['/products/catalog', 'Buyer links with their prices and terms.'], ['/products/crm', 'Prospects, follow-ups and Lead Finder.'], ['/products/whatsapp', 'Buyer conversations on the party record.'], ['/products/erp', 'Orders, dispatch and returns on one spine.']],
@@ -258,7 +259,7 @@ const PLAYBOOKS = {
       ['11:00', 'Retailer books 2 kg of chains', 'A chat thread; the ledger later.', 'Booking with rate lock and party terms, on the record.'],
       ['13:30', 'Memo out to three retailers', 'Memo book.', 'Memo with return dates; exposure by party in grams and rupees.'],
       ['16:00', 'Metal received against a sale', 'Weighed, noted, reconciled at month end.', 'Party metal account: given, received, balance — live.'],
-      ['19:00', 'Collections', 'Calls.', 'Receipt reminders draft by party; posted the day money lands.'],
+      ['19:00', 'Collections', 'Calls.', 'Receipt reminders go out by party; posted the day money lands.'],
     ],
     modules: [['/platform/pricing-engine', 'Rate plus making by party tier.'], ['/products/billing-finance', 'Party ledgers in grams and rupees; receipts and reminders.'], ['/products/inventory', 'Memo, consignment and lot stock.'], ['/products/catalog', 'Buyer links with live prices.'], ['/products/whatsapp', 'Bookings and confirmations on the party record.'], ['/products/erp', 'Orders to dispatch to metal settlement.']],
     fit: ['Rates go out as voice notes', 'Bookings live in chats', 'Memo exposure is a memo book', 'Metal accounts are reconciled monthly', 'Collections are phone calls'],
@@ -270,7 +271,7 @@ const PLAYBOOKS = {
       ['11:30', 'A buyer asks for 1 ct, G, VS1 rounds', 'Someone searches the sheet and types six lines into WhatsApp.', 'Matching stones go out as a buyer link at his prices; you see what he opens.'],
       ['13:00', 'Four stones go out on memo', 'A line in the memo book. The same stone can still be promised twice.', 'Held against the buyer with a return date; not sellable to anyone else.'],
       ['16:00', 'He keeps two and returns two', 'An invoice typed by hand; the sheet updated later, if at all.', 'Invoice raised from the memo; the two returned stones are back in stock.'],
-      ['19:00', 'What is out, and what is late?', 'A flip through the memo book.', 'Memos by buyer with value at list; the overdue one is a drafted follow-up.'],
+      ['19:00', 'What is out, and what is late?', 'A flip through the memo book.', 'Memos by buyer with value at list; the overdue one gets a follow-up automatically.'],
     ],
     modules: [['/products/inventory', 'Parcels by carats and count, certified stones one by one, memo and consignment.'], ['/platform/pricing-engine', 'Your own per-carat rate grid, with a discount for each band.'], ['/products/digital-catalogues', 'Private buyer links with his prices; you see what he looked at.'], ['/products/quotations', 'A numbered quote he can accept from his phone.'], ['/products/billing-finance', 'Invoices from memos, and a ledger for every party.'], ['/products/whatsapp', 'Buyer conversations on the party record, not on one phone.']],
     fit: ['Stock lives on an Excel sheet that only one person trusts', 'The memo book is the only record of what is out', 'A stone has been promised to two buyers at once', 'Prices per carat are quoted from memory', 'You cannot say tonight what you own, what is out and what is on consignment'],
@@ -283,7 +284,7 @@ const PLAYBOOKS = {
       ['11:30', 'Buyer asks “VS1 F 1.2 ct, what do you have?”', 'Someone searches the sheet.', 'A filtered list with prices on the buyer’s link, in minutes.'],
       ['13:00', 'Memo to a retailer', 'Memo book.', 'Memo with stones, return date and list value; exposure by buyer.'],
       ['16:00', 'Trader buys the lot', 'Invoice typed by hand.', 'Invoice from the memo; stock and party ledger update together.'],
-      ['19:00', 'Overdue memo', 'A call, when remembered.', 'The overdue line is a drafted follow-up waiting for your tap.'],
+      ['19:00', 'Overdue memo', 'A call, when remembered.', 'The overdue line gets a follow-up automatically.'],
     ],
     modules: [['/products/catalog', 'Certificate-first stone records, searchable by spec.'], ['/products/inventory', 'Memo and consignment ledgers, exposure by buyer.'], ['/products/billing-finance', 'Invoices from memos; party ledgers.'], ['/products/whatsapp', 'Buyer enquiries answered with filtered lists.'], ['/products/crm', 'Every buyer and trader as a party record.'], ['/products/erp', 'Parcel to memo to sale on one spine.']],
     fit: ['Stones are logged on a sheet', 'Spec enquiries mean searching the sheet', 'Memo exposure per buyer is unknown', 'Invoices are typed from memos', 'Overdue memos are chased by memory'],
@@ -295,7 +296,7 @@ const PLAYBOOKS = {
       ['11:30', 'Production status for the buyer', 'An email chain.', 'Job status by stage on a link the buyer can read.'],
       ['14:00', 'QC before dispatch', 'A checklist per batch.', 'QC gate per stage; certificates and HUIDs attached.'],
       ['16:30', 'Buyer asks for the catalogue', 'A PDF.', 'A buyer link with their currency and prices.'],
-      ['19:00', 'Receivables', 'A spreadsheet by buyer.', 'Party ledgers by currency; reminders draft for approval.'],
+      ['19:00', 'Receivables', 'A spreadsheet by buyer.', 'Party ledgers by currency; reminders go out automatically.'],
     ],
     modules: [['/products/manufacturing', 'Jobs, routing, QC and costing from actuals.'], ['/products/billing-finance', 'Multi-currency orders and party ledgers.'], ['/products/catalog', 'Buyer links with their currency.'], ['/products/inventory', 'FG by buyer, dispatch and memo.'], ['/products/crm', 'Buyers as party records with follow-ups.'], ['/products/erp', 'PO to dispatch on one spine.']],
     fit: ['USD POs are converted by hand', 'Buyers ask for status by email', 'QC is a checklist per batch', 'Catalogues go out as PDFs', 'Receivables live on a spreadsheet'],

@@ -66,7 +66,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts and tracks. You still approve, judge and sign off.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI prepares and tracks. You still judge and sign off.', '')}
   <p class="lead">Jwero feeds Tally or Zoho Books rather than replacing them, so the books stay exactly where you already work. What stays entirely yours: classifying an unusual transaction, the auditor relationship, and final sign-off on every number. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 

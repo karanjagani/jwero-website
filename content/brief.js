@@ -26,14 +26,14 @@ ${L.section(`
 
   <section class="brief-block">
     <h2>What it is, in one sentence</h2>
-    <p>Jwero runs the whole jewellery business — customers, catalogue, WhatsApp, counter, schemes, workshop, books — from one record, and the AI does the remembering, the drafting and the flagging of what is slipping. Nothing the AI writes is sent until a person taps yes, until you decide otherwise, one action type at a time.</p>
+    <p>Jwero runs the whole jewellery business — customers, catalogue, WhatsApp, counter, schemes, workshop, books — from one record, and the AI does the remembering, the replying and the flagging of what is slipping. It works on its own inside the limits you set, and you choose which kinds of action need your approval.</p>
   </section>
 
   <section class="brief-block brief-cols">
     <div>
       <h2>What changes on day one</h2>
       <ul>
-        <li>Every WhatsApp enquiry gets a priced reply drafted from the catalogue at today’s rate — waiting for your tap.</li>
+        <li>Every WhatsApp enquiry gets a priced reply from the catalogue at today’s rate, sent automatically.</li>
         <li>Every customer is one record: purchases, scheme balance, occasions, taste, every conversation — owned by the business, not a salesperson’s phone.</li>
         <li>The rate changes once; every price on every channel follows.</li>
         <li>Scheme collections, old-gold exchange, returns and day-close run at the counter, GST-ready, posted to the books; Tally and Zoho Books bridges included.</li>

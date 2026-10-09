@@ -26,7 +26,7 @@ ${L.section(
   `${L.painRows([
     { quote: 'Memo chaos across dozens of buyers is a full-time job to track.', title: 'One thread per buyer', text: 'Memo, approval and order status tracked per relationship — not scattered across calls and notebooks.' },
     { quote: 'Price lists in the market go stale the moment the rate moves.', title: 'Live-rate B2B catalogues', text: 'Buyer-tiered catalogues that stay current, shared privately on WhatsApp.' },
-    { quote: 'Following up on every buyer, every week, doesn’t scale.', title: 'Follow-up that doesn’t depend on memory', text: 'The AI workforce drafts scheduled follow-ups on stale memos and quiet buyers — approved before they send.' },
+    { quote: 'Following up on every buyer, every week, doesn’t scale.', title: 'Follow-up that doesn’t depend on memory', text: 'The AI workforce sends scheduled follow-ups on stale memos and quiet buyers automatically.' },
   ])}`
 )}
 ${L.section(

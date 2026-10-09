@@ -4,21 +4,21 @@ const BC = (label) => [['Home', '/'], ['Roles', '/roles'], [label]];
 const b2bManagerFaqs = [
   { q: 'Can I keep different prices and catalogues for different buyers?', a: 'Yes — catalogue visibility and pricing can be tiered by buyer, so each retail account sees their own terms without you rebuilding a price list by hand for every relationship.' },
   { q: 'How do I stop losing track of memos and pending approvals across dozens of buyers?', a: 'Every buyer’s order and memo history sits on one record, and order status is tracked per item — so “where did we leave that memo” becomes a lookup, not a phone call to the back office.' },
-  { q: 'Will AI start messaging my trade buyers without me knowing?', a: 'No. The AI workforce can draft follow-ups on stale memos or quiet accounts, but every message sits in an approval queue until you or your team approves it — nothing goes out to a buyer unseen.' },
+  { q: 'Will AI start messaging my trade buyers without me knowing?', a: 'It works on its own inside the limits you set, and every action is logged. You choose which kinds of message to trade buyers need your approval first, and one switch stops it all.' },
   { q: 'Does this replace the trust I’ve built with buyers over years?', a: 'No — the system holds the record, not the relationship. You still make the calls, negotiate terms and read the room; Jwero just makes sure you walk into every conversation with the buyer’s full history in front of you instead of relying on memory.' },
 ];
 
 const b2bManagerRole = {
   slug: 'roles/b2b-manager',
   title: 'For Wholesale / B2B Managers — Every Buyer, One Thread | Jwero',
-  description: 'How Jwero changes a wholesale/B2B manager’s day: one record per buyer, memo and order tracking, and AI-drafted follow-ups that wait for your approval.',
+  description: 'How Jwero changes a wholesale/B2B manager’s day: one record per buyer, memo and order tracking, and AI follow-ups that go out automatically.',
   breadcrumbs: BC('Wholesale / B2B manager'),
   faqs: b2bManagerFaqs,
   body: `
 ${L.hero({
   eyebrow: 'TRADE & PARTNERSHIPS · B2B MANAGER',
   h1: 'Every buyer, every memo, every order — in one thread.',
-  sub: 'Right now, a wholesale desk runs on phone calls, screenshots and whoever remembers which buyer asked for what. Jwero gives every retail buyer relationship one record — order history, memo status and pricing terms in one place, with follow-ups drafted for you and sent only after you say yes.',
+  sub: 'Right now, a wholesale desk runs on phone calls, screenshots and whoever remembers which buyer asked for what. Jwero gives every retail buyer relationship one record — order history, memo status and pricing terms in one place, with follow-ups sent for you automatically, and approval only where you want it.',
   primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
   secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
@@ -40,7 +40,7 @@ ${L.section(
     {
       lever: 'Noticing a buyer has gone quiet',
       before: 'A retailer stops reordering and nobody notices until the relationship is effectively gone.',
-      after: 'The buyer’s order history makes a stalled account visible, and a follow-up gets drafted before it’s too late to matter.',
+      after: 'The buyer’s order history makes a stalled account visible, and a follow-up goes out before it’s too late to matter.',
     },
     {
       lever: 'Answering "what did we agree with them?"',
@@ -61,7 +61,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts and tracks. You still make the call.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI follows up and tracks. You still make the call.', '')}
   <p class="lead">What stays entirely yours: reading a buyer’s tone on a call, negotiating terms, and deciding which relationship gets extra attention this quarter. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
@@ -69,9 +69,9 @@ ${L.section(
   `${L.sectionHead('HOW TO CONTRIBUTE MORE', 'Concrete ways to get more out of the system.', '')}
   ${L.steps([
     { title: 'Set up buyer-tiered catalogue sharing once', text: 'Configure pricing and visibility per buyer so every future catalogue share is automatic, not a manual re-explain.' },
-    { title: 'Let the reorder view do the noticing', text: 'Check which buyers haven’t reordered recently and approve the AI-drafted nudge before a relationship goes cold on its own.' },
+    { title: 'Let the reorder view do the noticing', text: 'Check which buyers haven’t reordered recently and see that the AI nudge has gone out, before a relationship goes cold on its own.' },
     { title: 'Keep memo status current on the record', text: 'Log memo and approval status as it happens so any teammate — not just you — can answer a buyer’s question at a glance.' },
-    { title: 'Approve, don’t rewrite, when the draft is right', text: 'Review AI-drafted follow-ups quickly rather than starting from a blank message each time — edit only what actually needs your judgment.' },
+    { title: 'Let routine follow-ups run', text: 'Let AI follow-ups go out on their own rather than starting from a blank message each time, and keep approval on only for the buyers who need your judgment.' },
   ])}`
 , { tone: 'tint' })}
 

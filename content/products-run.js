@@ -16,7 +16,7 @@ const CRM_STORY = [
   ['Scheme', 'Joins the 11-month gold scheme. Balance on her record.'],
   ['Purchase', 'Buys earrings. Points added to her loyalty tier.'],
   ['Family', 'Her daughter’s wedding in February added to the household.'],
-  ['Alert', 'Three weeks before her anniversary, a reminder drafted for approval.'],
+  ['Alert', 'Three weeks before her anniversary, a reminder goes out automatically.'],
 ];
 const crmStory = () => `<div class="crm-story" data-crm-story>
   <div class="crm-rec" aria-hidden="true">
@@ -91,7 +91,7 @@ ${L.section(`${L.sectionHead('ONE CUSTOMER, A YEAR ON ONE RECORD', 'Watch a cust
 
 ${L.section(`${L.sectionHead('SIX JOBS, ONE RECORD', 'What a jewellery CRM has to do.', '')}<div class="wa-jobs">
   <article><h3>1. One record per customer and family</h3><p>Households link the bride, her mother and the father who pays. One phone number can belong to several family members. Duplicates entered by different salespeople are found and merged.</p><a href="/platform/customer-memory">Customer memory →</a></article>
-  <article><h3>2. Occasions that remind you</h3><p>Birthdays, anniversaries and family weddings, with a message or call drafted before each date for your team to approve.</p><a href="/products/journeys">Journeys →</a></article>
+  <article><h3>2. Occasions that remind you</h3><p>Birthdays, anniversaries and family weddings, with a message or call sent automatically before each date.</p><a href="/products/journeys">Journeys →</a></article>
   <article><h3>3. Schemes and purchases remembered</h3><p>Scheme balances and maturity dates, what they bought and at what rate, what they asked about on WhatsApp.</p><a href="/products/gold-schemes">Gold schemes →</a></article>
   <article><h3>4. Segments and who to call this week</h3><p>Group customers by purchases, occasions, schemes or city, and see who is about to stop coming. Each morning, every salesperson gets their list.</p><a href="/products/segmentation">Segments →</a></article>
   <article><h3>5. Loyalty that brings them back</h3><p>Points on every purchase, tiers, redemption, anniversary rewards and referral benefits, with points expiring after the period you set.</p><a href="/products/loyalty">Loyalty →</a></article>

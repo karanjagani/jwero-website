@@ -43,7 +43,7 @@ ${L.section(`${L.sectionHead('BY MARKET', 'Pick where you sell.', 'Tap a market 
 ${L.section(`${L.sectionHead('THE SAME EVERYWHERE', 'What works the same in every country.', '')}${L.cards([
   { title: 'One record', text: 'Customers, catalogue, stock, counter, schemes, workshop, books and team on one system.', link: { href: '/platform', label: 'The platform' } },
   { title: 'Official WhatsApp', text: 'Your number on the official WhatsApp Business Platform, with payments in the chat where your gateway supports it.', link: { href: '/products/whatsapp', label: 'WhatsApp' } },
-  { title: 'AI that asks first', text: 'Replies, follow-ups and calls drafted by AI, with approvals, caps and a kill switch.', link: { href: '/products/ai-sales-agents', label: 'AI agents' } },
+  { title: 'AI that does the work', text: 'Replies, follow-ups and calls handled by AI inside caps, quiet hours and a kill switch, with approval only where you want it.', link: { href: '/products/ai-sales-agents', label: 'AI agents' } },
 ])}`)}
 ${L.ctaBand('Selling outside India?', 'Tell us your country and what you run; we will show you Jwero set up for your market.', 'global')}
 `,
@@ -98,7 +98,7 @@ const usa = market({
   h1: 'Jewellery software for the US and Canada: POS, ecommerce and every customer on one record.',
   sub: 'For independent jewellers, bridal specialists and online brands. Sales tax on every bill, prices that follow the metal rate, and the shop, the website and every message on one customer record.',
   points: [['US sales tax', 'Invoices under the US sales tax regime set for your business.'], ['Dollar pricing', 'Price, sell and invoice in US or Canadian dollars.'], ['Gold by the ounce or gram', 'Live rates reprice the counter, the website and every channel together.'], ['Bridal and custom orders', 'Quotes accepted online, deposits on the record, orders tracked to delivery.'], ['Stripe and PayPal', 'Card payments at the counter, online and inside a chat.'], ['English, Spanish and French', 'AI replies, voice and calls in the customer’s language.']],
-  cmp: [['POS, website and CRM', 'Three systems', 'One record'], ['Price when gold moves', 'Edited by hand', 'Every channel repriced'], ['Custom orders', 'Paper and email', 'Quote, deposit and order on one thread'], ['Follow-ups', 'When someone remembers', 'Drafted by AI, approved by your team'], ['Language', 'English only', 'English, Spanish, French and more']],
+  cmp: [['POS, website and CRM', 'Three systems', 'One record'], ['Price when gold moves', 'Edited by hand', 'Every channel repriced'], ['Custom orders', 'Paper and email', 'Quote, deposit and order on one thread'], ['Follow-ups', 'When someone remembers', 'Sent by AI, inside limits you set'], ['Language', 'English only', 'English, Spanish, French and more']],
   faqs: [{ q: 'Does Jwero handle US sales tax?', a: 'Yes. Invoices can run under the US sales tax regime, set per business.' }, { q: 'What about Canada?', a: 'Canadian dollar pricing works today. Tell us your province and we will confirm the tax set-up for you.' }, { q: 'Which payment gateways work?', a: 'Stripe and PayPal, at the counter, online and in a chat.' }],
   close: ['Running a jewellery store in the US or Canada?', 'Tell us what you run; we will show Jwero with sales tax, dollars and your channels.'],
 });

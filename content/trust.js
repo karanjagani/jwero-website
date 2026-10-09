@@ -52,7 +52,7 @@ ${L.section(
   ${L.compareRows([
     { lever: 'OWNERSHIP', before: 'Your customer list sits in a vendor’s shared system and in salespeople’s phones.', after: 'Your data is yours, in a database of its own. Jwero has no right to use it for anything but running your workspace.' },
     { lever: 'EXIT', before: 'Leaving a software vendor means begging for your own data.', after: 'Export everything yourself at any time, and for at least 30 days after you leave.' },
-    { lever: 'AI', before: 'Automation that messages customers without anyone checking.', after: 'Every AI draft waits for a person. One switch stops it, at five levels.' },
+    { lever: 'AI', before: 'Automation that messages customers with no limits and no record.', after: 'AI works inside caps and quiet hours you set, with every action logged. One switch stops it, at five levels.' },
     { lever: 'HONESTY', before: 'A wall of logos and a sales call to find out what is real.', after: 'What is not done is written on this page and on the public roadmap.' },
   ])}`
 , { tone: 'tint' })}
@@ -84,7 +84,7 @@ const security = {
     { q: 'Where does my data live?', a: 'Each business runs in its own isolated database, hosted in India. Your data is never mixed with another business’s. Credentials are encrypted, and access is controlled by roles you define. The companies that help process it are named on the <a href="/legal/sub-processors">Sub-processors</a> page.' },
     { q: 'Can my staff see everything?', a: 'Only what you allow. Around 150 fine-grained permissions control who sees customers, prices, schemes and reports — per role, per branch.' },
     { q: 'Can I take my data out?', a: 'Yes, at any time, in standard formats. Your customer list is your asset. That promise is a design decision, not a support favour.' },
-    { q: 'What can AI do and not do with my data?', a: 'AI drafts actions inside your approval queues, daily caps and quiet hours. It cannot bypass those limits, and a kill switch can stop it at five scopes instantly.' },
+    { q: 'What can AI do and not do with my data?', a: 'AI acts on its own inside your daily caps and quiet hours, every action is logged, and you choose which actions need approval. It cannot bypass those limits, and a kill switch can stop it at five scopes instantly.' },
     { q: 'Is Jwero SOC 2 or ISO certified?', a: 'ISO/IEC 27001: yes, certified. SOC 2: the audit is in progress, and we publish the report when it is issued, not before.' },
     { q: 'This is family business data — how do I know it won’t leave the family?', a: 'It runs in a database isolated to your business alone, with encrypted credentials and access controlled entirely by roles you set. Nobody outside your business can see it: not another customer of ours, not a generic support queue. That isolation is built into the architecture, not something we ask you to take on faith.' },
     { q: 'What happens to customer data if a salesperson who handled it leaves?', a: 'Deactivate their login in seconds. Every conversation and record they touched stays with the business: it was always the business’s record, never the individual’s.' },
@@ -106,7 +106,7 @@ ${L.section(
     { icon: '▣', title: 'Where your data lives', text: 'One isolated database per business. Your data lives alone, encrypted, never mixed with anyone else’s.' },
     { icon: '⚿', title: 'Who can see what', text: 'Role-based access, per role and per branch. Owner, manager and counter staff see different worlds.' },
     { icon: '⇩', title: 'Export anytime', text: 'Your data leaves with you in standard formats whenever you ask. No hostage clauses.' },
-    { icon: '✓', title: 'What AI can and can’t do', text: 'Every AI action waits in an approval queue inside caps and quiet hours you set — never a surprise message.' },
+    { icon: '✓', title: 'What AI can and can’t do', text: 'AI actions run inside caps and quiet hours you set, every action is logged, and you choose which need approval.' },
     { icon: '☑', title: 'Approvals on money', text: 'Maker-checker approvals and tamper-evident document trails on financial records.' },
     { icon: '⏻', title: 'Kill switches', text: 'Pause any AI activity instantly, at five scopes — one action, one agent, one branch, one channel, or everything.' },
   ])}`
@@ -169,7 +169,7 @@ const customers = {
     { q: 'Where are the customer logos and testimonials?', a: 'The logos are above — real jewellery businesses running on Jwero, named with their permission. Numbered case studies come next, and only after the owner verifies the figures on record. What you will never see here: stock-photo testimonials or unverifiable claims.' },
     { q: 'What is the Lighthouse Partner program?', a: 'A founding cohort of jewellery businesses who get concierge onboarding and direct influence on the roadmap, in exchange for measured, publishable results. Limited seats per region and segment.' },
     { q: 'Without case studies yet, why should I trust the ROI claims?', a: 'You shouldn’t take our word for it — that is exactly why the weekly growth report exists. It is generated from your own data once you are live, so you judge on your own evidence, not a testimonial.' },
-    { q: 'How do I know the product actually works, not just the pitch?', a: 'Test the WhatsApp button on this site. It is not a form — it is Jwero’s own inbox, answered by Jwero’s own AI workforce with approvals on. That is a live demo you can run before talking to anyone.' },
+    { q: 'How do I know the product actually works, not just the pitch?', a: 'Test the WhatsApp button on this site. It is not a form — it is Jwero’s own inbox, answered by Jwero’s own AI workforce. That is a live demo you can run before talking to anyone.' },
   ],
   body: `
 ${L.hero({
@@ -221,7 +221,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('THE HONEST QUESTION', 'Trusting ROI claims before case studies exist.', '')}${L.faqBlock([
   { q: 'Without case studies yet, why should I trust the ROI claims?', a: 'You shouldn’t take our word for it — that’s exactly why the weekly growth report exists, generated from your own data once you’re live.' },
-  { q: 'How do I know the product actually works, not just the pitch?', a: 'Test the WhatsApp button on this site — it’s Jwero’s own inbox, answered by Jwero’s own AI workforce, with approvals on.' },
+  { q: 'How do I know the product actually works, not just the pitch?', a: 'Test the WhatsApp button on this site — it’s Jwero’s own inbox, answered by Jwero’s own AI workforce.' },
 ])}`)}
 
 ${L.ctaBand('Judge us on your own numbers.', 'The honest pitch: run a pilot, read your growth report in 30 days, then decide.', 'customers')}
@@ -263,7 +263,7 @@ ${L.section(
     { label: 'Knows gold-plan / scheme balance in a reply', jwero: 'Yes', other: 'No' },
     { label: 'Prices a reply at today’s live gold rate', jwero: 'Yes', other: 'No' },
     { label: 'Catalogue, CRM and inventory in the same system', jwero: 'Yes', other: 'No — separate tools needed' },
-    { label: 'Governed AI drafting with approval queues', jwero: 'Yes', other: '[VERIFY per tool]' },
+    { label: 'Governed AI with caps, a kill switch and optional approval queues', jwero: 'Yes', other: '[VERIFY per tool]' },
     { label: 'Touchscreen counter billing (scan to GST invoice)', jwero: 'Yes', other: '[VERIFY per tool]' },
     { label: 'In-POS returns and cash-drawer day-close', jwero: 'Yes — returns under branch policy; register shifts with a reconciled cash count', jweroRoadmap: false, other: '[VERIFY per tool]' },
   ])}`
@@ -273,7 +273,7 @@ ${L.section(
   `${L.sectionHead('WHAT SWITCHERS SWITCH FOR', 'What switching buys you.', '')}
   ${L.cards([
     { title: 'Memory', text: 'A reply that already knows what she owns and what she’s saving toward — not a blank message thread.' },
-    { title: 'Governed AI', text: 'Approval queues, daily caps and a kill switch — not a bot that fires without oversight.' },
+    { title: 'Governed AI', text: 'Daily caps, quiet hours, a kill switch and approval where you choose it. Not a bot that fires without oversight.' },
     { title: 'One system', text: 'The catalogue, the CRM and the inbox share state — no exporting between tools to answer a simple question.' },
   ])}`
 )}
@@ -322,7 +322,7 @@ ${L.hero({
 ${L.section(
   `${L.sectionHead('THE LAND–PROVE–EXPAND PLAN', 'Nothing breaks. Everything is measured.', '')}
   ${L.steps([
-    { title: 'Land (week 1)', text: 'Customers imported for you. Your existing WhatsApp number connected. Catalogue published. Greetings on, approvals on. Your current software untouched.' },
+    { title: 'Land (week 1)', text: 'Customers imported for you. Your existing WhatsApp number connected. Catalogue published. Greetings on, AI limits set. Your current software untouched.' },
     { title: 'Prove (days 30–90)', text: 'The weekly growth report tells you what came back: returning customers, appointments, attributed revenue. Judge the system on evidence.' },
     { title: 'Expand (when ready)', text: 'Schemes go digital, journeys switch on, more branches join — each step because the last one paid for itself.' },
   ])}`

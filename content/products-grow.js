@@ -329,7 +329,7 @@ const JRN = [
   ['Bought', 'Loyalty points added · the journey ends'],
 ];
 const jrnFlow = () => `<div class="wa-story" data-wa-story>
-  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">JOURNEY · ANNIVERSARY</p>${JRN.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Every message waits for approval until you let it run alone.</p></div>
+  <div class="mkt-card" aria-hidden="true"><p class="pc-tag">JOURNEY · ANNIVERSARY</p>${JRN.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Messages go out automatically; you choose which ones need approval first.</p></div>
   <ol class="wa-steps">${JRN.map(([t, d]) => `<li><b>${t}</b><span>${d.split(' · ')[0]}</span></li>`).join('')}</ol>
 </div>`;
 const READY = ['Welcome a new customer', 'New-lead nurture', 'Birthday', 'Anniversary', 'Family wedding coming up', 'Abandoned cart', 'Browsed but did not buy', 'Scheme instalment due', 'Scheme maturity', 'Repair ready for collection', 'Win back a quiet customer', 'VIP at risk', 'Loyalty tier up', 'Points about to expire', 'After a purchase', 'Festival invitation'];
@@ -340,7 +340,7 @@ const JRN_CMP = [
   ['WhatsApp, SMS, email, push and AI calls', 'WhatsApp only', 'Email and SMS', 'All, in one flow'],
   ['Abandoned cart and browse', 'No', 'Online only', 'Yes, with WhatsApp and calls'],
   ['Pieces matched to each customer', 'Same message to all', 'Some', 'Yes, priced at today’s rate'],
-  ['Approval before anything sends', 'You send it', 'Rarely', 'Yes, until you let it run alone'],
+  ['Approval where you want it', 'You send it', 'Rarely', 'Yes, for the messages you choose'],
   ['What it sold', 'Guess', 'Clicks', 'Visits and bills traced to the journey'],
 ];
 const jrnTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>WhatsApp by hand</th><th>Generic marketing automation</th><th>Jwero journeys</th></tr></thead><tbody>${JRN_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
@@ -348,30 +348,30 @@ const JRN_HOW = [
   ['Pick a ready journey', 'Start from one of 300+ ready journeys, such as anniversary, abandoned cart or scheme maturity.'],
   ['Choose who it is for', 'A segment from your records: bridal buyers, scheme members, quiet customers, one branch.'],
   ['Adjust the steps', 'Messages, waits, conditions, AI calls and branches on the canvas.'],
-  ['Keep approval on', 'Every message waits for your team’s yes, with quiet hours and frequency limits.'],
+  ['Set the limits', 'Quiet hours, frequency limits, and approval for the messages you choose.'],
   ['Switch it on and watch', 'See who is at which step, what was sent and what it sold; stop it with one switch.'],
 ];
 const jrnFaqs = [
-  { q: 'What is marketing automation for jewellers?', a: 'Marketing automation sends the right message to each customer at the right moment without someone remembering to: before an anniversary, after an abandoned cart, when a scheme matures or a repair is ready. Jwero runs it as journeys across WhatsApp, SMS, email, push and AI calls, with your approval.' },
+  { q: 'What is marketing automation for jewellers?', a: 'Marketing automation sends the right message to each customer at the right moment without someone remembering to: before an anniversary, after an abandoned cart, when a scheme matures or a repair is ready. Jwero runs it as journeys across WhatsApp, SMS, email, push and AI calls, inside the limits you set.' },
   { q: 'What is a customer journey?', a: 'A sequence of steps that runs for each customer: a trigger, such as a birthday or an abandoned cart, then messages, waits, conditions and calls, until the customer buys or the journey ends.' },
   { q: 'Which journeys should a jewellery shop automate first?', a: 'Anniversary and birthday, scheme instalment and maturity, repair ready, abandoned cart and browse, and win-back for quiet customers. Jwero has these and more among 300+ ready journeys.' },
-  { q: 'Can a journey send messages without approval?', a: 'Not unless you allow it. Every message waits for your team’s approval at first; once you trust a step, you can let it send on its own, inside quiet hours and frequency limits. One switch stops everything.' },
+  { q: 'Can a journey send messages without approval?', a: 'Yes. Messages go out automatically, inside quiet hours and frequency limits. You can require approval for any step, and one switch stops everything.' },
   { q: 'How is a journey different from a broadcast?', a: 'A broadcast sends one message to many people at once. A journey runs for each customer on their own timeline, reacts to what they do, and moves them step by step towards a purchase.' },
   { q: 'Are there journeys for abandoned carts and browsing?', a: 'Yes. When a customer leaves pieces in an online cart, or keeps looking at the same pieces, a journey follows up on WhatsApp and can place an AI call.' },
   { q: 'Can Jwero create journeys automatically?', a: 'Yes. Describe the goal, such as bringing back customers who bought bridal two years ago, and Jwero creates a detailed journey across WhatsApp, SMS, email, push and AI calls, including when to hand a customer on to another journey. Your team reviews it before it runs.' },
   { q: 'Can a journey include phone calls?', a: 'Yes. An AI call at ₹7 can be a step, for example when a WhatsApp message is not read, and the outcome decides the next step.' },
-  { q: 'Can I see what a journey is doing right now?', a: 'Yes. You see how many customers are at each step, what was sent, what is waiting for approval, and the visits and bills it produced.' },
+  { q: 'Can I see what a journey is doing right now?', a: 'Yes. You see how many customers are at each step, what was sent, what is held for approval, and the visits and bills it produced.' },
   { q: 'Are the recommended pieces personal, or bestsellers?', a: 'Personal. Each customer gets pieces matched to their purchases, taste and budget, priced at today’s rate.' },
 ];
 
 const journeys = {
   slug: 'products/journeys',
   title: 'Jewellery Marketing Automation & Customer Journeys | Jwero',
-  description: 'Jewellery marketing automation: 300+ ready customer journeys for anniversaries, abandoned carts, schemes, repairs and win-backs, across WhatsApp, SMS, email and AI calls, with approval before anything sends.',
+  description: 'Jewellery marketing automation: 300+ ready customer journeys for anniversaries, abandoned carts, schemes, repairs and win-backs, across WhatsApp, SMS, email and AI calls, sent automatically, with approval only where you want it.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Jewellery Marketing Automation', alternateName: ['Customer journeys for jewellers', 'Jewellery marketing automation software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Marketing automation for jewellers: 300+ ready customer journeys including anniversary, birthday, abandoned cart, browse, scheme maturity, repair ready and win-back; a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; personalised pieces at today’s rate; approval gates and live visibility.',
+    description: 'Marketing automation for jewellers: 300+ ready customer journeys including anniversary, birthday, abandoned cart, browse, scheme maturity, repair ready and win-back; a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; personalised pieces at today’s rate; optional approval gates and live visibility.',
     url: 'https://jwero.ai/products/journeys', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up your first customer journey', step: JRN_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
@@ -381,7 +381,7 @@ const journeys = {
 ${L.hero({
   eyebrow: 'JEWELLERY MARKETING AUTOMATION · CUSTOMER JOURNEYS',
   h1: 'Jewellery marketing automation: customer journeys your team can see, and can stop.',
-  sub: 'Start from 300+ ready journeys, or describe the goal and Jwero creates a detailed journey automatically, across channels and across journeys. Each runs for every customer on their own timeline across WhatsApp, SMS, email and AI calls, with your approval before anything sends.',
+  sub: 'Start from 300+ ready journeys, or describe the goal and Jwero creates a detailed journey automatically, across channels and across journeys. Each runs for every customer on their own timeline across WhatsApp, SMS, email and AI calls, automatically, inside the limits you set.',
   primary: { href: '#', label: 'Show me the journeys for my shop', wa: 'journeys' },
 })}
 
@@ -392,8 +392,8 @@ ${L.section(`${L.sectionHead('SIX JOBS, ONE CANVAS', 'What jewellery marketing a
   <article><h3>2. Built for you, or by you</h3><p>Describe the goal and Jwero creates the journey automatically: detailed, across channels, and handing customers from one journey to the next. Or build your own on a canvas of triggers, waits, conditions and branches.</p><a href="/platform/ai-workforce">AI workforce →</a></article>
   <article><h3>3. Every channel in one flow</h3><p>WhatsApp, SMS, email, push and AI calls at ₹7 as steps, so a message that is not read can become a call.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
   <article><h3>4. Personal, not a blast</h3><p>Each customer gets pieces matched to their purchases, taste and budget, priced at today’s rate, on the day that matters to them.</p><a href="/products/crm">Customer record →</a></article>
-  <article><h3>5. Nothing goes out without your yes</h3><p>Approval gates on every message until you trust a step, quiet hours, frequency limits and one switch to stop it all.</p><a href="/whatsapp-broadcast-for-jewellers">WhatsApp marketing →</a></article>
-  <article><h3>6. Watch it work</h3><p>Who is at which step, what was sent, what waits for approval, and the visits and bills each journey produced.</p><a href="/products/reports">Reports →</a></article>
+  <article><h3>5. You set the limits</h3><p>Messages go out automatically. Approval gates on any step you choose, quiet hours, frequency limits and one switch to stop it all.</p><a href="/whatsapp-broadcast-for-jewellers">WhatsApp marketing →</a></article>
+  <article><h3>6. Watch it work</h3><p>Who is at which step, what was sent, what is held for approval, and the visits and bills each journey produced.</p><a href="/products/reports">Reports →</a></article>
 </div>`)}
 
 ${L.section(`<span id="ready"></span>${L.sectionHead('READY JOURNEYS', 'A few of the 300+ ready journeys.', 'Pick one, adjust it, switch it on.')}<div class="jrn-chips">${READY.map((r) => `<span>${r}</span>`).join('')}<span class="is-more">and 280+ more</span></div>`, { tone: 'tint' })}
@@ -467,7 +467,7 @@ const cmpnFaqs = [
   { q: 'Which marketing channels work best for jewellers?', a: 'WhatsApp for most customers, RCS and SMS for those not on WhatsApp, email and push for online customers. Jwero sends each customer on the channels they agreed to.' },
   { q: 'Can I A/B test a campaign?', a: 'Yes. Send two versions to a small share of the audience, and the version that performs better goes to everyone else.' },
   { q: 'How do jewellers measure what a campaign sold?', a: 'By tracing visits and bills back to the campaign and channel that reached the customer. Jwero shows revenue by campaign and by channel, not just opens.' },
-  { q: 'Can AI plan and write jewellery campaigns?', a: 'Yes. The AI campaign strategist drafts the plan, audience, message and offer ahead of each festival. Nothing is sent until your team approves it.' },
+  { q: 'Can AI plan and write jewellery campaigns?', a: 'Yes. The AI campaign strategist drafts the plan, audience, message and offer ahead of each festival. You choose whether it goes out automatically or is held for your team’s approval.' },
   { q: 'Do campaigns include ads and social media posts?', a: 'No. Ads and social posts run from their own tools in Jwero, using the same segments, so the people you target online match the ones you message.' },
   { q: 'Is RCS available?', a: 'Yes. RCS rich messages are live for campaigns, for customers on Android phones who are not reachable on WhatsApp.' },
   { q: 'What is the difference between a campaign and a journey?', a: 'A campaign goes to an audience at a planned time, like a Diwali offer. A journey runs for each customer on their own timeline, like an anniversary or an abandoned cart.' },

@@ -93,7 +93,7 @@ const leadLeakage = {
   breadcrumbs: BC('Lead leakage'),
   faqs: [
     { q: 'How many enquiries does a typical business lose?', a: 'Most businesses cannot answer that question — which is the problem. Enquiries scattered across personal phones, DMs and missed calls have no owner, no record and no follow-up. The ones answered slowly or never are your quietest revenue leak.' },
-    { q: 'How does Jwero stop the leak?', a: 'Every channel lands in one inbox attached to a customer record. The AI workforce drafts replies in minutes and follows up on schedule until there is an outcome. Nothing depends on someone remembering.' },
+    { q: 'How does Jwero stop the leak?', a: 'Every channel lands in one inbox attached to a customer record. The AI workforce replies in minutes and follows up on schedule until there is an outcome. Nothing depends on someone remembering.' },
     { q: 'We already have a WhatsApp tool for this. Isn’t the leak already plugged?', a: 'A messaging tool answers faster, but it still doesn’t know her purchase history or follow up on a schedule after she goes quiet — that’s the harder half of the leak, and it’s where most enquiries die.' },
   ],
   body: `
@@ -109,7 +109,7 @@ ${L.section(
   `${L.sectionHead('WHERE THE LEAK HIDES', 'Three places enquiries quietly die.', '')}
   ${L.painRows([
     { quote: 'Enquiries come to whoever’s number is on the visiting card.', title: 'One inbox, owned by the business', text: 'WhatsApp, Instagram, Facebook and web chat land in one place, attached to customer records, visible to the team, assignable and accountable.' },
-    { quote: 'We reply when we get time. Sometimes that is tomorrow.', title: 'Minutes, not mornings', text: 'The AI workforce drafts knowledgeable replies with live prices in minutes, around the clock. Speed is the first conversion lever in jewellery enquiries.' },
+    { quote: 'We reply when we get time. Sometimes that is tomorrow.', title: 'Minutes, not mornings', text: 'The AI workforce sends knowledgeable replies with live prices in minutes, around the clock. Speed is the first conversion lever in jewellery enquiries.' },
     { quote: 'If she does not reply, we move on. Nobody follows up twice.', title: 'Follow-up that never forgets', text: 'Every open conversation is chased on schedule, politely, with context — until there is an outcome. The follow-up IS the sale.' },
   ])}`
 )}

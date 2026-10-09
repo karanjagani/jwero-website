@@ -5,9 +5,9 @@ const L = require('../lib');
 const APP = 'https://os.jwero.ai';
 
 const TIERS = [
-  ['assist', 'Assist', 'Start here', 'AI drafts, your team sends. Every reply, reminder and follow-up waits for a person. Where every business starts.'],
-  ['approve', 'Approve', 'Most chosen', 'The AI prepares the work — follow-ups, win-backs, scheme reminders — and you approve with one tap.'],
-  ['autopilot', 'Autopilot', 'Earned', 'Action types that have proved accurate run on their own inside daily caps, and demote themselves if anything drifts.'],
+  ['assist', 'Assist', 'Review everything', 'AI drafts, your team sends. Every reply, reminder and follow-up waits for a person. For owners who want to see it all first.'],
+  ['approve', 'Approve', 'Review some', 'The AI does the routine work on its own. The kinds of action you choose, such as win-backs or scheme reminders, wait for your one tap.'],
+  ['autopilot', 'Autopilot', 'How Jwero runs', 'Replies, follow-ups and reminders go out on their own inside daily caps and quiet hours, with one switch to stop them.'],
 ];
 
 const start = {
@@ -17,7 +17,7 @@ const start = {
   breadcrumbs: [['Home', '/'], ['Get started']],
   faqs: [
     { q: 'Do I pay on this page?', a: 'No. You create the account with Google, LinkedIn or email, and billing is set up inside Jwero. You start with a free trial, and your price is shown in your account when it ends; after that it bills monthly, and you can export everything, any time.' },
-    { q: 'How long until I am live?', a: 'Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one. Everything else follows in stages.' },
+    { q: 'How long until I am live?', a: 'Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, AI limits set from day one. Everything else follows in stages.' },
     { q: 'Can I get help instead of doing it myself?', a: 'Yes — every step below has a chat-or-call button; we can run onboarding with you.' },
   ],
   body: `
@@ -45,14 +45,14 @@ ${L.section(
     <div class="start-panel" data-panel="2">
       <h2>How much should the AI do on its own?</h2>
       <div class="start-grid start-grid-3">${TIERS.map(([k, n, f, d]) => `<button type="button" class="start-opt start-tier" data-tier="${k}"><em>${f}</em><b>${n}</b><span>${d}</span></button>`).join('')}</div>
-      <p class="sim-small">This is a setting, not a price: every module is in Jwero One whichever you pick. Every business starts at Assist in practice and promotes the AI one action type at a time.</p>
+      <p class="sim-small">This is a setting, not a price: every module is in Jwero One whichever you pick. Jwero’s AI works on its own by default, and you can require approval for any kind of action at any time.</p>
     </div>
 
     <div class="start-panel" data-panel="3">
       <h2>Create your workspace</h2>
       <div class="start-summary"><p><span>Business</span><b data-sum="persona">—</b></p><p><span>AI starts at</span><b data-sum="tier">—</b></p></div>
       <div class="cta-row"><a class="btn btn-primary btn-mark" data-start-go href="${APP}/signup?utm_source=jwero.ai&utm_medium=start">${L.mark('mark-xs')}Start your free trial at os.jwero.ai</a><a class="btn btn-ghost" href="#" data-wa="bookdemo" data-start-wa>Set it up with a person</a></div>
-      <ol class="start-next"><li><b>Create your account</b> with Google, LinkedIn or email. You start with a free trial.</li><li><b>Onboarding inside Jwero</b> seeds your masters, templates, price lists and the live gold rate for your kind of business.</li><li><b>Import customers and connect WhatsApp</b> — we can do this with you; approvals are on from day one.</li><li><b>Billing</b> is set up in the product: ₹3,600 for the first month, then ₹18,000 a month.</li></ol>
+      <ol class="start-next"><li><b>Create your account</b> with Google, LinkedIn or email. You start with a free trial.</li><li><b>Onboarding inside Jwero</b> seeds your masters, templates, price lists and the live gold rate for your kind of business.</li><li><b>Import customers and connect WhatsApp</b> — we can do this with you; you set the AI’s limits on day one.</li><li><b>Billing</b> is set up in the product: ₹3,600 for the first month, then ₹18,000 a month.</li></ol>
     </div>
 
     <div class="start-nav"><button type="button" class="btn btn-ghost" data-start-back hidden>Back</button></div>
@@ -63,7 +63,7 @@ ${L.section(`${require('./positioning').quoteOne(0)}<p class="cta-note" style="t
 ${L.section(L.safeToTryStrip(), { tone: 'tint' })}
 ${L.section(`${L.sectionHead('BEFORE YOU START', 'Three questions people ask on this page.', '')}${L.faqBlock([
   { q: 'Do I pay on this page?', a: 'No. You create the account with Google, LinkedIn or email, and billing is set up inside Jwero. You start with a free trial, and your price is shown in your account when it ends; after that it bills monthly, and you can export everything, any time.' },
-  { q: 'How long until I am live?', a: 'Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one. Everything else follows in stages.' },
+  { q: 'How long until I am live?', a: 'Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, AI limits set from day one. Everything else follows in stages.' },
   { q: 'Can I get help instead of doing it myself?', a: 'Yes — every step has a chat-or-call button; we can run onboarding with you.' },
 ])}`)}
 `,

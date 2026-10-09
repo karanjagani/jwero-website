@@ -6,12 +6,12 @@ const L = require('../lib');
 const whyAnOs = {
   slug: 'why-an-os',
   title: 'Why Jewellers Need an Operating System, Not Another Tool | Jwero',
-  description: 'What an operating system for a jewellery business is, why a CRM + ERP + WhatsApp tool never becomes one, and what "run by AI" means in practice: one record, every department on it, AI that acts on its own or asks first.',
+  description: 'What an operating system for a jewellery business is, why a CRM + ERP + WhatsApp tool never becomes one, and what "run by AI" means in practice: one record, every department on it, AI that acts on its own, and asks first only where you choose.',
   breadcrumbs: [['Home', '/'], ['Why an OS']],
   faqs: [
     { q: 'Isn’t an “operating system” just marketing for an all-in-one?', a: 'An all-in-one bundles modules under one login. An operating system makes every module read and write the same record. The test: when a customer buys at the counter, does her WhatsApp thread, her scheme balance and her next follow-up change without anyone syncing anything? In a bundle, no. In an OS, yes — it is one row.' },
     { q: 'I already have a CRM and an ERP. Why is that not an OS?', a: 'Because they hold two copies of the same customer and the same piece, and someone reconciles them. The reconciliation is where memory is lost and where the follow-up dies. An OS removes the second copy, not the first tool.' },
-    { q: 'What does “run by AI” actually mean here?', a: 'An AI workforce drafts the work — replies, follow-ups, reminders, invitations, reorder suggestions — from the one record. You decide, action type by action type, whether it runs on its own inside daily caps and quiet hours, or waits for your tap. A kill switch stops any of it, at five scopes, instantly.' },
+    { q: 'What does “run by AI” actually mean here?', a: 'An AI workforce drafts the work — replies, follow-ups, reminders, invitations, reorder suggestions — from the one record. It runs on its own inside daily caps and quiet hours, and you choose, action type by action type, what should wait for your approval. A kill switch stops any of it, at five scopes, instantly.' },
     { q: 'Does this only make sense for chains?', a: 'No. A single counter has the same problem at a smaller scale: the owner is the operating system, and the business stops remembering when the owner is not there. Chains simply feel it at every branch.' },
   ],
   body: `
@@ -29,7 +29,7 @@ ${L.section(
     { lever: 'A customer buys at the counter', before: 'The bill is in billing. Her WhatsApp thread, her scheme and her follow-up know nothing.', after: 'One row updates: her record, her scheme balance, her next follow-up, the stock, the books.', link: { href: '/products/pos', label: 'See the counter' } },
     { lever: 'The gold rate moves', before: 'Someone reprices the catalogue, the website and the quotes — or doesn’t.', after: 'One rule reprices every channel at once, with overrides routed through approval.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
     { lever: 'A salesperson leaves', before: 'Twenty years of relationships leave with the phone.', after: 'Every signal she ever gave you — scored, explained — stays with the business; the next person walks up already knowing her.', link: { href: '/platform/customer-memory', label: 'See customer memory' } },
-    { lever: 'An enquiry lands at 11pm', before: 'It waits for morning. She has bought elsewhere by then.', after: 'The AI drafts a priced reply from her record in minutes — and sends it, or waits for your yes.', link: { href: '/platform/ai-workforce', label: 'See the AI workforce' } },
+    { lever: 'An enquiry lands at 11pm', before: 'It waits for morning. She has bought elsewhere by then.', after: 'The AI sends a priced reply from her record, at any hour.', link: { href: '/platform/ai-workforce', label: 'See the AI workforce' } },
   ])}`
 )}
 
@@ -46,7 +46,7 @@ ${L.section(
   `${L.sectionHead('YOU STAY IN CHARGE', 'An operating system that works with what you already trust.', 'Moving to one system does not mean giving up your accountant, your judgment or your say in what comes next.')}
   ${L.cards([
     { title: 'Your accountant keeps working their way', text: 'Bills, returns and payments post to Jwero’s ledger and reach Tally or Zoho Books automatically. Your CA carries on in the software they know, with less to type.', link: { href: '/platform/integrations', label: 'How the bridge works' } },
-    { title: 'AI that works under your approval', text: 'Every AI draft waits for your yes to begin with. You let it run alone one kind of task at a time, once you have seen it get that task right.', link: { href: '/platform/ai-workforce', label: 'How approvals work' } },
+    { title: 'AI that works on its own, inside your limits', text: 'Replies, follow-ups and reminders go out automatically, inside daily caps and quiet hours. You choose which kinds of action need your approval, and one switch stops it all.', link: { href: '/platform/ai-workforce', label: 'How the AI is governed' } },
     { title: 'A platform that keeps growing with you', text: 'New capabilities ship regularly, and the roadmap is public, so you always know what is live today and what is coming next.', link: { href: '/roadmap', label: 'See the roadmap' } },
   ])}`
 )}
@@ -91,7 +91,7 @@ ${L.section(
     { title: 'Day 1 — fifteen minutes, your scenario', text: 'You bring one real situation: a quiet customer list, a leaking scheme book, a flooded inbox. We run it through Jwero live. If we cannot help, we say so here.' },
     { title: 'Days 2–5 — a pilot on your own data', text: 'We import what exists — customers, catalogue, stock, however messy — and reconcile it with you. You evaluate on your customers, not a demo dataset.' },
     { title: 'Day 5 — the written plan', text: 'What Jwero would change, the migration path, a straight price, and a written change-freeze around your season. Then it is your call.' },
-    { title: 'Days 7–14 — go live, approvals on', text: 'Your WhatsApp number connected, catalogue published, roles trained in your language. Every AI action waits in the approval queue from day one.' },
+    { title: 'Days 7–14 — go live', text: 'Your WhatsApp number connected, catalogue published, roles trained in your language. The AI starts working inside the limits you set, with approval on for whatever you choose.' },
     { title: 'Day 30 — your first growth report', text: 'Past customers who returned, appointments booked, enquiries answered in minutes, revenue attributed — generated from your own data, so you judge on your evidence.' },
   ])}`
 )}
@@ -101,7 +101,7 @@ ${L.section(
   ${L.impactGrid([
     { lever: 'Data', before: 'You export whatever you have. Excel is fine. Inconsistent branches are normal.', after: 'We map, import and reconcile — you confirm the mapping, nothing else.' },
     { lever: 'WhatsApp', before: 'You keep your number.', after: 'We connect it to the official API with templates, consent and opt-out handling in place.' },
-    { lever: 'Your team', before: 'If they can use WhatsApp, they can run Jwero.', after: 'Role-based training in your language; approvals mean nobody can send anything wrong on day one.' },
+    { lever: 'Your team', before: 'If they can use WhatsApp, they can run Jwero.', after: 'Role-based training in your language; caps and your chosen approvals keep day one safe.' },
     { lever: 'Your season', before: 'You tell us the dates.', after: 'A written change-freeze: nothing disruptive happens during your peak weeks.' },
   ])}`
 , { tone: 'tint' })}
@@ -122,7 +122,7 @@ ${L.section(
     { lever: 'A customer buys at the counter', before: 'The bill is in billing. Her WhatsApp thread, her scheme and her follow-up know nothing.', after: 'One row updates: her record, her scheme balance, her next follow-up, the stock, the books.', link: { href: '/products/pos', label: 'See the counter' } },
     { lever: 'The gold rate moves', before: 'Someone reprices the catalogue, the website and the quotes — or doesn’t.', after: 'One rule reprices every channel at once, with overrides routed through approval.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
     { lever: 'A salesperson leaves', before: 'Twenty years of relationships leave with the phone.', after: 'Every signal she ever gave you — scored, explained — stays with the business; the next person walks up already knowing her.', link: { href: '/platform/customer-memory', label: 'See customer memory' } },
-    { lever: 'An enquiry lands at 11pm', before: 'It waits for morning. She has bought elsewhere by then.', after: 'The AI drafts a priced reply from her record in minutes — and sends it, or waits for your yes.', link: { href: '/platform/ai-workforce', label: 'See the AI workforce' } },
+    { lever: 'An enquiry lands at 11pm', before: 'It waits for morning. She has bought elsewhere by then.', after: 'The AI sends a priced reply from her record, at any hour.', link: { href: '/platform/ai-workforce', label: 'See the AI workforce' } },
   ])}`
 )}
 
@@ -139,7 +139,7 @@ ${L.section(
   `${L.sectionHead('YOU STAY IN CHARGE', 'An operating system that works with what you already trust.', 'Moving to one system does not mean giving up your accountant, your judgment or your say in what comes next.')}
   ${L.cards([
     { title: 'Your accountant keeps working their way', text: 'Bills, returns and payments post to Jwero’s ledger and reach Tally or Zoho Books automatically. Your CA carries on in the software they know, with less to type.', link: { href: '/platform/integrations', label: 'How the bridge works' } },
-    { title: 'AI that works under your approval', text: 'Every AI draft waits for your yes to begin with. You let it run alone one kind of task at a time, once you have seen it get that task right.', link: { href: '/platform/ai-workforce', label: 'How approvals work' } },
+    { title: 'AI that works on its own, inside your limits', text: 'Replies, follow-ups and reminders go out automatically, inside daily caps and quiet hours. You choose which kinds of action need your approval, and one switch stops it all.', link: { href: '/platform/ai-workforce', label: 'How the AI is governed' } },
     { title: 'A platform that keeps growing with you', text: 'New capabilities ship regularly, and the roadmap is public, so you always know what is live today and what is coming next.', link: { href: '/roadmap', label: 'See the roadmap' } },
   ])}`
 )}

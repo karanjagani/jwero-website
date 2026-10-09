@@ -18,7 +18,7 @@ const ERAS = [
   { key: 'os', era: 'The operating system', when: 'Now', centre: 'The customer, with AI working for her', icon: 'record',
     so: 'Shows you the sale, and everything that happened before and after it.',
     served: 'The customer, and everyone in your business who serves her', customer: 'Remembered everywhere: the reply she gets at 11pm, the price she sees, the reminder she receives and the greeting at the counter.', doors: ['Counter', 'WhatsApp', 'Instagram', 'Website', 'Catalogue links', 'Video counter', 'Schemes', 'Workshop', 'Books'],
-    label: 'What stays in your hands', couldnt: 'You approve what the AI sends. Your accountant keeps working in Tally. Your data is yours to export at any time.' },
+    label: 'What stays in your hands', couldnt: 'You set the limits the AI works inside, and what needs your approval. Your accountant keeps working in Tally. Your data is yours to export at any time.' },
 ];
 function eraSlider() {
   const stops = ERAS.map((e, i) => `<button type="button" class="era-stop${i === 1 ? ' is-on' : ''}" role="tab" id="era-t-${i}" aria-controls="era-p-${i}" aria-selected="${i === 1}" tabindex="${i === 1 ? 0 : -1}" data-era-stop="${i}"><b>${e.era}</b><span>${e.when}</span></button>`).join('');
@@ -80,7 +80,7 @@ function centreSwap() {
 
 const SWITCH_RISKS = [
   ['My data is stuck in the ERP.', 'We import from Excel, CSV or the ERP’s export — customers, catalogue, stock, however messy — and reconcile it with you in days 2–5. Your data also leaves the same way, any time.'],
-  ['My staff will not learn a new system.', 'If they can use WhatsApp they can use Jwero. Roles are trained in their language, and every AI action waits in an approval queue, so nobody can send anything wrong on day one.'],
+  ['My staff will not learn a new system.', 'If they can use WhatsApp they can use Jwero. Roles are trained in their language, and the AI works inside caps and quiet hours you set, with approval on for anything you choose.'],
   ['My accountant’s world will break.', 'It does not change. Bills, returns and payments post to Jwero’s ledger and reach Tally automatically; Zoho Books is bridged too. Your CA keeps the tools she has.'],
   ['We will lose days in the season.', 'A written change-freeze around your peak weeks is part of the plan. Go-lives happen before or after, never during.'],
   ['We will be locked into a new vendor.', 'You own your data; exports are yours whenever you want them, billing is month to month, and the roadmap is public before you buy.'],
@@ -140,12 +140,12 @@ function makeDoStack() {
 }
 
 const JOBS = [
-  ['Reply to a price question at 11pm', 'No', 'Someone types it from memory, next morning', 'A priced draft from the catalogue at the live rate, waiting for your tap'],
+  ['Reply to a price question at 11pm', 'No', 'Someone types it from memory, next morning', 'A priced reply from the catalogue at the live rate, sent automatically'],
   ['Reprice everything when the rate moves', 'The bill, at the counter', 'By hand, wherever someone remembers', 'One rule; every channel, every share, every quote'],
   ['Remember what Meera tried on and walked away from', 'No', 'If the salesperson remembers', 'On her record; a follow-up drafts from it'],
   ['Chase this month’s scheme instalments', 'A report, maybe', 'A register and a phone', 'Due list with balances; reminders draft themselves'],
   ['Show which designs have sat 180+ days', 'A report, if someone runs it', 'A sheet, if someone maintains it', 'On the screen everyone sees, by branch'],
-  ['Send a festival message to the right 400 people', 'No', 'A blast to everyone, opt-outs by hand', 'A segment by taste and value; personalised; approved; opt-outs enforced'],
+  ['Send a festival message to the right 400 people', 'No', 'A blast to everyone, opt-outs by hand', 'A segment by taste and value; personalised; sent on schedule; opt-outs enforced'],
   ['Post the day to the books', 'Yes', 'Yes, plus re-typing the rest', 'Yes — and the WhatsApp sale, the scheme payment and the exchange post too'],
   ['Know which enquiry became which sale', 'No', 'No', 'Attribution from message to order, on the record'],
   ['Keep the customer when the salesperson leaves', 'The bills stay', 'The phone leaves', 'Every conversation, preference and promise stays with the business'],
@@ -176,7 +176,7 @@ function leakCalc() {
     <div class="stat"><div class="stat-n" id="lk-month">—</div><div class="stat-l">value at risk every month, at your close rates</div></div>
     <div class="stat"><div class="stat-n" id="lk-year">—</div><div class="stat-l">a year, on your figures</div></div>
     <a class="btn btn-wa" id="lk-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to Jwero</a>
-    <p class="cta-note">We reply with what the priced-reply flow would do on your enquiries — drafted, approved, sent.</p>
+    <p class="cta-note">We reply with what the priced-reply flow would do on your enquiries — priced, sent, followed up.</p>
   </div>
 </div>`;
 }
@@ -224,7 +224,7 @@ ${L.section(
   ${L.impactGrid([
     { lever: 'A customer buys at the counter', before: 'The ERP writes the bill. Her WhatsApp chat, her scheme and her next follow-up know nothing about it.', after: 'Everything updates at once: her record, her scheme balance, her next follow-up, the stock and the books.', link: { href: '/products/pos', label: 'See the counter' } },
     { lever: 'The rate moves', before: 'The ERP reprices the bill. The catalogue, the website and yesterday’s quote wait for a person.', after: 'One rule reprices every channel, and any exception goes through your approval.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
-    { lever: 'An enquiry lands at 11pm', before: 'It waits. The ERP has no place for an enquiry.', after: 'A priced reply is drafted from her record and today’s rate, then sent or held for your tap.', link: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' } },
+    { lever: 'An enquiry lands at 11pm', before: 'It waits. The ERP has no place for an enquiry.', after: 'A priced reply is drafted from her record and today’s rate, then sent automatically.', link: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' } },
     { lever: 'A salesperson leaves', before: 'The bills stay in the ERP. The customers leave with the phone.', after: 'Every conversation, preference and promise stays with the business.', link: { href: '/platform/customer-memory', label: 'See Customer Memory' } },
   ])}
   <div class="cta-row center" style="margin-top:28px"><a class="btn btn-primary" href="#" data-wa="erp">Show me this on one of my customers</a><a class="btn btn-ghost" href="/book-demo">Book a demo</a></div>`
@@ -262,7 +262,7 @@ const switching = {
   faqs: [
     { q: 'Can I keep my ERP for accounts and use Jwero for everything customer-facing?', a: 'Yes — that is how most businesses start. Jwero takes WhatsApp, Instagram, the catalogue, the counter and schemes; books bridge to Tally or Zoho Books, or to your ERP’s ledger via export, for as long as you want to run both.' },
     { q: 'What if the pilot fails?', a: 'Then we stop, at the exit test, and your data leaves with you as CSV. A pilot on your own data is the point: you decide on your evidence, not our claims.' },
-    { q: 'How long does a single store take?', a: 'A fifteen-minute call on day one, a pilot on your own data in days 2–5, a written plan on day 5, go-live with approvals on by day 14, your first growth report at day 30. The full sequence is on the “How it goes” page.' },
+    { q: 'How long does a single store take?', a: 'A fifteen-minute call on day one, a pilot on your own data in days 2–5, a written plan on day 5, go-live by day 14, your first growth report at day 30. The full sequence is on the “How it goes” page.' },
     { q: 'Will we lose the history in the old system?', a: 'No. Purchase history, customers, catalogue and stock import from Excel, CSV or the ERP’s export, deduplicated and reconciled with you. The old system can stay readable for as long as you keep it.' },
     { q: 'What changes for my CA?', a: 'Less typing, and nothing else. Bills, returns and payments post to Jwero’s ledger and reach Tally automatically; Zoho Books is bridged too. Tax invoices, credit and debit notes and the audit trail are all there, and e-invoices are generated in Tally from the entries Jwero sends.' },
   ],
@@ -270,7 +270,7 @@ const switching = {
 ${L.hero({
   eyebrow: 'FROM ERP TO OS · SWITCHING',
   h1: 'Switching feels risky. Staying is the risk you are already paying.',
-  sub: 'Every worry about switching has a specific answer: the import, the approval queue, the Tally bridge, the change-freeze and the exit test. The costs of staying have none. They carry on every day, outside any report your ERP can run.',
+  sub: 'Every worry about switching has a specific answer: the import, the limits on AI, the Tally bridge, the change-freeze and the exit test. The costs of staying have none. They carry on every day, outside any report your ERP can run.',
   primary: { href: '#', label: 'Walk me through the switch for my business', wa: 'erpswitch' },
   secondary: { href: '/how-it-goes', label: 'See the 30-day sequence' },
 })}
@@ -296,7 +296,7 @@ ${L.section(
   ${L.steps([
     { title: 'Days 1–5 — import and coexist', text: 'Customers, catalogue, stock imported and reconciled with you. The ERP keeps the books. Jwero takes the customer-facing doors: WhatsApp, Instagram, catalogue links, the counter if you choose.' },
     { title: 'Day 5 — the written plan', text: 'What changes, the migration path, a straight price, and the change-freeze dates around your season. Then it is your call.' },
-    { title: 'Days 7–14 — go live, approvals on', text: 'Every AI action waits in the approval queue from day one. Staff trained by role, in their language. Nothing sends without a tap.' },
+    { title: 'Days 7–14 — go live', text: 'The AI starts working inside caps and quiet hours you set, with approval on for whatever you choose. Staff trained by role, in their language.' },
     { title: 'Day 30 — the exit test', text: 'Enquiries answered, prices consistent, day-close variance, your first growth report on your own data. If it fails, we stop and your data leaves with you.' },
     { title: 'After: move the rest when you are ready', text: 'Move the books across when it suits you, or keep the Tally bridge for good. Both are normal.' },
   ])}`

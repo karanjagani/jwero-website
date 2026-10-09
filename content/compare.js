@@ -164,7 +164,7 @@ const synergics = comparePage({
     { label: 'Manufacturing-to-retail ERP depth', jwero: 'Yes: workshop, karigar metal, job work and wastage by stage, on the ERP', other: '"Concept-to-customer" — a named strength, per Synergics' },
     { label: 'Compliance automation (GST/HSN/hallmarking)', jwero: 'GST invoicing at live rate + GSTR-1/3B report export; e-invoice IRN on roadmap', jweroRoadmap: false, other: 'Automated GST/HSN/hallmarking reports claimed' },
     { label: 'One customer record across every channel', jwero: 'Yes — one record, 198 signal types, 11 explainable scores', other: '[VERIFY — CRM module exists; omnichannel/WhatsApp scope not public]' },
-    { label: 'Governed AI workforce (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, approval queues', other: '"AI-powered analytics" claimed; governance model [VERIFY]' },
+    { label: 'Governed AI workforce (approvals, caps, kill switch)', jwero: 'Yes: 240+ actions, runs inside caps, approval where you choose', other: '"AI-powered analytics" claimed; governance model [VERIFY]' },
     { label: 'WhatsApp/Instagram commerce, official API', jwero: 'Yes', other: '[VERIFY]' },
     { label: 'Gold-loss WIP ledger', jwero: 'Yes — per-stage norms, abnormal-loss flags', other: '[VERIFY — manufacturing module exists, loss-tracking granularity not public]' },
   ],
@@ -186,7 +186,7 @@ const jewelacc = comparePage({
     { label: 'Deployment flexibility (cloud / on-premise / hybrid)', jwero: 'Cloud (Jwero One), or self-hosted on your premises or your own cloud (Enterprise)', other: 'Cloud, on-premise and hybrid offered' },
     { label: 'Customer memory across channels', jwero: 'Yes — one record, 198 signal types, 11 explainable scores', other: '[VERIFY — CRM described as a module; field depth not public]' },
     { label: 'WhatsApp/Instagram commerce', jwero: 'Yes — official APIs', other: '[VERIFY]' },
-    { label: 'Governed AI workforce', jwero: 'Yes — 240+ actions, approval queues', other: '[VERIFY]' },
+    { label: 'Governed AI workforce', jwero: 'Yes: 240+ actions, runs inside caps, approval where you choose', other: '[VERIFY]' },
     { label: 'Free trial available', jwero: 'No free trial; the first month is ₹3,600 instead of ₹18,000', other: 'Yes — publicly stated' },
   ],
   faqs: [
@@ -222,7 +222,7 @@ const sioniq = comparePage({
   slug: 'sioniq', name: 'SIONIQ', shortName: 'SIONIQ',
   category: 'a jewellery ERP integrating inventory, POS, CRM, manufacturing, accounting, ecommerce, digital gold, HR and repair/scheme modules, serving manufacturers, wholesalers, retailers, bullion traders and multi-chain businesses via SaaS, cloud or on-premise deployment — and one that also uses a "Jewelry Operating System" label',
   concedeThem: 'SIONIQ genuinely spans the widest module list we found in this research — including HR and digital gold alongside the usual ERP core — and serves the full value chain from manufacturer to bullion trader, with an earlier head start using an operating-system framing.',
-  concedeJwero: 'you want the OS claim demonstrated, not just listed: one customer record, one catalogue, one inventory truth, one inbox — with a governed AI workforce (approval queues, daily caps, a five-scope kill switch) that we can show working, not just name as a module.',
+  concedeJwero: 'you want the OS claim demonstrated, not just listed: one customer record, one catalogue, one inventory truth, one inbox — with an AI workforce that runs on its own inside daily caps, quiet hours and a five-scope kill switch, with approval queues for the actions you choose, that we can show working, not just name as a module.',
   waCtx: 'sioniq',
   researchNote: 'SIONIQ facts are sourced from sioniqerp.com and Capterra (checked July 2026), including its own "AI and machine learning" claim, quoted as SIONIQ’s own positioning. SIONIQ does not publish pricing publicly. Jwero-side claims re-verified against the product on 2026-08-01.',
   rows: [
@@ -235,7 +235,7 @@ const sioniq = comparePage({
   ],
   faqs: [
     { q: 'Why compare against a direct label rival honestly rather than avoid it?', a: 'Because our own honesty policy applies here too — SIONIQ genuinely has the broadest module list of anything we researched, including HR and digital gold. We’d rather concede that plainly and differentiate on what we can demonstrate: the governed AI workforce and the one-record architecture, live.' },
-    { q: 'Does SIONIQ have the same AI governance model as Jwero?', a: 'SIONIQ states it uses AI and machine learning for analytics and sales trends. We could not find public detail on approval queues, daily caps or a kill switch specifically — ask SIONIQ directly, or see our approval queue working live at <a href="/platform/ai-workforce">/platform/ai-workforce</a>.' },
+    { q: 'Does SIONIQ have the same AI governance model as Jwero?', a: 'SIONIQ states it uses AI and machine learning for analytics and sales trends. We could not find public detail on approval queues, daily caps or a kill switch specifically — ask SIONIQ directly, or see our caps, kill switch and approval queues working live at <a href="/platform/ai-workforce">/platform/ai-workforce</a>.' },
   ],
 });
 
@@ -273,7 +273,7 @@ const wati = comparePage({
     { label: 'Omnichannel inbox (WhatsApp + Instagram + Facebook + web)', jwero: 'Yes — one inbox, one customer record', other: 'Yes — a named platform feature' },
     { label: 'Knows customer purchase/scheme history in a reply', jwero: 'Yes — one shared record', other: '[VERIFY — CRM integrations exist (HubSpot/Salesforce); native jewellery fields not applicable]' },
     { label: 'Live gold-rate priced replies', jwero: 'Yes', other: 'No — not a jewellery-specific product' },
-    { label: 'Governed AI drafting (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: 'No-code AI chatbot builder exists; specific governance model [VERIFY]' },
+    { label: 'Governed AI workforce (caps, kill switch, optional approvals)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: 'No-code AI chatbot builder exists; specific governance model [VERIFY]' },
     { label: 'Catalogue, CRM and inventory in the same system', jwero: 'Yes', other: 'No — messaging platform; catalogue/CRM depth via integrations only' },
   ],
   faqs: [
@@ -295,12 +295,12 @@ const interakt = comparePage({
     { label: 'AI agents for FAQ, booking, order management', jwero: 'Yes — 240+ jewellery-specific actions', other: 'Yes — via Haptik’s enterprise AI platform' },
     { label: 'Live gold-rate pricing', jwero: 'Yes', other: 'No — general ecommerce catalogue, not jewellery-specific' },
     { label: 'Gold savings schemes', jwero: 'Yes', other: 'No' },
-    { label: 'Governed AI drafting with approval queues', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: '[VERIFY — Haptik AI agents exist; approval-queue governance model not confirmed]' },
+    { label: 'Governed AI with caps, a kill switch and optional approval queues', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: '[VERIFY — Haptik AI agents exist; approval-queue governance model not confirmed]' },
     { label: 'One record across CRM, catalogue, operations', jwero: 'Yes', other: 'No — commerce/messaging layer; operations (inventory, manufacturing) not in scope' },
   ],
   faqs: [
     { q: 'Can Interakt handle gold-rate pricing?', a: 'It’s built as a general ecommerce WhatsApp commerce tool with Shopify/WooCommerce integration, not jewellery-specific — we found no evidence of live gold-rate pricing. Jwero’s catalogue prices follow the live gold rate natively.' },
-    { q: 'Interakt’s AI agents are powered by Haptik — is that better than Jwero’s AI workforce?', a: 'Haptik is a real, established enterprise AI platform, and Interakt’s agents handle FAQ and order-management tasks well for general ecommerce. Jwero’s AI workforce is built specifically around jewellery actions (scheme reminders, occasion invites, live-rate quoting) inside an approval-queue governance model.' },
+    { q: 'Interakt’s AI agents are powered by Haptik — is that better than Jwero’s AI workforce?', a: 'Haptik is a real, established enterprise AI platform, and Interakt’s agents handle FAQ and order-management tasks well for general ecommerce. Jwero’s AI workforce is built specifically around jewellery actions (scheme reminders, occasion invites, live-rate quoting), running on its own inside caps, quiet hours and a kill switch, with approval queues for the actions you choose.' },
   ],
 });
 
@@ -317,7 +317,7 @@ const doubletick = comparePage({
     { label: 'AI image-recognition cart-building (photo → order)', jwero: 'No', other: 'Yes — a genuinely novel, named feature' },
     { label: 'Live gold-rate catalogue pricing', jwero: 'Yes', other: 'No — not a jewellery-specific product' },
     { label: 'Customer record shared with catalogue & schemes', jwero: 'Yes', other: 'No — messaging/sales-CRM layer, no jewellery catalogue or scheme engine' },
-    { label: 'Governed AI drafting (approvals, caps, kill switch)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: 'AI agents and enterprise governance features exist; specific model [VERIFY]' },
+    { label: 'Governed AI workforce (caps, kill switch, optional approvals)', jwero: 'Yes — 240+ actions, 5 kill-switch scopes', other: 'AI agents and enterprise governance features exist; specific model [VERIFY]' },
   ],
   faqs: [
     { q: 'What does DoubleTick not do that Jwero does?', a: 'As a WhatsApp-focused sales CRM, it does not appear to hold jewellery-specific catalogue pricing, scheme balances or manufacturing/inventory records — those live natively on Jwero’s shared customer record.' },
@@ -329,7 +329,7 @@ const quicksell = comparePage({
   slug: 'quicksell', name: 'QuickSell', shortName: 'QuickSell',
   category: 'a mobile-first catalogue-commerce app used widely by Indian jewellery and apparel sellers, with jewellery-specific features already built in — gram-based selling, diamond rate fields and automatic daily price updates based on bullion rates — stated at 2 lakh+ businesses',
   concedeThem: 'QuickSell already has jewellery-native pricing we initially underestimated in this comparison: gram-based selling, diamond-rate catalogue fields, and automatic daily repricing against bullion rates, plus B2B/B2C differentiated pricing and password/OTP-protected, screenshot-blocked catalogue sharing. If fast, lightweight catalogue sharing with live bullion pricing is genuinely all you need, QuickSell does that well.',
-  concedeJwero: 'catalogue sharing with live pricing is the beginning, not the whole job — you also want customer memory (scheme balances, occasions, taste), a governed AI workforce that drafts replies and follow-ups, and inventory/operations sharing the same record as the catalogue.',
+  concedeJwero: 'catalogue sharing with live pricing is the beginning, not the whole job — you also want customer memory (scheme balances, occasions, taste), a governed AI workforce that sends replies and follow-ups, and inventory/operations sharing the same record as the catalogue.',
   waCtx: 'quicksell',
   researchNote: 'QuickSell facts are sourced from quicksell.co and app-store listings (checked July 2026), including its own "India’s No.1" and "2 lakh+ businesses" claims, quoted as QuickSell’s own positioning, not independently verified by us. This entry was corrected during research: QuickSell does have live bullion-rate pricing, contrary to an earlier draft of this page.',
   rows: [
@@ -389,7 +389,7 @@ const zohoCrm = comparePage({
   ],
   faqs: [
     { q: 'Why not just customise Zoho CRM for jewellery?', a: 'You can, with enough custom fields and integrations — but you’d be rebuilding, by hand, what Jwero ships natively: scheme balances, purity, live-rate pricing and channel commerce sharing one record.' },
-    { q: 'Zoho has Zia, an AI assistant — how is that different from Jwero’s AI workforce?', a: 'Zia is a general business AI assistant available from Zoho’s Enterprise tier ($40/user/month) — useful for pipeline prediction and general automation. Jwero’s AI workforce is built around 240+ jewellery-specific actions (scheme reminders, occasion invites, live-rate quoting) inside an approval-queue governance model.' },
+    { q: 'Zoho has Zia, an AI assistant — how is that different from Jwero’s AI workforce?', a: 'Zia is a general business AI assistant available from Zoho’s Enterprise tier ($40/user/month) — useful for pipeline prediction and general automation. Jwero’s AI workforce is built around 240+ jewellery-specific actions (scheme reminders, occasion invites, live-rate quoting), running on its own inside caps, quiet hours and a kill switch, with approval queues for the actions you choose.' },
   ],
 });
 

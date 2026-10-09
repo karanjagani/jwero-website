@@ -7,9 +7,9 @@ const BC = (label) => [['Home', '/'], ['Roles', '/roles'], [label]];
 
 const ownerFaqs = [
   { q: 'I already carry the whole business in my head. Why do I need this?', a: 'Because your head is a single point of failure — a sick day, a family emergency or a second store means the memory doesn’t scale. Jwero puts the customer relationships, the stock truth and the pending decisions on a record the business owns, so the shop still runs the way you’d run it even when you’re not the one answering.' },
-  { q: 'Will I lose control of pricing and messaging if AI is drafting things?', a: 'No — every AI-drafted message, offer or price exception sits in an approval queue until you or someone you’ve authorised taps approve. Daily caps, quiet hours and a 5-scope kill switch mean you decide how much rope the AI staff get, and you can pull it back instantly.' },
+  { q: 'Will I lose control of pricing and messaging if AI is doing the work?', a: 'No. The AI works on its own inside the limits you set, and every action is logged. You choose which kinds of action need approval from you or someone you’ve authorised, and a price exception still routes through approval. Daily caps, quiet hours and a 5-scope kill switch mean you decide how much rope the AI staff get, and you can pull it back instantly.' },
   { q: 'Does Jwero replace my billing counter?', a: 'Yes. Scan or search a piece, price it at the live gold rate, apply a discount, take old gold in exchange, generate the GST invoice; returns and a reconciled cash day-close are in the same counter. Your statutory books can still live in Tally through the bridge. <a href="/products/pos">See the Counter POS</a>.' },
-  { q: 'What actually changes for me day to day?', a: 'Enquiries get answered on WhatsApp even after closing, follow-ups draft themselves instead of being forgotten, and you get a weekly plain-language report instead of reconstructing the picture from memory and a notebook.' },
+  { q: 'What actually changes for me day to day?', a: 'Enquiries get answered on WhatsApp even after closing, follow-ups go out on their own instead of being forgotten, and you get a weekly plain-language report instead of reconstructing the picture from memory and a notebook.' },
 ];
 
 const ownerRole = {
@@ -33,12 +33,12 @@ ${L.section(
     {
       lever: 'An enquiry at 9pm',
       before: 'A WhatsApp message sits unanswered overnight — the customer has already messaged two other jewellers by morning.',
-      after: 'The AI workforce drafts a priced reply from the live catalogue within minutes; if it’s within your rules it can send under your daily caps, or wait for your morning approval.',
+      after: 'The AI workforce sends a priced reply from the live catalogue within minutes, inside your rules and daily caps. If you have asked for approval on that kind of reply, it waits for you instead.',
     },
     {
       lever: 'Knowing who to follow up with',
       before: 'You remember the regulars, but the customer whose scheme matured last month, or who mentioned a wedding six months out, is easy to lose track of.',
-      after: 'The customer record surfaces who’s due — scheme maturities, occasions, RFM signals — as a drafted follow-up waiting in your approval queue, not a fact you had to recall.',
+      after: 'The customer record surfaces who’s due — scheme maturities, occasions, RFM signals — and sends the follow-up automatically, so it is not a fact you had to recall.',
     },
     {
       lever: 'Checking on the business from outside the shop',
@@ -66,23 +66,23 @@ ${L.section(
   ${L.cards([
     { title: 'Structured relationship management', text: 'Instead of remembering which customers matter, you work from a record that scores every signal a customer gives — occasions, scheme balances, taste, RFM, 11 live scores — and shows you why, not just who.' },
     { title: 'Data-backed decision making', text: 'Dead-stock ageing, fast/slow movers and a weekly report replace gut calls with a number you can actually check.' },
-    { title: 'Delegated oversight, not delegated control', text: 'Approval queues, daily caps and a 5-scope kill switch let you extend how the business responds to customers without handing away the final word.' },
+    { title: 'Delegated oversight, not delegated control', text: 'Autonomy levels per action, daily caps and a 5-scope kill switch let you extend how the business responds to customers without handing away the final word.' },
     { title: 'Cross-channel fluency', text: 'One inbox for WhatsApp, Instagram and Facebook means you stop needing to check four apps to know what customers are asking.' },
   ])}`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts. You approve. That doesn’t change.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI does the work. You set the limits. That doesn’t change.', '')}
   <p class="lead">What stays entirely yours: which customer relationship to protect, which price exception makes sense, which risk is worth taking. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
   `${L.sectionHead('HOW TO CONTRIBUTE MORE', 'Concrete moves, not vague advice.', '')}
   ${L.steps([
-    { title: 'Set your approval rhythm', text: 'Decide how often you review the AI workforce’s approval queue — daily is enough for most stores — so drafted replies and follow-ups don’t stall waiting on you.' },
+    { title: 'Choose what needs your approval', text: 'Decide which kinds of action should wait for you and let the rest run. For anything you hold back, check the queue daily so replies and follow-ups don’t stall waiting on you.' },
     { title: 'Read the weekly report before the walk-through', text: 'Use the plain-language weekly report to know what to ask your team, instead of discovering issues on the floor.' },
     { title: 'Check dead-stock ageing monthly', text: 'The ageing bands (0–30, 31–90, 91–180, 180+ days) tell you what capital is sitting idle before it becomes a write-off conversation.' },
-    { title: 'Tune the kill switch scopes to your comfort level', text: 'Start conservative — one agent or one channel at a time — and widen what the AI workforce can do as you build trust in what it drafts.' },
+    { title: 'Tune the kill switch scopes to your comfort level', text: 'Start conservative — one agent or one channel at a time — and widen what the AI workforce can do as you build trust in what it does.' },
   ])}`
 , { tone: 'tint' })}
 
@@ -90,7 +90,7 @@ ${L.section(`${L.sectionHead('OWNER QUESTIONS', 'Control, the billing counter, a
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="roles">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('See what a day looks like on Jwero.', 'Tell us how your shop runs today — we’ll show you exactly where the AI workforce and the approval queue fit in.', 'roles')}
+${L.ctaBand('See what a day looks like on Jwero.', 'Tell us how your shop runs today — we’ll show you exactly where the AI workforce and your controls fit in.', 'roles')}
 `,
 };
 
@@ -187,7 +187,7 @@ ${L.ctaBand('See your chain on one system.', 'Tell us how many branches and how 
 
 const nextGenFaqs = [
   { q: 'How do I take over relationships my parents built over decades, without a formal handover?', a: 'The customer record captures occasions, taste, scheme history and conversation context as structured data — so you inherit the substance of the relationship, not just a name and a phone number, even if the handover conversation was short.' },
-  { q: 'My parents are wary of “too much technology.” How do I modernise without a fight?', a: 'Everything AI drafts sits in an approval queue — nothing sends without a yes. That’s usually the reassurance that lets an older generation accept the change: it’s not a system replacing their judgment, it’s a system remembering more than any one person can, still deferring to a human tap.' },
+  { q: 'My parents are wary of “too much technology.” How do I modernise without a fight?', a: 'You choose which kinds of AI action need a yes, and you can start with approval on for all of them. That’s usually the reassurance that lets an older generation accept the change: it’s not a system replacing their judgment, it’s a system remembering more than any one person can, working inside limits the family sets.' },
   { q: 'Can I run a more data-driven operation without abandoning the trust-based way the business was run?', a: 'Yes — the data (ageing stock, customer scores, weekly reports) informs the decisions; it doesn’t replace the relationship-first way jewellery has always been sold. Jwero adds visibility on top of the trust your family already built.' },
   { q: 'What if the business’s records are messy or entirely on paper right now?', a: 'That’s a normal starting point, not a blocker — Excel sheets, notebooks and phone contacts get imported and reconciled during onboarding.' },
 ];
@@ -218,7 +218,7 @@ ${L.section(
     {
       lever: 'Proposing a new process to the older generation',
       before: 'Any suggestion of “new software” gets read as a challenge to how things have always been done, and stalls.',
-      after: 'Showing that AI drafts sit in an approval queue — nothing sends without someone tapping yes — reframes it as memory support, not a replacement for their judgment.',
+      after: 'Showing the limits, the action log and the option to keep approval on for any kind of message reframes it as memory support, not a replacement for their judgment.',
     },
     {
       lever: 'Deciding what to reorder or discount',
@@ -229,7 +229,7 @@ ${L.section(
     {
       lever: 'Bringing the business online',
       before: 'The shop’s presence is a phone number and word of mouth — customers reaching out on WhatsApp or Instagram get slow or missed replies.',
-      after: 'WhatsApp Business API and Instagram/Facebook route into one inbox, with AI staff drafting priced replies under approval — modernising reach without losing the family-shop feel.',
+      after: 'WhatsApp Business API and Instagram/Facebook route into one inbox, with AI staff sending priced replies inside your limits, modernising reach without losing the family-shop feel.',
       link: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' },
     },
   ])}`
@@ -241,7 +241,7 @@ ${L.section(
     { title: 'Structured relationship inheritance', text: 'Instead of years of floor-time to absorb who’s who, you read the same scored customer record your predecessor would have carried in memory — every signal, every score, with its why.' },
     { title: 'Digital reconciliation fluency', text: 'GST invoicing at the live gold rate and the Tally/Zoho bridge teach you the financial side of the business in a format an accountant — and a bank — recognises.' },
     { title: 'Data-backed pitching to the older generation', text: 'You learn to bring evidence (ageing stock, weekly reports) into family decisions, rather than relying on seniority alone to win an argument.' },
-    { title: 'Change management inside a trust-based culture', text: 'Rolling out approval queues and AI staff without alarming staff or customers is a skill in itself — one this role builds by necessity.' },
+    { title: 'Change management inside a trust-based culture', text: 'Rolling out AI staff and their limits without alarming staff or customers is a skill in itself — one this role builds by necessity.' },
   ])}`
 , { tone: 'tint' })}
 
@@ -254,7 +254,7 @@ ${L.section(
   `${L.sectionHead('HOW TO CONTRIBUTE MORE', 'Concrete moves for taking over, not just taking notes.', '')}
   ${L.steps([
     { title: 'Import what already exists before asking for anything new', text: 'Bring in the family’s existing customer lists — Excel, notebooks, phone contacts — during onboarding rather than starting the record from zero.' },
-    { title: 'Start the AI workforce on a narrow, visible scope', text: 'Turn on drafted replies for one channel first, with a low daily cap, so the older generation sees the approval queue working before trusting it more broadly.' },
+    { title: 'Start the AI workforce on a narrow, visible scope', text: 'Turn on AI replies for one channel first, with a low daily cap and approval on if they prefer, so the older generation sees it working before trusting it more broadly.' },
     { title: 'Bring a number to the next family decision', text: 'Use the dead-stock ageing view or the weekly report to support a buying or pricing argument with evidence, not just a hunch.' },
     { title: 'Learn the books through the Tally/Zoho bridge', text: 'Sit with the accountant while receivables and GST invoicing flow through the bridge — it’s the fastest way to understand the business’s real financial shape.' },
   ])}`

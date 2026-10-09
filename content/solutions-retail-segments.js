@@ -4,7 +4,7 @@ const BC = (label) => [['Home', '/'], ['Solutions', '/solutions'], [label]];
 const luxuryBoutiqueFaqs = [
   { q: 'Does this work for platinum and other niche materials?', a: 'Yes — purity, certification and material fields in the catalogue are generic to precious metals and stones, not gold-specific. Platinum, mixed-metal and niche assortments are handled the same way.' },
   { q: 'Can I keep client previews private?', a: 'Yes — curated catalogue shares with controlled visibility mean a preview goes only to the client it’s meant for, never a public link.' },
-  { q: 'Will AI messages feel impersonal for high-value clients?', a: 'Every draft waits for your approval before it sends — you keep the final word on tone for your most important relationships, always.' },
+  { q: 'Will AI messages feel impersonal for high-value clients?', a: 'Messages are written from each client’s own record, and you choose which kinds need your approval first. Many luxury jewellers keep approval on for their most important relationships; that is your choice.' },
   { q: 'My clients expect a personal relationship, not software. Won’t this feel corporate?', a: 'The system is invisible to the client — she experiences a private preview from someone who remembers her taste, not a chatbot. The software is what makes that memory possible at scale, not what she sees.' },
 ];
 
@@ -26,7 +26,7 @@ ${L.hero({
 ${L.section(
   `${L.sectionHead('THE BOUTIQUE OWNER’S DILEMMA', 'Private marketing for high-value relationships.', '')}
   ${L.painRows([
-    { quote: 'Generic mass marketing feels cheap for what we sell.', title: 'Private, not broadcast', text: 'Curated catalogue previews go to named clients, with your approval on every message — never a blast.' },
+    { quote: 'Generic mass marketing feels cheap for what we sell.', title: 'Private, not broadcast', text: 'Curated catalogue previews go to named clients, never a blast. Keep approval on for these if you prefer.' },
     { quote: 'My clients expect privacy. They didn’t sign up for a mailing list.', title: 'Memory the client never sees, but always feels', text: 'Sizes, taste, past pieces and important dates — one record, visible only to your team.' },
     { quote: 'We see clients rarely, and every visit has to count.', title: 'Low-frequency, high-stakes follow-up', text: 'Appointments and video-counter previews replace guesswork with a scheduled, prepared visit.' },
     { quote: 'A client browses, tries three pieces, and walks out. My team has no idea whom to follow up with, or how.', title: 'Clienteling that knows what she tried', text: 'The live floor view shows who is being served and what they looked at, so a follow-up can name the exact pieces, not a generic reminder. See <a href="/products/showroom">Showroom Intelligence</a>.' },
@@ -39,7 +39,7 @@ ${L.jtbdBlock([
 ${L.section(`${L.sectionHead('QUESTIONS BOUTIQUE OWNERS ASK', 'What luxury clients expect from your system.', '')}${L.faqBlock(luxuryBoutiqueFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This site’s own chat button runs on Jwero — <a href="#" data-wa="luxury">test our inbox</a> before you take our word for anything else.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('See white-glove memory in action.', 'Bring one client relationship to a demo — we’ll show the record, the preview, and the approval queue.', 'luxury', { enterprise: true })}
+${L.ctaBand('See white-glove memory in action.', 'Bring one client relationship to a demo — we’ll show the record, the preview, and the controls you set.', 'luxury', { enterprise: true })}
 `,
 };
 
@@ -69,7 +69,7 @@ ${L.section(
   ${L.painRows([
     { quote: 'Between the first enquiry and the wedding date, we lose the thread — literally.', title: 'One thread, months long', text: 'Every quote, trial and fitting stays on the same conversation and customer record, from enquiry to delivery.' },
     { quote: 'It’s never one decision-maker — it’s the whole family.', title: 'Built for the buying committee', text: 'The journey captures context for everyone involved — well beyond the name on the invoice.' },
-    { quote: 'Wedding season is chaos — we can’t give every enquiry the attention it deserves.', title: 'The AI workforce holds the line', text: 'Draft replies, appointment scheduling and follow-up run even at peak season — with your approval on every message.' },
+    { quote: 'Wedding season is chaos — we can’t give every enquiry the attention it deserves.', title: 'The AI workforce holds the line', text: 'Replies, appointment scheduling and follow-up run automatically even at peak season, with approval only where you want it.' },
   ])}`
 )}
 ${L.section(
@@ -84,8 +84,8 @@ ${L.ctaBand('Bring one wedding order.', 'Show us a real trousseau journey — we
 
 const diamondRetailFaqs = [
   { q: 'Can the catalogue hold certification details?', a: 'Yes — certification numbers, cut, clarity, colour and carat are structured catalogue fields, searchable and printable, not free text.' },
-  { q: 'Can AI answer technical questions about a stone accurately?', a: 'The AI drafts from the catalogue’s recorded certification data, and every draft waits for your team’s approval before it reaches a customer — accuracy plus a human check.' },
-  { q: 'High-ticket sales need trust built over time. Doesn’t automation undermine that?', a: 'The AI handles the first response and routine follow-up; your team still closes the relationship. Nothing about a six-figure sale happens without a human — approval queues guarantee that.' },
+  { q: 'Can AI answer technical questions about a stone accurately?', a: 'The AI replies from the catalogue’s recorded certification data, so the answer matches the certificate. Replies go out automatically, and you can require approval for any kind of message.' },
+  { q: 'High-ticket sales need trust built over time. Doesn’t automation undermine that?', a: 'The AI handles the first response and routine follow-up; your team still closes the relationship. Many jewellers keep approval on for high-value conversations; that is your choice.' },
 ];
 
 const diamondRetail = {
@@ -106,7 +106,7 @@ ${L.section(
   `${L.sectionHead('WHAT DIAMOND RETAIL NEEDS', 'Built for certification, trust and patience.', '')}
   ${L.cards([
     { title: 'Certificate-aware catalogue', text: 'Certification numbers, cut, clarity, colour and carat as structured fields — not a PDF nobody can search.' },
-    { title: 'Instant, accurate answers', text: 'The AI workforce drafts 4C and solitaire-question replies from the catalogue record, approved before it sends.' },
+    { title: 'Instant, accurate answers', text: 'The AI workforce answers 4C and solitaire questions automatically from the catalogue record.' },
     { title: 'High-ticket trust, built in', text: 'Approval-gated pricing and a customer record that remembers exactly what was discussed and quoted.' },
     { title: 'Slow-mover visibility', text: 'Solitaire and high-value pieces get the same ageing visibility as everything else — nothing sits unnoticed.' },
   ])}`
@@ -118,7 +118,7 @@ ${L.jtbdBlock([
 ${L.section(`${L.sectionHead('QUESTIONS DIAMOND RETAILERS ASK', 'What diamond retailers ask about trust and AI.', '')}${L.faqBlock(diamondRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="diamond">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('See a certified stone, sold end to end.', 'Bring one solitaire enquiry to a demo — catalogue, reply, approval, quote.', 'diamond')}
+${L.ctaBand('See a certified stone, sold end to end.', 'Bring one solitaire enquiry to a demo — catalogue, reply, follow-up, quote.', 'diamond')}
 `,
 };
 
@@ -199,7 +199,7 @@ ${L.ctaBand('See volume selling, simplified.', 'Bring your SKU count to a demo �
 
 const labGrownFaqs = [
   { q: 'Is this built for online-first, D2C-style selling?', a: 'Yes — WhatsApp, Instagram and website selling with live-rate pricing are native, and connectors keep an existing Shopify or WooCommerce store in sync.' },
-  { q: 'Can AI help educate customers who are new to lab-grown?', a: 'The AI workforce drafts educational, catalogue-backed replies to common questions, approved before they send — consistent answers, every time.' },
+  { q: 'Can AI help educate customers who are new to lab-grown?', a: 'The AI workforce sends educational, catalogue-backed replies to common questions automatically, so the answers stay consistent.' },
   { q: 'We already run Shopify ads and a store. Why add this?', a: 'Keep Shopify — the connector keeps your store on the same product data. Jwero adds the WhatsApp/Instagram-native selling and live-rate pricing a generic ecommerce platform doesn’t do, on top of what you already have.' },
 ];
 
@@ -219,7 +219,7 @@ ${L.hero({
 })}
 ${L.section(
   `${L.cards([
-    { title: 'Education at scale', text: 'Consistent, catalogue-backed answers to lab-grown questions, drafted by the AI workforce and approved by your team.' },
+    { title: 'Education at scale', text: 'Consistent, catalogue-backed answers to lab-grown questions, sent automatically by the AI workforce.' },
     { title: 'Online-first selling', text: 'WhatsApp and Instagram commerce, plus a ecommerce connector — meet buyers where they already are.' },
     { title: 'Live-rate pricing', text: 'Lab-grown pricing that reflects current rates, not a stale price list.' },
     { title: 'Retention beyond the first order', text: 'One customer record turns a single online sale into a remembered relationship.' },
@@ -238,7 +238,7 @@ ${L.ctaBand('Sell to the online-first buyer.', 'See a lab-grown enquiry go from 
 
 const gemstoneRetailFaqs = [
   { q: 'Can the catalogue record provenance and certification per stone?', a: 'Yes — custom fields let you record provenance, certification and story details per piece, since gemstone inventory is often one-of-one.' },
-  { q: 'Does Jwero support occasion-based gemstone selling?', a: 'Yes — journeys can be built around occasions and preferences relevant to gemstone buying, with your approval on every message.' },
+  { q: 'Does Jwero support occasion-based gemstone selling?', a: 'Yes — journeys can be built around occasions and preferences relevant to gemstone buying, with approval only where you want it.' },
   { q: 'My inventory is mostly one-of-a-kind pieces — does a "catalogue" even make sense here?', a: 'Yes — each piece gets its own record with its own story and certification, shareable individually. It isn’t a mass-catalogue system forced onto unique stock.' },
 ];
 

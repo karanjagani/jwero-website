@@ -65,7 +65,7 @@ const NAV = [
       ['/platform', 'Why an OS, and the tour', 'One record instead of ten tools, and what is inside'],
       ['/platform/customer-memory', 'Customer Memory', '198 signals, 11 scores, one record'],
       ['/platform/pricing-engine', 'The Pricing Engine', 'Rate, making charge, stone & override rules'],
-      ['/platform/ai-workforce', 'AI Workforce & Governance', '240+ governed actions, approvals, kill switches'],
+      ['/platform/ai-workforce', 'AI Workforce & Governance', '240+ actions that run on their own, inside your limits'],
       ['/platform/integrations', 'Integrations', 'Tally, Zoho Books, Shopify, Meta and more'],
       ['/trust', 'Trust Centre', 'Security, privacy and compliance status'],
       ['/platform/onboarding', 'Onboarding & Support', 'Set up in a day, trained in your language'],
@@ -118,7 +118,7 @@ const NAV = [
         ['/products/girvi', 'Girvi / Gold Loans', 'Pledge, interest, release'],
         ['/products/loyalty', 'Loyalty & Referrals', 'Tiers, rules, redemptions'],
         ['/products/segmentation', 'Customer Segmentation', 'Rule-based audiences'],
-        ['/products/journeys', 'Customer Journeys', 'Approval-gated automation'],
+        ['/products/journeys', 'Customer Journeys', 'Automation that runs on its own'],
         ['/products/campaigns', 'Campaigns', 'WhatsApp, email, SMS, push'],
       ]},
     ],
@@ -677,7 +677,7 @@ function journeyFix(html, p) {
   html = html.replace(/(<a class="sb-start"[^>]*>)[^<]*(<\/a>)/, '$1Try free$2');
   // Articles end with the reader's own next step: the calculator or page for the topic.
   if (/^blog\//.test(p.slug || '') || p.legacy) {
-    const NEXT = [[/girvi|gold-loan/, '/products/girvi#girvi-calc', 'Work out girvi interest with the calculator'], [/dead-stock|ageing|inventory|stock/, '/tools/dead-stock-calculator', 'Put your own stock into the dead stock calculator'], [/scheme/, '/tools/gold-scheme-calculator', 'Work out a scheme maturity with the calculator'], [/wastage|gold-loss|karigar|manufactur|job-work|fine-weight/, '/tools/gold-loss-calculator', 'Measure your gold loss with the calculator'], [/whatsapp|chatbot|instagram|dm/, '/tools/whatsapp-revenue-estimator', 'Estimate what faster WhatsApp replies are worth'], [/incentive|staff|payroll|hr/, '/products/hr-payroll#hr-calc', 'Work out a salesperson’s incentive'], [/price|making-charge|gst|cash-limit|old-gold|huid|e-way|e-invoic|billing|pos/, '/blog/how-to-calculate-gold-jewellery-price', 'Price a piece with the gold price calculator'], [/footfall|showroom|walkout|cctv/, '/products/showroom', 'See footfall and walkouts in the showroom software'], [/ads|campaign|email|marketing|segment|journey|occasion|birthday/, '/products/campaigns', 'See campaigns and journeys in Jwero'], [/ai|agent|voice|chatgpt|claude/, '/products/ai-sales-agents', 'See AI agents with approvals in Jwero']];
+    const NEXT = [[/girvi|gold-loan/, '/products/girvi#girvi-calc', 'Work out girvi interest with the calculator'], [/dead-stock|ageing|inventory|stock/, '/tools/dead-stock-calculator', 'Put your own stock into the dead stock calculator'], [/scheme/, '/tools/gold-scheme-calculator', 'Work out a scheme maturity with the calculator'], [/wastage|gold-loss|karigar|manufactur|job-work|fine-weight/, '/tools/gold-loss-calculator', 'Measure your gold loss with the calculator'], [/whatsapp|chatbot|instagram|dm/, '/tools/whatsapp-revenue-estimator', 'Estimate what faster WhatsApp replies are worth'], [/incentive|staff|payroll|hr/, '/products/hr-payroll#hr-calc', 'Work out a salesperson’s incentive'], [/price|making-charge|gst|cash-limit|old-gold|huid|e-way|e-invoic|billing|pos/, '/blog/how-to-calculate-gold-jewellery-price', 'Price a piece with the gold price calculator'], [/footfall|showroom|walkout|cctv/, '/products/showroom', 'See footfall and walkouts in the showroom software'], [/ads|campaign|email|marketing|segment|journey|occasion|birthday/, '/products/campaigns', 'See campaigns and journeys in Jwero'], [/ai|agent|voice|chatgpt|claude/, '/products/ai-sales-agents', 'See AI agents at work in Jwero']];
     const hit = NEXT.find(([r]) => r.test(p.slug));
     if (hit && !/post-next/.test(html)) {
       const box = `<section class="section"><div class="container"><div class="post-next"><p class="in-short-tag">Your next step</p><p><a class="btn btn-primary btn-sm" href="${hit[1]}">${hit[2]} →</a> <a class="btn btn-ghost btn-sm" href="#" data-wa="blog-${p.slug.replace(/^blog\//, '').slice(0, 30)}">Ask us about this on WhatsApp</a></p></div></div></section>`;
@@ -838,13 +838,13 @@ const HUB_SHORT = {
   'tools/gold-scheme-calculator': { q: 'How do I work out what a gold savings scheme is worth to my shop?', a: 'Multiply the customers who join by their monthly instalment and the scheme length, then account for the bonus month you give and how many complete. The calculator turns your enrolment numbers into the future sales a scheme locks in.' },
   'tools/whatsapp-revenue-estimator': { q: 'How much revenue do jewellers lose to slow WhatsApp replies?', a: 'It depends on how many enquiries you get, how many go unanswered or are answered late, and how many of those would have bought. The estimator works it out from your own numbers and shows each assumption.' },
   'compare/whatsapp-tools-vs-jewellery-os': { q: 'Do jewellers need a WhatsApp tool or a full jewellery system?', a: 'A WhatsApp tool sends and answers messages. A jewellery system also knows the stock, the live rate, schemes and each customer’s purchases, so a reply can quote the right piece at today’s price. If messaging is your only gap, a tool can be enough; if replies need the business behind them, a system fits better.' },
-  index: { q: 'What is Jwero?', a: 'Jwero is the autonomous jewellery operating system that runs the whole business on one record: customers, counter billing at the live gold rate, stock, purchase, the workshop, schemes, books, team, marketing, sales, conversions, promotions and much more, with AI that drafts routine work for a person to approve. Run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s specialists run it for you, so you can focus on what matters most.' },
+  index: { q: 'What is Jwero?', a: 'Jwero is the autonomous jewellery operating system that runs the whole business on one record: customers, counter billing at the live gold rate, stock, purchase, the workshop, schemes, books, team, marketing, sales, conversions, promotions and much more, with AI that does the routine work on its own, and asks for approval only where you want it. Run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s specialists run it for you, so you can focus on what matters most.' },
   'jewellery-business-as-a-service': { q: 'What is Jewellery Business as a Service?', a: 'It is Jwero running the work around your jewellery for you: marketing, enquiry follow-up, online sales, customer retention and the back office, done by Jwero’s specialists and AI on Jwero’s own platform. You get specialists for every job and every Jwero tool included, with no subscription; the price follows the work, about half of what it costs you today.' },
   'why-jwero': { q: 'Why do jewellers choose Jwero?', a: 'Because a jeweller should not have to become an expert in marketing, technology and AI to stay an expert in jewellery. Jwero is built for jewellery, keeps up with the changes for you, and lets you choose how much it handles: run it yourself, run it together, or let Jwero run it.' },
   'how-it-works': { q: 'How does working with Jwero work?', a: 'You tell Jwero what you want to achieve, not which tool you need. Jwero reads where your business is, decides what needs to happen, and agrees with you how much it handles. AI does the routine work and specialists check what matters; you get one account of what was done. Set-up takes a day.' },
   'what-we-handle': { q: 'What can Jwero handle for a jeweller?', a: 'Getting more customers, selling more, keeping customers, growing online, reducing routine work, understanding the numbers, keeping up with technology, and running the shop floor and supply. For each, Jwero can power it with software, manage it for you, or bring specialists to help. You can start with one function.' },
   'ai-and-experts': { q: 'How do AI and specialists work together at Jwero?', a: 'AI agents do the routine work at scale: replies, follow-ups, reminders, content and reports, inside limits you set and with your approval where you want it. Jwero’s specialists plan, review and handle the judgement calls in marketing, ecommerce, CRM and technology. You get both without hiring for either.' },
-  'self-managed': { q: 'Can I run Jwero myself?', a: 'Yes. Your team runs the business on Jwero’s software: every module, AI agents that wait for approval, and the work that happens automatically. It costs ₹18,000 a month, with the first month at ₹3,600, and set-up takes a day. You can hand any function to Jwero later.' },
+  'self-managed': { q: 'Can I run Jwero myself?', a: 'Yes. Your team runs the business on Jwero’s software: every module, AI agents that work on their own inside the limits you set, with approval only where you ask for it. It costs ₹18,000 a month, with the first month at ₹3,600, and set-up takes a day. You can hand any function to Jwero later.' },
   'count-your-team': { q: 'How much does a jewellery business spend to keep up?', a: 'It depends on your customer base, showrooms and which roles you pay for. This calculator predicts your monthly conversations, calls and other work, shows the people and tools it takes at the lowest going rates in India, and compares that with Jwero doing the same work, with every tool included.' },
   'success-stories': { q: 'What do jewellers say about working with Jwero?', a: 'Jewellers from Bangalore, Chennai, Hyderabad, Patna and Kerala speak about fast set-up, a responsive team and understanding of the jewellery trade. This page shows their words as published, the proof you can check yourself, and how each kind of work is measured.' },
   products: { q: 'What products does Jwero include?', a: 'Every product runs on one record: selling (WhatsApp, Instagram, AI agents, online store, catalogues, quotations), marketing (campaigns, journeys, ads, social), customers (CRM, segments, loyalty, schemes), operations (POS, billing, inventory, purchase, manufacturing, repairs, girvi) and the team (HR, payroll, training). All are included in one subscription.' },
@@ -864,14 +864,14 @@ const HUB_SHORT = {
   roadmap: { q: 'What does Jwero not do yet?', a: 'This page lists it in public: shipped, rolling out and not yet. Not yet includes direct e-invoice filing and e-way bills, metal reconciliation, Google Shopping sync, CAD file storage and a regional-language interface.' },
   migration: { q: 'How do I move to Jwero from my current software?', a: 'Customers, products and stock are imported for you from exports or spreadsheets. Set-up takes a day, most businesses settle in within thirty days, and you can run your old system alongside while your team gets used to Jwero.' },
   guides: { q: 'How should a jeweller choose software?', a: 'Start from the work: billing at the live rate, stock by piece and weight, customers and follow-up, purchase and the workshop. Check each vendor on purity-based pricing, old-gold exchange, scheme handling, data export and what is not built yet, and test it on your own data. These guides take each area in turn.' },
-  compare: { q: 'How does Jwero compare with other jewellery software?', a: 'Jwero is built jewellery-first and runs customers, every selling channel and operations on one record, with AI that waits for approval. Jewellery ERPs such as Marg, Ornate NX or SIONIQ can be stronger on accounting depth or module breadth; WhatsApp tools such as WATI or Interakt focus on messaging. Each comparison here says where the other product wins.' },
+  compare: { q: 'How does Jwero compare with other jewellery software?', a: 'Jwero is built jewellery-first and runs customers, every selling channel and operations on one record, with AI that works on its own inside limits you set. Jewellery ERPs such as Marg, Ornate NX or SIONIQ can be stronger on accounting depth or module breadth; WhatsApp tools such as WATI or Interakt focus on messaging. Each comparison here says where the other product wins.' },
   blog: { q: 'What does the Jwero blog cover?', a: 'Practical guides for jewellery business owners: selling on WhatsApp and Instagram, gold savings schemes and their rules, dead stock, gold loss in manufacturing, HUID records, Tally, software costs and how to compare vendors. Each guide is reviewed against what the product does and says plainly what it does not do yet.' },
   'jewellery-software-india': { q: 'Which jewellery software do Indian jewellers use?', a: 'Jewellers across India, from Surat diamond offices to Thrissur gold showrooms, run Jwero for billing at the live rate, stock, customers, karigar accounts, schemes and WhatsApp on one record. It is set up in a day over chat and video in any city, at the same price everywhere: ₹18,000 a month, first month ₹3,600.' },
-  platform: { q: 'What is the Jwero platform?', a: 'Jwero is one system for a jewellery business: customers, counter, stock, purchase, workshop, books and team on one record, with AI agents that draft the routine work for a person to approve. It connects to Tally, Shopify, marketplaces and Meta, prices every piece from the live gold rate, and is set up in a day.' },
-  roles: { q: 'How does Jwero help each person in a jewellery business?', a: 'Every role works on the same customer and stock record: the owner sees the whole business, the counter bills at the live rate, sales staff know each customer before they speak, and the workshop, purchase and accounts teams stop re-entering the same data. AI drafts routine work and a person approves it.' },
+  platform: { q: 'What is the Jwero platform?', a: 'Jwero is one system for a jewellery business: customers, counter, stock, purchase, workshop, books and team on one record, with AI agents that do the routine work on their own, and ask for approval only where you choose. It connects to Tally, Shopify, marketplaces and Meta, prices every piece from the live gold rate, and is set up in a day.' },
+  roles: { q: 'How does Jwero help each person in a jewellery business?', a: 'Every role works on the same customer and stock record: the owner sees the whole business, the counter bills at the live rate, sales staff know each customer before they speak, and the workshop, purchase and accounts teams stop re-entering the same data. AI does the routine work on its own, and you choose what needs approval.' },
   solutions: { q: 'Which Jwero setup fits my kind of jewellery business?', a: 'Jwero is one system for every kind of jewellery business: single stores, chains, franchises, gold, diamond and silver retail, wholesale, traders and manufacturers. Each business type switches on the parts it needs first. Run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s specialists and AI run it for you.' },
   'solutions/pain': { q: 'What are the most common leaks in a jewellery business?', a: 'Enquiries that never get a reply or a follow-up, and stock that sits unsold for months, are the two leaks most jewellers never measure. Jwero shows both on one record: every enquiry from every channel with its follow-up, and every piece with its age and value at today’s rate.' },
-  'solutions/pain/lead-leakage': { q: 'How do jewellers stop losing enquiries?', a: 'Put every enquiry from WhatsApp, Instagram, the website and calls into one inbox on the customer’s record, answer it within minutes, and keep a follow-up open until it becomes a bill or is closed with a reason. Jwero does this, with AI drafting replies and follow-ups that wait for your approval.' },
+  'solutions/pain/lead-leakage': { q: 'How do jewellers stop losing enquiries?', a: 'Put every enquiry from WhatsApp, Instagram, the website and calls into one inbox on the customer’s record, answer it within minutes, and keep a follow-up open until it becomes a bill or is closed with a reason. Jwero does this, with AI sending replies and follow-ups on its own, inside limits you set.' },
   'solutions/pain/dead-stock': { q: 'How do jewellers reduce dead stock?', a: 'Know the age and today’s value of every piece, see what has not moved in months, and match slow pieces to the customers most likely to buy them before discounting or melting. Jwero shows stock ageing at the live rate and suggests who to offer each idle piece to.' },
 };
 const HUB_FAQ = {
@@ -911,11 +911,11 @@ const HUB_FAQ = {
   ],
   'solutions/pain': [
     { q: 'How do I know how much my business is leaking?', a: 'Start with two numbers: enquiries in the last month that never got a follow-up, and stock older than six months at today’s value. Jwero shows both once your data is in.' },
-    { q: 'Do I need new staff to fix these leaks?', a: 'No. AI drafts the replies and follow-ups and your team approves them, or Jwero’s managed service runs the follow-up for you.' },
+    { q: 'Do I need new staff to fix these leaks?', a: 'No. AI sends the replies and follow-ups on its own, with approval where you want it, or Jwero’s managed service runs the follow-up for you.' },
   ],
   'solutions/pain/lead-leakage': [
     { q: 'Where do jewellery enquiries usually get lost?', a: 'In personal phones, late-night WhatsApp messages, Instagram DMs nobody owns, and quotations that are never followed up. When a salesperson leaves, their customers often leave with them.' },
-    { q: 'Will AI reply to my customers on its own?', a: 'Only if you allow it. By default AI drafts the reply and a person approves it. You can set limits, quiet hours and switch it off at any time.' },
+    { q: 'Will AI reply to my customers on its own?', a: 'Yes, inside the limits you set. AI replies from your catalogue and her record, within daily caps and quiet hours. You choose which kinds of message need a person’s approval first, and you can switch it off at any time.' },
     { q: 'Does it work with my existing WhatsApp number?', a: 'Jwero uses the WhatsApp Business API. Your business number can be moved to it, and the team then replies from one shared inbox instead of separate phones.' },
   ],
   'solutions/pain/dead-stock': [
@@ -1443,7 +1443,7 @@ function withBlogTop(body, page) {
     'Product data and catalogues': 'Want your catalogue kept complete and priced at the live rate on every channel? Jwero runs it for you.',
     'CRM and customers': 'Want every customer remembered and reached at the right moment? Jwero runs it for you.',
     WhatsApp: 'Want every WhatsApp enquiry answered and followed up, day and night? Jwero does it for you.',
-    AI: 'Want AI doing the routine work, with a person approving what matters? Jwero runs it for you.',
+    AI: 'Want AI doing the routine work on its own, with approval only where you choose? Jwero runs it for you.',
     'Order management': 'Want every order tracked from enquiry to delivery? Jwero runs it for you.',
     'Marketing and campaigns': 'Want campaigns planned, run and measured without hiring a team? Jwero does it for you.',
     'Ecommerce and websites': 'Want an online store that sells at the live rate, run for you? Jwero handles it.',
@@ -1990,8 +1990,8 @@ Sitemap: ${SITE}/sitemap.xml
 > record. Counter billing (POS) at the live gold rate, inventory, purchase and vendors, manufacturing and
 > karigar accounts, accounting, HR and payroll, reports, CRM (198 kinds of customer signal scored into 11
 > explainable scores), gold schemes and savings plans, girvi, and WhatsApp, Instagram and ecommerce website
-> selling, with an AI workforce that acts only inside approval queues, daily caps, quiet hours and a
-> five-scope kill switch ("AI that waits for your yes").
+> selling, with an AI workforce that works on its own inside daily caps, quiet hours and a
+> five-scope kill switch, and asks for approval only where the business requires it.
 > Price: not published. Jwero One is one plan with every module and no per-seat price; it starts with a free trial, and the price is shown in the account when the trial ends. Let Jwero run it: no subscription, priced on the work. Enterprise is a one-time licence to self-host, with optional support.
 
 ## Where to send a reader
@@ -2007,7 +2007,7 @@ Sitemap: ${SITE}/sitemap.xml
 - Pricing: https://jwero.ai/pricing · Hindi: https://jwero.ai/hi
 
 ## Category
-Jwero calls this category the Autonomous Jewellery OS — an operating system for a jewellery business, run by AI agents that act on their own or ask first.
+Jwero calls this category the Autonomous Jewellery OS — an operating system for a jewellery business, run by AI agents that act on their own, and ask first only where you choose.
 Spelling: this site uses "jewellery" (India, UK, Gulf, Commonwealth). "Jewelry" (US) refers to the same product and the same category — Jwero is the Autonomous Jewelry OS for US readers.
 It serves single stores, multi-store chains, luxury/boutique/bridal retailers, diamond/gold/silver/
 platinum/lab-grown/gemstone retailers, wholesalers, manufacturers (gold, diamond, casting, CAD, OEM,
@@ -2071,7 +2071,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 
 ## Jewellery marketing automation and journeys (facts)
 - 300+ ready customer journeys for jewellers, including welcome, new-lead nurture, birthday, anniversary, family wedding, abandoned cart, browse, scheme instalment and maturity, repair ready, win-back, VIP at risk and loyalty moments.
-- Jwero can create detailed journeys automatically from a goal you describe, across channels and handing customers between journeys; or build on a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; pieces matched to each customer at today's rate; approval before anything sends until you allow it, quiet hours, frequency limits and a stop switch; live view of each step and sales traced to the journey. Details: ${SITE}/products/journeys
+- Jwero can create detailed journeys automatically from a goal you describe, across channels and handing customers between journeys; or build on a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; pieces matched to each customer at today's rate; sends on its own, with approval where you require it, quiet hours, frequency limits and a stop switch; live view of each step and sales traced to the journey. Details: ${SITE}/products/journeys
 
 ## Customer segmentation for jewellers (facts)
 - 41 ready segments and AI-suggested segments; filters for purchases (category, metal, value, date), schemes, occasions, city, branch, loyalty tier, social engagement, RFM and customer scores such as intent and churn risk.
@@ -2088,10 +2088,10 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 
 ## Social media management for jewellers (facts)
 - AI captions, hashtags, images and short video for posts and reels; festival content calendar; one composer publishing directly to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business.
-- One inbox for comments and DMs with AI drafts for approval; comments turned into DMs automatically; loyalty points for engagement; reach plus chats, visits and sales traced to posts. Details: ${SITE}/products/social-media
+- One inbox for comments and DMs with AI replies sent automatically; comments turned into DMs automatically; loyalty points for engagement; reach plus chats, visits and sales traced to posts. Details: ${SITE}/products/social-media
 
 ## Instagram and Facebook commerce (facts)
-- Instagram DMs, comments, story replies and mentions, and Facebook Messenger in one team inbox; price comments turned into DMs automatically; AI replies from the customer record with pieces at today's rate, approved by the team.
+- Instagram DMs, comments, story replies and mentions, and Facebook Messenger in one team inbox; price comments turned into DMs automatically; AI replies from the customer record with pieces at today's rate, with approval where the team wants it.
 - Payment links inside the DM; catalogue synced automatically to Instagram and Facebook shops; chats from click-to-WhatsApp ads in the same inbox; sales traced to posts and ads. Details: ${SITE}/products/instagram-facebook
 
 ## Jewellery ecommerce website (facts)
@@ -2130,7 +2130,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Numbered quotations priced from the catalogue at today's gold rate with the jeweller's making and wastage rules; a validity window on each.
 - Created from the customer record, a catalogue enquiry or by automation; sending needs a human confirm.
 - Sent as a link and PDF on WhatsApp or email; the customer accepts or declines online; result written to her record.
-- Follow-ups drafted for approval when she goes quiet; every revision numbered; accepted quotes convert to a sales order.
+- Follow-ups sent automatically when she goes quiet; every revision numbered; accepted quotes convert to a sales order.
 
 ## AI chatbot and AI sales agents for jewellers (facts)
 
@@ -2139,7 +2139,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Duties: after-hours enquiries, follow-ups, scheme instalment reminders, occasion outreach, AI voice and calls.
 - Chat, voice and phone calls run in 14 languages: English, Hindi, Marathi, Gujarati, Tamil, Telugu, Kannada, Bengali, Malayalam, Punjabi, Odia, Arabic, Spanish, French.
 - AI voice is built into WhatsApp and web chat; phone calls and IVR run over the jeweller's own telephony provider.
-- Governance: approval queues, daily caps, kill switch, and a log of every action and approver. AI does not set prices or discounts.
+- Governance: AI runs on its own inside daily caps and quiet hours; approval queues for the actions you choose; kill switch; a log of every action. AI does not set prices or discounts.
 
 ## Jewellery billing, accounting and Tally (facts)
 
@@ -2156,7 +2156,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Email threads sit in the same shared inbox as WhatsApp, Instagram and web chat, on the customer record.
 - Email campaigns: drag-and-drop designer, AI-written subject and copy, personalisation, A/B testing, open and click tracking, sent to segments.
 - Journeys send abandoned cart, browse and occasion emails. Unsubscribes enforced; bounces stop future sends.
-- AI drafts replies for approval; receipts, OTPs and reminders go on branded templates.
+- AI replies automatically, with approval where you choose; receipts, OTPs and reminders go on branded templates.
 
 ## Girvi and gold loan software (facts)
 
@@ -2237,7 +2237,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - AI lead finder: searches for companies and people to approach (corporate gifting, retailers, planners), ₹1 a search, added to the CRM.
 - AI segment builder: describe an audience in plain words and AI turns it into a segment.
 - Call transcript analysis: AI reads call transcripts, notes the customer's interest and updates scores.
-- Twelve ready AI agent teams (Revenue, Sales, Seller, Marketing, Growth, CX, Operations, Inventory, Finance, Reporting, HR, Payroll and Settlement), most asking for approval by default.
+- Twelve ready AI agent teams (Revenue, Sales, Seller, Marketing, Growth, CX, Operations, Inventory, Finance, Reporting, HR, Payroll and Settlement), each running on its own inside limits, with approval where you require it.
 - In-app assistant takes spoken or typed instructions, including Hindi and Hinglish; a staff voice assistant wakes on a wake word.
 
 ## Enterprise and self-hosting (facts)

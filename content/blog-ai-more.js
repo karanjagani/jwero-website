@@ -5,28 +5,28 @@ module.exports = {
   'ai-agents-for-jewellers': {
     body: `
   <h2>A week with one agent, in a real shop</h2>
-  <p>Take a two-counter showroom with 400 scheme members and a WhatsApp number that gets forty messages a day. In week one, the owner switches on a single agent for the night shift, in Assist mode. At 9pm a customer asks for the price of a 22K bangle in a photo. The agent drafts a reply with the piece, two similar ones, and the price at the evening rate. The draft waits in the approval queue; the manager approves it from her phone at 9:04pm. The customer replies, and books a visit for Saturday.</p>
+  <p>Take a two-counter showroom with 400 scheme members and a WhatsApp number that gets forty messages a day. In week one, the owner switches on a single agent for the night shift and, to see its work first, chooses Assist mode. At 9pm a customer asks for the price of a 22K bangle in a photo. The agent drafts a reply with the piece, two similar ones, and the price at the evening rate. The draft waits in the approval queue; the manager approves it from her phone at 9:04pm. The customer replies, and books a visit for Saturday.</p>
   <p>By Friday the manager has approved 112 drafts and edited nine, all for the same reason: the agent offered three pieces when the customer wanted one. The owner changes the instruction to “offer one piece, then ask”. In week two there are three edits. In week three the owner lets the agent send first replies on its own between 9pm and 9am, keeps a cap of 60 messages a night, and keeps anything involving a discount behind approval.</p>
   <h2>How to set an agent up, step by step</h2>
   <ol>
-    <li><b>Pick one duty.</b> The night shift, follow-ups on quiet quotations, or scheme reminders. One duty makes the drafts easy to judge.</li>
+    <li><b>Pick one duty.</b> The night shift, follow-ups on quiet quotations, or scheme reminders. One duty makes the replies easy to judge.</li>
     <li><b>Give it your facts.</b> The catalogue, today’s rate and making-charge rules, opening hours, delivery and return policy, and the answers your staff give every day.</li>
     <li><b>Write the limits.</b> What it may never do (discounts, delivery promises), a daily cap, and the hours it works.</li>
-    <li><b>Start in Assist mode.</b> Every draft waits for a person. Review them in batches, twice a day.</li>
+    <li><b>Decide what needs approval.</b> Jwero runs the agent on its own inside your limits. If you would rather see the first replies, turn on Assist mode for a week and review them in batches, twice a day.</li>
     <li><b>Fix the instruction, not the draft.</b> If you edit the same thing three times, change the agent’s instruction.</li>
-    <li><b>Promote one action at a time.</b> First replies first; follow-ups later; reminders when you trust the wording.</li>
+    <li><b>If you began with approvals, release one action at a time.</b> First replies first; follow-ups later; reminders when you trust the wording.</li>
   </ol>
   <h2>What to measure</h2>
   <ul>
     <li><b>Time to first reply</b>, by hour of the day. The night shift should bring the 9pm-to-9am figure from “next morning” to minutes.</li>
-    <li><b>Drafts edited</b> as a share of drafts approved. Under 5% means the instruction is right.</li>
+    <li><b>Replies edited</b> as a share of replies reviewed, if you keep approval on. Under 5% means the instruction is right.</li>
     <li><b>Visits booked and payments taken</b> from conversations the agent started.</li>
     <li><b>Handovers</b>: how often the agent passed a chat to a person, and whether it did so for the right reasons.</li>
   </ul>
   <h2>Mistakes to avoid</h2>
   <p>Switching on five agents in week one; nobody can review five queues. Letting an agent quote from a price list instead of the live rate. Skipping the activity log: the log is how you find out what the agent did when you were not looking, and it is the reason you can trust it later.</p>`,
     faqs: [
-      { q: 'How many agents should a jewellery shop start with?', a: 'One. Judge its drafts for two or three weeks, then add the next duty. Jwero ships twelve agent teams, but you switch them on when you are ready.' },
+      { q: 'How many agents should a jewellery shop start with?', a: 'One. Judge its replies for two or three weeks, then add the next duty. Jwero ships twelve agent teams, but you switch them on when you are ready.' },
       { q: 'Does the agent learn my shop over time?', a: 'It works from the instructions, catalogue and records you give it, and you refine the instructions when you see repeated edits. It does not change its own rules.' },
       { q: 'Can different branches have different agents?', a: 'Yes. Limits, hours and approvals are set per agent, and chats are routed to the right branch.' },
     ],
@@ -46,7 +46,7 @@ module.exports = {
   <h2>Where the chatbot hands over</h2>
   <p>Negotiation, a complaint, a large custom order, anything about a repair in progress, and any customer who asks for a person. The handover should carry the conversation and her record, so the salesperson does not start with “how can I help?”.</p>
   <h2>Setting it up on the official API</h2>
-  <p>Your business number moves to the WhatsApp Business Platform; your customers see the same number. Jwero connects the catalogue and the rate, you write the first replies in your own words, and the AI drafts from them. Start with drafts for approval, then let first replies send on their own at night.</p>
+  <p>Your business number moves to the WhatsApp Business Platform; your customers see the same number. Jwero connects the catalogue and the rate, you write the first replies in your own words, and the AI replies from them on its own, inside your caps and quiet hours. If you want to see a kind of reply first, turn on approval for it.</p>
   <h2>What to measure</h2>
   <p>Enquiries answered within five minutes, after-hours enquiries that became visits, and payments taken inside the chat. If after-hours visits rise, the chatbot is paying for itself.</p>`,
     faqs: [
@@ -74,7 +74,7 @@ module.exports = {
     faqs: [
       { q: 'Does comment-to-DM work on Facebook too?', a: 'Yes. Facebook comments and Messenger are in the same inbox, through the same official connection.' },
       { q: 'Can a customer buy the piece shown in a reel?', a: 'Yes. Your catalogue syncs to the Meta catalogue, so pieces can be tagged in posts and reels and bought or enquired about from there.' },
-      { q: 'Will customers know a reply was drafted by AI?', a: 'Your team approves and sends it, in your tone. Customers see a fast, accurate reply from your shop.' },
+      { q: 'Will customers know a reply was written by AI?', a: 'It is written in your tone from your catalogue, and you can require approval for any kind of reply. Customers see a fast, accurate reply from your shop.' },
     ],
   },
   'voice-ai-hindi-jewellery-business': {
@@ -326,7 +326,7 @@ module.exports = {
     <li>Which customers bought last Diwali and have not returned?</li>
   </ol>
   <h2>From question to dashboard</h2>
-  <p>Type the question. AI drafts the report’s source, filters and chart, and shows exactly what it used. Approve it, pin it to the owner’s dashboard on your phone, and schedule it for Monday mornings. Export to Excel when the partners or the bank ask.</p>
+  <p>Type the question. AI drafts the report’s source, filters and chart, and shows exactly what it used. Pin it to the owner’s dashboard on your phone, and schedule it for Monday mornings. Export to Excel when the partners or the bank ask.</p>
   <h2>Why one record makes the answer trustworthy</h2>
   <p>A report is only as good as the data it can see. When billing, stock, schemes, chats and visits write to one record, “conversion by salesperson” includes the WhatsApp enquiry, the visit and the bill. When they live in five tools, the answer is a guess.</p>
   <h2>What to measure</h2>
@@ -368,23 +368,23 @@ module.exports = {
   <h2>Four stories, and what prevents each</h2>
   <p><b>The wrong rate.</b> A general chatbot quotes last week’s rate and the customer holds you to it. Prevention: prices only from your own rate and rules, never from a chat model’s memory.</p>
   <p><b>The 2am broadcast.</b> An automation sends a festive offer to 4,000 customers at two in the morning. Prevention: quiet hours, a daily cap, and a person’s approval on anything that goes to more than one customer.</p>
-  <p><b>The discount nobody approved.</b> An assistant “helpfully” offers 10% off to close a chat. Prevention: discounts follow price rules and staff permissions; the AI drafts messages and cannot set prices.</p>
+  <p><b>The discount nobody approved.</b> An assistant “helpfully” offers 10% off to close a chat. Prevention: discounts follow price rules and staff permissions; the AI sends messages and cannot set prices.</p>
   <p><b>The leaked list.</b> A staff member pastes the customer list into a public AI tool to write a campaign. Prevention: an AI that works inside your system, with role permissions, and a rule that customer data never leaves it.</p>
   <h2>The controls, in plain words</h2>
   <ul>
-    <li><b>Approval by default:</b> drafts wait for a person until you say which may run alone.</li>
+    <li><b>Approval where you choose:</b> the kinds of action you pick wait for a person; the rest run on their own inside the limits.</li>
     <li><b>Caps:</b> a number of actions a day, and a money limit.</li>
     <li><b>Kill switch:</b> stop one action, one agent, one branch or everything, in one tap.</li>
     <li><b>Log:</b> what was done, when, why, and who approved it.</li>
     <li><b>Your data:</b> your own database, exportable any time.</li>
   </ul>
   <h2>A safe first month</h2>
-  <p>Week one: one agent, Assist mode, review every draft. Week two: fix the instructions behind repeated edits. Week three: let first replies send at night, with a cap. Week four: read the log, then decide the next duty.</p>
+  <p>Week one: one agent, low caps, and approval on if you want to see every reply. Week two: fix the instructions behind repeated edits. Week three: raise the caps, or release the replies you held back. Week four: read the log, then decide the next duty.</p>
   <h2>Questions to ask any vendor</h2>
   <p>Where do prices come from? Can I see every action and who approved it? Can I stop it instantly? Where is my data, and can I take it with me? If any answer is vague, wait.</p>`,
     faqs: [
       { q: 'Can AI see my customers’ phone numbers?', a: 'Jwero’s AI works inside Jwero, on the records your staff already see, under the same roles. It does not send your data to a public chat tool.' },
-      { q: 'What if the AI makes a mistake after I let it run alone?', a: 'The log shows exactly what happened, the kill switch stops it, and you can move the action back behind approval.' },
+      { q: 'What if the AI makes a mistake while running on its own?', a: 'The log shows exactly what happened, the kill switch stops it, and you can put that kind of action behind approval.' },
       { q: 'Is my data used to train AI for other jewellers?', a: 'Each business runs in its own database. See the Trust Centre for how data is handled.' },
     ],
   },
@@ -395,7 +395,7 @@ module.exports = {
   <tr><td>Scheme reminder calls</td><td>500 calls</td><td>₹7 a call, ₹3,500</td></tr>
   <tr><td>New listings from photos</td><td>120 pieces</td><td>Per product, from the wallet</td></tr>
   <tr><td>Product images cleaned up</td><td>120 images</td><td>Per image, from the wallet</td></tr>
-  <tr><td>WhatsApp replies drafted at night</td><td>900 messages</td><td>Messages and AI from the wallet</td></tr>
+  <tr><td>WhatsApp replies sent at night</td><td>900 messages</td><td>Messages and AI from the wallet</td></tr>
   <tr><td>The platform itself</td><td>Every module</td><td>One plan; price shown in your account after the free trial</td></tr>
   </tbody></table>
   <p>Against this: the staff hours those calls, listings and night replies would take, and the instalments, enquiries and sales that would otherwise be missed. Put your own numbers in the calculators on the product pages before you decide.</p>
@@ -445,7 +445,7 @@ module.exports = {
   <h2>Counting first, then converting</h2>
   <p>Without footfall, conversion is a guess. With cameras counting entries and exits and bills linked to visits, conversion is known by hour, day, branch and salesperson. A quiet Tuesday and a busy Saturday with the same number of bills tell different stories.</p>
   <h2>Why walkout follow-ups work</h2>
-  <p>A customer who tried four pieces is the warmest lead in the business. A message that same evening, naming those pieces, in her language, with an offer to hold one or show it on video, brings a share of them back. The message is drafted by AI and sent by a person, so it sounds like your shop.</p>
+  <p>A customer who tried four pieces is the warmest lead in the business. A message that same evening, naming those pieces, in her language, with an offer to hold one or show it on video, brings a share of them back. The message is written by AI from her visit and goes out automatically, or after a salesperson’s approval if you prefer.</p>
   <h2>Privacy on the floor</h2>
   <p>Cameras count people; they do not recognise faces or identify customers. Photos at check-in are taken only with consent. Put up the notice, set retention, and keep the capture switch in your hands.</p>
   <h2>What to measure</h2>
@@ -459,17 +459,17 @@ module.exports = {
   'ai-for-jewellery-wholesalers': {
     body: `
   <h2>A Monday at a wholesaler</h2>
-  <p>Forty new designs were photographed on Saturday. By Monday morning AI has written the listings and the stock records hold the weights. Each of 120 retailers gets a private catalogue link with their own pricing; eighteen open it that day, and the system shows which designs they lingered on. AI drafts a follow-up to the six who viewed but did not request; the sales head approves them. Three retailers ask for memo; the pieces go out with return dates. Stock is low on a fast-moving chain; AI drafts the purchase order at an unfixed rate for approval.</p>
+  <p>Forty new designs were photographed on Saturday. By Monday morning AI has written the listings and the stock records hold the weights. Each of 120 retailers gets a private catalogue link with their own pricing; eighteen open it that day, and the system shows which designs they lingered on. AI sends a follow-up to the six who viewed but did not request. Three retailers ask for memo; the pieces go out with return dates. Stock is low on a fast-moving chain; AI drafts the purchase order at an unfixed rate for approval.</p>
   <h2>Where AI helps most</h2>
   <ul>
     <li><b>Listings:</b> descriptions, tags and captions from design photos.</li>
     <li><b>Buyer catalogues:</b> private, priced per buyer, password protected, with view tracking.</li>
-    <li><b>Follow-ups:</b> drafted after a view, a request or a quiet week.</li>
+    <li><b>Follow-ups:</b> sent after a view, a request or a quiet week.</li>
     <li><b>Purchasing:</b> draft POs from stock and demand, including unfixed-rate purchases.</li>
     <li><b>Reports:</b> “which retailer’s memo is overdue?” answered in a sentence.</li>
   </ul>
   <h2>Keep the person where the margin is</h2>
-  <p>Pricing per buyer, credit terms and memo decisions stay with people. AI drafts; the sales head approves.</p>
+  <p>Pricing per buyer, credit terms and memo decisions stay with people. AI does the routine follow-up; the sales head decides the rest.</p>
   <h2>What to measure</h2>
   <p>Catalogue views to requests, requests to orders, memo returned on time, and days from design photo to first order.</p>`,
     faqs: [
@@ -537,7 +537,7 @@ module.exports = {
     body: `
   <h2>The seven mistakes, with the fix for each</h2>
   <p><b>1. Letting AI set prices.</b> A chat model quotes a rate from memory or from last week’s message. Fix: prices come only from your rate and making-charge rules. If the AI cannot see your rate, it must not quote.</p>
-  <p><b>2. Sending without approval.</b> A broadcast to the whole list, in the wrong tone, at the wrong hour. Fix: Assist mode first; caps and quiet hours; promote one action at a time.</p>
+  <p><b>2. Running AI without limits.</b> A broadcast to the whole list, in the wrong tone, at the wrong hour. Fix: caps and quiet hours, and approval on anything that goes to the whole list.</p>
   <p><b>3. Generic content.</b> Captions that could be any shop’s. Fix: give AI your pieces, your facts and three posts you like; edit the final line yourself.</p>
   <p><b>4. Unofficial WhatsApp tools.</b> A bulk sender paired to a personal number, and a banned number a month later. Fix: the official WhatsApp Business Platform on your business number.</p>
   <p><b>5. Changing the piece in AI images.</b> A bigger stone, a different finish, and a complaint on delivery. Fix: edit the background and the light, never the piece; keep the original photo.</p>
@@ -574,14 +574,14 @@ module.exports = {
     <li>One journey per customer at a time, and a cap on messages a week.</li>
     <li>If the WhatsApp window is closed, skip the message, do not stall the journey.</li>
     <li>Stop on purchase, on reply, or on “stop”.</li>
-    <li>Approval on the first send of every new journey.</li>
+    <li>Approval on the first send of a new journey, if you want to check it.</li>
   </ul>
   <h2>What to measure</h2>
   <p>Replies, visits and bills per journey, and the share of steps that were skipped or stopped. A journey nobody replies to is a message problem, not a channel problem.</p>`,
     faqs: [
       { q: 'How many ready journeys are there?', a: 'More than 300, including abandoned cart, browse, occasions, scheme maturity and walkouts.' },
       { q: 'Can a journey start from the showroom?', a: 'Yes. Check-ins, walkouts and appointments booked can trigger journeys, as can Instagram follows and story mentions.' },
-      { q: 'Do journeys need a person?', a: 'Only where you want one. Set approval per step; routine steps run on their own once you trust them.' },
+      { q: 'Do journeys need a person?', a: 'Only where you want one. Set approval per step; routine steps run on their own.' },
     ],
   },
   'jewellery-search-by-photo-visual-search': {
@@ -622,7 +622,7 @@ module.exports = {
   <h2>From search to CRM</h2>
   <p>Describe the buyer and the place. Review the results and keep the fits. Add them to the CRM with a source and a tag, so every message and reply lands on their record and the campaign can be measured.</p>
   <h2>The first message</h2>
-  <p>Personal, short, and useful: who you are, why them, one link. A catalogue link shows you what they looked at, and AI drafts the follow-up for a person to send. No broadcasts to found contacts until they agree.</p>
+  <p>Personal, short, and useful: who you are, why them, one link. A catalogue link shows you what they looked at, and AI prepares the follow-up, with approval where you want it. No broadcasts to found contacts until they agree.</p>
   <h2>Consent and manners</h2>
   <p>A found contact has not opted in. Introduce yourself once, make opting out easy, and move them to campaigns only when they say yes. Business contacts expect a business approach; they do not expect a festival blast.</p>
   <h2>What to measure</h2>

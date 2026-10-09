@@ -36,7 +36,7 @@ ${(() => {
   const C = [
     ['/platform/pricing-engine', 'Pricing engine', 'One rule reprices every channel the moment the rate moves.', 'Quotes go out at yesterday’s rate and margin is given away on each sale.'],
     ['/platform/customer-memory', 'Customer memory', 'Every purchase, visit and chat on one record, so you know who to call today.', 'Customers drift away quietly, and follow-up depends on someone remembering.'],
-    ['/platform/ai-workforce', 'AI workforce and governance', 'Replies, reminders and follow-ups drafted for your approval, at any hour.', 'Enquiries wait for a free hand, and you keep hiring for work a system can do.'],
+    ['/platform/ai-workforce', 'AI workforce and governance', 'Replies, reminders and follow-ups sent on their own, at any hour, inside limits you set.', 'Enquiries wait for a free hand, and you keep hiring for work a system can do.'],
     ['/platform/integrations', 'Integrations', 'Tally, Zoho Books, your website and Meta all read the same record.', 'The same data is typed into every tool, and errors surface at month end.'],
     ['/platform/integrations/tally', 'Tally bridge', 'Bills, returns and payments reach Tally by themselves.', 'Your accountant re-enters every bill, and the books trail the counter.'],
     ['/platform/onboarding', 'Onboarding and support', 'Your data imported for you and your team trained in their language, live in a day.', 'A switch that drags on through your busiest weeks.'],
@@ -124,12 +124,12 @@ ${L.ctaBand('See the operating system on your own data.', 'Bring one real custom
 const customerMemory = {
   slug: 'platform/customer-memory',
   title: 'Customer Memory: 198 Signals, 11 Scores, One Record | Jwero',
-  description: 'Jwero reads 198 kinds of customer signal from 36 sources, scores each customer on 11 live, explainable scores, places her in one of 6,600 states, and decides who to reach, with what and when — every send waiting for approval.',
+  description: 'Jwero reads 198 kinds of customer signal from 36 sources, scores each customer on 11 live, explainable scores, places her in one of 6,600 states, and decides who to reach, with what and when, inside limits you set.',
   breadcrumbs: BC('Customer Memory'),
   faqs: [
     { q: 'What does Jwero remember about each customer?', a: 'Everything she does, as a signal: 198 kinds, from 36 sources — the counter, WhatsApp, the website, gold schemes, girvi, calls, Instagram, occasions. Sixty-eight of them move her scores the moment they land. Underneath, 90+ structured fields hold the facts: purchases, scheme balance and instalments, birthdays, anniversaries and wedding months, metal and design preferences, consent and best hour per channel.' },
     { q: 'How does it decide who to reach, and when?', a: 'Each customer carries 11 live scores — intent, conversion, churn risk, trust and others — computed by rules you can read, each with its reasons shown. Where she sits — new or lapsed, champion or about-to-sleep, WhatsApp or call, birthday or wedding — is one of 6,600 states. From that, Jwero picks the play, the channel and her best hour, and drafts the message. Scores fade when she goes quiet, so the list stays honest.' },
-    { q: 'Is this machine learning?', a: 'No, and we say so. The scores are explainable rules you can inspect — not a model nobody can question. The AI drafts the words; the rules decide the who and the when; you decide what runs alone.' },
+    { q: 'Is this machine learning?', a: 'No, and we say so. The scores are explainable rules you can inspect — not a model nobody can question. The AI writes the words; the rules decide the who and the when; you choose what needs your approval.' },
     { q: 'How is this different from a normal CRM?', a: 'Generic CRMs know names and notes. Jwero’s record is jewellery-native: it knows her scheme balance, her daughter’s wedding month and what today’s gold rate means for her budget — as structured fields, every module can act on, not free-text notes.' },
     { q: 'What happens when a salesperson leaves?', a: 'Nothing. The memory belongs to the business, not to a personal phone. Every conversation, preference and promise stays on the record.' },
   ],
@@ -159,7 +159,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('HOW JWERO DECIDES', 'Who to reach, with what, and when — decided from what she actually did.', 'Not a list of fields. A reading of every signal she gives you, scored in rules you can inspect, turned into a draft that waits for your tap.')}
+  `${L.sectionHead('HOW JWERO DECIDES', 'Who to reach, with what, and when — decided from what she actually did.', 'Not a list of fields. A reading of every signal she gives you, scored in rules you can inspect, turned into a message that goes out on its own.')}
   ${L.intelligence()}`
 )}
 
@@ -275,34 +275,34 @@ ${L.ctaBand('See your own catalogue priced this way.', 'Bring one real product �
 
 const aiWorkforce = {
   slug: 'platform/ai-workforce',
-  title: 'AI Workforce & Governance — AI That Waits for Your Yes | Jwero',
-  description: '240+ governed AI actions, approval queues, daily caps, quiet hours, a five-scope kill switch — the AI workforce inside Jwero, kept under your control.',
+  title: 'AI Workforce & Governance — AI That Works Inside Your Limits | Jwero',
+  description: '240+ AI actions that run on their own inside daily caps and quiet hours, approval only where you require it, and a five-scope kill switch: the AI workforce inside Jwero, under your control.',
   breadcrumbs: BC('AI Workforce & Governance'),
   faqs: [
     { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling. Salespeople close more when every customer walks in already known.' },
-    { q: 'What if the AI drafts something wrong?', a: 'Nothing goes out without approval until you decide otherwise. You can edit any draft, reject it, or switch a whole action type off. Daily caps and quiet hours are hard limits, not suggestions.' },
+    { q: 'What if the AI drafts something wrong?', a: 'It writes from your catalogue, your prices and her record, so it does not make up facts. Every action is logged, daily caps and quiet hours are hard limits, and you can put any kind of action behind approval or switch it off in one tap.' },
     { q: 'Can I turn AI off completely?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything. The kill switch is a product feature, not a support ticket.' },
     { q: 'What can the AI workforce do?', a: '251 individually permissioned actions across 7 categories: CRM and replies, inbox drafting, inventory, campaigns, reporting and finance — draft replies, price a catalogue enquiry at today’s rate, schedule follow-ups, send instalment reminders, invite customers before festivals, book appointments and more.' },
     { q: 'Can the AI give a discount without me knowing?', a: 'No. Pricing and discount actions follow your price rules and staff permissions — the AI drafts messages, it does not set prices or approve exceptions.' },
-    { q: 'What if it says something embarrassing to a customer I’ve known for twenty years?', a: 'That fear is exactly what the approval queue exists for. Nothing reaches her until your team has seen it. Quiet hours mean nobody, old customer or new, gets a message at 11pm either.' },
+    { q: 'What if it says something embarrassing to a customer I’ve known for twenty years?', a: 'Put your oldest families on “ask me first” and their messages wait for you, while everything else carries on by itself. Quiet hours mean nobody, old customer or new, gets a message at 11pm either.' },
     { q: 'How does it know how to sound like MY shop, not a generic chatbot?', a: 'It drafts from your catalogue, your prices, your policies and your past conversations — the same context a new employee would need, except it never forgets any of it.' },
-    { q: 'Is this the same risk as an AI chatbot going rogue online?', a: 'No. Nothing sends without approval by default, ever. The entire governance layer (approvals, caps, kill switch) exists because a jewellery relationship can’t survive an ungoverned bot near it.' },
+    { q: 'Is this the same risk as an AI chatbot going rogue online?', a: 'No. It works only from your own records, inside daily caps and quiet hours, with every action logged and a kill switch at five scopes. You decide which kinds of action need approval. That governance layer exists because a jewellery relationship can’t survive an ungoverned bot near it.' },
     { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Yes. Chat, voice and phone calls all run in the same 14 languages.' },
   ],
   body: `
 ${L.hero({
   eyebrow: 'AI WORKFORCE & GOVERNANCE',
-  h1: 'AI that waits <span class="h1-turn is-inline">for your yes.</span>',
-  sub: 'Hiring is hard. Training is harder. Jwero gives you an AI workforce that never forgets, never sleeps, and never acts without your approval. One switch takes it all back.',
+  h1: 'AI that does the work. <span class="h1-turn">You set the limits.</span>',
+  sub: 'Hiring is hard. Training is harder. Jwero gives you an AI workforce that never forgets, never sleeps, and works on its own inside the limits you set. It asks for approval only where you want it to, and one switch takes it all back.',
   mock: L.mockApproval,
 })}
 
 ${L.section(
   `${L.sectionHead('', 'The work your team never gets time for.', '')}
   ${L.cards([
-    { icon: '✉', title: 'Answer in minutes', text: 'Every WhatsApp, Instagram and website enquiry gets a knowledgeable draft reply (with her history and live prices) in minutes, at midnight, during festivals.' },
+    { icon: '✉', title: 'Answer in minutes', text: 'Every WhatsApp, Instagram and website enquiry gets a knowledgeable reply (with her history and live prices), at midnight, during festivals.' },
     { icon: '↺', title: 'Follow up on everything', text: 'Every enquiry that didn’t buy, every quote that went quiet, every instalment coming due — followed up on schedule, never forgotten.' },
-    { icon: '🗓', title: 'Work the calendar', text: 'Birthdays, anniversaries, festivals — the AI workforce proposes the right invitation to the right customers, weeks ahead.' },
+    { icon: '🗓', title: 'Work the calendar', text: 'Birthdays, anniversaries, festivals — the AI workforce sends the right invitation to the right customers, weeks ahead.' },
     { icon: '☏', title: 'Speak, not just type', text: 'The AI voice assistant holds conversations in 14 languages on WhatsApp and web chat — native to Jwero, no third party — with transcripts on the customer record.' },
   ], 4)}`
 )}
@@ -310,16 +310,16 @@ ${L.section(
 ${L.governanceStrip()}
 
 ${L.section(
-  `${L.sectionHead('', 'The trust ladder — autonomy is earned, never assumed.', 'Every business starts at Assist. You promote the AI one action type at a time — based on measured accuracy, not promises.')}
+  `${L.sectionHead('', 'Three settings, for each kind of action.', 'Most work runs on Autopilot. Put any kind of action on Approve or Assist whenever you want to see it first, and change it back any time.')}
   ${L.steps([
-    { title: 'Assist', text: 'AI drafts, humans send. Every action waits in the approval queue. This is day one, and some businesses happily stay here.' },
-    { title: 'Approve', text: 'Routine, low-risk actions run with one-tap approval; anything sensitive still waits. You see a log of everything.' },
-    { title: 'Autopilot', text: 'Action types with proven accuracy run within hard caps — and demote themselves automatically if anything drifts.' },
+    { title: 'Autopilot', text: 'The AI does the work on its own, inside hard daily caps and quiet hours. Every action is logged, and a kind of action drops back to Approve automatically if anything drifts.' },
+    { title: 'Approve', text: 'For the kinds of action you choose, such as offers or messages to your biggest families, the AI prepares it and you clear it with one tap.' },
+    { title: 'Assist', text: 'The AI only writes; a person sends. For the few things you always want to handle yourself.' },
   ])}`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('WHAT "240+ ACTIONS" ACTUALLY MEANS', 'A real registry, category by category.', 'Every governed action is a defined, individually permissioned entry in Jwero’s action registry — the same registry the approval queue and kill switch enforce against. Here’s what the 251 active entries cover.')}
+  `${L.sectionHead('WHAT "240+ ACTIONS" ACTUALLY MEANS', 'A real registry, category by category.', 'Every governed action is a defined, individually permissioned entry in Jwero’s action registry — the same registry the caps, approval rules and kill switch enforce against. Here’s what the 251 active entries cover.')}
   <div class="tbl-wrap"><table class="tbl">
     <thead><tr><th>Category</th><th>What lives there</th><th>Actions</th></tr></thead>
     <tbody>
@@ -344,15 +344,15 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('QUESTIONS OWNERS ASK', 'Answers, not reassurance.', '')}${L.faqBlock([
   { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling.' },
-  { q: 'What if the AI drafts something wrong?', a: 'Nothing goes out without approval until you decide otherwise. You can edit any draft, reject it, or switch a whole action type off.' },
+  { q: 'What if the AI gets something wrong?', a: 'It writes from your catalogue, prices and her record, every action is logged, and you can put any kind of action behind approval or switch it off in one tap.' },
   { q: 'Can I turn it all off?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything.' },
   { q: 'Can the AI give a discount without my knowledge?', a: 'No — pricing and discounts follow your price rules and staff permissions; the AI drafts messages, it does not set prices.' },
-  { q: 'What if it embarrasses me with a longtime customer?', a: 'The approval queue exists for exactly this. Nothing reaches her until your team has seen and approved it.' },
+  { q: 'What if it embarrasses me with a longtime customer?', a: 'Put your oldest families on “ask me first”. Their messages wait for you, and everything else carries on by itself.' },
   { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Yes. Chat, voice and phone calls all run in the same 14 languages.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More on AI trust and control? <a href="/faq#ai-trust">See every AI question we’ve been asked →</a></p>`)}
 
-${L.ctaBand('Meet your first AI workforce member.', 'Watch it draft, watch it wait for your approval, watch it learn. On your own WhatsApp.', 'ai')}
+${L.ctaBand('Meet your first AI workforce member.', 'Watch it answer, follow up and remind, inside the limits you set. On your own WhatsApp.', 'ai')}
 `,
 };
 
@@ -399,7 +399,7 @@ ${L.section(
     { title: 'Your own connect flow', text: 'A guided connect flow and an in-product API-keys page let your team (or a technical partner) set this up without engineering help from us.' },
     { title: 'Permission-scoped per key', text: 'Access is scoped per API key and membership, the same permission model that governs every other user in Jwero.' },
   ], 4)}
-  <p style="margin-top:16px; font-size:.9rem; color:var(--ink-2);">This is distinct from the built-in AI workforce described on <a href="/platform/ai-workforce">the AI Workforce & Governance page</a> — that’s Jwero’s own AI acting inside your business under approval; MCP is the door for an AI agent of your choosing to reach the same data from outside.</p>`
+  <p style="margin-top:16px; font-size:.9rem; color:var(--ink-2);">This is distinct from the built-in AI workforce described on <a href="/platform/ai-workforce">the AI Workforce & Governance page</a> — that’s Jwero’s own AI working inside your business, inside your limits; MCP is the door for an AI agent of your choosing to reach the same data from outside.</p>`
 , { tone: 'tint' })}
 
 ${L.honestGapsBlock(['A general-purpose, self-serve public developer REST API is on the roadmap — the MCP server above already gives AI agents scoped access today; a broader API for custom, non-agent integrations doesn’t exist yet.'])}
@@ -464,7 +464,7 @@ const onboarding = {
   description: 'How Jwero implementation works: what we import for you, how training runs, and the season change-freeze that protects your busiest months.',
   breadcrumbs: BC('Onboarding & Support'),
   faqs: [
-    { q: 'How long does implementation take?', a: 'Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published, greetings live with approvals on.' },
+    { q: 'How long does implementation take?', a: 'Days, not months, for the first stage: customers imported, your WhatsApp number connected, catalogue published, greetings going out.' },
     { q: 'Will my team need training?', a: 'If your team can use WhatsApp, they can use Jwero. Training runs by role, live, with a named onboarding contact — not a video library you’re left to figure out alone.' },
     { q: 'Can you implement without disrupting our wedding season?', a: 'Yes — a season change-freeze policy means no disruptive changes during your peak weeks. Go-lives are scheduled around your calendar.' },
     { q: 'What if my older or more senior staff resist the change?', a: 'Start them on one thing: the shared inbox with AI-drafted replies. It makes their day easier immediately — usually the fastest way to convert a sceptic is to make their job less tedious, not to explain the technology.' },
@@ -475,7 +475,7 @@ const onboarding = {
 ${L.hero({
   eyebrow: 'ONBOARDING & SUPPORT',
   h1: 'If your team can use WhatsApp, they can run Jwero.',
-  sub: 'Set up in a day, settled in thirty: customers imported, your WhatsApp number connected, catalogue published and approvals switched on from day one — with a written change-freeze around your season.',
+  sub: 'Set up in a day, settled in thirty: customers imported, your WhatsApp number connected, catalogue published and the AI working inside your limits from day one — with a written change-freeze around your season.',
   primary: { href: '#', label: 'Plan your onboarding', wa: 'onboarding' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -484,7 +484,7 @@ ${L.section(
   `${L.sectionHead('THE FIRST 30 DAYS', 'What happens, week by week.', '')}
   ${L.steps([
     { title: 'Day 1: Set up, then days 2–7: Land', text: 'Set up in a day: customers imported for you, WhatsApp number connected, catalogue published. Nothing ripped out — your billing software stays.' },
-    { title: 'Weeks 2–3: First wins', text: 'Enquiries answered in minutes, occasion greetings flowing with approvals, first catalogue shares sent.' },
+    { title: 'Weeks 2–3: First wins', text: 'Enquiries answered in minutes, occasion greetings flowing, first catalogue shares sent.' },
     { title: 'Day 30: The report', text: 'Your first weekly growth report: who came back, what they bought, what the system did. Judge us on that.' },
   ])}`
 )}
@@ -575,7 +575,7 @@ ${L.section(
       </div>
       <div class="road-group">
         <p class="road-group-label">Governance & integrations</p>
-        <div class="road-item"><strong>AI workforce with governance</strong>approvals, daily caps, kill switch</div>
+        <div class="road-item"><strong>AI workforce with governance</strong>runs on its own; caps, approval where you choose, kill switch</div>
         <div class="road-item"><strong>Enterprise SSO/SCIM</strong>SAML, OIDC and SCIM 2.0 user provisioning</div>
         <div class="road-item"><strong>Bridges</strong>Tally and Zoho Books (connect, map, import masters, check records; posting stays manual), Shopify and WooCommerce on the same product data, publishing to Unicommerce</div>
       </div>

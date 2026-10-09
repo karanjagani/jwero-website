@@ -38,7 +38,7 @@ const occasions = post({
   sub: 'Every customer has dates that call for jewellery. Most shops collect them on the bill and never use them. Here is how to turn them into visits, every month, without anyone remembering.',
   product: ['/products/journeys', 'See occasion journeys in Jwero'],
   wa: 'blog-occasions',
-  close: ['Every occasion remembered.', 'Jwero sends the right message before each birthday and anniversary, and your team approves it.'],
+  close: ['Every occasion remembered.', 'Jwero sends the right message before each birthday and anniversary, automatically, inside the limits you set.'],
   faqs: [
     { q: 'When should an occasion message go out?', a: 'Early enough to buy: two to three weeks before an anniversary, about ten days before a birthday. A message on the day is a greeting, not a reason to visit.' },
     { q: 'How do I collect occasion dates?', a: 'At billing, on the scheme form, and when a customer replies on WhatsApp. Ask for the spouse’s and children’s dates too: a family is several occasions a year.' },
@@ -69,7 +69,7 @@ const occasions = post({
   <p>Only message customers who agreed to hear from you, and make it easy to stop. See <a href="/blog/whatsapp-for-jewellers-guide">WhatsApp for jewellers</a>.</p>
 
   <h2>How Jwero does it</h2>
-  <p>Jwero records birthdays and anniversaries, groups customers into households, and runs occasion journeys that draft the message before each date for your team to approve. Loyalty points can mark anniversaries too. See <a href="/products/journeys">journeys</a> and <a href="/products/crm">CRM</a>.</p>`,
+  <p>Jwero records birthdays and anniversaries, groups customers into households, and runs occasion journeys that send the message before each date, with approval first if you want it. Loyalty points can mark anniversaries too. See <a href="/products/journeys">journeys</a> and <a href="/products/crm">CRM</a>.</p>`,
 });
 
 const regional = post({
@@ -112,7 +112,7 @@ const regional = post({
 const aiCalls = post({
   slug: 'ai-calling-jewellers-scheme-reminders',
   title: 'AI Phone Calls for Jewellers: Scheme Reminders, Follow-Ups and Missed Calls | Jwero',
-  description: 'Where AI calling helps a jewellery business: scheme instalment reminders, enquiry follow-ups and missed calls, with a person approving what matters, and the rules to respect.',
+  description: 'Where AI calling helps a jewellery business: scheme instalment reminders, enquiry follow-ups and missed calls, with a person taking over where it matters, and the rules to respect.',
   h1: 'AI phone calls for jewellers',
   eyebrow: 'GUIDE · AI',
   cluster: 'AI',

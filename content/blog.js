@@ -144,12 +144,12 @@ ${L.section(
   <p><strong>Selling without the record behind it.</strong> Catalogue shares, quotes and appointments that live only in the chat thread, disconnected from inventory, scheme balances or purchase history.</p>
 
   <h2>What a proper setup looks like</h2>
-  <p>Official API, on the number customers already have. A live-priced catalogue that’s always correct when opened. A shared team inbox so coverage doesn’t depend on one phone. A first response, drafted quickly, approved by a person before it sends, so an 11pm enquiry doesn’t sit unanswered until morning. And underneath all of it, one customer record that the chat, the catalogue and the sale all write to, so the relationship compounds instead of resetting every time.</p>
+  <p>Official API, on the number customers already have. A live-priced catalogue that’s always correct when opened. A shared team inbox so coverage doesn’t depend on one phone. A first response sent automatically from the catalogue, inside the limits you set, so an 11pm enquiry doesn’t sit unanswered until morning. And underneath all of it, one customer record that the chat, the catalogue and the sale all write to, so the relationship compounds instead of resetting every time.</p>
   </div>`
 )}
 
 ${L.section(
-  `${L.sectionHead('SEE IT WORKING', 'This guide is written by the team behind the button below.', 'Jwero’s own WhatsApp line runs on the official API, catalogue-linked pricing and the approval-gated AI reply described above — not a hypothetical.')}
+  `${L.sectionHead('SEE IT WORKING', 'This guide is written by the team behind the button below.', 'Jwero’s own WhatsApp line runs on the official API, catalogue-linked pricing and the automatic AI reply described above — not a hypothetical.')}
   <p><a class="btn btn-ghost" href="/products/whatsapp">See WhatsApp Commerce in Jwero</a></p>`
 , { tone: 'tint' })}
 
@@ -713,7 +713,7 @@ ${L.section(
 
   <h2>On AI, if the product uses it</h2>
   <ol start="9">
-    <li><strong>Does AI send messages automatically, or does a human approve first?</strong> In a relationship trade, this is not a minor detail — ask to see the approval queue, not just hear that one exists.</li>
+    <li><strong>Can you choose which AI messages go out automatically and which wait for a person?</strong> In a relationship trade, this is not a minor detail. Ask to see the caps, the action log and the approval queue, not just hear that they exist.</li>
     <li><strong>Is there a kill switch, and at what scopes?</strong> One action, one agent, one branch, one channel, or everything — the more granular, the more it's a real control and not a marketing line.</li>
   </ol>
 
@@ -915,7 +915,7 @@ ${L.section(
   <p>Ask whether you can export your data, in standard formats, at any time — and get that in writing, not a verbal assurance during a sales call. Also worth asking: is your business’s data isolated from every other customer’s, or does it sit in a shared table distinguished only by a row-level flag? A database-per-business architecture is a materially different security posture, and it’s a fair question to ask any vendor plainly.</p>
 
   <h2>AI governance, if the product uses AI at all</h2>
-  <p>A growing number of jewellery platforms now offer some form of AI reply or automation. The question that actually matters isn’t whether AI exists — it’s whether a human approves before anything reaches a customer, whether there’s a daily cap on automated actions, and whether there’s a kill switch, and at what scope. "We use AI" is a marketing line. "Here’s the approval queue, live" is a product you can actually evaluate.</p>
+  <p>A growing number of jewellery platforms now offer some form of AI reply or automation. The question that actually matters isn’t whether AI exists — it’s whether you decide which actions need a person’s approval, whether there’s a daily cap on automated actions, and whether there’s a kill switch, and at what scope. "We use AI" is a marketing line. "Here are the caps, the log and the approval queue, live" is a product you can actually evaluate.</p>
 
   <h2>Honest roadmaps over polished demos</h2>
   <p>Every vendor demo looks finished. The tell is what happens when you ask what isn’t built yet. A vendor with a specific, public answer — "this syncs automatically, this still needs a manual voucher, here’s what’s on the roadmap" — is more trustworthy than one that implies everything is done. This one criterion alone filters out more bad fits than any feature comparison.</p>

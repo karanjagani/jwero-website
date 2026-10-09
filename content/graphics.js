@@ -197,8 +197,8 @@ const MJ = [
   ['Mar', 'coins', 'Gold plan', 'Joins the 11-month plan and pays the first instalment.', 'Gold plan balance', '7 of 11 months'],
   ['Jun', 'chat', 'WhatsApp', 'Asks for temple work necklaces and opens the catalogue you share, on a weekday evening.', 'Prefers', 'Temple work · 22k · yellow'],
   ['Aug', 'eye', 'Website and chat', 'Looks at bridal sets twice, then mentions her daughter’s wedding.', 'Daughter’s wedding', 'November'],
-  ['Sep', 'calendar', 'Gold plan', 'Misses an instalment. A reminder is drafted and waits for your approval.', 'Best time to reach', 'Weekdays, evening · WhatsApp'],
-  ['Oct', 'send', 'Follow-up', 'Jwero suggests inviting her to see bridal sets before the wedding, with her plan balance to use.', 'Next step', 'Invite to see bridal sets · waiting for approval'],
+  ['Sep', 'calendar', 'Gold plan', 'Misses an instalment. A reminder goes out automatically.', 'Best time to reach', 'Weekdays, evening · WhatsApp'],
+  ['Oct', 'send', 'Follow-up', 'Jwero invites her to see bridal sets before the wedding, with her plan balance to use.', 'Next step', 'Invite to see bridal sets · sent automatically'],
 ];
 const memoryJourney = () => `
 <figure class="mj" aria-labelledby="mj-cap">

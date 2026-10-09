@@ -11,7 +11,7 @@ const WA_STEPS = [
   ['rate', 'Rate update', 'Gold moved this morning. Prices in the chat updated with it.'],
   ['cart', 'Customer', 'Added the necklace to the cart.'],
   ['pay', 'WhatsApp payment', 'Paid inside WhatsApp. Order and invoice on her record.'],
-  ['later', 'Next year', 'Anniversary reminder, drafted for your team to approve.'],
+  ['later', 'Next year', 'Anniversary reminder, sent automatically.'],
 ];
 const waStory = () => `<div class="wa-story" data-wa-story>
   <div class="wa-phone" aria-hidden="true"><div class="wa-phone-bar"><span></span><b>Your jewellery shop</b><i>Official business account</i></div>
@@ -26,7 +26,7 @@ const WA_COMPARE = [
   ['Cart and payment inside WhatsApp', 'No', 'Partly', 'Yes, native WhatsApp payments'],
   ['Knows the customer’s purchases and scheme balance', 'No', 'No', 'Yes, one record with billing and schemes'],
   ['Stock updates when a piece sells', 'No', 'No', 'Yes, same stock as the counter'],
-  ['AI replies with your approval', 'No', 'Some', 'Yes, drafts wait for your team'],
+  ['AI replies automatically', 'No', 'Some', 'Yes, with approval where you want it'],
   ['Triggered notifications (order, payment, ready, scheme due)', 'No', 'Some', 'Yes, from billing, repairs and schemes'],
   ['Campaigns to customer segments', 'Broadcast lists', 'Yes', 'Yes, by purchase, occasion and scheme'],
   ['Bulk AI calling, inbound and outbound', 'No', 'No', 'Yes, voice AI agents on the same record'],
@@ -40,7 +40,7 @@ const WA_SETUP = [
   ['Verify your business with Meta', 'Your business details are verified in Meta Business Manager. Jwero guides this step with you.'],
   ['Connect the number to Jwero', 'The number moves onto the WhatsApp Business Platform. Customers keep messaging the same number.'],
   ['Load your catalogue and templates', 'Your products, priced at today’s rate, and your approved message templates for reminders and offers.'],
-  ['Switch on payments and the inbox', 'WhatsApp payments, the shared inbox for your team, and AI drafts that wait for approval.'],
+  ['Switch on payments and the inbox', 'WhatsApp payments, the shared inbox for your team, and AI replies, with approval only where you want it.'],
 ];
 
 const whatsappFaqs = [
@@ -57,7 +57,7 @@ const whatsappFaqs = [
   { q: 'Can WhatsApp messages send automatically when something happens?', a: 'Yes. Triggers send notifications when an order is confirmed, a payment arrives, a piece or repair is ready, or a scheme instalment is due. Campaigns go to segments you choose, by purchase, occasion or scheme.' },
   { q: 'What if Meta changes WhatsApp’s rules?', a: 'Your customers, catalogue and history live in Jwero, not inside the channel. Jwero follows rule changes and updates the platform; your data stays yours.' },
   { q: 'Will older customers really buy this way?', a: 'They already ask “rate kya hai?” on WhatsApp. Jwero makes sure those chats are answered fast, in their language, recorded, and closed.' },
-  { q: 'Do I have to approve every AI reply?', a: 'At first, yes, in batches when it suits you. Once you trust a type of reply, you can let it send on its own. You set the pace.' },
+  { q: 'Do I have to approve every AI reply?', a: 'No. AI replies on its own inside the limits you set. You can require approval for any kind of action, such as discounts.' },
 ];
 
 const whatsapp = {
@@ -67,7 +67,7 @@ const whatsapp = {
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero WhatsApp API for Jewellers', alternateName: ['Jwero WhatsApp Commerce', 'WhatsApp API for jewellery business'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'WhatsApp commerce for jewellers on the official WhatsApp Business Platform: live-rate catalogues, native WhatsApp payments, a shared inbox with AI drafts under approval, triggered notifications, campaigns, broadcasts, WhatsApp Flows and bulk inbound and outbound voice AI calling on one customer record.',
+    description: 'WhatsApp commerce for jewellers on the official WhatsApp Business Platform: live-rate catalogues, native WhatsApp payments, a shared inbox with automatic AI replies, triggered notifications, campaigns, broadcasts, WhatsApp Flows and bulk inbound and outbound voice AI calling on one customer record.',
     url: 'https://jwero.ai/products/whatsapp', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   extraSchema: [{
@@ -107,7 +107,7 @@ ${L.section(
     <article id="wa-forms"><h3>3. Forms inside WhatsApp</h3><p>WhatsApp Flows for booking a showroom visit or a video call, enrolling in a gold scheme, or asking for a custom design, filled in without leaving the chat.</p><a href="/products/gold-schemes">Schemes →</a></article>
     <article id="wa-broadcasts"><h3>4. Broadcasts that keep your number healthy</h3><p>Approved templates, recorded consent, limits on how often each customer hears from you, quiet hours and instant opt-out. Reach thousands for Akshaya Tritiya or Diwali without burning your number.</p><a href="/whatsapp-broadcast-for-jewellers">Broadcasts →</a></article>
     <article id="wa-auto"><h3>5. Triggers, notifications and campaigns</h3><p>Messages that send themselves when something happens: order confirmed, payment received, piece ready for collection, repair done, scheme instalment due, rate drop on a saved piece. Plus planned campaigns for festivals, launches and occasions, to segments you choose.</p><a href="/products/campaigns">Campaigns →</a></article>
-    <article id="wa-inbox"><h3>6. One inbox, and AI calling in bulk</h3><p>WhatsApp, Instagram and Facebook in one team inbox, with AI drafts that wait for approval. Voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, at ₹7 a call, all inclusive: reminders, follow-ups and invitations, all on the same customer record.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
+    <article id="wa-inbox"><h3>6. One inbox, and AI calling in bulk</h3><p>WhatsApp, Instagram and Facebook in one team inbox, with AI that replies automatically, and approval only where you want it. Voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, at ₹7 a call, all inclusive: reminders, follow-ups and invitations, all on the same customer record.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
   </div>`
 )}
 
@@ -115,7 +115,7 @@ ${L.section(`${L.sectionHead('COMPARE', 'WhatsApp Business app, generic API tool
 
 ${L.section(
   `${L.sectionHead('WHAT YOU PAY', 'Two parts, both written down.', '')}
-  <div class="jb-blogline"><p><b>Jwero One:</b> ₹18,000 a month with every module, first month ₹3,600. WhatsApp, payments, the inbox, AI drafts and voice AI are included in the platform.</p><p><b>Meta’s message fees:</b> Meta charges per template message (marketing, utility, authentication). Jwero passes these through at cost from a prepaid wallet you can see. Replies inside a customer’s 24-hour window are not charged by Meta. <a href="/blog/whatsapp-business-api-pricing">How WhatsApp pricing works →</a></p><p><b>Rather not run it yourself?</b> <a href="/jewellery-business-as-a-service">Let Jwero run WhatsApp for you</a>, with every tool included.</p></div>`
+  <div class="jb-blogline"><p><b>Jwero One:</b> ₹18,000 a month with every module, first month ₹3,600. WhatsApp, payments, the inbox, AI replies and voice AI are included in the platform.</p><p><b>Meta’s message fees:</b> Meta charges per template message (marketing, utility, authentication). Jwero passes these through at cost from a prepaid wallet you can see. Replies inside a customer’s 24-hour window are not charged by Meta. <a href="/blog/whatsapp-business-api-pricing">How WhatsApp pricing works →</a></p><p><b>Rather not run it yourself?</b> <a href="/jewellery-business-as-a-service">Let Jwero run WhatsApp for you</a>, with every tool included.</p></div>`
 )}
 
 ${L.section(
@@ -147,8 +147,8 @@ ${L.ctaBand('Message us. Seriously.', 'The best demo of WhatsApp selling is a Wh
 const IG_FLOW = [
   ['Reel', 'Your bridal reel gets 60 “price?” comments'],
   ['Comment to DM', 'Each one gets a DM automatically'],
-  ['AI draft', 'Three pieces from her taste, priced at today’s rate'],
-  ['Approved', 'Your team approves in one tap'],
+  ['AI reply', 'Three pieces from her taste, priced at today’s rate'],
+  ['Sent', 'Goes out automatically, any hour'],
   ['Video call', 'She asks to see it on video · booked from the DM'],
   ['Payment', 'Payment link sent inside the DM · paid'],
   ['Traced', 'The sale is traced to the reel · loyalty points added'],
@@ -171,17 +171,17 @@ const IG_HOW = [
   ['Connect your accounts', 'Your existing Instagram professional account and Facebook page, through Meta’s official connection.'],
   ['Bring everything into one inbox', 'DMs, comments, story replies, mentions and Messenger, shared by your team.'],
   ['Switch on comment-to-DM', '“Price?” and similar comments get a DM automatically.'],
-  ['Let AI draft, your team approve', 'Replies from the customer record and today’s prices, approved in one tap.'],
+  ['Let AI reply', 'Replies from the customer record and today’s prices, sent automatically. You choose which need approval.'],
   ['Close in the chat', 'Payment links inside the DM, video calls and visits booked, sales traced to the post.'],
 ];
 const igFaqs = [
-  { q: 'How do jewellers turn Instagram DMs into sales?', a: 'Answer every DM and comment fast with real prices, move interested customers to a video call, a visit or a payment link, and follow up the ones who go quiet. Jwero does this from one inbox, with replies drafted from the customer record and today’s rate.' },
-  { q: 'Can Instagram DMs be automated without sounding robotic?', a: 'Yes, when the reply knows the customer. Jwero’s AI drafts from her purchases, scheme and taste, and your team approves each reply until you trust it to send on its own.' },
+  { q: 'How do jewellers turn Instagram DMs into sales?', a: 'Answer every DM and comment fast with real prices, move interested customers to a video call, a visit or a payment link, and follow up the ones who go quiet. Jwero does this from one inbox, with AI replies sent automatically from the customer record and today’s rate.' },
+  { q: 'Can Instagram DMs be automated without sounding robotic?', a: 'Yes, when the reply knows the customer. Jwero’s AI replies automatically from her purchases, scheme and taste, and holds for approval only the kinds of reply you choose.' },
   { q: 'Are story replies, mentions and Messenger included?', a: 'Yes. Instagram DMs, comments, story replies and mentions, and Facebook Messenger all land in the same team inbox.' },
   { q: 'Can a customer pay from an Instagram DM?', a: 'Yes. Send a payment link inside the DM; the payment, the order and the invoice land on the customer’s record.' },
   { q: 'Can I sell through an Instagram and Facebook shop?', a: 'Yes. Your catalogue syncs to Meta automatically, with prices that follow today’s gold rate.' },
   { q: 'Do I need a new Instagram account?', a: 'No. Jwero connects to your existing professional account and Facebook page through Meta’s official connection.' },
-  { q: 'Do I need someone dedicated to run this?', a: 'No. AI drafts the first reply and the follow-ups; your team approves in batches. Or let Jwero’s team run it for you.' },
+  { q: 'Do I need someone dedicated to run this?', a: 'No. AI sends the first reply and the follow-ups automatically; your team steps in where you want it. Or let Jwero’s team run it for you.' },
 ];
 
 const instagram = {
@@ -191,7 +191,7 @@ const instagram = {
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Instagram & Facebook Commerce', alternateName: ['Instagram DM automation for jewellers', 'Facebook Messenger for jewellery shops'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Instagram and Facebook commerce for jewellers: DMs, comments, story replies, mentions and Messenger in one team inbox; comments turned into DMs automatically; AI replies from the customer record with prices at today’s rate, approved by your team; payment links inside the DM; catalogue synced to Instagram and Facebook shops; sales traced to posts and ads.',
+    description: 'Instagram and Facebook commerce for jewellers: DMs, comments, story replies, mentions and Messenger in one team inbox; comments turned into DMs automatically; AI replies from the customer record with prices at today’s rate, sent automatically; payment links inside the DM; catalogue synced to Instagram and Facebook shops; sales traced to posts and ads.',
     url: 'https://jwero.ai/products/instagram-facebook', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to turn Instagram DMs into sales for a jewellery shop', step: IG_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
@@ -210,7 +210,7 @@ ${L.section(`${L.sectionHead('ONE REEL, START TO FINISH', 'From “price?” to 
 ${L.section(`${L.sectionHead('SIX JOBS, ONE INBOX', 'What Instagram and Facebook commerce has to do for a jeweller.', '')}<div class="wa-jobs">
   <article><h3>1. Every message caught</h3><p>Instagram DMs, comments, story replies and mentions, and Facebook Messenger, in one inbox your whole team shares.</p><a href="/products/social-media">Social media →</a></article>
   <article><h3>2. “Price?” answered in seconds</h3><p>Price comments turned into DMs automatically, answered with pieces priced at today’s rate.</p><a href="/products/catalog">Live-rate catalogue →</a></article>
-  <article><h3>3. Replies that know the customer</h3><p>AI drafts from her purchases, scheme and taste; your team approves, any hour, in one tap.</p><a href="/products/crm">Customer record →</a></article>
+  <article><h3>3. Replies that know the customer</h3><p>AI replies automatically from her purchases, scheme and taste, any hour. You choose which replies need approval.</p><a href="/products/crm">Customer record →</a></article>
   <article><h3>4. Your shop on Instagram and Facebook</h3><p>Your catalogue synced to Meta automatically, with prices that follow the gold rate.</p><a href="/blog/selling-gold-jewellery-online-live-rate">Selling online at the live rate →</a></article>
   <article><h3>5. From DM to sale</h3><p>A payment link inside the DM, a video call or a visit booked, or a move to WhatsApp. Chats from click-to-WhatsApp ads land in the same inbox.</p><a href="/products/ads-manager">Ads →</a></article>
   <article><h3>6. Followers become customers</h3><p>Loyalty points for engagement, chats routed to the right branch, an AI call to follow up, and sales traced to the post or ad.</p><a href="/products/loyalty">Loyalty →</a></article>
@@ -251,8 +251,8 @@ ${L.ctaBand('Stop losing the DMs you paid for.', 'Show us last week’s DMs. We 
 const AI_FLOW = [
   ['11:04 pm', 'A WhatsApp message: “Light bridal necklace, under 3 lakh?”'],
   ['AI reply', 'Three pieces at today’s rate, from her taste and past purchases'],
-  ['Quiet', 'No reply by morning · a follow-up is drafted'],
-  ['Approved', 'Your manager approves in one tap'],
+  ['Quiet', 'No reply by morning · a follow-up goes out automatically'],
+  ['In control', 'Inside your daily caps and quiet hours · every action logged'],
   ['AI call', 'Next day, an AI call in Hindi · a visit booked for Saturday'],
   ['Walk-in', 'She arrives; your salesperson already knows what she liked'],
 ];
@@ -264,40 +264,40 @@ const AI_CMP = [
   ['After hours', 'Waits for morning', 'Canned menu', 'Answers with real pieces and prices'],
   ['Prices', 'Typed by hand', 'None or fixed', 'Today’s rate, from your catalogue'],
   ['Knows the customer', 'Your memory', 'No', 'Purchases, scheme and taste on her record'],
-  ['Follow-ups', 'When someone remembers', 'No', 'Drafted on schedule'],
+  ['Follow-ups', 'When someone remembers', 'No', 'Sent on schedule'],
   ['Voice and calls', 'No', 'No', 'AI voice on WhatsApp, web chat and phone, in 14 languages'],
-  ['Control', 'n/a', 'Runs as built', 'Approvals, daily caps, kill switch, full log'],
+  ['Control', 'n/a', 'Runs as built', 'Optional approvals, daily caps, kill switch, full log'],
   ['Channels', 'WhatsApp only', 'One channel', 'WhatsApp, Instagram, web chat and phone'],
 ];
 const aiTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>WhatsApp Business app</th><th>A generic chatbot</th><th>Jwero</th></tr></thead><tbody>${AI_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
 const AI_HOW = [
   ['Pick a duty', 'Start with one: the night shift, follow-ups or scheme reminders.'],
   ['Give it your knowledge', 'Your catalogue, prices, policies and the answers you give every day.'],
-  ['Start in Assist mode', 'It drafts; your team approves every message.'],
+  ['Choose what needs approval', 'It works automatically; you pick the actions it must hold for your yes.'],
   ['Set the limits', 'Daily caps, what it may never do, and a kill switch.'],
-  ['Promote it', 'When it earns your trust, let chosen actions run on their own, with every action logged.'],
+  ['Watch the log', 'Every action is logged, so you can widen or tighten the limits whenever you like.'],
 ];
 const aiFaqs = [
-  { q: 'What is an AI chatbot for jewellers?', a: 'An assistant that answers customers on WhatsApp, Instagram and your website with real pieces at today’s rate, follows up, and books visits. Jwero’s also speaks and calls, in 14 languages, under your approval.' },
-  { q: 'What is an AI sales agent in Jwero?', a: 'A member of the AI workforce with a set of allowed actions, a knowledge base, limits, an approval workflow and an activity log. It drafts replies, follow-ups, reminders and invitations within the limits you set.' },
+  { q: 'What is an AI chatbot for jewellers?', a: 'An assistant that answers customers on WhatsApp, Instagram and your website with real pieces at today’s rate, follows up, and books visits. Jwero’s also speaks and calls, in 14 languages, inside the limits you set.' },
+  { q: 'What is an AI sales agent in Jwero?', a: 'A member of the AI workforce with a set of allowed actions, a knowledge base, limits, optional approvals and an activity log. It sends replies, follow-ups, reminders and invitations within the limits you set.' },
   { q: 'Does it speak Hindi and other languages?', a: 'Yes. Chat, voice and phone calls run in 14 languages, including Hindi, Gujarati, Marathi, Tamil, Telugu, Bengali and English.' },
   { q: 'Can the AI make phone calls?', a: 'Yes. AI voice is built into WhatsApp and web chat, and phone calls and IVR run over your telephony provider, with transcripts on the customer record.' },
   { q: 'Does it share products and prices?', a: 'Yes. Replies include pieces from your catalogue at today’s rate, chosen from her taste and past purchases.' },
   { q: 'Will this replace my sales staff?', a: 'No. The AI does the remembering and the follow-up; your people do the selling, and every customer walks in already known.' },
-  { q: 'Can it give a discount without me knowing?', a: 'No. Prices and discounts follow your price rules and staff permissions. The AI drafts messages; it does not set prices.' },
-  { q: 'How do I know what the AI did?', a: 'Every action is logged: what, when, why, and who approved it.' },
-  { q: 'Which AI agents come ready?', a: 'Twelve agent teams: Revenue, Sales, Seller, Marketing, Growth, CX, Operations, Inventory, Finance, Reporting, HR, and Payroll and Settlement. Most ask for approval by default.' },
+  { q: 'Can it give a discount without me knowing?', a: 'No. Prices and discounts follow your price rules and staff permissions. The AI sends messages; it does not set prices.' },
+  { q: 'How do I know what the AI did?', a: 'Every action is logged: what, when and why, and who approved it where approval was needed.' },
+  { q: 'Which AI agents come ready?', a: 'Twelve agent teams: Revenue, Sales, Seller, Marketing, Growth, CX, Operations, Inventory, Finance, Reporting, HR, and Payroll and Settlement. You choose which actions need your approval.' },
   { q: 'Can staff talk to Jwero instead of clicking?', a: 'Yes. An in-app assistant takes spoken or typed instructions, including Hindi and Hinglish phrases, and a staff voice assistant wakes on a wake word.' },
   { q: 'Does AI read call transcripts?', a: 'Yes. After a call, AI reads the transcript, notes how interested the customer was, and updates her scores.' },
 ];
 const aiAgents = {
   slug: 'products/ai-sales-agents',
   title: 'AI for Jewellers: AI Chatbot, Sales Agents & Voice AI | Jwero',
-  description: 'AI chatbot and voice AI for jewellers: answers on WhatsApp, Instagram and web chat with pieces at today’s rate, follows up and calls back in 14 languages, 24/7, under your approvals, daily caps and kill switch.',
+  description: 'AI chatbot and voice AI for jewellers: answers on WhatsApp, Instagram and web chat with pieces at today’s rate, follows up and calls back in 14 languages, 24/7, inside your daily caps and kill switch, with approval where you want it.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero AI Sales Agents & Voice', alternateName: ['AI chatbot for jewellers', 'WhatsApp chatbot for jewellery shops', 'Voice AI for jewellers'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'AI sales agents for jewellers that answer on WhatsApp, Instagram and web chat with pieces at today’s rate, follow up, remind and call back in 14 languages, with AI voice on WhatsApp and web chat and phone calls over the jeweller’s telephony provider, inside approval queues, daily caps and a kill switch.',
+    description: 'AI sales agents for jewellers that answer on WhatsApp, Instagram and web chat with pieces at today’s rate, follow up, remind and call back in 14 languages, with AI voice on WhatsApp and web chat and phone calls over the jeweller’s telephony provider, inside daily caps, quiet hours and a kill switch, with approval where the jeweller requires it.',
     url: 'https://jwero.ai/products/ai-sales-agents', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to start with an AI sales agent in a jewellery shop', step: AI_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
@@ -306,9 +306,9 @@ const aiAgents = {
   body: `
 ${L.hero({
   eyebrow: 'AI CHATBOT · AI SALES AGENTS · VOICE AI',
-  h1: 'AI chatbot and voice AI for jewellers: answers, follows up and calls back, 24/7, with your approval.',
-  sub: 'AI staff that reply on WhatsApp, Instagram and your website with real pieces at today’s rate, chase every quiet enquiry, and call customers in 14 languages. Every action waits for your approval until you decide it may run alone.',
-  primary: { href: '#', label: 'Show me an AI draft waiting for approval', wa: 'aiagents' },
+  h1: 'AI chatbot and voice AI for jewellers: answers, follows up and calls back, 24/7, inside the limits you set.',
+  sub: 'AI staff that reply on WhatsApp, Instagram and your website with real pieces at today’s rate, chase every quiet enquiry, and call customers in 14 languages. They work automatically; you choose which actions need your approval.',
+  primary: { href: '#', label: 'Show me an AI reply going out', wa: 'aiagents' },
   secondary: { href: '/platform/ai-workforce', label: 'How governance works' },
   mock: L.mockApproval,
 })}
@@ -319,9 +319,9 @@ ${L.section(`${L.sectionHead('SIX JOBS, ONE AI WORKFORCE', 'What you can hire AI
   <article><h3>1. The night shift</h3><p>Enquiries on WhatsApp, Instagram and web chat answered at any hour, with pieces at today’s rate.</p><a href="/products/whatsapp">WhatsApp →</a></article>
   <article><h3>2. Follow-ups</h3><p>Every quiet chat, open quotation and abandoned enquiry chased on schedule.</p><a href="/products/quotations">Quotations →</a></article>
   <article><h3>3. Scheme collections</h3><p>Instalment reminders by message and AI call, politely and on time.</p><a href="/products/gold-schemes">Gold schemes →</a></article>
-  <article><h3>4. Occasions</h3><p>Birthdays, anniversaries and festival invitations, proposed weeks ahead for your approval.</p><a href="/products/journeys">Journeys →</a></article>
+  <article><h3>4. Occasions</h3><p>Birthdays, anniversaries and festival invitations, planned weeks ahead and sent automatically.</p><a href="/products/journeys">Journeys →</a></article>
   <article><h3>5. Voice in 14 languages</h3><p>AI voice on WhatsApp and web chat, and phone calls and IVR over your telephony provider, transcribed onto her record.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
-  <article><h3>6. You stay in charge</h3><p>Approvals, daily caps, a kill switch, and a log of every action and who approved it.</p><a href="/platform/ai-workforce">AI governance →</a></article>
+  <article><h3>6. You stay in charge</h3><p>Approval where you want it, daily caps, a kill switch, and a log of every action.</p><a href="/platform/ai-workforce">AI governance →</a></article>
 </div>`)}
 
 ${L.governanceStrip()}
@@ -348,10 +348,10 @@ ${L.section(`${L.sectionHead('GETTING STARTED', 'How to start with an AI sales a
 ${L.oneSystemBlock([
   'The AI reads the same customer record your team does: purchases, scheme, taste and every past chat.',
   'Prices in its replies come from the same catalogue and rate as the counter.',
-  'Every action it takes is logged, with who approved it.',
+  'Every action it takes is logged.',
 ])}
 
-${L.ctaBand('Hire staff that scale like software.', 'Start with one agent in Assist mode: drafts only, approvals on. Promote it when it earns your trust.', 'aiagents')}
+${L.ctaBand('Hire staff that scale like software.', 'Start with one agent, inside the limits you set. Keep approval on for the actions you choose.', 'aiagents')}
 `,
 };
 
@@ -365,7 +365,7 @@ const OP_FLOW = [
   ['Exit popup', 'A leaving visitor sees the festive offer'],
   ['AI webchat', '“Is this hallmarked?” answered from your catalogue'],
   ['Lead', 'She leaves her number · on her customer record'],
-  ['Follow-up', 'A WhatsApp follow-up drafted for approval'],
+  ['Follow-up', 'A WhatsApp follow-up sent automatically'],
 ];
 const opFlow = () => `<div class="wa-story" data-wa-story>
   <div class="mkt-card" aria-hidden="true"><p class="pc-tag">WEBSITE · VISIT TO LEAD</p>${OP_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
@@ -694,7 +694,7 @@ const SOC_FLOW = [
   ['Planned', 'Diwali reel on the festival calendar, three weeks ahead'],
   ['Made by AI', 'A short video from your catalogue photos, caption and hashtags in English and Hindi'],
   ['Scheduled', 'Instagram, Facebook and YouTube Shorts, Friday 7 pm'],
-  ['Comments', '84 comments in one inbox · AI drafts replies for approval'],
+  ['Comments', '84 comments in one inbox · AI replies automatically'],
   ['Price?', '“Price?” comments turned into DMs automatically'],
   ['Reply', 'Pieces priced at today’s rate · moved to WhatsApp'],
   ['Loyalty', 'Followers who commented earn loyalty points'],
@@ -707,7 +707,7 @@ const socFlow = () => `<div class="wa-story" data-wa-story>
 const SOC_CMP = [
   ['Content', 'Designer or agency', 'You make it', 'AI captions, hashtags, images and video'],
   ['Publishing', 'One app per platform', 'Scheduler', 'Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads, Google Business'],
-  ['Comments and DMs', 'One phone', 'Shared inbox', 'One inbox, AI drafts for approval'],
+  ['Comments and DMs', 'One phone', 'Shared inbox', 'One inbox, AI replies automatically'],
   ['“Price?” comments', 'Missed', 'Manual', 'Turned into DMs automatically'],
   ['Prices in replies', 'Typed in', 'Typed in', 'Today’s rate, from the catalogue'],
   ['Followers into customers', 'No', 'No', 'Loyalty points for engagement, WhatsApp, visits'],
@@ -718,16 +718,16 @@ const SOC_HOW = [
   ['Connect your accounts', 'Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business.'],
   ['Fill the calendar', 'Festivals, launches and weekly posts, drafted ahead.'],
   ['Let AI make the content', 'Captions, hashtags, images and short video from your catalogue; edit what you like.'],
-  ['Approve and schedule', 'One composer publishes to every platform at the time you choose.'],
+  ['Schedule and publish', 'One composer publishes to every platform at the time you choose.'],
   ['Answer and convert', 'Comments and DMs in one inbox; price questions become DMs and then WhatsApp chats.'],
 ];
 const socFaqs = [
-  { q: 'What is social media management for jewellers?', a: 'Planning, creating, scheduling and publishing posts across Instagram, Facebook, YouTube and other platforms, and answering every comment and DM, so followers become customers. Jwero does all of it in one place, with AI making the content and drafting replies for approval.' },
+  { q: 'What is social media management for jewellers?', a: 'Planning, creating, scheduling and publishing posts across Instagram, Facebook, YouTube and other platforms, and answering every comment and DM, so followers become customers. Jwero does all of it in one place, with AI making the content and replying automatically.' },
   { q: 'Which platforms can Jwero publish to?', a: 'Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business, from one composer and one calendar.' },
-  { q: 'Can AI make jewellery posts and reels?', a: 'Yes. AI makes captions, hashtags, images and short videos from your catalogue photos, in English and 13 other languages. Your team edits and approves before anything is published.' },
+  { q: 'Can AI make jewellery posts and reels?', a: 'Yes. AI makes captions, hashtags, images and short videos from your catalogue photos, in English and 13 other languages. Posts go out automatically, or wait for your team’s approval if you ask for that.' },
   { q: 'How often should a jeweller post?', a: 'Consistency matters more than volume: a few good posts a week, more around festivals and launches. A calendar planned ahead keeps it steady.' },
   { q: 'What happens when someone comments “price?”', a: 'The comment is turned into a DM automatically, answered with pieces priced at today’s rate, and moved to WhatsApp if the customer wants.' },
-  { q: 'Does the AI reply to comments and DMs on its own?', a: 'It drafts replies that wait for your team’s approval. Once you trust a type of reply, you can let it send on its own.' },
+  { q: 'Does the AI reply to comments and DMs on its own?', a: 'Yes. It replies automatically inside the limits you set. You choose which kinds of reply need your team’s approval first.' },
   { q: 'Can followers earn loyalty points?', a: 'Yes. Comments, follows, likes and shares can earn loyalty points, matched to the customer’s record.' },
   { q: 'How is this different from Instagram & Facebook commerce?', a: 'This page is about planning, making and publishing posts and keeping one inbox. Instagram & Facebook commerce is about turning DMs and comments into sales.' },
   { q: 'Can I see what my posts achieve?', a: 'Yes. Reach and engagement per post and platform, plus the chats, visits and sales each post started.' },
@@ -740,7 +740,7 @@ const socialMedia = {
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Social Media Management for Jewellers', alternateName: ['Social media scheduler for jewellers', 'Jewellery social media software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Social media for jewellers: festival content calendar; AI captions, hashtags, images and short video; one composer publishing to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business; one inbox for comments and DMs with AI drafts for approval; comments turned into DMs automatically; loyalty points for engagement; results traced to chats and sales.',
+    description: 'Social media for jewellers: festival content calendar; AI captions, hashtags, images and short video; one composer publishing to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business; one inbox for comments and DMs with automatic AI replies; comments turned into DMs automatically; loyalty points for engagement; results traced to chats and sales.',
     url: 'https://jwero.ai/products/social-media', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to run social media for a jewellery shop', step: SOC_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
@@ -762,7 +762,7 @@ ${L.section(`${L.sectionHead('SIX JOBS, ONE CALENDAR', 'What social media manage
   <article><h3>1. Plan the festival calendar</h3><p>Akshaya Tritiya, Diwali, wedding season, launches and weekly posts, drafted weeks ahead.</p><a href="/products/campaigns">Campaigns →</a></article>
   <article><h3>2. Content made for you</h3><p>AI captions and hashtags in English and 13 other languages, images and short videos from your catalogue photos, for posts and reels.</p><a href="/products/catalog">Catalogue →</a></article>
   <article><h3>3. One composer, every platform</h3><p>Schedule and publish to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business.</p><a href="/instagram-for-jewellers">Instagram for jewellers →</a></article>
-  <article><h3>4. One inbox for every comment and DM</h3><p>AI drafts replies for your team’s approval; “price?” comments are turned into DMs automatically.</p><a href="/products/instagram-facebook">Instagram & Facebook commerce →</a></article>
+  <article><h3>4. One inbox for every comment and DM</h3><p>AI replies automatically, and holds for approval only the kinds of reply you choose; “price?” comments are turned into DMs automatically.</p><a href="/products/instagram-facebook">Instagram & Facebook commerce →</a></article>
   <article><h3>5. Followers into customers</h3><p>Loyalty points for comments, follows, likes and shares, price replies at today’s rate, and a move to WhatsApp.</p><a href="/products/loyalty">Loyalty →</a></article>
   <article><h3>6. See what works</h3><p>Reach and engagement by post and platform, plus the chats, visits and sales each post started.</p><a href="/products/reports">Reports →</a></article>
 </div>`)}
@@ -778,7 +778,7 @@ ${L.section(`${L.sectionHead('THE ARITHMETIC', 'The hours social media takes tod
     <p><span>Hours a month on posts</span><b data-sc-o="ph">0</b></p>
     <p><span>Hours a month on replies</span><b data-sc-o="rh">0</b></p>
     <p class="callc-save"><span>Hours a month, by hand</span><b data-sc-o="tot">0</b></p>
-    <p class="cta-note">With AI making content and drafting replies, your team reviews instead of creating from scratch. An estimate from your inputs.</p>
+    <p class="cta-note">With AI making content and replying automatically, your team reviews only what you choose. An estimate from your inputs.</p>
   </div>
 </div>`, { tone: 'tint' })}
 

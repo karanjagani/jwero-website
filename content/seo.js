@@ -59,7 +59,7 @@ const CITIES = [
     'Hyderabad is India’s pearl city, with the trade centred on Pathargatti near Charminar, and it is a major market for uncut diamond and temple-style bridal jewellery. Large showrooms in Abids, Somajiguda and Jubilee Hills serve Telangana and Andhra buyers.',
     'Heavy bridal sets and uncut diamond pieces carry high value and long decisions. Pearls and stones need their own records. Families save through gold schemes for years before a wedding, so the scheme book is next year’s sales.',
     [['/solutions/bridal', 'Bridal', 'One family record from enquiry to delivery.'], ['/solutions/b2b-jewellery', 'Pearl and gemstone wholesale', 'Buyer links, memo and ledgers.'], ['/products/gold-schemes', 'Gold schemes', 'Instalments, reminders and maturity.'], ['/solutions/diamond-retail', 'Diamond retail', 'Certificates and stock on one record.']],
-    'Do scheme customers get reminders automatically?', 'Reminders are drafted for each instalment and sent with your approval. Payment is made by the customer; there is no automatic debit from their bank.'],
+    'Do scheme customers get reminders automatically?', 'Reminders are sent automatically for each instalment, inside the limits you set. Payment is made by the customer; there is no automatic debit from their bank.'],
   ['chennai', 'Chennai',
     'Chennai’s T. Nagar is one of the busiest jewellery retail streets in the country, known for heavy gold, temple jewellery and very large showrooms. Monthly savings schemes are a normal part of buying gold here.',
     'High footfall, heavy gold and scheme customers mean the counter has to be fast and exact: live rate, wastage and making rules, old gold in exchange, the scheme balance applied to the bill, and a cash close that matches at night.',
@@ -73,7 +73,7 @@ const CITIES = [
   ['bangalore', 'Bengaluru',
     'Bengaluru has one of the most organised jewellery markets in India: large chains on Commercial Street, Jayanagar and Dickenson Road, long-standing family jewellers, and a cluster of online-first jewellery brands.',
     'Customers here research online, ask on WhatsApp or Instagram, and then walk in. Chains need every branch priced and stocked alike. Online brands need the website, the chat and the stock to agree with each other.',
-    [['/solutions/multi-store-chains', 'Chains', 'Every branch on one record, seen live.'], ['/solutions/d2c-brands', 'Online brands', 'Keep the website, add chat selling and one stock.'], ['/solutions/diamond-retail', 'Diamond retail', 'Certificates in the reply and on the bill.'], ['/products/whatsapp', 'WhatsApp', 'Priced replies drafted from the catalogue.']],
+    [['/solutions/multi-store-chains', 'Chains', 'Every branch on one record, seen live.'], ['/solutions/d2c-brands', 'Online brands', 'Keep the website, add chat selling and one stock.'], ['/solutions/diamond-retail', 'Diamond retail', 'Certificates in the reply and on the bill.'], ['/products/whatsapp', 'WhatsApp', 'Priced replies sent from the catalogue.']],
     'We already sell on Shopify. Do we have to move?', 'No. Keep the website. Orders, stock and customers flow onto one record, and WhatsApp and Instagram selling are added beside it.'],
   ['thrissur', 'Thrissur',
     'Thrissur is called the gold capital of Kerala. It is a manufacturing base for traditional Kerala gold jewellery and the home city of several of India’s largest jewellery retail chains.',
@@ -109,7 +109,7 @@ const CITIES = [
     'Lucknow’s jewellery trade sits in Chowk and Aminabad, with newer showrooms in Hazratganj and Gomti Nagar. It is a strong wedding market for Uttar Pradesh, with demand for both gold and diamond sets.',
     'Wedding buying means long conversations with several family members and quotations that change. Old family firms here are also meeting customers who first ask on Instagram or WhatsApp, not at the counter.',
     [['/solutions/bridal', 'Bridal', 'The wedding order kept as one story.'], ['/solutions/single-store', 'Family showrooms', 'Counter, stock, books and customers together.'], ['/products/instagram-facebook', 'Instagram and Facebook', 'Messages and comments in one inbox.'], ['/products/quotations', 'Quotations', 'Numbered quotes at the live rate.']],
-    'Enquiries now come on Instagram. Who answers them?', 'They land in the same inbox as WhatsApp, against the customer’s record. A priced reply is drafted from your catalogue and waits for your approval.'],
+    'Enquiries now come on Instagram. Who answers them?', 'They land in the same inbox as WhatsApp, against the customer’s record. A priced reply goes out automatically from your catalogue, with approval only where you want it.'],
   ['indore', 'Indore',
     'Indore’s Sarafa Bazaar is one of the best-known jewellery markets in central India, a dense lane of gold and silver shops that serves buyers from across Madhya Pradesh.',
     'Sarafa is a mix of retail, wholesale and bullion in a few streets. Shops are close together, customers compare on the spot, and many firms supply smaller-town jewellers as well as walk-in buyers.',
@@ -124,12 +124,12 @@ const CITIES = [
     'Jalgaon in Maharashtra is widely called the Gold City. Its jewellers have a long reputation for purity, and buyers travel from across the state and beyond to shop there.',
     'A reputation for purity is built on exact records: purity tested, weight shown, hallmark in order. For a Jalgaon jeweller the bill is a statement of trust, and it has to be right every time.',
     [['/solutions/gold-retail', 'Gold retail', 'Weight, purity and rate shown clearly on every bill.'], ['/products/billing-finance', 'Billing', 'GST invoices at the live rate.'], ['/products/inventory', 'Inventory', 'Purity, HUID and weights on every piece.'], ['/products/crm', 'Customers', 'Buyers who travel to you, remembered.']],
-    'Customers come from other cities. How do we stay in touch?', 'Each buyer’s purchases and occasions are on her record, and messages about new stock or a rate change are drafted for your approval.'],
+    'Customers come from other cities. How do we stay in touch?', 'Each buyer’s purchases and occasions are on her record, and messages about new stock or a rate change are sent automatically, with approval if you want it.'],
   ['amritsar', 'Amritsar',
     'Amritsar’s Guru Bazaar, near the Golden Temple, is one of Punjab’s oldest jewellery markets, known for traditional jadau and bridal jewellery.',
     'Punjabi weddings are large purchases made by families together, often with relatives abroad involved in the decision. Traditional handcrafted work also means orders placed with karigars and delivered against a date.',
     [['/solutions/bridal', 'Bridal', 'The family’s order from enquiry to delivery.'], ['/products/meetings', 'Video counter', 'Show sets to relatives abroad.'], ['/products/manufacturing', 'Orders and karigars', 'Custom work tracked to delivery.'], ['/solutions/single-store', 'Family showrooms', 'One screen for the shop.']],
-    'A custom order takes weeks. Can the customer be kept informed?', 'Yes. The order, its stage and its delivery date are on the customer’s record, and an update can be sent at each stage with your approval.'],
+    'A custom order takes weeks. Can the customer be kept informed?', 'Yes. The order, its stage and its delivery date are on the customer’s record, and an update is sent automatically at each stage.'],
   ['bikaner', 'Bikaner',
     'Bikaner in Rajasthan is known for kundan, jadau and meenakari craftsmanship. Its workshops supply handcrafted bridal jewellery to showrooms across India.',
     'Handcrafted work passes through several specialists, each holding gold and stones for a time. The business depends on knowing who has what, and on delivering to retailers in other cities on the promised date.',
@@ -350,7 +350,7 @@ const accounting = needPage({
     { icon: 'receipt', title: 'A double-entry ledger', text: 'Sales, returns, payments and expenses post to Jwero’s own ledger as they happen, with GST handled on each.', link: { href: '/products/billing-finance', label: 'Billing and finance' } },
     { icon: 'wallet', title: 'Party ledgers in grams and rupees', text: 'Buyers, vendors and karigars each have an account that can be read in metal and in money.' },
     { icon: 'store', title: 'Cash day-close', text: 'Each register closes its shift against the bills, so the cash is matched before the shop shuts.', link: { href: '/products/pos', label: 'The counter' } },
-    { icon: 'chat', title: 'Receivables and reminders', text: 'Outstanding amounts are tracked by party, and payment reminders are drafted for your approval.' },
+    { icon: 'chat', title: 'Receivables and reminders', text: 'Outstanding amounts are tracked by party, and payment reminders go out automatically, with approval if you want it.' },
     { icon: 'truck', title: 'Purchases and vendor bills', text: 'Purchase orders, goods received, vendor bills and credit notes in one chain.', link: { href: '/products/purchase-vendors', label: 'Purchase' } },
     { icon: 'flow', title: 'Tally and Zoho Books bridge', text: 'If your accountant works in Tally or Zoho Books, the entries are carried across.', link: { href: '/platform/integrations/tally', label: 'Tally integration' } },
   ],
@@ -358,7 +358,7 @@ const accounting = needPage({
     { lever: 'ENTRY', before: 'The accountant types every bill again from the billing software into Tally.', after: 'The bill is the entry. Nothing is typed twice.' },
     { lever: 'METAL', before: 'Rupee ledgers in one place, gold balances in a notebook.', after: 'Each party’s account shows grams and rupees together.' },
     { lever: 'CASH', before: 'Cash counted at night and argued about in the morning.', after: 'Each register closes against its own bills.' },
-    { lever: 'DUES', before: 'Receivables chased when someone remembers.', after: 'Outstanding by party, with reminders drafted for approval.' },
+    { lever: 'DUES', before: 'Receivables chased when someone remembers.', after: 'Outstanding by party, with reminders sent automatically.' },
   ],
   notYet: 'Jwero does not generate e-invoice IRNs or e-way bills, and does not file GST returns on the portal. Invoices are GST-ready and the data exports for your accountant.',
   faqs: [
@@ -469,7 +469,7 @@ const MKT_HOW = [
   ['Choose who it is for', 'A live segment: scheme members due, bridal buyers, customers quiet for a year, one city.'],
   ['Write and approve the message', 'Use a ready template or write your own; Meta approves it. Add catalogue cards, buttons or a form.'],
   ['Pick the time', 'Schedule outside quiet hours. Customers who heard from you recently are skipped.'],
-  ['Send and answer', 'Replies land in the team inbox on each customer’s record, with a priced reply drafted.'],
+  ['Send and answer', 'Replies land in the team inbox on each customer’s record, with a priced reply sent automatically.'],
   ['Follow up and measure', 'Silent interest gets a follow-up message or AI call; visits and bills are traced to the send.'],
 ];
 const mktFaqs = [
@@ -509,7 +509,7 @@ ${L.section(`${L.sectionHead('SIX JOBS, ONE NUMBER', 'What WhatsApp marketing fo
   <article><h3>3. Triggers and notifications</h3><p>Order confirmed, payment received, piece or repair ready, scheme instalment due, a rate drop on a saved piece: sent the moment it happens.</p><a href="/products/journeys">Journeys →</a></article>
   <article><h3>4. Messages that sell</h3><p>Approved templates with catalogue cards priced at today’s rate, buttons, and WhatsApp forms for visits and scheme enrolment.</p><a href="/whatsapp-templates-for-jewellery-customers">50 templates →</a></article>
   <article><h3>5. Your number kept healthy</h3><p>Consent recorded, opt-outs honoured at once, limits on how often each customer hears from you, and quiet hours.</p><a href="/blog/whatsapp-business-api-pricing">How WhatsApp pricing works →</a></article>
-  <article><h3>6. Replies, follow-up and results</h3><p>Replies in a team inbox with a priced answer drafted, silent interest followed up by message or an AI call at ₹7, and bills traced to each send.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
+  <article><h3>6. Replies, follow-up and results</h3><p>Replies in a team inbox with a priced answer sent automatically, silent interest followed up by message or an AI call at ₹7, and bills traced to each send.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
 </div>`)}
 
 ${L.section(`${L.sectionHead('THE ARITHMETIC', 'What one campaign can return.', 'Your numbers, not ours.')}<div class="callc" data-mktc>
@@ -543,30 +543,30 @@ ${L.ctaBand('Plan your next campaign with us.', 'Tell us the occasion and who it
 const instagram = needPage({
   slug: 'instagram-for-jewellers',
   title: 'Instagram for Jewellers: DMs, Comments, Reels and Stories | Jwero',
-  description: 'Instagram software for jewellers: every DM, comment, Reel and Story reply in one shared inbox, a priced answer drafted from your catalogue, posts scheduled across channels, and each enquiry kept on the customer’s record.',
+  description: 'Instagram software for jewellers: every DM, comment, Reel and Story reply in one shared inbox, a priced answer sent from your catalogue, posts scheduled across channels, and each enquiry kept on the customer’s record.',
   eyebrow: 'Instagram for jewellers',
   h1: 'Instagram brings the enquiries. This is how they become sales.',
-  sub: 'DMs, “price?” comments, Reel and Story replies in one inbox, each with a priced reply drafted from your catalogue and a follow-up that does not get forgotten.',
+  sub: 'DMs, “price?” comments, Reel and Story replies in one inbox, each with a priced reply sent from your catalogue and a follow-up that does not get forgotten.',
   wa: 'instagram',
   intro: ['Everything Instagram sends you, answered from one place.', 'The post is the easy part. The reply is where the sale is.'],
   cards: [
     { icon: 'camera', title: 'DMs in a shared inbox', text: 'The whole team answers from one place; nothing lives on one phone.', link: { href: '/products/instagram-facebook', label: 'Instagram and Facebook' } },
     { icon: 'chat', title: 'Comments to private replies', text: 'A public “price?” comment is moved to a private message with the price.' },
     { icon: 'video', title: 'Reels and Stories', text: 'Scheduled with your other posts; every reply they bring arrives as an enquiry.' },
-    { icon: 'book', title: 'Priced from your catalogue', text: 'Replies are drafted at today’s gold rate and wait for a person’s approval.' },
+    { icon: 'book', title: 'Priced from your catalogue', text: 'Replies go out automatically at today’s gold rate. You choose which need approval.' },
     { icon: 'record', title: 'On the customer’s record', text: 'The person asking today may have bought last year. The reply knows it.', link: { href: '/products/crm', label: 'CRM' } },
     { icon: 'megaphone', title: 'Posts on every channel', text: 'Write once and schedule to Instagram, Facebook, YouTube, Pinterest, LinkedIn and X.', link: { href: '/products/social-media', label: 'Social media' } },
   ],
   rows: [
-    { lever: 'DMs', before: 'Answered late, or by an intern who has since left.', after: 'One inbox, a draft in minutes, a person approves.' },
+    { lever: 'DMs', before: 'Answered late, or by an intern who has since left.', after: 'One inbox, an automatic reply, approval only where you want it.' },
     { lever: 'COMMENTS', before: 'Two hundred “price?” comments under a Reel, unanswered.', after: 'Each one moved to a private, priced reply.' },
-    { lever: 'FOLLOW-UP', before: 'She asked, you answered, she went quiet, nobody wrote again.', after: 'A follow-up is drafted on schedule.' },
+    { lever: 'FOLLOW-UP', before: 'She asked, you answered, she went quiet, nobody wrote again.', after: 'A follow-up goes out on schedule.' },
     { lever: 'MEMORY', before: 'Instagram does not know she bought bangles last year.', after: 'Her record does.' },
   ],
   notYet: 'Jwero does not shoot or edit Reels for you, and it cannot message someone on Instagram who has not written to you first; that is Instagram’s rule.',
   faqs: [
     { q: 'How do jewellers manage Instagram DMs?', a: 'By moving them off a single phone into a shared inbox, so any team member can answer and every conversation is kept on the customer’s record.' },
-    { q: 'How do I reply to price comments on Instagram?', a: 'Reply privately. Jwero moves a public “price?” comment into a direct message with a priced reply drafted from your catalogue at today’s rate.' },
+    { q: 'How do I reply to price comments on Instagram?', a: 'Reply privately. Jwero moves a public “price?” comment into a direct message with a priced reply from your catalogue at today’s rate.' },
     { q: 'How do jewellers get sales from Instagram Reels?', a: 'By answering what the Reel brings. The views are not the sale; the comment or message answered within minutes with a real price is.' },
     { q: 'Do I need a separate tool for Facebook?', a: 'No. Facebook messages and comments arrive in the same inbox.' },
   ],
@@ -593,7 +593,7 @@ const adsLanding = needPage({
   rows: [
     { lever: 'SET-UP', before: 'Three ad consoles, each with its own way of working.', after: 'One guided flow for all of them.' },
     { lever: 'CONTROL', before: 'An agency or a staff member spends, and you see the bill.', after: 'You approve each campaign and get an alert before it overspends.' },
-    { lever: 'ENQUIRIES', before: 'The ad works, the message arrives at 10pm, nobody replies.', after: 'A priced reply is drafted within minutes.' },
+    { lever: 'ENQUIRIES', before: 'The ad works, the message arrives at 10pm, nobody replies.', after: 'A priced reply goes out automatically.' },
     { lever: 'RESULT', before: 'Clicks and impressions.', after: 'Sales, by ad.' },
   ],
   notYet: 'Jwero does not write your ad headlines and text for you today; you enter them in the campaign wizard, and the AI suggests where a campaign is under-performing. Pinterest publishing is still rolling out. Ad spend is paid to Google and Meta, not to Jwero.',
@@ -626,7 +626,7 @@ const smsLanding = needPage({
   rows: [
     { lever: 'TOOLS', before: 'An SMS panel, a WhatsApp tool and an email tool, each with its own list.', after: 'One audience, one campaign.' },
     { lever: 'CONSENT', before: 'Nobody is sure who opted out of what.', after: 'Preferences per channel on each record.' },
-    { lever: 'REMINDERS', before: 'Scheme reminders sent by hand, when someone remembers.', after: 'Drafted on schedule for every instalment.' },
+    { lever: 'REMINDERS', before: 'Scheme reminders sent by hand, when someone remembers.', after: 'Sent on schedule for every instalment.' },
     { lever: 'COST', before: 'Paying for messages nobody reads.', after: 'The cheapest channel that gets read.' },
   ],
   notYet: 'SMS in India needs sender and template registration under the telecom rules, which you complete once. RCS reaches only phones and networks that support it. Messages are charged per message at the rate shown in your accounts.',
@@ -813,7 +813,7 @@ ${L.section(`${L.sectionHead('TRIGGERS AND CAMPAIGNS', 'Calls that place themsel
   <p><b>WhatsApp in the same flow:</b> the call and the chat share one record, so the payment link, catalogue or booking confirmation goes out the moment the customer says yes. <a href="/products/whatsapp">WhatsApp API for jewellers →</a></p></div>`)}
 
 ${L.section(`${L.sectionHead('HOW IT STAYS SAFE', 'Inside your rules, and the law’s.', '')}<div class="jb-blogline">
-  <p><b>Your rules:</b> daily caps, calling hours, which actions the agent may take, and an approval queue for anything new. One switch stops all calling.</p>
+  <p><b>Your rules:</b> daily caps, calling hours, which actions the agent may take, and an approval queue for the actions you choose. One switch stops all calling.</p>
   <p><b>The law’s:</b> calls about a customer’s own account, such as reminders, are treated differently from promotional calls, which follow TRAI’s rules on registration, consent and do-not-disturb preferences. Tell customers calls are recorded. <a href="/blog/ai-calling-jewellers-scheme-reminders">Read the AI calling guide →</a></p>
   <p><b>What it will not do:</b> negotiate prices or give discounts. Those go to a person. Calls run over a telephony line you connect, from your telephony provider.</p></div>`, { tone: 'tint' })}
 

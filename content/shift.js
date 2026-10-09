@@ -10,7 +10,7 @@ const SHIFTS = {
     title: 'From fifty logins to one thought.',
     today: 'You carry the business in your head, on WhatsApp, in a register and across half a dozen tools that never talk. Every question means a call.',
     gone: 'Re-entering the same customer in four places. Repricing bills by hand when the rate moves. Waiting till morning to answer a 9pm enquiry.',
-    now: 'One record for every customer, priced at this minute’s rate, answered in minutes by AI that acts on its own or asks you first — and everything you ask is one screen away.',
+    now: 'One record for every customer, priced at this minute’s rate, answered in minutes by AI that acts on its own inside your limits — and everything you ask is one screen away.',
     tempo: ['Next morning', 'Within minutes'],
   },
   platform: {
@@ -38,7 +38,7 @@ const SHIFTS = {
     title: 'From doing everything to deciding what runs.',
     today: 'Follow-ups, reminders and replies wait for a free moment that never comes.',
     gone: 'The follow-up nobody had time for. The 11pm enquiry that bought elsewhere by morning.',
-    now: 'An AI workforce drafts the work; you set which actions run on their own and which wait for your tap — inside daily caps, quiet hours and a five-scope kill switch.',
+    now: 'An AI workforce does the work on its own, inside daily caps, quiet hours and a five-scope kill switch. You choose which actions, if any, wait for your approval.',
     tempo: ['When someone remembers', 'As it happens'],
   },
   'platform/integrations': {
@@ -59,7 +59,7 @@ const SHIFTS = {
     title: 'From a six-month project to a one-day set-up.',
     today: 'Software changes are dreaded: months of setup, a consultant, and the season lost to migration.',
     gone: 'The rip-and-replace. The training marathon. The change during Diwali.',
-    now: 'Customers imported, your WhatsApp number connected, catalogue published and approvals on from day one — with a written change-freeze around your season.',
+    now: 'Customers imported, your WhatsApp number connected, catalogue published and the AI working inside your limits from day one — with a written change-freeze around your season.',
     tempo: ['Months', 'Days'],
   },
   'trust/security': {
@@ -132,7 +132,7 @@ const SHIFTS = {
     title: 'From hiring for the night shift to staffing it with AI.',
     today: 'Follow-ups, reminders and callbacks happen when a person is free — which is never during the season.',
     gone: 'The unclosed quote. The instalment nobody chased. The 11pm enquiry lost to a competitor.',
-    now: 'AI agents answer, follow up and remind in 14 languages by chat and voice — each action waiting in your approval queue until you say it may run alone.',
+    now: 'AI agents answer, follow up and remind in 14 languages by chat and voice — on their own, inside your caps and quiet hours, with approval where you choose.',
     tempo: ['When someone is free', 'Always'],
   },
   'products/ecommerce': {
@@ -162,7 +162,7 @@ const SHIFTS = {
     title: 'From posting when you remember to a calendar that runs.',
     today: 'Posts go out when someone has time; comments and DMs pile up across three apps.',
     gone: 'The unanswered comment and the festival post that went out a day late.',
-    now: 'Scheduled posts across your channels, one inbox for every comment and DM, AI-drafted replies your team approves.',
+    now: 'Scheduled posts across your channels, one inbox for every comment and DM, AI replies sent automatically.',
     tempo: ['When there is time', 'On schedule'],
   },
   'products/optimize': {
@@ -185,7 +185,7 @@ const SHIFTS = {
     title: 'From “how was footfall?” to who walked out without buying.',
     today: 'You know the day’s sales, not the visitors who tried three pieces and left.',
     gone: 'The walkout nobody followed up.',
-    now: 'Walk-in check-in, a live floor view, and a follow-up drafted the moment she leaves — named for a person to approve.',
+    now: 'Walk-in check-in, a live floor view, and a follow-up drafted the moment she leaves, ready for your staff to send.',
     tempo: ['Unknown', 'Same day'],
   },
 
@@ -289,7 +289,7 @@ const SHIFTS = {
     title: 'From “what if the switch goes wrong” to “what is staying costing me tonight”.',
     today: 'Switching is imagined as a project: data stuck, staff resisting, the CA upset, the season at risk.',
     gone: 'The unanswerable version of every one of those fears.',
-    now: 'Import in days, coexist with the ERP, approvals on from day one, a written change-freeze, an exit test at day 30 — and your data leaves with you if it fails.',
+    now: 'Import in days, coexist with the ERP, AI inside your limits from day one, a written change-freeze, an exit test at day 30 — and your data leaves with you if it fails.',
     tempo: ['A project', 'Thirty days, with exits'],
   },
   'erp-to-os/make-do': {
@@ -310,7 +310,7 @@ const SHIFTS = {
     title: 'From a personal Gmail to the business’s own address, in the same inbox.',
     today: 'Supplier POs land in someone’s Gmail; customer replies to receipts sit unread; the bulk-email tool has its own list.',
     gone: 'The second tab, the lost PO, the mailing list nobody opted into.',
-    now: 'care@ and orders@ on your domain, threads on the customer record beside WhatsApp, replies drafted for your tap, unsubscribes and bounces handled.',
+    now: 'care@ and orders@ on your domain, threads on the customer record beside WhatsApp, replies sent automatically, unsubscribes and bounces handled.',
     tempo: ['Someone’s Gmail', 'One inbox'],
   },
   'products/marketplaces': {
@@ -370,10 +370,10 @@ const SHIFTS = {
     tempo: ['Everyone', 'The right ones'],
   },
   'products/journeys': {
-    title: 'From follow-ups you must remember to journeys that wait for your yes.',
+    title: 'From follow-ups you must remember to journeys that run themselves.',
     today: 'The welcome, the win-back and the occasion invite depend on someone remembering, so they rarely happen.',
     gone: 'The follow-up that dies.',
-    now: 'Visual multi-step journeys with triggers, branches and wait steps — and a human-approval gate before anything reaches a customer.',
+    now: 'Visual multi-step journeys with triggers, branches and wait steps — running on their own, with an approval step wherever you add one.',
     tempo: ['If remembered', 'On trigger'],
   },
   'products/campaigns': {
@@ -389,14 +389,14 @@ const SHIFTS = {
     title: 'From running the business by memory to running it on one record.',
     today: 'Your customers, catalogue, stock and money live in separate tools — and in the heads of the people who happen to be there.',
     gone: 'The re-entry, the reconciliation, and the relationship that leaves with a phone.',
-    now: 'One system where every module reads the same record, priced at the live rate, worked around the clock by AI that runs on its own or asks you first.',
+    now: 'One system where every module reads the same record, priced at the live rate, worked around the clock by AI that runs on its own, and asks first only where you choose.',
     tempo: ['Next morning', 'In real time'],
   },
   'industries/': {
     title: 'From running the business by memory to running it on one record.',
     today: 'Your customers, catalogue, stock and money live in separate tools — and in the heads of the people who happen to be there.',
     gone: 'The re-entry, the reconciliation, and the relationship that leaves with a phone.',
-    now: 'One system where every module reads the same record, priced at the live rate, worked around the clock by AI that runs on its own or asks you first.',
+    now: 'One system where every module reads the same record, priced at the live rate, worked around the clock by AI that runs on its own, and asks first only where you choose.',
     tempo: ['Next morning', 'In real time'],
   },
   'roles/': {

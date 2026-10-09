@@ -388,8 +388,8 @@
    },
    {
     "hook": "Every post and campaign looks a little different.",
-    "does": "Brand templates, creative packs and an approval queue keep posts on brand before they go out.",
-    "changes": "Nothing goes out that you have not approved."
+    "does": "Brand templates, creative packs and an optional approval queue keep posts on brand.",
+    "changes": "Posts stay on brand, with approval where you want it."
    },
    {
     "hook": "You run festival offers but cannot tell if anyone came.",

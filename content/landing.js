@@ -29,9 +29,9 @@ ${L.section(`${L.sectionHead('THREE STEPS', 'How it works.', '')}${L.steps([
 <div class="cta-row" style="margin-top:22px"><a class="btn btn-primary" href="#" data-share="A jeweller I know built their whole business on this. Worth a look:" data-refer-share>Send this page to a jeweller</a><a class="btn btn-ghost" href="#" data-wa="refer">Tell us who you referred</a></div>
 <p class="cta-note" style="margin-top:12px">Add your name to the link yourself: <code>jwero.ai/?ref=your-name</code>. It stays on the link when they message us.</p>`)}
 ${L.section(`${L.sectionHead('WHAT THEY GET', 'What you are sending them to.', '')}${L.cards([
-  { title: 'One record for the whole shop', text: 'Customers, counter, stock, schemes, books and team on one system, with AI that drafts and asks before it acts.', link: { href: '/products', label: 'Every product' } },
+  { title: 'One record for the whole shop', text: 'Customers, counter, stock, schemes, books and team on one system, with AI that does the work inside the limits you set.', link: { href: '/products', label: 'Every product' } },
   { title: 'Run it, or have it run', text: '₹18,000 a month with every module, or Jwero’s specialists and AI run the work with no subscription.', link: { href: '/pricing', label: 'Pricing' } },
-  { title: 'Live in a day', text: 'Customers, catalogue and stock imported, WhatsApp connected, approvals on from day one.', link: { href: '/platform/onboarding', label: 'Onboarding' } },
+  { title: 'Live in a day', text: 'Customers, catalogue and stock imported, WhatsApp connected, AI limits set from day one.', link: { href: '/platform/onboarding', label: 'Onboarding' } },
 ])}`, { tone: 'tint' })}
 ${L.ctaBand('Know a jeweller who needs this?', 'Send them the page. Then tell us their name, so the saving lands with you.', 'refer')}
 `,
@@ -51,11 +51,11 @@ ${L.ctaBand(close[0], close[1], wa)}
 const lpWhatsApp = lp({
   slug: 'whatsapp',
   title: 'WhatsApp for Jewellers: Every Enquiry Answered at Today’s Rate | Jwero',
-  description: 'Your business number on the official WhatsApp API, the catalogue priced at today’s gold rate, AI replies your team approves, and payments in the chat.',
+  description: 'Your business number on the official WhatsApp API, the catalogue priced at today’s gold rate, AI replies sent automatically, and payments in the chat.',
   h1: 'Every WhatsApp enquiry answered, with a real price, at any hour.',
-  sub: 'Your existing number on the official WhatsApp Business Platform, your catalogue at today’s rate, AI that drafts the reply and waits for your yes, and payment inside the chat.',
+  sub: 'Your existing number on the official WhatsApp Business Platform, your catalogue at today’s rate, AI that replies on its own inside the limits you set, and payment inside the chat.',
   wa: 'lp-whatsapp',
-  points: [['Your number, official', 'The number customers already have, moved to the official platform; the whole team answers from one inbox.'], ['Today’s rate, every reply', 'Pieces and prices come from your catalogue and the live rate, not from memory.'], ['AI drafts, you approve', 'Replies, follow-ups and reminders drafted by AI, sent after your tap until you let them run.'], ['Paid in the chat', 'Payment links inside WhatsApp; the order and invoice land on her record.']],
+  points: [['Your number, official', 'The number customers already have, moved to the official platform; the whole team answers from one inbox.'], ['Today’s rate, every reply', 'Pieces and prices come from your catalogue and the live rate, not from memory.'], ['AI replies, you set the limits', 'Replies, follow-ups and reminders go out on their own. You choose which actions need your approval.'], ['Paid in the chat', 'Payment links inside WhatsApp; the order and invoice land on her record.']],
   cmp: [['An enquiry at 11pm', 'Waits for morning', 'Answered with pieces at today’s rate'], ['Who replies', 'Whoever holds the phone', 'A shared inbox, every reply on her record'], ['The price', 'Typed, often stale', 'From the catalogue at the live rate'], ['Payment', 'Bank details typed out', 'A link in the chat'], ['The customer when a salesperson leaves', 'Leaves with him', 'Stays on the shop’s record']],
   close: ['Send us one message.', 'The best demo of WhatsApp selling is a WhatsApp conversation.'],
 });

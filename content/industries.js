@@ -23,7 +23,7 @@ ${L.section(
   ${L.steps([
     { title: 'Discovery moved to the phone', text: 'Customers see jewellery on Instagram and WhatsApp before they see a counter — every enquiry, every occasion, every gram of trust now lives across ten apps.' },
     { title: 'The system wins, regardless of size', text: 'Larger players don’t out-sell smaller ones on relationships — they out-remember them, at scale, with software.' },
-    { title: 'AI made memory affordable', text: 'What used to need a CRM team and a call centre now runs on one operating system, governed and approval-first.' },
+    { title: 'AI made memory affordable', text: 'What used to need a CRM team and a call centre now runs on one operating system, governed, with approval where you want it.' },
   ])}`
 )}
 

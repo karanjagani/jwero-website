@@ -102,7 +102,7 @@ ${L.ctaBand('See one client’s jobs, isolated.', 'Bring one OEM buyer’s order
 
 const exportHousesFaqs = [
   { q: 'Can it handle multi-currency orders?', a: 'Multi-currency support is not yet shipped and needs verification before it’s promised to an export buyer — ask us for the current status for your specific requirement.' },
-  { q: 'Can overseas buyers get replies outside business hours?', a: 'Yes — the AI workforce answers enquiries around the clock, with drafts approved by your team, which matters when buyers are several timezones away.' },
+  { q: 'Can overseas buyers get replies outside business hours?', a: 'Yes — the AI workforce answers enquiries automatically around the clock, which matters when buyers are several timezones away.' },
   { q: 'Export compliance is strict — what happens if the system can’t handle a requirement?', a: 'We’ll tell you plainly on a demo rather than let you discover a gap mid-shipment. Order tracking and documentation trails are live; anything statutory-specific gets verified against your exact requirement first.' },
 ];
 
@@ -123,7 +123,7 @@ ${L.hero({
 ${L.section(
   `${L.painRows([
     { quote: 'Manual paperwork per shipment eats days we don’t have.', title: 'Order & documentation trail', text: 'Orders tracked with documentation status attached — what exists today, honestly, not oversold.' },
-    { quote: 'Our buyers are in different timezones and expect fast replies.', title: 'Replies around the clock', text: 'The AI workforce answers enquiries at any hour, approved by your team before they send.' },
+    { quote: 'Our buyers are in different timezones and expect fast replies.', title: 'Replies around the clock', text: 'The AI workforce answers enquiries automatically at any hour, inside the limits you set.' },
   ])}`
 )}
 ${L.honestGapsBlock(['Multi-currency order support — not yet shipped; ask us for its current status against your specific export requirement.'])}

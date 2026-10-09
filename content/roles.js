@@ -2,8 +2,8 @@ const L = require('../lib');
 
 const rolesHubFaqs = [
   { q: 'Is Jwero only for the owner, or does the whole team use it?', a: 'The whole team. The owner sees the business-wide picture, but sales staff, the counter cashier, the karigar’s supervisor, the accountant and the marketing person each work inside the parts of Jwero built for their job — on one shared record, not six separate logins to six separate tools.' },
-  { q: 'Will AI replace these roles?', a: 'No — Jwero’s AI drafts and suggests; a person on your team approves. Every role on this page keeps its judgment calls. What changes is what fills the hours: less retyping and remembering, more relationship-building, craftsmanship and decision-making.' },
-  { q: 'My team isn’t very "tech-savvy" — will they actually use this?', a: 'The interface is built around WhatsApp, familiar approval taps and plain-language reports — not a dense ERP screen. Role-by-role training is part of onboarding, and each role only sees the part of the system relevant to their job.' },
+  { q: 'Will AI replace these roles?', a: 'No. Jwero’s AI does the routine work on its own, inside limits your team sets, and you choose which actions need approval. Every role on this page keeps its judgment calls. What changes is what fills the hours: less retyping and remembering, more relationship-building, craftsmanship and decision-making.' },
+  { q: 'My team isn’t very "tech-savvy" — will they actually use this?', a: 'The interface is built around WhatsApp, simple controls and plain-language reports — not a dense ERP screen. Role-by-role training is part of onboarding, and each role only sees the part of the system relevant to their job.' },
 ];
 
 const rolesHub = {
@@ -45,7 +45,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('CUSTOMER & GROWTH', 'The people who keep customers coming back.', '')}
   <div class="router-grid" id="growth">
-    <a class="router-card" href="/roles/crm-executive"><h3>CRM / telecalling executive</h3><p>Follow-ups that draft themselves, waiting on your yes.</p></a>
+    <a class="router-card" href="/roles/crm-executive"><h3>CRM / telecalling executive</h3><p>Follow-ups that send themselves, inside your limits.</p></a>
     <a class="router-card" href="/roles/marketing-manager"><h3>Marketing manager</h3><p>One campaign, every channel, one customer record.</p></a>
     <a class="router-card" href="/roles/ecommerce-manager"><h3>E-commerce / D2C manager</h3><p>Shopify for the website, Jwero for everything Shopify can’t do.</p></a>
   </div>`
@@ -73,9 +73,9 @@ ${L.section(
 )}
 
 ${L.section(
-  `<div id="pattern" style="scroll-margin-top:96px;">${L.sectionHead('THE PATTERN ACROSS EVERY ROLE', 'AI drafts. A person approves.', 'Nobody’s judgment gets automated away. Every role on this page keeps the same shape of change: the repetitive, forgettable, error-prone parts of the job move to a governed AI workforce that waits for a human yes. What’s left is the part that actually needed a person — relationships, craftsmanship, judgment calls — with a record behind it that never forgets. This is true whether you own the business, run the counter, or work the bench: the job doesn’t shrink, the forgettable parts of it do.')}</div>
+  `<div id="pattern" style="scroll-margin-top:96px;">${L.sectionHead('THE PATTERN ACROSS EVERY ROLE', 'AI does the routine work. People make the calls.', 'Nobody’s judgment gets automated away. Every role on this page keeps the same shape of change: the repetitive, forgettable, error-prone parts of the job move to a governed AI workforce that works inside the limits you set, with approval where you want it. What’s left is the part that actually needed a person — relationships, craftsmanship, judgment calls — with a record behind it that never forgets. This is true whether you own the business, run the counter, or work the bench: the job doesn’t shrink, the forgettable parts of it do.')}</div>
   ${L.cards([
-    { title: 'Less retyping, more relationship', text: 'Data entry, follow-up drafting and repetitive replies move to AI staff under approval — freeing the hours for the parts of the job that actually need a person.' },
+    { title: 'Less retyping, more relationship', text: 'Data entry, follow-ups and repetitive replies move to AI staff working inside your limits, freeing the hours for the parts of the job that actually need a person.' },
     { title: 'A record that outlives any one person', text: 'Customer history, job status and stock truth live on the business’s own system — not in a notebook, a phone, or one person’s memory that walks out the door when they do.' },
     { title: 'Skills that compound instead of resetting', text: 'Every role builds a track record inside the system — what worked, what didn’t — instead of starting from scratch with each new hire or each new season.' },
   ])}`

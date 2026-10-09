@@ -36,7 +36,7 @@ const P_ITEMS = [
   ['team', '/products/hr-payroll', 'HR and payroll', 'Biometric attendance, payroll with PF and ESI, incentives and payslips on WhatsApp.'],
   ['team', '/products/training-lms', 'Training and LMS', 'Product and sales training with quizzes, certificates and paths per role.'],
   ['team', '/products/reports', 'Reports and dashboards', 'Ask a question and get the report; owner’s dashboard on your phone.'],
-  ['ai', '/products/ai-sales-agents', 'AI agents and voice', 'AI that replies, follows up and calls in 14 languages including Arabic, Hindi and English, with approvals and caps.'],
+  ['ai', '/products/ai-sales-agents', 'AI agents and voice', 'AI that replies, follows up and calls in 14 languages including Arabic, Hindi and English, with caps and optional approvals.'],
   ['ai', '/ai-calling-for-jewellers', 'AI calling', 'Voice AI for reminders and enquiries, ₹7 a call, up to 8 at once.'],
   ['ai', '/ai-cctv-footfall-analytics-jewellery-showrooms', 'AI CCTV footfall', 'Count visitors with the cameras you have and match footfall to bills.'],
 ];

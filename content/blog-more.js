@@ -302,7 +302,7 @@ module.exports = {
     <li>At check-in on the showroom tablet.</li>
   </ul>
   <h2>Running it without a team</h2>
-  <p>A journey does the remembering: it drafts the message three weeks ahead, in her language, with pieces picked from her record, and waits for approval until you trust it. The sale, if it comes, is traced back to the occasion.</p>
+  <p>A journey does the remembering: it sends the message three weeks ahead, in her language, with pieces picked from her record, with approval first if you want it. The sale, if it comes, is traced back to the occasion.</p>
   <h2>What to measure</h2>
   <p>Occasion messages that got a reply, visits booked, and bills within 30 days of the occasion, against a month without them.</p>`,
     faqs: [

@@ -18,7 +18,7 @@ const mockMail = `
   <div class="mock-kv"><span>💬 WhatsApp</span><strong>Meera K. · “Saturday 5pm works.”</strong></div>
   <div class="mock-kv"><span>✉ orders@yourshop.in</span><strong>Raj Traders · “PO-1182 attached”</strong></div>
   <div class="mock-kv"><span>◎ Instagram</span><strong>@priya.s · “price for this?”</strong></div>
-  <div class="mock-foot">One record per customer, whichever door she used. The email reply drafts from the same record as the WhatsApp one.</div>
+  <div class="mock-foot">One record per customer, whichever door she used. The email reply is written from the same record as the WhatsApp one.</div>
 </div>`;
 
 // Email, rebuilt 2026-10-07. Confirmed by Jwero: A/B testing in email campaigns,
@@ -31,7 +31,7 @@ const EM_FLOW = [
   ['Tracked', 'Opened, and the bridal necklace clicked'],
   ['Bounced', 'One dead address · stopped from future sends'],
   ['Reply', '“Is the necklace still there?” · threads onto her record beside WhatsApp'],
-  ['Booked', 'AI draft approved · a visit booked for Sunday'],
+  ['Booked', 'AI replied automatically · a visit booked for Sunday'],
 ];
 const emFlow = () => `<div class="wa-story" data-wa-story>
   <div class="mkt-card" aria-hidden="true"><p class="pc-tag">EMAIL · CAMPAIGN TO VISIT</p>${EM_FLOW.map(([t, d], k) => `<p class="wa-msg mkt-row" data-i="${k}"><small>${t}</small>${d}</p>`).join('')}<p class="cta-note" style="margin:8px 0 0">Illustrative.</p></div>
@@ -64,7 +64,7 @@ const emFaqs = [
   { q: 'Do I need to buy email hosting separately?', a: 'No. You create mailboxes on your own domain inside Jwero, charged per mailbox. See pricing.' },
   { q: 'Can I keep my existing Google Workspace or Zoho Mail?', a: 'Yes. Connect it, and its email lands in the same inbox as WhatsApp.' },
   { q: 'Will my emails land in spam?', a: 'Mail is signed with DKIM, SPF and DMARC, which inbox providers check, and bounced addresses stop being mailed.' },
-  { q: 'Will the AI answer my email on its own?', a: 'It drafts. Replies wait for approval until you decide which may run alone.' },
+  { q: 'Will the AI answer my email on its own?', a: 'Yes. It replies from her record, inside the limits you set. You choose which kinds of reply need approval first.' },
 ];
 const email = {
   slug: 'products/email',
@@ -92,7 +92,7 @@ ${L.section(`${L.sectionHead('SIX JOBS, ONE INBOX', 'What jewellery email has to
   <article><h3>3. Campaigns that look like you</h3><p>A drag-and-drop designer, AI-written copy, personal fields, and A/B testing.</p><a href="/products/campaigns">Campaigns →</a></article>
   <article><h3>4. Emails that send themselves</h3><p>Abandoned cart, browse, birthday and anniversary emails inside journeys.</p><a href="/products/journeys">Journeys →</a></article>
   <article><h3>5. Know what worked</h3><p>Opens and clicks on her record; unsubscribes enforced and bounces stopped.</p><a href="/products/segmentation">Segments →</a></article>
-  <article><h3>6. Replies and receipts</h3><p>AI drafts replies from her record for your approval; receipts, OTPs and reminders on branded templates.</p><a href="/products/ai-sales-agents">AI agents →</a></article>
+  <article><h3>6. Replies and receipts</h3><p>AI replies automatically from her record, with approval only where you want it; receipts, OTPs and reminders on branded templates.</p><a href="/products/ai-sales-agents">AI agents →</a></article>
 </div>`)}
 
 ${L.section(`${L.sectionHead('THE ARITHMETIC', 'What abandoned carts cost without an email.', 'Your numbers, not ours.')}<div class="callc" data-emc>
@@ -112,7 +112,7 @@ ${L.section(`${L.sectionHead('COMPARE', 'Personal Gmail, Workspace plus an email
 
 ${L.impactGrid([
   { lever: 'A supplier emails a PO', before: 'It sits in someone’s personal Gmail.', after: 'It lands on the supplier’s record beside their WhatsApp thread; the order can be raised from it.', link: { href: '/products/purchase-vendors', label: 'See Purchase & Vendors' } },
-  { lever: 'A customer replies to a receipt', before: 'Nobody sees it for two days.', after: 'It threads onto her record; a reply drafts and waits for approval.', link: { href: '/platform/customer-memory', label: 'See Customer Memory' } },
+  { lever: 'A customer replies to a receipt', before: 'Nobody sees it for two days.', after: 'It threads onto her record; AI replies automatically from it.', link: { href: '/platform/customer-memory', label: 'See Customer Memory' } },
   { lever: 'A festival campaign by email', before: 'A bulk tool with its own list and no opt-out logic.', after: 'A segment from the same record, A/B tested, opens and clicks on each customer.', link: { href: '/products/campaigns', label: 'See Campaigns' } },
 ])}
 
@@ -241,7 +241,7 @@ const mockQuote = `
   <div class="mock-kv"><span>Jhumka pair · 22k · 12.6 g</span><strong>₹1,04,900</strong></div>
   <div class="mock-kv"><span>Making · wastage · GST</span><strong>as per rate card</strong></div>
   <div class="mock-kv"><span>Valid till</span><strong>Sat, 7 days · rate protected</strong></div>
-  <div class="mock-foot">She opens the link, accepts or declines. Acceptance moves her conversion score; a decline drafts a follow-up for your tap.</div>
+  <div class="mock-foot">She opens the link, accepts or declines. Acceptance moves her conversion score; a decline sends a follow-up automatically.</div>
 </div>`;
 
 // Quotations, rebuilt 2026-10-07. Not claimed (unconfirmed): advance payment on
@@ -251,7 +251,7 @@ const Q_FLOW = [
   ['Enquiry', 'Asks on WhatsApp for a 20g temple necklace'],
   ['Drafted', 'Estimate at today’s rate · metal, making, stones line by line'],
   ['Sent', 'Numbered link and PDF on WhatsApp · after your tap'],
-  ['Quiet', 'Two days, no reply · a nudge is drafted for approval'],
+  ['Quiet', 'Two days, no reply · a nudge goes out automatically'],
   ['Revised', 'Version 2 with a lighter design'],
   ['Accepted', 'Accepted from her phone · written to her record'],
   ['Order', 'Converted to a sales order with the same lines'],
@@ -265,7 +265,7 @@ const Q_CMP = [
   ['Making and wastage', 'Varies by who types', 'A formula someone set up', 'Your rules, every time'],
   ['Which price was final', 'Lost in the chat', 'File names', 'Every version numbered'],
   ['Customer decides', 'Replies in chat', 'Prints or forwards', 'Accepts or declines on a link'],
-  ['If she goes quiet', 'Forgotten', 'Forgotten', 'A follow-up drafted for approval'],
+  ['If she goes quiet', 'Forgotten', 'Forgotten', 'A follow-up sent automatically'],
   ['To an order', 'Retyped', 'Retyped', 'Converted with the same lines'],
   ['On her record', 'No', 'No', 'Yes, with the history'],
 ];
@@ -284,7 +284,7 @@ const qFaqs = [
   { q: 'How does a quotation get created?', a: 'From her record, from a catalogue enquiry in one step, or by an automation. Sending always needs your confirm.' },
   { q: 'Can the customer accept it online?', a: 'Yes. She opens the link, sees the numbered quotation with its lines and PDF, and accepts or declines. It is written to her record.' },
   { q: 'Is the rate locked?', a: 'Every quotation has a validity window. Whether the rate is held inside it is your rule.' },
-  { q: 'What happens if she goes quiet?', a: 'A follow-up is drafted after the interval you set and waits for your approval.' },
+  { q: 'What happens if she goes quiet?', a: 'A follow-up goes out automatically after the interval you set. You can have it held for approval if you prefer.' },
   { q: 'Does an accepted quote become an order?', a: 'Yes. It converts to a sales order with the quoted lines.' },
   { q: 'Can a bridal family see one quotation?', a: 'Yes. Everyone opens the same numbered document, so there is no argument about which price was final.' },
 ];
@@ -292,7 +292,7 @@ const quotations = {
   slug: 'products/quotations',
   title: 'Jewellery Quotation & Estimate Software at the Live Rate | Jwero',
   description: 'Jewellery quotation and estimate software: numbered quotes priced at today’s gold rate with your making and wastage rules, sent on WhatsApp or email, accepted from her phone, followed up and converted to an order.',
-  schema: { ...app('Jwero Quotations', 'quotations', 'Jewellery quotation and estimate software: live-rate pricing from the catalogue, numbered versions with a PDF, online acceptance, follow-ups drafted for approval, and conversion to a sales order.'), alternateName: ['Jewellery estimate software', 'Jewellery estimation software', 'Jewellery quotation software'] },
+  schema: { ...app('Jwero Quotations', 'quotations', 'Jewellery quotation and estimate software: live-rate pricing from the catalogue, numbered versions with a PDF, online acceptance, automatic follow-ups, and conversion to a sales order.'), alternateName: ['Jewellery estimate software', 'Jewellery estimation software', 'Jewellery quotation software'] },
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to make a jewellery estimate', step: Q_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Quotations'),
   faqs: qFaqs,
@@ -300,7 +300,7 @@ const quotations = {
 ${L.hero({
   eyebrow: 'JEWELLERY QUOTATIONS AND ESTIMATES',
   h1: 'Jewellery quotation and estimate software: priced at today’s rate, accepted from her phone.',
-  sub: 'No more prices typed into WhatsApp and revised four times. An estimate drafts from your catalogue at today’s rate, goes out as a numbered link and PDF, and comes back accepted, declined or waiting, with the follow-up already drafted.',
+  sub: 'No more prices typed into WhatsApp and revised four times. An estimate drafts from your catalogue at today’s rate, goes out as a numbered link and PDF, and comes back accepted, declined or waiting, with the follow-up sent automatically.',
   primary: { href: '#', label: 'Send me a sample quotation', wa: 'quotations' },
   secondary: { href: '/products/crm', label: 'See the CRM' },
   mock: mockQuote,
@@ -313,7 +313,7 @@ ${L.section(`${L.sectionHead('SIX JOBS, ONE QUOTATION', 'What jewellery quotatio
   <article><h3>2. Made three ways</h3><p>From her record, a catalogue enquiry, or by automation.</p><a href="/products/digital-catalogues">Digital catalogues →</a></article>
   <article><h3>3. Sent as a numbered link</h3><p>A link and PDF on WhatsApp or email, after your tap, with a validity window.</p><a href="/products/whatsapp">WhatsApp →</a></article>
   <article><h3>4. Decided from her phone</h3><p>She accepts or declines online, and it is written to her record.</p><a href="/products/crm">Customer record →</a></article>
-  <article><h3>5. Followed up</h3><p>Quiet after the interval you set? A nudge is drafted and waits for your approval.</p><a href="/products/journeys">Journeys →</a></article>
+  <article><h3>5. Followed up</h3><p>Quiet after the interval you set? A nudge goes out automatically.</p><a href="/products/journeys">Journeys →</a></article>
   <article><h3>6. One version, one order</h3><p>Every revision numbered; the accepted one converts to an order with the same lines.</p><a href="/products/pos">POS and billing →</a></article>
 </div>`)}
 
@@ -483,8 +483,8 @@ const mockReports = `
 // scheduled reports, Zoho Books. Predictive forecasting stays listed as not built.
 const RE_FLOW = [
   ['9:00 am', 'The owner asks: “Which branch holds the most 180-day bangles?”'],
-  ['Drafted', 'AI drafts the source, filters and chart'],
-  ['Pinned', 'Approved, saved, pinned to the morning dashboard on her phone'],
+  ['Built', 'AI builds the source, filters and chart'],
+  ['Pinned', 'Saved and pinned to the morning dashboard on her phone'],
   ['Answer', 'Branch 2 · 43 pieces · ₹38 lakh'],
   ['Action', 'Moved to Branch 1 and offered to matching customers'],
   ['Shared', 'Exported to Excel for the partners · scheduled every Monday'],
@@ -515,7 +515,7 @@ const RE_CMP = [
 const reTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Excel exports</th><th>Reports in billing software</th><th>Jwero</th></tr></thead><tbody>${RE_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
 const RE_HOW = [
   ['Pick five numbers', 'Yesterday’s sales, stock ageing, scheme dues, receivables and walk-ins.'],
-  ['Ask for each one', 'Type the question; AI drafts the report for you to approve.'],
+  ['Ask for each one', 'Type the question; AI builds the report for you.'],
   ['Pin them', 'Add them to the owner’s dashboard, on desktop and phone.'],
   ['Give each role theirs', 'Branch managers see their branch; finance reports stay with finance.'],
   ['Schedule the rest', 'Weekly reports go out on their own; export to Excel when needed.'],
@@ -523,7 +523,7 @@ const RE_HOW = [
 const reFaqs = [
   { q: 'What is MIS for a jewellery business?', a: 'Management information: the reports an owner uses to run the business, such as sales, stock ageing, scheme dues and receivables. Jwero builds them from one record, across every branch.' },
   { q: 'Which reports should a jewellery owner see daily?', a: 'Yesterday’s sales by branch, stock ageing, scheme collections due, receivables, and walk-ins against sales. Pin them to the owner’s dashboard.' },
-  { q: 'Do I need to know how to build reports?', a: 'No. Type the question and AI drafts the report’s source, filters and chart. Adjust, save and pin.' },
+  { q: 'Do I need to know how to build reports?', a: 'No. Type the question and AI builds the report’s source, filters and chart. Adjust, save and pin.' },
   { q: 'Can I see reports on my phone?', a: 'Yes. The owner’s dashboard works on mobile.' },
   { q: 'Can reports be scheduled?', a: 'Yes. Schedule a report and it is delivered on its own, every day, week or month.' },
   { q: 'Can I export to Excel?', a: 'Yes. Excel, CSV and PDF.' },
@@ -534,7 +534,7 @@ const reports = {
   slug: 'products/reports',
   title: 'Jewellery MIS Reports & Dashboard Software | Jwero',
   description: 'Jewellery MIS reports and dashboards: ask a question and AI builds the report, pin it to an owner’s dashboard on your phone, schedule it, export to Excel. Sales, stock ageing, schemes, receivables and staff across every branch.',
-  schema: { ...app('Jwero Reports', 'reports', 'Jewellery MIS reports and dashboards: AI-drafted reports from a plain question, a report builder, role-based dashboards including a mobile owner’s dashboard, scheduled reports, Excel, CSV and PDF exports, over sales, stock ageing, customers, schemes, receivables and staff across branches.'), alternateName: ['Jewellery MIS software', 'Jewellery sales reports', 'Jewellery business dashboard'] },
+  schema: { ...app('Jwero Reports', 'reports', 'Jewellery MIS reports and dashboards: AI-built reports from a plain question, a report builder, role-based dashboards including a mobile owner’s dashboard, scheduled reports, Excel, CSV and PDF exports, over sales, stock ageing, customers, schemes, receivables and staff across branches.'), alternateName: ['Jewellery MIS software', 'Jewellery sales reports', 'Jewellery business dashboard'] },
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up a daily dashboard for a jewellery business', step: RE_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('Reports & Dashboards'),
   faqs: reFaqs,
@@ -551,7 +551,7 @@ ${L.hero({
 ${L.section(`${L.sectionHead('ONE QUESTION, START TO FINISH', 'From a question at 9am to stock moving by noon.', '')}${reFlow()}`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('SIX JOBS, ONE RECORD', 'What jewellery MIS software has to do.', '')}<div class="wa-jobs">
-  <article><h3>1. Ask in a sentence</h3><p>AI turns a plain question into a report you approve.</p><a href="/platform/ai-workforce">AI →</a></article>
+  <article><h3>1. Ask in a sentence</h3><p>AI turns a plain question into a report, ready to save and pin.</p><a href="/platform/ai-workforce">AI →</a></article>
   <article><h3>2. Build your own</h3><p>Pick a source, add filters, choose a chart, preview live, save.</p><a href="/products/erp">ERP →</a></article>
   <article><h3>3. Dashboards for each role</h3><p>The owner’s morning on your phone, the branch manager’s week, the scheme desk’s dues.</p><a href="/products/multi-store">Branches →</a></article>
   <article><h3>4. Jewellery reports built in</h3><p>Stock ageing, dead stock, RFM, scheme collections, receivables and payroll.</p><a href="/products/inventory">Stock ageing →</a></article>

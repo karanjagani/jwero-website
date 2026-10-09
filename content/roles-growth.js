@@ -6,23 +6,23 @@ const BC = (label) => [['Home', '/'], ['Roles', '/roles'], [label]];
 // ---------------------------------------------------------------------------
 
 const crmFaqs = [
-  { q: 'Does AI decide who to call, or do I still choose?', a: 'AI drafts a prioritised call and follow-up list from real data — RFM, scheme due dates, occasions — but you see the reasoning and choose who to actually call. Nothing is dialled or messaged without a person’s yes.' },
-  { q: 'Will AI take over the follow-up messages I send?', a: 'AI drafts WhatsApp follow-ups — win-backs, scheme reminders, occasion greetings — and puts them in an approval queue. You approve, edit or reject each one before it sends.' },
-  { q: 'What happens to my job if most of the drafting is automated?', a: 'The drafting and remembering move to AI staff under your approval. What stays yours is judgment: which relationship needs a phone call instead of a message, what tone fits which customer, and catching the accounts that need a human read the data can’t give.' },
+  { q: 'Does AI decide who to call, or do I still choose?', a: 'AI builds a prioritised call and follow-up list from real data — RFM, scheme due dates, occasions — but you see the reasoning and choose who to actually call. Routine messages and reminder calls go out automatically inside the limits you set, and you choose which kinds need approval.' },
+  { q: 'Will AI take over the follow-up messages I send?', a: 'AI sends routine WhatsApp follow-ups automatically: win-backs, scheme reminders, occasion greetings. You choose which kinds are held for you to approve, edit or reject first.' },
+  { q: 'What happens to my job if most of the follow-up is automated?', a: 'The messaging and remembering move to AI staff working inside your limits. What stays yours is judgment: which relationship needs a phone call instead of a message, what tone fits which customer, and catching the accounts that need a human read the data can’t give.' },
   { q: 'Can I still message someone who isn’t on today’s AI-suggested list?', a: 'Yes — the prioritised list is a starting point, not a restriction. Every customer’s record and history is visible, and you can reach out to anyone, anytime, inside the same WhatsApp inbox.' },
 ];
 
 const crmExecutiveRole = {
   slug: 'roles/crm-executive',
-  title: 'For CRM & Telecalling Staff: Follow-ups, Drafted | Jwero',
-  description: 'How a CRM/telecalling executive works inside Jwero: prioritised outreach, drafted follow-ups, and one customer record instead of a notebook and gut feeling.',
+  title: 'For CRM & Telecalling Staff: Follow-ups, Automated | Jwero',
+  description: 'How a CRM/telecalling executive works inside Jwero: prioritised outreach, automatic follow-ups, and one customer record instead of a notebook and gut feeling.',
   breadcrumbs: BC('CRM / telecalling executive'),
   faqs: crmFaqs,
   body: `
 ${L.hero({
   eyebrow: 'CUSTOMER & GROWTH · CRM EXECUTIVE',
   h1: 'Stop guessing who to call. Start knowing.',
-  sub: 'Today, most follow-up lists are built from memory, a spreadsheet, or whoever comes to mind — and half the base goes untouched between festivals. Jwero drafts who to reach and what to say from real customer data, and waits for you to say yes.',
+  sub: 'Today, most follow-up lists are built from memory, a spreadsheet, or whoever comes to mind — and half the base goes untouched between festivals. Jwero works out who to reach and what to say from real customer data, and sends the routine follow-ups automatically, with approval where you want it.',
   primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
   secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
@@ -38,18 +38,18 @@ ${L.section(
     {
       lever: 'Win-back outreach',
       before: 'Lapsed customers get remembered in bursts, usually around a festival, and the message is the same generic line for everyone.',
-      after: 'A drafted, personalised win-back message sits in your approval queue for each lapsed customer, referencing what they actually bought and when.',
+      after: 'A personalised win-back message goes out automatically to each lapsed customer, referencing what they actually bought and when.',
     },
     {
       lever: 'Scheme reminders',
       before: 'Instalment reminders depend on someone checking a paper register or an Excel sheet and calling manually, one by one.',
-      after: 'Reminders draft themselves from live scheme balances and wait for your approval before going out on WhatsApp.',
+      after: 'Reminders are written from live scheme balances and go out on WhatsApp automatically.',
       link: { href: '/products/gold-schemes', label: 'See gold scheme reminders' },
     },
     {
       lever: 'Occasion outreach',
       before: 'Birthdays and anniversaries are tracked, if at all, in a diary that nobody checks daily.',
-      after: 'Occasion dates on the customer record trigger a drafted greeting or offer for your review — nothing is forgotten because a page wasn’t turned.',
+      after: 'Occasion dates on the customer record trigger a greeting or offer automatically, inside the limits you set — nothing is forgotten because a page wasn’t turned.',
     },
     {
       lever: 'Sharing a price',
@@ -64,14 +64,14 @@ ${L.section(
   `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills this role builds.', '')}
   ${L.cards([
     { title: 'Prioritising with real data, not a gut list', text: 'Reading RFM scores, scheme balances and occasion timing to decide who genuinely needs a call today — instead of starting from a blank page each morning.' },
-    { title: 'Editing AI drafts into your own voice', text: 'Every follow-up arrives as a draft, not a final message — the skill is judging what to keep, what to change, and what tone a specific customer needs.' },
+    { title: 'Setting the voice AI follows', text: 'Routine follow-ups go out automatically, so the skill is setting the tone and rules they follow, and judging which customers need a message written by you.' },
     { title: 'Reading one record instead of six', text: 'Purchase history, scheme status and past conversations sit on one customer card, so a call starts with context instead of an awkward "remind me what you bought."' },
     { title: 'Knowing when a call beats a message', text: 'Some accounts need a human voice, not a WhatsApp text — building the judgment for which relationships those are is what actually moves retention.' },
   ])}`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts. You decide. That doesn’t change.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI does the routine. You decide the rest. That doesn’t change.', '')}
   <p class="lead">What stays yours: deciding who gets called today, judging tone, and catching the customer whose situation the data can’t explain. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
@@ -79,7 +79,7 @@ ${L.section(
   `${L.sectionHead('HOW TO CONTRIBUTE MORE', 'Concrete ways to add value with Jwero.', '')}
   ${L.steps([
     { title: 'Work the prioritised list first, every day', text: 'Start from the RFM- and occasion-ranked list instead of memory — it surfaces the accounts most likely to respond today.' },
-    { title: 'Edit drafts instead of rewriting from scratch', text: 'Use the approval queue to shape AI-drafted follow-ups into your voice — faster than writing each one cold, and every edit sharpens future drafts.' },
+    { title: 'Read the log instead of writing every message', text: 'Read what the AI sent, and hold for approval the kinds of message you want to shape yourself. It is faster than writing each one cold.' },
     { title: 'Flag which win-backs actually convert', text: 'Feed back which win-back messages land and which don’t — that judgment is what the business can’t get from data alone.' },
     { title: 'Use scheme balances to spot at-risk enrolments', text: 'Check the live gold scheme balances for instalments falling behind, and call those accounts personally before a reminder message is enough.' },
   ])}`
@@ -89,7 +89,7 @@ ${L.section(`${L.sectionHead('CRM EXECUTIVE QUESTIONS', 'Straight answers about 
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="roles">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('See the approval queue for yourself.', 'We’ll walk through a real follow-up list — what’s drafted, what you’d approve.', 'roles')}
+${L.ctaBand('See the follow-up list for yourself.', 'We’ll walk through a real follow-up list: what goes out on its own, and what you’d keep for approval.', 'roles')}
 `,
 };
 
@@ -99,15 +99,15 @@ ${L.ctaBand('See the approval queue for yourself.', 'We’ll walk through a real
 
 const marketingFaqs = [
   { q: 'Can I actually tell which channel drove a sale?', a: 'Yes, within what Jwero tracks — WhatsApp, Instagram/Facebook conversations and catalogue shares all sit on the same customer record as the eventual purchase, so you can trace a sale back to the conversation that led to it, instead of guessing.' },
-  { q: 'Does Jwero replace my social media scheduling or ad tools?', a: 'No — Jwero isn’t an ad platform or a content calendar. It’s where WhatsApp and Instagram/Facebook conversations turn into managed, trackable relationships once someone messages in, with AI drafting replies and follow-ups for your approval.' },
-  { q: 'Will AI write my campaigns and captions for me?', a: 'AI drafts customer-facing messages — replies, follow-ups, offers — for your approval; it doesn’t independently plan or launch a campaign. Creative direction and campaign strategy stay yours.' },
+  { q: 'Does Jwero replace my social media scheduling or ad tools?', a: 'No — Jwero isn’t an ad platform or a content calendar. It’s where WhatsApp and Instagram/Facebook conversations turn into managed, trackable relationships once someone messages in, with AI handling replies and follow-ups automatically.' },
+  { q: 'Will AI write my campaigns and captions for me?', a: 'AI sends customer-facing messages automatically: replies, follow-ups, reminders. It doesn’t independently plan or launch a campaign. Creative direction and campaign strategy stay yours.' },
   { q: 'Does Jwero predict which campaigns will perform best?', a: 'No — Jwero doesn’t do predictive forecasting today. What it gives you is a clean, shared record of what actually happened, so you can judge performance yourself instead of relying on siloed platform numbers.' },
 ];
 
 const marketingManagerRole = {
   slug: 'roles/marketing-manager',
   title: 'For Marketing Managers — One Campaign, One Customer Record | Jwero',
-  description: 'One campaign, every channel, one record. How a marketing manager works inside Jwero — provable attribution, governed AI drafting, no more guessing what worked.',
+  description: 'One campaign, every channel, one record. How a marketing manager works inside Jwero — provable attribution, governed AI replies, no more guessing what worked.',
   breadcrumbs: BC('Marketing manager'),
   faqs: marketingFaqs,
   body: `
@@ -125,7 +125,7 @@ ${L.section(
     {
       lever: 'Instagram & WhatsApp enquiries',
       before: 'DMs and WhatsApp messages from a campaign sit unread in separate inboxes, answered late or generically because nobody remembers what the ad promised.',
-      after: 'Instagram, Facebook and WhatsApp land in one inbox, with AI-drafted, context-aware replies waiting for approval — nothing goes cold overnight.',
+      after: 'Instagram, Facebook and WhatsApp land in one inbox, with context-aware AI replies sent automatically — nothing goes cold overnight.',
       link: { href: '/products/instagram-facebook', label: 'See Instagram & Facebook' },
     },
     {
@@ -151,14 +151,14 @@ ${L.section(
   `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills this role builds.', '')}
   ${L.cards([
     { title: 'Provable attribution instead of guessing', text: 'Reading one record where the Instagram DM, the WhatsApp follow-up and the final sale sit together — building the discipline to trust data over instinct when it comes to what worked.' },
-    { title: 'Directing AI drafts, not writing every reply', text: 'The AI workforce drafts first responses and follow-ups for approval — your skill shifts from typing every message to setting the tone, catching what’s off, and approving fast.' },
+    { title: 'Directing AI replies, not writing every one', text: 'The AI workforce sends first responses and follow-ups automatically. Your skill shifts from typing every message to setting the tone and the limits, and catching what’s off.' },
     { title: 'Segmenting on real customer fields', text: 'Building campaigns off occasion dates, RFM tiers and scheme status instead of one-size-fits-all blasts — a sharper skill than list-building from memory.' },
     { title: 'Managing a live-price catalogue', text: 'Running promotions and shares off a catalogue that updates with the gold rate automatically, instead of manually reissuing price sheets every time the rate moves.' },
   ])}`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts the replies. You own the strategy.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI sends the replies. You own the strategy.', '')}
   <p class="lead">What stays yours: campaign strategy, creative direction, and which segment gets which offer — Jwero gives you a clean record of what performed, not a prediction. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
@@ -167,7 +167,7 @@ ${L.section(
   ${L.steps([
     { title: 'Check attribution before planning next month’s spend', text: 'Trace last month’s sales back through the customer record to see which channel and campaign actually led there, before deciding where to push next.' },
     { title: 'Build segments off real fields, not guesses', text: 'Use occasion, RFM and scheme-status fields on the customer record to target campaigns — sharper than a single blast to the whole list.' },
-    { title: 'Review the approval queue like a brand editor', text: 'Treat AI-drafted replies and follow-ups as first drafts to sharpen for tone and accuracy, not messages to rubber-stamp.' },
+    { title: 'Read the action log like a brand editor', text: 'Read what the AI sent for tone and accuracy, adjust its instructions when something is off, and hold any kind of message for approval if you want to.' },
     { title: 'Keep the catalogue current as the face of every campaign', text: 'Point every campaign at the live-price catalogue link instead of a static price list, so nothing you send goes stale.' },
   ])}`
 , { tone: 'tint' })}
@@ -188,7 +188,7 @@ const ecommerceFaqs = [
   { q: 'Do I have to leave Shopify or WooCommerce?', a: 'No — Jwero connects to Shopify, WooCommerce and Unicommerce and syncs stock and orders both ways. It adds channels and live-rate pricing on top of the website you already run; it doesn’t replace it.' },
   { q: 'Does stock sync automatically between my store and Jwero?', a: 'Yes — the Shopify/WooCommerce/Unicommerce connectors sync inventory and orders both ways, so a sale on either side reflects everywhere without manual reconciliation.' },
   { q: 'Can my website show live gold-rate pricing?', a: 'Jwero’s catalogue and pricing follow the live metal rate — something a generic ecommerce platform doesn’t do natively. That pricing logic sits on top of your connected website.' },
-  { q: 'Will this replace my role managing the website?', a: 'No — Jwero handles the connections, memory and messaging layer around your website. Merchandising decisions, website design and channel strategy stay with you; AI only drafts customer-facing messages for your approval.' },
+  { q: 'Will this replace my role managing the website?', a: 'No — Jwero handles the connections, memory and messaging layer around your website. Merchandising decisions, website design and channel strategy stay with you; AI only handles customer-facing messages, inside the limits you set.' },
 ];
 
 const ecommerceManagerRole = {
@@ -223,12 +223,12 @@ ${L.section(
     {
       lever: 'DMs and WhatsApp enquiries',
       before: 'Instagram DMs and WhatsApp messages from ad traffic sit in separate inboxes, often answered too late to close the sale.',
-      after: 'Both channels land in one inbox with AI-drafted, gold-rate-accurate replies waiting for your approval.',
+      after: 'Both channels land in one inbox with gold-rate-accurate AI replies sent automatically.',
     },
     {
       lever: 'Cart abandonment and win-back',
       before: 'Abandoned carts get, at best, a generic automated discount email — with no memory of who the customer is.',
-      after: 'A drafted, personal WhatsApp follow-up references the actual cart and the customer’s history, waiting in the approval queue.',
+      after: 'A personal WhatsApp follow-up references the actual cart and the customer’s history, and goes out automatically.',
     },
   ])}`
 )}
@@ -238,13 +238,13 @@ ${L.section(
   ${L.cards([
     { title: 'Omnichannel inventory discipline', text: 'Trusting one synced stock number across website, WhatsApp and counter, instead of reconciling three separate counts by hand at the end of the day.' },
     { title: 'Managing rate-linked pricing at scale', text: 'Understanding how live gold-rate pricing flows into a synced website — a skill a generic ecommerce manager never needs, but a jewellery one does.' },
-    { title: 'Turning DMs into a managed, memoried channel', text: 'Directing AI-drafted replies to Instagram and WhatsApp enquiries under approval, so conversational commerce runs as a real channel, not an inbox nobody owns.' },
+    { title: 'Turning DMs into a managed, memoried channel', text: 'Directing automatic AI replies to Instagram and WhatsApp enquiries, so conversational commerce runs as a real channel, not an inbox nobody owns.' },
     { title: 'Reading one customer across every touchpoint', text: 'Seeing a buyer’s Shopify order, WhatsApp chat and Instagram DM as one history — sharper judgment on what actually drives repeat purchase.' },
   ])}`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts the replies. You own the channel strategy.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI sends the replies. You own the channel strategy.', '')}
   <p class="lead">What stays yours: merchandising, website design, and channel strategy — Jwero just removes the manual reconciliation between your website and your messaging channels. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
@@ -253,7 +253,7 @@ ${L.section(
   ${L.steps([
     { title: 'Connect Shopify/WooCommerce fully, not partially', text: 'Get the connector syncing both stock and orders — partial syncs are where the reconciliation gaps that eat your day come from.' },
     { title: 'Let catalogue pricing follow the live rate', text: 'Stop manually repricing after every gold-rate move — let the catalogue’s live pricing carry through to the connected website.' },
-    { title: 'Treat the approval queue as your DM front line', text: 'Review AI-drafted Instagram and WhatsApp replies quickly during the day — the faster the approval, the less an ad-driven enquiry goes cold.' },
+    { title: 'Treat the inbox as your DM front line', text: 'Check the AI’s Instagram and WhatsApp replies during the day, and clear anything you hold for approval quickly, so an ad-driven enquiry never goes cold.' },
     { title: 'Use the one-record view to judge channel ROI', text: 'Trace which channel a repeat customer actually came from using the shared record, before deciding where to put the next ad rupee.' },
   ])}`
 , { tone: 'tint' })}

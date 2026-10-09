@@ -6,23 +6,23 @@ const BC = (label) => [['Home', '/'], ['Roles', '/roles'], [label]];
 // ---------------------------------------------------------------------------
 
 const storeManagerFaqs = [
-  { q: 'Does this replace my job, or just my paperwork?', a: 'Just the paperwork and the guesswork. AI staff draft follow-ups, reminders and reports; you and your team approve what goes out. Deciding how to run the floor, who to coach, and which customer gets a call from you personally — that stays entirely yours.' },
+  { q: 'Does this replace my job, or just my paperwork?', a: 'Just the paperwork and the guesswork. AI staff handle follow-ups, reminders and reports on their own; you and your team choose which actions need approval. Deciding how to run the floor, who to coach, and which customer gets a call from you personally — that stays entirely yours.' },
   { q: 'Can I see what every branch or counter is doing without calling around?', a: 'Yes — stock, sales and staff activity across branches roll up into one view, with per-branch exceptions routed through approvals so you keep control without needing to phone each store.' },
   { q: 'How much of my day does this actually save?', a: 'It depends on your store, but the pattern is consistent: less time spent re-asking staff "what happened today" or chasing enquiries that went cold, more time spent on the floor with customers and on coaching your team.' },
-  { q: 'Do I need to be technical to use this?', a: 'No — the daily view is built around a plain-language report and an approval queue, not a dense dashboard. If you can use WhatsApp, you can run the store view.' },
+  { q: 'Do I need to be technical to use this?', a: 'No — the daily view is built around a plain-language report and a short list of what needs you, not a dense dashboard. If you can use WhatsApp, you can run the store view.' },
 ];
 
 const storeManager = {
   slug: 'roles/store-manager',
   title: 'Store Manager — Run the Floor on Today’s Numbers | Jwero',
-  description: 'How Jwero changes a store manager’s day: live stock and sales visibility, AI-drafted follow-ups awaiting approval, and a weekly report instead of guessing.',
+  description: 'How Jwero changes a store manager’s day: live stock and sales visibility, automatic AI follow-ups, and a weekly report instead of guessing.',
   breadcrumbs: BC('Store manager'),
   faqs: storeManagerFaqs,
   body: `
 ${L.hero({
   eyebrow: 'FRONTLINE & SALES · STORE MANAGER',
   h1: 'Run the floor on today’s numbers, not yesterday’s guesswork.',
-  sub: 'A store manager’s day is usually spent piecing together what happened — who walked in, what sold, which enquiry went cold — from memory, a register and a WhatsApp group. Jwero puts that picture in front of you each morning, and hands the follow-through to a governed AI workforce that waits for your team’s approval.',
+  sub: 'A store manager’s day is usually spent piecing together what happened — who walked in, what sold, which enquiry went cold — from memory, a register and a WhatsApp group. Jwero puts that picture in front of you each morning, and hands the follow-through to a governed AI workforce that works inside the limits you set.',
   primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -32,7 +32,7 @@ ${L.section(
   ${L.impactGrid([
     { lever: 'Opening the store', before: 'You start the day not knowing what closed yesterday until the accountant pulls the register, or you call each counter.', after: 'A plain-language morning report shows yesterday’s sales, enquiries and stock movement before you unlock the door.', link: { href: '/products/crm', label: 'See the CRM' } },
     { lever: 'A customer walks in mid-afternoon', before: 'Your sales staff greet her cold — no memory of her last visit, her scheme balance or what she was shown before.', after: 'Her record — past purchases, scheme status, taste — is one tap away for whoever’s on the floor, before the conversation starts.' },
-    { lever: 'A WhatsApp enquiry comes in after closing', before: 'It sits unread until morning, and by then the customer has usually asked someone else.', after: 'AI staff draft a priced reply at today’s rate overnight; a person on your team approves it first thing, so nothing goes out unchecked.', link: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' } },
+    { lever: 'A WhatsApp enquiry comes in after closing', before: 'It sits unread until morning, and by then the customer has usually asked someone else.', after: 'AI staff send a priced reply at today’s rate overnight, inside the limits you set; it is in the log when you open the store.', link: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' } },
     { lever: 'Checking on other branches', before: 'You call each store manager individually to ask what moved and what’s stuck on the shelf.', after: 'Stock, ageing and sales roll up across branches into one view, with exceptions flagged instead of buried in a phone call.', link: { href: '/products/multi-store', label: 'See multi-store' } },
     { lever: 'Knowing what actually happened on the floor today', before: 'You piece together footfall and walkouts from what staff remember to mention, hours after the moment has passed.', after: 'A live floor view shows who’s in and who walked out without buying, with rule-based flags on the ones worth checking; you catch it in the daily brief instead of hearing it secondhand.', link: { href: '/products/showroom', label: 'See Showroom Intelligence' } },
   ])}`
@@ -43,13 +43,13 @@ ${L.section(
   ${L.cards([
     { title: 'Reading a store like a P&L, not a gut feeling', text: 'Live valuation, ageing bands and fast/slow-mover data turn "I think we’re doing okay" into a number you can act on daily.' },
     { title: 'Coaching on evidence, not anecdotes', text: 'Which staff member’s follow-ups convert, which enquiries stall — visible on the record, so coaching conversations start from facts.' },
-    { title: 'Approval judgment', text: 'Reviewing AI-drafted replies and offers before they go out builds a sharper eye for what a customer needs to hear versus what reads as generic.' },
+    { title: 'Judgment on what AI sends', text: 'Reading the log of AI replies, and approving the kinds you choose to hold, builds a sharper eye for what a customer needs to hear versus what reads as generic.' },
     { title: 'Cross-branch operating sense', text: 'Seeing how your store compares to sister branches on the same live data builds the kind of judgment that usually takes years of head-office meetings to pick up.' },
   ])}`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts. You and your team approve. That doesn’t change.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI does the routine work. You and your team set the limits. That doesn’t change.', '')}
   <p class="lead">What stays yours: reading the floor, deciding how to handle a difficult customer, and coaching staff. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
@@ -57,7 +57,7 @@ ${L.section(
   `${L.sectionHead('HOW TO CONTRIBUTE MORE', 'Concrete ways to add value using what Jwero already gives you.', '')}
   ${L.steps([
     { title: 'Start each day with the morning report', text: 'Use the plain-language report to walk the floor with a plan instead of finding out what happened as it happens.' },
-    { title: 'Review the approval queue as a coaching tool', text: 'When you edit a drafted reply, that’s a moment to show a staff member what "good" looks like — not just a task to clear.' },
+    { title: 'Use the action log as a coaching tool', text: 'When you read or correct an AI reply, that’s a moment to show a staff member what "good" looks like — not just a task to clear.' },
     { title: 'Use ageing and dead-stock visibility to steer buying conversations', text: 'Bring the fast/slow-mover data to purchase discussions instead of relying on memory of what "usually sells".' },
     { title: 'Set your branch’s approval rules deliberately', text: 'Decide what needs your personal sign-off versus what your senior staff can approve — multi-store exceptions route through this, so use it to delegate with control, not blindly.' },
   ])}`
@@ -67,7 +67,7 @@ ${L.section(`${L.sectionHead('STORE MANAGER QUESTIONS', 'Straight answers about 
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="roles">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('See a store manager’s day, end to end.', 'We’ll walk you through the morning report and the approval queue on your own numbers.', 'roles')}
+${L.ctaBand('See a store manager’s day, end to end.', 'We’ll walk you through the morning report and the AI action log on your own numbers.', 'roles')}
 `,
 };
 
@@ -76,23 +76,23 @@ ${L.ctaBand('See a store manager’s day, end to end.', 'We’ll walk you throug
 // ---------------------------------------------------------------------------
 
 const salesAssociateFaqs = [
-  { q: 'Will I stop talking to customers because AI handles the chat?', a: 'No — AI staff draft replies and follow-ups; a person on your team, often you, approves before anything reaches a customer. The conversations that matter — in-store, on a call, closing a sale — stay yours.' },
+  { q: 'Will I stop talking to customers because AI handles the chat?', a: 'No. AI staff send routine replies and follow-ups on their own, inside limits your store sets. The conversations that matter — in-store, on a call, closing a sale — stay yours.' },
   { q: 'Do I need to remember every customer myself?', a: 'No — that’s the point of the customer record. Occasions, scheme balances and taste preferences are one tap away, so you walk up already knowing her instead of relying on memory.' },
   { q: 'What happens to my personal WhatsApp customer relationships if I leave?', a: 'The conversation history and customer record live on the business’s system, not a personal phone — which protects the business, and also means a new associate can pick up context instead of starting cold.' },
-  { q: 'Will AI take credit for sales I influenced?', a: 'The action log records what AI drafted and who approved it, so a sale that started as an AI-drafted reply you approved and then closed in person is visible as your work, not hidden inside a bot.' },
+  { q: 'Will AI take credit for sales I influenced?', a: 'The action log records what AI did and what you did, so a sale that started as an AI reply and that you closed in person is visible as your work, not hidden inside a bot.' },
 ];
 
 const salesAssociate = {
   slug: 'roles/sales-associate',
   title: 'Sales Associate — Walk Up Already Knowing the Customer | Jwero',
-  description: 'How Jwero changes a sales associate’s day: customer memory at the counter, AI-drafted follow-ups awaiting approval, and selling backed by data, not guesswork.',
+  description: 'How Jwero changes a sales associate’s day: customer memory at the counter, automatic AI follow-ups, and selling backed by data, not guesswork.',
   breadcrumbs: BC('Sales associate'),
   faqs: salesAssociateFaqs,
   body: `
 ${L.hero({
   eyebrow: 'FRONTLINE & SALES · SALES ASSOCIATE',
   h1: 'Walk up to every customer already knowing them.',
-  sub: 'Counter and floor staff usually greet a returning customer cold — no memory of her last visit, what she was shown, or what she’s saving toward. Jwero puts that on the record before you say hello, and hands the tedious follow-up work to AI staff that draft, but never send, without your yes.',
+  sub: 'Counter and floor staff usually greet a returning customer cold — no memory of her last visit, what she was shown, or what she’s saving toward. Jwero puts that on the record before you say hello, and hands the tedious follow-up work to AI staff that work inside the limits your store sets.',
   primary: { href: '#', label: 'Show me my morning in Jwero', wa: 'roles' },
   secondary: { href: '#', label: 'Send this page to your owner', share: 'A page about how Jwero would change my day at the counter — worth two minutes:' },
 })}
@@ -102,7 +102,7 @@ ${L.section(
   ${L.impactGrid([
     { lever: 'A regular customer walks in', before: 'You try to recall her last visit from memory — what she liked, what she asked about, whether she’s due on a scheme instalment.', after: 'Her record — purchase history, taste, scheme balance, occasions — is on screen before the conversation starts.' },
     { lever: 'Quoting a price', before: 'You estimate or walk to a calculator while she waits, and hope the making-charge math is right.', after: 'Live-rate pricing on the catalogue means the price you quote is today’s rate, calculated the same way every time.', link: { href: '/products/catalog', label: 'See the catalogue' } },
-    { lever: 'She says "let me think about it" and leaves', before: 'Without a system, following up depends on you remembering to message her — and most associates don’t.', after: 'A follow-up drafts itself on a schedule; you review and approve it, so the enquiry doesn’t just die in a notebook.', link: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' } },
+    { lever: 'She says "let me think about it" and leaves', before: 'Without a system, following up depends on you remembering to message her — and most associates don’t.', after: 'A follow-up goes out on a schedule automatically, so the enquiry doesn’t just die in a notebook.', link: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' } },
     { lever: 'Sharing designs after hours', before: 'You send photos from your personal phone, and the conversation — and the customer relationship — lives there, not with the business.', after: 'A shareable live catalogue link sends the same designs at today’s price from the business’s system, so the relationship is on the record, not stuck in your phone.' },
   ])}`
 )}
@@ -112,13 +112,13 @@ ${L.section(
   ${L.cards([
     { title: 'Consultative selling backed by customer data', text: 'Knowing her taste, occasion and budget before you speak turns the pitch into a recommendation, not a guess.' },
     { title: 'Live-rate pricing fluency', text: 'Quoting confidently at today’s gold rate — with making charges shown, not estimated — builds trust faster than a hesitant calculation.' },
-    { title: 'Follow-through without relying on memory', text: 'Approving drafted follow-ups instead of trying to remember every open enquiry builds a habit of closing loops, not losing them.' },
-    { title: 'A track record that travels with you', text: 'Approved conversations and closed sales sit on your record inside the system — evidence of your selling skill that outlasts any one shift or store.' },
+    { title: 'Follow-through without relying on memory', text: 'Automatic follow-ups instead of trying to remember every open enquiry mean loops get closed, not lost.' },
+    { title: 'A track record that travels with you', text: 'Conversations and closed sales sit on your record inside the system — evidence of your selling skill that outlasts any one shift or store.' },
   ])}`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI drafts the message. You close the sale.', '')}
+  `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'AI sends the follow-up. You close the sale.', '')}
   <p class="lead">What stays entirely human: reading a customer’s hesitation in person, building trust across a counter, and closing the sale. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
@@ -126,9 +126,9 @@ ${L.section(
   `${L.sectionHead('HOW TO CONTRIBUTE MORE', 'Concrete ways to sell more using what Jwero already gives you.', '')}
   ${L.steps([
     { title: 'Check the customer record before every greeting', text: 'A tap at the counter shows her occasion, scheme balance and taste — use it to open the conversation with relevance, not small talk.' },
-    { title: 'Edit drafted follow-ups instead of ignoring them', text: 'A drafted message waiting for your approval is a head start, not a finished product — add the detail only you know from meeting her.' },
+    { title: 'Add what only you know to the record', text: 'AI follow-ups are written from her record, so note the detail only you know from meeting her and the next message carries it.' },
     { title: 'Share the live catalogue instead of phone photos', text: 'A curated catalogue link keeps the price current and the interaction on the business record, protecting the relationship you built.' },
-    { title: 'Close the loop on approvals promptly', text: 'A follow-up sitting unapproved is an enquiry going cold — treat the queue as part of the sales cycle, not admin to get to later.' },
+    { title: 'Clear anything held for approval promptly', text: 'If your store holds some messages for approval, one sitting unapproved is an enquiry going cold. Treat the queue as part of the sales cycle, not admin to get to later.' },
   ])}`
 , { tone: 'tint' })}
 

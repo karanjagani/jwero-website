@@ -17,7 +17,7 @@ ${L.section(
   `${L.sectionHead('WHAT WE BELIEVE', 'Three convictions behind every feature.', '')}
   ${L.cards([
     { title: 'Memory is the moat', text: 'Jewellery is a relationship trade, and relationships run on memory. We industrialise that superpower so it works at any scale — one counter or a hundred branches.' },
-    { title: 'AI must ask first', text: 'In a trust-first trade, ungoverned automation is a liability. Approval queues, caps and kill switches are not features — they are the product philosophy.' },
+    { title: 'AI must work inside limits', text: 'In a trust-first trade, ungoverned automation is a liability. The AI does the work on its own, and caps, quiet hours, a kill switch and approval where you want it are the product philosophy, not add-ons.' },
     { title: 'Honesty compounds', text: 'We publish what is not built yet on a public roadmap. A customer won by overpromise is a churn statistic waiting to happen.' },
   ])}`
 )}

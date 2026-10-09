@@ -465,7 +465,7 @@ function intelligence(opts = {}) {
         <div><dt>Who</dt><dd>41 ready segments in 13 families — high-intent enquiry, bridal enquiry, abandoned cart, viewers who never bought, VIP at risk, scheme maturing.</dd></div>
         <div><dt>What</dt><dd>Six plays — nurture, engage, upsell VIP, retain, reactivate, win back — with an expected outcome and ₹ potential on every record, and a taste profile from her very first purchase.</dd></div>
         <div><dt>When</dt><dd>Her best hour on her best channel; the shop’s windows re-learnt from real reads and replies; one fatigue cap across every send engine.</dd></div>
-        <div><dt>How</dt><dd>300+ ready journeys and 30 personalisation fields draft the message. Nothing sends until you widen what may run alone.</dd></div>
+        <div><dt>How</dt><dd>300+ ready journeys and 30 personalisation fields draft the message. It goes out on its own, and you choose which kinds need your approval first.</dd></div>
       </dl>
     </div>
   </div>
@@ -483,7 +483,7 @@ function intelligence(opts = {}) {
           <div class="intel-kv"><span>Segment</span><strong data-out="segment">New customer · listening</strong></div>
           <div class="intel-kv"><span>Play</span><strong data-out="play">Nurture — no send yet</strong></div>
           <div class="intel-kv"><span>Channel · hour</span><strong data-out="when">WhatsApp · 18:00–20:00</strong></div>
-          <div class="intel-kv"><span>Waiting for your tap</span><strong data-out="draft">Nothing. Jwero keeps listening.</strong></div>
+          <div class="intel-kv"><span>What Jwero does next</span><strong data-out="draft">Nothing. Jwero keeps listening.</strong></div>
         </div>
       </div>
     </div>
@@ -533,12 +533,12 @@ function governanceStrip() {
   return section(
     `${sectionHead(
       'TWO SPEEDS, YOUR CHOICE',
-      'Let AI run on its own. Or make it ask you first.',
-      'Some work you never want to see again. Some you always want to see. You decide which is which — agent by agent, branch by branch.'
+      'AI runs on its own. You choose where it asks first.',
+      'Everything runs on its own unless you say otherwise. Flip any kind of work to “ask me first”, agent by agent, branch by branch.'
     )}
     <div class="speeds">
       <div class="speed speed-run">
-        <p class="speed-title">Let AI run</p>
+        <p class="speed-title">Runs on its own</p>
         <ul>
           <li data-mode="run"><span>Posting new designs to your catalogue</span><button type="button" class="speed-toggle" aria-pressed="true"><i></i><b>Runs</b><b>Asks</b></button></li>
           <li data-mode="run"><span>Answering price questions at midnight</span><button type="button" class="speed-toggle" aria-pressed="true"><i></i><b>Runs</b><b>Asks</b></button></li>
@@ -547,7 +547,7 @@ function governanceStrip() {
         </ul>
       </div>
       <div class="speed speed-ask">
-        <p class="speed-title">Ask me first</p>
+        <p class="speed-title">Asks first, because you said so</p>
         <ul>
           <li data-mode="ask"><span>Any discount beyond the limit you set</span><button type="button" class="speed-toggle" aria-pressed="false"><i></i><b>Runs</b><b>Asks</b></button></li>
           <li data-mode="ask"><span>Messages to your biggest families</span><button type="button" class="speed-toggle" aria-pressed="false"><i></i><b>Runs</b><b>Asks</b></button></li>
@@ -556,11 +556,11 @@ function governanceStrip() {
         </ul>
       </div>
     </div>
-    <p class="speed-set"><span class="speed-tally" aria-live="polite"><b data-run>4</b> run on their own · <b data-ask>4</b> wait for you.</span> Set it once, per agent, per branch. Change your mind any time.</p>
+    <p class="speed-set"><span class="speed-tally" aria-live="polite"><b data-run>4</b> run on their own · <b data-ask>4</b> ask you first.</span> Set it once, per agent, per branch. Change your mind any time.</p>
     <div class="speed-guards">
       <div><strong>Stop anything</strong><p>One tap halts one agent, one action type, one branch, one channel, or everything.</p></div>
       <div><strong>Quiet hours</strong><p>Your business stays silent when you want it silent, inside daily caps you set.</p></div>
-      <div><strong>Full record</strong><p>Every action, and who approved it, kept on file.</p></div>
+      <div><strong>Full record</strong><p>Every action kept on file, with who approved it where approval was asked for.</p></div>
       <div><strong>Your data</strong><p>Your customers stay yours. Your books stay in Tally.</p></div>
     </div>
     <p class="speed-close">Always in charge. Never in the way.</p>`,
@@ -576,7 +576,7 @@ function agentLoop() {
     ['01', 'Senses', 'Every enquiry, rate change and missed instalment, across every branch and channel.'],
     ['02', 'Decides', 'Who to answer first, what to offer, what it is worth — against her whole history.'],
     ['03', 'Drafts', 'The reply, the price, the follow-up, the campaign. Written and ready.'],
-    ['04', 'Runs or asks', 'Sends on its own, or waits for your nod. You choose, agent by agent.'],
+    ['04', 'Runs on its own', 'Sends on its own. It asks first only where you tell it to, agent by agent.'],
     ['05', 'Executes', 'WhatsApp, Instagram, website, phone. In seconds, not mornings.'],
     ['06', 'Learns', 'What worked goes back on her record. The next decision starts better.'],
   ];
@@ -710,7 +710,7 @@ function verdictBox(chooseThemLabel, chooseThemText, chooseJweroText) {
 function switchForBlock() {
   return cards([
     { title: 'Memory', text: 'A reply, a price and a follow-up that already know the customer — not a blank thread or a record nobody else can see.' },
-    { title: 'Governed AI', text: 'Approval queues, daily caps, quiet hours and a five-scope kill switch — not a bot that fires without oversight, or none at all.' },
+    { title: 'Governed AI', text: 'AI that works on its own inside daily caps and quiet hours, approval where you choose, and a five-scope kill switch — not a bot that fires without oversight, or none at all.' },
     { title: 'One system', text: 'The catalogue, the CRM, the inbox and the operation share state — no exporting between tools to answer a simple question.' },
   ]);
 }
@@ -909,14 +909,18 @@ function honestGapsBlock(items) {
 
 // Reusable CSS-built product mocks (no images, no fantasy dashboards).
 const mockApproval = `
-<div class="mock" role="img" aria-label="Illustration of the Jwero approval queue">
-  <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">${mark('mark-xs')}Approval queue · 3 waiting</span></div>
+<div class="mock" role="img" aria-label="Illustration of the Jwero AI activity list">
+  <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">${mark('mark-xs')}AI workforce · today</span></div>
   <div class="mock-row">
     <div class="mock-msg"><strong>Anniversary follow-up · Sofia M.</strong><br>“It has been a year since the emerald ring — we would love to see you both again…”</div>
-    <div class="mock-actions"><button class="chip chip-go" type="button">Approve</button><button class="chip" type="button">Edit</button></div>
+    <div class="mock-actions"><span class="chip">Sent · 6:12 pm</span></div>
   </div>
   <div class="mock-row">
     <div class="mock-msg"><strong>Instalment reminder · R. Shah</strong><br>“A gentle reminder: month 7 of 11 on your gold plan is due Friday…”</div>
+    <div class="mock-actions"><span class="chip">Sent · 6:30 pm</span></div>
+  </div>
+  <div class="mock-row">
+    <div class="mock-msg"><strong>Reply to a complaint · held for you</strong><br>You asked to see complaints before they are answered.</div>
     <div class="mock-actions"><button class="chip chip-go" type="button">Approve</button><button class="chip" type="button">Edit</button></div>
   </div>
   <div class="mock-foot">Daily cap 40 · Quiet hours on · Kill switch armed</div>
@@ -932,7 +936,7 @@ const mockChat = `
 <div class="mock" role="img" aria-label="Illustration of a WhatsApp sales conversation">
   <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">WhatsApp · 11:42 pm</span></div>
   <div class="bubble in">Do you have this bangle in 22k, around 18 grams?</div>
-  <div class="bubble out">Yes — two designs in 22k near 18 g. At today’s rate: full price with making charges below. Shall I hold one for a store visit?<span class="bubble-tag">${mark('mark-xs')}Drafted by AI staff · sent after approval</span></div>
+  <div class="bubble out">Yes — two designs in 22k near 18 g. At today’s rate: full price with making charges below. Shall I hold one for a store visit?<span class="bubble-tag">${mark('mark-xs')}Sent by AI staff · from her record</span></div>
   <div class="bubble in">Saturday 5pm works.</div>
   <div class="mock-foot">Enquiry → priced reply → appointment. While the store slept.</div>
 </div>`;
@@ -1324,10 +1328,10 @@ function stackMerge(only) {
 
 // The home hero: one question, one action, and the piece as the visual.
 // The whole product as one journey in seven stages, from the first enquiry to the closed books.
-// One stage shows at a time: what is in it, what the AI does there, and your approval. All seven
+// One stage shows at a time: what is in it, what the AI does there, and that it runs on its own. All seven
 // stages are in the page as links and text, so nothing is hidden from search.
 const HERO_STAGES = [
-  ['megaphone', 'Attract', '', [['Website and apps', '/products/ecommerce'], ['Ads Manager', '/products/ads-manager'], ['Social media', '/products/social-media'], ['Google Shopping and Meta', '/products/marketplaces'], ['Visitor tracking across channels', '/products/optimize']], 'AI plans the campaign and drafts the posts and ads'],
+  ['megaphone', 'Attract', '', [['Website and apps', '/products/ecommerce'], ['Ads Manager', '/products/ads-manager'], ['Social media', '/products/social-media'], ['Google Shopping and Meta', '/products/marketplaces'], ['Visitor tracking across channels', '/products/optimize']], 'AI plans the campaign and makes the posts and ads'],
   ['chat', 'Engage', '', [['WhatsApp, Instagram and calls', '/products/whatsapp'], ['AI sales agents', '/products/ai-sales-agents'], ['CRM', '/products/crm'], ['Quotations', '/products/quotations']], 'AI replies to the enquiry at today’s rate'],
   ['till', 'Sell', '', [['Walk-in counter', '/products/showroom'], ['POS and billing', '/products/pos'], ['Live-rate catalogue', '/products/catalog'], ['Payments and old gold', '/products/pos'], ['Gold schemes', '/products/gold-schemes']], 'AI follows up walkouts and scheme reminders'],
   ['heart', 'Retain', '', [['Loyalty and referrals', '/products/loyalty'], ['Personalisation and retargeting', '/products/segmentation'], ['Marketing automation and journeys', '/products/journeys'], ['Repairs and after-sales', '/products/repairs-service']], 'AI reminds her before the occasion and wins back quiet customers'],
@@ -1343,7 +1347,7 @@ function heroRail() {
   <div class="hrail-panels">${HERO_STAGES.map(([, n, , items, ai, ok], i) => `
     <div class="hrail-panel${i === 0 ? ' is-on' : ''}" role="tabpanel" id="hrail-p-${i}" aria-labelledby="hrail-t-${i}" data-hrail-panel="${i}">
       <p class="hrail-chips">${items.map(([t, h]) => `<a href="${h}">${t}</a>`).join('')}</p>
-      <p class="hrail-ai"><span class="hrail-ai-does">${icon('sparkle')}${ai}</span><span class="hrail-ai-ok">${icon('check')}${ok || 'You approve'}</span></p>
+      <p class="hrail-ai"><span class="hrail-ai-does">${icon('sparkle')}${ai}</span><span class="hrail-ai-ok">${icon('check')}${ok || 'Runs on its own'}</span></p>
     </div>`).join('')}
   </div>
 </div>`;
@@ -1409,7 +1413,7 @@ function gemStage2(opts = {}) {
     <div class="gem2-daystats">
       <p title="Everything that happened across the business today"><b data-gem2-dn="all">0</b><span>events</span></p>
       <p class="k-a" title="Done by the system on its own: a rule, a posting or a flag"><b data-gem2-dn="a">0</b><span>by system</span></p>
-      <p class="k-q" title="Drafted by AI and waiting for a person to say yes"><b data-gem2-dn="q">0</b><span>await a yes</span></p>
+      <p class="k-q" title="Done by AI on its own, inside the limits you set"><b data-gem2-dn="q">0</b><span>by AI</span></p>
       <p class="k-t" title="Done by your team, on the same record"><b data-gem2-dn="t">0</b><span>by team</span></p>
     </div>
   </div>
@@ -1506,7 +1510,7 @@ function personaSwitch(entries, productName) {
 // the copy here frames it as a try-it, never as a recorded result.
 const SIMS = {
   rate: { eyebrow: 'TRY IT · LIVE RATE', title: 'Move the gold rate. Watch every price follow.', lead: 'Nine prices on three channels, one rule. Drag the rate and see what a jeweller repricing by hand would have to retype.', cta: 'Show me this on my own catalogue' },
-  approve: { eyebrow: 'TRY IT · THE MORNING QUEUE', title: 'Run the AI workforce for a minute.', lead: 'Drafts arrive the way customers do. Approve, edit, or decide an action type may run alone — and stop everything with one tap.', cta: 'Show me a real queue' },
+  approve: { eyebrow: 'TRY IT · THE MORNING QUEUE', title: 'Run the AI workforce for a minute.', lead: 'Work arrives the way customers do. Most of it runs on its own. Here you choose which kinds wait for you, and stop everything with one tap.', cta: 'Show me a real queue' },
   memory: { eyebrow: 'TRY IT · CUSTOMER MEMORY', title: 'A customer messages. What does the record already know?', lead: 'Pick a customer and watch her record fill in before anyone types a reply.', cta: 'Send me a sample customer record', note: 'An illustrative customer journey showing how Jwero Customer Memory works in practice.' },
   shelf: { eyebrow: 'TRY IT · THE SLEEPING SHELF', title: 'Slide time forward. Watch stock fall asleep.', lead: 'Seventy-two pieces, ageing month by month. The count past 180 days is the number most owners have never seen.', cta: 'Show me my own shelf' },
   till: { eyebrow: 'TRY IT · THE COUNTER', title: 'Ring up a sale. Take old gold. Close the shift.', lead: 'Scan pieces, add exchange gold, take payment, then close the till and see the variance appear tonight — not next week.', cta: 'Show me a till close' },
@@ -1555,7 +1559,7 @@ const mockMemo = `
   <div class="mock-kv"><span>R. K. Gems, Surat</span><strong>6 pcs · 18.10 ct · overdue 2 days</strong></div>
   <div class="mock-kv"><span>Lakshmi & Sons, Chennai</span><strong>22 pcs · 41.75 ct · due in 9 days</strong></div>
   <div class="mock-kv"><span>Exposure today</span><strong>42 pcs · 122.25 ct · ₹1.84 Cr at list</strong></div>
-  <div class="mock-foot">Every memo with a return date; the overdue one is already a drafted follow-up waiting for your tap.</div>
+  <div class="mock-foot">Every memo with a return date; the overdue one already has a follow-up on its way.</div>
 </div>`;
 
 // Standard pre-footer CTA band, on the brand panel. variant 'enterprise' swaps

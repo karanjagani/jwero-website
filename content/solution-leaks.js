@@ -44,7 +44,7 @@ module.exports = {
   ]],
   'solutions/jewellery-brands': ['Three quiet leaks in a jewellery brand.', [
     { quote: 'The same design is listed three ways across stores, the website and Instagram.', title: 'One catalogue, every channel', text: 'Each piece is described once and synced to every store, the website, WhatsApp, Google Shopping and Meta, priced at today’s rate.' },
-    { quote: 'A store replies to a DM in a tone the brand would never use.', title: 'Replies the brand approves', text: 'AI drafts replies from the catalogue and the customer’s record; your team approves before anything is sent.' },
+    { quote: 'A store replies to a DM in a tone the brand would never use.', title: 'Replies inside the brand’s limits', text: 'AI replies automatically from the catalogue and the customer’s record, and the brand chooses which kinds of message need approval.' },
     { quote: 'A festival campaign goes out and nobody can say what it returned, by store.', title: 'Campaigns measured by store', text: 'Campaigns to segments with the sales traced back, and performance by branch and salesperson in one report.' },
   ]],
   'solutions/lab-grown-diamond': ['Three quiet leaks in lab-grown diamond retail.', [
@@ -54,7 +54,7 @@ module.exports = {
   ]],
   'solutions/startups': ['Three quiet leaks in a new jewellery business.', [
     { quote: 'We have an Instagram page and a personal WhatsApp number, and nowhere to close a sale.', title: 'A store and a number on day one', text: 'An ecommerce website on your own domain priced at today’s rate, and the official WhatsApp API on your business number, with payments in the chat.' },
-    { quote: 'We cannot afford a team to reply, follow up and post every day.', title: 'AI staff that ask first', text: 'AI drafts replies, follow-ups and posts from your catalogue; you approve in a minute a day until you trust it to run alone.' },
+    { quote: 'We cannot afford a team to reply, follow up and post every day.', title: 'AI staff that work inside your limits', text: 'AI sends replies, follow-ups and posts from your catalogue on its own. You set the caps and choose which actions need your approval.' },
     { quote: 'Every tool we add is another bill and another login.', title: 'One system, one price', text: 'Every module is included for one monthly price, with the first month at ₹3,600, so you start with one function and add the rest when you need it.' },
   ]],
 };

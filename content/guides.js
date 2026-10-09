@@ -338,7 +338,7 @@ const crm = guide({
 
   <h2>Follow-up that is not pestering</h2>
   <p>Jewellery follow-up works when it has a reason. Good reasons: the piece she viewed twice is still available, the rate has dropped since she asked, her scheme matures next month, her anniversary is in three weeks, the repair is ready. Bad reasons: it is Tuesday and we have a list.</p>
-  <p>A CRM earns its place by producing a short list each morning of who to contact and why, drawn from what customers did, and by drafting the message so the salesperson only has to approve it.</p>
+  <p>A CRM earns its place by producing a short list each morning of who to contact and why, drawn from what customers did, and by writing the message, so it can go out at once or after a quick approval.</p>
 
   <h2>Segments worth having</h2>
   <ul>
@@ -380,20 +380,20 @@ const crm = guide({
     <li>Do WhatsApp, Instagram, calls and visits land in one thread?</li>
     <li>Are occasions, sizes, taste and scheme balance real fields?</li>
     <li>Does it tell me who to contact today, and why?</li>
-    <li>Does anything it drafts wait for a person’s approval?</li>
+    <li>Can you choose which messages wait for a person’s approval?</li>
     <li>Does the record belong to the business, not a salesperson’s phone?</li>
     <li>Can I see which messages led to sales?</li>
   </ol>
 
   <h2>How Jwero does it, and what it does not do</h2>
-  <p>Jwero keeps one record per customer that billing, schemes, the showroom and every channel write to. It reads 198 kinds of signal into 11 scores, each with a visible reason, and produces the morning list. Messages are drafted by AI and wait for approval. Details are on the <a href="/products/crm">CRM page</a> and the <a href="/platform/customer-memory">customer memory page</a>.</p>
-  <p>It does not send anything on its own unless you have switched that on for a specific kind of action, and it does not buy or import third-party contact lists.</p>
+  <p>Jwero keeps one record per customer that billing, schemes, the showroom and every channel write to. It reads 198 kinds of signal into 11 scores, each with a visible reason, and produces the morning list. Messages are written and sent by AI inside the limits you set, with approval for the kinds of action you choose. Details are on the <a href="/products/crm">CRM page</a> and the <a href="/platform/customer-memory">customer memory page</a>.</p>
+  <p>It stays inside your daily caps and quiet hours, and it does not buy or import third-party contact lists.</p>
   `,
   faqs: [
     { q: 'What is a jewellery CRM?', a: 'A customer system built for how jewellery is bought: families, occasions, taste, sizes, scheme balances and every conversation on one record, linked to what each customer actually bought.' },
     { q: 'Can I use a general CRM for a jewellery shop?', a: 'You can store names and numbers in one, but it has no place for scheme balances, old-gold history, sizes or occasions, and it is not connected to billing, so purchases have to be typed in again.' },
     { q: 'Is a CRM the same as WhatsApp marketing software?', a: 'No. A WhatsApp tool sends and receives messages. A CRM holds the customer. They work when they are the same system, so a message knows the customer and a reply lands on her record.' },
-    { q: 'Will a CRM replace my sales staff?', a: 'No. It remembers and drafts; your people sell. Staff close more when they greet a returning customer knowing what she bought and asked about.' },
+    { q: 'Will a CRM replace my sales staff?', a: 'No. It remembers and follows up; your people sell. Staff close more when they greet a returning customer knowing what she bought and asked about.' },
     { q: 'How do I move my customer list in?', a: 'From Excel, your billing software or your phone contacts. With Jwero the import is done for you during onboarding.' },
   ],
   related: [['/products/crm', 'Jewellery CRM software'], ['/platform/customer-memory', 'Customer memory'], ['/products/whatsapp', 'WhatsApp for jewellers'], ['/blog/jewellery-crm-vs-erp-difference', 'CRM vs ERP']],

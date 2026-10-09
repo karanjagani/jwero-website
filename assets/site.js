@@ -66,7 +66,7 @@ function jwFromInr(n) {
     announce: 'Hi Jwero, saw the site, show me the live WhatsApp demo.',
     header: 'Hi Jwero, I would like to see a quick demo.',
     sticky: 'Hi Jwero, I would like to see a quick demo.',
-    home: 'Hi Jwero, show me how the AI workforce works, with approvals.',
+    home: 'Hi Jwero, show me how the AI workforce works.',
     roles: 'Hi Jwero, I want to understand how this helps my team, role by role.',
     proof: 'Hi, testing the inbox this button leads to. Show me what you’ve got.',
     report: 'Hi Jwero, I would like a sample growth report for my business.',
@@ -74,7 +74,7 @@ function jwFromInr(n) {
     pilot: 'Hi Jwero, I would like to start a pilot with my own data.',
     faq: 'Hi Jwero, I have a question that wasn’t on your FAQ.',
     platform: 'Hi Jwero, show me the full platform, one record at a time.',
-    ai: 'Hi Jwero, show me the AI workforce approval queue live.',
+    ai: 'Hi Jwero, show me the AI workforce live.',
     memory: 'Hi Jwero, show me a live customer record.',
     pricingengine: 'Hi Jwero, show me how a price is actually calculated, on my own catalogue.',
     integrations: 'Hi Jwero, here is the software stack I run today, tell me what bridges.',
@@ -196,7 +196,7 @@ function jwFromInr(n) {
     'blog-wapricing': 'Hi Jwero, I read the WhatsApp API pricing guide, help me understand my own conversation mix.',
     'blog-schemeslegal': 'Hi Jwero, I read the gold scheme legal guide, show me the compliance controls.',
     segmentation: 'Hi Jwero, show me live customer segmentation for my business.',
-    journeys: 'Hi Jwero, show me a customer journey with the approval gate live.',
+    journeys: 'Hi Jwero, show me a customer journey running live.',
     campaigns: 'Hi Jwero, show me a campaign and broadcast, with attribution.',
     adsmanager: 'Hi Jwero, show me Ads Manager for Meta, Google and Pinterest.',
     socialmedia: 'Hi Jwero, show me the social media inbox and scheduler.'
@@ -1369,7 +1369,7 @@ function jwFromInr(n) {
     // ---- a full day: many small events across every department, counted by
     // who did them (the system, AI waiting for a yes, or your team).
     var dayBtn = root.querySelector('[data-gem2-day]'), dayOn = false, dayTimer = null, dayStep = -1, dayN = { all: 0, a: 0, q: 0, t: 0 }, modN = [], dayFeed = [];
-    var KIND = { a: 'Done by the system', q: 'Waiting for your yes', t: 'Your team' };
+    var KIND = { a: 'Done by the system', q: 'Done by AI', t: 'Your team' };
     function dayPaint(summary) {
       ['all', 'a', 'q', 't'].forEach(function (k) { var el = root.querySelector('[data-gem2-dn="' + k + '"]'); if (el) el.textContent = dayN[k]; });
       nodeBtns.forEach(function (b, k) { var u = b.querySelector('.gem2-n'); if (u) { u.textContent = modN[k] || ''; u.classList.toggle('is-on', !!modN[k]); } });
@@ -1383,7 +1383,7 @@ function jwFromInr(n) {
       window.clearInterval(dayTimer); dayTimer = null;
       if (dayBtn) { dayBtn.querySelector('span').textContent = 'Run the day again'; dayBtn.setAttribute('aria-pressed', 'false'); }
       var depts = modN.filter(function (n) { return n > 0; }).length;
-      dayPaint('<li class="gem2-dl gem2-dsum"><span><strong>' + dayN.all + ' events across ' + depts + ' departments.</strong> ' + dayN.a + ' needed no one.' + (dayN.q ? ' ' + dayN.q + ' were drafted by AI and waited for a yes.' : '') + ' ' + dayN.t + ' were done by your team, on the same record. You can let any one kind of action run on its own, and take it back with one switch.</span></li>');
+      dayPaint('<li class="gem2-dl gem2-dsum"><span><strong>' + dayN.all + ' events across ' + depts + ' departments.</strong> ' + dayN.a + ' needed no one.' + (dayN.q ? ' ' + dayN.q + ' were done by AI, inside your limits.' : '') + ' ' + dayN.t + ' were done by your team, on the same record. You can put any one kind of action behind your approval, or stop it all with one switch.</span></li>');
     }
     function dayTick() {
       dayStep += 1;
@@ -1650,7 +1650,7 @@ function jwFromInr(n) {
         draft = 'A one-line reminder with a pay link. No promotion.';
       } else if (intent >= 60 && (conv >= 10 || on.price)) {
         seg = 'High-intent product enquiry'; play = on.tried || on.appt ? 'Hold the piece · confirm the visit' : 'Send priced options · offer a hold';
-        when = 'WhatsApp · her best hour, 18:00–20:00'; draft = 'A priced reply from her record, held for your approval.';
+        when = 'WhatsApp · her best hour, 18:00–20:00'; draft = 'A priced reply from her record, sent automatically.';
       } else if (intent >= 30) {
         seg = 'Product viewers with no purchase'; play = 'Engage, matched catalogue share';
         draft = 'Three pieces in her taste and budget, with live prices.';
@@ -1726,11 +1726,11 @@ function jwFromInr(n) {
       'solutions/diamond-traders': 'trader', 'solutions/b2b-jewellery': 'b2b', 'solutions/gold-wholesale': 'b2b', 'solutions/diamond-wholesale': 'b2b', 'solutions/bullion-gold-traders': 'b2b', 'solutions/export-houses': 'b2b' };
     var PATH = {
       single: { label: 'a single store', sol: '/solutions/single-store', sim: '/products/pos#try-till', simLabel: 'Try the till', prod: '/products/whatsapp' },
-      chain: { label: 'a multi-store chain', sol: '/solutions/multi-store-chains', sim: '/platform/ai-workforce#try-approve', simLabel: 'Try the approval queue', prod: '/products/multi-store' },
+      chain: { label: 'a multi-store chain', sol: '/solutions/multi-store-chains', sim: '/platform/ai-workforce#try-approve', simLabel: 'Try the AI workforce', prod: '/products/multi-store' },
       maker: { label: 'a manufacturer', sol: '/solutions/manufacturers', sim: '/products/manufacturing#try-grams', simLabel: 'Try metal closure', prod: '/products/manufacturing' },
       b2b: { label: 'a wholesale business', sol: '/solutions/b2b-jewellery', sim: '/products/inventory#try-shelf', simLabel: 'Try the shelf', prod: '/products/digital-catalogues' },
       d2c: { label: 'a brand', sol: '/solutions/d2c-brands', sim: '/platform/customer-memory#try-memory', simLabel: 'Try customer memory', prod: '/products/instagram-facebook' },
-      franchise: { label: 'a franchise network', sol: '/solutions/franchise-networks', sim: '/platform/ai-workforce#try-approve', simLabel: 'Try the approval queue', prod: '/products/multi-store' },
+      franchise: { label: 'a franchise network', sol: '/solutions/franchise-networks', sim: '/platform/ai-workforce#try-approve', simLabel: 'Try the AI workforce', prod: '/products/multi-store' },
     };
     var slug = HERE.replace(/^\/|\/$/g, '');
     var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
@@ -1813,7 +1813,7 @@ function jwFromInr(n) {
     var hero = document.querySelector('main .hero'); if (!hero) return;
     var box = document.createElement('div');
     box.className = 'short-version';
-    box.innerHTML = '<div class="container"><span class="short-tag">The short version</span><p>Jwero runs your whole jewellery business on one record: customers, counter, stock, workshop, team and books. AI drafts the work, and nothing sends without your yes.</p>' +
+    box.innerHTML = '<div class="container"><span class="short-tag">The short version</span><p>Jwero runs your whole jewellery business on one record: customers, counter, stock, workshop, team and books. AI does the work on its own, inside limits you set.</p>' +
       '<a href="/platform#why-an-os">What it is</a><a href="/pricing">What it costs</a><a href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=ai-referrer" rel="noopener">Start</a><a href="#" data-wa="default">Ask a person</a></div>';
     hero.insertAdjacentElement('afterend', box);
     var a = box.querySelector('[data-wa]'); a.setAttribute('href', waLink('default')); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
@@ -1941,7 +1941,7 @@ function jwFromInr(n) {
       for (var i = 0; i < on.length; i++) for (var j = i + 1; j < on.length; j++) { var g = GAPS[on[i] + '+' + on[j]] || GAPS[on[j] + '+' + on[i]]; if (g) found.push(g); }
       if (!on.length) { gaps.innerHTML = '<li class="mds-empty">Tap what you use today. The gaps appear between them.</li>'; read.textContent = ''; return; }
       gaps.innerHTML = found.length ? found.map(function (g) { return '<li>' + g + '</li>'; }).join('') : '<li class="mds-empty">One tool, no hand-offs yet. Add the next one you use.</li>';
-      read.textContent = on.length < 2 ? '' : on.length + ' tools, ' + pairs + ' hand-off' + (pairs === 1 ? '' : 's') + ', ' + mem + ' place' + (mem === 1 ? '' : 's') + ' a customer is remembered, and none of them is the business. In Jwero it is one record, one hand-off: yours to approve.';
+      read.textContent = on.length < 2 ? '' : on.length + ' tools, ' + pairs + ' hand-off' + (pairs === 1 ? '' : 's') + ', ' + mem + ' place' + (mem === 1 ? '' : 's') + ' a customer is remembered, and none of them is the business. In Jwero it is one record, one hand-off, handled for you.';
     }
     tools.forEach(function (b) { b.addEventListener('click', function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); update(); }); });
     update();
@@ -2025,7 +2025,7 @@ function jwFromInr(n) {
       var out = 0, value = 0, late = 0;
       Array.prototype.forEach.call(rows, function (r) { if (r.classList.contains('is-closed')) return; out += 1; value += Number(r.getAttribute('data-value')); late += Number(r.getAttribute('data-late')); });
       n('out', String(out)); n('value', money(value)); n('late', String(late));
-      if (draft) draft.innerHTML = late ? '<b>Drafted for your tap:</b> a follow-up for each overdue memo, naming the stones and the return date agreed.' : out ? '<b>Nothing overdue.</b> Every memo still out is inside its return date.' : '<b>Everything is home or sold.</b> Stock and the party ledgers are already up to date.';
+      if (draft) draft.innerHTML = late ? '<b>Sent automatically:</b> a follow-up for each overdue memo, naming the stones and the return date agreed.' : out ? '<b>Nothing overdue.</b> Every memo still out is inside its return date.' : '<b>Everything is home or sold.</b> Stock and the party ledgers are already up to date.';
     }
     board.addEventListener('click', function (e) {
       var b = e.target.closest('[data-memo-do]'); if (!b) return;

@@ -338,7 +338,7 @@
  "marketing-manager": {
   "short": {
    "q": "What does Jwero do for a jewellery marketing manager?",
-   "a": "Jwero puts a jeweller's marketing next to its customers and sales. Plan festival campaigns on a calendar, build segments, send WhatsApp and email, run automated journeys, schedule social posts through an approval queue, and review Meta and Google ad results and suggested ad ideas. Reports show sends, responses and who bought afterwards."
+   "a": "Jwero puts a jeweller's marketing next to its customers and sales. Plan festival campaigns on a calendar, build segments, send WhatsApp and email, run automated journeys, schedule social posts, with an approval queue if you want one, and review Meta and Google ad results and suggested ad ideas. Reports show sends, responses and who bought afterwards."
   },
   "usecases": [
    {
@@ -353,8 +353,8 @@
    },
    {
     "hook": "Posts go out off brand when the team is rushed.",
-    "does": "Brand templates, a content calendar and an approval queue hold posts until they are approved.",
-    "changes": "Every post is checked before it goes live."
+    "does": "Brand templates, a content calendar and an optional approval queue keep posts on brand.",
+    "changes": "Posts stay on brand, with a check before going live if you want one."
    },
    {
     "hook": "Finance asks what last month's campaigns actually brought.",

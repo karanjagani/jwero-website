@@ -152,7 +152,7 @@ const waRevenueCalc = {
   breadcrumbs: [['Home', '/'], ['Tools', '/tools'], ['WhatsApp Revenue Estimator']],
   faqs: [
     { q: 'Where do the close-rate numbers come from?', a: 'They’re editable planning assumptions, not a published study — 15% close rate for enquiries replied to within an hour, 3% for enquiries replied to slowly or missed, are common starting points. Change them to match your own experience; the result updates instantly.' },
-    { q: 'Is 95% reply coverage realistic?', a: 'That’s the target coverage a first-response AI draft (approved by your team before sending) is built to reach — instant drafting removes the “nobody was free to reply” gap that slow coverage usually comes from.' },
+    { q: 'Is 95% reply coverage realistic?', a: 'That’s the target coverage an automatic AI first response is built to reach: instant replies remove the “nobody was free to reply” gap that slow coverage usually comes from.' },
     { q: 'Does this account for enquiries that were never going to buy?', a: 'No — it assumes your enquiry volume and its buying intent stay constant, and only measures what changes when the reply gets faster and more consistent. It’s a directional estimate, not a forecast.' },
   ],
   body: `
@@ -179,7 +179,7 @@ ${L.section(
 
       <details class="assumptions" style="margin-top:22px">
         <summary>Assumptions (editable thinking)</summary>
-        <p style="margin-top:10px">Close rate: 15% for enquiries replied to within an hour, 3% for enquiries replied to slowly or missed — a common planning range rather than a published study; edit to your own experience. Target with AI-drafted first response: 95% of enquiries replied to within minutes, each draft still approved by your team before it sends.</p>
+        <p style="margin-top:10px">Close rate: 15% for enquiries replied to within an hour, 3% for enquiries replied to slowly or missed — a common planning range rather than a published study; edit to your own experience. Target with an automatic AI first response: 95% of enquiries replied to within minutes, inside the limits you set.</p>
       </details>
     </div>
     <div class="calc-out">
@@ -194,14 +194,14 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('AFTER THE NUMBER', 'The gap is a reply-speed problem, not a staffing problem.', 'Hiring more people to answer WhatsApp faster doesn’t scale evenly with enquiry volume. An AI-drafted first response reaches near-instant coverage at any volume. Your team still approves every message before it sends, so nothing goes out unchecked.')}
+  `${L.sectionHead('AFTER THE NUMBER', 'The gap is a reply-speed problem, not a staffing problem.', 'Hiring more people to answer WhatsApp faster doesn’t scale evenly with enquiry volume. An automatic AI first response reaches near-instant coverage at any volume. You choose which kinds of message need your team’s approval first.')}
   <p><a class="btn btn-ghost" href="/products/whatsapp">See WhatsApp Commerce in Jwero</a></p>
   <p class="cta-note" style="margin-top:14px">New to selling this way? <a href="/blog/whatsapp-for-jewellers-guide">Read the complete WhatsApp guide for jewellers →</a></p>`
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('CALCULATOR QUESTIONS', 'Where the estimate’s assumptions come from.', '')}${L.faqBlock([
   { q: 'Where do the close-rate numbers come from?', a: 'They’re editable planning assumptions, drawn from common experience rather than a published study — change them above to match your own.' },
-  { q: 'Is 95% reply coverage realistic?', a: 'That’s the target an AI-drafted first response is built to reach, with every draft still approved by your team before it sends.' },
+  { q: 'Is 95% reply coverage realistic?', a: 'That’s the target an automatic AI first response is built to reach. You choose which kinds of message need approval first.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 `,

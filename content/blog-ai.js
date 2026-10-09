@@ -36,16 +36,16 @@ ${L.ctaBand(close[0], close[1], wa)}
 const agents = post({
   slug: 'ai-agents-for-jewellers',
   title: 'AI Agents for Jewellers: What They Do, and How You Stay in Control | Jwero',
-  description: 'What an AI agent does in a jewellery business: replies, follow-ups, reminders and calls, with approvals, daily caps, a kill switch and a log of every action.',
+  description: 'What an AI agent does in a jewellery business: replies, follow-ups, reminders and calls, done on its own inside daily caps, with a kill switch, a log of every action and approval where you want it.',
   h1: 'AI agents for jewellers',
   mins: 6,
-  sub: 'An AI agent is not a chatbot that guesses. It is a member of staff with a job, a list of things it may do, and a manager who approves its work until it is trusted.',
+  sub: 'An AI agent is not a chatbot that guesses. It is a member of staff with a job, a list of things it may do, and limits that its manager sets.',
   product: ['/products/ai-sales-agents', 'See AI agents in Jwero'],
   wa: 'blog-ai-agents',
-  close: ['Staff that ask first.', 'Start one Jwero agent in Assist mode: it drafts, your team approves.'],
+  close: ['Staff that work inside your limits.', 'Start one Jwero agent on one job. It works on its own, with approval wherever you want it.'],
   faqs: [
     { q: 'What is an AI agent in a jewellery shop?', a: 'Software that does a defined job, such as answering enquiries, following up quotes or reminding scheme members, using your catalogue, prices and customer records, within limits you set.' },
-    { q: 'Will an AI agent send messages without asking?', a: 'Only if you allow it. In Jwero every action can wait for approval, and you choose which actions may run on their own once the agent has earned it.' },
+    { q: 'Will an AI agent send messages without asking?', a: 'Yes, inside the daily caps and quiet hours you set. In Jwero agents work on their own, and you choose which kinds of action must wait for your approval.' },
     { q: 'Can I stop it instantly?', a: 'Yes. Jwero has a kill switch at several levels, from one action to the whole account, and a daily cap on how much an agent may do.' },
   ],
   body: `
@@ -56,10 +56,10 @@ const agents = post({
     <li><b>First reply</b> to every enquiry, at any hour, with pieces priced at today’s rate.</li>
     <li><b>Follow-ups</b> on quiet chats, open quotations and abandoned enquiries.</li>
     <li><b>Reminders</b> for scheme instalments, collections and appointments, by message or call.</li>
-    <li><b>Occasion outreach</b> for birthdays, anniversaries and festivals, drafted weeks ahead.</li>
+    <li><b>Occasion outreach</b> for birthdays, anniversaries and festivals, planned weeks ahead.</li>
   </ul>
   <h2>How you stay in charge</h2>
-  <p>Start in Assist mode: the agent drafts, a person approves. Add a daily cap. Decide which actions may never run alone, such as discounts. Watch the activity log, which records what was done, when, why and who approved it. Promote one action at a time when the drafts are consistently right.</p>
+  <p>Set a daily cap and quiet hours. Decide which actions must wait for a person, such as anything that touches a discount. Watch the activity log, which records what was done, when and why. Some owners begin in Assist mode, where the agent drafts and a person approves, and release one action at a time. That is a choice, not a requirement.</p>
   <h2>What an agent should never do</h2>
   <p>Set prices, give discounts, promise delivery dates it cannot see, or argue with an unhappy customer. Those go to a person, with the conversation so far.</p>
   <h2>How Jwero does it</h2>
@@ -75,7 +75,7 @@ const waBot = post({
   sub: '“Rate kya hai?”, “Is this available?”, “Can I see it on video?” A good WhatsApp chatbot answers these in seconds, with real prices, and knows when to hand over.',
   product: ['/products/whatsapp', 'See WhatsApp in Jwero'],
   wa: 'blog-ai-wabot',
-  close: ['Every WhatsApp answered, with a real price.', 'Jwero’s AI replies from your catalogue and today’s rate, and your team approves.'],
+  close: ['Every WhatsApp answered, with a real price.', 'Jwero’s AI replies automatically from your catalogue and today’s rate.'],
   faqs: [
     { q: 'Can a WhatsApp chatbot tell customers today’s gold rate?', a: 'Yes, if it reads your rate. Jwero’s replies use the same rate and pricing rules as your counter, so the price in the chat matches the bill.' },
     { q: 'Do I need the WhatsApp Business API for an AI chatbot?', a: 'Yes. The free Business app does not support a shared team inbox or automated replies at scale. Jwero sets up the official API on your number.' },
@@ -91,7 +91,7 @@ const waBot = post({
   <h2>What to measure</h2>
   <p>Time to first reply, enquiries answered after hours, visits booked from chat, and payments taken in the chat.</p>
   <h2>How Jwero does it</h2>
-  <p>On the official WhatsApp Business API, Jwero’s AI drafts replies from your catalogue and the customer’s record, can answer by voice note, takes payments in the chat, and waits for approval until you let it run. See <a href="/products/whatsapp">WhatsApp</a> and <a href="/products/ai-sales-agents">AI agents</a>.</p>`,
+  <p>On the official WhatsApp Business API, Jwero’s AI replies automatically from your catalogue and the customer’s record, can answer by voice note, takes payments in the chat, and asks for approval only where you require it. See <a href="/products/whatsapp">WhatsApp</a> and <a href="/products/ai-sales-agents">AI agents</a>.</p>`,
 });
 
 const igAi = post({
@@ -100,13 +100,13 @@ const igAi = post({
   description: 'How jewellers use AI on Instagram: price comments turned into DMs, replies with pieces at today’s rate, story replies in one inbox, and payment links inside the DM.',
   h1: 'AI Instagram DM automation for jewellers',
   mins: 5,
-  sub: 'A reel brings sixty “price?” comments. By the time someone replies, most have moved on. AI can answer every one, with a real price, while your team approves.',
+  sub: 'A reel brings sixty “price?” comments. By the time someone replies, most have moved on. AI can answer every one, with a real price, on its own.',
   product: ['/products/instagram-facebook', 'See Instagram in Jwero'],
   wa: 'blog-ai-ig',
-  close: ['Every comment answered.', 'Jwero turns price comments into DMs and drafts the reply from your catalogue.'],
+  close: ['Every comment answered.', 'Jwero turns price comments into DMs and sends the reply from your catalogue.'],
   faqs: [
     { q: 'Is Instagram DM automation allowed?', a: 'Yes, through Meta’s official connection. Tools that log in as you or scrape comments risk your account.' },
-    { q: 'Can AI reply to story replies and mentions?', a: 'In Jwero, story replies, mentions and Messenger land in the same inbox as DMs, and AI drafts the reply.' },
+    { q: 'Can AI reply to story replies and mentions?', a: 'In Jwero, story replies, mentions and Messenger land in the same inbox as DMs, and AI replies.' },
     { q: 'Can customers pay from the DM?', a: 'Yes. Send a payment link inside the DM; the order and invoice land on her record.' },
   ],
   body: `
@@ -115,9 +115,9 @@ const igAi = post({
   <h2>What AI should do</h2>
   <ul><li>Send a DM to every price comment automatically.</li><li>Reply with the piece and similar ones at today’s rate.</li><li>Offer a video call, a visit or a payment link.</li><li>Follow up the ones who go quiet.</li></ul>
   <h2>Keep it human</h2>
-  <p>Draft, then approve. Customers can tell a canned reply; they rarely mind a fast, accurate one that a person sent.</p>
+  <p>Customers can tell a canned reply; they rarely mind a fast, accurate one. Keep approval on for the replies you want a person to see first.</p>
   <h2>How Jwero does it</h2>
-  <p>Comments become DMs automatically, AI drafts from the customer’s taste and purchases, your team approves in one tap, and sales are traced back to the reel. See <a href="/products/instagram-facebook">Instagram and Facebook</a>.</p>`,
+  <p>Comments become DMs automatically, AI replies from the customer’s taste and purchases, with approval only where you want it, and sales are traced back to the reel. See <a href="/products/instagram-facebook">Instagram and Facebook</a>.</p>`,
 });
 
 const voice = post({
@@ -198,7 +198,7 @@ const prompts = post({
   <h2>Where ChatGPT stops</h2>
   <p>It cannot see today’s rate, the stock, a customer’s last purchase or her scheme balance. It cannot send, approve or record anything. That is where a jewellery system is needed.</p>
   <h2>How Jwero does it</h2>
-  <p>Jwero’s AI writes listings from photos, captions, emails and replies using your catalogue and records, and you approve before anything is sent. You can also <a href="/blog/connect-chatgpt-claude-to-jewellery-business">connect ChatGPT or Claude to Jwero</a>.</p>`,
+  <p>Jwero’s AI writes listings from photos, captions, emails and replies using your catalogue and records, and you choose which of them need your approval before they go out. You can also <a href="/blog/connect-chatgpt-claude-to-jewellery-business">connect ChatGPT or Claude to Jwero</a>.</p>`,
 });
 
 const listings = post({
@@ -394,10 +394,10 @@ const reportsAi = post({
   sub: 'Owners have questions every day and no time to build a report. AI turns the question into the report, from the same data the counter writes.',
   product: ['/products/reports', 'See reports in Jwero'],
   wa: 'blog-ai-reports',
-  close: ['Ask, and get the answer.', 'Jwero drafts the report from your question, on every branch’s data.'],
+  close: ['Ask, and get the answer.', 'Jwero builds the report from your question, on every branch’s data.'],
   faqs: [
     { q: 'What can I ask?', a: 'Anything on the record: sales by branch, stock ageing, scheme dues, receivables, staff, campaigns and visits.' },
-    { q: 'Is the AI answer reliable?', a: 'It drafts the report’s source, filters and chart; you see exactly what it used and approve it, so nothing is hidden.' },
+    { q: 'Is the AI answer reliable?', a: 'It builds the report’s source, filters and chart, and you see exactly what it used, so nothing is hidden.' },
     { q: 'Can I see it on my phone?', a: 'Yes. Pin it to the owner’s dashboard on mobile, schedule it, or export to Excel.' },
   ],
   body: `
@@ -406,7 +406,7 @@ const reportsAi = post({
   <h2>Why one record matters</h2>
   <p>AI can only answer from data it can see. When billing, stock, schemes and chats live in different tools, the answer is partial.</p>
   <h2>How Jwero does it</h2>
-  <p>Type the question; AI drafts the report; pin it, schedule it, or export to Excel. See <a href="/products/reports">reports</a>.</p>`,
+  <p>Type the question; AI builds the report; pin it, schedule it, or export to Excel. See <a href="/products/reports">reports</a>.</p>`,
 });
 
 const mcp = post({
@@ -444,21 +444,21 @@ const safe = post({
   sub: 'The worry is reasonable: an AI that quotes the wrong rate or messages the wrong customer can cost money and trust. The answer is not to avoid AI, but to control it.',
   product: ['/platform/ai-workforce', 'See AI governance'],
   wa: 'blog-ai-safe',
-  close: ['AI that asks first.', 'Jwero’s AI agents ask for approval by default, with caps and kill switches.'],
+  close: ['AI inside your limits.', 'Jwero’s AI agents work on their own inside caps and quiet hours, with a kill switch, and ask for approval only where you require it.'],
   faqs: [
     { q: 'Can AI give a wrong price?', a: 'A general chatbot can. One that prices from your own rate and rules gives the same price as your counter.' },
-    { q: 'Can AI give a discount?', a: 'It should not. In Jwero, prices and discounts follow your price rules and staff permissions; the AI drafts messages, it does not set prices.' },
+    { q: 'Can AI give a discount?', a: 'It should not. In Jwero, prices and discounts follow your price rules and staff permissions; the AI sends messages, it does not set prices.' },
     { q: 'Where does customer data go?', a: 'Keep it in a system you control, with role permissions and the ability to export or delete. Avoid pasting it into public chat tools.' },
   ],
   body: `
   <h2>The four real risks</h2>
   <ul><li><b>Wrong facts:</b> a rate, a weight or a stone invented.</li><li><b>Wrong action:</b> a message sent to the wrong person, or too many.</li><li><b>Money:</b> a discount or a refund nobody approved.</li><li><b>Data:</b> customer details copied somewhere they should not be.</li></ul>
   <h2>The controls that answer them</h2>
-  <ul><li>Prices only from your own rate and rules.</li><li>Approval before sending, per action.</li><li>Daily caps and quiet hours.</li><li>A kill switch you can reach in one tap.</li><li>An activity log of what, when, why and who approved.</li></ul>
+  <ul><li>Prices only from your own rate and rules.</li><li>Approval before sending, for the actions you choose.</li><li>Daily caps and quiet hours.</li><li>A kill switch you can reach in one tap.</li><li>An activity log of what, when, why and who approved.</li></ul>
   <h2>Start small</h2>
-  <p>One duty, Assist mode, a week of reviewing drafts. Widen only what has earned it.</p>
+  <p>One duty, low caps, a week of reading the log. Some owners keep approval on for that week. Widen from there.</p>
   <h2>How Jwero does it</h2>
-  <p>AI agents ask for approval by default, with per-action switches, daily and money caps, kill switches from one action to the whole account, and a full log. See <a href="/platform/ai-workforce">AI governance</a> and the <a href="/trust">Trust Centre</a>.</p>`,
+  <p>AI agents work on their own inside daily and money caps and quiet hours, with a per-action switch for approval, kill switches from one action to the whole account, and a full log. See <a href="/platform/ai-workforce">AI governance</a> and the <a href="/trust">Trust Centre</a>.</p>`,
 });
 
 const cost = post({
@@ -514,7 +514,7 @@ const site = post({
 const showroomAi = post({
   slug: 'ai-showroom-walkout-recovery',
   title: 'AI in the Jewellery Showroom: Footfall, Walkouts and Follow-Ups | Jwero',
-  description: 'How AI helps the showroom floor: CCTV people counting, conversion from footfall and bills, and follow-ups drafted for customers who left without buying.',
+  description: 'How AI helps the showroom floor: CCTV people counting, conversion from footfall and bills, and follow-ups sent to customers who left without buying.',
   h1: 'AI in the jewellery showroom',
   mins: 5,
   sub: 'Most of a jeweller’s sales still happen on the floor, and most walkouts are never followed up. AI counts who came in and drafts the message to win them back.',
@@ -544,7 +544,7 @@ const wholesale = post({
   sub: 'Wholesale runs on hundreds of retailer relationships, thousands of designs and tight metal accounts. AI takes on the repetitive parts.',
   product: ['/products/purchase-vendors', 'See purchase and vendors'],
   wa: 'blog-ai-wholesale',
-  close: ['Less typing, more trade.', 'Jwero drafts POs, writes listings and follows up retailers, with approvals.'],
+  close: ['Less typing, more trade.', 'Jwero drafts POs for your approval, writes listings and follows up retailers automatically.'],
   faqs: [
     { q: 'Can AI draft purchase orders?', a: 'Yes. Jwero drafts purchase orders for your approval, including unfixed-rate purchases.' },
     { q: 'Can retailers get their own prices?', a: 'Yes. B2B buyer catalogue links carry each buyer’s own pricing, and can be password protected.' },
@@ -554,7 +554,7 @@ const wholesale = post({
   <h2>Catalogues for every buyer</h2>
   <p>AI writes listings from design photos; each retailer gets a private link with their own pricing, and you see what they looked at.</p>
   <h2>Retailer follow-ups</h2>
-  <p>AI drafts the follow-up after a catalogue view or a sample request, for your team to approve.</p>
+  <p>AI sends the follow-up after a catalogue view or a sample request, with approval first if you want it.</p>
   <h2>Purchases</h2>
   <p>AI-drafted purchase orders from stock and demand, approved before they go.</p>
   <h2>How Jwero does it</h2>
@@ -616,22 +616,22 @@ const forecast = post({
 const mistakes = post({
   slug: 'ai-mistakes-jewellers-make',
   title: '7 AI Mistakes Jewellers Make, and How to Avoid Them | Jwero',
-  description: 'The common mistakes jewellers make with AI: letting it price, sending without approval, generic content, unofficial WhatsApp tools, and buying tools that do not share data.',
+  description: 'The common mistakes jewellers make with AI: letting it price, running it without limits, generic content, unofficial WhatsApp tools, and buying tools that do not share data.',
   h1: '7 AI mistakes jewellers make',
   mins: 6,
   sub: 'AI is easy to start and easy to get wrong. These are the mistakes we see most, and the fix for each.',
   product: ['/products/ai-sales-agents', 'See AI agents in Jwero'],
   wa: 'blog-ai-mistakes',
-  close: ['AI done carefully.', 'Jwero’s AI works from your data and asks before it acts.'],
+  close: ['AI done carefully.', 'Jwero’s AI works from your data, inside the limits you set.'],
   faqs: [
     { q: 'What is the biggest AI mistake for jewellers?', a: 'Letting a general AI quote prices. Prices must come from your own rate and rules.' },
     { q: 'Are unofficial WhatsApp bots risky?', a: 'Yes. Tools that automate a personal number are the most common way jewellers lose their WhatsApp number.' },
-    { q: 'How should I start with AI?', a: 'One job, approvals on, measured for a month.' },
+    { q: 'How should I start with AI?', a: 'One job, clear caps, measured for a month. Keep approval on at first if you want to watch it.' },
   ],
   body: `
   <ol>
     <li><b>Letting AI set prices.</b> Prices come from your rate and rules, never a guess.</li>
-    <li><b>Sending without approval.</b> Start in Assist mode.</li>
+    <li><b>Running AI without limits.</b> Set caps, quiet hours and approval where it matters.</li>
     <li><b>Generic content.</b> Give AI your facts, your pieces and your voice.</li>
     <li><b>Unofficial WhatsApp tools.</b> Use the official API.</li>
     <li><b>Changing the piece in AI images.</b> Edit the background, never the design.</li>
@@ -639,7 +639,7 @@ const mistakes = post({
     <li><b>No measurement.</b> Track replies, visits and sales, not messages sent.</li>
   </ol>
   <h2>How Jwero helps</h2>
-  <p>AI that works from your catalogue and customer records, with approvals, caps and a log. See <a href="/blog/is-ai-safe-for-jewellery-business">is AI safe?</a></p>`,
+  <p>AI that works from your catalogue and customer records, with caps, a log and approval where you want it. See <a href="/blog/is-ai-safe-for-jewellery-business">is AI safe?</a></p>`,
 });
 
 const journeysAi = post({
@@ -715,7 +715,7 @@ const leadFinder = post({
   <h2>Respect consent</h2>
   <p>A found contact has not opted in to your broadcasts. Start with a personal message; add them to campaigns only when they agree.</p>
   <h2>How Jwero does it</h2>
-  <p>The lead finder adds contacts to the CRM, private catalogue links show what they viewed, and follow-ups are drafted for approval. See <a href="/products/crm">CRM</a> and <a href="/products/digital-catalogues">digital catalogues</a>.</p>`,
+  <p>The lead finder adds contacts to the CRM, private catalogue links show what they viewed, and follow-ups are prepared for each one, with approval where you want it. See <a href="/products/crm">CRM</a> and <a href="/products/digital-catalogues">digital catalogues</a>.</p>`,
 });
 
 module.exports = [agents, waBot, igAi, voice, schemes, prompts, listings, images, video, ads, email, segments, scores, reportsAi, mcp, safe, cost, site, showroomAi, wholesale, tryOn, forecast, mistakes, journeysAi, photoSearch, leadFinder];

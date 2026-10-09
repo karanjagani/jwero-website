@@ -11,10 +11,10 @@ const TOOL_QA = {
     { q: 'How do I set up the Meta pixel on a jewellery website?', a: 'Add the Jwero pixel to any website and Optimize sends visitor details and events to your Meta pixel, including product views, carts and orders. That lets Meta ads optimise for people who actually enquire or buy, not only for clicks.' },
   ],
   'products/social-media': [
-    { q: 'Can AI write jewellery captions and descriptions?', a: 'Yes. AI drafts captions, post text and replies from your catalogue and your tone, and a person approves before anything is published. It is a draft to edit, not an automatic post.' },
+    { q: 'Can AI write jewellery captions and descriptions?', a: 'Yes. AI writes captions, post text and replies from your catalogue and your tone. They can go out automatically, or wait for a person’s approval if you ask for that.' },
     { q: 'How do I make jewellery posts for Instagram?', a: 'Write the post once in the composer, attach photos or video from your library, preview how it looks on each platform, then schedule it. Brand templates keep the look consistent across staff.' },
-    { q: 'How do jewellers get sales from Instagram Reels?', a: 'A Reel brings comments and messages asking the price; the sale is lost when nobody answers. Reels are scheduled from the same screen as other posts, and every comment and message they bring lands in one inbox with a priced reply drafted for approval.' },
-    { q: 'How do I get more Google reviews for my jewellery shop?', a: 'Ask at the right moment: after a purchase or a completed repair. Jwero connects your Google Business profile so reviews appear in one place and replies are drafted for your approval.' },
+    { q: 'How do jewellers get sales from Instagram Reels?', a: 'A Reel brings comments and messages asking the price; the sale is lost when nobody answers. Reels are scheduled from the same screen as other posts, and every comment and message they bring lands in one inbox with a priced reply sent automatically.' },
+    { q: 'How do I get more Google reviews for my jewellery shop?', a: 'Ask at the right moment: after a purchase or a completed repair. Jwero connects your Google Business profile so reviews appear in one place and AI replies to them, held for approval if you ask for that.' },
   ],
   'products/catalog': [
     { q: 'Can AI create jewellery product photos?', a: 'Jwero can generate or edit a product image from a product photo, charged per image. They should be used to present a real piece, not to show something you cannot supply.' },
@@ -48,7 +48,7 @@ const TOOL_QA = {
     { q: 'Do Google Ads work for jewellery shops?', a: 'They work when someone is already searching, such as “gold bangles near me”, and when the enquiry is answered quickly. Jwero builds Search, Performance Max and Shopping campaigns and shows which ad led to a sale.' },
   ],
   'products/instagram-facebook': [
-    { q: 'How do I reply to price comments on Instagram?', a: 'A public “price?” comment is moved to a private message, with a priced reply drafted from your catalogue at today’s rate. A person approves it, and the conversation stays on the customer’s record.' },
+    { q: 'How do I reply to price comments on Instagram?', a: 'A public “price?” comment is moved to a private message, with a priced reply sent automatically from your catalogue at today’s rate. You can require approval first, and the conversation stays on the customer’s record.' },
     { q: 'How do I manage Facebook messages for my jewellery page?', a: 'Facebook messages and comments arrive in the same shared inbox as Instagram and WhatsApp, so the whole team answers from one place and nothing depends on one phone.' },
   ],
   'products/loyalty': [
@@ -87,10 +87,10 @@ const TOOL_QA = {
     { q: 'Which reports should a jewellery owner see daily?', a: 'Today’s sales by counter and branch, cash against bills, stock value at today’s rate, pieces ageing, scheme collections due and enquiries not yet answered. In Jwero these sit on one dashboard.' },
   ],
   'products/crm': [
-    { q: 'How do I remember customer birthdays and anniversaries?', a: 'Record the dates once on the customer’s record. Jwero lists who has an occasion coming, weeks ahead, and drafts a personal message for your approval.' },
+    { q: 'How do I remember customer birthdays and anniversaries?', a: 'Record the dates once on the customer’s record. Jwero lists who has an occasion coming, weeks ahead, and sends a personal message automatically, or holds it for approval if you ask for that.' },
   ],
   'products/billing-finance': [
-    { q: 'How do I collect outstanding payments from customers?', a: 'Keep every due on the customer’s or party’s account, see what is overdue, and send a reminder with a payment link. Jwero drafts the reminders; payment is made by the customer.' },
+    { q: 'How do I collect outstanding payments from customers?', a: 'Keep every due on the customer’s or party’s account, see what is overdue, and send a reminder with a payment link. Jwero sends the reminders automatically; payment is made by the customer.' },
   ],
   'products/pos': [
     { q: 'Which POS is best for a jewellery showroom?', a: 'One that prices by weight at the live rate, handles old-gold exchange, returns and scheme redemption, and closes the cash by register. A general retail POS does none of these.' },

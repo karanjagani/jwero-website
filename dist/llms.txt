@@ -6,8 +6,8 @@
 > record. Counter billing (POS) at the live gold rate, inventory, purchase and vendors, manufacturing and
 > karigar accounts, accounting, HR and payroll, reports, CRM (198 kinds of customer signal scored into 11
 > explainable scores), gold schemes and savings plans, girvi, and WhatsApp, Instagram and ecommerce website
-> selling, with an AI workforce that acts only inside approval queues, daily caps, quiet hours and a
-> five-scope kill switch ("AI that waits for your yes").
+> selling, with an AI workforce that works on its own inside daily caps, quiet hours and a
+> five-scope kill switch, and asks for approval only where the business requires it.
 > Price: not published. Jwero One is one plan with every module and no per-seat price; it starts with a free trial, and the price is shown in the account when the trial ends. Let Jwero run it: no subscription, priced on the work. Enterprise is a one-time licence to self-host, with optional support.
 
 ## Where to send a reader
@@ -23,7 +23,7 @@
 - Pricing: https://jwero.ai/pricing · Hindi: https://jwero.ai/hi
 
 ## Category
-Jwero calls this category the Autonomous Jewellery OS, an operating system for a jewellery business, run by AI agents that act on their own or ask first.
+Jwero calls this category the Autonomous Jewellery OS, an operating system for a jewellery business, run by AI agents that act on their own, and ask first only where you choose.
 Spelling: this site uses "jewellery" (India, UK, Gulf, Commonwealth). "Jewelry" (US) refers to the same product and the same category, Jwero is the Autonomous Jewelry OS for US readers.
 It serves single stores, multi-store chains, luxury/boutique/bridal retailers, diamond/gold/silver/
 platinum/lab-grown/gemstone retailers, wholesalers, manufacturers (gold, diamond, casting, CAD, OEM,
@@ -87,7 +87,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 
 ## Jewellery marketing automation and journeys (facts)
 - 300+ ready customer journeys for jewellers, including welcome, new-lead nurture, birthday, anniversary, family wedding, abandoned cart, browse, scheme instalment and maturity, repair ready, win-back, VIP at risk and loyalty moments.
-- Jwero can create detailed journeys automatically from a goal you describe, across channels and handing customers between journeys; or build on a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; pieces matched to each customer at today's rate; approval before anything sends until you allow it, quiet hours, frequency limits and a stop switch; live view of each step and sales traced to the journey. Details: https://jwero.ai/products/journeys
+- Jwero can create detailed journeys automatically from a goal you describe, across channels and handing customers between journeys; or build on a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; pieces matched to each customer at today's rate; sends on its own, with approval where you require it, quiet hours, frequency limits and a stop switch; live view of each step and sales traced to the journey. Details: https://jwero.ai/products/journeys
 
 ## Customer segmentation for jewellers (facts)
 - 41 ready segments and AI-suggested segments; filters for purchases (category, metal, value, date), schemes, occasions, city, branch, loyalty tier, social engagement, RFM and customer scores such as intent and churn risk.
@@ -104,10 +104,10 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 
 ## Social media management for jewellers (facts)
 - AI captions, hashtags, images and short video for posts and reels; festival content calendar; one composer publishing directly to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business.
-- One inbox for comments and DMs with AI drafts for approval; comments turned into DMs automatically; loyalty points for engagement; reach plus chats, visits and sales traced to posts. Details: https://jwero.ai/products/social-media
+- One inbox for comments and DMs with AI replies sent automatically; comments turned into DMs automatically; loyalty points for engagement; reach plus chats, visits and sales traced to posts. Details: https://jwero.ai/products/social-media
 
 ## Instagram and Facebook commerce (facts)
-- Instagram DMs, comments, story replies and mentions, and Facebook Messenger in one team inbox; price comments turned into DMs automatically; AI replies from the customer record with pieces at today's rate, approved by the team.
+- Instagram DMs, comments, story replies and mentions, and Facebook Messenger in one team inbox; price comments turned into DMs automatically; AI replies from the customer record with pieces at today's rate, with approval where the team wants it.
 - Payment links inside the DM; catalogue synced automatically to Instagram and Facebook shops; chats from click-to-WhatsApp ads in the same inbox; sales traced to posts and ads. Details: https://jwero.ai/products/instagram-facebook
 
 ## Jewellery ecommerce website (facts)
@@ -146,7 +146,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Numbered quotations priced from the catalogue at today's gold rate with the jeweller's making and wastage rules; a validity window on each.
 - Created from the customer record, a catalogue enquiry or by automation; sending needs a human confirm.
 - Sent as a link and PDF on WhatsApp or email; the customer accepts or declines online; result written to her record.
-- Follow-ups drafted for approval when she goes quiet; every revision numbered; accepted quotes convert to a sales order.
+- Follow-ups sent automatically when she goes quiet; every revision numbered; accepted quotes convert to a sales order.
 
 ## AI chatbot and AI sales agents for jewellers (facts)
 
@@ -155,7 +155,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Duties: after-hours enquiries, follow-ups, scheme instalment reminders, occasion outreach, AI voice and calls.
 - Chat, voice and phone calls run in 14 languages: English, Hindi, Marathi, Gujarati, Tamil, Telugu, Kannada, Bengali, Malayalam, Punjabi, Odia, Arabic, Spanish, French.
 - AI voice is built into WhatsApp and web chat; phone calls and IVR run over the jeweller's own telephony provider.
-- Governance: approval queues, daily caps, kill switch, and a log of every action and approver. AI does not set prices or discounts.
+- Governance: AI runs on its own inside daily caps and quiet hours; approval queues for the actions you choose; kill switch; a log of every action. AI does not set prices or discounts.
 
 ## Jewellery billing, accounting and Tally (facts)
 
@@ -172,7 +172,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Email threads sit in the same shared inbox as WhatsApp, Instagram and web chat, on the customer record.
 - Email campaigns: drag-and-drop designer, AI-written subject and copy, personalisation, A/B testing, open and click tracking, sent to segments.
 - Journeys send abandoned cart, browse and occasion emails. Unsubscribes enforced; bounces stop future sends.
-- AI drafts replies for approval; receipts, OTPs and reminders go on branded templates.
+- AI replies automatically, with approval where you choose; receipts, OTPs and reminders go on branded templates.
 
 ## Girvi and gold loan software (facts)
 
@@ -253,7 +253,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - AI lead finder: searches for companies and people to approach (corporate gifting, retailers, planners), ₹1 a search, added to the CRM.
 - AI segment builder: describe an audience in plain words and AI turns it into a segment.
 - Call transcript analysis: AI reads call transcripts, notes the customer's interest and updates scores.
-- Twelve ready AI agent teams (Revenue, Sales, Seller, Marketing, Growth, CX, Operations, Inventory, Finance, Reporting, HR, Payroll and Settlement), most asking for approval by default.
+- Twelve ready AI agent teams (Revenue, Sales, Seller, Marketing, Growth, CX, Operations, Inventory, Finance, Reporting, HR, Payroll and Settlement), each running on its own inside limits, with approval where you require it.
 - In-app assistant takes spoken or typed instructions, including Hindi and Hinglish; a staff voice assistant wakes on a wake word.
 
 ## Enterprise and self-hosting (facts)
@@ -295,7 +295,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Why Jewellers Need an Operating System, Not More Tools: https://jwero.ai/platform
 - Customer Memory: 198 Signals, 11 Scores, One Record: https://jwero.ai/platform/customer-memory
 - Live Gold Rate Pricing: Rate, Making Charge & Stone Rules: https://jwero.ai/platform/pricing-engine
-- AI Workforce & Governance, AI That Waits for Your Yes: https://jwero.ai/platform/ai-workforce
+- AI Workforce & Governance, AI That Works Inside Your Limits: https://jwero.ai/platform/ai-workforce
 - Jwero Integrations: Tally, Shopify, Meta, Stripe, PayPal, MCP: https://jwero.ai/platform/integrations
 - Tally Integration for Jewellers: Keep Your Books: https://jwero.ai/platform/integrations/tally
 - Onboarding & Support, Live in a Day, Trained in Your Language: https://jwero.ai/platform/onboarding
@@ -476,7 +476,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Store Manager, Run the Floor on Today’s Numbers: https://jwero.ai/roles/store-manager
 - Sales Associate, Walk Up Already Knowing the Customer: https://jwero.ai/roles/sales-associate
 - Jewellery Billing Cashier: Live Gold Rate Billing: https://jwero.ai/roles/cashier
-- For CRM & Telecalling Staff: Follow-ups, Drafted: https://jwero.ai/roles/crm-executive
+- For CRM & Telecalling Staff: Follow-ups, Automated: https://jwero.ai/roles/crm-executive
 - For Marketing Managers, One Campaign, One Customer Record: https://jwero.ai/roles/marketing-manager
 - For E-commerce Managers: Shopify Plus What It Lacks: https://jwero.ai/roles/ecommerce-manager
 - Jwero for Karigars: Traceable Jobs, Accounted Loss: https://jwero.ai/roles/karigar

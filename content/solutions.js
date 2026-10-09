@@ -39,7 +39,7 @@ const S_ITEMS = [
   ['role', '/roles/store-manager', 'Store manager', 'Run the floor on today’s numbers.'],
   ['role', '/roles/sales-associate', 'Sales associate', 'Walk up already knowing the customer.'],
   ['role', '/roles/cashier', 'Cashier', 'Bills at the live rate, payments and day close.'],
-  ['role', '/roles/crm-executive', 'CRM and telecalling', 'Prioritised follow-ups, drafted for you.'],
+  ['role', '/roles/crm-executive', 'CRM and telecalling', 'Prioritised follow-ups, sent for you.'],
   ['role', '/roles/marketing-manager', 'Marketing manager', 'One campaign, every channel, one record.'],
   ['role', '/roles/ecommerce-manager', 'Ecommerce manager', 'Synced stock and live-rate prices online.'],
   ['role', '/roles/inventory-manager', 'Inventory manager', 'See what is dying on the shelf, in every branch.'],
@@ -110,7 +110,7 @@ const singleStore = {
   breadcrumbs: BC('Single store'),
   faqs: [
     { q: 'Is Jwero too much system for one store?', a: 'No — you start with three things: your customer list imported, your WhatsApp connected, your catalogue published. Everything else switches on only when you want it. One store with memory beats three without.' },
-    { q: 'I am not technical. Can my team run this?', a: 'If they can use WhatsApp, they can run Jwero. Onboarding is done with you by a human, your data is imported for you, and AI drafts wait for a simple approve/edit tap.' },
+    { q: 'I am not technical. Can my team run this?', a: 'If they can use WhatsApp, they can run Jwero. Onboarding is done with you by a human, your data is imported for you, and the AI works automatically inside the limits you set.' },
     { q: 'What does it cost for a single store?', a: 'Entry plans are priced for single stores with monthly billing — see the pricing page. Measure it against one recovered customer, not against your billing software’s AMC.' },
     { q: 'I need my family or business partner to agree before I decide anything. What do I show them?', a: 'Bring them into the WhatsApp demo directly, or share the growth report sample — a plain-language weekly account is easier for a sceptical family member to evaluate than a sales pitch.' },
     { q: 'What if I try this and it doesn’t work for my shop?', a: 'You’ve changed nothing that can’t be undone — your billing software stays untouched, and your data exports any time you ask.' },
@@ -129,7 +129,7 @@ ${L.section(
   `${L.sectionHead('', 'Three quiet leaks in every single-store business.', '')}
   ${L.painRows([
     { quote: 'My best salesman left and took twenty years of customers in his pocket.', title: 'The memory belongs to the shop now', text: 'Every conversation, preference and promise lives on the store’s own record. Staff change; the relationship stays.' },
-    { quote: 'Customers message at night. By morning they have bought elsewhere.', title: 'The counter that never closes', text: 'The AI workforce answers in minutes with real prices at today’s rate — and every draft waits for approval until you say otherwise.' },
+    { quote: 'Customers message at night. By morning they have bought elsewhere.', title: 'The counter that never closes', text: 'The AI workforce answers in minutes with real prices at today’s rate, automatically, with approval only where you want it.' },
     { quote: 'We spend on festival marketing and cannot tell if a single sale came from it.', title: 'Invitations, not blasts', text: 'The right customers hear from you before the festival, personally, with consent — and the growth report tells you what came back.' },
     { quote: 'Someone walked out today. I don’t know who, what they tried, or why they didn’t buy.', title: 'Know who is in your shop, and who just left', text: 'A live floor view shows who is browsing right now; when someone leaves without buying, Walkout Rescue drafts a WhatsApp follow-up naming the exact pieces they tried — your team sends it. See <a href="/products/showroom">Showroom Intelligence</a>.' },
   ])}`
@@ -145,7 +145,7 @@ ${L.section(
   `${L.sectionHead('THE FIRST 30 DAYS', 'Small start. Visible proof.', '')}
   ${L.steps([
     { title: 'Day 1: Set up, then days 2–7: Land', text: 'Set up in a day: customers imported, WhatsApp connected, catalogue live. Nothing ripped out — your billing software stays.' },
-    { title: 'Weeks 2–3: First wins', text: 'Enquiries answered in minutes, birthday and anniversary greetings flowing with approvals, first catalogue shares.' },
+    { title: 'Weeks 2–3: First wins', text: 'Enquiries answered in minutes, birthday and anniversary greetings going out on their own, first catalogue shares.' },
     { title: 'Day 30: The report', text: 'Your first growth report: who came back, what they bought, what the system did. Judge us on that.' },
   ])}`
 )}
@@ -243,7 +243,7 @@ ${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take
 ${L.section(
   `${L.sectionHead('THE ROLLOUT', 'One branch earns the next.', 'The plan we run across a chain; each step has an exit test before the next.')}
   ${L.steps([
-    { title: 'Week 1–2 — one pilot branch', text: 'Your toughest store. Customers, catalogue and stock imported; head-office rules set once; the branch runs the counter and WhatsApp with every AI action waiting for approval.' },
+    { title: 'Week 1–2 — one pilot branch', text: 'Your toughest store. Customers, catalogue and stock imported; head-office rules set once; the branch runs the counter and WhatsApp, with approval switched on for the AI actions you choose.' },
     { title: 'Week 3 — the exit test', text: 'Rate consistency, enquiry response time, day-close variance, the branch manager’s own verdict. If it fails, we stop.' },
     { title: 'Week 4–6 — three more branches', text: 'Head-office controls proven at the pilot go chain-wide; branch permissions per action; transfers with an approval trail.' },
     { title: 'After — the rest, around your season', text: 'Remaining branches in waves; nothing goes live in peak weeks. The written change-freeze is part of the plan.' },

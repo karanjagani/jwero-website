@@ -91,7 +91,7 @@ ${L.hero({
 })}
 ${L.section(
   `${L.painRows([
-    { quote: 'DMs turn into orders badly — or not at all.', title: 'Turn ad clicks into managed conversations', text: 'The AI workforce advances WhatsApp and Instagram conversations toward a sale, with your approval on every message.' },
+    { quote: 'DMs turn into orders badly — or not at all.', title: 'Turn ad clicks into managed conversations', text: 'The AI workforce advances WhatsApp and Instagram conversations toward a sale, with approval only where you want it.' },
     { quote: 'Shopify doesn’t understand gold-rate pricing.', title: 'Live-rate pricing on top of your store', text: 'Catalogue prices follow the live metal rate — something a generic ecommerce platform doesn’t do natively.' },
     { quote: 'Retention beyond the first order is basically zero.', title: 'A customer record, not just an order history', text: 'One record turns a first-time buyer into a remembered relationship, with occasion and win-back journeys.' },
   ])}`

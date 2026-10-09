@@ -49,25 +49,27 @@
         ['Festival invite · 220 customers', '“Dhanteras preview on the 27th, your name is on the list.”', 'campaign'],
         ['Win-back · Mehta family', '“It has been 14 months, the new temple collection has pieces in your taste.”', 'win-back'],
       ];
-      var i = 0, handled = 0, auto = {}, killed = false, timer = 0;
+      var i = 0, handled = 0, auto = { occasion: true, reply: true, reminder: true, 'follow-up': true }, killed = false, timer = 0;
+      function autoN() { return Object.keys(auto).filter(function (k) { return auto[k]; }).length; }
       host.innerHTML = '<div class="sim-queue"><div class="sim-queue-list" aria-live="polite"></div>' +
-        '<div class="sim-side"><p class="sim-tag">Your morning</p><div class="sim-stat"><b data-score="handled">0</b><span>customers handled</span></div><div class="sim-stat"><b data-score="auto">0</b><span>action types set to run alone</span></div>' +
-        '<button type="button" class="btn btn-ghost sim-kill">Kill switch, stop everything</button><p class="sim-small">Approve, edit, or let that action type run alone from now on. Nothing sends until you say so.</p></div></div>' +
-        '<p class="sim-foot"><span data-score="msg">Drafts arrive as customers do.</span></p>';
+        '<div class="sim-side"><p class="sim-tag">Your morning</p><div class="sim-stat"><b data-score="handled">0</b><span>customers handled</span></div><div class="sim-stat"><b data-score="auto">4</b><span>kinds of action running on their own</span></div>' +
+        '<button type="button" class="btn btn-ghost sim-kill">Kill switch, stop everything</button><p class="sim-small">Most work sends itself. This shop chose to review campaigns and win-backs: approve, edit, or let that kind run alone too. Tap “Ask me first” on any kind to review it.</p></div></div>' +
+        '<p class="sim-foot"><span data-score="msg">Work arrives as customers do.</span></p>';
       var list = host.querySelector('.sim-queue-list');
       function push() {
-        if (killed || i >= drafts.length) { if (i >= drafts.length) score(host, 'msg', 'Queue clear. ' + handled + ' customers handled before the shop opened.'); return; }
+        if (killed || i >= drafts.length) { if (i >= drafts.length) score(host, 'msg', 'All done. ' + handled + ' customers handled before the shop opened.'); return; }
         var d = drafts[i++], kind = d[2];
         var card = el('div', 'sim-draft', '<p class="sim-draft-title">' + d[0] + ' <em>' + kind + '</em></p><p>' + d[1] + '</p><div class="sim-actions"><button type="button" class="chip chip-go" data-act="approve">Approve</button><button type="button" class="chip" data-act="edit">Edit</button><button type="button" class="chip" data-act="auto">Let “' + kind + '” run alone</button></div>');
-        if (auto[kind]) { card.classList.add('is-auto'); card.querySelector('.sim-actions').innerHTML = '<span class="sim-auto">Sent on its own, “' + kind + '” is trusted · caps and quiet hours apply</span>'; handled++; score(host, 'handled', handled); }
+        if (auto[kind]) { card.classList.add('is-auto'); card.querySelector('.sim-actions').innerHTML = '<span class="sim-auto">Sent on its own · caps and quiet hours apply</span><button type="button" class="chip" data-act="ask">Ask me first for “' + kind + '”</button>'; handled++; score(host, 'handled', handled); }
         list.insertBefore(card, list.firstChild);
         if (list.children.length > 4) list.removeChild(list.lastChild);
-        timer = window.setTimeout(push, auto[kind] ? 1400 : 4200);
+        timer = window.setTimeout(push, auto[kind] ? 1800 : 4200);
       }
       list.addEventListener('click', function (e) {
         var b = e.target.closest('[data-act]'); if (!b) return;
         var card = b.closest('.sim-draft'), kind = card.querySelector('em').textContent;
-        if (b.dataset.act === 'auto') { auto[kind] = true; score(host, 'auto', Object.keys(auto).length); }
+        if (b.dataset.act === 'ask') { auto[kind] = false; score(host, 'auto', autoN()); b.outerHTML = '<span class="sim-auto"> · “' + kind + '” will ask you first from now on</span>'; return; }
+        if (b.dataset.act === 'auto') { auto[kind] = true; score(host, 'auto', autoN()); }
         card.classList.add('is-done'); card.querySelector('.sim-actions').innerHTML = '<span class="sim-auto">' + (b.dataset.act === 'edit' ? 'Edited and sent' : b.dataset.act === 'auto' ? 'Approved, and “' + kind + '” will run alone from now on' : 'Approved and sent') + '</span>';
         handled++; score(host, 'handled', handled);
         window.clearTimeout(timer); timer = window.setTimeout(push, 700);
@@ -75,7 +77,7 @@
       host.querySelector('.sim-kill').addEventListener('click', function () {
         killed = !killed; host.classList.toggle('is-killed', killed);
         this.textContent = killed ? 'Resume' : 'Kill switch, stop everything';
-        score(host, 'msg', killed ? 'Everything stopped, one tap, every agent, every channel.' : 'Resumed. Drafts arrive as customers do.');
+        score(host, 'msg', killed ? 'Everything stopped, one tap, every agent, every channel.' : 'Resumed. Work arrives as customers do.');
         if (!killed) push();
       });
       push();
@@ -90,7 +92,7 @@
       var names = Object.keys(people);
       host.innerHTML = '<div class="sim-memory"><div class="sim-memory-pick"><p class="sim-tag">A customer messages</p>' + names.map(function (n, i) { return '<button type="button" class="chip' + (i === 0 ? ' chip-go' : '') + '" data-who="' + n + '">' + n + '</button>'; }).join('') +
         '<div class="sim-dots" aria-hidden="true">' + new Array(96).join('<i></i>') + '</div><p class="sim-small"><b data-score="count">0</b> of 90+ fields on her record</p></div>' +
-        '<div class="sim-memory-record"><p class="sim-tag">What the record already knows</p><div class="sim-fields"></div><p class="sim-tag" style="margin-top:18px">Reply drafted, waiting for your approval</p><p class="sim-draft-text"></p></div></div>' +
+        '<div class="sim-memory-record"><p class="sim-tag">What the record already knows</p><div class="sim-fields"></div><p class="sim-tag" style="margin-top:18px">Reply sent automatically</p><p class="sim-draft-text"></p></div></div>' +
         '<p class="sim-foot">The salesperson who replies has never met her. The record has.</p>';
       var fieldsBox = host.querySelector('.sim-fields'), draftBox = host.querySelector('.sim-draft-text'), dots = host.querySelectorAll('.sim-dots i');
       var timers = [];
