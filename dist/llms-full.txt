@@ -945,12 +945,9 @@ Jwero reads 198 kinds of customer signal from 36 sources, scores each customer o
 
 CUSTOMER MEMORY
 
-## The memory your best salesperson has. At business scale.
+## The memory your best salesperson has. At business scale. 
 
- The great jewellers always remembered, the daughter’s wedding, the taste for temple work, the plan maturing in March. Jwero makes that memory a system: 198 kinds of signal read into 11 live scores, every one explained on demand, owned by the business.
-
- See a live record 
- Book a demo 
+ Great jewellers always remembered the daughter’s wedding, the taste for temple work, the plan maturing in March. Jwero keeps that memory for every customer, on one record your whole team can read, and it stays with the business.
 
  Customer · Meera K. 
 
@@ -963,6 +960,37 @@ CUSTOMER MEMORY
  Best time to reach Weekdays, evening · WhatsApp 
 
  One record per customer and family, with 11 scores, from intent to churn risk, that tell your team who to reach and when.
+
+ ONE CUSTOMER, ONE YEAR
+
+## How Meera K.’s record builds itself.
+
+ Nobody fills in a form. Each time she buys, pays, messages or browses, the record learns one more thing, and your team sees all of it together.
+
+ Feb At the counter Buys a 22k chain. The bill takes her number and birthday.
+
+ Mar Gold plan Joins the 11-month plan and pays the first instalment.
+
+ Jun WhatsApp Asks for temple work necklaces and opens the catalogue you share, on a weekday evening.
+
+ Aug Website and chat Looks at bridal sets twice, then mentions her daughter’s wedding.
+
+ Sep Gold plan Misses an instalment. A reminder is drafted and waits for your approval.
+
+ Oct Follow-up Jwero suggests inviting her to see bridal sets before the wedding, with her plan balance to use.
+
+ MK Meera K. One record 
+
+ First purchase 22k chain · yellow gold 
+ Gold plan balance 7 of 11 months 
+ Prefers Temple work · 22k · yellow 
+ Daughter’s wedding November 
+ Best time to reach Weekdays, evening · WhatsApp 
+ Next step Invite to see bridal sets · waiting for approval 
+
+ When she walks in whoever is at the counter sees all of this on one screen and greets a customer they already know. 
+
+ An illustrative customer journey showing how Jwero Customer Memory works in practice. 
 
  WHAT THE RECORD KNOWS
 
@@ -1104,7 +1132,7 @@ CUSTOMER MEMORY
 
 ## Give your business a memory.
 
- We import your customers from Excel or your current software, the memory starts working in days.
+ We import your customers from Excel or your current software, and the record starts filling in from the first bill and the first message.
 
  Talk to us 
  Book a demo 
@@ -28174,9 +28202,9 @@ JEWELLERY SOFTWARE · MUMBAI
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -28329,9 +28357,9 @@ JEWELLERY SOFTWARE · SURAT
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me my own shelf Try Free Now 
+ Try Free Now Show me my own shelf 
 
  START HERE
 
@@ -28484,9 +28512,9 @@ JEWELLERY SOFTWARE · JAIPUR
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  START HERE
 
@@ -28639,9 +28667,9 @@ JEWELLERY SOFTWARE · RAJKOT
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me one real job, gram by gram Try Free Now 
+ Try Free Now Show me one real job, gram by gram 
 
  START HERE
 
@@ -28794,9 +28822,9 @@ JEWELLERY SOFTWARE · AHMEDABAD
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -28949,9 +28977,9 @@ JEWELLERY SOFTWARE · DELHI
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  START HERE
 
@@ -29104,9 +29132,9 @@ JEWELLERY SOFTWARE · KOLKATA
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me one real job, gram by gram Try Free Now 
+ Try Free Now Show me one real job, gram by gram 
 
  START HERE
 
@@ -29261,9 +29289,9 @@ JEWELLERY SOFTWARE · HYDERABAD
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  START HERE
 
@@ -29418,9 +29446,9 @@ JEWELLERY SOFTWARE · CHENNAI
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -29575,9 +29603,9 @@ JEWELLERY SOFTWARE · COIMBATORE
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me one real job, gram by gram Try Free Now 
+ Try Free Now Show me one real job, gram by gram 
 
  START HERE
 
@@ -29732,9 +29760,9 @@ JEWELLERY SOFTWARE · BENGALURU
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  START HERE
 
@@ -29889,9 +29917,9 @@ JEWELLERY SOFTWARE · THRISSUR
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -30044,9 +30072,9 @@ JEWELLERY SOFTWARE · PUNE
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  START HERE
 
@@ -30201,9 +30229,9 @@ JEWELLERY SOFTWARE · KOCHI
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -30358,9 +30386,9 @@ JEWELLERY SOFTWARE · KOZHIKODE
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  START HERE
 
@@ -30515,9 +30543,9 @@ JEWELLERY SOFTWARE · MADURAI
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -30670,9 +30698,9 @@ JEWELLERY SOFTWARE · VIJAYAWADA
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  START HERE
 
@@ -30825,9 +30853,9 @@ JEWELLERY SOFTWARE · LUCKNOW
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  START HERE
 
@@ -30980,9 +31008,9 @@ JEWELLERY SOFTWARE · INDORE
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -31135,9 +31163,9 @@ JEWELLERY SOFTWARE · NAGPUR
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -31290,9 +31318,9 @@ JEWELLERY SOFTWARE · JALGAON
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -31439,9 +31467,9 @@ JEWELLERY SOFTWARE · AMRITSAR
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  START HERE
 
@@ -31594,9 +31622,9 @@ JEWELLERY SOFTWARE · BIKANER
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me one real job, gram by gram Try Free Now 
+ Try Free Now Show me one real job, gram by gram 
 
  START HERE
 
@@ -31749,9 +31777,9 @@ JEWELLERY SOFTWARE · VARANASI
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  START HERE
 
@@ -31904,9 +31932,9 @@ JEWELLERY SOFTWARE · CUTTACK
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -32061,9 +32089,9 @@ JEWELLERY SOFTWARE · PATNA
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -32216,9 +32244,9 @@ JEWELLERY SOFTWARE · KOLHAPUR
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -32371,9 +32399,9 @@ JEWELLERY SOFTWARE · AGRA
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  START HERE
 
@@ -32528,9 +32556,9 @@ JEWELLERY SOFTWARE · SALEM
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me one real job, gram by gram Try Free Now 
+ Try Free Now Show me one real job, gram by gram 
 
  START HERE
 
@@ -32714,9 +32742,9 @@ JEWELLERY ACCOUNTING SOFTWARE
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me a till close Try Free Now 
+ Try Free Now Show me a till close 
 
  TODAY AND WITH JWERO
 
@@ -32912,9 +32940,9 @@ JEWELLERY BARCODE AND TAGGING SOFTWARE
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me this on my own catalogue Try Free Now 
+ Try Free Now Show me this on my own catalogue 
 
  TODAY AND WITH JWERO
 
@@ -33112,9 +33140,9 @@ CLOUD JEWELLERY SOFTWARE
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me my own shelf Try Free Now 
+ Try Free Now Show me my own shelf 
 
  TODAY AND WITH JWERO
 
@@ -33490,9 +33518,9 @@ INSTAGRAM FOR JEWELLERS
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  TODAY AND WITH JWERO
 
@@ -33686,9 +33714,9 @@ ADS FOR JEWELLERS
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me a real queue Try Free Now 
+ Try Free Now Show me a real queue 
 
  TODAY AND WITH JWERO
 
@@ -33884,9 +33912,9 @@ SMS, RCS AND PUSH FOR JEWELLERS
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me a real queue Try Free Now 
+ Try Free Now Show me a real queue 
 
  TODAY AND WITH JWERO
 
@@ -34080,9 +34108,9 @@ SHOWROOM FOOTFALL AND WALK-IN TRACKING
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  TODAY AND WITH JWERO
 
@@ -34748,9 +34776,9 @@ APPOINTMENT BOOKING FOR JEWELLERS
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  TODAY AND WITH JWERO
 
@@ -34944,9 +34972,9 @@ JEWELLERY STAFF MANAGEMENT
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me a real queue Try Free Now 
+ Try Free Now Show me a real queue 
 
  TODAY AND WITH JWERO
 
@@ -35140,9 +35168,9 @@ JEWELLERY WEBSITE ANALYTICS
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  TODAY AND WITH JWERO
 
@@ -35552,9 +35580,9 @@ BUYER’S GUIDE
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me a till close Try Free Now 
+ Try Free Now Show me a till close 
 
  QUESTIONS
 
@@ -35748,9 +35776,9 @@ BUYER’S GUIDE
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me one real job, gram by gram Try Free Now 
+ Try Free Now Show me one real job, gram by gram 
 
  QUESTIONS
 
@@ -35919,9 +35947,9 @@ BUYER’S GUIDE
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me my own shelf Try Free Now 
+ Try Free Now Show me my own shelf 
 
  QUESTIONS
 
@@ -36106,9 +36134,9 @@ BUYER’S GUIDE
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative customer journey showing how Jwero Customer Memory works in practice.
 
- Send me a sample customer record Try Free Now 
+ Try Free Now Send me a sample customer record 
 
  QUESTIONS
 
@@ -36283,9 +36311,9 @@ BUYER’S GUIDE
 
  Loading the simulation…
 
- Simulation, illustrative numbers, the product’s real mechanics.
+ An illustrative example. The figures are made up; the way it works is how Jwero works.
 
- Show me one real job, gram by gram Try Free Now 
+ Try Free Now Show me one real job, gram by gram 
 
  QUESTIONS
 

@@ -136,12 +136,15 @@ const customerMemory = {
   body: `
 ${L.hero({
   eyebrow: 'CUSTOMER MEMORY',
-  h1: 'The memory your best salesperson has. At business scale.',
-  sub: 'The great jewellers always remembered — the daughter’s wedding, the taste for temple work, the plan maturing in March. Jwero makes that memory a system: 198 kinds of signal read into 11 live scores, every one explained on demand, owned by the business.',
-  primary: { href: '#', label: 'See a live record', wa: 'memory' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  h1: 'The memory your best salesperson has. <span class="h1-turn">At business scale.</span>',
+  sub: 'Great jewellers always remembered the daughter’s wedding, the taste for temple work, the plan maturing in March. Jwero keeps that memory for every customer, on one record your whole team can read, and it stays with the business.',
   mock: L.mockMemory,
 })}
+
+${L.section(
+  `${L.sectionHead('ONE CUSTOMER, ONE YEAR', 'How Meera K.’s record builds itself.', 'Nobody fills in a form. Each time she buys, pays, messages or browses, the record learns one more thing, and your team sees all of it together.')}
+  ${require('./graphics').memoryJourney()}`
+, { id: 'meera' })}
 
 ${L.section(
   `${L.sectionHead('WHAT THE RECORD KNOWS', 'Not notes. Fields.', 'Her gold balance, her daughter’s wedding month, her missed instalment — each one a structured column, on every record.')}
@@ -182,7 +185,7 @@ ${L.section(`${L.sectionHead('MEMORY QUESTIONS', 'What owners and evaluators ask
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.ctaBand('Give your business a memory.', 'We import your customers from Excel or your current software — the memory starts working in days.', 'memory')}
+${L.ctaBand('Give your business a memory.', 'We import your customers from Excel or your current software, and the record starts filling in from the first bill and the first message.', 'memory')}
 `,
 };
 

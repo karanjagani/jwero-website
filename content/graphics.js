@@ -190,4 +190,28 @@ const toolsInto = () => {
 </div>`;
 };
 
-module.exports = { toolsInto, marketCard, tierGlance, selfHostMap, hierarchyTree, toolCollapse, marketPicker, tallyFlow, techStack, orbit, integrationMap, showroomHeat };
+// Customer Memory: one customer's year, and the record it builds. Left, what
+// happened and where; right, the record filling in, row by row.
+const MJ = [
+  ['Feb', 'till', 'At the counter', 'Buys a 22k chain. The bill takes her number and birthday.', 'First purchase', '22k chain · yellow gold'],
+  ['Mar', 'coins', 'Gold plan', 'Joins the 11-month plan and pays the first instalment.', 'Gold plan balance', '7 of 11 months'],
+  ['Jun', 'chat', 'WhatsApp', 'Asks for temple work necklaces and opens the catalogue you share, on a weekday evening.', 'Prefers', 'Temple work · 22k · yellow'],
+  ['Aug', 'eye', 'Website and chat', 'Looks at bridal sets twice, then mentions her daughter’s wedding.', 'Daughter’s wedding', 'November'],
+  ['Sep', 'calendar', 'Gold plan', 'Misses an instalment. A reminder is drafted and waits for your approval.', 'Best time to reach', 'Weekdays, evening · WhatsApp'],
+  ['Oct', 'send', 'Follow-up', 'Jwero suggests inviting her to see bridal sets before the wedding, with her plan balance to use.', 'Next step', 'Invite to see bridal sets · waiting for approval'],
+];
+const memoryJourney = () => `
+<figure class="mj" aria-labelledby="mj-cap">
+  <ol class="mj-line" data-gfx>${MJ.map(([when, ic, where, what], i) => `<li style="--i:${i}"><span class="mj-when">${when}</span><span class="mj-dot">${icon(ic)}</span><div><b>${where}</b><p>${what}</p></div></li>`).join('')}</ol>
+  <div class="mj-join" aria-hidden="true"><span></span>${icon('arrow')}</div>
+  <div class="mj-rec">
+    <div class="mj-card" data-gfx>
+      <p class="mj-who"><span>MK</span><b>Meera K.</b><em>One record</em></p>
+      <dl>${MJ.map(([, , , , k, v], i) => `<div style="--i:${i}"${i === MJ.length - 1 ? ' class="is-next"' : ''}><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
+    </div>
+    <p class="mj-out">${icon('store')}<span><b>When she walks in</b> whoever is at the counter sees all of this on one screen and greets a customer they already know.</span></p>
+  </div>
+  <figcaption id="mj-cap">An illustrative customer journey showing how Jwero Customer Memory works in practice.</figcaption>
+</figure>`;
+
+module.exports = { memoryJourney, toolsInto, marketCard, tierGlance, selfHostMap, hierarchyTree, toolCollapse, marketPicker, tallyFlow, techStack, orbit, integrationMap, showroomHeat };

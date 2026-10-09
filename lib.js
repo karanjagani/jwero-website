@@ -1507,7 +1507,7 @@ function personaSwitch(entries, productName) {
 const SIMS = {
   rate: { eyebrow: 'TRY IT · LIVE RATE', title: 'Move the gold rate. Watch every price follow.', lead: 'Nine prices on three channels, one rule. Drag the rate and see what a jeweller repricing by hand would have to retype.', cta: 'Show me this on my own catalogue' },
   approve: { eyebrow: 'TRY IT · THE MORNING QUEUE', title: 'Run the AI workforce for a minute.', lead: 'Drafts arrive the way customers do. Approve, edit, or decide an action type may run alone — and stop everything with one tap.', cta: 'Show me a real queue' },
-  memory: { eyebrow: 'TRY IT · CUSTOMER MEMORY', title: 'A customer messages. What does the record already know?', lead: 'Pick a customer and watch her record fill in before anyone types a reply.', cta: 'Send me a sample customer record' },
+  memory: { eyebrow: 'TRY IT · CUSTOMER MEMORY', title: 'A customer messages. What does the record already know?', lead: 'Pick a customer and watch her record fill in before anyone types a reply.', cta: 'Send me a sample customer record', note: 'An illustrative customer journey showing how Jwero Customer Memory works in practice.' },
   shelf: { eyebrow: 'TRY IT · THE SLEEPING SHELF', title: 'Slide time forward. Watch stock fall asleep.', lead: 'Seventy-two pieces, ageing month by month. The count past 180 days is the number most owners have never seen.', cta: 'Show me my own shelf' },
   till: { eyebrow: 'TRY IT · THE COUNTER', title: 'Ring up a sale. Take old gold. Close the shift.', lead: 'Scan pieces, add exchange gold, take payment, then close the till and see the variance appear tonight — not next week.', cta: 'Show me a till close' },
   grams: { eyebrow: 'TRY IT · METAL CLOSURE', title: 'Push a stage past its wastage norm. Watch the order refuse to close.', lead: 'A hundred grams issued to the bench, four stages, four norms. The mechanics are the product’s; the numbers are yours to play with.', cta: 'Show me one real job, gram by gram' },
@@ -1519,8 +1519,8 @@ function sim(kind) {
   <div class="container">
     <div class="section-head"><p class="eyebrow">${s.eyebrow}</p><h2>${s.title}</h2><p class="lead">${s.lead}</p></div>
     <div class="sim" data-sim="${kind}" data-sim-name="${s.title.replace(/\.$/, '')}"><p class="sim-foot">Loading the simulation…</p></div>
-    <p class="sim-note">Simulation — illustrative numbers, the product’s real mechanics.</p>
-    <div class="cta-row center"><a class="btn btn-primary" href="#" data-sim-wa>${s.cta}</a><a class="btn btn-ghost" href="${TRIAL_URL}scenario" rel="noopener" data-trial>Start for ₹3,600</a></div>
+    <p class="sim-note">${s.note || 'An illustrative example. The figures are made up; the way it works is how Jwero works.'}</p>
+    <div class="cta-row center"><a class="btn btn-primary" href="${TRIAL_URL}scenario" rel="noopener" data-trial>Start for ₹3,600</a><a class="btn btn-ghost" href="#" data-sim-wa>${s.cta}</a></div>
   </div>
 </section>`;
 }
