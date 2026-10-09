@@ -490,7 +490,6 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jewellery Franchise Partner Software: https://jwero.ai/roles/franchise-partner
 - Jewellery Glossary: HUID, Girvi, Karigar, Memo, Wastage: https://jwero.ai/glossary
 - Get Started, Create Your Jwero Workspace: https://jwero.ai/start
-- Why Jewellers Need an Operating System, Not Another Tool: https://jwero.ai/why-an-os
 - What Happens After You Message, The First 30 Days with Jwero: https://jwero.ai/how-it-goes
 - Jewellery Software in India: By City and By Need: https://jwero.ai/jewellery-software-india
 - Jewellery Software in Mumbai: Billing, Stock, CRM in One: https://jwero.ai/jewellery-software-india/mumbai

@@ -220,7 +220,7 @@ ${L.section(
   ${L.cards([
     { icon: 'shield', title: '“Switching is risky.”', text: 'The six risks people imagine, each with the specific thing that removes it — and the six costs of staying, which have no answer.', link: { href: '/erp-to-os/switching', label: 'Read: is switching risky?' } },
     { icon: 'grid', title: '“I can make do with my ERP.”', text: 'Take the objection seriously: tap the tools you use today, see the gaps between them, and put a number on a year of making do.', link: { href: '/erp-to-os/make-do', label: 'Read: can I make do?' } },
-    { icon: 'record', title: 'What an OS is, once', text: 'The category, defined — and the one test that separates a bundle from an operating system.', link: { href: '/why-an-os', label: 'Read: why an OS' } },
+    { icon: 'record', title: 'What an OS is, once', text: 'The category, defined — and the one test that separates a bundle from an operating system.', link: { href: '/platform#why-an-os', label: 'Read: why an OS' } },
   ])}`
 )}
 

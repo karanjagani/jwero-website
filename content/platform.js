@@ -7,6 +7,7 @@ const platform = {
   description: 'How Jwero runs a jewellery business on one record: customers, catalogue, stock, counter billing, purchase, workshop, accounts and team, with an AI workforce that waits for your approval.',
   breadcrumbs: [['Home', '/'], ['Platform']],
   faqs: [
+    ...require('./journey').why.faqs,
     { q: 'Is Jwero an ERP?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP (orders, inventory, purchases, repairs, billing), from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.' },
     { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with the Assist scope (customers imported, WhatsApp connected, catalogue published) and expand module by module as each one proves itself.' },
     { q: 'What makes this different from buying a CRM plus a WhatsApp tool plus a catalogue app?', a: 'Separate tools mean separate memories. A WhatsApp tool doesn’t know her gold-plan balance; a CRM doesn’t sell on Instagram. In Jwero, the customer, the catalogue and the channels live on one record, so AI can actually sell instead of just logging.' },
@@ -16,7 +17,7 @@ const platform = {
   ],
   body: `
 ${L.hero({
-  eyebrow: 'PLATFORM',
+  eyebrow: 'WHY AN OS, AND THE TOUR',
   h1: 'One record for the whole business, every department on it, nothing sent without your approval.',
   sub: 'Customers, catalogue, stock, the counter, purchase, the workshop, the books and the team. Every module in Jwero reads and writes the same data — that is what makes it an operating system, not a bundle of features.',
   primary: { href: '#', label: 'Chat or call with us', wa: 'platform' },
@@ -27,6 +28,8 @@ ${L.hero({
 ${L.section(`${L.sectionHead('THE PRODUCT', 'This is Jwero, running.', 'Operations, Sales, Marketing, Finance and Teams across the top; stock, purchase and the workshop on one screen. A real recording, not a mock-up.')}
 <figure class="pvid"><div class="pvid-frame"><video data-pvid muted loop playsinline preload="none" poster="/assets/product/os-overview.webp" width="1280" height="720" aria-label="Screen recording of Jwero: the Stock and Workshop overview with open purchase orders, inventory value, metal value and a stock pulse, then the tabs for Sales, Marketing, Finance and Teams"><source src="/assets/product/os-overview.mp4" type="video/mp4"></video><button type="button" class="pvid-toggle" data-pvid-toggle aria-label="Pause the recording">Pause</button></div>
 <figcaption>The Stock and Workshop overview in Jwero: open purchase orders, pieces awaiting receipt, inventory, metal and making value, dead stock and the stock on hand. <a href="/book-demo">Book a demo</a> to see it on your own stock.</figcaption></figure>`, { tone: 'tint' })}
+
+${require('./journey').why.sections}
 
 ${(() => {
   const fs = require('fs'), path = require('path');
@@ -106,6 +109,7 @@ ${L.honestGapsBlock([
 ])}
 
 ${L.section(`${L.sectionHead('QUESTIONS EVALUATORS ASK', 'Straight answers for the people who have to sign off.', '')}${L.faqBlock([
+  ...require('./journey').why.faqs,
   { q: 'Is Jwero an ERP?', a: 'Both, running as a single system that does the job of a CRM and an ERP at once. It remembers customers like a CRM and runs operations like an ERP, from the same record. Your statutory books stay in Tally or Zoho Books.' },
   { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with customers imported, WhatsApp connected and catalogue published, then expand module by module.' },
   { q: 'What makes this different from a CRM plus a WhatsApp tool?', a: 'Separate tools mean separate memories. In Jwero the customer, catalogue and channels live on one record, so AI can sell instead of just logging.' },

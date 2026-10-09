@@ -112,4 +112,37 @@ ${L.ctaBand('Start the sequence.', 'One message. Everything above follows, in th
 `,
 };
 
-module.exports = [whyAnOs, howItGoes];
+// /why-an-os was merged into /platform on 2026-10-09 (one page for "why an OS" and the tour).
+// The page object above is no longer published; its three sections and questions feed /platform.
+const whySections = `
+<span id="why-an-os"></span>
+${L.section(
+  `${L.sectionHead('THE TEST', 'A bundle has one login. An operating system has one row.', 'Ask any software this question and you have your answer.')}
+  ${L.impactGrid([
+    { lever: 'A customer buys at the counter', before: 'The bill is in billing. Her WhatsApp thread, her scheme and her follow-up know nothing.', after: 'One row updates: her record, her scheme balance, her next follow-up, the stock, the books.', link: { href: '/products/pos', label: 'See the counter' } },
+    { lever: 'The gold rate moves', before: 'Someone reprices the catalogue, the website and the quotes — or doesn’t.', after: 'One rule reprices every channel at once, with overrides routed through approval.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
+    { lever: 'A salesperson leaves', before: 'Twenty years of relationships leave with the phone.', after: 'Every signal she ever gave you — scored, explained — stays with the business; the next person walks up already knowing her.', link: { href: '/platform/customer-memory', label: 'See customer memory' } },
+    { lever: 'An enquiry lands at 11pm', before: 'It waits for morning. She has bought elsewhere by then.', after: 'The AI drafts a priced reply from her record in minutes — and sends it, or waits for your yes.', link: { href: '/platform/ai-workforce', label: 'See the AI workforce' } },
+  ])}`
+)}
+
+${L.section(
+  `${L.sectionHead('THREE WORDS, DEFINED', 'Autonomous. Jewellery. OS.', '')}
+  ${L.cards([
+    { icon: '⏻', title: 'Autonomous', text: 'The AI workforce drafts and, where you allow it, acts — inside daily caps, quiet hours and a kill switch at five scopes. Autonomy is earned one action type at a time, never assumed.' },
+    { icon: '◆', title: 'Jewellery', text: 'Weight, purity, live rate, making charge, hallmark, memo, karigar, scheme, girvi — first-class in the data model, not fields bolted onto retail software.' },
+    { icon: '▣', title: 'OS', text: 'One customer record, one catalogue, one inventory truth, one ledger. Every module — WhatsApp, counter, website, workshop, schemes — reads and writes the same row.' },
+  ])}`
+, { tone: 'tint' })}
+
+${L.section(
+  `${L.sectionHead('WHAT IT IS NOT', 'Honest boundaries.', '')}
+  ${L.cards([
+    { title: 'Not a replacement for your accountant', text: 'Books post to Jwero’s ledger and bridge to Tally or Zoho Books. Your CA’s world does not change.' },
+    { title: 'Not a chatbot that acts alone', text: 'Nothing sends without approval by default. You widen what may run alone, per action type, when the accuracy earns it.' },
+    { title: 'Not finished', text: 'The public roadmap says what is shipped, rolling out and not yet — before you buy, not after.', link: { href: '/roadmap', label: 'See the roadmap' } },
+  ])}`
+)}
+`;
+module.exports = [howItGoes];
+module.exports.why = { sections: whySections, faqs: whyAnOs.faqs };

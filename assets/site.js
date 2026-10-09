@@ -1760,7 +1760,7 @@ function jwFromInr(n) {
     var box = document.createElement('div');
     box.className = 'short-version';
     box.innerHTML = '<div class="container"><span class="short-tag">The short version</span><p>Jwero runs your whole jewellery business on one record: customers, counter, stock, workshop, team and books. AI drafts the work, and nothing sends without your yes.</p>' +
-      '<a href="/why-an-os">What it is</a><a href="/pricing">What it costs</a><a href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=ai-referrer" rel="noopener">Start</a><a href="#" data-wa="default">Ask a person</a></div>';
+      '<a href="/platform#why-an-os">What it is</a><a href="/pricing">What it costs</a><a href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=ai-referrer" rel="noopener">Start</a><a href="#" data-wa="default">Ask a person</a></div>';
     hero.insertAdjacentElement('afterend', box);
     var a = box.querySelector('[data-wa]'); a.setAttribute('href', waLink('default')); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
     try { sessionStorage.setItem('jwero-ai-short', '1'); } catch (e) {}

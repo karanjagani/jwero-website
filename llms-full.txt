@@ -507,7 +507,7 @@ URL: https://jwero.ai/platform
 
 How Jwero runs a jewellery business on one record: customers, catalogue, stock, counter billing, purchase, workshop, accounts and team, with an AI workforce that waits for your approval.
 
-PLATFORM
+WHY AN OS, AND THE TOUR
 
 ## One record for the whole business, every department on it, nothing sent without your approval.
 
@@ -536,6 +536,72 @@ PLATFORM
  Pause 
 
  The Stock and Workshop overview in Jwero: open purchase orders, pieces awaiting receipt, inventory, metal and making value, dead stock and the stock on hand. Book a demo to see it on your own stock. 
+
+ THE TEST
+
+## A bundle has one login. An operating system has one row.
+
+ Ask any software this question and you have your answer.
+
+ Today With Jwero 
+
+ A customer buys at the counter See the counter → 
+
+ Today The bill is in billing. Her WhatsApp thread, her scheme and her follow-up know nothing.
+
+ With Jwero One row updates: her record, her scheme balance, her next follow-up, the stock, the books.
+
+ The gold rate moves See the pricing engine → 
+
+ Today Someone reprices the catalogue, the website and the quotes, or doesn’t.
+
+ With Jwero One rule reprices every channel at once, with overrides routed through approval.
+
+ A salesperson leaves See customer memory → 
+
+ Today Twenty years of relationships leave with the phone.
+
+ With Jwero Every signal she ever gave you, scored, explained, stays with the business; the next person walks up already knowing her.
+
+ An enquiry lands at 11pm See the AI workforce → 
+
+ Today It waits for morning. She has bought elsewhere by then.
+
+ With Jwero The AI drafts a priced reply from her record in minutes, and sends it, or waits for your yes.
+
+ THREE WORDS, DEFINED
+
+## Autonomous. Jewellery. OS.
+
+## Autonomous
+
+ The AI workforce drafts and, where you allow it, acts, inside daily caps, quiet hours and a kill switch at five scopes. Autonomy is earned one action type at a time, never assumed.
+
+## Jewellery
+
+ Weight, purity, live rate, making charge, hallmark, memo, karigar, scheme, girvi, first-class in the data model, not fields bolted onto retail software.
+
+## OS
+
+ One customer record, one catalogue, one inventory truth, one ledger. Every module, WhatsApp, counter, website, workshop, schemes, reads and writes the same row.
+
+ WHAT IT IS NOT
+
+## Honest boundaries.
+
+## Not a replacement for your accountant
+
+ Books post to Jwero’s ledger and bridge to Tally or Zoho Books. Your CA’s world does not change.
+
+## Not a chatbot that acts alone
+
+ Nothing sends without approval by default. You widen what may run alone, per action type, when the accuracy earns it.
+
+## Not finished
+
+ The public roadmap says what is shipped, rolling out and not yet, before you buy, not after.
+
+ See the roadmap → 
 
  INSIDE THE PLATFORM
 
@@ -778,6 +844,18 @@ PLATFORM
 
 ## Straight answers for the people who have to sign off.
 
+ Isn’t an “operating system” just marketing for an all-in-one? 
+ An all-in-one bundles modules under one login. An operating system makes every module read and write the same record. The test: when a customer buys at the counter, does her WhatsApp thread, her scheme balance and her next follow-up change without anyone syncing anything? In a bundle, no. In an OS, yes, it is one row.
+
+ I already have a CRM and an ERP. Why is that not an OS? 
+ Because they hold two copies of the same customer and the same piece, and someone reconciles them. The reconciliation is where memory is lost and where the follow-up dies. An OS removes the second copy, not the first tool.
+
+ What does “run by AI” actually mean here? 
+ An AI workforce drafts the work, replies, follow-ups, reminders, invitations, reorder suggestions, from the one record. You decide, action type by action type, whether it runs on its own inside daily caps and quiet hours, or waits for your tap. A kill switch stops any of it, at five scopes, instantly.
+
+ Does this only make sense for chains? 
+ No. A single counter has the same problem at a smaller scale: the owner is the operating system, and the business stops remembering when the owner is not there. Chains simply feel it at every branch.
+
  Is Jwero an ERP? 
  Both, running as a single system that does the job of a CRM and an ERP at once. It remembers customers like a CRM and runs operations like an ERP, from the same record. Your statutory books stay in Tally or Zoho Books.
 
@@ -809,6 +887,18 @@ PLATFORM
  You message first; a Jwero specialist replies on WhatsApp in working hours. Prefer a call? Ask for a call back .
 
  ISO/IEC 27001 certified · penetration tested Every customer remembered, on one record AI asks before it sends Your data leaves with you, any time Official WhatsApp Business Platform Works with Tally and Zoho Books AI chat and calls in 14 languages One price, every module ISO/IEC 27001 certified · penetration tested Every customer remembered, on one record AI asks before it sends Your data leaves with you, any time Official WhatsApp Business Platform Works with Tally and Zoho Books AI chat and calls in 14 languages One price, every module
+
+Q: Isn’t an “operating system” just marketing for an all-in-one?
+A: An all-in-one bundles modules under one login. An operating system makes every module read and write the same record. The test: when a customer buys at the counter, does her WhatsApp thread, her scheme balance and her next follow-up change without anyone syncing anything? In a bundle, no. In an OS, yes, it is one row.
+
+Q: I already have a CRM and an ERP. Why is that not an OS?
+A: Because they hold two copies of the same customer and the same piece, and someone reconciles them. The reconciliation is where memory is lost and where the follow-up dies. An OS removes the second copy, not the first tool.
+
+Q: What does “run by AI” actually mean here?
+A: An AI workforce drafts the work, replies, follow-ups, reminders, invitations, reorder suggestions, from the one record. You decide, action type by action type, whether it runs on its own inside daily caps and quiet hours, or waits for your tap. A kill switch stops any of it, at five scopes, instantly.
+
+Q: Does this only make sense for chains?
+A: No. A single counter has the same problem at a smaller scale: the owner is the operating system, and the business stops remembering when the owner is not there. Chains simply feel it at every branch.
 
 Q: Is Jwero an ERP?
 A: Both, but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP (orders, inventory, purchases, repairs, billing), from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.
@@ -27893,135 +27983,6 @@ A: Set-up takes a day for most shops: customers imported, your WhatsApp number c
 
 Q: Can I get help instead of doing it myself?
 A: Yes, every step below has a chat-or-call button; we can run onboarding with you.
-
----
-
-# Why Jewellers Need an Operating System, Not Another Tool
-URL: https://jwero.ai/why-an-os
-
-What an operating system for a jewellery business is, why a CRM + ERP + WhatsApp tool never becomes one, and what "run by AI" means in practice: one record, every department on it, AI that acts on its own or asks first.
-
-WHY AN OS
-
-## Your tools keep records. None of them sees the whole business.
-
- A billing tool knows the invoice. A WhatsApp tool knows the chat. The stock sheet knows the piece, and the karigar book knows the gold. Nobody sees all of it at once: what Meera asked, what is on the shelf, what the vendor is owed, what the day closed at. An operating system fixes that with one move: one record that every module reads and writes.
-
- Show me one record doing all of it 
- Take the platform tour 
-
- THE TEST
-
-## A bundle has one login. An operating system has one row.
-
- Ask any software this question and you have your answer.
-
- Today With Jwero 
-
- A customer buys at the counter See the counter → 
-
- Today The bill is in billing. Her WhatsApp thread, her scheme and her follow-up know nothing.
-
- With Jwero One row updates: her record, her scheme balance, her next follow-up, the stock, the books.
-
- The gold rate moves See the pricing engine → 
-
- Today Someone reprices the catalogue, the website and the quotes, or doesn’t.
-
- With Jwero One rule reprices every channel at once, with overrides routed through approval.
-
- A salesperson leaves See customer memory → 
-
- Today Twenty years of relationships leave with the phone.
-
- With Jwero Every signal she ever gave you, scored, explained, stays with the business; the next person walks up already knowing her.
-
- An enquiry lands at 11pm See the AI workforce → 
-
- Today It waits for morning. She has bought elsewhere by then.
-
- With Jwero The AI drafts a priced reply from her record in minutes, and sends it, or waits for your yes.
-
- THREE WORDS, DEFINED
-
-## Autonomous. Jewellery. OS.
-
-## Autonomous
-
- The AI workforce drafts and, where you allow it, acts, inside daily caps, quiet hours and a kill switch at five scopes. Autonomy is earned one action type at a time, never assumed.
-
-## Jewellery
-
- Weight, purity, live rate, making charge, hallmark, memo, karigar, scheme, girvi, first-class in the data model, not fields bolted onto retail software.
-
-## OS
-
- One customer record, one catalogue, one inventory truth, one ledger. Every module, WhatsApp, counter, website, workshop, schemes, reads and writes the same row.
-
- WHAT IT IS NOT
-
-## Honest boundaries.
-
-## Not a replacement for your accountant
-
- Books post to Jwero’s ledger and bridge to Tally or Zoho Books. Your CA’s world does not change.
-
-## Not a chatbot that acts alone
-
- Nothing sends without approval by default. You widen what may run alone, per action type, when the accuracy earns it.
-
-## Not finished
-
- The public roadmap says what is shipped, rolling out and not yet, before you buy, not after.
-
- See the roadmap → 
-
- COMING FROM AN ERP?
-
-## The three pages for the three sentences.
-
-## “We already have an ERP.”
-
- Why the ERP era is ending the way the register era did.
-
- From ERP to OS → 
-
-## “Switching is risky.”
-
- The risk ledger: six imagined, six paid.
-
- Is switching risky? → 
-
-## “We can make do.”
-
- Your stack, its gaps, and a number.
-
- Can I make do? → 
-
-## See one record run the whole business.
-
- Bring one customer’s name. We will show every module touching the same row, live, on chat or a video call.
-
- Talk to us 
- Book a demo 
-
- You message us first; we never message you uninvited. हिन्दी में बात करें → 
-
- You message first; a Jwero specialist replies on WhatsApp in working hours. Prefer a call? Ask for a call back .
-
- ISO/IEC 27001 certified · penetration tested Every customer remembered, on one record AI asks before it sends Your data leaves with you, any time Official WhatsApp Business Platform Works with Tally and Zoho Books AI chat and calls in 14 languages One price, every module ISO/IEC 27001 certified · penetration tested Every customer remembered, on one record AI asks before it sends Your data leaves with you, any time Official WhatsApp Business Platform Works with Tally and Zoho Books AI chat and calls in 14 languages One price, every module
-
-Q: Isn’t an “operating system” just marketing for an all-in-one?
-A: An all-in-one bundles modules under one login. An operating system makes every module read and write the same record. The test: when a customer buys at the counter, does her WhatsApp thread, her scheme balance and her next follow-up change without anyone syncing anything? In a bundle, no. In an OS, yes, it is one row.
-
-Q: I already have a CRM and an ERP. Why is that not an OS?
-A: Because they hold two copies of the same customer and the same piece, and someone reconciles them. The reconciliation is where memory is lost and where the follow-up dies. An OS removes the second copy, not the first tool.
-
-Q: What does “run by AI” actually mean here?
-A: An AI workforce drafts the work, replies, follow-ups, reminders, invitations, reorder suggestions, from the one record. You decide, action type by action type, whether it runs on its own inside daily caps and quiet hours, or waits for your tap. A kill switch stops any of it, at five scopes, instantly.
-
-Q: Does this only make sense for chains?
-A: No. A single counter has the same problem at a smaller scale: the owner is the operating system, and the business stops remembering when the owner is not there. Chains simply feel it at every branch.
 
 ---
 
