@@ -1816,26 +1816,41 @@ function jwFromInr(n) {
     show(1);
   });
 
-  // ERP → OS: move the centre.
+  // ERP → OS: one customer, six departments. Tap the centre to connect them; tap a department to see what it shares.
   Array.prototype.forEach.call(document.querySelectorAll('[data-cswap]'), function (w) {
+    var nodes = []; try { nodes = JSON.parse(w.getAttribute('data-cs-nodes') || '[]'); } catch (e) {}
+    var byKey = {}; nodes.forEach(function (n) { byKey[n.k] = n; });
+    var out = w.querySelector('[data-cs-read]'), mode = 'erp', picked = '';
     var READ = {
-      erp: 'In an ERP, the invoice is the truth. WhatsApp, Instagram and the customer’s history live outside it, on phones, in sheets, in heads. The ERP only learns about Meera when she pays.',
-      os: 'In the OS, Meera’s record is the truth. Billing writes her purchase to it; stock, schemes, the workshop, WhatsApp and the counter read and write the same row, so the reply at 11pm knows what the counter knew at noon.',
+      erp: '<b>Built around the bill, three departments are connected.</b> They meet your customer when she pays. Her conversations, your marketing and the workshop sit outside, on phones, lists and registers. Tap the centre to put the customer there.',
+      os: '<b>With the customer at the centre, all six are connected.</b> Each one adds to her record and learns from it, so the reply at 11pm knows what the counter knew at noon. Tap any department to see what it shares.',
     };
-    var NOTES = {
-      erp: ['writes the invoice', 'moves on sale', 'a separate register', 'on someone’s phone', 'greets a stranger', 'its own khata'],
-      os: ['writes her purchase to the record', 'reads what she asked for', 'her balance, on the same row', 'drafts from her record', 'greets her by name and taste', 'her order, gram by gram'],
-    };
-    var out = w.querySelector('[data-cs-read]'), notes = w.querySelectorAll('.cs-node small');
-    w.querySelectorAll('[data-cs]').forEach(function (b) {
-      b.addEventListener('click', function () {
-        var k = b.getAttribute('data-cs');
-        w.querySelectorAll('[data-cs]').forEach(function (x) { x.classList.toggle('is-on', x === b); x.setAttribute('aria-pressed', String(x === b)); });
-        w.classList.toggle('is-os', k === 'os');
-        if (out) out.textContent = READ[k];
-        Array.prototype.forEach.call(notes, function (n, i) { n.textContent = NOTES[k][i]; });
+    function el(sel) { return [].slice.call(w.querySelectorAll(sel)); }
+    function paint() {
+      w.classList.toggle('is-os', mode === 'os');
+      el('[data-cs]').forEach(function (b) { var on = b.getAttribute('data-cs') === mode; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', String(on)); });
+      var rel = picked && byKey[picked] ? byKey[picked].rel : [];
+      el('[data-cs-node]').forEach(function (b) {
+        var k = b.getAttribute('data-cs-node'), n = byKey[k] || {}, sm = b.querySelector('small');
+        if (sm) sm.textContent = mode === 'os' ? n.os : n.erp;
+        b.classList.toggle('is-picked', k === picked); b.classList.toggle('is-rel', rel.indexOf(k) > -1);
+        b.classList.toggle('is-dim', !!picked && k !== picked && rel.indexOf(k) < 0);
+        b.setAttribute('aria-pressed', String(k === picked));
       });
-    });
+      el('[data-cs-line]').forEach(function (l) { var k = l.getAttribute('data-cs-line'); l.classList.toggle('is-picked', k === picked); l.classList.toggle('is-rel', rel.indexOf(k) > -1); l.classList.toggle('is-dim', !!picked && k !== picked && rel.indexOf(k) < 0); });
+      var c = w.querySelector('[data-cs-centre]'); if (c) c.setAttribute('aria-label', mode === 'os' ? 'Show the ERP view again' : 'Put the customer at the centre');
+      if (!out) return;
+      if (picked && byKey[picked]) {
+        var n = byKey[picked];
+        if (mode === 'os') out.innerHTML = '<b>' + n.t + '</b><span class="cs-io"><i>Adds to her record</i>' + n.adds + '</span><span class="cs-io"><i>Learns from her record</i>' + n.learns + '</span><span class="cs-io"><i>Works most closely with</i>' + n.rel.map(function (k) { return byKey[k].t; }).join(' and ') + '</span>';
+        else out.innerHTML = '<b>' + n.t + ' in an ERP: ' + n.erp + '.</b> ' + (n.on ? 'It is connected to the bill, so it learns about your customer only once she has paid.' : 'It sits outside the ERP, so nothing it knows about your customer reaches the counter or the books.');
+      } else out.innerHTML = READ[mode];
+    }
+    el('[data-cs]').forEach(function (b) { b.addEventListener('click', function () { mode = b.getAttribute('data-cs'); picked = ''; paint(); }); });
+    var centre = w.querySelector('[data-cs-centre]');
+    if (centre) centre.addEventListener('click', function () { mode = mode === 'os' ? 'erp' : 'os'; picked = ''; paint(); if (window.jweroTrack) window.jweroTrack('diagram_centre', { mode: mode }); });
+    el('[data-cs-node]').forEach(function (b) { b.addEventListener('click', function () { var k = b.getAttribute('data-cs-node'); picked = picked === k ? '' : k; paint(); }); });
+    paint();
   });
 
   // ERP → OS: the risk ledger.

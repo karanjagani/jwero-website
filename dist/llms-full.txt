@@ -8231,11 +8231,33 @@ FROM ERP TO OS
  Show me the difference on my business 
  Is switching risky? Read this first 
 
+ WHY THE ERP IS NO LONGER ENOUGH
+
+## Four things changed in your shop. Your ERP did not.
+
+ None of these is a forecast. Each one is already true in a jewellery business this week.
+
+## The question moved
+
+ She asks the price on WhatsApp at 9pm and compares on Instagram. Whoever replies first, with a price, gets the visit. The ERP meets her only when she pays.
+
+## The price moved
+
+ The rate changes through the day. Every catalogue share, quote and website price that does not follow it is a stale number that costs a margin or a customer.
+
+## Drafting became possible
+
+ AI can write a priced, personal reply as well as your best salesperson, but only from a record that knows her scheme balance, her taste and today’s rate.
+
+## Memory kept walking out
+
+ Salespeople change. The ERP keeps their bills; it never kept their customers. The business that owns the memory keeps the relationship.
+
  THE CORE DIFFERENCE
 
 ## An ERP is built around the bill. An operating system is built around the customer.
 
- Software sees first, and serves best, whatever it is built around. Built around the bill, it meets your customer only when she pays. Built around the customer, it follows her from the first enquiry to the next visit, and the bill becomes one step on the way. Move through the three eras to see what each one could see.
+ That is why the ERP missed all four. Software sees first, and serves best, whatever it is built around. Built around the bill, it meets your customer only when she pays. Built around the customer, it follows her from the first enquiry to the next visit, and the bill becomes one step on the way.
 
  The register Until 2000 The ERP 2000 to today The operating system Now 
 
@@ -8279,67 +8301,43 @@ FROM ERP TO OS
 
  Each era kept what the last one did well. The ERP kept the books straight; the operating system keeps the books straight and the customer remembered.
 
- WHAT CHANGED
+ SEE IT WORK
 
-## Four things that did not wait for the ERP to catch up.
+## Take one customer. See which departments know her.
 
- None of these is a forecast. Each one is already true in your shop this week.
+ The departments are the same in both. What changes is whether they are connected through her.
 
-## The question moved
+ ERP: built around the bill 
+ OS: built around the customer 
 
- She asks the price on WhatsApp at 9pm and compares on Instagram. Whoever replies first, with a price, gets the visit. The ERP meets her only when she pays.
+ Sales counter writes the bill WhatsApp and Instagram on someone’s phone Marketing a separate tool and a list Inventory moves when billed Workshop its own register Accounts and schemes the ledger 
+ 
+ The bill Tap to put the customer here 
+ Meera, your customer One record, shared by all six 
 
-## The price moved
+ Built around the bill, three departments are connected. They meet your customer when she pays. Her conversations, your marketing and the workshop sit outside, on phones, lists and registers. Tap the centre to put the customer there.
 
- The rate changes through the day. Every catalogue share, quote and website price that is not a rule is a stale number waiting to cost a margin or a customer.
-
-## Drafting became possible
-
- AI can write a priced, personal reply at the quality of your best salesperson, but only from a record that knows her scheme balance, her taste and today’s rate. Without the record, it writes fiction.
-
-## Memory kept walking out
-
- Salespeople change. The ERP keeps their bills; it never kept their customers. The business that owns the memory keeps the relationship.
-
- TRY IT ON ONE CUSTOMER
-
-## Take one customer. See what each department knows about her.
-
- Switch between the ERP and the operating system. The departments are the same; what each of them knows is not.
-
- ERP-centred 
- Customer-centred (OS) 
-
- Billing writes the invoice 
- Stock moves on sale 
- Schemes a separate register 
- WhatsApp on someone’s phone 
- Counter greets a stranger 
- Workshop its own khata 
-
- The invoice Everything else is bolted on around it Meera’s record Every door reads and writes the same row 
-
- In an ERP, the invoice is the truth. WhatsApp, Instagram and the customer’s history live outside it, on phones, in sheets, in heads. The ERP only learns about Meera when she pays.
+## The same four moments, in an ERP and in the operating system.
 
  Today With Jwero 
 
  A customer buys at the counter See the counter → 
 
- Today The ERP writes the bill. Her WhatsApp thread, her scheme and her next follow-up know nothing.
+ Today The ERP writes the bill. Her WhatsApp chat, her scheme and her next follow-up know nothing about it.
 
- With Jwero One row updates: her record, her scheme balance, her next follow-up, the stock, the books.
+ With Jwero Everything updates at once: her record, her scheme balance, her next follow-up, the stock and the books.
 
  The rate moves See the pricing engine → 
 
  Today The ERP reprices the bill. The catalogue, the website and yesterday’s quote wait for a person.
 
- With Jwero One rule reprices every channel; an override routes through approval.
+ With Jwero One rule reprices every channel, and any exception goes through your approval.
 
  An enquiry lands at 11pm See WhatsApp Commerce → 
 
- Today Nothing. The ERP has no door for it.
+ Today It waits. The ERP has no place for an enquiry.
 
- With Jwero A priced reply drafts from her record and today’s rate, sent, or held for your tap.
+ With Jwero A priced reply is drafted from her record and today’s rate, then sent or held for your tap.
 
  A salesperson leaves See Customer Memory → 
 
@@ -8347,47 +8345,53 @@ FROM ERP TO OS
 
  With Jwero Every conversation, preference and promise stays with the business.
 
- WHAT HAPPENS TO YOUR ERP WORK
+ Show me this on one of my customers Book a demo 
 
-## Everything your ERP does today is still here.
+ WHAT JWERO GIVES YOU
+
+## Everything your ERP does today, connected to everything it never saw.
 
  Moving to an operating system does not mean giving up billing, stock or accounts. It means they stop working alone.
 
-## What you keep
+## Your ERP work, all here
 
- Orders, purchase, vendors, job work, stock, GST invoicing, a ledger, Tally and Zoho Books bridges, the ERP jobs are inside Jwero, on the same record as everything else.
+ Orders, purchase, vendors, job work, stock, tax invoicing and a ledger are inside Jwero, on the same record as your customers and your conversations.
 
- See ERP, reconsidered → 
+ See the ERP in Jwero → 
 
-## What you stop doing
+## Connected workflows
 
- Retyping between the sheet and the ERP, hunting for a WhatsApp thread nobody at the counter can see, and sending a PDF with last week’s price.
+ An enquiry becomes a quotation, a bill, a stock movement and a follow-up without anyone retyping it. A custom order moves from the counter to the workshop and back with its metal accounted for.
 
-## What is coming next
+ See every product → 
 
- E-invoices run through Tally today; direct e-invoice filing, e-way bills, CAD-to-BOM and courier integration are on the public roadmap, with what is shipped and what is rolling out.
+## Works with the tools you have
 
- See the roadmap → 
+ Bills, returns and payments post to Tally automatically, and e-invoices are generated there. Zoho Books, Shopify, WooCommerce, Meta, Stripe, PayPal, Razorpay and Cashfree connect to the same record.
 
- WHERE NEXT
+ See integrations → 
 
-## Still weighing it up? Two questions jewellers ask next.
+ What ships next is public: see the roadmap for what is live, rolling out and planned.
+
+ BEFORE YOU DECIDE
+
+## Two questions jewellers ask next.
 
 ## “Switching is risky.”
 
- The six risks people imagine, each with the specific thing that removes it, and the six costs of staying, which have no answer.
+ The six risks people imagine, each with the specific thing that removes it, and the six costs of staying.
 
  Read: is switching risky? → 
 
 ## “I can make do with my ERP.”
 
- Take the objection seriously: tap the tools you use today, see the gaps between them, and put a number on a year of making do.
+ Tap the tools you use today, see the gaps between them, and put a number on a year of making do.
 
  Read: can I make do? → 
 
-## What an OS is, once
+## “What is an operating system, exactly?”
 
- The category, defined, and the one test that separates a bundle from an operating system.
+ The idea explained once, with a tour of what is inside Jwero.
 
  Read: why an OS → 
 

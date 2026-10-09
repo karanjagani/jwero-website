@@ -42,21 +42,39 @@ function eraSlider() {
 </div>`;
 }
 
+// One customer at the centre, six departments around her. In the ERP view only the
+// billed departments are connected; in the operating-system view all six are, and
+// tapping a department shows what it adds to her record and what it learns from it.
+const CS_NODES = [
+  { k: 'sales', icon: 'till', t: 'Sales counter', erp: 'writes the bill', os: 'bills on her record', on: 1, x: 50, y: 9,
+    adds: 'Every purchase, exchange and return.', learns: 'What she asked about online, her scheme balance and what she likes.', rel: ['stock', 'chat'] },
+  { k: 'chat', icon: 'chat', t: 'WhatsApp and Instagram', erp: 'on someone’s phone', os: 'replies from her record', on: 0, x: 86, y: 30,
+    adds: 'Every enquiry, the pieces she liked and what she said.', learns: 'What she has bought, and today’s price for pieces that are in stock.', rel: ['stock', 'sales'] },
+  { k: 'mkt', icon: 'megaphone', t: 'Marketing', erp: 'a separate tool and a list', os: 'reaches the right customers', on: 0, x: 86, y: 70,
+    adds: 'Which message she opened and what she tapped.', learns: 'Her occasions, purchases and taste, so the right customers get the right message.', rel: ['chat', 'sales'] },
+  { k: 'stock', icon: 'box', t: 'Inventory', erp: 'moves when billed', os: 'knows who wants what', on: 1, x: 50, y: 91,
+    adds: 'What is in stock, reserved for her or sold.', learns: 'What customers are asking for, so buying follows demand.', rel: ['sales', 'work'] },
+  { k: 'work', icon: 'tools', t: 'Workshop', erp: 'its own register', os: 'her order, stage by stage', on: 0, x: 14, y: 70,
+    adds: 'The stage of her custom order and when it will be ready.', learns: 'Her design, her size and the delivery date she was promised.', rel: ['stock', 'sales'] },
+  { k: 'books', icon: 'book', t: 'Accounts and schemes', erp: 'the ledger', os: 'her dues and scheme balance', on: 1, x: 14, y: 30,
+    adds: 'Her payments, dues and scheme instalments.', learns: 'Every bill and return, as it happens.', rel: ['sales', 'mkt'] },
+];
 function centreSwap() {
-  const node = (icon, label, note) => `<div class="cs-node"><span class="cs-ico">${L.icon(icon)}</span><b>${label}</b><small>${note}</small></div>`;
   return `
-<div class="cswap" data-cswap>
-  <div class="cs-switch" role="group" aria-label="What sits at the centre">
-    <button type="button" data-cs="erp" class="is-on" aria-pressed="true">ERP-centred</button>
-    <button type="button" data-cs="os" aria-pressed="false">Customer-centred (OS)</button>
+<div class="cswap" data-cswap data-cs-nodes='${JSON.stringify(CS_NODES.map((n) => ({ k: n.k, t: n.t, erp: n.erp, os: n.os, on: n.on, adds: n.adds, learns: n.learns, rel: n.rel }))).replace(/'/g, '&#39;')}'>
+  <div class="cs-switch" role="group" aria-label="Which software">
+    <button type="button" data-cs="erp" class="is-on" aria-pressed="true">ERP: built around the bill</button>
+    <button type="button" data-cs="os" aria-pressed="false">OS: built around the customer</button>
   </div>
   <div class="cs-stage">
-    <div class="cs-ring">
-      ${node('receipt', 'Billing', 'writes the invoice')}${node('box', 'Stock', 'moves on sale')}${node('coins', 'Schemes', 'a separate register')}${node('chat', 'WhatsApp', 'on someone’s phone')}${node('store', 'Counter', 'greets a stranger')}${node('scale', 'Workshop', 'its own khata')}
-    </div>
-    <div class="cs-centre"><span class="cs-centre-erp">${L.icon('receipt')}<b>The invoice</b><small>Everything else is bolted on around it</small></span><span class="cs-centre-os">${L.icon('record')}<b>Meera’s record</b><small>Every door reads and writes the same row</small></span></div>
+    <svg class="cs-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${CS_NODES.map((n) => `<line class="cs-line${n.on ? ' is-erp' : ''}" data-cs-line="${n.k}" x1="50" y1="50" x2="${n.x}" y2="${n.y}" pathLength="1"/>`).join('')}</svg>
+    ${CS_NODES.map((n) => `<button type="button" class="cs-node${n.on ? ' is-erp' : ''}" data-cs-node="${n.k}" style="left:${n.x}%;top:${n.y}%" aria-pressed="false"><span class="cs-ico">${L.icon(n.icon)}</span><b>${n.t}</b><small>${n.erp}</small></button>`).join('')}
+    <button type="button" class="cs-centre" data-cs-centre aria-label="Put the customer at the centre">
+      <span class="cs-centre-erp">${L.icon('receipt')}<b>The bill</b><small>Tap to put the customer here</small></span>
+      <span class="cs-centre-os">${L.icon('record')}<b>Meera, your customer</b><small>One record, shared by all six</small></span>
+    </button>
   </div>
-  <p class="cs-read" data-cs-read>In an ERP, the invoice is the truth. WhatsApp, Instagram and the customer’s history live outside it — on phones, in sheets, in heads. The ERP only learns about Meera when she pays.</p>
+  <div class="cs-read" data-cs-read aria-live="polite"><b>Built around the bill, three departments are connected.</b> They meet your customer when she pays. Her conversations, your marketing and the workshop sit outside, on phones, lists and registers. Tap the centre to put the customer there.</div>
 </div>`;
 }
 
@@ -185,49 +203,51 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('THE CORE DIFFERENCE', 'An ERP is built around the bill. An operating system is built around the customer.', 'Software sees first, and serves best, whatever it is built around. Built around the bill, it meets your customer only when she pays. Built around the customer, it follows her from the first enquiry to the next visit, and the bill becomes one step on the way. Move through the three eras to see what each one could see.')}
-  ${eraSlider()}`
-)}
-
-${L.section(
-  `${L.sectionHead('WHAT CHANGED', 'Four things that did not wait for the ERP to catch up.', 'None of these is a forecast. Each one is already true in your shop this week.')}
+  `${L.sectionHead('WHY THE ERP IS NO LONGER ENOUGH', 'Four things changed in your shop. Your ERP did not.', 'None of these is a forecast. Each one is already true in a jewellery business this week.')}
   ${L.cards([
     { icon: 'chat', title: 'The question moved', text: 'She asks the price on WhatsApp at 9pm and compares on Instagram. Whoever replies first, with a price, gets the visit. The ERP meets her only when she pays.' },
-    { icon: 'trend', title: 'The price moved', text: 'The rate changes through the day. Every catalogue share, quote and website price that is not a rule is a stale number waiting to cost a margin or a customer.' },
-    { icon: 'bot', title: 'Drafting became possible', text: 'AI can write a priced, personal reply at the quality of your best salesperson — but only from a record that knows her scheme balance, her taste and today’s rate. Without the record, it writes fiction.' },
+    { icon: 'trend', title: 'The price moved', text: 'The rate changes through the day. Every catalogue share, quote and website price that does not follow it is a stale number that costs a margin or a customer.' },
+    { icon: 'bot', title: 'Drafting became possible', text: 'AI can write a priced, personal reply as well as your best salesperson, but only from a record that knows her scheme balance, her taste and today’s rate.' },
     { icon: 'users', title: 'Memory kept walking out', text: 'Salespeople change. The ERP keeps their bills; it never kept their customers. The business that owns the memory keeps the relationship.' },
   ], 4)}`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('TRY IT ON ONE CUSTOMER', 'Take one customer. See what each department knows about her.', 'Switch between the ERP and the operating system. The departments are the same; what each of them knows is not.')}
-  ${centreSwap()}`
+  `${L.sectionHead('THE CORE DIFFERENCE', 'An ERP is built around the bill. An operating system is built around the customer.', 'That is why the ERP missed all four. Software sees first, and serves best, whatever it is built around. Built around the bill, it meets your customer only when she pays. Built around the customer, it follows her from the first enquiry to the next visit, and the bill becomes one step on the way.')}
+  ${eraSlider()}`
 )}
 
-${L.impactGrid([
-  { lever: 'A customer buys at the counter', before: 'The ERP writes the bill. Her WhatsApp thread, her scheme and her next follow-up know nothing.', after: 'One row updates: her record, her scheme balance, her next follow-up, the stock, the books.', link: { href: '/products/pos', label: 'See the counter' } },
-  { lever: 'The rate moves', before: 'The ERP reprices the bill. The catalogue, the website and yesterday’s quote wait for a person.', after: 'One rule reprices every channel; an override routes through approval.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
-  { lever: 'An enquiry lands at 11pm', before: 'Nothing. The ERP has no door for it.', after: 'A priced reply drafts from her record and today’s rate — sent, or held for your tap.', link: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' } },
-  { lever: 'A salesperson leaves', before: 'The bills stay in the ERP. The customers leave with the phone.', after: 'Every conversation, preference and promise stays with the business.', link: { href: '/platform/customer-memory', label: 'See Customer Memory' } },
-])}
-
 ${L.section(
-  `${L.sectionHead('WHAT HAPPENS TO YOUR ERP WORK', 'Everything your ERP does today is still here.', 'Moving to an operating system does not mean giving up billing, stock or accounts. It means they stop working alone.')}
-  ${L.cards([
-    { title: 'What you keep', text: 'Orders, purchase, vendors, job work, stock, GST invoicing, a ledger, Tally and Zoho Books bridges — the ERP jobs are inside Jwero, on the same record as everything else.', link: { href: '/products/erp', label: 'See ERP, reconsidered' } },
-    { title: 'What you stop doing', text: 'Retyping between the sheet and the ERP, hunting for a WhatsApp thread nobody at the counter can see, and sending a PDF with last week’s price.' },
-    { title: 'What is coming next', text: 'E-invoices run through Tally today; direct e-invoice filing, e-way bills, CAD-to-BOM and courier integration are on the public roadmap, with what is shipped and what is rolling out.', link: { href: '/roadmap', label: 'See the roadmap' } },
-  ])}`
+  `${L.sectionHead('SEE IT WORK', 'Take one customer. See which departments know her.', 'The departments are the same in both. What changes is whether they are connected through her.')}
+  ${centreSwap()}
+  <div class="section-head" style="margin-top:48px"><h3 class="cs-sub">The same four moments, in an ERP and in the operating system.</h3></div>
+  ${L.impactGrid([
+    { lever: 'A customer buys at the counter', before: 'The ERP writes the bill. Her WhatsApp chat, her scheme and her next follow-up know nothing about it.', after: 'Everything updates at once: her record, her scheme balance, her next follow-up, the stock and the books.', link: { href: '/products/pos', label: 'See the counter' } },
+    { lever: 'The rate moves', before: 'The ERP reprices the bill. The catalogue, the website and yesterday’s quote wait for a person.', after: 'One rule reprices every channel, and any exception goes through your approval.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
+    { lever: 'An enquiry lands at 11pm', before: 'It waits. The ERP has no place for an enquiry.', after: 'A priced reply is drafted from her record and today’s rate, then sent or held for your tap.', link: { href: '/products/whatsapp', label: 'See WhatsApp Commerce' } },
+    { lever: 'A salesperson leaves', before: 'The bills stay in the ERP. The customers leave with the phone.', after: 'Every conversation, preference and promise stays with the business.', link: { href: '/platform/customer-memory', label: 'See Customer Memory' } },
+  ])}
+  <div class="cta-row center" style="margin-top:28px"><a class="btn btn-primary" href="#" data-wa="erp">Show me this on one of my customers</a><a class="btn btn-ghost" href="/book-demo">Book a demo</a></div>`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('WHERE NEXT', 'Still weighing it up? Two questions jewellers ask next.', '')}
+  `${L.sectionHead('WHAT JWERO GIVES YOU', 'Everything your ERP does today, connected to everything it never saw.', 'Moving to an operating system does not mean giving up billing, stock or accounts. It means they stop working alone.')}
   ${L.cards([
-    { icon: 'shield', title: '“Switching is risky.”', text: 'The six risks people imagine, each with the specific thing that removes it — and the six costs of staying, which have no answer.', link: { href: '/erp-to-os/switching', label: 'Read: is switching risky?' } },
-    { icon: 'grid', title: '“I can make do with my ERP.”', text: 'Take the objection seriously: tap the tools you use today, see the gaps between them, and put a number on a year of making do.', link: { href: '/erp-to-os/make-do', label: 'Read: can I make do?' } },
-    { icon: 'record', title: 'What an OS is, once', text: 'The category, defined — and the one test that separates a bundle from an operating system.', link: { href: '/platform#why-an-os', label: 'Read: why an OS' } },
-  ])}`
+    { icon: 'receipt', title: 'Your ERP work, all here', text: 'Orders, purchase, vendors, job work, stock, tax invoicing and a ledger are inside Jwero, on the same record as your customers and your conversations.', link: { href: '/products/erp', label: 'See the ERP in Jwero' } },
+    { icon: 'flow', title: 'Connected workflows', text: 'An enquiry becomes a quotation, a bill, a stock movement and a follow-up without anyone retyping it. A custom order moves from the counter to the workshop and back with its metal accounted for.', link: { href: '/products', label: 'See every product' } },
+    { icon: 'swap', title: 'Works with the tools you have', text: 'Bills, returns and payments post to Tally automatically, and e-invoices are generated there. Zoho Books, Shopify, WooCommerce, Meta, Stripe, PayPal, Razorpay and Cashfree connect to the same record.', link: { href: '/platform/integrations', label: 'See integrations' } },
+  ])}
+  <p class="cta-note" style="margin-top:16px">What ships next is public: <a href="/roadmap">see the roadmap</a> for what is live, rolling out and planned.</p>`
 )}
+
+${L.section(
+  `${L.sectionHead('BEFORE YOU DECIDE', 'Two questions jewellers ask next.', '')}
+  ${L.cards([
+    { icon: 'shield', title: '“Switching is risky.”', text: 'The six risks people imagine, each with the specific thing that removes it, and the six costs of staying.', link: { href: '/erp-to-os/switching', label: 'Read: is switching risky?' } },
+    { icon: 'grid', title: '“I can make do with my ERP.”', text: 'Tap the tools you use today, see the gaps between them, and put a number on a year of making do.', link: { href: '/erp-to-os/make-do', label: 'Read: can I make do?' } },
+    { icon: 'record', title: '“What is an operating system, exactly?”', text: 'The idea explained once, with a tour of what is inside Jwero.', link: { href: '/platform#why-an-os', label: 'Read: why an OS' } },
+  ])}`
+, { tone: 'tint' })}
 
 ${L.ctaBand('See your ERP’s blind spots on your own data.', 'Bring one customer’s name and one real enquiry. We show what the ERP knows about her, what Jwero would, and what the reply would say.', 'erp')}
 `,

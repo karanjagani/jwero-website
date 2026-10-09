@@ -4943,3 +4943,61 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 .era-count { white-space: nowrap; }
 .era-nav .btn { white-space: nowrap; }
 @media (max-width: 560px) { .era-nav [data-era-prev-label], .era-nav [data-era-next-label] { display: none; } .era-nav .era-prev::after { content: 'Back'; } .era-nav .era-next::before { content: 'Next '; } .era-nav .btn { min-width: 96px; justify-content: center; } }
+
+/* ---- Customer-centred diagram (2026-10-09 rebuild): lines draw from the centre to each department ---- */
+.cs-stage { position: relative; height: auto; aspect-ratio: 1 / .82; max-width: 760px; margin: 0 auto; }
+.cs-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.cs-line { stroke: var(--line-2); stroke-width: 1.5; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; transition: stroke-dashoffset .7s var(--ease), stroke .35s var(--ease), opacity .35s var(--ease), stroke-width .35s var(--ease); }
+.cs-line.is-erp { stroke-dashoffset: 0; opacity: 1; }
+.cswap.is-os .cs-line { stroke-dashoffset: 0; opacity: 1; stroke: var(--brand); stroke-width: 2; }
+.cswap.is-os .cs-line:nth-child(2) { transition-delay: .06s; } .cswap.is-os .cs-line:nth-child(3) { transition-delay: .12s; } .cswap.is-os .cs-line:nth-child(4) { transition-delay: .18s; } .cswap.is-os .cs-line:nth-child(5) { transition-delay: .24s; } .cswap.is-os .cs-line:nth-child(6) { transition-delay: .3s; }
+.cs-line.is-picked { stroke: var(--amber) !important; stroke-width: 3.5 !important; }
+.cs-line.is-rel { stroke-width: 3 !important; }
+.cs-line.is-dim { opacity: .25 !important; }
+.cs-ring { display: none; }
+.cs-stage .cs-node { position: absolute; width: 150px; margin: -30px 0 0 -75px; padding: 0; border: 0; background: none; font: inherit; color: var(--ink); cursor: pointer; text-align: center; display: grid; justify-items: center; gap: 3px; transition: opacity .35s var(--ease), transform .35s var(--ease); -webkit-tap-highlight-color: transparent; }
+.cs-stage .cs-node:nth-child(n) { left: auto; top: auto; }
+.cs-stage .cs-node:not(.is-erp) { opacity: .5; }
+.cswap.is-os .cs-stage .cs-node { opacity: 1; }
+.cs-stage .cs-node.is-dim { opacity: .4 !important; }
+.cs-stage .cs-node.is-picked { transform: scale(1.08); }
+.cs-stage .cs-node.is-picked .cs-ico { border-color: var(--amber); background: var(--amber-soft); box-shadow: 0 0 0 5px color-mix(in srgb, var(--amber) 22%, transparent); }
+.cs-stage .cs-node.is-picked .cs-ico .ico { color: var(--amber-ink); }
+.cs-stage .cs-node:focus-visible .cs-ico { outline: 2px solid var(--brand); outline-offset: 3px; }
+.cs-ico { width: 46px; height: 46px; background: var(--card); position: relative; z-index: 1; }
+.cs-node small { background: var(--card); padding: 0 4px; border-radius: 4px; }
+.cs-stage .cs-centre { position: absolute; left: 50%; top: 50%; width: 30%; min-width: 132px; aspect-ratio: 1; height: auto; margin: 0; transform: translate(-50%, -50%); cursor: pointer; font: inherit; color: var(--ink); z-index: 2; transition: border-color .4s var(--ease), background .4s var(--ease), box-shadow .4s var(--ease), transform .4s var(--ease); }
+.cswap.is-os .cs-stage .cs-centre { transform: translate(-50%, -50%) scale(1.06); background: var(--panel); border-color: var(--panel); color: #fff; box-shadow: 0 0 0 10px color-mix(in srgb, var(--brand) 12%, transparent), var(--shadow-lg); }
+.cswap.is-os .cs-centre .ico { color: var(--amber); } .cswap.is-os .cs-centre small { color: rgba(255,255,255,.8); }
+.cs-centre:hover { border-color: var(--brand); }
+.cswap:not(.is-os) .cs-centre { animation: csHint 2.4s ease-in-out infinite; }
+@keyframes csHint { 50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--brand) 14%, transparent); } }
+.cs-read { margin: 22px auto 0; max-width: 760px; padding: 16px 18px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); font-size: .9375rem; line-height: 1.5; min-height: 132px; }
+.cs-read > b { display: block; margin-bottom: 6px; font-size: 1rem; }
+.cs-io { display: block; margin-top: 8px; }
+.cs-io i { display: block; font: 600 .6875rem/1.4 var(--mono); font-style: normal; letter-spacing: .06em; text-transform: uppercase; color: var(--brand); }
+.cs-sub { margin: 0; font-size: 1.375rem; letter-spacing: -.02em; text-align: center; }
+.cs-switch { display: flex; width: fit-content; max-width: 100%; margin: 0 auto 20px; }
+@media (max-width: 720px) {
+  .cs-stage { aspect-ratio: 1 / 1.05; }
+  .cs-stage .cs-node { width: 104px; margin: -26px 0 0 -52px; }
+  .cs-stage .cs-node b { font-size: .75rem; line-height: 1.2; }
+  .cs-stage .cs-node small { display: none; }
+  .cs-ico { width: 40px; height: 40px; }
+  .cs-stage .cs-centre { width: 36%; min-width: 0; padding: 8px; }
+  .cs-centre b { font-size: .8125rem; } .cs-centre small { font-size: .625rem; }
+  .cs-switch button { padding: 9px 10px; font-size: .75rem; }
+  .cs-read { min-height: 190px; }
+  .cs-sub { font-size: 1.125rem; }
+}
+@media (prefers-reduced-motion: reduce) { .cs-line, .cs-stage .cs-node, .cs-stage .cs-centre { transition: none !important; } .cswap:not(.is-os) .cs-centre { animation: none; } }
+/* Lines fade in instead of dash-drawing: dash lengths are unreliable with non-scaling strokes */
+.cs-line, .cs-line.is-erp, .cswap.is-os .cs-line { stroke-dasharray: none; stroke-dashoffset: 0; }
+.cs-stage .cs-node b { background: var(--card); padding: 1px 5px; border-radius: 5px; position: relative; z-index: 1; }
+@media (max-width: 720px) {
+  .cs-stage { aspect-ratio: 1 / 1.2; }
+  .cs-stage .cs-centre { width: 38%; padding: 6px; overflow: hidden; }
+  .cs-stage .cs-centre small { display: none; }
+  .cs-stage .cs-centre b { font-size: .75rem; line-height: 1.2; }
+  .cs-stage .cs-centre .ico { width: 22px; height: 22px; }
+}
