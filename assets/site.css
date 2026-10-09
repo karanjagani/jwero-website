@@ -5252,3 +5252,6 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 .pz-team2-scale label, .pz-team2-scale input, .pz-team2-scale output, .pz-team2-mode button { min-width: 0; }
 .pz-team2-scale input[type="range"] { width: 100%; box-sizing: border-box; }
 @media (max-width: 480px) { .pz-team2-panel { padding: 18px; } .pz-team2-scale { grid-template-columns: minmax(0, 1fr); } }
+
+/* Header menus after the 2026-10-09 trim: the three-column Products menu gets room for its descriptions */
+.dd-panel.dd-mid { width: min(880px, 100vw - 32px); }

@@ -56,169 +56,125 @@ for (const f of CONTENT_FILES) {
 
 // ---------------------------------------------------------------- nav
 // Matches Blueprint v2 §3.2.1 — 6 top-level items, Products as the 4-pillar "app grid" mega-menu.
+// Every product, grouped: the source for product names, breadcrumbs and sibling
+// links. The header shows a short list by job (NAV below); the full list lives
+// on /products and in the footer.
+const PRODUCT_GROUPS = [
+  { title: 'Sell', items: [
+    ['/products/whatsapp', 'WhatsApp Commerce & API', 'Sell and get paid in the chat'],
+    ['/whatsapp-broadcast-for-jewellers', 'WhatsApp Marketing', 'Broadcasts, campaigns, triggers'],
+    ['/products/instagram-facebook', 'Instagram & Facebook', 'DMs into sales, one inbox'],
+    ['/products/ai-sales-agents', 'AI Sales Agents & Voice', 'Replies and follow-up, governed'],
+    ['/products/ecommerce', 'Ecommerce Website', 'Live-rate jewellery online store'],
+    ['/products/meetings', 'Video Counter & Appointments', 'Meet from the inbox, self-booking'],
+    ['/products/quotations', 'Quotations', 'Numbered, live-rate, accepted online'],
+    ['/products/digital-catalogues', 'Digital Catalogues', 'Shareable links, every view tracked'],
+  ]},
+  { title: 'Market', items: [
+    ['/products/marketplaces', 'Google Shopping & Meta', 'Catalogue on every channel'],
+    ['/products/ads-manager', 'Ads Manager', 'Meta, Google & Pinterest'],
+    ['/products/social-media', 'Social Media Management', 'Schedule, inbox, reply'],
+    ['/products/optimize', 'Optimize (Website Visitors)', 'Heatmaps, A/B tests, webchat'],
+  ]},
+  { title: 'Know', items: [
+    ['/products/crm', 'Jewellery CRM', 'Customer 360 for the trade'],
+    ['/products/showroom', 'Showroom Intelligence', 'Who is on your floor, right now'],
+    ['/products/reports', 'Reports & Dashboards', 'Ask a question, pin the answer'],
+    ['/products/email', 'Business Email', 'Own-domain mail in the same inbox'],
+  ]},
+  { title: 'Run', items: [
+    ['/products/catalog', 'Catalogue (PIM)', 'Purity, certificates, live prices'],
+    ['/products/inventory', 'Inventory', 'Ageing and dead stock'],
+    ['/products/pos', 'Counter POS', 'Scan, exchange, return, day-close'],
+    ['/products/billing-finance', 'Billing & Finance', 'GST invoices at live rates'],
+    ['/products/manufacturing', 'Manufacturing & Workshop', 'BOM, wastage norms, karigar khata'],
+    ['/products/erp', 'ERP, reconsidered', 'Orders, vendors, job-work'],
+    ['/products/multi-store', 'Multi-store & Franchise', 'Every branch, one platform'],
+  ]},
+  { title: 'Manage', items: [
+    ['/products/hr-payroll', 'HR & Payroll', 'Attendance, leave, onboarding'],
+    ['/products/repairs-service', 'Repairs & After-Sales', 'Custody chain for every repair'],
+    ['/products/purchase-vendors', 'Purchase & Vendors', 'POs, GRN, vendor portal'],
+    ['/products/training-lms', 'Training & LMS', 'Courses and certificates'],
+  ]},
+  { title: 'Grow', items: [
+    ['/products/gold-schemes', 'Gold Savings Schemes', 'Enrolment to maturity'],
+    ['/products/girvi', 'Girvi / Gold Loans', 'Pledge, interest, release'],
+    ['/products/loyalty', 'Loyalty & Referrals', 'Tiers, rules, redemptions'],
+    ['/products/segmentation', 'Customer Segmentation', 'Rule-based audiences'],
+    ['/products/journeys', 'Customer Journeys', 'Automation that runs on its own'],
+    ['/products/campaigns', 'Campaigns', 'WhatsApp, email, SMS, push'],
+  ]},
+];
+
+// Header navigation (2026-10-09): about thirty links in place of 113. Each menu
+// answers one question; the long lists live on the hub pages and in the footer,
+// where search engines and curious visitors find them.
 const NAV = [
   {
     label: 'Platform',
     match: ['platform', 'trust', 'erp-to-os', 'why-an-os'],
     items: [
-      ['/erp-to-os', 'From ERP to OS', 'Running an ERP? Why the shift is now, why switching is safer than staying, and eight questions to ask your ERP'],
       ['/platform', 'Why an OS, and the tour', 'One record instead of ten tools, and what is inside'],
-      ['/platform/customer-memory', 'Customer Memory', 'Every customer on one record, scored with reasons'],
-      ['/platform/pricing-engine', 'The Pricing Engine', 'Rate, making charge, stone & override rules'],
       ['/platform/ai-workforce', 'AI Workforce', 'AI agents that get business done, with the control you set'],
       ['/platform/integrations', 'Integrations', 'Tally, Zoho Books, Shopify, Meta and more'],
       ['/trust', 'Trust Centre', 'Security, privacy and compliance status'],
-      ['/platform/onboarding', 'Onboarding & Support', 'Set up in a day, trained in your language'],
     ],
+    links: [['/erp-to-os', 'Moving from an ERP'], ['/platform/onboarding', 'Onboarding and support']],
   },
   {
     label: 'Products',
     match: ['products'],
     groups: [
       { title: 'Sell', items: [
-        ['/products/whatsapp', 'WhatsApp Commerce & API', 'Sell and get paid in the chat'],
-        ['/whatsapp-broadcast-for-jewellers', 'WhatsApp Marketing', 'Broadcasts, campaigns, triggers'],
-        ['/products/instagram-facebook', 'Instagram & Facebook', 'DMs into sales, one inbox'],
-        ['/products/ai-sales-agents', 'AI Sales Agents & Voice', 'Replies and follow-up, governed'],
-        ['/products/ecommerce', 'Ecommerce Website', 'Live-rate jewellery online store'],
-        ['/products/meetings', 'Video Counter & Appointments', 'Meet from the inbox, self-booking'],
-        ['/products/quotations', 'Quotations', 'Numbered, live-rate, accepted online'],
-        ['/products/digital-catalogues', 'Digital Catalogues', 'Shareable links, every view tracked'],
-      ]},
-      { title: 'Market', items: [
-        ['/products/marketplaces', 'Google Shopping & Meta', 'Catalogue on every channel'],
-        ['/products/ads-manager', 'Ads Manager', 'Meta, Google & Pinterest'],
-        ['/products/social-media', 'Social Media Management', 'Schedule, inbox, reply'],
-        ['/products/optimize', 'Optimize (Website Visitors)', 'Heatmaps, A/B tests, webchat'],
-      ]},
-      { title: 'Know', items: [
-        ['/products/crm', 'Jewellery CRM', 'Customer 360 for the trade'],
-        ['/products/showroom', 'Showroom Intelligence', 'Who is on your floor, right now'],
-        ['/products/reports', 'Reports & Dashboards', 'Ask a question, pin the answer'],
-        ['/products/email', 'Business Email', 'Own-domain mail in the same inbox'],
+        ['/products/whatsapp', 'WhatsApp, Instagram and AI replies', 'Sell and get paid in the chat'],
+        ['/products/ecommerce', 'Website and catalogues', 'Your store at today’s rate'],
+        ['/products/crm', 'Customers and CRM', 'One record per customer and family'],
+        ['/products/campaigns', 'Marketing and ads', 'Campaigns, journeys, social, ads'],
       ]},
       { title: 'Run', items: [
-        ['/products/catalog', 'Catalogue (PIM)', 'Purity, certificates, live prices'],
-        ['/products/inventory', 'Inventory', 'Ageing and dead stock'],
-        ['/products/pos', 'Counter POS', 'Scan, exchange, return, day-close'],
-        ['/products/billing-finance', 'Billing & Finance', 'GST invoices at live rates'],
-        ['/products/manufacturing', 'Manufacturing & Workshop', 'BOM, wastage norms, karigar khata'],
-        ['/products/erp', 'ERP, reconsidered', 'Orders, vendors, job-work'],
-        ['/products/multi-store', 'Multi-store & Franchise', 'Every branch, one platform'],
+        ['/products/pos', 'Counter and billing', 'Scan, exchange, tax bill, day-close'],
+        ['/products/inventory', 'Stock and purchase', 'Every piece, ageing, vendors'],
+        ['/products/manufacturing', 'Workshop and orders', 'Karigars, fine grams, job work'],
+        ['/products/gold-schemes', 'Schemes, girvi and loyalty', 'Enrolment to maturity'],
       ]},
       { title: 'Manage', items: [
-        ['/products/hr-payroll', 'HR & Payroll', 'Attendance, leave, onboarding'],
-        ['/products/repairs-service', 'Repairs & After-Sales', 'Custody chain for every repair'],
-        ['/products/purchase-vendors', 'Purchase & Vendors', 'POs, GRN, vendor portal'],
-        ['/products/training-lms', 'Training & LMS', 'Courses and certificates'],
-      ]},
-      { title: 'Grow', items: [
-        ['/products/gold-schemes', 'Gold Savings Schemes', 'Enrolment to maturity'],
-        ['/products/girvi', 'Girvi / Gold Loans', 'Pledge, interest, release'],
-        ['/products/loyalty', 'Loyalty & Referrals', 'Tiers, rules, redemptions'],
-        ['/products/segmentation', 'Customer Segmentation', 'Rule-based audiences'],
-        ['/products/journeys', 'Customer Journeys', 'Automation that runs on its own'],
-        ['/products/campaigns', 'Campaigns', 'WhatsApp, email, SMS, push'],
+        ['/products/billing-finance', 'Accounts and Tally', 'Books that keep in step'],
+        ['/products/hr-payroll', 'Team and HR', 'Attendance, payroll, incentives'],
+        ['/products/reports', 'Reports', 'Ask a question, pin the answer'],
+        ['/products/multi-store', 'Multi-store', 'Every branch, one platform'],
       ]},
     ],
-    footer: ['See all products', '/products'],
-    links: [['/platform', 'Why an OS, and the tour'], ['/platform/integrations', 'Integrations'], ['/enterprise', 'Enterprise']],
+    footer: ['See all 35 products', '/products'],
+    links: [['/platform/integrations', 'Integrations'], ['/enterprise', 'Enterprise']],
   },
   {
     label: 'Solutions',
     match: ['solutions', 'industries', 'roles'],
-    groups: [
-      { title: 'By what you sell', items: [
-        ['/solutions/gold-retail', 'Gold jewellery'],
-        ['/solutions/silver-retail', 'Silver & articles'],
-        ['/solutions/diamond-retail', 'Diamond jewellery'],
-        ['/solutions/gemstone-retail', 'Gemstones'],
-        ['/solutions/lab-grown-diamond', 'Lab-grown diamonds'],
-        ['/solutions/bullion-gold-traders', 'Bullion & gold trading'],
-        ['/solutions/jewellery-brands', 'Jewellery brands'],
-        ['/industries/retail', 'All retail'],
-      ]},
-      { title: 'By how you operate', items: [
-        ['/solutions/single-store', 'Single store'],
-        ['/solutions/multi-store-chains', 'Multi-store & chains'],
-        ['/solutions/luxury-boutique', 'Luxury & boutique'],
-        ['/solutions/bridal', 'Bridal & wedding'],
-        ['/solutions/d2c-brands', 'D2C & ecommerce-first'],
-        ['/solutions/franchise-networks', 'Franchise networks'],
-        ['/solutions/startups', 'New jewellery businesses'],
-      ]},
-      { title: 'Making & trade', items: [
-        ['/solutions/manufacturers', 'Manufacturers'],
-        ['/solutions/oem-manufacturers', 'OEM & contract makers'],
-        ['/solutions/casting-units', 'Casting units'],
-        ['/solutions/cad-services', 'CAD & design services'],
-        ['/solutions/b2b-jewellery', 'Wholesale & B2B'],
-        ['/solutions/gold-wholesale', 'Gold wholesalers'],
-        ['/solutions/diamond-traders', 'Diamond traders'],
-        ['/solutions/diamond-wholesale', 'Diamond wholesalers'],
-        ['/solutions/export-houses', 'Export houses'],
-      ]},
-      { title: 'By role · owners & counter', items: [
-        ['/roles/owner', 'Owner / Proprietor'],
-        ['/roles/chain-owner', 'Multi-store & chain owner'],
-        ['/roles/next-gen-successor', 'Next-gen successor'],
-        ['/roles/store-manager', 'Store manager'],
-        ['/roles/sales-associate', 'Sales associate'],
-        ['/roles/cashier', 'Billing cashier'],
-      ]},
-      { title: 'By role · growth & finance', items: [
-        ['/roles/crm-executive', 'CRM / telecalling executive'],
-        ['/roles/marketing-manager', 'Marketing manager'],
-        ['/roles/ecommerce-manager', 'E-commerce / D2C manager'],
-        ['/roles/accountant', 'Accountant / bookkeeper'],
-        ['/roles/inventory-manager', 'Inventory / stock manager'],
-      ]},
-      { title: 'By role · making & trade', items: [
-        ['/roles/karigar', 'Karigar / goldsmith'],
-        ['/roles/cad-designer', 'CAD / CAM designer'],
-        ['/roles/production-manager', 'Production manager'],
-        ['/roles/quality-hallmarking', 'Quality & hallmarking officer'],
-        ['/roles/purchase-manager', 'Purchase / procurement manager'],
-        ['/roles/b2b-manager', 'Wholesale / B2B manager'],
-        ['/roles/franchise-partner', 'Franchise partner'],
-      ]},
+    items: [
+      ['/solutions/single-store', 'One showroom', 'Counter, stock, schemes and every customer'],
+      ['/solutions/multi-store-chains', 'A chain of stores', 'Every branch on one record'],
+      ['/solutions/franchise-networks', 'A franchise network', 'Brand rules, local stores'],
+      ['/solutions/manufacturers', 'A manufacturer', 'Orders, karigars and metal accounts'],
+      ['/solutions/b2b-jewellery', 'A wholesaler', 'Buyer catalogues, memo and follow-ups'],
+      ['/solutions/d2c-brands', 'An online brand', 'Your store, WhatsApp and Instagram'],
     ],
-    footer: ['See all 23 segments', '/solutions'],
-    links: [['/solutions/pain/dead-stock', 'Dead stock'], ['/solutions/pain/lead-leakage', 'Lead leakage'], ['/roles', 'Every role'], ['/enterprise', 'Enterprise']],
+    footer: ['See all 23 kinds of business', '/solutions'],
+    links: [['/roles', 'For your team, role by role'], ['/enterprise', 'Enterprise']],
   },
   {
     label: 'Resources',
-    match: ['faq', 'blog', 'tools', 'compare', 'migration', 'partners', 'customers', 'company', 'contact'],
+    match: ['faq', 'blog', 'tools', 'compare', 'migration', 'partners', 'customers', 'company', 'contact', 'guides'],
     items: [
-      ['/customers', 'Customers', 'Named jewellers running on Jwero'],
+      ['/blog', 'Blog', 'Practical guides for jewellers'],
+      ['/guides', 'Buyer’s guides', 'How to choose jewellery software'],
+      ['/compare', 'Compare alternatives', 'ERPs, WhatsApp tools, ecommerce and more'],
+      ['/tools', 'Calculators', 'Dead stock, gold scheme, gold loss'],
       ['/faq', 'FAQ', 'Every objection, answered'],
-      ['/blog', 'Blog', 'Practical guides, not filler'],
-      ['/tools', 'Tools & Calculators', 'Dead stock, gold scheme, WhatsApp revenue, gold loss'],
-      ['/compare', 'Compare Alternatives', 'ERPs, WhatsApp tools, ecommerce & more'],
-      ['/migration', 'Migration Centre', 'Switch without fear'],
-      ['/partners', 'Partners', 'ERP dealers, accountants, consultants'],
-      ['/glossary', 'Glossary', 'HUID, girvi, karigar, memo — defined'],
-      ['/how-it-goes', 'What happens after you message', 'The first 30 days, step by step'],
-      ['/start', 'Start in three steps', 'Create your workspace and start a free trial'],
-      ['/brief', 'The one-page brief', 'For the owner who won’t read the site'],
-      ['/company', 'About Jwero', 'The founders, by name'],
-      ['/global', 'Jwero worldwide', 'Currencies, VAT, sales tax, languages'],
     ],
-    links: [['/book-demo', 'Book a demo'], ['/contact', 'Contact']],
+    links: [['/customers', 'Customers'], ['/migration', 'Migration Centre'], ['/contact', 'Contact']],
   },
-  {
-    label: 'Let Jwero run it',
-    match: ['jewellery-business-as-a-service', 'managed-services', 'what-we-handle', 'ai-and-experts', 'how-it-works', 'count-your-team', 'success-stories', 'why-jwero', 'self-managed'],
-    items: [
-      ['/jewellery-business-as-a-service', 'The offer, in full', 'What Jwero runs for you, and how it is priced.'],
-      ['/what-we-handle', 'What we handle', 'Customers, sales, online, back office.'],
-      ['/ai-and-experts', 'AI + experts', 'AI does the work. Experts make it better.'],
-      ['/count-your-team', 'Count your team', 'What the work costs today, and with Jwero.'],
-      ['/how-it-works', 'How it works', 'From your goal to work getting done.'],
-      ['/success-stories', 'Success stories', 'Jewellers in their own words.'],
-    ],
-    links: [['/why-jwero', 'Why Jwero'], ['/self-managed', 'Run it yourself']],
-  },
+  { label: 'Let Jwero run it', href: '/jewellery-business-as-a-service', match: ['jewellery-business-as-a-service', 'managed-services', 'what-we-handle', 'ai-and-experts', 'how-it-works', 'count-your-team', 'success-stories', 'why-jwero', 'self-managed'] },
   { label: 'Pricing', href: '/pricing', match: ['pricing'] },
 ];
 
@@ -323,8 +279,8 @@ function footerHTML() {
     <div class="f-grid">
       ${fcol('Products', [['/products/whatsapp', 'WhatsApp Commerce'], ['/products/instagram-facebook', 'Instagram & Facebook'], ['/products/ai-sales-agents', 'AI Sales Agents & Voice'], ['/products/ecommerce', 'Ecommerce Website'], ['/products/digital-catalogues', 'Digital Catalogues'], ['/products/crm', 'Jewellery CRM'], ['/products/showroom', 'Showroom Intelligence'], ['/products/pos', 'Counter POS'], ['/products/billing-finance', 'Billing & Finance'], ['/products/inventory', 'Inventory'], ['/products/manufacturing', 'Manufacturing & Workshop'], ['/products/gold-schemes', 'Gold Schemes & Gold Loans'], ['/products/hr-payroll', 'HR & Payroll']], ['/products', 'All 35 products'])}
       ${fcol('Solutions', [['/solutions/single-store', 'Single store'], ['/solutions/multi-store-chains', 'Multi-store & chains'], ['/solutions/gold-retail', 'Gold retail'], ['/solutions/bridal', 'Bridal & wedding'], ['/solutions/diamond-retail', 'Diamond retail'], ['/solutions/manufacturers', 'Manufacturers'], ['/solutions/b2b-jewellery', 'Wholesale & B2B'], ['/solutions/d2c-brands', 'D2C brands'], ['/solutions/franchise-networks', 'Franchise networks'], ['/roles', 'By role']], ['/solutions', 'All 23 solutions'])}
-      ${fcol('Learn', [['/faq', 'FAQ, every objection'], ['/guides', 'Buyer’s guides'], ['/blog', 'Blog'], ['/tools', 'Calculators'], ['/compare', 'Compare alternatives'], ['/migration', 'Migration Centre'], ['/customers', 'Customers'], ['/partners', 'Partners']])}
-      ${fcol('Company', [['/company', 'About'], ['/pricing', 'Pricing'], ['/jewellery-business-as-a-service', 'Let Jwero run it'], ['/enterprise', 'Enterprise'], ['/why-jwero', 'Why Jwero'], ['/refer', 'Refer a jeweller'], ['/jewellery-software-india', 'Jewellery software by city'], ['/hi', 'हिंदी'], ['/contact', 'Contact']])}
+      ${fcol('Learn', [['/faq', 'FAQ, every objection'], ['/guides', 'Buyer’s guides'], ['/blog', 'Blog'], ['/tools', 'Calculators'], ['/compare', 'Compare alternatives'], ['/migration', 'Migration Centre'], ['/glossary', 'Glossary'], ['/customers', 'Customers'], ['/partners', 'Partners']])}
+      ${fcol('Company', [['/company', 'About'], ['/pricing', 'Pricing'], ['/jewellery-business-as-a-service', 'Let Jwero run it'], ['/what-we-handle', 'What we handle'], ['/success-stories', 'Success stories'], ['/enterprise', 'Enterprise'], ['/why-jwero', 'Why Jwero'], ['/refer', 'Refer a jeweller'], ['/jewellery-software-india', 'Jewellery software by city'], ['/hi', 'हिंदी'], ['/contact', 'Contact']])}
       ${fcol('Trust', [['/trust', 'Trust Centre'], ['/trust/security', 'Security'], ['/legal/privacy', 'Privacy Policy'], ['/legal/terms', 'Terms of Use'], ['/legal/data-policy', 'Data Policy'], ['/legal/sub-processors', 'Sub-processors'], ['/legal/dpdp', 'DPDP statement']])}
     </div>
     <div class="f-row">
@@ -931,7 +887,7 @@ function withSchematic(page) {
 function fillPersona(body) {
   if (body.indexOf('<!--persona-switch-->') === -1) return body;
   const productName = (href) => {
-    for (const g of NAV.find((m) => m.label === 'Products').groups) for (const it of g.items) if (it[0] === href) return it[1];
+    for (const g of PRODUCT_GROUPS) for (const it of g.items) if (it[0] === href) return it[1];
     return href;
   };
   const entries = PERSONAS.map((p) => {
@@ -948,7 +904,7 @@ function fillPersona(body) {
 // its siblings; every solution/role page links to its persona's products.
 // Internal links are how a 130-page site tells search engines what matters.
 function productMeta(href) {
-  for (const g of NAV.find((m) => m.label === 'Products').groups) for (const it of g.items) if (it[0] === href) return { label: it[1], desc: it[2], group: g.title, items: g.items };
+  for (const g of PRODUCT_GROUPS) for (const it of g.items) if (it[0] === href) return { label: it[1], desc: it[2], group: g.title, items: g.items };
   return null;
 }
 // Under the hero: the three questions this reader is most likely carrying,
