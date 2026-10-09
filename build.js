@@ -1264,7 +1264,7 @@ function withDoors(html, slug) {
   if (DOORS_SKIP.includes((slug || '').split('/')[0]) || slug === 'guides' || slug === 'solutions' || slug === 'products' || slug === 'pricing' || LEGACY_SLUGS.has(slug)) return html;
   const end = html.indexOf('</section>');
   if (end < 0) return html;
-  const strip = `<div class="doors-strip"><div class="container"><p>Run it yourself, or let Jwero run it</p><a class="ds-door" href="${require('./lib').TRIAL_URL}doors-strip" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b></a><a class="ds-door is-managed" href="#" data-wa="handle"><span>Jwero runs it</span><b>Let Jwero run it</b></a><a class="ds-more" href="/pricing#tiers">Compare →</a></div></div>`;
+  const strip = `<div class="doors-strip" role="group" aria-label="Run it yourself, or let Jwero run it"><div class="container"><a class="ds-door" href="${require('./lib').TRIAL_URL}doors-strip" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b></a><a class="ds-door is-managed" href="#" data-wa="handle"><span>Jwero runs it</span><b>Let Jwero run it</b></a><a class="ds-more" href="/pricing#tiers">Compare →</a></div></div>`;
   // product and solution pages: inside the top section, under the buttons and above the illustration
   if (/^(products|solutions)(\/|$)/.test(slug || '') || slug === 'platform') {
     const mock = html.lastIndexOf('<div class="container"><div class="stage hero-mock">', end);
