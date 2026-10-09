@@ -4914,3 +4914,5 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 .pvid video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; }
 .pvid-toggle { position: absolute; right: 12px; bottom: 12px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .35); background: rgba(11, 12, 18, .7); color: #fff; font: 600 .75rem/1 var(--font); cursor: pointer; }
 .pvid figcaption { margin-top: 12px; font-size: .875rem; color: var(--ink-2); text-align: center; }
+/* Two-door strip inside a hero: the label takes its own line on narrow screens so the doors sit side by side */
+@media (max-width: 899px) { .doors-strip.is-in-hero p { flex: 0 0 100%; text-align: center; margin: 0; } .doors-strip.is-in-hero .ds-more { flex: 0 0 100%; text-align: center; margin: 0; } }
