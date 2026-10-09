@@ -11,7 +11,7 @@ const refer = {
   faqs: [
     { q: 'How does the referral work?', a: 'Send a jeweller this page or any Jwero page with your name on the link. When they message us, your name arrives with the message. When they become a customer, you save 10% on your own subscription for each one.' },
     { q: 'Is there a limit?', a: 'Ten percent for each jeweller who joins through you, applied to your subscription. Ask us about how it stacks.' },
-    { q: 'Do I need to be a Jwero customer to refer?', a: 'The saving is on your Jwero subscription, so yes. If you are not a customer yet, join the waitlist first.' },
+    { q: 'Do I need to be a Jwero customer to refer?', a: 'The saving is on your Jwero subscription, so yes. If you are not a customer yet, start a free trial first.' },
   ],
   body: `
 ${L.hero({

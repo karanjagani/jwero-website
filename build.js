@@ -643,15 +643,17 @@ function journeyFix(html, p) {
     const shift = topSections(html).find(([a, e]) => />THE SHIFT</.test(html.slice(a, Math.min(e, a + 1500))));
     if (shift) html = html.slice(0, shift[0]) + html.slice(shift[1]);
   }
-  // Self-serve start is a waitlist today: every start button joins the waitlist on WhatsApp.
-  html = html.replace(/<a([^>]*?)href="(?:https:\/\/os\.jwero\.ai\/signup[^"]*|\/start(?:\?[^"]*)?)"([^>]*)>([\s\S]*?)<\/a>/g, (m0, pre, post, inner) => {
+  // Signup is open (2026-10-09): every start button reads "Try Free Now" and goes to os.jwero.ai/signup.
+  html = html.replace(/<a([^>]*?)href="(https:\/\/os\.jwero\.ai\/signup[^"]*|\/start(?:\?[^"]*)?)"([^>]*)>([\s\S]*?)<\/a>/g, (m0, pre, href, post, inner) => {
     if (p.slug === 'start' && /data-start-go/.test(pre + post)) return m0;
-    const attrs = (pre + ' ' + post).replace(/\s*(rel|target|data-trial|data-start-go)(="[^"]*")?/g, '').replace(/\s+/g, ' ').trim();
+    const attrs = (pre + ' ' + post).replace(/\s*(rel|target|data-trial|data-start-go|data-wa|data-waitlist)(="[^"]*")?/g, '').replace(/\s+/g, ' ').trim();
     let text = inner.replace(/<b>[^<]*<\/b>/, '<b>Try Free Now</b>').replace(/<small>[^<]*<\/small>/, '<small>Every module included</small>');
     text = text.replace(/Create your workspace[^<]*/, 'Try Free Now').replace(/Start in three steps/, 'Get your account');
     text = text.replace(/Start for ₹3,600|Start ₹3,600|Join the waitlist/g, 'Try Free Now');
     if (!/<b>|<span/.test(inner)) text = /₹3,600|Start|Create your workspace|Join/.test(inner) ? 'Try Free Now' : inner;
-    return `<a ${attrs} href="#" data-wa="waitlist" data-waitlist>${text}</a>`;
+    const from = (href.match(/[?&](?:from|utm_medium)=([\w-]+)/) || [])[1] || 'site';
+    const to = /^https:\/\/os\.jwero\.ai\/signup/.test(href) ? href : `https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=${from}`;
+    return `<a ${attrs} href="${to}" rel="noopener" data-trial>${text}</a>`;
   });
   html = html.replace(/(<a class="sb-start"[^>]*>)[^<]*(<\/a>)/, '$1Try free$2');
   // Articles end with the reader's own next step: the calculator or page for the topic.

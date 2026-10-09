@@ -377,7 +377,7 @@ ${L.section(
   `${L.sectionHead('YOUR NEXT STEP', 'You do not have to choose on day one.', 'Three ways to begin, and none of them means switching off your ERP tomorrow.')}
   ${L.cards([
     { title: 'Run both, side by side', text: 'Your ERP keeps the books while Jwero takes WhatsApp, Instagram, the catalogue and the counter. The two stay connected for as long as you want.', link: { href: '/erp-to-os/switching', label: 'See how switching works' } },
-    { title: 'Run it yourself', text: 'Join the waitlist; your first month is ₹3,600 when your account opens. Bring your catalogue and ten customers, and see a priced reply on a real enquiry.', link: { href: '/pricing', label: 'See pricing' } },
+    { title: 'Run it yourself', text: 'Start a free trial today. Bring your catalogue and ten customers, and see a priced reply on a real enquiry.', link: { href: 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=erp', label: 'Try Free Now' } },
     { title: 'Let Jwero run it', text: 'Jwero’s specialists and AI take the customer side off your hands, with no subscription and every tool included. Your ERP carries on as it is.', link: { href: '/jewellery-business-as-a-service', label: 'See how it works' } },
   ])}
   <p class="cta-note" style="margin-top:16px">If your ERP answered all eight and your number came out small, carry on as you are and check again in six months. Better to find that out here than on a call.</p>`

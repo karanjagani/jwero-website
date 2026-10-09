@@ -477,8 +477,8 @@ You focus on jewellery. We handle the chaos.
  How long does it take to go live? 
  Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one.
 
- What happens when I join the waitlist? 
- You send one WhatsApp message with your business name and city. A Jwero specialist replies with when your account can open and what to have ready, and You start with a free trial when it does. If you would rather not wait, Jwero can run the work for you now, with no subscription and every tool included. See how that works .
+ How do I start? 
+ Tap Try Free Now and create your account with Google, LinkedIn or email. You get a free trial with every module, and your price is shown in your account when the trial ends. We can import your customers, catalogue and stock with you, and connect your WhatsApp number. If you would rather hand the work over, Jwero can run it for you. See how that works .
 
  What if the internet drops at the counter? 
  Jwero runs in the browser, so the counter needs an internet connection; there is no offline mode yet, and the roadmap says so. A phone hotspot is enough to keep billing when the broadband drops, and because nothing lives on one computer, a dead machine loses nothing.
@@ -8710,9 +8710,9 @@ FROM ERP TO OS · IS MY ERP ENOUGH?
 
 ## Run it yourself
 
- Join the waitlist; You start with a free trial when your account opens. Bring your catalogue and ten customers, and see a priced reply on a real enquiry.
+ Start a free trial today. Bring your catalogue and ten customers, and see a priced reply on a real enquiry.
 
- See pricing → 
+ Try Free Now → 
 
 ## Let Jwero run it
 
@@ -8975,8 +8975,8 @@ PRICING
  Is there a lock-in contract? 
  No. Billing is month to month and you can cancel any time. Your data exports whenever you ask.
 
- What does joining the waitlist mean? 
- You send one WhatsApp message with your business name and city. A Jwero specialist replies with when your account can open and what to have ready, and your free trial starts when it does. If you would rather not wait, Jwero can run the work for you now, with no subscription and every tool included.
+ How do I start? 
+ Tap Try Free Now and create your account with Google, LinkedIn or email. You get a free trial with every module, and your price is shown in your account when the trial ends. If you would rather hand the work over, Jwero can run it for you, with no subscription and every tool included.
 
  Will my shop stop billing while we switch? 
  No. Your current billing software keeps running until you choose to move. Customers, catalogue and stock are imported for you, usually in a day, and you can bill in Jwero alongside the old system while your team settles in. A written change-freeze keeps your season untouched.
@@ -9051,8 +9051,8 @@ A: Things that cost money each time they happen, such as a WhatsApp marketing me
 Q: Is there a lock-in contract?
 A: No. Billing is month to month and you can cancel any time. Your data exports whenever you ask.
 
-Q: What does joining the waitlist mean?
-A: You send one WhatsApp message with your business name and city. A Jwero specialist replies with when your account can open and what to have ready, and your free trial starts when it does. If you would rather not wait, Jwero can run the work for you now, with no subscription and every tool included.
+Q: How do I start?
+A: Tap Try Free Now and create your account with Google, LinkedIn or email. You get a free trial with every module, and your price is shown in your account when the trial ends. If you would rather hand the work over, Jwero can run it for you, with no subscription and every tool included.
 
 Q: Will my shop stop billing while we switch?
 A: No. Your current billing software keeps running until you choose to move. Customers, catalogue and stock are imported for you, usually in a day, and you can bill in Jwero alongside the old system while your team settles in. A written change-freeze keeps your season untouched.
@@ -110174,7 +110174,7 @@ Q: Is there a limit?
 A: Ten percent for each jeweller who joins through you, applied to your subscription. Ask us about how it stacks.
 
 Q: Do I need to be a Jwero customer to refer?
-A: The saving is on your Jwero subscription, so yes. If you are not a customer yet, join the waitlist first.
+A: The saving is on your Jwero subscription, so yes. If you are not a customer yet, start a free trial first.
 
 ---
 
