@@ -4907,3 +4907,10 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
   .site-footer .f-bottom { gap: 14px; }
 }
 @media (max-width: 560px) { .f-talk-grid { grid-template-columns: 1fr; } }
+
+/* Product recording */
+.pvid { margin: 0 auto; max-width: 1080px; }
+.pvid-frame { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid var(--line-2); box-shadow: var(--shadow-lg); background: #0b0c12; }
+.pvid video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; }
+.pvid-toggle { position: absolute; right: 12px; bottom: 12px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .35); background: rgba(11, 12, 18, .7); color: #fff; font: 600 .75rem/1 var(--font); cursor: pointer; }
+.pvid figcaption { margin-top: 12px; font-size: .875rem; color: var(--ink-2); text-align: center; }

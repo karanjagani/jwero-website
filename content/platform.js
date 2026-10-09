@@ -24,6 +24,10 @@ ${L.hero({
   mock: require('./graphics').orbit(),
 })}
 
+${L.section(`${L.sectionHead('THE PRODUCT', 'This is Jwero, running.', 'Operations, Sales, Marketing, Finance and Teams across the top; stock, purchase and the workshop on one screen. A real recording, not a mock-up.')}
+<figure class="pvid"><div class="pvid-frame"><video data-pvid muted loop playsinline preload="none" poster="/assets/product/os-overview.webp" width="1280" height="720" aria-label="Screen recording of Jwero: the Stock and Workshop overview with open purchase orders, inventory value, metal value and a stock pulse, then the tabs for Sales, Marketing, Finance and Teams"><source src="/assets/product/os-overview.mp4" type="video/mp4"></video><button type="button" class="pvid-toggle" data-pvid-toggle aria-label="Pause the recording">Pause</button></div>
+<figcaption>The Stock and Workshop overview in Jwero: open purchase orders, pieces awaiting receipt, inventory, metal and making value, dead stock and the stock on hand. <a href="/book-demo">Book a demo</a> to see it on your own stock.</figcaption></figure>`, { tone: 'tint' })}
+
 ${(() => {
   const fs = require('fs'), path = require('path');
   const img = (h) => { const k = h.replace(/^\//, '').replace(/\//g, '--'); return fs.existsSync(path.join(__dirname, '..', 'assets', 'og', k + '.jpg')) ? `<img src="/assets/og/${k}.jpg" alt="" loading="lazy" width="1200" height="630">` : ''; };

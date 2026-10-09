@@ -472,6 +472,17 @@ function jwFromInr(n) {
     } catch (e) {} }
   })();
 
+  // --- product recordings: play while on screen, pause on request ---
+  [].forEach.call(document.querySelectorAll('video[data-pvid]'), function (v) {
+    var btn = v.parentNode.querySelector('[data-pvid-toggle]'), held = false;
+    var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function label() { if (btn) { btn.textContent = v.paused ? 'Play' : 'Pause'; btn.setAttribute('aria-label', (v.paused ? 'Play' : 'Pause') + ' the recording'); } }
+    if (still) held = true;
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { if (e[0].isIntersecting && !held) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); }, { threshold: 0.35 }).observe(v);
+    v.addEventListener('play', label); v.addEventListener('pause', label); label();
+    if (btn) btn.addEventListener('click', function () { if (v.paused) { held = false; v.play(); } else { held = true; v.pause(); } });
+  });
+
   // --- market picker tabs ---------------------------------------------
   document.querySelectorAll('[data-mkp]').forEach(function (root) {
     var tabs = [].slice.call(root.querySelectorAll('[role="tab"]'));
