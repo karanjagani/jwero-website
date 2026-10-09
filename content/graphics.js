@@ -214,4 +214,50 @@ const memoryJourney = () => `
   <figcaption id="mj-cap">An illustrative customer journey showing how Jwero Customer Memory works in practice.</figcaption>
 </figure>`;
 
-module.exports = { memoryJourney, toolsInto, marketCard, tierGlance, selfHostMap, hierarchyTree, toolCollapse, marketPicker, tallyFlow, techStack, orbit, integrationMap, showroomHeat };
+// AI Workforce (2026-10-09): what the agents do, one job run end to end, and
+// the same job under the two control settings.
+const CAPS = [
+  ['chat', 'Customer conversations', 'Replies on WhatsApp, Instagram and web chat with pieces at today’s rate, by text or voice, at any hour. Missed enquiries get a call back.', 'Runs on its own'],
+  ['users', 'Sales and CRM', 'Follows up quiet enquiries and quotes, invites customers before occasions, wins back the ones who drifted, books appointments and builds the morning call list.', 'Runs on its own · offers held if you choose'],
+  ['megaphone', 'Marketing', 'Festival campaigns to live segments, journeys that run themselves, posts and captions from your catalogue, ad images and copy.', 'Runs on its own · ad spend always approved'],
+  ['box', 'Stock and operations', 'Flags pieces that stop moving and orders running late, chases vendors, and prepares purchase orders when stock runs low.', 'Flags on its own · purchase orders approved'],
+  ['pie', 'Reports and insight', 'A morning brief, a weekly growth report, an answer to a plain question about the business, and an alert the day something slips.', 'Runs on its own'],
+  ['checkbox', 'Team and internal work', 'Assigns tasks, chases what is overdue, reminds staff of attendance and training, and keeps HR workflows moving.', 'Runs on its own · approvals as you set them'],
+];
+const aiCapabilities = () => `
+<div class="caps">${CAPS.map(([ic, t, d, c], i) => `<article class="cap" style="--i:${i}"><div class="cap-ico">${icon(ic)}</div><h3>${t}</h3><p>${d}</p><p class="cap-ctl">${icon('shield')}${c}</p></article>`).join('')}</div>`;
+
+const RUN = [
+  ['Trigger', '11:42 pm. Priya sends a photo of a 22k bangle on WhatsApp and asks the price.', 'chat'],
+  ['Context', 'Her record: a chain bought in February, a taste for 22k yellow gold. Tonight’s rate. Two similar bangles in stock.', 'record'],
+  ['Action', 'Replies with the piece and the two alternatives, priced at tonight’s rate, and offers to hold one for Saturday.', 'send'],
+  ['Record', 'The conversation, the prices quoted and the hold go on her record. Her intent score moves. The morning list shows her name.', 'book'],
+  ['Approval, only if your policy asks', 'She asks for 8% off. Discounts beyond your limit are the one thing held: the manager clears it from her phone at 9:04 am.', 'check'],
+];
+const aiRun = () => `
+<ol class="airun" data-gfx>${RUN.map(([t, d, ic], i) => `<li style="--i:${i}"${i === RUN.length - 1 ? ' class="is-ask"' : ''}><span class="airun-n">${icon(ic)}<b>${i + 1}</b></span><h3>${t}</h3><p>${d}</p></li>`).join('')}</ol>`;
+
+const aiModes = () => `
+<div class="modes" data-modes>
+  <div class="modes-pick" role="tablist" aria-label="Control setting">
+    <button type="button" role="tab" aria-selected="true" data-mode="auto">${icon('power')}Autonomous</button>
+    <button type="button" role="tab" aria-selected="false" data-mode="approve">${icon('check')}Approval first</button>
+  </div>
+  <div class="modes-task">
+    <p class="modes-k">The same task</p>
+    <p class="modes-t"><b>Instalment reminder · R. Shah</b> Month 7 of 11 on the gold plan is due Friday.</p>
+    <div class="modes-out is-auto">
+      <p class="modes-s"><i></i>Sent 6:30 pm, on its own</p>
+      <p>“A gentle reminder: month 7 of 11 on your gold plan is due Friday. Reply here if you would like to pay by UPI.”</p>
+      <p class="modes-f">Logged on his record · inside the daily cap and quiet hours · you see it in the morning brief</p>
+    </div>
+    <div class="modes-out is-approve">
+      <p class="modes-s"><i></i>Prepared 6:30 pm, waiting for you</p>
+      <p>“A gentle reminder: month 7 of 11 on your gold plan is due Friday. Reply here if you would like to pay by UPI.”</p>
+      <p class="modes-f"><span class="chip chip-go">Approve</span><span class="chip">Edit</span> · sent the moment you tap</p>
+    </div>
+  </div>
+  <p class="modes-note">Set it per kind of action, per agent and per branch. Most jewellers run reminders, replies and follow-ups on their own and keep offers and spend on approval.</p>
+</div>`;
+
+module.exports = { aiCapabilities, aiRun, aiModes, memoryJourney, toolsInto, marketCard, tierGlance, selfHostMap, hierarchyTree, toolCollapse, marketPicker, tallyFlow, techStack, orbit, integrationMap, showroomHeat };

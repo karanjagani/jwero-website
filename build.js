@@ -65,7 +65,7 @@ const NAV = [
       ['/platform', 'Why an OS, and the tour', 'One record instead of ten tools, and what is inside'],
       ['/platform/customer-memory', 'Customer Memory', 'Every customer on one record, scored with reasons'],
       ['/platform/pricing-engine', 'The Pricing Engine', 'Rate, making charge, stone & override rules'],
-      ['/platform/ai-workforce', 'AI Workforce & Governance', 'AI that works on its own, inside your limits'],
+      ['/platform/ai-workforce', 'AI Workforce', 'AI agents that get business done, with the control you set'],
       ['/platform/integrations', 'Integrations', 'Tally, Zoho Books, Shopify, Meta and more'],
       ['/trust', 'Trust Centre', 'Security, privacy and compliance status'],
       ['/platform/onboarding', 'Onboarding & Support', 'Set up in a day, trained in your language'],
@@ -465,9 +465,17 @@ function platformStory(html, slug) {
   if (slug === 'platform/customer-memory') simS = simS.replace(/<p class="eyebrow[^>]*>[\s\S]*?<\/p>/, '<p class="eyebrow">NOW TRY IT YOURSELF</p>').replace(/<p class="lead">[\s\S]*?<\/p>/, '<p class="lead">Meera was one customer. Pick another and watch what the record already knows, and the reply it drafts, before anyone types.</p>');
   let uc = ''; const ui = html.indexOf('>USE CASES<');
   if (ui > 0) { const a = html.lastIndexOf('<section', ui), e = html.indexOf('</section>', ui) + 10; uc = html.slice(a, e); html = html.slice(0, a) + html.slice(e); }
-  const at = html.indexOf('id="meera"') > 0 ? html.indexOf('id="meera"') : html.indexOf('<section class="hero');
-  const end = html.indexOf('</section>', at) + 10;
-  html = html.slice(0, end) + simS + shift + uc + html.slice(end);
+  if (slug === 'platform/ai-workforce') {
+    // the live demo follows the end-to-end run; use cases follow the capabilities; the shift is retired here
+    const fa = html.indexOf('id="ai-flow"'); const fe = html.indexOf('</section>', fa) + 10;
+    html = html.slice(0, fe) + simS + html.slice(fe);
+    const ca = html.indexOf('id="ai-capabilities"'); const ce = html.indexOf('</section>', ca) + 10;
+    html = html.slice(0, ce) + uc + html.slice(ce);
+  } else {
+    const at = html.indexOf('id="meera"') > 0 ? html.indexOf('id="meera"') : html.indexOf('<section class="hero');
+    const end = html.indexOf('</section>', at) + 10;
+    html = html.slice(0, end) + simS + shift + uc + html.slice(end);
+  }
   const Q = require('./content/positioning').QUOTES;
   html = html.replace(/<section class="section">\s*<div class="container">\s*<figure class="pz-quote jb-solo">[\s\S]*?<\/section>/, L3.section(`${L3.sectionHead('IN THEIR WORDS', 'Jewellers on working with Jwero.', '')}<div class="pz-quotes">${STORY_PAGES[slug].map((i) => `<figure class="pz-quote"><blockquote>“${Q[i][0]}”</blockquote><figcaption><b>${Q[i][1]}</b><span>${Q[i][2]}</span></figcaption></figure>`).join('')}</div><p class="jb-more"><a href="/success-stories">Read what more jewellers say →</a></p>`));
   return html;

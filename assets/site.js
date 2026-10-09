@@ -245,9 +245,14 @@ function jwFromInr(n) {
     function note(j, mode) { try { j.track('website_cta', { mode: mode, context: state.ctx, page: HERE, persona: personaKey() }); } catch (e) {} }
     // Put the page's question in the widget's box so the visitor only has to press send.
     // The widget's own bubble stays hidden: the site's buttons are the only way in.
+    function hideBubble() {
+      try { var r = shadow(); if (r && r.querySelector && !r.querySelector('style[data-site]')) { var st = document.createElement('style'); st.setAttribute('data-site', ''); st.textContent = '.jw-launcher{display:none !important}'; r.appendChild(st); } } catch (e) {}
+    }
     whenWidget(function (j) {
       if (!j) return;
-      try { var r = shadow(); if (r && r.querySelector && !r.querySelector('style[data-site]')) { var st = document.createElement('style'); st.setAttribute('data-site', ''); st.textContent = '.jw-launcher{display:none !important}'; r.appendChild(st); } } catch (e) {}
+      hideBubble();
+      // The widget redraws its own tree when it opens or closes, so keep the rule in place.
+      try { var r = shadow(); if (r && window.MutationObserver) new MutationObserver(hideBubble).observe(r, { childList: true }); } catch (e) {}
     }, 15000);
     function prefill() {
       if (!state.msg) return;
@@ -822,6 +827,15 @@ function jwFromInr(n) {
   } else {
     docEl.classList.add('motion-failsafe');
   }
+
+  // AI Workforce: the same task under the two control settings.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-modes]'), function (m) {
+    m.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-mode]'); if (!b) return;
+      Array.prototype.forEach.call(m.querySelectorAll('[data-mode]'), function (x) { x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+      m.classList.toggle('is-approve', b.getAttribute('data-mode') === 'approve');
+    });
+  });
 
   // --- interactive graphics (run regardless of motion preference) --------
   // Count your own stack: each tap is one login, one bill, one vendor.

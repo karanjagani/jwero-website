@@ -532,8 +532,8 @@ function faqBlock(faqs) {
 function governanceStrip() {
   return section(
     `${sectionHead(
-      'TWO SPEEDS, YOUR CHOICE',
-      'AI runs on its own. You choose where it asks first.',
+      'PER KIND OF ACTION',
+      'Set it once, per kind of work.',
       'Everything runs on its own unless you say otherwise. Flip any kind of work to “ask me first”, agent by agent, branch by branch.'
     )}
     <div class="speeds">
@@ -901,21 +901,25 @@ function honestGapsBlock() { return ''; }
 
 // Reusable CSS-built product mocks (no images, no fantasy dashboards).
 const mockApproval = `
-<div class="mock" role="img" aria-label="Illustration of the Jwero AI activity list">
+<div class="mock" role="img" aria-label="Illustration of a day of work done by the Jwero AI workforce">
   <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-title">${mark('mark-xs')}AI workforce · today</span></div>
   <div class="mock-row">
-    <div class="mock-msg"><strong>Anniversary follow-up · Sofia M.</strong><br>“It has been a year since the emerald ring — we would love to see you both again…”</div>
-    <div class="mock-actions"><span class="chip">Sent · 6:12 pm</span></div>
+    <div class="mock-msg"><strong>Price enquiry · 11:42 pm</strong><br>“Yes, two designs in 22k near 18 g. At tonight’s rate ₹1,32,400 with making. Shall I hold one?”</div>
+    <div class="mock-actions"><span class="chip is-done">Sent</span></div>
   </div>
   <div class="mock-row">
-    <div class="mock-msg"><strong>Instalment reminder · R. Shah</strong><br>“A gentle reminder: month 7 of 11 on your gold plan is due Friday…”</div>
-    <div class="mock-actions"><span class="chip">Sent · 6:30 pm</span></div>
+    <div class="mock-msg"><strong>Anniversary invitation · Sofia M.</strong><br>“It has been a year since the emerald ring. We would love to see you both again.”</div>
+    <div class="mock-actions"><span class="chip is-done">Sent</span></div>
   </div>
   <div class="mock-row">
-    <div class="mock-msg"><strong>Reply to a complaint · held for you</strong><br>You asked to see complaints before they are answered.</div>
+    <div class="mock-msg"><strong>Stock not moving · 37 pieces past 180 days</strong><br>Flagged in the morning brief, with the pieces and their value at today’s rate.</div>
+    <div class="mock-actions"><span class="chip is-done">Done</span></div>
+  </div>
+  <div class="mock-row">
+    <div class="mock-msg"><strong>Discount request · 8% on a bangle</strong><br>Beyond the limit you set, so it waits for the manager.</div>
     <div class="mock-actions"><button class="chip chip-go" type="button">Approve</button><button class="chip" type="button">Edit</button></div>
   </div>
-  <div class="mock-foot">Daily cap 40 · Quiet hours on · Kill switch armed</div>
+  <div class="mock-foot">Runs on its own inside your caps and quiet hours · every action logged · approval only where you ask for it</div>
 </div>`;
 
 // The brand mark as two layers — body and flame — so the flame can flicker and
@@ -1502,7 +1506,7 @@ function personaSwitch(entries, productName) {
 // the copy here frames it as a try-it, never as a recorded result.
 const SIMS = {
   rate: { eyebrow: 'TRY IT · LIVE RATE', title: 'Move the gold rate. Watch every price follow.', lead: 'Nine prices on three channels, one rule. Drag the rate and see what a jeweller repricing by hand would have to retype.', cta: 'Show me this on my own catalogue' },
-  approve: { eyebrow: 'TRY IT · THE MORNING QUEUE', title: 'Run the AI workforce for a minute.', lead: 'Work arrives the way customers do. Most of it runs on its own. Here you choose which kinds wait for you, and stop everything with one tap.', cta: 'Show me a real queue' },
+  approve: { eyebrow: 'TRY IT · A DAY OF WORK', title: 'Watch the work get done.', lead: 'Work arrives the way customers do, and most of it is done on its own. Flip any kind to “ask me first” and the same task waits for you instead; one tap stops everything.', cta: 'See the AI workforce in action', note: 'An illustrative day. The tasks are made up; the way it runs is how Jwero runs.' },
   memory: { eyebrow: 'TRY IT · CUSTOMER MEMORY', title: 'A customer messages. What does the record already know?', lead: 'Pick a customer and watch her record fill in before anyone types a reply.', cta: 'Send me a sample customer record', note: 'An illustrative customer journey showing how Jwero Customer Memory works in practice.' },
   shelf: { eyebrow: 'TRY IT · THE SLEEPING SHELF', title: 'Slide time forward. Watch stock fall asleep.', lead: 'Seventy-two pieces, ageing month by month. The count past 180 days is the number most owners have never seen.', cta: 'Show me my own shelf' },
   till: { eyebrow: 'TRY IT · THE COUNTER', title: 'Ring up a sale. Take old gold. Close the shift.', lead: 'Scan pieces, add exchange gold, take payment, then close the till and see the variance appear tonight — not next week.', cta: 'Show me a till close' },

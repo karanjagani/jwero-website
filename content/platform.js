@@ -256,60 +256,69 @@ ${L.ctaBand('See your own catalogue priced this way.', 'Bring one real product a
 
 const aiWorkforce = {
   slug: 'platform/ai-workforce',
-  title: 'AI Workforce & Governance — AI That Works Inside Your Limits | Jwero',
-  description: 'An AI workforce that runs on its own inside daily caps and quiet hours, approval only where you require it, and one switch that stops it: the AI inside Jwero, under your control.',
-  breadcrumbs: BC('AI Workforce & Governance'),
+  title: 'AI Workforce for Jewellers: AI Agents That Get Business Done | Jwero',
+  description: 'Jwero’s AI workforce answers customers, follows up, runs campaigns, flags stock and reports, on its own, across your business. You choose what runs autonomously, what needs approval and where you want more control.',
+  breadcrumbs: BC('AI Workforce'),
   faqs: [
-    { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling. Salespeople close more when every customer walks in already known.' },
-    { q: 'What if the AI drafts something wrong?', a: 'It writes from your catalogue, your prices and her record, so it does not make up facts. Every action is logged, daily caps and quiet hours are hard limits, and you can put any kind of action behind approval or switch it off in one tap.' },
-    { q: 'Can I turn AI off completely?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything. The kill switch is a product feature, not a support ticket.' },
-    { q: 'What can the AI workforce do?', a: '251 individually permissioned actions across 7 categories: CRM and replies, inbox drafting, inventory, campaigns, reporting and finance — draft replies, price a catalogue enquiry at today’s rate, schedule follow-ups, send instalment reminders, invite customers before festivals, book appointments and more.' },
-    { q: 'Can the AI give a discount without me knowing?', a: 'No. Pricing and discount actions follow your price rules and staff permissions — the AI drafts messages, it does not set prices or approve exceptions.' },
-    { q: 'What if it says something embarrassing to a customer I’ve known for twenty years?', a: 'Put your oldest families on “ask me first” and their messages wait for you, while everything else carries on by itself. Quiet hours mean nobody, old customer or new, gets a message at 11pm either.' },
-    { q: 'How does it know how to sound like MY shop, not a generic chatbot?', a: 'It drafts from your catalogue, your prices, your policies and your past conversations — the same context a new employee would need, except it never forgets any of it.' },
-    { q: 'Is this the same risk as an AI chatbot going rogue online?', a: 'No. It works only from your own records, inside daily caps and quiet hours, with every action logged and a kill switch at five scopes. You decide which kinds of action need approval. That governance layer exists because a jewellery relationship can’t survive an ungoverned bot near it.' },
-    { q: 'Does the AI voice agent that calls customers speak my customers’ languages too?', a: 'Yes. Chat, voice and phone calls all run in the same languages, including Hindi, Arabic and English.' },
+    { q: 'What can the AI workforce do?', a: 'Reply to customers on WhatsApp, Instagram and web chat with pieces at today’s rate, by text or voice; follow up enquiries, quotes and instalments; invite customers before occasions and win back the ones who drifted; run campaigns and journeys; write posts and ad copy; flag stock that stops moving and orders running late; prepare purchase orders; produce the morning brief and the weekly growth report; and keep team tasks and HR workflows moving.' },
+    { q: 'Does it work on its own, or wait for me?', a: 'It works on its own. Replies, follow-ups, reminders, flags and reports run inside the daily caps and quiet hours you set, and every action is logged. You choose which kinds of action need approval first, such as offers, ad spend or purchase orders, per kind of action, per agent and per branch.' },
+    { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering, the follow-up and the routine work your team never has time for; your people do the selling, and they sell more when every customer walks in already known.' },
+    { q: 'What if the AI gets something wrong?', a: 'It works from your catalogue, your prices and the customer’s record, so it does not make up facts. Every action is on the record, caps and quiet hours are hard limits, and you can put any kind of action on approval or stop it in one tap.' },
+    { q: 'Can the AI give a discount on its own?', a: 'No. Prices and discounts follow your price rules and staff permissions. The AI sells at your prices; a discount beyond the limit you set waits for the person you name.' },
+    { q: 'Can I stop it?', a: 'Yes, instantly: one kind of action, one agent, one branch, one channel, or everything.' },
+    { q: 'How does it sound like my shop?', a: 'It works from your catalogue, your prices, your policies and your past conversations, the same context a new employee would need, and it never forgets any of it.' },
+    { q: 'Does the AI voice agent speak my customers’ languages?', a: 'Yes. Chat, voice and phone calls all run in the same languages, including Hindi, Arabic and English.' },
   ],
   body: `
 ${L.hero({
-  eyebrow: 'AI WORKFORCE & GOVERNANCE',
-  h1: 'AI that does the work. <span class="h1-turn">You set the limits.</span>',
-  sub: 'Hiring is hard. Training is harder. Jwero gives you an AI workforce that never forgets, never sleeps, and works on its own inside the limits you set. It asks for approval only where you want it to, and one switch takes it all back.',
+  eyebrow: 'AI WORKFORCE',
+  h1: 'An AI workforce that <span class="h1-turn">gets business done.</span>',
+  sub: 'From customer follow-ups and campaigns to stock, reports and team workflows, Jwero’s AI agents work across your business. Choose what runs on its own, what needs approval, and where you want more control.',
   mock: L.mockApproval,
 })}
 
 ${L.section(
-  `${L.sectionHead('', 'The work your team never gets time for.', '')}
-  ${L.cards([
-    { icon: '✉', title: 'Answer in minutes', text: 'Every WhatsApp, Instagram and website enquiry gets a knowledgeable reply (with her history and live prices), at midnight, during festivals.' },
-    { icon: '↺', title: 'Follow up on everything', text: 'Every enquiry that didn’t buy, every quote that went quiet, every instalment coming due — followed up on schedule, never forgotten.' },
-    { icon: '🗓', title: 'Work the calendar', text: 'Birthdays, anniversaries, festivals — the AI workforce sends the right invitation to the right customers, weeks ahead.' },
-    { icon: '☏', title: 'Speak, not just type', text: 'The AI voice assistant holds conversations in your customers’ languages on WhatsApp and web chat — native to Jwero, no third party — with transcripts on the customer record.' },
-  ], 4)}`
-)}
+  `${L.sectionHead('ONE AI WORKFORCE', 'Work across your business.', 'Real work the agents do today, grouped by the part of the business it belongs to, with the control setting most jewellers use for each.')}
+  ${require('./graphics').aiCapabilities()}
+  <div class="cta-row center" style="margin-top:28px"><a class="btn btn-primary" href="#" data-wa="ai">See the AI workforce in action</a><a class="btn btn-ghost" href="#ai-control">How you set the level of control</a></div>`
+, { id: 'ai-capabilities' })}
+
+${L.section(
+  `${L.sectionHead('START TO FINISH', 'One job, done end to end.', 'An agent notices a trigger, uses what the business already knows, acts, records the outcome and reports it. It asks a person only where your policy says so.')}
+  ${require('./graphics').aiRun()}`
+, { tone: 'tint', id: 'ai-flow' })}
+
+${L.section(
+  `${L.sectionHead('AUTONOMY AND CONTROL', 'Let AI run. Set the level of control.', 'Two settings for every kind of work. Switch between them and watch the same task behave differently.')}
+  ${require('./graphics').aiModes()}`
+, { id: 'ai-control' })}
 
 ${L.governanceStrip()}
 
 ${L.section(
-  `${L.sectionHead('', 'Three settings, for each kind of action.', 'Most work runs on Autopilot. Put any kind of action on Approve or Assist whenever you want to see it first, and change it back any time.')}
-  ${L.steps([
-    { title: 'Autopilot', text: 'The AI does the work on its own, inside hard daily caps and quiet hours. Every action is logged, and a kind of action drops back to Approve automatically if anything drifts.' },
-    { title: 'Approve', text: 'For the kinds of action you choose, such as offers or messages to your biggest families, the AI prepares it and you clear it with one tap.' },
-    { title: 'Assist', text: 'The AI only writes; a person sends. For the few things you always want to handle yourself.' },
-  ])}`
-, { tone: 'tint' })}
+  `${L.sectionHead('WHAT MAKES AUTONOMY SAFE', 'The layer that lets it run.', 'Governance is not the reason to use the AI workforce. It is what makes running it on its own practical in a jewellery business.')}
+  ${L.cards([
+    { icon: 'key', title: 'Permissions and approval rules', text: 'Each agent has the actions it may take. Any kind of action can be put on approval, for the person you name.' },
+    { icon: 'tools', title: 'Control per agent and per action', text: 'Reminders on their own, offers on approval, a new agent on assist until you have seen its work. Changed in a tap, any time.' },
+    { icon: 'book', title: 'A record of every action', text: 'What was sent, flagged or prepared, to whom, when, and who approved it where approval was asked for. On the customer record and in one log.' },
+    { icon: 'moon', title: 'Quiet hours and daily caps', text: 'Nobody hears from you at 11 pm, and no agent sends more than the cap you set, however busy the day.' },
+    { icon: 'power', title: 'One switch to stop', text: 'Stop one kind of action, one agent, one branch, one channel or everything, instantly, and start it again when you are ready.' },
+    { icon: 'branches', title: 'Branch and team settings', text: 'Head office sets the rules; a branch or a team can be given more room or less, within them.' },
+  ], 3)}
+  <p class="cta-note" style="text-align:center;margin-top:22px"><a class="btn btn-ghost" href="#" data-wa="ai">Explore permissions and control settings with us</a></p>`
+, { tone: 'tint', id: 'ai-governance' })}
 
-${L.section(`${L.sectionHead('QUESTIONS OWNERS ASK', 'Answers, not reassurance.', '')}${L.faqBlock([
-  { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling.' },
-  { q: 'What if the AI gets something wrong?', a: 'It writes from your catalogue, prices and her record, every action is logged, and you can put any kind of action behind approval or switch it off in one tap.' },
-  { q: 'Can I turn it all off?', a: 'Yes — instantly: one action, one agent, one branch, one channel, or everything.' },
-  { q: 'Can the AI give a discount without my knowledge?', a: 'No — pricing and discounts follow your price rules and staff permissions; the AI drafts messages, it does not set prices.' },
-  { q: 'What if it embarrasses me with a longtime customer?', a: 'Put your oldest families on “ask me first”. Their messages wait for you, and everything else carries on by itself.' },
-  { q: 'Does the AI voice agent that calls customers speak my customers’ languages too?', a: 'Yes. Chat, voice and phone calls all run in the same languages, including Hindi, Arabic and English.' },
+${L.section(`${L.sectionHead('QUESTIONS OWNERS ASK', 'Straight answers.', '')}${L.faqBlock([
+  { q: 'Does it work on its own, or wait for me?', a: 'It works on its own, inside the daily caps and quiet hours you set, with every action logged. You choose which kinds of action need approval first, per kind of action, per agent and per branch.' },
+  { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering, the follow-up and the routine work; your people do the selling, and they sell more when every customer walks in already known.' },
+  { q: 'What if the AI gets something wrong?', a: 'It works from your catalogue, prices and the customer’s record, every action is on the record, and you can put any kind of action on approval or stop it in one tap.' },
+  { q: 'Can the AI give a discount on its own?', a: 'No. Prices and discounts follow your price rules and staff permissions; a discount beyond your limit waits for the person you name.' },
+  { q: 'What about my oldest customers?', a: 'Put your biggest families on “ask me first”. Their messages wait for you; everything else carries on by itself.' },
+  { q: 'Does the AI voice agent speak my customers’ languages?', a: 'Yes. Chat, voice and phone calls all run in the same languages, including Hindi, Arabic and English.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More on AI trust and control? <a href="/faq#ai-trust">See every AI question we’ve been asked →</a></p>`)}
 
-${L.ctaBand('Meet your first AI workforce member.', 'Watch it answer, follow up and remind, inside the limits you set. On your own WhatsApp.', 'ai')}
+${L.ctaBand('See the AI workforce in action.', 'Bring one real situation, a quiet customer list or a flooded inbox, and watch the agents work on it live.', 'ai')}
 `,
 };
 
