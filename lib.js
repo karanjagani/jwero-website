@@ -1333,7 +1333,7 @@ const HERO_STAGES = [
   ['heart', 'Retain', '', [['Loyalty and referrals', '/products/loyalty'], ['Personalisation and retargeting', '/products/segmentation'], ['Marketing automation and journeys', '/products/journeys'], ['Repairs and after-sales', '/products/repairs-service']], 'AI reminds her before the occasion and wins back quiet customers'],
   ['layers', 'Run', '', [['ERP and inventory', '/products/erp'], ['Purchase and vendors', '/products/purchase-vendors'], ['Workshop and orders', '/products/manufacturing'], ['HR and team meets', '/products/hr-payroll'], ['Multi-store', '/products/multi-store']], 'AI flags stock that is not moving and orders running late'],
   ['book', 'Account', '', [['Accounting and tax invoices', '/products/billing-finance'], ['Tally bridge', '/platform/integrations/tally'], ['Store performance', '/products/reports'], ['Custom reports', '/products/reports']], 'AI explains the numbers and flags what is off'],
-  ['trend', 'Strategise', '', [['Live dashboards', '/products/reports'], ['Ask a question, get the answer', '/products/reports'], ['Scores for who will buy and who may leave', '/platform/customer-memory'], ['Alerts the day something slips', '/platform/ai-workforce'], ['Weekly growth report', '/customers']], 'AI spots what is changing and suggests your next move', 'You decide'],
+  ['trend', 'Strategise', '', [['Live dashboards', '/products/reports'], ['Daily insights', '/products/reports'], ['Proactive approvals', '/platform/ai-workforce'], ['Instant alerts', '/platform/ai-workforce'], ['Autonomous actions', '/platform/ai-workforce']], 'AI spots what is changing and suggests your next move', 'You decide'],
 ];
 function heroRail() {
   return `
