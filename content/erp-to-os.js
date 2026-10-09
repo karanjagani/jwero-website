@@ -7,11 +7,11 @@ const BC = (label, parent) => parent ? [['Home', '/'], ['From ERP to OS', '/erp-
 
 // ---------------------------------------------------------------- shared visuals
 const ERAS = [
-  { key: 'register', era: 'The register', when: 'Until the 2000s', centre: 'The owner’s memory', icon: 'book',
+  { key: 'register', era: 'The register', when: 'Until 2000', centre: 'The owner’s memory', icon: 'book',
     so: 'Works well while the owner is in the shop, and only then.',
     served: 'The owner', customer: 'Known by face, and served well while the owner is in.', doors: ['Counter'],
     label: 'What it misses', couldnt: 'It cannot grow past one person’s memory, it loses customers when a salesperson leaves, and it cannot answer anyone who is not standing in the shop.' },
-  { key: 'erp', era: 'The ERP', when: '2000s to today', centre: 'The bill and the books', icon: 'receipt',
+  { key: 'erp', era: 'The ERP', when: '2000 to today', centre: 'The bill and the books', icon: 'receipt',
     so: 'Tells you exactly what was sold. Tells you nothing about what was lost.',
     served: 'The accountant and the back office', customer: 'A name on a bill. Nothing about her taste, her occasions, or what she asked about last week.', doors: ['Counter', 'Back office'],
     label: 'What it misses', couldnt: 'The enquiry on WhatsApp, the customer who tried a piece and walked out, the regular who stopped coming, and the price that went stale when the rate moved.' },
