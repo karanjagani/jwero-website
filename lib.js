@@ -1358,8 +1358,8 @@ function homeHero({ kicker, h1, sub, rail }) {
         <h1>${h1}</h1>
         ${sub ? `<p class="sub">${sub}</p>` : ''}${rail ? heroRail() : ''}
         <div class="hero-doors">
-          <a class="hero-door" href="${TRIAL_URL}home-hero" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b><em>Free trial first. Your price is shown after it.</em></a>
-          <a class="hero-door is-managed" href="#" data-wa="handle"><span>Jwero runs it</span><b>Let Jwero run it</b><em>No team to hire. No tools to buy.</em></a>
+          <a class="hero-door" href="${TRIAL_URL}home-hero" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b><em>Every module, on one plan.</em></a>
+          <a class="hero-door is-managed" href="#" data-wa="handle"><span>Jwero runs it</span><b>Let Jwero run it</b><em>Your companion to get the work done.</em></a>
         </div>
         <p class="cta-note"><a href="/pricing#tiers">Compare all three ways</a></p>
       </div>

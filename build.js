@@ -451,7 +451,7 @@ const PRICE_OUT = [
   [/, plus a published rate card for per-use services, all on the pricing page/g, ''],
   [/(?:from|on) (?:a|the|your) (?:prepaid )?wallet at (?:the )?published rates(?: on this page)?/g, 'from a prepaid balance'],
   [/at published rates/g, 'at rates shown in your account'],
-  [/Start for ₹3,600|Or start for ₹3,600|Start ₹3,600/g, 'Join the waitlist'],
+  [/Start for ₹3,600|Or start for ₹3,600|Start ₹3,600/g, 'Try Free Now'],
       [/First month ₹3,600 when your account opens/g, 'Free trial when your account opens'],
     ];
 function dePrice(t) { for (const [re, to] of PRICE_OUT) t = t.replace(re, to); return t; }
@@ -647,13 +647,13 @@ function journeyFix(html, p) {
   html = html.replace(/<a([^>]*?)href="(?:https:\/\/os\.jwero\.ai\/signup[^"]*|\/start(?:\?[^"]*)?)"([^>]*)>([\s\S]*?)<\/a>/g, (m0, pre, post, inner) => {
     if (p.slug === 'start' && /data-start-go/.test(pre + post)) return m0;
     const attrs = (pre + ' ' + post).replace(/\s*(rel|target|data-trial|data-start-go)(="[^"]*")?/g, '').replace(/\s+/g, ' ').trim();
-    let text = inner.replace(/<b>[^<]*<\/b>/, '<b>Join the waitlist</b>').replace(/<small>[^<]*<\/small>/, '<small>Free trial when your account opens</small>');
-    text = text.replace(/Create your workspace[^<]*/, 'Join the waitlist').replace(/Start in three steps/, 'Get your account');
-    text = text.replace(/Start for ₹3,600|Start ₹3,600/g, 'Join the waitlist');
-    if (!/<b>|<span/.test(inner)) text = /₹3,600|Start|Create your workspace|Join/.test(inner) ? 'Join the waitlist' : inner;
+    let text = inner.replace(/<b>[^<]*<\/b>/, '<b>Try Free Now</b>').replace(/<small>[^<]*<\/small>/, '<small>Every module included</small>');
+    text = text.replace(/Create your workspace[^<]*/, 'Try Free Now').replace(/Start in three steps/, 'Get your account');
+    text = text.replace(/Start for ₹3,600|Start ₹3,600|Join the waitlist/g, 'Try Free Now');
+    if (!/<b>|<span/.test(inner)) text = /₹3,600|Start|Create your workspace|Join/.test(inner) ? 'Try Free Now' : inner;
     return `<a ${attrs} href="#" data-wa="waitlist" data-waitlist>${text}</a>`;
   });
-  html = html.replace(/(<a class="sb-start"[^>]*>)[^<]*(<\/a>)/, '$1Join waitlist$2');
+  html = html.replace(/(<a class="sb-start"[^>]*>)[^<]*(<\/a>)/, '$1Try free$2');
   // Articles end with the reader's own next step: the calculator or page for the topic.
   if (/^blog\//.test(p.slug || '') || p.legacy) {
     const NEXT = [[/girvi|gold-loan/, '/products/girvi#girvi-calc', 'Work out girvi interest with the calculator'], [/dead-stock|ageing|inventory|stock/, '/tools/dead-stock-calculator', 'Put your own stock into the dead stock calculator'], [/scheme/, '/tools/gold-scheme-calculator', 'Work out a scheme maturity with the calculator'], [/wastage|gold-loss|karigar|manufactur|job-work|fine-weight/, '/tools/gold-loss-calculator', 'Measure your gold loss with the calculator'], [/whatsapp|chatbot|instagram|dm/, '/tools/whatsapp-revenue-estimator', 'Estimate what faster WhatsApp replies are worth'], [/incentive|staff|payroll|hr/, '/products/hr-payroll#hr-calc', 'Work out a salesperson’s incentive'], [/price|making-charge|gst|cash-limit|old-gold|huid|e-way|e-invoic|billing|pos/, '/blog/how-to-calculate-gold-jewellery-price', 'Price a piece with the gold price calculator'], [/footfall|showroom|walkout|cctv/, '/products/showroom', 'See footfall and walkouts in the showroom software'], [/ads|campaign|email|marketing|segment|journey|occasion|birthday/, '/products/campaigns', 'See campaigns and journeys in Jwero'], [/ai|agent|voice|chatgpt|claude/, '/products/ai-sales-agents', 'See AI agents with approvals in Jwero']];
@@ -818,7 +818,7 @@ const HUB_SHORT = {
   'tools/whatsapp-revenue-estimator': { q: 'How much revenue do jewellers lose to slow WhatsApp replies?', a: 'It depends on how many enquiries you get, how many go unanswered or are answered late, and how many of those would have bought. The estimator works it out from your own numbers and shows each assumption.' },
   'compare/whatsapp-tools-vs-jewellery-os': { q: 'Do jewellers need a WhatsApp tool or a full jewellery system?', a: 'A WhatsApp tool sends and answers messages. A jewellery system also knows the stock, the live rate, schemes and each customer’s purchases, so a reply can quote the right piece at today’s price. If messaging is your only gap, a tool can be enough; if replies need the business behind them, a system fits better.' },
   index: { q: 'What is Jwero?', a: 'Jwero is the autonomous jewellery operating system that runs the whole business on one record: customers, counter billing at the live gold rate, stock, purchase, the workshop, schemes, books, team, marketing, sales, conversions, promotions and much more, with AI that drafts routine work for a person to approve. Run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s specialists run it for you, so you can focus on what matters most.' },
-  'jewellery-business-as-a-service': { q: 'What is Jewellery Business as a Service?', a: 'It is Jwero running the work around your jewellery for you: marketing, enquiry follow-up, online sales, customer retention and the back office, done by Jwero’s specialists and AI on Jwero’s own platform. There is no team to hire, no tools to buy and no subscription; the price follows the work, about half of what it costs you today.' },
+  'jewellery-business-as-a-service': { q: 'What is Jewellery Business as a Service?', a: 'It is Jwero running the work around your jewellery for you: marketing, enquiry follow-up, online sales, customer retention and the back office, done by Jwero’s specialists and AI on Jwero’s own platform. You get specialists for every job and every Jwero tool included, with no subscription; the price follows the work, about half of what it costs you today.' },
   'why-jwero': { q: 'Why do jewellers choose Jwero?', a: 'Because a jeweller should not have to become an expert in marketing, technology and AI to stay an expert in jewellery. Jwero is built for jewellery, keeps up with the changes for you, and lets you choose how much it handles: run it yourself, run it together, or let Jwero run it.' },
   'how-it-works': { q: 'How does working with Jwero work?', a: 'You tell Jwero what you want to achieve, not which tool you need. Jwero reads where your business is, decides what needs to happen, and agrees with you how much it handles. AI does the routine work and specialists check what matters; you get one account of what was done. Set-up takes a day.' },
   'what-we-handle': { q: 'What can Jwero handle for a jeweller?', a: 'Getting more customers, selling more, keeping customers, growing online, reducing routine work, understanding the numbers, keeping up with technology, and running the shop floor and supply. For each, Jwero can power it with software, manage it for you, or bring specialists to help. You can start with one function.' },
@@ -1141,7 +1141,7 @@ function withManaged(body, page) {
     const [q, who, where] = Q[qi];
     const head = slug === 'enterprise' ? ['WHERE ENTERPRISE SITS', 'Subscription, managed, or enterprise.', 'Chains and groups can run it themselves, hand functions to Jwero, or mix the two by function.']
       : top === 'compare' ? ['YOUR NEXT STEP', 'Try Jwero, or let Jwero run it.', 'Start on your own data for ₹3,600, or hand the work to Jwero’s specialists and AI with every tool included.']
-      : ['PREFER JWERO TO RUN THIS FOR YOU?', 'Use it yourself, or let Jwero run it.', 'Everything on this page, run by Jwero’s specialists and AI. No team to hire, no tools to buy.'];
+      : ['PREFER JWERO TO RUN THIS FOR YOU?', 'Use it yourself, or let Jwero run it.', 'Everything on this page, run for you by Jwero’s specialists and AI, with every tool included.'];
     block = (/city-quote/.test(body) ? '' : L3.section(`<figure class="pz-quote jb-solo"><blockquote>“${q}”</blockquote><figcaption><b>${who}</b><span>${where}</span></figcaption></figure>`)) +
       L3.section(`${L3.sectionHead(...head)}${require('./content/jbaas').TIERS()}`, { tone: 'tint', id: 'tiers' });
   }

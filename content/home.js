@@ -63,7 +63,7 @@ ${L.section(
 
 ${L.section(`<div class="price-line">
   <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Run it yourself, or let Jwero run it.</h2><p>One plan with every module replaces the 10 to 15 tools you pay for today. You start with a free trial, and your price is shown in your account when it ends. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included.</p></div>
-  <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=home-price">Join the waitlist</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
+  <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=home-price">Try Free Now</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
 </div>`, { tone: 'tint' })}
 
 ${L.section(

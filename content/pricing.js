@@ -99,7 +99,7 @@ ${L.hero({
   eyebrow: 'PRICING',
   h1: 'Three ways to work with Jwero.',
   sub: 'Jwero One is the whole operating system — CRM, WhatsApp, catalogues, the counter, the workshop, schemes, the books and the AI workforce — on one plan, with no per-module price and no per-seat price. You start with a free trial, and your price is shown in your account when it ends.',
-  primary: { href: 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing', label: 'Join the waitlist' },
+  primary: { href: 'https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing', label: 'Try Free Now' },
   secondary: { href: '#', label: 'Let Jwero handle it', wa: 'handle' },
   note: 'Run it yourself: a free trial first, then your price in your account. Managed: no subscription, every tool included.',
 })}
@@ -123,7 +123,7 @@ ${L.section(
           <li>10 GB storage, 1 location, 2 POS registers</li>
           <li>No per-seat price for your team</li>
         </ul>
-        <div class="cta-row"><a class="btn btn-primary" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing-plan" rel="noopener" data-trial>Join the waitlist</a><a class="btn btn-ghost" href="#" data-wa="pricing">Talk to us first</a></div>
+        <div class="cta-row"><a class="btn btn-primary" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=pricing-plan" rel="noopener" data-trial>Try Free Now</a><a class="btn btn-ghost" href="#" data-wa="pricing">Talk to us first</a></div>
       </div>
     </div>
     <p class="plans-note">The plan covers the whole platform. WhatsApp, SMS, AI and other per-use services run on a prepaid balance, at rates shown in your account.</p>
