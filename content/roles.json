@@ -143,7 +143,7 @@
    },
    {
     "hook": "Regular customers only come when someone remembers to call them.",
-    "does": "Journey recipes send birthday, anniversary and follow up messages automatically once switched on, and RFM reports show who is drifting away.",
+    "does": "Journey recipes send birthday, anniversary and follow up messages automatically once switched on, and reports on how recently, how often and how much each customer buys show who is drifting away.",
     "changes": "Customer relationships no longer depend on one person's memory."
    },
    {
@@ -296,7 +296,7 @@
  "crm-executive": {
   "short": {
    "q": "What does Jwero do for a jewellery CRM executive?",
-   "a": "Jwero gives a CRM executive one customer record with purchases, family links, visits, schemes and occasions. A daily occasions list shows who to wish, leads sit on a pipeline by stage, segments and RFM reports find who to contact, and a shared WhatsApp inbox with quick replies and broadcasts lets you reach them, with reports on what happened."
+   "a": "Jwero gives a CRM executive one customer record with purchases, family links, visits, schemes and occasions. A daily occasions list shows who to wish, leads sit on a pipeline by stage, segments and reports on how recently, how often and how much each customer buys find who to contact, and a shared WhatsApp inbox with quick replies and broadcasts lets you reach them, with reports on what happened."
   },
   "usecases": [
    {
@@ -311,7 +311,7 @@
    },
    {
     "hook": "The owner asks you to bring back customers who stopped coming.",
-    "does": "RFM reports group customers by recency, frequency and value, and segments let you send that group a message.",
+    "does": "Reports group customers by how recently, how often and how much they buy, and segments let you send that group a message.",
     "changes": "You target the right people instead of messaging everyone."
    },
    {

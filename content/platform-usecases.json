@@ -46,7 +46,7 @@
   },
   {
    "hook": "You have no idea which customers have stopped buying.",
-   "does": "RFM and funnel reports group customers by how recently, often and how much they buy.",
+   "does": "Reports group customers by how recently, how often and how much they buy, and by where they are in the funnel.",
    "changes": "You know exactly who to win back.",
    "source": "app/[orgId]/operations/crm/reports/rfm/page.tsx; app/[orgId]/operations/crm/reports/funnel"
   }

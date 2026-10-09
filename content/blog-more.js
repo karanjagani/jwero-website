@@ -63,7 +63,7 @@ module.exports = {
     <li>Advances not recorded against the job.</li>
   </ul>
   <h2>How Jwero does it</h2>
-  <p>Metal issued and returned in fine grams per job and per karigar, wastage checked against the norm at each stage, and a settlement that posts to the karigar’s khata and the books. See <a href="/products/manufacturing">manufacturing</a>.</p>`,
+  <p>Gold is tracked in fine grams through every stage, every job settles against your norms, and the settlement posts to the karigar’s khata and the books. See <a href="/products/manufacturing">manufacturing</a>.</p>`,
     faqs: [
       { q: 'Who bears wastage above the norm?', a: 'Usually the karigar, at the metal rate, as agreed in writing before the job. State it on the job card.' },
       { q: 'Should scrap be returned or valued?', a: 'Returned and weighed, every job. Dust and scrap are part of the metal account, not a karigar’s perk.' },
@@ -519,7 +519,7 @@ module.exports = {
   <h2>What the customer should see</h2>
   <p>Rate and its time, purity, gross and net weight, metal value, making, stones, GST and total, each on its own line. A customer who can check the arithmetic trusts the shop; one who cannot compares with the shop next door on a single number.</p>
   <h2>How Jwero does it</h2>
-  <p>Purity rate cards, three making-charge models, stone pricing and GST, applied to every piece at the counter, on WhatsApp and on the website, from the same rule. See the <a href="/platform/pricing-engine">pricing engine</a>.</p>`,
+  <p>Every price comes from the live rate and your rules, the same at the counter, on WhatsApp and on the website, and overrides are approved and logged. See the <a href="/platform/pricing-engine">pricing engine</a>.</p>`,
     faqs: [
       { q: 'Is making charge calculated on gross or net weight?', a: 'On the gold, so net weight for percentage and per-gram models. State it on the bill.' },
       { q: 'Why do shops quote 22K at 91.6% and not 91.67%?', a: 'Both are used; 916 is the hallmark grade. Pick one, print it on the rate board, and bill with it.' },
@@ -573,7 +573,7 @@ module.exports = {
   <h2>Making charges and staff discretion</h2>
   <p>Discounts on making are the easiest leak at the counter. Set a band per category, decide who can approve beyond it, and record every exception on the bill. The month-end report should show making discounts by salesperson.</p>
   <h2>How Jwero does it</h2>
-  <p>Three making-charge models by category, wastage rules, a discount band with approvals, and the breakup on every bill and website price. See the <a href="/platform/pricing-engine">pricing engine</a>.</p>`,
+  <p>Making charges the way you charge them, set by category, a discount band with approvals, and the breakup on every bill and website price. See the <a href="/platform/pricing-engine">pricing engine</a>.</p>`,
     faqs: [
       { q: 'What is a normal making charge?', a: 'It depends on the work: machine-made chains at a low per-gram rate, handmade and bridal pieces at a higher percentage. Compare like with like.' },
       { q: 'Should wastage be shown separately from making?', a: 'If you charge it, show it. A hidden wastage line is the most common cause of a lost repeat customer.' },

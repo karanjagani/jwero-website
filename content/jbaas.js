@@ -2,9 +2,9 @@
 // The platform pages stay as they are; this page and the home and pricing
 // sections let a visitor see the software and, if they want, hand the work
 // over. Founder decisions (2026-10-05): managed customers pay no subscription
-// and every tool is included; managed work is priced on the work (50% of the
-// cheapest way to staff it in India, 60% when the jeweller approves every
-// step); reply within minutes; onboarding in a day. The full calculator lives
+// and every tool is included; managed work is priced on the work, for the
+// business, and stated in writing in the plan; reply within minutes;
+// onboarding in a day. The full calculator lives
 // on the positioning site at /focus/count-your-team.
 const L = require('../lib');
 
@@ -25,7 +25,7 @@ const TIERS = () => `${require('./graphics').tierGlance()}
     <h3>You get the results, not the software</h3>
     <p class="jb-who">For the owner who wants the outcome, not another system to manage.</p>
     <p class="jb-price jb-price-sm">Priced on the work</p>
-    <p class="jb-note"><b>No subscription. Every tool included.</b> About half of what hiring for the same work costs you.</p>
+    <p class="jb-note"><b>No subscription. Every tool included.</b> Priced on the work, for your business, and stated in writing in your plan.</p>
     <ul><li><b>Specialists for a function, or the whole business.</b> Enquiries, scheme collections, posting, listing, walkout follow-ups, books: Jwero’s specialists and AI handle it.</li><li><b>Start with the one job that costs you most,</b> usually enquiries or collections. Add more when you see it working.</li><li><b>An expert for every job you need.</b> Trained, managed and followed up by Jwero, with every tool they need included.</li><li><b>Expertise at the cost of a fresher.</b> Seasoned specialists for what a beginner would cost you.</li><li><b>Your focus stays on outcomes.</b> Your time and energy are not lost to coordinating people, making every small decision or keeping up with what changes.</li><li><b>You approve only what you choose to.</b> Every action is on one account you can read.</li></ul>
     <div class="jb-cta"><a class="btn btn-primary" href="/jewellery-business-as-a-service">Let Jwero run it</a><a class="jb-demo" href="/book-demo">Book a demo</a></div>
     <p class="jb-fine">Tell us what you run and we will say which job to hand over first.</p>

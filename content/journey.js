@@ -1,6 +1,6 @@
 // Two pages that carry the awareness and assurance jobs:
 // /why-an-os — the category explained once, so every ad and post can link to it.
-// /how-it-goes — the first thirty days after the first message, step by step.
+// /how-it-goes: what happens after the first message, in outline.
 const L = require('../lib');
 
 const whyAnOs = {
@@ -67,7 +67,7 @@ ${L.ctaBand('See one record run the whole business.', 'Bring one customer’s na
 const howItGoes = {
   slug: 'how-it-goes',
   title: 'What Happens After You Message — The First 30 Days with Jwero | Jwero',
-  description: 'The literal sequence after your first message: a 15-minute call, a pilot on your own data, a written change-freeze around your season, a go-live date, and your first growth report.',
+  description: 'What happens after your first message: a short call, a pilot on your own data, a written plan with a change-freeze around your season, go-live, and your first growth report.',
   breadcrumbs: [['Home', '/'], ['How it goes']],
   faqs: [
     { q: 'Who do I actually talk to?', a: 'A real person on the founders’ WhatsApp desk, with our AI drafting alongside. Not a call centre.' },
@@ -88,11 +88,9 @@ ${L.section(
   `${L.sectionHead('THE SEQUENCE', 'From first message to first report.', '')}
   ${L.steps([
     { title: 'First, a reply', text: 'A real person and our AI reply in the chat. You get a straight answer to whatever you asked, and a slot for a call if you want one.' },
-    { title: 'Day 1 — fifteen minutes, your scenario', text: 'You bring one real situation: a quiet customer list, a leaking scheme book, a flooded inbox. We run it through Jwero live. If we cannot help, we say so here.' },
-    { title: 'Days 2–5 — a pilot on your own data', text: 'We import what exists — customers, catalogue, stock, however messy — and reconcile it with you. You evaluate on your customers, not a demo dataset.' },
-    { title: 'Day 5 — the written plan', text: 'What Jwero would change, the migration path, a straight price, and a written change-freeze around your season. Then it is your call.' },
-    { title: 'Days 7–14 — go live', text: 'Your WhatsApp number connected, catalogue published, roles trained in your language. The AI starts working inside the limits you set, with approval on for whatever you choose.' },
-    { title: 'Day 30 — your first growth report', text: 'Past customers who returned, appointments booked, enquiries answered in minutes, revenue attributed — generated from your own data, so you judge on your evidence.' },
+    { title: 'Import', text: 'You bring one real situation and we run it through Jwero live. Then we import what exists, customers, catalogue, stock, however messy, and reconcile it with you. You evaluate on your customers, not a demo dataset, and get a written plan with a straight price and a change-freeze around your season. Then it is your call.' },
+    { title: 'Go live', text: 'Your WhatsApp number connected, catalogue published, roles trained in your language. The AI starts working inside the limits you set, with approval on for whatever you choose.' },
+    { title: 'First report', text: 'Past customers who returned, appointments booked, enquiries answered in minutes, revenue attributed, generated from your own data, so you judge on your evidence.' },
   ])}`
 )}
 

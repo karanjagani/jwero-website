@@ -180,13 +180,13 @@
       host.innerHTML = '<div class="sim-flow"><div class="sim-flow-in"><b>' + issued + '.000 g</b><span>issued to the bench</span></div><div class="sim-stages">' + stages.map(function (s, i) {
         return '<div class="sim-stage"><p class="sim-tag">' + s[0] + ' · norm ' + s[1] + '%</p><input type="range" min="0" max="3" step="0.1" value="' + s[1] + '" data-i="' + i + '" aria-label="' + s[0] + ' loss"><p class="sim-small">loss <b data-loss="' + i + '"></b></p></div>';
       }).join('') + '</div><div class="sim-flow-out"><b data-score="out"></b><span>received back</span><em data-score="verdict"></em></div></div>' +
-        '<p class="sim-foot">The order cannot close until issued = received + loss within norm. Move a slider past its norm and watch the closure block.</p>';
+        '<p class="sim-foot">Every job settles against your own norms. Move a slider and watch the shortfall show up on the record.</p>';
       var inputs = host.querySelectorAll('input');
       function paint() {
         var left = issued, over = [];
         Array.prototype.forEach.call(inputs, function (inp, i) { var pct = Number(inp.value), g = left * pct / 100; left -= g; host.querySelector('[data-loss="' + i + '"]').textContent = g.toFixed(3) + ' g (' + pct.toFixed(1) + '%)'; inp.closest('.sim-stage').classList.toggle('is-over', pct > stages[i][1]); if (pct > stages[i][1]) over.push(stages[i][0]); });
         score(host, 'out', left.toFixed(3) + ' g');
-        score(host, 'verdict', over.length ? 'Closure blocked, ' + over.join(', ') + ' beyond norm. Explain or the karigar khata carries it.' : 'Metal balances. Order can close; settlement posts to the books.');
+        score(host, 'verdict', over.length ? over.join(', ') + ' short against your norm: flagged, and settled on the karigar khata.' : 'Metal balances. Settlement posts to the books.');
         host.classList.toggle('is-over', over.length > 0);
       }
       Array.prototype.forEach.call(inputs, function (inp) { inp.addEventListener('input', paint); });

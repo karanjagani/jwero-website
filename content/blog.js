@@ -286,9 +286,9 @@ ${L.ctaBand('Digitise your existing scheme book.', 'Bring your current paper reg
 
 // ---------------------------------------------------------------- Article 4: Tally coexistence
 const tallyGuideFaqs = [
-  { q: 'Does Jwero auto-post my invoices to Tally?', a: 'Yes. Bills, returns and payments raised in Jwero post to Tally automatically as vouchers through the bridge, on top of the ledger mapping and the customer and item masters it imports. Your accountant reviews them in Tally instead of typing them.' },
+  { q: 'Does Jwero auto-post my invoices to Tally?', a: 'Yes. Bills, returns and payments raised in Jwero post to Tally through the bridge, and your accountant reviews them in Tally instead of typing them.' },
   { q: 'Do I need to migrate my Tally data into Jwero?', a: 'No. Tally stays exactly as it is — same file, same login, same place your CA already works. Jwero connects alongside it through a local connector agent and keeps masters in sync; nothing gets moved out of Tally.' },
-  { q: 'What if my CA or muneem refuses to use anything new?', a: 'They don’t have to. Nothing changes about how they work inside Tally — the same voucher entry, the same GST filing, the same reports. The only difference is that customer and item records arrive already matched instead of being typed in from a register.' },
+  { q: 'What if my CA or muneem refuses to use anything new?', a: 'They don’t have to. Nothing changes about how they work inside Tally, the same GST filing, the same reports. The only difference is that bills, customers and items arrive by themselves instead of being typed in from a register.' },
 ];
 
 const tallyGuide = {
@@ -314,12 +314,11 @@ ${L.section(
   <p>Treating that concern as an obstacle to route around is a mistake. It’s the actual decision point, and it deserves a straight answer rather than a sales pitch.</p>
 
   <h2>What actually syncs automatically</h2>
-  <p>Jwero connects to Tally Prime through a local connector agent — a small piece of software that runs alongside Tally, pairs with a one-time code, and authenticates with a hashed token after that. It checks in on a regular heartbeat so the connection can be trusted to actually be live, not just configured once and forgotten.</p>
-  <p>What moves through that connection is customer and item master data, imported into Jwero and checked against Tally, with mapping rules that match records that matches records even when names or codes don’t line up exactly between the two systems. If a customer exists in Tally under a slightly different spelling than in Jwero, the mapping engine is built to catch that rather than create a duplicate.</p>
-  <p>For businesses that run on Zoho Books instead of, or alongside, Tally, the same idea applies through a Zoho connection made over OAuth.</p>
+  <p>Jwero connects to Tally Prime through the bridge, a connection your accountant can see is live rather than one set up once and forgotten. Your customers and items stay consistent between the two systems, so the same customer does not turn up twice under two spellings.</p>
+  <p>For businesses that run on Zoho Books instead of, or alongside, Tally, the same idea applies through a Zoho connection.</p>
 
   <h2>What posts to Tally by itself</h2>
-  <p>Bills, returns and payments raised in Jwero post to Tally automatically as vouchers through the bridge. A sale at the counter becomes a sales voucher, a return becomes a credit note and a payment received becomes a receipt, against the ledgers you mapped once at the start.</p>
+  <p>Bills, returns and payments raised in Jwero post to Tally through the bridge, and your accountant reviews entries in Tally instead of typing them.</p>
   <p>The accountant’s job changes from typing every bill to reviewing entries that are already there. The books stay in Tally, in the same company file, under the same login.</p>
 
   <h2>GST invoicing: who does what</h2>
@@ -327,7 +326,7 @@ ${L.section(
   <p>Statutory GST filing stays where it is today, inside Tally or with your CA. The line is simple: Jwero handles the invoice at the point of sale and prepares the e-invoice file for the portal; Tally and your CA handle the statutory filing that follows.</p>
 
   <h2>How to have this conversation with your CA</h2>
-  <p>The version of this conversation that actually works is narrow and specific, not a broad pitch about "modernising the business." Show them three things: the books don’t move. Tally stays exactly where it is, same file, same login. Master data arrives pre-matched instead of retyped from a paper register or a WhatsApp message, which is fewer manual entry errors, not more risk. And bills, returns and payments arrive as vouchers in their own format, ready for them to review, so their judgment stays in charge and only the typing goes.</p>
+  <p>The version of this conversation that actually works is narrow and specific, not a broad pitch about "modernising the business." Show them three things: the books don’t move. Tally stays exactly where it is, same file, same login. Customers and items arrive already in the books instead of retyped from a paper register or a WhatsApp message, which is fewer manual entry errors, not more risk. And bills, returns and payments arrive ready for them to review, so their judgment stays in charge and only the typing goes.</p>
   <p>That’s a conversation about reducing their typing, not replacing their judgment. It tends to land very differently than "we’re bringing in new software."</p>
 
   <h2>What changes for the accountant, in one sentence</h2>
@@ -336,7 +335,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('KEEP YOUR BOOKS, CHANGE YOUR EARNINGS', 'Jwero isn’t an accounting replacement — it’s the revenue layer Tally never had.', 'The full technical detail on the connector, pairing, and mapping rules lives on the integration page built for this exact conversation with your accountant.')}
+  `${L.sectionHead('KEEP YOUR BOOKS, CHANGE YOUR EARNINGS', 'Jwero isn’t an accounting replacement — it’s the revenue layer Tally never had.', 'The integration page is built for this exact conversation with your accountant.')}
   <p><a class="btn btn-ghost" href="/platform/integrations/tally">See the Tally integration in detail</a></p>`
 , { tone: 'tint' })}
 
@@ -350,17 +349,17 @@ ${L.ctaBand('Bring your CA into the conversation directly.', 'We’ll walk throu
 
 // ---------------------------------------------------------------- Article 5: Gold-loss control
 const goldLossGuideFaqs = [
-  { q: 'What’s a normal wastage percentage?', a: 'There isn’t one number that applies across the trade — it varies enormously by product type, casting method and finishing process. A commonly cited illustrative range is 0.5–2% of metal processed, but that’s a rough guide, not a benchmark to chase. The point of a working ledger isn’t to hit an industry average — it’s to know your own number, per stage and per karigar, and manage against that.' },
-  { q: 'Does this stop karigars from taking gold?', a: 'No system replaces trust entirely, and no ledger claims to. What a per-movement weight chain plus per-karigar variance tracking does is make discrepancies visible immediately — at the next weighing, not at year-end — rather than eliminate the possibility of loss outright.' },
-  { q: 'Do you predict wastage with AI?', a: 'No. What’s described here is measurement and ledger-based — recording every movement, attributing it, and surfacing variance — not a predictive or forecasting model. If a tool claims to predict wastage before it happens, ask exactly what it’s measured against, because today’s tooling in this space is about visibility, not prediction.' },
+  { q: 'What’s a normal wastage percentage?', a: 'There isn’t one number that applies across the trade — it varies enormously by product type, casting method and finishing process. A commonly cited illustrative range is 0.5–2% of metal processed, but that’s a rough guide, not a benchmark to chase. The point of a working ledger isn’t to hit an industry average. It’s to know your own number, by stage and by karigar, and manage against that.' },
+  { q: 'Does this stop karigars from taking gold?', a: 'No system replaces trust entirely, and no ledger claims to. What tracking gold by stage and by karigar does is make discrepancies visible immediately, not at year-end, rather than eliminate the possibility of loss outright.' },
+  { q: 'Do you predict wastage with AI?', a: 'No. What’s described here is measurement and ledger-based, not a predictive or forecasting model. If a tool claims to predict wastage before it happens, ask exactly what it’s measured against, because today’s tooling in this space is about visibility, not prediction.' },
 ];
 
 const goldLossGuide = {
   slug: 'blog/gold-loss-wastage-control-jewellery-manufacturing',
   title: 'Gold Loss and Wastage Control in Jewellery Manufacturing | Jwero',
-  description: 'A guide to gold loss in jewellery manufacturing: per-movement weight tracking, per-karigar attribution, the old-gold chain, and what a ledger doesn’t fix.',
+  description: 'A guide to gold loss in jewellery manufacturing: why it hides in an annual number, what tracking it by stage and karigar changes, and what a ledger doesn’t fix.',
   breadcrumbs: BC('Gold Loss Control Guide'),
-  schema: postSchema('Gold Loss (Wastage) Control in Jewellery Manufacturing: A Working Ledger', 'How to measure and control gold loss in jewellery manufacturing with per-movement, per-karigar weight tracking — and what it does and doesn’t fix.'),
+  schema: postSchema('Gold Loss (Wastage) Control in Jewellery Manufacturing: A Working Ledger', 'How to see and control gold loss in jewellery manufacturing by stage and by karigar, and what a ledger does and doesn’t fix.'),
   faqs: goldLossGuideFaqs,
   body: `
 ${L.hero({
@@ -381,26 +380,20 @@ ${L.section(
   <p>Most manufacturing operations only see wastage as a single figure at the end of a job, or worse, at an annual stocktake — the difference between metal issued and metal returned across an entire year of production. That single number is almost useless for control, because it collapses dozens of stages, dozens of karigars and hundreds of individual jobs into one figure with no way to trace back where the loss actually occurred.</p>
   <p>A pattern — one karigar consistently running high wastage on filigree work, or one casting batch losing more than the others — is real information. Buried inside an annual average, it’s invisible. By the time it surfaces, months of the same pattern have already repeated.</p>
 
-  <h2>What "per movement, per karigar" actually means</h2>
-  <p>A working system computes wastage at every point metal moves, not just at the end of a job: issued to a karigar, returned from a karigar, moved between production stages. Each movement is weighed and logged, and the difference between what went out and what came back is attributed — to a karigar, to a stage, to a job.</p>
-  <p>That attribution is what turns wastage from a single opaque number into a set of comparable figures: this karigar on this type of work, this stage across all jobs, this month against last month. None of that changes what happened physically — it changes whether anyone can see it happened, and act on it while the job is still fresh rather than after twelve months have passed.</p>
+  <h2>What "by stage, by karigar" actually means</h2>
+  <p>In a working system, gold is tracked in fine grams through every stage, and every job settles against your norms. Loss stops being one opaque number and becomes a set of comparable figures: this karigar on this type of work, this stage across all jobs, this month against last month. None of that changes what happened physically. It changes whether anyone can see it happened, and act on it while the job is still fresh rather than after twelve months have passed.</p>
 
-  <h2>The old-gold and exchange chain</h2>
-  <p>Old-gold and exchange transactions carry their own version of the same risk, because metal changes form multiple times before it re-enters usable stock: buyback intake, a melt lot, refining, and recovered metal valued back into raw-material inventory. Each of those steps is a point where weight can be under-recorded or simply not tracked at all.</p>
-  <p>A working chain records weight at every one of those steps: what came in at intake, what went into the melt lot, what came back from refining, what was valued into stock. That makes the whole path from a customer’s old piece to usable raw material traceable, not a black box between "customer handed it over" and "stock went up."</p>
-
-  <h2>The recovery desk, and the outside-karigar problem</h2>
-  <p>Scrap and filings generated during production are real recoverable metal, not a rounding error — and if there’s no dedicated place to book that recovery, it tends to just disappear into "shrinkage," indistinguishable from genuine loss. A recovery desk that books scrap and recovered metal as its own step closes that gap.</p>
-  <p>The same discipline matters most with outside karigars — job-work sent beyond the workshop’s own walls, where oversight is naturally lighter. Production orders moving through a multi-stage routing, tracked on a WIP board so every piece’s location is known, combined with karigar allocation scored to match the right artisan to the job, and job-work issue and receive reconciled by weight on both ends — that’s what keeps outside work held to the same standard as work done in-house.</p>
+  <h2>Old gold, scrap and outside karigars</h2>
+  <p>Old-gold and exchange pieces carry their own version of the same risk, because metal changes form before it re-enters usable stock. Scrap and filings are real recoverable metal, not a rounding error, and without a place to book them they disappear into "shrinkage". And work sent to outside karigars sits beyond the workshop’s own walls, where oversight is naturally lighter. A working ledger holds all three to the same standard as work done in-house: what went out, what came back, and the difference, on the record.</p>
 
   <h2>What a working ledger changes, and what it doesn’t</h2>
-  <p>Said plainly: a ledger like this doesn’t reduce physical wastage on its own. Weighing metal more carefully at more points doesn’t make less of it disappear in the process — the filing, the casting sprues, the polishing loss all still happen exactly as before. What changes is visibility: wastage attributed per stage and per karigar, instead of buried in a number nobody can trace.</p>
+  <p>Said plainly: a ledger like this doesn’t reduce physical wastage on its own. The filing, the casting sprues, the polishing loss all still happen exactly as before. What changes is visibility: wastage seen by stage and by karigar, instead of buried in a number nobody can trace.</p>
   <p>That visibility is what actually drives wastage down over time — not because the ledger fixes anything by itself, but because a karigar who knows their numbers are watched works differently than one who knows the register only gets checked once a year, and a manager who can see a stage running high can actually investigate it instead of guessing.</p>
   </div>`
 )}
 
 ${L.section(
-  `${L.sectionHead('FOR MANUFACTURERS', 'Built for the shop floor, not just the ledger.', 'Production routing, WIP tracking, karigar allocation and job-work reconciliation, alongside the weight chain described above.')}
+  `${L.sectionHead('FOR MANUFACTURERS', 'Built for the shop floor, not just the ledger.', 'Orders, work in progress, karigars and outside job work, on the same system as the metal ledger described above.')}
   <p><a class="btn btn-ghost" href="/solutions/manufacturers">See the manufacturing workflow in Jwero</a></p>`
 , { tone: 'tint' })}
 
@@ -408,7 +401,7 @@ ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about was
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="blog-goldloss">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('See your own wastage, per stage and per karigar.', 'Bring your current issue-and-return register — we’ll show what it looks like tracked per movement instead of per year.', 'blog-goldloss')}
+${L.ctaBand('See your own wastage, by stage and by karigar.', 'Bring your current issue-and-return register and we’ll show what it looks like tracked by job instead of by year.', 'blog-goldloss')}
 `,
 };
 
@@ -547,7 +540,7 @@ ${L.ctaBand('Turn audit day into a quick lookup.', 'Bring your current hallmarki
 // ---------------------------------------------------------------- Article 8: Digital catalogue vs PDF
 const catalogGuideFaqs = [
   { q: 'Can a customer actually pay through a shared catalogue?', a: 'Yes. Catalogue pages support real checkout — Razorpay and Cashfree integration take the payment directly on the page, and the resulting order syncs into the order-management system rather than landing as a message someone has to key in by hand.' },
-  { q: 'Does the price update automatically when gold rates change?', a: 'Yes. With formula pricing — rate × weight + making + stones + wastage — the catalogue resolves the price live, at the moment it’s opened, against the current rate. A link sent this morning shows the correct price this evening too.' },
+  { q: 'Does the price update automatically when gold rates change?', a: 'Yes. Every price comes from the live rate and your rules, so the catalogue shows the current price at the moment it’s opened. A link sent this morning shows the correct price this evening too.' },
   { q: 'Is this the same as a full online store?', a: 'Not quite. A catalogue is a curated link sent to one customer — closer to a tray shown to them than a public website. Jwero also has a fuller D2C ecommerce website with cart, wishlist, coupons and express checkout for businesses that want a generic online store on top of this.' },
 ];
 
@@ -574,7 +567,7 @@ ${L.section(
   <p>The awkward part isn't the price change itself — rates move, customers understand that. It's finding out mid-conversation that the number they were quoting back has been wrong for days, because nothing about a PDF tells them so.</p>
 
   <h2>What "live" actually means for a jewellery catalogue</h2>
-  <p>A digital catalogue doesn't store a price — it stores a formula: rate × weight + making + stones + wastage. The price shown is resolved at the moment the page is viewed, against the rate live at that moment, whether that's five minutes after the link was sent or three days later. There's no version of a live catalogue that goes stale, because it was never storing a static number to begin with.</p>
+  <p>A digital catalogue doesn't store a price. Every price comes from the live rate and your rules at the moment the page is viewed, whether that's five minutes after the link was sent or three days later. There's no version of a live catalogue that goes stale, because it was never storing a static number to begin with.</p>
   <p>It's shared the way jewellery already gets discussed — a link, a WhatsApp message, or a QR code at the counter — and can sit on a custom domain, built from templates, so it looks like the business's own catalogue rather than a generic page.</p>
 
   <h2>Sent, not searched for</h2>
@@ -695,7 +688,7 @@ ${L.section(
     <li><strong>Does it price by purity, not just by category?</strong> 24K, 22K, 916, 18K and 14K each need their own rate — ask whether the rate card is purity-specific or a single blended number.</li>
     <li><strong>What making-charge models does it actually support?</strong> Percentage, per-gram and flat are all used in real jewellery businesses, often by different product categories in the same shop. One formula forced onto everything is a red flag.</li>
     <li><strong>Are stones and gemstones priced separately from the metal?</strong> Per-carat, certificate-linked pricing (GIA, IGI, SGL, HRD, BIS) is table stakes for anyone selling certified stones, not an add-on.</li>
-    <li><strong>Is there an override workflow, or just a discount field?</strong> A floor/ceiling-checked approval with a logged reason is very different from a salesperson typing any number they like.</li>
+    <li><strong>Is there an override workflow, or just a discount field?</strong> An approval with a logged reason is very different from a salesperson typing any number they like.</li>
   </ol>
 
   <h2>On WhatsApp and how it actually gets sent</h2>
@@ -941,7 +934,7 @@ ${L.ctaBand('Ask us this checklist directly.', 'We’ll answer every criterion p
 const goldRateGuideFaqs = [
   { q: 'Does live gold-rate pricing mean an automatic feed is required?', a: 'No. Rates can be entered manually each session — a common am/pm pattern in the trade — or pulled from a live feed; a jewellery business chooses per metal. “Live” describes how the price resolves at the moment it’s viewed, not necessarily where the rate itself comes from.' },
   { q: 'Why do purity-specific rates matter so much?', a: 'Because 24K, 22K, 916, 18K and 14K are genuinely different products with different metal content, not variations of the same rate. A system that blends them into one number is either approximating or wrong for anything that isn’t the purity it was calibrated for.' },
-  { q: 'How does a rate change reach every price at once?', a: 'By storing a formula instead of a number — rate × weight, plus making charge, plus stone value — resolved fresh at the moment a price is viewed. Update the rate once, and the catalogue, the website and the counter all resolve against the new rate together, rather than needing three separate manual updates.' },
+  { q: 'How does a rate change reach every price at once?', a: 'Because every price comes from the live rate and your rules rather than a stored number. Update the rate once, and the catalogue, the website and the counter all show the new price together, rather than needing three separate manual updates.' },
 ];
 
 const goldRateGuide = {
@@ -974,18 +967,18 @@ ${L.section(
   <p>24K, 22K, 916, 18K and 14K aren’t variations on a theme — they’re different metal content, and a rate that’s correct for one is wrong for the others. A rate card built for the trade carries its own rate per metal and purity, not one blended number stretched across everything a business sells. This matters most at the exact moment a customer compares two pieces of different purity and expects the price difference to make sense, not just look approximately right.</p>
 
   <h2>What actually gets priced, beyond the rate</h2>
-  <p>The metal rate is one input among several. A resolved price is the rate multiplied by weight, plus a making charge — which can be a percentage of metal value, a per-gram amount, or a flat fee depending on the category — plus stone or gemstone value priced separately, often tied to a certificate on file. Wastage, where a business applies it, is tracked as its own distinct percentage rather than quietly folded into the making charge. None of these inputs are stored as a fixed final number; the price is a formula, resolved at the moment it’s needed.</p>
+  <p>The metal rate is one input among several. The rest is the way the business charges: making charges the way you charge them, stones priced on their own, and wastage where you apply it. None of this is stored as a fixed final number; the price comes from the live rate and your rules at the moment it’s needed.</p>
 
   <h2>Propagating a rate change everywhere at once</h2>
   <p>The practical benefit of pricing this way shows up the moment a rate moves. Because the price was never stored as a static number, updating the rate once means every catalogue link, every website page and every counter terminal resolves against the new rate the next time it’s viewed — not three or four separate manual updates that inevitably drift out of sync with each other. A screenshot sent an hour ago and a page opened just now show the same, correct price, because both are resolving the same live formula rather than displaying a snapshot.</p>
 
   <h2>What this doesn’t claim</h2>
-  <p>This guide is deliberately staying close to how a pricing engine mechanically works, not making claims about specific rate sources, accuracy guarantees, or real-time market-data licensing — those specifics vary by provider and region, and are worth confirming directly rather than assumed from a blog post. For the fuller technical picture of how Jwero’s own pricing engine handles rate cards, making-charge models, stone pricing and override rules, see <a href="/platform/pricing-engine">the pricing engine page</a>.</p>
+  <p>This guide is deliberately staying close to how a pricing engine mechanically works, not making claims about specific rate sources, accuracy guarantees, or real-time market-data licensing — those specifics vary by provider and region, and are worth confirming directly rather than assumed from a blog post. For how Jwero prices a piece from the live rate and your rules, see <a href="/platform/pricing-engine">the pricing engine page</a>.</p>
   </div>`
 )}
 
 ${L.section(
-  `${L.sectionHead('SEE IT WORKING', 'A price, resolved live, with the formula shown.', 'The pricing engine page walks through exactly what goes into a resolved price — rate, purity, making charge, wastage and stone value — and how an override gets logged.')}
+  `${L.sectionHead('SEE IT WORKING', 'A price, resolved live.', 'The pricing engine page shows how every price comes from the live rate and your rules, and how an override gets approved and logged.')}
   <p><a class="btn btn-ghost" href="/platform/pricing-engine">See the pricing engine in detail</a></p>`
 , { tone: 'tint' })}
 

@@ -89,13 +89,13 @@ const marketPicker = () => `
 </div>`;
 
 // Platform: what crosses the Tally bridge (auto-posting confirmed by Jwero, 2026-10-08).
-const TALLY = [['Sales bill', 'Sales voucher'], ['Return', 'Credit note'], ['Payment received', 'Receipt'], ['Customer and item masters', 'Matched, not retyped']];
+const TALLY = [['Bills, returns, payments', 'Your accountant’s books']];
 const tallyFlow = () => `
 <figure class="tfl" data-gfx aria-labelledby="tfl-cap">
   <div class="tfl-end"><p class="tfl-k">${icon('gem')} In Jwero</p><ul>${TALLY.map(([a], i) => `<li style="--i:${i}">${a}</li>`).join('')}</ul></div>
   <div class="tfl-bridge" aria-hidden="true">${TALLY.map((_, i) => `<span style="--i:${i}"><i></i></span>`).join('')}<em>Tally bridge</em></div>
   <div class="tfl-end is-tally"><p class="tfl-k">${icon('book')} In Tally</p><ul>${TALLY.map(([, b], i) => `<li style="--i:${i}">${b}</li>`).join('')}</ul></div>
-  <figcaption id="tfl-cap">Bills, returns and payments post to Tally automatically as vouchers through a local connector, so your accountant reviews entries instead of retyping them.</figcaption>
+  <figcaption id="tfl-cap">Bills, returns and payments post to Tally through the bridge, and your accountant reviews entries instead of retyping them.</figcaption>
 </figure>`;
 
 // Enterprise: the technical layer as a stack. The detailed table stays below.

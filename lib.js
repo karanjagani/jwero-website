@@ -396,10 +396,10 @@ ${section(`${sectionHead('DOES THIS SOUND LIKE YOU?', 'Five things we hear from 
 ${section(`${sectionHead('WHAT HAPPENS AFTER YOU TAP', 'Three steps. No mystery.', '')}
   ${steps([
     { title: 'First, a reply', text: 'A real person and our AI answer in the chat. Bring one real situation from your day above.' },
-    { title: 'Day 1 — fifteen minutes, your scenario', text: 'We run it through Jwero live. If we cannot help, we say so on the call.' },
-    { title: 'Days 2–5 — a pilot on your own data', text: 'Your customers, your catalogue, your stock — however messy. You judge on your evidence, then it is your call.' },
+    { title: 'Then, your scenario', text: 'We run it through Jwero live. If we cannot help, we say so on the call.' },
+    { title: 'Then, a pilot on your own data', text: 'Your customers, your catalogue, your stock — however messy. You judge on your evidence, then it is your call.' },
   ])}
-  <p class="cta-note" style="margin-top:14px">The full thirty days, step by step: <a href="/how-it-goes">How it goes →</a></p>`, { tone: 'tint' })}
+  <p class="cta-note" style="margin-top:14px">Set up in a day, settled in a month: <a href="/how-it-goes">How it goes →</a></p>`, { tone: 'tint' })}
 ${passItOn(i)}`;
 }
 

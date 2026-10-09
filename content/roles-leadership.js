@@ -38,7 +38,7 @@ ${L.section(
     {
       lever: 'Knowing who to follow up with',
       before: 'You remember the regulars, but the customer whose scheme matured last month, or who mentioned a wedding six months out, is easy to lose track of.',
-      after: 'The customer record surfaces who’s due — scheme maturities, occasions, RFM signals — and sends the follow-up automatically, so it is not a fact you had to recall.',
+      after: 'The customer record surfaces who’s due — scheme maturities, occasions, how recently and how often she buys and how much, and sends the follow-up automatically, so it is not a fact you had to recall.',
     },
     {
       lever: 'Checking on the business from outside the shop',

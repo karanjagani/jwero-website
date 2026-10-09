@@ -92,7 +92,7 @@ ${L.section(
   `${L.sectionHead('INTEGRATIONS & COEXISTENCE', 'Keep your Tally. Books stay where your CA likes them.', '')}
   ${require('./graphics').tallyFlow()}
   ${L.cards([
-    { title: 'Tally', text: 'Connect Tally, map your ledgers, import masters and check records against Tally. Your accountant’s world doesn’t change.', link: { href: '/platform/integrations/tally', label: 'The accountant page' } },
+    { title: 'Tally', text: 'Bills, returns and payments post to Tally through the bridge. Your accountant’s world doesn’t change.', link: { href: '/platform/integrations/tally', label: 'The accountant page' } },
     { title: 'Zoho Books', text: 'Full accounting bridge for Zoho-first businesses.' },
     { title: 'Shopify / WooCommerce / Unicommerce', text: 'Your online store works from the same product data as the shop, and products can be published to Unicommerce.' },
     { title: 'Stripe, PayPal, Razorpay & Cashfree', text: 'Payment collection worldwide and in India, verified end to end.' },
@@ -188,32 +188,30 @@ ${L.ctaBand('Give your business a memory.', 'We import your customers from Excel
 const pricingEngine = {
   slug: 'platform/pricing-engine',
   title: 'Live Gold Rate Pricing: Rate, Making Charge & Stone Rules | Jwero',
-  description: 'How Jwero prices a piece: purity rate cards, 3 making-charge models, wastage, per-carat stone pricing, channel/branch rules, and an audit log for every price.',
+  description: 'Every price in Jwero comes from the live rate and your rules, the same on every channel, with overrides approved and logged.',
   breadcrumbs: BC('The Pricing Engine'),
   faqs: [
-    { q: 'How does Jwero calculate a price?', a: 'Metal rate (by purity, updated manually or from a live feed) × weight, plus a making charge (percentage, per-gram, or flat — your choice per category), plus stone or gemstone value priced separately, resolved against any price rules that apply to that channel, branch or customer. Every resolution is logged.' },
+    { q: 'How does Jwero calculate a price?', a: 'From the live rate for the purity and your rules for making, stones and anything else you charge. The same price shows on every channel, and overrides are approved and logged.' },
     { q: 'Which purities does the rate card support?', a: 'Whatever your business sells — 24K, 22K, 916, 18K, 14K and more, each with its own rate. Rates can be entered manually each session (a common am/pm pattern) or pulled from a live feed; you choose per metal.' },
-    { q: 'Can making charges differ by category, or does everyone pay one formula?', a: 'Both exist. A making-charge type (percentage of metal value, per-gram, or flat amount) attaches per category or product, plus a separate service charge as a percentage of the subtotal if you charge one — not one formula forced onto everything you sell.' },
-    { q: 'How are diamonds and gemstones priced — bundled into the metal rate?', a: 'No — priced separately, per carat for gemstones or per piece for pearls, and can be tied to the certificate on file (GIA, IGI, SGL, HRD, BIS) so the price and the paperwork agree.' },
-    { q: 'Can the same piece show a different price on WhatsApp than on the website or in-store?', a: 'It can, if you set it up that way — price rules resolve by channel (store, website, WhatsApp, marketplace, POS) as well as by branch and customer tier. Most businesses keep one price everywhere; the option to vary exists when you need it.' },
-    { q: 'What stops a salesperson from just typing in a lower number?', a: 'An override request, not a free-text field — it needs a reason, and it is checked against a floor and ceiling you set before anyone approves it. Every override is on the record: who asked, who approved, what changed.' },
-    { q: 'If a customer disputes a price a week later, can we show how we got there?', a: 'Yes — every resolved price keeps a log of exactly which rate, rule and charge produced it. That is the answer to a dispute, not a reconstruction from memory.' },
+    { q: 'Can making charges differ by category, or does everyone pay one formula?', a: 'Making charges work the way you charge them, set per category or product, not one formula forced onto everything you sell.' },
+    { q: 'How are diamonds and gemstones priced, bundled into the metal rate?', a: 'No. Stones are priced separately from the metal and can be tied to the certificate on file so the price and the paperwork agree.' },
+    { q: 'Can the same piece show a different price on WhatsApp than on the website or in-store?', a: 'It can, if you set it up that way, by channel, branch or customer tier. Most businesses keep one price everywhere; the option to vary exists when you need it.' },
+    { q: 'What stops a salesperson from just typing in a lower number?', a: 'An override request, not a free-text field. It needs a reason and an approval, and every override is on the record: who asked, who approved, what changed.' },
+    { q: 'If a customer disputes a price a week later, can we show how we got there?', a: 'Yes. The rate the piece was priced at and any override are on the record. That is the answer to a dispute, not a reconstruction from memory.' },
   ],
   body: `
 ${L.hero({
   eyebrow: 'THE PRICING ENGINE',
   h1: 'Every price, explainable. <span class="h1-turn">Every override, on the record.</span>',
-  sub: 'A jewellery price is never just a number — it is a rate, a purity, a making charge, a stone value and sometimes a rule. Jwero prices it as a formula, not a field, and can show its work for every piece, every channel, every time.',
+  sub: 'A jewellery price is never just a number. It is today’s rate, the purity and the way you charge. Jwero prices every piece from the live rate and your rules, the same on every channel, every time.',
 })}
 
 ${L.section(
-  `${L.sectionHead('WHAT GOES INTO A PRICE', 'Five inputs, one resolved number.', 'Say it out loud to a jeweller and it sounds obvious — because it is how the trade has always priced. The difference is that Jwero does it as data, at the speed of a WhatsApp reply.')}
+  `${L.sectionHead('WHERE A PRICE COMES FROM', 'The live rate and your rules.', 'Say it out loud to a jeweller and it sounds obvious, because it is how the trade has always priced. The difference is that Jwero does it for every piece, at the speed of a WhatsApp reply.')}
   ${L.cards([
-    { title: 'Metal rate, by purity', text: 'A rate card per metal and purity: 24K, 22K, 916, 18K, 14K and more — entered manually (a common am/pm pattern) or fed from a live source, your choice.' },
-    { title: 'Making charge', text: 'Percentage of metal value, per-gram, or a flat amount — set per category, so no single formula gets forced onto everything you sell. A separate service charge can apply as a percentage of the subtotal.' },
-    { title: 'Wastage', text: 'Tracked as its own percentage where you apply it, distinct from the making charge — so the two never get silently confused with each other.' },
-    { title: 'Stone & gemstone value', text: 'Priced separately from the metal: per carat for gemstones, per piece for pearls — and can be tied to the certificate on file (GIA, IGI, SGL, HRD, BIS).' },
-    { title: 'Rules & overrides', text: 'Channel, branch, region and customer-tier rules apply on top; anything outside them needs an override request with a reason, checked against a floor and ceiling.' },
+    { title: 'The live rate, by purity', text: 'A rate for every metal and purity you sell, entered by you or fed from a live source, your choice.' },
+    { title: 'Your rules', text: 'Making charges the way you charge them, stones priced separately, and wastage where you apply it, set per category so nothing is forced onto everything you sell.' },
+    { title: 'Overrides, approved and logged', text: 'Anything outside your rules needs a reason and an approval, and every override is on the record.' },
   ])}`
 )}
 
@@ -224,48 +222,35 @@ ${L.oneSystemBlock([
 ])}
 
 ${L.section(
-  `${L.sectionHead('THREE WAYS TO CHARGE FOR MAKING', 'One formula never fits every category.', 'Bridal sets, daily-wear chains and coin sales don’t price the same way in real jewellery businesses — so the engine doesn’t force them to.')}
-  <div class="tbl-wrap"><table class="tbl">
-    <thead><tr><th>Model</th><th>How it charges</th><th>Where it tends to fit</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Percentage</strong></td><td>A % of the metal value</td><td>Standard retail pieces</td></tr>
-      <tr><td><strong>Per-gram</strong></td><td>A fixed amount per gram of weight</td><td>Chains, coins, high-volume plain gold</td></tr>
-      <tr><td><strong>Flat</strong></td><td>A fixed amount per piece, regardless of weight</td><td>Small items, findings, standardised designs</td></tr>
-    </tbody>
-  </table></div>
-  <p style="margin-top:16px; font-size:.95rem; color:var(--ink-2);">A separate service charge (a percentage of the subtotal) can apply on top where a business charges one, kept distinct from the making charge itself.</p>`
-, { tone: 'tint' })}
-
-${L.section(
   `${L.sectionHead('WHERE PRICE CAN VARY, ON PURPOSE', 'Consistency where you want it. Flexibility where you grant it.', '')}
   ${L.cards([
-    { title: 'By channel', text: 'Store, website, WhatsApp, marketplace and POS can each carry their own price rules — most businesses keep one price everywhere; the option exists for the ones who need it.' },
-    { title: 'By branch or region', text: 'Central price rules under owner control, with branch- or region-scoped exceptions that route through approval — not five branches quietly drifting apart.', link: { href: '/products/multi-store', label: 'See Multi-store & Franchise' } },
+    { title: 'By channel', text: 'Store, website, WhatsApp, marketplace and POS can each carry their own price where you want them to. Most businesses keep one price everywhere; the option exists for the ones who need it.' },
+    { title: 'By branch or region', text: 'One price under owner control, with branch or region exceptions that go through approval, not five branches quietly drifting apart.', link: { href: '/products/multi-store', label: 'See Multi-store & Franchise' } },
     { title: 'By customer tier', text: 'Standard, and loyalty tiers above it, can carry their own pricing where a business chooses to reward them that way.', link: { href: '/products/loyalty', label: 'See Loyalty & Referrals' } },
-    { title: 'By promotion', text: 'Promo codes and quantity price-breaks apply on top of the base rules, not as a separate system a salesperson has to remember.' },
+    { title: 'By promotion', text: 'Promo codes and quantity price-breaks live in the same place, not in a separate system a salesperson has to remember.' },
   ], 4)}`
 )}
 
 ${L.section(
   `${L.sectionHead('', 'Every override, checked and logged.', 'Every jewellery counter has had the moment: a good customer, a bit more discount than the price allows. The question is whether that moment leaves a record or a mystery.')}
   ${L.steps([
-    { title: 'Requested', text: 'A salesperson submits an override with the price they want to offer and a reason — not a blank field to type any number into.' },
-    { title: 'Checked', text: 'The request is checked against a floor and ceiling price set in advance, so an approver is reviewing a bounded exception, not an open-ended ask.' },
-    { title: 'Logged', text: 'Approved or declined, it is on the record: who asked, who decided, and exactly what changed — the same log a dispute or an audit would need.' },
+    { title: 'Requested', text: 'A salesperson submits an override with the price they want to offer and a reason, not a blank field to type any number into.' },
+    { title: 'Approved', text: 'Someone you choose approves or declines it, so an exception is a decision, not a habit.' },
+    { title: 'Logged', text: 'Approved or declined, it is on the record: who asked, who decided, and exactly what changed, the same record a dispute or an audit would need.' },
   ])}`
 , { tone: 'tint' })}
 
 
 ${L.section(`${L.sectionHead('PRICING ENGINE QUESTIONS', 'What owners and evaluators ask first.', '')}${L.faqBlock([
-  { q: 'How does Jwero calculate a price?', a: 'Metal rate (by purity) × weight, plus a making charge (percentage, per-gram or flat), plus stone value priced separately, resolved against any rules for that channel, branch or customer. Every resolution is logged.' },
-  { q: 'Can making charges differ by category?', a: 'Yes — percentage, per-gram or flat, set per category or product, plus an optional service charge on the subtotal. Not one formula forced onto everything.' },
-  { q: 'How are diamonds and gemstones priced?', a: 'Separately from the metal: per carat for gemstones, per piece for pearls — and can be tied to the certificate on file so the price and the paperwork agree.' },
-  { q: 'What stops a salesperson from just typing a lower number?', a: 'An override request with a reason, checked against a floor and ceiling before approval — not a free-text field.' },
-  { q: 'Can we show how a price was reached if a customer disputes it later?', a: 'Yes — every resolved price keeps a log of exactly which rate, rule and charge produced it.' },
+  { q: 'How does Jwero calculate a price?', a: 'From the live rate for the purity and your rules for making, stones and anything else you charge. The same price on every channel, and overrides approved and logged.' },
+  { q: 'Can making charges differ by category?', a: 'Yes. Making charges work the way you charge them, set per category or product. Not one formula forced onto everything.' },
+  { q: 'How are diamonds and gemstones priced?', a: 'Separately from the metal, and they can be tied to the certificate on file so the price and the paperwork agree.' },
+  { q: 'What stops a salesperson from just typing a lower number?', a: 'An override request with a reason and an approval, not a free-text field.' },
+  { q: 'Can we show how a price was reached if a customer disputes it later?', a: 'Yes. The rate the piece was priced at and any override are on the record.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 
-${L.ctaBand('See your own catalogue priced this way.', 'Bring one real product — we’ll show the rate, the making charge and the resolved price, live.', 'pricingengine')}
+${L.ctaBand('See your own catalogue priced this way.', 'Bring one real product and we’ll show it priced at the live rate, with your rules, in front of you.', 'pricingengine')}
 `,
 };
 
@@ -334,7 +319,7 @@ const integrations = {
   description: 'Jwero bridges to Tally and Zoho Books, connects Shopify, WooCommerce and Unicommerce, collects via Stripe, PayPal, Razorpay and Cashfree, sells on official Meta channels, connects to your telephony provider for AI voice calls and IVR, and lets your own AI agents reach your data with scoped access.',
   breadcrumbs: BC('Integrations'),
   faqs: [
-    { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Jwero connects to it, imports masters, checks records against it and posts bills, returns and payments to it automatically, so your accountant reviews instead of retyping.' },
+    { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Bills, returns and payments post to Tally through the bridge, so your accountant reviews instead of retyping.' },
     { q: 'Can I keep my Shopify store?', a: 'Yes. Connect Shopify and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
     { q: 'Is the WhatsApp integration official?', a: 'Yes — Jwero uses the official WhatsApp Business API, with template approvals, consent management and opt-out handling built in.' },
     { q: 'Which telephony providers work for AI voice calls and IVR?', a: 'Jwero connects to your telephony provider; most telephony/CPaaS providers can be connected on request. This only applies to actual phone calls and IVR — voice on WhatsApp and web chat is native to Jwero and needs no telephony provider at all. For the phone channel, Jwero drives the AI conversation and IVR logic — the call itself runs over the line you connect, the same division of labour as WhatsApp (Meta’s API) or payments (Razorpay/Cashfree).' },
@@ -351,7 +336,7 @@ ${L.hero({
 
 ${L.section(
   `${L.cards([
-    { title: 'Tally', text: 'The bridge your accountant will approve of: ledgers mapped, masters imported and records checked against Tally; the books stay exactly where they are.', link: { href: '/platform/integrations/tally', label: 'The accountant page' } },
+    { title: 'Tally', text: 'The bridge your accountant will approve of: bills, returns and payments arrive in Tally by themselves, and the books stay exactly where they are.', link: { href: '/platform/integrations/tally', label: 'The accountant page' } },
     { title: 'Zoho Books', text: 'Full accounting bridge for Zoho-first businesses.' },
     { title: 'Shopify', text: 'Your store works from the same product data. Keep the store, add the channels and the memory.' },
     { title: 'WooCommerce', text: 'Connector for WordPress-based stores.' },
@@ -376,7 +361,7 @@ ${L.section(
 
 
 ${L.section(`${L.sectionHead('INTEGRATION QUESTIONS', 'What changes in your stack.', '')}${L.faqBlock([
-  { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Jwero connects to it, imports masters, checks records against it and posts bills, returns and payments to it automatically, so your accountant reviews instead of retyping.' },
+  { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Bills, returns and payments post to Tally through the bridge, so your accountant reviews instead of retyping.' },
   { q: 'Can I keep my Shopify store?', a: 'Yes. Connect Shopify and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
   { q: 'Is the WhatsApp integration official, or a ban risk?', a: 'Official WhatsApp Business API — template approvals, consent management and opt-out handling are built in, which is what keeps it out of ban-risk territory.' },
   { q: 'Can I connect my own AI agent to Jwero data?', a: 'Yes — an AI agent of your choosing can be given scoped access to your Jwero data, with a guided connect flow and an API-keys page in-product.' },
@@ -393,10 +378,10 @@ const tally = {
   description: 'Jwero bridges to Tally so your books stay exactly where your CA likes them. Jwero runs sales, stock, purchase and the workshop; Tally keeps the ledger.',
   breadcrumbs: [['Home', '/'], ['Platform', '/platform'], ['Integrations', '/platform/integrations'], ['Tally']],
   faqs: [
-    { q: 'Will switching to Jwero disrupt my accountant’s workflow?', a: 'No. That is the point of the bridge — Jwero connects to Tally, imports customer and item masters and checks records against Tally, in the shape your accountant already expects. Bills, returns and payments post to Tally automatically as vouchers, so your accountant reviews entries instead of typing them.' },
-    { q: 'What exactly syncs to Tally?', a: 'Jwero connects to Tally, maps your ledgers once, imports customer and item masters, checks records against Tally, and posts bills, returns and payments to Tally automatically as vouchers. Nothing is typed twice.' },
+    { q: 'Will switching to Jwero disrupt my accountant’s workflow?', a: 'No. That is the point of the bridge. Bills, returns and payments post to Tally through the bridge, in the shape your accountant already expects, so your accountant reviews entries instead of typing them.' },
+    { q: 'What exactly syncs to Tally?', a: 'Bills, returns and payments post to Tally through the bridge, and your customers and items stay consistent between the two. Nothing is typed twice.' },
     { q: 'Do I have to stop using Tally to start using Jwero?', a: 'No — this is the entire design. Keep Tally as your ledger of record; Jwero takes over customers, channels, schemes and follow-up alongside it.' },
-    { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes. They keep filing GST exactly as they do today, in Tally — with customer and item masters imported instead of re-typed. Invite them to the demo — most objections dissolve once they see the bridge, not the sales pitch.' },
+    { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes. They keep filing GST exactly as they do today, in Tally, with bills, returns and payments arriving by themselves instead of re-typed. Invite them to the demo. Most objections dissolve once they see the bridge, not the sales pitch.' },
     { q: 'Does this replace GST filing or e-invoicing?', a: 'No — GST invoicing at the live gold rate happens in Jwero, but statutory filing and e-invoice/IRN stay Tally’s job. Two systems, one clean line.' },
     { q: 'What if our CA wants to keep using their own workflow entirely?', a: 'They can. The bridge changes what arrives in Tally, not how your CA works once it’s there.' },
   ],
@@ -415,11 +400,11 @@ ${L.section(
     <div class="card"><h3>Tally keeps</h3><p>Statutory books, GST filings, the ledger of record — everything your accountant already trusts, unchanged.</p></div>
     <div class="card"><h3>Jwero runs</h3><p>Customer memory, WhatsApp and Instagram selling, gold schemes, catalogue, follow-up and the AI workforce — the revenue side.</p></div>
   </div>
-  <p style="margin-top:20px; font-size:.95rem; color:var(--ink-2);">Jwero connects to Tally, maps your ledgers, imports customer and item masters and checks records against Tally. Bills, returns and payments post to Tally automatically as vouchers, so your accountant’s month-end starts from entries that are already in the books.</p>`
+  <p style="margin-top:20px; font-size:.95rem; color:var(--ink-2);">Bills, returns and payments post to Tally through the bridge, so your accountant’s month-end starts from entries that are already in the books.</p>`
 )}
 
 ${L.section(`${L.sectionHead('QUESTIONS ACCOUNTANTS ASK', 'What to tell your CA.', '')}${L.faqBlock([
-  { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes — masters are imported instead of re-typed, and they still enter sales and payment vouchers in Tally exactly as before.' },
+  { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes. Bills, returns and payments arrive in Tally by themselves, and they review them in Tally exactly as before.' },
   { q: 'Does this replace GST filing or e-invoicing?', a: 'No — GST invoicing at the live rate happens in Jwero; statutory filing and e-invoice/IRN stay Tally’s job. Two systems, one clean line.' },
   { q: 'Can our CA keep their own workflow?', a: 'Yes — the bridge changes what arrives in Tally, not how your CA works once it’s there.' },
 ])}
@@ -446,17 +431,17 @@ const onboarding = {
 ${L.hero({
   eyebrow: 'ONBOARDING & SUPPORT',
   h1: 'If your team can use WhatsApp, they can run Jwero.',
-  sub: 'Set up in a day, settled in thirty: customers imported, your WhatsApp number connected, catalogue published and the AI working inside your limits from day one — with a written change-freeze around your season.',
+  sub: 'Set up in a day, settled in a month: customers imported, your WhatsApp number connected, catalogue published and the AI working inside your limits from day one — with a written change-freeze around your season.',
   primary: { href: '#', label: 'Plan your onboarding', wa: 'onboarding' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
 ${L.section(
-  `${L.sectionHead('THE FIRST 30 DAYS', 'What happens, week by week.', '')}
+  `${L.sectionHead('THE FIRST MONTH', 'Set up in a day, settled in a month.', '')}
   ${L.steps([
-    { title: 'Day 1: Set up, then days 2–7: Land', text: 'Set up in a day: customers imported for you, WhatsApp number connected, catalogue published. Nothing ripped out — your billing software stays.' },
-    { title: 'Weeks 2–3: First wins', text: 'Enquiries answered in minutes, occasion greetings flowing, first catalogue shares sent.' },
-    { title: 'Day 30: The report', text: 'Your first weekly growth report: who came back, what they bought, what the system did. Judge us on that.' },
+    { title: 'Import', text: 'Set up in a day: customers imported for you, WhatsApp number connected, catalogue published. Nothing ripped out — your billing software stays.' },
+    { title: 'Go live', text: 'Enquiries answered in minutes, occasion greetings flowing, first catalogue shares sent.' },
+    { title: 'First report', text: 'Your first growth report: who came back, what they bought, what the system did. Judge us on that.' },
   ])}`
 )}
 

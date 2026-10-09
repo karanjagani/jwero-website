@@ -109,8 +109,8 @@ const SHIFTS = {
     title: 'From “someone will get back to you” to a sequence with dates.',
     today: 'You message a vendor and wait. A call, a deck, a proposal, a month.',
     gone: 'The mystery between the first message and the first result.',
-    now: 'A 15-minute call, a pilot on your own data, a written plan, go-live inside two weeks, a growth report at day 30.',
-    tempo: ['Weeks of waiting', 'Day 30 report'],
+    now: 'A short call, a pilot on your own data, a written plan, go-live, and a growth report in your first month.',
+    tempo: ['Weeks of waiting', 'First-month report'],
   },
 
   // ---------------------------------------------------------------- products · sell
@@ -289,7 +289,7 @@ const SHIFTS = {
     title: 'From “what if the switch goes wrong” to “what is staying costing me tonight”.',
     today: 'Switching is imagined as a project: data stuck, staff resisting, the CA upset, the season at risk.',
     gone: 'The unanswerable version of every one of those fears.',
-    now: 'Import in days, coexist with the ERP, AI inside your limits from day one, a written change-freeze, an exit test at day 30 — and your data leaves with you if it fails.',
+    now: 'Import in days, coexist with the ERP, AI inside your limits from day one, a written change-freeze, and your data leaves with you if it is not working.',
     tempo: ['A project', 'Thirty days, with exits'],
   },
   'erp-to-os/make-do': {
@@ -366,7 +366,7 @@ const SHIFTS = {
     title: 'From “send to everyone” to the right two hundred.',
     today: 'Broadcasts go to the whole list because there is no other list.',
     gone: 'The festival blast that annoys nine customers to reach one.',
-    now: 'Live audiences from RFM tier, tags and custom fields — reachable count and revenue shown before you send.',
+    now: 'Live audiences from how recently, how often and how much a customer buys, tags and custom fields — reachable count and revenue shown before you send.',
     tempo: ['Everyone', 'The right ones'],
   },
   'products/journeys': {

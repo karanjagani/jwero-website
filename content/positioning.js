@@ -456,14 +456,14 @@ const buildLess = () => `
 
 // ---------------------------------------------------------------- count your team
 // The software a role needs when the jeweller employs someone to do it, at the
-// lowest paid plan: [label, ₹/month]. Drafted estimates. A freelancer or agency
+// lowest paid plan: [label, ₹/month]. Drafted estimates. An agency
 // is assumed to bring its own. With Jwero managing the work, every tool is
 // included at no charge and there is no platform subscription.
 const ROLE_TOOLS = {'Data analyst': ['Reporting tool', 1500], 'AI and automation specialist': ['Automation tool', 2500], 'Performance marketing': ['Ad tracking and landing pages', 1500], 'SEO, AEO and GEO': ['SEO tool', 2000], 'Social media manager': ['Scheduling tool', 1500], 'Content writer': ['AI writing tool', 1500], 'Graphic designer': ['Design tool', 500], 'Video editor': ['Editing tool', 1000], 'Email and SMS marketer': ['Email and SMS tool', 1500], 'Telecaller and follow-up': ['Cloud telephony', 2000], 'CRM executive': ['CRM', 2500], 'Showroom journey coordinator': ['Appointment tool', 1000], 'Loyalty and scheme coordinator': ['Loyalty and scheme app', 2000], 'WhatsApp executive': ['WhatsApp API tool', 2500], 'Customer care': ['Helpdesk', 1500], 'Reviews and reputation': ['Review tool', 1500], 'Ecommerce manager': ['Online store platform', 2500], 'Website developer': ['Hosting and plugins', 1000], 'Catalogue and listing executive': ['Catalogue app', 1000], 'Product photographer': ['Photo editing tool', 500], 'Marketplace executive': ['Listing tool', 1500], 'Staff trainer': ['Training app', 1500]};
 // The roles a jeweller hires, or pays a freelancer or agency for, to keep up.
 // Each can be marked as an employee, an agency, or a gap nobody covers.
 //
-// [role, lowest employee ₹/month, lowest freelancer or agency ₹/month,
+// [role, employee ₹/month, agency ₹/month,
 //  share of the work AI does, what is counted, how much one person handles a
 //  month, where the starting count comes from, stepper step]
 //
@@ -472,11 +472,8 @@ const ROLE_TOOLS = {'Data analyst': ['Reporting tool', 1500], 'AI and automation
 // ("p:conv" and so on; the formulas are in site.js). The count divided by what
 // one person handles is the number of people the work takes.
 //
-// "Lowest" is the cheapest way the role is commonly filled in India: a junior
-// hire in a smaller city, or a freelancer. Drafted estimates, as are the
-// capacities. Jwero is priced by rule from the cheaper of the two: 50% when
-// the jeweller focuses on the outcome, 60% when they approve every step.
-// Everything is listed in blueprint/TEAM-COST-ASSUMPTIONS.md.
+// Rates and capacities are drafted estimates. The Jwero figure the widget
+// shows is indicative only; the plan carries the quote.
 const TEAM_ROLES = [
   ['Strategy and direction', [
     ['Growth strategist', 30000, 15000, .3, 'plans and reviews a month', 4, 'n:2', 1],
@@ -589,12 +586,12 @@ ${eyebrow('Count your team')}
       <ul>${PREDICT.map(([k, t]) => `<li><b data-predict="${k}">0</b><span>${t}</span></li>`).join('')}</ul>
     </div>
     <div class="pz-team2-mode" role="group" aria-label="How involved you want to be">
-      <button type="button" aria-pressed="true" data-m="0"><b>Focus on the outcome</b><span>Jwero plans and executes. You see results.</span></button>
-      <button type="button" aria-pressed="false" data-m="1"><b>Involve me in every decision</b><span>You approve each step. More coordination, more time.</span></button>
+      <button type="button" aria-pressed="true" data-m="0"><b>Jwero runs it</b><span>Jwero plans and executes. You see results.</span></button>
+      <button type="button" aria-pressed="false" data-m="1"><b>Work alongside me</b><span>You stay close to the work. More coordination, more time.</span></button>
     </div>
     <p class="pz-team2-big">This work takes <span data-pz-team-n>0</span> <i data-pz-team-pw>people</i> and <span data-pz-team-t>0</span> <i data-pz-team-tw>tools</i> <em>→ one partner, every tool included</em></p>
     <dl>
-      <div><dt>What it costs today, at the lowest rates</dt><dd data-pz-team-now>₹0</dd></div>
+      <div><dt>What it costs today</dt><dd data-pz-team-now>₹0</dd></div>
       <div class="is-sub"><dt>People and agencies</dt><dd data-pz-team-ppl>₹0</dd></div>
       <div class="is-sub"><dt>Software they need</dt><dd data-pz-team-tools>₹0</dd></div>
       <div><dt>The same work with Jwero</dt><dd data-pz-team-jw>₹0</dd></div>
@@ -608,7 +605,7 @@ ${eyebrow('Count your team')}
     <div class="pz-team2-bars" aria-hidden="true"><p><span>Today</span><i><u data-pz-team-b1></u></i></p><p><span>With Jwero</span><i><u class="is-soft" data-pz-team-b3></u><u class="is-gold" data-pz-team-b2></u></i></p></div>
     <a class="btn pz-btn-gold" href="#" data-wa="plan" data-pz-team-cta>Let Jwero handle it</a>
     <a class="pz-team2-share" href="#" target="_blank" rel="noopener" data-pz-team-share>Send this to my partner or manager →</a>
-    <p class="pz-team2-note">Indicative. Volumes are predicted from your customer base and showrooms; change any count to your own. Today’s figures are the lowest going rates in India, what one person can handle in a month, and the cheapest paid plan of the software an employee would need, drafted by us, not a survey. When Jwero manages the work there is no platform subscription and no tool to buy. Jwero is priced at half of the cheaper way to do the work when you focus on the outcome, and at 60% when you approve every step. Filling a gap adds cost, so it is shown apart. Your plan carries the exact quote.</p>
+    <p class="pz-team2-note">Indicative. Volumes are predicted from your customer base and showrooms; change any count to your own. Today’s figures are drafted estimates of what the people and software cost, not a survey. When Jwero manages the work there is no platform subscription and no tool to buy. The Jwero figure is indicative: your price is worked out for your business, on the work, and stated in writing in your plan. Filling a gap adds cost, so it is shown apart.</p>
   </div>
 </div>`, { tone: 'tint', id: 'count-your-team' });
 
@@ -718,14 +715,14 @@ ${cta ? `<p class="pz-cta-center"><a class="btn btn-primary" href="/what-we-hand
 // 2026-10-05). Do not edit the wording. "Tanika" is the company behind Jwero,
 // which is why two of them use that name.
 const QUOTES = [
-  ['A capable, motivated and eager team has definitely delivered on their promise of speedy deployment. The team’s availability & response is commendable. This platform has immense potential to our trade.', 'Manjunatha Nayak', 'Gujjadi Swarna Jewellers, Bangalore'],
-  ['I must say the dedication of the team is impeccable. They have a very good understanding of the jewellery trade in our country and also know how to bridge the gap between orthodox and modern business pratices.', 'Sanjay Bohra', 'J Mittlal ThangaMaligai, Chennai'],
-  ['I recently had the pleasure of interacting with Jwero Care online support team, and I must say, it was an exceptional experience! Their live chat service was prompt, efficient, and incredibly helpful. Keep it up', 'Aradhana Jewellery', 'Kannur, Kerala'],
-  ['Jwero ai has made building and maintaining my website an enjoyable experience. The platform is user-friendly, flexible, and has everything I need to run a successful online business', 'Konika Jewellery', 'Chennai'],
-  ['Karan, I want to express my gratitude for your incredible support & collaboration. Your dedication, professionalism, & insights have significantly impacted our projects. Thankyou for being a reliable partner & a supportive colleague, I look forward to achieving even more together.', 'Suraj', 'Mangatrai Neeraj, Hyderabad'],
-  ['Promises kept on time : whether design, development, maintenance, they are always upto the mark. Complete support available round the clock to hear & help you. Our decision to tie up was a right click at the right time. Thanks team Tanika! keep it up.', 'Anish Shah', 'Akshaya Gold, Palakkad, Kerala'],
-  ['The entire Tanika team is fantastic & professional. They will make your ideas into reality with in-depth knowledge of the jewellery industry. Their operations are streamlined for our growth are always supportive with consistent technology upgradation for better user experience.', 'Saket Keshri', 'Ratnalaya Jewellers, Patna, Bihar'],
-  ['Tanika Tech encompasses all the functionalities needed for a jewellery business. The best part is its blend of online & offline format to suit different needs, their swift response to any problems is really praise-worthy.', 'Goutham Kota', 'Mohan Jewellery, Chennai'],
+  ['A capable, motivated and eager team has definitely delivered on their promise of speedy deployment. The team’s availability & response is commendable. This platform has immense potential to our trade.', 'Manjunatha', 'Gujjadi Swarna Jewellers'],
+  ['I must say the dedication of the team is impeccable. They have a very good understanding of the jewellery trade in our country and also know how to bridge the gap between orthodox and modern business pratices.', 'Sanjay', 'J Mittlal ThangaMaligai'],
+  ['I recently had the pleasure of interacting with Jwero Care online support team, and I must say, it was an exceptional experience! Their live chat service was prompt, efficient, and incredibly helpful. Keep it up', 'Aradhana Jewellery', 'Kerala'],
+  ['Jwero ai has made building and maintaining my website an enjoyable experience. The platform is user-friendly, flexible, and has everything I need to run a successful online business', 'Konika Jewellery', 'Tamil Nadu'],
+  ['Karan, I want to express my gratitude for your incredible support & collaboration. Your dedication, professionalism, & insights have significantly impacted our projects. Thankyou for being a reliable partner & a supportive colleague, I look forward to achieving even more together.', 'Suraj', 'Mangatrai Neeraj'],
+  ['Promises kept on time : whether design, development, maintenance, they are always upto the mark. Complete support available round the clock to hear & help you. Our decision to tie up was a right click at the right time. Thanks team Tanika! keep it up.', 'Anish', 'Akshaya Gold'],
+  ['The entire Tanika team is fantastic & professional. They will make your ideas into reality with in-depth knowledge of the jewellery industry. Their operations are streamlined for our growth are always supportive with consistent technology upgradation for better user experience.', 'Saket', 'Ratnalaya Jewellers'],
+  ['Tanika Tech encompasses all the functionalities needed for a jewellery business. The best part is its blend of online & offline format to suit different needs, their swift response to any problems is really praise-worthy.', 'Goutham', 'Mohan Jewellery'],
 ];
 const quoteCards = (n) => `<div class="pz-quotes">${QUOTES.slice(0, n).map(([q, who, where]) => `<figure class="pz-quote"><blockquote>“${q}”</blockquote><figcaption><b>${who}</b><span>${where}</span></figcaption></figure>`).join('')}</div>`;
 const quotes = (n = QUOTES.length) => L.section(`
@@ -863,7 +860,7 @@ ${insight()}
 ${dontKnow()}
 ${howMuch()}
 ${countTeam()}
-${L.section(`<span id="pricing"></span><p class="pz-eyebrow">Pricing</p><h2 class="pz-h pz-center">No subscription. Every tool included.</h2><p class="pz-lead pz-center">Managed work costs about half of what the same work costs you today. Or run the platform yourself.</p>${require('./jbaas').TIERS()}`, { tone: 'tint' })}
+${L.section(`<span id="pricing"></span><p class="pz-eyebrow">Pricing</p><h2 class="pz-h pz-center">No subscription. Every tool included.</h2><p class="pz-lead pz-center">Managed work is priced on the work, for your business, and stated in writing in your plan. Or run the platform yourself.</p>${require('./jbaas').TIERS()}`, { tone: 'tint' })}
 ${aiWorks()}
 ${quotes(3)}
 ${nextSteps()}
@@ -1006,18 +1003,16 @@ ${close()}
 const count = {
   slug: 'count-your-team',
   title: 'Count Your Team: What a Jewellery Business Spends to Keep Up | Jwero',
-  description: 'A calculator for jewellers: set your customer base, mark the marketing, sales, ecommerce and operations roles you pay for, and see the people it takes, what it costs at the lowest rates in India, and the same work with Jwero.',
+  description: 'A calculator for jewellers: set your customer base, mark the marketing, sales, ecommerce and operations roles you pay for, and see the people it takes, what it costs today, and the same work with Jwero.',
   breadcrumbs: [['Home', '/'], ['Jewellery Business as a Service', '/jewellery-business-as-a-service'], ['Count your team']],
   body: `
 ${innerHero('Count your team', 'What does keeping up take, and cost, today?', 'The people, freelancers and agencies it takes to keep a jewellery business current, counted from your own customer base. Then the same work with one partner.', ['/jewellery-business-as-a-service', 'See managed services'], HANDLE('Let Jwero handle it', 'plan', 'btn pz-btn-gold'))}
 ${countTeam(true)}
-${L.section(`${eyebrow('How it is worked out')}<h2 class="pz-h pz-center">No hidden arithmetic.</h2>
+${L.section(`${eyebrow('How it is worked out')}<h2 class="pz-h pz-center">Three things, in the open.</h2>
 <ol class="pz-how">
   <li><span>01</span><b>Your volume</b><p>Conversations, comments, reviews and calls are predicted from your customers on record and showrooms. Change any count to your own.</p></li>
-  <li><span>02</span><b>The people it takes</b><p>Each count is divided by what one person can handle in a month.</p></li>
-  <li><span>03</span><b>Today’s cost</b><p>Those people at the lowest going rate in India: a junior hire in a smaller city, or a freelancer.</p></li>
-  <li><span>04</span><b>Jwero’s price</b><p>Half of the cheaper way to do the work when you focus on the outcome. 60% when you want to approve every step.</p></li>
-  <li><span>05</span><b>Your quote</b><p>These are estimates drafted by us. Your plan carries the exact figure for your business. Running it yourself? <a href="/#count-yours">See the tools Jwero replaces</a>.</p></li>
+  <li><span>02</span><b>The people it takes</b><p>Each role shows how many people the work takes today, and what they cost. Drafted estimates, not a survey.</p></li>
+  <li><span>03</span><b>Your quote in writing</b><p>Your price is worked out for your business, on the work, and stated in writing in your plan. Running it yourself? <a href="/#count-yours">See the tools Jwero replaces</a>.</p></li>
 </ol>`)}
 ${L.section(`${eyebrow('Ways to work with Jwero')}<h2 class="pz-h pz-center">Start with one function.</h2>${levels()}`, { tone: 'tint' })}
 ${nextSteps()}

@@ -79,12 +79,12 @@ function centreSwap() {
 }
 
 const SWITCH_RISKS = [
-  ['My data is stuck in the ERP.', 'We import from Excel, CSV or the ERP’s export — customers, catalogue, stock, however messy — and reconcile it with you in days 2–5. Your data also leaves the same way, any time.'],
+  ['My data is stuck in the ERP.', 'We import from Excel, CSV or the ERP’s export — customers, catalogue, stock, however messy — and reconcile it with you in the first week. Your data also leaves the same way, any time.'],
   ['My staff will not learn a new system.', 'If they can use WhatsApp they can use Jwero. Roles are trained in their language, and the AI works inside caps and quiet hours you set, with approval on for anything you choose.'],
   ['My accountant’s world will break.', 'It does not change. Bills, returns and payments post to Jwero’s ledger and reach Tally automatically; Zoho Books is bridged too. Your CA keeps the tools she has.'],
   ['We will lose days in the season.', 'A written change-freeze around your peak weeks is part of the plan. Go-lives happen before or after, never during.'],
   ['We will be locked into a new vendor.', 'You own your data; exports are yours whenever you want them, billing is month to month, and every module is listed before you buy.'],
-  ['We do not have time for a big project.', 'One pilot on your own data, one branch, exit test at the end. If it fails the test, we stop there. Most single stores run the whole thing on WhatsApp with us.'],
+  ['We do not have time for a big project.', 'One pilot on your own data, one branch, and a clear point where you decide. If it is not working, we stop there. Most single stores run the whole thing on WhatsApp with us.'],
 ];
 const STAY_COSTS = [
   ['Enquiries after hours go unanswered.', 'Every night, the ones who asked at 9pm buy from whoever replied first. This does not show up in any ERP report — it never became a bill.'],
@@ -257,12 +257,12 @@ ${L.ctaBand('See your ERP’s blind spots on your own data.', 'Bring one custome
 const switching = {
   slug: 'erp-to-os/switching',
   title: 'Is Switching Jewellery ERP Risky? Risks vs Costs of Staying | Jwero',
-  description: 'The six risks jewellers name when they think about leaving an ERP — data, staff, the accountant, the season, lock-in, time — each with the specific thing that removes it; the six costs of staying, which compound daily; and the 30-day switch plan with coexistence, a change-freeze and an exit test.',
+  description: 'The six risks jewellers name when they think about leaving an ERP — data, staff, the accountant, the season, lock-in, time — each with the specific thing that removes it; the six costs of staying, which compound daily; and the switch plan with coexistence, a change-freeze and a clear way out.',
   breadcrumbs: BC('Is switching risky?', true),
   faqs: [
     { q: 'Can I keep my ERP for accounts and use Jwero for everything customer-facing?', a: 'Yes — that is how most businesses start. Jwero takes WhatsApp, Instagram, the catalogue, the counter and schemes; books bridge to Tally or Zoho Books, or to your ERP’s ledger via export, for as long as you want to run both.' },
-    { q: 'What if the pilot fails?', a: 'Then we stop, at the exit test, and your data leaves with you as CSV. A pilot on your own data is the point: you decide on your evidence, not our claims.' },
-    { q: 'How long does a single store take?', a: 'A fifteen-minute call on day one, a pilot on your own data in days 2–5, a written plan on day 5, go-live by day 14, your first growth report at day 30. The full sequence is on the “How it goes” page.' },
+    { q: 'What if the pilot fails?', a: 'Then we stop, and your data leaves with you as CSV. A pilot on your own data is the point: you decide on your evidence, not our claims.' },
+    { q: 'How long does a single store take?', a: 'Set up in a day, settled in a month: a short call, a pilot on your own data, a written plan, go-live, then your first growth report. The outline is on the “How it goes” page.' },
     { q: 'Will we lose the history in the old system?', a: 'No. Purchase history, customers, catalogue and stock import from Excel, CSV or the ERP’s export, deduplicated and reconciled with you. The old system can stay readable for as long as you keep it.' },
     { q: 'What changes for my CA?', a: 'Less typing, and nothing else. Bills, returns and payments post to Jwero’s ledger and reach Tally automatically; Zoho Books is bridged too. Tax invoices, credit and debit notes and the audit trail are all there, and e-invoices are generated in Tally from the entries Jwero sends.' },
   ],
@@ -270,7 +270,7 @@ const switching = {
 ${L.hero({
   eyebrow: 'FROM ERP TO OS · SWITCHING',
   h1: 'Switching feels risky. Staying is the risk you are already paying.',
-  sub: 'Every worry about switching has a specific answer: the import, the limits on AI, the Tally bridge, the change-freeze and the exit test. The costs of staying have none. They carry on every day, outside any report your ERP can run.',
+  sub: 'Every worry about switching has a specific answer: the import, the limits on AI, the Tally bridge, the change-freeze and the way out. The costs of staying have none. They carry on every day, outside any report your ERP can run.',
   primary: { href: '#', label: 'Walk me through the switch for my business', wa: 'erpswitch' },
   secondary: { href: '/how-it-goes', label: 'See the 30-day sequence' },
 })}
@@ -292,12 +292,11 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('HOW THE SWITCH RUNS', 'Thirty days, with a way out at every step.', 'Your ERP keeps running alongside Jwero to begin with. You move the rest only when the first month has proved itself.')}
+  `${L.sectionHead('HOW THE SWITCH RUNS', 'Set up in a day, settled in a month, with a way out.', 'Your ERP keeps running alongside Jwero to begin with. You move the rest only when the first month has proved itself.')}
   ${L.steps([
-    { title: 'Days 1–5 — import and coexist', text: 'Customers, catalogue, stock imported and reconciled with you. The ERP keeps the books. Jwero takes the customer-facing doors: WhatsApp, Instagram, catalogue links, the counter if you choose.' },
-    { title: 'Day 5 — the written plan', text: 'What changes, the migration path, a straight price, and the change-freeze dates around your season. Then it is your call.' },
-    { title: 'Days 7–14 — go live', text: 'The AI starts working inside caps and quiet hours you set, with approval on for whatever you choose. Staff trained by role, in their language.' },
-    { title: 'Day 30 — the exit test', text: 'Enquiries answered, prices consistent, day-close variance, your first growth report on your own data. If it fails, we stop and your data leaves with you.' },
+    { title: 'Import and coexist', text: 'Customers, catalogue, stock imported and reconciled with you. The ERP keeps the books. Jwero takes the customer-facing doors: WhatsApp, Instagram, catalogue links, the counter if you choose. You get a written plan: what changes, the migration path, a straight price, and the change-freeze dates around your season. Then it is your call.' },
+    { title: 'Go live', text: 'The AI starts working inside caps and quiet hours you set, with approval on for whatever you choose. Staff trained by role, in their language.' },
+    { title: 'First report', text: 'Enquiries answered, prices consistent, day-close variance, your first growth report on your own data. If it is not working, we stop and your data leaves with you.' },
     { title: 'After: move the rest when you are ready', text: 'Move the books across when it suits you, or keep the Tally bridge for good. Both are normal.' },
   ])}`
 )}

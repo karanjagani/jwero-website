@@ -1,2 +1,5 @@
 node_modules/
 .DS_Store
+
+# strategy and runbooks live outside the repo (~/Documents/jwero-blueprint)
+blueprint/

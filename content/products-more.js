@@ -497,7 +497,7 @@ const RE_LIST = [
   ['Sales', 'By branch, channel, salesperson and category', '/products/pos'],
   ['Stock ageing', 'What has sat for 90, 180 and 365 days, and where', '/products/inventory'],
   ['Dead stock', 'Value tied up in pieces that do not move', '/tools/dead-stock-calculator'],
-  ['Customer value', 'RFM, segments and scores', '/products/segmentation'],
+  ['Customer value', 'How recently, how often and how much each customer buys, segments and scores', '/products/segmentation'],
   ['Gold schemes', 'Collections, dues and maturity', '/products/gold-schemes'],
   ['Receivables', 'Who owes what, and since when', '/products/billing-finance'],
   ['Team', 'Attendance, payroll and incentives', '/products/hr-payroll'],
@@ -554,7 +554,7 @@ ${L.section(`${L.sectionHead('SIX JOBS, ONE RECORD', 'What jewellery MIS softwar
   <article><h3>1. Ask in a sentence</h3><p>AI turns a plain question into a report, ready to save and pin.</p><a href="/platform/ai-workforce">AI →</a></article>
   <article><h3>2. Build your own</h3><p>Pick a source, add filters, choose a chart, preview live, save.</p><a href="/products/erp">ERP →</a></article>
   <article><h3>3. Dashboards for each role</h3><p>The owner’s morning on your phone, the branch manager’s week, the scheme desk’s dues.</p><a href="/products/multi-store">Branches →</a></article>
-  <article><h3>4. Jewellery reports built in</h3><p>Stock ageing, dead stock, RFM, scheme collections, receivables and payroll.</p><a href="/products/inventory">Stock ageing →</a></article>
+  <article><h3>4. Jewellery reports built in</h3><p>Stock ageing, dead stock, customer value by how recently, how often and how much they buy, scheme collections, receivables and payroll.</p><a href="/products/inventory">Stock ageing →</a></article>
   <article><h3>5. On time, every time</h3><p>Scheduled reports, and exports to Excel, CSV and PDF.</p><a href="/products/billing-finance">Accounts →</a></article>
   <article><h3>6. What to do next</h3><p>Customer scores and opportunities beside the totals, not just what happened.</p><a href="/platform/customer-memory">Customer intelligence →</a></article>
 </div>`)}

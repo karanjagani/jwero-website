@@ -131,7 +131,7 @@ const wastage = post({
   sub: 'Some gold is always lost in making. The question is how much is normal, who carries the rest, and whether you find out per job or at the year-end stock count.',
   product: ['/products/manufacturing', 'See karigar settlement in Jwero'],
   wa: 'blog-wastage',
-  close: ['Settle every job against its norm.', 'Jwero assesses wastage per job and caps recovery to the norm you set, in fine grams.'],
+  close: ['Settle every job against your norms.', 'Jwero tracks gold in fine grams through every stage, and every job settles against your norms.'],
   faqs: [
     { q: 'What is a normal wastage percentage?', a: 'It depends on the process and design: filing and polishing lose less than intricate handmade work, and casting has its own losses. Set a norm per process from your own history, not a market number.' },
     { q: 'Should karigars pay for loss above the norm?', a: 'Many workshops recover loss above an agreed norm, up to a cap. Put the norm and the cap in writing before the job is issued.' },
@@ -154,7 +154,7 @@ const wastage = post({
   <p>One high-loss job is noise. The same karigar above norm on most jobs is a conversation. The <a href="/tools/gold-loss-calculator">gold-loss calculator</a> shows what loss above norm is worth over a year.</p>
 
   <h2>How Jwero does it</h2>
-  <p>Jwero issues and receives karigar jobs by weight and purity, assesses wastage at settlement, and caps recovery to the norm you set. A karigar scorecard and metal reconciliation show loss by karigar over time. See <a href="/products/manufacturing">manufacturing</a>.</p>`,
+  <p>Jwero tracks gold in fine grams through every stage, and every job settles against your norms. A karigar scorecard and metal reconciliation show loss by karigar over time. See <a href="/products/manufacturing">manufacturing</a>.</p>`,
 });
 
 const ledger = post({

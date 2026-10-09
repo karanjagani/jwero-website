@@ -6,7 +6,7 @@ const BC = (label) => [['Home', '/'], ['Roles', '/roles'], [label]];
 // ---------------------------------------------------------------------------
 
 const crmFaqs = [
-  { q: 'Does AI decide who to call, or do I still choose?', a: 'AI builds a prioritised call and follow-up list from real data — RFM, scheme due dates, occasions — but you see the reasoning and choose who to actually call. Routine messages and reminder calls go out automatically inside the limits you set, and you choose which kinds need approval.' },
+  { q: 'Does AI decide who to call, or do I still choose?', a: 'AI builds a prioritised call and follow-up list from real data (how recently and how often each customer buys and how much, scheme due dates, occasions) but you see the reasoning and choose who to actually call. Routine messages and reminder calls go out automatically inside the limits you set, and you choose which kinds need approval.' },
   { q: 'Will AI take over the follow-up messages I send?', a: 'AI sends routine WhatsApp follow-ups automatically: win-backs, scheme reminders, occasion greetings. You choose which kinds are held for you to approve, edit or reject first.' },
   { q: 'What happens to my job if most of the follow-up is automated?', a: 'The messaging and remembering move to AI staff working inside your limits. What stays yours is judgment: which relationship needs a phone call instead of a message, what tone fits which customer, and catching the accounts that need a human read the data can’t give.' },
   { q: 'Can I still message someone who isn’t on today’s AI-suggested list?', a: 'Yes — the prioritised list is a starting point, not a restriction. Every customer’s record and history is visible, and you can reach out to anyone, anytime, inside the same WhatsApp inbox.' },
@@ -33,7 +33,7 @@ ${L.section(
     {
       lever: 'Building today’s call list',
       before: 'You scroll a register or a spreadsheet, trying to remember who bought what and when, and who’s overdue for a scheme instalment.',
-      after: 'A prioritised list is waiting — customers ranked by RFM, scheme due dates and upcoming occasions, with the reason for each one shown.',
+      after: 'A prioritised list is waiting — customers ranked by how recently and how often they buy and how much, scheme due dates and upcoming occasions, with the reason for each one shown.',
     },
     {
       lever: 'Win-back outreach',
@@ -63,7 +63,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills this role builds.', '')}
   ${L.cards([
-    { title: 'Prioritising with real data, not a gut list', text: 'Reading RFM scores, scheme balances and occasion timing to decide who genuinely needs a call today — instead of starting from a blank page each morning.' },
+    { title: 'Prioritising with real data, not a gut list', text: 'Reading how recently and how often each customer buys and how much, scheme balances and occasion timing to decide who genuinely needs a call today — instead of starting from a blank page each morning.' },
     { title: 'Setting the voice AI follows', text: 'Routine follow-ups go out automatically, so the skill is setting the tone and rules they follow, and judging which customers need a message written by you.' },
     { title: 'Reading one record instead of six', text: 'Purchase history, scheme status and past conversations sit on one customer card, so a call starts with context instead of an awkward "remind me what you bought."' },
     { title: 'Knowing when a call beats a message', text: 'Some accounts need a human voice, not a WhatsApp text — building the judgment for which relationships those are is what actually moves retention.' },
@@ -78,7 +78,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('HOW TO CONTRIBUTE MORE', 'Concrete ways to add value with Jwero.', '')}
   ${L.steps([
-    { title: 'Work the prioritised list first, every day', text: 'Start from the RFM- and occasion-ranked list instead of memory — it surfaces the accounts most likely to respond today.' },
+    { title: 'Work the prioritised list first, every day', text: 'Start from the list ranked by buying history and occasions instead of memory — it surfaces the accounts most likely to respond today.' },
     { title: 'Read the log instead of writing every message', text: 'Read what the AI sent, and hold for approval the kinds of message you want to shape yourself. It is faster than writing each one cold.' },
     { title: 'Flag which win-backs actually convert', text: 'Feed back which win-back messages land and which don’t — that judgment is what the business can’t get from data alone.' },
     { title: 'Use scheme balances to spot at-risk enrolments', text: 'Check the live gold scheme balances for instalments falling behind, and call those accounts personally before a reminder message is enough.' },
@@ -142,7 +142,7 @@ ${L.section(
     {
       lever: 'Repeat-customer campaigns',
       before: 'Occasion and win-back campaigns get sent as one generic blast to the whole list, because segmenting by hand takes too long.',
-      after: 'Segments build themselves from real fields on the customer record — occasion, RFM, scheme status — so a campaign reaches the right people with the right message.',
+      after: 'Segments build themselves from real fields on the customer record — occasion, how recently and how often she buys and how much, scheme status, so a campaign reaches the right people with the right message.',
     },
   ])}`
 )}
@@ -152,7 +152,7 @@ ${L.section(
   ${L.cards([
     { title: 'Provable attribution instead of guessing', text: 'Reading one record where the Instagram DM, the WhatsApp follow-up and the final sale sit together — building the discipline to trust data over instinct when it comes to what worked.' },
     { title: 'Directing AI replies, not writing every one', text: 'The AI workforce sends first responses and follow-ups automatically. Your skill shifts from typing every message to setting the tone and the limits, and catching what’s off.' },
-    { title: 'Segmenting on real customer fields', text: 'Building campaigns off occasion dates, RFM tiers and scheme status instead of one-size-fits-all blasts — a sharper skill than list-building from memory.' },
+    { title: 'Segmenting on real customer fields', text: 'Building campaigns off occasion dates, how recently and how often customers buy and how much, and scheme status instead of one-size-fits-all blasts — a sharper skill than list-building from memory.' },
     { title: 'Managing a live-price catalogue', text: 'Running promotions and shares off a catalogue that updates with the gold rate automatically, instead of manually reissuing price sheets every time the rate moves.' },
   ])}`
 , { tone: 'tint' })}
@@ -166,7 +166,7 @@ ${L.section(
   `${L.sectionHead('HOW TO CONTRIBUTE MORE', 'Concrete ways to add value with Jwero.', '')}
   ${L.steps([
     { title: 'Check attribution before planning next month’s spend', text: 'Trace last month’s sales back through the customer record to see which channel and campaign actually led there, before deciding where to push next.' },
-    { title: 'Build segments off real fields, not guesses', text: 'Use occasion, RFM and scheme-status fields on the customer record to target campaigns — sharper than a single blast to the whole list.' },
+    { title: 'Build segments off real fields, not guesses', text: 'Use occasion, buying history and scheme-status fields on the customer record to target campaigns — sharper than a single blast to the whole list.' },
     { title: 'Read the action log like a brand editor', text: 'Read what the AI sent for tone and accuracy, adjust its instructions when something is off, and hold any kind of message for approval if you want to.' },
     { title: 'Keep the catalogue current as the face of every campaign', text: 'Point every campaign at the live-price catalogue link instead of a static price list, so nothing you send goes stale.' },
   ])}`

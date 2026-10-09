@@ -195,12 +195,11 @@ ${L.section(`${L.sectionHead('QUESTIONS FRANCHISORS ASK', 'Independence, visibil
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="franchise">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('THE ROLLOUT', 'From one location to the network, without a fight.', 'The plan we run; each wave has an exit test before the next begins.')}
+  `${L.sectionHead('THE ROLLOUT', 'From one location to the network, without a fight.', 'The plan we run: each wave proves itself before the next begins.')}
   ${L.steps([
-    { title: 'Week 1–2 — one pilot location', text: 'Your toughest or newest store. Catalogue, pricing rules and templates set by the brand; the store runs the counter and WhatsApp with approvals on.' },
-    { title: 'Week 3 — the exit test', text: 'Enquiries answered, prices consistent, day-close variance, franchisee’s own verdict. If it fails, we stop here.' },
-    { title: 'Week 4–6 — wave one', text: 'Three to five locations. Brand controls proven at the pilot are switched on network-wide; local overrides route through approval.' },
-    { title: 'After — the rest, in waves', text: 'Each wave inherits the last one’s templates and training. Nothing goes live in a store’s peak weeks — the change-freeze is written down.' },
+    { title: 'Import: one pilot location', text: 'Your toughest or newest store. Catalogue, pricing rules and templates set by the brand; the store runs the counter and WhatsApp with approvals on.' },
+    { title: 'Go live: the location proves itself', text: 'Enquiries answered, prices consistent, day-close variance, franchisee’s own verdict. If it is not working, we stop here.' },
+    { title: 'First report: the rest, in waves', text: 'Brand controls proven at the pilot are switched on network-wide; local overrides route through approval. Each wave inherits the last one’s templates and training. Nothing goes live in a store’s peak weeks — the change-freeze is written down.' },
   ])}`
 , { tone: 'tint' })}
 

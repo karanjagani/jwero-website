@@ -13,7 +13,7 @@
 //   touched.
 const fs = require('fs'); const path = require('path');
 const ROOT = path.join(__dirname, '..'), DIST = path.join(ROOT, 'dist'), MANIFEST = path.join(ROOT, '.pages-manifest.json');
-const KEEP = new Set(['assets', 'blueprint', 'content', 'scripts', 'dist', 'node_modules', 'build.js', 'lib.js', 'package.json', 'package-lock.json', '.git', '.gitignore', '.claude', 'CNAME', 'README.md', '.pages-manifest.json', '.nojekyll']);
+const KEEP = new Set(['assets', 'content', 'scripts', 'dist', 'node_modules', 'build.js', 'lib.js', 'package.json', 'package-lock.json', '.git', '.gitignore', '.claude', 'CNAME', 'README.md', '.pages-manifest.json', '.nojekyll']);
 const hasCname = fs.existsSync(path.join(ROOT, 'CNAME'));
 const BASE = process.env.PAGES_BASE !== undefined ? process.env.PAGES_BASE.replace(/\/$/, '') : hasCname ? '' : '/' + path.basename(ROOT).replace(/\s+/g, '-');
 

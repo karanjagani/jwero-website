@@ -144,9 +144,9 @@ ${L.jtbdBlock([
 ${L.section(
   `${L.sectionHead('THE FIRST 30 DAYS', 'Small start. Visible proof.', '')}
   ${L.steps([
-    { title: 'Day 1: Set up, then days 2–7: Land', text: 'Set up in a day: customers imported, WhatsApp connected, catalogue live. Nothing ripped out — your billing software stays.' },
-    { title: 'Weeks 2–3: First wins', text: 'Enquiries answered in minutes, birthday and anniversary greetings going out on their own, first catalogue shares.' },
-    { title: 'Day 30: The report', text: 'Your first growth report: who came back, what they bought, what the system did. Judge us on that.' },
+    { title: 'Import', text: 'Set up in a day: customers imported, WhatsApp connected, catalogue live. Nothing ripped out — your billing software stays.' },
+    { title: 'Go live', text: 'Enquiries answered in minutes, birthday and anniversary greetings going out on their own, first catalogue shares.' },
+    { title: 'First report', text: 'Your first growth report: who came back, what they bought, what the system did. Judge us on that.' },
   ])}`
 )}
 
@@ -241,12 +241,11 @@ ${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', 'What IT, fi
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="chains">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('THE ROLLOUT', 'One branch earns the next.', 'The plan we run across a chain; each step has an exit test before the next.')}
+  `${L.sectionHead('THE ROLLOUT', 'One branch earns the next.', 'The plan we run across a chain: one branch proves itself before the next.')}
   ${L.steps([
-    { title: 'Week 1–2 — one pilot branch', text: 'Your toughest store. Customers, catalogue and stock imported; head-office rules set once; the branch runs the counter and WhatsApp, with approval switched on for the AI actions you choose.' },
-    { title: 'Week 3 — the exit test', text: 'Rate consistency, enquiry response time, day-close variance, the branch manager’s own verdict. If it fails, we stop.' },
-    { title: 'Week 4–6 — three more branches', text: 'Head-office controls proven at the pilot go chain-wide; branch permissions per action; transfers with an approval trail.' },
-    { title: 'After — the rest, around your season', text: 'Remaining branches in waves; nothing goes live in peak weeks. The written change-freeze is part of the plan.' },
+    { title: 'Import: one pilot branch', text: 'Your toughest store. Customers, catalogue and stock imported; head-office rules set once; the branch runs the counter and WhatsApp, with approval switched on for the AI actions you choose.' },
+    { title: 'Go live: the branch proves itself', text: 'Rate consistency, enquiry response time, day-close variance, the branch manager’s own verdict. If it is not working, we stop.' },
+    { title: 'First report: the rest, around your season', text: 'Head-office controls proven at the pilot go chain-wide; branch permissions per action; transfers with an approval trail. Remaining branches in waves; nothing goes live in peak weeks. The written change-freeze is part of the plan.' },
   ])}`
 , { tone: 'tint' })}
 

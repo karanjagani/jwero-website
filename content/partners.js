@@ -3,7 +3,7 @@ const BC = (label) => [['Home', '/'], [label]];
 
 const partnersFaqs = [
   { q: 'Will Jwero replace the ERP/billing software I sell or support?', a: 'No — that’s the point. Jwero explicitly bridges to Tally, Zoho Books and existing billing systems rather than replacing them. You keep the ledger relationship; Jwero adds the customer-and-channel layer your clients don’t have today.' },
-  { q: 'How new is this partner program?', a: 'Honestly new — we’re building it with the first handful of partners now, not running a mature channel with hundreds of dealers. If you want in early, terms and support are worked out directly with you, rather than read off a rigid tier sheet.' },
+  { q: 'How does the partner programme work?', a: 'Terms and support are worked out directly with you, rather than read off a rigid tier sheet. Tell us about the businesses you serve and we will set it up together.' },
   { q: 'What do partners actually get?', a: 'Referral terms discussed directly per relationship — we won’t publish a number here we might have to walk back. What we can promise: your clients stay yours, we don’t go around you, and you’re looped in on the account.' },
   { q: 'I’m an accountant, not a software dealer — does this fit me?', a: 'Yes — accountants and consultants who already advise jewellery businesses are one of the two groups this program is built for. You see the operational gaps client by client; a referral is often just naming what you’ve already noticed.' },
   { q: 'Is there a formal contract or certification process?', a: 'Not a heavy one at this stage — a conversation, a shared understanding of how referrals are tracked and credited, and we go from there. We’d rather start simple and add structure only once it’s needed.' },
@@ -13,7 +13,7 @@ const partnersFaqs = [
 const partners = {
   slug: 'partners',
   title: 'Partners — ERP Dealers, Accountants & Consultants | Jwero',
-  description: 'Jwero for jewellery businesses you serve: ERP/billing software dealers, accountants, consultants — a new, honest program, not a mature channel with fine print.',
+  description: 'Jwero for jewellery businesses you serve: ERP/billing software dealers, accountants, consultants, with terms worked out directly with you.',
   breadcrumbs: BC('Partners'),
   schema: { '@context': 'https://schema.org', '@type': 'Article', headline: 'Jwero Partners' },
   faqs: partnersFaqs,

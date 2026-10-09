@@ -332,12 +332,8 @@ const SUBS = [
     ['OneSignal', 'Push notifications', 'United States', 'When you send push'],
   ]],
   ['AI model providers', [
-    ['OpenAI and Microsoft Azure OpenAI', 'Drafting, summarising and analysis', 'United States or the configured region', 'When you use AI features'],
-    ['Anthropic', 'Drafting and agent actions', 'United States', 'When you use AI features'],
-    ['Google (Gemini)', 'Drafting, content and images', 'Global', 'When you use AI features'],
-    ['Groq', 'Drafting', 'United States', 'When you use AI features'],
-    ['Sarvam AI', 'Speech in Indian languages', 'India', 'When you use voice AI'],
-    ['Deepgram', 'Speech to text', 'United States', 'When you use voice AI'],
+    ['Large language model providers (United States, or the region configured for your workspace)', 'Drafting, summarising, analysis, content and images', 'United States or the configured region', 'When you use AI features'],
+    ['Speech providers (India and United States)', 'Speech to text and speech in Indian languages', 'India and United States', 'When you use voice AI'],
   ]],
   ['Payments', [
     ['Razorpay', 'Collecting payments', 'India', 'When you take payments'],
@@ -364,7 +360,7 @@ const subProcessors = doc({
     ['Changes to this list', '', `<p>This list was last reviewed on ${UPDATED}. To be told of changes by email, write to ${MAIL} with the subject “Sub-processor updates”.</p>`],
   ]),
   faqs: [
-    { q: 'Which AI providers does Jwero use?', a: 'OpenAI and Microsoft Azure OpenAI, Anthropic, Google Gemini, Groq, Sarvam AI and Deepgram. They receive content only when AI features are used.' },
+    { q: 'Which AI providers does Jwero use?', a: 'Leading large language model and speech providers in the United States and India. They receive content only when AI features are used, and the current named list is available to any Customer on request from ' + MAIL + '.' },
     { q: 'Where is Jwero hosted?', a: 'On Microsoft Azure in India, with file storage and email delivery on Amazon Web Services.' },
   ],
 });
