@@ -13,7 +13,7 @@ const platform = {
     { q: 'What makes this different from buying a CRM plus a WhatsApp tool plus a catalogue app?', a: 'Separate tools mean separate memories. A WhatsApp tool doesn’t know her gold-plan balance; a CRM doesn’t sell on Instagram. In Jwero, the customer, the catalogue and the channels live on one record, so AI can actually sell instead of just logging.' },
     { q: 'Is there a public API or SSO for enterprise IT?', a: 'Yes to both. Single sign-on with your identity provider and automatic user provisioning are shipped, and webhooks and APIs are available for your own integrations.' },
     { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional. You can run the whole business on Assist (customers, WhatsApp, catalogue) and never touch the rest. Complexity is available when you want it, never mandatory.' },
-    { q: 'My business is unusual — will this fit, or will I be forcing a generic tool?', a: 'Custom fields, price rules and per-branch configuration exist because jewellery businesses aren’t generic. We’ll also tell you plainly what we don’t customise, on a demo, before you commit.' },
+    { q: 'My business is unusual — will this fit, or will I be forcing a generic tool?', a: 'Custom fields, price rules and per-branch configuration exist because jewellery businesses aren’t generic. We walk through your setup on a demo before you commit.' },
   ],
   body: `
 ${L.hero({
@@ -125,7 +125,7 @@ const customerMemory = {
   faqs: [
     { q: 'What does Jwero remember about each customer?', a: 'Everything she does, as a signal: the counter, WhatsApp, the website, gold schemes, girvi, calls, Instagram, occasions. Many of them move her scores the moment they land. Underneath, structured fields hold the facts: purchases, scheme balance and instalments, birthdays, anniversaries and wedding months, metal and design preferences, consent and best hour per channel.' },
     { q: 'How does it decide who to reach, and when?', a: 'Each customer carries live scores — intent, conversion, churn risk, trust and others — computed by rules you can read, each with its reasons shown. Where she sits — new or lapsed, champion or about-to-sleep, WhatsApp or call, birthday or wedding — is read before anything is sent. From that, Jwero picks the play, the channel and her best hour, and drafts the message. Scores fade when she goes quiet, so the list stays honest.' },
-    { q: 'Is this machine learning?', a: 'No, and we say so. The scores are explainable rules you can inspect — not a model nobody can question. The AI writes the words; the rules decide the who and the when; you choose what needs your approval.' },
+    { q: 'Is this machine learning?', a: 'The scores are explainable rules you can inspect — not a model nobody can question. The AI writes the words; the rules decide the who and the when; you choose what needs your approval.' },
     { q: 'How is this different from a normal CRM?', a: 'Generic CRMs know names and notes. Jwero’s record is jewellery-native: it knows her scheme balance, her daughter’s wedding month and what today’s gold rate means for her budget — as structured fields, every module can act on, not free-text notes.' },
     { q: 'What happens when a salesperson leaves?', a: 'Nothing. The memory belongs to the business, not to a personal phone. Every conversation, preference and promise stays on the record.' },
   ],
@@ -397,7 +397,7 @@ const tally = {
     { q: 'What exactly syncs to Tally?', a: 'Jwero connects to Tally, maps your ledgers once, imports customer and item masters, checks records against Tally, and posts bills, returns and payments to Tally automatically as vouchers. Nothing is typed twice.' },
     { q: 'Do I have to stop using Tally to start using Jwero?', a: 'No — this is the entire design. Keep Tally as your ledger of record; Jwero takes over customers, channels, schemes and follow-up alongside it.' },
     { q: 'My accountant is sceptical of new software near the books. What do I tell them?', a: 'That nothing about their world changes. They keep filing GST exactly as they do today, in Tally — with customer and item masters imported instead of re-typed. Invite them to the demo — most objections dissolve once they see the bridge, not the sales pitch.' },
-    { q: 'Does this replace GST filing or e-invoicing?', a: 'No — GST invoicing at the live gold rate happens in Jwero, but statutory filing and e-invoice/IRN stay Tally’s job (e-invoice automation is on our roadmap, not shipped). Two systems, one clean line.' },
+    { q: 'Does this replace GST filing or e-invoicing?', a: 'No — GST invoicing at the live gold rate happens in Jwero, but statutory filing and e-invoice/IRN stay Tally’s job. Two systems, one clean line.' },
     { q: 'What if our CA wants to keep using their own workflow entirely?', a: 'They can. The bridge changes what arrives in Tally, not how your CA works once it’s there.' },
   ],
   body: `
@@ -425,7 +425,7 @@ ${L.section(`${L.sectionHead('QUESTIONS ACCOUNTANTS ASK', 'What to tell your CA.
 ])}
 <p class="cta-note" style="margin-top:14px">Want the full division of labour explained? <a href="/blog/jewellery-software-and-tally">Read the guide to running jewellery software and Tally together →</a></p>`)}
 
-${L.ctaBand('Bring your accountant into the conversation.', 'We are happy to walk your CA through exactly what moves and what doesn’t.', 'tally')}
+${L.ctaBand('Bring your accountant into the conversation.', 'We are happy to walk your CA through exactly what moves to Jwero and what stays in Tally.', 'tally')}
 `,
 };
 

@@ -73,9 +73,9 @@ ${L.ctaBand('See how one job gets tracked, start to finish.', 'Bring one job’s
 // ---------------------------------------------------------------------------
 
 const cadDesignerFaqs = [
-  { q: 'Does this replace CAD software or my design tools?', a: 'No. Jwero doesn’t design anything — you still work in your CAD/CAM tools. What Jwero tracks is what happens to the file after: the brief, the revisions, the approval, and the handoff into production.' },
+  { q: 'Does this replace CAD software or my design tools?', a: 'No. You still work in your CAD/CAM tools. What Jwero tracks is what happens to the file after: the brief, the revisions, the approval, and the handoff into production.' },
   { q: 'Will my design revisions still get lost in chat?', a: 'A design’s conversation and revision history attach to its job record instead of scattering across chat threads — so a client’s "make it 2mm shorter" from three messages ago is still findable.' },
-  { q: 'Does it track my personal design credit or portfolio?', a: 'Not as a dedicated portfolio feature today — but because each design’s approval and handoff is logged against the job, there’s a factual record of what you designed and when, if you need to point to it.' },
+  { q: 'Does it track my personal design credit or portfolio?', a: 'Each design’s approval and handoff is logged against the job, so there is a factual record of what you designed and when, if you need to point to it.' },
 ];
 
 const cadDesignerRole = {

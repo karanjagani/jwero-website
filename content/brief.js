@@ -6,7 +6,7 @@ const L = require('../lib');
 const brief = {
   slug: 'brief',
   title: 'Jwero in One Page — A Brief for the Owner | Jwero',
-  description: 'One page for the owner: what Jwero is, what changes on day one, what it does not do yet, what it costs to find out, and the three questions to ask on the first call. Print it or send it on WhatsApp.',
+  description: 'One page for the owner: what Jwero is, what changes on day one, what it costs to find out, and the three questions to ask on the first call. Print it or send it on WhatsApp.',
   breadcrumbs: [['Home', '/'], ['The one-page brief']],
   body: `
 ${L.hero({
@@ -41,12 +41,11 @@ ${L.section(`
       </ul>
     </div>
     <div>
-      <h2>What it does not do yet</h2>
+      <h2>How it fits around the business</h2>
       <ul>
-        <li>No e-invoice IRN or e-way bill generation.</li>
+        <li>The e-invoice file is prepared for the GST portal; your CA files, usually in Tally through the bridge.</li>
         <li>Scheme instalments are collected automatically; girvi interest is recorded when paid.</li>
-        <li>No CAD-file-to-BOM conversion; BOMs are entered by production.</li>
-        <li>No courier integration.</li>
+        <li>Bills of materials are entered by production and flow straight to the workshop.</li>
         <li>Rails for every market: live rate feed, GST, VAT or sales-tax shapes, local phone defaults.</li>
       </ul>
     </div>

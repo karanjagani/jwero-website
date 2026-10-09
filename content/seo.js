@@ -29,7 +29,7 @@ const CITIES = [
     'Surat cuts and polishes most of the world’s diamonds, and its trading offices in Mahidharpura, Varachha and the Surat Diamond Bourse move stones on memo every day. Lab-grown diamond manufacturing and jewellery making have grown alongside the natural trade.',
     'A Surat office runs on parcels, certified stones, a rate grid and trust between traders. That is an Excel sheet and a memo book in most offices. The work is knowing, to the carat, what is in the safe, what is out on memo and who owes what.',
     [['/solutions/diamond-traders', 'Diamond traders', 'Parcels by carat, certified stones one by one, memo and buyer ledgers.'], ['/solutions/diamond-wholesale', 'Diamond wholesalers', 'Private buyer links with their prices, and memo exposure by buyer.'], ['/solutions/lab-grown-diamond', 'Lab-grown diamond', 'Certificate-first stone records and live per-carat pricing.'], ['/solutions/manufacturers', 'Jewellery manufacturers', 'Jobs, metal issue and wastage against the norm.']],
-    'Does Jwero connect to RapNet or publish a Rapaport price list?', 'No. You price from your own rate grid with your own discounts. Jwero does not connect to RapNet and does not publish Rapaport prices.'],
+    'How do I price certified stones for different buyers?', 'You price from your own rate grid with your own discounts, and each buyer sees the price list you set for them.'],
   ['jaipur', 'Jaipur',
     'Jaipur is India’s coloured gemstone city. Stones are cut and traded around Johari Bazaar, and the city’s workshops are known for kundan, meenakari and polki work sold to retailers and brands across the country and abroad.',
     'Gemstone stock is often one of a kind, and its value sits in the certificate, the origin and the treatment as much as the weight. Handcrafted work adds karigars, long making times and custom orders. A jeweller here needs stone records, order tracking and karigar accounts in one place.',
@@ -59,7 +59,7 @@ const CITIES = [
     'Hyderabad is India’s pearl city, with the trade centred on Pathargatti near Charminar, and it is a major market for uncut diamond and temple-style bridal jewellery. Large showrooms in Abids, Somajiguda and Jubilee Hills serve Telangana and Andhra buyers.',
     'Heavy bridal sets and uncut diamond pieces carry high value and long decisions. Pearls and stones need their own records. Families save through gold schemes for years before a wedding, so the scheme book is next year’s sales.',
     [['/solutions/bridal', 'Bridal', 'One family record from enquiry to delivery.'], ['/solutions/b2b-jewellery', 'Pearl and gemstone wholesale', 'Buyer links, memo and ledgers.'], ['/products/gold-schemes', 'Gold schemes', 'Instalments, reminders and maturity.'], ['/solutions/diamond-retail', 'Diamond retail', 'Certificates and stock on one record.']],
-    'Do scheme customers get reminders automatically?', 'Reminders are sent automatically for each instalment, inside the limits you set. Payment is made by the customer; there is no automatic debit from their bank.'],
+    'Do scheme customers get reminders automatically?', 'Reminders are sent automatically for each instalment, inside the limits you set. The customer pays on the link in the reminder, and the receipt lands on the scheme record.'],
   ['chennai', 'Chennai',
     'Chennai’s T. Nagar is one of the busiest jewellery retail streets in the country, known for heavy gold, temple jewellery and very large showrooms. Monthly savings schemes are a normal part of buying gold here.',
     'High footfall, heavy gold and scheme customers mean the counter has to be fast and exact: live rate, wastage and making rules, old gold in exchange, the scheme balance applied to the bill, and a cash close that matches at night.',
@@ -296,7 +296,7 @@ const TOOL_FOR = {
   'sms-marketing-for-jewellers': ['campaigns', 'approve'], 'jewellery-showroom-footfall-counting': ['showroom', 'memory'], 'ai-calling-for-jewellers': ['ai-sales-agents', 'approve'],
   'jewellery-appointment-booking-software': ['meetings', 'memory'], 'jewellery-staff-management-software': ['hr-payroll', 'approve'], 'jewellery-website-analytics': ['optimize', 'memory'],
 };
-const needPage = ({ slug, title, description, eyebrow, h1, sub, wa, intro, cards, rows, notYet, faqs: faqs0, links }) => {
+const needPage = ({ slug, title, description, eyebrow, h1, sub, wa, intro, cards, rows, faqs: faqs0, links }) => {
   const [prod, simKind] = TOOL_FOR[slug] || [];
   const pp = PRODUCT_PAGES.find((x) => x.slug === 'products/' + prod);
   const have = new Set(faqs0.map((f) => f.q));
@@ -326,8 +326,6 @@ ${uc.length ? L.section(`${L.sectionHead('USE CASES', 'Where this pays off in a 
 ${simKind ? L.sim(simKind) : ''}
 
 ${L.section(`${L.sectionHead('TODAY AND WITH JWERO', 'What changes.', '')}${L.compareRows(rows)}`, { tone: 'tint' })}
-
-${L.section(`${L.sectionHead('SAID PLAINLY', 'What it does not do yet.', '')}<div class="stack-verdict">${notYet}</div>`)}
 
 ${L.section(`${L.sectionHead('QUESTIONS', 'What jewellers ask.', '')}${L.faqBlock(faqs)}
 <p class="cta-note" style="margin-top:18px">Related: ${links.map(([h, l]) => `<a href="${h}">${l}</a>`).join(' · ')}</p>`)}
@@ -360,10 +358,9 @@ const accounting = needPage({
     { lever: 'CASH', before: 'Cash counted at night and argued about in the morning.', after: 'Each register closes against its own bills.' },
     { lever: 'DUES', before: 'Receivables chased when someone remembers.', after: 'Outstanding by party, with reminders sent automatically.' },
   ],
-  notYet: 'Jwero does not generate e-invoice IRNs or e-way bills, and does not file GST returns on the portal. Invoices are GST-ready and the data exports for your accountant.',
   faqs: [
     { q: 'Is Jwero a replacement for Tally?', a: 'It can be, and it does not have to be. Every transaction posts to Jwero’s own double-entry ledger. If your accountant prefers Tally or Zoho Books, the bridge carries the entries there.' },
-    { q: 'Does it handle GST for jewellery?', a: 'Invoices are GST-ready, with tax handled on sales, returns, old-gold exchange and purchases. E-invoice IRN, e-way bills and portal filing are not done by Jwero today.' },
+    { q: 'Does it handle GST for jewellery?', a: 'Invoices are GST-ready, with tax handled on sales, returns, old-gold exchange and purchases.' },
     { q: 'Can ledgers be kept in gold weight?', a: 'Yes. Party ledgers for buyers, vendors and karigars can be read in grams and in rupees.' },
     { q: 'What does it cost?', a: 'Accounting is part of the one plan: ₹18,000 a month, every module included. The first month is ₹3,600.' },
   ],
@@ -393,7 +390,6 @@ const barcode = needPage({
     { lever: 'COUNTING', before: 'A stock count that shuts the shop for a day.', after: 'Scan tray by tray and see the variance as you go.' },
     { lever: 'REPRINTS', before: 'Nobody knows who reprinted a tag or why.', after: 'Every print is on the record.' },
   ],
-  notYet: 'Jwero does not sell tag printers or scales, and does not support RFID today. It connects to devices you buy; ask us which models are supported before you order hardware.',
   faqs: [
     { q: 'Does Jwero support RFID for jewellery?', a: 'No, not today. Jwero uses barcode or QR tags: print them from the record, scan to bill, and count stock by scanning, showcase by showcase.' },
     { q: 'Can I print my own jewellery tags?', a: 'Yes. You design a tag template with barcode or QR and the fields you want, and print for a single piece or a batch.' },
@@ -426,11 +422,10 @@ const cloud = needPage({
     { lever: 'BACKUP', before: 'A pen drive, if somebody remembered.', after: 'Nothing to back up by hand; export whenever you like.' },
     { lever: 'UPDATES', before: 'A technician visits to install the new version.', after: 'Updates arrive on their own.' },
   ],
-  notYet: 'Jwero needs an internet connection, and there is no separate app in the Play Store or App Store; it is used through the browser. Product screens are in English today, with an early Hindi version on karigar screens.',
   faqs: [
-    { q: 'Is there a mobile app?', a: 'Jwero runs in the phone’s browser and can be added to the home screen like an app. There is no separate download from an app store.' },
-    { q: 'Is my data safe online?', a: 'Each business has its own isolated database, with roles and permissions for every person and an audit trail of what was changed. See the security page for what is in place and which certificates are not held yet.' },
-    { q: 'Does it work without internet?', a: 'It needs a connection. If your shop’s line is unreliable, tell us before you start so we can advise honestly.' },
+    { q: 'Is there a mobile app?', a: 'Jwero runs in the phone’s browser and can be added to the home screen like an app, with nothing to install.' },
+    { q: 'Is my data safe online?', a: 'Each business has its own isolated database, with roles and permissions for every person and an audit trail of what was changed. See the security page for what is in place.' },
+    { q: 'Does it work without internet?', a: 'Jwero is cloud software, and offline counter billing can be switched on per business so a bad connection does not stop sales. If your shop’s line is unreliable, tell us before you start.' },
     { q: 'Can I get my data out?', a: 'Yes. You can export everything, any time.' },
   ],
   links: [['/trust/security', 'Security'], ['/products/multi-store', 'Multi-store jewellery software'], ['/migration', 'Migration Centre'], ['/platform/onboarding', 'Onboarding']],
@@ -563,7 +558,6 @@ const instagram = needPage({
     { lever: 'FOLLOW-UP', before: 'She asked, you answered, she went quiet, nobody wrote again.', after: 'A follow-up goes out on schedule.' },
     { lever: 'MEMORY', before: 'Instagram does not know she bought bangles last year.', after: 'Her record does.' },
   ],
-  notYet: 'Jwero does not shoot or edit Reels for you, and it cannot message someone on Instagram who has not written to you first; that is Instagram’s rule.',
   faqs: [
     { q: 'How do jewellers manage Instagram DMs?', a: 'By moving them off a single phone into a shared inbox, so any team member can answer and every conversation is kept on the customer’s record.' },
     { q: 'How do I reply to price comments on Instagram?', a: 'Reply privately. Jwero moves a public “price?” comment into a direct message with a priced reply from your catalogue at today’s rate.' },
@@ -596,7 +590,6 @@ const adsLanding = needPage({
     { lever: 'ENQUIRIES', before: 'The ad works, the message arrives at 10pm, nobody replies.', after: 'A priced reply goes out automatically.' },
     { lever: 'RESULT', before: 'Clicks and impressions.', after: 'Sales, by ad.' },
   ],
-  notYet: 'Jwero does not write your ad headlines and text for you today; you enter them in the campaign wizard, and the AI suggests where a campaign is under-performing. Pinterest publishing is still rolling out. Ad spend is paid to Google and Meta, not to Jwero.',
   faqs: [
     { q: 'Do Google Ads work for jewellery shops?', a: 'They work for people already searching, such as “gold bangles near me”, provided the enquiry is answered quickly. Search and Shopping campaigns suit jewellers best.' },
     { q: 'How do I run Instagram ads for my jewellery shop?', a: 'Choose the pieces, the audience and the budget in the campaign wizard, approve it, and Jwero publishes it to Meta. Replies to the ad arrive in your shared inbox.' },
@@ -629,7 +622,6 @@ const smsLanding = needPage({
     { lever: 'REMINDERS', before: 'Scheme reminders sent by hand, when someone remembers.', after: 'Sent on schedule for every instalment.' },
     { lever: 'COST', before: 'Paying for messages nobody reads.', after: 'The cheapest channel that gets read.' },
   ],
-  notYet: 'SMS in India needs sender and template registration under the telecom rules, which you complete once. RCS reaches only phones and networks that support it. Messages are charged per message at the rate shown in your accounts.',
   faqs: [
     { q: 'Does SMS marketing still work for jewellers?', a: 'For short, certain messages, yes: payment received, order ready, instalment due. For offers and conversations, WhatsApp usually gets more response.' },
     { q: 'What is RCS messaging for a jewellery shop?', a: 'RCS is the richer successor to SMS: images, buttons and a verified business name inside the phone’s messaging app. It works on supported phones and networks.' },
@@ -662,7 +654,6 @@ const footfall = needPage({
     { lever: 'WALK-OUTS', before: 'Lost the moment she leaves.', after: 'A follow-up drafted the same day.' },
     { lever: 'STAFF', before: 'Performance judged on bills alone.', after: 'Conversion of visits, by salesperson.' },
   ],
-  notYet: 'Jwero does not sell cameras or tablets, and camera counting does not recognise faces or tell a repeat visitor from a new one. Photographs and camera counting need a notice to visitors and, where the law requires, their consent; that is the showroom’s duty.',
   faqs: [
     { q: 'How do I count footfall in my jewellery showroom?', a: 'Either check each walk-in in on a tablet at the entrance, or connect showroom IP cameras, through a store-side device, for automatic counting. Both give visits by hour and conversion to bills.' },
     { q: 'How do I record walk-in customers in a jewellery shop?', a: 'Enter the phone number at check-in. A returning customer’s history appears at once; a new one gets a record. What she tried and why she left are noted at check-out.' },
@@ -848,7 +839,6 @@ const appointments = needPage({
     { lever: 'NO-SHOWS', before: 'Forgotten by both sides.', after: 'A reminder before, a follow-up after.' },
     { lever: 'DISTANCE', before: 'A buyer abroad waits until she visits.', after: 'A video viewing this week.' },
   ],
-  notYet: 'Recording a video call is optional and shows a notice to everyone in the room. Jwero does not take payment for an appointment slot itself; advances are taken on a quotation or an order.',
   faqs: [
     { q: 'How do jewellers take appointments online?', a: 'With a booking page linked from WhatsApp, Instagram and the website that shows only the slots your team is actually free.' },
     { q: 'How do I manage showroom appointments on a calendar?', a: 'Every appointment, in person or on video, sits on one calendar alongside Google Calendar, with the customer and her shortlist attached.' },
@@ -881,7 +871,6 @@ const staff = needPage({
     { lever: 'INCENTIVES', before: 'Argued at month end from memory.', after: 'Calculated from the bills.' },
     { lever: 'HIRING', before: 'CVs in WhatsApp chats.', after: 'A pipeline from application to onboarding.' },
   ],
-  notYet: 'Payroll produces the bank file and statutory files, which your accountant uploads and files.',
   faqs: [
     { q: 'How do I track staff attendance in a jewellery shop?', a: 'Staff punch in on their own phone or a kiosk in the shop. Optional location and selfie checks confirm they are on site.' },
     { q: 'How do I calculate sales incentives in a jewellery shop?', a: 'Set the rule once and incentives are worked out from the bills each salesperson made, with no separate sheet.' },
@@ -914,7 +903,6 @@ const webAnalytics = needPage({
     { lever: 'LEADS', before: 'A visitor who does not chat is gone.', after: 'A form, a pop-up or push catches her.' },
     { lever: 'TOOLS', before: 'Separate tools for analytics, heatmaps, pop-ups and chat.', after: 'One, on the same record as the customer.' },
   ],
-  notYet: 'Recordings hide typed personal details, and visitors should be told about tracking in your privacy notice. Optimize measures your own website; it does not measure marketplaces or social apps.',
   faqs: [
     { q: 'Why do visitors leave my jewellery website?', a: 'Usually no clear price, slow pages or no quick way to ask. Heatmaps and recordings show where they stopped; a chat or a form gives them a way to ask.' },
     { q: 'How do I A/B test my jewellery website?', a: 'Set up two versions of a page or a pop-up, split visitors between them, and compare enquiries and orders.' },
@@ -1083,11 +1071,6 @@ ${L.section(`${L.sectionHead('THE ARITHMETIC', 'What your register is not tellin
 ${L.section(`${L.sectionHead('COMPARE', 'CCTV on its own, a door counter, or Jwero AI CCTV.', '')}${ccTable()}`)}
 
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to set up CCTV footfall counting in a showroom.', 'Five steps.')}${L.steps(CC_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
-
-${L.honestGapsBlock([
-  'Cameras count people; they do not recognise faces, identify customers or tell a repeat visitor from a new one.',
-  'Jwero does not sell cameras; counting works with the IP cameras and NVRs you have.',
-])}
 
 ${L.oneSystemBlock([
   'Camera footfall sits beside tablet check-ins, so a walk-in counted by the camera can also be a customer on record.',

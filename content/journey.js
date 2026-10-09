@@ -47,7 +47,7 @@ ${L.section(
   ${L.cards([
     { title: 'Your accountant keeps working their way', text: 'Bills, returns and payments post to Jwero’s ledger and reach Tally or Zoho Books automatically. Your CA carries on in the software they know, with less to type.', link: { href: '/platform/integrations', label: 'How the bridge works' } },
     { title: 'AI that works on its own, inside your limits', text: 'Replies, follow-ups and reminders go out automatically, inside daily caps and quiet hours. You choose which kinds of action need your approval, and one switch stops it all.', link: { href: '/platform/ai-workforce', label: 'How the AI is governed' } },
-    { title: 'A platform that keeps growing with you', text: 'New capabilities ship regularly, and you are told what is live today and what is coming next.' },
+    { title: 'A platform that keeps growing with you', text: 'New capabilities ship regularly, and you are told about each one as it lands.' },
   ])}`
 )}
 
@@ -140,7 +140,7 @@ ${L.section(
   ${L.cards([
     { title: 'Your accountant keeps working their way', text: 'Bills, returns and payments post to Jwero’s ledger and reach Tally or Zoho Books automatically. Your CA carries on in the software they know, with less to type.', link: { href: '/platform/integrations', label: 'How the bridge works' } },
     { title: 'AI that works on its own, inside your limits', text: 'Replies, follow-ups and reminders go out automatically, inside daily caps and quiet hours. You choose which kinds of action need your approval, and one switch stops it all.', link: { href: '/platform/ai-workforce', label: 'How the AI is governed' } },
-    { title: 'A platform that keeps growing with you', text: 'New capabilities ship regularly, and you are told what is live today and what is coming next.' },
+    { title: 'A platform that keeps growing with you', text: 'New capabilities ship regularly, and you are told about each one as it lands.' },
   ])}`
 )}
 `;

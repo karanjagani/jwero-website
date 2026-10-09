@@ -190,7 +190,7 @@ const catFaqs = [
   { q: 'Does my catalogue show inside WhatsApp?', a: 'Yes. The Meta sync fills your WhatsApp Business catalogue, so customers browse pieces inside the chat, priced at today’s rate and removed when sold.' },
   { q: 'Can the catalogue connect to my other software?', a: 'Yes. Bulk import from Excel, Shopify and WooCommerce, and APIs and webhooks to keep other systems in step.' },
   { q: 'What is catalogue management software for jewellers?', a: 'Catalog management software (also spelt catalogue) keeps every piece in one record and publishes it to every channel. For jewellers it also prices from the gold rate and stores purity, stones, certificates and HUID. Jwero does this as its catalogue and PIM module.' },
-  { q: 'Can AI create jewellery product photos?', a: 'Jwero can generate or edit a product image from a product photo, charged per image from the wallet. It does not create virtual try-on images.' },
+  { q: 'Can AI create jewellery product photos?', a: 'Jwero can generate or edit a product image from a product photo, charged per image from the wallet.' },
 ];
 
 const catalog = {
@@ -473,10 +473,6 @@ ${L.section(`${L.sectionHead('COMPARE', 'A register plus Tally, generic billing 
 
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to move billing and books to Jwero, and keep Tally.', 'Five steps, with your CA.')}${L.steps(BF_HOW.map(([title, text]) => ({ title, text })))}`)}
 
-${L.honestGapsBlock([
-  'GST return filing itself stays with your CA; Jwero prepares the reports.',
-])}
-
 ${L.oneSystemBlock([
   'The invoice prices from the same rate and catalogue as the counter and website.',
   'What she owes sits on her customer record, next to every chat and purchase.',
@@ -633,9 +629,8 @@ const shFaqs = [
   { q: 'How do I count footfall in my jewellery showroom?', a: 'Connect your existing CCTV or NVR to Jwero through an on-site connector. Entries, exits and how full the floor is are counted; with no cameras, footfall comes from tablet check-ins.' },
   { q: 'Which cameras work?', a: 'IP cameras and NVRs over RTSP, including Hikvision, Dahua and CP Plus, and ONVIF cameras.' },
   { q: 'Does it recognise customers’ faces?', a: 'No. Cameras count people; they do not identify them. Customers are identified only when staff check them in, and photos are taken only with consent.' },
-  { q: 'Is Walkout Rescue automatic?', a: 'It drafts the follow-up naming the pieces she tried, on WhatsApp, SMS, email or a call. A staff member sends it and marks it sent; nothing goes out on its own.' },
+  { q: 'Is Walkout Rescue automatic?', a: 'It drafts the follow-up naming the pieces she tried, on WhatsApp, SMS, email or a call. A staff member sends it and marks it sent.' },
   { q: 'How does Jwero know a customer is coming?', a: 'Expected visits gather bookings from your website, chat, AI calls, appointments, WhatsApp, campaigns and maturing gold schemes, and mark no-shows on their own.' },
-  { q: 'Is the daily brief sent on WhatsApp?', a: 'Not yet. The morning and evening brief is opened in the app.' },
   { q: 'Are store insights AI?', a: 'They are clear rules: conversion drops, footfall without sales, staffing gaps, walkout reasons, repeat visitors who have not bought, and cameras offline.' },
 ];
 const showroom = {
@@ -695,11 +690,6 @@ ${L.impactGrid([
 ])}
 
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to track footfall and conversion in a showroom.', 'Five steps.')}${L.steps(SH_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
-
-${L.honestGapsBlock([
-  'Cameras count people; they do not recognise faces or identify customers.',
-  'Walkout follow-ups are sent by staff, and the daily brief is opened in the app; neither goes out on its own.',
-])}
 
 ${L.oneSystemBlock([
   'A walk-in is matched to her existing customer record: occasions, scheme balance and past visits are already there.',

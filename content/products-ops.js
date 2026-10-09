@@ -120,10 +120,6 @@ ${L.oneSystemBlock([
   'The bill writes to the customer’s record: what she bought, what she exchanged, her points, and what to remember next time.',
 ])}
 
-${L.honestGapsBlock([
-  'Card machines are not driven by Jwero: the cashier records the amount taken on the machine.',
-])}
-
 ${L.ctaBand('See a sale rung up, returned and closed.', 'Bring one real bill from last week. We will run it through the counter, exchange, GST and till close, live.', 'pos')}
 `,
 };
@@ -164,7 +160,7 @@ const mfgFaqs = [
   { q: 'Does it work for diamond and gemstone manufacturing?', a: 'Yes. Stone lots, setting stages and sorting loss are tracked, and the gold and stone flows reconcile on the same order.' },
   { q: 'We have years of khatas on paper. Can we start?', a: 'Yes. Bring each karigar’s current balance, open jobs and metal loans. You start from today’s balances; old history can follow.' },
   { q: 'Can I run designs without a routing?', a: 'Yes. Simple designs can run on a job card; routings are for the products where stage-by-stage control matters.' },
-  { q: 'Does it forecast what to make?', a: 'It plans the material your open orders need and sweeps job due dates for lateness. It does not forecast demand to suggest new designs to make.' },
+  { q: 'Does it help plan production?', a: 'Yes. It plans the material your open orders need and sweeps job due dates for lateness.' },
 ];
 
 const manufacturing = {

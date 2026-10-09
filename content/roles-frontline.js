@@ -146,7 +146,7 @@ ${L.ctaBand('See what a sales associate sees.', 'We’ll show you the customer r
 
 const cashierFaqs = [
   { q: 'Does Jwero run my cash counter and day-close?', a: 'Yes. Scan or search a piece, price it at the live gold rate, apply a discount, take old gold on an exchange voucher, take payment and generate the GST invoice. Returns follow your branch’s policy, and the shift closes with a declared cash count that Jwero reconciles against expected takings — <a href="/products/pos">see the Counter POS</a>.' },
-  { q: 'So what does Jwero actually do at billing time, right now?', a: 'It runs the sale itself — scan or search the piece, cart it, price it at today’s live gold rate (metal rate × weight × purity, plus making charges and GST) automatically, take the payment and generate the invoice — and tracks what’s outstanding with reminders after.' },
+  { q: 'What does Jwero do at billing time?', a: 'It runs the sale itself — scan or search the piece, cart it, price it at today’s live gold rate (metal rate × weight × purity, plus making charges and GST) automatically, take the payment and generate the invoice — and tracks what’s outstanding with reminders after.' },
   { q: 'Will I still use my current billing software alongside this?', a: 'No. Jwero’s counter handles the sale, the exchange, the return and the till close end to end. Your statutory books can stay in Tally or Zoho Books through the bridge.' },
   { q: 'Does this replace my job at the counter?', a: 'No — a person still hands over the invoice, handles the payment and reassures the customer. What Jwero removes is the manual rate lookup and repricing calculation, and the follow-up call when a payment is late.' },
 ];
@@ -154,7 +154,7 @@ const cashierFaqs = [
 const cashier = {
   slug: 'roles/cashier',
   title: 'Jewellery Billing Cashier: Live Gold Rate Billing | Jwero',
-  description: 'How Jwero changes a billing cashier’s day: GST invoices priced at live gold rate, automated receivables reminders, and a note on what still runs at the counter.',
+  description: 'How Jwero changes a billing cashier’s day: GST invoices priced at live gold rate, automated receivables reminders, and the reconciled day-close.',
   breadcrumbs: BC('Billing cashier'),
   faqs: cashierFaqs,
   body: `
@@ -167,7 +167,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('A DAY IN THIS ROLE', 'What changes at the billing counter — and what doesn’t, yet.', '')}
+  `${L.sectionHead('A DAY IN THIS ROLE', 'What changes at the billing counter.', '')}
   ${L.impactGrid([
     { lever: 'Pricing an invoice', before: 'You look up today’s rate, calculate metal value, purity, making charges and GST by hand or on a calculator while the customer waits.', after: 'The invoice prices itself at the live rate — metal, purity, making charges and GST computed together, instantly.', link: { href: '/products/billing-finance', label: 'See Billing & Finance' } },
     { lever: 'The rate changes mid-morning', before: 'Invoices drafted before the change are wrong, and you have to remember to reprice anything not yet billed.', after: 'Open invoices follow the live rate automatically, so nothing goes out priced at a stale number.' },
@@ -201,7 +201,7 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('CASHIER QUESTIONS', 'Straight answers about the role — and roadmap versus shipped.', '')}${L.faqBlock(cashierFaqs)}`)}
+${L.section(`${L.sectionHead('CASHIER QUESTIONS', 'Straight answers about the role.', '')}${L.faqBlock(cashierFaqs)}`)}
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="roles">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 

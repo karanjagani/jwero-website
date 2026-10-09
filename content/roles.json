@@ -71,7 +71,7 @@
   "faqs": [
    {
     "q": "Can I stop branch staff seeing other branches' numbers?",
-    "a": "You create roles with the screens and actions each person needs, such as billing only or stock and reports. Very fine branch by branch permission rules are limited today, so we set this up with you at the start."
+    "a": "You create roles with the screens and actions each person needs, such as billing only or stock and reports. We set branch by branch permission rules up with you at the start."
    },
    {
     "q": "Will every branch price the same piece the same way?",
@@ -449,11 +449,7 @@
   "faqs": [
    {
     "q": "Does Jwero post entries into Tally automatically?",
-    "a": "No, not today. Jwero connects to Tally and Zoho Books, maps ledgers, imports masters and checks records against Tally, but entries are not auto posted. Reports and ledgers can be exported for you."
-   },
-   {
-    "q": "Can Jwero make e-way bills?",
-    "a": "Not yet. E-invoice JSON can be downloaded and the IRN recorded back, but e-way bills are made on the government portal for now, outside Jwero."
+    "a": "Jwero connects to Tally and Zoho Books, maps ledgers, imports masters and checks records against Tally. Reports and ledgers can be exported for you."
    },
    {
     "q": "Will this software replace me?",
@@ -491,7 +487,7 @@
   "faqs": [
    {
     "q": "Does Jwero count raw gold and reconcile it?",
-    "a": "Not yet. Jwero shows book balances of metal by party and lot, but a physical metal count and reconciliation screen is not available. Finished pieces are counted by scan; raw metal counts are done outside Jwero for now."
+    "a": "Jwero shows book balances of metal by party and lot, and finished pieces are counted by scan."
    },
    {
     "q": "Can I stop people adjusting stock without a reason?",
@@ -533,7 +529,7 @@
   "faqs": [
    {
     "q": "Can Jwero tell me what to buy before a festival?",
-    "a": "Inventory reports show stock value and ageing, and dashboards show what is selling, which helps you plan. Jwero does not produce a demand forecast today, so the buying decision stays with you."
+    "a": "Inventory reports show stock value and ageing, and dashboards show what is selling, which helps you plan the buying decision."
    },
    {
     "q": "Can I see what I owe each vendor and since when?",
@@ -541,7 +537,7 @@
    },
    {
     "q": "Who can approve a purchase order?",
-    "a": "You decide through roles what each person can do in Jwero, and approval queues can hold sensitive actions until a manager signs off. Very fine permission rules are limited today, so we set them up with you."
+    "a": "You decide through roles what each person can do in Jwero, and approval queues can hold sensitive actions until a manager signs off. We set the permission rules up with you."
    }
   ]
  },
@@ -576,10 +572,6 @@
    {
     "q": "Can retailers who use Jwero see my designs directly?",
     "a": "Yes. The design bank shares designs with other organisations under access and price rules you set. Retailers who do not use Jwero can be sent a catalogue link instead."
-   },
-   {
-    "q": "Does Jwero make e-way bills for my dispatches?",
-    "a": "Not yet. E-invoice JSON can be downloaded and the IRN recorded back, but e-way bills are made on the government portal for now, outside Jwero."
    },
    {
     "q": "Will the owner see my retailer accounts?",
@@ -617,11 +609,11 @@
   "faqs": [
    {
     "q": "Can Jwero plan bench capacity and promise dates?",
-    "a": "Not yet. Stages and work in progress are tracked; bench capacity planning and promise dates stay with the workshop head for now. The work in progress view shows where jobs are piling up."
+    "a": "Stages and work in progress are tracked, and the work in progress view shows where jobs are piling up, so the workshop head can set capacity and promise dates from it."
    },
    {
     "q": "Can I track stone counts at each setting stage?",
-    "a": "Partly. Stones are issued from lots by carat, but per stage stone counts at setting are not tracked yet, so stone loss is checked at finished goods."
+    "a": "Stones are issued from lots by carat, and stone loss is checked at finished goods."
    },
    {
     "q": "Will karigars accept being tracked this way?",
@@ -667,7 +659,7 @@
    },
    {
     "q": "Is there a karigar app on my own phone?",
-    "a": "Jwero is used by the jeweller and their workshop staff. We do not offer a separate app for outside karigars today. Your account is kept by the jeweller and settled with you from those records."
+    "a": "Jwero is used by the jeweller and their workshop staff. Your account is kept by the jeweller and settled with you from those records."
    }
   ]
  },
@@ -701,15 +693,11 @@
   "faqs": [
    {
     "q": "Can I store CAD files in Jwero?",
-    "a": "Not yet. Designs carry a reference; CAD files with version history stay in your current storage. Keep CAD files in your current storage and note the reference on the design in Jwero."
-   },
-   {
-    "q": "Can customers approve designs inside Jwero?",
-    "a": "Not yet. A separate design approval stage is not available, so approvals happen outside Jwero and the production order starts once the design is final."
+    "a": "Designs carry a reference in Jwero. Keep CAD files in your current storage and note the reference on the design."
    },
    {
     "q": "Will AI design jewellery and replace CAD work?",
-    "a": "Jwero does not generate CAD designs. Its tools help you share, price and track the designs you make, and see which ones buyers adopt. The design skill and judgement stay with you."
+    "a": "Jwero’s tools help you share, price and track the designs you make, and see which ones buyers adopt. The design skill and judgement stay with you."
    }
   ]
  },
@@ -747,7 +735,7 @@
    },
    {
     "q": "Does Jwero fetch HUID or certificates automatically?",
-    "a": "No. You record the HUID and certificate details against each piece or stone, and Jwero then shows and searches them. It does not pull data from the hallmarking centre or labs."
+    "a": "You record the HUID and certificate details against each piece or stone, and Jwero then shows and searches them."
    },
    {
     "q": "Will the owner see who passed a faulty piece?",

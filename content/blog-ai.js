@@ -239,7 +239,6 @@ const images = post({
   close: ['Clean images, true pieces.', 'Jwero generates and edits product images from your photos, charged per image.'],
   faqs: [
     { q: 'Can AI make jewellery photos from a phone picture?', a: 'Yes. Jwero can generate or edit a product image from a product photo, charged per image from the wallet.' },
-    { q: 'Does Jwero offer virtual try-on?', a: 'No. Jwero does not create virtual try-on images.' },
     { q: 'Is it honest to use AI images?', a: 'Yes, if the piece is shown as it is. Change the background and lighting, never the design, stones or colour of the metal.' },
   ],
   body: `
@@ -572,7 +571,7 @@ const tryOn = post({
   wa: 'blog-ai-tryon',
   close: ['Show the real piece.', 'Jwero starts a video call from any chat, with the pieces she asked about ready.'],
   faqs: [
-    { q: 'Does Jwero offer virtual try-on?', a: 'No. Jwero does not offer virtual try-on. It offers video calls from WhatsApp and web chat, and try-at-home booking from the website.' },
+    { q: 'What does Jwero offer instead?', a: 'Video calls from WhatsApp and web chat, and try-at-home booking from the website.' },
     { q: 'Who benefits most from virtual try-on?', a: 'Online brands selling rings, earrings and lightweight pieces at scale, where customers cannot visit.' },
     { q: 'Is a video call better?', a: 'For high-value and bridal pieces, often yes: the customer sees the real piece, asks questions and books a visit.' },
   ],
@@ -586,7 +585,7 @@ const tryOn = post({
   <h2>Alternatives that sell</h2>
   <ul><li>A video call showing the real piece.</li><li>Try-at-home appointments.</li><li>Good photos and a short video per piece.</li></ul>
   <h2>Where Jwero stands</h2>
-  <p>Jwero does not offer virtual try-on. It offers <a href="/products/meetings">video calls and appointments</a> and <a href="/products/ecommerce">try-at-home booking</a>.</p>`,
+  <p>Jwero offers <a href="/products/meetings">video calls and appointments</a> and <a href="/products/ecommerce">try-at-home booking</a>, so the customer sees the real piece.</p>`,
 });
 
 const forecast = post({

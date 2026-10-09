@@ -42,7 +42,7 @@ const rpFaqs = [
   { q: 'Does it know when a repair needs re-hallmarking?', a: 'Yes. A job that changes enough metal is flagged for re-hallmarking, and cannot be marked ready for delivery until the flag is handled.' },
   { q: 'How does a customer approve the cost?', a: 'An estimate is sent to her; she approves, declines or asks for a revision, and work starts only after approval.' },
   { q: 'Is warranty tied to what was sold?', a: 'Yes. Warranty and AMC are tied to the original invoice and HUID of the piece.' },
-  { q: 'Can I do old gold exchange through Jwero?', a: 'Yes, in store: test, value, approve and settle, with purity method, today’s rate and KYC recorded. There is no online valuation form yet.' },
+  { q: 'Can I do old gold exchange through Jwero?', a: 'Yes, in store: test, value, approve and settle, with purity method, today’s rate and KYC recorded.' },
 ];
 const repairsService = {
   slug: 'products/repairs-service',
@@ -95,10 +95,6 @@ ${L.section(`${L.sectionHead('THE ARITHMETIC', 'What untracked repairs cost you.
 ${L.section(`${L.sectionHead('COMPARE', 'A paper slip, generic job-card software, or Jwero.', '')}${rpTable()}`)}
 
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to manage jewellery repairs.', 'Five steps.')}${L.steps(RP_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
-
-${L.honestGapsBlock([
-  'Old gold exchange is done in store; there is no online valuation form yet.',
-])}
 
 ${L.oneSystemBlock([
   'A repair and her purchase history are on the same record, so your team knows what she owns before she says a word.',

@@ -324,7 +324,7 @@ ${L.section(
 
   <h2>GST invoicing: who does what</h2>
   <p>Jwero generates GST-compliant invoices at the live gold rate, with the CGST/SGST/IGST breakup calculated at the point of sale. That part happens inside Jwero, at the counter, at the moment the rate matters.</p>
-  <p>Statutory GST filing, and e-invoice or IRN generation, stay exactly where they are today — inside Tally, or with your CA. E-invoice automation is a roadmap item, not something shipped, and this guide isn’t going to pretend otherwise. The line is simple: Jwero handles the invoice at the point of sale; Tally and your CA handle the statutory filing that follows.</p>
+  <p>Statutory GST filing stays where it is today, inside Tally or with your CA. The line is simple: Jwero handles the invoice at the point of sale and prepares the e-invoice file for the portal; Tally and your CA handle the statutory filing that follows.</p>
 
   <h2>How to have this conversation with your CA</h2>
   <p>The version of this conversation that actually works is narrow and specific, not a broad pitch about "modernising the business." Show them three things: the books don’t move. Tally stays exactly where it is, same file, same login. Master data arrives pre-matched instead of retyped from a paper register or a WhatsApp message, which is fewer manual entry errors, not more risk. And bills, returns and payments arrive as vouchers in their own format, ready for them to review, so their judgment stays in charge and only the typing goes.</p>
@@ -416,7 +416,7 @@ ${L.ctaBand('See your own wastage, per stage and per karigar.', 'Bring your curr
 const repairGuideFaqs = [
   { q: 'What’s the single most important thing to record at intake?', a: 'Weight and a stone description, together. Neither alone is airtight — weight can shift slightly with cleaning, and a stone description alone doesn’t catch a swap — but recorded together at the moment the piece is handed over, they make a later dispute nearly impossible to argue either way.' },
   { q: 'Do I need software to do this?', a: 'No. The discipline works on paper — an intake slip with a weight, a stone chart and a condition note, filed against a job number. Software doesn’t create the discipline, it just makes it faster to apply consistently and much harder to lose a slip in a drawer.' },
-  { q: 'Does Jwero have a repairs module today?', a: 'This discipline — intake, custody logging, QC reconciliation, re-hallmark gates and warranty tracking — is built and tested in the product. It isn’t yet a self-serve toggle every customer can switch on; ask us directly about availability for your business rather than assuming it’s live for everyone today.' },
+  { q: 'Does Jwero have a repairs module today?', a: 'Yes. This discipline — intake, custody logging, QC reconciliation, re-hallmark gates and warranty tracking — is built and tested in the product. Ask us to show it on a call with one of your own repair jobs.' },
 ];
 
 const repairGuide = {
@@ -478,7 +478,7 @@ ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about run
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="blog-repair">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('Ask us about repair tracking.', 'Tell us how repair volume moves through your shop today — we’ll tell you honestly where the custody-chain discipline stands in the product.', 'blog-repair')}
+${L.ctaBand('Ask us about repair tracking.', 'Tell us how repair volume moves through your shop today — we’ll show you how the custody chain works in the product.', 'blog-repair')}
 `,
 };
 
@@ -668,14 +668,14 @@ ${L.ctaBand('Stop reconciling two systems.', 'Tell us what your CRM and ERP each
 // ---------------------------------------------------------------- Article 10: Buyer's checklist
 const checklistGuideFaqs = [
   { q: 'Should I choose jewellery software based on price or fit?', a: 'Fit, then price. The cheapest system that doesn’t handle purity-based pricing or certificate-linked stone value ends up costing more in manual workarounds than the difference in subscription fees ever saved.' },
-  { q: 'What if a vendor can’t answer one of these questions?', a: 'That’s useful information, not a dealbreaker by itself — ask them to say so plainly rather than talk around it. A vendor who says "not yet, here’s our roadmap" is more trustworthy than one who claims everything is already built.' },
+  { q: 'What if a vendor can’t answer one of these questions?', a: 'That’s useful information, not a dealbreaker by itself — ask them to say so plainly rather than talk around it. A vendor who shows you the feature working on your own data is more trustworthy than one who only describes it.' },
   { q: 'How long should a proper implementation take?', a: 'For the first working stage — customers imported, WhatsApp connected, catalogue live — days, not months, is a reasonable bar to hold any vendor to.' },
 ];
 
 const checklistGuide = {
   slug: 'blog/jewellery-software-buyer-checklist',
   title: 'Jewellery Software Buyer’s Checklist: 15 Questions | Jwero',
-  description: 'A vendor-agnostic checklist for buying jewellery software: pricing engine depth, data ownership, WhatsApp compliance, AI governance and honest roadmaps.',
+  description: 'A vendor-agnostic checklist for buying jewellery software: pricing engine depth, data ownership, WhatsApp compliance, AI governance and data export rights.',
   breadcrumbs: BC('Jewellery Software Buyer’s Checklist'),
   schema: postSchema('Jewellery Software Buyer’s Checklist: 15 Questions to Ask First', 'A vendor-agnostic checklist of the questions worth asking before buying jewellery software, covering pricing depth, data ownership, compliance and AI governance.'),
   faqs: checklistGuideFaqs,
@@ -723,7 +723,7 @@ ${L.section(
 
   <h2>On honesty, which is the hardest thing to fake</h2>
   <ol start="12">
-    <li><strong>Will they tell you what isn't built yet?</strong> Ask directly: "what's on your roadmap, not shipped." A vendor with a public, specific answer is more trustworthy than one who implies everything is done.</li>
+    <li><strong>Will they show it on your own data?</strong> Ask directly: "show me this on my stock and my customers." A vendor who does is more trustworthy than one who only talks through slides.</li>
     <li><strong>Can they name a real named customer, not a stock testimonial?</strong> Ask to see who actually runs on the product today.</li>
     <li><strong>How long does implementation actually take, in their own words?</strong> "Days" and "it depends" are both answers — vagueness on this specific question is itself informative.</li>
     <li><strong>Is there a lock-in contract, or can you leave on notice?</strong> Ask before you need the answer, not after.</li>
@@ -743,7 +743,7 @@ ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about eva
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="blog-checklist">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('Ask us every question on this list.', 'We’ll answer each one directly, including the ones our answer is “not yet.”', 'blog-checklist')}
+${L.ctaBand('Ask us every question on this list.', 'We’ll answer each one directly, on your own data.', 'blog-checklist')}
 `,
 };
 
@@ -916,8 +916,8 @@ ${L.section(
   <h2>AI governance, if the product uses AI at all</h2>
   <p>A growing number of jewellery platforms now offer some form of AI reply or automation. The question that actually matters isn’t whether AI exists — it’s whether you decide which actions need a person’s approval, whether there’s a daily cap on automated actions, and whether there’s a kill switch, and at what scope. "We use AI" is a marketing line. "Here are the caps, the log and the approval queue, live" is a product you can actually evaluate.</p>
 
-  <h2>Honest roadmaps over polished demos</h2>
-  <p>Every vendor demo looks finished. The tell is what happens when you ask what isn’t built yet. A vendor with a specific, public answer — "this syncs automatically, this still needs a manual voucher, here’s what’s on the roadmap" — is more trustworthy than one that implies everything is done. This one criterion alone filters out more bad fits than any feature comparison.</p>
+  <h2>Straight answers over polished demos</h2>
+  <p>Every vendor demo looks finished. The tell is what happens when you ask a specific question on your own data: "show me this syncing", "show me the voucher this creates". A vendor who shows it is more trustworthy than one who describes it. This one criterion alone filters out more bad fits than any feature comparison.</p>
 
   <h2>Where to go from here</h2>
   <p>This guide is deliberately about how to evaluate, not who wins — for the full 15-question version of this checklist, read <a href="/blog/jewellery-software-buyer-checklist">the buyer’s checklist</a>. If you want named, sourced comparisons against specific tools jewellery businesses already use — WATI, Shopify, Zoho CRM, Marg ERP and others — those live on the <a href="/compare">compare hub</a>, with published pricing and dated research notes rather than a vague "we’re better" claim.</p>
@@ -925,7 +925,7 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('SEE IT WORKING', 'Apply the checklist to us directly.', 'Bring this list to a conversation with us the same way you’d bring it to any vendor — we’ll answer plainly, including the questions our honest answer is “not yet.”')}
+  `${L.sectionHead('SEE IT WORKING', 'Apply the checklist to us directly.', 'Bring this list to a conversation with us the same way you’d bring it to any vendor — we’ll answer every criterion plainly, on your own data.')}
   <p><a class="btn btn-ghost" href="/blog/jewellery-software-buyer-checklist">Read the full 15-question checklist</a></p>`
 , { tone: 'tint' })}
 
@@ -933,7 +933,7 @@ ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about com
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">This isn’t a demo video — <a href="#" data-wa="blog-bestsoftware">message us here</a> and Jwero’s own inbox answers, live.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('Ask us this checklist directly.', 'We’ll answer every criterion honestly, including where the answer is “not yet.”', 'blog-bestsoftware')}
+${L.ctaBand('Ask us this checklist directly.', 'We’ll answer every criterion plainly, on your own data.', 'blog-bestsoftware')}
 `,
 };
 

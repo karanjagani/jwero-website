@@ -23,7 +23,7 @@ const CATEGORIES = [
       { q: 'What is the weekly growth report?', a: 'A plain-language WhatsApp report to the owner: how many past customers came back, how many appointments were booked, how much revenue the system brought back. Proof, delivered weekly, without a dashboard you have to remember to open.' },
       { q: 'Is a gold savings scheme even legal to run — isn’t that an NBFC or interest product?', a: 'Every plan is framed and operated as an advance against a future purchase: benefits are paid as bonus gold or a discount, never as interest. That’s a framing discipline the product enforces, and it stops short of a legal opinion; confirm your specific scheme structure with your own counsel. See <a href="/products/gold-schemes">gold schemes</a>.' },
       { q: 'My competitors don’t use anything like this — why be first?', a: 'Regional chains already run on systems like this; independent jewellers have been the ones without one. Being early on the revenue side (WhatsApp commerce, digital catalogues, gold schemes) is a customer-facing advantage today, ahead of when everyone else catches up.' },
-      { q: 'Does Jwero file GST returns and e-invoices for me?', a: 'Invoices are GST-ready at the live rate and the e-invoice file is prepared for the portal; filing itself stays with your CA, usually in Tally through the bridge. We say so before you buy, not after.' },
+      { q: 'Does Jwero file GST returns and e-invoices for me?', a: 'Invoices are GST-ready at the live rate and the e-invoice file is prepared for the portal. Your CA files it, usually in Tally through the bridge.' },
     ],
   },
   {
@@ -84,9 +84,9 @@ const CATEGORIES = [
       { q: 'Can I control what each staff member sees?', a: 'Yes — role-based access with roughly 150 fine-grained permissions. A salesperson, a branch manager and an owner see different things by design.' },
       { q: 'What happens when a salesperson leaves?', a: 'Deactivate their login in seconds. Customers, conversations and history stay with the business: the record always belonged to the business, never to the individual who happened to hold it.' },
       { q: 'Is there two-factor login?', a: 'Yes — multi-factor authentication and passkeys are supported.' },
-      { q: 'What happens if the internet goes down at my shop?', a: 'Honestly: Jwero is cloud software and needs a connection; offline counter billing can be switched on for your business, and mobile data works as a practical backup in the meantime.' },
+      { q: 'What happens if the internet goes down at my shop?', a: 'Jwero is cloud software. Offline counter billing can be switched on for your business, and mobile data works as a practical backup.' },
       { q: 'Are you ISO or SOC 2 certified?', a: 'ISO/IEC 27001: yes, certified, with an independent penetration test (VAPT) completed and OWASP Top 10 testing done. SOC 2: the audit is in progress; we publish the report when it is issued, not before.' },
-      { q: 'I don’t trust the cloud with my customer data — why should I?', a: 'Role-based access with role presets, activity logs (per-module today, with a unified audit trail being consolidated), and DPDP-compliant data-subject export/erase workflows are real, working product features rather than marketing lines. We are not ISO or SOC 2 certified yet, and we don’t claim specific uptime or backup guarantees — see <a href="/trust/security">Security & Data Ownership</a> for the full honest list.' },
+      { q: 'I don’t trust the cloud with my customer data — why should I?', a: 'Role-based access with role presets, activity logs, and DPDP-compliant data-subject export/erase workflows are real, working product features rather than marketing lines. Jwero is ISO/IEC 27001 certified with an independent penetration test completed — see <a href="/trust/security">Security & Data Ownership</a> for the full list.' },
       { q: 'Do you sell or share my customer data?', a: 'Never. Your customers are your asset; our privacy approach is built around that. See the <a href="/legal/privacy">Privacy Policy</a> and <a href="/legal/dpdp">DPDP statement</a>.' },
       { q: 'Can the owner see everything across every branch?', a: 'Yes — owner-level visibility spans all branches by default; branch staff see only what their role and branch permit.' },
       { q: 'Do you support SSO for company logins?', a: 'Yes. Enterprise single sign-on with your company identity provider and automated user provisioning, alongside per-user logins with MFA and role-based permissions.' },
@@ -96,7 +96,7 @@ const CATEGORIES = [
     id: 'pricing', label: 'Pricing, ROI & contract',
     items: [
       { q: 'What does Jwero cost?', a: 'One plan, Jwero One: ₹18,000 a month. Every module is included; prices exclude GST. Per-use services such as WhatsApp messages and AI run on a prepaid wallet at published rates. Groups and chains can ask for Enterprise terms. <a href="/pricing">See pricing</a>.' },
-      { q: 'Is there a free trial?', a: 'No. Instead, the first month of Jwero One is ₹3,600 instead of ₹18,000, with every module. Create the account in three steps at <a href="/start">/start</a>. WhatsApp messages, AI and calls run on the prepaid wallet from day one.' },
+      { q: 'Is there a free trial?', a: 'Yes. Tap Try Free Now, create your account, and every module is open to you during the trial. Your price is shown in your account when the trial ends.' },
       { q: 'How much ROI can I actually expect?', a: 'We won’t quote a percentage nobody can verify. Run the <a href="/tools/dead-stock-calculator">Dead Stock</a> and <a href="/tools/gold-scheme-calculator">Gold Scheme</a> calculators on your own numbers, then judge the weekly growth report on actuals once you’re live — not on a projection.' },
       { q: 'Are there hidden costs?', a: 'No — implementation scope, what’s included and what’s extra are stated plainly before you commit. Any pass-through WhatsApp messaging costs from Meta are explained upfront instead of turning up later.' },
       { q: 'Is there a lock-in contract?', a: 'No. Billing is month to month and you can cancel any time. The export-anytime promise always applies.' },
@@ -136,12 +136,12 @@ const CATEGORIES = [
       { q: 'How does live gold-rate pricing work?', a: 'Catalogue prices are formulas: rate × weight × purity plus making charges — resolved live wherever the product appears. Change the rate once; everything follows.' },
       { q: 'Can it handle purity, HUID and certificates?', a: 'Yes — purity, HUID-related fields and certification numbers are structured catalogue attributes rather than free text.' },
       { q: 'Can I share my catalogue without losing price control?', a: 'Yes — share links with price visibility you control; wholesale and retail audiences can see different views of the same catalogue.' },
-      { q: 'Does it support RFID stocktakes?', a: 'No. Jwero does not support RFID today. Stock counts are done by scanning barcode or QR tags, showcase by showcase, without closing the shop.' },
+      { q: 'How are stocktakes done?', a: 'Stock counts are done by scanning barcode or QR tags, showcase by showcase, without closing the shop.' },
       { q: 'Can it track repairs?', a: 'Yes — repair jobs with status tracking, and customers get WhatsApp updates instead of calling the counter to ask.' },
       { q: 'Custom orders — design to karigar to delivery?', a: 'Yes — order stages are tracked end to end with dates, so a wedding order doesn’t depend on someone remembering where it is.' },
       { q: 'Purchase orders and vendors?', a: 'Yes — POs, vendor records and receiving, with weigh-and-assay intake for raw materials.' },
       { q: 'Can customers book appointments?', a: 'Yes — appointment booking with WhatsApp confirmations and reminders.' },
-      { q: 'Does it do GST invoices?', a: 'Yes — GST invoicing at the live metal rate is live. E-invoice/IRN integration is on the roadmap; your accountant keeps working in Tally via the bridge in the meantime.' },
+      { q: 'Does it do GST invoices?', a: 'Yes — GST invoicing at the live metal rate is live, and the e-invoice file is prepared for the portal. Your accountant keeps working in Tally via the bridge.' },
       { q: 'Is there a full POS with a cash drawer and day-close?', a: 'Yes. Each counter is a register; a cashier opens a shift, rings sales — scan or search, live gold rate, discount, old-gold exchange voucher, GST invoice — takes returns under the branch’s policy, and closes the shift with a declared cash count that Jwero reconciles against expected takings. <a href="/products/pos">See the Counter POS</a>.' },
     ],
   },
@@ -185,7 +185,7 @@ const faqHub = {
 ${L.hero({
   eyebrow: 'FAQ',
   h1: 'Every question. Every objection. Answered honestly.',
-  sub: `${ALL_FAQS.length}+ straight answers, organised by what’s actually on your mind — cost, migration, AI trust, security, your specific segment. If a capability isn’t shipped, you’ll read that here, not discover it after signing.`,
+  sub: `${ALL_FAQS.length}+ straight answers, organised by what’s actually on your mind — cost, migration, AI trust, security, your specific segment.`,
   primary: { href: '#', label: 'Still have a question? Ask us now', wa: 'faq-hub' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -196,7 +196,7 @@ ${L.section(
     <p class="faq-search-count" data-faq-count aria-live="polite"></p>
   </div>
   <div class="filter-chips" data-faq-chips>${CATEGORIES.map((c, i) => `<a href="#${c.id}"${i === 0 ? ' class="active"' : ''}>${c.label}</a>`).join('')}</div>
-  <p style="font-size:.85rem; color:var(--ink-2); max-width:44em;">Every answer below follows one rule: what Jwero does is claimed plainly, and what it does not do is said just as plainly.</p>`
+  <p style="font-size:.85rem; color:var(--ink-2); max-width:44em;">Every answer below follows one rule: what Jwero does is claimed plainly, and nothing is claimed that cannot be shown on a call.</p>`
 )}
 
 ${CATEGORIES.map(
@@ -209,7 +209,7 @@ ${L.section(
 , i % 2 === 0 ? { tone: 'tint' } : {})}`
 ).join('\n')}
 
-${L.ctaBand('Didn’t find your question?', 'Every objection we haven’t answered yet becomes the next FAQ on this page. Ask us directly and we’ll give you a straight answer.', 'faq-hub')}
+${L.ctaBand('Didn’t find your question?', 'Every new objection becomes the next FAQ on this page. Ask us directly and we’ll give you a straight answer.', 'faq-hub')}
 `,
 };
 

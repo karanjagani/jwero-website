@@ -99,9 +99,9 @@ ${L.ctaBand('See the follow-up list for yourself.', 'We’ll walk through a real
 
 const marketingFaqs = [
   { q: 'Can I actually tell which channel drove a sale?', a: 'Yes, within what Jwero tracks — WhatsApp, Instagram/Facebook conversations and catalogue shares all sit on the same customer record as the eventual purchase, so you can trace a sale back to the conversation that led to it, instead of guessing.' },
-  { q: 'Does Jwero replace my social media scheduling or ad tools?', a: 'No — Jwero isn’t an ad platform or a content calendar. It’s where WhatsApp and Instagram/Facebook conversations turn into managed, trackable relationships once someone messages in, with AI handling replies and follow-ups automatically.' },
-  { q: 'Will AI write my campaigns and captions for me?', a: 'AI sends customer-facing messages automatically: replies, follow-ups, reminders. It doesn’t independently plan or launch a campaign. Creative direction and campaign strategy stay yours.' },
-  { q: 'Does Jwero predict which campaigns will perform best?', a: 'No — Jwero doesn’t do predictive forecasting today. What it gives you is a clean, shared record of what actually happened, so you can judge performance yourself instead of relying on siloed platform numbers.' },
+  { q: 'Does Jwero replace my social media scheduling or ad tools?', a: 'Jwero runs Meta and Google ads and publishes to social from the same place, and it is where WhatsApp and Instagram/Facebook conversations turn into managed, trackable relationships once someone messages in, with AI handling replies and follow-ups automatically.' },
+  { q: 'Will AI write my campaigns and captions for me?', a: 'AI sends customer-facing messages automatically: replies, follow-ups, reminders. Creative direction and campaign strategy stay yours.' },
+  { q: 'How do I know which campaigns performed best?', a: 'Jwero gives you a clean, shared record of what actually happened, with revenue traced by campaign and channel, so you judge performance on your own numbers instead of siloed platform numbers.' },
 ];
 
 const marketingManagerRole = {

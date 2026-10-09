@@ -369,7 +369,7 @@ function fitCheck(items, wa, modules, names) {
   <div class="fit-items">${items.map((t) => `<button type="button" class="fit-item" aria-pressed="false">${t}</button>`).join('')}</div>
   <div class="fit-out">
     <div class="fit-meter" aria-hidden="true"><i></i></div>
-    <p class="fit-verdict" data-fit-verdict aria-live="polite">Tap what’s true for you. We’ll say honestly where Jwero fits — and where it doesn’t yet.</p>
+    <p class="fit-verdict" data-fit-verdict aria-live="polite">Tap what’s true for you. We’ll show you where Jwero fits.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#" data-wa="${esc(wa)}" data-fit-cta>Show me this, live</a>
       <a class="btn btn-ghost" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=fit" rel="noopener" data-trial>Start for ₹3,600</a>

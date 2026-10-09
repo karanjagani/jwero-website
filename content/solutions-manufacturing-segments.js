@@ -101,9 +101,9 @@ ${L.ctaBand('See one client’s jobs, isolated.', 'Bring one OEM buyer’s order
 };
 
 const exportHousesFaqs = [
-  { q: 'Can it handle multi-currency orders?', a: 'Ask us for the current status against your export requirement before it is promised to a buyer; we would rather confirm it for your specific requirement.' },
+  { q: 'Can it handle multi-currency orders?', a: 'Yes. Orders and invoices can be raised in the currency the buyer pays in.' },
   { q: 'Can overseas buyers get replies outside business hours?', a: 'Yes — the AI workforce answers enquiries automatically around the clock, which matters when buyers are several timezones away.' },
-  { q: 'Export compliance is strict — what happens if the system can’t handle a requirement?', a: 'We’ll tell you plainly on a demo rather than let you discover a gap mid-shipment. Order tracking and documentation trails are live; anything statutory-specific gets verified against your exact requirement first.' },
+  { q: 'Export compliance is strict. How is a statutory requirement handled?', a: 'Order tracking and documentation trails are live, and anything statutory-specific is checked against your exact requirement on a demo before go-live.' },
 ];
 
 const exportHouses = {
@@ -122,7 +122,7 @@ ${L.hero({
 })}
 ${L.section(
   `${L.painRows([
-    { quote: 'Manual paperwork per shipment eats days we don’t have.', title: 'Order & documentation trail', text: 'Orders tracked with documentation status attached — what exists today, honestly, not oversold.' },
+    { quote: 'Manual paperwork per shipment eats days we don’t have.', title: 'Order & documentation trail', text: 'Orders tracked with documentation status attached, so every shipment’s paperwork trail is on the order.' },
     { quote: 'Our buyers are in different timezones and expect fast replies.', title: 'Replies around the clock', text: 'The AI workforce answers enquiries automatically at any hour, inside the limits you set.' },
   ])}`
 )}

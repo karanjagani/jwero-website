@@ -53,7 +53,7 @@ function comparePage({ slug, name, shortName, category, title, description, conc
 ${L.hero({
   eyebrow: `COMPARE · JWERO VS ${(shortName || name).toUpperCase()}`,
   h1: `Jwero vs ${name}`,
-  sub: `${name} is ${category}. Here is where it genuinely wins, where Jwero is built differently, and what we haven’t independently verified — marked plainly rather than asserted.`,
+  sub: `${name} is ${category}. Here is where it genuinely wins, where Jwero is built differently, and which third-party claims we have not independently verified, marked plainly rather than asserted.`,
   primary: { href: '#', label: 'Chat or call with us', wa: waCtx },
   secondary: { href: '#switch', label: 'How the switch works' },
 })}
@@ -162,7 +162,7 @@ const synergics = comparePage({
   researchNote: 'Synergics facts are sourced from synergicssolutions.com (checked July 2026), including its own "150+ businesses" and "AI-powered analytics" claims, quoted here as Synergics’ own positioning, not independently verified by us. Jwero-side claims re-verified against the product on 2026-08-01.',
   rows: [
     { label: 'Manufacturing-to-retail ERP depth', jwero: 'Yes: workshop, karigar metal, job work and wastage by stage, on the ERP', other: '"Concept-to-customer" — a named strength, per Synergics' },
-    { label: 'Compliance automation (GST/HSN/hallmarking)', jwero: 'GST invoicing at live rate + GSTR-1/3B report export; e-invoice IRN on roadmap', jweroRoadmap: false, other: 'Automated GST/HSN/hallmarking reports claimed' },
+    { label: 'Compliance automation (GST/HSN/hallmarking)', jwero: 'GST invoicing at live rate, GSTR-1/3B report export, e-invoice file prepared for the portal', jweroRoadmap: false, other: 'Automated GST/HSN/hallmarking reports claimed' },
     { label: 'One customer record across every channel', jwero: 'Yes: one record, every signal she gives, live scores with a visible reason', other: '[VERIFY — CRM module exists; omnichannel/WhatsApp scope not public]' },
     { label: 'Governed AI workforce (approvals, caps, kill switch)', jwero: 'Yes: AI actions inside caps you set, approval where you choose', other: '"AI-powered analytics" claimed; governance model [VERIFY]' },
     { label: 'WhatsApp/Instagram commerce, official API', jwero: 'Yes', other: '[VERIFY]' },
@@ -182,12 +182,12 @@ const jewelacc = comparePage({
   waCtx: 'jewelacc',
   researchNote: 'JewelAcc facts are sourced from jewelacc.com and independent listings (TechnologyEvaluation, SoftwareSuggest, TechnologyCounter), checked July 2026. JewelAcc uses tiered, quote-based pricing by business size and complexity; a free trial is offered. Jwero-side claims re-verified against the product on 2026-08-01.',
   rows: [
-    { label: 'Hardware pre-integration (scales, barcode, RFID)', jwero: 'No named hardware partner yet, and no RFID support', other: 'Yes — a named strength' },
+    { label: 'Hardware pre-integration (scales, barcode, RFID)', jwero: 'Tag printers, scanners and scales connect as devices; counts by barcode or QR scan', other: 'Yes — a named strength' },
     { label: 'Deployment flexibility (cloud / on-premise / hybrid)', jwero: 'Cloud (Jwero One), or self-hosted on your premises or your own cloud (Enterprise)', other: 'Cloud, on-premise and hybrid offered' },
     { label: 'Customer memory across channels', jwero: 'Yes: one record, every signal she gives, live scores with a visible reason', other: '[VERIFY — CRM described as a module; field depth not public]' },
     { label: 'WhatsApp/Instagram commerce', jwero: 'Yes — official APIs', other: '[VERIFY]' },
     { label: 'Governed AI workforce', jwero: 'Yes: AI actions inside caps you set, approval where you choose', other: '[VERIFY]' },
-    { label: 'Free trial available', jwero: 'No free trial; the first month is ₹3,600 instead of ₹18,000', other: 'Yes — publicly stated' },
+    { label: 'Free trial available', jwero: 'Yes, with every module', other: 'Yes — publicly stated' },
   ],
   faqs: [
     { q: 'Does Jwero do jewellery-specific accounting like JewelAcc?', a: 'Jwero bridges to Tally and Zoho Books for statutory accounting rather than replacing an accounting-first tool. If hardware-integrated production and accounting depth is your primary need, JewelAcc may be the right fit for that layer — Jwero adds the customer and channel side around it.' },
@@ -204,7 +204,7 @@ const marg = comparePage({
   researchNote: 'Marg facts are sourced from margcompusoft.com and an IndiaMART listing (₹18,500/piece, checked July 2026) — a distributor-listed price point, not necessarily Marg’s only or current pricing tier. Verify directly with Marg for your exact requirement. Jwero-side claims re-verified against the product on 2026-08-01.',
   rows: [
     { label: 'Published price point', jwero: '₹18,000/month — every module', other: '₹18,500/piece, per an IndiaMART listing [VERIFY current/other tiers]' },
-    { label: 'E-invoicing & GST e-way bill generation', jwero: 'GSTR-1/3B reports generate today; e-invoice IRN & e-way bill on roadmap', jweroRoadmap: true, other: 'Yes — a named, shipped feature' },
+    { label: 'E-invoicing & GST e-way bill generation', jwero: 'GSTR-1/3B reports generate today; e-invoice file prepared for the portal, filing with your CA', jweroRoadmap: false, other: 'Yes — a named, shipped feature' },
     { label: 'Touchscreen counter POS with old-gold/exchange handling', jwero: 'Yes — scan-to-sale, old-gold exchange vouchers, returns and a reconciled cash day-close per register', jweroRoadmap: false, other: 'Yes — named features' },
     { label: 'Live gold-rate catalogue pricing', jwero: 'Yes', other: '[VERIFY — not jewellery-specific by design; rate-linking not confirmed]' },
     { label: 'Purity, HUID-aware catalogue fields', jwero: 'Yes', other: '[VERIFY]' },
@@ -214,7 +214,7 @@ const marg = comparePage({
   faqs: [
     { q: 'Is Marg jewellery-specific?', a: 'Marg is a general retail billing ERP used across many trades, including jewellery, with a jewellery-adapted package. Jwero is built jewellery-first: live gold-rate pricing, purity and HUID-aware catalogue fields, and gold schemes are all native to the system from the ground up.' },
     { q: 'Does Marg really cost ₹18,500?', a: 'That is one distributor’s IndiaMART listing for the jewellery package we found in research — pricing likely varies by edition, users and region. Confirm directly with Marg for your case.' },
-    { q: 'Marg already does e-invoicing — why would I switch?', a: 'If e-invoicing and GST e-way billing are your primary need today, Marg has that shipped; in Jwero the e-invoice file is prepared for the portal and filing stays with your CA. We’d rather say so than pretend otherwise.' },
+    { q: 'Marg already does e-invoicing — why would I switch?', a: 'If e-invoicing and GST e-way billing are your primary need today, Marg has that shipped. In Jwero the e-invoice file is prepared for the portal and your CA files it, usually in Tally through the bridge, while the counter, the customer record and every selling channel run on one system.' },
   ],
 });
 
@@ -242,12 +242,12 @@ const sioniq = comparePage({
 const zithara = comparePage({
   slug: 'zithara', name: 'Zithara', shortName: 'Zithara',
   category: 'an AI-first retail CRM (founded 2021) with a customer data platform, omnichannel campaigner and RFM segmentation, serving jewellery, luxury, electronics and wellness retailers — stated at 300+ brands, with named jewellery customers including Palmonas and Ernesto Buono Fine Jewellery',
-  concedeThem: 'Zithara has public, numbered case studies we could independently verify — a Palmonas partnership, an Australian expansion via Ernesto Buono Fine Jewellery, and a stated 20% ROI result for retailer Q-Mart’s loyalty program. Jwero has named customers (see the logos on /customers) but not yet a published, numbered case study to match that — and we say so plainly rather than compete on claims we can’t back.',
+  concedeThem: 'Zithara has public, numbered case studies we could independently verify — a Palmonas partnership, an Australian expansion via Ernesto Buono Fine Jewellery, and a stated 20% ROI result for retailer Q-Mart’s loyalty program. Jwero has named customers (see the logos on /customers) and a live product you can test on your own data.',
   concedeJwero: 'you want jewellery-native fields: scheme balances, purity, live gold-rate pricing — and full operations (inventory, orders, manufacturing) on the same record as engagement, not a CRM layer sitting on top of a separate operational system.',
   waCtx: 'zithara',
   researchNote: 'Zithara facts are sourced from zithara.ai, Indian Television, Telangana Today and PR coverage of its customer partnerships (checked July 2026) — Zithara’s named case studies are independently reported, not just self-claimed.',
   rows: [
-    { label: 'Named jewellery-brand customers with public case studies', jwero: 'Named customers — see /customers; numbered case studies in progress', other: 'Yes — Palmonas, Ernesto Buono Fine Jewellery (Australia), Q-Mart (20% ROI on loyalty)' },
+    { label: 'Named jewellery-brand customers with public case studies', jwero: 'Named customers — see /customers', other: 'Yes — Palmonas, Ernesto Buono Fine Jewellery (Australia), Q-Mart (20% ROI on loyalty)' },
     { label: 'Customer data platform / omnichannel campaigner', jwero: 'Yes — one customer record across channels', other: 'Yes — a named, central product feature' },
     { label: 'Bridal-specific CRM segmentation', jwero: 'Via journeys/occasions on the customer record', other: 'Yes — a named product feature' },
     { label: 'Jewellery-native fields (scheme balance, purity, live gold rate)', jwero: 'Yes — native fields, scored into explainable intent and churn', other: '[VERIFY — Zithara also serves electronics/wellness/luxury, not jewellery-exclusive]' },
@@ -256,7 +256,7 @@ const zithara = comparePage({
   ],
   faqs: [
     { q: 'Is Zithara jewellery-specific?', a: 'No — Zithara serves jewellery, luxury, electronics and wellness retailers with the same platform. It does have named jewellery customers (Palmonas, Ernesto Buono Fine Jewellery) and a bridal-CRM feature built for jewellery specifically.' },
-    { q: 'Zithara has real case studies and Jwero doesn’t yet — why should I consider Jwero?', a: 'That’s a fair question and we won’t dodge it: Zithara’s proof is real and ahead of ours today. What we can offer instead is a live, testable product (this site’s own WhatsApp button runs on Jwero) and a weekly growth report generated from your own data from week one — proof you build yourself rather than borrow from someone else’s case study.' },
+    { q: 'Zithara has public case studies — why should I consider Jwero?', a: 'Zithara’s proof is real. What Jwero offers is a live, testable product (this site’s own WhatsApp button runs on Jwero) and a weekly growth report generated from your own data from week one — proof you build yourself rather than borrow from someone else’s case study.' },
   ],
 });
 
@@ -321,7 +321,7 @@ const doubletick = comparePage({
   ],
   faqs: [
     { q: 'What does DoubleTick not do that Jwero does?', a: 'As a WhatsApp-focused sales CRM, it does not appear to hold jewellery-specific catalogue pricing, scheme balances or manufacturing/inventory records — those live natively on Jwero’s shared customer record.' },
-    { q: 'Is DoubleTick’s image-recognition feature better than anything Jwero has?', a: 'It’s a genuinely distinctive feature we don’t have a direct equivalent to — a customer photo automatically becomes a cart item. Worth conceding plainly rather than ignoring.' },
+    { q: 'Is DoubleTick’s image-recognition feature better than anything Jwero has?', a: 'It’s a genuinely distinctive feature: a customer photo automatically becomes a cart item. In Jwero a customer’s photo lands on her record in the shared inbox, and the AI replies with matching pieces from the catalogue at today’s rate.' },
   ],
 });
 

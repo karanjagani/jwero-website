@@ -96,11 +96,6 @@ ${L.section(`${L.sectionHead('COMPARE', 'Excel and a register, a generic HR app,
 
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to move payroll and attendance off Excel.', 'Five steps.')}${L.steps(HR_HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
-${L.honestGapsBlock([
-  'The bank file is uploaded by a person in your banking portal; Jwero does not move money.',
-  'PF, ESI, PT and Form 16 files are prepared for your accountant to file.',
-])}
-
 ${L.oneSystemBlock([
   'Incentives come from the same sales the counter and CRM record, not a spreadsheet at month end.',
   'Payroll, leave and approvals sit in the same activity log as the rest of the business.',

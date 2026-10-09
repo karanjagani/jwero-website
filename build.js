@@ -191,7 +191,7 @@ const NAV = [
     match: ['faq', 'blog', 'tools', 'compare', 'migration', 'partners', 'customers', 'company', 'contact'],
     items: [
       ['/customers', 'Customers', 'Named jewellers running on Jwero'],
-      ['/faq', 'FAQ', 'Every objection, answered honestly'],
+      ['/faq', 'FAQ', 'Every objection, answered'],
       ['/blog', 'Blog', 'Practical guides, not filler'],
       ['/tools', 'Tools & Calculators', 'Dead stock, gold scheme, WhatsApp revenue, gold loss'],
       ['/compare', 'Compare Alternatives', 'ERPs, WhatsApp tools, ecommerce & more'],
@@ -398,7 +398,6 @@ const PRICE_OUT = [
       [/The price is the same in every city: ₹18,000 a month, with every module included/g, 'The plan is the same in every city, with every module included; your price is shown after the free trial'],
       [/Start on your own data for ₹3,600\s?,/g, 'Start on your own data with a free trial,'],
       [/The first month is ₹3,600 instead of ₹18,000\s?, every module included/g, 'You start with a free trial, every module included'],
-      [/No free trial; the first month is ₹3,600 instead of ₹18,000/g, 'Yes; your price is shown after it'],
       [/First month ₹3,600\s?, then month to month/g, 'Free trial, then month to month'],
       [/After that, ₹18,000 a month with no lock-in/g, 'After that, monthly billing with no lock-in'],
       [/₹18,000\s?\/month, every module(?:, see pricing)?/g, 'One plan, every module; price shown after the free trial'],
@@ -863,7 +862,7 @@ const HUB_SHORT = {
   migration: { q: 'How do I move to Jwero from my current software?', a: 'Customers, products and stock are imported for you from exports or spreadsheets. Set-up takes a day, most businesses settle in within thirty days, and you can run your old system alongside while your team gets used to Jwero.' },
   guides: { q: 'How should a jeweller choose software?', a: 'Start from the work: billing at the live rate, stock by piece and weight, customers and follow-up, purchase and the workshop. Check each vendor on purity-based pricing, old-gold exchange, scheme handling and data export, and test it on your own data. These guides take each area in turn.' },
   compare: { q: 'How does Jwero compare with other jewellery software?', a: 'Jwero is built jewellery-first and runs customers, every selling channel and operations on one record, with AI that works on its own inside limits you set. Jewellery ERPs such as Marg, Ornate NX or SIONIQ can be stronger on accounting depth or module breadth; WhatsApp tools such as WATI or Interakt focus on messaging. Each comparison here says where the other product wins.' },
-  blog: { q: 'What does the Jwero blog cover?', a: 'Practical guides for jewellery business owners: selling on WhatsApp and Instagram, gold savings schemes and their rules, dead stock, gold loss in manufacturing, HUID records, Tally, software costs and how to compare vendors. Each guide is reviewed against what the product does and says plainly what it does not do yet.' },
+  blog: { q: 'What does the Jwero blog cover?', a: 'Practical guides for jewellery business owners: selling on WhatsApp and Instagram, gold savings schemes and their rules, dead stock, gold loss in manufacturing, HUID records, Tally, software costs and how to compare vendors. Each guide is reviewed against what the product does.' },
   'jewellery-software-india': { q: 'Which jewellery software do Indian jewellers use?', a: 'Jewellers across India, from Surat diamond offices to Thrissur gold showrooms, run Jwero for billing at the live rate, stock, customers, karigar accounts, schemes and WhatsApp on one record. It is set up in a day over chat and video in any city, at the same price everywhere: ₹18,000 a month, first month ₹3,600.' },
   platform: { q: 'What is the Jwero platform?', a: 'Jwero is one system for a jewellery business: customers, counter, stock, purchase, workshop, books and team on one record, with AI agents that do the routine work on their own, and ask for approval only where you choose. It connects to Tally, Shopify, marketplaces and Meta, prices every piece from the live gold rate, and is set up in a day.' },
   roles: { q: 'How does Jwero help each person in a jewellery business?', a: 'Every role works on the same customer and stock record: the owner sees the whole business, the counter bills at the live rate, sales staff know each customer before they speak, and the workshop, purchase and accounts teams stop re-entering the same data. AI does the routine work on its own, and you choose what needs approval.' },
@@ -2185,7 +2184,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Page: https://jwero.ai/ai-cctv-footfall-analytics-jewellery-showrooms
 - AI person detection on existing CCTV/NVR cameras over RTSP (Hikvision, Dahua, CP Plus, ONVIF) through a small on-site connector; counts entries, exits and floor occupancy; zones.
 - Footfall is matched to bills for conversion by hour, day, branch and salesperson; alerts for camera offline, counting gaps and footfall without sales.
-- No face recognition, no identification of customers, no repeat-visitor detection by camera. Retention, consent signage and a capture switch in privacy settings. Charged per camera; Jwero does not sell cameras.
+- Counts people, never faces: no identification of customers. Retention, consent signage and a capture switch in privacy settings. Charged per camera; works with the cameras you have.
 
 ## More AI in Jwero (facts)
 
@@ -2217,7 +2216,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Loyalty: points, tiers, redemption, anniversary rewards, referral benefits and points expiry. Consent kept per channel; customer data requests handled. Details: ${SITE}/products/crm
 
 ## What Jwero is not (honesty)
-- Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant. Jwero does not file GST returns.
+- Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant, who files the returns.
 - Counter POS (registers, shifts, cash day-close, returns, old-gold exchange), statutory payroll, karigar
   settlement, girvi/gold loans, manufacturing (BOM, routing, wastage norms) and a video counter shipped in 2026.
 - E-invoices are generated in Tally through the bridge.

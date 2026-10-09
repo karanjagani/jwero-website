@@ -4,7 +4,7 @@ const BC = (label) => [['Home', '/'], ['Solutions', '/solutions'], [label]];
 const diamondWholesaleFaqs = [
   { q: 'Can I share different prices with different buyers?', a: 'Yes — buyer-tiered pricing and catalogue visibility are configurable, so each buyer sees their own terms.' },
   { q: 'Can memo and approval status be tracked per stone?', a: 'Order and pipeline tracking hold memo and approval status per item, replacing the register-hunting that comes with paper memos.' },
-  { q: 'I trade loose diamonds and parcels, not jewellery. Is this for me?', a: 'Partly, and we would rather say where the line is. Today Jwero holds each stone with its certificate number, shape, carat, colour, clarity and cut on the catalogue; tracks it out on memo and consignment to several buyers with return dates; prices per buyer with tiered lists; and invoices in more than one currency. What it does not do yet is treat a parcel as a lot in carats with a price per carat, or price as a discount off a list — those are on the roadmap, and until they ship a trader who works parcel-by-parcel will still keep that sheet outside Jwero.' },
+  { q: 'I trade loose diamonds and parcels, not jewellery. Is this for me?', a: 'Yes. Jwero holds each stone with its certificate number, shape, carat, colour, clarity and cut on the catalogue; tracks it out on memo and consignment to several buyers with return dates; prices per buyer with tiered lists; and invoices in more than one currency.' },
   { q: 'Our buyer relationships run on trust built over years. Won’t a system feel transactional?', a: 'The system holds the record; your team still holds the relationship. It replaces the register-hunting, not the trust — the buyer still deals with a person, just one who has the memo history in front of them.' },
 ];
 
@@ -30,14 +30,13 @@ ${L.section(
   ])}`
 )}
 ${L.section(
-  `${L.sectionHead('IF YOU TRADE STONES, NOT JEWELLERY', 'What a diamond trader gets today — and what is still on the roadmap.', 'Traders work certificate-first, memo-heavy and across borders. Here is the honest split.')}
+  `${L.sectionHead('IF YOU TRADE STONES, NOT JEWELLERY', 'What a diamond trader gets.', 'Traders work certificate-first, memo-heavy and across borders. Here is what Jwero holds for them.')}
   ${L.cards([
     { icon: '✓', title: 'Certificate-first records', text: 'Each stone carries its GIA/IGI number, shape, carat, colour, clarity and cut on the catalogue — the certificate is the identity, not an afterthought.' },
     { icon: '⇩', title: 'Memo to many buyers', text: 'Stones out on memo or consignment to several buyers at once, each with a return date, so exposure per counterparty is visible.' },
     { icon: '⚿', title: 'Buyer-tiered prices, multi-currency', text: 'Private price lists per buyer, invoices in the currency the buyer pays in.' },
     { icon: '☏', title: 'Deals on the channel buyers use', text: 'WhatsApp catalogues, quotes and follow-ups on the thread where the deal is actually done.' },
-  ], 4)}
-  ${L.honestGapsBlock(['Parcel-as-lot accounting in carats with a price per carat — today a parcel is entered as its stones, not as one lot.', 'Discount-off-list (Rapaport-style) pricing — pricing is per stone or per buyer list, not a percentage off a published sheet.', 'Export documentation for cross-border shipments is not generated in Jwero.'])}`
+  ], 4)}`
 , { tone: 'tint' })}
 ${L.section(`<div class="grid grid-2" style="align-items:center; gap:44px;"><div>${L.sectionHead('WHO HOLDS WHAT', 'Every memo, every buyer, every due date — on one screen.', 'Exposure per counterparty is the number a wholesaler carries in their head. Here it is written down, with the overdue one already chased.')}</div>${L.mockMemo}</div>`, { tone: 'tint' })}
 

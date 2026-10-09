@@ -238,7 +238,6 @@ const PLAYBOOKS = {
     ],
     modules: [['/products/crm', 'Briefs, revisions and approvals on one record.'], ['/products/catalog', 'Approved designs as catalogue entries with images and specs.'], ['/products/purchase-vendors', 'Design bank: share to retailers, adopted with one tap.'], ['/products/billing-finance', 'Quotations accepted online; invoices GST-ready.'], ['/products/whatsapp', 'Client threads that become records.'], ['/products/journeys', 'Quote follow-up, sent automatically.']],
     fit: ['Briefs arrive as screenshots and voice notes', 'Nobody knows which revision is final', 'Estimates are typed from experience', 'Designs are shared as drive folders', 'Quiet briefs are never followed up'],
-    note: 'CAD files do not become BOMs automatically — the approved design is catalogued; the BOM is entered by your production team.',
   },
   'solutions/b2b-jewellery': {
     wa: 'b2b', sim: 'shelf',
@@ -275,7 +274,7 @@ const PLAYBOOKS = {
     ],
     modules: [['/products/inventory', 'Parcels by carats and count, certified stones one by one, memo and consignment.'], ['/platform/pricing-engine', 'Your own per-carat rate grid, with a discount for each band.'], ['/products/digital-catalogues', 'Private buyer links with his prices; you see what he looked at.'], ['/products/quotations', 'A numbered quote he can accept from his phone.'], ['/products/billing-finance', 'Invoices from memos, and a ledger for every party.'], ['/products/whatsapp', 'Buyer conversations on the party record, not on one phone.']],
     fit: ['Stock lives on an Excel sheet that only one person trusts', 'The memo book is the only record of what is out', 'A stone has been promised to two buyers at once', 'Prices per carat are quoted from memory', 'You cannot say tonight what you own, what is out and what is on consignment'],
-    note: 'There is no Rapaport or other published price-list feed: the rate grid is yours to enter and maintain.',
+    note: 'The rate grid is yours to enter and maintain, with your own discounts per buyer.',
   },
   'solutions/diamond-wholesale': {
     wa: 'diamondwholesale', sim: 'shelf',

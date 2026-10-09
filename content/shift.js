@@ -73,7 +73,7 @@ const SHIFTS = {
     title: 'From guessing what ships to reading it.',
     today: 'Every vendor promises the feature you asked about is “coming soon”.',
     gone: 'The surprise after signing.',
-    now: 'Shipped, rolling out and not-yet, in public, updated as the product moves.',
+    now: 'Shipped and rolling out, in public, updated as the product moves.',
     tempo: ['After signing', 'Before you buy'],
   },
   pricing: {

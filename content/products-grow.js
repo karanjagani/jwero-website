@@ -138,7 +138,7 @@ const msFaqs = [
   { q: 'Can a customer redeem a scheme at any branch?', a: 'Yes. A member can enrol at one branch, pay instalments at another and redeem at any branch in the network, on the same scheme record.' },
   { q: 'Can one WhatsApp number serve the whole chain?', a: 'Yes. Customers message one number and each chat is routed to the right branch, with the customer’s history visible to whoever answers.' },
   { q: 'How are stock transfers between branches handled for GST?', a: 'Within one state, transfers move on a delivery challan. Between states, branches have different GSTINs and the transfer is billed with GST. Confirm your setup with your CA.' },
-  { q: 'Can franchise partners see only their own store?', a: 'Yes. Roles and permissions are set at each level, so a franchise partner sees their store while head office sees the network. Franchise royalty calculation stays in your accounts for now.' },
+  { q: 'Can franchise partners see only their own store?', a: 'Yes. Roles and permissions are set at each level, so a franchise partner sees their store while head office sees the network.' },
   { q: 'Will branch managers resist losing autonomy?', a: 'Branches keep running their day. Head office sets the rules that customers expect to be the same everywhere, and branches request exceptions through approvals.' },
   { q: 'Does a customer’s history follow them between branches?', a: 'Yes. Purchases, schemes, loyalty points and conversations are on one record, visible at every counter.' },
   { q: 'Can each branch keep billing if the internet drops?', a: 'Yes. Each counter keeps billing offline, and sales sync when the connection returns.' },
@@ -194,7 +194,7 @@ ${L.section(`${L.sectionHead('COMPARE', 'A system per branch, a desktop ERP on a
 
 ${L.section(`${L.sectionHead('ADDING A BRANCH', 'How to add a new branch to your jewellery chain.', 'Five steps.')}${L.steps(MS_MOVE.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
-${L.section(`<div class="jb-blogline"><p><b>For franchise networks:</b> partners run their own stores on the network’s rules and see only their store. Franchise royalty calculation stays in your accounts for now. <a href="/blog/jewellery-franchise-control">What a franchisor should control →</a> · <a href="/solutions/franchise-networks">Jwero for franchise networks →</a> · <a href="/solutions/multi-store-chains">Jwero for chains →</a></p></div>`)}
+${L.section(`<div class="jb-blogline"><p><b>For franchise networks:</b> partners run their own stores on the network’s rules and see only their store. <a href="/blog/jewellery-franchise-control">What a franchisor should control →</a> · <a href="/solutions/franchise-networks">Jwero for franchise networks →</a> · <a href="/solutions/multi-store-chains">Jwero for chains →</a></p></div>`)}
 
 ${L.oneSystemBlock([
   'A scheme paid at one branch and redeemed at another is one record and one liability in the books.',

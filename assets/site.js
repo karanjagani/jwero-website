@@ -1706,7 +1706,7 @@ function jwFromInr(n) {
       var on = Array.prototype.filter.call(items, function (b) { return b.getAttribute('aria-pressed') === 'true'; }).length;
       if (meter) meter.style.width = (on / total) * 100 + '%';
       var text, label;
-      if (on === 0) { text = 'Tap what’s true for you. We’ll say honestly where Jwero fits, and where it doesn’t yet.'; label = 'Show me this, live'; }
+      if (on === 0) { text = 'Tap what’s true for you. We’ll show you where Jwero fits.'; label = 'Show me this, live'; }
       else if (on <= 2) { text = on + ' of ' + total + ', a real fit on those. Businesses like yours usually start with ' + first + ', and add ' + second + ' in the first month.'; label = 'Start with ' + first; }
       else { text = on + ' of ' + total + ', a strong fit. Start with ' + first + ' and ' + second + '; most of the rest follows in the first thirty days, on your own data.'; label = 'Show me ' + first + ' on my data'; }
       if (verdict) { verdict.textContent = text; verdict.classList.toggle('is-strong', on >= 3); }

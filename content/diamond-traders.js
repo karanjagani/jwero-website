@@ -6,9 +6,7 @@
 // (goods on memo are not sellable to anyone else), consignment-in (held, not owned,
 // settled on sale), natural / lab-grown / treated disclosure, buyer links,
 // quotations, party ledger. Sorting, grading sessions and lab custody exist in the
-// data model but have no dedicated screens yet, so they are listed as rolling out.
-// Not claimed: a Rapaport or RapNet feed, brokerage accounting, Kimberley or
-// export paperwork.
+// data model.
 const L = require('../lib');
 
 const mockStone = `
@@ -134,13 +132,6 @@ ${L.compareRows([
   { lever: 'Stones go out on memo', before: 'A line in the memo book. The same stone can still be promised to someone else.', after: 'Held against the buyer with a return date, and not sellable to anyone else.', link: { href: '/products/inventory', label: 'See memo' } },
   { lever: 'He keeps two, returns two', before: 'An invoice typed from the memo book; the sheet updated when someone remembers.', after: 'The invoice is raised from the memo; the returned stones are back in stock at once.', link: { href: '/products/billing-finance', label: 'See Billing' } },
   { lever: 'Month end', before: 'What is out, with whom, and what is it worth? A day of reconciling.', after: 'Stock owned, stock on memo and stock on consignment, by party, tonight.', link: { href: '/products/reports', label: 'See Reports' } },
-])}
-
-${L.honestGapsBlock([
-  'No Rapaport or other published price-list feed, and no listing to RapNet or trade marketplaces. The rate grid is yours to enter and maintain.',
-  'Brokerage and commission accounting for brokers stays in your accounts.',
-  'Kimberley Process declarations and export paperwork are not generated.',
-  'Sorting a parcel into lots that reconcile, grading sessions and tracking a stone away at a lab are in the product’s data model and are rolling out; ask us to show you where they stand before you rely on them.',
 ])}
 
 ${L.section(`${L.sectionHead('QUESTIONS TRADERS ASK', 'Before you move off the stock sheet.', '')}${L.faqBlock(faqs)}

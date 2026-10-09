@@ -245,7 +245,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Page: https://jwero.ai/ai-cctv-footfall-analytics-jewellery-showrooms
 - AI person detection on existing CCTV/NVR cameras over RTSP (Hikvision, Dahua, CP Plus, ONVIF) through a small on-site connector; counts entries, exits and floor occupancy; zones.
 - Footfall is matched to bills for conversion by hour, day, branch and salesperson; alerts for camera offline, counting gaps and footfall without sales.
-- No face recognition, no identification of customers, no repeat-visitor detection by camera. Retention, consent signage and a capture switch in privacy settings. Charged per camera; Jwero does not sell cameras.
+- Counts people, never faces: no identification of customers. Retention, consent signage and a capture switch in privacy settings. Charged per camera; works with the cameras you have.
 
 ## More AI in Jwero (facts)
 
@@ -277,7 +277,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Loyalty: points, tiers, redemption, anniversary rewards, referral benefits and points expiry. Consent kept per channel; customer data requests handled. Details: https://jwero.ai/products/crm
 
 ## What Jwero is not (honesty)
-- Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant. Jwero does not file GST returns.
+- Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant, who files the returns.
 - Counter POS (registers, shifts, cash day-close, returns, old-gold exchange), statutory payroll, karigar
   settlement, girvi/gold loans, manufacturing (BOM, routing, wastage norms) and a video counter shipped in 2026.
 - E-invoices are generated in Tally through the bridge.

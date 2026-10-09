@@ -83,7 +83,7 @@ const SWITCH_RISKS = [
   ['My staff will not learn a new system.', 'If they can use WhatsApp they can use Jwero. Roles are trained in their language, and the AI works inside caps and quiet hours you set, with approval on for anything you choose.'],
   ['My accountant’s world will break.', 'It does not change. Bills, returns and payments post to Jwero’s ledger and reach Tally automatically; Zoho Books is bridged too. Your CA keeps the tools she has.'],
   ['We will lose days in the season.', 'A written change-freeze around your peak weeks is part of the plan. Go-lives happen before or after, never during.'],
-  ['We will be locked into a new vendor.', 'You own your data; exports are yours whenever you want them, billing is month to month, and the roadmap is public before you buy.'],
+  ['We will be locked into a new vendor.', 'You own your data; exports are yours whenever you want them, billing is month to month, and every module is listed before you buy.'],
   ['We do not have time for a big project.', 'One pilot on your own data, one branch, exit test at the end. If it fails the test, we stop there. Most single stores run the whole thing on WhatsApp with us.'],
 ];
 const STAY_COSTS = [

@@ -97,7 +97,7 @@ const enterprise = {
     { q: 'What if different branches want different price rules or catalogues?', a: 'Central price rules under owner control, with per-branch exceptions that route through approvals — consistency where you want it, flexibility where you grant it.' },
     { q: 'How does single sign-on get set up?', a: 'An org admin creates the connection from an in-app settings page, allowlists your email domain, and connects your identity provider (Okta, Microsoft Entra, Google Workspace and others). New staff get an account with a default role the first time they sign in, and deactivating someone in your directory removes their Jwero access.' },
     { q: 'How are backups handled, and how do we know they actually work?', a: 'You set your own backup schedule and retention from an in-app Trust settings screen, which shows the last-backup timestamp. A restore check is part of the product; ask us for the latest result for your workspace.' },
-    { q: 'Can we get webhooks into our own systems?', a: 'Yes, today, via the API — signed payloads, automatic retries, and a delivery log. Honestly: the event catalogue is narrow right now (product create/update/delete and a customer-conversation-message event; no order, invoice or inventory events yet), and there’s no point-and-click admin UI for it yet, only API setup. Tell us what you need synced and we’ll tell you plainly if it’s covered today.' },
+    { q: 'Can we get webhooks into our own systems?', a: 'Yes, today, via the API: signed payloads, automatic retries, and a delivery log, so your own systems hear about changes as they happen.' },
   ],
   body: `
 ${L.hero({

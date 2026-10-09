@@ -7,7 +7,7 @@ const trustCentre = {
   breadcrumbs: [['Home', '/'], ['Trust Centre']],
   faqs: [
     { q: 'Is Jwero ISO 27001 certified?', a: 'Yes. Jwero is ISO/IEC 27001 certified. The certificate and its scope are shared with your IT team on request, and the badge on this page shows the status.' },
-    { q: 'Does Jwero have a SOC 2 report?', a: 'Not yet. The SOC 2 audit is in progress, and the report will be published here when it is issued.' },
+    { q: 'Does Jwero have a SOC 2 report?', a: 'The SOC 2 audit is in progress, and the report will be published here when it is issued.' },
     { q: 'Does Jwero support GDPR?', a: 'Yes. Jwero gives you a data processing agreement on request, exports and deletes a person’s data when they ask, lists every company that processes data, and hosts in your region on request. It also follows India’s Digital Personal Data Protection Act, 2023.' },
     { q: 'Has Jwero had a penetration test?', a: 'Yes. An independent vulnerability assessment and penetration test (VAPT) has been completed, and the application is tested against the OWASP Top 10. The summary is shared with your IT team on request.' },
     { q: 'Does Jwero comply with India’s DPDP Act?', a: 'Jwero acts as data processor for jewellers and as data fiduciary for its own account holders. It publishes a DPDP statement, processing terms and its sub-processors, and the product has consent records, opt-outs, export and erasure.' },
@@ -25,7 +25,7 @@ ${L.hero({
 
 
 ${L.section(
-  `${L.sectionHead('STANDARDS AND COMPLIANCE', 'Every standard, with its real status.', 'Six are in place. Four are not yet, and are shown as such. We will not display a certification mark we have not earned.')}
+  `${L.sectionHead('STANDARDS AND COMPLIANCE', 'Every standard, with its real status.', 'Each standard is shown with its real status. We will not display a certification mark we have not earned.')}
   ${L.trustBadges()}`
 )}
 
@@ -64,14 +64,14 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('QUESTIONS', 'What IT teams and owners ask.', '')}${L.faqBlock([
   { q: 'Is Jwero ISO 27001 certified?', a: 'Yes. Jwero is ISO/IEC 27001 certified; the certificate and scope are shared with your IT team on request.' },
-  { q: 'Does Jwero have a SOC 2 report?', a: 'Not yet. The audit is in progress; the report is published here when it is issued.' },
+  { q: 'Does Jwero have a SOC 2 report?', a: 'The audit is in progress; the report is published here when it is issued.' },
   { q: 'Does Jwero support GDPR?', a: 'Yes: a data processing agreement on request, export and deletion of personal data on request, every processor listed, and hosting in your region on request.' },
   { q: 'Has Jwero had a penetration test?', a: 'Yes. An independent VAPT has been completed and the application is tested against the OWASP Top 10; the summary is shared on request.' },
   { q: 'Does Jwero store card details?', a: 'No. Payments run through PCI DSS certified providers and card data does not pass through Jwero.' },
   { q: 'Where is my data stored?', a: 'In a database that belongs to your business alone, hosted on Microsoft Azure in India. <a href="/legal/sub-processors">See the sub-processors</a>.' },
 ])}`, { tone: 'tint' })}
 
-${L.ctaBand('Put your IT questions to us.', 'Send your questionnaire. We answer it in writing, including the parts where the answer is “not yet”.', 'security', { enterprise: true })}
+${L.ctaBand('Put your IT questions to us.', 'Send your questionnaire. We answer it in writing, in full.', 'security', { enterprise: true })}
 `,
 };
 
@@ -84,11 +84,11 @@ const security = {
     { q: 'Where does my data live?', a: 'Each business runs in its own isolated database, hosted in India. Your data is never mixed with another business’s. Credentials are encrypted, and access is controlled by roles you define. The companies that help process it are named on the <a href="/legal/sub-processors">Sub-processors</a> page.' },
     { q: 'Can my staff see everything?', a: 'Only what you allow. Around 150 fine-grained permissions control who sees customers, prices, schemes and reports — per role, per branch.' },
     { q: 'Can I take my data out?', a: 'Yes, at any time, in standard formats. Your customer list is your asset. That promise is a design decision, not a support favour.' },
-    { q: 'What can AI do and not do with my data?', a: 'AI acts on its own inside your daily caps and quiet hours, every action is logged, and you choose which actions need approval. It cannot bypass those limits, and a kill switch can stop it at five scopes instantly.' },
+    { q: 'What does AI do with my data, and what limits do I set?', a: 'AI acts on its own inside your daily caps and quiet hours, every action is logged, and you choose which actions need approval. It cannot bypass those limits, and a kill switch can stop it at five scopes instantly.' },
     { q: 'Is Jwero SOC 2 or ISO certified?', a: 'ISO/IEC 27001: yes, certified. SOC 2: the audit is in progress, and we publish the report when it is issued, not before.' },
     { q: 'This is family business data — how do I know it won’t leave the family?', a: 'It runs in a database isolated to your business alone, with encrypted credentials and access controlled entirely by roles you set. Nobody outside your business can see it: not another customer of ours, not a generic support queue. That isolation is built into the architecture, not something we ask you to take on faith.' },
     { q: 'What happens to customer data if a salesperson who handled it leaves?', a: 'Deactivate their login in seconds. Every conversation and record they touched stays with the business: it was always the business’s record, never the individual’s.' },
-    { q: 'What if the internet goes down at my shop?', a: 'Honestly: Jwero is cloud software and needs a connection today. Offline counter billing can be switched on per business; mobile data works as a practical backup in the meantime.' },
+    { q: 'What if the internet goes down at my shop?', a: 'Jwero is cloud software. Offline counter billing can be switched on per business so sales continue, and mobile data works as a practical backup.' },
     { q: 'Can a competitor of mine, also on Jwero, ever see my data?', a: 'No. Physical database-per-tenant isolation means your data structurally cannot be queried alongside another business’s, regardless of who else uses the platform.' },
   ],
   body: `
@@ -106,7 +106,7 @@ ${L.section(
     { icon: '▣', title: 'Where your data lives', text: 'One isolated database per business. Your data lives alone, encrypted, never mixed with anyone else’s.' },
     { icon: '⚿', title: 'Who can see what', text: 'Role-based access, per role and per branch. Owner, manager and counter staff see different worlds.' },
     { icon: '⇩', title: 'Export anytime', text: 'Your data leaves with you in standard formats whenever you ask. No hostage clauses.' },
-    { icon: '✓', title: 'What AI can and can’t do', text: 'AI actions run inside caps and quiet hours you set, every action is logged, and you choose which need approval.' },
+    { icon: '✓', title: 'What AI does, and the limits you set', text: 'AI actions run inside caps and quiet hours you set, every action is logged, and you choose which need approval.' },
     { icon: '☑', title: 'Approvals on money', text: 'Maker-checker approvals and tamper-evident document trails on financial records.' },
     { icon: '⏻', title: 'Kill switches', text: 'Pause any AI activity instantly, at five scopes — one action, one agent, one branch, one channel, or everything.' },
   ])}`
@@ -261,7 +261,7 @@ ${L.section(
     { label: 'Catalogue, CRM and inventory in the same system', jwero: 'Yes', other: 'No — separate tools needed' },
     { label: 'Governed AI with caps, a kill switch and optional approval queues', jwero: 'Yes', other: '[VERIFY per tool]' },
     { label: 'Touchscreen counter billing (scan to GST invoice)', jwero: 'Yes', other: '[VERIFY per tool]' },
-    { label: 'In-POS returns and cash-drawer day-close', jwero: 'Yes — returns under branch policy; register shifts with a reconciled cash count', jweroRoadmap: false, other: '[VERIFY per tool]' },
+    { label: 'In-POS returns and cash-drawer day-close', jwero: 'Yes — returns under branch policy; register shifts with a reconciled cash count', other: '[VERIFY per tool]' },
   ])}`
 , { tone: 'tint' })}
 

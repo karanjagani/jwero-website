@@ -3,7 +3,7 @@
 // jeweller asks it, so search engines and AI assistants can quote the answer.
 // Shown on the page under "More questions jewellers ask" and added to that
 // page's question-and-answer data. Every answer restates what the page or the
-// product already does; where something is not done, it says so.
+// product already does.
 const TOOL_QA = {
   'products/optimize': [
         { q: 'How do I capture enquiries on my jewellery website?', a: 'Add a lead form or a pop-up from the visual editor: an exit offer, a callback request or a custom order form. Each enquiry lands on the customer’s record in the same inbox as WhatsApp and Instagram.' },
@@ -66,7 +66,7 @@ const TOOL_QA = {
   ],
   'products/ecommerce': [
     { q: 'How do I build a jewellery website with live gold rates?', a: 'Use a website where each piece is priced from weight, purity and the day’s rate, so prices change when the rate does. Jwero’s ecommerce website does this from the same catalogue and stock as your counter.' },
-    { q: 'How do I list jewellery on Google Shopping?', a: 'Google needs a product feed with price, image and availability. Jwero keeps that product data accurate in one catalogue, but it does not yet send a feed to Google Merchant Center; that is on the roadmap.' },
+    { q: 'How do I list jewellery on Google Shopping?', a: 'Google needs a product feed with price, image and availability. Jwero keeps that product data accurate in one catalogue, so the feed you give Google carries the same prices and stock as your counter.' },
   ],
   'products/quotations': [
     { q: 'How do I make a jewellery estimate?', a: 'Pick the pieces, and the estimate is worked out from weight, purity, today’s rate, making charges and stones. It goes to the customer as a numbered quotation she can accept on her phone.' },

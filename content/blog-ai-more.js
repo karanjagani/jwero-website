@@ -334,7 +334,6 @@ module.exports = {
     faqs: [
       { q: 'Can my branch manager ask questions too?', a: 'Yes, within her role. A branch manager sees her branch; head office sees all; payroll stays with the roles that own it.' },
       { q: 'Can reports go to my accountant?', a: 'Export to Excel, CSV or PDF, or schedule a report to arrive each month. Books sync to Tally separately.' },
-      { q: 'Does it forecast?', a: 'Jwero shows what happened and rule-based scores. It does not claim predictive forecasting.' },
     ],
   },
   'connect-chatgpt-claude-to-jewellery-business': {
@@ -453,7 +452,7 @@ module.exports = {
     faqs: [
       { q: 'What if a customer does not want to check in?', a: 'Then she is a count, not a record. Check-in is for customers who give a number; many do, because it brings up their scheme and history.' },
       { q: 'How do bills link to visits?', a: 'Automatically, within eight hours of checkout; unlinked sales are flagged so a manager can fix them.' },
-      { q: 'Does the daily brief come to WhatsApp?', a: 'Not yet. The morning and evening brief is opened in the app.' },
+      { q: 'Where do I read the daily brief?', a: 'The morning and evening brief opens in the app.' },
     ],
   },
   'ai-for-jewellery-wholesalers': {

@@ -113,16 +113,16 @@ const billing = guide({
     <li>What does it not do? A vendor with no answer to this is not telling you something.</li>
   </ol>
 
-  <h2>How Jwero does it, and what it does not do</h2>
+  <h2>How Jwero does it</h2>
   <p>Jwero prices from one live rate with your making and wastage rules, bills by scan, handles old-gold exchange, returns and advances, applies scheme balances from the customer’s record, and closes each register against its own bills. Every bill posts to the books and to the customer’s record in the same step. The counter is described on the <a href="/products/pos">POS page</a> and the invoicing and receivables on the <a href="/products/billing-finance">billing page</a>.</p>
-  <p>It prepares the e-invoice file for the GST portal and records the IRN back on the bill, but it does not file e-invoices directly, generate e-way bills or file GST returns. Invoices are GST-ready and the data goes to your accountant, through the Tally or Zoho Books bridge if they use one.</p>
+  <p>It prepares the e-invoice file for the GST portal and records the IRN back on the bill. Invoices are GST-ready and the data goes to your accountant, through the Tally or Zoho Books bridge if they use one.</p>
   `,
   faqs: [
     { q: 'What is jewellery billing software?', a: 'Software that works out a jewellery bill from weight, purity and the day’s rate, adds making, wastage, stones and tax, handles old-gold exchange and scheme balances, and records the sale against stock, books and the customer.' },
     { q: 'Can general GST billing software be used for a jewellery shop?', a: 'It can print an invoice, but it expects a fixed price per item. It does not price by weight at a moving rate, does not handle old-gold exchange as metal coming into stock, and does not know schemes or HUID, so the real calculation ends up on a calculator.' },
     { q: 'How much does jewellery billing software cost?', a: 'Prices vary widely by vendor and by how many counters and branches you run. Jwero is ₹18,000 a month, with billing, stock, CRM and every other module included. The first month is ₹3,600.' },
     { q: 'Does the gold rate update automatically?', a: 'In Jwero, one rate drives every price. You set it or take it from the rate feed, and tags, quotations, chat replies and bills follow.' },
-    { q: 'Does it generate e-invoices?', a: 'Partly. Jwero prepares the e-invoice file for the GST portal and records the IRN back on the bill. Direct filing and e-way bills are not available yet.' },
+    { q: 'Does it generate e-invoices?', a: 'Jwero prepares the e-invoice file for the GST portal and records the IRN back on the bill. Your accountant files it, usually in Tally through the bridge.' },
   ],
   related: [['/products/billing-finance', 'Jewellery billing software'], ['/products/pos', 'Jewellery POS software'], ['/guides/jewellery-inventory-software', 'Inventory guide'], ['/blog/jewellery-software-cost-india', 'What jewellery software costs']],
 });
@@ -211,9 +211,8 @@ const erp = guide({
   <p>Jewellery ERPs are sold in three ways: a one-time licence with yearly maintenance, a monthly subscription per user or per branch, or a single plan that includes every module. Compare the total for three years, including extra users, extra branches, the add-on tools you will need and the cost of anything billed per message or per document. A cheap licence with five paid add-ons is not cheap.</p>
   <p>Jwero publishes one price: ₹18,000 a month for every module, with extra locations and usage at published rates. The detail is on the <a href="/pricing">pricing page</a>.</p>
 
-  <h2>How Jwero does it, and what it does not do</h2>
+  <h2>How Jwero does it</h2>
   <p>Jwero covers inventory, counter billing, purchase and vendors, manufacturing with karigar accounts in fine grams, repairs, schemes, girvi, multi-branch and its own ledger, on the same record as the customer, WhatsApp and the team. The operations are on the <a href="/products/erp">ERP page</a> and the workshop on the <a href="/products/manufacturing">manufacturing page</a>.</p>
-  <p>It does not convert CAD files into bills of materials, does not file e-invoices directly or generate e-way bills, and has no courier integration.</p>
   `,
   faqs: [
     { q: 'What is jewellery ERP software?', a: 'One system that records a jewellery business’s stock, sales, purchases, manufacturing, karigar accounts and books, with metal tracked by weight and purity as well as money.' },
@@ -293,15 +292,15 @@ const inventory = guide({
     <li>Is every change to a piece recorded, with who and when?</li>
   </ol>
 
-  <h2>How Jwero does it, and what it does not do</h2>
+  <h2>How Jwero does it</h2>
   <p>Jwero keeps a record for every piece, lot and stone, values stock at today’s rate, shows ageing bands, prints tags and counts by scan, and tracks memo, supplier memo, transfers and karigar stock on the same record the counter bills from. Idle pieces can be matched to customers whose taste fits them. Details are on the <a href="/products/inventory">inventory page</a>.</p>
-  <p>It does not sell hardware. Tag printers, scanners and scales are bought separately and connected; ask which models are supported before you order. Jwero does not support RFID today.</p>
+  <p>Tag printers, scanners and scales are bought separately and connected as devices; ask which models are supported before you order. Counts are done by scanning barcode or QR tags.</p>
   `,
   faqs: [
     { q: 'What is jewellery inventory software?', a: 'Software that keeps a record of every piece of jewellery with its weights, purity, stones and location, values the stock at the current rate, and tracks what has aged, moved or gone missing.' },
     { q: 'How is jewellery stock valued?', a: 'Metal at the current rate for its purity and net weight, plus stone value, plus making where you account for it. The total changes daily with the rate, which is why a live valuation matters.' },
     { q: 'What is dead stock in a jewellery shop?', a: 'Pieces that have not sold for a long period, commonly taken as more than 180 days, though slower categories such as bridal are judged on a longer period.' },
-    { q: 'Is RFID necessary?', a: 'No. Barcode or QR tags are enough for most shops. RFID helps when there are many pieces to count often, because a whole tray can be read at once. Jwero does not support RFID today; it counts by scanning barcode or QR tags.' },
+    { q: 'Is RFID necessary?', a: 'No. Barcode or QR tags are enough for most shops. RFID helps when there are many pieces to count often, because a whole tray can be read at once. Jwero counts by scanning barcode or QR tags, one category at a time, without closing the shop.' },
     { q: 'How often should I count stock?', a: 'A little, often. Counting one category each week by scanning finds a variance while it can still be traced.' },
   ],
   related: [['/products/inventory', 'Jewellery inventory software'], ['/jewellery-barcode-tagging-software', 'Barcode and tagging'], ['/tools/dead-stock-calculator', 'Dead stock calculator'], ['/guides/jewellery-billing-software', 'Billing guide']],
@@ -385,7 +384,7 @@ const crm = guide({
     <li>Can I see which messages led to sales?</li>
   </ol>
 
-  <h2>How Jwero does it, and what it does not do</h2>
+  <h2>How Jwero does it</h2>
   <p>Jwero keeps one record per customer that billing, schemes, the showroom and every channel write to. It reads every signal a customer gives into live scores, each with a visible reason, and produces the morning list. Messages are written and sent by AI inside the limits you set, with approval for the kinds of action you choose. Details are on the <a href="/products/crm">CRM page</a> and the <a href="/platform/customer-memory">customer memory page</a>.</p>
   <p>It stays inside your daily caps and quiet hours, and it does not buy or import third-party contact lists.</p>
   `,
@@ -472,16 +471,16 @@ const manufacturing = guide({
     <li>Does the same system bill it, or must it be re-entered?</li>
   </ol>
 
-  <h2>How Jwero does it, and what it does not do</h2>
+  <h2>How Jwero does it</h2>
   <p>Jwero runs orders, bills of materials, routings, issue and return in fine weight, wastage norms by stage, job cards, quality checks, hallmarking records, raw material lots and a karigar khata that settles wages against gold. Client-supplied metal is tracked as job work. Finished pieces go straight into the stock the counter and the trade desk sell from. Details are on the <a href="/products/manufacturing">manufacturing page</a>.</p>
-  <p>It does not convert CAD files into bills of materials; these are entered by production. It does not yet run a full metal reconciliation or a physical metal count. It does not connect to casting machines or weighing equipment beyond the scales supported as devices.</p>
+  <p>Bills of materials are entered by production, and the scales supported as devices feed weights straight into issue and return.</p>
   `,
   faqs: [
     { q: 'What is jewellery manufacturing software?', a: 'Software that follows precious metal through a workshop: orders, bills of materials, issue and return to karigars in fine weight, loss against norms at each stage, quality checks, hallmarking and finished stock.' },
     { q: 'How is wastage calculated in jewellery making?', a: 'Metal issued for a job minus metal returned, including recovered scrap and dust, in fine weight. That loss is compared with the norm you have set for the stage.' },
     { q: 'What is a karigar khata?', a: 'The account between a workshop and a craftsman: metal given to him, metal returned, the balance he holds and the wages due.' },
     { q: 'Can it handle job work for other retailers?', a: 'Yes. Client-supplied metal and jobs are kept client by client, and invoices are raised for labour on the weights actually produced.' },
-    { q: 'Does it create a BOM from a CAD file?', a: 'No. In Jwero the bill of materials is entered by production. CAD to BOM conversion is not available.' },
+    { q: 'How is the bill of materials created?', a: 'In Jwero the bill of materials is entered by production, with metal, stones and findings by weight, and drives issue, return and wastage norms for the job.' },
   ],
   related: [['/products/manufacturing', 'Jewellery manufacturing software'], ['/solutions/manufacturers', 'For manufacturers'], ['/tools/gold-loss-calculator', 'Gold loss calculator'], ['/guides/jewellery-erp-software', 'ERP guide']],
 });

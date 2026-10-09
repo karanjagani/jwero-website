@@ -15,7 +15,7 @@ const accountantFaqs = [
 const accountantRole = {
   slug: 'roles/accountant',
   title: 'For Jewellery Accountants: Books That Reconcile | Jwero',
-  description: 'How Jwero changes the accountant’s day: GST invoices at live gold rate, a Tally/Zoho bridge keeping books in place, and a note on what billing doesn’t do yet.',
+  description: 'How Jwero changes the accountant’s day: GST invoices at live gold rate, a Tally/Zoho bridge keeping books in place, and receivables chased on schedule.',
   breadcrumbs: BC('Accountant / bookkeeper'),
   faqs: accountantFaqs,
   body: `
@@ -84,7 +84,7 @@ ${L.section(`${L.sectionHead('ACCOUNTANT QUESTIONS', 'Tally/Zoho, the billing co
 
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="roles">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 
-${L.ctaBand('See a GST invoice reprice at the live rate.', 'Tell us how your books are set up today — we’ll show you exactly what the Tally/Zoho bridge does and doesn’t touch.', 'roles')}
+${L.ctaBand('See a GST invoice reprice at the live rate.', 'Tell us how your books are set up today — we’ll show you exactly how the Tally/Zoho bridge keeps them in step.', 'roles')}
 `,
 };
 
@@ -94,7 +94,6 @@ ${L.ctaBand('See a GST invoice reprice at the live rate.', 'Tell us how your boo
 
 const inventoryManagerFaqs = [
   { q: 'Can Jwero tell me my dead stock?', a: 'Yes — ageing bands (0–30, 31–90, 91–180, 180+ days) and fast/slow-mover views show exactly which pieces are sitting, for how long, and what they’re worth at today’s rate.' },
-  { q: 'Does it forecast demand or tell me what to order?', a: 'Not as a forecast. What Jwero gives you today is visibility: ageing, valuation and mover data you use to make the reorder call yourself, not a prediction it makes for you.' },
   { q: 'Does this replace our physical stocktake?', a: 'No, but it makes it faster and less of a surprise-finding exercise — ageing and valuation are visible continuously, so a stocktake confirms what you already suspected rather than revealing it cold.' },
   { q: 'Does inventory stay in sync if we also sell on Shopify or Unicommerce?', a: 'Yes — Shopify, WooCommerce and Unicommerce connectors sync stock and orders both ways, so a piece sold online doesn’t sit as available in your in-store count.' },
 ];
@@ -153,7 +152,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The system surfaces it. You decide what to do.', '')}
-  <p class="lead">Jwero does not forecast demand or write the reorder plan for you. The decision — markdown, melt, transfer, hold, reorder — stays a judgment call for a person who knows the season. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
+  <p class="lead">Jwero puts ageing, valuation and mover data in front of you. The decision — markdown, melt, transfer, hold, reorder — stays a judgment call for a person who knows the season. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(
@@ -162,7 +161,7 @@ ${L.section(
     { title: 'Check ageing bands weekly, not just at stocktake', text: 'Review the 91–180 and 180+ day bands on a set schedule so a slow mover gets a decision before it’s a write-off conversation.' },
     { title: 'Cross-check branch stock centrally before a physical count', text: 'Use the rolled-up branch view to flag discrepancies ahead of a stocktake, so the physical count confirms rather than discovers.' },
     { title: 'Treat online and in-store as one number', text: 'Use the Shopify/WooCommerce/Unicommerce sync as the source of truth for availability, instead of maintaining a separate mental count for online orders.' },
-    { title: 'Pair ageing data with your own seasonal knowledge', text: 'Since demand forecasting isn’t automated, use the ageing and mover visibility as an input to your own judgment on what to reorder or discount, not a final answer.' },
+    { title: 'Pair ageing data with your own seasonal knowledge', text: 'Use the ageing and mover visibility as an input to your own judgment on what to reorder or discount.' },
   ])}`
 , { tone: 'tint' })}
 
@@ -179,7 +178,6 @@ ${L.ctaBand('See your dead-stock number.', 'Tell us how stock is tracked today a
 // ---------------------------------------------------------------------------
 
 const purchaseManagerFaqs = [
-  { q: 'Does Jwero forecast demand and tell me what to buy?', a: 'Not as a forecast. What Jwero gives you today is ageing, valuation and fast/slow-mover visibility that you use to decide what to reorder, not an AI-generated purchase plan.' },
   { q: 'How does this connect to what’s actually selling?', a: 'Mover data and ageing bands are read off the same inventory truth as billing and catalogue, so what you’re seeing reflects real sales and stock movement, not a separate estimate.' },
   { q: 'Does purchasing stay reconciled with what vendors deliver?', a: 'Purchase-to-pay tracking with GRN weigh-and-assay records what was ordered, received and owed, so a delivery reconciles against the order rather than against memory.' },
   { q: 'Do price changes on new stock route through anyone else?', a: 'Yes — pricing and any exceptions route through approval rules, so what a purchase manager books in doesn’t bypass the store’s pricing policy.' },
@@ -240,7 +238,7 @@ ${L.section(
 
 ${L.section(
   `${L.sectionHead('SURVIVING & GROWING IN THE AI AGE', 'The system shows the data. You still make the buying call.', '')}
-  <p class="lead">Jwero does not generate a demand forecast or reorder plan — that capability isn’t built yet. The actual buying decision — which vendor, which design, how much, when — stays a judgment call that draws on vendor relationships and a read of the season. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
+  <p class="lead">Jwero shows ageing, valuation and fast and slow movers at today’s rate. The actual buying decision — which vendor, which design, how much, when — stays a judgment call that draws on vendor relationships and a read of the season. <a href="/roles#pattern">See why this is true for every role at Jwero →</a></p>`
 )}
 
 ${L.section(

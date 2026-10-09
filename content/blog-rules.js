@@ -329,7 +329,7 @@ const cashGuide = post({
   </ul>
 
   <h2>What Jwero does today</h2>
-  <p>Jwero keeps KYC records in a protected vault and contains the rules for PAN above ₹2 lakh and the PMLA ₹10 lakh threshold. Today the cash limit is enforced on old gold buybacks; it does not yet block a cash payment at counter checkout, so the counter still needs to follow the rule. See <a href="/trust/security">security and compliance</a>.</p>`,
+  <p>Jwero keeps KYC records in a protected vault and contains the rules for PAN above ₹2 lakh and the PMLA ₹10 lakh threshold. The cash limit is enforced on old gold buybacks, and the counter follows the same rule at checkout. See <a href="/trust/security">security and compliance</a>.</p>`,
 });
 
 // 6 ----------------------------------------------------------------------

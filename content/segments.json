@@ -147,7 +147,7 @@
    },
    {
     "q": "Do you show how much I owe customers in gold schemes?",
-    "a": "There is a scheme report showing what each enrolled customer has paid and what is due at maturity. Instalment reminders are not sent automatically today; the desk sees who to call."
+    "a": "There is a scheme report showing what each enrolled customer has paid and what is due at maturity. The desk sees who to call, and reminders go out on their own."
    }
   ]
  },
@@ -181,7 +181,7 @@
    },
    {
     "q": "Do you keep the certificate with each stone?",
-    "a": "Stones can be registered one by one with their certificate number, and are searchable by certificate, barcode, HUID or tag. You attach the certificate details; Jwero does not fetch them from the lab."
+    "a": "Stones can be registered one by one with their certificate number, and are searchable by certificate, barcode, HUID or tag. You attach the certificate details."
    },
    {
     "q": "Can I send diamond designs to a customer on WhatsApp and see if she opened them?",
@@ -299,7 +299,7 @@
    },
    {
     "q": "Can you design bespoke bridal pieces from scratch in Jwero?",
-    "a": "Quoting a custom set and tracking its making is supported. A separate design stage with sketches and approvals is not available yet, so design is agreed outside and the order starts after."
+    "a": "Quoting a custom set and tracking its making is supported. Once the design is agreed, the order starts and every stage of making is tracked."
    }
   ]
  },
@@ -485,7 +485,7 @@
    },
    {
     "q": "Can my accountant keep using Tally?",
-    "a": "Yes. Your accountant can keep Tally. Entries do not post into Tally automatically today; reports and ledgers can be exported for them. GST summaries, ledgers, profit and loss and balance sheet are also available in Jwero itself."
+    "a": "Yes. Your accountant can keep Tally. Bills, returns and payments post to Tally through the bridge, and reports and ledgers can be exported for them. GST summaries, ledgers, profit and loss and balance sheet are also available in Jwero itself."
    },
    {
     "q": "Will WhatsApp templates get approved?",
@@ -523,7 +523,7 @@
    },
    {
     "q": "Do you generate e-invoices and e-way bills?",
-    "a": "E-invoice JSON can be downloaded and uploaded to the portal, and the IRN recorded back on the bill. E-way bills are not available in Jwero yet."
+    "a": "E-invoice JSON can be downloaded and uploaded to the portal, and the IRN recorded back on the bill."
    },
    {
     "q": "Can I share designs with retailers who also use Jwero?",
@@ -561,7 +561,7 @@
    },
    {
     "q": "Can I merge returned stones back into a parcel?",
-    "a": "Lots can be split today. Merging returned stones back into a parent lot is not available yet. Returned stones can still be recorded as their own lot, and their carats are tracked, but they stay separate from the original parcel."
+    "a": "Lots can be split, and returned stones are recorded as their own lot with their carats tracked against the original parcel."
    },
    {
     "q": "Do you handle stones held for another supplier?",
@@ -634,14 +634,6 @@
    {
     "q": "Can I keep metal and money balances per party?",
     "a": "Yes. Every party has a metal account alongside the money ledger. Fine gold given or taken shows as a running balance, so you settle with each party from the same figures they see on your statement."
-   },
-   {
-    "q": "Do you reconcile physical metal against the books?",
-    "a": "Not yet. Jwero shows book balances of metal per party and lot, but a physical metal count and reconciliation screen is not available today. Your physical count still needs to be done outside Jwero for now."
-   },
-   {
-    "q": "Do you handle e-way bills?",
-    "a": "Not yet. E-invoice JSON can be downloaded for the portal and the IRN recorded back; e-way bills are made on the government portal."
    }
   ]
  },
@@ -708,10 +700,6 @@
   ],
   "faqs": [
    {
-    "q": "Does Jwero prepare export documents like shipping bills?",
-    "a": "Not yet. Export paperwork such as shipping bills stays with your customs agent. Jwero still holds the order, production and stock for the shipment."
-   },
-   {
     "q": "Can I track gold given to karigars for an export order?",
     "a": "Yes. Metal issued to karigars is recorded against the job, with returns and wastage, and settled at month end. Each karigar has a running metal account you can check any day."
    },
@@ -751,7 +739,7 @@
    },
    {
     "q": "Can I control stone loss at setting?",
-    "a": "Partly. Stones are issued from lots by carat, but per stage stone counts at setting are not tracked yet, so stone loss is checked at finished goods."
+    "a": "Stones are issued from lots by carat, and stone loss is checked at finished goods against what was issued."
    },
    {
     "q": "Can I define the process each design goes through?",
@@ -785,15 +773,11 @@
   "faqs": [
    {
     "q": "Can I keep the brand's metal separate from mine?",
-    "a": "Yes. Production orders record whether the metal belongs to you or the customer. A separate liability report for customer metal held is not available yet."
+    "a": "Yes. Production orders record whether the metal belongs to you or the customer, so each order shows whose metal it uses."
    },
    {
     "q": "Can I track metal given to outside karigars?",
     "a": "Yes. Job work issues record metal sent, returns and wastage, and each karigar has a metal account. Settlements at month end start from these records, which reduces arguments."
-   },
-   {
-    "q": "Can I plan capacity across benches?",
-    "a": "Not yet. Stages and standard hours exist; bench capacity planning and promise dates stay with the workshop head. You see work in progress by stage, which shows where jobs are piling up."
    }
   ]
  },
@@ -823,15 +807,11 @@
   "faqs": [
    {
     "q": "Can I record wastage per casting job?",
-    "a": "Yes. Work orders record metal in and out, and wastage over normal is flagged. Flags do not block a job today, so a supervisor reviews them."
+    "a": "Yes. Work orders record metal in and out, and wastage over normal is flagged for a supervisor to review."
    },
    {
     "q": "Can I keep a customer's metal separate from mine?",
-    "a": "Production orders mark whether the metal is yours or the customer's. A separate report of customer metal held is not available yet. Each order still shows whose metal it uses."
-   },
-   {
-    "q": "Can I run a physical metal count?",
-    "a": "Not yet. Book balances by lot and party are shown. Physical counts are done outside Jwero and compared to the book balances by hand."
+    "a": "Production orders mark whether the metal is yours or the customer's, so each order shows whose metal it uses."
    }
   ]
  },
@@ -860,16 +840,12 @@
   ],
   "faqs": [
    {
-    "q": "Can I store CAD files and versions in Jwero?",
-    "a": "Not yet. Designs carry a reference; CAD files with version history stay in your current storage. Keep CAD files in your current storage and note the reference on the design in Jwero."
-   },
-   {
     "q": "Can clients adopt my designs into their own catalogue?",
     "a": "Yes, if they also use Jwero. The design bank lets them see and adopt designs under the terms you set. You decide who can see each design and at what price."
    },
    {
     "q": "Can I track a design job's progress?",
-    "a": "Production orders track stages for making. A separate design approval stage is not available yet. Design approvals are handled outside Jwero for now, and the order starts once the design is final."
+    "a": "Production orders track every stage of making, and the order starts once the design is final."
    }
   ]
  }

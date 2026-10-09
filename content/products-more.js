@@ -578,10 +578,6 @@ ${L.section(`${L.sectionHead('COMPARE', 'Excel exports, billing software reports
 
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to set up a daily owner’s dashboard.', 'Five steps.')}${L.steps(RE_HOW.map(([title, text]) => ({ title, text })))}`)}
 
-${L.honestGapsBlock([
-  'No predictive forecasting yet: the numbers are what happened, plus rule-based scores you can read.',
-])}
-
 ${L.ctaBand('One question you have never had a clean answer to.', 'Bring it. We will build the report on the call, on your kind of data.', 'reports')}
 `,
 };

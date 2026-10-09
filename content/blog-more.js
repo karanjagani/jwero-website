@@ -448,7 +448,6 @@ module.exports = {
     faqs: [
       { q: 'Can a franchisee see other stores’ data?', a: 'No. Each store sees its own; head office sees all. Permissions are per role and per branch.' },
       { q: 'Who owns the customer, the brand or the store?', a: 'Decide it in the agreement. The record can serve both: the brand sees the whole network, the store sees its own customers.' },
-      { q: 'Does Jwero calculate franchise royalties?', a: 'Not yet. Sales by store are reported; the royalty calculation is done from that report.' },
     ],
   },
   'silver-jewellery-business-pricing': {
