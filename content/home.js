@@ -27,8 +27,6 @@ ${L.homeHero({
   rail: false,
 })}
 
-<section class="section rail-section" id="journey"><div class="container"><div class="panel rail-panel"><div class="panel-glow" aria-hidden="true"></div><h2>From the first enquiry to the closed books.</h2><p>Seven stages, one record. Tap a stage to see what is in it and what the AI does there.</p>${L.heroRail()}</div></div></section>
-
 <section class="pz-logos">${L.customerLogos()}</section>
 
 ${require('./positioning').quotes(3)}
@@ -57,6 +55,8 @@ ${L.section(
   `${L.sectionHead('FROM MANY LOGINS TO ONE RECORD', 'What changes across the whole jewellery business.', 'Not only how you sell. The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}
   <div data-cmp-tabs>${L.compareRows(L.DEPARTMENTS)}</div>`
 )}
+
+<section class="section rail-section" id="journey"><div class="container"><div class="panel rail-panel"><h2>From the first enquiry to the closed books.</h2><p>Seven stages, one record. Tap a stage to see what is in it and what the AI does there.</p>${L.heroRail()}</div></div></section>
 
 ${L.section(
   `<span id="one-record"></span>${L.sectionHead('THE PRODUCT', 'One dashboard. Every department on it.', 'A sale at the counter updates the stock, the books, her loyalty points and the next follow-up at the same moment, because they are all the same record. This is a real recording, not a mock-up.')}

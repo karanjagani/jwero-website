@@ -5218,7 +5218,7 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 @media (max-width: 560px) { .caps { grid-template-columns: 1fr; } .modes-pick button { font-size: .875rem; padding: 11px 10px; } }
 
 /* Home: the seven-stage journey, in its own panel under the hero */
-.rail-section { padding-top: 0; }
+.rail-section { padding-bottom: 0; }
 .rail-panel { position: relative; overflow: hidden; padding: 40px 44px 52px; text-align: left; }
 .rail-panel h2 { color: #fff; max-width: 16em; margin: 0 0 8px; font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.4rem); }
 .rail-panel > p { margin: 0; color: rgba(255, 255, 255, .82); max-width: 56ch; }
