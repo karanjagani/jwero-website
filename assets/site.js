@@ -248,12 +248,14 @@ function jwFromInr(n) {
     function hideBubble() {
       try { var r = shadow(); if (r && r.querySelector && !r.querySelector('style[data-site]')) { var st = document.createElement('style'); st.setAttribute('data-site', ''); st.textContent = '.jw-launcher{display:none !important}'; r.appendChild(st); } } catch (e) {}
     }
-    whenWidget(function (j) {
-      if (!j) return;
+    // The widget's API appears before its panel is mounted, so wait for the panel's root too.
+    (function waitRoot(t0) {
+      var r = shadow();
+      if (!r || !r.querySelector) { if (Date.now() - t0 < 30000) window.setTimeout(function () { waitRoot(t0); }, 200); return; }
       hideBubble();
       // The widget redraws its own tree when it opens or closes, so keep the rule in place.
-      try { var r = shadow(); if (r && window.MutationObserver) new MutationObserver(hideBubble).observe(r, { childList: true }); } catch (e) {}
-    }, 15000);
+      try { if (window.MutationObserver) new MutationObserver(hideBubble).observe(r, { childList: true }); } catch (e) {}
+    })(Date.now());
     function prefill() {
       if (!state.msg) return;
       window.setTimeout(function () {
