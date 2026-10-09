@@ -180,6 +180,19 @@ GEM.diamondretail = {
     ['Sat 8pm', 'The shop closes the day', 4, 'Cash tallied · stock, supplier account and books updated together', [[9, 'Cash reconciliation due']]],
   ],
 };
+// Coloured stones: the same journey as a diamond showroom, told about an emerald.
+GEM.gemstone = Object.assign({}, GEM.diamondretail, {
+  centre: 'Every stone’s record', who: 'the stone',
+  modules: GEM.diamondretail.modules.map((m) => m[1] === 'Stone record' ? [m[0], m[1], 'the origin, treatment and certificate', m[3], m[4], m[5], m[6]] : m[1] === 'Instagram' ? [m[0], m[1], 'the stone’s origin and certificate', m[3], m[4], m[5], m[6]] : m),
+  week: [
+    ['Mon', 'Asks “is this emerald natural?” on Instagram', 0, 'Asked about a 2 ct emerald · origin and certificate in the reply', [[2, 'DM received']]],
+    ['Tue', 'Compares three stones on a link', 2, 'Compared three · lingered on the Zambian', [[1, 'Catalogue viewed'], [0, 'Product viewed']]],
+    ['Thu', 'Books a video call to see the colour', 3, 'Video appointment booked', [[3, 'Appointment booked']]],
+    ['Sat', 'Visits and sees it in daylight', 4, 'Shown one stone · quote given at the counter', [[3, 'Piece tried on'], [3, 'Quote given']]],
+    ['Sat', 'Buys; the stone was on supplier memo', 5, 'Sold · the supplier’s settlement is raised', [[3, 'Invoice created'], [3, 'Payment received']]],
+    ['Sat 8pm', 'The shop closes the day', 4, 'Cash tallied · stock, supplier account and books updated together', [[9, 'Cash reconciliation due']]],
+  ],
+});
 GEM.silver = {
   centre: 'Kavita’s record', who: 'Kavita',
   tools: ['Bill pad', 'Calculator', 'Category count sheet', 'WhatsApp forwards'],
@@ -260,14 +273,30 @@ GEM.bullion = {
 };
 // Which story and which piece each solution page shows.
 const GEM_PAGE = {
-  'solutions/single-store': ['single', 'gold'], 'solutions/gold-retail': ['single', 'gold'], 'solutions/silver-retail': ['silver', 'silver'],
-  'solutions/diamond-retail': ['diamondretail', 'diamond'], 'solutions/gemstone-retail': ['diamondretail', 'diamond'], 'solutions/lab-grown-diamond': ['d2c', 'diamond'],
-  'solutions/luxury-boutique': ['luxury', 'platinum'], 'solutions/bridal': ['bridal', 'gold'],
-  'solutions/multi-store-chains': ['chain', 'gold'], 'solutions/franchise-networks': ['franchise', 'gold'],
-  'solutions/manufacturers': ['maker', 'gold'], 'solutions/oem-manufacturers': ['maker', 'gold'], 'solutions/casting-units': ['maker', 'gold'], 'solutions/cad-services': ['maker', 'gold'], 'solutions/export-houses': ['maker', 'gold'],
-  'solutions/b2b-jewellery': ['b2b', 'gold'], 'solutions/gold-wholesale': ['b2b', 'gold'], 'solutions/bullion-gold-traders': ['bullion', 'gold'],
-  'solutions/diamond-wholesale': ['trader', 'diamond'], 'solutions/diamond-traders': ['trader', 'diamond'],
-  'solutions/d2c-brands': ['d2c', 'gold'], 'solutions/jewellery-brands': ['d2c', 'gold'], 'solutions/startups': ['d2c', 'gold'],
+  // [story, piece, label in the middle of the piece, colour of the set stones]
+  'solutions/single-store': ['single', 'gold', 'The shop, on one record'],
+  'solutions/gold-retail': ['single', 'gold', 'The gold showroom, on one record'],
+  'solutions/silver-retail': ['silver', 'silver'],
+  'solutions/diamond-retail': ['diamondretail', 'diamond'],
+  'solutions/gemstone-retail': ['gemstone', 'emerald'],
+  'solutions/lab-grown-diamond': ['d2c', 'diamond', 'A lab-grown buyer’s record'],
+  'solutions/luxury-boutique': ['luxury', 'platinum'],
+  'solutions/bridal': ['bridal', 'gold', '', 'ruby'],
+  'solutions/multi-store-chains': ['chain', 'gold'],
+  'solutions/franchise-networks': ['franchise', 'gold'],
+  'solutions/manufacturers': ['maker', 'gold'],
+  'solutions/oem-manufacturers': ['maker', 'gold', 'A brand’s order, on one record'],
+  'solutions/casting-units': ['maker', 'gold', 'A casting job’s record'],
+  'solutions/cad-services': ['maker', 'rose', 'A design job’s record'],
+  'solutions/export-houses': ['maker', 'gold', 'An export order’s record'],
+  'solutions/b2b-jewellery': ['b2b', 'gold'],
+  'solutions/gold-wholesale': ['b2b', 'gold', 'A retailer’s account, in gold'],
+  'solutions/bullion-gold-traders': ['bullion', 'gold'],
+  'solutions/diamond-wholesale': ['trader', 'diamond', 'A buyer’s parcel record'],
+  'solutions/diamond-traders': ['trader', 'diamond'],
+  'solutions/d2c-brands': ['d2c', 'rose'],
+  'solutions/jewellery-brands': ['d2c', 'rose', 'One brand, one customer record'],
+  'solutions/startups': ['d2c', 'gold', 'Your first customers, on one record'],
 };
 // One whole day per kind of business, for "Run a full day": many small events
 // across every department, to show how much runs without anyone carrying it.
@@ -354,6 +383,7 @@ const DAYS = {
   ],
 };
 Object.keys(DAYS).forEach((k) => { GEM[k].day = DAYS[k]; });
+GEM.gemstone.day = GEM.diamondretail.day;
 GEM.staff = GEM.single;
 
 module.exports = { GEM, FAMILIES, GEM_PAGE };

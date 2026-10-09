@@ -1066,6 +1066,8 @@ function jwFromInr(n) {
   Array.prototype.forEach.call(document.querySelectorAll('[data-gem2]'), function (root) {
     var DATA; try { DATA = JSON.parse(root.querySelector('[data-gem2-json]').textContent); } catch (e) { return; }
     var key = root.getAttribute('data-set') || personaKey(); var set = DATA.sets[key] || DATA.sets.single;
+    var ownCentre = root.getAttribute('data-centre'); if (ownCentre) { var s0 = {}; for (var kk in set) s0[kk] = set[kk]; s0.centre = ownCentre; set = s0; }
+    var STONES = { ruby: [[196, 30, 72], [255, 190, 205]], emerald: [[14, 140, 92], [200, 255, 228]] }, stoneRGB = STONES[root.getAttribute('data-stone')] || [[120, 165, 230], [255, 255, 255]];
     var fixedMetal = root.getAttribute('data-fixed-metal');
     var stage = root.querySelector('.gem2-stage'), cv = stage.querySelector('canvas'), ctx = cv.getContext && cv.getContext('2d');
     var nodesEl = root.querySelector('[data-gem2-nodes]'), shardsEl = root.querySelector('[data-gem2-shards]'), centreEl = root.querySelector('[data-gem2-centre]');
@@ -1131,7 +1133,9 @@ function jwFromInr(n) {
       gold: { shape: 'bangle', base: '#e0aa24', dark: '#6b4705', lite: '#fff6cf', word: 'gold' },
       silver: { shape: 'bangle', base: '#b9c0c8', dark: '#6b737c', lite: '#ffffff', word: 'silver' },
       platinum: { shape: 'bangle', base: '#9fa9b6', dark: '#4f5967', lite: '#f1f5fa', word: 'platinum' },
+      rose: { shape: 'bangle', base: '#dc9c86', dark: '#70392a', lite: '#ffece4', word: 'gold' },
       diamond: { shape: 'diamond', word: 'gold' },
+      emerald: { shape: 'diamond', word: 'gold', ink: '#0c9a63' },
     };
     function hex(h) { h = h.replace('#', ''); if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2]; return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]; }
     function mix(a, b, t) { return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t]; }
@@ -1148,7 +1152,7 @@ function jwFromInr(n) {
     var explode = 0, explodeTo = 0, glow = [], pulses = [], ripple = -1, ox = 0, oy = 0, S = 1, nodePos = [];
     var DIRS = [[-1, -.62], [1, -.62], [-1, .7], [1, .7]];
     for (var g0 = 0; g0 < N; g0++) glow.push(0);
-    function theme() { var cs = window.getComputedStyle(root); ink = cs.getPropertyValue('--brand').trim() || ink; faint = cs.getPropertyValue('--line-2').trim() || faint; if (/^#[0-9a-f]{3,6}$/i.test(ink)) INK = hex(ink); }
+    function theme() { var cs = window.getComputedStyle(root); ink = cs.getPropertyValue('--brand').trim() || ink; faint = cs.getPropertyValue('--line-2').trim() || faint; if (METALS[metal] && METALS[metal].ink) ink = METALS[metal].ink; if (/^#[0-9a-f]{3,6}$/i.test(ink)) INK = hex(ink); }
     function layout() {
       dpr = Math.min(2, window.devicePixelRatio || 1);
       w = stage.clientWidth; h = stage.clientHeight;
@@ -1162,7 +1166,8 @@ function jwFromInr(n) {
         nodePos.push([x, y, a]); b.style.left = x + 'px'; b.style.top = y + 'px';
       });
       shardEls.forEach(function (el, g) { el.style.left = (ox + DIRS[g][0] * S * .78) + 'px'; el.style.top = (oy + DIRS[g][1] * S * .66 + (DIRS[g][1] < 0 ? -S * .1 : S * .1)) + 'px'; });
-      centreEl.style.top = (METALS[metal].shape === 'bangle' && !small ? oy - 15 : oy + S * 1.22) + 'px';
+      // on a phone the label sits in the clear band under the modules, so it never runs behind them
+      centreEl.style.top = (small ? h - 40 : METALS[metal].shape === 'bangle' ? oy - 15 : oy + S * 1.22) + 'px';
     }
     function sectorOf(k) { return [Math.floor(k * 8 / N), Math.floor((k + 1) * 8 / N)]; }
     function wireEnd(k) {
@@ -1194,7 +1199,8 @@ function jwFromInr(n) {
       ctx.globalAlpha = 1; ctx.fillStyle = sh; ctx.beginPath(); ctx.ellipse(ox, oy + S * 1.12, S * .9, S * .14, 0, 0, TAU); ctx.fill();
       if (isMetal && explode < .6) {
         var halo = ctx.createRadialGradient(ox, oy, S * .2, ox, oy, S * 1.7);
-        halo.addColorStop(0, 'rgba(255, 214, 120, ' + (.2 * (1 - explode)) + ')'); halo.addColorStop(.55, 'rgba(246, 167, 35, ' + (.08 * (1 - explode)) + ')'); halo.addColorStop(1, 'rgba(246, 167, 35, 0)');
+        var hc = MT.lrgb.map(function (c) { return c | 0; }).join(', '), hb = MT.rgb.map(function (c) { return c | 0; }).join(', ');
+        halo.addColorStop(0, 'rgba(' + hc + ', ' + (.2 * (1 - explode)) + ')'); halo.addColorStop(.55, 'rgba(' + hb + ', ' + (.08 * (1 - explode)) + ')'); halo.addColorStop(1, 'rgba(' + hb + ', 0)');
         ctx.globalAlpha = 1; ctx.fillStyle = halo; ctx.beginPath(); ctx.arc(ox, oy, S * 1.7, 0, TAU); ctx.fill();
       }
       var list = [], stars = [];
@@ -1237,7 +1243,7 @@ function jwFromInr(n) {
           if (F2.stone && explode < .5) {
             // set stones: cool, bright, each catching the light at its own moment
             var tw = Math.sin(t * 2.2 + F2.stone * 2.399) * .5 + .5; tw = tw * tw * tw * tw;
-            col = mix([120, 165, 230], [255, 255, 255], Math.min(1, (F2.sc ? .55 : .2) + it.light * .35 + tw * .7));
+            col = mix(stoneRGB[0], stoneRGB[1], Math.min(1, (F2.sc ? .55 : .2) + it.light * .35 + tw * .7));
             if (F2.sc && tw > .86) stars.push([it, tw, F2.stone]);
           }
           if (it.shine) col = mix(col, [255, 255, 255], .85);

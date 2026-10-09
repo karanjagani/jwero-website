@@ -380,9 +380,9 @@ function fitCheck(items, wa, modules, names) {
 function playbookTop(pb, names, slug) {
   const { GEM_PAGE } = require('./content/gem');
   const g = GEM_PAGE[slug];
-  const piece = g ? (g[1] === 'diamond' ? 'stone' : 'bangle') : '';
+  const piece = g ? (g[1] === 'diamond' || g[1] === 'emerald' ? 'stone' : 'bangle') : '';
   return `${g ? section(`<div class="gem-head"><h2>A week in your business, on one ${piece}.</h2><p>Play the week, run a full day, or break it into the tools it lives in today.</p></div>
-  ${gemStage2({ set: g[0], metal: g[1] })}`, { tone: 'tint' }) : ''}
+  ${gemStage2({ set: g[0], metal: g[1], centre: g[2], stone: g[3] })}`, { tone: 'tint' }) : ''}
 ${section(`${sectionHead('WHERE JEWELLERS LIKE YOU START', 'The six parts of Jwero you’d switch on first.', 'Everything else is inside the same workspace when you want it. Nothing here needs a separate login.')}
   ${moduleMap(pb.modules, names)}${pb.note ? `<p class="proof-caption">${pb.note}</p>` : ''}`, { tone: 'tint' })}`;
 }
@@ -1271,7 +1271,7 @@ function heroRail() {
   </div>
 </div>`;
 }
-function homeHero({ kicker, h1, sub, rail }) {
+function homeHero({ kicker, h1, sub, rail, gem }) {
   return `
 <section class="hero hero-panel hero-home">
   <div class="panel">
@@ -1287,7 +1287,7 @@ function homeHero({ kicker, h1, sub, rail }) {
         </div>
       </div>
       <div class="hero-home-piece">
-        ${gemStage2({ hero: true })}
+        ${gemStage2(Object.assign({ hero: true }, gem || {}))}
       </div>
     </div>
   </div>
@@ -1307,10 +1307,10 @@ function gemStage2(opts = {}) {
   const { GEM, FAMILIES } = require('./content/gem');
   const icons = {};
   Object.values(GEM).forEach((g) => g.modules.forEach((m) => { icons[m[0]] = icon(m[0]); }));
-  const d = GEM[opts.set] || GEM.single;
+  const d = Object.assign({}, GEM[opts.set] || GEM.single, opts.centre ? { centre: opts.centre } : {});
   const json = JSON.stringify({ sets: GEM, icons, families: FAMILIES }).replace(/</g, '\\u003c');
   return `
-<div class="gem2${opts.set ? ' gem2-page' : ''}${opts.hero ? ' gem2-hero' : ''}" data-gem2 data-metal="${opts.metal || 'gold'}"${opts.set ? ` data-set="${opts.set}"` : ''}${opts.set || opts.hero ? ` data-fixed-metal="${opts.metal || 'gold'}"` : ''}${opts.hero ? ' data-loop' : ''}>
+<div class="gem2${opts.set && !opts.hero ? ' gem2-page' : ''}${opts.hero ? ' gem2-hero' : ''}" data-gem2 data-metal="${opts.metal || 'gold'}"${opts.set ? ` data-set="${opts.set}"` : ''}${opts.set || opts.hero ? ` data-fixed-metal="${opts.metal || 'gold'}"` : ''}${opts.centre ? ` data-centre="${esc(opts.centre)}"` : ''}${opts.stone ? ` data-stone="${esc(opts.stone)}"` : ''}${opts.hero ? ' data-loop' : ''}>
   <script type="application/json" data-gem2-json>${json}</script>
   <div class="gem2-top">
     <div class="gem2-switch" role="group" aria-label="Where the record lives">
