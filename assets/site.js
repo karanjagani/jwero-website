@@ -1088,7 +1088,7 @@ function jwFromInr(n) {
         var nx = Math.cos(bm) * Math.cos(am) / TR, ny = Math.cos(bm) * Math.sin(am) / TR, nz = Math.sin(bm) / TZ, len = Math.sqrt(nx * nx + ny * ny + nz * nz);
         // the stretch of band nearest each module: screen angle runs clockwise from the top
         var scr = ((90 - (u + .5) / M * 360) % 360 + 360) % 360;
-        facet(SHAPES.bangle, [P(u, v), P(u + 1, v), P(u + 1, v + 1), P(u, v + 1)], { n: [nx / len, ny / len, nz / len], grp: QUAD[Math.floor(u / (M / 4))], mod: Math.min(N - 1, Math.floor(scr / (360 / N))), kind: 1, ang: (u + .5) / M, stone: v >= 6 && v <= 8 && u % 4 !== 3 ? Math.floor(u / 4) + 1 : 0, sc: v === 7 && u % 4 === 1 });
+        facet(SHAPES.bangle, [P(u, v), P(u + 1, v), P(u + 1, v + 1), P(u, v + 1)], { n: [nx / len, ny / len, nz / len], grp: QUAD[Math.floor(u / (M / 4))], mod: Math.min(N - 1, Math.floor(scr / (360 / N))), kind: 1, ang: (u + .5) / M, stone: (v <= 1 || v >= m - 2) && u % 4 !== 3 ? Math.floor(u / 4) + 1 : 0, sc: v === 0 && u % 4 === 1 });
       }
     })();
     var METALS = {
