@@ -1362,11 +1362,9 @@ function homeHero({ kicker, h1, sub, rail }) {
           <a class="hero-door" href="${TRIAL_URL}home-hero" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b><em>Every module, on one plan.</em></a>
           <a class="hero-door is-managed" href="#" data-wa="handle"><span>Jwero runs it</span><b>Let Jwero run it</b><em>Your companion to get the work done.</em></a>
         </div>
-        <p class="cta-note"><a href="/pricing#tiers">Compare all three ways</a></p>
       </div>
       <div class="hero-home-piece">
         ${gemStage2({ hero: true })}
-        <a class="hero-piece-link" href="#one-record">This bangle is your business on one record. See the product ↓</a>
       </div>
     </div>
   </div>
@@ -1672,7 +1670,7 @@ function customerLogos() {
 
 module.exports = {
   esc, icon, autoIcon, sim, controlSplit, mockMemo, LINK_ICONS, PERSONAS, personaSlot, personaSwitch, systemSplit, gemStage, heroSchematic, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
-  mark, homeHero, STACK, STACK_COST, trustStrip, proofGrid, trustBadges, seal, SECURITY_CONTROLS, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
+  mark, homeHero, heroRail, STACK, STACK_COST, trustStrip, proofGrid, trustBadges, seal, SECURITY_CONTROLS, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,
 };

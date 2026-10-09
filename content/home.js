@@ -23,9 +23,11 @@ const home = {
 ${L.homeHero({
   kicker: 'You focus on jewellery. We handle the chaos.',
   h1: 'Jewellery software that runs the whole business: customers, counter, stock, team and books.',
-  sub: '',
-  rail: true,
+  sub: 'One system, so nothing is typed twice and nothing needs connecting, with AI that does the follow-up on its own.',
+  rail: false,
 })}
+
+<section class="section rail-section" id="journey"><div class="container"><div class="panel rail-panel"><div class="panel-glow" aria-hidden="true"></div><h2>From the first enquiry to the closed books.</h2><p>Seven stages, one record. Tap a stage to see what is in it and what the AI does there.</p>${L.heroRail()}</div></div></section>
 
 <section class="pz-logos">${L.customerLogos()}</section>
 
