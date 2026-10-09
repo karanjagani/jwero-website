@@ -13,6 +13,8 @@ try { require('./scripts/thumbs'); } catch (e) { console.warn('thumbs skipped:',
 const DIST = path.join(ROOT, 'dist');
 // Tracking IDs. Leave empty until the accounts exist; env JW_GTM / JW_GA4 / JW_META override.
 const ANALYTICS = { gtm: '', ga4: '', meta: '' };
+// Jwero's own visitor tracking (Optimize), on every page. Added 2026-10-09.
+const JWERO_TRACK = `<script async src="https://os.jwero.ai/t.js?site_key=-2seYVXa24kjyfo2k1km0arYH35kqrHj&endpoint_origin=https%3A%2F%2Fos.jwero.ai" data-site-key="-2seYVXa24kjyfo2k1km0arYH35kqrHj" data-endpoint-origin="https://os.jwero.ai"></script>`;
 const SITE = 'https://jwero.ai';
 const BRAND = 'Jwero';
 const TAGLINE = 'You focus on jewellery. We handle the chaos';
@@ -388,7 +390,7 @@ function compactTiers(html) {
   <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=product-price">Start for ₹3,600</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
 </div></div></section>`);
 }
-// Price phrases rewritten wherever page text is published (pages and llms-full.txt).
+// Price phrases rewritten wherever page text is published.
 const PRICE_OUT = [
       [/Price: the platform from ₹3,600 for the first month, or Jwero runs it for you with every tool included/g, 'Run it yourself after a free trial, or Jwero runs it for you with every tool included'],
       [/on the platform from ₹3,600 for the first month, or/g, 'on the platform, starting with a free trial, or'],
@@ -1740,6 +1742,7 @@ function layout(page) {
   // Tracking: set the IDs in ANALYTICS (or env JW_GTM / JW_GA4 / JW_META) and the snippets render on every page.
   const A = { gtm: process.env.JW_GTM || ANALYTICS.gtm, ga4: process.env.JW_GA4 || ANALYTICS.ga4, meta: process.env.JW_META || ANALYTICS.meta };
   const analyticsHead = [
+    JWERO_TRACK,
     A.gtm ? `<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${A.gtm}');</script>` : '',
     A.ga4 && !A.gtm ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${A.ga4}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${A.ga4}');</script>` : '',
     A.meta ? `<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${A.meta}');fbq('track','PageView');</script>` : '',
@@ -1916,12 +1919,6 @@ ${require('./lib').section(`
   <div class="jb-blogline" style="margin-top:22px"><p><b>Popular:</b> <a href="/pricing">Pricing</a> · <a href="/book-demo">Book a demo</a> · <a href="/jewellery-business-as-a-service">Let Jwero run it</a> · <a href="/count-your-team">Count your team</a> · <a href="/tools">Free calculators</a> · <a href="/compare">Compare</a> · <a href="/guides">Buyer’s guides</a> · <a href="/trust/security">Security</a></p></div>`)}`,
   }), { slug: 'search' }));
 
-  // llms-full.txt — every page's text, for answer engines that read whole sites.
-  const strip = (h) => h.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ').replace(/<svg[\s\S]*?<\/svg>/g, ' ').replace(/<(h[1-3])[^>]*>/g, '\n\n## ').replace(/<\/(p|li|h[1-6]|div|tr)>/g, '\n').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/[ \t]+/g, ' ').replace(/\n\s*\n\s*\n+/g, '\n\n').trim();
-  fs.writeFileSync(path.join(DIST, 'llms-full.txt'), dePrice(
-    `# Jwero — ${TAGLINE}\n\n${ORG_DESCRIPTION}\n\n` +
-    pages.filter((p) => !p.noindex && !/^tools(\/|$)/.test(p.slug)).map((p) => `---\n\n# ${p.title.replace(/ \| Jwero$/, '')}\nURL: ${SITE}/${p.slug === 'index' ? '' : p.slug}\n\n${p.description}\n\n${strip(p.body)}\n${(p.faqs || []).map((f) => `\nQ: ${f.q.replace(/<[^>]+>/g, '')}\nA: ${f.a.replace(/<[^>]+>/g, '')}`).join('\n')}`).join('\n\n') + '\n'));
-
   // robots.txt (2026-10-08): search engines and AI answer engines may read and
   // cite; crawlers that collect text to train models may not. Content-Signal
   // lines state the same for crawlers that honour them. /.well-known/bait is a
@@ -1977,265 +1974,9 @@ It serves single stores, multi-store chains, luxury/boutique/bridal retailers, d
 platinum/lab-grown/gemstone retailers, wholesalers, manufacturers (gold, diamond, casting, CAD, OEM,
 export), and jewellery brands, D2C startups and franchise networks alike.
 
-## WhatsApp, payments and voice (facts)
-- Jwero connects a jeweller's existing number to the official WhatsApp Business Platform.
-- Customers browse catalogues priced at today's gold rate, add to cart and pay with WhatsApp's native payment experience inside the chat; the order, invoice and stock update on the customer's record.
-- WhatsApp Flows forms (visits, video calls, scheme enrolment), broadcasts with approved templates and consent, and a shared inbox for WhatsApp, Instagram and Facebook with AI drafts under approval.
-- Voice AI agents handle up to 8 calls at once, inbound and outbound, 24x7, at INR 7 a call, all inclusive (AI, voice and phone line), in Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia; they run bulk calling campaigns (scheme reminders, follow-ups, invitations) on the same customer record. Details: ${SITE}/ai-calling-for-jewellers Triggered WhatsApp notifications (order, payment, ready, scheme due) and segment campaigns run from the same system.
-- Cost: part of Jwero One (price shown in the account after a free trial), plus Meta's per-message fees passed through at cost. Details: ${SITE}/products/whatsapp
-
-## Jewellery billing software and POS (facts)
-- Prices every bill from today's rate, purity, net weight, making, stones and 3% GST; tag scanning and search by local product names; estimates that become bills.
-- Old gold exchange vouchers with stone deduction applied as credit; scheme balances redeemed on the bill; HUID check that warns or blocks; manager approval for discounts; returns under each branch's policy.
-- Split payments across cash, card, UPI and credit (card machines are recorded, not driven); receipts on WhatsApp; registers, shifts and cash day-close; keeps billing offline and syncs later. Details: ${SITE}/products/pos
-
-## Jewellery inventory software (facts)
-- Every piece has its own tag and barcode label, gross, net and fine weight, metal and stone breakdown and HUID (duplicates refused); stock valued at today's rate by branch, category and purity.
-- Ageing bands (0-30 to 180+ days), slow-mover views and markdowns; scheduled cycle counts by scanning with discrepancy investigation; hallmarking queue and batches.
-- Every way a piece leaves and returns: branch transfers on challans, vaults, approval memos, consignments with settlement, exhibitions, trials, karigar job work and customers' repairs in custody. Details: ${SITE}/products/inventory
-
-## Jewellery catalogue and PIM (facts)
-- One record per piece: metal, purity, gross and net weight, stones, certificates, HUID, variants and custom fields for one-of-a-kind pieces; photo library and design bank.
-- Prices worked out from today's rate everywhere; AI turns a photo into a listing (type and description) and can generate or edit product images. No virtual try-on, no RFID.
-- Automatic sync to the website, Shopify or WooCommerce, POS, mobile apps, WhatsApp, Google Shopping, Meta catalogues and marketplaces; private shareable catalogues with viewer tracking, quotes and payment. Details: ${SITE}/products/catalog
-- The Meta sync also fills the WhatsApp Business catalogue, priced at today's rate.
-- Bulk import from Excel, Shopify and WooCommerce; APIs and webhooks keep other systems in step.
-
-## Gold scheme software (facts)
-- 11+1 instalment plans and gram-accumulation plans with your own bonus and maturity rules; enrolment with OTP and KYC on the website, mobile apps, WhatsApp or in the showroom.
-- Instalments collected automatically; failed payments followed up by WhatsApp reminder, payment link and AI call; passbook on WhatsApp; OTP-verified closure redeemed into a purchase; old gold into a scheme.
-- Scheme money held as a liability until redemption; INR 4 per instalment collected. Gold Savings Plans are part of this module. Details: ${SITE}/products/gold-schemes
-
-## Jewellery ERP (facts)
-- One system for every department: counter billing at today's rate, piece-level stock with fine weight and HUID, purchase and vendors (orders, goods received with checks, bills, returns, vendor ledgers), custom orders, repairs and karigar job work.
-- Material planning and manufacturing: bills of materials, routings, material planning, work in progress, wastage against norms, finished goods, fine-weight metal ledger and metal loans. Girvi: pledges, interest, renewals, release, auction notices.
-- Accounts: double-entry ledger with GST, GSTR-1, GSTR-3B and HSN reports, TDS, party ledgers; e-invoices are generated in Tally through the bridge. People: attendance, payroll, incentives, Form 16. Many branches and franchises, approvals and an audit trail. Details: ${SITE}/products/erp
-
-## Jewellery manufacturing software (facts)
-- Custom, trade and export orders; bills of materials and routings; material planning from open orders; job cards and work in progress by stage; quality checks; finished goods tagged with HUID.
-- Karigars and outside units: metal issued and received by weight and purity, job work on challans, due-date sweeps, scorecards; wastage norms per stage with capped recovery; an order cannot close while its metal is short.
-- Fine-weight metal ledger with karigar balances and metal loans, reconciled monthly; diamond and stone flows reconciled on the same order. Details: ${SITE}/products/manufacturing
-
-## Jewellery purchase and vendor management (facts)
-- AI-drafted purchase orders from what is selling and ageing, with per-vendor prices; unfixed-rate purchases (buy now, fix the rate later); advance shipping notices; goods received by weight and purity with quality checks and discrepancies.
-- Purchase bills matched to the order and receipt, returns and credit notes, vendor advances and payments; purchases reconciled with GSTR-2B for input credit; metal purchases and metal loans in fine grams; consignment stock taken in from suppliers.
-- A vendor portal where suppliers see their orders, bills and payment status. Details: ${SITE}/products/purchase-vendors
-
-## Multi-store jewellery software (facts)
-- Holding, brands, branches and franchises in one network, with roles and permissions at each level, single sign-on and an audit trail.
-- Central price rules, catalogue and campaigns with branch exceptions through approvals; one stock across branches with transfers on challans, vaults and warehouses.
-- Customers, gold schemes and loyalty follow the customer to any branch: enrol at one branch, pay or redeem at another. One WhatsApp number with chats routed to the right branch; AI calling for every branch.
-- Branch comparison reports (sales, footfall, ageing, staff incentives); offline billing and cash close per branch; consolidated books. Details: ${SITE}/products/multi-store
-
-## Jewellery loyalty programme (facts)
-- Points and tiers with your rules and earning rates by category; redemption can be limited to making charges to protect gold margins.
-- Points for purchases and for social engagement (comments, follows, likes and shares on Instagram, Facebook, YouTube and other channels).
-- Anniversary and birthday rewards sent before the date; referrals traced to the friend's purchase; coupons and gift vouchers with limits and approvals; points expiry with a reminder, and points outstanding as a liability.
-- One balance at the counter, online store and WhatsApp; works alongside gold schemes on the same record. Details: ${SITE}/products/loyalty
-
-## Jewellery marketing automation and journeys (facts)
-- Ready-made customer journeys for jewellers, including welcome, new-lead nurture, birthday, anniversary, family wedding, abandoned cart, browse, scheme instalment and maturity, repair ready, win-back, VIP at risk and loyalty moments.
-- Jwero can create detailed journeys automatically from a goal you describe, across channels and handing customers between journeys; or build on a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; pieces matched to each customer at today's rate; sends on its own, with approval where you require it, quiet hours, frequency limits and a stop switch; live view of each step and sales traced to the journey. Details: ${SITE}/products/journeys
-
-## Customer segmentation for jewellers (facts)
-- 41 ready segments and AI-suggested segments; filters for purchases (category, metal, value, date), schemes, occasions, city, branch, loyalty tier, social engagement, RFM and customer scores such as intent and churn risk.
-- Reachable count and value with consent checked before saving; segments stay live; sent to journeys, WhatsApp campaigns, AI calls, loyalty offers, and ad audiences with ads generated automatically. Details: ${SITE}/products/segmentation
-
-## Jewellery marketing campaigns (facts)
-- Festival calendar with an AI campaign strategist drafting campaigns ahead; WhatsApp, RCS (live), SMS, email and push in one campaign; live segments with consent and frequency limits; A/B testing with the winner sent to the rest.
-- Catalogue cards at today's rate, coupons, gift vouchers and loyalty points; visits, bills and revenue traced by campaign and channel. Ads and social posts are run from their own tools, not from campaigns. Details: ${SITE}/products/campaigns
-
-## Jewellery ads manager (facts)
-- Meta (Instagram, Facebook, Advantage+, lead forms) and Google (Search, Performance Max, Shopping) published directly after approval; Pinterest rolling out.
-- Click-to-WhatsApp ads into the team inbox, answered with prices at today's rate; audiences and ads generated from customer segments; AI image, copy and short-video creatives.
-- Approvals, budget caps, alerts and autopilot within limits; counter and online sales reported back to Meta and Google; return on spend in rupees of bills. Details: ${SITE}/products/ads-manager
-
-## Social media management for jewellers (facts)
-- AI captions, hashtags, images and short video for posts and reels; festival content calendar; one composer publishing directly to Instagram, Facebook, YouTube, Pinterest, LinkedIn, X, Threads and Google Business.
-- One inbox for comments and DMs with AI replies sent automatically; comments turned into DMs automatically; loyalty points for engagement; reach plus chats, visits and sales traced to posts. Details: ${SITE}/products/social-media
-
-## Instagram and Facebook commerce (facts)
-- Instagram DMs, comments, story replies and mentions, and Facebook Messenger in one team inbox; price comments turned into DMs automatically; AI replies from the customer record with pieces at today's rate, with approval where the team wants it.
-- Payment links inside the DM; catalogue synced automatically to Instagram and Facebook shops; chats from click-to-WhatsApp ads in the same inbox; sales traced to posts and ads. Details: ${SITE}/products/instagram-facebook
-
-## Jewellery ecommerce website (facts)
-
-- Page: https://jwero.ai/products/ecommerce (formerly /products/storefront).
-- Jwero's ecommerce website module is a complete online jewellery store: catalogue, cart, wishlist, compare, checkout and online payment.
-- Every product reprices automatically from today's gold rate; the price breakup shows metal, making charges, stones and GST.
-- Stock and catalogue are shared with the Jwero POS, so the website matches the showroom.
-- Customers sign in by OTP over WhatsApp, SMS or email; no password.
-- Try-at-home and showroom appointments are booked from the website onto the customer record.
-- Custom domain included; jewellery-styled themes and page templates.
-- Product pages, blog, landing pages and reviews; products sync automatically to Google Shopping and Meta.
-- Hosting, updates and security handled by Jwero; no third-party plugins.
-- Shopify or WooCommerce stores can stay and be connected instead.
-
-## Digital jewellery catalogues (facts)
-
-- Page: https://jwero.ai/products/digital-catalogues
-- Shareable catalogue links of chosen pieces, sent on WhatsApp with an AI-written caption.
-- Prices at today's gold rate, held for a named customer, hidden, or shown on request.
-- Links can be password protected; B2B buyer links carry their own pricing.
-- The team is notified when a customer opens a link; opens, pieces viewed and time spent go on the customer record.
-- A request becomes a numbered quotation; customers pay an advance or in full on the link.
-
-## Google Shopping, Meta catalogue and Unicommerce (facts)
-
-- Page: https://jwero.ai/products/marketplaces
-- Integrated channels: Google Shopping (via Google Merchant Center), the Meta catalogue (Instagram shop, Facebook shop and WhatsApp catalogue) and Unicommerce.
-- Prices on every channel follow today's gold rate from the Jwero catalogue; no feed tool or plugin.
-- A piece sold at the counter or online is removed from every connected channel.
-- Jwero does not claim direct Amazon or Flipkart connectors.
-
-## Jewellery quotations and estimates (facts)
-
-- Page: https://jwero.ai/products/quotations
-- Numbered quotations priced from the catalogue at today's gold rate with the jeweller's making and wastage rules; a validity window on each.
-- Created from the customer record, a catalogue enquiry or by automation; sending needs a human confirm.
-- Sent as a link and PDF on WhatsApp or email; the customer accepts or declines online; result written to her record.
-- Follow-ups sent automatically when she goes quiet; every revision numbered; accepted quotes convert to a sales order.
-
-## AI chatbot and AI sales agents for jewellers (facts)
-
-- Page: https://jwero.ai/products/ai-sales-agents
-- AI agents answer on WhatsApp, Instagram and web chat with pieces from the catalogue at today's gold rate, chosen from the customer's taste and purchases.
-- Duties: after-hours enquiries, follow-ups, scheme instalment reminders, occasion outreach, AI voice and calls.
-- Chat, voice and phone calls run in the customer's language, including Hindi, English, the major Indian languages, Arabic, Spanish and French.
-- AI voice is built into WhatsApp and web chat; phone calls and IVR run over the jeweller's own telephony provider.
-- Governance: AI runs on its own inside daily caps and quiet hours; approval queues for the actions you choose; kill switch; a log of every action. AI does not set prices or discounts.
-
-## Jewellery billing, accounting and Tally (facts)
-
-- Page: https://jwero.ai/products/billing-finance
-- GST invoices priced at today's gold rate: metal, purity, making charges, stones, CGST/SGST/IGST.
-- Double-entry ledger for sales, returns, payments and expenses; party ledgers; GSTR-1, GSTR-3B, HSN and TDS reports. Filing stays with the CA.
-- Receivables by customer and age; automatic payment reminders on dues; discounts and overrides routed through approvals.
-- Tally bridge: sales, returns, payments and expenses sync to Tally so nothing is entered twice; ledgers map once; e-invoices are generated in Tally from synced entries. A Zoho Books bridge works the same way.
-
-## Email marketing and business email for jewellers (facts)
-
-- Page: https://jwero.ai/products/email
-- Mailboxes on the jeweller's own domain, created self-serve in the app and charged per mailbox; DKIM, SPF and DMARC verified in the app. Google Workspace or Zoho Mail can be connected instead.
-- Email threads sit in the same shared inbox as WhatsApp, Instagram and web chat, on the customer record.
-- Email campaigns: drag-and-drop designer, AI-written subject and copy, personalisation, A/B testing, open and click tracking, sent to segments.
-- Journeys send abandoned cart, browse and occasion emails. Unsubscribes enforced; bounces stop future sends.
-- AI replies automatically, with approval where you choose; receipts, OTPs and reminders go on branded templates.
-
-## Girvi and gold loan software (facts)
-
-- Page: https://jwero.ai/products/girvi
-- Pledge intake with photos, weight, purity, valuation at today's rate, KYC and a printed receipt; LTV limit checked on every loan.
-- Interest schemes (rate, simple or compound, grace), accrued on schedule and collected automatically, with reminders.
-- Part payments of principal, renewals, release with a printed document, default steps with notices and auctions.
-- Every disbursal, interest entry, collection, release and auction posts to the ledger; the loan sits on the customer record.
-
-## HR and payroll for jewellery shops (facts)
-
-- Page: https://jwero.ai/products/hr-payroll
-- Attendance from biometric and face-scanner devices, or phone and kiosk punches with geo-fencing and selfie; leave, shifts, comp-off, regularisation.
-- Payroll with salary structures, overtime, PF, ESI, PT and TDS; payslips sent on WhatsApp; a bank file a person uploads; PF, ESI, PT and Form 16 files for the accountant to file.
-- Sales incentives from real sales or margin on tiered slabs, with clawback; loans and reimbursements in payroll.
-- Recruitment, onboarding, documents, reviews, learning and full-and-final settlement. Staff self-service app in multiple languages; salary visibility by permission.
-- Karigar wages are not in HR; they are settled in the manufacturing module.
-
-## Jewellery video calls and appointments (facts)
-
-- Page: https://jwero.ai/products/meetings
-- Video or voice calls started from any WhatsApp or web-chat conversation; the customer joins from a link with no app.
-- Self-booking against each host's working hours, buffers, minimum notice and daily cap; one calendar with Jwero meetings, showroom and phone appointments, Google Meet and Zoho Bookings.
-- Waiting room with a short form and admit control; signed, time-bound, revocable links tied to the first device.
-- Recording optional, with an in-room indicator and a notice before joining; reminders and no-show follow-ups with a fresh link; outcome on the customer record.
-
-## Website analytics and conversion for jewellers: Optimize (facts)
-
-- Page: https://jwero.ai/products/optimize
-- One pixel on any website (Jwero ecommerce, Shopify, WooCommerce, WordPress, custom) turns on visitor analytics, goals and funnels, heatmaps, session recordings, A/B tests, personalisation, popups and lead forms, web push and AI webchat.
-- Session recordings mask sensitive fields; consent settings and a domain guard are built in.
-- Visitor details and events are sent to Google Analytics and the Meta pixel.
-- Leads from popups and webchat become customer records in the same inbox as WhatsApp; personalisation can use segment, scheme and loyalty membership.
-
-## Jewellery repair software (facts)
-
-- Page: https://jwero.ai/products/repairs-service
-- Repair job cards with a claim tag, condition photos and weight-in; an append-only custody chain of every handoff to karigars, vendors and the counter.
-- Weight-in vs weight-out reconciliation; estimates the customer approves before work starts; promised dates and a kanban board.
-- A re-hallmark flag blocks "ready for delivery" until handled; alerts for ready, overdue and unclaimed jobs on WhatsApp, SMS and email.
-- Warranty and AMC tied to the original invoice and HUID; appraisal certificates as PDF; old-gold exchange in store only.
-
-## Jewellery MIS reports and dashboards (facts)
-
-- Page: https://jwero.ai/products/reports
-- AI drafts a report from a plain question; a builder with sources, filters and charts; reports saved to a library.
-- Dashboards per role, including a mobile owner's dashboard; reports follow branch and role permissions.
-- Built-in reports: sales, stock ageing, dead stock, RFM, scheme collections and maturity, receivables, attendance and payroll, ad spend to sales.
-- Scheduled reports are live; exports to Excel, CSV and PDF. No predictive forecasting yet.
-
-## Jewellery showroom software (facts)
-
-- Page: https://jwero.ai/products/showroom
-- Footfall counted from existing CCTV or NVR cameras (RTSP; Hikvision, Dahua, CP Plus, ONVIF) through an on-site connector: entries, exits and occupancy. Without cameras, footfall comes from check-ins.
-- Cameras count people only; no face recognition or identification of customers. Customer photos at check-in only with consent.
-- Tablet check-in by phone number with customer history; live floor with a 10-minute unattended alert; items shown and tried logged by RFID, barcode, SKU or HUID scan; estimates and send-to-counter.
-- Walkout Rescue drafts follow-ups (WhatsApp, SMS, email, call) that staff send; never sent automatically.
-- Expected visits from website bookings, chat, AI calls, appointments, WhatsApp, campaigns and maturing gold schemes; automatic no-show marking.
-- Bills auto-link to visits; conversion by branch, hour and salesperson; revenue per square foot; rule-based insights; morning and evening brief in the app (not pushed to WhatsApp).
-
-## Jewellery staff training and LMS (facts)
-
-- Page: https://jwero.ai/products/training-lms
-- Courses of ordered lessons (text, images, video links) with quizzes scored securely, pass marks and kept attempts; certificates issued on completion onto the staff profile.
-- Learning paths per role; a scorecard dip suggests the matching course and a pass updates the skill.
-- Staff take courses in the staff app beside attendance, leave and payslips. Part of HR; nothing for karigars.
-
-## AI CCTV footfall analytics for jewellery showrooms (facts)
-
-- Page: https://jwero.ai/ai-cctv-footfall-analytics-jewellery-showrooms
-- AI person detection on existing CCTV/NVR cameras over RTSP (Hikvision, Dahua, CP Plus, ONVIF) through a small on-site connector; counts entries, exits and floor occupancy; zones.
-- Footfall is matched to bills for conversion by hour, day, branch and salesperson; alerts for camera offline, counting gaps and footfall without sales.
-- Counts people, never faces: no identification of customers. Retention, consent signage and a capture switch in privacy settings. Charged per camera; works with the cameras you have.
-
-## More AI in Jwero (facts)
-
-- Shoppers on a Jwero ecommerce website can search by photo and see matching products; signed-in shoppers see pieces picked for them.
-- AI lead finder: searches for companies and people to approach (corporate gifting, retailers, planners), ₹1 a search, added to the CRM.
-- AI segment builder: describe an audience in plain words and AI turns it into a segment.
-- Call transcript analysis: AI reads call transcripts, notes the customer's interest and updates scores.
-- Twelve ready AI agent teams (Revenue, Sales, Seller, Marketing, Growth, CX, Operations, Inventory, Finance, Reporting, HR, Payroll and Settlement), each running on its own inside limits, with approval where you require it.
-- In-app assistant takes spoken or typed instructions, including Hindi and Hinglish; a staff voice assistant wakes on a wake word.
-
-## Enterprise and self-hosting (facts)
-
-- Enterprise runs self-hosted, on the customer's premises or their own cloud; Jwero has no access to the data.
-- One-time licence with no recurring fee to Jwero; support is optional.
-- Every module works self-hosted; a few, such as WhatsApp messaging and AI calling, need internet to reach their channels.
-- AI can run on locally hosted models or on models and providers the customer chooses.
-- The hosted Jwero One plan runs on Microsoft Azure in India with per-business databases.
-
-## Jwero worldwide (facts)
-
-- Jwero is used outside India: local currencies; invoices under India GST, UK VAT, EU VAT, GCC VAT and US sales tax; live metal rates for any market by gram, ounce or tola; Stripe and PayPal alongside Razorpay and Cashfree; AI in the customer's language, including Arabic, Spanish and French.
-- Hosted plan: India by default, or another region on request. Enterprise: self-hosted anywhere.
-- Price: not published in any currency; shown in the account, in local currency, after the free trial.
-- Market pages: /global, /jewellery-software-uae, /jewellery-software-uk, /jewellery-software-usa, /jewellery-software-singapore.
-
-## Jewellery CRM (facts)
-- One record per customer and family: households, phone numbers shared by family members, duplicates merged, purchases at the rate paid, gold scheme balances, occasions, loyalty tiers and points, and every WhatsApp message and AI call.
-- Kinds of score on each customer: intent, conversion, engagement, relationship health, churn risk, opportunity, trust risk, message fatigue, record confidence and next action.
-- Loyalty: points, tiers, redemption, anniversary rewards, referral benefits and points expiry. Consent kept per channel; customer data requests handled. Details: ${SITE}/products/crm
-
-## What Jwero is not (honesty)
-- Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant, who files the returns.
-- Counter POS (registers, shifts, cash day-close, returns, old-gold exchange), statutory payroll, karigar
-  settlement, girvi/gold loans, manufacturing (BOM, routing, wastage norms) and a video counter shipped in 2026.
-- E-invoices are generated in Tally through the bridge.
-
 ## Company
 Jwero is a product of ${LEGAL_ENTITY} (CIN ${LEGAL_CIN}), ${LEGAL_ADDRESS}.
 Contact: care@jwero.ai · WhatsApp +91 91699 59959.
-
-## Full text
-Every page's text in one file: ${SITE}/llms-full.txt
 
 ## All pages
 ${pages.filter((p) => !p.noindex).map((p) => `- ${p.title.replace(/ \| Jwero$/, '')}: ${SITE}/${p.slug === 'index' ? '' : p.slug}`).join('\n')}
