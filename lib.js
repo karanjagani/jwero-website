@@ -1351,7 +1351,6 @@ function homeHero({ kicker, h1, sub, rail }) {
 <section class="hero hero-panel hero-home">
   <div class="panel">
     <div class="panel-glow" aria-hidden="true"></div>
-    <div class="panel-dots" aria-hidden="true"></div>
     <div class="hero-home-grid">
       <div class="hero-home-copy">
         <p class="hero-kicker">${mark('mark-xs')}${kicker}</p>
