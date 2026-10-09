@@ -168,7 +168,9 @@ const marketCard = (key) => { const m = MKT.find((x) => x[0] === key); if (!m) r
 // Every name is in the page once as real text.
 const toolsInto = () => {
   const L = require('../lib');
-  const all = L.STACK.flatMap(([g, ic, items]) => items.map((t) => [t, ic]));
+  // Connectors to outside services are not tools that disappear; they are listed under "Connects to" instead.
+  const seen = new Set();
+  const all = L.STACK.flatMap(([g, ic, items]) => items.map((t) => [t, ic])).filter(([t]) => !/integration/i.test(t) && !seen.has(t) && seen.add(t));
   const tracks = [[], [], [], [], [], []];
   all.forEach((t, i) => tracks[i % 6].push(t));
   const chips = (list, hidden) => list.map(([t, ic]) => `<li${hidden ? ' aria-hidden="true"' : ''}>${icon(ic)}${t}</li>`).join('');
@@ -178,6 +180,11 @@ const toolsInto = () => {
   <div class="tin-stage">
     <div class="tin-rows">${[0, 1, 2].map((r) => `<div class="tin-row">${half(tracks[r * 2], 'l', r)}${half(tracks[r * 2 + 1], 'r', r)}</div>`).join('')}</div>
     <div class="tin-core"><span class="tin-ring" aria-hidden="true"></span><span class="tin-ring tin-ring2" aria-hidden="true"></span>${L.mark('mark-band')}<b>Jwero</b><em>One record</em></div>
+  </div>
+  <ul class="tin-facts"><li><b>One login.</b> For every department.</li><li><b>One bill.</b> In place of a stack of subscriptions.</li><li><b>One team to call.</b> When you need help.</li><li><b>Nothing to connect.</b> Nothing to keep in sync.</li></ul>
+  <div class="tin-two">
+    <div class="tin-in"><p class="tin-k">${icon('check')} Built in</p><p>Customers and CRM, WhatsApp and Instagram inbox, catalogue, website, counter and billing, stock, purchase, workshop, schemes and gold loans, accounts, marketing, ads, HR and reports. All of it is one product, working from one record, so there is nothing to integrate between them.</p></div>
+    <div class="tin-out"><p class="tin-k">${icon('swap')} Connects to what stays outside</p><p>Tally or Zoho Books for your accountant, Meta for WhatsApp, Instagram and Facebook, your payment gateway, your phone line, and Shopify or WooCommerce if you keep that store. We set these up with you.</p><a class="btn-text" href="/platform/integrations">See what Jwero connects to →</a></div>
   </div>
 </div>`;
 };

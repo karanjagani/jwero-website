@@ -385,7 +385,7 @@ function topSections(html) {
 // The three-tier price block as one compact line; the full comparison lives on /pricing.
 function compactTiers(html) {
   return html.replace(/<section class="[^"]*" id="tiers">[\s\S]*?Use it yourself, or let Jwero run it\.[\s\S]*?<\/section>/, () => `<section class="section section-tint" id="tiers"><div class="container"><div class="price-line">
-  <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Use it yourself, or let Jwero run it.</h2><p>One price, ₹18,000 a month, replaces the 10 to 15 tools you pay for today, with the first month at ₹3,600. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included, priced on the work.</p></div>
+  <div><p class="eyebrow">ONE PLAN, EVERY MODULE</p><h2>Use it yourself, or let Jwero run it.</h2><p>One price, ₹18,000 a month, replaces the tools you pay for today, with the first month at ₹3,600. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included, priced on the work.</p></div>
   <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=product-price">Start for ₹3,600</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
 </div></div></section>`);
 }
@@ -393,7 +393,7 @@ function compactTiers(html) {
 const PRICE_OUT = [
       [/Price: the platform from ₹3,600 for the first month, or Jwero runs it for you with every tool included/g, 'Run it yourself after a free trial, or Jwero runs it for you with every tool included'],
       [/on the platform from ₹3,600 for the first month, or/g, 'on the platform, starting with a free trial, or'],
-      [/One price, ₹18,000 a month, replaces the 10 to 15 tools you pay for today, with the first month at ₹3,600\./g, 'One plan with every module replaces the 10 to 15 tools you pay for today. You start with a free trial, and your price is shown in your account when it ends.'],
+      [/One price, ₹18,000 a month, replaces the tools you pay for today, with the first month at ₹3,600\./g, 'One plan with every module replaces the tools you pay for today. You start with a free trial, and your price is shown in your account when it ends.'],
       [/It is part of Jwero One: ₹18,000 a month, every module included, with the first month at ₹3,600\./g, 'It is part of Jwero One, the single plan with every module included. You start with a free trial, and your price is shown in your account when it ends.'],
       [/[Rr]un it yourself for ₹18,000 a month(?: with every module)?, first month ₹3,600\s?(,|\.)/g, (m, e) => (m[0] === 'R' ? 'R' : 'r') + 'un it yourself after a free trial' + e],
       [/The price is the same in every city: ₹18,000 a month, with every module included/g, 'The plan is the same in every city, with every module included; your price is shown after the free trial'],
@@ -552,7 +552,7 @@ function journeyFix(html, p) {
   // comparison lives on the pricing and JBaaS pages.
   if (/^products\/[^/]+$/.test(p.slug || '')) {
     html = html.replace(/<section class="section section-tint" id="tiers">[\s\S]*?Use it yourself, or let Jwero run it\.[\s\S]*?<\/section>/, () => `<section class="section section-tint" id="tiers"><div class="container"><div class="price-line">
-  <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Use it yourself, or let Jwero run it.</h2><p>One price, ₹18,000 a month, replaces the 10 to 15 tools you pay for today, with the first month at ₹3,600. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included, priced on the work.</p></div>
+  <div><p class="eyebrow">ONE PLAN, EVERY MODULE</p><h2>Use it yourself, or let Jwero run it.</h2><p>One price, ₹18,000 a month, replaces the tools you pay for today, with the first month at ₹3,600. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included, priced on the work.</p></div>
   <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=product-price">Start for ₹3,600</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
 </div></div></section>`);
   }
@@ -1287,7 +1287,7 @@ function withIcpHome(html, slug) {
   const pre = ICP_PRESET[cfg[0]];
   const rows = pre ? pre[1].map((k) => L4.DEPARTMENTS.find((d) => d.lever === k)).filter(Boolean) : L4.DEPARTMENTS;
   const hooks = L4.section(`<span id="count-yours"></span>${L4.sectionHead('COUNT YOUR TOOLS', cfg[2], pre ? `We have ticked what ${cfg[3] || pre[2]} usually runs. Tap to change it to match yours, or <a href="#" data-stackm-clear-link>clear and pick your own</a>.` : 'Tap the ones you run today and watch what they cost you.')}${L4.stackMerge(ICP_TOOLS[cfg[0]] && [...new Set([...ICP_TOOLS[cfg[0]], ...(pre ? pre[0] : [])])]).replace('<div class="stackm" data-stackm', `<div class="stackm" data-stackm-preset="${pre ? pre[0].join('|').replace(/&/g, '&amp;') : ''}" data-stackm`)}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too →</a></p>`, { tone: 'tint' })
-    + L4.section(`${L4.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole business.', 'The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}${L4.compareRows(rows)}`);
+    + L4.section(`${L4.sectionHead('FROM MANY LOGINS TO ONE RECORD', 'What changes across the whole business.', 'The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}${L4.compareRows(rows)}`);
   const security = L4.section(`<div class="gem-head"><h2>Certified, tested, and yours to check.</h2><p>ISO/IEC 27001 certified. Independently penetration tested. Tested against the OWASP Top 10. SOC 2 in progress. Your own database, encrypted, and exportable any time. <a href="/trust">See the Trust Centre →</a></p></div>${L4.trustStrip({ featured: true })}`, { tone: 'tint' });
   const ti = html.indexOf('id="tiers"');
   if (ti > 0) { const ts = html.lastIndexOf('<section', ti); const te = html.indexOf('</section>', ti) + 10; html = html.slice(0, ts) + hooks + html.slice(ts, te) + security + html.slice(te); }

@@ -52,17 +52,18 @@ ${L.section(`${L.sectionHead('WHERE MOST SHOPS START', 'Three things on day one.
 
 ${L.section(`<div class="global-strip"><p class="eyebrow">WORLDWIDE</p><h2>Built for jewellers in every market.</h2><p>Your currency, GST, VAT or sales tax, your gold rate by gram, ounce or tola, 14 languages including Arabic, and hosting in your region.</p><p class="global-links"><a href="/jewellery-software-india">India</a><a href="/jewellery-software-uae">The Gulf</a><a href="/jewellery-software-uk">UK and Europe</a><a href="/jewellery-software-usa">US and Canada</a><a href="/jewellery-software-singapore">South and Southeast Asia</a><a href="/global">Jwero worldwide →</a></p></div>`, { tone: 'tint' })}
 ${L.section(
-  `${L.sectionHead('FROM FIFTY LOGINS TO ONE RECORD', 'What changes across the whole jewellery business.', 'Not only how you sell. The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}
+  `${L.sectionHead('FROM MANY LOGINS TO ONE RECORD', 'What changes across the whole jewellery business.', 'Not only how you sell. The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}
   <div data-cmp-tabs>${L.compareRows(L.DEPARTMENTS)}</div>`
 )}
 
 ${L.section(
-  `<span id="one-record"></span><div class="gem-head"><h2>One record. Every department. Your approval.</h2><p>Play a week, run a full day, or break it into the tools it lives in today. <a href="/platform">See the full platform →</a></p></div>
-  ${L.gemStage2()}`
+  `<span id="one-record"></span>${L.sectionHead('THE PRODUCT', 'One dashboard. Every department on it.', 'A sale at the counter updates the stock, the books, her loyalty points and the next follow-up at the same moment, because they are all the same record. This is a real recording, not a mock-up.')}
+<figure class="pvid"><div class="pvid-frame"><video data-pvid muted loop playsinline preload="none" poster="/assets/product/os-overview.webp" width="1280" height="720" aria-label="Screen recording of Jwero: the Stock and Workshop overview with open purchase orders, inventory value, metal value and a stock pulse, then the tabs for Sales, Marketing, Finance and Teams"><source src="/assets/product/os-overview.mp4" type="video/mp4"></video><button type="button" class="pvid-toggle" data-pvid-toggle aria-label="Pause the recording">Pause</button></div>
+<figcaption>Operations, Sales, Marketing, Finance and Teams across the top of one screen. <a href="/platform">Take the full tour →</a></figcaption></figure>`
 , { tone: 'tint' })}
 
 ${L.section(`<div class="price-line">
-  <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Run it yourself, or let Jwero run it.</h2><p>One plan with every module replaces the 10 to 15 tools you pay for today. You start with a free trial, and your price is shown in your account when it ends. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included.</p></div>
+  <div><p class="eyebrow">ONE PLAN, EVERY MODULE</p><h2>Run it yourself, or let Jwero run it.</h2><p>One plan with every module replaces the tools you pay for today. You start with a free trial, and your price is shown in your account when it ends. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included.</p></div>
   <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=home-price">Try Free Now</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
 </div>`, { tone: 'tint' })}
 
@@ -84,6 +85,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('QUESTIONS JEWELLERS ASK', 'Jewellery software questions, answered straight.', '')}${L.faqBlock([
   { q: 'What is Jwero?', a: 'Jwero is the Autonomous Jewellery OS, run by AI — one system where customers, catalogue, stock, counter billing, purchase, workshop, accounts and team share one record with every selling channel, and an AI workforce drafts the work under your approval.' },
+  { q: 'Do I need to integrate anything?', a: 'Not between your own tools, because there is only one. Customers, WhatsApp, catalogue, website, counter, stock, workshop, schemes, accounts, marketing and HR are all built into Jwero and share one record. Jwero connects outward only to what has to stay outside: Tally or Zoho Books for your accountant, Meta, your payment gateway, your phone line, and Shopify or WooCommerce if you keep that store. We set those up with you. <a href="/platform/integrations">See what Jwero connects to</a>.' },
   { q: 'Do I have to replace my billing or accounting software?', a: 'No. Keep your books exactly where your accountant likes them — Jwero bridges to Tally and Zoho Books. <a href="/migration">See the Migration Centre</a>.' },
   { q: 'Will AI message my customers without asking?', a: 'No. Every AI-drafted action waits in an approval queue, inside daily caps and quiet hours, with a kill switch at five scopes. <a href="/platform/ai-workforce">See how governance works</a>.' },
   { q: 'How long does it take to go live?', a: 'Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, approvals on from day one.' },

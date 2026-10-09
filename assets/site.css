@@ -5099,3 +5099,15 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 @media (max-width: 900px) { .tin-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .tin-core { width: 104px; height: 104px; } .tin-core .mark { width: 24px; height: 34px; } .tin-core b { font-size: .9375rem; } .tin-track li { font-size: .75rem; padding: 7px 10px; } }
 @media (prefers-reduced-motion: reduce) { .tin-track, .tin-ring { animation: none; } .tin-track { flex-wrap: wrap; width: auto; justify-content: center; } .tin-track li[aria-hidden] { display: none; } .tin-half { -webkit-mask-image: none; mask-image: none; } .tin-row { grid-template-columns: 1fr; gap: 8px; } .tin-core { position: static; transform: none; margin: 0 auto 16px; } .tin-stage { display: flex; flex-direction: column-reverse; } }
+/* Tools section: the plain facts, and built in versus connects to */
+.tin-facts { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.tin-facts li { padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); font-size: .875rem; line-height: 1.4; color: var(--ink-2); }
+.tin-facts b { display: block; font-size: 1.0625rem; color: var(--ink); letter-spacing: -.01em; margin-bottom: 2px; }
+.tin-two { margin-top: 12px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 12px; }
+.tin-two > div { padding: 18px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); font-size: .9375rem; line-height: 1.5; }
+.tin-two p { margin: 0 0 8px; }
+.tin-in { border-color: var(--brand) !important; background: var(--brand-soft) !important; }
+.tin-out { border-style: dashed !important; }
+.tin-k { display: flex; align-items: center; gap: 8px; font: 600 .75rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--brand); }
+.tin-k .ico { width: 16px; height: 16px; }
+@media (max-width: 900px) { .tin-facts { grid-template-columns: 1fr 1fr; } .tin-two { grid-template-columns: 1fr; } }

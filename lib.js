@@ -1366,7 +1366,7 @@ function homeHero({ kicker, h1, sub, rail }) {
       </div>
       <div class="hero-home-piece">
         ${gemStage2({ hero: true })}
-        <a class="hero-piece-link" href="#one-record">This bangle is your business on one record. Play with it ↓</a>
+        <a class="hero-piece-link" href="#one-record">This bangle is your business on one record. See the product ↓</a>
       </div>
     </div>
   </div>
