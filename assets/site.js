@@ -254,8 +254,21 @@ function jwFromInr(n) {
       if (!r || !r.querySelector) { if (Date.now() - t0 < 30000) window.setTimeout(function () { waitRoot(t0); }, 200); return; }
       hideBubble();
       // The widget redraws its own tree when it opens or closes, so keep the rule in place.
-      try { if (window.MutationObserver) new MutationObserver(hideBubble).observe(r, { childList: true }); } catch (e) {}
+      // It can also open itself (a timed or scroll prompt set in the widget). Until the visitor
+      // has asked for the chat once, a panel nobody asked for is closed again.
+      function guard() {
+        hideBubble();
+        try {
+          if (asked()) return;
+          var p = r.querySelector('.jw-panel');
+          if (p && p.getBoundingClientRect().width > 0) { var j = widget(); if (j && typeof j.chat.close === 'function') j.chat.close(); }
+        } catch (e) {}
+      }
+      try { if (window.MutationObserver) new MutationObserver(guard).observe(r, { childList: true, subtree: true }); } catch (e) {}
+      guard();
     })(Date.now());
+    function asked() { try { return sessionStorage.getItem('jw-chat-asked') === '1'; } catch (e) { return true; } }
+    function markAsked() { try { sessionStorage.setItem('jw-chat-asked', '1'); } catch (e) {} }
     function prefill() {
       if (!state.msg) return;
       window.setTimeout(function () {
@@ -284,7 +297,7 @@ function jwFromInr(n) {
         if (dlg) dlg.classList.remove('is-busy');
         if (!j) return fallback(mode);
         close();
-        note(j, mode); j.chat.open(); prefill();
+        markAsked(); note(j, mode); j.chat.open(); prefill();
       }, 3500);
     }
     function set(sel, text) { var el = dlg.querySelector(sel); if (el) el.textContent = text; }

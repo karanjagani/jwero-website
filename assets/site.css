@@ -5242,3 +5242,13 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 .decide3 h3 { font-size: 1.125rem; letter-spacing: -.02em; }
 .decide3 p { margin: 0; font-size: .9375rem; line-height: 1.5; color: var(--ink-2); }
 @media (max-width: 800px) { .decide3 { grid-template-columns: 1fr; } }
+
+/* Phone fixes found in the inner-page pass */
+.pz-h.pz-h-plain { text-transform: none; font-size: clamp(1.9rem, 1.2rem + 2.5vw, 3rem); font-weight: 560; letter-spacing: -.03em; }
+.callc, .callc-in, .callc-out { min-width: 0; }
+.callc-in label, .callc-in input { min-width: 0; width: 100%; box-sizing: border-box; }
+@media (max-width: 480px) { .callc-in { grid-template-columns: 1fr; } }
+.pz-team2-pick, .pz-team2-panel { min-width: 0; }
+.pz-team2-scale label, .pz-team2-scale input, .pz-team2-scale output, .pz-team2-mode button { min-width: 0; }
+.pz-team2-scale input[type="range"] { width: 100%; box-sizing: border-box; }
+@media (max-width: 480px) { .pz-team2-panel { padding: 18px; } .pz-team2-scale { grid-template-columns: minmax(0, 1fr); } }
