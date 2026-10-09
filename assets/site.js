@@ -483,6 +483,29 @@ function jwFromInr(n) {
     if (btn) btn.addEventListener('click', function () { if (v.paused) { held = false; v.play(); } else { held = true; v.pause(); } });
   });
 
+  // --- home hero rail: one capability at a time, from first enquiry to closed books ---
+  [].forEach.call(document.querySelectorAll('[data-hrail]'), function (r) {
+    var links = [].slice.call(r.querySelectorAll('[data-hrail-i]')), now = r.querySelector('[data-hrail-now]'), fill = r.querySelector('.hrail-fill');
+    var n = links.length, cur = 0, timer = null, held = false, still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function show(i) {
+      cur = (i + n) % n;
+      links.forEach(function (a, k) { a.classList.toggle('is-on', k === cur); a.classList.toggle('is-done', k < cur); });
+      if (now) { now.classList.remove('is-in'); void now.offsetWidth; now.textContent = links[cur].getAttribute('aria-label'); now.classList.add('is-in'); }
+      if (fill) fill.style.width = (n > 1 ? (cur / (n - 1)) * 100 : 0) + '%';
+    }
+    function start() { if (still || timer || held) return; timer = setInterval(function () { show(cur + 1); }, 1900); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    links.forEach(function (a, k) {
+      a.addEventListener('mouseenter', function () { held = true; stop(); show(k); });
+      a.addEventListener('focus', function () { held = true; stop(); show(k); });
+    });
+    r.addEventListener('mouseleave', function () { held = false; start(); });
+    r.addEventListener('focusout', function (e) { if (!r.contains(e.relatedTarget)) { held = false; start(); } });
+    show(0);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { if (e[0].isIntersecting && !document.hidden) start(); else stop(); }, { threshold: 0.3 }).observe(r); else start();
+    document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
+  });
+
   // --- market picker tabs ---------------------------------------------
   document.querySelectorAll('[data-mkp]').forEach(function (root) {
     var tabs = [].slice.call(root.querySelectorAll('[role="tab"]'));

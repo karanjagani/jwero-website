@@ -5013,3 +5013,30 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 .askq-verdict p + p { background: var(--brand-soft); border-color: color-mix(in srgb, var(--brand) 30%, transparent); }
 @media (max-width: 760px) { .askq, .askq-verdict { grid-template-columns: 1fr; } }
 @media print { .askq li { break-inside: avoid; } }
+
+/* ---- Home hero rail (2026-10-09): the product as one line from first enquiry to closed books ---- */
+.hrail { margin: 20px 0 0; max-width: 560px; }
+.hrail-line { margin: 0 0 14px; display: grid; gap: 4px; font-size: .9375rem; line-height: 1.35; color: rgba(255, 255, 255, .82); }
+.hrail-now { display: block; min-height: 1.35em; font-size: 1.25rem; font-weight: 650; letter-spacing: -.02em; color: var(--amber); }
+.hrail-now.is-in { animation: hrailIn .45s var(--ease) both; }
+@keyframes hrailIn { from { opacity: 0; transform: translateY(8px); } }
+.hrail-track { position: relative; padding: 2px 0; }
+.hrail-track::before, .hrail-fill { content: ''; position: absolute; left: 16px; top: 50%; height: 2px; margin-top: -1px; border-radius: 2px; }
+.hrail-track::before { right: 16px; background: rgba(255, 255, 255, .22); }
+.hrail-fill { width: 0; max-width: calc(100% - 32px); background: linear-gradient(90deg, #fff, var(--amber)); transition: width .6s var(--ease); }
+.hrail ol { position: relative; list-style: none; margin: 0; padding: 0; display: flex; justify-content: space-between; }
+.hrail li a { position: relative; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--panel); border: 1.5px solid rgba(255, 255, 255, .4); color: rgba(255, 255, 255, .7); text-decoration: none; transition: transform .3s var(--ease), background .3s var(--ease), border-color .3s var(--ease), color .3s var(--ease), box-shadow .3s var(--ease); }
+.hrail li a .ico { width: 16px; height: 16px; }
+.hrail li a span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.hrail li a.is-done { background: #fff; border-color: #fff; color: var(--panel); }
+.hrail li a.is-on { background: var(--amber); border-color: var(--amber); color: #1b1400; transform: scale(1.28); box-shadow: 0 0 0 6px rgba(246, 167, 35, .25); }
+.hrail li a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.hrail-ends { margin: 10px 0 0; display: flex; justify-content: space-between; font: 600 .625rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
+@media (max-width: 560px) {
+  .hrail li a { width: 24px; height: 24px; }
+  .hrail li a .ico { width: 12px; height: 12px; }
+  .hrail-track::before, .hrail-fill { left: 12px; } .hrail-track::before { right: 12px; } .hrail-fill { max-width: calc(100% - 24px); }
+  .hrail-now { font-size: 1.125rem; }
+  .hrail-ends span:nth-child(2) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .hrail-now.is-in { animation: none; } .hrail-fill, .hrail li a { transition: none; } }

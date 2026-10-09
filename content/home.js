@@ -24,7 +24,8 @@ const home = {
 ${L.homeHero({
   kicker: 'You focus on jewellery. We handle the chaos.',
   h1: 'Jewellery software that runs the whole business: customers, counter, stock, team and books.',
-  sub: 'Customers, counter, stock, workshop, books and team on one record. AI drafts the routine work and flags what is slipping, and nothing goes out without your yes. In your currency, your tax and your customers’ language, from India to the Gulf, the UK, Europe and North America.',
+  sub: 'AI drafts the work and flags what is slipping, and nothing goes out without your approval.',
+  rail: true,
 })}
 
 <section class="pz-logos">${L.customerLogos()}</section>

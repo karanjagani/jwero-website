@@ -1323,7 +1323,25 @@ function stackMerge(only) {
 }
 
 // The home hero: one question, one action, and the piece as the visual.
-function homeHero({ kicker, h1, sub }) {
+// The whole product as one rail, from the first enquiry to the closed books. One name shows
+// at a time; the twelve are links with their names in the page, so nothing is hidden from search.
+const HERO_RAIL = [
+  ['store', 'Website and apps', '/products/ecommerce'], ['megaphone', 'Social media and ads', '/products/ads-manager'],
+  ['chat', 'Unified communications', '/products/whatsapp'], ['heart', 'CRM and loyalty', '/products/crm'],
+  ['route', 'Marketing automation and customer journeys', '/products/journeys'], ['video', 'Team meets and recordings', '/products/meetings'],
+  ['till', 'POS and billing', '/products/pos'], ['activity', 'Store performance', '/products/showroom'],
+  ['layers', 'ERP', '/products/erp'], ['users', 'HR', '/products/hr-payroll'],
+  ['pie', 'Custom reports', '/products/reports'], ['book', 'Accounting and billing', '/products/billing-finance'],
+];
+function heroRail() {
+  return `
+<div class="hrail" data-hrail>
+  <p class="hrail-line"><span>One system, from the first enquiry to the closed books</span><b class="hrail-now" data-hrail-now>${HERO_RAIL[0][1]}</b></p>
+  <div class="hrail-track"><i class="hrail-fill" aria-hidden="true"></i><ol>${HERO_RAIL.map(([ic, n, h], i) => `<li><a href="${h}" data-hrail-i="${i}" aria-label="${esc(n)}">${icon(ic)}<span>${n}</span></a></li>`).join('')}</ol></div>
+  <p class="hrail-ends" aria-hidden="true"><span>First enquiry</span><span>All on one dashboard</span><span>Closed books</span></p>
+</div>`;
+}
+function homeHero({ kicker, h1, sub, rail }) {
   return `
 <section class="hero hero-panel hero-home">
   <div class="panel">
@@ -1333,7 +1351,7 @@ function homeHero({ kicker, h1, sub }) {
       <div class="hero-home-copy">
         <p class="hero-kicker">${mark('mark-xs')}${kicker}</p>
         <h1>${h1}</h1>
-        <p class="sub">${sub}</p>
+        <p class="sub">${sub}</p>${rail ? heroRail() : ''}
         <div class="hero-doors">
           <a class="hero-door" href="${TRIAL_URL}home-hero" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b><em>₹3,600 first month, then ₹18,000 a month.</em></a>
           <a class="hero-door is-managed" href="#" data-wa="handle"><span>Jwero runs it</span><b>Let Jwero run it</b><em>No team to hire. No tools to buy.</em></a>
