@@ -1323,21 +1323,22 @@ function stackMerge(only) {
 }
 
 // The home hero: one question, one action, and the piece as the visual.
-// The whole product as one journey in five stages, from the first enquiry to the closed books.
-// One stage shows at a time: what is in it, what the AI does there, and your approval. All five
+// The whole product as one journey in six stages, from the first enquiry to the closed books.
+// One stage shows at a time: what is in it, what the AI does there, and your approval. All six
 // stages are in the page as links and text, so nothing is hidden from search.
 const HERO_STAGES = [
-  ['megaphone', 'Attract', 'First enquiry', [['Website and apps', '/products/ecommerce'], ['Social media and ads', '/products/ads-manager'], ['Marketing automation and journeys', '/products/journeys']], 'AI plans the campaign and drafts the posts'],
-  ['chat', 'Engage', '', [['Unified communications', '/products/whatsapp'], ['CRM and loyalty', '/products/crm'], ['Team meets and recordings', '/products/meetings']], 'AI replies to the enquiry at today’s rate'],
-  ['till', 'Sell', '', [['POS and billing', '/products/pos'], ['Catalogue at the live rate', '/products/catalog'], ['Gold schemes', '/products/gold-schemes'], ['Store performance', '/products/showroom']], 'AI follows up walkouts and scheme reminders'],
-  ['layers', 'Run', '', [['ERP', '/products/erp'], ['Inventory', '/products/inventory'], ['Workshop and orders', '/products/manufacturing'], ['HR', '/products/hr-payroll']], 'AI flags stock that is not moving and orders running late'],
-  ['book', 'Account', 'Closed books', [['Accounting and billing', '/products/billing-finance'], ['Custom reports', '/products/reports']], 'AI explains the numbers and flags what is off'],
+  ['megaphone', 'Attract', '', [['Website and apps', '/products/ecommerce'], ['Ads Manager', '/products/ads-manager'], ['Social media', '/products/social-media'], ['Google Shopping and Meta', '/products/marketplaces'], ['Visitor tracking across channels', '/products/optimize']], 'AI plans the campaign and drafts the posts and ads'],
+  ['chat', 'Engage', '', [['WhatsApp, Instagram and calls', '/products/whatsapp'], ['AI sales agents', '/products/ai-sales-agents'], ['CRM', '/products/crm'], ['Quotations', '/products/quotations']], 'AI replies to the enquiry at today’s rate'],
+  ['till', 'Sell', '', [['Walk-in counter', '/products/showroom'], ['POS and billing', '/products/pos'], ['Live-rate catalogue', '/products/catalog'], ['Payments and old gold', '/products/pos'], ['Gold schemes', '/products/gold-schemes']], 'AI follows up walkouts and scheme reminders'],
+  ['heart', 'Retain', '', [['Loyalty and referrals', '/products/loyalty'], ['Personalisation and retargeting', '/products/segmentation'], ['Marketing automation and journeys', '/products/journeys'], ['Repairs and after-sales', '/products/repairs-service']], 'AI reminds her before the occasion and wins back quiet customers'],
+  ['layers', 'Run', '', [['ERP and inventory', '/products/erp'], ['Purchase and vendors', '/products/purchase-vendors'], ['Workshop and orders', '/products/manufacturing'], ['HR and team meets', '/products/hr-payroll'], ['Multi-store', '/products/multi-store']], 'AI flags stock that is not moving and orders running late'],
+  ['book', 'Account', '', [['Accounting and tax invoices', '/products/billing-finance'], ['Tally bridge', '/platform/integrations/tally'], ['Store performance', '/products/reports'], ['Custom reports', '/products/reports']], 'AI explains the numbers and flags what is off'],
 ];
 function heroRail() {
   return `
 <div class="hrail" data-hrail>
   <p class="hrail-line">One system, from the first enquiry to the closed books</p>
-  <div class="hrail-track" role="tablist" aria-label="The journey, in five stages"><i class="hrail-fill" aria-hidden="true"></i>${HERO_STAGES.map(([ic, n], i) => `<button type="button" role="tab" class="hrail-stop${i === 0 ? ' is-on' : ''}" id="hrail-t-${i}" aria-controls="hrail-p-${i}" aria-selected="${i === 0}" data-hrail-i="${i}"><span>${icon(ic)}</span><b>${n}</b></button>`).join('')}</div>
+  <div class="hrail-track" role="tablist" aria-label="The journey, in six stages"><i class="hrail-fill" aria-hidden="true"></i>${HERO_STAGES.map(([ic, n], i) => `<button type="button" role="tab" class="hrail-stop${i === 0 ? ' is-on' : ''}" id="hrail-t-${i}" aria-controls="hrail-p-${i}" aria-selected="${i === 0}" data-hrail-i="${i}"><span>${icon(ic)}</span><b>${n}</b></button>`).join('')}</div>
   <div class="hrail-panels">${HERO_STAGES.map(([, n, , items, ai], i) => `
     <div class="hrail-panel${i === 0 ? ' is-on' : ''}" role="tabpanel" id="hrail-p-${i}" aria-labelledby="hrail-t-${i}" data-hrail-panel="${i}">
       <p class="hrail-chips">${items.map(([t, h]) => `<a href="${h}">${t}</a>`).join('')}</p>
