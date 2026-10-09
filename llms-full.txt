@@ -8231,45 +8231,53 @@ FROM ERP TO OS
  Show me the difference on my business 
  Is switching risky? Read this first 
 
- THREE ERAS, ONE QUESTION
+ THE CORE DIFFERENCE
 
-## What sits at the centre decides what the software can do.
+## An ERP is built around the bill. An operating system is built around the customer.
 
- Slide through the eras. The question to ask of any system is the same: what is at its centre, and whom was it built to serve?
+ Software sees first, and serves best, whatever it is built around. Built around the bill, it meets your customer only when she pays. Built around the customer, it follows her from the first enquiry to the next visit, and the bill becomes one step on the way. Move through the three eras to see what each one could see.
 
- The register Until the 2000s The ERP 2000s → today The operating system Now 
+ The register Until the 2000s The ERP 2000s to today The operating system Now 
 
- At the centre The owner’s memory 
+ Built around The owner’s memory 
 
- Built to serve The owner 
+ Works well while the owner is in the shop, and only then.
 
- What the customer is Known by face. Served well while the owner was in. 
+ Who it works for The owner 
 
- Doors it can serve Counter 
+ How it sees your customer Known by face, and served well while the owner is in. 
 
- What it could not do Scale past one head. Survive a salesperson leaving. Answer anyone who wasn’t standing in the shop. 
+ Where it works Counter 
 
- At the centre The invoice and the ledger 
+ What it misses It cannot grow past one person’s memory, it loses customers when a salesperson leaves, and it cannot answer anyone who is not standing in the shop. 
 
- Built to serve The accountant and the back office 
+ Built around The bill and the books 
 
- What the customer is A name on a bill. Nothing about her taste, her occasions, or what she asked last week. 
+ Tells you exactly what was sold. Tells you nothing about what was lost.
 
- Doors it can serve Counter Back office 
+ Who it works for The accountant and the back office 
 
- What it could not do Reply on WhatsApp. Remember a customer. Reprice a catalogue when the rate moved. Draft anything. Know what she tried on and walked away from. 
+ How it sees your customer A name on a bill. Nothing about her taste, her occasions, or what she asked about last week. 
 
- At the centre One customer record, and AI working it 
+ Where it works Counter Back office 
 
- Built to serve The customer, and everyone who serves her 
+ What it misses The enquiry on WhatsApp, the customer who tried a piece and walked out, the regular who stopped coming, and the price that went stale when the rate moved. 
 
- What the customer is Remembered on every door: the reply she gets at 11pm, the price she sees, the reminder she receives, the greeting at the counter. 
+ Built around The customer, with AI working for her 
 
- Doors it can serve Counter WhatsApp Instagram Website Catalogue links Video counter Schemes Workshop Books 
+ Shows you the sale, and everything that happened before and after it.
 
- What it still won’t do Nothing sends without your yes. It does not replace your CA. It is built for India and works abroad. 
+ Who it works for The customer, and everyone in your business who serves her 
 
- Each era kept what the last one did well. The ERP kept the books straight; the OS keeps the books straight and the customer remembered.
+ How it sees your customer Remembered everywhere: the reply she gets at 11pm, the price she sees, the reminder she receives and the greeting at the counter. 
+
+ Where it works Counter WhatsApp Instagram Website Catalogue links Video counter Schemes Workshop Books 
+
+ What stays in your hands You approve what the AI sends. Your accountant keeps working in Tally. Your data is yours to export at any time. 
+
+ ← The register 2 of 3 The operating system → 
+
+ Each era kept what the last one did well. The ERP kept the books straight; the operating system keeps the books straight and the customer remembered.
 
  WHAT CHANGED
 

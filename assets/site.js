@@ -1787,17 +1787,33 @@ function jwFromInr(n) {
     arm();
   })();
 
-  // ERP → OS: the era slider.
+  // ERP → OS: the era slider. Tabs with arrow keys, previous and next buttons, and swipe on touch.
   Array.prototype.forEach.call(document.querySelectorAll('[data-era]'), function (era) {
-    var stops = era.querySelectorAll('.era-stop'), panels = era.querySelectorAll('.era-panel'), fill = era.querySelector('.era-fill');
-    function show(i) {
-      Array.prototype.forEach.call(stops, function (b, j) { b.classList.toggle('is-on', j === i); b.setAttribute('aria-pressed', String(j === i)); });
-      Array.prototype.forEach.call(panels, function (p, j) { p.classList.toggle('is-on', j === i); });
-      if (fill) fill.style.width = (i / (stops.length - 1)) * 100 + '%';
+    var stops = [].slice.call(era.querySelectorAll('.era-stop')), panels = era.querySelectorAll('.era-panel'), fill = era.querySelector('.era-fill');
+    var prev = era.querySelector('[data-era-prev]'), next = era.querySelector('[data-era-next]'), count = era.querySelector('[data-era-count]'), cur = 1, n = stops.length;
+    function name(i) { return (stops[i].querySelector('b') || {}).textContent || ''; }
+    function show(i, focus) {
+      cur = Math.max(0, Math.min(n - 1, i));
+      stops.forEach(function (b, j) { var on = j === cur; b.classList.toggle('is-on', on); b.classList.toggle('is-done', j < cur); b.setAttribute('aria-selected', String(on)); b.tabIndex = on ? 0 : -1; });
+      Array.prototype.forEach.call(panels, function (p, j) { p.classList.toggle('is-on', j === cur); });
+      if (fill) fill.style.width = (cur / (n - 1)) * 66.667 + '%';
+      if (count) count.textContent = (cur + 1) + ' of ' + n;
+      if (prev) { prev.disabled = cur === 0; var pl = prev.querySelector('[data-era-prev-label]'); if (pl) pl.textContent = cur ? name(cur - 1) : 'Start'; }
+      if (next) { next.disabled = cur === n - 1; var nl = next.querySelector('[data-era-next-label]'); if (nl) nl.textContent = cur < n - 1 ? name(cur + 1) : 'You are here'; }
+      if (focus) stops[cur].focus();
     }
-    Array.prototype.forEach.call(stops, function (b, j) { b.addEventListener('click', function () { show(j); }); });
+    stops.forEach(function (b, j) {
+      b.addEventListener('click', function () { show(j); });
+      b.addEventListener('keydown', function (e) { var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (e.key === 'Home') { e.preventDefault(); show(0, true); } else if (e.key === 'End') { e.preventDefault(); show(n - 1, true); } else if (d) { e.preventDefault(); show(cur + d, true); } });
+    });
+    if (prev) prev.addEventListener('click', function () { show(cur - 1); });
+    if (next) next.addEventListener('click', function () { show(cur + 1); });
+    var box = era.querySelector('.era-panels'), x0 = null, y0 = null;
+    if (box) {
+      box.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+      box.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null; if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) show(cur + (dx < 0 ? 1 : -1)); }, { passive: true });
+    }
     show(1);
-    if (canObserve && !reduceMotion) onView([era], function () { window.setTimeout(function () { show(2); }, 1800); }, { threshold: 0.5 });
   });
 
   // ERP → OS: move the centre.

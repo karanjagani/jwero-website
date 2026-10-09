@@ -8,32 +8,37 @@ const BC = (label, parent) => parent ? [['Home', '/'], ['From ERP to OS', '/erp-
 // ---------------------------------------------------------------- shared visuals
 const ERAS = [
   { key: 'register', era: 'The register', when: 'Until the 2000s', centre: 'The owner’s memory', icon: 'book',
-    served: 'The owner', customer: 'Known by face. Served well while the owner was in.', doors: ['Counter'],
-    couldnt: 'Scale past one head. Survive a salesperson leaving. Answer anyone who wasn’t standing in the shop.' },
-  { key: 'erp', era: 'The ERP', when: '2000s → today', centre: 'The invoice and the ledger', icon: 'receipt',
-    served: 'The accountant and the back office', customer: 'A name on a bill. Nothing about her taste, her occasions, or what she asked last week.', doors: ['Counter', 'Back office'],
-    couldnt: 'Reply on WhatsApp. Remember a customer. Reprice a catalogue when the rate moved. Draft anything. Know what she tried on and walked away from.' },
-  { key: 'os', era: 'The operating system', when: 'Now', centre: 'One customer record — and AI working it', icon: 'record',
-    served: 'The customer, and everyone who serves her', customer: 'Remembered on every door: the reply she gets at 11pm, the price she sees, the reminder she receives, the greeting at the counter.', doors: ['Counter', 'WhatsApp', 'Instagram', 'Website', 'Catalogue links', 'Video counter', 'Schemes', 'Workshop', 'Books'],
-    couldnt: 'Nothing sends without your yes. It does not replace your CA. It is built for India and works abroad.' },
+    so: 'Works well while the owner is in the shop, and only then.',
+    served: 'The owner', customer: 'Known by face, and served well while the owner is in.', doors: ['Counter'],
+    label: 'What it misses', couldnt: 'It cannot grow past one person’s memory, it loses customers when a salesperson leaves, and it cannot answer anyone who is not standing in the shop.' },
+  { key: 'erp', era: 'The ERP', when: '2000s to today', centre: 'The bill and the books', icon: 'receipt',
+    so: 'Tells you exactly what was sold. Tells you nothing about what was lost.',
+    served: 'The accountant and the back office', customer: 'A name on a bill. Nothing about her taste, her occasions, or what she asked about last week.', doors: ['Counter', 'Back office'],
+    label: 'What it misses', couldnt: 'The enquiry on WhatsApp, the customer who tried a piece and walked out, the regular who stopped coming, and the price that went stale when the rate moved.' },
+  { key: 'os', era: 'The operating system', when: 'Now', centre: 'The customer, with AI working for her', icon: 'record',
+    so: 'Shows you the sale, and everything that happened before and after it.',
+    served: 'The customer, and everyone in your business who serves her', customer: 'Remembered everywhere: the reply she gets at 11pm, the price she sees, the reminder she receives and the greeting at the counter.', doors: ['Counter', 'WhatsApp', 'Instagram', 'Website', 'Catalogue links', 'Video counter', 'Schemes', 'Workshop', 'Books'],
+    label: 'What stays in your hands', couldnt: 'You approve what the AI sends. Your accountant keeps working in Tally. Your data is yours to export at any time.' },
 ];
 function eraSlider() {
-  const stops = ERAS.map((e, i) => `<button type="button" class="era-stop${i === 1 ? ' is-on' : ''}" data-era="${i}" aria-pressed="${i === 1}"><b>${e.era}</b><span>${e.when}</span></button>`).join('');
+  const stops = ERAS.map((e, i) => `<button type="button" class="era-stop${i === 1 ? ' is-on' : ''}" role="tab" id="era-t-${i}" aria-controls="era-p-${i}" aria-selected="${i === 1}" tabindex="${i === 1 ? 0 : -1}" data-era-stop="${i}"><b>${e.era}</b><span>${e.when}</span></button>`).join('');
   const panels = ERAS.map((e, i) => `
-    <div class="era-panel${i === 1 ? ' is-on' : ''}" data-era-panel="${i}">
-      <div class="era-centre">${L.icon(e.icon)}<div><small>At the centre</small><strong>${e.centre}</strong></div></div>
+    <div class="era-panel${i === 1 ? ' is-on' : ''}" role="tabpanel" id="era-p-${i}" aria-labelledby="era-t-${i}" data-era-panel="${i}">
+      <div class="era-centre">${L.icon(e.icon)}<div><small>Built around</small><strong>${e.centre}</strong></div></div>
+      <p class="era-so">${e.so}</p>
       <dl class="era-facts">
-        <div><dt>Built to serve</dt><dd>${e.served}</dd></div>
-        <div><dt>What the customer is</dt><dd>${e.customer}</dd></div>
-        <div><dt>Doors it can serve</dt><dd class="era-doors">${e.doors.map((d) => `<span>${d}</span>`).join('')}</dd></div>
-        <div><dt>${i === 2 ? 'What it still won’t do' : 'What it could not do'}</dt><dd>${e.couldnt}</dd></div>
+        <div><dt>Who it works for</dt><dd>${e.served}</dd></div>
+        <div><dt>How it sees your customer</dt><dd>${e.customer}</dd></div>
+        <div><dt>Where it works</dt><dd class="era-doors">${e.doors.map((d) => `<span>${d}</span>`).join('')}</dd></div>
+        <div><dt>${e.label}</dt><dd>${e.couldnt}</dd></div>
       </dl>
     </div>`).join('');
   return `
 <div class="era" data-era>
-  <div class="era-track"><i class="era-fill"></i>${stops}</div>
+  <div class="era-track" role="tablist" aria-label="Three eras of jewellery software"><i class="era-fill"></i>${stops}</div>
   <div class="era-panels">${panels}</div>
-  <p class="era-note">Each era kept what the last one did well. The ERP kept the books straight; the OS keeps the books straight <em>and</em> the customer remembered.</p>
+  <div class="era-nav"><button type="button" class="btn btn-ghost era-prev" data-era-prev>← <span data-era-prev-label>The register</span></button><span class="era-count" data-era-count aria-live="polite">2 of 3</span><button type="button" class="btn btn-primary era-next" data-era-next><span data-era-next-label>The operating system</span> →</button></div>
+  <p class="era-note">Each era kept what the last one did well. The ERP kept the books straight; the operating system keeps the books straight <em>and</em> the customer remembered.</p>
 </div>`;
 }
 
@@ -180,7 +185,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('THREE ERAS, ONE QUESTION', 'What sits at the centre decides what the software can do.', 'Slide through the eras. The question to ask of any system is the same: what is at its centre, and whom was it built to serve?')}
+  `${L.sectionHead('THE CORE DIFFERENCE', 'An ERP is built around the bill. An operating system is built around the customer.', 'Software sees first, and serves best, whatever it is built around. Built around the bill, it meets your customer only when she pays. Built around the customer, it follows her from the first enquiry to the next visit, and the bill becomes one step on the way. Move through the three eras to see what each one could see.')}
   ${eraSlider()}`
 )}
 

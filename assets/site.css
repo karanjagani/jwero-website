@@ -4920,3 +4920,26 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 .bl-without { display: block; margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line-2); font-size: .8125rem; line-height: 1.45; color: var(--ink-2); }
 .bl-without i { display: block; font: 600 .625rem/1 var(--mono); font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: #c2410c; margin-bottom: 4px; }
 .bl-card .bl-without { margin: 4px 16px 0; padding: 10px 0 0; }
+
+/* Era slider (2026-10-09): panels share one grid cell so the box never jumps; the line ends on the active dot */
+.era-panels { display: grid; min-height: 0; }
+.era-panel, .era-panel.is-on { position: static; grid-area: 1 / 1; inset: auto; }
+.era-panel { visibility: hidden; transition: opacity .35s var(--ease), transform .35s var(--ease), visibility 0s linear .35s; }
+.era-panel.is-on { visibility: visible; transition: opacity .35s var(--ease), transform .35s var(--ease), visibility 0s; }
+.era-track { gap: 0; }
+.era-track::before, .era-fill { left: 16.666%; }
+.era-track::before { right: 16.666%; }
+.era-fill { max-width: 66.668%; transition: width .5s var(--ease); }
+.era-stop { min-height: 44px; -webkit-tap-highlight-color: transparent; }
+.era-stop:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 8px; }
+.era-stop.is-done::before { background: var(--brand); border-color: var(--brand); }
+.era-so { margin: 0 0 18px; font-size: 1.125rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.35; color: var(--ink); }
+.era-nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+.era-nav .era-prev { justify-self: start; } .era-nav .era-next { justify-self: end; }
+.era-nav button:disabled { opacity: .4; cursor: default; }
+.era-count { font: 600 .75rem/1 var(--mono); letter-spacing: .06em; color: var(--ink-2); }
+@media (max-width: 720px) { .era-stop span { display: block; font-size: .5625rem; } .era-nav .btn { padding: 10px 12px; font-size: .8125rem; } .era-so { font-size: 1rem; } }
+@media (prefers-reduced-motion: reduce) { .era-panel, .era-fill { transition: none !important; } }
+.era-count { white-space: nowrap; }
+.era-nav .btn { white-space: nowrap; }
+@media (max-width: 560px) { .era-nav [data-era-prev-label], .era-nav [data-era-next-label] { display: none; } .era-nav .era-prev::after { content: 'Back'; } .era-nav .era-next::before { content: 'Next '; } .era-nav .btn { min-width: 96px; justify-content: center; } }
