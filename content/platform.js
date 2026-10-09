@@ -3,8 +3,8 @@ const BC = (label) => [['Home', '/'], ['Platform', '/platform'], [label]];
 
 const platform = {
   slug: 'platform',
-  title: 'Jewellery Business Operating System: One Command Centre | Jwero',
-  description: 'Run a jewellery business from one command centre: every process, customer journey and touchpoint visible as it happens, across customers, counter, stock, purchase, workshop, books and team, so you act the day something goes off.',
+  title: 'Why Jewellers Need an Operating System, Not More Tools | Jwero',
+  description: 'Separate tools report problems at month end. A jewellery operating system puts every process, customer journey and touchpoint in one command centre, so you see trouble the day it happens and act on it. Why an OS, and a tour of Jwero.',
   breadcrumbs: [['Home', '/'], ['Platform']],
   faqs: [
     ...require('./journey').why.faqs,
@@ -18,8 +18,8 @@ const platform = {
   body: `
 ${L.hero({
   eyebrow: 'WHY AN OS, AND THE TOUR',
-  h1: 'Run your whole jewellery business from one command centre.',
-  sub: 'See every process, every customer journey and every touchpoint as it happens, across your team, customers, vendors and karigars. When something goes off, you know today and act today, not at the end of the month or the quarter.',
+  h1: 'Separate tools tell you what went wrong last month. An operating system shows you while you can still fix it.',
+  sub: 'A billing tool knows the bill. A WhatsApp tool knows the chat. A stock sheet knows the piece. None of them sees the whole business, so trouble only shows up in the month-end or quarter-end report. An operating system puts every process, customer journey and touchpoint, across your team, customers, vendors and karigars, in one command centre, so you decide the day something goes off.',
   primary: { href: '#', label: 'Chat or call with us', wa: 'platform' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   mock: require('./graphics').orbit(),
