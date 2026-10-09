@@ -100,7 +100,7 @@ ${L.ctaBand('Digitise the promise.', 'Bring your scheme register. We will show e
 };
 
 // Multi-store, rebuilt 2026-10-07. Confirmed by Jwero: schemes across branches,
-// WhatsApp chats routed to the right branch. Franchise royalties not built yet.
+// WhatsApp chats routed to the right branch. Franchise royalties handled outside Jwero.
 const NET = [
   ['Branch 2 · Andheri', 'Customer asks for the temple necklace from the catalogue'],
   ['Stock search', 'Found at Branch 4 · Borivali, in the showcase'],
@@ -138,7 +138,7 @@ const msFaqs = [
   { q: 'Can a customer redeem a scheme at any branch?', a: 'Yes. A member can enrol at one branch, pay instalments at another and redeem at any branch in the network, on the same scheme record.' },
   { q: 'Can one WhatsApp number serve the whole chain?', a: 'Yes. Customers message one number and each chat is routed to the right branch, with the customer’s history visible to whoever answers.' },
   { q: 'How are stock transfers between branches handled for GST?', a: 'Within one state, transfers move on a delivery challan. Between states, branches have different GSTINs and the transfer is billed with GST. Confirm your setup with your CA.' },
-  { q: 'Can franchise partners see only their own store?', a: 'Yes. Roles and permissions are set at each level, so a franchise partner sees their store while head office sees the network. Franchise royalty calculation is not built yet.' },
+  { q: 'Can franchise partners see only their own store?', a: 'Yes. Roles and permissions are set at each level, so a franchise partner sees their store while head office sees the network. Franchise royalty calculation stays in your accounts for now.' },
   { q: 'Will branch managers resist losing autonomy?', a: 'Branches keep running their day. Head office sets the rules that customers expect to be the same everywhere, and branches request exceptions through approvals.' },
   { q: 'Does a customer’s history follow them between branches?', a: 'Yes. Purchases, schemes, loyalty points and conversations are on one record, visible at every counter.' },
   { q: 'Can each branch keep billing if the internet drops?', a: 'Yes. Each counter keeps billing offline, and sales sync when the connection returns.' },
@@ -194,7 +194,7 @@ ${L.section(`${L.sectionHead('COMPARE', 'A system per branch, a desktop ERP on a
 
 ${L.section(`${L.sectionHead('ADDING A BRANCH', 'How to add a new branch to your jewellery chain.', 'Five steps.')}${L.steps(MS_MOVE.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
-${L.section(`<div class="jb-blogline"><p><b>For franchise networks:</b> partners run their own stores on the network’s rules and see only their store. Franchise royalty calculation is not built yet. <a href="/blog/jewellery-franchise-control">What a franchisor should control →</a> · <a href="/solutions/franchise-networks">Jwero for franchise networks →</a> · <a href="/solutions/multi-store-chains">Jwero for chains →</a></p></div>`)}
+${L.section(`<div class="jb-blogline"><p><b>For franchise networks:</b> partners run their own stores on the network’s rules and see only their store. Franchise royalty calculation stays in your accounts for now. <a href="/blog/jewellery-franchise-control">What a franchisor should control →</a> · <a href="/solutions/franchise-networks">Jwero for franchise networks →</a> · <a href="/solutions/multi-store-chains">Jwero for chains →</a></p></div>`)}
 
 ${L.oneSystemBlock([
   'A scheme paid at one branch and redeemed at another is one record and one liability in the books.',
@@ -317,7 +317,7 @@ ${L.ctaBand('Reward regulars, not just savers.', 'Tell us how your customers buy
 `,
 };
 
-// Journeys, rebuilt 2026-10-07. Confirmed by Jwero: 300+ ready journeys,
+// Journeys, rebuilt 2026-10-07. Confirmed by Jwero: ready-made journeys,
 // abandoned-cart and browse journeys. A/B testing not claimed.
 const JRN = [
   ['Trigger', 'Meera’s anniversary is in 10 days'],
@@ -334,7 +334,7 @@ const jrnFlow = () => `<div class="wa-story" data-wa-story>
 </div>`;
 const READY = ['Welcome a new customer', 'New-lead nurture', 'Birthday', 'Anniversary', 'Family wedding coming up', 'Abandoned cart', 'Browsed but did not buy', 'Scheme instalment due', 'Scheme maturity', 'Repair ready for collection', 'Win back a quiet customer', 'VIP at risk', 'Loyalty tier up', 'Points about to expire', 'After a purchase', 'Festival invitation'];
 const JRN_CMP = [
-  ['Ready-made journeys for jewellers', 'No', 'Generic templates', '300+ ready journeys'],
+  ['Ready-made journeys for jewellers', 'No', 'Generic templates', 'Ready-made jewellery journeys'],
   ['Journeys created automatically, across channels and journeys', 'No', 'No', 'Yes, from the goal you describe'],
   ['Knows purchases, schemes, occasions', 'No', 'If you sync data', 'Yes, one record'],
   ['WhatsApp, SMS, email, push and AI calls', 'WhatsApp only', 'Email and SMS', 'All, in one flow'],
@@ -345,7 +345,7 @@ const JRN_CMP = [
 ];
 const jrnTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>WhatsApp by hand</th><th>Generic marketing automation</th><th>Jwero journeys</th></tr></thead><tbody>${JRN_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-go">${c}</td></tr>`).join('')}</tbody></table></div>`;
 const JRN_HOW = [
-  ['Pick a ready journey', 'Start from one of 300+ ready journeys, such as anniversary, abandoned cart or scheme maturity.'],
+  ['Pick a ready journey', 'Start from a ready-made journey, such as anniversary, abandoned cart or scheme maturity.'],
   ['Choose who it is for', 'A segment from your records: bridal buyers, scheme members, quiet customers, one branch.'],
   ['Adjust the steps', 'Messages, waits, conditions, AI calls and branches on the canvas.'],
   ['Set the limits', 'Quiet hours, frequency limits, and approval for the messages you choose.'],
@@ -354,7 +354,7 @@ const JRN_HOW = [
 const jrnFaqs = [
   { q: 'What is marketing automation for jewellers?', a: 'Marketing automation sends the right message to each customer at the right moment without someone remembering to: before an anniversary, after an abandoned cart, when a scheme matures or a repair is ready. Jwero runs it as journeys across WhatsApp, SMS, email, push and AI calls, inside the limits you set.' },
   { q: 'What is a customer journey?', a: 'A sequence of steps that runs for each customer: a trigger, such as a birthday or an abandoned cart, then messages, waits, conditions and calls, until the customer buys or the journey ends.' },
-  { q: 'Which journeys should a jewellery shop automate first?', a: 'Anniversary and birthday, scheme instalment and maturity, repair ready, abandoned cart and browse, and win-back for quiet customers. Jwero has these and more among 300+ ready journeys.' },
+  { q: 'Which journeys should a jewellery shop automate first?', a: 'Anniversary and birthday, scheme instalment and maturity, repair ready, abandoned cart and browse, and win-back for quiet customers. Jwero has these and more ready-made.' },
   { q: 'Can a journey send messages without approval?', a: 'Yes. Messages go out automatically, inside quiet hours and frequency limits. You can require approval for any step, and one switch stops everything.' },
   { q: 'How is a journey different from a broadcast?', a: 'A broadcast sends one message to many people at once. A journey runs for each customer on their own timeline, reacts to what they do, and moves them step by step towards a purchase.' },
   { q: 'Are there journeys for abandoned carts and browsing?', a: 'Yes. When a customer leaves pieces in an online cart, or keeps looking at the same pieces, a journey follows up on WhatsApp and can place an AI call.' },
@@ -367,11 +367,11 @@ const jrnFaqs = [
 const journeys = {
   slug: 'products/journeys',
   title: 'Jewellery Marketing Automation & Customer Journeys | Jwero',
-  description: 'Jewellery marketing automation: 300+ ready customer journeys for anniversaries, abandoned carts, schemes, repairs and win-backs, across WhatsApp, SMS, email and AI calls, sent automatically, with approval only where you want it.',
+  description: 'Jewellery marketing automation: ready-made customer journeys for anniversaries, abandoned carts, schemes, repairs and win-backs, across WhatsApp, SMS, email and AI calls, sent automatically, with approval only where you want it.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Jewellery Marketing Automation', alternateName: ['Customer journeys for jewellers', 'Jewellery marketing automation software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Marketing automation for jewellers: 300+ ready customer journeys including anniversary, birthday, abandoned cart, browse, scheme maturity, repair ready and win-back; a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; personalised pieces at today’s rate; optional approval gates and live visibility.',
+    description: 'Marketing automation for jewellers: ready-made customer journeys including anniversary, birthday, abandoned cart, browse, scheme maturity, repair ready and win-back; a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; personalised pieces at today’s rate; optional approval gates and live visibility.',
     url: 'https://jwero.ai/products/journeys', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up your first customer journey', step: JRN_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
@@ -381,7 +381,7 @@ const journeys = {
 ${L.hero({
   eyebrow: 'JEWELLERY MARKETING AUTOMATION · CUSTOMER JOURNEYS',
   h1: 'Jewellery marketing automation: customer journeys your team can see, and can stop.',
-  sub: 'Start from 300+ ready journeys, or describe the goal and Jwero creates a detailed journey automatically, across channels and across journeys. Each runs for every customer on their own timeline across WhatsApp, SMS, email and AI calls, automatically, inside the limits you set.',
+  sub: 'Start from a ready-made journey, or describe the goal and Jwero creates a detailed journey automatically, across channels and across journeys. Each runs for every customer on their own timeline across WhatsApp, SMS, email and AI calls, automatically, inside the limits you set.',
   primary: { href: '#', label: 'Show me the journeys for my shop', wa: 'journeys' },
 })}
 
@@ -396,7 +396,7 @@ ${L.section(`${L.sectionHead('SIX JOBS, ONE CANVAS', 'What jewellery marketing a
   <article><h3>6. Watch it work</h3><p>Who is at which step, what was sent, what is held for approval, and the visits and bills each journey produced.</p><a href="/products/reports">Reports →</a></article>
 </div>`)}
 
-${L.section(`<span id="ready"></span>${L.sectionHead('READY JOURNEYS', 'A few of the 300+ ready journeys.', 'Pick one, adjust it, switch it on.')}<div class="jrn-chips">${READY.map((r) => `<span>${r}</span>`).join('')}<span class="is-more">and 280+ more</span></div>`, { tone: 'tint' })}
+${L.section(`<span id="ready"></span>${L.sectionHead('READY JOURNEYS', 'A few of the ready-made journeys.', 'Pick one, adjust it, switch it on.')}<div class="jrn-chips">${READY.map((r) => `<span>${r}</span>`).join('')}<span class="is-more">and many more</span></div>`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('THE ARITHMETIC', 'The follow-ups your team never gets to.', 'Your numbers, not ours.')}<div class="callc" data-jrc>
   <div class="callc-in">

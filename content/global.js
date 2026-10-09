@@ -1,7 +1,7 @@
 // Jwero worldwide and market pages (2026-10-08). Confirmed by Jwero: tax regimes
 // (India GST, UK VAT, EU VAT, GCC VAT, US sales tax), multi-currency, Stripe and
 // PayPal alongside Razorpay and Cashfree, live gold rates for any market, hosted
-// region on request, self-hosted Enterprise anywhere, 14 languages incl. Arabic,
+// region on request, self-hosted Enterprise anywhere, many languages incl. Arabic,
 // Spanish and French. Not claimed: customers abroad, QuickBooks or Xero, tax
 // regimes beyond those listed (Canada, Singapore and others are "ask us").
 const L = require('../lib');
@@ -10,7 +10,7 @@ const FACTS = [
   ['coins', 'Your currency', 'Price, sell and invoice in your customer’s currency: dirhams, riyals, pounds, euros, dollars or rupees.'],
   ['receipt', 'Your tax system', 'Invoices under India GST, UK VAT, EU VAT, GCC VAT and US sales tax, set per business.'],
   ['trend', 'Your gold rate', 'Live metal rates for your market, by the gram, ounce or tola, repricing every channel.'],
-  ['chat', 'Your customers’ language', 'AI chat, voice and calls in 14 languages, including English, Arabic, Hindi, Spanish and French.'],
+  ['chat', 'Your customers’ language', 'AI chat, voice and calls in your customers’ languages, including English, Arabic, Hindi, Spanish and French.'],
   ['wallet', 'Your payment gateway', 'Stripe and PayPal, as well as Razorpay and Cashfree, on the counter, the website and inside WhatsApp.'],
   ['shield', 'Your region', 'Hosted in India or in your region on request, or self-hosted on your own servers with Enterprise.'],
 ];
@@ -28,10 +28,10 @@ const MARKETS = [
 const globalHub = {
   slug: 'global',
   title: 'Jewellery Software Worldwide: Currencies, VAT, Sales Tax, Languages | Jwero',
-  description: 'Jwero runs jewellery businesses in any market: your currency, GST, VAT or sales tax, live gold rates by gram, ounce or tola, 14 languages, Stripe and PayPal, and hosting in your region.',
+  description: 'Jwero runs jewellery businesses in any market: your currency, GST, VAT or sales tax, live gold rates by gram, ounce or tola, your customers’ languages, Stripe and PayPal, and hosting in your region.',
   breadcrumbs: [['Home', '/'], ['Jwero worldwide']],
   faqs: [
-    { q: 'Does Jwero work outside India?', a: 'Yes. Jwero supports local currencies, GST, VAT and US sales tax, live gold rates for any market, 14 languages, Stripe and PayPal, and hosting in your region on request.' },
+    { q: 'Does Jwero work outside India?', a: 'Yes. Jwero supports local currencies, GST, VAT and US sales tax, live gold rates for any market, your customers’ languages, Stripe and PayPal, and hosting in your region on request.' },
     { q: 'Which tax systems are supported?', a: 'India GST, UK VAT, EU VAT, GCC VAT and US sales tax, set per business. For another country, ask us.' },
     { q: 'Where is my data hosted?', a: 'In India by default, or in your region on request. Enterprise customers self-host on their own servers or cloud.' },
     { q: 'What does it cost outside India?', a: 'Jwero One is ₹18,000 a month with every module, shown here in your currency; the first month is ₹3,600. Messages and calls are charged at your country’s rates.' },
@@ -110,7 +110,7 @@ const sea = market({
   eyebrow: 'Jwero in South and Southeast Asia', wa: 'mkt-sea',
   h1: 'Jewellery software for South and Southeast Asia: your currency, your gold rate, one record.',
   sub: 'For goldsmiths, retail chains and wholesalers in Singapore, Malaysia, Sri Lanka, Nepal and Bangladesh. Prices follow the gold rate in your currency, and every customer is answered on WhatsApp in their language.',
-  points: [['Local currency', 'Price, sell and invoice in your customer’s currency.'], ['Gold by gram or tola', 'Live rates for your market reprice every channel.'], ['Gold schemes and gold loans', 'Savings plans and loans on gold, collected and tracked on the same books.'], ['WhatsApp first', 'Official WhatsApp with a shared inbox, catalogues at today’s rate and AI replies.'], ['Many languages', 'AI chat, voice and calls in 14 languages, including English, Hindi, Bengali and Tamil.'], ['Your region', 'Hosting in your region on request, or self-hosted with Enterprise.']],
+  points: [['Local currency', 'Price, sell and invoice in your customer’s currency.'], ['Gold by gram or tola', 'Live rates for your market reprice every channel.'], ['Gold schemes and gold loans', 'Savings plans and loans on gold, collected and tracked on the same books.'], ['WhatsApp first', 'Official WhatsApp with a shared inbox, catalogues at today’s rate and AI replies.'], ['Many languages', 'AI chat, voice and calls in your customers’ languages, including English, Hindi, Bengali and Tamil.'], ['Your region', 'Hosting in your region on request, or self-hosted with Enterprise.']],
   cmp: [['Price when gold moves', 'Typed on the board', 'Every piece repriced'], ['Schemes and loans', 'Registers', 'On the customer record and the books'], ['Enquiries', 'A personal phone', 'One inbox, answered at any hour'], ['Stock', 'A spreadsheet', 'Every piece by weight and purity'], ['Data', 'Wherever the tool keeps it', 'Your region, or your own servers']],
   faqs: [{ q: 'Which tax system will my invoices use?', a: 'Jwero supports GST, VAT and sales tax regimes per business. Tell us your country and we will confirm the set-up for you.' }, { q: 'Can I price in my own currency?', a: 'Yes. Price, sell and invoice in your customer’s currency.' }, { q: 'Does it support gold schemes?', a: 'Yes. Enrolment, instalments collected automatically, maturity and redemption, on the customer record.' }],
   close: ['Selling gold in South or Southeast Asia?', 'Tell us your country and what you run; we will show Jwero set up for your market.'],

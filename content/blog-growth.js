@@ -83,7 +83,7 @@ const regional = post({
   sub: '“Jhumka”, “mangalsutra”, “kada”. Customers ask for jewellery in their own words. A shop that understands them, in the showroom and on the phone, sells more.',
   product: ['/products/whatsapp', 'See WhatsApp in Jwero'],
   wa: 'blog-regional',
-  close: ['Your customers’ language, everywhere.', 'Jwero finds products by local names at the counter and supports calls in 14 languages.'],
+  close: ['Your customers’ language, everywhere.', 'Jwero finds products by local names at the counter and supports calls in your customers’ languages.'],
   faqs: [
     { q: 'Should my WhatsApp replies be in the customer’s language?', a: 'Reply in the language the customer writes in. A customer who writes in Hindi or Tamil and gets a reply in English feels like a ticket number.' },
     { q: 'How do I name products for regional search?', a: 'Keep the local names as well as the English ones: jhumka and earring, kada and bangle, haar and necklace. Customers and staff search with both.' },
@@ -120,7 +120,7 @@ const aiCalls = post({
   sub: 'Hundreds of scheme reminders a month, follow-ups after every enquiry, calls missed in the rush. The routine calls an AI can make, and the ones a person should.',
   product: ['/ai-calling-for-jewellers', 'See AI calling in Jwero'],
   wa: 'blog-aicalls',
-  close: ['The routine calls, made on time.', 'Jwero’s voice agent handles reminders and follow-ups in 14 languages, under the rules you set.'],
+  close: ['The routine calls, made on time.', 'Jwero’s voice agent handles reminders and follow-ups in your customers’ languages, under the rules you set.'],
   faqs: [
     { q: 'Which calls should an AI make?', a: 'Routine, predictable ones: scheme instalment reminders, ready-for-collection calls, appointment confirmations and first follow-ups after an enquiry.' },
     { q: 'Which calls should a person make?', a: 'Anything involving a complaint, a large purchase, a negotiation or a customer who asks for a person. The AI should hand over, not hold on.' },
@@ -149,7 +149,7 @@ const aiCalls = post({
   <p>Track instalments collected on time, visits booked, and calls handed to staff. If on-time instalments rise, the calls are paying for themselves.</p>
 
   <h2>How Jwero does it</h2>
-  <p>Jwero’s voice agent places and answers calls through a telephony provider, with speech recognition and voice in 14 languages, and records what was said on the customer’s record. See <a href="/ai-calling-for-jewellers">AI calling</a> and <a href="/products/gold-schemes">gold schemes</a>.</p>`,
+  <p>Jwero’s voice agent places and answers calls through a telephony provider, with speech recognition and voice in your customers’ languages, and records what was said on the customer’s record. See <a href="/ai-calling-for-jewellers">AI calling</a> and <a href="/products/gold-schemes">gold schemes</a>.</p>`,
 });
 
 const footfall = post({

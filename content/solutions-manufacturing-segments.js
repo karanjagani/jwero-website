@@ -101,7 +101,7 @@ ${L.ctaBand('See one client’s jobs, isolated.', 'Bring one OEM buyer’s order
 };
 
 const exportHousesFaqs = [
-  { q: 'Can it handle multi-currency orders?', a: 'Multi-currency support is not yet shipped and needs verification before it’s promised to an export buyer — ask us for the current status for your specific requirement.' },
+  { q: 'Can it handle multi-currency orders?', a: 'Ask us for the current status against your export requirement before it is promised to a buyer; we would rather confirm it for your specific requirement.' },
   { q: 'Can overseas buyers get replies outside business hours?', a: 'Yes — the AI workforce answers enquiries automatically around the clock, which matters when buyers are several timezones away.' },
   { q: 'Export compliance is strict — what happens if the system can’t handle a requirement?', a: 'We’ll tell you plainly on a demo rather than let you discover a gap mid-shipment. Order tracking and documentation trails are live; anything statutory-specific gets verified against your exact requirement first.' },
 ];
@@ -126,7 +126,7 @@ ${L.section(
     { quote: 'Our buyers are in different timezones and expect fast replies.', title: 'Replies around the clock', text: 'The AI workforce answers enquiries automatically at any hour, inside the limits you set.' },
   ])}`
 )}
-${L.honestGapsBlock(['Multi-currency order support — not yet shipped; ask us for its current status against your specific export requirement.'])}
+
 ${L.section(`${L.sectionHead('QUESTIONS EXPORT HOUSES ASK', 'Documentation, timezones and honest gaps — answered.', '')}${L.faqBlock(exportHousesFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/solutions/manufacturers">See the manufacturer overview</a> or <a href="/faq">the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">Every chat button on this site is the actual product, not a mockup — <a href="#" data-wa="export">send one message</a> and see for yourself.</p>`, { tone: 'tint' })}
 

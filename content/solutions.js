@@ -223,7 +223,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('BUILT FOR THE EVALUATION', 'What your committee will ask. What we hand them.', '')}
   ${L.cards([
-    { title: 'For IT', text: 'Isolated database per business, encryption, MFA/passkeys, role-based access — plus enterprise SSO (SAML/OIDC) and SCIM provisioning for chain deployments.', link: { href: '/trust/security', label: 'Security overview' } },
+    { title: 'For IT', text: 'Isolated database per business, encryption, MFA/passkeys, role-based access — plus enterprise single sign-on and automated user provisioning for chain deployments.', link: { href: '/trust/security', label: 'Security overview' } },
     { title: 'For finance', text: 'Your ledger stays in Tally or Zoho Books; the bridge is built. Jwero takes the revenue side.', link: { href: '/platform/integrations/tally', label: 'Coexistence note' } },
     { title: 'For operations', text: 'Pilot-branch rollout, training per role, season change-freeze, exit criteria you define.', link: { href: '/migration', label: 'Migration Centre' } },
   ])}`

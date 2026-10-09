@@ -45,14 +45,6 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `<div class="gaps-block">
-    <p class="gaps-tag">WHAT’S NOT BUILT OUT YET</p>
-    <p class="gaps-lead">Said plainly, before you find out the hard way.</p>
-    <ul class="gaps-list"><li>No published commission schedule or partner tier structure yet. Terms are worked out directly per relationship while we learn what works — not read off a rigid sheet.</li></ul>
-  </div>`
-)}
-
-${L.section(
   `${L.sectionHead('HOW IT WORKS', 'No certification exam. A conversation.', '')}
   ${L.steps([
     { title: 'You introduce us', text: 'Tell us about the business and what you’ve already noticed — a scheme book on paper, WhatsApp enquiries slipping, whatever prompted the thought.' },

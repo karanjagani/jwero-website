@@ -7,9 +7,9 @@
 // week:   [when, what happened, module index, the line it writes on the record,
 //          the signals it fires: [family index, name]]
 //
-// FAMILIES: the 198 kinds of signal the product listens for, grouped for a
-// jeweller. Counts are the product's own (36 sources, 198 names); every signal
-// name used below is one the product really has. Sum of counts = 198.
+// FAMILIES: the kinds of signal the product listens for, grouped for a
+// jeweller. Counts are the product's own; every signal name used below is one
+// the product really has.
 const FAMILIES = [
   ['Website & app', 23, ['Product viewed', 'Search performed', 'Cart abandoned']],
   ['WhatsApp & messaging', 21, ['Message received', 'Catalogue viewed', 'Broadcast clicked']],

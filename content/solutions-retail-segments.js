@@ -189,7 +189,7 @@ ${L.section(
     { quote: 'Trends change fast and we’re always guessing what to reorder.', title: 'Ageing and mover visibility', text: 'Fast/slow-mover views by category show what to reorder — evidence, not habit.' },
   ])}`
 )}
-${L.honestGapsBlock(['E-invoice IRN generation is not built in — GST invoices are generated; IRP registration stays with your CA’s tool for now.'])}
+${L.honestGapsBlock(['GST invoices are generated in Jwero; IRP registration for the e-invoice IRN stays with your CA’s tool for now.'])}
 ${L.section(`${L.sectionHead('QUESTIONS SILVER RETAILERS ASK', 'What silver retailers ask about volume selling.', '')}${L.faqBlock(silverRetailFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}
 ${L.section(`${L.proofStrip()}<p class="live-demo-note">You don’t have to take our word for it — <a href="#" data-wa="silver">try the chat button on this page</a>; it’s Jwero, live, answering.</p>`, { tone: 'tint' })}
 

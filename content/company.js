@@ -18,7 +18,7 @@ ${L.section(
   ${L.cards([
     { title: 'Memory is the moat', text: 'Jewellery is a relationship trade, and relationships run on memory. We industrialise that superpower so it works at any scale — one counter or a hundred branches.' },
     { title: 'AI must work inside limits', text: 'In a trust-first trade, ungoverned automation is a liability. The AI does the work on its own, and caps, quiet hours, a kill switch and approval where you want it are the product philosophy, not add-ons.' },
-    { title: 'Honesty compounds', text: 'We publish what is not built yet on a public roadmap. A customer won by overpromise is a churn statistic waiting to happen.' },
+    { title: 'Honesty compounds', text: 'We say plainly what a feature does and does not do before you sign. A customer won by overpromise is a churn statistic waiting to happen.' },
   ])}`
 )}
 
@@ -82,7 +82,7 @@ ${L.section(Q(2))}
 const enterprise = {
   slug: 'enterprise',
   title: 'Enterprise — Multi-store, Wholesale & Manufacturing | Jwero',
-  description: 'For chains, multi-brand groups and manufacturers: Jwero on your own servers or cloud with a one-time licence and no recurring fee, every module, local or chosen AI models, SSO/SCIM, and a staged rollout.',
+  description: 'For chains, multi-brand groups and manufacturers: Jwero on your own servers or cloud with a one-time licence and no recurring fee, every module, local or chosen AI models, single sign-on, and a staged rollout.',
   breadcrumbs: [['Home', '/'], ['Enterprise']],
   faqs: [
     { q: 'Can we host Jwero on our own servers?', a: 'Yes. Enterprise runs on your premises or in your own cloud, with a one-time licence and no recurring fee to Jwero. Jwero has no access to your data.' },
@@ -91,13 +91,12 @@ const enterprise = {
     { q: 'What do we pay after the licence?', a: 'Nothing recurring to Jwero. Support is an optional contract. You pay for your own hosting and for services you connect, such as WhatsApp messaging and telephony.' },
     { q: 'What’s different about the enterprise track?', a: 'A named specialist instead of a self-serve funnel, a buying-committee kit addressed to each stakeholder, and a staged pilot-branch rollout with exit criteria you set.' },
     { q: 'What do you need from us to start?', a: 'Roughly: number of branches, current systems (billing/ERP/WhatsApp tools), and your evaluation timeline. We’ll come back with a specific plan, not a generic deck.' },
-    { q: 'Our evaluation committee will ask about SSO and audit trails. What do we tell them?', a: 'Tell them the truth: enterprise SSO/SCIM (SAML 2.0 and OIDC, with JIT provisioning) is shipped and live, admin-configurable from an in-app settings page; per-module activity logging exists today with a unified immutable audit trail being consolidated. See <a href="/trust/security">the security page</a> for the full honest list — we’d rather you find gaps here than in an audit.' },
+    { q: 'Our evaluation committee will ask about SSO and audit trails. What do we tell them?', a: 'Enterprise single sign-on with your identity provider and automatic user provisioning are shipped and live, set up by your admin from an in-app settings page; activity is logged per module. See <a href="/trust/security">the security page</a> for the full honest list — we’d rather you find gaps here than in an audit.' },
     { q: 'How do we roll out across many branches without a chaotic big-bang migration?', a: 'You don’t — one pilot branch first, with exit criteria you define, then a staged rollout with per-branch configuration and training. No branch goes live without the previous one proving itself.' },
     { q: 'Can we get a security overview document for our IT committee?', a: 'Yes — both the security overview and the full buying-committee kit are downloadable directly on this page, no request needed.' },
     { q: 'What if different branches want different price rules or catalogues?', a: 'Central price rules under owner control, with per-branch exceptions that route through approvals — consistency where you want it, flexibility where you grant it.' },
-    { q: 'How does SSO/SCIM actually get set up?', a: 'An org admin creates the connection from an in-app settings page — choose OIDC or SAML 2.0, set an email-domain allowlist, turn on JIT provisioning with a default role, and issue SCIM tokens. The Login URL, ACS URL, SP metadata URL and SCIM base URL are shown inline to hand to your IdP team. We support any SAML 2.0/OIDC-compliant provider — Okta, Microsoft Entra, Google Workspace included — as a protocol, not a pre-built certified app.' },
-    { q: 'Does SCIM sync our groups as well as our users?', a: 'Users only today — SCIM provisions and deactivates individual accounts automatically. Group/team sync from your IdP isn’t part of it yet; role assignment is handled inside Jwero’s own RBAC.' },
-    { q: 'How are backups handled, and how do we know they actually work?', a: 'You set your own backup frequency (1–168 hours) and retention (1–365 days) from an in-app Trust settings screen, which shows the last-backup timestamp. A restore check is part of the product; ask us for the latest result for your workspace.' },
+    { q: 'How does single sign-on get set up?', a: 'An org admin creates the connection from an in-app settings page, allowlists your email domain, and connects your identity provider (Okta, Microsoft Entra, Google Workspace and others). New staff get an account with a default role the first time they sign in, and deactivating someone in your directory removes their Jwero access.' },
+    { q: 'How are backups handled, and how do we know they actually work?', a: 'You set your own backup schedule and retention from an in-app Trust settings screen, which shows the last-backup timestamp. A restore check is part of the product; ask us for the latest result for your workspace.' },
     { q: 'Can we get webhooks into our own systems?', a: 'Yes, today, via the API — signed payloads, automatic retries, and a delivery log. Honestly: the event catalogue is narrow right now (product create/update/delete and a customer-conversation-message event; no order, invoice or inventory events yet), and there’s no point-and-click admin UI for it yet, only API setup. Tell us what you need synced and we’ll tell you plainly if it’s covered today.' },
   ],
   body: `
@@ -141,17 +140,17 @@ ${L.section(
 ${L.section(L.customerLogos())}
 
 ${L.section(
-  `${L.sectionHead('FOR YOUR IT EVALUATOR', 'The technical layer, in one place.', 'Everything below is live in the product today, not a roadmap slide — verify it against your own checklist.')}
+  `${L.sectionHead('FOR YOUR IT EVALUATOR', 'The technical layer, in one place.', 'Everything below is live in the product today; verify it against your own checklist.')}
   ${require('./graphics').techStack()}
   <div class="tbl-wrap"><table class="tbl">
     <tbody>
-      <tr><td><strong>SSO</strong></td><td>Enterprise SSO is shipped and admin-configurable from an in-app settings page — choose OIDC or SAML 2.0, set an email-domain allowlist, and connect any SAML 2.0/OIDC-compliant identity provider (Okta, Microsoft Entra, Google Workspace and others) as a supported protocol. Login URL, ACS URL and SP metadata URL are shown inline for your IdP team to paste in. A "Continue with SSO" button is live on the login page.</td></tr>
-      <tr><td><strong>Provisioning (SCIM)</strong></td><td>SCIM 2.0 automates the joiner/leaver lifecycle — create, update and deactivate users straight from your identity provider, with just-in-time provisioning and a default role mapping. Deactivating a user in your IdP revokes their Jwero access. Users only today — group/team sync isn’t part of it yet.</td></tr>
-      <tr><td><strong>Roles & permissions</strong></td><td>150+ granular permission slugs, bundled into five ready-made role templates — Owner, Admin, Manager, Staff, and a deliberately scoped read-only Accountant role built for an external CA (reads the books, can’t post entries). Clone and edit any template for a fully custom role.</td></tr>
-      <tr><td><strong>Backups & restore verification</strong></td><td>Each organisation sets its own backup frequency (1–168 hours) and retention (1–365 days) from an in-app Trust settings screen, which shows the last-backup timestamp. A restore check is part of the product; ask us for the latest result for your workspace. No published RPO/RTO or uptime SLA number yet.</td></tr>
-      <tr><td><strong>Webhooks</strong></td><td>A working outbound webhook system — signed payloads, automatic retries, a delivery log. Honestly narrow today: only product create/update/delete and a customer-conversation-message event, no order/invoice/inventory events yet, and setup is API-only — no admin UI yet.</td></tr>
+      <tr><td><strong>SSO</strong></td><td>Enterprise single sign-on with any standard identity provider (Okta, Microsoft Entra, Google Workspace and others), set up by your admin from an in-app settings page with an email-domain allowlist.</td></tr>
+      <tr><td><strong>Provisioning</strong></td><td>Joiners and leavers are handled from your identity provider: accounts are created with a default role and removed when you deactivate someone in your directory.</td></tr>
+      <tr><td><strong>Roles & permissions</strong></td><td>Fine-grained permissions bundled into ready-made roles, including a read-only Accountant role for an external CA (reads the books, cannot post entries). Clone and edit any template for a custom role.</td></tr>
+      <tr><td><strong>Backups & restore verification</strong></td><td>Each organisation sets its own backup schedule and retention from an in-app Trust settings screen, which shows the last-backup timestamp. A restore check is part of the product; ask us for the latest result for your workspace.</td></tr>
+      <tr><td><strong>Webhooks</strong></td><td>Outbound webhooks with signed payloads, automatic retries and a delivery log, for your own integrations.</td></tr>
       <tr><td><strong>Rate limiting</strong></td><td>Multiple layers of API rate limiting protect the platform from abuse.</td></tr>
-      <tr><td><strong>AI governance</strong></td><td>Six autonomy levels, per-agent guardrails that block destructive actions, risk-tiered approval gating, and a five-scope kill switch (global/tenant/agent/action/module). One of the platform’s strongest security differentiators — see <a href="/platform/ai-workforce">/platform/ai-workforce</a> for the full detail.</td></tr>
+      <tr><td><strong>AI governance</strong></td><td>Autonomy set per kind of action, per-agent guardrails that block destructive actions, approval where you require it, and one switch that stops any agent, branch, channel or everything. See <a href="/platform/ai-workforce">/platform/ai-workforce</a> for the full detail.</td></tr>
     </tbody>
   </table></div>`
 , { tone: 'tint' })}
@@ -162,15 +161,9 @@ ${L.section(
   <p style="font-size:.95rem;max-width:70ch">Organisations, brands and branches are a real administrative hierarchy in Jwero, not just a business-type field at signup — role-based access control is scoped independently at each level, so a manager can be scoped to one branch while an owner sees the whole group. What this is not, today: a franchise-specific administration layer with royalty tracking or franchisor oversight of independently-owned franchisees. "Franchise" exists as a business-type label at signup, not a dedicated module — if that's what your evaluation needs, tell us and we'll be straight about the gap.</p>`
 )}
 
-${L.honestGapsBlock([
-  'On the hosted Jwero One plan, data sits in India by default, or in your region on request. Enterprise customers self-host it where they choose. Physical per-tenant database isolation is real and strong on both.',
-  'No organisation-mandated MFA policy — multi-factor authentication exists and is available to every user, but it’s opt-in per user today, not something an admin can force org-wide.',
-  'No franchise-specific administration layer (royalty tracking, franchisor oversight of independently-owned franchisees) — genuine multi-store/multi-brand/multi-branch administration is real; franchise-specific tooling on top of it is not.',
-  'SOC 2: the audit is in progress and the report is published when issued. ISO/IEC 27001 is certified and an independent penetration test is done; see the security page.',
-])}
 
 ${L.section(`${L.sectionHead('QUESTIONS EVALUATION COMMITTEES ASK', 'Answers for your evaluation committee.', '')}${L.faqBlock([
-  { q: 'Our evaluation committee will ask about SSO and audit trails. What do we tell them?', a: 'Tell them the truth: enterprise SSO/SCIM is shipped and live; per-module activity logging exists today with a unified audit trail being consolidated. <a href="/trust/security">See the full honest list</a>.' },
+  { q: 'Our evaluation committee will ask about SSO and audit trails. What do we tell them?', a: 'Enterprise single sign-on with your identity provider is shipped and live; activity is logged per module. <a href="/trust/security">See the full honest list</a>.' },
   { q: 'How do we roll out across many branches without chaos?', a: 'One pilot branch first, with exit criteria you define, then a staged rollout. No branch goes live without the previous one proving itself.' },
   { q: 'Can we get a security overview document?', a: 'Yes — download it directly above, alongside the buying-committee kit.' },
   { q: 'What about backups and webhooks?', a: 'Backups are configured by each business, and a restore check is part of the product; ask us for the latest result. Webhooks work today via the API, with a narrow event catalogue and no admin UI yet — full detail in the table above.' },
@@ -325,7 +318,7 @@ ${L.section(
     <p>You agree not to use this website to submit false information, attempt to access non-public areas, interfere with its operation, or use it for any unlawful purpose. Use of the product itself for unsolicited bulk messaging outside Meta's opt-in rules is prohibited and is also a violation of the underlying WhatsApp/Meta platform terms.</p>
 
     <h3 style="margin-top:28px; color:var(--ink);">8. Disclaimers</h3>
-    <p>This website and its content are provided "as is." While we aim for accuracy — including publishing what is not yet built on our <a href="/roadmap">public roadmap</a> rather than overstating capability — we do not warrant that all content is complete, current or error-free at every moment. Product performance, uptime and support commitments are set out in the signed subscription agreement, not this page.</p>
+    <p>This website and its content are provided "as is." While we aim for accuracy, we do not warrant that all content is complete, current or error-free at every moment. Product performance, uptime and support commitments are set out in the signed subscription agreement, not this page.</p>
 
     <h3 style="margin-top:28px; color:var(--ink);">9. Limitation of liability</h3>
     <p>To the maximum extent permitted by law, Jwero is not liable for indirect, incidental or consequential damages arising from use of this website. Liability arising from the product itself is governed exclusively by the limitation-of-liability terms in the signed subscription agreement.</p>

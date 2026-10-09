@@ -138,7 +138,7 @@ ${L.compareRows([
 
 ${L.honestGapsBlock([
   'No Rapaport or other published price-list feed, and no listing to RapNet or trade marketplaces. The rate grid is yours to enter and maintain.',
-  'Brokerage and commission accounting for brokers is not built.',
+  'Brokerage and commission accounting for brokers stays in your accounts.',
   'Kimberley Process declarations and export paperwork are not generated.',
   'Sorting a parcel into lots that reconcile, grading sessions and tracking a stone away at a lab are in the product’s data model and are rolling out; ask us to show you where they stand before you rely on them.',
 ])}

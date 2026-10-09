@@ -81,7 +81,7 @@ const TOOL_QA = {
     { q: 'How do jewellery wholesalers find new retailers?', a: 'Through referrals, exhibitions and directories. Jwero’s Lead Finder searches for jewellery businesses by city and type, charged per search, and adds them to your CRM as prospects to contact.' },
   ],
   'platform/integrations': [
-    { q: 'Can I connect my own AI agent to my jewellery software?', a: 'Yes. Jwero has an MCP server, so an AI agent that supports the Model Context Protocol can read and act on your data within the permissions you give it. Webhooks and APIs are available for other integrations.' },
+    { q: 'Can I connect my own AI agent to my jewellery software?', a: 'Yes. An AI agent of your own can connect to Jwero and read and act on your data within the permissions you give it. Webhooks and APIs are available for other integrations.' },
   ],
   'products/reports': [
     { q: 'Which reports should a jewellery owner see daily?', a: 'Today’s sales by counter and branch, cash against bills, stock value at today’s rate, pieces ageing, scheme collections due and enquiries not yet answered. In Jwero these sit on one dashboard.' },

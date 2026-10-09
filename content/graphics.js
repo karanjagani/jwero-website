@@ -100,11 +100,11 @@ const tallyFlow = () => `
 
 // Enterprise: the technical layer as a stack. The detailed table stays below.
 const STACK_L = [
-  ['key', 'Identity', ['SSO with OIDC or SAML 2.0', 'SCIM 2.0 provisioning']],
-  ['users', 'Access', ['150+ permissions', '5 role templates, clone and edit']],
-  ['vault', 'Data', ['Backups every 1 to 168 hours', 'Retention 1 to 365 days']],
-  ['flow', 'Integrations', ['Signed webhooks with retries', 'MCP server for your AI agents']],
-  ['bot', 'AI governance', ['6 autonomy levels', '5-scope kill switch']],
+  ['key', 'Identity', ['Single sign-on with your identity provider', 'Users provisioned automatically']],
+  ['users', 'Access', ['Fine-grained permissions', 'Role templates you clone and edit']],
+  ['vault', 'Data', ['Backup schedule you set', 'Retention you set']],
+  ['flow', 'Integrations', ['Webhooks with retries', 'Your own AI agents, with scoped access']],
+  ['bot', 'AI governance', ['Autonomy set per kind of action', 'One switch that stops it']],
   ['shield', 'Protection', ['Layered API rate limits', 'Encrypted in transit and at rest']],
 ];
 const techStack = () => `
@@ -128,7 +128,7 @@ const INTG = [
   ['store', 'Ecommerce', ['Shopify', 'WooCommerce', 'Unicommerce']],
   ['chat', 'Meta and Google', ['WhatsApp Business Platform', 'Instagram', 'Facebook', 'Google Shopping']],
   ['phone', 'Calls', ['Your telephony provider']],
-  ['bot', 'AI', ['MCP server', 'Your own models']],
+  ['bot', 'AI', ['Your own AI agents', 'Your own models']],
 ];
 const integrationMap = () => `
 <figure class="imap" data-gfx aria-label="What Jwero connects to, grouped by kind">

@@ -50,7 +50,7 @@ module.exports = {
   <h2>What to measure</h2>
   <p>Enquiries answered within five minutes, after-hours enquiries that became visits, and payments taken inside the chat. If after-hours visits rise, the chatbot is paying for itself.</p>`,
     faqs: [
-      { q: 'Can the chatbot reply in Hindi or Gujarati?', a: 'Yes. Jwero’s AI replies in 14 languages, including Hindi, Gujarati, Marathi, Tamil, Telugu and Bengali, and can answer a voice note with voice.' },
+      { q: 'Can the chatbot reply in Hindi or Gujarati?', a: 'Yes. Jwero’s AI replies in your customers’ languages, including Hindi, Gujarati, Tamil and English, and can answer a voice note with voice.' },
       { q: 'Will the chatbot work on my existing number?', a: 'Yes. The number moves to the official WhatsApp Business Platform and stays the same for customers.' },
       { q: 'What does it cost to run?', a: 'Messages, AI and calls are paid from a prepaid wallet; Jwero One includes the platform for ₹18,000 a month.' },
     ],

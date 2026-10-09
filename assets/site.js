@@ -1266,7 +1266,7 @@ function jwFromInr(n) {
       return '<li><b>' + esc2(ev[0]) + '</b><span>' + esc2(mode === 'today' ? ev[1] + ', known only to: ' + tool : ev[3]) + (chips ? '<span class="gem2-chips">' + chips + '</span>' : '') + '</span></li>';
     }
     var rated = false;
-    // The signal board: 198 dots in ten families; the ones this week has fired are lit.
+    // The signal board: dots in ten families; the ones this week has fired are lit.
     function fired() {
       var per = FAMS.map(function () { return []; }), seen = {};
       function add(g) { var id = g[0] + '|' + g[1]; if (seen[id]) return; seen[id] = 1; if (per[g[0]]) per[g[0]].push(g[1]); }
@@ -1296,7 +1296,7 @@ function jwFromInr(n) {
         b.classList.toggle('is-shown', f === shown);
       });
       root.querySelector('[data-gem2-signals]').classList.toggle('is-idle', shown < 0);
-      if (heardEl) heardEl.textContent = total + ' of 198';
+      if (heardEl) heardEl.textContent = String(total);
       if (shown < 0) { sigNote.innerHTML = 'Press play. Each event shows the family of signals it fires, one family at a time.'; return; }
       var F = FAMS[shown], on = per[shown], now = latest.filter(function (g) { return g[0] === shown; }).map(function (g) { return g[1]; });
       var also = live.filter(function (f) { return f !== shown; });

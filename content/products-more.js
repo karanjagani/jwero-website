@@ -480,7 +480,7 @@ const mockReports = `
 
 // Reports, rebuilt 2026-10-07. Confirmed by Jwero: scheduled reports live,
 // mobile owner's dashboard, Excel export. Not claimed: WhatsApp delivery of
-// scheduled reports, Zoho Books. Predictive forecasting stays listed as not built.
+// scheduled reports, Zoho Books. Predictive forecasting is not claimed.
 const RE_FLOW = [
   ['9:00 am', 'The owner asks: “Which branch holds the most 180-day bangles?”'],
   ['Built', 'AI builds the source, filters and chart'],

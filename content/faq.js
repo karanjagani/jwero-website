@@ -14,16 +14,16 @@ const CATEGORIES = [
       { q: 'Is Jwero a CRM or an ERP?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP, from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.' },
       { q: 'Who is Jwero actually for?', a: 'Single stores to multi-store chains, wholesalers, manufacturers, franchise networks and online-first brands. The same system; modules switch on per business type. See <a href="/solutions">all 23 solutions</a>.' },
       { q: 'Does Jwero replace my current software?', a: 'Usually it sits alongside your accounting software (via the Tally/Zoho bridge) and replaces the scattered tools — the WhatsApp app, the Excel customer list, the diary follow-ups, the PDF catalogue.' },
-      { q: 'What does "AI-first" actually mean here, concretely?', a: 'An AI workforce that handles replies, follow-ups and reminders on its own: 240+ governed actions, daily caps, quiet hours and a five-scope kill switch, with approval queues for the actions you choose.' },
+      { q: 'What does "AI-first" actually mean here, concretely?', a: 'An AI workforce that handles replies, follow-ups and reminders on its own: AI actions that run inside limits you set, daily caps, quiet hours and one switch that stops it, from one agent to everything, with approval queues for the actions you choose.' },
       { q: 'Can AI actually increase my sales?', a: 'It recovers sales you are currently losing — unanswered enquiries, forgotten follow-ups, dormant customers, occasions nobody tracked. That recovered revenue is what the weekly growth report measures.' },
       { q: 'Will AI replace my staff?', a: 'No. AI does the routine work, your people sell. Salespeople close more because the AI remembers every customer for them before they even pick up the conversation.' },
-      { q: 'Can AI recommend jewellery to customers?', a: 'AI-assisted catalogue shares match pieces to a customer’s recorded taste and budget today. A predictive recommendation engine is on the roadmap, not shipped — we won’t call today’s matching "AI recommendations" in the machine-learning sense.' },
+      { q: 'Can AI recommend jewellery to customers?', a: 'AI-assisted catalogue shares match pieces to a customer’s recorded taste and budget today. We won’t call today’s matching "AI recommendations" in the machine-learning sense.' },
       { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time, in standard formats. It’s a deliberate design decision, built into the product rather than granted as a support favour.' },
       { q: 'Is there a mobile app?', a: 'Yes — running the business from your phone (approvals, enquiries, sales, stock) is part of the product. Confirm exact app-store availability for your case on a demo before assuming a specific platform.' },
       { q: 'What is the weekly growth report?', a: 'A plain-language WhatsApp report to the owner: how many past customers came back, how many appointments were booked, how much revenue the system brought back. Proof, delivered weekly, without a dashboard you have to remember to open.' },
       { q: 'Is a gold savings scheme even legal to run — isn’t that an NBFC or interest product?', a: 'Every plan is framed and operated as an advance against a future purchase: benefits are paid as bonus gold or a discount, never as interest. That’s a framing discipline the product enforces, and it stops short of a legal opinion; confirm your specific scheme structure with your own counsel. See <a href="/products/gold-schemes">gold schemes</a>.' },
       { q: 'My competitors don’t use anything like this — why be first?', a: 'Regional chains already run on systems like this; independent jewellers have been the ones without one. Being early on the revenue side (WhatsApp commerce, digital catalogues, gold schemes) is a customer-facing advantage today, ahead of when everyone else catches up.' },
-      { q: 'What does Jwero NOT do yet — honestly?', a: 'E-invoice/GSTR automation (IRN, e-way bills, portal filing). All on the <a href="/roadmap">public roadmap</a>, none fully shipped — we say so before you buy, not after. (Counter returns, cash day-close and girvi, which earlier versions of this page listed here, shipped in 2026.)' },
+      { q: 'Does Jwero file GST returns and e-invoices for me?', a: 'Invoices are GST-ready at the live rate and the e-invoice file is prepared for the portal; filing itself stays with your CA, usually in Tally through the bridge. We say so before you buy, not after.' },
     ],
   },
   {
@@ -33,8 +33,8 @@ const CATEGORIES = [
       { q: 'Will my WhatsApp number get banned?', a: 'Jwero uses the official WhatsApp Business API: Meta’s template approval lifecycle, compliance checks before anything sends, and a test-broadcast simulator to catch problems before customers see them. Ban risk comes from unofficial bulk-messaging tools — that is specifically what this isn’t.' },
       { q: 'Can I keep my existing WhatsApp number?', a: 'Yes — your number moves onto the official Business API and keeps working. Customers notice faster answers; the number itself stays the same.' },
       { q: 'What’s the difference between normal WhatsApp and the Business API?', a: 'Normal WhatsApp lives on one phone. The official API lets your whole team — and the AI workforce — answer from one shared inbox, with records, automation, and none of the ban-risk grey zone of bulk tools.' },
-      { q: 'Can AI reply to customers automatically?', a: 'Yes, within limits you set: daily caps, quiet hours, and a kill switch that stops it instantly at five scopes. You can require approval for any kind of action.' },
-      { q: 'What languages can the AI speak?', a: 'The AI voice assistant speaks 14 languages today. Chat replies follow the customer’s language where the underlying models support it.' },
+      { q: 'Can AI reply to customers automatically?', a: 'Yes, within limits you set: daily caps, quiet hours, and one switch that stops it instantly, from one agent to everything. You can require approval for any kind of action.' },
+      { q: 'What languages can the AI speak?', a: 'The AI voice assistant speaks your customers’ languages, including Hindi, Arabic and English. Chat replies follow the customer’s language where the underlying models support it.' },
       { q: 'How do broadcasts work without becoming spam?', a: 'Consent-based lists, per-customer message-fatigue scoring, frequency caps and opt-out handling — enforced in the product itself, rather than sitting in a policy document nobody reads.' },
       { q: 'Can I run WhatsApp campaigns for festivals?', a: 'Yes — templated, approved campaigns with attribution, so you know what a festival broadcast returned instead of guessing.' },
       { q: 'Can I connect Instagram?', a: 'Yes — Instagram DMs land in the same inbox, on the same customer record, with the same AI assistance as WhatsApp.' },
@@ -51,7 +51,7 @@ const CATEGORIES = [
       { q: 'Will AI message my customers without asking me?', a: 'Yes, inside your daily caps and quiet hours, with every action logged. You choose which kinds of action need your approval, and one switch stops everything.' },
       { q: 'Can I approve every single message before it sends?', a: 'Yes. That is Assist mode, and you can switch it on for every action or only for some. It is a choice, not the default: Jwero’s AI works on its own unless you ask for approval.' },
       { q: 'What exactly is the "daily cap"?', a: 'A hard limit you set on how many actions the AI can take per day, per action type. It’s enforced in the product itself, not something written into a brochure.' },
-      { q: 'Can I switch the AI off entirely?', a: 'Instantly, at five scopes — one action, one agent, one branch, one channel, or the whole account.' },
+      { q: 'Can I switch the AI off entirely?', a: 'Instantly. One switch stops it, from one agent to the whole account.' },
       { q: 'Can the AI give discounts on its own?', a: 'No. Pricing actions and discounts follow your price rules and staff permissions — the AI sends messages, it does not set prices.' },
       { q: 'What can the AI never do?', a: 'A defined set of blocked actions — irreversible or financially sensitive moves stay human-only. Ask us for the current list relevant to your setup on a demo.' },
       { q: 'What if the AI embarrasses me in front of a customer I’ve known for 20 years?', a: 'That fear is what the controls exist for. Put any kind of message behind approval and nothing of that kind reaches her until your team has seen it. Every action is logged, and quiet hours mean nobody gets a message at 11pm either.' },
@@ -84,12 +84,12 @@ const CATEGORIES = [
       { q: 'Can I control what each staff member sees?', a: 'Yes — role-based access with roughly 150 fine-grained permissions. A salesperson, a branch manager and an owner see different things by design.' },
       { q: 'What happens when a salesperson leaves?', a: 'Deactivate their login in seconds. Customers, conversations and history stay with the business: the record always belonged to the business, never to the individual who happened to hold it.' },
       { q: 'Is there two-factor login?', a: 'Yes — multi-factor authentication and passkeys are supported.' },
-      { q: 'What happens if the internet goes down at my shop?', a: 'Honestly: Jwero is cloud software and needs a connection; offline mode is on the roadmap, not shipped today. Mobile data works as a practical backup in the meantime.' },
+      { q: 'What happens if the internet goes down at my shop?', a: 'Honestly: Jwero is cloud software and needs a connection; offline counter billing can be switched on for your business, and mobile data works as a practical backup in the meantime.' },
       { q: 'Are you ISO or SOC 2 certified?', a: 'ISO/IEC 27001: yes, certified, with an independent penetration test (VAPT) completed and OWASP Top 10 testing done. SOC 2: the audit is in progress; we publish the report when it is issued, not before.' },
       { q: 'I don’t trust the cloud with my customer data — why should I?', a: 'Role-based access with role presets, activity logs (per-module today, with a unified audit trail being consolidated), and DPDP-compliant data-subject export/erase workflows are real, working product features rather than marketing lines. We are not ISO or SOC 2 certified yet, and we don’t claim specific uptime or backup guarantees — see <a href="/trust/security">Security & Data Ownership</a> for the full honest list.' },
       { q: 'Do you sell or share my customer data?', a: 'Never. Your customers are your asset; our privacy approach is built around that. See the <a href="/legal/privacy">Privacy Policy</a> and <a href="/legal/dpdp">DPDP statement</a>.' },
       { q: 'Can the owner see everything across every branch?', a: 'Yes — owner-level visibility spans all branches by default; branch staff see only what their role and branch permit.' },
-      { q: 'Do you support SSO for company logins?', a: 'Yes — enterprise SSO (SAML/OIDC) with JIT provisioning and SCIM 2.0 for automated user provisioning, alongside per-user logins with MFA and role-based permissions.' },
+      { q: 'Do you support SSO for company logins?', a: 'Yes. Enterprise single sign-on with your company identity provider and automated user provisioning, alongside per-user logins with MFA and role-based permissions.' },
     ],
   },
   {
@@ -152,7 +152,7 @@ const CATEGORIES = [
       { q: 'Is training included in the price?', a: 'Yes — included in implementation, delivered per role, with refreshers when you add new staff.' },
       { q: 'What if my older or more senior staff resist?', a: 'Start them on one thing: the shared inbox with AI replies. It makes their day easier immediately and usually converts sceptics faster than any pitch.' },
       { q: 'What support do I get after going live?', a: 'WhatsApp-first support with a named onboarding contact from day one, never a ticket queue you shout into.' },
-      { q: 'Do you support in Hindi, Gujarati or other regional languages?', a: 'Yes. Support helps in your language, staff screens are available in multiple languages, and the AI voice assistant speaks 14 languages.' },
+      { q: 'Do you support in Hindi, Gujarati or other regional languages?', a: 'Yes. Support helps in your language, staff screens are available in multiple languages, and the AI voice assistant speaks your customers’ languages, including Hindi.' },
       { q: 'Who helps during the festival rush, when everything is chaos?', a: 'Support is staffed for the trade’s calendar — festivals are exactly when we don’t disappear. The season change-freeze policy exists to protect you from disruptive changes at the worst possible time.' },
       { q: 'How fast do you actually respond?', a: 'Test us before you buy: message us on WhatsApp right now and time it. That response is the SLA, demonstrated in real time rather than promised on paper.' },
       { q: 'Can you visit my store in person?', a: 'Usually not — onboarding is remote-first and works well that way. Ask a specialist about in-person options for your specific case.' },
@@ -163,8 +163,8 @@ const CATEGORIES = [
   {
     id: 'language', label: 'Languages & customer experience',
     items: [
-      { q: 'Does the product work in Hindi, Gujarati or Tamil for my team?', a: 'Yes. Staff screens are available in multiple languages, the AI voice assistant speaks 14 languages, and support helps in yours.' },
-      { q: 'Can the AI talk to my customers in their own language?', a: 'Yes — the AI voice assistant covers 14 languages, and chat replies follow the customer’s language where supported.' },
+      { q: 'Does the product work in Hindi, Gujarati or Tamil for my team?', a: 'Yes. Staff screens are available in multiple languages, the AI voice assistant speaks your customers’ languages, and support helps in yours.' },
+      { q: 'Can the AI talk to my customers in their own language?', a: 'Yes. The AI voice assistant speaks your customers’ languages, including Hindi, Arabic and English, and chat replies follow the customer’s language where supported.' },
       { q: 'Will my customers need to download anything new?', a: 'No — they use WhatsApp and Instagram, which they already have. An optional customer app exists as an add-on, never a requirement.' },
       { q: 'Can NRI or overseas customers buy from abroad?', a: 'Yes — WhatsApp catalogue sharing, remote video consultation and ordering work across borders; payment specifics depend on your setup.' },
       { q: 'Will older customers cope with buying over WhatsApp?', a: 'They already send your salespeople "rate kya hai?" on WhatsApp today. Jwero just makes sure those chats get answered, recorded and closed.' },
@@ -196,7 +196,7 @@ ${L.section(
     <p class="faq-search-count" data-faq-count aria-live="polite"></p>
   </div>
   <div class="filter-chips" data-faq-chips>${CATEGORIES.map((c, i) => `<a href="#${c.id}"${i === 0 ? ' class="active"' : ''}>${c.label}</a>`).join('')}</div>
-  <p style="font-size:.85rem; color:var(--ink-2); max-width:44em;">Every answer below follows one rule: shipped capabilities are claimed plainly, and anything not yet built is named just as plainly. See the full <a href="/roadmap">public roadmap</a> for what’s shipped, rolling out, and still ahead.</p>`
+  <p style="font-size:.85rem; color:var(--ink-2); max-width:44em;">Every answer below follows one rule: what Jwero does is claimed plainly, and what it does not do is said just as plainly.</p>`
 )}
 
 ${CATEGORIES.map(

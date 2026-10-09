@@ -245,9 +245,9 @@ ${L.ctaBand('Stop losing the DMs you paid for.', 'Show us last week’s DMs. We 
 `,
 };
 
-// AI sales agents, rebuilt 2026-10-07. Confirmed by Jwero: 14 languages across
-// chat, voice and calls; telephony provider kept generic. "240+ actions" not
-// repeated here (unconfirmed as current). Video selling lives on /products/meetings.
+// AI sales agents, rebuilt 2026-10-07. Confirmed by Jwero: many languages across
+// chat, voice and calls; telephony provider kept generic. Action counts not
+// repeated here. Video selling lives on /products/meetings.
 const AI_FLOW = [
   ['11:04 pm', 'A WhatsApp message: “Light bridal necklace, under 3 lakh?”'],
   ['AI reply', 'Three pieces at today’s rate, from her taste and past purchases'],
@@ -265,7 +265,7 @@ const AI_CMP = [
   ['Prices', 'Typed by hand', 'None or fixed', 'Today’s rate, from your catalogue'],
   ['Knows the customer', 'Your memory', 'No', 'Purchases, scheme and taste on her record'],
   ['Follow-ups', 'When someone remembers', 'No', 'Sent on schedule'],
-  ['Voice and calls', 'No', 'No', 'AI voice on WhatsApp, web chat and phone, in 14 languages'],
+  ['Voice and calls', 'No', 'No', 'AI voice on WhatsApp, web chat and phone, in your customers’ languages'],
   ['Control', 'n/a', 'Runs as built', 'Optional approvals, daily caps, kill switch, full log'],
   ['Channels', 'WhatsApp only', 'One channel', 'WhatsApp, Instagram, web chat and phone'],
 ];
@@ -278,9 +278,9 @@ const AI_HOW = [
   ['Watch the log', 'Every action is logged, so you can widen or tighten the limits whenever you like.'],
 ];
 const aiFaqs = [
-  { q: 'What is an AI chatbot for jewellers?', a: 'An assistant that answers customers on WhatsApp, Instagram and your website with real pieces at today’s rate, follows up, and books visits. Jwero’s also speaks and calls, in 14 languages, inside the limits you set.' },
+  { q: 'What is an AI chatbot for jewellers?', a: 'An assistant that answers customers on WhatsApp, Instagram and your website with real pieces at today’s rate, follows up, and books visits. Jwero’s also speaks and calls, in your customers’ languages, inside the limits you set.' },
   { q: 'What is an AI sales agent in Jwero?', a: 'A member of the AI workforce with a set of allowed actions, a knowledge base, limits, optional approvals and an activity log. It sends replies, follow-ups, reminders and invitations within the limits you set.' },
-  { q: 'Does it speak Hindi and other languages?', a: 'Yes. Chat, voice and phone calls run in 14 languages, including Hindi, Gujarati, Marathi, Tamil, Telugu, Bengali and English.' },
+  { q: 'Does it speak Hindi and other languages?', a: 'Yes. Chat, voice and phone calls run in your customers’ languages, including Hindi, Gujarati, Tamil, Arabic and English.' },
   { q: 'Can the AI make phone calls?', a: 'Yes. AI voice is built into WhatsApp and web chat, and phone calls and IVR run over your telephony provider, with transcripts on the customer record.' },
   { q: 'Does it share products and prices?', a: 'Yes. Replies include pieces from your catalogue at today’s rate, chosen from her taste and past purchases.' },
   { q: 'Will this replace my sales staff?', a: 'No. The AI does the remembering and the follow-up; your people do the selling, and every customer walks in already known.' },
@@ -293,11 +293,11 @@ const aiFaqs = [
 const aiAgents = {
   slug: 'products/ai-sales-agents',
   title: 'AI for Jewellers: AI Chatbot, Sales Agents & Voice AI | Jwero',
-  description: 'AI chatbot and voice AI for jewellers: answers on WhatsApp, Instagram and web chat with pieces at today’s rate, follows up and calls back in 14 languages, 24/7, inside your daily caps and kill switch, with approval where you want it.',
+  description: 'AI chatbot and voice AI for jewellers: answers on WhatsApp, Instagram and web chat with pieces at today’s rate, follows up and calls back in your customers’ languages, 24/7, inside your daily caps and kill switch, with approval where you want it.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero AI Sales Agents & Voice', alternateName: ['AI chatbot for jewellers', 'WhatsApp chatbot for jewellery shops', 'Voice AI for jewellers'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'AI sales agents for jewellers that answer on WhatsApp, Instagram and web chat with pieces at today’s rate, follow up, remind and call back in 14 languages, with AI voice on WhatsApp and web chat and phone calls over the jeweller’s telephony provider, inside daily caps, quiet hours and a kill switch, with approval where the jeweller requires it.',
+    description: 'AI sales agents for jewellers that answer on WhatsApp, Instagram and web chat with pieces at today’s rate, follow up, remind and call back in the customer’s language, with AI voice on WhatsApp and web chat and phone calls over the jeweller’s telephony provider, inside daily caps, quiet hours and a kill switch, with approval where the jeweller requires it.',
     url: 'https://jwero.ai/products/ai-sales-agents', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to start with an AI sales agent in a jewellery shop', step: AI_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
@@ -307,7 +307,7 @@ const aiAgents = {
 ${L.hero({
   eyebrow: 'AI CHATBOT · AI SALES AGENTS · VOICE AI',
   h1: 'AI chatbot and voice AI for jewellers: answers, follows up and calls back, 24/7, inside the limits you set.',
-  sub: 'AI staff that reply on WhatsApp, Instagram and your website with real pieces at today’s rate, chase every quiet enquiry, and call customers in 14 languages. They work automatically; you choose which actions need your approval.',
+  sub: 'AI staff that reply on WhatsApp, Instagram and your website with real pieces at today’s rate, chase every quiet enquiry, and call customers in their own language. They work automatically; you choose which actions need your approval.',
   primary: { href: '#', label: 'Show me an AI reply going out', wa: 'aiagents' },
   secondary: { href: '/platform/ai-workforce', label: 'How governance works' },
   mock: L.mockApproval,
@@ -320,7 +320,7 @@ ${L.section(`${L.sectionHead('SIX JOBS, ONE AI WORKFORCE', 'What you can hire AI
   <article><h3>2. Follow-ups</h3><p>Every quiet chat, open quotation and abandoned enquiry chased on schedule.</p><a href="/products/quotations">Quotations →</a></article>
   <article><h3>3. Scheme collections</h3><p>Instalment reminders by message and AI call, politely and on time.</p><a href="/products/gold-schemes">Gold schemes →</a></article>
   <article><h3>4. Occasions</h3><p>Birthdays, anniversaries and festival invitations, planned weeks ahead and sent automatically.</p><a href="/products/journeys">Journeys →</a></article>
-  <article><h3>5. Voice in 14 languages</h3><p>AI voice on WhatsApp and web chat, and phone calls and IVR over your telephony provider, transcribed onto her record.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
+  <article><h3>5. Voice in your customers’ languages</h3><p>AI voice on WhatsApp and web chat, and phone calls and IVR over your telephony provider, transcribed onto her record.</p><a href="/ai-calling-for-jewellers">AI calling →</a></article>
   <article><h3>6. You stay in charge</h3><p>Approval where you want it, daily caps, a kill switch, and a log of every action.</p><a href="/platform/ai-workforce">AI governance →</a></article>
 </div>`)}
 

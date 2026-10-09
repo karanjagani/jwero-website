@@ -319,7 +319,7 @@ function priceBlock(i, medium) {
 }
 // Stage 3: who already runs on it. Stage 6: pass it on.
 function proofStrip2() {
-  return section(`${customerLogos()}<p class="proof-caption">Fifteen named jewellers, each one a permissioned customer. <a href="/customers">See them</a> · <a href="/roadmap">What Jwero does not do yet</a></p>`, { tone: 'tint' });
+  return section(`${customerLogos()}<p class="proof-caption">Fifteen named jewellers, each one a permissioned customer. <a href="/customers">See them</a></p>`, { tone: 'tint' });
 }
 function passItOn(i) {
   const what = i && i.key !== 'staff' ? i.label.toLowerCase().replace('i work in one', 'jewellery business') : 'jewellery business';
@@ -412,7 +412,7 @@ ${passItOn(i)}`;
 // blueprint/CUSTOMER-INTELLIGENCE-FACTS-2026-09.md. No ML is claimed: the
 // scores are rule formulas a jeweller can read, each with a visible why.
 const INTEL_SOURCES = ['WhatsApp', 'Website', 'Counter', 'POS', 'Gold schemes', 'Girvi', 'Karigar', 'Calls', 'Instagram', 'Loyalty', 'Occasions', 'Referrals', 'Email & SMS', 'Ads', 'Staff'];
-const INTEL_SCORES = ['Intent', 'Conversion', 'Churn risk', 'Trust', 'Health', 'Opportunity', '… and five more'];
+const INTEL_SCORES = ['Intent', 'Conversion', 'Churn risk', 'Trust', 'Health', 'Opportunity', '… and more'];
 // Illustrative weights only — the engine's own weights are tuned per business and
 // deliberately not published. d = [intent, conversion, confidence, trust]
 const INTEL_SIGNALS = [
@@ -437,35 +437,35 @@ function intelligence(opts = {}) {
   <div class="intel-flow cells">
     <div class="intel-stage">
       <p class="eyebrow">1 · SIGNALS</p>
-      <div class="intel-big"><span class="stat-n">198</span><span>kinds of customer signal</span></div>
-      <p>From 36 sources — the counter, WhatsApp, the website, schemes, girvi, the workshop, calls, Instagram, occasions. Many of them move a score the moment they land.</p>
+      <div class="intel-big"><span class="stat-n">Every</span><span>signal a customer gives</span></div>
+      <p>From the counter, WhatsApp, the website, schemes, girvi, the workshop, calls, Instagram and occasions. Many of them move a score the moment they land.</p>
       <div class="intel-chips" aria-hidden="true">${chips}</div>
     </div>
     <div class="intel-stage">
       <p class="eyebrow">2 · STATES</p>
-      <div class="intel-mult" aria-label="5 lifecycle stages times 11 RFM segments times 4 value tiers times 6 channels times 5 occasion types equals 6,600 customer states">
-        <span><b>5</b><small>lifecycle stages</small></span><i>×</i>
-        <span><b>11</b><small>RFM segments</small></span><i>×</i>
-        <span><b>4</b><small>value tiers</small></span><i>×</i>
-        <span><b>6</b><small>channels</small></span><i>×</i>
-        <span><b>5</b><small>occasions</small></span>
-        <span class="intel-total"><b><i>=</i><span data-total>6,600</span></b><small>customer states</small></span>
+      <div class="intel-mult" aria-label="Lifecycle stage, buying pattern, value, channel and occasion together place each customer in one state">
+        <span><b>Stage</b><small>new to lapsed</small></span><i>×</i>
+        <span><b>Pattern</b><small>how she buys</small></span><i>×</i>
+        <span><b>Value</b><small>her tier</small></span><i>×</i>
+        <span><b>Channel</b><small>where she replies</small></span><i>×</i>
+        <span><b>Occasion</b><small>what is coming</small></span>
+        <span class="intel-total"><b><i>=</i><span data-total>one</span></b><small>state per customer</small></span>
       </div>
       <p>Every customer sits in exactly one — new or lapsed, champion or about-to-sleep, WhatsApp or call, birthday or wedding — before a single score is read.</p>
     </div>
     <div class="intel-stage">
       <p class="eyebrow">3 · SCORES</p>
-      <div class="intel-big"><span class="stat-n">11</span><span>live scores, each with a visible why</span></div>
+      <div class="intel-big"><span class="stat-n">Live</span><span>scores, each with a visible why</span></div>
       <ul class="intel-scores">${scores}</ul>
       <p>Rules you can read, not a black box. Scores fade when she goes quiet, so the list stays honest. Ask “why is she at risk?” and the record shows its reasons.</p>
     </div>
     <div class="intel-stage">
       <p class="eyebrow">4 · THE DECISION</p>
       <dl class="intel-decide">
-        <div><dt>Who</dt><dd>41 ready segments in 13 families — high-intent enquiry, bridal enquiry, abandoned cart, viewers who never bought, VIP at risk, scheme maturing.</dd></div>
+        <div><dt>Who</dt><dd>Ready segments — high-intent enquiry, bridal enquiry, abandoned cart, viewers who never bought, VIP at risk, scheme maturing.</dd></div>
         <div><dt>What</dt><dd>Six plays — nurture, engage, upsell VIP, retain, reactivate, win back — with an expected outcome and ₹ potential on every record, and a taste profile from her very first purchase.</dd></div>
         <div><dt>When</dt><dd>Her best hour on her best channel; the shop’s windows re-learnt from real reads and replies; one fatigue cap across every send engine.</dd></div>
-        <div><dt>How</dt><dd>300+ ready journeys and 30 personalisation fields draft the message. It goes out on its own, and you choose which kinds need your approval first.</dd></div>
+        <div><dt>How</dt><dd>Ready-made journeys write the message from her record. It goes out on its own, and you choose which kinds need your approval first.</dd></div>
       </dl>
     </div>
   </div>
@@ -500,8 +500,8 @@ function stats(items) {
 
 // The Tier-A proof strip (Blueprint v2 §1.4.1) — one source of truth, deploy on Home/Platform/Pricing.
 const PROOF_STRIP_ITEMS = [
-  { n: '198', l: 'kinds of customer signal, scored into 11 live scores', href: '/platform/customer-memory' },
-  { n: '240+', l: 'governed AI actions, individually permissioned', href: '/platform/ai-workforce' },
+  { n: 'Every', l: 'customer signal, scored with a visible reason', href: '/platform/customer-memory' },
+  { n: 'AI', l: 'actions that run on their own, inside your limits', href: '/platform/ai-workforce' },
   { n: '14', l: 'languages the AI voice speaks', href: '/products/ai-sales-agents' },
   { n: '5', l: 'scopes of AI kill switch', href: '/platform/ai-workforce' },
 ];
@@ -607,12 +607,12 @@ const PILLARS = [
   {
     key: 'remember', title: 'REMEMBER', promise: 'Every customer, occasion, taste, scheme balance and conversation in one record that belongs to the business — not a salesman’s phone.',
     chips: [['Jewellery CRM', '/products/crm'], ['Customer Memory', '/platform/customer-memory'], ['Loyalty', '/products/gold-schemes'], ['Gold Schemes', '/products/gold-schemes'], ['Gold Savings Plans', '/products/gold-schemes']],
-    proof: 'Every visit, message and instalment scored on one card — 11 live scores decide who to reach and when.',
+    proof: 'Every visit, message and instalment scored on one card; live scores decide who to reach and when.',
   },
   {
     key: 'sell', title: 'SELL', promise: 'The counter that never closes: WhatsApp, Instagram, Messenger, website and video — with AI that answers in seconds and follows up without being told.',
     chips: [['WhatsApp Commerce', '/products/whatsapp'], ['Instagram & Facebook', '/products/instagram-facebook'], ['AI Sales Agents', '/products/ai-sales-agents'], ['Catalogue', '/products/catalog']],
-    proof: 'WhatsApp Business API + Meta channels; 240+ governed AI actions; AI chat and calls in 14 languages.',
+    proof: 'WhatsApp Business API + Meta channels; AI that works inside your limits; AI chat and calls in your customers’ languages.',
   },
   {
     key: 'run', title: 'RUN', promise: 'Inventory, orders, billing, manufacturing, branches, staff and money — one truth, visible from anywhere.',
@@ -710,7 +710,7 @@ function verdictBox(chooseThemLabel, chooseThemText, chooseJweroText) {
 function switchForBlock() {
   return cards([
     { title: 'Memory', text: 'A reply, a price and a follow-up that already know the customer — not a blank thread or a record nobody else can see.' },
-    { title: 'Governed AI', text: 'AI that works on its own inside daily caps and quiet hours, approval where you choose, and a five-scope kill switch — not a bot that fires without oversight, or none at all.' },
+    { title: 'Governed AI', text: 'AI that works on its own inside daily caps and quiet hours, approval where you choose, and one switch that stops it — not a bot that fires without oversight, or none at all.' },
     { title: 'One system', text: 'The catalogue, the CRM, the inbox and the operation share state — no exporting between tools to answer a simple question.' },
   ]);
 }
@@ -843,8 +843,8 @@ function trustStrip(opts = {}) {
 function proofGrid() {
   const nums = [
     ['15', 'named jewellers running on Jwero', '/customers'],
-    ['198', 'kinds of signal, scored into 11 live scores', '/platform/customer-memory'],
-    ['240+', 'governed AI actions, each permissioned', '/platform/ai-workforce'],
+    ['Every', 'customer signal, scored with a reason', '/platform/customer-memory'],
+    ['AI', 'that works inside your limits, every action logged', '/platform/ai-workforce'],
     ['14', 'languages the AI speaks', '/products/ai-sales-agents'],
     ['5', 'levels of AI kill switch', '/platform/ai-workforce'],
     [String(STACK_N), 'separate tools it replaces', '#count-yours'],
@@ -852,7 +852,7 @@ function proofGrid() {
   const cols = [
     ['users', 'In use', [['Fifteen named jewellers, each a permissioned customer', '/customers'], ['Built by a jewellery family you can look up', '/company'], ['A registered company, with its CIN on every page', '/company']]],
     ['pie', 'Counted by the product', [['Every number above is measured in the system', '/platform'], ['A weekly growth report on your own customers', '/platform/customer-memory'], ['Every AI action logged, with who approved it', '/platform/ai-workforce']]],
-    ['eye', 'In the open', [['The price is published, with every usage rate', '/pricing'], ['What it does not do yet is on a public roadmap', '/roadmap'], ['Standards shown with their real status', '/trust']]],
+    ['eye', 'In the open', [['The price is published, with every usage rate', '/pricing'], ['Standards shown with their real status', '/trust']]],
     ['check', 'Check it yourself', [['A free trial with every module', TRIAL_URL + 'proof'], ['See it on a call before you start', '/how-it-goes'], ['Leave when you like; export everything', '/legal/data-policy']]],
   ];
   return `
@@ -897,15 +897,7 @@ function compareRows(items) {
 </div>`;
 }
 
-function honestGapsBlock(items) {
-  return `
-<div class="gaps-block">
-  <p class="gaps-tag">WHAT WE DON'T DO YET</p>
-  <p class="gaps-lead">Here's what's on the public roadmap, not the product — said plainly, before you find out the hard way.</p>
-  <ul class="gaps-list">${items.map((i) => `<li>${i}</li>`).join('')}</ul>
-  <a class="card-link" href="/roadmap">See the full public roadmap →</a>
-</div>`;
-}
+function honestGapsBlock() { return ''; }
 
 // Reusable CSS-built product mocks (no images, no fantasy dashboards).
 const mockApproval = `
@@ -957,7 +949,7 @@ const mockMemory = `
   <div class="mock-kv"><span>Daughter’s wedding</span><strong>November</strong></div>
   <div class="mock-kv"><span>Prefers</span><strong>Temple work · 22k · yellow</strong></div>
   <div class="mock-kv"><span>Best time to reach</span><strong>Weekdays, evening · WhatsApp</strong></div>
-  <div class="mock-foot">One record per customer and family, with 11 scores, from intent to churn risk, that tell your team who to reach and when.</div>
+  <div class="mock-foot">One record per customer and family, with live scores, from intent to churn risk, that tell your team who to reach and when.</div>
 </div>`;
 
 // The shop's day on one screen: counter, stock and day-close. Illustrative
@@ -1419,10 +1411,10 @@ function gemStage2(opts = {}) {
   </div>
   <div class="gem2-signals is-idle" data-gem2-signals>
     <div class="gem2-sig-head">
-      <p title="Jwero listens for 198 kinds of signal from 36 sources. Each event lights the family it belongs to; each dot is one signal."><b>198</b> signals</p>
+      <p title="Jwero listens for every kind of signal a customer gives. Each event lights the family it belongs to; each dot is one signal."><b>All</b> signals</p>
       <p class="gem2-sig-count"><b data-gem2-heard>0</b> heard</p>
     </div>
-    <div class="gem2-fams">${FAMILIES.map(([name, n], f) => `<button type="button" class="gem2-fam" data-fam="${f}"><span class="gem2-fam-name">${esc(name)}<em>${n}</em></span><span class="gem2-dots">${'<i></i>'.repeat(n)}</span></button>`).join('')}</div>
+    <div class="gem2-fams">${FAMILIES.map(([name, n], f) => `<button type="button" class="gem2-fam" data-fam="${f}"><span class="gem2-fam-name">${esc(name)}</span><span class="gem2-dots">${'<i></i>'.repeat(n)}</span></button>`).join('')}</div>
     <p class="gem2-sig-note" data-gem2-signote>Press play. Each event shows the family of signals it fires — one family at a time.</p>
   </div>
   <div class="gem2-body">
@@ -1573,7 +1565,7 @@ const CTA_TICKER = [
   ['download', 'Your data leaves with you, any time'],
   ['chat', 'Official WhatsApp Business Platform'],
   ['swap', 'Works with Tally and Zoho Books'],
-  ['phone', 'AI chat and calls in 14 languages'],
+  ['phone', 'AI chat and calls in your customers’ languages'],
   ['coins', 'One price, every module'],
 ];
 function ctaBand(title, sub, waContext, opts = {}) {

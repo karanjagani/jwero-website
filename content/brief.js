@@ -49,7 +49,6 @@ ${L.section(`
         <li>No courier integration.</li>
         <li>Rails for every market: live rate feed, GST, VAT or sales-tax shapes, local phone defaults.</li>
       </ul>
-      <p class="brief-note">The public roadmap at jwero.ai/roadmap says what is shipped, rolling out and not yet — before you buy.</p>
     </div>
   </section>
 

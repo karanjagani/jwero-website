@@ -7,7 +7,7 @@ const BC = (label) => [['Home', '/'], ['Roles', '/roles'], [label]];
 
 const ownerFaqs = [
   { q: 'I already carry the whole business in my head. Why do I need this?', a: 'Because your head is a single point of failure — a sick day, a family emergency or a second store means the memory doesn’t scale. Jwero puts the customer relationships, the stock truth and the pending decisions on a record the business owns, so the shop still runs the way you’d run it even when you’re not the one answering.' },
-  { q: 'Will I lose control of pricing and messaging if AI is doing the work?', a: 'No. The AI works on its own inside the limits you set, and every action is logged. You choose which kinds of action need approval from you or someone you’ve authorised, and a price exception still routes through approval. Daily caps, quiet hours and a 5-scope kill switch mean you decide how much rope the AI staff get, and you can pull it back instantly.' },
+  { q: 'Will I lose control of pricing and messaging if AI is doing the work?', a: 'No. The AI works on its own inside the limits you set, and every action is logged. You choose which kinds of action need approval from you or someone you’ve authorised, and a price exception still routes through approval. Daily caps, quiet hours and one switch that stops it, from one agent to everything, mean you decide how much rope the AI staff get, and you can pull it back instantly.' },
   { q: 'Does Jwero replace my billing counter?', a: 'Yes. Scan or search a piece, price it at the live gold rate, apply a discount, take old gold in exchange, generate the GST invoice; returns and a reconciled cash day-close are in the same counter. Your statutory books can still live in Tally through the bridge. <a href="/products/pos">See the Counter POS</a>.' },
   { q: 'What actually changes for me day to day?', a: 'Enquiries get answered on WhatsApp even after closing, follow-ups go out on their own instead of being forgotten, and you get a weekly plain-language report instead of reconstructing the picture from memory and a notebook.' },
 ];
@@ -64,9 +64,9 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('WHAT THIS ROLE GAINS', 'Skills that compound instead of living only in your head.', '')}
   ${L.cards([
-    { title: 'Structured relationship management', text: 'Instead of remembering which customers matter, you work from a record that scores every signal a customer gives — occasions, scheme balances, taste, RFM, 11 live scores — and shows you why, not just who.' },
+    { title: 'Structured relationship management', text: 'Instead of remembering which customers matter, you work from a record that scores every signal a customer gives — occasions, scheme balances, taste, buying rhythm, live scores — and shows you why, not just who.' },
     { title: 'Data-backed decision making', text: 'Dead-stock ageing, fast/slow movers and a weekly report replace gut calls with a number you can actually check.' },
-    { title: 'Delegated oversight, not delegated control', text: 'Autonomy levels per action, daily caps and a 5-scope kill switch let you extend how the business responds to customers without handing away the final word.' },
+    { title: 'Delegated oversight, not delegated control', text: 'Per-action limits on what the AI may do alone, daily caps and one switch that stops it, from one agent to everything, let you extend how the business responds to customers without handing away the final word.' },
     { title: 'Cross-channel fluency', text: 'One inbox for WhatsApp, Instagram and Facebook means you stop needing to check four apps to know what customers are asking.' },
   ])}`
 , { tone: 'tint' })}
@@ -82,7 +82,7 @@ ${L.section(
     { title: 'Choose what needs your approval', text: 'Decide which kinds of action should wait for you and let the rest run. For anything you hold back, check the queue daily so replies and follow-ups don’t stall waiting on you.' },
     { title: 'Read the weekly report before the walk-through', text: 'Use the plain-language weekly report to know what to ask your team, instead of discovering issues on the floor.' },
     { title: 'Check dead-stock ageing monthly', text: 'The ageing bands (0–30, 31–90, 91–180, 180+ days) tell you what capital is sitting idle before it becomes a write-off conversation.' },
-    { title: 'Tune the kill switch scopes to your comfort level', text: 'Start conservative — one agent or one channel at a time — and widen what the AI workforce can do as you build trust in what it does.' },
+    { title: 'Widen what the AI may do as trust builds', text: 'Start conservative — one agent or one channel at a time — and widen what the AI workforce can do as you build trust in what it does.' },
   ])}`
 , { tone: 'tint' })}
 
@@ -153,7 +153,7 @@ ${L.section(
   ${L.cards([
     { title: 'Central-vs-local governance fluency', text: 'You learn to set what stays centrally controlled (pricing policy) versus what individual branches can flex within approved bounds — a distinct skill from running one store.' },
     { title: 'Cross-branch pattern reading', text: 'Ageing, fast/slow-movers and customer data compared across branches teaches you which store dynamics are local quirks versus chain-wide problems.' },
-    { title: 'Structured delegation at scale', text: 'Approval queues, daily caps and per-branch kill-switch scopes let you extend trust to individual managers without losing an audit trail of every decision.' },
+    { title: 'Structured delegation at scale', text: 'Approval queues, daily caps and a stop switch per branch let you extend trust to individual managers without losing an audit trail of every decision.' },
     { title: 'Financial reconciliation across a chain', text: 'The Tally/Zoho bridge and receivables tracking, applied per branch, build fluency in comparing store performance on numbers your accountant recognises too.' },
   ])}`
 , { tone: 'tint' })}
@@ -168,7 +168,7 @@ ${L.section(
   ${L.steps([
     { title: 'Set central price rules first, exceptions second', text: 'Define the pricing policy that applies chain-wide, then decide which branches get exception rights — every exception still routes through approval.' },
     { title: 'Compare branches on ageing bands, not gut feel', text: 'Use the 0–30, 31–90, 91–180, 180+ day ageing views per branch to spot which store is genuinely underperforming versus just carrying different stock.' },
-    { title: 'Give each branch manager a defined kill-switch scope', text: 'Assign approval and kill-switch authority per branch so managers can act locally without every decision routing all the way up to you.' },
+    { title: 'Give each branch manager a defined stop switch', text: 'Assign approval and stop authority per branch so managers can act locally without every decision routing all the way up to you.' },
     { title: 'Reconcile centrally through the Tally/Zoho bridge', text: 'Keep each branch’s books flowing into the same accounting system so your accountant compares stores on one consistent ledger, not six.' },
   ])}`
 , { tone: 'tint' })}

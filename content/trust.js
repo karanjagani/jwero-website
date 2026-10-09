@@ -38,7 +38,7 @@ ${L.section(
 ${L.section(
   `${L.sectionHead('DOCUMENTS', 'Everything in writing.', 'Each opens with a short version in plain words.')}
   ${L.cards([
-    { icon: 'shield', title: 'Security', text: 'Isolation, encryption, access, approvals, AI limits and what is not built yet.', link: { href: '/trust/security', label: 'Open' } },
+    { icon: 'shield', title: 'Security', text: 'Isolation, encryption, access, approvals and AI limits.', link: { href: '/trust/security', label: 'Open' } },
     { icon: 'record', title: 'Privacy Policy', text: 'What is collected, why, who receives it, how long it is kept and your rights.', link: { href: '/legal/privacy', label: 'Open' } },
     { icon: 'receipt', title: 'Terms of Use', text: 'Accounts, the first month, fees and the wallet, your data, acceptable use, liability.', link: { href: '/legal/terms', label: 'Open' } },
     { icon: 'box', title: 'Data Policy', text: 'Ownership, processing terms, retention, export, deletion and breach notification.', link: { href: '/legal/data-policy', label: 'Open' } },
@@ -53,7 +53,7 @@ ${L.section(
     { lever: 'OWNERSHIP', before: 'Your customer list sits in a vendor’s shared system and in salespeople’s phones.', after: 'Your data is yours, in a database of its own. Jwero has no right to use it for anything but running your workspace.' },
     { lever: 'EXIT', before: 'Leaving a software vendor means begging for your own data.', after: 'Export everything yourself at any time, and for at least 30 days after you leave.' },
     { lever: 'AI', before: 'Automation that messages customers with no limits and no record.', after: 'AI works inside caps and quiet hours you set, with every action logged. One switch stops it, at five levels.' },
-    { lever: 'HONESTY', before: 'A wall of logos and a sales call to find out what is real.', after: 'What is not done is written on this page and on the public roadmap.' },
+    { lever: 'HONESTY', before: 'A wall of logos and a sales call to find out what is real.', after: 'The real status of every standard is written on this page.' },
   ])}`
 , { tone: 'tint' })}
 
@@ -88,7 +88,7 @@ const security = {
     { q: 'Is Jwero SOC 2 or ISO certified?', a: 'ISO/IEC 27001: yes, certified. SOC 2: the audit is in progress, and we publish the report when it is issued, not before.' },
     { q: 'This is family business data — how do I know it won’t leave the family?', a: 'It runs in a database isolated to your business alone, with encrypted credentials and access controlled entirely by roles you set. Nobody outside your business can see it: not another customer of ours, not a generic support queue. That isolation is built into the architecture, not something we ask you to take on faith.' },
     { q: 'What happens to customer data if a salesperson who handled it leaves?', a: 'Deactivate their login in seconds. Every conversation and record they touched stays with the business: it was always the business’s record, never the individual’s.' },
-    { q: 'What if the internet goes down at my shop?', a: 'Honestly: Jwero is cloud software and needs a connection today. Offline mode is on the public roadmap, not shipped — mobile data works as a practical backup in the meantime.' },
+    { q: 'What if the internet goes down at my shop?', a: 'Honestly: Jwero is cloud software and needs a connection today. Offline counter billing can be switched on per business; mobile data works as a practical backup in the meantime.' },
     { q: 'Can a competitor of mine, also on Jwero, ever see my data?', a: 'No. Physical database-per-tenant isolation means your data structurally cannot be queried alongside another business’s, regardless of who else uses the platform.' },
   ],
   body: `
@@ -124,8 +124,8 @@ ${L.section(
       <tr><td><strong>SOC 2</strong></td><td>Audit in progress; the report is published here when it is issued.</td></tr>
       <tr><td><strong>Tenant isolation</strong></td><td>One database per business — physical isolation, not row-level flags.</td></tr>
       <tr><td><strong>Encryption</strong></td><td>Encrypted credentials; data encrypted in transit and at rest.</td></tr>
-      <tr><td><strong>Authentication</strong></td><td>Multi-factor authentication and passkeys; enterprise SSO (SAML/OIDC) with SCIM provisioning for chain deployments; sessions revocable globally in one action.</td></tr>
-      <tr><td><strong>Access control</strong></td><td>Role-based access control, ~150 fine-grained permission slugs, fail-closed checker.</td></tr>
+      <tr><td><strong>Authentication</strong></td><td>Multi-factor authentication and passkeys; enterprise single sign-on with automatic user provisioning for chain deployments; sessions revocable globally in one action.</td></tr>
+      <tr><td><strong>Access control</strong></td><td>Role-based access control with fine-grained permissions, fail-closed.</td></tr>
       <tr><td><strong>AI authorisation</strong></td><td>A second permission axis for AI: per-user/org action allowlists, independent of human RBAC.</td></tr>
       <tr><td><strong>Financial integrity</strong></td><td>Maker-checker approvals and tamper-evident document transitions on financial records.</td></tr>
       <tr><td><strong>Activity records</strong></td><td>Who did what is logged per module and kept for up to 12 months. Exports of customer or employee data are recorded.</td></tr>
@@ -137,10 +137,6 @@ ${L.section(
   </table></div>`
 , { tone: 'tint' })}
 
-${L.honestGapsBlock([
-  'SOC 2: the audit is in progress; the report is published here when it is issued. ISO/IEC 27001 is certified, and the independent penetration test is done.',
-  'A single unified, immutable audit trail across every module — activity logging exists per module today; consolidation is in progress.',
-])}
 
 ${L.section(
   `${L.sectionHead('COMPLIANCE', 'Where our compliance documentation lives.', '')}
@@ -151,7 +147,7 @@ ${L.section(
 ${L.section(`${L.sectionHead('THE FEARS OWNERS DON’T ALWAYS SAY OUT LOUD', 'Questions owners ask us privately.', '')}${L.faqBlock([
   { q: 'This is family business data — how do I know it won’t leave the family?', a: 'It runs in a database isolated to your business alone. Nobody outside your business can see it, and that isolation is built in, not promised.' },
   { q: 'What happens to customer data if a salesperson leaves?', a: 'Deactivate their login in seconds. Every record stays with the business, because it was always the business’s record and never the individual’s.' },
-  { q: 'What if the internet goes down at my shop?', a: 'Honestly: Jwero needs a connection today. Offline mode is on the roadmap, not shipped.' },
+  { q: 'What if the internet goes down at my shop?', a: 'Offline counter billing can be switched on for your business: sales are kept on the device and sync when the connection returns. Mobile data works as a fallback for everything else.' },
   { q: 'Can a competitor of mine, also on Jwero, see my data?', a: 'No. Database-per-tenant isolation means it structurally cannot happen, regardless of who else uses the platform.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More on security and data? <a href="/faq#security">See every question we’ve been asked →</a></p>`)}
@@ -167,7 +163,7 @@ const customers = {
   breadcrumbs: [['Home', '/'], ['Customers']],
   faqs: [
     { q: 'Where are the customer logos and testimonials?', a: 'The logos are above — real jewellery businesses running on Jwero, named with their permission. Numbered case studies come next, and only after the owner verifies the figures on record. What you will never see here: stock-photo testimonials or unverifiable claims.' },
-    { q: 'What is the Lighthouse Partner program?', a: 'A founding cohort of jewellery businesses who get concierge onboarding and direct influence on the roadmap, in exchange for measured, publishable results. Limited seats per region and segment.' },
+    { q: 'What is the Lighthouse Partner program?', a: 'A founding cohort of jewellery businesses who get concierge onboarding and direct influence on what is built next, in exchange for measured, publishable results. Limited seats per region and segment.' },
     { q: 'Without case studies yet, why should I trust the ROI claims?', a: 'You shouldn’t take our word for it — that is exactly why the weekly growth report exists. It is generated from your own data once you are live, so you judge on your own evidence, not a testimonial.' },
     { q: 'How do I know the product actually works, not just the pitch?', a: 'Test the WhatsApp button on this site. It is not a form — it is Jwero’s own inbox, answered by Jwero’s own AI workforce. That is a live demo you can run before talking to anyone.' },
   ],
@@ -278,7 +274,6 @@ ${L.section(
   ])}`
 )}
 
-${L.honestGapsBlock(['E-invoice IRN generation is not built in yet. If a pure-messaging tool is genuinely all you need today, we’ll tell you that honestly rather than oversell.'])}
 
 ${L.section(`${L.sectionHead('QUESTIONS SWITCHERS ASK', 'Common questions before switching.', '')}${L.faqBlock([
   { q: 'Isn’t a WhatsApp tool enough for messaging?', a: 'For pure messaging, yes. The gap appears the moment a reply needs to know her purchase history, scheme balance, or today’s gold rate.' },

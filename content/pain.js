@@ -43,7 +43,7 @@ const deadStock = {
   faqs: [
     { q: 'How much does dead stock actually cost?', a: 'A piece that sits for a year costs roughly its financing rate plus insurance and handling, typically 12–18% of its value annually — plus the sales the locked capital never funded. The calculator on this page computes your number in 60 seconds.' },
     { q: 'How does Jwero help move dead stock?', a: 'First, visibility: ageing bands and slow-mover views expose what is sitting. Then, memory: match idle designs to customers whose taste fits, and put them in front of the right people on WhatsApp — instead of melting margin with blanket discounts.' },
-    { q: 'Does Jwero predict what will become dead stock?', a: 'Not yet — today’s inventory intelligence is ageing- and valuation-based visibility, not predictive forecasting. Predictive ML is on the public roadmap, and we won’t claim it before it ships.' },
+    { q: 'Does Jwero predict what will become dead stock?', a: 'Not yet — today’s inventory intelligence is ageing- and valuation-based visibility, not predictive forecasting. We won’t claim it before it ships.' },
     { q: 'We’ve tried clearance sales before with limited results. What’s actually different here?', a: 'Matched selling finds the specific customers whose recorded taste and budget already fit the piece — a different mechanism from blanket discounts to whoever’s browsing, rather than simply a bigger sale.' },
   ],
   body: `

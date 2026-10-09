@@ -641,7 +641,7 @@
    },
    {
     "q": "Do you handle e-way bills?",
-    "a": "Not yet. E-invoice JSON can be downloaded for the portal and the IRN recorded back, but e-way bills are not built. Until then, e-way bills are made on the government portal."
+    "a": "Not yet. E-invoice JSON can be downloaded for the portal and the IRN recorded back; e-way bills are made on the government portal."
    }
   ]
  },
@@ -709,7 +709,7 @@
   "faqs": [
    {
     "q": "Does Jwero prepare export documents like shipping bills?",
-    "a": "Not yet. Export paperwork such as shipping bills is not built today, so it stays with your customs agent. Jwero still holds the order, production and stock for the shipment."
+    "a": "Not yet. Export paperwork such as shipping bills stays with your customs agent. Jwero still holds the order, production and stock for the shipment."
    },
    {
     "q": "Can I track gold given to karigars for an export order?",
@@ -793,7 +793,7 @@
    },
    {
     "q": "Can I plan capacity across benches?",
-    "a": "Not yet. Stages and standard hours exist, but bench capacity planning and promise dates are not built. For now, you see work in progress by stage, which shows where jobs are piling up."
+    "a": "Not yet. Stages and standard hours exist; bench capacity planning and promise dates stay with the workshop head. You see work in progress by stage, which shows where jobs are piling up."
    }
   ]
  },
@@ -831,7 +831,7 @@
    },
    {
     "q": "Can I run a physical metal count?",
-    "a": "Not yet. Book balances by lot and party are shown, but a physical metal count screen is not built. Physical counts are done outside Jwero for now and compared to the book balances by hand."
+    "a": "Not yet. Book balances by lot and party are shown. Physical counts are done outside Jwero and compared to the book balances by hand."
    }
   ]
  },
@@ -861,7 +861,7 @@
   "faqs": [
    {
     "q": "Can I store CAD files and versions in Jwero?",
-    "a": "Not yet. Designs carry a reference, but CAD file storage with version history is not built today. Keep CAD files in your current storage and note the reference on the design in Jwero."
+    "a": "Not yet. Designs carry a reference; CAD files with version history stay in your current storage. Keep CAD files in your current storage and note the reference on the design in Jwero."
    },
    {
     "q": "Can clients adopt my designs into their own catalogue?",

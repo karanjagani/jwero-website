@@ -152,7 +152,7 @@ ${L.ctaBand('Start where you are.', 'Tell us about your first store — we’ll 
 };
 
 const franchiseFaqs = [
-  { q: 'Can franchisees operate independently while the brand stays controlled?', a: 'Partly. Role-based access lets head office set the catalogue and pricing while each outlet runs its own counter, stock and customers on the same system. Royalty tracking and oversight of independently-owned franchisees are not built yet.' },
+  { q: 'Can franchisees operate independently while the brand stays controlled?', a: 'Partly. Role-based access lets head office set the catalogue and pricing while each outlet runs its own counter, stock and customers on the same system. Royalty tracking and oversight of independently owned franchisees stay with head office’s own accounts for now.' },
   { q: 'Can the franchisor see performance across the whole network?', a: 'Yes — an owner rollup shows stock, sales and customer movement across every franchise location in one view.' },
   { q: 'Won’t franchisees resist head office controlling more of their operation?', a: 'Central control applies to brand standards and pricing consistency, not day-to-day running — most franchisees experience it as less admin overhead, since onboarding and systems are handled centrally.' },
 ];

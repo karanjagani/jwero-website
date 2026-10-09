@@ -330,9 +330,9 @@ module.exports = {
   <h2>Staff and screens</h2>
   <p>Counter staff think in Hindi, Hinglish or their state’s language. Screens, training and instructions in their language cut mistakes at the counter, and an assistant that takes instructions in Hindi keeps them off the keyboard.</p>
   <h2>How Jwero does it</h2>
-  <p>AI replies and calls in 14 languages, a preferred language on each customer’s record, staff screens in multiple languages, and an in-app assistant that understands Hindi and Hinglish. See <a href="/ai-calling-for-jewellers">AI calling</a> and <a href="/products/whatsapp">WhatsApp</a>.</p>`,
+  <p>AI replies and calls in your customers’ languages, a preferred language on each customer’s record, staff screens in multiple languages, and an in-app assistant that understands Hindi and Hinglish. See <a href="/ai-calling-for-jewellers">AI calling</a> and <a href="/products/whatsapp">WhatsApp</a>.</p>`,
     faqs: [
-      { q: 'Which languages does Jwero support for customers?', a: 'Chat, voice and calls in 14 languages, including Hindi, Gujarati, Marathi, Tamil, Telugu, Kannada, Bengali, Malayalam, Punjabi, Odia and English.' },
+      { q: 'Which languages does Jwero support for customers?', a: 'Chat, voice and calls in your customers’ languages, including Hindi, Gujarati, Tamil, Bengali, Arabic and English.' },
       { q: 'Can one shop serve customers in three languages?', a: 'Yes. The language is per customer, so each hears from you in her own.' },
       { q: 'What about Hinglish?', a: 'Mixed Hindi and English is handled in replies, and staff can give instructions to the assistant in Hinglish.' },
     ],

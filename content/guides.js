@@ -213,7 +213,7 @@ const erp = guide({
 
   <h2>How Jwero does it, and what it does not do</h2>
   <p>Jwero covers inventory, counter billing, purchase and vendors, manufacturing with karigar accounts in fine grams, repairs, schemes, girvi, multi-branch and its own ledger, on the same record as the customer, WhatsApp and the team. The operations are on the <a href="/products/erp">ERP page</a> and the workshop on the <a href="/products/manufacturing">manufacturing page</a>.</p>
-  <p>It does not convert CAD files into bills of materials, does not file e-invoices directly or generate e-way bills, and has no courier integration. Those are stated on the <a href="/roadmap">public roadmap</a>.</p>
+  <p>It does not convert CAD files into bills of materials, does not file e-invoices directly or generate e-way bills, and has no courier integration.</p>
   `,
   faqs: [
     { q: 'What is jewellery ERP software?', a: 'One system that records a jewellery business’s stock, sales, purchases, manufacturing, karigar accounts and books, with metal tracked by weight and purity as well as money.' },
@@ -386,7 +386,7 @@ const crm = guide({
   </ol>
 
   <h2>How Jwero does it, and what it does not do</h2>
-  <p>Jwero keeps one record per customer that billing, schemes, the showroom and every channel write to. It reads 198 kinds of signal into 11 scores, each with a visible reason, and produces the morning list. Messages are written and sent by AI inside the limits you set, with approval for the kinds of action you choose. Details are on the <a href="/products/crm">CRM page</a> and the <a href="/platform/customer-memory">customer memory page</a>.</p>
+  <p>Jwero keeps one record per customer that billing, schemes, the showroom and every channel write to. It reads every signal a customer gives into live scores, each with a visible reason, and produces the morning list. Messages are written and sent by AI inside the limits you set, with approval for the kinds of action you choose. Details are on the <a href="/products/crm">CRM page</a> and the <a href="/platform/customer-memory">customer memory page</a>.</p>
   <p>It stays inside your daily caps and quiet hours, and it does not buy or import third-party contact lists.</p>
   `,
   faqs: [

@@ -327,7 +327,7 @@ ${simKind ? L.sim(simKind) : ''}
 
 ${L.section(`${L.sectionHead('TODAY AND WITH JWERO', 'What changes.', '')}${L.compareRows(rows)}`, { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('SAID PLAINLY', 'What it does not do yet.', '')}<div class="stack-verdict">${notYet} The <a href="/roadmap">public roadmap</a> says what is shipped, rolling out and not yet.</div>`)}
+${L.section(`${L.sectionHead('SAID PLAINLY', 'What it does not do yet.', '')}<div class="stack-verdict">${notYet}</div>`)}
 
 ${L.section(`${L.sectionHead('QUESTIONS', 'What jewellers ask.', '')}${L.faqBlock(faqs)}
 <p class="cta-note" style="margin-top:18px">Related: ${links.map(([h, l]) => `<a href="${h}">${l}</a>`).join(' · ')}</p>`)}
@@ -722,7 +722,7 @@ const callFaqs = [
   { q: 'Can AI make bulk calls to customers?', a: 'Yes. Jwero handles up to 8 calls at the same time, inbound and outbound. It runs calling campaigns in bulk, for example every scheme member whose instalment is due this week, and answers several callers at once so nobody gets a busy tone in the festival rush.' },
   { q: 'Can AI answer calls for my jewellery shop?', a: 'Yes. The voice agent answers rate, timing, stock and order questions, books visits, and passes the call to a person with a summary when the customer needs one, including after hours.' },
   { q: 'Can calls happen automatically when something happens?', a: 'Yes. Triggers place calls on events such as an instalment falling due, a failed payment, an unanswered WhatsApp message or a repair being ready. If a call is not answered, a WhatsApp message can follow.' },
-  { q: 'Which languages does the voice agent speak?', a: 'The phone agent speaks 14 languages: Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi, Odia, Arabic, Spanish and French, so each customer can be called in the language they speak at home.' },
+  { q: 'Which languages does the voice agent speak?', a: 'The phone agent speaks your customers’ languages, including Hindi, English, Tamil, Bengali, Arabic, Spanish and French, so each customer can be called in the language they speak at home.' },
   { q: 'Is AI calling legal in India?', a: 'Calls to your own customers about their account, such as scheme reminders, are treated differently from promotional calls. Promotional calls must follow TRAI’s rules on registration, consent and do-not-disturb preferences. Confirm your setup with your advisor before calling at scale.' },
   { q: 'How much does AI calling cost?', a: 'The AI agent costs ₹7 a call, all inclusive: the AI, the voice and the phone line, from a prepaid wallet. A call handled by hand usually takes 2 to 3 people several minutes each, so ₹7 a call is far cheaper. It runs on Jwero One at ₹18,000 a month (first month ₹3,600), or let Jwero run the calling for you.' },
   { q: 'Why is an AI call faster than a person picking up?', a: 'When a person answers, they often have to ask 2 or 3 colleagues for the stock, the rate or the customer’s balance, then call back. The AI agent reads all of that from the customer’s record and the live catalogue, and answers, books or sends a link within seconds, at any hour.' },
@@ -732,12 +732,12 @@ const callFaqs = [
 const aiCalling = {
   slug: 'ai-calling-for-jewellers',
   title: 'AI Calling for Jewellers: Voice AI Agents, Bulk Calls | Jwero',
-  description: 'AI calling for jewellers at ₹7 a call: voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, in 14 languages, with triggers, campaigns and every call on the record.',
+  description: 'AI calling for jewellers at ₹7 a call: voice AI agents handle up to 8 calls at once, inbound and outbound, 24×7, in your customers’ languages, with triggers, campaigns and every call on the record.',
   breadcrumbs: [['Home', '/'], ['Jewellery software in India', '/jewellery-software-india'], ['AI calling for jewellers']],
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Jwero AI Calling for Jewellers', alternateName: ['Jwero voice AI agents', 'AI telecaller for jewellers'],
     applicationCategory: 'BusinessApplication', operatingSystem: 'Web', url: 'https://jwero.ai/ai-calling-for-jewellers',
-    description: 'Voice AI agents for jewellers: bulk inbound call answering, bulk outbound calling campaigns, event triggers, WhatsApp follow-through and transcripts on the customer record, in 14 languages.',
+    description: 'Voice AI agents for jewellers: bulk inbound call answering, bulk outbound calling campaigns, event triggers, WhatsApp follow-through and transcripts on the customer record, in your customers’ languages.',
     isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   extraSchema: [{

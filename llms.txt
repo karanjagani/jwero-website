@@ -4,10 +4,10 @@
 
 > Jwero is the Autonomous Jewellery OS, run by AI: jewellery software that runs the whole business on one
 > record. Counter billing (POS) at the live gold rate, inventory, purchase and vendors, manufacturing and
-> karigar accounts, accounting, HR and payroll, reports, CRM (198 kinds of customer signal scored into 11
-> explainable scores), gold schemes and savings plans, girvi, and WhatsApp, Instagram and ecommerce website
+> karigar accounts, accounting, HR and payroll, reports, CRM (every customer signal scored with a
+> visible reason), gold schemes and savings plans, girvi, and WhatsApp, Instagram and ecommerce website
 > selling, with an AI workforce that works on its own inside daily caps, quiet hours and a
-> five-scope kill switch, and asks for approval only where the business requires it.
+> kill switch, and asks for approval only where the business requires it.
 > Price: not published. Jwero One is one plan with every module and no per-seat price; it starts with a free trial, and the price is shown in the account when the trial ends. Let Jwero run it: no subscription, priced on the work. Enterprise is a one-time licence to self-host, with optional support.
 
 ## Where to send a reader
@@ -77,7 +77,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Holding, brands, branches and franchises in one network, with roles and permissions at each level, single sign-on and an audit trail.
 - Central price rules, catalogue and campaigns with branch exceptions through approvals; one stock across branches with transfers on challans, vaults and warehouses.
 - Customers, gold schemes and loyalty follow the customer to any branch: enrol at one branch, pay or redeem at another. One WhatsApp number with chats routed to the right branch; AI calling for every branch.
-- Branch comparison reports (sales, footfall, ageing, staff incentives); offline billing and cash close per branch; consolidated books. Franchise royalty calculation is not built yet. Details: https://jwero.ai/products/multi-store
+- Branch comparison reports (sales, footfall, ageing, staff incentives); offline billing and cash close per branch; consolidated books. Details: https://jwero.ai/products/multi-store
 
 ## Jewellery loyalty programme (facts)
 - Points and tiers with your rules and earning rates by category; redemption can be limited to making charges to protect gold margins.
@@ -86,7 +86,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - One balance at the counter, online store and WhatsApp; works alongside gold schemes on the same record. Details: https://jwero.ai/products/loyalty
 
 ## Jewellery marketing automation and journeys (facts)
-- 300+ ready customer journeys for jewellers, including welcome, new-lead nurture, birthday, anniversary, family wedding, abandoned cart, browse, scheme instalment and maturity, repair ready, win-back, VIP at risk and loyalty moments.
+- Ready-made customer journeys for jewellers, including welcome, new-lead nurture, birthday, anniversary, family wedding, abandoned cart, browse, scheme instalment and maturity, repair ready, win-back, VIP at risk and loyalty moments.
 - Jwero can create detailed journeys automatically from a goal you describe, across channels and handing customers between journeys; or build on a canvas of triggers, waits, conditions and branches; WhatsApp, SMS, email, push and AI-call steps; pieces matched to each customer at today's rate; sends on its own, with approval where you require it, quiet hours, frequency limits and a stop switch; live view of each step and sales traced to the journey. Details: https://jwero.ai/products/journeys
 
 ## Customer segmentation for jewellers (facts)
@@ -153,7 +153,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Page: https://jwero.ai/products/ai-sales-agents
 - AI agents answer on WhatsApp, Instagram and web chat with pieces from the catalogue at today's gold rate, chosen from the customer's taste and purchases.
 - Duties: after-hours enquiries, follow-ups, scheme instalment reminders, occasion outreach, AI voice and calls.
-- Chat, voice and phone calls run in 14 languages: English, Hindi, Marathi, Gujarati, Tamil, Telugu, Kannada, Bengali, Malayalam, Punjabi, Odia, Arabic, Spanish, French.
+- Chat, voice and phone calls run in the customer's language, including Hindi, English, the major Indian languages, Arabic, Spanish and French.
 - AI voice is built into WhatsApp and web chat; phone calls and IVR run over the jeweller's own telephony provider.
 - Governance: AI runs on its own inside daily caps and quiet hours; approval queues for the actions you choose; kill switch; a log of every action. AI does not set prices or discounts.
 
@@ -266,7 +266,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 
 ## Jwero worldwide (facts)
 
-- Jwero is used outside India: local currencies; invoices under India GST, UK VAT, EU VAT, GCC VAT and US sales tax; live metal rates for any market by gram, ounce or tola; Stripe and PayPal alongside Razorpay and Cashfree; AI in 14 languages including Arabic, Spanish and French.
+- Jwero is used outside India: local currencies; invoices under India GST, UK VAT, EU VAT, GCC VAT and US sales tax; live metal rates for any market by gram, ounce or tola; Stripe and PayPal alongside Razorpay and Cashfree; AI in the customer's language, including Arabic, Spanish and French.
 - Hosted plan: India by default, or another region on request. Enterprise: self-hosted anywhere.
 - Price: not published in any currency; shown in the account, in local currency, after the free trial.
 - Market pages: /global, /jewellery-software-uae, /jewellery-software-uk, /jewellery-software-usa, /jewellery-software-singapore.
@@ -280,8 +280,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Accounting: transactions post to Jwero's own double-entry ledger with GST handled; Tally and Zoho Books bridges carry them to an outside accountant. Jwero does not file GST returns.
 - Counter POS (registers, shifts, cash day-close, returns, old-gold exchange), statutory payroll, karigar
   settlement, girvi/gold loans, manufacturing (BOM, routing, wastage norms) and a video counter shipped in 2026.
-- E-invoice IRN (e-invoices are generated in Tally through the bridge), and predictive ML forecasting are on the public roadmap, not shipped today:
-  https://jwero.ai/roadmap
+- E-invoices are generated in Tally through the bridge.
 
 ## Company
 Jwero is a product of Tanika Tech Jewels Private Limited (CIN U74900MH2016PTC273631), Shop No. 14–15, Sagar Darshan Building 2, Geetanjali Nagar, Station Road, Bhayandar (West), Thane, Maharashtra 401101.
@@ -293,13 +292,12 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 ## All pages
 - Jewellery Software: CRM, ERP, POS and WhatsApp in One: https://jwero.ai/
 - Why Jewellers Need an Operating System, Not More Tools: https://jwero.ai/platform
-- Customer Memory: 198 Signals, 11 Scores, One Record: https://jwero.ai/platform/customer-memory
+- Customer Memory: Every Customer on One Record: https://jwero.ai/platform/customer-memory
 - Live Gold Rate Pricing: Rate, Making Charge & Stone Rules: https://jwero.ai/platform/pricing-engine
 - AI Workforce & Governance, AI That Works Inside Your Limits: https://jwero.ai/platform/ai-workforce
-- Jwero Integrations: Tally, Shopify, Meta, Stripe, PayPal, MCP: https://jwero.ai/platform/integrations
+- Jwero Integrations: Tally, Shopify, Meta, Stripe, PayPal: https://jwero.ai/platform/integrations
 - Tally Integration for Jewellers: Keep Your Books: https://jwero.ai/platform/integrations/tally
 - Onboarding & Support, Live in a Day, Trained in Your Language: https://jwero.ai/platform/onboarding
-- Public Roadmap, Shipped, Building, Not Yet: https://jwero.ai/roadmap
 - Jewellery Software Products: CRM, ERP, POS, Billing and More: https://jwero.ai/products
 - WhatsApp API for Jewellers: Catalogue, Payments and CRM: https://jwero.ai/products/whatsapp
 - Instagram DM & Facebook Messenger Automation for Jewellers: https://jwero.ai/products/instagram-facebook

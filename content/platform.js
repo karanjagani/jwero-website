@@ -11,7 +11,7 @@ const platform = {
     { q: 'Is Jwero an ERP?', a: 'Both — but as one system, not two. It remembers your customers like a CRM and runs your operations like an ERP (orders, inventory, purchases, repairs, billing), from the same record, so a sale, a scheme payment and a repair all update the one place your team already looks at. Your statutory books stay in Tally or Zoho Books.' },
     { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with the Assist scope (customers imported, WhatsApp connected, catalogue published) and expand module by module as each one proves itself.' },
     { q: 'What makes this different from buying a CRM plus a WhatsApp tool plus a catalogue app?', a: 'Separate tools mean separate memories. A WhatsApp tool doesn’t know her gold-plan balance; a CRM doesn’t sell on Instagram. In Jwero, the customer, the catalogue and the channels live on one record, so AI can actually sell instead of just logging.' },
-    { q: 'Is there a public API or SSO for enterprise IT?', a: 'Yes to both. Enterprise SSO/SCIM (SAML, OIDC, SCIM 2.0 provisioning) is shipped, and webhooks and APIs are available for your own integrations.' },
+    { q: 'Is there a public API or SSO for enterprise IT?', a: 'Yes to both. Single sign-on with your identity provider and automatic user provisioning are shipped, and webhooks and APIs are available for your own integrations.' },
     { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional. You can run the whole business on Assist (customers, WhatsApp, catalogue) and never touch the rest. Complexity is available when you want it, never mandatory.' },
     { q: 'My business is unusual — will this fit, or will I be forcing a generic tool?', a: 'Custom fields, price rules and per-branch configuration exist because jewellery businesses aren’t generic. We’ll also tell you plainly what we don’t customise, on a demo, before you commit.' },
   ],
@@ -101,17 +101,13 @@ ${L.section(
   <p style="margin-top:20px"><a class="card-link" href="/platform/integrations">See all integrations →</a></p>`
 )}
 
-${L.honestGapsBlock([
-  'E-way bill generation — e-invoices are generated in Tally through the bridge.',
-  'Offline mode — Jwero is a connected product today.',
-])}
 
 ${L.section(`${L.sectionHead('QUESTIONS EVALUATORS ASK', 'Straight answers for the people who have to sign off.', '')}${L.faqBlock([
   ...require('./journey').why.faqs,
   { q: 'Is Jwero an ERP?', a: 'Both, running as a single system that does the job of a CRM and an ERP at once. It remembers customers like a CRM and runs operations like an ERP, from the same record. Your statutory books stay in Tally or Zoho Books.' },
   { q: 'Can I use only one module, like just WhatsApp?', a: 'Yes. Most businesses start with customers imported, WhatsApp connected and catalogue published, then expand module by module.' },
   { q: 'What makes this different from a CRM plus a WhatsApp tool?', a: 'Separate tools mean separate memories. In Jwero the customer, catalogue and channels live on one record, so AI can sell instead of just logging.' },
-  { q: 'Is there a public API or single sign-on (SSO)?', a: 'Yes to both. SSO is shipped (SAML, OIDC, SCIM 2.0 provisioning), and webhooks and APIs are available for your own integrations.' },
+  { q: 'Is there a public API or single sign-on (SSO)?', a: 'Yes to both. Single sign-on with your identity provider is shipped, and webhooks and APIs are available for your own integrations.' },
   { q: 'Isn’t this too complex for a small business?', a: 'The complexity is optional — run everything on Assist and never touch the rest.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>
@@ -123,12 +119,12 @@ ${L.ctaBand('See the operating system on your own data.', 'Bring one real custom
 
 const customerMemory = {
   slug: 'platform/customer-memory',
-  title: 'Customer Memory: 198 Signals, 11 Scores, One Record | Jwero',
-  description: 'Jwero reads 198 kinds of customer signal from 36 sources, scores each customer on 11 live, explainable scores, places her in one of 6,600 states, and decides who to reach, with what and when, inside limits you set.',
+  title: 'Customer Memory: Every Customer on One Record | Jwero',
+  description: 'Jwero reads every signal a customer gives, from the counter to WhatsApp to her gold plan, scores her with reasons you can read, and decides who to reach, with what and when, inside limits you set.',
   breadcrumbs: BC('Customer Memory'),
   faqs: [
-    { q: 'What does Jwero remember about each customer?', a: 'Everything she does, as a signal: 198 kinds, from 36 sources — the counter, WhatsApp, the website, gold schemes, girvi, calls, Instagram, occasions. Sixty-eight of them move her scores the moment they land. Underneath, 90+ structured fields hold the facts: purchases, scheme balance and instalments, birthdays, anniversaries and wedding months, metal and design preferences, consent and best hour per channel.' },
-    { q: 'How does it decide who to reach, and when?', a: 'Each customer carries 11 live scores — intent, conversion, churn risk, trust and others — computed by rules you can read, each with its reasons shown. Where she sits — new or lapsed, champion or about-to-sleep, WhatsApp or call, birthday or wedding — is one of 6,600 states. From that, Jwero picks the play, the channel and her best hour, and drafts the message. Scores fade when she goes quiet, so the list stays honest.' },
+    { q: 'What does Jwero remember about each customer?', a: 'Everything she does, as a signal: the counter, WhatsApp, the website, gold schemes, girvi, calls, Instagram, occasions. Many of them move her scores the moment they land. Underneath, structured fields hold the facts: purchases, scheme balance and instalments, birthdays, anniversaries and wedding months, metal and design preferences, consent and best hour per channel.' },
+    { q: 'How does it decide who to reach, and when?', a: 'Each customer carries live scores — intent, conversion, churn risk, trust and others — computed by rules you can read, each with its reasons shown. Where she sits — new or lapsed, champion or about-to-sleep, WhatsApp or call, birthday or wedding — is read before anything is sent. From that, Jwero picks the play, the channel and her best hour, and drafts the message. Scores fade when she goes quiet, so the list stays honest.' },
     { q: 'Is this machine learning?', a: 'No, and we say so. The scores are explainable rules you can inspect — not a model nobody can question. The AI writes the words; the rules decide the who and the when; you choose what needs your approval.' },
     { q: 'How is this different from a normal CRM?', a: 'Generic CRMs know names and notes. Jwero’s record is jewellery-native: it knows her scheme balance, her daughter’s wedding month and what today’s gold rate means for her budget — as structured fields, every module can act on, not free-text notes.' },
     { q: 'What happens when a salesperson leaves?', a: 'Nothing. The memory belongs to the business, not to a personal phone. Every conversation, preference and promise stays on the record.' },
@@ -153,7 +149,7 @@ ${L.section(
     { title: 'Occasions', text: 'Birthdays, anniversaries, wedding months and upcoming family occasions — the reasons jewellery gets bought.' },
     { title: 'Taste', text: 'Metals, purity, styles, price bands, brands browsed and bought — learned from real behaviour.' },
     { title: 'Reachability', text: 'Preferred channel, consent per channel, best send window, message fatigue — reach people the way they want.' },
-    { title: 'Signals', text: '198 kinds, from 36 sources — every view, message, visit, instalment and call — many of which move a score the moment they land.' },
+    { title: 'Signals', text: 'Every view, message, visit, instalment and call, from every channel and the counter, many of which move a score the moment they land.' },
     { title: 'The "why"', text: 'Every score comes with its reasons. Ask why a customer is "at risk" and the record shows its work.' },
   ])}`
 )}
@@ -179,7 +175,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('MEMORY QUESTIONS', 'What owners and evaluators ask first.', '')}${L.faqBlock([
-  { q: 'What does Jwero remember about each customer?', a: 'Every signal she gives you — 198 kinds from 36 sources — read into 11 live scores with a visible why, on one record the business owns. Purchases, scheme balance, occasions, taste, consent and best hour per channel sit underneath as structured fields.' },
+  { q: 'What does Jwero remember about each customer?', a: 'Every signal she gives you, read into live scores with a visible why, on one record the business owns. Purchases, scheme balance, occasions, taste, consent and best hour per channel sit underneath as structured fields.' },
   { q: 'How is this different from a normal CRM?', a: 'Generic CRMs know names and notes. Jwero’s record is jewellery-native: it knows her scheme balance, her daughter’s wedding month and what today’s gold rate means for her budget — as structured fields every module can act on, not free-text notes.' },
   { q: 'What happens when a salesperson leaves?', a: 'Nothing. The memory belongs to the business, not to a personal phone. Every conversation, preference and promise stays on the record.' },
 ])}
@@ -276,7 +272,7 @@ ${L.ctaBand('See your own catalogue priced this way.', 'Bring one real product �
 const aiWorkforce = {
   slug: 'platform/ai-workforce',
   title: 'AI Workforce & Governance — AI That Works Inside Your Limits | Jwero',
-  description: '240+ AI actions that run on their own inside daily caps and quiet hours, approval only where you require it, and a five-scope kill switch: the AI workforce inside Jwero, under your control.',
+  description: 'An AI workforce that runs on its own inside daily caps and quiet hours, approval only where you require it, and one switch that stops it: the AI inside Jwero, under your control.',
   breadcrumbs: BC('AI Workforce & Governance'),
   faqs: [
     { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling. Salespeople close more when every customer walks in already known.' },
@@ -287,7 +283,7 @@ const aiWorkforce = {
     { q: 'What if it says something embarrassing to a customer I’ve known for twenty years?', a: 'Put your oldest families on “ask me first” and their messages wait for you, while everything else carries on by itself. Quiet hours mean nobody, old customer or new, gets a message at 11pm either.' },
     { q: 'How does it know how to sound like MY shop, not a generic chatbot?', a: 'It drafts from your catalogue, your prices, your policies and your past conversations — the same context a new employee would need, except it never forgets any of it.' },
     { q: 'Is this the same risk as an AI chatbot going rogue online?', a: 'No. It works only from your own records, inside daily caps and quiet hours, with every action logged and a kill switch at five scopes. You decide which kinds of action need approval. That governance layer exists because a jewellery relationship can’t survive an ungoverned bot near it.' },
-    { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Yes. Chat, voice and phone calls all run in the same 14 languages.' },
+    { q: 'Does the AI voice agent that calls customers speak my customers’ languages too?', a: 'Yes. Chat, voice and phone calls all run in the same languages, including Hindi, Arabic and English.' },
   ],
   body: `
 ${L.hero({
@@ -303,7 +299,7 @@ ${L.section(
     { icon: '✉', title: 'Answer in minutes', text: 'Every WhatsApp, Instagram and website enquiry gets a knowledgeable reply (with her history and live prices), at midnight, during festivals.' },
     { icon: '↺', title: 'Follow up on everything', text: 'Every enquiry that didn’t buy, every quote that went quiet, every instalment coming due — followed up on schedule, never forgotten.' },
     { icon: '🗓', title: 'Work the calendar', text: 'Birthdays, anniversaries, festivals — the AI workforce sends the right invitation to the right customers, weeks ahead.' },
-    { icon: '☏', title: 'Speak, not just type', text: 'The AI voice assistant holds conversations in 14 languages on WhatsApp and web chat — native to Jwero, no third party — with transcripts on the customer record.' },
+    { icon: '☏', title: 'Speak, not just type', text: 'The AI voice assistant holds conversations in your customers’ languages on WhatsApp and web chat — native to Jwero, no third party — with transcripts on the customer record.' },
   ], 4)}`
 )}
 
@@ -318,37 +314,13 @@ ${L.section(
   ])}`
 , { tone: 'tint' })}
 
-${L.section(
-  `${L.sectionHead('WHAT "240+ ACTIONS" ACTUALLY MEANS', 'A real registry, category by category.', 'Every governed action is a defined, individually permissioned entry in Jwero’s action registry — the same registry the caps, approval rules and kill switch enforce against. Here’s what the 251 active entries cover.')}
-  <div class="tbl-wrap"><table class="tbl">
-    <thead><tr><th>Category</th><th>What lives there</th><th>Actions</th></tr></thead>
-    <tbody>
-      <tr><td><strong>CRM</strong></td><td>Customer replies, follow-ups, occasion outreach, quotations, lead routing</td><td>56</td></tr>
-      <tr><td><strong>Internal</strong></td><td>Task assignment, staff/HR workflows, AI-administration and calling logs</td><td>55</td></tr>
-      <tr><td><strong>Inbox</strong></td><td>WhatsApp/Instagram/email reply drafting, follow-up scheduling</td><td>52</td></tr>
-      <tr><td><strong>Inventory &amp; Products</strong></td><td>Catalogue updates, stock actions, ageing flags</td><td>41</td></tr>
-      <tr><td><strong>Campaigns &amp; Marketing</strong></td><td>Broadcasts, segment suggestions, journey steps</td><td>31</td></tr>
-      <tr><td><strong>Reporting</strong></td><td>Dashboard summaries, the owner’s growth report</td><td>10</td></tr>
-      <tr><td><strong>Finance</strong></td><td>Invoice and receivables-adjacent drafting</td><td>6</td></tr>
-    </tbody>
-  </table></div>
-  <p style="margin-top:16px; font-size:.9rem; color:var(--ink-2);">251 active entries today (259 defined, 8 excluded as internal audit/governance tools that don’t touch a customer) — “240+” on the rest of this site is the conservative, round-down version of that same number. Want your own AI agent to reach this data directly instead? See the <a href="/platform/integrations">MCP server on the Integrations page</a>.</p>`
-, { tone: 'tint' })}
-
-${L.section(
-  `${L.sectionHead('THE 14 LANGUAGES, NAMED', 'Not a marketing round number — the actual list.', 'The AI assistant’s chat and voice conversations — native on WhatsApp and web chat, no telephony provider involved — run in these 14 languages. Phone calls and IVR, over your connected telephony provider, use the same 14 languages.')}
-  <div class="chip-row" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;">
-    ${['English','Hindi','Marathi','Gujarati','Tamil','Telugu','Kannada','Bengali','Malayalam','Punjabi','Odia','Arabic','Spanish','French'].map((l) => `<span class="chip">${l}</span>`).join('')}
-  </div>`
-)}
-
 ${L.section(`${L.sectionHead('QUESTIONS OWNERS ASK', 'Answers, not reassurance.', '')}${L.faqBlock([
   { q: 'Will AI replace my sales team?', a: 'No. The AI workforce does the remembering and the follow-up your team never has time for; your people do the selling.' },
   { q: 'What if the AI gets something wrong?', a: 'It writes from your catalogue, prices and her record, every action is logged, and you can put any kind of action behind approval or switch it off in one tap.' },
-  { q: 'Can I turn it all off?', a: 'Yes — instantly, at five levels: one action, one agent, one branch, one channel, or everything.' },
+  { q: 'Can I turn it all off?', a: 'Yes — instantly: one action, one agent, one branch, one channel, or everything.' },
   { q: 'Can the AI give a discount without my knowledge?', a: 'No — pricing and discounts follow your price rules and staff permissions; the AI drafts messages, it does not set prices.' },
   { q: 'What if it embarrasses me with a longtime customer?', a: 'Put your oldest families on “ask me first”. Their messages wait for you, and everything else carries on by itself.' },
-  { q: 'Does the AI voice agent that calls customers speak all 14 languages too?', a: 'Yes. Chat, voice and phone calls all run in the same 14 languages.' },
+  { q: 'Does the AI voice agent that calls customers speak my customers’ languages too?', a: 'Yes. Chat, voice and phone calls all run in the same languages, including Hindi, Arabic and English.' },
 ])}
 <p class="cta-note" style="margin-top:14px">More on AI trust and control? <a href="/faq#ai-trust">See every AI question we’ve been asked →</a></p>`)}
 
@@ -358,8 +330,8 @@ ${L.ctaBand('Meet your first AI workforce member.', 'Watch it answer, follow up 
 
 const integrations = {
   slug: 'platform/integrations',
-  title: 'Jwero Integrations: Tally, Shopify, Meta, Stripe, PayPal, MCP | Jwero',
-  description: 'Jwero bridges to Tally and Zoho Books, connects Shopify, WooCommerce and Unicommerce, collects via Stripe, PayPal, Razorpay and Cashfree, sells on official Meta channels, connects to your telephony provider for AI voice calls and IVR, and exposes a first-party MCP server for your own AI agents.',
+  title: 'Jwero Integrations: Tally, Shopify, Meta, Stripe, PayPal | Jwero',
+  description: 'Jwero bridges to Tally and Zoho Books, connects Shopify, WooCommerce and Unicommerce, collects via Stripe, PayPal, Razorpay and Cashfree, sells on official Meta channels, connects to your telephony provider for AI voice calls and IVR, and lets your own AI agents reach your data with scoped access.',
   breadcrumbs: BC('Integrations'),
   faqs: [
     { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Jwero connects to it, imports masters, checks records against it and posts bills, returns and payments to it automatically, so your accountant reviews instead of retyping.' },
@@ -392,23 +364,22 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('BRING YOUR OWN AI AGENT', 'Jwero also speaks MCP.', 'Alongside the AI workforce built into Jwero, a first-party MCP (Model Context Protocol) server lets you connect any MCP-compatible AI agent — Claude, or your own tooling — directly to your live data.')}
+  `${L.sectionHead('BRING YOUR OWN AI AGENT', 'Your own AI agent can work from Jwero too.', 'Alongside the AI workforce built into Jwero, you can connect an AI agent of your own, such as Claude or your own tooling, to your live data through the open MCP standard.')}
   ${L.cards([
-    { title: 'A real tool registry, not a demo endpoint', text: 'Hundreds of scoped tools across CRM, inbox, HR, inventory, finance, marketing, org and reporting — the same data your team already works from, exposed for an agent to read and act on.' },
-    { title: 'Reads broad, writes conservative', text: 'Read access is available widely; write access is deliberately narrow — physical acts, cash payouts, OTP-gated closures and gateway payments are excluded on purpose, not by oversight.' },
-    { title: 'Your own connect flow', text: 'A guided connect flow and an in-product API-keys page let your team (or a technical partner) set this up without engineering help from us.' },
-    { title: 'Permission-scoped per key', text: 'Access is scoped per API key and membership, the same permission model that governs every other user in Jwero.' },
-  ], 4)}
-  <p style="margin-top:16px; font-size:.9rem; color:var(--ink-2);">This is distinct from the built-in AI workforce described on <a href="/platform/ai-workforce">the AI Workforce & Governance page</a> — that’s Jwero’s own AI working inside your business, inside your limits; MCP is the door for an AI agent of your choosing to reach the same data from outside.</p>`
+    { title: 'Reads broad, writes conservative', text: 'Your agent can read widely; what it may change is deliberately narrow, and money, stock movements and payments stay with people.' },
+    { title: 'Your own connect flow', text: 'A guided connect flow and an in-product API-keys page let your team or a technical partner set this up without engineering help from us.' },
+    { title: 'Permission-scoped per key', text: 'Access is scoped per key and membership, under the same permission model that governs every other user in Jwero.' },
+  ], 3)}
+  <p style="margin-top:16px; font-size:.9rem; color:var(--ink-2);">This is distinct from the built-in AI workforce described on <a href="/platform/ai-workforce">the AI Workforce & Governance page</a>: that is Jwero’s own AI working inside your business, inside your limits; this is the door for an agent of your choosing to reach the same data from outside.</p>`
 , { tone: 'tint' })}
 
-${L.honestGapsBlock(['A general-purpose, self-serve public developer REST API is on the roadmap — the MCP server above already gives AI agents scoped access today; a broader API for custom, non-agent integrations doesn’t exist yet.'])}
+
 
 ${L.section(`${L.sectionHead('INTEGRATION QUESTIONS', 'What changes in your stack.', '')}${L.faqBlock([
   { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Jwero connects to it, imports masters, checks records against it and posts bills, returns and payments to it automatically, so your accountant reviews instead of retyping.' },
   { q: 'Can I keep my Shopify store?', a: 'Yes. Connect Shopify and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
   { q: 'Is the WhatsApp integration official, or a ban risk?', a: 'Official WhatsApp Business API — template approvals, consent management and opt-out handling are built in, which is what keeps it out of ban-risk territory.' },
-  { q: 'Can I connect my own AI agent to Jwero data?', a: 'Yes — a first-party MCP server exposes scoped CRM, inbox, HR, inventory, finance, marketing, org and reporting tools to any MCP-compatible agent, with a guided connect flow and an API-keys page in-product.' },
+  { q: 'Can I connect my own AI agent to Jwero data?', a: 'Yes — an AI agent of your choosing can be given scoped access to your Jwero data, with a guided connect flow and an API-keys page in-product.' },
   { q: 'Does Jwero support IVR and AI voice calls?', a: 'Yes — connect your telephony provider, and Jwero’s AI voice agent runs outbound/inbound phone calls and IVR menus over that line. Voice on WhatsApp and web chat is separate and fully native to Jwero, with no telephony connection needed. See <a href="/products/ai-sales-agents">AI Sales Agents & Voice</a> for what the agent actually does on each channel.' },
 ])}`)}
 
@@ -513,110 +484,4 @@ ${L.ctaBand('See the onboarding plan for your business.', 'Tell us your team siz
 `,
 };
 
-const roadmap = {
-  slug: 'roadmap',
-  title: 'Public Roadmap — Shipped, Building, Not Yet | Jwero',
-  description: 'Jwero publishes what is live, what is being built, and what we do not do yet. Honesty is the trust strategy — here is what we don’t do yet.',
-  breadcrumbs: [['Home', '/'], ['Roadmap']],
-  body: `
-${L.hero({
-  eyebrow: 'PUBLIC ROADMAP',
-  h1: 'Here’s what we don’t do yet.',
-  sub: 'Software vendors lose jewellery businesses by overpromising. We publish the edges: if a capability is not shipped, you will read it here first — not discover it after signing.',
-  primary: { href: '#', label: 'Ask about a feature', wa: 'roadmap' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
-})}
-
-${L.section(
-  `${L.stats([
-    { n: '25', l: 'shipped, live today' },
-    { n: '5', l: 'rolling out now' },
-    { n: '9', l: 'named on the roadmap, not shipped' },
-  ])}`
-)}
-
-${L.section(
-  `<div class="grid grid-3 road-grid">
-    <div class="road-col now">
-      <h3><span class="road-dot"></span>Shipped</h3>
-      <div class="road-group">
-        <p class="road-group-label">Selling & customer memory</p>
-        <div class="road-item"><strong>Customer Memory</strong>198 signals, 11 explainable scores</div>
-        <div class="road-item"><strong>WhatsApp, Instagram & Facebook commerce</strong>official APIs, one inbox</div>
-        <div class="road-item"><strong>AI voice assistant</strong>14 languages, transcripts</div>
-        <div class="road-item"><strong>Quotations</strong>draft → sent → accepted, PDF + shareable link</div>
-      </div>
-      <div class="road-group">
-        <p class="road-group-label">Marketing & growth</p>
-        <div class="road-item"><strong>Journeys, campaigns & loyalty</strong>festival triggers, consent-aware broadcasts</div>
-        <div class="road-item"><strong>Campaign attribution (UTM)</strong>what each send actually sold, on the record</div>
-        <div class="road-item"><strong>Customer segmentation</strong>live rule-based audiences, RFM tiers</div>
-        <div class="road-item"><strong>Gold savings schemes</strong>enrolment → instalments → maturity, now on the website too. Gram-based plans are being corrected and are not promoted until they are</div>
-      </div>
-      <div class="road-group">
-        <p class="road-group-label">Operations</p>
-        <div class="road-item"><strong>Jewellery catalogue (PIM)</strong>purity, certificates, HUID-aware</div>
-        <div class="road-item"><strong>Inventory intelligence</strong>valuation, ageing, dead-stock visibility</div>
-        <div class="road-item"><strong>GST invoicing at live metal rates</strong>AR ledger, payment reminders</div>
-        <div class="road-item"><strong>GSTR-1/3B report export</strong>GSTN-offline-tool format, for manual upload</div>
-        <div class="road-item"><strong>Showroom intelligence</strong>walk-in register, live floor, walkout rescue</div>
-        <div class="road-item"><strong>Repairs & after-sales service</strong>custody chain, warranty/AMC, in-store old-gold exchange</div>
-        <div class="road-item"><strong>Purchase & vendor management</strong>POs, GRN, vendor bills, self-serve vendor portal</div>
-        <div class="road-item"><strong>Manufacturing job-work</strong>with gold-loss tracking</div>
-        <div class="road-item"><strong>Hallmarking dispatch tracking</strong>batch to AHC, with auto re-hallmark flags on repairs</div>
-        <div class="road-item"><strong>Multi-store structure</strong>brands, branches, role-based access</div>
-      </div>
-      <div class="road-group">
-        <p class="road-group-label">Workforce</p>
-        <div class="road-item"><strong>Payroll</strong>attendance-aware, maker-checker approval, payslips + bank file</div>
-        <div class="road-item"><strong>Karigar wage settlement</strong>rate cards, work logs, khata ledger, settlement runs</div>
-        <div class="road-item"><strong>Attendance, leave & recruitment</strong>geo attendance, accrual-based leave, hire-to-onboarding pipeline</div>
-        <div class="road-item"><strong>Performance, LMS & incentives</strong>review cycles, courses with certificates, sales commission with clawbacks</div>
-      </div>
-      <div class="road-group">
-        <p class="road-group-label">Governance & integrations</p>
-        <div class="road-item"><strong>AI workforce with governance</strong>runs on its own; caps, approval where you choose, kill switch</div>
-        <div class="road-item"><strong>Enterprise SSO/SCIM</strong>SAML, OIDC and SCIM 2.0 user provisioning</div>
-        <div class="road-item"><strong>Bridges</strong>Tally and Zoho Books (connect, map, import masters, check records; posting stays manual), Shopify and WooCommerce on the same product data, publishing to Unicommerce</div>
-      </div>
-    </div>
-    <div class="road-col soon">
-      <h3><span class="road-dot"></span>Rolling out</h3>
-      <div class="road-group">
-        <p class="road-group-label">In active rollout</p>
-        <div class="road-item"><strong>Offline counter billing</strong>switched on per business: sales are kept on the device and sync when the connection returns</div>
-        <div class="road-item"><strong>Counter POS: returns, old-gold exchange & cash day-close</strong>registers, shifts and a reconciled till close — <a href="/products/pos">shipped</a></div>
-        <div class="road-item"><strong>Attribution dashboard</strong>the owner’s weekly growth report, productised</div>
-        <div class="road-item"><strong>Direct ad-platform publishing</strong>one-click publish from Ads Manager, not uniform across every flow yet</div>
-        <div class="road-item"><strong>Occasion & win-back recipes</strong>packaged one-click playbooks</div>
-      </div>
-    </div>
-    <div class="road-col next">
-      <h3><span class="road-dot"></span>On the roadmap</h3>
-      <div class="road-group">
-        <p class="road-group-label">Statutory & finance</p>
-        <div class="road-item"><strong>Direct e-invoice filing, e-way bills & GSTR auto-filing</strong>the e-invoice file is prepared for the portal and the IRN recorded on the bill; filing stays with your CA today</div>
-        <div class="road-item"><strong>Metal reconciliation & physical metal count</strong>metal balances by party are live; a full reconciliation is not</div>
-        <div class="road-item"><strong>Girvi / gold-loan module</strong>pledge, interest schemes, automatic interest collection, renewal, release and auctions, <a href="/products/girvi">shipped</a></div>
-      </div>
-      <div class="road-group">
-        <p class="road-group-label">Ecommerce website</p>
-        <div class="road-item"><strong>Scheme redemption at website checkout</strong>website enrolment and instalment payments are live; applying a balance at checkout isn’t wired yet</div>
-        <div class="road-item"><strong>Google Shopping sync</strong>not built</div>
-        <div class="road-item"><strong>HUID / certificate verification widget</strong>the catalogue carries the data; the widget isn’t built</div>
-        <div class="road-item"><strong>Old-gold exchange / buyback calculator online</strong></div>
-      </div>
-      <div class="road-group">
-        <p class="road-group-label">Operations & platform</p>
-        <div class="road-item"><strong>CAD file storage & design approval stage</strong>not built</div>
-        <div class="road-item"><strong>Predictive ML forecasting</strong>today’s inventory intelligence is ageing/valuation-based, not predictive</div>
-      </div>
-    </div>
-  </div>`
-)}
-
-${L.ctaBand('Need something on this list?', 'Tell us which item decides your purchase — roadmap order is negotiable for lighthouse partners.', 'roadmap')}
-`,
-};
-
-module.exports = [platform, customerMemory, pricingEngine, aiWorkforce, integrations, tally, onboarding, roadmap];
+module.exports = [platform, customerMemory, pricingEngine, aiWorkforce, integrations, tally, onboarding];

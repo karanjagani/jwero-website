@@ -34,7 +34,7 @@
   },
   {
    "hook": "You worry an AI might promise a discount you never approved.",
-   "does": "You set autonomy levels: what the agent may do alone and what it must send to you for approval.",
+   "does": "You set the limits: what the agent may do alone and what it must send to you for approval.",
    "changes": "The AI works on its own, inside the limits you set.",
    "source": "app/[orgId]/settings/agent-teams/autonomy/page.tsx"
   },

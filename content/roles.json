@@ -617,7 +617,7 @@
   "faqs": [
    {
     "q": "Can Jwero plan bench capacity and promise dates?",
-    "a": "Not yet. Stages and work in progress are tracked, but bench capacity planning and promise dates are not built. The work in progress view shows where jobs are piling up."
+    "a": "Not yet. Stages and work in progress are tracked; bench capacity planning and promise dates stay with the workshop head for now. The work in progress view shows where jobs are piling up."
    },
    {
     "q": "Can I track stone counts at each setting stage?",
@@ -701,7 +701,7 @@
   "faqs": [
    {
     "q": "Can I store CAD files in Jwero?",
-    "a": "Not yet. Designs carry a reference, but CAD file storage with version history is not built. Keep CAD files in your current storage and note the reference on the design in Jwero."
+    "a": "Not yet. Designs carry a reference; CAD files with version history stay in your current storage. Keep CAD files in your current storage and note the reference on the design in Jwero."
    },
    {
     "q": "Can customers approve designs inside Jwero?",

@@ -2,7 +2,7 @@
 // their customers make about AI, and grounded only in what pim-app ships, as
 // confirmed by Jwero in this session: AI agents with approvals, caps and a kill
 // switch; AI replies on WhatsApp, Instagram and web chat; voice AI and calls in
-// 14 languages; listings and images from photos; AI video; AI ad creatives and
+// many languages; listings and images from photos; AI video; AI ad creatives and
 // audiences from segments; AI-written email with A/B tests; journeys built in
 // plain English; reports from a question; rule-based explainable scores; voice
 // quotations; AI website sections; CCTV people counting; an MCP connection.
@@ -46,7 +46,7 @@ const agents = post({
   faqs: [
     { q: 'What is an AI agent in a jewellery shop?', a: 'Software that does a defined job, such as answering enquiries, following up quotes or reminding scheme members, using your catalogue, prices and customer records, within limits you set.' },
     { q: 'Will an AI agent send messages without asking?', a: 'Yes, inside the daily caps and quiet hours you set. In Jwero agents work on their own, and you choose which kinds of action must wait for your approval.' },
-    { q: 'Can I stop it instantly?', a: 'Yes. Jwero has a kill switch at several levels, from one action to the whole account, and a daily cap on how much an agent may do.' },
+    { q: 'Can I stop it instantly?', a: 'Yes. One switch stops it, from one agent to everything, and there is a daily cap on how much an agent may do.' },
   ],
   body: `
   <h2>A job, not a chat window</h2>
@@ -63,7 +63,7 @@ const agents = post({
   <h2>What an agent should never do</h2>
   <p>Set prices, give discounts, promise delivery dates it cannot see, or argue with an unhappy customer. Those go to a person, with the conversation so far.</p>
   <h2>How Jwero does it</h2>
-  <p>Jwero’s AI workforce speaks 14 languages by chat and voice, works on WhatsApp, Instagram, web chat and phone, and reads the same customer record as your team. See <a href="/products/ai-sales-agents">AI sales agents</a> and <a href="/platform/ai-workforce">how governance works</a>.</p>`,
+  <p>Jwero’s AI workforce speaks your customers’ languages by chat and voice, including Hindi, Arabic and English, works on WhatsApp, Instagram, web chat and phone, and reads the same customer record as your team. See <a href="/products/ai-sales-agents">AI sales agents</a> and <a href="/platform/ai-workforce">how governance works</a>.</p>`,
 });
 
 const waBot = post({
@@ -129,7 +129,7 @@ const voice = post({
   sub: 'Many customers would rather speak than type, and in the language they speak at home. Voice AI now handles both, if it is set up for a jewellery shop.',
   product: ['/ai-calling-for-jewellers', 'See AI calling'],
   wa: 'blog-ai-voice',
-  close: ['Speak her language.', 'Jwero’s voice AI talks to customers in 14 languages, on chat and on calls.'],
+  close: ['Speak her language.', 'Jwero’s voice AI talks to customers in their own language, on chat and on calls.'],
   faqs: [
     { q: 'Which languages does Jwero’s voice AI speak?', a: '14: English, Hindi, Marathi, Gujarati, Tamil, Telugu, Kannada, Bengali, Malayalam, Punjabi, Odia, Arabic, Spanish and French.' },
     { q: 'Does it understand Hinglish?', a: 'Mixed Hindi and English is common, and staff at the counter can give instructions in English, Hindi or Hinglish.' },
@@ -368,7 +368,7 @@ const scores = post({
   sub: 'Every day the team has more people to follow up than time. A score that says who is ready, and why, decides where the hour goes.',
   product: ['/platform/customer-memory', 'See customer intelligence'],
   wa: 'blog-ai-scores',
-  close: ['Call the right customer first.', 'Jwero’s scores show who is ready and the reason, from 198 signals.'],
+  close: ['Call the right customer first.', 'Jwero’s scores show who is ready and the reason, from every signal she gives.'],
   faqs: [
     { q: 'What signals predict a jewellery purchase?', a: 'Repeat visits, pieces tried, wishlists, questions about price or availability, scheme maturity and upcoming occasions.' },
     { q: 'Should I trust a score without a reason?', a: 'No. A score your team cannot explain is a score they will ignore. Jwero shows why each score is what it is.' },
@@ -382,7 +382,7 @@ const scores = post({
   <h2>Scores must explain themselves</h2>
   <p>“High intent because she viewed the bridal set three times this week and her scheme matures in 12 days” gets a call. A bare number does not.</p>
   <h2>How Jwero does it</h2>
-  <p>198 customer signals and 11 live scores, each with its reason, on the customer record and in the team’s follow-up list. See <a href="/platform/customer-memory">customer intelligence</a>.</p>`,
+  <p>Every signal a customer gives, read into live scores, each with its reason, on the customer record and in the team’s follow-up list. See <a href="/platform/customer-memory">customer intelligence</a>.</p>`,
 });
 
 const reportsAi = post({
@@ -458,7 +458,7 @@ const safe = post({
   <h2>Start small</h2>
   <p>One duty, low caps, a week of reading the log. Some owners keep approval on for that week. Widen from there.</p>
   <h2>How Jwero does it</h2>
-  <p>AI agents work on their own inside daily and money caps and quiet hours, with a per-action switch for approval, kill switches from one action to the whole account, and a full log. See <a href="/platform/ai-workforce">AI governance</a> and the <a href="/trust">Trust Centre</a>.</p>`,
+  <p>AI agents work on their own inside daily and money caps and quiet hours, with a per-action switch for approval, one switch that stops it from one agent to everything, and a full log. See <a href="/platform/ai-workforce">AI governance</a> and the <a href="/trust">Trust Centre</a>.</p>`,
 });
 
 const cost = post({
@@ -651,7 +651,7 @@ const journeysAi = post({
   sub: 'Automation used to mean drawing flowcharts. Now you describe the goal, and AI builds the journey across WhatsApp, email, SMS and calls.',
   product: ['/products/journeys', 'See journeys in Jwero'],
   wa: 'blog-ai-journeys',
-  close: ['Describe it, and it runs.', 'Jwero builds cross-channel journeys from plain English, with 300+ ready ones.'],
+  close: ['Describe it, and it runs.', 'Jwero builds cross-channel journeys from plain English, with ready-made ones to start from.'],
   faqs: [
     { q: 'Can AI build a marketing journey?', a: 'Yes. In Jwero, describe it and a detailed cross-channel journey is generated for you to review.' },
     { q: 'Are there ready-made journeys?', a: 'Yes, more than 300, including abandoned cart and browse.' },
@@ -663,7 +663,7 @@ const journeysAi = post({
   <h2>Describe, review, launch</h2>
   <p>“When someone browses bridal sets twice and does not enquire, send a WhatsApp with three similar pieces, then an email two days later, then offer a video call.” Review the steps, then switch it on.</p>
   <h2>How Jwero does it</h2>
-  <p>Journeys generated in plain English, 300+ ready ones, triggers from Instagram, the website and the showroom. See <a href="/products/journeys">journeys</a>.</p>`,
+  <p>Journeys generated in plain English, ready-made ones to start from, triggers from Instagram, the website and the showroom. See <a href="/products/journeys">journeys</a>.</p>`,
 });
 
 const photoSearch = post({

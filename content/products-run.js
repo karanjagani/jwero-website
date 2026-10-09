@@ -311,7 +311,7 @@ const invFaqs = [
   { q: 'Does it work across branches?', a: 'Yes. Stock, transfers and valuation are by branch, with the whole picture for the owner.' },
   { q: 'Our stock records are inconsistent. Can we still start?', a: 'Yes. We import what exists per branch and reconcile against your old records during onboarding. Inconsistent starting data is normal.' },
   { q: 'Can I manage jewellery stock in Excel?', a: 'For a few hundred pieces, maybe. Excel cannot value stock at today’s rate automatically, track pieces on memo or at karigars, or stop a piece being sold twice across the counter and online.' },
-  { q: 'Can it forecast demand?', a: 'Not yet. Demand forecasting is on the roadmap. Today Jwero gives valuation, ageing and slow-mover views to guide buying.' },
+  { q: 'Can it forecast demand?', a: 'Not as a forecast. Jwero gives valuation, ageing and slow-mover views to guide buying.' },
 ];
 
 const inventory = {

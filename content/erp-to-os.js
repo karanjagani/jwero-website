@@ -237,7 +237,7 @@ ${L.section(
     { icon: 'flow', title: 'Connected workflows', text: 'An enquiry becomes a quotation, a bill, a stock movement and a follow-up without anyone retyping it. A custom order moves from the counter to the workshop and back with its metal accounted for.', link: { href: '/products', label: 'See every product' } },
     { icon: 'swap', title: 'Works with the tools you have', text: 'Bills, returns and payments post to Tally automatically, and e-invoices are generated there. Zoho Books, Shopify, WooCommerce, Meta, Stripe, PayPal, Razorpay and Cashfree connect to the same record.', link: { href: '/platform/integrations', label: 'See integrations' } },
   ])}
-  <p class="cta-note" style="margin-top:16px">What ships next is public: <a href="/roadmap">see the roadmap</a> for what is live, rolling out and planned.</p>`
+`
 )}
 
 ${L.section(

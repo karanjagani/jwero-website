@@ -685,7 +685,6 @@ ${L.hero({
   h1: 'Jewellery Software Buyer’s Checklist: 15 Questions to Ask First',
   sub: 'Every vendor demo looks polished. These are the questions that separate a system built for jewellery from a generic retail tool with jewellery fields bolted on — ask them of anyone you’re evaluating, including us.',
   primary: { href: '#', label: 'Ask us these, live', wa: 'blog-checklist' },
-  secondary: { href: '/roadmap', label: 'See our own honest answers' },
 })}
 ${L.section(postMeta(8, 'Jewellery Software Buying Guide'))}
 
@@ -714,7 +713,7 @@ ${L.section(
   <h2>On AI, if the product uses it</h2>
   <ol start="9">
     <li><strong>Can you choose which AI messages go out automatically and which wait for a person?</strong> In a relationship trade, this is not a minor detail. Ask to see the caps, the action log and the approval queue, not just hear that they exist.</li>
-    <li><strong>Is there a kill switch, and at what scopes?</strong> One action, one agent, one branch, one channel, or everything — the more granular, the more it's a real control and not a marketing line.</li>
+    <li><strong>Is there a kill switch, and how finely can you use it?</strong> Stopping one agent should be as easy as stopping everything; the finer the control, the more it's a real control and not a marketing line.</li>
   </ol>
 
   <h2>On accounting and what actually stays put</h2>
@@ -736,8 +735,8 @@ ${L.section(
 )}
 
 ${L.section(
-  `${L.sectionHead('OUR OWN ANSWERS, IN PUBLIC', 'We hold ourselves to this list first.', 'Every honest gap in Jwero today is published, not hidden behind a demo script.')}
-  <p><a class="btn btn-ghost" href="/roadmap">See what’s shipped, building, and not yet</a></p>`
+  `${L.sectionHead('OUR OWN ANSWERS', 'We hold ourselves to this list first.', 'Ask us any of these on a call and you get a straight answer, not a demo script.')}
+  <p><a class="btn btn-ghost" href="/book-demo">Ask us these, live</a></p>`
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('GUIDE QUESTIONS', 'Questions readers ask about evaluating vendors.', '')}${L.faqBlock(checklistGuideFaqs)}<p class="cta-note" style="margin-top:14px">More questions? <a href="/faq">See the full FAQ →</a></p>`)}

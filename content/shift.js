@@ -24,7 +24,7 @@ const SHIFTS = {
     title: 'From a salesman’s memory to the business’s record.',
     today: 'The best salesperson remembers the family, the occasion and the budget. When they leave, so does the customer.',
     gone: 'Twenty years of relationships walking out the door with a phone.',
-    now: 'Every customer read as 198 kinds of signal, scored into 11 live scores with a why — occasions, taste, scheme balance, every conversation — owned by the business and read by every module before anyone replies.',
+    now: 'Every signal a customer gives, read into live scores with a visible reason — occasions, taste, scheme balance, every conversation — owned by the business and read by every module before anyone replies.',
     tempo: ['One person’s head', 'Everyone’s screen'],
   },
   'platform/pricing-engine': {
@@ -38,7 +38,7 @@ const SHIFTS = {
     title: 'From doing everything to deciding what runs.',
     today: 'Follow-ups, reminders and replies wait for a free moment that never comes.',
     gone: 'The follow-up nobody had time for. The 11pm enquiry that bought elsewhere by morning.',
-    now: 'An AI workforce does the work on its own, inside daily caps, quiet hours and a five-scope kill switch. You choose which actions, if any, wait for your approval.',
+    now: 'An AI workforce does the work on its own, inside daily caps, quiet hours and one switch that stops it, from one agent to everything. You choose which actions, if any, wait for your approval.',
     tempo: ['When someone remembers', 'As it happens'],
   },
   'platform/integrations': {
@@ -132,7 +132,7 @@ const SHIFTS = {
     title: 'From hiring for the night shift to staffing it with AI.',
     today: 'Follow-ups, reminders and callbacks happen when a person is free — which is never during the season.',
     gone: 'The unclosed quote. The instalment nobody chased. The 11pm enquiry lost to a competitor.',
-    now: 'AI agents answer, follow up and remind in 14 languages by chat and voice — on their own, inside your caps and quiet hours, with approval where you choose.',
+    now: 'AI agents answer, follow up and remind in your customers’ languages by chat and voice — on their own, inside your caps and quiet hours, with approval where you choose.',
     tempo: ['When someone is free', 'Always'],
   },
   'products/ecommerce': {
