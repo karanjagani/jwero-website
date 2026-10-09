@@ -1062,7 +1062,7 @@ function jwFromInr(n) {
         if (nx * cx + ny * (cy + .25) + nz * cz < 0) { nx = -nx; ny = -ny; nz = -nz; }
         n = [nx, ny, nz];
       }
-      list.push({ v: vs, n: n, c: [cx, cy, cz], grp: o.grp, mod: o.mod, kind: o.kind, e: o.e, ang: o.ang || 0 });
+      list.push({ v: vs, n: n, c: [cx, cy, cz], grp: o.grp, mod: o.mod, kind: o.kind, e: o.e, ang: o.ang || 0, stone: o.stone || 0, sc: !!o.sc });
     }
     // brilliant cut: table, crown, pavilion
     (function () {
@@ -1081,18 +1081,18 @@ function jwFromInr(n) {
     })();
     // bangle: a band standing upright, facing the reader
     (function () {
-      var M = 72, m = 12, R = .86, TR = .085, TZ = .22, QUAD = [1, 0, 2, 3];
+      var M = 144, m = 28, R = .86, TR = .1, TZ = .27, QUAD = [1, 0, 2, 3];
       function P(u, v) { var a = u / M * TAU, b = v / m * TAU, rr = R + TR * Math.cos(b); return [rr * Math.cos(a), rr * Math.sin(a), TZ * Math.sin(b)]; }
       for (var u = 0; u < M; u++) for (var v = 0; v < m; v++) {
         var am = (u + .5) / M * TAU, bm = (v + .5) / m * TAU;
         var nx = Math.cos(bm) * Math.cos(am) / TR, ny = Math.cos(bm) * Math.sin(am) / TR, nz = Math.sin(bm) / TZ, len = Math.sqrt(nx * nx + ny * ny + nz * nz);
         // the stretch of band nearest each module: screen angle runs clockwise from the top
         var scr = ((90 - (u + .5) / M * 360) % 360 + 360) % 360;
-        facet(SHAPES.bangle, [P(u, v), P(u + 1, v), P(u + 1, v + 1), P(u, v + 1)], { n: [nx / len, ny / len, nz / len], grp: QUAD[Math.floor(u / (M / 4))], mod: Math.min(N - 1, Math.floor(scr / (360 / N))), kind: 1, ang: (u + .5) / M });
+        facet(SHAPES.bangle, [P(u, v), P(u + 1, v), P(u + 1, v + 1), P(u, v + 1)], { n: [nx / len, ny / len, nz / len], grp: QUAD[Math.floor(u / (M / 4))], mod: Math.min(N - 1, Math.floor(scr / (360 / N))), kind: 1, ang: (u + .5) / M, stone: v >= 6 && v <= 8 && u % 4 !== 3 ? Math.floor(u / 4) + 1 : 0, sc: v === 7 && u % 4 === 1 });
       }
     })();
     var METALS = {
-      gold: { shape: 'bangle', base: '#d4a21f', dark: '#8a6408', lite: '#fff1b8', word: 'gold' },
+      gold: { shape: 'bangle', base: '#e0aa24', dark: '#6b4705', lite: '#fff6cf', word: 'gold' },
       silver: { shape: 'bangle', base: '#b9c0c8', dark: '#6b737c', lite: '#ffffff', word: 'silver' },
       platinum: { shape: 'bangle', base: '#9fa9b6', dark: '#4f5967', lite: '#f1f5fa', word: 'platinum' },
       diamond: { shape: 'diamond', word: 'gold' },
@@ -1118,7 +1118,7 @@ function jwFromInr(n) {
       w = stage.clientWidth; h = stage.clientHeight;
       cv.width = w * dpr; cv.height = h * dpr; if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       var small = w < 520;
-      S = Math.min(w * (small ? .2 : .22), h * .32); ox = w / 2; oy = h * .47;
+      S = Math.min(w * (small ? .22 : .25), h * .35); ox = w / 2; oy = h * .47;
       var rx = Math.min(w / 2 - (small ? 34 : 70), S * (small ? 2.05 : 2.5)), ry = Math.min(h / 2 - 46, S * 1.55);
       nodePos = [];
       nodeBtns.forEach(function (b, k) {
@@ -1140,7 +1140,7 @@ function jwFromInr(n) {
       if (!dragging) spin += dt * (mode === 'today' ? .1 : .22);
       explode += (explodeTo - explode) * Math.min(1, dt * 5);
       var bangle = METALS[metal].shape === 'bangle';
-      var ry = (bangle ? Math.sin(spin * 1.5) * (.62 - .4 * explode) : spin) + rotY, rxx = bangle ? rotX - .08 : rotX, cy = Math.cos(ry), sy = Math.sin(ry), cxr = Math.cos(rxx), sxr = Math.sin(rxx);
+      var ry = (bangle ? Math.sin(spin * 1.5) * (.62 - .4 * explode) : spin) + rotY, rxx = bangle ? rotX - .2 + Math.sin(spin * .9) * .06 : rotX, cy = Math.cos(ry), sy = Math.sin(ry), cxr = Math.cos(rxx), sxr = Math.sin(rxx);
       ctx.clearRect(0, 0, w, h);
       // wires: module → the record (or, today, → the one tool that knows)
       ctx.lineWidth = 1; ctx.setLineDash([3, 6]); ctx.lineDashOffset = -t * 14;
@@ -1156,7 +1156,12 @@ function jwFromInr(n) {
       var sh = ctx.createRadialGradient(ox, oy + S * 1.12, 0, ox, oy + S * 1.12, S * .9), shc = isMetal ? '20, 16, 0' : '0, 19, 183';
       sh.addColorStop(0, 'rgba(' + shc + ', ' + (.1 * (1 - explode)) + ')'); sh.addColorStop(1, 'rgba(' + shc + ', 0)');
       ctx.globalAlpha = 1; ctx.fillStyle = sh; ctx.beginPath(); ctx.ellipse(ox, oy + S * 1.12, S * .9, S * .14, 0, 0, TAU); ctx.fill();
-      var list = [];
+      if (isMetal && explode < .6) {
+        var halo = ctx.createRadialGradient(ox, oy, S * .2, ox, oy, S * 1.7);
+        halo.addColorStop(0, 'rgba(255, 214, 120, ' + (.2 * (1 - explode)) + ')'); halo.addColorStop(.55, 'rgba(246, 167, 35, ' + (.08 * (1 - explode)) + ')'); halo.addColorStop(1, 'rgba(246, 167, 35, 0)');
+        ctx.globalAlpha = 1; ctx.fillStyle = halo; ctx.beginPath(); ctx.arc(ox, oy, S * 1.7, 0, TAU); ctx.fill();
+      }
+      var list = [], stars = [];
       for (var f0 = 0; f0 < facets.length; f0++) {
         var F = facets[f0], n = F.n;
         var nxr = n[0] * cy + n[2] * sy, nzr = -n[0] * sy + n[2] * cy, ny2 = n[1] * cxr - nzr * sxr, nz2 = n[1] * sxr + nzr * cxr;
@@ -1172,7 +1177,14 @@ function jwFromInr(n) {
         else { for (var m2 = 0; m2 < N; m2++) if (glow[m2] > .02 && set.modules[m2][5] === grp) hot = Math.max(hot, glow[m2]); }
         var shine = isMetal ? (ripple >= 0 && Math.abs(((F.ang - front + 1.5) % 1) - .5) < .05 ? 1 : 0) : (Math.abs(F.c[1] - front) < .22 ? 1 : 0);
         var light = Math.max(0, nxr * .35 + ny2 * .72 + nz2 * .6) + Math.max(0, -ny2 * .5 + nz2 * .45 - nxr * .2) * .6;
-        list.push({ P: P, z: zs / F.v.length, front: nz2 >= 0, light: Math.min(1, light), hot: hot, shine: shine, F: F });
+        // studio lighting for metal: a key light, a soft band of reflection that drifts, a low fill and a rim
+        var spec = 0, env = 0, rim = 0;
+        if (isMetal) {
+          var hk = Math.max(0, -nxr * .28 + ny2 * .62 + nz2 * .73); spec = Math.pow(hk, 26);
+          env = Math.max(0, Math.sin((ny2 * 2.6 + nxr * 1.4 + t * .35) * 3.14159)); env = env * env;
+          rim = Math.pow(1 - Math.min(1, Math.max(0, nz2)), 2.4);
+        }
+        list.push({ P: P, z: zs / F.v.length, front: nz2 >= 0, light: Math.min(1, light), hot: hot, shine: shine, F: F, spec: spec, env: env, rim: rim, ny: ny2 });
       }
       list.sort(function (a3, b3) { return a3.z - b3.z; });
       ctx.lineJoin = 'round';
@@ -1182,7 +1194,16 @@ function jwFromInr(n) {
         if (isMetal) {
           // solid metal: base colour, then light or shade laid over it, then the module's own tint
           // one blended colour per facet, filled and stroked alike, so the band reads as smooth metal
-          var col = it.light > .5 ? mix(MT.rgb, MT.lrgb, Math.min(.9, (it.light - .5) * 1.7)) : mix(MT.rgb, MT.drgb, Math.min(.75, (.5 - it.light) * 1.6));
+          var col = it.light > .5 ? mix(MT.rgb, MT.lrgb, Math.min(.8, (it.light - .5) * 1.5)) : mix(MT.rgb, MT.drgb, Math.min(.85, (.5 - it.light) * 1.9));
+          col = mix(col, MT.lrgb, it.env * .38);
+          col = mix(col, MT.drgb, it.rim * .45);
+          col = mix(col, [255, 255, 255], Math.min(.95, it.spec * 1.1));
+          if (F2.stone && explode < .5) {
+            // set stones: cool, bright, each catching the light at its own moment
+            var tw = Math.sin(t * 2.2 + F2.stone * 2.399) * .5 + .5; tw = tw * tw * tw * tw;
+            col = mix([120, 165, 230], [255, 255, 255], Math.min(1, (F2.sc ? .55 : .2) + it.light * .35 + tw * .7));
+            if (F2.sc && tw > .86) stars.push([it, tw, F2.stone]);
+          }
           if (it.shine) col = mix(col, [255, 255, 255], .85);
           else if (it.hot > .2) col = mix(col, explode > .5 ? AMB : INK, .3 + it.hot * .45);
           var css = 'rgb(' + (col[0] | 0) + ',' + (col[1] | 0) + ',' + (col[2] | 0) + ')';
@@ -1209,6 +1230,16 @@ function jwFromInr(n) {
         var gl = isMetal ? 7 : 4 + (best.light - .96) * 180;
         ctx.globalAlpha = .95; ctx.strokeStyle = isMetal ? '#fff' : amber; ctx.lineWidth = 1.5; ctx.lineCap = 'round';
         ctx.beginPath(); ctx.moveTo(gx - gl, gy); ctx.lineTo(gx + gl, gy); ctx.moveTo(gx, gy - gl); ctx.lineTo(gx, gy + gl); ctx.stroke();
+      }
+      if (isMetal && explode < .5 && stars.length) {
+        stars.sort(function (a4, b4) { return b4[1] - a4[1]; });
+        for (var s0 = 0; s0 < Math.min(2, stars.length); s0++) {
+          var SP = stars[s0][0].P, sx = 0, sy2 = 0; for (var s1 = 0; s1 < SP.length; s1 += 2) { sx += SP[s1]; sy2 += SP[s1 + 1]; } sx /= SP.length / 2; sy2 /= SP.length / 2;
+          var sl = 3 + (stars[s0][1] - .86) * 55;
+          ctx.globalAlpha = Math.min(1, (stars[s0][1] - .86) * 8); ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.2; ctx.lineCap = 'round';
+          ctx.beginPath(); ctx.moveTo(sx - sl, sy2); ctx.lineTo(sx + sl, sy2); ctx.moveTo(sx, sy2 - sl); ctx.lineTo(sx, sy2 + sl); ctx.stroke();
+          ctx.globalAlpha *= .5; ctx.beginPath(); ctx.moveTo(sx - sl * .5, sy2 - sl * .5); ctx.lineTo(sx + sl * .5, sy2 + sl * .5); ctx.moveTo(sx + sl * .5, sy2 - sl * .5); ctx.lineTo(sx - sl * .5, sy2 + sl * .5); ctx.stroke();
+        }
       }
       ctx.lineWidth = 1;
       // pulses along the wires: blue in = write, amber out = read
