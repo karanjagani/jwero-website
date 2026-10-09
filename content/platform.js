@@ -329,7 +329,7 @@ const integrations = {
   breadcrumbs: BC('Integrations'),
   faqs: [
     { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Bills, returns and payments post to Tally through the bridge, so your accountant reviews instead of retyping.' },
-    { q: 'Can I keep my Shopify store?', a: 'Yes. Connect Shopify and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
+    { q: 'Can I keep my Shopify or WooCommerce store?', a: 'Yes. Connect Shopify or WooCommerce and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and the customer record on top of the store you already run. If you would rather have one system, Jwero has its own <a href="/products/ecommerce">ecommerce built for jewellers</a>.' },
     { q: 'Is the WhatsApp integration official?', a: 'Yes — Jwero uses the official WhatsApp Business API, with template approvals, consent management and opt-out handling built in.' },
     { q: 'Which telephony providers work for AI voice calls and IVR?', a: 'Jwero connects to your telephony provider; most telephony/CPaaS providers can be connected on request. This only applies to actual phone calls and IVR — voice on WhatsApp and web chat is native to Jwero and needs no telephony provider at all. For the phone channel, Jwero drives the AI conversation and IVR logic — the call itself runs over the line you connect, the same division of labour as WhatsApp (Meta’s API) or payments (Razorpay/Cashfree).' },
   ],
@@ -371,7 +371,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('INTEGRATION QUESTIONS', 'What changes in your stack.', '')}${L.faqBlock([
   { q: 'Does Jwero replace Tally?', a: 'No. Tally stays your ledger. Bills, returns and payments post to Tally through the bridge, so your accountant reviews instead of retyping.' },
-  { q: 'Can I keep my Shopify store?', a: 'Yes. Connect Shopify and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and memory on top of the store you already run.' },
+  { q: 'Can I keep my Shopify or WooCommerce store?', a: 'Yes. Connect Shopify or WooCommerce and your store works from the same product data as the shop, so Jwero adds WhatsApp, Instagram and the customer record on top of the store you already run. If you would rather have one system, Jwero has its own <a href="/products/ecommerce">ecommerce built for jewellers</a>.' },
   { q: 'Is the WhatsApp integration official, or a ban risk?', a: 'Official WhatsApp Business API — template approvals, consent management and opt-out handling are built in, which is what keeps it out of ban-risk territory.' },
   { q: 'Can I connect my own AI agent to Jwero data?', a: 'Yes — an AI agent of your choosing can be given scoped access to your Jwero data, with a guided connect flow and an API-keys page in-product.' },
   { q: 'Does Jwero support IVR and AI voice calls?', a: 'Yes — connect your telephony provider, and Jwero’s AI voice agent runs outbound/inbound phone calls and IVR menus over that line. Voice on WhatsApp and web chat is separate and fully native to Jwero, with no telephony connection needed. See <a href="/products/ai-sales-agents">AI Sales Agents & Voice</a> for what the agent actually does on each channel.' },

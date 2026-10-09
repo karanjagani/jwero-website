@@ -260,4 +260,38 @@ const aiModes = () => `
   <p class="modes-note">Set it per kind of action, per agent and per branch. Most jewellers run reminders, replies and follow-ups on their own and keep offers and spend on approval.</p>
 </div>`;
 
-module.exports = { aiCapabilities, aiRun, aiModes, memoryJourney, toolsInto, marketCard, tierGlance, selfHostMap, hierarchyTree, toolCollapse, marketPicker, tallyFlow, techStack, orbit, integrationMap, showroomHeat };
+// Ecommerce (2026-10-09): what the store does for a shopper at each stage, read
+// from the product. Outcomes only.
+const SHOP_J = [
+  ['search', 'She finds you', 'Discovery', [
+    'Product pages that carry price, stock and reviews into Google results',
+    'Search that forgives spelling, and search by photo',
+    'Filters by price, weight, purity and stone',
+    'Collections, landing pages and a blog on your own domain',
+  ]],
+  ['gem', 'She trusts the piece', 'Experience', [
+    'The price at today’s rate, split into metal, making, stones and tax',
+    'Purity, weights, hallmark and the certificate, with a link to check it at the lab',
+    'Metal, purity and size pickers; engraving and personal messages',
+    'Compare side by side, reviews with photos, and questions answered',
+    'Pieces that go with it, and picks from what she has browsed',
+  ]],
+  ['wallet', 'She buys without friction', 'Conversion', [
+    'A phone-first checkout, as a guest or with a one-time code, no password',
+    'Coupons, including money off making charges or per gram, and loyalty points',
+    'Pay online, by instalments or on delivery',
+    'Reserve at a showroom and collect, or book a visit',
+    'Stock held while she pays, so nothing is sold twice',
+  ]],
+  ['heart', 'She comes back', 'Engagement', [
+    'Order tracking, tax invoice and returns from her own account',
+    'Wishlist, gift registry and an alert when a piece is back',
+    'Gold plan online: enrol, pay the instalment, see the passbook',
+    'Loyalty balance, birthdays and anniversaries on her profile',
+    'A review request after delivery, and one tap to order again',
+  ]],
+];
+const shopJourney = () => `
+<div class="shopj" data-gfx>${SHOP_J.map(([ic, t, k, items], i) => `<article style="--i:${i}"><p class="shopj-k">${icon(ic)}${k}</p><h3>${t}</h3><ul>${items.map((x) => `<li>${x}</li>`).join('')}</ul></article>`).join('')}</div>`;
+
+module.exports = { shopJourney, aiCapabilities, aiRun, aiModes, memoryJourney, toolsInto, marketCard, tierGlance, selfHostMap, hierarchyTree, toolCollapse, marketPicker, tallyFlow, techStack, orbit, integrationMap, showroomHeat };

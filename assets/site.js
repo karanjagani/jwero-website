@@ -615,7 +615,12 @@ function jwFromInr(n) {
     // Explainer graphics: arm before they scroll in, play when they arrive.
     var gfx = document.querySelectorAll('[data-gfx]');
     Array.prototype.forEach.call(gfx, function (g) { if (g.getBoundingClientRect().top > window.innerHeight) g.classList.add('gfx-arm'); });
-    onView(gfx, function (g) { if (g.classList.contains('gfx-arm')) requestAnimationFrame(function () { g.classList.add('is-in'); }); }, { threshold: 0.2 });
+    // A graphic taller than the screen (a long list on a phone) can never be 20% visible, so it plays as soon as it shows.
+    var gfxPlay = function (g) { if (g.classList.contains('gfx-arm')) requestAnimationFrame(function () { g.classList.add('is-in'); }); };
+    var gfxTall = [], gfxFit = [];
+    Array.prototype.forEach.call(gfx, function (g) { (g.getBoundingClientRect().height > window.innerHeight * .9 ? gfxTall : gfxFit).push(g); });
+    onView(gfxFit, gfxPlay, { threshold: 0.2 });
+    onView(gfxTall, gfxPlay, { threshold: 0.01 });
 
     // The shift plays its three beats once it is on screen.
     onView(document.querySelectorAll('[data-shift]'), function (el) { el.classList.add('is-in'); }, { threshold: 0.3 });

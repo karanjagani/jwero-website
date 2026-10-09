@@ -5258,3 +5258,20 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 
 /* Product pages: the screen mock sits close under the logo strip */
 .section.prod-mock { padding-top: 0; }
+
+/* Ecommerce: the shopper's journey in four stages */
+.shopj { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.shopj article { position: relative; padding: 22px 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); display: grid; gap: 10px; align-content: start; }
+.shopj article::after { content: ''; position: absolute; right: -12px; top: 36px; width: 12px; border-top: 2px solid var(--line-2); }
+.shopj article:last-child::after { display: none; }
+.shopj-k { display: flex; align-items: center; gap: 8px; margin: 0; font: 600 .6875rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--brand); }
+.shopj-k .ico { width: 18px; height: 18px; }
+.shopj h3 { font-size: 1.1875rem; letter-spacing: -.02em; line-height: 1.2; }
+.shopj ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.shopj li { position: relative; padding-left: 16px; font-size: .9375rem; line-height: 1.45; color: var(--ink-2); }
+.shopj li::before { content: ''; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; border-radius: 50%; background: var(--brand); opacity: .55; }
+.shopj.gfx-arm article { opacity: 0; transform: translateY(8px); transition: opacity .45s var(--ease), transform .45s var(--ease); transition-delay: calc(var(--i) * .18s); }
+.shopj.gfx-arm.is-in article { opacity: 1; transform: none; }
+@media (max-width: 1000px) { .shopj { grid-template-columns: 1fr 1fr; } .shopj article::after { display: none; } }
+@media (max-width: 600px) { .shopj { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .shopj.gfx-arm article { opacity: 1; transform: none; transition: none; } }
