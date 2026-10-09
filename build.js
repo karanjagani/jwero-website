@@ -128,7 +128,7 @@ const NAV = [
     groups: [
       { title: 'Sell', items: [
         ['/products/whatsapp', 'WhatsApp, Instagram and AI replies', 'Sell and get paid in the chat'],
-        ['/products/ecommerce', 'Website and catalogues', 'Your store at today’s rate'],
+        ['/products/ecommerce', 'Ecommerce', 'Built for jewellery businesses'],
         ['/products/crm', 'Customers and CRM', 'One record per customer and family'],
         ['/products/campaigns', 'Marketing and ads', 'Campaigns, journeys, social, ads'],
       ]},
@@ -1208,6 +1208,37 @@ const ICP_MORE = {
   'jewellery-brands': ['d2c', 'jewellery brands', 'a jewellery brand'],
 };
 for (const [k, [base, who, one]] of Object.entries(ICP_MORE)) ICP_HOME['solutions/' + k] = [base, 'Jwero for ' + who, `How many tools does ${one} run today?`, one];
+
+// Product pages wear the same top as the home and solution pages: the dark
+// panel with the kicker, headline, the two doors and the 3D piece playing the
+// story this product belongs to, then the customer logos. A product's own
+// screen mock moves to a band directly under it.
+const PRODUCT_STORY = {
+  manufacturing: 'maker', 'purchase-vendors': 'maker', erp: 'maker',
+  'multi-store': 'chain',
+  ecommerce: 'd2c', 'ads-manager': 'd2c', 'social-media': 'd2c', optimize: 'd2c', marketplaces: 'd2c', 'instagram-facebook': 'd2c', journeys: 'd2c', campaigns: 'd2c', segmentation: 'd2c', email: 'd2c',
+  'digital-catalogues': 'b2b', quotations: 'b2b',
+  meetings: 'diamondretail',
+};
+function withProductHome(html, slug) {
+  const m = /^products\/([^/]+)$/.exec(slug || ''); if (!m) return html;
+  const L4 = require('./lib');
+  const hs = html.indexOf('<section class="hero'); if (hs < 0) return html;
+  const he = html.indexOf('</section>', hs) + 10;
+  const old = html.slice(hs, he);
+  const text = (re) => ((old.match(re) || [])[1] || '').trim();
+  const h1 = text(/<h1[^>]*>([\s\S]*?)<\/h1>/); if (!h1) return html;
+  const sub = text(/<p class="sub">([\s\S]*?)<\/p>/);
+  const kicker = text(/<p class="eyebrow[^"]*">([\s\S]*?)<\/p>/).replace(/<svg[\s\S]*?<\/svg>/g, '').trim();
+  const mk = old.indexOf('<div class="container"><div class="stage hero-mock">');
+  const mock = mk > 0 ? old.slice(mk, old.lastIndexOf('</section>')) : '';
+  const story = PRODUCT_STORY[m[1]] || 'single';
+  const hero = L4.homeHero({ kicker, h1, sub, gem: { set: story, metal: story === 'diamondretail' ? 'diamond' : 'gold' } })
+    .replace(/utm_medium=home-hero/g, 'utm_medium=product-' + m[1]).replace('hero-home"', 'hero-home hero-product"')
+    + `<section class="pz-logos">${L4.customerLogos()}</section>`
+    + (mock ? `<section class="section prod-mock">${mock}</section>` : '');
+  return html.slice(0, hs) + hero + html.slice(he);
+}
 function withIcpHome(html, slug) {
   const cfg = ICP_HOME[slug]; if (!cfg) return html;
   const L4 = require('./lib');
@@ -1744,7 +1775,7 @@ ${launchHTML()}
 ${navHTML(page)}
 <main id="main" tabindex="-1"${page.slug.startsWith('blog') ? ' class="is-article"' : ''}>
 ${page.breadcrumbs ? require('./lib').breadcrumbs(page.breadcrumbs) : ''}
-${withIcpHome(withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withCalcFix(withInterlinks(withBlogTop(withPlatformLinks(withUseCases(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`), page.slug)}
+${withProductHome(withIcpHome(withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShift(withAsking(withFaqs(withRelated(withCalcFix(withInterlinks(withBlogTop(withPlatformLinks(withUseCases(withManaged(withSchematic(page), page), page), page), page), page), page), page), page), page), page), page), page), page), page.slug), page.slug).replace(/<div class="r-icon">([^<]*)<\/div>/g, (m, g) => `<div class="r-icon">${icon(g)}</div>`), page.slug), page.slug)}
 </main>
 ${searchDialog()}
 ${connectDialog()}

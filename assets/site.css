@@ -5255,3 +5255,6 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 
 /* Header menus after the 2026-10-09 trim: the three-column Products menu gets room for its descriptions */
 .dd-panel.dd-mid { width: min(880px, 100vw - 32px); }
+
+/* Product pages: the screen mock sits close under the logo strip */
+.section.prod-mock { padding-top: 0; }
