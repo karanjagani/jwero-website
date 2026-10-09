@@ -5001,3 +5001,15 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
   .cs-stage .cs-centre b { font-size: .75rem; line-height: 1.2; }
   .cs-stage .cs-centre .ico { width: 22px; height: 22px; }
 }
+
+/* Eight questions to ask your ERP */
+.askq { list-style: none; counter-reset: askq; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.askq li { counter-increment: askq; position: relative; padding: 18px 18px 18px 62px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); display: grid; gap: 6px; }
+.askq li::before { content: counter(askq); position: absolute; left: 16px; top: 16px; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--brand); color: #fff; font: 700 .875rem/1 var(--font); }
+.askq b { font-size: 1rem; line-height: 1.4; letter-spacing: -.01em; }
+.askq span { font-size: .875rem; line-height: 1.5; color: var(--ink-2); }
+.askq-verdict { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.askq-verdict p { margin: 0; padding: 16px 18px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); font-size: .9375rem; line-height: 1.5; }
+.askq-verdict p + p { background: var(--brand-soft); border-color: color-mix(in srgb, var(--brand) 30%, transparent); }
+@media (max-width: 760px) { .askq, .askq-verdict { grid-template-columns: 1fr; } }
+@media print { .askq li { break-inside: avoid; } }

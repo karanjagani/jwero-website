@@ -336,7 +336,7 @@ Every page's text in one file: https://jwero.ai/llms-full.txt
 - Jwero in One Page, A Brief for the Owner: https://jwero.ai/brief
 - From ERP to OS: Your ERP Counts Sales, Not What You Lost: https://jwero.ai/erp-to-os
 - Is Switching Jewellery ERP Risky? Risks vs Costs of Staying: https://jwero.ai/erp-to-os/switching
-- Can a Jeweller Make Do With an ERP? What It Costs: https://jwero.ai/erp-to-os/make-do
+- Does Your Jewellery ERP Have Everything? 8 Questions to Ask: https://jwero.ai/erp-to-os/make-do
 - Jwero Pricing: Subscription, Managed or Enterprise: https://jwero.ai/pricing
 - Diamond Trading Software: Inventory, Memo and Your Rate Grid: https://jwero.ai/solutions/diamond-traders
 - Jewellery Retail Software, Single Store to Chain: https://jwero.ai/industries/retail

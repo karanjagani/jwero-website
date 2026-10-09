@@ -8383,11 +8383,11 @@ FROM ERP TO OS
 
  Read: is switching risky? → 
 
-## “I can make do with my ERP.”
+## “My ERP is good. It has everything.”
 
- Tap the tools you use today, see the gaps between them, and put a number on a year of making do.
+ Eight questions to put to your ERP, the tools you use around it, and what the gaps cost in a year.
 
- Read: can I make do? → 
+ Read: does my ERP have everything? → 
 
 ## “What is an operating system, exactly?”
 
@@ -8535,11 +8535,11 @@ FROM ERP TO OS · SWITCHING
 
 ## Three more things worth reading.
 
-## “We can make do with what we have.”
+## “My ERP is good. It has everything.”
 
- Tap the tools you use today, see the gaps between them, and put a number on a year of making do, with your own enquiries and your own ticket size.
+ Eight questions to put to your ERP, the tools you use around it, and what the gaps cost in a year on your own figures.
 
- Read: can I make do? → 
+ Read: does my ERP have everything? → 
 
 ## Coming from a specific ERP?
 
@@ -8583,25 +8583,45 @@ A: Less typing, and nothing else. Bills, returns and payments post to Jwero’s 
 
 ---
 
-# Can a Jeweller Make Do With an ERP? What It Costs
+# Does Your Jewellery ERP Have Everything? 8 Questions to Ask
 URL: https://jwero.ai/erp-to-os/make-do
 
-Take the objection seriously: tap the tools a jewellery business runs on today, ERP, WhatsApp app, Excel, Tally, Instagram, PDFs, people’s memory, see the gaps between them, compare the jobs each can do, and put a number on a year of making do with your own enquiries and ticket size.
+“My ERP is good, it has everything.” Eight questions to ask your jewellery ERP or its vendor, the tools most jewellers run around it, a job-by-job comparison, and a calculator for what the gaps cost in a year.
 
-FROM ERP TO OS · MAKING DO
+FROM ERP TO OS · IS MY ERP ENOUGH?
 
-## “I can make do with my ERP.” Let’s take that seriously.
+## “My ERP is good. It has everything.” Here is how to check.
 
- You can. Many do, with an ERP, a WhatsApp app, Excel, Tally, Instagram and three people’s memory holding it together. The question is not whether it works. It is what the gaps between those tools cost you, and who is quietly paying for them.
+ It may well be good at what it was built for: billing, stock and accounts. This page gives you eight plain questions to put to your ERP, or to the people who sold it to you. If it answers all eight, keep it. If it cannot, bring the list to a demo and ask us the same eight.
 
- Show me what the gaps cost on my numbers 
- Why jewellers are moving on from the ERP 
+ See the eight questions 
+ Ask Jwero the same eight 
 
- STEP 1 · YOUR TOOLS TODAY
+ STEP 1 · ASK YOUR ERP
 
-## Tap what you use. The gaps appear between them.
+## Eight questions. A good ERP should answer every one.
 
- Making do is never one tool. It is the hand-offs between several, and every hand-off is a place where a customer, a price or a payment gets lost.
+ Open your ERP, or call your vendor, and ask these exactly as written. Each is something that happens in a jewellery business every week.
+
+ A customer asks a price on WhatsApp at 9pm. Who replies, and at which gold rate? If the answer is “whoever sees it in the morning”, the sale has usually gone to whoever replied first. 
+ The gold rate moved this morning. Did the catalogue link, the website and yesterday’s quotation change by themselves? If someone has to update them by hand, some prices are wrong right now. 
+ Show me everyone who enquired last month and did not buy. An ERP starts at the bill, so an enquiry that never became a bill is usually not in it. 
+ A customer walks in. Can the counter see what she asked about on Instagram last week? If not, your staff start from zero with someone who has already told you what she wants. 
+ Which regular customers have not come back in six months? These are the easiest sales to win back, if anyone can see the list. 
+ My best salesperson leaves tomorrow. Where are their customers’ conversations? If they are on a personal phone, the relationships leave with it. 
+ Which scheme instalments are overdue today, and has each customer been reminded? A missed instalment that nobody chases often becomes a closed scheme. 
+ Which pieces have not moved in six months, and which customers were they shown to? Ageing stock is money standing still. Knowing who saw it tells you who to call. 
+ 
+ All eight answered? Your ERP really does have everything. Keep it.
+ Some it could not answer? Those are the parts of your business nobody is watching. Bring the list to a demo and put the same eight questions to Jwero.
+
+ Ask Jwero these eight in a demo Send the questions to my team 
+
+ STEP 2 · WHAT YOU USE AROUND IT
+
+## If the ERP has everything, why these other tools?
+
+ Tap everything your business uses besides the ERP. Each one is doing a job the ERP does not, and every hand-off between them is where a customer, a price or a payment gets lost.
 
  ERP / billing software WhatsApp Business app Excel sheets Tally Instagram Catalogue PDFs SMS / bulk vendor People’s memory Paper registers 
 
@@ -8611,7 +8631,7 @@ FROM ERP TO OS · MAKING DO
 
  Tap what you use today. The gaps appear between them.
 
- STEP 2 · THE WEEKLY JOBS
+ STEP 3 · THE WEEKLY JOBS
 
 ## Nine things that happen every week, and what each setup does with them.
 
@@ -8629,9 +8649,9 @@ FROM ERP TO OS · MAKING DO
  Know which enquiry became which sale No No Attribution from message to order, on the record 
  Keep the customer when the salesperson leaves The bills stay The phone leaves Every conversation, preference and promise stays with the business 
 
- STEP 3 · YOUR NUMBER
+ STEP 4 · YOUR NUMBER
 
-## What a year of making do costs, on your own figures.
+## What the unanswered questions cost in a year, on your own figures.
 
  Enter your enquiries, your average sale and your close rate. There is one cautious assumption, and you can change it.
 
@@ -8643,7 +8663,7 @@ FROM ERP TO OS · MAKING DO
  
  Close rate on a fast, priced reply 
  
- Assumptions (editable thinking) A slow reply is assumed to close at one third of the fast rate, a conservative reading of what jewellers tell us, not a measured constant. Value at risk = enquiries × (1 − fast share) × ticket × (fast close − slow close) × 26 trading days. Illustrative; your own numbers are the only ones that matter., enquiries a month that wait for a price, value at risk every month, at your close rates, a year of “making do”
+ Assumptions (editable thinking) A slow reply is assumed to close at one third of the fast rate, a conservative reading of what jewellers tell us, not a measured constant. Value at risk = enquiries × (1 − fast share) × ticket × (fast close − slow close) × 26 trading days. Illustrative; your own numbers are the only ones that matter., enquiries a month that wait for a price, value at risk every month, at your close rates, a year, on your figures
 
  Send my numbers to Jwero 
  We reply with what the priced-reply flow would do on your enquiries, drafted, approved, sent.
@@ -8674,7 +8694,7 @@ FROM ERP TO OS · MAKING DO
 
  See how it works → 
 
- If your number came out small, carry on as you are and check it again in six months. Better to find that out here than on a call.
+ If your ERP answered all eight and your number came out small, carry on as you are and check again in six months. Better to find that out here than on a call.
 
 ## One enquiry. Two replies.
 
@@ -8689,7 +8709,7 @@ FROM ERP TO OS · MAKING DO
 
  ISO/IEC 27001 certified · penetration tested Every customer remembered, on one record AI asks before it sends Your data leaves with you, any time Official WhatsApp Business Platform Works with Tally and Zoho Books AI chat and calls in 14 languages One price, every module ISO/IEC 27001 certified · penetration tested Every customer remembered, on one record AI asks before it sends Your data leaves with you, any time Official WhatsApp Business Platform Works with Tally and Zoho Books AI chat and calls in 14 languages One price, every module
 
-Q: When is making do the right call?
+Q: When is my ERP enough by itself?
 A: When you get a handful of enquiries a week, run no schemes, have one salesperson who is not going anywhere, and sell only at the counter. Honestly: then wait. The moment two of those stop being true, the gaps start costing more than the software.
 
 Q: Can I keep the ERP and add Jwero for the customer side?
@@ -8978,7 +8998,7 @@ PRICING
 
  Scheme registers & Excel hours Staff time reconciling what no tool connects Gone, one record, no reconciliation 
 
- Put your own numbers in: what making do costs · the calculators .
+ Put your own numbers in: what your current setup costs you · the calculators .
 
  PRICING QUESTIONS
 

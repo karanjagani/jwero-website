@@ -174,7 +174,7 @@ function leakCalc() {
   <div class="calc-out">
     <div class="stat"><div class="stat-n" id="lk-slow">—</div><div class="stat-l">enquiries a month that wait for a price</div></div>
     <div class="stat"><div class="stat-n" id="lk-month">—</div><div class="stat-l">value at risk every month, at your close rates</div></div>
-    <div class="stat"><div class="stat-n" id="lk-year">—</div><div class="stat-l">a year of “making do”</div></div>
+    <div class="stat"><div class="stat-n" id="lk-year">—</div><div class="stat-l">a year, on your figures</div></div>
     <a class="btn btn-wa" id="lk-wa" href="#" target="_blank" rel="noopener" style="width:100%;text-align:center">Send my numbers to Jwero</a>
     <p class="cta-note">We reply with what the priced-reply flow would do on your enquiries — drafted, approved, sent.</p>
   </div>
@@ -244,7 +244,7 @@ ${L.section(
   `${L.sectionHead('BEFORE YOU DECIDE', 'Two questions jewellers ask next.', '')}
   ${L.cards([
     { icon: 'shield', title: '“Switching is risky.”', text: 'The six risks people imagine, each with the specific thing that removes it, and the six costs of staying.', link: { href: '/erp-to-os/switching', label: 'Read: is switching risky?' } },
-    { icon: 'grid', title: '“I can make do with my ERP.”', text: 'Tap the tools you use today, see the gaps between them, and put a number on a year of making do.', link: { href: '/erp-to-os/make-do', label: 'Read: can I make do?' } },
+    { icon: 'grid', title: '“My ERP is good. It has everything.”', text: 'Eight questions to put to your ERP, the tools you use around it, and what the gaps cost in a year.', link: { href: '/erp-to-os/make-do', label: 'Read: does my ERP have everything?' } },
     { icon: 'record', title: '“What is an operating system, exactly?”', text: 'The idea explained once, with a tour of what is inside Jwero.', link: { href: '/platform#why-an-os', label: 'Read: why an OS' } },
   ])}`
 , { tone: 'tint' })}
@@ -307,7 +307,7 @@ ${L.section(L.safeToTryStrip())}
 ${L.section(
   `${L.sectionHead('BEFORE YOU DECIDE', 'Three more things worth reading.', '')}
   ${L.cards([
-    { icon: 'grid', title: '“We can make do with what we have.”', text: 'Tap the tools you use today, see the gaps between them, and put a number on a year of making do, with your own enquiries and your own ticket size.', link: { href: '/erp-to-os/make-do', label: 'Read: can I make do?' } },
+    { icon: 'grid', title: '“My ERP is good. It has everything.”', text: 'Eight questions to put to your ERP, the tools you use around it, and what the gaps cost in a year on your own figures.', link: { href: '/erp-to-os/make-do', label: 'Read: does my ERP have everything?' } },
     { icon: 'swap', title: 'Coming from a specific ERP?', text: 'Feature-by-feature comparisons with the systems jewellers run today: what each does well, and what Jwero adds.', link: { href: '/compare', label: 'See the comparisons' } },
     { icon: 'route', title: 'The Migration Centre', text: 'Import formats, what maps to what, and the change-freeze policy, written down.', link: { href: '/migration', label: 'See the Migration Centre' } },
   ])}`
@@ -317,39 +317,58 @@ ${L.ctaBand('Start with the worry that matters most.', 'Tell us which one you ta
 `,
 };
 
-// ---------------------------------------------------------------- page 3: make do
+// ---------------------------------------------------------------- page 3: "my ERP has everything"
+// Eight questions a jeweller can put to their ERP or its vendor. Each names something the
+// operating system does; none asserts what a particular ERP cannot do.
+const ERP_QUESTIONS = [
+  ['A customer asks a price on WhatsApp at 9pm. Who replies, and at which gold rate?', 'If the answer is “whoever sees it in the morning”, the sale has usually gone to whoever replied first.'],
+  ['The gold rate moved this morning. Did the catalogue link, the website and yesterday’s quotation change by themselves?', 'If someone has to update them by hand, some prices are wrong right now.'],
+  ['Show me everyone who enquired last month and did not buy.', 'An ERP starts at the bill, so an enquiry that never became a bill is usually not in it.'],
+  ['A customer walks in. Can the counter see what she asked about on Instagram last week?', 'If not, your staff start from zero with someone who has already told you what she wants.'],
+  ['Which regular customers have not come back in six months?', 'These are the easiest sales to win back, if anyone can see the list.'],
+  ['My best salesperson leaves tomorrow. Where are their customers’ conversations?', 'If they are on a personal phone, the relationships leave with it.'],
+  ['Which scheme instalments are overdue today, and has each customer been reminded?', 'A missed instalment that nobody chases often becomes a closed scheme.'],
+  ['Which pieces have not moved in six months, and which customers were they shown to?', 'Ageing stock is money standing still. Knowing who saw it tells you who to call.'],
+];
 const makeDo = {
   slug: 'erp-to-os/make-do',
-  title: 'Can a Jeweller Make Do With an ERP? What It Costs | Jwero',
-  description: 'Take the objection seriously: tap the tools a jewellery business runs on today — ERP, WhatsApp app, Excel, Tally, Instagram, PDFs, people’s memory — see the gaps between them, compare the jobs each can do, and put a number on a year of making do with your own enquiries and ticket size.',
-  breadcrumbs: BC('Can I make do?', true),
+  title: 'Does Your Jewellery ERP Have Everything? 8 Questions to Ask | Jwero',
+  description: '“My ERP is good, it has everything.” Eight questions to ask your jewellery ERP or its vendor, the tools most jewellers run around it, a job-by-job comparison, and a calculator for what the gaps cost in a year.',
+  breadcrumbs: BC('Does my ERP have everything?', true),
   faqs: [
-    { q: 'When is making do the right call?', a: 'When you get a handful of enquiries a week, run no schemes, have one salesperson who is not going anywhere, and sell only at the counter. Honestly: then wait. The moment two of those stop being true, the gaps start costing more than the software.' },
+    { q: 'When is my ERP enough by itself?', a: 'When you get a handful of enquiries a week, run no schemes, have one salesperson who is not going anywhere, and sell only at the counter. Honestly: then wait. The moment two of those stop being true, the gaps start costing more than the software.' },
     { q: 'Can I keep the ERP and add Jwero for the customer side?', a: 'Yes. That is the most common start: the ERP keeps the books for a quarter, Jwero takes WhatsApp, Instagram, the catalogue and the counter, and the two are bridged. Migrate the rest when the pilot has earned it, or never.' },
     { q: 'Is the leakage calculator real?', a: 'The arithmetic is real; the inputs are yours; the one assumption — that a slow reply closes at a third of a fast one — is a conservative reading of what jewellers tell us, not a measured constant. Change it in the assumptions and the number moves with it.' },
     { q: 'My ERP vendor is adding a WhatsApp module. Should I wait?', a: 'Ask whether the module drafts a priced reply from the catalogue at the live rate, whether it knows her scheme balance, and whether a reply she sends on Instagram lands in the same thread. A module that shares a login but not a record will feel like a fourth tool.' },
   ],
   body: `
 ${L.hero({
-  eyebrow: 'FROM ERP TO OS · MAKING DO',
-  h1: '“I can make do with my ERP.” Let’s take that seriously.',
-  sub: 'You can. Many do, with an ERP, a WhatsApp app, Excel, Tally, Instagram and three people’s memory holding it together. The question is not whether it works. It is what the gaps between those tools cost you, and who is quietly paying for them.',
-  primary: { href: '#', label: 'Show me what the gaps cost on my numbers', wa: 'erpmakedo' },
-  secondary: { href: '/erp-to-os', label: 'Why jewellers are moving on from the ERP' },
+  eyebrow: 'FROM ERP TO OS · IS MY ERP ENOUGH?',
+  h1: '“My ERP is good. It has everything.” Here is how to check.',
+  sub: 'It may well be good at what it was built for: billing, stock and accounts. This page gives you eight plain questions to put to your ERP, or to the people who sold it to you. If it answers all eight, keep it. If it cannot, bring the list to a demo and ask us the same eight.',
+  primary: { href: '#ask-your-erp', label: 'See the eight questions' },
+  secondary: { href: '/book-demo', label: 'Ask Jwero the same eight' },
 })}
 
 ${L.section(
-  `${L.sectionHead('STEP 1 · YOUR TOOLS TODAY', 'Tap what you use. The gaps appear between them.', 'Making do is never one tool. It is the hand-offs between several, and every hand-off is a place where a customer, a price or a payment gets lost.')}
+  `<span id="ask-your-erp"></span>${L.sectionHead('STEP 1 · ASK YOUR ERP', 'Eight questions. A good ERP should answer every one.', 'Open your ERP, or call your vendor, and ask these exactly as written. Each is something that happens in a jewellery business every week.')}
+  <ol class="askq">${ERP_QUESTIONS.map(([q, why]) => `<li><b>${q}</b><span>${why}</span></li>`).join('')}</ol>
+  <div class="askq-verdict"><p><b>All eight answered?</b> Your ERP really does have everything. Keep it.</p><p><b>Some it could not answer?</b> Those are the parts of your business nobody is watching. Bring the list to a demo and put the same eight questions to Jwero.</p></div>
+  <div class="cta-row center" style="margin-top:22px"><a class="btn btn-primary" href="/book-demo">Ask Jwero these eight in a demo</a><a class="btn btn-ghost" href="#" data-share="Eight questions to ask our ERP. If it cannot answer them, we are missing sales:">Send the questions to my team</a></div>`
+)}
+
+${L.section(
+  `${L.sectionHead('STEP 2 · WHAT YOU USE AROUND IT', 'If the ERP has everything, why these other tools?', 'Tap everything your business uses besides the ERP. Each one is doing a job the ERP does not, and every hand-off between them is where a customer, a price or a payment gets lost.')}
   ${makeDoStack()}`
 )}
 
 ${L.section(
-  `${L.sectionHead('STEP 2 · THE WEEKLY JOBS', 'Nine things that happen every week, and what each setup does with them.', 'Compare by the work that has to get done, not by a list of features.')}
+  `${L.sectionHead('STEP 3 · THE WEEKLY JOBS', 'Nine things that happen every week, and what each setup does with them.', 'Compare by the work that has to get done, not by a list of features.')}
   ${jobsTable()}`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('STEP 3 · YOUR NUMBER', 'What a year of making do costs, on your own figures.', 'Enter your enquiries, your average sale and your close rate. There is one cautious assumption, and you can change it.')}
+  `${L.sectionHead('STEP 4 · YOUR NUMBER', 'What the unanswered questions cost in a year, on your own figures.', 'Enter your enquiries, your average sale and your close rate. There is one cautious assumption, and you can change it.')}
   ${leakCalc()}
   <div class="cta-row center" style="margin-top:28px"><a class="btn btn-primary" href="#" data-wa="erpmakedo">Go through my numbers with me</a><a class="btn btn-ghost" href="/book-demo">Book a demo</a></div>`
 )}
@@ -361,7 +380,7 @@ ${L.section(
     { title: 'Run it yourself', text: 'Join the waitlist; your first month is ₹3,600 when your account opens. Bring your catalogue and ten customers, and see a priced reply on a real enquiry.', link: { href: '/pricing', label: 'See pricing' } },
     { title: 'Let Jwero run it', text: 'Jwero’s specialists and AI take the customer side off your hands, with no subscription and every tool included. Your ERP carries on as it is.', link: { href: '/jewellery-business-as-a-service', label: 'See how it works' } },
   ])}
-  <p class="cta-note" style="margin-top:16px">If your number came out small, carry on as you are and check it again in six months. Better to find that out here than on a call.</p>`
+  <p class="cta-note" style="margin-top:16px">If your ERP answered all eight and your number came out small, carry on as you are and check again in six months. Better to find that out here than on a call.</p>`
 , { tone: 'tint' })}
 
 ${L.ctaBand('One enquiry. Two replies.', 'Send us a real price question a customer asked last week. We show you the reply your ERP setup gives, and the one Jwero would have drafted — with the price.', 'erpmakedo')}

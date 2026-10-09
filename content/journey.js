@@ -56,7 +56,7 @@ ${L.section(
   ${L.cards([
     { title: '“We already have an ERP.”', text: 'Why the ERP era is ending the way the register era did.', link: { href: '/erp-to-os', label: 'From ERP to OS' } },
     { title: '“Switching is risky.”', text: 'The risk ledger: six imagined, six paid.', link: { href: '/erp-to-os/switching', label: 'Is switching risky?' } },
-    { title: '“We can make do.”', text: 'Your stack, its gaps, and a number.', link: { href: '/erp-to-os/make-do', label: 'Can I make do?' } },
+    { title: '“My ERP has everything.”', text: 'Eight questions to ask it, and what the gaps cost.', link: { href: '/erp-to-os/make-do', label: 'Does my ERP have everything?' } },
   ])}`
 , { tone: 'tint' })}
 

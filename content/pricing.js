@@ -191,7 +191,7 @@ ${L.section(
       <tr><td><strong>Scheme registers & Excel hours</strong></td><td>Staff time reconciling what no tool connects</td><td>Gone — one record, no reconciliation</td></tr>
     </tbody>
   </table></div>
-  <p class="cta-note" style="margin-top:16px">Put your own numbers in: <a href="/erp-to-os/make-do">what making do costs</a> · <a href="/tools">the calculators</a>.</p>`
+  <p class="cta-note" style="margin-top:16px">Put your own numbers in: <a href="/erp-to-os/make-do">what your current setup costs you</a> · <a href="/tools">the calculators</a>.</p>`
 )}
 
 ${L.section(`${L.sectionHead('PRICING QUESTIONS', 'Straight answers on cost and terms.', '')}${L.faqBlock(faqs.concat(OBJECTIONS))}

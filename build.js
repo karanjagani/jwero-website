@@ -61,7 +61,7 @@ const NAV = [
     label: 'Platform',
     match: ['platform', 'trust', 'roadmap', 'erp-to-os', 'why-an-os'],
     items: [
-      ['/erp-to-os', 'From ERP to OS', 'Running an ERP? Why the shift is now, why switching is safer than staying, and what making do costs'],
+      ['/erp-to-os', 'From ERP to OS', 'Running an ERP? Why the shift is now, why switching is safer than staying, and eight questions to ask your ERP'],
       ['/platform', 'Why an OS, and the tour', 'One record instead of ten tools, and what is inside'],
       ['/platform/customer-memory', 'Customer Memory', '198 signals, 11 scores, one record'],
       ['/platform/pricing-engine', 'The Pricing Engine', 'Rate, making charge, stone & override rules'],
@@ -1495,7 +1495,7 @@ function withInterlinks(body, page) {
   const pick = fresh.concat(list.filter((p) => !fresh.includes(p)).slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4 - fresh.length));
   // The Why an OS page links to the case for shifting, not to general articles.
   if (slug === 'platform') {
-    const CASE = [['erp-to-os', 'From ERP to OS: why jewellery software is changing', 'Why now'], ['erp-to-os/make-do', 'Can you make do with what you have? What it costs', 'The cost of staying'], ['erp-to-os/switching', 'Is switching risky? The risks against the cost of staying', 'The risk'], ['blog/jewellery-crm-vs-erp-difference', 'CRM or ERP: why a jeweller needs both as one', 'The difference']];
+    const CASE = [['erp-to-os', 'From ERP to OS: why jewellery software is changing', 'Why now'], ['erp-to-os/make-do', '“My ERP has everything.” Eight questions to check', 'The test'], ['erp-to-os/switching', 'Is switching risky? The risks against the cost of staying', 'The risk'], ['blog/jewellery-crm-vs-erp-difference', 'CRM or ERP: why a jeweller needs both as one', 'The difference']];
     const b2 = L3.section(`${L3.sectionHead('THE CASE FOR SHIFTING', 'What staying on separate tools costs, in full.', '')}<div class="erp-map">${CASE.map(([h, t, k]) => `<a href="/${h}"><b>${t}</b><span>${k}</span></a>`).join('')}</div>`);
     const at2 = body.lastIndexOf('<section'); return at2 > 0 ? body.slice(0, at2) + b2 + body.slice(at2) : body + b2;
   }
