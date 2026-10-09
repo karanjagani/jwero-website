@@ -1323,8 +1323,8 @@ function stackMerge(only) {
 }
 
 // The home hero: one question, one action, and the piece as the visual.
-// The whole product as one journey in six stages, from the first enquiry to the closed books.
-// One stage shows at a time: what is in it, what the AI does there, and your approval. All six
+// The whole product as one journey in seven stages, from the first enquiry to the closed books.
+// One stage shows at a time: what is in it, what the AI does there, and your approval. All seven
 // stages are in the page as links and text, so nothing is hidden from search.
 const HERO_STAGES = [
   ['megaphone', 'Attract', '', [['Website and apps', '/products/ecommerce'], ['Ads Manager', '/products/ads-manager'], ['Social media', '/products/social-media'], ['Google Shopping and Meta', '/products/marketplaces'], ['Visitor tracking across channels', '/products/optimize']], 'AI plans the campaign and drafts the posts and ads'],
@@ -1333,16 +1333,17 @@ const HERO_STAGES = [
   ['heart', 'Retain', '', [['Loyalty and referrals', '/products/loyalty'], ['Personalisation and retargeting', '/products/segmentation'], ['Marketing automation and journeys', '/products/journeys'], ['Repairs and after-sales', '/products/repairs-service']], 'AI reminds her before the occasion and wins back quiet customers'],
   ['layers', 'Run', '', [['ERP and inventory', '/products/erp'], ['Purchase and vendors', '/products/purchase-vendors'], ['Workshop and orders', '/products/manufacturing'], ['HR and team meets', '/products/hr-payroll'], ['Multi-store', '/products/multi-store']], 'AI flags stock that is not moving and orders running late'],
   ['book', 'Account', '', [['Accounting and tax invoices', '/products/billing-finance'], ['Tally bridge', '/platform/integrations/tally'], ['Store performance', '/products/reports'], ['Custom reports', '/products/reports']], 'AI explains the numbers and flags what is off'],
+  ['trend', 'Strategise', '', [['Live dashboards', '/products/reports'], ['Ask a question, get the answer', '/products/reports'], ['Scores for who will buy and who may leave', '/platform/customer-memory'], ['Alerts the day something slips', '/platform/ai-workforce'], ['Weekly growth report', '/customers']], 'AI spots what is changing and suggests your next move', 'You decide'],
 ];
 function heroRail() {
   return `
 <div class="hrail" data-hrail>
   <p class="hrail-line">One system, from the first enquiry to the closed books</p>
-  <div class="hrail-track" role="tablist" aria-label="The journey, in six stages"><i class="hrail-fill" aria-hidden="true"></i>${HERO_STAGES.map(([ic, n], i) => `<button type="button" role="tab" class="hrail-stop${i === 0 ? ' is-on' : ''}" id="hrail-t-${i}" aria-controls="hrail-p-${i}" aria-selected="${i === 0}" data-hrail-i="${i}"><span>${icon(ic)}</span><b>${n}</b></button>`).join('')}</div>
-  <div class="hrail-panels">${HERO_STAGES.map(([, n, , items, ai], i) => `
+  <div class="hrail-track" role="tablist" aria-label="The journey, in seven stages"><i class="hrail-fill" aria-hidden="true"></i>${HERO_STAGES.map(([ic, n], i) => `<button type="button" role="tab" class="hrail-stop${i === 0 ? ' is-on' : ''}" id="hrail-t-${i}" aria-controls="hrail-p-${i}" aria-selected="${i === 0}" data-hrail-i="${i}"><span>${icon(ic)}</span><b>${n}</b></button>`).join('')}</div>
+  <div class="hrail-panels">${HERO_STAGES.map(([, n, , items, ai, ok], i) => `
     <div class="hrail-panel${i === 0 ? ' is-on' : ''}" role="tabpanel" id="hrail-p-${i}" aria-labelledby="hrail-t-${i}" data-hrail-panel="${i}">
       <p class="hrail-chips">${items.map(([t, h]) => `<a href="${h}">${t}</a>`).join('')}</p>
-      <p class="hrail-ai"><span class="hrail-ai-does">${icon('sparkle')}${ai}</span><span class="hrail-ai-ok">${icon('check')}You approve</span></p>
+      <p class="hrail-ai"><span class="hrail-ai-does">${icon('sparkle')}${ai}</span><span class="hrail-ai-ok">${icon('check')}${ok || 'You approve'}</span></p>
     </div>`).join('')}
   </div>
 </div>`;

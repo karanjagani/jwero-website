@@ -5061,3 +5061,8 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 .hrail-track::before, .hrail-fill { left: 8.333%; } .hrail-track::before { right: 8.333%; } .hrail-fill { max-width: 83.334%; }
 .hrail-panel.is-on .hrail-chips a:nth-child(5) { animation-delay: .28s; }
 @media (max-width: 560px) { .hrail-stop span { width: 30px; height: 30px; } .hrail-track::before, .hrail-fill { top: 14px; } .hrail-stop .ico { width: 15px; height: 15px; } .hrail-stop b { font-size: .625rem; } }
+/* Hero rail: seven stages */
+.hrail { max-width: 640px; }
+.hrail-track { grid-template-columns: repeat(7, 1fr); }
+.hrail-track::before, .hrail-fill { left: 7.143%; } .hrail-track::before { right: 7.143%; } .hrail-fill { max-width: 85.714%; }
+@media (max-width: 560px) { .hrail-stop span { width: 28px; height: 28px; } .hrail-track::before, .hrail-fill { top: 13px; } .hrail-stop .ico { width: 14px; height: 14px; } .hrail-stop b { font-size: .5625rem; letter-spacing: 0; } }
