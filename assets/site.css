@@ -5286,3 +5286,35 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
   .crumbs + .hero.hero-panel { padding-top: 12px; }
   .crumbs + .section { padding-top: 24px; }
 }
+
+/* Product and solution heroes: the record feed */
+.rfeed { width: 100%; max-width: 520px; border-radius: 18px; background: var(--card); color: var(--ink); box-shadow: 0 24px 60px rgba(0, 6, 60, .35); overflow: hidden; text-align: left; }
+.rfeed-bar { display: flex; align-items: center; gap: 6px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.rfeed-bar b { margin-left: 8px; font: 600 .75rem/1.2 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-2); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rfeed-bar em { display: inline-flex; align-items: center; gap: 6px; font: 600 .625rem/1 var(--mono); font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: #157a3d; }
+.rfeed-bar em::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #1fa855; animation: rfeedPulse 1.6s ease-in-out infinite; }
+@keyframes rfeedPulse { 50% { opacity: .35; } }
+.rfeed-mods { list-style: none; margin: 0; padding: 12px 14px; display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 1px solid var(--line); background: var(--tint, var(--card)); }
+.rfeed-mods li { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--card); font-size: .75rem; font-weight: 500; color: var(--ink-2); transition: background .3s var(--ease), border-color .3s var(--ease), color .3s var(--ease), transform .3s var(--ease); }
+.rfeed-mods .ico { width: 14px; height: 14px; color: var(--brand); transition: color .3s var(--ease); }
+.rfeed-mods li.is-here { border-color: var(--brand); color: var(--brand); }
+.rfeed-mods li.is-on { background: var(--amber); border-color: var(--amber); color: #1b1400; transform: translateY(-1px); }
+.rfeed-mods li.is-on .ico { color: #1b1400; }
+.rfeed-list { list-style: none; margin: 0; padding: 6px 0; }
+.rfeed-list li { display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 10px; padding: 10px 16px; border-left: 3px solid transparent; transition: opacity .45s var(--ease), transform .45s var(--ease), background .3s var(--ease), border-color .3s var(--ease); }
+.rfeed-list b { font: 600 .625rem/1.5 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); padding-top: 2px; }
+.rfeed-list p { margin: 0; font-size: .875rem; line-height: 1.35; font-weight: 500; color: var(--ink); }
+.rfeed-list span { display: flex; align-items: flex-start; gap: 6px; margin-top: 3px; font-size: .78rem; line-height: 1.4; color: var(--ink-2); }
+.rfeed-list span .ico { flex: none; width: 13px; height: 13px; margin-top: 2px; color: #1fa855; }
+.rfeed.is-live .rfeed-list li { opacity: 0; transform: translateY(6px); }
+.rfeed.is-live .rfeed-list li.is-in { opacity: .62; transform: none; }
+.rfeed.is-live .rfeed-list li.is-now { opacity: 1; background: var(--brand-soft); border-left-color: var(--brand); }
+.rfeed-foot { display: flex; align-items: center; gap: 8px; margin: 0; padding: 11px 16px; border-top: 1px solid var(--line); font-size: .75rem; color: var(--ink-2); }
+.rfeed-foot .ico { width: 14px; height: 14px; color: var(--brand); flex: none; }
+.hero-home-piece > .rfeed { justify-self: center; }
+@media (max-width: 900px) { .rfeed { max-width: none; } }
+@media (max-width: 480px) { .rfeed-list li { grid-template-columns: 52px minmax(0, 1fr); padding: 9px 12px; } .rfeed-mods { padding: 10px; } }
+@media (prefers-reduced-motion: reduce) { .rfeed-bar em::before { animation: none; } }
+/* the dark hero styles its paragraphs for white-on-blue; the feed is a light card */
+.hero-home .rfeed p.rfeed-foot { color: var(--ink-2); margin: 0; max-width: none; font-size: .75rem; line-height: 1.4; text-align: left; }
+.hero-home .rfeed .rfeed-list p { color: var(--ink); margin: 0; max-width: none; font-size: .875rem; text-align: left; }

@@ -1284,7 +1284,7 @@ function withProductHome(html, slug) {
   const mk = old.indexOf('<div class="container"><div class="stage hero-mock">');
   const mock = mk > 0 ? old.slice(mk, old.lastIndexOf('</section>')) : '';
   const story = PRODUCT_STORY[m[1]] || 'single';
-  const hero = L4.homeHero({ kicker, h1, sub, gem: { set: story, metal: story === 'diamondretail' ? 'diamond' : 'gold' } })
+  const hero = L4.homeHero({ kicker, h1, sub, piece: L4.recordFeed({ set: story, href: '/' + slug }) })
     .replace(/utm_medium=home-hero/g, 'utm_medium=product-' + m[1]).replace('hero-home"', 'hero-home hero-product"')
     + `<section class="pz-logos">${L4.customerLogos()}</section>`
     + (mock ? `<section class="section prod-mock">${mock}</section>` : '');
@@ -1299,7 +1299,7 @@ function withIcpHome(html, slug) {
   const h1 = ((old.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || '').trim();
   const sub = ((old.match(/<p class="sub">([\s\S]*?)<\/p>/) || [])[1] || '').trim();
   const gp = require('./content/gem').GEM_PAGE[slug];
-  const hero = L4.homeHero({ kicker: cfg[1], h1, sub, gem: gp ? { set: gp[0], metal: gp[1], centre: gp[2], stone: gp[3] } : null }).replace(/home-hero/g, 'icp-' + cfg[0]).replace('data-wa="handle"', `data-wa="handle-${cfg[0]}"`).replace('href="#jbaas"', 'href="#tiers"')
+  const hero = L4.homeHero({ kicker: cfg[1], h1, sub, piece: L4.recordFeed({ set: gp ? gp[0] : cfg[0], centre: gp ? gp[2] : '' }) }).replace(/home-hero/g, 'icp-' + cfg[0]).replace('data-wa="handle"', `data-wa="handle-${cfg[0]}"`).replace('href="#jbaas"', 'href="#tiers"')
     + `<section class="pz-logos">${L4.customerLogos()}</section>`;
   html = html.slice(0, hs) + hero + html.slice(he);
   // the bangle link in the hero lands on this page's own bangle section

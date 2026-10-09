@@ -848,6 +848,24 @@ function jwFromInr(n) {
     docEl.classList.add('motion-failsafe');
   }
 
+  // Product and solution heroes: the record writes itself, one event at a time.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-rfeed]'), function (r) {
+    var items = r.querySelectorAll('.rfeed-list li'), mods = r.querySelectorAll('.rfeed-mods li'), n = items.length, i = -1, timer = 0;
+    if (reduceMotion || !n || !('IntersectionObserver' in window)) return;
+    r.classList.add('is-live');
+    function show() {
+      Array.prototype.forEach.call(items, function (li, j) { li.classList.toggle('is-in', j <= i); li.classList.toggle('is-now', j === i); });
+      var m = i >= 0 ? items[i].getAttribute('data-m') : '';
+      Array.prototype.forEach.call(mods, function (li) { li.classList.toggle('is-on', li.getAttribute('data-k') === m); });
+    }
+    function tick() {
+      i++;
+      if (i >= n) { i = -1; show(); timer = window.setTimeout(tick, 450); return; }
+      show(); timer = window.setTimeout(tick, i === n - 1 ? 3600 : 2100);
+    }
+    whileVisible(r, function () { window.clearTimeout(timer); tick(); }, function () { window.clearTimeout(timer); });
+  });
+
   // AI Workforce: the same task under the two control settings.
   Array.prototype.forEach.call(document.querySelectorAll('[data-modes]'), function (m) {
     m.addEventListener('click', function (e) {

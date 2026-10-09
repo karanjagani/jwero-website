@@ -1271,7 +1271,23 @@ function heroRail() {
   </div>
 </div>`;
 }
-function homeHero({ kicker, h1, sub, rail, gem }) {
+// Product and solution pages: the page's own story as a record being written,
+// live. A card of the modules involved and a feed of what happened, each line
+// landing on the one record. The 3D band is the home page's alone.
+function recordFeed(opts = {}) {
+  const { GEM } = require('./content/gem');
+  const d = GEM[opts.set] || GEM.single;
+  const title = opts.centre || d.centre;
+  const here = opts.href || '';
+  return `
+<div class="rfeed" data-rfeed>
+  <div class="rfeed-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><b>${esc(title)}</b><em>Live</em></div>
+  <ul class="rfeed-mods">${d.modules.map((m, k) => `<li data-k="${k}"${m[4] === here ? ' class="is-here"' : ''}>${icon(m[0])}<span>${esc(m[1])}</span></li>`).join('')}</ul>
+  <ol class="rfeed-list">${d.week.map((e) => `<li data-m="${e[2]}"><b>${esc(e[0])}</b><div><p>${esc(e[1])}</p><span>${icon('check')}${esc(e[3])}</span></div></li>`).join('')}</ol>
+  <p class="rfeed-foot">${icon('record')}One record. Every part of the business writes to it.</p>
+</div>`;
+}
+function homeHero({ kicker, h1, sub, rail, gem, piece }) {
   return `
 <section class="hero hero-panel hero-home">
   <div class="panel">
@@ -1287,7 +1303,7 @@ function homeHero({ kicker, h1, sub, rail, gem }) {
         </div>
       </div>
       <div class="hero-home-piece">
-        ${gemStage2(Object.assign({ hero: true }, gem || {}))}
+        ${piece || gemStage2(Object.assign({ hero: true }, gem || {}))}
       </div>
     </div>
   </div>
@@ -1593,7 +1609,7 @@ function customerLogos() {
 
 module.exports = {
   esc, icon, autoIcon, sim, controlSplit, mockMemo, LINK_ICONS, PERSONAS, personaSlot, personaSwitch, systemSplit, gemStage, heroSchematic, hero, section, sectionHead, statement, cards, teamGrid, steps, stats, faqBlock,
-  mark, homeHero, heroRail, STACK, STACK_COST, trustStrip, proofGrid, trustBadges, seal, SECURITY_CONTROLS, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
+  mark, homeHero, heroRail, recordFeed, STACK, STACK_COST, trustStrip, proofGrid, trustBadges, seal, SECURITY_CONTROLS, DEPARTMENTS, stackMerge, STACK_N, securityBlock, compareRows, gemStage2, intelligence, playbookTop, playbookBottom, ICPS, icpOf, icpLinks, icpPick, priceBlock, passItOn, fitCheck, TRIAL_URL, governanceStrip, agentLoop, ctaBand, painRows, mockApproval, mockChat, mockChatCatalog, mockMemory, mockShop, mockOneRecord,
   breadcrumbs, breadcrumbSchema, proofStrip, oneSystemBlock, pillarConstellation, platformTabs, trustBar, PILLARS,
   jtbdBlock, compareTable, honestGapsBlock, verdictBox, switchForBlock, impactGrid, customerLogos, safeToTryStrip,
 };
