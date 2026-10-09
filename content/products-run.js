@@ -618,7 +618,7 @@ const SH_CMP = [
 ];
 const shTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>A walk-in register</th><th>A people counter</th><th>Jwero</th></tr></thead><tbody>${SH_CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>`;
 const SH_HOW = [
-  ['Connect your cameras', 'Your existing CCTV or NVR joins through a small on-site connector; entry lines are drawn once.'],
+  ['Connect your cameras', 'Your existing CCTV is connected once, with us.'],
   ['Put a tablet at the door', 'Staff check customers in by phone number and see what Jwero already knows.'],
   ['Log what is tried', 'Scan pieces as they are shown and tried; send to the counter or make an estimate.'],
   ['Follow up walkouts', 'Rescue drafts the message; staff send it the same evening.'],
@@ -626,8 +626,8 @@ const SH_HOW = [
 ];
 const shFaqs = [
   { q: 'What is walk-in conversion in a jewellery showroom?', a: 'The share of people who walk in and buy. Jwero works it out from footfall, check-ins and the bills linked to each visit, by branch, hour and salesperson.' },
-  { q: 'How do I count footfall in my jewellery showroom?', a: 'Connect your existing CCTV or NVR to Jwero through an on-site connector. Entries, exits and how full the floor is are counted; with no cameras, footfall comes from tablet check-ins.' },
-  { q: 'Which cameras work?', a: 'IP cameras and NVRs over RTSP, including Hikvision, Dahua and CP Plus, and ONVIF cameras.' },
+  { q: 'How do I count footfall in my jewellery showroom?', a: 'Connect the CCTV you already have to Jwero. Entries, exits and how full the floor is are counted; with no cameras, footfall comes from tablet check-ins.' },
+  { q: 'Which cameras work?', a: 'The CCTV you already have, including Hikvision, Dahua and CP Plus.' },
   { q: 'Does it recognise customers’ faces?', a: 'No. Cameras count people; they do not identify them. Customers are identified only when staff check them in, and photos are taken only with consent.' },
   { q: 'Is Walkout Rescue automatic?', a: 'It drafts the follow-up naming the pieces she tried, on WhatsApp, SMS, email or a call. A staff member sends it and marks it sent.' },
   { q: 'How does Jwero know a customer is coming?', a: 'Expected visits gather bookings from your website, chat, AI calls, appointments, WhatsApp, campaigns and maturing gold schemes, and mark no-shows on their own.' },
@@ -640,7 +640,7 @@ const showroom = {
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero Showroom Intelligence', alternateName: ['Footfall counter for jewellery showrooms', 'Jewellery walk-in tracking software', 'Showroom conversion analytics'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Showroom software for jewellers: footfall counted from existing CCTV or NVR cameras through an on-site connector; tablet check-in with customer history; live floor with wait alerts; visit capture by RFID, barcode, SKU or HUID scan; estimates and send-to-counter; Walkout Rescue follow-up drafts; expected visits from every booking source; bills linked to visits; conversion by branch, hour and salesperson; revenue per square foot; rule-based store insights.',
+    description: 'Showroom software for jewellers: footfall counted from the CCTV cameras you already have; tablet check-in with customer history; live floor with wait alerts; the pieces each visitor tried; estimates sent to the counter; Walkout Rescue follow-up drafts; expected visits from every booking source; bills linked to visits; conversion by branch, hour and salesperson; revenue per square foot; rule-based store insights.',
     url: 'https://jwero.ai/products/showroom', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to track footfall and conversion in a jewellery showroom', step: SH_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
@@ -658,7 +658,7 @@ ${L.hero({
 ${L.section(`${L.sectionHead('ONE VISIT, START TO FINISH', 'From the door camera to a bill on Saturday.', '')}${require('./graphics').showroomHeat()}${shFlow()}`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('SIX JOBS, ONE FLOOR', 'What showroom software has to do for a jeweller.', '')}<div class="wa-jobs">
-  <article><h3>1. Footfall from your cameras</h3><p>Existing CCTV or NVR (Hikvision, Dahua, CP Plus, ONVIF) counts entries, exits and how full the floor is, through an on-site connector.</p><a href="/ai-cctv-footfall-analytics-jewellery-showrooms">AI CCTV footfall →</a></article>
+  <article><h3>1. Footfall from your cameras</h3><p>Your existing CCTV (Hikvision, Dahua, CP Plus) counts entries, exits and how full the floor is.</p><a href="/ai-cctv-footfall-analytics-jewellery-showrooms">AI CCTV footfall →</a></article>
   <article><h3>2. Know who walked in</h3><p>Tablet check-in by phone number shows past visits, what she tried, and a maturing scheme. Photos only with consent.</p><a href="/products/crm">Customer record →</a></article>
   <article><h3>3. Nobody left waiting</h3><p>A live floor view, an alert after 10 minutes unattended, and a list of who could come in today.</p><a href="/products/multi-store">Branches →</a></article>
   <article><h3>4. Every piece tried, logged</h3><p>Scan by RFID, barcode, SKU or HUID; make an estimate or send her to the counter.</p><a href="/products/inventory">Inventory →</a></article>

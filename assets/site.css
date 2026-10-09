@@ -5235,3 +5235,10 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
   .hrail-stop { gap: 4px; }
   .hrail-stop b { font-size: .5625rem; letter-spacing: 0; max-width: 46px; text-align: center; line-height: 1.1; }
 }
+
+/* Customer Memory: how Jwero decides, as three outcomes */
+.decide3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
+.decide3 article { padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); display: grid; gap: 8px; align-content: start; }
+.decide3 h3 { font-size: 1.125rem; letter-spacing: -.02em; }
+.decide3 p { margin: 0; font-size: .9375rem; line-height: 1.5; color: var(--ink-2); }
+@media (max-width: 800px) { .decide3 { grid-template-columns: 1fr; } }

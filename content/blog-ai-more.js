@@ -440,7 +440,7 @@ module.exports = {
   'ai-showroom-walkout-recovery': {
     body: `
   <h2>Saturday, 4pm, on the floor</h2>
-  <p>The door camera counts the family in. Meera checks in on the tablet by phone number; the screen shows three past visits, a scheme maturing in twelve days and the necklace she tried in March. She waits ten minutes; the floor alert calls a salesperson. Four pieces are scanned as she tries them. She leaves over price. At 7pm the evening list shows her name, the four pieces and the reason. Walkout Rescue has drafted the WhatsApp; the salesperson sends it. On Tuesday she books a visit; on Saturday she buys, and the bill links to her visit.</p>
+  <p>Meera walks in and the salesperson already sees her past visits, her scheme and the necklace she tried in March. She tries four pieces and leaves over price. That evening her name is on the follow-up list with the pieces and the reason, and Walkout Rescue has the WhatsApp ready for the salesperson to send. On Tuesday she books a visit; on Saturday she buys, and the bill links to her visit.</p>
   <h2>Counting first, then converting</h2>
   <p>Without footfall, conversion is a guess. With cameras counting entries and exits and bills linked to visits, conversion is known by hour, day, branch and salesperson. A quiet Tuesday and a busy Saturday with the same number of bills tell different stories.</p>
   <h2>Why walkout follow-ups work</h2>

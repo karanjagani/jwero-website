@@ -287,7 +287,7 @@ ${L.ctaBand('Digitise your existing scheme book.', 'Bring your current paper reg
 // ---------------------------------------------------------------- Article 4: Tally coexistence
 const tallyGuideFaqs = [
   { q: 'Does Jwero auto-post my invoices to Tally?', a: 'Yes. Bills, returns and payments raised in Jwero post to Tally through the bridge, and your accountant reviews them in Tally instead of typing them.' },
-  { q: 'Do I need to migrate my Tally data into Jwero?', a: 'No. Tally stays exactly as it is — same file, same login, same place your CA already works. Jwero connects alongside it through a local connector agent and keeps masters in sync; nothing gets moved out of Tally.' },
+  { q: 'Do I need to migrate my Tally data into Jwero?', a: 'No. Tally stays exactly as it is — same file, same login, same place your CA already works. Jwero connects alongside it through the bridge; nothing gets moved out of Tally.' },
   { q: 'What if my CA or muneem refuses to use anything new?', a: 'They don’t have to. Nothing changes about how they work inside Tally, the same GST filing, the same reports. The only difference is that bills, customers and items arrive by themselves instead of being typed in from a register.' },
 ];
 

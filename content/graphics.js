@@ -231,7 +231,7 @@ const RUN = [
   ['Trigger', '11:42 pm. Priya sends a photo of a 22k bangle on WhatsApp and asks the price.', 'chat'],
   ['Context', 'Her record: a chain bought in February, a taste for 22k yellow gold. Tonight’s rate. Two similar bangles in stock.', 'record'],
   ['Action', 'Replies with the piece and the two alternatives, priced at tonight’s rate, and offers to hold one for Saturday.', 'send'],
-  ['Record', 'The conversation, the prices quoted and the hold go on her record. Her intent score moves. The morning list shows her name.', 'book'],
+  ['Record', 'The conversation, the prices quoted and the hold go on her record. The morning list shows her name.', 'book'],
   ['Approval, only if your policy asks', 'She asks for 8% off. Discounts beyond your limit are the one thing held: the manager clears it from her phone at 9:04 am.', 'check'],
 ];
 const aiRun = () => `

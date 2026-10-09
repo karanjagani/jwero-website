@@ -403,91 +403,14 @@ ${section(`${sectionHead('WHAT HAPPENS AFTER YOU TAP', 'Three steps. No mystery.
 ${passItOn(i)}`;
 }
 
-// ---------------------------------------------------------------- intelligence
-// "How Jwero decides" — the customer-intelligence engine as a four-stage flow
-// plus a live simulator. Every number and every delta below is read from the
-// product (journey_scoring/rules.ts, contact-profile-compute.ts,
-// marketing-profile-codes.ts, suggested-segments-catalogue.ts,
-// journey-template-presets.ts, send_window_learner.ts) — see
-// blueprint/CUSTOMER-INTELLIGENCE-FACTS-2026-09.md. No ML is claimed: the
-// scores are rule formulas a jeweller can read, each with a visible why.
-const INTEL_SOURCES = ['WhatsApp', 'Website', 'Counter', 'POS', 'Gold schemes', 'Girvi', 'Karigar', 'Calls', 'Instagram', 'Loyalty', 'Occasions', 'Referrals', 'Email & SMS', 'Ads', 'Staff'];
-const INTEL_SCORES = ['Intent', 'Conversion', 'Churn risk', 'Trust', 'Health', 'Opportunity', '… and more'];
-// Illustrative weights only — the engine's own weights are tuned per business and
-// deliberately not published. d = [intent, conversion, confidence, trust]
-const INTEL_SIGNALS = [
-  { id: 'view', label: 'Viewed a bangle for 45 seconds', d: [10, 0, 0, 0] },
-  { id: 'search', label: 'Searched “22k temple”', d: [10, 0, 0, 0] },
-  { id: 'wish', label: 'Added it to her wishlist', d: [20, 0, 0, 0] },
-  { id: 'cart', label: 'Added it to cart', d: [30, 10, 0, 0] },
-  { id: 'price', label: 'Asked the price on WhatsApp', d: [30, 0, 0, 0] },
-  { id: 'tried', label: 'Tried it on at the counter', d: [30, 10, 0, 0] },
-  { id: 'appt', label: 'Booked an appointment', d: [20, 10, 0, 0] },
-  { id: 'maturity', label: 'Her gold plan matures next month', d: [30, 20, 0, 0] },
-  { id: 'missed', label: 'Missed a scheme instalment', d: [0, 0, 0, 20] },
-  { id: 'complaint', label: 'Raised a complaint', d: [0, 0, 0, 50] },
-];
-function intelligence(opts = {}) {
-  const chips = INTEL_SOURCES.map((s) => `<span>${s}</span>`).join('');
-  const scores = INTEL_SCORES.map((s) => `<li>${s}</li>`).join('');
-  const signals = INTEL_SIGNALS.map((g) => `<button type="button" class="intel-sig" data-sig="${g.id}" data-d="${g.d.join(',')}" aria-pressed="false">${g.label}</button>`).join('');
-  const gauge = (k, l) => `<div class="intel-gauge"><span class="intel-gl">${l}</span><span class="intel-gt"><i data-gauge="${k}"></i></span><b data-gauge-n="${k}">0</b></div>`;
+// How Jwero decides, as outcomes only. The engine behind it (signals, states,
+// scores, weights, plays) is deliberately not described on the site.
+function intelligence() {
   return `
-<div class="intel${opts.compact ? ' intel-compact' : ''}" data-intel>
-  <div class="intel-flow cells">
-    <div class="intel-stage">
-      <p class="eyebrow">1 · SIGNALS</p>
-      <div class="intel-big"><span class="stat-n">Every</span><span>signal a customer gives</span></div>
-      <p>From the counter, WhatsApp, the website, schemes, girvi, the workshop, calls, Instagram and occasions. Many of them move a score the moment they land.</p>
-      <div class="intel-chips" aria-hidden="true">${chips}</div>
-    </div>
-    <div class="intel-stage">
-      <p class="eyebrow">2 · STATES</p>
-      <div class="intel-mult" aria-label="Lifecycle stage, buying pattern, value, channel and occasion together place each customer in one state">
-        <span><b>Stage</b><small>new to lapsed</small></span><i>×</i>
-        <span><b>Pattern</b><small>how she buys</small></span><i>×</i>
-        <span><b>Value</b><small>her tier</small></span><i>×</i>
-        <span><b>Channel</b><small>where she replies</small></span><i>×</i>
-        <span><b>Occasion</b><small>what is coming</small></span>
-        <span class="intel-total"><b><i>=</i><span data-total>one</span></b><small>state per customer</small></span>
-      </div>
-      <p>Every customer sits in exactly one — new or lapsed, champion or about-to-sleep, WhatsApp or call, birthday or wedding — before a single score is read.</p>
-    </div>
-    <div class="intel-stage">
-      <p class="eyebrow">3 · SCORES</p>
-      <div class="intel-big"><span class="stat-n">Live</span><span>scores, each with a visible why</span></div>
-      <ul class="intel-scores">${scores}</ul>
-      <p>Rules you can read, not a black box. Scores fade when she goes quiet, so the list stays honest. Ask “why is she at risk?” and the record shows its reasons.</p>
-    </div>
-    <div class="intel-stage">
-      <p class="eyebrow">4 · THE DECISION</p>
-      <dl class="intel-decide">
-        <div><dt>Who</dt><dd>Ready segments — high-intent enquiry, bridal enquiry, abandoned cart, viewers who never bought, VIP at risk, scheme maturing.</dd></div>
-        <div><dt>What</dt><dd>Six plays — nurture, engage, upsell VIP, retain, reactivate, win back — with an expected outcome and ₹ potential on every record, and a taste profile from her very first purchase.</dd></div>
-        <div><dt>When</dt><dd>Her best hour on her best channel; the shop’s windows re-learnt from real reads and replies; one fatigue cap across every send engine.</dd></div>
-        <div><dt>How</dt><dd>Ready-made journeys write the message from her record. It goes out on its own, and you choose which kinds need your approval first.</dd></div>
-      </dl>
-    </div>
-  </div>
-  <div class="intel-sim">
-    <div class="intel-sim-head">
-      <p class="eyebrow">TRY IT · MEERA’S WEEK</p>
-      <h3>Tap what she did. Watch the scores move — and the decision change.</h3>
-      <p class="intel-note">Illustrative weights. The engine’s own weights and decision rules are tuned per business and not published.</p>
-    </div>
-    <div class="intel-sim-body">
-      <div class="intel-sigs">${signals}<button type="button" class="intel-reset" data-sig-reset>Reset the week</button></div>
-      <div class="intel-out">
-        ${gauge('intent', 'Intent')}${gauge('conv', 'Conversion')}${gauge('conf', 'Confidence')}${gauge('trust', 'Trust risk')}
-        <div class="intel-card">
-          <div class="intel-kv"><span>Segment</span><strong data-out="segment">New customer · listening</strong></div>
-          <div class="intel-kv"><span>Play</span><strong data-out="play">Nurture — no send yet</strong></div>
-          <div class="intel-kv"><span>Channel · hour</span><strong data-out="when">WhatsApp · 18:00–20:00</strong></div>
-          <div class="intel-kv"><span>What Jwero does next</span><strong data-out="draft">Nothing. Jwero keeps listening.</strong></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="decide3">
+  <article><div class="cap-ico">${icon('activity')}</div><h3>She does something</h3><p>She buys, pays an instalment, asks a price, looks at a piece online or walks in. It lands on her record by itself, from the counter and every channel.</p></article>
+  <article><div class="cap-ico">${icon('target')}</div><h3>Jwero knows who to reach</h3><p>Each morning your team sees who is ready to buy, who is drifting and whose occasion is coming, with the reason beside every name.</p></article>
+  <article><div class="cap-ico">${icon('send')}</div><h3>The right message goes out</h3><p>At the hour she usually replies, on the channel she uses, about the piece she liked. It goes out on its own, and you choose which kinds need your approval first.</p></article>
 </div>`;
 }
 

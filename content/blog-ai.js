@@ -521,7 +521,7 @@ const showroomAi = post({
   wa: 'blog-ai-showroom',
   close: ['No walkout forgotten.', 'Jwero counts footfall from your CCTV and drafts walkout follow-ups for staff to send.'],
   faqs: [
-    { q: 'Can AI count footfall from CCTV?', a: 'Yes. Jwero counts entries, exits and how full the floor is from existing IP cameras and NVRs, through an on-site connector.' },
+    { q: 'Can AI count footfall from CCTV?', a: 'Yes. Jwero counts entries, exits and how full the floor is from the CCTV cameras you already have.' },
     { q: 'Does it recognise faces?', a: 'No. Cameras count people; they do not identify them.' },
     { q: 'Are walkout messages sent automatically?', a: 'No. Walkout Rescue drafts the message naming the pieces tried; a staff member sends it.' },
   ],
@@ -531,7 +531,7 @@ const showroomAi = post({
   <h2>Then recover</h2>
   <p>A customer who tried four pieces and left over price is the warmest lead you have. A message that same evening, naming those pieces, brings many back.</p>
   <h2>How Jwero does it</h2>
-  <p>CCTV counting, tablet check-in with history, pieces logged by scan, and Walkout Rescue drafts. See <a href="/products/showroom">showroom</a> and <a href="/ai-cctv-footfall-analytics-jewellery-showrooms">AI CCTV footfall analytics</a>.</p>`,
+  <p>Footfall from your cameras, customers recognised at the door, and Walkout Rescue follow-ups. See <a href="/products/showroom">showroom</a> and <a href="/ai-cctv-footfall-analytics-jewellery-showrooms">AI CCTV footfall analytics</a>.</p>`,
 });
 
 const wholesale = post({

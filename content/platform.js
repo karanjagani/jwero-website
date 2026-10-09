@@ -123,9 +123,9 @@ const customerMemory = {
   description: 'Jwero reads every signal a customer gives, from the counter to WhatsApp to her gold plan, scores her with reasons you can read, and decides who to reach, with what and when, inside limits you set.',
   breadcrumbs: BC('Customer Memory'),
   faqs: [
-    { q: 'What does Jwero remember about each customer?', a: 'Everything she does, as a signal: the counter, WhatsApp, the website, gold schemes, girvi, calls, Instagram, occasions. Many of them move her scores the moment they land. Underneath, structured fields hold the facts: purchases, scheme balance and instalments, birthdays, anniversaries and wedding months, metal and design preferences, consent and best hour per channel.' },
-    { q: 'How does it decide who to reach, and when?', a: 'Each customer carries live scores — intent, conversion, churn risk, trust and others — computed by rules you can read, each with its reasons shown. Where she sits — new or lapsed, champion or about-to-sleep, WhatsApp or call, birthday or wedding — is read before anything is sent. From that, Jwero picks the play, the channel and her best hour, and drafts the message. Scores fade when she goes quiet, so the list stays honest.' },
-    { q: 'Is this machine learning?', a: 'The scores are explainable rules you can inspect — not a model nobody can question. The AI writes the words; the rules decide the who and the when; you choose what needs your approval.' },
+    { q: 'What does Jwero remember about each customer?', a: 'Everything she does, as a signal: the counter, WhatsApp, the website, gold schemes, girvi, calls, Instagram, occasions. Underneath, structured fields hold the facts: purchases, scheme balance and instalments, birthdays, anniversaries and wedding months, metal and design preferences, consent and best hour per channel.' },
+    { q: 'How does it decide who to reach, and when?', a: 'From what she actually does. Jwero reads every purchase, payment, message and visit, and shows your team who is ready to buy, who is drifting and whose occasion is coming, with the reason beside each name. The message then goes out on the channel and at the hour she usually replies.' },
+    { q: 'Is this machine learning?', a: 'Every suggestion comes with its reason, so nobody has to trust a black box. You can always ask why a customer is on the list, and you choose what needs your approval.' },
     { q: 'How is this different from a normal CRM?', a: 'Generic CRMs know names and notes. Jwero’s record is jewellery-native: it knows her scheme balance, her daughter’s wedding month and what today’s gold rate means for her budget — as structured fields, every module can act on, not free-text notes.' },
     { q: 'What happens when a salesperson leaves?', a: 'Nothing. The memory belongs to the business, not to a personal phone. Every conversation, preference and promise stays on the record.' },
   ],
@@ -148,14 +148,14 @@ ${L.section(
     { title: 'Money & plans', text: 'Gold savings balance, instalments paid and missed, maturity dates, lifetime value.' },
     { title: 'Occasions', text: 'Birthdays, anniversaries, wedding months and upcoming family occasions — the reasons jewellery gets bought.' },
     { title: 'Taste', text: 'Metals, purity, styles, price bands, brands browsed and bought — learned from real behaviour.' },
-    { title: 'Reachability', text: 'Preferred channel, consent per channel, best send window, message fatigue — reach people the way they want.' },
-    { title: 'Signals', text: 'Every view, message, visit, instalment and call, from every channel and the counter, many of which move a score the moment they land.' },
-    { title: 'The "why"', text: 'Every score comes with its reasons. Ask why a customer is "at risk" and the record shows its work.' },
+    { title: 'Reachability', text: 'Preferred channel, consent per channel and the hour she usually replies, so people are reached the way they want.' },
+    { title: 'Everything she does', text: 'Every view, message, visit, instalment and call, from every channel and the counter, on one record.' },
+    { title: 'The "why"', text: 'Every name on the list comes with its reason. Ask why a customer is "at risk" and the record tells you.' },
   ])}`
 )}
 
 ${L.section(
-  `${L.sectionHead('HOW JWERO DECIDES', 'Who to reach, with what, and when — decided from what she actually did.', 'Not a list of fields. A reading of every signal she gives you, scored in rules you can inspect, turned into a message that goes out on its own.')}
+  `${L.sectionHead('HOW JWERO DECIDES', 'Who to reach, with what, and when — decided from what she actually did.', 'Not a list of fields. What she does becomes who to reach, why, and the message that goes out.')}
   ${L.intelligence()}`
 )}
 
@@ -175,7 +175,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('MEMORY QUESTIONS', 'What owners and evaluators ask first.', '')}${L.faqBlock([
-  { q: 'What does Jwero remember about each customer?', a: 'Every signal she gives you, read into live scores with a visible why, on one record the business owns. Purchases, scheme balance, occasions, taste, consent and best hour per channel sit underneath as structured fields.' },
+  { q: 'What does Jwero remember about each customer?', a: 'Everything she does with you, on one record the business owns, with a visible reason for every suggestion. Purchases, scheme balance, occasions, taste, consent and best hour per channel sit underneath as structured fields.' },
   { q: 'How is this different from a normal CRM?', a: 'Generic CRMs know names and notes. Jwero’s record is jewellery-native: it knows her scheme balance, her daughter’s wedding month and what today’s gold rate means for her budget — as structured fields every module can act on, not free-text notes.' },
   { q: 'What happens when a salesperson leaves?', a: 'Nothing. The memory belongs to the business, not to a personal phone. Every conversation, preference and promise stays on the record.' },
 ])}
