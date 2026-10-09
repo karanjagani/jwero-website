@@ -5169,3 +5169,4 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 @media (prefers-reduced-motion: reduce) { .mj-line.gfx-arm li, .mj-card.gfx-arm dl > div { opacity: 1; transform: none; transition: none; } }
 /* Simulator note: a plain sentence, not a label */
 .sim-note { font: 400 .875rem/1.5 var(--font); letter-spacing: 0; text-transform: none; max-width: 56ch; margin-left: auto; margin-right: auto; }
+.h1-turn.is-inline { display: inline; }

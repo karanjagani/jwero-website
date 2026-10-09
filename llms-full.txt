@@ -1167,12 +1167,9 @@ How Jwero prices a piece: purity rate cards, 3 making-charge models, wastage, pe
 
 THE PRICING ENGINE
 
-## Every price, explainable. Every override, on the record.
+## Every price, explainable. Every override, on the record. 
 
  A jewellery price is never just a number, it is a rate, a purity, a making charge, a stone value and sometimes a rule. Jwero prices it as a formula, not a field, and can show its work for every piece, every channel, every time.
-
- See a price resolve live 
- Book a demo 
 
  WHAT GOES INTO A PRICE
 
@@ -1329,12 +1326,9 @@ URL: https://jwero.ai/platform/ai-workforce
 
 AI WORKFORCE & GOVERNANCE
 
-## AI that waits for your yes.
+## AI that waits for your yes. 
 
  Hiring is hard. Training is harder. Jwero gives you an AI workforce that never forgets, never sleeps, and never acts without your approval. One switch takes it all back.
-
- See the approval queue live 
- Book a demo 
 
  Approval queue · 3 waiting 
 

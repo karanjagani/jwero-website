@@ -456,24 +456,26 @@ const PRICE_OUT = [
     ];
 function dePrice(t) { for (const [re, to] of PRICE_OUT) t = t.replace(re, to); return t; }
 
-// Customer Memory: the story runs headline, Meera's year, try it yourself, then
-// the shift; and the single quote becomes a row of three.
-function memoryPage(html) {
+// Platform detail pages tell one story in one order: headline, a worked example
+// (Meera's year on Customer Memory), try it yourself, then the shift and the
+// use cases; and the single quote becomes a row of three.
+const STORY_PAGES = { 'platform/customer-memory': [1, 0, 2], 'platform/pricing-engine': [1, 0, 2], 'platform/ai-workforce': [2, 0, 1] };
+function platformStory(html, slug) {
   const cut = (re) => { const m = re.exec(html); if (!m) return ''; const e = html.indexOf('</section>', m.index) + 10; const t = html.slice(m.index, e); html = html.slice(0, m.index) + html.slice(e); return t; };
   const shift = cut(/<section class="shift[^>]*>/);
-  let simS = cut(/<section class="section sim-section" id="try-memory">/);
-  simS = simS.replace(/<p class="eyebrow[^>]*>[\s\S]*?<\/p>/, '<p class="eyebrow">NOW TRY IT YOURSELF</p>').replace(/<p class="lead">[\s\S]*?<\/p>/, '<p class="lead">Meera was one customer. Pick another and watch what the record already knows, and the reply it drafts, before anyone types.</p>');
+  let simS = cut(/<section class="section sim-section" id="try-[a-z]+">/);
+  if (slug === 'platform/customer-memory') simS = simS.replace(/<p class="eyebrow[^>]*>[\s\S]*?<\/p>/, '<p class="eyebrow">NOW TRY IT YOURSELF</p>').replace(/<p class="lead">[\s\S]*?<\/p>/, '<p class="lead">Meera was one customer. Pick another and watch what the record already knows, and the reply it drafts, before anyone types.</p>');
   let uc = ''; const ui = html.indexOf('>USE CASES<');
   if (ui > 0) { const a = html.lastIndexOf('<section', ui), e = html.indexOf('</section>', ui) + 10; uc = html.slice(a, e); html = html.slice(0, a) + html.slice(e); }
-  const at = html.indexOf('id="meera"'); if (at < 0) return html;
+  const at = html.indexOf('id="meera"') > 0 ? html.indexOf('id="meera"') : html.indexOf('<section class="hero');
   const end = html.indexOf('</section>', at) + 10;
   html = html.slice(0, end) + simS + shift + uc + html.slice(end);
   const Q = require('./content/positioning').QUOTES;
-  html = html.replace(/<section class="section">\s*<div class="container">\s*<figure class="pz-quote jb-solo">[\s\S]*?<\/section>/, L3.section(`${L3.sectionHead('IN THEIR WORDS', 'Jewellers on working with Jwero.', '')}<div class="pz-quotes">${[1, 0, 2].map((i) => `<figure class="pz-quote"><blockquote>“${Q[i][0]}”</blockquote><figcaption><b>${Q[i][1]}</b><span>${Q[i][2]}</span></figcaption></figure>`).join('')}</div><p class="jb-more"><a href="/success-stories">Read what more jewellers say →</a></p>`));
+  html = html.replace(/<section class="section">\s*<div class="container">\s*<figure class="pz-quote jb-solo">[\s\S]*?<\/section>/, L3.section(`${L3.sectionHead('IN THEIR WORDS', 'Jewellers on working with Jwero.', '')}<div class="pz-quotes">${STORY_PAGES[slug].map((i) => `<figure class="pz-quote"><blockquote>“${Q[i][0]}”</blockquote><figcaption><b>${Q[i][1]}</b><span>${Q[i][2]}</span></figcaption></figure>`).join('')}</div><p class="jb-more"><a href="/success-stories">Read what more jewellers say →</a></p>`));
   return html;
 }
 function journeyFix(html, p) {
-  if (p && p.slug === 'platform/customer-memory') html = memoryPage(html);
+  if (p && STORY_PAGES[p.slug]) html = platformStory(html, p.slug);
   if (p.slug === 'customers') {
     let STORIES = []; try { STORIES = require('./content/stories'); } catch (e) {}
     if (STORIES.length) {
@@ -1359,7 +1361,7 @@ function withDoors(html, slug) {
   if (end < 0) return html;
   const strip = `<div class="doors-strip" role="group" aria-label="Run it yourself, or let Jwero run it"><div class="container"><a class="ds-door" href="${require('./lib').TRIAL_URL}doors-strip" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b></a><a class="ds-door is-managed" href="#" data-wa="handle"><span>Jwero runs it</span><b>Let Jwero run it</b></a><a class="ds-more" href="/pricing#tiers">Compare →</a></div></div>`;
   // product and solution pages: inside the top section, under the buttons and above the illustration
-  if (/^(products|solutions)(\/|$)/.test(slug || '') || slug === 'platform' || slug === 'platform/customer-memory') {
+  if (/^(products|solutions)(\/|$)/.test(slug || '') || slug === 'platform' || /^platform\/(customer-memory|pricing-engine|ai-workforce)$/.test(slug || '')) {
     const mock = html.lastIndexOf('<div class="container"><div class="stage hero-mock">', end);
     const inHero = strip.replace('class="doors-strip"', 'class="doors-strip is-in-hero"');
     if (mock > 0) return html.slice(0, mock) + inHero + html.slice(mock);

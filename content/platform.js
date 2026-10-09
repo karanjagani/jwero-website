@@ -206,10 +206,8 @@ const pricingEngine = {
   body: `
 ${L.hero({
   eyebrow: 'THE PRICING ENGINE',
-  h1: 'Every price, explainable. Every override, on the record.',
+  h1: 'Every price, explainable. <span class="h1-turn">Every override, on the record.</span>',
   sub: 'A jewellery price is never just a number — it is a rate, a purity, a making charge, a stone value and sometimes a rule. Jwero prices it as a formula, not a field, and can show its work for every piece, every channel, every time.',
-  primary: { href: '#', label: 'See a price resolve live', wa: 'pricingengine' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
 ${L.section(
@@ -294,10 +292,8 @@ const aiWorkforce = {
   body: `
 ${L.hero({
   eyebrow: 'AI WORKFORCE & GOVERNANCE',
-  h1: 'AI that waits for your yes.',
+  h1: 'AI that waits <span class="h1-turn is-inline">for your yes.</span>',
   sub: 'Hiring is hard. Training is harder. Jwero gives you an AI workforce that never forgets, never sleeps, and never acts without your approval. One switch takes it all back.',
-  primary: { href: '#', label: 'See the approval queue live', wa: 'ai' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
   mock: L.mockApproval,
 })}
 
