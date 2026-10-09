@@ -1310,10 +1310,19 @@ function withIcpHome(html, slug) {
   return html;
 }
 
+// One call to action per hero. Pages whose hero buttons are the page's own task
+// (send the brief, request the security pack, plan the migration, a frontline
+// role sending the page to the owner) keep those buttons and get no doors; every
+// other page keeps the two doors (Try Free Now, Let Jwero run it) and loses the
+// generic buttons above them.
+const KEEP_HERO_BUTTONS = new Set(['trust', 'trust/security', 'brief', 'refer', 'faq', 'migration', 'how-it-goes', 'enterprise', 'customers']);
 function withDoors(html, slug) {
   if (DOORS_SKIP.includes((slug || '').split('/')[0]) || slug === 'guides' || slug === 'solutions' || slug === 'products' || slug === 'pricing' || LEGACY_SLUGS.has(slug)) return html;
+  if (KEEP_HERO_BUTTONS.has(slug) || (/^roles\//.test(slug || '') && !OWNER_ROLES.has(slug))) return html;
+  const end0 = html.indexOf('</section>');
+  if (end0 < 0) return html;
+  html = html.slice(0, end0).replace(/\s*<div class="cta-row center">[\s\S]*?<\/div>(\s*<p class="(cta-note|hero-try)">[\s\S]*?<\/p>)*/, '') + html.slice(end0);
   const end = html.indexOf('</section>');
-  if (end < 0) return html;
   const strip = `<div class="doors-strip" role="group" aria-label="Run it yourself, or let Jwero run it"><div class="container"><a class="ds-door" href="${require('./lib').TRIAL_URL}doors-strip" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b></a><a class="ds-door is-managed" href="#" data-wa="handle"><span>Jwero runs it</span><b>Let Jwero run it</b></a><a class="ds-more" href="/pricing#tiers">Compare →</a></div></div>`;
   // product and solution pages: inside the top section, under the buttons and above the illustration
   if (/^(products|solutions)(\/|$)/.test(slug || '') || slug === 'platform' || /^platform\/(customer-memory|pricing-engine|ai-workforce)$/.test(slug || '')) {
