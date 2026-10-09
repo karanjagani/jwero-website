@@ -43,11 +43,11 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('WHAT IT IS NOT', 'Honest boundaries.', '')}
+  `${L.sectionHead('YOU STAY IN CHARGE', 'An operating system that works with what you already trust.', 'Moving to one system does not mean giving up your accountant, your judgment or your say in what comes next.')}
   ${L.cards([
-    { title: 'Not a replacement for your accountant', text: 'Books post to Jwero’s ledger and bridge to Tally or Zoho Books. Your CA’s world does not change.' },
-    { title: 'Not a chatbot that acts alone', text: 'Nothing sends without approval by default. You widen what may run alone, per action type, when the accuracy earns it.' },
-    { title: 'Not finished', text: 'The public roadmap says what is shipped, rolling out and not yet — before you buy, not after.', link: { href: '/roadmap', label: 'See the roadmap' } },
+    { title: 'Your accountant keeps working their way', text: 'Bills, returns and payments post to Jwero’s ledger and reach Tally or Zoho Books automatically. Your CA carries on in the software they know, with less to type.', link: { href: '/platform/integrations', label: 'How the bridge works' } },
+    { title: 'AI that works under your approval', text: 'Every AI draft waits for your yes to begin with. You let it run alone one kind of task at a time, once you have seen it get that task right.', link: { href: '/platform/ai-workforce', label: 'How approvals work' } },
+    { title: 'A platform that keeps growing with you', text: 'New capabilities ship regularly, and the roadmap is public, so you always know what is live today and what is coming next.', link: { href: '/roadmap', label: 'See the roadmap' } },
   ])}`
 )}
 
@@ -136,11 +136,11 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('WHAT IT IS NOT', 'Honest boundaries.', '')}
+  `${L.sectionHead('YOU STAY IN CHARGE', 'An operating system that works with what you already trust.', 'Moving to one system does not mean giving up your accountant, your judgment or your say in what comes next.')}
   ${L.cards([
-    { title: 'Not a replacement for your accountant', text: 'Books post to Jwero’s ledger and bridge to Tally or Zoho Books. Your CA’s world does not change.' },
-    { title: 'Not a chatbot that acts alone', text: 'Nothing sends without approval by default. You widen what may run alone, per action type, when the accuracy earns it.' },
-    { title: 'Not finished', text: 'The public roadmap says what is shipped, rolling out and not yet — before you buy, not after.', link: { href: '/roadmap', label: 'See the roadmap' } },
+    { title: 'Your accountant keeps working their way', text: 'Bills, returns and payments post to Jwero’s ledger and reach Tally or Zoho Books automatically. Your CA carries on in the software they know, with less to type.', link: { href: '/platform/integrations', label: 'How the bridge works' } },
+    { title: 'AI that works under your approval', text: 'Every AI draft waits for your yes to begin with. You let it run alone one kind of task at a time, once you have seen it get that task right.', link: { href: '/platform/ai-workforce', label: 'How approvals work' } },
+    { title: 'A platform that keeps growing with you', text: 'New capabilities ship regularly, and the roadmap is public, so you always know what is live today and what is coming next.', link: { href: '/roadmap', label: 'See the roadmap' } },
   ])}`
 )}
 `;

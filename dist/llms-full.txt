@@ -582,21 +582,27 @@ WHY AN OS, AND THE TOUR
 
  One customer record, one catalogue, one inventory truth, one ledger. Every module, WhatsApp, counter, website, workshop, schemes, reads and writes the same row.
 
- WHAT IT IS NOT
+ YOU STAY IN CHARGE
 
-## Honest boundaries.
+## An operating system that works with what you already trust.
 
-## Not a replacement for your accountant
+ Moving to one system does not mean giving up your accountant, your judgment or your say in what comes next.
 
- Books post to Jwero’s ledger and bridge to Tally or Zoho Books. Your CA’s world does not change.
+## Your accountant keeps working their way
 
-## Not a chatbot that acts alone
+ Bills, returns and payments post to Jwero’s ledger and reach Tally or Zoho Books automatically. Your CA carries on in the software they know, with less to type.
 
- Nothing sends without approval by default. You widen what may run alone, per action type, when the accuracy earns it.
+ How the bridge works → 
 
-## Not finished
+## AI that works under your approval
 
- The public roadmap says what is shipped, rolling out and not yet, before you buy, not after.
+ Every AI draft waits for your yes to begin with. You let it run alone one kind of task at a time, once you have seen it get that task right.
+
+ How approvals work → 
+
+## A platform that keeps growing with you
+
+ New capabilities ship regularly, and the roadmap is public, so you always know what is live today and what is coming next.
 
  See the roadmap → 
 
