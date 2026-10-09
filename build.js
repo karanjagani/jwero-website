@@ -1493,6 +1493,12 @@ function withInterlinks(body, page) {
   const pinned = (PIN[slug] || []).map((k) => ALLNEW.find((p) => p.slug === 'blog/' + k)).filter(Boolean);
   const fresh = pinned.length ? pinned : [...new Set((NEWBACK['/' + slug] || []).concat(INHERIT[slug] ? NEWBACK['/' + INHERIT[slug]] || [] : []))].slice(0, 2);
   const pick = fresh.concat(list.filter((p) => !fresh.includes(p)).slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4 - fresh.length));
+  // The Why an OS page links to the case for shifting, not to general articles.
+  if (slug === 'platform') {
+    const CASE = [['erp-to-os', 'From ERP to OS: why jewellery software is changing', 'Why now'], ['erp-to-os/make-do', 'Can you make do with what you have? What it costs', 'The cost of staying'], ['erp-to-os/switching', 'Is switching risky? The risks against the cost of staying', 'The risk'], ['blog/jewellery-crm-vs-erp-difference', 'CRM or ERP: why a jeweller needs both as one', 'The difference']];
+    const b2 = L3.section(`${L3.sectionHead('THE CASE FOR SHIFTING', 'What staying on separate tools costs, in full.', '')}<div class="erp-map">${CASE.map(([h, t, k]) => `<a href="/${h}"><b>${t}</b><span>${k}</span></a>`).join('')}</div>`);
+    const at2 = body.lastIndexOf('<section'); return at2 > 0 ? body.slice(0, at2) + b2 + body.slice(at2) : body + b2;
+  }
   const blk = L3.section(`${L3.sectionHead('FROM THE BLOG', 'Read more on this.', '')}<div class="erp-map">${pick.map((p) => `<a href="/${p.slug}"><b>${p.title}</b><span>${p.topic}</span></a>`).join('')}</div>`);
   const at = body.lastIndexOf('<section'); return at > 0 ? body.slice(0, at) + blk + body.slice(at) : body + blk;
 }

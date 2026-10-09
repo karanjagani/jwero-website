@@ -4916,3 +4916,7 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 .pvid figcaption { margin-top: 12px; font-size: .875rem; color: var(--ink-2); text-align: center; }
 /* Two-door strip inside a hero: the label takes its own line on narrow screens so the doors sit side by side */
 @media (max-width: 899px) { .doors-strip.is-in-hero p { flex: 0 0 100%; text-align: center; margin: 0; } .doors-strip.is-in-hero .ds-more { flex: 0 0 100%; text-align: center; margin: 0; } }
+/* "Without it" line on platform cards */
+.bl-without { display: block; margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line-2); font-size: .8125rem; line-height: 1.45; color: var(--ink-2); }
+.bl-without i { display: block; font: 600 .625rem/1 var(--mono); font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: #c2410c; margin-bottom: 4px; }
+.bl-card .bl-without { margin: 4px 16px 0; padding: 10px 0 0; }

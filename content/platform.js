@@ -32,20 +32,20 @@ ${require('./journey').why.sections}
 ${(() => {
   const fs = require('fs'), path = require('path');
   const img = (h) => { const k = h.replace(/^\//, '').replace(/\//g, '--'); return fs.existsSync(path.join(__dirname, '..', 'assets', 'og', k + '.jpg')) ? `<img src="/assets/og/${k}.jpg" alt="" loading="lazy" width="1200" height="630">` : ''; };
-  const Q = [['How does a price follow the gold rate?', '/platform/pricing-engine'], ['How does Jwero know who to call first?', '/platform/customer-memory'], ['How do I stop AI doing something I did not approve?', '/platform/ai-workforce'], ['Will it work with Tally and my website?', '/platform/integrations'], ['How long does it take to get started?', '/platform/onboarding'], ['Is my data safe?', '/trust/security']];
+  const Q = [['Gold moved, and one channel still shows yesterday’s price.', '/platform/pricing-engine'], ['Your best customer went quiet and nobody noticed.', '/platform/customer-memory'], ['Enquiries wait because every reply needs a free hand.', '/platform/ai-workforce'], ['Your accountant types every bill a second time.', '/platform/integrations'], ['A change of software stalls the shop in season.', '/platform/onboarding'], ['A salesperson leaves, and the customer list leaves too.', '/trust/security']];
   const C = [
-    ['/platform/pricing-engine', 'Pricing engine', 'Purity rate cards, making-charge models, wastage and stone rules: every price follows today’s rate.'],
-    ['/platform/customer-memory', 'Customer memory', '198 signals and 11 scores, each with its reason, on one record your business owns.'],
-    ['/platform/ai-workforce', 'AI workforce and governance', 'AI agents that ask first: approvals, daily and money caps, kill switches and a full log.'],
-    ['/platform/integrations', 'Integrations', 'Tally and Zoho Books, Shopify, WooCommerce, Unicommerce, Meta, payments and an MCP connection for AI assistants.'],
-    ['/platform/integrations/tally', 'Tally bridge', 'Keep your books in Tally; sales, returns, payments and expenses sync without retyping.'],
-    ['/platform/onboarding', 'Onboarding and support', 'What we import for you, how training runs, and how fast you go live.'],
-    ['/trust/security', 'Security and your data', 'Who can see what, where data lives, and how to export it any time.'],
-    ['/products', 'Every product', '35 products that read and write this one record.'],
+    ['/platform/pricing-engine', 'Pricing engine', 'One rule reprices every channel the moment the rate moves.', 'Quotes go out at yesterday’s rate and margin is given away on each sale.'],
+    ['/platform/customer-memory', 'Customer memory', 'Every purchase, visit and chat on one record, so you know who to call today.', 'Customers drift away quietly, and follow-up depends on someone remembering.'],
+    ['/platform/ai-workforce', 'AI workforce and governance', 'Replies, reminders and follow-ups drafted for your approval, at any hour.', 'Enquiries wait for a free hand, and you keep hiring for work a system can do.'],
+    ['/platform/integrations', 'Integrations', 'Tally, Zoho Books, your website and Meta all read the same record.', 'The same data is typed into every tool, and errors surface at month end.'],
+    ['/platform/integrations/tally', 'Tally bridge', 'Bills, returns and payments reach Tally by themselves.', 'Your accountant re-enters every bill, and the books trail the counter.'],
+    ['/platform/onboarding', 'Onboarding and support', 'Your data imported for you and your team trained in their language, live in a day.', 'A switch that drags on through your busiest weeks.'],
+    ['/trust/security', 'Security and your data', 'Your own database, access set per person, export any time.', 'Your customer list lives on staff phones and leaves when they do.'],
+    ['/products', 'Every product', '35 products that read and write this one record.', 'Ten to fifteen subscriptions that never agree with each other.'],
   ];
-  return L.section(`${L.sectionHead('INSIDE THE PLATFORM', 'Pick the question you came with.', '')}
-  <div class="bl-goals bl-goals-3">${Q.map(([q, h]) => `<a href="${h}"><b>${q}</b><i>Read the answer →</i></a>`).join('')}</div>
-  <div class="bl-grid" style="margin-top:28px">${C.map(([h, t, d]) => `<a class="bl-card" href="${h}">${img(h)}<span class="bl-tag">Platform</span><b>${t}</b><span class="bl-desc">${d}</span></a>`).join('')}</div>`, { tone: 'tint' });
+  return L.section(`${L.sectionHead('WHY THE SHIFT CANNOT WAIT', 'What each part of the operating system saves you, and what going without it costs.', 'Each of these is happening in a jewellery business on separate software today. Start with the one that is costing you most.')}
+  <div class="bl-goals bl-goals-3">${Q.map(([q, h]) => `<a href="${h}"><b>${q}</b><i>See how the OS closes it →</i></a>`).join('')}</div>
+  <div class="bl-grid" style="margin-top:28px">${C.map(([h, t, d, w]) => `<a class="bl-card" href="${h}">${img(h)}<span class="bl-tag">Platform</span><b>${t}</b><span class="bl-desc">${d}</span><span class="bl-without"><i>Without it</i>${w}</span></a>`).join('')}</div>`, { tone: 'tint' });
 })()}
 
 ${L.section(
