@@ -165,7 +165,7 @@ const marketCard = (key) => { const m = MKT.find((x) => x[0] === key); if (!m) r
 
 // Home: every separate tool flowing into Jwero. No sums; the names are the point.
 // Six tracks of tool names move in from both sides and disappear into the Jwero mark;
-// the ten departments sit underneath. Every name is in the page once as real text.
+// Every name is in the page once as real text.
 const toolsInto = () => {
   const L = require('../lib');
   const all = L.STACK.flatMap(([g, ic, items]) => items.map((t) => [t, ic]));
@@ -179,7 +179,6 @@ const toolsInto = () => {
     <div class="tin-rows">${[0, 1, 2].map((r) => `<div class="tin-row">${half(tracks[r * 2], 'l', r)}${half(tracks[r * 2 + 1], 'r', r)}</div>`).join('')}</div>
     <div class="tin-core"><span class="tin-ring" aria-hidden="true"></span><span class="tin-ring tin-ring2" aria-hidden="true"></span>${L.mark('mark-band')}<b>Jwero</b><em>One record</em></div>
   </div>
-  <ul class="tin-groups">${L.STACK.map(([g, ic, items], i) => `<li style="--i:${i}">${icon(ic)}<b>${g}</b><span>${items.length} ${items.length === 1 ? 'tool' : 'tools'} in one</span></li>`).join('')}</ul>
 </div>`;
 };
 
