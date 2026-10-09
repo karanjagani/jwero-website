@@ -24,7 +24,7 @@ ${L.hero({
 })}
 
 ${L.section(
-  `${L.sectionHead('THE TEST', 'A bundle has one login. An operating system has one row.', 'Ask any software this question and you have your answer.')}
+  `${L.sectionHead('THE DIFFERENCE', 'One thing happens in your shop. Does the rest of your business know?', 'With separate software, each tool updates its own copy and someone has to carry the news to the others. With an operating system, one event updates everything at once. Pick a moment and compare.')}
   ${L.impactGrid([
     { lever: 'A customer buys at the counter', before: 'The bill is in billing. Her WhatsApp thread, her scheme and her follow-up know nothing.', after: 'One row updates: her record, her scheme balance, her next follow-up, the stock, the books.', link: { href: '/products/pos', label: 'See the counter' } },
     { lever: 'The gold rate moves', before: 'Someone reprices the catalogue, the website and the quotes — or doesn’t.', after: 'One rule reprices every channel at once, with overrides routed through approval.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },
@@ -117,7 +117,7 @@ ${L.ctaBand('Start the sequence.', 'One message. Everything above follows, in th
 const whySections = `
 <span id="why-an-os"></span>
 ${L.section(
-  `${L.sectionHead('THE TEST', 'A bundle has one login. An operating system has one row.', 'Ask any software this question and you have your answer.')}
+  `${L.sectionHead('THE DIFFERENCE', 'One thing happens in your shop. Does the rest of your business know?', 'With separate software, each tool updates its own copy and someone has to carry the news to the others. With an operating system, one event updates everything at once. Pick a moment and compare.')}
   ${L.impactGrid([
     { lever: 'A customer buys at the counter', before: 'The bill is in billing. Her WhatsApp thread, her scheme and her follow-up know nothing.', after: 'One row updates: her record, her scheme balance, her next follow-up, the stock, the books.', link: { href: '/products/pos', label: 'See the counter' } },
     { lever: 'The gold rate moves', before: 'Someone reprices the catalogue, the website and the quotes — or doesn’t.', after: 'One rule reprices every channel at once, with overrides routed through approval.', link: { href: '/platform/pricing-engine', label: 'See the pricing engine' } },

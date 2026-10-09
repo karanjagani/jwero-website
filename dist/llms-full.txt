@@ -534,11 +534,11 @@ WHY AN OS, AND THE TOUR
 
  The Stock and Workshop overview in Jwero: open purchase orders, pieces awaiting receipt, inventory, metal and making value, dead stock and the stock on hand. Book a demo to see it on your own stock. 
 
- THE TEST
+ THE DIFFERENCE
 
-## A bundle has one login. An operating system has one row.
+## One thing happens in your shop. Does the rest of your business know?
 
- Ask any software this question and you have your answer.
+ With separate software, each tool updates its own copy and someone has to carry the news to the others. With an operating system, one event updates everything at once. Pick a moment and compare.
 
  Today With Jwero 
 
