@@ -161,8 +161,8 @@ function leakCalc() {
 // ---------------------------------------------------------------- page 1: imminence
 const erpToOs = {
   slug: 'erp-to-os',
-  title: 'From ERP to OS: Why Jewellery Software Is Changing | Jwero',
-  description: 'The ERP was built around the invoice. Your customers now live on WhatsApp and Instagram, the rate moves twice a day, and AI can draft at the quality of your best salesperson — if it has the record. Why the shift from ERP to an operating system is already underway, and what it means for a jewellery business.',
+  title: 'From ERP to OS: Your ERP Counts Sales, Not What You Lost | Jwero',
+  description: 'A jewellery ERP records every sale and nothing you lost: the unanswered enquiry, the walkout, the customer who went quiet. Why jewellers are moving from ERP to an operating system that keeps billing, stock and accounts and adds the customer side.',
   breadcrumbs: BC('From ERP to OS'),
   faqs: [
     { q: 'Is Jwero an ERP?', a: 'It contains one. Orders, purchase, vendors, job work, stock, GST invoicing and a ledger with Tally and Zoho Books bridges are all inside Jwero. The difference is what sits at the centre: in an ERP it is the invoice; in Jwero it is the customer record, which the counter, WhatsApp, Instagram, the catalogue, schemes and the workshop all read and write. You do not lose the ERP; you lose the gap around it.' },
@@ -173,8 +173,8 @@ const erpToOs = {
   body: `
 ${L.hero({
   eyebrow: 'FROM ERP TO OS',
-  h1: 'Your ERP was built around the invoice. Your customers moved to WhatsApp.',
-  sub: 'Every era of jewellery software had a centre. The register had the owner’s memory. The ERP has the ledger. The operating system keeps everything the ERP did, billing, stock, purchase, workshop and accounts, and adds what it never saw: the customer, the enquiry, the showroom floor and the team, on one record with AI working it. This is why the shift is happening now, in plain words, and what it changes.',
+  h1: 'Your ERP knows every sale you made. It has no idea what you lost.',
+  sub: 'An ERP starts counting at the invoice. The WhatsApp enquiry nobody answered, the customer who walked out, the regular who stopped coming, the scheme that lapsed: none of it ever reaches the ERP, so none of it reaches you. An operating system keeps everything your ERP does, billing, stock, purchase, workshop and accounts, and adds the half of the business it never saw.',
   primary: { href: '#', label: 'Show me the difference on my business', wa: 'erp' },
   secondary: { href: '/erp-to-os/switching', label: 'Is switching risky? Read this first' },
 })}

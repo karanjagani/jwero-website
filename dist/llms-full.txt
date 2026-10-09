@@ -8217,16 +8217,16 @@ THE ONE-PAGE BRIEF
 
 ---
 
-# From ERP to OS: Why Jewellery Software Is Changing
+# From ERP to OS: Your ERP Counts Sales, Not What You Lost
 URL: https://jwero.ai/erp-to-os
 
-The ERP was built around the invoice. Your customers now live on WhatsApp and Instagram, the rate moves twice a day, and AI can draft at the quality of your best salesperson, if it has the record. Why the shift from ERP to an operating system is already underway, and what it means for a jewellery business.
+A jewellery ERP records every sale and nothing you lost: the unanswered enquiry, the walkout, the customer who went quiet. Why jewellers are moving from ERP to an operating system that keeps billing, stock and accounts and adds the customer side.
 
 FROM ERP TO OS
 
-## Your ERP was built around the invoice. Your customers moved to WhatsApp.
+## Your ERP knows every sale you made. It has no idea what you lost.
 
- Every era of jewellery software had a centre. The register had the owner’s memory. The ERP has the ledger. The operating system keeps everything the ERP did, billing, stock, purchase, workshop and accounts, and adds what it never saw: the customer, the enquiry, the showroom floor and the team, on one record with AI working it. This is why the shift is happening now, in plain words, and what it changes.
+ An ERP starts counting at the invoice. The WhatsApp enquiry nobody answered, the customer who walked out, the regular who stopped coming, the scheme that lapsed: none of it ever reaches the ERP, so none of it reaches you. An operating system keeps everything your ERP does, billing, stock, purchase, workshop and accounts, and adds the half of the business it never saw.
 
  Show me the difference on my business 
  Is switching risky? Read this first 
