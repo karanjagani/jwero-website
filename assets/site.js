@@ -244,6 +244,11 @@ function jwFromInr(n) {
     function shadow() { var host = document.getElementById('jwero-optimize-root'); return host ? (host.shadowRoot || host) : null; }
     function note(j, mode) { try { j.track('website_cta', { mode: mode, context: state.ctx, page: HERE, persona: personaKey() }); } catch (e) {} }
     // Put the page's question in the widget's box so the visitor only has to press send.
+    // The widget's own bubble stays hidden: the site's buttons are the only way in.
+    whenWidget(function (j) {
+      if (!j) return;
+      try { var r = shadow(); if (r && r.querySelector && !r.querySelector('style[data-site]')) { var st = document.createElement('style'); st.setAttribute('data-site', ''); st.textContent = '.jw-launcher{display:none !important}'; r.appendChild(st); } } catch (e) {}
+    }, 15000);
     function prefill() {
       if (!state.msg) return;
       window.setTimeout(function () {
@@ -266,21 +271,21 @@ function jwFromInr(n) {
     }
     function go(mode) {
       if (!WEBCHAT_ON) return fallback(mode);
-      if (mode !== 'chat' && !deskOpen()) return fallback(mode);
+      // Every door, chat, call or video, opens the chat panel; a call or demo is arranged from there.
       if (dlg) dlg.classList.add('is-busy');
       whenWidget(function (j) {
         if (dlg) dlg.classList.remove('is-busy');
         if (!j) return fallback(mode);
         close();
-        if (mode === 'chat') { note(j, 'chat'); j.chat.open(); prefill(); } else call(j, mode);
+        note(j, mode); j.chat.open(); prefill();
       }, 3500);
     }
     function set(sel, text) { var el = dlg.querySelector(sel); if (el) el.textContent = text; }
     function open(opts) {
       opts = opts || {};
       state.wa = opts.wa || waLink('default'); state.ctx = opts.ctx || ''; state.msg = opts.msg || '';
-      // "Book a demo" goes straight to video when a person can pick up.
-      if (opts.mode === 'video' && opts.direct && WEBCHAT_ON && deskOpen()) return go('video');
+      // With the widget on the page there is no chooser: the chat opens at once.
+      if (WEBCHAT_ON) return go(opts.mode || 'chat');
       if (!dlg || typeof dlg.showModal !== 'function') return fallback(opts.mode || 'chat');
       var desk = deskOpen();
       set('[data-connect-title]', opts.mode === 'video' ? 'A demo on video' : opts.mode === 'voice' ? 'Call Jwero' : 'Talk to Jwero');
@@ -315,6 +320,8 @@ function jwFromInr(n) {
       if (!isWa && !isDemo && !isTel && mode === null) return;
       e.preventDefault();
       track(isDemo ? 'demo_click' : isTel ? 'call_click' : 'wa_click', { ctx: a.getAttribute('data-wa') || mode || (isTel ? 'tel' : 'wa'), label: (a.textContent || '').trim().slice(0, 60) });
+      // A button labelled WhatsApp opens WhatsApp itself, never the on-site chat.
+      if (a.hasAttribute('data-wa-direct')) { window.open(waLink(a.getAttribute('data-wa') || 'default'), '_blank', 'noopener'); return; }
       var msg = '';
       if (href.indexOf('https://wa.me/') === 0) { try { msg = decodeURIComponent((href.split('text=')[1] || '')).replace(/\s*\[ref:[^\]]*\]\s*$/, ''); } catch (x) {} }
       open({ mode: mode || (isDemo ? 'video' : isTel ? 'voice' : ''), direct: isDemo, wa: a.getAttribute('data-wa-extra') ? waLink(a.getAttribute('data-wa') || 'default', a.getAttribute('data-wa-extra')) : isWa && href.indexOf('https://') === 0 ? href : '', ctx: a.getAttribute('data-wa') || (isDemo ? 'book-demo' : isTel ? 'call' : ''), msg: isWa ? msg : '' });

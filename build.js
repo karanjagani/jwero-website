@@ -13,8 +13,6 @@ try { require('./scripts/thumbs'); } catch (e) { console.warn('thumbs skipped:',
 const DIST = path.join(ROOT, 'dist');
 // Tracking IDs. Leave empty until the accounts exist; env JW_GTM / JW_GA4 / JW_META override.
 const ANALYTICS = { gtm: '', ga4: '', meta: '' };
-// Jwero's own visitor tracking (Optimize), on every page. Added 2026-10-09.
-const JWERO_TRACK = `<script async src="https://os.jwero.ai/t.js?site_key=-2seYVXa24kjyfo2k1km0arYH35kqrHj&endpoint_origin=https%3A%2F%2Fos.jwero.ai" data-site-key="-2seYVXa24kjyfo2k1km0arYH35kqrHj" data-endpoint-origin="https://os.jwero.ai"></script>`;
 const SITE = 'https://jwero.ai';
 const BRAND = 'Jwero';
 const TAGLINE = 'You focus on jewellery. We handle the chaos';
@@ -23,7 +21,7 @@ const TAGLINE = 'You focus on jewellery. We handle the chaos';
 // window.jwero.chat.open(). Until a key is set the connect panel falls back to
 // WhatsApp / phone / the demo form, so no button is ever a dead end.
 // Set JWERO_SITE_KEY in the build environment, or paste the key below.
-const WEBCHAT = { origin: process.env.JWERO_WEBCHAT_ORIGIN || 'https://os.jwero.ai', siteKey: process.env.JWERO_SITE_KEY || '' };
+const WEBCHAT = { origin: process.env.JWERO_WEBCHAT_ORIGIN || 'https://os.jwero.ai', siteKey: process.env.JWERO_SITE_KEY || '-2seYVXa24kjyfo2k1km0arYH35kqrHj' };
 const SIGNATURE = 'Markets change. Customers change. Technology changes. Your business shouldn’t have to chase every change.';
 const ORG_DESCRIPTION =
   'Jwero is the Autonomous Jewellery OS, run by AI: customers, catalogue, stock, counter billing, purchase, manufacturing, accounts and team on one record, with WhatsApp and Instagram commerce, gold schemes and savings plans, and governed AI staff, in one place.';
@@ -342,7 +340,7 @@ function footerHTML() {
   </div>
 </footer>
 <div class="sticky-bar" role="navigation" aria-label="Quick actions">
-  <a class="sb-wa" href="#" data-wa="sticky" data-connect="chat">WhatsApp</a>
+  <a class="sb-wa" href="#" data-wa="sticky" data-wa-direct>WhatsApp</a>
   <a class="sb-start" href="${TRIAL_URL_B}sticky" rel="noopener" data-trial>Start ₹3,600</a>
   <a class="sb-demo" href="#" data-wa="handle">Let Jwero run it</a>
 </div>
@@ -1742,7 +1740,6 @@ function layout(page) {
   // Tracking: set the IDs in ANALYTICS (or env JW_GTM / JW_GA4 / JW_META) and the snippets render on every page.
   const A = { gtm: process.env.JW_GTM || ANALYTICS.gtm, ga4: process.env.JW_GA4 || ANALYTICS.ga4, meta: process.env.JW_META || ANALYTICS.meta };
   const analyticsHead = [
-    JWERO_TRACK,
     A.gtm ? `<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${A.gtm}');</script>` : '',
     A.ga4 && !A.gtm ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${A.ga4}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${A.ga4}');</script>` : '',
     A.meta ? `<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${A.meta}');fbq('track','PageView');</script>` : '',
@@ -1786,7 +1783,7 @@ ${withIcpHome(withDoors(trimSolution(withBuyerRole(withPlaybook(withSim(withShif
 </main>
 ${searchDialog()}
 ${connectDialog()}
-${icpDialog()}${WEBCHAT.siteKey ? `\n<script async src="${WEBCHAT.origin}/t.js" data-site-key="${WEBCHAT.siteKey}"></script>` : ''}
+${icpDialog()}${WEBCHAT.siteKey ? `\n<script async src="${WEBCHAT.origin}/t.js?site_key=${WEBCHAT.siteKey}&endpoint_origin=${encodeURIComponent(WEBCHAT.origin)}" data-site-key="${WEBCHAT.siteKey}" data-endpoint-origin="${WEBCHAT.origin}"></script>` : ''}
 ${footerHTML()}
 <script src="/assets/site.js?v=${ASSET_V.js}" defer></script>
 ${page.body.indexOf('data-sim=') !== -1 || SIM_PAGES[page.slug] ? `<script src="/assets/sims.js?v=${ASSET_V.sims}" defer></script>` : ''}

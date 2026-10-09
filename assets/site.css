@@ -5171,9 +5171,3 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 /* Simulator note: a plain sentence, not a label */
 .sim-note { font: 400 .875rem/1.5 var(--font); letter-spacing: 0; text-transform: none; max-width: 56ch; margin-left: auto; margin-right: auto; }
 .h1-turn.is-inline { display: inline; }
-/* Jwero's own chat bubble (os.jwero.ai/t.js) sits at the bottom right; our own corner elements make room for it */
-:root:has(#jwero-optimize-root) .to-top { right: 86px; }
-@media (max-width: 760px) {
-  :root:has(#jwero-optimize-root) .sticky-bar { padding-right: 78px; gap: 5px; }
-  :root:has(#jwero-optimize-root) .sticky-bar a { padding-left: 6px; padding-right: 6px; font-size: .8125rem; white-space: nowrap; }
-}
