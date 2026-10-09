@@ -41,7 +41,7 @@ const TIERS = () => `${require('./graphics').tierGlance()}
     <p class="jb-fine">You pay only for your own hosting and the services you connect, such as WhatsApp messaging and telephony.</p>
   </article>
 </div>
-<p class="jb-promise">Onboarding in a day · Refer a jeweller, save 10%</p>`;
+<p class="jb-promise">Onboarding in a day</p>`;
 
 const section = () => L.section(`<span id="jbaas"></span>${L.sectionHead('JEWELLERY BUSINESS AS A SERVICE', 'Use the platform.<br>Or let Jwero run it for you.', 'One platform, three ways to have it. Run it with your team, hand the work to Jwero’s specialists and AI, or roll it out across a chain with your own terms.')}${TIERS()}<p class="jb-more"><a href="/jewellery-business-as-a-service">See how Jewellery Business as a Service works →</a></p>`, { tone: 'tint' });
 
