@@ -3,8 +3,8 @@ const BC = (label) => [['Home', '/'], ['Platform', '/platform'], [label]];
 
 const platform = {
   slug: 'platform',
-  title: 'The Jewellery Business Operating System: How Jwero Works | Jwero',
-  description: 'How Jwero runs a jewellery business on one record: customers, catalogue, stock, counter billing, purchase, workshop, accounts and team, with an AI workforce that waits for your approval.',
+  title: 'Jewellery Business Operating System: One Command Centre | Jwero',
+  description: 'Run a jewellery business from one command centre: every process, customer journey and touchpoint visible as it happens, across customers, counter, stock, purchase, workshop, books and team, so you act the day something goes off.',
   breadcrumbs: [['Home', '/'], ['Platform']],
   faqs: [
     ...require('./journey').why.faqs,
@@ -18,8 +18,8 @@ const platform = {
   body: `
 ${L.hero({
   eyebrow: 'WHY AN OS, AND THE TOUR',
-  h1: 'One record for the whole business, every department on it, nothing sent without your approval.',
-  sub: 'Customers, catalogue, stock, the counter, purchase, the workshop, the books and the team. Every module in Jwero reads and writes the same data — that is what makes it an operating system, not a bundle of features.',
+  h1: 'Run your whole jewellery business from one command centre.',
+  sub: 'See every process, every customer journey and every touchpoint as it happens, across your team, customers, vendors and karigars. When something goes off, you know today and act today, not at the end of the month or the quarter.',
   primary: { href: '#', label: 'Chat or call with us', wa: 'platform' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
   mock: require('./graphics').orbit(),

@@ -502,16 +502,16 @@ A: You do. Every business runs in its own isolated database, and you can export 
 
 ---
 
-# The Jewellery Business Operating System: How Jwero Works
+# Jewellery Business Operating System: One Command Centre
 URL: https://jwero.ai/platform
 
-How Jwero runs a jewellery business on one record: customers, catalogue, stock, counter billing, purchase, workshop, accounts and team, with an AI workforce that waits for your approval.
+Run a jewellery business from one command centre: every process, customer journey and touchpoint visible as it happens, across customers, counter, stock, purchase, workshop, books and team, so you act the day something goes off.
 
 WHY AN OS, AND THE TOUR
 
-## One record for the whole business, every department on it, nothing sent without your approval.
+## Run your whole jewellery business from one command centre.
 
- Customers, catalogue, stock, the counter, purchase, the workshop, the books and the team. Every module in Jwero reads and writes the same data, that is what makes it an operating system, not a bundle of features.
+ See every process, every customer journey and every touchpoint as it happens, across your team, customers, vendors and karigars. When something goes off, you know today and act today, not at the end of the month or the quarter.
 
  Chat or call with us 
  Book a demo 
