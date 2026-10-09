@@ -1355,7 +1355,7 @@ function homeHero({ kicker, h1, sub, rail }) {
       <div class="hero-home-copy">
         <p class="hero-kicker">${mark('mark-xs')}${kicker}</p>
         <h1>${h1}</h1>
-        <p class="sub">${sub}</p>${rail ? heroRail() : ''}
+        ${sub ? `<p class="sub">${sub}</p>` : ''}${rail ? heroRail() : ''}
         <div class="hero-doors">
           <a class="hero-door" href="${TRIAL_URL}home-hero" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b><em>₹3,600 first month, then ₹18,000 a month.</em></a>
           <a class="hero-door is-managed" href="#" data-wa="handle"><span>Jwero runs it</span><b>Let Jwero run it</b><em>No team to hire. No tools to buy.</em></a>

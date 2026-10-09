@@ -24,7 +24,7 @@ const home = {
 ${L.homeHero({
   kicker: 'You focus on jewellery. We handle the chaos.',
   h1: 'Jewellery software that runs the whole business: customers, counter, stock, team and books.',
-  sub: 'AI drafts the work and flags what is slipping, and nothing goes out without your approval.',
+  sub: '',
   rail: true,
 })}
 
