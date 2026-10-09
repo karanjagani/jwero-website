@@ -29,7 +29,7 @@ ${L.homeHero({
 
 <section class="pz-logos">${L.customerLogos()}</section>
 
-${require('./positioning').quotes(3)}
+${L.section(`${L.sectionHead('IN THEIR WORDS', 'Jewellers on working with Jwero.', '')}${require('./positioning').quoteCards(3)}<p class="jb-more"><a href="/success-stories">Read what more jewellers say →</a></p>`)}
 
 ${L.section(`${L.sectionHead('WHO IT IS FOR', 'Built for your kind of jewellery business.', 'The same Jwero, set up the way your business works.')}
   <div class="bl-goals bl-goals-3 home-who">${[
@@ -110,9 +110,8 @@ ${L.section(
     </ol>
     <p class="close-plan-note">The sooner you start, the sooner it shows up in your own growth report.</p>
     <div class="cta-row center">
-      <a class="btn btn-primary" href="#" data-wa="close">Chat or call with us</a>
-      <a class="btn btn-ghost-light" href="/book-demo">Book a demo</a>
-      <a class="btn-text-light" href="#" data-wa="pilot">or start a pilot with your own data</a>
+      <a class="btn btn-primary" href="#" data-wa="close">Talk to us</a>
+      <a class="btn btn-ghost-light" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=close" rel="noopener" data-trial>Try Free Now</a>
     </div>
   </div>`
 , { tone: 'ink' })}

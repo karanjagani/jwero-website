@@ -1039,6 +1039,7 @@ ${close()}
 module.exports = [home, why, how, aiExperts, handle, self, count, success];
 module.exports.levels = levels;
 module.exports.quotes = quotes;
+module.exports.quoteCards = quoteCards;
 module.exports.quotesOf = (ix) => L.section(`${eyebrow('In their words')}<h2 class="pz-h pz-center">Jewellers on working with Jwero.</h2><div class="pz-quotes">${ix.map((i) => { const [q, who, where] = QUOTES[i % QUOTES.length]; return `<figure class="pz-quote"><blockquote>“${q}”</blockquote><figcaption><b>${who}</b><span>${where}</span></figcaption></figure>`; }).join('')}</div><p class="pz-cta-center"><a class="pz-link" href="/success-stories">Read what more jewellers say →</a></p>`);
 module.exports.quoteOne = quoteOne;
 module.exports.refer = refer;

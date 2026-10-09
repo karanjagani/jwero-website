@@ -5225,3 +5225,13 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 .rail-panel .hrail { max-width: none; margin-top: 22px; }
 .rail-panel .hrail-line { display: none; }
 @media (max-width: 760px) { .rail-panel { padding: 26px 18px 34px; } }
+
+/* Phones: the sticky bar is the only fixed control; the rocket goes, Jump to hides while scrolling down, the journey labels get room */
+@media (max-width: 760px) {
+  .to-top { display: none !important; }
+  .jump.sb-hide { opacity: 0; pointer-events: none; transform: translateY(8px); }
+}
+@media (max-width: 560px) {
+  .hrail-stop { gap: 4px; }
+  .hrail-stop b { font-size: .5625rem; letter-spacing: 0; max-width: 46px; text-align: center; line-height: 1.1; }
+}

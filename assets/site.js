@@ -437,7 +437,7 @@ function jwFromInr(n) {
       if (ticking) return; ticking = true;
       requestAnimationFrame(function () {
         var y = window.scrollY, d = y - last;
-        if (Math.abs(d) > 8) { bar.classList.toggle('sb-hide', d > 0 && y > 400 && (window.innerHeight + y) < document.documentElement.scrollHeight - 200); last = y; }
+        if (Math.abs(d) > 8) { var hide = d > 0 && y > 400 && (window.innerHeight + y) < document.documentElement.scrollHeight - 200; bar.classList.toggle('sb-hide', hide); var jm = document.querySelector('.jump'); if (jm) jm.classList.toggle('sb-hide', hide); last = y; }
         ticking = false;
       });
     }, { passive: true });
