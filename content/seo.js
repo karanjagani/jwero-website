@@ -493,7 +493,6 @@ const broadcast = {
     applicationCategory: 'BusinessApplication', operatingSystem: 'Web', url: 'https://jwero.ai/whatsapp-broadcast-for-jewellers',
     description: 'WhatsApp marketing for jewellers on the official WhatsApp Business Platform: broadcasts and campaigns to live customer segments, triggered messages, approved templates with catalogue cards, consent and number health, a team inbox for replies, AI-call follow-up and sales traced to each send.',
     isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
-    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month; Meta message fees at cost.' },
   },
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to run a WhatsApp marketing campaign for a jewellery shop', step: MKT_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   faqs: mktFaqs,
@@ -630,7 +629,7 @@ const smsLanding = needPage({
     { lever: 'REMINDERS', before: 'Scheme reminders sent by hand, when someone remembers.', after: 'Drafted on schedule for every instalment.' },
     { lever: 'COST', before: 'Paying for messages nobody reads.', after: 'The cheapest channel that gets read.' },
   ],
-  notYet: 'SMS in India needs sender and template registration under the telecom rules, which you complete once. RCS reaches only phones and networks that support it. Messages are charged per message at the published rates.',
+  notYet: 'SMS in India needs sender and template registration under the telecom rules, which you complete once. RCS reaches only phones and networks that support it. Messages are charged per message at the rate shown in your accounts.',
   faqs: [
     { q: 'Does SMS marketing still work for jewellers?', a: 'For short, certain messages, yes: payment received, order ready, instalment due. For offers and conversations, WhatsApp usually gets more response.' },
     { q: 'What is RCS messaging for a jewellery shop?', a: 'RCS is the richer successor to SMS: images, buttons and a verified business name inside the phone’s messaging app. It works on supported phones and networks.' },
@@ -740,7 +739,6 @@ const aiCalling = {
     applicationCategory: 'BusinessApplication', operatingSystem: 'Web', url: 'https://jwero.ai/ai-calling-for-jewellers',
     description: 'Voice AI agents for jewellers: bulk inbound call answering, bulk outbound calling campaigns, event triggers, WhatsApp follow-through and transcripts on the customer record, in 14 languages.',
     isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
-    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month; AI calls at ₹7 a call, all inclusive.' },
   },
   extraSchema: [{
     '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up AI calling for a jewellery shop',
@@ -931,11 +929,11 @@ const hi = {
   slug: 'hi',
   lang: 'hi',
   title: 'ज्वेलरी सॉफ्टवेयर: बिलिंग, स्टॉक, CRM और WhatsApp | Jwero',
-  description: 'ज्वेलर्स के लिए सॉफ्टवेयर: लाइव सोने के भाव पर GST बिलिंग, स्टॉक, खरीद, कारीगर खाता, गोल्ड स्कीम, गिरवी, WhatsApp और हिसाब किताब, सब एक ही रिकॉर्ड पर। पहला महीना ₹3,600।',
+  description: 'ज्वेलर्स के लिए सॉफ्टवेयर: लाइव सोने के भाव पर GST बिलिंग, स्टॉक, खरीद, कारीगर खाता, गोल्ड स्कीम, गिरवी, WhatsApp और हिसाब किताब, सब एक ही रिकॉर्ड पर। शुरुआत फ्री ट्रायल से।',
   breadcrumbs: [['Home', '/'], ['हिंदी']],
   faqs: [
     { q: 'क्या Jwero हिंदी में चलता है?', a: 'सपोर्ट और ट्रेनिंग हिंदी में मिलती है। सॉफ्टवेयर की स्क्रीन अभी अंग्रेज़ी में हैं, और कारीगर की स्क्रीन पर हिंदी का शुरुआती रूप उपलब्ध है।' },
-    { q: 'कीमत क्या है?', a: '₹18,000 प्रति माह, हर महीने बिलिंग। हर मॉड्यूल शामिल है। पहला महीना ₹18,000 की जगह ₹3,600 में।' },
+    { q: 'कीमत क्या है?', a: 'एक ही प्लान, हर मॉड्यूल शामिल। शुरुआत फ्री ट्रायल से होती है, और ट्रायल पूरा होने पर आपकी कीमत आपके अकाउंट में दिखती है। हर महीने बिलिंग।' },
     { q: 'क्या Tally छोड़ना पड़ेगा?', a: 'नहीं। हर बिक्री, खरीद और भुगतान Jwero के अपने खाते में GST के साथ दर्ज होता है, और Tally या Zoho Books ब्रिज से आपके अकाउंटेंट तक पहुँच जाता है।' },
     { q: 'क्या AI ग्राहक को बिना पूछे मैसेज भेजेगा?', a: 'नहीं। AI जो भी लिखता है वह आपकी मंज़ूरी का इंतज़ार करता है। आप हाँ कहें, तभी भेजा जाता है।' },
   ],
@@ -966,8 +964,8 @@ ${L.section(
   `<div class="home-price">
     <div>
       <p class="eyebrow">कीमत</p>
-      <h2>हर मॉड्यूल। ₹18,000 प्रति माह। पहला महीना ₹3,600।</h2>
-      <p>एक ही प्लान, हर महीने बिलिंग। पहला महीना ₹18,000 की जगह ₹3,600 में। WhatsApp मैसेज, AI और कॉल प्रीपेड वॉलेट से चलते हैं।</p>
+      <h2>एक प्लान, हर मॉड्यूल। शुरुआत फ्री ट्रायल से।</h2>
+      <p>एक ही प्लान, हर महीने बिलिंग। ट्रायल पूरा होने पर आपकी कीमत आपके अकाउंट में दिखती है। WhatsApp मैसेज, AI और कॉल प्रीपेड बैलेंस से चलते हैं।</p>
     </div>
     <div class="cta-row">
       <a class="btn btn-primary" href="${L.TRIAL_URL}hindi" rel="noopener" data-trial>₹3,600 में शुरू करें</a>
@@ -978,7 +976,7 @@ ${L.section(
 
 ${L.section(`${L.sectionHead('सवाल', 'ज्वेलर्स सबसे पहले क्या पूछते हैं।', '')}${L.faqBlock([
   { q: 'क्या Jwero हिंदी में चलता है?', a: 'सपोर्ट और ट्रेनिंग हिंदी में मिलती है। सॉफ्टवेयर की स्क्रीन अभी अंग्रेज़ी में हैं, और कारीगर की स्क्रीन पर हिंदी का शुरुआती रूप उपलब्ध है।' },
-  { q: 'कीमत क्या है?', a: '₹18,000 प्रति माह, हर महीने बिलिंग। हर मॉड्यूल शामिल है। पहला महीना ₹18,000 की जगह ₹3,600 में।' },
+  { q: 'कीमत क्या है?', a: 'एक ही प्लान, हर मॉड्यूल शामिल। शुरुआत फ्री ट्रायल से होती है, और ट्रायल पूरा होने पर आपकी कीमत आपके अकाउंट में दिखती है।' },
   { q: 'क्या Tally छोड़ना पड़ेगा?', a: 'नहीं। हर बिक्री, खरीद और भुगतान Jwero के अपने खाते में GST के साथ दर्ज होता है, और Tally या Zoho Books ब्रिज से आपके अकाउंटेंट तक पहुँच जाता है।' },
   { q: 'क्या AI ग्राहक को बिना पूछे मैसेज भेजेगा?', a: 'नहीं। AI जो भी लिखता है वह आपकी मंज़ूरी का इंतज़ार करता है। आप हाँ कहें, तभी भेजा जाता है।' },
   { q: 'शुरू करने में कितना समय लगता है?', a: 'पहला चरण कुछ दिनों में: आपके ग्राहक और स्टॉक हम इम्पोर्ट करते हैं, आपका WhatsApp नंबर जुड़ता है और कैटलॉग प्रकाशित होता है।' },

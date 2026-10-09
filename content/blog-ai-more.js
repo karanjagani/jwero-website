@@ -396,7 +396,7 @@ module.exports = {
   <tr><td>New listings from photos</td><td>120 pieces</td><td>Per product, from the wallet</td></tr>
   <tr><td>Product images cleaned up</td><td>120 images</td><td>Per image, from the wallet</td></tr>
   <tr><td>WhatsApp replies drafted at night</td><td>900 messages</td><td>Messages and AI from the wallet</td></tr>
-  <tr><td>The platform itself</td><td>Every module</td><td>₹18,000 a month, first month ₹3,600</td></tr>
+  <tr><td>The platform itself</td><td>Every module</td><td>One plan; price shown in your account after the free trial</td></tr>
   </tbody></table>
   <p>Against this: the staff hours those calls, listings and night replies would take, and the instalments, enquiries and sales that would otherwise be missed. Put your own numbers in the calculators on the product pages before you decide.</p>
   <h2>Pricing models you will meet</h2>

@@ -156,7 +156,7 @@ const terms = doc({
   short: [
     'Jwero is for businesses, not consumers. The person who accepts these terms must be authorised to do so for the business.',
     'Your data is yours. You can export it at any time, including after you leave.',
-    'There is no free trial. The first month is ₹3,600 instead of ₹18,000. After that the plan fee is charged in advance from a prepaid wallet, and usage such as messages, AI and calls is charged at published rates.',
+    'A new workspace starts with a free trial. Your plan fee is shown in your account before the trial ends, and nothing is charged until you accept it. After that the fee is charged in advance from a prepaid wallet, and usage such as messages, AI and calls is charged at the rates shown in your account.',
     'You are responsible for what you and your staff send to your customers, including messages you approve that the AI drafted.',
     'Jwero is software. It is not your accountant, lawyer, lender or tax adviser.',
   ],
@@ -165,11 +165,11 @@ const terms = doc({
     <p>Jwero is offered to businesses and professionals for use in the course of their trade. It is not offered to consumers. You confirm that you are at least 18, that the information you give us is accurate, and that you have authority to bind the business you represent.</p>`],
     ['Your account', 'Keep logins personal and secure. The owner controls who gets access.', `
     <p>The person who creates a workspace is its owner and may invite others and set their permissions. You are responsible for activity under your logins. Do not share a login between people. Turn on multi-factor login where you can, remove access promptly when someone leaves, and tell us at once if you suspect misuse.</p>`],
-    ['The first month', 'There is no free trial. The first month is ₹3,600.', `
-    <p>A new workspace pays ₹3,600 for its first month of Jwero One instead of ₹18,000, with every module included. The first-month price applies once per business. From the second month the plan fee is ₹18,000 a month. Usage on the wallet is charged at the published rates from the first day.</p>`],
-    ['Fees, the wallet and taxes', 'One plan fee in advance, usage at published rates, from a prepaid balance.', `
-    <p><strong>Plan.</strong> The current fees are on the <a href="/pricing">pricing page</a>. The plan fee is charged monthly, in advance. Extra locations, registers, capacity and connected devices are charged at the published rates.</p>
-    <p><strong>Wallet.</strong> Fees and usage, including WhatsApp and SMS messages, AI, voice and video minutes and similar metered items, are debited from a prepaid wallet at the published rates. Rates set by third parties, such as Meta’s message charges, can change when they change theirs.</p>
+    ['The free trial', 'You start with a free trial. Your price is shown before it ends.', `
+    <p>A new workspace starts with a free trial of Jwero One, with every module included. A free trial applies once per business. Before the trial ends, the plan fee for your business is shown in your account; you are charged only if you accept it and continue. Per-use services you choose to use during the trial, such as WhatsApp messages, AI and calls, are charged from your wallet at the rates shown in your account.</p>`],
+    ['Fees, the wallet and taxes', 'One plan fee in advance, usage at the rates shown in your account, from a prepaid balance.', `
+    <p><strong>Plan.</strong> The fees that apply to your business are shown in your account; the <a href="/pricing">pricing page</a> explains how they work. The plan fee is charged monthly, in advance. Extra locations, registers, capacity and connected devices are charged at the rates shown in your account.</p>
+    <p><strong>Wallet.</strong> Fees and usage, including WhatsApp and SMS messages, AI, voice and video minutes and similar metered items, are debited from a prepaid wallet at the rates shown in your account. Rates set by third parties, such as Meta’s message charges, can change when they change theirs.</p>
     <p><strong>If the balance runs out.</strong> When the wallet has no balance, the workspace becomes read-only until it is topped up. Your data is not deleted because of a low balance. If a subscription fee remains unpaid for seven days, the subscription is cancelled so that further fees stop accruing.</p>
     <p><strong>Taxes.</strong> Fees exclude GST and other taxes, which are added at the applicable rate. We issue a tax invoice for each charge.</p>
     <p><strong>Refunds.</strong> You may cancel at any time and the subscription then ends at the close of the period already paid for. Plan fees for a period that has started are not refunded, and moving to a lower plan mid-period does not create a refund. Wallet top-ups are prepaid. An unused paid balance is refunded where the law requires it or where we agree in writing; promotional credit is never refundable.</p>

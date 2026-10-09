@@ -818,7 +818,7 @@ ${L.ctaBand('Plan your season before it starts.', 'Tell us your busiest weeks �
 const costGuideFaqs = [
   { q: 'What does jewellery software cost in India?', a: 'It depends on scope — a single WhatsApp tool can start under ₹3,000/month, a full unified platform costs more but replaces several of those tools at once. Jwero’s own price is published: every module for ₹18,000 a month — see <a href="/pricing">the pricing page</a>., or ask us directly on WhatsApp.' },
   { q: 'Is it cheaper to keep using separate tools?', a: 'On the sticker price of any one tool, often yes. Add up what a WhatsApp tool, a catalogue app, a website subscription and an SMS vendor cost together, plus the staff hours spent reconciling them, and the comparison usually looks different — see the Frankenstack breakdown on <a href="/pricing">the pricing page</a>.' },
-  { q: 'Why won’t this article just quote a price?', a: 'It does, for Jwero: one plan with every module at ₹18,000 a month, plus a published rate card for per-use services — all on <a href="/pricing">the pricing page</a>. For other vendors, a single number without your scope and current stack attached would be more marketing than answer.' },
+  { q: 'Why won’t this article just quote a price?', a: 'Because a number means little without your scope. Jwero is one plan with every module; it starts with a free trial, and your price is shown in your account when the trial ends. <a href="/pricing">The pricing page</a> explains how it works. For other vendors, a single number without your scope and current stack attached would be more marketing than answer.' },
 ];
 
 const costGuide = {
@@ -842,7 +842,7 @@ ${L.section(
   `<div class="post-body">
   <h2>Why this question rarely gets a straight answer</h2>
   <p>Search for jewellery software cost in India and most results either quote one vendor’s sticker price with no context, or dodge the question entirely with "contact us for pricing." Neither is very useful, because the real cost of running a jewellery business’s software isn’t one number. It’s the sum of whatever tools are already stitched together, plus the staff time spent keeping them in sync, plus whatever gets missed because nothing connects.</p>
-  <p>This isn’t going to invent a specific Jwero price here either — Jwero One is ₹18,000 a month, with every module included — the full breakdown, including the per-use rate card, is on <a href="/pricing">the pricing page</a>, not a blog post. What this article can do is lay out the cost anatomy clearly enough that a straight number, wherever you get it, means something.</p>
+  <p>This isn’t going to quote a Jwero price here either. Jwero One is one plan with every module, it starts with a free trial, and your price is shown in your account when the trial ends; <a href="/pricing">the pricing page</a> explains how it works. What this article can do is lay out the cost anatomy clearly enough that a straight number, wherever you get it, means something.</p>
 
   <h2>The tools a typical business is already paying for</h2>
   <p>Most jewellery businesses aren’t paying for one piece of software. They’re paying for several, bought at different times, for different reasons, that were never designed to talk to each other. A WhatsApp bulk-messaging tool for festival blasts. A catalogue app to share designs. A website subscription that’s really a brochure. Sometimes an SMS vendor left over from before WhatsApp took over. And a scheme register, usually still on paper or in a spreadsheet, with staff hours spent reconciling it every month.</p>
@@ -1062,7 +1062,7 @@ ${L.ctaBand('Start where you actually are.', 'Tell us about your first store —
 const waPricingGuideFaqs = [
   { q: 'How does Meta charge for the WhatsApp Business API now?', a: 'Since 1 July 2025 Meta charges per template message delivered, not per conversation. Each template is a marketing, utility or authentication message, and each category has its own rate by country.' },
   { q: 'Are replies to customers charged?', a: 'Free-form replies inside the 24-hour customer service window, which opens when a customer messages you, are not charged by Meta. Utility templates sent inside that window are also free.' },
-  { q: 'What does Jwero charge per WhatsApp message?', a: 'Jwero’s published wallet rates are ₹1.05 per marketing message and ₹0.16 per utility, authentication or service message. The rate card on the pricing page is the one your billing screen uses.' },
+  { q: 'What does Jwero charge per WhatsApp message?', a: 'Jwero charges messages from a prepaid balance, at the rates shown in your account for your country. Marketing messages cost more than utility, authentication or service messages, as Meta prices them, and every charge is on your billing screen.' },
   { q: 'Which jewellery messages are marketing and which are utility?', a: 'Offers, festival campaigns, new collections and win-back messages are marketing. Order updates, scheme instalment receipts, repair status and appointment confirmations are usually utility, if the template is approved in that category.' },
   { q: 'How can a jeweller keep WhatsApp costs down?', a: 'Answer enquiries quickly so replies fall inside the free service window, send campaigns to a chosen segment instead of the whole list, and keep transactional updates as utility templates.' },
 ];
@@ -1081,7 +1081,7 @@ ${L.hero({
   h1: 'WhatsApp Business API Pricing for Jewellers: How Per-Message Pricing Works',
   sub: 'Since July 2025 Meta charges for each template message delivered, not for each conversation. Here is what that means for scheme reminders, campaigns and everyday replies.',
   primary: { href: '#', label: 'Ask us about your setup', wa: 'blog-wapricing' },
-  secondary: { href: '/pricing', label: 'See Jwero’s rate card' },
+  secondary: { href: '/pricing', label: 'How Jwero pricing works' },
 })}
 ${L.section(postMeta(6, 'WhatsApp Pricing'))}
 
@@ -1100,7 +1100,7 @@ ${L.section(
   <p>A shop that mostly replies to enquiries spends little. A shop that runs gold scheme reminders, birthday and anniversary wishes and festival campaigns sends many templates, and the marketing ones add up. Two habits keep the bill sensible: reply fast, so conversations stay inside the free window, and send campaigns to a chosen segment instead of the whole contact list.</p>
 
   <h2>Jwero’s rates</h2>
-  <p>In Jwero, messages are charged from a prepaid wallet at published rates: ₹1.05 per marketing message and ₹0.16 per utility, authentication or service message. The same rate card is on the <a href="/pricing">pricing page</a> and inside your billing screen, and you see the balance and the spend as you go. Meta revises its own rates from time to time; when it does, the rate card is updated.</p>
+  <p>In Jwero, messages are charged from a prepaid balance, at rates shown in your account for your country. You see the balance and the spend as you go. Meta revises its own rates from time to time; when it does, the rates in your account are updated.</p>
 
   <h2>Official API, not a bulk sender</h2>
   <p>Unofficial bulk-sender tools are the most common way a jewellery business loses its WhatsApp number. The official API with approved templates, consent and a shared team inbox costs a little per message and keeps the number safe. That is what Jwero runs on.</p>

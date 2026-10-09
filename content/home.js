@@ -10,7 +10,6 @@ const home = {
     name: 'Jwero', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
     description: 'The Autonomous Jewellery OS, run by AI: CRM, showroom, POS and billing, inventory, purchase, manufacturing, accounts, HR and reports on one record, with WhatsApp and Instagram commerce, gold savings schemes and a governed AI workforce.',
     url: 'https://jwero.ai',
-    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Per month, billed monthly, excluding GST. Every module. First month ₹3,600.' },
     review: require('./positioning').QUOTES.slice(0, 5).map(([body, name, biz]) => ({ '@type': 'Review', reviewBody: body, author: { '@type': 'Person', name: String(name).replace(/<[^>]*>/g, '') }, publisher: { '@type': 'Organization', name: String(biz || '').replace(/<[^>]*>/g, '') } })),
   },
   faqs: [
@@ -63,7 +62,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(`<div class="price-line">
-  <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Run it yourself, or let Jwero run it.</h2><p>One price, ₹18,000 a month, replaces the 10 to 15 tools you pay for today, with the first month at ₹3,600. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included, priced on the work.</p></div>
+  <div><p class="eyebrow">ONE PRICE, EVERY MODULE</p><h2>Run it yourself, or let Jwero run it.</h2><p>One plan with every module replaces the 10 to 15 tools you pay for today. You start with a free trial, and your price is shown in your account when it ends. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included.</p></div>
   <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=home-price">Join the waitlist</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
 </div>`, { tone: 'tint' })}
 

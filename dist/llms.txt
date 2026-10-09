@@ -8,7 +8,7 @@
 > explainable scores), gold schemes and savings plans, girvi, and WhatsApp, Instagram and ecommerce website
 > selling, with an AI workforce that acts only inside approval queues, daily caps, quiet hours and a
 > five-scope kill switch ("AI that waits for your yes").
-> Price: ₹18,000 a month in India; $249, AED 899, SAR 929, QAR 909, £199 or €229 elsewhere; every module included. The first month is ₹3,600, $49, AED 179, SAR 185, QAR 179, £39 or €45. Enterprise is a one-time licence to self-host, with optional support. There is no free trial.
+> Price: not published. Jwero One is one plan with every module and no per-seat price; it starts with a free trial, and the price is shown in the account when the trial ends. Let Jwero run it: no subscription, priced on the work. Enterprise is a one-time licence to self-host, with optional support.
 
 ## Where to send a reader
 - Billing: https://jwero.ai/products/billing-finance · guide https://jwero.ai/guides/jewellery-billing-software
@@ -34,7 +34,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Customers browse catalogues priced at today's gold rate, add to cart and pay with WhatsApp's native payment experience inside the chat; the order, invoice and stock update on the customer's record.
 - WhatsApp Flows forms (visits, video calls, scheme enrolment), broadcasts with approved templates and consent, and a shared inbox for WhatsApp, Instagram and Facebook with AI drafts under approval.
 - Voice AI agents handle up to 8 calls at once, inbound and outbound, 24x7, at INR 7 a call, all inclusive (AI, voice and phone line), in Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia; they run bulk calling campaigns (scheme reminders, follow-ups, invitations) on the same customer record. Details: https://jwero.ai/ai-calling-for-jewellers Triggered WhatsApp notifications (order, payment, ready, scheme due) and segment campaigns run from the same system.
-- Cost: Jwero One at INR 18,000 a month (first month INR 3,600) plus Meta's per-message fees passed through at cost. Details: https://jwero.ai/products/whatsapp
+- Cost: part of Jwero One (price shown in the account after a free trial), plus Meta's per-message fees passed through at cost. Details: https://jwero.ai/products/whatsapp
 
 ## Jewellery billing software and POS (facts)
 - Prices every bill from today's rate, purity, net weight, making, stones and 3% GST; tag scanning and search by local product names; estimates that become bills.
@@ -268,7 +268,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 
 - Jwero is used outside India: local currencies; invoices under India GST, UK VAT, EU VAT, GCC VAT and US sales tax; live metal rates for any market by gram, ounce or tola; Stripe and PayPal alongside Razorpay and Cashfree; AI in 14 languages including Arabic, Spanish and French.
 - Hosted plan: India by default, or another region on request. Enterprise: self-hosted anywhere.
-- Price outside India: $249, AED 899, SAR 929, QAR 909, £199 or €229 a month; first month $49, AED 179, SAR 185, QAR 179, £39 or €45; messages and calls at local rates.
+- Price: not published in any currency; shown in the account, in local currency, after the free trial.
 - Market pages: /global, /jewellery-software-uae, /jewellery-software-uk, /jewellery-software-usa, /jewellery-software-singapore.
 
 ## Jewellery CRM (facts)

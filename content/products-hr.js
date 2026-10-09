@@ -53,7 +53,6 @@ const hrPayroll = {
     name: 'Jwero HR & Payroll', alternateName: ['Payroll software for jewellery shops', 'Staff attendance app for jewellers', 'Sales incentive software for jewellers'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
     description: 'HR and payroll for jewellery businesses: biometric, face-scanner, phone and kiosk attendance with geo-fencing and selfie; leave and shifts; payroll with PF, ESI, PT and TDS; payslips on WhatsApp; bank and statutory files; sales incentives with clawback; loans and reimbursements; recruitment to full and final; a staff app in multiple languages.',
     url: 'https://jwero.ai/products/hr-payroll', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
-    offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', description: 'Jwero One per month, every module included.' },
   },
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to move jewellery shop payroll and attendance off Excel', step: HR_HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
   breadcrumbs: BC('HR & Payroll'),

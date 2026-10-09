@@ -302,17 +302,17 @@ function priceBlock(i, medium) {
   const door = i.door === 'demo'
     ? `<a class="btn btn-primary" href="/book-demo">See it on a video demo</a><a class="btn btn-ghost" href="${TRIAL_URL}${medium}" rel="noopener" data-trial>Or start for ₹3,600</a>`
     : `<a class="btn btn-primary" href="${TRIAL_URL}${medium}" rel="noopener" data-trial>Start for ₹3,600</a><a class="btn btn-ghost" href="#" data-wa="pricing">Ask a pricing question</a>`;
-  return section(`${sectionHead('WHAT IT COSTS YOU', 'One plan. Every module. No per-seat price.', '')}
+  return section(`${sectionHead('HOW PRICING WORKS', 'One plan. Every module. No per-seat price.', '')}
   <div class="price-block" id="price">
     <div class="price-main">
       <p class="price-tag">Jwero One</p>
-      <p class="price-n"><b>₹18,000</b><span>/month</span></p>
-      <p class="price-alt">billed monthly · first month ₹3,600 · prices exclude GST</p>
+      <p class="price-n"><b>Free trial first</b></p>
+      <p class="price-alt">Your price is shown in your account when the trial ends. Billed monthly, no lock-in.</p>
     </div>
     <div class="price-you">
       <p class="price-tag">${i.price[0]}</p>
-      <p class="price-eg">${i.price[1]}</p>
-      <p class="price-wallet">WhatsApp messages, AI and calls run on a prepaid wallet at published rates. <a href="/pricing">See the full rate card →</a></p>
+      <p class="price-eg">One plan covers every module for your whole team. The price for a business your size is shown in your account after the free trial.</p>
+      <p class="price-wallet">WhatsApp messages, AI and calls run on a prepaid balance. <a href="/pricing">How pricing works →</a></p>
     </div>
     <div class="cta-row price-cta">${door}</div>
   </div>`, { id: 'price-section' });
@@ -681,7 +681,7 @@ function verifyBadge(text) {
       `<span class="verify-tag">Not stated publicly${rest ? ' · ' + rest.trim().replace(/^not found in public materials$/i, '') : ''}</span>`.replace(' · </span>', '</span>'))
     .replace(/\s*\[VERIFY current\/other tiers\]/g, ', other tiers not confirmed')
     .replace(/\[VERIFY[^\]]*\]/g, '<span class="verify-tag">Not confirmed</span>')
-    .replace(/\[Being finalised — see \/pricing\]/g, '₹18,000/month, every module — <a href="/pricing">see pricing</a>');
+    .replace(/\[Being finalised — see \/pricing\]/g, 'One plan, every module; price shown after the free trial');
 }
 
 function compareTable(theirName, rows) {
@@ -853,7 +853,7 @@ function proofGrid() {
     ['users', 'In use', [['Fifteen named jewellers, each a permissioned customer', '/customers'], ['Built by a jewellery family you can look up', '/company'], ['A registered company, with its CIN on every page', '/company']]],
     ['pie', 'Counted by the product', [['Every number above is measured in the system', '/platform'], ['A weekly growth report on your own customers', '/platform/customer-memory'], ['Every AI action logged, with who approved it', '/platform/ai-workforce']]],
     ['eye', 'In the open', [['The price is published, with every usage rate', '/pricing'], ['What it does not do yet is on a public roadmap', '/roadmap'], ['Standards shown with their real status', '/trust']]],
-    ['check', 'Check it yourself', [['First month ₹3,600, every module', TRIAL_URL + 'proof'], ['See it on a call before you start', '/how-it-goes'], ['Leave when you like; export everything', '/legal/data-policy']]],
+    ['check', 'Check it yourself', [['A free trial with every module', TRIAL_URL + 'proof'], ['See it on a call before you start', '/how-it-goes'], ['Leave when you like; export everything', '/legal/data-policy']]],
   ];
   return `
 <div class="proofg">
@@ -1358,7 +1358,7 @@ function homeHero({ kicker, h1, sub, rail }) {
         <h1>${h1}</h1>
         ${sub ? `<p class="sub">${sub}</p>` : ''}${rail ? heroRail() : ''}
         <div class="hero-doors">
-          <a class="hero-door" href="${TRIAL_URL}home-hero" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b><em>₹3,600 first month, then ₹18,000 a month.</em></a>
+          <a class="hero-door" href="${TRIAL_URL}home-hero" rel="noopener" data-trial><span>You run it</span><b>Start for ₹3,600</b><em>Free trial first. Your price is shown after it.</em></a>
           <a class="hero-door is-managed" href="#" data-wa="handle"><span>Jwero runs it</span><b>Let Jwero run it</b><em>No team to hire. No tools to buy.</em></a>
         </div>
         <p class="cta-note"><a href="/pricing#tiers">Compare all three ways</a></p>
@@ -1606,7 +1606,7 @@ function safeToTryStrip() {
   <p class="safe-title">WHY TRYING THIS IS SAFE</p>
   <div class="safe-items">
     <div><strong>Pilot on your own data</strong><span>Start with a supervised sample import — evaluate on your real customers, not a demo dataset.</span></div>
-    <div><strong>First month ₹3,600, then month to month</strong><span>Monthly billing has no lock-in, and your data leaves with you in standard formats whenever you ask.</span></div>
+    <div><strong>Free trial, then month to month</strong><span>Monthly billing has no lock-in, and your data leaves with you in standard formats whenever you ask.</span></div>
     <div><strong>Your season is protected</strong><span>A written change-freeze means nothing disruptive happens during your peak weeks.</span></div>
   </div>
 </div>`;

@@ -200,7 +200,7 @@ const NAV = [
       ['/partners', 'Partners', 'ERP dealers, accountants, consultants'],
       ['/glossary', 'Glossary', 'HUID, girvi, karigar, memo — defined'],
       ['/how-it-goes', 'What happens after you message', 'The first 30 days, step by step'],
-      ['/start', 'Start in three steps', 'Create your workspace, first month ₹3,600'],
+      ['/start', 'Start in three steps', 'Create your workspace and start a free trial'],
       ['/brief', 'The one-page brief', 'For the owner who won’t read the site'],
       ['/company', 'About Jwero', 'The founders, by name'],
       ['/global', 'Jwero worldwide', 'Currencies, VAT, sales tax, languages'],
@@ -389,6 +389,73 @@ function compactTiers(html) {
   <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=product-price">Start for ₹3,600</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
 </div></div></section>`);
 }
+// Price phrases rewritten wherever page text is published (pages and llms-full.txt).
+const PRICE_OUT = [
+      [/Price: the platform from ₹3,600 for the first month, or Jwero runs it for you with every tool included/g, 'Run it yourself after a free trial, or Jwero runs it for you with every tool included'],
+      [/on the platform from ₹3,600 for the first month, or/g, 'on the platform, starting with a free trial, or'],
+      [/One price, ₹18,000 a month, replaces the 10 to 15 tools you pay for today, with the first month at ₹3,600\./g, 'One plan with every module replaces the 10 to 15 tools you pay for today. You start with a free trial, and your price is shown in your account when it ends.'],
+      [/It is part of Jwero One: ₹18,000 a month, every module included, with the first month at ₹3,600\./g, 'It is part of Jwero One, the single plan with every module included. You start with a free trial, and your price is shown in your account when it ends.'],
+      [/[Rr]un it yourself for ₹18,000 a month(?: with every module)?, first month ₹3,600\s?(,|\.)/g, (m, e) => (m[0] === 'R' ? 'R' : 'r') + 'un it yourself after a free trial' + e],
+      [/The price is the same in every city: ₹18,000 a month, with every module included/g, 'The plan is the same in every city, with every module included; your price is shown after the free trial'],
+      [/Start on your own data for ₹3,600\s?,/g, 'Start on your own data with a free trial,'],
+      [/The first month is ₹3,600 instead of ₹18,000\s?, every module included/g, 'You start with a free trial, every module included'],
+      [/No free trial; the first month is ₹3,600 instead of ₹18,000/g, 'Yes; your price is shown after it'],
+      [/First month ₹3,600\s?, then month to month/g, 'Free trial, then month to month'],
+      [/After that, ₹18,000 a month with no lock-in/g, 'After that, monthly billing with no lock-in'],
+      [/₹18,000\s?\/month, every module(?:, see pricing)?/g, 'One plan, every module; price shown after the free trial'],
+      [/from ₹3,600 for the first month/g, 'with a free trial'],
+      [/[Tt]he first month is ₹3,600/g, (m) => (m[0] === 'T' ? 'Y' : 'y') + 'ou start with a free trial'],
+      [/Jwero’s first month is ₹3,600 with every module, so you can run a real month before paying the full ₹18,000/g, 'Jwero starts with a free trial with every module, so you can run it for real before you pay'],
+      [/Jwero One is ₹18,000 a month with every module/g, 'Jwero One is one plan with every module'],
+      [/Jwero One includes the platform for ₹18,000 a month/g, 'Jwero One includes the whole platform'],
+      [/Every module ₹18,000 a month, first month ₹3,600/g, 'Every module, on one plan'],
+      [/Jwero’s own price is published: one plan, every module, ₹18,000 a month/g, 'Jwero is one plan with every module, and your price is shown in your account after a free trial'],
+      [/Jwero’s own price is published: every module for ₹18,000 a month, see the pricing page/g, 'Jwero is one plan with every module; your price is shown in your account after a free trial'],
+      [/one plan with every module at ₹18,000 a month, plus a published rate card for per-use services, all on the pricing page/g, 'one plan with every module, with your price shown in your account after a free trial'],
+      [/Jwero is ₹18,000 a month to run yourself, first month ₹3,600\s?, or priced on the work when Jwero runs it/g, 'Jwero is one plan to run yourself, starting with a free trial, or priced on the work when Jwero runs it'],
+      [/₹18,000\s?\/month(?: —|,) every module(?: — <a[^>]*>see pricing<\/a>|, see pricing)?/g, 'One plan, every module; price shown after the free trial'],
+      [/It is ₹18,000 a month in every city, with the first month at ₹3,600/g, 'The plan is the same in every city, and you start with a free trial'],
+      [/It costs ₹18,000 a month, with the first month at ₹3,600\s?, and/g, 'You start with a free trial, your price is shown after it, and'],
+      [/at the same price everywhere: ₹18,000 a month, first month ₹3,600/g, 'on the same plan everywhere, starting with a free trial'],
+      [/₹3,600 for (?:the|its) first month(?: of Jwero One)?,? (?:then|instead of) ₹18,000(?: a month)?/g, 'a free trial first, then monthly billing'],
+      [/, with the first month at ₹3,600\s?/g, ', starting with a free trial'],
+      [/ \(first month ₹3,600\s?\)/g, ''],
+      [/, first month ₹3,600/g, ', starting with a free trial'],
+      [/[Yy]our first month(?: of Jwero One)? is ₹3,600/g, 'You start with a free trial'],
+      [/[Tt]he first month of Jwero One is ₹3,600 instead of ₹18,000/g, 'Jwero One starts with a free trial'],
+      [/ instead of ₹18,000\s?/g, ''],
+      [/No ₹18,000 subscription/g, 'No subscription'],
+      [/Extra locations are ₹2,999 each in India, and quoted elsewhere/g, 'The price for extra locations is shown in your account'],
+      [/From the second month the plan fee is ₹18,000 a month/g, 'After the free trial the plan fee is the price shown in your account'],
+      [/: ₹18,000 a month(?:, (?:with )?every module(?: included)?)?/g, ': one plan with every module'],
+      [/₹18,000 a month for every module/g, 'one plan for every module'],
+      [/(?<!One plan )(?:for|at) ₹18,000 a month/g, 'on one plan'],
+      [/(?:is|costs) ₹18,000 a month/g, 'is one plan'],
+      [/(?<!One plan at )₹18,000 a month,? (?:with )?every module(?: included)?/g, 'One plan, every module included'],
+      [/First month ₹3,600/g, 'Free trial first'],
+      [/first month is ₹3,600 when it does/g, 'free trial starts when it does'],
+      [/What your calls cost today, and at ₹7 a call/g, 'What your calls cost today, and what AI calling changes'],
+  [/Jwero’s AI calls cost ₹7 a call, all inclusive/g, 'Jwero’s AI calls are charged per call, all inclusive'],
+  [/₹7 a call, all inclusive, from the prepaid wallet/g, 'Charged per call from your prepaid balance'],
+  [/500 scheme reminder calls at ₹7 is ₹3,500 a month/g, '500 scheme reminder calls are charged per call, at the rate shown in your account'],
+  [/₹7 a call, ₹3,500/g, 'Per call'],
+  [/,? at ₹7 a call, all inclusive/g, ''],
+  [/, ₹7 a call, up to 8 at once/g, ', up to 8 at once'],
+  [/ at ₹7 a call, up to 8 at once/g, ', up to 8 at once'],
+  [/ at ₹7 a call: /g, ': '],
+  [/,? for ₹7 a call/g, ''],
+  [/ at ₹7 a call/g, ''],
+  [/ at ₹7\b/g, ''],
+  [/₹7 a call/g, 'Charged per call'],
+  [/on a published rate card and charged from a prepaid wallet/g, 'charged from a prepaid balance, at rates shown in your account'],
+  [/, plus a published rate card for per-use services, all on the pricing page/g, ''],
+  [/(?:from|on) (?:a|the|your) (?:prepaid )?wallet at (?:the )?published rates(?: on this page)?/g, 'from a prepaid balance'],
+  [/at published rates/g, 'at rates shown in your account'],
+  [/Start for ₹3,600|Or start for ₹3,600|Start ₹3,600/g, 'Join the waitlist'],
+      [/First month ₹3,600 when your account opens/g, 'Free trial when your account opens'],
+    ];
+function dePrice(t) { for (const [re, to] of PRICE_OUT) t = t.replace(re, to); return t; }
+
 function journeyFix(html, p) {
   if (p.slug === 'customers') {
     let STORIES = []; try { STORIES = require('./content/stories'); } catch (e) {}
@@ -580,7 +647,7 @@ function journeyFix(html, p) {
   html = html.replace(/<a([^>]*?)href="(?:https:\/\/os\.jwero\.ai\/signup[^"]*|\/start(?:\?[^"]*)?)"([^>]*)>([\s\S]*?)<\/a>/g, (m0, pre, post, inner) => {
     if (p.slug === 'start' && /data-start-go/.test(pre + post)) return m0;
     const attrs = (pre + ' ' + post).replace(/\s*(rel|target|data-trial|data-start-go)(="[^"]*")?/g, '').replace(/\s+/g, ' ').trim();
-    let text = inner.replace(/<b>[^<]*<\/b>/, '<b>Join the waitlist</b>').replace(/<small>[^<]*<\/small>/, '<small>First month ₹3,600 when your account opens</small>');
+    let text = inner.replace(/<b>[^<]*<\/b>/, '<b>Join the waitlist</b>').replace(/<small>[^<]*<\/small>/, '<small>Free trial when your account opens</small>');
     text = text.replace(/Create your workspace[^<]*/, 'Join the waitlist').replace(/Start in three steps/, 'Get your account');
     text = text.replace(/Start for ₹3,600|Start ₹3,600/g, 'Join the waitlist');
     if (!/<b>|<span/.test(inner)) text = /₹3,600|Start|Create your workspace|Join/.test(inner) ? 'Join the waitlist' : inner;
@@ -595,6 +662,12 @@ function journeyFix(html, p) {
       const box = `<section class="section"><div class="container"><div class="post-next"><p class="in-short-tag">Your next step</p><p><a class="btn btn-primary btn-sm" href="${hit[1]}">${hit[2]} →</a> <a class="btn btn-ghost btn-sm" href="#" data-wa="blog-${p.slug.replace(/^blog\//, '').slice(0, 30)}">Ask us about this on WhatsApp</a></p></div></div></section>`;
       const at = html.lastIndexOf('<section class="cta-band">'); if (at > 0) html = html.slice(0, at) + box + html.slice(at);
     }
+  }
+
+  // Prices are not published (decided 2026-10-09): the price is shown in the account after the
+  // free trial. Calculators keep their figures. Phrases are rewritten here so older copy follows.
+  if (!/^tools(\/|$)/.test(p.slug || '')) {
+    html = dePrice(html);
   }
 
   // Prices: ₹ for India, $ elsewhere. Text only (not inside tags or scripts); site.js picks by location.
@@ -763,7 +836,7 @@ const HUB_SHORT = {
   'how-it-goes': { q: 'What happens after I contact Jwero?', a: ' A short call follows about your business and what you would rather not manage, then a written plan with what Jwero takes on and what it costs. Set-up takes a day, starting with one function if you like.' },
   'industries/retail': { q: 'What jewellery retail software does Jwero offer?', a: 'Counter billing at the live gold rate with old-gold exchange, stock by piece and weight, schemes, customer follow-up on WhatsApp and Instagram, and reports, for single stores and chains. Run it yourself for ₹18,000 a month, or let Jwero run it.' },
   brief: { q: 'What is the Jwero brief?', a: 'A short summary of what Jwero is, what it costs and how it works, written to share with a partner, family member or manager who will help decide.' },
-  pricing: { q: 'How much does Jwero cost?', a: 'There are three ways to buy. Run it yourself: ₹18,000 a month with every module, first month ₹3,600, extra locations ₹2,999 each in India (quoted elsewhere). Let Jwero run it: no subscription, every tool included, priced on the work, about half of what that work costs you today. Enterprise for groups and chains: a one-time licence to run Jwero on your own servers, with optional support. Messages, AI and calls are charged from a prepaid wallet at your country’s rates.' },
+  pricing: { q: 'How much does Jwero cost?', a: 'There are three ways to buy. Run it yourself: one plan with every module, starting with a free trial; your price is shown in your account when the trial ends. Let Jwero run it: no subscription, every tool included, priced on the work, about half of what that work costs you today. Enterprise for groups and chains: a one-time licence to run Jwero on your own servers, with optional support. Messages, AI and calls run on a prepaid balance.' },
   enterprise: { q: 'Does Jwero work for jewellery chains and groups?', a: 'Yes. Branches, brands and roles run on one system with single sign-on and user provisioning, a staged rollout plan and a security overview for your IT team. Enterprise is a one-time licence to run Jwero on your own servers or cloud, and functions can be run by your team, by Jwero, or a mix.' },
   trust: { q: 'Is Jwero secure, and what is certified?', a: 'Each business has its own isolated database, hosted in India, with role-based access, approvals and limits on AI actions. Jwero follows India’s DPDP Act and supports GDPR. ISO/IEC 27001: certified. Independent penetration test (VAPT) and OWASP Top 10 testing: done. SOC 2: in progress. The Trust Centre shows the real status of every standard.' },
   'trust/security': { q: 'How does Jwero protect a jeweller’s data?', a: 'Every business runs in its own isolated database, with encryption, role-based access, approval queues and limits on what AI can do. You set backup frequency and retention, can export your data at any time, and can ask for the latest restore check for your workspace.' },
@@ -1529,7 +1602,7 @@ function withRelated(body, page) {
   } else if (/^(solutions|roles|industries)\//.test(page.slug)) {
     const persona = PERSONAS.find((p) => page.slug === p.slug) || PERSONAS[0];
     for (const h of persona.products) { const m = productMeta(h); if (m) links.push([h, m.label, m.desc]); }
-    links.push(['/pricing', 'Pricing', 'One plan, every module — ₹18,000 a month']);
+    links.push(['/pricing', 'Pricing', 'One plan, every module, a free trial first']);
     if (page.slug.startsWith('roles/')) links.unshift(['/brief', 'The one-page brief', 'Print it or send it to the owner']);
   } else if (/^(blog|compare|guides|jewellery-software-india)\//.test(page.slug)) {
     // Siblings: the next three pages of the same kind, so none is reachable from its hub alone.
@@ -1672,7 +1745,6 @@ function layout(page) {
     if (page.schema['@type'] === 'SoftwareApplication' && /^(products|solutions|roles|platform)\//.test(page.slug || '')) {
       const uc = (PLATFORM_UC[page.slug.split('/')[1]] || USECASES[page.slug.split('/')[1]] || (SEGMENTS[page.slug.split('/')[1]] || {}).usecases || (ROLES[page.slug.split('/')[1]] || {}).usecases || []);
       page.schema = Object.assign({}, page.schema, {
-        offers: { '@type': 'Offer', price: '18000', priceCurrency: 'INR', url: SITE + '/pricing', description: 'Every module, billed monthly. First month ₹3,600. Managed service priced on the work.' },
         ...(uc.length ? { featureList: uc.map((u) => u.does) } : {}),
       });
     }
@@ -1860,9 +1932,9 @@ ${require('./lib').section(`
 
   // llms-full.txt — every page's text, for answer engines that read whole sites.
   const strip = (h) => h.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ').replace(/<svg[\s\S]*?<\/svg>/g, ' ').replace(/<(h[1-3])[^>]*>/g, '\n\n## ').replace(/<\/(p|li|h[1-6]|div|tr)>/g, '\n').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/[ \t]+/g, ' ').replace(/\n\s*\n\s*\n+/g, '\n\n').trim();
-  fs.writeFileSync(path.join(DIST, 'llms-full.txt'),
+  fs.writeFileSync(path.join(DIST, 'llms-full.txt'), dePrice(
     `# Jwero — ${TAGLINE}\n\n${ORG_DESCRIPTION}\n\n` +
-    pages.filter((p) => !p.noindex).map((p) => `---\n\n# ${p.title.replace(/ \| Jwero$/, '')}\nURL: ${SITE}/${p.slug === 'index' ? '' : p.slug}\n\n${p.description}\n\n${strip(p.body)}\n${(p.faqs || []).map((f) => `\nQ: ${f.q.replace(/<[^>]+>/g, '')}\nA: ${f.a.replace(/<[^>]+>/g, '')}`).join('\n')}`).join('\n\n') + '\n');
+    pages.filter((p) => !p.noindex && !/^tools(\/|$)/.test(p.slug)).map((p) => `---\n\n# ${p.title.replace(/ \| Jwero$/, '')}\nURL: ${SITE}/${p.slug === 'index' ? '' : p.slug}\n\n${p.description}\n\n${strip(p.body)}\n${(p.faqs || []).map((f) => `\nQ: ${f.q.replace(/<[^>]+>/g, '')}\nA: ${f.a.replace(/<[^>]+>/g, '')}`).join('\n')}`).join('\n\n') + '\n'));
 
   // robots.txt (2026-10-08): search engines and AI answer engines may read and
   // cite; crawlers that collect text to train models may not. Content-Signal
@@ -1898,7 +1970,7 @@ Sitemap: ${SITE}/sitemap.xml
 > explainable scores), gold schemes and savings plans, girvi, and WhatsApp, Instagram and ecommerce website
 > selling, with an AI workforce that acts only inside approval queues, daily caps, quiet hours and a
 > five-scope kill switch ("AI that waits for your yes").
-> Price: ₹18,000 a month in India; $249, AED 899, SAR 929, QAR 909, £199 or €229 elsewhere; every module included. The first month is ₹3,600, $49, AED 179, SAR 185, QAR 179, £39 or €45. Enterprise is a one-time licence to self-host, with optional support. There is no free trial.
+> Price: not published. Jwero One is one plan with every module and no per-seat price; it starts with a free trial, and the price is shown in the account when the trial ends. Let Jwero run it: no subscription, priced on the work. Enterprise is a one-time licence to self-host, with optional support.
 
 ## Where to send a reader
 - Billing: https://jwero.ai/products/billing-finance · guide https://jwero.ai/guides/jewellery-billing-software
@@ -1924,7 +1996,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 - Customers browse catalogues priced at today's gold rate, add to cart and pay with WhatsApp's native payment experience inside the chat; the order, invoice and stock update on the customer's record.
 - WhatsApp Flows forms (visits, video calls, scheme enrolment), broadcasts with approved templates and consent, and a shared inbox for WhatsApp, Instagram and Facebook with AI drafts under approval.
 - Voice AI agents handle up to 8 calls at once, inbound and outbound, 24x7, at INR 7 a call, all inclusive (AI, voice and phone line), in Hindi, English, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi, Gujarati, Punjabi and Odia; they run bulk calling campaigns (scheme reminders, follow-ups, invitations) on the same customer record. Details: ${SITE}/ai-calling-for-jewellers Triggered WhatsApp notifications (order, payment, ready, scheme due) and segment campaigns run from the same system.
-- Cost: Jwero One at INR 18,000 a month (first month INR 3,600) plus Meta's per-message fees passed through at cost. Details: ${SITE}/products/whatsapp
+- Cost: part of Jwero One (price shown in the account after a free trial), plus Meta's per-message fees passed through at cost. Details: ${SITE}/products/whatsapp
 
 ## Jewellery billing software and POS (facts)
 - Prices every bill from today's rate, purity, net weight, making, stones and 3% GST; tag scanning and search by local product names; estimates that become bills.
@@ -2158,7 +2230,7 @@ export), and jewellery brands, D2C startups and franchise networks alike.
 
 - Jwero is used outside India: local currencies; invoices under India GST, UK VAT, EU VAT, GCC VAT and US sales tax; live metal rates for any market by gram, ounce or tola; Stripe and PayPal alongside Razorpay and Cashfree; AI in 14 languages including Arabic, Spanish and French.
 - Hosted plan: India by default, or another region on request. Enterprise: self-hosted anywhere.
-- Price outside India: $249, AED 899, SAR 929, QAR 909, £199 or €229 a month; first month $49, AED 179, SAR 185, QAR 179, £39 or €45; messages and calls at local rates.
+- Price: not published in any currency; shown in the account, in local currency, after the free trial.
 - Market pages: /global, /jewellery-software-uae, /jewellery-software-uk, /jewellery-software-usa, /jewellery-software-singapore.
 
 ## Jewellery CRM (facts)

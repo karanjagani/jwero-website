@@ -12,7 +12,7 @@ const TG_ROWS = [
   ['check', 'Who approves'],
 ];
 const TG_COLS = [
-  ['01', 'Run it yourself', 'tier-1', ['Your team, with Jwero’s AI', 'Jwero’s cloud', 'Monthly, every module', 'You']],
+  ['01', 'Run it yourself', 'tier-1', ['Your team, with Jwero’s AI', 'Jwero’s cloud', 'Monthly, after a free trial', 'You']],
   ['02', 'Let Jwero run it', 'tier-2', ['Jwero’s specialists and AI', 'Jwero’s cloud', 'On the work, no subscription', 'You, on what matters']],
   ['03', 'Your own Jwero', 'tier-3', ['Your team, on your rules', 'Your servers or your cloud', 'Once, a one-time licence', 'Your policies']],
 ];
