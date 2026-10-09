@@ -128,7 +128,7 @@ function hero({ eyebrow, h1, sub, primary, secondary, note, mock, panel, extra }
   const cta = `
       <div class="cta-row center">
         ${primary ? `<a class="btn btn-primary" href="${primary.href}" ${primary.wa ? `data-wa="${esc(primary.wa)}"` : ''}${primary.share ? ` data-share="${esc(primary.share)}"` : ''}>${primary.label}</a>` : ''}
-        ${secondary ? `<a class="btn btn-ghost" href="${secondary.href}"${secondary.share ? ` data-share="${esc(secondary.share)}"` : ''}${secondary.print ? ' data-print' : ''}>${secondary.label}</a>` : ''}
+        ${secondary ? `<a class="btn btn-ghost" href="${secondary.href}"${secondary.wa ? ` data-wa="${esc(secondary.wa)}"` : ''}${secondary.share ? ` data-share="${esc(secondary.share)}"` : ''}${secondary.print ? ' data-print' : ''}>${secondary.label}</a>` : ''}
       </div>
       ${note ? `<p class="cta-note">${note}</p>` : ''}`;
   if (panel) {

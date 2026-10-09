@@ -20,8 +20,8 @@ ${L.hero({
   eyebrow: 'WHY AN OS, AND THE TOUR',
   h1: 'Multiple softwares record your business. An operating system lets you run it, live.',
   sub: 'A billing tool knows the bill. A WhatsApp tool knows the chat. A stock sheet knows the piece. None of them sees the whole business, so trouble only shows up in the month-end or quarter-end report. An operating system puts every process, customer journey and touchpoint, across your team, customers, vendors and karigars, in one command centre, so you decide the day something goes off.',
-  primary: { href: '#', label: 'Chat or call with us', wa: 'platform' },
-  secondary: { href: '/book-demo', label: 'Book a demo' },
+  primary: { href: '#', label: 'Run it yourself', wa: 'waitlist' },
+  secondary: { href: '#', label: 'Let Jwero run it', wa: 'handle' },
   mock: require('./graphics').orbit(),
 })}
 
