@@ -5066,3 +5066,36 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 .hrail-track { grid-template-columns: repeat(7, 1fr); }
 .hrail-track::before, .hrail-fill { left: 7.143%; } .hrail-track::before { right: 7.143%; } .hrail-fill { max-width: 85.714%; }
 @media (max-width: 560px) { .hrail-stop span { width: 28px; height: 28px; } .hrail-track::before, .hrail-fill { top: 13px; } .hrail-stop .ico { width: 14px; height: 14px; } .hrail-stop b { font-size: .5625rem; letter-spacing: 0; } }
+
+/* ---- Every tool into Jwero (home, 2026-10-09) ---- */
+.tin-stage { position: relative; padding: 8px 0; }
+.tin-rows { display: grid; gap: 12px; }
+.tin-row { display: grid; grid-template-columns: 1fr 1fr; }
+.tin-half { overflow: hidden; }
+.tin-l { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 62%, transparent 96%); mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 62%, transparent 96%); }
+.tin-r { -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 14%, #000 62%, transparent 96%); mask-image: linear-gradient(270deg, transparent 0, #000 14%, #000 62%, transparent 96%); }
+.tin-track { list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; width: max-content; animation: tinIn var(--t, 40s) linear infinite; }
+.tin-l .tin-track { animation-name: tinInL; }
+.tin-r .tin-track { animation-name: tinInR; }
+@keyframes tinInL { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+@keyframes tinInR { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.tin-track li { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--card); font-size: .8125rem; color: var(--ink); }
+.tin-track .ico { width: 14px; height: 14px; color: var(--brand); flex: none; }
+.tin-stage:hover .tin-track { animation-play-state: paused; }
+.tin-core { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 132px; height: 132px; border-radius: 50%; display: grid; place-content: center; justify-items: center; gap: 2px; background: var(--panel); color: #fff; box-shadow: 0 0 0 10px color-mix(in srgb, var(--brand) 10%, transparent), var(--shadow-lg); z-index: 2; text-align: center; }
+.tin-core .mark { width: 30px; height: 42px; position: static; margin-bottom: 2px; }
+.tin-core b { font-size: 1.0625rem; letter-spacing: -.01em; }
+.tin-core em { font: 600 .625rem/1 var(--mono); font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .75); }
+.tin-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--amber); opacity: 0; animation: tinRing 2.8s ease-out infinite; }
+.tin-ring2 { animation-delay: 1.4s; }
+@keyframes tinRing { 0% { transform: scale(1.5); opacity: 0; } 30% { opacity: .55; } 100% { transform: scale(1); opacity: 0; } }
+.tin-groups { list-style: none; margin: 26px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.tin-groups li { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: center; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+.tin-groups .ico { grid-row: span 2; width: 22px; height: 22px; color: var(--brand); }
+.tin-groups b { font-size: .9375rem; }
+.tin-groups span { font-size: .75rem; color: var(--ink-2); }
+.gfx-arm:not(.is-in) .tin-groups li { opacity: 0; transform: translateY(10px); }
+.gfx-arm .tin-groups li { transition: opacity .5s var(--ease), transform .5s var(--ease); transition-delay: calc(var(--i) * 60ms); }
+@media (max-width: 900px) { .tin-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .tin-core { width: 104px; height: 104px; } .tin-core .mark { width: 24px; height: 34px; } .tin-core b { font-size: .9375rem; } .tin-track li { font-size: .75rem; padding: 7px 10px; } }
+@media (prefers-reduced-motion: reduce) { .tin-track, .tin-ring { animation: none; } .tin-track { flex-wrap: wrap; width: auto; justify-content: center; } .tin-track li[aria-hidden] { display: none; } .tin-half { -webkit-mask-image: none; mask-image: none; } .tin-row { grid-template-columns: 1fr; gap: 8px; } .tin-core { position: static; transform: none; margin: 0 auto 16px; } .tin-stage { display: flex; flex-direction: column-reverse; } }

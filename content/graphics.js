@@ -163,4 +163,24 @@ const marketCard = (key) => { const m = MKT.find((x) => x[0] === key); if (!m) r
   <ul class="mkp-rows">${rows.map(([l, v], r) => `<li style="--r:${r}">${icon(MKT_IC[l])}<small>${l}</small><b>${v}</b></li>`).join('')}</ul>
 </div>`; };
 
-module.exports = { marketCard, tierGlance, selfHostMap, hierarchyTree, toolCollapse, marketPicker, tallyFlow, techStack, orbit, integrationMap, showroomHeat };
+// Home: every separate tool flowing into Jwero. No sums; the names are the point.
+// Six tracks of tool names move in from both sides and disappear into the Jwero mark;
+// the ten departments sit underneath. Every name is in the page once as real text.
+const toolsInto = () => {
+  const L = require('../lib');
+  const all = L.STACK.flatMap(([g, ic, items]) => items.map((t) => [t, ic]));
+  const tracks = [[], [], [], [], [], []];
+  all.forEach((t, i) => tracks[i % 6].push(t));
+  const chips = (list, hidden) => list.map(([t, ic]) => `<li${hidden ? ' aria-hidden="true"' : ''}>${icon(ic)}${t}</li>`).join('');
+  const half = (list, side, k) => `<div class="tin-half tin-${side}"><ul class="tin-track" style="--t:${38 + k * 7}s">${chips(list)}${chips(list, true)}</ul></div>`;
+  return `
+<div class="tin" data-gfx>
+  <div class="tin-stage">
+    <div class="tin-rows">${[0, 1, 2].map((r) => `<div class="tin-row">${half(tracks[r * 2], 'l', r)}${half(tracks[r * 2 + 1], 'r', r)}</div>`).join('')}</div>
+    <div class="tin-core"><span class="tin-ring" aria-hidden="true"></span><span class="tin-ring tin-ring2" aria-hidden="true"></span>${L.mark('mark-band')}<b>Jwero</b><em>One record</em></div>
+  </div>
+  <ul class="tin-groups">${L.STACK.map(([g, ic, items], i) => `<li style="--i:${i}">${icon(ic)}<b>${g}</b><span>${items.length} ${items.length === 1 ? 'tool' : 'tools'} in one</span></li>`).join('')}</ul>
+</div>`;
+};
+
+module.exports = { toolsInto, marketCard, tierGlance, selfHostMap, hierarchyTree, toolCollapse, marketPicker, tallyFlow, techStack, orbit, integrationMap, showroomHeat };

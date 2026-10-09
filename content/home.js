@@ -67,8 +67,8 @@ ${L.section(`<div class="price-line">
 </div>`, { tone: 'tint' })}
 
 ${L.section(
-  `<span id="count-yours"></span>${L.sectionHead('COUNT YOUR TOOLS', `${L.STACK_N} separate tools become one.`, 'Pick your kind of business, or answer yes for each area you pay software for. See what it costs and what Jwero saves.')}
-  ${L.stackMerge()}<p class="jb-more">Tools are half of it. <a href="/count-your-team">Count your team too: the people it takes, and what Jwero would cost →</a></p>`
+  `<span id="count-yours"></span>${L.sectionHead('ONE PLACE FOR ALL OF IT', `${L.STACK_N} separate tools become one.`, 'Every tool a jewellery business pays for, logs into and keeps in step is already inside Jwero, working from the same record.')}
+  ${require('./graphics').toolsInto()}<p class="jb-more"><a href="/products">See every product in Jwero →</a></p>`
 , { tone: 'tint' })}
 
 
