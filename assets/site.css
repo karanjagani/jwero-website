@@ -5275,3 +5275,14 @@ details.f-col > summary .ico { display: none; width: 16px; height: 16px; color: 
 @media (max-width: 1000px) { .shopj { grid-template-columns: 1fr 1fr; } .shopj article::after { display: none; } }
 @media (max-width: 600px) { .shopj { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .shopj.gfx-arm article { opacity: 1; transform: none; transition: none; } }
+
+/* Breadcrumbs sit close to what they lead into: the headline, or the dark hero panel */
+.crumbs + .hero, .crumbs + .hero.has-schematic { padding-top: 22px; }
+.crumbs + .hero.hero-panel { padding-top: 14px; }
+.crumbs + .hero.pz-hero { padding-top: 0; margin-top: 14px; }
+.crumbs + .section { padding-top: 32px; }
+@media (max-width: 760px) {
+  .crumbs + .hero, .crumbs + .hero.has-schematic { padding-top: 18px; }
+  .crumbs + .hero.hero-panel { padding-top: 12px; }
+  .crumbs + .section { padding-top: 24px; }
+}
