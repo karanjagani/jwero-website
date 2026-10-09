@@ -572,7 +572,7 @@ function journeyFix(html, p) {
   if (/^lp\//.test(p.slug || '')) {
     html = html.replace(/<div class="doors-strip[\s\S]*?<\/div>\s*<\/div>/, '').replace(/<div class="sticky-bar"[\s\S]*?<\/div>/, '');
   }
-  if (p.slug === 'pricing' || p.slug === 'erp-to-os') {
+  if (p.slug === 'pricing' || /^erp-to-os(\/|$)/.test(p.slug || '')) {
     const shift = topSections(html).find(([a, e]) => />THE SHIFT</.test(html.slice(a, Math.min(e, a + 1500))));
     if (shift) html = html.slice(0, shift[0]) + html.slice(shift[1]);
   }

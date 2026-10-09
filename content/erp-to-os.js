@@ -81,9 +81,9 @@ function centreSwap() {
 const SWITCH_RISKS = [
   ['My data is stuck in the ERP.', 'We import from Excel, CSV or the ERP’s export — customers, catalogue, stock, however messy — and reconcile it with you in days 2–5. Your data also leaves the same way, any time.'],
   ['My staff will not learn a new system.', 'If they can use WhatsApp they can use Jwero. Roles are trained in their language, and every AI action waits in an approval queue, so nobody can send anything wrong on day one.'],
-  ['My accountant’s world will break.', 'It does not change. Books post to Jwero’s ledger and bridge to Tally or Zoho Books. Your CA keeps the tools she has.'],
+  ['My accountant’s world will break.', 'It does not change. Bills, returns and payments post to Jwero’s ledger and reach Tally automatically; Zoho Books is bridged too. Your CA keeps the tools she has.'],
   ['We will lose days in the season.', 'A written change-freeze around your peak weeks is part of the plan. Go-lives happen before or after, never during.'],
-  ['We will be locked into a new vendor.', 'You own your data; exports are yours whenever you want them. A public roadmap says what is shipped and what is not — before you buy.'],
+  ['We will be locked into a new vendor.', 'You own your data; exports are yours whenever you want them, billing is month to month, and the roadmap is public before you buy.'],
   ['We do not have time for a big project.', 'One pilot on your own data, one branch, exit test at the end. If it fails the test, we stop there. Most single stores run the whole thing on WhatsApp with us.'],
 ];
 const STAY_COSTS = [
@@ -97,15 +97,15 @@ const STAY_COSTS = [
 function riskLedger() {
   const col = (title, tag, items, kind) => `
     <div class="rl-col rl-${kind}">
-      <div class="rl-head"><p class="eyebrow">${tag}</p><h3>${title}</h3><p class="rl-tally"><b data-rl-n="${kind}">${items.length}</b> <span data-rl-l="${kind}">${kind === 'switch' ? 'risks standing' : 'costs compounding'}</span></p></div>
+      <div class="rl-head"><p class="eyebrow">${tag}</p><h3>${title}</h3><p class="rl-tally"><b data-rl-n="${kind}">${items.length}</b> <span data-rl-l="${kind}">${kind === 'switch' ? 'worries still open' : 'costs that carry on'}</span></p></div>
       ${items.map(([r, m], i) => `<button type="button" class="rl-item" data-rl="${kind}" aria-expanded="false"><span class="rl-q">${r}</span><span class="rl-a">${m}</span><span class="rl-hint">${kind === 'switch' ? 'Tap to see what removes it' : 'Tap to see what it costs'}</span></button>`).join('')}
     </div>`;
   return `
 <div class="rl" data-rl>
-  ${col('If you switch', 'THE RISK YOU IMAGINE', SWITCH_RISKS, 'switch')}
-  ${col('If you stay', 'THE RISK YOU ARE PAYING', STAY_COSTS, 'stay')}
+  ${col('If you switch', 'WORRIES, EACH WITH AN ANSWER', SWITCH_RISKS, 'switch')}
+  ${col('If you stay', 'COSTS YOU ARE ALREADY PAYING', STAY_COSTS, 'stay')}
 </div>
-<p class="rl-verdict" data-rl-verdict>Tap every line on the left. Each one has a specific answer. The lines on the right have none — they just continue.</p>`;
+<p class="rl-verdict" data-rl-verdict>Tap each worry under “If you switch”. Every one has a specific answer. The costs under “If you stay” have none; they carry on.</p>`;
 }
 
 const TOOLS = [
@@ -264,55 +264,56 @@ const switching = {
     { q: 'What if the pilot fails?', a: 'Then we stop, at the exit test, and your data leaves with you as CSV. A pilot on your own data is the point: you decide on your evidence, not our claims.' },
     { q: 'How long does a single store take?', a: 'A fifteen-minute call on day one, a pilot on your own data in days 2–5, a written plan on day 5, go-live with approvals on by day 14, your first growth report at day 30. The full sequence is on the “How it goes” page.' },
     { q: 'Will we lose the history in the old system?', a: 'No. Purchase history, customers, catalogue and stock import from Excel, CSV or the ERP’s export, deduplicated and reconciled with you. The old system can stay readable for as long as you keep it.' },
-    { q: 'What changes for my CA?', a: 'Nothing she will notice. Books post to Jwero’s ledger and bridge to Tally or Zoho Books. GST-ready invoices, credit and debit notes and the audit trail are there; e-invoice IRN generation is not yet, and we say so.' },
+    { q: 'What changes for my CA?', a: 'Less typing, and nothing else. Bills, returns and payments post to Jwero’s ledger and reach Tally automatically; Zoho Books is bridged too. Tax invoices, credit and debit notes and the audit trail are all there, and e-invoices are generated in Tally from the entries Jwero sends.' },
   ],
   body: `
 ${L.hero({
   eyebrow: 'FROM ERP TO OS · SWITCHING',
   h1: 'Switching feels risky. Staying is the risk you are already paying.',
-  sub: 'Every risk of switching has a specific answer — the import, the approval queue, the Tally bridge, the change-freeze, the exit test. The costs of staying have none; they just continue, every day, outside any report your ERP can run.',
+  sub: 'Every worry about switching has a specific answer: the import, the approval queue, the Tally bridge, the change-freeze and the exit test. The costs of staying have none. They carry on every day, outside any report your ERP can run.',
   primary: { href: '#', label: 'Walk me through the switch for my business', wa: 'erpswitch' },
   secondary: { href: '/how-it-goes', label: 'See the 30-day sequence' },
 })}
 
 ${L.section(
-  `${L.sectionHead('THE RISK LEDGER', 'Six risks you imagine. Six costs you pay.', 'Tap each line. The left column empties. The right one does not.')}
-  ${riskLedger()}`
+  `${L.sectionHead('WEIGH IT UP', 'Six worries about switching, each with an answer. Six costs of staying, with none.', 'Tap a worry to see what removes it. Then read what staying costs you while you decide.')}
+  ${riskLedger()}
+  <div class="cta-row center" style="margin-top:28px"><a class="btn btn-primary" href="#" data-wa="erpswitch">Tell us the worry that matters most</a><a class="btn btn-ghost" href="/book-demo">Book a demo</a></div>`
 )}
 
 ${L.section(
-  `${L.sectionHead('WHAT STAYS, WHAT CHANGES', 'Most of your business does not move at all.', '')}
+  `${L.sectionHead('WHAT STAYS THE SAME', 'Most of your business does not move at all.', 'The switch changes where the work is recorded. It does not change who does it or how your customers reach you.')}
   ${L.impactGrid([
-    { lever: 'Your accountant', before: 'Tally or Zoho Books, month-end, GST returns.', after: 'Exactly the same. Books bridge to the tools she already uses.' },
+    { lever: 'Your accountant', before: 'Tally or Zoho Books, month-end, GST returns.', after: 'The same tools, with less typing. Bills, returns and payments reach Tally automatically.' },
     { lever: 'Your counter staff', before: 'Bill, exchange, return, day-close.', after: 'The same jobs on one screen, in their language, with a scan and a live rate. If they can use WhatsApp, they can use this.' },
     { lever: 'Your WhatsApp number', before: 'On a phone.', after: 'The same number, on the official API, in a shared inbox — nothing to announce to customers.' },
-    { lever: 'Your data', before: 'In the ERP, exportable if the vendor allows.', after: 'Imported into a record you own, exportable any time as CSV. Ownership is the point.' },
+    { lever: 'Your data', before: 'In the ERP, exportable if the vendor allows.', after: 'Imported into a record you own, and yours to export any time.' },
   ])}`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('THE SWITCH PLAN', 'Thirty days, with an exit at every step.', 'The literal sequence we run. Coexistence first; migration when the pilot has earned it.')}
+  `${L.sectionHead('HOW THE SWITCH RUNS', 'Thirty days, with a way out at every step.', 'Your ERP keeps running alongside Jwero to begin with. You move the rest only when the first month has proved itself.')}
   ${L.steps([
     { title: 'Days 1–5 — import and coexist', text: 'Customers, catalogue, stock imported and reconciled with you. The ERP keeps the books. Jwero takes the customer-facing doors: WhatsApp, Instagram, catalogue links, the counter if you choose.' },
     { title: 'Day 5 — the written plan', text: 'What changes, the migration path, a straight price, and the change-freeze dates around your season. Then it is your call.' },
     { title: 'Days 7–14 — go live, approvals on', text: 'Every AI action waits in the approval queue from day one. Staff trained by role, in their language. Nothing sends without a tap.' },
     { title: 'Day 30 — the exit test', text: 'Enquiries answered, prices consistent, day-close variance, your first growth report on your own data. If it fails, we stop and your data leaves with you.' },
-    { title: 'After — migrate the rest, or don’t', text: 'Move the books when you are ready, or keep the bridge to Tally forever. Both are normal.' },
+    { title: 'After: move the rest when you are ready', text: 'Move the books across when it suits you, or keep the Tally bridge for good. Both are normal.' },
   ])}`
 )}
 
 ${L.section(L.safeToTryStrip())}
 
 ${L.section(
-  `${L.sectionHead('THE OTHER SENTENCE', '“We can make do with what we have.”', '')}
+  `${L.sectionHead('BEFORE YOU DECIDE', 'Three more things worth reading.', '')}
   ${L.cards([
-    { icon: 'grid', title: 'Take it seriously', text: 'Tap the tools you use today, see the gaps between them, and put a number on a year of making do — with your own enquiries and your own ticket size.', link: { href: '/erp-to-os/make-do', label: 'Read: can I make do?' } },
-    { icon: 'swap', title: 'Coming from a specific ERP?', text: 'Honest, feature-by-feature comparisons with the systems jewellers run today — what they do well, and where the gap is.', link: { href: '/compare', label: 'See the comparisons' } },
+    { icon: 'grid', title: '“We can make do with what we have.”', text: 'Tap the tools you use today, see the gaps between them, and put a number on a year of making do, with your own enquiries and your own ticket size.', link: { href: '/erp-to-os/make-do', label: 'Read: can I make do?' } },
+    { icon: 'swap', title: 'Coming from a specific ERP?', text: 'Feature-by-feature comparisons with the systems jewellers run today: what each does well, and what Jwero adds.', link: { href: '/compare', label: 'See the comparisons' } },
     { icon: 'route', title: 'The Migration Centre', text: 'Import formats, what maps to what, and the change-freeze policy, written down.', link: { href: '/migration', label: 'See the Migration Centre' } },
   ])}`
 , { tone: 'tint' })}
 
-${L.ctaBand('Start with the risk that worries you most.', 'Tell us which line on the left you tapped last. We answer that one first, on WhatsApp.', 'erpswitch')}
+${L.ctaBand('Start with the worry that matters most.', 'Tell us which one you tapped last. We answer that one first, on WhatsApp.', 'erpswitch')}
 `,
 };
 
@@ -332,33 +333,35 @@ const makeDo = {
 ${L.hero({
   eyebrow: 'FROM ERP TO OS · MAKING DO',
   h1: '“I can make do with my ERP.” Let’s take that seriously.',
-  sub: 'You can. Many do — with an ERP, a WhatsApp app, Excel, Tally, Instagram and three people’s memory holding it together. The question is not whether it works. It is what the gaps between those tools cost, and who is quietly paying for them.',
+  sub: 'You can. Many do, with an ERP, a WhatsApp app, Excel, Tally, Instagram and three people’s memory holding it together. The question is not whether it works. It is what the gaps between those tools cost you, and who is quietly paying for them.',
   primary: { href: '#', label: 'Show me what the gaps cost on my numbers', wa: 'erpmakedo' },
-  secondary: { href: '/erp-to-os', label: 'Why the ERP era is ending' },
+  secondary: { href: '/erp-to-os', label: 'Why jewellers are moving on from the ERP' },
 })}
 
 ${L.section(
-  `${L.sectionHead('YOUR STACK TODAY', 'Tap what you use. The gaps appear between them.', 'Making do is never one tool. It is the hand-offs between several — and every hand-off is a place a customer, a price or a payment gets lost.')}
+  `${L.sectionHead('STEP 1 · YOUR TOOLS TODAY', 'Tap what you use. The gaps appear between them.', 'Making do is never one tool. It is the hand-offs between several, and every hand-off is a place where a customer, a price or a payment gets lost.')}
   ${makeDoStack()}`
 )}
 
 ${L.section(
-  `${L.sectionHead('JOBS, NOT FEATURES', 'What each setup can actually do on a Tuesday.', 'Not a feature matrix. Nine things that happen in a jewellery business every week, and what each setup does with them.')}
+  `${L.sectionHead('STEP 2 · THE WEEKLY JOBS', 'Nine things that happen every week, and what each setup does with them.', 'Compare by the work that has to get done, not by a list of features.')}
   ${jobsTable()}`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('PUT A NUMBER ON IT', 'What a year of making do is worth, at your close rates.', 'Your enquiries, your ticket size, your close rate. One conservative assumption, editable.')}
-  ${leakCalc()}`
+  `${L.sectionHead('STEP 3 · YOUR NUMBER', 'What a year of making do costs, on your own figures.', 'Enter your enquiries, your average sale and your close rate. There is one cautious assumption, and you can change it.')}
+  ${leakCalc()}
+  <div class="cta-row center" style="margin-top:28px"><a class="btn btn-primary" href="#" data-wa="erpmakedo">Go through my numbers with me</a><a class="btn btn-ghost" href="/book-demo">Book a demo</a></div>`
 )}
 
 ${L.section(
-  `${L.sectionHead('KEEP THE ERP', 'You do not have to choose on day one.', '')}
+  `${L.sectionHead('YOUR NEXT STEP', 'You do not have to choose on day one.', 'Three ways to begin, and none of them means switching off your ERP tomorrow.')}
   ${L.cards([
-    { title: 'Coexist', text: 'The ERP keeps the books; Jwero takes the customer-facing doors. Bridged, for as long as you want.', link: { href: '/erp-to-os/switching', label: 'See how switching works' } },
-    { title: 'Start alone, for ₹3,600', text: 'The first month is ₹3,600 at os.jwero.ai, in three steps. Bring your catalogue and ten customers; see the priced reply on a real enquiry.', link: { href: '/start', label: 'Start for ₹3,600' } },
-    { title: 'Or make do, honestly', text: 'If the calculator says the gap is small, keep going and come back when it is not. We would rather you find that out here than on a call.' },
-  ])}`
+    { title: 'Run both, side by side', text: 'Your ERP keeps the books while Jwero takes WhatsApp, Instagram, the catalogue and the counter. The two stay connected for as long as you want.', link: { href: '/erp-to-os/switching', label: 'See how switching works' } },
+    { title: 'Run it yourself', text: 'Join the waitlist; your first month is ₹3,600 when your account opens. Bring your catalogue and ten customers, and see a priced reply on a real enquiry.', link: { href: '/pricing', label: 'See pricing' } },
+    { title: 'Let Jwero run it', text: 'Jwero’s specialists and AI take the customer side off your hands, with no subscription and every tool included. Your ERP carries on as it is.', link: { href: '/jewellery-business-as-a-service', label: 'See how it works' } },
+  ])}
+  <p class="cta-note" style="margin-top:16px">If your number came out small, carry on as you are and check it again in six months. Better to find that out here than on a call.</p>`
 , { tone: 'tint' })}
 
 ${L.ctaBand('One enquiry. Two replies.', 'Send us a real price question a customer asked last week. We show you the reply your ERP setup gives, and the one Jwero would have drafted — with the price.', 'erpmakedo')}

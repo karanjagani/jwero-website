@@ -8431,36 +8431,40 @@ FROM ERP TO OS · SWITCHING
 
 ## Switching feels risky. Staying is the risk you are already paying.
 
- Every risk of switching has a specific answer, the import, the approval queue, the Tally bridge, the change-freeze, the exit test. The costs of staying have none; they just continue, every day, outside any report your ERP can run.
+ Every worry about switching has a specific answer: the import, the approval queue, the Tally bridge, the change-freeze and the exit test. The costs of staying have none. They carry on every day, outside any report your ERP can run.
 
  Walk me through the switch for my business 
  See the 30-day sequence 
 
- THE RISK LEDGER
+ WEIGH IT UP
 
-## Six risks you imagine. Six costs you pay.
+## Six worries about switching, each with an answer. Six costs of staying, with none.
 
- Tap each line. The left column empties. The right one does not.
+ Tap a worry to see what removes it. Then read what staying costs you while you decide.
 
- THE RISK YOU IMAGINE
+ WORRIES, EACH WITH AN ANSWER
 
 ## If you switch
- 6 risks standing 
+ 6 worries still open 
 
- My data is stuck in the ERP. We import from Excel, CSV or the ERP’s export, customers, catalogue, stock, however messy, and reconcile it with you in days 2–5. Your data also leaves the same way, any time. Tap to see what removes it My staff will not learn a new system. If they can use WhatsApp they can use Jwero. Roles are trained in their language, and every AI action waits in an approval queue, so nobody can send anything wrong on day one. Tap to see what removes it My accountant’s world will break. It does not change. Books post to Jwero’s ledger and bridge to Tally or Zoho Books. Your CA keeps the tools she has. Tap to see what removes it We will lose days in the season. A written change-freeze around your peak weeks is part of the plan. Go-lives happen before or after, never during. Tap to see what removes it We will be locked into a new vendor. You own your data; exports are yours whenever you want them. A public roadmap says what is shipped and what is not, before you buy. Tap to see what removes it We do not have time for a big project. One pilot on your own data, one branch, exit test at the end. If it fails the test, we stop there. Most single stores run the whole thing on WhatsApp with us. Tap to see what removes it 
+ My data is stuck in the ERP. We import from Excel, CSV or the ERP’s export, customers, catalogue, stock, however messy, and reconcile it with you in days 2–5. Your data also leaves the same way, any time. Tap to see what removes it My staff will not learn a new system. If they can use WhatsApp they can use Jwero. Roles are trained in their language, and every AI action waits in an approval queue, so nobody can send anything wrong on day one. Tap to see what removes it My accountant’s world will break. It does not change. Bills, returns and payments post to Jwero’s ledger and reach Tally automatically; Zoho Books is bridged too. Your CA keeps the tools she has. Tap to see what removes it We will lose days in the season. A written change-freeze around your peak weeks is part of the plan. Go-lives happen before or after, never during. Tap to see what removes it We will be locked into a new vendor. You own your data; exports are yours whenever you want them, billing is month to month, and the roadmap is public before you buy. Tap to see what removes it We do not have time for a big project. One pilot on your own data, one branch, exit test at the end. If it fails the test, we stop there. Most single stores run the whole thing on WhatsApp with us. Tap to see what removes it 
 
- THE RISK YOU ARE PAYING
+ COSTS YOU ARE ALREADY PAYING
 
 ## If you stay
- 6 costs compounding 
+ 6 costs that carry on 
 
  Enquiries after hours go unanswered. Every night, the ones who asked at 9pm buy from whoever replied first. This does not show up in any ERP report, it never became a bill. Tap to see what it costs The rate moves; some prices don’t. A wrong price on a catalogue share or a website is either a margin lost or a customer lost. Twice a day, forever. Tap to see what it costs Customers are remembered by people, not the business. Every salesperson who leaves takes the relationships. The ERP holds the bills; it never held the person. Tap to see what it costs Scheme collections run on a register. Missed instalments are chased late or not at all; maturity conversations happen when the customer remembers, not when you do. Tap to see what it costs Stock ages in silence. Dead pieces sit on financed capital because ageing is a report nobody runs, not a screen everybody sees. Tap to see what it costs Marketing is a blast, not a segment. The same message to everyone, with opt-outs handled by hand. The good customers learn to ignore you. Tap to see what it costs 
 
- Tap every line on the left. Each one has a specific answer. The lines on the right have none, they just continue.
+ Tap each worry under “If you switch”. Every one has a specific answer. The costs under “If you stay” have none; they carry on.
 
- WHAT STAYS, WHAT CHANGES
+ Tell us the worry that matters most Book a demo 
+
+ WHAT STAYS THE SAME
 
 ## Most of your business does not move at all.
+
+ The switch changes where the work is recorded. It does not change who does it or how your customers reach you.
 
  Today With Jwero 
 
@@ -8468,7 +8472,7 @@ FROM ERP TO OS · SWITCHING
 
  Today Tally or Zoho Books, month-end, GST returns.
 
- With Jwero Exactly the same. Books bridge to the tools she already uses.
+ With Jwero The same tools, with less typing. Bills, returns and payments reach Tally automatically.
 
  Your counter staff 
 
@@ -8486,13 +8490,13 @@ FROM ERP TO OS · SWITCHING
 
  Today In the ERP, exportable if the vendor allows.
 
- With Jwero Imported into a record you own, exportable any time as CSV. Ownership is the point.
+ With Jwero Imported into a record you own, and yours to export any time.
 
- THE SWITCH PLAN
+ HOW THE SWITCH RUNS
 
-## Thirty days, with an exit at every step.
+## Thirty days, with a way out at every step.
 
- The literal sequence we run. Coexistence first; migration when the pilot has earned it.
+ Your ERP keeps running alongside Jwero to begin with. You move the rest only when the first month has proved itself.
 
  1 
 
@@ -8516,8 +8520,8 @@ FROM ERP TO OS · SWITCHING
 
  5 
 
-## After, migrate the rest, or don’t
- Move the books when you are ready, or keep the bridge to Tally forever. Both are normal.
+## After: move the rest when you are ready
+ Move the books across when it suits you, or keep the Tally bridge for good. Both are normal.
 
  WHY TRYING THIS IS SAFE
 
@@ -8527,11 +8531,11 @@ FROM ERP TO OS · SWITCHING
 
  Your season is protected A written change-freeze means nothing disruptive happens during your peak weeks. 
 
- THE OTHER SENTENCE
+ BEFORE YOU DECIDE
+
+## Three more things worth reading.
 
 ## “We can make do with what we have.”
-
-## Take it seriously
 
  Tap the tools you use today, see the gaps between them, and put a number on a year of making do, with your own enquiries and your own ticket size.
 
@@ -8539,7 +8543,7 @@ FROM ERP TO OS · SWITCHING
 
 ## Coming from a specific ERP?
 
- Honest, feature-by-feature comparisons with the systems jewellers run today, what they do well, and where the gap is.
+ Feature-by-feature comparisons with the systems jewellers run today: what each does well, and what Jwero adds.
 
  See the comparisons → 
 
@@ -8549,9 +8553,9 @@ FROM ERP TO OS · SWITCHING
 
  See the Migration Centre → 
 
-## Start with the risk that worries you most.
+## Start with the worry that matters most.
 
- Tell us which line on the left you tapped last. We answer that one first, on WhatsApp.
+ Tell us which one you tapped last. We answer that one first, on WhatsApp.
 
  Talk to us 
  Book a demo 
@@ -8575,7 +8579,7 @@ Q: Will we lose the history in the old system?
 A: No. Purchase history, customers, catalogue and stock import from Excel, CSV or the ERP’s export, deduplicated and reconciled with you. The old system can stay readable for as long as you keep it.
 
 Q: What changes for my CA?
-A: Nothing she will notice. Books post to Jwero’s ledger and bridge to Tally or Zoho Books. GST-ready invoices, credit and debit notes and the audit trail are there; e-invoice IRN generation is not yet, and we say so.
+A: Less typing, and nothing else. Bills, returns and payments post to Jwero’s ledger and reach Tally automatically; Zoho Books is bridged too. Tax invoices, credit and debit notes and the audit trail are all there, and e-invoices are generated in Tally from the entries Jwero sends.
 
 ---
 
@@ -8588,16 +8592,16 @@ FROM ERP TO OS · MAKING DO
 
 ## “I can make do with my ERP.” Let’s take that seriously.
 
- You can. Many do, with an ERP, a WhatsApp app, Excel, Tally, Instagram and three people’s memory holding it together. The question is not whether it works. It is what the gaps between those tools cost, and who is quietly paying for them.
+ You can. Many do, with an ERP, a WhatsApp app, Excel, Tally, Instagram and three people’s memory holding it together. The question is not whether it works. It is what the gaps between those tools cost you, and who is quietly paying for them.
 
  Show me what the gaps cost on my numbers 
- Why the ERP era is ending 
+ Why jewellers are moving on from the ERP 
 
- YOUR STACK TODAY
+ STEP 1 · YOUR TOOLS TODAY
 
 ## Tap what you use. The gaps appear between them.
 
- Making do is never one tool. It is the hand-offs between several, and every hand-off is a place a customer, a price or a payment gets lost.
+ Making do is never one tool. It is the hand-offs between several, and every hand-off is a place where a customer, a price or a payment gets lost.
 
  ERP / billing software WhatsApp Business app Excel sheets Tally Instagram Catalogue PDFs SMS / bulk vendor People’s memory Paper registers 
 
@@ -8607,11 +8611,11 @@ FROM ERP TO OS · MAKING DO
 
  Tap what you use today. The gaps appear between them.
 
- JOBS, NOT FEATURES
+ STEP 2 · THE WEEKLY JOBS
 
-## What each setup can actually do on a Tuesday.
+## Nine things that happen every week, and what each setup does with them.
 
- Not a feature matrix. Nine things that happen in a jewellery business every week, and what each setup does with them.
+ Compare by the work that has to get done, not by a list of features.
 
  The job ERP alone ERP + WhatsApp app + Excel Jwero OS 
  
@@ -8625,11 +8629,11 @@ FROM ERP TO OS · MAKING DO
  Know which enquiry became which sale No No Attribution from message to order, on the record 
  Keep the customer when the salesperson leaves The bills stay The phone leaves Every conversation, preference and promise stays with the business 
 
- PUT A NUMBER ON IT
+ STEP 3 · YOUR NUMBER
 
-## What a year of making do is worth, at your close rates.
+## What a year of making do costs, on your own figures.
 
- Your enquiries, your ticket size, your close rate. One conservative assumption, editable.
+ Enter your enquiries, your average sale and your close rate. There is one cautious assumption, and you can change it.
 
  Enquiries a day, all doors (WhatsApp, Instagram, calls, walk-ins) 
  
@@ -8644,25 +8648,33 @@ FROM ERP TO OS · MAKING DO
  Send my numbers to Jwero 
  We reply with what the priced-reply flow would do on your enquiries, drafted, approved, sent.
 
- KEEP THE ERP
+ Go through my numbers with me Book a demo 
+
+ YOUR NEXT STEP
 
 ## You do not have to choose on day one.
 
-## Coexist
+ Three ways to begin, and none of them means switching off your ERP tomorrow.
 
- The ERP keeps the books; Jwero takes the customer-facing doors. Bridged, for as long as you want.
+## Run both, side by side
+
+ Your ERP keeps the books while Jwero takes WhatsApp, Instagram, the catalogue and the counter. The two stay connected for as long as you want.
 
  See how switching works → 
 
-## Start alone, for ₹3,600
+## Run it yourself
 
- The first month is ₹3,600 at os.jwero.ai, in three steps. Bring your catalogue and ten customers; see the priced reply on a real enquiry.
+ Join the waitlist; your first month is ₹3,600 when your account opens. Bring your catalogue and ten customers, and see a priced reply on a real enquiry.
 
- Start for ₹3,600 → 
+ See pricing → 
 
-## Or make do, honestly
+## Let Jwero run it
 
- If the calculator says the gap is small, keep going and come back when it is not. We would rather you find that out here than on a call.
+ Jwero’s specialists and AI take the customer side off your hands, with no subscription and every tool included. Your ERP carries on as it is.
+
+ See how it works → 
+
+ If your number came out small, carry on as you are and check it again in six months. Better to find that out here than on a call.
 
 ## One enquiry. Two replies.
 

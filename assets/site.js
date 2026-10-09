@@ -1860,9 +1860,9 @@ function jwFromInr(n) {
       var items = rl.querySelectorAll('.rl-item[data-rl="' + kind + '"]'), open = 0;
       Array.prototype.forEach.call(items, function (b) { if (b.getAttribute('aria-expanded') === 'true') open += 1; });
       var n = rl.querySelector('[data-rl-n="' + kind + '"]'), l = rl.querySelector('[data-rl-l="' + kind + '"]');
-      if (kind === 'switch') { if (n) n.textContent = String(items.length - open); if (l) l.textContent = items.length - open === 1 ? 'risk standing' : 'risks standing'; }
+      if (kind === 'switch') { if (n) n.textContent = String(items.length - open); if (l) l.textContent = items.length - open === 1 ? 'worry still open' : 'worries still open'; }
       else { if (n) n.textContent = String(items.length); }
-      if (verdict && kind === 'switch' && items.length - open === 0) { verdict.textContent = 'Every risk on the left had an answer. The right column is still counting. That is the whole decision.'; verdict.classList.add('is-done'); }
+      if (verdict && kind === 'switch' && items.length - open === 0) { verdict.textContent = 'Every worry about switching had an answer. The costs of staying are still running. That is the whole decision.'; verdict.classList.add('is-done'); }
     }
     rl.querySelectorAll('.rl-item').forEach(function (b) {
       b.addEventListener('click', function () {
