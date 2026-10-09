@@ -200,7 +200,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('MOVE THE CENTRE', 'Same modules. Different centre. Everything changes.', 'Tap the switch. Watch what each module can know when the centre changes.')}
+  `${L.sectionHead('TRY IT ON ONE CUSTOMER', 'Take one customer. See what each department knows about her.', 'Switch between the ERP and the operating system. The departments are the same; what each of them knows is not.')}
   ${centreSwap()}`
 )}
 
@@ -212,16 +212,16 @@ ${L.impactGrid([
 ])}
 
 ${L.section(
-  `${L.sectionHead('THE HONEST PART', 'Jwero contains an ERP. It is not centred on one.', '')}
+  `${L.sectionHead('WHAT HAPPENS TO YOUR ERP WORK', 'Everything your ERP does today is still here.', 'Moving to an operating system does not mean giving up billing, stock or accounts. It means they stop working alone.')}
   ${L.cards([
     { title: 'What you keep', text: 'Orders, purchase, vendors, job work, stock, GST invoicing, a ledger, Tally and Zoho Books bridges — the ERP jobs are inside Jwero, on the same record as everything else.', link: { href: '/products/erp', label: 'See ERP, reconsidered' } },
-    { title: 'What you lose', text: 'The gap. The re-typing between the sheet and the ERP, the WhatsApp thread nobody can see at the counter, the PDF with last week’s price.' },
-    { title: 'What we don’t do yet', text: 'E-invoice IRN and e-way bills (e-invoices run through Tally), CAD-to-BOM, courier integration. The public roadmap says what is shipped, rolling out and not yet.', link: { href: '/roadmap', label: 'See the roadmap' } },
+    { title: 'What you stop doing', text: 'Retyping between the sheet and the ERP, hunting for a WhatsApp thread nobody at the counter can see, and sending a PDF with last week’s price.' },
+    { title: 'What is coming next', text: 'E-invoices run through Tally today; direct e-invoice filing, e-way bills, CAD-to-BOM and courier integration are on the public roadmap, with what is shipped and what is rolling out.', link: { href: '/roadmap', label: 'See the roadmap' } },
   ])}`
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('WHERE NEXT', 'Two more pages for two more sentences.', '')}
+  `${L.sectionHead('WHERE NEXT', 'Still weighing it up? Two questions jewellers ask next.', '')}
   ${L.cards([
     { icon: 'shield', title: '“Switching is risky.”', text: 'The six risks people imagine, each with the specific thing that removes it — and the six costs of staying, which have no answer.', link: { href: '/erp-to-os/switching', label: 'Read: is switching risky?' } },
     { icon: 'grid', title: '“I can make do with my ERP.”', text: 'Take the objection seriously: tap the tools you use today, see the gaps between them, and put a number on a year of making do.', link: { href: '/erp-to-os/make-do', label: 'Read: can I make do?' } },

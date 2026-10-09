@@ -8301,11 +8301,11 @@ FROM ERP TO OS
 
  Salespeople change. The ERP keeps their bills; it never kept their customers. The business that owns the memory keeps the relationship.
 
- MOVE THE CENTRE
+ TRY IT ON ONE CUSTOMER
 
-## Same modules. Different centre. Everything changes.
+## Take one customer. See what each department knows about her.
 
- Tap the switch. Watch what each module can know when the centre changes.
+ Switch between the ERP and the operating system. The departments are the same; what each of them knows is not.
 
  ERP-centred 
  Customer-centred (OS) 
@@ -8347,9 +8347,11 @@ FROM ERP TO OS
 
  With Jwero Every conversation, preference and promise stays with the business.
 
- THE HONEST PART
+ WHAT HAPPENS TO YOUR ERP WORK
 
-## Jwero contains an ERP. It is not centred on one.
+## Everything your ERP does today is still here.
+
+ Moving to an operating system does not mean giving up billing, stock or accounts. It means they stop working alone.
 
 ## What you keep
 
@@ -8357,19 +8359,19 @@ FROM ERP TO OS
 
  See ERP, reconsidered → 
 
-## What you lose
+## What you stop doing
 
- The gap. The re-typing between the sheet and the ERP, the WhatsApp thread nobody can see at the counter, the PDF with last week’s price.
+ Retyping between the sheet and the ERP, hunting for a WhatsApp thread nobody at the counter can see, and sending a PDF with last week’s price.
 
-## What we don’t do yet
+## What is coming next
 
- E-invoice IRN and e-way bills (e-invoices run through Tally), CAD-to-BOM, courier integration. The public roadmap says what is shipped, rolling out and not yet.
+ E-invoices run through Tally today; direct e-invoice filing, e-way bills, CAD-to-BOM and courier integration are on the public roadmap, with what is shipped and what is rolling out.
 
  See the roadmap → 
 
  WHERE NEXT
 
-## Two more pages for two more sentences.
+## Still weighing it up? Two questions jewellers ask next.
 
 ## “Switching is risky.”
 
