@@ -1017,7 +1017,7 @@ ${L.section(`${eyebrow('How it is worked out')}<h2 class="pz-h pz-center">No hid
   <li><span>02</span><b>The people it takes</b><p>Each count is divided by what one person can handle in a month.</p></li>
   <li><span>03</span><b>Today’s cost</b><p>Those people at the lowest going rate in India: a junior hire in a smaller city, or a freelancer.</p></li>
   <li><span>04</span><b>Jwero’s price</b><p>Half of the cheaper way to do the work when you focus on the outcome. 60% when you want to approve every step.</p></li>
-  <li><span>05</span><b>Your quote</b><p>These are estimates drafted by us. Your plan carries the exact figure for your business. Running it yourself? <a href="/#count-yours">Count your tools instead</a>.</p></li>
+  <li><span>05</span><b>Your quote</b><p>These are estimates drafted by us. Your plan carries the exact figure for your business. Running it yourself? <a href="/#count-yours">See the tools Jwero replaces</a>.</p></li>
 </ol>`)}
 ${L.section(`${eyebrow('Ways to work with Jwero')}<h2 class="pz-h pz-center">Start with one function.</h2>${levels()}`, { tone: 'tint' })}
 ${nextSteps()}
