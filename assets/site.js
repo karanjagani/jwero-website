@@ -483,24 +483,24 @@ function jwFromInr(n) {
     if (btn) btn.addEventListener('click', function () { if (v.paused) { held = false; v.play(); } else { held = true; v.pause(); } });
   });
 
-  // --- home hero rail: one capability at a time, from first enquiry to closed books ---
+  // --- home hero rail: five stages from first enquiry to closed books; each shows what is in it and what the AI does ---
   [].forEach.call(document.querySelectorAll('[data-hrail]'), function (r) {
-    var links = [].slice.call(r.querySelectorAll('[data-hrail-i]')), now = r.querySelector('[data-hrail-now]'), fill = r.querySelector('.hrail-fill');
-    var n = links.length, cur = 0, timer = null, held = false, still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var stops = [].slice.call(r.querySelectorAll('[data-hrail-i]')), panels = r.querySelectorAll('[data-hrail-panel]'), fill = r.querySelector('.hrail-fill');
+    var n = stops.length, cur = 0, timer = null, held = false, still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
     function show(i) {
       cur = (i + n) % n;
-      links.forEach(function (a, k) { a.classList.toggle('is-on', k === cur); a.classList.toggle('is-done', k < cur); });
-      if (now) { now.classList.remove('is-in'); void now.offsetWidth; now.textContent = links[cur].getAttribute('aria-label'); now.classList.add('is-in'); }
+      stops.forEach(function (b, k) { b.classList.toggle('is-on', k === cur); b.classList.toggle('is-done', k < cur); b.setAttribute('aria-selected', String(k === cur)); });
+      [].forEach.call(panels, function (p, k) { p.classList.remove('is-on'); if (k === cur) { void p.offsetWidth; p.classList.add('is-on'); } });
       if (fill) fill.style.width = (n > 1 ? (cur / (n - 1)) * 100 : 0) + '%';
     }
-    function start() { if (still || timer || held) return; timer = setInterval(function () { show(cur + 1); }, 1900); }
+    function start() { if (still || timer || held) return; timer = setInterval(function () { show(cur + 1); }, 3600); }
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
-    links.forEach(function (a, k) {
-      a.addEventListener('mouseenter', function () { held = true; stop(); show(k); });
-      a.addEventListener('focus', function () { held = true; stop(); show(k); });
+    stops.forEach(function (b, k) {
+      b.addEventListener('click', function () { held = true; stop(); show(k); });
+      b.addEventListener('mouseenter', function () { held = true; stop(); show(k); });
+      b.addEventListener('keydown', function (e) { var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (d) { e.preventDefault(); held = true; stop(); show(cur + d); stops[cur].focus(); } });
     });
     r.addEventListener('mouseleave', function () { held = false; start(); });
-    r.addEventListener('focusout', function (e) { if (!r.contains(e.relatedTarget)) { held = false; start(); } });
     show(0);
     if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { if (e[0].isIntersecting && !document.hidden) start(); else stop(); }, { threshold: 0.3 }).observe(r); else start();
     document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });

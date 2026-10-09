@@ -1323,22 +1323,27 @@ function stackMerge(only) {
 }
 
 // The home hero: one question, one action, and the piece as the visual.
-// The whole product as one rail, from the first enquiry to the closed books. One name shows
-// at a time; the twelve are links with their names in the page, so nothing is hidden from search.
-const HERO_RAIL = [
-  ['store', 'Website and apps', '/products/ecommerce'], ['megaphone', 'Social media and ads', '/products/ads-manager'],
-  ['chat', 'Unified communications', '/products/whatsapp'], ['heart', 'CRM and loyalty', '/products/crm'],
-  ['route', 'Marketing automation and customer journeys', '/products/journeys'], ['video', 'Team meets and recordings', '/products/meetings'],
-  ['till', 'POS and billing', '/products/pos'], ['activity', 'Store performance', '/products/showroom'],
-  ['layers', 'ERP', '/products/erp'], ['users', 'HR', '/products/hr-payroll'],
-  ['pie', 'Custom reports', '/products/reports'], ['book', 'Accounting and billing', '/products/billing-finance'],
+// The whole product as one journey in five stages, from the first enquiry to the closed books.
+// One stage shows at a time: what is in it, what the AI does there, and your approval. All five
+// stages are in the page as links and text, so nothing is hidden from search.
+const HERO_STAGES = [
+  ['megaphone', 'Attract', 'First enquiry', [['Website and apps', '/products/ecommerce'], ['Social media and ads', '/products/ads-manager'], ['Marketing automation and journeys', '/products/journeys']], 'AI plans the campaign and drafts the posts'],
+  ['chat', 'Engage', '', [['Unified communications', '/products/whatsapp'], ['CRM and loyalty', '/products/crm'], ['Team meets and recordings', '/products/meetings']], 'AI replies to the enquiry at today’s rate'],
+  ['till', 'Sell', '', [['POS and billing', '/products/pos'], ['Catalogue at the live rate', '/products/catalog'], ['Gold schemes', '/products/gold-schemes'], ['Store performance', '/products/showroom']], 'AI follows up walkouts and scheme reminders'],
+  ['layers', 'Run', '', [['ERP', '/products/erp'], ['Inventory', '/products/inventory'], ['Workshop and orders', '/products/manufacturing'], ['HR', '/products/hr-payroll']], 'AI flags stock that is not moving and orders running late'],
+  ['book', 'Account', 'Closed books', [['Accounting and billing', '/products/billing-finance'], ['Custom reports', '/products/reports']], 'AI explains the numbers and flags what is off'],
 ];
 function heroRail() {
   return `
 <div class="hrail" data-hrail>
-  <p class="hrail-line"><span>One system, from the first enquiry to the closed books</span><b class="hrail-now" data-hrail-now>${HERO_RAIL[0][1]}</b></p>
-  <div class="hrail-track"><i class="hrail-fill" aria-hidden="true"></i><ol>${HERO_RAIL.map(([ic, n, h], i) => `<li><a href="${h}" data-hrail-i="${i}" aria-label="${esc(n)}">${icon(ic)}<span>${n}</span></a></li>`).join('')}</ol></div>
-  <p class="hrail-ends" aria-hidden="true"><span>First enquiry</span><span>All on one dashboard</span><span>Closed books</span></p>
+  <p class="hrail-line">One system, from the first enquiry to the closed books</p>
+  <div class="hrail-track" role="tablist" aria-label="The journey, in five stages"><i class="hrail-fill" aria-hidden="true"></i>${HERO_STAGES.map(([ic, n], i) => `<button type="button" role="tab" class="hrail-stop${i === 0 ? ' is-on' : ''}" id="hrail-t-${i}" aria-controls="hrail-p-${i}" aria-selected="${i === 0}" data-hrail-i="${i}"><span>${icon(ic)}</span><b>${n}</b></button>`).join('')}</div>
+  <div class="hrail-panels">${HERO_STAGES.map(([, n, , items, ai], i) => `
+    <div class="hrail-panel${i === 0 ? ' is-on' : ''}" role="tabpanel" id="hrail-p-${i}" aria-labelledby="hrail-t-${i}" data-hrail-panel="${i}">
+      <p class="hrail-chips">${items.map(([t, h]) => `<a href="${h}">${t}</a>`).join('')}</p>
+      <p class="hrail-ai"><span class="hrail-ai-does">${icon('sparkle')}${ai}</span><span class="hrail-ai-ok">${icon('check')}You approve</span></p>
+    </div>`).join('')}
+  </div>
 </div>`;
 }
 function homeHero({ kicker, h1, sub, rail }) {
