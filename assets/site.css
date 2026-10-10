@@ -6301,3 +6301,7 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 
 /* Home hero: the order story stays out of the hero */
 .gem2-hero .gem2-caption { display: none; }
+/* Home hero: room for nine modules around the bangle */
+.gem2-hero .gem2-stage { height: 500px; }
+@media (max-width: 980px) { .gem2-hero .gem2-stage { height: 460px; } }
+@media (max-width: 560px) { .gem2-hero .gem2-stage { height: 420px; } }

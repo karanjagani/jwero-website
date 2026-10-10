@@ -1909,7 +1909,11 @@ function jwFromInr(n) {
       var rx = Math.min(w / 2 - (small ? 34 : 70), S * (small ? 2.05 : 2.5)), ry = Math.min(h / 2 - 46, S * 1.55);
       nodePos = [];
       nodeBtns.forEach(function (b, k) {
-        var a = -Math.PI / 2 + (k + .5) * TAU / N, x = ox + Math.cos(a) * rx, y = oy + Math.sin(a) * ry;
+        var a = -Math.PI / 2 + (k + .5) * TAU / N, dx = Math.cos(a) * rx, dy = Math.sin(a) * ry;
+        // never on the bangle: keep each module clear of the band, inside the stage
+        var r = Math.sqrt(dx * dx + dy * dy), rMin = (S * 1.18 + (small ? 30 : 38)) * (1 + .12 * Math.abs(Math.sin(a)));
+        if (r < rMin) { dx *= rMin / r; dy *= rMin / r; }
+        var x = ox + dx, y = Math.max(small ? 30 : 36, Math.min(h - (small ? 30 : 40), oy + dy));
         nodePos.push([x, y, a]); b.style.left = x + 'px'; b.style.top = y + 'px';
       });
       shardEls.forEach(function (el, g) { el.style.left = (ox + DIRS[g][0] * S * .78) + 'px'; el.style.top = (oy + DIRS[g][1] * S * .66 + (DIRS[g][1] < 0 ? -S * .1 : S * .1)) + 'px'; });
