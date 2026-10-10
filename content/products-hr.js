@@ -106,4 +106,4 @@ ${L.ctaBand('Run payroll without Excel.', 'Bring last month’s attendance and s
 `,
 };
 
-module.exports = [hrPayroll];
+module.exports = [];

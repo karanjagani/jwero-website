@@ -89,7 +89,8 @@ function jwFromInr(n) {
     instagram: 'Hi Jwero, show me Instagram & Facebook commerce.',
     aiagents: 'Hi Jwero, show me an AI sales agent in action.',
     crm: 'Hi Jwero, show me every enquiry captured in one CRM and who my team should call today.',
-    catalog: 'Hi Jwero, show me the catalogue with live gold-rate pricing.',
+    catalog: 'Hi Jwero, show me a digital catalogue for my customers, with every view tracked.',
+    hr: 'Hi Jwero, show me attendance, payroll and incentives done for my team.',
     inventory: 'Hi Jwero, show me inventory ageing and dead-stock visibility.',
     billing: 'Hi Jwero, show me GST invoicing at the live gold rate.',
     erp: 'Hi Jwero, show me where my ERP leaks: wastage, cash, stock and discounts.',
@@ -1248,6 +1249,31 @@ function jwFromInr(n) {
     }
     m.addEventListener('click', function (e) { var b = e.target.closest('[data-f]'); if (!b) return; b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('pr_meter_use', {}); } });
     m.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('pr_meter_use', {}); } });
+    calc();
+  });
+
+  // HR and Catalogues: hero meters.
+  Array.prototype.forEach.call(document.querySelectorAll('div[data-hrm], div[data-dcm]'), function (m) {
+    var hr = m.hasAttribute('data-hrm'), used = false, cta = m.querySelector('[data-hr-cta], [data-dc-cta]');
+    var n = function (sel) { var el = m.querySelector(sel); return el ? Number(el.value) || 0 : 0; };
+    var inr = function (v) { v = Math.round(v); if (v >= 1e7) return '₹' + (v / 1e7).toFixed(2).replace(/\.?0+$/, '') + ' crore'; if (v >= 1e5) return '₹' + (v / 1e5).toFixed(1).replace(/\.0$/, '') + ' lakh'; return '₹' + v.toLocaleString('en-IN'); };
+    function bars(list) { var max = Math.max.apply(null, list.map(function (x) { return x[1]; }).concat([1])); list.forEach(function (x) { var a = m.querySelector('[data-b="' + x[0] + '"]'); if (!a) return; a.querySelector('em').style.width = Math.max(2, x[1] / max * 100).toFixed(1) + '%'; a.querySelector('b').textContent = x[2]; }); }
+    function calc() {
+      if (hr) {
+        var st = n('[data-i="staff"]'), sa = n('[data-i="sales"]'), att = st * n('[data-a="att"]') / 60, pay = st * n('[data-a="pay"]') / 60, inc = sa * n('[data-a="inc"]') / 60, tot = Math.round(att + pay + inc);
+        m.querySelector('[data-o="staff"]').textContent = st; m.querySelector('[data-o="sales"]').textContent = sa;
+        bars([['att', att, Math.round(att) + ' h'], ['pay', pay, Math.round(pay) + ' h'], ['inc', inc, Math.round(inc) + ' h']]);
+        m.querySelector('[data-o="total"]').textContent = tot + ' hours';
+        if (cta) cta.setAttribute('data-wa-extra', ' I have ' + st + ' staff and ' + sa + ' salespeople on incentives. Your page estimates ' + tot + ' hours a month by hand.');
+      } else {
+        var se = n('[data-i="sent"]'), aov = n('[data-i="aov"]'), cr = n('[data-a="cr"]'), lf = n('[data-a="lift"]'), now = se * cr / 100, then = se * (cr + lf) / 100;
+        m.querySelector('[data-o="sent"]').textContent = se.toLocaleString('en-IN'); m.querySelector('[data-o="aov"]').textContent = inr(aov);
+        bars([['now', now, now.toFixed(1)], ['then', then, then.toFixed(1)]]);
+        var t = inr((then - now) * aov); m.querySelector('[data-o="total"]').textContent = t;
+        if (cta) cta.setAttribute('data-wa-extra', ' I send about ' + se + ' catalogues a month, average order ' + inr(aov) + '. Your page estimates ' + t + ' extra a month.');
+      }
+    }
+    m.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack(hr ? 'hr_meter_use' : 'dc_meter_use', {}); } });
     calc();
   });
 
