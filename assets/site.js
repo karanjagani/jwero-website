@@ -88,7 +88,7 @@ function jwFromInr(n) {
     whatsapp: 'Hi Jwero, show me WhatsApp commerce for my business.',
     instagram: 'Hi Jwero, show me Instagram & Facebook commerce.',
     aiagents: 'Hi Jwero, show me an AI sales agent in action.',
-    crm: 'Hi Jwero, show me the jewellery CRM and customer record.',
+    crm: 'Hi Jwero, show me every enquiry captured in one CRM and who my team should call today.',
     catalog: 'Hi Jwero, show me the catalogue with live gold-rate pricing.',
     inventory: 'Hi Jwero, show me inventory ageing and dead-stock visibility.',
     billing: 'Hi Jwero, show me GST invoicing at the live gold rate.',
@@ -982,6 +982,65 @@ function jwFromInr(n) {
     var c = e.target.closest('[data-soc-cta]'); if (c) window.jweroTrack('soc_cta', { at: c.getAttribute('data-soc-cta'), label: (c.textContent || '').trim().slice(0, 60) });
     var f = e.target.closest('.soc-signals .ibx-flip'); if (f) window.jweroTrack('soc_signal_turn', { signal: (f.querySelector('.erp-leak-k') || {}).textContent || '' });
     var j = e.target.closest('#journeys [data-jr-tab]'); if (j && document.querySelector('[data-soc-icp]')) window.jweroTrack('soc_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
+  });
+
+  // CRM: sources stream into one record, then out to four actions.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-crmorb]'), function (o) {
+    var chips = o.querySelectorAll('.crm-orb-in span'), outs = o.querySelectorAll('.crm-orb-out p'), src = o.querySelector('[data-orb-src]'), cnt = o.querySelector('[data-orb-n]'), n = chips.length, i = -1, timer = 0;
+    if (reduceMotion || !('IntersectionObserver' in window)) { cnt.textContent = n; Array.prototype.forEach.call(outs, function (p) { p.classList.add('is-on'); }); return; }
+    o.classList.add('is-live');
+    function tick() {
+      i = (i + 1) % n;
+      Array.prototype.forEach.call(chips, function (c, k) { c.classList.toggle('is-now', k === i); c.classList.toggle('is-in', k <= i); });
+      src.textContent = 'From ' + chips[i].textContent.trim();
+      cnt.textContent = i + 1;
+      o.classList.remove('is-pulse'); void o.offsetWidth; o.classList.add('is-pulse');
+      Array.prototype.forEach.call(outs, function (p, k) { p.classList.remove('is-on'); window.setTimeout(function () { p.classList.add('is-on'); }, 250 + k * 180); });
+      timer = window.setTimeout(tick, i === n - 1 ? 2600 : 1300);
+    }
+    whileVisible(o, function () { window.clearTimeout(timer); tick(); }, function () { window.clearTimeout(timer); });
+  });
+
+  // CRM: leads that slip through.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-crmm]'), function (m) {
+    var n = function (sel) { var el = m.querySelector(sel); return el ? Number(el.value) || 0 : 0; }, used = false, cta = m.querySelector('[data-crm-cta="meter"]');
+    var inr = function (v) { v = Math.round(v); if (v >= 1e7) return '₹' + (v / 1e7).toFixed(2).replace(/\.?0+$/, '') + ' crore'; if (v >= 1e5) return '₹' + (v / 1e5).toFixed(1).replace(/\.0$/, '') + ' lakh'; return '₹' + v.toLocaleString('en-IN'); };
+    function calc() {
+      var leads = n('[data-i="n"]'), f = n('[data-i="f"]'), lost = leads * (100 - f) / 100, worth = lost * n('[data-a="buy"]') / 100 * n('[data-a="bill"]');
+      m.querySelector('[data-o="n"]').textContent = leads.toLocaleString('en-IN'); m.querySelector('[data-o="f"]').textContent = f + '%';
+      var a = m.querySelector('[data-b="lost"]'); a.querySelector('em').style.width = (100 - f) + '%'; a.querySelector('b').textContent = Math.round(lost).toLocaleString('en-IN');
+      var t = inr(worth); m.querySelector('[data-o="total"]').textContent = t;
+      if (cta) cta.setAttribute('data-wa-extra', ' We get about ' + leads.toLocaleString('en-IN') + ' enquiries a month and follow up ' + f + '% within a day. Your page estimates ' + t + ' a month slipping through.');
+    }
+    m.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('crm_meter_use', {}); } });
+    calc();
+  });
+
+  // CRM: "I run a…".
+  Array.prototype.forEach.call(document.querySelectorAll('[data-crm-icp]'), function (box) {
+    var CFG = JSON.parse(box.getAttribute('data-cfg'));
+    var MAP = { single: 'single', staff: 'single', maker: 'single', b2b: 'single', trader: 'single', chain: 'chain', franchise: 'chain', d2c: 'brand', brand: 'brand' };
+    var STORE = { single: 'single', chain: 'chain', brand: 'd2c' };
+    var jr = document.querySelector('#journeys [data-jr]');
+    function apply(k, fromUser) {
+      Array.prototype.forEach.call(box.querySelectorAll('[data-k]'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k ? 'true' : 'false'); });
+      Array.prototype.forEach.call(box.querySelectorAll('[data-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
+      if (jr && jr.jrShow && (fromUser || CFG[k][0] !== 0)) jr.jrShow(CFG[k][0]);
+      var lead = document.getElementById(CFG[k][1]), after = document.getElementById('sources');
+      if (lead && after && lead !== after) after.parentNode.insertBefore(lead, after.nextSibling);
+      Array.prototype.forEach.call(document.querySelectorAll('.crm-door'), function (a) { a.hidden = a.getAttribute('data-crm-cta') !== 'door-' + k; });
+      var band = document.querySelector('.cta-band .btn-ghost-light[href="/book-demo"]'); if (band) band.textContent = k === 'chain' ? 'Book a 30-minute demo for a chain' : 'Book a demo';
+      if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack('crm_icp_pick', { icp: k }); }
+    }
+    box.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (b) apply(b.getAttribute('data-k'), true); });
+    var saved = ''; try { saved = localStorage.getItem('jwero-persona') || ''; } catch (e) {}
+    var asked = /[?&](?:crm|p)=(single|chain|brand|franchise|d2c|maker|b2b|trader|staff)/.exec(location.search);
+    apply(MAP[asked ? asked[1] : saved] || 'single', !!asked);
+  });
+  document.addEventListener('click', function (e) {
+    if (!window.jweroTrack) return;
+    var c = e.target.closest('[data-crm-cta]'); if (c) window.jweroTrack('crm_cta', { at: c.getAttribute('data-crm-cta'), label: (c.textContent || '').trim().slice(0, 60) });
+    var j = e.target.closest('#journeys [data-jr-tab]'); if (j && document.querySelector('[data-crm-icp]')) window.jweroTrack('crm_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
   });
 
   // One Inbox: what slow replies cost.

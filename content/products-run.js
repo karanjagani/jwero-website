@@ -800,4 +800,5 @@ ${L.ctaBand('Stop sending to everyone.', 'Tell us who you want to reach. We will
 `,
 };
 
-module.exports = [crm, catalog, showroom];
+module.exports = [catalog, showroom];
+// crm was rebuilt in content/crm.js on 2026-10-10.

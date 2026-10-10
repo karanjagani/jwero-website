@@ -39,7 +39,7 @@ const SOCIALS = [
 // Each page is stamped with the mtime of the content file that defined it, so the
 // sitemap can emit an honest <lastmod> without hand-maintaining dates.
 const CONTENT_FILES = [
-  'home', 'platform', 'products', 'products-sell', 'inbox', 'inbox-landings', 'erp', 'erp-landings', 'social', 'social-landings', 'ecommerce', 'ecommerce-landings', 'promotions', 'promotions-landings', 'products-run', 'products-grow', 'products-manage', 'products-hr', 'products-ops', 'products-more', 'brief', 'erp-to-os', 'pricing', 'diamond-traders',
+  'home', 'platform', 'products', 'products-sell', 'inbox', 'inbox-landings', 'erp', 'erp-landings', 'social', 'social-landings', 'ecommerce', 'ecommerce-landings', 'promotions', 'promotions-landings', 'crm', 'crm-landings', 'products-run', 'products-grow', 'products-manage', 'products-hr', 'products-ops', 'products-more', 'brief', 'erp-to-os', 'pricing', 'diamond-traders',
   'industries', 'solutions', 'solutions-retail-segments', 'solutions-wholesale',
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
@@ -73,7 +73,7 @@ const PRODUCT_GROUPS = [
     ['/products/social-media', 'Social Media', 'AI posts, 8 channels, Google reviews'],
   ]},
   { title: 'Know', items: [
-    ['/products/crm', 'Jewellery CRM', 'Customer 360 for the trade'],
+    ['/products/crm', 'Jewellery CRM', '20+ sources, one record, who to call today'],
     ['/products/showroom', 'Showroom Intelligence', 'Who is on your floor, right now'],
     ['/products/reports', 'Reports & Dashboards', 'Ask a question, pin the answer'],
   ]},
@@ -504,6 +504,13 @@ function platformStory(html, slug) {
 }
 function journeyFix(html, p) {
   // Social: the generic opening blocks (the shift, where it pays off) follow the first proof.
+  // CRM: the generic opening blocks follow the first walkthrough.
+  if (p && p.slug === 'products/crm') {
+    const cutSec = (re) => { const m = re.exec(html); if (!m) return ''; const a = html.lastIndexOf('<section', m.index + 1); const e = html.indexOf('</section>', m.index) + 10; const t = html.slice(a, e); html = html.slice(0, a) + html.slice(e); return t; };
+    const moved = cutSec(/<section class="shift"/) + cutSec(/<section class="section sim-section" id="try-[a-z]+"/) + cutSec(/Where this pays off in a jewellery business\./);
+    const at = html.indexOf('id="one-lead"');
+    if (moved && at > 0) { const e = html.indexOf('</section>', at) + 10; html = html.slice(0, e) + moved + html.slice(e); }
+  }
   // One Inbox: the shift and the AI-workforce simulator follow the first walkthroughs.
   if (p && p.slug === 'products/inbox') {
     const cutSec = (re) => { const m = re.exec(html); if (!m) return ''; const a = html.lastIndexOf('<section', m.index + 1); const e = html.indexOf('</section>', m.index) + 10; const t = html.slice(a, e); html = html.slice(0, a) + html.slice(e); return t; };
@@ -1320,7 +1327,7 @@ function withProductHome(html, slug) {
   const mk = old.indexOf('<div class="container"><div class="stage hero-mock">');
   const mock = mk > 0 ? old.slice(mk, old.lastIndexOf('</section>')) : '';
   const story = PRODUCT_STORY[m[1]] || 'single';
-  const own = m[1] === 'inbox' ? require('./content/inbox').heroPiece() : m[1] === 'erp' ? require('./content/erp').heroPiece() : m[1] === 'social-media' ? require('./content/social').heroPiece() : m[1] === 'ecommerce' ? require('./content/ecommerce').heroPiece() : m[1] === 'promotions' ? require('./content/promotions').heroPiece() : '';
+  const own = m[1] === 'inbox' ? require('./content/inbox').heroPiece() : m[1] === 'erp' ? require('./content/erp').heroPiece() : m[1] === 'social-media' ? require('./content/social').heroPiece() : m[1] === 'ecommerce' ? require('./content/ecommerce').heroPiece() : m[1] === 'promotions' ? require('./content/promotions').heroPiece() : m[1] === 'crm' ? require('./content/crm').heroPiece() : '';
   const hero = L4.homeHero({ kicker, h1, sub, piece: own || L4.recordFeed({ set: story, href: '/' + slug }) })
     .replace(/utm_medium=home-hero/g, 'utm_medium=product-' + m[1]).replace('hero-home"', 'hero-home hero-product"')
     + `<section class="pz-logos">${L4.customerLogos()}</section>`

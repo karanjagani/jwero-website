@@ -144,7 +144,7 @@
   },
   {
    "hook": "A regular walks in and the new salesman doesn't know her.",
-   "does": "One customer record shows family links, payments, store visits, scheme status and KYC together.",
+   "does": "One customer record shows family links, payments, store visits and scheme status together.",
    "changes": "Any staff member can serve any customer like a regular.",
    "source": "components/crm/contact-relationships-section.tsx; components/crm/contact-store-sessions-section.tsx; components/crm/contact-digital-gold-panel.tsx"
   },
