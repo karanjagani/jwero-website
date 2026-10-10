@@ -5382,3 +5382,13 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 @media (max-width: 720px) { .ibx-uses, .ibx-paths, .ibx-ch { grid-template-columns: 1fr; } .ibx-paths li { grid-template-columns: 74px minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { .ibx-hub.gfx-arm .ibx-in li, .ibx-hub.gfx-arm .ibx-out > div { opacity: 1; transform: none; transition: none; } }
 @media (max-width: 1000px) { .ibx-core em { font-size: .5rem; letter-spacing: .05em; } }
+
+/* Feed rows that end with who handled it */
+.rfeed-list span.is-ai .ico { color: #1fa855; }
+.rfeed-list span.is-human { color: #7a4d00; font-weight: 500; }
+.rfeed-list span.is-human .ico { color: #c98300; }
+.rfeed-list li:has(span.is-human).is-now { background: color-mix(in srgb, var(--amber) 12%, var(--card)); border-left-color: var(--amber); }
+
+/* On the dark hero the headline's turn is amber, and a long feed sits tighter */
+.hero-home .h1-turn { color: var(--amber); }
+.rfeed-list li { padding-top: 8px; padding-bottom: 8px; }

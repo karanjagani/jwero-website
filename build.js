@@ -1293,7 +1293,8 @@ function withProductHome(html, slug) {
   const mk = old.indexOf('<div class="container"><div class="stage hero-mock">');
   const mock = mk > 0 ? old.slice(mk, old.lastIndexOf('</section>')) : '';
   const story = PRODUCT_STORY[m[1]] || 'single';
-  const hero = L4.homeHero({ kicker, h1, sub, piece: L4.recordFeed({ set: story, href: '/' + slug }) })
+  const own = m[1] === 'inbox' ? require('./content/inbox').heroPiece() : '';
+  const hero = L4.homeHero({ kicker, h1, sub, piece: own || L4.recordFeed({ set: story, href: '/' + slug }) })
     .replace(/utm_medium=home-hero/g, 'utm_medium=product-' + m[1]).replace('hero-home"', 'hero-home hero-product"')
     + `<section class="pz-logos">${L4.customerLogos()}</section>`
     + (mock ? `<section class="section prod-mock">${mock}</section>` : '');

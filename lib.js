@@ -1275,6 +1275,16 @@ function heroRail() {
 // live. A card of the modules involved and a feed of what happened, each line
 // landing on the one record. The 3D band is the home page's alone.
 function recordFeed(opts = {}) {
+  if (opts.rows) {
+    // a page's own feed: [label, what happened, chip index, outcome, 'a' (AI) or 'h' (a person)]
+    return `
+<div class="rfeed" data-rfeed>
+  <div class="rfeed-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><b>${esc(opts.title)}</b><em>Live</em></div>
+  <ul class="rfeed-mods">${opts.chips.map(([ic, t], k) => `<li data-k="${k}">${icon(ic)}<span>${esc(t)}</span></li>`).join('')}</ul>
+  <ol class="rfeed-list">${opts.rows.map(([l, what, k, out, kind]) => `<li data-m="${k}"><b>${esc(l)}</b><div><p>${esc(what)}</p><span class="${kind === 'h' ? 'is-human' : 'is-ai'}">${icon(kind === 'h' ? 'users' : 'bot')}${esc(out)}</span></div></li>`).join('')}</ol>
+  <p class="rfeed-foot">${icon('record')}${esc(opts.foot)}</p>
+</div>`;
+  }
   const { GEM } = require('./content/gem');
   const d = GEM[opts.set] || GEM.single;
   const title = opts.centre || d.centre;

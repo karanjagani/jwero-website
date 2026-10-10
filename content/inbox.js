@@ -181,8 +181,8 @@ const inbox = {
   body: `
 ${L.hero({
   eyebrow: 'ONE INBOX · EVERY CHANNEL, EVERY CONVERSATION',
-  h1: 'Every customer conversation in one inbox, answered by AI or by the right person.',
-  sub: 'WhatsApp messages and calls, Instagram, Facebook, email, website chat and social replies land in one place, on one customer record. AI answers what it can at any hour. Everything else reaches the salesperson who should have it, with the whole story.',
+  h1: 'Never lose an enquiry again. <span class="h1-turn">Every channel. One inbox.</span>',
+  sub: 'WhatsApp, calls, Instagram, Facebook, email, website chat and social replies arrive in one place. AI answers in seconds, day or night, at today’s rate. What needs a person reaches the right salesperson with the full story.',
   primary: { href: '#', label: 'Show me my channels in one inbox', wa: 'inbox' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -229,4 +229,18 @@ ${L.ctaBand('Put every conversation in one place.', 'Bring your WhatsApp number 
 `,
 };
 
+// The hero picture: every channel as a chip, and one conversation from each
+// arriving and being answered by AI or routed to a person.
+const HERO_CHIPS = [['chat', 'WhatsApp'], ['phone', 'WhatsApp calls'], ['camera', 'Instagram'], ['users', 'Facebook'], ['mail', 'Email'], ['chat', 'Webchat'], ['share', 'Threads and X'], ['megaphone', 'Ads and lead forms']];
+const HERO_ROWS = [
+  ['WhatsApp', 'Meera: “Price of the 22k bangle?”', 0, 'AI replied at today’s rate', 'a'],
+  ['Instagram', 'A comment on your reel: “price?”', 2, 'AI answered in a private message', 'a'],
+  ['Call', 'A missed call at 9:10 pm', 1, 'AI called back and booked a visit', 'a'],
+  ['Facebook', 'Messenger: “Do you take old gold?”', 3, 'AI answered from your policy', 'a'],
+  ['Email', '“The stone on my ring is loose”', 4, 'Sent to the manager, with her bill', 'h'],
+  ['Webchat', 'A website visitor asks about a solitaire', 5, 'AI answered and saved the lead', 'a'],
+  ['Threads', 'A reply under your new collection post', 6, 'AI replied with the catalogue link', 'a'],
+  ['Lead form', 'A bridal set enquiry from your ad', 7, 'Sent to Riya, your senior salesperson', 'h'],
+];
 module.exports = [inbox];
+module.exports.heroPiece = () => L.recordFeed({ title: 'One Inbox', chips: HERO_CHIPS, rows: HERO_ROWS, foot: 'Answered by AI or routed to a person. All on the customer’s record.' });
