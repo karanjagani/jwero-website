@@ -1811,6 +1811,8 @@ function jwFromInr(n) {
   Array.prototype.forEach.call(document.querySelectorAll('[data-gem2]'), function (root) {
     var DATA; try { DATA = JSON.parse(root.querySelector('[data-gem2-json]').textContent); } catch (e) { return; }
     var key = root.getAttribute('data-set') || personaKey(); var set = DATA.sets[key] || DATA.sets.single;
+    // home hero: ERP, CRM, HR and Finance join the ring; the order story stays out of the hero
+    if (DATA.extra && DATA.extra.length) { var s1 = {}; for (var k1 in set) s1[k1] = set[k1]; s1.modules = set.modules.filter(function (m) { return !/^order/i.test(m[1]); }).concat(DATA.extra); s1.week = set.week.filter(function (e) { var mod = set.modules[e[2]]; return mod && !/^order/i.test(mod[1]); }).map(function (e) { var mod = set.modules[e[2]]; var c = e.slice(); c[2] = s1.modules.indexOf(mod); return c; }); s1.centre = 'One record'; set = s1; }
     var ownCentre = root.getAttribute('data-centre'); if (ownCentre) { var s0 = {}; for (var kk in set) s0[kk] = set[kk]; s0.centre = ownCentre; set = s0; }
     var STONES = { ruby: [[196, 30, 72], [255, 190, 205]], emerald: [[14, 140, 92], [200, 255, 228]] }, stoneRGB = STONES[root.getAttribute('data-stone')] || [[120, 165, 230], [255, 255, 255]];
     var fixedMetal = root.getAttribute('data-fixed-metal');

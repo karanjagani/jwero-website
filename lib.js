@@ -1341,9 +1341,9 @@ function gemStage2(opts = {}) {
   const icons = {};
   Object.values(GEM).forEach((g) => g.modules.forEach((m) => { icons[m[0]] = icon(m[0]); }));
   const d = Object.assign({}, GEM[opts.set] || GEM.single, opts.centre ? { centre: opts.centre } : {});
-  const pill = ([k, ic, t, d, h]) => `<a class="gem2-pillar is-${k}" href="${h}" data-home-cta="pillar-${k}">${icon(ic)}<b>${t}</b><small>${d}</small></a>`;
-  const PILLARS = [['erp', 'scale', 'ERP', 'Counter, stock, workshop', '/products/erp'], ['crm', 'users', 'CRM', '20+ sources, one record', '/products/crm'], ['hr', 'activity', 'HR', 'Attendance, payroll, incentives', '/products/hr-payroll'], ['fin', 'coins', 'Finance', 'GST, ledger, Tally in step', '/products/erp#finance']];
-  const json = JSON.stringify({ sets: GEM, icons, families: FAMILIES }).replace(/</g, '\\u003c');
+  const EXTRA = opts.hero ? [['scale', 'ERP', 'stock, the counter, the workshop and purchase', 'every bill, piece and job', '/products/erp', 0, 0], ['users', 'CRM', 'every source and every conversation', 'the customer record and who to call', '/products/crm', 0, 0], ['activity', 'HR', 'who is in and what is waiting', 'attendance, payroll and incentives', '/products/hr-payroll', 0, 0], ['coins', 'Finance', 'every bill, purchase and payment', 'GST, the ledger and Tally', '/products/erp#finance', 0, 0]] : [];
+  EXTRA.forEach((m) => { icons[m[0]] = icon(m[0]); });
+  const json = JSON.stringify({ sets: GEM, icons, families: FAMILIES, extra: EXTRA }).replace(/</g, '\\u003c');
   return `
 <div class="gem2${opts.set && !opts.hero ? ' gem2-page' : ''}${opts.hero ? ' gem2-hero' : ''}" data-gem2 data-metal="${opts.metal || 'gold'}"${opts.set ? ` data-set="${opts.set}"` : ''}${opts.set || opts.hero ? ` data-fixed-metal="${opts.metal || 'gold'}"` : ''}${opts.centre ? ` data-centre="${esc(opts.centre)}"` : ''}${opts.stone ? ` data-stone="${esc(opts.stone)}"` : ''}${opts.hero ? ' data-loop' : ''}>
   <script type="application/json" data-gem2-json>${json}</script>
@@ -1378,14 +1378,12 @@ function gemStage2(opts = {}) {
     <p class="gem2-sig-note" data-gem2-signote>Press play. Each event shows the family of signals it fires — one family at a time.</p>
   </div>
   <div class="gem2-body">
-    ${opts.hero ? `<div class="gem2-pillars is-top">${PILLARS.slice(0, 2).map(pill).join('')}</div>` : ''}
     <div class="gem2-stage">
       <canvas aria-hidden="true"></canvas>
-      <div class="gem2-nodes" data-gem2-nodes>${d.modules.map((m, k) => `<button type="button" class="gem2-node" data-k="${k}">${icon(m[0])}<span>${esc(m[1])}</span></button>`).join('')}</div>
+      <div class="gem2-nodes" data-gem2-nodes>${d.modules.concat(EXTRA).map((m, k) => `<button type="button" class="gem2-node" data-k="${k}">${icon(m[0])}<span>${esc(m[1])}</span></button>`).join('')}</div>
       <div class="gem2-shards" data-gem2-shards aria-hidden="true"></div>
       <p class="gem2-centre" data-gem2-centre>${centreLines(d.centre)}</p>
     </div>
-    ${opts.hero ? `<div class="gem2-pillars is-bottom">${PILLARS.slice(2).map(pill).join('')}</div>` : ''}
     <p class="gem2-caption" data-gem2-caption aria-live="polite"></p>
     <aside class="gem2-card" aria-live="polite">
       <p class="eyebrow" data-gem2-cardtag>ON THE RECORD</p>
