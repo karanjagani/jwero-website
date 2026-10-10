@@ -6252,3 +6252,49 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 .ibx-jr-panel.is-play .crm-tl2-list li { animation: jrNode .4s var(--ease) both; animation-delay: calc(var(--j) * .3s); }
 #compare table td.is-them, #compare table th.is-them { background: color-mix(in srgb, var(--amber) 12%, transparent); }
 .crm-from .ibx-jr-node b { font: 700 .875rem/1 var(--mono); }
+
+/* Home: "I run a…" under the hero */
+.home-icp { padding: 22px 0 6px; }
+.home-icp-q { margin: 0 0 10px; text-align: center; font-weight: 800; font-size: 1.125rem; }
+.home-icp-opts { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto; }
+.home-icp-opts button { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 10px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); font: inherit; font-weight: 700; font-size: .875rem; color: var(--ink); cursor: pointer; transition: border-color .2s, box-shadow .2s, transform .2s var(--ease); }
+.home-icp-opts button svg { width: 20px; height: 20px; color: var(--brand); }
+.home-icp-opts button[aria-selected="true"] { border-color: var(--brand); box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent); background: color-mix(in srgb, var(--brand) 6%, var(--card)); }
+.home-icp-panel { display: none; max-width: 1000px; margin: 12px auto 0; padding: 14px 18px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); align-items: center; gap: 12px 18px; flex-wrap: wrap; }
+.home-icp-panel.is-on { display: flex; animation: jrNode .35s var(--ease) both; }
+.home-icp-panel p { flex: 1 1 340px; margin: 0; }
+@media (max-width: 760px) { .home-icp-opts { grid-template-columns: repeat(2, minmax(0, 1fr)); } .home-icp-opts button:last-child { grid-column: span 2; } }
+.home-door[hidden] { display: none; }
+
+/* Home: six jobs, each with a small moving picture */
+.home-six { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.home-six a { display: grid; gap: 8px; align-content: start; padding: 18px; border-radius: 18px; background: var(--card); border: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: border-color .2s, box-shadow .2s, transform .2s var(--ease); }
+.home-six a:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -26px rgba(10, 20, 60, .45); }
+.home-six a.is-first { border: 2px solid var(--amber); }
+.home-six-t { display: flex; align-items: center; gap: 8px; } .home-six-t svg { width: 20px; height: 20px; color: var(--brand); } .home-six-t b { font-size: 1.0625rem; }
+.home-six a > span:not(.home-six-t):not(.hv) { color: var(--ink-2); font-size: .9rem; } .home-six a i { font-style: normal; font-weight: 700; color: var(--brand); font-size: .875rem; }
+.hv { display: block; height: 54px; border-radius: 12px; background: color-mix(in srgb, var(--brand) 5%, var(--card)); position: relative; overflow: hidden; }
+.hv-race i { position: absolute; left: 10px; height: 6px; border-radius: 99px; } .hv-race i:first-child { top: 16px; background: #1fa855; animation: hvRace 2.4s infinite; } .hv-race i:last-child { top: 32px; background: var(--line-2, #cfd6e4); animation: hvRace 2.4s infinite; animation-duration: 7s; }
+@keyframes hvRace { from { width: 0; } to { width: calc(100% - 20px); } }
+.hv-bars { display: flex !important; align-items: flex-end; gap: 8px; padding: 8px 12px; } .hv-bars i { flex: 1; border-radius: 6px 6px 0 0; background: linear-gradient(var(--amber), #e0702a); animation: hvBar 2.6s ease-in-out infinite alternate; } .hv-bars i:nth-child(2) { animation-delay: .4s; } .hv-bars i:nth-child(3) { animation-delay: .8s; }
+@keyframes hvBar { from { height: 20%; } to { height: 90%; } }
+.hv-dots i { position: absolute; top: 50%; width: 10px; height: 10px; margin-top: -5px; border-radius: 50%; background: var(--brand); animation: hvDot 2.5s linear infinite; } .hv-dots i:nth-child(2) { animation-delay: .5s; } .hv-dots i:nth-child(3) { animation-delay: 1s; } .hv-dots i:nth-child(4) { animation-delay: 1.5s; } .hv-dots i:nth-child(5) { animation-delay: 2s; }
+.hv-dots b { position: absolute; right: 14px; top: 50%; width: 22px; height: 22px; margin-top: -11px; border-radius: 50%; background: var(--amber); }
+@keyframes hvDot { from { left: 8px; opacity: 1; } 85% { opacity: 1; } to { left: calc(100% - 36px); opacity: 0; } }
+.hv-chips i { position: absolute; top: 16px; height: 22px; width: 28%; border-radius: 99px; background: color-mix(in srgb, var(--brand) 25%, var(--card)); animation: hvChip 3s infinite; } .hv-chips i:nth-child(1) { left: 6%; } .hv-chips i:nth-child(2) { left: 36%; animation-delay: 1s; } .hv-chips i:nth-child(3) { left: 66%; animation-delay: 2s; }
+@keyframes hvChip { 0%, 60%, 100% { background: color-mix(in srgb, var(--brand) 25%, var(--card)); } 30% { background: var(--brand); } }
+.hv-cal { display: grid !important; grid-template-columns: repeat(7, 1fr); gap: 4px; padding: 10px; } .hv-cal i { border-radius: 4px; background: color-mix(in srgb, var(--ink) 8%, var(--card)); animation: hvCal 3.5s infinite; } .hv-cal i:nth-child(2n) { animation-delay: .5s; } .hv-cal i:nth-child(3n) { animation-delay: 1s; }
+@keyframes hvCal { 0%, 100% { background: color-mix(in srgb, var(--ink) 8%, var(--card)); } 50% { background: var(--amber); } }
+.hv-bk { display: grid !important; gap: 5px; padding: 9px 12px; } .hv-bk i { height: 5px; border-radius: 99px; background: color-mix(in srgb, var(--ink) 12%, var(--card)); } .hv-bk i:nth-child(1) { width: 80%; } .hv-bk i:nth-child(2) { width: 55%; } .hv-bk i:nth-child(3) { width: 40%; } .hv-bk b { height: 8px; width: 60%; border-radius: 99px; background: #1fa855; animation: hvBk 2.4s ease-in-out infinite alternate; }
+@keyframes hvBk { from { width: 30%; } to { width: 70%; } }
+@media (prefers-reduced-motion: reduce) { .hv i, .hv b { animation: none !important; } }
+@media (max-width: 900px) { .home-six { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .home-six { grid-template-columns: 1fr; } }
+
+/* Home: the meter as a section, and the folded tools list */
+.home-meter { margin: 0 auto; border: 1px solid var(--line); max-width: 560px; }
+.home-meter .erp-meter-cta { display: flex; justify-content: center; }
+.home-fold > summary { cursor: pointer; width: max-content; max-width: 100%; margin: 6px auto 18px; padding: 10px 18px; border-radius: 99px; border: 1px solid var(--line); background: var(--card); font-weight: 700; color: var(--brand); list-style: none; }
+.home-fold > summary::-webkit-details-marker { display: none; }
+.home-fold:not([open]) > summary::after { content: ' ↓'; }
+.home-fold-list { max-width: 900px; margin: 0 auto 10px; font-size: .8125rem; line-height: 1.7; color: var(--ink-2); text-align: center; }

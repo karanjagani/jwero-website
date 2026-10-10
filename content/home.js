@@ -1,5 +1,76 @@
 const L = require('../lib');
 
+const FAQ = [
+  { q: 'What is the best jewellery software in India in 2026?', a: 'The best jewellery software runs the whole business on one record: customers, WhatsApp and every channel, the counter at today’s gold rate, stock by weight and HUID, karigar job work, purchase, books, promotions and the online store. Jwero does all of this, with AI that does the follow-up on its own inside limits you set.' },
+  { q: 'What is Jwero?', a: 'Jwero is jewellery software for the whole business: one system where customers, catalogue, stock, counter billing, purchase, workshop, accounts, marketing and team share one record with every selling channel, and AI does the routine work on its own, inside limits you set.' },
+  { q: 'Is there all-in-one software for jewellers?', a: 'Jwero is all-in-one jewellery software: One Inbox for WhatsApp, Instagram, email and calls; a jewellery ERP for the counter, stock, workshop, purchase and books; a CRM that captures 20+ lead sources; promotions, social media and an online store, all on one record.' },
+  { q: 'Which jewellery software works with WhatsApp?', a: 'Jwero runs WhatsApp on the official WhatsApp Business API inside One Inbox, with AI replies from your stock and today’s rate, payments in the chat, broadcasts to live segments, and every chat on the customer’s record next to her purchases and gold plan.' },
+  { q: 'Is there a Tally alternative for jewellers?', a: 'Jwero keeps its own double-entry ledger with GST, P&L and balance sheet, so many jewellers run their books in Jwero. Others keep Tally or Zoho Books for their CA, and Jwero keeps it in step so nothing is typed twice.' },
+  { q: 'What is the difference between jewellery ERP and CRM?', a: 'A jewellery ERP runs the back office: counter, stock, workshop, purchase and books. A jewellery CRM runs customers: leads, records, follow-ups and loyalty. In Jwero both share one record, so a bill, a chat and a gold plan belong to the same customer.' },
+  { q: 'Do I need to integrate anything?', a: 'Jwero needs nothing connected between your own tools, because there is only one. It connects outward only to what has to stay outside, such as Tally or Zoho Books for your CA, payment gateways, and Meta and Google for ads.' },
+  { q: 'Does the AI work on its own, or wait for my approval?', a: 'Jwero’s AI works on its own: replies, follow-ups and reminders go out inside daily caps and quiet hours you set, and every action is logged. You choose which kinds of action need approval first, and one switch stops it at once.' },
+  { q: 'How long does it take to go live with jewellery software?', a: 'Jwero sets up most shops in a day: customers imported, your WhatsApp number connected, catalogue published, and AI working inside your limits from day one.' },
+  { q: 'Will my shop stop billing while we switch?', a: 'Jewellers keep billing throughout. Jwero imports customers, catalogue and stock, and you can bill in Jwero alongside the old system while your team settles in, so nothing stops in your season.' },
+  { q: 'How much does jewellery software cost?', a: 'Jwero starts with a free trial that includes every module; your price is shown inside your account when the trial ends. Or let Jwero’s specialists and AI run the work for you instead.' },
+  { q: 'Who owns my data in Jwero?', a: 'You do. Every business runs in its own isolated database, and you can export everything at any time. Jwero is ISO/IEC 27001 certified and independently penetration tested.' },
+  { q: 'Where is Jwero based, and who do I talk to?', a: 'Jwero is made by Tech Jewels Private Limited, a registered Indian company with its office in Thane, next to Mumbai. You talk to a Jwero specialist on WhatsApp, by phone or by email.' },
+];
+
+// 1. "I run a…" right under the hero; 2. six jobs; 3. one meter; 4. try a message; 6. progress bar.
+const HICP = [
+  ['single', 'store', 'A single store', 'Start with WhatsApp answered by AI, the counter at today’s rate, and a list of who to call each morning.', 'trial', 'Start free for your store'],
+  ['chain', 'branches', 'A chain', 'Start with every branch on one record: routing, reply clocks, stock that balances by weight, and books in step.', 'demo', 'Book a 30-minute demo for a chain'],
+  ['maker', 'layers', 'A workshop', 'Start with gold in fine grams through every stage, wastage against norms, and karigar khatas that settle themselves.', 'demo', 'Book a 30-minute demo for a workshop'],
+  ['b2b', 'truck', 'A wholesaler', 'Start with buying: AI-drafted orders, unfixed-rate gold, GSTR-2B matching and buyer follow-ups.', 'trial', 'Start free for your trade business'],
+  ['brand', 'send', 'An online brand', 'Start with the store, personalised promotions and social posts made by AI, all on one customer record.', 'trial', 'Start free for your brand'],
+];
+const ORDER = { single: 'inbox erp crm promotions social ecommerce', chain: 'erp crm inbox promotions ecommerce social', maker: 'erp crm inbox promotions ecommerce social', b2b: 'erp crm promotions inbox ecommerce social', brand: 'ecommerce social promotions crm inbox erp' };
+const PARAM = { single: 'single', chain: 'chain', maker: 'maker', b2b: 'b2b', brand: 'brand' };
+const hdoor = ([k, , , , d, label], cls) => d === 'demo'
+  ? `<a class="${cls}" href="/book-demo" data-home-cta="door-${k}">${label}</a>`
+  : `<a class="${cls}" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=home-${k}" rel="noopener" data-trial data-home-cta="door-${k}">${label}</a>`;
+const homeIcp = () => `<section class="home-icp" id="for-you" data-home-icp data-order='${JSON.stringify(ORDER)}'><div class="container">
+  <p class="home-icp-q">I run a…</p>
+  <div class="home-icp-opts" role="tablist">${HICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${L.icon(ic)}<span>${t}</span></button>`).join('')}</div>
+  ${HICP.map((e, i) => `<div class="home-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p>${hdoor(e, 'btn btn-primary')}<a class="btn-text" href="#six">See your six jobs ↓</a></div>`).join('')}
+</div></section>`;
+const SIX = [
+  ['inbox', '/products/inbox', 'ib', 'chat', 'One Inbox', 'Every enquiry answered in seconds, on every channel.', '<span class="hv hv-race"><i></i><i></i></span>'],
+  ['erp', '/products/erp', 'erp', 'scale', 'Jewellery ERP', 'Counter, stock, workshop and books, without the leaks.', '<span class="hv hv-bars"><i></i><i></i><i></i></span>'],
+  ['crm', '/products/crm', 'crm', 'users', 'Jewellery CRM', '20+ sources on one record, and who to call today.', '<span class="hv hv-dots"><i></i><i></i><i></i><i></i><i></i><b></b></span>'],
+  ['promotions', '/products/promotions', 'pr', 'target', 'Personalised Promotions', 'The right piece, to the right customer, at her moment.', '<span class="hv hv-chips"><i></i><i></i><i></i></span>'],
+  ['social', '/products/social-media', 'soc', 'camera', 'Social Media', 'Posts made by AI from your own stock, on 8 channels.', '<span class="hv hv-cal"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>'],
+  ['ecommerce', '/products/ecommerce', 'ec', 'store', 'Ecommerce', 'A store that prices like your counter, and learns.', '<span class="hv hv-bk"><i></i><i></i><i></i><b></b></span>'],
+];
+const six = () => `<div class="home-six" data-home-six>${SIX.map(([k, href, prm, ic, t, d, vis]) => `<a href="${href}" data-six="${k}" data-prm="${prm}" data-home-cta="six-${k}">${vis}<span class="home-six-t">${L.icon(ic)}<b>${t}</b></span><span>${d}</span><i>Open ${t} →</i></a>`).join('')}</div>`;
+const meter = () => `<div class="erp-meter home-meter" data-homem>
+  <p class="erp-meter-t">${L.icon('activity')}<b>What could your business be missing each month?</b></p>
+  <label><span>Enquiries a month <b data-o="enq"></b></span><input type="range" data-i="enq" min="20" max="5000" step="10" value="600"></label>
+  <label><span>Sales a month <b data-o="sales"></b></span><input type="range" data-i="sales" min="5" max="1000" step="5" value="60"></label>
+  <label><span>Pieces in stock <b data-o="pcs"></b></span><input type="range" data-i="pcs" min="100" max="20000" step="100" value="3000"></label>
+  <div class="erp-meter-bars">
+    <a href="/products/inbox" data-b="cold"><span>Enquiries going cold</span><i><em></em></i><b></b></a>
+    <a href="/products/crm" data-b="follow"><span>Leads never followed up</span><i><em></em></i><b></b></a>
+    <a href="/products/erp#leaks" data-b="disc"><span>Discounts nobody approved</span><i><em></em></i><b></b></a>
+    <a href="/products/erp#inventory" data-b="slow"><span>Cost of slow stock</span><i><em></em></i><b></b></a>
+  </div>
+  <p class="erp-meter-total"><span>A month, roughly</span><b data-o="total"></b></p>
+  <a class="btn btn-primary erp-meter-cta" href="#" data-wa="home" data-wa-extra="" data-home-cta="meter">Show me what Jwero would catch for my business</a>
+  <details class="erp-meter-as"><summary>The assumptions, change them</summary>
+    <label>Enquiries that go cold from slow replies, %<input type="number" data-a="cold" value="12" step="1" min="0"></label>
+    <label>Enquiries never followed up, %<input type="number" data-a="follow" value="20" step="1" min="0"></label>
+    <label>Of those, would have bought, %<input type="number" data-a="buy" value="8" step="1" min="0"></label>
+    <label>Average bill, ₹<input type="number" data-a="bill" value="55000" step="5000" min="0"></label>
+    <label>Unapproved discount, % of sales<input type="number" data-a="disc" value="0.5" step="0.1" min="0"></label>
+    <label>Slow stock carrying cost a month, ₹ per piece past 180 days<input type="number" data-a="slow" value="500" step="50" min="0"></label>
+  </details>
+  <p class="erp-meter-note">A planning estimate from your inputs and these assumptions, not a measurement. Each line opens the page that closes it.</p>
+</div>`;
+const prog = () => `<nav class="erp-prog" data-erp-prog aria-label="On this page"><div class="erp-prog-in">
+  <ol>${[['for-you', 'Your business'], ['six', 'Six jobs'], ['missing', 'What you miss'], ['try', 'Try it'], ['run', 'Run it']].map(([id, t], i) => `<li><a href="#${id}" data-p="${id}"><b>${i + 1}</b>${t}</a></li>`).join('')}</ol>
+  <span class="erp-prog-doors">${HICP.map((e) => hdoor(e, 'btn btn-primary erp-prog-cta home-door')).join('')}</span>
+</div><i class="erp-prog-fill" aria-hidden="true"></i></nav>`;
+
 const home = {
   slug: 'index',
   title: 'Jewellery Software: CRM, ERP, POS and WhatsApp in One | Jwero',
@@ -12,13 +83,8 @@ const home = {
     url: 'https://jwero.ai',
     review: require('./positioning').QUOTES.slice(0, 5).map(([body, name, biz]) => ({ '@type': 'Review', reviewBody: body, author: { '@type': 'Person', name: String(name).replace(/<[^>]*>/g, '') }, publisher: { '@type': 'Organization', name: String(biz || '').replace(/<[^>]*>/g, '') } })),
   },
-  faqs: [
-    { q: 'What is Jwero?', a: 'Jwero is the Autonomous Jewellery OS, run by AI — one system where customers, catalogue, stock, counter billing, purchase, workshop, accounts and team share one record with every selling channel, and an AI workforce does the routine work on its own, inside limits you set.' },
-    { q: 'Do I have to replace my current billing or accounting software?', a: 'No. Keep your books exactly where your accountant likes them — Jwero bridges to Tally and Zoho Books. Most businesses change nothing on the accounting side on day one.' },
-    { q: 'Does the AI work on its own, or wait for my approval?', a: 'It works on its own. Replies, follow-ups and reminders go out automatically, inside daily caps and quiet hours you set, and every action is logged. You choose which kinds of action need your approval first, and one switch stops it at once, from one agent to everything.' },
-    { q: 'How long does it take to go live?', a: 'Set-up takes a day for most shops: we import your customers, connect your existing WhatsApp number, and publish your catalogue, with the AI working inside your limits from day one.' },
-    { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time.' },
-  ],
+  faqs: FAQ,
+
   body: `
 ${L.homeHero({
   kicker: 'You focus on jewellery. We handle the chaos.',
@@ -27,7 +93,17 @@ ${L.homeHero({
   rail: false,
 })}
 
+${homeIcp()}
+
+${prog()}
+
 <section class="pz-logos">${L.customerLogos()}</section>
+
+${L.section(`${L.sectionHead('ONE RECORD, SIX JOBS', 'What does Jwero run for a jeweller?', 'Six products, one customer record. Open the one that hurts most today.')}${six()}`, { id: 'six' })}
+
+${L.section(`${L.sectionHead('WHAT YOU MISS TODAY', 'What could your business be missing each month?', 'Three numbers. Each line opens the page that closes it.')}${meter()}`, { tone: 'tint', id: 'missing' })}
+
+${L.section(`${L.sectionHead('TRY IT', 'What does the AI say to your customer?', 'Pick a message. See the reply, and what it used.')}${require('./inbox').parts.tryIt()}`, { id: 'try' })}
 
 ${L.section(`${L.sectionHead('IN THEIR WORDS', 'Jewellers on working with Jwero.', '')}${require('./positioning').quoteCards(3)}<p class="jb-more"><a href="/success-stories">Read what more jewellers say →</a></p>`)}
 
@@ -44,9 +120,9 @@ ${L.section(`${L.sectionHead('WHO IT IS FOR', 'Built for your kind of jewellery 
 
 ${L.section(`${L.sectionHead('WHERE MOST SHOPS START', 'Three things on day one. The rest when you need it.', 'You do not switch on 35 products. You switch on the three that cost you sales today, and each one replaces something you pay for now.')}
   <div class="bl-goals bl-goals-3 home-three">${[
-    ['chat', 'WhatsApp, answered', 'Your business number on the official API, the catalogue at today’s rate, replies sent by AI from her record, payments in the chat.', 'Replaces: a personal number, a bulk-message tool, a payment link app', '/products/whatsapp'],
-    ['till', 'Billing at the live rate', 'Scan to bill with the price breakup, old gold exchange, GST and day close, with the books kept in step with Tally.', 'Replaces: the calculator, the rate board, a billing package, re-entry into Tally or your accounting software', '/products/pos'],
-    ['box', 'Stock you can see', 'Every piece by weight, purity and HUID, valued today, with ageing and dead stock flagged.', 'Replaces: the stock sheet, the yearly stocktake surprise', '/products/inventory'],
+    ['chat', 'WhatsApp, answered', 'Your business number on the official API, the catalogue at today’s rate, replies sent by AI from her record, payments in the chat.', 'Replaces: a personal number, a bulk-message tool, a payment link app', '/products/inbox#whatsapp'],
+    ['till', 'Billing at the live rate', 'Scan to bill with the price breakup, old gold exchange, GST and day close, with the books kept in step with Tally.', 'Replaces: the calculator, the rate board, a billing package, re-entry into Tally or your accounting software', '/products/erp#pos'],
+    ['box', 'Stock you can see', 'Every piece by weight, purity and HUID, valued today, with ageing and dead stock flagged.', 'Replaces: the stock sheet, the yearly stocktake surprise', '/products/erp#inventory'],
   ].map(([i, t, d, r, h]) => `<a href="${h}"><span class="home-who-ico">${L.icon(i)}</span><b>${t}</b><span>${d}</span><i>${r}</i></a>`).join('')}</div>
   <p class="cta-note" style="margin-top:14px;text-align:center">Customers, catalogue and stock are imported for you. Most shops go live in a day. <a href="/products">See every product →</a></p>`)}
 
@@ -64,14 +140,14 @@ ${L.section(
 <figcaption>Operations, Sales, Marketing, Finance and Teams across the top of one screen. <a href="/platform">Take the full tour →</a></figcaption></figure>`
 , { tone: 'tint' })}
 
-${L.section(`<div class="price-line">
+${L.section(`<span id="run"></span><div class="price-line">
   <div><p class="eyebrow">ONE PLAN, EVERY MODULE</p><h2>Run it yourself, or let Jwero run it.</h2><p>One plan with every module replaces the tools you pay for today. You start with a free trial, and your price is shown in your account when it ends. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included.</p></div>
   <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=home-price">Try Free Now</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
 </div>`, { tone: 'tint' })}
 
 ${L.section(
   `<span id="count-yours"></span>${L.sectionHead('ONE PLACE FOR ALL OF IT', `${L.STACK_N} separate tools become one.`, 'Every tool a jewellery business pays for, logs into and keeps in step is already inside Jwero, working from the same record.')}
-  ${require('./graphics').toolsInto()}<p class="jb-more"><a href="/products">See every product in Jwero →</a></p>`
+  <details class="home-fold" data-lazy-src="/assets/home-tools.html"><summary>See all ${L.STACK_N} tools Jwero replaces</summary><p class="home-fold-list">${[...new Set(L.STACK.flatMap(([, , items]) => items).filter((t) => !/integration/i.test(t)))].join(' · ')}</p><div data-lazy-slot></div></details><p class="jb-more"><a href="/products">See every product in Jwero →</a></p>`
 , { tone: 'tint' })}
 
 
@@ -85,19 +161,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 
-${L.section(`${L.sectionHead('QUESTIONS JEWELLERS ASK', 'Jewellery software questions, answered straight.', '')}${L.faqBlock([
-  { q: 'What is Jwero?', a: 'Jwero is the Autonomous Jewellery OS, run by AI — one system where customers, catalogue, stock, counter billing, purchase, workshop, accounts and team share one record with every selling channel, and an AI workforce does the routine work on its own, inside limits you set.' },
-  { q: 'Do I need to integrate anything?', a: 'Not between your own tools, because there is only one. Customers, WhatsApp, catalogue, website, counter, stock, workshop, schemes, accounts, marketing and HR are all built into Jwero and share one record. Jwero connects outward only to what has to stay outside: Tally or Zoho Books for your accountant, Meta, your payment gateway, your phone line, and Shopify or WooCommerce if you keep that store. We set those up with you. <a href="/platform/integrations">See what Jwero connects to</a>.' },
-  { q: 'Do I have to replace my billing or accounting software?', a: 'No. Keep your books exactly where your accountant likes them — Jwero bridges to Tally and Zoho Books. <a href="/migration">See the Migration Centre</a>.' },
-  { q: 'Does the AI work on its own, or wait for my approval?', a: 'It works on its own. Replies, follow-ups and reminders go out automatically, inside daily caps and quiet hours you set, and every action is logged. You choose which kinds of action need your approval first, and a kill switch stops it at once. <a href="/platform/ai-workforce">See how governance works</a>.' },
-  { q: 'How long does it take to go live?', a: 'Set-up takes a day for most shops: customers imported, your WhatsApp number connected, catalogue published, AI working inside your limits from day one.' },
-  { q: 'How do I start?', a: 'Tap Try Free Now and create your account with Google, LinkedIn or email. You get a free trial with every module, and your price is shown in your account when the trial ends. We can import your customers, catalogue and stock with you, and connect your WhatsApp number. If you would rather hand the work over, Jwero can run it for you. <a href="/jewellery-business-as-a-service">See how that works</a>.' },
-  { q: 'What if the internet drops at the counter?', a: 'Jwero runs in the browser, so the counter needs an internet connection; offline counter billing can be switched on for your business so sales are kept on the device and sync later. A phone hotspot is enough to keep billing when the broadband drops, and because nothing lives on one computer, a dead machine loses nothing.' },
-  { q: 'Can my staff use Jwero in their own language?', a: 'The staff app for attendance, leave and payslips works in multiple languages, and WhatsApp replies go out in the customer’s language. Onboarding and support are in your language.' },
-  { q: 'Will my shop stop billing while we switch?', a: 'No. Your current billing software keeps running until you choose to move. We import your customers, catalogue and stock, usually in a day, and you can bill in Jwero alongside the old system while your team settles in. A written change-freeze keeps your season untouched, and your data exports any time if you decide to stop.' },
-  { q: 'Where is Jwero, and who do I talk to?', a: 'Jwero is made by Tech Jewels Private Limited, a registered Indian company with its office in Thane, next to Mumbai; the registration number is on the <a href="/company">company page</a>. You talk to a Jwero specialist on WhatsApp, by phone on +91 91699 59959 or by email at care@jwero.ai, 10am to 8pm India time. Outside those hours a chat still reaches us and a call becomes a callback.' },
-  { q: 'Who owns my data?', a: 'You do. Every business runs in its own isolated database, and you can export everything, any time. <a href="/trust/security">Read about security</a>.' },
-])}
+${L.section(`${L.sectionHead('QUESTIONS JEWELLERS ASK', 'Jewellery software questions, answered straight.', '')}${L.faqBlock(FAQ)}
 <p class="cta-note" style="margin-top:18px">More questions? <a href="/faq">Every question, answered</a> · <a href="#" data-wa="faq">ask us now</a>.</p>`)}
 
 ${L.section(

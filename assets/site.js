@@ -984,6 +984,65 @@ function jwFromInr(n) {
     var j = e.target.closest('#journeys [data-jr-tab]'); if (j && document.querySelector('[data-soc-icp]')) window.jweroTrack('soc_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
   });
 
+  // Home: "I run a…" reorders the six jobs, sets their links and the buttons.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-home-icp]'), function (box) {
+    var ORDER = JSON.parse(box.getAttribute('data-order'));
+    var MAP = { single: 'single', staff: 'single', chain: 'chain', franchise: 'chain', maker: 'maker', b2b: 'b2b', trader: 'b2b', d2c: 'brand', brand: 'brand' };
+    var STORE = { single: 'single', chain: 'chain', maker: 'maker', b2b: 'b2b', brand: 'd2c' };
+    var URLK = { single: 'single', chain: 'chain', maker: 'maker', b2b: 'b2b', brand: 'brand' };
+    var grid = document.querySelector('[data-home-six]');
+    function apply(k, fromUser) {
+      Array.prototype.forEach.call(box.querySelectorAll('[data-k]'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k ? 'true' : 'false'); });
+      Array.prototype.forEach.call(box.querySelectorAll('[data-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
+      if (grid) ORDER[k].split(' ').forEach(function (id, i) {
+        var a = grid.querySelector('[data-six="' + id + '"]'); if (!a) return; grid.appendChild(a); a.classList.toggle('is-first', i === 0);
+        var base = a.getAttribute('href').split('?')[0], prm = a.getAttribute('data-prm');
+        var val = id === 'erp' ? (k === 'brand' ? 'single' : k) : (k === 'maker' || k === 'b2b' ? 'single' : k);
+        a.setAttribute('href', base + '?' + prm + '=' + val + '#for-you');
+      });
+      Array.prototype.forEach.call(document.querySelectorAll('.home-door'), function (a) { a.hidden = a.getAttribute('data-home-cta') !== 'door-' + k; });
+      if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack('home_icp_pick', { icp: k }); }
+    }
+    box.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (b) apply(b.getAttribute('data-k'), true); });
+    var saved = ''; try { saved = localStorage.getItem('jwero-persona') || ''; } catch (e) {}
+    apply(MAP[saved] || 'single', false);
+  });
+
+  // Home: the tools graphic loads only when the reader opens it.
+  Array.prototype.forEach.call(document.querySelectorAll('details[data-lazy-src]'), function (d) {
+    d.addEventListener('toggle', function () {
+      if (!d.open || d.getAttribute('data-loaded')) return; d.setAttribute('data-loaded', '1');
+      fetch(d.getAttribute('data-lazy-src')).then(function (r) { return r.ok ? r.text() : ''; }).then(function (h) {
+        var slot = d.querySelector('[data-lazy-slot]'); if (!slot || !h) return; slot.innerHTML = h;
+        Array.prototype.forEach.call(slot.querySelectorAll('[data-gfx]'), function (g) { g.classList.add('gfx-arm'); requestAnimationFrame(function () { g.classList.add('is-in'); }); });
+        var list = d.querySelector('.home-fold-list'); if (list) list.hidden = true;
+      }).catch(function () {});
+    });
+  });
+
+  // Home: one meter for the whole business.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-homem]'), function (m) {
+    var n = function (sel) { var el = m.querySelector(sel); return el ? Number(el.value) || 0 : 0; }, used = false, cta = m.querySelector('[data-home-cta="meter"]');
+    var inr = function (v) { v = Math.round(v); if (v >= 1e7) return '₹' + (v / 1e7).toFixed(2).replace(/\.?0+$/, '') + ' crore'; if (v >= 1e5) return '₹' + (v / 1e5).toFixed(1).replace(/\.0$/, '') + ' lakh'; return '₹' + v.toLocaleString('en-IN'); };
+    function calc() {
+      var enq = n('[data-i="enq"]'), sales = n('[data-i="sales"]') * 1e5, pcs = n('[data-i="pcs"]'), buy = n('[data-a="buy"]') / 100, bill = n('[data-a="bill"]');
+      var parts = { cold: enq * n('[data-a="cold"]') / 100 * buy * bill, follow: enq * n('[data-a="follow"]') / 100 * buy * bill, disc: sales * n('[data-a="disc"]') / 100, slow: pcs * .15 * n('[data-a="slow"]') };
+      var max = Math.max(1, parts.cold, parts.follow, parts.disc, parts.slow), tot = parts.cold + parts.follow + parts.disc + parts.slow;
+      m.querySelector('[data-o="enq"]').textContent = enq.toLocaleString('en-IN'); m.querySelector('[data-o="sales"]').textContent = inr(sales); m.querySelector('[data-o="pcs"]').textContent = pcs.toLocaleString('en-IN');
+      Object.keys(parts).forEach(function (k) { var a = m.querySelector('[data-b="' + k + '"]'); a.querySelector('em').style.width = (parts[k] / max * 100).toFixed(1) + '%'; a.querySelector('b').textContent = inr(parts[k]); });
+      var t = inr(tot); m.querySelector('[data-o="total"]').textContent = t;
+      if (cta) cta.setAttribute('data-wa-extra', ' About ' + enq.toLocaleString('en-IN') + ' enquiries and ' + inr(sales) + ' in sales a month, ' + pcs.toLocaleString('en-IN') + ' pieces in stock. Your homepage estimates ' + t + ' a month we could be missing.');
+    }
+    m.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('home_meter_use', {}); } });
+    calc();
+  });
+  document.addEventListener('click', function (e) {
+    if (!window.jweroTrack) return;
+    var c = e.target.closest('[data-home-cta]'); if (c) window.jweroTrack('home_cta', { at: c.getAttribute('data-home-cta'), label: (c.textContent || '').trim().slice(0, 60) });
+    var f = e.target.closest('.home-fold > summary'); if (f) window.jweroTrack('home_tools_open', {});
+    var q = e.target.closest('[data-home-icp] ~ * [data-q], #try [data-q]'); if (q && document.querySelector('[data-home-icp]')) window.jweroTrack('home_try', { q: q.textContent.trim().slice(0, 40) });
+  });
+
   // CRM: sources stream into one record; the reader taps their own sources.
   Array.prototype.forEach.call(document.querySelectorAll('[data-crmorb]'), function (o) {
     var chips = Array.prototype.slice.call(o.querySelectorAll('.crm-orb-in [data-src]')), outs = o.querySelectorAll('.crm-orb-out p'), src = o.querySelector('[data-orb-src]'), cnt = o.querySelector('[data-orb-n]'), of = o.querySelector('[data-orb-of]'), cta = o.querySelector('[data-crm-cta="sources"]'), i = -1, timer = 0, used = false;
