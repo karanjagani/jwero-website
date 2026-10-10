@@ -97,6 +97,7 @@ ${L.homeHero({
   h1: 'Jewellery software that runs the whole business: customers, counter, stock, team and books.',
   sub: 'One system, so nothing is typed twice and nothing needs connecting, with AI that does the follow-up on its own.',
   rail: false,
+  gem: { set: 'd2c' },
 })}
 
 ${homeIcp()}

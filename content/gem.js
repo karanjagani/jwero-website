@@ -124,7 +124,7 @@ const GEM = {
     centre: 'Priya’s record', who: 'Priya',
     tools: ['Website builder', 'Instagram app', 'Ads manager', 'Email tool'],
     modules: [
-      ['store', 'Ecommerce website', 'live prices and stock', 'the cart and the order', '/products/ecommerce', 0, 1],
+      ['store', 'Ecommerce', 'live prices and stock', 'the cart and the order', '/products/ecommerce', 0, 1],
       ['camera', 'Instagram', 'the catalogue', 'the DM, on her record', '/products/instagram-facebook', 1, 0],
       ['chat', 'WhatsApp', 'her cart and her taste', 'the conversation', '/products/whatsapp', 1, 1],
       ['megaphone', 'Ads', 'which pieces are selling', 'which ad brought her', '/products/ads-manager', 2, 0],
