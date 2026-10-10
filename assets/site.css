@@ -5769,3 +5769,13 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 .hero-home .erp-meter, .hero-home .erp-meter p, .hero-home .erp-meter b, .hero-home .erp-meter span, .hero-home .erp-meter label, .hero-home .erp-meter summary { color: var(--ink); }
 .hero-home .erp-meter label, .hero-home .erp-meter .erp-meter-note, .hero-home .erp-meter-bars span { color: var(--ink-2); }
 .hero-home .erp-meter summary { color: var(--brand); }
+/* ERP 8: proof per business type */
+.erp-proof { margin: 0 0 14px; padding: 14px 16px; border-radius: 14px; border-left: 4px solid var(--amber); background: color-mix(in srgb, var(--amber) 8%, var(--card)); }
+.erp-proof blockquote { margin: 0 0 6px; font-size: 1rem; line-height: 1.45; }
+.erp-proof figcaption { font-size: .8125rem; color: var(--ink-2); font-weight: 600; }
+.erp-proof-m { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 10px 0 0; font-size: .875rem; }
+.erp-proof-m span { font: 600 .6875rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
+.erp-proof-m s { color: var(--ink-2); } .erp-proof-m svg { width: 14px; height: 14px; color: var(--ink-2); }
+.erp-proof-m b { color: #157a3d; font-size: 1.0625rem; }
+.erp-proof.is-placeholder { outline: 2px dashed #c0392b; outline-offset: 3px; }
+.erp-proof.is-placeholder::before { content: 'Placeholder: replace before going live'; display: block; margin-bottom: 6px; font: 700 .625rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: #c0392b; }

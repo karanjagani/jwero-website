@@ -187,9 +187,26 @@ const ICP = [
 const ICP_ORDER = { single: 'pos finance inventory repairs purchase manufacturing', chain: 'inventory pos finance purchase repairs manufacturing', maker: 'manufacturing purchase inventory finance pos repairs', b2b: 'purchase inventory finance manufacturing pos repairs', repair: 'repairs pos inventory finance purchase manufacturing' };
 const ICP_JOURNEY = { single: 0, chain: 4, maker: 2, b2b: 1, repair: 3 };
 const ICP_DEEP = { single: 'A day at your counter', chain: 'Every branch on one map', maker: 'Your gold, stage by stage', b2b: 'Rupees and grams, side by side', repair: 'Repairs, module by module' };
+
+// 8. Proof per business type. PLACEHOLDERS: replace each quote, name and figure with
+// a real customer's words and result. Any entry still in [brackets] is not rendered
+// in the live build; run PROOF_PREVIEW=1 node build.js to see them locally.
+const PROOF = {
+  single: ['[Quote from a single-store owner about the counter, cash or discounts]', '[Name], [Store], [City]', ['[Metric]', '[Before]', '[After]']],
+  chain: ['[Quote from a chain owner about seeing every branch or transfers]', '[Name], [Chain], [City]', ['[Metric]', '[Before]', '[After]']],
+  maker: ['[Quote from a manufacturer about karigar wastage or the metal ledger]', '[Name], [Workshop], [City]', ['[Metric]', '[Before]', '[After]']],
+  b2b: ['[Quote from a wholesaler or bullion trader about buying or GSTR-2B]', '[Name], [Business], [City]', ['[Metric]', '[Before]', '[After]']],
+  repair: ['[Quote from a store owner about repairs and weight disputes]', '[Name], [Store], [City]', ['[Metric]', '[Before]', '[After]']],
+};
+const isPlaceholder = (e) => /\[/.test(JSON.stringify(e));
+const proofCard = (k) => {
+  const e = PROOF[k]; if (!e || (isPlaceholder(e) && !process.env.PROOF_PREVIEW)) return '';
+  const [q, who, [m, before, after]] = e;
+  return `<figure class="erp-proof${isPlaceholder(e) ? ' is-placeholder' : ''}"><blockquote>“${q}”</blockquote><figcaption>${who}</figcaption><p class="erp-proof-m"><span>${m}</span><s>${before}</s>${icon('arrow')}<b>${after}</b></p></figure>`;
+};
 const icpSwitch = () => `<div class="erp-icp" data-erp-icp data-order='${JSON.stringify(ICP_ORDER)}' data-journey='${JSON.stringify(ICP_JOURNEY)}'>
   <div class="erp-icp-opts" role="tablist" aria-label="I run a…">${ICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${icon(ic === 'branches' ? 'branches' : ic)}<span>${t}</span></button>`).join('')}</div>
-  ${ICP.map(([k, , t, line, sim, simLabel, deep], i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${k}"><p>${line}</p><div class="erp-icp-go"><a href="#parity">Your departments first ↓</a><a href="#leaks">Your leaks first ↓</a><a href="#journeys">Your journey ↓</a><a href="${deep}">${ICP_DEEP[k]} ↓</a><a class="is-sim" href="#try-${sim}">${simLabel} →</a></div></div>`).join('')}
+  ${ICP.map(([k, , t, line, sim, simLabel, deep], i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${k}"><p>${line}</p>${proofCard(k)}<div class="erp-icp-go"><a href="#parity">Your departments first ↓</a><a href="#leaks">Your leaks first ↓</a><a href="#journeys">Your journey ↓</a><a href="${deep}">${ICP_DEEP[k]} ↓</a><a class="is-sim" href="#try-${sim}">${simLabel} →</a></div></div>`).join('')}
   <p class="ibx-legend">The page reorders itself for you. Nothing is hidden; every section stays below.</p>
 </div>`;
 
