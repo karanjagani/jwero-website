@@ -255,7 +255,7 @@ body.nav-open .nav-burger span:last-child { top: 17.5px; transform: rotate(-45de
 @media (min-width: 1181px) {
   body.is-scrolled .site-header { background: transparent; pointer-events: none; }
   body.is-scrolled .site-header .logo, body.is-scrolled .header-float { pointer-events: auto; }
-  body.is-scrolled .main-nav, body.is-scrolled .site-header .logo-word,
+  body.is-scrolled .main-nav,
   body.is-scrolled .header-cta > :not(.header-float) { opacity: 0; visibility: hidden; }
   body.is-scrolled .header-cta > :not(.header-float) { display: none; }
   body.is-scrolled .header-float { display: inline-flex; padding: 7px 16px; font-size: 1rem; box-shadow: 0 6px 20px -8px rgba(0, 19, 183, .5); }
@@ -4430,8 +4430,13 @@ html.has-workspace .header-start.btn-primary { background: var(--panel); border-
 .logo-word { display: inline-flex; align-items: center; position: relative; }
 .logo-wm { display: block; height: 22px; width: auto; }
 .logo-wm-light { display: none; }
-body.is-scrolled.on-panel .site-header .logo-wm-dark, .on-dark .logo-wm-dark { display: none; }
-body.is-scrolled.on-panel .site-header .logo-wm-light, .on-dark .logo-wm-light { display: block; }
+.on-dark .logo-wm-dark { display: none; }
+.on-dark .logo-wm-light { display: block; }
+/* The white wordmark only where the header is see-through (desktop, scrolled over a dark panel). On phones the header stays white, so the dark wordmark stays. */
+@media (min-width: 1181px) {
+  body.is-scrolled.on-panel .site-header .logo-wm-dark { display: none; }
+  body.is-scrolled.on-panel .site-header .logo-wm-light { display: block; }
+}
 .f-logo { margin: 0 0 14px; align-items: flex-end; gap: 10px; }
 .f-logo .mark-logo { width: 34px; height: 48px; }
 .f-lockup .logo-wm { height: 50px; }
