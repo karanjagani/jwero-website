@@ -96,7 +96,6 @@ const home = {
     name: 'Jwero', applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
     description: 'The Autonomous Jewellery OS, run by AI: CRM, showroom, POS and billing, inventory, purchase, manufacturing, accounts, HR and reports on one record, with WhatsApp and Instagram commerce, gold savings schemes and a governed AI workforce.',
     url: 'https://jwero.ai',
-    review: require('./positioning').QUOTES.slice(0, 5).map(([body, name, biz]) => ({ '@type': 'Review', reviewBody: body, author: { '@type': 'Person', name: String(name).replace(/<[^>]*>/g, '') }, publisher: { '@type': 'Organization', name: String(biz || '').replace(/<[^>]*>/g, '') } })),
   },
   faqs: FAQ,
 
@@ -128,6 +127,8 @@ ${L.section(
 ${L.section(`${L.sectionHead('WHAT YOU MISS TODAY', 'What could your business be missing each month?', 'Three numbers. Each line opens the page that closes it.')}${meter()}`, { tone: 'tint', id: 'missing' })}
 
 ${L.section(`${L.sectionHead('TRY IT', 'What does the AI say to your customer?', 'Pick a message. See the reply, and what it used.')}${require('./inbox').parts.tryIt()}`, { id: 'try' })}
+${L.section(`<div class="home-ig"><a class="home-ig-card" href="https://www.instagram.com/jwero.ai/" rel="noopener" target="_blank" data-home-ig><span class="home-ig-av" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><span class="home-ig-t"><small>JWERO ON INSTAGRAM</small><b>@jwero.ai</b><span>Follow Jwero for product updates and short videos of the platform at work.</span></span><span class="btn btn-primary home-ig-btn">Follow on Instagram</span></a></div>`, { id: 'instagram' })}
+
 ${L.section(`<span id="run"></span><div class="price-line">
   <div><p class="eyebrow">ONE PLAN, EVERY MODULE</p><h2>Run it yourself, or let Jwero run it.</h2><p>One plan with every module replaces the tools you pay for today. You start with a free trial, and your price is shown in your account when it ends. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included.</p></div>
   <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=home-price">Try Free Now</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>

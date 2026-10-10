@@ -1335,6 +1335,8 @@ function jwFromInr(n) {
     mark('1');
   });
 
+  document.addEventListener('click', function (e) { if (e.target.closest('[data-home-ig]') && window.jweroTrack) window.jweroTrack('home_instagram', {}); });
+
   // HR and Catalogues: hero meters.
   Array.prototype.forEach.call(document.querySelectorAll('div[data-hrm], div[data-dcm]'), function (m) {
     var hr = m.hasAttribute('data-hrm'), used = false, cta = m.querySelector('[data-hr-cta], [data-dc-cta]');
