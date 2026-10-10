@@ -6323,3 +6323,13 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 .home-dept-toggle { padding-block: 18px; text-align: center; }
 .home-dept-btn { padding: 10px 18px; border-radius: 99px; border: 1px solid var(--line); background: var(--card); font: inherit; font-weight: 700; color: var(--brand); cursor: pointer; }
 .gem2-hero .gem2-node { cursor: pointer; }
+/* Digital Catalogues: a visitor's timeline */
+.dc-tl { max-width: 560px; margin: 0 auto; padding: 18px; border-radius: 20px; background: var(--card); border: 1px solid var(--line); }
+.dc-tl-h { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.dc-tl-h small { display: block; color: var(--ink-2); font-size: .8125rem; }
+.dc-tl ol { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 10px; }
+.dc-tl li { display: grid; grid-template-columns: 20px 48px 1fr; align-items: center; gap: 10px; font-size: .9375rem; opacity: 0; transform: translateY(6px); animation: dcTl .5s ease forwards; animation-delay: calc(var(--i) * .25s); }
+.dc-tl li svg { width: 18px; height: 18px; color: var(--amber); }
+.dc-tl li b { font-variant-numeric: tabular-nums; color: var(--ink-2); font-weight: 600; }
+@keyframes dcTl { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .dc-tl li { animation: none; opacity: 1; transform: none; } }
