@@ -180,8 +180,8 @@ const inbox = {
   faqs,
   body: `
 ${L.hero({
-  eyebrow: 'ONE INBOX · EVERY CHANNEL, EVERY CONVERSATION',
-  h1: 'Never lose an enquiry again. <span class="h1-turn">Every channel. One inbox.</span>',
+  eyebrow: 'Every Conversation from all channels in One Inbox',
+  h1: 'From enquiry to <span class="h1-turn">sales &amp; satisfaction</span>',
   sub: 'Every enquiry, call, comment and message arrives in one place. AI answers in seconds, day or night, at today’s rate. What needs a person reaches the right salesperson with the full story.',
   primary: { href: '#', label: 'Show me my channels in one inbox', wa: 'inbox' },
   secondary: { href: '/book-demo', label: 'Book a demo' },

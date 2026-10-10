@@ -5400,3 +5400,5 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 .rfeed-mods.is-icons li.is-on { background: var(--amber); border-color: var(--amber); transform: scale(1.12); box-shadow: 0 6px 18px rgba(246, 167, 35, .45); }
 .rfeed-mods.is-icons li.is-on .ico { color: #1b1400; }
 @media (max-width: 480px) { .rfeed-mods.is-icons { gap: 5px; padding: 12px 10px; } .rfeed-mods.is-icons .ico { width: 18px; height: 18px; } .rfeed-mods.is-icons li { border-radius: 10px; } }
+/* One Inbox feed: channel labels such as INSTAGRAM need a little more room on a phone */
+@media (max-width: 480px) { .rfeed-list li { grid-template-columns: 64px minmax(0, 1fr); } .rfeed-list b { font-size: .5625rem; letter-spacing: .03em; } }
