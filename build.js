@@ -498,6 +498,13 @@ function platformStory(html, slug) {
   return html;
 }
 function journeyFix(html, p) {
+  // Social: the generic opening blocks (the shift, where it pays off) follow the first proof.
+  if (p && p.slug === 'products/social-media') {
+    const cutSec = (re) => { const m = re.exec(html); if (!m) return ''; const a = html.lastIndexOf('<section', m.index); const e = html.indexOf('</section>', m.index) + 10; const t = html.slice(a, e); html = html.slice(0, a) + html.slice(e); return t; };
+    const moved = cutSec(/<section class="shift"/) + cutSec(/Where this pays off in a jewellery business\./);
+    const at = html.indexOf('id="opportunities"');
+    if (moved && at > 0) { const e = html.indexOf('</section>', at) + 10; html = html.slice(0, e) + moved + html.slice(e); }
+  }
   // links to the pages merged into One Inbox go straight to their section
   for (const [from, [to]] of Object.entries(MERGED)) html = html.split(`href="${from}"`).join(`href="${to}"`).split(`href="${from}/"`).join(`href="${to}"`);
   if (p && STORY_PAGES[p.slug]) html = platformStory(html, p.slug);

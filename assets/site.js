@@ -915,7 +915,70 @@ function jwFromInr(n) {
       Array.prototype.forEach.call(m.querySelectorAll('[data-mode-p]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-mode-p') === String(i)); });
     }
     m.addEventListener('click', function (e) { var b = e.target.closest('[data-mode-i]'); if (b) { set(Number(b.getAttribute('data-mode-i'))); if (window.jweroTrack) window.jweroTrack('social_mode', { mode: b.textContent.trim() }); } });
-    set(1);
+    m.modeSet = set; set(1);
+  });
+
+  // Social: the hero hours meter.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-socm]'), function (m) {
+    var n = function (sel) { var el = m.querySelector(sel); return el ? Number(el.value) || 0 : 0; }, used = false, cta = m.querySelector('[data-soc-cta="meter"]');
+    function calc() {
+      var posts = n('[data-i="posts"]'), cm = n('[data-i="cm"]');
+      var ph = posts * 4.33 * n('[data-a="pm"]') / 60, rh = cm * 30 * n('[data-a="rm"]') / 60, max = Math.max(ph, rh, 1);
+      m.querySelector('[data-o="posts"]').textContent = posts; m.querySelector('[data-o="cm"]').textContent = cm;
+      [['ph', ph], ['rh', rh]].forEach(function (x) { var a = m.querySelector('[data-b="' + x[0] + '"]'); a.querySelector('em').style.width = (x[1] / max * 100).toFixed(1) + '%'; a.querySelector('b').textContent = Math.round(x[1]) + ' h'; });
+      var tot = Math.round(ph + rh); m.querySelector('[data-o="total"]').textContent = tot + ' hours';
+      if (cta) cta.setAttribute('data-wa-extra', ' I post ' + posts + ' times a week and get about ' + cm + ' comments and reviews a day. Your page says that is ' + tot + ' hours a month by hand.');
+    }
+    m.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('soc_meter_use', {}); } });
+    calc();
+  });
+
+  // Social: pick a signal, see the draft.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-socpv]'), function (pv) {
+    var data = {}; try { data = JSON.parse(pv.querySelector('[data-pv-data]').textContent); } catch (e) { return; }
+    var cap = pv.querySelector('[data-pv-cap]'), tags = pv.querySelector('[data-pv-tags]'), ch = pv.querySelector('[data-pv-ch]'), post = pv.querySelector('.soc-pv-post'), cta = pv.querySelector('[data-soc-cta="preview"]');
+    function show(k, fromUser) {
+      var d = data[k]; if (!d) return;
+      Array.prototype.forEach.call(pv.querySelectorAll('[data-pv]'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-pv') === k ? 'true' : 'false'); });
+      post.classList.remove('is-new'); void post.offsetWidth; post.classList.add('is-new');
+      cap.textContent = d[0]; tags.textContent = d[1]; ch.innerHTML = d[2];
+      if (cta) cta.setAttribute('data-wa-extra', ' I would like a "' + k + '" post made from my own stock.');
+      if (fromUser && window.jweroTrack) window.jweroTrack('soc_preview_pick', { signal: k });
+    }
+    pv.addEventListener('click', function (e) { var b = e.target.closest('[data-pv]'); if (b) show(b.getAttribute('data-pv'), true); });
+    show(Object.keys(data)[0], false);
+  });
+
+  // Social: "I run a…" sets the journey, the mode, the order and the buttons.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-soc-icp]'), function (box) {
+    var CFG = JSON.parse(box.getAttribute('data-cfg'));
+    var MAP = { single: 'single', staff: 'single', maker: 'single', b2b: 'single', trader: 'single', chain: 'chain', franchise: 'chain', d2c: 'brand', brand: 'brand' };
+    var STORE = { single: 'single', chain: 'chain', brand: 'd2c' };
+    var jr = document.querySelector('#journeys [data-jr]'), modesEl = document.querySelector('[data-modes-soc]');
+    function apply(k, fromUser) {
+      Array.prototype.forEach.call(box.querySelectorAll('[data-k]'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k ? 'true' : 'false'); });
+      Array.prototype.forEach.call(box.querySelectorAll('[data-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
+      if (jr && jr.jrShow && (fromUser || CFG[k][0] !== 0)) jr.jrShow(CFG[k][0]);
+      if (modesEl && modesEl.modeSet) modesEl.modeSet(CFG[k][1]);
+      // the section this business cares about most moves up, after the preview
+      var lead = document.getElementById(k === 'chain' ? 'comments' : k === 'brand' ? 'calendar' : 'opportunities'), pvSec = document.getElementById('preview');
+      if (lead && pvSec && k !== 'single') pvSec.parentNode.insertBefore(lead, pvSec.nextSibling);
+      Array.prototype.forEach.call(document.querySelectorAll('.soc-door'), function (a) { a.hidden = a.getAttribute('data-soc-cta') !== 'door-' + k; });
+      var band = document.querySelector('.cta-band .btn-ghost-light[href="/book-demo"]'); if (band) band.textContent = k === 'chain' ? 'Book a 30-minute demo for a chain' : 'Book a demo';
+      if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack('soc_icp_pick', { icp: k }); }
+    }
+    box.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (b) apply(b.getAttribute('data-k'), true); });
+    var saved = ''; try { saved = localStorage.getItem('jwero-persona') || ''; } catch (e) {}
+    var asked = /[?&](?:soc|p)=(single|chain|brand|franchise|d2c|maker|b2b|trader|staff)/.exec(location.search);
+    apply(MAP[asked ? asked[1] : saved] || 'single', !!asked);
+  });
+
+  // Social: what readers do, so sections can be judged.
+  document.addEventListener('click', function (e) {
+    if (!window.jweroTrack) return;
+    var c = e.target.closest('[data-soc-cta]'); if (c) window.jweroTrack('soc_cta', { at: c.getAttribute('data-soc-cta'), label: (c.textContent || '').trim().slice(0, 60) });
+    var f = e.target.closest('.soc-signals .ibx-flip'); if (f) window.jweroTrack('soc_signal_turn', { signal: (f.querySelector('.erp-leak-k') || {}).textContent || '' });
+    var j = e.target.closest('#journeys [data-jr-tab]'); if (j && document.querySelector('[data-soc-icp]')) window.jweroTrack('soc_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
   });
 
   // Jewellery ERP: "I run a…" reorders departments, leaks and the first journey.
@@ -1052,7 +1115,7 @@ function jwFromInr(n) {
   document.addEventListener('click', function (e) {
     if (!window.jweroTrack) return;
     var c = e.target.closest('[data-erp-cta]'); if (c) window.jweroTrack('erp_cta', { at: c.getAttribute('data-erp-cta'), label: (c.textContent || '').trim().slice(0, 60) });
-    var j = e.target.closest('#journeys [data-jr-tab]'); if (j) window.jweroTrack('erp_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
+    var j = e.target.closest('#journeys [data-jr-tab]'); if (j && document.querySelector('[data-erp-icp]')) window.jweroTrack('erp_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
     var d = e.target.closest('.erp-par-row summary'); if (d) window.jweroTrack('erp_department', { m: d.parentNode.getAttribute('data-m') });
   });
   onView(document.querySelectorAll('.sim-section'), function (sec) { if (window.jweroTrack && document.querySelector('[data-erp-icp]')) window.jweroTrack('erp_sim_seen', { sim: sec.id }); }, { threshold: 0.4 });

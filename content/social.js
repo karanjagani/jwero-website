@@ -155,6 +155,74 @@ const socPaths = () => `<div class="ibx-jr" data-jr>
   <p class="ibx-legend"><span class="is-c">Customer</span> <span class="is-ai">Jwero</span> on its own · <span class="is-human">Your team</span></p>
 </div>`;
 
+// 1. Hero hours meter: the reader's own numbers, carried into the chat.
+const hoursMeter = () => `<div class="erp-meter soc-meter" data-socm>
+  <p class="erp-meter-t">${icon('activity')}<b>How many hours does social take you?</b></p>
+  <label><span>Posts and reels a week <b data-o="posts"></b></span><input type="range" data-i="posts" min="1" max="30" step="1" value="5"></label>
+  <label><span>Comments and reviews a day <b data-o="cm"></b></span><input type="range" data-i="cm" min="0" max="300" step="5" value="40"></label>
+  <div class="erp-meter-bars">
+    <a href="#one-post" data-b="ph"><span>Making and posting</span><i><em></em></i><b></b></a>
+    <a href="#comments" data-b="rh"><span>Replying</span><i><em></em></i><b></b></a>
+  </div>
+  <p class="erp-meter-total"><span>Hours a month, by hand</span><b data-o="total"></b></p>
+  <a class="btn btn-primary erp-meter-cta" href="#" data-wa="social" data-wa-extra="" data-soc-cta="meter">Show me this week’s posts for my shop</a>
+  <details class="erp-meter-as"><summary>The assumptions, change them</summary>
+    <label>Minutes to make and post one, by hand<input type="number" data-a="pm" value="60" step="5" min="0"></label>
+    <label>Minutes per reply, by hand<input type="number" data-a="rm" value="2" step="0.5" min="0"></label>
+  </details>
+  <p class="erp-meter-note">An estimate from your inputs.</p>
+</div>`;
+
+// 2. Pick a signal, see the post Jwero would draft.
+const PREVIEW = {
+  'Last piece': ['Only one left. The temple jhumka everyone saved is down to its last pair. Come and try it before it goes.', '#templejewellery #jhumka #lastpiece', ['camera', 'users', 'threads']],
+  'New arrival': ['Just in: the Navratri collection. Nine looks, nine nights, all in 22K. Swipe to see them all.', '#newarrivals #navratri #22kgold', ['camera', 'users', 'pinterest']],
+  'Festival ahead': ['Akshaya Tritiya is three weeks away. Book your muhurat visit now and choose without the rush.', '#akshayatritiya #goldjewellery #muhurat', ['camera', 'users', 'google']],
+  'Gold rate move': ['The gold rate dipped this week. A good week to pick up the coin or chain you have been waiting on.', '#goldrate #goldcoins #goldchain', ['camera', 'users', 'share']],
+  'Saved a lot': ['You saved it, we noticed. The kundan choker is on our most-wished list this month. Ask us about it in store.', '#kundan #choker #mostloved', ['camera', 'users']],
+  'Slow stock': ['A second look at a classic: this antique bangle pair, styled three ways. Which one is you?', '#antiquejewellery #bangles #styledthreeways', ['users', 'youtube']],
+  'Price drop': ['Making charges reduced on our everyday diamond studs, this month only. Visit any branch.', '#diamondstuds #everydayjewellery #offer', ['users', 'google', 'camera']],
+  'Engagement spike': ['You loved yesterday’s bridal set. Here is the full look, with the matching maang tikka.', '#bridaljewellery #maangtikka #bridallook', ['camera', 'threads']],
+  'Scheme maturity': ['Your gold plan matures soon. Here is what our members are choosing this season.', '#goldsavings #goldscheme #redeem', ['users', 'camera']],
+  'Store anniversary': ['Five years at Andheri. Thank you for every visit. Come in this week for a small thank-you from us.', '#anniversary #thankyou #andheri', ['google', 'users', 'linkedin']],
+  'Wedding season': ['Wedding season is here. Our bridal sets for every ceremony, from mehendi to reception.', '#weddingseason #bridalsets #indianbride', ['camera', 'pinterest', 'youtube']],
+  'Best seller': ['Most loved this month: the slim gold kada. Light enough for every day, made to last.', '#goldkada #bestseller #dailywear', ['camera', 'users', 'pinterest']],
+};
+const preview = (compact) => `<div class="soc-pv${compact ? ' is-compact' : ''}" data-socpv>
+  <div class="soc-pv-picks" role="tablist">${Object.keys(PREVIEW).map((k, i) => `<button type="button" role="tab" data-pv="${k}" aria-selected="${i === 0}">${k}</button>`).join('')}</div>
+  <div class="soc-pv-stage">
+    <article class="soc-pv-post" aria-live="polite">
+      <header><span class="soc-pv-av">${icon('gem')}</span><b>yourstore</b><small>Draft by Jwero</small></header>
+      <div class="soc-pv-img"><span class="soc-pv-tag">${icon('camera')}On-model photo</span><span class="soc-pv-tag is-v">${icon('video')}9-second video</span>${icon('gem')}</div>
+      <p class="soc-pv-cap" data-pv-cap></p>
+      <p class="soc-pv-tags" data-pv-tags></p>
+      <footer><span>Posting to</span><span class="soc-pv-ch" data-pv-ch></span></footer>
+    </article>
+    <div class="soc-pv-side"><p>Pick a signal. This is the kind of post Jwero drafts from it, with the caption, the photo on a model, a short video and the channels picked for you.</p><a class="btn btn-primary" href="#" data-wa="social" data-wa-extra="" data-soc-cta="preview">Make this from my stock</a><p class="erp-meter-note">Illustrative wording. Your posts use your own pieces, prices and voice.</p></div>
+  </div>
+  <script type="application/json" data-pv-data>${JSON.stringify(Object.fromEntries(Object.entries(PREVIEW).map(([k, [c, t, ch]]) => [k, [c, t, ch.map((x) => icon(x)).join('')]])))}</script>
+</div>`;
+
+// 3. "I run a…" for social.
+const SOC_ICP = [
+  ['single', 'store', 'A single store', 'Start with Smart mode: Jwero drafts a post from your stock every day; you post in one click.', 0, 1, 'trial', 'Start free for your store'],
+  ['chain', 'branches', 'A chain or franchise', 'Start with Google reviews: every branch in one list, and an approval queue for what goes out.', 2, 1, 'demo', 'Book a 30-minute demo for a chain'],
+  ['brand', 'megaphone', 'A brand', 'Start with Autopilot and the calendar: posts made and published on every channel, timed to your followers.', 3, 2, 'trial', 'Start free for your brand'],
+];
+const socDoor = ([k, , , , , , door, label], cls) => door === 'demo'
+  ? `<a class="${cls}" href="/book-demo" data-soc-cta="door-${k}">${label}</a>`
+  : `<a class="${cls}" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=social-${k}" rel="noopener" data-trial data-soc-cta="door-${k}">${label}</a>`;
+const socIcp = () => `<div class="erp-icp soc-icp" data-soc-icp data-cfg='${JSON.stringify(Object.fromEntries(SOC_ICP.map(([k, , , , j, m]) => [k, [j, m]])))}'>
+  <div class="erp-icp-opts" role="tablist" aria-label="I run a…">${SOC_ICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${icon(ic)}<span>${t}</span></button>`).join('')}</div>
+  ${SOC_ICP.map((e, i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p><div class="erp-icp-go"><a href="#preview">Try a post ↓</a><a href="#journeys">Your journey ↓</a><a href="#modes">Your mode ↓</a>${e[0] === 'chain' ? '<a href="#comments">Reviews at every branch ↓</a>' : '<a href="#calendar">Your calendar ↓</a>'}</div><p class="erp-icp-door">${socDoor(e, 'btn btn-primary')}</p></div>`).join('')}
+</div>`;
+
+// 5. Progress bar.
+const socProg = () => `<nav class="erp-prog" data-erp-prog aria-label="On this page"><div class="erp-prog-in">
+  <ol>${[['opportunities', 'What to post'], ['preview', 'Make it'], ['channels', 'Every channel'], ['calendar', 'Your calendar'], ['comments', 'Comments'], ['modes', 'Go live']].map(([id, t], i) => `<li><a href="#${id}" data-p="${id}"><b>${i + 1}</b>${t}</a></li>`).join('')}</ol>
+  <span class="erp-prog-doors">${SOC_ICP.map((e) => socDoor(e, 'btn btn-primary erp-prog-cta soc-door')).join('')}</span>
+</div><i class="erp-prog-fill" aria-hidden="true"></i></nav>`;
+
 const CMP = [
   ['What to post', 'Guesswork', 'A blank calendar', 'Opportunities from your own sales, stock and festivals'],
   ['Making the post', 'Designer or agency', 'You make it', 'AI caption, on-model photo and video'],
@@ -227,7 +295,13 @@ ${L.hero({
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What is Jwero Social?</h2><p>Jwero Social is social media management built for jewellers. It turns signals from your own sales, stock, schemes and the festival calendar into post ideas, makes each post with AI (caption, on-model photo and short video), and publishes it to Instagram, Facebook, Pinterest, LinkedIn, YouTube, Threads, X and Google Business in one click or on Autopilot. Comments from six channels and Google reviews from every branch are answered from one screen.</p></div></section>
 
+${socProg()}
+
+${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your journey, your mode and your next step first.')}${socIcp()}`, { tone: 'tint', id: 'for-you' })}
+
 ${L.section(`${L.sectionHead('FROM SIGNAL TO POST', 'How does a post get made in minutes?', 'One opportunity, five steps, no designer.')}${socRun()}`, { id: 'one-post' })}
+
+${L.section(`${L.sectionHead('TRY IT', 'What would Jwero post for you?', 'Pick a signal and see the draft.')}${preview()}`, { id: 'preview' })}
 
 ${L.section(`${L.sectionHead('OPPORTUNITIES, EVERY NIGHT', 'What should a jeweller post today?', 'What your own business is telling you. Twelve of the signals Jwero turns into posts.')}${signalCards()}`, { tone: 'tint', id: 'opportunities' })}
 
@@ -240,22 +314,6 @@ ${L.section(`${L.sectionHead('COMMENTS AND REVIEWS', 'Where do comments and Goog
 ${L.section(`${L.sectionHead('HOW MUCH RUNS ON ITS OWN', 'Can social media run without me?', 'Choose the mode. Jwero can show ideas, prepare drafts, or publish on its own.')}${modes()}`, { tone: 'tint', id: 'modes' })}
 
 ${L.section(`${L.sectionHead('JOURNEYS', 'From a signal to a sale.', 'Four real paths, showing what Jwero does and where your team steps in.')}${socPaths()}`, { id: 'journeys' })}
-
-${L.section(`${L.sectionHead('THE ARITHMETIC', 'The hours social media takes today.', 'Your numbers, not ours.')}<div class="callc" data-socc>
-  <div class="callc-in">
-    <label>Posts and reels a week<input type="number" inputmode="numeric" data-sc="posts" value="5" min="0"></label>
-    <label>Minutes to make and post each, by hand<input type="number" inputmode="numeric" data-sc="pm" value="60" min="0"></label>
-    <label>Comments and reviews a day<input type="number" inputmode="numeric" data-sc="cm" value="40" min="0"></label>
-    <label>Minutes per reply, by hand<input type="number" inputmode="decimal" data-sc="rm" value="2" min="0" step="0.5"></label>
-  </div>
-  <div class="callc-out" aria-live="polite">
-    <p><span>Hours a month on posts</span><b data-sc-o="ph">0</b></p>
-    <p><span>Hours a month on replies</span><b data-sc-o="rh">0</b></p>
-    <p class="callc-save"><span>Hours a month, by hand</span><b data-sc-o="tot">0</b></p>
-    <p class="cta-note">An estimate from your inputs.</p>
-  </div>
-</div>`, { tone: 'tint' })}
-
 ${L.section(`${L.sectionHead('COMPARE', 'Posting by hand, a generic scheduler, or Jwero.', '')}${cmpTable()}`)}
 
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to run social media for a jewellery shop.', 'Five steps.')}${L.steps(HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
@@ -275,4 +333,5 @@ ${L.ctaBand('See this week’s posts for your shop.', 'Connect one channel. We w
 };
 
 module.exports = [socialMedia];
-module.exports.heroPiece = () => L.recordFeed({ title: 'Jwero Social', chips: CH, rows: HERO_ROWS, iconOnly: true, foot: 'Illustrative. Ideas from your own data, posted to every channel.' });
+module.exports.heroPiece = () => hoursMeter();
+module.exports.parts = { preview, calendar, socFeed, matrix };
