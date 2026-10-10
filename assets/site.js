@@ -1012,7 +1012,7 @@ function jwFromInr(n) {
   Array.prototype.forEach.call(document.querySelectorAll('details[data-lazy-src]'), function (d) {
     d.addEventListener('toggle', function () {
       if (!d.open || d.getAttribute('data-loaded')) return; d.setAttribute('data-loaded', '1');
-      fetch(d.getAttribute('data-lazy-src')).then(function (r) { return r.ok ? r.text() : ''; }).then(function (h) {
+      fetch((document.documentElement.getAttribute('data-base') || '') + d.getAttribute('data-lazy-src')).then(function (r) { return r.ok ? r.text() : ''; }).then(function (h) {
         var slot = d.querySelector('[data-lazy-slot]'); if (!slot || !h) return; slot.innerHTML = h;
         Array.prototype.forEach.call(slot.querySelectorAll('[data-gfx]'), function (g) { g.classList.add('gfx-arm'); requestAnimationFrame(function () { g.classList.add('is-in'); }); });
         var list = d.querySelector('.home-fold-list'); if (list) list.hidden = true;
