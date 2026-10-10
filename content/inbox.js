@@ -1,7 +1,7 @@
 // One Inbox (2026-10-10): one page in place of WhatsApp Commerce & API, WhatsApp
 // Marketing, Instagram & Facebook, Business Email and AI Sales Agents & Voice,
 // plus the channels that had no page of their own (webchat, Threads, WhatsApp
-// calls, Pinterest). Every capability here was read from the product. The old
+// calls). Every capability here was read from the product. The old
 // addresses redirect to the matching section of this page (build.js MOVED).
 const L = require('../lib');
 const { icon } = L;
@@ -16,7 +16,6 @@ const CHANNELS = [
   ['email', 'mail', 'Email', 'care@ and orders@ on your own domain, threaded on the customer record beside her WhatsApp, with labels, drafts and shared mailboxes.', ['Your own domain', 'Threads on the customer record', 'Replies from the same inbox', 'Order and review emails']],
   ['webchat', 'chat', 'Webchat', 'A chat on every page of your website. Visitors ask, AI answers from your catalogue, and a named customer continues on WhatsApp.', ['On your website and store', 'AI answers at any hour', 'Voice and call from the browser', 'Product questions from the store']],
   ['threads', 'share', 'Threads, X, YouTube and LinkedIn', 'Replies and comments on your posts, and X messages, answered from one place instead of four apps.', ['Threads replies', 'X messages and replies', 'YouTube and LinkedIn comments', 'Google reviews answered']],
-  ['pinterest', 'eye', 'Pinterest', 'Pins published from your catalogue and measured beside every other channel, so interest in a design reaches the same team.', ['Pins from your catalogue', 'Reach and saves measured', 'Traffic traced to enquiries', 'One calendar with other posts']],
   ['ai-agent', 'bot', 'AI Agent, chat and voice', 'An agent that answers in chat and on calls from your catalogue, today’s rate and her record, follows up on its own, and hands over to a person with the full story.', ['Replies in chat, on its own', 'Answers and makes calls', 'Knows your stock, prices and policies', 'Hands over when a person is needed']],
 ];
 const inboxChannels = () => `<div class="ibx-ch">${CHANNELS.map(([id, ic, t, d, pts]) => `<article id="${id}"><div class="cap-ico">${icon(ic)}</div><h3>${t}</h3><p>${d}</p><ul>${pts.map((p) => `<li>${p}</li>`).join('')}</ul></article>`).join('')}</div>`;
