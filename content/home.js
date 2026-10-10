@@ -128,28 +128,6 @@ ${L.section(
 ${L.section(`${L.sectionHead('WHAT YOU MISS TODAY', 'What could your business be missing each month?', 'Three numbers. Each line opens the page that closes it.')}${meter()}`, { tone: 'tint', id: 'missing' })}
 
 ${L.section(`${L.sectionHead('TRY IT', 'What does the AI say to your customer?', 'Pick a message. See the reply, and what it used.')}${require('./inbox').parts.tryIt()}`, { id: 'try' })}
-
-
-
-
-${L.section(`<div class="global-strip"><p class="eyebrow">WORLDWIDE</p><h2>Built for jewellers in every market.</h2><p>Your currency, GST, VAT or sales tax, your gold rate by gram, ounce or tola, your customers’ languages including Arabic, and hosting in your region.</p><p class="global-links"><a href="/jewellery-software-india">India</a><a href="/jewellery-software-uae">The Gulf</a><a href="/jewellery-software-uk">UK and Europe</a><a href="/jewellery-software-usa">US and Canada</a><a href="/jewellery-software-singapore">South and Southeast Asia</a><a href="/global">Jwero worldwide →</a></p></div>`, { tone: 'tint' })}
-
-
-
-
-
-
-<section class="section home-dept-toggle"><div class="container"><button type="button" class="home-dept-btn" data-dept-toggle aria-expanded="false">See department by department ↓</button></div></section>
-<div class="home-dept-wrap" data-dept-wrap hidden>
-${L.section(
-  `${L.sectionHead('FROM MANY LOGINS TO ONE RECORD', 'What changes across the whole jewellery business.', 'Not only how you sell. The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}
-  <div data-cmp-tabs>${L.compareRows(L.DEPARTMENTS)}</div>`
-)}
-<section class="section rail-section" id="journey"><div class="container"><div class="panel rail-panel"><h2>From the first enquiry to the closed books.</h2><p>Seven stages, one record. Tap a stage to see what is in it and what the AI does there.</p>${L.heroRail()}</div></div></section>
-</div>
-
-${L.section(`${L.sectionHead('IN THEIR WORDS', 'Jewellers on working with Jwero.', '')}${require('./positioning').quoteCards(3)}<p class="jb-more"><a href="/success-stories">Read what more jewellers say →</a></p>`)}
-
 ${L.section(`<span id="run"></span><div class="price-line">
   <div><p class="eyebrow">ONE PLAN, EVERY MODULE</p><h2>Run it yourself, or let Jwero run it.</h2><p>One plan with every module replaces the tools you pay for today. You start with a free trial, and your price is shown in your account when it ends. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included.</p></div>
   <div class="price-line-cta"><a class="btn btn-primary" href="/start?from=home-price">Try Free Now</a><a class="btn btn-ghost" href="/jewellery-business-as-a-service">Let Jwero handle it</a><a class="btn-text" href="/pricing">Compare all three ways →</a></div>
@@ -166,8 +144,8 @@ ${L.section(
 
 
 ${L.section(
-  `<div class="gem-head"><h2>Certified, tested, and yours to check.</h2><p>ISO/IEC 27001 certified. Independently penetration tested. Tested against the OWASP Top 10. SOC 2 in progress. Your own database, encrypted, and exportable any time. <a href="/trust">See the Trust Centre →</a></p></div>
-  ${L.trustStrip({ featured: true })}`
+  `${L.sectionHead('TRUST', 'Certified, tested, and yours to check.', 'ISO/IEC 27001 certified and independently penetration tested, with your own encrypted database that you can export at any time.')}
+  ${L.trustStrip({ featured: true })}<p class="jb-more"><a href="/trust">See the Trust Centre →</a></p>`
 , { tone: 'tint' })}
 
 
@@ -176,7 +154,7 @@ ${L.section(`${L.sectionHead('QUESTIONS JEWELLERS ASK', 'Jewellery software ques
 
 ${L.section(
   `<div class="close-plan">
-    <h2>Every customer remembered. Every gram and rupee accounted for.</h2>
+    <h2>See your own business on one record.</h2>
     <ol class="plan-steps">
       <li><strong>1.</strong> Talk to us</li>
       <li><strong>2.</strong> See it running on your own data</li>
