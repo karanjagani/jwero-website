@@ -1002,6 +1002,60 @@ function jwFromInr(n) {
     calc();
   });
 
+  // Promotions: the next festival, and when to send.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-prcd]'), function (cd) {
+    var list = []; try { list = JSON.parse(cd.getAttribute('data-fest')); } catch (e) { return; }
+    var now = new Date(); now.setHours(0, 0, 0, 0);
+    var next = list.map(function (f) { return [f[0], new Date(f[1] + 'T00:00:00')]; }).filter(function (f) { return f[1] - now >= 8 * 864e5; })[0];
+    if (!next) { cd.hidden = true; return; }
+    var days = Math.round((next[1] - now) / 864e5), by = new Date(next[1] - 7 * 864e5);
+    var fmt = by.toLocaleDateString('en-IN', { day: 'numeric', month: 'long' });
+    cd.querySelector('[data-o="fest"]').textContent = next[0]; cd.querySelector('[data-o="fest2"]').textContent = next[0];
+    cd.querySelector('[data-o="days"]').textContent = days; cd.querySelector('[data-o="by"]').textContent = fmt;
+    var a = cd.querySelector('[data-pr-cta="countdown"]'); if (a) a.setAttribute('data-wa-extra', ' I want to plan my ' + next[0] + ' promotion. It is ' + days + ' days away.');
+  });
+
+  // Promotions: write your own message; the three previews fill in.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-prwr]'), function (w) {
+    var sec = w.closest('section') || document, used = false;
+    function paint() {
+      var shop = (w.querySelector('[data-w="shop"]').value || 'your shop').trim(), offer = (w.querySelector('[data-w="offer"]').value || '').trim();
+      var bar = sec.querySelector('[data-o="shopbar"]'); if (bar) bar.textContent = shop + ' · WhatsApp';
+      Array.prototype.forEach.call(sec.querySelectorAll('.pr-wa-msg[data-base]'), function (m) { m.textContent = m.getAttribute('data-base') + (offer ? ' ' + offer + '. From ' + shop + '.' : ' From ' + shop + '.'); });
+      var a = w.querySelector('[data-pr-cta="writer"]'); if (a) a.setAttribute('data-wa-extra', ' My shop: ' + shop + '. Offer: ' + (offer || 'none yet') + '. Please send this as a draft promotion.');
+    }
+    w.addEventListener('input', function () { paint(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('pr_writer_use', {}); } });
+    paint();
+  });
+
+  // Promotions: five segments worth acting on this week.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-prscan]'), function (sc) {
+    var v = function (k) { var el = sc.querySelector('[data-s="' + k + '"]'); return el ? Math.max(0, Number(el.value) || 0) : 0; }, used = false;
+    var LABEL = { anniv: 'anniversaries next month', birth: 'birthdays this month', mature: 'gold plans maturing in 60 days', quiet: 'customers quiet for 12 months', top: 'best buyers this year' };
+    function calc() {
+      var all = v('all'), plan = v('plan'), year = Math.min(v('year'), all);
+      var n = { anniv: all * .5 / 12, birth: all * .7 / 12, mature: plan * 2 / 11, quiet: all - year, top: year * .2 };
+      Object.keys(n).forEach(function (k) {
+        var c = Math.round(n[k]); sc.querySelector('[data-o="' + k + '"]').textContent = 'about ' + c.toLocaleString('en-IN') + ' customers';
+        var a = sc.querySelector('[data-pr-cta="scan-' + k + '"]'); if (a) a.setAttribute('data-wa-extra', ' I want to promote to my ' + LABEL[k] + ', about ' + c.toLocaleString('en-IN') + ' customers.');
+      });
+    }
+    sc.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('pr_scan_use', {}); } });
+    calc();
+  });
+
+  // Promotions: what a better-targeted festival could add.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-prlift]'), function (l) {
+    var v = function (k) { var el = l.querySelector('[data-l="' + k + '"]'); return el ? Number(el.value) || 0 : 0; }, used = false;
+    function calc() {
+      var add = v('sales') * 1e5 * v('lift') / 100, t = add >= 1e7 ? '₹' + (add / 1e7).toFixed(2) + ' crore' : '₹' + (add / 1e5).toFixed(1).replace(/\.0$/, '') + ' lakh';
+      l.querySelector('[data-o="add"]').textContent = t;
+      var a = l.querySelector('[data-pr-cta="lift"]'); if (a) a.setAttribute('data-wa-extra', ' Last Diwali we sold about ₹' + v('sales') + ' lakh. Your page estimates ' + t + ' more with better targeting.');
+    }
+    l.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('pr_lift_use', {}); } });
+    calc();
+  });
+
   // Promotions: "I run a…".
   Array.prototype.forEach.call(document.querySelectorAll('[data-pr-icp]'), function (box) {
     var CFG = JSON.parse(box.getAttribute('data-cfg'));
@@ -1013,7 +1067,11 @@ function jwFromInr(n) {
       Array.prototype.forEach.call(box.querySelectorAll('[data-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
       if (jr && jr.jrShow && (fromUser || CFG[k][0] !== 0)) jr.jrShow(CFG[k][0]);
       var lead = document.getElementById(CFG[k][1] === 'broadcasts' ? 'channels' : CFG[k][1]), after = document.getElementById('one-promo');
-      if (lead && after && k !== 'single') after.parentNode.insertBefore(lead, after.nextSibling);
+      if (lead && after) after.parentNode.insertBefore(lead, after.nextSibling);
+      // 5. single stores: the headline leads with WhatsApp
+      var turn = document.querySelector('.hero-home .h1-turn');
+      if (turn && !turn.getAttribute('data-orig')) turn.setAttribute('data-orig', turn.textContent);
+      if (turn) turn.textContent = k === 'single' ? 'on WhatsApp, at her moment.' : turn.getAttribute('data-orig');
       Array.prototype.forEach.call(document.querySelectorAll('.pr-door'), function (a) { a.hidden = a.getAttribute('data-pr-cta') !== 'door-' + k; });
       var band = document.querySelector('.cta-band .btn-ghost-light[href="/book-demo"]'); if (band) band.textContent = k === 'chain' ? 'Book a 30-minute demo for a chain' : 'Book a demo';
       if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack('pr_icp_pick', { icp: k }); }

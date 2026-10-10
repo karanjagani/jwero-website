@@ -24,9 +24,9 @@ const { icon } = L;
 const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 // Hero: build an audience, see who you reach and what it could bring.
-const meter = () => `<div class="erp-meter pr-meter" data-prm>
+const meter = (preset) => `<div class="erp-meter pr-meter" data-prm>
   <p class="erp-meter-t">${icon('target')}<b>Who should hear about your Diwali offer?</b></p>
-  <div class="pr-chips" role="group" aria-label="Filters">${[['bridal', 'Bought bridal', .17], ['scheme', 'Gold plan members', .22], ['quiet', 'Quiet for 6 months', .3], ['near', 'Near a branch', .6], ['wa', 'Agreed to WhatsApp', .7]].map(([k, t, f], i) => `<button type="button" data-f="${f}" aria-pressed="${i === 1 || i === 4}">${t}</button>`).join('')}</div>
+  <div class="pr-chips" role="group" aria-label="Filters">${[['bridal', 'Bought bridal', .17], ['scheme', 'Gold plan members', .22], ['quiet', 'Quiet for 6 months', .3], ['near', 'Near a branch', .6], ['wa', 'Agreed to WhatsApp', .7]].map(([k, t, f]) => `<button type="button" data-f="${f}" aria-pressed="${(preset || ['scheme', 'wa']).includes(k)}">${t}</button>`).join('')}</div>
   <label><span>Customers on record <b data-o="base"></b></span><input type="range" data-i="base" min="500" max="100000" step="500" value="12000"></label>
   <div class="erp-meter-bars">
     <a href="#segments" data-b="aud"><span>Customers in this segment</span><i><em></em></i><b></b></a>
@@ -41,9 +41,45 @@ const meter = () => `<div class="erp-meter pr-meter" data-prm>
   <p class="erp-meter-note">Filters narrow the list by an illustrative share each. Your real segment shows the exact count.</p>
 </div>`;
 
+// 1. The next festival, and the day the promotion should go out.
+// Dates are typed in here; check them each year.
+const FESTIVALS = [['Dhanteras', '2026-11-06'], ['Diwali', '2026-11-08'], ['Wedding season', '2026-11-21'], ['Makar Sankranti', '2027-01-14'], ['Valentine’s Day', '2027-02-14'], ['Akshaya Tritiya', '2027-05-09']];
+const countdown = () => `<div class="pr-cd" data-prcd data-fest='${JSON.stringify(FESTIVALS)}'><div class="container"><p>${icon('calendar')}<span><b data-o="fest">Dhanteras</b> in <b data-o="days">–</b> days. Your promotion should go out by <b data-o="by">–</b>.</span><a class="btn btn-primary" href="#" data-wa="promotions" data-wa-extra="" data-pr-cta="countdown">Plan my <span data-o="fest2">Dhanteras</span> promotion</a></p></div></div>`;
+
+// 2. Write your own message: the preview fills in for three customers.
+const writer = () => `<div class="pr-wr" data-prwr>
+  <label>Your shop<input type="text" data-w="shop" value="Shree Jewellers" maxlength="40"></label>
+  <label>Your offer<input type="text" data-w="offer" value="20% off making charges till Bhai Dooj" maxlength="80"></label>
+  <a class="btn btn-primary" href="#" data-wa="promotions" data-wa-extra="" data-pr-cta="writer">Send me this promotion as a draft</a>
+</div>`;
+
+// 3. Which segments to act on this week.
+const scan = () => `<div class="pr-scan" data-prscan>
+  <div class="pr-scan-in">
+    <label>Customers on record<input type="number" data-s="all" value="12000" min="0" step="500"></label>
+    <label>On a gold plan<input type="number" data-s="plan" value="1800" min="0" step="50"></label>
+    <label>Bought in the last year<input type="number" data-s="year" value="4200" min="0" step="100"></label>
+  </div>
+  <ol class="pr-scan-out">${[['anniv', 'gift', 'Anniversaries next month'], ['birth', 'heart', 'Birthdays this month'], ['mature', 'coins', 'Gold plans maturing in 60 days'], ['quiet', 'activity', 'Quiet for 12 months'], ['top', 'gem', 'Your best buyers this year']].map(([k, ic, t]) => `<li data-seg="${k}">${icon(ic)}<span><b>${t}</b><small data-o="${k}">–</small></span><a href="#" data-wa="promotions" data-wa-extra="" data-pr-cta="scan-${k}">Promote →</a></li>`).join('')}</ol>
+  <p class="erp-meter-note">Rough sizes from typical shares of a jeweller’s customer list. Your real segments show exact counts.</p>
+</div>`;
+
+// 6. The guardrails a message passes through.
+const GUARDS = [['shield', 'Consent', 'Only customers who agreed'], ['activity', 'Frequency cap', 'Not too often in 7 and 30 days'], ['moon', 'Quiet hours', 'Never late at night'], ['phone', 'DND', 'DND rules for SMS and calls'], ['users', 'Approval', 'Signed off by the person you choose'], ['check', 'Sent', 'At her usual reading time']];
+const guards = () => `<div class="pr-gd" data-gfx><ol>${GUARDS.map(([ic, t, d], i) => `<li style="--i:${i}"><span>${icon(ic)}</span><b>${t}</b><small>${d}</small></li>`).join('')}</ol><i class="pr-gd-dot" aria-hidden="true"></i></div>
+<p class="ibx-legend">Every promotion passes the same checks before it reaches a customer.</p>`;
+
+// 7. What a better-targeted festival could add.
+const lift = () => `<div class="pr-lift" data-prlift>
+  <label>Last Diwali’s sales, ₹ lakh<input type="number" data-l="sales" value="120" min="0" step="5"></label>
+  <label>Lift from segments, tests and follow-ups, %<input type="number" data-l="lift" value="8" min="0" step="1"></label>
+  <p class="pr-lift-out"><span>This Diwali could add</span><b data-o="add">–</b></p>
+  <a class="btn btn-primary" href="#" data-wa="promotions" data-wa-extra="" data-pr-cta="lift">Show me how</a>
+</div>`;
+
 // "I run a…"
 const ICP = [
-  ['single', 'store', 'A single store', 'Start with ready segments and WhatsApp broadcasts: anniversaries this month, gold plans due, customers quiet for a year.', 1, 'broadcasts', 'trial', 'Start free for your store'],
+  ['single', 'store', 'A single store', 'Start with WhatsApp broadcasts to ready segments: anniversaries this month, gold plans due, customers quiet for a year.', 1, 'broadcasts', 'trial', 'Start free for your store'],
   ['chain', 'branches', 'A chain or franchise', 'Start with campaigns by branch and city, approvals, and revenue by campaign and channel for every branch.', 0, 'campaigns', 'demo', 'Book a 30-minute demo for a chain'],
   ['brand', 'megaphone', 'An online brand', 'Start with ads from your segments: Meta and Google, AI creatives, and sales sent back so the platforms find more buyers.', 2, 'ads', 'trial', 'Start free for your brand'],
 ];
@@ -92,8 +128,8 @@ const PEOPLE = [
 const personal = () => `<div class="ec-pz pr-pz" data-ecp>
   <div class="ec-pz-tabs" role="tablist">${PEOPLE.map(([n, d], i) => `<button type="button" role="tab" data-v="${i}" aria-selected="${i === 0}">${icon('users')}<b>${n}</b><small>${d}</small></button>`).join('')}</div>
   <div class="ec-pz-shop pr-wa" aria-live="polite">
-    <div class="ec-pz-bar">${icon('whatsapp')}<span>Shree Jewellers · WhatsApp</span></div>
-    ${PEOPLE.map(([, , msg, items, cta], i) => `<div class="ec-pz-view${i === 0 ? ' is-on' : ''}" data-vv="${i}"><p class="pr-wa-msg">${msg}</p><div class="ec-pz-items">${items.map((n) => `<span><i>${icon('gem')}</i>${n}</span>`).join('')}</div><span class="pr-wa-btn">${cta}</span></div>`).join('')}
+    <div class="ec-pz-bar">${icon('whatsapp')}<span data-o="shopbar">Shree Jewellers · WhatsApp</span></div>
+    ${PEOPLE.map(([, , msg, items, cta], i) => `<div class="ec-pz-view${i === 0 ? ' is-on' : ''}" data-vv="${i}"><p class="pr-wa-msg" data-base="${msg}">${msg}</p><div class="ec-pz-items">${items.map((n) => `<span><i>${icon('gem')}</i>${n}</span>`).join('')}</div><span class="pr-wa-btn">${cta}</span></div>`).join('')}
   </div>
   <p class="ibx-legend">Illustrative. One promotion, written once; each customer sees her name, her moment and the pieces that fit her.</p>
 </div>`;
@@ -220,6 +256,8 @@ ${L.hero({
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What is Personalised Promotions?</h2><p>Personalised Promotions is how Jwero decides who hears what, where, and what it sold. Live segments come from purchases, gold plans, occasions and engagement. One promotion is personalised for each customer and sent as a WhatsApp broadcast or a campaign on SMS, email, push and AI calls, at each customer’s best time, with Meta, Google and Pinterest ads alongside. Campaigns can test two versions, offers attached, and every bill traced back to the promotion and channel.</p></div></section>
 
+${countdown()}
+
 ${prog()}
 
 ${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icp()}`, { tone: 'tint', id: 'for-you' })}
@@ -228,9 +266,13 @@ ${L.section(`${L.sectionHead('ONE PROMOTION', 'How does one promotion reach the 
 
 ${L.section(`${L.sectionHead('WHO HEARS IT', 'How do I choose the right customers?', 'With live segments, built from your own records.')}${segments()}`, { tone: 'tint', id: 'segments' })}
 
-${L.section(`${L.sectionHead('WHAT EACH ONE SEES', 'Does everyone get the same message?', 'No. Pick a customer and see the same promotion change.')}${personal()}`, { id: 'personal' })}
+${L.section(`${L.sectionHead('WHERE TO START', 'Which customers should I promote to this week?', 'Three numbers, five segments worth acting on.')}${scan()}`, { id: 'scan' })}
+
+${L.section(`${L.sectionHead('WHAT EACH ONE SEES', 'Does everyone get the same message?', 'No. Pick a customer and see the same promotion change.')}${personal()}${writer()}`, { id: 'personal' })}
 
 ${L.section(`${L.sectionHead('WHERE IT GOES', 'Which channels can one promotion use?', 'Every channel she agreed to, from one place.')}${channels()}`, { tone: 'tint', id: 'channels' })}
+
+${L.section(`${L.sectionHead('SAFE TO SEND', 'Will promotions get my number blocked or annoy customers?', 'No. Every message passes the same checks first.')}${guards()}`, { id: 'guards' })}
 
 <section class="section" id="campaigns"><div class="container">${L.sectionHead('CAMPAIGNS', 'How do festival campaigns get planned?', 'The AI strategist drafts them three weeks ahead; two versions are tested; the winner goes to everyone.')}${L.cards([
   { icon: 'calendar', title: 'Planned ahead', text: 'Akshaya Tritiya, Dhanteras, Diwali, wedding season and launches, drafted three weeks out.' },
@@ -243,7 +285,7 @@ ${L.section(`${L.sectionHead('WHERE IT GOES', 'Which channels can one promotion 
 
 ${L.section(`${L.sectionHead('ADS', 'Can ads reach the same customers?', 'Yes. Segments become Meta audiences, ads are drafted from your catalogue, and sales go back to Meta and Google.')}${adLoop()}`, { tone: 'tint', id: 'ads' })}
 
-${L.section(`${L.sectionHead('WHAT IT SOLD', 'How do I know a promotion worked?', 'By the bills it brought, by channel.')}${results()}`, { id: 'results' })}
+${L.section(`${L.sectionHead('WHAT IT SOLD', 'How do I know a promotion worked?', 'By the bills it brought, by channel.')}${results()}${lift()}`, { id: 'results' })}
 
 ${L.section(`${L.sectionHead('JOURNEYS', 'From a segment to a sale.', 'Four real promotions, showing what Jwero does and where your team decides.')}${paths()}`, { tone: 'tint', id: 'journeys' })}
 
@@ -267,4 +309,4 @@ ${L.ctaBand('Build your next promotion.', 'Tell us the moment. We will show the 
 
 module.exports = [promotions];
 module.exports.heroPiece = () => meter();
-module.exports.parts = { meter, segments, personal, adLoop, results };
+module.exports.parts = { meter, segments, personal, adLoop, results, scan, guards };

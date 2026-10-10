@@ -32,7 +32,7 @@ ${L.hero({
   primary: { href: '#', label: p.cta, wa: 'promotions' },
 })}
 
-${L.section(`<div class="ec-ad-meter">${P.meter()}</div>`, { tone: 'tint' })}
+${L.section(`<div class="ec-ad-meter">${P.meter(p.preset)}</div>`, { tone: 'tint' })}
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">${p.shortQ}</h2><p>${p.shortA}</p></div></section>
 
@@ -57,7 +57,7 @@ ${L.ctaBand(p.bandTitle, p.bandText, 'promotions')}
 
 const L2 = (o) => landing(o);
 const wa = L2({
-  slug: 'whatsapp-broadcast-software-for-jewellers', crumb: 'WhatsApp broadcasts', anchor: 'broadcasts', miniHead: 'One broadcast, three customers.',
+  slug: 'whatsapp-broadcast-software-for-jewellers', crumb: 'WhatsApp broadcasts', anchor: 'broadcasts', preset: ['wa'], miniHead: 'One broadcast, three customers.',
   title: 'WhatsApp Broadcast Software for Jewellers: Segments, Best Time, Consent | Jwero',
   description: 'WhatsApp broadcast software for jewellers: send to live segments, personalised with her name, occasion and today’s gold rate, at each customer’s best time, with consent, frequency caps and follow-ups to non-responders.',
   schemaName: 'Jwero WhatsApp broadcasts for jewellers',
@@ -89,7 +89,7 @@ const wa = L2({
   bandTitle: 'See a broadcast to your customers.', bandText: 'Tell us the moment; we will show the segment and each message.',
 });
 const seg = L2({
-  slug: 'jewellery-customer-segmentation-software', crumb: 'Customer segmentation', anchor: 'segments', miniHead: 'From every customer to the right few.',
+  slug: 'jewellery-customer-segmentation-software', crumb: 'Customer segmentation', anchor: 'segments', preset: ['quiet'], miniHead: 'From every customer to the right few.',
   title: 'Jewellery Customer Segmentation Software: Live Segments, RFM, Plain Words | Jwero',
   description: 'Customer segmentation software for jewellers: live segments from purchases, metal, spend, recency, gold plans, occasions, location and engagement, RFM, 41 ready segments and segments typed in plain words.',
   schemaName: 'Jwero customer segmentation for jewellers',
@@ -121,7 +121,7 @@ const seg = L2({
   bandTitle: 'Find your best segments.', bandText: 'We will show the five segments worth acting on this week.',
 });
 const fest = L2({
-  slug: 'festival-marketing-campaigns-for-jewellers', crumb: 'Festival campaigns', anchor: 'campaigns', miniHead: 'What a festival campaign brings back.',
+  slug: 'festival-marketing-campaigns-for-jewellers', crumb: 'Festival campaigns', anchor: 'campaigns', preset: ['scheme', 'wa'], miniHead: 'What a festival campaign brings back.',
   title: 'Festival Marketing Campaigns for Jewellers: Diwali, Dhanteras, Akshaya Tritiya | Jwero',
   description: 'Festival campaigns for jewellers: suggestions ahead of Diwali, Dhanteras and Akshaya Tritiya, an AI strategist from a brief, A/B tests, coupons and loyalty, every channel at each customer’s best time, and revenue by channel.',
   schemaName: 'Jwero festival campaigns for jewellers',
@@ -153,7 +153,7 @@ const fest = L2({
   bandTitle: 'Plan your next festival.', bandText: 'Tell us the festival; we will show the campaign and the segment.',
 });
 const ctwa = L2({
-  slug: 'click-to-whatsapp-ads-for-jewellers', crumb: 'Click-to-WhatsApp ads', anchor: 'ads', miniHead: 'From an audience to a bill, and back.',
+  slug: 'click-to-whatsapp-ads-for-jewellers', crumb: 'Click-to-WhatsApp ads', anchor: 'ads', preset: ['bridal'], miniHead: 'From an audience to a bill, and back.',
   title: 'Click-to-WhatsApp Ads for Jewellers: Meta, Google, Pinterest, Sales Sent Back | Jwero',
   description: 'Click-to-WhatsApp ads for jewellers: Meta audiences from your segments, ads drafted from your catalogue, chats into One Inbox, Meta lead forms, Google and Pinterest too, budget alerts, and sales sent back to Meta and Google.',
   schemaName: 'Jwero click-to-WhatsApp ads for jewellers',
