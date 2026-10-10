@@ -35,10 +35,12 @@ const PARAM = { single: 'single', chain: 'chain', maker: 'maker', b2b: 'b2b', br
 const hdoor = ([k, , , , d, label], cls) => d === 'demo'
   ? `<a class="${cls}" href="/book-demo" data-home-cta="door-${k}">${label}</a>`
   : `<a class="${cls}" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=home-${k}" rel="noopener" data-trial data-home-cta="door-${k}">${label}</a>`;
+const SOL = { single: ['/solutions/single-store', 'a showroom like yours'], chain: ['/solutions/multi-store-chains', 'a chain like yours'], maker: ['/solutions/manufacturers', 'a workshop like yours'], b2b: ['/solutions/b2b-jewellery', 'a wholesaler like yours'], brand: ['/solutions/d2c-brands', 'a brand like yours'] };
 const homeIcp = () => `<section class="home-icp" id="for-you" data-home-icp data-order='${JSON.stringify(ORDER)}'><div class="container">
   <p class="home-icp-q">I run a…</p>
   <div class="home-icp-opts" role="tablist">${HICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${L.icon(ic)}<span>${t}</span></button>`).join('')}</div>
-  ${HICP.map((e, i) => `<div class="home-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p>${hdoor(e, 'btn btn-primary')}<a class="btn-text" href="#six">See your six jobs ↓</a></div>`).join('')}
+  ${HICP.map((e, i) => `<div class="home-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p>${hdoor(e, 'btn btn-primary')}<a class="btn-text" href="${SOL[e[0]][0]}" data-home-cta="sol-${e[0]}">How it works for ${SOL[e[0]][1]} →</a><a class="btn-text" href="#six">See your six jobs ↓</a></div>`).join('')}
+  <p class="home-icp-more">Just starting? <a href="/solutions/startups">Start with what chains took decades to build →</a> · <a href="/solutions">All 45 businesses, problems and roles →</a></p>
 </div></section>`;
 const SIX = [
   ['inbox', '/products/inbox', 'ib', 'chat', 'One Inbox', 'Every enquiry answered in seconds, on every channel.', '<span class="hv hv-race"><i></i><i></i></span>'],
@@ -115,18 +117,6 @@ ${L.section(`${L.sectionHead('WHAT YOU MISS TODAY', 'What could your business be
 ${L.section(`${L.sectionHead('TRY IT', 'What does the AI say to your customer?', 'Pick a message. See the reply, and what it used.')}${require('./inbox').parts.tryIt()}`, { id: 'try' })}
 
 ${L.section(`${L.sectionHead('IN THEIR WORDS', 'Jewellers on working with Jwero.', '')}${require('./positioning').quoteCards(3)}<p class="jb-more"><a href="/success-stories">Read what more jewellers say →</a></p>`)}
-
-${L.section(`${L.sectionHead('WHO IT IS FOR', 'Built for your kind of jewellery business.', 'The same Jwero, set up the way your business works.')}
-  <div class="bl-goals bl-goals-3 home-who">${[
-    ['store', 'One showroom', 'Counter, stock, schemes and every customer, without the owner remembering everything.', '/solutions/single-store'],
-    ['branches', 'A chain of stores', 'Every branch on one record: prices, stock, transfers and reports.', '/solutions/multi-store-chains'],
-    ['layers', 'A manufacturer', 'Orders, karigars (goldsmiths), wastage by stage and metal accounts.', '/solutions/manufacturers'],
-    ['truck', 'A wholesaler', 'Buyer catalogues, memo, buyer pricing and follow-ups.', '/solutions/b2b-jewellery'],
-    ['send', 'An online brand', 'Your own store at today’s rate, plus WhatsApp and Instagram.', '/solutions/d2c-brands'],
-    ['sparkle', 'Just starting', 'Start with the system chains took decades to build.', '/solutions/startups'],
-  ].map(([i, t, d, h]) => `<a href="${h}"><span class="home-who-ico">${L.icon(i)}</span><b>${t}</b><span>${d}</span><i>See how it works →</i></a>`).join('')}</div>
-  <p class="cta-note" style="margin-top:14px;text-align:center"><a href="/solutions">All 45 businesses, problems and roles →</a></p>`)}
-
 ${L.section(`${L.sectionHead('WHERE MOST SHOPS START', 'Three things on day one. The rest when you need it.', 'You do not switch on 35 products. You switch on the three that cost you sales today, and each one replaces something you pay for now.')}
   <div class="bl-goals bl-goals-3 home-three">${[
     ['chat', 'WhatsApp, answered', 'Your business number on the official API, the catalogue at today’s rate, replies sent by AI from her record, payments in the chat.', 'Replaces: a personal number, a bulk-message tool, a payment link app', '/products/inbox#whatsapp'],

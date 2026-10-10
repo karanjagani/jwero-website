@@ -6312,3 +6312,4 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 @media (max-width: 560px) { .gem2-hero .gem2-stage { height: 420px; } }
 /* Home hero: "One record" always sits inside the bangle */
 .gem2-hero .gem2-centre.is-inside { transform: translate(-50%, -50%); white-space: normal; text-align: center; font-size: clamp(.5625rem, 1.6vw, .75rem); line-height: 1.25; pointer-events: none; z-index: 1; }
+.home-icp-more { max-width: 1000px; margin: 10px auto 0; text-align: center; font-size: .875rem; color: var(--ink-2); }
