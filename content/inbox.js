@@ -138,6 +138,7 @@ const DEPTS = [
     'Gold plan instalment due, overdue and maturity reminders, with her statement on request',
     'Girvi interest, renewal and auction notices sent on time',
     'Credit note and return questions answered from the record',
+    'Invoice and receipt PDFs, and a party statement prepared in Finance, attached to the thread by your team in a tap',
   ]],
   ['box', 'Operations and orders', 'What customers ask about the work is answered from the work.', [
     'Live stock answers: “Is this in 22k, in size 14?”',
@@ -146,6 +147,9 @@ const DEPTS = [
     'Repair status on request, and a new repair request logged from the chat',
     'Appointments booked, moved and cancelled in the conversation',
     'Karigar job due, overdue and settlement alerts raised for your team',
+    'Purchase orders delivered to your vendor’s own workspace, with their response coming back to you',
+    'A piece reserved at a branch from your online store, collected with a pickup code',
+    'Karigars ask for their khata on WhatsApp, where you switch it on',
   ]],
   ['users', 'Team and HR', 'Your people work from the same threads, with nothing to chase.', [
     'Tasks created from a chat, with a follow-up date and an owner',
@@ -153,7 +157,7 @@ const DEPTS = [
     'Escalations to a manager, with the task and a notification',
     'Leave, payslip and approval notices reach staff in the Jwero team chat',
     'Approvals nudged, then escalated, when they wait too long',
-    'Internal notes on any thread, never seen by the customer',
+    'Internal notes on any thread, with an @mention that notifies the colleague, never seen by the customer',
   ]],
   ['megaphone', 'Marketing', 'Campaigns start conversations; the inbox finishes them.', [
     'Festival, wedding-season and new-collection broadcasts to live segments',
