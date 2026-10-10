@@ -538,4 +538,4 @@ ${L.ctaBand('Send it, then know what it sold.', 'Tell us your next festival. We 
 `,
 };
 
-module.exports = [schemes, multiStore, loyalty, journeys, campaigns];
+module.exports = [schemes, multiStore, loyalty, journeys];

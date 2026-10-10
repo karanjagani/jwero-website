@@ -1,3 +1,9 @@
+/products/segmentation /products/promotions#segments 301
+/products/segmentation/ /products/promotions#segments 301
+/products/ads-manager /products/promotions#ads 301
+/products/ads-manager/ /products/promotions#ads 301
+/products/campaigns /products/promotions#campaigns 301
+/products/campaigns/ /products/promotions#campaigns 301
 /products/optimize /products/ecommerce#optimize 301
 /products/optimize/ /products/ecommerce#optimize 301
 /products/inventory /products/erp#inventory 301
@@ -14,8 +20,8 @@
 /products/repairs-service/ /products/erp#repairs 301
 /products/whatsapp /products/inbox#whatsapp 301
 /products/whatsapp/ /products/inbox#whatsapp 301
-/whatsapp-broadcast-for-jewellers /products/inbox#whatsapp-marketing 301
-/whatsapp-broadcast-for-jewellers/ /products/inbox#whatsapp-marketing 301
+/whatsapp-broadcast-for-jewellers /products/promotions#broadcasts 301
+/whatsapp-broadcast-for-jewellers/ /products/promotions#broadcasts 301
 /products/instagram-facebook /products/inbox#instagram-facebook 301
 /products/instagram-facebook/ /products/inbox#instagram-facebook 301
 /products/ai-sales-agents /products/inbox#ai-agent 301
@@ -76,6 +82,14 @@
 /focus/reserve-online-collect-in-store-jewellery/ /reserve-online-collect-in-store-jewellery 301
 /focus/abandoned-cart-recovery-for-jewellers /abandoned-cart-recovery-for-jewellers 301
 /focus/abandoned-cart-recovery-for-jewellers/ /abandoned-cart-recovery-for-jewellers 301
+/focus/whatsapp-broadcast-software-for-jewellers /whatsapp-broadcast-software-for-jewellers 301
+/focus/whatsapp-broadcast-software-for-jewellers/ /whatsapp-broadcast-software-for-jewellers 301
+/focus/jewellery-customer-segmentation-software /jewellery-customer-segmentation-software 301
+/focus/jewellery-customer-segmentation-software/ /jewellery-customer-segmentation-software 301
+/focus/festival-marketing-campaigns-for-jewellers /festival-marketing-campaigns-for-jewellers 301
+/focus/festival-marketing-campaigns-for-jewellers/ /festival-marketing-campaigns-for-jewellers 301
+/focus/click-to-whatsapp-ads-for-jewellers /click-to-whatsapp-ads-for-jewellers 301
+/focus/click-to-whatsapp-ads-for-jewellers/ /click-to-whatsapp-ads-for-jewellers 301
 /focus/brief /brief 301
 /focus/brief/ /brief 301
 /focus/erp-to-os /erp-to-os 301

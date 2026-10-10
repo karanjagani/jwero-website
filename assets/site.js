@@ -70,6 +70,7 @@ function jwFromInr(n) {
     inbox: 'Hi Jwero, show me my WhatsApp, Instagram, email and calls in one inbox.',
     social: 'Hi Jwero, show me the posts Jwero would make for my shop this week.',
     ecommerce: 'Hi Jwero, show me where my website loses orders and the store Jwero would build.',
+    promotions: 'Hi Jwero, show me a personalised promotion for my customers.',
     roles: 'Hi Jwero, I want to understand how this helps my team, role by role.',
     proof: 'Hi, testing the inbox this button leads to. Show me what you’ve got.',
     report: 'Hi Jwero, I would like a sample growth report for my business.',
@@ -981,6 +982,51 @@ function jwFromInr(n) {
     var c = e.target.closest('[data-soc-cta]'); if (c) window.jweroTrack('soc_cta', { at: c.getAttribute('data-soc-cta'), label: (c.textContent || '').trim().slice(0, 60) });
     var f = e.target.closest('.soc-signals .ibx-flip'); if (f) window.jweroTrack('soc_signal_turn', { signal: (f.querySelector('.erp-leak-k') || {}).textContent || '' });
     var j = e.target.closest('#journeys [data-jr-tab]'); if (j && document.querySelector('[data-soc-icp]')) window.jweroTrack('soc_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
+  });
+
+  // Promotions: build an audience in the hero.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-prm]'), function (m) {
+    var n = function (sel) { var el = m.querySelector(sel); return el ? Number(el.value) || 0 : 0; }, used = false, cta = m.querySelector('[data-pr-cta="meter"]');
+    var inr = function (v) { v = Math.round(v); if (v >= 1e7) return '₹' + (v / 1e7).toFixed(2).replace(/\.?0+$/, '') + ' crore'; if (v >= 1e5) return '₹' + (v / 1e5).toFixed(1).replace(/\.0$/, '') + ' lakh'; return '₹' + v.toLocaleString('en-IN'); };
+    function calc() {
+      var base = n('[data-i="base"]'), aud = base, picked = [];
+      Array.prototype.forEach.call(m.querySelectorAll('[data-f]'), function (b) { if (b.getAttribute('aria-pressed') === 'true') { aud *= Number(b.getAttribute('data-f')); picked.push(b.textContent.toLowerCase()); } });
+      aud = Math.max(0, Math.round(aud)); var buy = aud * n('[data-a="cr"]') / 100;
+      m.querySelector('[data-o="base"]').textContent = base.toLocaleString('en-IN');
+      [['aud', aud, base], ['buy', buy, base]].forEach(function (x) { var a = m.querySelector('[data-b="' + x[0] + '"]'); a.querySelector('em').style.width = Math.max(2, x[1] / Math.max(1, aud) * 100).toFixed(1) + '%'; a.querySelector('b').textContent = Math.round(x[1]).toLocaleString('en-IN'); });
+      var t = inr(buy * n('[data-a="bill"]')); m.querySelector('[data-o="total"]').textContent = t;
+      if (cta) cta.setAttribute('data-wa-extra', ' I have about ' + base.toLocaleString('en-IN') + ' customers. Segment: ' + (picked.join(', ') || 'everyone') + ', about ' + aud.toLocaleString('en-IN') + ' people. Your page estimates ' + t + ' in sales.');
+    }
+    m.addEventListener('click', function (e) { var b = e.target.closest('[data-f]'); if (!b) return; b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('pr_meter_use', {}); } });
+    m.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('pr_meter_use', {}); } });
+    calc();
+  });
+
+  // Promotions: "I run a…".
+  Array.prototype.forEach.call(document.querySelectorAll('[data-pr-icp]'), function (box) {
+    var CFG = JSON.parse(box.getAttribute('data-cfg'));
+    var MAP = { single: 'single', staff: 'single', maker: 'single', b2b: 'single', trader: 'single', chain: 'chain', franchise: 'chain', d2c: 'brand', brand: 'brand' };
+    var STORE = { single: 'single', chain: 'chain', brand: 'd2c' };
+    var jr = document.querySelector('#journeys [data-jr]');
+    function apply(k, fromUser) {
+      Array.prototype.forEach.call(box.querySelectorAll('[data-k]'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k ? 'true' : 'false'); });
+      Array.prototype.forEach.call(box.querySelectorAll('[data-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
+      if (jr && jr.jrShow && (fromUser || CFG[k][0] !== 0)) jr.jrShow(CFG[k][0]);
+      var lead = document.getElementById(CFG[k][1] === 'broadcasts' ? 'channels' : CFG[k][1]), after = document.getElementById('one-promo');
+      if (lead && after && k !== 'single') after.parentNode.insertBefore(lead, after.nextSibling);
+      Array.prototype.forEach.call(document.querySelectorAll('.pr-door'), function (a) { a.hidden = a.getAttribute('data-pr-cta') !== 'door-' + k; });
+      var band = document.querySelector('.cta-band .btn-ghost-light[href="/book-demo"]'); if (band) band.textContent = k === 'chain' ? 'Book a 30-minute demo for a chain' : 'Book a demo';
+      if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack('pr_icp_pick', { icp: k }); }
+    }
+    box.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (b) apply(b.getAttribute('data-k'), true); });
+    var saved = ''; try { saved = localStorage.getItem('jwero-persona') || ''; } catch (e) {}
+    var asked = /[?&](?:pr|p)=(single|chain|brand|franchise|d2c|maker|b2b|trader|staff)/.exec(location.search);
+    apply(MAP[asked ? asked[1] : saved] || 'single', !!asked);
+  });
+  document.addEventListener('click', function (e) {
+    if (!window.jweroTrack || !document.querySelector('[data-pr-icp], [data-pr-cta]')) return;
+    var c = e.target.closest('[data-pr-cta]'); if (c) window.jweroTrack('pr_cta', { at: c.getAttribute('data-pr-cta'), label: (c.textContent || '').trim().slice(0, 60) });
+    var j = e.target.closest('#journeys [data-jr-tab]'); if (j && document.querySelector('[data-pr-icp]')) window.jweroTrack('pr_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
   });
 
   // Ecommerce: the hero meter.

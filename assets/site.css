@@ -6001,3 +6001,51 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 .ec-bk-in { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .ec-bk-in input, .ec-bk-in select { width: 100%; min-width: 0; box-sizing: border-box; }
 @media (max-width: 820px) { .ec-bk { grid-template-columns: minmax(0, 1fr); } }
+
+/* Promotions: hero filter chips */
+.pr-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.pr-chips button { padding: 6px 10px; border-radius: 99px; border: 1px solid var(--line); background: var(--card); font: inherit; font-size: .75rem; font-weight: 600; color: var(--ink-2); cursor: pointer; }
+.pr-chips button[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+.hero-home .pr-chips button { color: var(--ink-2); } .hero-home .pr-chips button[aria-pressed="true"] { color: #fff; }
+
+/* Promotions: segments */
+.pr-seg { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: start; }
+.pr-seg-f { display: grid; gap: 8px; padding: 18px; border-radius: 18px; background: var(--card); border: 1px solid var(--line); }
+.pr-seg-f p { display: grid; grid-template-columns: minmax(0, 1fr) 70px; gap: 4px 10px; margin: 0; font-size: .9rem; }
+.pr-seg-f p i { grid-column: 1 / -1; height: 8px; border-radius: 99px; background: linear-gradient(90deg, var(--brand), color-mix(in srgb, var(--brand) 55%, #1fa855)); width: var(--w); transform-origin: left; }
+.pr-seg-f p b { text-align: right; font-family: var(--mono); grid-row: 1; grid-column: 2; }
+.pr-seg.gfx-arm .pr-seg-f p i { transform: scaleX(0); } .pr-seg.gfx-arm.is-in .pr-seg-f p i { transform: none; transition: transform .7s calc(var(--i) * .3s) var(--ease); }
+.pr-seg-plain { display: flex !important; gap: 8px; align-items: flex-start; margin-top: 6px !important; padding: 10px 12px; border-radius: 12px; background: color-mix(in srgb, var(--amber) 12%, var(--card)); font-style: italic; }
+.pr-seg-plain svg { width: 16px; height: 16px; flex: none; color: #b07800; }
+.pr-seg-ready > div { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px; }
+.pr-seg-ready > div span { padding: 6px 10px; border-radius: 99px; background: var(--card); border: 1px solid var(--line); font-size: .8125rem; }
+.pr-seg-to { display: flex; gap: 8px; align-items: center; margin: 0; font-weight: 700; color: var(--brand); } .pr-seg-to svg { width: 16px; height: 16px; }
+@media (max-width: 860px) { .pr-seg { grid-template-columns: 1fr; } }
+
+/* Promotions: the WhatsApp view of a personal message */
+.pr-wa .ec-pz-bar svg { width: 16px; height: 16px; color: #1fa855; }
+.pr-wa-msg { margin: 0; padding: 12px 14px; border-radius: 14px 14px 14px 4px; background: color-mix(in srgb, #1fa855 10%, var(--card)); font-size: .9375rem; line-height: 1.45; }
+.pr-wa-btn { justify-self: start; padding: 8px 14px; border-radius: 99px; border: 1px solid var(--brand); color: var(--brand); font-weight: 700; font-size: .8125rem; }
+
+/* Promotions: the ad loop */
+.pr-loop ol { list-style: none; margin: 0 auto; padding: 0; max-width: 1080px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+.pr-loop li { position: relative; display: grid; gap: 6px; align-content: start; padding: 14px 12px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); }
+.pr-loop li span { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: color-mix(in srgb, var(--brand) 9%, var(--card)); color: var(--brand); } .pr-loop li span svg { width: 18px; height: 18px; }
+.pr-loop li:last-child { border: 2px solid #1fa855; } .pr-loop li:last-child span { background: color-mix(in srgb, #1fa855 14%, var(--card)); color: #157a3d; }
+.pr-loop li b { font-size: .875rem; } .pr-loop li small { font-size: .75rem; color: var(--ink-2); }
+.pr-loop.gfx-arm li { opacity: 0; transform: translateY(10px); } .pr-loop.gfx-arm.is-in li { opacity: 1; transform: none; transition: opacity .4s calc(var(--i) * .22s), transform .4s calc(var(--i) * .22s) var(--ease); }
+@media (max-width: 960px) { .pr-loop ol { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Promotions: what it sold */
+.pr-res { max-width: 900px; margin: 0 auto; display: grid; gap: 18px; }
+.pr-res-head { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.pr-res-head p { margin: 0; padding: 14px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); display: grid; gap: 2px; }
+.pr-res-head span { font: 600 .6875rem/1 var(--mono); text-transform: uppercase; color: var(--ink-2); } .pr-res-head b { font-size: 1.5rem; } .pr-res-head small { color: var(--ink-2); font-size: .75rem; }
+.pr-res-head p:first-child { background: color-mix(in srgb, var(--amber) 14%, var(--card)); border-color: var(--amber); }
+.pr-res ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.pr-res li { display: grid; grid-template-columns: 140px 1fr 100px; gap: 12px; align-items: center; font-size: .9rem; }
+.pr-res li i { height: 14px; border-radius: 99px; background: linear-gradient(90deg, var(--brand), #1fa855); width: var(--w); transform-origin: left; }
+.pr-res li b { text-align: right; font-family: var(--mono); }
+.pr-res.gfx-arm li i { transform: scaleX(0); } .pr-res.gfx-arm.is-in li i { transform: none; transition: transform .8s calc(var(--i) * .2s) var(--ease); }
+@media (max-width: 640px) { .pr-res-head { grid-template-columns: 1fr; } .pr-res li { grid-template-columns: 1fr auto; } .pr-res li i { grid-column: 1 / -1; grid-row: 2; } }
+.pr-door[hidden] { display: none; }
