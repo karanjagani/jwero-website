@@ -57,6 +57,9 @@ const SIX = [
   ['social', '/products/social-media', 'soc', 'camera', 'Social Media', 'Posts made by AI from your own stock, on 8 channels.', '<span class="hv hv-cal"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>'],
   ['ecommerce', '/products/ecommerce', 'ec', 'store', 'Ecommerce', 'A store that prices like your counter, and learns.', '<span class="hv hv-bk"><i></i><i></i><i></i><b></b></span>'],
 ];
+// Latest reels from instagram.com/jwero.ai/reels (newest first); update the ids to change them.
+const REELS = ['DeCYs5QsWod', 'Dd5X6DTDQ1L', 'Dd1gpVZs2H4', 'DdtyTVbMGcY'];
+
 const six = () => `<div class="home-six" data-home-six>${SIX.map(([k, href, prm, ic, t, d, vis]) => `<a href="${href}" data-six="${k}" data-param="${prm}" data-home-cta="six-${k}">${vis}<span class="home-six-t">${L.icon(ic)}<b>${t}</b></span><span>${d}</span><i>Open ${t} →</i></a>`).join('')}</div>`;
 const meter = () => `<div class="erp-meter home-meter" data-homem>
   <p class="erp-meter-t">${L.icon('activity')}<b>What could your business be missing each month?</b></p>
@@ -127,7 +130,7 @@ ${L.section(
 ${L.section(`${L.sectionHead('WHAT YOU MISS TODAY', 'What could your business be missing each month?', 'Three numbers. Each line opens the page that closes it.')}${meter()}`, { tone: 'tint', id: 'missing' })}
 
 ${L.section(`${L.sectionHead('TRY IT', 'What does the AI say to your customer?', 'Pick a message. See the reply, and what it used.')}${require('./inbox').parts.tryIt()}`, { id: 'try' })}
-${L.section(`<div class="home-ig"><a class="home-ig-card" href="https://www.instagram.com/jwero.ai/" rel="noopener" target="_blank" data-home-ig><span class="home-ig-av" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><span class="home-ig-t"><small>JWERO ON INSTAGRAM</small><b>@jwero.ai</b><span>Follow Jwero for product updates and short videos of the platform at work.</span></span><span class="btn btn-primary home-ig-btn">Follow on Instagram</span></a></div>`, { id: 'instagram' })}
+${L.section(`${L.sectionHead('ON INSTAGRAM', 'Jwero at work, in reels.', 'Short videos from <a href="https://www.instagram.com/jwero.ai/" rel="noopener" target="_blank">@jwero.ai</a>.')}<div class="home-reels" data-home-reels>${REELS.map((id) => `<div class="home-reel"><iframe src="https://www.instagram.com/reel/${id}/embed/" title="Jwero reel on Instagram" loading="lazy" allowtransparency="true" allow="encrypted-media; picture-in-picture" scrolling="no"></iframe></div>`).join('')}</div><p class="jb-more"><a href="https://www.instagram.com/jwero.ai/reels/" rel="noopener" target="_blank" data-home-ig>See every reel on Instagram →</a></p>`, { id: 'instagram' })}
 
 ${L.section(`<span id="run"></span><div class="price-line">
   <div><p class="eyebrow">ONE PLAN, EVERY MODULE</p><h2>Run it yourself, or let Jwero run it.</h2><p>One plan with every module replaces the tools you pay for today. You start with a free trial, and your price is shown in your account when it ends. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included.</p></div>
