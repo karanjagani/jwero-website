@@ -262,7 +262,7 @@ const switching = {
   faqs: [
     { q: 'Can I keep my ERP for accounts and use Jwero for everything customer-facing?', a: 'Yes — that is how most businesses start. Jwero takes WhatsApp, Instagram, the catalogue, the counter and schemes; books bridge to Tally or Zoho Books, or to your ERP’s ledger via export, for as long as you want to run both.' },
     { q: 'What if the pilot fails?', a: 'Then we stop, and your data leaves with you as CSV. A pilot on your own data is the point: you decide on your evidence, not our claims.' },
-    { q: 'How long does a single store take?', a: 'Set up in a day, settled in a month: a short call, a pilot on your own data, a written plan, go-live, then your first growth report. The outline is on the “How it goes” page.' },
+    { q: 'How long does a single store take?', a: 'Set up with you, settled in a month: a short call, a pilot on your own data, a written plan, go-live, then your first growth report. The outline is on the “How it goes” page.' },
     { q: 'Will we lose the history in the old system?', a: 'No. Purchase history, customers, catalogue and stock import from Excel, CSV or the ERP’s export, deduplicated and reconciled with you. The old system can stay readable for as long as you keep it.' },
     { q: 'What changes for my CA?', a: 'Less typing, and nothing else. Bills, returns and payments post to Jwero’s ledger and reach Tally automatically; Zoho Books is bridged too. Tax invoices, credit and debit notes and the audit trail are all there, and e-invoices are generated in Tally from the entries Jwero sends.' },
   ],
@@ -292,7 +292,7 @@ ${L.section(
 , { tone: 'tint' })}
 
 ${L.section(
-  `${L.sectionHead('HOW THE SWITCH RUNS', 'Set up in a day, settled in a month, with a way out.', 'Your ERP keeps running alongside Jwero to begin with. You move the rest only when the first month has proved itself.')}
+  `${L.sectionHead('HOW THE SWITCH RUNS', 'Set up with you, settled in a month, with a way out.', 'Your ERP keeps running alongside Jwero to begin with. You move the rest only when the first month has proved itself.')}
   ${L.steps([
     { title: 'Import and coexist', text: 'Customers, catalogue, stock imported and reconciled with you. The ERP keeps the books. Jwero takes the customer-facing doors: WhatsApp, Instagram, catalogue links, the counter if you choose. You get a written plan: what changes, the migration path, a straight price, and the change-freeze dates around your season. Then it is your call.' },
     { title: 'Go live', text: 'The AI starts working inside caps and quiet hours you set, with approval on for whatever you choose. Staff trained by role, in their language.' },

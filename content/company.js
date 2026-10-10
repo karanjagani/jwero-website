@@ -47,7 +47,7 @@ ${L.section(
     <a class="btn btn-ghost" href="#" data-wa="company">Talk to the founders’ desk</a>
   </div>`
 , { tone: 'tint' })}
-${L.section(`${L.sectionHead('WHAT WE PROMISE', 'Two things you can hold us to.', '')}<div class="jb-blogline"><p><b>Onboarding in a day.</b> We set up your stock, rates and customers with you.</p><p><b>10% saved for each jeweller you refer.</b> <a href="/pricing">See how referral works</a>.</p><p>Proof you can check: <a href="/customers">who uses Jwero, and what they say</a>.</p></div>`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('WHAT WE PROMISE', 'Two things you can hold us to.', '')}<div class="jb-blogline"><p><b>Onboarding done with you.</b> We set up your stock, rates and customers with you.</p><p><b>10% saved for each jeweller you refer.</b> <a href="/pricing">See how referral works</a>.</p><p>Proof you can check: <a href="/customers">who uses Jwero, and what they say</a>.</p></div>`, { tone: 'tint' })}
 ${L.section(Q(1))}
 ${L.section(`<div class="jb-blogline"><p><b>Run it yourself, or let Jwero run it.</b> The platform from ₹3,600 for the first month, or Jwero’s specialists and AI with every tool included.</p><div class="cta-row"><a class="btn btn-primary" href="${L.TRIAL_URL}company" rel="noopener" data-trial>Start for ₹3,600</a><a class="btn btn-ghost" href="#" data-wa="handle">Let Jwero handle it</a></div></div>`)}
 `,

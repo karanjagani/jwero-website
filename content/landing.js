@@ -31,7 +31,7 @@ ${L.section(`${L.sectionHead('THREE STEPS', 'How it works.', '')}${L.steps([
 ${L.section(`${L.sectionHead('WHAT THEY GET', 'What you are sending them to.', '')}${L.cards([
   { title: 'One record for the whole shop', text: 'Customers, counter, stock, schemes, books and team on one system, with AI that does the work inside the limits you set.', link: { href: '/products', label: 'Every product' } },
   { title: 'Run it, or have it run', text: '₹18,000 a month with every module, or Jwero’s specialists and AI run the work with no subscription.', link: { href: '/pricing', label: 'Pricing' } },
-  { title: 'Live in a day', text: 'Customers, catalogue and stock imported, WhatsApp connected, AI limits set from day one.', link: { href: '/platform/onboarding', label: 'Onboarding' } },
+  { title: 'Live without a long project', text: 'Customers, catalogue and stock imported, WhatsApp connected, AI limits set from day one.', link: { href: '/platform/onboarding', label: 'Onboarding' } },
 ])}`, { tone: 'tint' })}
 ${L.ctaBand('Know a jeweller who needs this?', 'Send them the page. Then tell us their name, so the saving lands with you.', 'refer')}
 `,

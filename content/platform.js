@@ -39,7 +39,7 @@ ${(() => {
     ['/platform/ai-workforce', 'AI workforce and governance', 'Replies, reminders and follow-ups sent on their own, at any hour, inside limits you set.', 'Enquiries wait for a free hand, and you keep hiring for work a system can do.'],
     ['/platform/integrations', 'Integrations', 'Tally, Zoho Books, your website and Meta all read the same record.', 'The same data is typed into every tool, and errors surface at month end.'],
     ['/platform/integrations/tally', 'Tally bridge', 'Bills, returns and payments reach Tally by themselves.', 'Your accountant re-enters every bill, and the books trail the counter.'],
-    ['/platform/onboarding', 'Onboarding and support', 'Your data imported for you and your team trained in their language, live in a day.', 'A switch that drags on through your busiest weeks.'],
+    ['/platform/onboarding', 'Onboarding and support', 'Your data imported for you and your team trained in their language, live without a long project.', 'A switch that drags on through your busiest weeks.'],
     ['/trust/security', 'Security and your data', 'Your own database, access set per person, export any time.', 'Your customer list lives on staff phones and leaves when they do.'],
     ['/products', 'Every product', '35 products that read and write this one record.', 'Ten to fifteen subscriptions that never agree with each other.'],
   ];
@@ -425,7 +425,7 @@ ${L.ctaBand('Bring your accountant into the conversation.', 'We are happy to wal
 
 const onboarding = {
   slug: 'platform/onboarding',
-  title: 'Onboarding & Support — Live in a Day, Trained in Your Language | Jwero',
+  title: 'Onboarding & Support: Set Up With You, Trained in Your Language | Jwero',
   description: 'How Jwero implementation works: what we import for you, how training runs, and the season change-freeze that protects your busiest months.',
   breadcrumbs: BC('Onboarding & Support'),
   faqs: [
@@ -440,15 +440,15 @@ const onboarding = {
 ${L.hero({
   eyebrow: 'ONBOARDING & SUPPORT',
   h1: 'If your team can use WhatsApp, they can run Jwero.',
-  sub: 'Set up in a day, settled in a month: customers imported, your WhatsApp number connected, catalogue published and the AI working inside your limits from day one — with a written change-freeze around your season.',
+  sub: 'Set up with you, settled in a month: customers imported, your WhatsApp number connected, catalogue published and the AI working inside your limits from day one — with a written change-freeze around your season.',
   primary: { href: '#', label: 'Plan your onboarding', wa: 'onboarding' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
 ${L.section(
-  `${L.sectionHead('THE FIRST MONTH', 'Set up in a day, settled in a month.', '')}
+  `${L.sectionHead('THE FIRST MONTH', 'Set up with you, settled in a month.', '')}
   ${L.steps([
-    { title: 'Import', text: 'Set up in a day: customers imported for you, WhatsApp number connected, catalogue published. Nothing ripped out — your billing software stays.' },
+    { title: 'Import', text: 'Set up with you: customers imported for you, WhatsApp number connected, catalogue published. Nothing ripped out — your billing software stays.' },
     { title: 'Go live', text: 'Enquiries answered in minutes, occasion greetings flowing, first catalogue shares sent.' },
     { title: 'First report', text: 'Your first growth report: who came back, what they bought, what the system did. Judge us on that.' },
   ])}`

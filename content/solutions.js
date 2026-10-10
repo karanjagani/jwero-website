@@ -106,7 +106,7 @@ solutionsHub.body = solutionsHubBody();
 const singleStore = {
   slug: 'solutions/single-store',
   title: 'Jewellery Shop Software for a Single Store or Small Shop | Jwero',
-  description: 'Run the whole shop on one system: billing, stock, purchase, books and staff, with customer memory, WhatsApp selling and schemes, live in a day.',
+  description: 'Run the whole shop on one system: billing, stock, purchase, books and staff, with customer memory, WhatsApp selling and schemes, live without a long project.',
   breadcrumbs: BC('Single store'),
   faqs: [
     { q: 'Is Jwero too much system for one store?', a: 'No — you start with three things: your customer list imported, your WhatsApp connected, your catalogue published. Everything else switches on only when you want it. One store with memory beats three without.' },
@@ -144,7 +144,7 @@ ${L.jtbdBlock([
 ${L.section(
   `${L.sectionHead('THE FIRST 30 DAYS', 'Small start. Visible proof.', '')}
   ${L.steps([
-    { title: 'Import', text: 'Set up in a day: customers imported, WhatsApp connected, catalogue live. Nothing ripped out — your billing software stays.' },
+    { title: 'Import', text: 'Set up with you: customers imported, WhatsApp connected, catalogue live. Nothing ripped out — your billing software stays.' },
     { title: 'Go live', text: 'Enquiries answered in minutes, birthday and anniversary greetings going out on their own, first catalogue shares.' },
     { title: 'First report', text: 'Your first growth report: who came back, what they bought, what the system did. Judge us on that.' },
   ])}`

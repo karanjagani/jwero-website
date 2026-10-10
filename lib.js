@@ -406,7 +406,7 @@ ${section(`${sectionHead('WHAT HAPPENS AFTER YOU TAP', 'Three steps. No mystery.
     { title: 'Then, your scenario', text: 'We run it through Jwero live. If we cannot help, we say so on the call.' },
     { title: 'Then, a pilot on your own data', text: 'Your customers, your catalogue, your stock — however messy. You judge on your evidence, then it is your call.' },
   ])}
-  <p class="cta-note" style="margin-top:14px">Set up in a day, settled in a month: <a href="/how-it-goes">How it goes →</a></p>`, { tone: 'tint' })}
+  <p class="cta-note" style="margin-top:14px">Set up with you, settled in a month: <a href="/how-it-goes">How it goes →</a></p>`, { tone: 'tint' })}
 ${passItOn(i)}`;
 }
 
@@ -986,7 +986,7 @@ const DEPARTMENTS = [
   },
   {
     lever: 'BILLING',
-    managed: 'Jwero sets up your counter and trains your staff, in a day.',
+    managed: 'Jwero sets up your counter and trains your staff with you.',
     before: 'Rate typed by hand, old gold worked out on a calculator, the day closed from memory.',
     after: 'Scan to bill at the live rate, with old-gold exchange, returns, GST and a cash day-close on one screen.',
     link: { href: '/products/pos', label: 'See the counter' },

@@ -57,7 +57,7 @@ const heroHome = () => `
           <a class="hero-door is-managed" href="#" data-wa="handle"><span>Let Jwero run it</span><b>Let Jwero handle it</b><em>Priced on the work. Every tool included.</em></a>
           <a class="hero-door" href="#count-your-team"><span>See your number</span><b>Count your team</b><em>What the work costs today, and with Jwero.</em></a>
         </div>
-        <p class="cta-note">Onboarding in a day · <a href="/self-managed">Run it yourself instead</a></p>
+        <p class="cta-note">Onboarding done with you · <a href="/self-managed">Run it yourself instead</a></p>
       </div>
       <div class="jbs-flow">
         <div class="pz-split" aria-label="Everything that keeps changing flows through Jwero into what you focus on">
@@ -785,13 +785,13 @@ const NEXT = [
   ['You message us', 'Say what you want to achieve, in your own words.'],
   ['A short call', 'We ask about your business, your team and what you would rather not manage. No preparation needed.'],
   ['Your plan, in writing', 'What Jwero would take on, who does it, what is measured, and what it costs. Nothing starts before you agree.'],
-  ['Onboarded in a day', 'We set you up and bring your data in, in a day. Start with one function and give us more when you are ready.'],
+  ['Onboarded with you', 'We set you up and bring your data in for you. Start with one function and give us more when you are ready.'],
 ];
 const nextSteps = () => L.section(`
 ${eyebrow('What happens next')}
 <h2 class="pz-h pz-center">From a first message to work getting done.</h2>
 <ol class="pz-how pz-how-4">${NEXT.map(([t, d], i) => `<li><span>${String(i + 1).padStart(2, '0')}</span><b>${t}</b><p>${d}</p></li>`).join('')}</ol>
-<ul class="pz-ease"><li>Onboarding in a day</li><li>Your data stays yours</li><li>Take a function back whenever you like</li></ul>
+<ul class="pz-ease"><li>Onboarding done with you</li><li>Your data stays yours</li><li>Take a function back whenever you like</li></ul>
 <p class="pz-cta-center">Rather speak first? <a href="#" data-wa="call" data-connect="voice">Call us instead</a>.</p>`, { id: 'next' });
 
 const refer = () => `

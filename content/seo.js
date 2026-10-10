@@ -180,7 +180,7 @@ const cityLocal = (slug, name, links) => {
   const uc = []; for (let r = 0; uc.length < 4 && r < 4; r++) for (const k of segs) { const u = SEG[k].usecases[r]; if (u && uc.length < 4 && !uc.includes(u)) uc.push(u); }
   const extra = segs.slice(0, 2).map((k) => SEG[k].faqs[0]).filter(Boolean);
   const names = links.slice(0, 3).map(([, l]) => l.toLowerCase());
-  const short = { q: `What is the best jewellery software for jewellers in ${name}?`, a: `For ${name}’s trade, which here means ${names.join(', ').replace(/, ([^,]*)$/, ' and $1')}, Jwero runs the counter, stock, customers, karigar accounts and books on one record, priced from the live rate. It is set up in a day over chat and video, with no office visit needed. Run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it.` };
+  const short = { q: `What is the best jewellery software for jewellers in ${name}?`, a: `For ${name}’s trade, which here means ${names.join(', ').replace(/, ([^,]*)$/, ' and $1')}, Jwero runs the counter, stock, customers, karigar accounts and books on one record, priced from the live rate. It is set up with you over chat and video, with no office visit needed. Run it yourself for ₹18,000 a month, first month ₹3,600, or let Jwero’s team run it.` };
   const sim = SIM_FOR[segs[0]] || 'memory';
   const qi = CITY_QUOTE[slug];
   return { uc, extra, short, sim, qi };

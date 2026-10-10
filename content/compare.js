@@ -34,7 +34,7 @@ const CMP_NEXT = {
 };
 const switchBox = (n, slug) => {
   const [who, tool] = CMP_NEXT[slug] || [[['/solutions', 'every kind of jeweller'], ['/roles/owner', 'owners']], ['/tools', 'where your shop is losing money']];
-  return `<div class="jb-blogline" id="switch"><p><b>How the switch from ${n} works.</b> 1. Send us your ${n} export. 2. We map your stock, customers and balances, usually within a day. 3. Run both side by side until you trust the numbers.</p><p><b>Who usually switches:</b> ${who.map(([h, t]) => `<a href="${h}">${t}</a>`).join(' and ')}. <b>Not ready to talk?</b> <a href="${tool[0]}">See ${tool[1]}</a>, free and without sign-up.</p><div class="cta-row"><a class="btn btn-primary" href="#" data-wa="switch-${slug}">Plan my switch</a></div></div>`;
+  return `<div class="jb-blogline" id="switch"><p><b>How the switch from ${n} works.</b> 1. Send us your ${n} export. 2. We map your stock, customers and balances with you. 3. Run both side by side until you trust the numbers.</p><p><b>Who usually switches:</b> ${who.map(([h, t]) => `<a href="${h}">${t}</a>`).join(' and ')}. <b>Not ready to talk?</b> <a href="${tool[0]}">See ${tool[1]}</a>, free and without sign-up.</p><div class="cta-row"><a class="btn btn-primary" href="#" data-wa="switch-${slug}">Plan my switch</a></div></div>`;
 };
 
 function comparePage({ slug, name, shortName, category, title, description, concedeThem, concedeJwero, rows, faqs: faqs0, waCtx, migrationNote, researchNote }) {
