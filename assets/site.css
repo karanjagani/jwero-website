@@ -6298,3 +6298,18 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 .home-fold > summary::-webkit-details-marker { display: none; }
 .home-fold:not([open]) > summary::after { content: ' ↓'; }
 .home-fold-list { max-width: 900px; margin: 0 auto 10px; font-size: .8125rem; line-height: 1.7; color: var(--ink-2); text-align: center; }
+
+/* Home hero: ERP, CRM, HR and Finance above and below the bangle */
+.gem2-pillars { display: flex; justify-content: space-between; gap: 10px; position: relative; z-index: 3; }
+.gem2-pillars.is-top { margin-bottom: 6px; } .gem2-pillars.is-bottom { margin-top: 6px; }
+.gem2-pillar { display: grid; grid-template-columns: 26px auto; column-gap: 8px; align-items: center; padding: 8px 12px; border-radius: 14px; background: color-mix(in srgb, #fff 94%, transparent); border: 1px solid rgba(255, 255, 255, .6); box-shadow: 0 10px 26px -14px rgba(0, 0, 0, .55); color: var(--ink); text-decoration: none; transition: transform .25s var(--ease), box-shadow .25s; animation: pillarIn .6s var(--ease) both; }
+.gem2-pillar:hover { transform: translateY(-3px); box-shadow: 0 16px 30px -14px rgba(0, 0, 0, .6); }
+.gem2-pillar svg { grid-row: span 2; width: 22px; height: 22px; color: var(--brand); }
+.gem2-pillar b { font-size: .9375rem; line-height: 1.1; color: var(--ink); } .gem2-pillar small { font-size: .6875rem; color: var(--ink-2); white-space: nowrap; }
+.gem2-pillar.is-crm, .gem2-pillar.is-fin { text-align: right; }
+.gem2-pillar.is-erp { animation-delay: .2s; } .gem2-pillar.is-crm { animation-delay: .35s; } .gem2-pillar.is-hr { animation-delay: .5s; } .gem2-pillar.is-fin { animation-delay: .65s; }
+.gem2-pillar.is-erp svg, .gem2-pillar.is-fin svg { color: #b07800; }
+.hero-home .gem2-pillar b { color: var(--ink); } .hero-home .gem2-pillar small { color: var(--ink-2); }
+@keyframes pillarIn { from { opacity: 0; transform: translateY(6px) scale(.92); } to { opacity: 1; transform: none; } }
+@media (max-width: 760px) { .gem2-pillar { padding: 6px 9px; grid-template-columns: 20px auto; column-gap: 6px; } .gem2-pillar svg { width: 18px; height: 18px; } .gem2-pillar b { font-size: .8125rem; } .gem2-pillar small { display: none; } }
+@media (prefers-reduced-motion: reduce) { .gem2-pillar { animation: none; } }
