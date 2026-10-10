@@ -426,4 +426,4 @@ ${L.ctaBand('See the video counter from the customer’s side.', 'Message us; we
 `,
 };
 
-module.exports = [pos, manufacturing, girvi, meetings];
+module.exports = [girvi, meetings];

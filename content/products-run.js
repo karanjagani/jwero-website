@@ -800,4 +800,4 @@ ${L.ctaBand('Stop sending to everyone.', 'Tell us who you want to reach. We will
 `,
 };
 
-module.exports = [crm, catalog, inventory, billingFinance, erp, showroom, segmentation];
+module.exports = [crm, catalog, showroom, segmentation];

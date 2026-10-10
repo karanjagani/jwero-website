@@ -213,4 +213,4 @@ ${L.ctaBand('Let your vendors check their own status.', 'Bring one supplier’s 
 `,
 };
 
-module.exports = [repairsService, purchaseVendors];
+module.exports = [];
