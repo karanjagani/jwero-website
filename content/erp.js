@@ -188,21 +188,18 @@ const ICP_ORDER = { single: 'pos finance inventory repairs purchase manufacturin
 const ICP_JOURNEY = { single: 0, chain: 4, maker: 2, b2b: 1, repair: 3 };
 const ICP_DEEP = { single: 'A day at your counter', chain: 'Every branch on one map', maker: 'Your gold, stage by stage', b2b: 'Rupees and grams, side by side', repair: 'Repairs, module by module' };
 
-// 8. Proof per business type. PLACEHOLDERS: replace each quote, name and figure with
-// a real customer's words and result. Any entry still in [brackets] is not rendered
-// in the live build; run PROOF_PREVIEW=1 node build.js to see them locally.
-const PROOF = {
-  single: ['[Quote from a single-store owner about the counter, cash or discounts]', '[Name], [Store], [City]', ['[Metric]', '[Before]', '[After]']],
-  chain: ['[Quote from a chain owner about seeing every branch or transfers]', '[Name], [Chain], [City]', ['[Metric]', '[Before]', '[After]']],
-  maker: ['[Quote from a manufacturer about karigar wastage or the metal ledger]', '[Name], [Workshop], [City]', ['[Metric]', '[Before]', '[After]']],
-  b2b: ['[Quote from a wholesaler or bullion trader about buying or GSTR-2B]', '[Name], [Business], [City]', ['[Metric]', '[Before]', '[After]']],
-  repair: ['[Quote from a store owner about repairs and weight disputes]', '[Name], [Store], [City]', ['[Metric]', '[Before]', '[After]']],
-};
-const isPlaceholder = (e) => /\[/.test(JSON.stringify(e));
+// 8. Proof per business type. Real testimonials from content/positioning.js, word
+// for word, paired the same way the solution pages pair them (SOL_QUOTE in build.js):
+// single store and manufacturers 0, chains and franchises 4, wholesale and bullion 1.
+// No published quote fits repairs yet, so that card stays hidden. Add a real result
+// as [metric, before, after] when a customer confirms one; until then none is shown.
+const Q = require('./positioning').QUOTES;
+const PROOF = { single: { q: 0 }, chain: { q: 4 }, maker: { q: 0 }, b2b: { q: 1 }, repair: null };
 const proofCard = (k) => {
-  const e = PROOF[k]; if (!e || (isPlaceholder(e) && !process.env.PROOF_PREVIEW)) return '';
-  const [q, who, [m, before, after]] = e;
-  return `<figure class="erp-proof${isPlaceholder(e) ? ' is-placeholder' : ''}"><blockquote>“${q}”</blockquote><figcaption>${who}</figcaption><p class="erp-proof-m"><span>${m}</span><s>${before}</s>${icon('arrow')}<b>${after}</b></p></figure>`;
+  const e = PROOF[k]; if (!e || !Q[e.q]) return '';
+  const [quote, who, where] = Q[e.q];
+  const m = e.metric ? `<p class="erp-proof-m"><span>${e.metric[0]}</span><s>${e.metric[1]}</s>${icon('arrow')}<b>${e.metric[2]}</b></p>` : '';
+  return `<figure class="erp-proof"><blockquote>“${quote}”</blockquote><figcaption>${who}, ${where}</figcaption>${m}</figure>`;
 };
 const icpSwitch = () => `<div class="erp-icp" data-erp-icp data-order='${JSON.stringify(ICP_ORDER)}' data-journey='${JSON.stringify(ICP_JOURNEY)}'>
   <div class="erp-icp-opts" role="tablist" aria-label="I run a…">${ICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${icon(ic === 'branches' ? 'branches' : ic)}<span>${t}</span></button>`).join('')}</div>
