@@ -996,7 +996,7 @@ function jwFromInr(n) {
       Array.prototype.forEach.call(box.querySelectorAll('[data-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
       if (grid) ORDER[k].split(' ').forEach(function (id, i) {
         var a = grid.querySelector('[data-six="' + id + '"]'); if (!a) return; grid.appendChild(a); a.classList.toggle('is-first', i === 0);
-        var base = a.getAttribute('href').split('?')[0], prm = a.getAttribute('data-prm');
+        var base = a.getAttribute('href').split('?')[0], prm = a.getAttribute('data-param');
         var val = id === 'erp' ? (k === 'brand' ? 'single' : k) : (k === 'maker' || k === 'b2b' ? 'single' : k);
         a.setAttribute('href', base + '?' + prm + '=' + val + '#for-you');
       });
@@ -1205,7 +1205,8 @@ function jwFromInr(n) {
   });
 
   // Promotions: build an audience in the hero.
-  Array.prototype.forEach.call(document.querySelectorAll('[data-prm]'), function (m) {
+  Array.prototype.forEach.call(document.querySelectorAll('div[data-prm]'), function (m) {
+    if (!m.querySelector('[data-i="base"]')) return;
     var n = function (sel) { var el = m.querySelector(sel); return el ? Number(el.value) || 0 : 0; }, used = false, cta = m.querySelector('[data-pr-cta="meter"]');
     var inr = function (v) { v = Math.round(v); if (v >= 1e7) return '₹' + (v / 1e7).toFixed(2).replace(/\.?0+$/, '') + ' crore'; if (v >= 1e5) return '₹' + (v / 1e5).toFixed(1).replace(/\.0$/, '') + ' lakh'; return '₹' + v.toLocaleString('en-IN'); };
     function calc() {

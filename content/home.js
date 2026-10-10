@@ -48,7 +48,7 @@ const SIX = [
   ['social', '/products/social-media', 'soc', 'camera', 'Social Media', 'Posts made by AI from your own stock, on 8 channels.', '<span class="hv hv-cal"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>'],
   ['ecommerce', '/products/ecommerce', 'ec', 'store', 'Ecommerce', 'A store that prices like your counter, and learns.', '<span class="hv hv-bk"><i></i><i></i><i></i><b></b></span>'],
 ];
-const six = () => `<div class="home-six" data-home-six>${SIX.map(([k, href, prm, ic, t, d, vis]) => `<a href="${href}" data-six="${k}" data-prm="${prm}" data-home-cta="six-${k}">${vis}<span class="home-six-t">${L.icon(ic)}<b>${t}</b></span><span>${d}</span><i>Open ${t} →</i></a>`).join('')}</div>`;
+const six = () => `<div class="home-six" data-home-six>${SIX.map(([k, href, prm, ic, t, d, vis]) => `<a href="${href}" data-six="${k}" data-param="${prm}" data-home-cta="six-${k}">${vis}<span class="home-six-t">${L.icon(ic)}<b>${t}</b></span><span>${d}</span><i>Open ${t} →</i></a>`).join('')}</div>`;
 const meter = () => `<div class="erp-meter home-meter" data-homem>
   <p class="erp-meter-t">${L.icon('activity')}<b>What could your business be missing each month?</b></p>
   <label><span>Enquiries a month <b data-o="enq"></b></span><input type="range" data-i="enq" min="20" max="5000" step="10" value="600"></label>
