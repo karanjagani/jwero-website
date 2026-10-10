@@ -907,6 +907,17 @@ function jwFromInr(n) {
     whileVisible(jr, function () { show(cur); next(); }, function () { window.clearTimeout(timer); });
   });
 
+  // Social: Manual, Smart or Autopilot.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-modes-soc]'), function (m) {
+    function set(i) {
+      m.style.setProperty('--m', i);
+      Array.prototype.forEach.call(m.querySelectorAll('[data-mode-i]'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-mode-i') === String(i) ? 'true' : 'false'); });
+      Array.prototype.forEach.call(m.querySelectorAll('[data-mode-p]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-mode-p') === String(i)); });
+    }
+    m.addEventListener('click', function (e) { var b = e.target.closest('[data-mode-i]'); if (b) { set(Number(b.getAttribute('data-mode-i'))); if (window.jweroTrack) window.jweroTrack('social_mode', { mode: b.textContent.trim() }); } });
+    set(1);
+  });
+
   // Jewellery ERP: "I run a…" reorders departments, leaks and the first journey.
   Array.prototype.forEach.call(document.querySelectorAll('[data-erp-icp]'), function (box) {
     var ORDER = JSON.parse(box.getAttribute('data-order')), JOUR = JSON.parse(box.getAttribute('data-journey'));

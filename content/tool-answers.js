@@ -11,10 +11,10 @@ const TOOL_QA = {
     { q: 'How do I set up the Meta pixel on a jewellery website?', a: 'Add the Jwero pixel to any website and Optimize sends visitor details and events to your Meta pixel, including product views, carts and orders. That lets Meta ads optimise for people who actually enquire or buy, not only for clicks.' },
   ],
   'products/social-media': [
-    { q: 'Can AI write jewellery captions and descriptions?', a: 'Yes. AI writes captions, post text and replies from your catalogue and your tone. They can go out automatically, or wait for a person’s approval if you ask for that.' },
-    { q: 'How do I make jewellery posts for Instagram?', a: 'Write the post once in the composer, attach photos or video from your library, preview how it looks on each platform, then schedule it. Brand templates keep the look consistent across staff.' },
-    { q: 'How do jewellers get sales from Instagram Reels?', a: 'A Reel brings comments and messages asking the price; the sale is lost when nobody answers. Reels are scheduled from the same screen as other posts, and every comment and message they bring lands in one inbox with a priced reply sent automatically.' },
-    { q: 'How do I get more Google reviews for my jewellery shop?', a: 'Ask at the right moment: after a purchase or a completed repair. Jwero connects your Google Business profile so reviews appear in one place and AI replies to them, held for approval if you ask for that.' },
+    { q: 'Can AI write jewellery captions and descriptions?', a: 'Yes. AI writes captions and hashtags from your catalogue in your shop’s voice. Posts can go out on their own in Autopilot, or wait in an approval queue if you ask for that.' },
+    { q: 'How do I make jewellery posts for Instagram?', a: 'Write the post once in the composer, attach photos or video from your library, preview how it looks on each platform, then post it or schedule it. Jwero can also make the post for you from an opportunity in one click.' },
+    { q: 'How do jewellers get sales from Instagram Reels?', a: 'A Reel brings comments and messages asking the price; the sale is lost when nobody answers. Reels are made and scheduled from the same screen as other posts; comments come back to one screen and DMs land in One Inbox, where a price question becomes a chat.' },
+    { q: 'How do I get more Google reviews for my jewellery shop?', a: 'Ask at the right moment: after a purchase or a completed repair. Jwero connects every Google Business location so reviews appear in one list and your team replies from one screen.' },
   ],
   'products/catalog': [
     { q: 'Can AI create jewellery product photos?', a: 'Jwero can generate or edit a product image from a product photo, charged per image. They should be used to present a real piece, not to show something you cannot supply.' },

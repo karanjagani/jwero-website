@@ -167,9 +167,9 @@ const SHIFTS = {
   },
   'products/social-media': {
     title: 'From posting when you remember to a calendar that runs.',
-    today: 'Posts go out when someone has time; comments and DMs pile up across three apps.',
-    gone: 'The unanswered comment and the festival post that went out a day late.',
-    now: 'Scheduled posts across your channels, one inbox for every comment and DM, AI replies sent automatically.',
+    today: 'Posts go out when someone has time; comments and reviews pile up across eight apps.',
+    gone: 'The blank week, the festival post made the night before, and the review nobody answered.',
+    now: 'Post ideas from your own stock every night, made by AI and posted in one click, with comments and Google reviews on one screen.',
     tempo: ['When there is time', 'On schedule'],
   },
   'products/optimize': {

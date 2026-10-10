@@ -802,4 +802,5 @@ ${L.ctaBand('One inbox for every comment and DM.', 'Tell us your platforms. We w
 };
 
 // whatsapp, instagram and aiAgents were merged into One Inbox (content/inbox.js) on 2026-10-10; their old addresses redirect there.
-module.exports = [optimize, storefront, adsManager, socialMedia];
+module.exports = [optimize, storefront, adsManager];
+// socialMedia was rebuilt in content/social.js on 2026-10-10.
