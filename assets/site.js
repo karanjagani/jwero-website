@@ -901,10 +901,88 @@ function jwFromInr(n) {
       var t = tabs[i]; if (t && t.scrollIntoView && t.parentNode.scrollWidth > t.parentNode.clientWidth) t.parentNode.scrollTo({ left: t.offsetLeft - 16, behavior: reduceMotion ? 'auto' : 'smooth' });
     }
     Array.prototype.forEach.call(tabs, function (t, k) { t.addEventListener('click', function () { manual = true; window.clearTimeout(timer); show(k); }); });
-    function next() { if (manual) return; timer = window.setTimeout(function () { show((cur + 1) % panels.length); next(); }, 7000); }
+    function next() { if (manual || jr.hasAttribute('data-jr-still')) return; timer = window.setTimeout(function () { show((cur + 1) % panels.length); next(); }, 7000); }
+    jr.jrShow = function (i) { manual = true; window.clearTimeout(timer); show(i); };
     if (reduceMotion) { show(0); return; }
     whileVisible(jr, function () { show(cur); next(); }, function () { window.clearTimeout(timer); });
   });
+
+  // Jewellery ERP: "I run a…" reorders departments, leaks and the first journey.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-erp-icp]'), function (box) {
+    var ORDER = JSON.parse(box.getAttribute('data-order')), JOUR = JSON.parse(box.getAttribute('data-journey'));
+    var MAP = { single: 'single', d2c: 'single', staff: 'single', chain: 'chain', franchise: 'chain', maker: 'maker', b2b: 'b2b', trader: 'b2b' };
+    var STORE = { single: 'single', chain: 'chain', maker: 'maker', b2b: 'b2b', repair: 'single' };
+    var btns = box.querySelectorAll('[data-k]'), panels = box.querySelectorAll('[data-panel]');
+    var par = document.querySelector('.erp-par'), leaks = document.querySelector('.erp-leaks'), jr = document.querySelector('#journeys [data-jr]'), day = document.querySelector('[data-day]');
+    function apply(k, fromUser) {
+      Array.prototype.forEach.call(btns, function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k ? 'true' : 'false'); });
+      Array.prototype.forEach.call(panels, function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
+      if (par) {
+        ORDER[k].split(' ').forEach(function (m, i) { var row = par.querySelector('[data-m="' + m + '"]'); if (row) { par.appendChild(row); if (i === 0) row.open = true; } });
+      }
+      if (leaks) {
+        var cards = Array.prototype.slice.call(leaks.querySelectorAll('.ibx-flip'));
+        cards.filter(function (c) { return (' ' + c.getAttribute('data-for') + ' ').indexOf(' ' + k + ' ') > -1; }).concat(cards.filter(function (c) { return (' ' + c.getAttribute('data-for') + ' ').indexOf(' ' + k + ' ') === -1; }))
+          .forEach(function (c) { var mine = (' ' + c.getAttribute('data-for') + ' ').indexOf(' ' + k + ' ') > -1; c.classList.toggle('is-yours', mine); leaks.appendChild(c); });
+      }
+      if (jr && jr.jrShow && fromUser) jr.jrShow(JOUR[k]);
+      else if (jr) jr.setAttribute('data-jr-first', JOUR[k]);
+      if (day && day.daySet) day.daySet(k === 'chain' ? 'chain' : 'store');
+      docEl.setAttribute('data-erp-for', k);
+      if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} }
+    }
+    box.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (b) apply(b.getAttribute('data-k'), true); });
+    var saved = ''; try { saved = localStorage.getItem('jwero-persona') || ''; } catch (e) {}
+    apply(MAP[saved] || 'single', false);
+    if (jr && jr.jrShow && MAP[saved]) jr.jrShow(JOUR[MAP[saved]]);
+  });
+
+  // Jewellery ERP: the hero leak meter, from the reader's own inputs.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-leakm]'), function (m) {
+    var inr = function (v) { v = Math.round(v); if (v >= 1e7) return '₹' + (v / 1e7).toFixed(2).replace(/\.?0+$/, '') + ' crore'; if (v >= 1e5) return '₹' + (v / 1e5).toFixed(1).replace(/\.0$/, '') + ' lakh'; return '₹' + v.toLocaleString('en-IN'); };
+    var num = function (sel) { var el = m.querySelector(sel); return el ? Number(el.value) || 0 : 0; };
+    function calc() {
+      var sales = num('[data-i="sales"]') * 1e5, gold = num('[data-i="gold"]'), pieces = num('[data-i="pieces"]');
+      var disc = sales * num('[data-a="disc"]') / 100;
+      var karigar = gold * num('[data-a="loss"]') / 100 * num('[data-a="rate"]');
+      var slow = pieces * num('[data-a="slowp"]') / 100 * num('[data-a="avg"]') * num('[data-a="carry"]') / 100;
+      var parts = { disc: disc, karigar: karigar, slow: slow }, max = Math.max(disc, karigar, slow, 1);
+      m.querySelector('[data-o="sales"]').textContent = inr(sales);
+      m.querySelector('[data-o="gold"]').textContent = gold.toLocaleString('en-IN') + ' g';
+      m.querySelector('[data-o="pieces"]').textContent = pieces.toLocaleString('en-IN');
+      Object.keys(parts).forEach(function (k) { var a = m.querySelector('[data-b="' + k + '"]'); a.querySelector('em').style.width = (parts[k] / max * 100).toFixed(1) + '%'; a.querySelector('b').textContent = inr(parts[k]); });
+      m.querySelector('[data-o="total"]').textContent = inr(disc + karigar + slow);
+    }
+    m.addEventListener('input', calc); calc();
+  });
+
+  // Jewellery ERP: a day in the business; the now-line sweeps and events light as it passes.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-day]'), function (d) {
+    var tabs = d.querySelectorAll('[data-v]'), views = d.querySelectorAll('[data-view]');
+    function set(v) {
+      Array.prototype.forEach.call(tabs, function (t) { t.setAttribute('aria-selected', t.getAttribute('data-v') === v ? 'true' : 'false'); });
+      Array.prototype.forEach.call(views, function (x) { x.classList.toggle('is-on', x.getAttribute('data-view') === v); });
+      d.classList.remove('is-play'); void d.offsetWidth; d.classList.add('is-play');
+    }
+    d.daySet = set;
+    d.addEventListener('click', function (e) { var t = e.target.closest('[data-v]'); if (t) set(t.getAttribute('data-v')); });
+    if (reduceMotion || !('IntersectionObserver' in window)) { d.classList.add('is-still'); return; }
+    onView([d], function () { d.classList.add('is-play'); }, { threshold: 0.3 });
+  });
+
+  // Jewellery ERP: rupees and grams fill in step by step.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-led]'), function (l) {
+    var rows = l.querySelectorAll('li'), i = -1, timer = 0;
+    if (reduceMotion || !('IntersectionObserver' in window)) return;
+    l.classList.add('is-live');
+    function tick() { i++; if (i >= rows.length) { timer = window.setTimeout(function () { i = -1; Array.prototype.forEach.call(rows, function (r) { r.classList.remove('is-in', 'is-now'); }); tick(); }, 4000); return; }
+      Array.prototype.forEach.call(rows, function (r, k) { r.classList.toggle('is-in', k <= i); r.classList.toggle('is-now', k === i); });
+      timer = window.setTimeout(tick, 1700); }
+    whileVisible(l, function () { window.clearTimeout(timer); tick(); }, function () { window.clearTimeout(timer); });
+  });
+
+  // Jewellery ERP: the branch map plays once it is on screen.
+  onView(document.querySelectorAll('[data-brmap]'), function (b) { b.classList.add('is-in'); }, { threshold: 0.3 });
 
   // Product and solution heroes: the record writes itself, one event at a time.
   Array.prototype.forEach.call(document.querySelectorAll('[data-rfeed]'), function (r) {

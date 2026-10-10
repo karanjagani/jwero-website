@@ -28,7 +28,7 @@ const PARITY = [
   ['pos', 'till', 'Counter POS', ['Billing', 'Old gold exchange', 'Returns', 'Day close'], ['Scan a tag: priced at today’s rate in a second', 'Hallmark checked at the counter by HUID: warn or block, your choice', 'Old gold on a voucher, applied as credit on the new bill', 'Discounts above your limit wait for approval', 'Declared cash against expected, variance on screen', 'Keeps billing through an internet drop, syncs without duplicates']],
   ['repairs', 'tools', 'Repairs & After-Sales', ['Repair slips', 'Delivery dates'], ['Weight in and weight out, loss noted before she collects', 'Every handoff logged and never edited', 'Estimate approved by her before work starts', 'Re-hallmark flag that blocks delivery until handled', 'Turnaround tracked, with late jobs predicted', 'Warranty on the original invoice and HUID']],
 ];
-const parity = () => `<div class="erp-par">${PARITY.map(([id, ic, t, has, adds], k) => `<details class="erp-par-row" name="erp-par"${k === 0 ? ' open' : ''}><summary><span class="erp-par-ico">${icon(ic)}</span><b>${t}</b><span class="erp-par-meter" aria-hidden="true"><i class="is-has" style="--w:${has.length}"></i><i class="is-add" style="--w:${adds.length}"></i></span><small>${has.length} you have · <em>+${adds.length} you don’t</em></small></summary><div class="erp-par-cols"><div><p class="erp-par-k">Your ERP has</p><ul class="is-has">${has.map((x) => `<li>${icon('check')}${x}</li>`).join('')}</ul></div><div><p class="erp-par-k is-add">Jwero adds</p><ul class="is-add">${adds.map((x) => `<li>${icon('sparkle')}${x}</li>`).join('')}</ul></div></div></details>`).join('')}</div>`;
+const parity = () => `<div class="erp-par">${PARITY.map(([id, ic, t, has, adds], k) => `<details class="erp-par-row" name="erp-par" data-m="${id}"${k === 0 ? ' open' : ''}><summary><span class="erp-par-ico">${icon(ic)}</span><b>${t}</b><span class="erp-par-meter" aria-hidden="true"><i class="is-has" style="--w:${has.length}"></i><i class="is-add" style="--w:${adds.length}"></i></span><small>${has.length} you have · <em>+${adds.length} you don’t</em></small></summary><div class="erp-par-cols"><div><p class="erp-par-k">Your ERP has</p><ul class="is-has">${has.map((x) => `<li>${icon('check')}${x}</li>`).join('')}</ul></div><div><p class="erp-par-k is-add">Jwero adds</p><ul class="is-add">${adds.map((x) => `<li>${icon('sparkle')}${x}</li>`).join('')}</ul></div></div></details>`).join('')}</div>`;
 
 // One bridal order through every department: the bubble collects a tag per step.
 const RUN = [
@@ -60,7 +60,8 @@ const LEAKS = [
   ['Bottleneck', 'activity', 'Nobody knows which karigar job is late until she asks', 'Due dates swept for lateness; late jobs predicted before they slip'],
   ['Bottleneck', 'book', 'Buying decided by memory and phone calls', 'Purchase orders drafted from what is selling, low and ageing, with each vendor’s prices'],
 ];
-const leakCards = () => `<div class="ibx-flips erp-leaks" data-flips>${LEAKS.map(([k, ic, before, after], i) => `<button type="button" class="ibx-flip" style="--i:${i}" aria-pressed="false"><span class="ibx-flip-in"><span class="ibx-flip-f"><span class="ibx-flip-ico">${icon(ic)}</span><small class="erp-leak-k">${k} in your ERP</small><b>${before}</b></span><span class="ibx-flip-b"><span class="ibx-flip-ico">${icon('check')}</span><small>Closed in Jwero</small><b>${after}</b></span></span></button>`).join('')}</div><p class="ibx-legend">Each card turns as you scroll. Tap one to turn it back.</p>`;
+const LEAK_FOR = ['maker', 'single chain repair', 'single chain', 'chain b2b single', 'b2b maker', 'b2b', 'repair single', 'chain b2b', 'single repair', 'b2b chain maker', 'maker repair', 'b2b chain'];
+const leakCards = () => `<div class="ibx-flips erp-leaks" data-flips>${LEAKS.map(([k, ic, before, after], i) => `<button type="button" class="ibx-flip" data-for="${LEAK_FOR[i]}" style="--i:${i}" aria-pressed="false"><span class="ibx-flip-in"><span class="ibx-flip-f"><span class="ibx-flip-ico">${icon(ic)}</span><small class="erp-leak-k">${k} in your ERP</small><b>${before}</b></span><span class="ibx-flip-b"><span class="ibx-flip-ico">${icon('check')}</span><small>Closed in Jwero</small><b>${after}</b></span></span></button>`).join('')}</div><p class="ibx-legend">Each card turns as you scroll. Tap one to turn it back.</p>`;
 
 // Proactive: what lands on your screen today, each line lighting its department.
 const DEPTS = [
@@ -175,6 +176,134 @@ const CMP = [
 const cmpTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th><th>Tally plus add-ons</th><th>Desktop jewellery ERP</th><th>Jwero</th></tr></thead><tbody>${CMP.map(([r, a, b, c]) => `<tr><td><strong>${r}</strong></td><td>${a}</td><td>${b}</td><td class="wa-cmp-us">${c}</td></tr>`).join('')}</tbody></table></div>
 <p class="cta-note" style="margin-top:12px">Desktop ERPs vary. See <a href="/compare/jwero-vs-ornate-nx">Jwero vs Ornate NX</a>, <a href="/compare/jwero-vs-jewelacc">JewelAcc</a>, <a href="/compare/jwero-vs-marg">Marg</a>, <a href="/compare/jwero-vs-sioniq">SIONIQ</a> and <a href="/compare/jwero-vs-synergics">Synergics</a>.</p>`;
 
+// 1. "I run a…" on this page: reorders departments, leaks and journeys for the reader.
+const ICP = [
+  ['single', 'store', 'A single store', 'Start at the counter. Your leaks are discounts, cash at close and rates typed by hand.', 'till', 'Try the till', '#day'],
+  ['chain', 'branches', 'A chain or franchise', 'Start with stock across branches. Your leaks are transfers, branch cash and books drifting from stock.', 'shelf', 'Try the shelf', '#branches'],
+  ['maker', 'scale', 'A workshop or factory', 'Start in the workshop. Your leaks are grams lost above norm, late jobs and unrecorded scrap.', 'grams', 'Try metal closure', '#metal'],
+  ['b2b', 'truck', 'Wholesale or bullion', 'Start with buying. Your leaks are short deliveries, missed input credit and rates fixed in a notebook.', 'shelf', 'Try the shelf', '#ledger'],
+  ['repair', 'tools', 'A repair-heavy store', 'Start with repairs. Your leaks are weight disputes, forgotten re-hallmarking and late jobs.', 'till', 'Try the till', '#modules'],
+];
+const ICP_ORDER = { single: 'pos finance inventory repairs purchase manufacturing', chain: 'inventory pos finance purchase repairs manufacturing', maker: 'manufacturing purchase inventory finance pos repairs', b2b: 'purchase inventory finance manufacturing pos repairs', repair: 'repairs pos inventory finance purchase manufacturing' };
+const ICP_JOURNEY = { single: 0, chain: 4, maker: 2, b2b: 1, repair: 3 };
+const ICP_DEEP = { single: 'A day at your counter', chain: 'Every branch on one map', maker: 'Your gold, stage by stage', b2b: 'Rupees and grams, side by side', repair: 'Repairs, module by module' };
+const icpSwitch = () => `<div class="erp-icp" data-erp-icp data-order='${JSON.stringify(ICP_ORDER)}' data-journey='${JSON.stringify(ICP_JOURNEY)}'>
+  <div class="erp-icp-opts" role="tablist" aria-label="I run a…">${ICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${icon(ic === 'branches' ? 'branches' : ic)}<span>${t}</span></button>`).join('')}</div>
+  ${ICP.map(([k, , t, line, sim, simLabel, deep], i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${k}"><p>${line}</p><div class="erp-icp-go"><a href="#parity">Your departments first ↓</a><a href="#leaks">Your leaks first ↓</a><a href="#journeys">Your journey ↓</a><a href="${deep}">${ICP_DEEP[k]} ↓</a><a class="is-sim" href="#try-${sim}">${simLabel} →</a></div></div>`).join('')}
+  <p class="ibx-legend">The page reorders itself for you. Nothing is hidden; every section stays below.</p>
+</div>`;
+
+// 2. The hero leak meter: the reader's own inputs, the assumptions in the open.
+const leakMeter = () => `<div class="erp-meter" data-leakm>
+  <p class="erp-meter-t">${icon('activity')}<b>What could your ERP be missing?</b></p>
+  <label><span>Sales a month <b data-o="sales"></b></span><input type="range" data-i="sales" min="5" max="1000" step="5" value="60"></label>
+  <label><span>Gold issued to karigars a month <b data-o="gold"></b></span><input type="range" data-i="gold" min="0" max="20000" step="100" value="1500"></label>
+  <label><span>Pieces in stock <b data-o="pieces"></b></span><input type="range" data-i="pieces" min="100" max="20000" step="100" value="3000"></label>
+  <div class="erp-meter-bars">
+    <a href="#leaks" data-b="disc"><span>Discounts nobody approved</span><i><em></em></i><b></b></a>
+    <a href="#leaks" data-b="karigar"><span>Gold lost above norm</span><i><em></em></i><b></b></a>
+    <a href="#leaks" data-b="slow"><span>Cost of slow stock</span><i><em></em></i><b></b></a>
+  </div>
+  <p class="erp-meter-total"><span>A month, roughly</span><b data-o="total"></b></p>
+  <details class="erp-meter-as"><summary>The assumptions, change them</summary>
+    <label>Unapproved discount, % of sales<input type="number" data-a="disc" value="0.5" step="0.1" min="0"></label>
+    <label>Loss above norm, % of gold issued<input type="number" data-a="loss" value="0.3" step="0.1" min="0"></label>
+    <label>24K rate, ₹ a gram<input type="number" data-a="rate" value="7200" step="100" min="0"></label>
+    <label>Pieces past 180 days, %<input type="number" data-a="slowp" value="15" step="1" min="0"></label>
+    <label>Average piece value, ₹<input type="number" data-a="avg" value="50000" step="1000" min="0"></label>
+    <label>Cost of money, % a month<input type="number" data-a="carry" value="1" step="0.1" min="0"></label>
+  </details>
+  <p class="erp-meter-note">A planning estimate from your inputs and these assumptions, not a measurement.</p>
+</div>`;
+
+// 3. A day in the business: what ran on its own, what waited for a person.
+const DAY = {
+  store: [
+    [10, 'a', 'Today’s rate set; every tag repriced'],
+    [11.5, 'a', 'Necklace billed: rate, making, GST, HUID'],
+    [13, 'h', 'Discount above limit: approve?'],
+    [14.5, 'a', 'Old gold voucher applied'],
+    [16, 'a', 'Dues reminders sent'],
+    [17.5, 'a', 'Repair 118 ready notice sent'],
+    [19, 'h', 'PO drafted by AI: review'],
+    [20.5, 'a', 'Day close: cash matches'],
+  ],
+  chain: [
+    ['HO', 10, 'a', 'Rate set for every branch'],
+    ['Andheri', 11, 'a', 'Transfer received: 62.40 g balances'],
+    ['Pune', 12.5, 'h', 'Discount above limit: approve?'],
+    ['HO', 14, 'a', 'Stock and ledger: no drift'],
+    ['Surat', 15.5, 'a', '38 pieces past 180 days flagged'],
+    ['Andheri', 17, 'h', 'Return outside policy: approve?'],
+    ['Pune', 19, 'a', 'Dues reminders sent'],
+    ['Surat', 20.5, 'h', 'Day close ₹500 short: review'],
+  ],
+};
+const dayX = (h) => ((h - 10) / 11 * 100).toFixed(2);
+const dayLine = () => `<div class="erp-day" data-day>
+  <div class="erp-day-tabs" role="tablist"><button type="button" role="tab" data-v="store" aria-selected="true">One store</button><button type="button" role="tab" data-v="chain" aria-selected="false">Every branch</button></div>
+  <div class="erp-day-view is-on" data-view="store"><div class="erp-day-lane"><span class="erp-day-name">Your store</span><div class="erp-day-track">${DAY.store.map(([h, w, t], i) => `<span class="erp-day-ev is-${w}" style="--x:${dayX(h)}%;--t:${(dayX(h) / 100 * 6).toFixed(2)}s;--i:${i}" title="${t}"><i></i><b>${t}</b></span>`).join('')}</div></div></div>
+  <div class="erp-day-view" data-view="chain">${['HO', 'Andheri', 'Pune', 'Surat'].map((br) => `<div class="erp-day-lane"><span class="erp-day-name">${br === 'HO' ? 'Head office' : br}</span><div class="erp-day-track">${DAY.chain.filter((e) => e[0] === br).map(([, h, w, t], i) => `<span class="erp-day-ev is-${w}" style="--x:${dayX(h)}%;--t:${(dayX(h) / 100 * 6).toFixed(2)}s;--i:${i}" title="${t}"><i></i><b>${t}</b></span>`).join('')}</div></div>`).join('')}</div>
+  <div class="erp-day-axis" aria-hidden="true">${['10 am', '12', '2 pm', '4', '6', '8', '9 pm'].map((t, i, a) => `<span style="--x:${(i / (a.length - 1) * 100).toFixed(1)}%">${t}</span>`).join('')}</div>
+  <i class="erp-day-now" aria-hidden="true"></i>
+  <p class="ibx-legend"><span class="is-ai">Ran on its own</span> <span class="is-human">Waited for you</span> Illustrative day.</p>
+</div>`;
+
+// 4. Gold through the workshop: grams at each stage, the one over norm in amber.
+const METAL = [['Issued', 62.40, null], ['Casting', 61.92, 0.8], ['Filing', 61.55, 0.6], ['Setting', 61.02, 0.5], ['Polishing', 60.78, 0.4], ['Finished', 60.78, null]];
+const metalFlow = () => {
+  const cells = METAL.map(([n, g, norm], i) => {
+    const prev = i ? METAL[i - 1][1] : g, lost = +(prev - g).toFixed(2), pct = prev ? lost / prev * 100 : 0;
+    const over = norm != null && pct > norm;
+    return `<li class="${over ? 'is-over' : ''}" style="--i:${i};--f:${(g / METAL[0][1] * 100).toFixed(1)}%"><b>${n}</b><span class="erp-metal-g">${g.toFixed(2)} g</span><span class="erp-metal-bar"><i></i></span><small>${i === 0 ? 'issued in fine weight' : norm == null ? 'tagged, into stock' : `−${lost.toFixed(2)} g · ${pct.toFixed(2)}% · norm ${norm}%`}</small>${over ? `<em>${icon('eye')}Over norm · posted to karigar Ramesh’s khata</em>` : ''}</li>`;
+  }).join('');
+  return `<div class="erp-metal" data-gfx><ol>${cells}</ol><p class="ibx-legend">Illustrative job 2231, 22K bangles. Each stage weighed in fine grams; the stage above its norm turns amber.</p></div>`;
+};
+
+// 5. Every branch on one map: value, ageing, cash; a transfer that must balance.
+const BRANCHES = [['Head office', 'Mumbai', '₹4.8 cr', '9%', 'Matches', 50, 18], ['Andheri', 'Mumbai', '₹1.9 cr', '14%', 'Matches', 18, 62], ['Pune', 'Pune', '₹1.2 cr', '21%', '₹200 short', 50, 86], ['Surat', 'Surat', '₹2.3 cr', '26%', 'Matches', 82, 62]];
+const branchMap = () => `<div class="erp-br" data-brmap>
+  <svg class="erp-br-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${BRANCHES.slice(1).map(([, , , , , x, y]) => `<line x1="50" y1="18" x2="${x}" y2="${y}"/>`).join('')}<line x1="18" y1="62" x2="82" y2="62" class="is-tr"/></svg>
+  <span class="erp-br-dot" aria-hidden="true"></span>
+  ${BRANCHES.map(([n, c, v, age, cash, x, y]) => `<div class="erp-br-node${parseInt(age, 10) > 20 ? ' is-age' : ''}${/short/.test(cash) ? ' is-cash' : ''}" style="--x:${x}%;--y:${y}%"><b>${n}</b><span>Stock ${v}</span><span>Past 180 days ${age}</span><span>Cash at close: ${cash}</span></div>`).join('')}
+  <p class="erp-br-tr" aria-live="polite">${icon('truck')}<span>Andheri to Surat · 62.40 g out · <b>62.40 g in</b> · transfer closes</span></p>
+</div><p class="ibx-legend">Illustrative. A transfer closes only when the weight out equals the weight in. Amber shows ageing above 20% or cash short at close.</p>`;
+
+// 6. Rupees and fine grams, side by side, for a purchase before the rate is fixed.
+const LEDGER = [
+  ['Order', 'Unfixed-rate purchase from Shree Bullion', 'Rate not fixed yet', '+ 500.000 g owed'],
+  ['Received', '498.600 g received, purity 995 tested', 'Nothing to pay yet', '− 1.400 g short, flagged'],
+  ['Debit note', 'Shortfall credited by the vendor', 'Nothing to pay yet', 'Balance 498.600 g'],
+  ['Rate fixed', 'Rate fixed with the dealer on the day', '₹35,89,920 payable', '498.600 g settled'],
+  ['Bill matched', 'Order, receipt and bill agree; GSTR-2B checked', 'Input credit confirmed', 'Metal ledger closes at 0'],
+];
+const buyLedger = () => `<div class="erp-led" data-led>
+  <div class="erp-led-head"><span>Step</span><span>What happened</span><span>${icon('coins')}Rupees</span><span>${icon('scale')}Fine grams</span></div>
+  <ol>${LEDGER.map(([s, d, r, g], i) => `<li data-k="${i}"><b>${s}</b><span>${d}</span><span class="erp-led-r">${r}</span><span class="erp-led-g">${g}</span></li>`).join('')}</ol>
+  <p class="ibx-legend">Illustrative. Rupees for the books, fine grams for the metal ledger, updated by the same entries.</p>
+</div>`;
+
+// 7. Switching from the ERP you run today.
+const FROM = [
+  ['tally', 'Tally', '/blog/jewellery-software-and-tally', 'Keep Tally for your CA if you like: Jwero keeps it in step, so the books never have to move.'],
+  ['ornate', 'Ornate NX', '/compare/jwero-vs-ornate-nx', ''],
+  ['jewelacc', 'JewelAcc', '/compare/jwero-vs-jewelacc', ''],
+  ['marg', 'Marg', '/compare/jwero-vs-marg', ''],
+  ['sioniq', 'SIONIQ', '/compare/jwero-vs-sioniq', ''],
+  ['synergics', 'Synergics', '/compare/jwero-vs-synergics', ''],
+];
+const fromSteps = (n) => [
+  ['Bring your masters', `Stock, customers, vendors, karigars and opening balances, exported from ${n} with us.`],
+  ['Map your way of working', `Rates, making and wastage rules, branches and approval limits, set the way you run them in ${n} today.`],
+  ['Run both in parallel', `Bill in Jwero while ${n} keeps running, until the daily totals match.`],
+  ['Reconcile the cut-over', 'Stock, metal and money balances matched on the switch date; differences listed and cleared.'],
+  [n === 'Tally' ? 'Keep Tally, or not' : `Switch off ${n}`, n === 'Tally' ? 'Your CA keeps working in Tally, kept in step, or the books move to Jwero’s ledger.' : 'Your books carry on in Jwero’s ledger, or in Tally kept in step.'],
+];
+const switchFrom = () => `<div class="ibx-jr erp-from" data-jr data-jr-still>
+  <div class="ibx-jr-tabs" role="tablist">${FROM.map(([, n], i) => `<button type="button" role="tab" data-jr-tab="${i}" aria-selected="${i === 0}">From ${n}</button>`).join('')}</div>
+  ${FROM.map(([, n, href, note], i) => `<div class="ibx-jr-panel${i === 0 ? ' is-on' : ''}" role="tabpanel" data-jr-panel="${i}"><h3>Moving from ${n} to Jwero</h3><ol class="ibx-jr-path">${fromSteps(n).map(([t, d], j) => `<li class="${j === 2 ? 'is-h' : 'is-a'}" style="--j:${j}"><span class="ibx-jr-node"><b>${j + 1}</b></span><em>${t}</em><span>${d}</span></li>`).join('')}</ol>${note ? `<p class="erp-from-note">${note}</p>` : ''}<p class="erp-from-more"><a href="${href}">${n === 'Tally' ? 'Jwero and Tally, explained' : `Jwero vs ${n}`} →</a></p></div>`).join('')}
+</div>`;
+
 const MOVE = [
   ['Bring your masters', 'Stock, customers, vendors, karigars and opening balances from your current ERP or Tally.'],
   ['Map your way of working', 'Rates, making and wastage rules, branches, approval limits and who can do what.'],
@@ -239,13 +368,23 @@ ${L.hero({
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What is Jwero’s jewellery ERP?</h2><p>Jwero’s jewellery ERP runs the counter, inventory, manufacturing and karigar job work, purchase, billing and accounts, and repairs on one record, in fine weight with HUID, across every branch. It does what a jewellery ERP is expected to do, and closes the gaps most leave open: wastage settled against your norms, discount approvals, cash variance, stock-to-ledger drift checks and AI that drafts orders and flags problems before they cost you.</p></div></section>
 
+${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your departments, your leaks and your journey first.')}${icpSwitch()}`, { tone: 'tint', id: 'for-you' })}
+
 ${L.section(`${L.sectionHead('NOTHING YOU LOSE', 'Does Jwero do everything my current ERP does?', 'Yes. Open each department: what your ERP already has on the left, what Jwero adds on the right.')}${parity()}`, { id: 'parity' })}
 
 ${L.section(`${L.sectionHead('LEAKS, HIDDEN LOSS, BOTTLENECKS', 'Where does a jewellery ERP lose you money?', 'Twelve places most ERPs record after the fact. Jwero closes them as they happen.')}${leakCards()}`, { tone: 'tint', id: 'leaks' })}
 
+${L.section(`${L.sectionHead('A DAY IN THE BUSINESS', 'What did Jwero do today, and what waited for you?', 'Green ran on its own. Amber waited for a person you chose. Switch to every branch to see a chain’s day.')}${dayLine()}`, { id: 'day' })}
+
 ${L.section(`${L.sectionHead('ONE ORDER, EVERY DEPARTMENT', 'A bridal order from booking to the books, on one record.', '')}${erpRun()}`, { id: 'one-order' })}
 
 ${L.section(`${L.sectionHead('DECIDE BEFORE IT COSTS YOU', 'What does the ERP put in front of you today?', 'Problems arrive as they happen, not at audit. Each department watches its own leaks and AI suggests the next step.')}${erpAlerts()}`, { tone: 'tint', id: 'proactive' })}
+
+${L.section(`${L.sectionHead('FOR WORKSHOPS AND FACTORIES', 'Where does the gold go in the workshop?', 'Weighed at every stage in fine grams. The stage over its norm shows itself, and lands on the karigar’s khata.')}${metalFlow()}`, { id: 'metal' })}
+
+${L.section(`${L.sectionHead('FOR CHAINS AND FRANCHISES', 'How do you see every branch at once?', 'Stock value, ageing and cash at close for each branch, and transfers that cannot lose a gram.')}${branchMap()}`, { tone: 'tint', id: 'branches' })}
+
+${L.section(`${L.sectionHead('FOR WHOLESALE AND BULLION', 'Do the rupees and the grams agree?', 'Every purchase updates both ledgers from the same entries, so the metal account closes at zero.')}${buyLedger()}`, { id: 'ledger' })}
 
 ${L.section(`${L.sectionHead('INSTANT, END TO END', 'Serve customers instantly. Execute operations instantly.', 'Six real paths across departments, showing what Jwero does on its own and where your team decides.')}${erpPaths()}`, { id: 'journeys' })}
 
@@ -259,7 +398,7 @@ ${L.sim('shelf')}
 
 ${L.section(`${L.sectionHead('COMPARE', 'Tally plus add-ons, a desktop jewellery ERP, or Jwero.', '')}${cmpTable()}`, { tone: 'tint', id: 'compare' })}
 
-${L.section(`${L.sectionHead('SWITCHING ERP MID-YEAR', 'How to switch your jewellery ERP mid-year.', 'Five steps, done with you. No big-bang cut-over.')}${L.steps(MOVE.map(([title, text]) => ({ title, text })))}`)}
+${L.section(`${L.sectionHead('SWITCHING ERP MID-YEAR', 'How do I switch my jewellery ERP mid-year?', 'Pick the system you run today. Five steps, done with you, with no big-bang cut-over.')}${switchFrom()}`, { id: 'switch' })}
 
 ${L.section(`${L.sectionHead('READ MORE', 'Guides by department.', '')}<div class="erp-map">${READS.map(([h, t]) => `<a href="${h}"><b>${t}</b><span>${h.replace(/^\//, 'jwero.ai/')}</span></a>`).join('')}</div>`, { tone: 'tint' })}
 
@@ -276,4 +415,4 @@ ${L.ctaBand('Find where your ERP leaks.', 'Bring one month of your numbers. We w
 };
 
 module.exports = [erp];
-module.exports.heroPiece = () => L.recordFeed({ title: 'Jewellery ERP', chips: HERO_CHIPS, rows: HERO_ROWS, iconOnly: true, foot: 'Illustrative. One record across every department.' });
+module.exports.heroPiece = () => leakMeter();
