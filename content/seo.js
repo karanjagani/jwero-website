@@ -1082,4 +1082,4 @@ ${L.ctaBand('Find out how many visitors you never knew about.', 'Tell us your ca
 `,
 };
 
-module.exports = [hub, ...CITIES.map(cityPage), accounting, barcode, cloud, broadcast, instagram, adsLanding, smsLanding, footfall, cctv, aiCalling, appointments, staff, webAnalytics, hi];
+module.exports = [hub, ...CITIES.map(cityPage), accounting, barcode, cloud, /* broadcast: merged into One Inbox 2026-10-10 */ instagram, adsLanding, smsLanding, footfall, cctv, aiCalling, appointments, staff, webAnalytics, hi];

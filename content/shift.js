@@ -114,6 +114,13 @@ const SHIFTS = {
   },
 
   // ---------------------------------------------------------------- products · sell
+  'products/inbox': {
+    title: 'From five apps and a shop phone to one inbox.',
+    today: 'Enquiries arrive on a salesperson’s WhatsApp, the shop’s Instagram, an email nobody opens and a phone that rings after closing.',
+    gone: 'Unanswered messages, prices typed from memory, and conversations that leave with the person who had the phone.',
+    now: 'Every channel in one inbox on one customer record: AI answers what it can at any hour, and the rest reaches the right person with the whole story.',
+    tempo: ['Next morning', 'The same minute'],
+  },
   'products/whatsapp': {
     title: 'From a personal phone to a counter that never closes.',
     today: 'Enquiries land on a salesperson’s WhatsApp; prices are typed from memory; the thread is lost when they leave.',

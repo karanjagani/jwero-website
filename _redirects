@@ -1,3 +1,13 @@
+/products/whatsapp /products/inbox#whatsapp 301
+/products/whatsapp/ /products/inbox#whatsapp 301
+/whatsapp-broadcast-for-jewellers /products/inbox#whatsapp-marketing 301
+/whatsapp-broadcast-for-jewellers/ /products/inbox#whatsapp-marketing 301
+/products/instagram-facebook /products/inbox#instagram-facebook 301
+/products/instagram-facebook/ /products/inbox#instagram-facebook 301
+/products/ai-sales-agents /products/inbox#ai-agent 301
+/products/ai-sales-agents/ /products/inbox#ai-agent 301
+/products/email /products/inbox#email 301
+/products/email/ /products/inbox#email 301
 /why-an-os /platform 301
 /why-an-os/ /platform 301
 /roadmap /platform 301
@@ -68,8 +78,6 @@
 /focus/jewellery-barcode-tagging-software/ /jewellery-barcode-tagging-software 301
 /focus/cloud-jewellery-software /cloud-jewellery-software 301
 /focus/cloud-jewellery-software/ /cloud-jewellery-software 301
-/focus/whatsapp-broadcast-for-jewellers /whatsapp-broadcast-for-jewellers 301
-/focus/whatsapp-broadcast-for-jewellers/ /whatsapp-broadcast-for-jewellers 301
 /focus/instagram-for-jewellers /instagram-for-jewellers 301
 /focus/instagram-for-jewellers/ /instagram-for-jewellers 301
 /focus/ads-for-jewellers /ads-for-jewellers 301

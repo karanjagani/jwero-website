@@ -689,4 +689,5 @@ ${L.ctaBand('The mistakes your floor repeats have a course.', 'Tell us the three
 `,
 };
 
-module.exports = [email, marketplaces, quotations, digitalCatalogues, reports, trainingLms];
+// email was merged into One Inbox (content/inbox.js) on 2026-10-10.
+module.exports = [marketplaces, quotations, digitalCatalogues, reports, trainingLms];

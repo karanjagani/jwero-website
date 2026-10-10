@@ -67,6 +67,7 @@ function jwFromInr(n) {
     header: 'Hi Jwero, I would like to see a quick demo.',
     sticky: 'Hi Jwero, I would like to see a quick demo.',
     home: 'Hi Jwero, show me how the AI workforce works.',
+    inbox: 'Hi Jwero, show me my WhatsApp, Instagram, email and calls in one inbox.',
     roles: 'Hi Jwero, I want to understand how this helps my team, role by role.',
     proof: 'Hi, testing the inbox this button leads to. Show me what you’ve got.',
     report: 'Hi Jwero, I would like a sample growth report for my business.',
@@ -1721,11 +1722,11 @@ function jwFromInr(n) {
       'solutions/manufacturers': 'maker', 'solutions/oem-manufacturers': 'maker', 'solutions/casting-units': 'maker', 'solutions/cad-services': 'maker',
       'solutions/diamond-traders': 'trader', 'solutions/b2b-jewellery': 'b2b', 'solutions/gold-wholesale': 'b2b', 'solutions/diamond-wholesale': 'b2b', 'solutions/bullion-gold-traders': 'b2b', 'solutions/export-houses': 'b2b' };
     var PATH = {
-      single: { label: 'a single store', sol: '/solutions/single-store', sim: '/products/pos#try-till', simLabel: 'Try the till', prod: '/products/whatsapp' },
+      single: { label: 'a single store', sol: '/solutions/single-store', sim: '/products/pos#try-till', simLabel: 'Try the till', prod: '/products/inbox#whatsapp' },
       chain: { label: 'a multi-store chain', sol: '/solutions/multi-store-chains', sim: '/platform/ai-workforce#try-approve', simLabel: 'Try the AI workforce', prod: '/products/multi-store' },
       maker: { label: 'a manufacturer', sol: '/solutions/manufacturers', sim: '/products/manufacturing#try-grams', simLabel: 'Try metal closure', prod: '/products/manufacturing' },
       b2b: { label: 'a wholesale business', sol: '/solutions/b2b-jewellery', sim: '/products/inventory#try-shelf', simLabel: 'Try the shelf', prod: '/products/digital-catalogues' },
-      d2c: { label: 'a brand', sol: '/solutions/d2c-brands', sim: '/platform/customer-memory#try-memory', simLabel: 'Try customer memory', prod: '/products/instagram-facebook' },
+      d2c: { label: 'a brand', sol: '/solutions/d2c-brands', sim: '/platform/customer-memory#try-memory', simLabel: 'Try customer memory', prod: '/products/inbox#instagram-facebook' },
       franchise: { label: 'a franchise network', sol: '/solutions/franchise-networks', sim: '/platform/ai-workforce#try-approve', simLabel: 'Try the AI workforce', prod: '/products/multi-store' },
     };
     var slug = HERE.replace(/^\/|\/$/g, '');

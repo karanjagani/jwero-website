@@ -43,13 +43,11 @@ Contact: care@jwero.ai · WhatsApp +91 91699 59959.
 - Tally Integration for Jewellers: Keep Your Books: https://jwero.ai/platform/integrations/tally
 - Onboarding & Support, Live in a Day, Trained in Your Language: https://jwero.ai/platform/onboarding
 - Jewellery Software Products: CRM, ERP, POS, Billing and More: https://jwero.ai/products
-- WhatsApp API for Jewellers: Catalogue, Payments and CRM: https://jwero.ai/products/whatsapp
-- Instagram DM & Facebook Messenger Automation for Jewellers: https://jwero.ai/products/instagram-facebook
-- AI for Jewellers: AI Chatbot, Sales Agents & Voice AI: https://jwero.ai/products/ai-sales-agents
 - Website Analytics, Heatmaps & Live Chat for Jewellery Websites: https://jwero.ai/products/optimize
 - Jewellery Ecommerce: An Online Store Built for Jewellers: https://jwero.ai/products/ecommerce
 - Jewellery Ads Manager: Meta, Google, Click-to-WhatsApp: https://jwero.ai/products/ads-manager
 - Social Media Management for Jewellers: Schedule, AI, Inbox: https://jwero.ai/products/social-media
+- One Inbox for Jewellers: WhatsApp, Instagram, Email, Calls and AI: https://jwero.ai/products/inbox
 - Jewellery CRM Software: CRM for Jewellers: https://jwero.ai/products/crm
 - Jewellery Catalogue & PIM Software: Live Prices, AI Listings: https://jwero.ai/products/catalog
 - Jewellery Inventory Software: Stock, Barcode & Valuation: https://jwero.ai/products/inventory
@@ -69,7 +67,6 @@ Contact: care@jwero.ai · WhatsApp +91 91699 59959.
 - Jewellery Manufacturing Software: Karigar, Wastage, Planning: https://jwero.ai/products/manufacturing
 - Girvi, Gold Loan & Pawn Broking Software for Jewellers: https://jwero.ai/products/girvi
 - Jewellery Video Call & Appointment Software: Video Shopping: https://jwero.ai/products/meetings
-- Email Marketing & Business Email for Jewellers: Own Domain, One Inbox: https://jwero.ai/products/email
 - Google Shopping & Meta Catalogue Sync for Jewellers: https://jwero.ai/products/marketplaces
 - Jewellery Quotation & Estimate Software at the Live Rate: https://jwero.ai/products/quotations
 - Digital Catalogue App for Jewellers: Share on WhatsApp, Live Prices: https://jwero.ai/products/digital-catalogues
@@ -266,7 +263,6 @@ Contact: care@jwero.ai · WhatsApp +91 91699 59959.
 - Jewellery Accounting Software: GST Books: https://jwero.ai/jewellery-accounting-software
 - Jewellery Barcode & Tagging Software: Tags, Scan, Count: https://jwero.ai/jewellery-barcode-tagging-software
 - Cloud Jewellery Software: Online, on Any Phone or Computer: https://jwero.ai/cloud-jewellery-software
-- WhatsApp Marketing for Jewellers: Broadcasts, Campaigns: https://jwero.ai/whatsapp-broadcast-for-jewellers
 - Instagram for Jewellers: DMs, Comments, Reels and Stories: https://jwero.ai/instagram-for-jewellers
 - Google and Instagram Ads for Jewellers: https://jwero.ai/ads-for-jewellers
 - SMS, RCS & Push Notifications for Jewellers: https://jwero.ai/sms-marketing-for-jewellers

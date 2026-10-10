@@ -39,7 +39,7 @@ const SOCIALS = [
 // Each page is stamped with the mtime of the content file that defined it, so the
 // sitemap can emit an honest <lastmod> without hand-maintaining dates.
 const CONTENT_FILES = [
-  'home', 'platform', 'products', 'products-sell', 'products-run', 'products-grow', 'products-manage', 'products-hr', 'products-ops', 'products-more', 'brief', 'erp-to-os', 'pricing', 'diamond-traders',
+  'home', 'platform', 'products', 'products-sell', 'inbox', 'products-run', 'products-grow', 'products-manage', 'products-hr', 'products-ops', 'products-more', 'brief', 'erp-to-os', 'pricing', 'diamond-traders',
   'industries', 'solutions', 'solutions-retail-segments', 'solutions-wholesale',
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
@@ -61,10 +61,7 @@ for (const f of CONTENT_FILES) {
 // on /products and in the footer.
 const PRODUCT_GROUPS = [
   { title: 'Sell', items: [
-    ['/products/whatsapp', 'WhatsApp Commerce & API', 'Sell and get paid in the chat'],
-    ['/whatsapp-broadcast-for-jewellers', 'WhatsApp Marketing', 'Broadcasts, campaigns, triggers'],
-    ['/products/instagram-facebook', 'Instagram & Facebook', 'DMs into sales, one inbox'],
-    ['/products/ai-sales-agents', 'AI Sales Agents & Voice', 'Replies and follow-up, governed'],
+    ['/products/inbox', 'One Inbox', 'WhatsApp, Instagram, email, calls and AI, together'],
     ['/products/ecommerce', 'Ecommerce', 'Built for jewellery businesses'],
     ['/products/meetings', 'Video Counter & Appointments', 'Meet from the inbox, self-booking'],
     ['/products/quotations', 'Quotations', 'Numbered, live-rate, accepted online'],
@@ -80,7 +77,6 @@ const PRODUCT_GROUPS = [
     ['/products/crm', 'Jewellery CRM', 'Customer 360 for the trade'],
     ['/products/showroom', 'Showroom Intelligence', 'Who is on your floor, right now'],
     ['/products/reports', 'Reports & Dashboards', 'Ask a question, pin the answer'],
-    ['/products/email', 'Business Email', 'Own-domain mail in the same inbox'],
   ]},
   { title: 'Run', items: [
     ['/products/catalog', 'Catalogue (PIM)', 'Purity, certificates, live prices'],
@@ -107,6 +103,15 @@ const PRODUCT_GROUPS = [
   ]},
 ];
 
+// Pages merged into One Inbox on 2026-10-10. Lists that still name them keep a
+// sensible label, and every link is sent to the matching section of the new page.
+const INBOX_MOVED = {
+  '/products/whatsapp': ['/products/inbox#whatsapp', 'WhatsApp API', 'Sell and get paid in the chat'],
+  '/whatsapp-broadcast-for-jewellers': ['/products/inbox#whatsapp-marketing', 'WhatsApp Marketing', 'Broadcasts, campaigns, triggers'],
+  '/products/instagram-facebook': ['/products/inbox#instagram-facebook', 'Instagram & Facebook', 'DMs and comments into sales'],
+  '/products/ai-sales-agents': ['/products/inbox#ai-agent', 'AI Agent, chat and voice', 'Replies, follow-up and calls'],
+  '/products/email': ['/products/inbox#email', 'Business Email', 'Own-domain mail in the same inbox'],
+};
 // Header navigation: the full menus, restored 2026-10-09 at the user's request
 // after a short trial of a trimmed header.
 const NAV = [
@@ -328,7 +333,7 @@ function footerHTML() {
       </div>
     </div>
     <div class="f-grid">
-      ${fcol('Products', [['/products/whatsapp', 'WhatsApp Commerce'], ['/products/instagram-facebook', 'Instagram & Facebook'], ['/products/ai-sales-agents', 'AI Sales Agents & Voice'], ['/products/ecommerce', 'Ecommerce Website'], ['/products/digital-catalogues', 'Digital Catalogues'], ['/products/crm', 'Jewellery CRM'], ['/products/showroom', 'Showroom Intelligence'], ['/products/pos', 'Counter POS'], ['/products/billing-finance', 'Billing & Finance'], ['/products/inventory', 'Inventory'], ['/products/manufacturing', 'Manufacturing & Workshop'], ['/products/gold-schemes', 'Gold Schemes & Gold Loans'], ['/products/hr-payroll', 'HR & Payroll']], ['/products', 'All 35 products'])}
+      ${fcol('Products', [['/products/inbox', 'One Inbox'], ['/products/inbox#whatsapp', 'WhatsApp API'], ['/products/inbox#ai-agent', 'AI Agent, chat and voice'], ['/products/ecommerce', 'Ecommerce Website'], ['/products/digital-catalogues', 'Digital Catalogues'], ['/products/crm', 'Jewellery CRM'], ['/products/showroom', 'Showroom Intelligence'], ['/products/pos', 'Counter POS'], ['/products/billing-finance', 'Billing & Finance'], ['/products/inventory', 'Inventory'], ['/products/manufacturing', 'Manufacturing & Workshop'], ['/products/gold-schemes', 'Gold Schemes & Gold Loans'], ['/products/hr-payroll', 'HR & Payroll']], ['/products', 'All 35 products'])}
       ${fcol('Solutions', [['/solutions/single-store', 'Single store'], ['/solutions/multi-store-chains', 'Multi-store & chains'], ['/solutions/gold-retail', 'Gold retail'], ['/solutions/bridal', 'Bridal & wedding'], ['/solutions/diamond-retail', 'Diamond retail'], ['/solutions/manufacturers', 'Manufacturers'], ['/solutions/b2b-jewellery', 'Wholesale & B2B'], ['/solutions/d2c-brands', 'D2C brands'], ['/solutions/franchise-networks', 'Franchise networks'], ['/roles', 'By role']], ['/solutions', 'All 23 solutions'])}
       ${fcol('Learn', [['/faq', 'FAQ, every objection'], ['/guides', 'Buyer’s guides'], ['/blog', 'Blog'], ['/tools', 'Calculators'], ['/compare', 'Compare alternatives'], ['/migration', 'Migration Centre'], ['/glossary', 'Glossary'], ['/customers', 'Customers'], ['/partners', 'Partners']])}
       ${fcol('Company', [['/company', 'About'], ['/pricing', 'Pricing'], ['/jewellery-business-as-a-service', 'Let Jwero run it'], ['/what-we-handle', 'What we handle'], ['/success-stories', 'Success stories'], ['/enterprise', 'Enterprise'], ['/why-jwero', 'Why Jwero'], ['/refer', 'Refer a jeweller'], ['/jewellery-software-india', 'Jewellery software by city'], ['/hi', 'हिंदी'], ['/contact', 'Contact']])}
@@ -488,6 +493,8 @@ function platformStory(html, slug) {
   return html;
 }
 function journeyFix(html, p) {
+  // links to the pages merged into One Inbox go straight to their section
+  for (const [from, [to]] of Object.entries(INBOX_MOVED)) html = html.split(`href="${from}"`).join(`href="${to}"`).split(`href="${from}/"`).join(`href="${to}"`);
   if (p && STORY_PAGES[p.slug]) html = platformStory(html, p.slug);
   if (p.slug === 'customers') {
     let STORIES = []; try { STORIES = require('./content/stories'); } catch (e) {}
@@ -939,6 +946,7 @@ function fillPersona(body) {
   if (body.indexOf('<!--persona-switch-->') === -1) return body;
   const productName = (href) => {
     for (const g of PRODUCT_GROUPS) for (const it of g.items) if (it[0] === href) return it[1];
+    if (INBOX_MOVED[href]) return INBOX_MOVED[href][1];
     return href;
   };
   const entries = PERSONAS.map((p) => {
@@ -956,6 +964,7 @@ function fillPersona(body) {
 // Internal links are how a 130-page site tells search engines what matters.
 function productMeta(href) {
   for (const g of PRODUCT_GROUPS) for (const it of g.items) if (it[0] === href) return { label: it[1], desc: it[2], group: g.title, items: g.items };
+  if (INBOX_MOVED[href]) return { label: INBOX_MOVED[href][1], desc: INBOX_MOVED[href][2], group: 'Sell', items: PRODUCT_GROUPS[0].items };
   return null;
 }
 // Under the hero: the three questions this reader is most likely carrying,
@@ -1009,7 +1018,7 @@ const SIM_PAGES = {
   // every solution page carries the simulation its mindset lives in
   ...Object.fromEntries(Object.entries(require('./content/solution-playbooks').PLAYBOOKS).map(([slug, pb]) => [slug, pb.sim])),
   'products/catalog': 'rate', 'platform/pricing-engine': 'rate', 'solutions/gold-retail': 'rate', 'products/digital-catalogues': 'rate', 'products/quotations': 'rate',
-  'products/email': 'approve', 'products/marketplaces': 'rate', 'products/reports': 'shelf',
+  'products/inbox': 'approve', 'products/marketplaces': 'rate', 'products/reports': 'shelf',
   'platform/ai-workforce': 'approve', 'products/ai-sales-agents': 'approve', 'products/journeys': 'approve', 'roles/owner': 'approve',
   'products/crm': 'memory', 'platform/customer-memory': 'memory', 'roles/sales-associate': 'memory', 'products/whatsapp': 'memory',
   'products/inventory': 'shelf', 'solutions/pain/dead-stock': 'shelf', 'roles/inventory-manager': 'shelf',
@@ -1525,7 +1534,7 @@ function withInterlinks(body, page) {
     'products/pos': ['how-to-calculate-gold-jewellery-price', 'old-gold-exchange-jewellers'],
     'products/billing-finance': ['gst-on-jewellery-india', 'jewellery-software-and-tally'],
     'products/erp': ['jewellery-crm-vs-erp-difference', 'fine-weight-metal-ledger-jewellers'],
-    'products/whatsapp': ['ai-whatsapp-chatbot-jewellery-shop', 'whatsapp-for-jewellers-guide'],
+    'products/inbox': ['ai-whatsapp-chatbot-jewellery-shop', 'whatsapp-for-jewellers-guide'],
     'products/instagram-facebook': ['ai-instagram-dm-automation-jewellers', 'ai-video-jewellery-reels'],
     'products/ai-sales-agents': ['ai-agents-for-jewellers', 'is-ai-safe-for-jewellery-business'],
     'products/meetings': ['virtual-try-on-jewellery-explained', 'custom-jewellery-order-process'],
@@ -1892,7 +1901,7 @@ function build() {
     fs.writeFileSync(path.join(dir, 'index.html'), noDash(journeyFix(layout(p), p)));
   }
   // Retired addresses: the separate /focus site, /jbaas and the old /jwero-os home.
-  const MOVED = { 'why-an-os': '/platform', roadmap: '/platform', 'products/digital-gold': '/products/gold-schemes', 'products/storefront': '/products/ecommerce', 'jwero-os': '/', jbaas: '/jewellery-business-as-a-service', focus: '/jewellery-business-as-a-service', 'managed-services': '/jewellery-business-as-a-service', 'focus/managed-services': '/jewellery-business-as-a-service' };
+  const MOVED = { 'products/whatsapp': '/products/inbox#whatsapp', 'whatsapp-broadcast-for-jewellers': '/products/inbox#whatsapp-marketing', 'products/instagram-facebook': '/products/inbox#instagram-facebook', 'products/ai-sales-agents': '/products/inbox#ai-agent', 'products/email': '/products/inbox#email', 'why-an-os': '/platform', roadmap: '/platform', 'products/digital-gold': '/products/gold-schemes', 'products/storefront': '/products/ecommerce', 'jwero-os': '/', jbaas: '/jewellery-business-as-a-service', focus: '/jewellery-business-as-a-service', 'managed-services': '/jewellery-business-as-a-service', 'focus/managed-services': '/jewellery-business-as-a-service' };
   for (const p of pages) if (p.slug !== 'index' && !p.slug.includes('/')) MOVED['focus/' + p.slug] = '/' + p.slug;
   MOVED['focus/jwero-os'] = '/';
   for (const [from, to] of Object.entries(require('./content/legacy-posts.json').redirects)) MOVED[from] = to.charAt(0) === '/' ? to : '/' + to;
@@ -2032,6 +2041,17 @@ ${pages.filter((p) => !p.noindex).map((p) => `- ${p.title.replace(/ \| Jwero$/, 
     .join('\n');
   fs.writeFileSync(path.join(DIST, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`);
+  // Last pass: any link to a page merged into One Inbox, on any page however it was written, goes to its section.
+  (function sweep(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const fp = path.join(dir, e.name);
+      if (e.isDirectory()) { sweep(fp); continue; }
+      if (!e.name.endsWith('.html')) continue;
+      let h = fs.readFileSync(fp, 'utf8'); const h0 = h;
+      for (const [from, [to]] of Object.entries(INBOX_MOVED)) h = h.split(`href="${from}"`).join(`href="${to}"`).split(`href="${from}/"`).join(`href="${to}"`);
+      if (h !== h0) fs.writeFileSync(fp, h);
+    }
+  })(DIST);
   console.log(`Built ${pages.length} pages (+ /whatsapp redirect) → ${DIST}`);
 }
 
