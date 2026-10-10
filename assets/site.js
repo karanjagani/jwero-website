@@ -1864,9 +1864,14 @@ function jwFromInr(n) {
         facet(SHAPES.diamond, [CULET, Gm, G1], o(2, [1, 1, 1]));
       }
     })();
+    // Low-end devices (few cores, little memory, data saver) start light: fewer
+    // facets, 1x pixels, 30 frames a second. Any device that struggles goes light too.
+    var conn = navigator.connection || {}, lowEnd = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) || (navigator.deviceMemory && navigator.deviceMemory <= 3) || conn.saveData === true || /[?&]light=1/.test(location.search);
+    var light = !!lowEnd;
     // bangle: a band standing upright, facing the reader
-    (function () {
-      var M = 144, m = 28, R = .86, TR = .1, TZ = .27, QUAD = [1, 0, 2, 3];
+    function buildBangle() {
+      SHAPES.bangle = [];
+      var M = light ? 72 : 144, m = light ? 14 : 28, R = .86, TR = .1, TZ = .27, QUAD = [1, 0, 2, 3];
       function P(u, v) { var a = u / M * TAU, b = v / m * TAU, rr = R + TR * Math.cos(b); return [rr * Math.cos(a), rr * Math.sin(a), TZ * Math.sin(b)]; }
       for (var u = 0; u < M; u++) for (var v = 0; v < m; v++) {
         var am = (u + .5) / M * TAU, bm = (v + .5) / m * TAU;
@@ -1875,7 +1880,8 @@ function jwFromInr(n) {
         var scr = ((90 - (u + .5) / M * 360) % 360 + 360) % 360;
         facet(SHAPES.bangle, [P(u, v), P(u + 1, v), P(u + 1, v + 1), P(u, v + 1)], { n: [nx / len, ny / len, nz / len], grp: QUAD[Math.floor(u / (M / 4))], mod: Math.min(N - 1, Math.floor(scr / (360 / N))), kind: 1, ang: (u + .5) / M, stone: (v <= 1 || v >= m - 2) && u % 4 !== 3 ? Math.floor(u / 4) + 1 : 0, sc: v === 0 && u % 4 === 1 });
       }
-    })();
+    }
+    buildBangle();
     var METALS = {
       gold: { shape: 'bangle', base: '#e0aa24', dark: '#6b4705', lite: '#fff6cf', word: 'gold' },
       silver: { shape: 'bangle', base: '#b9c0c8', dark: '#6b737c', lite: '#ffffff', word: 'silver' },
@@ -1901,7 +1907,7 @@ function jwFromInr(n) {
     for (var g0 = 0; g0 < N; g0++) glow.push(0);
     function theme() { var cs = window.getComputedStyle(root); ink = cs.getPropertyValue('--brand').trim() || ink; faint = cs.getPropertyValue('--line-2').trim() || faint; if (METALS[metal] && METALS[metal].ink) ink = METALS[metal].ink; if (/^#[0-9a-f]{3,6}$/i.test(ink)) INK = hex(ink); }
     function layout() {
-      dpr = Math.min(2, window.devicePixelRatio || 1);
+      dpr = light ? 1 : Math.min(2, window.devicePixelRatio || 1);
       w = stage.clientWidth; h = stage.clientHeight;
       cv.width = w * dpr; cv.height = h * dpr; if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       var small = w < 520;
@@ -1918,16 +1924,21 @@ function jwFromInr(n) {
       });
       shardEls.forEach(function (el, g) { el.style.left = (ox + DIRS[g][0] * S * .78) + 'px'; el.style.top = (oy + DIRS[g][1] * S * .66 + (DIRS[g][1] < 0 ? -S * .1 : S * .1)) + 'px'; });
       // on a phone the label sits in the clear band under the modules, so it never runs behind them
-      centreEl.style.top = (small ? h - 40 : METALS[metal].shape === 'bangle' ? oy - 15 : oy + S * 1.22) + 'px';
+      if (root.classList.contains('gem2-hero') && METALS[metal].shape === 'bangle') { centreEl.style.top = oy + 'px'; centreEl.style.maxWidth = Math.round(S * 1.15) + 'px'; centreEl.classList.add('is-inside'); }
+      else centreEl.style.top = (small ? h - 40 : METALS[metal].shape === 'bangle' ? oy - 15 : oy + S * 1.22) + 'px';
     }
     function sectorOf(k) { return [Math.floor(k * 8 / N), Math.floor((k + 1) * 8 / N)]; }
     function wireEnd(k) {
       if (explode > .5) { var g = set.modules[k][5]; return [ox + DIRS[g][0] * S * .72 * explode, oy + DIRS[g][1] * S * .62 * explode]; }
       var p = nodePos[k], rr = METALS[metal].shape === 'bangle' ? [.98, .98] : [.55, .4]; return [ox + Math.cos(p[2]) * S * rr[0], oy + Math.sin(p[2]) * S * rr[1]];
     }
+    var lastDraw = 0, slowFrames = 0, sampled = 0;
     function draw(now) {
       raf = window.requestAnimationFrame(draw);
       if (!ctx) return;
+      if (light && now && now - lastDraw < 32) return;
+      if (!light && now && lastDraw && sampled < 90) { sampled++; if (now - lastDraw > 34) slowFrames++; if (sampled === 90 && slowFrames > 30) { light = true; buildBangle(); if (METALS[metal].shape === 'bangle') facets = SHAPES.bangle; layout(); } }
+      lastDraw = now;
       var t = now / 1000, dt = lastT ? Math.min(.05, t - lastT) : 0; lastT = t;
       if (!dragging) spin += dt * (mode === 'today' ? .1 : .22);
       explode += (explodeTo - explode) * Math.min(1, dt * 5);
