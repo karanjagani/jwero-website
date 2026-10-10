@@ -4,7 +4,7 @@
 const L = require('../lib');
 const UPDATED = '10 October 2026';
 const P = require('./crm').parts;
-const MINI = { sources: [() => P.sources(), 'brand'], scores: [() => P.scores(), 'single'], today: [() => P.today(), 'chain'], privacy: [() => P.privacy(), 'chain'] };
+const MINI = { sources: [() => `<div class="ec-ad-meter">${P.orbit()}</div>`, 'brand'], scores: [() => P.myList(), 'single'], today: [() => P.tryLead(), 'chain'], privacy: [() => P.privacy(), 'chain'] };
 const mini = (p) => { const m = MINI[p.anchor]; if (!m) return ''; return `${m[0]()}<p class="soc-mini-go"><a class="btn btn-ghost" href="/products/crm?crm=${m[1]}#for-you" data-crm-cta="mini-${p.slug}">See Jwero CRM for my business →</a></p>`; };
 
 function landing(p) {
@@ -32,13 +32,11 @@ ${L.hero({
   primary: { href: '#', label: p.cta, wa: 'crm' },
 })}
 
-${L.section(`<div class="ec-ad-meter">${P.meter()}</div>`, { tone: 'tint' })}
+${p.miniHead ? L.section(`${L.sectionHead('SEE IT', p.miniHead, '')}${mini(p)}`, { tone: 'tint' }) : L.section(`<div class="ec-ad-meter">${P.meter()}</div>`, { tone: 'tint' })}
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">${p.shortQ}</h2><p>${p.shortA}</p></div></section>
 
 ${L.section(`${L.sectionHead('BEFORE AND AFTER', p.leakHead, '')}<div class="erp-leak-list">${p.leaks.map(([a, b]) => `<p><span>${a}</span><b>${b}</b></p>`).join('')}</div>`, { tone: 'tint' })}
-
-${p.miniHead ? L.section(`${L.sectionHead('SEE IT', p.miniHead, '')}${mini(p)}`) : ''}
 
 ${L.section(`${L.sectionHead('WHAT YOU GET', p.pointsHead, '')}${L.cards(p.points.map(([title, text, icon]) => ({ icon, title, text })), 3)}`)}
 
@@ -58,7 +56,7 @@ ${L.ctaBand(p.bandTitle, p.bandText, 'crm')}
 
 const L2 = (o) => landing(o);
 const leads = L2({
-  slug: 'jewellery-lead-management-software', crumb: 'Lead management', anchor: 'sources', miniHead: '20+ sources, captured on their own.',
+  slug: 'jewellery-lead-management-software', crumb: 'Lead management', anchor: 'sources', miniHead: 'Tap your sources; watch them land on one record.',
   title: 'Jewellery Lead Management Software: 20+ Sources, Owners, Reply Clock | Jwero',
   description: 'Lead management for jewellers: leads from WhatsApp, Instagram, Meta and Google lead forms, Justdial, your website, store, showroom and calls captured automatically, matched, owned and answered against a reply-time clock.',
   schemaName: 'Jwero lead management for jewellers',
@@ -79,7 +77,7 @@ const leads = L2({
   bandTitle: 'See your leads in one place.', bandText: 'Connect WhatsApp and one ad account; we will show the list.',
 });
 const retention = L2({
-  slug: 'jewellery-customer-retention-software', crumb: 'Customer retention', anchor: 'scores', miniHead: 'Scores that tell you who to reach.',
+  slug: 'jewellery-customer-retention-software', crumb: 'Customer retention', anchor: 'scores', miniHead: 'Who you would reach tomorrow.',
   title: 'Jewellery Customer Retention Software: Churn Risk, Occasions, Loyalty | Jwero',
   description: 'Customer retention for jewellers: churn risk, RFM and value tiers, occasions found automatically, gold plans tracked to maturity, loyalty and referrals, and a daily list of who to reach before they drift away.',
   schemaName: 'Jwero customer retention for jewellers',
@@ -100,7 +98,7 @@ const retention = L2({
   bandTitle: 'See who is drifting away.', bandText: 'We will show the customers worth reaching this week.',
 });
 const pipeline = L2({
-  slug: 'jewellery-sales-pipeline-software', crumb: 'Sales pipeline', anchor: 'today', miniHead: 'The day’s list, ready at 9 am.',
+  slug: 'jewellery-sales-pipeline-software', crumb: 'Sales pipeline', anchor: 'today', miniHead: 'Pick how a lead arrives; watch its first day.',
   title: 'Jewellery Sales Pipeline Software: Deals, Quotes, Follow-ups, Daily List | Jwero',
   description: 'Sales pipeline for jewellers: deals and stages with win scoring, quotations accepted online, AI-drafted follow-ups, a reply clock and a daily list of who to call, with an owner digest every morning.',
   schemaName: 'Jwero sales pipeline for jewellers',

@@ -984,22 +984,63 @@ function jwFromInr(n) {
     var j = e.target.closest('#journeys [data-jr-tab]'); if (j && document.querySelector('[data-soc-icp]')) window.jweroTrack('soc_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
   });
 
-  // CRM: sources stream into one record, then out to four actions.
+  // CRM: sources stream into one record; the reader taps their own sources.
   Array.prototype.forEach.call(document.querySelectorAll('[data-crmorb]'), function (o) {
-    var chips = o.querySelectorAll('.crm-orb-in span'), outs = o.querySelectorAll('.crm-orb-out p'), src = o.querySelector('[data-orb-src]'), cnt = o.querySelector('[data-orb-n]'), n = chips.length, i = -1, timer = 0;
-    if (reduceMotion || !('IntersectionObserver' in window)) { cnt.textContent = n; Array.prototype.forEach.call(outs, function (p) { p.classList.add('is-on'); }); return; }
+    var chips = Array.prototype.slice.call(o.querySelectorAll('.crm-orb-in [data-src]')), outs = o.querySelectorAll('.crm-orb-out p'), src = o.querySelector('[data-orb-src]'), cnt = o.querySelector('[data-orb-n]'), of = o.querySelector('[data-orb-of]'), cta = o.querySelector('[data-crm-cta="sources"]'), i = -1, timer = 0, used = false;
+    function picked() { var p = chips.filter(function (c) { return c.getAttribute('aria-pressed') === 'true'; }); return p.length ? p : chips; }
+    function note() {
+      var p = chips.filter(function (c) { return c.getAttribute('aria-pressed') === 'true'; });
+      of.textContent = p.length ? 'of your sources' : 'sources';
+      if (!o.classList.contains('is-live')) cnt.textContent = p.length || chips.length;
+      if (cta) cta.setAttribute('data-wa-extra', p.length ? ' Our enquiries come from: ' + p.map(function (c) { return c.getAttribute('data-src'); }).join(', ') + '. Show me these captured in one CRM.' : ' Show me all my enquiry sources captured in one CRM.');
+    }
+    o.addEventListener('click', function (e) {
+      var c = e.target.closest('[data-src]'); if (!c) return;
+      c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); i = -1; note();
+      if (!used && window.jweroTrack) { used = true; window.jweroTrack('crm_source_pick', {}); }
+    });
+    note();
+    if (reduceMotion || !('IntersectionObserver' in window)) { Array.prototype.forEach.call(outs, function (p) { p.classList.add('is-on'); }); return; }
     o.classList.add('is-live');
     function tick() {
-      i = (i + 1) % n;
-      Array.prototype.forEach.call(chips, function (c, k) { c.classList.toggle('is-now', k === i); c.classList.toggle('is-in', k <= i); });
-      src.textContent = 'From ' + chips[i].textContent.trim();
+      var list = picked(); i = (i + 1) % list.length;
+      chips.forEach(function (c) { var k = list.indexOf(c); c.classList.toggle('is-now', k === i); c.classList.toggle('is-in', k > -1 && k <= i); });
+      src.textContent = 'From ' + list[i].getAttribute('data-src');
       cnt.textContent = i + 1;
       o.classList.remove('is-pulse'); void o.offsetWidth; o.classList.add('is-pulse');
       Array.prototype.forEach.call(outs, function (p, k) { p.classList.remove('is-on'); window.setTimeout(function () { p.classList.add('is-on'); }, 250 + k * 180); });
-      timer = window.setTimeout(tick, i === n - 1 ? 2600 : 1300);
+      timer = window.setTimeout(tick, i === list.length - 1 ? 2600 : 1300);
     }
     whileVisible(o, function () { window.clearTimeout(timer); tick(); }, function () { window.clearTimeout(timer); });
   });
+
+  // CRM: tomorrow's list from three numbers.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-crmml]'), function (m) {
+    var v = function (k) { var el = m.querySelector('[data-m="' + k + '"]'); return el ? Math.max(0, Number(el.value) || 0) : 0; }, used = false, cta = m.querySelector('[data-crm-cta="mylist"]');
+    function calc() {
+      var all = v('all'), leads = v('leads'), q = v('quotes');
+      var occ = Math.round(all * .6 / 365 * 2), vip = Math.round(all * .1 * .2 / 30), newl = Math.round(leads / 30), qq = Math.round(q * .25), calls = occ + vip + newl + qq;
+      var set = function (k, x) { m.querySelector('[data-o="' + k + '"]').textContent = x.toLocaleString('en-IN'); };
+      set('calls', calls); set('occ', occ); set('q', qq); set('vip', vip); set('new', newl);
+      if (cta) cta.setAttribute('data-wa-extra', ' We have about ' + all.toLocaleString('en-IN') + ' customers, ' + leads + ' enquiries a month and ' + q + ' open quotes. Your page estimates ' + calls + ' calls on tomorrow’s list.');
+    }
+    m.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('crm_list_use', {}); } });
+    calc();
+  });
+
+  // CRM: the comparison follows the tool the reader uses today.
+  Array.prototype.forEach.call(document.querySelectorAll('.crm-from'), function (f) {
+    var table = f.parentNode.querySelector('table'); if (!table) return;
+    var ths = table.querySelectorAll('thead th'), base = ths[2].textContent;
+    function mark(name) {
+      var col = name === 'Excel' ? 1 : 2;
+      ths[2].textContent = col === 2 ? name + ' (generic CRM)' : base;
+      Array.prototype.forEach.call(table.rows, function (r) { Array.prototype.forEach.call(r.cells, function (c, k) { c.classList.toggle('is-them', k === col); }); });
+    }
+    f.addEventListener('click', function (e) { var b = e.target.closest('[data-from]'); if (!b) return; mark(b.getAttribute('data-from')); if (window.jweroTrack) window.jweroTrack('crm_switch_from', { from: b.getAttribute('data-from') }); });
+    mark('Zoho CRM');
+  });
+  document.addEventListener('click', function (e) { var t = e.target.closest('.crm-tl2 [data-jr-tab]'); if (t && window.jweroTrack) window.jweroTrack('crm_try_lead', { src: t.textContent.trim() }); });
 
   // CRM: leads that slip through.
   Array.prototype.forEach.call(document.querySelectorAll('[data-crmm]'), function (m) {

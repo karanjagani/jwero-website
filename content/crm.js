@@ -33,11 +33,54 @@ const SOURCES = [
 const SRC_FLAT = SOURCES.flatMap(([, s]) => s);
 
 // Hero: sources stream into one record, then out to four actions.
-const orbit = () => `<div class="crm-orb" data-crmorb aria-hidden="true">
-  <div class="crm-orb-in">${SRC_FLAT.map(([ic, t], i) => `<span style="--i:${i}">${icon(ic)}<b>${t}</b></span>`).join('')}</div>
+const orbit = () => `<div class="crm-orb" data-crmorb>
+  <p class="crm-orb-ask">Tap where your enquiries come from today.</p>
+  <div class="crm-orb-in" role="group" aria-label="Your sources">${SRC_FLAT.map(([ic, t], i) => `<button type="button" style="--i:${i}" aria-pressed="false" data-src="${t}">${icon(ic)}<b>${t}</b></button>`).join('')}</div>
   <div class="crm-orb-core"><span class="crm-orb-av">M</span><b>Meera Shah</b><small data-orb-src>From Meta lead ads</small><i class="crm-orb-ring"></i></div>
   <div class="crm-orb-out">${[['activity', 'Engaged', 'Journey started in seconds'], ['sparkle', 'Personalised', 'Her pieces, her moment'], ['target', 'Retargeted', 'Meta audience updated'], ['check', 'Converted', 'Quote accepted, bill linked']].map(([ic, t, d], i) => `<p style="--o:${i}">${icon(ic)}<b>${t}</b><small>${d}</small></p>`).join('')}</div>
-  <p class="crm-orb-foot"><b data-orb-n>0</b> sources feeding one record · illustrative</p>
+  <p class="crm-orb-foot"><b data-orb-n>0</b> <span data-orb-of>sources</span> feeding one record · illustrative</p>
+  <a class="btn btn-primary erp-meter-cta" href="#" data-wa="crm" data-wa-extra="" data-crm-cta="sources">Capture these for my shop</a>
+</div>`;
+
+// 5. Trust strip: customers stay with the shop.
+const trust = () => `<div class="crm-trust"><div class="container">${[['store', 'Customers stay with the shop, not a staff phone'], ['key', 'Sensitive fields limited by role'], ['book', 'Changes and roles logged'], ['shield', 'Consent kept per channel']].map(([ic, t]) => `<span>${icon(ic)}${t}</span>`).join('')}<a href="#privacy">How →</a></div></div>`;
+
+// 2. Tomorrow's list, from three numbers.
+const myList = () => `<div class="crm-ml" data-crmml>
+  <div class="crm-ml-in">
+    <label>Customers on record<input type="number" data-m="all" value="8000" min="0" step="500"></label>
+    <label>New enquiries a month<input type="number" data-m="leads" value="400" min="0" step="20"></label>
+    <label>Quotes open now<input type="number" data-m="quotes" value="25" min="0" step="1"></label>
+  </div>
+  <ol class="crm-ml-out">${[['phone', 'calls', 'calls on tomorrow’s list'], ['gift', 'occ', 'anniversaries and birthdays to mark'], ['receipt', 'q', 'quotes to chase'], ['activity', 'vip', 'valuable customers going quiet'], ['whatsapp', 'new', 'new enquiries to answer first']].map(([ic, k, t]) => `<li>${icon(ic)}<span><b data-o="${k}">–</b> ${t}</span></li>`).join('')}</ol>
+  <a class="btn btn-primary" href="#" data-wa="crm" data-wa-extra="" data-crm-cta="mylist">Show me tomorrow’s list for my shop</a>
+  <p class="erp-meter-note">Rough counts from typical shares of a jeweller’s customers. Your real list is built from your records.</p>
+</div>`;
+
+// 4. The same customer in a generic CRM and in Jwero.
+const split = () => `<div class="crm-split" data-gfx>
+  <div class="crm-split-c is-gen"><p class="pc-tag">A GENERIC CRM</p><div class="crm-360-h"><span class="crm-orb-av is-grey">M</span><div><b>Meera Shah</b><small>+91 98•••• 4210</small></div></div><p class="crm-split-note">Note: “interested in jewellery”</p><p class="crm-split-empty">No purchases · no family · no plan · no chats</p></div>
+  <div class="crm-split-c is-jw"><p class="pc-tag">JWERO CRM</p><div class="crm-360-h"><span class="crm-orb-av">M</span><div><b>Meera Shah</b><small>Shah household · shared number · Andheri</small></div></div>
+    <ul>${[['coins', 'Gold plan: 9 of 11 paid, matures 12 Nov'], ['receipt', 'Earrings, March, 22K, 8.2 g'], ['gift', 'Anniversary in 24 days'], ['whatsapp', '14 chats, 2 calls, 3 visits'], ['activity', 'Intent 82 · churn risk 12'], ['sparkle', 'Next: call with the choker she saved']].map(([ic, t], i) => `<li style="--i:${i}">${icon(ic)}${t}</li>`).join('')}</ul></div>
+</div>`;
+
+// 6. Try a lead from a source.
+const TRYLEAD = [
+  ['A Meta ad at 8 pm', [['8:14 pm', 'Lead form submitted from the bridal ad'], ['8:14 pm', 'Matched to the Shah household'], ['8:14 pm', 'Owned by Ravi at Andheri; reply clock starts'], ['8:15 pm', 'WhatsApp journey sends three bridal sets'], ['8:15 pm', 'Intent rises; Meta audience updated'], ['9:30 am', 'No reply overnight; AI call books a visit'], ['Saturday', 'Quote accepted online']]],
+  ['A walk-in', [['11:05 am', 'Checked in at the showroom by phone number'], ['11:05 am', 'Her record opens: plan, purchases, anniversary'], ['11:20 am', 'Four pieces tried, logged on her visit'], ['11:40 am', 'Leaves without buying; reason noted'], ['6:00 pm', 'Follow-up drafted naming the pieces she tried'], ['Next day', 'On the salesperson’s list'], ['Weekend', 'Returns and buys; bill linked to the visit']]],
+  ['A Justdial enquiry', [['3:02 pm', 'Justdial enquiry captured'], ['3:02 pm', 'New contact created, no duplicate'], ['3:02 pm', 'Routed to the nearest branch'], ['3:03 pm', 'WhatsApp reply with today’s rates'], ['3:45 pm', 'Reply clock breaching; manager alerted'], ['4:00 pm', 'Salesperson calls; visit booked'], ['Friday', 'Visit and bill on her record']]],
+];
+const tryLead = () => `<div class="ibx-jr crm-tl2" data-jr data-jr-still>
+  <div class="ibx-jr-tabs" role="tablist">${TRYLEAD.map(([t], i) => `<button type="button" role="tab" data-jr-tab="${i}" aria-selected="${i === 0}">${t}</button>`).join('')}</div>
+  ${TRYLEAD.map(([t, steps], i) => `<div class="ibx-jr-panel${i === 0 ? ' is-on' : ''}" role="tabpanel" data-jr-panel="${i}"><h3>${t}</h3><ol class="crm-tl2-list">${steps.map(([tm, x], j) => `<li style="--j:${j}"><b>${tm}</b><span>${x}</span></li>`).join('')}</ol></div>`).join('')}
+  <p class="ibx-legend">Illustrative timings. Pick how a lead arrives and watch its first day.</p>
+</div>`;
+
+// 3. Switching from the CRM you use today.
+const FROMS = [['Zoho CRM', '/compare/jwero-vs-zoho-crm'], ['Salesforce', ''], ['Zithara', '/compare/jwero-vs-zithara'], ['Excel', '/crm-vs-excel-for-jewellery-stores']];
+const crmFrom = () => `<div class="ibx-jr crm-from" data-jr data-jr-still>
+  <div class="ibx-jr-tabs" role="tablist">${FROMS.map(([n], i) => `<button type="button" role="tab" data-jr-tab="${i}" data-from="${n}" aria-selected="${i === 0}">From ${n}</button>`).join('')}</div>
+  ${FROMS.map(([n, href], i) => `<div class="ibx-jr-panel${i === 0 ? ' is-on' : ''}" role="tabpanel" data-jr-panel="${i}"><h3>Moving from ${n} to Jwero CRM</h3><ol class="ibx-jr-path">${[['Export from ' + n, 'Customers, notes and history, with us.'], ['Clean and match', 'Duplicates merged; households linked.'], ['Connect your sources', 'WhatsApp, ads, forms, store, calls, counter.'], ['Run both for a week', n + ' stays on while the team starts in Jwero.'], ['Switch ' + n + ' off', 'Every customer on one record.']].map(([t, d], j) => `<li class="${j === 3 ? 'is-h' : 'is-a'}" style="--j:${j}"><span class="ibx-jr-node"><b>${j + 1}</b></span><em>${t}</em><span>${d}</span></li>`).join('')}</ol>${href ? `<p class="erp-from-more"><a href="${href}">Jwero vs ${n} →</a></p>` : ''}</div>`).join('')}
 </div>`;
 
 // "I run a…"
@@ -225,13 +268,19 @@ ${L.hero({
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What is Jwero CRM?</h2><p>Jwero CRM is a customer system built for jewellers. It captures leads from 20+ sources automatically, matches them to existing customers and households, gives each an owner and a reply clock, and keeps purchases, gold plans, occasions and every chat and call on one record. Scores and a daily list tell the team who to call; journeys, AI calls and Meta audiences engage and retarget; consent and data requests are handled on the record.</p></div></section>
 
+${trust()}
+
 ${prog()}
 
 ${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
 
 ${L.section(`${L.sectionHead('CAPTURED AUTOMATICALLY', 'Where do jewellery leads come from?', 'From 20+ places, and every one lands on the same record without anyone typing it.')}${sources()}`, { id: 'sources' })}
 
+${L.section(`${L.sectionHead('WHAT SLIPS THROUGH', 'How many leads slip through today?', 'Your numbers, two sliders.')}${meter()}`, { tone: 'tint', id: 'slip' })}
+
 ${L.section(`${L.sectionHead('ONE LEAD', 'What happens in the first minute of a new lead?', 'Seven steps, from the ad to the bill.')}${run()}`, { tone: 'tint', id: 'one-lead' })}
+
+${L.section(`${L.sectionHead('TRY A LEAD', 'What happens to a lead from your busiest source?', 'Pick how it arrives.')}${tryLead()}`, { id: 'try-lead' })}
 
 ${L.section(`${L.sectionHead('ONE RECORD', 'What does the CRM know about each customer?', 'Everything she has done with you, on one timeline.')}${record()}`, { id: 'record' })}
 
@@ -239,7 +288,9 @@ ${L.section(`${L.sectionHead('INSTANT INSIGHT', 'How does the CRM know who is re
 
 ${L.section(`${L.sectionHead('INSTANT ACTION', 'Who should my team call today?', 'A list built every morning, with the reason and the message ready.')}${today()}`, { id: 'today' })}
 
-${L.section(`${L.sectionHead('LEAKS CLOSED', 'Where does a jeweller lose customers today?', 'Nine places, closed on one platform.')}${meter()}${leakCards()}`, { tone: 'tint', id: 'leaks' })}
+${L.section(`${L.sectionHead('YOUR LIST', 'What would tomorrow’s list look like for your shop?', 'Three numbers.')}${myList()}`, { tone: 'tint', id: 'mylist' })}
+
+${L.section(`${L.sectionHead('LEAKS CLOSED', 'Where does a jeweller lose customers today?', 'Nine places, closed on one platform.')}${leakCards()}`, { id: 'leaks' })}
 
 ${L.section(`${L.sectionHead('SELLING', 'What else sits on the record?', 'Quotes, appointments, meetings, visits, loyalty and deals.')}${sales()}`, { id: 'selling' })}
 
@@ -247,7 +298,9 @@ ${L.section(`${L.sectionHead('DATA PRIVACY', 'Is customer data safe?', 'Consent,
 
 ${L.section(`${L.sectionHead('JOURNEYS', 'Journeys only one platform can run.', 'Five real paths across capture, insight, action and privacy.')}${paths()}`, { id: 'journeys' })}
 
-${L.section(`${L.sectionHead('COMPARE', 'Excel, a generic CRM, or Jwero.', '')}${cmpTable()}`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('THE DIFFERENCE', 'What does Jwero know that a generic CRM does not?', 'The same customer, two records.')}${split()}`, { id: 'split' })}
+
+${L.section(`${L.sectionHead('COMPARE', 'Excel, a generic CRM, or Jwero.', 'Pick what you use today.')}${crmFrom()}${cmpTable()}`, { tone: 'tint', id: 'compare' })}
 
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to move to a jewellery CRM.', 'Five steps.')}${L.steps(HOW.map(([title, text]) => ({ title, text })))}`)}
 
@@ -267,4 +320,4 @@ ${L.ctaBand('Capture every enquiry. Remember every customer.', 'Connect your Wha
 
 module.exports = [crm];
 module.exports.heroPiece = () => orbit();
-module.exports.parts = { sources, today, scores, privacy, record, meter };
+module.exports.parts = { sources, today, scores, privacy, record, meter, orbit, myList, tryLead };
