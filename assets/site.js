@@ -1263,6 +1263,7 @@ function jwFromInr(n) {
       Array.prototype.forEach.call(box.querySelectorAll('[data-k]'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k ? 'true' : 'false'); });
       Array.prototype.forEach.call(box.querySelectorAll('[data-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
       if (jr && jr.jrShow && (fromUser || CFG[k][0] !== 0)) jr.jrShow(CFG[k][0]);
+      if (HRP) { var lead = document.getElementById(CFG[k][1]), after = document.getElementById('for-you'); if (lead && after) after.parentNode.insertBefore(lead, after.nextSibling); }
       Array.prototype.forEach.call(document.querySelectorAll(DOOR), function (a) { a.hidden = a.getAttribute(ATTR) !== 'door-' + k; });
       if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack(HRP ? 'hr_icp_pick' : 'dc_icp_pick', { icp: k }); }
     }
@@ -1277,6 +1278,19 @@ function jwFromInr(n) {
     var h = e.target.closest('[data-hr-cta]'); if (h) window.jweroTrack('hr_cta', { at: h.getAttribute('data-hr-cta') });
   });
 
+  // HR: an incentive worked out in front of you.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-hrinc]'), function (m) {
+    var used = false, n = function (k) { return Number(m.querySelector('[data-i="' + k + '"]').value) || 0; };
+    var inr = function (v) { v = Math.round(v); if (v >= 1e5) return '₹' + (v / 1e5).toFixed(1).replace(/\.0$/, '') + ' lakh'; return '₹' + v.toLocaleString('en-IN'); };
+    function calc() {
+      var s = n('sales'), r = Math.min(n('ret'), s), p = n('rate') / 100, e = s * p, c = r * p;
+      m.querySelector('[data-o="sales"]').textContent = inr(s); m.querySelector('[data-o="ret"]').textContent = inr(r); m.querySelector('[data-o="rate"]').textContent = n('rate') + '%';
+      m.querySelector('[data-o="earned"]').textContent = inr(e); m.querySelector('[data-o="claw"]').textContent = '−' + inr(c); m.querySelector('[data-o="net"]').textContent = inr(e - c);
+    }
+    m.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('hr_incentive_use', {}); } });
+    calc();
+  });
+
   // HR and Catalogues: hero meters.
   Array.prototype.forEach.call(document.querySelectorAll('div[data-hrm], div[data-dcm]'), function (m) {
     var hr = m.hasAttribute('data-hrm'), used = false, cta = m.querySelector('[data-hr-cta], [data-dc-cta]');
@@ -1289,7 +1303,9 @@ function jwFromInr(n) {
         m.querySelector('[data-o="staff"]').textContent = st; m.querySelector('[data-o="sales"]').textContent = sa;
         bars([['att', att, Math.round(att) + ' h'], ['pay', pay, Math.round(pay) + ' h'], ['inc', inc, Math.round(inc) + ' h']]);
         m.querySelector('[data-o="total"]').textContent = tot + ' hours';
-        if (cta) cta.setAttribute('data-wa-extra', ' I have ' + st + ' staff and ' + sa + ' salespeople on incentives. Your page estimates ' + tot + ' hours a month by hand.');
+        var yr = inr(tot * n('[data-a="rate"]') * 12), co = m.querySelector('[data-o="cost"]'); if (co) co.textContent = yr;
+        if (cta) cta.setAttribute('data-wa-extra', ' I have ' + st + ' staff and ' + sa + ' salespeople on incentives. Your page estimates ' + tot + ' hours a month by hand, about ' + yr + ' a year.');
+        var sh = document.querySelector('[data-hr-share]'); if (sh) { var bt = ''; try { bt = localStorage.getItem('jwero-persona') || ''; } catch (e) {} sh.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent('We have ' + st + ' staff and ' + sa + ' salespeople on incentives. Jwero says month end takes us about ' + tot + ' hours by hand. Have a look: ' + location.origin + location.pathname + (bt ? '?hr=' + bt : ''))); }
       } else {
         var se = n('[data-i="sent"]'), aov = n('[data-i="aov"]'), cr = n('[data-a="cr"]'), lf = n('[data-a="lift"]'), now = se * cr / 100, then = se * (cr + lf) / 100;
         m.querySelector('[data-o="sent"]').textContent = se.toLocaleString('en-IN'); m.querySelector('[data-o="aov"]').textContent = inr(aov);

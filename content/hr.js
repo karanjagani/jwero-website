@@ -30,10 +30,13 @@ const meter = () => `<div class="erp-meter hr-meter" data-hrm>
     <a href="#incentives" data-b="inc"><span>Sales incentives</span><i><em></em></i><b></b></a>
   </div>
   <p class="erp-meter-total"><span>Hours a month, by hand</span><b data-o="total"></b></p>
+  <p class="erp-meter-total hr-meter-rs"><span>What those hours cost a year</span><b data-o="cost"></b></p>
+  <p class="hr-meter-leak">${icon('coins')}<span>Plus what slips: advances not recovered and incentives paid on returned sales. In Jwero both are deducted in the pay run.</span></p>
   <a class="btn btn-primary erp-meter-cta" href="#" data-wa="hr" data-wa-extra="" data-hr-cta="meter">Show me month end done for me</a>
   <details class="erp-meter-as"><summary>The assumptions, change them</summary>
     <label>Minutes a month per person on attendance and leave<input type="number" data-a="att" value="20" step="5" min="0"></label>
     <label>Minutes a month per person on salary and deductions<input type="number" data-a="pay" value="15" step="5" min="0"></label>
+    <label>Cost of an hour of whoever does it, ₹<input type="number" data-a="rate" value="400" step="50" min="0"></label>
     <label>Minutes a month per salesperson on incentives<input type="number" data-a="inc" value="40" step="5" min="0"></label>
   </details>
   <p class="erp-meter-note">A planning estimate from your inputs and these assumptions, not a measurement.</p>
@@ -128,18 +131,71 @@ const fork = () => `<div class="ibx-fork" data-gfx>
   <div class="ibx-fork-legs">${FORK.map(([c, ic, t, rules, ric, r]) => `<div class="ibx-fork-leg ${c}"><h3>${icon(ic)}${t}</h3><ul>${rules.map((x) => `<li>${x}</li>`).join('')}</ul><p class="ibx-fork-out">${icon(ric)}${r}</p></div>`).join('')}</div>
 </div>`;
 
+
+// 1. An incentive, worked out in front of you.
+const incentiveTry = () => `<div class="erp-meter hr-inc" data-hrinc>
+  <p class="erp-meter-t">${icon('trend')}<b>Priya’s incentive this month</b></p>
+  <label><span>Her sales this month <b data-o="sales"></b></span><input type="range" data-i="sales" min="100000" max="10000000" step="50000" value="1800000"></label>
+  <label><span>A sale returned <b data-o="ret"></b></span><input type="range" data-i="ret" min="0" max="1000000" step="10000" value="120000"></label>
+  <label><span>Your slab, % of sales <b data-o="rate"></b></span><input type="range" data-i="rate" min="0.25" max="3" step="0.25" value="1"></label>
+  <div class="hr-inc-sum"><p><span>Incentive on sales</span><b data-o="earned"></b></p><p class="is-claw"><span>Clawed back on the return</span><b data-o="claw"></b></p><p class="is-net"><span>Paid with her salary</span><b data-o="net"></b></p></div>
+  <p class="erp-meter-note">Each bill is credited to the salesperson who made it. Slabs can be on sales or on margin; this example uses one flat slab on sales.</p>
+</div>`;
+
+// 2. A payslip, and the run that waits for approval.
+const SLIP = [['Basic and allowances', '₹22,000', ''], ['Incentive', '₹16,800', 'is-plus'], ['Overtime, Diwali week', '₹1,450', 'is-plus'], ['PF', '₹1,800', 'is-minus'], ['ESI', 'Not due', 'is-minus'], ['Professional tax', '₹200', 'is-minus'], ['TDS', '₹1,150', 'is-minus'], ['Advance, instalment 2 of 4', '₹2,500', 'is-minus']];
+const payslip = () => `<div class="hr-slip-wrap" data-gfx>
+  <div class="hr-slip"><div class="hr-slip-h"><b>Priya Shah · Sales</b><small>October · Branch 2</small></div><ul>${SLIP.map(([k, v, c]) => `<li class="${c}"><span>${k}</span><b>${v}</b></li>`).join('')}</ul><p class="hr-slip-net"><span>Net pay</span><b>₹34,600</b></p></div>
+  <div class="hr-run"><p class="pc-tag">PAY RUN · OCTOBER</p><ul><li><span>Staff</span><b>25</b></li><li><span>Gross</span><b>₹7.9 lakh</b></li><li><span>Incentives</span><b>₹1.1 lakh</b></li><li><span>Advances recovered</span><b>₹18,500</b></li><li><span>PF, ESI, PT, TDS</span><b>Worked out</b></li></ul><p class="hr-run-ok">${icon('shield')}Waiting for your approval</p><span class="btn btn-primary hr-run-btn" aria-hidden="true">Approve run</span><small>After approval: payslips in each person’s staff area, the bank file, statutory exports and ledger entries.</small></div>
+</div><p class="ibx-legend">Illustrative figures. Nothing is paid before the run is approved.</p>`;
+
+// 5. Branches today, and 6. biometric devices.
+const BR = [['Main road', 14, 15, 1, 0], ['Mall', 8, 9, 0, 1], ['Workshop', 22, 24, 2, 0]];
+const branches = () => `<div class="hr-br" data-gfx>${BR.map(([n, inn, all, late, leave], i) => `<article style="--i:${i}"><h3>${n}</h3><p class="hr-br-n"><b>${inn}</b>/${all} in</p><i class="hr-br-bar"><em style="width:${Math.round(inn / all * 100)}%"></em></i><ul><li>${icon('activity')}${late} late</li><li>${icon('calendar')}${leave} on leave</li><li>${icon('shield')}Geofence and selfie</li></ul></article>`).join('')}</div>
+<div class="hr-bio"><p class="pc-tag">ALREADY HAVE A BIOMETRIC DEVICE?</p><ol><li>${icon('activity')}<span><b>Export from the device</b>ESSL, ZKTeco and similar devices export punches</span></li><li>${icon('book')}<span><b>Import into Jwero</b>Punches matched to each person</span></li><li>${icon('check')}<span><b>Counted</b>Late marks, overtime and leave worked out</span></li></ol><p class="erp-meter-note">Punches come in from the device’s export. You can also use a kiosk, or phone punches with geofence and selfie.</p></div>
+<p class="ibx-legend">Illustrative.</p>`;
+
+// 4. Karigars, kept apart.
+const KLED = [['Job 2231', 'Temple necklace settled against the norm', '₹6,400', '₹6,400'], ['Job 2240', 'Two bangles settled', '₹3,100', '₹9,500'], ['TDS', 'Worked out on the month’s payments', '−₹95', '₹9,405'], ['Bank file', 'Karigar payout file prepared', '₹9,405', '₹0'], ['Ledger', 'Settlement entries posted', '', 'Closed']];
+const karigarLedger = () => `<div class="erp-led" data-led>
+  <div class="erp-led-head"><span>Step</span><span>Karigar Ramesh · October</span><span>${icon('coins')}Amount</span><span>${icon('book')}Owed</span></div>
+  <ol>${KLED.map(([s, d, r, g], i) => `<li data-k="${i}"><b>${s}</b><span>${d}</span><span class="erp-led-r">${r}</span><span class="erp-led-g">${g}</span></li>`).join('')}</ol>
+</div><p class="ibx-legend">Illustrative. Karigar payments sit on their own ledger, apart from staff salaries.</p>`;
+
+// 8. What staff see.
+const staffView = () => `<div class="hr-phone" data-gfx><div class="hr-phone-in">
+  <p class="hr-phone-h"><b>Hi Priya</b><small>Staff area · web</small></p>
+  <span class="btn btn-primary hr-phone-punch" aria-hidden="true">${icon('activity')}Punch in · Branch 2</span>
+  <div class="hr-phone-g"><p><small>Leave left</small><b>9 days</b></p><p><small>Incentive so far</small><b>₹11,200</b></p><p><small>Target</small><b>72%</b></p><p><small>Payslip</small><b>September ↓</b></p></div>
+  <p class="hr-phone-req">${icon('calendar')}Leave request · 14 to 15 Nov · <em>approved</em></p>
+</div></div>
+<ul class="hr-phone-pts"><li>Punch in with geofence and selfie</li><li>Leave balance and requests</li><li>Payslips and incentives earned so far</li><li>Fewer “what is my salary” questions for you</li></ul>`;
+
+// 7. Moving over.
+const FROMS = [['Excel', 'Salary sheets and attendance registers'], ['your current payroll', 'Employees, structures and balances']];
+const hrFrom = () => `<div class="ibx-jr hr-from" data-jr data-jr-still>
+  <div class="ibx-jr-tabs" role="tablist">${FROMS.map(([n], i) => `<button type="button" role="tab" data-jr-tab="${i}" aria-selected="${i === 0}">From ${n}</button>`).join('')}</div>
+  ${FROMS.map(([n, what], i) => `<div class="ibx-jr-panel${i === 0 ? ' is-on' : ''}" role="tabpanel" data-jr-panel="${i}"><h3>Moving from ${n} to Jwero HR</h3><ol class="ibx-jr-path">${[['Export', what + ', with us.'], ['Set your rules', 'Leave policy, shifts, statutory deductions and incentive slabs.'], ['Run one month side by side', 'Compare every payslip with ' + n + '.'], ['Approve the first run', 'Payslips, bank file and statutory exports.'], ['Switch off ' + n, 'Month end on one record.']].map(([t, d], j) => `<li class="${j === 2 ? 'is-h' : 'is-a'}" style="--j:${j}"><span class="ibx-jr-node"><b>${j + 1}</b></span><em>${t}</em><span>${d}</span></li>`).join('')}</ol></div>`).join('')}
+</div>`;
+
+// 9. Proof per business type, and a hand-off to whoever signs payroll.
+const Q = require('./positioning').QUOTES;
+const PROOF = { single: 0, chain: 4, maker: 0 };
+const proofCard = (k) => { const q = Q[PROOF[k]]; return q ? `<figure class="erp-proof"><blockquote>“${q[0]}”</blockquote><figcaption>${q[1]}, ${q[2]}</figcaption></figure>` : ''; };
+const shareBand = () => `<div class="pass-box hr-share"><div><p class="eyebrow">FOR YOUR ACCOUNTANT OR HR PERSON</p><h2>Does someone else run payroll for you?</h2><p>Send them this page on WhatsApp, with your staff numbers. Jwero hands them the bank file and the PF, ESI and PT exports each month.</p></div><a class="btn btn-primary" href="#" data-hr-share data-hr-cta="share">Send to my accountant</a></div>`;
+
 // "I run a…"
 const ICP = [
-  ['single', 'store', 'A single store', 'Start with incentives and payroll: each salesperson paid on real sales, with clawback, and month end in one approved run.', 0, 'incentives', 'trial', 'Start free for your store'],
-  ['chain', 'branches', 'A chain or franchise', 'Start with attendance across branches: kiosk or phone punches with geofence, shifts for festival weeks, one pay run for everyone.', 1, 'attendance', 'demo', 'Book a 30-minute demo for a chain'],
-  ['maker', 'scale', 'A workshop or manufacturer', 'Start with karigar payments: a ledger per karigar, TDS, and their own bank file, kept apart from staff salaries.', 2, 'karigars', 'trial', 'Start free for your workshop'],
+  ['single', 'store', 'A single store', 'Start with incentives and payroll: each salesperson paid on real sales, with clawback, and month end in one approved run.', 0, 'incentive-try', 'trial', 'Start free for your store'],
+  ['chain', 'branches', 'A chain or franchise', 'Start with attendance across branches: kiosk or phone punches with geofence, shifts for festival weeks, one pay run for everyone.', 1, 'branches', 'demo', 'Book a 30-minute demo for a chain'],
+  ['maker', 'scale', 'A workshop or manufacturer', 'Start with karigar payments: a ledger per karigar, TDS, and their own bank file, kept apart from staff salaries.', 2, 'karigar-ledger', 'trial', 'Start free for your workshop'],
 ];
 const door = ([k, , , , , , d, label], cls) => d === 'demo'
   ? `<a class="${cls}" href="/book-demo" data-hr-cta="door-${k}">${label}</a>`
   : `<a class="${cls}" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=hr-${k}" rel="noopener" data-trial data-hr-cta="door-${k}">${label}</a>`;
 const icpBox = () => `<div class="erp-icp soc-icp" data-dc-icp data-door="hr-door" data-pfx="hr" data-cfg='${JSON.stringify(Object.fromEntries(ICP.map(([k, , , , j, lead]) => [k, [j, lead]])))}'>
   <div class="erp-icp-opts" role="tablist" aria-label="I run a…">${ICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${icon(ic)}<span>${t}</span></button>`).join('')}</div>
-  ${ICP.map((e, i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p><div class="erp-icp-go"><a href="#month-end">Month end ↓</a><a href="#board">What you see ↓</a><a href="#journeys">Your journey ↓</a><a href="#${e[5]}">${e[5][0].toUpperCase() + e[5].slice(1)} ↓</a></div><p class="erp-icp-door">${door(e, 'btn btn-primary')}</p></div>`).join('')}
+  ${ICP.map((e, i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p><div class="erp-icp-go"><a href="#month-end">Month end ↓</a><a href="#board">What you see ↓</a><a href="#journeys">Your journey ↓</a><a href="#${e[5]}">${{ 'incentive-try': 'Work out an incentive', branches: 'Branches today', 'karigar-ledger': 'A karigar’s month' }[e[5]]} ↓</a></div><p class="erp-icp-door">${door(e, 'btn btn-primary')}</p>${proofCard(e[0])}</div>`).join('')}
 </div>`;
 const prog = () => `<nav class="erp-prog" data-erp-prog aria-label="On this page"><div class="erp-prog-in">
   <ol>${[['month-end', 'Month end'], ['board', 'Watch'], ['fork', 'On its own'], ['leaks', 'Leaks'], ['modules', 'Features'], ['journeys', 'Journeys']].map(([id, t], i) => `<li><a href="#${id}" data-p="${id}"><b>${i + 1}</b>${t}</a></li>`).join('')}</ol>
@@ -214,19 +270,31 @@ ${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick you
 
 ${L.section(`${L.sectionHead('MONTH END', 'How does payroll run for a jewellery shop?', 'Six steps, from the punch to the payslip.')}${run()}`, { id: 'month-end' })}
 
+${L.section(`${L.sectionHead('INCENTIVES', 'How much incentive should a salesperson get?', 'Move the sliders. Returns are clawed back.')}${incentiveTry()}`, { tone: 'tint', id: 'incentive-try' })}
+
+${L.section(`${L.sectionHead('PAYSLIP', 'What does a jewellery salesperson’s payslip look like?', 'Every line worked out, and the run waits for you.')}${payslip()}`, { id: 'payslip' })}
+
+${L.section(`${L.sectionHead('BRANCHES TODAY', 'Who is in at every branch?', 'Kiosk, phone or your biometric device.')}${branches()}`, { tone: 'tint', id: 'branches' })}
+
+${L.section(`${L.sectionHead('KARIGARS', 'How are karigars paid apart from staff?', 'One karigar’s month, on his own ledger.')}${karigarLedger()}`, { id: 'karigar-ledger' })}
+
 ${L.section(`${L.sectionHead('ONE SCREEN', 'What does HR look like during the month?', 'Six parts, lit as the month runs.')}${board()}`, { tone: 'tint', id: 'board' })}
 
 ${L.section(`${L.sectionHead('ON ITS OWN', 'What runs by itself, and what waits for you?', '')}${fork()}`, { id: 'fork' })}
 
-${L.section(`${L.sectionHead('LEAKS CLOSED', 'Where does a jewellery shop lose money on people?', 'Nine places, closed.')}${leakCards()}`, { tone: 'tint', id: 'leaks' })}
+${L.section(`${L.sectionHead('WHAT STAFF SEE', 'What does each person see?', 'Their own staff area, on the web.')}${staffView()}`, { tone: 'tint', id: 'staff-view' })}
+
+${L.section(`${L.sectionHead('LEAKS CLOSED', 'Where does a jewellery shop lose money on people?', 'Nine places, closed.')}${leakCards()}`, { id: 'leaks' })}
 
 ${L.section(`${L.sectionHead('EVERYTHING IN IT', 'What does Jwero HR cover?', 'Eight areas, one record per person.')}${modules()}`, { id: 'modules' })}
 
 ${L.section(`${L.sectionHead('JOURNEYS', 'How it runs on a real floor.', 'Four real paths.')}${paths()}`, { tone: 'tint', id: 'journeys' })}
 
-${L.section(`${L.sectionHead('COMPARE', 'Excel and a register, a generic HR app, or Jwero.', '')}${cmpTable()}`)}
+${L.section(`${L.sectionHead('COMPARE', 'Excel and a register, a generic HR app, or Jwero.', '')}${hrFrom()}${cmpTable()}`, { id: 'compare' })}
 
 ${L.section(`${L.sectionHead('READ MORE', 'Where HR connects.', '')}<div class="erp-map">${READS.map(([h, t]) => `<a href="${h}"><b>${t}</b></a>`).join('')}</div>`)}
+
+${L.section(shareBand(), { tone: 'tint', id: 'share' })}
 
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to run payroll for a jewellery shop.', 'Five steps.')}${L.steps(HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 
