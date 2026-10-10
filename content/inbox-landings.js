@@ -34,6 +34,8 @@ ${L.hero({
   secondary: { href: `/products/inbox#${p.anchor}`, label: 'See it in One Inbox' },
 })}
 
+${L.section(`<div class="ec-ad-meter">${require('./inbox').parts.meter()}</div><p class="soc-mini-go"><a class="btn btn-ghost" href="/products/inbox?ib=${p.anchor === 'email' ? 'chain' : 'single'}#for-you" data-ib-cta="mini-${p.slug}">See One Inbox for my business →</a></p>`, { tone: 'tint' })}
+
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">${p.shortQ}</h2><p>${p.shortA}</p></div></section>
 
 ${L.section(`${L.sectionHead('WHAT YOU GET', p.pointsHead, '')}${L.cards(p.points.map(([title, text, icon]) => ({ icon, title, text })), 3)}`, { tone: 'tint' })}

@@ -10,7 +10,7 @@ const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 // ---- every channel, and what lands from it
 const CHANNELS = [
   ['whatsapp', 'chat', 'WhatsApp API', 'Your own number on the official WhatsApp Business Platform. Messages, catalogue, carts, payments and forms, with the whole team on one number.', ['Messages and voice notes', 'Catalogue at today’s rate', 'Cart and payment in the chat', 'Forms for visits and gold plans']],
-  ['whatsapp-marketing', 'megaphone', 'WhatsApp Marketing', 'Broadcasts and festival campaigns to the right customers, on approved templates, with every reply landing back in the inbox.', ['Campaigns to live segments', 'Templates tracked through Meta approval', 'Click-to-WhatsApp ads, traced to the sale', 'Consent, frequency limits and number health']],
+  ['whatsapp-marketing', 'megaphone', 'WhatsApp Marketing', 'Broadcasts and festival campaigns to the right customers, on approved templates, with every reply landing back in the inbox. Planned in <a href="/products/promotions#broadcasts">Personalised Promotions</a>.', ['Campaigns to live segments', 'Templates tracked through Meta approval', 'Click-to-WhatsApp ads, traced to the sale', 'Consent, frequency limits and number health']],
   ['calls', 'phone', 'WhatsApp Calls', 'Voice calls on the same WhatsApp number, in and out, answered by your team or by the AI voice agent, with the recording and transcript on her record.', ['Inbound and outbound calls', 'AI voice agent in her language', 'Transfer to a person mid-call', 'Missed calls followed up']],
   ['instagram-facebook', 'camera', 'Instagram & Facebook', 'DMs, Messenger, story replies and mentions. A “price” comment under a reel can start a private conversation that continues here with a priced answer.', ['Instagram DMs and Messenger', 'A “price?” comment starts a private chat', 'Story replies and mentions', 'Lead forms from Meta ads']],
   ['email', 'mail', 'Email', 'care@ and orders@ on your own domain, threaded on the customer record beside her WhatsApp, with labels, drafts and shared mailboxes.', ['Your own domain', 'Threads on the customer record', 'Replies from the same inbox', 'Order and review emails']],
@@ -255,6 +255,70 @@ const rivalTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead
 
 const GUIDES = [['/whatsapp-api-for-jewellers', 'WhatsApp API for jewellers'], ['/whatsapp-marketing-for-jewellers', 'WhatsApp marketing for jewellers'], ['/instagram-for-jewellers', 'Instagram for jewellers'], ['/ai-chatbot-for-jewellery-stores', 'AI chatbot for jewellery stores'], ['/business-email-for-jewellers', 'Business email for jewellers'], ['/ai-calling-for-jewellers', 'AI calling for jewellers']];
 
+// 1. Hero meter: what slow replies cost.
+const meter = () => `<div class="erp-meter ib-meter" data-ibm>
+  <p class="erp-meter-t">${icon('activity')}<b>How many enquiries go cold while you reply?</b></p>
+  <label><span>Enquiries a day, all channels <b data-o="enq"></b></span><input type="range" data-i="enq" min="5" max="500" step="5" value="40"></label>
+  <label><span>Minutes to first reply today <b data-o="min"></b></span><input type="range" data-i="min" min="1" max="240" step="1" value="45"></label>
+  <label><span>Arriving after shop hours <b data-o="ah"></b></span><input type="range" data-i="ah" min="0" max="80" step="5" value="35"></label>
+  <div class="erp-meter-bars">
+    <a href="#try" data-b="cold"><span>Going cold a month</span><i><em></em></i><b></b></a>
+  </div>
+  <p class="erp-meter-total"><span>Sales those could have been</span><b data-o="total"></b></p>
+  <a class="btn btn-primary erp-meter-cta" href="#" data-wa="inbox" data-wa-extra="" data-ib-cta="meter">Show me my enquiries answered in seconds</a>
+  <details class="erp-meter-as"><summary>The assumptions, change them</summary>
+    <label>Slow or after-hours enquiries that go cold, %<input type="number" data-a="cold" value="30" step="5" min="0"></label>
+    <label>Enquiries that would have bought, %<input type="number" data-a="buy" value="8" step="1" min="0"></label>
+    <label>Average bill, ₹<input type="number" data-a="bill" value="60000" step="5000" min="0"></label>
+  </details>
+  <p class="erp-meter-note">A planning estimate from your inputs and these assumptions, not a measurement.</p>
+</div>`;
+
+// 2. "I run a…"
+const ICP = [
+  ['single', 'store', 'A single store', 'Start with WhatsApp and the AI agent: every enquiry answered in seconds, day and night, and the rest handed to you with the full story.', 2, 'try', 'trial', 'Start free for your store'],
+  ['chain', 'branches', 'A chain or franchise', 'Start with routing: chats shared by branch and workload, reply-time targets, and alerts to the manager before a conversation slips.', 4, 'routing', 'demo', 'Book a 30-minute demo for a chain'],
+  ['brand', 'megaphone', 'An online brand', 'Start with Instagram, Facebook and webchat: DMs and site chats answered by AI, with carts and payments in the conversation.', 1, 'channels', 'trial', 'Start free for your brand'],
+];
+const door = ([k, , , , , , d, label], cls) => d === 'demo'
+  ? `<a class="${cls}" href="/book-demo" data-ib-cta="door-${k}">${label}</a>`
+  : `<a class="${cls}" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=inbox-${k}" rel="noopener" data-trial data-ib-cta="door-${k}">${label}</a>`;
+const icpBox = () => `<div class="erp-icp soc-icp" data-ib-icp data-cfg='${JSON.stringify(Object.fromEntries(ICP.map(([k, , , , j, lead]) => [k, [j, lead]])))}'>
+  <div class="erp-icp-opts" role="tablist" aria-label="I run a…">${ICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${icon(ic)}<span>${t}</span></button>`).join('')}</div>
+  ${ICP.map((e, i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p><div class="erp-icp-go"><a href="#try">Try a message ↓</a><a href="#race">Reply time ↓</a><a href="#journeys">Your journey ↓</a><a href="#${e[5]}">${e[5] === 'routing' ? 'Routing' : e[5] === 'channels' ? 'Your channels' : 'The AI agent'} ↓</a></div><p class="erp-icp-door">${door(e, 'btn btn-primary')}</p></div>`).join('')}
+</div>`;
+const prog = () => `<nav class="erp-prog" data-erp-prog aria-label="On this page"><div class="erp-prog-in">
+  <ol>${[['channels-in', 'Every channel'], ['try', 'Try a message'], ['race', 'Reply time'], ['use-cases', 'What it handles'], ['routing', 'AI or a person'], ['vs', 'Compare']].map(([id, t], i) => `<li><a href="#${id}" data-p="${id}"><b>${i + 1}</b>${t}</a></li>`).join('')}</ol>
+  <span class="erp-prog-doors">${ICP.map((e) => door(e, 'btn btn-primary erp-prog-cta ib-door')).join('')}</span>
+</div><i class="erp-prog-fill" aria-hidden="true"></i></nav>`;
+
+// 3. Try a message.
+const TRY = [
+  ['Price of the 22K temple bangle?', 'Here are two 22K temple bangles in stock at Andheri, priced at today’s rate with the breakup. Would you like to see them on video or visit on Saturday?', ['Live stock', 'Today’s rate', 'Her last purchase'], 'a'],
+  ['Is this jhumka in stock?', 'Yes, one pair is at the Andheri branch. I can hold it for you to collect, or send a payment link if you would like it delivered.', ['Live stock by branch', 'Reserve and collect', 'Payment link'], 'a'],
+  ['How much is left on my gold plan?', 'Meera, you have paid 9 of 11 instalments. Your plan matures on 12 November, and here are pieces your balance could go towards.', ['Her gold plan', 'Her record', 'Catalogue'], 'a'],
+  ['I want to speak to someone', 'Of course. Ravi from our Andheri branch will reply in a moment. He can see your conversation so far.', ['Hand-over rule', 'Summary for Ravi', 'Suggested reply'], 'h'],
+];
+const tryIt = () => `<div class="ib-try" data-ibtry>
+  <div class="ib-try-q" role="tablist">${TRY.map(([q], i) => `<button type="button" role="tab" data-q="${i}" aria-selected="${i === 0}">${q}</button>`).join('')}</div>
+  <div class="ib-try-chat" aria-live="polite"><div class="ec-pz-bar">${icon('whatsapp')}<span>Your shop · WhatsApp</span></div>
+  ${TRY.map(([q, a, used, who], i) => `<div class="ib-try-t${i === 0 ? ' is-on' : ''}" data-t="${i}"><p class="ib-b is-in">${q}</p><p class="ib-b is-out ${who === 'h' ? 'is-person' : ''}"><small>${who === 'h' ? 'AI, handing over' : 'AI · in 6 seconds'}</small>${a}</p><p class="ib-used">${icon('sparkle')}Used: ${used.map((u) => `<span>${u}</span>`).join('')}</p></div>`).join('')}</div>
+  <p class="ibx-legend">Illustrative replies. Real replies come from your own catalogue, stock, rates and customer records, inside the limits you set.</p>
+</div>`;
+
+// 7. Reply time as a race.
+const race = () => `<div class="ib-race" data-gfx>
+  <div class="ib-race-lane is-old"><p class="ib-race-k">Today</p><ol><li style="--i:0"><b>9:42 pm</b>“Price of this bangle?”</li><li style="--i:1"><b>10:15 am</b>Seen by staff next morning</li><li style="--i:2"><b>11:30 am</b>Price sent after checking stock</li><li style="--i:3" class="is-lost"><b>No reply</b>She bought elsewhere</li></ol></div>
+  <div class="ib-race-lane is-new"><p class="ib-race-k">One Inbox</p><ol><li style="--i:0"><b>9:42 pm</b>“Price of this bangle?”</li><li style="--i:1"><b>9:42 pm</b>AI replies with two pieces in stock</li><li style="--i:2"><b>9:44 pm</b>Saturday visit booked</li><li style="--i:3" class="is-won"><b>Saturday</b>Bill linked to the chat</li></ol></div>
+</div><p class="ibx-legend">Illustrative. The difference is the first reply: seconds, at any hour, from your own stock and rates.</p>`;
+
+// 5. Switching from another messaging tool.
+const SWITCH = (n) => [['Export from ' + n, 'Contacts, labels and templates, with us.'], ['Connect your number', 'Your WhatsApp number on Jwero, plus Instagram, email and webchat.'], ['Run both for a week', 'Replies in One Inbox while ' + n + ' stays on.'], ['Turn on the AI agent', 'With the hours, limits and hand-over rules you set.'], ['Switch ' + n + ' off', 'Every chat, on her record.']];
+const rivalTabs = () => `<div class="ibx-jr erp-from ib-from" data-jr data-jr-still>
+  <div class="ibx-jr-tabs" role="tablist">${RIVALS.map((n, i) => `<button type="button" role="tab" data-jr-tab="${i}" data-rival="${i}" aria-selected="${i === 0}">From ${n}</button>`).join('')}</div>
+  ${RIVALS.map((n, i) => `<div class="ibx-jr-panel${i === 0 ? ' is-on' : ''}" role="tabpanel" data-jr-panel="${i}"><h3>Moving from ${n} to One Inbox</h3><ol class="ibx-jr-path">${SWITCH(n).map(([t, d], j) => `<li class="${j === 2 ? 'is-h' : 'is-a'}" style="--j:${j}"><span class="ibx-jr-node"><b>${j + 1}</b></span><em>${t}</em><span>${d}</span></li>`).join('')}</ol></div>`).join('')}
+</div>`;
+
 const CMP = [
   ['Where conversations live', 'Five apps and a shop phone', 'One inbox, one thread history per customer'],
   ['Who answers at 11 pm', 'Nobody until morning', 'AI, with a priced reply from your stock'],
@@ -320,9 +384,17 @@ ${L.hero({
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What is One Inbox?</h2><p>One Inbox is Jwero’s unified inbox for jewellery businesses. WhatsApp messages and calls, Instagram and Facebook messages, email on your own domain and website chat arrive in one place, on one customer record shared with billing, stock and gold plans. An AI agent answers in chat and on calls from her purchases, her gold plan and your live stock at today’s rate, and routes what needs a person to the right salesperson.</p></div></section>
 
+${prog()}
+
+${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
+
 ${L.section(`${L.sectionHead('EVERY CHANNEL LANDS HERE', 'How do jewellers manage WhatsApp, calls, Instagram and email together?', 'In one place. Each conversation is matched to her record, then answered automatically or routed to a person.')}${inboxHub()}`, { id: 'channels-in' })}
 
-${L.section(`${L.sectionHead('WHAT HAPPENS TO ONE MESSAGE', 'From “hello” to the record, in five steps.', '')}${inboxRun()}`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('WHAT HAPPENS TO ONE MESSAGE', 'From “hello” to the record, in five steps.', '')}${inboxRun()}`, { tone: 'tint', id: 'one-message' })}
+
+${L.section(`${L.sectionHead('TRY IT', 'What does the AI say to your customer?', 'Pick a message. See the reply, and what it used.')}${tryIt()}`, { id: 'try' })}
+
+${L.section(`${L.sectionHead('REPLY TIME', 'What does a reply in seconds change?', 'The same enquiry, two evenings.')}${race()}`, { tone: 'tint', id: 'race' })}
 
 ${L.section(`${L.sectionHead('EVERYTHING IT CAN HANDLE', 'What can a jeweller do with One Inbox?', `${USE_COUNT} things, grouped by the work, and marked by who does it: AI on its own, AI first and then a person, or your team.`)}${inboxUses()}`, { id: 'use-cases' })}
 
@@ -354,7 +426,7 @@ ${L.section(`${L.sectionHead('THE TEAM’S SIDE', 'What your salesperson has in 
 
 ${L.section(`${L.sectionHead('COMPARE', 'Separate apps, or One Inbox.', '')}${cmpTable()}`, { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('AGAINST THE MESSAGING TOOLS', 'Is One Inbox better than WATI, Interakt or DoubleTick for jewellers?', 'They are good messaging tools. One Inbox answers from the jewellery business behind the message.')}${rivalTable()}`, { id: 'vs' })}
+${L.section(`${L.sectionHead('AGAINST THE MESSAGING TOOLS', 'Is One Inbox better than WATI, Interakt or DoubleTick for jewellers?', 'They are good messaging tools. One Inbox answers from the jewellery business behind the message.')}${rivalTabs()}${rivalTable()}`, { id: 'vs' })}
 
 ${L.section(`${L.sectionHead('GUIDES BY CHANNEL', 'Read more about each channel.', '')}<div class="erp-map">${GUIDES.map(([h, t]) => `<a href="${h}"><b>${t}</b><span>${h.replace(/^\//, 'jwero.ai/')}</span></a>`).join('')}</div>`, { tone: 'tint' })}
 
@@ -386,4 +458,6 @@ const HERO_ROWS = [
   ['Lead form', 'A bridal set enquiry from your ad', 7, 'Sent to Riya, your senior salesperson', 'h'],
 ];
 module.exports = [inbox];
-module.exports.heroPiece = () => L.recordFeed({ title: 'One Inbox', chips: HERO_CHIPS, rows: HERO_ROWS, iconOnly: true, foot: 'Answered by AI or routed to a person. All on the customer’s record.' });
+module.exports.parts = { meter: () => meter(), tryIt: () => tryIt() };
+module.exports.heroPiece = () => meter();
+module.exports.feed = () => L.recordFeed({ title: 'One Inbox', chips: HERO_CHIPS, rows: HERO_ROWS, iconOnly: true, foot: 'Answered by AI or routed to a person. All on the customer’s record.' });

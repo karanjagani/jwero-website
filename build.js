@@ -504,6 +504,13 @@ function platformStory(html, slug) {
 }
 function journeyFix(html, p) {
   // Social: the generic opening blocks (the shift, where it pays off) follow the first proof.
+  // One Inbox: the shift and the AI-workforce simulator follow the first walkthroughs.
+  if (p && p.slug === 'products/inbox') {
+    const cutSec = (re) => { const m = re.exec(html); if (!m) return ''; const a = html.lastIndexOf('<section', m.index + 1); const e = html.indexOf('</section>', m.index) + 10; const t = html.slice(a, e); html = html.slice(0, a) + html.slice(e); return t; };
+    const moved = cutSec(/<section class="shift"/) + cutSec(/<section class="section sim-section" id="try-approve"/);
+    const at = html.indexOf('id="race"');
+    if (moved && at > 0) { const e = html.indexOf('</section>', at) + 10; html = html.slice(0, e) + moved + html.slice(e); }
+  }
   if (p && p.slug === 'products/social-media') {
     const cutSec = (re) => { const m = re.exec(html); if (!m) return ''; const a = html.lastIndexOf('<section', m.index); const e = html.indexOf('</section>', m.index) + 10; const t = html.slice(a, e); html = html.slice(0, a) + html.slice(e); return t; };
     const moved = cutSec(/<section class="shift"/) + cutSec(/Where this pays off in a jewellery business\./);

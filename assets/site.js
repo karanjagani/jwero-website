@@ -984,6 +984,67 @@ function jwFromInr(n) {
     var j = e.target.closest('#journeys [data-jr-tab]'); if (j && document.querySelector('[data-soc-icp]')) window.jweroTrack('soc_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
   });
 
+  // One Inbox: what slow replies cost.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ibm]'), function (m) {
+    var n = function (sel) { var el = m.querySelector(sel); return el ? Number(el.value) || 0 : 0; }, used = false, cta = m.querySelector('[data-ib-cta="meter"]');
+    var inr = function (v) { v = Math.round(v); if (v >= 1e7) return '₹' + (v / 1e7).toFixed(2).replace(/\.?0+$/, '') + ' crore'; if (v >= 1e5) return '₹' + (v / 1e5).toFixed(1).replace(/\.0$/, '') + ' lakh'; return '₹' + v.toLocaleString('en-IN'); };
+    function calc() {
+      var enq = n('[data-i="enq"]'), min = n('[data-i="min"]'), ah = n('[data-i="ah"]') / 100;
+      var slow = ah + (1 - ah) * Math.min(1, min / 60), cold = enq * 30 * slow * n('[data-a="cold"]') / 100, worth = cold * n('[data-a="buy"]') / 100 * n('[data-a="bill"]');
+      m.querySelector('[data-o="enq"]').textContent = enq; m.querySelector('[data-o="min"]').textContent = min + ' min'; m.querySelector('[data-o="ah"]').textContent = Math.round(ah * 100) + '%';
+      var a = m.querySelector('[data-b="cold"]'); a.querySelector('em').style.width = Math.min(100, cold / Math.max(1, enq * 30) * 100 * 2).toFixed(1) + '%'; a.querySelector('b').textContent = Math.round(cold).toLocaleString('en-IN') + ' enquiries';
+      var t = inr(worth); m.querySelector('[data-o="total"]').textContent = t;
+      if (cta) cta.setAttribute('data-wa-extra', ' We get about ' + enq + ' enquiries a day, first reply takes ' + min + ' minutes, ' + Math.round(ah * 100) + '% arrive after hours. Your page estimates ' + Math.round(cold) + ' going cold a month, worth ' + t + '.');
+    }
+    m.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('ib_meter_use', {}); } });
+    calc();
+  });
+
+  // One Inbox: try a message.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ibtry]'), function (t) {
+    t.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-q]'); if (!b) return; var i = b.getAttribute('data-q');
+      Array.prototype.forEach.call(t.querySelectorAll('[data-q]'), function (x) { x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+      Array.prototype.forEach.call(t.querySelectorAll('[data-t]'), function (x) { x.classList.toggle('is-on', x.getAttribute('data-t') === i); if (x.getAttribute('data-t') === i) { x.classList.remove('is-play'); void x.offsetWidth; x.classList.add('is-play'); } });
+      if (window.jweroTrack) window.jweroTrack('ib_try', { q: b.textContent.trim().slice(0, 50) });
+    });
+  });
+
+  // One Inbox: the competitor tabs mark that tool's column.
+  Array.prototype.forEach.call(document.querySelectorAll('.ib-from'), function (f) {
+    var table = f.parentNode.querySelector('table'); if (!table) return;
+    function mark(i) { Array.prototype.forEach.call(table.rows, function (r) { Array.prototype.forEach.call(r.cells, function (c, k) { c.classList.toggle('is-them', k === i + 1); }); }); }
+    f.addEventListener('click', function (e) { var b = e.target.closest('[data-rival]'); if (!b) return; var i = Number(b.getAttribute('data-rival')); mark(i); if (window.jweroTrack) window.jweroTrack('ib_switch_from', { from: b.textContent.replace(/^From\s+/, '') }); });
+    mark(0);
+  });
+
+  // One Inbox: "I run a…".
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ib-icp]'), function (box) {
+    var CFG = JSON.parse(box.getAttribute('data-cfg'));
+    var MAP = { single: 'single', staff: 'single', maker: 'single', b2b: 'single', trader: 'single', chain: 'chain', franchise: 'chain', d2c: 'brand', brand: 'brand' };
+    var STORE = { single: 'single', chain: 'chain', brand: 'd2c' };
+    var jr = document.querySelector('#journeys [data-jr]');
+    function apply(k, fromUser) {
+      Array.prototype.forEach.call(box.querySelectorAll('[data-k]'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k ? 'true' : 'false'); });
+      Array.prototype.forEach.call(box.querySelectorAll('[data-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
+      if (jr && jr.jrShow && (fromUser || CFG[k][0] !== 0)) jr.jrShow(CFG[k][0]);
+      var lead = document.getElementById(CFG[k][1]), after = document.getElementById('one-message');
+      if (lead && after && k !== 'single') after.parentNode.insertBefore(lead, after.nextSibling);
+      Array.prototype.forEach.call(document.querySelectorAll('.ib-door'), function (a) { a.hidden = a.getAttribute('data-ib-cta') !== 'door-' + k; });
+      var band = document.querySelector('.cta-band .btn-ghost-light[href="/book-demo"]'); if (band) band.textContent = k === 'chain' ? 'Book a 30-minute demo for a chain' : 'Book a demo';
+      if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack('ib_icp_pick', { icp: k }); }
+    }
+    box.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (b) apply(b.getAttribute('data-k'), true); });
+    var saved = ''; try { saved = localStorage.getItem('jwero-persona') || ''; } catch (e) {}
+    var asked = /[?&](?:ib|p)=(single|chain|brand|franchise|d2c|maker|b2b|trader|staff)/.exec(location.search);
+    apply(MAP[asked ? asked[1] : saved] || 'single', !!asked);
+  });
+  document.addEventListener('click', function (e) {
+    if (!window.jweroTrack) return;
+    var c = e.target.closest('[data-ib-cta]'); if (c) window.jweroTrack('ib_cta', { at: c.getAttribute('data-ib-cta'), label: (c.textContent || '').trim().slice(0, 60) });
+    var j = e.target.closest('#journeys [data-jr-tab]'); if (j && document.querySelector('[data-ib-icp]')) window.jweroTrack('ib_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
+  });
+
   // Promotions: build an audience in the hero.
   Array.prototype.forEach.call(document.querySelectorAll('[data-prm]'), function (m) {
     var n = function (sel) { var el = m.querySelector(sel); return el ? Number(el.value) || 0 : 0; }, used = false, cta = m.querySelector('[data-pr-cta="meter"]');
