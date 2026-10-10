@@ -2089,7 +2089,8 @@ ${pages.filter((p) => !p.noindex).map((p) => `- ${p.title.replace(/ \| Jwero$/, 
     }
   })(DIST);
   // The homepage's tools graphic loads only when opened (it is large).
-  fs.writeFileSync(path.join(DIST, 'assets', 'home-tools.html'), require('./content/graphics').toolsInto());
+  fs.mkdirSync(path.join(DIST, 'fragments'), { recursive: true });
+  fs.writeFileSync(path.join(DIST, 'fragments', 'home-tools.html'), require('./content/graphics').toolsInto());
   console.log(`Built ${pages.length} pages (+ /whatsapp redirect) → ${DIST}`);
 }
 

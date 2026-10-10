@@ -147,7 +147,7 @@ ${L.section(`<span id="run"></span><div class="price-line">
 
 ${L.section(
   `<span id="count-yours"></span>${L.sectionHead('ONE PLACE FOR ALL OF IT', `${L.STACK_N} separate tools become one.`, 'Every tool a jewellery business pays for, logs into and keeps in step is already inside Jwero, working from the same record.')}
-  <details class="home-fold" data-lazy-src="/assets/home-tools.html"><summary>See all ${L.STACK_N} tools Jwero replaces</summary><p class="home-fold-list">${[...new Set(L.STACK.flatMap(([, , items]) => items).filter((t) => !/integration/i.test(t)))].join(' · ')}</p><div data-lazy-slot></div></details><p class="jb-more"><a href="/products">See every product in Jwero →</a></p>`
+  <details class="home-fold" data-lazy-src="/fragments/home-tools.html"><summary>See all ${L.STACK_N} tools Jwero replaces</summary><p class="home-fold-list">${[...new Set(L.STACK.flatMap(([, , items]) => items).filter((t) => !/integration/i.test(t)))].join(' · ')}</p><div data-lazy-slot></div></details><p class="jb-more"><a href="/products">See every product in Jwero →</a></p>`
 , { tone: 'tint' })}
 
 
