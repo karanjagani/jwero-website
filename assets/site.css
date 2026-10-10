@@ -5402,3 +5402,15 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 @media (max-width: 480px) { .rfeed-mods.is-icons { gap: 5px; padding: 12px 10px; } .rfeed-mods.is-icons .ico { width: 18px; height: 18px; } .rfeed-mods.is-icons li { border-radius: 10px; } }
 /* One Inbox feed: channel labels such as INSTAGRAM need a little more room on a phone */
 @media (max-width: 480px) { .rfeed-list li { grid-template-columns: 64px minmax(0, 1fr); } .rfeed-list b { font-size: .5625rem; letter-spacing: .03em; } }
+
+/* One Inbox: the work behind the conversation, by department */
+.ibx-dept { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
+.ibx-dept article { padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+.ibx-dept h3 { display: flex; align-items: center; gap: 10px; font-size: 1.125rem; letter-spacing: -.02em; margin-bottom: 6px; }
+.ibx-dept h3 .ico { width: 20px; height: 20px; color: var(--brand); }
+.ibx-dept-lead { margin: 0 0 10px; font-size: .9375rem; line-height: 1.45; color: var(--ink-2); }
+.ibx-dept ul { list-style: none; margin: 0; padding: 0; }
+.ibx-dept li { position: relative; padding: 9px 0 9px 22px; border-top: 1px solid var(--line); font-size: .9375rem; line-height: 1.4; }
+.ibx-dept li::before { content: ''; position: absolute; left: 2px; top: 1.05em; width: 8px; height: 5px; border-left: 2px solid #1fa855; border-bottom: 2px solid #1fa855; transform: rotate(-45deg); }
+@media (max-width: 1000px) { .ibx-dept { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .ibx-dept { grid-template-columns: 1fr; } }
