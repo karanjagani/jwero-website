@@ -5576,3 +5576,11 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 .ibx-more { margin-top: 22px; }
 .ibx-more > summary { cursor: pointer; width: max-content; margin: 0 auto 16px; padding: 8px 16px; border-radius: 99px; border: 1px solid var(--line); font-weight: 600; font-size: .875rem; color: var(--brand); }
 @media (max-width: 600px) { .ibx-fork-legs { grid-template-columns: 1fr; } .ibx-fork-lines { height: 36px; } }
+/* Phones: the fork runs straight down, a short line into each box in its own colour */
+@media (max-width: 600px) {
+  .ibx-fork-lines { display: none; }
+  .ibx-fork-legs { gap: 28px; margin-top: 28px; }
+  .ibx-fork-leg { position: relative; }
+  .ibx-fork-leg::before { content: ''; position: absolute; left: 50%; bottom: 100%; width: 3px; height: 30px; margin-left: -1.5px; border-radius: 3px; background: #1fa855; }
+  .ibx-fork-leg.is-h::before { background: var(--amber); }
+}
