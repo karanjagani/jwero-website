@@ -91,6 +91,63 @@ const paths = () => `<div class="ibx-jr" data-jr>
   <p class="ibx-legend"><span class="is-c">Staff</span> <span class="is-ai">Jwero</span> on its own · <span class="is-human">Owner or HR</span></p>
 </div>`;
 
+
+// Six parts of HR, lit by what happens in a month.
+const PARTS = [
+  ['activity', 'Attendance', 'Who is in, at every branch.', ['Kiosk punches', 'Phone punches with geofence and selfie', 'Biometric exports imported']],
+  ['calendar', 'Leave', 'Balances nobody keeps.', ['Approvals with reminders', 'Carry-forward and encashment', 'Comp-off for festival duty']],
+  ['trend', 'Incentives', 'From real sales.', ['Each bill credited to the salesperson', 'On sales or margin, on your slabs', 'Clawback on returns']],
+  ['coins', 'Payroll', 'One run a month.', ['PF, ESI, PT and TDS', 'Loans and advances deducted', 'Approval before paying']],
+  ['scale', 'Karigars', 'Kept apart.', ['A ledger per karigar', 'TDS on payments', 'Their own bank file']],
+  ['book', 'Files', 'Ready for the accountant.', ['Bank file', 'PF, ESI, PT and muster exports', 'Entries posted to the ledger']],
+];
+const FEED = [
+  ['in', 'Branch 2 · 14 of 15 in by 10:15', 0],
+  ['note', 'Ravi late twice · regularisation request', 0],
+  ['in', 'Leave approved · Anita, 2 days', 1],
+  ['in', 'Priya · ₹18 lakh sold · incentive worked out', 2],
+  ['out', 'Pay run ready · waiting for your approval', 3],
+  ['in', 'Karigar Ramesh · job settled, TDS deducted', 4],
+  ['out', 'Bank file and PF, ESI exports ready', 5],
+];
+const partCard = ([ic, t, d, items], k) => `<details class="ibx-dnode" data-d="${k}"><summary><span class="ibx-dnode-ico">${icon(ic)}</span><b>${t}</b><small>${d}</small></summary><ul>${items.map((x) => `<li>${x}</li>`).join('')}</ul></details>`;
+const board = () => `<div class="ibx-biz" data-biz>
+  <div class="ibx-biz-side">${PARTS.slice(0, 3).map((x, k) => partCard(x, k)).join('')}</div>
+  <div class="ibx-biz-thread" aria-hidden="true"><div class="ibx-biz-head">${icon('activity')}<b>This month, on your screen</b></div><ol>${FEED.map(([w, t, d]) => `<li class="is-${w}" data-d="${d}">${t}</li>`).join('')}</ol></div>
+  <div class="ibx-biz-side">${PARTS.slice(3).map((x, k) => partCard(x, k + 3)).join('')}</div>
+</div><p class="ibx-legend">Illustrative. Each line lights the part of HR it comes from. Tap a part to see what it does.</p>`;
+
+// What runs on its own, and what the owner decides.
+const FORK = [
+  ['is-a', 'sparkle', 'Runs on its own', ['Punches counted and overtime worked out', 'Leave balances and comp-off', 'Incentives from each bill, with clawback', 'PF, ESI, PT, TDS and advances in the pay run'], 'check', 'Nobody opens Excel at month end'],
+  ['is-h', 'users', 'Waits for you', ['Leave and regularisation requests', 'The pay run, before anything is paid', 'Incentive slabs and salary changes'], 'shield', 'The person you choose approves'],
+];
+const fork = () => `<div class="ibx-fork" data-gfx>
+  <div class="ibx-fork-in">${icon('activity')}<b>The month runs</b><small>Punches, leave, sales, returns, advances</small></div>
+  <svg class="ibx-fork-lines" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true"><path class="is-a" d="M200 0 C200 30 100 30 100 60"/><path class="is-h" d="M200 0 C200 30 300 30 300 60"/></svg>
+  <div class="ibx-fork-legs">${FORK.map(([c, ic, t, rules, ric, r]) => `<div class="ibx-fork-leg ${c}"><h3>${icon(ic)}${t}</h3><ul>${rules.map((x) => `<li>${x}</li>`).join('')}</ul><p class="ibx-fork-out">${icon(ric)}${r}</p></div>`).join('')}</div>
+</div>`;
+
+// "I run a…"
+const ICP = [
+  ['single', 'store', 'A single store', 'Start with incentives and payroll: each salesperson paid on real sales, with clawback, and month end in one approved run.', 0, 'incentives', 'trial', 'Start free for your store'],
+  ['chain', 'branches', 'A chain or franchise', 'Start with attendance across branches: kiosk or phone punches with geofence, shifts for festival weeks, one pay run for everyone.', 1, 'attendance', 'demo', 'Book a 30-minute demo for a chain'],
+  ['maker', 'scale', 'A workshop or manufacturer', 'Start with karigar payments: a ledger per karigar, TDS, and their own bank file, kept apart from staff salaries.', 2, 'karigars', 'trial', 'Start free for your workshop'],
+];
+const door = ([k, , , , , , d, label], cls) => d === 'demo'
+  ? `<a class="${cls}" href="/book-demo" data-hr-cta="door-${k}">${label}</a>`
+  : `<a class="${cls}" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=hr-${k}" rel="noopener" data-trial data-hr-cta="door-${k}">${label}</a>`;
+const icpBox = () => `<div class="erp-icp soc-icp" data-dc-icp data-door="hr-door" data-pfx="hr" data-cfg='${JSON.stringify(Object.fromEntries(ICP.map(([k, , , , j, lead]) => [k, [j, lead]])))}'>
+  <div class="erp-icp-opts" role="tablist" aria-label="I run a…">${ICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${icon(ic)}<span>${t}</span></button>`).join('')}</div>
+  ${ICP.map((e, i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p><div class="erp-icp-go"><a href="#month-end">Month end ↓</a><a href="#board">What you see ↓</a><a href="#journeys">Your journey ↓</a><a href="#${e[5]}">${e[5][0].toUpperCase() + e[5].slice(1)} ↓</a></div><p class="erp-icp-door">${door(e, 'btn btn-primary')}</p></div>`).join('')}
+</div>`;
+const prog = () => `<nav class="erp-prog" data-erp-prog aria-label="On this page"><div class="erp-prog-in">
+  <ol>${[['month-end', 'Month end'], ['board', 'Watch'], ['fork', 'On its own'], ['leaks', 'Leaks'], ['modules', 'Features'], ['journeys', 'Journeys']].map(([id, t], i) => `<li><a href="#${id}" data-p="${id}"><b>${i + 1}</b>${t}</a></li>`).join('')}</ol>
+  <span class="erp-prog-doors">${ICP.map((e) => door(e, 'btn btn-primary erp-prog-cta hr-door')).join('')}</span>
+</div><i class="erp-prog-fill" aria-hidden="true"></i></nav>`;
+
+const READS = [['/products/erp', 'ERP: the ledger payroll posts to, and the karigar jobs'], ['/products/crm', 'CRM: the sales each incentive comes from'], ['/products/inbox', 'One Inbox: who answers which customer']];
+
 const CMP = [
   ['Attendance', 'A register', 'An app or a device', 'Kiosk, phone with geofence and selfie, or biometric exports'],
   ['Salary', 'Excel formulas', 'Payroll', 'Pay runs with PF, ESI, PT and TDS, approved before paying'],
@@ -149,9 +206,17 @@ ${L.hero({
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
+${prog()}
+
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What is Jwero HR & Payroll?</h2><p>Jwero HR & Payroll runs a jewellery business’s people work: attendance from kiosks, phones or biometric exports, shifts and leave, pay runs with PF, ESI, PT and TDS, sales incentives from real sales with clawback, karigar payments kept separate, loans and expenses, hiring to full and final, appraisals and training, with every entry posted to the books.</p></div></section>
 
+${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
+
 ${L.section(`${L.sectionHead('MONTH END', 'How does payroll run for a jewellery shop?', 'Six steps, from the punch to the payslip.')}${run()}`, { id: 'month-end' })}
+
+${L.section(`${L.sectionHead('ONE SCREEN', 'What does HR look like during the month?', 'Six parts, lit as the month runs.')}${board()}`, { tone: 'tint', id: 'board' })}
+
+${L.section(`${L.sectionHead('ON ITS OWN', 'What runs by itself, and what waits for you?', '')}${fork()}`, { id: 'fork' })}
 
 ${L.section(`${L.sectionHead('LEAKS CLOSED', 'Where does a jewellery shop lose money on people?', 'Nine places, closed.')}${leakCards()}`, { tone: 'tint', id: 'leaks' })}
 
@@ -160,6 +225,8 @@ ${L.section(`${L.sectionHead('EVERYTHING IN IT', 'What does Jwero HR cover?', 'E
 ${L.section(`${L.sectionHead('JOURNEYS', 'How it runs on a real floor.', 'Four real paths.')}${paths()}`, { tone: 'tint', id: 'journeys' })}
 
 ${L.section(`${L.sectionHead('COMPARE', 'Excel and a register, a generic HR app, or Jwero.', '')}${cmpTable()}`)}
+
+${L.section(`${L.sectionHead('READ MORE', 'Where HR connects.', '')}<div class="erp-map">${READS.map(([h, t]) => `<a href="${h}"><b>${t}</b></a>`).join('')}</div>`)}
 
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to run payroll for a jewellery shop.', 'Five steps.')}${L.steps(HOW.map(([title, text]) => ({ title, text })))}`, { tone: 'tint' })}
 

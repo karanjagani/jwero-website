@@ -6334,3 +6334,4 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 @keyframes dcTl { to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .dc-tl li { animation: none; opacity: 1; transform: none; } }
 .dc-door[hidden] { display: none; }
+.hr-door[hidden] { display: none; }

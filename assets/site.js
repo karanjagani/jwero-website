@@ -1255,24 +1255,26 @@ function jwFromInr(n) {
   // Catalogues: "I run a…" picker.
   Array.prototype.forEach.call(document.querySelectorAll('[data-dc-icp]'), function (box) {
     var CFG = JSON.parse(box.getAttribute('data-cfg'));
-    var MAP = { single: 'single', staff: 'single', chain: 'single', franchise: 'single', maker: 'b2b', b2b: 'b2b', trader: 'b2b', d2c: 'brand', brand: 'brand' };
-    var STORE = { single: 'single', b2b: 'b2b', brand: 'd2c' };
+    var HRP = box.getAttribute('data-pfx') === 'hr', DOOR = '.' + (box.getAttribute('data-door') || 'dc-door'), ATTR = HRP ? 'data-hr-cta' : 'data-dc-cta';
+    var MAP = HRP ? { single: 'single', staff: 'single', d2c: 'single', brand: 'single', chain: 'chain', franchise: 'chain', maker: 'maker', b2b: 'maker', trader: 'single' } : { single: 'single', staff: 'single', chain: 'single', franchise: 'single', maker: 'b2b', b2b: 'b2b', trader: 'b2b', d2c: 'brand', brand: 'brand' };
+    var STORE = HRP ? { single: 'single', chain: 'chain', maker: 'maker' } : { single: 'single', b2b: 'b2b', brand: 'd2c' };
     var jr = document.querySelector('#journeys [data-jr]');
     function apply(k, fromUser) {
       Array.prototype.forEach.call(box.querySelectorAll('[data-k]'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k ? 'true' : 'false'); });
       Array.prototype.forEach.call(box.querySelectorAll('[data-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
       if (jr && jr.jrShow && (fromUser || CFG[k][0] !== 0)) jr.jrShow(CFG[k][0]);
-      Array.prototype.forEach.call(document.querySelectorAll('.dc-door'), function (a) { a.hidden = a.getAttribute('data-dc-cta') !== 'door-' + k; });
-      if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack('dc_icp_pick', { icp: k }); }
+      Array.prototype.forEach.call(document.querySelectorAll(DOOR), function (a) { a.hidden = a.getAttribute(ATTR) !== 'door-' + k; });
+      if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack(HRP ? 'hr_icp_pick' : 'dc_icp_pick', { icp: k }); }
     }
     box.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (b) apply(b.getAttribute('data-k'), true); });
     var saved = ''; try { saved = localStorage.getItem('jwero-persona') || ''; } catch (e) {}
-    var asked = /[?&](?:dc|p)=(single|chain|brand|franchise|d2c|maker|b2b|trader|staff)/.exec(location.search);
+    var asked = (HRP ? /[?&](?:hr|p)=(single|chain|brand|franchise|d2c|maker|b2b|trader|staff)/ : /[?&](?:dc|p)=(single|chain|brand|franchise|d2c|maker|b2b|trader|staff)/).exec(location.search);
     apply(MAP[asked ? asked[1] : saved] || 'single', !!asked);
   });
   document.addEventListener('click', function (e) {
     if (!window.jweroTrack) return;
     var c = e.target.closest('[data-dc-cta]'); if (c) window.jweroTrack('dc_cta', { at: c.getAttribute('data-dc-cta') });
+    var h = e.target.closest('[data-hr-cta]'); if (h) window.jweroTrack('hr_cta', { at: h.getAttribute('data-hr-cta') });
   });
 
   // HR and Catalogues: hero meters.
