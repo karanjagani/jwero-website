@@ -36,10 +36,17 @@ const hdoor = ([k, , , , d, label], cls) => d === 'demo'
   ? `<a class="${cls}" href="/book-demo" data-home-cta="door-${k}">${label}</a>`
   : `<a class="${cls}" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=home-${k}" rel="noopener" data-trial data-home-cta="door-${k}">${label}</a>`;
 const SOL = { single: ['/solutions/single-store', 'a showroom like yours'], chain: ['/solutions/multi-store-chains', 'a chain like yours'], maker: ['/solutions/manufacturers', 'a workshop like yours'], b2b: ['/solutions/b2b-jewellery', 'a wholesaler like yours'], brand: ['/solutions/d2c-brands', 'a brand like yours'] };
+const STARTERS = {
+  single: [['chat', 'WhatsApp, answered', '/products/inbox#whatsapp'], ['till', 'Billing at today’s rate', '/products/erp#pos'], ['box', 'Stock you can see', '/products/erp#inventory']],
+  chain: [['branches', 'Every branch on one record', '/products/multi-store'], ['users', 'Leads routed, replies timed', '/products/crm'], ['box', 'Stock that balances by weight', '/products/erp#inventory']],
+  maker: [['scale', 'Karigar job work in fine grams', '/products/erp#manufacturing'], ['activity', 'Wastage against your norms', '/products/erp#leaks'], ['truck', 'Purchase with unfixed rates', '/products/erp#purchase']],
+  b2b: [['truck', 'Buying and GSTR-2B', '/products/erp#purchase'], ['book', 'Buyer catalogues', '/products/digital-catalogues'], ['users', 'Buyer follow-ups', '/products/crm']],
+  brand: [['store', 'An online store at today’s rate', '/products/ecommerce'], ['target', 'Personalised promotions', '/products/promotions'], ['camera', 'Social posts made by AI', '/products/social-media']],
+};
 const homeIcp = () => `<section class="home-icp" id="for-you" data-home-icp data-order='${JSON.stringify(ORDER)}'><div class="container">
   <p class="home-icp-q">I run a…</p>
   <div class="home-icp-opts" role="tablist">${HICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${L.icon(ic)}<span>${t}</span></button>`).join('')}</div>
-  ${HICP.map((e, i) => `<div class="home-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p>${hdoor(e, 'btn btn-primary')}<a class="btn-text" href="${SOL[e[0]][0]}" data-home-cta="sol-${e[0]}">How it works for ${SOL[e[0]][1]} →</a><a class="btn-text" href="#six">See your six jobs ↓</a></div>`).join('')}
+  ${HICP.map((e, i) => `<div class="home-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p><div class="home-icp-start"><small>Start with three</small>${STARTERS[e[0]].map(([ic, t, h]) => `<a href="${h}" data-home-cta="start-${e[0]}">${L.icon(ic)}${t}</a>`).join('')}</div>${hdoor(e, 'btn btn-primary')}<a class="btn-text" href="${SOL[e[0]][0]}" data-home-cta="sol-${e[0]}">How it works for ${SOL[e[0]][1]} →</a><a class="btn-text" href="#six">See your six jobs ↓</a></div>`).join('')}
   <p class="home-icp-more">Just starting? <a href="/solutions/startups">Start with what chains took decades to build →</a> · <a href="/solutions">All 45 businesses, problems and roles →</a></p>
 </div></section>`;
 const SIX = [
@@ -96,8 +103,8 @@ const home = {
   body: `
 ${L.homeHero({
   kicker: 'You focus on jewellery. We handle the chaos.',
-  h1: 'Jewellery software that runs the whole business: customers, counter, stock, team and books.',
-  sub: 'One system, so nothing is typed twice and nothing needs connecting, with AI that does the follow-up on its own.',
+  h1: 'Every customer remembered. <span class="h1-turn">Every gram accounted for.</span>',
+  sub: 'Jewellery software that runs the whole business on one record: customers, counter, stock, team and books, with AI that does the follow-up on its own.',
   rail: false,
   gem: { set: 'd2c' },
 })}
@@ -112,32 +119,36 @@ ${prog()}
 
 ${L.section(`${L.sectionHead('ONE RECORD, SIX JOBS', 'What does Jwero run for a jeweller?', 'Six products, one customer record. Open the one that hurts most today.')}${six()}`, { id: 'six' })}
 
-${L.section(`${L.sectionHead('WHAT YOU MISS TODAY', 'What could your business be missing each month?', 'Three numbers. Each line opens the page that closes it.')}${meter()}`, { tone: 'tint', id: 'missing' })}
-
-${L.section(`${L.sectionHead('TRY IT', 'What does the AI say to your customer?', 'Pick a message. See the reply, and what it used.')}${require('./inbox').parts.tryIt()}`, { id: 'try' })}
-
-${L.section(`${L.sectionHead('IN THEIR WORDS', 'Jewellers on working with Jwero.', '')}${require('./positioning').quoteCards(3)}<p class="jb-more"><a href="/success-stories">Read what more jewellers say →</a></p>`)}
-${L.section(`${L.sectionHead('WHERE MOST SHOPS START', 'Three things on day one. The rest when you need it.', 'You do not switch on 35 products. You switch on the three that cost you sales today, and each one replaces something you pay for now.')}
-  <div class="bl-goals bl-goals-3 home-three">${[
-    ['chat', 'WhatsApp, answered', 'Your business number on the official API, the catalogue at today’s rate, replies sent by AI from her record, payments in the chat.', 'Replaces: a personal number, a bulk-message tool, a payment link app', '/products/inbox#whatsapp'],
-    ['till', 'Billing at the live rate', 'Scan to bill with the price breakup, old gold exchange, GST and day close, with the books kept in step with Tally.', 'Replaces: the calculator, the rate board, a billing package, re-entry into Tally or your accounting software', '/products/erp#pos'],
-    ['box', 'Stock you can see', 'Every piece by weight, purity and HUID, valued today, with ageing and dead stock flagged.', 'Replaces: the stock sheet, the yearly stocktake surprise', '/products/erp#inventory'],
-  ].map(([i, t, d, r, h]) => `<a href="${h}"><span class="home-who-ico">${L.icon(i)}</span><b>${t}</b><span>${d}</span><i>${r}</i></a>`).join('')}</div>
-  <p class="cta-note" style="margin-top:14px;text-align:center">Customers, catalogue and stock are imported for you, and you can bill alongside your old system until the team is settled. <a href="/products">See every product →</a></p>`)}
-
-${L.section(`<div class="global-strip"><p class="eyebrow">WORLDWIDE</p><h2>Built for jewellers in every market.</h2><p>Your currency, GST, VAT or sales tax, your gold rate by gram, ounce or tola, your customers’ languages including Arabic, and hosting in your region.</p><p class="global-links"><a href="/jewellery-software-india">India</a><a href="/jewellery-software-uae">The Gulf</a><a href="/jewellery-software-uk">UK and Europe</a><a href="/jewellery-software-usa">US and Canada</a><a href="/jewellery-software-singapore">South and Southeast Asia</a><a href="/global">Jwero worldwide →</a></p></div>`, { tone: 'tint' })}
-${L.section(
-  `${L.sectionHead('FROM MANY LOGINS TO ONE RECORD', 'What changes across the whole jewellery business.', 'Not only how you sell. The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}
-  <div data-cmp-tabs>${L.compareRows(L.DEPARTMENTS)}</div>`
-)}
-
-<section class="section rail-section" id="journey"><div class="container"><div class="panel rail-panel"><h2>From the first enquiry to the closed books.</h2><p>Seven stages, one record. Tap a stage to see what is in it and what the AI does there.</p>${L.heroRail()}</div></div></section>
-
 ${L.section(
   `<span id="one-record"></span>${L.sectionHead('THE PRODUCT', 'One dashboard. Every department on it.', 'A sale at the counter updates the stock, the books, her loyalty points and the next follow-up at the same moment, because they are all the same record. This is a real recording, not a mock-up.')}
 <figure class="pvid"><div class="pvid-frame"><video data-pvid muted loop playsinline preload="none" poster="/assets/product/os-overview.webp" width="1280" height="720" aria-label="Screen recording of Jwero: the Stock and Workshop overview with open purchase orders, inventory value, metal value and a stock pulse, then the tabs for Sales, Marketing, Finance and Teams"><source src="/assets/product/os-overview.mp4" type="video/mp4"></video><button type="button" class="pvid-toggle" data-pvid-toggle aria-label="Pause the recording">Pause</button></div>
 <figcaption>Operations, Sales, Marketing, Finance and Teams across the top of one screen. <a href="/platform">Take the full tour →</a></figcaption></figure>`
 , { tone: 'tint' })}
+
+${L.section(`${L.sectionHead('WHAT YOU MISS TODAY', 'What could your business be missing each month?', 'Three numbers. Each line opens the page that closes it.')}${meter()}`, { tone: 'tint', id: 'missing' })}
+
+${L.section(`${L.sectionHead('TRY IT', 'What does the AI say to your customer?', 'Pick a message. See the reply, and what it used.')}${require('./inbox').parts.tryIt()}`, { id: 'try' })}
+
+
+
+
+${L.section(`<div class="global-strip"><p class="eyebrow">WORLDWIDE</p><h2>Built for jewellers in every market.</h2><p>Your currency, GST, VAT or sales tax, your gold rate by gram, ounce or tola, your customers’ languages including Arabic, and hosting in your region.</p><p class="global-links"><a href="/jewellery-software-india">India</a><a href="/jewellery-software-uae">The Gulf</a><a href="/jewellery-software-uk">UK and Europe</a><a href="/jewellery-software-usa">US and Canada</a><a href="/jewellery-software-singapore">South and Southeast Asia</a><a href="/global">Jwero worldwide →</a></p></div>`, { tone: 'tint' })}
+
+
+
+
+
+
+<section class="section home-dept-toggle"><div class="container"><button type="button" class="home-dept-btn" data-dept-toggle aria-expanded="false">See department by department ↓</button></div></section>
+<div class="home-dept-wrap" data-dept-wrap hidden>
+${L.section(
+  `${L.sectionHead('FROM MANY LOGINS TO ONE RECORD', 'What changes across the whole jewellery business.', 'Not only how you sell. The counter, the stock room, the vendor, the workshop, the books and the team run on the same record, so each one knows what the others did.')}
+  <div data-cmp-tabs>${L.compareRows(L.DEPARTMENTS)}</div>`
+)}
+<section class="section rail-section" id="journey"><div class="container"><div class="panel rail-panel"><h2>From the first enquiry to the closed books.</h2><p>Seven stages, one record. Tap a stage to see what is in it and what the AI does there.</p>${L.heroRail()}</div></div></section>
+</div>
+
+${L.section(`${L.sectionHead('IN THEIR WORDS', 'Jewellers on working with Jwero.', '')}${require('./positioning').quoteCards(3)}<p class="jb-more"><a href="/success-stories">Read what more jewellers say →</a></p>`)}
 
 ${L.section(`<span id="run"></span><div class="price-line">
   <div><p class="eyebrow">ONE PLAN, EVERY MODULE</p><h2>Run it yourself, or let Jwero run it.</h2><p>One plan with every module replaces the tools you pay for today. You start with a free trial, and your price is shown in your account when it ends. Or let Jwero’s specialists and AI run the work for you: no subscription, every tool included.</p></div>
