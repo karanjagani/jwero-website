@@ -6414,8 +6414,11 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 .dc-qr-feed { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; } .dc-qr-feed li { display: flex; gap: 10px; align-items: center; padding: 12px 14px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); opacity: 0; animation: dcTl .5s ease forwards; animation-delay: calc(var(--i) * .3s); } .dc-qr-feed svg { width: 18px; height: 18px; color: var(--amber); }
 @media (prefers-reduced-motion: reduce) { .dc-qr-feed li, .dc-ai-out.is-on li { animation: none; opacity: 1; } }
 @media (max-width: 760px) { .dc-try, .dc-qr, .dc-pv { grid-template-columns: 1fr; } .dc-phone { width: 100%; max-width: 320px; margin: 0 auto; } .dc-vs { grid-template-columns: 1fr; } .dc-vs-arrow { justify-self: center; transform: rotate(90deg); } .dc-qr-card { max-width: 240px; margin: 0 auto; } }
-/* Homepage: Instagram reels */
-.home-reels { display: grid; grid-auto-flow: column; grid-auto-columns: 300px; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; justify-content: safe center; }
-.home-reel { scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: var(--card); }
-.home-reel iframe { display: block; width: 100%; height: 540px; border: 0; }
-@media (max-width: 640px) { .home-reels { grid-auto-columns: 82%; justify-content: start; } }
+/* Homepage: Instagram reels, video only, full width.
+   The embed shows a 54px header, then the reel letterboxed in a 4:5 box; the frame
+   below crops to the 9:16 video inside it. */
+.home-reels-band { padding: 0; }
+.home-reels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.home-reel { position: relative; aspect-ratio: 9 / 16; overflow: hidden; background: #000; }
+.home-reel iframe { position: absolute; top: -54px; left: -21.11%; width: 142.22%; height: calc(100% + 400px); border: 0; }
+@media (max-width: 760px) { .home-reels { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; scroll-snap-type: x mandatory; } .home-reel { scroll-snap-align: start; } }
