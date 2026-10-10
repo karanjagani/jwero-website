@@ -68,6 +68,8 @@ function jwFromInr(n) {
     sticky: 'Hi Jwero, I would like to see a quick demo.',
     home: 'Hi Jwero, show me how the AI workforce works.',
     inbox: 'Hi Jwero, show me my WhatsApp, Instagram, email and calls in one inbox.',
+    social: 'Hi Jwero, show me the posts Jwero would make for my shop this week.',
+    ecommerce: 'Hi Jwero, show me where my website loses orders and the store Jwero would build.',
     roles: 'Hi Jwero, I want to understand how this helps my team, role by role.',
     proof: 'Hi, testing the inbox this button leads to. Show me what you’ve got.',
     report: 'Hi Jwero, I would like a sample growth report for my business.',
@@ -979,6 +981,59 @@ function jwFromInr(n) {
     var c = e.target.closest('[data-soc-cta]'); if (c) window.jweroTrack('soc_cta', { at: c.getAttribute('data-soc-cta'), label: (c.textContent || '').trim().slice(0, 60) });
     var f = e.target.closest('.soc-signals .ibx-flip'); if (f) window.jweroTrack('soc_signal_turn', { signal: (f.querySelector('.erp-leak-k') || {}).textContent || '' });
     var j = e.target.closest('#journeys [data-jr-tab]'); if (j && document.querySelector('[data-soc-icp]')) window.jweroTrack('soc_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
+  });
+
+  // Ecommerce: the hero meter.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ecm]'), function (m) {
+    var n = function (sel) { var el = m.querySelector(sel); return el ? Number(el.value) || 0 : 0; }, used = false, cta = m.querySelector('[data-ec-cta="meter"]');
+    var inr = function (v) { v = Math.round(v); if (v >= 1e7) return '₹' + (v / 1e7).toFixed(2).replace(/\.?0+$/, '') + ' crore'; if (v >= 1e5) return '₹' + (v / 1e5).toFixed(1).replace(/\.0$/, '') + ' lakh'; return '₹' + v.toLocaleString('en-IN'); };
+    function calc() {
+      var v = n('[data-i="v"]'), aov = n('[data-i="aov"]'), cr = n('[data-a="cr"]'), lift = n('[data-a="lift"]');
+      var now = v * cr / 100, then = v * (cr + lift) / 100, max = Math.max(then, 1);
+      m.querySelector('[data-o="v"]').textContent = v.toLocaleString('en-IN'); m.querySelector('[data-o="aov"]').textContent = inr(aov);
+      [['now', now], ['then', then]].forEach(function (x) { var a = m.querySelector('[data-b="' + x[0] + '"]'); a.querySelector('em').style.width = (x[1] / max * 100).toFixed(1) + '%'; a.querySelector('b').textContent = Math.round(x[1]) + ' orders'; });
+      var extra = inr((then - now) * aov); m.querySelector('[data-o="total"]').textContent = extra;
+      if (cta) cta.setAttribute('data-wa-extra', ' About ' + v.toLocaleString('en-IN') + ' visitors a month, average order ' + inr(aov) + '. Your page estimates ' + extra + ' a month more from a small lift.');
+    }
+    m.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('ec_meter_use', {}); } });
+    calc();
+  });
+
+  // Ecommerce: same page, three visitors.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ecp]'), function (p) {
+    var timer = 0, cur = 0, manual = false, tabs = p.querySelectorAll('[data-v]'), views = p.querySelectorAll('[data-vv]');
+    function show(i) { cur = i; Array.prototype.forEach.call(tabs, function (t, k) { t.setAttribute('aria-selected', k === i ? 'true' : 'false'); }); Array.prototype.forEach.call(views, function (v, k) { v.classList.toggle('is-on', k === i); }); }
+    p.addEventListener('click', function (e) { var t = e.target.closest('[data-v]'); if (!t) return; manual = true; window.clearTimeout(timer); show(Number(t.getAttribute('data-v'))); if (window.jweroTrack) window.jweroTrack('ec_visitor_pick', { v: t.textContent.trim().slice(0, 40) }); });
+    if (reduceMotion) return;
+    function next() { if (manual) return; timer = window.setTimeout(function () { show((cur + 1) % views.length); next(); }, 4500); }
+    whileVisible(p, next, function () { window.clearTimeout(timer); });
+  });
+
+  // Ecommerce: "I run a…".
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ec-icp]'), function (box) {
+    var CFG = JSON.parse(box.getAttribute('data-cfg'));
+    var MAP = { single: 'single', staff: 'single', maker: 'single', b2b: 'single', trader: 'single', chain: 'chain', franchise: 'chain', d2c: 'brand', brand: 'brand' };
+    var STORE = { single: 'single', chain: 'chain', brand: 'd2c' };
+    var jr = document.querySelector('#journeys [data-jr]');
+    function apply(k, fromUser) {
+      Array.prototype.forEach.call(box.querySelectorAll('[data-k]'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k ? 'true' : 'false'); });
+      Array.prototype.forEach.call(box.querySelectorAll('[data-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
+      if (jr && jr.jrShow && (fromUser || CFG[k][0] !== 0)) jr.jrShow(CFG[k][0]);
+      var lead = document.getElementById(CFG[k][1] === 'optimize' ? 'optimize' : 'use-cases'), after = document.getElementById('one-visit');
+      if (lead && after && k === 'brand') after.parentNode.insertBefore(lead, after.nextSibling);
+      Array.prototype.forEach.call(document.querySelectorAll('.ec-door'), function (a) { a.hidden = a.getAttribute('data-ec-cta') !== 'door-' + k; });
+      var band = document.querySelector('.cta-band .btn-ghost-light[href="/book-demo"]'); if (band) band.textContent = k === 'chain' ? 'Book a 30-minute demo for a chain' : 'Book a demo';
+      if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack('ec_icp_pick', { icp: k }); }
+    }
+    box.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (b) apply(b.getAttribute('data-k'), true); });
+    var saved = ''; try { saved = localStorage.getItem('jwero-persona') || ''; } catch (e) {}
+    var asked = /[?&](?:ec|p)=(single|chain|brand|franchise|d2c|maker|b2b|trader|staff)/.exec(location.search);
+    apply(MAP[asked ? asked[1] : saved] || 'single', !!asked);
+  });
+  document.addEventListener('click', function (e) {
+    if (!window.jweroTrack || !document.querySelector('[data-ec-icp], [data-ecp]')) return;
+    var c = e.target.closest('[data-ec-cta]'); if (c) window.jweroTrack('ec_cta', { at: c.getAttribute('data-ec-cta'), label: (c.textContent || '').trim().slice(0, 60) });
+    var j = e.target.closest('#journeys [data-jr-tab]'); if (j && document.querySelector('[data-ec-icp]')) window.jweroTrack('ec_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
   });
 
   // Jewellery ERP: "I run a…" reorders departments, leaks and the first journey.

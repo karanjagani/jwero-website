@@ -39,7 +39,7 @@ const SOCIALS = [
 // Each page is stamped with the mtime of the content file that defined it, so the
 // sitemap can emit an honest <lastmod> without hand-maintaining dates.
 const CONTENT_FILES = [
-  'home', 'platform', 'products', 'products-sell', 'inbox', 'inbox-landings', 'erp', 'erp-landings', 'social', 'social-landings', 'products-run', 'products-grow', 'products-manage', 'products-hr', 'products-ops', 'products-more', 'brief', 'erp-to-os', 'pricing', 'diamond-traders',
+  'home', 'platform', 'products', 'products-sell', 'inbox', 'inbox-landings', 'erp', 'erp-landings', 'social', 'social-landings', 'ecommerce', 'ecommerce-landings', 'products-run', 'products-grow', 'products-manage', 'products-hr', 'products-ops', 'products-more', 'brief', 'erp-to-os', 'pricing', 'diamond-traders',
   'industries', 'solutions', 'solutions-retail-segments', 'solutions-wholesale',
   'solutions-manufacturing-segments', 'solutions-other-segments', 'pain', 'trust',
   'compare', 'tools', 'faq', 'company', 'partners', 'blog', 'roles',
@@ -62,7 +62,7 @@ for (const f of CONTENT_FILES) {
 const PRODUCT_GROUPS = [
   { title: 'Sell', items: [
     ['/products/inbox', 'One Inbox', 'WhatsApp, Instagram, email, calls and AI, together'],
-    ['/products/ecommerce', 'Ecommerce', 'Built for jewellery businesses'],
+    ['/products/ecommerce', 'Ecommerce', 'Live-rate store, personalised, optimised'],
     ['/products/meetings', 'Video Counter & Appointments', 'Meet from the inbox, self-booking'],
     ['/products/quotations', 'Quotations', 'Numbered, live-rate, accepted online'],
     ['/products/digital-catalogues', 'Digital Catalogues', 'Shareable links, every view tracked'],
@@ -71,7 +71,6 @@ const PRODUCT_GROUPS = [
     ['/products/marketplaces', 'Google Shopping & Meta', 'Catalogue on every channel'],
     ['/products/ads-manager', 'Ads Manager', 'Meta, Google & Pinterest'],
     ['/products/social-media', 'Social Media', 'AI posts, 8 channels, Google reviews'],
-    ['/products/optimize', 'Optimize (Website Visitors)', 'Heatmaps, A/B tests, webchat'],
   ]},
   { title: 'Know', items: [
     ['/products/crm', 'Jewellery CRM', 'Customer 360 for the trade'],
@@ -116,7 +115,9 @@ const ERP_MOVED = {
   '/products/pos': ['/products/erp#pos', 'Counter POS', 'Scan, price, exchange, day-close'],
   '/products/repairs-service': ['/products/erp#repairs', 'Repairs & After-Sales', 'Weight in, weight out, every handoff'],
 };
-const MERGED = Object.assign({}, INBOX_MOVED, ERP_MOVED);
+// Optimize merged into the ecommerce page on 2026-10-10.
+const ECOM_MOVED = { '/products/optimize': ['/products/ecommerce#optimize', 'Optimize (Website Visitors)', 'Heatmaps, tests, personalisation'] };
+const MERGED = Object.assign({}, INBOX_MOVED, ERP_MOVED, ECOM_MOVED);
 // Header navigation: the full menus, restored 2026-10-09 at the user's request
 // after a short trial of a trimmed header.
 const NAV = [
@@ -977,6 +978,7 @@ function fillPersona(body) {
 function productMeta(href) {
   for (const g of PRODUCT_GROUPS) for (const it of g.items) if (it[0] === href) return { label: it[1], desc: it[2], group: g.title, items: g.items };
   if (INBOX_MOVED[href]) return { label: INBOX_MOVED[href][1], desc: INBOX_MOVED[href][2], group: 'Sell', items: PRODUCT_GROUPS[0].items };
+  if (ECOM_MOVED[href]) { const g = PRODUCT_GROUPS.find((x) => x.items.some((it) => it[0] === '/products/ecommerce')); return { label: ECOM_MOVED[href][1], desc: ECOM_MOVED[href][2], group: g.title, items: g.items }; }
   if (ERP_MOVED[href]) { const g = PRODUCT_GROUPS.find((x) => x.title === 'Run'); return { label: ERP_MOVED[href][1], desc: ERP_MOVED[href][2], group: 'Run', items: g.items }; }
   return null;
 }
@@ -1306,7 +1308,7 @@ function withProductHome(html, slug) {
   const mk = old.indexOf('<div class="container"><div class="stage hero-mock">');
   const mock = mk > 0 ? old.slice(mk, old.lastIndexOf('</section>')) : '';
   const story = PRODUCT_STORY[m[1]] || 'single';
-  const own = m[1] === 'inbox' ? require('./content/inbox').heroPiece() : m[1] === 'erp' ? require('./content/erp').heroPiece() : m[1] === 'social-media' ? require('./content/social').heroPiece() : '';
+  const own = m[1] === 'inbox' ? require('./content/inbox').heroPiece() : m[1] === 'erp' ? require('./content/erp').heroPiece() : m[1] === 'social-media' ? require('./content/social').heroPiece() : m[1] === 'ecommerce' ? require('./content/ecommerce').heroPiece() : '';
   const hero = L4.homeHero({ kicker, h1, sub, piece: own || L4.recordFeed({ set: story, href: '/' + slug }) })
     .replace(/utm_medium=home-hero/g, 'utm_medium=product-' + m[1]).replace('hero-home"', 'hero-home hero-product"')
     + `<section class="pz-logos">${L4.customerLogos()}</section>`
@@ -1915,7 +1917,7 @@ function build() {
     fs.writeFileSync(path.join(dir, 'index.html'), noDash(journeyFix(layout(p), p)));
   }
   // Retired addresses: the separate /focus site, /jbaas and the old /jwero-os home.
-  const MOVED = { 'products/inventory': '/products/erp#inventory', 'products/manufacturing': '/products/erp#manufacturing', 'products/purchase-vendors': '/products/erp#purchase', 'products/billing-finance': '/products/erp#finance', 'products/pos': '/products/erp#pos', 'products/repairs-service': '/products/erp#repairs', 'products/whatsapp': '/products/inbox#whatsapp', 'whatsapp-broadcast-for-jewellers': '/products/inbox#whatsapp-marketing', 'products/instagram-facebook': '/products/inbox#instagram-facebook', 'products/ai-sales-agents': '/products/inbox#ai-agent', 'products/email': '/products/inbox#email', 'why-an-os': '/platform', roadmap: '/platform', 'products/digital-gold': '/products/gold-schemes', 'products/storefront': '/products/ecommerce', 'jwero-os': '/', jbaas: '/jewellery-business-as-a-service', focus: '/jewellery-business-as-a-service', 'managed-services': '/jewellery-business-as-a-service', 'focus/managed-services': '/jewellery-business-as-a-service' };
+  const MOVED = { 'products/optimize': '/products/ecommerce#optimize', 'products/inventory': '/products/erp#inventory', 'products/manufacturing': '/products/erp#manufacturing', 'products/purchase-vendors': '/products/erp#purchase', 'products/billing-finance': '/products/erp#finance', 'products/pos': '/products/erp#pos', 'products/repairs-service': '/products/erp#repairs', 'products/whatsapp': '/products/inbox#whatsapp', 'whatsapp-broadcast-for-jewellers': '/products/inbox#whatsapp-marketing', 'products/instagram-facebook': '/products/inbox#instagram-facebook', 'products/ai-sales-agents': '/products/inbox#ai-agent', 'products/email': '/products/inbox#email', 'why-an-os': '/platform', roadmap: '/platform', 'products/digital-gold': '/products/gold-schemes', 'products/storefront': '/products/ecommerce', 'jwero-os': '/', jbaas: '/jewellery-business-as-a-service', focus: '/jewellery-business-as-a-service', 'managed-services': '/jewellery-business-as-a-service', 'focus/managed-services': '/jewellery-business-as-a-service' };
   for (const p of pages) if (p.slug !== 'index' && !p.slug.includes('/')) MOVED['focus/' + p.slug] = '/' + p.slug;
   MOVED['focus/jwero-os'] = '/';
   for (const [from, to] of Object.entries(require('./content/legacy-posts.json').redirects)) MOVED[from] = to.charAt(0) === '/' ? to : '/' + to;
