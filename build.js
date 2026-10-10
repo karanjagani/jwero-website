@@ -73,7 +73,7 @@ const PRODUCT_GROUPS = [
     ['/products/social-media', 'Social Media', 'AI posts, 8 channels, Google reviews'],
   ]},
   { title: 'Know', items: [
-    ['/products/crm', 'Jewellery CRM', '20+ sources, one record, who to call today'],
+    ['/products/crm', 'Jewellery CRM', '35+ sources, one record, who to call today'],
     ['/products/showroom', 'Showroom Intelligence', 'Who is on your floor, right now'],
     ['/products/reports', 'Reports & Dashboards', 'Ask a question, pin the answer'],
   ]},

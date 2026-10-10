@@ -52,7 +52,7 @@ const homeIcp = () => `<section class="home-icp" id="for-you" data-home-icp data
 const SIX = [
   ['inbox', '/products/inbox', 'ib', 'chat', 'One Inbox', 'Every enquiry answered in seconds, on every channel.', '<span class="hv hv-race"><i></i><i></i></span>'],
   ['erp', '/products/erp', 'erp', 'scale', 'Jewellery ERP', 'Counter, stock, workshop and books, without the leaks.', '<span class="hv hv-bars"><i></i><i></i><i></i></span>'],
-  ['crm', '/products/crm', 'crm', 'users', 'Jewellery CRM', '20+ sources on one record, and who to call today.', '<span class="hv hv-dots"><i></i><i></i><i></i><i></i><i></i><b></b></span>'],
+  ['crm', '/products/crm', 'crm', 'users', 'Jewellery CRM', '35+ sources on one record, and who to call today.', '<span class="hv hv-dots"><i></i><i></i><i></i><i></i><i></i><b></b></span>'],
   ['promotions', '/products/promotions', 'pr', 'target', 'Personalised Promotions', 'The right piece, to the right customer, at her moment.', '<span class="hv hv-chips"><i></i><i></i><i></i></span>'],
   ['social', '/products/social-media', 'soc', 'camera', 'Social Media', 'Posts made by AI from your own stock, on 8 channels.', '<span class="hv hv-cal"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>'],
   ['ecommerce', '/products/ecommerce', 'ec', 'store', 'Ecommerce', 'A store that prices like your counter, and learns.', '<span class="hv hv-bk"><i></i><i></i><i></i><b></b></span>'],

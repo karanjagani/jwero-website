@@ -1,6 +1,6 @@
 // Extension pages for Jwero CRM (2026-10-10). Not in the menu. Each targets one
 // search phrase and hands the reader to its section of /products/crm. Same facts
-// and limits as content/crm.js (20+ sources, never 100+).
+// and limits as content/crm.js (35+ sources, never 100+).
 const L = require('../lib');
 const UPDATED = '10 October 2026';
 const P = require('./crm').parts;
@@ -57,23 +57,23 @@ ${L.ctaBand(p.bandTitle, p.bandText, 'crm')}
 const L2 = (o) => landing(o);
 const leads = L2({
   slug: 'jewellery-lead-management-software', crumb: 'Lead management', anchor: 'sources', miniHead: 'Tap your sources; watch them land on one record.',
-  title: 'Jewellery Lead Management Software: 20+ Sources, Owners, Reply Clock | Jwero',
-  description: 'Lead management for jewellers: leads from WhatsApp, Instagram, Meta and Google lead forms, Justdial, your website, store, showroom and calls captured automatically, matched, owned and answered against a reply-time clock.',
+  title: 'Jewellery Lead Management Software: 35+ Sources, Owners, Reply Clock | Jwero',
+  description: 'Lead management for jewellers: leads from WhatsApp, Instagram, Meta lead ads, Justdial, your website, store, showroom and calls captured automatically, matched, owned and answered against a reply-time clock.',
   schemaName: 'Jwero lead management for jewellers',
   eyebrow: 'LEAD MANAGEMENT FOR JEWELLERS',
   h1: 'Every enquiry captured, owned and answered, whichever app it came from.',
-  sub: '20+ sources land on one record automatically, each lead gets an owner and a reply clock, and a journey starts before anyone has to remember.',
+  sub: '35+ sources land on one record automatically, each lead gets an owner and a reply clock, and a journey starts before anyone has to remember.',
   cta: 'Show me my leads in one place',
   shortQ: 'What is lead management software for jewellers?',
-  shortA: 'Software that captures enquiries from every channel, matches them to existing customers, assigns an owner, times the first reply and follows up. Jwero CRM does this for 20+ sources, including WhatsApp, Instagram, Meta and Google lead forms, Justdial, the website, the store, showroom visits and calls.',
+  shortA: 'Software that captures enquiries from every channel, matches them to existing customers, assigns an owner, times the first reply and follows up. Jwero CRM does this for 35+ sources, including WhatsApp, Instagram, Meta lead ads, Justdial, the website, the store, showroom visits and calls.',
   leakHead: 'From leads in five apps to one list.',
-  leaks: [['Leads typed in by hand', 'Captured from 20+ sources'], ['Nobody owns the lead', 'Branch and salesperson at once'], ['Answered next day', 'Reply clock with alerts'], ['Duplicates everywhere', 'Matched and merged'], ['Forgotten after one reply', 'Journeys and AI calls follow up']],
+  leaks: [['Leads typed in by hand', 'Captured from 35+ sources'], ['Nobody owns the lead', 'Branch and salesperson at once'], ['Answered next day', 'Reply clock with alerts'], ['Duplicates everywhere', 'Matched and merged'], ['Forgotten after one reply', 'Journeys and AI calls follow up']],
   pointsHead: 'Leads, handled.',
-  points: [['20+ sources', 'Chats, ads, forms, store, showroom, calls.', 'flow'], ['Matching', 'Across channels and households.', 'record'], ['Owners', 'Routed to branch and salesperson.', 'users'], ['Reply clock', 'Breach alerts, optional reassignment.', 'activity'], ['Journeys', 'Started on every new lead.', 'send'], ['Meta audiences', 'Leads synced for retargeting.', 'target']],
+  points: [['35+ sources', 'Chats, ads, forms, store, showroom, calls.', 'flow'], ['Matching', 'Across channels and households.', 'record'], ['Owners', 'Routed to branch and salesperson.', 'users'], ['Reply clock', 'Breach alerts, optional reassignment.', 'activity'], ['Journeys', 'Started on every new lead.', 'send'], ['Meta audiences', 'Leads synced for retargeting.', 'target']],
   howName: 'How to manage jewellery leads',
   steps: [['Connect your sources', 'WhatsApp, Instagram, ads, forms and the store.'], ['Set owners', 'By branch and salesperson.'], ['Set the reply clock', 'And who gets alerted.'], ['Turn on journeys', 'For every new lead.'], ['Work the daily list', 'Who to call and why.']],
   partOf: 'Lead management is part of Jwero CRM.',
-  faqs: [{ q: 'Which lead sources does Jwero capture?', a: 'Jwero CRM captures 20+ sources automatically, including WhatsApp, Instagram and Messenger, Meta and Google lead forms, Justdial, website forms and chat, store sign-ins, showroom visits, calls and counter bills.' }, { q: 'How fast should a jewellery lead be answered?', a: 'Within minutes. Jwero CRM times every lead and alerts when the first reply is late.' }, { q: 'Can leads be assigned automatically?', a: 'Yes. Unowned leads are routed to a branch and salesperson as they arrive.' }],
+  faqs: [{ q: 'Which lead sources does Jwero capture?', a: 'Jwero CRM captures 35+ sources automatically, including WhatsApp, Instagram and Messenger, Meta lead ads, Justdial, website forms and chat, store sign-ins, showroom visits, calls and counter bills.' }, { q: 'How fast should a jewellery lead be answered?', a: 'Within minutes. Jwero CRM times every lead and alerts when the first reply is late.' }, { q: 'Can leads be assigned automatically?', a: 'Yes. Unowned leads are routed to a branch and salesperson as they arrive.' }],
   bandTitle: 'See your leads in one place.', bandText: 'Connect WhatsApp and one ad account; we will show the list.',
 });
 const retention = L2({

@@ -1,10 +1,8 @@
 // The CRM page, rebuilt 2026-10-10 in the One Inbox design from a pim-app survey.
-// Sources: 15 lead-capture sources in crm/capture_lead.ts (WhatsApp, web forms,
-// Instagram DMs, social comments, Meta lead ads, Google lead forms, Justdial,
-// online store sign-in, lead finder, Messenger, webchat, X DMs, showroom visits,
-// product questions, journey webhooks) plus phone calls, AI calls, email, WhatsApp
-// groups, video meetings, catalogue viewers and counter bills: about 22 automatic,
-// so the page says "20+". "100+ sources" is NOT supportable and is not claimed.
+// Sources, recounted 2026-10-10 from the code: 38 automatic routes that create or
+// match-and-update a contact (see SOURCES), so the page says "35+". Not counted: Google
+// lead forms (declared, never called), catalogue views (match only), inbound email
+// (manual add), lead finder and CSV import (user-started). "100+" is NOT claimed.
 // Built: identity merge, shared numbers and households, timeline, occasions,
 // scores (RFM, churn risk, intent, engagement, conversion, health, opportunity,
 // revenue potential, value tier, next occasion, best send window, trust risk), next
@@ -24,18 +22,22 @@ const { icon } = L;
 const BC = (label) => [['Home', '/'], ['Products', '/products'], [label]];
 
 const SOURCES = [
-  ['Conversations', [['whatsapp', 'WhatsApp'], ['camera', 'Instagram DMs'], ['users', 'Messenger'], ['share', 'X DMs'], ['chat', 'Social comments'], ['globe', 'Website chat'], ['whatsapp', 'WhatsApp groups'], ['mail', 'Email']]],
-  ['Ads and forms', [['megaphone', 'Meta lead ads'], ['google', 'Google lead forms'], ['receipt', 'Website forms'], ['search', 'Justdial'], ['flow', 'Zapier, Make and booking tools']]],
-  ['Store and catalogue', [['store', 'Online store sign-in'], ['chat', 'Product questions'], ['book', 'Catalogue views'], ['target', 'AI lead finder']]],
-  ['Showroom and counter', [['store', 'Showroom visits'], ['receipt', 'Counter bills']]],
-  ['Calls and meetings', [['phone', 'Phone calls'], ['bot', 'AI calls'], ['video', 'Video meetings']]],
+  ['Conversations', [['whatsapp', 'WhatsApp chats'], ['whatsapp', 'WhatsApp groups'], ['send', 'WhatsApp campaign replies'], ['megaphone', 'Click-to-WhatsApp ads'], ['camera', 'Instagram DMs'], ['camera', 'Instagram story replies'], ['users', 'Messenger'], ['share', 'X DMs'], ['globe', 'Website chat']]],
+  ['Social and ads', [['camera', 'Instagram comments'], ['chat', 'Facebook comments'], ['megaphone', 'Meta lead ads'], ['search', 'Justdial']]],
+  ['Website and online store', [['receipt', 'Website lead forms'], ['mail', 'Store contact form'], ['send', 'Newsletter sign-ups'], ['box', 'Back-in-stock alerts'], ['store', 'Store sign-in'], ['chat', 'Product questions'], ['calendar', 'Pickup reservations'], ['calendar', 'Showroom visit bookings'], ['flow', 'Store customer sync']]],
+  ['Catalogues', [['book', 'Catalogue enquiries'], ['book', 'Catalogue requests'], ['check', 'Catalogue orders']]],
+  ['Connected tools', [['flow', 'Webhooks: Zapier, Make, forms'], ['book', 'Google Sheets'], ['box', 'Unicommerce']]],
+  ['Showroom and counter', [['store', 'Showroom walk-ins'], ['receipt', 'Counter bills'], ['coins', 'Gold scheme enrolments']]],
+  ['Calls and meetings', [['phone', 'Phone calls'], ['whatsapp', 'WhatsApp calls'], ['bot', 'AI call messages'], ['bot', 'AI call bookings'], ['bot', 'AI call visit promises'], ['video', 'Video meeting bookings'], ['video', 'Meeting join requests']]],
 ];
 const SRC_FLAT = SOURCES.flatMap(([, s]) => s);
+// The hero shows the most common sixteen; the full list sits in #sources.
+const HERO_SRC = ['WhatsApp chats', 'Click-to-WhatsApp ads', 'Instagram DMs', 'Instagram comments', 'Facebook comments', 'Messenger', 'Meta lead ads', 'Justdial', 'Website chat', 'Website lead forms', 'Store sign-in', 'Catalogue enquiries', 'Showroom walk-ins', 'Counter bills', 'Phone calls', 'AI call bookings'].map((t) => SRC_FLAT.find((x) => x[1] === t));
 
 // Hero: sources stream into one record, then out to four actions.
 const orbit = () => `<div class="crm-orb" data-crmorb>
   <p class="crm-orb-ask">Tap where your enquiries come from today.</p>
-  <div class="crm-orb-in" role="group" aria-label="Your sources">${SRC_FLAT.map(([ic, t], i) => `<button type="button" style="--i:${i}" aria-pressed="false" data-src="${t}">${icon(ic)}<b>${t}</b></button>`).join('')}</div>
+  <div class="crm-orb-in" role="group" aria-label="Your sources">${HERO_SRC.map(([ic, t], i) => `<button type="button" style="--i:${i}" aria-pressed="false" data-src="${t}">${icon(ic)}<b>${t}</b></button>`).join('')}<a class="crm-orb-more" href="#sources">+${SRC_FLAT.length - HERO_SRC.length} more ↓</a></div>
   <div class="crm-orb-core"><span class="crm-orb-av">M</span><b>Meera Shah</b><small data-orb-src>From Meta lead ads</small><i class="crm-orb-ring"></i></div>
   <div class="crm-orb-out">${[['activity', 'Engaged', 'Journey started in seconds'], ['sparkle', 'Personalised', 'Her pieces, her moment'], ['target', 'Retargeted', 'Meta audience updated'], ['check', 'Converted', 'Quote accepted, bill linked']].map(([ic, t, d], i) => `<p style="--o:${i}">${icon(ic)}<b>${t}</b><small>${d}</small></p>`).join('')}</div>
   <p class="crm-orb-foot"><b data-orb-n>0</b> <span data-orb-of>sources</span> feeding one record · illustrative</p>
@@ -172,7 +174,7 @@ const LEAKS = [
   ['Hidden loss', 'gift', 'Anniversaries remembered by nobody', 'Occasions found and journeys triggered'],
   ['Hidden loss', 'receipt', 'Quotes that went quiet', 'Opened, followed up, accepted online'],
   ['Hidden loss', 'coins', 'Plans maturing without a visit', 'On the list before they mature'],
-  ['Bottleneck', 'book', 'Typing leads from five apps', '20+ sources captured on their own'],
+  ['Bottleneck', 'book', 'Typing leads from five apps', '35+ sources captured on their own'],
   ['Bottleneck', 'pie', 'Monthly reports nobody reads', 'Ask in plain words; the answer comes back'],
   ['Bottleneck', 'chat', 'Writing every follow-up', 'Follow-ups drafted by AI for one tap'],
 ];
@@ -200,7 +202,7 @@ const SALES = [['receipt', 'Quotations', 'Revisions, negotiation, discount appro
 const sales = () => `<div class="ibx-ch">${SALES.map(([ic, t, d, href]) => `<article><div class="cap-ico">${icon(ic)}</div><h3>${t}</h3><p>${d}</p>${href ? `<a class="erp-more" href="${href}">More →</a>` : ''}</article>`).join('')}</div>`;
 
 const CMP = [
-  ['Leads captured', 'Typed in, if at all', 'Forms and email', '20+ sources, automatically'],
+  ['Leads captured', 'Typed in, if at all', 'Forms and email', '35+ sources, automatically'],
   ['Duplicates and families', 'By hand', 'Some merging', 'Matched across channels; households and shared numbers'],
   ['Purchases, plans, occasions', 'Separate sheets', 'Custom fields', 'On the record, from billing and plans'],
   ['Who to call today', 'Memory', 'A task list', 'Morning list from scores, occasions and open quotes'],
@@ -226,7 +228,7 @@ const faqs = [
   { q: "What is the best CRM for jewellers in 2026?", a: "The best jewellery CRM captures leads from every channel on its own, knows families, gold plans, purchases and occasions, tells each salesperson who to call today, and keeps consent and data requests in order. Jwero CRM does all of this on one record shared with billing, chat and calls." },
   { q: "What is a jewellery CRM?", a: "A jewellery CRM is customer software built for how jewellery is bought: it keeps households, gold plan balances, purchases, occasions and every chat and call on one record, and tells the team who to contact and why." },
   { q: "What is the best WhatsApp CRM for jewellers?", a: "A WhatsApp CRM for jewellers puts every WhatsApp chat on the customer’s record next to her purchases, gold plan and occasions. Jwero CRM does this for WhatsApp, Instagram, Messenger, webchat and calls, gives each new chat an owner and a reply clock, and starts a follow-up journey on its own." },
-  { q: "Which lead sources can a jewellery CRM capture automatically?", a: "Jwero CRM captures 20+ sources on its own, including WhatsApp, Instagram and Messenger DMs, social comments, website chat and forms, Meta and Google lead forms, Justdial, online store sign-ins, product questions, showroom visits, phone and AI calls, email, video meetings, catalogue views and counter bills." },
+  { q: "Which lead sources can a jewellery CRM capture automatically?", a: "Jwero CRM captures 35+ sources on its own, including WhatsApp chats, groups, campaign replies and Click-to-WhatsApp ads, Instagram DMs, story replies and comments, Facebook comments, Messenger, X DMs, website chat and forms, Meta lead ads, Justdial, online store sign-ins, product questions and back-in-stock alerts, catalogue enquiries and orders, showroom walk-ins, counter bills, gold scheme enrolments, phone, WhatsApp and AI calls, and video meeting bookings." },
   { q: "How do jewellers stop losing leads?", a: "Jewellers stop losing leads by capturing every enquiry automatically, giving it an owner at once and timing the first reply. Jwero CRM routes each lead to a branch and salesperson, starts a reply clock with breach alerts, and starts a journey so nobody waits." },
   { q: "How do I manage walk-in customers in a jewellery showroom?", a: "Check each walk-in in by phone number so their record opens with past purchases, gold plan and occasions, log the pieces they try, and follow up the ones who leave. Jwero CRM captures showroom visits as a source and links the later bill to the visit." },
   { q: "How do I avoid duplicate customers across WhatsApp, Instagram and the counter?", a: "Jwero CRM matches a customer across channels and merges duplicates, and lets one phone number belong to several family members, so the record stays single and correct whether she messaged, commented or bought at the counter." },
@@ -249,14 +251,14 @@ const faqs = [
 
 const crm = {
   slug: 'products/crm',
-  title: 'Jewellery CRM: 20+ Sources Captured, Scored and Engaged Automatically | Jwero',
-  description: 'Jewellery CRM: leads from 20+ sources captured automatically, matched to households, owned with a reply clock, scored, engaged by journeys and AI calls, retargeted on Meta, with consent and data requests built in.',
+  title: 'Jewellery CRM: 35+ Sources Captured, Scored and Engaged Automatically | Jwero',
+  description: 'Jewellery CRM: leads from 35+ sources captured automatically, matched to households, owned with a reply clock, scored, engaged by journeys and AI calls, retargeted on Meta, with consent and data requests built in.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero CRM for Jewellers', alternateName: ['Jewellery CRM', 'CRM for jewellers', 'Jewellery lead management software', 'Jewellery customer retention software'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'A CRM for jewellers that captures leads from 20+ sources automatically, matches them across channels and households, gives each an owner and reply clock, keeps purchases, gold plans, occasions and every chat and call on one record, scores intent, churn risk and more, builds a daily call list with AI-drafted follow-ups, engages through journeys and AI calls, syncs Meta audiences, and keeps consent, data requests, masking and audit logs.',
+    description: 'A CRM for jewellers that captures leads from 35+ sources automatically, matches them across channels and households, gives each an owner and reply clock, keeps purchases, gold plans, occasions and every chat and call on one record, scores intent, churn risk and more, builds a daily call list with AI-drafted follow-ups, engages through journeys and AI calls, syncs Meta audiences, and keeps consent, data requests, masking and audit logs.',
     audience: { '@type': 'BusinessAudience', audienceType: 'Jewellery retailers, chains, wholesalers and online jewellery brands' },
-    featureList: '20+ automatic lead sources, cross-channel matching, households and shared numbers, customer timeline, occasions, scores, RFM, next best action, pipelines and deals, quotations, appointments, video meetings, reply-time clock and alerts, owner morning digest, whom-to-call list, AI follow-up drafts, journeys on new leads, AI calls, Meta custom audiences, plain-words questions, consent log, data export and erasure, masking, field permissions, audit logs, retention policies',
+    featureList: '35+ automatic lead sources, cross-channel matching, households and shared numbers, customer timeline, occasions, scores, RFM, next best action, pipelines and deals, quotations, appointments, video meetings, reply-time clock and alerts, owner morning digest, whom-to-call list, AI follow-up drafts, journeys on new leads, AI calls, Meta custom audiences, plain-words questions, consent log, data export and erasure, masking, field permissions, audit logs, retention policies',
     dateModified: '2026-10-10',
     url: 'https://jwero.ai/products/crm', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
@@ -267,12 +269,12 @@ const crm = {
 ${L.hero({
   eyebrow: 'Every source, one customer, the next step',
   h1: 'Every enquiry captured. <span class="h1-turn">Every customer remembered.</span>',
-  sub: 'Leads from 20+ sources land on one record in seconds: matched, owned, scored and engaged. Your team sees who to call today and why, AI drafts the follow-up, and Meta ads reach the same people.',
+  sub: 'Leads from 35+ sources land on one record in seconds: matched, owned, scored and engaged. Your team sees who to call today and why, AI drafts the follow-up, and Meta ads reach the same people.',
   primary: { href: '#', label: 'Show me every enquiry captured', wa: 'crm' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
-<section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What is Jwero CRM?</h2><p>Jwero CRM is a customer system built for jewellers. It captures leads from 20+ sources automatically, matches them to existing customers and households, gives each an owner and a reply clock, and keeps purchases, gold plans, occasions and every chat and call on one record. Scores and a daily list tell the team who to call; journeys, AI calls and Meta audiences engage and retarget; consent and data requests are handled on the record.</p></div></section>
+<section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What is Jwero CRM?</h2><p>Jwero CRM is a customer system built for jewellers. It captures leads from 35+ sources automatically, matches them to existing customers and households, gives each an owner and a reply clock, and keeps purchases, gold plans, occasions and every chat and call on one record. Scores and a daily list tell the team who to call; journeys, AI calls and Meta audiences engage and retarget; consent and data requests are handled on the record.</p></div></section>
 
 ${trust()}
 
@@ -280,7 +282,7 @@ ${prog()}
 
 ${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
 
-${L.section(`${L.sectionHead('CAPTURED AUTOMATICALLY', 'Where do jewellery leads come from?', 'From 20+ places, and every one lands on the same record without anyone typing it.')}${sources()}`, { id: 'sources' })}
+${L.section(`${L.sectionHead('CAPTURED AUTOMATICALLY', 'Where do jewellery leads come from?', 'From 35+ places, and every one lands on the same record without anyone typing it.')}${sources()}`, { id: 'sources' })}
 
 ${L.section(`${L.sectionHead('WHAT SLIPS THROUGH', 'How many leads slip through today?', 'Your numbers, two sliders.')}${meter()}`, { tone: 'tint', id: 'slip' })}
 
