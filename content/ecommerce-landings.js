@@ -4,7 +4,7 @@
 const L = require('../lib');
 const UPDATED = '10 October 2026';
 const P = require('./ecommerce').parts;
-const MINI = { personalise: [() => P.personalise(), 'brand'], optimize: [() => P.funnel(), 'brand'], showroom: [() => '', 'chain'], recover: [() => P.fork(), 'brand'] };
+const MINI = { personalise: [() => P.personalise(), 'brand'], optimize: [() => P.funnel(), 'brand'], showroom: [() => P.showroomFirst(), 'chain'], recover: [() => P.fork(), 'brand'] };
 const mini = (p) => { const m = MINI[p.anchor]; if (!m) return ''; return `${m[0]()}<p class="soc-mini-go"><a class="btn btn-ghost" href="/products/ecommerce?ec=${m[1]}#for-you" data-ec-cta="mini-${p.slug}">See Jwero Ecommerce for my business →</a></p>`; };
 
 function landing(p) {
@@ -30,8 +30,9 @@ ${L.hero({
   h1: p.h1,
   sub: p.sub,
   primary: { href: '#', label: p.cta, wa: 'ecommerce' },
-  secondary: { href: `/products/ecommerce#${p.anchor}`, label: 'See it in Jwero Ecommerce' },
 })}
+
+${L.section(`<div class="ec-ad-meter">${P.meter()}</div>`, { tone: 'tint' })}
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">${p.shortQ}</h2><p>${p.shortA}</p></div></section>
 
@@ -119,7 +120,7 @@ const ab = L2({
   bandTitle: 'See your website’s funnel.', bandText: 'Share last month’s visitors; we will show where they drop.',
 });
 const reserve = L2({
-  slug: 'reserve-online-collect-in-store-jewellery', crumb: 'Reserve and collect', anchor: 'showroom',
+  slug: 'reserve-online-collect-in-store-jewellery', crumb: 'Reserve and collect', anchor: 'showroom', miniHead: 'From a search to a pickup code.',
   title: 'Reserve Online, Collect in Store for Jewellers: Pickup Codes, Visits | Jwero',
   description: 'Reserve online and collect in store for jewellers: customers reserve a piece at the branch that holds it, collect with a pickup code, or book a showroom visit in a time slot, on the same stock as your counter.',
   schemaName: 'Jwero reserve and collect for jewellers',

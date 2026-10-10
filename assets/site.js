@@ -999,6 +999,41 @@ function jwFromInr(n) {
     calc();
   });
 
+  // Ecommerce: the price breakup, worked out live.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ecbk]'), function (b) {
+    var v = function (k) { var el = b.querySelector('[data-k="' + k + '"]'); return el ? Number(el.value) || 0 : 0; }, used = false;
+    var inr = function (x) { return '₹' + Math.round(x).toLocaleString('en-IN'); };
+    function calc() {
+      var metal = v('rate') * v('karat') / 24 * v('w'), make = metal * v('mk') / 100, st = v('st'), gst = (metal + make + st) * .03;
+      var o = function (k, t) { b.querySelector('[data-o="' + k + '"]').textContent = t; };
+      o('pur', v('karat') + 'K · ' + v('w') + ' g net'); o('metal', inr(metal)); o('make', inr(make)); o('stones', inr(st)); o('gst', inr(gst)); o('total', inr(metal + make + st + gst));
+    }
+    b.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('ec_breakup_use', {}); } });
+    b.addEventListener('change', calc); calc();
+  });
+
+  // Ecommerce: score your current website.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ecsc]'), function (sc) {
+    var boxes = sc.querySelectorAll('[data-e]'), url = sc.querySelector('[data-url]'), cta = sc.querySelector('[data-ec-cta="score"]'), used = false;
+    function calc() {
+      var have = 0, gaps = [];
+      Array.prototype.forEach.call(boxes, function (c) { if (c.checked) have++; else gaps.push(c.parentNode.querySelector('span').textContent.toLowerCase()); });
+      sc.querySelector('[data-o="n"]').textContent = have;
+      sc.querySelector('.ec-sc-bar i').style.width = (have * 10) + '%';
+      sc.querySelector('[data-o="msg"]').textContent = have === 10 ? 'Your site covers the essentials. Optimize can still show where it loses orders.' : have >= 6 ? gaps.length + ' gaps, each one a reason a shopper leaves.' : 'Most of what jewellery shoppers look for is missing.';
+      var site = (url.value || '').trim().slice(0, 80);
+      if (cta) cta.setAttribute('data-wa-extra', (site ? ' My site: ' + site + '.' : '') + ' It scores ' + have + ' of 10.' + (gaps.length ? ' Missing: ' + gaps.slice(0, 6).join('; ') + '.' : ''));
+    }
+    sc.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('ec_score_use', {}); } });
+    sc.addEventListener('change', calc); calc();
+  });
+
+  // Ecommerce: the button after Optimize carries the meter's numbers, if the reader set them.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ec-cta="funnel"]'), function (a) {
+    a.addEventListener('mousedown', function () { var m = document.querySelector('[data-ec-cta="meter"]'); a.setAttribute('data-wa-extra', ' I would like to see my site’s funnel.' + (m ? (m.getAttribute('data-wa-extra') || '') : '')); });
+    a.addEventListener('touchstart', function () { var m = document.querySelector('[data-ec-cta="meter"]'); a.setAttribute('data-wa-extra', ' I would like to see my site’s funnel.' + (m ? (m.getAttribute('data-wa-extra') || '') : '')); }, { passive: true });
+  });
+
   // Ecommerce: same page, three visitors.
   Array.prototype.forEach.call(document.querySelectorAll('[data-ecp]'), function (p) {
     var timer = 0, cur = 0, manual = false, tabs = p.querySelectorAll('[data-v]'), views = p.querySelectorAll('[data-vv]');
@@ -1021,6 +1056,13 @@ function jwFromInr(n) {
       if (jr && jr.jrShow && (fromUser || CFG[k][0] !== 0)) jr.jrShow(CFG[k][0]);
       var lead = document.getElementById(CFG[k][1] === 'optimize' ? 'optimize' : 'use-cases'), after = document.getElementById('one-visit');
       if (lead && after && k === 'brand') after.parentNode.insertBefore(lead, after.nextSibling);
+      // 5. stores and chains: the showroom comes first; 6. brands: the comparison comes up
+      var shop = document.getElementById('showroom-first'), cmp = document.getElementById('compare'), turn = document.querySelector('.hero-home .h1-turn');
+      if (turn && !turn.getAttribute('data-orig')) turn.setAttribute('data-orig', turn.textContent);
+      if (k !== 'brand' && shop && after) after.parentNode.insertBefore(shop, after.nextSibling);
+      if (k === 'brand' && cmp && lead) lead.parentNode.insertBefore(cmp, lead.nextSibling);
+      if (cmp) { var tb = cmp.querySelector('table'); if (tb) tb.classList.toggle('is-them-2', k === 'brand'); }
+      if (turn) turn.textContent = k === 'brand' ? turn.getAttribute('data-orig') : 'And brings them to your showroom.';
       Array.prototype.forEach.call(document.querySelectorAll('.ec-door'), function (a) { a.hidden = a.getAttribute('data-ec-cta') !== 'door-' + k; });
       var band = document.querySelector('.cta-band .btn-ghost-light[href="/book-demo"]'); if (band) band.textContent = k === 'chain' ? 'Book a 30-minute demo for a chain' : 'Book a demo';
       if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack('ec_icp_pick', { icp: k }); }

@@ -61,6 +61,66 @@ const prog = () => `<nav class="erp-prog" data-erp-prog aria-label="On this page
   <span class="erp-prog-doors">${ICP.map((e) => door(e, 'btn btn-primary erp-prog-cta ec-door')).join('')}</span>
 </div><i class="erp-prog-fill" aria-hidden="true"></i></nav>`;
 
+// 2. The price breakup a shopper sees, worked out live.
+const breakup = () => `<div class="ec-bk" data-ecbk>
+  <div class="ec-bk-in">
+    <label>Purity<select data-k="karat"><option value="24">24K</option><option value="22" selected>22K</option><option value="18">18K</option><option value="14">14K</option></select></label>
+    <label>Net weight, g<input type="number" data-k="w" value="18.4" step="0.1" min="0"></label>
+    <label>Making, %<input type="number" data-k="mk" value="12" step="0.5" min="0"></label>
+    <label>Stones, ₹<input type="number" data-k="st" value="0" step="500" min="0"></label>
+    <label>24K rate, ₹ a gram<input type="number" data-k="rate" value="7200" step="50" min="0"></label>
+  </div>
+  <div class="ec-bk-card" aria-live="polite">
+    <p class="ec-bk-h">${icon('gem')}<b>Temple necklace</b><small data-o="pur"></small></p>
+    <p><span>Metal</span><b data-o="metal"></b></p>
+    <p><span>Making charges</span><b data-o="make"></b></p>
+    <p><span>Stones</span><b data-o="stones"></b></p>
+    <p><span>GST, 3%</span><b data-o="gst"></b></p>
+    <p class="ec-bk-t"><span>Price today</span><b data-o="total"></b></p>
+    <p class="ec-bk-badge">${icon('shield')}Certificate and HUID shown with the piece</p>
+  </div>
+  <p class="ibx-legend">What a shopper sees on a Jwero product page, worked out the way the store does it. Change the rate to today’s.</p>
+</div>`;
+
+// 3. Score your current website against what jewellery shoppers expect.
+const ESSENTIALS = [
+  ['rate', 'Prices follow today’s gold rate'],
+  ['breakup', 'The price breakup is shown on every piece'],
+  ['huid', 'HUID and certificates are on the product page'],
+  ['stock', 'The site sells from the same stock as the counter'],
+  ['reserve', 'Shoppers can reserve a piece at a branch'],
+  ['visit', 'Shoppers can book a showroom visit'],
+  ['plans', 'Gold plans can be joined and paid online'],
+  ['otp', 'Sign-in works without a password'],
+  ['personal', 'Different visitors see different content'],
+  ['tests', 'You can test changes and see where visitors drop'],
+];
+const score = () => `<div class="ec-sc" data-ecsc>
+  <label class="ec-sc-url">Your website<input type="text" data-url placeholder="yourstore.com" autocomplete="off" inputmode="url"></label>
+  <p class="ec-sc-q">Tick what your site does today.</p>
+  <ul>${ESSENTIALS.map(([k, t]) => `<li><label><input type="checkbox" data-e="${k}"><span>${t}</span></label></li>`).join('')}</ul>
+  <div class="ec-sc-out" aria-live="polite"><p class="ec-sc-n"><b data-o="n">0</b><span>of 10</span></p><div class="ec-sc-bar"><i></i></div><p data-o="msg"></p>
+  <a class="btn btn-primary" href="#" data-wa="ecommerce" data-wa-extra="" data-ec-cta="score">Show me how Jwero fills my gaps</a></div>
+  <p class="erp-meter-note">Your answers stay in this page until you press the button.</p>
+</div>`;
+
+// 5. Reserve online, try in the showroom.
+const showroomFirst = () => `<div class="ec-sh" data-gfx>
+  <ol>${[['search', 'She finds it online', 'Priced at today’s rate, with HUID and certificate'], ['store', 'She reserves it at your branch', 'At the branch that holds it, from the same stock'], ['receipt', 'She gets a pickup code', 'Code 4821, on her phone'], ['calendar', 'Or books a visit', 'Saturday, 11:30, with the piece ready'], ['check', 'She tries it and buys', 'The sale lands on her record']].map(([ic, t, d], i) => `<li style="--i:${i}"><span>${icon(ic)}</span><b>${t}</b><small>${d}</small></li>`).join('')}</ol>
+</div>`;
+
+// 7. A small picture of each use-case group.
+const USE_VIS = {
+  find: '<span class="ec-v-search">22k temple necklace<i></i></span>',
+  trust: '<span class="ec-v-badge">BIS hallmarked · AB12C3</span>',
+  decide: '<span class="ec-v-cmp"><i></i><em>vs</em><i></i></span>',
+  buy: '<span class="ec-v-otp"><i>4</i><i>8</i><i>2</i><i>1</i></span>',
+  showroom: '<span class="ec-v-ticket"><small>Pickup code</small><b>4821</b></span>',
+  schemes: '<span class="ec-v-pass"><i style="--p:82%"></i><small>9 of 11 paid</small></span>',
+  after: '<span class="ec-v-track"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>',
+  run: '<span class="ec-v-sw"><i style="--c:#7a1f2b"></i><i style="--c:#b9862a"></i><i style="--c:#1d3b6e"></i><i style="--c:#1fa855"></i></span>',
+};
+
 // 3. One visit, six steps.
 const RUN = [
   ['Found', 'On Google, by a product page with its price and reviews, or by a photo she uploads.', 'search'],
@@ -102,7 +162,7 @@ const USES = [
   ['after', 'truck', 'After the order', 'Service that brings her back.', ['Order tracking and GST invoice PDF', 'Returns from her account', 'Reorder in a tap', 'Back-in-stock email when a piece returns']],
   ['run', 'tools', 'Run the store', 'Without a developer.', ['Jewellery themes and a page builder', 'AI that designs sections and writes product descriptions', 'Drafts, scheduled publish and version history', 'Your own domain', 'Speed checked with Google PageSpeed']],
 ];
-const uses = () => `<div class="ibx-ch">${USES.map(([id, ic, t, d, pts]) => `<article id="${id}"><div class="cap-ico">${icon(ic)}</div><h3>${t}</h3><p>${d}</p><ul>${pts.map((p) => `<li>${p}</li>`).join('')}</ul></article>`).join('')}</div>`;
+const uses = () => `<div class="ibx-ch ec-uses">${USES.map(([id, ic, t, d, pts]) => `<article id="${id}"><div class="ec-vis" aria-hidden="true">${USE_VIS[id] || ''}</div><div class="cap-ico">${icon(ic)}</div><h3>${t}</h3><p>${d}</p><ul>${pts.map((p) => `<li>${p}</li>`).join('')}</ul></article>`).join('')}</div>`;
 
 // 6. Optimize: a funnel where each drop has its fix.
 const FUNNEL = [
@@ -256,11 +316,17 @@ ${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick you
 
 ${L.section(`${L.sectionHead('ONE VISIT', 'How does a visitor become a buyer?', 'Six steps, on one record.')}${run()}`, { id: 'one-visit' })}
 
+${L.section(`${L.sectionHead('THE PRICE, LINE BY LINE', 'What does a shopper see before she buys?', 'The breakup on every product page. Try it.')}${breakup()}`, { id: 'breakup' })}
+
+${L.section(`${L.sectionHead('YOUR SITE TODAY', 'How does your website score?', 'Ten things jewellery shoppers look for. Tick what your site does now.')}${score()}`, { tone: 'tint', id: 'score' })}
+
+${L.section(`${L.sectionHead('THE SHOWROOM, ONLINE', 'Can an online visitor become a showroom visit?', 'Yes. Reserve online, try it in the showroom.')}${showroomFirst()}`, { id: 'showroom-first' })}
+
 ${L.section(`${L.sectionHead('PERSONALISED', 'Does every visitor see the same store?', 'No. Pick a visitor and watch the same page change.')}${personalise()}`, { tone: 'tint', id: 'personalise' })}
 
 ${L.section(`${L.sectionHead('EVERYTHING IN IT', 'What can a jewellery website do with Jwero?', 'Eight jobs, from being found to running the store.')}${uses()}`, { id: 'use-cases' })}
 
-${L.section(`${L.sectionHead('OPTIMIZE, BUILT IN', 'Where does my website lose orders?', 'At every step of the funnel. Each drop has a tool that finds it and a way to fix it.')}${funnel()}${optCards()}`, { tone: 'tint', id: 'optimize' })}
+${L.section(`${L.sectionHead('OPTIMIZE, BUILT IN', 'Where does my website lose orders?', 'At every step of the funnel. Each drop has a tool that finds it and a way to fix it.')}${funnel()}${optCards()}<p class="ec-opt-go"><a class="btn btn-primary" href="#" data-wa="ecommerce" data-wa-extra=" I would like to see my site’s funnel." data-ec-cta="funnel">Show me my site’s funnel</a></p>`, { tone: 'tint', id: 'optimize' })}
 
 ${L.section(`${L.sectionHead('WIN THEM BACK', 'What happens after a visitor leaves?', 'What runs on its own, and what your team picks up.')}${fork()}`, { id: 'recover' })}
 
@@ -286,4 +352,4 @@ ${L.ctaBand('See where your website loses orders.', 'Share your site and last mo
 
 module.exports = [ecommerce];
 module.exports.heroPiece = () => meter();
-module.exports.parts = { personalise, funnel, fork };
+module.exports.parts = { personalise, funnel, fork, meter, breakup, showroomFirst, score };
