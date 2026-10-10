@@ -263,7 +263,7 @@ ${prog()}
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What are Jwero Digital Catalogues?</h2><p>Jwero Digital Catalogues are shareable links of chosen pieces from your stock. Prices come from your pricing engine and can be shown, hidden or on request; catalogues can be private for chosen customers, opened by a one-time code, with an end date. Every view, wishlist and cart is tracked per visitor, enquiries become quotations, and customers can order and pay on the link.</p></div></section>
 
-${L.section(`${L.sectionHead('BUILT AROUND HOW YOU SELL', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
+${L.section(`${L.sectionHead('', 'I run a…', '')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
 
 ${L.section(`${L.sectionHead('TRY IT', 'What does your customer see?', 'Switch the prices, open the breakup, press enquire.')}${sample()}`, { id: 'sample' })}
 

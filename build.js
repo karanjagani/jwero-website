@@ -502,7 +502,26 @@ function platformStory(html, slug) {
   html = html.replace(/<section class="section">\s*<div class="container">\s*<figure class="pz-quote jb-solo">[\s\S]*?<\/section>/, L3.section(`${L3.sectionHead('IN THEIR WORDS', 'Jewellers on working with Jwero.', '')}<div class="pz-quotes">${STORY_PAGES[slug].map((i) => `<figure class="pz-quote"><blockquote>“${Q[i][0]}”</blockquote><figcaption><b>${Q[i][1]}</b><span>${Q[i][2]}</span></figcaption></figure>`).join('')}</div><p class="jb-more"><a href="/success-stories">Read what more jewellers say →</a></p>`));
   return html;
 }
+// The "I run a…" pickers keep only the question and the business types: the panels
+// under them (descriptions, jump links, buttons, quotes) are removed on every page.
+function icpBare(html) {
+  const cut = (h, open) => {
+    let i;
+    while ((i = h.indexOf(open)) !== -1) {
+      let depth = 0, j = i;
+      const re = /<\/?div\b/g; re.lastIndex = i;
+      let m;
+      while ((m = re.exec(h))) { depth += m[0] === '<div' ? 1 : -1; if (depth === 0) { j = h.indexOf('>', m.index) + 1; break; } }
+      h = h.slice(0, i) + h.slice(j);
+    }
+    return h;
+  };
+  html = cut(html, '<div class="erp-icp-panel');
+  html = cut(html, '<div class="home-icp-panel');
+  return html.replace(/<p class="home-icp-more">[\s\S]*?<\/p>/, '');
+}
 function journeyFix(html, p) {
+  html = icpBare(html);
   // Social: the generic opening blocks (the shift, where it pays off) follow the first proof.
   // CRM: the generic opening blocks follow the first walkthrough.
   if (p && p.slug === 'products/crm') {

@@ -391,7 +391,7 @@ ${L.hero({
 
 ${prog()}
 
-${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
+${L.section(`${L.sectionHead('', 'I run a…', '')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
 
 ${L.section(`${L.sectionHead('EVERY CHANNEL LANDS HERE', 'How do jewellers manage WhatsApp, calls, Instagram and email together?', 'In one place. Each conversation is matched to her record, then answered automatically or routed to a person.')}${inboxHub()}`, { id: 'channels-in' })}
 

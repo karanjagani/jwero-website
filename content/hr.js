@@ -272,7 +272,7 @@ ${prog()}
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What is Jwero HR & Payroll?</h2><p>Jwero HR & Payroll runs a jewellery business’s people work: attendance from kiosks, phones or biometric exports, shifts and leave, pay runs with PF, ESI, PT and TDS, sales incentives from real sales with clawback, karigar payments kept separate, loans and expenses, hiring to full and final, appraisals and training, with every entry posted to the books.</p></div></section>
 
-${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
+${L.section(`${L.sectionHead('', 'I run a…', '')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
 
 ${L.section(`${L.sectionHead('MONTH END', 'How does payroll run for a jewellery shop?', 'Six steps, from the punch to the payslip.')}${run()}`, { id: 'month-end' })}
 

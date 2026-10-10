@@ -262,7 +262,7 @@ ${countdown()}
 
 ${prog()}
 
-${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icp()}`, { tone: 'tint', id: 'for-you' })}
+${L.section(`${L.sectionHead('', 'I run a…', '')}${icp()}`, { tone: 'tint', id: 'for-you' })}
 
 ${L.section(`${L.sectionHead('ONE PROMOTION', 'How does one promotion reach the right people?', 'Six steps, from the plan to the bill.')}${run()}`, { id: 'one-promo' })}
 

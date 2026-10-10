@@ -301,7 +301,7 @@ ${L.hero({
 
 ${socProg()}
 
-${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your journey, your mode and your next step first.')}${socIcp()}`, { tone: 'tint', id: 'for-you' })}
+${L.section(`${L.sectionHead('', 'I run a…', '')}${socIcp()}`, { tone: 'tint', id: 'for-you' })}
 
 ${L.section(`${L.sectionHead('FROM SIGNAL TO POST', 'How does a post get made in minutes?', 'One opportunity, five steps, no designer.')}${socRun()}`, { id: 'one-post' })}
 

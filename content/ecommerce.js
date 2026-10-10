@@ -314,7 +314,7 @@ ${L.hero({
 
 ${prog()}
 
-${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icp()}`, { tone: 'tint', id: 'for-you' })}
+${L.section(`${L.sectionHead('', 'I run a…', '')}${icp()}`, { tone: 'tint', id: 'for-you' })}
 
 ${L.section(`${L.sectionHead('ONE VISIT', 'How does a visitor become a buyer?', 'Six steps, on one record.')}${run()}`, { id: 'one-visit' })}
 

@@ -405,7 +405,7 @@ ${L.hero({
 
 ${progBar()}
 
-${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your departments, your leaks and your journey first.')}${icpSwitch()}`, { tone: 'tint', id: 'for-you' })}
+${L.section(`${L.sectionHead('', 'I run a…', '')}${icpSwitch()}`, { tone: 'tint', id: 'for-you' })}
 
 ${L.section(`${L.sectionHead('NOTHING YOU LOSE', 'Does Jwero do everything my current ERP does?', 'Yes. Open each department: what your ERP already has on the left, what Jwero adds on the right.')}${parity()}`, { id: 'parity' })}
 

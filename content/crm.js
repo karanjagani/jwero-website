@@ -280,7 +280,7 @@ ${trust()}
 
 ${prog()}
 
-${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
+${L.section(`${L.sectionHead('', 'I run a…', '')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
 
 ${L.section(`${L.sectionHead('CAPTURED AUTOMATICALLY', 'Where do jewellery leads come from?', 'From 35+ places, and every one lands on the same record without anyone typing it.')}${sources()}`, { id: 'sources' })}
 
