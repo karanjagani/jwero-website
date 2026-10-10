@@ -203,6 +203,20 @@ const MANUAL = [
 ];
 const manualTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th>What someone does by hand today</th><th>In One Inbox</th></tr></thead><tbody>${MANUAL.map(([a, b]) => `<tr><td>${a}</td><td class="wa-cmp-us">${b}</td></tr>`).join('')}</tbody></table></div>`;
 
+const RIVALS = ['WATI', 'Interakt', 'DoubleTick', 'A general CRM'];
+const RIVAL_ROWS = [
+  ['Official WhatsApp Business API', ['Yes', 'Yes', 'Yes', 'Through an add-on'], 'Yes, on your own number'],
+  ['Prices at today’s gold rate', ['No, not jewellery-specific', 'No, a general store catalogue', 'No, not jewellery-specific', 'No'], 'Yes, the same as the counter'],
+  ['Knows her purchases and gold plan in the reply', ['Through CRM integrations', 'No jewellery fields', 'No scheme engine', 'Notes and custom fields'], 'Yes, one record with billing and schemes'],
+  ['Gold savings plans', ['Not a jewellery product', 'No', 'No', 'No'], 'Built in, with reminders and payment links'],
+  ['Catalogue, stock and billing in the same system', ['Through integrations', 'Commerce layer only', 'Messaging and sales layer', 'Separate systems'], 'Yes'],
+  ['AI that answers customers', ['No-code chatbot builder', 'AI agents (Haptik)', 'AI agents, photo to cart', 'Varies'], 'AI agent in chat and voice, from your stock and her record'],
+];
+const rivalTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th></th>${RIVALS.map((r) => `<th>${r}</th>`).join('')}<th>One Inbox</th></tr></thead><tbody>${RIVAL_ROWS.map(([r, them, us]) => `<tr><td><strong>${r}</strong></td>${them.map((c) => `<td>${c}</td>`).join('')}<td class="wa-cmp-us">${us}</td></tr>`).join('')}</tbody></table></div>
+<p class="cta-note" style="margin-top:12px">Other tools’ details are from their own published materials, checked July 2026; confirm current features with each vendor. Full comparisons: <a href="/compare/jwero-vs-wati">Jwero vs WATI</a>, <a href="/compare/jwero-vs-interakt">Interakt</a>, <a href="/compare/jwero-vs-doubletick">DoubleTick</a>.</p>`;
+
+const GUIDES = [['/whatsapp-api-for-jewellers', 'WhatsApp API for jewellers'], ['/whatsapp-marketing-for-jewellers', 'WhatsApp marketing for jewellers'], ['/instagram-for-jewellers', 'Instagram for jewellers'], ['/ai-chatbot-for-jewellery-stores', 'AI chatbot for jewellery stores'], ['/business-email-for-jewellers', 'Business email for jewellers'], ['/ai-calling-for-jewellers', 'AI calling for jewellers']];
+
 const CMP = [
   ['Where conversations live', 'Five apps and a shop phone', 'One inbox, one thread history per customer'],
   ['Who answers at 11 pm', 'Nobody until morning', 'AI, with a priced reply from your stock'],
@@ -243,12 +257,15 @@ const faqs = [
 
 const inbox = {
   slug: 'products/inbox',
-  title: 'One Inbox for Jewellers: WhatsApp, Instagram, Email, Calls and AI | Jwero',
-  description: 'One inbox for a jewellery business: WhatsApp API and marketing, WhatsApp calls, Instagram and Facebook, email and webchat on one customer record, answered by an AI agent in chat and voice or routed to the right person, with payments, orders, repairs, appointments, reminders, tasks and reporting handled from the same place.',
+  title: 'One Inbox for Jewellers: WhatsApp, Instagram, Calls & AI | Jwero',
+  description: 'One inbox for jewellers: WhatsApp, calls, Instagram, Facebook, email and webchat on one record. AI replies at today’s gold rate; the rest goes to your team.',
   schema: {
     '@context': 'https://schema.org', '@type': 'SoftwareApplication',
     name: 'Jwero One Inbox', alternateName: ['WhatsApp API for jewellers', 'WhatsApp marketing for jewellers', 'Instagram and Facebook inbox for jewellers', 'AI sales agent for jewellers', 'Jewellery business email'], applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
     description: 'A unified inbox for jewellers: WhatsApp Business Platform messages, catalogue, payments and calls, WhatsApp marketing, Instagram and Facebook messages, email on your own domain, webchat and social replies, with an AI agent for chat and voice and routing to the right person, on the same customer record as billing, stock and gold plans.',
+    audience: { '@type': 'BusinessAudience', audienceType: 'Jewellery retailers, chains, wholesalers, manufacturers and online jewellery brands' },
+    featureList: 'Official WhatsApp Business API, WhatsApp marketing and broadcasts, WhatsApp calls, AI voice agent, Instagram DMs and Messenger, email on your own domain, website chat, AI replies at the live gold rate, routing to the right salesperson, reply-time targets, payment links in chat, catalogue sharing, gold plan reminders, order and repair updates, campaign attribution',
+    dateModified: '2026-10-10',
     url: 'https://jwero.ai/products/inbox', isPartOf: { '@type': 'SoftwareApplication', name: 'Jwero', url: 'https://jwero.ai' },
   },
   extraSchema: [{ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up one inbox for a jewellery business', step: HOW.map(([n, t], k) => ({ '@type': 'HowToStep', position: k + 1, name: n, text: t })) }],
@@ -258,16 +275,18 @@ const inbox = {
 ${L.hero({
   eyebrow: 'Every Conversation from all channels in One Inbox',
   h1: 'From enquiry to <span class="h1-turn">sales &amp; satisfaction</span>',
-  sub: 'Every enquiry, call, email and message arrives in one place. AI answers in seconds, day or night, at today’s rate. What needs a person reaches the right salesperson with the full story.',
+  sub: 'Every enquiry, call, email and message arrives in one place. AI answers in seconds from her purchases, her gold plan and your live stock, at today’s rate. What needs a person reaches the right salesperson with the full story.',
   primary: { href: '#', label: 'Show me my channels in one inbox', wa: 'inbox' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
-${L.section(`${L.sectionHead('EVERY CHANNEL LANDS HERE', 'Nine ways customers reach you. One place they arrive.', 'Each conversation is matched to her record, then answered automatically or routed to a person.')}${inboxHub()}`, { id: 'channels-in' })}
+<section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What is One Inbox?</h2><p>One Inbox is Jwero’s unified inbox for jewellery businesses. WhatsApp messages and calls, Instagram and Facebook messages, email on your own domain and website chat arrive in one place, on one customer record shared with billing, stock and gold plans. An AI agent answers in chat and on calls from her purchases, her gold plan and your live stock at today’s rate, and routes what needs a person to the right salesperson.</p></div></section>
+
+${L.section(`${L.sectionHead('EVERY CHANNEL LANDS HERE', 'How do jewellers manage WhatsApp, calls, Instagram and email together?', 'In one place. Each conversation is matched to her record, then answered automatically or routed to a person.')}${inboxHub()}`, { id: 'channels-in' })}
 
 ${L.section(`${L.sectionHead('WHAT HAPPENS TO ONE MESSAGE', 'From “hello” to the record, in five steps.', '')}${inboxRun()}`, { tone: 'tint' })}
 
-${L.section(`${L.sectionHead('EVERYTHING IT CAN HANDLE', `${USE_COUNT} things jewellers use One Inbox for.`, 'Grouped by the work, and marked by who does it: AI on its own, AI first and then a person, or your team.')}${inboxUses()}`, { id: 'use-cases' })}
+${L.section(`${L.sectionHead('EVERYTHING IT CAN HANDLE', 'What can a jeweller do with One Inbox?', `${USE_COUNT} things, grouped by the work, and marked by who does it: AI on its own, AI first and then a person, or your team.`)}${inboxUses()}`, { id: 'use-cases' })}
 
 ${L.section(`${L.sectionHead('RUN THE BUSINESS FROM IT', 'Not only chat. The work behind every conversation, too.', 'The inbox is where customers, vendors and staff meet your business. What each conversation needs next happens from the same screen: money, orders, repairs, people, campaigns and numbers.')}${inboxDepts()}`, { id: 'whole-business' })}
 
@@ -275,7 +294,7 @@ ${L.section(`${L.sectionHead('LESS BY HAND', 'What nobody has to do manually any
 
 ${L.section(`${L.sectionHead('JOURNEYS THAT CROSS CHANNELS', 'Customers do not stay on one channel. The conversation does not break.', 'Six real paths, step by step, showing where AI carries it and where a person takes over.')}${inboxPaths()}`, { tone: 'tint', id: 'journeys' })}
 
-${L.section(`${L.sectionHead('AUTOMATIC, OR A PERSON', 'You decide what AI answers and what reaches your team.', '')}${L.cards([
+${L.section(`${L.sectionHead('AUTOMATIC, OR A PERSON', 'Can AI answer jewellery customers on its own?', 'Yes, inside the limits you set. You decide what AI answers and what reaches your team.')}${L.cards([
   { icon: 'bot', title: 'AI answers on its own', text: 'From your catalogue, today’s rate, your policies and her record, in chat and on calls, inside the hours and limits you set.' },
   { icon: 'route', title: 'It knows when to hand over', text: 'When she asks for a person, when the subject is one you reserved for your team, or when the answer is not in your records. The AI steps back while your salesperson is on the thread.' },
   { icon: 'branches', title: 'It reaches the right person', text: 'Shared evenly, by workload, or by rules you set: by channel, by what she is asking about, or to the salesperson who already knows her.' },
@@ -297,6 +316,10 @@ ${L.section(`${L.sectionHead('THE TEAM’S SIDE', 'What your salesperson has in 
 
 ${L.section(`${L.sectionHead('COMPARE', 'Separate apps, or One Inbox.', '')}${cmpTable()}`, { tone: 'tint' })}
 
+${L.section(`${L.sectionHead('AGAINST THE MESSAGING TOOLS', 'Is One Inbox better than WATI, Interakt or DoubleTick for jewellers?', 'They are good messaging tools. One Inbox answers from the jewellery business behind the message.')}${rivalTable()}`, { id: 'vs' })}
+
+${L.section(`${L.sectionHead('GUIDES BY CHANNEL', 'Read more about each channel.', '')}<div class="erp-map">${GUIDES.map(([h, t]) => `<a href="${h}"><b>${t}</b><span>${h.replace(/^\//, 'jwero.ai/')}</span></a>`).join('')}</div>`, { tone: 'tint' })}
+
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to bring every channel into one inbox.', 'Five steps.')}${L.steps(HOW.map(([title, text]) => ({ title, text })))}`)}
 
 ${L.oneSystemBlock([
@@ -304,6 +327,8 @@ ${L.oneSystemBlock([
   'A cart paid in the chat takes the piece out of the same stock your counter sells from.',
   'A campaign goes to customers chosen from real purchases, and every reply comes back to the inbox.',
 ])}
+
+${L.section(`<p class="cta-note" style="text-align:center">Last updated 10 October 2026.</p>`)}
 
 ${L.ctaBand('Put every conversation in one place.', 'Bring your WhatsApp number and your Instagram page; see your own enquiries answered in One Inbox.', 'inbox')}
 `,
