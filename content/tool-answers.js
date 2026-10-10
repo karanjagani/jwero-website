@@ -24,12 +24,7 @@ const TOOL_QA = {
     { q: 'Can AI call my customers for scheme reminders?', a: 'Yes. The AI voice agent places reminder and follow-up calls in the customer’s language over a telephony line you connect, and writes the outcome on her record. Calls are charged per minute.' },
   ],
   'products/hr-payroll': [
-    { q: 'How do I track staff attendance in a jewellery shop?', a: 'Staff punch in on biometric or face-scanner devices, or on their own phone or a kiosk with optional location and selfie checks. Attendance feeds payroll directly, so nobody copies a register at month end.' },
-    { q: 'Which HR software suits a jewellery business?', a: 'One built for showroom staff: attendance, leave, shifts, payroll with PF and ESI, sales incentives and payslips on WhatsApp. Jwero does this on the same record as sales; karigar wages are settled in manufacturing.' },
-    { q: 'How do I calculate sales incentives in a jewellery shop?', a: 'Set the rule once, for example a percentage of sales above a target, and incentives are worked out from the bills each salesperson actually made. They flow into payroll with no separate sheet.' },
-    { q: 'Which payroll software suits a jewellery business?', a: 'Look for attendance-aware payroll with PF, ESI, professional tax and TDS, plus sales incentives from real sales. Karigar wages are settled in Jwero’s manufacturing module. Jwero produces payslips, a bank file and the statutory export files; filing is still done by your accountant.' },
     { q: 'How do I hire sales staff for a jewellery showroom?', a: 'Track each candidate through applied, screening, interview, offer and hired in one pipeline. A hired candidate moves straight into onboarding with a checklist, so documents and training are not forgotten.' },
-    { q: 'How do I assign daily tasks to jewellery staff?', a: 'Each person gets a list of what to do today: follow-ups due, stock to count, visits expected. Tasks can be assigned by a manager and are tracked to completion.' },
   ],
   'products/campaigns': [
     { q: 'How do jewellers send WhatsApp broadcasts without getting banned?', a: 'Send through the official WhatsApp Business API using approved templates, only to people who agreed, and honour opt-outs. Jwero skips anyone who opted out and shows why, which is what keeps a number safe.' },

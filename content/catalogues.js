@@ -214,17 +214,24 @@ const HOW = [
 ];
 
 const faqs = [
-  { q: 'What is the best digital catalogue software for jewellers?', a: 'The best digital catalogue for jewellers prices pieces from your own pricing, hides prices when you want, keeps catalogues private, shows who viewed what, and lets customers enquire or order on the link. Jwero Digital Catalogues does all of this on the same record as your stock and customers.' },
-  { q: 'How do I share a jewellery catalogue on WhatsApp?', a: 'In Jwero you pick the pieces and send the catalogue link to chosen customers on WhatsApp through an approved template, or share it as a QR or on your own domain.' },
+  { q: 'What is the best digital catalogue software for jewellers?', a: 'The best digital catalogue for jewellers prices each piece from your own pricing, hides prices when you want, keeps catalogues private, shows who viewed what, and lets customers enquire or pay on the link. Jwero Digital Catalogues does all of this on the same record as your stock and customers.' },
+  { q: 'How do I make a WhatsApp catalogue for my jewellery shop?', a: 'In Jwero you pick pieces from your stock, or ask AI to suggest them, and send the catalogue link to chosen customers on WhatsApp through an approved template. The link opens with a preview of the catalogue.' },
+  { q: 'Does a jewellery catalogue update with today’s gold rate?', a: 'Yes. Jwero catalogue prices come from your pricing engine and are worked out each time the catalogue opens, so customers see the price at today’s rate, not the rate on the day it was sent.' },
   { q: 'Is a digital catalogue better than a PDF for jewellery?', a: 'A PDF carries yesterday’s prices, can be forwarded anywhere and tells you nothing. A Jwero catalogue prices each piece when it opens, can be private with an end date, shows stock status, and records who viewed what.' },
-  { q: 'Can I see who viewed my jewellery catalogue?', a: 'Jwero tracks views, piece clicks, wishlists, carts and checkouts, and shows a timeline for each visitor; verified visitors are matched to the customer record.' },
-  { q: 'Can I hide prices in a jewellery catalogue?', a: 'Jwero catalogues can show prices, hide them, or show “price on request”, with optional weights and a metal, stone and making breakup.' },
-  { q: 'Can a jewellery catalogue be private?', a: 'Jwero catalogues can be private for chosen customers, who open them by verifying their phone with a one-time code, and can carry an expiry date.' },
-  { q: 'Can customers order from a catalogue link?', a: 'Customers can order and pay online on a Jwero catalogue link, or send an enquiry that your team turns into a quotation.' },
-  { q: 'Does a sold piece disappear from the catalogue?', a: 'Each piece in a Jwero catalogue shows whether it is in stock, made to order or out of stock when the catalogue opens.' },
-  { q: 'Can AI make a jewellery catalogue?', a: 'Jwero’s AI suggests pieces from a plain request, such as “22K bridal necklaces under 4 lakh”, and writes the catalogue’s title and description.' },
+  { q: 'Can I see who viewed my jewellery catalogue?', a: 'Jwero tracks views, piece clicks, wishlists, carts and checkouts, and shows a timeline for each visitor. Visitors verified by phone are matched to their customer record.' },
+  { q: 'Which pieces in my catalogue are customers looking at?', a: 'Jwero shows views, wishlists and enquiries for each piece in each catalogue, with analytics and leaderboards, so you can follow up on pieces that were viewed but not asked about.' },
+  { q: 'Can I hide prices in a jewellery catalogue?', a: 'Jwero catalogues can show prices, hide them, or show price on request, with optional weights and a metal, stone and making breakup.' },
+  { q: 'Can a jewellery catalogue be private?', a: 'Jwero catalogues can be private for chosen customers, who open them by verifying their phone with a one-time code. You can also set an expiry date, after which the link closes.' },
+  { q: 'Can a catalogue link expire?', a: 'Yes. A Jwero catalogue can carry an end date, which suits festival offers and private previews; after that date the link no longer opens.' },
+  { q: 'Can customers order and pay from a jewellery catalogue?', a: 'Customers can order and pay online on a Jwero catalogue link, with GST and delivery worked out at checkout, or send an enquiry that your team turns into a quotation.' },
+  { q: 'What is the best catalogue for jewellery wholesalers sending to retailers?', a: 'For wholesalers, Jwero catalogues run in enquiry mode with prices hidden or on request and stock status on each piece. Every enquiry becomes a task and then a quotation for the retailer.' },
+  { q: 'Can I use a QR code catalogue at a jewellery exhibition?', a: 'Every Jwero catalogue has its own QR code. Visitors at your stall scan it to browse, and their wishlists, enquiries and orders reach your team.' },
+  { q: 'Can my jewellery catalogue run on my own domain?', a: 'Jwero catalogues can be shared on your own domain, with your own design and templates.' },
+  { q: 'Does a sold piece disappear from the catalogue?', a: 'Each piece in a Jwero catalogue shows whether it is in stock, made to order or out of stock when the catalogue opens, from the same stock the counter sells.' },
+  { q: 'Am I alerted when a customer enquires or orders from a catalogue?', a: 'Jwero alerts your team on every enquiry and order from a catalogue, and creates a task for each enquiry.' },
+  { q: 'Can AI make a jewellery catalogue?', a: 'Jwero’s AI suggests pieces from your stock from a plain request, such as 22K bridal necklaces under 4 lakh, and writes the catalogue’s title and description. You choose what goes in.' },
   { q: 'Is there a QuickSell alternative for jewellers?', a: 'Jwero Digital Catalogues is an alternative built for jewellery: prices from your pricing engine, stock from your counter, and visitors and orders on the same customer record. The Jwero vs QuickSell page sets out the comparison.' },
-  { q: 'How much does digital catalogue software for jewellers cost?', a: 'Jwero starts with a free trial that includes every module; your price is shown inside your account after the trial.' },
+  { q: 'How much does digital catalogue software for jewellers cost?', a: 'Jwero starts with a free trial that includes every module, catalogues among them; your price is shown inside your account after the trial.' },
 ];
 
 const catalogues = {
