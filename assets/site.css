@@ -5414,3 +5414,83 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 .ibx-dept li::before { content: ''; position: absolute; left: 2px; top: 1.05em; width: 8px; height: 5px; border-left: 2px solid #1fa855; border-bottom: 2px solid #1fa855; transform: rotate(-45deg); }
 @media (max-width: 1000px) { .ibx-dept { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .ibx-dept { grid-template-columns: 1fr; } }
+
+/* One Inbox, upgrade 1: use cases as tiles, with how much AI handles */
+.ibx-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 8px; align-items: start; }
+.ibx-tile { border: 1px solid var(--line); border-radius: 16px; background: var(--card); transition: border-color .2s var(--ease), box-shadow .2s var(--ease); }
+.ibx-tile[open] { grid-column: 1 / -1; border-color: var(--brand); box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 10%, transparent); }
+.ibx-tile summary { list-style: none; cursor: pointer; display: grid; justify-items: center; gap: 10px; padding: 20px 14px 16px; text-align: center; }
+.ibx-tile summary::-webkit-details-marker { display: none; }
+.ibx-tile[open] summary { grid-template-columns: auto auto minmax(120px, 260px) auto; justify-content: start; align-items: center; text-align: left; gap: 14px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.ibx-tile-ico { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); }
+.ibx-tile-ico .ico { width: 26px; height: 26px; }
+.ibx-tile[open] .ibx-tile-ico { width: 40px; height: 40px; }
+.ibx-tile b { font-size: 1.0625rem; letter-spacing: -.02em; line-height: 1.2; }
+.ibx-bar { display: flex; gap: 3px; width: 100%; max-width: 180px; }
+.ibx-bar i { flex: 1; height: 8px; border-radius: 3px; }
+.ibx-bar i.is-a { background: #1fa855; } .ibx-bar i.is-b { background: var(--brand); } .ibx-bar i.is-h { background: var(--amber); }
+.ibx-tile summary > em { font: 600 .625rem/1 var(--mono); font-style: normal; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
+.ibx-tile ul { list-style: none; margin: 0; padding: 4px 20px 14px; columns: 2; column-gap: 28px; }
+.ibx-tile li { break-inside: avoid; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: .9375rem; line-height: 1.4; }
+.ibx-tile li em { flex: none; font: 600 .625rem/1 var(--mono); font-style: normal; letter-spacing: .06em; text-transform: uppercase; padding: 5px 7px; border-radius: 6px; white-space: nowrap; }
+@media (max-width: 900px) { .ibx-tiles { grid-template-columns: 1fr 1fr; } .ibx-tile[open] summary { grid-template-columns: auto 1fr; } .ibx-tile[open] .ibx-bar { grid-column: 1 / -1; max-width: none; } .ibx-tile[open] summary > em { grid-column: 1 / -1; } .ibx-tile ul { columns: 1; } }
+
+/* One Inbox, upgrade 2: by-hand jobs that turn over into what happens now */
+.ibx-flips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 8px; perspective: 1200px; }
+.ibx-flip { position: relative; display: block; width: 100%; min-height: 150px; padding: 0; border: 0; background: none; cursor: pointer; font: inherit; color: inherit; text-align: left; }
+.ibx-flip-in { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.2, .7, .2, 1); }
+.ibx-flip.is-flipped .ibx-flip-in { transform: rotateY(180deg); }
+.ibx-flip-f, .ibx-flip-b { position: absolute; inset: 0; display: grid; align-content: start; gap: 8px; padding: 18px; border-radius: 16px; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.ibx-flip-f { background: var(--card); border: 1px dashed var(--line-2); }
+.ibx-flip-f b { color: var(--ink-2); font-weight: 500; text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--ink-2) 45%, transparent); }
+.ibx-flip-b { transform: rotateY(180deg); background: color-mix(in srgb, #1fa855 9%, var(--card)); border: 1px solid color-mix(in srgb, #1fa855 45%, var(--line)); }
+.ibx-flip b { font-size: .9375rem; line-height: 1.4; }
+.ibx-flip small { font: 600 .625rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.ibx-flip-b small { color: #157a3d; }
+.ibx-flip-ico { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: var(--tint, #f1f2f6); color: var(--ink-2); }
+.ibx-flip-b .ibx-flip-ico { background: #1fa855; color: #fff; }
+.ibx-flip-ico .ico { width: 18px; height: 18px; }
+@media (max-width: 900px) { .ibx-flips { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .ibx-flips { grid-template-columns: 1fr; } .ibx-flip { min-height: 128px; } }
+@media (prefers-reduced-motion: reduce) {
+  .ibx-flip { min-height: 0; } .ibx-flip-in { position: static; transform: none !important; transition: none; display: grid; gap: 6px; }
+  .ibx-flip-f, .ibx-flip-b { position: static; transform: none; backface-visibility: visible; }
+}
+
+/* One Inbox, upgrade 4: one journey at a time, drawn as a path */
+.ibx-jr { margin-top: 8px; }
+.ibx-jr-tabs { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 10px; scrollbar-width: none; }
+.ibx-jr-tabs::-webkit-scrollbar { display: none; }
+.ibx-jr-tabs button { flex: none; padding: 10px 14px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--card); font: 500 .875rem/1.2 var(--font); color: var(--ink-2); cursor: pointer; }
+.ibx-jr-tabs button[aria-selected="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+.ibx-jr-panel { display: none; padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); }
+.ibx-jr-panel.is-on { display: block; }
+.ibx-jr-panel h3 { font-size: 1.125rem; letter-spacing: -.02em; margin-bottom: 20px; }
+.ibx-jr-path { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.ibx-jr-path::before { content: ''; position: absolute; left: 10%; right: 10%; top: 27px; height: 3px; border-radius: 3px; background: var(--line-2); }
+.ibx-jr-path::after { content: ''; position: absolute; left: 10%; right: 10%; top: 27px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, #1fa855, var(--brand), var(--amber)); transform-origin: left; transform: scaleX(1); }
+.ibx-jr-panel.is-play .ibx-jr-path::after { animation: jrLine 2.6s cubic-bezier(.3, 0, .2, 1) both; }
+@keyframes jrLine { from { transform: scaleX(0); } }
+.ibx-jr-path li { position: relative; z-index: 1; display: grid; justify-items: center; gap: 8px; text-align: center; font-size: .875rem; line-height: 1.4; }
+.ibx-jr-node { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--card); border: 3px solid var(--line-2); }
+.ibx-jr-node .ico { width: 24px; height: 24px; }
+.ibx-jr-path li.is-c .ibx-jr-node { border-color: var(--line-2); color: var(--ink-2); }
+.ibx-jr-path li.is-a .ibx-jr-node { border-color: #1fa855; color: #157a3d; background: color-mix(in srgb, #1fa855 10%, var(--card)); }
+.ibx-jr-path li.is-h .ibx-jr-node { border-color: var(--amber); color: #7a4d00; background: color-mix(in srgb, var(--amber) 14%, var(--card)); }
+.ibx-jr-path li em, .ibx-jr .ibx-legend em { font: 600 .5625rem/1 var(--mono); font-style: normal; letter-spacing: .07em; text-transform: uppercase; padding: 4px 6px; border-radius: 6px; }
+.ibx-jr-path li.is-c em, .ibx-jr em.is-c { background: var(--tint, #f1f2f6); color: var(--ink-2); border: 1px solid var(--line-2); }
+.ibx-jr-panel.is-play .ibx-jr-path li { animation: jrNode .5s var(--ease) both; animation-delay: calc(var(--j) * .35s); }
+@keyframes jrNode { from { opacity: 0; transform: translateY(10px) scale(.9); } }
+@media (max-width: 760px) {
+  .ibx-jr-panel { padding: 18px; }
+  .ibx-jr-path { grid-template-columns: 1fr; gap: 14px; }
+  .ibx-jr-path::before, .ibx-jr-path::after { left: 25px; right: auto; top: 28px; bottom: 28px; width: 3px; height: auto; }
+  .ibx-jr-path::after { background: linear-gradient(180deg, #1fa855, var(--brand), var(--amber)); transform-origin: top; transform: scaleY(1); }
+  .ibx-jr-panel.is-play .ibx-jr-path::after { animation-name: jrLineV; }
+  @keyframes jrLineV { from { transform: scaleY(0); } }
+  .ibx-jr-path li { grid-template-columns: 56px minmax(0, 1fr); grid-template-rows: auto auto; justify-items: start; align-items: center; text-align: left; column-gap: 14px; row-gap: 4px; }
+  .ibx-jr-node { grid-row: 1 / span 2; width: 52px; height: 52px; }
+  .ibx-jr-path li em { align-self: end; }
+  .ibx-jr-path li > span:last-child { align-self: start; }
+}
+@media (prefers-reduced-motion: reduce) { .ibx-jr-panel.is-play .ibx-jr-path li, .ibx-jr-panel.is-play .ibx-jr-path::after { animation: none; } }

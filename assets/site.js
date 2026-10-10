@@ -849,6 +849,35 @@ function jwFromInr(n) {
     docEl.classList.add('motion-failsafe');
   }
 
+  // One Inbox: manual-job cards turn over as they scroll in; a tap turns one back.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-flips]'), function (wrap) {
+    var cards = wrap.querySelectorAll('.ibx-flip');
+    Array.prototype.forEach.call(cards, function (c) {
+      c.addEventListener('click', function () { var on = c.classList.toggle('is-flipped'); c.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+    });
+    if (reduceMotion || !('IntersectionObserver' in window)) { Array.prototype.forEach.call(cards, function (c) { c.classList.add('is-flipped'); }); return; }
+    onView(cards, function (c) {
+      var i = Number(c.style.getPropertyValue('--i')) || 0;
+      window.setTimeout(function () { c.classList.add('is-flipped'); c.setAttribute('aria-pressed', 'true'); }, 500 + (i % 3) * 180);
+    }, { threshold: 0.6 });
+  });
+
+  // One Inbox: one journey at a time; tabs move on by themselves until someone taps.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-jr]'), function (jr) {
+    var tabs = jr.querySelectorAll('[data-jr-tab]'), panels = jr.querySelectorAll('[data-jr-panel]'), cur = 0, timer = 0, manual = false;
+    function show(i) {
+      cur = i;
+      Array.prototype.forEach.call(tabs, function (t, k) { t.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+      Array.prototype.forEach.call(panels, function (p, k) { p.classList.remove('is-play'); p.classList.toggle('is-on', k === i); });
+      var p = panels[i]; void p.offsetWidth; p.classList.add('is-play');
+      var t = tabs[i]; if (t && t.scrollIntoView && t.parentNode.scrollWidth > t.parentNode.clientWidth) t.parentNode.scrollTo({ left: t.offsetLeft - 16, behavior: reduceMotion ? 'auto' : 'smooth' });
+    }
+    Array.prototype.forEach.call(tabs, function (t, k) { t.addEventListener('click', function () { manual = true; window.clearTimeout(timer); show(k); }); });
+    function next() { if (manual) return; timer = window.setTimeout(function () { show((cur + 1) % panels.length); next(); }, 7000); }
+    if (reduceMotion) { show(0); return; }
+    whileVisible(jr, function () { show(cur); next(); }, function () { window.clearTimeout(timer); });
+  });
+
   // Product and solution heroes: the record writes itself, one event at a time.
   Array.prototype.forEach.call(document.querySelectorAll('[data-rfeed]'), function (r) {
     var items = r.querySelectorAll('.rfeed-list li'), mods = r.querySelectorAll('.rfeed-mods li'), n = items.length, i = -1, timer = 0;

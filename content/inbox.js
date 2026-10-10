@@ -112,21 +112,29 @@ const USES = [
   ]],
 ];
 const TAG = { a: ['AI', 'is-a'], h: ['Person', 'is-h'], b: ['AI, then a person', 'is-b'] };
-const inboxUses = () => `<div class="ibx-uses">${USES.map(([ic, t, items]) => `<article><h3>${icon(ic)}${t}</h3><ul>${items.map(([x, k]) => `<li><span>${x}</span><em class="${TAG[k][1]}">${TAG[k][0]}</em></li>`).join('')}</ul></article>`).join('')}</div>
-<p class="ibx-legend"><em class="is-a">AI</em> handled on its own <em class="is-b">AI, then a person</em> AI starts, a person finishes <em class="is-h">Person</em> routed to your team. You choose which is which.</p>`;
+const SHORT = { 'Enquiries and leads': 'Enquiries', 'Selling in the chat': 'Selling', 'Marketing that starts conversations': 'Marketing', 'Gold plans, payments and reminders': 'Gold plans and payments', 'Orders, repairs and after-sales': 'Orders and repairs', 'Calls': 'Calls', 'Trade and wholesale': 'Trade', 'Team and control': 'Team' };
+const inboxUses = () => `<div class="ibx-tiles">${USES.map(([ic, t, items], g) => {
+  const n = (k) => items.filter((x) => x[1] === k).length;
+  return `<details class="ibx-tile" name="ibx-uses"${g === 0 ? ' open' : ''}><summary><span class="ibx-tile-ico">${icon(ic)}</span><b>${SHORT[t] || t}</b><span class="ibx-bar" aria-label="${n('a')} by AI, ${n('b')} AI then a person, ${n('h')} by a person">${items.map(([, k]) => `<i class="${TAG[k][1]}"></i>`).join('')}</span><em>${items.length} uses · ${n('a')} by AI</em></summary><ul>${items.map(([x, k]) => `<li><span>${x}</span><em class="${TAG[k][1]}">${TAG[k][0]}</em></li>`).join('')}</ul></details>`;
+}).join('')}</div>
+<p class="ibx-legend"><em class="is-a">AI</em> handled on its own <em class="is-b">AI, then a person</em> AI starts, a person finishes <em class="is-h">Person</em> routed to your team. Tap a tile to see its uses.</p>`;
 const USE_COUNT = USES.reduce((n, g) => n + g[2].length, 0);
 
 // ---- journeys that cross channels. [step, who]
 const PATHS = [
-  ['From an ad to an anniversary', [['Taps “Chat on WhatsApp” under your reel', 'c'], ['AI shares three pieces at today’s rate', 'a'], ['Adds one to the cart and pays in the chat', 'c'], ['Order, invoice and stock updated', 'a'], ['A year on: an anniversary message', 'a']]],
-  ['From a reel to the counter', [['Comments “price?” on Instagram', 'c'], ['Answered in a private message', 'a'], ['Asks to see it; a showroom visit is booked', 'a'], ['Routed to the branch salesperson', 'h'], ['She walks in; the counter knows the piece', 'h']]],
-  ['A missed call at 9 pm', [['Calls after closing', 'c'], ['A WhatsApp follow-up within the minute', 'a'], ['Asks for a call back', 'c'], ['AI voice agent calls in her language', 'a'], ['Wants to negotiate: handed to the owner', 'h']]],
-  ['A website visitor becomes a customer', [['Asks about a ring in the website chat', 'c'], ['AI answers and takes her number', 'a'], ['The lead goes to a salesperson with what she viewed', 'h'], ['Quotation sent on WhatsApp', 'h'], ['She goes quiet: a follow-up, then the order', 'a']]],
-  ['A gold plan instalment, missed', [['Instalment due: a reminder with a payment link', 'a'], ['No reply in three days: an AI call', 'a'], ['She asks to change her date', 'c'], ['Routed to the scheme desk', 'h'], ['Paid; receipt and passbook updated', 'a']]],
-  ['A complaint, caught early', [['Emails that a stone is loose', 'c'], ['Recognised as a complaint; the AI stays out', 'a'], ['Goes straight to the manager with her purchase history', 'h'], ['Repair booked and tracked', 'h'], ['Collected; a review request a week later', 'a']]],
+  ['From an ad to an anniversary', [['Taps “Chat on WhatsApp” under your reel', 'c', 'camera'], ['AI shares three pieces at today’s rate', 'a', 'whatsapp'], ['Adds one to the cart and pays in the chat', 'c', 'wallet'], ['Order, invoice and stock updated', 'a', 'box'], ['A year on: an anniversary message', 'a', 'heart']]],
+  ['From a reel to the counter', [['Comments “price?” on your reel', 'c', 'camera'], ['Answered in a private message', 'a', 'chat'], ['Asks to see it; a showroom visit is booked', 'a', 'calendar'], ['Routed to the branch salesperson', 'h', 'users'], ['She walks in; the counter knows the piece', 'h', 'store']]],
+  ['A missed call at 9 pm', [['Calls after closing', 'c', 'phone'], ['A WhatsApp follow-up within the minute', 'a', 'whatsapp'], ['Asks for a call back', 'c', 'chat'], ['AI voice agent calls in her language', 'a', 'phone'], ['Wants to negotiate: handed to the owner', 'h', 'users']]],
+  ['A website visitor becomes a customer', [['Asks about a ring in the website chat', 'c', 'globe'], ['AI answers and takes her number', 'a', 'bot'], ['The lead goes to a salesperson with what she viewed', 'h', 'users'], ['Quotation sent on WhatsApp', 'h', 'receipt'], ['She goes quiet: a follow-up, then the order', 'a', 'refresh']]],
+  ['A gold plan instalment, missed', [['Instalment due: a reminder with a payment link', 'a', 'coins'], ['No reply in three days: an AI call', 'a', 'phone'], ['She asks to change her date', 'c', 'chat'], ['Routed to the scheme desk', 'h', 'users'], ['Paid; receipt and passbook updated', 'a', 'check']]],
+  ['A complaint, caught early', [['Emails that a stone is loose', 'c', 'mail'], ['Recognised as a complaint; the AI stays out', 'a', 'shield'], ['Goes straight to the manager with her purchase history', 'h', 'users'], ['Repair booked and tracked', 'h', 'tools'], ['Collected; a review request a week later', 'a', 'send']]],
 ];
 const WHO = { c: ['Customer', 'is-c'], a: ['AI', 'is-a'], h: ['Person', 'is-h'] };
-const inboxPaths = () => `<div class="ibx-paths">${PATHS.map(([t, steps]) => `<article><h3>${t}</h3><ol>${steps.map(([s, k]) => `<li class="${WHO[k][1]}"><em>${WHO[k][0]}</em><span>${s}</span></li>`).join('')}</ol></article>`).join('')}</div>`;
+const inboxPaths = () => `<div class="ibx-jr" data-jr>
+  <div class="ibx-jr-tabs" role="tablist" aria-label="Journeys">${PATHS.map(([t], i) => `<button type="button" role="tab" aria-selected="${i === 0}" data-jr-tab="${i}">${t}</button>`).join('')}</div>
+  ${PATHS.map(([t, steps], i) => `<div class="ibx-jr-panel${i === 0 ? ' is-on' : ''}" role="tabpanel" data-jr-panel="${i}"><h3>${t}</h3><ol class="ibx-jr-path">${steps.map(([x, k, ic], j) => `<li class="${WHO[k][1]}" style="--j:${j}"><span class="ibx-jr-node">${icon(ic)}</span><em>${WHO[k][0]}</em><span>${x}</span></li>`).join('')}</ol></div>`).join('')}
+  <p class="ibx-legend"><em class="is-c">Customer</em> <em class="is-a">AI</em> carries it <em class="is-h">Person</em> takes over</p>
+</div>`;
 
 // ---- the whole business, from conversations. Read from the product (2026-10-10):
 // only processes that are built appear; the rest are left out on purpose.
@@ -187,21 +195,21 @@ const DEPTS = [
 const inboxDepts = () => `<div class="ibx-dept">${DEPTS.map(([ic, t, d, items]) => `<article><h3>${icon(ic)}${t}</h3><p class="ibx-dept-lead">${d}</p><ul>${items.map((x) => `<li>${x}</li>`).join('')}</ul></article>`).join('')}</div>`;
 
 const MANUAL = [
-  ['Copying enquiries from WhatsApp and Instagram into a register', 'Every enquiry becomes a customer record by itself'],
-  ['Typing today’s price into chat from a rate card', 'The catalogue answers at the live rate'],
-  ['Answering the same question about stock, repairs and orders', 'AI answers from the stock, repair and order records'],
-  ['Ringing customers about overdue payments and instalments', 'Reminders go out on schedule, with a payment link'],
-  ['Telling customers where their order or repair is', 'Status updates follow the courier and the workshop'],
-  ['Booking visits by phone and writing them in a diary', 'Booked, moved and cancelled in the chat'],
-  ['Deciding who answers which enquiry', 'Conversations are shared by workload or your rules'],
-  ['Checking whether anyone replied', 'A reply-time target on every thread, with an alert before it slips'],
-  ['Remembering to follow up quotes and quiet enquiries', 'Follow-ups scheduled and listed each morning'],
-  ['Sending festival and occasion messages one by one', 'Segments and journeys send them, inside your limits'],
-  ['Asking customers for reviews', 'A request goes out after delivery'],
-  ['Working out which ad or post brought the sale', 'Traced from the first message to the bill'],
-  ['Building weekly numbers in a spreadsheet', 'Reply times, AI share and revenue by channel, ready to read'],
+  ['book', 'Copying enquiries from WhatsApp and Instagram into a register', 'Every enquiry becomes a customer record by itself'],
+  ['coins', 'Typing today’s price into chat from a rate card', 'The catalogue answers at the live rate'],
+  ['chat', 'Answering the same question about stock, repairs and orders', 'AI answers from the stock, repair and order records'],
+  ['phone', 'Ringing customers about overdue payments and instalments', 'Reminders go out on schedule, with a payment link'],
+  ['truck', 'Telling customers where their order or repair is', 'Status updates follow the courier and the workshop'],
+  ['calendar', 'Booking visits by phone and writing them in a diary', 'Booked, moved and cancelled in the chat'],
+  ['route', 'Deciding who answers which enquiry', 'Shared by workload or your rules'],
+  ['activity', 'Checking whether anyone replied', 'A reply-time target on every thread, with an alert'],
+  ['refresh', 'Remembering to follow up quotes and quiet enquiries', 'Follow-ups scheduled and listed each morning'],
+  ['megaphone', 'Sending festival and occasion messages one by one', 'Segments and journeys send them, inside your limits'],
+  ['badge', 'Asking customers for reviews', 'A request goes out after delivery'],
+  ['target', 'Working out which ad or post brought the sale', 'Traced from the first message to the bill'],
+  ['pie', 'Building weekly numbers in a spreadsheet', 'Reply times, AI share and revenue by channel, ready to read'],
 ];
-const manualTable = () => `<div class="tbl-wrap"><table class="tbl wa-cmp"><thead><tr><th>What someone does by hand today</th><th>In One Inbox</th></tr></thead><tbody>${MANUAL.map(([a, b]) => `<tr><td>${a}</td><td class="wa-cmp-us">${b}</td></tr>`).join('')}</tbody></table></div>`;
+const manualTable = () => `<div class="ibx-flips" data-flips>${MANUAL.map(([ic, before, after], i) => `<button type="button" class="ibx-flip" style="--i:${i}" aria-pressed="false"><span class="ibx-flip-in"><span class="ibx-flip-f"><span class="ibx-flip-ico">${icon(ic)}</span><small>By hand today</small><b>${before}</b></span><span class="ibx-flip-b"><span class="ibx-flip-ico">${icon('check')}</span><small>In One Inbox</small><b>${after}</b></span></span></button>`).join('')}</div><p class="ibx-legend">Each card turns as you scroll. Tap one to turn it back.</p>`;
 
 const RIVALS = ['WATI', 'Interakt', 'DoubleTick', 'A general CRM'];
 const RIVAL_ROWS = [
