@@ -33,6 +33,8 @@ const ICON_PATHS = {
   download: '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/>',
   refresh: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>',
   chat: '<path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5z"/>',
+  whatsapp: '<path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5z"/><path d="M9.2 8.6c.3-.5.8-.5 1.1-.2l.8 1.2c.2.3.1.7-.1.9l-.5.5a5 5 0 0 0 2.3 2.3l.5-.5c.2-.2.6-.3.9-.1l1.2.8c.3.3.3.8-.2 1.1-1 .8-2.4.6-3.9-.3-1.5-.9-2.6-2.1-3-3.4-.3-.9-.3-1.7.9-2.3z"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/>',
   shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',
   record: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M15 9h3"/><path d="M15 13h3"/><path d="M6 16c.6-1.5 1.7-2 3-2s2.4.5 3 2"/>',
   coins: '<circle cx="8" cy="8" r="6"/><path d="M18.1 10.4A6 6 0 1 1 10.3 18"/><path d="M7 6h1v4"/>',
@@ -1280,7 +1282,7 @@ function recordFeed(opts = {}) {
     return `
 <div class="rfeed" data-rfeed>
   <div class="rfeed-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><b>${esc(opts.title)}</b><em>Live</em></div>
-  <ul class="rfeed-mods">${opts.chips.map(([ic, t], k) => `<li data-k="${k}">${icon(ic)}<span>${esc(t)}</span></li>`).join('')}</ul>
+  <ul class="rfeed-mods${opts.iconOnly ? ' is-icons' : ''}">${opts.chips.map(([ic, t], k) => `<li data-k="${k}"${opts.iconOnly ? ` title="${esc(t)}" aria-label="${esc(t)}"` : ''}>${icon(ic)}${opts.iconOnly ? '' : `<span>${esc(t)}</span>`}</li>`).join('')}</ul>
   <ol class="rfeed-list">${opts.rows.map(([l, what, k, out, kind]) => `<li data-m="${k}"><b>${esc(l)}</b><div><p>${esc(what)}</p><span class="${kind === 'h' ? 'is-human' : 'is-ai'}">${icon(kind === 'h' ? 'users' : 'bot')}${esc(out)}</span></div></li>`).join('')}</ol>
   <p class="rfeed-foot">${icon('record')}${esc(opts.foot)}</p>
 </div>`;

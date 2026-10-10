@@ -5392,3 +5392,11 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 /* On the dark hero the headline's turn is amber, and a long feed sits tighter */
 .hero-home .h1-turn { color: var(--amber); }
 .rfeed-list li { padding-top: 8px; padding-bottom: 8px; }
+
+/* One Inbox hero: channels as icons only, so the picture is read at a glance */
+.rfeed-mods.is-icons { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px; padding: 14px 16px; }
+.rfeed-mods.is-icons li { justify-content: center; padding: 0; aspect-ratio: 1; border-radius: 14px; background: var(--card); border: 1px solid var(--line-2); }
+.rfeed-mods.is-icons .ico { width: 22px; height: 22px; color: var(--brand); }
+.rfeed-mods.is-icons li.is-on { background: var(--amber); border-color: var(--amber); transform: scale(1.12); box-shadow: 0 6px 18px rgba(246, 167, 35, .45); }
+.rfeed-mods.is-icons li.is-on .ico { color: #1b1400; }
+@media (max-width: 480px) { .rfeed-mods.is-icons { gap: 5px; padding: 12px 10px; } .rfeed-mods.is-icons .ico { width: 18px; height: 18px; } .rfeed-mods.is-icons li { border-radius: 10px; } }

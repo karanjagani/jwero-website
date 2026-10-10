@@ -182,7 +182,7 @@ const inbox = {
 ${L.hero({
   eyebrow: 'ONE INBOX · EVERY CHANNEL, EVERY CONVERSATION',
   h1: 'Never lose an enquiry again. <span class="h1-turn">Every channel. One inbox.</span>',
-  sub: 'WhatsApp, calls, Instagram, Facebook, email, website chat and social replies arrive in one place. AI answers in seconds, day or night, at today’s rate. What needs a person reaches the right salesperson with the full story.',
+  sub: 'Every enquiry, call, comment and message arrives in one place. AI answers in seconds, day or night, at today’s rate. What needs a person reaches the right salesperson with the full story.',
   primary: { href: '#', label: 'Show me my channels in one inbox', wa: 'inbox' },
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
@@ -231,7 +231,7 @@ ${L.ctaBand('Put every conversation in one place.', 'Bring your WhatsApp number 
 
 // The hero picture: every channel as a chip, and one conversation from each
 // arriving and being answered by AI or routed to a person.
-const HERO_CHIPS = [['chat', 'WhatsApp'], ['phone', 'WhatsApp calls'], ['camera', 'Instagram'], ['users', 'Facebook'], ['mail', 'Email'], ['chat', 'Webchat'], ['share', 'Threads and X'], ['megaphone', 'Ads and lead forms']];
+const HERO_CHIPS = [['whatsapp', 'WhatsApp'], ['phone', 'WhatsApp calls'], ['camera', 'Instagram'], ['users', 'Facebook'], ['mail', 'Email'], ['globe', 'Webchat'], ['share', 'Threads and X'], ['megaphone', 'Ads and lead forms']];
 const HERO_ROWS = [
   ['WhatsApp', 'Meera: “Price of the 22k bangle?”', 0, 'AI replied at today’s rate', 'a'],
   ['Instagram', 'A comment on your reel: “price?”', 2, 'AI answered in a private message', 'a'],
@@ -243,4 +243,4 @@ const HERO_ROWS = [
   ['Lead form', 'A bridal set enquiry from your ad', 7, 'Sent to Riya, your senior salesperson', 'h'],
 ];
 module.exports = [inbox];
-module.exports.heroPiece = () => L.recordFeed({ title: 'One Inbox', chips: HERO_CHIPS, rows: HERO_ROWS, foot: 'Answered by AI or routed to a person. All on the customer’s record.' });
+module.exports.heroPiece = () => L.recordFeed({ title: 'One Inbox', chips: HERO_CHIPS, rows: HERO_ROWS, iconOnly: true, foot: 'Answered by AI or routed to a person. All on the customer’s record.' });
