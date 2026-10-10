@@ -40,7 +40,12 @@ const RUN = [
   ['A person steps in', 'Your salesperson opens the thread with the summary, her history and a suggested reply.', 'users'],
   ['It is on the record', 'The conversation, the outcome and the next follow-up, for the counter and the next campaign.', 'book'],
 ];
-const inboxRun = () => `<ol class="airun" data-gfx>${RUN.map(([t, d, ic], i) => `<li style="--i:${i}"><span class="airun-n">${icon(ic)}<b>${i + 1}</b></span><h3>${t}</h3><p>${d}</p></li>`).join('')}</ol>`;
+// One message travels the five steps and picks up what each step adds.
+const RUN_TAGS = [['whatsapp', 'WhatsApp, 9:42 pm'], ['record', 'Meera · gold plan member'], ['gem', 'Priced at today’s rate'], ['users', 'With Ravi, full story'], ['check', 'Saved to her record']];
+const inboxRun = () => `<div class="ibx-msg" data-msg>
+  <div class="ibx-msg-stage" aria-hidden="true"><div class="ibx-msg-bubble"><p>“Is the 22k bangle in size 2.6 in stock?”</p><ul>${RUN_TAGS.map(([ic, t], i) => `<li data-k="${i}">${icon(ic)}${t}</li>`).join('')}</ul></div></div>
+  <ol class="ibx-msg-steps">${RUN.map(([t, d, ic], i) => `<li data-k="${i}"><span class="ibx-msg-n">${icon(ic)}<b>${i + 1}</b></span><h3>${t}</h3><p>${d}</p></li>`).join('')}</ol>
+</div>`;
 
 // ---- every use case. a = AI on its own, h = a person, b = AI first, then a person
 const USES = [
@@ -138,6 +143,16 @@ const inboxPaths = () => `<div class="ibx-jr" data-jr>
 
 // ---- the whole business, from conversations. Read from the product (2026-10-10):
 // only processes that are built appear; the rest are left out on purpose.
+// A message comes in and splits: AI on one side, a person on the other.
+const FORK = [
+  ['is-a', 'bot', 'AI answers', ['Price, stock, gold plan and order questions', 'From your catalogue, today’s rate and her record', 'Inside your hours, limits and quiet times'], 'check', 'Answered in seconds'],
+  ['is-h', 'users', 'A person takes over', ['She asks for a person', 'A subject you kept for your team, like bridal', 'The answer is not in your records'], 'route', 'The right salesperson, with the full story'],
+];
+const inboxFork = () => `<div class="ibx-fork" data-gfx>
+  <div class="ibx-fork-in">${icon('chat')}<b>A message comes in</b><small>On any channel, at any hour</small></div>
+  <svg class="ibx-fork-lines" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true"><path class="is-a" d="M200 0 C200 30 100 30 100 60"/><path class="is-h" d="M200 0 C200 30 300 30 300 60"/></svg>
+  <div class="ibx-fork-legs">${FORK.map(([c, ic, t, rules, ric, r]) => `<div class="ibx-fork-leg ${c}"><h3>${icon(ic)}${t}</h3><ul>${rules.map((x) => `<li>${x}</li>`).join('')}</ul><p class="ibx-fork-out">${icon(ric)}${r}</p></div>`).join('')}</div>
+</div>`;
 const DEPTS = [
   ['coins', 'Finance and accounts', 'Money conversations start and finish in the thread.', [
     'A payment link sent in the chat, by your team or by AI, for an order or a gold plan instalment',
@@ -192,7 +207,22 @@ const DEPTS = [
     'Opt-outs, busiest hours and what customers ask about most',
   ]],
 ];
-const inboxDepts = () => `<div class="ibx-dept">${DEPTS.map(([ic, t, d, items]) => `<article><h3>${icon(ic)}${t}</h3><p class="ibx-dept-lead">${d}</p><ul>${items.map((x) => `<li>${x}</li>`).join('')}</ul></article>`).join('')}</div>`;
+// One thread in the middle; each message lights the department it touches.
+const THREAD = [
+  ['in', 'Price of this necklace in 22k?', 4],
+  ['out', 'Here it is at today’s rate, with a payment link.', 4],
+  ['in', 'Paid ✓', 0],
+  ['in', 'Is my ring repair ready?', 1],
+  ['note', '@Ravi, she wants it by Friday', 2],
+  ['out', 'Diwali preview: your list is ready', 3],
+  ['in', '★★★★★ Lovely service', 5],
+];
+const deptCard = ([ic, t, d, items], k) => `<details class="ibx-dnode" data-d="${k}"><summary><span class="ibx-dnode-ico">${icon(ic)}</span><b>${t}</b><small>${d}</small></summary><ul>${items.map((x) => `<li>${x}</li>`).join('')}</ul></details>`;
+const inboxDepts = () => `<div class="ibx-biz" data-biz>
+  <div class="ibx-biz-side">${DEPTS.slice(0, 3).map((x, k) => deptCard(x, k)).join('')}</div>
+  <div class="ibx-biz-thread" aria-hidden="true"><div class="ibx-biz-head">${icon('chat')}<b>One conversation</b></div><ol>${THREAD.map(([w, t, d]) => `<li class="is-${w}" data-d="${d}">${t}</li>`).join('')}</ol></div>
+  <div class="ibx-biz-side">${DEPTS.slice(3).map((x, k) => deptCard(x, k + 3)).join('')}</div>
+</div><p class="ibx-legend">Each message lights up the part of the business it touches. Tap a department to see everything it runs from the inbox.</p>`;
 
 const MANUAL = [
   ['book', 'Copying enquiries from WhatsApp and Instagram into a register', 'Every enquiry becomes a customer record by itself'],
@@ -302,14 +332,14 @@ ${L.section(`${L.sectionHead('LESS BY HAND', 'What nobody has to do manually any
 
 ${L.section(`${L.sectionHead('JOURNEYS THAT CROSS CHANNELS', 'Customers do not stay on one channel. The conversation does not break.', 'Six real paths, step by step, showing where AI carries it and where a person takes over.')}${inboxPaths()}`, { tone: 'tint', id: 'journeys' })}
 
-${L.section(`${L.sectionHead('AUTOMATIC, OR A PERSON', 'Can AI answer jewellery customers on its own?', 'Yes, inside the limits you set. You decide what AI answers and what reaches your team.')}${L.cards([
+${L.section(`${L.sectionHead('AUTOMATIC, OR A PERSON', 'Can AI answer jewellery customers on its own?', 'Yes, inside the limits you set. You decide what AI answers and what reaches your team.')}${inboxFork()}<details class="ibx-more"><summary>Read the detail</summary>${L.cards([
   { icon: 'bot', title: 'AI answers on its own', text: 'From your catalogue, today’s rate, your policies and her record, in chat and on calls, inside the hours and limits you set.' },
   { icon: 'route', title: 'It knows when to hand over', text: 'When she asks for a person, when the subject is one you reserved for your team, or when the answer is not in your records. The AI steps back while your salesperson is on the thread.' },
   { icon: 'branches', title: 'It reaches the right person', text: 'Shared evenly, by workload, or by rules you set: by channel, by what she is asking about, or to the salesperson who already knows her.' },
   { icon: 'activity', title: 'Nothing waits unseen', text: 'A reply-time target on every thread, working hours and holidays respected, and an alert to the manager before a conversation slips.' },
   { icon: 'shield', title: 'Inside your limits', text: 'Quiet hours, limits on how often a customer hears from you, consent on every channel, and one switch that pauses the AI.' },
   { icon: 'book', title: 'All of it on the record', text: 'Who said what, on which channel, what was sent automatically and who stepped in, kept with the customer and not on a phone.' },
-], 3)}`, { id: 'routing' })}
+], 3)}</details>`, { id: 'routing' })}
 
 ${L.section(`${L.sectionHead('CHANNEL BY CHANNEL', 'What each channel does inside One Inbox.', 'Everything that used to be a separate tool, and a separate login.')}${inboxChannels()}`, { tone: 'tint', id: 'channels' })}
 

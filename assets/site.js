@@ -862,6 +862,34 @@ function jwFromInr(n) {
     }, { threshold: 0.6 });
   });
 
+  // One Inbox: one message walks the five steps, picking up a tag at each.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-msg]'), function (m) {
+    var steps = m.querySelectorAll('.ibx-msg-steps li'), tags = m.querySelectorAll('.ibx-msg-bubble li'), n = steps.length, s = 0, timer = 0;
+    function show() {
+      m.style.setProperty('--s', s);
+      Array.prototype.forEach.call(steps, function (li, k) { li.classList.toggle('is-now', k === s); li.classList.toggle('is-done', k < s); });
+      Array.prototype.forEach.call(tags, function (li, k) { li.classList.toggle('is-on', k <= s); });
+    }
+    if (reduceMotion || !('IntersectionObserver' in window)) { s = n - 1; show(); return; }
+    m.classList.add('is-live');
+    function tick() { show(); timer = window.setTimeout(function () { s = (s + 1) % n; tick(); }, s === n - 1 ? 3800 : 2000); }
+    whileVisible(m, tick, function () { window.clearTimeout(timer); });
+  });
+
+  // One Inbox: the thread plays; each message lights the department it touches.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-biz]'), function (b) {
+    var msgs = b.querySelectorAll('.ibx-biz-thread li'), depts = b.querySelectorAll('.ibx-dnode'), n = msgs.length, i = -1, timer = 0;
+    if (reduceMotion || !('IntersectionObserver' in window)) return;
+    b.classList.add('is-live');
+    function show() {
+      var d = i >= 0 ? msgs[i].getAttribute('data-d') : '';
+      Array.prototype.forEach.call(msgs, function (li, k) { li.classList.toggle('is-shown', k <= i); li.classList.toggle('is-now', k === i); });
+      Array.prototype.forEach.call(depts, function (el) { el.classList.toggle('is-lit', el.getAttribute('data-d') === d); });
+    }
+    function tick() { i++; if (i >= n) { i = -1; show(); timer = window.setTimeout(tick, 600); return; } show(); timer = window.setTimeout(tick, i === n - 1 ? 3500 : 1900); }
+    whileVisible(b, function () { window.clearTimeout(timer); tick(); }, function () { window.clearTimeout(timer); });
+  });
+
   // One Inbox: one journey at a time; tabs move on by themselves until someone taps.
   Array.prototype.forEach.call(document.querySelectorAll('[data-jr]'), function (jr) {
     var tabs = jr.querySelectorAll('[data-jr-tab]'), panels = jr.querySelectorAll('[data-jr-panel]'), cur = 0, timer = 0, manual = false;
