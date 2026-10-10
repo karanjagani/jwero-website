@@ -1263,8 +1263,9 @@ function jwFromInr(n) {
       Array.prototype.forEach.call(box.querySelectorAll('[data-k]'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k ? 'true' : 'false'); });
       Array.prototype.forEach.call(box.querySelectorAll('[data-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
       if (jr && jr.jrShow && (fromUser || CFG[k][0] !== 0)) jr.jrShow(CFG[k][0]);
-      if (HRP) { var lead = document.getElementById(CFG[k][1]), after = document.getElementById('for-you'); if (lead && after) after.parentNode.insertBefore(lead, after.nextSibling); }
+      if (HRP || box.getAttribute('data-after')) { var lead = document.getElementById(CFG[k][1]), after = document.getElementById(box.getAttribute('data-after') || 'for-you'); if (lead && after) after.parentNode.insertBefore(lead, after.nextSibling); }
       Array.prototype.forEach.call(document.querySelectorAll(DOOR), function (a) { a.hidden = a.getAttribute(ATTR) !== 'door-' + k; });
+      if (!HRP) { var dm = document.querySelector('div[data-dcm]'); if (dm) { dm.setAttribute('data-type', k); var tl = dm.querySelector('[data-o="thenl"]'); if (tl) tl.textContent = { single: 'With private, tracked catalogues', b2b: 'With enquiries turned into quotations', brand: 'With order and pay on the link' }[k]; dm.dispatchEvent(new Event('input')); } }
       if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack(HRP ? 'hr_icp_pick' : 'dc_icp_pick', { icp: k }); }
     }
     box.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (b) apply(b.getAttribute('data-k'), true); });
@@ -1291,6 +1292,49 @@ function jwFromInr(n) {
     calc();
   });
 
+  // Catalogues: the sample catalogue.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-dcs]'), function (w) {
+    var alert = w.querySelector('[data-alert]'), used = false;
+    function track(a) { if (!used && window.jweroTrack) { used = true; window.jweroTrack('dc_sample_use', { a: a }); } }
+    w.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-mode]');
+      if (b) {
+        var md = b.getAttribute('data-mode');
+        Array.prototype.forEach.call(w.querySelectorAll('[data-mode]'), function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        Array.prototype.forEach.call(w.querySelectorAll('[data-price]'), function (p) { p.textContent = md === 'show' ? p.getAttribute('data-price') : md === 'ask' ? 'Price on request' : ''; });
+        w.classList.toggle('is-noprice', md !== 'show'); track('mode');
+      }
+      var a = e.target.closest('[data-act]');
+      if (a && alert) {
+        alert.hidden = false; alert.classList.remove('is-pop'); void alert.offsetWidth; alert.classList.add('is-pop');
+        alert.querySelector('span').textContent = a.getAttribute('data-act') === 'enq' ? 'Your team: new enquiry from Meera Shah on the ' + a.getAttribute('data-n').toLowerCase() + '. A task is created.' : 'Meera Shah added the ' + a.getAttribute('data-n').toLowerCase() + ' to her cart. It shows on her timeline.';
+        track('act');
+      }
+    });
+    var bk = w.querySelector('[data-bk]'); if (bk) bk.addEventListener('change', function () { w.classList.toggle('is-nobk', !bk.checked); track('bk'); });
+  });
+
+  // Catalogues: AI builds a catalogue (scripted example).
+  Array.prototype.forEach.call(document.querySelectorAll('[data-dcai]'), function (w) {
+    var f = w.querySelector('form'), out = w.querySelector('[data-out]');
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var q = (w.querySelector('input').value || '').trim() || 'bridal necklaces';
+      out.hidden = false; out.classList.remove('is-on'); void out.offsetWidth; out.classList.add('is-on');
+      out.querySelector('[data-o="title"]').textContent = 'The Bridal Edit';
+      out.querySelector('[data-o="desc"]').textContent = 'Picked for: “' + q.slice(0, 80) + '”. Five heirloom necklaces in 22K, chosen for the wedding season, each priced at today’s rate when you open it.';
+      if (window.jweroTrack) window.jweroTrack('dc_ai_build', {});
+    });
+  });
+
+  // Catalogues: the comparison follows what the reader uses today.
+  Array.prototype.forEach.call(document.querySelectorAll('.dc-from'), function (f) {
+    var table = f.parentNode.querySelector('table'); if (!table) return;
+    function mark(c) { table.classList.toggle('is-them-1', c === '1'); table.classList.toggle('is-them-2', c === '2'); }
+    f.addEventListener('click', function (e) { var b = e.target.closest('[data-col]'); if (b) { mark(b.getAttribute('data-col')); if (window.jweroTrack) window.jweroTrack('dc_switch_from', { col: b.getAttribute('data-col') }); } });
+    mark('1');
+  });
+
   // HR and Catalogues: hero meters.
   Array.prototype.forEach.call(document.querySelectorAll('div[data-hrm], div[data-dcm]'), function (m) {
     var hr = m.hasAttribute('data-hrm'), used = false, cta = m.querySelector('[data-hr-cta], [data-dc-cta]');
@@ -1311,7 +1355,9 @@ function jwFromInr(n) {
         m.querySelector('[data-o="sent"]').textContent = se.toLocaleString('en-IN'); m.querySelector('[data-o="aov"]').textContent = inr(aov);
         bars([['now', now, now.toFixed(1)], ['then', then, then.toFixed(1)]]);
         var t = inr((then - now) * aov); m.querySelector('[data-o="total"]').textContent = t;
-        if (cta) cta.setAttribute('data-wa-extra', ' I send about ' + se + ' catalogues a month, average order ' + inr(aov) + '. Your page estimates ' + t + ' extra a month.');
+        var ty = { single: 'a store', b2b: 'a wholesale business', brand: 'an online brand' }[m.getAttribute('data-type')] || 'a jewellery business';
+        if (cta) cta.setAttribute('data-wa-extra', ' I run ' + ty + '. I send about ' + se + ' catalogues a month, average order ' + inr(aov) + '. Your page estimates ' + t + ' extra a month.');
+        var dsh = document.querySelector('[data-dc-share]'); if (dsh) { var bt = { single: 'single', b2b: 'b2b', brand: 'd2c' }[m.getAttribute('data-type')] || ''; dsh.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent('We send about ' + se + ' catalogues a month. Jwero catalogues show who viewed which piece, and customers can enquire or pay on the link. Have a look: ' + location.origin + location.pathname + (bt ? '?dc=' + bt : ''))); }
       }
     }
     m.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack(hr ? 'hr_meter_use' : 'dc_meter_use', {}); } });

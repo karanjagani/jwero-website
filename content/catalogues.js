@@ -23,7 +23,7 @@ const meter = () => `<div class="erp-meter dc-meter" data-dcm>
   <label><span>Average order from a catalogue <b data-o="aov"></b></span><input type="range" data-i="aov" min="10000" max="1000000" step="5000" value="80000"></label>
   <div class="erp-meter-bars">
     <a href="#tracked" data-b="now"><span>Orders today</span><i><em></em></i><b></b></a>
-    <a href="#tracked" data-b="then"><span>With tracked links and ordering</span><i><em></em></i><b></b></a>
+    <a href="#tracked" data-b="then"><span data-o="thenl">With tracked links and ordering</span><i><em></em></i><b></b></a>
   </div>
   <p class="erp-meter-total"><span>Extra sales a month</span><b data-o="total"></b></p>
   <a class="btn btn-primary erp-meter-cta" href="#" data-wa="catalog" data-wa-extra="" data-dc-cta="meter">Show me a catalogue for my customers</a>
@@ -124,21 +124,71 @@ const fork = () => `<div class="ibx-fork" data-gfx>
   <div class="ibx-fork-legs">${FORK.map(([c, ic, t, rules, ric, r]) => `<div class="ibx-fork-leg ${c}"><h3>${icon(ic)}${t}</h3><ul>${rules.map((x) => `<li>${x}</li>`).join('')}</ul><p class="ibx-fork-out">${icon(ric)}${r}</p></div>`).join('')}</div>
 </div>`;
 
+
+// 1. A sample catalogue, from the customer's side.
+const PIECES = [['Temple necklace', '22K · 48.2 g', '₹3,84,000', 'In stock', ['Gold 22K, 46.1 g', '₹3,41,000'], ['Stones', '₹14,000'], ['Making', '₹29,000']], ['Kundan choker', '22K · 36.5 g', '₹2,96,000', 'Made to order'], ['Jhumkas', '22K · 18.0 g', '₹1,42,000', 'In stock'], ['Bangles, pair', '22K · 32.4 g', '₹2,52,000', 'Out of stock']];
+const sample = () => `<div class="dc-try" data-dcs>
+  <div class="dc-try-ctl"><p class="pc-tag">PRICES</p><div role="group" aria-label="Prices">${[['show', 'Shown'], ['hide', 'Hidden'], ['ask', 'On request']].map(([k, t], i) => `<button type="button" data-mode="${k}" aria-pressed="${i === 0}">${t}</button>`).join('')}</div><label class="dc-try-bk"><input type="checkbox" data-bk checked> Show the breakup</label><p class="dc-try-alert" data-alert hidden>${icon('activity')}<span></span></p></div>
+  <div class="hr-phone dc-phone"><div class="hr-phone-in"><p class="hr-phone-h"><b>Bridal edit</b><small>For the Shah family · open until 30 Nov</small></p>
+  <ul class="dc-try-list">${PIECES.map(([n, w, pr, st, ...bk], i) => `<li><span class="dc-try-img" style="--i:${i}">${icon('gem')}</span><div><b>${n}</b><small>${w} · <em class="is-${st === 'In stock' ? 'in' : st === 'Made to order' ? 'mto' : 'out'}">${st}</em></small><p class="dc-try-p" data-price="${pr}">${pr}</p>${bk.length ? `<ul class="dc-try-bd">${bk.map(([a, b]) => `<li><span>${a}</span><span>${b}</span></li>`).join('')}</ul>` : ''}<span class="dc-try-act"><button type="button" data-act="enq" data-n="${n}">Enquire</button>${st === 'Out of stock' ? '' : `<button type="button" data-act="cart" data-n="${n}">Add to cart</button>`}</span></div></li>`).join('')}</ul></div></div>
+</div><p class="ibx-legend">An example catalogue. Prices are illustrative; in Jwero they come from your pricing engine when the catalogue opens.</p>`;
+
+// 2. AI picks the pieces (a scripted example).
+const aiBuild = () => `<div class="dc-ai" data-dcai>
+  <form class="dc-ai-f"><label for="dc-ai-q">Ask for a catalogue</label><div><input id="dc-ai-q" type="text" value="22K bridal necklaces under 4 lakh" autocomplete="off"><button class="btn btn-primary" type="submit">${icon('sparkle')}Build it</button></div></form>
+  <div class="dc-ai-out" data-out hidden><p class="pc-tag">EXAMPLE RESULT</p><h3 data-o="title"></h3><p data-o="desc"></p><ul>${['Temple necklace · 48.2 g', 'Kundan choker · 36.5 g', 'Lakshmi haar · 52.0 g', 'Polki necklace · 41.3 g', 'Antique mango mala · 44.8 g'].map((x, i) => `<li style="--i:${i}">${icon('gem')}${x}</li>`).join('')}</ul><p class="erp-meter-note">A scripted example. In Jwero, AI suggests pieces from your own stock and writes the title and description; you choose what goes in.</p></div>
+</div>`;
+
+// 3. The same piece, PDF and link.
+const pdfVs = () => `<div class="dc-vs" data-gfx>
+  <div class="dc-vs-c is-pdf"><p class="pc-tag">PDF ON WHATSAPP</p><b>Kundan choker</b><ul><li>${icon('receipt')}₹2,81,000 · last month’s rate</li><li>${icon('box')}Sold on Tuesday, still listed</li><li>${icon('share')}Forwarded to an unknown number</li><li>${icon('eye')}Opened? No idea</li></ul></div>
+  <span class="dc-vs-arrow" aria-hidden="true">${icon('arrow')}</span>
+  <div class="dc-vs-c is-link"><p class="pc-tag">JWERO LINK</p><b>Kundan choker</b><ul><li>${icon('coins')}₹2,96,000 · today’s rate</li><li>${icon('box')}Made to order</li><li>${icon('shield')}Opened by OTP · Meera Shah</li><li>${icon('eye')}Viewed 4 times</li></ul></div>
+</div>`;
+
+// 4. Which pieces pull.
+const STATS = [['Temple necklace', 38, 9, 3], ['Kundan choker', 31, 7, 2], ['Polki necklace', 24, 6, 0], ['Antique mango mala', 19, 2, 0]];
+const stats = () => `<div class="tbl-wrap dc-stats"><table class="tbl"><thead><tr><th>Piece</th><th>Views</th><th>Wishlists</th><th>Enquiries</th><th></th></tr></thead><tbody>${STATS.map(([n, v, w, e]) => `<tr><td><strong>${n}</strong></td><td><i class="dc-bar" style="--w:${v / 38 * 100}%"></i>${v}</td><td>${w}</td><td>${e}</td><td>${e === 0 ? `<span class="dc-hint">${icon('send')}Viewed, not asked: follow up</span>` : ''}</td></tr>`).join('')}</tbody></table></div><p class="ibx-legend">Illustrative. Per-piece views, wishlists and enquiries, with analytics and leaderboards for each catalogue.</p>`;
+
+// 6. A private link, in three screens.
+const privateLink = () => `<div class="dc-pv" data-gfx>${[['whatsapp', 'On WhatsApp', '<p class="dc-pv-msg">Namaste Meera ji, the bridal edit we chose for you is ready. <u>Open the catalogue</u></p>'], ['shield', 'Verify', '<p class="dc-pv-otp">Enter the code sent to +91 98•• ••4410</p><p class="dc-pv-code"><span>4</span><span>8</span><span>1</span><span>6</span></p>'], ['gem', 'Her catalogue', '<p class="dc-pv-cat"><b>Bridal edit · 12 pieces</b><small>Open until 30 November</small></p><p class="dc-pv-grid">' + '<span></span>'.repeat(6) + '</p>']].map(([ic, t, body], i) => `<div class="dc-pv-s" style="--i:${i}"><p class="dc-pv-t">${icon(ic)}<b>${i + 1}</b>${t}</p><div class="dc-pv-scr">${body}</div></div>`).join('')}</div>
+<p class="ibx-legend">Only the customers you choose can open it, by a one-time code to their phone. After the end date the link closes.</p>`;
+
+// 7. An exhibition QR.
+const qrCells = Array.from({ length: 121 }, (_, i) => { const x = i % 11, y = (i / 11) | 0; const f = (x < 3 && y < 3) || (x > 7 && y < 3) || (x < 3 && y > 7); return f || ((x * 7 + y * 13 + x * y) % 3 === 0) ? `<i style="grid-area:${y + 1}/${x + 1}"></i>` : ''; }).join('');
+const qrBlock = () => `<div class="dc-qr" data-gfx>
+  <div class="dc-qr-card"><p class="pc-tag">STALL 14</p><div class="dc-qr-code" aria-hidden="true">${qrCells}</div><b>Festive edit</b><small>Scan to browse</small></div>
+  <ol class="dc-qr-feed">${[['eye', '62 visitors browsed today'], ['heart', '18 added pieces to a wishlist'], ['chat', '7 enquiries became tasks for your team'], ['check', '2 orders paid on the link']].map(([ic, t], i) => `<li style="--i:${i}">${icon(ic)}${t}</li>`).join('')}</ol>
+</div><p class="ibx-legend">Illustrative. Every catalogue has its own QR; enquiries and orders alert your team.</p>`;
+
+// 8. Moving over.
+const DCFROM = [['PDFs and WhatsApp photos', 1], ['QuickSell', 2]];
+const dcFrom = () => `<div class="ibx-jr hr-from dc-from" data-jr data-jr-still>
+  <div class="ibx-jr-tabs" role="tablist">${DCFROM.map(([n, c], i) => `<button type="button" role="tab" data-jr-tab="${i}" data-col="${c}" aria-selected="${i === 0}">From ${n}</button>`).join('')}</div>
+  ${DCFROM.map(([n], i) => `<div class="ibx-jr-panel${i === 0 ? ' is-on' : ''}" role="tabpanel" data-jr-panel="${i}"><h3>Moving from ${n}</h3><ol class="ibx-jr-path">${[['Your stock is in Jwero', 'The same pieces the counter sells.'], ['Pick pieces', 'With filters, or ask AI.'], ['Send to five customers', i === 0 ? 'Keep sending PDFs alongside if you like.' : 'Keep QuickSell running alongside.'], ['Compare what you learn', 'Views, wishlists and enquiries per piece.'], ['Switch over', 'Every catalogue on one record.']].map(([t, d], j) => `<li class="${j === 3 ? 'is-h' : 'is-a'}" style="--j:${j}"><span class="ibx-jr-node"><b>${j + 1}</b></span><em>${t}</em><span>${d}</span></li>`).join('')}</ol>${i === 1 ? '<p class="erp-from-more"><a href="/compare/jwero-vs-quicksell">Jwero vs QuickSell →</a></p>' : ''}</div>`).join('')}
+</div>`;
+
+// 9. Proof per business type, and a hand-off to the sales team.
+const Q = require('./positioning').QUOTES;
+const PROOF = { single: 0, b2b: 1, brand: 3 };
+const proofCard = (k) => { const q = Q[PROOF[k]]; return q ? `<figure class="erp-proof"><blockquote>“${q[0]}”</blockquote><figcaption>${q[1]}${q[2] ? ', ' + q[2] : ''}</figcaption></figure>` : ''; };
+const shareBand = () => `<div class="pass-box hr-share"><div><p class="eyebrow">FOR YOUR SALES TEAM</p><h2>Who sends catalogues in your business?</h2><p>Send them this page on WhatsApp, with your numbers. They pick the pieces; you see every view.</p></div><a class="btn btn-primary" href="#" data-dc-share data-dc-cta="share">Send to my sales team</a></div>`;
+
 // "I run a…"
 const ICP = [
-  ['single', 'store', 'A store', 'Start with private catalogues for families who have not visited yet: picked from your stock, opened by OTP, every look on her timeline.', 0, 'tracked-view', 'trial', 'Start free for your store'],
-  ['b2b', 'truck', 'A wholesaler or trader', 'Start with enquiry catalogues for retailers: prices hidden or on request, stock status on each piece, every enquiry turned into a quotation.', 2, 'leaks', 'demo', 'Book a 30-minute demo for wholesale'],
-  ['brand', 'megaphone', 'An online brand', 'Start with order catalogues: QR and your own domain, prices from your engine, order and pay on the link.', 1, 'modules', 'trial', 'Start free for your brand'],
+  ['single', 'store', 'A store', 'Start with private catalogues for families who have not visited yet: picked from your stock, opened by OTP, every look on her timeline.', 0, 'private-link', 'trial', 'Start free for your store'],
+  ['b2b', 'truck', 'A wholesaler or trader', 'Start with enquiry catalogues for retailers: prices hidden or on request, stock status on each piece, every enquiry turned into a quotation.', 2, 'stats', 'demo', 'Book a 30-minute demo for wholesale'],
+  ['brand', 'megaphone', 'An online brand', 'Start with order catalogues: QR and your own domain, prices from your engine, order and pay on the link.', 1, 'qr', 'trial', 'Start free for your brand'],
 ];
 const door = ([k, , , , , , d, label], cls) => d === 'demo'
   ? `<a class="${cls}" href="/book-demo" data-dc-cta="door-${k}">${label}</a>`
   : `<a class="${cls}" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=catalogues-${k}" rel="noopener" data-trial data-dc-cta="door-${k}">${label}</a>`;
-const icpBox = () => `<div class="erp-icp soc-icp" data-dc-icp data-cfg='${JSON.stringify(Object.fromEntries(ICP.map(([k, , , , j, lead]) => [k, [j, lead]])))}'>
+const icpBox = () => `<div class="erp-icp soc-icp" data-dc-icp data-after="sample" data-cfg='${JSON.stringify(Object.fromEntries(ICP.map(([k, , , , j, lead]) => [k, [j, lead]])))}'>
   <div class="erp-icp-opts" role="tablist" aria-label="I run a…">${ICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${icon(ic)}<span>${t}</span></button>`).join('')}</div>
-  ${ICP.map((e, i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p><div class="erp-icp-go"><a href="#one-catalogue">One catalogue ↓</a><a href="#board">What you see ↓</a><a href="#journeys">Your journey ↓</a></div><p class="erp-icp-door">${door(e, 'btn btn-primary')}</p></div>`).join('')}
+  ${ICP.map((e, i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p><div class="erp-icp-go"><a href="#one-catalogue">One catalogue ↓</a><a href="#board">What you see ↓</a><a href="#journeys">Your journey ↓</a></div><p class="erp-icp-door">${door(e, 'btn btn-primary')}</p>${proofCard(e[0])}</div>`).join('')}
 </div>`;
 const prog = () => `<nav class="erp-prog" data-erp-prog aria-label="On this page"><div class="erp-prog-in">
-  <ol>${[['one-catalogue', 'Send'], ['board', 'Watch'], ['tracked-view', 'Visitors'], ['leaks', 'Leaks'], ['modules', 'Features'], ['journeys', 'Journeys']].map(([id, t], i) => `<li><a href="#${id}" data-p="${id}"><b>${i + 1}</b>${t}</a></li>`).join('')}</ol>
+  <ol>${[['sample', 'Try'], ['one-catalogue', 'Send'], ['board', 'Watch'], ['stats', 'Pieces'], ['leaks', 'Leaks'], ['journeys', 'Journeys']].map(([id, t], i) => `<li><a href="#${id}" data-p="${id}"><b>${i + 1}</b>${t}</a></li>`).join('')}</ol>
   <span class="erp-prog-doors">${ICP.map((e) => door(e, 'btn btn-primary erp-prog-cta dc-door')).join('')}</span>
 </div><i class="erp-prog-fill" aria-hidden="true"></i></nav>`;
 
@@ -208,7 +258,13 @@ ${prog()}
 
 ${L.section(`${L.sectionHead('BUILT AROUND HOW YOU SELL', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
 
+${L.section(`${L.sectionHead('TRY IT', 'What does your customer see?', 'Switch the prices, open the breakup, press enquire.')}${sample()}`, { id: 'sample' })}
+
 ${L.section(`${L.sectionHead('ONE CATALOGUE', 'How does a catalogue turn into an order?', 'Six steps, from picking pieces to payment.')}${run()}`, { id: 'one-catalogue' })}
+
+${L.section(`${L.sectionHead('AI', 'Can AI make a jewellery catalogue?', 'Type what you want. Press build.')}${aiBuild()}`, { tone: 'tint', id: 'ai' })}
+
+${L.section(`${L.sectionHead('PDF OR LINK', 'The same piece, sent two ways.', '')}${pdfVs()}`, { id: 'vs' })}
 
 ${L.section(`${L.sectionHead('ONE SCREEN', 'What happens after you press send?', 'Six parts of one catalogue, lit as it works.')}${board()}`, { id: 'board' })}
 
@@ -216,13 +272,21 @@ ${L.section(`${L.sectionHead('ON ITS OWN', 'What runs by itself, and what does y
 
 ${L.section(`${L.sectionHead('WHAT YOU SEE', 'Who looked at what, and for how long?', 'Each visitor’s timeline, as your team sees it.')}${timeline()}`, { id: 'tracked-view' })}
 
+${L.section(`${L.sectionHead('WHICH PIECES PULL', 'Which pieces are customers looking at?', 'Per piece, per catalogue.')}${stats()}`, { tone: 'tint', id: 'stats' })}
+
+${L.section(`${L.sectionHead('PRIVATE', 'How does a private catalogue work?', 'Three screens.')}${privateLink()}`, { id: 'private-link' })}
+
+${L.section(`${L.sectionHead('EXHIBITIONS', 'A QR at your stall.', '')}${qrBlock()}`, { tone: 'tint', id: 'qr' })}
+
 ${L.section(`${L.sectionHead('LEAKS CLOSED', 'What does a PDF catalogue cost you?', 'Nine places, closed.')}${leakCards()}`, { id: 'leaks' })}
 
 ${L.section(`${L.sectionHead('EVERYTHING IN IT', 'What can a jewellery catalogue do in Jwero?', 'Create, share, control, track and close.')}${modules()}`, { tone: 'tint', id: 'modules' })}
 
 ${L.section(`${L.sectionHead('JOURNEYS', 'Four real catalogues.', '')}${paths()}`, { id: 'journeys' })}
 
-${L.section(`${L.sectionHead('COMPARE', 'PDFs and photos, a generic catalogue app, or Jwero.', '')}${cmpTable()}`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('COMPARE', 'PDFs and photos, a generic catalogue app, or Jwero.', '')}${dcFrom()}${cmpTable()}`, { tone: 'tint', id: 'compare' })}
+
+${L.section(shareBand(), { id: 'share' })}
 
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to send a digital jewellery catalogue.', 'Five steps.')}${L.steps(HOW.map(([title, text]) => ({ title, text })))}`)}
 
