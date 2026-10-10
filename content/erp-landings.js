@@ -6,6 +6,31 @@
 // /guides/jewellery-manufacturing-software, /jewellery-accounting-software.
 const L = require('../lib');
 const UPDATED = '10 October 2026';
+const { icon } = L;
+
+// A small leak meter per department: one input, open assumptions, a button that
+// carries the numbers into WhatsApp, and a way into the ERP page for this business.
+const METERS = {
+  pos: { f: 'disc', p: 'single', title: 'What do unapproved discounts cost you?', i: ['sales', 'Sales a month, ₹ lakh', 5, 1000, 5, 60], a: [['disc', 'Unapproved discount, % of sales', 0.5, 0.1]] },
+  inventory: { f: 'slow', p: 'chain', title: 'What does slow stock cost you to hold?', i: ['pieces', 'Pieces in stock', 100, 20000, 100, 3000], a: [['slowp', 'Pieces past 180 days, %', 15, 1], ['avg', 'Average piece value, ₹', 50000, 1000], ['carry', 'Cost of money, % a month', 1, 0.1]] },
+  manufacturing: { f: 'karigar', p: 'maker', title: 'What does loss above norm cost you?', i: ['gold', 'Gold issued to karigars a month, g', 0, 20000, 100, 1500], a: [['loss', 'Loss above norm, % of gold issued', 0.3, 0.1], ['rate', '24K rate, ₹ a gram', 7200, 100]] },
+  purchase: { f: 'short', p: 'b2b', title: 'What do short deliveries cost you?', i: ['buy', 'Purchases a month, ₹ lakh', 5, 2000, 5, 80], a: [['short', 'Short or unchecked, % of purchases', 0.2, 0.1]] },
+  finance: { f: 'itc', p: 'b2b', title: 'What does missed input credit cost you?', i: ['buy', 'Purchases a month, ₹ lakh', 5, 2000, 5, 80], a: [['gst', 'GST on purchases, %', 3, 0.5], ['miss', 'Credit missed, % of input GST', 2, 0.5]] },
+  repairs: { f: 'repair', p: 'repair', title: 'What do repair disputes cost you?', i: ['jobs', 'Repairs a month', 10, 2000, 10, 150], a: [['dis', 'Jobs disputed, %', 3, 0.5], ['avg', 'Average settlement, ₹', 1500, 100]] },
+};
+const miniMeter = (anchor) => {
+  const m = METERS[anchor]; if (!m) return '';
+  const [k, label, min, max, step, val] = m.i;
+  return `<div class="erp-mini" data-minim data-f="${m.f}">
+  <p class="erp-meter-t">${icon('activity')}<b>${m.title}</b></p>
+  <label><span>${label} <b data-o="${k}"></b></span><input type="range" data-i="${k}" min="${min}" max="${max}" step="${step}" value="${val}"></label>
+  <p class="erp-meter-total"><span>A month, roughly</span><b data-o="total"></b></p>
+  <details class="erp-meter-as"><summary>The assumptions, change them</summary>${m.a.map(([ak, al, av, as]) => `<label>${al}<input type="number" data-a="${ak}" value="${av}" step="${as}" min="0"></label>`).join('')}</details>
+  <p class="erp-mini-go"><a class="btn btn-primary" href="#" data-wa="erp" data-wa-extra="" data-erp-cta="mini-${anchor}">Show me how Jwero closes this</a><a class="btn btn-ghost" href="/products/erp?erp=${m.p}#for-you" data-erp-cta="mini-erp-${anchor}">See the ERP for my business →</a></p>
+  <p class="erp-meter-note">A planning estimate from your input and these assumptions, not a measurement.</p>
+</div>`;
+};
+
 
 function landing(p) {
   return {
@@ -35,7 +60,7 @@ ${L.hero({
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">${p.shortQ}</h2><p>${p.shortA}</p></div></section>
 
-${L.section(`${L.sectionHead('WHERE IT LEAKS TODAY', p.leakHead, '')}<div class="erp-leak-list">${p.leaks.map(([a, b]) => `<p><span>${a}</span><b>${b}</b></p>`).join('')}</div>`, { tone: 'tint' })}
+${L.section(`${L.sectionHead('WHERE IT LEAKS TODAY', p.leakHead, '')}<div class="erp-leak-list">${p.leaks.map(([a, b]) => `<p><span>${a}</span><b>${b}</b></p>`).join('')}</div>${miniMeter(p.anchor)}`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('WHAT YOU GET', p.pointsHead, '')}${L.cards(p.points.map(([title, text, icon]) => ({ icon, title, text })), 3)}`)}
 

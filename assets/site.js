@@ -929,12 +929,23 @@ function jwFromInr(n) {
       else if (jr) jr.setAttribute('data-jr-first', JOUR[k]);
       if (day && day.daySet) day.daySet(k === 'chain' ? 'chain' : 'store');
       docEl.setAttribute('data-erp-for', k);
+      // 3. the simulator for this business moves up, straight after the leaks
+      var SIM = { single: 'till', chain: 'shelf', maker: 'grams', b2b: 'shelf', repair: 'till' }, simSec = document.getElementById('try-' + SIM[k]), leakSec = document.getElementById('leaks');
+      if (simSec && leakSec && leakSec.parentNode) leakSec.parentNode.insertBefore(simSec, leakSec.nextSibling);
+      var tryLink = document.querySelector('[data-erp-prog] [data-p="try"]'); if (tryLink) tryLink.setAttribute('href', '#try-' + SIM[k]);
+      // 2. the buttons follow the business: trial or demo
+      Array.prototype.forEach.call(document.querySelectorAll('.erp-prog-cta'), function (a) { a.hidden = a.getAttribute('data-erp-cta') !== 'door-' + k; });
+      var band = document.querySelector('.cta-band .btn-ghost-light[href="/book-demo"]');
+      if (band) band.textContent = k === 'chain' ? 'Book a 30-minute demo for a chain' : k === 'maker' ? 'Book a 30-minute demo for a workshop' : 'Book a demo';
+      if (fromUser && window.jweroTrack) window.jweroTrack('erp_icp_pick', { icp: k });
       if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} }
     }
     box.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (b) apply(b.getAttribute('data-k'), true); });
     var saved = ''; try { saved = localStorage.getItem('jwero-persona') || ''; } catch (e) {}
-    apply(MAP[saved] || 'single', false);
-    if (jr && jr.jrShow && MAP[saved]) jr.jrShow(JOUR[MAP[saved]]);
+    var asked = /[?&](?:erp|p)=(single|chain|maker|b2b|repair|franchise|trader|d2c|staff)/.exec(location.search);
+    var first = asked ? (asked[1] === 'repair' ? 'repair' : MAP[asked[1]]) : MAP[saved];
+    apply(first || 'single', !!asked);
+    if (jr && jr.jrShow && first) jr.jrShow(JOUR[first]);
   });
 
   // Jewellery ERP: the hero leak meter, from the reader's own inputs.
@@ -955,6 +966,85 @@ function jwFromInr(n) {
     }
     m.addEventListener('input', calc); calc();
   });
+
+  // Jewellery ERP: the leak meters carry the reader's numbers into the message.
+  var inrF = function (v) { v = Math.round(v); if (v >= 1e7) return '₹' + (v / 1e7).toFixed(2).replace(/\.?0+$/, '') + ' crore'; if (v >= 1e5) return '₹' + (v / 1e5).toFixed(1).replace(/\.0$/, '') + ' lakh'; return '₹' + v.toLocaleString('en-IN'); };
+  Array.prototype.forEach.call(document.querySelectorAll('[data-leakm]'), function (m) {
+    var cta = m.querySelector('[data-erp-cta="meter"]'), used = false;
+    function note() {
+      var o = function (k) { var el = m.querySelector('[data-o="' + k + '"]'); return el ? el.textContent : ''; };
+      if (cta) cta.setAttribute('data-wa-extra', ' My numbers: sales ' + o('sales') + ' a month, ' + o('gold') + ' to karigars a month, ' + o('pieces') + ' pieces in stock. Your page estimates ' + o('total') + ' a month in leaks.');
+    }
+    m.addEventListener('input', function () { note(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('erp_meter_use', {}); } });
+    window.setTimeout(note, 0);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-minim]'), function (m) {
+    var f = m.getAttribute('data-f'), cta = m.querySelector('[data-wa]'), used = false;
+    var n = function (sel) { var el = m.querySelector(sel); return el ? Number(el.value) || 0 : 0; };
+    var F = {
+      disc: function () { return n('[data-i="sales"]') * 1e5 * n('[data-a="disc"]') / 100; },
+      slow: function () { return n('[data-i="pieces"]') * n('[data-a="slowp"]') / 100 * n('[data-a="avg"]') * n('[data-a="carry"]') / 100; },
+      karigar: function () { return n('[data-i="gold"]') * n('[data-a="loss"]') / 100 * n('[data-a="rate"]'); },
+      short: function () { return n('[data-i="buy"]') * 1e5 * n('[data-a="short"]') / 100; },
+      itc: function () { return n('[data-i="buy"]') * 1e5 * n('[data-a="gst"]') / 100 * n('[data-a="miss"]') / 100; },
+      repair: function () { return n('[data-i="jobs"]') * n('[data-a="dis"]') / 100 * n('[data-a="avg"]'); },
+    };
+    var inp = m.querySelector('[data-i]'), k = inp.getAttribute('data-i');
+    function calc() {
+      var v = Number(inp.value), shown = (k === 'sales' || k === 'buy') ? inrF(v * 1e5) : k === 'gold' ? v.toLocaleString('en-IN') + ' g' : v.toLocaleString('en-IN');
+      m.querySelector('[data-o="' + k + '"]').textContent = shown;
+      var t = inrF(F[f] ? F[f]() : 0); m.querySelector('[data-o="total"]').textContent = t;
+      if (cta) { var base = (inp.closest('label').querySelector('span').firstChild.textContent || '').replace(/,\s*(₹ lakh|g)\s*$/, '').trim(); cta.setAttribute('data-wa-extra', ' ' + base + ': ' + shown + '. Your page estimates ' + t + ' a month.'); }
+    }
+    m.addEventListener('input', function () { calc(); if (!used && window.jweroTrack) { used = true; window.jweroTrack('erp_meter_use', { f: f }); } });
+    calc();
+  });
+
+  // Jewellery ERP: the progress bar appears after the hero and follows the reader.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-erp-prog]'), function (bar) {
+    var hero = document.querySelector('.hero-home'), links = bar.querySelectorAll('[data-p]'), fill = bar.querySelector('.erp-prog-fill'), ticking = false;
+    function target(a) { return document.querySelector(a.getAttribute('href')); }
+    var hdr = document.querySelector('header'); function top() { if (hdr) bar.style.setProperty('--erp-prog-top', Math.max(0, hdr.getBoundingClientRect().bottom) + 'px'); }
+    function update() {
+      ticking = false;
+      var past = hero ? hero.getBoundingClientRect().bottom < 0 : window.scrollY > 600;
+      var end = document.querySelector('.cta-band'), endTop = end ? end.getBoundingClientRect().top : 1e9;
+      top(); bar.classList.toggle('is-on', past && endTop > window.innerHeight * .5);
+      var cur = -1, line = window.innerHeight * .35;
+      Array.prototype.forEach.call(links, function (a, i) { var t = target(a); if (t && t.getBoundingClientRect().top < line) cur = i; });
+      Array.prototype.forEach.call(links, function (a, i) { a.classList.toggle('is-done', i < cur); a.classList.toggle('is-now', i === cur); });
+      var doc = document.documentElement, pct = Math.min(1, window.scrollY / Math.max(1, doc.scrollHeight - window.innerHeight));
+      if (fill) fill.style.transform = 'scaleX(' + pct.toFixed(3) + ')';
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+  });
+
+  // Jewellery ERP: the comparison follows the system the reader runs today.
+  Array.prototype.forEach.call(document.querySelectorAll('.erp-from'), function (from) {
+    var table = document.querySelector('#compare table'), note = document.querySelector('#compare .cta-note');
+    if (!table) return;
+    var ths = table.querySelectorAll('thead th'), base = [ths[1].textContent, ths[2].textContent];
+    from.addEventListener('click', function (e) {
+      var t = e.target.closest('[data-jr-tab]'); if (!t) return;
+      var name = t.textContent.replace(/^From\s+/, '');
+      var tally = name === 'Tally';
+      ths[1].textContent = tally ? 'Tally, as you run it' : base[0];
+      ths[2].textContent = tally ? base[1] : name + ' (desktop jewellery ERP)';
+      table.classList.toggle('is-them-1', tally); table.classList.toggle('is-them-2', !tally);
+      if (note) Array.prototype.forEach.call(note.querySelectorAll('a'), function (a) { a.classList.toggle('is-them', a.textContent.indexOf(name) > -1); });
+      if (window.jweroTrack) window.jweroTrack('erp_switch_from', { from: name });
+    });
+  });
+
+  // Jewellery ERP: what readers do on the page, so the sections can be judged.
+  document.addEventListener('click', function (e) {
+    if (!window.jweroTrack) return;
+    var c = e.target.closest('[data-erp-cta]'); if (c) window.jweroTrack('erp_cta', { at: c.getAttribute('data-erp-cta'), label: (c.textContent || '').trim().slice(0, 60) });
+    var j = e.target.closest('#journeys [data-jr-tab]'); if (j) window.jweroTrack('erp_journey', { tab: (j.textContent || '').trim().slice(0, 60) });
+    var d = e.target.closest('.erp-par-row summary'); if (d) window.jweroTrack('erp_department', { m: d.parentNode.getAttribute('data-m') });
+  });
+  onView(document.querySelectorAll('.sim-section'), function (sec) { if (window.jweroTrack && document.querySelector('[data-erp-icp]')) window.jweroTrack('erp_sim_seen', { sim: sec.id }); }, { threshold: 0.4 });
 
   // Jewellery ERP: a day in the business; the now-line sweeps and events light as it passes.
   Array.prototype.forEach.call(document.querySelectorAll('[data-day]'), function (d) {

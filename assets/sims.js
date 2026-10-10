@@ -194,11 +194,17 @@
     },
   };
 
-  Array.prototype.forEach.call(sims, function (host) {
+  // Each simulation is built only when it comes near the screen, so pages load light.
+  function build(host) {
     var kind = host.getAttribute('data-sim');
     if (!BUILD[kind]) return;
     try { BUILD[kind](host); } catch (e) { host.innerHTML = '<p class="sim-foot">This simulation could not load. <a href="' + wa(kind) + '">Ask for the real thing on WhatsApp</a>.</p>'; }
     var cta = host.parentNode.querySelector('[data-sim-wa]');
     if (cta) cta.setAttribute('href', wa(host.getAttribute('data-sim-name') || kind));
-  });
+  }
+  if (!('IntersectionObserver' in window)) { Array.prototype.forEach.call(sims, build); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { io.unobserve(en.target); build(en.target); } });
+  }, { rootMargin: '600px 0px' });
+  Array.prototype.forEach.call(sims, function (host) { io.observe(host); });
 })();

@@ -201,9 +201,23 @@ const proofCard = (k) => {
   const m = e.metric ? `<p class="erp-proof-m"><span>${e.metric[0]}</span><s>${e.metric[1]}</s>${icon('arrow')}<b>${e.metric[2]}</b></p>` : '';
   return `<figure class="erp-proof"><blockquote>“${quote}”</blockquote><figcaption>${who}, ${where}</figcaption>${m}</figure>`;
 };
+const DOOR = {
+  single: ['trial', 'Start free for your store'],
+  chain: ['demo', 'Book a 30-minute demo for a chain'],
+  maker: ['demo', 'Book a 30-minute demo for a workshop'],
+  b2b: ['trial', 'Start free for your trade business'],
+  repair: ['trial', 'Start free for your store'],
+};
+const doorLink = (k, cls) => DOOR[k][0] === 'demo'
+  ? `<a class="${cls}" href="/book-demo" data-erp-cta="door-${k}">${DOOR[k][1]}</a>`
+  : `<a class="${cls}" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=erp-${k}" rel="noopener" data-trial data-erp-cta="door-${k}">${DOOR[k][1]}</a>`;
+const progBar = () => `<nav class="erp-prog" data-erp-prog aria-label="On this page"><div class="erp-prog-in">
+  <ol>${[['leaks', 'Your leaks'], ['day', 'Your day'], ['journeys', 'Your journey'], ['try', 'Try it'], ['switch', 'Switch']].map(([id, t], i) => `<li><a href="#${id}" data-p="${id}"><b>${i + 1}</b>${t}</a></li>`).join('')}</ol>
+  <span class="erp-prog-doors">${Object.keys(DOOR).map((k) => doorLink(k, 'btn btn-primary erp-prog-cta')).join('')}</span>
+</div><i class="erp-prog-fill" aria-hidden="true"></i></nav>`;
 const icpSwitch = () => `<div class="erp-icp" data-erp-icp data-order='${JSON.stringify(ICP_ORDER)}' data-journey='${JSON.stringify(ICP_JOURNEY)}'>
   <div class="erp-icp-opts" role="tablist" aria-label="I run a…">${ICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${icon(ic === 'branches' ? 'branches' : ic)}<span>${t}</span></button>`).join('')}</div>
-  ${ICP.map(([k, , t, line, sim, simLabel, deep], i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${k}"><p>${line}</p>${proofCard(k)}<div class="erp-icp-go"><a href="#parity">Your departments first ↓</a><a href="#leaks">Your leaks first ↓</a><a href="#journeys">Your journey ↓</a><a href="${deep}">${ICP_DEEP[k]} ↓</a><a class="is-sim" href="#try-${sim}">${simLabel} →</a></div></div>`).join('')}
+  ${ICP.map(([k, , t, line, sim, simLabel, deep], i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${k}"><p>${line}</p>${proofCard(k)}<div class="erp-icp-go"><a href="#parity">Your departments first ↓</a><a href="#leaks">Your leaks first ↓</a><a href="#journeys">Your journey ↓</a><a href="${deep}">${ICP_DEEP[k]} ↓</a><a class="is-sim" href="#try-${sim}">${simLabel} →</a></div><p class="erp-icp-door">${doorLink(k, 'btn btn-primary')}</p></div>`).join('')}
   <p class="ibx-legend">The page reorders itself for you. Nothing is hidden; every section stays below.</p>
 </div>`;
 
@@ -219,6 +233,7 @@ const leakMeter = () => `<div class="erp-meter" data-leakm>
     <a href="#leaks" data-b="slow"><span>Cost of slow stock</span><i><em></em></i><b></b></a>
   </div>
   <p class="erp-meter-total"><span>A month, roughly</span><b data-o="total"></b></p>
+  <a class="btn btn-primary erp-meter-cta" href="#" data-wa="erp" data-wa-extra="" data-erp-cta="meter">Show me how Jwero closes these</a>
   <details class="erp-meter-as"><summary>The assumptions, change them</summary>
     <label>Unapproved discount, % of sales<input type="number" data-a="disc" value="0.5" step="0.1" min="0"></label>
     <label>Loss above norm, % of gold issued<input type="number" data-a="loss" value="0.3" step="0.1" min="0"></label>
@@ -381,6 +396,8 @@ ${L.hero({
 })}
 
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What is Jwero’s jewellery ERP?</h2><p>Jwero’s jewellery ERP runs the counter, inventory, manufacturing and karigar job work, purchase, billing and accounts, and repairs on one record, in fine weight with HUID, across every branch. It does what a jewellery ERP is expected to do, and closes the gaps most leave open: wastage settled against your norms, discount approvals, cash variance, stock-to-ledger drift checks and AI that drafts orders and flags problems before they cost you.</p></div></section>
+
+${progBar()}
 
 ${L.section(`${L.sectionHead('BUILT AROUND HOW YOU RUN', 'I run a…', 'Pick your business. The page puts your departments, your leaks and your journey first.')}${icpSwitch()}`, { tone: 'tint', id: 'for-you' })}
 
