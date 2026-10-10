@@ -6333,3 +6333,4 @@ em.is-b { background: var(--brand-soft); color: var(--brand); }
 .dc-tl li b { font-variant-numeric: tabular-nums; color: var(--ink-2); font-weight: 600; }
 @keyframes dcTl { to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .dc-tl li { animation: none; opacity: 1; transform: none; } }
+.dc-door[hidden] { display: none; }

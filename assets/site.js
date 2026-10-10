@@ -1252,6 +1252,29 @@ function jwFromInr(n) {
     calc();
   });
 
+  // Catalogues: "I run a…" picker.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-dc-icp]'), function (box) {
+    var CFG = JSON.parse(box.getAttribute('data-cfg'));
+    var MAP = { single: 'single', staff: 'single', chain: 'single', franchise: 'single', maker: 'b2b', b2b: 'b2b', trader: 'b2b', d2c: 'brand', brand: 'brand' };
+    var STORE = { single: 'single', b2b: 'b2b', brand: 'd2c' };
+    var jr = document.querySelector('#journeys [data-jr]');
+    function apply(k, fromUser) {
+      Array.prototype.forEach.call(box.querySelectorAll('[data-k]'), function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k ? 'true' : 'false'); });
+      Array.prototype.forEach.call(box.querySelectorAll('[data-panel]'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === k); });
+      if (jr && jr.jrShow && (fromUser || CFG[k][0] !== 0)) jr.jrShow(CFG[k][0]);
+      Array.prototype.forEach.call(document.querySelectorAll('.dc-door'), function (a) { a.hidden = a.getAttribute('data-dc-cta') !== 'door-' + k; });
+      if (fromUser) { try { localStorage.setItem('jwero-persona', STORE[k]); localStorage.setItem('jwero-persona-picked', '1'); } catch (e) {} if (window.jweroTrack) window.jweroTrack('dc_icp_pick', { icp: k }); }
+    }
+    box.addEventListener('click', function (e) { var b = e.target.closest('[data-k]'); if (b) apply(b.getAttribute('data-k'), true); });
+    var saved = ''; try { saved = localStorage.getItem('jwero-persona') || ''; } catch (e) {}
+    var asked = /[?&](?:dc|p)=(single|chain|brand|franchise|d2c|maker|b2b|trader|staff)/.exec(location.search);
+    apply(MAP[asked ? asked[1] : saved] || 'single', !!asked);
+  });
+  document.addEventListener('click', function (e) {
+    if (!window.jweroTrack) return;
+    var c = e.target.closest('[data-dc-cta]'); if (c) window.jweroTrack('dc_cta', { at: c.getAttribute('data-dc-cta') });
+  });
+
   // HR and Catalogues: hero meters.
   Array.prototype.forEach.call(document.querySelectorAll('div[data-hrm], div[data-dcm]'), function (m) {
     var hr = m.hasAttribute('data-hrm'), used = false, cta = m.querySelector('[data-hr-cta], [data-dc-cta]');

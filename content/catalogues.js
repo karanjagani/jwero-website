@@ -79,6 +79,7 @@ const WHO = { c: ['Customer', 'is-c'], a: ['Jwero', 'is-a'], h: ['Your team', 'i
 const PATHS = [
   ['A bridal family who never visited', [['Family asks on WhatsApp for bridal options', 'c', 'chat'], ['12 pieces picked; a private catalogue sent', 'h', 'shield'], ['They open it by OTP and view the temple set 4 times', 'c', 'eye'], ['An enquiry becomes a quotation', 'a', 'receipt'], ['They pay an order on the link', 'c', 'check']]],
   ['An exhibition QR', [['A QR at your stall opens the festive edit', 'c', 'search'], ['Visitors browse; pieces show in stock or made to order', 'a', 'box'], ['Wishlists and carts tracked', 'a', 'heart'], ['Enquiries become tasks for your team', 'h', 'users'], ['Orders arrive with an alert', 'a', 'check']]],
+  ['A retailer orders from a wholesaler', [['A retailer asks for new 22K chains', 'c', 'chat'], ['An enquiry catalogue sent; prices on request', 'h', 'shield'], ['He views 30 pieces, in stock or made to order', 'c', 'box'], ['His enquiry becomes a quotation', 'a', 'receipt'], ['He confirms; your team is alerted', 'h', 'check']]],
   ['A catalogue that expired on time', [['Diwali offer catalogue sent with an end date', 'h', 'calendar'], ['Customers view and order through the week', 'c', 'eye'], ['Orders paid online', 'c', 'coins'], ['On the end date the link closes', 'a', 'shield'], ['Analytics show which pieces sold', 'a', 'pie']]],
 ];
 const paths = () => `<div class="ibx-jr" data-jr>
@@ -86,6 +87,62 @@ const paths = () => `<div class="ibx-jr" data-jr>
   ${PATHS.map(([t, steps], i) => `<div class="ibx-jr-panel${i === 0 ? ' is-on' : ''}" role="tabpanel" data-jr-panel="${i}"><h3>${t}</h3><ol class="ibx-jr-path">${steps.map(([x, k, ic], j) => `<li class="${WHO[k][1]}" style="--j:${j}"><span class="ibx-jr-node">${icon(ic)}</span><em>${WHO[k][0]}</em><span>${x}</span></li>`).join('')}</ol></div>`).join('')}
   <p class="ibx-legend"><span class="is-c">Customer</span> <span class="is-ai">Jwero</span> on its own · <span class="is-human">Your team</span></p>
 </div>`;
+
+
+// Six parts of the catalogue, lit by what happens to them.
+const PARTS = [
+  ['sparkle', 'Pieces', 'Picked from stock, or by AI.', ['Filters on your live stock', 'AI suggests pieces from a plain request', 'Templates and your own design']],
+  ['coins', 'Prices', 'From your pricing engine.', ['Worked out each time it opens', 'Shown, hidden or on request', 'Weights and metal, stone and making breakup']],
+  ['shield', 'Access', 'Who can open it.', ['Private for chosen customers', 'Opened by a one-time code', 'An expiry date']],
+  ['eye', 'Visitors', 'Who looked at what.', ['Views and piece clicks', 'Wishlists and carts', 'A timeline per visitor']],
+  ['chat', 'Enquiries', 'Questions that become sales.', ['Each enquiry becomes a task', 'Quotations from enquiries', 'An alert to your team']],
+  ['check', 'Orders', 'Paid on the link.', ['Online payment', 'GST and delivery at checkout', 'An alert, and the order on her record']],
+];
+const FEED = [
+  ['in', 'Bridal edit · prices updated at today’s rate', 1],
+  ['in', 'Shah family · opened by OTP', 2],
+  ['in', 'Meera viewed the temple necklace 4 times', 3],
+  ['note', 'Enquiry: “Can I see it in 18K?” · task created', 4],
+  ['out', 'Quotation sent from the enquiry', 4],
+  ['in', 'Order paid on the link · ₹ on her record', 5],
+];
+const partCard = ([ic, t, d, items], k) => `<details class="ibx-dnode" data-d="${k}"><summary><span class="ibx-dnode-ico">${icon(ic)}</span><b>${t}</b><small>${d}</small></summary><ul>${items.map((x) => `<li>${x}</li>`).join('')}</ul></details>`;
+const board = () => `<div class="ibx-biz" data-biz>
+  <div class="ibx-biz-side">${PARTS.slice(0, 3).map((x, k) => partCard(x, k)).join('')}</div>
+  <div class="ibx-biz-thread" aria-hidden="true"><div class="ibx-biz-head">${icon('activity')}<b>One catalogue, today</b></div><ol>${FEED.map(([w, t, d]) => `<li class="is-${w}" data-d="${d}">${t}</li>`).join('')}</ol></div>
+  <div class="ibx-biz-side">${PARTS.slice(3).map((x, k) => partCard(x, k + 3)).join('')}</div>
+</div><p class="ibx-legend">Illustrative. Each line lights the part of the catalogue it comes from. Tap a part to see what it does.</p>`;
+
+// What runs on its own, and what your team decides.
+const FORK = [
+  ['is-a', 'sparkle', 'Runs on its own', ['Prices worked out at today’s rate when it opens', 'Stock status on every piece', 'Every view, wishlist and cart on her timeline', 'The link closes on its end date'], 'check', 'Nobody types a price or chases a PDF'],
+  ['is-h', 'users', 'Your team decides', ['Which pieces, and for whom', 'Prices shown, hidden or on request', 'The quotation for each enquiry'], 'shield', 'Alerted on every enquiry and order'],
+];
+const fork = () => `<div class="ibx-fork" data-gfx>
+  <div class="ibx-fork-in">${icon('share')}<b>She opens the catalogue</b><small>From WhatsApp, a QR or your own domain</small></div>
+  <svg class="ibx-fork-lines" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true"><path class="is-a" d="M200 0 C200 30 100 30 100 60"/><path class="is-h" d="M200 0 C200 30 300 30 300 60"/></svg>
+  <div class="ibx-fork-legs">${FORK.map(([c, ic, t, rules, ric, r]) => `<div class="ibx-fork-leg ${c}"><h3>${icon(ic)}${t}</h3><ul>${rules.map((x) => `<li>${x}</li>`).join('')}</ul><p class="ibx-fork-out">${icon(ric)}${r}</p></div>`).join('')}</div>
+</div>`;
+
+// "I run a…"
+const ICP = [
+  ['single', 'store', 'A store', 'Start with private catalogues for families who have not visited yet: picked from your stock, opened by OTP, every look on her timeline.', 0, 'tracked-view', 'trial', 'Start free for your store'],
+  ['b2b', 'truck', 'A wholesaler or trader', 'Start with enquiry catalogues for retailers: prices hidden or on request, stock status on each piece, every enquiry turned into a quotation.', 2, 'leaks', 'demo', 'Book a 30-minute demo for wholesale'],
+  ['brand', 'megaphone', 'An online brand', 'Start with order catalogues: QR and your own domain, prices from your engine, order and pay on the link.', 1, 'modules', 'trial', 'Start free for your brand'],
+];
+const door = ([k, , , , , , d, label], cls) => d === 'demo'
+  ? `<a class="${cls}" href="/book-demo" data-dc-cta="door-${k}">${label}</a>`
+  : `<a class="${cls}" href="https://os.jwero.ai/signup?utm_source=jwero.ai&utm_medium=catalogues-${k}" rel="noopener" data-trial data-dc-cta="door-${k}">${label}</a>`;
+const icpBox = () => `<div class="erp-icp soc-icp" data-dc-icp data-cfg='${JSON.stringify(Object.fromEntries(ICP.map(([k, , , , j, lead]) => [k, [j, lead]])))}'>
+  <div class="erp-icp-opts" role="tablist" aria-label="I run a…">${ICP.map(([k, ic, t], i) => `<button type="button" role="tab" data-k="${k}" aria-selected="${i === 0}">${icon(ic)}<span>${t}</span></button>`).join('')}</div>
+  ${ICP.map((e, i) => `<div class="erp-icp-panel${i === 0 ? ' is-on' : ''}" data-panel="${e[0]}"><p>${e[3]}</p><div class="erp-icp-go"><a href="#one-catalogue">One catalogue ↓</a><a href="#board">What you see ↓</a><a href="#journeys">Your journey ↓</a></div><p class="erp-icp-door">${door(e, 'btn btn-primary')}</p></div>`).join('')}
+</div>`;
+const prog = () => `<nav class="erp-prog" data-erp-prog aria-label="On this page"><div class="erp-prog-in">
+  <ol>${[['one-catalogue', 'Send'], ['board', 'Watch'], ['tracked-view', 'Visitors'], ['leaks', 'Leaks'], ['modules', 'Features'], ['journeys', 'Journeys']].map(([id, t], i) => `<li><a href="#${id}" data-p="${id}"><b>${i + 1}</b>${t}</a></li>`).join('')}</ol>
+  <span class="erp-prog-doors">${ICP.map((e) => door(e, 'btn btn-primary erp-prog-cta dc-door')).join('')}</span>
+</div><i class="erp-prog-fill" aria-hidden="true"></i></nav>`;
+
+const READS = [['/products/crm', 'CRM: the customer record catalogue visitors land on'], ['/products/inbox', 'One Inbox: where catalogues are sent and enquiries arrive'], ['/products/ecommerce', 'Ecommerce: the same prices and stock online'], ['/compare/jwero-vs-quicksell', 'Jwero vs QuickSell']];
 
 const CMP = [
   ['Prices', 'Fixed the day it was made', 'Updated by hand', 'From your pricing engine each time it opens'],
@@ -145,21 +202,31 @@ ${L.hero({
   secondary: { href: '/book-demo', label: 'Book a demo' },
 })}
 
+${prog()}
+
 <section class="in-short" aria-labelledby="in-short-q"><div class="container"><p class="in-short-tag">In short</p><h2 id="in-short-q">What are Jwero Digital Catalogues?</h2><p>Jwero Digital Catalogues are shareable links of chosen pieces from your stock. Prices come from your pricing engine and can be shown, hidden or on request; catalogues can be private for chosen customers, opened by a one-time code, with an end date. Every view, wishlist and cart is tracked per visitor, enquiries become quotations, and customers can order and pay on the link.</p></div></section>
+
+${L.section(`${L.sectionHead('BUILT AROUND HOW YOU SELL', 'I run a…', 'Pick your business. The page puts your journey and your next step first.')}${icpBox()}`, { tone: 'tint', id: 'for-you' })}
 
 ${L.section(`${L.sectionHead('ONE CATALOGUE', 'How does a catalogue turn into an order?', 'Six steps, from picking pieces to payment.')}${run()}`, { id: 'one-catalogue' })}
 
-${L.section(`${L.sectionHead('WHAT YOU SEE', 'Who looked at what, and for how long?', 'Each visitor’s timeline, as your team sees it.')}${timeline()}`, { tone: 'tint', id: 'tracked-view' })}
+${L.section(`${L.sectionHead('ONE SCREEN', 'What happens after you press send?', 'Six parts of one catalogue, lit as it works.')}${board()}`, { id: 'board' })}
+
+${L.section(`${L.sectionHead('ON ITS OWN', 'What runs by itself, and what does your team decide?', '')}${fork()}`, { tone: 'tint', id: 'fork' })}
+
+${L.section(`${L.sectionHead('WHAT YOU SEE', 'Who looked at what, and for how long?', 'Each visitor’s timeline, as your team sees it.')}${timeline()}`, { id: 'tracked-view' })}
 
 ${L.section(`${L.sectionHead('LEAKS CLOSED', 'What does a PDF catalogue cost you?', 'Nine places, closed.')}${leakCards()}`, { id: 'leaks' })}
 
 ${L.section(`${L.sectionHead('EVERYTHING IN IT', 'What can a jewellery catalogue do in Jwero?', 'Create, share, control, track and close.')}${modules()}`, { tone: 'tint', id: 'modules' })}
 
-${L.section(`${L.sectionHead('JOURNEYS', 'Three real catalogues.', '')}${paths()}`, { id: 'journeys' })}
+${L.section(`${L.sectionHead('JOURNEYS', 'Four real catalogues.', '')}${paths()}`, { id: 'journeys' })}
 
 ${L.section(`${L.sectionHead('COMPARE', 'PDFs and photos, a generic catalogue app, or Jwero.', '')}${cmpTable()}`, { tone: 'tint' })}
 
 ${L.section(`${L.sectionHead('GETTING STARTED', 'How to send a digital jewellery catalogue.', 'Five steps.')}${L.steps(HOW.map(([title, text]) => ({ title, text })))}`)}
+
+${L.section(`${L.sectionHead('READ MORE', 'Where catalogues connect.', '')}<div class="erp-map">${READS.map(([h, t]) => `<a href="${h}"><b>${t}</b></a>`).join('')}</div>`)}
 
 ${L.oneSystemBlock([
   'Catalogue pieces come from the same stock the counter sells, with their stock status.',
