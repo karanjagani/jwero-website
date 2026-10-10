@@ -1791,7 +1791,8 @@ function layout(page) {
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.hero .sub'] },
     isPartOf: { '@type': 'WebSite', url: SITE },
   }];
-  const allFaqs = (inShortQA(page) && !/class="in-short"/.test(page.body || '') ? [inShortQA(page)] : []).concat(page.faqs || [], TOOL_QA[page.slug] || [], HUB_FAQ[page.slug] || [], SEGMENT_FAQ[page.slug] || [], ROLE_FAQ[page.slug] || [], BLOG_FAQ[page.slug] || [], page.legacy ? TOPIC_FAQ(postTopic(page)) : []);
+  const ownShort = (() => { const m = /<h2 id="in-short-q">([\s\S]*?)<\/h2><p>([\s\S]*?)<\/p>/.exec(page.body || ''); return m ? { q: m[1].replace(/<[^>]+>/g, '').trim(), a: m[2].trim() } : null; })();
+  const allFaqs = (ownShort ? [ownShort] : inShortQA(page) && !/class="in-short"/.test(page.body || '') ? [inShortQA(page)] : []).concat(page.faqs || [], TOOL_QA[page.slug] || [], HUB_FAQ[page.slug] || [], SEGMENT_FAQ[page.slug] || [], ROLE_FAQ[page.slug] || [], BLOG_FAQ[page.slug] || [], page.legacy ? TOPIC_FAQ(postTopic(page)) : []);
   { const seen = new Set(); const keep = allFaqs.filter((f) => { const key = f.q.replace(/<[^>]+>/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); if (seen.has(key)) return false; seen.add(key); return true; }); allFaqs.splice(0, allFaqs.length, ...keep); }
   if (allFaqs.length) {
     schemas.push({

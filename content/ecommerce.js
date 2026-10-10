@@ -267,20 +267,22 @@ const HOW = [
 const READS = [['/jewellery-website-personalisation', 'Personalising a jewellery website'], ['/jewellery-website-ab-testing', 'Heatmaps and A/B tests for jewellers'], ['/reserve-online-collect-in-store-jewellery', 'Reserve online, collect in store'], ['/abandoned-cart-recovery-for-jewellers', 'Bringing back carts left behind'], ['/jewellery-website-analytics', 'Jewellery website analytics'], ['/jewellery-ecommerce-complete-guide', 'The jewellery ecommerce guide']];
 
 const faqs = [
-  { q: 'What is a jewellery ecommerce website?', a: 'A store where customers browse, price and buy jewellery online. For a jeweller it must follow the gold rate, show the price breakup, prove purity and match the showroom stock. Jwero does all four, on the same record as your counter and WhatsApp, with Optimize built in.' },
-  { q: 'Do prices follow the gold rate?', a: 'Yes. Prices use today’s rate with metal, making charges and stones shown line by line, and the price is checked again at checkout so nobody pays yesterday’s rate.' },
-  { q: 'How does the site personalise for each visitor?', a: 'Banners and product-page blocks can be shown to chosen audiences, and recommendations and recently viewed pieces come from each visitor’s own browsing and purchases.' },
-  { q: 'What is Jwero Optimize?', a: 'The tools that improve your website: visitor tracking, heatmaps, A/B tests with a declared winner, funnels and goals, personalisation by audience, popups, polls, lead forms, web push and webchat, with every visitor on one record.' },
-  { q: 'Do I still need separate heatmap, testing or push tools?', a: 'No. Heatmaps, A/B tests, funnels, popups and web push are built in, and the visitor is the same record as on WhatsApp and at the counter.' },
-  { q: 'What happens when someone leaves a cart?', a: 'The abandoned cart can trigger a journey you set up on WhatsApp or email, and her visit, viewed pieces and cart stay on her record for your team.' },
-  { q: 'Can a customer reserve online and see the piece in the showroom?', a: 'Yes. She reserves it at the branch that holds it and collects it with a pickup code, or books a showroom visit in a time slot.' },
-  { q: 'Can customers search by photo?', a: 'Yes. A shopper uploads a photo of a piece she likes and sees the closest matches from your catalogue.' },
-  { q: 'Can customers join and pay a gold plan online?', a: 'Yes. They see your plans with a calculator, enrol, pay each instalment, set up UPI autopay and follow the passbook from their account.' },
-  { q: 'How do customers pay?', a: 'Through Razorpay, Cashfree, PhonePe or UPI, with EMI options shown on the product page where you offer them. Coupons and loyalty points apply at checkout.' },
-  { q: 'Do customers need a password?', a: 'No. They check out as a guest, or sign in with a one-time code on WhatsApp, SMS or email.' },
-  { q: 'Will the store help me rank on Google?', a: 'It gives you what ranking needs: fast pages checked with Google PageSpeed, structured data, a sitemap, clean addresses and redirects, a blog, collection landing pages and customer reviews.' },
-  { q: 'Does it work with Google Analytics and the Meta pixel?', a: 'Yes. Both are added through consent-gated tags, and visits are attributed by source, campaign and UTM in Jwero.' },
-  { q: 'What happened to the Optimize page?', a: 'Optimize is now part of this page, because it improves the same store. Its old address brings you to the Optimize section here.' },
+  { q: "What is the best ecommerce platform for jewellers in India?", a: "The best jewellery ecommerce platform follows the gold rate, shows the price breakup, proves purity with HUID and certificates, and sells from the same stock as the showroom. Jwero Ecommerce does all four, with reserve-and-collect, gold plans online and website optimisation built in." },
+  { q: "How do I start an online jewellery store?", a: "Bring your catalogue with weights, purity and making charges, choose a jewellery theme, connect your domain, switch on payments, reserve-and-collect and gold plans, then go live. Jwero Ecommerce uses the same catalogue as your counter and AI to set up the pages." },
+  { q: "How do jewellery websites show live gold rate prices?", a: "Each product is priced from today’s rate by purity and net weight, plus making charges and stones. Jwero Ecommerce shows this breakup line by line and checks the price again at checkout so nobody pays yesterday’s rate." },
+  { q: "Should a jewellery website show the price breakup?", a: "Yes. Shoppers trust a price they can check: metal at today’s rate, making charges, stones and GST. Jwero Ecommerce shows the breakup on every product page." },
+  { q: "How do I build trust on a jewellery website?", a: "Show purity, weights, HUID and certificates on every piece, real reviews with photos and answered questions. Jwero Ecommerce puts all of these on the product page." },
+  { q: "Can customers reserve jewellery online and collect it in store?", a: "Yes. In Jwero Ecommerce a customer reserves a piece at the branch that holds it and collects it with a pickup code, or books a showroom visit in a time slot." },
+  { q: "Can customers pay a gold savings plan online?", a: "Yes. Jwero Ecommerce lets customers see plans with a calculator, enrol, pay each instalment, set up UPI autopay and follow their passbook from their account." },
+  { q: "Which payment options work on a jewellery website?", a: "Jwero Ecommerce supports Razorpay, Cashfree, PhonePe and UPI, shows EMI options on the product page where you offer them, and applies coupons and loyalty points at checkout." },
+  { q: "How do I increase conversion on a jewellery website?", a: "Find where visitors drop, test the fix and keep the winner. Jwero Ecommerce includes funnels, heatmaps, A/B tests, personalisation, popups and web push, with every visitor on one customer record." },
+  { q: "Can a jewellery website show different content to different visitors?", a: "Yes. Jwero Ecommerce shows banners and product-page blocks by audience, and recommends pieces from each visitor’s own browsing and purchases." },
+  { q: "How do jewellers recover abandoned carts?", a: "Follow up while the shopper still cares. In Jwero Ecommerce, an abandoned cart triggers the WhatsApp or email journey you set up, and her cart stays on her record for your team." },
+  { q: "Can customers search jewellery by photo?", a: "Yes. Jwero Ecommerce lets a shopper upload a photo and see the closest pieces in your catalogue." },
+  { q: "Will a jewellery website help me rank on Google?", a: "Jwero Ecommerce gives you what ranking needs: fast pages checked with Google PageSpeed, structured data, a sitemap, clean addresses and redirects, a blog, collection pages and reviews." },
+  { q: "Do customers need a password to buy?", a: "No. Jwero Ecommerce offers guest checkout and sign-in with a one-time code on WhatsApp, SMS or email." },
+  { q: "Is the online store connected to my showroom stock?", a: "Yes. Jwero Ecommerce sells from the same stock as your counter, so a piece is never sold twice." },
+  { q: "How much does a jewellery ecommerce website cost?", a: "Jwero Ecommerce starts with a free trial that includes every module; your price is shown inside your account after the trial." },
 ];
 
 const ecommerce = {
